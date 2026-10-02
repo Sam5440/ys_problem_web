@@ -97,7 +97,7 @@ async function main() {
         }
         const file = {
           code,
-          letter: statement.title?.match(/^([A-Z])[.)]/)?.[1] || code.replace(/^.*?([A-Z][0-9]?)$/, '$1'),
+          letter: statement.title?.match(/^([A-Z][0-9]?)[.)]/)?.[1] || null,
           title: statement.title,
           contest: null,
           url: meta.url,

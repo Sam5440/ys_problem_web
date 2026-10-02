@@ -36,10 +36,13 @@ jobs:
           CF_STATEMENTS=0 node scripts/update-data.mjs
 
       # Daily incremental statements: cover the newest uncovered problems.
-      # Failures (e.g. Cloudflare escalation on CI IPs) are non-fatal —
-      # the affected problems degrade to hint + link until a later run succeeds.
+      # Runs headful Chrome under Xvfb (passes Cloudflare far better than
+      # headless); failures are non-fatal — affected problems degrade to
+      # hint + link until a later run succeeds.
       - name: Fetch statements for newest problems
-        run: node scripts/fetch-statements.mjs --limit 4 --delay 6000
+        run: xvfb-run -a node scripts/fetch-statements.mjs --limit 4 --delay 6000
+        env:
+          CF_START_MODE: chrome-headful
 
       - name: Re-attach statements to daily data
         env:

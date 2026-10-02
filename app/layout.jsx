@@ -1,7 +1,6 @@
 import './globals.css';
 import 'katex/dist/katex.min.css';
 import SiteHeader from '@/components/SiteHeader';
-import Link from 'next/link';
 import { getMeta } from '@/lib/data';
 
 export const metadata = {
@@ -13,26 +12,25 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const meta = getMeta();
   return (
-    <html lang="zh-CN">
-      <body>
+    <html lang="zh-CN" className="dark">
+      <body className="flex min-h-screen flex-col">
         <SiteHeader />
-        <main className="shell main">{children}</main>
-        <footer className="site-footer">
-          <div className="shell footer-inner">
+        <main className="mx-auto w-full max-w-6xl flex-1 px-4">{children}</main>
+        <footer className="border-t">
+          <div className="mx-auto w-full max-w-6xl space-y-1 px-4 py-6 text-xs text-muted-foreground">
             <p>
               数据来自开源项目{' '}
-              <a href="https://github.com/Yawn-Sean/Daily_CF_Problems" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/Yawn-Sean/Daily_CF_Problems"
+                target="_blank"
+                rel="noreferrer"
+                className="font-medium text-foreground underline-offset-4 hover:underline"
+              >
                 Yawn-Sean/Daily_CF_Problems
               </a>
               ，题面抓取自 Codeforces，仅作学习交流之用。
             </p>
-            <p className="footer-meta">
-              数据更新于 {meta.generatedAt.slice(0, 10)} · 由{' '}
-              <Link href="https://vercel.com" prefetch={false}>
-                Vercel
-              </Link>{' '}
-              驱动
-            </p>
+            <p>数据更新于 {meta.generatedAt.slice(0, 10)} · 每日 0 点 / 4 点自动刷新 · 由 Vercel 驱动</p>
           </div>
         </footer>
       </body>

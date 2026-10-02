@@ -1,0 +1,44 @@
+{
+  "code": "GYM106710E",
+  "letter": "E",
+  "title": "E. Expected Snaps",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106710/problem/E",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Thanos has an array whose length is a power of two. Before he sees it, every element is chosen independently and uniformly from the integers $$$1,2,\\ldots,K$$$.",
+      "An array is sorted if it is nondecreasing. While the current array is not sorted, Thanos performs a snap:",
+      "with probability $$$1/2$$$, he keeps the left half and discards the right half;",
+      "with probability $$$1/2$$$, he keeps the right half and discards the left half.",
+      "All snap choices are independent of each other and of the initial array. After each snap, he checks the remaining array again. An array of length one is always sorted.",
+      "The initial length is $$$N=2^n$$$. Find the expected number of snaps, where the expectation is taken over both the random initial array and all snap choices."
+    ],
+    "input": [
+      "The only line contains two integers $$$n$$$ and $$$K$$$ – the exponent of the initial length and the number of possible values. The value of $$$n$$$ is between 0 and 200000, inclusive, and $$$K$$$ is between 1 and 200000, inclusive.",
+      "It is guaranteed that $$$nK$$$ is at most 20000000."
+    ],
+    "output": [
+      "Let the expected number of snaps be the rational number $$$p/q$$$, where $$$p$$$ and $$$q$$$ are coprime. Print the residue modulo 998244353 of the product of $$$p$$$ and $$$q^{-1}$$$, where $$$q^{-1}$$$ is the multiplicative inverse of $$$q$$$ modulo 998244353. It is guaranteed that this inverse exists."
+    ],
+    "note": [
+      "For $$$n=1$$$ and $$$K=2$$$, the only unsorted initial array is $$$[2,1]$$$. It requires one snap, so the expectation is $$$1/4$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 2",
+      "output": "748683265"
+    },
+    {
+      "input": "0 1",
+      "output": "0"
+    },
+    {
+      "input": "4 5",
+      "output": "280149939"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "code": "GYM101798H",
+  "letter": "H",
+  "title": "H. Cylindrical Graphs",
+  "contest": null,
+  "url": "https://codeforces.com/gym/101798/problem/H",
+  "difficulty": "*2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "An undirected graph is cylindrical if it can be split it into two disjoint simple cycles of equal length such that the ith node in the first cycle is connected to the ith node in the second cycle.",
+      "Given an undirected graph of even number of nodes n and  edges, determine whether it is cylindrical or not, and if it is, print the two cycles that forms it (check the output section for the exact requirements)."
+    ],
+    "input": [
+      "The first line of input contains an even integer n (6 ≤ n ≤ 105), the number of nodes in the graph.",
+      "Each of the following  lines contains two integers u and v (1 ≤ u, v ≤ n, u ≠ v), representing an edge connecting the nodes u and v. Each pair of nodes is connected by at most one edge."
+    ],
+    "output": [
+      "Print \"NO\" if the given graph is not cylindrical. Otherwise, print \"YES\" followed by two lines, each containing the nodes of one cycle in following format:",
+      "c1 c2 ...",
+      "- Each consecutive nodes in a cycle must be connected by an edge in the input. Also the first and the last nodes in the cycle must be connected.",
+      "- The ith node in the first cycle must be connected to the ith node in the second cycle.",
+      "- Each of the n nodes must belong to exactly one of the cycles.",
+      "If there is more than one solution, you can print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n1 2\n2 3\n3 1\n4 5\n4 6\n5 6\n1 5\n2 6\n3 4",
+      "output": "YES\n1 3 2\n5 4 6"
+    },
+    {
+      "input": "6\n2 6\n3 6\n1 3\n2 1\n3 4\n4 2\n4 5\n5 6\n1 5",
+      "output": "NO"
+    }
+  ]
+}

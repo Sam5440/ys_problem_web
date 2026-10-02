@@ -1,0 +1,36 @@
+{
+  "code": "GYM106235A",
+  "letter": "A",
+  "title": "A. Athletes",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106235/problem/A",
+  "difficulty": "*1400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are the host of a large tournament that will feature $$$k$$$ athletes. You have $$$n$$$ familiar athletes, and you want to invite some of them to participate in a tournament. For each athlete, you know their strength and endurance (let's denote the strength of the $$$i$$$-th athlete as $$$p_i$$$ and their endurance as $$$s_i$$$). The $$$j$$$-th athlete will definitely defeat the $$$i$$$-th athlete only if they are strictly stronger and more enduring (i.e., if $$$p_j  \\gt  p_i$$$ and $$$s_j  \\gt  s_i$$$); otherwise, either of them could win.",
+      "The tournament proceeds as follows: as long as there are at least two athletes remaining, a pair is formed from two randomly selected athletes who have not been eliminated, the winner stays in the tournament, and the loser is eliminated. This continues until a tournament winner is determined.",
+      "To make the tournament as spectacular and unpredictable as possible, you want to invite a set of exactly $$$k$$$ athletes such that the winner is not predetermined. In other words, for a fixed set of $$$k$$$ athletes and considering all possible outcomes of pairwise wins and losses, there will be at least two outcomes where tournament winners are different.",
+      "Before finalizing the tournament lineup, you want to determine how many suitable sets of exactly $$$k$$$ athletes exist."
+    ],
+    "input": [
+      "The first line contains two integers $$$n$$$ and $$$k$$$ ($$$1 \\le k \\le n \\le 5000$$$) — the number of athletes and the size of the tournament.",
+      "The second line contains $$$n$$$ integers $$$p_1, p_2, \\dots, p_n$$$ ($$$1 \\le p_i \\le 10^9$$$); where the $$$i$$$-th integer represents the strength of the $$$i$$$-th athlete.",
+      "The third line contains $$$n$$$ integers $$$s_1, s_2, \\dots, s_n$$$ ($$$1 \\le s_i \\le 10^9$$$); where the $$$i$$$-th integer represents the endurance of the $$$i$$$-th athlete."
+    ],
+    "output": [
+      "In a single line, print a number — the amount of suitable sets of exactly $$$k$$$ athletes. Since the answer may be quite large, output it modulo $$$998\\,244\\,353$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 2\n1 1 3 3\n1 3 1 3",
+      "output": "5"
+    },
+    {
+      "input": "5 3\n2 2 4 4 5\n1 1 4 5 4",
+      "output": "7"
+    }
+  ]
+}

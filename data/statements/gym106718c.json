@@ -1,0 +1,37 @@
+{
+  "code": "GYM106718C",
+  "letter": "C",
+  "title": "C. Gym Sis",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106718/problem/C",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Celi and Itzel decided to start their fitness journey. They bought matching outfits and trendy water bottles, but couldn't afford a personal trainer, so they turned to TikTok. There they found Coach Emily, whose main training philosophy is: \"The gym isn't about how much weight you lift, but about the aura you radiate\".",
+      "According to Coach Emily's philosophy:",
+      "There are $$$N$$$ different exercises, numbered from $$$1$$$ to $$$N$$$.",
+      "On each of the $$$Z$$$ training days, Celi and Itzel can choose to perform exactly one exercise or take a rest day.",
+      "If they choose to perform exercise $$$i$$$ on day $$$c$$$ of a consecutive streak of that same exercise:   If $$$c \\le d_i$$$: they gain $$$+k_i$$$ aura points.",
+      "If $$$c  \\gt  d_i$$$: they gain $$$+(k_i - x_i)$$$ aura points (the penalty $$$x_i$$$ applies for each consecutive day that exceeds the optimal limit $$$d_i$$$).",
+      "If they choose to rest, they gain $$$0$$$ aura points and any active streak is reset to $$$0$$$.",
+      "If they switch from exercise $$$i$$$ to a different exercise $$$j \\ne i$$$, the streak for exercise $$$j$$$ starts at $$$1$$$.",
+      "Initially (before day 1), they have no active streak. Celi and Itzel want to know the maximum amount of aura points they can accumulate by the end of the $$$Z$$$ training days if they choose their daily activities optimally."
+    ],
+    "input": [
+      "The first line contains two integers $$$N$$$ and $$$Z$$$ ($$$1 \\le N \\le 1000$$$, $$$1 \\le Z \\le 1000$$$), the number of available exercises and the total number of training days.",
+      "The following $$$N$$$ lines describe the exercises. The $$$i$$$-th line contains three integers $$$k_i$$$, $$$d_i$$$, and $$$x_i$$$ ($$$1 \\le k_i \\le 10^9$$$, $$$1 \\le d_i \\le 100$$$, $$$0 \\le x_i \\le 10^9$$$), representing the base aura points per day, the optimal consecutive days threshold, and the penalty per additional consecutive day, respectively.",
+      "It is guaranteed that $$$\\sum_{i=1}^N d_i \\le 5000$$$."
+    ],
+    "output": [
+      "Print a single integer: the maximum amount of aura points that Celi and Itzel can accumulate over the $$$Z$$$ training days."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 4\n10 2 15\n8 1 10",
+      "output": "38"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "code": "GYM106706M",
+  "letter": "M",
+  "title": "M. Power of 3afweya",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106706/problem/M",
+  "difficulty": "*1400",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a permutation $$$P = (P_1, P_2, \\dots, P_N)$$$ of the integers from $$$1$$$ to $$$N$$$.",
+      "For a subarray $$$P[l \\dots r] = (P_l, P_{l+1}, \\dots, P_r)$$$ (where $$$1 \\le l \\le r \\le N$$$), let us define its Value as follows: $$$$$$\\text{Value}(l, r) = \\text{Sum}(l, r) - \\text{MEX}(l, r)$$$$$$",
+      "Where:",
+      "$$$\\text{Sum}(l, r) = \\sum_{k=l}^{r} P_k$$$",
+      "$$$\\text{MEX}(l, r)$$$ is the smallest positive integer ($$$1, 2, 3, \\dots$$$) that does not appear in the subarray $$$P[l \\dots r]$$$.",
+      "We call a range 3afwey if its value is as large as possible. El 3afweya is calling ..., and you have to respond. Determine the value of the 3afwey range."
+    ],
+    "input": [
+      "The first line contains a single integer $$$T$$$ ($$$1 \\le T \\le 10^4$$$) — the number of test cases.",
+      "Each testcase is structured as follows:",
+      "The first line contains an integers $$$N$$$ ($$$2 \\le N \\le 5 \\cdot 10^5$$$) — the size of the permutation.",
+      "The second line contains $$$N$$$ space-separated integers $$$P_1, P_2, \\dots, P_N$$$ ($$$1 \\le P_i \\le N$$$) — the initial permutation.",
+      "It is guaranteed that the sum of $$$N$$$ over all test cases does not exceed $$$5 \\cdot 10^5$$$"
+    ],
+    "output": [
+      "Print T integers, The $$$i$$$-th line should contain a single integer representing the maximum Value of a subarray of the $$$i$$$-th test case."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n5\n1 3 2 4 5\n5\n3 1 4 2 5",
+      "output": "13\n10"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "code": "GYM105190B",
+  "letter": "B",
+  "title": "B. Best Substring",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105190/problem/B",
+  "difficulty": "*1700",
+  "timeLimit": "2 s",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are given three integers $$$x, y, z$$$ and a string $$$S$$$ consisting of $$$n$$$ lowercase English letters.",
+      "For four integers $$$l_1$$$, $$$r_1$$$, $$$l_2$$$, $$$r_2$$$ where $$$(1  \\lt  l_1 \\le r_1  \\lt  l_2 \\le r_2  \\lt  n)$$$, let's define the function $$$F$$$ as follows:",
+      "You need to find four integers $$$l_1, r_1, l_2, r_2$$$ where $$$(1  \\lt  l_1 \\le r_1  \\lt  l_2 \\le r_2  \\lt  n)$$$ that maximize the value $$$F(l_1, r_1, l_2, r_2)$$$ and satisfy the following conditions:",
+      "The substring $$$S[l_1 ... r_1]$$$ is equal to a prefix of the string $$$S$$$.",
+      "The substring $$$S[l_2 ... r_2]$$$ is equal to a suffix of the string $$$S$$$.",
+      "Note that $$$S[l...r]$$$ is a substring of the string $$$S$$$ that starts from position $$$l$$$ and ends at position $$$r$$$, more formally $$$S[l...r] = S_{l} S_{l+1} ... S_{r-1} S_{r}$$$, and if $$$l \\gt r$$$ then $$$S[l..r]$$$ is an empty string.",
+      "If there are no integers $$$l_1, r_1, l_2, r_2$$$ satisfying the mentioned conditions, print $$$0$$$."
+    ],
+    "input": [
+      "The first line contains four integers $$$n,x,y,z$$$ $$$(4 \\le n \\le 10^6, 1 \\le x,y,z \\le 10^9)$$$ — where $$$n$$$ is the number of letters in the string $$$S$$$.",
+      "The second line contains the string $$$S$$$, consisting of $$$n$$$ lowercase English letters."
+    ],
+    "output": [
+      "Output a single integer — the maximum possible value of the function $$$F$$$, and if there are no integers $$$l_1, r_1, l_2, r_2$$$ satisfying the mentioned conditions, print 0."
+    ],
+    "note": [
+      "In the first test, the four integers are $$$l_1 = 5, r_1 = 6, l_2 = 9, r_2 = 10$$$.",
+      "$$$S[5...6] = ab$$$ which equals to a prefix of $$$S$$$.",
+      "$$$S[9...10] = yt$$$ which equals to a suffix of $$$S$$$.",
+      "$$$(6-5)*5 + (10-9)*10 + (9-6)*1 + 10 + 5 - 1 = 32$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "14 5 10 1\nabreabqqytpsyt",
+      "output": "32"
+    },
+    {
+      "input": "5 2 3 5\naaaaa",
+      "output": "10"
+    }
+  ],
+  "titleZh": [
+    "B.最佳子串"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "给你三个整数 $$$x, y, z$$$ 和一个由 $$$n$$$ 个小写英文字母组成的字符串 $$$S$$$。",
+      "对于四个整数 $$$l_1$$$,$$$r_1$$$,$$$l_2$$$,$$$r_2$$$，其中 $$$(1  \\lt  l_1 \\le r_1  \\lt  l_2 \\le r_2  \\lt  n)$$$，让我们定义函数 $$$F$$$，如下所示：",
+      "你需要在$$$(1  \\lt  l_1 \\le r_1  \\lt  l_2 \\le r_2  \\lt  n)$$$中找到四个整数$$$l_1, r_1, l_2, r_2$$$，使$$$F(l_1, r_1, l_2, r_2)$$$的值最大化，并且满足以下条件：",
+      "子字符串$$$S[l_1 ... r_1]$$$等于字符串$$$S$$$的前缀。",
+      "子字符串 $$$S[l_2 ... r_2]$$$ 等于字符串 $$$S$$$ 的后缀。",
+      "注意$$$S[l...r]$$$是字符串$$$S$$$的子串，从位置$$$l$$$开始，到位置$$$r$$$结束，更正式的说法是$$$S[l...r] = S_{l} S_{l+1} ... S_{r-1} S_{r}$$$，如果$$$l \\gt r$$$，那么$$$S[l..r]$$$是空字符串。",
+      "如果没有满足上述条件的整数 $$$l_1, r_1, l_2, r_2$$$，请打印 $$$0$$$。"
+    ],
+    "input": [
+      "第一行包含四个整数$$$n,x,y,z$$$ $$$(4 \\le n \\le 10^6, 1 \\le x,y,z \\le 10^9)$$$，其中$$$n$$$是字符串$$$S$$$中的字母数。",
+      "第二行包含字符串$$$S$$$，由$$$n$$$个小写英文字母组成。"
+    ],
+    "output": [
+      "输出一个整数 - 函数的最大可能值 $$$F$$$，如果没有满足上述条件的整数 $$$l_1, r_1, l_2, r_2$$$，则打印 0。"
+    ],
+    "note": [
+      "在第一个测试中，四个整数是$$$l_1 = 5, r_1 = 6, l_2 = 9, r_2 = 10$$$。",
+      "$$$S[5...6] = ab$$$，等同于 $$$S$$$ 的前缀。",
+      "$$$S[9...10] = yt$$$等于$$$S$$$的后缀。",
+      "$$$(6-5)*5 + (10-9)*10 + (9-6)*1 + 10 + 5 - 1 = 32$$$"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.587Z",
+  "translatedBy": [
+    "youdao",
+    "caiyun",
+    "deepl"
+  ]
+}

@@ -5,8 +5,8 @@
   "contest": null,
   "url": "https://codeforces.com/gym/106728/problem/E",
   "difficulty": "*1600",
-  "timeLimit": null,
-  "memoryLimit": null,
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
       "Barbara has a garden, represented as an $$$n \\times n$$$ grid. She has bought $$$n^2$$$ slabstones indexed from $$$1$$$ to $$$n^2$$$ and placed them in her garden, so she can enjoy stepping slabstones from one to another every day. The slabstones are arranged in row-major order, that is, the slabstone at cell $$$(i, j)$$$ is indexed $$$(i - 1) \\times n + j$$$.",
@@ -29,7 +29,8 @@
     ],
     "note": [
       "Explanation for Sample 1",
-      "Below is the illustration of one possible way to rearrange the slabstones. The blue slabstones in step 2 (and the red slabstones in step 3) are hidden for clarity. The slabstones should be shifted in some order that does not violate the restriction. For example, in step 3, you can shift slabstone $$$9$$$ one cell down then shift slabstone $$$5$$$ one cell down, but not in the opposite order."
+      "Below is the illustration of one possible way to rearrange the slabstones. The blue slabstones in step 2 (and the red slabstones in step 3) are hidden for clarity. The slabstones should be shifted in some order that does not violate the restriction. For example, in step 3, you can shift slabstone $$$9$$$ one cell down then shift slabstone $$$5$$$ one cell down, but not in the opposite order.",
+      "![](https://espresso.codeforces.com/d420279afd7ab4ba5a8ade55b9eaa645ee469a28.png)"
     ]
   },
   "examples": [
@@ -42,34 +43,39 @@
       "output": "No"
     }
   ],
-  "titleZh": "E. 优雅的石板重新排列",
+  "titleZh": [
+    "E.优雅的石板重排"
+  ],
   "sectionsZh": {
     "legend": [
-      "芭芭拉有一个花园，用 $$$n \\times n$$$ 网格表示。她买了 $$$n^2$$$ 块石板，按 $$$1$$$ 到 $$$n^2$$$ 的索引排列，并把它们放在花园里，这样她就可以每天享受从一块石板走到另一块的乐趣。这些石板按行主顺序排列，也就是说，单元格 $$$(i, j)$$$ 处的石板按 $$$(i - 1) \\times n + j$$$ 的索引排列。",
+      "芭芭拉有一个花园，用 $$$n \\times n$$$ 网格表示。她买了索引从 $$$1$$$ 到 $$$n^2$$$ 的 $$$n^2$$$ 块石板放在花园里，这样她就可以每天享受从一块石板踩到另一块石板的乐趣了。这些石板是按行-主顺序排列的，也就是说，位于 $$$(i, j)$$$ 单元的石板的索引为 $$$(i - 1) \\times n + j$$$。",
       "芭芭拉想要重新设计她的花园，所以她邀请了著名室内设计师芭芭拉。经过仔细考虑，芭芭拉建议将单元格 $$$(i, j)$$$ 中的石板索引为 $$$a_{ij}$$$。他们将使用以下 “优雅” 的过程来重新排列石板：",
-      "将每块石板涂成红色或蓝色。",
+      "给每块石板涂上红色或蓝色。",
       "移动每行中的红色石板 (这样它们只能向左或向右移动)。",
-      "移动每根柱子内的蓝色石板 (这样它们只能上下移动)。",
-      "然而，这里有一个重要的限制：任何两块颜色相同的板岩在板岩重新排列过程中都应保持不重叠。请注意，红色板岩和蓝色板岩可能会暂时重叠 (但为了获得理想的花园，它们最终不应该重叠)。",
+      "移动每一列中的蓝色石板（所以它们只能向上或向下移动）。",
+      "不过，有一个重要的限制：在重新排列石板的过程中，任何两块相同颜色的石板都不能重叠。需要注意的是，红色石板和蓝色石板可以暂时重叠（但为了达到理想的花园效果，它们最终不应重叠）。",
       "现在芭芭拉想知道他们是否可以按照需要重新安排石板。"
     ],
     "input": [
-      "第一行包含一个整数 $$$n$$$，表示花园的大小。",
+      "第一行包含一个整数 $$$n$$$，代表花园的大小。",
       "接着是 $$$n$$$ 行，其中第 $$$i$$$ 行包含 $$$n$$$ 整数，第 $$$j$$$ 行整数 $$$a_{ij}$$$ 表示所需花园中单元格 $$$(i, j)$$$ 处石板的索引。",
       "$$$1 \\leq n \\leq 100$$$",
       "$$$1 \\leq a_{ij} \\leq n^2$$$",
-      "所有 $$$a_{ij}$$$ 都是不同的。"
+      "所有$$$a_{ij}$$$都是不同的。"
     ],
     "output": [
-      "如果石板可以按需要重新排列，则输出 “是”;否则输出 “否”。"
+      "如果石板可以按需要重新排列，输出Yes；否则输出"
     ],
     "note": [
-      "示例 1 的解释",
-      "以下是一种可能的板石重新排列方式的示例。为了清晰起见，第 2 步中的蓝色板石 (以及第 3 步中的红色板石) 被隐藏。板石应该以某种不违反限制的顺序移动。例如，在第 3 步中，你可以将板石 $$$9$$$ 向下移动一个单元格，然后再将板石 $$$5$$$ 向下移动一个单元格，但不能以相反的顺序。"
+      "样本 1 的说明",
+      "下面是重新排列石板的一种可能方法。为清晰起见，隐藏了步骤 2 中的蓝色石板(以及步骤 3 中的红色石板）。应该在不违反限制条件的情况下按照一定的顺序移动石板。例如，在第 3 步中，可以将板石 $$$9$$$ 向下移动一格，然后将板石 $$$5$$$ 向下移动一格，但不能以相反的顺序移动。",
+      "![](https://espresso.codeforces.com/d420279afd7ab4ba5a8ade55b9eaa645ee469a28.png)"
     ]
   },
-  "translatedAt": "2026-10-02T17:20:59.489Z",
+  "translatedAt": "2026-10-02T20:43:46.610Z",
   "translatedBy": [
+    "youdao",
+    "deepl",
     "caiyun"
   ]
 }

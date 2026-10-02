@@ -1,0 +1,90 @@
+{
+  "code": "GYM106667F",
+  "letter": "F",
+  "title": "F. Escaping the Sun",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106667/problem/F",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "During his vacation in Aracaju, Samuell decided to spend the morning swimming at Atalaia Beach, one of the city's postcards, famous for its beautiful and long stretch of sand.",
+      "When it was time to leave, a problem came up: with the sun high in the sky, he must cross the entire beach, from the sea to the boardwalk, and request an Uber. To avoid getting sunburned, Samuell plans to use the shadows of the beach umbrellas spread across the sand and choose a route that minimizes the distance walked under the sun.",
+      "Formally, the beach can be represented by the strip between two parallel lines: one is the line where the sea meets the sand ($$$y = 0$$$), and the other is the boardwalk ($$$y = H$$$), at distance $$$H$$$ from the first one. There are $$$N$$$ beach umbrellas; the $$$i$$$-th one casts a circular shadow with center $$$(x_i, y_i)$$$ and radius $$$r_i$$$.",
+      "Assume Samuell can swim freely underwater without being exposed to the sun, and can leave the water at any point on the sea line. Once on the sand, he can:",
+      "walk under the shadow of a beach umbrella, including moving directly to another one when their shadows touch or overlap;",
+      "leave the sand at any point on the boardwalk.",
+      "Help Samuell determine the minimum distance he must walk under the sun to reach the boardwalk."
+    ],
+    "input": [
+      "The first line contains two integers $$$N$$$ and $$$H$$$ ($$$0 \\leq N \\leq 1000$$$, $$$1 \\leq H \\leq 10^{5}$$$), respectively the number of beach umbrellas and the distance between the sea line and the boardwalk.",
+      "Each of the next $$$N$$$ lines contains three integers $$$x_i$$$, $$$y_i$$$, and $$$r_i$$$ ($$$0 \\leq x_i \\leq 10^5$$$, $$$0 \\leq y_i \\leq H$$$, $$$1 \\leq r_i \\leq 10^{5}$$$), the center and radius of the $$$i$$$-th beach umbrella. A beach umbrella's shadow may extend beyond the sea line or the boardwalk."
+    ],
+    "output": [
+      "Print a single real number: the minimum distance under the sun that Samuell must walk to cross the sand, from the sea to the boardwalk.",
+      "Your answer will be considered correct if its absolute or relative error with respect to the expected answer is at most $$$10^{-6}$$$."
+    ],
+    "note": [
+      "Explanation for example 1",
+      "![](https://espresso.codeforces.com/972c302b3b38763e22e730a007c1d277ede8e189.png)",
+      "In the first example, Samuell can take a route where he walks $$$3\\sqrt{5} - 4$$$ under the sun.",
+      "Explanation for example 2",
+      "![](https://espresso.codeforces.com/746ae0cf78382eb085d87ae22650d7434f096e73.png)",
+      "In the second example, Samuell walks one unit under the sun to reach the first shadow. The two shadows touch, allowing him to move from one to the other without being exposed. Then he walks one more unit to the boardwalk. Therefore, the total distance under the sun is $$$1 + 1 = 2$$$.",
+      "Explanation for example 3",
+      "![](https://espresso.codeforces.com/3cc299a3fce32b4cbef76be28478e69a649bd11c.png)",
+      "In the third example, the only shadow has radius $$$5$$$ and center $$$(3, 3)$$$. Since it reaches both the sea line and the boardwalk, Samuell can cross the whole beach while staying in the shadow. Therefore, the distance walked under the sun is $$$0$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 10\n2 2 2\n5 8 2",
+      "output": "2.7082039325"
+    },
+    {
+      "input": "2 10\n5 3 2\n5 7 2",
+      "output": "2.0000000000"
+    },
+    {
+      "input": "1 6\n3 3 5",
+      "output": "0.0000000000"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      "当离开的时候，一个问题出现了：太阳高高挂在天空中，他必须穿过整个海滩，从大海到木板路，并要求一辆优步。为了避免被晒伤，塞缪尔计划利用沙滩伞的阴影散布在沙滩上，并选择一条最短的路线，在阳光下行走的距离。",
+      "形式上，海滩可以用两条平行线之间的条带来表示：一条是海水与沙子相遇的线($$$y = 0$$$），另一条是木板路($$$y = H$$$），与第一条线的距离为$$$H$$$。有$$$N$$$个沙滩伞，第$$$i$$$个沙滩伞投射出圆心为$$$(x_i, y_i)$$$、半径为$$$r_i$$$的圆形阴影。",
+      null,
+      "在海滩遮阳伞的阴影下行走，包括当他们的影子相触或重叠时直接移动到另一把遮阳伞下;",
+      "在木板路上的任何位置离开沙子。",
+      "帮助塞缪尔确定他在阳光下必须走到木板路的最小距离。"
+    ],
+    "input": [
+      "第一行包含两个整数 $$$N$$$ 和 $$$H$$$($$$0 \\leq N \\leq 1000$$$,$$$1 \\leq H \\leq 10^{5}$$$)，分别是海滩遮阳伞的数量和海岸线与木板步道之间的距离。",
+      "接下来的每一行$$$N$$$包含三个整数$$$x_i$$$， $$$y_i$$$和$$$r_i$$$ ($$$0 \\leq x_i \\leq 10^5$$$, $$$0 \\leq y_i \\leq H$$$, $$$1 \\leq r_i \\leq 10^{5}$$$)，即第$$$i$$$伞的中心和半径。沙滩伞的阴影可能会延伸到海岸线或木板路之外。"
+    ],
+    "output": [
+      "打印一个实数：太阳下塞缪尔穿过沙滩必须走的最小距离，从大海到木板路。",
+      "如果你的答案与预期答案的绝对或相对误差至多为 $$$10^{-6}$$$，则将被认为是正确的。"
+    ],
+    "note": [
+      "示例1的解释",
+      "![](https://espresso.codeforces.com/972c302b3b38763e22e730a007c1d277ede8e189.png)",
+      "在第一个例子中，Samuell可以选择他在阳光下行走的路线$$$3\\sqrt{5} - 4$$$。",
+      "示例2的解释",
+      null,
+      "在第二个例子中，Samuel 在阳光下走了一个单位到达第一个阴影。两个阴影相接，使他能够从一个阴影移动到另一个阴影而不被发现。然后他又走了一个单位到达木板路。因此，阳光下的总距离为 $$$1 + 1 = 2$$$。",
+      "示例 3 的解释",
+      null,
+      "在第三个例子中，唯一的阴影半径为 $$$5$$$，中心为 $$$(3, 3)$$$。由于它同时到达海岸线和木板路，塞缪尔可以在阴影中穿越整个海滩。因此，在阳光下行走的距离为 $$$0$$$。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.605Z",
+  "translatedBy": [
+    "youdao",
+    "iflyrec",
+    "caiyun"
+  ]
+}

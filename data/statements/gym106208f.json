@@ -1,0 +1,58 @@
+{
+  "code": "GYM106208F",
+  "letter": "F",
+  "title": "F. Time Well Spent",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106208/problem/F",
+  "difficulty": "*1700",
+  "timeLimit": "3 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alice and Bob have been close ever since high school. Now they both study at Martian University (MU), but in different departments located far apart. Their schedules are packed, and their classes take place in buildings scattered across the campus. Even though they want to spend time together, they can only meet during the short breaks between their classes.",
+      "The campus has $$$N$$$ buildings connected by $$$M$$$ undirected roads. Each road requires a certain amount of time to walk. Both Alice and Bob have several classes throughout the day, each class occurs at a specific building and lasts between a given start and end time. Class intervals do not overlap for each student. Since days on Mars do not follow Earth's fixed length, MU measures time on its own continuous scale, and a single day may be arbitrarily long. As a result, class start and end times can be large values.",
+      "Between two consecutive classes of their own, a student may roam the campus freely, traveling along any roads and visiting any buildings, as long as they arrive at their next class on time. Alice and Bob can meet only if they are in the same building at the same moment, during free periods for both. They are dedicated to their studies and will not be late to any class. They also work part time before and after their class schedules, so they will only meet between classes, never before the first class or after the last one.",
+      "Alice and Bob may choose different buildings to meet during different free intervals. Your task is to determine the maximum total time they can spend together during the day."
+    ],
+    "input": [
+      "The first line contains one integer $$$t$$$ $$$(1 \\le t \\le 10)$$$, the number of test cases.",
+      "Each test case begins with a line containing two integers $$$N$$$ and $$$M$$$ $$$(1 \\le N \\le 200,\\ 1 \\le M \\le \\frac{N(N-1)}{2})$$$, where $$$N$$$ is the number of buildings and $$$M$$$ is the number of roads. Each of the next $$$M$$$ lines contains three integers $$$u, v, w$$$ $$$(1 \\le u, v \\le N,\\ 1 \\le w \\le 10^5)$$$, describing a bidirectional road between buildings $$$u$$$ and $$$v$$$ with travel time $$$w$$$ minutes.",
+      "Then a line follows containing two integers $$$A$$$ and $$$B$$$, the number of classes Alice and Bob have, respectively. The next $$$A$$$ lines describe Alice's classes; each line contains three integers $$$start, end, loc$$$ $$$(1 \\le start  \\lt  end \\le 10^{15},\\ 1 \\le loc \\le N)$$$. After that, the next $$$B$$$ lines describe Bob's classes in the same format.",
+      "The sum of $$$A + B$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print a single integer — the maximum total time Alice and Bob can spend together."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n4 5\n1 2 3\n1 3 4\n2 3 2\n3 4 1\n2 4 1\n2 2\n1 10 1\n20 30 2\n1 10 1\n20 30 3",
+      "output": "6"
+    }
+  ],
+  "titleZh": [
+    "F.合理利用时间"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "爱丽丝和鲍勃从高中起就很亲密。现在他们都在火星大学 (MU) 学习，但分别在相距甚远的不同系。他们的课程安排很满，课堂分布在校园各处的建筑里。尽管他们想要一起度过时光，但他们只能在课间短暂的休息时间见面。",
+      "校园内有$$$N$$$栋建筑，由$$$M$$$条不定向道路连接。每条路都需要一定的时间行走。Alice和Bob每天都有几节课，每节课都在特定的建筑物内进行，并在给定的开始和结束时间之间持续。每个学生的上课间隔不重叠。由于火星上的天数并不遵循地球的固定长度，因此MU在其自身的连续尺度上测量时间，一天可以任意长。因此，课程开始时间和结束时间可以是很大的值。",
+      "在连续两节自己的课之间，学生可以在校园里自由漫游，沿着任何道路旅行，参观任何建筑物，只要他们准时到达下一堂课。爱丽丝和鲍勃只有在同一时刻，在同一栋楼里，在两人的自由活动时间内，才能见面。他们专心学习，不会在任何一堂课上迟到。他们还在课前和课后做兼职，所以他们只会在课间见面，绝不会在第一节课前或最后一节课后见面。",
+      "爱丽丝和鲍勃可以在不同的空闲时间选择不同的建筑见面。你的任务是确定一天中他们在一起的最长时间。"
+    ],
+    "input": [
+      "第一行包含一个整数$$$t$$$ $$$(1 \\le t \\le 10)$$$，测试用例的数量。",
+      "每个测试用例以包含两个整数$$$N$$$和$$$M$$$$$$(1 \\le N \\le 200,\\ 1 \\le M \\le \\frac{N(N-1)}{2})$$$的行开始，其中$$$N$$$是建筑物的数量，$$$M$$$是道路的数量。接下来的$$$M$$$行中的每一行包含三个整数$$$u, v, w$$$$$$(1 \\le u, v \\le N,\\ 1 \\le w \\le 10^5)$$$，描述了建筑物$$$u$$$和$$$v$$$之间的双向道路，行驶时间为$$$w$$$分钟。",
+      "接下来的一行包含两个整数 $$$A$$$ 和 $$$B$$$，分别是爱丽丝和鲍勃的班级数。接下来 $$$A$$$ 行描述爱丽丝的类，每行包含三个整数 $$$start, end, loc$$$ $$$(1 \\le start  \\lt  end \\le 10^{15},\\ 1 \\le loc \\le N)$$$。然后，接下来的 $$$B$$$ 行以同样的格式描述鲍勃的类。",
+      "所有测试用例的 $$$A + B$$$ 之和不超过 $$$2 \\cdot 10^5$$$。"
+    ],
+    "output": []
+  },
+  "translatedAt": "2026-10-02T20:43:46.592Z",
+  "translatedBy": [
+    "caiyun",
+    "youdao",
+    "iflyrec",
+    "deepl"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "code": "GYM105223G",
+  "letter": "G",
+  "title": "G. Subsubsequence",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105223/problem/G",
+  "difficulty": "*1800",
+  "timeLimit": "2.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "For an array $$$a$$$, let's define the function $$$f(a)$$$ as the sum of the bitwise XOR sum of each non-empty subsequence$$$^\\dagger$$$ of it.",
+      "For example, if $$$a$$$ = $$$[5 , 2 , 4]$$$, then $$$f(a) = (5 \\oplus 2 \\oplus 4) + (5 \\oplus 2) + (5 \\oplus 4) + (2 \\oplus 4) + 5 + 2 + 4$$$.",
+      "Let's define an array of arrays $$$A$$$, which contains all non-empty subsequences$$$^\\dagger$$$ of the array $$$a$$$.",
+      "You are given an array of $$$a$$$ of length $$$n$$$. You have to process the following $$$q$$$ updates:",
+      "given and index $$$i$$$ and a value $$$x$$$, set $$$a_i := x$$$;",
+      "print the value of $$$\\displaystyle\\sum_{s \\in A} f(s)$$$.",
+      "Since this value could be too large, find it modulo $$$10^9 + 7$$$.",
+      "Here $$$\\oplus$$$ denotes the bitwise XOR operation.",
+      "$$$\\dagger$$$ A sequence $$$a$$$ is a subsequence of a sequence $$$b$$$ if $$$a$$$ can be obtained from $$$b$$$ by deletion of several (possibly, zero) elements. For example, $$$[3,1]$$$ is a subsequence of $$$[3,2,1]$$$ and $$$[4,3,1]$$$, but not a subsequence of $$$[1,3,3,7]$$$ and $$$[3,10,4]$$$."
+    ],
+    "input": [
+      "The first line contains one integer $$$n$$$ $$$(1 \\le n \\le 10^6)$$$ — the length of the array $$$a$$$.",
+      "The second line contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ $$$(1 \\le a_i \\le 10^9)$$$ — the elements of the array $$$a$$$.",
+      "The third line contains one integer $$$q$$$ $$$(1 \\le q \\le 10^6)$$$ — the number of update operations.",
+      "Each of the next $$$q$$$ lines contains two integers $$$i$$$ and $$$x$$$ $$$(1 \\le i \\le n, 1 \\le x \\le 10^9)$$$ — denoting the updated index and value."
+    ],
+    "output": [
+      "After each update, output a single integer — the sum $$$\\displaystyle\\sum_{s \\in A} f(s)$$$, modulo $$$10^9 + 7$$$."
+    ],
+    "note": [
+      "For the first update, $$$A = [[2],[2],[3],[2,2],[2,3],[2,3],[2,2,3]]$$$, then:",
+      "$$$f([2]) + f([2]) + f([3]) + f([2,2]) + f([2,3]) + f([2,3]) + f([2,2,3]) = 2 + 2 + 3 + 4 + 6 + 6 + 12 = 35$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 2 3\n3\n1 2\n2 5\n2 7",
+      "output": "35\n72\n74"
+    }
+  ],
+  "titleZh": [
+    "G. 子子序列"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "对于数组 $$$a$$$，我们把函数 $$$f(a)$$$ 定义为它的每个非空子序列$$$^\\dagger$$$的比特 XOR 和。",
+      "例如，如果$$$a$$$ = $$$[5 , 2 , 4]$$$，则$$$f(a) = (5 \\oplus 2 \\oplus 4) + (5 \\oplus 2) + (5 \\oplus 4) + (2 \\oplus 4) + 5 + 2 + 4$$$。",
+      "让我们定义一个数组$$$A$$$，它包含数组$$$a$$$的所有非空子序列$$$^\\dagger$$$。",
+      "你获得了一个长度为 $$$n$$$ 的 $$$a$$$ 数组。你必须处理以下 $$$q$$$ 更新：",
+      "给定和索引 $$$i$$$ 和值 $$$x$$$，设置 $$$a_i := x$$$;",
+      "打印$$$\\displaystyle\\sum_{s \\in A} f(s)$$$的值。",
+      "由于该值可能过大，因此应将其取模为 $$$10^9 + 7$$$。",
+      "这里 $$$\\oplus$$$ 表示按位异或操作。",
+      "$$$\\dagger$$$如果序列$$$a$$$是序列$$$b$$$的子序列，则通过删除$$$b$$$中的几个元素(可能为零）得到$$$a$$$。例如，$$$[3,1]$$$是$$$[3,2,1]$$$和$$$[4,3,1]$$$的子序列，但不是$$$[1,3,3,7]$$$和$$$[3,10,4]$$$的子序列。"
+    ],
+    "input": [
+      "第一行包含一个整数 $$$n$$$ $$$(1 \\le n \\le 10^6)$$$ - 数组的长度 $$$a$$$。",
+      "第二行包含 $$$n$$$ 整数 $$$a_1, a_2, \\ldots, a_n$$$$$$(1 \\le a_i \\le 10^9)$$$——数组 $$$a$$$ 的元素。",
+      "第三行包含一个整数$$$q$$$ $$$(1 \\le q \\le 10^6)$$$ -更新操作的数量。",
+      "接下来的每一行 $$$q$$$ 都包含两个整数 $$$i$$$ 和 $$$x$$$ $$$(1 \\le i \\le n, 1 \\le x \\le 10^9)$$$ - 表示更新的索引和值。"
+    ],
+    "output": [
+      "每次更新后，输出一个整数——求和 $$$\\displaystyle\\sum_{s \\in A} f(s)$$$，模 $$$10^9 + 7$$$。"
+    ],
+    "note": [
+      "对于第一次更新，$$$A = [[2],[2],[3],[2,2],[2,3],[2,3],[2,2,3]]$$$，然后:",
+      "$$$f([2]) + f([2]) + f([3]) + f([2,2]) + f([2,3]) + f([2,3]) + f([2,2,3]) = 2 + 2 + 3 + 4 + 6 + 6 + 12 = 35$$$."
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.589Z",
+  "translatedBy": [
+    "deepl",
+    "caiyun",
+    "youdao",
+    "iflyrec"
+  ]
+}

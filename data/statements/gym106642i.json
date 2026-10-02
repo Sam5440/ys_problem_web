@@ -1,0 +1,69 @@
+{
+  "code": "GYM106642I",
+  "letter": "I",
+  "title": "I. Closer or Equal",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106642/problem/I",
+  "difficulty": "*2000",
+  "timeLimit": "4 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a tree with $$$n$$$ vertices. The score of every vertex is initially $$$0$$$.",
+      "You have to process $$$q$$$ queries. Each query contains five integers $$$u$$$, $$$v$$$, $$$x$$$, $$$y$$$, and $$$z$$$. For every vertex $$$r$$$:",
+      "add $$$x$$$ to its score if $$$\\operatorname{dist}(r,u)  \\lt  \\operatorname{dist}(r,v)$$$;",
+      "add $$$y$$$ to its score if $$$\\operatorname{dist}(r,u)  \\gt  \\operatorname{dist}(r,v)$$$;",
+      "add $$$z$$$ to its score if $$$\\operatorname{dist}(r,u) = \\operatorname{dist}(r,v)$$$.",
+      "Here, $$$\\operatorname{dist}(a,b)$$$ is the number of edges on the simple path between vertices $$$a$$$ and $$$b$$$.",
+      "After every query, print the minimum score among all vertices and the number of vertices having this score."
+    ],
+    "input": [
+      "The first line contains two integers $$$n$$$ and $$$q$$$ ($$$1 \\le n,q \\le 2\\cdot 10^5$$$) — the number of vertices and the number of queries.",
+      "Each of the next $$$n-1$$$ lines contains two integers $$$a$$$ and $$$b$$$ ($$$1 \\le a,b \\le n$$$, $$$a \\ne b$$$), denoting an edge between vertices $$$a$$$ and $$$b$$$. The given edges form a tree.",
+      "Each of the next $$$q$$$ lines contains five integers $$$u$$$, $$$v$$$, $$$x$$$, $$$y$$$, and $$$z$$$ ($$$1 \\le u,v \\le n$$$, $$$0 \\le x,y,z \\le 10^9$$$), describing a query."
+    ],
+    "output": [
+      "After every query, print two integers: the minimum score among all vertices and the number of vertices having this score."
+    ],
+    "note": [
+      "After the first query, the scores of vertices $$$1,2,3,4$$$ are $$$1,4,4,1$$$, respectively. Thus, the minimum score is $$$1$$$, and two vertices have it.",
+      "In the last query, $$$u=v=3$$$, so every vertex is equally far from $$$u$$$ and $$$v$$$. Therefore, $$$z=2$$$ is added to every score."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n1 2\n1 3\n1 4\n2 3 4 4 1\n2 4 0 5 2\n1 2 3 0 7\n3 3 10 20 2",
+      "output": "1 2\n3 1\n4 1\n6 1"
+    }
+  ],
+  "titleZh": [
+    "1 .更接近或相等"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "给定一棵顶点为 $$$n$$$ 的树，每个顶点的得分最初为 $$$0$$$。",
+      "您必须处理$$$q$$$个查询。每个查询包含5个整数$$$u$$$、$$$v$$$、$$$x$$$、$$$y$$$和$$$z$$$。对于每个顶点$$$r$$$：",
+      "如果是 $$$\\operatorname{dist}(r,u)  \\lt  \\operatorname{dist}(r,v)$$$，则将 $$$x$$$ 添加到其评分中;",
+      "如果$$$\\operatorname{dist}(r,u)  \\gt  \\operatorname{dist}(r,v)$$$，则将$$$y$$$添加到其分数",
+      "如果是 $$$\\operatorname{dist}(r,u) = \\operatorname{dist}(r,v)$$$，则将 $$$z$$$ 添加到其评分中。",
+      "其中$$$\\operatorname{dist}(a,b)$$$为顶点$$$a$$$与$$$b$$$之间的简单路径上的边数。",
+      "每次查询后，打印所有顶点的最小得分以及具有该得分的顶点数。"
+    ],
+    "input": [
+      "第一行包含两个整数$$$n$$$和$$$q$$$ ($$$1 \\le n,q \\le 2\\cdot 10^5$$$）——顶点的数量和查询的数量。",
+      "接下来的每一行 $$$n-1$$$ 都包含两个整数 $$$a$$$ 和 $$$b$$$($$$1 \\le a,b \\le n$$$,$$$a \\ne b$$$)，表示顶点 $$$a$$$ 和 $$$b$$$ 之间的边。给定的边形成一棵树。",
+      "接下来的每一行$$$q$$$包含五个整数$$$u$$$， $$$v$$$, $$$x$$$， $$$y$$$和$$$z$$$ ($$$1 \\le u,v \\le n$$$, $$$0 \\le x,y,z \\le 10^9$$$)，描述一个查询。"
+    ],
+    "output": [],
+    "note": [
+      null,
+      "在最后一个查询中，$$$u=v=3$$$，因此每个顶点距离 $$$u$$$ 和 $$$v$$$ 的距离相等。因此，$$$z=2$$$ 被添加到每个评分中。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.602Z",
+  "translatedBy": [
+    "caiyun",
+    "youdao",
+    "iflyrec"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "code": "GYM106631G",
+  "letter": "G",
+  "title": "G. Sandfall",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106631/problem/G",
+  "difficulty": "*2200",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a zero-indexed array $$$a_0, a_1, \\ldots, a_{n-1}$$$ of $$$n$$$ integers, each initially equal to $$$0$$$. You have to perform $$$q$$$ update operations on it. Each operation is described by four integers $$$l$$$, $$$r$$$, $$$x$$$, and $$$v$$$, and is performed as follows: for every $$$i$$$ with $$$l \\le i \\le r$$$, add $$$v$$$ to $$$a_{x \\,\\&\\, i}$$$, where $$$\\&$$$ denotes the bitwise AND operation.",
+      "Print the array $$$a$$$ after all $$$q$$$ operations are performed."
+    ],
+    "input": [
+      "The first line contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "The first line of each test case contains two integers $$$n$$$ and $$$q$$$ ($$$1 \\le n, q \\le 10^6$$$) — the size of the array and the number of operations.",
+      "Each of the next $$$q$$$ lines contains four integers $$$l$$$, $$$r$$$, $$$x$$$, and $$$v$$$ ($$$0 \\le l \\le r \\le n - 1;$$$ $$$0 \\le x \\le n - 1;$$$ $$$1 \\le v \\le 10^6$$$) — the parameters of one operation.",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$10^6$$$ and the sum of $$$q$$$ over all test cases does not exceed $$$10^6$$$."
+    ],
+    "output": [
+      "For each test case, print $$$n$$$ integers $$$a_0, a_1, \\ldots, a_{n-1}$$$ — the final array."
+    ],
+    "note": [
+      "In the first test case, the array is initially $$$[0, 0, 0, 0]$$$.",
+      "The first operation has $$$l = 1$$$, $$$r = 3$$$, $$$x = 2$$$, $$$v = 5$$$. For $$$i = 1$$$: $$$2 \\,\\&\\, 1 = 0$$$, so $$$5$$$ is added to $$$a_0$$$. For $$$i = 2$$$: $$$2 \\,\\&\\, 2 = 2$$$, so $$$5$$$ is added to $$$a_2$$$. For $$$i = 3$$$: $$$2 \\,\\&\\, 3 = 2$$$, so $$$5$$$ is added to $$$a_2$$$ again. Note that $$$a_2$$$ receives $$$v = 5$$$ twice during this single operation, once for $$$i = 2$$$ and once for $$$i = 3$$$. The array becomes $$$[5, 0, 10, 0]$$$.",
+      "The second operation has $$$l = 0$$$, $$$r = 2$$$, $$$x = 3$$$, $$$v = 1$$$. Here $$$3 \\,\\&\\, 0 = 0$$$, $$$3 \\,\\&\\, 1 = 1$$$, and $$$3 \\,\\&\\, 2 = 2$$$, so $$$1$$$ is added to each of $$$a_0$$$, $$$a_1$$$, and $$$a_2$$$. The final array is $$$[6, 1, 11, 0]$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4 2\n1 3 2 5\n0 2 3 1\n2 1\n0 1 1 1000000\n5 3\n0 4 3 10\n2 3 1 6\n4 4 2 8",
+      "output": "6 1 11 0\n1000000 1000000\n34 16 10 10 0"
+    }
+  ],
+  "titleZh": [
+    "g . Sandfall"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "给定一个由$$$n$$$个整数组成的零索引数组$$$a_0, a_1, \\ldots, a_{n-1}$$$，每个整数最初都等于$$$0$$$。你必须对它执行$$$q$$$更新操作。每个操作用四个整数$$$l$$$， $$$r$$$, $$$x$$$， $$$v$$$来描述，执行方法如下：对于每一个$$$i$$$和$$$l \\le i \\le r$$$，将$$$v$$$加到$$$a_{x \\,\\&\\, i}$$$上，其中$$$\\&$$$表示位与运算。",
+      "在执行所有 $$$q$$$ 操作后打印数组 $$$a$$$。"
+    ],
+    "input": [
+      "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+      "每个测试用例的第一行包含两个整数$$$n$$$和$$$q$$$ ($$$1 \\le n, q \\le 10^6$$$）——数组的大小和操作的数量。",
+      "接下来的 $$$q$$$ 行中的每一行都包含四个整数 $$$l$$$、$$$r$$$、$$$x$$$ 和 $$$v$$$($$$0 \\le l \\le r \\le n - 1;$$$$$$0 \\le x \\le n - 1;$$$$$$1 \\le v \\le 10^6$$$)——即一次运算的参数。",
+      "保证所有测试用例的 $$$n$$$ 和不超过 $$$10^6$$$，所有测试用例的 $$$q$$$ 和不超过 $$$10^6$$$。"
+    ],
+    "output": [
+      "对于每个测试用例，打印$$$n$$$个整数$$$a_0, a_1, \\ldots, a_{n-1}$$$ -最终数组。"
+    ],
+    "note": [
+      "在第一个测试用例中，数组最初为 $$$[0, 0, 0, 0]$$$。",
+      "第一个操作包含 $$$l = 1$$$、$$$r = 3$$$、$$$x = 2$$$、$$$v = 5$$$。对于 $$$i = 1$$$:$$$2 \\,\\&\\, 1 = 0$$$，因此 $$$5$$$ 被添加到 $$$a_0$$$ 中。对于 $$$i = 2$$$:$$$2 \\,\\&\\, 2 = 2$$$，因此 $$$5$$$ 被添加到 $$$a_2$$$ 中。对于 $$$i = 3$$$:$$$2 \\,\\&\\, 3 = 2$$$，因此 $$$5$$$ 再次被添加到 $$$a_2$$$ 中。请注意，在这个单一操作中，$$$a_2$$$ 两次接收到 $$$v = 5$$$，一次是对于 $$$i = 2$$$，一次是对于 $$$i = 3$$$。数组变成了 $$$[5, 0, 10, 0]$$$。",
+      "第二个操作有$$$l = 0$$$， $$$r = 2$$$, $$$x = 3$$$, $$$v = 1$$$。这里是$$$3 \\,\\&\\, 0 = 0$$$， $$$3 \\,\\&\\, 1 = 1$$$，和$$$3 \\,\\&\\, 2 = 2$$$，所以$$$1$$$分别加在$$$a_0$$$， $$$a_1$$$和$$$a_2$$$上。最后一个数组是$$$[6, 1, 11, 0]$$$。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.598Z",
+  "translatedBy": [
+    "youdao",
+    "caiyun"
+  ]
+}

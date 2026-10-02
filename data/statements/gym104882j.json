@@ -1,0 +1,70 @@
+{
+  "code": "GYM104882J",
+  "letter": "J",
+  "title": "J. Just a map editor",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104882/problem/J",
+  "difficulty": "*2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Maxim is a big fan of various games. This time, he is playing a game called \"Heroes of Might and Magic III\".",
+      "Each scenario in the game is played on a specific map, which is a rectangle consisting of $$$n \\times m$$$ cells. Each cell has its own type of terrain, such as \"grass\", \"swamp\", \"sand\", etc. Visually, some cells with the same type of terrain form connected components$$$^{\\ast}$$$. There can be many such components, but Maxim prefers scenarios where the map has no more than two types of terrain and the total number of connected components is exactly $$$k$$$.",
+      "You, as the most experienced map maker, have promised to come up with a map that Maxim will like. Will you be able to keep this promise?",
+      "Connected component$$$^{\\ast}$$$ – is a connected area of the table consisting of the same symbol, and for any pair of cells $$$(x_{1}, y_{1})$$$, $$$(x_{2}, y_{2})$$$ belonging to this area, there exists a path from $$$(x_{1}, y_{1})$$$ to $$$(x_{2}, y_{2})$$$$$$^{\\ast}$$$, consisting only of cells from this connected area.",
+      "Path in the table from $$$(x_{1}, y_{1})$$$ to $$$(x_{2}, y_{2})$$$$$$^{\\ast}$$$ – is a sequence of cells that starts at $$$(x_{1}, y_{1})$$$, ends at $$$(x_{2}, y_{2})$$$ and any two adjacent cells in this sequence are neighbors by side."
+    ],
+    "input": [
+      "A single line contains three integers $$$n$$$, $$$m$$$, $$$k$$$ ($$$1 \\le n, m \\le 1000$$$, $$$1 \\le k \\le n \\cdot m$$$)."
+    ],
+    "output": [
+      "If such a map can be created, then in the first line print \"YES\" without quotes and then print the map itself from a new line. It should consist of the symbols '0' and '1' and have exactly $$$k$$$ connected components.",
+      "If it is impossible to build such a map, then print \"NO\" without quotes."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 5 5",
+      "output": "YES\n00001\n11111\n00000\n01001\n11101"
+    },
+    {
+      "input": "3 3 6",
+      "output": "YES\n010\n001\n010"
+    },
+    {
+      "input": "5 4 19",
+      "output": "NO"
+    },
+    {
+      "input": "4 4 11",
+      "output": "YES\n1010\n0010\n0101\n1010"
+    }
+  ],
+  "titleZh": [
+    "只是一个地图编辑器"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "马克西姆是各种游戏的忠实粉丝。这次，他玩的是一款名为 \"英雄无敌 III \"的游戏。",
+      "游戏中的每个场景都在一个特定的地图上进行，这是一个由 $$$n \\times m$$$ 单元组成的矩形。每个单元都有自己的地形类型，如 “草地”、“沼泽”、“沙子” 等。从视觉上看，一些具有相同地形类型的单元形成了连通分量 $$$^{\\ast}$$$。这种连通分量可能有很多，但 Maxim 更喜欢地图不超过两种地形类型且连通分量总数恰好是 $$$k$$$ 的场景。",
+      "你，作为最有经验的地图绘制师，已经承诺要做出一张马克西姆会喜欢的地图。你能信守诺言吗？",
+      "连接组件$$$^{\\ast}$$$ - 是表格中由相同符号组成的连接区域，对于属于该区域的任何一对单元格 $$$(x_{1}, y_{1})$$$、$$$(x_{2}, y_{2})$$$，存在一条从 $$$(x_{1}, y_{1})$$$ 到 $$$(x_{2}, y_{2})$$$$$$^{\\ast}$$$ 的路径，该路径只由来自该连接区域的单元格组成。",
+      "表中从$$$(x_{1}, y_{1})$$$到$$$(x_{2}, y_{2})$$$$$$^{\\ast}$$$的路径–是从$$$(x_{1}, y_{1})$$$开始，到$$$(x_{2}, y_{2})$$$结束的单元格序列，并且该序列中的任何两个相邻单元格都是相邻的。"
+    ],
+    "input": [
+      "一行包含三个整数 $$$n$$$、$$$m$$$、$$$k$$$($$$1 \\le n, m \\le 1000$$$、$$$1 \\le k \\le n \\cdot m$$$)。"
+    ],
+    "output": [
+      "如果可以创建这样的映射，则在第一行中打印不带引号的“ Yes ”，然后从新行打印映射本身。它应由符号“ 0 ”和“ 1 ”组成，并且恰好具有$$$k$$$个连通分量。",
+      "如果不可能绘制这样的地图，则打印 \"否\"，不加引号。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.584Z",
+  "translatedBy": [
+    "youdao",
+    "deepl",
+    "caiyun",
+    "iflyrec"
+  ]
+}

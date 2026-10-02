@@ -1,0 +1,83 @@
+{
+  "code": "GYM104745P",
+  "letter": "P",
+  "title": "P. Ski resort",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104745/problem/P",
+  "difficulty": "*2200",
+  "timeLimit": "7 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Esomer loves skiing. However, he hates ski lifts because they are very long and always very cold. Determined not to suffer any longer, he has tried to come up with a route that minimizes the time spent on ski lifts. Unfortunately, he is not very good at interpreting the map of the pistes, so he has asked for your help.",
+      "The ski resort that Esomer visits can be represented as a directed acyclic graph with $$$n$$$ nodes and $$$m$$$ edges (the pistes). Additionally, there are $$$k$$$ ski lifts that connect node $$$a$$$ to node $$$b$$$. Interestingly, all ski lifts satisfy the condition that it is always possible to reach $$$a$$$ from $$$b$$$ without using any ski lift. It takes Esomer $$$1$$$ minute to traverse a piste or use a ski lift.",
+      "Esomer is interested in how much time he needs to spend on ski lifts in order to spend a total of $$$x$$$ minutes at the ski resort, without stopping at any node even for a second, while starting at node $$$y$$$. Esomer can finish his route at any node and leave for home as soon as he has spent the required $$$x$$$ minutes.",
+      "Please help Esomer."
+    ],
+    "input": [
+      "The first line contains an integer $$$t$$$, the number of test cases. ($$$1 \\le t \\le 100$$$).",
+      "For each test case, the first line contains four integers $$$n$$$, $$$m$$$ and $$$k$$$. ($$$2 \\le n \\le 10^5$$$; $$$1 \\le m \\le \\min(10^5, \\frac{n \\cdot (n-1)}{2})$$$; $$$1 \\le k \\le 10^2$$$).",
+      "Then, there are $$$m$$$ lines, each containing two integers, $$$u$$$ and $$$v$$$, indicating that there is an edge from $$$u$$$ to $$$v$$$. ($$$1 \\le u, v \\le n$$$).",
+      "It is guaranteed that the graph formed by the $$$m$$$ edges is acyclic.",
+      "Next, there are $$$k$$$ lines, each containing two integers, $$$a$$$ and $$$b$$$, indicating that there is a ski lift from $$$a$$$ to $$$b$$$. ($$$1 \\le a, b \\le n$$$; $$$a \\neq b$$$).",
+      "It is guaranteed that it is possible to reach $$$a$$$ from $$$b$$$ without using any ski lift.",
+      "Finally, there is a line containing two integers $$$x$$$ and $$$y$$$, the number of minutes Esomer wants to spend at the ski resort, and the node at which he starts, respectively. ($$$1 \\le x \\le 10^9$$$; $$$1 \\le y \\le n$$$). It is guaranteed that Esomer can reach a ski lift from node $$$y$$$.",
+      "It is guaranteed that the sum of $$$n$$$ and $$$m$$$ over all test cases is at most $$$10^5$$$, while the sum of $$$k$$$ over all test cases is at most $$$10^2$$$."
+    ],
+    "output": [
+      "For each test case, you should print an integer $$$s$$$, the minimum number of minutes Esomer needs to spend on ski lifts in order to spend a total of $$$x$$$ minutes at the ski resort."
+    ],
+    "note": [
+      "—",
+      "Problem idea: Esomer",
+      "Problem preparation: Esomer",
+      "Ocurrences: Advanced 10"
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n6 5 2\n2 4\n5 4\n6 2\n6 4\n3 4\n2 6\n4 6\n4 2",
+      "output": "1"
+    },
+    {
+      "input": "1\n10 13 5\n3 4\n9 4\n5 8\n9 2\n4 2\n1 10\n10 9\n9 8\n7 5\n5 2\n9 3\n10 2\n3 2\n8 10\n2 9\n4 3\n4 1\n5 7\n12 7",
+      "output": "2"
+    }
+  ],
+  "titleZh": [
+    "P.滑雪场"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "埃索梅尔喜欢滑雪。然而，他讨厌滑雪缆车，因为它们非常长，而且总是非常冷。为了不再受苦，他试图找到一条能最大限度减少滑雪缆车时间的路线。不幸的是，他不太擅长解读滑雪道地图，所以他向你寻求帮助。",
+      "Esomer访问的滑雪场可以表示为具有$$$n$$$个节点和$$$m$$$条边(滑雪道）的有向无环图。此外，还有连接节点$$$a$$$和节点$$$b$$$的$$$k$$$滑雪缆车。有趣的是，所有的滑雪缆车都满足一个条件，即在不使用任何滑雪缆车的情况下，总是可以从$$$b$$$到达$$$a$$$。穿越雪道或使用滑雪缆车需要Esomer $$$1$$$分钟。",
+      "Esomer 想知道，从节点 $$$y$$$ 开始，他需要在滑雪缆车上花费多少时间，才能在滑雪胜地总共花费 $$$x$$$ 分钟，而不在任何节点停留哪怕一秒钟。埃斯莫可以在任何一个节点完成他的路线，一旦他花费了所需的 $$$x$$$ 分钟，他就可以离开回家。",
+      "请帮帮埃索莫。"
+    ],
+    "input": [
+      "第一行包含一个整数$$$t$$$，测试用例的数量。($$$1 \\le t \\le 100$$$)。",
+      "对于每个测试用例，第一行包含四个整数 $$$n$$$、$$$m$$$ 和 $$$k$$$。($$$2 \\le n \\le 10^5$$$、$$$1 \\le m \\le \\min(10^5, \\frac{n \\cdot (n-1)}{2})$$$、$$$1 \\le k \\le 10^2$$$)。",
+      "然后，存在 $$$m$$$ 行，每行包含两个整数 $$$u$$$ 和 $$$v$$$，表明存在从 $$$u$$$ 到 $$$v$$$ 的边界。($$$1 \\le u, v \\le n$$$)。",
+      "保证由$$$m$$$条边构成的图是无环的。",
+      "接下来是$$$k$$$行，每一行包含两个整数$$$a$$$和$$$b$$$，表示从$$$a$$$到$$$b$$$有一个滑雪缆车。($$$1 \\le a, b \\le n$$$; $$$a \\neq b$$$)。",
+      "保证可以从 $$$b$$$ 到达 $$$a$$$，而无需使用任何滑雪缆车。",
+      "最后，有一行包含两个整数$$$x$$$和$$$y$$$，分别是Esomer想要在滑雪场花费的分钟数和他开始的节点。($$$1 \\le x \\le 10^9$$$; $$$1 \\le y \\le n$$$)。保证Esomer可以从节点$$$y$$$到达滑雪缆车。",
+      "保证所有测试用例的 $$$n$$$ 和 $$$m$$$ 之和至多为 $$$10^5$$$，而所有测试用例的 $$$k$$$ 之和至多为 $$$10^2$$$。"
+    ],
+    "output": [
+      "对于每个测试用例，你应该打印一个整数 $$$s$$$，即 Esomer 需要在滑雪缆车上花费的最小分钟数，以便在滑雪场总共花费 $$$x$$$ 分钟。"
+    ],
+    "note": [
+      "-",
+      "问题想法：索莫",
+      "问题准备：埃索姆",
+      "事件:Advanced 10"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.583Z",
+  "translatedBy": [
+    "deepl",
+    "caiyun",
+    "youdao"
+  ]
+}

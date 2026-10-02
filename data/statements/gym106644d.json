@@ -1,0 +1,67 @@
+{
+  "code": "GYM106644D",
+  "letter": "D",
+  "title": "D. Distinct Numbers",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106644/problem/D",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array $$$a$$$ of length $$$n$$$. For each $$$k$$$ from $$$2$$$ to $$$n$$$, find the maximum distance between two distinct elements within any subarray of length $$$k$$$.",
+      "Formally, for each $$$k$$$, we want to find:",
+      "$$$$$$\\max \\{ j - i \\mid 1 \\le i  \\lt  j \\le n, \\, j - i  \\lt  k, \\, a_i \\neq a_j \\}$$$$$$",
+      "If no such pair of distinct elements exists for a given $$$k$$$, the answer is $$$-1$$$."
+    ],
+    "input": [
+      "The first line contains a single integer $$$n$$$, representing the length of the array.",
+      "The second line contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$, representing the elements of the array.",
+      "$$$2 \\le n \\le 3 \\times 10^5$$$",
+      "$$$1 \\le a_i \\le 10^9$$$"
+    ],
+    "output": [
+      "Output $$$n-1$$$ space-separated integers on a single line. The $$$i$$$-th integer should be the answer for $$$k = i + 1$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1 2 1 2",
+      "output": "1 1 3"
+    },
+    {
+      "input": "5\n3 3 3 3 3",
+      "output": "-1 -1 -1 -1"
+    },
+    {
+      "input": "5\n1 2 3 4 5",
+      "output": "1 2 3 4"
+    }
+  ],
+  "titleZh": [
+    "D. 不同数字"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "给定一个长度为$$$n$$$的数组$$$a$$$。对于$$$2$$$到$$$n$$$中的每个$$$k$$$，求长度为$$$k$$$的任意子数组中两个不同元素之间的最大距离。",
+      null,
+      "$$$$$$\\max \\{ j - i \\mid 1 \\le i  \\lt  j \\le n, \\, j - i  \\lt  k, \\, a_i \\neq a_j \\}$$$$$$",
+      "如果对于给定的$$$k$$$不存在这样的相异元素对，则答案是$$$-1$$$。"
+    ],
+    "input": [
+      "第一行包含一个整数$$$n$$$，表示数组的长度。",
+      "第二行包含 $$$n$$$ 整数 $$$a_1, a_2, \\ldots, a_n$$$，表示数组的元素。",
+      "$$$2 \\le n \\le 3 \\times 10^5$$$",
+      "$$$1 \\le a_i \\le 10^9$$$"
+    ],
+    "output": [
+      "在单行上输出$$$n-1$$$空格分隔的整数。第$$$i$$$个整数应该是$$$k = i + 1$$$的答案。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.604Z",
+  "translatedBy": [
+    "caiyun",
+    "youdao",
+    "iflyrec"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "code": "GYM106642K",
+  "letter": "K",
+  "title": "K. One More One",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106642/problem/K",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a binary grid $$$a$$$ with $$$n$$$ rows and $$$m$$$ columns.",
+      "Three cells form an angle if they can be written as $$$(i,j)$$$, $$$(i,y)$$$, and $$$(x,j)$$$, where $$$x \\ne i$$$ and $$$y \\ne j$$$, and all three cells contain $$$1$$$. The cell $$$(i,j)$$$ is the corner of the angle.",
+      "You must choose exactly one cell containing $$$0$$$ and change it to $$$1$$$.",
+      "Find the maximum possible number of angles after the change, and the number of cells whose change gives this maximum.",
+      "It is guaranteed that the grid contains at least one $$$0$$$."
+    ],
+    "input": [
+      "The first line contains an integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "The first line of each test case contains two integers $$$n$$$ and $$$m$$$ ($$$1 \\le n,m \\le 2 \\cdot 10^5$$$) — the number of rows and columns.",
+      "Each of the next $$$n$$$ lines contains a binary string of length $$$m$$$ describing one row of the grid.",
+      "Each test case contains at least one $$$0$$$.",
+      "It is guaranteed that the sum of $$$n \\cdot m$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print two integers: the maximum possible number of angles and the number of cells whose change gives this maximum."
+    ],
+    "note": [
+      "In the first test case, either zero creates one angle. In the second, changing the only zero makes each of the four cells the corner of an angle. In the fourth, any cell in the second row creates two angles. In the fifth, a one-row grid cannot contain an angle, so either zero is optimal."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 2\n10\n01\n2 2\n11\n10\n3 3\n110\n100\n000\n2 3\n111\n000\n1 4\n1010",
+      "output": "1 2\n4 1\n4 1\n2 3\n0 2"
+    }
+  ],
+  "titleZh": [
+    "K. 一个又一个"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "您将得到一个二进制网格$$$a$$$，其中包含$$$n$$$行和$$$m$$$列。",
+      "如果三个单元格可以写成$$$(i,j)$$$， $$$(i,y)$$$, $$$(x,j)$$$，其中$$$x \\ne i$$$和$$$y \\ne j$$$，三个单元格都包含$$$1$$$，则形成一个角度。单元格$$$(i,j)$$$是角的一角。",
+      "您必须选择一个包含$$$0$$$的单元格，并将其更改为$$$1$$$。",
+      "找出变化后角度的最大可能数量，以及其变化给出该最大值的单元格数量。",
+      "保证网格至少包含一个 $$$0$$$。"
+    ],
+    "input": [
+      "第一行包含一个整数$$$t$$$ ($$$1 \\le t \\le 10^4$$$）—测试用例的数量。",
+      "每个测试用例的第一行包含两个整数$$$n$$$和$$$m$$$($$$1 \\le n,m \\le 2 \\cdot 10^5$$$）——行数和列数。",
+      "接下来的每一行 $$$n$$$ 都包含一个长度为 $$$m$$$ 的二进制字符串，用于描述网格中的一行。",
+      "每个测试用例至少包含一个$$$0$$$。"
+    ],
+    "output": [
+      "对于每个测试用例，打印两个整数：可能的最大角度数和变化导致最大值的单元格数。"
+    ],
+    "note": [
+      "在第一个测试用例中，两个0都创建一个角度。在第二种情况下，改变唯一的零使四个单元格中的每一个都成为一个角。在第四行中，第二行的任何单元格都创建两个角度。在第五种情况下，单行网格不能包含角度，因此任何零都是最优的。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.603Z",
+  "translatedBy": [
+    "caiyun",
+    "youdao",
+    "iflyrec"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "code": "GYM104017I",
+  "letter": "I",
+  "title": "I. Antennas",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104017/problem/I",
+  "difficulty": "*2400",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are $$$n$$$ equidistant antennas on a line, numbered from $$$1$$$ to $$$n$$$. Each antenna has a power rating, the power of the $$$i$$$-th antenna is $$$p_i$$$.",
+      "The $$$i$$$-th and the $$$j$$$-th antenna can communicate directly if and only if their distance is at most the minimum of their powers, i.e., $$$|i-j| \\leq \\min(p_i, p_j)$$$. Sending a message directly between two such antennas takes $$$1$$$ second.",
+      "What is the minimum amount of time necessary to send a message from antenna $$$a$$$ to antenna $$$b$$$, possibly using other antennas as relays?"
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains an integer $$$t$$$ ($$$1\\le t\\le 100\\,000$$$) — the number of test cases. The descriptions of the $$$t$$$ test cases follow.",
+      "The first line of each test case contains three integers $$$n$$$, $$$a$$$, $$$b$$$ ($$$1 \\leq a, b \\leq n \\leq 200\\,000$$$) — the number of antennas, and the origin and target antenna.",
+      "The second line contains $$$n$$$ integers $$$p_1, p_2, \\dots, p_n$$$ ($$$1 \\leq p_i \\leq n$$$) — the powers of the antennas.",
+      "The sum of the values of $$$n$$$ over all test cases does not exceed $$$200\\,000$$$."
+    ],
+    "output": [
+      "For each test case, print the number of seconds needed to trasmit a message from $$$a$$$ to $$$b$$$. It can be shown that under the problem constraints, it is always possible to send such a message."
+    ],
+    "note": [
+      "In the first test case, we must send a message from antenna $$$2$$$ to antenna $$$9$$$. A sequence of communications requiring $$$4$$$ seconds, which is the minimum possible amount of time, is the following:",
+      "In $$$1$$$ second we send the message from antenna $$$2$$$ to antenna $$$1$$$. This is possible since $$$|2-1|\\le \\min(1, 4) = \\min(p_2, p_1)$$$.",
+      "In $$$1$$$ second we send the message from antenna $$$1$$$ to antenna $$$5$$$. This is possible since $$$|1-5|\\le \\min(4, 5) = \\min(p_1, p_5)$$$.",
+      "In $$$1$$$ second we send the message from antenna $$$5$$$ to antenna $$$10$$$. This is possible since $$$|5-10|\\le \\min(5, 5) = \\min(p_5, p_{10})$$$.",
+      "In $$$1$$$ second we send the message from antenna $$$10$$$ to antenna $$$9$$$. This is possible since $$$|10-9|\\le \\min(5, 1) = \\min(p_{10}, p_9)$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n10 2 9\n4 1 1 1 5 1 1 1 1 5\n1 1 1\n1\n3 1 3\n3 3 1",
+      "output": "4\n0\n2"
+    }
+  ],
+  "titleZh": [
+    "I.天线"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "一条线上有 $$$n$$$ 个等距天线，编号从 $$$1$$$ 到 $$$n$$$。每个天线都有一个额定功率，$$$i$$$-th 天线的功率为 $$$p_i$$$。",
+      "$$$i$$$ 和 $$$j$$$ 天线可以直接通信，当且仅当它们之间的距离最大值为其功率的最小值，即 $$$|i-j| \\leq \\min(p_i, p_j)$$$。直接在两个这样的天线之间发送消息需要 $$$1$$$ 秒。",
+      "从天线$$$a$$$向天线$$$b$$$发送消息(可能使用其他天线作为中继）所需的最短时间是多少？"
+    ],
+    "input": [
+      "每个测试包含多个测试用例。第一行包含一个整数$$$t$$$ ($$$1\\le t\\le 100\\,000$$$）—测试用例的数量。下面是对$$$t$$$测试用例的描述。",
+      "每个测试用例的第一行包含三个整数$$$n$$$、$$$a$$$、$$$b$$$($$$1 \\leq a, b \\leq n \\leq 200\\,000$$$）——天线的数量，以及原点和目标天线。",
+      "第二行包含 $$$n$$$ 整数 $$$p_1, p_2, \\dots, p_n$$$ ($$$1 \\leq p_i \\leq n$$$）--天线的幂。",
+      "所有测试用例中 $$$n$$$ 值的总和不超过 $$$200\\,000$$$。"
+    ],
+    "output": [
+      "对于每个测试用例，打印将消息从$$$a$$$传输到$$$b$$$所需的秒数。可以看出，在问题约束条件下，总是可以发送这样的消息。"
+    ],
+    "note": [
+      "在第一个测试案例中，我们必须从天线$$$2$$$向天线$$$9$$$发送消息。需要$$$4$$$秒(最小可能时间量）的通信序列如下:",
+      "在 $$$1$$$ 中，我们第二次将信息从天线 $$$2$$$ 发送到天线 $$$1$$$。这在 $$$|2-1|\\le \\min(1, 4) = \\min(p_2, p_1)$$$ 中是可能的。",
+      "在$$$1$$$秒内，我们将消息从天线$$$1$$$发送到天线$$$5$$$。这是可能的，因为$$$|1-5|\\le \\min(4, 5) = \\min(p_1, p_5)$$$。",
+      "在$$$1$$$秒，我们将消息从天线$$$5$$$发送到天线$$$10$$$。这是可能的，因为$$$|5-10|\\le \\min(5, 5) = \\min(p_5, p_{10})$$$。",
+      "在 $$$1$$$ 秒内，我们将消息从天线 $$$10$$$ 发送到天线 $$$9$$$。这是可能的，因为 $$$|10-9|\\le \\min(5, 1) = \\min(p_{10}, p_9)$$$。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.581Z",
+  "translatedBy": [
+    "deepl",
+    "iflyrec",
+    "caiyun",
+    "youdao"
+  ]
+}

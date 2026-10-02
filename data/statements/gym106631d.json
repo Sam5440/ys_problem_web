@@ -1,0 +1,81 @@
+{
+  "code": "GYM106631D",
+  "letter": "D",
+  "title": "D. Outsmarting",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106631/problem/D",
+  "difficulty": "*1300",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alice and Bob play a game with strings.",
+      "Each game starts with Alice choosing a string $$$A$$$ of length $$$n$$$ consisting only of the characters 'H' and 'T' and revealing it to Bob.",
+      "The rest of the game is played according to the following procedure, in order:",
+      "Bob chooses a string $$$B$$$ of length $$$n$$$ consisting only of the characters 'H' and 'T', such that $$$A \\ne B$$$ and reveals the string to Alice.",
+      "Now Alice and Bob build a new string $$$S$$$ consisting only of the characters 'H' and 'T'. Bob chooses the first character of $$$S$$$.",
+      "Then Alice keeps appending a new character ('H' or 'T') to $$$S$$$ until the game ends.",
+      "The game ends immediately when one of the following occurs:",
+      "If $$$A$$$ appears as a substring$$$^{\\text{∗}}$$$ of $$$S$$$, then Alice wins.",
+      "If $$$B$$$ appears as a substring of $$$S$$$, then Bob wins.",
+      "If the length of $$$S$$$ becomes $$$10^{100}$$$, then Bob wins.",
+      "Both players know the rules of the game, and every action is immediately visible to both players.",
+      "Now, Alice has already chosen the string $$$A$$$ and revealed it. Given $$$n$$$ and $$$A$$$, determine the winner if both players play optimally from this point onward.",
+      "$$$^{\\text{∗}}$$$A string $$$a$$$ is a substring of a string $$$b$$$ if $$$a$$$ can be obtained from $$$b$$$ by deleting several (possibly zero) characters from the beginning and several (possibly zero) characters from the end."
+    ],
+    "input": [
+      "The first line contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$)  — the number of games. The description of the games follows.",
+      "The first line of each game contains a single integer $$$n$$$ ($$$1 \\le n \\le 3 \\cdot 10^5$$$)  — the length of the strings.",
+      "The second line contains the string $$$A$$$ of length $$$n$$$, consisting only of the characters 'H' and 'T'  — Alice's chosen string.",
+      "It is guaranteed that the sum of $$$n$$$ over all games does not exceed $$$3 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each game, output a single line containing Alice if Alice wins, and Bob otherwise."
+    ],
+    "note": [
+      "In the first game, $$$A = {}$$$\"HT\". Bob can choose $$$B = {}$$$\"TH\" and set the first character of $$$S$$$ to 'T'. After that, no matter how Alice appends the remaining characters, Bob is guaranteed to win."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2\nHT\n3\nTHT\n4\nTTHT\n3\nHHH\n1\nT",
+      "output": "Bob\nAlice\nAlice\nBob\nBob"
+    }
+  ],
+  "titleZh": [
+    "D. 智慧超群"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "爱丽丝和鲍勃在玩一个用绳子的游戏。",
+      null,
+      "游戏的其余部分按照以下顺序进行:",
+      "Bob 选择了一个长度为 $$$n$$$ 的字符串 $$$B$$$，其中只包含字符 ‘H’ 和 ‘T’，因此是 $$$A \\ne B$$$，并将这个字符串展示给 Alice。",
+      null,
+      "然后 Alice 会不断地给 $$$S$$$ 添加新的角色 (‘H’ 或 ‘T’)，直到游戏结束。",
+      "当出现以下情况之一时，游戏立即结束：",
+      "如果$$$A$$$作为$$$S$$$的子字符串$$$^{\\text{∗}}$$$出现，那么Alice获胜。",
+      null,
+      "如果 $$$S$$$ 的长度变成 $$$10^{100}$$$，那么 Bob 就赢了。",
+      "双方玩家都知道游戏规则，每个动作都是一目了然的。",
+      null,
+      "$$$^{\\text{∗}}$$$如果$$$a$$$可以通过从$$$b$$$中删除开头的几个字符(可能为零）和末尾的几个字符(可能为零）来获得，则字符串$$$a$$$是字符串$$$b$$$的子字符串。"
+    ],
+    "input": [
+      "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——游戏的数量。游戏的描述如下。",
+      "每个游戏的第一行包含一个整数 $$$n$$$($$$1 \\le n \\le 3 \\cdot 10^5$$$)——字符串的长度。",
+      "第二行包含长度为$$$n$$$的字符串$$$A$$$，仅由字符“ H ”和“ T ”组成—Alice选择的字符串。",
+      "保证所有博弈的$$$n$$$之和不超过$$$3 \\cdot 10^5$$$。"
+    ],
+    "output": [
+      "对于每个游戏，如果Alice获胜，则输出包含Alice的单行，否则输出包含Bob的单行。"
+    ],
+    "note": []
+  },
+  "translatedAt": "2026-10-02T20:43:46.597Z",
+  "translatedBy": [
+    "caiyun",
+    "youdao",
+    "iflyrec"
+  ]
+}

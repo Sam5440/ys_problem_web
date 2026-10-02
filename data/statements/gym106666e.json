@@ -1,0 +1,67 @@
+{
+  "code": "GYM106666E",
+  "letter": "E",
+  "title": "E. That Stacks",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106666/problem/E",
+  "difficulty": "*1400",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Standard stack sizes in Minecraft are $$$2^6=64$$$ for most blocks and items, $$$2^4=16$$$ for select items, and $$$2^0=1$$$ for tools and special items. However, Mojang's latest update has a lot of bugs, forcing items to stack to exactly any integer power of $$$2$$$, including powers greater than $$$64$$$: $$$128$$$, $$$256$$$, and so on! Since you were down in your mineshaft before the update dropped, you decide to use the opportunity to start moving your supply of gems back to your base above ground.",
+      "You have diamonds and emeralds in the mineshaft's storage that you want to bring, but you can't put them in your inventory since you're carrying lots of other important items (i.e. Pigstep and deadbushes). But, you do have a bundle, a portable container that fits exactly $$$N$$$ items. Due to another bug in the update, you can only insert stacks of items in alternating order, but you can start with either diamonds or emeralds. For example, if you first insert a power-of-two stack of diamonds, the next stack you insert must be a power-of-two stack of emeralds.",
+      "For example, the bundle might be able to fit $$$4$$$ gems. There are $$$12$$$ possible ways to put them in, shown below. Note that each sequence of the same item must have a length matching some power of $$$2$$$; as such, a length of $$$3$$$ is unable to be added to the bundle.",
+      "DEDE, EDED, DDED, EEDE, DEED, EDDE, DEDD, EDEE, DDEE, EEDD, DDDD, EEEE",
+      "You're curious about how many different ways you could completely fill your bundle. Given the capacity of the bundle $$$N$$$, determine how many different ways the bundle can be filled. Assume that you have at least $$$N$$$ gems of each type."
+    ],
+    "input": [
+      "The only line of input is integer $$$N$$$ $$$(1 \\le N \\le 10^5)$$$: the capacity of your bundle."
+    ],
+    "output": [
+      "Output a single integer: the number of ways that you could fill your bundle $$$\\text{mod}$$$ $$$10^9+7$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4",
+      "output": "12"
+    },
+    {
+      "input": "5",
+      "output": "20"
+    },
+    {
+      "input": "67",
+      "output": "564649932"
+    },
+    {
+      "input": "6767",
+      "output": "349469276"
+    }
+  ],
+  "titleZh": [
+    "E.堆积如山"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "我的世界中大多数方块和物品的标准堆叠大小为$$$2^6=64$$$，选择物品的标准堆叠大小为$$$2^4=16$$$，工具和特殊物品的标准堆叠大小为$$$2^0=1$$$。然而，Mojang的最新更新有很多错误，强制物品堆叠到$$$2$$$的任何整数幂，包括大于$$$64$$$的幂：$$$128$$$，$$$256$$$等等！由于你在更新之前在你的矿井里，你决定利用这个机会开始将你的宝石供应移回地面上的基地。",
+      null,
+      "例如，bundle 可能能够容纳 $$$4$$$ 宝石。有 $$$12$$$ 种可能的方式来放置它们，如下所示。请注意，同一项目的每个序列的长度必须与 $$$2$$$ 的某个幂相匹配;因此，$$$3$$$ 的长度不能添加到 bundle 中。",
+      "DEDE, EDED, DDED, EEDE, DEED, EDDE, DEDD, EDEE, DDEE, EEDD, DDDD, EEEE",
+      "你很好奇有多少种不同的方法可以完全填满你的包。给定捆绑包的容量$$$N$$$，确定捆绑包可以通过多少种不同的方式填充。假设您至少拥有每种类型的$$$N$$$个宝石。"
+    ],
+    "input": [
+      "唯一的输入行是整数 $$$N$$$$$$(1 \\le N \\le 10^5)$$$:你的 bundle 的容量。"
+    ],
+    "output": [
+      "输出单个整数：您可以填充bundle $$$\\text{mod}$$$ $$$10^9+7$$$的方法数。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.605Z",
+  "translatedBy": [
+    "youdao",
+    "iflyrec",
+    "caiyun"
+  ]
+}

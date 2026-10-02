@@ -1,0 +1,94 @@
+{
+  "code": "GYM106628O",
+  "letter": "O",
+  "title": "O. Hidden Permutation",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106628/problem/O",
+  "difficulty": "*1500",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem. Refer to the Interaction Protocol section below for better understanding.",
+      "Sherbiny has hidden a secret permutation $$$p$$$ of length $$$n$$$ (an array containing every integer from 1 to $$$n$$$ exactly once). Luffy's task is to reconstruct this permutation using at most $$$n-1$$$ queries.",
+      "Luffy cannot see the elements of $$$p$$$, but he can ask Sherbiny to evaluate specific subsets of indices. When Luffy queries a subset, Sherbiny isolates the elements at those indices—keeping them in their original relative order—and tells Luffy exactly how many inversions exist just among those isolated elements.",
+      "Formal Query Definition: Specifically, if Luffy queries a subset of $$$k$$$ indices $$$1 \\le i_{1}  \\lt  i_{2}  \\lt  \\dots  \\lt  i_{k} \\le n$$$, Sherbiny constructs a new sequence $$$a = [p_{i_{1}}, p_{i_{2}}, \\dots, p_{i_{k}}]$$$. Sherbiny then returns the total number of inversions in $$$a$$$.",
+      "The number of inversions in an array is the number of pairs of indices $$$u, v$$$ such that $$$u  \\lt  v$$$ and $$$a_{u}  \\gt  a_{v}$$$."
+    ],
+    "input": [
+      "The first line contains a single integer $$$t$$$ ($$$1 \\le t \\le 100$$$) — the number of test cases. The description of the test cases follows.",
+      "For each test case, Sherbiny first outputs a single integer $$$n$$$ ($$$2 \\le n \\le 1000$$$) — the length of the hidden permutation.",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed 1000."
+    ],
+    "output": [
+      "For each test case, after at most $$$n-1$$$ questions, output one line:",
+      "! $$$p_1$$$ $$$p_2$$$ $$$\\ldots$$$ $$$p_n$$$",
+      "For each test case, after reading $$$n$$$, you may ask at most $$$n-1$$$ questions before you must output your guess.",
+      "To ask a question, output a line in the following format:",
+      "? $$$k$$$ $$$i_1$$$ $$$i_2$$$ $$$\\ldots$$$ $$$i_k$$$",
+      "After each question, read one integer from the judge — the number of inversions among the values at the chosen positions.",
+      "After printing each line, flush the output. For example:",
+      "cout « endl or fflush(stdout) in C++;",
+      "System.out.flush() in Java;",
+      "sys.stdout.flush() in Python.",
+      "When you have determined the hidden permutation, output a single line:",
+      "! $$$p_1$$$ $$$p_2$$$ $$$\\ldots$$$ $$$p_n$$$"
+    ],
+    "note": [
+      "In the example, the judge first sends $$$t = 2$$$. The hidden permutations are $$$[3, 1, 2]$$$ in the first test case and $$$[2, 1]$$$ in the second test case.",
+      "In the first test case, $$$n = 3$$$ and the hidden permutation is $$$[3, 1, 2]$$$. The question ? 2 1 3 asks about positions $$$1$$$ and $$$3$$$, whose values are $$$3$$$ and $$$2$$$; there is one inversion because $$$3  \\gt  2$$$, so the judge replies with $$$1$$$. The question ? 2 2 3 asks about positions $$$2$$$ and $$$3$$$, whose values are $$$1$$$ and $$$2$$$; there are no inversions, so the judge replies with $$$0$$$. The participant then outputs ! 3 1 2.",
+      "In the second test case, $$$n = 2$$$ and the hidden permutation is $$$[2, 1]$$$. The question ? 2 1 2 selects both positions; the values $$$2$$$ and $$$1$$$ form one inversion, so the judge replies with $$$1$$$. The participant outputs ! 2 1.",
+      "Note that the participant uses only $$$2 = n - 1$$$ questions in the first test case and $$$1 = n - 1$$$ question in the second test case.",
+      "Empty lines in the example input and output are shown only for readability. Your solution must not output blank lines."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3\n\n1\n\n0\n\n2\n\n1",
+      "output": "? 2 1 3\n\n? 2 2 3\n\n! 3 1 2\n\n? 2 1 2\n\n! 2 1"
+    }
+  ],
+  "titleZh": [
+    "O.隐藏排列"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "这是一个互动的问题。为了更好地理解，请参考下面的交互协议部分。",
+      "Sherbyny 隐藏了一个长度为 $$$n$$$ 的秘密排列 $$$p$$$(一个包含从 1 到 $$$n$$$ 每个整数一次的数组)。Luffy 的任务是使用最多 $$$n-1$$$ 查询来重建这个排列。",
+      "Luffy 看不到 $$$p$$$ 的元素，但他可以让 Sherbiny 评估指数的特定子集。当 Luffy 查询一个子集时，Sherbiny 会将这些指数的元素孤立起来——保持它们原始的相对顺序——并准确地告诉 Luffy 在这些孤立的元素之间存在多少个反演。",
+      "正式查询定义：具体来说，如果Luffy查询一个$$$k$$$索引子集$$$1 \\le i_{1}  \\lt  i_{2}  \\lt  \\dots  \\lt  i_{k} \\le n$$$， Sherbiny构造一个新的序列$$$a = [p_{i_{1}}, p_{i_{2}}, \\dots, p_{i_{k}}]$$$。然后Sherbiny返回$$$a$$$中的反转总数。",
+      "数组中的逆序数是索引对$$$u, v$$$的数目，使得$$$u  \\lt  v$$$和$$$a_{u}  \\gt  a_{v}$$$。"
+    ],
+    "input": [
+      null,
+      "对于每个测试用例，Sherbini 首先输出一个整数 $$$n$$$($$$2 \\le n \\le 1000$$$)——隐藏排列的长度。"
+    ],
+    "output": [
+      "对于每个测试用例，在最多 $$$n-1$$$ 个问题之后，输出一行：",
+      "！ $$$p_1$$$ $$$p_2$$$ $$$\\ldots$$$ $$$p_n$$$",
+      "对于每个测试用例，在阅读 $$$n$$$ 之后，你最多可以问 $$$n-1$$$ 个问题，然后才必须输出你的猜测。",
+      "要提出问题，请按以下格式输出一行:",
+      "？ $$$k$$$ $$$i_1$$$ $$$i_2$$$ $$$\\ldots$$$ $$$i_k$$$",
+      "每个问题之后，从裁判那里读出一个整数——所选位置的值之间的反演次数。",
+      "在打印每行之后，刷新输出。例如:",
+      "在c++中调用endl或fflush(stdout)；",
+      "Java 中的 System.out.flush();",
+      "Python中的sys.stdout.flush（）。",
+      "当你确定了隐藏的排列，输出一行：",
+      "!$$$p_1$$$$$$p_2$$$$$$\\ldots$$$$$$p_n$$$"
+    ],
+    "note": [
+      "在示例中，法官首先发送 $$$t = 2$$$。隐藏排列在第一个测试案例中是 $$$[3, 1, 2]$$$，在第二个测试案例中是 $$$[2, 1]$$$。",
+      "在第一个测试用例中，$$$n = 3$$$，隐藏排列为$$$[3, 1, 2]$$$。问题是什么？2 1 3问位置$$$1$$$和$$$3$$$，其值分别为$$$3$$$和$$$2$$$；这里有一个反转，因为$$$3  \\gt  2$$$，所以法官用$$$1$$$回答。问题是什么？2 2 3问位置$$$2$$$和$$$3$$$，其值分别为$$$1$$$和$$$2$$$；没有倒置，所以法官用$$$0$$$回答。然后参与者输出！3 1 2。",
+      "第二个测试用例为$$$n = 2$$$，隐藏的排列为$$$[2, 1]$$$。问题是什么？2 1 2选择两个位置；值$$$2$$$和$$$1$$$形成一个反转，因此法官回答$$$1$$$。参与者输出！2 1。",
+      "请注意，参与者在第一个测试案例中只使用 $$$2 = n - 1$$$ 问题，在第二个测试案例中只使用 $$$1 = n - 1$$$ 问题。",
+      "示例输入和输出中的空行仅显示可读性。您的解决方案不得输出空行。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.596Z",
+  "translatedBy": [
+    "caiyun",
+    "youdao",
+    "iflyrec"
+  ]
+}

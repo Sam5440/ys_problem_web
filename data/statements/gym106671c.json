@@ -1,0 +1,103 @@
+{
+  "code": "GYM106671C",
+  "letter": "C",
+  "title": "C. Duplication",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106671/problem/C",
+  "difficulty": "*1500",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You have an array $$$a$$$ that has an initial length of $$$n$$$. Process the following queries:",
+      "1 x: Append $$$x$$$ to the end of the array.",
+      "2: Delete the last element of the array.",
+      "3: Reverse the array.",
+      "4: Clone the array and append the clone to the end of the array.",
+      "5: Query the sum of all elements in the array, modulo $$$998244353$$$."
+    ],
+    "input": [
+      "The first line consists of an integer $$$n$$$ $$$(1 \\le n \\le 5 \\cdot 10^5)$$$, the initial size of the array.",
+      "The second line consists of $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ $$$(0 \\le a_i \\le 10^9)$$$, the initial array.",
+      "The third line consists of an integer $$$q$$$ $$$(1 \\le q \\le 5 \\cdot 10^5)$$$, the number of queries.",
+      "The next $$$q$$$ lines contain the queries as described above, subject to the following constraints:",
+      "In queries of Type $$$1$$$, $$$0 \\le x \\le 10^9$$$.",
+      "In queries of Type $$$2$$$, the array is not currently empty.",
+      "It is guaranteed that there is at least one query of Type $$$5$$$.",
+      "—",
+      "Tests in subtasks are numbered from $$$1-20$$$ with samples skipped. Each test is worth $$$\\frac{100}{20}=5$$$ points.",
+      "Test $$$1$$$ has no queries of Types $$$1$$$, $$$2$$$, $$$3$$$, or $$$4$$$.",
+      "Tests $$$2-4$$$ have no queries of Type $$$4$$$.",
+      "Tests $$$5-7$$$ satisfy $$$n, q \\le 10$$$.",
+      "Tests $$$8-9$$$ have no queries of Types $$$1$$$, $$$2$$$, or $$$3$$$.",
+      "Tests $$$10-11$$$ have no queries of Type $$$2$$$.",
+      "Tests $$$12-15$$$ have no queries of Type $$$3$$$.",
+      "Tests $$$16-20$$$ satisfy no additional constraints."
+    ],
+    "output": [
+      "For each query of Type $$$5$$$, output one integer — the sum of all elements in the array, modulo $$$998244353$$$."
+    ],
+    "note": [
+      "Consider the sample test.",
+      "After query $$$\\texttt{4}$$$, the array becomes $$$\\{1, 3, 2, 4, 5, 1, 3, 2, 4, 5\\}$$$.",
+      "After query $$$\\texttt{2}$$$, the array becomes $$$\\{1, 3, 2, 4, 5, 1, 3, 2, 4\\}$$$.",
+      "After query $$$\\texttt{3}$$$, the array becomes $$$\\{4, 2, 3, 1, 5, 4, 2, 3, 1\\}$$$.",
+      "After query $$$\\texttt{1 3}$$$, the array becomes $$$\\{4, 2, 3, 1, 5, 4, 2, 3, 1, 3\\}$$$.",
+      "To answer query $$$\\texttt{5}$$$, compute the sum $$$4 + 2 + 3 + 1 + 5 + 4 + 2 + 3 + 1 + 3 = 28$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 3 2 4 5\n5\n4\n2\n3\n1 3\n5",
+      "output": "28"
+    }
+  ],
+  "titleZh": [
+    "c .重复"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "您有一个初始长度为 $$$n$$$ 的数组 $$$a$$$。处理以下查询：",
+      "1 x：将$$$x$$$追加到数组的末尾。",
+      "2:删除数组的最后一个元素。",
+      "3:反转数组。",
+      "4：克隆阵列，并将克隆的阵列追加到阵列的末尾。",
+      "5：查询数组中所有元素的和，取$$$998244353$$$的模。"
+    ],
+    "input": [
+      "第一行包含一个整数 $$$n$$$$$$(1 \\le n \\le 5 \\cdot 10^5)$$$，即数组的初始大小。",
+      "第二行包含$$$n$$$个整数$$$a_1, a_2, \\ldots, a_n$$$ $$$(0 \\le a_i \\le 10^9)$$$，即初始数组。",
+      "第三行包含一个整数 $$$q$$$$$$(1 \\le q \\le 5 \\cdot 10^5)$$$，即查询次数。",
+      "接下来的$$$q$$$行包含上述查询，受以下约束:",
+      null,
+      "在类型 $$$2$$$ 的查询中，数组当前不是空的。",
+      "保证至少有一个类型为$$$5$$$的查询。",
+      "—",
+      "子任务中的测试从$$$1-20$$$开始编号，样本跳过。每项测试都值$$$\\frac{100}{20}=5$$$分。",
+      "测试 $$$1$$$ 没有对类型 $$$1$$$、$$$2$$$、$$$3$$$ 或 $$$4$$$ 的查询。",
+      null,
+      "测试$$$5-7$$$满足$$$n, q \\le 10$$$。",
+      "测试 $$$8-9$$$ 没有类型 $$$1$$$、$$$2$$$ 或 $$$3$$$ 的查询。",
+      null,
+      "测试$$$12-15$$$没有类型$$$3$$$的查询。",
+      "测试 $$$16-20$$$ 不满足额外的约束。"
+    ],
+    "output": [
+      "对于类型为$$$5$$$的每个查询，输出一个整数—数组中所有元素的总和，模$$$998244353$$$。"
+    ],
+    "note": [
+      "考虑一下样本测试。",
+      "查询 $$$\\texttt{4}$$$ 后，数组变为 $$$\\{1, 3, 2, 4, 5, 1, 3, 2, 4, 5\\}$$$。",
+      "查询$$$\\texttt{2}$$$后，array变为$$$\\{1, 3, 2, 4, 5, 1, 3, 2, 4\\}$$$。",
+      "查询 $$$\\texttt{3}$$$ 后，数组变为 $$$\\{4, 2, 3, 1, 5, 4, 2, 3, 1\\}$$$。",
+      "查询$$$\\texttt{1 3}$$$后，数组变为$$$\\{4, 2, 3, 1, 5, 4, 2, 3, 1, 3\\}$$$。",
+      "要回答查询 $$$\\texttt{5}$$$，请计算和 $$$4 + 2 + 3 + 1 + 5 + 4 + 2 + 3 + 1 + 3 = 28$$$。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.606Z",
+  "translatedBy": [
+    "youdao",
+    "caiyun",
+    "iflyrec"
+  ]
+}

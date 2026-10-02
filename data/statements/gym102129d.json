@@ -1,0 +1,66 @@
+{
+  "code": "GYM102129D",
+  "letter": "D",
+  "title": "D. Basis Change",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102129/problem/D",
+  "difficulty": "*2300",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 mebibytes",
+  "sections": {
+    "legend": [
+      "You are given sequences $$$\\{a_i\\}_{i=1}^k$$$ and $$$\\{b_i\\}_{i=1}^k$$$. Consider all sequences $$$\\{F_i\\}_{i=1}^\\infty$$$ which satisfy the following linear recurrence for all $$$n  \\gt  k$$$:",
+      "$$$$$$F_n = \\sum\\limits_{i=1}^k a_i F_{n-i}\\text{.}$$$$$$",
+      "You have to find a sequence $$$\\{c_i\\}_{i=1}^k$$$ such that, for all such $$$\\{F_i\\}_{i=1}^\\infty$$$, the following linear recurrence is satisfied for all $$$n  \\gt  b_k$$$:",
+      "$$$$$$F_n = \\sum\\limits_{i=1}^k c_i F_{n-b_i}\\text{.}$$$$$$"
+    ],
+    "input": [
+      "The first line of input contains a single integer $$$k$$$ ($$$1 \\leq k \\leq 128$$$).",
+      "The second line of input contains $$$k$$$ integers $$$a_1, \\dots, a_k$$$ ($$$1 \\leq a_i \\leq 10^9$$$).",
+      "The third line of input contains $$$k$$$ integers $$$b_1, \\dots, b_k$$$ ($$$1 \\leq b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_k \\leq 10^9$$$).",
+      "It is guaranteed that the solution exists and is unique. Moreover, it is guaranteed that sequences $$$a_i$$$ and $$$b_i$$$ were uniformly randomly chosen among possible ones with some fixed number $$$k$$$ for all test cases except the example."
+    ],
+    "output": [
+      "Output $$$k$$$ integers $$$c_1, \\dots, c_k$$$ on a single line. If $$$c_k = \\frac{P}{Q}$$$ such that $$$P$$$ and $$$Q$$$ are coprime, output $$$(P \\cdot Q^{-1}) \\bmod (10^9 + 7)$$$. It is guaranteed that $$$Q \\not \\equiv 0 \\pmod{10^9+7}$$$."
+    ],
+    "note": [
+      "In the example, we have $$$F_n = F_{n-1} + F_{n-2}$$$. We can write $$$F_n - F_{n-1} = (F_{n-1} + F_{n-2}) - (F_{n-2} + F_{n-3})$$$. Thus $$$F_n = 2F_{n-1} - F_{n-3}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 1\n1 3",
+      "output": "2 1000000006"
+    }
+  ],
+  "titleZh": [
+    "D.基础变更"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "给定序列$$$\\{a_i\\}_{i=1}^k$$$和$$$\\{b_i\\}_{i=1}^k$$$。考虑对所有$$$n  \\gt  k$$$满足以下线性递归的所有序列$$$\\{F_i\\}_{i=1}^\\infty$$$：",
+      "$$$$$$F_n = \\sum\\limits_{i=1}^k a_i F_{n-i}\\text{.}$$$$$$",
+      "你必须找到一个序列 $$$\\{c_i\\}_{i=1}^k$$$，使得对于所有这样的 $$$\\{F_i\\}_{i=1}^\\infty$$$，对于所有 $$$n  \\gt  b_k$$$，满足以下线性递归：",
+      "$$$$$$F_n = \\sum\\limits_{i=1}^k c_i F_{n-b_i}\\text{.}$$$$$$"
+    ],
+    "input": [
+      "输入的第一行包含一个整数$$$k$$$ ($$$1 \\leq k \\leq 128$$$）。",
+      "输入的第二行包含$$$k$$$整数$$$a_1, \\dots, a_k$$$($$$1 \\leq a_i \\leq 10^9$$$）。",
+      "第三行输入包含 $$$k$$$ 整数 $$$b_1, \\dots, b_k$$$ ($$$1 \\leq b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_k \\leq 10^9$$$）。",
+      "它保证解存在并且是唯一的。并且保证除本例外的所有测试用例，序列$$$a_i$$$和序列$$$b_i$$$是均匀随机选择的，且序列$$$k$$$具有一定的固定数。"
+    ],
+    "output": [
+      "在单行上输出$$$k$$$个整数$$$c_1, \\dots, c_k$$$。如果$$$c_k = \\frac{P}{Q}$$$使得$$$P$$$和$$$Q$$$互质，则输出$$$(P \\cdot Q^{-1}) \\bmod (10^9 + 7)$$$。保证$$$Q \\not \\equiv 0 \\pmod{10^9+7}$$$。"
+    ],
+    "note": [
+      "在示例中，我们有 $$$F_n = F_{n-1} + F_{n-2}$$$。我们可以写 $$$F_n - F_{n-1} = (F_{n-1} + F_{n-2}) - (F_{n-2} + F_{n-3})$$$。因此 $$$F_n = 2F_{n-1} - F_{n-3}$$$。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.573Z",
+  "translatedBy": [
+    "iflyrec",
+    "youdao",
+    "caiyun",
+    "deepl"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "code": "GYM106097F",
+  "letter": "F",
+  "title": "F. Rocket Cycle",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106097/problem/F",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/32e9ab85f8bd398d9127bc5057e0713d48a26383.webp)",
+      "This is an interactive problem. You have to use a flush operation right after printing each line. For example, in C++ you should use the function fflush(stdout), in Java — System.out.flush(), in Pascal — flush(output) and in Python — sys.stdout.flush().",
+      "Bobob has developed a new and improved rocket cycle deck that exploits the overwhelming force of rockets to annihilate his opponents' towers. There's only one problem: he knows the enemy's two princess towers are horizontally aligned with each other, but he needs your help to find their exact x-coordinates.",
+      "In order to find the x-coordinates of the princess towers $$$x_1$$$ and $$$x_2$$$ ($$$1 \\le x_1  \\lt  x_2 \\le n$$$), you can place down hog riders. Each hog rider can be placed at an x-coordinate by printing a single integer from $$$1$$$ to $$$n$$$. Flush output stream after printing each x-coordinate. Hog riders will target the nearest tower (or the right tower if halfway in between), earning one of three possible responses:",
+      "the string \"<\" (without quotes), if the closest princess tower is to the left of the hog rider ($$$x_{tower}  \\lt  x_{hog}$$$);",
+      "the string \">\" (without quotes), if the closest princess tower is to the right of the hog rider ($$$x_{tower}  \\gt  x_{hog}$$$);",
+      "the string \"=\" (without quotes), if the hog rider is on top of a princess tower ($$$x_{tower} = x_{hog}$$$).",
+      "The closest princess tower $$$x_{tower}$$$ is determined to be $$$x_1$$$ if $$$|x_{hog} - x_1|  \\lt  |x_{hog} - x_2|$$$, and $$$x_2$$$ otherwise.",
+      "When you figure out the x-coordinates of the two princess towers, print string \"! x1 x2\", where $$$x1$$$ and $$$x2$$$ are the x-coordinates of the princess towers from left to right ($$$x1  \\lt  x2$$$), and terminate your program normally immediately after flushing the output stream.",
+      "You only have 500 elixir, and each hog rider costs 4 elixir, so you are allowed to place no more than 125 hog riders (not including printing the princess towers' coordinates at the end)."
+    ],
+    "input": [
+      "Use standard input to read the responses to the hog riders.",
+      "The first line contains an integer $$$n$$$ ($$$2 \\le n \\le 10^9$$$) — the maximum possible x-coordinate.",
+      "The following lines will contain responses to your hog riders — strings \"<\", \">\" or \"=\". The $$$i$$$-th line is a response to your $$$i$$$-th hog rider. When you are ready to guess the princess towers' coordinates, print \"! x1 x2\" and terminate your program.",
+      "The game will allow you to read the response to the hog rider only after your program prints the hog rider's x-coordinate and performs the flush operation."
+    ],
+    "output": [
+      "To print the hog riders' coordinates, your program must use standard output.",
+      "Your program must print the hog riders' x-coordinates — integer numbers $$$x$$$ ($$$1 \\le x \\le n$$$), one query per line (do not forget \"end of line\" after each $$$x$$$). After printing each line your program must perform the flush operation. When you are ready to guess the princess towers' coordinates, print \"! x1 x2\", flush, and terminate your program."
+    ],
+    "note": [
+      "In this example, the princess towers are located at x-coordinates $$$1$$$ and $$$9$$$.",
+      "Placing a hog rider at an x-coordinate of $$$4$$$ will result in it targeting the princess tower at $$$1$$$ because $$$|4-1|  \\lt  |4-9|$$$, so the response is \"<\".",
+      "Placing a hog rider at an x-coordinate of $$$1$$$ will be on top of a princess tower, so the response is \"=\".",
+      "Placing a hog rider at an x-coordinate of $$$5$$$ will result in it targeting the princess tower at $$$9$$$ because $$$|5-9| \\ge |5-1|$$$, so the response is \">\".",
+      "Placing a hog rider at an x-coordinate of $$$9$$$ will be on top of a princess tower, so the response is \"=\".",
+      "The player correctly guesses that the princess towers are at x-coordinates $$$1$$$ and $$$9$$$, and the program terminates."
+    ]
+  },
+  "examples": [
+    {
+      "input": "10\n\n<\n\n=\n\n>\n\n=",
+      "output": "\n4\n\n1\n\n5\n\n9\n\n! 1 9"
+    }
+  ],
+  "titleZh": [
+    "F.火箭循环"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "![](https://espresso.codeforces.com/32e9ab85f8bd398d9127bc5057e0713d48a26383.webp)",
+      "这是一个互动的问题。您必须在打印每一行后立即使用刷新操作。例如，在C++中，应使用函数fflush（stdout）；在Java中，应使用函数System.out.flush（）；在Pascal中，应使用函数flush（output）；在Python中，应使用函数sys.stdout.flush（）。",
+      "Bob 开发了一种新的改进型火箭循环甲板，利用火箭的压倒性力量摧毁对手的塔。只有一个问题：他知道敌人的两座公主塔是水平对齐的，但他需要你的帮助来确定它们的确切 x 坐标。",
+      "为了找到公主塔 $$$x_1$$$ 和 $$$x_2$$$ ($$$1 \\le x_1  \\lt  x_2 \\le n$$$）的 x 坐标，可以放置骑猪者。通过打印 $$$1$$$ 到 $$$n$$$ 之间的一个整数，可以将每个骑猪者放置在一个 x 坐标上。打印完每个 x 坐标后，清空输出流。骑猪者的目标是最近的塔(如果在两者之间，则是右边的塔），并获得三种可能的回应之一：",
+      null,
+      "如果最近的公主塔位于骑猪者 ($$$x_{tower}  \\gt  x_{hog}$$$) 的右侧，则字符串 “>”(不加引号);",
+      "字符串“=”(不带引号），如果猪骑士在公主塔的顶部($$$x_{tower} = x_{hog}$$$）。",
+      "如果是$$$|x_{hog} - x_1|  \\lt  |x_{hog} - x_2|$$$，则最近的公主塔$$$x_{tower}$$$被确定为$$$x_1$$$，否则为$$$x_2$$$。",
+      "当你计算出两个公主塔的 x 坐标时，打印字符串 “! x1 x2”，其中 $$$x1$$$ 和 $$$x2$$$ 是公主塔从左到右的 x 坐标 ($$$x1  \\lt  x2$$$)，并在刷新输出流后立即正常终止程序。",
+      "你只有500个药剂，每个猪骑士需要4个药剂，所以你只能放置125个猪骑士（游戏邦注：不包括最后打印公主塔的坐标）。"
+    ],
+    "input": [
+      "使用标准输入来读取对hog骑手的响应。",
+      "第一行包含一个整数 $$$n$$$ ($$$2 \\le n \\le 10^9$$$）--可能的最大 x 坐标。",
+      "下面的行将包含对您的hog骑手的响应-字符串“<”，“>”或“=”。$$$i$$$-第一行是对你的$$$i$$$- hog骑手的回应。当你准备好猜测公主塔的坐标时，打印“！”X1 x2\"并终止程序。",
+      "游戏将允许你只有在程序打印出骑猪者的 x 坐标并执行刷新操作后，才能读取对骑猪者的响应。"
+    ],
+    "output": [
+      "要打印骑猪者的坐标，程序必须使用标准输出。",
+      "您的程序必须打印hog骑手的x坐标——整数$$$x$$$ ($$$1 \\le x \\le n$$$)，每行查询一次(不要忘记在每个$$$x$$$后面加上“end of line”）。在打印每行之后，程序必须执行刷新操作。当你准备好猜测公主塔的坐标时，打印“！”X1 x2\"，刷新，并终止程序。"
+    ],
+    "note": [
+      "在这个例子中，公主塔位于x坐标$$$1$$$和$$$9$$$。",
+      "将骑猪者放置在 $$$4$$$ 的 x 坐标上会导致它瞄准 $$$1$$$ 处的公主塔，因为 $$$|4-1|  \\lt  |4-9|$$$，所以响应为 “<”。",
+      "在 x 坐标为 $$$1$$$ 的位置放置骑猪人，将位于公主塔的顶部，因此响应为\"=\"。",
+      "将一个骑猪者放置在x坐标$$$5$$$将导致它瞄准$$$9$$$的公主塔，因为$$$|5-9| \\ge |5-1|$$$，所以反应是“>”。",
+      "将骑猪者放置在x坐标$$$9$$$处将位于公主塔的顶部，因此响应为“=”。",
+      "玩家正确猜测公主塔位于 x 坐标 $$$1$$$ 和 $$$9$$$，程序结束。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.590Z",
+  "translatedBy": [
+    "youdao",
+    "deepl",
+    "iflyrec",
+    "caiyun"
+  ]
+}

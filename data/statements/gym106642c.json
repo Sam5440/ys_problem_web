@@ -1,0 +1,69 @@
+{
+  "code": "GYM106642C",
+  "letter": "C",
+  "title": "C. Mixed Bits",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106642/problem/C",
+  "difficulty": "*1500",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array $$$a$$$ of $$$n$$$ integers. Only the lowest $$$m$$$ bits of every integer are considered.",
+      "Let $$$a_l, a_{l+1}, \\ldots, a_r$$$ be a non-empty subarray. A bit position $$$b$$$ ($$$0 \\le b  \\lt  m$$$) is called mixed in this subarray if there is at least one element whose $$$b$$$-th bit is $$$0$$$, and at least one element whose $$$b$$$-th bit is $$$1$$$.",
+      "The value of a subarray is the number of its mixed bit positions.",
+      "Count the subarrays whose value is exactly $$$k$$$."
+    ],
+    "input": [
+      "The first line contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "The first line of each test case contains three integers $$$n$$$, $$$m$$$, and $$$k$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$, $$$1 \\le m \\le 20$$$, $$$0 \\le k \\le m$$$).",
+      "The second line contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ ($$$0 \\le a_i  \\lt  2^m$$$).",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print one integer — the number of subarrays whose value is exactly $$$k$$$."
+    ],
+    "note": [
+      "In the first test case, the array is $$$[0,1,3]$$$. In binary, its elements are $$$000$$$, $$$001$$$, and $$$011$$$.",
+      "The subarrays $$$[0,1]$$$ and $$$[1,3]$$$ have exactly one mixed bit. No other subarray does.",
+      "In the fourth test case, every subarray of length at least two has all three bits mixed."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3 3 1\n0 1 3\n4 2 0\n1 1 3 3\n3 3 2\n0 1 3\n4 3 3\n0 7 0 7\n5 4 1\n5 5 7 7 5",
+      "output": "2\n6\n1\n6\n8"
+    }
+  ],
+  "titleZh": [
+    "C.混合位"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "给定一个 $$$a$$$ 的 $$$n$$$ 整数数组。只考虑每个整数的最低 $$$m$$$ 位。",
+      null,
+      "子数组的值是其混合位位置的数量。",
+      "计数恰好为$$$k$$$的子数组。"
+    ],
+    "input": [
+      "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+      "每个测试用例的第一行包含三个整数 $$$n$$$、$$$m$$$ 和 $$$k$$$($$$1 \\le n \\le 2 \\cdot 10^5$$$、$$$1 \\le m \\le 20$$$、$$$0 \\le k \\le m$$$)。",
+      "第二行包含$$$n$$$个整数$$$a_1, a_2, \\ldots, a_n$$$ ($$$0 \\le a_i  \\lt  2^m$$$）。",
+      "保证所有测试用例的$$$n$$$之和不超过$$$2 \\cdot 10^5$$$。"
+    ],
+    "output": [
+      "对于每个测试用例，打印一个整数——其值恰好为 $$$k$$$ 的子数组的数量。"
+    ],
+    "note": [
+      "在第一个测试用例中，数组是$$$[0,1,3]$$$。在二进制中，它的元素是$$$000$$$， $$$001$$$和$$$011$$$。",
+      "子数组$$$[0,1]$$$和$$$[1,3]$$$只有一个混合位。其他子数组没有。",
+      "在第四个测试用例中，每个长度至少为两位的子数组都将所有三位混合。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.601Z",
+  "translatedBy": [
+    "iflyrec",
+    "caiyun",
+    "youdao"
+  ]
+}

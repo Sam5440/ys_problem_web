@@ -1,0 +1,72 @@
+{
+  "code": "GYM106682L",
+  "letter": "L",
+  "title": "L. Luana's Album",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106682/problem/L",
+  "difficulty": "*1500",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Luana has a sticker album. The album has $$$M$$$ slots for stickers, all in a row. The slots are numbered from $$$1$$$ to $$$M$$$ from left to right. Each sticker also contains a number between $$$1$$$ and $$$M$$$. There may be multiple stickers with the same number. On the $$$i$$$-th slot, only stickers containing number $$$i$$$ can be pasted.",
+      "Unfortunately, the album has a very strong restriction for filling it: a sticker can only be pasted if it is to the right of all the stickers already pasted.",
+      "Luana buys sticker packs one at a time. Each time she buys a pack, Luana looks at the stickers in the pack in order and, for each one, decides whether to paste it in the album or destroy it forever, always respecting the filling condition. Luana never buys a new pack until she has pasted or destroyed all the stickers from the previous pack.",
+      "Unfortunately, all the packs sold by the store are identical: they always contain the same stickers, in the same order. To try to complete the album faster, Luana may turn some packs over before opening them, thus reversing the order in which she looks at the stickers in those packs.",
+      "Your task is to tell Luana the maximum number of stickers she can paste in the album and the minimum number of packs she has to buy to paste that many stickers."
+    ],
+    "input": [
+      "The first line contains two integers $$$N$$$ and $$$M$$$ ($$$1 \\leq N, M \\leq 2 \\times 10^{5}$$$), the number of stickers in each pack and the number of slots in the album.",
+      "The second line contains $$$N$$$ integers $$$A_1, \\ldots, A_N$$$ ($$$1 \\leq A_i \\leq M$$$), which indicate the numbers contained in the stickers in the order they appear. The $$$i$$$-th sticker in the pack can only be pasted in the $$$A_i$$$-th slot of the album."
+    ],
+    "output": [
+      "A line with two integers, the first one must be the maximum number of stickers that can be pasted in the album and the second one must be the minimum number of packs Luana has to buy to achieve that."
+    ],
+    "note": [
+      "In the first example, Luana should buy two packs in order to maximize the number of stickers she pastes in the album:",
+      "First pack: without turning it over, she gets stickers 2, 4 and 5 (discarding stickers 8, 7 and 4, in that order)",
+      "Second pack: she must turn it over, and she gets stickers 7 and 8 (discarding stickers 4, 5, 4 and 2, in that order)",
+      "For the second example, Luana buys a single pack and opens it after turning it over."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 10\n2 8 4 7 5 4",
+      "output": "5 2"
+    },
+    {
+      "input": "3 3\n3 2 1",
+      "output": "3 1"
+    }
+  ],
+  "titleZh": [
+    "L. Luana的专辑"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "Luana 有一本贴纸专辑。专辑中有 $$$M$$$ 个贴纸槽，全部排成一排。这些槽从左到右编号为 $$$1$$$ 到 $$$M$$$。每个贴纸还包含一个 $$$1$$$ 到 $$$M$$$ 之间的数字。可能有多个数字相同的贴纸。在 $$$i$$$ 个槽中，只能粘贴包含数字 $$$i$$$ 的贴纸。",
+      "不幸的是，相册对于填充它有一个非常强的限制：一个贴纸只能粘贴在所有已经粘贴的贴纸的右边。",
+      "卢阿娜每次只买一个贴纸包。每次买包时，卢阿娜都会按顺序看包里的贴纸，然后决定是把它们贴在相册里，还是永远毁掉，她总是尊重包装的条件。Luana在粘贴或销毁之前包上的所有贴纸之前不会购买新包。",
+      "不幸的是，商店出售的所有包装都是一样的：它们总是以相同的顺序包含相同的贴纸。为了更快地完成专辑，卢安娜可能会在打开前翻转一些包装，从而颠倒了她查看这些包装中贴纸的顺序。",
+      "你的任务是告诉Luana她可以在相册中粘贴的贴纸的最大数量，以及她必须购买的贴纸的最小数量。"
+    ],
+    "input": [
+      "第一行包含两个整数 $$$N$$$ 和 $$$M$$$($$$1 \\leq N, M \\leq 2 \\times 10^{5}$$$)、每个包中贴纸的数量以及专辑中插槽的数量。",
+      "第二行包含 $$$N$$$ 整数 $$$A_1, \\ldots, A_N$$$($$$1 \\leq A_i \\leq M$$$)，表示贴纸中包含的数字按其出现顺序排列。包中的 $$$i$$$ 贴纸只能贴在专辑的 $$$A_i$$$ 插槽中。"
+    ],
+    "output": [
+      "一行有两个整数，第一个必须是可以粘贴在相册中的贴纸的最大数量，第二个必须是Luana必须购买的最小数量才能达到这个目标。"
+    ],
+    "note": [
+      "在第一个例子中，卢安娜应该购买两包，以最大限度地增加她贴在相册中的贴纸数量：",
+      "第一组：不翻转，她得到贴纸 2、4 和 5(按顺序丢弃贴纸 8、7 和 4)",
+      null,
+      "在第二个例子中，卢安娜买了一个包裹，翻转后打开。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.608Z",
+  "translatedBy": [
+    "youdao",
+    "caiyun"
+  ]
+}

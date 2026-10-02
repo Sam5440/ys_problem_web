@@ -122,6 +122,7 @@ async function main() {
 }
 
 main().catch((e) => {
-  console.error(e);
-  process.exit(1);
+  // Statement fetching is best-effort: never break CI over it.
+  console.error('fetch-statements failed:', e);
+  process.exit(0);
 });

@@ -177,12 +177,33 @@ export async function fetchStatementViaBrowser(items, { delayMs = 5000, onResult
   // flags a session after its first request or two, so fresh sessions pass most.
   const freshSession = process.env.CF_FRESH_SESSION === '1';
   let kindIdx = pinned ? 1 : 0;
-  let session = await openSession(kinds[kindIdx]);
-  const closeSession = async () => session && session.browser.close().catch(() => {});
+
+  // Launching chrome-headful requires the real Chrome binary + a display (real
+  // or Xvfb). If unavailable, degrade to the other kind instead of crashing.
+  const openSessionSafe = async (kind) => {
+    try {
+      return await openSession(kind);
+    } catch (e) {
+      console.warn(`  could not open ${kind} session: ${String(e?.message || e).slice(0, 140)}`);
+      return null;
+    }
+  };
+  const otherKind = (kind) => kinds[(kinds.indexOf(kind) + 1) % kinds.length];
+
+  let session = await openSessionSafe(kinds[kindIdx]);
+  if (!session) {
+    kindIdx = kinds.indexOf(otherKind(kinds[kindIdx]));
+    session = await openSessionSafe(kinds[kindIdx]);
+  }
+  if (!session) {
+    console.warn('no usable browser session; skipping statement fetching');
+    return results;
+  }
 
   // Adaptive recovery: Cloudflare flags sustained traffic from one IP; the score
   // decays after a few quiet minutes. On consecutive failures, close everything,
   // wait out the flag, then retry the item in a brand-new session.
+  const closeSession = async () => session && session.browser.close().catch(() => {});
   const CONSECUTIVE_FAILS = 2;
   const COOLDOWN_MS = Number(process.env.CF_COOLDOWN_MS || 240000);
   let consecutiveFails = 0;
@@ -191,7 +212,7 @@ export async function fetchStatementViaBrowser(items, { delayMs = 5000, onResult
     const { code, url } = items[i];
     if (freshSession && i > 0) {
       await closeSession();
-      session = await openSession(kinds[kindIdx]);
+      session = await openSessionSafe(kinds[kindIdx]);
       await sleep(1500);
     }
     let statement = await grab(session.page, url);
@@ -204,8 +225,13 @@ export async function fetchStatementViaBrowser(items, { delayMs = 5000, onResult
       );
       await closeSession();
       await sleep(COOLDOWN_MS);
-      if (!pinned) kindIdx = (kindIdx + 1) % kinds.length;
-      session = await openSession(kinds[kindIdx]);
+      if (!pinned) kindIdx = kinds.indexOf(otherKind(kinds[kindIdx]));
+      session = await openSessionSafe(kinds[kindIdx]);
+      if (!session) session = await openSessionSafe(kinds[kindIdx]);
+      if (!session) {
+        console.warn('no usable browser session left; aborting statement fetching');
+        return results;
+      }
       consecutiveFails = 0;
       statement = await grab(session.page, url); // retry this item in the fresh session
     }

@@ -40,9 +40,26 @@ async function api(pathname) {
 }
 
 async function raw(filePath) {
-  const res = await fetch(`${RAW_BASE}/${filePath}`);
-  if (!res.ok) throw new Error(`raw ${filePath}: HTTP ${res.status}`);
-  return res.text();
+  let lastErr;
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const res = await fetch(`${RAW_BASE}/${filePath}`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.text();
+    } catch (e) {
+      lastErr = e;
+      if (attempt < 2) await sleep(2000);
+    }
+  }
+  // Fallback: some networks (and this sandbox) can't reach raw.githubusercontent.com
+  // but reach api.github.com — same file, base64-wrapped.
+  try {
+    const json = await api(`/contents/${filePath}?ref=${BRANCH}`);
+    if (json?.content) return Buffer.from(json.content, 'base64').toString('utf8');
+  } catch (e) {
+    lastErr = e;
+  }
+  throw new Error(`raw ${filePath}: ${lastErr.message}`);
 }
 
 /* ---------------- markdown table parsing ---------------- */
@@ -232,6 +249,7 @@ async function main() {
     }
   }
 
+  const prevDays = new Map((previous.days || []).map((d) => [d.date, d]));
   const days = [];
   for (let i = 0; i < kept.length; i++) {
     const day = kept[i];
@@ -239,7 +257,15 @@ async function main() {
     try {
       rows = parseTable(await raw(day.problemsMd), false);
     } catch (e) {
-      console.warn(`  skip ${day.date}: ${e.message}`);
+      // Transient upstream/network failure: keep whatever we had for this date
+      // instead of silently dropping a (possibly latest) day from the site.
+      const prevDay = prevDays.get(day.date);
+      if (prevDay) {
+        days.push(prevDay);
+        console.warn(`  ${day.date}: fetch failed (${e.message}) — kept previous data`);
+      } else {
+        console.warn(`  skip ${day.date}: ${e.message}`);
+      }
       continue;
     }
     const problems = [];

@@ -1,0 +1,53 @@
+{
+  "code": "GYM106722D",
+  "letter": "D",
+  "title": "D. Domain Expansion Abraham échate un hint",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106722/problem/D",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Rem, Alex, José, and Abraham are spending the weekend exploring La Plata in the middle of the Training Camp Argentina. During their trip, they decide to visit an attraction called La República de los Pibitos.",
+      "The attraction consists of $$$n$$$ locations, numbered from $$$1$$$ to $$$n$$$. From each location, there is exactly one path leading to another location. Therefore, La República de los Pibitos can be represented as a functional graph: every vertex has exactly one outgoing edge.",
+      "The graph is connected if the directions of the edges are ignored. Consequently, it contains exactly one directed cycle. Finding this cycle is one of the main attractions of La República de los Pibitos.",
+      "Abraham has already seen the map and knows which locations belong to the cycle. However, Rem, Alex, and José have not. Instead of showing them the map, Abraham challenges them to determine all the vertices of the cycle using at most $$$3n$$$ hints.",
+      "For each hint, they may choose two integers $$$u$$$ and $$$k$$$ ($$$1 \\le u \\le n$$$, $$$1 \\le k \\le n$$$). Starting at vertex $$$u$$$, consider the sequence of vertices visited while following the unique outgoing edge exactly $$$k$$$ times. Thus, the sequence contains the starting vertex and the $$$k$$$ vertices reached after each step.",
+      "Abraham will answer whether some vertex appears more than once in this sequence, or whether all visited vertices are distinct.",
+      "Using at most $$$3n$$$ such hints, Rem, Alex, and José must determine exactly which vertices belong to the unique directed cycle of La República de los Pibitos."
+    ],
+    "input": [
+      "The input contains a single integer $$$n$$$ ($$$1 \\le n \\le 10^4$$$) — the number of vertices in the functional graph.",
+      "After reading $$$n$$$, the interaction starts.",
+      "You can ask Abraham at most $$$3n$$$ hints.",
+      "To ask a hint, output a line in the following format: \"? $$$u$$$ $$$k$$$\", where $$$u$$$ is the starting vertex and $$$k$$$ ($$$1 \\le k \\le n$$$) is the number of edges that will be traversed by repeatedly following the unique outgoing edge.",
+      "After each hint, the evaluator will provide a single line containing:",
+      "\"Yes\", if some vertex is visited more than once among the starting vertex and the $$$k$$$ vertices reached after each step;",
+      "\"No\", if all these $$$k+1$$$ visited vertices are distinct.",
+      "Once you have determined all the vertices that belong to the unique directed cycle, output a line in the following format: \"! $$$m$$$ $$$v_1$$$ $$$v_2$$$ $$$\\dots$$$ $$$v_m$$$\", where $$$m$$$ is the number of vertices in the cycle and $$$v_1,v_2,\\dots,v_m$$$ are exactly the vertices that belong to it, in any order.",
+      "The graph is guaranteed to be a connected functional graph, meaning every vertex has exactly one outgoing edge and the underlying undirected graph is connected. Therefore, the graph contains exactly one directed cycle.",
+      "After printing each line, do not forget to output the end of the line and flush the output buffer. Otherwise, you will receive the \"Idleness limit exceeded\" verdict. To flush, use:",
+      "\"fflush(stdout)\" or \"cout.flush()\" in C++;",
+      "\"System.out.flush()\" in Java;",
+      "\"flush(output)\" in Pascal;",
+      "\"stdout.flush()\" in Python.",
+      "The interactor is adaptive. This means that the functional graph is not necessarily fixed before the interaction starts. Instead, the interactor may determine the hidden graph based on the queries made by your program, as long as all answers given during the interaction are consistent with at least one connected functional graph."
+    ],
+    "output": [],
+    "note": [
+      "The functional graph for this example is shown below:",
+      "For the first hint, \"? 4 3\", starting from vertex $$$4$$$ and walking $$$3$$$ steps visits the vertices $$$4, 1, 2, 3$$$. Since all of them are different, the answer is \"No\".",
+      "For the second hint, \"? 4 4\", the visited vertices are $$$4, 1, 2, 3, 1$$$. Vertex $$$1$$$ is visited twice, so the answer is \"Yes\".",
+      "For the third hint, \"? 1 2\", the visited vertices are $$$1, 2, 3$$$. Since all of them are different, the answer is \"No\".",
+      "For the fourth hint, \"? 1 3\", the visited vertices are $$$1, 2, 3, 1$$$. Vertex $$$1$$$ is visited twice, so the answer is \"Yes\".",
+      "Finally, the vertices belonging to the unique directed cycle are $$$1$$$, $$$2$$$, and $$$3$$$. Therefore, a valid final answer is \"! 3 1 3 2\". The vertices of the cycle may be reported in any order."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n\nNo\n\nYes\n\nNo\n\nYes",
+      "output": "? 4 3\n\n? 4 4\n\n? 1 2\n\n? 1 3\n\n! 3 1 3 2"
+    }
+  ]
+}

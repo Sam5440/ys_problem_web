@@ -1,0 +1,47 @@
+{
+  "code": "GYM101059B",
+  "letter": "B",
+  "title": "B. Shift and Push",
+  "contest": null,
+  "url": "https://codeforces.com/gym/101059/problem/B",
+  "difficulty": "*1200",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Given two equally sized arrays A and B of size N. A is empty and B has some values.",
+      "You need to fill A with an element X such that X belongs to B.",
+      "The only operations allowed are:",
+      "1. Copy B[i] to A[i].",
+      "2. Cyclic shift B by 1 to the the right.",
+      "You need to minimise the number of operations."
+    ],
+    "input": [
+      "The first line contains a single positive integer N(1 ≤ N ≤ 106), denoting the size of the arrays.",
+      "Next line contains N space separated positive integers denoting the elements of the array B(1 ≤ B[i] ≤ 105)."
+    ],
+    "output": [
+      "Output a single integer, denoting the minimum number of operations required."
+    ],
+    "note": [
+      "In the first test case:",
+      "We can have 5 steps as: fill first element, shift, fill second element, shift, fill third element.",
+      "Initially, A = [_, _, _], B = [1, 2, 3]",
+      "After step 1, A = [1, _, _], B = [1, 2, 3]",
+      "After step 2, A = [1, _, _], B = [3, 1, 2]",
+      "After step 3, A = [1, 1, _], B = [3, 1, 2]",
+      "After step 4, A = [1, 1, _], B = [2, 3, 1]",
+      "After step 5, A = [1, 1, 1], B = [2, 3, 1]"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 2 3",
+      "output": "5"
+    },
+    {
+      "input": "6\n1 1 2 2 3 3",
+      "output": "10"
+    }
+  ]
+}

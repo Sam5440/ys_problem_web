@@ -1,0 +1,35 @@
+{
+  "code": "GYM104518F",
+  "letter": "F",
+  "title": "F. Vacation",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104518/problem/F",
+  "difficulty": "*1700",
+  "timeLimit": "3 s",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Technoblade has finally decided to take a vacation. He has decided to visit an extensive list of cities and has hired you to make a travel plan for him. For this, each city has been given an identifier: an integer from 1 to N, with 1 being Techno's hometown. In addition, you have noted all available trips, which can be represented by 3 integers $$$a_i, b_i, c_i$$$, representing a route from $$$a_i$$$ to $$$b_i$$$ that costs $$$c_i$$$ reais and can be taken in both directions.",
+      "Now it's up to you to decide in which order to visit the cities. This plan must start in the hometown (number 1) and end there. In addition, every city must be visited at least once, with repetitions allowed.",
+      "As Technoblade is on vacation, he is not so concerned about money, and any plan that has a cost less than or equal to $$$2$$$ times the cost of an optimal plan will be accepted. For example, if we treat this problem as a graph problem, we can have a case like the one below:",
+      "Note that the plan with the lowest cost has a cost of $$$8$$$. $$$1 \\rightarrow 2 \\rightarrow 4 \\rightarrow 3 \\rightarrow 4 \\rightarrow 5 \\rightarrow 6 \\rightarrow 5 \\rightarrow 1$$$ is an example of a plan.",
+      "However, the plan $$$1 \\rightarrow 2 \\rightarrow 3 \\rightarrow 4 \\rightarrow 5 \\rightarrow 6\\rightarrow 5 \\rightarrow 1$$$ has a cost of $$$16 \\leq 2\\cdot 8$$$, so it is also a valid plan."
+    ],
+    "input": [
+      "The first line contains 2 integers $$$1 \\leq N \\leq 3 \\cdot 10^5$$$ and $$$1 \\leq M \\leq 5 \\cdot 10^5$$$, representing the number of cities and the number of routes. Followed by $$$M$$$ lines with 3 integers $$$a_i, b_i, c_i$$$ each. It is guaranteed that $$$1 \\leq a_i , b_i \\leq N$$$, $$$a_i \\neq b_i$$$ and $$$1 \\leq c_i \\leq 10^{12}$$$. It is also guaranteed that it is possible to make a plan that visits every city by using the given routes."
+    ],
+    "output": [
+      "Print on the first line the cost of your found plan. On the second line, print an integer $$$K$$$ representing the number of cities in your plan. Finally, print $$$K$$$ integers $$$1 \\leq p_i \\leq N$$$ representing the cities to be visited in the order of your plan. You must ensure that $$$p_1 = p_K = 1$$$ and that for every $$$1 \\leq i  \\lt  K$$$, there is a route from $$$p_i$$$ to $$$p_{i+1}$$$. Also, you must ensure that $$$K \\leq 2 \\cdot 10^6$$$. It is guaranteed that there is a valid plan with this many cities."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 2\n1 2 1\n1 2 10",
+      "output": "2\n3\n1 2 1"
+    },
+    {
+      "input": "3 3\n1 2 100000000000\n1 3 100000000000\n2 3 1000000000000",
+      "output": "400000000000\n5\n1 2 1 3 1"
+    }
+  ]
+}

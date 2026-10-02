@@ -147,13 +147,13 @@ export async function fetchStatementViaBrowser(items, { delayMs = 5000, onResult
     return { browser, page };
   }
 
-  async function grab(page, url) {
+  async function grab(page, url, { waitSecs = 24 } = {}) {
     try {
       await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
     } catch {
       return null;
     }
-    for (let t = 0; t < 25; t++) {
+    for (let t = 0; t < Math.max(1, Math.round(waitSecs / 2)); t++) {
       if ((await page.locator('div.problem-statement').count()) > 0) {
         try {
           return parseStatementHtml(await page.content());
@@ -162,7 +162,7 @@ export async function fetchStatementViaBrowser(items, { delayMs = 5000, onResult
         }
       }
       const title = await page.title();
-      if (!/just a moment|checking your browser|security verification/i.test(title) && t > 4) return null;
+      if (!/just a moment|checking your browser|security verification/i.test(title) && t > 3) return null;
       await sleep(2000);
     }
     return null;
@@ -170,36 +170,44 @@ export async function fetchStatementViaBrowser(items, { delayMs = 5000, onResult
 
   const results = new Map();
   const kinds = ['headless', 'chrome-headful'];
-  let kindIdx = 0;
-  let { browser, page } = await openSession(kinds[kindIdx]);
+  // CF_START_MODE=chrome-headful pins headful real Chrome (best pass rate on a
+  // flagged residential IP); default alternates headless <-> headful on failures.
+  const pinned = process.env.CF_START_MODE === 'chrome-headful';
+  // CF_FRESH_SESSION=1 opens a new browser per item — empirically Cloudflare
+  // flags a session after its first request or two, so fresh sessions pass most.
+  const freshSession = process.env.CF_FRESH_SESSION === '1';
+  let kindIdx = pinned ? 1 : 0;
+  let session = await openSession(kinds[kindIdx]);
+  const closeSession = async () => session && session.browser.close().catch(() => {});
 
-  // Adaptive recovery: after CONSECUTIVE_FAILS blocked pages in a row, close the
-  // browser, cool down (Cloudflare score decays), and switch browser mode.
-  const CONSECUTIVE_FAILS = 3;
-  const COOLDOWN_MS = 90000;
+  // Adaptive recovery: Cloudflare flags sustained traffic from one IP; the score
+  // decays after a few quiet minutes. On consecutive failures, close everything,
+  // wait out the flag, then retry the item in a brand-new session.
+  const CONSECUTIVE_FAILS = 2;
+  const COOLDOWN_MS = Number(process.env.CF_COOLDOWN_MS || 240000);
   let consecutiveFails = 0;
 
   for (let i = 0; i < items.length; i++) {
     const { code, url } = items[i];
-    let statement = await grab(page, url);
-    if (!statement) {
-      await sleep(10000);
-      statement = await grab(page, url); // one polite retry after a pause
+    if (freshSession && i > 0) {
+      await closeSession();
+      session = await openSession(kinds[kindIdx]);
+      await sleep(1500);
     }
+    let statement = await grab(session.page, url);
 
-    if (statement) consecutiveFails = 0;
-    else if (++consecutiveFails >= CONSECUTIVE_FAILS && i < items.length - 1) {
-      console.log(
-        `  ${consecutiveFails} consecutive failures — cooling down ${COOLDOWN_MS / 1000}s and switching browser mode…`,
-      );
-      await browser.close().catch(() => {});
-      await sleep(COOLDOWN_MS);
-      kindIdx = (kindIdx + 1) % kinds.length;
-      ({ browser, page } = await openSession(kinds[kindIdx]));
+    if (statement) {
       consecutiveFails = 0;
-      // retry this item immediately in the new session
-      statement = await grab(page, url);
-      if (statement) consecutiveFails = 0;
+    } else if (++consecutiveFails >= CONSECUTIVE_FAILS) {
+      console.log(
+        `  ${consecutiveFails} consecutive failures — cooling down ${COOLDOWN_MS / 1000}s${pinned ? '' : ' and switching browser mode'}…`,
+      );
+      await closeSession();
+      await sleep(COOLDOWN_MS);
+      if (!pinned) kindIdx = (kindIdx + 1) % kinds.length;
+      session = await openSession(kinds[kindIdx]);
+      consecutiveFails = 0;
+      statement = await grab(session.page, url); // retry this item in the fresh session
     }
 
     results.set(code, statement);
@@ -208,6 +216,6 @@ export async function fetchStatementViaBrowser(items, { delayMs = 5000, onResult
     if (i > 0 && i % 25 === 0) await sleep(15000); // cool-down every 25 pages
   }
 
-  await browser.close().catch(() => {});
+  await closeSession();
   return results;
 }

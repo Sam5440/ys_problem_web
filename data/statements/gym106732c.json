@@ -1,0 +1,40 @@
+{
+  "code": "GYM106732C",
+  "letter": "C",
+  "title": "Rating",
+  "contest": "MEPhI Autumn Cup 2026",
+  "url": "https://codeforces.com/gym/106732/problem/C",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A recently published book receives readers' ratings on a scale from $$$1$$$ to $$$n$$$. Readers leave reviews one by one, and at any moment the book's rating is the arithmetic mean of all ratings given so far.",
+      "For each reader, their type $$$t_i$$$ and desired rating $$$x_i$$$ are known.",
+      "If $$$t_i = \\texttt{S}$$$, then the reader always gives the book rating $$$x_i$$$.",
+      "If $$$t_i = \\texttt{D}$$$, then before voting the reader sees the current rating of the book and the number of readers who have already voted. Then they choose an integer rating from $$$1$$$ to $$$n$$$ so that the book's rating after their vote is as close as possible to $$$x_i$$$.",
+      "The organizers may choose any order in which the readers leave their reviews.",
+      "$$$\\texttt{Andrew-13}$$$ became interested in the minimum and maximum possible final ratings of the book. Find these values."
+    ],
+    "input": [
+      "The first line of the input contains 2 integers $$$n, m$$$ $$$(1 \\le n, m \\le 2 \\cdot 10^5)$$$ — the maximum possible rating of the book and the number of readers, respectively.",
+      "Each of the next $$$m$$$ lines contains a character $$$t_i$$$ $$$(t_i = \\texttt{S}$$$ or $$$t_i = \\texttt{D})$$$ and an integer $$$x_i$$$ $$$(1 \\le x_i \\le n)$$$ — the reader type and their desired rating.",
+      "The character $$$t_i$$$ is $$$\\texttt{S}$$$ if the reader always gives rating $$$x_i$$$, or $$$\\texttt{D}$$$ if the reader chooses a rating so that the final rating after their vote is as close as possible to $$$x_i$$$."
+    ],
+    "output": [
+      "Print two numbers in a single line — the minimum and maximum possible final ratings of the book.",
+      "Your answer will be considered correct if its absolute or relative error does not exceed $$$10^{-9}$$$.",
+      "Formally, let your answer be $$$a$$$, and the jury's answer be $$$b$$$. Your answer is considered correct if $$$\\frac{|a - b|}{\\max(1, |b|)} \\le 10^{-9}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "10 3\nS 3\nS 5\nD 8",
+      "output": "5.3333333333333 6.0000000000000"
+    },
+    {
+      "input": "1000 4\nD 999\nD 101\nS 323\nD 812",
+      "output": "487.0000000000000 606.0000000000000"
+    }
+  ]
+}

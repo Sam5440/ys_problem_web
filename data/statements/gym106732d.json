@@ -1,0 +1,36 @@
+{
+  "code": "GYM106732D",
+  "letter": "D",
+  "title": "Collectible Cards",
+  "contest": "MEPhI Autumn Cup 2026",
+  "url": "https://codeforces.com/gym/106732/problem/D",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are $$$n$$$ collectible cards arranged in a fixed order on a strip. The $$$i$$$-th card has type number $$$a_i$$$.",
+      "The strip can be cut between some adjacent cards, obtaining several non-empty sets. The order of the cards cannot be changed, so each set consists of some contiguous fragment of the strip.",
+      "For a set of cards, define its $$$\\operatorname{MEX}$$$ as the minimum non-negative type number that does not appear among the cards in that set. For example, $$$\\operatorname{MEX}([0, 3, 2, 2, 0]) = 1$$$, and $$$\\operatorname{MEX}([1, 2, 6]) = 0$$$.",
+      "A set is called $$$\\texttt{valid}$$$ if its $$$\\operatorname{MEX}$$$ lies in the range from $$$L$$$ to $$$R$$$ inclusive.",
+      "Find the number of ways to cut the strip so that all resulting sets are $$$\\texttt{valid}$$$. Since the answer may be large, output it modulo $$$998244353$$$."
+    ],
+    "input": [
+      "The first line of the input contains three integers $$$n$$$, $$$L$$$, and $$$R$$$ $$$(1 \\le n \\le 5 \\cdot 10^5,\\ 0 \\le L \\le R \\le n)$$$ — the number of cards and the bounds of the valid values of $$$\\operatorname{MEX}$$$.",
+      "The second line contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ $$$(0 \\le a_i \\le n)$$$ — the type numbers of the cards on the strip."
+    ],
+    "output": [
+      "Print one number in a single line — the number of ways to cut the strip modulo $$$998244353$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 1 3\n0 3 1 2 0",
+      "output": "2"
+    },
+    {
+      "input": "6 0 2\n0 1 0 2 3 0",
+      "output": "24"
+    }
+  ]
+}

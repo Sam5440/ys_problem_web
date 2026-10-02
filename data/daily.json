@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T16:13:06.239Z",
+  "generatedAt": "2026-10-02T17:31:46.020Z",
   "sourceRepo": "Yawn-Sean/Daily_CF_Problems",
   "days": [
     {
@@ -10,7 +10,62 @@
           "url": "https://codeforces.com/gym/106733/problem/F",
           "difficulty": "*1800",
           "hint": "Binary search on marginal effect.",
-          "statement": null,
+          "statement": {
+            "code": "GYM106733F",
+            "letter": "F",
+            "title": "F. Coffee is Life",
+            "contest": null,
+            "url": "https://codeforces.com/gym/106733/problem/F",
+            "difficulty": "*1800",
+            "timeLimit": "1 second",
+            "memoryLimit": "256 megabytes",
+            "sections": {
+              "legend": [
+                "On his voyage to hunt the elusive white whale, Captain Ahab is swamped with tasks to do during day-to-day life on his ship. The good news is that he has the life-sustaining power of coffee on his side. The bad news is that there is a limited amount of coffee in his ship's hold. There are $$$n$$$ days, each with some amount of work $$$w_i$$$ to do. Each unit of work costs 1 energy, and every day starts with 0 energy.",
+                "There are $$$m$$$ cups of coffee that can be drunk on any day. The first coffee drunk on any day gives $$$k$$$ energy, the second gives $$$k-1$$$ energy, and so on, until the $$$k^{th}$$$ coffee gives $$$1$$$ energy; any coffee drunk afterward gives no energy.",
+                "Ahab needs your help to ration his coffee to complete as much work as possible."
+              ],
+              "input": [
+                "The first line of input contains $$$n$$$, $$$m$$$, and $$$k$$$ ($$$1 \\le n \\le 10^5, 1 \\le m, k \\le 10^9$$$), the number of days, cups of coffee, and initial energy from coffee, respectively.",
+                "The second line contains $$$n$$$ integers, $$$w_1, w_2, ..., w_n$$$ ($$$1 \\le w_i \\le 10^{18}$$$), the amount of work to be done each day."
+              ],
+              "output": [
+                "The output should be one line containing the maximum possible amount of work that can be done."
+              ],
+              "note": [
+                "It is optimal for Ahab to drink two coffees on the first day, one on the second day, and one on the third day for $$$5+2+3 = 10$$$ units of work total."
+              ]
+            },
+            "examples": [
+              {
+                "input": "4 4 3\n10 2 4 1",
+                "output": "10"
+              }
+            ],
+            "titleZh": "F.咖啡就是生活",
+            "sectionsZh": {
+              "legend": [
+                "在追捕难以捉摸的白鲸的航行中，亚哈船长被船上日常生活中需要完成的任务所淹没。好消息是，他拥有咖啡这种维持生命的力量。坏消息是，他的船舱里咖啡的数量有限。船上有 $$$n$$$ 天，每天都有一定数量的 $$$w_i$$$ 工作要做。每单位的工作消耗 1 能量，每天从零能量开始。",
+                "任何一天都有 $$$m$$$ 杯咖啡可以喝。每天喝第一杯咖啡会产生$$$k$$$能量，喝第二杯咖啡会产生$$$k-1$$$能量，以此类推，直到喝$$$k^{th}$$$杯咖啡会产生$$$1$$$能量；之后喝的任何咖啡都不会产生能量。",
+                "亚哈需要您的帮助，为他的咖啡定量，以尽可能多地完成工作。"
+              ],
+              "input": [
+                "第一行输入分别为$$$n$$$、$$$m$$$和$$$k$$$($$$1 \\le n \\le 10^5, 1 \\le m, k \\le 10^9$$$），即天数、咖啡杯数和来自咖啡的初始能量。",
+                "第二行包含 $$$n$$$ 整数、$$$w_1, w_2, ..., w_n$$$ ($$$1 \\le w_i \\le 10^{18}$$$）、每天要完成的工作量。"
+              ],
+              "output": [
+                "输出应为一行，包含可完成的最大工作量。"
+              ],
+              "note": [
+                "亚哈最好在第一天喝两杯咖啡，第二天喝一杯，第三天再喝一杯，总共工作 $$$5+2+3 = 10$$$ 个单位。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:26:24.859Z",
+            "translatedBy": [
+              "caiyun",
+              "deepl"
+            ]
+          },
           "solution": {
             "file": "cf106733f.md",
             "markdown": "**提示 1：** 考虑每杯咖啡的作用。\n\n**提示 2：** 二分最后一杯的作用。\n\n考虑每天的每杯咖啡的作用是什么：第一杯 $k$ ，第二杯 $k-1$ ，以此类推，直到最后一杯可能工作量已经不够了，会有一个边界的问题。\n\n整体是单调递减的。我们相当于要求其中前 $m$ 大的数值之和。\n\n于是考虑二分这个数值，我们可以分别统计每天大于这个数值的有多少杯咖啡，借此检查边界应该更大还是更小。\n\n找到边界后，我们先对严格更大的数求和，并计数，剩余部分都刚好等于边界，加进来即可。\n\n时间复杂度为 $\\mathcal{O}(n\\log M)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    n, m, k = MII()\n    nums = LII()\n    \n    max_full_cups = [0] * n\n    \n    for i in range(n):\n        nums[i] = fmin(nums[i], k * (k + 1) // 2)\n        l, r = 1, k\n        while l <= r:\n            mid = (l + r) // 2\n            if (2 * k - mid + 1) * mid // 2 <= nums[i]: l = mid + 1\n            else: r = mid - 1\n        max_full_cups[i] = r\n    \n    l, r = 1, k\n    \n    while l <= r:\n        mid = (l + r) // 2\n        total = 0\n        \n        for i in range(n):\n            x = max_full_cups[i]\n            if mid >= k + 1 - x:\n                total += k - mid + 1\n            else:\n                total += x\n                if nums[i] - (2 * k - x + 1) * x // 2 >= mid:\n                    total += 1\n        \n            if total >= m: break\n        \n        if total >= m: l = mid + 1\n        else: r = mid - 1\n    \n    ans = 0\n    total = 0\n    \n    for i in range(n):\n        x = max_full_cups[i]\n        if r >= k + 1 - x:\n            total += k - r + 1\n            ans += (k + r) * (k - r + 1) // 2\n        else:\n            total += x\n            ans += (2 * k - x + 1) * x // 2\n            \n            if nums[i] - (2 * k - x + 1) * x // 2 >= r:\n                total += 1\n                ans += nums[i] - (2 * k - x + 1) * x // 2\n    \n    print(ans + (m - total) * r)\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint n, m, k;\n\tcin >> n >> m >> k;\n\n\tvector<long long> nums(n);\n\tfor (auto &x: nums) cin >> x;\n\n\tvector<int> max_full_cups(n);\n\n\tfor (int i = 0; i < n; i ++) {\n\t\tnums[i] = min(nums[i], 1ll * k * (k + 1) / 2);\n\n\t\tint l = 1, r = k;\n\t\twhile (l <= r) {\n\t\t\tint mid = (l + r) / 2;\n\t\t\tif (1ll * (2 * k - mid + 1) * mid / 2 <= nums[i]) l = mid + 1;\n\t\t\telse r = mid - 1;\n\t\t}\n\t\tmax_full_cups[i] = r;\n\t}\n\n\tint l = 1, r = k;\n\n\twhile (l <= r) {\n\t\tint mid = (l + r) / 2, total = 0;\n\n\t\tfor (int i = 0; i < n; i ++) {\n\t\t\tint x = max_full_cups[i];\n\t\t\tif (mid >= k + 1 - x) total += k - mid + 1;\n\t\t\telse {\n\t\t\t\ttotal += x;\n\t\t\t\tif (nums[i] - 1ll * (2 * k - x + 1) * x / 2 >= mid) total ++;\n\t\t\t}\n\t\t\tif (total >= m) break;\n\t\t}\n\t\tif (total >= m) l = mid + 1;\n\t\telse r = mid - 1;\n\t}\n\n\tlong long ans = 0;\n\tint total = 0;\n\n\tfor (int i = 0; i < n; i ++) {\n\t\tint x = max_full_cups[i];\n\t\tif (r >= k + 1 - x) {\n\t\t\ttotal += k - r + 1;\n\t\t\tans += 1ll * (k + r) * (k - r + 1) / 2;\n\t\t}\n\t\telse {\n\t\t\ttotal += x;\n\t\t\tans += 1ll * (2 * k - x + 1) * x / 2;\n\n\t\t\tif (nums[i] - 1ll * (2 * k - x + 1) * x / 2 >= r) {\n\t\t\t\ttotal ++;\n\t\t\t\tans += nums[i] - 1ll * (2 * k - x + 1) * x / 2;\n\t\t\t}\n\t\t}\n\t}\n\n\tcout << ans + 1ll * (m - total) * r;\n\n\treturn 0;\n}\n```"
@@ -21,7 +76,73 @@
           "url": "https://codeforces.com/gym/106732/problem/F2",
           "difficulty": "*2100",
           "hint": "DP. What should be the order of subtrees to visit.",
-          "statement": null,
+          "statement": {
+            "code": "GYM106732F2",
+            "letter": "F2",
+            "title": "F2. Expedition (hard version)",
+            "contest": null,
+            "url": "https://codeforces.com/gym/106732/problem/F2",
+            "difficulty": "*2100",
+            "timeLimit": "2 seconds",
+            "memoryLimit": "512 megabytes",
+            "sections": {
+              "legend": [
+                "This is the hard version of the problem. The difference between the versions is that in this version, the path may end in any cave.",
+                "Henry went on an expedition into a network of caves in search of ancient artifacts. The entrance to the caves is at vertex $$$1$$$, and the corridors between caves form a tree.",
+                "Henry lights his way with a magic lamp. To pass through the $$$i$$$-th corridor, the lamp spends $$$w_i$$$ units of charge each time it is traversed.",
+                "However, the cave corridors are extremely unstable. After two traversals of the same corridor, its vault becomes too fragile, and it is impossible to use this corridor a third time. Therefore, Henry may traverse each corridor at most twice, regardless of the direction of movement.",
+                "There is an artifact in every cave. On the first visit to vertex $$$v$$$, the artifact changes the lamp charge by $$$a_v$$$ units: some artifacts restore charge (those with $$$a_v  \\gt  0$$$), while others are cursed and instead take it away ($$$a_v  \\lt  0$$$). Visiting the cave again has no effect on the lamp charge.",
+                "At the beginning of the expedition, Henry is in cave $$$1$$$ and immediately activates the artifact there. The lamp charge must never become negative at any moment.",
+                "Henry must visit all caves and collect all artifacts. After that, he can activate a portal in any cave and leave the dungeon, so he does not need to return to the entrance.",
+                "Determine the minimum initial lamp charge with which Henry can complete the expedition."
+              ],
+              "input": [
+                "The first line contains one integer $$$n$$$ $$$(1 \\le n \\le 2 \\cdot 10^5)$$$ — the number of caves.",
+                "The second line contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ $$$(-10^9 \\le a_i \\le 10^9)$$$ — the changes in lamp charge after the first visit to the corresponding caves. Note that each corridor can be traversed at most twice, regardless of direction.",
+                "The next $$$n - 1$$$ lines contain three integers each: $$$u_i$$$, $$$v_i$$$, and $$$w_i$$$ $$$(1 \\le u_i, v_i \\le n,\\ u_i \\ne v_i,\\ 1 \\le w_i \\le 10^9)$$$ — the endpoints of the $$$i$$$-th corridor and the amount of charge required to traverse it.",
+                "It is guaranteed that the corridors form a tree."
+              ],
+              "output": [
+                "Print one integer — the minimum initial lamp charge with which Henry can visit all caves without the lamp charge ever becoming negative."
+              ]
+            },
+            "examples": [
+              {
+                "input": "5\n1 10 -2 6 7\n1 2 10\n1 3 2\n3 4 1\n3 5 7",
+                "output": "16"
+              },
+              {
+                "input": "4\n2 -90 15 30\n1 2 4\n2 3 5\n1 4 10",
+                "output": "87"
+              }
+            ],
+            "titleZh": "F2. 探险 (硬件版本)",
+            "sectionsZh": {
+              "legend": [
+                "这是问题的硬版本。不同版本之间的区别在于，在这个版本中，路径可能会在任何洞穴中结束。",
+                "亨利进行了一次探险，进入一个洞穴网络寻找古代文物。洞穴的入口位于顶点 $$$1$$$，洞穴之间的走廊形成一棵树。",
+                "亨利用一盏魔法灯照明。为了通过 $$$i$$$ 号走廊，这盏灯每次穿越时都会消耗 $$$w_i$$$ 单位的电量。",
+                "然而，洞穴走廊极其不稳定。经过两次穿越同一条走廊后，它的拱顶变得太过脆弱，不可能第三次使用这条走廊。因此，亨利最多只能穿越每条走廊两次，无论移动方向如何。",
+                "每个洞穴中都有一个神器。第一次访问顶点 $$$v$$$ 时，神器会以 $$$a_v$$$ 为单位改变灯的电量：一些神器会恢复电量 (那些带有 $$$a_v  \\gt  0$$$ 的神器)，而其他神器则会被诅咒并取走电量 ($$$a_v  \\lt  0$$$)。再次访问洞穴对灯的电量没有影响。",
+                "在探险开始时，亨利在 $$$1$$$ 洞穴中，立即激活了那里的神器。灯泡的电荷绝不能在任何时候变成负值。",
+                "亨利必须参观所有洞穴，收集所有神器。之后，他可以在任何洞穴中激活传送门，离开地牢，这样就不需要返回入口了。",
+                "确定亨利完成探险所需的最小初始灯泡电量。"
+              ],
+              "input": [
+                "第一行包含一个整数 $$$n$$$$$$(1 \\le n \\le 2 \\cdot 10^5)$$$——洞穴的数量。",
+                "第二行包含 $$$n$$$ 整数 $$$a_1, a_2, \\ldots, a_n$$$$$$(-10^9 \\le a_i \\le 10^9)$$$——第一次访问相应洞穴后灯泡电量的变化。请注意，无论方向如何，每条通道最多只能穿越两次。",
+                "接下来的 $$$n - 1$$$ 行分别包含三个整数:$$$u_i$$$、$$$v_i$$$ 和 $$$w_i$$$$$$(1 \\le u_i, v_i \\le n,\\ u_i \\ne v_i,\\ 1 \\le w_i \\le 10^9)$$$——即 $$$i$$$ 走廊的端点和穿越它所需的电荷量。",
+                "确保走廊形成一棵树。"
+              ],
+              "output": [
+                "打印一个整数——这是亨利探访所有洞穴时所需的最小初始灯泡电量，而且灯泡电量永远不会变成负值。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:25:02.201Z",
+            "translatedBy": [
+              "caiyun"
+            ]
+          },
           "solution": {
             "file": "cf106732f2.md",
             "markdown": "**提示 1：** DP，要设计什么状态？如何确定子树的顺序？\n\n每个子树要维护什么呢？\n\n首先是走完这一棵子树的总改变量 $ws[u]$ ，不然走完这棵子树变成什么都不知道了。\n\n同时有的子树需要走完，有的子树只需要走进去遍历每个点，因此还需要维护这两种情况下分别的最小所需的初始能量。需要走完的记为 $dp_0[u]$ ，不需要走完的记为 $dp_1[u]$ 。\n\n$ws[u]$ 只是个求和，很好维护。\n\n$dp_0[u]$ 怎么维护呢？我们假设已经确定了各个子树的遍历顺序 $i_1,i_2,\\dots,i_k$ ，则其结果是：\n\n$$\n\\max(0, nums[u]+\\max(dp_0[i_1], -ws[i_1]+dp_0[i_2],\\dots,-ws[i_1]-ws[i_2]-\\dots-ws[i_{k-1}]+dp_0[i_k]))\n$$\n\n我们要调整 $i_1,i_2,\\dots,i_k$ 的顺序让这个数值尽可能小。\n\n对于其中 $ws[i]\\geq 0$ 的部分，走完这棵子树会多赚到能量。因此我们可以在开头将它们按照 $dp_0[i]$ 升序排列，可以使得开头完成正的改变量，同时 $\\max(dp_0[i_1], -ws[i_1]+dp_0[i_2],\\dots,-ws[i_1]-ws[i_2]-\\dots-ws[i_{k-1}]+dp_0[i_k])$ 不会比这里的第一个 $\\min dp_0[i]$ 更小，因为你迟早要走到第一个可以赚能量的子树，此时的要求不会比 $\\min dp_0[i]$ 低。\n\n对于其中 $ws[i]\\lt 0$ 的部分其中相邻的两项 $i,j$ ，我们要比较的等价于 $\\max(dp_0[i],-ws[i]+dp_0[j])$ 和 $\\max(dp_0[j],-ws[j]+dp_0[i])$ 。\n\n此时我们只需比较 $ws[i]+dp_0[i]$ 和 $ws[j]+dp_0[j]$ ，因为如果 $ws[i]+dp_0[i]\\gt ws[j]+dp_0[j]$ ，则 $dp_0[i]\\lt -ws[j]+dp_0[i]$ ，同时 $-ws[i]+dp_0[j]\\lt -ws[j]+dp_0[i]$ ，也就是前者的两个元素都严格小于后者的一个元素，因此满足小于关系。反向的逻辑也是成立的。同时等号的情况下，先后顺序并不影响。\n\n综上，按照这个关键字排序，依次遍历，即可更新 $dp_0[u]$ 。\n\n$dp_1[u]$ 呢？相当于挑选一棵子树最后遍历，其余的子树的相对顺序和前面的 $dp_0[u]$ 一致。\n\n所以可以在排序的序列上，去掉一个位置的元素 —— 也就是找到去掉这个元素的前缀和后缀，看其合并的结果，再加上这棵子树对应的 $dp_1[i]$ 的情况。\n\n最终的更新可能来自于三个部分——前缀部分经历的最低要求、前缀子树遍历完后在后缀遍历一部分的最低要求、以及前后缀都遍历完再在自己的子树中遍历的最低要求。\n\n时间复杂度为 $\\mathcal{O}(n\\log n)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    n = II()\n    nums = LII()\n    \n    path = [[] for _ in range(n)]\n    \n    for _ in range(n - 1):\n        u, v, w = MII()\n        u -= 1\n        v -= 1\n        path[u].append(w * n + v)\n        path[v].append(w * n + u)\n    \n    parent = [-1] * n\n    que = [0]\n    \n    for u in que:\n        for msk in path[u]:\n            w, v = divmod(msk, n)\n            if parent[u] != v:\n                parent[v] = u\n                que.append(v)\n    \n    dp0 = [0] * n\n    dp1 = [inf] * n\n    tot = [0] * n\n    \n    for u in reversed(que):\n        v0 = []\n        v1 = []\n        ws = []\n        \n        for msk in path[u]:\n            w, v = divmod(msk, n)\n            if parent[v] == u:\n                v0.append(fmax(w + dp0[v], 2 * w + tot[v]))\n                v1.append(w + dp1[v])\n                ws.append(2 * w + tot[v])\n                tot[u] += 2 * w + tot[v]\n        \n        k = len(v0)\n        \n        if k == 0:\n            dp0[u] = 0\n            dp1[u] = 0\n        else:\n            gain = [i for i in range(k) if ws[i] <= 0]\n            cost = [i for i in range(k) if ws[i] > 0]\n            gain.sort(key=lambda x: v0[x])\n            cost.sort(key=lambda x: ws[x] - v0[x])\n            st_range = gain + cost\n            \n            suff = [0] * (k + 1)\n            for idx in range(k - 1, -1, -1):\n                i = st_range[idx]\n                suff[idx] = fmax(suff[idx + 1] + ws[i], v0[i])\n            \n            cur_w = 0\n            for idx in range(k):\n                i = st_range[idx]\n                dp1[u] = fmin(dp1[u], max(dp0[u], suff[idx + 1] + cur_w, tot[u] - ws[i] + v1[i]))\n                dp0[u] = fmax(dp0[u], v0[i] + cur_w)\n                cur_w += ws[i]\n        \n        dp0[u] = fmax(dp0[u] - nums[u], 0)\n        dp1[u] = fmax(dp1[u] - nums[u], 0)\n        tot[u] -= nums[u]\n    \n    print(dp1[0])\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint n;\n\tcin >> n;\n\n\tvector<int> nums(n);\n\tfor (auto &x: nums) cin >> x;\n\n\tvector<vector<pair<int, int>>> path(n);\n\n\tfor (int i = 0; i < n - 1; i ++) {\n\t\tint u, v, w;\n\t\tcin >> u >> v >> w;\n\t\tu --, v --;\n\t\tpath[u].emplace_back(v, w);\n\t\tpath[v].emplace_back(u, w);\n\t}\n\n\tlong long inf = 4e18;\n\n\tauto dfs = [&] (auto &self, int u, int p) -> array<long long, 3> {\n\t\tvector<long long> v0s, v1s, w0s;\n\t\tlong long dp0 = 0, dp1 = inf, tot = 0;\n\n\t\tfor (auto &[v, w]: path[u]) {\n\t\t\tif (v != p) {\n\t\t\t\tauto [v0, v1, w0] = self(self, v, u);\n\t\t\t\tv0s.emplace_back(max(w + v0, 2 * w + w0));\n\t\t\t\tv1s.emplace_back(w + v1);\n\t\t\t\tw0s.emplace_back(2 * w + w0);\n\t\t\t\ttot += 2 * w + w0;\n\t\t\t}\n\t\t}\n\n\t\tint k = v0s.size();\n\n\t\tif (k) {\n\t\t\tvector<int> gain, cost;\n\t\t\tfor (int i = 0; i < k; i ++) {\n\t\t\t\tif (w0s[i] <= 0) gain.emplace_back(i);\n\t\t\t\telse cost.emplace_back(i);\n\t\t\t}\n\n\t\t\tsort(gain.begin(), gain.end(), [&] (int i, int j) {return v0s[i] < v0s[j];});\n\t\t\tsort(cost.begin(), cost.end(), [&] (int i, int j) {return w0s[i] - v0s[i] < w0s[j] - v0s[j];});\n\n\t\t\tvector<int> st_range;\n\t\t\tst_range.insert(st_range.end(), gain.begin(), gain.end());\n\t\t\tst_range.insert(st_range.end(), cost.begin(), cost.end());\n\n\t\t\tvector<long long> suff(k + 1, 0);\n\n\t\t\tfor (int idx = k - 1; idx >= 0; idx --) {\n\t\t\t\tint i = st_range[idx];\n\t\t\t\tsuff[idx] = max(suff[idx + 1] + w0s[i], v0s[i]);\n\t\t\t}\n\n\t\t\tlong long cur_w = 0;\n\t\t\tfor (int idx = 0; idx < k; idx ++) {\n\t\t\t\tint i = st_range[idx];\n\t\t\t\tdp1 = min(dp1, max({dp0, suff[idx + 1] + cur_w, tot - w0s[i] + v1s[i]}));\n\t\t\t\tdp0 = max(dp0, v0s[i] + cur_w);\n\t\t\t\tcur_w += w0s[i];\n\t\t\t}\n\t\t}\n\t\telse {\n\t\t\tdp0 = 0;\n\t\t\tdp1 = 0;\n\t\t}\n\n\t\tdp0 = max(dp0 - nums[u], 0ll);\n\t\tdp1 = max(dp1 - nums[u], 0ll);\n\t\ttot -= nums[u];\n\n\t\treturn {dp0, dp1, tot};\n\t};\n\n\tcout << dfs(dfs, 0, -1)[1];\n\n\treturn 0;\n}\n```"
@@ -75,6 +196,32 @@
                 "input": "1000 4\nD 999\nD 101\nS 323\nD 812",
                 "output": "487.0000000000000 606.0000000000000"
               }
+            ],
+            "titleZh": "C. 评级",
+            "sectionsZh": {
+              "legend": [
+                "新近出版的一本书会收到读者的评分，评分标准从 $$$1$$$ 到 $$$n$$$。读者一个接一个地留下评论，在任何时刻，该书的评分都是迄今为止所有评分的算术平均值。",
+                "每个读者的类型$$$t_i$$$和期望等级$$$x_i$$$都是已知的。",
+                "如果$$$t_i = \\texttt{S}$$$，那么读者总是给书评分$$$x_i$$$。",
+                "如果是 $$$t_i = \\texttt{D}$$$，那么读者在投票前会看到该书当前的评分以及已经投票的读者人数。然后，他们从 $$$1$$$ 到 $$$n$$$ 之间选择一个整数等级，使投票后的图书等级尽可能接近 $$$x_i$$$。",
+                "组织者可以选择读者留下评论的任何顺序。",
+                "$$$\\texttt{Andrew-13}$$$开始对该书可能的最低和最高最终评分感兴趣。请找出这些值。"
+              ],
+              "input": [
+                "输入的第一行包含两个整数 $$$n, m$$$ $$$(1 \\le n, m \\le 2 \\cdot 10^5)$$$--分别是图书的最高评分和读者人数。",
+                "接下来的每一行$$$m$$$都包含一个字符$$$t_i$$$($$$t_i = \\texttt{S}$$$或$$$t_i = \\texttt{D}$$$）和一个整数$$$x_i$$$$$$(1 \\le x_i \\le n)$$$--读者类型及其期望的等级。",
+                "如果读者总是给出评分 $$$x_i$$$，则角色 $$$t_i$$$ 为 $$$\\texttt{S}$$$，如果读者选择一个评分，使得他们投票后的最终评分尽可能接近 $$$x_i$$$，则为 $$$\\texttt{D}$$$。"
+              ],
+              "output": [
+                "在同一行打印两个数字——这是该书最终可能的最低和最高评分。",
+                "如果你的答案的绝对或相对误差不超过 $$$10^{-9}$$$，则被认为是正确的。",
+                "正式来说，假设你的答案为 $$$a$$$，陪审团的答案为 $$$b$$$。如果答案为 $$$\\frac{|a - b|}{\\max(1, |b|)} \\le 10^{-9}$$$，则认为你的答案是正确的。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:24:04.624Z",
+            "translatedBy": [
+              "deepl",
+              "caiyun"
             ]
           },
           "solution": {
@@ -121,6 +268,27 @@
                 "input": "6 0 2\n0 1 0 2 3 0",
                 "output": "24"
               }
+            ],
+            "titleZh": "可收藏卡片",
+            "sectionsZh": {
+              "legend": [
+                "可收集的 $$$n$$$ 卡片以固定顺序排列在一条带子上。$$$i$$$ 卡片的类型编号为 $$$a_i$$$。",
+                "条带可以在一些相邻的卡片之间切割，从而得到几个非空集合。卡片的顺序不能改变，因此每个集合都由条带的一些相邻片段组成。",
+                "对于一组卡片，将其 $$$\\operatorname{MEX}$$$ 定义为该组卡片中未出现的最小非负类型数。例如，$$$\\operatorname{MEX}([0, 3, 2, 2, 0]) = 1$$$ 和 $$$\\operatorname{MEX}([1, 2, 6]) = 0$$$。",
+                "如果一个集合的 $$$\\operatorname{MEX}$$$ 在 $$$L$$$ 到 $$$R$$$ 的包含范围内，则称之为 $$$\\texttt{valid}$$$。",
+                "找出切割长条的所有方法，使得所有得到的集合都是 $$$\\texttt{valid}$$$。由于答案可能很大，因此将其输出为模 $$$998244353$$$。"
+              ],
+              "input": [
+                "输入的第一行包含三个整数 $$$n$$$、$$$L$$$ 和 $$$R$$$$$$(1 \\le n \\le 5 \\cdot 10^5,\\ 0 \\le L \\le R \\le n)$$$——牌的数量和 $$$\\operatorname{MEX}$$$ 的有效值的边界。",
+                "第二行包含 $$$n$$$ 整数 $$$a_1, a_2, \\ldots, a_n$$$$$$(0 \\le a_i \\le n)$$$——纸带上卡片的类型编号。"
+              ],
+              "output": [
+                "在一行中打印一个数字——模数为 $$$998244353$$$ 的切割长条的方法数。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:24:27.142Z",
+            "translatedBy": [
+              "caiyun"
             ]
           },
           "solution": {
@@ -181,6 +349,36 @@
                 "input": "2\n1 2\n4 3",
                 "output": "No"
               }
+            ],
+            "titleZh": "E. 优雅的石板重新排列",
+            "sectionsZh": {
+              "legend": [
+                "芭芭拉有一个花园，用 $$$n \\times n$$$ 网格表示。她买了 $$$n^2$$$ 块石板，按 $$$1$$$ 到 $$$n^2$$$ 的索引排列，并把它们放在花园里，这样她就可以每天享受从一块石板走到另一块的乐趣。这些石板按行主顺序排列，也就是说，单元格 $$$(i, j)$$$ 处的石板按 $$$(i - 1) \\times n + j$$$ 的索引排列。",
+                "芭芭拉想要重新设计她的花园，所以她邀请了著名室内设计师芭芭拉。经过仔细考虑，芭芭拉建议将单元格 $$$(i, j)$$$ 中的石板索引为 $$$a_{ij}$$$。他们将使用以下 “优雅” 的过程来重新排列石板：",
+                "将每块石板涂成红色或蓝色。",
+                "移动每行中的红色石板 (这样它们只能向左或向右移动)。",
+                "移动每根柱子内的蓝色石板 (这样它们只能上下移动)。",
+                "然而，这里有一个重要的限制：任何两块颜色相同的板岩在板岩重新排列过程中都应保持不重叠。请注意，红色板岩和蓝色板岩可能会暂时重叠 (但为了获得理想的花园，它们最终不应该重叠)。",
+                "现在芭芭拉想知道他们是否可以按照需要重新安排石板。"
+              ],
+              "input": [
+                "第一行包含一个整数 $$$n$$$，表示花园的大小。",
+                "接着是 $$$n$$$ 行，其中第 $$$i$$$ 行包含 $$$n$$$ 整数，第 $$$j$$$ 行整数 $$$a_{ij}$$$ 表示所需花园中单元格 $$$(i, j)$$$ 处石板的索引。",
+                "$$$1 \\leq n \\leq 100$$$",
+                "$$$1 \\leq a_{ij} \\leq n^2$$$",
+                "所有 $$$a_{ij}$$$ 都是不同的。"
+              ],
+              "output": [
+                "如果石板可以按需要重新排列，则输出 “是”;否则输出 “否”。"
+              ],
+              "note": [
+                "示例 1 的解释",
+                "以下是一种可能的板石重新排列方式的示例。为了清晰起见，第 2 步中的蓝色板石 (以及第 3 步中的红色板石) 被隐藏。板石应该以某种不违反限制的顺序移动。例如，在第 3 步中，你可以将板石 $$$9$$$ 向下移动一个单元格，然后再将板石 $$$5$$$ 向下移动一个单元格，但不能以相反的顺序。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:20:59.489Z",
+            "translatedBy": [
+              "caiyun"
             ]
           },
           "solution": {
@@ -240,6 +438,40 @@
                 "input": "3 2 4\n5 5 5 5",
                 "output": "5"
               }
+            ],
+            "titleZh": "C. 魔法少女与白兔",
+            "sectionsZh": {
+              "legend": [
+                "圆香原本是个普通的学生，每天开开心心地上学。然而，有一天她突然被说服成为一名魔法少女，从此开始了为了保护世界而与敌人进行的无休止战斗。",
+                "这个世界的交通网络形状像一棵完整的 $$$k$$$-元素树，具有 $$$l$$$ 级别。它的基地位于中心城，位于根节点 (级别 $$$1$$$)，所有敌人都潜伏在叶子 (级别 $$$l$$$)。每个非叶子节点都有 $$$k$$$ 个子节点，这些子节点从左到右依次为其 $$$1$$$-st、$$$2$$$-nd、$$$\\dots$$$、$$$k$$$-th 子节点，如下图所示。给定 $$$k$$$ 和 $$$l$$$，我们可以确定树中节点的总数 (表示为 $$$S$$$)，最多为 $$$10^6$$$。下面是一个具有 $$$k = 3$$$ 和 $$$l = 4$$$ 的交通网络示例，其中 $$$S=40$$$:",
+                "随着时间的推移，圆香已经依次完成了 $$$n$$$ 歼灭敌人的任务。每次任务，她都是从中央市开始她的旅程。",
+                "然而，敌人并不是唯一的威胁。这个世界存在一种特殊的神秘 “白兔”，圆华觉得它极其烦人且难以对付。为了节省宝贵的魔力以应对实际战斗，圆华主动选择最安全的路线来猎杀敌人。她评估通往所有树叶的路线，总是选择一条从根到叶的路径，这条路径沿途包含最少数量的白兔。",
+                "几条不同的路径可能共享这个最小总和，所以 Madoka 以下面这种确定性的方式确定她的路线。她从根部一个节点一个节点地向下走。站在一个非叶子节点 $$$v$$$，她观察 $$$v$$$ 的每个 $$$c$$$ 子节点，这些子节点使她走在一条最小总和的路径上 (即从 $$$v$$$ 到 $$$c$$$ 的路上的白兔数量，加上从 $$$c$$$ 到 $$$c$$$ 子树的一片叶子的路径上的最小白兔数量，在 $$$v$$$ 的所有子节点中尽可能小)，她总是走到这样的子节点的最左边，也就是索引最小的那个。她重复这个过程，直到到达一片叶子。",
+                "遗憾的是，这些白兔对魔法少女有着奇怪的亲和力，并且强烈地被圆华的魔法踪迹所吸引。圆华完成 $$$i$$$ 任务后，她残留的魔力立刻引发了生物的快速增殖。具体来说，圆华在那个任务中刚刚经过的每一个道路段，永久占据那条道路的白兔数量都会以 $$$w_i$$$ 的速度增加。(最初，世界是和平的，所有道路上都有 $$$0$$$ 白兔。)",
+                "随着任务的堆积，网络变得越来越拥挤，充满了这些白兔。Madoka 需要知道情况最终变得有多糟糕。确定 Madoka 在她的第二次 ($$$n+1$$$) 歼灭任务中不可避免地会在她选择的路径上遇到的白兔总数。"
+              ],
+              "input": [
+                "第一行包含三个整数 $$$k$$$、$$$l$$$ 和 $$$n$$$，分别表示树的分叉率、层数和完成的任务数。",
+                "第二行包含 $$$n$$$ 整数 $$$w_1, w_2, \\dots, w_n$$$，表示每次任务后白兔在已经走过的路段上增加的值序列。",
+                "$$$1 \\leq k \\leq 10^6$$$",
+                "$$$2 \\leq l \\leq 1000$$$",
+                "$$$1 \\leq n \\leq 2 \\times 10^5$$$",
+                "$$$1 \\leq w_i \\leq 10^9$$$",
+                "树中节点的总数不超过 $$$10^6$$$。"
+              ],
+              "output": [
+                "输出一个整数，表示 Madoka 在她的 NEXT($$$n+1$$$) 任务中将选择的路径上白兔的总数。"
+              ],
+              "note": [
+                "示例 1 的解释",
+                "这棵树有 $$$4$$$ 叶子，从左到右编号为 $$$1$$$ 到 $$$4$$$;叶子 $$$1$$$ 和 $$$2$$$ 属于根的 $$$1$$$ 次子，叶子 $$$3$$$ 和 $$$4$$$ 属于根的 $$$2$$$ 次子。在圆香访问的五个任务中，叶子 $$$1$$$、$$$3$$$、$$$2$$$、$$$4$$$、$$$1$$$。",
+                "前两个任务是使用分离规则的任务。在任务 $$$1$$$ 中，每条路都还是空的，所以四条路线都是相连的;她在根部进入左边的子任务，然后在下一个节点再次进入，到达叶子 $$$1$$$。在任务 $$$2$$$ 中，四条路线的代价是 $$$2$$$、$$$1$$$、$$$0$$$、$$$0$$$:在根部 $$$2$$$ 第三个子任务严格来说更好，那里它的两片叶子都与 $$$0$$$ 相连，所以她选择了最左边的叶子 $$$3$$$。在剩下的三个任务中，白兔数量最少的路线是独特的：叶子 $$$2$$$ 代价是 $$$1$$$，然后叶子 $$$4$$$ 代价是 $$$2$$$，然后叶子 $$$1$$$ 代价是 $$$5$$$。",
+                "在这些 $$$5$$$ 任务之后，四条路线分别需要 $$$15$$$、$$$12$$$、$$$8$$$ 和 $$$10$$$。因此，在她的下一个任务中，Madoka 选择了前往 $$$3$$$ 叶子的路线，并且不可避免地会遇到与 $$$8$$$ 完全相同的白兔。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:20:19.417Z",
+            "translatedBy": [
+              "caiyun"
             ]
           },
           "solution": {
@@ -298,6 +530,36 @@
                 "input": "5 6\n1 2 4 4\n1 4 8 13\n2 3 1 3\n2 4 3 7\n3 5 2 2\n4 5 7 8",
                 "output": "11110"
               }
+            ],
+            "titleZh": "F.逃生路线",
+            "sectionsZh": {
+              "legend": [
+                "在由 $$$n$$$ 岛屿组成的旅游群岛中，有 $$$m$$$ 座双向桥梁连接它们。这些岛屿编号为 $$$1, 2, \\ldots, n$$$。$$$i$$$ 座桥梁连接 $$$u_i$$$ 和 $$$v_i$$$，跨越 $$$t_i$$$ 需要几分钟。此外，每座桥梁的高度为 $$$h_i$$$，代表其海拔高度 (以厘米为单位)。",
+                "一场前所未有的自然灾害袭击了该群岛，导致海平面以每分钟 $$$1$$$ 厘米的速度上升。一座桥 $$$i$$$ 在灾难开始后的 $$$h_i$$$ 分钟内变得无法使用。为了确保安全，车辆只有在桥梁被淹没之前完成整个穿越才能通过桥 $$$i$$$。具体而言，如果车辆在 $$$T$$$ 时间开始通过桥 $$$i$$$，它必须在 $$$T + t_i$$$ 时间内到达另一端，且这个到达时间必须满足 $$$T + t_i \\le h_i$$$。",
+                "$$$1$$$ 岛作为疏散中心。每个岛上的居民都很聪明;他们会选择一条能让他们安全到达 $$$1$$$ 岛的路线，以防止他们经过的任何桥梁被淹没。如果不存在这样的路线，他们将留在当前的岛上等待救援。",
+                "在这种情况下，对于每个 $$$k$$$(其中 $$$k \\in \\{1, \\ldots, n\\}$$$)，确定 $$$k$$$ 岛上的居民是否能安全到达 $$$1$$$ 岛。"
+              ],
+              "input": [
+                "第一行包含两个整数 $$$n$$$ 和 $$$m$$$，分别表示岛屿的数量和桥梁的数量。",
+                "接着是 $$$m$$$ 行，其中 $$$i$$$ 行包含四个整数 $$$u_i, v_i, t_i, h_i$$$，表示连接岛屿 $$$u_i$$$ 和 $$$v_i$$$ 的桥梁，其行程时间 $$$t_i$$$ 和高度 $$$h_i$$$。",
+                "$$$1\\leq n\\leq 10^5$$$",
+                "$$$1\\leq m\\leq 3\\times 10^5$$$",
+                "$$$1\\leq u_i, v_i \\leq n, u_i\\neq v_i$$$",
+                "$$$1\\leq t_i \\leq h_i \\leq 10^9$$$"
+              ],
+              "output": [
+                "输出一个长度为 $$$n$$$ 的字符串。如果岛屿 $$$i$$$ 的居民可以安全到达岛屿 $$$1$$$，则字符串中 $$$i$$$ -th 字符应为 \"1\"，否则为 \"0\"。"
+              ],
+              "note": [
+                "样品1的说明",
+                "岛$$$1$$$的居民已经在岛$$$1$$$。岛$$$3$$$的居民可以安全地通过第一座桥，并在时间$$$2$$$到达岛$$$1$$$。然而，岛$$$2$$$上的居民必须首先通过第二座桥才能在时间$$$3$$$到达岛$$$3$$$。如果他们随后试图通过第一座桥，他们将在时间$$$4$$$被卡在中间，正好是桥从$$$h_1=4$$$开始变得无法使用的时候。因此，岛$$$2$$$上的居民无法安全抵达岛$$$1$$$。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:21:36.817Z",
+            "translatedBy": [
+              "caiyun",
+              "deepl",
+              "iflyrec"
             ]
           },
           "solution": {
@@ -359,6 +621,40 @@
                 "input": "4\n150 160 170 180\n0 2 0 0",
                 "output": "150 180 160 170"
               }
+            ],
+            "titleZh": "G. 毕业照片阵容",
+            "sectionsZh": {
+              "legend": [
+                "班长阿明正在将班上的$$$n$$$学生排成单排，准备拍毕业照。$$$n$$$的学生都有明显的身高，阿明拿着一份花名册，上面列出了每个学生的真实身高。",
+                "学生们已经站得很整齐了。为了好玩，阿明递给每个学生一张纸条，让每个人看自己的右边，然后计算一个数字：站在他们后面（即这一排的右边）的人中，有多少人比他们矮？每个人都写下了自己的号码，然后把纸条递了回去。这些纸条最初是按照从左到右的顺序收集的（第一张纸条属于站在第一位的学生，以此类推）。",
+                "然后突然一阵风吹来，把地上的纸条都吹散了。阿明把它们重新收集起来，但它们的顺序完全丢失了，只留下一个无序的数字集合$$$s_1, s_2, \\ldots, s_n$$$。",
+                "摄影师快到了，大家都跑去玩了。阿明只剩下身高花名册和一大堆纸片。",
+                "帮助阿明决定：有没有可能重建至少一个与纸条上的数字一致的有效长期订单？如果是这样，为了使图片看起来尽可能和谐，输出所有有效顺序中按字典顺序排列的最小高度（将较矮的学生尽可能靠前放置）。如果这些数字根本无法匹配，则输出-1。"
+              ],
+              "input": [
+                "第一行包含单个整数$$$n$$$，表示学生人数。",
+                "第二行包含$$$n$$$个不同的整数$$$h_1, h_2, \\ldots, h_n$$$，代表学生的真实身高。",
+                "第三行包含$$$n$$$个整数$$$s_1, s_2, \\ldots, s_n$$$，表示写在卡片上的数字的洗牌集合。",
+                "$$$1 \\leq n \\leq 2 \\times 10^5$$$",
+                "$$$1 \\leq h_i \\leq 10^9$$$，以及所有 $$$h_i$$$ 都是不同的。",
+                "$$$0 \\leq s_i  \\lt  n$$$"
+              ],
+              "output": [
+                "如果存在有效的常数顺序，则输出一行 $$$n$$$ 整数：这是词典中最小的有效高度序列，由单个空格分隔。",
+                "如果不存在有效的常量顺序，则输出包含-1 的单行。"
+              ],
+              "note": [
+                "示例 1 的解释",
+                "滑点组成多重集 $$$\\{0, 0, 1\\}$$$。有两个常数与之一致：高度 $$$[10, 30, 20]$$$(滑点值 $$$0, 1, 0$$$) 和 $$$[20, 10, 30]$$$(滑点值 $$$1, 0, 0$$$)。第一个在词典上更小，因此答案是 $$$10\\ 30\\ 20$$$。",
+                "示例 2 的解释",
+                "如果有两个学生，最后一个站着的人右边没有人，所以一张纸条上必须写着 $$$0$$$。两张纸条上都写着 $$$1$$$，这是不可能的，所以答案是 $$$-1$$$。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:23:27.116Z",
+            "translatedBy": [
+              "iflyrec",
+              "youdao",
+              "caiyun"
             ]
           },
           "solution": {
@@ -415,7 +711,43 @@
                 "input": "1\n5\n1 5 3 2 4",
                 "output": "12"
               }
-            ]
+            ],
+            "titleZh": [
+              "C.旋转它"
+            ],
+            "sectionsZh": {
+              "legend": [
+                "1.Dzy和Fox具有由n个数[A]组成的序列A。安]。DZY从取第一个数字开始，然后Fox取第二个数字，然后DZY取第三个数字，以此类推，他们继续轮流，直到取完所有的N个数字。数字总和最大的玩家获胜。",
+                "由于DZY是你亲爱的朋友，你决定旋转序列（你可以多次旋转它），以最大化DZY的数字总和。",
+                "旋转定义为从序列的开头删除第一个元素，并将其添加到序列的末尾。",
+                "给定序列A，你必须帮助Dzy，让他得到可能的最大值。"
+              ],
+              "input": [
+                "第一行包含一个整数 T，即测试用例的数量。",
+                "则T测试用例如下所示:",
+                "每个测试用例的第一行包含一个整数N（1≤N≤104）。",
+                "1.每个测试用例的第二行包含n个空格分隔的整数[A.An]，序列A（1≤i≤n）（-109≤ai≤109）的元素。"
+              ],
+              "output": [
+                "输出 T 行 , 如果你帮助 Dzy，每个测试案例的答案都是 Dzy 可以达到的最大总和。"
+              ],
+              "note": [
+                "考虑序列的所有 5 次旋转：",
+                "1 5 3 2 4 （Dzy score = 1 + 3 + 4 = 8）",
+                "53241（DZY得分=8）",
+                "3 2 4 1 5(Dzy score = 12)",
+                "2 4 1 5 3 (Dzy score = 6)",
+                "4 1 5 3 2(Dzy score = 11)"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:28:08.372Z",
+            "translatedBy": [
+              "youdao",
+              "iflyrec",
+              "deepl",
+              "caiyun"
+            ],
+            "_backfillNulls": true
           },
           "solution": {
             "file": "cf100947c.md",
@@ -463,6 +795,25 @@
                 "input": "4\n2 3 1 4\n2 3 6 9",
                 "output": "29"
               }
+            ],
+            "titleZh": "A.LIS 和 GCD",
+            "sectionsZh": {
+              "legend": [
+                "给您两个数组 a 和 b，每个数组有 n 个整数。您需要计算数组 b 的所有子序列的 GCD 之和，使得数组 a 的相应子序列递增。"
+              ],
+              "input": [
+                "第一行输入一个整数 n，第二行输入 n 个整数 ai。第三行包含 n 个整数 bi。"
+              ],
+              "output": [
+                "显示 109 + 7 模的答案。"
+              ],
+              "note": [
+                "第三个例子下面是从 a 开始的递增子序列和相应 GCD 值的示例：{2}->2, {3}->3, {1}->6, {4}-> 9, {2,3}->1, {2,4}->1, {3,4}->3, {1,4}->3, {2,3,4}->1."
+              ]
+            },
+            "translatedAt": "2026-10-02T17:13:16.556Z",
+            "translatedBy": [
+              "deepl"
             ]
           },
           "solution": {
@@ -513,6 +864,30 @@
                 "input": "2\n5 1\n6 2",
                 "output": "1\n4"
               }
+            ],
+            "titleZh": "F.金属探测器",
+            "sectionsZh": {
+              "legend": [
+                "由于 2017 年世界总决赛将在南达科他州拉皮德城举行，MaratonIME 的教练决定前往该市了解比赛地点。",
+                "这座城市正准备迎接世界上最优秀的计算机程序员。为了确保活动的安全，大赛举办地会展中心的入口处安装了金属探测器。为避免排队等候时间过长，安保人员接到指示，将每个启动金属探测器的人送至队伍末尾。",
+                "教练注意到其中一个金属探测器有问题，它总是交替启动。也就是说，第一个人不启动，下一个人启动。第三个人不启动，下一个人启动，以此类推。",
+                "假设队伍中有 N 人，那么队伍中的第 i 位教练想知道，他什么时候可以在不启动金属探测器的情况下通过金属探测器。"
+              ],
+              "input": [
+                "输入以整数 T 开始，T 表示测试用例的数量。",
+                "每个测试用例由两个整数 N 和 i 组成，分别对应队伍中的人数和教练在队伍中的位置。",
+                "限制",
+                "1 ≤ T ≤ 103",
+                "1 ≤ N ≤ 109",
+                "1 ≤ i ≤ N"
+              ],
+              "output": [
+                "对于每个测试案例，打印一行，其中包含一个整数 j，表示该教练将是第 j 个在未启动金属探测器的情况下通过金属探测器的人。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:12:39.154Z",
+            "translatedBy": [
+              "deepl"
             ]
           },
           "solution": {
@@ -556,6 +931,28 @@
                 "input": "3 100\n14 5\n13 2\n5 1",
                 "output": "35"
               }
+            ],
+            "titleZh": "L.Knapsack 问题",
+            "sectionsZh": {
+              "legend": [
+                "为了备战 2017 年 ICPC 世界总决赛，您的团队参加了训练营。\"酒鬼 \"格劳伯-索科洛夫担任老师，所有参赛队都必须回答一份表格，以便他知道哪些题目最适合讲授。第一天是入门课，格劳伯说他只讲一些众所周知的话题。他说：\"我注意到你们都回答说你们对 Knapsack 问题非常了解，所以这里有一个关于它的简单练习，直接从定义出发。请用重复的方法解决 Knapsack 问题。",
+                "更正式地说，给定 N 种物品，每种物品都有一个权重和一个成本，请选择一些物品，使其权重之和不超过 S，成本之和为最大值。每种类型的物品数量不限。",
+                "解决格劳伯练习题。"
+              ],
+              "input": [
+                "第一行有两个整数 N 和 S，即物品种类数和允许的最大重量。",
+                "接下来的 N 行中，每一行都有两个整数 wi 和 ci，即第 i 种物品的重量和成本。",
+                "限制",
+                "1 ≤ N, wi ≤ 103",
+                "0 ≤ S, ci ≤ 109"
+              ],
+              "output": [
+                "打印一个整数，即您所选物品的成本。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:13:04.147Z",
+            "translatedBy": [
+              "deepl"
             ]
           },
           "solution": {
@@ -624,6 +1021,48 @@
                 "input": "5\n\nNo\n\nYes\n\nNo\n\nYes",
                 "output": "? 4 3\n\n? 4 4\n\n? 1 2\n\n? 1 3\n\n! 3 1 3 2"
               }
+            ],
+            "titleZh": "D. 领域扩张 亚伯拉罕给出提示",
+            "sectionsZh": {
+              "legend": [
+                "雷姆、亚历克斯、何塞和亚伯拉罕正在阿根廷训练营中心的拉普拉塔探索周末。在旅途中，他们决定参观一个名为 “拉皮比托斯共和国” 的景点。",
+                "吸引力由 $$$n$$$ 个位置组成，编号从 $$$1$$$ 到 $$$n$$$。从每个位置出发，只有一条路径通往另一个位置。因此，La República de los Pibitos 可以用一个函数图来表示：每个顶点只有一条出口边。",
+                "如果忽略边的方向，图是连通的。因此，它恰好包含一个有向循环。寻找这个循环是《皮比托斯共和国》的主要吸引力之一。",
+                "亚伯拉罕已经看过地图，知道哪些位置属于循环。然而，雷姆、亚历克斯和何塞并不知道。亚伯拉罕没有向他们展示地图，而是要求他们通过 $$$3n$$$ 线索来确定循环的所有顶点。",
+                "对于每个提示，他们可以选择两个整数 $$$u$$$ 和 $$$k$$$($$$1 \\le u \\le n$$$、$$$1 \\le k \\le n$$$)。从顶点 $$$u$$$ 开始，考虑沿着唯一出口边精确地 $$$k$$$ 次访问的顶点序列。因此，序列包含起始顶点和每步之后到达的 $$$k$$$ 顶点。",
+                "亚伯拉罕将回答，是否某个顶点在这个序列中出现多次，或者是否所有访问过的顶点都是不同的。",
+                "最多使用 $$$3n$$$ 这样的线索，Rem、Alex 和 José必须确定哪些顶点属于 La República de los Pibitos 这个独特的有向循环。"
+              ],
+              "input": [
+                "输入包含一个整数 $$$n$$$($$$1 \\le n \\le 10^4$$$)——函数图中顶点的数量。",
+                "读取 $$$n$$$ 后，互动就开始了。",
+                "你最多只能向亚伯拉罕询问 $$$3n$$$ 的提示。",
+                "要获得提示，请输出以下格式的一行:“?$$$u$$$ $$$k$$$，其中 $$$u$$$ 是起始顶点，$$$k$$$($$$1 \\le k \\le n$$$) 是沿唯一出口边将重复遍历的边数。",
+                "在每个暗示之后，评估员将提供一行包含以下内容的信息：",
+                "\"是\"，如果某个顶点在起始顶点和每步后到达的 $$$k$$$ 顶点之间被多次访问;",
+                "如果所有这些 $$$k+1$$$ 访问的顶点都是不同的，则为 “否”。",
+                "确定所有属于唯一有向循环的顶点后，输出如下格式的一行:“!$$$m$$$$$$v_1$$$$$$v_2$$$$$$\\dots$$$$$$v_m$$$”，其中 $$$m$$$ 是循环中的顶点数量，$$$v_1,v_2,\\dots,v_m$$$ 正好是属于该循环的顶点，顺序随机。",
+                "保证该图是一个连通的泛函图，这意味着每个顶点恰好有一条出边，并且底层的无向图是连通的。因此，该图恰好包含一个有向循环。",
+                "打印每行后，不要忘记输出行的末尾并刷新输出缓冲区。否则，您将收到 “超出闲置限制” 的判定。要刷新，请使用：",
+                "在 C++ 中使用 “flush(stdout)” 或 “cout.flush()”;",
+                "Java 中的 “System.out.flush()”;",
+                "帕斯卡语中的 “flush(output)”;",
+                "Python 中的 “stdout.flush()”。",
+                "交互器是自适应的。这意味着功能图在交互开始之前不一定是固定的。相反，交互器可以根据程序提出的查询来确定隐藏图，只要交互过程中给出的所有答案都与至少一个连接的功能图一致。"
+              ],
+              "output": [],
+              "note": [
+                "本示例的函数图如下所示：",
+                "对于第一个提示，“? 4 3”，从顶点 $$$4$$$ 开始，步行 $$$3$$$ 步访问顶点 $$$4, 1, 2, 3$$$。由于它们都是不同的，因此答案是 “否”。",
+                "对于第二个提示 “? 4 4”，访问的顶点是 $$$4, 1, 2, 3, 1$$$。顶点 $$$1$$$ 访问了两次，因此答案是 “是”。",
+                "对于第三个提示 “?12”，访问的顶点是 $$$1, 2, 3$$$。由于它们都是不同的，因此答案是 “否”。",
+                "对于第四个提示 “?13”，访问的顶点是 $$$1, 2, 3, 1$$$。顶点 $$$1$$$ 访问了两次，因此答案是 “是”。",
+                "最后，属于唯一有向循环的顶点是 $$$1$$$、$$$2$$$ 和 $$$3$$$。因此，一个有效的最终答案是 “! 3 1 3 2”。循环的顶点可以按任意顺序报告。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:19:29.525Z",
+            "translatedBy": [
+              "caiyun"
             ]
           },
           "solution": {
@@ -673,6 +1112,30 @@
                 "input": "1\n4 1\n0 0\n0 2\n2 2\n2 0",
                 "output": "0"
               }
+            ],
+            "titleZh": "I. 你最好的美国保利",
+            "sectionsZh": {
+              "legend": [
+                "你在假期里感到不寒而栗，模拟着潜水和扮演哈哈，这时 Nijika 问了你一个奇怪的问题。",
+                "假设一个形状类似凸多边形的岛屿使用半径为 $$$r$$$ 的圆盘进行形态膨胀 (导致在所有方向上均匀膨胀)。使岛屿达到至少 $$$k$$$ 面积的最小半径 $$$r$$$ 是多少？",
+                "形式上，你需要找到最小半径 $$$r$$$，使得多边形 $$$P$$$ 和半径为 $$$r$$$ 的圆盘 $$$D$$$ 的闵可夫斯基和得到的面积大于或等于 $$$k$$$。",
+                "你脑海中闪过的第一个念头是:“我被邀请到这个岛上来了吗？”",
+                "答案是一个响亮的 “不”(兄弟？)。现在，帮 Nijika 做作业吧。"
+              ],
+              "input": [
+                "第一行包含一个整数 $$$t$$$$$$(1 \\leq t \\leq 10^4)$$$——测试用例的数量。",
+                "每个测试用例的第一行包含两个整数 $$$n$$$ 和 $$$k$$$$$$(3 \\leq n \\leq 2 \\cdot 10^5 \\text{ and } 1 \\leq k \\leq 10^{16})$$$，即多边形的顶点数和预期到达面积。",
+                "以下 $$$n$$$ 行各包含两个整数 $$$x_i$$$ 和 $$$y_i$$$$$$( x_i, y_i \\leq |10^8|)$$$，表示凸多边形的 $$$i$$$ 顶点。",
+                "对输入的额外限制：",
+                "在一个测试用例中，所有点都是成对不同的。所有测试用例中的点总数不超过 $$$2 \\cdot 10^5$$$。"
+              ],
+              "output": [
+                "每个测试用例打印一个数字，每个数字代表 poly-p 到达区域 $$$k_i$$$ 的时间。如果你的答案的绝对或相对误差不超过 $$$10^{-4}$$$，则将被认为是正确的。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:18:14.903Z",
+            "translatedBy": [
+              "caiyun"
             ]
           },
           "solution": {
@@ -728,6 +1191,35 @@
                 "input": "2\n5\n1 2 1 4 3\n7\n4 5 6 1 1 3 4",
                 "output": "2\n5"
               }
+            ],
+            "titleZh": "F.公平性",
+            "sectionsZh": {
+              "legend": [
+                "德维克和他的哥哥萨米尔都获得了印度一所著名大学的奖学金。他们的父亲 Besher 想给他们每人寄些钱。",
+                "贝舍有 n 枚硬币，其中第 i 枚硬币的价值为 ai。他将分 n 步在两个儿子之间分配这些硬币。在第 i 步，他选择将第 i 枚硬币给德维克还是萨米尔。",
+                "设 xi 是第 i 步之后德维克和萨米尔硬币总和的绝对差值。分布的不公平系数为 max({x1,x2,...,xn})。贝舍想最小化不公平系数，你能帮他吗？"
+              ],
+              "input": [
+                "输入的第一行是一个整数 t，即测试用例的数量。每个测试用例由两行组成：",
+                "第一行包含一个整数 n（1 ≤ n ≤ 100）。",
+                "第二行包含 n 个整数 a1、a2、......、an（1 ≤ ai ≤ 100）。"
+              ],
+              "output": [
+                "打印 t 行，其中一行包含一个整数，即第 i 个测试用例的答案。"
+              ],
+              "note": [
+                "在第一次抽样测试中，旁观者有 5 枚硬币（1、2、1、4、3），他可以按以下方式分配：",
+                "步骤 1：将第一枚硬币交给 dwik , d = 1, s = 0 x1 = |1 - 0| = 1",
+                "步骤 2：将第二枚硬币交给萨米尔，d = 1，s = 2 x2 = |1 - 2| = 1",
+                "步骤 3：把第三枚硬币给萨米尔，d = 1，s = 3 x3 = |1 - 3| = 2",
+                "步骤 4：将第四枚硬币交给 dwik，d = 5，s = 3 x4 = |5 - 3| = 2",
+                "步骤 5：把第五枚硬币给萨米尔，d = 5，s = 6 x5 = |5 - 6| = 1",
+                "max({x1, x2, x3, x4, x5}) = 2"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:12:09.073Z",
+            "translatedBy": [
+              "deepl"
             ]
           },
           "solution": {
@@ -775,6 +1267,32 @@
                 "input": "2 4\n10 2 15\n8 1 10",
                 "output": "38"
               }
+            ],
+            "titleZh": "C. Gym Sis",
+            "sectionsZh": {
+              "legend": [
+                "赛莉和伊泽尔决定开始她们的健身之旅。她们买了相配的服装和时尚的水瓶，但买不起私人教练，所以她们转向了 TikTok。在那里，她们找到了埃米莉教练，她的主要训练理念是:“健身房不在于你举起多少重量，而在于你散发出的气场。”",
+                "根据 Emily 教练的理念：",
+                "有 $$$N$$$ 不同的练习，编号从 $$$1$$$ 到 $$$N$$$。",
+                "在每个 $$$Z$$$ 训练日，Celi 和 Itzel 可以选择只进行一项练习或休息一天。",
+                "如果他们选择在 $$$c$$$ 日连续进行 $$$i$$$:如果 $$$c \\le d_i$$$:他们将获得 $$$+k_i$$$ 气场点数。",
+                "如果 $$$c  \\gt  d_i$$$:他们将获得 $$$+(k_i - x_i)$$$ 光环点数 (惩罚 $$$x_i$$$ 适用于连续每天超过最优限制 $$$d_i$$$ 的情况)。",
+                "如果他们选择休息，就会获得 $$$0$$$ 光环点数，所有活跃光环都会重置为 $$$0$$$。",
+                "如果他们从运动 $$$i$$$ 切换到另一个运动 $$$j \\ne i$$$，运动 $$$j$$$ 的连续性将从 $$$1$$$ 开始。",
+                "最初 (第一天之前)，他们没有连续的活动。Celi 和 Itzel 想知道，如果他们最佳地选择每天的活动，他们在 $$$Z$$$ 训练日结束时可以积累的最大灵气点数。"
+              ],
+              "input": [
+                "第一行包含两个整数 $$$N$$$ 和 $$$Z$$$($$$1 \\le N \\le 1000$$$,$$$1 \\le Z \\le 1000$$$)、可用练习的数量和训练总天数。",
+                "以下 $$$N$$$ 行描述了练习。$$$i$$$ 第三行包含三个整数 $$$k_i$$$、$$$d_i$$$ 和 $$$x_i$$$($$$1 \\le k_i \\le 10^9$$$、$$$1 \\le d_i \\le 100$$$、$$$0 \\le x_i \\le 10^9$$$)，分别表示每天的基本光环点、最佳连续日阈值和每额外连续日的惩罚。",
+                "保证是 $$$\\sum_{i=1}^N d_i \\le 5000$$$。"
+              ],
+              "output": [
+                "打印一个整数:Celi 和 Itzel 在 $$$Z$$$ 训练日中可以积累的最大光环点数。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:17:44.175Z",
+            "translatedBy": [
+              "caiyun"
             ]
           },
           "solution": {
@@ -826,6 +1344,28 @@
                 "input": "5 3\n2 2 4 4 5\n1 1 4 5 4",
                 "output": "7"
               }
+            ],
+            "titleZh": "答:运动员",
+            "sectionsZh": {
+              "legend": [
+                "你是一场大型锦标赛的主办方，这场锦标赛将邀请 $$$k$$$ 运动员参加。你认识 $$$n$$$ 运动员，你想邀请他们中的一些人参加锦标赛。对于每个运动员，你都知道他们的力量和耐力 (让我们将 $$$i$$$ 运动员的力量表示为 $$$p_i$$$，耐力表示为 $$$s_i$$$)。$$$j$$$ 运动员只有在严格意义上更强壮、更耐力的情况下 (即 $$$p_j  \\gt  p_i$$$ 和 $$$s_j  \\gt  s_i$$$) 才能确定击败 $$$i$$$ 运动员;否则，他们中的任何一个都可能获胜。",
+                "比赛过程如下：只要剩下至少两名运动员，则从两名未被淘汰的随机抽取的运动员中组成一组，获胜者继续比赛，失败者被淘汰。这一过程将一直持续到决出冠军为止。",
+                "为了使比赛尽可能地壮观和不可预测，你想要邀请一组恰好$$$k$$$名运动员，这样获胜者就不是预先确定的。换句话说，对于一组固定的$$$k$$$运动员，考虑到成对输赢的所有可能结果，至少会有两种结果的获胜者是不同的。",
+                "在最终确定比赛阵容之前，您需要确定有多少组合适的运动员恰好是$$$k$$$。"
+              ],
+              "input": [
+                "第一行包含两个整数$$$n$$$和$$$k$$$ ($$$1 \\le k \\le n \\le 5000$$$）——运动员的数量和比赛的规模。",
+                "第二行包含$$$n$$$个整数$$$p_1, p_2, \\dots, p_n$$$ ($$$1 \\le p_i \\le 10^9$$$)；第$$$i$$$个整数表示第$$$i$$$个运动员的力量。",
+                "第三行包含$$$n$$$个整数$$$s_1, s_2, \\dots, s_n$$$ ($$$1 \\le s_i \\le 10^9$$$)；第$$$i$$$位整数表示第$$$i$$$位运动员的耐力。"
+              ],
+              "output": [
+                "在单行中，打印一个数字-恰好$$$k$$$运动员的合适套数。由于答案可能相当大，所以输出它的模$$$998\\,244\\,353$$$。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:15:18.803Z",
+            "translatedBy": [
+              "caiyun",
+              "youdao"
             ]
           },
           "solution": {
@@ -899,6 +1439,38 @@
                 "input": "6\n1 1 2 2 3 3",
                 "output": "10"
               }
+            ],
+            "titleZh": "B.移位和推动",
+            "sectionsZh": {
+              "legend": [
+                "给定两个大小相等的数组 A 和 B（大小为 N），A 为空，B 有一些值。",
+                "您需要用元素 X 填充 A，这样 X 就属于 B。",
+                "唯一允许的操作是",
+                "1.将 B[i] 复制到 A[i]。",
+                "2.将 B 向右循环移动 1。",
+                "您需要尽量减少操作次数。"
+              ],
+              "input": [
+                "第一行包含一个正整数 N（1 ≤ N ≤ 106），表示数组的大小。",
+                "下一行包含 N 个空间隔离的正整数，表示数组 B 的元素（1 ≤ B[i] ≤ 105）。"
+              ],
+              "output": [
+                "输出一个整数，表示所需的最少操作次数。"
+              ],
+              "note": [
+                "在第一个测试案例中",
+                "我们可以有 5 个步骤：填充第一个元素、移位、填充第二个元素、移位、填充第三个元素。",
+                "最初，A = [_, _, _]，B = [1, 2, 3]",
+                "步骤 1 之后，A = [1，_，_]，B = [1，2，3]。",
+                "第 2 步之后，A = [1, _, _]，B = [3, 1, 2].",
+                "第 3 步之后，A = [1, 1, _]，B = [3, 1, 2].",
+                "第 4 步之后，A = [1, 1, _]，B = [2, 3, 1] 。",
+                "第 5 步之后，A = [1, 1, 1]，B = [2, 3, 1]"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:11:21.566Z",
+            "translatedBy": [
+              "deepl"
             ]
           },
           "solution": {
@@ -936,6 +1508,22 @@
                 "input": "5 1\n1 1 1 1 1\n1 1 1 1 1\n1 5 1",
                 "output": "25"
               }
+            ],
+            "titleZh": "D.令人印象深刻的查询",
+            "sectionsZh": {
+              "legend": [
+                "给你两个数组 A 和 B，大小都是 N。其中，对于每个查询，你都必须找出多集的卡片数 。"
+              ],
+              "input": [
+                "第一行包含两个整数 N 和 Q（1 ≤ N, Q ≤ 105）。  下一行包含 N 个整数，即数组 A（1 ≤ Ai ≤ 109）。  下一行包含 N 个整数，即数组 B（1 ≤ Bi ≤ 109）。  接下来的 Q 行中的每一行都包含三个整数 i、j 和 k（1 ≤ i ≤ j ≤ N，1 ≤ K ≤ 105），它们代表语句中定义的一个查询。"
+              ],
+              "output": [
+                "Q 行，每行包含一个查询的答案。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:11:31.624Z",
+            "translatedBy": [
+              "deepl"
             ]
           },
           "solution": {
@@ -987,6 +1575,31 @@
                 "input": "5\n1\n2\n4\n12\n371",
                 "output": "1\n2\n5\n17\n609"
               }
+            ],
+            "titleZh": "C.It-miha",
+            "sectionsZh": {
+              "legend": [
+                "在古埃及，金字塔的建造充满了神秘色彩。许多研究人员认为，建造金字塔所需的技术在当时并不存在，他们怀疑埃及人在建造金字塔时得到了外星人的帮助。",
+                "\"伊特米哈 \"数字就是这些谜团中的一个例子。在埃及的伊特米哈省发现了一块刻有一串数字的石头。显然，这些数字之间没有任何联系，直到十九世纪末，普恩加莱（Poincaré）猜测，石头上写的数字是最早的 500 个没有完全平方除数的数字。",
+                "完全平方数是指有整数平方根的数，如 1、4、9、16、25 等。如果一个数不能被任何大于 1 的完全平方数整除，我们就说这个数没有完全平方整除数。",
+                "对于今天的我们来说，确定这样的数字似乎很简单，但我们必须记住，在 3500 多年前的那个时代，即使是数字系统也是不同的，这使得任何计算都非常困难。",
+                "It-miha \"数字在金字塔建筑中非常常见。例如，Quéops 金字塔的底座是 210 × 210，高度是 105 米。它的所有尺寸都是 \"It-miha \"数字！！！",
+                "前十个 \"It-miha \"数字是 1、2、3、5、6、7、10、11、13 和 14。你的任务是在给定整数 N 的情况下，确定第 N 个 \"It-miha \"数字。"
+              ],
+              "input": [
+                "第一行有一个整数 Q，即查询次数。",
+                "接下来的 Q 行中，每一行都有一个整数 N。",
+                "限制",
+                "1 ≤ Q ≤ 25",
+                "1 ≤ N ≤ 2-1010"
+              ],
+              "output": [
+                "对于每个查询，打印第 N 个 \"It-miha \"数字。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:10:36.575Z",
+            "translatedBy": [
+              "deepl"
             ]
           },
           "solution": {
@@ -1035,6 +1648,29 @@
                 "input": "6\n2 6\n3 6\n1 3\n2 1\n3 4\n4 2\n4 5\n5 6\n1 5",
                 "output": "NO"
               }
+            ],
+            "titleZh": "H.圆柱图形",
+            "sectionsZh": {
+              "legend": [
+                "如果可以将一个无向图分割成两个长度相等的互不相交的简单循环，使得第一个循环中的第 i 个节点与第二个循环中的第 i 个节点相连，那么这个无向图就是圆柱图。",
+                "给定一个节点数为 n、边数为偶数的无向图，判断该图是否为圆柱形，如果是，打印出构成该图的两个循环（请查看输出部分了解确切要求）。"
+              ],
+              "input": [
+                "第一行输入包含一个偶数整数 n（6 ≤ n ≤ 105），即图形中的节点数。",
+                "以下每行包含两个整数 u 和 v（1 ≤ u，v ≤ n，u≠v），代表连接节点 u 和 v 的一条边。"
+              ],
+              "output": [
+                "如果给定图形不是圆柱形，则打印 \"NO\"。否则，打印 \"YES\"，随后打印两行，每行包含一个循环的节点，格式如下：",
+                "c1 c2 ...",
+                "- 循环中的每个连续节点必须通过输入中的一条边连接。此外，循环中的第一个节点和最后一个节点也必须相连。",
+                "- 第一个循环中的第 i 个节点必须与第二个循环中的第 i 个节点相连。",
+                "- n 个节点中的每个节点都必须恰好属于其中一个循环。",
+                "如果有多个解决方案，您可以打印其中任何一个。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:13:59.094Z",
+            "translatedBy": [
+              "deepl"
             ]
           },
           "solution": {
@@ -1079,6 +1715,24 @@
                 "input": "8\n100 200 300 400 800 700 600 500",
                 "output": "2100"
               }
+            ],
+            "titleZh": "G. 世界水杯 (B)",
+            "sectionsZh": {
+              "legend": [
+                "比赛组织者希望为球迷们带来更多欢乐，因此决定重新安排参赛队伍，以便在比赛中取得更多进球。",
+                "您能帮忙计算一下，如果各队重新最佳排列，最多能进多少球吗？"
+              ],
+              "input": [
+                "第一行输入包含一个整数 n（2 ≤ n ≤ 218），即参加比赛的队伍数量。保证参赛队数量是 2 的幂次（即 2、4、8、16......）。",
+                "第二行包含 n 个不同的整数，第 i 个整数是 si（1≤ si≤109 ），即第 i 个小组的实力。"
+              ],
+              "output": [
+                "请在一行中打印出，如果重新安排参赛队伍，使进球数最大化，那么比赛中的最大进球数。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:13:31.630Z",
+            "translatedBy": [
+              "deepl"
             ]
           },
           "solution": {
@@ -1123,6 +1777,25 @@
                 "input": "2 4\n2 3",
                 "output": "139968"
               }
+            ],
+            "titleZh": "D.计算记录",
+            "sectionsZh": {
+              "legend": [
+                "迈克尔最喜欢的艺术家杰克逊最近开始以前所未有的速度发行新歌。迈克尔想收藏这位艺术家发行的每一张唱片的实体版，但他的收藏越来越多。他已经知道这位歌手在最初的 $$$n$$$ 天里发行了多少首歌曲，不知道如果他继续购买每一张唱片，在 $$$k$$$ 天他将不得不购买多少张唱片。",
+                "迈克尔使用函数$$$f(x)$$$来估计$$$x$$$日发布的记录数。如上所述，迈克尔已经知道 $$$1 \\leq x \\leq n$$$ 的 $$$f(x)$$$。为了计算未来的估计值，迈克尔使用公式",
+                "给出$$$1 \\leq x \\leq n$$$的$$$f(x)$$$值，帮助迈克尔计算他的估计值$$$f(k)$$$，模数为$$$10^9 + 7$$$。"
+              ],
+              "input": [
+                "输入的第一行包含两个空格分隔的整数，$$$n$$$ ($$$1 \\leq n \\leq 50$$$) 和 $$$k$$$ ($$$1 \\leq k \\leq 10^{18}$$$) - 分别是我们已经知道当天有多少条记录发布的天数，以及我们想要估算的天数。",
+                "第二行输入内容为$$$n$$$空格分隔的整数，其中$$$i^\\text{th}$$$号为$$$f(i)$$$($$$1 \\leq f(i) \\leq 10^9$$$）--$$$i^\\text{th}$$$日购买的记录数。"
+              ],
+              "output": [
+                "打印一个整数$$$f(k) \\bmod {10^9+7}$$$--当天$$$k$$$购买记录数的估计值。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:14:54.076Z",
+            "translatedBy": [
+              "deepl"
             ]
           },
           "solution": {
@@ -1173,6 +1846,26 @@
                 "input": "3 3\n1 2 100000000000\n1 3 100000000000\n2 3 1000000000000",
                 "output": "400000000000\n5\n1 2 1 3 1"
               }
+            ],
+            "titleZh": "F.假期",
+            "sectionsZh": {
+              "legend": [
+                "Technoblade 终于决定去度假了。他决定游览一系列城市，并聘请您为他制定旅行计划。为此，每个城市都有一个标识符：从 1 到 N 的整数，其中 1 代表 Techno 的家乡。此外，您还记下了所有可用的旅行路线，这些路线可以用 3 个整数 $$$a_i, b_i, c_i$$$ 表示，即从 $$$a_i$$$ 到 $$$b_i$$$，花费 $$$c_i$$$ 雷亚尔，可以双向通行。",
+                "现在就看您如何决定访问这些城市的顺序了。该计划必须从家乡（1 号）开始，并以家乡为终点。此外，每个城市必须至少游览一次，允许重复游览。",
+                "由于 Technoblade 正在度假，他并不太关心钱的问题，任何成本小于或等于最优计划成本 $$$2$$$ 倍的计划都会被接受。例如，如果我们把这个问题看作图问题，就会出现下面这种情况：",
+                "请注意，成本最低的计划的成本为 $$$8$$$。$$$1 \\rightarrow 2 \\rightarrow 4 \\rightarrow 3 \\rightarrow 4 \\rightarrow 5 \\rightarrow 6 \\rightarrow 5 \\rightarrow 1$$$就是一个计划的例子。",
+                "然而，计划 $$$1 \\rightarrow 2 \\rightarrow 3 \\rightarrow 4 \\rightarrow 5 \\rightarrow 6\\rightarrow 5 \\rightarrow 1$$$ 的成本为 $$$16 \\leq 2\\cdot 8$$$，所以它也是一个有效的计划。"
+              ],
+              "input": [
+                "第一行包含 2 个整数 $$$1 \\leq N \\leq 3 \\cdot 10^5$$$ 和 $$$1 \\leq M \\leq 5 \\cdot 10^5$$$，分别代表城市数量和路线数量。接着是 $$$M$$$ 行，每行有 3 个整数 $$$a_i, b_i, c_i$$$。保证$$$1 \\leq a_i , b_i \\leq N$$$、$$$a_i \\neq b_i$$$和$$$1 \\leq c_i \\leq 10^{12}$$$。还可以保证，利用给定的路线可以制定出一个访问每个城市的计划。"
+              ],
+              "output": [
+                "在第一行打印您找到的计划的成本。第二行，打印代表计划中城市数量的整数 $$$K$$$。最后，打印 $$$K$$$ 个整数 $$$1 \\leq p_i \\leq N$$$，代表按计划顺序要访问的城市。您必须确保$$$p_1 = p_K = 1$$$和每个$$$1 \\leq i  \\lt  K$$$都有一条从$$$p_i$$$到$$$p_{i+1}$$$的路线。同时，你必须确保$$$K \\leq 2 \\cdot 10^6$$$。保证有这么多城市的有效计划。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:14:36.561Z",
+            "translatedBy": [
+              "deepl"
             ]
           },
           "solution": {
@@ -1217,6 +1910,25 @@
                 "input": "1\n30\n-54 -27\n-74 91\n-74 33\n-45 -73\n15 20\n-35 66\n-27 -85\n53 24\n-79 -62\n40 29\n16 27\n95 -79\n60 63\n-32 -44\n-31 -69\n100 1\n-91 -59\n80 -18\n77 -5\n-38 64\n-68 -67\n-94 97\n31 -41\n-39 97\n42 40\n6 -19\n-92 -28\n-80 -1\n-21 11\n-90 -45",
                 "output": "3"
               }
+            ],
+            "titleZh": "L.圆圈",
+            "sectionsZh": {
+              "legend": [
+                "Geo Ghaffar 成了老板，他不想告诉 Da7doo7 \"你被解雇了\"，于是告诉他 \"解决这个问题，否则你就被解雇了\"，因为他知道 Da7doo7 不擅长几何。当然，Da7doo7 给他最好的朋友--你打电话寻求帮助。",
+                "在 $$$2D$$$ 平面上有 $$$n$$$ 个不同的点，它们的坐标都是整数。你要画一个有限圆，使它通过最大数量的点。由于您讨厌浮点数，因此只需打印最大值即可。"
+              ],
+              "input": [
+                "输入的第一行包含一个整数 $$$T$$$ ($$$1 \\le T \\le 100$$$），代表测试用例的数量。",
+                "对于每个测试用例，第一行包含一个整数 $$$n$$$ ($$$2 \\le n \\le 200$$$），表示点的数量。接下来的每一行 $$$n$$$ 都包含两个整数 $$$x_i$$$ 和 $$$y_i$$$ ($$$-10^6 \\le x_i, y_i \\le 10^6$$$）--每个点的坐标。保证给定的点是不同的。",
+                "保证所有测试用例的 $$$n$$$ 之和不超过 $$$200$$$。"
+              ],
+              "output": [
+                "对于每个测试用例，用一行打印答案。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:14:16.590Z",
+            "translatedBy": [
+              "deepl"
             ]
           },
           "solution": {
@@ -1265,6 +1977,24 @@
                 "input": "12",
                 "output": "3"
               }
+            ],
+            "titleZh": "F. 德克萨斯州大小号",
+            "sectionsZh": {
+              "legend": [
+                "有一天，Johnny 想到了一个非负整数 $$$n$$$，但不幸的是，他认为这个数太小了。",
+                "为了使这个数更大，Johnny 决定使这个数成为一个德克萨斯州尺寸的数。为了找到德克萨斯州尺寸的数 $$$n$$$,Johnny 必须计算 $$$$$$n + 10 \\cdot n + 100 \\cdot n + 1000 \\cdot n + ... + 10^{10^{10}} \\cdot n.$$$$$$",
+                "然而，由于这个数需要太长时间才能计算出来，约翰尼只对德克萨斯州大小的数字 $$$n$$$ 中最常见的数字感兴趣。你能帮他找到这个数字吗？"
+              ],
+              "input": [
+                "第一行包含一个非负整数 $$$n$$$——约翰尼想到的数。这个整数可以长达 $$$10^5$$$ 位数。"
+              ],
+              "output": [
+                "输出一个整数——$$$n$$$ 德克萨斯大小数中最常见的数字。如果存在平方，则输出任何最常见的数字。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:17:09.135Z",
+            "translatedBy": [
+              "caiyun"
             ]
           },
           "solution": {
@@ -1319,6 +2049,31 @@
                 "input": "4 5",
                 "output": "280149939"
               }
+            ],
+            "titleZh": "E. 预期的快照",
+            "sectionsZh": {
+              "legend": [
+                "Thanos 有一个长度为 2 的幂的数组。在他看到之前，每个元素都是从整数 $$$1,2,\\ldots,K$$$ 中独立且均匀地选择的。",
+                "如果数组不递减，则对其进行排序。当当前数组未排序时，Thanos 会执行一个快照：",
+                "在概率为 $$$1/2$$$ 的情况下，他保留左半部分，丢弃右半部分;",
+                "在概率为 $$$1/2$$$ 的情况下，他保留右半部分，丢弃左半部分。",
+                "所有切换选择彼此独立，且与初始数组无关。每次切换后，他都会再次检查剩余的数组。长度为 1 的数组始终是有序的。",
+                "初始长度为 $$$N=2^n$$$。找到预期的快照次数，其中随机初始数组和所有快照选择的期望值都被计算。"
+              ],
+              "input": [
+                "唯一的一行包含两个整数 $$$n$$$ 和 $$$K$$$——初始长度的指数和可能值的个数。$$$n$$$ 的值在 0 到 200000 之间，包含在内;$$$K$$$ 的值在 1 到 200000 之间，包括在内。",
+                "保证 $$$nK$$$ 最多不超过 20000000。"
+              ],
+              "output": [
+                "设预期的弹簧夹数为有理数 $$$p/q$$$，其中 $$$p$$$ 和 $$$q$$$ 是替代项。打印 $$$p$$$ 和 $$$q^{-1}$$$ 乘积的模为 998244353 的剩余，其中 $$$q^{-1}$$$ 是 $$$q$$$ 模为 998244353 时的倒数。保证这个倒数存在。"
+              ],
+              "note": [
+                "对于 $$$n=1$$$ 和 $$$K=2$$$，唯一未排序的初始数组是 $$$[2,1]$$$。它需要一次快照，因此期望值是 $$$1/4$$$。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:16:54.246Z",
+            "translatedBy": [
+              "caiyun"
             ]
           },
           "solution": {
@@ -1370,6 +2125,33 @@
                 "input": "2\n5\n1 3 2 4 5\n5\n3 1 4 2 5",
                 "output": "13\n10"
               }
+            ],
+            "titleZh": "M. 3afweya 的力量",
+            "sectionsZh": {
+              "legend": [
+                "给定从$$$1$$$到$$$N$$$的整数的排列$$$P = (P_1, P_2, \\dots, P_N)$$$。",
+                "对于子数组$$$P[l \\dots r] = (P_l, P_{l+1}, \\dots, P_r)$$$(其中$$$1 \\le l \\le r \\le N$$$），我们将其值定义为：$$$$$$\\text{Value}(l, r) = \\text{Sum}(l, r) - \\text{MEX}(l, r)$$$$$$",
+                "地点:",
+                "$$$\\text{Sum}(l, r) = \\sum_{k=l}^{r} P_k$$$",
+                "$$$\\text{MEX}(l, r)$$$ 是不出现在子数组 $$$P[l \\dots r]$$$ 中的最小正整数 ($$$1, 2, 3, \\dots$$$)。",
+                "如果一个范围的值尽可能大，我们就调用 3afwey。El 3afweya 正在调用...，你必须响应。确定 3afwey 范围的值。"
+              ],
+              "input": [
+                "第一行包含一个整数 $$$T$$$($$$1 \\le T \\le 10^4$$$)——测试用例的数量。",
+                "每个测试用例的结构如下：",
+                "第一行包含一个整数 $$$N$$$($$$2 \\le N \\le 5 \\cdot 10^5$$$)——排列的大小。",
+                "第二行包含 $$$N$$$ 空格分隔整数 $$$P_1, P_2, \\dots, P_N$$$($$$1 \\le P_i \\le N$$$)——初始排列。",
+                "保证所有测试用例的 $$$N$$$ 之和不超过 $$$5 \\cdot 10^5$$$。"
+              ],
+              "output": [
+                "打印 T 整数，$$$i$$$ 第 行应包含一个整数，该整数表示 $$$i$$$ 第 个测试用例的子数组的最大值。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:15:54.152Z",
+            "translatedBy": [
+              "youdao",
+              "iflyrec",
+              "caiyun"
             ]
           },
           "solution": {
@@ -1425,6 +2207,42 @@
                 "input": "qwerty\n3\n4 2\n6 3\n5 2",
                 "output": "qertwy\nqtewry\nqetyrw"
               }
+            ],
+            "titleZh": "E.奇怪的排序",
+            "sectionsZh": {
+              "legend": [
+                "你知道多少种具体的顺序？升序、降序、长度升序、极角升序......让我们来看看另一种特定的排序：d 排序。这种排序适用于长度至少为 d 的字符串，其中 d 是某个正整数。字符串的排序方式如下：首先是初始字符串的第 0 个字符，然后是第 1 个字符，接着是第 2 个字符，以此类推，最后是初始字符串的第 (d - 1)- 个字符。如果两个字符所处位置的整数除以 d 的余数相同，排序后它们的相对顺序不会改变。字符串的索引为零。例如，字符串 \"qwerty\"：",
+                "它的 1 排序是字符串 \"qwerty\"（所有字符都位于 0 位置）、",
+                "它的 2 排序是字符串 \"qetwry\"（字符 \"q\"、\"e \"和 \"t \"位于 0 位，字符 \"w\"、\"r \"和 \"y \"位于 1 位）、",
+                "其 3 排序是字符串 \"qrwtey\"（字符 \"q \"和 \"r \"位于 0 位置，字符 \"w \"和 \"t \"位于 1 位置，字符 \"e \"和 \"y \"位于 2 位置）、",
+                "它的 4 排序是字符串 \"qtwyer\"、",
+                "它的 5 排序是字符串 \"qywert\"。",
+                "给定长度为 n 的字符串 S 和对该字符串进行的 m 次洗牌操作。每个洗牌操作接受两个整数参数 k 和 d，并对字符串 S 进行如下变换。对于从 0 到 n - k 递增的每个 i，我们对子串 S[i..i + k - 1] 进行 d 排序操作。这里，S[a...b] 表示由 a 至 b（含）位置上的字符组成的子串。",
+                "每次洗牌操作后，都需要打印字符串 S。"
+              ],
+              "input": [
+                "输入的第一行包含长度为 n 的非空字符串 S，由小写和大写英文字母以及 0 至 9 的数字组成。",
+                "输入的第二行包含整数m -洗牌操作的次数（1≤m·n≤106）。",
+                "下面的m行包含由两个整数k和d组成的操作描述（1≤d≤k≤n）。"
+              ],
+              "output": [
+                "每次操作后打印字符串S的当前状态。"
+              ],
+              "note": [
+                "下面是样品的详细说明。第一次修改在参数k = 4, d = 2时执行。这意味着您需要对每个长度为4的子字符串从左到右逐个应用2-排序。字符串将以以下方式转换：",
+                "QWERTY→QEWRTY→QERWTY→QERTWY",
+                "因此，在第一个查询结束时，字符串s等于' qertwy '。",
+                "第二次修改用自变量K=6，d=3来执行。作为该操作的结果，整个字符串S被其3-排序替换:",
+                "Qertwy→Qtewry",
+                "第三次修改用自变量K=5，d=2来执行。",
+                "Qtewry→Qertwy→Qetyrw"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:05:56.618Z",
+            "translatedBy": [
+              "deepl",
+              "youdao",
+              "iflyrec"
             ]
           },
           "solution": {
@@ -1442,7 +2260,67 @@
           "url": "https://codeforces.com/gym/106706/problem/N",
           "difficulty": "*1000",
           "hint": "There is an almost simple solution.",
-          "statement": null,
+          "statement": {
+            "code": "GYM106706N",
+            "letter": "N",
+            "title": "N. Stable Factory Assignment",
+            "contest": null,
+            "url": "https://codeforces.com/gym/106706/problem/N",
+            "difficulty": "*1000",
+            "timeLimit": "1 second",
+            "memoryLimit": "256 megabytes",
+            "sections": {
+              "legend": [
+                "Khaled is the CEO of a rapidly growing industrial empire. His company recently acquired $$$N$$$ new factories, and he has hired $$$N$$$ workers to operate them. Both the workers' homes and the factories are located along a long, straight highway, which can be represented as the $$$X$$$-axis.",
+                "The $$$i$$$-th worker lives at coordinate $$$x_i$$$, and the $$$j$$$-th factory is located at coordinate $$$y_j$$$. Khaled needs to assign exactly one worker to each factory so that no two workers are assigned to the same factory.",
+                "Khaled requires a \"stable\" assignment. An assignment is invalid if swapping two workers' factories strictly increases the sum of their squared travel distances. Formally, for any worker $$$i$$$ assigned to factory $$$a$$$ and worker $$$j$$$ assigned to factory $$$b$$$, the following condition must NOT hold:",
+                "$$$$$$(x_i - y_a)^2 + (x_j - y_b)^2  \\lt  (x_i - y_b)^2 + (x_j - y_a)^2$$$$$$",
+                "Given the locations, help Khaled find any valid assignment satisfying his strict stability condition."
+              ],
+              "input": [
+                "The first line contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+                "The first line of each test case contains a single integer $$$N$$$ ($$$1 \\le N \\le 3000$$$) — the number of workers and the number of factories.",
+                "The second line of each test case contains $$$N$$$ distinct integers $$$x_1, x_2, \\dots, x_N$$$ ($$$-10^9 \\le x_i \\le 10^9$$$) — the coordinates of the workers.",
+                "The third line of each test case contains $$$N$$$ distinct integers $$$y_1, y_2, \\dots, y_N$$$ ($$$-10^9 \\le y_i \\le 10^9$$$) — the coordinates of the factories.",
+                "It is guaranteed that the sum of $$$N$$$ over all test cases does not exceed $$$3000$$$."
+              ],
+              "output": [
+                "For each test case, output a single line containing $$$N$$$ space-separated integers $$$p_1, p_2, \\dots, p_N$$$, where $$$p_i$$$ is the 1-based index of the factory assigned to the $$$i$$$-th worker.",
+                "If there are multiple valid assignments that satisfy Khaled's condition, you may output any of them."
+              ]
+            },
+            "examples": [
+              {
+                "input": "1\n4\n7 -5 -9 5\n2 -8 7 -11",
+                "output": "4 1 3 2"
+              }
+            ],
+            "titleZh": "N. 稳定工厂分配",
+            "sectionsZh": {
+              "legend": [
+                "哈立德是一个快速发展的工业帝国的首席执行官。他的公司最近收购了 $$$N$$$ 新工厂，并雇佣了 $$$N$$$ 工人来运营这些工厂。工人的住所和工厂都位于一条长而笔直的公路旁，这条公路可以用 $$$X$$$ 轴来表示。",
+                "$$$i$$$ 第一个工人住在 $$$x_i$$$ 坐标，$$$j$$$ 第一个工厂位于 $$$y_j$$$ 坐标。哈立德需要在每个工厂精确地分配一个工人，以确保不会有两个工人被分配到同一个工厂。",
+                "Khalid 需要一个 “稳定” 的分配。如果两个工人的工厂互换严格地增加了他们的行程距离平方和，则分配无效。从形式上讲，对于任何被分配到工厂 $$$a$$$ 的工人 $$$i$$$，以及被分配到工厂 $$$b$$$ 的工人 $$$j$$$，以下条件不得成立：",
+                "$$$$$$(x_i - y_a)^2 + (x_j - y_b)^2  \\lt  (x_i - y_b)^2 + (x_j - y_a)^2$$$$$$",
+                "根据地点，帮助哈立德找到任何符合他严格稳定条件的有效任务。"
+              ],
+              "input": [
+                "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+                "每个测试用例的第一行包含一个整数 $$$N$$$($$$1 \\le N \\le 3000$$$)——工人数量和工厂数量。",
+                "每个测试用例的第二行包含 $$$N$$$ 不同的整数 $$$x_1, x_2, \\dots, x_N$$$($$$-10^9 \\le x_i \\le 10^9$$$)——工作量的坐标。",
+                "每个测试用例的第三行包含 $$$N$$$ 不同的整数 $$$y_1, y_2, \\dots, y_N$$$($$$-10^9 \\le y_i \\le 10^9$$$)——工厂的坐标。",
+                "保证所有测试用例的 $$$N$$$ 之和不超过 $$$3000$$$。"
+              ],
+              "output": [
+                "对于每个测试用例，输出一行，其中包含 $$$N$$$ 空格分隔整数 $$$p_1, p_2, \\dots, p_N$$$，其中 $$$p_i$$$ 是分配给 $$$i$$$ 第一个工人的工厂的基于 1 的索引。",
+                "如果有多个满足哈立德条件的有效分配，你可以输出其中任何一个。"
+              ]
+            },
+            "translatedAt": "2026-10-02T17:16:26.526Z",
+            "translatedBy": [
+              "caiyun"
+            ]
+          },
           "solution": {
             "file": "cf106706n.md",
             "markdown": "**提示 1：** 可以先猜一个。尝试证明一下。\n\n我们相当于交换匹配后，距离的平方和单调不减。\n\n为此肯定找尽可能远的点匹配，所以一个升序排列一个降序排列，再两两匹配。\n\n为啥这样成立呢？因为我们相当于要最优化 $\\sum(x_i-y_{p_i})^2=\\sum x_i^2+\\sum y_i^2-2\\sum x_iy_{p_i}$ 。\n\n前两项是常数，第三项根据排序不等式，应该逆向匹配。\n\n时间复杂度 $\\mathcal{O}(n^2)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    t = II()\n    outs = []\n    \n    for _ in range(t):\n        n = II()\n        v1 = LII()\n        v2 = LII()\n        \n        p1 = sorted(range(n), key=lambda x: v1[x])\n        p2 = sorted(range(n), key=lambda x: -v2[x])\n        \n        ans = [0] * n\n        \n        for i in range(n):\n            ans[p1[i]] = p2[i] + 1\n        \n        outs.append(' '.join(map(str, ans)))\n    \n    print('\\n'.join(outs))\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint t;\n\tcin >> t;\n\n\twhile (t --) {\n\t\tint n;\n\t\tcin >> n;\n\n\t\tvector<int> v1(n), v2(n);\n\t\tfor (auto &x: v1) cin >> x;\n\t\tfor (auto &x: v2) cin >> x;\n\n\t\tvector<int> p1(n), p2(n);\n\t\tiota(p1.begin(), p1.end(), 0);\n\t\tiota(p2.begin(), p2.end(), 0);\n\t\tsort(p1.begin(), p1.end(), [&] (int i, int j) {return v1[i] < v1[j];});\n\t\tsort(p2.begin(), p2.end(), [&] (int i, int j) {return v2[i] < v2[j];});\n\n\t\tvector<int> p(n);\n\t\tfor (int i = 0; i < n; i ++) p[p1[i]] = p2[n - 1 - i];\n\n\t\tfor (int i = 0; i < n; i ++) cout << p[i] + 1 << \" \\n\"[i == n - 1];\n\t}\n\n\treturn 0;\n}\n```"

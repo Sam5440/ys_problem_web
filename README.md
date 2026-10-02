@@ -5,6 +5,7 @@
 ## ✨ 功能
 
 - **今日两题**：首页直接展示最新一期两道题的完整题面（题目描述 / 输入输出格式 / 样例，公式由 KaTeX 渲染），并附提示与题解（可折叠）。
+- **题面中文翻译**：题面默认显示英文原文，页面右上角可切换 **英文 / 中文 / 分段对照**——翻译按自然段逐段对齐，数学公式与行内代码原样保留；选择记忆在本地，下次访问仍生效。
 - **历史归档**：最近 60 天的每日题目索引，按月分组，点击进入单日页面。
 - **题目分类**：上游仓库按算法/技巧分类的题目一览（DP、贪心、构造……）。
 - **排行榜**：同步上游 gh-pages 的社区打卡统计（records），展示每位玩家的当前/最长连击、活跃天数、解题总数与最近一日战绩，点击玩家可展开 GitHub 风格的打卡热力图（近一年 / 全程），支持排序与搜索。
@@ -32,8 +33,9 @@ npm run update-data  # 手动同步上游数据到 data/daily.json 与 data/lead
 
 - `scripts/update-data.mjs` 通过 GitHub API 发现上游 `daily_problems/**/problems.md` 与题解文件，解析为结构化 JSON，合并写入 `data/daily.json`（保留最近 60 天）；同时从上游 **gh-pages 分支**拉取社区打卡统计 `records.js`，解析写入 `data/leaderboard.json`。**网页构建时（prebuild）也会直接从上游仓库现拉一次**，保证每次部署都是最新数据；上游不可达时自动回退到仓库内的快照。
 - **完整题面抓取**（`scripts/lib/cf-statement.mjs` + `scripts/fetch-statements.mjs`）：Codeforces 位于 Cloudflare 之后，普通 HTTP 客户端一律 403 "Just a moment..."。方案是 Playwright 驱动真实浏览器引擎自动通过 JS 质询，两阶段自适应——先无头 Chromium（CI 友好），被质询卡住时自动升级为**有头真实 Chrome**（等同真人浏览，CI 里跑在 Xvfb 虚拟显示下）。抓取保持礼貌节奏（随机间隔、失败冷却 4 分钟），题面存入 `data/statements/<题号>.json` 供永久复用。
+- **题面中文翻译**（`scripts/lib/translate.mjs` + `scripts/translate-statements.mjs`）：零凭证调用四个网页版翻译通道——DeepL 网页版、有道 webfanyi、彩云小译、讯飞听见（逻辑移植自 [OJBetter](https://github.com/beijixiaohu/OJBetter)，GPL-3.0）。**多平台并行**翻译（平台内部严格单线程、请求间隔 2 秒），共享分段队列：某段在某平台失败会重新排队（每段最多重试 3 次、间隔 10 秒），可被其他平台接手；仍失败的段落存为空并在站上标注"⚠ 本段暂无翻译"，下次运行自动回填。翻译前把 `$$$…$$$` 公式与行内代码替换成占位符，译后校验还原，公式永不进翻译引擎；译文按段对齐存回题面 JSON 的 `sectionsZh`。管道幂等——只补缺失翻译（每日 CI 顺手处理新题面），`npm run translate` 可手动回填，`TRANSLATE=0` 关闭。
 - 手动回填/补齐：`node scripts/fetch-statements.mjs`（可续传；`--limits-only` 只补时间/内存限制；`--force` 全量重抓）。
-- `.github/workflows/update-data.yml` **每天 0 点和 4 点（北京时间）各刷新一次**：同步上游 → 补抓最新未覆盖题面（失败不阻塞）→ 重新挂载 → 提交 `data/`（题面跨日积累）→ 触发 Vercel 部署。
+- `.github/workflows/update-data.yml` **每天 0 点和 4 点（北京时间）各刷新一次**：同步上游 → 补抓最新未覆盖题面（已抓取的自动跳过，失败不阻塞）→ **并行多平台翻译缺失译文** → 重新挂载 → 提交 `data/`（题面与译文跨日积累）→ 触发 Vercel 部署。
 
 ## 📄 免责声明
 

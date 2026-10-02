@@ -1,31 +1,12 @@
 import { Clock, ExternalLink, FileText, Lightbulb, MemoryStick } from 'lucide-react';
 import Link from 'next/link';
 import CopyBox from './CopyBox';
+import StatementBody from './StatementBody';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { renderRich, ratingColor } from '@/lib/render';
-
-function SectionHeading({ children }) {
-  return (
-    <h3 className="mb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{children}</h3>
-  );
-}
-
-function Paragraphs({ list, className = '' }) {
-  return (
-    <div className={`stmt-body ${className}`}>
-      {list.map((p, i) =>
-        typeof p === 'string' ? (
-          <p key={i} dangerouslySetInnerHTML={{ __html: renderRich(p) }} />
-        ) : (
-          <pre key={i} className="code-block" dangerouslySetInnerHTML={{ __html: renderRich(p.pre) }} />
-        ),
-      )}
-    </div>
-  );
-}
 
 function Chips({ problem }) {
   const s = problem.statement;
@@ -54,56 +35,6 @@ function Chips({ problem }) {
         </Badge>
       )}
     </div>
-  );
-}
-
-function Statement({ problem }) {
-  const s = problem.statement;
-  return (
-    <>
-      <div>
-        <SectionHeading>题目描述</SectionHeading>
-        <Paragraphs list={s.sections.legend} />
-      </div>
-      {(s.sections.input?.length > 0 || s.sections.output?.length > 0) && (
-        <div className="grid gap-6 md:grid-cols-2">
-          {s.sections.input?.length > 0 && (
-            <div>
-              <SectionHeading>输入格式</SectionHeading>
-              <Paragraphs list={s.sections.input} />
-            </div>
-          )}
-          {s.sections.output?.length > 0 && (
-            <div>
-              <SectionHeading>输出格式</SectionHeading>
-              <Paragraphs list={s.sections.output} />
-            </div>
-          )}
-        </div>
-      )}
-      {s.sections.note?.length > 0 && (
-        <div>
-          <SectionHeading>备注</SectionHeading>
-          <Paragraphs list={s.sections.note} />
-        </div>
-      )}
-      {s.examples?.length > 0 && (
-        <div>
-          <SectionHeading>样例</SectionHeading>
-          <div className="space-y-4">
-            {s.examples.map((ex, i) => (
-              <div key={i}>
-                <p className="mb-1.5 text-xs text-muted-foreground">样例 {i + 1}</p>
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <CopyBox label="Input" text={ex.input} />
-                  <CopyBox label="Output" text={ex.output} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-    </>
   );
 }
 
@@ -143,7 +74,7 @@ export default function ProblemCard({ problem }) {
 
       <CardContent className="space-y-5">
         {s ? (
-          <Statement problem={problem} />
+          <StatementBody statement={s} />
         ) : (
           <div className="rounded-lg border border-dashed p-4 text-sm text-muted-foreground">
             暂无完整题面（Codeforces 反爬限制），点击右上角按钮前往原题查看。

@@ -1,0 +1,67 @@
+{
+  "code": "GYM106732F2",
+  "letter": "F2",
+  "title": "F2. Expedition (hard version)",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106732/problem/F2",
+  "difficulty": "*2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "This is the hard version of the problem. The difference between the versions is that in this version, the path may end in any cave.",
+      "Henry went on an expedition into a network of caves in search of ancient artifacts. The entrance to the caves is at vertex $$$1$$$, and the corridors between caves form a tree.",
+      "Henry lights his way with a magic lamp. To pass through the $$$i$$$-th corridor, the lamp spends $$$w_i$$$ units of charge each time it is traversed.",
+      "However, the cave corridors are extremely unstable. After two traversals of the same corridor, its vault becomes too fragile, and it is impossible to use this corridor a third time. Therefore, Henry may traverse each corridor at most twice, regardless of the direction of movement.",
+      "There is an artifact in every cave. On the first visit to vertex $$$v$$$, the artifact changes the lamp charge by $$$a_v$$$ units: some artifacts restore charge (those with $$$a_v  \\gt  0$$$), while others are cursed and instead take it away ($$$a_v  \\lt  0$$$). Visiting the cave again has no effect on the lamp charge.",
+      "At the beginning of the expedition, Henry is in cave $$$1$$$ and immediately activates the artifact there. The lamp charge must never become negative at any moment.",
+      "Henry must visit all caves and collect all artifacts. After that, he can activate a portal in any cave and leave the dungeon, so he does not need to return to the entrance.",
+      "Determine the minimum initial lamp charge with which Henry can complete the expedition."
+    ],
+    "input": [
+      "The first line contains one integer $$$n$$$ $$$(1 \\le n \\le 2 \\cdot 10^5)$$$ — the number of caves.",
+      "The second line contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ $$$(-10^9 \\le a_i \\le 10^9)$$$ — the changes in lamp charge after the first visit to the corresponding caves. Note that each corridor can be traversed at most twice, regardless of direction.",
+      "The next $$$n - 1$$$ lines contain three integers each: $$$u_i$$$, $$$v_i$$$, and $$$w_i$$$ $$$(1 \\le u_i, v_i \\le n,\\ u_i \\ne v_i,\\ 1 \\le w_i \\le 10^9)$$$ — the endpoints of the $$$i$$$-th corridor and the amount of charge required to traverse it.",
+      "It is guaranteed that the corridors form a tree."
+    ],
+    "output": [
+      "Print one integer — the minimum initial lamp charge with which Henry can visit all caves without the lamp charge ever becoming negative."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 10 -2 6 7\n1 2 10\n1 3 2\n3 4 1\n3 5 7",
+      "output": "16"
+    },
+    {
+      "input": "4\n2 -90 15 30\n1 2 4\n2 3 5\n1 4 10",
+      "output": "87"
+    }
+  ],
+  "titleZh": "F2. 探险 (硬件版本)",
+  "sectionsZh": {
+    "legend": [
+      "这是问题的硬版本。不同版本之间的区别在于，在这个版本中，路径可能会在任何洞穴中结束。",
+      "亨利进行了一次探险，进入一个洞穴网络寻找古代文物。洞穴的入口位于顶点 $$$1$$$，洞穴之间的走廊形成一棵树。",
+      "亨利用一盏魔法灯照明。为了通过 $$$i$$$ 号走廊，这盏灯每次穿越时都会消耗 $$$w_i$$$ 单位的电量。",
+      "然而，洞穴走廊极其不稳定。经过两次穿越同一条走廊后，它的拱顶变得太过脆弱，不可能第三次使用这条走廊。因此，亨利最多只能穿越每条走廊两次，无论移动方向如何。",
+      "每个洞穴中都有一个神器。第一次访问顶点 $$$v$$$ 时，神器会以 $$$a_v$$$ 为单位改变灯的电量：一些神器会恢复电量 (那些带有 $$$a_v  \\gt  0$$$ 的神器)，而其他神器则会被诅咒并取走电量 ($$$a_v  \\lt  0$$$)。再次访问洞穴对灯的电量没有影响。",
+      "在探险开始时，亨利在 $$$1$$$ 洞穴中，立即激活了那里的神器。灯泡的电荷绝不能在任何时候变成负值。",
+      "亨利必须参观所有洞穴，收集所有神器。之后，他可以在任何洞穴中激活传送门，离开地牢，这样就不需要返回入口了。",
+      "确定亨利完成探险所需的最小初始灯泡电量。"
+    ],
+    "input": [
+      "第一行包含一个整数 $$$n$$$$$$(1 \\le n \\le 2 \\cdot 10^5)$$$——洞穴的数量。",
+      "第二行包含 $$$n$$$ 整数 $$$a_1, a_2, \\ldots, a_n$$$$$$(-10^9 \\le a_i \\le 10^9)$$$——第一次访问相应洞穴后灯泡电量的变化。请注意，无论方向如何，每条通道最多只能穿越两次。",
+      "接下来的 $$$n - 1$$$ 行分别包含三个整数:$$$u_i$$$、$$$v_i$$$ 和 $$$w_i$$$$$$(1 \\le u_i, v_i \\le n,\\ u_i \\ne v_i,\\ 1 \\le w_i \\le 10^9)$$$——即 $$$i$$$ 走廊的端点和穿越它所需的电荷量。",
+      "确保走廊形成一棵树。"
+    ],
+    "output": [
+      "打印一个整数——这是亨利探访所有洞穴时所需的最小初始灯泡电量，而且灯泡电量永远不会变成负值。"
+    ]
+  },
+  "translatedAt": "2026-10-02T17:25:02.201Z",
+  "translatedBy": [
+    "caiyun"
+  ]
+}

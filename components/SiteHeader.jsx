@@ -8,6 +8,7 @@ const NAV = [
   { href: '/', label: '今日两题' },
   { href: '/archive', label: '历史归档' },
   { href: '/categories', label: '题目分类' },
+  { href: '/leaderboard', label: '排行榜' },
 ];
 
 function GithubMark({ className }) {

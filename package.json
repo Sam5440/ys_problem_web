@@ -4,11 +4,12 @@
   "private": true,
   "description": "Daily Codeforces problems from Yawn-Sean/Daily_CF_Problems, presented as a web app",
   "scripts": {
-    "prebuild": "CF_STATEMENTS=0 node scripts/update-data.mjs",
+    "prebuild": "CF_STATEMENTS=0 TRANSLATE=0 node scripts/update-data.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "update-data": "node scripts/update-data.mjs"
+    "update-data": "node scripts/update-data.mjs",
+    "translate": "node scripts/translate-statements.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.20",

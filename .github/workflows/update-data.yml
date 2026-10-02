@@ -34,22 +34,32 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: >
-          CF_STATEMENTS=0 node scripts/update-data.mjs
+          CF_STATEMENTS=0 TRANSLATE=0 node scripts/update-data.mjs
 
       # Daily incremental statements: cover the newest uncovered problems.
       # Runs headful Chrome under Xvfb (passes Cloudflare far better than
       # headless); failures are non-fatal — affected problems degrade to
-      # hint + link until a later run succeeds.
+      # hint + link until a later run succeeds. Problems already on disk
+      # are skipped, so only never-fetched statements consume the budget.
       - name: Fetch statements for newest problems
         run: xvfb-run -a node scripts/fetch-statements.mjs --limit 4 --delay 6000
         env:
           CF_START_MODE: chrome-headful
 
+      # Statements fetched (this run or earlier) that still lack Chinese get
+      # translated here: platforms run in parallel (single-threaded within
+      # each), each segment retries ≤3 times 10s apart; segments that still
+      # fail are stored null and show a 未翻译 marker on the site, and the
+      # next daily run backfills them.
+      - name: Translate statements (multi-platform, parallel)
+        run: node scripts/translate-statements.mjs
+        continue-on-error: true
+
       - name: Re-attach statements to daily data
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: >
-          CF_STATEMENTS=0 node scripts/update-data.mjs
+          CF_STATEMENTS=0 TRANSLATE=0 node scripts/update-data.mjs
 
       - name: Commit and push if data changed
         run: |

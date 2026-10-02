@@ -24,22 +24,44 @@ function stripTags(html) {
   ).trim();
 }
 
+// <img> tags are stripped like every other tag, so turn them into markdown
+// image syntax first — the site renders statements through `marked`, which
+// passes those through as real <img> elements.
+function imgToMarkdown(imgTag) {
+  const src = imgTag.match(/\bsrc\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i);
+  let url = (src ? src[1] ?? src[2] ?? src[3] : '') || '';
+  url = decodeEntities(url.trim());
+  if (!url) return '';
+  if (url.startsWith('//')) url = 'https:' + url;
+  else if (url.startsWith('/')) url = 'https://codeforces.com' + url;
+  else if (!/^https?:/i.test(url)) url = 'https://codeforces.com/' + url.replace(/^\.?\//, '');
+  const safe = url.replace(/\s/g, '%20').replace(/\(/g, '%28').replace(/\)/g, '%29');
+  return `![](${safe})`;
+}
+
+const preserveImages = (html) => String(html).replace(/<img\b[^>]*>/gi, imgToMarkdown);
+
 // Section content -> ordered blocks: plain paragraphs + <pre> blocks preserved.
 function htmlToBlocks(html) {
   const out = [];
-  const re = /<pre[^>]*>([\s\S]*?)<\/pre>|<p>([\s\S]*?)<\/p>|<li[^>]*>([\s\S]*?)<\/li>/gi;
+  const re =
+    /<pre[^>]*>([\s\S]*?)<\/pre>|<p>([\s\S]*?)<\/p>|<li[^>]*>([\s\S]*?)<\/li>|<img\b[^>]*>/gi;
   let m;
   while ((m = re.exec(html))) {
     if (m[1] !== undefined) {
       const text = decodeEntities(m[1].replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '')).replace(/\n+$/, '');
       if (text.trim()) out.push({ pre: text });
+    } else if (/^<img/i.test(m[0])) {
+      // standalone <img> (not wrapped in <p>/<li>)
+      const md = imgToMarkdown(m[0]);
+      if (md) out.push(md);
     } else {
-      const text = stripTags(m[2] ?? m[3]);
+      const text = stripTags(preserveImages(m[2] ?? m[3]));
       if (text) out.push(text);
     }
   }
   if (!out.length) {
-    const one = stripTags(html);
+    const one = stripTags(preserveImages(html));
     if (one) out.push(one);
   }
   return out;
@@ -70,7 +92,8 @@ export function parseStatementHtml(pageHtml) {
   const end = html.search(/<div id="footer"|<script/);
   if (end > 0) html = html.slice(0, end);
 
-  const titleMatch = html.match(/<div class="title">\s*([A-Z][.)][^<]*)</);
+  // Letter may carry a digit suffix (F2. / F2) — "F2. Yet Another…"
+  const titleMatch = html.match(/<div class="title">\s*([A-Z][0-9]*[.)][^<]*)</);
   // DOM form: <div class="time-limit"><div class="property-title">time limit per test</div>3 seconds</div>
   // Legacy form: <div class="property-title">time limit per test: 3 seconds</div>
   const timeMatch =

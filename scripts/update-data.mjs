@@ -184,7 +184,7 @@ async function loadCuratedStatements() {
 async function writeStatementFile(meta, statement) {
   const file = {
     code: meta.code,
-    letter: statement.title?.match(/^([A-Z])[.)]/)?.[1] || null,
+    letter: statement.title?.match(/^([A-Z][0-9]?)[.)]/)?.[1] || null,
     title: statement.title,
     contest: null,
     url: meta.url,
@@ -379,6 +379,31 @@ async function main() {
         for (const p of day.problems) if (p.code === code) p.statement = statement;
       }
       console.log(`  ✓ ${code} — ${statement.title}`);
+    }
+  }
+
+  // Non-fatal: backfill Chinese translations for statements still missing them
+  // (idempotent — a no-op unless new statements were just fetched or shipped
+  // untranslated). TRANSLATE=0 disables, TRANSLATE_LIMIT bounds files per run.
+  if (process.env.TRANSLATE !== '0') {
+    try {
+      const { translateMissingStatements } = await import('./translate-statements.mjs');
+      const translated = await translateMissingStatements({
+        limit: Number(process.env.TRANSLATE_LIMIT || 0) || Infinity,
+      });
+      if (translated > 0) {
+        const refreshed = await loadCuratedStatements();
+        for (const day of days) {
+          for (const p of day.problems) {
+            if (p.statement) {
+              const upd = refreshed.get(p.code.toLowerCase());
+              if (upd) p.statement = upd;
+            }
+          }
+        }
+      }
+    } catch (e) {
+      console.warn(`Translation pass failed (${e.message}) — continuing without translations.`);
     }
   }
 

@@ -1,0 +1,45 @@
+{
+  "code": "GYM106728E",
+  "letter": "E",
+  "title": "E. Elegant Slabstones Rearrangement",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106728/problem/E",
+  "difficulty": "*1600",
+  "timeLimit": null,
+  "memoryLimit": null,
+  "sections": {
+    "legend": [
+      "Barbara has a garden, represented as an $$$n \\times n$$$ grid. She has bought $$$n^2$$$ slabstones indexed from $$$1$$$ to $$$n^2$$$ and placed them in her garden, so she can enjoy stepping slabstones from one to another every day. The slabstones are arranged in row-major order, that is, the slabstone at cell $$$(i, j)$$$ is indexed $$$(i - 1) \\times n + j$$$.",
+      "Barbara would like to redesign her garden, so she invited Babara, a famous interior designer. After careful consideration, Barbara suggests that the slabstone at cell $$$(i, j)$$$ should be indexed $$$a_{ij}$$$. They will use the following \"elegant\" process to rearrange the slabstones:",
+      "Color each slabstone either red or blue.",
+      "Shift the red slabstones within each row (so they can only move left or right).",
+      "Shift the blue slabstones within each column (so they can only move up or down).",
+      "However, there is an important restriction: Any two slabstones with the same color should remain non-overlapping during the rearrangement of the slabstones. Note that a red slabstone and a blue slabstone can temporarily overlap (but in order to have the desired garden, they should not overlap at the end).",
+      "Now Barbara wants to know whether they can rearrange the slabstones as desired."
+    ],
+    "input": [
+      "The first line contains an integer $$$n$$$, representing the size of the garden.",
+      "Followed by $$$n$$$ lines, the $$$i$$$-th of which contains $$$n$$$ integers, the $$$j$$$-th integer $$$a_{ij}$$$ represents the index of the slabstone at cell $$$(i, j)$$$ in the desired garden.",
+      "$$$1 \\leq n \\leq 100$$$",
+      "$$$1 \\leq a_{ij} \\leq n^2$$$",
+      "All $$$a_{ij}$$$ are distinct."
+    ],
+    "output": [
+      "If the slabstones can be rearranged as desired, output Yes; otherwise output No."
+    ],
+    "note": [
+      "Explanation for Sample 1",
+      "Below is the illustration of one possible way to rearrange the slabstones. The blue slabstones in step 2 (and the red slabstones in step 3) are hidden for clarity. The slabstones should be shifted in some order that does not violate the restriction. For example, in step 3, you can shift slabstone $$$9$$$ one cell down then shift slabstone $$$5$$$ one cell down, but not in the opposite order."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1 2 4 8\n6 10 3 7\n5 11 15 12\n9 14 13 16",
+      "output": "Yes"
+    },
+    {
+      "input": "2\n1 2\n4 3",
+      "output": "No"
+    }
+  ]
+}

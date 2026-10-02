@@ -1,0 +1,39 @@
+{
+  "code": "GYM106721I",
+  "letter": "I",
+  "title": "I. Your Best American Poly",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106721/problem/I",
+  "difficulty": "*1800",
+  "timeLimit": "15 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "You are chilling during your vacations, simulating divs and playing lol, when Nijika asks you a strange question.",
+      "Suppose an island shaped like a convex polygon undergoes morphological dilation using a disk of radius $$$r$$$ (resulting in a uniform expansion in all directions). What is the minimum radius $$$r$$$ such that the island reaches an area of at least $$$k$$$?",
+      "Formally, you are asked to find the minimum radius $$$r$$$ such that the Minkowski sum of the Polygon $$$P$$$ and a disk $$$D$$$ of radius $$$r$$$ results in an area greater than or equal to $$$k$$$.",
+      "The first thing that crossed your mind was: \"Am I invited to this island?\"",
+      "The answer is a resounding no (bro?). Now, help Nijika with her homework."
+    ],
+    "input": [
+      "The first line contains a single integer $$$t$$$ $$$(1 \\leq t \\leq 10^4)$$$ — the number of test cases.",
+      "The first line of each test case contains two integers $$$n$$$ and $$$k$$$ $$$(3 \\leq n \\leq 2 \\cdot 10^5 \\text{ and } 1 \\leq k \\leq 10^{16})$$$ — the number of vertex of the polygon and the area expect reach.",
+      "The following $$$n$$$ lines will each contain two integers $$$x_i$$$ and $$$y_i$$$ $$$( x_i, y_i \\leq |10^8|)$$$, representing the $$$i$$$ vertex of convex polygon.",
+      "Additional constraints on the input:",
+      "In one test case, all points are pairwise distinct. The total number of points across all test cases does not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "Print one number per test case, each representing the time when the poly-p reach area $$$k_i$$$. Your answer will be considered correct if its absolute or relative error does not exceed $$$10^{-4}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n4 5\n0 0\n1 0\n1 1\n0 1",
+      "output": "0.65895897062896345645595722051"
+    },
+    {
+      "input": "1\n4 1\n0 0\n0 2\n2 2\n2 0",
+      "output": "0"
+    }
+  ]
+}

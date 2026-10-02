@@ -1,0 +1,51 @@
+{
+  "code": "GYM106728G",
+  "letter": "G",
+  "title": "G. The Graduation Photo Lineup",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106728/problem/G",
+  "difficulty": "*2100",
+  "timeLimit": null,
+  "memoryLimit": null,
+  "sections": {
+    "legend": [
+      "Class leader A-Ming is arranging the $$$n$$$ students of his class into a single row to take a graduation photo. The $$$n$$$ students all have distinct heights, and A-Ming holds a roster listing the real height of every student.",
+      "The students were already standing in some order. For fun, A-Ming handed each student a slip of paper and asked everyone to look to their right and compute one number: how many of the people standing behind them (i.e. to the right in the row) are shorter than they are? Everyone wrote down their number and handed the slip back. The slips were originally collected in left-to-right order of the row (the first slip belongs to the student standing first, and so on).",
+      "Then a sudden gust of wind scattered all the slips on the ground! A-Ming gathered them back up, but their order was completely lost, leaving only an unordered collection of numbers $$$s_1, s_2, \\ldots, s_n$$$.",
+      "The photographer is about to arrive and everyone has run off to play. A-Ming is left holding only the height roster and the shuffled pile of slips.",
+      "Help A-Ming decide: is it possible to reconstruct at least one valid standing order consistent with the numbers on the slips? If so, to make the picture look as harmonious as possible, output the lexicographically smallest height arrangement among all valid orders (placing shorter students as far toward the front as possible). If the numbers cannot fit together at all, output -1."
+    ],
+    "input": [
+      "The first line contains a single integer $$$n$$$, representing the number of students.",
+      "The second line contains $$$n$$$ distinct integers $$$h_1, h_2, \\ldots, h_n$$$, representing the real heights of the students.",
+      "The third line contains $$$n$$$ integers $$$s_1, s_2, \\ldots, s_n$$$, representing the shuffled collection of numbers written on the slips.",
+      "$$$1 \\leq n \\leq 2 \\times 10^5$$$",
+      "$$$1 \\leq h_i \\leq 10^9$$$, and all $$$h_i$$$ are distinct.",
+      "$$$0 \\leq s_i  \\lt  n$$$"
+    ],
+    "output": [
+      "If a valid standing order exists, output a single line of $$$n$$$ integers: the lexicographically smallest valid sequence of heights, separated by single spaces.",
+      "If no valid standing order exists, output a single line containing -1."
+    ],
+    "note": [
+      "Explanation for Sample 1",
+      "The slips form the multiset $$$\\{0, 0, 1\\}$$$. Two standing orders are consistent with it: heights $$$[10, 30, 20]$$$ (slip values $$$0, 1, 0$$$) and $$$[20, 10, 30]$$$ (slip values $$$1, 0, 0$$$). The first is lexicographically smaller, so the answer is $$$10\\ 30\\ 20$$$.",
+      "Explanation for Sample 2",
+      "With two students, the person standing last has nobody to their right, so one slip must read $$$0$$$. Both slips read $$$1$$$, which is impossible, so the answer is $$$-1$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n10 20 30\n1 0 0",
+      "output": "10 30 20"
+    },
+    {
+      "input": "2\n170 165\n1 1",
+      "output": "-1"
+    },
+    {
+      "input": "4\n150 160 170 180\n0 2 0 0",
+      "output": "150 180 160 170"
+    }
+  ]
+}

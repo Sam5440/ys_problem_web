@@ -29,7 +29,20 @@ jobs:
       - name: Sync data from Yawn-Sean/Daily_CF_Problems
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/update-data.mjs
+        run: >
+          CF_STATEMENTS=0 node scripts/update-data.mjs
+
+      # Daily incremental statements: cover the newest uncovered problems.
+      # Failures (e.g. Cloudflare escalation on CI IPs) are non-fatal —
+      # the affected problems degrade to hint + link until a later run succeeds.
+      - name: Fetch statements for newest problems
+        run: node scripts/fetch-statements.mjs --limit 4 --delay 6000
+
+      - name: Re-attach statements to daily data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >
+          CF_STATEMENTS=0 node scripts/update-data.mjs
 
       - name: Commit and push if data changed
         run: |

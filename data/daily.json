@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T11:01:41.118Z",
+  "generatedAt": "2026-10-02T11:11:04.510Z",
   "sourceRepo": "Yawn-Sean/Daily_CF_Problems",
   "days": [
     {
@@ -1355,51 +1355,7 @@
           "url": "https://codeforces.com/contest/485/problem/E",
           "difficulty": "2600",
           "hint": "Make the operations \"repeatable\".",
-          "statement": {
-            "code": "CF485E",
-            "letter": "E",
-            "title": "E. Strange Sorting",
-            "contest": null,
-            "url": "https://codeforces.com/contest/485/problem/E",
-            "difficulty": "2600",
-            "timeLimit": "2 seconds",
-            "memoryLimit": "256 megabytes",
-            "sections": {
-              "legend": [
-                "How many specific orders do you know? Ascending order, descending order, order of ascending length, order of ascending polar angle... Let's have a look at another specific order: d-sorting. This sorting is applied to the strings of length at least d, where d is some positive integer. The characters of the string are sorted in following manner: first come all the 0-th characters of the initial string, then the 1-st ones, then the 2-nd ones and so on, in the end go all the (d - 1)-th characters of the initial string. By the i-th characters we mean all the character whose positions are exactly i modulo d. If two characters stand on the positions with the same remainder of integer division by d, their relative order after the sorting shouldn't be changed. The string is zero-indexed. For example, for string 'qwerty':",
-                "Its 1-sorting is the string 'qwerty' (all characters stand on 0 positions),",
-                "Its 2-sorting is the string 'qetwry' (characters 'q', 'e' and 't' stand on 0 positions and characters 'w', 'r' and 'y' are on 1 positions),",
-                "Its 3-sorting is the string 'qrwtey' (characters 'q' and 'r' stand on 0 positions, characters 'w' and 't' stand on 1 positions and characters 'e' and 'y' stand on 2 positions),",
-                "Its 4-sorting is the string 'qtwyer',",
-                "Its 5-sorting is the string 'qywert'.",
-                "You are given string S of length n and m shuffling operations of this string. Each shuffling operation accepts two integer arguments k and d and transforms string S as follows. For each i from 0 to n - k in the increasing order we apply the operation of d-sorting to the substring S[i..i + k - 1]. Here S[a..b] represents a substring that consists of characters on positions from a to b inclusive.",
-                "After each shuffling operation you need to print string S."
-              ],
-              "input": [
-                "The first line of the input contains a non-empty string S of length n, consisting of lowercase and uppercase English letters and digits from 0 to 9.",
-                "The second line of the input contains integer m – the number of shuffling operations (1 ≤ m·n ≤ 106).",
-                "Following m lines contain the descriptions of the operations consisting of two integers k and d (1 ≤ d ≤ k ≤ n)."
-              ],
-              "output": [
-                "After each operation print the current state of string S."
-              ],
-              "note": [
-                "Here is detailed explanation of the sample. The first modification is executed with arguments k = 4, d = 2. That means that you need to apply 2-sorting for each substring of length 4 one by one moving from the left to the right. The string will transform in the following manner:",
-                "qwerty  →  qewrty  →  qerwty  →  qertwy",
-                "Thus, string S equals 'qertwy' at the end of first query.",
-                "The second modification is executed with arguments k = 6, d = 3. As a result of this operation the whole string S is replaced by its 3-sorting:",
-                "qertwy  →  qtewry",
-                "The third modification is executed with arguments k = 5, d = 2.",
-                "qtewry  →  qertwy  →  qetyrw"
-              ]
-            },
-            "examples": [
-              {
-                "input": "qwerty\n3\n4 2\n6 3\n5 2",
-                "output": "qertwy\nqtewry\nqetyrw"
-              }
-            ]
-          },
+          "statement": null,
           "solution": {
             "file": "cf485e.md",
             "markdown": "**提示 1：** 单个操作实在是无法优化了。多个操作如何优化？\n\n**提示 2：** 把多个操作理解成几乎一样的操作。\n\n我们相当于要进行 $n-k+1$ 轮逻辑类似的排列打乱。\n\n首先，题中给出的操作，实质上就是把已知序列关于某个规则打乱，我们可以理解为一个排列 $p$ ，让原序列嵌套上这个 $p=[p_1,p_2,\\dots,p_n]$ 后得到新序列 $[s_{p_1},s_{p_2},\\dots,s_{p_n}]$ 。\n\n但这题需要对不同的位置进行 $n-k+1$ 轮这样的操作，我们没办法模拟这么多次，怎么办呢？\n\n本质难点在需要对不同的位置操作，这样我们对应的 $p$ 就是不同的了，就不方便我们合并类似的操作。\n\n为此，我们可以在进行一次操作后，将 $[p_1,p_2,\\dots,p_n]$ 变为 $[p_2,p_3,\\dots,p_n,p_1]$ ，这样，第二次操作相当于仍然在开头进行。\n\n这样所有的操作就都一样了，只需最后恢复一下我们多做的这些移位即可。\n\n我们总共执行 $n-k+1$ 次上述排列打乱操作，为此可以先维护 $1,2,4,\\dots$ 次打乱后的效果，用倍增的方法得到对应次数后的结果。最后根据排列的结果，生成这次打乱的结果字符串。\n\n时间复杂度为 $\\mathcal{O}(nm\\log n)$ 。\n\n这里的倍增也可以用先找到排列中的每个环，然后直接跳到环上的第 $n-k+1$ 个位置替换，但实现相对麻烦一点点。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    s = I()\n    n = len(s)\n    \n    q = II()\n    outs = []\n    \n    def prod(x, y):\n        return [y[i] for i in x]\n    \n    for _ in range(q):\n        k, d = MII()\n        \n        p = list(range(n))\n        \n        tmp = []\n        \n        for i in range(d):\n            for j in range(i, k, d):\n                tmp.append(j)\n        \n        for i in range(k):\n            p[tmp[i]] = i\n        \n        for i in range(n):\n            p[i] = (p[i] - 1) % n\n        \n        res = list(range(n))\n        steps = n - k + 1\n        \n        for i in range(20):\n            if steps >> i & 1: res = prod(res, p)\n            p = prod(p, p)\n        \n        ans = [0] * n\n        for i in range(n):\n            ans[res[i]] = i\n        \n        idx = ans.index(0)\n        ans = ans[idx:] + ans[:idx]\n        \n        s = ''.join(s[x] for x in ans)\n        \n        outs.append(s)\n    \n    print('\\n'.join(outs))\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tstring s;\n\tcin >> s;\n\n\tint n = s.size();\n\n\tint q;\n\tcin >> q;\n\n\tauto prod = [&] (vector<int> &v1, vector<int> &v2) -> vector<int> {\n\t\tvector<int> res;\n\t\tfor (auto &x: v1) res.emplace_back(v2[x]);\n\t\treturn res;\n\t};\n\n\twhile (q --) {\n\t\tint k, d;\n\t\tcin >> k >> d;\n\n\t\tvector<int> p(n), tmp;\n\t\tiota(p.begin(), p.end(), 0);\n\n\t\tfor (int i = 0; i < d; i ++) {\n\t\t\tfor (int j = i; j < k; j += d) {\n\t\t\t\ttmp.emplace_back(j);\n\t\t\t}\n\t\t}\n\n\t\tfor (int i = 0; i < k; i ++) p[tmp[i]] = i;\n\n\t\tfor (int i = 0; i < n; i ++) p[i] = (p[i] + n - 1) % n;\n\n\t\tvector<int> res(n);\n\t\tiota(res.begin(), res.end(), 0);\n\n\t\tint steps = n - k + 1;\n\n\t\tfor (int i = 0; i < 20; i ++) {\n\t\t\tif (steps >> i & 1) res = prod(res, p);\n\t\t\tp = prod(p, p);\n\t\t}\n\n\t\tvector<int> ans(n);\n\t\tfor (int i = 0; i < n; i ++) ans[res[i]] = i;\n\n\t\tfor (int i = 0; i < n; i ++) {\n\t\t\tif (ans[i] == 0) {\n\t\t\t\tstring ns;\n\t\t\t\tfor (int j = 0; j < n; j ++) {\n\t\t\t\t\tns += s[ans[(i + j) % n]];\n\t\t\t\t}\n\t\t\t\ts = ns;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\n\t\tcout << s << '\\n';\n\t}\n\n\treturn 0;\n}\n```"

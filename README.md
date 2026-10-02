@@ -29,10 +29,10 @@ npm run update-data  # 手动同步上游数据到 data/daily.json
 
 ## 📦 数据管道
 
-- `scripts/update-data.mjs` 通过 GitHub API 发现上游 `daily_problems/**/problems.md` 与题解文件，解析为结构化 JSON，合并写入 `data/daily.json`（保留最近 60 天）。
-- **完整题面抓取**（`scripts/lib/cf-statement.mjs` + `scripts/fetch-statements.mjs`）：Codeforces 位于 Cloudflare 之后，普通 HTTP 客户端一律 403 "Just a moment..."。方案是 Playwright 驱动真实浏览器引擎自动通过 JS 质询，两阶段自适应——先无头 Chromium（CI 友好），被质询卡住时自动升级为**有头真实 Chrome**（等同真人浏览）。抓取保持礼貌节奏（5s+ 随机间隔、每 25 页冷却 15s），题面存入 `data/statements/<题号>.json` 供永久复用。
+- `scripts/update-data.mjs` 通过 GitHub API 发现上游 `daily_problems/**/problems.md` 与题解文件，解析为结构化 JSON，合并写入 `data/daily.json`（保留最近 60 天）。**网页构建时（prebuild）也会直接从上游仓库现拉一次**，保证每次部署都是最新数据；上游不可达时自动回退到仓库内的快照。
+- **完整题面抓取**（`scripts/lib/cf-statement.mjs` + `scripts/fetch-statements.mjs`）：Codeforces 位于 Cloudflare 之后，普通 HTTP 客户端一律 403 "Just a moment..."。方案是 Playwright 驱动真实浏览器引擎自动通过 JS 质询，两阶段自适应——先无头 Chromium（CI 友好），被质询卡住时自动升级为**有头真实 Chrome**（等同真人浏览，CI 里跑在 Xvfb 虚拟显示下）。抓取保持礼貌节奏（随机间隔、失败冷却 4 分钟），题面存入 `data/statements/<题号>.json` 供永久复用。
 - 手动回填/补齐：`node scripts/fetch-statements.mjs`（可续传；`--limits-only` 只补时间/内存限制；`--force` 全量重抓）。
-- `.github/workflows/update-data.yml` 每天 13:20 UTC 运行一次同步（含 Chromium 安装），有变化时自动提交并触发 Vercel 部署；若 CI 环境被 Cloudflare 升级质询拦截，仅题面缺失，其余数据正常更新。
+- `.github/workflows/update-data.yml` **每天 0 点和 4 点（北京时间）各刷新一次**：同步上游 → 补抓最新未覆盖题面（失败不阻塞）→ 重新挂载 → 提交 `data/`（题面跨日积累）→ 触发 Vercel 部署。
 
 ## 📄 免责声明
 

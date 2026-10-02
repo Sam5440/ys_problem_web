@@ -1,0 +1,49 @@
+{
+  "code": "GYM106728C",
+  "letter": "C",
+  "title": "C. Magical Girl and White Rabbits",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106728/problem/C",
+  "difficulty": "*2200",
+  "timeLimit": null,
+  "memoryLimit": null,
+  "sections": {
+    "legend": [
+      "Madoka was originally an ordinary student who went to school happily every day. However, one day she was suddenly persuaded to become a magical girl, and thus began her endless battles against enemies to protect the world.",
+      "The transportation network of this world is shaped like a complete $$$k$$$-ary tree with $$$l$$$ levels. Her base is located in Central City, which is located at the root node (level $$$1$$$), and all enemies lurk at the leaves (level $$$l$$$). Every non-leaf node has exactly $$$k$$$ children, which are ordered from left to right as its $$$1$$$-st, $$$2$$$-nd, $$$\\dots$$$, $$$k$$$-th child, exactly as they are drawn in the picture below. Given $$$k$$$ and $$$l$$$, we can determine the total number of nodes in the tree (denoted $$$S$$$), which is at most $$$10^6$$$. Below is an example transportation network with $$$k = 3$$$ and $$$l = 4$$$, where $$$S=40$$$:",
+      "Over time, Madoka has already completed $$$n$$$ enemy extermination missions sequentially. For each mission, she started her journey from Central City.",
+      "However, the enemies are not the only threat. There exists a special kind of mysterious \"white rabbit\" in this world that Madoka finds extremely annoying and difficult to deal with. To conserve her precious magical energy for the actual battles, Madoka actively chooses which enemy to hunt based on the safest route. She evaluates the routes to all leaves and always selects a root-to-leaf path that contains the minimum total number of white rabbits along the way.",
+      "Several different paths may share this minimum total, so Madoka fixes her route in the following deterministic way. She walks down from the root one node at a time. Standing at a non-leaf node $$$v$$$, she looks at every child $$$c$$$ of $$$v$$$ that keeps her on a path of the minimum total (that is, the number of white rabbits on the road from $$$v$$$ to $$$c$$$, plus the minimum number of white rabbits on a path from $$$c$$$ down to a leaf of $$$c$$$'s subtree, is as small as possible among all children of $$$v$$$), and she always steps into the leftmost such child, that is, the one with the smallest index among them. She repeats this until she arrives at a leaf.",
+      "Unfortunately, these white rabbits have a strange affinity for magical girls and are strongly attracted to Madoka's magical trail. After she completes the $$$i$$$-th mission, her residual magic instantly triggers a rapid multiplication of the creatures. Specifically, on every single road segment that Madoka just traveled across during that mission, the number of white rabbits permanently occupying that road increases by $$$w_i$$$. (Initially, the world was peaceful, and there were $$$0$$$ white rabbits on all roads.)",
+      "As the missions pile up, the network becomes increasingly congested with these white rabbits. Madoka needs to know how bad the situation has eventually become. Determine the total number of white rabbits Madoka will inevitably encounter on her chosen path during her NEXT ($$$n+1$$$)-th extermination mission."
+    ],
+    "input": [
+      "The first line contains three integers $$$k$$$, $$$l$$$, and $$$n$$$, representing the branching factor of the tree, the number of levels, and the number of completed missions.",
+      "The second line contains $$$n$$$ integers $$$w_1, w_2, \\dots, w_n$$$, representing the sequence of values by which the white rabbits increase on the traveled road segments after each mission.",
+      "$$$1 \\leq k \\leq 10^6$$$",
+      "$$$2 \\leq l \\leq 1000$$$",
+      "$$$1 \\leq n \\leq 2 \\times 10^5$$$",
+      "$$$1 \\leq w_i \\leq 10^9$$$",
+      "The total number of nodes in the tree does not exceed $$$10^6$$$."
+    ],
+    "output": [
+      "Output a single integer representing the total number of white rabbits on the path Madoka will choose during her NEXT ($$$n+1$$$)-th mission."
+    ],
+    "note": [
+      "Explanation for Sample 1",
+      "The tree has $$$4$$$ leaves, numbered $$$1$$$ to $$$4$$$ from left to right; leaves $$$1$$$ and $$$2$$$ belong to the root's $$$1$$$-st child, leaves $$$3$$$ and $$$4$$$ to its $$$2$$$-nd child. Over the five missions Madoka visited leaves $$$1$$$, $$$3$$$, $$$2$$$, $$$4$$$, $$$1$$$.",
+      "The first two missions are the ones that use the tie-breaking rule. In mission $$$1$$$, every road was still empty, so all four routes tied; she went into the left child at the root and again at the next node, reaching leaf $$$1$$$. In mission $$$2$$$, the four routes cost $$$2$$$, $$$1$$$, $$$0$$$, $$$0$$$: at the root the $$$2$$$-nd child was strictly better, and there its two leaves tied at $$$0$$$, so she took the leftmost of them, leaf $$$3$$$. In the remaining three missions, the route with the fewest white rabbits was unique: leaf $$$2$$$ at cost $$$1$$$, then leaf $$$4$$$ at cost $$$2$$$, then leaf $$$1$$$ at cost $$$5$$$.",
+      "After these $$$5$$$ missions, the four routes cost $$$15$$$, $$$12$$$, $$$8$$$ and $$$10$$$, respectively. Thus, for her next mission, Madoka takes the path to leaf $$$3$$$ and will inevitably encounter exactly $$$8$$$ white rabbits."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 3 5\n1 2 3 4 5",
+      "output": "8"
+    },
+    {
+      "input": "3 2 4\n5 5 5 5",
+      "output": "5"
+    }
+  ]
+}

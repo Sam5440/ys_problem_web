@@ -16,6 +16,7 @@
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { fetchStatementViaBrowser, parseStatementHtml } from './lib/cf-statement.mjs';
 
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const DATA_FILE = path.join(ROOT, 'data', 'daily.json');
@@ -42,23 +43,6 @@ async function raw(filePath) {
   const res = await fetch(`${RAW_BASE}/${filePath}`);
   if (!res.ok) throw new Error(`raw ${filePath}: HTTP ${res.status}`);
   return res.text();
-}
-
-async function fetchWithTimeout(url, ms) {
-  const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), ms);
-  try {
-    return await fetch(url, {
-      signal: ctrl.signal,
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36',
-        Accept: 'text/html',
-      },
-    });
-  } finally {
-    clearTimeout(t);
-  }
 }
 
 /* ---------------- markdown table parsing ---------------- */
@@ -179,62 +163,20 @@ async function loadCuratedStatements() {
   return out;
 }
 
-function htmlToParagraphs(html) {
-  const paras = [...String(html).matchAll(/<p>([\s\S]*?)<\/p>/g)].map((m) => stripTags(m[1])).filter(Boolean);
-  if (paras.length) return paras;
-  const one = stripTags(html);
-  return one ? [one] : [];
-}
-
-function parseStatementHtml(pageHtml) {
-  const start = pageHtml.indexOf('<div class="problem-statement">');
-  if (start === -1) return null;
-  let html = pageHtml.slice(start);
-  const end = html.indexOf('<div id="footer"');
-  if (end > 0) html = html.slice(0, end);
-  const titleMatch = html.match(/<div class="title">\s*([A-Z][.)][^<]*)</);
-  const timeMatch = html.match(/time limit per test:?\s*([^<]+)</i);
-  const memMatch = html.match(/memory limit per test:?\s*([^<]+)</i);
-  const section = (cls) => {
-    const m = html.match(new RegExp(`<div class="${cls}">([\\s\\S]*?)</div>\\s*(?=<div class="|<script|$)`));
-    return m ? m[1] : '';
+async function writeStatementFile(meta, statement) {
+  const file = {
+    code: meta.code,
+    letter: statement.title?.match(/^([A-Z])[.)]/)?.[1] || null,
+    title: statement.title,
+    contest: null,
+    url: meta.url,
+    difficulty: meta.difficulty || null,
+    timeLimit: statement.timeLimit,
+    memoryLimit: statement.memoryLimit,
+    sections: statement.sections,
+    examples: statement.examples,
   };
-  const legendHtml = html.match(/<\/div>\s*([\s\S]*?)<div class="input-specification">/);
-  const samples = [...html.matchAll(/<pre[^>]*>([\s\S]*?)<\/pre>/g)].map((m) =>
-    decodeEntities(
-      m[1]
-        .replace(/<br\s*\/?>/gi, '\n')
-        .replace(/<\/div>/gi, '\n')
-        .replace(/<[^>]+>/g, ''),
-    ).replace(/\n+$/, ''),
-  );
-  const examples = [];
-  for (let i = 0; i + 1 < samples.length; i += 2) examples.push({ input: samples[i], output: samples[i + 1] });
-  const noteHtml = html.match(/<div class="note">([\s\S]*?)<\/div>\s*(?=<div class="|<script|$)/);
-  const statement = {
-    title: titleMatch ? decodeEntities(titleMatch[1].trim()) : null,
-    timeLimit: timeMatch ? timeMatch[1].trim() : null,
-    memoryLimit: memMatch ? memMatch[1].trim() : null,
-    sections: {
-      legend: legendHtml ? htmlToParagraphs(legendHtml[1]) : [],
-      input: htmlToParagraphs(section('input-specification')),
-      output: htmlToParagraphs(section('output-specification')),
-      ...(noteHtml ? { note: htmlToParagraphs(noteHtml[1]) } : {}),
-    },
-    examples,
-  };
-  if (!statement.sections.legend.length || !statement.title) return null;
-  return statement;
-}
-
-async function fetchStatement(url) {
-  try {
-    const res = await fetchWithTimeout(url, 8000);
-    if (!res.ok) return null;
-    const parsed = parseStatementHtml(await res.text());
-    if (parsed) return parsed;
-  } catch {}
-  return null;
+  await writeFile(path.join(STATEMENTS_DIR, `${meta.code.toLowerCase()}.json`), JSON.stringify(file, null, 2) + '\n');
 }
 
 // GYM106732C / CF566F -> "106732c" / "566f"; solution files are named cf{contest}{letter}.md
@@ -282,6 +224,7 @@ async function main() {
   console.log(`Found ${discovered.length} days, syncing the most recent ${kept.length}.`);
 
   const curated = await loadCuratedStatements();
+  const statementQueue = [];
   const prevSolutions = new Map();
   for (const d of previous.days || []) {
     for (const p of d.problems || []) {
@@ -305,9 +248,7 @@ async function main() {
       problem.statement = curated.get(row.code.toLowerCase()) || null;
 
       if (FETCH_STATEMENTS && !problem.statement && i < 3) {
-        problem.statement = await fetchStatement(row.url);
-        if (problem.statement) console.log(`  fetched statement for ${row.code} from Codeforces`);
-        await sleep(1500);
+        statementQueue.push(problem);
       }
 
       const key = problemKey(row.code);
@@ -325,6 +266,25 @@ async function main() {
     }
     days.push({ date: day.date, problems });
     process.stdout.write(`  ${day.date}: ${problems.length} problems\n`);
+  }
+
+  if (statementQueue.length) {
+    console.log(`Fetching ${statementQueue.length} statement(s) via browser (Cloudflare pass-through)...`);
+    const seen = new Set();
+    const targets = statementQueue.filter((p) => (seen.has(p.code) ? false : (seen.add(p.code), true)));
+    const results = await fetchStatementViaBrowser(targets, { delayMs: 3000 });
+    for (const [code, statement] of results) {
+      if (!statement) {
+        console.warn(`  no statement for ${code} (page blocked or parse failed)`);
+        continue;
+      }
+      const meta = targets.find((t) => t.code === code);
+      await writeStatementFile(meta, statement);
+      for (const day of days) {
+        for (const p of day.problems) if (p.code === code) p.statement = statement;
+      }
+      console.log(`  ✓ ${code} — ${statement.title}`);
+    }
   }
 
   console.log('Building categories...');

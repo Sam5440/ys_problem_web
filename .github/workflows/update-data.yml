@@ -23,6 +23,9 @@ jobs:
         with:
           node-version: 22
 
+      - name: Install Playwright Chromium (for Cloudflare pass-through)
+        run: npx playwright install --with-deps chromium
+
       - name: Sync data from Yawn-Sean/Daily_CF_Problems
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

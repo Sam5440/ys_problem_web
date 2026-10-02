@@ -30,8 +30,9 @@ npm run update-data  # 手动同步上游数据到 data/daily.json
 ## 📦 数据管道
 
 - `scripts/update-data.mjs` 通过 GitHub API 发现上游 `daily_problems/**/problems.md` 与题解文件，解析为结构化 JSON，合并写入 `data/daily.json`（保留最近 60 天）。
-- 完整题面优先取自 `data/statements/*.json`（人工校对）；对近期未收录题面的题目，脚本会尽力直接抓取 Codeforces（被反爬拦截时自动跳过，页面降级为原题链接 + 提示）。
-- `.github/workflows/update-data.yml` 每天 13:20 UTC 运行一次同步，有变化时自动提交并触发 Vercel 部署。
+- **完整题面抓取**（`scripts/lib/cf-statement.mjs` + `scripts/fetch-statements.mjs`）：Codeforces 位于 Cloudflare 之后，普通 HTTP 客户端一律 403 "Just a moment..."。方案是 Playwright 驱动真实浏览器引擎自动通过 JS 质询，两阶段自适应——先无头 Chromium（CI 友好），被质询卡住时自动升级为**有头真实 Chrome**（等同真人浏览）。抓取保持礼貌节奏（5s+ 随机间隔、每 25 页冷却 15s），题面存入 `data/statements/<题号>.json` 供永久复用。
+- 手动回填/补齐：`node scripts/fetch-statements.mjs`（可续传；`--limits-only` 只补时间/内存限制；`--force` 全量重抓）。
+- `.github/workflows/update-data.yml` 每天 13:20 UTC 运行一次同步（含 Chromium 安装），有变化时自动提交并触发 Vercel 部署；若 CI 环境被 Cloudflare 升级质询拦截，仅题面缺失，其余数据正常更新。
 
 ## 📄 免责声明
 

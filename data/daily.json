@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T06:13:06.287Z",
+  "generatedAt": "2026-10-02T09:35:39.492Z",
   "sourceRepo": "Yawn-Sean/Daily_CF_Problems",
   "days": [
     {
@@ -111,7 +111,51 @@
           "url": "https://codeforces.com/gym/106728/problem/E",
           "difficulty": "*1600",
           "hint": "Conditions.",
-          "statement": null,
+          "statement": {
+            "code": "GYM106728E",
+            "letter": "E",
+            "title": "E. Elegant Slabstones Rearrangement",
+            "contest": null,
+            "url": "https://codeforces.com/gym/106728/problem/E",
+            "difficulty": "*1600",
+            "timeLimit": null,
+            "memoryLimit": null,
+            "sections": {
+              "legend": [
+                "Barbara has a garden, represented as an $$$n \\times n$$$ grid. She has bought $$$n^2$$$ slabstones indexed from $$$1$$$ to $$$n^2$$$ and placed them in her garden, so she can enjoy stepping slabstones from one to another every day. The slabstones are arranged in row-major order, that is, the slabstone at cell $$$(i, j)$$$ is indexed $$$(i - 1) \\times n + j$$$.",
+                "Barbara would like to redesign her garden, so she invited Babara, a famous interior designer. After careful consideration, Barbara suggests that the slabstone at cell $$$(i, j)$$$ should be indexed $$$a_{ij}$$$. They will use the following \"elegant\" process to rearrange the slabstones:",
+                "Color each slabstone either red or blue.",
+                "Shift the red slabstones within each row (so they can only move left or right).",
+                "Shift the blue slabstones within each column (so they can only move up or down).",
+                "However, there is an important restriction: Any two slabstones with the same color should remain non-overlapping during the rearrangement of the slabstones. Note that a red slabstone and a blue slabstone can temporarily overlap (but in order to have the desired garden, they should not overlap at the end).",
+                "Now Barbara wants to know whether they can rearrange the slabstones as desired."
+              ],
+              "input": [
+                "The first line contains an integer $$$n$$$, representing the size of the garden.",
+                "Followed by $$$n$$$ lines, the $$$i$$$-th of which contains $$$n$$$ integers, the $$$j$$$-th integer $$$a_{ij}$$$ represents the index of the slabstone at cell $$$(i, j)$$$ in the desired garden.",
+                "$$$1 \\leq n \\leq 100$$$",
+                "$$$1 \\leq a_{ij} \\leq n^2$$$",
+                "All $$$a_{ij}$$$ are distinct."
+              ],
+              "output": [
+                "If the slabstones can be rearranged as desired, output Yes; otherwise output No."
+              ],
+              "note": [
+                "Explanation for Sample 1",
+                "Below is the illustration of one possible way to rearrange the slabstones. The blue slabstones in step 2 (and the red slabstones in step 3) are hidden for clarity. The slabstones should be shifted in some order that does not violate the restriction. For example, in step 3, you can shift slabstone $$$9$$$ one cell down then shift slabstone $$$5$$$ one cell down, but not in the opposite order."
+              ]
+            },
+            "examples": [
+              {
+                "input": "4\n1 2 4 8\n6 10 3 7\n5 11 15 12\n9 14 13 16",
+                "output": "Yes"
+              },
+              {
+                "input": "2\n1 2\n4 3",
+                "output": "No"
+              }
+            ]
+          },
           "solution": {
             "file": "cf106728e.md",
             "markdown": "**提示 1：** 考虑不得不动的元素，以及其他元素为了使得这些元素能到目标位置需要做什么。\n\n首先，如果一个元素在移动前和移动后既不在同一行，也不在同一列，那一定没办法达成。\n\n否则，首先考虑那些行内需要移动的元素——它们的前后顺序不能变，因为同色的不能在同一个格子内，所以需要一开始就保持正确的顺序。\n\n同列的元素的上下顺序也不能变，也需要一开始就满足从上到下升序。\n\n同时，一个元素从一个位置移动到另一个位置的过程中，途径的那些不动的元素一定只能是另一个颜色的——不然没办法绕开来。这里可以用差分数组来更新（起点到终点的区间）。\n\n那如果横着走或者竖着走都会经过这个格子，那就产生了矛盾了。所以还需要判这件事儿。\n\n而在上述条件都满足的情况下，我们可以让异色的元素先让开位置，再把同色的在这一行排好，再把异色元素挪回来。每行的元素 / 每列的元素都可以这么解决。\n\n时间复杂度为 $\\mathcal{O}(n^2)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    n = II()\n    grid = [LGMI() for _ in range(n)]\n    \n    tag = [[0] * n for _ in range(n)]\n    \n    for i in range(n):\n        for j in range(n):\n            if grid[i][j] // n == i:\n                tag[i][j] |= 1\n            if grid[i][j] % n == j:\n                tag[i][j] |= 2\n            \n            if tag[i][j] == 0:\n                exit(print('No'))\n    \n    block_tag = [[0] * n for _ in range(n)]\n    \n    for i in range(n):\n        cur = -1\n        diff = [0] * n\n        \n        for j in range(n):\n            if tag[i][j] == 1:\n                if grid[i][j] < cur:\n                    exit(print('No'))\n                cur = grid[i][j]\n                \n                l, r = grid[i][j] % n, j\n                if l > r: l, r = r, l\n                diff[l + 1] += 1\n                diff[r] -= 1\n        \n        for j in range(1, n):\n            diff[j] += diff[j - 1]\n        \n        for j in range(n):\n            if diff[j] and tag[i][j] == 3:\n                block_tag[i][j] += 1\n    \n    for j in range(n):\n        cur = -1\n        diff = [0] * n\n        \n        for i in range(n):\n            if tag[i][j] == 2:\n                if grid[i][j] < cur:\n                    exit(print('No'))\n                cur = grid[i][j]\n                \n                l, r = grid[i][j] // n, i\n                if l > r: l, r = r, l\n                diff[l + 1] += 1\n                diff[r] -= 1\n        \n        for i in range(1, n):\n            diff[i] += diff[i - 1]\n        \n        for i in range(n):\n            if diff[i] and tag[i][j] == 3:\n                block_tag[i][j] += 1\n    \n    for i in range(n):\n        for j in range(n):\n            if block_tag[i][j] == 2:\n                exit(print('No'))\n    \n    print('Yes')\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint n;\n\tcin >> n;\n\n\tvector<vector<int>> grid(n, vector<int>(n));\n\tfor (auto &x: grid) for (auto &y: x) cin >> y, y --;\n\n\tvector<vector<int>> tag(n, vector<int>(n, 0));\n\n\tfor (int i = 0; i < n; i ++) {\n\t\tfor (int j = 0; j < n; j ++) {\n\t\t\tif (grid[i][j] / n == i) tag[i][j] |= 1;\n\t\t\tif (grid[i][j] % n == j) tag[i][j] |= 2;\n\t\t\tif (!tag[i][j]) return cout << \"No\", 0;\n\t\t}\n\t}\n\n\tvector<vector<int>> block_tag(n, vector<int>(n, 0));\n\n\tfor (int i = 0; i < n; i ++) {\n\t\tint cur = -1;\n\t\tvector<int> diff(n, 0);\n\n\t\tfor (int j = 0; j < n; j ++) {\n\t\t\tif (tag[i][j] == 1) {\n\t\t\t\tif (grid[i][j] < cur) return cout << \"No\", 0;\n\t\t\t\tcur = grid[i][j];\n\n\t\t\t\tint l = grid[i][j] % n, r = j;\n\t\t\t\tif (l > r) swap(l, r);\n\t\t\t\tdiff[l + 1] ++, diff[r] --;\n\t\t\t}\n\t\t}\n\n\t\tfor (int j = 1; j < n; j ++) diff[j] += diff[j - 1];\n\n\t\tfor (int j = 0; j < n; j ++) {\n\t\t\tif (diff[j] && tag[i][j] == 3) {\n\t\t\t\tblock_tag[i][j] ++;\n\t\t\t}\n\t\t}\n\t}\n\n\tfor (int j = 0; j < n; j ++) {\n\t\tint cur = 0;\n\t\tvector<int> diff(n, 0);\n\n\t\tfor (int i = 0; i < n; i ++) {\n\t\t\tif (tag[i][j] == 2) {\n\t\t\t\tif (grid[i][j] < cur) return cout << \"No\", 0;\n\t\t\t\tcur = grid[i][j];\n\n\t\t\t\tint l = grid[i][j] / n, r = i;\n\t\t\t\tif (l > r) swap(l, r);\n\t\t\t\tdiff[l + 1] ++, diff[r] --;\n\t\t\t}\n\t\t}\n\n\t\tfor (int i = 1; i < n; i ++) diff[i] += diff[i - 1];\n\n\t\tfor (int i = 0; i < n; i ++) {\n\t\t\tif (diff[i] && tag[i][j] == 3) {\n\t\t\t\tblock_tag[i][j] ++;\n\t\t\t}\n\t\t}\n\t}\n\n\tfor (auto &x: block_tag) for (auto &y: x) if (y == 2) return cout << \"No\", 0;\n\n\tcout << \"Yes\";\n\n\treturn 0;\n}\n```"
@@ -122,7 +166,55 @@
           "url": "https://codeforces.com/gym/106728/problem/C",
           "difficulty": "*2200",
           "hint": "Pass the information layer by layer.",
-          "statement": null,
+          "statement": {
+            "code": "GYM106728C",
+            "letter": "C",
+            "title": "C. Magical Girl and White Rabbits",
+            "contest": null,
+            "url": "https://codeforces.com/gym/106728/problem/C",
+            "difficulty": "*2200",
+            "timeLimit": null,
+            "memoryLimit": null,
+            "sections": {
+              "legend": [
+                "Madoka was originally an ordinary student who went to school happily every day. However, one day she was suddenly persuaded to become a magical girl, and thus began her endless battles against enemies to protect the world.",
+                "The transportation network of this world is shaped like a complete $$$k$$$-ary tree with $$$l$$$ levels. Her base is located in Central City, which is located at the root node (level $$$1$$$), and all enemies lurk at the leaves (level $$$l$$$). Every non-leaf node has exactly $$$k$$$ children, which are ordered from left to right as its $$$1$$$-st, $$$2$$$-nd, $$$\\dots$$$, $$$k$$$-th child, exactly as they are drawn in the picture below. Given $$$k$$$ and $$$l$$$, we can determine the total number of nodes in the tree (denoted $$$S$$$), which is at most $$$10^6$$$. Below is an example transportation network with $$$k = 3$$$ and $$$l = 4$$$, where $$$S=40$$$:",
+                "Over time, Madoka has already completed $$$n$$$ enemy extermination missions sequentially. For each mission, she started her journey from Central City.",
+                "However, the enemies are not the only threat. There exists a special kind of mysterious \"white rabbit\" in this world that Madoka finds extremely annoying and difficult to deal with. To conserve her precious magical energy for the actual battles, Madoka actively chooses which enemy to hunt based on the safest route. She evaluates the routes to all leaves and always selects a root-to-leaf path that contains the minimum total number of white rabbits along the way.",
+                "Several different paths may share this minimum total, so Madoka fixes her route in the following deterministic way. She walks down from the root one node at a time. Standing at a non-leaf node $$$v$$$, she looks at every child $$$c$$$ of $$$v$$$ that keeps her on a path of the minimum total (that is, the number of white rabbits on the road from $$$v$$$ to $$$c$$$, plus the minimum number of white rabbits on a path from $$$c$$$ down to a leaf of $$$c$$$'s subtree, is as small as possible among all children of $$$v$$$), and she always steps into the leftmost such child, that is, the one with the smallest index among them. She repeats this until she arrives at a leaf.",
+                "Unfortunately, these white rabbits have a strange affinity for magical girls and are strongly attracted to Madoka's magical trail. After she completes the $$$i$$$-th mission, her residual magic instantly triggers a rapid multiplication of the creatures. Specifically, on every single road segment that Madoka just traveled across during that mission, the number of white rabbits permanently occupying that road increases by $$$w_i$$$. (Initially, the world was peaceful, and there were $$$0$$$ white rabbits on all roads.)",
+                "As the missions pile up, the network becomes increasingly congested with these white rabbits. Madoka needs to know how bad the situation has eventually become. Determine the total number of white rabbits Madoka will inevitably encounter on her chosen path during her NEXT ($$$n+1$$$)-th extermination mission."
+              ],
+              "input": [
+                "The first line contains three integers $$$k$$$, $$$l$$$, and $$$n$$$, representing the branching factor of the tree, the number of levels, and the number of completed missions.",
+                "The second line contains $$$n$$$ integers $$$w_1, w_2, \\dots, w_n$$$, representing the sequence of values by which the white rabbits increase on the traveled road segments after each mission.",
+                "$$$1 \\leq k \\leq 10^6$$$",
+                "$$$2 \\leq l \\leq 1000$$$",
+                "$$$1 \\leq n \\leq 2 \\times 10^5$$$",
+                "$$$1 \\leq w_i \\leq 10^9$$$",
+                "The total number of nodes in the tree does not exceed $$$10^6$$$."
+              ],
+              "output": [
+                "Output a single integer representing the total number of white rabbits on the path Madoka will choose during her NEXT ($$$n+1$$$)-th mission."
+              ],
+              "note": [
+                "Explanation for Sample 1",
+                "The tree has $$$4$$$ leaves, numbered $$$1$$$ to $$$4$$$ from left to right; leaves $$$1$$$ and $$$2$$$ belong to the root's $$$1$$$-st child, leaves $$$3$$$ and $$$4$$$ to its $$$2$$$-nd child. Over the five missions Madoka visited leaves $$$1$$$, $$$3$$$, $$$2$$$, $$$4$$$, $$$1$$$.",
+                "The first two missions are the ones that use the tie-breaking rule. In mission $$$1$$$, every road was still empty, so all four routes tied; she went into the left child at the root and again at the next node, reaching leaf $$$1$$$. In mission $$$2$$$, the four routes cost $$$2$$$, $$$1$$$, $$$0$$$, $$$0$$$: at the root the $$$2$$$-nd child was strictly better, and there its two leaves tied at $$$0$$$, so she took the leftmost of them, leaf $$$3$$$. In the remaining three missions, the route with the fewest white rabbits was unique: leaf $$$2$$$ at cost $$$1$$$, then leaf $$$4$$$ at cost $$$2$$$, then leaf $$$1$$$ at cost $$$5$$$.",
+                "After these $$$5$$$ missions, the four routes cost $$$15$$$, $$$12$$$, $$$8$$$ and $$$10$$$, respectively. Thus, for her next mission, Madoka takes the path to leaf $$$3$$$ and will inevitably encounter exactly $$$8$$$ white rabbits."
+              ]
+            },
+            "examples": [
+              {
+                "input": "2 3 5\n1 2 3 4 5",
+                "output": "8"
+              },
+              {
+                "input": "3 2 4\n5 5 5 5",
+                "output": "5"
+              }
+            ]
+          },
           "solution": {
             "file": "cf106728c.md",
             "markdown": "**提示 1：** 请看清楚数据范围，点数不会超过 $10^6$ 。\n\n**提示 2：** 按层更新。\n\n注意，这题的结点数并不会超过 $10^6$ 。\n\n所以除非 $k=1$ ，这棵树的深度也最多就是 $\\mathcal{O}(\\log_k 10^6)$ 的量级。\n\n那既然点数并不多，也就可以使用常规的数据结构了。\n\n我们可以对于树上的每个结点维护这个结点到对应子树内的叶子的路径的最小权值和。每个结点只需考虑自己的子结点数值的更新情况即可。\n\n而寻找最小的叶子也只需一层层来——找到包含最小叶子的第一个子树，不断往下找，找 $l$ 层即可。这件事儿相当于序列更新的时候求子结点第一个最小值的位置，因此维护一个 $k$ 个数形成的线段树即可。\n\n接下来路径加 $w_i$ 如何更新呢？从叶子开始，一步步往上走，经历过的每一个结点都对子树中的所有叶子节点 $+w_i$ 。因为是一整棵子树做操作，所以无需使用懒更新线段树，直接打个大的标记就行。\n\n设节点数量是 $V$ ，则时间复杂度为 $\\mathcal{O}(V+n\\log_k V\\log k)\\mathcal{O}(V+n\\log V/\\log k\\times \\log k)=\\mathcal{O}(V+n\\log V)$ 。（换底公式）\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    k, l, n = MII()\n    ws = LII()\n    \n    if k == 1:\n        print(sum(ws) * (l - 1))\n    else:\n        segs = []\n        tags = []\n        \n        cur = 1\n        \n        for i in range(l - 1):\n            segs.append([SegTree(fmin, inf, [0] * k) for _ in range(cur)])\n            tags.append([0] * cur)\n            cur *= k\n        \n        for w in ws:\n            idx = 0\n            \n            for i in range(l - 1):\n                v = segs[i][idx].all_prod()\n                idx = idx * k + segs[i][idx].max_right(0, lambda x: x > v)\n    \n            delta = 0\n    \n            for i in range(l - 2, -1, -1):\n                idx, pos = divmod(idx, k)\n                old = segs[i][idx].all_prod()\n                segs[i][idx].set(pos, segs[i][idx].get(pos) + w + delta)\n                delta = segs[i][idx].all_prod() - old\n        \n        print(segs[0][0].all_prod())\n```\n\nC++ 做法如下——\n\n```cpp []\nlong long op(long long x, long long y) {return min(x, y);}\n\nlong long e() {return 4e18;}\n\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint k, l, n;\n\tcin >> k >> l >> n;\n\n\tvector<int> ws(n);\n\tfor (auto &x: ws) cin >> x;\n\n\tif (k == 1) {\n\t\tlong long total = 0;\n\t\tfor (auto &x: ws) total += x;\n\t\tcout << total * (l - 1);\n\t}\n\telse {\n\t\tvector<vector<atcoder::segtree<long long, op, e>>> segs(l - 1);\n\t\tvector<vector<long long>> tags(l - 1);\n\t\tvector<long long> tmp(k, 0);\n\n\t\tint cur = 1;\n\t\tfor (int i = 0; i < l - 1; i ++) {\n\t\t\tfor (int j = 0; j < cur; j ++) {\n\t\t\t\tsegs[i].push_back(atcoder::segtree<long long, op, e>(tmp));\n\t\t\t\ttags[i].push_back(0);\n\t\t\t}\n\t\t\tcur *= k;\n\t\t}\n\n\t\tfor (auto &w: ws) {\n\t\t\tint idx = 0, pos;\n\n\t\t\tfor (int i = 0; i < l - 1; i ++) {\n\t\t\t\tauto v = segs[i][idx].all_prod();\n\t\t\t\tidx = idx * k + segs[i][idx].max_right(0, [&] (long long x) {return x > v;});\n\t\t\t}\n\n\t\t\tlong long delta = 0;\n\n\t\t\tfor (int i = l - 2; i >= 0; i --) {\n\t\t\t\tpos = idx % k, idx /= k;\n\t\t\t\tlong long old = segs[i][idx].all_prod();\n\t\t\t\tsegs[i][idx].set(pos, segs[i][idx].get(pos) + w + delta);\n\t\t\t\tdelta = segs[i][idx].all_prod() - old;\n\t\t\t}\n\t\t}\n\n\t\tcout << segs[0][0].all_prod();\n\t}\n\n\treturn 0;\n}\n```"
@@ -138,7 +230,49 @@
           "url": "https://codeforces.com/gym/106728/problem/F",
           "difficulty": "*1700",
           "hint": "From island $1$ . Find the latest time to start from $i$ .",
-          "statement": null,
+          "statement": {
+            "code": "GYM106728F",
+            "letter": "F",
+            "title": "F. Escape Route",
+            "contest": null,
+            "url": "https://codeforces.com/gym/106728/problem/F",
+            "difficulty": "*1700",
+            "timeLimit": null,
+            "memoryLimit": null,
+            "sections": {
+              "legend": [
+                "In a tourist archipelago consisting of $$$n$$$ islands, there are $$$m$$$ bidirectional bridges connecting them. The islands are numbered $$$1, 2, \\ldots, n$$$. The $$$i$$$-th bridge connects islands $$$u_i$$$ and $$$v_i$$$, and it takes $$$t_i$$$ minutes to cross. Furthermore, each bridge has a height $$$h_i$$$, representing its height above sea level in centimeters.",
+                "An unprecedented natural disaster has struck the archipelago, causing the sea level to rise at a rate of $$$1$$$ centimeter per minute. A bridge $$$i$$$ becomes unusable exactly $$$h_i$$$ minutes after the disaster begins. To ensure safety, a vehicle can only cross bridge $$$i$$$ if the entire traversal completes before the bridge is submerged. Specifically, if a vehicle starts crossing bridge $$$i$$$ at time $$$T$$$, it must arrive at the other end by time $$$T + t_i$$$, and this arrival time must satisfy $$$T + t_i \\le h_i$$$.",
+                "Island $$$1$$$ serves as the evacuation center. Residents on each island are intelligent; they will choose a route that allows them to reach island $$$1$$$ safely before any bridge they cross becomes submerged. If no such path exists, they will remain on their current island to await rescue.",
+                "Given this scenario, for each island $$$k$$$ (where $$$k \\in \\{1, \\ldots, n\\}$$$), determine if the residents on island $$$k$$$ can safely reach island $$$1$$$."
+              ],
+              "input": [
+                "The first line contains two integers $$$n$$$ and $$$m$$$, representing the number of islands and the number of bridges, respectively.",
+                "Followed by $$$m$$$ lines, the $$$i$$$-th of which contains four integers $$$u_i, v_i, t_i, h_i$$$, representing a bridge connecting islands $$$u_i$$$ and $$$v_i$$$ with travel time $$$t_i$$$ and height $$$h_i$$$.",
+                "$$$1\\leq n\\leq 10^5$$$",
+                "$$$1\\leq m\\leq 3\\times 10^5$$$",
+                "$$$1\\leq u_i, v_i \\leq n, u_i\\neq v_i$$$",
+                "$$$1\\leq t_i \\leq h_i \\leq 10^9$$$"
+              ],
+              "output": [
+                "Output a single string of length $$$n$$$. The $$$i$$$-th character of the string should be '1' if the residents of island $$$i$$$ can safely reach island $$$1$$$, and '0' otherwise."
+              ],
+              "note": [
+                "Explanation for Sample 1",
+                "Residents of island $$$1$$$ are already at island $$$1$$$. Residents of island $$$3$$$ can safely cross the first bridge and arrive at island $$$1$$$ at time $$$2$$$. However, residents of island $$$2$$$ must first cross the second bridge to reach island $$$3$$$ at time $$$3$$$; if they then attempt to cross the first bridge, they will get stuck in the middle at time $$$4$$$, exactly when the bridge becomes unusable since $$$h_1=4$$$. Therefore, the residents of island $$$2$$$ cannot safely reach island $$$1$$$."
+              ]
+            },
+            "examples": [
+              {
+                "input": "3 2\n1 3 2 4\n2 3 3 5",
+                "output": "101"
+              },
+              {
+                "input": "5 6\n1 2 4 4\n1 4 8 13\n2 3 1 3\n2 4 3 7\n3 5 2 2\n4 5 7 8",
+                "output": "11110"
+              }
+            ]
+          },
           "solution": {
             "file": "cf106728f.md",
             "markdown": "**提示 1：** 从共同点开始。\n\n**提示 2：** 最短路，维护什么？\n\n因为这题要求的东西是每个点到 $1$ 的问题，所以应该考虑公共部分—— $1$ 。也就是从 $1$ 为问题考虑的起点。\n\n因为从 $1$ 出发，因此我们可以尝试从一个可以到达 $1$ 结点的位置出发，确定其余点能否走到 $1$ 结点。\n\n这就很像一个最短路问题。我们只需维护从 $u$ 结点出发能到达 $1$ 的最晚出发时间 $f(u)$ 。则 $v$ 若使用一条 $u,h,t$ 的边经过 $u$ 到达结点 $1$ ，最晚的出发时间是 $\\min(h, f(u))-t$ ，这件事儿就可以用来跑最短路了。\n\n时间复杂度为 $\\mathcal{O}(n+m\\log n)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    n, m = MII()\n    \n    path = [[] for _ in range(n)]\n    \n    us = []\n    vs = []\n    ts = []\n    hs = []\n    \n    for eid in range(m):\n        u, v, t, h = MII()\n        \n        u -= 1\n        v -= 1\n        \n        us.append(u)\n        vs.append(v)\n        ts.append(t)\n        hs.append(h)\n        \n        path[u].append(eid)\n        path[v].append(eid)\n    \n    inf = 2 * 10 ** 9\n    \n    latest_time = [-1] * n\n    latest_time[0] = inf\n    \n    def f(x, y):\n        return x * n + y\n    \n    pq = [f(-inf, 0)]\n    \n    while pq:\n        d, u = divmod(heappop(pq), n)\n        d = -d\n        \n        if latest_time[u] == d:\n            for eid in path[u]:\n                v = us[eid] ^ vs[eid] ^ u\n                nd = fmin(d, hs[eid]) - ts[eid]\n                \n                if nd > latest_time[v]:\n                    latest_time[v] = nd\n                    heappush(pq, f(-latest_time[v], v))\n    \n    print(''.join('1' if x >= 0 else '0' for x in latest_time))\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint n, m;\n\tcin >> n >> m;\n\n\tvector<vector<array<int, 3>>> path(n);\n\n\twhile (m --) {\n\t\tint u, v, t, h;\n\t\tcin >> u >> v >> t >> h;\n\t\tu --, v --;\n\t\tpath[u].push_back({v, t, h});\n\t\tpath[v].push_back({u, t, h});\n\t}\n\n\tvector<int> latest_time(n, -1);\n\tlatest_time[0] = (int)1e9;\n\n\tpriority_queue<pair<int, int>> pq;\n\tpq.push({latest_time[0], 0});\n\n\twhile (!pq.empty()) {\n\t\tauto [d, u] = pq.top(); pq.pop();\n\t\tif (latest_time[u] == d) {\n\t\t\tfor (auto &[v, t, h]: path[u]) {\n\t\t\t\tint nd = min(d, h) - t;\n\t\t\t\tif (nd > latest_time[v]) {\n\t\t\t\t\tlatest_time[v] = nd;\n\t\t\t\t\tpq.push({nd, v});\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tfor (auto &x: latest_time) cout << (x >= 0);\n\n\treturn 0;\n}\n```"
@@ -149,7 +283,57 @@
           "url": "https://codeforces.com/gym/106728/problem/G",
           "difficulty": "*2100",
           "hint": "Hall's theorem. And find the lexicographically minimum order of feasible $s$ .",
-          "statement": null,
+          "statement": {
+            "code": "GYM106728G",
+            "letter": "G",
+            "title": "G. The Graduation Photo Lineup",
+            "contest": null,
+            "url": "https://codeforces.com/gym/106728/problem/G",
+            "difficulty": "*2100",
+            "timeLimit": null,
+            "memoryLimit": null,
+            "sections": {
+              "legend": [
+                "Class leader A-Ming is arranging the $$$n$$$ students of his class into a single row to take a graduation photo. The $$$n$$$ students all have distinct heights, and A-Ming holds a roster listing the real height of every student.",
+                "The students were already standing in some order. For fun, A-Ming handed each student a slip of paper and asked everyone to look to their right and compute one number: how many of the people standing behind them (i.e. to the right in the row) are shorter than they are? Everyone wrote down their number and handed the slip back. The slips were originally collected in left-to-right order of the row (the first slip belongs to the student standing first, and so on).",
+                "Then a sudden gust of wind scattered all the slips on the ground! A-Ming gathered them back up, but their order was completely lost, leaving only an unordered collection of numbers $$$s_1, s_2, \\ldots, s_n$$$.",
+                "The photographer is about to arrive and everyone has run off to play. A-Ming is left holding only the height roster and the shuffled pile of slips.",
+                "Help A-Ming decide: is it possible to reconstruct at least one valid standing order consistent with the numbers on the slips? If so, to make the picture look as harmonious as possible, output the lexicographically smallest height arrangement among all valid orders (placing shorter students as far toward the front as possible). If the numbers cannot fit together at all, output -1."
+              ],
+              "input": [
+                "The first line contains a single integer $$$n$$$, representing the number of students.",
+                "The second line contains $$$n$$$ distinct integers $$$h_1, h_2, \\ldots, h_n$$$, representing the real heights of the students.",
+                "The third line contains $$$n$$$ integers $$$s_1, s_2, \\ldots, s_n$$$, representing the shuffled collection of numbers written on the slips.",
+                "$$$1 \\leq n \\leq 2 \\times 10^5$$$",
+                "$$$1 \\leq h_i \\leq 10^9$$$, and all $$$h_i$$$ are distinct.",
+                "$$$0 \\leq s_i  \\lt  n$$$"
+              ],
+              "output": [
+                "If a valid standing order exists, output a single line of $$$n$$$ integers: the lexicographically smallest valid sequence of heights, separated by single spaces.",
+                "If no valid standing order exists, output a single line containing -1."
+              ],
+              "note": [
+                "Explanation for Sample 1",
+                "The slips form the multiset $$$\\{0, 0, 1\\}$$$. Two standing orders are consistent with it: heights $$$[10, 30, 20]$$$ (slip values $$$0, 1, 0$$$) and $$$[20, 10, 30]$$$ (slip values $$$1, 0, 0$$$). The first is lexicographically smaller, so the answer is $$$10\\ 30\\ 20$$$.",
+                "Explanation for Sample 2",
+                "With two students, the person standing last has nobody to their right, so one slip must read $$$0$$$. Both slips read $$$1$$$, which is impossible, so the answer is $$$-1$$$."
+              ]
+            },
+            "examples": [
+              {
+                "input": "3\n10 20 30\n1 0 0",
+                "output": "10 30 20"
+              },
+              {
+                "input": "2\n170 165\n1 1",
+                "output": "-1"
+              },
+              {
+                "input": "4\n150 160 170 180\n0 2 0 0",
+                "output": "150 180 160 170"
+              }
+            ]
+          },
           "solution": {
             "file": "cf106728g.md",
             "markdown": "**提示 1：** 只需找出字典序最小的 $s$ 的合法排列。\n\n**提示 2：** 一位位确定，如何找到最小的可填的数？\n\n如果 $s$ 的初始情况确定了，我们只需依次找 $h$ 剩余元素中的第 $s[i]+1$ 小的元素不断填入即可。同时这也意味着字典序越小的 $s$ 对应着字典序越小的 $h$ 。\n\n所以我们要找到满足条件的字典序最小的 $s$ 的排列。\n\n我们应该一步步确定每一位填的数最小可以是什么——也就是保证去掉这个数后，剩下的元素仍然能排成合法的序列。\n\n根据 Hall 定理，长度为 $x$ 的序列合法，当且仅当：\n\n$cnt[x]\\leq 0$\n\n$cnt[x-1]+cnt[x]\\leq 1$\n\n$cnt[x-2]+cnt[x-1]+cnt[x]\\leq 2$\n\n$\\dots$\n\n$cnt[0]+cnt[1]+\\dots+cnt[x-2]+cnt[x-1]+cnt[x]\\leq x$\n\n所以我们要更新一个结构，让它能快速判断上面的事情。\n\n于是用左侧的每一项 $cnt[i]$ 都减去 $1$ ，这样就都是小于等于 $0$ ，也就相当于所有后缀和不超过 $0$ 。可以考虑用线段树维护上述变量。\n\n而填的数越小越容易使得上述条件不成立，所以可以线段树上二分找到第一个操作合法的位置。然后选了这个数之后，再更新上面的各个条件即可。需要执行区间加减，所以可以使用懒更新线段树。\n\n时间复杂度为 $\\mathcal{O}(n\\log n)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    n = II()\n    hs = LII()\n    vs = LII()\n    \n    hs.sort()\n    \n    cnt = [0] * n\n    for x in vs:\n        cnt[x] += 1\n    \n    for i in range(n - 2, -1, -1):\n        cnt[i] += cnt[i + 1]\n    \n    for i in range(n):\n        cnt[i] -= n - i\n    \n    if max(cnt) > 0: print(-1)\n    else:\n        seg = LazySegTree(fmax, 0, add, add, 0, cnt)\n        fen = FenwickTree([1] * n)\n        \n        ans = [0] * n\n    \n        for i in range(n):\n            seg.apply(0, n - i, 1)\n            p = fmax(seg.min_left(n - i, lambda x: x <= 0) - 1, 0)\n            seg.apply(0, p + 1, -1)\n            \n            target_idx = fen.bisect_min_larger(p + 1)\n            fen.add(target_idx, -1)\n            ans[i] = hs[target_idx]\n    \n        print(' '.join(map(str, ans)))\n```\n\nC++ 做法如下——\n\n```cpp []\nint op(int x, int y) {return max(x, y);}\n\nint e() {return 0;}\n\nint add(int x, int y) {return x + y;}\n\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint n;\n\tcin >> n;\n\n\tvector<int> hs(n), vs(n);\n\tfor (auto &x: hs) cin >> x;\n\tfor (auto &x: vs) cin >> x;\n\n\tsort(hs.begin(), hs.end());\n\n\tvector<int> cnt(n, 0);\n\tfor (auto &x: vs) cnt[x] ++;\n\n\tfor (int i = n - 2; i >= 0; i --) cnt[i] += cnt[i + 1];\n\tfor (int i = 0; i < n; i ++) cnt[i] -= n - i;\n\n\tif (*max_element(cnt.begin(), cnt.end()) > 0) cout << -1;\n\telse {\n\t\tatcoder::lazy_segtree<int, op, e, int, add, add, e> seg(cnt);\n\t\tatcoder::fenwick_tree<int> fen(n);\n\t\tfor (int i = 0; i < n; i ++) fen.add(i, 1);\n\n\t\tfor (int i = 0; i < n; i ++) {\n\t\t\tseg.apply(0, n - i, 1);\n\t\t\tint p = max(seg.min_left(n - i, [&] (int x) {return x <= 0;}) - 1, 0);\n\t\t\tseg.apply(0, p + 1, -1);\n\n\t\t\tint target_idx = fen.lower_bound(p + 1) - 1;\n\t\t\tfen.add(target_idx, -1);\n\t\t\tcout << hs[target_idx] << \" \\n\"[i == n - 1];\n\t\t}\n\t}\n\n\treturn 0;\n}\n```"
@@ -165,7 +349,47 @@
           "url": "https://codeforces.com/gym/100947/problem/C",
           "difficulty": "*1000",
           "hint": "Implementation.",
-          "statement": null,
+          "statement": {
+            "code": "GYM100947C",
+            "letter": "C",
+            "title": "C. Rotate It !!",
+            "contest": null,
+            "url": "https://codeforces.com/gym/100947/problem/C",
+            "difficulty": "*1000",
+            "timeLimit": "2 seconds",
+            "memoryLimit": "64 megabytes",
+            "sections": {
+              "legend": [
+                "Dzy and Fox have a sequence A consisting of N numbers [A1...AN]. Dzy starts by taking the first number, then Fox takes the second number, then Dzy takes the third number and so on, they continue taking turns until all of the N numbers are taken. The player with the highest sum of numbers wins.",
+                "Since Dzy is your dear friend, you decided to rotate the sequence (you may rotate it as many times as you like) in order to maximize Dzy's sum of numbers.",
+                "Rotation is defined as removing the first element from the beginning of the sequence and adding it to the end of the sequence.",
+                "So given the sequence A , you have to help Dzy and let him achieve the maximum possible sum."
+              ],
+              "input": [
+                "The first line containts a single integer T, the number of test cases.",
+                "Then T testcases are given as follows :",
+                "The first line of each testcase contains a single integer N (1 ≤ n ≤ 104).",
+                "The second line of each testcase contains N space-separated integers [A1...AN],the elements of the sequence A (1 ≤ i ≤ n) ( - 109 ≤ Ai ≤ 109)."
+              ],
+              "output": [
+                "Output T lines , The answer for each testcase which is the maximum achievable sum by Dzy if you help him."
+              ],
+              "note": [
+                "Consider all 5 rotations of the sequence:",
+                "1 5 3 2 4 (Dzy score = 1 + 3 + 4 = 8)",
+                "5 3 2 4 1 (Dzy score = 8)",
+                "3 2 4 1 5 (Dzy score = 12)",
+                "2 4 1 5 3 (Dzy score = 6)",
+                "4 1 5 3 2 (Dzy score = 11)"
+              ]
+            },
+            "examples": [
+              {
+                "input": "1\n5\n1 5 3 2 4",
+                "output": "12"
+              }
+            ]
+          },
           "solution": {
             "file": "cf100947c.md",
             "markdown": "**提示 1：** 枚举起点，考虑不同起点的答案如何更新。\n\n首先，我们可以计算最开始的情况下的两个人的分别得分。\n\n接下来不断右移左端点。此时可以理解为去除开头元素，剩余的和两人交换。最后再把开头去掉的元素分给对应的那个人就行。具体可见代码。\n\n时间复杂度为 $\\mathcal{O}(n)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    t = II()\n    outs = []\n    \n    for _ in range(t):\n        n = II()\n        nums = LII()\n    \n        ans = -inf\n        \n        v0, v1 = sum(nums[::2]), sum(nums[1::2])\n        \n        for i in range(n):\n            v0, v1 = v1, v0 - nums[i]\n            if n % 2: v0 += nums[i]\n            else: v1 += nums[i]\n            \n            ans = fmax(ans, v0)\n        \n        outs.append(ans)\n    \n    print('\\n'.join(map(str, outs)))\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint t;\n\tcin >> t;\n\n\twhile (t --) {\n\t\tint n;\n\t\tcin >> n;\n\n\t\tvector<int> nums(n);\n\n\t\tlong long v0 = 0, v1 = 0;\n\n\t\tfor (int i = 0; i < n; i ++) {\n\t\t\tcin >> nums[i];\n\t\t\tif (i % 2 == 0) v0 += nums[i];\n\t\t\telse v1 += nums[i];\n\t\t}\n\n\t\tlong long ans = -1e18;\n\n\t\tfor (int i = 0; i < n; i ++) {\n\t\t\tv0 -= nums[i];\n\t\t\tswap(v0, v1);\n\t\t\tif (n % 2 == 0) v1 += nums[i];\n\t\t\telse v0 += nums[i];\n\t\t\tans = max(ans, v0);\n\t\t}\n\n\t\tcout << ans << '\\n';\n\t}\n\n\treturn 0;\n}\n```"
@@ -176,7 +400,44 @@
           "url": "https://codeforces.com/gym/101192/problem/A",
           "difficulty": "*2000",
           "hint": "Inclusion-exclusion on GCD.",
-          "statement": null,
+          "statement": {
+            "code": "GYM101192A",
+            "letter": "A",
+            "title": "A. LIS and GCD",
+            "contest": null,
+            "url": "https://codeforces.com/gym/101192/problem/A",
+            "difficulty": "*2000",
+            "timeLimit": "15 s",
+            "memoryLimit": "1024 MB",
+            "sections": {
+              "legend": [
+                "You are given two arrays a and b. Each array has n integer numbers. You need to compute the sum of GCDs of all subsequences of array b such that the corresponding subsequences of array a are increasing."
+              ],
+              "input": [
+                "The first input line contains one integer number n. The second line contains n integer numbers ai. The third line contains n integer numbers bi."
+              ],
+              "output": [
+                "Display the answer modulo 109 + 7."
+              ],
+              "note": [
+                "Third example: Here are examples of increasing subsequences from a and the corresponding GCD values: {2}->2, {3}->3, {1}->6, {4}-> 9, {2,3}->1, {2,4}->1, {3,4}->3, {1,4}->3, {2,3,4}->1."
+              ]
+            },
+            "examples": [
+              {
+                "input": "2\n1 2\n1 2",
+                "output": "4"
+              },
+              {
+                "input": "2\n2 1\n1 2",
+                "output": "3"
+              },
+              {
+                "input": "4\n2 3 1 4\n2 3 6 9",
+                "output": "29"
+              }
+            ]
+          },
           "solution": {
             "file": "cf101192a.md",
             "markdown": "**提示 1：** 两个问题都考虑太难了，想办法简化其一。\n\n我们可以对于每一个 $x$ ，求能被 $x$ 整除的不同递增子序列的数量——只需遍历一个新元素时，更新以这个元素为结尾的递增子序列的个数（只需得到当前结尾元素比它小的序列的个数的和就行）。\n\n而我们对于 $1\\sim M$ 的元素全部统计一下上面的结果，就可以得到所有元素都能被 $x$ 整除的递增子序列的个数，也就是 GCD 是 $x$ 的倍数的递增子序列的个数。\n\n那考虑 GCD 恰好是 $x$ 的递增子序列的个数，就等于 GCD 是 $x$ 的倍数的子序列的个数，减去恰好是 $2x,3x,\\dots$ 的子序列的个数，所以从大到小遍历 $x$ ，按照上面的逻辑排除即可。\n\n时间复杂度为 $\\mathcal{O}(\\sum d(a_i)\\log n+M\\log M)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    M = 10 ** 6 + 5\n    pr = list(range(M))\n    \n    for i in range(2, M):\n        if pr[i] == i:\n            for j in range(i, M, i):\n                pr[j] = i\n    \n    n = II()\n    mod = 10 ** 9 + 7\n    \n    v1 = LII()\n    v2 = LII()\n    \n    def factors(x):\n        ans = [1]\n        while x > 1:\n            p = pr[x]\n            c = 0\n            while x % p == 0:\n                x //= p\n                c += 1\n            \n            for i in range(c * len(ans)):\n                ans.append(ans[i] * p)\n        \n        return ans\n    \n    pos = [[] for _ in range(M)]\n    \n    for i in range(n):\n        for x in factors(v2[i]):\n            pos[x].append(i)\n    \n    del pr\n    \n    sorted_v1 = sorted(v1)\n    v1 = [bisect.bisect_left(sorted_v1, x) for x in v1]\n    \n    del sorted_v1\n    \n    cnt = [0] * M\n    tmp = [0] * n\n    \n    fen = FenwickTree(n)\n    \n    for i in range(M):\n        for j in pos[i]:\n            tmp[j] = (fen.rsum(0, v1[j] - 1) + 1) % mod\n            cnt[i] = (cnt[i] + tmp[j]) % mod\n            fen.add(v1[j], tmp[j])\n        \n        for j in pos[i]:\n            fen.add(v1[j], -tmp[j])\n    \n    for i in range(M - 1, 0, -1):\n        for j in range(2 * i, M, i):\n            cnt[i] -= cnt[j]\n            cnt[i] %= mod\n    \n    print(sum(i * cnt[i] % mod for i in range(M)) % mod)\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint M = 1e6 + 5, mod = 1e9 + 7;\n\n\tvector<int> pr(M);\n\tiota(pr.begin(), pr.end(), 0);\n\n\tfor (int i = 2; i < M; i ++) {\n\t\tif (pr[i] == i) {\n\t\t\tfor (int j = i; j < M; j += i) {\n\t\t\t\tpr[j] = i;\n\t\t\t}\n\t\t}\n\t}\n\n\tauto factors = [&] (int x) -> vector<int> {\n\t\tvector<int> ans = {1};\n\t\twhile (x > 1) {\n\t\t\tint p = pr[x], c = 0, l = ans.size();\n\t\t\twhile (x % p == 0) x /= p, c ++;\n\t\t\tfor (int i = 0; i < c * l; i ++) ans.emplace_back(ans[i] * p);\n\t\t}\n\t\treturn ans;\n\t};\n\n\tint n;\n\tcin >> n;\n\n\tvector<int> v1(n), v2(n);\n\tfor (auto &x: v1) cin >> x;\n\tfor (auto &x: v2) cin >> x;\n\n\tvector<int> sorted_v1 = v1;\n\tsort(sorted_v1.begin(), sorted_v1.end());\n\n\tfor (int i = 0; i < n; i ++)\n\t\tv1[i] = lower_bound(sorted_v1.begin(), sorted_v1.end(), v1[i]) - sorted_v1.begin();\n\n\tvector<vector<int>> pos(M);\n\tfor (int i = 0; i < n; i ++) {\n\t\tfor (auto &x: factors(v2[i])) {\n\t\t\tpos[x].emplace_back(i);\n\t\t}\n\t}\n\n\tatcoder::fenwick_tree<long long> fen(n);\n\tvector<int> tmp(n, 0), cnt(M, 0);\n\n\tfor (int i = 0; i < M; i ++) {\n\t\tfor (auto &p: pos[i]) {\n\t\t\ttmp[p] = (fen.sum(0, v1[p]) + 1) % mod;\n\t\t\tcnt[i] = (cnt[i] + tmp[p]) % mod;\n\t\t\tfen.add(v1[p], tmp[p]);\n\t\t}\n\t\tfor (auto &p: pos[i]) {\n\t\t\tfen.add(v1[p], -tmp[p]);\n\t\t}\n\t}\n\n\tint ans = 0;\n\n\tfor (int i = M - 1; i >= 1; i --) {\n\t\tfor (int j = 2 * i; j < M; j += i) {\n\t\t\tcnt[i] += mod - cnt[j];\n\t\t\tcnt[i] %= mod;\n\t\t}\n\t\tans = (ans + 1ll * i * cnt[i]) % mod;\n\t}\n\n\tcout << ans;\n\n\treturn 0;\n}\n```"
@@ -192,7 +453,41 @@
           "url": "https://codeforces.com/gym/101064/problem/F",
           "difficulty": "*1100",
           "hint": "Implementation. Consider the process in rounds.",
-          "statement": null,
+          "statement": {
+            "code": "GYM101064F",
+            "letter": "F",
+            "title": "F. Metal detector",
+            "contest": null,
+            "url": "https://codeforces.com/gym/101064/problem/F",
+            "difficulty": "*1100",
+            "timeLimit": "0.5 seconds",
+            "memoryLimit": "256 megabytes",
+            "sections": {
+              "legend": [
+                "Since the 2017 world finals will be in Rapid City, South Dakota, the MaratonIME's coach decides to visit the city to know the contest location.",
+                "The city is preparing to receive the best computer programmers in the world. To ensure the safety of the event, metal detectors are being installed at the entrance of the convention center where the contest will be held. To avoid long waits in the line, the security officers were instructed to send every person that activates the metal detector to the end of the line.",
+                "The coach noticed that one of the metal detectors is defective and it is always activated alternately. This means that the first person does not activate it and the next person does. The third person does not activate it and the next person does, and so on.",
+                "Given that there are N people in the line, the coach, that is the i-th in the line, wants to know when he will be able to go through the metal detector without activating it."
+              ],
+              "input": [
+                "The input starts with an integer T, the number of test cases.",
+                "Each test case consists of two integers, N and i, corresponding to the number of people in the line and the position of the coach in the line, respectively.",
+                "Limits",
+                "1 ≤ T ≤ 103",
+                "1 ≤ N ≤ 109",
+                "1 ≤ i ≤ N"
+              ],
+              "output": [
+                "For each test case, print a line with one integer j meaning that the coach will be the j-th person to go through the metal detector without activating it."
+              ]
+            },
+            "examples": [
+              {
+                "input": "2\n5 1\n6 2",
+                "output": "1\n4"
+              }
+            ]
+          },
           "solution": {
             "file": "cf101064f.md",
             "markdown": "**提示 1：** 模拟，一轮一轮来就行。\n\n每轮处理完一整个 $1\\sim n$ 的遍历，每遍历一轮，总人数大致砍半，所以最多 $\\mathcal{O}(\\log M)$ 轮就结束了。\n\n如果在某一轮，我们的目标在奇数号的位置，则直接这一轮完成。\n\n否则，需要完整经过这轮。然后在经过 $\\lfloor n/2\\rfloor$ 轮后，人数减少这么多。\n\n同时，我们需要更新新一轮的目标人的编号。如果总人数是偶数，则直接砍半；如果总人数是奇数，最后会多余出来一个人——相当于下一轮前面多了这个人，所以我们将这个人放到下一轮的开头，也就是下标变成了 $\\frac{idx+1}{2}$ 。\n\n时间复杂度为 $\\mathcal{O}(\\log M)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    t = II()\n    outs = []\n    \n    for _ in range(t):\n        n, idx = MII()\n        ans = 0\n        \n        while True:\n            if idx % 2 == 1:\n                ans += idx // 2 + 1\n                break\n            \n            ans += n // 2\n            idx //= 2\n            if n % 2:\n                idx += 1\n            n -= n // 2\n        \n        outs.append(ans)\n    \n    print('\\n'.join(map(str, outs)))\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint t;\n\tcin >> t;\n\n\twhile (t --) {\n\t\tint n, idx;\n\t\tcin >> n >> idx;\n\n\t\tint ans = 0;\n\n\t\twhile (true) {\n\t\t\tif (idx & 1) {\n\t\t\t\tans += idx / 2 + 1;\n\t\t\t\tbreak;\n\t\t\t}\n\n\t\t\tans += n / 2;\n\t\t\tidx /= 2;\n\t\t\tif (n & 1) idx ++;\n\t\t\tn -= n / 2;\n\t\t}\n\n\t\tcout << ans << '\\n';\n\t}\n\n\treturn 0;\n}\n```"
@@ -203,7 +498,39 @@
           "url": "https://codeforces.com/gym/101064/problem/L",
           "difficulty": "*2200",
           "hint": "In sub-problems.",
-          "statement": null,
+          "statement": {
+            "code": "GYM101064L",
+            "letter": "L",
+            "title": "L. The Knapsack problem",
+            "contest": null,
+            "url": "https://codeforces.com/gym/101064/problem/L",
+            "difficulty": "*2200",
+            "timeLimit": "1.5 s",
+            "memoryLimit": "256 megabytes",
+            "sections": {
+              "legend": [
+                "To prepare for the ICPC World Finals 2017, your team attended to a training camp. Glauber \"the drinker\" Sokolov was the teacher, and all teams had to answer a form so he would know what topics were the best to teach. The first day was introductory and Glauber said he would just go over well-known topics. He said \"I noticed you all answered that you knew the Knapsack problem very well, so here is a simple exercise about it, follows directly from the definitions. Solve the knapsack problem with repetitions.\".",
+                "More formally, given N types of items, each one with a weight and a cost, choose some items such that the sum of its weights does not exceed S, and the sum of costs is maximum. You may choose any number of items of each type.",
+                "Solve Glauber's exercise."
+              ],
+              "input": [
+                "On the first line two integers N and S, the number of types of items and the maximum allowed weight.",
+                "Each of the next N lines has two integers wi and ci, the weight and the cost of the ith type of item.",
+                "Limits",
+                "1 ≤ N, wi ≤ 103",
+                "0 ≤ S, ci ≤ 109"
+              ],
+              "output": [
+                "Print a single integer, the cost of the items you choose."
+              ]
+            },
+            "examples": [
+              {
+                "input": "3 100\n14 5\n13 2\n5 1",
+                "output": "35"
+              }
+            ]
+          },
           "solution": {
             "file": "cf101064l.md",
             "markdown": "**提示 1：** 传统的背包 DP 咋做？\n\n**提示 2：** 如何找到 $dp[S]$ 的子问题？\n\n传统的 DP 直接求 $i$ 的重量内的最大成本为 $dp[i]$ ，枚举最后一次使用的物品是什么即可，即 $dp[i]=\\max_j (dp[i-w_j]+c_j)$ 。\n\n但这题 $S$ 特别大，那就得想办法变小，且变小的速度不能太慢。\n\n所以可以考虑砍半，但 $dp[S/2]$ 不一定是最优的，怎么办呢？\n\n考虑 $dp[S]=\\max_i (dp[i]+dp[S-i])$ ，把你选择的物品排成一列，此时，中间 $S/2$ 附近一定存在一个商品刚用完的一个分界线。具体而言， $[S/2-500,S/2+500]$ 之间一定有一个商品刚用完，不然相当于跳过了 $1001$ 个整数的区间，这做不到。\n\n因此，我们将 $S$ 的问题转化为 $[S/2-500,S/2+500]$ 的问题，就这样递归 $\\mathcal{O}(\\log S)$ 层就能来到足够小的数据范围，再利用前面我们预处理的 DP 就能解决问题。这里的推导只需使用前面的 $dp[S]=\\max_i (dp[i]+dp[S-i])$ 即可。\n\n为啥这样不会有一层的区间太长呢？我们可以证明，区间长度最多变成原本区间长度的 $\\frac{1}{2}$ 再加 $1000$ ，因此，可以用数学归纳法证明每层区间的长度都不超过 $2000$ 。\n\n时间复杂度为 $\\mathcal{O}(M^2\\log S)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    n, S = MII()\n    \n    dp = [0] * 2001\n    \n    for _ in range(n):\n        w, c = MII()\n        for i in range(w, 2001):\n            dp[i] = fmax(dp[i], dp[i - w] + c)\n    \n    def f(l, r):\n        if r <= 2000: return dp[l:r + 1]\n        \n        nl = fmax(l // 2 - 500, 0)\n        nr = r // 2 + 500\n        \n        v = f(nl, nr)\n        ans = [0] * (r - l + 1)\n        \n        for i in range(nl, nr + 1):\n            for j in range(i, nr + 1):\n                if l <= i + j <= r:\n                    ans[i + j - l] = fmax(ans[i + j - l], v[i - nl] + v[j - nl])\n        \n        return ans\n    \n    print(f(S, S)[0])\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint n, S;\n\tcin >> n >> S;\n\n\tvector<long long> dp(2001, 0);\n\t\n\twhile (n --) {\n\t\tint w, c;\n\t\tcin >> w >> c;\n\n\t\tfor (int i = w; i <= 2000; i ++)\n\t\t\tdp[i] = max(dp[i], dp[i - w] + c);\n\t}\n\n\tauto dfs = [&] (auto &self, int l, int r) -> vector<long long> {\n\t\tif (r <= 2000)\n\t\t\treturn vector<long long>(dp.begin() + l, dp.begin() + r + 1);\n\n\t\tint nl = max(l / 2 - 500, 0);\n\t\tint nr = r / 2 + 500;\n\n\t\tauto v = self(self, nl, nr);\n\n\t\tvector<long long> ans(r - l + 1, 0);\n\n\t\tfor (int i = nl; i <= nr; i ++) {\n\t\t\tfor (int j = i; j <= nr; j ++) {\n\t\t\t\tif (i + j >= l && i + j <= r) {\n\t\t\t\t\tans[i + j - l] = max(ans[i + j - l], v[i - nl] + v[j - nl]);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\treturn ans;\n\t};\n\n\tcout << dfs(dfs, S, S)[0];\n\n\treturn 0;\n}\n```"
@@ -230,7 +557,45 @@
           "url": "https://codeforces.com/gym/106721/problem/I",
           "difficulty": "*1800",
           "hint": "If the radius is $r$ , what is the area.",
-          "statement": null,
+          "statement": {
+            "code": "GYM106721I",
+            "letter": "I",
+            "title": "I. Your Best American Poly",
+            "contest": null,
+            "url": "https://codeforces.com/gym/106721/problem/I",
+            "difficulty": "*1800",
+            "timeLimit": "15 seconds",
+            "memoryLimit": "512 megabytes",
+            "sections": {
+              "legend": [
+                "You are chilling during your vacations, simulating divs and playing lol, when Nijika asks you a strange question.",
+                "Suppose an island shaped like a convex polygon undergoes morphological dilation using a disk of radius $$$r$$$ (resulting in a uniform expansion in all directions). What is the minimum radius $$$r$$$ such that the island reaches an area of at least $$$k$$$?",
+                "Formally, you are asked to find the minimum radius $$$r$$$ such that the Minkowski sum of the Polygon $$$P$$$ and a disk $$$D$$$ of radius $$$r$$$ results in an area greater than or equal to $$$k$$$.",
+                "The first thing that crossed your mind was: \"Am I invited to this island?\"",
+                "The answer is a resounding no (bro?). Now, help Nijika with her homework."
+              ],
+              "input": [
+                "The first line contains a single integer $$$t$$$ $$$(1 \\leq t \\leq 10^4)$$$ — the number of test cases.",
+                "The first line of each test case contains two integers $$$n$$$ and $$$k$$$ $$$(3 \\leq n \\leq 2 \\cdot 10^5 \\text{ and } 1 \\leq k \\leq 10^{16})$$$ — the number of vertex of the polygon and the area expect reach.",
+                "The following $$$n$$$ lines will each contain two integers $$$x_i$$$ and $$$y_i$$$ $$$( x_i, y_i \\leq |10^8|)$$$, representing the $$$i$$$ vertex of convex polygon.",
+                "Additional constraints on the input:",
+                "In one test case, all points are pairwise distinct. The total number of points across all test cases does not exceed $$$2 \\cdot 10^5$$$."
+              ],
+              "output": [
+                "Print one number per test case, each representing the time when the poly-p reach area $$$k_i$$$. Your answer will be considered correct if its absolute or relative error does not exceed $$$10^{-4}$$$."
+              ]
+            },
+            "examples": [
+              {
+                "input": "1\n4 5\n0 0\n1 0\n1 1\n0 1",
+                "output": "0.65895897062896345645595722051"
+              },
+              {
+                "input": "1\n4 1\n0 0\n0 2\n2 2\n2 0",
+                "output": "0"
+              }
+            ]
+          },
           "solution": {
             "file": "cf106721i.md",
             "markdown": "**提示 1：** 求下面积就行。\n\n最后面积长啥样呢？\n\n实际上就是原图形往外拓出去一个半径 $r$ 。\n\n此时，原图形的面积 $Area$ 肯定仍然在。\n\n而除了圆角的部分，剩余部分刚好是周长 $Perimeter$ 乘以 $r$ ，因为是一些矩形。\n\n而那些圆角，它们的分别的角度等于外角，所以整体可以拼成一个圆，所以这部分是 $\\pi r^2$ 。\n\n综上，总面积是 $\\pi r^2+Perimeter r+Area$ ，我们要求它大于等于 $k$ 。\n\n此时如果原本面积就够大了，输出 $0$ 即可。\n\n否则，就是求解一个二次方程了。\n\n如果你想有更高的精度，可以用分子有理化，即 $\\frac{-2c}{b+\\sqrt{b^2-4ac}}$ ，因为减法损失精度。\n\n时间复杂度为 $\\mathcal{O}(n)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    t = II()\n    outs = []\n    \n    for _ in range(t):\n        n, k = MII()\n        xs = []\n        ys = []\n        \n        for _ in range(n):\n            x, y = MII()\n            xs.append(x)\n            ys.append(y)\n        \n        area = 0\n        \n        for i in range(n - 2):\n            x1, y1 = xs[i + 1] - xs[0], ys[i + 1] - ys[0]\n            x2, y2 = xs[i + 2] - xs[0], ys[i + 2] - ys[0]\n            \n            area += x1 * y2 - x2 * y1\n        \n        area = abs(area)\n        \n        perimeter = 0\n        \n        for i in range(n):\n            dx, dy = xs[(i + 1) % n] - xs[i], ys[(i + 1) % n] - ys[i]\n            perimeter += math.hypot(dx, dy)\n        \n        if area >= k * 2: outs.append('0')\n        else:\n            a = math.pi\n            b = perimeter\n            c = area / 2 - k\n    \n            outs.append(f'{-2 * c / (b + math.sqrt(b * b - 4 * a * c)):.10f}')\n    \n    print('\\n'.join(outs))\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint t;\n\tcin >> t;\n\n\tcout << fixed << setprecision(10);\n\n\twhile (t --) {\n\t\tint n;\n\t\tlong long k;\n\t\tcin >> n >> k;\n\n\t\tvector<pair<int, int>> pts(n);\n\t\tfor (auto &[x, y]: pts) cin >> x >> y;\n\n\t\tlong long area = 0;\n\n\t\tfor (int i = 0; i < n - 2; i ++) {\n\t\t\tauto [x1, y1] = pts[0];\n\t\t\tauto [x2, y2] = pts[(i + 1) % n];\n\t\t\tauto [x3, y3] = pts[(i + 2) % n];\n\n\t\t\tint dx1 = x2 - x1, dy1 = y2 - y1;\n\t\t\tint dx2 = x3 - x1, dy2 = y3 - y1;\n\n\t\t\tarea += abs(1ll * dx1 * dy2 - 1ll * dx2 * dy1);\n\t\t}\n\n\t\tlong double perimeter = 0;\n\n\t\tfor (int i = 0; i < n; i ++) {\n\t\t\tauto [x1, y1] = pts[i];\n\t\t\tauto [x2, y2] = pts[(i + 1) % n];\n\t\t\tperimeter += hypot(x1 - x2, y1 - y2);\n\t\t}\n\n\t\tif (area >= 2 * k) cout << 0 << '\\n';\n\t\telse {\n\t\t\tlong double a = acosl(-1), b = perimeter, c = (long double)(area - 2 * k) / 2;\n\t\t\tcout << -2 * c / (b + sqrtl(b * b - 4 * a * c)) << '\\n';\n\t\t}\n\t}\n\n\treturn 0;\n}\n```"
@@ -246,7 +611,46 @@
           "url": "https://codeforces.com/gym/101061/problem/F",
           "difficulty": "*1600",
           "hint": "What's the status of DP?",
-          "statement": null,
+          "statement": {
+            "code": "GYM101061F",
+            "letter": "F",
+            "title": "F. Fairness",
+            "contest": null,
+            "url": "https://codeforces.com/gym/101061/problem/F",
+            "difficulty": "*1600",
+            "timeLimit": "2 seconds",
+            "memoryLimit": "64 megabytes",
+            "sections": {
+              "legend": [
+                "Dwik and his brother Samir both received scholarships from a famous university in India. Their father, Besher, wants to send some money with each of them.",
+                "Besher has n coins, the ith coin has a value of ai. He will distribute these coins between his two sons in n steps. In the ith step, he chooses whether to give the ith coin to Dwik or to Samir.",
+                "Let xi be the absolute difference between the sum of Dwik's and Samir's coins after the ith step. The unfairness factor of a distribution is max({x1, x2, ..., xn}). Besher wants to minimize the unfairness factor, can you help him?"
+              ],
+              "input": [
+                "The first line of the input consists of a single integer t, the number of test cases. Each test case consists of 2 lines:",
+                "The first line contains an integer n (1 ≤ n ≤ 100).",
+                "The second line contains n integers a1, a2, ..., an (1 ≤ ai ≤ 100)."
+              ],
+              "output": [
+                "Print t lines, ith line containing a single integer, the answer to the ith test case."
+              ],
+              "note": [
+                "In the first sample test, besher has 5 coins (1, 2, 1, 4, 3), he can distribute them in the following way:",
+                "Step 1: Give the first coin to dwik , d = 1, s = 0  x1 = |1 - 0| = 1",
+                "Step 2: Give the second coin to samir, d = 1, s = 2  x2 = |1 - 2| = 1",
+                "Step 3: Give the third coin to samir, d = 1, s = 3  x3 = |1 - 3| = 2",
+                "Step 4: Give the fourth coin to dwik, d = 5, s = 3  x4 = |5 - 3| = 2",
+                "Step 5: Give the fifth coin to samir, d = 5, s = 6  x5 = |5 - 6| = 1",
+                "max({x1, x2, x3, x4, x5}) = 2"
+              ]
+            },
+            "examples": [
+              {
+                "input": "2\n5\n1 2 1 4 3\n7\n4 5 6 1 1 3 4",
+                "output": "2\n5"
+              }
+            ]
+          },
           "solution": {
             "file": "cf101061f.md",
             "markdown": "**提示 1：** 考虑 DP 状态。\n\n我们求两个人之间的硬币差，将其作为状态。\n\n设到第 $i$ 个位置时，当前数值为 $x$ 的情况下，中间状态达到过的绝对值的最大值最小为 $dp[i][x]$ 。\n\n则枚举新的一个数分给哪个人，状态会变成 $x-v$ 或 $x+v$ ，于是可以更新 $dp[i][x-v]$ 为 $\\max(dp[i][x], |x-v|)$ ，更新 $dp[i][x+v]$ 为 $\\max(dp[i][x],|x+v|)$ 。\n\n因为总可以找到办法使得答案不超过 $\\max a_i$ ，所以第二个状态的数据范围定为 $[-100,100]$ 即可。当然你也可以把正负合并。\n\n时间复杂度为 $\\mathcal{O}(nM)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    t = II()\n    outs = []\n    \n    for _ in range(t):\n        n = II()\n        nums = LII()\n        \n        dp = [inf] * 201\n        dp[100] = 0\n        \n        for x in nums:\n            ndp = [inf] * 201\n            \n            for i in range(201):\n                if i - x >= 0:\n                    ndp[i] = fmin(ndp[i], dp[i - x])\n                if i + x <= 200:\n                    ndp[i] = fmin(ndp[i], dp[i + x])\n                ndp[i] = fmax(ndp[i], abs(i - 100))\n            \n            dp = ndp\n        \n        outs.append(min(dp))\n    \n    print('\\n'.join(map(str, outs)))\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint t;\n\tcin >> t;\n\n\twhile (t --) {\n\t\tint n;\n\t\tcin >> n;\n\n\t\tvector<int> dp(201, (int)1e9);\n\t\tdp[100] = 0;\n\n\t\twhile (n --) {\n\t\t\tint x;\n\t\t\tcin >> x;\n\n\t\t\tvector<int> ndp(201, (int)1e9);\n\n\t\t\tfor (int i = 0; i <= 200; i ++) {\n\t\t\t\tif (i - x >= 0) ndp[i] = min(ndp[i], dp[i - x]);\n\t\t\t\tif (i + x <= 200) ndp[i] = min(ndp[i], dp[i + x]);\n\t\t\t\tndp[i] = max(ndp[i], abs(i - 100));\n\t\t\t}\n\n\t\t\tdp.swap(ndp);\n\t\t}\n\n\t\tcout << *min_element(dp.begin(), dp.end()) << '\\n';\n\t}\n\n\treturn 0;\n}\n```"

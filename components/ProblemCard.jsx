@@ -1,37 +1,58 @@
+import { Clock, ExternalLink, FileText, Lightbulb, MemoryStick } from 'lucide-react';
+import Link from 'next/link';
 import CopyBox from './CopyBox';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { renderRich, ratingColor } from '@/lib/render';
+
+function SectionHeading({ children }) {
+  return (
+    <h3 className="mb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{children}</h3>
+  );
+}
+
+function Paragraphs({ list, className = '' }) {
+  return (
+    <div className={`stmt-body ${className}`}>
+      {list.map((p, i) =>
+        typeof p === 'string' ? (
+          <p key={i} dangerouslySetInnerHTML={{ __html: renderRich(p) }} />
+        ) : (
+          <pre key={i} className="code-block" dangerouslySetInnerHTML={{ __html: renderRich(p.pre) }} />
+        ),
+      )}
+    </div>
+  );
+}
 
 function Chips({ problem }) {
   const s = problem.statement;
   const color = ratingColor(problem.difficulty);
   const isGym = /^gym/i.test(problem.code);
   return (
-    <div className="chips">
-      <span className="chip diff-chip" style={{ '--diff-color': color }}>
+    <div className="flex flex-wrap items-center gap-2">
+      <Badge
+        variant="outline"
+        className="border-transparent font-mono font-semibold text-white"
+        style={{ background: color }}
+      >
         {String(problem.difficulty).replace('*', '')}
-      </span>
-      {isGym && <span className="chip">GYM</span>}
-      {s?.timeLimit && <span className="chip">⏱ {s.timeLimit}</span>}
-      {s?.memoryLimit && <span className="chip">💾 {s.memoryLimit}</span>}
-    </div>
-  );
-}
-
-function Section({ title, children }) {
-  return (
-    <section className="stmt-section">
-      <h3 className="stmt-heading">{title}</h3>
-      {children}
-    </section>
-  );
-}
-
-function Paragraphs({ list }) {
-  return (
-    <div className="stmt-body">
-      {list.map((p, i) => (
-        <p key={i} dangerouslySetInnerHTML={{ __html: renderRich(p) }} />
-      ))}
+      </Badge>
+      {isGym && <Badge variant="secondary">GYM</Badge>}
+      {s?.timeLimit && (
+        <Badge variant="outline" className="gap-1 font-normal text-muted-foreground">
+          <Clock className="size-3" />
+          {s.timeLimit}
+        </Badge>
+      )}
+      {s?.memoryLimit && (
+        <Badge variant="outline" className="gap-1 font-normal text-muted-foreground">
+          <MemoryStick className="size-3" />
+          {s.memoryLimit}
+        </Badge>
+      )}
     </div>
   );
 }
@@ -40,71 +61,49 @@ function Statement({ problem }) {
   const s = problem.statement;
   return (
     <>
-      <Section title="题目描述">
+      <div>
+        <SectionHeading>题目描述</SectionHeading>
         <Paragraphs list={s.sections.legend} />
-      </Section>
-      <div className="stmt-cols">
-        {s.sections.input?.length > 0 && (
-          <Section title="输入格式">
-            <Paragraphs list={s.sections.input} />
-          </Section>
-        )}
-        {s.sections.output?.length > 0 && (
-          <Section title="输出格式">
-            <Paragraphs list={s.sections.output} />
-          </Section>
-        )}
       </div>
+      {(s.sections.input?.length > 0 || s.sections.output?.length > 0) && (
+        <div className="grid gap-6 md:grid-cols-2">
+          {s.sections.input?.length > 0 && (
+            <div>
+              <SectionHeading>输入格式</SectionHeading>
+              <Paragraphs list={s.sections.input} />
+            </div>
+          )}
+          {s.sections.output?.length > 0 && (
+            <div>
+              <SectionHeading>输出格式</SectionHeading>
+              <Paragraphs list={s.sections.output} />
+            </div>
+          )}
+        </div>
+      )}
       {s.sections.note?.length > 0 && (
-        <Section title="备注">
+        <div>
+          <SectionHeading>备注</SectionHeading>
           <Paragraphs list={s.sections.note} />
-        </Section>
+        </div>
       )}
       {s.examples?.length > 0 && (
-        <Section title="样例">
-          <div className="examples">
+        <div>
+          <SectionHeading>样例</SectionHeading>
+          <div className="space-y-4">
             {s.examples.map((ex, i) => (
-              <div className="example-pair" key={i}>
-                <span className="example-no">样例 {i + 1}</span>
-                <div className="example-boxes">
+              <div key={i}>
+                <p className="mb-1.5 text-xs text-muted-foreground">样例 {i + 1}</p>
+                <div className="grid gap-3 sm:grid-cols-2">
                   <CopyBox label="Input" text={ex.input} />
                   <CopyBox label="Output" text={ex.output} />
                 </div>
               </div>
             ))}
           </div>
-        </Section>
+        </div>
       )}
     </>
-  );
-}
-
-function Hint({ hint }) {
-  if (!hint) return null;
-  return (
-    <details className="fold hint-fold">
-      <summary>💡 提示（Hint）</summary>
-      <div className="fold-body" dangerouslySetInnerHTML={{ __html: renderRich(hint) }} />
-    </details>
-  );
-}
-
-function Solution({ problem }) {
-  const md = problem.solution?.markdown;
-  const url = problem.solution?.url;
-  if (!md && !url) return null;
-  return (
-    <details className="fold solution-fold">
-      <summary>📝 题解（Editorial）</summary>
-      <div className="fold-body editorial" dangerouslySetInnerHTML={{ __html: renderRich(md) }} />
-      {url && !md && (
-        <p className="fold-body">
-          <a href={url} target="_blank" rel="noreferrer" className="text-link">
-            在 GitHub 上查看题解 ↗
-          </a>
-        </p>
-      )}
-    </details>
   );
 }
 
@@ -112,35 +111,82 @@ export default function ProblemCard({ problem }) {
   const s = problem.statement;
   const title = s?.title ? s.title.replace(/^[A-Z][.)]\s*/, '') : problem.code;
   return (
-    <article className="problem-card" id={problem.code}>
-      <header className="problem-head">
-        <div className="problem-id" aria-hidden="true">
-          {s?.letter || '?'}
-        </div>
-        <div className="problem-title-wrap">
-          <h2 className="problem-title">{title}</h2>
-          <div className="problem-meta">
-            <span className="problem-code">{problem.code}</span>
-            {s?.contest && <span className="dot">·</span>}
-            {s?.contest && <span>{s.contest}</span>}
+    <Card className="gap-4 scroll-mt-20" id={problem.code}>
+      <CardHeader>
+        <div className="flex flex-wrap items-start gap-4">
+          <div className="grid size-11 shrink-0 place-items-center rounded-lg bg-primary text-xl font-bold text-primary-foreground">
+            {s?.letter || '?'}
           </div>
-          <Chips problem={problem} />
+          <div className="min-w-0 flex-1">
+            <CardTitle className="text-xl tracking-tight">{title}</CardTitle>
+            <CardDescription className="mt-1 flex flex-wrap items-center gap-2 font-mono text-xs">
+              <span>{problem.code}</span>
+              {s?.contest && (
+                <>
+                  <span className="text-border">|</span>
+                  <span className="font-sans">{s.contest}</span>
+                </>
+              )}
+            </CardDescription>
+            <div className="mt-3">
+              <Chips problem={problem} />
+            </div>
+          </div>
+          <Button asChild size="sm" className="ml-auto shrink-0">
+            <a href={problem.url} target="_blank" rel="noreferrer">
+              Codeforces
+              <ExternalLink className="size-3.5" />
+            </a>
+          </Button>
         </div>
-        <a className="cf-btn" href={problem.url} target="_blank" rel="noreferrer">
-          Codeforces ↗
-        </a>
-      </header>
+      </CardHeader>
 
-      {s ? (
-        <Statement problem={problem} />
-      ) : (
-        <p className="stmt-body no-stmt">
-          暂无完整题面（Codeforces 反爬限制），点击右上角按钮前往原题查看。
-        </p>
-      )}
+      <CardContent className="space-y-5">
+        {s ? (
+          <Statement problem={problem} />
+        ) : (
+          <div className="rounded-lg border border-dashed p-4 text-sm text-muted-foreground">
+            暂无完整题面（Codeforces 反爬限制），点击右上角按钮前往原题查看。
+          </div>
+        )}
 
-      <Hint hint={problem.hint} />
-      <Solution problem={problem} />
-    </article>
+        {(problem.hint || problem.solution?.markdown || problem.solution?.url) && (
+          <Accordion type="multiple" className="rounded-lg border px-4">
+            {problem.hint && (
+              <AccordionItem value="hint">
+                <AccordionTrigger className="text-sm text-muted-foreground hover:no-underline hover:text-foreground">
+                  <span className="flex items-center gap-2">
+                    <Lightbulb className="size-4" />
+                    提示（Hint）
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="md-body" dangerouslySetInnerHTML={{ __html: renderRich(problem.hint) }} />
+                </AccordionContent>
+              </AccordionItem>
+            )}
+            {(problem.solution?.markdown || problem.solution?.url) && (
+              <AccordionItem value="solution">
+                <AccordionTrigger className="text-sm text-muted-foreground hover:no-underline hover:text-foreground">
+                  <span className="flex items-center gap-2">
+                    <FileText className="size-4" />
+                    题解（Editorial）
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent>
+                  {problem.solution?.markdown ? (
+                    <div className="md-body" dangerouslySetInnerHTML={{ __html: renderRich(problem.solution.markdown) }} />
+                  ) : (
+                    <Link href={problem.solution.url} target="_blank" className="text-primary hover:underline">
+                      在 GitHub 上查看题解 ↗
+                    </Link>
+                  )}
+                </AccordionContent>
+              </AccordionItem>
+            )}
+          </Accordion>
+        )}
+      </CardContent>
+    </Card>
   );
 }

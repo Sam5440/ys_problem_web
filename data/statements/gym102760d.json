@@ -1,0 +1,61 @@
+{
+  "code": "GYM102760D",
+  "letter": "D",
+  "title": "D. Fix Wiring",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102760/problem/D",
+  "difficulty": "*1300",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are in the spaceship The Skeld with your fellow crewmates. However, while checking the central power system, you found out that one crucial wiring installation of the central power system has been sabotaged. To prevent an engine failure, you should quickly fix the installation.",
+      "The installation consists of $$$N$$$ nodes and $$$M=\\frac{N(N-1)}{2}$$$ wires. All possible pairs of distinct nodes in the installation are connected with a wire. Originally, each of the $$$M$$$ wires had exactly one tag attached to it. Each tag has a positive integer value, and different tags may have the same value. However, due to the sabotage, all the tags were removed from the wires and left on the floor. Fortunately, you gathered all $$$M$$$ tags from the ground. Now, in order to fix the installation, you have to trigger the reboot sequence by re-attaching all the tags back to the wires twice.",
+      "For an installation where all wires have a tag on them, let's define the cost of an installation as the cost of its minimum spanning tree, that is, the minimum cost of a subset of wires such that all nodes are connected using only the given subset of wires. Here, the cost of the set of wires is defined as the sum of the tag values of all wires in the set.",
+      "The reboot sequence is triggered in two steps:",
+      "First, you should attach the tags to minimize the cost of the installation.",
+      "Then, after detaching all tags, you should attach the tags to maximize the cost of the installation.",
+      "Please compute the cost of each installation."
+    ],
+    "input": [
+      "The first line of the input contains an integer $$$N$$$, representing the number of nodes. ($$$2 \\le N \\le 100$$$)",
+      "The second line of the input contains $$$M=\\frac{N(N-1)}{2}$$$ positive integers $$$C_1, C_2, \\cdots C_M$$$, representing the integer values of $$$M$$$ tags. ($$$1 \\le C_i \\le 2 \\cdot 10^9$$$)"
+    ],
+    "output": [
+      "Output a single line containing two integers. The first should be the minimum possible cost of the installation, the second should be the maximum possible cost of the installation."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n5 3 8 8 5 9",
+      "output": "13 16"
+    }
+  ],
+  "titleZh": [
+    "D.固定接线"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "你和其他船员一起在斯凯德号飞船上。然而，在检查中央动力系统时，你们发现中央动力系统的一个关键线路装置被破坏了。为了防止发动机发生故障，您必须尽快修复该装置。",
+      "安装由 $$$N$$$ 节点和 $$$M=\\frac{N(N-1)}{2}$$$ 导线组成。安装中所有可能的不同节点对都通过一根导线连接。最初，每根 $$$M$$$ 导线上只有一个标签。每个标签都有一个正整数值，不同的标签可能具有相同的值。然而，由于破坏，所有标签都从导线上移除了，留在了地上。幸运的是，你从地上收集了所有 $$$M$$$ 标签。现在，为了修复安装，你必须通过将所有标签重新连接到导线两次来触发重启序列。",
+      "对于所有导线都有标签的装置，我们将装置的成本定义为最小生成树的成本，即导线子集的最小成本，这样所有节点只需使用给定的导线子集即可连接。这里，导线集合的成本定义为集合中所有导线的标签值之和。",
+      "触发重启顺序分为两个步骤：",
+      "首先，应贴上标签，尽量减少安装成本。",
+      "然后，在卸下所有标签后，您应该附加标签，以最大限度地提高安装成本。",
+      "请计算每次安装的费用。"
+    ],
+    "input": [
+      "输入的第一行包含一个整数 $$$N$$$，表示节点的数量。($$$2 \\le N \\le 100$$$)",
+      "输入的第二行包含$$$M=\\frac{N(N-1)}{2}$$$个正整数$$$C_1, C_2, \\cdots C_M$$$，表示$$$M$$$标签的整数值。($$$1 \\le C_i \\le 2 \\cdot 10^9$$$)"
+    ],
+    "output": [
+      "输出包含两个整数的一行。第一个整数应为最小可能安装成本，第二个整数应为最大可能安装成本。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.576Z",
+  "translatedBy": [
+    "youdao",
+    "deepl",
+    "caiyun"
+  ]
+}

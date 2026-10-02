@@ -1,0 +1,66 @@
+{
+  "code": "GYM102760E",
+  "letter": "E",
+  "title": "E. Min-hashing",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102760/problem/E",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Consider an undirected simple graph $$$G = (V, E)$$$. The problem of finding a node with similar connectivity is a well-researched topic, because it acts as a good metric to determine which nodes are relevant to other nodes. Services such as \"friend recommendation\" in Facebook is a good example of its applications. To formalize the notion of similarity, the concept of Jaccard similarity can be used, which is defined as $$$|N(v_1) \\cap N(v_2)| / |N(v_1) \\cup N(v_2)|$$$, where $$$N(v) = \\{u | (u, v) \\in E\\}$$$.",
+      "Here, we will instead discuss the min-hashing method. Assume each node $$$v$$$ has the label $$$l_v$$$. The shingle value $$$s_v$$$ of node $$$v$$$ is defined as $$$s_v = \\min \\{l_u | u \\in N(v) \\}$$$. This method is efficient enough to keep up with industrial needs, and it is also a great metric for similarity: the Jaccard similarity between the set of neighbors $$$N(v_1)$$$ and $$$N(v_2)$$$ is an unbiased estimator of the probability that nodes $$$v_1$$$ and $$$v_2$$$ have the same shingle values, for random unique labels.",
+      "Let's think about a variant of min-hashing: we repeatedly perform min-hashing by taking the label as the previous iteration's shingle value. In this variant, for each node $$$v$$$ and the number of iterations $$$k$$$, the value $$$h^{(k)}_v$$$ is defined as",
+      "$$$$$$ h^{(k)}_v = \\begin{cases} s_v, & \\text{if $k = 1$}\\\\ \\min \\{h^{(k-1)}_u | u \\in N(v) \\}, & \\text{if $k \\geq 2$} \\\\ \\end{cases} $$$$$$",
+      "For each $$$k$$$, let $$$c_k$$$ be the number of unordered pairs of distinct vertices $$$\\{u, v\\}$$$ such that $$$h^{(k)}_u = h^{(k)}_v$$$. Then, how does the value $$$c_k$$$ change as $$$k$$$ increases? In this problem, your task is to compute $$$\\max_{k \\in \\mathbb{N}} c_k$$$."
+    ],
+    "input": [
+      "The first line contains two positive integers $$$n$$$ and $$$m$$$ $$$(1 \\leq n \\leq 100\\,000, 1 \\leq m \\leq 250\\,000)$$$ representing the number of nodes and the number of edges, respectively. The nodes are numbered from $$$1$$$ to $$$n$$$. Note that these are not the labels of the nodes.",
+      "The second line contains $$$n$$$ integers comprising a permutation of the first $$$n$$$ positive integers, where the $$$i$$$-th number in the line represents the initial label of node $$$i$$$.",
+      "Each of the next $$$m$$$ lines contains two integers. The $$$i$$$-th of these lines contains two distinct integers $$$u_i$$$ and $$$v_i$$$ $$$(1 \\leq u_i, v_i \\leq n)$$$, which means $$$\\{u_i, v_i\\} \\in E$$$.",
+      "The input will be set in a way such that there are no self-loops, parallel edges, or nodes with a degree of zero."
+    ],
+    "output": [
+      "Print the maximum value of $$$c_k$$$ over all positive integers $$$k$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 5\n1 2 3 4 5\n1 2\n2 3\n3 4\n4 5\n5 1",
+      "output": "10"
+    },
+    {
+      "input": "4 3\n1 2 3 4\n1 2\n2 3\n3 4",
+      "output": "2"
+    }
+  ],
+  "titleZh": [
+    "E. Min-hashing"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "考虑一个无向简单图$$$G = (V, E)$$$。寻找具有相似连通性的节点的问题是一个研究得很好的主题，因为它可以作为确定哪些节点与其他节点相关的良好度量。Facebook上的“好友推荐”服务就是一个很好的例子。为了形式化相似性的概念，可以使用Jaccard相似性的概念，定义为$$$|N(v_1) \\cap N(v_2)| / |N(v_1) \\cup N(v_2)|$$$，其中$$$N(v) = \\{u | (u, v) \\in E\\}$$$。",
+      "在此，我们将讨论最小哈希方法。假设每个节点 $$$v$$$ 都有标签 $$$l_v$$$。节点 $$$v$$$ 的分组值 $$$s_v$$$ 定义为 $$$s_v = \\min \\{l_u | u \\in N(v) \\}$$$。这种方法效率很高，足以满足工业需求，而且它也是一个很好的相似度度量：对于随机唯一标签来说，邻居集 $$$N(v_1)$$$ 和 $$$N(v_2)$$$ 之间的 Jaccard 相似度是节点 $$$v_1$$$ 和 $$$v_2$$$ 具有相同标记值的概率的无偏估计值。",
+      "让我们考虑一种最小哈希的变体：我们通过将标签作为上一次迭代的板块值来重复执行最小哈希。在这种变体中，对于每个节点 $$$v$$$ 和迭代次数 $$$k$$$，值 $$$h^{(k)}_v$$$ 被定义为",
+      "$$$$$$ h^{(k)}_v = \\begin{cases} s_v, & \\text{if $k = 1$}\\\\ \\min \\{h^{(k-1)}_u | u \\in N(v) \\}, & \\text{if $k \\geq 2$} \\\\ \\end{cases} $$$$$$",
+      "对于每个$$$k$$$，让$$$c_k$$$是$$$h^{(k)}_u = h^{(k)}_v$$$的无序的不同顶点$$$\\{u, v\\}$$$对的数目。那么，随着 $$$k$$$ 的增加，$$$c_k$$$ 的值会发生怎样的变化？在这个问题中，你的任务是计算 $$$\\max_{k \\in \\mathbb{N}} c_k$$$。"
+    ],
+    "input": [
+      "第一行包含两个正整数 $$$n$$$ 和 $$$m$$$$$$(1 \\leq n \\leq 100\\,000, 1 \\leq m \\leq 250\\,000)$$$，分别表示节点数和边数。节点的编号从 $$$1$$$ 到 $$$n$$$。请注意，这些不是节点的标签。",
+      "第二行包含$$$n$$$个整数，由前$$$n$$$个正整数排列而成，其中第$$$i$$$个数字代表节点$$$i$$$的初始标签。",
+      "接下来的 $$$m$$$ 行中的每一行都包含两个整数。这些行中的 $$$i$$$ 第三行包含两个不同的整数 $$$u_i$$$ 和 $$$v_i$$$$$$(1 \\leq u_i, v_i \\leq n)$$$，即 $$$\\{u_i, v_i\\} \\in E$$$。",
+      "输入将以这样一种方式设置，即不存在自循环、平行边或度为零的节点。"
+    ],
+    "output": [
+      "打印所有正整数$$$k$$$的最大值$$$c_k$$$。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.577Z",
+  "translatedBy": [
+    "caiyun",
+    "youdao",
+    "deepl",
+    "iflyrec"
+  ]
+}

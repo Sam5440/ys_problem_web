@@ -1,0 +1,70 @@
+{
+  "code": "GYM106687E",
+  "letter": "E",
+  "title": "E. Encoded Shortest Paths",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106687/problem/E",
+  "difficulty": "*1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an undirected graph with $$$n$$$ vertices numbered from $$$1$$$ to $$$n$$$ and $$$m$$$ edges. Each edge has an integer weight $$$w$$$ satisfying $$$0\\le w \\lt k$$$. Parallel edges are allowed, while self-loops are not allowed.",
+      "Consider a walk that starts at vertex $$$1$$$ and traverses edges with weights $$$w_1,w_2,\\dots,w_L$$$ in this order. A walk may visit vertices and edges more than once. If $$$L\\ge1$$$, the total weight of the walk is",
+      "$$$$$$ w_1\\cdot k^{L-1}+w_2\\cdot k^{L-2}+\\cdots+w_{L-1}\\cdot k+w_L $$$$$$",
+      "The empty walk has total weight $$$0$$$.",
+      "For every vertex $$$v$$$, let $$$\\mathrm{dist}(v)$$$ be the minimum total weight among all walks from vertex $$$1$$$ to vertex $$$v$$$. If no such walk exists, $$$\\mathrm{dist}(v)$$$ is undefined.",
+      "For every vertex $$$v$$$, determine $$$\\mathrm{dist}(v)$$$ modulo $$$998\\,244\\,353$$$."
+    ],
+    "input": [
+      "The first line contains an integer $$$T$$$ ($$$1\\le T\\le10^4$$$), the number of test cases.",
+      "For each test case:",
+      "The first line contains three integers $$$n$$$, $$$m$$$, and $$$k$$$ ($$$1\\le n\\le2\\times10^5$$$, $$$0\\le m\\le5\\times10^5$$$, $$$1\\le k\\le10^9$$$), denoting the number of vertices, the number of edges, and the parameter used in the definition of total weight, respectively.",
+      "Each of the next $$$m$$$ lines contains three integers $$$u$$$, $$$v$$$, and $$$w$$$ ($$$1\\le u,v\\le n$$$, $$$u\\ne v$$$, $$$0\\le w \\lt k$$$), denoting an undirected edge between vertices $$$u$$$ and $$$v$$$ with weight $$$w$$$.",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2\\times10^5$$$, and the sum of $$$m$$$ over all test cases does not exceed $$$5\\times10^5$$$."
+    ],
+    "output": [
+      "For each test case, print one line containing $$$n$$$ integers. For each $$$1\\le i\\le n$$$, consider the $$$i$$$-th integer. If $$$\\mathrm{dist}(i)$$$ is defined, it must be $$$\\mathrm{dist}(i)$$$ modulo $$$998\\,244\\,353$$$; otherwise, it must be $$$-1$$$."
+    ],
+    "note": [
+      "In the sample, the empty walk gives $$$\\mathrm{dist}(1)=0$$$. The one-edge walks give $$$\\mathrm{dist}(2)=1$$$ and $$$\\mathrm{dist}(3)=2$$$.",
+      "There are two two-edge walks from vertex $$$1$$$ to vertex $$$4$$$. Their total weights are $$$1\\cdot3+0=3$$$ and $$$2\\cdot3+0=6$$$, so $$$\\mathrm{dist}(4)=3$$$. Vertex $$$5$$$ is unreachable from vertex $$$1$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n5 4 3\n1 2 1\n1 3 2\n2 4 0\n3 4 0",
+      "output": "0 1 2 3 -1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      "给你一个无向图，它有$$$n$$$个顶点，从$$$1$$$到$$$n$$$和$$$m$$$条边。每条边具有满足$$$0\\le w \\lt k$$$的整数权重$$$w$$$。允许平行边，但不允许自循环。",
+      "考虑一个从顶点 $$$1$$$ 开始并按此顺序遍历权重 $$$w_1,w_2,\\dots,w_L$$$ 的边的步行。步行可能多次访问顶点和边。如果 $$$L\\ge1$$$，步行的总权重为",
+      null,
+      "空行走的总重量为$$$0$$$。",
+      "对于每个顶点 $$$v$$$，设 $$$\\mathrm{dist}(v)$$$ 是从顶点 $$$1$$$ 到顶点 $$$v$$$ 的所有步骤中的最小总权重。如果不存在这样的步骤，则 $$$\\mathrm{dist}(v)$$$ 是未定义的。",
+      "对于每个顶点$$$v$$$，确定$$$\\mathrm{dist}(v)$$$模$$$998\\,244\\,353$$$。"
+    ],
+    "input": [
+      "第一行包含一个整数$$$T$$$ ($$$1\\le T\\le10^4$$$)，测试用例的数量。",
+      "对于每个测试用例:",
+      "第一行包含三个整数 $$$n$$$、$$$m$$$ 和 $$$k$$$($$$1\\le n\\le2\\times10^5$$$、$$$0\\le m\\le5\\times10^5$$$、$$$1\\le k\\le10^9$$$)，分别表示顶点数、边数和用于定义总权重的参数。",
+      "接下来的每一行$$$m$$$包含三个整数$$$u$$$， $$$v$$$和$$$w$$$ ($$$1\\le u,v\\le n$$$, $$$u\\ne v$$$, $$$0\\le w \\lt k$$$)，表示顶点$$$u$$$和$$$v$$$之间的无向边，权值为$$$w$$$。",
+      "保证所有测试用例的$$$n$$$之和不超过$$$2\\times10^5$$$，所有测试用例的$$$m$$$之和不超过$$$5\\times10^5$$$。"
+    ],
+    "output": [
+      "对于每个测试用例，打印一行包含 $$$n$$$ 整数的内容。对于每个 $$$1\\le i\\le n$$$，考虑 $$$i$$$ 第二个整数。如果定义了 $$$\\mathrm{dist}(i)$$$，则它必须是 $$$\\mathrm{dist}(i)$$$ 模 $$$998\\,244\\,353$$$，否则，它必须是 $$$-1$$$。"
+    ],
+    "note": [
+      "在示例中，空行走给出$$$\\mathrm{dist}(1)=0$$$。单边行走给出$$$\\mathrm{dist}(2)=1$$$和$$$\\mathrm{dist}(3)=2$$$。",
+      "从顶点$$$1$$$到顶点$$$4$$$有两次双向行走。它们的总权重分别为$$$1\\cdot3+0=3$$$和$$$2\\cdot3+0=6$$$，所以$$$\\mathrm{dist}(4)=3$$$。从顶点$$$1$$$无法到达顶点$$$5$$$。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.608Z",
+  "translatedBy": [
+    "iflyrec",
+    "caiyun",
+    "youdao"
+  ]
+}

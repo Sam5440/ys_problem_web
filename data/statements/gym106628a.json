@@ -1,0 +1,75 @@
+{
+  "code": "GYM106628A",
+  "letter": "A",
+  "title": "A. Remaining Towers",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106628/problem/A",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Luffy and Zoro are exploring a ruined island containing a row of $$$n$$$ ancient stone towers. The height of the tower at position $$$i$$$ is $$$a_i$$$.",
+      "For each query $$$[l,r]$$$, consider only the towers whose positions are between $$$l$$$ and $$$r$$$, inclusive. Towers outside this segment do not affect the query.",
+      "The destruction happens in rounds. In each round, a remaining tower at position $$$i$$$ crumbles if there exist two other remaining towers at positions $$$j$$$ and $$$k$$$ such that $$$l \\le j  \\lt  i  \\lt  k \\le r$$$ and $$$a_j \\gt a_i$$$ and $$$a_k \\gt a_i$$$.",
+      "In other words, a tower crumbles if there is at least one strictly taller remaining tower somewhere to its left and at least one strictly taller remaining tower somewhere to its right.",
+      "The towers at positions $$$j$$$ and $$$k$$$ do not need to be adjacent to the tower at position $$$i$$$. Any remaining towers on its left and right may satisfy the condition.",
+      "All towers satisfying the condition are removed simultaneously. The process is repeated until an entire round passes without any tower crumbling.",
+      "For each query, determine how many towers in the segment $$$[l,r]$$$ remain after the process ends."
+    ],
+    "input": [
+      "The first line contains an integer $$$t$$$ ($$$1 \\le t \\le 10^{4}$$$) — the number of test cases.",
+      "The first line of each test case contains two integers $$$n$$$ and $$$q$$$ ($$$1 \\le n, q \\le 2 \\times 10^{5}$$$) — the number of towers and the number of queries.",
+      "The second line contains $$$n$$$ distinct integers $$$a_{1}, a_{2}, \\dots, a_{n}$$$ ($$$1 \\le a_{i} \\le 10^{9}$$$) — the heights of the towers.",
+      "Each of the next $$$q$$$ lines contains two integers $$$l$$$ and $$$r$$$ ($$$1 \\le l \\le r \\le n$$$) — the segment for the query.",
+      "It is guaranteed that the sum of $$$n$$$ and the sum of $$$q$$$ over all test cases do not exceed $$$2 \\times 10^{5}$$$."
+    ],
+    "output": [
+      "For each query, output one integer — the number of towers that stay standing in the segment $$$[l, r]$$$."
+    ],
+    "note": [
+      "For the first query, towers with heights 1, 3, and 2 disappear in the first round. The towers with heights 4 and 5 remain.",
+      "For the second query, only 2 is removed."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n5 2\n4 1 3 2 5\n1 5\n2 5",
+      "output": "2\n3"
+    }
+  ],
+  "titleZh": [
+    "A. 残塔"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "路飞和佐罗正在探索一座废弃的岛屿，岛上有一排$$$n$$$古老的石塔。塔在$$$i$$$处的高度为$$$a_i$$$。",
+      "对于每个查询 $$$[l,r]$$$，只考虑位置在 $$$l$$$ 和 $$$r$$$ 之间的车，包括这些车。此段之外的车不会影响查询。",
+      "破坏分轮进行。在每轮中，如果在 $$$j$$$ 和 $$$k$$$ 位置还有另外两个剩余的塔，使得 $$$l \\le j  \\lt  i  \\lt  k \\le r$$$、$$$a_j \\gt a_i$$$ 和 $$$a_k \\gt a_i$$$，则 $$$i$$$ 位置的一个剩余塔将崩溃。",
+      "换句话说，如果一个塔的左边至少有一个更高的塔，右边至少有一个更高的塔，那么这个塔就会崩溃。",
+      "位于 $$$j$$$ 和 $$$k$$$ 位置的塔不需要与位于 $$$i$$$ 位置的塔相邻。其左侧和右侧的任何剩余塔都可以满足该条件。",
+      "所有符合条件的塔将同时被移除。重复这个过程，直到整个循环结束，没有任何塔倒塌。",
+      "对于每个查询，确定在进程结束后，分段 $$$[l,r]$$$ 中还剩多少个塔。"
+    ],
+    "input": [
+      "第一行包含一个整数$$$t$$$ ($$$1 \\le t \\le 10^{4}$$$）—测试用例的数量。",
+      "每个测试用例的第一行包含两个整数 $$$n$$$ 和 $$$q$$$($$$1 \\le n, q \\le 2 \\times 10^{5}$$$)——塔的数量和查询的数量。",
+      "第二行包含$$$n$$$个不同的整数$$$a_{1}, a_{2}, \\dots, a_{n}$$$ ($$$1 \\le a_{i} \\le 10^{9}$$$）——双塔的高度。",
+      "接下来的每一行 $$$q$$$ 都包含两个整数 $$$l$$$ 和 $$$r$$$($$$1 \\le l \\le r \\le n$$$)——即查询的段落。",
+      "保证所有测试用例的$$$n$$$和$$$q$$$之和不超过$$$2 \\times 10^{5}$$$。"
+    ],
+    "output": [
+      "对于每个查询，输出一个整数——保持在 $$$[l, r]$$$ 区段中的塔的数量。"
+    ],
+    "note": [
+      "对于第一个查询，高度为1、3和2的塔在第一轮中消失。高度为4和5的塔楼保留了下来。",
+      "对于第二个查询，只删除了2。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.593Z",
+  "translatedBy": [
+    "caiyun",
+    "youdao",
+    "iflyrec"
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "code": "GYM102760K",
+  "letter": "K",
+  "title": "K. Sewing Graph",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102760/problem/K",
+  "difficulty": "*1300",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Donghyun recently bought a square-shaped tablecloth. There are $$$N$$$ dots on the cloth, and the dots can be seen from both sides of the cloth. Donghyun thought that the tablecloth can be made more beautiful, so he decided to decorate the cloth with sewing.",
+      "For convenience, let's assume that each dot is a point on the $$$xy$$$-plane and the dots are numbered from $$$1$$$ to $$$N$$$. Dot $$$i$$$ ($$$1 \\le i \\le N$$$) is placed at coordinate $$$(x_i, y_i)$$$. No two dots have the same coordinates. A sewing sequence is an integer sequence $$$\\{ s_i \\}$$$ of length $$$k \\geq 2$$$ satisfying $$$1 \\le s_i \\le N$$$ ($$$1 \\le i \\le k$$$) and $$$s_i \\neq s_{i+1}$$$ ($$$1 \\le i \\le k-1$$$). The sequence draws edges on the cloth per the following rules:",
+      "Draw an edge connecting dot $$$s_{2i-1}$$$ and dot $$$s_{2i}$$$ on the front side of the cloth for all $$$1 \\le i \\le \\left \\lfloor \\frac{k}{2} \\right \\rfloor$$$.",
+      "Draw an edge connecting dot $$$s_{2j}$$$ and dot $$$s_{2j+1}$$$ on the back side of the cloth for all $$$1 \\le j \\le \\left \\lfloor \\frac{k-1}{2} \\right\\rfloor$$$.",
+      "Donghyun wants to make a beautiful pattern on the tablecloth, which is defined as the following:",
+      "For both sides of the cloth, all $$$N$$$ dots are connected by the edges on that side.",
+      "Two edges on the same side of the cloth can intersect only at a common endpoint.",
+      "Donghyun is very busy, so he wants to finish his sewing job as quickly as possible. In other words, over all sewing sequences that produces a beautiful pattern, Donghyun decides to choose the shortest such sequence. Your job is to find such a sequence.",
+      "Note that Donghyun wants to minimize the length of the sewing sequence itself, not the sum of the lengths of the edges he draws."
+    ],
+    "input": [
+      "On the first line, a single integer $$$N$$$ is given. ($$$2 \\le N \\le 1\\,000$$$)",
+      "For each of the next $$$N$$$ lines, two integers $$$x_i$$$ and $$$y_i$$$ are given, which means dot $$$i$$$ is placed at coordinate $$$(x_i, y_i)$$$. ($$$1 \\le x_i, y_i \\le 10^9$$$)",
+      "No two dots are at the same coordinates."
+    ],
+    "output": [
+      "On the first line, output a positive integer $$$k$$$, the length of the shortest sewing sequence that produces a beautiful pattern.",
+      "On the next line, output $$$s_1$$$, $$$s_2$$$, $$$\\cdots$$$, $$$s_k$$$, the actual sewing sequence.",
+      "It can be proven that, for every possible input, there exists a sewing sequence that produces a beautiful pattern."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/8239e86f30641bde32ddc8c1c7182654ff24764b.png)",
+      "Figure 1. Visualization of sample output. Solid lines represent for edges on front side, dashed lines represent for back side."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 1\n2 4\n3 2\n4 5\n5 3",
+      "output": "9\n1 2 4 3 2 3 5 3 1"
+    }
+  ],
+  "titleZh": [
+    "K. 缝纫图"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "东贤最近买了一块方形的桌布。布上有$$$N$$$个圆点，从布的两面都能看到。东贤认为桌布可以做得更漂亮，所以他决定用缝纫来装饰布料。",
+      "为方便起见，我们假设每个点都是 $$$xy$$$ 平面上的一个点，点的编号从 $$$1$$$ 到 $$$N$$$。点 $$$i$$$ ($$$1 \\le i \\le N$$$）位于坐标 $$$(x_i, y_i)$$$。没有两个点的坐标相同。缝纫序列是长度为 $$$k \\geq 2$$$ 的整数序列 $$$\\{ s_i \\}$$$ ，满足 $$$1 \\le s_i \\le N$$$ ($$$1 \\le i \\le k$$$）和 $$$s_i \\neq s_{i+1}$$$ ($$$1 \\le i \\le k-1$$$）。该序列按以下规则在布上画边：",
+      "在布料正面为所有 $$$1 \\le i \\le \\left \\lfloor \\frac{k}{2} \\right \\rfloor$$$ 绘制一条连接点 $$$s_{2i-1}$$$ 和点 $$$s_{2i}$$$ 的边。",
+      "在布的背面为所有的$$$1 \\le j \\le \\left \\lfloor \\frac{k-1}{2} \\right\\rfloor$$$画一个连接点$$$s_{2j}$$$和点$$$s_{2j+1}$$$的边。",
+      "Donghyun 想在桌布上做出美丽的图案，其定义如下：",
+      "对于布料的两侧，所有 $$$N$$$ 点都通过该侧的边连接。",
+      "布料同一侧的两条边只能在公共端点处相交。",
+      "Donghyun 很忙，所以他想尽快完成缝纫工作。换句话说，在所有能做出漂亮图案的缝纫序列中，Donghyun 决定选择最短的序列。你的任务就是找出这样的序列。",
+      "请注意，Donghyun 想要最小化缝纫序列本身的长度，而不是他所画边缘长度的总和。"
+    ],
+    "input": [
+      "在第一行中，给出了单个整数$$$N$$$。($$$2 \\le N \\le 1\\,000$$$）",
+      "接下来的每一行 $$$N$$$ 都有两个整数 $$$x_i$$$ 和 $$$y_i$$$，这意味着点 $$$i$$$ 放在坐标 $$$(x_i, y_i)$$$ 上。($$$1 \\le x_i, y_i \\le 10^9$$$)",
+      "没有两个点处于相同的坐标。"
+    ],
+    "output": [
+      "在第一行，输出一个正整数 $$$k$$$，即能产生美丽图案的最短缝纫序列的长度。",
+      "在下一行，输出 $$$s_1$$$,$$$s_2$$$,$$$\\cdots$$$,$$$s_k$$$，实际的缝纫序列。",
+      "可以证明，对于每个可能的输入，存在产生美丽图案的缝纫序列。"
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/8239e86f30641bde32ddc8c1c7182654ff24764b.png)",
+      "图 1. 样本输出的可视化。实线代表正面的边缘，虚线代表背面。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.577Z",
+  "translatedBy": [
+    "caiyun",
+    "youdao",
+    "deepl",
+    "iflyrec"
+  ]
+}

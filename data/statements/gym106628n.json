@@ -1,0 +1,73 @@
+{
+  "code": "GYM106628N",
+  "letter": "N",
+  "title": "N. Tree Signals",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106628/problem/N",
+  "difficulty": "*1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Usopp and Robin are analyzing a massive island shaped like a rooted tree with $$$n$$$ vertices. The root is vertex 1. Each branch (edge) connecting the vertices has an integer value representing the wind speed, and each vertex $$$v$$$ has a wind tolerance $$$k_{v}$$$.",
+      "Usopp can shoot a signal flare from a vertex $$$u$$$ to a descendant $$$v$$$ if the difference between the maximum and minimum wind speeds (edge values) on the path from $$$u$$$ to $$$v$$$ is at most the receiver's tolerance $$$k_{v}$$$:",
+      "max(w on the path from u to v) - min(w on the path from u to v) $$$\\le k_{v}$$$.",
+      "Robin notes that the tolerance used here belongs to the receiver $$$v$$$, not to the sender $$$u$$$.",
+      "If $$$u=v$$$, the path contains zero edges. In this case, the difference is defined as 0, so every vertex can successfully receive a signal from itself.",
+      "For every vertex $$$u$$$, find how many descendants ($$$u$$$ included) can receive a signal from $$$u$$$.",
+      "Note: a descendant of $$$u$$$ is any node $$$v$$$ in the subtree of $$$u$$$, including node $$$u$$$"
+    ],
+    "input": [
+      "The first line contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^{4}$$$) — the number of test cases.",
+      "The first line of each test case contains a single integer $$$n$$$ ($$$1 \\le n \\le 2 \\times 10^{5}$$$) — the number of vertices in the rooted tree. The root is vertex 1.",
+      "The second line of each test case contains $$$n$$$ integers $$$k_{1}, k_{2}, \\dots, k_{n}$$$ ($$$0 \\le k_{i} \\le 10^{9}$$$) — the tolerance of each vertex.",
+      "For each $$$i$$$ from 2 to $$$n$$$, the next line contains two integers $$$p_{i}$$$ and $$$w_{i}$$$ ($$$1 \\le p_{i}  \\lt  i$$$, $$$0 \\le w_{i} \\le 10^{9}$$$) — the parent of vertex $$$i$$$ and the wind speed value on the edge between $$$p_{i}$$$ and $$$i$$$.",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2 \\times 10^{5}$$$."
+    ],
+    "output": [
+      "For each test case, output $$$n$$$ integers on a single line. The $$$u$$$-th integer must be the number of descendants that can receive a signal from vertex $$$u$$$."
+    ],
+    "note": [
+      "Vertex 1 reaches itself, vertex 2, and vertex 3. It does not reach vertex 4, because the values on the path to vertex 4 are 5 and 6, and their difference is greater than $$$k_{4}=0$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n4\n0 0 0 0\n1 5\n1 7\n2 6",
+      "output": "3 2 1 1"
+    }
+  ],
+  "titleZh": [
+    "N. 树状信号"
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      "如果从 $$$u$$$ 到 $$$v$$$ 的路径上最大和最小风速 (边值) 之间的差异最大不超过接收器的容差 $$$k_{v}$$$，则 Usopp 可以从顶点 $$$u$$$ 向后代 $$$v$$$ 发射信号闪光弹：",
+      "最大(从U到V的路径上的W）-最小(从U到V的路径上的W）$$$\\le k_{v}$$$。",
+      "Robin注意到这里使用的容差属于接收方$$$v$$$，而不是发送方$$$u$$$。",
+      "如果 $$$u=v$$$，则路径包含零条边。在这种情况下，差值定义为 0，因此每个顶点都能成功接收到来自自己的信号。",
+      "对于每个顶点$$$u$$$，找出有多少后代(包括$$$u$$$）可以接收来自$$$u$$$的信号。",
+      "注意:$$$u$$$ 的后代是 $$$u$$$ 子树中的任何节点 $$$v$$$，包括节点 $$$u$$$。"
+    ],
+    "input": [
+      "第一行包含一个整数$$$t$$$ ($$$1 \\le t \\le 10^{4}$$$）——测试用例的数量。",
+      "每个测试用例的第一行包含一个整数$$$n$$$ ($$$1 \\le n \\le 2 \\times 10^{5}$$$）——根树中的顶点数。根是顶点1。",
+      "每个测试用例的第二行包含 $$$n$$$ 整数 $$$k_{1}, k_{2}, \\dots, k_{n}$$$($$$0 \\le k_{i} \\le 10^{9}$$$)——每个顶点的容差。",
+      "对于从2到$$$n$$$的每个$$$i$$$，下一行包含两个整数$$$p_{i}$$$和$$$w_{i}$$$($$$1 \\le p_{i}  \\lt  i$$$，$$$0 \\le w_{i} \\le 10^{9}$$$）——顶点$$$i$$$的父节点和$$$p_{i}$$$和$$$i$$$之间的边上的风速值。",
+      "保证所有测试用例的 $$$n$$$ 之和不超过 $$$2 \\times 10^{5}$$$。"
+    ],
+    "output": [
+      "对于每个测试用例，在一行上输出$$$n$$$个整数。第$$$u$$$个整数必须是可以从顶点$$$u$$$接收信号的后代数。"
+    ],
+    "note": [
+      "顶点1到达自身、顶点2和顶点3。它没有到达顶点4，因为到顶点4的路径上的值是5和6，并且它们的差值大于$$$k_{4}=0$$$。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.596Z",
+  "translatedBy": [
+    "caiyun",
+    "iflyrec",
+    "youdao"
+  ]
+}

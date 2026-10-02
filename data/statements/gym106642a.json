@@ -1,0 +1,73 @@
+{
+  "code": "GYM106642A",
+  "letter": "A",
+  "title": "A. BedWars Replay",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106642/problem/A",
+  "difficulty": "*2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "After another long BedWars session, Muzan and Honey decided to create a highlights video from their match.",
+      "They have $$$N$$$ recorded clips, each represented by a string of lowercase English letters.",
+      "First, Honey must arrange the clips in any order, using every clip exactly once, and concatenate them into one long replay $$$T$$$.",
+      "Before uploading it, Muzan suggests starting the replay from a different moment. For an integer $$$k$$$ with $$$0 \\le k  \\lt  |T|$$$, a cyclic shift by $$$k$$$ characters moves the first $$$k$$$ characters of $$$T$$$ to the end. They may choose any such $$$k$$$ to obtain a new replay $$$T'$$$.",
+      "For example, if $$$T = \\texttt{abcde}$$$, its possible cyclic shifts are:",
+      "They are looking for a famous BedWars combo, represented by the string $$$P$$$.",
+      "Choose both the order of the clips and the cyclic shift so that the number of linear occurrences of $$$P$$$ as a substring of $$$T'$$$ is maximized. Occurrences are allowed to overlap."
+    ],
+    "input": [
+      "The first line contains an integer $$$N$$$ ($$$1 \\le N \\le 12$$$), the number of clips.",
+      "Each of the next $$$N$$$ lines contains a nonempty string $$$S_i$$$ ($$$1 \\le |S_i| \\le 50$$$).",
+      "The last line contains a nonempty string $$$P$$$ ($$$1 \\le |P| \\le 50$$$).",
+      "All strings contain only lowercase English letters."
+    ],
+    "output": [
+      "Print one integer, the maximum possible number of occurrences of $$$P$$$ after choosing the order of the clips and the cyclic shift."
+    ],
+    "note": [
+      "The clips are $$$\\texttt{baa}$$$ and $$$\\texttt{b}$$$. The two possible concatenations are $$$\\texttt{baab}$$$ and $$$\\texttt{bbaa}$$$, and neither contains $$$\\texttt{abba}$$$.",
+      "Rotating $$$\\texttt{baab}$$$ by two characters gives $$$\\texttt{abba}$$$, which contains the target exactly once. Therefore, the answer is $$$1$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\nbaa\nb\nabba",
+      "output": "1"
+    }
+  ],
+  "titleZh": [
+    "A.床战重播"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "在又一场漫长的床战比赛结束后，Muzan 和 Honey 决定创建一个关于他们比赛的精彩视频。",
+      "他们有$$$N$$$个录音片段，每个片段由一串小写英文字母表示。",
+      "首先，Honey必须按任意顺序排列片段，每个片段只使用一次，并将它们连接成一个长重播$$$T$$$。",
+      null,
+      "例如$$$T = \\texttt{abcde}$$$，其可能的循环位移为：",
+      null,
+      "选择剪辑的顺序和循环位移，以最大化 $$$P$$$ 作为 $$$T'$$$ 子字符串的线性出现次数。允许出现重叠。"
+    ],
+    "input": [
+      "第一行包含一个整数$$$N$$$ ($$$1 \\le N \\le 12$$$)，表示剪辑的数量。",
+      "接下来的每一行 $$$N$$$ 都包含一个非空字符串 $$$S_i$$$($$$1 \\le |S_i| \\le 50$$$)。",
+      "最后一行包含非空字符串$$$P$$$($$$1 \\le |P| \\le 50$$$）。",
+      "所有字符串都只包含小写英文字母。"
+    ],
+    "output": [
+      "打印一个整数，即选择剪辑顺序和循环移位后$$$P$$$的最大可能出现次数。"
+    ],
+    "note": [
+      "剪辑是 $$$\\texttt{baa}$$$ 和 $$$\\texttt{b}$$$。两个可能的连接是 $$$\\texttt{baab}$$$ 和 $$$\\texttt{bbaa}$$$，但都不包含 $$$\\texttt{abba}$$$。",
+      "将$$$\\texttt{baab}$$$旋转两个字符得到$$$\\texttt{abba}$$$，它只包含目标一次。因此，答案为$$$1$$$。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.600Z",
+  "translatedBy": [
+    "youdao",
+    "caiyun",
+    "iflyrec"
+  ]
+}

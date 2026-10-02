@@ -1,0 +1,72 @@
+{
+  "code": "GYM106235B",
+  "letter": "B",
+  "title": "B. Proof of Incorrectness",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106235/problem/B",
+  "difficulty": "*2000",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem. Remember that your program must flush the output buffer every time after printing. To flush the output buffer, you can use fflush(stdout) in C++, system.out.flush() in Java, stdout.flush() in Python, or flush(output) in Pascal. If you are using another programming language, check its documentation for how to perform this operation.",
+      "Vasya claims that he has invented a sorting algorithm for an $$$n$$$-element array $$$a$$$ (where all elements are pairwise distinct) that makes less than $$$\\lceil \\log_2 (n!)\\rceil$$$ comparisons!",
+      "Vasya will ask you no more than $$$\\lceil \\log_2 (n!)\\rceil - 1$$$ queries of the form: compare elements $$$a_i$$$ and $$$a_j$$$. Vasya claims that these queries are sufficient to uniquely determine the permutation of the positions of the array $$$a$$$ from the smallest element to the largest: $$$\\operatorname{ord}_1, \\operatorname{ord}_2, \\dots, \\operatorname{ord}_n$$$. Your task is to find a permutation of positions that differs from Vasya's permutation but is consistent with all of Vasya's queries.",
+      "Interaction",
+      "Initially, the jury's program will send a single integer $$$n$$$ ($$$3 \\le n \\le 18$$$) — the size of the array.",
+      "Then, the jury's program will send no more than $$$\\lceil \\log_2 (n!)\\rceil - 1$$$ queries in the following format:",
+      "$$$?$$$ $$$i$$$ $$$j$$$ — compare $$$a_i$$$ and $$$a_j$$$ ($$$1 \\le i, j \\le n$$$; $$$i \\ne j$$$).",
+      "For each query, your program must output < if $$$a_i  \\lt  a_j$$$, and > otherwise.",
+      "After that, the jury's program will send its answer in the following format:",
+      "$$$!$$$ $$$\\operatorname{ord}_1 \\operatorname{ord}_2 \\dots \\operatorname{ord}_n$$$",
+      "In response, your program must output a permutation that differs from the jury's permutation and is consistent with all previous queries, in the same format. If there are multiple possible permutations, output any of them. Please pay attention that you should not output the array $$$a$$$!",
+      "If your answer is correct, the jury's program will send the string CORRECT on a separate line, indicating that you can terminate the program. If the answer is incorrect, the jury's program will send the string ERROR on a separate line.",
+      "If your program violates the format of the queries, the jury will respond with the string ERROR. In this case, your program should terminate immediately to receive a Wrong answer verdict. Otherwise, you may receive an arbitrary verdict because your solution will continue to read from a closed stream.",
+      "Remember to flush the output buffer every time you print something!"
+    ],
+    "input": [],
+    "output": [],
+    "note": [
+      "Note that spaces in the examples are added only for readability. When checking solutions, the interactor will not output empty lines."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n? 2 1\n\n? 4 3\n\n? 4 2\n\n? 1 4\n\n! 1 3 4 2\n\nCORRECT",
+      "output": "\n\n>\n\n>\n\n<\n\n<\n\n! 3 1 4 2"
+    }
+  ],
+  "titleZh": [
+    "B.证明不正确"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "这是一个交互式问题。请记住，程序必须在每次打印后刷新输出缓冲区。要刷新输出缓冲区，可以使用 C++ 中的 flush(stdout)、Java 中的 system.out.flush()、Python 中的 stdout.flush() 或 Pascal 中的 flush(output)。如果你使用的是其他编程语言，请查看其文档以了解如何执行这个操作。",
+      "Vasya声称他发明了一种排序算法，用于$$$n$$$元素数组$$$a$$$(其中所有元素都是成对不同的），其比较次数少于$$$\\lceil \\log_2 (n!)\\rceil$$$！",
+      "Vasya会问你最多$$$\\lceil \\log_2 (n!)\\rceil - 1$$$个这样的查询：比较元素$$$a_i$$$和$$$a_j$$$。Vasya声称这些查询足以唯一地确定数组$$$a$$$从最小元素到最大元素的位置排列：$$$\\operatorname{ord}_1, \\operatorname{ord}_2, \\dots, \\operatorname{ord}_n$$$。你的任务是找到与Vasya的排列不同但与Vasya的所有查询一致的位置排列。",
+      "互动",
+      "最初，陪审团的程序将发送一个整数$$$n$$$ ($$$3 \\le n \\le 18$$$）——数组的大小。",
+      "然后，评审团的程序将以以下格式发送不超过$$$\\lceil \\log_2 (n!)\\rceil - 1$$$个查询：",
+      "$$$?$$$$$$i$$$$$$j$$$——比较 $$$a_i$$$ 和 $$$a_j$$$($$$1 \\le i, j \\le n$$$;$$$i \\ne j$$$)。",
+      "对于每个查询，如果是 $$$a_i  \\lt  a_j$$$，程序必须输出 <，否则输出 >。",
+      "之后，评审团的程序将以以下格式发送答案：",
+      "$$$!$$$ $$$\\operatorname{ord}_1 \\operatorname{ord}_2 \\dots \\operatorname{ord}_n$$$",
+      "作为回应，您的程序必须以相同的格式输出一个与评委的排列方式不同且与之前所有查询一致的排列方式。如果有多种可能的排列组合，则输出其中任何一种。请注意不要输出数组 $$$a$$$！",
+      "如果你的答案是正确的，陪审团程序将在单独的一行中发送字符串 CORRECT，表示你可以终止程序。如果你的答案是不正确的，陪审团程序将在另一行中发送字符串 ERROR。",
+      "如果您的程序违反了查询的格式，陪审团将以字符串ERROR响应。在这种情况下，您的程序应该立即终止，以收到错误答案的判决。否则，您可能会收到一个武断的判决，因为您的解决方案将继续从已关闭的流中读取数据。",
+      "记得每次打印东西时刷新输出缓冲区！"
+    ],
+    "input": [],
+    "output": [],
+    "note": [
+      "请注意，示例中的空格只是为了便于阅读。在检查解决方案时，交互器不会输出空行。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.593Z",
+  "translatedBy": [
+    "deepl",
+    "youdao",
+    "caiyun",
+    "iflyrec"
+  ]
+}

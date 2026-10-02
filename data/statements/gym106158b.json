@@ -1,0 +1,67 @@
+{
+  "code": "GYM106158B",
+  "letter": "B",
+  "title": "B. Magic Circle",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106158/problem/B",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "$n$ wizards stood in a circle and decided to perform $q$ rituals.",
+      "We number the wizards from $1$ to $n$ in a clockwise direction. The $i$-th ritual involves wizard number $k$ if there exists a non-negative integer $x$ such that $(\\mathit{first}_i + \\mathit{step}_i \\cdot x - 1) \\bmod n + 1 = k$, where mod is the modulus operation. For better understanding, it is worth looking at the illustration in the example.",
+      "Initially, each wizard had $10^{18}$ units of mana. The $i$-th ritual changes the mana of the involved wizards by $\\mathit{cost}_i$. That is, if $\\mathit{cost}_i > 0$, the mana increases by $|\\mathit{cost}_i|$ units; if $\\mathit{cost}_i < 0$, it decreases by $|\\mathit{cost}_i|$ units; and if $\\mathit{cost}_i = 0$, it remains unchanged.",
+      "Determine the number of the wizard with the most mana after all $q$ rituals. If there are several, choose the one with the smallest number.",
+      "**Scoring**",
+      "The tests for this problem consist of ten groups. Points for each group are awarded only if all tests of the group and all tests of the required groups are passed.",
+      "- Group 1 (10 points): $n, q \\le 5000$; $n$ is a multiple of $\\mathit{step}_i$ for all $i$; no required groups\n- Group 2 (10 points): $n, q \\le 5000$; $\\mathit{step}_i \\le n$ for all $i$; requires group 1\n- Group 3 (10 points): $n, q \\le 5000$; requires groups 1, 2\n- Group 4 (10 points): $\\mathit{first}_i = \\mathit{first}_j$ for all $i, j$; $n$ is a multiple of $\\mathit{step}_i$ for all $i$; no required groups\n- Group 5 (10 points): $\\mathit{step}_i = \\mathit{step}_j$ for all $i, j$; $n$ is a multiple of $\\mathit{step}_i$ for all $i$; no required groups\n- Group 6 (10 points): $n$ is a multiple of $\\mathit{step}_i$ for all $i$; requires groups 1, 4, 5\n- Group 7 (10 points): $\\mathit{first}_i = \\mathit{first}_j$ for all $i, j$; $\\mathit{step}_i \\le n$ for all $i$; requires group 4\n- Group 8 (10 points): $\\mathit{step}_i = \\mathit{step}_j$ for all $i, j$; $\\mathit{step}_i \\le n$ for all $i$; requires group 5\n- Group 9 (10 points): $\\mathit{step}_i \\le n$ for all $i$; requires groups 1, 2, 4–8\n- Group 10 (10 points): no additional constraints; requires groups 1–9"
+    ],
+    "input": [
+      "The first line contains two integers $n$ and $q$ ($1 \\le n, q \\le 2 \\cdot 10^5$).",
+      "In the $i$-th of the following $q$ lines, there are 3 integers $\\mathit{first}_i$, $\\mathit{step}_i$, and $\\mathit{cost}_i$ ($1 \\le \\mathit{first}_i \\le n$; $1 \\le \\mathit{step}_i \\le 10^9$; $-10^9 \\le \\mathit{cost}_i \\le 10^9$)."
+    ],
+    "output": [
+      "Output a single number — the number of the wizard with the most mana after all $q$ rituals. If there are several, choose the one with the smallest number."
+    ],
+    "note": [
+      "The original statement ships as a PDF and includes an illustration for the example; see the problem page on Codeforces."
+    ]
+  },
+  "examples": [
+    {
+      "input": "28 3\n28 12 8\n18 4 4\n3 1 2",
+      "output": "4"
+    }
+  ],
+  "titleZh": [
+    "B. 魔法圈"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "$n$巫师们围成一圈，决定举行$q$仪式。",
+      "我们在顺时针方向上给巫师编号从 $1$ 到 $n$。如果存在一个非负整数 $x$，使得 $(\\mathit{first}_i + \\mathit{step}_i \\cdot x - 1) \\bmod n + 1 = k$，其中 mod 是模运算，则 $i$ 第一个仪式涉及巫师编号 $k$。为了更好地理解，值得参考示例中的示例。",
+      "最初，每个巫师有$10^{18}$单位的法力。$i$-仪式改变了$\\mathit{cost}_i$法师的法力。也就是说，如果$\\mathit{cost}_i > 0$，魔法值增加$|\\mathit{cost}_i|$个单位；如果$\\mathit{cost}_i < 0$，则减少$|\\mathit{cost}_i|$个单位；如果$\\mathit{cost}_i = 0$，它保持不变。",
+      "确定所有 $q$ 仪式后法力值最高的巫师的编号。如果有几个，则选择数字最小的一个。",
+      "* * * *",
+      "本题的测试包括十组。每组的分数只有在该组的所有测试和所要求的组的所有测试都通过的情况下才能获得。",
+      "-第一组(10分）：$n, q \\le 5000$；$n$是所有$i$的$\\mathit{step}_i$的倍数；没有必要的组\n-第二组(10分）：$n, q \\le 5000$；$\\mathit{step}_i \\le n$ for all $i$；要求第一组\n-第三组(10分）：$n, q \\le 5000$；需要第1、2组\n-第四组(10分）：所有$i, j$得分为$\\mathit{first}_i = \\mathit{first}_j$；$n$是所有$i$的$\\mathit{step}_i$的倍数；没有必要的组\n-第五组(10分）：所有$i, j$得分$\\mathit{step}_i = \\mathit{step}_j$；$n$是所有$i$的$\\mathit{step}_i$的倍数；没有必要的组\n第6组(10分）：$n$是$\\mathit{step}_i$的倍数，所有$i$；需要第1、4、5组\n-第七组(10分）：所有$i, j$得分为$\\mathit{first}_i = \\mathit{first}_j$；$\\mathit{step}_i \\le n$为所有$i$；需要第4组\n-第8组(10分）：所有$i, j$得分为$\\mathit{step}_i = \\mathit{step}_j$；$\\mathit{step}_i \\le n$为所有$i$；需要第5组\n-第9组(10分）：$\\mathit{step}_i \\le n$所有$i$；需要1、2、4-8组\n-第10组(10分）：无额外限制；1-9组"
+    ],
+    "input": [
+      "第一行包含两个整数 $n$ 和 $q$($1 \\le n, q \\le 2 \\cdot 10^5$)。",
+      "在下面$q$行的$i$-th 中，有 3 个整数$\\mathit{first}_i$、$\\mathit{step}_i$和$\\mathit{cost}_i$($1 \\le \\mathit{first}_i \\le n$; $1 \\le \\mathit{step}_i \\le 10^9$; $-10^9 \\le \\mathit{cost}_i \\le 10^9$）。"
+    ],
+    "output": [
+      "输出一个数字——在所有 $q$ 仪式之后，拥有最多魔力的巫师的数量。如果有多个，请选择数量最小的那个。"
+    ],
+    "note": [
+      "原始声明以PDF格式发布，并包含示例的插图；请参阅Codeforces上的问题页面。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.591Z",
+  "translatedBy": [
+    "caiyun",
+    "deepl",
+    "youdao"
+  ]
+}

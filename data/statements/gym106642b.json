@@ -1,0 +1,79 @@
+{
+  "code": "GYM106642B",
+  "letter": "B",
+  "title": "B. WisdomCasual's Deadline",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106642/problem/B",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "$$$\\text{WisdomCasual}$$$ was supposed to prepare this problem for the $$$\\text{UEPC}$$$ a week ago. Naturally, he forgot.",
+      "With only 30 minutes left before $$$\\text{cgmoreda}$$$'s deadline, he scribbled down an idea involving arrays and operations. He thinks it is brilliant, but he has no time to solve it or assess its difficulty. He needs you to solve it for him and tell him the difficulty.",
+      "Here is the problem he wrote down:",
+      "You are given three integers $$$n$$$, $$$k$$$, and $$$x$$$. You need to construct an array $$$a$$$ of $$$n$$$ integers that satisfies the following conditions:",
+      "$$$-k \\le a_i \\le k$$$ for all $$$1 \\le i \\le n$$$.",
+      "The sum of all elements in the array is exactly $$$0$$$: $$$\\sum_{i=1}^{n} a_i = 0$$$.",
+      "The cost of the array is at most $$$x$$$.",
+      "The cost of an array is defined as the minimum number of operations required to make all elements in the array equal to $$$0$$$.",
+      "In one operation, you can choose an index $$$i$$$ ($$$1 \\le i  \\lt  n$$$) and do exactly one of the following:",
+      "Decrease $$$a_i$$$ by $$$1$$$ and increase $$$a_{i+1}$$$ by $$$1$$$.",
+      "Increase $$$a_i$$$ by $$$1$$$ and decrease $$$a_{i+1}$$$ by $$$1$$$.",
+      "Since $$$\\text{WisdomCasual}$$$ wants to ensure the problem has a unique output, you must find the lexicographically smallest array $$$a$$$ that satisfies all the above conditions. (He doesn't have enough time to write a custom checker)",
+      "Can you solve it for him and save his deadline?",
+      "Note: An array $$$a$$$ is lexicographically smaller than an array $$$b$$$ of the same length if, at the first index where they differ, the element in $$$a$$$ is strictly smaller than the corresponding element in $$$b$$$."
+    ],
+    "input": [
+      "The first line contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$)  — the number of test cases.",
+      "The only line of each test case contains three integers $$$n$$$, $$$k$$$, and $$$x$$$ ($$$2 \\le n \\le 10^5$$$, $$$1 \\le k \\le 10^9$$$, $$$0 \\le x \\le 10^{18}$$$).",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, output $$$n$$$ integers representing the lexicographically smallest valid array $$$a$$$.",
+      "It is guaranteed that under the given constraints, at least one valid array always exists."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n3 2 2\n4 10 0\n3 5 1",
+      "output": "-2 2 0 \n0 0 0 0 \n-1 1 0"
+    }
+  ],
+  "titleZh": [
+    "B. WisdomCasual 的最后期限"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "$$$\\text{WisdomCasual}$$$应在一周前为$$$\\text{UEPC}$$$准备此问题。自然，他忘了。",
+      "在距离 $$$\\text{cgmoreda}$$$ 的最后期限只剩下 30 分钟的时候，他草草写下了一个涉及阵列和操作的想法。他认为这个想法很棒，但他没有时间解决它或评估它的难度。他需要你帮他解决它，并告诉他难度。",
+      "下面是他写下的问题：",
+      "给定三个整数 $$$n$$$、$$$k$$$ 和 $$$x$$$。需要构造一个满足以下条件的 $$$n$$$ 整数数组 $$$a$$$:",
+      "$$$-k \\le a_i \\le k$$$适用于所有$$$1 \\le i \\le n$$$。",
+      "数组中所有元素的和正好是$$$0$$$: $$$\\sum_{i=1}^{n} a_i = 0$$$。",
+      null,
+      "数组的开销定义为使数组中所有元素等于 $$$0$$$ 所需的最小操作数。",
+      "在一次操作中，您可以选择索引$$$i$$$ ($$$1 \\le i  \\lt  n$$$）并执行以下操作之一：",
+      "将$$$a_i$$$减少$$$1$$$并将$$$a_{i+1}$$$增加$$$1$$$。",
+      "用 $$$1$$$ 增加 $$$a_i$$$，用 $$$1$$$ 减少 $$$a_{i+1}$$$。",
+      "由于$$$\\text{WisdomCasual}$$$想要确保问题有唯一的输出，您必须找到字典顺序上最小的数组$$$a$$$，它满足上述所有条件。(他没有足够的时间编写自定义检查器）",
+      null,
+      "注意：数组$$$a$$$在字典序上小于相同长度的数组$$$b$$$，如果在它们不同的第一个索引处，$$$a$$$中的元素严格小于$$$b$$$中的相应元素。"
+    ],
+    "input": [
+      "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+      "每个测试用例的唯一一行包含三个整数$$$n$$$， $$$k$$$和$$$x$$$ ($$$2 \\le n \\le 10^5$$$, $$$1 \\le k \\le 10^9$$$, $$$0 \\le x \\le 10^{18}$$$）。",
+      "保证所有测试用例的$$$n$$$总和不超过$$$2 \\cdot 10^5$$$。"
+    ],
+    "output": [
+      "对于每个测试用例，输出 $$$n$$$ 整数表示词典编纂学中最小的有效数组 $$$a$$$。",
+      "保证在给定的约束条件下，总是存在至少一个有效数组。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.601Z",
+  "translatedBy": [
+    "caiyun",
+    "iflyrec",
+    "youdao"
+  ]
+}

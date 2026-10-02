@@ -1,0 +1,70 @@
+{
+  "code": "GYM106197I",
+  "letter": "I",
+  "title": "I. Grid Coloring",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106197/problem/I",
+  "difficulty": "*1000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There is an $$$n$$$ by $$$n$$$ grid of white squares, each containing a bidirectional horizontal or vertical arrow. In one operation, you can choose any square, and based on the arrow in that square, color all squares in the corresponding row or column black. For example, here is one possible sequence of two operations on a grid with $$$n=4$$$:",
+      "![](https://espresso.codeforces.com/aeab87caa7ce60dda422a2da0ea4774f1de52b19.png)",
+      "What is the minimum number of operations needed to color all squares black, and which squares should you choose in the operations?"
+    ],
+    "input": [
+      "The first line of the input contains a single integer $$$t$$$ ($$$1\\le t\\le 250$$$) — the number of test cases.",
+      "The first line of each test case contains a single integer $$$n$$$ ($$$1\\le n \\le 1000$$$) — the number of rows and columns in the grid.",
+      "The $$$i$$$-th of the next $$$n$$$ lines contains $$$n$$$ characters each. The $$$j$$$-th of these is $$$\\texttt{H}$$$ if the square in position $$$(i, j)$$$ contains a horizontal arrow, and $$$\\texttt{V}$$$ if it contains a vertical arrow.",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$1000$$$."
+    ],
+    "output": [
+      "The first line of output for each test case should contain a single integer $$$k$$$ ($$$0 \\le k \\le n^2$$$) — the number of operations you will perform.",
+      "Each of the next $$$k$$$ lines should contain two integers $$$i$$$ and $$$j$$$ ($$$1 \\le i, j \\le n$$$) — the row and column of the square you will choose for that operation, respectively.",
+      "If there are multiple solutions with minimal $$$k$$$, you can print any."
+    ],
+    "note": [
+      "The first test case corresponds to the picture above. It can be shown that it is impossible to color everything black in less than $$$4$$$ operations.",
+      "In the second test case, since there is only one square, doing a single operation and choosing that square is sufficient to color everything black."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4\nVHHV\nVVHV\nHHVH\nVVHV\n1\nH\n2\nVH\nVV",
+      "output": "4\n2 3\n4 3\n1 2\n3 2\n1\n1 1\n2\n1 1\n2 2"
+    }
+  ],
+  "titleZh": [
+    "I.网格着色"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "有一个由 $$$n$$$ 组成的 $$$n$$$ 白色方格网格，每个方格都包含一个双向水平或垂直箭头。在一个操作中，你可以选择任意方格，并根据该方格中的箭头，将相应行或列中的所有方格染成黑色。例如，以下是 $$$n=4$$$ 网格上两个操作的可能顺序：",
+      "![](https://espresso.codeforces.com/aeab87caa7ce60dda422a2da0ea4774f1de52b19.png)",
+      "将所有方块涂成黑色所需的最少操作次数是多少？在这些操作中应该选择哪些方块？"
+    ],
+    "input": [
+      "输入的第一行包含一个整数 $$$t$$$ ($$$1\\le t\\le 250$$$）--测试用例数。",
+      "每个测试用例的第一行包含一个整数$$$n$$$ ($$$1\\le n \\le 1000$$$）——网格中的行数和列数。",
+      "接下来的$$$n$$$行中的$$$i$$$-th每行包含$$$n$$$个字符。如果位置$$$(i, j)$$$的正方形包含一个水平箭头，则其中的$$$j$$$是$$$\\texttt{H}$$$，如果它包含一个垂直箭头，则为$$$\\texttt{V}$$$。",
+      "保证所有测试用例的 $$$n$$$ 之和不超过 $$$1000$$$。"
+    ],
+    "output": [
+      "每个测试用例的第一行输出应包含一个整数 $$$k$$$($$$0 \\le k \\le n^2$$$)——即您将执行的操作数。",
+      "接下来的每一行 $$$k$$$ 都应该包含两个整数 $$$i$$$ 和 $$$j$$$($$$1 \\le i, j \\le n$$$)——分别是你为该操作选择的正方形的行和列。",
+      "如果有多个最小$$$k$$$的解决方案，您可以打印任何一个。"
+    ],
+    "note": [
+      "第一个测试案例与上图相对应。可以看出，不可能在少于 $$$4$$$ 次的操作中把所有颜色都染成黑色。",
+      "在第二个测试用例中，由于只有一个方块，执行单个操作并选择该方块就足以将所有内容着色为黑色。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.592Z",
+  "translatedBy": [
+    "deepl",
+    "youdao",
+    "iflyrec",
+    "caiyun"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "code": "GYM103426B",
+  "letter": "B",
+  "title": "B. Permutations",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103426/problem/B",
+  "difficulty": "*1000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Recently Manya learned that a permutation is a sequence of $$$n$$$ distinct integers from $$$1$$$ to $$$n$$$ in arbitrary order. For example, $$$2,3,1,5,4$$$ is a permutation, but $$$1,2,2$$$ is not a permutation ($$$2$$$ appears twice) and $$$1,3,4$$$ is also not a permutation ($$$n=3$$$ but there is $$$4$$$ in the sequence).",
+      "Manya started to write down random permutations, one under another. She wrote down $$$n-1$$$ permutations and realized that a column in the resulting table of integers can also turn out to be a permutation when Manya writes down the $$$n$$$th permutation. Every column will consist of $$$n$$$ integers from $$$1$$$ to $$$n$$$, however, not every column will be a valid permutation. Then Many decided to add the $$$n$$$th permutation in a way to maximize the number of columns-permutations.",
+      "Your task is to find out the maximum number of columns that could be permutations after adding the $$$n$$$th permutation; and how many permutations will result in the highest number of columns-permutations."
+    ],
+    "input": [
+      "The first line contains a single integer $$$n$$$ — the permutation length ($$$2 \\le n \\le 1000$$$).",
+      "Each of the next $$$n-1$$$ lines contains a permutation of length $$$n$$$ — $$$n$$$ integers from $$$1$$$ to $$$n$$$."
+    ],
+    "output": [
+      "Output two integers — the maximum number of column-permutations that can be achieved after adding a permutation; and the number of permutations that can be added to achieve the highest number of columns-permutations modulo $$$10^9 + 7$$$."
+    ],
+    "note": [
+      "In the first example, the first column needs $$$2$$$ to be a permutation as well as the fourth column, the third column needs $$$1$$$. Manya can add permutations:",
+      "$$$2,3,1,4$$$;",
+      "$$$2,4,1,3$$$;",
+      "$$$3,4,1,2$$$;",
+      "$$$4,3,1,2$$$;",
+      "to get two columns-permutations. It is not possible to get a result with three columns-permutations as the $$$n$$$th permutation can not contain two $$$2$$$.",
+      "In the second example, none of the columns will be a valid permutation, no matter what permutation Manya adds. That means that the maximum number of columns-permutations is $$$0$$$ and can be achieved by adding any of the $$$24$$$ permutations."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1 2 3 4\n4 1 2 3\n3 2 4 1",
+      "output": "2 4"
+    },
+    {
+      "input": "4\n1 2 3 4\n1 2 4 3\n2 1 4 3",
+      "output": "0 24"
+    }
+  ],
+  "titleZh": [
+    "B. 排列"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "最近，Manya 了解到，排列是从 $$$1$$$ 到 $$$n$$$ 的一系列 $$$n$$$ 不同整数，按任意顺序排列。例如，$$$2,3,1,5,4$$$ 是一个排列，但 $$$1,2,2$$$ 不是 ($$$2$$$ 出现了两次),$$$1,3,4$$$ 也不是 ($$$n=3$$$，但序列中有 $$$4$$$)。",
+      "玛尼娅开始写下随机排列，一个接一个。她写下了$$$n-1$$$个排列，并意识到当Manya写下$$$n$$$个排列时，生成的整数表中的一列也可能是一个排列。每一列都由从$$$1$$$到$$$n$$$的整数$$$n$$$组成，但是，并不是每一列都是有效的排列。然后Many决定以最大化列排列数量的方式添加第$$$n$$$个排列。",
+      "你的任务是找出添加第$$$n$$$个排列后可能是排列的最大列数；多少个排列会产生最多的列-排列。"
+    ],
+    "input": [
+      "第一行包含一个整数$$$n$$$--排列长度($$$2 \\le n \\le 1000$$$）。",
+      "接下来的每一行 $$$n-1$$$ 都包含长度 $$$n$$$——从 $$$1$$$ 到 $$$n$$$ 的 $$$n$$$ 整数的排列。"
+    ],
+    "output": [
+      "输出两个整数—添加一个排列后可以实现的最大列排列数；以及为达到最大列数可添加的排列数-排列模$$$10^9 + 7$$$。"
+    ],
+    "note": [
+      "在第一个例子中，第一列需要 $$$2$$$ 和第四列一样是一个排列，第三列需要 $$$1$$$。玛尼亚可以添加排列组合：",
+      "$$$2,3,1,4$$$;",
+      "$$$2,4,1,3$$$;",
+      "$$$3,4,1,2$$$;",
+      "$$$4,3,1,2$$$;",
+      "得到两列排列。不可能得到三列排列的结果，因为第 $$$n$$$ 次排列不能包含两个 $$$2$$$。",
+      "在第二个示例中，无论Manya添加什么排列，所有列都不是有效的排列。这意味着列排列的最大数量是$$$0$$$，可以通过添加任何$$$24$$$排列来实现。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.579Z",
+  "translatedBy": [
+    "deepl",
+    "caiyun",
+    "youdao"
+  ]
+}

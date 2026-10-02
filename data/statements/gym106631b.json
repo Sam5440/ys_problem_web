@@ -1,0 +1,75 @@
+{
+  "code": "GYM106631B",
+  "letter": "B",
+  "title": "B. Binary to Palindrome",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106631/problem/B",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a binary string $$$b$$$ of length $$$n$$$.",
+      "Construct a string $$$s$$$ of length $$$n$$$ consisting of lowercase English letters such that for each $$$i$$$ ($$$1 \\le i \\le n$$$):",
+      "if $$$b_i = 1$$$, then every substring$$$^{\\text{∗}}$$$ of $$$s$$$ of length $$$i$$$ is a palindrome$$$^{\\text{†}}$$$;",
+      "if $$$b_i = 0$$$, then at least one substring of $$$s$$$ of length $$$i$$$ is not a palindrome.",
+      "Print the lexicographically smallest$$$^{\\text{‡}}$$$ such string $$$s$$$. If no such string exists, print $$$-1$$$.",
+      "$$$^{\\text{∗}}$$$A string $$$x$$$ is a substring of a string $$$y$$$ if $$$x$$$ can be obtained from $$$y$$$ by the deletion of several (possibly, zero or all) characters from the beginning and several (possibly, zero or all) characters from the end. For example, bc, abc, and d are substrings of abcd, while ac and ba are not.",
+      "$$$^{\\text{†}}$$$A string is a palindrome if it reads the same from left to right and from right to left. In other words, the reverse of the string is the same as the original string. For example, a, aba, and abba are palindromes, while ab and abc are not.",
+      "$$$^{\\text{‡}}$$$String $$$x$$$ is lexicographically smaller than string $$$y$$$ if either $$$x$$$ is a proper prefix of $$$y$$$, or there exists a position $$$i$$$ ($$$1 \\le i \\le \\min(|x|, |y|)$$$) such that $$$x_i  \\lt  y_i$$$ and for all $$$j  \\lt  i$$$, $$$x_j = y_j$$$."
+    ],
+    "input": [
+      "The first line contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "The first line of each test case contains a single integer $$$n$$$ ($$$1 \\le n \\le 3 \\cdot 10^5$$$) — the length of the string $$$b$$$.",
+      "The second line contains a binary string $$$b$$$ of length $$$n$$$ consisting of the characters 0 and 1.",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$3 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print the lexicographically smallest valid string $$$s$$$, or $$$-1$$$ if no such string exists."
+    ],
+    "note": [
+      "In the first test case, $$$b = \\texttt{10}$$$. Every substring of length $$$1$$$ must be a palindrome, and the single substring of length $$$2$$$ must not be a palindrome. The lexicographically smallest such string is $$$\\texttt{ab}$$$.",
+      "In the second test case, $$$b = \\texttt{001}$$$. Since $$$b_1 = 0$$$ but a single character is always a palindrome, no valid string exists, so the answer is $$$-1$$$.",
+      "In the third test case, $$$b = \\texttt{1111}$$$. Every substring, of every length, must be a palindrome. The lexicographically smallest such string is $$$\\texttt{aaaa}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2\n10\n3\n001\n4\n1111",
+      "output": "ab\n-1\naaaa"
+    }
+  ],
+  "titleZh": [
+    "B.二进制到回文"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "给定一个长度为 $$$n$$$ 的二进制字符串 $$$b$$$。",
+      "构造一个长度为$$$n$$$的字符串$$$s$$$，由小写英文字母组成，使得每个$$$i$$$ ($$$1 \\le i \\le n$$$)：",
+      "如果 $$$b_i = 1$$$，那么长度为 $$$i$$$ 的 $$$s$$$ 的每个子字符串 $$$^{\\text{∗}}$$$ 都是回文 $$$^{\\text{†}}$$$;",
+      "如果$$$b_i = 0$$$，则至少有一个长度为$$$i$$$的$$$s$$$子串不是回文。",
+      "打印字典顺序最小的$$$^{\\text{‡}}$$$，例如字符串$$$s$$$。如果不存在这样的字符串，打印$$$-1$$$。",
+      "$$$^{\\text{∗}}$$$ 一个字符串 $$$x$$$ 是一个字符串 $$$y$$$ 的子字符串，如果 $$$x$$$ 可以通过从 $$$y$$$ 中删除几个 (可能是零个或所有) 字符和从末尾删除几个 (可能是零个或全部) 字符来获得。例如，bc、abc 和 d 是 abcd 的子字符串，而 ac 和 ba 不是。",
+      "$$$^{\\text{†}}$$$如果一个字符串从左到右和从右到左读起来是一样的，那么它就是回文。换句话说，字符串的反向与原始字符串相同。例如，a、aba和abba是回文，而ab和abc不是回文。",
+      "$$$^{\\text{‡}}$$$ 如果 $$$x$$$ 是 $$$y$$$ 的正前缀，或者存在一个 $$$i$$$($$$1 \\le i \\le \\min(|x|, |y|)$$$) 位置，使得 $$$x_i  \\lt  y_i$$$ 和所有 $$$j  \\lt  i$$$ 都是 $$$x_j = y_j$$$，则字符串 $$$x$$$ 在词法上小于字符串 $$$y$$$。"
+    ],
+    "input": [
+      "第一行包含一个整数$$$t$$$ ($$$1 \\le t \\le 10^4$$$）——测试用例的数量。",
+      "每个测试用例的第一行包含一个整数$$$n$$$ ($$$1 \\le n \\le 3 \\cdot 10^5$$$）——字符串$$$b$$$的长度。",
+      "第二行包含一个长度为 $$$n$$$ 的二进制字符串 $$$b$$$，由字符 0 和 1 组成。",
+      "保证所有测试用例的 $$$n$$$ 之和不超过 $$$3 \\cdot 10^5$$$。"
+    ],
+    "output": [
+      "对于每个测试用例，打印词典中最小的有效字符串 $$$s$$$，如果不存在这样的字符串，则打印 $$$-1$$$。"
+    ],
+    "note": [
+      "在第一个测试用例中，是 $$$b = \\texttt{10}$$$。每个长度为 $$$1$$$ 的子串必须是回文，而单个长度为 $$$2$$$ 的子串不能是回文。这种字典上最小的子串是 $$$\\texttt{ab}$$$。",
+      "在第二个测试用例中$$$b = \\texttt{001}$$$。因为$$$b_1 = 0$$$但一个字符总是一个回文，没有有效的字符串存在，所以答案是$$$-1$$$。"
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.596Z",
+  "translatedBy": [
+    "youdao",
+    "caiyun"
+  ]
+}

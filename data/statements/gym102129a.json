@@ -1,0 +1,62 @@
+{
+  "code": "GYM102129A",
+  "letter": "A",
+  "title": "A. Tritwise Mex",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102129/problem/A",
+  "difficulty": "*2300",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 mebibytes",
+  "sections": {
+    "legend": [
+      "Let us denote $$$\\text{mex}(a, b)$$$ (minimum excludant) as the minimum non-negative integer which is neither equal to $$$a$$$ nor equal to $$$b$$$. It always holds that $$$\\text{mex}(a,b)  \\lt  3$$$, thus we can define tritwise mex. If we write $$$a$$$ and $$$b$$$ in ternary notation: $$$$$$a = \\sum\\limits_{i=0}^{k-1}a_i \\cdot 3^i,~~b=\\sum\\limits_{i=0}^{k-1} b_i \\cdot 3^i\\text{,}$$$$$$ where $$$a_i$$$ and $$$b_i$$$ are integers from $$$0$$$ to $$$2$$$, we define $$$\\mathrm{mex}_3$$$ as follows: $$$$$$\\mathrm{mex}_3(a, b) = \\sum\\limits_{i=0}^{k-1}\\mathrm{mex}(a_i,b_i) \\cdot 3^i\\text{.}$$$$$$ You are given two sequences $$$a_0,\\dots,a_{3^k-1}$$$ and $$$b_0,\\dots,b_{3^k-1}$$$. You have to compute the sequence $$$c_0,\\dots,c_{3^k-1}$$$: $$$$$$c_k = \\sum\\limits_{\\mathrm{mex}_3(i,j)=k}a_i \\cdot b_j\\text{.}$$$$$$"
+    ],
+    "input": [
+      "The first line of input contains a single integer $$$k$$$ ($$$1 \\leq k \\leq 12$$$).",
+      "The second line of input contains $$$3^k$$$ integers $$$a_0, \\dots, a_{3^k-1}$$$ ($$$0 \\leq a_i \\leq 10^3$$$).",
+      "The third line of input contains $$$3^k$$$ integers $$$b_0, \\dots, b_{3^k-1}$$$ ($$$0 \\leq b_i \\leq 10^3$$$)."
+    ],
+    "output": [
+      "Output $$$3^k$$$ integers $$$c_0, \\dots, c_{3^k-1}$$$ separated by spaces."
+    ],
+    "note": [
+      "For reference: $$$3^{12} = 531\\,441$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n1 1 1\n1 1 1",
+      "output": "4 3 2"
+    },
+    {
+      "input": "2\n1 1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 1 1",
+      "output": "16 12 8 12 9 6 8 6 4"
+    }
+  ],
+  "titleZh": [
+    "A.三段式"
+  ],
+  "sectionsZh": {
+    "legend": [
+      "让我们将$$$\\text{mex}(a, b)$$$(最小排除）表示为既不等于$$$a$$$也不等于$$$b$$$的最小非负整数。它总是保持$$$\\text{mex}(a,b)  \\lt  3$$$，因此我们可以定义Tritwise Mex。如果我们用三进制记数法写出$$$a$$$和$$$b$$$：$$$$$$a = \\sum\\limits_{i=0}^{k-1}a_i \\cdot 3^i,~~b=\\sum\\limits_{i=0}^{k-1} b_i \\cdot 3^i\\text{,}$$$$$$ where $$$a_I$$$ and $$$B_I$$$ are integers from $$$0$$$ to $$$2$$$, we define $$$\\mathrm{mex}_3$$$ as follows: $$$$$$\\mathrm{mex}_3(a, b) = \\sum\\limits_{i=0}^{k-1}\\mathrm{mex}(a_i,b_i) \\cdot 3^i\\text{.}$$$$$$ You are given two sequences $$$a_0，\\dots，_{3^K-1}$$$ and $$$B_0，\\dots，B_{3^K-1}$$$. You have to compute the sequence $$$C_0，\\dots，C_{3^K-1}$$$: $$$$$$c_k = \\sum\\limits_{\\mathrm{mex}_3(i,j)=k}a_i \\cdot b_j\\text{.}$$$$$$"
+    ],
+    "input": [
+      "第一行输入包含一个整数 $$$k$$$ ($$$1 \\leq k \\leq 12$$$）。",
+      "输入的第二行包含 $$$3^k$$$ 整数 $$$a_0, \\dots, a_{3^k-1}$$$($$$0 \\leq a_i \\leq 10^3$$$)。",
+      "第三行输入包含$$$3^k$$$个整数$$$b_0, \\dots, b_{3^k-1}$$$ ($$$0 \\leq b_i \\leq 10^3$$$）。"
+    ],
+    "output": [
+      "输出 $$$3^k$$$ 以空格分隔的整数 $$$c_0, \\dots, c_{3^k-1}$$$。"
+    ],
+    "note": [
+      "供参考：$$$3^{12} = 531\\,441$$$."
+    ]
+  },
+  "translatedAt": "2026-10-02T20:43:46.572Z",
+  "translatedBy": [
+    "youdao",
+    "caiyun",
+    "deepl",
+    "iflyrec"
+  ]
+}

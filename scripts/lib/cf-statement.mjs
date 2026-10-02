@@ -72,6 +72,112 @@ function blocksToParagraphs(blocks) {
   return blocks;
 }
 
+// Index just past the </span> that closes the <span …> opening at openIdx.
+function findSpanClose(s, openIdx) {
+  const re = /<span\b|<\/span>/g;
+  re.lastIndex = openIdx;
+  let depth = 0;
+  for (let m; (m = re.exec(s)); ) {
+    if (m[0] === '<span') depth++;
+    else if (--depth === 0) return m.index + m[0].length;
+  }
+  return -1;
+}
+
+// MathJax sometimes finishes before we snapshot the DOM: the $$$…$$$ text is
+// gone, replaced by rendered frame spans plus <script type="math/tex"> holders.
+// Restore the original TeX delimiters and drop the rendered frames, so parsing
+// works no matter which side of the transformation we captured.
+function unmathjax(html) {
+  const stash = [];
+  html = html.replace(/<script type="math\/tex([^"]*)">([\s\S]*?)<\/script>/gi, (_, mode, tex) => {
+    stash.push(/display/i.test(mode) ? '$$' + tex + '$$' : '$$$' + tex + '$$$');
+    return `%%ZSMJ${stash.length - 1}%%`;
+  });
+  if (!stash.length) return html;
+  let out = '';
+  let idx = 0;
+  for (;;) {
+    const pos = html.indexOf('<span class="MathJax"', idx);
+    if (pos === -1) break;
+    const close = findSpanClose(html, pos);
+    const block = html.slice(pos, close === -1 ? html.length : close);
+    const m = block.match(/%%ZSMJ(\d+)%%/);
+    out += html.slice(idx, pos) + (m ? stash[Number(m[1])] : '');
+    idx = close === -1 ? html.length : close;
+  }
+  return out + html.slice(idx);
+}
+
+// Index just past the </div> that closes the <div …> opening at openIdx.
+function findDivClose(s, openIdx) {
+  const re = /<div\b|<\/div>/g;
+  re.lastIndex = openIdx;
+  let depth = 0;
+  for (let m; (m = re.exec(s)); ) {
+    if (m[0] === '<div') depth++;
+    else if (--depth === 0) return m.index + m[0].length;
+  }
+  return s.length;
+}
+
+// Legacy gym layout: after the header, bare divs hold the legend and sections
+// labelled <div class="section-title">Input</div> etc., with sample-tests and
+// note at the end. Returns {legend, input, output, note} html chunks, or null
+// when no section markers exist. Non-input/output sections (e.g. Interaction)
+// are folded into the legend behind a bold heading so nothing is dropped.
+function parseLegacySections(html) {
+  const markRe = /<div class="section-title">([^<]*)<\/div>/g;
+  const marks = [...html.matchAll(markRe)];
+  if (!marks.length) return null;
+
+  const sampleIdx = html.indexOf('<div class="sample-tests"');
+  const noteIdx = html.indexOf('<div class="note"');
+
+  const headerIdx = html.indexOf('<div class="header"');
+  const legendStart = headerIdx === -1 ? 0 : findDivClose(html, headerIdx);
+  const firstMarkIdx = marks.length ? marks[0].index : html.length;
+  const legendEnd = Math.min(
+    firstMarkIdx > legendStart ? firstMarkIdx : html.length,
+    sampleIdx === -1 ? html.length : sampleIdx,
+    noteIdx === -1 ? html.length : noteIdx,
+  );
+  const legend = html.slice(legendStart, legendEnd);
+
+  const sectionEnd = (idx) => {
+    let end = html.length;
+    for (const m of marks) if (m.index > idx) end = Math.min(end, m.index);
+    if (sampleIdx > idx) end = Math.min(end, sampleIdx);
+    if (noteIdx > idx) end = Math.min(end, noteIdx);
+    return end;
+  };
+
+  let input = '';
+  let output = '';
+  const extras = [];
+  for (const m of marks) {
+    if (m.index < legendEnd) continue;
+    if (sampleIdx !== -1 && m.index > sampleIdx) continue; // "Example" inside sample-tests
+    const content = html.slice(m.index + m[0].length, sectionEnd(m.index));
+    const t = m[1].trim().toLowerCase();
+    if (t === 'input' && !input) input = content;
+    else if (t === 'output' && !output) output = content;
+    else if (t !== 'example' && t !== 'examples') extras.push({ title: m[1].trim(), content });
+  }
+
+  const note = noteIdx === -1 ? '' : html.slice(noteIdx + '<div class="note">'.length);
+
+  const stripMarks = (h) => h.replace(/<div class="section-title">[^<]*<\/div>/g, '');
+  const escTitle = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const extrasHtml = extras.map((e) => `<p><strong>${escTitle(e.title)}</strong></p>${e.content}`).join('');
+  return {
+    legend: stripMarks(legend) + extrasHtml,
+    input: stripMarks(input),
+    output: stripMarks(output),
+    note: stripMarks(note),
+  };
+}
+
 function parseSamples(html) {
   return [...html.matchAll(/<pre[^>]*>([\s\S]*?)<\/pre>/g)]
     .map((m) =>
@@ -89,11 +195,15 @@ export function parseStatementHtml(pageHtml) {
   const start = pageHtml.indexOf('<div class="problem-statement"');
   if (start === -1) return null;
   let html = pageHtml.slice(start);
+  html = unmathjax(html);
   const end = html.search(/<div id="footer"|<script/);
   if (end > 0) html = html.slice(0, end);
 
-  // Letter may carry a digit suffix (F2. / F2) — "F2. Yet Another…"
-  const titleMatch = html.match(/<div class="title">\s*([A-Z][0-9]*[.)][^<]*)</);
+  // Letter may carry a digit suffix (F2. / F2) — "F2. Yet Another…". Joke
+  // problems sometimes skip the letter entirely ("1121. Another Round"), so
+  // accept any title text; the header's title div is the first one in document
+  // order, ahead of the sample blocks' Input/Output title divs.
+  const titleMatch = html.match(/<div class="title">\s*([^<]+?)\s*</);
   // DOM form: <div class="time-limit"><div class="property-title">time limit per test</div>3 seconds</div>
   // Legacy form: <div class="property-title">time limit per test: 3 seconds</div>
   const timeMatch =
@@ -107,22 +217,41 @@ export function parseStatementHtml(pageHtml) {
   };
 
   // Legend = everything between the header div and the input specification.
-  const legendHtml = html.match(/<\/div>\s*([\s\S]*?)<div class="input-specification">/);
-  const noteMatch = html.match(/<div class="note">([\s\S]*?)(?=<div class="(?:sample-tests|note)|<script|$)/);
+  const legendHtmlMatch = (h) => h.match(/<\/div>\s*([\s\S]*?)<div class="input-specification">/)?.[1];
+  const noteHtmlMatch = (h) =>
+    h.match(/<div class="note">([\s\S]*?)(?=<div class="(?:sample-tests|note)|<script|$)/)?.[1];
 
   const samples = parseSamples(html);
   const examples = [];
   for (let i = 0; i + 1 < samples.length; i += 2) examples.push({ input: samples[i], output: samples[i + 1] });
+
+  // Standard pages mark sections with input-specification/output-specification
+  // divs. Older gym mirrors use bare divs with <div class="section-title">Input</div>
+  // markers — fall back to that layout when the standard classes are absent.
+  let legendHtml = legendHtmlMatch(html);
+  let inputHtml = sectionHtml('input-specification');
+  let outputHtml = sectionHtml('output-specification');
+  let noteHtml = noteHtmlMatch(html);
+
+  if (legendHtml === undefined) {
+    const legacy = parseLegacySections(html);
+    if (legacy) {
+      legendHtml = legacy.legend;
+      inputHtml = legacy.input;
+      outputHtml = legacy.output;
+      noteHtml = legacy.note;
+    }
+  }
 
   const statement = {
     title: titleMatch ? decodeEntities(titleMatch[1].trim()) : null,
     timeLimit: timeMatch ? decodeEntities(timeMatch[1].trim()) : null,
     memoryLimit: memMatch ? decodeEntities(memMatch[1].trim()) : null,
     sections: {
-      legend: legendHtml ? blocksToParagraphs(htmlToBlocks(legendHtml[1])) : [],
-      input: htmlToBlocks(sectionHtml('input-specification')),
-      output: htmlToBlocks(sectionHtml('output-specification')),
-      ...(noteMatch ? { note: htmlToBlocks(noteMatch[1]) } : {}),
+      legend: legendHtml ? blocksToParagraphs(htmlToBlocks(legendHtml)) : [],
+      input: htmlToBlocks(inputHtml),
+      output: htmlToBlocks(outputHtml),
+      ...(noteHtml ? { note: htmlToBlocks(noteHtml) } : {}),
     },
     examples,
   };

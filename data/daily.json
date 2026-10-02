@@ -1,7 +1,34 @@
 {
-  "generatedAt": "2026-10-02T12:48:40.254Z",
+  "generatedAt": "2026-10-02T16:13:06.239Z",
   "sourceRepo": "Yawn-Sean/Daily_CF_Problems",
   "days": [
+    {
+      "date": "2026-10-03",
+      "problems": [
+        {
+          "code": "GYM106733F",
+          "url": "https://codeforces.com/gym/106733/problem/F",
+          "difficulty": "*1800",
+          "hint": "Binary search on marginal effect.",
+          "statement": null,
+          "solution": {
+            "file": "cf106733f.md",
+            "markdown": "**提示 1：** 考虑每杯咖啡的作用。\n\n**提示 2：** 二分最后一杯的作用。\n\n考虑每天的每杯咖啡的作用是什么：第一杯 $k$ ，第二杯 $k-1$ ，以此类推，直到最后一杯可能工作量已经不够了，会有一个边界的问题。\n\n整体是单调递减的。我们相当于要求其中前 $m$ 大的数值之和。\n\n于是考虑二分这个数值，我们可以分别统计每天大于这个数值的有多少杯咖啡，借此检查边界应该更大还是更小。\n\n找到边界后，我们先对严格更大的数求和，并计数，剩余部分都刚好等于边界，加进来即可。\n\n时间复杂度为 $\\mathcal{O}(n\\log M)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    n, m, k = MII()\n    nums = LII()\n    \n    max_full_cups = [0] * n\n    \n    for i in range(n):\n        nums[i] = fmin(nums[i], k * (k + 1) // 2)\n        l, r = 1, k\n        while l <= r:\n            mid = (l + r) // 2\n            if (2 * k - mid + 1) * mid // 2 <= nums[i]: l = mid + 1\n            else: r = mid - 1\n        max_full_cups[i] = r\n    \n    l, r = 1, k\n    \n    while l <= r:\n        mid = (l + r) // 2\n        total = 0\n        \n        for i in range(n):\n            x = max_full_cups[i]\n            if mid >= k + 1 - x:\n                total += k - mid + 1\n            else:\n                total += x\n                if nums[i] - (2 * k - x + 1) * x // 2 >= mid:\n                    total += 1\n        \n            if total >= m: break\n        \n        if total >= m: l = mid + 1\n        else: r = mid - 1\n    \n    ans = 0\n    total = 0\n    \n    for i in range(n):\n        x = max_full_cups[i]\n        if r >= k + 1 - x:\n            total += k - r + 1\n            ans += (k + r) * (k - r + 1) // 2\n        else:\n            total += x\n            ans += (2 * k - x + 1) * x // 2\n            \n            if nums[i] - (2 * k - x + 1) * x // 2 >= r:\n                total += 1\n                ans += nums[i] - (2 * k - x + 1) * x // 2\n    \n    print(ans + (m - total) * r)\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint n, m, k;\n\tcin >> n >> m >> k;\n\n\tvector<long long> nums(n);\n\tfor (auto &x: nums) cin >> x;\n\n\tvector<int> max_full_cups(n);\n\n\tfor (int i = 0; i < n; i ++) {\n\t\tnums[i] = min(nums[i], 1ll * k * (k + 1) / 2);\n\n\t\tint l = 1, r = k;\n\t\twhile (l <= r) {\n\t\t\tint mid = (l + r) / 2;\n\t\t\tif (1ll * (2 * k - mid + 1) * mid / 2 <= nums[i]) l = mid + 1;\n\t\t\telse r = mid - 1;\n\t\t}\n\t\tmax_full_cups[i] = r;\n\t}\n\n\tint l = 1, r = k;\n\n\twhile (l <= r) {\n\t\tint mid = (l + r) / 2, total = 0;\n\n\t\tfor (int i = 0; i < n; i ++) {\n\t\t\tint x = max_full_cups[i];\n\t\t\tif (mid >= k + 1 - x) total += k - mid + 1;\n\t\t\telse {\n\t\t\t\ttotal += x;\n\t\t\t\tif (nums[i] - 1ll * (2 * k - x + 1) * x / 2 >= mid) total ++;\n\t\t\t}\n\t\t\tif (total >= m) break;\n\t\t}\n\t\tif (total >= m) l = mid + 1;\n\t\telse r = mid - 1;\n\t}\n\n\tlong long ans = 0;\n\tint total = 0;\n\n\tfor (int i = 0; i < n; i ++) {\n\t\tint x = max_full_cups[i];\n\t\tif (r >= k + 1 - x) {\n\t\t\ttotal += k - r + 1;\n\t\t\tans += 1ll * (k + r) * (k - r + 1) / 2;\n\t\t}\n\t\telse {\n\t\t\ttotal += x;\n\t\t\tans += 1ll * (2 * k - x + 1) * x / 2;\n\n\t\t\tif (nums[i] - 1ll * (2 * k - x + 1) * x / 2 >= r) {\n\t\t\t\ttotal ++;\n\t\t\t\tans += nums[i] - 1ll * (2 * k - x + 1) * x / 2;\n\t\t\t}\n\t\t}\n\t}\n\n\tcout << ans + 1ll * (m - total) * r;\n\n\treturn 0;\n}\n```"
+          }
+        },
+        {
+          "code": "GYM106732F2",
+          "url": "https://codeforces.com/gym/106732/problem/F2",
+          "difficulty": "*2100",
+          "hint": "DP. What should be the order of subtrees to visit.",
+          "statement": null,
+          "solution": {
+            "file": "cf106732f2.md",
+            "markdown": "**提示 1：** DP，要设计什么状态？如何确定子树的顺序？\n\n每个子树要维护什么呢？\n\n首先是走完这一棵子树的总改变量 $ws[u]$ ，不然走完这棵子树变成什么都不知道了。\n\n同时有的子树需要走完，有的子树只需要走进去遍历每个点，因此还需要维护这两种情况下分别的最小所需的初始能量。需要走完的记为 $dp_0[u]$ ，不需要走完的记为 $dp_1[u]$ 。\n\n$ws[u]$ 只是个求和，很好维护。\n\n$dp_0[u]$ 怎么维护呢？我们假设已经确定了各个子树的遍历顺序 $i_1,i_2,\\dots,i_k$ ，则其结果是：\n\n$$\n\\max(0, nums[u]+\\max(dp_0[i_1], -ws[i_1]+dp_0[i_2],\\dots,-ws[i_1]-ws[i_2]-\\dots-ws[i_{k-1}]+dp_0[i_k]))\n$$\n\n我们要调整 $i_1,i_2,\\dots,i_k$ 的顺序让这个数值尽可能小。\n\n对于其中 $ws[i]\\geq 0$ 的部分，走完这棵子树会多赚到能量。因此我们可以在开头将它们按照 $dp_0[i]$ 升序排列，可以使得开头完成正的改变量，同时 $\\max(dp_0[i_1], -ws[i_1]+dp_0[i_2],\\dots,-ws[i_1]-ws[i_2]-\\dots-ws[i_{k-1}]+dp_0[i_k])$ 不会比这里的第一个 $\\min dp_0[i]$ 更小，因为你迟早要走到第一个可以赚能量的子树，此时的要求不会比 $\\min dp_0[i]$ 低。\n\n对于其中 $ws[i]\\lt 0$ 的部分其中相邻的两项 $i,j$ ，我们要比较的等价于 $\\max(dp_0[i],-ws[i]+dp_0[j])$ 和 $\\max(dp_0[j],-ws[j]+dp_0[i])$ 。\n\n此时我们只需比较 $ws[i]+dp_0[i]$ 和 $ws[j]+dp_0[j]$ ，因为如果 $ws[i]+dp_0[i]\\gt ws[j]+dp_0[j]$ ，则 $dp_0[i]\\lt -ws[j]+dp_0[i]$ ，同时 $-ws[i]+dp_0[j]\\lt -ws[j]+dp_0[i]$ ，也就是前者的两个元素都严格小于后者的一个元素，因此满足小于关系。反向的逻辑也是成立的。同时等号的情况下，先后顺序并不影响。\n\n综上，按照这个关键字排序，依次遍历，即可更新 $dp_0[u]$ 。\n\n$dp_1[u]$ 呢？相当于挑选一棵子树最后遍历，其余的子树的相对顺序和前面的 $dp_0[u]$ 一致。\n\n所以可以在排序的序列上，去掉一个位置的元素 —— 也就是找到去掉这个元素的前缀和后缀，看其合并的结果，再加上这棵子树对应的 $dp_1[i]$ 的情况。\n\n最终的更新可能来自于三个部分——前缀部分经历的最低要求、前缀子树遍历完后在后缀遍历一部分的最低要求、以及前后缀都遍历完再在自己的子树中遍历的最低要求。\n\n时间复杂度为 $\\mathcal{O}(n\\log n)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    n = II()\n    nums = LII()\n    \n    path = [[] for _ in range(n)]\n    \n    for _ in range(n - 1):\n        u, v, w = MII()\n        u -= 1\n        v -= 1\n        path[u].append(w * n + v)\n        path[v].append(w * n + u)\n    \n    parent = [-1] * n\n    que = [0]\n    \n    for u in que:\n        for msk in path[u]:\n            w, v = divmod(msk, n)\n            if parent[u] != v:\n                parent[v] = u\n                que.append(v)\n    \n    dp0 = [0] * n\n    dp1 = [inf] * n\n    tot = [0] * n\n    \n    for u in reversed(que):\n        v0 = []\n        v1 = []\n        ws = []\n        \n        for msk in path[u]:\n            w, v = divmod(msk, n)\n            if parent[v] == u:\n                v0.append(fmax(w + dp0[v], 2 * w + tot[v]))\n                v1.append(w + dp1[v])\n                ws.append(2 * w + tot[v])\n                tot[u] += 2 * w + tot[v]\n        \n        k = len(v0)\n        \n        if k == 0:\n            dp0[u] = 0\n            dp1[u] = 0\n        else:\n            gain = [i for i in range(k) if ws[i] <= 0]\n            cost = [i for i in range(k) if ws[i] > 0]\n            gain.sort(key=lambda x: v0[x])\n            cost.sort(key=lambda x: ws[x] - v0[x])\n            st_range = gain + cost\n            \n            suff = [0] * (k + 1)\n            for idx in range(k - 1, -1, -1):\n                i = st_range[idx]\n                suff[idx] = fmax(suff[idx + 1] + ws[i], v0[i])\n            \n            cur_w = 0\n            for idx in range(k):\n                i = st_range[idx]\n                dp1[u] = fmin(dp1[u], max(dp0[u], suff[idx + 1] + cur_w, tot[u] - ws[i] + v1[i]))\n                dp0[u] = fmax(dp0[u], v0[i] + cur_w)\n                cur_w += ws[i]\n        \n        dp0[u] = fmax(dp0[u] - nums[u], 0)\n        dp1[u] = fmax(dp1[u] - nums[u], 0)\n        tot[u] -= nums[u]\n    \n    print(dp1[0])\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint n;\n\tcin >> n;\n\n\tvector<int> nums(n);\n\tfor (auto &x: nums) cin >> x;\n\n\tvector<vector<pair<int, int>>> path(n);\n\n\tfor (int i = 0; i < n - 1; i ++) {\n\t\tint u, v, w;\n\t\tcin >> u >> v >> w;\n\t\tu --, v --;\n\t\tpath[u].emplace_back(v, w);\n\t\tpath[v].emplace_back(u, w);\n\t}\n\n\tlong long inf = 4e18;\n\n\tauto dfs = [&] (auto &self, int u, int p) -> array<long long, 3> {\n\t\tvector<long long> v0s, v1s, w0s;\n\t\tlong long dp0 = 0, dp1 = inf, tot = 0;\n\n\t\tfor (auto &[v, w]: path[u]) {\n\t\t\tif (v != p) {\n\t\t\t\tauto [v0, v1, w0] = self(self, v, u);\n\t\t\t\tv0s.emplace_back(max(w + v0, 2 * w + w0));\n\t\t\t\tv1s.emplace_back(w + v1);\n\t\t\t\tw0s.emplace_back(2 * w + w0);\n\t\t\t\ttot += 2 * w + w0;\n\t\t\t}\n\t\t}\n\n\t\tint k = v0s.size();\n\n\t\tif (k) {\n\t\t\tvector<int> gain, cost;\n\t\t\tfor (int i = 0; i < k; i ++) {\n\t\t\t\tif (w0s[i] <= 0) gain.emplace_back(i);\n\t\t\t\telse cost.emplace_back(i);\n\t\t\t}\n\n\t\t\tsort(gain.begin(), gain.end(), [&] (int i, int j) {return v0s[i] < v0s[j];});\n\t\t\tsort(cost.begin(), cost.end(), [&] (int i, int j) {return w0s[i] - v0s[i] < w0s[j] - v0s[j];});\n\n\t\t\tvector<int> st_range;\n\t\t\tst_range.insert(st_range.end(), gain.begin(), gain.end());\n\t\t\tst_range.insert(st_range.end(), cost.begin(), cost.end());\n\n\t\t\tvector<long long> suff(k + 1, 0);\n\n\t\t\tfor (int idx = k - 1; idx >= 0; idx --) {\n\t\t\t\tint i = st_range[idx];\n\t\t\t\tsuff[idx] = max(suff[idx + 1] + w0s[i], v0s[i]);\n\t\t\t}\n\n\t\t\tlong long cur_w = 0;\n\t\t\tfor (int idx = 0; idx < k; idx ++) {\n\t\t\t\tint i = st_range[idx];\n\t\t\t\tdp1 = min(dp1, max({dp0, suff[idx + 1] + cur_w, tot - w0s[i] + v1s[i]}));\n\t\t\t\tdp0 = max(dp0, v0s[i] + cur_w);\n\t\t\t\tcur_w += w0s[i];\n\t\t\t}\n\t\t}\n\t\telse {\n\t\t\tdp0 = 0;\n\t\t\tdp1 = 0;\n\t\t}\n\n\t\tdp0 = max(dp0 - nums[u], 0ll);\n\t\tdp1 = max(dp1 - nums[u], 0ll);\n\t\ttot -= nums[u];\n\n\t\treturn {dp0, dp1, tot};\n\t};\n\n\tcout << dfs(dfs, 0, -1)[1];\n\n\treturn 0;\n}\n```"
+          }
+        }
+      ]
+    },
     {
       "date": "2026-10-02",
       "problems": [
@@ -2610,33 +2637,6 @@
           "solution": {
             "file": "cf106628d.md",
             "markdown": "**提示 1：** 先考虑固定的 $k$ 个数如何求解。剩下的好像很好办。\n\n如果有固定的 $k$ 个数，MST 边权和怎么求呢？\n\n$LSB(|a_u-a_v|)$ 也就是 $a_u, a_v$ 最低的不同的位。\n\n如果这 $k$ 个数的最低的 $i$ 位都相同，则 $LSB$ 肯定取不到那个位。\n\n所以 $LSB(|a_u-a_v|)$ 最小只能取到最小的有不同的位，设为 $x$ 。\n\n而我们根据这一位把数字分为两类，则两类间的边边权都是 $x$ 。\n\n而这些 $x$ 边权的边已经能形成一个连通图了，因此 MST 的边权和是 $(k-1)x$ 。\n\n所以综上，我们只需找到一个 $k$ 元子集，使得其最低的不同的位尽可能高。\n\n我们可以二分这一个位 $x$ ，这样我们只需统计更低的位的各种数字的出现频率，看是否有不小于 $k$ 的，如果有， $x$ 就是可行的了。\n\n时间复杂度为 $\\mathcal{O}(n\\log\\log M)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    t = II()\n    outs = []\n    \n    rnd = random.getrandbits(30)\n    \n    for _ in range(t):\n        n, k = MII()\n        nums = LII()\n        \n        l = 0\n        r = 29\n        \n        while l <= r:\n            mid = (l + r) // 2\n            \n            msk = (1 << mid) - 1\n            cnt = Counter()\n            \n            for x in nums:\n                cnt[(x & msk) ^ rnd] += 1\n            \n            if max(cnt.values()) >= k: l = mid + 1\n            else: r = mid - 1\n        \n        outs.append((k - 1) << r)\n        \n    print('\\n'.join(map(str, outs)))\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint t, rnd = rng();\n\tcin >> t;\n\n\twhile (t --) {\n\t\tint n, k;\n\t\tcin >> n >> k;\n\n\t\tvector<int> nums(n);\n\t\tfor (auto &v: nums) cin >> v;\n\n\t\tint l = 0, r = 29;\n\n\t\twhile (l <= r) {\n\t\t\tint mid = (l + r) / 2;\n\n\t\t\tint msk = (1 << mid) - 1;\n\t\t\tunordered_map<int, int> cnt;\n\n\t\t\tfor (auto &v: nums)\n\t\t\t\tcnt[(v & msk) ^ rnd] ++;\n\t\t\t\n\t\t\tint max_cnt = 0;\n\t\t\tfor (auto &[k, v]: cnt) max_cnt = max(max_cnt, v);\n\n\t\t\tif (max_cnt >= k) l = mid + 1;\n\t\t\telse r = mid - 1;\n\t\t}\n\n\t\tcout << ((long long)(k - 1) << r) << '\\n';\n\t}\n\n\treturn 0;\n}\n```"
-          }
-        }
-      ]
-    },
-    {
-      "date": "2026-07-25",
-      "problems": [
-        {
-          "code": "GYM104670G",
-          "url": "https://codeforces.com/gym/104670/problem/G",
-          "difficulty": "*1700",
-          "hint": "You don't need to be accurate, and the number of circles is relatively small.",
-          "statement": null,
-          "solution": {
-            "file": "cf104670g.md",
-            "markdown": "**提示 1：** 并非几何题。精度要求低，数据范围小。\n\n先看提示。\n\n我们不用任何几何知识。\n\n我们在 $-10\\leq x\\leq 20,-10\\leq x\\leq 20$ 的范围内进行随机采样，则其在图形内的概率是面积 / 900 。\n\n所以我们采样足够多次时，频率可以用于估计概率，也就是类似蒙特卡洛的方法估计面积。\n\n具体需要多少次，可以使用中心极限定理推一下，用正态分布进行最后估计。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    n = II()\n    xs = []\n    ys = []\n    rs = []\n    \n    for _ in range(n):\n        x, y, r = MII()\n        xs.append(x)\n        ys.append(y)\n        rs.append(r)\n    \n    import time\n    t = time.time()\n    \n    freq = 0\n    total = 0\n    \n    while time.time() - t < 2.5:\n        x = random.random() * 30 - 10\n        y = random.random() * 30 - 10\n        \n        total += 1\n        for i in range(n):\n            vx = xs[i]\n            vy = ys[i]\n            r = rs[i]\n            \n            if (x - vx) * (x - vx) + (y - vy) * (y - vy) <= r * r:\n                freq += 1\n                break\n    \n    print(freq / total * 900)\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint n;\n\tcin >> n;\n\n\tvector<array<int, 3>> circles(n);\n\tfor (auto &[x, y, r]: circles) cin >> x >> y >> r;\n\n\tauto start = chrono::steady_clock::now();\n\n\tint freq = 0, total = 0;\n\n\tauto random_value = [&] () -> long double {\n\t\tauto val = rngl();\n\t\tlong double ret = (long double)val / (1ull << 63) / 2;\n\t\treturn ret;\n\t};\n\n\twhile (true) {\n\t\tauto now = chrono::steady_clock::now();\n\t\tif (chrono::duration<double>(now - start).count() >= 2.5) break;\n\n\t\tdouble x = random_value() * 30 - 10;\n\t\tdouble y = random_value() * 30 - 10;\n\t\ttotal++;\n\n\t\tfor (auto &[vx, vy, r]: circles) {\n\t\t\tif ((x - vx) * (x - vx) + (y - vy) * (y - vy) <= r * r) {\n\t\t\t\tfreq ++; \n\t\t\t\tbreak;\n\t\t\t}\n\t\t}\n\t}\n\n\tcout << fixed << setprecision(15) << (long double)freq / total * 900;\n\n\treturn 0;\n}\n```"
-          }
-        },
-        {
-          "code": "GYM104670D",
-          "url": "https://codeforces.com/gym/104670/problem/D",
-          "difficulty": "*1900",
-          "hint": "Possible positions after the $k$ -th operation.",
-          "statement": null,
-          "solution": {
-            "file": "cf104670d.md",
-            "markdown": "**提示 1：** 找清楚条件。\n\n这里东南西北需要结合给出的样例确认，实则是上北下南左西右东。\n\n两个条件：\n\n- 到目标点的最短路长度是字符串的长度。\n\n- 到目标点的最短路可以每一项都跟给定的方向不同。\n\n所以我们先求到每个点的最短路。\n\n接下来，假设我们求得了所有走 $k$ 步满足条件的位置，即最短路长度是 $k$ ，且前 $k$ 步可以完全不等于给定操作的可达位置。\n\n接下来 $k+1$ 步的可行位置一定从这些位置出发。我们从这些位置出发，枚举三个非给定操作的方向，看对应的位置是否最短路长度为 $k+1$ ，如果是，将对应位置打上标记即可。\n\n最后将所有步长为 $|s|$ 的标记位置记为答案即可。\n\n时间复杂度为 $\\mathcal{O}(nm+|s|)$ 。\n\n### 具体代码如下——\n\nPython 做法如下——\n\n```Python []\ndef main():\n    m, n = MII()\n    tmp = [I() for _ in range(n)]\n    ops = I()\n    \n    grid = [[0] * m for _ in range(n)]\n    sx, sy = -1, -1\n    \n    for i in range(n):\n        for j in range(m):\n            if tmp[i][j] == '#': grid[i][j] = 1\n            elif tmp[i][j] == 'S': sx, sy = i, j\n    \n    dis = [[-1] * m for _ in range(n)]\n    \n    def f(x, y): return x * m + y\n    \n    dis[sx][sy] = 0\n    que = [f(sx, sy)]\n    dirs = [(-1, 0), (0, 1), (1, 0), (0, -1)]\n    \n    for u in que:\n        x, y = divmod(u, m)\n        \n        for dx, dy in dirs:\n            if grid[x + dx][y + dy]: continue\n            if dis[x + dx][y + dy] == -1:\n                dis[x + dx][y + dy] = dis[x][y] + 1\n                que.append(f(x + dx, y + dy))\n    \n    d = {\n        'N': (-1, 0),\n        'S': (1, 0),\n        'W': (0, -1),\n        'E': (0, 1)\n    }\n    \n    l = len(ops)\n    \n    ans = [[0] * m for _ in range(n)]\n    ans[sx][sy] = 1\n    \n    for u in que:\n        x, y = divmod(u, m)\n        \n        if ans[x][y] and dis[x][y] < l:\n            for c, (dx, dy) in d.items():\n                if c != ops[dis[x][y]] and dis[x + dx][y + dy] == dis[x][y] + 1:\n                    ans[x + dx][y + dy] = 1\n    \n    print('\\n'.join(''.join(('!' if dis[i][j] == l and ans[i][j] else '.') if tmp[i][j] == '.' else tmp[i][j] for j in range(m)) for i in range(n)))\n```\n\nC++ 做法如下——\n\n```cpp []\nint main() {\n\tios_base::sync_with_stdio(false);\n\tcin.tie(0);\n\tcout.tie(0);\n\n\tint n, m;\n\tcin >> m >> n;\n\n\tvector<string> grid(n);\n\tfor (auto &v: grid) cin >> v;\n\n\tstring ops;\n\tcin >> ops;\n\n\tint l = ops.size();\n\n\tint sx = -1, sy = -1;\n\n\tfor (int i = 0; i < n; i ++) {\n\t\tfor (int j = 0; j < m; j ++) {\n\t\t\tif (grid[i][j] == 'S') {\n\t\t\t\tsx = i, sy = j;\n\t\t\t}\n\t\t}\n\t}\n\n\tvector<pair<int, int>> que;\n\tvector<pair<int, int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};\n\tvector<vector<int>> dis(n, vector<int>(m, -1));\n\n\tque.emplace_back(sx, sy);\n\tdis[sx][sy] = 0;\n\n\tfor (int i = 0; i < que.size(); i ++) {\n\t\tauto [x, y] = que[i];\n\n\t\tfor (auto &[dx, dy]: dirs) {\n\t\t\tif (grid[x + dx][y + dy] == '#') continue;\n\t\t\tif (dis[x + dx][y + dy] == -1) {\n\t\t\t\tdis[x + dx][y + dy] = dis[x][y] + 1;\n\t\t\t\tque.emplace_back(x + dx, y + dy);\n\t\t\t}\n\t\t}\n\t}\n\n\tmap<char, pair<int, int>> mp;\n\tmp['N'] = {-1, 0};\n\tmp['S'] = {1, 0};\n\tmp['W'] = {0, -1};\n\tmp['E'] = {0, 1};\n\n\tvector<vector<int>> ans(n, vector<int>(m, 0));\n\tans[sx][sy] = 1;\n\n\tfor (auto &[x, y]: que) {\n\t\tif (ans[x][y]) {\n\t\t\tif (dis[x][y] < l) {\n\t\t\t\tfor (auto &[c, dir]: mp) {\n\t\t\t\t\tif (c != ops[dis[x][y]]) {\n\t\t\t\t\t\tauto [dx, dy] = dir;\n\t\t\t\t\t\tif (dis[x + dx][y + dy] == dis[x][y] + 1) {\n\t\t\t\t\t\t\tans[x + dx][y + dy] = 1;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\telse grid[x][y] = '!';\n\t\t}\n\t}\n\n\tfor (auto &v: grid) cout << v << '\\n';\n\n\treturn 0;\n}\n```"
           }
         }
       ]
@@ -9253,7 +9253,7 @@
     },
     {
       "name": "DP",
-      "count": 276,
+      "count": 277,
       "url": "https://github.com/Yawn-Sean/Daily_CF_Problems/blob/main/categories/DP.md",
       "problems": [
         {
@@ -10900,6 +10900,13 @@
           "difficulty": "*2100",
           "hint": "Transitions. Merge the same ones.",
           "solutionUrl": "https://github.com/Yawn-Sean/Daily_CF_Problems/blob/main/daily_problems/2026/08/0814/solution/cf106642a.md"
+        },
+        {
+          "code": "GYM106732F2",
+          "url": "https://codeforces.com/gym/106732/problem/F2",
+          "difficulty": "*2100",
+          "hint": "DP. What should be the order of subtrees to visit.",
+          "solutionUrl": "https://github.com/Yawn-Sean/Daily_CF_Problems/blob/main/daily_problems/2026/10/1003/solution/cf106732f2.md"
         },
         {
           "code": "CF1149B",
@@ -17870,7 +17877,7 @@
     },
     {
       "name": "binary_search",
-      "count": 99,
+      "count": 100,
       "url": "https://github.com/Yawn-Sean/Daily_CF_Problems/blob/main/categories/binary_search.md",
       "problems": [
         {
@@ -18243,6 +18250,13 @@
           "difficulty": "*1800",
           "hint": "The first query can be a long interval. And as time goes, the interval can grow longer.",
           "solutionUrl": "https://github.com/Yawn-Sean/Daily_CF_Problems/blob/main/daily_problems/2026/04/0428/solution/cf106501k.md"
+        },
+        {
+          "code": "GYM106733F",
+          "url": "https://codeforces.com/gym/106733/problem/F",
+          "difficulty": "*1800",
+          "hint": "Binary search on marginal effect.",
+          "solutionUrl": "https://github.com/Yawn-Sean/Daily_CF_Problems/blob/main/daily_problems/2026/10/1003/solution/cf106733f.md"
         },
         {
           "code": "CF739B",
@@ -19837,7 +19851,7 @@
     },
     {
       "name": "sortings",
-      "count": 79,
+      "count": 80,
       "url": "https://github.com/Yawn-Sean/Daily_CF_Problems/blob/main/categories/sortings.md",
       "problems": [
         {
@@ -20364,6 +20378,13 @@
           "difficulty": "*2100",
           "hint": "Once you find the starting position, the whole route seems easy to find.",
           "solutionUrl": "https://github.com/Yawn-Sean/Daily_CF_Problems/blob/main/daily_problems/2026/02/0209/solution/cf106124d.md"
+        },
+        {
+          "code": "GYM106732F2",
+          "url": "https://codeforces.com/gym/106732/problem/F2",
+          "difficulty": "*2100",
+          "hint": "DP. What should be the order of subtrees to visit.",
+          "solutionUrl": "https://github.com/Yawn-Sean/Daily_CF_Problems/blob/main/daily_problems/2026/10/1003/solution/cf106732f2.md"
         },
         {
           "code": "CF255E",

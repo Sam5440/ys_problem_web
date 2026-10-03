@@ -174,8 +174,10 @@ async function loadCuratedStatements() {
   try {
     for (const f of await readdir(STATEMENTS_DIR)) {
       if (!f.endsWith('.json')) continue;
-      const json = JSON.parse(await readFile(path.join(STATEMENTS_DIR, f), 'utf8'));
-      out.set(json.code.toLowerCase(), json);
+      try {
+        const json = JSON.parse(await readFile(path.join(STATEMENTS_DIR, f), 'utf8'));
+        out.set(json.code.toLowerCase(), json);
+      } catch {} // one malformed file must not drop the rest (concurrent writes)
     }
   } catch {}
   return out;

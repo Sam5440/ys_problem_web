@@ -2,8 +2,9 @@ name: Update daily problems data
 
 on:
   schedule:
-    # Refresh twice a day per request: 00:00 and 04:00 Beijing time (UTC+8)
+    # Refresh three times a day per request: 00:00, 01:00 and 04:00 Beijing time (UTC+8)
     - cron: "0 16 * * *"
+    - cron: "0 17 * * *"
     - cron: "0 20 * * *"
   workflow_dispatch:
 

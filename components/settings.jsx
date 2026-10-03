@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from 'react';
 import { AI_MODELS, aiTranslate } from './ai-translate';
+import { clearZhCache } from '@/lib/zh-store';
 
 /* ---------------- constants ---------------- */
 
@@ -17,8 +18,9 @@ export const CHANNELS = [
 // the only members of the 对照 fallback priority list.
 export const ARCHIVED_CHANNELS = ['deepl', 'youdao', 'caiyun', 'iflyrec'];
 
-// 对照 mode walks this list per segment: first channel with an archived
-// translation wins; gaps above the hit are bridged by the user's AI endpoint.
+// 对照 mode walks this list per segment: the first channel with a translation
+// wins. Translations come from the repo archive or from this browser, which
+// requests all four channels itself (lib/zh-store.js) and caches them.
 export const DEFAULT_PRIORITY = ['deepl', 'caiyun', 'iflyrec', 'youdao'];
 
 export const channelLabel = (id) => CHANNELS.find((c) => c.id === id)?.label || id;
@@ -27,7 +29,6 @@ const DEFAULT_SETTINGS = {
   defaultChannel: 'deepl',
   sidebarChannels: ['deepl', 'youdao', 'caiyun', 'iflyrec', 'ai'],
   zhPriority: DEFAULT_PRIORITY,
-  aiFallback: true,
   ai: { baseUrl: '', apiKey: '', model: AI_MODELS[0] },
 };
 
@@ -65,7 +66,6 @@ function loadSettings() {
       merged.zhPriority = [...new Set([...saved, ...ARCHIVED_CHANNELS])].filter((id) =>
         ARCHIVED_CHANNELS.includes(id),
       );
-      merged.aiFallback = v.aiFallback !== false;
       return merged;
     }
   } catch {}
@@ -220,7 +220,7 @@ function SettingsDialog({ onClose }) {
 
         <div className="space-y-2">
           <p className="text-xs font-medium text-muted-foreground">
-            对照翻译优先级（每段取首个有存档译文的渠道）
+            对照翻译优先级（每段取首个已有译文的渠道；缺失的译文由本机向各渠道实时请求，约每 3 秒一条，结果保存在本机浏览器）
           </p>
           <ul className="space-y-1">
             {(settings.zhPriority || []).map((id, i) => (
@@ -252,19 +252,6 @@ function SettingsDialog({ onClose }) {
               </li>
             ))}
           </ul>
-          <label className="flex items-start gap-2 pt-1 text-xs text-muted-foreground">
-            <input
-              type="checkbox"
-              className="mt-0.5"
-              checked={!!settings.aiFallback}
-              disabled={!aiReady}
-              onChange={(e) => setSettings({ aiFallback: e.target.checked })}
-            />
-            <span>
-              存档翻译缺失时用 AI 补缺，失败再降级到下一渠道
-              {!aiReady && <span className="block text-[11px] text-muted-foreground/70">需先在下方配置 AI 接口</span>}
-            </span>
-          </label>
         </div>
 
         <div className="space-y-1.5">
@@ -346,13 +333,25 @@ function SettingsDialog({ onClose }) {
           )}
         </div>
 
-        <button
-          type="button"
-          onClick={onClose}
-          className="w-full rounded-md border py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-        >
-          完成
-        </button>
+        <div className="flex items-center justify-between gap-2">
+          <button
+            type="button"
+            onClick={async () => {
+              await clearZhCache();
+              window.location.reload();
+            }}
+            className="rounded-md border px-2.5 py-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+          >
+            清除本机翻译缓存
+          </button>
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-md border bg-background px-4 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            完成
+          </button>
+        </div>
       </div>
     </div>
   );

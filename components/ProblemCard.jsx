@@ -74,7 +74,7 @@ export default function ProblemCard({ problem }) {
 
       <CardContent className="space-y-5">
         {s ? (
-          <StatementBody statement={s} />
+          <StatementBody statement={s} code={problem.code} />
         ) : (
           <div className="rounded-lg border border-dashed p-4 text-sm text-muted-foreground">
             暂无完整题面（Codeforces 反爬限制），点击右上角按钮前往原题查看。

@@ -103,7 +103,7 @@ export async function translateMissingStatements({ limit = LIMIT, force = FORCE 
   for (const f of files) {
     const json = JSON.parse(await readFile(path.join(STATEMENTS_DIR, f), 'utf8'));
     const { zh, titleZh } = normalizeTranslations(json, platforms);
-    const st = { file: f, json, zh, titleZh, engines: new Set(), tasks: [], logged: false };
+    const st = { file: f, json, zh, titleZh, engines: new Set(), tasks: [], logged: false, changed: false };
     const pushTask = (key, idx, text, platform) => {
       const task = { st, key, idx, text, platform, attempts: 0, nextRetryAt: 0, done: false, failed: false, claimed: false };
       st.tasks.push(task);
@@ -127,6 +127,19 @@ export async function translateMissingStatements({ limit = LIMIT, force = FORCE 
           return;
         }
         zh[key][i] = zh[key][i] || {};
+        // Standalone image segments carry nothing translatable — record them
+        // verbatim on every platform instead of burning retries each run
+        // (text-only services can never translate a bare ![](...) markdown).
+        if (/^\s*!\[[^\]]*]\([^)]*\)\s*$/.test(item)) {
+          for (const p of platforms) {
+            if (zh[key][i][p] !== item) {
+              zh[key][i][p] = item;
+              st.changed = true;
+              missing++;
+            }
+          }
+          return;
+        }
         for (const p of platforms) {
           if (force || !zh[key][i][p]) {
             pushTask(key, i, item, p);
@@ -204,7 +217,7 @@ export async function translateMissingStatements({ limit = LIMIT, force = FORCE 
   // retries them). A segment map that every platform failed is stored null.
   let written = 0;
   for (const st of fileState.values()) {
-    if (!st.engines.size) {
+    if (!st.engines.size && !st.changed) {
       console.warn(`  ${st.json.code}: nothing translated — file left unchanged`);
       continue;
     }
@@ -219,7 +232,10 @@ export async function translateMissingStatements({ limit = LIMIT, force = FORCE 
     st.json.titleZh = st.titleZh && Object.keys(st.titleZh).length ? st.titleZh : null;
     st.json.sectionsZh = st.zh;
     st.json.translatedAt = new Date().toISOString();
-    st.json.translatedBy = platforms.filter((p) => st.engines.has(p));
+    // Image-only fixes leave engines empty — keep the file's prior attribution.
+    st.json.translatedBy = st.engines.size
+      ? platforms.filter((p) => st.engines.has(p))
+      : (st.json.translatedBy || []);
     await writeFile(path.join(STATEMENTS_DIR, st.file), JSON.stringify(st.json, null, 2) + '\n');
     written++;
   }

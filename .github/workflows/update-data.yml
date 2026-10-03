@@ -71,6 +71,21 @@ jobs:
       # translates client-side instead — each visitor's browser requests the
       # missing (paragraph, channel) pairs itself (lib/zh-store.js) and
       # caches the results locally.
+      # AI backfill for the newest statements (OpenAI-compatible endpoint via
+      # repo secrets). Fills the `ai` channel of sectionsZh newest-first with
+      # a per-run segment budget; the client-side MT pipeline on the site
+      # covers the rest. Failures are non-fatal — affected segments just stay
+      # untranslated until a later run.
+      - name: AI-translate newest statements
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: node scripts/translate-ai.mjs
+        env:
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_MODEL: deepseek-v4-flash
+          AI_TRANSLATE_LIMIT: 60
+        continue-on-error: true
+
       - name: Re-attach statements to daily data
         if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
         env:

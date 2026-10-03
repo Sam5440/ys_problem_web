@@ -90,7 +90,10 @@ function findSpanClose(s, openIdx) {
 // works no matter which side of the transformation we captured.
 function unmathjax(html) {
   const stash = [];
-  html = html.replace(/<script type="math\/tex([^"]*)">([\s\S]*?)<\/script>/gi, (_, mode, tex) => {
+  // The ([^>]*) tail matters: real pages carry extra attributes after the type
+  // (e.g. <script type="math/tex" id="MathJax-Element-1">) — without it the
+  // script survives, the later <script truncation cuts the statement in half.
+  html = html.replace(/<script type="math\/tex([^"]*)"[^>]*>([\s\S]*?)<\/script>/gi, (_, mode, tex) => {
     stash.push(/display/i.test(mode) ? '$$' + tex + '$$' : '$$$' + tex + '$$$');
     return `%%ZSMJ${stash.length - 1}%%`;
   });

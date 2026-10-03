@@ -1,0 +1,41 @@
+{
+  "code": "GYM106732F2",
+  "letter": "F2",
+  "title": "F2. Expedition (hard version)",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106732/problem/F2",
+  "difficulty": "*2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "This is the hard version of the problem. The difference between the versions is that in this version, the path may end in any cave.",
+      "Henry went on an expedition into a network of caves in search of ancient artifacts. The entrance to the caves is at vertex 1%%ZSMJ0%%, and the corridors between caves form a tree.",
+      "Henry lights his way with a magic lamp. To pass through the i%%ZSMJ1%%-th corridor, the lamp spends wi%%ZSMJ2%% units of charge each time it is traversed.",
+      "However, the cave corridors are extremely unstable. After two traversals of the same corridor, its vault becomes too fragile, and it is impossible to use this corridor a third time. Therefore, Henry may traverse each corridor at most twice, regardless of the direction of movement.",
+      "There is an artifact in every cave. On the first visit to vertex v%%ZSMJ3%%, the artifact changes the lamp charge by av%%ZSMJ4%% units: some artifacts restore charge (those with av>0%%ZSMJ5%%), while others are cursed and instead take it away (av<0%%ZSMJ6%%). Visiting the cave again has no effect on the lamp charge.",
+      "At the beginning of the expedition, Henry is in cave 1%%ZSMJ7%% and immediately activates the artifact there. The lamp charge must never become negative at any moment.",
+      "Henry must visit all caves and collect all artifacts. After that, he can activate a portal in any cave and leave the dungeon, so he does not need to return to the entrance.",
+      "Determine the minimum initial lamp charge with which Henry can complete the expedition."
+    ],
+    "input": [
+      "The first line contains one integer n%%ZSMJ8%% (1≤n≤2⋅105)%%ZSMJ9%% — the number of caves.",
+      "The second line contains n%%ZSMJ10%% integers a1,a2,…,an%%ZSMJ11%% (−109≤ai≤109)%%ZSMJ12%% — the changes in lamp charge after the first visit to the corresponding caves. Note that each corridor can be traversed at most twice, regardless of direction.",
+      "The next n−1%%ZSMJ13%% lines contain three integers each: ui%%ZSMJ14%%, vi%%ZSMJ15%%, and wi%%ZSMJ16%% (1≤ui,vi≤n, ui≠vi, 1≤wi≤109)%%ZSMJ17%% — the endpoints of the i%%ZSMJ18%%-th corridor and the amount of charge required to traverse it.",
+      "It is guaranteed that the corridors form a tree."
+    ],
+    "output": [
+      "Print one integer — the minimum initial lamp charge with which Henry can visit all caves without the lamp charge ever becoming negative."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 10 -2 6 7\n1 2 10\n1 3 2\n3 4 1\n3 5 7",
+      "output": "16"
+    },
+    {
+      "input": "4\n2 -90 15 30\n1 2 4\n2 3 5\n1 4 10",
+      "output": "87"
+    }
+  ]
+}

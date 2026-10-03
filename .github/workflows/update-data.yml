@@ -53,6 +53,8 @@ jobs:
       # next daily run backfills them.
       - name: Translate statements (multi-platform, parallel)
         run: node scripts/translate-statements.mjs
+        env:
+          TRANSLATE_LIMIT: 25
         continue-on-error: true
 
       - name: Re-attach statements to daily data

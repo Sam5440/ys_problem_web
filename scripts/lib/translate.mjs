@@ -40,8 +40,10 @@ function protectMath(text) {
   const stash = [];
   // Zero-padded ids: bare "[M0]" gets interpreted (iflyrec translates it as
   // the money-supply term 流通中现金); "[M07]" survives every engine tested.
+  // Image markdown (parser emits ![…](espresso.codeforces.com/…)) and bare
+  // URLs are stashed too — MT engines mangle or drop them.
   const masked = String(text).replace(
-    /\$\$\$[\s\S]+?\$\$\$|\$\$[\s\S]+?\$\$|\$[^$\n]+?\$|`[^`\n]+`/g,
+    /\$\$\$[\s\S]+?\$\$\$|\$\$[\s\S]+?\$\$|\$[^$\n]+?\$|`[^`\n]+`|!\[[^\]]*\]\([^)]+\)|https?:\/\/\S+/g,
     (m) => `[M${String(stash.push(m) - 1).padStart(2, '0')}]`,
   );
   return { masked, stash };

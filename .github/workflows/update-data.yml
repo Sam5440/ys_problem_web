@@ -21,17 +21,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
+      # Cheap poll: compare upstream HEAD with the SHA recorded at the last
+      # full sync (data/.upstream-sha). Unchanged runs skip every step below
+      # and finish in under a minute, so the schedule can poll often without
+      # paying for Playwright, statement fetches or translations. Manual
+      # workflow_dispatch always runs fully (also refreshes the marker).
+      # If the upstream check itself fails, fall through to a full run.
+      - name: Check upstream for updates
+        id: upstream
+        run: |
+          UPSTREAM_SHA=$(git ls-remote https://github.com/Yawn-Sean/Daily_CF_Problems.git HEAD | cut -f1)
+          LAST_SHA=$(cat data/.upstream-sha 2>/dev/null || true)
+          if [ -n "$UPSTREAM_SHA" ] && [ "$UPSTREAM_SHA" = "$LAST_SHA" ]; then
+            echo "Upstream unchanged since last sync — skipping heavy steps."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+          echo "sha=$UPSTREAM_SHA" >> "$GITHUB_OUTPUT"
 
       - name: Install dependencies
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
         run: npm ci
 
       - name: Install Playwright Chromium (for Cloudflare pass-through)
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
         run: npx playwright install --with-deps chromium
 
       - name: Sync data from Yawn-Sean/Daily_CF_Problems
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: >
@@ -43,6 +61,7 @@ jobs:
       # hint + link until a later run succeeds. Problems already on disk
       # are skipped, so only never-fetched statements consume the budget.
       - name: Fetch statements for newest problems
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
         run: xvfb-run -a node scripts/fetch-statements.mjs --limit 4 --delay 6000
         env:
           CF_START_MODE: chrome-headful
@@ -51,18 +70,28 @@ jobs:
       # translated here: platforms run in parallel (single-threaded within
       # each), each segment retries ≤3 times 10s apart; segments that still
       # fail are stored null and show a 未翻译 marker on the site, and the
-      # next daily run backfills them.
+      # next upstream update backfills them.
       - name: Translate statements (multi-platform, parallel)
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
         run: node scripts/translate-statements.mjs
         env:
           TRANSLATE_LIMIT: 25
         continue-on-error: true
 
       - name: Re-attach statements to daily data
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: >
           CF_STATEMENTS=0 TRANSLATE=0 node scripts/update-data.mjs
+
+      # Persist the upstream HEAD we just synced so later polls can no-op.
+      - name: Record synced upstream SHA
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: |
+          if [ -n "${{ steps.upstream.outputs.sha }}" ]; then
+            echo "${{ steps.upstream.outputs.sha }}" > data/.upstream-sha
+          fi
 
       - name: Commit and push if data changed
         run: |

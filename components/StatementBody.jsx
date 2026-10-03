@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import CopyBox from './CopyBox';
 import { useAiSegment } from './ai-translate';
 import { useSettings, channelLabel, DEFAULT_PRIORITY } from './settings';
+import { hydrateStatement, useZhSegment } from '@/lib/zh-store';
 import { renderRich } from '@/lib/render';
 
 function SectionHeading({ children }) {
@@ -20,7 +21,7 @@ function UntranslatedMark({ note }) {
   );
 }
 
-/** Provenance tag for segments that resolved below top priority (or via AI). */
+/** Provenance tag for segments that resolved below top priority. */
 const badgeHtml = (label) =>
   `<span class="mr-1.5 inline-block rounded border border-border bg-muted px-1 py-px align-middle text-[10px] leading-4 text-muted-foreground">${label}</span>`;
 
@@ -68,28 +69,6 @@ function useNearViewport() {
   return [ref, visible];
 }
 
-/** One paragraph's Chinese line for an explicitly picked channel. */
-function ZhLine({ seg, en, channel, ai, note }) {
-  // legacy v1 string: the statement's only translation — show it for any channel
-  if (typeof seg === 'string') {
-    return (
-      <p
-        className={note ? 'text-[13px] text-muted-foreground' : ''}
-        dangerouslySetInnerHTML={{ __html: renderRich(seg) }}
-      />
-    );
-  }
-  if (channel === 'ai') {
-    return <AiZhLine en={en} ai={ai} note={note} />;
-  }
-  const zh = typeof seg?.[channel] === 'string' && seg[channel].trim() ? seg[channel] : null;
-  return zh ? (
-    <p dangerouslySetInnerHTML={{ __html: renderRich(zh) }} />
-  ) : (
-    <UntranslatedMark note={note ? `${note}（${channelLabel(channel)}）` : undefined} />
-  );
-}
-
 function AiZhLine({ en, ai, note }) {
   const [ref, visible] = useNearViewport();
   const state = useAiSegment(en, ai, visible && !!(ai?.baseUrl && ai?.apiKey));
@@ -103,75 +82,77 @@ function AiZhLine({ en, ai, note }) {
   );
 }
 
+/** Repo archive + this machine's fetched results; the archive wins ties
+    (it went through the image-loss post-processing when it was built). */
+function mergedChannels(seg, rec) {
+  const merged = {};
+  if (rec) {
+    for (const [ch, t] of Object.entries(rec.zh)) {
+      if (typeof t === 'string' && t.trim()) merged[ch] = t;
+    }
+  }
+  if (seg && typeof seg === 'object') {
+    for (const [ch, t] of Object.entries(seg)) {
+      if (typeof t === 'string' && t.trim()) merged[ch] = t;
+    }
+  }
+  return merged;
+}
+
 /**
  * 对照 mode's Chinese line: walk the user's priority list for the first
- * channel with an archived translation. Every gap above the hit is bridged
- * by the user's AI endpoint (on demand, cached); if the bridge fails, degrade
- * to the hit. No hit and a failed/absent bridge → untranslated mark.
+ * channel with a translation — the repo archive or one this browser fetched.
+ * While the client pipeline (lib/zh-store.js) is still filling the gaps a
+ * spinner shows; only when every channel failed does the mark appear. The
+ * line upgrades live when a higher-priority channel lands.
  */
-function ChainZhLine({ seg, en, priority, ai, aiFallback, note }) {
-  const [ref, visible] = useNearViewport();
-  const aiReady = !!(ai?.baseUrl && ai?.apiKey);
-  const aiState = useAiSegment(en, ai, aiFallback && aiReady && visible);
-
+function ChainZhLine({ segKey, seg, priority, note }) {
+  const rec = useZhSegment(segKey);
   // legacy v1 string: the statement's only translation
   if (typeof seg === 'string') {
-    return (
-      <p
-        className={note ? 'text-[13px] text-muted-foreground' : ''}
-        dangerouslySetInnerHTML={{ __html: renderRich(seg) }}
-      />
-    );
+    return <p dangerouslySetInnerHTML={{ __html: renderRich(seg) }} />;
   }
-
   const prio = priority?.length ? priority : DEFAULT_PRIORITY;
-  const hitIdx = prio.findIndex((ch) => typeof seg?.[ch] === 'string' && seg[ch].trim());
-  const hit = hitIdx >= 0 ? { channel: prio[hitIdx], zh: seg[prio[hitIdx]] } : null;
-  // bridge only fills gaps: top-priority hit needs no AI request
-  const bridging = aiFallback && aiReady && hitIdx !== 0;
-
-  if (bridging && aiState.status === 'done') {
+  const merged = mergedChannels(seg, rec);
+  const hitIdx = prio.findIndex((ch) => typeof merged[ch] === 'string' && merged[ch].trim());
+  if (hitIdx >= 0) {
     return (
-      <div ref={ref}>
-        <ZhWithBadge html={renderRich(aiState.text)} badge="AI" />
-      </div>
+      <ZhWithBadge html={renderRich(merged[prio[hitIdx]])} badge={hitIdx > 0 ? channelLabel(prio[hitIdx]) : undefined} />
     );
   }
-  if (hit) {
-    const showBadge = hitIdx > 0;
-    const waitingAi = bridging && (aiState.status === 'loading' || (aiState.status === 'idle' && visible));
-    return (
-      <div ref={ref}>
-        <ZhWithBadge html={renderRich(hit.zh)} badge={showBadge ? channelLabel(hit.channel) : undefined} />
-        {waitingAi && <SpinnerNote>AI 翻译中…</SpinnerNote>}
-      </div>
-    );
-  }
-  if (bridging) {
-    if (aiState.status === 'loading' || aiState.status === 'idle') {
-      return (
-        <div ref={ref}>
-          <SpinnerNote>AI 翻译中…</SpinnerNote>
-        </div>
-      );
-    }
-    // AI failed and nothing archived — report why
-    return (
-      <div ref={ref}>
-        <UntranslatedMark note={note ? `${note}（AI：${aiState.error}）` : `AI 翻译失败（${aiState.error}）`} />
-      </div>
-    );
-  }
+  const waiting = prio.some((ch) => rec.status[ch] !== 'failed');
   return (
-    <div ref={ref}>
-      <UntranslatedMark
-        note={note ? `${note}（暂无存档翻译${aiReady ? '，可开启 AI 补缺' : ''}）` : undefined}
-      />
+    <div>
+      {waiting ? (
+        <SpinnerNote>翻译中…</SpinnerNote>
+      ) : (
+        <UntranslatedMark note={note ? `${note}（暂无译文）` : undefined} />
+      )}
     </div>
   );
 }
 
-function Paragraphs({ list, zhList, mode, channel, ai, chain }) {
+/** One paragraph's Chinese line for an explicitly picked channel. */
+function ZhLine({ segKey, seg, channel, note }) {
+  const rec = useZhSegment(segKey);
+  // legacy v1 string: the statement's only translation — show it for any channel
+  if (typeof seg === 'string') {
+    return <p dangerouslySetInnerHTML={{ __html: renderRich(seg) }} />;
+  }
+  const archived =
+    typeof seg?.[channel] === 'string' && seg[channel].trim() ? seg[channel] : null;
+  const local = typeof rec.zh[channel] === 'string' && rec.zh[channel].trim() ? rec.zh[channel] : null;
+  const zh = archived || local;
+  if (zh) {
+    return <p dangerouslySetInnerHTML={{ __html: renderRich(zh) }} />;
+  }
+  if (rec.status[channel] === 'failed') {
+    return <UntranslatedMark note={note ? `${note}（${channelLabel(channel)}）` : undefined} />;
+  }
+  return <SpinnerNote>翻译中…</SpinnerNote>;
+}
+
+function Paragraphs({ list, zhList, mode, channel, ai, chain, segPrefix }) {
   const items = list.map((p, i) => {
     if (typeof p !== 'string') {
       return <pre key={i} className="code-block" dangerouslySetInnerHTML={{ __html: renderRich(p.pre) }} />;
@@ -179,11 +160,14 @@ function Paragraphs({ list, zhList, mode, channel, ai, chain }) {
     if (mode === 'en') {
       return <p key={i} dangerouslySetInnerHTML={{ __html: renderRich(p) }} />;
     }
+    const segKey = `${segPrefix}|${i}`;
     const zh = zhList?.[i];
     const zhLine = chain ? (
-      <ChainZhLine seg={zh} en={p} {...chain} />
+      <ChainZhLine segKey={segKey} seg={zh} priority={chain.priority} />
+    ) : channel === 'ai' ? (
+      <AiZhLine en={p} ai={ai} />
     ) : (
-      <ZhLine seg={zh} en={p} channel={channel} ai={ai} />
+      <ZhLine segKey={segKey} seg={zh} channel={channel} />
     );
     if (mode === 'both') {
       return (
@@ -200,68 +184,65 @@ function Paragraphs({ list, zhList, mode, channel, ai, chain }) {
   return <div className="stmt-body">{items}</div>;
 }
 
-function Section({ label, list, zhList, mode, channel, ai, chain }) {
+function Section({ label, list, zhList, mode, channel, ai, chain, segPrefix }) {
   if (!list?.length) return null;
   return (
     <div>
       <SectionHeading>{label}</SectionHeading>
-      <Paragraphs list={list} zhList={zhList} mode={mode} channel={channel} ai={ai} chain={chain} />
+      <Paragraphs list={list} zhList={zhList} mode={mode} channel={channel} ai={ai} chain={chain} segPrefix={segPrefix} />
     </div>
   );
 }
 
 /**
  * Full statement body (sections + examples), language-aware.
- * `statement.sectionsZh[key][i]` is index-aligned with `sections[key][i]`:
- * a per-channel map ({ deepl: …, youdao: … }), a legacy plain string, or
- * null when every pipeline channel failed. The "ai" channel translates on
- * demand in the browser via the user's own OpenAI-compatible endpoint.
  *
- * 对照 ("both") mode resolves each segment through the user's priority list
- * (settings) instead of one fixed channel, bridging missing archives with AI.
+ * `statement.sectionsZh[key][i]` is the repo-side archive: a per-channel map
+ * ({ deepl: …, youdao: … }) or a legacy plain string. Anything the archive
+ * does not cover is translated on this machine by lib/zh-store.js — all four
+ * channels, every paragraph, round-robin dispatched, 3s-paced per channel,
+ * results persisted in IndexedDB — and the lines below upgrade live as
+ * results land. The "ai" channel stays on-demand via the user's own
+ * OpenAI-compatible endpoint.
  */
-export default function StatementBody({ statement }) {
+export default function StatementBody({ statement, code }) {
   const { lang, settings } = useSettings();
   const s = statement;
   const mode = lang.mode;
   const channel = lang.channel;
-  const zh = mode === 'en' ? null : s.sectionsZh;
   const ai = channel === 'ai' ? settings.ai : null;
-  const chain =
-    mode === 'both'
-      ? {
-          priority: settings.zhPriority,
-          ai: settings.ai,
-          aiFallback: settings.aiFallback !== false,
-        }
-      : null;
-  const zhOf = (t) => (typeof t === 'string' ? t : t?.[channel]);
+  const chain = mode === 'both' ? { priority: settings.zhPriority } : null;
+
+  // Kick off (or resume) the client-side fill for every paragraph/channel
+  // pair this statement needs — archived pairs are skipped inside.
+  useEffect(() => {
+    if (mode !== 'en') hydrateStatement(code, s);
+  }, [code, s, mode]);
+
+  const segKeyOf = (secKey, i = 0) => `${code}|${secKey}|${i}`;
 
   let titleLine = null;
   if (mode !== 'en') {
-    const stored = zhOf(s.titleZh);
-    titleLine = chain ? (
-      <ChainZhLine seg={s.titleZh || null} en={s.title} note="标题" {...chain} />
-    ) : channel === 'ai' ? (
-      <ZhLine seg={{ [channel]: stored }} en={s.title} channel="ai" ai={ai} note="标题" />
-    ) : stored ? (
-      <ZhLine seg={{ [channel]: stored }} en={s.title} channel={channel} />
+    titleLine = channel === 'ai' ? (
+      <AiZhLine en={s.title} ai={ai} note="标题" />
+    ) : chain ? (
+      <ChainZhLine segKey={segKeyOf('title')} seg={s.titleZh || null} priority={chain.priority} note="标题" />
     ) : (
-      <ZhLine seg={null} en={s.title} channel={channel} ai={ai} note="标题" />
+      <ZhLine segKey={segKeyOf('title')} seg={s.titleZh || null} channel={channel} note="标题" />
     );
   }
 
   return (
     <>
       {titleLine && <div className="text-base font-medium tracking-tight text-foreground/90">{titleLine}</div>}
-      <Section label="题目描述" list={s.sections.legend} zhList={zh?.legend} mode={mode} channel={channel} ai={ai} chain={chain} />
+      <Section label="题目描述" list={s.sections.legend} zhList={s.sectionsZh?.legend} mode={mode} channel={channel} ai={ai} chain={chain} segPrefix={`${code}|legend`} />
       {(s.sections.input?.length > 0 || s.sections.output?.length > 0) && (
         <div className="grid gap-6 md:grid-cols-2">
-          <Section label="输入格式" list={s.sections.input} zhList={zh?.input} mode={mode} channel={channel} ai={ai} chain={chain} />
-          <Section label="输出格式" list={s.sections.output} zhList={zh?.output} mode={mode} channel={channel} ai={ai} chain={chain} />
+          <Section label="输入格式" list={s.sections.input} zhList={s.sectionsZh?.input} mode={mode} channel={channel} ai={ai} chain={chain} segPrefix={`${code}|input`} />
+          <Section label="输出格式" list={s.sections.output} zhList={s.sectionsZh?.output} mode={mode} channel={channel} ai={ai} chain={chain} segPrefix={`${code}|output`} />
         </div>
       )}
-      <Section label="备注" list={s.sections.note} zhList={zh?.note} mode={mode} channel={channel} ai={ai} chain={chain} />
+      <Section label="备注" list={s.sections.note} zhList={s.sectionsZh?.note} mode={mode} channel={channel} ai={ai} chain={chain} segPrefix={`${code}|note`} />
       {s.examples?.length > 0 && (
         <div>
           <SectionHeading>样例</SectionHeading>

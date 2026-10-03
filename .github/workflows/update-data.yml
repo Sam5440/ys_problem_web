@@ -66,18 +66,11 @@ jobs:
         env:
           CF_START_MODE: chrome-headful
 
-      # Statements fetched (this run or earlier) that still lack Chinese get
-      # translated here: platforms run in parallel (single-threaded within
-      # each), each segment retries ≤3 times 10s apart; segments that still
-      # fail are stored null and show a 未翻译 marker on the site, and the
-      # next upstream update backfills them.
-      - name: Translate statements (multi-platform, parallel)
-        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
-        run: node scripts/translate-statements.mjs
-        env:
-          TRANSLATE_LIMIT: 25
-        continue-on-error: true
-
+      # Statements are no longer translated in CI: the free MT channels
+      # rate-limit/bock datacenter runner IPs almost completely. The site
+      # translates client-side instead — each visitor's browser requests the
+      # missing (paragraph, channel) pairs itself (lib/zh-store.js) and
+      # caches the results locally.
       - name: Re-attach statements to daily data
         if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
         env:

@@ -113,13 +113,17 @@ function ChainZhLine({ segKey, seg, priority, note }) {
     return <p dangerouslySetInnerHTML={{ __html: renderRich(seg) }} />;
   }
   const prio = priority?.length ? priority : DEFAULT_PRIORITY;
+  // archived AI translations (CI backfill) sit below every MT channel
+  const full = [...prio, 'ai'];
   const merged = mergedChannels(seg, rec);
-  const hitIdx = prio.findIndex((ch) => typeof merged[ch] === 'string' && merged[ch].trim());
+  const hitIdx = full.findIndex((ch) => typeof merged[ch] === 'string' && merged[ch].trim());
   if (hitIdx >= 0) {
     return (
-      <ZhWithBadge html={renderRich(merged[prio[hitIdx]])} badge={hitIdx > 0 ? channelLabel(prio[hitIdx]) : undefined} />
+      <ZhWithBadge html={renderRich(merged[full[hitIdx]])} badge={hitIdx > 0 ? channelLabel(full[hitIdx]) : undefined} />
     );
   }
+  // spinner logic only watches the client pipeline's channels — `ai` here is
+  // archive-only and has no client task to wait for
   const waiting = prio.some((ch) => rec.status[ch] !== 'failed');
   return (
     <div>

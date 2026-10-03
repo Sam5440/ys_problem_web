@@ -13,11 +13,21 @@ export const CHANNELS = [
   { id: 'ai', label: 'AI' },
 ];
 
+// Channels whose translations the daily pipeline archives in the repo —
+// the only members of the 对照 fallback priority list.
+export const ARCHIVED_CHANNELS = ['deepl', 'youdao', 'caiyun', 'iflyrec'];
+
+// 对照 mode walks this list per segment: first channel with an archived
+// translation wins; gaps above the hit are bridged by the user's AI endpoint.
+export const DEFAULT_PRIORITY = ['deepl', 'caiyun', 'iflyrec', 'youdao'];
+
 export const channelLabel = (id) => CHANNELS.find((c) => c.id === id)?.label || id;
 
 const DEFAULT_SETTINGS = {
   defaultChannel: 'deepl',
   sidebarChannels: ['deepl', 'youdao', 'caiyun', 'iflyrec', 'ai'],
+  zhPriority: DEFAULT_PRIORITY,
+  aiFallback: true,
   ai: { baseUrl: '', apiKey: '', model: AI_MODELS[0] },
 };
 
@@ -36,7 +46,7 @@ function loadLang(defaultChannel) {
     if (legacy === 'zh') return { mode: 'zh', channel: defaultChannel };
     if (legacy === 'both') return { mode: 'both', channel: defaultChannel };
   } catch {}
-  return { mode: 'en', channel: defaultChannel }; // default: English original
+  return { mode: 'both', channel: defaultChannel }; // default: 对照（原文 + 优先级链译文）
 }
 
 function loadSettings() {
@@ -44,11 +54,19 @@ function loadSettings() {
     const raw = window.localStorage.getItem(SETTINGS_KEY);
     if (raw) {
       const v = JSON.parse(raw);
-      return {
+      const merged = {
         ...DEFAULT_SETTINGS,
         ...v,
         ai: { ...DEFAULT_SETTINGS.ai, ...(v.ai || {}) },
       };
+      // keep every known archived channel in the priority list: custom order
+      // first, channels saved before an upgrade appended in default position.
+      const saved = Array.isArray(merged.zhPriority) ? merged.zhPriority : [];
+      merged.zhPriority = [...new Set([...saved, ...ARCHIVED_CHANNELS])].filter((id) =>
+        ARCHIVED_CHANNELS.includes(id),
+      );
+      merged.aiFallback = v.aiFallback !== false;
+      return merged;
     }
   } catch {}
   return DEFAULT_SETTINGS;
@@ -64,7 +82,7 @@ export function useSettings() {
 
 export function SettingsProvider({ children }) {
   const [settings, setSettingsState] = useState(DEFAULT_SETTINGS);
-  const [lang, setLangState] = useState({ mode: 'en', channel: DEFAULT_SETTINGS.defaultChannel });
+  const [lang, setLangState] = useState({ mode: 'both', channel: DEFAULT_SETTINGS.defaultChannel });
   const [dialogOpen, setDialogOpen] = useState(false);
 
   useEffect(() => {
@@ -151,7 +169,7 @@ function Field({ label, hint, children }) {
 }
 
 function SettingsDialog({ onClose }) {
-  const { settings, setSettings, setLang, aiReady } = useSettings();
+  const { settings, setSettings, aiReady } = useSettings();
   const [ai, setAi] = useState(settings.ai);
   const [test, setTest] = useState(null); // {state: 'loading'|'ok'|'fail', msg}
 
@@ -179,6 +197,14 @@ function SettingsDialog({ onClose }) {
     setSettings({ sidebarChannels: next });
   };
 
+  const movePriority = (i, d) => {
+    const next = [...(settings.zhPriority || [])];
+    const j = i + d;
+    if (j < 0 || j >= next.length) return;
+    [next[i], next[j]] = [next[j], next[i]];
+    setSettings({ zhPriority: next });
+  };
+
   return (
     <div className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-black/60 p-4 pt-[8vh]" onClick={onClose}>
       <div
@@ -192,27 +218,53 @@ function SettingsDialog({ onClose }) {
           </button>
         </div>
 
-        <div className="space-y-1.5">
-          <p className="text-xs font-medium text-muted-foreground">默认中文渠道（侧栏首次选择中文时使用）</p>
-          <div className="flex flex-wrap gap-1.5">
-            {CHANNELS.map((c) => (
-              <button
-                key={c.id}
-                type="button"
-                onClick={() => {
-                  setSettings({ defaultChannel: c.id });
-                  setLang((prev) => ({ ...prev, channel: c.id }));
-                }}
-                className={`rounded-md border px-2.5 py-1 text-xs transition-colors ${
-                  settings.defaultChannel === c.id
-                    ? 'border-primary/60 bg-primary/15 text-primary'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                {c.label}
-              </button>
+        <div className="space-y-2">
+          <p className="text-xs font-medium text-muted-foreground">
+            对照翻译优先级（每段取首个有存档译文的渠道）
+          </p>
+          <ul className="space-y-1">
+            {(settings.zhPriority || []).map((id, i) => (
+              <li key={id} className="flex items-center justify-between rounded-md border px-2.5 py-1 text-xs">
+                <span>
+                  <span className="mr-2 inline-block w-3 text-muted-foreground">{i + 1}</span>
+                  {channelLabel(id)}
+                </span>
+                <span className="flex gap-0.5">
+                  <button
+                    type="button"
+                    onClick={() => movePriority(i, -1)}
+                    disabled={i === 0}
+                    aria-label={`${channelLabel(id)} 上移`}
+                    className="rounded px-1.5 py-0.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground disabled:opacity-25"
+                  >
+                    ↑
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => movePriority(i, 1)}
+                    disabled={i === settings.zhPriority.length - 1}
+                    aria-label={`${channelLabel(id)} 下移`}
+                    className="rounded px-1.5 py-0.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground disabled:opacity-25"
+                  >
+                    ↓
+                  </button>
+                </span>
+              </li>
             ))}
-          </div>
+          </ul>
+          <label className="flex items-start gap-2 pt-1 text-xs text-muted-foreground">
+            <input
+              type="checkbox"
+              className="mt-0.5"
+              checked={!!settings.aiFallback}
+              disabled={!aiReady}
+              onChange={(e) => setSettings({ aiFallback: e.target.checked })}
+            />
+            <span>
+              存档翻译缺失时用 AI 补缺，失败再降级到下一渠道
+              {!aiReady && <span className="block text-[11px] text-muted-foreground/70">需先在下方配置 AI 接口</span>}
+            </span>
+          </label>
         </div>
 
         <div className="space-y-1.5">

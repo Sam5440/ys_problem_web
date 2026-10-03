@@ -2,10 +2,10 @@ name: Update daily problems data
 
 on:
   schedule:
-    # Refresh three times a day per request: 00:00, 01:00 and 04:00 Beijing time (UTC+8)
-    - cron: "0 16 * * *"
-    - cron: "0 17 * * *"
-    - cron: "0 20 * * *"
+    # Poll hourly at :12 (off the top of the hour to dodge schedule delays and
+    # drops). Runs are cheap when upstream is unchanged: the upstream check
+    # below skips everything until Yawn-Sean/Daily_CF_Problems has a new commit.
+    - cron: "12 * * * *"
   workflow_dispatch:
 
 permissions:

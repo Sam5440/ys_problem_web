@@ -44,26 +44,6 @@
     "iflyrec": "H.圆柱图"
   },
   "sectionsZh": {
-    "legend": [
-      {
-        "deepl": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
-        "youdao": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
-        "caiyun": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
-        "iflyrec": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)"
-      },
-      {
-        "deepl": "如果可以将一个无向图分割成两个长度相等的互不相交的简单循环，使得第一个循环中的第 i 个节点与第二个循环中的第 i 个节点相连，那么这个无向图就是圆柱图。",
-        "caiyun": "无向图是圆柱形的，如果它可以被分割成两个长度相等的不相交简单循环，使得第一个循环中的第一个节点与第二个循环中的第一个节点相连。",
-        "youdao": "如果一个无向图可以被分割成两个不等长的不相交的简单循环，使得第一个循环中的第i个节点与第二个循环中的第i个节点相连，那么这个图就是圆柱形的。",
-        "iflyrec": "一个无向图是柱面的，如果它可以被分成两个长度相等的不相交的简单圈，使得第一个圈中的第I个节点连接到第二个圈中的第I个节点。"
-      },
-      {
-        "deepl": "给定一个偶数个节点 n 和 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 条边的无向图，判断它是否是圆柱形，如果是，则打印出构成它的两个循环(具体要求请查看输出部分)。",
-        "caiyun": "给定一个由偶数个节点 n 和 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 边组成的无向图，确定它是否为圆柱形，如果是，打印形成它的两个循环 (查看输出部分以了解确切的要求)。",
-        "youdao": "给定一个有偶数个节点n和![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)条边的无向图，确定它是否是圆柱形的，如果是，打印形成它的两个循环(检查输出部分以获得确切的要求)。",
-        "iflyrec": "给定一个具有偶数个节点n和![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)条边的无向图，确定它是否是圆柱形的，如果是，则打印形成它的两个循环(检查输出部分的确切要求)。"
-      }
-    ],
     "input": [
       {
         "deepl": "第一行输入包含一个偶数整数 n（6 ≤ n ≤ 105），即图形中的节点数。",
@@ -93,12 +73,14 @@
       {
         "deepl": "- 循环中的每个连续节点必须通过输入中的一条边连接。此外，循环中的第一个节点和最后一个节点也必须相连。",
         "caiyun": "- 循环中的每个连续节点都必须通过输入中的一个边连接。此外，循环中的第一个和最后一个节点也必须连接。",
-        "youdao": "—在一个循环中，每个连续的节点必须通过输入中的一条边连接。循环中的第一个节点和最后一个节点也必须连接起来。"
+        "youdao": "—在一个循环中，每个连续的节点必须通过输入中的一条边连接。循环中的第一个节点和最后一个节点也必须连接起来。",
+        "iflyrec": "-循环中的每个连续节点必须通过输入中的边连接。此外，必须连接循环中的第一个和最后一个节点。"
       },
       {
         "deepl": "- 第一个循环中的第 i 个节点必须与第二个循环中的第 i 个节点相连。",
         "caiyun": "第一个循环中的第一个节点必须连接到第二个循环中的第一个节点。",
-        "youdao": "—第一个循环的第i个节点必须连接到第二个循环的第i个节点。"
+        "youdao": "—第一个循环的第i个节点必须连接到第二个循环的第i个节点。",
+        "iflyrec": "-第一个循环中的第I个节点必须连接到第二个循环中的第I个节点。"
       },
       {
         "deepl": "- n 个节点中的每个节点都必须恰好属于其中一个循环。",
@@ -112,13 +94,30 @@
         "youdao": "如果有多个解决方案，则可以打印其中的任何一个。",
         "iflyrec": "如果有多个解决方案，则可以打印其中的任何一个。"
       }
+    ],
+    "legend": [
+      {
+        "deepl": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
+        "youdao": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
+        "caiyun": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
+        "iflyrec": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)"
+      },
+      {
+        "deepl": "如果可以将一个无向图分割成两个长度相等的互不相交的简单循环，使得第一个循环中的第 i 个节点与第二个循环中的第 i 个节点相连，那么这个无向图就是圆柱图。",
+        "caiyun": "无向图是圆柱形的，如果它可以被分割成两个长度相等的不相交简单循环，使得第一个循环中的第一个节点与第二个循环中的第一个节点相连。",
+        "youdao": "如果一个无向图可以被分割成两个不等长的不相交的简单循环，使得第一个循环中的第i个节点与第二个循环中的第i个节点相连，那么这个图就是圆柱形的。",
+        "iflyrec": "一个无向图是柱面的，如果它可以被分成两个长度相等的不相交的简单圈，使得第一个圈中的第I个节点连接到第二个圈中的第I个节点。"
+      },
+      {
+        "deepl": "给定一个偶数个节点 n 和 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 条边的无向图，判断它是否是圆柱形，如果是，则打印出构成它的两个循环(具体要求请查看输出部分)。",
+        "caiyun": "给定一个由偶数个节点 n 和 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 边组成的无向图，确定它是否为圆柱形，如果是，打印形成它的两个循环 (查看输出部分以了解确切的要求)。",
+        "youdao": "给定一个有偶数个节点n和![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)条边的无向图，确定它是否是圆柱形的，如果是，打印形成它的两个循环(检查输出部分以获得确切的要求)。",
+        "iflyrec": "给定一个具有偶数个节点n和![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)条边的无向图，确定它是否是圆柱形的，如果是，则打印形成它的两个循环(检查输出部分的确切要求)。"
+      }
     ]
   },
-  "translatedAt": "2026-10-03T08:10:24.645Z",
+  "translatedAt": "2026-10-03T08:02:34.090Z",
   "translatedBy": [
-    "deepl",
-    "youdao",
-    "caiyun",
     "iflyrec"
   ]
 }

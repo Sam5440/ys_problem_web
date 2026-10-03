@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import { SettingsGearButton } from './settings';
 
 const NAV = [
   { href: '/', label: '今日两题' },
@@ -47,12 +48,15 @@ export default function SiteHeader() {
             );
           })}
         </nav>
-        <Button asChild variant="outline" size="sm" className="ml-auto">
-          <a href="https://github.com/Yawn-Sean/Daily_CF_Problems" target="_blank" rel="noreferrer">
-            <GithubMark className="size-3.5" />
-            源仓库
-          </a>
-        </Button>
+        <div className="ml-auto flex items-center gap-2">
+          <SettingsGearButton />
+          <Button asChild variant="outline" size="sm">
+            <a href="https://github.com/Yawn-Sean/Daily_CF_Problems" target="_blank" rel="noreferrer">
+              <GithubMark className="size-3.5" />
+              源仓库
+            </a>
+          </Button>
+        </div>
       </div>
     </header>
   );

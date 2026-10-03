@@ -33,38 +33,9 @@ async function fetchWithTimeout(url, init) {
 }
 
 /* ---------------- math / inline-code protection ----------------
- * MT engines destroy Codeforces math ($$$...$$$) — placeholder it out
- * before translating and splice it back afterwards. */
-
-function protectMath(text) {
-  const stash = [];
-  // Zero-padded ids: bare "[M0]" gets interpreted (iflyrec translates it as
-  // the money-supply term 流通中现金); "[M07]" survives every engine tested.
-  // Image markdown (parser emits ![…](espresso.codeforces.com/…)) and bare
-  // URLs are stashed too — MT engines mangle or drop them.
-  const masked = String(text).replace(
-    /\$\$\$[\s\S]+?\$\$\$|\$\$[\s\S]+?\$\$|\$[^$\n]+?\$|`[^`\n]+`|!\[[^\]]*\]\([^)]+\)|https?:\/\/\S+/g,
-    (m) => `[M${String(stash.push(m) - 1).padStart(2, '0')}]`,
-  );
-  return { masked, stash };
-}
-
-function restoreMath(translated, stash) {
-  if (!stash.length) return translated;
-  // Engines may answer with fullwidth brackets/letters/digits — fold them back
-  // before matching, and count slots: any lost/mangled placeholder fails the round.
-  const fold = (s) =>
-    s.replace(/[Ａ-Ｚａ-ｚ０-９【】［（]/g, (c) =>
-      String.fromCharCode(c.charCodeAt(0) - 0xfee0),
-    ).replace(/（/g, '(');
-  const normalized = fold(translated);
-  const found = normalized.match(/\[\s*M\s*\d+\s*\]/gi);
-  if (!found || found.length !== stash.length) return null;
-  return normalized.replace(/\[\s*M\s*(\d+)\s*\]/gi, (_, n) => {
-    const i = Number(n);
-    return i < stash.length ? stash[i] : '';
-  });
-}
+ * Shared with the browser-side AI translation: placeholder-out before MT,
+ * splice back with survival verification. */
+import { protectMath, restoreMath } from '../../lib/mt-protect.js';
 
 /* ---------------- engines (translate to Chinese) ---------------- */
 

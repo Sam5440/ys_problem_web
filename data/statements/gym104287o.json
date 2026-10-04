@@ -10,35 +10,35 @@
   "sections": {
     "legend": [
       "Note the higher time limit than usual.",
-      "You are given an array a%%ZSMJ0%% of n%%ZSMJ1%% integers and q%%ZSMJ2%% queries to process.",
-      "Each query consists of three integers, l%%ZSMJ3%%, r%%ZSMJ4%% and x%%ZSMJ5%%, and indicates that each value of a%%ZSMJ6%% between l%%ZSMJ7%% and r%%ZSMJ8%%, inclusive, is incremented by x%%ZSMJ9%%. Note that the updates are not independent, so the increments persist for the following queries.",
-      "After each query, print the minimum i%%ZSMJ10%% that satisfies the following conditions:",
-      "2≤i≤n%%ZSMJ11%%.",
-      "a1+a2+…+ai−1≤ai%%ZSMJ12%%."
+      "You are given an array a$$$a$$$ of n$$$n$$$ integers and q$$$q$$$ queries to process.",
+      "Each query consists of three integers, l$$$l$$$, r$$$r$$$ and x$$$x$$$, and indicates that each value of a$$$a$$$ between l$$$l$$$ and r$$$r$$$, inclusive, is incremented by x$$$x$$$. Note that the updates are not independent, so the increments persist for the following queries.",
+      "After each query, print the minimum i$$$i$$$ that satisfies the following conditions:",
+      "2≤i≤n$$$2 \\leq i \\leq n$$$.",
+      "a1+a2+…+ai−1≤ai$$$a_{1} + a_{2} + \\ldots + a_{i - 1} \\leq a_{i}$$$."
     ],
     "input": [
-      "The first line contains two integers, n%%ZSMJ15%% and q%%ZSMJ16%%, the size of the array and the number of queries, respectively. (2≤n≤106;1≤q≤106)%%ZSMJ17%%.",
-      "The next line contains n%%ZSMJ18%% integers, a1a2…an%%ZSMJ19%%. (−109≤ai≤109)%%ZSMJ20%%.",
-      "The following q%%ZSMJ21%% lines will each contain three integers, l%%ZSMJ22%%, r%%ZSMJ23%% and x%%ZSMJ24%%. (1≤l≤r≤n;1≤x≤109)%%ZSMJ25%%.",
-      "It is guaranteed that the sum of (r−l+1)⋅x%%ZSMJ26%% over all queries is never greater than 1018%%ZSMJ27%%.",
-      "−%%ZSMJ28%%",
-      "Testcases in the subtasks are numbered from 1−20%%ZSMJ29%% with samples skipped.",
-      "For testcases 1−5%%ZSMJ30%%, 2≤n≤1000%%ZSMJ31%% and 1≤q≤1000%%ZSMJ32%%.",
+      "The first line contains two integers, n$$$n$$$ and q$$$q$$$, the size of the array and the number of queries, respectively. (2≤n≤106;1≤q≤106)$$$(2 \\leq n \\leq 10^{6}; 1 \\leq q \\leq 10^{6})$$$.",
+      "The next line contains n$$$n$$$ integers, a1a2…an$$$a_{1}a_{2}\\ldots a_{n}$$$. (−109≤ai≤109)$$$(-10^{9} \\leq a_{i} \\leq 10^{9})$$$.",
+      "The following q$$$q$$$ lines will each contain three integers, l$$$l$$$, r$$$r$$$ and x$$$x$$$. (1≤l≤r≤n;1≤x≤109)$$$(1 \\leq l \\leq r \\leq n; 1 \\leq x \\leq 10^{9})$$$.",
+      "It is guaranteed that the sum of (r−l+1)⋅x$$$(r - l + 1) \\cdot x$$$ over all queries is never greater than 1018$$$10^{18}$$$.",
+      "−$$$-$$$",
+      "Testcases in the subtasks are numbered from 1−20$$$1−20$$$ with samples skipped.",
+      "For testcases 1−5$$$1-5$$$, 2≤n≤1000$$$2 \\le n \\le 1000$$$ and 1≤q≤1000$$$1 \\le q \\le 1000$$$.",
       "The remaining testcases do not satisfy any additional constraints."
     ],
     "output": [
-      "For each query, output the minimum i%%ZSMJ33%% that satisfies the following conditions:",
-      "2≤i≤n%%ZSMJ34%%.",
-      "a1+a2+…+ai−1≤ai%%ZSMJ35%%."
+      "For each query, output the minimum i$$$i$$$ that satisfies the following conditions:",
+      "2≤i≤n$$$2 \\leq i \\leq n$$$.",
+      "a1+a2+…+ai−1≤ai$$$a_{1} + a_{2} + \\ldots + a_{i - 1} \\leq a_{i}$$$."
     ],
     "note": [
       "Explanation of the first sample:",
-      "After the first query, the array a%%ZSMJ38%% looks like this: [2,−1,1,1,1,1].%%ZSMJ39%% The smallest i%%ZSMJ40%% which satisfies the condition is 3%%ZSMJ41%%, as a1+a2≤a3%%ZSMJ42%%.",
-      "After the second query, the array a%%ZSMJ43%% looks like this: [6,−1,1,1,1,1].%%ZSMJ44%% There is no i%%ZSMJ45%% which satisfies the constraints.",
-      "After the third query, the array a%%ZSMJ46%% looks like this: [6,8,1,1,1,1].%%ZSMJ47%% The smallest i%%ZSMJ48%% which satisfies the condition is 2%%ZSMJ49%%, as a1≤a2%%ZSMJ50%%.",
-      "After the fourth query, the array a%%ZSMJ51%% looks like this: [6,8,1,21,21,21].%%ZSMJ52%% The smallest i%%ZSMJ53%% which satisfies the condition is 2%%ZSMJ54%%, as a1≤a2%%ZSMJ55%%.",
-      "After the fifth query, the array a%%ZSMJ56%% looks like this: [9,8,1,21,21,21].%%ZSMJ57%% The smallest i%%ZSMJ58%% which satisfies the condition is 4%%ZSMJ59%%, as a1+a2+a3≤a4%%ZSMJ60%%.",
-      "−%%ZSMJ61%%",
+      "After the first query, the array a$$$a$$$ looks like this: [2,−1,1,1,1,1].$$$[2,-1,1,1,1,1].$$$ The smallest i$$$i$$$ which satisfies the condition is 3$$$3$$$, as a1+a2≤a3$$$a_1 + a_2 \\le a_3$$$.",
+      "After the second query, the array a$$$a$$$ looks like this: [6,−1,1,1,1,1].$$$[6,-1,1,1,1,1].$$$ There is no i$$$i$$$ which satisfies the constraints.",
+      "After the third query, the array a$$$a$$$ looks like this: [6,8,1,1,1,1].$$$[6,8,1,1,1,1].$$$ The smallest i$$$i$$$ which satisfies the condition is 2$$$2$$$, as a1≤a2$$$a_1 \\le a_2$$$.",
+      "After the fourth query, the array a$$$a$$$ looks like this: [6,8,1,21,21,21].$$$[6,8,1,21,21,21].$$$ The smallest i$$$i$$$ which satisfies the condition is 2$$$2$$$, as a1≤a2$$$a_1 \\le a_2$$$.",
+      "After the fifth query, the array a$$$a$$$ looks like this: [9,8,1,21,21,21].$$$[9,8,1,21,21,21].$$$ The smallest i$$$i$$$ which satisfies the condition is 4$$$4$$$, as a1+a2+a3≤a4$$$a_1 + a_2 + a_3 \\le a_4$$$.",
+      "−$$$-$$$",
       "Idea: Esomer",
       "Preparation: Esomer",
       "Ocurrences: Advanced 10"
@@ -53,5 +53,42 @@
       "input": "5 10\n9 -17 -6 1 -58\n1 4 4\n3 4 5\n1 4 7\n5 5 1\n2 2 3\n5 5 6\n5 5 7\n2 3 10\n2 4 7\n2 4 7",
       "output": "4\n3\n-1\n-1\n-1\n-1\n-1\n-1\n-1\n2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

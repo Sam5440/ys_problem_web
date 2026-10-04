@@ -9,28 +9,28 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Tim the Busy Beaver has signed up for a pistol class in order to pass their PE requirement and wants to be an elite marksman. The MIT shooting range has N%%ZSMJ0%% (1≤N≤3⋅105)%%ZSMJ1%% lanes numbered from 1%%ZSMJ2%% to N%%ZSMJ3%%. Lane i%%ZSMJ4%% currently has Ai%%ZSMJ5%% (0≤Ai≤5⋅105)%%ZSMJ6%% targets lined up in a row. It is guaranteed that there is at least one target in the entire range.",
-      "Tim's practice gun has an infinite number of bullets, and he needs to shoot down every target. Before each shot, Tim will pick a lane and fire 1%%ZSMJ7%% shot down that lane. Once a target is hit, it will be knocked down and will never come back up.",
-      "However, Tim's aim is terrible, so every odd-numbered shot will hit the first target in the lane, while every even-numbered shot will miss the first target in the lane and hit the second one (if it exists). The first shot is shot 1%%ZSMJ8%%.",
+      "Tim the Busy Beaver has signed up for a pistol class in order to pass their PE requirement and wants to be an elite marksman. The MIT shooting range has N$$$N$$$ (1≤N≤3⋅105)$$$(1 \\leq N \\leq 3 \\cdot 10^5)$$$ lanes numbered from 1$$$1$$$ to N$$$N$$$. Lane i$$$i$$$ currently has Ai$$$A_i$$$ (0≤Ai≤5⋅105)$$$(0 \\leq A_i \\leq 5 \\cdot 10^5)$$$ targets lined up in a row. It is guaranteed that there is at least one target in the entire range.",
+      "Tim's practice gun has an infinite number of bullets, and he needs to shoot down every target. Before each shot, Tim will pick a lane and fire 1$$$1$$$ shot down that lane. Once a target is hit, it will be knocked down and will never come back up.",
+      "However, Tim's aim is terrible, so every odd-numbered shot will hit the first target in the lane, while every even-numbered shot will miss the first target in the lane and hit the second one (if it exists). The first shot is shot 1$$$1$$$.",
       "Tim is not allowed to fire a shot that does not hit any target, as it would damage the wall behind the targets. Help Tim find a sequence of shots that will knock down every target, or state that no such sequence exists."
     ],
     "input": [
-      "Each test contains multiple test cases. The first line contains a single integer t%%ZSMJ9%% (1≤t≤1000)%%ZSMJ10%%: the number of test cases. The description of the test cases follows.",
-      "Each of the t%%ZSMJ11%% testcases consists of 2%%ZSMJ12%% lines. The first line contains N%%ZSMJ13%%, the number of lanes. The second line contains N%%ZSMJ14%% spaced integers A1,A2,⋯,An%%ZSMJ15%%, indicating the number of targets in each lane.",
-      "It is guaranteed that the sum of Ai%%ZSMJ16%% across all test cases is no more than 5⋅105%%ZSMJ17%%.",
-      "It is guaranteed that the sum of N%%ZSMJ18%% across all test cases is no more than 3⋅105%%ZSMJ19%%."
+      "Each test contains multiple test cases. The first line contains a single integer t$$$t$$$ (1≤t≤1000)$$$(1 \\leq t \\leq 1000)$$$: the number of test cases. The description of the test cases follows.",
+      "Each of the t$$$t$$$ testcases consists of 2$$$2$$$ lines. The first line contains N$$$N$$$, the number of lanes. The second line contains N$$$N$$$ spaced integers A1,A2,⋯,An$$$A_1,A_2,\\cdots, A_n$$$, indicating the number of targets in each lane.",
+      "It is guaranteed that the sum of Ai$$$A_i$$$ across all test cases is no more than 5⋅105$$$5\\cdot 10^5$$$.",
+      "It is guaranteed that the sum of N$$$N$$$ across all test cases is no more than 3⋅105$$$3 \\cdot 10^5$$$."
     ],
     "output": [
       "For each testcase, output \"YES\" if there exists a sequence of shots that hits every target, or \"NO\" if no such sequence exists. You can output the answer in any case (upper or lower). For example, the strings \"yEs\", \"yes\", \"Yes\", and \"YES\" will be recognized as positive responses.",
-      "Let A%%ZSMJ20%% be the sum of Ai%%ZSMJ21%% in the testcase (note that A%%ZSMJ22%% may be different for different test cases). If such a sequence exists, output on a separate line a sequence of A%%ZSMJ23%% space-separated integers l1,l2,⋯,lA%%ZSMJ24%%, where li%%ZSMJ25%% is the lane that Wabbit should fire the i%%ZSMJ26%%-th shot at. If there are multiple solutions, print any of them.",
-      "You will receive 50%%%ZSMJ27%% of the points for each subtask if the YES/NO responses are correct, but the provided values of li%%ZSMJ28%% are not. For each testcase, you must output exactly A%%ZSMJ29%% values of li%%ZSMJ30%% for partial credit.",
-      "(30%%ZSMJ31%% points): The sum of N%%ZSMJ32%% across all test cases does not exceed 2000%%ZSMJ33%%, and the sum of Ai%%ZSMJ34%% across all test cases does not exceed 2000%%ZSMJ35%%.",
-      "(70%%ZSMJ36%% points): No additional constraints."
+      "Let A$$$A$$$ be the sum of Ai$$$A_i$$$ in the testcase (note that A$$$A$$$ may be different for different test cases). If such a sequence exists, output on a separate line a sequence of A$$$A$$$ space-separated integers l1,l2,⋯,lA$$$l_1,l_2,\\cdots, l_A$$$, where li$$$l_i$$$ is the lane that Wabbit should fire the i$$$i$$$-th shot at. If there are multiple solutions, print any of them.",
+      "You will receive 50%$$$50\\%$$$ of the points for each subtask if the YES/NO responses are correct, but the provided values of li$$$l_i$$$ are not. For each testcase, you must output exactly A$$$A$$$ values of li$$$l_i$$$ for partial credit.",
+      "(30$$$30$$$ points): The sum of N$$$N$$$ across all test cases does not exceed 2000$$$2000$$$, and the sum of Ai$$$A_i$$$ across all test cases does not exceed 2000$$$2000$$$.",
+      "(70$$$70$$$ points): No additional constraints."
     ],
     "note": [
-      "In the first test case, there is only 1%%ZSMJ37%% lane with 3%%ZSMJ38%% targets, and Wabbit can knock down all targets by firing 3 shots at lane 1%%ZSMJ39%%. If the targets are A,B%%ZSMJ40%% and C%%ZSMJ41%% from front to back, the first shot will knock down A%%ZSMJ42%%, the second shot will miss B%%ZSMJ43%% and knock down C%%ZSMJ44%%, and the last shot will knock down B%%ZSMJ45%%.",
-      "In the second test case, there is only 1%%ZSMJ46%% lane with 2%%ZSMJ47%% targets. The first shot at lane 1%%ZSMJ48%% will hit the front target, but the second shot will not knock down the remaining target as it will miss. Thus, no sequence of shots exists for this test case.",
-      "In the third test case, there are 5%%ZSMJ49%% lanes with 1%%ZSMJ50%% target each. The first shot at any lane will hit the target at that lane, but the second shot will not be able to hit any other target. Thus, no sequence of shots exists for this test case."
+      "In the first test case, there is only 1$$$1$$$ lane with 3$$$3$$$ targets, and Wabbit can knock down all targets by firing 3 shots at lane 1$$$1$$$. If the targets are A,B$$$A,B$$$ and C$$$C$$$ from front to back, the first shot will knock down A$$$A$$$, the second shot will miss B$$$B$$$ and knock down C$$$C$$$, and the last shot will knock down B$$$B$$$.",
+      "In the second test case, there is only 1$$$1$$$ lane with 2$$$2$$$ targets. The first shot at lane 1$$$1$$$ will hit the front target, but the second shot will not knock down the remaining target as it will miss. Thus, no sequence of shots exists for this test case.",
+      "In the third test case, there are 5$$$5$$$ lanes with 1$$$1$$$ target each. The first shot at any lane will hit the target at that lane, but the second shot will not be able to hit any other target. Thus, no sequence of shots exists for this test case."
     ]
   },
   "examples": [
@@ -38,5 +38,31 @@
       "input": "3\n1\n3\n1\n2\n5\n1 1 1 1 1",
       "output": "YES\n1 1 1 \nNO\nNO"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null
+    ]
+  }
 }

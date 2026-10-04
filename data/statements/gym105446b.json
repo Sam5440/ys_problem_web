@@ -9,22 +9,22 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "You are an analyst, studying the relationship between advertisement budget spending (denoted by x%%ZSMJ0%%) and sales (denoted by y%%ZSMJ1%%) over the period of n%%ZSMJ2%% months. More specifically, for every month of time from 1 to n you have the value of spending xi%%ZSMJ3%% and sales yi%%ZSMJ4%%.",
-      "To quantify the relationship you are using linear regression with regularisation, which means that you are modelling y%%ZSMJ5%% as y=Kx+B%%ZSMJ6%%, where K%%ZSMJ7%% and B%%ZSMJ8%% are real numbers minimising the penalty function:",
+      "You are an analyst, studying the relationship between advertisement budget spending (denoted by x$$$x$$$) and sales (denoted by y$$$y$$$) over the period of n$$$n$$$ months. More specifically, for every month of time from 1 to n you have the value of spending xi$$$x_i$$$ and sales yi$$$y_i$$$.",
+      "To quantify the relationship you are using linear regression with regularisation, which means that you are modelling y$$$y$$$ as y=Kx+B$$$y=Kx+B$$$, where K$$$K$$$ and B$$$B$$$ are real numbers minimising the penalty function:",
       "(Note: this is the standard penalty function for L2 regularised linear regression.)",
-      "For the report requested by your manager, you need to make several predictions. More specifically, you have a list of prediction queries, each described by four numbers — Lj%%ZSMJ10%%, Rj%%ZSMJ11%%, λj%%ZSMJ12%% and Xj%%ZSMJ13%%. To process such a query you need to perform the following steps:",
-      "take the spending and sales values for the months from Lj%%ZSMJ14%% to Rj%%ZSMJ15%% inclusive;",
-      "find the coefficients K%%ZSMJ16%% and B%%ZSMJ17%%, which minimise the penalty function for the given regularisation coefficient λj%%ZSMJ18%%;",
-      "plug the Xj%%ZSMJ19%% into the resulting model and compute the prediction.",
+      "For the report requested by your manager, you need to make several predictions. More specifically, you have a list of prediction queries, each described by four numbers — Lj$$$L_j$$$, Rj$$$R_j$$$, λj$$$\\lambda_j$$$ and Xj$$$X_j$$$. To process such a query you need to perform the following steps:",
+      "take the spending and sales values for the months from Lj$$$L_j$$$ to Rj$$$R_j$$$ inclusive;",
+      "find the coefficients K$$$K$$$ and B$$$B$$$, which minimise the penalty function for the given regularisation coefficient λj$$$\\lambda_j$$$;",
+      "plug the Xj$$$X_j$$$ into the resulting model and compute the prediction.",
       "You are given the ads spending and sales data, and the prediction queries descriptions. You are to process the queries and output the predictions."
     ],
     "input": [
-      "First line of the input file contains an integer number n%%ZSMJ20%% (2≤n≤106%%ZSMJ21%%) denoting the number of months in the period you are studying.",
-      "Each of the following n%%ZSMJ22%% lines describes one month and contains two non-negative real numbers xi%%ZSMJ23%% and yi%%ZSMJ24%% not exceeding 10. They denote the budget spending and sales in the corresponding month.",
-      "The following line contains an integer number m%%ZSMJ25%% (1≤m≤106%%ZSMJ26%%) denoting the number of predictions to be made. Each of the following m%%ZSMJ27%% lines contains four numbers: Lj%%ZSMJ28%%, Rj%%ZSMJ29%%, λj%%ZSMJ30%% and Xj%%ZSMJ31%% (1≤Lj<Rj≤n%%ZSMJ32%%, 0≤λj,Xj≤10%%ZSMJ33%%). First two of them are integers, the remaining are real."
+      "First line of the input file contains an integer number n$$$n$$$ (2≤n≤106$$$2 \\le n \\le 10^6$$$) denoting the number of months in the period you are studying.",
+      "Each of the following n$$$n$$$ lines describes one month and contains two non-negative real numbers xi$$$x_i$$$ and yi$$$y_i$$$ not exceeding 10. They denote the budget spending and sales in the corresponding month.",
+      "The following line contains an integer number m$$$m$$$ (1≤m≤106$$$1 \\le m \\le 10^6$$$) denoting the number of predictions to be made. Each of the following m$$$m$$$ lines contains four numbers: Lj$$$L_j$$$, Rj$$$R_j$$$, λj$$$\\lambda_j$$$ and Xj$$$X_j$$$ (1≤Lj<Rj≤n$$$1 \\le L_j  \\lt  R_j \\le n$$$, 0≤λj,Xj≤10$$$0 \\le \\lambda_j, X_j \\le 10$$$). First two of them are integers, the remaining are real."
     ],
     "output": [
-      "For each prediction query output one real number on a separate line — the predicted sales assuming the advertisement spending is Xj%%ZSMJ34%% and the linear model has been fitted on months from Lj%%ZSMJ35%% to Rj%%ZSMJ36%% using L2-regularisation with λj%%ZSMJ37%% regularisation coefficient. The output must be accurate to an absolute or relative error of at most 10−6%%ZSMJ38%%."
+      "For each prediction query output one real number on a separate line — the predicted sales assuming the advertisement spending is Xj$$$X_j$$$ and the linear model has been fitted on months from Lj$$$L_j$$$ to Rj$$$R_j$$$ using L2-regularisation with λj$$$\\lambda_j$$$ regularisation coefficient. The output must be accurate to an absolute or relative error of at most 10−6$$$10^{-6}$$$."
     ]
   },
   "examples": [
@@ -36,5 +36,25 @@
       "input": "3\n1 1.0\n2 2.1\n3 2.8\n3\n1 2 0 1.5\n2 3 0 2.5\n1 3 0 1.5",
       "output": "1.55000000000000004\n2.45000000000000018\n1.51666666666666750"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

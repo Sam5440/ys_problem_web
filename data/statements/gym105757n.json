@@ -9,31 +9,31 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "You are given an undirected tree with n%%ZSMJ0%% vertices, labeled from 0%%ZSMJ1%% to n−1%%ZSMJ2%%. The tree has n−1%%ZSMJ3%% edges and is connected and acyclic.",
-      "Your task is to select exactly k%%ZSMJ4%% vertices (2≤k≤n%%ZSMJ5%%) such that the minimum MEX%%ZSMJ6%% value over all paths between two chosen vertices is maximized.",
-      "For any two vertices u%%ZSMJ7%% and v%%ZSMJ8%%, define Puv%%ZSMJ9%% as the set of vertex labels that appear on the unique simple path between them. The function MEX(Puv)%%ZSMJ10%% is defined as the smallest non-negative integer that does not appear in Puv%%ZSMJ11%%.",
-      "Formally, for a chosen set of vertices S%%ZSMJ12%% with |S|=k%%ZSMJ13%%, we define: f(S)=minu,v∈S,u≠vMEX(Puv).%%ZSMJ14%%",
-      "Your goal is to maximize f(S)%%ZSMJ15%% over all valid choices of S%%ZSMJ16%%.",
-      "For each integer k%%ZSMJ17%% from 2%%ZSMJ18%% to n%%ZSMJ19%%, compute the maximum possible value of f(S)%%ZSMJ20%%."
+      "You are given an undirected tree with n$$$n$$$ vertices, labeled from 0$$$0$$$ to n−1$$$n-1$$$. The tree has n−1$$$n-1$$$ edges and is connected and acyclic.",
+      "Your task is to select exactly k$$$k$$$ vertices (2≤k≤n$$$2 \\leq k \\leq n$$$) such that the minimum MEX$$$\\operatorname{MEX}$$$ value over all paths between two chosen vertices is maximized.",
+      "For any two vertices u$$$u$$$ and v$$$v$$$, define Puv$$$P_{uv}$$$ as the set of vertex labels that appear on the unique simple path between them. The function MEX(Puv)$$$\\operatorname{MEX}(P_{uv})$$$ is defined as the smallest non-negative integer that does not appear in Puv$$$P_{uv}$$$.",
+      "Formally, for a chosen set of vertices S$$$S$$$ with |S|=k$$$|S| = k$$$, we define: f(S)=minu,v∈S,u≠vMEX(Puv).$$ f(S) = \\min_{u, v \\in S, u \\neq v} \\operatorname{MEX}(P_{uv}). $$",
+      "Your goal is to maximize f(S)$$$f(S)$$$ over all valid choices of S$$$S$$$.",
+      "For each integer k$$$k$$$ from 2$$$2$$$ to n$$$n$$$, compute the maximum possible value of f(S)$$$f(S)$$$."
     ],
     "input": [
-      "The first line contains a single integer t%%ZSMJ21%% (1≤t≤104)%%ZSMJ22%% — the number of test cases.",
-      "The first line of each test case contains an integer n%%ZSMJ23%% (3≤n≤105)%%ZSMJ24%% — the number of nodes in the tree.",
-      "The next n−1%%ZSMJ25%% lines each contain two integers u%%ZSMJ26%% and v%%ZSMJ27%% (0≤u,v<n)%%ZSMJ28%%, representing an undirected edge between nodes u%%ZSMJ29%% and v%%ZSMJ30%%.",
-      "It is guaranteed that the sum of all n%%ZSMJ31%% over all test cases does not exceed 106%%ZSMJ32%%."
+      "The first line contains a single integer t$$$t$$$ (1≤t≤104)$$$(1 \\leq t \\leq 10^4)$$$ — the number of test cases.",
+      "The first line of each test case contains an integer n$$$n$$$ (3≤n≤105)$$$(3 \\leq n \\leq 10^5)$$$ — the number of nodes in the tree.",
+      "The next n−1$$$n-1$$$ lines each contain two integers u$$$u$$$ and v$$$v$$$ (0≤u,v<n)$$$(0 \\leq u, v  \\lt  n)$$$, representing an undirected edge between nodes u$$$u$$$ and v$$$v$$$.",
+      "It is guaranteed that the sum of all n$$$n$$$ over all test cases does not exceed 106$$$10^6$$$."
     ],
     "output": [
-      "For each test case, print n−1%%ZSMJ33%% integers. The i%%ZSMJ34%%-th integer should represent the maximum possible value of the minimum MEX%%ZSMJ35%% when choosing k=i+1%%ZSMJ36%% nodes."
+      "For each test case, print n−1$$$n-1$$$ integers. The i$$$i$$$-th integer should represent the maximum possible value of the minimum MEX$$$\\operatorname{MEX}$$$ when choosing k=i+1$$$k = i+1$$$ nodes."
     ],
     "note": [
-      "The given tree has n=5%%ZSMJ37%% nodes with the following structure:",
+      "The given tree has n=5$$$n = 5$$$ nodes with the following structure:",
       "![](https://espresso.codeforces.com/21751268f878df4f23811b4a0b3405c926621da1.png)",
-      "Node 0%%ZSMJ38%% is connected to nodes 1%%ZSMJ39%% and 2%%ZSMJ40%%.",
-      "Node 1%%ZSMJ41%% is connected to nodes 3%%ZSMJ42%% and 4%%ZSMJ43%%.",
-      "For different values of k%%ZSMJ44%%:",
-      "For k=2%%ZSMJ45%%, selecting nodes {2,3}%%ZSMJ46%% maximizes f(S)%%ZSMJ47%%, yielding MEX(P2,3)=4%%ZSMJ48%%.",
-      "For k=3%%ZSMJ49%%, selecting nodes {0,1,2}%%ZSMJ50%% yields a maximum f(S)=1%%ZSMJ51%%.",
-      "For k=4%%ZSMJ52%% and k=5%%ZSMJ53%%, the maximum value of f(S)%%ZSMJ54%% is 0%%ZSMJ55%%."
+      "Node 0$$$0$$$ is connected to nodes 1$$$1$$$ and 2$$$2$$$.",
+      "Node 1$$$1$$$ is connected to nodes 3$$$3$$$ and 4$$$4$$$.",
+      "For different values of k$$$k$$$:",
+      "For k=2$$$k = 2$$$, selecting nodes {2,3}$$$\\{2, 3\\}$$$ maximizes f(S)$$$f(S)$$$, yielding MEX(P2,3)=4$$$\\operatorname{MEX}(\\mathcal{P}_{2,3}) = 4$$$.",
+      "For k=3$$$k = 3$$$, selecting nodes {0,1,2}$$$\\{0, 1, 2\\}$$$ yields a maximum f(S)=1$$$f(S) = 1$$$.",
+      "For k=4$$$k = 4$$$ and k=5$$$k = 5$$$, the maximum value of f(S)$$$f(S)$$$ is 0$$$0$$$."
     ]
   },
   "examples": [
@@ -41,5 +41,34 @@
       "input": "1\n5\n0 1\n1 3\n1 4\n0 2",
       "output": "4 1 0 0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

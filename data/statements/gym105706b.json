@@ -9,47 +9,47 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "You are given a weighted, undirected tree of N%%ZSMJ0%% nodes. d(u,v)%%ZSMJ1%% is defined as the minimum sum of weights of the edges that lie on the unique, simple path between nodes u%%ZSMJ2%% and v%%ZSMJ3%% on the tree.",
-      "You need to answer Q%%ZSMJ4%% queries. In each query, you are given an integer K%%ZSMJ5%%. Determine if there exists a pair of nodes (u,v)%%ZSMJ6%% that satisfy the following conditions:",
-      "1≤u,v≤N%%ZSMJ7%%",
-      "K≤d(u,v)≤2⋅K%%ZSMJ8%%",
-      "There are multiple test cases in each file, and thus you will be given an input parameter T%%ZSMJ9%%, denoting that you have to solve T%%ZSMJ10%% test cases."
+      "You are given a weighted, undirected tree of N$$$N$$$ nodes. d(u,v)$$$d(u,v)$$$ is defined as the minimum sum of weights of the edges that lie on the unique, simple path between nodes u$$$u$$$ and v$$$v$$$ on the tree.",
+      "You need to answer Q$$$Q$$$ queries. In each query, you are given an integer K$$$K$$$. Determine if there exists a pair of nodes (u,v)$$$(u,v)$$$ that satisfy the following conditions:",
+      "1≤u,v≤N$$$1 \\leq u,v \\leq N$$$",
+      "K≤d(u,v)≤2⋅K$$$K \\leq d(u,v) \\leq 2 \\cdot K$$$",
+      "There are multiple test cases in each file, and thus you will be given an input parameter T$$$T$$$, denoting that you have to solve T$$$T$$$ test cases."
     ],
     "input": [
-      "The first line of input contains a single integer T%%ZSMJ11%% — the number of input test cases.",
-      "The first line of each test case contains two space-separated integers N%%ZSMJ12%% and Q%%ZSMJ13%% — the number of nodes in the tree and the number of queries to be answered.",
-      "The next N−1%%ZSMJ14%% lines describe the edges of the tree. The i%%ZSMJ15%%-th of these N−1%%ZSMJ16%% lines contains three space-separated integers ui,vi,wi%%ZSMJ17%%, denoting an undirected edge between nodes ui%%ZSMJ18%% and vi%%ZSMJ19%% with weight wi%%ZSMJ20%%.",
-      "The next Q%%ZSMJ21%% lines describe the queries. The i%%ZSMJ22%%-th of these lines contains a single integer Ki%%ZSMJ23%% — the value of K%%ZSMJ24%% for the i%%ZSMJ25%%-th query."
+      "The first line of input contains a single integer T$$$T$$$ — the number of input test cases.",
+      "The first line of each test case contains two space-separated integers N$$$N$$$ and Q$$$Q$$$ — the number of nodes in the tree and the number of queries to be answered.",
+      "The next N−1$$$N-1$$$ lines describe the edges of the tree. The i$$$i$$$-th of these N−1$$$N-1$$$ lines contains three space-separated integers ui,vi,wi$$$u_i, v_i, w_i$$$, denoting an undirected edge between nodes ui$$$u_i$$$ and vi$$$v_i$$$ with weight wi$$$w_i$$$.",
+      "The next Q$$$Q$$$ lines describe the queries. The i$$$i$$$-th of these lines contains a single integer Ki$$$K_i$$$ — the value of K$$$K$$$ for the i$$$i$$$-th query."
     ],
     "output": [
-      "For each test case, output a binary string S%%ZSMJ26%% of length Q%%ZSMJ27%% where Si%%ZSMJ28%% is 1%%ZSMJ29%% if and only if the answer to the i%%ZSMJ30%%-th query is positive, i.e. there exists a pair of nodes (u,v)%%ZSMJ31%% such that Ki≤d(u,v)≤2⋅Ki%%ZSMJ32%% (and Si%%ZSMJ33%% is 0%%ZSMJ34%% otherwise).",
+      "For each test case, output a binary string S$$$S$$$ of length Q$$$Q$$$ where Si$$$S_i$$$ is 1$$$1$$$ if and only if the answer to the i$$$i$$$-th query is positive, i.e. there exists a pair of nodes (u,v)$$$(u, v)$$$ such that Ki≤d(u,v)≤2⋅Ki$$$K_i \\le d(u, v) \\le 2 \\cdot K_i$$$ (and Si$$$S_i$$$ is 0$$$0$$$ otherwise).",
       "Constraints",
       "It is guaranteed that",
-      "1≤T≤104%%ZSMJ35%%",
-      "2≤N≤2⋅105%%ZSMJ36%%",
-      "1≤Q≤2⋅105%%ZSMJ37%%",
-      "1≤ui,vi≤N%%ZSMJ38%%",
-      "1≤wi≤1013%%ZSMJ39%%",
-      "1≤Ki≤2⋅1018%%ZSMJ40%%",
+      "1≤T≤104$$$1 \\le T \\le 10^4$$$",
+      "2≤N≤2⋅105$$$2 \\le N \\le 2 \\cdot 10^5$$$",
+      "1≤Q≤2⋅105$$$1 \\le Q \\le 2 \\cdot 10^5$$$",
+      "1≤ui,vi≤N$$$1 \\le u_i, v_i \\le N$$$",
+      "1≤wi≤1013$$$1 \\le w_i \\le 10^{13}$$$",
+      "1≤Ki≤2⋅1018$$$1 \\le K_i \\le 2 \\cdot 10^{18}$$$",
       "The input edges forms a tree.",
-      "The sum of N%%ZSMJ41%% and the sum of Q%%ZSMJ42%% over all test cases does not exceed 2⋅105%%ZSMJ43%%.",
+      "The sum of N$$$N$$$ and the sum of Q$$$Q$$$ over all test cases does not exceed 2⋅105$$$2 \\cdot 10^5$$$.",
       "Subtasks",
-      "The term Line means that the edges follow the constraint ui=i,vi=(i+1)%%ZSMJ44%% for all 1≤i≤N−1%%ZSMJ45%%.",
-      "The term Star means that the edges follow the constraint ui=1,vi=(i+1)%%ZSMJ46%% for all 1≤i≤N−1%%ZSMJ47%%.",
-      "Subtask 1 (4 points) : N≤50,Q=1,T≤40%%ZSMJ48%%",
-      "Subtask 2 (7 points) : N≤2000%%ZSMJ49%% and the sum of N%%ZSMJ50%% also does not exceed 2000%%ZSMJ51%%",
-      "Subtask 3 (9 points) : Line and the sum of N⋅Q%%ZSMJ52%% does not exceed 2⋅105%%ZSMJ53%%",
+      "The term Line means that the edges follow the constraint ui=i,vi=(i+1)$$$u_i = i, v_i = (i + 1)$$$ for all 1≤i≤N−1$$$1 \\le i \\le N - 1$$$.",
+      "The term Star means that the edges follow the constraint ui=1,vi=(i+1)$$$u_i = 1, v_i = (i + 1)$$$ for all 1≤i≤N−1$$$1 \\le i \\le N - 1$$$.",
+      "Subtask 1 (4 points) : N≤50,Q=1,T≤40$$$N \\le 50, Q = 1, T \\le 40$$$",
+      "Subtask 2 (7 points) : N≤2000$$$N \\le 2000$$$ and the sum of N$$$N$$$ also does not exceed 2000$$$2000$$$",
+      "Subtask 3 (9 points) : Line and the sum of N⋅Q$$$N \\cdot Q$$$ does not exceed 2⋅105$$$2 \\cdot 10^5$$$",
       "Subtask 4 (16 points) : Star",
-      "Subtask 5 (20 points) : wi≤20%%ZSMJ54%%",
+      "Subtask 5 (20 points) : wi≤20$$$w_i \\le 20$$$",
       "Subtask 6 (26 points) : Line",
       "Subtask 7 (18 points) : No additional constraints"
     ],
     "note": [
-      "Test Case 1 : We can find valid vertices u%%ZSMJ55%% and v%%ZSMJ56%% in the first 3%%ZSMJ57%% queries in the following way:",
-      "Query 1%%ZSMJ58%%, K=3%%ZSMJ59%% : Choose u=1%%ZSMJ60%%, v=2%%ZSMJ61%% which has d(u,v)=5%%ZSMJ62%%. Note that 3≤5≤6%%ZSMJ63%%, so it is valid.",
-      "Query 2%%ZSMJ64%%, K=7%%ZSMJ65%% : Choose u=1%%ZSMJ66%%, v=3%%ZSMJ67%% which has d(u,v)=7%%ZSMJ68%%. Note that 7≤7≤14%%ZSMJ69%%, so it is valid.",
-      "Query 3%%ZSMJ70%%, K=1%%ZSMJ71%% : Choose u=2%%ZSMJ72%%, v=3%%ZSMJ73%% which has d(u,v)=2%%ZSMJ74%%. Note that 1≤2≤2%%ZSMJ75%%, so it is valid.",
-      "It can be proven that there is no valid pair (u,v)%%ZSMJ76%% for the last 2%%ZSMJ77%% queries with K=9%%ZSMJ78%% and 28%%ZSMJ79%%."
+      "Test Case 1 : We can find valid vertices u$$$u$$$ and v$$$v$$$ in the first 3$$$3$$$ queries in the following way:",
+      "Query 1$$$1$$$, K=3$$$K = 3$$$ : Choose u=1$$$u = 1$$$, v=2$$$v = 2$$$ which has d(u,v)=5$$$d(u, v) = 5$$$. Note that 3≤5≤6$$$3 \\le 5 \\le 6$$$, so it is valid.",
+      "Query 2$$$2$$$, K=7$$$K = 7$$$ : Choose u=1$$$u = 1$$$, v=3$$$v = 3$$$ which has d(u,v)=7$$$d(u, v) = 7$$$. Note that 7≤7≤14$$$7 \\le 7 \\le 14$$$, so it is valid.",
+      "Query 3$$$3$$$, K=1$$$K = 1$$$ : Choose u=2$$$u = 2$$$, v=3$$$v = 3$$$ which has d(u,v)=2$$$d(u, v) = 2$$$. Note that 1≤2≤2$$$1 \\le 2 \\le 2$$$, so it is valid.",
+      "It can be proven that there is no valid pair (u,v)$$$(u, v)$$$ for the last 2$$$2$$$ queries with K=9$$$K = 9$$$ and 28$$$28$$$."
     ]
   },
   "examples": [
@@ -57,5 +57,50 @@
       "input": "3\n4 5\n1 2 5\n2 3 2\n3 4 20\n3\n7\n1\n9\n28\n5 7\n1 3 9\n2 4 3\n3 2 80\n2 5 25\n10\n20\n30\n40\n100\n120\n140\n3 2\n1 2 10000000000000\n1 3 10000000000000\n18000000000000\n21000000000000",
       "output": "11100\n0101100\n10"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

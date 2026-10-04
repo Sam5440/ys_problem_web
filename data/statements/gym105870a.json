@@ -10,29 +10,29 @@
   "sections": {
     "legend": [
       "Busy Beaver has collected some pairs of seashells, and he is trying to make them into two beautiful bracelets!",
-      "He has N%%ZSMJ0%% pairs of seashells, where both seashells in the i%%ZSMJ1%%-th pair have type ai%%ZSMJ2%%. He wants to make two bracelets, such that each bracelet has one seashell from each pair. Busy Beaver decides his own metric for a beautiful pair of bracelets, which is minimizing the length of the longest common subsequence∗%%ZSMJ3%% between two bracelets.",
-      "Formally, let s%%ZSMJ4%% and t%%ZSMJ5%% be two permutations of the original array a%%ZSMJ6%%. We want to find (s,t)%%ZSMJ7%% that minimizes the length of the longest cyclic common subsequence, f(s,t)%%ZSMJ8%%, defined by the following:",
-      "Consider all cyclic shifts of array t%%ZSMJ9%%, denoted as t1,t2,…,tn%%ZSMJ10%%†%%ZSMJ11%%.",
-      "Let LCS(s,t)%%ZSMJ12%% be the length of the Longest Common Subsequence between s%%ZSMJ13%% and t%%ZSMJ14%%. Then f(s,t)=max1≤i≤nLCS(s,ti).%%ZSMJ15%%",
+      "He has N$$$N$$$ pairs of seashells, where both seashells in the i$$$i$$$-th pair have type ai$$$a_i$$$. He wants to make two bracelets, such that each bracelet has one seashell from each pair. Busy Beaver decides his own metric for a beautiful pair of bracelets, which is minimizing the length of the longest common subsequence∗$$$^{\\text{∗}}$$$ between two bracelets.",
+      "Formally, let s$$$s$$$ and t$$$t$$$ be two permutations of the original array a$$$a$$$. We want to find (s,t)$$$(s,t)$$$ that minimizes the length of the longest cyclic common subsequence, f(s,t)$$$f(s,t)$$$, defined by the following:",
+      "Consider all cyclic shifts of array t$$$t$$$, denoted as t1,t2,…,tn$$$t_1,t_2,\\dots,t_n$$$†$$$^{\\text{†}}$$$.",
+      "Let LCS(s,t)$$$\\text{LCS}(s,t)$$$ be the length of the Longest Common Subsequence between s$$$s$$$ and t$$$t$$$. Then f(s,t)=max1≤i≤nLCS(s,ti).$$f(s,t) = \\max_{1\\le i \\le n}\\text{LCS}(s,t_i).$$",
       "Unfortunately, Busy Beaver has too many seashells to find the most beautiful bracelet pairs by hand. Please help him!",
-      "∗%%ZSMJ16%%An array s%%ZSMJ17%% is a subsequence of an array t%%ZSMJ18%% if s%%ZSMJ19%% can be obtained from t%%ZSMJ20%% by deleting some (possibly none or all) elements from t%%ZSMJ21%%, without reordering the remaining elements.",
-      "†%%ZSMJ22%%A cyclic shift ti%%ZSMJ23%% of an array t=[t(1),t(2),…,t(n)]%%ZSMJ24%% by i%%ZSMJ25%% places is given by [t(1+i),t(2+i),…,t(n+i)]%%ZSMJ26%%, where indices are taken modulo n%%ZSMJ27%%."
+      "∗$$$^{\\text{∗}}$$$An array s$$$s$$$ is a subsequence of an array t$$$t$$$ if s$$$s$$$ can be obtained from t$$$t$$$ by deleting some (possibly none or all) elements from t$$$t$$$, without reordering the remaining elements.",
+      "†$$$^{\\text{†}}$$$A cyclic shift ti$$$t_i$$$ of an array t=[t(1),t(2),…,t(n)]$$$t=[t^{(1)},t^{(2)},\\dots,t^{(n)}]$$$ by i$$$i$$$ places is given by [t(1+i),t(2+i),…,t(n+i)]$$$[t^{(1+i)},t^{(2+i)},\\dots,t^{(n+i)}]$$$, where indices are taken modulo n$$$n$$$."
     ],
     "input": [
-      "Each test contains multiple test cases. The first line of input contains a single integer T%%ZSMJ28%% (1≤T≤500)%%ZSMJ29%%, the number of test cases. The description of each test case follows.",
-      "The first line of each test case contains a single positive integer N%%ZSMJ30%% (1≤N≤500)%%ZSMJ31%%.",
-      "The second line of each test case contains N%%ZSMJ32%% integers a1,a2,…,aN%%ZSMJ33%% (1≤ai≤109)%%ZSMJ34%% — the types of seashells Busy Beaver has collected.",
-      "It is guaranteed that the sum of N%%ZSMJ35%% across all test cases does not exceed 500%%ZSMJ36%%."
+      "Each test contains multiple test cases. The first line of input contains a single integer T$$$T$$$ (1≤T≤500)$$$(1\\le T\\le 500)$$$, the number of test cases. The description of each test case follows.",
+      "The first line of each test case contains a single positive integer N$$$N$$$ (1≤N≤500)$$$(1\\le N\\le 500)$$$.",
+      "The second line of each test case contains N$$$N$$$ integers a1,a2,…,aN$$$a_1,a_2,\\dots, a_N$$$ (1≤ai≤109)$$$(1\\le a_i\\le 10^9)$$$ — the types of seashells Busy Beaver has collected.",
+      "It is guaranteed that the sum of N$$$N$$$ across all test cases does not exceed 500$$$500$$$."
     ],
     "output": [
-      "For each test case, output two lines. The first line consists of N%%ZSMJ37%% integers s1,s2,…,sN%%ZSMJ38%%, and the second line consists of N%%ZSMJ39%% integers t1,t2,…,tN%%ZSMJ40%%, representing some (s,t)%%ZSMJ41%% that minimizes f(s,t)%%ZSMJ42%%.",
+      "For each test case, output two lines. The first line consists of N$$$N$$$ integers s1,s2,…,sN$$$s_1,s_2,\\dots,s_N$$$, and the second line consists of N$$$N$$$ integers t1,t2,…,tN$$$t_1,t_2,\\dots,t_N$$$, representing some (s,t)$$$(s,t)$$$ that minimizes f(s,t)$$$f(s,t)$$$.",
       "If there are multiple solutions, print any of them."
     ],
     "note": [
-      "Note that f([1,2,3],[1,3,2])%%ZSMJ43%% is 2%%ZSMJ44%% because LCS([1,2,3],[1,3,2])=2%%ZSMJ45%% ([1,2]%%ZSMJ46%% is a shared subsequence). This is the maximum LCS%%ZSMJ47%% over all cyclic shifts of t%%ZSMJ48%%:",
-      "LCS([1,2,3],[1,3,2])=2%%ZSMJ49%% ([1,2]%%ZSMJ50%% is a shared subsequence).",
-      "LCS([1,2,3],[3,2,1])=1%%ZSMJ51%% ([1]%%ZSMJ52%% is a shared subsequence).",
-      "LCS([1,2,3],[2,1,3])=2%%ZSMJ53%% ([2,3]%%ZSMJ54%% is a shared subsequence)."
+      "Note that f([1,2,3],[1,3,2])$$$f([1,2,3],[1,3,2])$$$ is 2$$$2$$$ because LCS([1,2,3],[1,3,2])=2$$$\\text{LCS}([1,2,3],[1,3,2]) = 2$$$ ([1,2]$$$[1,2]$$$ is a shared subsequence). This is the maximum LCS$$$\\text{LCS}$$$ over all cyclic shifts of t$$$t$$$:",
+      "LCS([1,2,3],[1,3,2])=2$$$\\text{LCS}([1,2,3],[1,3,2]) = 2$$$ ([1,2]$$$[1,2]$$$ is a shared subsequence).",
+      "LCS([1,2,3],[3,2,1])=1$$$\\text{LCS}([1,2,3],[3,2,1]) = 1$$$ ([1]$$$[1]$$$ is a shared subsequence).",
+      "LCS([1,2,3],[2,1,3])=2$$$\\text{LCS}([1,2,3],[2,1,3]) = 2$$$ ([2,3]$$$[2,3]$$$ is a shared subsequence)."
     ]
   },
   "examples": [
@@ -40,5 +40,33 @@
       "input": "1\n3\n1 2 3",
       "output": "1 2 3\n1 3 2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

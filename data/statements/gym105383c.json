@@ -10,21 +10,21 @@
   "sections": {
     "legend": [
       "Diana is a student who likes to play various types of board games. Today, she receives a deck of cards from her teacher as her birthday gift!",
-      "The deck of cards is special: there are n%%ZSMJ0%% cards in the deck, and each card has a number on its front and another number on its back. Each number on the front or the back is an integer from 1%%ZSMJ1%% to n%%ZSMJ2%%. Furthermore, all n%%ZSMJ3%% numbers on the front are unique, and so are the n%%ZSMJ4%% numbers on the back. In other words, numbers on the front and the back are two different permutations of numbers from 1%%ZSMJ5%% to n%%ZSMJ6%%.",
-      "Apart from board games, Diana is also interested in mathematics and computer science. While she is playing with those cards, the concept of inversions in a permutation comes to her mind. An inversion is defined as a pair of indices (i,j)%%ZSMJ7%% such that i<j%%ZSMJ8%% and the element at position i%%ZSMJ9%% is greater than the element at position j%%ZSMJ10%%. In other words, an inversion represents a situation where two elements are \"out of order\" relative to their positions. A permutation has inversion count c%%ZSMJ11%% if there are c%%ZSMJ12%% inversions can be found within it.",
+      "The deck of cards is special: there are n$$$n$$$ cards in the deck, and each card has a number on its front and another number on its back. Each number on the front or the back is an integer from 1$$$1$$$ to n$$$n$$$. Furthermore, all n$$$n$$$ numbers on the front are unique, and so are the n$$$n$$$ numbers on the back. In other words, numbers on the front and the back are two different permutations of numbers from 1$$$1$$$ to n$$$n$$$.",
+      "Apart from board games, Diana is also interested in mathematics and computer science. While she is playing with those cards, the concept of inversions in a permutation comes to her mind. An inversion is defined as a pair of indices (i,j)$$$(i, j)$$$ such that i<j$$$i  \\lt  j$$$ and the element at position i$$$i$$$ is greater than the element at position j$$$j$$$. In other words, an inversion represents a situation where two elements are \"out of order\" relative to their positions. A permutation has inversion count c$$$c$$$ if there are c$$$c$$$ inversions can be found within it.",
       "Diana wonders if she could rearrange the cards in some order so that the permutation on the front has the same inversion count as the permutation on the back (she cannot flip or throw away some cards). She cannot solve the problem in a while, so she wants to hear your solution.",
-      "In formal, you are given two permutations of integers from 1%%ZSMJ13%% to n%%ZSMJ14%%: a1,a2,…,an%%ZSMJ15%% and b1,b2,…,bn%%ZSMJ16%%. You have to find another permutation of the first n%%ZSMJ17%% positive integers p1,p2,…,pn%%ZSMJ18%%, such that a′=[ap1,ap2,…,apn]%%ZSMJ19%% and b′=[bp1,bp2,…,bpn]%%ZSMJ20%% have the same inversion count. Output the sequences a′%%ZSMJ21%% and b′%%ZSMJ22%%."
+      "In formal, you are given two permutations of integers from 1$$$1$$$ to n$$$n$$$: a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ and b1,b2,…,bn$$$b_1,b_2,\\ldots,b_n$$$. You have to find another permutation of the first n$$$n$$$ positive integers p1,p2,…,pn$$$p_1,p_2,\\ldots,p_n$$$, such that a′=[ap1,ap2,…,apn]$$$a' = [a_{p_1}, a_{p_2}, \\ldots, a_{p_n}]$$$ and b′=[bp1,bp2,…,bpn]$$$b' = [b_{p_1}, b_{p_2}, \\ldots, b_{p_n}]$$$ have the same inversion count. Output the sequences a′$$$a'$$$ and b′$$$b'$$$."
     ],
     "input": [
-      "The first line of the input contains an integer n%%ZSMJ23%%, denoting the number cards in the deck. The second line of the input contains n%%ZSMJ24%% integers a1,a2,…,an%%ZSMJ25%%, where ai%%ZSMJ26%% is the number on the front of the i%%ZSMJ27%%-th card. The third line of the input contains n%%ZSMJ28%% integers b1,b2,…,bn%%ZSMJ29%%, where bi%%ZSMJ30%% is the number on the back of the i%%ZSMJ31%%-th card.",
+      "The first line of the input contains an integer n$$$n$$$, denoting the number cards in the deck. The second line of the input contains n$$$n$$$ integers a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$, where ai$$$a_i$$$ is the number on the front of the i$$$i$$$-th card. The third line of the input contains n$$$n$$$ integers b1,b2,…,bn$$$b_1,b_2,\\ldots,b_n$$$, where bi$$$b_i$$$ is the number on the back of the i$$$i$$$-th card.",
       "Technical Specification",
-      "1≤n≤5×105%%ZSMJ32%%",
-      "1≤ai≤n%%ZSMJ33%% for i∈{1,2,…,n}%%ZSMJ34%%",
-      "1≤bi≤n%%ZSMJ35%% for i∈{1,2,…,n}%%ZSMJ36%%",
-      "It is guaranteed that a1,a2,…,an%%ZSMJ37%% and b1,b2,…,bn%%ZSMJ38%% are both permutations of integers 1,2,…,n%%ZSMJ39%%."
+      "1≤n≤5×105$$$1 \\leq n \\leq 5 \\times 10^5$$$",
+      "1≤ai≤n$$$1 \\leq a_i \\leq n$$$ for i∈{1,2,…,n}$$$i\\in\\{1,2,\\ldots,n\\}$$$",
+      "1≤bi≤n$$$1 \\leq b_i \\leq n$$$ for i∈{1,2,…,n}$$$i\\in\\{1,2,\\ldots,n\\}$$$",
+      "It is guaranteed that a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ and b1,b2,…,bn$$$b_1,b_2,\\ldots,b_n$$$ are both permutations of integers 1,2,…,n$$$1,2,\\ldots,n$$$."
     ],
     "output": [
-      "If it is impossible to rearrange the cards so that the aforementioned condition is satisfied, print No. Otherwise, print Yes in the first line of the output. Then in the second line of the output, print n%%ZSMJ40%% integers a′1,a′2,…,a′n%%ZSMJ41%%, denoting the numbers on the front of the cards after the rearrangement. In the third line of the output, print n%%ZSMJ42%% integers b′1,b′2,⋯,b′n%%ZSMJ43%%, denoting the numbers on the back of the cards after the rearrangement.",
+      "If it is impossible to rearrange the cards so that the aforementioned condition is satisfied, print No. Otherwise, print Yes in the first line of the output. Then in the second line of the output, print n$$$n$$$ integers a′1,a′2,…,a′n$$$a'_1,a'_2,\\ldots,a'_n$$$, denoting the numbers on the front of the cards after the rearrangement. In the third line of the output, print n$$$n$$$ integers b′1,b′2,⋯,b′n$$$b'_1,b'_2,\\cdots,b'_n$$$, denoting the numbers on the back of the cards after the rearrangement.",
       "If there are multiple possible solutions, print any of them."
     ]
   },
@@ -45,5 +45,26 @@
       "input": "7\n1 2 3 4 5 6 7\n1 2 3 4 5 6 7",
       "output": "Yes\n1 2 3 4 5 6 7\n1 2 3 4 5 6 7"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null
+    ]
+  }
 }

@@ -10,25 +10,25 @@
   "sections": {
     "legend": [
       "Valentine's day is coming soon!! It is a special day not only for humans, but also for the dinosaurs living in Dinoland!",
-      "Danny, being a popular dinosaur, got asked out by many other Dinosaurs. Indeed, he received K%%ZSMJ0%% date invitations numbered from 1%%ZSMJ1%% to K%%ZSMJ2%%. The ith%%ZSMJ3%% date invitation was sent to him by Dinosaur i%%ZSMJ4%%.",
-      "However, there is a little problem. Danny has a group of N%%ZSMJ5%% friends, that can be modelled as a tree where each node represents one of Danny's friends. Two dinosaurs are called direct friends if there is an edge between them. Two dinosaurs are friends if there is a path between them, and we say that they belong to the same friend group. Each of Danny's friends is numbered from 1%%ZSMJ6%% to N%%ZSMJ7%%, and the ith%%ZSMJ8%% of them has a value ai%%ZSMJ9%% that represents their dating history.",
-      "If Danny accepts the ith%%ZSMJ10%% date invitation for Saint Valentine, all of his friends who have dated the dinosaur who sent that invitation will get mad and leave the friend group. A friend j%%ZSMJ11%% will get mad when Danny accepts the ith%%ZSMJ12%% date invitation if and only if i%%ZSMJ13%% divides aj%%ZSMJ14%%. When a dinosaur leaves the friend group, he will not be part of the group anymore and his ties with his direct friends will disappear. As a result, the group will be fragmented, and turn into multiple smaller friend groups.",
-      "Danny is weighing the pros and cons of accepting the invitations he got. He asked for your help. He wants you to tell him, for each invitation i%%ZSMJ15%% that he got, how many friend groups he will end up with."
+      "Danny, being a popular dinosaur, got asked out by many other Dinosaurs. Indeed, he received K$$$K$$$ date invitations numbered from 1$$$1$$$ to K$$$K$$$. The ith$$$i^{\\text{th}}$$$ date invitation was sent to him by Dinosaur i$$$i$$$.",
+      "However, there is a little problem. Danny has a group of N$$$N$$$ friends, that can be modelled as a tree where each node represents one of Danny's friends. Two dinosaurs are called direct friends if there is an edge between them. Two dinosaurs are friends if there is a path between them, and we say that they belong to the same friend group. Each of Danny's friends is numbered from 1$$$1$$$ to N$$$N$$$, and the ith$$$i^{\\text{th}}$$$ of them has a value ai$$$a_i$$$ that represents their dating history.",
+      "If Danny accepts the ith$$$i^{\\text{th}}$$$ date invitation for Saint Valentine, all of his friends who have dated the dinosaur who sent that invitation will get mad and leave the friend group. A friend j$$$j$$$ will get mad when Danny accepts the ith$$$i^{\\text{th}}$$$ date invitation if and only if i$$$i$$$ divides aj$$$a_j$$$. When a dinosaur leaves the friend group, he will not be part of the group anymore and his ties with his direct friends will disappear. As a result, the group will be fragmented, and turn into multiple smaller friend groups.",
+      "Danny is weighing the pros and cons of accepting the invitations he got. He asked for your help. He wants you to tell him, for each invitation i$$$i$$$ that he got, how many friend groups he will end up with."
     ],
     "input": [
-      "On the first line of input you are given two integers N%%ZSMJ16%% and K%%ZSMJ17%% (1≤N,K≤106)%%ZSMJ18%%",
-      "On the second line of input, you are given N%%ZSMJ19%% integers a1a2...aN%%ZSMJ20%% (1≤ai≤106)%%ZSMJ21%%",
-      "On each of the next N−1%%ZSMJ22%% lines of input, you will be given two integers u%%ZSMJ23%% and v%%ZSMJ24%% (1≤u,v≤N%%ZSMJ25%%) denoting that friends u%%ZSMJ26%% and v%%ZSMJ27%% are direct friends and that there is an edge between them. It is guaranteed that the friends form a tree."
+      "On the first line of input you are given two integers N$$$N$$$ and K$$$K$$$ (1≤N,K≤106)$$$(1 \\leq N, K \\leq 10^6)$$$",
+      "On the second line of input, you are given N$$$N$$$ integers a1a2...aN$$$a_1a_2 ...a_N$$$ (1≤ai≤106)$$$( 1 \\leq a_i \\leq 10^6)$$$",
+      "On each of the next N−1$$$N-1$$$ lines of input, you will be given two integers u$$$u$$$ and v$$$v$$$ (1≤u,v≤N$$$1 \\leq u, v\\leq N$$$) denoting that friends u$$$u$$$ and v$$$v$$$ are direct friends and that there is an edge between them. It is guaranteed that the friends form a tree."
     ],
     "output": [
-      "Print K%%ZSMJ28%% integers, the number of remaining friend groups if Danny excepts each invitation."
+      "Print K$$$K$$$ integers, the number of remaining friend groups if Danny excepts each invitation."
     ],
     "note": [
       "The friends' tree looks initially like this:",
       "![](https://espresso.codeforces.com/e24e89be6f332dab50462bf38c1969b036edebef.png)",
-      "Accepting invitation 1%%ZSMJ29%% will lead to Danny losing all his friends, and as a result, the number of friend groups remaining will be 0%%ZSMJ30%%",
-      "Accepting invitation 2%%ZSMJ31%% will lead to Danny losing friends 3%%ZSMJ32%% and 4%%ZSMJ33%% which leads to two separate remaining friend groups. ![](https://espresso.codeforces.com/0c91c71485513cdd7a0a72751cdc34765c12fec0.png)",
-      "Accepting invitation 3%%ZSMJ34%% will lead to Danny losing friends 2%%ZSMJ35%% and 4%%ZSMJ36%% which leads to one remaining friend group.",
+      "Accepting invitation 1$$$1$$$ will lead to Danny losing all his friends, and as a result, the number of friend groups remaining will be 0$$$0$$$",
+      "Accepting invitation 2$$$2$$$ will lead to Danny losing friends 3$$$3$$$ and 4$$$4$$$ which leads to two separate remaining friend groups. ![](https://espresso.codeforces.com/0c91c71485513cdd7a0a72751cdc34765c12fec0.png)",
+      "Accepting invitation 3$$$3$$$ will lead to Danny losing friends 2$$$2$$$ and 4$$$4$$$ which leads to one remaining friend group.",
       "![](https://espresso.codeforces.com/b6d908f140e7557f8c5b21f823847d99a009fe4b.png)"
     ]
   },
@@ -37,5 +37,30 @@
       "input": "5 3\n1 3 4 6 7\n1 2\n1 3\n3 4\n4 5",
       "output": "0 2 1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

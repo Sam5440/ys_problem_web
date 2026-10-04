@@ -9,28 +9,28 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "You are given a list of n%%ZSMJ0%% integers from 0%%ZSMJ1%% to 220−1%%ZSMJ2%%.",
+      "You are given a list of n$$$n$$$ integers from 0$$$0$$$ to 220−1$$$2^{20}-1$$$.",
       "The following operation can be performed any number of times (zero or more).",
-      "Choose two distinct positions 1≤x,y≤n%%ZSMJ3%% and assign: ax:=axXORay%%ZSMJ4%% Where XOR%%ZSMJ5%% is the bitwise XOR of the two numbers.",
-      "You need to perform these operations so that the resulting list is sorted in non-decreasing order (i.e., ai≤ai+1%%ZSMJ6%% for each position i%%ZSMJ7%% from 1%%ZSMJ8%% to n−1%%ZSMJ9%%).",
+      "Choose two distinct positions 1≤x,y≤n$$$1 \\le x,y \\le n$$$ and assign: ax:=axXORay\n$$a_x := a_x \\, \\mathsf{XOR} \\, a_y$$ Where XOR$$$\\mathsf{XOR}$$$ is the bitwise XOR of the two numbers.",
+      "You need to perform these operations so that the resulting list is sorted in non-decreasing order (i.e., ai≤ai+1$$$a_i \\le a_{i+1}$$$ for each position i$$$i$$$ from 1$$$1$$$ to n−1$$$n-1$$$).",
       "Can you construct a sufficiently short sequence of operations to solve this task?"
     ],
     "input": [
-      "The first line contains the number n%%ZSMJ10%%, the size of the list.",
-      "The second line contains n%%ZSMJ11%% integers a1,…,an%%ZSMJ12%%."
+      "The first line contains the number n$$$n$$$, the size of the list.",
+      "The second line contains n$$$n$$$ integers a1,…,an$$$a_1, \\ldots, a_n$$$."
     ],
     "output": [
-      "On the first line, print the number of operations m%%ZSMJ13%%.",
-      "On the following m%%ZSMJ14%% lines, print the positions x%%ZSMJ15%% and y%%ZSMJ16%%.",
+      "On the first line, print the number of operations m$$$m$$$.",
+      "On the following m$$$m$$$ lines, print the positions x$$$x$$$ and y$$$y$$$.",
       "(100 points) No additional restrictions.",
-      "Additionally, the score you get depends on the number of operations you perform: to get a full score you must perform at most 2500%%ZSMJ17%% operations and to get a positive score you must perform at most 21000%%ZSMJ18%% operations. The score for each subtask is multiplied by a multiplier M(m)%%ZSMJ19%%, where m%%ZSMJ20%% is the maximum number of operations you have performed in the cases of that subtask. The value of M(m)%%ZSMJ21%% is given by:",
-      "M(m)={0m>210000.1+21000−m9000021000≥m>30000.3+21000−7m50003000≥m>25001.02500≥m%%ZSMJ22%%"
+      "Additionally, the score you get depends on the number of operations you perform: to get a full score you must perform at most 2500$$$2500$$$ operations and to get a positive score you must perform at most 21000$$$21000$$$ operations. The score for each subtask is multiplied by a multiplier M(m)$$$M(m)$$$, where m$$$m$$$ is the maximum number of operations you have performed in the cases of that subtask. The value of M(m)$$$M(m)$$$ is given by:",
+      "M(m)={0m>210000.1+21000−m9000021000≥m>30000.3+21000−7m50003000≥m>25001.02500≥m\n$$ M(m) = \\begin{cases} 0 & m  \\gt  21000 \\\\ 0.1 + \\frac{21000-m}{90000} & 21000 \\geq m  \\gt  3000 \\\\ 0.3 + \\frac{21000-7m}{5000} & 3000 \\geq m  \\gt  2500 \\\\ 1.0 & 2500 \\geq m \\end{cases} $$"
     ],
     "note": [
-      "n=1000%%ZSMJ23%% in all cases.",
-      "The examples show cases with n<1000%%ZSMJ24%% only to help you. They will not appear in the actual test cases.",
-      "0≤ai≤220−1%%ZSMJ25%%.",
-      "You can perform at most 21000%%ZSMJ26%% operations."
+      "n=1000$$$n = 1000$$$ in all cases.",
+      "The examples show cases with n<1000$$$n \\lt 1000$$$ only to help you. They will not appear in the actual test cases.",
+      "0≤ai≤220−1$$$0 \\le a_i \\le 2^{20}-1$$$.",
+      "You can perform at most 21000$$$21000$$$ operations."
     ]
   },
   "examples": [
@@ -42,5 +42,31 @@
       "input": "5\n4 3 2 1 0",
       "output": "5\n5 1\n1 5\n2 3\n2 4\n4 3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

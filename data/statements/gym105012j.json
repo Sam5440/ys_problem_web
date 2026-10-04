@@ -9,26 +9,26 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "Jack the jolly jester lives on an undirected tree with n%%ZSMJ0%% vertices, conveniently numbered 1%%ZSMJ1%% through n%%ZSMJ2%%. At the i%%ZSMJ3%%-th (1≤i≤n%%ZSMJ4%%) vertex, there is a jazz jellyfish with a jubilance value of ai%%ZSMJ5%%.",
-      "Jack plans to take a jovial jaunt throughout the joyful junctions. He will choose a starting vertex s%%ZSMJ6%% and an ending vertex e%%ZSMJ7%%, then walk along the unique path from s%%ZSMJ8%% to e%%ZSMJ9%%. It is allowed for s=e%%ZSMJ10%%.",
-      "Let the vertices he visits be v1,v2,…,vℓ%%ZSMJ11%% in order (so v1=s%%ZSMJ12%% and vℓ=e%%ZSMJ13%%). Because Jack is a perfectly normal human, the total jubilance he gets from walking through this path is defined in the most natural possible way. It will be f(av1,av2,…,avℓ)%%ZSMJ14%%, where f%%ZSMJ15%% is defined as follows:",
-      "f(x1)=x1%%ZSMJ16%%.",
-      "f(x1,x2)=max(x1,x2)+⌊√min(x1,x2)⌋%%ZSMJ17%%.",
-      "For k>2%%ZSMJ18%%, f(x1,x2,…,xk)=f(f(x1,…,xk−1),xk)%%ZSMJ19%%.",
-      "Note that the path from s%%ZSMJ20%% to e%%ZSMJ21%% may have a different weight from the path from e%%ZSMJ22%% to s%%ZSMJ23%% — we consider these paths to be distinct.",
+      "Jack the jolly jester lives on an undirected tree with n$$$n$$$ vertices, conveniently numbered 1$$$1$$$ through n$$$n$$$. At the i$$$i$$$-th (1≤i≤n$$$1 \\le i \\le n$$$) vertex, there is a jazz jellyfish with a jubilance value of ai$$$a_i$$$.",
+      "Jack plans to take a jovial jaunt throughout the joyful junctions. He will choose a starting vertex s$$$s$$$ and an ending vertex e$$$e$$$, then walk along the unique path from s$$$s$$$ to e$$$e$$$. It is allowed for s=e$$$s=e$$$.",
+      "Let the vertices he visits be v1,v2,…,vℓ$$$v_1, v_2, \\ldots, v_{\\ell}$$$ in order (so v1=s$$$v_1 = s$$$ and vℓ=e$$$v_{\\ell} = e$$$). Because Jack is a perfectly normal human, the total jubilance he gets from walking through this path is defined in the most natural possible way. It will be f(av1,av2,…,avℓ)$$$f(a_{v_1}, a_{v_2}, \\ldots, a_{v_{\\ell}})$$$, where f$$$f$$$ is defined as follows:",
+      "f(x1)=x1$$$f(x_1) = x_1$$$.",
+      "f(x1,x2)=max(x1,x2)+⌊√min(x1,x2)⌋$$$f(x_1, x_2) = \\max{(x_1, x_2)} + \\left\\lfloor\\sqrt{\\min{(x_1, x_2)}}\\right\\rfloor$$$.",
+      "For k>2$$$k  \\gt  2$$$, f(x1,x2,…,xk)=f(f(x1,…,xk−1),xk)$$$f(x_1, x_2, \\ldots, x_k) = f(f(x_1,\\ldots, x_{k-1}), x_k)$$$.",
+      "Note that the path from s$$$s$$$ to e$$$e$$$ may have a different weight from the path from e$$$e$$$ to s$$$s$$$ — we consider these paths to be distinct.",
       "Find the maximum possible jubilance over all paths in the tree."
     ],
     "input": [
-      "The first line contains a single integer n%%ZSMJ24%%, the number of vertices in the tree (2≤n≤3⋅105%%ZSMJ25%%).",
-      "The second line contains n%%ZSMJ26%% integers a1,a2,…,an%%ZSMJ27%%, the labels of the vertices (1≤ai≤109%%ZSMJ28%%).",
-      "The next n−1%%ZSMJ29%% lines contain two integers ui%%ZSMJ30%% and vi%%ZSMJ31%%, the edges of the graph (1≤ui,vi≤n%%ZSMJ32%%)."
+      "The first line contains a single integer n$$$n$$$, the number of vertices in the tree (2≤n≤3⋅105$$$2 \\le n \\le 3 \\cdot 10^5$$$).",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$, the labels of the vertices (1≤ai≤109$$$1 \\le a_i \\le 10^9$$$).",
+      "The next n−1$$$n-1$$$ lines contain two integers ui$$$u_i$$$ and vi$$$v_i$$$, the edges of the graph (1≤ui,vi≤n$$$1 \\le u_i, v_i \\le n$$$)."
     ],
     "output": [
       "Print a single integer — the maximum jubilance of a path in the tree."
     ],
     "note": [
-      "In the first test case, the path from vertex 2%%ZSMJ33%% to vertex 3%%ZSMJ34%% has jubilance 5%%ZSMJ35%%. We can show that no path with greater weight exists.",
-      "In the second test case, the path from vertex 5%%ZSMJ36%% to vertex 1%%ZSMJ37%% has jubilance 7%%ZSMJ38%%. We can show that no path with greater weight exists."
+      "In the first test case, the path from vertex 2$$$2$$$ to vertex 3$$$3$$$ has jubilance 5$$$5$$$. We can show that no path with greater weight exists.",
+      "In the second test case, the path from vertex 5$$$5$$$ to vertex 1$$$1$$$ has jubilance 7$$$7$$$. We can show that no path with greater weight exists."
     ]
   },
   "examples": [
@@ -40,5 +40,29 @@
       "input": "5\n2 3 3 2 3\n3 2\n5 2\n3 4\n4 1",
       "output": "7"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

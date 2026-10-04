@@ -9,14 +9,14 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "After years of experimentation, Kakashi has come up with the \"square\"-jutsu, a powerful technique that strikes lightning onto a large square area of land. Kakashi happens to be testing his jutsu on a mountain, which can be modeled by an N×N%%ZSMJ0%% grid.",
-      "Each cell at row 1≤i≤N%%ZSMJ1%% and column 1≤j≤N%%ZSMJ2%% on the mountain has an elevation ci,j%%ZSMJ3%%. For every cell (i,j)%%ZSMJ4%% it is guaranteed that ci,j≤min(ci+1,j, ci,j+1, ci+1,j+1)%%ZSMJ5%% (treating cells outside the N×N%%ZSMJ6%% grid as having infinite elevation). It is also guaranteed that c1,1=0%%ZSMJ7%%.",
-      "Kakashi's jutsu is powerful, but limited: square-jutsu can strike any k×k%%ZSMJ8%% square block of mountain cells, but only if the entire k×k%%ZSMJ9%% block lies within the bounds of the mountain grid and only if every cell in the block has elevation within a certain range [a,b]%%ZSMJ10%% inclusive (a≤ci,j≤b%%ZSMJ11%% for all cells (i,j)%%ZSMJ12%% in the target square). Given the elevation of every mountain cell and the elevation range allowed by his jutsu, Kakashi wants to know the number of cells in the largest possible square block his jutsu can hit."
+      "After years of experimentation, Kakashi has come up with the \"square\"-jutsu, a powerful technique that strikes lightning onto a large square area of land. Kakashi happens to be testing his jutsu on a mountain, which can be modeled by an N×N$$$N \\times N$$$ grid.",
+      "Each cell at row 1≤i≤N$$$1\\leq i\\leq N$$$ and column 1≤j≤N$$$1\\leq j\\leq N$$$ on the mountain has an elevation ci,j$$$c_{i, j}$$$. For every cell (i,j)$$$(i,j)$$$ it is guaranteed that ci,j≤min(ci+1,j, ci,j+1, ci+1,j+1)$$$c_{i,j} \\leq \\min \\left(c_{i+1, j}, \\space c_{i, j+1}, \\space c_{i+1, j+1}\\right)$$$ (treating cells outside the N×N$$$N\\times N$$$ grid as having infinite elevation). It is also guaranteed that c1,1=0$$$c_{1, 1} = 0$$$.",
+      "Kakashi's jutsu is powerful, but limited: square-jutsu can strike any k×k$$$k\\times k$$$ square block of mountain cells, but only if the entire k×k$$$k\\times k$$$ block lies within the bounds of the mountain grid and only if every cell in the block has elevation within a certain range [a,b]$$$[a, b]$$$ inclusive (a≤ci,j≤b$$$a \\leq c_{i, j} \\leq b$$$ for all cells (i,j)$$$(i,j)$$$ in the target square). Given the elevation of every mountain cell and the elevation range allowed by his jutsu, Kakashi wants to know the number of cells in the largest possible square block his jutsu can hit."
     ],
     "input": [
-      "The first line of input contains 2 integers N%%ZSMJ13%% and Q%%ZSMJ14%% (1≤N≤300, 1≤Q≤104%%ZSMJ15%%), the size of the grid and the number of test cases, respectively. Each test case uses the same mountain grid.",
-      "The next N%%ZSMJ16%% lines each contain N%%ZSMJ17%% space-separated integers. The j%%ZSMJ18%%-th integer on the i%%ZSMJ19%%-th line represents the elevation ci,j%%ZSMJ20%% (0≤ci,j≤N2%%ZSMJ21%%).",
-      "The next Q%%ZSMJ22%% lines each specify one test case, and contain two space-separated integers a%%ZSMJ23%% and b%%ZSMJ24%% (0≤a≤b<N2%%ZSMJ25%%), the minimum and maximum elevation that Kakashi's square-jutsu can hit."
+      "The first line of input contains 2 integers N$$$N$$$ and Q$$$Q$$$ (1≤N≤300, 1≤Q≤104$$$1 \\leq N \\leq 300, \\space 1 \\leq Q \\leq 10^4$$$), the size of the grid and the number of test cases, respectively. Each test case uses the same mountain grid.",
+      "The next N$$$N$$$ lines each contain N$$$N$$$ space-separated integers. The j$$$j$$$-th integer on the i$$$i$$$-th line represents the elevation ci,j$$$c_{i, j}$$$ (0≤ci,j≤N2$$$0 \\leq c_{i, j} \\leq N^2$$$).",
+      "The next Q$$$Q$$$ lines each specify one test case, and contain two space-separated integers a$$$a$$$ and b$$$b$$$ (0≤a≤b<N2$$$0 \\leq a \\leq b  \\lt  N^2$$$), the minimum and maximum elevation that Kakashi's square-jutsu can hit."
     ],
     "output": [
       "For each test case, print a line with one integer: the number of mountain cells in the largest square block of land that Kakashi's square-jutsu can strike. For each test case it is guaranteed that Kakashi can target at least one cell."
@@ -35,5 +35,20 @@
       "input": "4 1\n0 1 1 1\n1 1 1 1\n1 1 1 1\n1 1 1 1\n0 15",
       "output": "16"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

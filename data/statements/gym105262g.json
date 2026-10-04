@@ -9,25 +9,25 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Eddard and his secret partner believe arrays should be symmetric, and any asymmetric array is worthless. So, they defined a function V(a)%%ZSMJ0%% as the value of array a%%ZSMJ1%% as follows:",
-      "If the array is symmetric*, V(a)%%ZSMJ2%% is equal to the sum of all elements in a%%ZSMJ3%%.",
-      "Otherwise, V(a)=0%%ZSMJ4%%.",
-      "Given an array a%%ZSMJ5%%, calculate ∑nl=1∑nr=lV(a[l..r])%%ZSMJ6%%, where a[l..r]%%ZSMJ7%% is the subarray of a%%ZSMJ8%% from index l%%ZSMJ9%% to r%%ZSMJ10%%.",
-      "Since the answer can be too large, print it modulo 109+7%%ZSMJ11%%.",
-      "* A symmetric array is an array that stays the same when reversed. More formally, in a symmetric array a%%ZSMJ12%% of n%%ZSMJ13%% integers, ai=an+1−i%%ZSMJ14%% for 1≤i≤n%%ZSMJ15%%. For example, the arrays [1,3,1],[5,9,9,5],[25]%%ZSMJ16%% are symmetric, while [1,2],[4,6,4,4]%%ZSMJ17%% are not."
+      "Eddard and his secret partner believe arrays should be symmetric, and any asymmetric array is worthless. So, they defined a function V(a)$$$V(a)$$$ as the value of array a$$$a$$$ as follows:",
+      "If the array is symmetric*, V(a)$$$V(a)$$$ is equal to the sum of all elements in a$$$a$$$.",
+      "Otherwise, V(a)=0$$$V(a) = 0$$$.",
+      "Given an array a$$$a$$$, calculate ∑nl=1∑nr=lV(a[l..r])$$$\\sum_{l=1}^{n}\\sum_{r=l}^{n}V(a[l..r])$$$, where a[l..r]$$$a[l..r]$$$ is the subarray of a$$$a$$$ from index l$$$l$$$ to r$$$r$$$.",
+      "Since the answer can be too large, print it modulo 109+7$$$10^9+7$$$.",
+      "* A symmetric array is an array that stays the same when reversed. More formally, in a symmetric array a$$$a$$$ of n$$$n$$$ integers, ai=an+1−i$$$a_i = a_{n+1-i}$$$ for 1≤i≤n$$$1 \\le i \\le n$$$. For example, the arrays [1,3,1],[5,9,9,5],[25]$$$[1, 3, 1], [5, 9, 9, 5], [25]$$$ are symmetric, while [1,2],[4,6,4,4]$$$[1, 2], [4, 6, 4, 4]$$$ are not."
     ],
     "input": [
-      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ18%% (1≤t≤104)%%ZSMJ19%%. The description of the test cases follows.",
-      "The first line of each test case contains the array length n%%ZSMJ20%% (1≤n≤106)%%ZSMJ21%%.",
-      "The second line of each test case contains n%%ZSMJ22%% integers a1,a2,...,an%%ZSMJ23%% (1≤ai≤109)%%ZSMJ24%%.",
-      "It is guaranteed that the sum of n%%ZSMJ25%% over all test cases does not exceed 106%%ZSMJ26%%."
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤104)$$$(1 \\le t \\le 10^4)$$$. The description of the test cases follows.",
+      "The first line of each test case contains the array length n$$$n$$$ (1≤n≤106)$$$(1 \\le n \\le 10^6)$$$.",
+      "The second line of each test case contains n$$$n$$$ integers a1,a2,...,an$$$a_1, a_2,...,a_n$$$ (1≤ai≤109)$$$(1 \\le a_i \\le 10^9)$$$.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 106$$$10^6$$$."
     ],
     "output": [
-      "For each test case, print the answer modulo 109+7%%ZSMJ27%%."
+      "For each test case, print the answer modulo 109+7$$$10^9 + 7$$$."
     ],
     "note": [
-      "In the first test case, the subarrays of [1,2,1]%%ZSMJ28%% are {[1],[2],[1],[1,2],[2,1],[1,2,1]}%%ZSMJ29%%.",
-      "Only [1],[2],[1],[1,2,1]%%ZSMJ30%% are symmetric, so the answer is their sum: (1)+(2)+(1)+(1+2+1)=8%%ZSMJ31%%."
+      "In the first test case, the subarrays of [1,2,1]$$$[1, 2, 1]$$$ are {[1],[2],[1],[1,2],[2,1],[1,2,1]}$$$\\{[1], [2], [1], [1, 2], [2, 1], [1, 2, 1]\\}$$$.",
+      "Only [1],[2],[1],[1,2,1]$$$[1], [2], [1], [1, 2, 1]$$$ are symmetric, so the answer is their sum: (1)+(2)+(1)+(1+2+1)=8$$$(1) + (2) + (1) + (1 + 2 + 1) = 8$$$."
     ]
   },
   "examples": [
@@ -35,5 +35,28 @@
       "input": "5\n3\n1 2 1\n4\n8 9 9 8\n5\n18 5 18 7 29\n2\n1 2\n5\n100 100 100 100 100",
       "output": "8\n86\n118\n3\n3500"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

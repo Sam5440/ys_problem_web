@@ -9,19 +9,19 @@
   "memoryLimit": "128 megabytes",
   "sections": {
     "legend": [
-      "Aria, a composer, is trying to create the perfect chord for her orchestra of %%ZSMJ0%% musicians. She wants the chord to contain exactly %%ZSMJ1%% notes, and the sum of the values of each note should be exactly %%ZSMJ2%%. Each note is represented by a positive integer indicating its pitch.",
-      "In a chord, the order of notes doesn't matter, but the same pitch can be used multiple times (multiple instruments can play the same note). For example, a chord with notes %%ZSMJ3%% is the same as %%ZSMJ4%%, and a chord with %%ZSMJ5%% is also valid.",
-      "For each valid chord with pitches %%ZSMJ6%% that sum to %%ZSMJ7%%, Aria wants to calculate the harmony level of the chord, which is defined as the sum of the squares of each pitch: \n%%ZSMJ8%%",
-      "Your task is to compute the total harmony level for all unique chords that can be formed with these conditions, then output this value modulo %%ZSMJ9%%."
+      "Aria, a composer, is trying to create the perfect chord for her orchestra of k$$$k$$$ musicians. She wants the chord to contain exactly k$$$k$$$ notes, and the sum of the values of each note should be exactly n$$$n$$$. Each note is represented by a positive integer indicating its pitch.",
+      "In a chord, the order of notes doesn't matter, but the same pitch can be used multiple times (multiple instruments can play the same note). For example, a chord with notes {1,3}$$$\\{1, 3\\}$$$ is the same as {3,1}$$$\\{3, 1\\}$$$, and a chord with {2,2}$$$\\{2, 2\\}$$$ is also valid.",
+      "For each valid chord with pitches {p1,p2,…,pK}$$$\\{ p_1, p_2, \\dots, p_K \\}$$$ that sum to n$$$n$$$, Aria wants to calculate the harmony level of the chord, which is defined as the sum of the squares of each pitch: p21+p22+⋯+p2k$$ p_1^2 + p_2^2 + \\dots + p_k^2 $$",
+      "Your task is to compute the total harmony level for all unique chords that can be formed with these conditions, then output this value modulo 109+7$$$10^9 + 7$$$."
     ],
     "input": [
-      "The first line contains two integers %%ZSMJ10%% and %%ZSMJ11%% (%%ZSMJ12%%) — the target sum of pitches and the exact number of notes in the chord, respectively."
+      "The first line contains two integers n$$$n$$$ and k$$$k$$$ (1≤k≤n≤5⋅103$$$1 \\leq k \\leq n \\leq 5 \\cdot 10^3$$$) — the target sum of pitches and the exact number of notes in the chord, respectively."
     ],
     "output": [
-      "Output a single number representing the total harmony level across all valid chords, modulo %%ZSMJ13%%."
+      "Output a single number representing the total harmony level across all valid chords, modulo 109+7$$$10^9 + 7$$$."
     ],
     "note": [
-      "There are two valid chords: %%ZSMJ14%%, and %%ZSMJ15%%. Their values are %%ZSMJ16%% and %%ZSMJ17%% which sum up to %%ZSMJ18%%."
+      "There are two valid chords: {1,1,3}$$$\\{1,1,3\\}$$$, and {1,2,2}$$$\\{1, 2, 2\\}$$$. Their values are 11$$$11$$$ and 9$$$9$$$ which sum up to 20$$$20$$$."
     ]
   },
   "examples": [
@@ -29,5 +29,22 @@
       "input": "5 3",
       "output": "20"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null
+    ]
+  }
 }

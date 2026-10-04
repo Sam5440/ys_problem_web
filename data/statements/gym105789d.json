@@ -10,21 +10,21 @@
   "sections": {
     "legend": [
       "Alice is moving to the city of Nlogonia, and to decide where to live, she is evaluating the safety of the city.",
-      "Nlogonia is a planned city with N%%ZSMJ0%% intersections, numbered from 1%%ZSMJ1%% to N%%ZSMJ2%%, and M%%ZSMJ3%% streets. Each street connects two intersections bidirectionally. It is guaranteed that any intersection can reach all other intersections using the streets, and no two streets connect the same pair of intersections.",
-      "The government of Nlogonia publishes a danger rating Di%%ZSMJ4%% for each intersection i%%ZSMJ5%%. However, Alice thinks these ratings are insufficient because she wants to assess the safety of moving through the city, not just where she lives. So, she developed her own way to measure how dangerous the city is.",
-      "For any given path in the city, Alice defines its path risk as the maximum danger rating among all intersections on that path, including its endpoints. The risk factor between two intersections U%%ZSMJ6%% and V%%ZSMJ7%%, denoted as f(U,V)%%ZSMJ8%%, is the minimum possible path risk among all paths connecting U%%ZSMJ9%% and V%%ZSMJ10%%. By definition, the only path from an intersection U%%ZSMJ11%% to itself is the trivial path containing only U%%ZSMJ12%%, so we have f(U,U)=DU%%ZSMJ13%%. Finally, she assigns a danger score to each intersection U%%ZSMJ14%%, denoted as:",
-      "SU=N∑V=1f(U,V)%%ZSMJ15%%",
-      "In other words, the danger score of an intersection U%%ZSMJ16%% is the sum of its risk factors to every intersection in the city.",
+      "Nlogonia is a planned city with N$$$N$$$ intersections, numbered from 1$$$1$$$ to N$$$N$$$, and M$$$M$$$ streets. Each street connects two intersections bidirectionally. It is guaranteed that any intersection can reach all other intersections using the streets, and no two streets connect the same pair of intersections.",
+      "The government of Nlogonia publishes a danger rating Di$$$D_i$$$ for each intersection i$$$i$$$. However, Alice thinks these ratings are insufficient because she wants to assess the safety of moving through the city, not just where she lives. So, she developed her own way to measure how dangerous the city is.",
+      "For any given path in the city, Alice defines its path risk as the maximum danger rating among all intersections on that path, including its endpoints. The risk factor between two intersections U$$$U$$$ and V$$$V$$$, denoted as f(U,V)$$$f(U,V)$$$, is the minimum possible path risk among all paths connecting U$$$U$$$ and V$$$V$$$. By definition, the only path from an intersection U$$$U$$$ to itself is the trivial path containing only U$$$U$$$, so we have f(U,U)=DU$$$f(U, U) = D_U$$$. Finally, she assigns a danger score to each intersection U$$$U$$$, denoted as:",
+      "SU=N∑V=1f(U,V)$$S_U = \\sum_{V=1}^{N} f(U,V)$$",
+      "In other words, the danger score of an intersection U$$$U$$$ is the sum of its risk factors to every intersection in the city.",
       "Computing these danger scores for all intersections is not easy, so Alice asks for your help!"
     ],
     "input": [
-      "The first line contains two integers N%%ZSMJ17%% (2≤N≤3⋅105%%ZSMJ18%%) and M%%ZSMJ19%% (1≤M≤3⋅105%%ZSMJ20%%), indicating respectively the number of intersections and streets in Nlogonia. Each intersection is identified by a distinct integer from 1%%ZSMJ21%% to N%%ZSMJ22%%.",
-      "The second line contains N%%ZSMJ23%% integers D1,D2,…,DN%%ZSMJ24%% (1≤Di≤109%%ZSMJ25%% for i=1,2,…,N%%ZSMJ26%%), where Di%%ZSMJ27%% is the danger rating of intersection i%%ZSMJ28%%.",
-      "Each of the next M%%ZSMJ29%% lines contains two integers U%%ZSMJ30%% and V%%ZSMJ31%% (1≤U,V≤N%%ZSMJ32%% and U≠V%%ZSMJ33%%), indicating that there is a two-way street between intersections U%%ZSMJ34%% and V%%ZSMJ35%%.",
+      "The first line contains two integers N$$$N$$$ (2≤N≤3⋅105$$$2 \\leq N \\leq 3 \\cdot 10^5$$$) and M$$$M$$$ (1≤M≤3⋅105$$$1 \\leq M \\leq 3 \\cdot 10^5$$$), indicating respectively the number of intersections and streets in Nlogonia. Each intersection is identified by a distinct integer from 1$$$1$$$ to N$$$N$$$.",
+      "The second line contains N$$$N$$$ integers D1,D2,…,DN$$${D_1}, {D_2}, \\ldots, {D_N}$$$ (1≤Di≤109$$$1 \\leq D_i \\leq 10^9$$$ for i=1,2,…,N$$${i}={1}, {2}, \\ldots, {N}$$$), where Di$$$D_i$$$ is the danger rating of intersection i$$$i$$$.",
+      "Each of the next M$$$M$$$ lines contains two integers U$$$U$$$ and V$$$V$$$ (1≤U,V≤N$$$1 \\leq U, V \\leq N$$$ and U≠V$$$U \\neq V$$$), indicating that there is a two-way street between intersections U$$$U$$$ and V$$$V$$$.",
       "It is guaranteed that there is at most one street between each pair of intersections and that any intersection can be reached from any other using one or more streets."
     ],
     "output": [
-      "Output a single line with N%%ZSMJ36%% integers S1,S2,…,SN%%ZSMJ37%%, that is, the danger scores of all the intersections."
+      "Output a single line with N$$$N$$$ integers S1,S2,…,SN$$${S_1}, {S_2}, \\ldots, {S_N}$$$, that is, the danger scores of all the intersections."
     ]
   },
   "examples": [
@@ -36,5 +36,25 @@
       "input": "3 3\n1 3 1\n2 3\n1 2\n3 1",
       "output": "5 9 5"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

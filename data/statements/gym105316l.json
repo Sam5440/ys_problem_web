@@ -9,37 +9,37 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "You are given a balanced bracket sequence of only ′(′%%ZSMJ0%% and ′)′%%ZSMJ1%% brackets of length 2n%%ZSMJ2%%, a value of ai%%ZSMJ3%% is attached to every bracket, and for every two matched pair of brackets, they have the same value",
-      "For example, let the balanced bracket sequence be: ()(())()%%ZSMJ4%% and the array a%%ZSMJ5%%: [1,1,5,1,1,5,2,2]%%ZSMJ6%%, Notice that values at indexes 1%%ZSMJ7%% and 2%%ZSMJ8%% are same because the bracket of index 2%%ZSMJ9%% is the one that closes the bracket at index 1%%ZSMJ10%%, values at indexes 3%%ZSMJ11%% and 6%%ZSMJ12%% are same because the bracket of the index 6%%ZSMJ13%% is the one the closes the bracket at index 3%%ZSMJ14%%, and so on for every two matched pair in the balanced bracket sequence",
+      "You are given a balanced bracket sequence of only ′(′$$$'('$$$ and ′)′$$$')'$$$ brackets of length 2n$$$2n$$$, a value of ai$$$a_i$$$ is attached to every bracket, and for every two matched pair of brackets, they have the same value",
+      "For example, let the balanced bracket sequence be: ()(())()$$$()(())()$$$ and the array a$$$a$$$: [1,1,5,1,1,5,2,2]$$$[1, 1, 5, 1, 1, 5, 2, 2]$$$, Notice that values at indexes 1$$$1$$$ and 2$$$2$$$ are same because the bracket of index 2$$$2$$$ is the one that closes the bracket at index 1$$$1$$$, values at indexes 3$$$3$$$ and 6$$$6$$$ are same because the bracket of the index 6$$$6$$$ is the one the closes the bracket at index 3$$$3$$$, and so on for every two matched pair in the balanced bracket sequence",
       "You are also given two types of queries:",
-      "The query of type 1%%ZSMJ15%% is as follows: 1%%ZSMJ16%% l1%%ZSMJ17%% r1%%ZSMJ18%% l2%%ZSMJ19%% r2%%ZSMJ20%% v%%ZSMJ21%%, where l1%%ZSMJ22%% and r1%%ZSMJ23%% are indexes of two matched brackets, l2%%ZSMJ24%% and r2%%ZSMJ25%% are also indexes of two matched brackets, in such query you have to add a value of v%%ZSMJ26%% to the value of every two matched brackets which their opening bracket is before or equal to min(l1,l2)%%ZSMJ27%% and closing bracket is after or equal to max(r1,r2)%%ZSMJ28%%",
-      "Please note that it isn't necessary that l1≤l2%%ZSMJ29%% nor r1≤l2%%ZSMJ30%%",
-      "The query of type 2%%ZSMJ31%% is as follows: 2%%ZSMJ32%% l%%ZSMJ33%% r%%ZSMJ34%%, where l%%ZSMJ35%% and r%%ZSMJ36%% are indexes of two matched brackets, in such query you have to find the value of these two brackets, (note that always any two matched brackets will have the same value and you are asked to find this value, not the sum of values of the two brackets)",
+      "The query of type 1$$$1$$$ is as follows: 1$$$1$$$ l1$$$l_1$$$ r1$$$r_1$$$ l2$$$l_2$$$ r2$$$r_2$$$ v$$$v$$$, where l1$$$l_1$$$ and r1$$$r_1$$$ are indexes of two matched brackets, l2$$$l_2$$$ and r2$$$r_2$$$ are also indexes of two matched brackets, in such query you have to add a value of v$$$v$$$ to the value of every two matched brackets which their opening bracket is before or equal to min(l1,l2)$$$\\min(l_1, l_2)$$$ and closing bracket is after or equal to max(r1,r2)$$$\\max(r_1, r_2)$$$",
+      "Please note that it isn't necessary that l1≤l2$$$l1 \\le l2$$$ nor r1≤l2$$$r1 \\le l2$$$",
+      "The query of type 2$$$2$$$ is as follows: 2$$$2$$$ l$$$l$$$ r$$$r$$$, where l$$$l$$$ and r$$$r$$$ are indexes of two matched brackets, in such query you have to find the value of these two brackets, (note that always any two matched brackets will have the same value and you are asked to find this value, not the sum of values of the two brackets)",
       "Refer to the notes and check the described example for better understanding",
       "A balanced bracket sequence is a string consisting of only brackets, such that this sequence when inserted with certain numbers and mathematical operations, gives a valid mathematical expression"
     ],
     "input": [
-      "The first contains an integer t%%ZSMJ37%% (1≤t≤105)%%ZSMJ38%% the number of testcases",
-      "In every test case you will read two integers (1≤n≤5∗105)%%ZSMJ39%% and (1≤q≤5∗105)%%ZSMJ40%%, where 2n%%ZSMJ41%% is the length of the string and q%%ZSMJ42%% is the number of queries",
-      "The second line of every testcase contains the string of brackets balanced bracket sequence, the length of the string is 2n%%ZSMJ43%%,",
-      "The third line of every testcase contains the array a%%ZSMJ44%% (0≤ai≤109)%%ZSMJ45%%, the values attached to the brackets",
-      "The following q%%ZSMJ46%% lines contains the q%%ZSMJ47%% queries",
-      "It's guaranteed that all ls%%ZSMJ48%% and rs%%ZSMJ49%% in queries are between 1%%ZSMJ50%% and 2n%%ZSMJ51%%, and the string forms a balanced bracket sequence with brackets of type ()%%ZSMJ52%% only (doesn't contains brackets of other types like []%%ZSMJ53%% or %%ZSMJ54%%)",
-      "It's guaranteed that the sum of n%%ZSMJ55%% and q%%ZSMJ56%% all test cases don't exceed 5∗105%%ZSMJ57%%"
+      "The first contains an integer t$$$t$$$ (1≤t≤105)$$$( 1 \\le t \\le 10^{5} )$$$ the number of testcases",
+      "In every test case you will read two integers (1≤n≤5∗105)$$$(1 \\le n \\le 5*10^{5})$$$ and (1≤q≤5∗105)$$$(1 \\le q \\le 5*10^{5})$$$, where 2n$$$2n$$$ is the length of the string and q$$$q$$$ is the number of queries",
+      "The second line of every testcase contains the string of brackets balanced bracket sequence, the length of the string is 2n$$$2n$$$,",
+      "The third line of every testcase contains the array a$$$a$$$ (0≤ai≤109)$$$(0 \\le a_i \\le 10^{9})$$$, the values attached to the brackets",
+      "The following q$$$q$$$ lines contains the q$$$q$$$ queries",
+      "It's guaranteed that all ls$$$ls$$$ and rs$$$rs$$$ in queries are between 1$$$1$$$ and 2n$$$2n$$$, and the string forms a balanced bracket sequence with brackets of type ()$$$()$$$ only (doesn't contains brackets of other types like []$$$[]$$$ or $$${}$$$)",
+      "It's guaranteed that the sum of n$$$n$$$ and q$$$q$$$ all test cases don't exceed 5∗105$$$5*10^{5}$$$"
     ],
     "output": [
-      "For every testcase, for each query of type 2%%ZSMJ58%% you have to print its answer as described above"
+      "For every testcase, for each query of type 2$$$2$$$ you have to print its answer as described above"
     ],
     "note": [
       "Description of the given sample:",
-      "First query: 4%%ZSMJ59%% 7%%ZSMJ60%%",
-      "The value of the matched pair at indexes 4%%ZSMJ61%% and 7%%ZSMJ62%% is 5%%ZSMJ63%%",
-      "Second query: 2%%ZSMJ64%% 3%%ZSMJ65%% 4%%ZSMJ66%% 7%%ZSMJ67%% 5%%ZSMJ68%%",
-      "The matched pair at indexes 1%%ZSMJ69%% 10%%ZSMJ70%% is the only matched pair of brackets that includes pairs 2%%ZSMJ71%% 3%%ZSMJ72%% and 4%%ZSMJ73%% 7%%ZSMJ74%% together, hence we increase its value by 5%%ZSMJ75%% and the array of values after this query becomes: 8%%ZSMJ76%% 1%%ZSMJ77%% 1%%ZSMJ78%% 5%%ZSMJ79%% 1%%ZSMJ80%% 1%%ZSMJ81%% 5%%ZSMJ82%% 2%%ZSMJ83%% 2%%ZSMJ84%% 8%%ZSMJ85%%",
-      "Third query: 1%%ZSMJ86%% 10%%ZSMJ87%%",
-      "The value of the matched pair at indexes 1%%ZSMJ88%% 10%%ZSMJ89%% is 8%%ZSMJ90%%",
-      "Forth query: 2%%ZSMJ91%% 3%%ZSMJ92%%",
-      "The value of the matched pair at indexes 2%%ZSMJ93%% 3%%ZSMJ94%% is 1%%ZSMJ95%%"
+      "First query: 4$$$4$$$ 7$$$7$$$",
+      "The value of the matched pair at indexes 4$$$4$$$ and 7$$$7$$$ is 5$$$5$$$",
+      "Second query: 2$$$2$$$ 3$$$3$$$ 4$$$4$$$ 7$$$7$$$ 5$$$5$$$",
+      "The matched pair at indexes 1$$$1$$$ 10$$$10$$$ is the only matched pair of brackets that includes pairs 2$$$2$$$ 3$$$3$$$ and 4$$$4$$$ 7$$$7$$$ together, hence we increase its value by 5$$$5$$$ and the array of values after this query becomes: 8$$$8$$$ 1$$$1$$$ 1$$$1$$$ 5$$$5$$$ 1$$$1$$$ 1$$$1$$$ 5$$$5$$$ 2$$$2$$$ 2$$$2$$$ 8$$$8$$$",
+      "Third query: 1$$$1$$$ 10$$$10$$$",
+      "The value of the matched pair at indexes 1$$$1$$$ 10$$$10$$$ is 8$$$8$$$",
+      "Forth query: 2$$$2$$$ 3$$$3$$$",
+      "The value of the matched pair at indexes 2$$$2$$$ 3$$$3$$$ is 1$$$1$$$"
     ]
   },
   "examples": [
@@ -47,5 +47,40 @@
       "input": "1\n5 4\n(()(())())\n3 1 1 5 1 1 5 2 2 3\n2 4 7\n1 2 3 4 7 5\n2 1 10\n2 2 3",
       "output": "5\n8\n1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

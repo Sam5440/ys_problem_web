@@ -9,25 +9,25 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "Bobo recently learned the concept of topological ordering. One day, he observed a directed acyclic graph (DAG) G=(V,E)%%ZSMJ0%% with |V|=n%%ZSMJ1%% vertices numbered from 1%%ZSMJ2%% to n%%ZSMJ3%%, and immediately wrote down on the paper two sequences A=(a1,a2,…,an)%%ZSMJ4%% and B=(b1,b2,…,bn)%%ZSMJ5%%, such that A%%ZSMJ6%% is the lexicographically smallest topological ordering of G%%ZSMJ7%%, and B%%ZSMJ8%% is the lexicographically largest topological ordering of G%%ZSMJ9%%.",
-      "Unfortunately, now Bobo has forgotten what the original DAG G%%ZSMJ10%% looks like, and all he has is the two sequences A%%ZSMJ11%% and B%%ZSMJ12%%. Can you help Bobo recover the original graph G%%ZSMJ13%%? There might be multiple possible graphs corresponding to A%%ZSMJ14%% and B%%ZSMJ15%%, or Bobo might write down the sequences incorrectly so that no valid graphs exist.",
+      "Bobo recently learned the concept of topological ordering. One day, he observed a directed acyclic graph (DAG) G=(V,E)$$$G=(V,E)$$$ with |V|=n$$$|V|=n$$$ vertices numbered from 1$$$1$$$ to n$$$n$$$, and immediately wrote down on the paper two sequences A=(a1,a2,…,an)$$$A=(a_1,a_2,\\dots,a_n)$$$ and B=(b1,b2,…,bn)$$$B=(b_1,b_2,\\dots,b_n)$$$, such that A$$$A$$$ is the lexicographically smallest topological ordering of G$$$G$$$, and B$$$B$$$ is the lexicographically largest topological ordering of G$$$G$$$.",
+      "Unfortunately, now Bobo has forgotten what the original DAG G$$$G$$$ looks like, and all he has is the two sequences A$$$A$$$ and B$$$B$$$. Can you help Bobo recover the original graph G$$$G$$$? There might be multiple possible graphs corresponding to A$$$A$$$ and B$$$B$$$, or Bobo might write down the sequences incorrectly so that no valid graphs exist.",
       "Refer to the note section for formal definitions of the underlined items."
     ],
     "input": [
-      "The first line of input contains an integer n%%ZSMJ16%% (1≤n≤105)%%ZSMJ17%%, denoting the length of the two sequences.",
-      "The second line of input contains n%%ZSMJ18%% pairwise distinct integers a1,a2,…,an%%ZSMJ19%% (1≤ai≤n)%%ZSMJ20%%, denoting the first sequence A%%ZSMJ21%%.",
-      "The second line of input contains n%%ZSMJ22%% pairwise distinct integers b1,b2,…,bn%%ZSMJ23%% (1≤bi≤n)%%ZSMJ24%%, denoting the second sequence B%%ZSMJ25%%."
+      "The first line of input contains an integer n$$$n$$$ (1≤n≤105)$$$(1\\leq n\\leq 10^5)$$$, denoting the length of the two sequences.",
+      "The second line of input contains n$$$n$$$ pairwise distinct integers a1,a2,…,an$$$a_1,a_2,\\dots,a_n$$$ (1≤ai≤n)$$$(1\\leq a_i\\leq n)$$$, denoting the first sequence A$$$A$$$.",
+      "The second line of input contains n$$$n$$$ pairwise distinct integers b1,b2,…,bn$$$b_1,b_2,\\dots,b_n$$$ (1≤bi≤n)$$$(1\\leq b_i\\leq n)$$$, denoting the second sequence B$$$B$$$."
     ],
     "output": [
-      "If there exists a directed graph G%%ZSMJ26%% that satisfies the condition, output \"Yes\" in the first line; otherwise, output \"No\" in the first line. You can output each letter in any case (lowercase or uppercase). For example, the strings \"yEs\", \"yes\", \"Yes\", and \"YES\" will all be considered as positive replies.",
-      "If your answer is \"Yes\", output an integer m%%ZSMJ27%% (0≤m≤min(n(n−1)/2,106))%%ZSMJ28%% in the first line. Then, in the following m%%ZSMJ29%% lines, output two integers u,v%%ZSMJ30%% (1≤u,v≤n)%%ZSMJ31%% each, denoting a directed edge (u,v)%%ZSMJ32%% in the graph G%%ZSMJ33%%. The graph G%%ZSMJ34%% you output should satisfy that it is a directed acyclic graph, A%%ZSMJ35%% is the lexicographically smallest topological ordering of G%%ZSMJ36%%, and B%%ZSMJ37%% is the lexicographically largest topological ordering of G%%ZSMJ38%%. If multiple solutions exist, outputting any of them will be considered correct.",
-      "Note again that the graph you output must have no more than 106%%ZSMJ39%% edges. It can be shown that if there exists any valid graph, there exists a valid one with no more than 106%%ZSMJ40%% edges."
+      "If there exists a directed graph G$$$G$$$ that satisfies the condition, output \"Yes\" in the first line; otherwise, output \"No\" in the first line. You can output each letter in any case (lowercase or uppercase). For example, the strings \"yEs\", \"yes\", \"Yes\", and \"YES\" will all be considered as positive replies.",
+      "If your answer is \"Yes\", output an integer m$$$m$$$ (0≤m≤min(n(n−1)/2,106))$$$(0\\leq m\\leq \\min(n(n-1)/2,10^6))$$$ in the first line. Then, in the following m$$$m$$$ lines, output two integers u,v$$$u,v$$$ (1≤u,v≤n)$$$(1\\leq u, v\\leq n)$$$ each, denoting a directed edge (u,v)$$$(u,v)$$$ in the graph G$$$G$$$. The graph G$$$G$$$ you output should satisfy that it is a directed acyclic graph, A$$$A$$$ is the lexicographically smallest topological ordering of G$$$G$$$, and B$$$B$$$ is the lexicographically largest topological ordering of G$$$G$$$. If multiple solutions exist, outputting any of them will be considered correct.",
+      "Note again that the graph you output must have no more than 106$$$10^6$$$ edges. It can be shown that if there exists any valid graph, there exists a valid one with no more than 106$$$10^6$$$ edges."
     ],
     "note": [
       "Here, we provide formal definitions of some underlined items in the statement.",
-      "A topological ordering of a directed graph G=(V,E)%%ZSMJ41%% is a linear ordering (i.e., permutation) of its vertices such that for every directed edge (u,v)∈E%%ZSMJ42%% from vertex u%%ZSMJ43%% to vertex v%%ZSMJ44%%, u%%ZSMJ45%% comes before v%%ZSMJ46%% in the ordering. It can be shown that a directed graph admits at least one topological ordering if and only if it is acyclic.",
-      "For two sequences A=(a1,a2,…,an)%%ZSMJ47%% and B=(b1,b2,…,bn)%%ZSMJ48%% with the same length n%%ZSMJ49%%, A%%ZSMJ50%% is said to be lexicographically smaller than B%%ZSMJ51%% if and only if there exists some index 1≤i≤n%%ZSMJ52%%, such that   ai<bi%%ZSMJ53%%;",
-      "aj=bj%%ZSMJ54%% for all j<i%%ZSMJ55%%."
+      "A topological ordering of a directed graph G=(V,E)$$$G=(V,E)$$$ is a linear ordering (i.e., permutation) of its vertices such that for every directed edge (u,v)∈E$$$(u,v)\\in E$$$ from vertex u$$$u$$$ to vertex v$$$v$$$, u$$$u$$$ comes before v$$$v$$$ in the ordering. It can be shown that a directed graph admits at least one topological ordering if and only if it is acyclic.",
+      "For two sequences A=(a1,a2,…,an)$$$A=(a_1,a_2,\\dots,a_n)$$$ and B=(b1,b2,…,bn)$$$B=(b_1,b_2,\\dots,b_n)$$$ with the same length n$$$n$$$, A$$$A$$$ is said to be lexicographically smaller than B$$$B$$$ if and only if there exists some index 1≤i≤n$$$1\\leq i\\leq n$$$, such that   ai<bi$$$a_i \\lt b_i$$$;",
+      "aj=bj$$$a_j=b_j$$$ for all j<i$$$j \\lt i$$$."
     ]
   },
   "examples": [
@@ -43,5 +43,28 @@
       "input": "3\n3 2 1\n1 2 3",
       "output": "No"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

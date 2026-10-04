@@ -9,25 +9,25 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Busy Beaver is making a new language for his linguistics class! He has already decided that his language will have an alphabet whose letters are the integers 1,…,NM%%ZSMJ0%% in that order; now he wants to make some words for the language.",
-      "Because Busy Beaver is interested in statistics, he wants to control the frequencies of letters appearing in words, so he has chosen a multiset a%%ZSMJ1%% of size NM%%ZSMJ2%% of letters from his alphabet. He will now form N%%ZSMJ3%% words each with M%%ZSMJ4%% letters such that each letter from a%%ZSMJ5%% is used exactly once (i.e. if a given letter x%%ZSMJ6%% appears exactly k%%ZSMJ7%% times in a%%ZSMJ8%%, then it is used exactly k%%ZSMJ9%% times across all N%%ZSMJ10%% words).",
-      "After forming the words, Busy Beaver plans to organize them into a dictionary, so he will lexicographically sort his N%%ZSMJ11%% words to produce the sequence of words s1,…,sN%%ZSMJ12%%. Busy Beaver likes strings to be lexicographically small, so for each k%%ZSMJ13%% from 1%%ZSMJ14%% to N%%ZSMJ15%% he wants to know the lexicographically minimum possible value of sk%%ZSMJ16%% over all choices of words.",
-      "Note that the answer for each sk%%ZSMJ17%% is independent; for example, the choice of words so that s1%%ZSMJ18%% is minimized may be different from the choice of words so that s2%%ZSMJ19%% is minimized."
+      "Busy Beaver is making a new language for his linguistics class! He has already decided that his language will have an alphabet whose letters are the integers 1,…,NM$$$1, \\ldots, NM$$$ in that order; now he wants to make some words for the language.",
+      "Because Busy Beaver is interested in statistics, he wants to control the frequencies of letters appearing in words, so he has chosen a multiset a$$$a$$$ of size NM$$$NM$$$ of letters from his alphabet. He will now form N$$$N$$$ words each with M$$$M$$$ letters such that each letter from a$$$a$$$ is used exactly once (i.e. if a given letter x$$$x$$$ appears exactly k$$$k$$$ times in a$$$a$$$, then it is used exactly k$$$k$$$ times across all N$$$N$$$ words).",
+      "After forming the words, Busy Beaver plans to organize them into a dictionary, so he will lexicographically sort his N$$$N$$$ words to produce the sequence of words s1,…,sN$$$s_1, \\ldots, s_N$$$. Busy Beaver likes strings to be lexicographically small, so for each k$$$k$$$ from 1$$$1$$$ to N$$$N$$$ he wants to know the lexicographically minimum possible value of sk$$$s_k$$$ over all choices of words.",
+      "Note that the answer for each sk$$$s_k$$$ is independent; for example, the choice of words so that s1$$$s_1$$$ is minimized may be different from the choice of words so that s2$$$s_2$$$ is minimized."
     ],
     "input": [
-      "The first line contains two positive integers N,M%%ZSMJ20%% (1≤NM≤106%%ZSMJ21%%).",
-      "The second line contains NM%%ZSMJ22%% integers a1,…,aNM%%ZSMJ23%% composing the multiset a%%ZSMJ24%% (1≤aj≤NM%%ZSMJ25%%)."
+      "The first line contains two positive integers N,M$$$N, M$$$ (1≤NM≤106$$$1 \\leq NM \\leq 10^6$$$).",
+      "The second line contains NM$$$NM$$$ integers a1,…,aNM$$$a_1, \\ldots, a_{NM}$$$ composing the multiset a$$$a$$$ (1≤aj≤NM$$$1 \\leq a_j \\leq NM$$$)."
     ],
     "output": [
-      "For each k%%ZSMJ26%% from 1%%ZSMJ27%% to N%%ZSMJ28%%, output the minimum possible value of sk%%ZSMJ29%% on its own line as a sequence of space-separated integers."
+      "For each k$$$k$$$ from 1$$$1$$$ to N$$$N$$$, output the minimum possible value of sk$$$s_k$$$ on its own line as a sequence of space-separated integers."
     ],
     "note": [
-      "In the first sample, the following choices of words minimize each of sk%%ZSMJ30%%:",
-      "By choosing the words 112,233,445,566%%ZSMJ31%%, we get that s=112,233,445,566%%ZSMJ32%%, so s1=112%%ZSMJ33%% as desired.",
-      "By choosing the words 123,456,123,456%%ZSMJ34%%, we get that s=123,123,456,456%%ZSMJ35%%, so s2=123%%ZSMJ36%% as desired.",
-      "By choosing the words 166,155,344,223%%ZSMJ37%%, we get that s=155,166,223,344%%ZSMJ38%%, so s3=223%%ZSMJ39%% as desired.",
-      "By choosing the words 234,234,156,156%%ZSMJ40%%, we get that s=156,156,234,234%%ZSMJ41%%, so s4=234%%ZSMJ42%% as desired.",
-      "It can be shown that in all of these cases there is no way to choose the words so that the respective sk%%ZSMJ43%% is even lexicographically smaller."
+      "In the first sample, the following choices of words minimize each of sk$$$s_k$$$:",
+      "By choosing the words 112,233,445,566$$$112, 233, 445, 566$$$, we get that s=112,233,445,566$$$s = 112, 233, 445, 566$$$, so s1=112$$$s_1 = 112$$$ as desired.",
+      "By choosing the words 123,456,123,456$$$123, 456, 123, 456$$$, we get that s=123,123,456,456$$$s = 123, 123, 456, 456$$$, so s2=123$$$s_2 = 123$$$ as desired.",
+      "By choosing the words 166,155,344,223$$$166, 155, 344, 223$$$, we get that s=155,166,223,344$$$s = 155, 166, 223, 344$$$, so s3=223$$$s_3 = 223$$$ as desired.",
+      "By choosing the words 234,234,156,156$$$234, 234, 156, 156$$$, we get that s=156,156,234,234$$$s = 156, 156, 234, 234$$$, so s4=234$$$s_4 = 234$$$ as desired.",
+      "It can be shown that in all of these cases there is no way to choose the words so that the respective sk$$$s_k$$$ is even lexicographically smaller."
     ]
   },
   "examples": [
@@ -47,5 +47,28 @@
       "input": "1 1\n1",
       "output": "1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

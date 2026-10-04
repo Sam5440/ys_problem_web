@@ -9,28 +9,28 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "Lawliet has a sequence of numbers of length n%%ZSMJ0%%, denoted as a1,a2,…,an%%ZSMJ1%%, and he wants to determine how many good partitions exist.",
-      "A partition size k%%ZSMJ2%% is considered a good partition size if it satisfies 1≤k≤n%%ZSMJ3%% and, after dividing the sequence a%%ZSMJ4%% into parts by partition size, each resulting sub-sequence is non-decreasing. The partitioning method is as follows:",
-      "The sequence a%%ZSMJ5%% is divided into ⌈nk⌉%%ZSMJ6%% parts.",
-      "For the i%%ZSMJ7%%-th part (1≤i≤⌈nk⌉−1%%ZSMJ8%%), the elements are a(i−1)×k+1,a(i−1)×k+2,…,ai×k%%ZSMJ9%%.",
-      "For the ⌈nk⌉%%ZSMJ10%%-th part, the elements are a(⌈nk⌉−1)×k+1,…,an%%ZSMJ11%%. Note that the length of the last part may be less than k%%ZSMJ12%%.",
-      "Lawliet finds this problem too simple, so he will make q%%ZSMJ13%% modifications. Each modification provides two positive integers p%%ZSMJ14%% and v%%ZSMJ15%%, indicating that the value of ap%%ZSMJ16%% will be changed to v%%ZSMJ17%%.",
+      "Lawliet has a sequence of numbers of length n$$$n$$$, denoted as a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$, and he wants to determine how many good partitions exist.",
+      "A partition size k$$$k$$$ is considered a good partition size if it satisfies 1≤k≤n$$$1 \\leq k \\leq n$$$ and, after dividing the sequence a$$$a$$$ into parts by partition size, each resulting sub-sequence is non-decreasing. The partitioning method is as follows:",
+      "The sequence a$$$a$$$ is divided into ⌈nk⌉$$$\\lceil \\frac{n}{k} \\rceil$$$ parts.",
+      "For the i$$$i$$$-th part (1≤i≤⌈nk⌉−1$$$1 \\leq i \\leq \\lceil \\frac{n}{k} \\rceil - 1$$$), the elements are a(i−1)×k+1,a(i−1)×k+2,…,ai×k$$$a_{(i - 1) \\times k + 1}, a_{(i - 1) \\times k + 2}, \\ldots, a_{i \\times k}$$$.",
+      "For the ⌈nk⌉$$$\\lceil \\frac{n}{k} \\rceil$$$-th part, the elements are a(⌈nk⌉−1)×k+1,…,an$$$a_{(\\lceil \\frac{n}{k} \\rceil - 1) \\times k + 1}, \\ldots, a_n$$$. Note that the length of the last part may be less than k$$$k$$$.",
+      "Lawliet finds this problem too simple, so he will make q$$$q$$$ modifications. Each modification provides two positive integers p$$$p$$$ and v$$$v$$$, indicating that the value of ap$$$a_p$$$ will be changed to v$$$v$$$.",
       "Your task is to help Lawliet calculate the number of good partition sizes before any modifications and after each modification."
     ],
     "input": [
-      "The first line contains an integer T%%ZSMJ18%% (1≤T≤10%%ZSMJ19%%), representing the number of test cases.",
-      "For each test case, the first line contains two integers n%%ZSMJ20%% (1≤n≤2⋅105%%ZSMJ21%%) and q%%ZSMJ22%% (1≤q≤2⋅105%%ZSMJ23%%), representing the length of the sequence and the number of modifications.",
-      "The second line contains n%%ZSMJ24%% integers, representing the sequence a1,a2,…,an%%ZSMJ25%% (1≤ai≤2⋅109%%ZSMJ26%%).",
-      "The following q%%ZSMJ27%% lines each contain two integers p%%ZSMJ28%% (1≤p≤n%%ZSMJ29%%) and v%%ZSMJ30%% (1≤v≤2⋅109%%ZSMJ31%%), indicating that the element at the p%%ZSMJ32%%-th position in the sequence will be modified to v%%ZSMJ33%%.",
-      "It is guaranteed that the sum of n%%ZSMJ34%% and the sum of q%%ZSMJ35%% over all test cases do not exceed 2⋅105%%ZSMJ36%%, respectively."
+      "The first line contains an integer T$$$T$$$ (1≤T≤10$$$1\\le T \\le 10$$$), representing the number of test cases.",
+      "For each test case, the first line contains two integers n$$$n$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$) and q$$$q$$$ (1≤q≤2⋅105$$$1 \\le q \\le 2 \\cdot 10^5$$$), representing the length of the sequence and the number of modifications.",
+      "The second line contains n$$$n$$$ integers, representing the sequence a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai≤2⋅109$$$1\\le a_i\\le 2\\cdot 10^9$$$).",
+      "The following q$$$q$$$ lines each contain two integers p$$$p$$$ (1≤p≤n$$$1 \\le p \\le n$$$) and v$$$v$$$ (1≤v≤2⋅109$$$1 \\le v \\le 2 \\cdot 10^9$$$), indicating that the element at the p$$$p$$$-th position in the sequence will be modified to v$$$v$$$.",
+      "It is guaranteed that the sum of n$$$n$$$ and the sum of q$$$q$$$ over all test cases do not exceed 2⋅105$$$2\\cdot 10^5$$$, respectively."
     ],
     "output": [
-      "For each test case, output q+1%%ZSMJ37%% lines, representing the number of good partition sizes before any modifications and after each modification."
+      "For each test case, output q+1$$$q + 1$$$ lines, representing the number of good partition sizes before any modifications and after each modification."
     ],
     "note": [
-      "Initially, the only good partition size is k=1%%ZSMJ38%%.",
-      "After the first modification, the sequence becomes [4,5,2,6,1]%%ZSMJ39%%. Both k=1%%ZSMJ40%% and k=2%%ZSMJ41%% are good partition sizes.",
-      "After the second modification, the sequence becomes [4,5,5,6,1]%%ZSMJ42%%. The good partition sizes are k=1%%ZSMJ43%%, k=2%%ZSMJ44%%, and k=4%%ZSMJ45%%."
+      "Initially, the only good partition size is k=1$$$k = 1$$$.",
+      "After the first modification, the sequence becomes [4,5,2,6,1]$$$[4, 5, 2, 6, 1]$$$. Both k=1$$$k = 1$$$ and k=2$$$k = 2$$$ are good partition sizes.",
+      "After the second modification, the sequence becomes [4,5,5,6,1]$$$[4, 5, 5, 6, 1]$$$. The good partition sizes are k=1$$$k = 1$$$, k=2$$$k = 2$$$, and k=4$$$k = 4$$$."
     ]
   },
   "examples": [
@@ -38,5 +38,31 @@
       "input": "1\n5 2\n4 3 2 6 1\n2 5\n3 5",
       "output": "1\n2\n3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null
+    ]
+  }
 }

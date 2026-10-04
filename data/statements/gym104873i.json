@@ -9,26 +9,26 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "This is an interactive task where your program will communicate with a grader through standard input and output. Your task is to reconstruct a labelled tree with N%%ZSMJ0%% nodes and N−1%%ZSMJ1%% edges. Nodes are labelled from 1%%ZSMJ2%% to N%%ZSMJ3%%.",
-      "Your program is allowed to make a few queries of the following type: Your program should print a string of N%%ZSMJ4%% characters, consisting only of zeros and ones, one corresponding to each node. The grader will return a sequence of N%%ZSMJ5%% space-separated integers, the i%%ZSMJ6%%-th representing the sum of the values (i.e. digits of the query string) of all neighbours of the i%%ZSMJ7%%-th node. That is, if node j%%ZSMJ8%% is a neighbour of node i, then the j%%ZSMJ9%%-th digit of the query string counts towards the sum in the i%%ZSMJ10%%-th number of the grader's answer.",
+      "This is an interactive task where your program will communicate with a grader through standard input and output. Your task is to reconstruct a labelled tree with N$$$N$$$ nodes and N−1$$$N - 1$$$ edges. Nodes are labelled from 1$$$1$$$ to N$$$N$$$.",
+      "Your program is allowed to make a few queries of the following type: Your program should print a string of N$$$N$$$ characters, consisting only of zeros and ones, one corresponding to each node. The grader will return a sequence of N$$$N$$$ space-separated integers, the i$$$i$$$-th representing the sum of the values (i.e. digits of the query string) of all neighbours of the i$$$i$$$-th node. That is, if node j$$$j$$$ is a neighbour of node i, then the j$$$j$$$-th digit of the query string counts towards the sum in the i$$$i$$$-th number of the grader's answer.",
       "See the example below for an illustration."
     ],
     "input": [
-      "The first input line will contain the number N%%ZSMJ11%%, the number of nodes in the tree.",
+      "The first input line will contain the number N$$$N$$$, the number of nodes in the tree.",
       "Your program then has two options:",
-      "Print \"QUERY\" (without quotation marks), a space, and a string of N%%ZSMJ12%% zeros and ones.",
-      "Print \"ANSWER\" (without quotation marks), a newline, and N−1%%ZSMJ13%% lines, each containing a pair of space-separated integers a,b%%ZSMJ14%%, indicating that there exists an edge between nodes a%%ZSMJ15%% and b%%ZSMJ16%%.",
-      "If your program prints a query, this will be followed by the grader returning a line with N%%ZSMJ17%% space-separated integers, one per node. If your program prints an answer, the grader will check the returned tree for correctness.",
+      "Print \"QUERY\" (without quotation marks), a space, and a string of N$$$N$$$ zeros and ones.",
+      "Print \"ANSWER\" (without quotation marks), a newline, and N−1$$$N - 1$$$ lines, each containing a pair of space-separated integers a,b$$$a, b$$$, indicating that there exists an edge between nodes a$$$a$$$ and b$$$b$$$.",
+      "If your program prints a query, this will be followed by the grader returning a line with N$$$N$$$ space-separated integers, one per node. If your program prints an answer, the grader will check the returned tree for correctness.",
       "If there was a mistake in your queries, either due to incorrect formatting or due to an exceeded number of queries, the grader will print \"ERROR\" (no quotation marks) instead of the answer.",
       "Important: Ensure that your program flushes its output after printing and correctly exits after printing the answer. It is up to you whether to implement the ERROR handling. Its purpose is to allow your program to exit gracefully and get a WA instead of a TLE verdict in the case of an error.",
       "Input limits",
-      "2≤N≤3⋅104%%ZSMJ18%%",
-      "At most 2⇈%%ZSMJ19%% queries are allowed. The final answer does not count toward this restriction."
+      "2≤N≤3⋅104$$$2 \\leq N \\leq 3 \\cdot 10^4$$$",
+      "At most 2⇈3=2(22)=16$$$2 \\upuparrows 3 = 2(2^2) = 16$$$ queries are allowed. The final answer does not count toward this restriction."
     ],
     "output": [],
     "note": [
       "The tree in question is the following one:",
-      "\\begin{aligned} \\texttt{1-}&\\texttt{4}\\texttt{-2} \\\\ &\\texttt{|}\\\\ &\\texttt{5-3} \\end{aligned}%%ZSMJ20%%",
+      "1-4-2|5-3$$$\\begin{aligned} \\texttt{1-}&\\texttt{4}\\texttt{-2} \\\\ &\\texttt{|}\\\\ &\\texttt{5-3} \\end{aligned}$$$",
       "With the three queries in the example, it is possible to reconstruct it uniquely."
     ]
   },
@@ -37,5 +37,30 @@
       "input": "5\n\n0 0 1 2 0\n\n1 1 0 0 1\n\n0 0 0 1 0",
       "output": "\nQUERY 10001\n\nQUERY 00010\n\nQUERY 10000\n\nANSWER\n1 4\n4 2\n5 4\n3 5"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [],
+    "note": [
+      null,
+      null,
+      null
+    ]
+  }
 }

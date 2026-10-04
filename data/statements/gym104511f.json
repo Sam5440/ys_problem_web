@@ -10,29 +10,29 @@
   "sections": {
     "legend": [
       "This is the easy version of the problem. The problems differ in their constraints and input formats. A solution to one may not work for the other.",
-      "Kanako-chan loves Hime-chan secretly, so she wants to give her as much coffee as possible (Hime is a caffeine addict). There are n%%ZSMJ0%% types of coffee numbered from 1%%ZSMJ1%% to n%%ZSMJ2%%, but Hime is only interested in type 1%%ZSMJ3%%.",
-      "Kanako was offered help by Sumika-senpai. Sumika has an unlimited supply of certain types of coffee. Specifically, you are given a binary string s%%ZSMJ4%% of length n%%ZSMJ5%%, where si=1%%ZSMJ6%% if and only if Sumika has coffee of type i%%ZSMJ7%%. Kanako can ask for any non-negative real amount of coffee of each type that Sumika has, as long as the total volume of coffee she requests is at most v%%ZSMJ8%%.",
-      "After getting some coffee from Sumika, Kanako can then trade with other customers at Cafe Liebe. In particular, there are m%%ZSMJ9%% customers willing to trade. To trade with the i%%ZSMJ10%%-th customer, Kanako must do the following:",
-      "Choose a non-negative real number k%%ZSMJ11%%.",
-      "Give the customer kai%%ZSMJ12%% cups of coffee xi%%ZSMJ13%% and kbi%%ZSMJ14%% cups of coffee yi%%ZSMJ15%%.",
-      "In return, the customer will give Kanako kci%%ZSMJ16%% cups of coffee zi%%ZSMJ17%%.",
-      "Kanako can trade with customers as many times as she wants. What is the maximum amount of coffee of type 1%%ZSMJ18%% she can obtain?"
+      "Kanako-chan loves Hime-chan secretly, so she wants to give her as much coffee as possible (Hime is a caffeine addict). There are n$$$n$$$ types of coffee numbered from 1$$$1$$$ to n$$$n$$$, but Hime is only interested in type 1$$$1$$$.",
+      "Kanako was offered help by Sumika-senpai. Sumika has an unlimited supply of certain types of coffee. Specifically, you are given a binary string s$$$s$$$ of length n$$$n$$$, where si=1$$$s_i = 1$$$ if and only if Sumika has coffee of type i$$$i$$$. Kanako can ask for any non-negative real amount of coffee of each type that Sumika has, as long as the total volume of coffee she requests is at most v$$$v$$$.",
+      "After getting some coffee from Sumika, Kanako can then trade with other customers at Cafe Liebe. In particular, there are m$$$m$$$ customers willing to trade. To trade with the i$$$i$$$-th customer, Kanako must do the following:",
+      "Choose a non-negative real number k$$$k$$$.",
+      "Give the customer kai$$$ka_i$$$ cups of coffee xi$$$x_i$$$ and kbi$$$kb_i$$$ cups of coffee yi$$$y_i$$$.",
+      "In return, the customer will give Kanako kci$$$kc_i$$$ cups of coffee zi$$$z_i$$$.",
+      "Kanako can trade with customers as many times as she wants. What is the maximum amount of coffee of type 1$$$1$$$ she can obtain?"
     ],
     "input": [
-      "Input consists of multiple tests. The first line contains t%%ZSMJ19%%, the number of tests (1≤t≤50%%ZSMJ20%%).",
-      "The first line of each test contains n%%ZSMJ21%%, m%%ZSMJ22%%, and v%%ZSMJ23%%  — the number of coffee types, the number of customers, and the maximum amount of starting coffee (1≤n≤50%%ZSMJ24%%, 0≤m≤103%%ZSMJ25%%, 1≤v≤1018%%ZSMJ26%%).",
-      "The second line contains a string s%%ZSMJ27%% of length n%%ZSMJ28%% consisting of 0s and 1s. The i%%ZSMJ29%%-th character is 1 if and only if Sumika has coffee of type i%%ZSMJ30%%.",
-      "The next m%%ZSMJ31%% lines contain 6%%ZSMJ32%% integers each: ai%%ZSMJ33%%, xi%%ZSMJ34%%, bi%%ZSMJ35%%, yi%%ZSMJ36%%, ci%%ZSMJ37%%, and zi%%ZSMJ38%%, describing their trades (1≤xi,yi,zi≤n%%ZSMJ39%%, 1≤ai,bi≤5%%ZSMJ40%%, ci=1%%ZSMJ41%%). It is guaranteed that xi%%ZSMJ42%%, yi%%ZSMJ43%%, and zi%%ZSMJ44%% are all distinct.",
-      "In the easy version, it always holds that ci=1%%ZSMJ45%%."
+      "Input consists of multiple tests. The first line contains t$$$t$$$, the number of tests (1≤t≤50$$$1 \\le t \\le 50$$$).",
+      "The first line of each test contains n$$$n$$$, m$$$m$$$, and v$$$v$$$  — the number of coffee types, the number of customers, and the maximum amount of starting coffee (1≤n≤50$$$1 \\le n \\le 50$$$, 0≤m≤103$$$0 \\le m \\le 10^3$$$, 1≤v≤1018$$$1 \\le v \\le 10^{18}$$$).",
+      "The second line contains a string s$$$s$$$ of length n$$$n$$$ consisting of 0s and 1s. The i$$$i$$$-th character is 1 if and only if Sumika has coffee of type i$$$i$$$.",
+      "The next m$$$m$$$ lines contain 6$$$6$$$ integers each: ai$$$a_i$$$, xi$$$x_i$$$, bi$$$b_i$$$, yi$$$y_i$$$, ci$$$c_i$$$, and zi$$$z_i$$$, describing their trades (1≤xi,yi,zi≤n$$$1 \\le x_i, y_i, z_i \\le n$$$, 1≤ai,bi≤5$$$1 \\le a_i, b_i \\le 5$$$, ci=1$$$c_i = 1$$$). It is guaranteed that xi$$$x_i$$$, yi$$$y_i$$$, and zi$$$z_i$$$ are all distinct.",
+      "In the easy version, it always holds that ci=1$$$c_i = 1$$$."
     ],
     "output": [
       "For each test, output a floating-point number, the answer.",
-      "Your answer is considered correct if its absolute or relative error does not exceed 10−6%%ZSMJ46%%.",
-      "Formally, let your answer be a%%ZSMJ47%%, and the jury's answer be b%%ZSMJ48%%. Your answer is accepted if and only if |a−b|max(1,|b|)≤10−6%%ZSMJ49%%."
+      "Your answer is considered correct if its absolute or relative error does not exceed 10−6$$$10^{-6}$$$.",
+      "Formally, let your answer be a$$$a$$$, and the jury's answer be b$$$b$$$. Your answer is accepted if and only if |a−b|max(1,|b|)≤10−6$$$\\frac{|a - b|}{\\max{(1, |b|)}} \\le 10^{-6}$$$."
     ],
     "note": [
-      "In the first test, you can ask for 8%%ZSMJ50%% cups of type-2 coffee and 12%%ZSMJ51%% cups of type-3 coffee. Then, you trade with customer 1%%ZSMJ52%% using k=4%%ZSMJ53%%, and thus recieve 4%%ZSMJ54%% cups of type-1 coffee. We can show this is the maximum achievable.",
-      "In the second test, we cannot obtain any coffee of any type no matter what, so we output 0%%ZSMJ55%%."
+      "In the first test, you can ask for 8$$$8$$$ cups of type-2 coffee and 12$$$12$$$ cups of type-3 coffee. Then, you trade with customer 1$$$1$$$ using k=4$$$k=4$$$, and thus recieve 4$$$4$$$ cups of type-1 coffee. We can show this is the maximum achievable.",
+      "In the second test, we cannot obtain any coffee of any type no matter what, so we output 0$$$0$$$."
     ]
   },
   "examples": [
@@ -40,5 +40,33 @@
       "input": "4\n3 1 20\n011\n2 2 3 3 1 1\n1 0 1000000000000000000\n0\n8 12 8773\n01100000\n4 8 2 4 1 6\n1 2 4 7 1 8\n4 7 1 2 1 6\n5 8 2 2 1 1\n5 3 3 1 1 2\n5 8 3 7 1 5\n3 3 2 7 1 2\n5 1 4 5 1 6\n3 4 4 8 1 3\n5 7 4 8 1 3\n5 3 4 2 1 4\n3 4 1 3 1 7\n4 2 1\n0011\n2 3 5 4 1 2\n5 2 1 4 1 1",
       "output": "4.0\n0\n15.4726631393\n0.02777777777777"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

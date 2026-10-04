@@ -9,26 +9,26 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "There is an n%%ZSMJ0%% by m%%ZSMJ1%% grid of black and white squares. In one operation, you can pick any two adjacent squares of the same color and swap the colors of both. For example, here is a valid sequence of two operations on a grid with n=4%%ZSMJ2%%, m=3%%ZSMJ3%%:",
+      "There is an n$$$n$$$ by m$$$m$$$ grid of black and white squares. In one operation, you can pick any two adjacent squares of the same color and swap the colors of both. For example, here is a valid sequence of two operations on a grid with n=4$$$n=4$$$, m=3$$$m=3$$$:",
       "![](https://espresso.codeforces.com/29163f8bdff3ef804427337d609373d75058401a.png)",
-      "You are also given a target grid of n%%ZSMJ4%% by m%%ZSMJ5%% black and white squares. Perform at most 200nm%%ZSMJ6%% operations on the starting grid to reach the target grid, or state that it is impossible to do so. You do not need to minimize the number of operations.",
-      "It can be shown that if there is a solution, there is one that uses at most 200nm%%ZSMJ7%% operations."
+      "You are also given a target grid of n$$$n$$$ by m$$$m$$$ black and white squares. Perform at most 200nm$$$200nm$$$ operations on the starting grid to reach the target grid, or state that it is impossible to do so. You do not need to minimize the number of operations.",
+      "It can be shown that if there is a solution, there is one that uses at most 200nm$$$200nm$$$ operations."
     ],
     "input": [
-      "The first line of the input contains a single integer t%%ZSMJ8%% (1≤t≤500%%ZSMJ9%%) — the number of test cases. The description of the test cases follows.",
-      "The first line of each test case contains two integers n%%ZSMJ10%% and m%%ZSMJ11%% (1≤n,m≤50%%ZSMJ12%%) — the number of rows and columns in the grid, respectively.",
-      "The i%%ZSMJ13%%-th of the next n%%ZSMJ14%% lines contains m%%ZSMJ15%% characters describing the i%%ZSMJ16%%-th row of the starting grid. The j%%ZSMJ17%%-th of these is '#' if the square at position (i,j)%%ZSMJ18%% is black, and '.' if the square at position (i,j)%%ZSMJ19%% is white.",
-      "The next n%%ZSMJ20%% lines describe the target grid in the same format as the starting grid.",
-      "It is guaranteed that the sum of n⋅m%%ZSMJ21%% over all test cases does not exceed 2500%%ZSMJ22%%."
+      "The first line of the input contains a single integer t$$$t$$$ (1≤t≤500$$$1 \\le t \\le 500$$$) — the number of test cases. The description of the test cases follows.",
+      "The first line of each test case contains two integers n$$$n$$$ and m$$$m$$$ (1≤n,m≤50$$$1 \\le n, m \\le 50$$$) — the number of rows and columns in the grid, respectively.",
+      "The i$$$i$$$-th of the next n$$$n$$$ lines contains m$$$m$$$ characters describing the i$$$i$$$-th row of the starting grid. The j$$$j$$$-th of these is '#' if the square at position (i,j)$$$(i, j)$$$ is black, and '.' if the square at position (i,j)$$$(i, j)$$$ is white.",
+      "The next n$$$n$$$ lines describe the target grid in the same format as the starting grid.",
+      "It is guaranteed that the sum of n⋅m$$$n\\cdot m$$$ over all test cases does not exceed 2500$$$2500$$$."
     ],
     "output": [
-      "For each test case, if there is no solution, output a single integer −1%%ZSMJ23%%.",
-      "Otherwise, the first line of output for each test case should contain a single integer k%%ZSMJ24%% (0≤k≤200nm%%ZSMJ25%%) — the number of operations you will perform.",
-      "The next k%%ZSMJ26%% lines of output should each contain four integers i1%%ZSMJ27%%, j1%%ZSMJ28%%, i2%%ZSMJ29%%, and j2%%ZSMJ30%% (1≤i1,i2≤n%%ZSMJ31%%, 1≤j1,j2≤m%%ZSMJ32%%) — the two adjacent squares (i1,j1)%%ZSMJ33%% and (i2,j2)%%ZSMJ34%% that are part of this operation.",
+      "For each test case, if there is no solution, output a single integer −1$$$-1$$$.",
+      "Otherwise, the first line of output for each test case should contain a single integer k$$$k$$$ (0≤k≤200nm$$$0 \\le k \\le 200nm$$$) — the number of operations you will perform.",
+      "The next k$$$k$$$ lines of output should each contain four integers i1$$$i_1$$$, j1$$$j_1$$$, i2$$$i_2$$$, and j2$$$j_2$$$ (1≤i1,i2≤n$$$1 \\le i_1, i_2 \\le n$$$, 1≤j1,j2≤m$$$1 \\le j_1, j_2 \\le m$$$) — the two adjacent squares (i1,j1)$$$(i_1, j_1)$$$ and (i2,j2)$$$(i_2, j_2)$$$ that are part of this operation.",
       "If there are multiple solutions, print any."
     ],
     "note": [
-      "Here is the sequence of 3%%ZSMJ35%% operations described by the output of the first test case:",
+      "Here is the sequence of 3$$$3$$$ operations described by the output of the first test case:",
       "![](https://espresso.codeforces.com/e101ea494cd2682c17fa50079357ad6caac82849.png)",
       "It is impossible to perform any operations in the second test case, so it is not possible to reach the target grid."
     ]
@@ -38,5 +38,31 @@
       "input": "6\n3 3\n..#\n.#.\n.#.\n#.#\n..#\n.##\n4 6\n#.#.#.\n.#.#.#\n#.#.#.\n.#.#.#\n......\n......\n......\n......\n1 1\n#\n#\n4 5\n#...#\n...#.\n###.#\n....#\n..#.#\n.#...\n###.#\n.##.#\n1 8\n...#....\n........\n4 2\n..\n..\n..\n..\n##\n##\n##\n##",
       "output": "3\n1 1 1 2\n1 2 2 2\n2 3 3 3\n-1\n0\n5\n1 2 1 3\n2 2 2 3\n1 1 1 2\n2 3 2 4\n4 2 4 3\n-1\n4\n1 1 1 2\n4 1 4 2\n2 1 3 1\n2 2 3 2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null
+    ]
+  }
 }

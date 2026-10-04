@@ -10,25 +10,25 @@
   "sections": {
     "legend": [
       "You are currently taking the course AlgoHell and have procrastinated a bit too much. Today is already the deadline for the current problem. Luckily, you have an algorithm which is correct, but it has a terrible runtime complexity. Therefore, you break into ETH's top secret super computer in the dome at the top of HG. Unfortunately, the complexity of your algorithm is so bad that even on the super computer, it runs too slowly. It will not be able to give you the result in time for your deadline.",
-      "To speed up the computation, you need to cool down the super computer. It has n%%ZSMJ0%% different server racks, where n%%ZSMJ1%% is even since the server architects can only buy racks in bundles of 2. Each rack has a unique heat level ai%%ZSMJ2%% since your parallelization does not split up the workload evenly. The racks are all aligned in a row; rack i%%ZSMJ3%% is next to rack i+1%%ZSMJ4%%. You want adjacent racks with a low heat level to cool their warmer neighbors. This works best if the difference between the heat levels is big. Therefore, you want to maximize the sum of absolute differences of heat levels in adjacent server racks:",
-      "maxn∑i=2|ai−1−ai|%%ZSMJ5%%",
+      "To speed up the computation, you need to cool down the super computer. It has n$$$n$$$ different server racks, where n$$$n$$$ is even since the server architects can only buy racks in bundles of 2. Each rack has a unique heat level ai$$$a_i$$$ since your parallelization does not split up the workload evenly. The racks are all aligned in a row; rack i$$$i$$$ is next to rack i+1$$$i+1$$$. You want adjacent racks with a low heat level to cool their warmer neighbors. This works best if the difference between the heat levels is big. Therefore, you want to maximize the sum of absolute differences of heat levels in adjacent server racks:",
+      "maxn∑i=2|ai−1−ai|$$\\max\\sum_{i=2}^n |a_{i-1} - a_i|$$",
       "Since you have been here before, you know that all adjacent racks are connected with a wire. You can use this wire to transfer the workloads and swap the heat levels of one server rack with an adjacent one. However, you also want to minimize the number of swaps, since each swap takes about 1 minute and you have to submit the answer before the deadline.",
       "Now you want to answer 2 questions to determine whether the computation will finish in time:",
       "How much cooling can you achieve — what is the maximum sum of absolute differences in heat levels?",
       "How much time does it take to reach this cooling efficiency — what is the minimum number of adjacent swaps to reach this sum?"
     ],
     "input": [
-      "The first line of input contains an integer t%%ZSMJ6%% (1≤t≤2⋅105%%ZSMJ7%%) — the number of test cases. Then t%%ZSMJ8%% lines follow, each describing one test case.",
-      "The first line of each test case contains an integer n%%ZSMJ9%% (2≤n≤4⋅105%%ZSMJ10%%) — the number of server racks in the super computer. Since the server architects are not weird, n%%ZSMJ11%% is guaranteed to be even.",
-      "The second line of each test case contains n distinct integers a1,...,an%%ZSMJ12%% (1≤ai≤n%%ZSMJ13%%), where ai%%ZSMJ14%% is the heat level of the i%%ZSMJ15%%–th rack.",
-      "It is guaranteed that the sum of n%%ZSMJ16%% over all test cases does not exceed 4⋅105%%ZSMJ17%%."
+      "The first line of input contains an integer t$$$t$$$ (1≤t≤2⋅105$$$1 \\leq t \\leq 2 \\cdot 10^5$$$) — the number of test cases. Then t$$$t$$$ lines follow, each describing one test case.",
+      "The first line of each test case contains an integer n$$$n$$$ (2≤n≤4⋅105$$$2 \\leq n \\leq 4 \\cdot 10^5$$$) — the number of server racks in the super computer. Since the server architects are not weird, n$$$n$$$ is guaranteed to be even.",
+      "The second line of each test case contains n distinct integers a1,...,an$$$a_1,...,a_n$$$ (1≤ai≤n$$$1 \\leq a_i \\leq n$$$), where ai$$$a_i$$$ is the heat level of the i$$$i$$$–th rack.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 4⋅105$$$4 \\cdot 10^5$$$."
     ],
     "output": [
       "For each test case, output two integers: the maximum sum of absolute differences in heat levels and the minimum number of adjacent swaps required to achieve this maximum."
     ],
     "note": [
-      "In the first test case, no workloads need to be swapped to reach the maximum difference of 1=|1−2|%%ZSMJ18%%.",
-      "In the second test case, you can swap heat level 3%%ZSMJ19%% to the very left. After 4 swaps, you have the heating configuration 3,6,5,1,4,2%%ZSMJ20%%. Then you can swap 4%%ZSMJ21%% with 2%%ZSMJ22%% and 5%%ZSMJ23%% with 1%%ZSMJ24%%, leaving 3,6,1,5,2,4%%ZSMJ25%%. This permutation has a maximum sum of differences of 3+5+4+3+2=17%%ZSMJ26%% after only 6 swaps. It can be proven that this is the maximum sum and the minimum number of adjacent swaps."
+      "In the first test case, no workloads need to be swapped to reach the maximum difference of 1=|1−2|$$$1 = |1 - 2|$$$.",
+      "In the second test case, you can swap heat level 3$$$3$$$ to the very left. After 4 swaps, you have the heating configuration 3,6,5,1,4,2$$$3, 6, 5, 1, 4, 2$$$. Then you can swap 4$$$4$$$ with 2$$$2$$$ and 5$$$5$$$ with 1$$$1$$$, leaving 3,6,1,5,2,4$$$3, 6, 1, 5, 2, 4$$$. This permutation has a maximum sum of differences of 3+5+4+3+2=17$$$3 + 5 + 4 + 3 + 2 = 17$$$ after only 6 swaps. It can be proven that this is the maximum sum and the minimum number of adjacent swaps."
     ]
   },
   "examples": [
@@ -36,5 +36,29 @@
       "input": "3\n2\n1 2\n6\n6 5 1 4 3 2\n8\n4 2 3 1 7 6 8 5",
       "output": "1 0\n17 6\n31 6"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

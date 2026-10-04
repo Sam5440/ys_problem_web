@@ -9,26 +9,26 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "Welcome to Lexicopolis, the ancient city of legends and treasures. The city is famous for its intricate network of one-way roads. There are n%%ZSMJ0%% intersections and m%%ZSMJ1%% one-way roads connecting the intersections. People can only travel from intersection ui%%ZSMJ2%% to intersection vi%%ZSMJ3%% along road i%%ZSMJ4%%, and road i%%ZSMJ5%% is associated with a magical number wi%%ZSMJ6%%. A path of length k%%ZSMJ7%% from intersection s%%ZSMJ8%% to t%%ZSMJ9%% is a sequence of roads e1,e2,…,ek%%ZSMJ10%% that allows travel from intersection s%%ZSMJ11%% to intersection t%%ZSMJ12%%. A path is lexicographically smaller than another path if at the first road where they have different magic numbers (not index), the number on the first path is smaller than the number on the second path.",
-      "It is rumored that the tourist who figures out the lexicographically smallest path of length k%%ZSMJ13%% from intersection s%%ZSMJ14%% to intersection t%%ZSMJ15%% can receive a gift from the Lexicopolis government. Please write a program to find the lexicographicall smallest path of length k%%ZSMJ16%% from intersection s%%ZSMJ17%% to t%%ZSMJ18%%. If it is impossible to travel from intersection s%%ZSMJ19%% to t%%ZSMJ20%% with exactly k%%ZSMJ21%% roads, output -1."
+      "Welcome to Lexicopolis, the ancient city of legends and treasures. The city is famous for its intricate network of one-way roads. There are n$$$n$$$ intersections and m$$$m$$$ one-way roads connecting the intersections. People can only travel from intersection ui$$$u_i$$$ to intersection vi$$$v_i$$$ along road i$$$i$$$, and road i$$$i$$$ is associated with a magical number wi$$$w_i$$$. A path of length k$$$k$$$ from intersection s$$$s$$$ to t$$$t$$$ is a sequence of roads e1,e2,…,ek$$$e_1, e_2, \\ldots, e_k$$$ that allows travel from intersection s$$$s$$$ to intersection t$$$t$$$. A path is lexicographically smaller than another path if at the first road where they have different magic numbers (not index), the number on the first path is smaller than the number on the second path.",
+      "It is rumored that the tourist who figures out the lexicographically smallest path of length k$$$k$$$ from intersection s$$$s$$$ to intersection t$$$t$$$ can receive a gift from the Lexicopolis government. Please write a program to find the lexicographicall smallest path of length k$$$k$$$ from intersection s$$$s$$$ to t$$$t$$$. If it is impossible to travel from intersection s$$$s$$$ to t$$$t$$$ with exactly k$$$k$$$ roads, output -1."
     ],
     "input": [
-      "The first line contains six integers n,m,s,t,x,k%%ZSMJ22%%. n%%ZSMJ23%% is the number of intersections. m%%ZSMJ24%% is the number of roads. s%%ZSMJ25%% is the starting intersection and t%%ZSMJ26%% is the ending intersection. x%%ZSMJ27%% is a number that will be used for outputting the answer. k%%ZSMJ28%% is the length of path. The i%%ZSMJ29%%-th of the m%%ZSMJ30%% following lines contains three integers ui%%ZSMJ31%%, vi%%ZSMJ32%% and wi%%ZSMJ33%%. That means road i%%ZSMJ34%% is from intersection ui%%ZSMJ35%% to intersection vi%%ZSMJ36%% and associated with magic number wi%%ZSMJ37%%.",
+      "The first line contains six integers n,m,s,t,x,k$$$n,m,s,t,x,k$$$. n$$$n$$$ is the number of intersections. m$$$m$$$ is the number of roads. s$$$s$$$ is the starting intersection and t$$$t$$$ is the ending intersection. x$$$x$$$ is a number that will be used for outputting the answer. k$$$k$$$ is the length of path. The i$$$i$$$-th of the m$$$m$$$ following lines contains three integers ui$$$u_i$$$, vi$$$v_i$$$ and wi$$$w_i$$$. That means road i$$$i$$$ is from intersection ui$$$u_i$$$ to intersection vi$$$v_i$$$ and associated with magic number wi$$$w_i$$$.",
       "Technical Specification",
-      "2≤n≤50%%ZSMJ38%%",
-      "1≤m≤n2−n%%ZSMJ39%%",
-      "1≤ui≤n%%ZSMJ40%% for i∈{1,2,…,m}%%ZSMJ41%%",
-      "1≤vi≤n%%ZSMJ42%% for i∈{1,2,…,m}%%ZSMJ43%%",
-      "1≤wi≤109%%ZSMJ44%% for i∈{1,2,…,m}%%ZSMJ45%%",
-      "ui≠vi%%ZSMJ46%% for i∈{1,2,…,m}%%ZSMJ47%%",
-      "(ui,vi)≠(uj,vj)%%ZSMJ48%% for i≠j%%ZSMJ49%%",
-      "1≤s≤n%%ZSMJ50%%",
-      "1≤t≤n%%ZSMJ51%%",
-      "1≤k≤109%%ZSMJ52%%",
-      "1≤x≤109%%ZSMJ53%%"
+      "2≤n≤50$$$2\\le n\\le 50$$$",
+      "1≤m≤n2−n$$$1\\le m\\le n^2-n$$$",
+      "1≤ui≤n$$$1\\le u_i \\le n$$$ for i∈{1,2,…,m}$$$i\\in\\{1,2,\\dots,m\\}$$$",
+      "1≤vi≤n$$$1\\le v_i \\le n$$$ for i∈{1,2,…,m}$$$i\\in\\{1,2,\\dots,m\\}$$$",
+      "1≤wi≤109$$$1\\le w_i \\le 10^9$$$ for i∈{1,2,…,m}$$$i\\in\\{1,2,\\dots,m\\}$$$",
+      "ui≠vi$$$u_i \\neq v_i$$$ for i∈{1,2,…,m}$$$i\\in\\{1,2,\\dots,m\\}$$$",
+      "(ui,vi)≠(uj,vj)$$$(u_i,v_i)\\neq (u_j,v_j)$$$ for i≠j$$$i\\neq j$$$",
+      "1≤s≤n$$$1\\le s \\le n$$$",
+      "1≤t≤n$$$1\\le t \\le n$$$",
+      "1≤k≤109$$$1\\le k\\le 10^9$$$",
+      "1≤x≤109$$$1\\le x\\le 10^9$$$"
     ],
     "output": [
-      "If there is no path of length k%%ZSMJ54%% from intersection s%%ZSMJ55%% to t%%ZSMJ56%%, output -1. Otherwise, assume such a path exists. Consider the lexicographically smallest path e1,e2,…,ek%%ZSMJ57%%, and output ∑ki=1weixk−i%%ZSMJ58%% modulo 109+7%%ZSMJ59%%, where x%%ZSMJ60%% is the number provided as the fifth value in the first line of the input."
+      "If there is no path of length k$$$k$$$ from intersection s$$$s$$$ to t$$$t$$$, output -1. Otherwise, assume such a path exists. Consider the lexicographically smallest path e1,e2,…,ek$$$e_1, e_2, \\dots, e_k$$$, and output ∑ki=1weixk−i$$$\\sum_{i=1}^k w_{e_i} x^{k-i}$$$ modulo 109+7$$$10^9 + 7$$$, where x$$$x$$$ is the number provided as the fifth value in the first line of the input."
     ]
   },
   "examples": [
@@ -48,5 +48,29 @@
       "input": "6 7 1 6 123 2\n1 2 1000000000\n2 4 2\n3 4 3\n4 5 4\n5 3 1\n4 6 2\n6 5 1",
       "output": "-1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

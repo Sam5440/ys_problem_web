@@ -10,19 +10,19 @@
   "sections": {
     "legend": [
       "Carlinhos loves movies, and recently he has been fascinated by the Bacon Number, which is defined as follows.",
-      "The Bacon number of the actor Kevin Bacon is equal to 0%%ZSMJ0%%;",
-      "If the smallest Bacon number of an actor with whom X has appeared in the same movie is b%%ZSMJ1%%, the bacon number of the actor X is b+1%%ZSMJ2%%.",
+      "The Bacon number of the actor Kevin Bacon is equal to 0$$$0$$$;",
+      "If the smallest Bacon number of an actor with whom X has appeared in the same movie is b$$$b$$$, the bacon number of the actor X is b+1$$$b+1$$$.",
       "That is, the Bacon number measures the shortest path between any actor and the actor Kevin Bacon, in which two actors are connected if they appeared together in the same movie.",
-      "Carlinhos is interested in a more general problem: given two actors, how to connect them through intermediate movies and actors? Given N%%ZSMJ3%% movies, and, for each movie, which of the existing M%%ZSMJ4%% actors acted in it. Carlinhos wants to answer Q%%ZSMJ5%% queries: in the i%%ZSMJ6%%-th of them, we want to compute some way to connect actor xi%%ZSMJ7%% with actor yi%%ZSMJ8%%. We must find some sequence xi=a1,f1,a2,f2,…,fk−1,ak=yi%%ZSMJ9%%, where 1≤aj≤M%%ZSMJ10%% are actors and 1≤fj≤N%%ZSMJ11%% are movies, and actor aj%%ZSMJ12%% acted in movies fj−1%%ZSMJ13%% and fj%%ZSMJ14%%, or indicate that no such sequence exists."
+      "Carlinhos is interested in a more general problem: given two actors, how to connect them through intermediate movies and actors? Given N$$$N$$$ movies, and, for each movie, which of the existing M$$$M$$$ actors acted in it. Carlinhos wants to answer Q$$$Q$$$ queries: in the i$$$i$$$-th of them, we want to compute some way to connect actor xi$$$x_i$$$ with actor yi$$$y_i$$$. We must find some sequence xi=a1,f1,a2,f2,…,fk−1,ak=yi$$$x_i = a_1, f_1, a_2, f_2, \\dots, f_{k-1}, a_k = y_i$$$, where 1≤aj≤M$$$1 \\leq a_j \\leq M$$$ are actors and 1≤fj≤N$$$1 \\leq f_j \\leq N$$$ are movies, and actor aj$$$a_j$$$ acted in movies fj−1$$$f_{j-1}$$$ and fj$$$f_j$$$, or indicate that no such sequence exists."
     ],
     "input": [
-      "In the first line of the input, two integers N%%ZSMJ15%% (1≤N≤100)%%ZSMJ16%% and M%%ZSMJ17%% (1≤M≤106)%%ZSMJ18%% are given, the number of movies and the number of actors.",
-      "N%%ZSMJ19%% lines follow. In the i%%ZSMJ20%%-th line, the first integer ni%%ZSMJ21%% (1≤ni≤M)%%ZSMJ22%% denotes the number of actors in movie i%%ZSMJ23%%. Next, ni%%ZSMJ24%% numbers in ascending order separated by spaces: the indices, from 1%%ZSMJ25%% to M%%ZSMJ26%%, of the actors who acted in movie i%%ZSMJ27%%.",
-      "The next line, contains an integer Q%%ZSMJ28%% (1≤Q≤104)%%ZSMJ29%%: the number of queries.",
-      "The next Q%%ZSMJ30%% lines describe the queries. In the i%%ZSMJ31%%-th of them, read two numbers xi,yi%%ZSMJ32%% (1≤xi≠yi≤M)%%ZSMJ33%%, the actors we want to connect. It is guaranteed that the total number of actors in the movies is at most 106%%ZSMJ34%%. That is, ∑ini≤106%%ZSMJ35%%."
+      "In the first line of the input, two integers N$$$N$$$ (1≤N≤100)$$$(1 \\leq N \\leq 100)$$$ and M$$$M$$$ (1≤M≤106)$$$(1 \\leq M \\leq 10^6)$$$ are given, the number of movies and the number of actors.",
+      "N$$$N$$$ lines follow. In the i$$$i$$$-th line, the first integer ni$$$n_i$$$ (1≤ni≤M)$$$(1 \\leq n_i \\leq M)$$$ denotes the number of actors in movie i$$$i$$$. Next, ni$$$n_i$$$ numbers in ascending order separated by spaces: the indices, from 1$$$1$$$ to M$$$M$$$, of the actors who acted in movie i$$$i$$$.",
+      "The next line, contains an integer Q$$$Q$$$ (1≤Q≤104)$$$(1 \\leq Q \\leq 10^4)$$$: the number of queries.",
+      "The next Q$$$Q$$$ lines describe the queries. In the i$$$i$$$-th of them, read two numbers xi,yi$$$x_i, y_i$$$ (1≤xi≠yi≤M)$$$(1 \\leq x_i \\neq y_i \\leq M)$$$, the actors we want to connect. It is guaranteed that the total number of actors in the movies is at most 106$$$10^6$$$. That is, ∑ini≤106$$$\\sum_i n_i \\leq 10^6$$$."
     ],
     "output": [
-      "For each of the queries, if there is no sequence, print a line with −1%%ZSMJ36%%. Otherwise, print two lines. In the first line, print the number of actors ki%%ZSMJ37%% (2≤ki≤106)%%ZSMJ38%% in some way to connect xi%%ZSMJ39%% and yi%%ZSMJ40%%. In the second, print the sequence as described, with ki%%ZSMJ41%% actors and ki−1%%ZSMJ42%% movies, alternating. If there is more than one way to connect the actors, print any of them."
+      "For each of the queries, if there is no sequence, print a line with −1$$$-1$$$. Otherwise, print two lines. In the first line, print the number of actors ki$$$k_i$$$ (2≤ki≤106)$$$(2 \\leq k_i \\leq 10^6)$$$ in some way to connect xi$$$x_i$$$ and yi$$$y_i$$$. In the second, print the sequence as described, with ki$$$k_i$$$ actors and ki−1$$$k_i - 1$$$ movies, alternating. If there is more than one way to connect the actors, print any of them."
     ]
   },
   "examples": [
@@ -30,5 +30,23 @@
       "input": "4 6\n3 1 2 5\n3 1 3 5\n2 2 4\n1 6\n4\n1 5\n1 4\n3 4\n1 6",
       "output": "2\n1 1 5\n3\n1 1 2 3 4\n4\n3 2 5 1 2 3 4\n-1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

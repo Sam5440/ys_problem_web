@@ -9,25 +9,25 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "A subarray of an array B%%ZSMJ0%% is a contiguous sequence of elements taken from B%%ZSMJ1%%. For example, if B=[3,1,4,1,5]%%ZSMJ2%%, then [3,1,4]%%ZSMJ3%%, [4,1]%%ZSMJ4%%, the empty array [ ]%%ZSMJ5%% and the whole array B%%ZSMJ6%% are subarrays of B%%ZSMJ7%% (among others), while [3,4,5]%%ZSMJ8%% and [1,3]%%ZSMJ9%% are not subarrays of B%%ZSMJ10%%.",
-      "We also define Cm%%ZSMJ11%% as the array obtained by the concatenation of m%%ZSMJ12%% copies of the array C%%ZSMJ13%%. For example, if C=[3,2]%%ZSMJ14%% then C1=[3,2]%%ZSMJ15%%, C2=[3,2,3,2]%%ZSMJ16%% and C∞=[…,3,2,3,2,3,2,…]%%ZSMJ17%%.",
-      "In this problem you are given an array P%%ZSMJ18%% containing no repeated numbers, and you have to process a sequence of events that occur in order. The events can be of three types:",
-      "Delete:  a number present in P%%ZSMJ19%% must be deleted.  For example, if P=[2,3,4]%%ZSMJ20%% and the number 3%%ZSMJ21%% has to be deleted, once the event is processed  P%%ZSMJ22%% will become [2,4]%%ZSMJ23%%.",
-      "Insert:  a number not present in P%%ZSMJ24%% must be inserted into P%%ZSMJ25%% before some other number present in P%%ZSMJ26%%.  For example, if P=[4,3,2,1]%%ZSMJ27%% and the number 9%%ZSMJ28%% must be inserted before the number 1%%ZSMJ29%%,  once the event is processed  P%%ZSMJ30%% will become [4,3,2,9,1]%%ZSMJ31%%.",
-      "Query:  the length of the longest common subarray between P∞%%ZSMJ32%% and A∞%%ZSMJ33%% must be computed,  where A%%ZSMJ34%% is an array given in the query.  For example, if P=[1,2,3,4]%%ZSMJ35%% and A=[3,2]%%ZSMJ36%%, then the longest common subarray between P∞%%ZSMJ37%% and A∞%%ZSMJ38%% is [2,3]%%ZSMJ39%%,  so the answer to the query is 2%%ZSMJ40%%.",
+      "A subarray of an array B$$$B$$$ is a contiguous sequence of elements taken from B$$$B$$$. For example, if B=[3,1,4,1,5]$$$B=[3,1,4,1,5]$$$, then [3,1,4]$$$[3,1,4]$$$, [4,1]$$$[4,1]$$$, the empty array [ ]$$$[\\ ]$$$ and the whole array B$$$B$$$ are subarrays of B$$$B$$$ (among others), while [3,4,5]$$$[3,4,5]$$$ and [1,3]$$$[1,3]$$$ are not subarrays of B$$$B$$$.",
+      "We also define Cm$$$C^m$$$ as the array obtained by the concatenation of m$$$m$$$ copies of the array C$$$C$$$. For example, if C=[3,2]$$$C=[3,2]$$$ then C1=[3,2]$$$C^1=[3,2]$$$, C2=[3,2,3,2]$$$C^2=[3,2,3,2]$$$ and C∞=[…,3,2,3,2,3,2,…]$$$C^{\\infty}=[\\ldots,3,2,3,2,3,2,\\ldots]$$$.",
+      "In this problem you are given an array P$$$P$$$ containing no repeated numbers, and you have to process a sequence of events that occur in order. The events can be of three types:",
+      "Delete:  a number present in P$$$P$$$ must be deleted.  For example, if P=[2,3,4]$$$P=[2,3,4]$$$ and the number 3$$$3$$$ has to be deleted, once the event is processed  P$$$P$$$ will become [2,4]$$$[2,4]$$$.",
+      "Insert:  a number not present in P$$$P$$$ must be inserted into P$$$P$$$ before some other number present in P$$$P$$$.  For example, if P=[4,3,2,1]$$$P=[4,3,2,1]$$$ and the number 9$$$9$$$ must be inserted before the number 1$$$1$$$,  once the event is processed  P$$$P$$$ will become [4,3,2,9,1]$$$[4,3,2,9,1]$$$.",
+      "Query:  the length of the longest common subarray between P∞$$$P^\\infty$$$ and A∞$$$A^\\infty$$$ must be computed,  where A$$$A$$$ is an array given in the query.  For example, if P=[1,2,3,4]$$$P=[1,2,3,4]$$$ and A=[3,2]$$$A=[3,2]$$$, then the longest common subarray between P∞$$$P^\\infty$$$ and A∞$$$A^\\infty$$$ is [2,3]$$$[2,3]$$$,  so the answer to the query is 2$$$2$$$.",
       "Are you ready for this challenge?"
     ],
     "input": [
-      "The first line contains an integer N%%ZSMJ41%% (1≤N≤5⋅105%%ZSMJ42%%) indicating the initial length of P%%ZSMJ43%%.",
-      "The second line contains N%%ZSMJ44%% different integers P1,P2,…,PN%%ZSMJ45%% (1≤Pi≤106%%ZSMJ46%% for i=1,2,…,N%%ZSMJ47%%).",
-      "The third line contains an integer E%%ZSMJ48%% (1≤E≤5⋅105%%ZSMJ49%%) representing the number of events that need to be processed.",
-      "Each of the next E%%ZSMJ50%% lines describes an event, in the order they must be processed. The content of the line depends on the event, as follows:",
-      "Delete:  the line contains the character '-' (minus sign) and an integer X%%ZSMJ51%% (1≤X≤106%%ZSMJ52%%, and X∈P%%ZSMJ53%%), denoting that X%%ZSMJ54%% must be deleted from P%%ZSMJ55%%.  It is guaranteed that  after the removal P%%ZSMJ56%% does not become empty.",
-      "Insert:  the line contains the character '+' (plus sign) and two integers Y%%ZSMJ57%% and Z%%ZSMJ58%%  (1≤Y,Z≤106%%ZSMJ59%%, Y∉P%%ZSMJ60%%, and Z∈P%%ZSMJ61%%),  denoting that Y%%ZSMJ62%% must be inserted into P%%ZSMJ63%% immediately to the left of Z%%ZSMJ64%%.",
-      "Query:  the line contains the character '?' (question mark), a positive integer K%%ZSMJ65%%, and K%%ZSMJ66%% integers A1,A2,…,AK%%ZSMJ67%%  (1≤Ai≤106%%ZSMJ68%% for i=1,2,…,K%%ZSMJ69%%),  indicating that the length of the longest common subarray between P∞%%ZSMJ70%% and A∞%%ZSMJ71%% must be computed.  It is guaranteed that the input contains at least one query, and the sum of  K%%ZSMJ72%% across all the queries  is at most 106%%ZSMJ73%%."
+      "The first line contains an integer N$$$N$$$ (1≤N≤5⋅105$$$1 \\leq N \\leq 5 \\cdot 10^5$$$) indicating the initial length of P$$$P$$$.",
+      "The second line contains N$$$N$$$ different integers P1,P2,…,PN$$${P_1}, {P_2}, \\ldots, {P_N}$$$ (1≤Pi≤106$$$1 \\leq P_i \\leq 10^6$$$ for i=1,2,…,N$$${i}={1}, {2}, \\ldots, {N}$$$).",
+      "The third line contains an integer E$$$E$$$ (1≤E≤5⋅105$$$1 \\leq E \\leq 5 \\cdot 10^5$$$) representing the number of events that need to be processed.",
+      "Each of the next E$$$E$$$ lines describes an event, in the order they must be processed. The content of the line depends on the event, as follows:",
+      "Delete:  the line contains the character '-' (minus sign) and an integer X$$$X$$$ (1≤X≤106$$$1 \\leq X \\leq 10^6$$$, and X∈P$$$X \\in P$$$), denoting that X$$$X$$$ must be deleted from P$$$P$$$.  It is guaranteed that  after the removal P$$$P$$$ does not become empty.",
+      "Insert:  the line contains the character '+' (plus sign) and two integers Y$$$Y$$$ and Z$$$Z$$$  (1≤Y,Z≤106$$$1 \\leq Y, Z \\leq 10^6$$$, Y∉P$$$Y \\notin P$$$, and Z∈P$$$Z \\in P$$$),  denoting that Y$$$Y$$$ must be inserted into P$$$P$$$ immediately to the left of Z$$$Z$$$.",
+      "Query:  the line contains the character '?' (question mark), a positive integer K$$$K$$$, and K$$$K$$$ integers A1,A2,…,AK$$${A_1}, {A_2}, \\ldots, {A_K}$$$  (1≤Ai≤106$$$1 \\leq A_i \\leq 10^6$$$ for i=1,2,…,K$$${i}={1}, {2}, \\ldots, {K}$$$),  indicating that the length of the longest common subarray between P∞$$$P^{\\infty}$$$ and A∞$$$A^{\\infty}$$$ must be computed.  It is guaranteed that the input contains at least one query, and the sum of  K$$$K$$$ across all the queries  is at most 106$$$10^6$$$."
     ],
     "output": [
-      "Output a line for each query, with an integer indicating the length of the longest common subarray between P∞%%ZSMJ74%% and A∞%%ZSMJ75%%, or the character '*' (asterisk) if the length of the longest common subarray is larger than 1018%%ZSMJ76%%."
+      "Output a line for each query, with an integer indicating the length of the longest common subarray between P∞$$$P^\\infty$$$ and A∞$$$A^\\infty$$$, or the character '*' (asterisk) if the length of the longest common subarray is larger than 1018$$$10^{18}$$$."
     ]
   },
   "examples": [
@@ -39,5 +39,28 @@
       "input": "1\n217\n1\n? 1 314",
       "output": "0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

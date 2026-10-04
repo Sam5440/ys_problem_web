@@ -12,29 +12,29 @@
       "Odoo has introduced its new POS Kiosk app, which allows restaurants to receive orders from clients in their shop and process them easily. So basically, there are 2 main functionalities of the POS kiosk: add order , mark order as done so it's removed from the screen.",
       "For performance reasons, the updates in the database are made in batches. It means that for each batch of updates, there is only one query executed to remove/add records to the database.",
       "To test the database performance, Odoo developers came up with the following process :",
-      "There will be a randomly generated array of operations A%%ZSMJ0%% of size n%%ZSMJ1%% based on analytics of real data where Ai%%ZSMJ2%% is the difference between the created and deleted records of that batch of updates. For example, if Ai=3%%ZSMJ3%% , it means there are 3 more created records than deleted records in that batch of operations.",
-      "Now for every integers L%%ZSMJ4%% to R%%ZSMJ5%% (1≤L≤R≤n)%%ZSMJ6%% they will calculate f(A,L,R)%%ZSMJ7%% which goes as follows, from L%%ZSMJ8%% to R%%ZSMJ9%%, executes the queries one by one, and reports the maximum extra units of space needed from its initial state if we consider that each record needs 1%%ZSMJ10%% unit of space. It means that if Ai>0%%ZSMJ11%% we need extra Ai%%ZSMJ12%% units of space to be able to execute that query , otherwise we free −Ai%%ZSMJ13%% units of space from the database that can be filled later by some other updates. For example, for the sequence 2%%ZSMJ14%% 3%%ZSMJ15%% −4%%ZSMJ16%% 6%%ZSMJ17%%, the answer is 7%%ZSMJ18%%, and for 2%%ZSMJ19%% 3%%ZSMJ20%% −4%%ZSMJ21%% 3%%ZSMJ22%%, the answer is 5%%ZSMJ23%%.",
-      "Given the generated array A%%ZSMJ24%%, can you simulate the experiment and find : ∑1≤L≤R≤nf(A,L,R)%%ZSMJ25%%"
+      "There will be a randomly generated array of operations A$$$A$$$ of size n$$$n$$$ based on analytics of real data where Ai$$$A_{i}$$$ is the difference between the created and deleted records of that batch of updates. For example, if Ai=3$$$A_{i}=3$$$ , it means there are 3 more created records than deleted records in that batch of operations.",
+      "Now for every integers L$$$L$$$ to R$$$R$$$ (1≤L≤R≤n)$$$(1 \\leq L \\leq R \\leq n)$$$ they will calculate f(A,L,R)$$$f(A,L,R)$$$ which goes as follows, from L$$$L$$$ to R$$$R$$$, executes the queries one by one, and reports the maximum extra units of space needed from its initial state if we consider that each record needs 1$$$1$$$ unit of space. It means that if Ai>0$$$A_{i} \\gt 0$$$ we need extra Ai$$$A_{i}$$$ units of space to be able to execute that query , otherwise we free −Ai$$$-A_{i}$$$ units of space from the database that can be filled later by some other updates. For example, for the sequence 2$$$2$$$ 3$$$3$$$ −4$$$-4$$$ 6$$$6$$$, the answer is 7$$$7$$$, and for 2$$$2$$$ 3$$$3$$$ −4$$$-4$$$ 3$$$3$$$, the answer is 5$$$5$$$.",
+      "Given the generated array A$$$A$$$, can you simulate the experiment and find : ∑1≤L≤R≤nf(A,L,R)$$\\sum_{1\\leq L \\leq R\\leq n}f(A,L,R)$$"
     ],
     "input": [
-      "The first line contains an integer T%%ZSMJ26%% (1≤T≤2⋅105)%%ZSMJ27%%, the number of testcases.",
+      "The first line contains an integer T$$$T$$$ (1≤T≤2⋅105)$$$(1 \\leq T \\leq 2 \\cdot 10^{5})$$$, the number of testcases.",
       "For each test case:",
-      "The first line contains an integer n%%ZSMJ28%% (1≤n≤2⋅105)%%ZSMJ29%%, the size of the generated array of updates.",
-      "The second line contains n%%ZSMJ30%% integers Ai%%ZSMJ31%% (−2⋅103≤Ai≤2⋅103)%%ZSMJ32%%, the data of the generated array.",
-      "The sum of n%%ZSMJ33%% over all test cases doesn't exceed 2⋅105%%ZSMJ34%%"
+      "The first line contains an integer n$$$n$$$ (1≤n≤2⋅105)$$$(1 \\leq n \\leq 2 \\cdot 10^{5})$$$, the size of the generated array of updates.",
+      "The second line contains n$$$n$$$ integers Ai$$$A_{i}$$$ (−2⋅103≤Ai≤2⋅103)$$$(-2 \\cdot 10^3 \\leq A_{i} \\leq 2\\cdot 10^{3})$$$, the data of the generated array.",
+      "The sum of n$$$n$$$ over all test cases doesn't exceed 2⋅105$$$2\\cdot 10^{5}$$$"
     ],
     "output": [
-      "Print T%%ZSMJ35%% lines where the ith%%ZSMJ36%% line contains the answer for the ith%%ZSMJ37%% testcase."
+      "Print T$$$T$$$ lines where the ith$$$i_{th}$$$ line contains the answer for the ith$$$i_{th}$$$ testcase."
     ],
     "note": [
       "Explanation of the first test case:",
-      "for [−2]%%ZSMJ38%% the answer is 0%%ZSMJ39%%",
-      "for [−2,3]%%ZSMJ40%% the answer is 1%%ZSMJ41%%",
-      "for [−2,3,−5]%%ZSMJ42%% the answer is 1%%ZSMJ43%%",
-      "for [3]%%ZSMJ44%% the answer is 3%%ZSMJ45%%",
-      "for [3,−5]%%ZSMJ46%% the answer is 3%%ZSMJ47%%",
-      "for [−5]%%ZSMJ48%% the answer is 0%%ZSMJ49%%",
-      "The total sum is equal to 8%%ZSMJ50%%"
+      "for [−2]$$$[-2]$$$ the answer is 0$$$0$$$",
+      "for [−2,3]$$$[-2,3]$$$ the answer is 1$$$1$$$",
+      "for [−2,3,−5]$$$[-2,3,-5]$$$ the answer is 1$$$1$$$",
+      "for [3]$$$[3]$$$ the answer is 3$$$3$$$",
+      "for [3,−5]$$$[3,-5]$$$ the answer is 3$$$3$$$",
+      "for [−5]$$$[-5]$$$ the answer is 0$$$0$$$",
+      "The total sum is equal to 8$$$8$$$"
     ]
   },
   "examples": [
@@ -42,5 +42,35 @@
       "input": "2\n3\n-2 3 -5\n7\n1 -2 3 4 5 -10 223",
       "output": "8\n1672"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

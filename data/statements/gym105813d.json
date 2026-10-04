@@ -9,22 +9,22 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "You are given a set S%%ZSMJ0%% of n%%ZSMJ1%% distinct integers. You will also receive q%%ZSMJ2%% queries, each of one of the following two types:",
-      "Query Type 1 (1x)%%ZSMJ3%%:   If x%%ZSMJ4%% is currently in the set S%%ZSMJ5%%, remove it.",
-      "Otherwise, add x%%ZSMJ6%% to the set.",
-      "Query Type 2 (2t)%%ZSMJ7%%:   Print the cumulative bitwise XOR of (x+t)%%ZSMJ8%% over all x∈S%%ZSMJ9%%. Formally, print ⨁x∈S(x+t)%%ZSMJ10%%."
+      "You are given a set S$$$S$$$ of n$$$n$$$ distinct integers. You will also receive q$$$q$$$ queries, each of one of the following two types:",
+      "Query Type 1 (1x)$$$(1\\; x)$$$:   If x$$$x$$$ is currently in the set S$$$S$$$, remove it.",
+      "Otherwise, add x$$$x$$$ to the set.",
+      "Query Type 2 (2t)$$$(2\\; t)$$$:   Print the cumulative bitwise XOR of (x+t)$$$(x + t)$$$ over all x∈S$$$x \\in S$$$. Formally, print ⨁x∈S(x+t)$$$\\displaystyle\\bigoplus_{x \\in S} (x + t)$$$."
     ],
     "input": [
-      "The first line of the input contains two integers n%%ZSMJ11%% and q%%ZSMJ12%% (1≤n,q≤3⋅105%%ZSMJ13%%) — the initial size of the set and the number of queries, respectively.",
-      "The next line of the input will contain n%%ZSMJ14%% distinct integers x1,x2⋯xn%%ZSMJ15%% (0≤xi<220%%ZSMJ16%%)  — the initial set.",
-      "The next q%%ZSMJ17%% lines of the input will describe the queries. Each of them will contain a query of the form 1x%%ZSMJ18%% or 2t%%ZSMJ19%% (0≤x,t<220%%ZSMJ20%%), representing the query in the format described above.",
-      "It is guaranteed that there is at least one query of type 2%%ZSMJ21%%."
+      "The first line of the input contains two integers n$$$n$$$ and q$$$q$$$ (1≤n,q≤3⋅105$$$1 \\leq n,q \\leq 3 \\cdot 10^5$$$) — the initial size of the set and the number of queries, respectively.",
+      "The next line of the input will contain n$$$n$$$ distinct integers x1,x2⋯xn$$$x_1, x_2 \\cdots x_n$$$ (0≤xi<220$$$0 \\le x_i  \\lt  2^{20}$$$)  — the initial set.",
+      "The next q$$$q$$$ lines of the input will describe the queries. Each of them will contain a query of the form 1x$$$1\\; x$$$ or 2t$$$2\\; t$$$ (0≤x,t<220$$$0 \\le x, t  \\lt  2^{20}$$$), representing the query in the format described above.",
+      "It is guaranteed that there is at least one query of type 2$$$2$$$."
     ],
     "output": [
-      "For each query of type 2%%ZSMJ22%%, print the cumulative bitwise XOR of (x+t)%%ZSMJ23%% over all x∈S%%ZSMJ24%%."
+      "For each query of type 2$$$2$$$, print the cumulative bitwise XOR of (x+t)$$$(x+t)$$$ over all x∈S$$$x \\in S$$$."
     ],
     "note": [
-      "In the sample case, at the time of the first type 2%%ZSMJ25%% query, we have S={1,6,15}%%ZSMJ26%%. Since t=0%%ZSMJ27%% for this query, we print the value (1+0)⊕(6+0)⊕(15+0)=1⊕6⊕15=8%%ZSMJ28%% At the time of the second type 2%%ZSMJ29%% query, we have S={1,5,10,15}%%ZSMJ30%%. Since t=3%%ZSMJ31%% for this query, we print the value (1+3)⊕(5+3)⊕(10+3)⊕(15+3)=4⊕8⊕13⊕18=19%%ZSMJ32%%"
+      "In the sample case, at the time of the first type 2$$$2$$$ query, we have S={1,6,15}$$$S = \\{1, 6, 15\\}$$$. Since t=0$$$t = 0$$$ for this query, we print the value (1+0)⊕(6+0)⊕(15+0)=1⊕6⊕15=8$$(1 + 0) \\oplus (6 + 0) \\oplus (15 + 0) = 1 \\oplus 6 \\oplus 15 = 8$$ At the time of the second type 2$$$2$$$ query, we have S={1,5,10,15}$$$S = \\{1, 5, 10, 15\\}$$$. Since t=3$$$t = 3$$$ for this query, we print the value (1+3)⊕(5+3)⊕(10+3)⊕(15+3)=4⊕8⊕13⊕18=19$$(1 + 3) \\oplus (5 + 3) \\oplus (10 + 3) \\oplus (15 + 3) = 4 \\oplus 8 \\oplus 13 \\oplus 18 = 19$$"
     ]
   },
   "examples": [
@@ -32,5 +32,25 @@
       "input": "3 10\n1 6 15\n2 0\n1 5\n1 6\n1 10\n2 3\n2 12\n1 15\n2 7\n1 0\n2 7",
       "output": "8\n19\n17\n21\n18"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null
+    ]
+  }
 }

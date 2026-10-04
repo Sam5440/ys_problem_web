@@ -9,27 +9,27 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Pep is late for his competitive programming lecture. His building has n+1%%ZSMJ0%% floors, and he lives on the floor n+1%%ZSMJ1%%. To go to college, he calls the elevator to his floor. Since he's superstitious, if the elevator stops on more than one floor besides the one it was on when he called and his floor, n+1%%ZSMJ2%%, he believes the day will be bad and goes back to bed.",
+      "Pep is late for his competitive programming lecture. His building has n+1$$$n + 1$$$ floors, and he lives on the floor n+1$$$n + 1$$$. To go to college, he calls the elevator to his floor. Since he's superstitious, if the elevator stops on more than one floor besides the one it was on when he called and his floor, n+1$$$n + 1$$$, he believes the day will be bad and goes back to bed.",
       "![](https://espresso.codeforces.com/c98d704275b40e930a589995c39703d2640db9c6.png)",
-      "While the elevator is moving, each floor i%%ZSMJ3%% has a probability pi%%ZSMJ4%% that the neighbor on floor i%%ZSMJ5%% will call the elevator at that moment, causing it to stop. Fortunately for Pep, his neighbors are not obsessed with constantly calling the elevator, that is, pi<100%%%ZSMJ6%% for 1≤i≤n%%ZSMJ7%%.",
-      "During the college semester, his neighbors may move out, and new neighbors may arrive, changing the probability pi%%ZSMJ8%% of floor i%%ZSMJ9%%. Pep would also like to make queries to determine the probability of going to class, given that the elevator would be on floor x%%ZSMJ10%% when he calls it."
+      "While the elevator is moving, each floor i$$$i$$$ has a probability pi$$$p_i$$$ that the neighbor on floor i$$$i$$$ will call the elevator at that moment, causing it to stop. Fortunately for Pep, his neighbors are not obsessed with constantly calling the elevator, that is, pi<100%$$$p_i  \\lt  100\\%$$$ for 1≤i≤n$$$1 \\le i \\le n$$$.",
+      "During the college semester, his neighbors may move out, and new neighbors may arrive, changing the probability pi$$$p_i$$$ of floor i$$$i$$$. Pep would also like to make queries to determine the probability of going to class, given that the elevator would be on floor x$$$x$$$ when he calls it."
     ],
     "input": [
-      "The first line consists of two integers n%%ZSMJ11%% (3≤n≤2⋅105)%%ZSMJ12%% and q%%ZSMJ13%% (1≤q≤2⋅105)%%ZSMJ14%%.",
-      "The second line consists of n%%ZSMJ15%% integers pi%%ZSMJ16%% (0≤pi<100)%%ZSMJ17%%, representing the probability (in percentage) that the elevator will stop on floor i%%ZSMJ18%% while in motion.",
-      "The next q%%ZSMJ19%% lines correspond to queries of two types:",
-      "∙%%ZSMJ20%% 1%%ZSMJ21%% x%%ZSMJ22%% p%%ZSMJ23%%: Change the probability of floor x%%ZSMJ24%%, updating px%%ZSMJ25%% to p%%ZSMJ26%%.",
-      "∙%%ZSMJ27%% 2%%ZSMJ28%% x%%ZSMJ29%%: Answer with the probability that Pep will go to class, given that the elevator is on floor x%%ZSMJ30%% when he calls it."
+      "The first line consists of two integers n$$$n$$$ (3≤n≤2⋅105)$$$(3\\le n \\le 2\\cdot 10^5)$$$ and q$$$q$$$ (1≤q≤2⋅105)$$$(1\\le q \\le 2\\cdot 10^5)$$$.",
+      "The second line consists of n$$$n$$$ integers pi$$$p_i$$$ (0≤pi<100)$$$(0 \\le p_i  \\lt  100)$$$, representing the probability (in percentage) that the elevator will stop on floor i$$$i$$$ while in motion.",
+      "The next q$$$q$$$ lines correspond to queries of two types:",
+      "∙$$$\\bullet$$$ 1$$$1$$$ x$$$x$$$ p$$$p$$$: Change the probability of floor x$$$x$$$, updating px$$$p_x$$$ to p$$$p$$$.",
+      "∙$$$\\bullet$$$ 2$$$2$$$ x$$$x$$$: Answer with the probability that Pep will go to class, given that the elevator is on floor x$$$x$$$ when he calls it."
     ],
     "output": [
-      "For each query of type 2%%ZSMJ31%%, output a line with the queried probability. We can prove that this probability can be expressed as an irreducible fraction pq%%ZSMJ32%%. Print p⋅q−1%%ZSMJ33%% modulo (109+7)%%ZSMJ34%%."
+      "For each query of type 2$$$2$$$, output a line with the queried probability. We can prove that this probability can be expressed as an irreducible fraction pq$$$\\frac{p}{q}$$$. Print p⋅q−1$$$p \\cdot q^{-1}$$$ modulo (109+7)$$$(10^9 + 7)$$$."
     ],
     "note": [
       "In Sample 1:",
-      "The probability of not stopping on floors 2%%ZSMJ35%% and 3%%ZSMJ36%% is 14%%ZSMJ37%%.",
-      "The probability of stopping only on floor 2%%ZSMJ38%% is 14%%ZSMJ39%%.",
-      "The probability of stopping only on floor 3%%ZSMJ40%% is 14%%ZSMJ41%%.",
-      "Thus, the final answer is 34%%ZSMJ42%%."
+      "The probability of not stopping on floors 2$$$2$$$ and 3$$$3$$$ is 14$$$\\frac{1}{4}$$$.",
+      "The probability of stopping only on floor 2$$$2$$$ is 14$$$\\frac{1}{4}$$$.",
+      "The probability of stopping only on floor 3$$$3$$$ is 14$$$\\frac{1}{4}$$$.",
+      "Thus, the final answer is 34$$$\\frac{3}{4}$$$."
     ]
   },
   "examples": [
@@ -45,5 +45,30 @@
       "input": "4 3\n40 50 99 99\n2 2\n1 3 0\n2 2",
       "output": "854300006\n1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

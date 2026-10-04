@@ -9,23 +9,23 @@
   "memoryLimit": "512 megabytes",
   "sections": {
     "legend": [
-      "Alex has an array a1,a2,...,an%%ZSMJ0%%. A subarray al,al+1,...,ar%%ZSMJ1%% is good if both of the following are true:",
-      "r−l+1≥2%%ZSMJ2%%",
-      "max%%ZSMJ3%%",
-      "In one operation, Alex can remove any good subarray a_l, a_{l+1},...,a_r%%ZSMJ4%% for a cost of \\lfloor \\frac{r-l+1}{2} \\rfloor%%ZSMJ5%%. He can perform the operation as many times as he likes (possibly zero times). Find the minimum size of the array that he can get as well as the minimum cost to obtain an array of minimum size."
+      "Alex has an array a1,a2,...,an$$$a_1,a_2,...,a_n$$$. A subarray al,al+1,...,ar$$$a_l, a_{l+1},...,a_r$$$ is good if both of the following are true:",
+      "r−l+1≥2$$$r-l+1 \\geq 2$$$",
+      "max(al,al+1,...,ar)−min(al,al+1,...,ar)≤k$$$\\max(a_l, a_{l+1},...,a_r)-\\min(a_l, a_{l+1},...,a_r) \\leq k$$$",
+      "In one operation, Alex can remove any good subarray al,al+1,...,ar$$$a_l, a_{l+1},...,a_r$$$ for a cost of ⌊r−l+12⌋$$$\\lfloor \\frac{r-l+1}{2} \\rfloor$$$. He can perform the operation as many times as he likes (possibly zero times). Find the minimum size of the array that he can get as well as the minimum cost to obtain an array of minimum size."
     ],
     "input": [
-      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ6%% (1 \\leq t \\leq 100)%%ZSMJ7%%. The description of the test cases follows.",
-      "The first line of each testcase contains 2%%ZSMJ8%% integers, n%%ZSMJ9%% and k%%ZSMJ10%% (1 \\leq n \\leq 500, 0 \\leq k \\leq 10^9)%%ZSMJ11%%.",
-      "The second line contains n%%ZSMJ12%% integers, a_1, a_2,..., a_n%%ZSMJ13%% (1 \\leq a_i \\leq 10^9)%%ZSMJ14%%.",
-      "It is guaranteed that the sum of n%%ZSMJ15%% over all test cases doesn't exceed 500%%ZSMJ16%%."
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤100)$$$(1 \\leq t \\leq 100)$$$. The description of the test cases follows.",
+      "The first line of each testcase contains 2$$$2$$$ integers, n$$$n$$$ and k$$$k$$$ (1≤n≤500,0≤k≤109)$$$(1 \\leq n \\leq 500, 0 \\leq k \\leq 10^9)$$$.",
+      "The second line contains n$$$n$$$ integers, a1,a2,...,an$$$a_1, a_2,..., a_n$$$ (1≤ai≤109)$$$(1 \\leq a_i \\leq 10^9)$$$.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases doesn't exceed 500$$$500$$$."
     ],
     "output": [
-      "For each test case output 2%%ZSMJ17%% integers, the minimum size of the array that Alex can get followed by the minimum cost to obtain an array of minimum size."
+      "For each test case output 2$$$2$$$ integers, the minimum size of the array that Alex can get followed by the minimum cost to obtain an array of minimum size."
     ],
     "note": [
-      "In the first test case, the array is initially [1, 1, 5, 5, 1, 1]%%ZSMJ18%%. Alex can remove subarray [5, 5]%%ZSMJ19%% for a cost of 1%%ZSMJ20%% causing the array to become [1, 1, 1, 1]%%ZSMJ21%%. He can then remove subarray [1, 1, 1, 1]%%ZSMJ22%% for a cost of 2%%ZSMJ23%% causing the array to become empty.",
-      "In the second test case, the array is initially [1, 1, 5, 5, 1, 1]%%ZSMJ24%%. Alex can remove subarray [1, 1, 5]%%ZSMJ25%% for a cost of 1%%ZSMJ26%% causing the array to become [5, 1, 1]%%ZSMJ27%%. He can then remove subarray [5, 1, 1]%%ZSMJ28%% for a cost of 1%%ZSMJ29%% causing the array to become empty.",
+      "In the first test case, the array is initially [1,1,5,5,1,1]$$$[1, 1, 5, 5, 1, 1]$$$. Alex can remove subarray [5,5]$$$[5, 5]$$$ for a cost of 1$$$1$$$ causing the array to become [1,1,1,1]$$$[1, 1, 1, 1]$$$. He can then remove subarray [1,1,1,1]$$$[1, 1, 1, 1]$$$ for a cost of 2$$$2$$$ causing the array to become empty.",
+      "In the second test case, the array is initially [1,1,5,5,1,1]$$$[1, 1, 5, 5, 1, 1]$$$. Alex can remove subarray [1,1,5]$$$[1, 1, 5]$$$ for a cost of 1$$$1$$$ causing the array to become [5,1,1]$$$[5, 1, 1]$$$. He can then remove subarray [5,1,1]$$$[5, 1, 1]$$$ for a cost of 1$$$1$$$ causing the array to become empty.",
       "Problem Credits: Alex Liang and Larry Xing"
     ]
   },
@@ -34,5 +34,27 @@
       "input": "5\n6 0\n1 1 5 5 1 1\n6 4\n1 1 5 5 1 1\n6 1\n4 3 3 1 1 6\n10 2\n3 5 3 6 4 2 2 3 3 8\n1 0\n1",
       "output": "0 3\n0 2\n1 2\n0 4\n1 0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null
+    ]
+  }
 }

@@ -1,39 +1,75 @@
 {
   "code": "GYM106619D",
   "letter": "L",
-  "title": "L. Appending LIS",
+  "title": "1121. Another Round",
   "contest": null,
   "url": "https://codeforces.com/gym/106619/problem/D",
   "difficulty": "*1600",
-  "timeLimit": "1 second",
-  "memoryLimit": "256 megabytes",
+  "timeLimit": null,
+  "memoryLimit": null,
   "sections": {
     "legend": [
-      "For an integer array b%%ZSMJ0%% and a given integer k%%ZSMJ1%%, define S(b)%%ZSMJ2%% as follows. Perform exactly k%%ZSMJ3%% operations; in each operation, compute the length of the longest strictly increasing subsequence∗%%ZSMJ4%% (LIS) of the current array b%%ZSMJ5%% and append this value to the end of b%%ZSMJ6%%. Each operation acts on the array obtained from the previous ones. After the k%%ZSMJ7%% operations, S(b)%%ZSMJ8%% is the sum of all elements of the resulting array.",
-      "You are given an integer array a%%ZSMJ9%% of length n%%ZSMJ10%% and the integer k%%ZSMJ11%%. For each i%%ZSMJ12%% from 1%%ZSMJ13%% to n%%ZSMJ14%%, compute S(a[1..i])%%ZSMJ15%%, where a[1..i]%%ZSMJ16%% denotes the prefix a1,a2,…,ai%%ZSMJ17%%. Each prefix is processed independently: the operations performed while computing S(a[1..i])%%ZSMJ18%% do not affect any other prefix.",
-      "∗%%ZSMJ19%%A subsequence is obtained from an array by deleting zero or more elements without changing the order of the remaining ones; it is strictly increasing if each of its elements is strictly greater than the previous one."
+      "This is an interactive problem a contest with an unusual start time.",
+      "You are given a Codeforces account and n=6$$$n = 6$$$ problems, authored and prepared by qwexd and jeroenodb.",
+      "In one operation, you may choose a problem i$$$i$$$ (1≤i≤n$$$1 \\le i \\le n$$$) and submit a program intended to solve it.",
+      "The maximum scores are given below. Problem E is divided into two subtasks.",
+      "The points awarded for a correct submission may be lower, as determined by the Codeforces scoring rules.",
+      "Your task is to maximize your total score before the time limit expires."
     ],
     "input": [
-      "The first line contains a single integer t%%ZSMJ20%% (1≤t≤104%%ZSMJ21%%) — the number of test cases.",
-      "The first line of each test case contains two integers n%%ZSMJ22%% and k%%ZSMJ23%% (1≤n≤3⋅105%%ZSMJ24%%, 1≤k≤109%%ZSMJ25%%) — the length of the array and the number of operations.",
-      "The second line contains n%%ZSMJ26%% integers a1,a2,…,an%%ZSMJ27%% (−109≤ai≤109%%ZSMJ28%%) — the elements of the array.",
-      "It is guaranteed that the sum of n%%ZSMJ29%% over all test cases does not exceed 3⋅105%%ZSMJ30%%."
+      "The input consists of the problemset of Codeforces Round 1121 (Div. 2). It became available on Sunday, September 13, 2026 at 17:05UTC.",
+      "The round is rated for participants with a rating below 2100. Participants with a rating of 2100 or higher are welcome to participate out of competition."
     ],
     "output": [
-      "For each test case, output n%%ZSMJ31%% integers on a single line — the values S(a[1..1]),S(a[1..2]),…,S(a[1..n])%%ZSMJ32%%."
+      "For each problem you choose to solve, submit a correct program. You may solve the problems in any order.",
+      "Printing YES is not sufficient."
     ],
     "note": [
-      "In the first test case, a=[1,3,0]%%ZSMJ33%% and k=2%%ZSMJ34%%. Each prefix is processed independently.",
-      "Prefix [1]%%ZSMJ35%%: the LIS has length 1%%ZSMJ36%%, so we append 1%%ZSMJ37%%, giving [1,1]%%ZSMJ38%%. The LIS is still 1%%ZSMJ39%% (the two equal values 1%%ZSMJ40%% cannot both belong to a strictly increasing subsequence), so we append 1%%ZSMJ41%% again, giving [1,1,1]%%ZSMJ42%%. The sum is 1+1+1=3%%ZSMJ43%%.",
-      "Prefix [1,3]%%ZSMJ44%%: the LIS has length 2%%ZSMJ45%%, so we append 2%%ZSMJ46%%, giving [1,3,2]%%ZSMJ47%%. The LIS is still 2%%ZSMJ48%%, so we append 2%%ZSMJ49%% again, giving [1,3,2,2]%%ZSMJ50%%. The sum is 1+3+2+2=8%%ZSMJ51%%.",
-      "Prefix [1,3,0]%%ZSMJ52%%: the LIS has length 2%%ZSMJ53%%, so we append 2%%ZSMJ54%%, giving [1,3,0,2]%%ZSMJ55%%. The LIS is still 2%%ZSMJ56%%, so we append 2%%ZSMJ57%% again, giving [1,3,0,2,2]%%ZSMJ58%%. The sum is 1+3+0+2+2=8%%ZSMJ59%%.",
-      "So the answer for the first test case is 3 8 8%%ZSMJ60%%."
+      "It has been shown that every problem has a solution. The proofs are now available in the editorial.",
+      "The following participants were the first to construct correct solutions:",
+      "We would like to thank:",
+      "Proof_by_QED for coordinating the round;",
+      "Um_nik for the preliminary review;",
+      "Alexdat2000 for translating the statements to Russian;",
+      "our testers: __baozii__, nifeshe, Noobish_Monk, fuad720, temporary1, turska, Rayo, shorya1835, cry, TAhmed33, Rvess, omsincoconut, flammifer, robert9524, ismailfateen, osvarp, samsoom, Nyemot, SpyrosAliv, Sacha, Argentum47, snowythecat, EduardoBrito, wakanda-forever, linearspace, chromate00, simplelife, Vespasian_1, nik_exists, Svivl, ALnQ417, and HobVIIb1 for testing the round and providing valuable feedback;",
+      "our testers who didn't test: _istil, Arpa, sammyuri, AksLolCoding, BLOBVISGOD, sorry12000, naneosmic, Euclid73, i-love-ayase-momo, and ArnedeB;",
+      "KAN and MikeMirzayanov for Codeforces and Polygon;",
+      "you, for participating in the round.",
+      "Thank you for participating!",
+      "![](https://codeforces.com/codeforces.org/s/34234/images/icons/paperclip-16x16.png)"
     ]
   },
-  "examples": [
-    {
-      "input": "3\n3 2\n1 3 0\n3 10\n1 1 1\n5 1\n2 1 -1 3 2",
-      "output": "3 8 8\n11 12 13\n3 4 3 7 9"
-    }
-  ]
+  "examples": [],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

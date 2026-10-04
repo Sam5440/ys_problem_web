@@ -13,28 +13,28 @@
       {
         "pre": "Function CyclicSort(arr):\n     pos = 1\n     WHILE (arr is not sorted) DO\n        index = find the index of the minimum element in arr[pos...n]\n        shifts = index - pos\n        FOR (i = 1...shifts) DO\n            cyclically shift left arr[pos...n] by one position\n        END\n        pos = pos + 1\n     END  \nEND"
       },
-      "Let's consider an example by performing CyclicSort on the permutation p=[2,4,1,3,5]%%ZSMJ0%%.",
-      "pos =1%%ZSMJ1%%. The minimum element is at position 3%%ZSMJ2%% (p3=1%%ZSMJ3%%), and the subarray p1⋯5%%ZSMJ4%% is cyclically shifted to the left by one position twice, incurring 2%%ZSMJ5%% operations.  The resulting array is p(1)=[1,3,5,2,4]%%ZSMJ6%%.",
-      "pos =2%%ZSMJ7%%. The minimum element is at position 4%%ZSMJ8%% (p(1)4=2%%ZSMJ9%%), and the subarray p(1)2⋯5%%ZSMJ10%% is cyclically shifted to the left by one position twice, incurring 2%%ZSMJ11%% operations.  The resulting array is p(2)=[1,2,4,3,5]%%ZSMJ12%%.",
-      "pos =3%%ZSMJ13%%. The minimum element is at position 4%%ZSMJ14%% (p(2)4=3%%ZSMJ15%%), and the subarray p(2)3⋯5%%ZSMJ16%% is cyclically shifted to the left by one position once, incurring 1%%ZSMJ17%% operation.  The resulting array is p(3)=[1,2,3,5,4]%%ZSMJ18%%.",
-      "pos =4%%ZSMJ19%%. The minimum element is at position 5%%ZSMJ20%% (p(3)5=4%%ZSMJ21%%), and the subarray p(3)4⋯5%%ZSMJ22%% is cyclically shifted to the left by one position once, incurring 1%%ZSMJ23%% operation.  The resulting array is p(4)=[1,2,3,4,5]%%ZSMJ24%%.",
+      "Let's consider an example by performing CyclicSort on the permutation p=[2,4,1,3,5]$$$p = [2,4,1,3,5]$$$.",
+      "pos =1$$$=1$$$. The minimum element is at position 3$$$3$$$ (p3=1$$$p_3 = 1$$$), and the subarray p1⋯5$$$p_{1\\cdots 5}$$$ is cyclically shifted to the left by one position twice, incurring 2$$$2$$$ operations.  The resulting array is p(1)=[1,3,5,2,4]$$$p^{(1)} = [1,3,5,2,4]$$$.",
+      "pos =2$$$=2$$$. The minimum element is at position 4$$$4$$$ (p(1)4=2$$$p^{(1)}_4 = 2$$$), and the subarray p(1)2⋯5$$$p_{2\\cdots 5}^{(1)}$$$ is cyclically shifted to the left by one position twice, incurring 2$$$2$$$ operations.  The resulting array is p(2)=[1,2,4,3,5]$$$p^{(2)} = [1,2,4,3,5]$$$.",
+      "pos =3$$$=3$$$. The minimum element is at position 4$$$4$$$ (p(2)4=3$$$p^{(2)}_4 = 3$$$), and the subarray p(2)3⋯5$$$p_{3\\cdots 5}^{(2)}$$$ is cyclically shifted to the left by one position once, incurring 1$$$1$$$ operation.  The resulting array is p(3)=[1,2,3,5,4]$$$p^{(3)} = [1,2,3,5,4]$$$.",
+      "pos =4$$$=4$$$. The minimum element is at position 5$$$5$$$ (p(3)5=4$$$p^{(3)}_5 = 4$$$), and the subarray p(3)4⋯5$$$p_{4\\cdots 5}^{(3)}$$$ is cyclically shifted to the left by one position once, incurring 1$$$1$$$ operation.  The resulting array is p(4)=[1,2,3,4,5]$$$p^{(4)} = [1,2,3,4,5]$$$.",
       "Since the array is sorted, the algorithm terminates.",
       "TLE Creators proved that CyclicSort always sorts any permutation in ascending order, but they are having difficulty determining the number of cyclic left-shift operations that CyclicSort will perform. They are going live right after your contest, and desperately need your help!",
-      "Given a permutation p%%ZSMJ25%% of length n%%ZSMJ26%%, please help TLE Creators determine the number of cyclic left-shift operations that CyclicSort will perform."
+      "Given a permutation p$$$p$$$ of length n$$$n$$$, please help TLE Creators determine the number of cyclic left-shift operations that CyclicSort will perform."
     ],
     "input": [
-      "The first line contains a single integer t%%ZSMJ27%% (1≤t≤103%%ZSMJ28%%), the number of test cases. For each test case,",
-      "The first line contains a single integer n%%ZSMJ29%% (1≤n≤2×105%%ZSMJ30%%), the length of the permutation p%%ZSMJ31%%.",
-      "The second line contains n%%ZSMJ32%% integers p1%%ZSMJ33%% p2%%ZSMJ34%% ⋯%%ZSMJ35%% pn%%ZSMJ36%% (1≤pi≤n%%ZSMJ37%%), where pi%%ZSMJ38%% is the i%%ZSMJ39%%-th value of the permutation p%%ZSMJ40%%. It is guaranteed that p%%ZSMJ41%% is a permutation of 1,2,⋯,n%%ZSMJ42%%."
+      "The first line contains a single integer t$$$t$$$ (1≤t≤103$$$1\\leq t \\leq 10^3$$$), the number of test cases. For each test case,",
+      "The first line contains a single integer n$$$n$$$ (1≤n≤2×105$$$1\\leq n \\leq 2\\times 10^5$$$), the length of the permutation p$$$p$$$.",
+      "The second line contains n$$$n$$$ integers p1$$$p_1$$$ p2$$$p_2$$$ ⋯$$$\\cdots$$$ pn$$$p_n$$$ (1≤pi≤n$$$1\\leq p_i \\leq n$$$), where pi$$$p_i$$$ is the i$$$i$$$-th value of the permutation p$$$p$$$. It is guaranteed that p$$$p$$$ is a permutation of 1,2,⋯,n$$$1,2,\\cdots, n$$$."
     ],
     "output": [
-      "t%%ZSMJ45%% lines. For each test case, output a single integer, the number of cyclic left-shift operations performed by CyclicSort."
+      "t$$$t$$$ lines. For each test case, output a single integer, the number of cyclic left-shift operations performed by CyclicSort."
     ],
     "note": [
-      "There are 4%%ZSMJ46%% test cases.",
-      "The first test case is illustrated in the statement. The total number of shift operations is 2+2+1+1=6%%ZSMJ47%%",
-      "In the second test case, the array transitions and cyclic left shift counts are as follows:   p(1)=[1,4,5,6,2,3]%%ZSMJ48%%, cyclic left shift count = 2",
-      "p(2)=[1,2,3,4,5,6]%%ZSMJ49%%, cyclic left shift count = 3"
+      "There are 4$$$4$$$ test cases.",
+      "The first test case is illustrated in the statement. The total number of shift operations is 2+2+1+1=6$$$2 + 2 + 1 + 1 = 6$$$",
+      "In the second test case, the array transitions and cyclic left shift counts are as follows:   p(1)=[1,4,5,6,2,3]$$$p^{(1)} = [1,4,5,6,2,3]$$$, cyclic left shift count = 2",
+      "p(2)=[1,2,3,4,5,6]$$$p^{(2)} = [1,2,3,4,5,6]$$$, cyclic left shift count = 3"
     ]
   },
   "examples": [
@@ -42,5 +42,33 @@
       "input": "Function CyclicSort(arr):\n     pos = 1\n     WHILE (arr is not sorted) DO\n        index = find the index of the minimum element in arr[pos...n]\n        shifts = index - pos\n        FOR (i = 1...shifts) DO\n            cyclically shift left arr[pos...n] by one position\n        END\n        pos = pos + 1\n     END  \nEND",
       "output": "4\n5\n2 4 1 3 5\n6\n2 3 1 4 5 6\n6\n6 5 4 3 2 1\n7\n1 2 3 4 5 6 7"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

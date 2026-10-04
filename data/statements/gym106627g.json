@@ -9,32 +9,32 @@
   "memoryLimit": "512 megabytes",
   "sections": {
     "legend": [
-      "You live in a city with a mysterious transportation network consisting of n%%ZSMJ0%% locations and m%%ZSMJ1%% bi-directional roads. For the i%%ZSMJ2%%-th road (1≤i≤m%%ZSMJ3%%), the time taken to travel across it is 2i−1%%ZSMJ4%% minutes.",
+      "You live in a city with a mysterious transportation network consisting of n$$$n$$$ locations and m$$$m$$$ bi-directional roads. For the i$$$i$$$-th road (1≤i≤m$$$1\\leq i \\leq m$$$), the time taken to travel across it is 2i−1$$$2^{i-1}$$$ minutes.",
       "Alice is new to the city and is getting ready for her road trips. However, to her horror, Google Maps is not available in this city!",
-      "Alice turns to you, an aspiring competitive programmer. Alice's house is located at location 1%%ZSMJ5%%. For every location v%%ZSMJ6%% (2≤v≤n%%ZSMJ7%%), please help Alice find the minimum travel time from location 1%%ZSMJ8%% to location v%%ZSMJ9%%, and output that time modulo 998244353%%ZSMJ10%%."
+      "Alice turns to you, an aspiring competitive programmer. Alice's house is located at location 1$$$1$$$. For every location v$$$v$$$ (2≤v≤n$$$2\\leq v \\leq n$$$), please help Alice find the minimum travel time from location 1$$$1$$$ to location v$$$v$$$, and output that time modulo 998244353$$$998244353$$$."
     ],
     "input": [
-      "The first line contains a single integer t%%ZSMJ11%% (1≤t≤103%%ZSMJ12%%), the number of test cases. For each test case,",
-      "The first line consists of two integers n%%ZSMJ13%% and m%%ZSMJ14%% (2≤n≤2×105%%ZSMJ15%%, 1≤m≤5×105%%ZSMJ16%%), denoting the number of nodes n%%ZSMJ17%%, the number of bi-directional roads m%%ZSMJ18%%.",
-      "The following m%%ZSMJ19%% lines contain two integers u%%ZSMJ20%% and v%%ZSMJ21%% (1≤u,v≤n%%ZSMJ22%%, u≠v%%ZSMJ23%%), denoting a bi-directional road between locations u%%ZSMJ24%% and v%%ZSMJ25%%. The i%%ZSMJ26%%-th road listed in the input takes 2i−1%%ZSMJ27%% minutes to travel across.",
-      "The sum of n%%ZSMJ28%% over all test cases will not exceed 2×105%%ZSMJ29%%.",
-      "The sum of m%%ZSMJ30%% over all test cases will not exceed 5×105%%ZSMJ31%%.",
+      "The first line contains a single integer t$$$t$$$ (1≤t≤103$$$1\\leq t \\leq 10^3$$$), the number of test cases. For each test case,",
+      "The first line consists of two integers n$$$n$$$ and m$$$m$$$ (2≤n≤2×105$$$2\\leq n \\leq 2\\times 10^5$$$, 1≤m≤5×105$$$1\\leq m \\leq 5\\times 10^5$$$), denoting the number of nodes n$$$n$$$, the number of bi-directional roads m$$$m$$$.",
+      "The following m$$$m$$$ lines contain two integers u$$$u$$$ and v$$$v$$$ (1≤u,v≤n$$$1\\leq u,v\\leq n$$$, u≠v$$$u\\neq v$$$), denoting a bi-directional road between locations u$$$u$$$ and v$$$v$$$. The i$$$i$$$-th road listed in the input takes 2i−1$$$2^{i-1}$$$ minutes to travel across.",
+      "The sum of n$$$n$$$ over all test cases will not exceed 2×105$$$2\\times 10^5$$$.",
+      "The sum of m$$$m$$$ over all test cases will not exceed 5×105$$$5\\times 10^5$$$.",
       "The transportation network is a simple graph, with no multiple edges or self-loops."
     ],
     "output": [
-      "t%%ZSMJ32%% lines. For each test case, output one line containing n−1%%ZSMJ33%% integers d2,d3,⋯,dn%%ZSMJ34%%, where di%%ZSMJ35%% is defined by:",
-      "If at least one path exists from location 1%%ZSMJ36%% to location i%%ZSMJ37%%, then di%%ZSMJ38%% should be the minimum possible travel time from location 1%%ZSMJ39%% to location i%%ZSMJ40%%, modulo 998244353%%ZSMJ41%%. Note that the travel time itself should be minimized before taking the result modulo 998244353%%ZSMJ42%%.",
-      "Otherwise, di%%ZSMJ43%% should be -1."
+      "t$$$t$$$ lines. For each test case, output one line containing n−1$$$n-1$$$ integers d2,d3,⋯,dn$$$d_2, d_3,\\cdots, d_n$$$, where di$$$d_i$$$ is defined by:",
+      "If at least one path exists from location 1$$$1$$$ to location i$$$i$$$, then di$$$d_i$$$ should be the minimum possible travel time from location 1$$$1$$$ to location i$$$i$$$, modulo 998244353$$$998244353$$$. Note that the travel time itself should be minimized before taking the result modulo 998244353$$$998244353$$$.",
+      "Otherwise, di$$$d_i$$$ should be -1."
     ],
     "note": [
-      "There is 1%%ZSMJ44%% test case. The figure below provides a visualisation.",
+      "There is 1$$$1$$$ test case. The figure below provides a visualisation.",
       "![](https://espresso.codeforces.com/9277a885954aa6b5f2a1fe37ff9afd8d4d0e5b4e.png)",
-      "The minimum travel time routes from location 1%%ZSMJ45%% are as follows:",
-      "To location 2%%ZSMJ46%%: 1→5→4→3→2%%ZSMJ47%%. The total travel time is 25+23+21+20=32+8+2+1=43%%ZSMJ48%% minutes. Therefore, d2=43mod998244353=43%%ZSMJ49%%.",
-      "To location 3%%ZSMJ50%%: 1→5→4→3%%ZSMJ51%%. The total travel time is 25+23+21=32+8+2=42%%ZSMJ52%% minutes. Therefore, d3=42mod998244353=42%%ZSMJ53%%.",
-      "To location 4%%ZSMJ54%%: 1→5→4%%ZSMJ55%%. The total travel time is 25+23=32+8=40%%ZSMJ56%% Therefore, d4=40mod998244353=40%%ZSMJ57%%.",
-      "To location 5%%ZSMJ58%%: 1→5%%ZSMJ59%% The total travel time is 25=32%%ZSMJ60%% Therefore, d5=32mod998244353=32%%ZSMJ61%%.",
-      "Location 6%%ZSMJ62%% is unreachable from location 1%%ZSMJ63%%, so d6=−1%%ZSMJ64%%."
+      "The minimum travel time routes from location 1$$$1$$$ are as follows:",
+      "To location 2$$$2$$$: 1→5→4→3→2$$$1 \\rightarrow 5 \\rightarrow 4 \\rightarrow 3 \\rightarrow 2$$$. The total travel time is 25+23+21+20=32+8+2+1=43$$$2^5 + 2^3 + 2^1 + 2^0 = 32 + 8 + 2 + 1 = 43$$$ minutes. Therefore, d2=43mod998244353=43$$$d_2 = 43 \\bmod 998244353 = 43$$$.",
+      "To location 3$$$3$$$: 1→5→4→3$$$1 \\rightarrow 5 \\rightarrow 4 \\rightarrow 3$$$. The total travel time is 25+23+21=32+8+2=42$$$2^5 + 2^3 + 2^1 = 32 + 8 + 2 = 42$$$ minutes. Therefore, d3=42mod998244353=42$$$d_3 = 42 \\bmod 998244353 = 42$$$.",
+      "To location 4$$$4$$$: 1→5→4$$$1 \\rightarrow 5 \\rightarrow 4$$$. The total travel time is 25+23=32+8=40$$ 2^5 + 2^3 = 32 + 8 = 40 $$ Therefore, d4=40mod998244353=40$$$d_4 = 40 \\bmod 998244353 = 40$$$.",
+      "To location 5$$$5$$$: 1→5$$ 1 \\rightarrow 5 $$ The total travel time is 25=32$$ 2^5 = 32 $$ Therefore, d5=32mod998244353=32$$$d_5 = 32 \\bmod 998244353 = 32$$$.",
+      "Location 6$$$6$$$ is unreachable from location 1$$$1$$$, so d6=−1$$$d_6 = -1$$$."
     ]
   },
   "examples": [
@@ -42,5 +42,35 @@
       "input": "1\n6 7\n2 3\n3 4\n2 4\n4 5\n2 5\n1 5\n1 2",
       "output": "43 42 40 32 -1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

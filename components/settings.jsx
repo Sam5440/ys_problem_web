@@ -11,27 +11,27 @@ export const CHANNELS = [
   { id: 'youdao', label: '有道' },
   { id: 'caiyun', label: '彩云' },
   { id: 'iflyrec', label: '讯飞' },
-  { id: 'ai', label: 'AI' },
+  { id: 'ai', label: 'AI (CI翻译)' },
+  { id: 'ai_custom', label: 'AI (用户自定义翻译)' },
 ];
 
 // Channels whose translations the daily pipeline archives in the repo —
-// the only members of the 对照 fallback priority list.
+// the MT members of the 对照 fallback priority list ('ai' is archived too,
+// by the CI AI backfill job).
 export const ARCHIVED_CHANNELS = ['deepl', 'youdao', 'caiyun', 'iflyrec'];
 
 // 对照 mode walks this list per segment: the first channel with a translation
-// wins. Translations come from the repo archive or from this browser, which
-// requests the four MT channels itself (lib/zh-store.js) and caches them.
-// 'ai' is the CI job's archived AI translation (AI 内置); the user's own
-// endpoint (AI 外置) translates on demand in the explicit 中文(AI) mode.
-export const DEFAULT_PRIORITY = ['deepl', 'caiyun', 'iflyrec', 'youdao', 'ai'];
+// wins. AI (CI翻译) leads by default — the site owner wants the CI-archived
+// AI translation surfaced first; users can reorder below it in settings.
+export const DEFAULT_PRIORITY = ['ai', 'deepl', 'caiyun', 'iflyrec', 'youdao'];
 
 export const channelLabel = (id) => CHANNELS.find((c) => c.id === id)?.label || id;
 // inside the priority editor 'ai' means the CI-archived translation
-const priorityLabel = (id) => (id === 'ai' ? 'AI（内置）' : channelLabel(id));
+const priorityLabel = (id) => channelLabel(id);
 
 const DEFAULT_SETTINGS = {
   defaultChannel: 'deepl',
-  sidebarChannels: ['deepl', 'youdao', 'caiyun', 'iflyrec', 'ai'],
+  sidebarChannels: ['deepl', 'youdao', 'caiyun', 'iflyrec', 'ai', 'ai_custom'],
   zhPriority: DEFAULT_PRIORITY,
   ai: { baseUrl: '', apiKey: '', model: AI_MODELS[0] },
 };
@@ -44,7 +44,11 @@ function loadLang(defaultChannel) {
     const raw = window.localStorage.getItem(LANG_KEY);
     if (raw) {
       const v = JSON.parse(raw);
-      if (v && ['en', 'zh', 'both'].includes(v.mode) && typeof v.channel === 'string') return v;
+      if (v && ['en', 'zh', 'both'].includes(v.mode) && typeof v.channel === 'string') {
+        // pre-split, "ai" meant the user's own endpoint — it is now ai_custom
+        if (v.channel === 'ai') v.channel = 'ai_custom';
+        return v;
+      }
     }
     // migrate v1 ("en" | "zh" | "both")
     const legacy = window.localStorage.getItem('stmt-lang');
@@ -64,12 +68,20 @@ function loadSettings() {
         ...v,
         ai: { ...DEFAULT_SETTINGS.ai, ...(v.ai || {}) },
       };
-      // keep every known archived channel in the priority list: custom order
-      // first, channels saved before an upgrade appended in default position.
-      const saved = Array.isArray(merged.zhPriority) ? merged.zhPriority : [];
-      merged.zhPriority = [...new Set([...saved, ...ARCHIVED_CHANNELS, 'ai'])].filter(
+      // keep every known archived channel in the priority list; 'ai' (CI
+      // backfill) is promoted to the front for lists saved before it existed —
+      // lists that already contain it are respected as-is
+      const saved = (Array.isArray(merged.zhPriority) ? merged.zhPriority : []).filter(
         (id) => ARCHIVED_CHANNELS.includes(id) || id === 'ai',
       );
+      merged.zhPriority = saved.includes('ai')
+        ? [...saved, ...ARCHIVED_CHANNELS.filter((id) => !saved.includes(id))]
+        : ['ai', ...saved, ...ARCHIVED_CHANNELS.filter((id) => !saved.includes(id))];
+      // surface both AI entries even for visitors who saved their sidebar
+      // before they existed
+      merged.sidebarChannels = [
+        ...new Set([...(Array.isArray(merged.sidebarChannels) ? merged.sidebarChannels : []), 'ai', 'ai_custom']),
+      ];
       return merged;
     }
   } catch {}
@@ -283,7 +295,7 @@ function SettingsDialog({ onClose }) {
 
         <div className="space-y-3 rounded-lg border border-dashed p-3">
           <p className="text-xs font-medium text-muted-foreground">
-            自定义 AI 翻译（OpenAI 兼容接口，浏览器直连，Key 仅保存在本机）
+            AI（用户自定义翻译）· OpenAI 兼容接口，浏览器直连，Key 仅保存在本机
           </p>
           <Field label="Base URL" hint="HTTPS 部署的站点需填写 HTTPS 地址，否则浏览器会拦截混合内容">
             <input

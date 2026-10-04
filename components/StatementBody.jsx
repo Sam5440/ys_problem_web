@@ -178,7 +178,7 @@ function Paragraphs({ list, zhList, mode, channel, ai, chain, segPrefix }) {
     const zh = zhList?.[i];
     const zhLine = chain ? (
       <ChainZhLine segKey={segKey} seg={zh} priority={chain.priority} />
-    ) : channel === 'ai' ? (
+    ) : channel === 'ai_custom' ? (
       <AiZhLine en={p} ai={ai} />
     ) : (
       <ZhLine segKey={segKey} seg={zh} channel={channel} />
@@ -224,8 +224,16 @@ export default function StatementBody({ statement, code }) {
   const s = statement;
   const mode = lang.mode;
   const channel = lang.channel;
-  const ai = channel === 'ai' ? settings.ai : null;
-  const chain = mode === 'both' ? { priority: settings.zhPriority } : null;
+  // AI (用户自定义翻译) — live translation via the user's own endpoint
+  const ai = channel === 'ai_custom' ? settings.ai : null;
+  // 对照 uses the full user-configurable chain (AI (CI翻译) leads by default);
+  // 中文(AI·CI翻译) reuses the chain machinery pinned to just the CI archive.
+  const chain =
+    mode === 'both'
+      ? { priority: settings.zhPriority }
+      : channel === 'ai'
+        ? { priority: ['ai'] }
+        : null;
 
   // Kick off (or resume) the client-side fill for every paragraph/channel
   // pair this statement needs — archived pairs are skipped inside.
@@ -237,7 +245,7 @@ export default function StatementBody({ statement, code }) {
 
   let titleLine = null;
   if (mode !== 'en') {
-    titleLine = channel === 'ai' ? (
+    titleLine = channel === 'ai_custom' ? (
       <AiZhLine en={s.title} ai={ai} note="标题" />
     ) : chain ? (
       <ChainZhLine segKey={segKeyOf('title')} seg={s.titleZh || null} priority={chain.priority} note="标题" />

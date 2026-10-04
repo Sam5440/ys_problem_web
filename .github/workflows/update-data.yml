@@ -130,12 +130,20 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
-          if git diff --cached --quiet; then
-            echo "No data changes"
-          else
+          if ! git diff --cached --quiet; then
             git commit -m "chore: sync daily problems data"
-            git push
           fi
+          # A repair batch runs ~45 min; anything pushed to main in that
+          # window (local work, the log job) rejects the push. Rebase over
+          # it and retry a few times.
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push; then
+              exit 0
+            fi
+            echo "push attempt $i failed, retrying after rebase"
+            sleep 15
+          done
+          exit 1
 
       # Self-chain the repair backlog: GitHub keeps only the newest pending
       # run per concurrency group, so queueing several dispatches up front

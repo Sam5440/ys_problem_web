@@ -13,7 +13,7 @@
  * run (not Date.now()) so SSR and hydration render the same tree.
  */
 
-import { useEffect, useId, useMemo, useRef, useState } from 'react';
+import { Fragment, useEffect, useId, useMemo, useRef, useState } from 'react';
 import {
   Activity,
   ArrowUpRight,
@@ -23,6 +23,7 @@ import {
   ChevronDown,
   CircleCheck,
   Clock,
+  Coins,
   Copy,
   Database,
   Download,
@@ -67,6 +68,10 @@ function fmtDur(ms) {
   const h = Math.floor(m / 60);
   return `${h} 时 ${m % 60} 分`;
 }
+
+/** compact token count: < 1万 keeps separators, ≥ 1万 shows 万 */
+const fmtTok = (n) => (n == null ? '—' : n >= 10000 ? `${(n / 10000).toFixed(n >= 100000 ? 1 : 2)}万` : n.toLocaleString('en-US'));
+const fmtTokFull = (n) => (n == null ? '—' : n.toLocaleString('en-US'));
 
 /** integer y-axis: 0..n for small values, otherwise a nice round step */
 function niceScale(yMax) {
@@ -379,6 +384,7 @@ function RunOutputChart({ runsChrono, onPickRun }) {
         failure: r.failure,
         fetched: r.summary?.fetched?.length || 0,
         ai: r.summary?.aiDone || 0,
+        tokens: r.summary?.tokenUsage?.totalTokens || 0,
       })),
     [runsChrono],
   );
@@ -441,7 +447,9 @@ function RunOutputChart({ runsChrono, onPickRun }) {
                           run {d.runId} · {new Date(d.startedAt).toLocaleString('zh-CN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
                           {d.failure ? ' · 失败' : ''}
                         </p>
-                        <p className="mt-0.5 text-muted-foreground">抓取/修复 {d.fetched} 题 · AI 翻译 {d.ai} 段 · 点击查看</p>
+                        <p className="mt-0.5 text-muted-foreground">
+                          抓取/修复 {d.fetched} 题 · AI 翻译 {d.ai} 段{d.tokens > 0 ? ` · ${fmtTokFull(d.tokens)} tokens` : ''} · 点击查看
+                        </p>
                       </>
                     ),
                   })
@@ -669,6 +677,43 @@ function AiLines({ lines = [] }) {
   );
 }
 
+/** per-segment token usage: one row per AI translation call in this run */
+function TokenSegmentTable({ segments = [] }) {
+  const [all, setAll] = useState(false);
+  const shown = all ? segments : segments.slice(0, 12);
+  return (
+    <div className="mb-3 overflow-hidden rounded-lg border">
+      <table className="w-full text-[11px]">
+        <thead>
+          <tr className="bg-muted/50 text-left text-[10px] text-muted-foreground">
+            <th className="px-2 py-1 font-medium">题目</th>
+            <th className="px-2 py-1 font-medium">段落</th>
+            <th className="px-2 py-1 text-right font-medium">输入</th>
+            <th className="px-2 py-1 text-right font-medium">输出</th>
+            <th className="px-2 py-1 text-right font-medium">合计</th>
+          </tr>
+        </thead>
+        <tbody>
+          {shown.map((t, i) => (
+            <tr key={`${t.code}-${t.seg}-${i}`} className="border-t border-border/40">
+              <td className="px-2 py-1 font-mono text-violet-500">{t.code}</td>
+              <td className="px-2 py-1 font-mono text-muted-foreground">{t.seg}</td>
+              <td className="px-2 py-1 text-right tabular-nums">{fmtTokFull(t.in)}</td>
+              <td className="px-2 py-1 text-right tabular-nums">{fmtTokFull(t.out)}</td>
+              <td className="px-2 py-1 text-right font-medium tabular-nums">{fmtTokFull(t.in + t.out)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {segments.length > 12 && (
+        <Button variant="ghost" size="sm" className="h-6 w-full px-2 text-[11px] text-muted-foreground" onClick={() => setAll(!all)}>
+          {all ? '收起' : `展开全部 ${segments.length} 条翻译记录`}
+        </Button>
+      )}
+    </div>
+  );
+}
+
 function RunCard({ run, expanded, onToggle, now }) {
   const [log, setLog] = useState(null);
   const [logState, setLogState] = useState('idle');
@@ -729,6 +774,7 @@ function RunCard({ run, expanded, onToggle, now }) {
             {aiN > 0 && (
               <span className="inline-flex items-center gap-1 rounded-md border border-violet-500/40 bg-violet-500/10 px-1.5 py-0.5 text-[10px] text-violet-500">
                 <Bot className="h-3 w-3" />AI 翻译 {s.aiDone || 0} 段
+                {s.tokenUsage?.totalTokens > 0 && <span className="tabular-nums">· {fmtTok(s.tokenUsage.totalTokens)} tokens</span>}
               </span>
             )}
             {failedN > 0 && <span className="rounded-md border border-amber-500/40 bg-amber-500/10 px-1.5 py-0.5 text-[10px] text-amber-500">{failedN} 题未抓到</span>}
@@ -751,6 +797,16 @@ function RunCard({ run, expanded, onToggle, now }) {
 
           {aiN > 0 && (
             <DetailSection title="AI 翻译明细" icon={Bot} count={s.aiDone || null} defaultOpen={false}>
+              {s.tokenUsage && (
+                <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2.5 py-2 text-[11px]">
+                  <span className="flex items-center gap-1 font-medium text-amber-500"><Coins className="h-3 w-3" />Token 用量</span>
+                  {s.tokenUsage.model && <span className="font-mono text-muted-foreground">{s.tokenUsage.model}</span>}
+                  <span className="text-muted-foreground">请求成功 {s.tokenUsage.ok ?? 0} / 失败 {s.tokenUsage.fail ?? 0}</span>
+                  <span className="tabular-nums">输入 <b className="font-semibold">{fmtTokFull(s.tokenUsage.in)}</b></span>
+                  <span className="tabular-nums">输出 <b className="font-semibold">{fmtTokFull(s.tokenUsage.out)}</b></span>
+                  <span className="tabular-nums">合计 <b className="font-semibold text-amber-500">{fmtTokFull(s.tokenUsage.totalTokens)}</b></span>
+                </div>
+              )}
               {s.aiByProblem?.length > 0 && (
                 <div className="mb-2 flex flex-wrap gap-1.5">
                   {s.aiByProblem.map((c) => (
@@ -758,6 +814,7 @@ function RunCard({ run, expanded, onToggle, now }) {
                   ))}
                 </div>
               )}
+              {s.tokenSegments?.length > 0 && <TokenSegmentTable segments={s.tokenSegments} />}
               {s.aiLines?.length > 0 && <AiLines lines={s.aiLines} />}
             </DetailSection>
           )}
@@ -813,12 +870,35 @@ export default function LogsView({ runs = [] }) {
     const fail = visible.filter((r) => r.failure).length;
     const fetched = visible.reduce((a, r) => a + (r.summary?.fetched?.length || 0), 0);
     const ai = visible.reduce((a, r) => a + (r.summary?.aiDone || 0), 0);
+    const tokIn = visible.reduce((a, r) => a + (r.summary?.tokenUsage?.in || 0), 0);
+    const tokOut = visible.reduce((a, r) => a + (r.summary?.tokenUsage?.out || 0), 0);
     const durs = visible.map((r) => (r.savedAt && r.startedAt ? Date.parse(r.savedAt) - Date.parse(r.startedAt) : null)).filter(Boolean);
     const avgDur = durs.length ? durs.reduce((a, b) => a + b, 0) / durs.length : null;
     const perRunFetched = chrono.map((r) => r.summary?.fetched?.length || 0);
     const perRunAi = chrono.map((r) => r.summary?.aiDone || 0);
-    return { fail, ok: visible.length - fail, fetched, ai, avgDur, perRunFetched, perRunAi };
+    const perRunTokens = chrono.map((r) => r.summary?.tokenUsage?.totalTokens || 0);
+    return { fail, ok: visible.length - fail, fetched, ai, tokIn, tokOut, avgDur, perRunFetched, perRunAi, perRunTokens };
   }, [visible, chrono]);
+
+  // 近几日 Token 汇总:按天分组,天内列出每次运行的用量,附每日小计
+  const tokenDays = useMemo(() => {
+    const byDay = new Map();
+    for (const r of visible) {
+      const tu = r.summary?.tokenUsage;
+      if (!tu) continue;
+      const key = isoDay(Date.parse(r.startedAt));
+      const e = byDay.get(key) || { runs: [], segs: 0, in: 0, out: 0, total: 0 };
+      e.runs.push(r);
+      e.segs += r.summary?.aiDone || 0;
+      e.in += tu.in || 0;
+      e.out += tu.out || 0;
+      e.total += tu.totalTokens || 0;
+      byDay.set(key, e);
+    }
+    return [...byDay.entries()]
+      .sort((a, b) => (a[0] < b[0] ? 1 : -1))
+      .map(([key, e]) => ({ key, ...e, maxRun: Math.max(...e.runs.map((r) => r.summary?.tokenUsage?.totalTokens || 0)) }));
+  }, [visible]);
 
   const pick = (id) => {
     setExpandedId((prev) => (prev === id ? prev : id));
@@ -855,11 +935,18 @@ export default function LogsView({ runs = [] }) {
 
       {/* stat cards */}
       {visible.length > 0 && (
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 lg:grid-cols-3 xl:grid-cols-5">
           <StatCard icon={Activity} label="运行次数" value={visible.length} sub={`成功 ${stats.ok} · 失败 ${stats.fail}`} tone="emerald" />
           <StatCard icon={Download} label="抓取 / 修复题面" value={stats.fetched} sub="近窗口累计" tone="sky" spark={stats.perRunFetched} />
           <StatCard icon={Bot} label="AI 翻译段数" value={stats.ai} sub="近窗口累计" tone="violet" spark={stats.perRunAi} />
-          <StatCard icon={Timer} label="平均全程耗时" value={stats.avgDur ? fmtDur(stats.avgDur) : '—'} sub="启动 → 日志落盘" tone="amber" />
+          <StatCard
+            icon={Coins}
+            label="Token 消耗"
+            value={fmtTok(stats.tokIn + stats.tokOut)}
+            sub={`输入 ${fmtTokFull(stats.tokIn)} · 输出 ${fmtTokFull(stats.tokOut)}`}
+            tone="amber"
+          />
+          <StatCard icon={Timer} label="平均全程耗时" value={stats.avgDur ? fmtDur(stats.avgDur) : '—'} sub="启动 → 日志落盘" tone="emerald" />
         </div>
       )}
 
@@ -896,6 +983,75 @@ export default function LogsView({ runs = [] }) {
             <p className="text-xs font-semibold">单次运行产出对比</p>
             <p className="mb-2 text-[11px] text-muted-foreground">每次运行的抓取/修复题数与 AI 翻译段数，点击柱子展开对应运行</p>
             <RunOutputChart runsChrono={chrono} onPickRun={pick} />
+          </CardContent>
+        </Card>
+      )}
+
+      {/* token usage: per-day aggregation with per-run breakdown */}
+      {tokenDays.length > 0 && (
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex flex-wrap items-baseline gap-x-2">
+              <p className="text-xs font-semibold">Token 用量 · 近几日汇总</p>
+              <p className="text-[11px] text-muted-foreground">
+                按天汇总每次运行的 AI 翻译消耗，窗口内合计 输入 {fmtTokFull(stats.tokIn)} + 输出 {fmtTokFull(stats.tokOut)} = {fmtTokFull(stats.tokIn + stats.tokOut)} tokens
+              </p>
+            </div>
+            <div className="mt-3 overflow-x-auto">
+              <table className="w-full min-w-[640px] border-separate border-spacing-0 text-xs">
+                <thead>
+                  <tr className="text-left text-[11px] text-muted-foreground">
+                    <th className="border-b px-2 py-1.5 font-medium">日期</th>
+                    <th className="border-b px-2 py-1.5 font-medium">运行</th>
+                    <th className="border-b px-2 py-1.5 text-right font-medium">翻译段数</th>
+                    <th className="border-b px-2 py-1.5 text-right font-medium">输入 tokens</th>
+                    <th className="border-b px-2 py-1.5 text-right font-medium">输出 tokens</th>
+                    <th className="w-[30%] border-b px-2 py-1.5 text-right font-medium">合计 tokens</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tokenDays.map((d) => {
+                    const maxDay = Math.max(...tokenDays.map((x) => x.total), 1);
+                    return (
+                      <Fragment key={d.key}>
+                        <tr className="bg-muted/40 font-medium">
+                          <td className="border-b border-border/60 px-2 py-1.5 tabular-nums">{dayLabel(d.key)}</td>
+                          <td className="border-b border-border/60 px-2 py-1.5 text-muted-foreground">{d.runs.length} 次运行</td>
+                          <td className="border-b border-border/60 px-2 py-1.5 text-right tabular-nums">{d.segs}</td>
+                          <td className="border-b border-border/60 px-2 py-1.5 text-right tabular-nums">{fmtTokFull(d.in)}</td>
+                          <td className="border-b border-border/60 px-2 py-1.5 text-right tabular-nums">{fmtTokFull(d.out)}</td>
+                          <td className="border-b border-border/60 px-2 py-1.5 text-right">
+                            <span className="inline-flex items-center justify-end gap-2">
+                              <span className="hidden h-1.5 w-24 overflow-hidden rounded-full bg-border/60 sm:block">
+                                <span className="block h-full rounded-full bg-amber-500/80" style={{ width: `${Math.max(4, (d.total / maxDay) * 100)}%` }} />
+                              </span>
+                              <span className="tabular-nums font-semibold">{fmtTokFull(d.total)}</span>
+                            </span>
+                          </td>
+                        </tr>
+                        {d.runs.map((r) => {
+                          const tu = r.summary?.tokenUsage;
+                          return (
+                            <tr key={r.runId} className="cursor-pointer text-muted-foreground transition hover:text-foreground" onClick={() => pick(r.runId)}>
+                              <td className="border-b border-border/30 px-2 py-1" />
+                              <td className="border-b border-border/30 px-2 py-1">
+                                <span className="font-mono text-[10px]">run {r.runId}</span>
+                                <span className="ml-1.5 text-[10px]">{EVENT_LABEL[r.event] || r.event}{r.failure ? ' · 失败' : ''}{tu.model ? ` · ${tu.model}` : ''}</span>
+                              </td>
+                              <td className="border-b border-border/30 px-2 py-1 text-right tabular-nums">{r.summary?.aiDone || 0}</td>
+                              <td className="border-b border-border/30 px-2 py-1 text-right tabular-nums">{fmtTokFull(tu.in)}</td>
+                              <td className="border-b border-border/30 px-2 py-1 text-right tabular-nums">{fmtTokFull(tu.out)}</td>
+                              <td className="border-b border-border/30 px-2 py-1 text-right tabular-nums">{fmtTokFull(tu.totalTokens)}</td>
+                            </tr>
+                          );
+                        })}
+                      </Fragment>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-2 text-[10px] text-muted-foreground">点击任一运行行可跳转到对应的运行卡片。仅统计已记录 Token 的运行（旧日志无此数据）。</p>
           </CardContent>
         </Card>
       )}

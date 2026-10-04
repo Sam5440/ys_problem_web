@@ -53,9 +53,14 @@ async function aiTranslate(raw) {
   const data = await res.json();
   const out = data?.choices?.[0]?.message?.content?.trim();
   if (!out) throw new Error('empty response');
+  const u = data.usage || {};
+  const usage = {
+    in: Number(u.prompt_tokens ?? 0),
+    out: Number(u.completion_tokens ?? 0),
+  };
   const restored = restoreMath(out, stash);
   if (!restored) throw new Error('placeholder mangled');
-  return restored;
+  return { text: restored, usage };
 }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -97,6 +102,11 @@ async function main() {
   let fails = 0;
   let aborted = false;
 
+  // Token accounting: per-segment usage goes both to the per-line log (human
+  // + save-ci-log parser) and into a final machine-readable TOKEN-USAGE line.
+  const usage = { model: MODEL, ok: 0, fail: 0, in: 0, out: 0, segments: [] };
+  const fmt = (n) => n.toLocaleString('en-US');
+
   for (const day of days) {
     if (aborted || budget <= 0) break;
     for (const problem of day.problems || []) {
@@ -113,17 +123,20 @@ async function main() {
       }
       const segs = missingSegments(st);
       if (!segs.length) continue;
-      console.log(`${st.code || code}: ${segs.length} segment(s) to translate`);
+      const pcode = st.code || code;
+      console.log(`${pcode}: ${segs.length} segment(s) to translate`);
       st.sectionsZh ||= {};
       for (const seg of segs) {
         if (budget <= 0) break;
         budget -= 1;
         let text = null;
+        let u = null;
         try {
-          text = await aiTranslate(seg.text);
+          ({ text, usage: u } = await aiTranslate(seg.text));
           fails = 0;
         } catch (e) {
           fails += 1;
+          usage.fail += 1;
           console.warn(`  ✗ ${seg.key}[${seg.i}] — ${e.message}`);
           if (fails >= MAX_CONSECUTIVE_FAILS) {
             console.error(`  ${fails} consecutive failures — endpoint looks down, aborting.`);
@@ -133,6 +146,10 @@ async function main() {
           await sleep(2000);
         }
         if (text) {
+          usage.ok += 1;
+          usage.in += u.in;
+          usage.out += u.out;
+          usage.segments.push({ code: pcode, seg: `${seg.key}[${seg.i}]`, in: u.in, out: u.out });
           if (seg.key === 'title') {
             st.titleZh = typeof st.titleZh === 'object' && st.titleZh !== null ? st.titleZh : {};
             st.titleZh.ai = text;
@@ -147,7 +164,9 @@ async function main() {
             st.sectionsZh[seg.key][seg.i] = entry;
           }
           done += 1;
-          console.log(`  ✓ ${seg.key}[${seg.i}]: ${text.slice(0, 48)}…`);
+          console.log(
+            `  ✓ ${seg.key}[${seg.i}]: ${text.slice(0, 48)}… [tokens in=${u.in} out=${u.out}]`,
+          );
         }
         await sleep(DELAY_MS);
       }
@@ -155,7 +174,13 @@ async function main() {
     }
   }
 
+  const total = usage.in + usage.out;
   console.log(`Done: ${done} segment(s) translated${budget <= 0 ? ` (hit limit ${LIMIT})` : ''}.`);
+  console.log('── AI Token 用量（本次运行）──');
+  console.log(`  模型 ${MODEL} · 请求成功 ${usage.ok} / 失败 ${usage.fail}`);
+  console.log(`  输入 ${fmt(usage.in)} + 输出 ${fmt(usage.out)} = 合计 ${fmt(total)} tokens`);
+  // Machine-readable line for scripts/save-ci-log.mjs to parse into the log summary.
+  console.log(`TOKEN-USAGE ${JSON.stringify({ ...usage, totalTokens: total })}`);
   if (aborted && done === 0) process.exit(1);
 }
 

@@ -21,21 +21,34 @@ function UntranslatedMark({ note }) {
   );
 }
 
-/** Provenance tag for segments that resolved below top priority. */
-const badgeHtml = (label) =>
-  `<span class="mr-1.5 inline-block rounded border border-border bg-muted px-1 py-px align-middle text-[10px] leading-4 text-muted-foreground">${label}</span>`;
+/* ---------------- end-of-line source chips ----------------
+ * Every translated line ends with a small chip naming the engine that
+ * produced it: the four MT channels, AI 内置 (archived by the CI job) or
+ * AI 外置 (translated live via the user's own endpoint). */
 
-function ZhWithBadge({ html, badge, className }) {
-  // marked wraps plain paragraphs in <p>…</p>; inject the badge inside that
-  // first <p> so it stays inline — wrapping in our own <p> would nest
-  // invalidly and the HTML parser would silently drop the badge.
-  const bh = badge ? badgeHtml(badge) : '';
-  const withBadge = bh
-    ? html.startsWith('<p>')
-      ? html.replace('<p>', `<p>${bh}`)
-      : bh + html
-    : html;
-  return <div className={className} dangerouslySetInnerHTML={{ __html: withBadge }} />;
+const ICON_GLOBE =
+  '<svg class="inline-block size-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
+const ICON_SPARKLES =
+  '<svg class="inline-block size-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg>';
+
+const SOURCE_LABELS = { deepl: 'DeepL', youdao: '有道', caiyun: '彩云', iflyrec: '讯飞' };
+
+const sourceChipHtml = (source) => {
+  const ai = source === 'ai:builtin' || source === 'ai:external';
+  const icon = ai ? ICON_SPARKLES : ICON_GLOBE;
+  const label = source === 'ai:builtin' ? 'AI 内置' : source === 'ai:external' ? 'AI 外置' : SOURCE_LABELS[source] || source;
+  const tone = ai
+    ? 'border-violet-500/40 bg-violet-500/10 text-violet-400'
+    : 'border-border bg-muted text-muted-foreground';
+  return `<span class="ml-1.5 inline-flex items-center gap-0.5 rounded border px-1 py-px align-middle text-[10px] leading-4 ${tone}">${icon}${label}</span>`;
+};
+
+function WithSourceChip({ html, source, className }) {
+  // inject before the LAST closing </p> so the chip stays on the final line
+  // of the rendered markdown instead of floating below it
+  const chip = sourceChipHtml(source);
+  const withChip = /<\/p>\s*$/.test(html) ? html.replace(/<\/p>(\s*)$/, `${chip}</p>$1`) : html + chip;
+  return <div className={className} dangerouslySetInnerHTML={{ __html: withChip }} />;
 }
 
 function SpinnerNote({ children }) {
@@ -76,7 +89,7 @@ function AiZhLine({ en, ai, note }) {
     <div ref={ref}>
       {state.status === 'loading' && <SpinnerNote>AI 翻译中…</SpinnerNote>}
       {state.status === 'error' && <UntranslatedMark note={`AI 翻译失败（${state.error}）`} />}
-      {state.status === 'done' && <p dangerouslySetInnerHTML={{ __html: renderRich(state.text) }} />}
+      {state.status === 'done' && <WithSourceChip html={renderRich(state.text)} source="ai:external" />}
       {state.status === 'idle' && <UntranslatedMark note={note ? `${note}（AI）` : '请在设置中配置 AI 接口'} />}
     </div>
   );
@@ -112,19 +125,16 @@ function ChainZhLine({ segKey, seg, priority, note }) {
   if (typeof seg === 'string') {
     return <p dangerouslySetInnerHTML={{ __html: renderRich(seg) }} />;
   }
-  const prio = priority?.length ? priority : DEFAULT_PRIORITY;
-  // archived AI translations (CI backfill) sit below every MT channel
-  const full = [...prio, 'ai'];
+  const prio = priority?.length ? priority : DEFAULT_PRIORITY; // 'ai' (CI archive) sits wherever the user dragged it, last by default
   const merged = mergedChannels(seg, rec);
-  const hitIdx = full.findIndex((ch) => typeof merged[ch] === 'string' && merged[ch].trim());
+  const hitIdx = prio.findIndex((ch) => typeof merged[ch] === 'string' && merged[ch].trim());
   if (hitIdx >= 0) {
-    return (
-      <ZhWithBadge html={renderRich(merged[full[hitIdx]])} badge={hitIdx > 0 ? channelLabel(full[hitIdx]) : undefined} />
-    );
+    const hitCh = prio[hitIdx];
+    return <WithSourceChip html={renderRich(merged[hitCh])} source={hitCh === 'ai' ? 'ai:builtin' : hitCh} />;
   }
-  // spinner logic only watches the client pipeline's channels — `ai` here is
-  // archive-only and has no client task to wait for
-  const waiting = prio.some((ch) => rec.status[ch] !== 'failed');
+  // spinner logic only watches the client pipeline's channels — archived `ai`
+  // has no client task to wait for
+  const waiting = prio.some((ch) => ch !== 'ai' && rec.status[ch] !== 'failed');
   return (
     <div>
       {waiting ? (
@@ -148,7 +158,7 @@ function ZhLine({ segKey, seg, channel, note }) {
   const local = typeof rec.zh[channel] === 'string' && rec.zh[channel].trim() ? rec.zh[channel] : null;
   const zh = archived || local;
   if (zh) {
-    return <p dangerouslySetInnerHTML={{ __html: renderRich(zh) }} />;
+    return <WithSourceChip html={renderRich(zh)} source={channel} />;
   }
   if (rec.status[channel] === 'failed') {
     return <UntranslatedMark note={note ? `${note}（${channelLabel(channel)}）` : undefined} />;

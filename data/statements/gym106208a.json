@@ -9,27 +9,27 @@
   "memoryLimit": "512 megabytes",
   "sections": {
     "legend": [
-      "You are given an integer interval [l,r]%%ZSMJ0%%. At first, your score sco%%ZSMJ1%% is equal to 0%%ZSMJ2%%.",
+      "You are given an integer interval [l,r]$$$[l,r]$$$. At first, your score sco$$$sco$$$ is equal to 0$$$0$$$.",
       "Repeat the following process:",
-      "Choose an integer x∈[l,r]%%ZSMJ3%% uniformly at random, and update sco:=sco+x%%ZSMJ4%%.",
-      "If l=r%%ZSMJ5%%, stop. Otherwise, replace [l,r]%%ZSMJ6%% by a uniformly random proper subinterval of [l,r]%%ZSMJ7%% and go back to step 1. In other words, letting len=r−l+1%%ZSMJ8%%, there are len(len+1)2−1%%ZSMJ9%% proper subintervals of [l,r]%%ZSMJ10%%, each chosen with equal probability.",
-      "Your task is to find the expected value of sco%%ZSMJ11%%. Output the answer modulo 998244353%%ZSMJ12%%.",
-      "Formally, let M=998244353%%ZSMJ13%%. It can be shown that the answer can be expressed as an irreducible fraction pq%%ZSMJ14%%, where p%%ZSMJ15%% and q%%ZSMJ16%% are integers and q≢0(modM)%%ZSMJ17%%. Output the integer equal to p⋅q−1modM%%ZSMJ18%%. In other words, output such an integer x%%ZSMJ19%% that 0≤x<M%%ZSMJ20%% and x⋅q≡p(modM)%%ZSMJ21%%."
+      "Choose an integer x∈[l,r]$$$x\\in [l,r]$$$ uniformly at random, and update sco:=sco+x$$$sco := sco + x$$$.",
+      "If l=r$$$l=r$$$, stop. Otherwise, replace [l,r]$$$[l,r]$$$ by a uniformly random proper subinterval of [l,r]$$$[l,r]$$$ and go back to step 1. In other words, letting len=r−l+1$$$len=r-l+1$$$, there are len(len+1)2−1$$$\\frac{len(len+1)}{2}-1$$$ proper subintervals of [l,r]$$$[l,r]$$$, each chosen with equal probability.",
+      "Your task is to find the expected value of sco$$$sco$$$. Output the answer modulo 998244353$$$998\\,244\\,353$$$.",
+      "Formally, let M=998244353$$$M = 998\\,244\\,353$$$. It can be shown that the answer can be expressed as an irreducible fraction pq$$$\\frac{p}{q}$$$, where p$$$p$$$ and q$$$q$$$ are integers and q≢0(modM)$$$q \\not \\equiv 0 \\pmod{M}$$$. Output the integer equal to p⋅q−1modM$$$p \\cdot q^{-1} \\bmod M$$$. In other words, output such an integer x$$$x$$$ that 0≤x<M$$$0 \\le x  \\lt  M$$$ and x⋅q≡p(modM)$$$x \\cdot q \\equiv p \\pmod{M}$$$."
     ],
     "input": [
-      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ22%% (1≤t≤105%%ZSMJ23%%). The description of the test cases follows.",
-      "The only line of each testcase contains two integers l%%ZSMJ24%% and r%%ZSMJ25%% (1≤l≤r≤2⋅106%%ZSMJ26%%)."
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤105$$$1 \\le t \\le 10^5$$$). The description of the test cases follows.",
+      "The only line of each testcase contains two integers l$$$l$$$ and r$$$r$$$ (1≤l≤r≤2⋅106$$$1 \\le l \\le r \\le 2 \\cdot 10^6$$$)."
     ],
     "output": [
-      "For each test case, print a single integer — the answer modulo 998244353%%ZSMJ27%%."
+      "For each test case, print a single integer — the answer modulo 998244353$$$998\\,244\\,353$$$."
     ],
     "note": [
-      "In the first test case, the initial interval is [2,3]%%ZSMJ28%%. The following events occur with equal probability:",
-      "sco%%ZSMJ29%% is increased by 2%%ZSMJ30%% →%%ZSMJ31%% [l,r]%%ZSMJ32%% becomes [2,2]%%ZSMJ33%% →%%ZSMJ34%% sco%%ZSMJ35%% is increased by 2%%ZSMJ36%% →%%ZSMJ37%% stop. The final value of sco%%ZSMJ38%% is 4%%ZSMJ39%%.",
-      "sco%%ZSMJ40%% is increased by 3%%ZSMJ41%% →%%ZSMJ42%% [l,r]%%ZSMJ43%% becomes [3,3]%%ZSMJ44%% →%%ZSMJ45%% sco%%ZSMJ46%% is increased by 3%%ZSMJ47%% →%%ZSMJ48%% stop. The final value of sco%%ZSMJ49%% is 5%%ZSMJ50%%.",
-      "sco%%ZSMJ51%% is increased by 3%%ZSMJ52%% →%%ZSMJ53%% [l,r]%%ZSMJ54%% becomes [2,2]%%ZSMJ55%% →%%ZSMJ56%% sco%%ZSMJ57%% is increased by 2%%ZSMJ58%% →%%ZSMJ59%% stop. The final value of sco%%ZSMJ60%% is 5%%ZSMJ61%%.",
-      "sco%%ZSMJ62%% is increased by 3%%ZSMJ63%% →%%ZSMJ64%% [l,r]%%ZSMJ65%% becomes [3,3]%%ZSMJ66%% →%%ZSMJ67%% sco%%ZSMJ68%% is increased by 3%%ZSMJ69%% →%%ZSMJ70%% stop. The final value of sco%%ZSMJ71%% is 6%%ZSMJ72%%.",
-      "Thus, the expected value of sco%%ZSMJ73%% is 4+5+5+64=5%%ZSMJ74%%."
+      "In the first test case, the initial interval is [2,3]$$$[2,3]$$$. The following events occur with equal probability:",
+      "sco$$$sco$$$ is increased by 2$$$2$$$ →$$$\\rightarrow$$$ [l,r]$$$[l,r]$$$ becomes [2,2]$$$[2,2]$$$ →$$$\\rightarrow$$$ sco$$$sco$$$ is increased by 2$$$2$$$ →$$$\\rightarrow$$$ stop. The final value of sco$$$sco$$$ is 4$$$4$$$.",
+      "sco$$$sco$$$ is increased by 3$$$3$$$ →$$$\\rightarrow$$$ [l,r]$$$[l,r]$$$ becomes [3,3]$$$[3,3]$$$ →$$$\\rightarrow$$$ sco$$$sco$$$ is increased by 3$$$3$$$ →$$$\\rightarrow$$$ stop. The final value of sco$$$sco$$$ is 5$$$5$$$.",
+      "sco$$$sco$$$ is increased by 3$$$3$$$ →$$$\\rightarrow$$$ [l,r]$$$[l,r]$$$ becomes [2,2]$$$[2,2]$$$ →$$$\\rightarrow$$$ sco$$$sco$$$ is increased by 2$$$2$$$ →$$$\\rightarrow$$$ stop. The final value of sco$$$sco$$$ is 5$$$5$$$.",
+      "sco$$$sco$$$ is increased by 3$$$3$$$ →$$$\\rightarrow$$$ [l,r]$$$[l,r]$$$ becomes [3,3]$$$[3,3]$$$ →$$$\\rightarrow$$$ sco$$$sco$$$ is increased by 3$$$3$$$ →$$$\\rightarrow$$$ stop. The final value of sco$$$sco$$$ is 6$$$6$$$.",
+      "Thus, the expected value of sco$$$sco$$$ is 4+5+5+64=5$$$\\frac{4+5+5+6}{4}=5$$$."
     ]
   },
   "examples": [
@@ -37,5 +37,30 @@
       "input": "4\n2 3\n1 1\n5 8\n1 2000000",
       "output": "5\n1\n454755778\n881266578"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

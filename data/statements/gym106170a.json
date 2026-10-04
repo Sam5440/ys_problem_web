@@ -9,28 +9,28 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Let T=(V,E)%%ZSMJ0%% be a tree with n%%ZSMJ1%% vertices and n−1%%ZSMJ2%% edges. Each edge of the tree can be assigned a colour from {0,1,…,K−1}%%ZSMJ3%%.",
-      "A simple path in a tree is called a K%%ZSMJ4%%-rainbow path if all edges along the path of length K%%ZSMJ5%% have distinct colours. An edge is said to be K%%ZSMJ6%%-rainbow-valid if it lies on at least one K%%ZSMJ7%%-rainbow path. A tree is called a K%%ZSMJ8%%-tree if every edge in the tree is K%%ZSMJ9%%-rainbow-valid.",
-      "Your task is to assign colours to the edges of a given tree to form a K-tree with the largest possible K%%ZSMJ10%%. For each edge e%%ZSMJ11%%, you must report its assigned colour c(e)∈{0,1,…,K−1}%%ZSMJ12%% and the endpoints of a K-rainbow path that contains e%%ZSMJ13%%.",
+      "Let T=(V,E)$$$T = (V, E)$$$ be a tree with n$$$n$$$ vertices and n−1$$$n-1$$$ edges. Each edge of the tree can be assigned a colour from {0,1,…,K−1}$$$\\{0, 1, \\dots, K-1\\}$$$.",
+      "A simple path in a tree is called a K$$$K$$$-rainbow path if all edges along the path of length K$$$K$$$ have distinct colours. An edge is said to be K$$$K$$$-rainbow-valid if it lies on at least one K$$$K$$$-rainbow path. A tree is called a K$$$K$$$-tree if every edge in the tree is K$$$K$$$-rainbow-valid.",
+      "Your task is to assign colours to the edges of a given tree to form a K-tree with the largest possible K$$$K$$$. For each edge e$$$e$$$, you must report its assigned colour c(e)∈{0,1,…,K−1}$$$c(e) \\in \\{0, 1, \\dots, K-1\\}$$$ and the endpoints of a K-rainbow path that contains e$$$e$$$.",
       "All indices are zero-based. If multiple valid colourings or paths exist, any may be output."
     ],
     "input": [
-      "The first line contains a single integer n%%ZSMJ14%% (2≤n≤105)%%ZSMJ15%%. In the next n−1%%ZSMJ16%% lines you are given the edges of the tree. In each of these lines you are given u%%ZSMJ17%% and v%%ZSMJ18%% (0≤u,v≤n−1)%%ZSMJ19%% describing an edge between nodes u%%ZSMJ20%% and v%%ZSMJ21%%."
+      "The first line contains a single integer n$$$ n $$$ (2≤n≤105)$$$(2 \\leq n \\leq 10^5)$$$. In the next n−1$$$n - 1$$$ lines you are given the edges of the tree. In each of these lines you are given u$$$u$$$ and v$$$v$$$ (0≤u,v≤n−1)$$$(0 \\leq u, v \\leq n - 1)$$$ describing an edge between nodes u$$$u$$$ and v$$$v$$$."
     ],
     "output": [
-      "Your output must consist of n%%ZSMJ22%% lines.",
-      "In the first line print the maximum possible K%%ZSMJ23%%.",
-      "In the next n−1%%ZSMJ24%% lines, each line should contain three integers: c%%ZSMJ25%%, u%%ZSMJ26%% and v%%ZSMJ27%%, where 0≤c≤K−1%%ZSMJ28%% and 0≤u,v≤n−1%%ZSMJ29%%. These integers specify the colour c%%ZSMJ30%% of an edge and the path between u%%ZSMJ31%% and v%%ZSMJ32%%. This path includes the edge e%%ZSMJ33%% and is a K-rainbow. The order of u%%ZSMJ34%% and v%%ZSMJ35%% does not matter.",
+      "Your output must consist of n$$$n$$$ lines.",
+      "In the first line print the maximum possible K$$$K$$$.",
+      "In the next n−1$$$n - 1$$$ lines, each line should contain three integers: c$$$c$$$, u$$$u$$$ and v$$$v$$$, where 0≤c≤K−1$$$0 \\leq c \\leq K - 1$$$ and 0≤u,v≤n−1$$$0 \\leq u, v \\leq n - 1$$$. These integers specify the colour c$$$c$$$ of an edge and the path between u$$$u$$$ and v$$$v$$$. This path includes the edge e$$$e$$$ and is a K-rainbow. The order of u$$$u$$$ and v$$$v$$$ does not matter.",
       "Edges must be printed in the order they were given in the input."
     ],
     "note": [
       "![](https://espresso.codeforces.com/df09f1826b3f1c290233d3258ee520a52c6d3490.png)",
-      "This is the second sample test. We have a tree with 6 nodes. Colours are written on the edges. Maximum possible K is 3 and for every edge e%%ZSMJ36%% there exists a path that includes e%%ZSMJ37%% and is a 3-rainbow.",
-      "Edge e1={0,4}%%ZSMJ38%% has colour 2, the path between 3 and 4 includes e1%%ZSMJ39%% and is a 3-rainbow.",
-      "Edge e2={2,3}%%ZSMJ40%% has colour 0, the path between 4 and 3 includes e2%%ZSMJ41%% and is a 3-rainbow.",
-      "Edge e3={5,0}%%ZSMJ42%% has colour 2, the path between 3 and 5 includes e3%%ZSMJ43%% and is a 3-rainbow.",
-      "Edge e4={2,1}%%ZSMJ44%% has colour 0, the path between 4 and 1 includes e4%%ZSMJ45%% and is a 3-rainbow.",
-      "Edge e5={2,0}%%ZSMJ46%% has colour 1, the path between 3 and 4 includes e5%%ZSMJ47%% and is a 3-rainbow."
+      "This is the second sample test. We have a tree with 6 nodes. Colours are written on the edges. Maximum possible K is 3 and for every edge e$$$e$$$ there exists a path that includes e$$$e$$$ and is a 3-rainbow.",
+      "Edge e1={0,4}$$$e_1 = \\{0, 4\\}$$$ has colour 2, the path between 3 and 4 includes e1$$$e_1$$$ and is a 3-rainbow.",
+      "Edge e2={2,3}$$$e_2 = \\{2, 3\\}$$$ has colour 0, the path between 4 and 3 includes e2$$$e_2$$$ and is a 3-rainbow.",
+      "Edge e3={5,0}$$$e_3 = \\{5, 0\\}$$$ has colour 2, the path between 3 and 5 includes e3$$$e_3$$$ and is a 3-rainbow.",
+      "Edge e4={2,1}$$$e_4 = \\{2, 1\\}$$$ has colour 0, the path between 4 and 1 includes e4$$$e_4$$$ and is a 3-rainbow.",
+      "Edge e5={2,0}$$$e_5 = \\{2, 0\\}$$$ has colour 1, the path between 3 and 4 includes e5$$$e_5$$$ and is a 3-rainbow."
     ]
   },
   "examples": [
@@ -46,5 +46,31 @@
       "input": "16\n2 3\n2 4\n4 5\n5 0\n1 5\n6 7\n4 6\n8 7\n3 9\n4 10\n7 11\n8 12\n10 13\n14 12\n15 9",
       "output": "7\n6 8 15\n5 8 15\n5 14 0\n6 14 0\n6 14 1\n3 3 14\n4 8 15\n2 3 14\n0 8 15\n5 14 13\n2 15 11\n1 3 14\n6 14 13\n0 3 14\n1 8 15"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

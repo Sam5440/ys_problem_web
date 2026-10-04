@@ -9,28 +9,28 @@
   "memoryLimit": "512 megabytes",
   "sections": {
     "legend": [
-      "Audrey and Bastian are about to start on an epic dungeon crawl where they'll face R%%ZSMJ0%% monsters (1≤R≤109%%ZSMJ1%%). Each monster has a health point (HP) value between 0%%ZSMJ2%% and N%%ZSMJ3%% (1≤N≤5×105%%ZSMJ4%%).",
+      "Audrey and Bastian are about to start on an epic dungeon crawl where they'll face R$$$R$$$ monsters (1≤R≤109$$$1 \\le R \\le 10^9$$$). Each monster has a health point (HP) value between 0$$$0$$$ and N$$$N$$$ (1≤N≤5×105$$$1 \\le N \\le 5 \\times 10^5$$$).",
       "Game Rules",
       "The battle proceeds in turns, with Audrey going first:",
-      "On each turn, the current player selects a monster with HP >0%%ZSMJ5%%",
-      "If the chosen monster has HP =x%%ZSMJ6%%, the player can choose to deal damage d%%ZSMJ7%% where 1≤d≤p[x]%%ZSMJ8%%. It's guaranteed that 1≤p[x]≤x%%ZSMJ9%% for all x%%ZSMJ10%%.",
-      "The monster's HP becomes x−d%%ZSMJ11%%",
-      "The player who defeats the last monster (reduces the last non-zero HP to 0%%ZSMJ12%%) wins",
+      "On each turn, the current player selects a monster with HP >0$$$ \\gt  0$$$",
+      "If the chosen monster has HP =x$$$= x$$$, the player can choose to deal damage d$$$d$$$ where 1≤d≤p[x]$$$1 \\le d \\le p[x]$$$. It's guaranteed that 1≤p[x]≤x$$$1 \\le p[x] \\le x$$$ for all x$$$x$$$.",
+      "The monster's HP becomes x−d$$$x - d$$$",
+      "The player who defeats the last monster (reduces the last non-zero HP to 0$$$0$$$) wins",
       "Both players play optimally.",
       "The Setup Phase",
-      "Audrey's Preparation: Audrey, being a cunning adventurer, prepares the dungeon in advance. She sets the initial HP of all R%%ZSMJ13%% monsters to values a1,a2,…,aR%%ZSMJ14%% where 0≤ai≤N%%ZSMJ15%%. Audrey configures the monsters such that she is guaranteed to win if the game proceeds with these HP values.",
-      "Bastian's Sabotage: Bastian discovers Audrey's scheme and decides to sabotage exactly one monster before the battle begins. He chooses one monster with HP =ai%%ZSMJ16%% where ai≥K%%ZSMJ17%% and decreases its HP by K%%ZSMJ18%%, making its new HP equal to ai−K%%ZSMJ19%%.",
+      "Audrey's Preparation: Audrey, being a cunning adventurer, prepares the dungeon in advance. She sets the initial HP of all R$$$R$$$ monsters to values a1,a2,…,aR$$$a_1, a_2, \\ldots, a_R$$$ where 0≤ai≤N$$$0 \\le a_i \\le N$$$. Audrey configures the monsters such that she is guaranteed to win if the game proceeds with these HP values.",
+      "Bastian's Sabotage: Bastian discovers Audrey's scheme and decides to sabotage exactly one monster before the battle begins. He chooses one monster with HP =ai$$$= a_i$$$ where ai≥K$$$a_i \\ge K$$$ and decreases its HP by K$$$K$$$, making its new HP equal to ai−K$$$a_i - K$$$.",
       "Bastian's goal is to turn the tables and guarantee his own victory. If there's no way for Bastian to choose a monster that guarantees his win, Bastian abandons the dungeon (the game doesn't happen).",
-      "You have to determine how many distinct configurations (a1,a2,…,aR)%%ZSMJ20%% are possible on the final day (after Bastian's sabotage, if the game proceeds).",
+      "You have to determine how many distinct configurations (a1,a2,…,aR)$$$(a_1, a_2, \\ldots, a_R)$$$ are possible on the final day (after Bastian's sabotage, if the game proceeds).",
       "Important: Count configurations based on the HP values after Bastian's modification, not the initial values Audrey set.",
-      "Two configurations are considered different if they contain different HP values or the same HP values in different orders (e.g., (1,3,2)≠(1,2,3)%%ZSMJ21%%)"
+      "Two configurations are considered different if they contain different HP values or the same HP values in different orders (e.g., (1,3,2)≠(1,2,3)$$$(1, 3, 2) \\neq (1, 2, 3)$$$)"
     ],
     "input": [
-      "The first line contains three integers N%%ZSMJ22%%, K%%ZSMJ23%%, and R%%ZSMJ24%% — the maximum HP value, the maximum reduction amount, and the number of monsters.",
-      "The second line contains N%%ZSMJ25%% integers p[1],p[2],…,p[N]%%ZSMJ26%% — where p[i]%%ZSMJ27%% is the maximum damage that can be dealt to a monster with i%%ZSMJ28%% HP."
+      "The first line contains three integers N$$$N$$$, K$$$K$$$, and R$$$R$$$ — the maximum HP value, the maximum reduction amount, and the number of monsters.",
+      "The second line contains N$$$N$$$ integers p[1],p[2],…,p[N]$$$p[1], p[2], \\ldots, p[N]$$$ — where p[i]$$$p[i]$$$ is the maximum damage that can be dealt to a monster with i$$$i$$$ HP."
     ],
     "output": [
-      "Output a single integer — the number of possible monster HP configurations on the final day, modulo 998244353%%ZSMJ29%%."
+      "Output a single integer — the number of possible monster HP configurations on the final day, modulo 998244353$$$998244353$$$."
     ],
     "note": [
       "Sample Input 1",
@@ -42,7 +42,7 @@
         "pre": "\n2"
       },
       "Explanation 1",
-      "With R=1%%ZSMJ30%% monster, the possible configurations on the final day are single-monster configurations. The valid final configurations are (3)%%ZSMJ31%% and (5)%%ZSMJ32%%, giving us 2%%ZSMJ33%% possible configurations.",
+      "With R=1$$$R = 1$$$ monster, the possible configurations on the final day are single-monster configurations. The valid final configurations are (3)$$$(3)$$$ and (5)$$$(5)$$$, giving us 2$$$2$$$ possible configurations.",
       "Sample Input 2",
       {
         "pre": "\n10 3 3\n1 2 1 2 1 3 4 5 4 5"
@@ -52,10 +52,10 @@
         "pre": "\n194"
       },
       "Explanation 2",
-      "One example of a valid final day configuration is (1,7,2)%%ZSMJ34%%. This configuration could arise from:",
-      "Audrey initially choosing (1,7,5)%%ZSMJ35%%, then Bastian reducing the monster with HP =5%%ZSMJ36%% by K=3%%ZSMJ37%% to get HP =2%%ZSMJ38%%",
-      "Audrey initially choosing (1,10,2)%%ZSMJ39%%, then Bastian reducing the monster with HP =10%%ZSMJ40%% by K=3%%ZSMJ41%% to get HP =7%%ZSMJ42%%",
-      "In both cases, the initial configuration guarantees Audrey's win, but after Bastian's sabotage, the final configuration (1,7,2)%%ZSMJ43%% guarantees Bastian's win. The total number of such valid final configurations is 194%%ZSMJ44%%."
+      "One example of a valid final day configuration is (1,7,2)$$$(1, 7, 2)$$$. This configuration could arise from:",
+      "Audrey initially choosing (1,7,5)$$$(1, 7, 5)$$$, then Bastian reducing the monster with HP =5$$$= 5$$$ by K=3$$$K = 3$$$ to get HP =2$$$= 2$$$",
+      "Audrey initially choosing (1,10,2)$$$(1, 10, 2)$$$, then Bastian reducing the monster with HP =10$$$= 10$$$ by K=3$$$K = 3$$$ to get HP =7$$$= 7$$$",
+      "In both cases, the initial configuration guarantees Audrey's win, but after Bastian's sabotage, the final configuration (1,7,2)$$$(1, 7, 2)$$$ guarantees Bastian's win. The total number of such valid final configurations is 194$$$194$$$."
     ]
   },
   "examples": [
@@ -75,5 +75,48 @@
       "input": "\n10 3 3\n1 2 1 2 1 3 4 5 4 5",
       "output": "\n194"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

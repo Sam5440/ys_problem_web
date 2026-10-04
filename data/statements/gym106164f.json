@@ -10,30 +10,30 @@
   "sections": {
     "legend": [
       "With the quarantine measures lifted, Jack's hometown decides to hold a festival. Jack is still cautious about meeting too many people, so he wants to plan his route through the festival to maximize his happiness using a simple strategy.",
-      "The festival has N%%ZSMJ0%% stalls, numbered from 1%%ZSMJ1%% to N%%ZSMJ2%%. If Jack enters the i%%ZSMJ3%%-th stall, he meets pi%%ZSMJ4%% people and gains happiness hi%%ZSMJ5%%. He walks from stall 1%%ZSMJ6%% to stall N%%ZSMJ7%% in order and does not revisit any stall. At each stall, he can either enter it or walk past it.",
-      "It is guaranteed that pi≥pi+1%%ZSMJ8%% for all i<N%%ZSMJ9%%, since earlier stalls tend to draw larger crowds.",
-      "Jack wants to meet at most P%%ZSMJ10%% people in total. He also considers only stalls whose happiness exceeds a certain threshold value threshold%%ZSMJ11%%. The threshold%%ZSMJ12%% should be a non-negative integer.",
-      "Formally, let ht%%ZSMJ13%% be Jack's total happiness and m%%ZSMJ14%% be the number of people he has met. Jack will follow the following strategy.",
+      "The festival has N$$$N$$$ stalls, numbered from 1$$$1$$$ to N$$$N$$$. If Jack enters the i$$$i$$$-th stall, he meets pi$$$p_i$$$ people and gains happiness hi$$$h_i$$$. He walks from stall 1$$$1$$$ to stall N$$$N$$$ in order and does not revisit any stall. At each stall, he can either enter it or walk past it.",
+      "It is guaranteed that pi≥pi+1$$$p_i \\ge p_{i+1}$$$ for all i<N$$$i  \\lt  N$$$, since earlier stalls tend to draw larger crowds.",
+      "Jack wants to meet at most P$$$P$$$ people in total. He also considers only stalls whose happiness exceeds a certain threshold value threshold$$$threshold$$$. The threshold$$$threshold$$$ should be a non-negative integer.",
+      "Formally, let ht$$$ht$$$ be Jack's total happiness and m$$$m$$$ be the number of people he has met. Jack will follow the following strategy.",
       "Jack's strategy (pseudo-code):",
       {
         "pre": "\nht = 0 // initially, the total happiness is zero\nm = 0 // initially, he meets zero person\nfor i = 1 to N:\n    if h[i] > threshold and m + p[i] <= P:\n        enter stall i\n        ht = ht + h[i]\n        m = m + p[i]\n    else:\n        skip stall i"
       },
-      "Jack wants to choose the value of threshold%%ZSMJ15%% that maximizes his total happiness ht%%ZSMJ16%%. If multiple thresholds achieve the same maximum happiness, he wants the minimum such threshold."
+      "Jack wants to choose the value of threshold$$$threshold$$$ that maximizes his total happiness ht$$$ht$$$. If multiple thresholds achieve the same maximum happiness, he wants the minimum such threshold."
     ],
     "input": [
-      "The first line contains a single integer T%%ZSMJ17%% (1≤T≤105%%ZSMJ18%%) — the number of test cases.",
+      "The first line contains a single integer T$$$T$$$ (1≤T≤105$$$1 \\le T \\le 10^5$$$) — the number of test cases.",
       "Each test case consists of:",
-      "The first line contains two integers N%%ZSMJ19%% and P%%ZSMJ20%% (1≤N≤2⋅105%%ZSMJ21%%, 1≤P≤1018%%ZSMJ22%%) — the number of stalls and the maximum number of people Jack wants to meet.",
-      "Each of the next N%%ZSMJ23%% lines contains two integers hi%%ZSMJ24%% and pi%%ZSMJ25%% (1≤hi≤109%%ZSMJ26%%, 1≤pi≤1018%%ZSMJ27%%) — the happiness gained and the number of people met at the i%%ZSMJ28%%-th stall.",
-      "It is guaranteed that the sum of N%%ZSMJ29%% over all test cases does not exceed 2⋅105%%ZSMJ30%%.",
-      "Additionally, for each test case, the sum of all pi%%ZSMJ31%% does not exceed 1018%%ZSMJ32%% and pj≥pj+1%%ZSMJ33%% for all j<N%%ZSMJ34%%."
+      "The first line contains two integers N$$$N$$$ and P$$$P$$$ (1≤N≤2⋅105$$$1 \\le N \\le 2 \\cdot 10^5$$$, 1≤P≤1018$$$1 \\le P \\le 10^{18}$$$) — the number of stalls and the maximum number of people Jack wants to meet.",
+      "Each of the next N$$$N$$$ lines contains two integers hi$$$h_i$$$ and pi$$$p_i$$$ (1≤hi≤109$$$1 \\le h_i \\le 10^9$$$, 1≤pi≤1018$$$1 \\le p_i \\le 10^{18}$$$) — the happiness gained and the number of people met at the i$$$i$$$-th stall.",
+      "It is guaranteed that the sum of N$$$N$$$ over all test cases does not exceed 2⋅105$$$2 \\cdot 10^5$$$.",
+      "Additionally, for each test case, the sum of all pi$$$p_i$$$ does not exceed 1018$$$10^{18}$$$ and pj≥pj+1$$$p_j \\ge p_{j+1}$$$ for all j<N$$$j  \\lt  N$$$."
     ],
     "output": [
       "For each test case, print two integers — the maximum total happiness Jack can achieve and the minimum threshold to achieve the total happiness."
     ],
     "note": [
-      "In the first test case, Jack can enter every stall without exceeding the maximum number of people he wants to meet. Therefore, the optimal threshold is 0%%ZSMJ35%%.",
-      "In the second test case, if the threshold is set to 0%%ZSMJ36%%, Jack will skip stall 3%%ZSMJ37%%, resulting in a total happiness of 8%%ZSMJ38%%. If the threshold is increased to 1%%ZSMJ39%%, he will instead skip stall 2%%ZSMJ40%% due to the threshold condition, resulting in a total happiness of 10%%ZSMJ41%%, which is the maximum possible. Threshold value 2%%ZSMJ42%% also resulted in total happiness of 10%%ZSMJ43%%, but it is not minimal."
+      "In the first test case, Jack can enter every stall without exceeding the maximum number of people he wants to meet. Therefore, the optimal threshold is 0$$$0$$$.",
+      "In the second test case, if the threshold is set to 0$$$0$$$, Jack will skip stall 3$$$3$$$, resulting in a total happiness of 8$$$8$$$. If the threshold is increased to 1$$$1$$$, he will instead skip stall 2$$$2$$$ due to the threshold condition, resulting in a total happiness of 10$$$10$$$, which is the maximum possible. Threshold value 2$$$2$$$ also resulted in total happiness of 10$$$10$$$, but it is not minimal."
     ]
   },
   "examples": [
@@ -41,5 +41,32 @@
       "input": "\nht = 0 // initially, the total happiness is zero\nm = 0 // initially, he meets zero person\nfor i = 1 to N:\n    if h[i] > threshold and m + p[i] <= P:\n        enter stall i\n        ht = ht + h[i]\n        m = m + p[i]\n    else:\n        skip stall i",
       "output": "2\n4 15\n4 6\n1 5\n3 3\n3 1\n4 14\n4 6\n1 5\n3 3\n3 1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

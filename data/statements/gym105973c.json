@@ -9,26 +9,26 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Let M=998244353%%ZSMJ0%%.",
-      "You are given an integer n%%ZSMJ1%%. For an integer i%%ZSMJ2%% (1≤i≤n%%ZSMJ3%%), define f(i)%%ZSMJ4%% as follows: f(i) = \\left(\\binom{i}{i} \\bmod M\\right) \\oplus \\left(\\binom{i+1}{i} \\bmod M\\right) \\oplus \\cdots \\oplus \\left(\\binom{n}{i} \\bmod M\\right)%%ZSMJ5%%",
-      "Formally, f(i) = \\bigoplus_{j=i}^{n} \\left(\\binom{j}{i} \\bmod M\\right)%%ZSMJ6%%",
-      "Here, \\binom{x}{y}%%ZSMJ7%% denotes the binomial coefficient, which represents the number of ways to choose y%%ZSMJ8%% items from a set of x%%ZSMJ9%% items, and \\oplus%%ZSMJ10%% denotes the bitwise XOR operation.",
-      "Note that to compute f(i)%%ZSMJ11%%, you first compute the modulo operation on each binomial coefficient, then apply the XOR operation. You should not take f(i) \\bmod M%%ZSMJ12%%.",
-      "Please output f(1) \\oplus f(2) \\oplus \\cdots \\oplus f(n)%%ZSMJ13%%."
+      "Let M=998244353$$$M = 998244353$$$.",
+      "You are given an integer n$$$n$$$. For an integer i$$$i$$$ (1≤i≤n$$$1 \\le i \\le n$$$), define f(i)$$$f(i)$$$ as follows: f(i)=((ii)modM)⊕((i+1i)modM)⊕⋯⊕((ni)modM)$$f(i) = \\left(\\binom{i}{i} \\bmod M\\right) \\oplus \\left(\\binom{i+1}{i} \\bmod M\\right) \\oplus \\cdots \\oplus \\left(\\binom{n}{i} \\bmod M\\right)$$",
+      "Formally, f(i)=n⨁j=i((ji)modM)$$f(i) = \\bigoplus_{j=i}^{n} \\left(\\binom{j}{i} \\bmod M\\right)$$",
+      "Here, (xy)$$$\\binom{x}{y}$$$ denotes the binomial coefficient, which represents the number of ways to choose y$$$y$$$ items from a set of x$$$x$$$ items, and ⊕$$$\\oplus$$$ denotes the bitwise XOR operation.",
+      "Note that to compute f(i)$$$f(i)$$$, you first compute the modulo operation on each binomial coefficient, then apply the XOR operation. You should not take f(i)modM$$$f(i) \\bmod M$$$.",
+      "Please output f(1)⊕f(2)⊕⋯⊕f(n)$$$f(1) \\oplus f(2) \\oplus \\cdots \\oplus f(n)$$$."
     ],
     "input": [
-      "The first line contains a single integer t%%ZSMJ14%% (1 \\le t \\le 10^6%%ZSMJ15%%) — the number of test cases.",
-      "The first and only line of each test case contains a single integer n%%ZSMJ16%% (1 \\leq n \\leq 10^6%%ZSMJ17%%)."
+      "The first line contains a single integer t$$$t$$$ (1≤t≤106$$$1 \\le t \\le 10^6$$$) — the number of test cases.",
+      "The first and only line of each test case contains a single integer n$$$n$$$ (1≤n≤106$$$1 \\leq n \\leq 10^6$$$)."
     ],
     "output": [
       "For each test case, output the answer."
     ],
     "note": [
       "In the first test case,",
-      "f(1) = \\left(\\binom{1}{1} \\bmod M\\right) \\oplus \\left(\\binom{2}{1} \\bmod M\\right) = 1 \\oplus 2 = 3%%ZSMJ18%%",
-      "f(2) = \\left(\\binom{2}{2} \\bmod M\\right) = 1%%ZSMJ19%%",
+      "f(1)=((11)modM)⊕((21)modM)=1⊕2=3$$$f(1) = \\left(\\binom{1}{1} \\bmod M\\right) \\oplus \\left(\\binom{2}{1} \\bmod M\\right) = 1 \\oplus 2 = 3$$$",
+      "f(2)=((22)modM)=1$$$f(2) = \\left(\\binom{2}{2} \\bmod M\\right) = 1$$$",
       "In the second test case,",
-      "f(1) = \\left(\\binom{1}{1} \\bmod M\\right) = 1%%ZSMJ21%%"
+      "f(1)=((11)modM)=1$$$f(1) = \\left(\\binom{1}{1} \\bmod M\\right) = 1$$$"
     ]
   },
   "examples": [
@@ -36,5 +36,29 @@
       "input": "2\n2\n1",
       "output": "2\n1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

@@ -9,32 +9,32 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "You are given an array of positive integers A%%ZSMJ0%% of size n%%ZSMJ1%%. In one operation, you may perform the following:",
-      "Choose any indices i,j%%ZSMJ2%% such that 1≤i,j≤n%%ZSMJ3%%,",
-      "Choose a positive integer p%%ZSMJ4%% that divides Ai%%ZSMJ5%%, formally, p∣Ai%%ZSMJ6%%,",
-      "Update Ai:=Aip%%ZSMJ7%%,",
-      "Update Aj:=Aj⋅p%%ZSMJ8%%.",
+      "You are given an array of positive integers A$$$A$$$ of size n$$$n$$$. In one operation, you may perform the following:",
+      "Choose any indices i,j$$$i, j$$$ such that 1≤i,j≤n$$$1 \\le i, j \\le n$$$,",
+      "Choose a positive integer p$$$p$$$ that divides Ai$$$A_i$$$, formally, p∣Ai$$$p \\mid A_i$$$,",
+      "Update Ai:=Aip$$$A_i := \\frac{A_i}{p}$$$,",
+      "Update Aj:=Aj⋅p$$$A_j := A_j \\cdot p$$$.",
       "After performing the operation any number of times (possibly zero), the final array must satisfy the following requirements, one from each of your three friends:",
-      "Muhaimin wants at least a%%ZSMJ10%% elements to be evenly even. A positive integer is called evenly even if it has no odd prime factor.",
-      "Noshin wants at least b%%ZSMJ11%% elements to be oddly odd. A positive integer is called oddly odd if it has no even prime factor.",
+      "Muhaimin wants at least a$$$a$$$ elements to be evenly even. A positive integer is called evenly even if it has no odd prime factor.",
+      "Noshin wants at least b$$$b$$$ elements to be oddly odd. A positive integer is called oddly odd if it has no even prime factor.",
       "Osman wants the whole array to be balanced. An array is called balanced if each element of the array is either evenly even, or oddly odd, or both. For example, [4, 27] is a balanced array, while [6, 9] is not.",
       "Determine the minimum total cost required to satisfy all three requirements. It can be proved that it is always possible to satisfy all three requirements."
     ],
     "input": [
-      "The first line of the input contains a single integer t%%ZSMJ12%% (1≤t≤500)%%ZSMJ13%% — the number of test cases.",
-      "The first line of each test case contains three space-separated integers n%%ZSMJ14%%, a%%ZSMJ15%% and b%%ZSMJ16%% (2≤n≤2⋅105,1≤a, b≤(n−1),2≤a+b≤n)%%ZSMJ17%% — the size of the array, the minimum required number of evenly even elements and the minimum required number of oddly odd elements respectively.",
-      "The third line of each test case contains n%%ZSMJ18%% integers A1,A2,…,An%%ZSMJ19%% (1≤Ai≤106)%%ZSMJ20%% — the elements of the array initially.",
-      "It is guaranteed that the sum of n%%ZSMJ21%% over all test cases does not exceed 2⋅105%%ZSMJ22%%."
+      "The first line of the input contains a single integer t$$$t$$$ (1≤t≤500)$$$(1 \\le t \\le 500)$$$ — the number of test cases.",
+      "The first line of each test case contains three space-separated integers n$$$n$$$, a$$$a$$$ and b$$$b$$$ (2≤n≤2⋅105,1≤a, b≤(n−1),2≤a+b≤n)$$$(2 \\le n \\le 2 \\cdot 10^5, 1 \\le a, \\space b \\le (n - 1), 2 \\le a + b \\le n)$$$ — the size of the array, the minimum required number of evenly even elements and the minimum required number of oddly odd elements respectively.",
+      "The third line of each test case contains n$$$n$$$ integers A1,A2,…,An$$$A_1, A_2, \\dots, A_n$$$ (1≤Ai≤106)$$$(1 \\le A_i \\le 10^6)$$$ — the elements of the array initially.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 2⋅105$$$2 \\cdot 10^5$$$."
     ],
     "output": [
-      "For each test case, print a single integer in a line — the minimum total cost required to make the array balanced with at least a%%ZSMJ23%% evenly even and at least b%%ZSMJ24%% oddly odd elements."
+      "For each test case, print a single integer in a line — the minimum total cost required to make the array balanced with at least a$$$a$$$ evenly even and at least b$$$b$$$ oddly odd elements."
     ],
     "note": [
-      "In the second test case, we can choose i=2%%ZSMJ25%%, j=1%%ZSMJ26%% and p=4%%ZSMJ27%% (divide A2%%ZSMJ28%% by 4%%ZSMJ29%% and multiply A1%%ZSMJ30%% by 4%%ZSMJ31%%), resulting in the array [32,1,4]%%ZSMJ32%%.",
+      "In the second test case, we can choose i=2$$$i = 2$$$, j=1$$$j = 1$$$ and p=4$$$p = 4$$$ (divide A2$$$A_2$$$ by 4$$$4$$$ and multiply A1$$$A_1$$$ by 4$$$4$$$), resulting in the array [32,1,4]$$$[32, 1, 4]$$$.",
       "Other possible final arrays with the same minimum cost are:",
-      "[8,1,16]%%ZSMJ33%%",
-      "[32,4,1]%%ZSMJ34%%",
-      "[8,16,1]%%ZSMJ35%%"
+      "[8,1,16]$$$[8, 1, 16]$$$",
+      "[32,4,1]$$$[32, 4, 1]$$$",
+      "[8,16,1]$$$[8, 16, 1]$$$"
     ]
   },
   "examples": [
@@ -42,5 +42,35 @@
       "input": "3\n8 3 3\n6 10 12 14 18 20 22 24\n3 1 1\n8 4 4\n5 2 3\n2 3 5 8 13",
       "output": "21\n4\n0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

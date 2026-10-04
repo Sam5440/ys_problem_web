@@ -9,25 +9,25 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "Luis likes to play with permutations. A permutation is an arrangement of integers such that if its length is N%%ZSMJ0%%, then each of its elements is between 1%%ZSMJ1%% and N%%ZSMJ2%%, and no element appears more than once. For example, [1,3,4,2]%%ZSMJ3%% and [1,2]%%ZSMJ4%% are permutations, while [1,3,4]%%ZSMJ5%% and [1,2,4,2]%%ZSMJ6%% are not. In a permutation P%%ZSMJ7%% of length N%%ZSMJ8%%, we denote P[1],P[2],…,P[N]%%ZSMJ9%% as its elements in the order they appear in P%%ZSMJ10%%. For example, for P=[1,3,4,2]%%ZSMJ11%%, we have P[3]=4%%ZSMJ12%%.",
-      "Luis is interested in the semi-fixed points of permutations. An integer x%%ZSMJ13%% is a semi-fixed point of a permutation P%%ZSMJ14%% if P[P[x]]=x%%ZSMJ15%%. We denote s(P)%%ZSMJ16%% as the number of semi-fixed points of the permutation P%%ZSMJ17%%. For example, for P=[3,6,1,4,2,5]%%ZSMJ18%%, we have s(P)=3%%ZSMJ19%% since 1%%ZSMJ20%%, 3%%ZSMJ21%%, and 4%%ZSMJ22%% are the semi-fixed points of P%%ZSMJ23%%.",
-      "Luis is also interested in the rotations of permutations. Given a permutation P%%ZSMJ24%%, rot(P)%%ZSMJ25%% is the permutation obtained by rotating P%%ZSMJ26%% one position to the left. More generally, rotk(P)%%ZSMJ27%% is the result of rotating the permutation P%%ZSMJ28%% exactly k%%ZSMJ29%% positions to the left. For example, for P=[1,3,4,2]%%ZSMJ30%%, we have rot(P)=[3,4,2,1]%%ZSMJ31%%, rot2(P)=[4,2,1,3]%%ZSMJ32%%, and rot3(P)=[2,1,3,4]%%ZSMJ33%%.",
-      "Luis came up with a brilliant idea: to combine semi-fixed points with rotations. Given a permutation P%%ZSMJ34%% of length N%%ZSMJ35%%, Luis wants to calculate s(P)+s(rot(P))+s(rot2(P))+⋯+s(rotN−1(P))%%ZSMJ36%% but he does not know how to do it. Would you help him calculate it?"
+      "Luis likes to play with permutations. A permutation is an arrangement of integers such that if its length is N$$$N$$$, then each of its elements is between 1$$$1$$$ and N$$$N$$$, and no element appears more than once. For example, [1,3,4,2]$$$[1,3,4,2]$$$ and [1,2]$$$[1,2]$$$ are permutations, while [1,3,4]$$$[1,3,4]$$$ and [1,2,4,2]$$$[1,2,4,2]$$$ are not. In a permutation P$$$P$$$ of length N$$$N$$$, we denote P[1],P[2],…,P[N]$$${P[1]}, {P[2]}, \\ldots, {P[N]}$$$ as its elements in the order they appear in P$$$P$$$. For example, for P=[1,3,4,2]$$$P=[1,3,4,2]$$$, we have P[3]=4$$$P[3]=4$$$.",
+      "Luis is interested in the semi-fixed points of permutations. An integer x$$$x$$$ is a semi-fixed point of a permutation P$$$P$$$ if P[P[x]]=x$$$P[P[x]]=x$$$. We denote s(P)$$$s(P)$$$ as the number of semi-fixed points of the permutation P$$$P$$$. For example, for P=[3,6,1,4,2,5]$$$P=[3,6,1,4,2,5]$$$, we have s(P)=3$$$s(P)=3$$$ since 1$$$1$$$, 3$$$3$$$, and 4$$$4$$$ are the semi-fixed points of P$$$P$$$.",
+      "Luis is also interested in the rotations of permutations. Given a permutation P$$$P$$$, rot(P)$$$\\mathop{\\mathrm{rot}}\\nolimits(P)$$$ is the permutation obtained by rotating P$$$P$$$ one position to the left. More generally, rotk(P)$$$\\mathop{\\mathrm{rot}}\\nolimits^k(P)$$$ is the result of rotating the permutation P$$$P$$$ exactly k$$$k$$$ positions to the left. For example, for P=[1,3,4,2]$$$P=[1,3,4,2]$$$, we have rot(P)=[3,4,2,1]$$$\\mathop{\\mathrm{rot}}\\nolimits(P)=[3,4,2,1]$$$, rot2(P)=[4,2,1,3]$$$\\mathop{\\mathrm{rot}}\\nolimits^2(P)=[4,2,1,3]$$$, and rot3(P)=[2,1,3,4]$$$\\mathop{\\mathrm{rot}}\\nolimits^3(P)=[2,1,3,4]$$$.",
+      "Luis came up with a brilliant idea: to combine semi-fixed points with rotations. Given a permutation P$$$P$$$ of length N$$$N$$$, Luis wants to calculate s(P)+s(rot(P))+s(rot2(P))+⋯+s(rotN−1(P))\n$$ s(P) + s(\\mathop{\\mathrm{rot}}\\nolimits(P)) + s(\\mathop{\\mathrm{rot}}\\nolimits^2(P)) + \\cdots + s(\\mathop{\\mathrm{rot}}\\nolimits^{N-1}(P))$$ but he does not know how to do it. Would you help him calculate it?"
     ],
     "input": [
-      "The first line contains an integer N%%ZSMJ37%% (1≤N≤2⋅105%%ZSMJ38%%) indicating the length of the permutation.",
-      "The second line contains N%%ZSMJ39%% distinct integers P[1],P[2],…,P[N]%%ZSMJ40%% (1≤P[i]≤N%%ZSMJ41%%), the elements of the permutation P%%ZSMJ42%%."
+      "The first line contains an integer N$$$N$$$ (1≤N≤2⋅105$$$1 \\leq N \\leq 2 \\cdot 10^5$$$) indicating the length of the permutation.",
+      "The second line contains N$$$N$$$ distinct integers P[1],P[2],…,P[N]$$${P[1]}, {P[2]}, \\ldots, {P[N]}$$$ (1≤P[i]≤N$$$1 \\leq P[i] \\leq N$$$), the elements of the permutation P$$$P$$$."
     ],
     "output": [
       "A line with an integer, the result of the calculation that Luis wants to compute."
     ],
     "note": [
-      "In the first example, P=[1,3,4,2]%%ZSMJ43%% and its rotations are:",
-      "P=[1,3,4,2]%%ZSMJ44%%, with 1%%ZSMJ45%% semi-fixed point, which is 1%%ZSMJ46%%.",
-      "rot(P)=[3,4,2,1]%%ZSMJ47%%, with no semi-fixed points.",
-      "rot2(P)=[4,2,1,3]%%ZSMJ48%%, with 1%%ZSMJ49%% semi-fixed point, which is 2%%ZSMJ50%%.",
-      "rot3(P)=[2,1,3,4]%%ZSMJ51%%, with 4%%ZSMJ52%% semi-fixed points, which are 1,2,3%%ZSMJ53%%, and 4%%ZSMJ54%%.",
-      "Then, s(P)+s(rot(P))+s(rot2(P))+s(rot3(P))=1+0+1+4=6%%ZSMJ55%%."
+      "In the first example, P=[1,3,4,2]$$$P=[1,3,4,2]$$$ and its rotations are:",
+      "P=[1,3,4,2]$$$P = [1, 3, 4, 2]$$$, with 1$$$1$$$ semi-fixed point, which is 1$$$1$$$.",
+      "rot(P)=[3,4,2,1]$$$\\mathop{\\mathrm{rot}}\\nolimits(P) = [3, 4, 2, 1]$$$, with no semi-fixed points.",
+      "rot2(P)=[4,2,1,3]$$$\\mathop{\\mathrm{rot}}\\nolimits^2(P) = [4, 2, 1, 3]$$$, with 1$$$1$$$ semi-fixed point, which is 2$$$2$$$.",
+      "rot3(P)=[2,1,3,4]$$$\\mathop{\\mathrm{rot}}\\nolimits^3(P) = [2, 1, 3, 4]$$$, with 4$$$4$$$ semi-fixed points, which are 1,2,3$$$1, 2, 3$$$, and 4$$$4$$$.",
+      "Then, s(P)+s(rot(P))+s(rot2(P))+s(rot3(P))=1+0+1+4=6$$$s(P) + s(\\mathop{\\mathrm{rot}}\\nolimits(P)) + s(\\mathop{\\mathrm{rot}}\\nolimits^2(P)) + s(\\mathop{\\mathrm{rot}}\\nolimits^{3}(P)) = 1 + 0 + 1 + 4 = 6$$$."
     ]
   },
   "examples": [
@@ -39,5 +39,28 @@
       "input": "2\n1 2",
       "output": "4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

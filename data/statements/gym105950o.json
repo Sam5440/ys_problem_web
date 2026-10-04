@@ -13,16 +13,16 @@
       "Fortunately, the astronauts brought along a set of ladders of various lengths; these ladders allowed them to cross the ravines when laid out horizontally, as long as their extended length was greater than or equal to the size of the gap.",
       "The team has a schedule indicating one coordinate of interest to visit each day, and for these visits, they choose one ladder from their set to help cross the ravines. After reaching the point of interest, the astronauts must return via the same path they came from (back to the area where they reside), and the used ladder is then discarded due to wear and tear, making it unavailable for future days.",
       "Given this, Mark was tasked with developing a program that, when provided with a map showing regions separated by ravines, the lengths of the ravines, the set of ladders brought by the team, and the cities the team wants to visit each day, maximizes the number of regions of interest visited during the entire mission. Mark, being a great biologist but not much of a programmer, called you for help.",
-      "The map of Mars is given as a graph with N%%ZSMJ0%% regions numbered from 1%%ZSMJ1%% to N%%ZSMJ2%% and M%%ZSMJ3%% ravines numbered from 1%%ZSMJ4%% to M%%ZSMJ5%% connecting these regions, where the i%%ZSMJ6%%-th ravine has a length of wi%%ZSMJ7%% meters. It is also a fact that if it were possible to use a ladder of infinite length, one could travel from any region to any other region using only the ravines.",
-      "Additionally, the mission will last D%%ZSMJ8%% days, where the region to be visited on the i%%ZSMJ9%%-th day is di%%ZSMJ10%%, and the team has exactly D%%ZSMJ11%% ladders numbered from 1%%ZSMJ12%% to D%%ZSMJ13%%, where the length of the i%%ZSMJ14%%-th ladder is ei%%ZSMJ15%%. Note that a ladder can be used on any day, but only once; and during a day, the chosen ladder can be reused as many times as necessary.",
-      "Knowing that the team resides in region 1%%ZSMJ16%%, write a program to help Mark's team with their mission!"
+      "The map of Mars is given as a graph with N$$$N$$$ regions numbered from 1$$$1$$$ to N$$$N$$$ and M$$$M$$$ ravines numbered from 1$$$1$$$ to M$$$M$$$ connecting these regions, where the i$$$i$$$-th ravine has a length of wi$$$w_i$$$ meters. It is also a fact that if it were possible to use a ladder of infinite length, one could travel from any region to any other region using only the ravines.",
+      "Additionally, the mission will last D$$$D$$$ days, where the region to be visited on the i$$$i$$$-th day is di$$$d_i$$$, and the team has exactly D$$$D$$$ ladders numbered from 1$$$1$$$ to D$$$D$$$, where the length of the i$$$i$$$-th ladder is ei$$$e_i$$$. Note that a ladder can be used on any day, but only once; and during a day, the chosen ladder can be reused as many times as necessary.",
+      "Knowing that the team resides in region 1$$$1$$$, write a program to help Mark's team with their mission!"
     ],
     "input": [
-      "The first line of the input consists of two numbers N%%ZSMJ17%% and M%%ZSMJ18%% (2≤N≤2⋅105)%%ZSMJ19%% (1≤M≤2⋅105)%%ZSMJ20%%, the number of regions and ravines on Mars, respectively.",
-      "The next M%%ZSMJ21%% lines each contain three integers ui%%ZSMJ22%%, vi%%ZSMJ23%%, and wi%%ZSMJ24%%, (1≤ui,vi≤N)%%ZSMJ25%% (1≤wi≤109)%%ZSMJ26%%, indicating the existence of a ravine of length wi%%ZSMJ27%% between regions ui%%ZSMJ28%% and vi%%ZSMJ29%%. It is guaranteed that there is only one ravine connecting any two regions, and no ravine connects a region to itself.",
-      "Then, a line with a single integer D%%ZSMJ30%% (1≤D≤N)%%ZSMJ31%% is given, representing the number of days in the mission; followed by two lines with D%%ZSMJ32%% integers each.",
-      "The first of these lines contains d1,d2,⋯,dD%%ZSMJ33%% (1≤di≤N)%%ZSMJ34%%, indicating that the i%%ZSMJ35%%-th region to be visited is region number di%%ZSMJ36%%.",
-      "The next line contains e1,e2,⋯,eD%%ZSMJ37%% (1≤ei≤109)%%ZSMJ38%%, indicating that the i%%ZSMJ39%%-th ladder is ei%%ZSMJ40%% meters long."
+      "The first line of the input consists of two numbers N$$$N$$$ and M$$$M$$$ (2≤N≤2⋅105)$$$(2 \\le N \\le 2 \\cdot 10^5)$$$ (1≤M≤2⋅105)$$$(1 \\le M \\le 2 \\cdot 10^5)$$$, the number of regions and ravines on Mars, respectively.",
+      "The next M$$$M$$$ lines each contain three integers ui$$$u_i$$$, vi$$$v_i$$$, and wi$$$w_i$$$, (1≤ui,vi≤N)$$$(1 \\le u_i, v_i \\le N)$$$ (1≤wi≤109)$$$(1 \\le w_i \\le 10^9)$$$, indicating the existence of a ravine of length wi$$$w_i$$$ between regions ui$$$u_i$$$ and vi$$$v_i$$$. It is guaranteed that there is only one ravine connecting any two regions, and no ravine connects a region to itself.",
+      "Then, a line with a single integer D$$$D$$$ (1≤D≤N)$$$(1 \\le D \\le N)$$$ is given, representing the number of days in the mission; followed by two lines with D$$$D$$$ integers each.",
+      "The first of these lines contains d1,d2,⋯,dD$$$d_1, d_2, \\cdots, d_D$$$ (1≤di≤N)$$$(1 \\le d_i \\le N)$$$, indicating that the i$$$i$$$-th region to be visited is region number di$$$d_i$$$.",
+      "The next line contains e1,e2,⋯,eD$$$e_1, e_2, \\cdots, e_D$$$ (1≤ei≤109)$$$(1 \\le e_i \\le 10^9)$$$, indicating that the i$$$i$$$-th ladder is ei$$$e_i$$$ meters long."
     ],
     "output": [
       "Print a single line with the maximum number of regions that Mark and his team can visit."
@@ -30,7 +30,7 @@
     "note": [
       "Below is the map for the second example:",
       "![](https://espresso.codeforces.com/3c5d5f91757afb2f5186b4548b9b14917b9ffb0c.png)",
-      "We can use one of the ladders of length two to reach node 5%%ZSMJ41%% on the first day; then, we can skip the second day's target and use the ladder of length 11%%ZSMJ42%% to reach node 2%%ZSMJ43%% on the third day (through the path 1 – 5 – 2). Note that there may be more than one way to achieve the optimal answer."
+      "We can use one of the ladders of length two to reach node 5$$$5$$$ on the first day; then, we can skip the second day's target and use the ladder of length 11$$$11$$$ to reach node 2$$$2$$$ on the third day (through the path 1 – 5 – 2). Note that there may be more than one way to achieve the optimal answer."
     ]
   },
   "examples": [
@@ -46,5 +46,31 @@
       "input": "5 6\n2 1 13\n4 2 1\n5 2 1\n5 1 2\n3 2 11\n4 1 5\n2\n2 3\n1 1",
       "output": "0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null
+    ]
+  }
 }

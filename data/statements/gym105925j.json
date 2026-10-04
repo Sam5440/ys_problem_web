@@ -9,17 +9,17 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "An experiment at the Large Hadron Collider is being set up to test phase properties of various different particles. There are N%%ZSMJ0%% filters arranged in a circle, where the i%%ZSMJ1%%-th filter allows particles with a phase less than or equal to its limit Ai%%ZSMJ2%% to pass.",
-      "An experiment begins with the release of a particle at the position of the i%%ZSMJ3%%-th filter, with an initial phase set to Ai%%ZSMJ4%%. When passing through filter i%%ZSMJ5%%, including the first one, the particle:",
-      "Is filtered out if the phase of the particle is greater than the limit Ai%%ZSMJ6%%, ending the experiment.",
-      "Otherwise, the particle passes through the filter, increases its phase by K%%ZSMJ7%%, and moves to the next filter on the right, the (imod%%ZSMJ8%%-th filter.",
-      "We want to simulate the result of this experiment to compare with the results verified empirically. To achieve this, we need to create a vector B_i%%ZSMJ9%% of size N%%ZSMJ10%%, where B_i%%ZSMJ11%% (1 \\leq B_i \\leq N%%ZSMJ12%%) is the position of the filter that stopped the particle that started at position i%%ZSMJ13%%."
+      "An experiment at the Large Hadron Collider is being set up to test phase properties of various different particles. There are N$$$N$$$ filters arranged in a circle, where the i$$$i$$$-th filter allows particles with a phase less than or equal to its limit Ai$$$A_i$$$ to pass.",
+      "An experiment begins with the release of a particle at the position of the i$$$i$$$-th filter, with an initial phase set to Ai$$$A_i$$$. When passing through filter i$$$i$$$, including the first one, the particle:",
+      "Is filtered out if the phase of the particle is greater than the limit Ai$$$A_i$$$, ending the experiment.",
+      "Otherwise, the particle passes through the filter, increases its phase by K$$$K$$$, and moves to the next filter on the right, the (imodN)+1$$$(i \\bmod N) + 1$$$-th filter.",
+      "We want to simulate the result of this experiment to compare with the results verified empirically. To achieve this, we need to create a vector Bi$$$B_i$$$ of size N$$$N$$$, where Bi$$$B_i$$$ (1≤Bi≤N$$$1 \\leq B_i \\leq N$$$) is the position of the filter that stopped the particle that started at position i$$$i$$$."
     ],
     "input": [
-      "The first line contains two integers N%%ZSMJ14%% (1 \\leq N \\leq 2 \\cdot 10^5%%ZSMJ15%%) and K%%ZSMJ16%% (1 \\leq K \\leq 10^9%%ZSMJ17%%). The second line contains N%%ZSMJ18%% integers A_1, A_2, \\ldots, A_N%%ZSMJ19%% (-10^9 \\leq A_i \\leq 10^9%%ZSMJ20%%)."
+      "The first line contains two integers N$$$N$$$ (1≤N≤2⋅105$$$1 \\leq N \\leq 2 \\cdot 10^5$$$) and K$$$K$$$ (1≤K≤109$$$1 \\leq K \\leq 10^9$$$). The second line contains N$$$N$$$ integers A1,A2,…,AN$$$A_1, A_2, \\ldots, A_N$$$ (−109≤Ai≤109$$$-10^9 \\leq A_i \\leq 10^9$$$)."
     ],
     "output": [
-      "Print a line containing N%%ZSMJ21%% integers B_1, B_2, \\ldots, B_N%%ZSMJ22%%."
+      "Print a line containing N$$$N$$$ integers B1,B2,…,BN$$$B_1, B_2, \\ldots, B_N$$$."
     ]
   },
   "examples": [
@@ -35,5 +35,20 @@
       "input": "6 2\n12 4 5 9 2 3",
       "output": "2 3 5 5 6 2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

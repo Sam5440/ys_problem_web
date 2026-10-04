@@ -10,32 +10,32 @@
   "sections": {
     "legend": [
       "At the Latin America ICPC Championship 2026, the problemsetter's team ran into a tricky problem. One of the members on the team, Avnith immediately recognized the problem and claimed that it is trivially solved by [REDACTED]. However, the problem was actually solved by Centroid Decomposition and NTT. During the flight back from Chile, the problemsetter could not forget about the incident and made a problem based on [REDACTED]. Now it is your job to figure out what [REDACTED] is and solve the problem.",
-      "You are given an undirected tree with n%%ZSMJ0%% vertices and an integer k%%ZSMJ1%%.",
-      "For every vertex r%%ZSMJ2%% considered as the root, define dr(v)%%ZSMJ3%% to be the distance from r%%ZSMJ4%% to v%%ZSMJ5%%. For every k%%ZSMJ6%%-vertex subset S%%ZSMJ7%%, let lcar(S)%%ZSMJ8%% be the lowest common ancestor of all vertices in S%%ZSMJ9%% in the tree rooted at r%%ZSMJ10%%.",
-      "Let f(r)=∑S∈V|S|=kdr(lcar(S))%%ZSMJ11%% In other words, the sum of the depths of the least common ancestor of all sets with k%%ZSMJ12%% vertices if the tree is rooted at vertex r%%ZSMJ13%%.",
-      "Find f(r)%%ZSMJ14%% for each r%%ZSMJ15%% from 1%%ZSMJ16%% to n%%ZSMJ17%%. Since the answers may be large, output them modulo 109+7%%ZSMJ18%%."
+      "You are given an undirected tree with n$$$n$$$ vertices and an integer k$$$k$$$.",
+      "For every vertex r$$$r$$$ considered as the root, define dr(v)$$$d_r(v)$$$ to be the distance from r$$$r$$$ to v$$$v$$$. For every k$$$k$$$-vertex subset S$$$S$$$, let lcar(S)$$$lca_r(S)$$$ be the lowest common ancestor of all vertices in S$$$S$$$ in the tree rooted at r$$$r$$$.",
+      "Let f(r)=∑S∈V|S|=kdr(lcar(S))\n$$f(r)=\\sum_{\\substack{S\\in V\\\\|S|=k}} d_r(lca_r(S))$$ In other words, the sum of the depths of the least common ancestor of all sets with k$$$k$$$ vertices if the tree is rooted at vertex r$$$r$$$.",
+      "Find f(r)$$$f(r)$$$ for each r$$$r$$$ from 1$$$1$$$ to n$$$n$$$. Since the answers may be large, output them modulo 109+7$$$10^9+7$$$."
     ],
     "input": [
-      "The first line contains two integers n%%ZSMJ19%%, k%%ZSMJ20%% (1≤n,k≤2⋅105)%%ZSMJ21%% as denoted in the problem statement.",
-      "The next n−1%%ZSMJ22%% lines contain two integers each line, denoting an edge in the tree.",
+      "The first line contains two integers n$$$n$$$, k$$$k$$$ (1≤n,k≤2⋅105)$$$(1 \\leq n,k \\leq 2 \\cdot 10^5)$$$ as denoted in the problem statement.",
+      "The next n−1$$$n-1$$$ lines contain two integers each line, denoting an edge in the tree.",
       "—",
-      "Tests in subtasks are numbered from 1−25%%ZSMJ23%% with samples skipped. Each test is worth 10025=4%%ZSMJ24%% points.",
-      "Tests 1−4%%ZSMJ25%% satisfy n,k≤20%%ZSMJ26%%.",
-      "Tests 5−12%%ZSMJ27%% satisfy n,k≤2000%%ZSMJ28%%.",
-      "Tests 13−25%%ZSMJ29%% satisfy no additional constraints."
+      "Tests in subtasks are numbered from 1−25$$$1−25$$$ with samples skipped. Each test is worth 10025=4$$$\\frac{100}{25}=4$$$ points.",
+      "Tests 1−4$$$1-4$$$ satisfy n,k≤20$$$n,k \\leq 20$$$.",
+      "Tests 5−12$$$5-12$$$ satisfy n,k≤2000$$$n, k \\leq 2000$$$.",
+      "Tests 13−25$$$13-25$$$ satisfy no additional constraints."
     ],
     "output": [
-      "One line with n%%ZSMJ30%% integers; the i%%ZSMJ31%%-th integer denotes f(i)%%ZSMJ32%% modulo 109+7%%ZSMJ33%%."
+      "One line with n$$$n$$$ integers; the i$$$i$$$-th integer denotes f(i)$$$f(i)$$$ modulo 109+7$$$10^9+7$$$."
     ],
     "note": [
-      "Consider rooting at r=1%%ZSMJ34%%. The tree is a path 1−2−3−4%%ZSMJ35%%, so the depths are d1(1)=0%%ZSMJ36%%, d1(2)=1%%ZSMJ37%%, d1(3)=2%%ZSMJ38%%, d1(4)=3%%ZSMJ39%%. There are \\binom{4}{2} = 6%%ZSMJ40%% subsets of size k = 2%%ZSMJ41%%:",
-      "\\{1, 2\\}%%ZSMJ42%%: \\mathrm{lca} = 1%%ZSMJ43%%, depth 0%%ZSMJ44%%",
-      "\\{1, 3\\}%%ZSMJ45%%: \\mathrm{lca} = 1%%ZSMJ46%%, depth 0%%ZSMJ47%%",
-      "\\{1, 4\\}%%ZSMJ48%%: \\mathrm{lca} = 1%%ZSMJ49%%, depth 0%%ZSMJ50%%",
-      "\\{2, 3\\}%%ZSMJ51%%: \\mathrm{lca} = 2%%ZSMJ52%%, depth 1%%ZSMJ53%%",
-      "\\{2, 4\\}%%ZSMJ54%%: \\mathrm{lca} = 2%%ZSMJ55%%, depth 1%%ZSMJ56%%",
-      "\\{3, 4\\}%%ZSMJ57%%: \\mathrm{lca} = 3%%ZSMJ58%%, depth 2%%ZSMJ59%%",
-      "So f(1) = 0 + 0 + 0 + 1 + 1 + 2 = 4%%ZSMJ60%%.",
+      "Consider rooting at r=1$$$r = 1$$$. The tree is a path 1−2−3−4$$$1 - 2 - 3 - 4$$$, so the depths are d1(1)=0$$$d_1(1) = 0$$$, d1(2)=1$$$d_1(2) = 1$$$, d1(3)=2$$$d_1(3) = 2$$$, d1(4)=3$$$d_1(4) = 3$$$. There are (42)=6$$$\\binom{4}{2} = 6$$$ subsets of size k=2$$$k = 2$$$:",
+      "{1,2}$$$\\{1, 2\\}$$$: lca=1$$$\\mathrm{lca} = 1$$$, depth 0$$$0$$$",
+      "{1,3}$$$\\{1, 3\\}$$$: lca=1$$$\\mathrm{lca} = 1$$$, depth 0$$$0$$$",
+      "{1,4}$$$\\{1, 4\\}$$$: lca=1$$$\\mathrm{lca} = 1$$$, depth 0$$$0$$$",
+      "{2,3}$$$\\{2, 3\\}$$$: lca=2$$$\\mathrm{lca} = 2$$$, depth 1$$$1$$$",
+      "{2,4}$$$\\{2, 4\\}$$$: lca=2$$$\\mathrm{lca} = 2$$$, depth 1$$$1$$$",
+      "{3,4}$$$\\{3, 4\\}$$$: lca=3$$$\\mathrm{lca} = 3$$$, depth 2$$$2$$$",
+      "So f(1)=0+0+0+1+1+2=4$$$f(1) = 0 + 0 + 0 + 1 + 1 + 2 = 4$$$.",
       "—",
       "Problem Idea: naturalselection",
       "Problem Preparation: naturalselection",
@@ -47,5 +47,40 @@
       "input": "4 2\n1 2\n2 3\n3 4",
       "output": "4 1 1 4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

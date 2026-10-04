@@ -9,29 +9,29 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "After arriving at Mary's house, Ian gifted a ring of flowers to Mary. The ring of flowers consists of different kinds of flowers. For convenience, we assign a number to each kind of flower and denote the ring by an array of integers a1,a2,...,an%%ZSMJ0%% where n%%ZSMJ1%% is the number of flowers in the ring, such that ai=aj%%ZSMJ2%% if and only if the i%%ZSMJ3%%-th flower is of the same kind as the j%%ZSMJ4%%-th flower.",
-      "Mary calls a ring of flowers supreme if, for any two adjacent flowers, their kinds are not the same. Note that the n%%ZSMJ5%%-th flower is adjacent to the first flower. In other words, there does not exist i%%ZSMJ6%% such that ai=ai+1%%ZSMJ7%% with indices taken modulo n%%ZSMJ8%%. An exception to this is that a ring which consists of only 1%%ZSMJ9%% flower is always regarded as supreme.",
+      "After arriving at Mary's house, Ian gifted a ring of flowers to Mary. The ring of flowers consists of different kinds of flowers. For convenience, we assign a number to each kind of flower and denote the ring by an array of integers a1,a2,...,an$$$a_1,a_2,...,a_n$$$ where n$$$n$$$ is the number of flowers in the ring, such that ai=aj$$$a_i=a_j$$$ if and only if the i$$$i$$$-th flower is of the same kind as the j$$$j$$$-th flower.",
+      "Mary calls a ring of flowers supreme if, for any two adjacent flowers, their kinds are not the same. Note that the n$$$n$$$-th flower is adjacent to the first flower. In other words, there does not exist i$$$i$$$ such that ai=ai+1$$$a_i=a_{i+1}$$$ with indices taken modulo n$$$n$$$. An exception to this is that a ring which consists of only 1$$$1$$$ flower is always regarded as supreme.",
       "Mary wants to cut the ring of flowers which Ian had gifted her into several chains of flowers, and form a new ring of flowers with each chain by joining both of its ends. She wants all of the newly formed rings to be supreme. What is the minimum number of rings Mary needs to form to meet her requirement?"
     ],
     "input": [
-      "The first line consists of an integer t%%ZSMJ10%% (1≤t≤104%%ZSMJ11%%), the number of test cases.",
-      "The first line of each test case consists of a single integer n%%ZSMJ12%% (1≤n≤3⋅105%%ZSMJ13%%), the number of flowers in the ring.",
-      "The second line of each test case consists of n%%ZSMJ14%% integers a1,a2,...,an%%ZSMJ15%% (1≤ai≤n%%ZSMJ16%%), where ai%%ZSMJ17%% is the kind of the i%%ZSMJ18%%-th flower.",
-      "It is guaranteed that the sum of n%%ZSMJ19%% over all test cases does not exceed 3⋅105%%ZSMJ20%%.",
+      "The first line consists of an integer t$$$t$$$ (1≤t≤104$$$1\\le t\\le 10^4$$$), the number of test cases.",
+      "The first line of each test case consists of a single integer n$$$n$$$ (1≤n≤3⋅105$$$1\\le n\\le 3\\cdot10^5$$$), the number of flowers in the ring.",
+      "The second line of each test case consists of n$$$n$$$ integers a1,a2,...,an$$$a_1,a_2,...,a_n$$$ (1≤ai≤n$$$1\\le a_i\\le n$$$), where ai$$$a_i$$$ is the kind of the i$$$i$$$-th flower.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 3⋅105$$$3\\cdot10^5$$$.",
       "—",
-      "Tests in subtasks are numbered 1−20%%ZSMJ21%% with samples skipped. Each test is worth 10020=5%%ZSMJ22%% points.",
-      "Tests 1−20%%ZSMJ23%% satisfy no additional constraints."
+      "Tests in subtasks are numbered 1−20$$$1 - 20$$$ with samples skipped. Each test is worth 10020=5$$$\\frac{100}{20} = 5$$$ points.",
+      "Tests 1−20$$$1-20$$$ satisfy no additional constraints."
     ],
     "output": [
       "For each test case, output an integer, the minimum number of rings that Mary needs to form such that all rings are supreme."
     ],
     "note": [
-      "Explanation for the first three cases: (Note that the number on the circle representing the i%%ZSMJ24%%-th flower is i%%ZSMJ25%%, and the background colour of the circle is green if ai=1%%ZSMJ26%%, and blue if ai=2%%ZSMJ27%%.)",
-      "Case 1: The ring is already supreme. So the answer is 1%%ZSMJ28%%.",
+      "Explanation for the first three cases: (Note that the number on the circle representing the i$$$i$$$-th flower is i$$$i$$$, and the background colour of the circle is green if ai=1$$$a_i=1$$$, and blue if ai=2$$$a_i=2$$$.)",
+      "Case 1: The ring is already supreme. So the answer is 1$$$1$$$.",
       "![](https://espresso.codeforces.com/051c5f0083ed89e6a422fb34d25413a561dc094c.png)",
-      "Case 2: The optimal way is to have three rings, each with one flower in it. So the answer is 3%%ZSMJ29%%.",
+      "Case 2: The optimal way is to have three rings, each with one flower in it. So the answer is 3$$$3$$$.",
       "![](https://espresso.codeforces.com/516d1905a1417f0a715e7e6efdc11e81f38bcdff.png)",
-      "Case 3: We can cut between flower 1%%ZSMJ30%% and 4%%ZSMJ31%%, and between flower 2%%ZSMJ32%% and 3%%ZSMJ33%%, to attain the optimal number of two rings. The answer is 2%%ZSMJ34%%.",
+      "Case 3: We can cut between flower 1$$$1$$$ and 4$$$4$$$, and between flower 2$$$2$$$ and 3$$$3$$$, to attain the optimal number of two rings. The answer is 2$$$2$$$.",
       "![](https://espresso.codeforces.com/c7d05edfb13febc0440f26757e5b170ea87669d6.png)",
       "—",
       "Problem Idea: culver0412",
@@ -44,5 +44,37 @@
       "input": "5\n1\n1\n3\n1 1 1\n4\n1 1 2 2\n7\n1 2 2 6 7 3 4\n7\n1 1 2 1 1 2 3",
       "output": "1\n3\n2\n2\n4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

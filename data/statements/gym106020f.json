@@ -10,20 +10,20 @@
   "sections": {
     "legend": [
       "This is an interactive problem. Your program will interact with the judge using standard input and output.",
-      "You are given an array a%%ZSMJ0%% of n%%ZSMJ1%% positive integers and an integer k%%ZSMJ2%%, where 2k≤n%%ZSMJ3%%. You have an initial score equal to 0%%ZSMJ4%%.",
-      "You will be asked k%%ZSMJ5%% queries. For each query, you will be given an integer x∈{1,2}%%ZSMJ6%%. You must choose an index i%%ZSMJ7%% (1≤i≤n%%ZSMJ8%%) such that†%%ZSMJ9%%:",
-      "i%%ZSMJ10%% is divisible by x%%ZSMJ11%%;",
-      "The index i%%ZSMJ12%% has not been chosen in any previous query;",
-      "Whenever you choose some index i%%ZSMJ13%% in some query, the value of ai%%ZSMJ14%% is added to the score.",
-      "Your task is to maximize the score after completing all k%%ZSMJ15%% queries."
+      "You are given an array a$$$a$$$ of n$$$n$$$ positive integers and an integer k$$$k$$$, where 2k≤n$$$2k \\leq n$$$. You have an initial score equal to 0$$$0$$$.",
+      "You will be asked k$$$k$$$ queries. For each query, you will be given an integer x∈{1,2}$$$x \\in \\{1, 2\\}$$$. You must choose an index i$$$i$$$ (1≤i≤n$$$1 \\leq i \\leq n$$$) such that†$$$^\\dagger$$$:",
+      "i$$$i$$$ is divisible by x$$$x$$$;",
+      "The index i$$$i$$$ has not been chosen in any previous query;",
+      "Whenever you choose some index i$$$i$$$ in some query, the value of ai$$$a_i$$$ is added to the score.",
+      "Your task is to maximize the score after completing all k$$$k$$$ queries."
     ],
     "input": [
-      "The first line contains two integers n%%ZSMJ16%% and k%%ZSMJ17%% (2≤2k≤n≤105%%ZSMJ18%%).",
-      "The second line contains n%%ZSMJ19%% integers a1,a2,…,an%%ZSMJ20%% (1≤ai≤109%%ZSMJ21%%).",
-      "The interaction proceeds as follows for k%%ZSMJ22%% times:",
-      "The judge will output a single integer x∈{1,2}%%ZSMJ23%%.",
-      "You must respond with a single integer i%%ZSMJ24%% (1≤i≤n%%ZSMJ25%%) that satisfies the conditions above†%%ZSMJ26%%.",
-      "The judge will output \"1\" if i%%ZSMJ27%% is divisible by x%%ZSMJ28%% and it has not been chosen before in any previous query, and \"0\" otherwise.",
+      "The first line contains two integers n$$$n$$$ and k$$$k$$$ (2≤2k≤n≤105$$$2 \\le 2k \\le n \\le 10^5$$$).",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai≤109$$$1 \\le a_i \\le 10^9$$$).",
+      "The interaction proceeds as follows for k$$$k$$$ times:",
+      "The judge will output a single integer x∈{1,2}$$$x \\in \\{1, 2\\}$$$.",
+      "You must respond with a single integer i$$$i$$$ (1≤i≤n$$$1 \\leq i \\leq n$$$) that satisfies the conditions above†$$$^\\dagger$$$.",
+      "The judge will output \"1\" if i$$$i$$$ is divisible by x$$$x$$$ and it has not been chosen before in any previous query, and \"0\" otherwise.",
       "If your program makes an invalid response, then the judge's response will be \"0\". After receiving such a response, your program should immediately terminate to receive the verdict Wrong Answer. Otherwise, it may receive any other verdict.",
       "After responding to a query, do not forget to output the end of the line and flush the output. Otherwise, you will get Idleness limit exceeded. To do this, use:",
       "fflush(stdout) or cout.flush() in C++;",
@@ -36,9 +36,9 @@
     "note": [
       "Sample explanation:",
       "The size of the array is 6 and there are 3 queries. The first 2 lines describe the array and the number of queries.",
-      "In the first query, we must choose an index divisible by 1%%ZSMJ29%%, we choose the index 1%%ZSMJ30%% and since it's divisible by 1%%ZSMJ31%% and has not been chosen before, the judge will print 1%%ZSMJ32%% to confirm that the chosen index is valid.",
-      "In the second query, we must choose an index divisible by 1%%ZSMJ33%%, we choose the index 6%%ZSMJ34%% and since it's divisible by 1%%ZSMJ35%% and has not been chosen before, the judge will print 1%%ZSMJ36%% to confirm that the chosen index is valid. Note that if we chose 1%%ZSMJ37%% instead the judge will print 0%%ZSMJ38%% (since it has been chosen before).",
-      "In the third query, we must choose an index divisible by 2%%ZSMJ39%%, we choose the index 4%%ZSMJ40%% and since it's divisible by 2%%ZSMJ41%% and has not been chosen before, the judge will print 1%%ZSMJ42%% to confirm that the chosen index is valid. Note that if we chose 6%%ZSMJ43%% instead the judge will print 0%%ZSMJ44%% (since it has been chosen before), and if we chose 3%%ZSMJ45%% the judge will also print 0%%ZSMJ46%% (since it's not divisible by 2%%ZSMJ47%%).",
+      "In the first query, we must choose an index divisible by 1$$$1$$$, we choose the index 1$$$1$$$ and since it's divisible by 1$$$1$$$ and has not been chosen before, the judge will print 1$$$1$$$ to confirm that the chosen index is valid.",
+      "In the second query, we must choose an index divisible by 1$$$1$$$, we choose the index 6$$$6$$$ and since it's divisible by 1$$$1$$$ and has not been chosen before, the judge will print 1$$$1$$$ to confirm that the chosen index is valid. Note that if we chose 1$$$1$$$ instead the judge will print 0$$$0$$$ (since it has been chosen before).",
+      "In the third query, we must choose an index divisible by 2$$$2$$$, we choose the index 4$$$4$$$ and since it's divisible by 2$$$2$$$ and has not been chosen before, the judge will print 1$$$1$$$ to confirm that the chosen index is valid. Note that if we chose 6$$$6$$$ instead the judge will print 0$$$0$$$ (since it has been chosen before), and if we chose 3$$$3$$$ the judge will also print 0$$$0$$$ (since it's not divisible by 2$$$2$$$).",
       "Note that over all combinations of: two indices divisible by 1 and one index divisible by 2, the maximum possible result is 15 (which is equal to the result in the example) and all chosen indices are distinct and satisfy the divisibility condition, so the result is considered correct."
     ]
   },
@@ -47,5 +47,40 @@
       "input": "6 3\n5 1 3 4 2 6\n1\n1\n1\n1\n2\n1",
       "output": "1\n6\n4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

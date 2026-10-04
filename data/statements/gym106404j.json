@@ -10,32 +10,32 @@
   "sections": {
     "legend": [
       "On the Ovine Island, you are in charge of a herd of big fat sheeps.",
-      "To protect them from big bad wolves, you have arranged them into an n×m%%ZSMJ0%% rectangular pen (n,m≤2000%%ZSMJ1%%). Each cell in the pen is either empty (weight 0%%ZSMJ2%%) or contains a sheep with weight gi,j,%%ZSMJ3%% an integer between [1,106]%%ZSMJ4%%.",
+      "To protect them from big bad wolves, you have arranged them into an n×m$$$n \\times m$$$ rectangular pen (n,m≤2000$$$n,m \\le 2000$$$). Each cell in the pen is either empty (weight 0$$$0$$$) or contains a sheep with weight gi,j,$$$g_{i,j},$$$ an integer between [1,106]$$$[1,10^6]$$$.",
       "Your boss is wondering if there are special properties of the weights of your sheep.",
-      "You are given q%%ZSMJ5%% queries, each describing a rectangle. For each rectangle, consider all non-empty weights inside it. Determine whether you can choose three different cells in the rectangle such that if their weights are a,b,c%%ZSMJ6%%, then the largest of them is strictly less than half of their sum: max(a,b,c)<a+b+c2.%%ZSMJ7%%"
+      "You are given q$$$q$$$ queries, each describing a rectangle. For each rectangle, consider all non-empty weights inside it. Determine whether you can choose three different cells in the rectangle such that if their weights are a,b,c$$$a,b,c$$$, then the largest of them is strictly less than half of their sum: max(a,b,c)<a+b+c2.$$\\max(a,b,c)  \\lt  \\frac{a+b+c}{2}.$$"
     ],
     "input": [
-      "The first line contains two integers n%%ZSMJ8%% and m%%ZSMJ9%% (1≤n,m≤2000%%ZSMJ10%%).",
-      "The next n%%ZSMJ11%% lines each contain m%%ZSMJ12%% integers gi,j%%ZSMJ13%% (0≤gi,j≤106%%ZSMJ14%%), where gi,j=0%%ZSMJ15%% means the cell is empty.",
-      "The next line contains an integer q%%ZSMJ16%% (1≤q≤105%%ZSMJ17%%).",
-      "Each of the next q%%ZSMJ18%% lines contains four integers x1,y1,x2,y2%%ZSMJ19%% (1≤x1≤x2≤n%%ZSMJ20%%, 1≤y1≤y2≤m%%ZSMJ21%%), describing a rectangle with corners (x1,y1)%%ZSMJ22%% and (x2,y2)%%ZSMJ23%% (inclusive)."
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (1≤n,m≤2000$$$1 \\le n,m \\le 2000$$$).",
+      "The next n$$$n$$$ lines each contain m$$$m$$$ integers gi,j$$$g_{i,j}$$$ (0≤gi,j≤106$$$0 \\le g_{i,j} \\le 10^6$$$), where gi,j=0$$$g_{i,j}=0$$$ means the cell is empty.",
+      "The next line contains an integer q$$$q$$$ (1≤q≤105$$$1 \\le q \\le 10^5$$$).",
+      "Each of the next q$$$q$$$ lines contains four integers x1,y1,x2,y2$$$x_1,y_1,x_2,y_2$$$ (1≤x1≤x2≤n$$$1 \\le x_1 \\le x_2 \\le n$$$, 1≤y1≤y2≤m$$$1 \\le y_1 \\le y_2 \\le m$$$), describing a rectangle with corners (x1,y1)$$$(x_1,y_1)$$$ and (x2,y2)$$$(x_2,y_2)$$$ (inclusive)."
     ],
     "output": [
-      "For each query, print YES (case-insensitive) if there exist three different non-empty cells inside the rectangle whose weights satisfy max(a,b,c)<a+b+c2,%%ZSMJ24%% and print NO (case-insensitive) otherwise."
+      "For each query, print YES (case-insensitive) if there exist three different non-empty cells inside the rectangle whose weights satisfy max(a,b,c)<a+b+c2,$$\\max(a,b,c)  \\lt  \\frac{a+b+c}{2},$$ and print NO (case-insensitive) otherwise."
     ],
     "note": [
       "Query 1:  1 1 3 3",
-      "This rectangle covers the entire grid. The non-empty weights inside are: {1,2,3,10,4}%%ZSMJ25%%.",
-      "We need three different cells with weights a,b,c%%ZSMJ26%% such that max(a,b,c)<a+b+c2.%%ZSMJ27%%",
-      "Choose the triple (2,3,4)%%ZSMJ28%%. We have max(2,3,4)=4%%ZSMJ29%% and 2+3+42=92=4.5%%ZSMJ30%%.",
-      "Since 4<4.5,%%ZSMJ31%% the condition holds.",
-      "Therefore, the answer for Query 1 is YES%%ZSMJ32%%.",
-      "%%ZSMJ33%%",
+      "This rectangle covers the entire grid. The non-empty weights inside are: {1,2,3,10,4}$$$\\{1,2,3,10,4\\}$$$.",
+      "We need three different cells with weights a,b,c$$$a,b,c$$$ such that max(a,b,c)<a+b+c2.$$$\\max(a,b,c)  \\lt  \\frac{a+b+c}{2}.$$$",
+      "Choose the triple (2,3,4)$$$(2,3,4)$$$. We have max(2,3,4)=4$$$\\max(2,3,4) = 4$$$ and 2+3+42=92=4.5$$$\\frac{2+3+4}{2} = \\frac{9}{2} = 4.5$$$.",
+      "Since 4<4.5,$$$4  \\lt  4.5,$$$ the condition holds.",
+      "Therefore, the answer for Query 1 is YES$$$\\texttt{YES}$$$.",
+      "$$$ $$$",
       "Query 2:  2 1 2 3",
-      "This rectangle covers row 2%%ZSMJ34%% and columns 1%%ZSMJ35%% through 3%%ZSMJ36%%. The non-empty weights inside are: {2,3,10}%%ZSMJ37%%.",
-      "The only possible triple is (2,3,10)%%ZSMJ38%%. We have max(2,3,10)=10%%ZSMJ39%% and 2+3+102=152=7.5%%ZSMJ40%%.",
-      "Since 10≮7.5%%ZSMJ41%%, the condition does not hold.",
-      "Therefore, the answer for Query 2 is NO%%ZSMJ42%%."
+      "This rectangle covers row 2$$$2$$$ and columns 1$$$1$$$ through 3$$$3$$$. The non-empty weights inside are: {2,3,10}$$$\\{2,3,10\\}$$$.",
+      "The only possible triple is (2,3,10)$$$(2,3,10)$$$. We have max(2,3,10)=10$$$\\max(2,3,10) = 10$$$ and 2+3+102=152=7.5$$$\\frac{2+3+10}{2} = \\frac{15}{2} = 7.5$$$.",
+      "Since 10≮7.5$$$10 \\not \\lt  7.5$$$, the condition does not hold.",
+      "Therefore, the answer for Query 2 is NO$$$\\texttt{NO}$$$."
     ]
   },
   "examples": [
@@ -43,5 +43,36 @@
       "input": "3 3\n1 0 0\n2 3 10\n0 4 0\n5\n1 1 3 3\n2 1 2 3\n1 1 2 2\n2 1 3 2\n1 1 1 1",
       "output": "YES\nNO\nNO\nYES\nNO"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

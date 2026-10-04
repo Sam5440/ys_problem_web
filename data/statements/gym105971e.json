@@ -10,26 +10,26 @@
   "sections": {
     "legend": [
       "Every airport has a baggage claim area, and Balbesovo Airport is no exception. At some point, one of the administrators at Sheremetyevo came up with an unusual idea: to change the traditional shape of the baggage claim conveyor from a carousel to a more complex form.",
-      "Suppose that the baggage claim area is represented as a rectangular grid of size n×m%%ZSMJ0%%. The administration proposed that the path of the conveyor should pass through the cells p1,p2,…,p2k+1%%ZSMJ1%%, where pi=(xi,yi)%%ZSMJ2%%.",
-      "For each cell pi%%ZSMJ3%% and the next cell pi+1%%ZSMJ4%% (where 1≤i≤2k%%ZSMJ5%%), these cells must share a common side. Additionally, the path must be simple, meaning that for no pair of indices i≠j%%ZSMJ6%% should the cells pi%%ZSMJ7%% and pj%%ZSMJ8%% coincide.",
-      "Unfortunately, the route plan was accidentally spoiled by spilled coffee, and only the cells with odd indices of the path were preserved: p1,p3,p5,…,p2k+1%%ZSMJ9%%. Your task is to determine the number of ways to restore the original complete path p1,p2,…,p2k+1%%ZSMJ10%% given these k+1%%ZSMJ11%% cells.",
-      "Since the answer can be very large, output it modulo 109+7%%ZSMJ12%%."
+      "Suppose that the baggage claim area is represented as a rectangular grid of size n×m$$$n \\times m$$$. The administration proposed that the path of the conveyor should pass through the cells p1,p2,…,p2k+1$$$p_1, p_2, \\ldots, p_{2k+1}$$$, where pi=(xi,yi)$$$p_i = (x_i, y_i)$$$.",
+      "For each cell pi$$$p_i$$$ and the next cell pi+1$$$p_{i+1}$$$ (where 1≤i≤2k$$$1 \\leq i \\leq 2k$$$), these cells must share a common side. Additionally, the path must be simple, meaning that for no pair of indices i≠j$$$i \\neq j$$$ should the cells pi$$$p_i$$$ and pj$$$p_j$$$ coincide.",
+      "Unfortunately, the route plan was accidentally spoiled by spilled coffee, and only the cells with odd indices of the path were preserved: p1,p3,p5,…,p2k+1$$$p_1, p_3, p_5, \\ldots, p_{2k+1}$$$. Your task is to determine the number of ways to restore the original complete path p1,p2,…,p2k+1$$$p_1, p_2, \\ldots, p_{2k+1}$$$ given these k+1$$$k+1$$$ cells.",
+      "Since the answer can be very large, output it modulo 109+7$$$10^9+7$$$."
     ],
     "input": [
-      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ13%% (1≤t≤3⋅104%%ZSMJ14%%). The description of the test cases follows.",
-      "The first line of each test case contains three integers n%%ZSMJ15%%, m%%ZSMJ16%%, and k%%ZSMJ17%% (1≤n,m≤1000%%ZSMJ18%%, n⋅m≥3%%ZSMJ19%%, 1≤k≤⌊12(nm−1)⌋%%ZSMJ20%%) — the dimensions of the grid and a parameter defining the length of the path.",
-      "Next, there are k+1%%ZSMJ21%% lines, the i%%ZSMJ22%%-th of which contains two integers x2i−1%%ZSMJ23%% and y2i−1%%ZSMJ24%% (1≤x2i−1≤n%%ZSMJ25%%, 1≤y2i−1≤m%%ZSMJ26%%) — the coordinates of the cell p2i−1%%ZSMJ27%% that lies on the path.",
-      "It is guaranteed that all pairs (x2i−1,y2i−1)%%ZSMJ28%% are distinct.",
-      "It is guaranteed that the sum n⋅m%%ZSMJ29%% over all test cases does not exceed 106%%ZSMJ30%%."
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤3⋅104$$$1 \\le t \\le 3 \\cdot 10^4$$$). The description of the test cases follows.",
+      "The first line of each test case contains three integers n$$$n$$$, m$$$m$$$, and k$$$k$$$ (1≤n,m≤1000$$$1 \\le n, m \\le 1000$$$, n⋅m≥3$$$n \\cdot m \\ge 3$$$, 1≤k≤⌊12(nm−1)⌋$$$1 \\le k \\le \\left\\lfloor \\frac12 (n m - 1) \\right\\rfloor$$$) — the dimensions of the grid and a parameter defining the length of the path.",
+      "Next, there are k+1$$$k+1$$$ lines, the i$$$i$$$-th of which contains two integers x2i−1$$$x_{2i-1}$$$ and y2i−1$$$y_{2i-1}$$$ (1≤x2i−1≤n$$$1 \\le x_{2i-1} \\le n$$$, 1≤y2i−1≤m$$$1 \\le y_{2i-1} \\le m$$$) — the coordinates of the cell p2i−1$$$p_{2i-1}$$$ that lies on the path.",
+      "It is guaranteed that all pairs (x2i−1,y2i−1)$$$(x_{2i-1}, y_{2i-1})$$$ are distinct.",
+      "It is guaranteed that the sum n⋅m$$$n \\cdot m$$$ over all test cases does not exceed 106$$$10^6$$$."
     ],
     "output": [
-      "For each test case, output a single integer — the number of ways to restore the original complete path modulo 109+7%%ZSMJ31%%."
+      "For each test case, output a single integer — the number of ways to restore the original complete path modulo 109+7$$$10^9+7$$$."
     ],
     "note": [
       "In the first test case, there are two possible paths:",
-      "(1,1)→(2,1)→(2,2)→(2,3)→(2,4)%%ZSMJ32%%",
-      "(1,1)→(1,2)→(2,2)→(2,3)→(2,4)%%ZSMJ33%%",
-      "In the second test case, there is no suitable path, as the cells (1,1)%%ZSMJ34%% and (1,4)%%ZSMJ35%% do not have a common neighboring cell."
+      "(1,1)→(2,1)→(2,2)→(2,3)→(2,4)$$$(1,1) \\to (2,1) \\to (2, 2) \\to (2, 3) \\to (2, 4)$$$",
+      "(1,1)→(1,2)→(2,2)→(2,3)→(2,4)$$$(1,1) \\to (1,2) \\to (2, 2) \\to (2, 3) \\to (2, 4)$$$",
+      "In the second test case, there is no suitable path, as the cells (1,1)$$$(1,1)$$$ and (1,4)$$$(1,4)$$$ do not have a common neighboring cell."
     ]
   },
   "examples": [
@@ -37,5 +37,30 @@
       "input": "5\n2 4 2\n1 1\n2 2\n2 4\n1 4 1\n1 1\n1 4\n5 5 11\n2 5\n3 4\n4 5\n5 4\n4 3\n5 2\n4 1\n3 2\n2 1\n1 2\n2 3\n1 4\n3 4 4\n1 2\n2 1\n3 2\n2 3\n3 4\n3 3 2\n2 2\n1 1\n1 3",
       "output": "2\n0\n2\n5\n1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

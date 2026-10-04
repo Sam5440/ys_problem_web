@@ -10,22 +10,22 @@
   "sections": {
     "legend": [
       "Once upon a time, Oolimry saw a suffix array. He wondered how many strings can produce this suffix array.",
-      "More formally, given a suffix array of length n%%ZSMJ0%% and having an alphabet size k%%ZSMJ1%%, count the number of strings that produce such a suffix array.",
-      "Let s%%ZSMJ2%% be a string of length n%%ZSMJ3%%. Then the i%%ZSMJ4%%-th suffix of s%%ZSMJ5%% is the substring s[i…n−1]%%ZSMJ6%%. A suffix array is the array of integers that represent the starting indexes of all the suffixes of a given string, after the suffixes are sorted in the lexicographic order. For example, the suffix array of oolimry is [3,2,4,1,0,5,6]%%ZSMJ7%% as the array of sorted suffixes is [imry,limry,mry,olimry,oolimry,ry,y]%%ZSMJ8%%.",
-      "A string x%%ZSMJ9%% is lexicographically smaller than string y%%ZSMJ10%%, if either x%%ZSMJ11%% is a prefix of y%%ZSMJ12%% (and x≠y%%ZSMJ13%%), or there exists such i%%ZSMJ14%% that xi<yi%%ZSMJ15%%, and for any 1≤j<i%%ZSMJ16%% , xj=yj%%ZSMJ17%%."
+      "More formally, given a suffix array of length n$$$n$$$ and having an alphabet size k$$$k$$$, count the number of strings that produce such a suffix array.",
+      "Let s$$$s$$$ be a string of length n$$$n$$$. Then the i$$$i$$$-th suffix of s$$$s$$$ is the substring s[i…n−1]$$$s[i \\ldots n-1]$$$. A suffix array is the array of integers that represent the starting indexes of all the suffixes of a given string, after the suffixes are sorted in the lexicographic order. For example, the suffix array of oolimry is [3,2,4,1,0,5,6]$$$[3,2,4,1,0,5,6]$$$ as the array of sorted suffixes is [imry,limry,mry,olimry,oolimry,ry,y]$$$[\\texttt{imry},\\texttt{limry},\\texttt{mry},\\texttt{olimry},\\texttt{oolimry},\\texttt{ry},\\texttt{y}]$$$.",
+      "A string x$$$x$$$ is lexicographically smaller than string y$$$y$$$, if either x$$$x$$$ is a prefix of y$$$y$$$ (and x≠y$$$x\\neq y$$$), or there exists such i$$$i$$$ that xi<yi$$$x_i  \\lt  y_i$$$, and for any 1≤j<i$$$1\\leq j  \\lt  i$$$ , xj=yj$$$x_j = y_j$$$."
     ],
     "input": [
-      "The first line contain 2 integers n%%ZSMJ18%% and k%%ZSMJ19%% (1≤n≤200000,1≤k≤200000%%ZSMJ20%%) — the length of the suffix array and the alphabet size respectively.",
-      "The second line contains n%%ZSMJ21%% integers s0,s1,s2,…,sn−1%%ZSMJ22%% (0≤si≤n−1%%ZSMJ23%%) where si%%ZSMJ24%% is the i%%ZSMJ25%%-th element of the suffix array i.e. the starting position of the i%%ZSMJ26%%-th lexicographically smallest suffix. It is guaranteed that for all 0≤i<j≤n−1%%ZSMJ27%%, si≠sj%%ZSMJ28%%."
+      "The first line contain 2 integers n$$$n$$$ and k$$$k$$$ (1≤n≤200000,1≤k≤200000$$$1 \\leq n \\leq 200000,1 \\leq k \\leq 200000$$$) — the length of the suffix array and the alphabet size respectively.",
+      "The second line contains n$$$n$$$ integers s0,s1,s2,…,sn−1$$$s_0, s_1, s_2, \\ldots, s_{n-1}$$$ (0≤si≤n−1$$$0 \\leq s_i \\leq n-1$$$) where si$$$s_i$$$ is the i$$$i$$$-th element of the suffix array i.e. the starting position of the i$$$i$$$-th lexicographically smallest suffix. It is guaranteed that for all 0≤i<j≤n−1$$$0 \\leq i \\lt  j \\leq n-1$$$, si≠sj$$$s_i \\neq s_j$$$."
     ],
     "output": [
-      "Print how many strings produce such a suffix array. Since the number can be very large, print the answer modulo 998244353%%ZSMJ29%%."
+      "Print how many strings produce such a suffix array. Since the number can be very large, print the answer modulo 998244353$$$998244353$$$."
     ],
     "note": [
       "In the first test case, \"abb\" is the only possible solution.",
       "In the second test case, it can be easily shown no possible strings exist as all the letters have to be equal.",
       "In the fourth test case, one possible string is \"ddbacef\".",
-      "Please remember to print your answers modulo 998244353%%ZSMJ30%%."
+      "Please remember to print your answers modulo 998244353$$$998244353$$$."
     ]
   },
   "examples": [
@@ -45,5 +45,26 @@
       "input": "7 6\n3 2 4 1 0 5 6",
       "output": "36"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

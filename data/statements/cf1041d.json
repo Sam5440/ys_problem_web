@@ -9,23 +9,23 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "A plane is flying at a constant height of h%%ZSMJ0%% meters above the ground surface. Let's consider that it is flying from the point (−109,h)%%ZSMJ1%% to the point (109,h)%%ZSMJ2%% parallel with Ox%%ZSMJ3%% axis.",
-      "A glider is inside the plane, ready to start his flight at any moment (for the sake of simplicity let's consider that he may start only when the plane's coordinates are integers). After jumping from the plane, he will fly in the same direction as the plane, parallel to Ox%%ZSMJ4%% axis, covering a unit of distance every second. Naturally, he will also descend; thus his second coordinate will decrease by one unit every second.",
-      "There are ascending air flows on certain segments, each such segment is characterized by two numbers x1%%ZSMJ5%% and x2%%ZSMJ6%% (x1<x2%%ZSMJ7%%) representing its endpoints. No two segments share any common points. When the glider is inside one of such segments, he doesn't descend, so his second coordinate stays the same each second. The glider still flies along Ox%%ZSMJ8%% axis, covering one unit of distance every second.",
+      "A plane is flying at a constant height of h$$$h$$$ meters above the ground surface. Let's consider that it is flying from the point (−109,h)$$$(-10^9, h)$$$ to the point (109,h)$$$(10^9, h)$$$ parallel with Ox$$$Ox$$$ axis.",
+      "A glider is inside the plane, ready to start his flight at any moment (for the sake of simplicity let's consider that he may start only when the plane's coordinates are integers). After jumping from the plane, he will fly in the same direction as the plane, parallel to Ox$$$Ox$$$ axis, covering a unit of distance every second. Naturally, he will also descend; thus his second coordinate will decrease by one unit every second.",
+      "There are ascending air flows on certain segments, each such segment is characterized by two numbers x1$$$x_1$$$ and x2$$$x_2$$$ (x1<x2$$$x_1  \\lt  x_2$$$) representing its endpoints. No two segments share any common points. When the glider is inside one of such segments, he doesn't descend, so his second coordinate stays the same each second. The glider still flies along Ox$$$Ox$$$ axis, covering one unit of distance every second.",
       "![](https://espresso.codeforces.com/48923c71b04bf225eb34940d72bd23858ba6d97b.png)",
-      "Determine the maximum distance along Ox%%ZSMJ13%% axis from the point where the glider's flight starts to the point where his flight ends if the glider can choose any integer coordinate to jump from the plane and start his flight. After touching the ground the glider stops altogether, so he cannot glide through an ascending airflow segment if his second coordinate is 0%%ZSMJ14%%."
+      "Determine the maximum distance along Ox$$$Ox$$$ axis from the point where the glider's flight starts to the point where his flight ends if the glider can choose any integer coordinate to jump from the plane and start his flight. After touching the ground the glider stops altogether, so he cannot glide through an ascending airflow segment if his second coordinate is 0$$$0$$$."
     ],
     "input": [
-      "The first line contains two integers n%%ZSMJ15%% and h%%ZSMJ16%% (1≤n≤2⋅105,1≤h≤109)%%ZSMJ17%% — the number of ascending air flow segments and the altitude at which the plane is flying, respectively.",
-      "Each of the next n%%ZSMJ18%% lines contains two integers xi1%%ZSMJ19%% and xi2%%ZSMJ20%% (1≤xi1<xi2≤109)%%ZSMJ21%% — the endpoints of the i%%ZSMJ22%%-th ascending air flow segment. No two segments intersect, and they are given in ascending order."
+      "The first line contains two integers n$$$n$$$ and h$$$h$$$ (1≤n≤2⋅105,1≤h≤109)$$$(1 \\le n \\le 2\\cdot10^{5}, 1 \\le h \\le 10^{9})$$$ — the number of ascending air flow segments and the altitude at which the plane is flying, respectively.",
+      "Each of the next n$$$n$$$ lines contains two integers xi1$$$x_{i1}$$$ and xi2$$$x_{i2}$$$ (1≤xi1<xi2≤109)$$$(1 \\le x_{i1}  \\lt  x_{i2} \\le 10^{9})$$$ — the endpoints of the i$$$i$$$-th ascending air flow segment. No two segments intersect, and they are given in ascending order."
     ],
     "output": [
-      "Print one integer — the maximum distance along Ox%%ZSMJ23%% axis that the glider can fly from the point where he jumps off the plane to the point where he lands if he can start his flight at any integer coordinate."
+      "Print one integer — the maximum distance along Ox$$$Ox$$$ axis that the glider can fly from the point where he jumps off the plane to the point where he lands if he can start his flight at any integer coordinate."
     ],
     "note": [
-      "In the first example if the glider can jump out at (2,4)%%ZSMJ24%%, then the landing point is (12,0)%%ZSMJ25%%, so the distance is 12−2=10%%ZSMJ26%%.",
-      "In the second example the glider can fly from (16,10)%%ZSMJ27%% to (34,0)%%ZSMJ28%%, and the distance is 34−16=18%%ZSMJ29%%.",
-      "In the third example the glider can fly from (−100,1000000000)%%ZSMJ30%% to (1999999899,0)%%ZSMJ31%%, so the distance is 1999999899−(−100)=1999999999%%ZSMJ32%%."
+      "In the first example if the glider can jump out at (2,4)$$$(2, 4)$$$, then the landing point is (12,0)$$$(12, 0)$$$, so the distance is 12−2=10$$$12-2 = 10$$$.",
+      "In the second example the glider can fly from (16,10)$$$(16,10)$$$ to (34,0)$$$(34,0)$$$, and the distance is 34−16=18$$$34-16=18$$$.",
+      "In the third example the glider can fly from (−100,1000000000)$$$(-100,1000000000)$$$ to (1999999899,0)$$$(1999999899,0)$$$, so the distance is 1999999899−(−100)=1999999999$$$1999999899-(-100)=1999999999$$$."
     ]
   },
   "examples": [
@@ -41,5 +41,26 @@
       "input": "1 1000000000\n1 1000000000",
       "output": "1999999999"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null
+    ]
+  }
 }

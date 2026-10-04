@@ -9,27 +9,27 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Let's call two strings s%%ZSMJ0%% and t%%ZSMJ1%% anagrams of each other if it is possible to rearrange symbols in the string s%%ZSMJ2%% to get a string, equal to t%%ZSMJ3%%.",
-      "Let's consider two strings s%%ZSMJ4%% and t%%ZSMJ5%% which are anagrams of each other. We say that t%%ZSMJ6%% is a reducible anagram of s%%ZSMJ7%% if there exists an integer k≥2%%ZSMJ8%% and 2k%%ZSMJ9%% non-empty strings s1,t1,s2,t2,…,sk,tk%%ZSMJ10%% that satisfy the following conditions:",
-      "If we write the strings s1,s2,…,sk%%ZSMJ11%% in order, the resulting string will be equal to s%%ZSMJ12%%;",
-      "If we write the strings t1,t2,…,tk%%ZSMJ13%% in order, the resulting string will be equal to t%%ZSMJ14%%;",
-      "For all integers i%%ZSMJ15%% between 1%%ZSMJ16%% and k%%ZSMJ17%% inclusive, si%%ZSMJ18%% and ti%%ZSMJ19%% are anagrams of each other.",
-      "If such strings don't exist, then t%%ZSMJ20%% is said to be an irreducible anagram of s%%ZSMJ21%%. Note that these notions are only defined when s%%ZSMJ22%% and t%%ZSMJ23%% are anagrams of each other.",
-      "For example, consider the string s=%%ZSMJ24%% \"gamegame\". Then the string t=%%ZSMJ25%% \"megamage\" is a reducible anagram of s%%ZSMJ26%%, we may choose for example s1=%%ZSMJ27%% \"game\", s2=%%ZSMJ28%% \"gam\", s3=%%ZSMJ29%% \"e\" and t1=%%ZSMJ30%% \"mega\", t2=%%ZSMJ31%% \"mag\", t3=%%ZSMJ32%% \"e\":",
+      "Let's call two strings s$$$s$$$ and t$$$t$$$ anagrams of each other if it is possible to rearrange symbols in the string s$$$s$$$ to get a string, equal to t$$$t$$$.",
+      "Let's consider two strings s$$$s$$$ and t$$$t$$$ which are anagrams of each other. We say that t$$$t$$$ is a reducible anagram of s$$$s$$$ if there exists an integer k≥2$$$k \\ge 2$$$ and 2k$$$2k$$$ non-empty strings s1,t1,s2,t2,…,sk,tk$$$s_1, t_1, s_2, t_2, \\dots, s_k, t_k$$$ that satisfy the following conditions:",
+      "If we write the strings s1,s2,…,sk$$$s_1, s_2, \\dots, s_k$$$ in order, the resulting string will be equal to s$$$s$$$;",
+      "If we write the strings t1,t2,…,tk$$$t_1, t_2, \\dots, t_k$$$ in order, the resulting string will be equal to t$$$t$$$;",
+      "For all integers i$$$i$$$ between 1$$$1$$$ and k$$$k$$$ inclusive, si$$$s_i$$$ and ti$$$t_i$$$ are anagrams of each other.",
+      "If such strings don't exist, then t$$$t$$$ is said to be an irreducible anagram of s$$$s$$$. Note that these notions are only defined when s$$$s$$$ and t$$$t$$$ are anagrams of each other.",
+      "For example, consider the string s=$$$s = $$$ \"gamegame\". Then the string t=$$$t = $$$ \"megamage\" is a reducible anagram of s$$$s$$$, we may choose for example s1=$$$s_1 = $$$ \"game\", s2=$$$s_2 = $$$ \"gam\", s3=$$$s_3 = $$$ \"e\" and t1=$$$t_1 = $$$ \"mega\", t2=$$$t_2 = $$$ \"mag\", t3=$$$t_3 = $$$ \"e\":",
       "![](https://espresso.codeforces.com/6a53aacfb1d36ae5a64a4cadf6a9c3b488e883be.png)",
-      "On the other hand, we can prove that t=%%ZSMJ33%% \"memegaga\" is an irreducible anagram of s%%ZSMJ34%%.",
-      "You will be given a string s%%ZSMJ35%% and q%%ZSMJ36%% queries, represented by two integers 1≤l≤r≤|s|%%ZSMJ37%% (where |s|%%ZSMJ38%% is equal to the length of the string s%%ZSMJ39%%). For each query, you should find if the substring of s%%ZSMJ40%% formed by characters from the l%%ZSMJ41%%-th to the r%%ZSMJ42%%-th has at least one irreducible anagram."
+      "On the other hand, we can prove that t=$$$t = $$$ \"memegaga\" is an irreducible anagram of s$$$s$$$.",
+      "You will be given a string s$$$s$$$ and q$$$q$$$ queries, represented by two integers 1≤l≤r≤|s|$$$1 \\le l \\le r \\le |s|$$$ (where |s|$$$|s|$$$ is equal to the length of the string s$$$s$$$). For each query, you should find if the substring of s$$$s$$$ formed by characters from the l$$$l$$$-th to the r$$$r$$$-th has at least one irreducible anagram."
     ],
     "input": [
-      "The first line contains a string s%%ZSMJ43%%, consisting of lowercase English characters (1≤|s|≤2⋅105%%ZSMJ44%%).",
-      "The second line contains a single integer q%%ZSMJ45%% (1≤q≤105%%ZSMJ46%%)  — the number of queries.",
-      "Each of the following q%%ZSMJ47%% lines contain two integers l%%ZSMJ48%% and r%%ZSMJ49%% (1≤l≤r≤|s|%%ZSMJ50%%), representing a query for the substring of s%%ZSMJ51%% formed by characters from the l%%ZSMJ52%%-th to the r%%ZSMJ53%%-th."
+      "The first line contains a string s$$$s$$$, consisting of lowercase English characters (1≤|s|≤2⋅105$$$1 \\le |s| \\le 2 \\cdot 10^5$$$).",
+      "The second line contains a single integer q$$$q$$$ (1≤q≤105$$$1 \\le q \\le 10^5$$$)  — the number of queries.",
+      "Each of the following q$$$q$$$ lines contain two integers l$$$l$$$ and r$$$r$$$ (1≤l≤r≤|s|$$$1 \\le l \\le r \\le |s|$$$), representing a query for the substring of s$$$s$$$ formed by characters from the l$$$l$$$-th to the r$$$r$$$-th."
     ],
     "output": [
       "For each query, print a single line containing \"Yes\" (without quotes) if the corresponding substring has at least one irreducible anagram, and a single line containing \"No\" (without quotes) otherwise."
     ],
     "note": [
-      "In the first sample, in the first and third queries, the substring is \"a\", which has itself as an irreducible anagram since two or more non-empty strings cannot be put together to obtain \"a\". On the other hand, in the second query, the substring is \"aaa\", which has no irreducible anagrams: its only anagram is itself, and we may choose s1=%%ZSMJ54%% \"a\", s2=%%ZSMJ55%% \"aa\", t1=%%ZSMJ56%% \"a\", t2=%%ZSMJ57%% \"aa\" to show that it is a reducible anagram.",
+      "In the first sample, in the first and third queries, the substring is \"a\", which has itself as an irreducible anagram since two or more non-empty strings cannot be put together to obtain \"a\". On the other hand, in the second query, the substring is \"aaa\", which has no irreducible anagrams: its only anagram is itself, and we may choose s1=$$$s_1 = $$$ \"a\", s2=$$$s_2 = $$$ \"aa\", t1=$$$t_1 = $$$ \"a\", t2=$$$t_2 = $$$ \"aa\" to show that it is a reducible anagram.",
       "In the second query of the second sample, the substring is \"abb\", which has, for example, \"bba\" as an irreducible anagram."
     ]
   },
@@ -42,5 +42,31 @@
       "input": "aabbbbbbc\n6\n1 2\n2 4\n2 2\n1 9\n5 7\n3 5",
       "output": "No\nYes\nYes\nYes\nNo\nNo"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

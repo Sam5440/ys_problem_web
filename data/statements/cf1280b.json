@@ -9,26 +9,26 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "You are an all-powerful being and you have created a rectangular world. In fact, your world is so bland that it could be represented by a r×c%%ZSMJ0%% grid. Each cell on the grid represents a country. Each country has a dominant religion. There are only two religions in your world. One of the religions is called Beingawesomeism, who do good for the sake of being good. The other religion is called Pushingittoofarism, who do murders for the sake of being bad.",
-      "Oh, and you are actually not really all-powerful. You just have one power, which you can use infinitely many times! Your power involves missionary groups. When a missionary group of a certain country, say a%%ZSMJ1%%, passes by another country b%%ZSMJ2%%, they change the dominant religion of country b%%ZSMJ3%% to the dominant religion of country a%%ZSMJ4%%.",
+      "You are an all-powerful being and you have created a rectangular world. In fact, your world is so bland that it could be represented by a r×c$$$r \\times c$$$ grid. Each cell on the grid represents a country. Each country has a dominant religion. There are only two religions in your world. One of the religions is called Beingawesomeism, who do good for the sake of being good. The other religion is called Pushingittoofarism, who do murders for the sake of being bad.",
+      "Oh, and you are actually not really all-powerful. You just have one power, which you can use infinitely many times! Your power involves missionary groups. When a missionary group of a certain country, say a$$$a$$$, passes by another country b$$$b$$$, they change the dominant religion of country b$$$b$$$ to the dominant religion of country a$$$a$$$.",
       "In particular, a single use of your power is this:",
-      "You choose a horizontal 1×x%%ZSMJ5%% subgrid or a vertical x×1%%ZSMJ6%% subgrid. That value of x%%ZSMJ7%% is up to you;",
-      "You choose a direction d%%ZSMJ8%%. If you chose a horizontal subgrid, your choices will either be NORTH or SOUTH. If you choose a vertical subgrid, your choices will either be EAST or WEST;",
-      "You choose the number s%%ZSMJ9%% of steps;",
-      "You command each country in the subgrid to send a missionary group that will travel s%%ZSMJ10%% steps towards direction d%%ZSMJ11%%. In each step, they will visit (and in effect convert the dominant religion of) all s%%ZSMJ12%% countries they pass through, as detailed above.",
-      "The parameters x%%ZSMJ13%%, d%%ZSMJ14%%, s%%ZSMJ15%% must be chosen in such a way that any of the missionary groups won't leave the grid.",
-      "The following image illustrates one possible single usage of your power. Here, A represents a country with dominant religion Beingawesomeism and P represents a country with dominant religion Pushingittoofarism. Here, we've chosen a 1×4%%ZSMJ16%% subgrid, the direction NORTH, and s=2%%ZSMJ17%% steps.",
+      "You choose a horizontal 1×x$$$1 \\times x$$$ subgrid or a vertical x×1$$$x \\times 1$$$ subgrid. That value of x$$$x$$$ is up to you;",
+      "You choose a direction d$$$d$$$. If you chose a horizontal subgrid, your choices will either be NORTH or SOUTH. If you choose a vertical subgrid, your choices will either be EAST or WEST;",
+      "You choose the number s$$$s$$$ of steps;",
+      "You command each country in the subgrid to send a missionary group that will travel s$$$s$$$ steps towards direction d$$$d$$$. In each step, they will visit (and in effect convert the dominant religion of) all s$$$s$$$ countries they pass through, as detailed above.",
+      "The parameters x$$$x$$$, d$$$d$$$, s$$$s$$$ must be chosen in such a way that any of the missionary groups won't leave the grid.",
+      "The following image illustrates one possible single usage of your power. Here, A represents a country with dominant religion Beingawesomeism and P represents a country with dominant religion Pushingittoofarism. Here, we've chosen a 1×4$$$1 \\times 4$$$ subgrid, the direction NORTH, and s=2$$$s = 2$$$ steps.",
       "![](https://espresso.codeforces.com/3baf1f32ca655636504d471bbe121a91c9f3727a.png)",
       "You are a being which believes in free will, for the most part. However, you just really want to stop receiving murders that are attributed to your name. Hence, you decide to use your powers and try to make Beingawesomeism the dominant religion in every country.",
       "What is the minimum number of usages of your power needed to convert everyone to Beingawesomeism?",
       "With god, nothing is impossible. But maybe you're not god? If it is impossible to make Beingawesomeism the dominant religion in all countries, you must also admit your mortality and say so."
     ],
     "input": [
-      "The first line of input contains a single integer t%%ZSMJ18%% (1≤t≤2⋅104%%ZSMJ19%%) denoting the number of test cases.",
-      "The first line of each test case contains two space-separated integers r%%ZSMJ20%% and c%%ZSMJ21%% denoting the dimensions of the grid (1≤r,c≤60%%ZSMJ22%%). The next r%%ZSMJ23%% lines each contains c%%ZSMJ24%% characters describing the dominant religions in the countries. In particular, the j%%ZSMJ25%%-th character in the i%%ZSMJ26%%-th line describes the dominant religion in the country at the cell with row i%%ZSMJ27%% and column j%%ZSMJ28%%, where:",
+      "The first line of input contains a single integer t$$$t$$$ (1≤t≤2⋅104$$$1 \\le t \\le 2\\cdot 10^4$$$) denoting the number of test cases.",
+      "The first line of each test case contains two space-separated integers r$$$r$$$ and c$$$c$$$ denoting the dimensions of the grid (1≤r,c≤60$$$1 \\le r, c \\le 60$$$). The next r$$$r$$$ lines each contains c$$$c$$$ characters describing the dominant religions in the countries. In particular, the j$$$j$$$-th character in the i$$$i$$$-th line describes the dominant religion in the country at the cell with row i$$$i$$$ and column j$$$j$$$, where:",
       "\"A\" means that the dominant religion is Beingawesomeism;",
       "\"P\" means that the dominant religion is Pushingittoofarism.",
-      "It is guaranteed that the grid will only contain \"A\" or \"P\" characters. It is guaranteed that the sum of the r⋅c%%ZSMJ29%% in a single file is at most 3⋅106%%ZSMJ30%%."
+      "It is guaranteed that the grid will only contain \"A\" or \"P\" characters. It is guaranteed that the sum of the r⋅c$$$r \\cdot c$$$ in a single file is at most 3⋅106$$$3 \\cdot 10^6$$$."
     ],
     "output": [
       "For each test case, output a single line containing the minimum number of usages of your power needed to convert everyone to Beingawesomeism, or the string \"MORTAL\" (without quotes) if it is impossible to do so."
@@ -48,5 +48,41 @@
       "input": "4\n7 8\nAAPAAAAA\nPPPPAAAA\nPPPPAAAA\nAPAAPPPP\nAPAPPAPP\nAAAAPPAP\nAAAAPPAA\n6 5\nAAAAA\nAAAAA\nAAPAA\nAAPAP\nAAAPP\nAAAPP\n4 4\nPPPP\nPPPP\nPPPP\nPPPP\n3 4\nPPPP\nPAAP\nPPPP",
       "output": "2\n1\nMORTAL\n4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

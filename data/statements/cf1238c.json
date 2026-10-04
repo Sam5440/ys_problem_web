@@ -9,21 +9,21 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "You are playing a game where your character should overcome different obstacles. The current problem is to come down from a cliff. The cliff has height h%%ZSMJ0%%, and there is a moving platform on each height x%%ZSMJ1%% from 1%%ZSMJ2%% to h%%ZSMJ3%%.",
-      "Each platform is either hidden inside the cliff or moved out. At first, there are n%%ZSMJ4%% moved out platforms on heights p1,p2,…,pn%%ZSMJ5%%. The platform on height h%%ZSMJ6%% is moved out (and the character is initially standing there).",
-      "If you character is standing on some moved out platform on height x%%ZSMJ7%%, then he can pull a special lever, which switches the state of two platforms: on height x%%ZSMJ8%% and x−1%%ZSMJ9%%. In other words, the platform you are currently standing on will hide in the cliff and the platform one unit below will change it state: it will hide if it was moved out or move out if it was hidden. In the second case, you will safely land on it. Note that this is the only way to move from one platform to another.",
-      "Your character is quite fragile, so it can safely fall from the height no more than 2%%ZSMJ10%%. In other words falling from the platform x%%ZSMJ11%% to platform x−2%%ZSMJ12%% is okay, but falling from x%%ZSMJ13%% to x−3%%ZSMJ14%% (or lower) is certain death.",
-      "Sometimes it's not possible to come down from the cliff, but you can always buy (for donate currency) several magic crystals. Each magic crystal can be used to change the state of any single platform (except platform on height h%%ZSMJ15%%, which is unaffected by the crystals). After being used, the crystal disappears.",
-      "What is the minimum number of magic crystal you need to buy to safely land on the 0%%ZSMJ16%% ground level?"
+      "You are playing a game where your character should overcome different obstacles. The current problem is to come down from a cliff. The cliff has height h$$$h$$$, and there is a moving platform on each height x$$$x$$$ from 1$$$1$$$ to h$$$h$$$.",
+      "Each platform is either hidden inside the cliff or moved out. At first, there are n$$$n$$$ moved out platforms on heights p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$. The platform on height h$$$h$$$ is moved out (and the character is initially standing there).",
+      "If you character is standing on some moved out platform on height x$$$x$$$, then he can pull a special lever, which switches the state of two platforms: on height x$$$x$$$ and x−1$$$x - 1$$$. In other words, the platform you are currently standing on will hide in the cliff and the platform one unit below will change it state: it will hide if it was moved out or move out if it was hidden. In the second case, you will safely land on it. Note that this is the only way to move from one platform to another.",
+      "Your character is quite fragile, so it can safely fall from the height no more than 2$$$2$$$. In other words falling from the platform x$$$x$$$ to platform x−2$$$x - 2$$$ is okay, but falling from x$$$x$$$ to x−3$$$x - 3$$$ (or lower) is certain death.",
+      "Sometimes it's not possible to come down from the cliff, but you can always buy (for donate currency) several magic crystals. Each magic crystal can be used to change the state of any single platform (except platform on height h$$$h$$$, which is unaffected by the crystals). After being used, the crystal disappears.",
+      "What is the minimum number of magic crystal you need to buy to safely land on the 0$$$0$$$ ground level?"
     ],
     "input": [
-      "The first line contains one integer q%%ZSMJ17%% (1≤q≤100%%ZSMJ18%%) — the number of queries. Each query contains two lines and is independent of all other queries.",
-      "The first line of each query contains two integers h%%ZSMJ19%% and n%%ZSMJ20%% (1≤h≤109%%ZSMJ21%%, 1≤n≤min%%ZSMJ22%%) — the height of the cliff and the number of moved out platforms.",
-      "The second line contains n%%ZSMJ23%% integers p_1, p_2, \\dots, p_n%%ZSMJ24%% (h = p_1  \\gt  p_2  \\gt  \\dots  \\gt  p_n \\ge 1%%ZSMJ25%%) — the corresponding moved out platforms in the descending order of their heights.",
-      "The sum of n%%ZSMJ26%% over all queries does not exceed 2 \\cdot 10^5%%ZSMJ27%%."
+      "The first line contains one integer q$$$q$$$ (1≤q≤100$$$1 \\le q \\le 100$$$) — the number of queries. Each query contains two lines and is independent of all other queries.",
+      "The first line of each query contains two integers h$$$h$$$ and n$$$n$$$ (1≤h≤109$$$1 \\le h \\le 10^9$$$, 1≤n≤min(h,2⋅105)$$$1 \\le n \\le \\min(h, 2 \\cdot 10^5)$$$) — the height of the cliff and the number of moved out platforms.",
+      "The second line contains n$$$n$$$ integers p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$ (h=p1>p2>⋯>pn≥1$$$h = p_1  \\gt  p_2  \\gt  \\dots  \\gt  p_n \\ge 1$$$) — the corresponding moved out platforms in the descending order of their heights.",
+      "The sum of n$$$n$$$ over all queries does not exceed 2⋅105$$$2 \\cdot 10^5$$$."
     ],
     "output": [
-      "For each query print one integer — the minimum number of magic crystals you have to spend to safely come down on the ground level (with height 0%%ZSMJ28%%)."
+      "For each query print one integer — the minimum number of magic crystals you have to spend to safely come down on the ground level (with height 0$$$0$$$)."
     ]
   },
   "examples": [
@@ -31,5 +31,24 @@
       "input": "4\n3 2\n3 1\n8 6\n8 7 6 5 3 2\n9 6\n9 8 5 4 3 1\n1 1\n1",
       "output": "0\n1\n2\n0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

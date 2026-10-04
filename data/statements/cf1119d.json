@@ -10,26 +10,26 @@
   "sections": {
     "legend": [
       "Miyako came to the flea kingdom with a ukulele. She became good friends with local flea residents and played beautiful music for them every day.",
-      "In return, the fleas made a bigger ukulele for her: it has n%%ZSMJ0%% strings, and each string has (1018+1)%%ZSMJ1%% frets numerated from 0%%ZSMJ2%% to 1018%%ZSMJ3%%. The fleas use the array s1,s2,…,sn%%ZSMJ4%% to describe the ukulele's tuning, that is, the pitch of the j%%ZSMJ5%%-th fret on the i%%ZSMJ6%%-th string is the integer si+j%%ZSMJ7%%.",
+      "In return, the fleas made a bigger ukulele for her: it has n$$$n$$$ strings, and each string has (1018+1)$$$(10^{18} + 1)$$$ frets numerated from 0$$$0$$$ to 1018$$$10^{18}$$$. The fleas use the array s1,s2,…,sn$$$s_1, s_2, \\ldots, s_n$$$ to describe the ukulele's tuning, that is, the pitch of the j$$$j$$$-th fret on the i$$$i$$$-th string is the integer si+j$$$s_i + j$$$.",
       "Miyako is about to leave the kingdom, but the fleas hope that Miyako will answer some last questions for them.",
-      "Each question is in the form of: \"How many different pitches are there, if we consider frets between l%%ZSMJ8%% and r%%ZSMJ9%% (inclusive) on all strings?\"",
+      "Each question is in the form of: \"How many different pitches are there, if we consider frets between l$$$l$$$ and r$$$r$$$ (inclusive) on all strings?\"",
       "Miyako is about to visit the cricket kingdom and has no time to answer all the questions. Please help her with this task!",
-      "Formally, you are given a matrix with n%%ZSMJ10%% rows and (1018+1)%%ZSMJ11%% columns, where the cell in the i%%ZSMJ12%%-th row and j%%ZSMJ13%%-th column (0≤j≤1018%%ZSMJ14%%) contains the integer si+j%%ZSMJ15%%. You are to answer q%%ZSMJ16%% queries, in the k%%ZSMJ17%%-th query you have to answer the number of distinct integers in the matrix from the lk%%ZSMJ18%%-th to the rk%%ZSMJ19%%-th columns, inclusive."
+      "Formally, you are given a matrix with n$$$n$$$ rows and (1018+1)$$$(10^{18}+1)$$$ columns, where the cell in the i$$$i$$$-th row and j$$$j$$$-th column (0≤j≤1018$$$0 \\le j \\le 10^{18}$$$) contains the integer si+j$$$s_i + j$$$. You are to answer q$$$q$$$ queries, in the k$$$k$$$-th query you have to answer the number of distinct integers in the matrix from the lk$$$l_k$$$-th to the rk$$$r_k$$$-th columns, inclusive."
     ],
     "input": [
-      "The first line contains an integer n%%ZSMJ20%% (1≤n≤100000%%ZSMJ21%%) — the number of strings.",
-      "The second line contains n%%ZSMJ22%% integers s1,s2,…,sn%%ZSMJ23%% (0≤si≤1018%%ZSMJ24%%) — the tuning of the ukulele.",
-      "The third line contains an integer q%%ZSMJ25%% (1≤q≤100000%%ZSMJ26%%) — the number of questions.",
-      "The k%%ZSMJ27%%-th among the following q%%ZSMJ28%% lines contains two integers lk%%ZSMJ29%%，rk%%ZSMJ30%% (0≤lk≤rk≤1018%%ZSMJ31%%) — a question from the fleas."
+      "The first line contains an integer n$$$n$$$ (1≤n≤100000$$$1 \\leq n \\leq 100\\,000$$$) — the number of strings.",
+      "The second line contains n$$$n$$$ integers s1,s2,…,sn$$$s_1, s_2, \\ldots, s_n$$$ (0≤si≤1018$$$0 \\leq s_i \\leq 10^{18}$$$) — the tuning of the ukulele.",
+      "The third line contains an integer q$$$q$$$ (1≤q≤100000$$$1 \\leq q \\leq 100\\,000$$$) — the number of questions.",
+      "The k$$$k$$$-th among the following q$$$q$$$ lines contains two integers lk$$$l_k$$$，rk$$$r_k$$$ (0≤lk≤rk≤1018$$$0 \\leq l_k \\leq r_k \\leq 10^{18}$$$) — a question from the fleas."
     ],
     "output": [
       "Output one number for each question, separated by spaces — the number of different pitches."
     ],
     "note": [
-      "For the first example, the pitches on the 6%%ZSMJ32%% strings are as follows.",
-      "Fret01234567…s1:345678910…s2:12345678…s3:4567891011…s4:12345678…s5:56789101112…s6:910111213141516…%%ZSMJ33%%",
-      "There are 5%%ZSMJ34%% different pitches on fret 7%%ZSMJ35%% — 8,10,11,12,16%%ZSMJ36%%.",
-      "There are 10%%ZSMJ37%% different pitches on frets 0,1,2%%ZSMJ38%% — 1,2,3,4,5,6,7,9,10,11%%ZSMJ39%%."
+      "For the first example, the pitches on the 6$$$6$$$ strings are as follows.",
+      "Fret01234567…s1:345678910…s2:12345678…s3:4567891011…s4:12345678…s5:56789101112…s6:910111213141516…\n$$ \\begin{matrix} \\textbf{Fret} & \\textbf{0} & \\textbf{1} & \\textbf{2} & \\textbf{3} & \\textbf{4} & \\textbf{5} & \\textbf{6} & \\textbf{7} & \\ldots \\\\ s_1: & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & \\dots \\\\ s_2: & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \\dots \\\\ s_3: & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & \\dots \\\\ s_4: & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \\dots \\\\ s_5: & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & \\dots \\\\ s_6: & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & \\dots \\end{matrix} $$",
+      "There are 5$$$5$$$ different pitches on fret 7$$$7$$$ — 8,10,11,12,16$$$8, 10, 11, 12, 16$$$.",
+      "There are 10$$$10$$$ different pitches on frets 0,1,2$$$0, 1, 2$$$ — 1,2,3,4,5,6,7,9,10,11$$$1, 2, 3, 4, 5, 6, 7, 9, 10, 11$$$."
     ]
   },
   "examples": [
@@ -41,5 +41,30 @@
       "input": "2\n1 500000000000000000\n2\n1000000000000000000 1000000000000000000\n0 1000000000000000000",
       "output": "2 1500000000000000000"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

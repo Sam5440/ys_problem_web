@@ -9,24 +9,24 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Recently Lynyrd and Skynyrd went to a shop where Lynyrd bought a permutation p%%ZSMJ0%% of length n%%ZSMJ1%%, and Skynyrd bought an array a%%ZSMJ2%% of length m%%ZSMJ3%%, consisting of integers from 1%%ZSMJ4%% to n%%ZSMJ5%%.",
-      "Lynyrd and Skynyrd became bored, so they asked you q%%ZSMJ6%% queries, each of which has the following form: \"does the subsegment of a%%ZSMJ7%% from the l%%ZSMJ8%%-th to the r%%ZSMJ9%%-th positions, inclusive, have a subsequence that is a cyclic shift of p%%ZSMJ10%%?\" Please answer the queries.",
-      "A permutation of length n%%ZSMJ11%% is a sequence of n%%ZSMJ12%% integers such that each integer from 1%%ZSMJ13%% to n%%ZSMJ14%% appears exactly once in it.",
-      "A cyclic shift of a permutation (p1,p2,…,pn)%%ZSMJ15%% is a permutation (pi,pi+1,…,pn,p1,p2,…,pi−1)%%ZSMJ16%% for some i%%ZSMJ17%% from 1%%ZSMJ18%% to n%%ZSMJ19%%. For example, a permutation (2,1,3)%%ZSMJ20%% has three distinct cyclic shifts: (2,1,3)%%ZSMJ21%%, (1,3,2)%%ZSMJ22%%, (3,2,1)%%ZSMJ23%%.",
-      "A subsequence of a subsegment of array a%%ZSMJ24%% from the l%%ZSMJ25%%-th to the r%%ZSMJ26%%-th positions, inclusive, is a sequence ai1,ai2,…,aik%%ZSMJ27%% for some i1,i2,…,ik%%ZSMJ28%% such that l≤i1<i2<…<ik≤r%%ZSMJ29%%."
+      "Recently Lynyrd and Skynyrd went to a shop where Lynyrd bought a permutation p$$$p$$$ of length n$$$n$$$, and Skynyrd bought an array a$$$a$$$ of length m$$$m$$$, consisting of integers from 1$$$1$$$ to n$$$n$$$.",
+      "Lynyrd and Skynyrd became bored, so they asked you q$$$q$$$ queries, each of which has the following form: \"does the subsegment of a$$$a$$$ from the l$$$l$$$-th to the r$$$r$$$-th positions, inclusive, have a subsequence that is a cyclic shift of p$$$p$$$?\" Please answer the queries.",
+      "A permutation of length n$$$n$$$ is a sequence of n$$$n$$$ integers such that each integer from 1$$$1$$$ to n$$$n$$$ appears exactly once in it.",
+      "A cyclic shift of a permutation (p1,p2,…,pn)$$$(p_1, p_2, \\ldots, p_n)$$$ is a permutation (pi,pi+1,…,pn,p1,p2,…,pi−1)$$$(p_i, p_{i + 1}, \\ldots, p_{n}, p_1, p_2, \\ldots, p_{i - 1})$$$ for some i$$$i$$$ from 1$$$1$$$ to n$$$n$$$. For example, a permutation (2,1,3)$$$(2, 1, 3)$$$ has three distinct cyclic shifts: (2,1,3)$$$(2, 1, 3)$$$, (1,3,2)$$$(1, 3, 2)$$$, (3,2,1)$$$(3, 2, 1)$$$.",
+      "A subsequence of a subsegment of array a$$$a$$$ from the l$$$l$$$-th to the r$$$r$$$-th positions, inclusive, is a sequence ai1,ai2,…,aik$$$a_{i_1}, a_{i_2}, \\ldots, a_{i_k}$$$ for some i1,i2,…,ik$$$i_1, i_2, \\ldots, i_k$$$ such that l≤i1<i2<…<ik≤r$$$l \\leq i_1  \\lt  i_2  \\lt  \\ldots  \\lt  i_k \\leq r$$$."
     ],
     "input": [
-      "The first line contains three integers n%%ZSMJ30%%, m%%ZSMJ31%%, q%%ZSMJ32%% (1≤n,m,q≤2⋅105%%ZSMJ33%%) — the length of the permutation p%%ZSMJ34%%, the length of the array a%%ZSMJ35%% and the number of queries.",
-      "The next line contains n%%ZSMJ36%% integers from 1%%ZSMJ37%% to n%%ZSMJ38%%, where the i%%ZSMJ39%%-th of them is the i%%ZSMJ40%%-th element of the permutation. Each integer from 1%%ZSMJ41%% to n%%ZSMJ42%% appears exactly once.",
-      "The next line contains m%%ZSMJ43%% integers from 1%%ZSMJ44%% to n%%ZSMJ45%%, the i%%ZSMJ46%%-th of them is the i%%ZSMJ47%%-th element of the array a%%ZSMJ48%%.",
-      "The next q%%ZSMJ49%% lines describe queries. The i%%ZSMJ50%%-th of these lines contains two integers li%%ZSMJ51%% and ri%%ZSMJ52%% (1≤li≤ri≤m%%ZSMJ53%%), meaning that the i%%ZSMJ54%%-th query is about the subsegment of the array from the li%%ZSMJ55%%-th to the ri%%ZSMJ56%%-th positions, inclusive."
+      "The first line contains three integers n$$$n$$$, m$$$m$$$, q$$$q$$$ (1≤n,m,q≤2⋅105$$$1 \\le n, m, q \\le 2 \\cdot 10^5$$$) — the length of the permutation p$$$p$$$, the length of the array a$$$a$$$ and the number of queries.",
+      "The next line contains n$$$n$$$ integers from 1$$$1$$$ to n$$$n$$$, where the i$$$i$$$-th of them is the i$$$i$$$-th element of the permutation. Each integer from 1$$$1$$$ to n$$$n$$$ appears exactly once.",
+      "The next line contains m$$$m$$$ integers from 1$$$1$$$ to n$$$n$$$, the i$$$i$$$-th of them is the i$$$i$$$-th element of the array a$$$a$$$.",
+      "The next q$$$q$$$ lines describe queries. The i$$$i$$$-th of these lines contains two integers li$$$l_i$$$ and ri$$$r_i$$$ (1≤li≤ri≤m$$$1 \\le l_i \\le r_i \\le m$$$), meaning that the i$$$i$$$-th query is about the subsegment of the array from the li$$$l_i$$$-th to the ri$$$r_i$$$-th positions, inclusive."
     ],
     "output": [
-      "Print a single string of length q%%ZSMJ57%%, consisting of 0%%ZSMJ58%% and 1%%ZSMJ59%%, the digit on the i%%ZSMJ60%%-th positions should be 1%%ZSMJ61%%, if the subsegment of array a%%ZSMJ62%% from the li%%ZSMJ63%%-th to the ri%%ZSMJ64%%-th positions, inclusive, contains a subsequence that is a cyclic shift of p%%ZSMJ65%%, and 0%%ZSMJ66%% otherwise."
+      "Print a single string of length q$$$q$$$, consisting of 0$$$0$$$ and 1$$$1$$$, the digit on the i$$$i$$$-th positions should be 1$$$1$$$, if the subsegment of array a$$$a$$$ from the li$$$l_i$$$-th to the ri$$$r_i$$$-th positions, inclusive, contains a subsequence that is a cyclic shift of p$$$p$$$, and 0$$$0$$$ otherwise."
     ],
     "note": [
-      "In the first example the segment from the 1%%ZSMJ67%%-st to the 5%%ZSMJ68%%-th positions is 1,2,3,1,2%%ZSMJ69%%. There is a subsequence 1,3,2%%ZSMJ70%% that is a cyclic shift of the permutation. The subsegment from the 2%%ZSMJ71%%-nd to the 6%%ZSMJ72%%-th positions also contains a subsequence 2,1,3%%ZSMJ73%% that is equal to the permutation. The subsegment from the 3%%ZSMJ74%%-rd to the 5%%ZSMJ75%%-th positions is 3,1,2%%ZSMJ76%%, there is only one subsequence of length 3%%ZSMJ77%% (3,1,2%%ZSMJ78%%), but it is not a cyclic shift of the permutation.",
-      "In the second example the possible cyclic shifts are 1,2%%ZSMJ79%% and 2,1%%ZSMJ80%%. The subsegment from the 1%%ZSMJ81%%-st to the 2%%ZSMJ82%%-nd positions is 1,1%%ZSMJ83%%, its subsequences are not cyclic shifts of the permutation. The subsegment from the 2%%ZSMJ84%%-nd to the 3%%ZSMJ85%%-rd positions is 1,2%%ZSMJ86%%, it coincides with the permutation. The subsegment from the 3%%ZSMJ87%% to the 4%%ZSMJ88%% positions is 2,2%%ZSMJ89%%, its subsequences are not cyclic shifts of the permutation."
+      "In the first example the segment from the 1$$$1$$$-st to the 5$$$5$$$-th positions is 1,2,3,1,2$$$1, 2, 3, 1, 2$$$. There is a subsequence 1,3,2$$$1, 3, 2$$$ that is a cyclic shift of the permutation. The subsegment from the 2$$$2$$$-nd to the 6$$$6$$$-th positions also contains a subsequence 2,1,3$$$2, 1, 3$$$ that is equal to the permutation. The subsegment from the 3$$$3$$$-rd to the 5$$$5$$$-th positions is 3,1,2$$$3, 1, 2$$$, there is only one subsequence of length 3$$$3$$$ (3,1,2$$$3, 1, 2$$$), but it is not a cyclic shift of the permutation.",
+      "In the second example the possible cyclic shifts are 1,2$$$1, 2$$$ and 2,1$$$2, 1$$$. The subsegment from the 1$$$1$$$-st to the 2$$$2$$$-nd positions is 1,1$$$1, 1$$$, its subsequences are not cyclic shifts of the permutation. The subsegment from the 2$$$2$$$-nd to the 3$$$3$$$-rd positions is 1,2$$$1, 2$$$, it coincides with the permutation. The subsegment from the 3$$$3$$$ to the 4$$$4$$$ positions is 2,2$$$2, 2$$$, its subsequences are not cyclic shifts of the permutation."
     ]
   },
   "examples": [
@@ -38,5 +38,27 @@
       "input": "2 4 3\n2 1\n1 1 2 2\n1 2\n2 3\n3 4",
       "output": "010"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

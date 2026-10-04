@@ -9,27 +9,27 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "You have n%%ZSMJ0%% sticks of the given lengths.",
+      "You have n$$$n$$$ sticks of the given lengths.",
       "Your task is to choose exactly four of them in such a way that they can form a rectangle. No sticks can be cut to pieces, each side of the rectangle must be formed by a single stick. No stick can be chosen multiple times. It is guaranteed that it is always possible to choose such sticks.",
-      "Let S%%ZSMJ1%% be the area of the rectangle and P%%ZSMJ2%% be the perimeter of the rectangle.",
-      "The chosen rectangle should have the value P2S%%ZSMJ3%% minimal possible. The value is taken without any rounding.",
+      "Let S$$$S$$$ be the area of the rectangle and P$$$P$$$ be the perimeter of the rectangle.",
+      "The chosen rectangle should have the value P2S$$$\\frac{P^2}{S}$$$ minimal possible. The value is taken without any rounding.",
       "If there are multiple answers, print any of them.",
       "Each testcase contains several lists of sticks, for each of them you are required to solve the problem separately."
     ],
     "input": [
-      "The first line contains a single integer T%%ZSMJ4%% (T≥1%%ZSMJ5%%) — the number of lists of sticks in the testcase.",
-      "Then 2T%%ZSMJ6%% lines follow — lines (2i−1)%%ZSMJ7%% and 2i%%ZSMJ8%% of them describe the i%%ZSMJ9%%-th list. The first line of the pair contains a single integer n%%ZSMJ10%% (4≤n≤106%%ZSMJ11%%) — the number of sticks in the i%%ZSMJ12%%-th list. The second line of the pair contains n%%ZSMJ13%% integers a1,a2,…,an%%ZSMJ14%% (1≤aj≤104%%ZSMJ15%%) — lengths of the sticks in the i%%ZSMJ16%%-th list.",
+      "The first line contains a single integer T$$$T$$$ (T≥1$$$T \\ge 1$$$) — the number of lists of sticks in the testcase.",
+      "Then 2T$$$2T$$$ lines follow — lines (2i−1)$$$(2i - 1)$$$ and 2i$$$2i$$$ of them describe the i$$$i$$$-th list. The first line of the pair contains a single integer n$$$n$$$ (4≤n≤106$$$4 \\le n \\le 10^6$$$) — the number of sticks in the i$$$i$$$-th list. The second line of the pair contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (1≤aj≤104$$$1 \\le a_j \\le 10^4$$$) — lengths of the sticks in the i$$$i$$$-th list.",
       "It is guaranteed that for each list there exists a way to choose four sticks so that they form a rectangle.",
-      "The total number of sticks in all T%%ZSMJ17%% lists doesn't exceed 106%%ZSMJ18%% in each testcase."
+      "The total number of sticks in all T$$$T$$$ lists doesn't exceed 106$$$10^6$$$ in each testcase."
     ],
     "output": [
-      "Print T%%ZSMJ19%% lines. The i%%ZSMJ20%%-th line should contain the answer to the i%%ZSMJ21%%-th list of the input. That is the lengths of the four sticks you choose from the i%%ZSMJ22%%-th list, so that they form a rectangle and the value P2S%%ZSMJ23%% of this rectangle is minimal possible. You can print these four lengths in arbitrary order.",
+      "Print T$$$T$$$ lines. The i$$$i$$$-th line should contain the answer to the i$$$i$$$-th list of the input. That is the lengths of the four sticks you choose from the i$$$i$$$-th list, so that they form a rectangle and the value P2S$$$\\frac{P^2}{S}$$$ of this rectangle is minimal possible. You can print these four lengths in arbitrary order.",
       "If there are multiple answers, print any of them."
     ],
     "note": [
-      "There is only one way to choose four sticks in the first list, they form a rectangle with sides 2%%ZSMJ24%% and 7%%ZSMJ25%%, its area is 2⋅7=14%%ZSMJ26%%, perimeter is 2(2+7)=18%%ZSMJ27%%. 18214≈23.143%%ZSMJ28%%.",
-      "The second list contains subsets of four sticks that can form rectangles with sides (1,2)%%ZSMJ29%%, (2,8)%%ZSMJ30%% and (1,8)%%ZSMJ31%%. Their values are 622=18%%ZSMJ32%%, 20216=25%%ZSMJ33%% and 1828=40.5%%ZSMJ34%%, respectively. The minimal one of them is the rectangle (1,2)%%ZSMJ35%%.",
-      "You can choose any four of the 5%%ZSMJ36%% given sticks from the third list, they will form a square with side 5%%ZSMJ37%%, which is still a rectangle with sides (5,5)%%ZSMJ38%%."
+      "There is only one way to choose four sticks in the first list, they form a rectangle with sides 2$$$2$$$ and 7$$$7$$$, its area is 2⋅7=14$$$2 \\cdot 7 = 14$$$, perimeter is 2(2+7)=18$$$2(2 + 7) = 18$$$. 18214≈23.143$$$\\frac{18^2}{14} \\approx 23.143$$$.",
+      "The second list contains subsets of four sticks that can form rectangles with sides (1,2)$$$(1, 2)$$$, (2,8)$$$(2, 8)$$$ and (1,8)$$$(1, 8)$$$. Their values are 622=18$$$\\frac{6^2}{2} = 18$$$, 20216=25$$$\\frac{20^2}{16} = 25$$$ and 1828=40.5$$$\\frac{18^2}{8} = 40.5$$$, respectively. The minimal one of them is the rectangle (1,2)$$$(1, 2)$$$.",
+      "You can choose any four of the 5$$$5$$$ given sticks from the third list, they will form a square with side 5$$$5$$$, which is still a rectangle with sides (5,5)$$$(5, 5)$$$."
     ]
   },
   "examples": [
@@ -37,5 +37,30 @@
       "input": "3\n4\n7 2 2 7\n8\n2 8 1 4 8 2 1 5\n5\n5 5 5 5 5",
       "output": "2 7 7 2\n2 2 1 1\n5 5 5 5"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null
+    ]
+  }
 }

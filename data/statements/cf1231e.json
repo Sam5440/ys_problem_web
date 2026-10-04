@@ -10,35 +10,35 @@
   "sections": {
     "legend": [
       "The problem was inspired by Pied Piper story. After a challenge from Hooli's compression competitor Nucleus, Richard pulled an all-nighter to invent a new approach to compression: middle-out.",
-      "You are given two strings %%ZSMJ0%% and %%ZSMJ1%% of the same length %%ZSMJ2%%. Their characters are numbered from %%ZSMJ3%% to %%ZSMJ4%% from left to right (i.e. from the beginning to the end).",
+      "You are given two strings s$$$s$$$ and t$$$t$$$ of the same length n$$$n$$$. Their characters are numbered from 1$$$1$$$ to n$$$n$$$ from left to right (i.e. from the beginning to the end).",
       "In a single move you can do the following sequence of actions:",
-      "choose any valid index %%ZSMJ5%% (%%ZSMJ6%%),",
-      "move the %%ZSMJ7%%-th character of %%ZSMJ8%% from its position to the beginning of the string or move the %%ZSMJ9%%-th character of %%ZSMJ10%% from its position to the end of the string.",
-      "Note, that the moves don't change the length of the string %%ZSMJ11%%. You can apply a move only to the string %%ZSMJ12%%.",
-      "For example, if %%ZSMJ13%%\"test\" in one move you can obtain:",
-      "if %%ZSMJ14%% and you move to the beginning, then the result is \"test\" (the string doesn't change),",
-      "if %%ZSMJ15%% and you move to the beginning, then the result is \"etst\",",
-      "if %%ZSMJ16%% and you move to the beginning, then the result is \"stet\",",
-      "if %%ZSMJ17%% and you move to the beginning, then the result is \"ttes\",",
-      "if %%ZSMJ18%% and you move to the end, then the result is \"estt\",",
-      "if %%ZSMJ19%% and you move to the end, then the result is \"tste\",",
-      "if %%ZSMJ20%% and you move to the end, then the result is \"tets\",",
-      "if %%ZSMJ21%% and you move to the end, then the result is \"test\" (the string doesn't change).",
-      "You want to make the string %%ZSMJ22%% equal to the string %%ZSMJ23%%. What is the minimum number of moves you need? If it is impossible to transform %%ZSMJ24%% to %%ZSMJ25%%, print -1."
+      "choose any valid index i$$$i$$$ (1≤i≤n$$$1 \\le i \\le n$$$),",
+      "move the i$$$i$$$-th character of s$$$s$$$ from its position to the beginning of the string or move the i$$$i$$$-th character of s$$$s$$$ from its position to the end of the string.",
+      "Note, that the moves don't change the length of the string s$$$s$$$. You can apply a move only to the string s$$$s$$$.",
+      "For example, if s=$$$s=$$$\"test\" in one move you can obtain:",
+      "if i=1$$$i=1$$$ and you move to the beginning, then the result is \"test\" (the string doesn't change),",
+      "if i=2$$$i=2$$$ and you move to the beginning, then the result is \"etst\",",
+      "if i=3$$$i=3$$$ and you move to the beginning, then the result is \"stet\",",
+      "if i=4$$$i=4$$$ and you move to the beginning, then the result is \"ttes\",",
+      "if i=1$$$i=1$$$ and you move to the end, then the result is \"estt\",",
+      "if i=2$$$i=2$$$ and you move to the end, then the result is \"tste\",",
+      "if i=3$$$i=3$$$ and you move to the end, then the result is \"tets\",",
+      "if i=4$$$i=4$$$ and you move to the end, then the result is \"test\" (the string doesn't change).",
+      "You want to make the string s$$$s$$$ equal to the string t$$$t$$$. What is the minimum number of moves you need? If it is impossible to transform s$$$s$$$ to t$$$t$$$, print -1."
     ],
     "input": [
-      "The first line contains integer %%ZSMJ26%% (%%ZSMJ27%%) — the number of independent test cases in the input.",
-      "Each test case is given in three lines. The first line of a test case contains %%ZSMJ28%% (%%ZSMJ29%%) — the length of the strings %%ZSMJ30%% and %%ZSMJ31%%. The second line contains %%ZSMJ32%%, the third line contains %%ZSMJ33%%. Both strings %%ZSMJ34%% and %%ZSMJ35%% have length %%ZSMJ36%% and contain only lowercase Latin letters.",
-      "There are no constraints on the sum of %%ZSMJ37%% in the test (i.e. the input with %%ZSMJ38%% and all %%ZSMJ39%% is allowed)."
+      "The first line contains integer q$$$q$$$ (1≤q≤100$$$1 \\le q \\le 100$$$) — the number of independent test cases in the input.",
+      "Each test case is given in three lines. The first line of a test case contains n$$$n$$$ (1≤n≤100$$$1 \\le n \\le 100$$$) — the length of the strings s$$$s$$$ and t$$$t$$$. The second line contains s$$$s$$$, the third line contains t$$$t$$$. Both strings s$$$s$$$ and t$$$t$$$ have length n$$$n$$$ and contain only lowercase Latin letters.",
+      "There are no constraints on the sum of n$$$n$$$ in the test (i.e. the input with q=100$$$q=100$$$ and all n=100$$$n=100$$$ is allowed)."
     ],
     "output": [
-      "For every test print minimum possible number of moves, which are needed to transform %%ZSMJ40%% into %%ZSMJ41%%, or -1, if it is impossible to do."
+      "For every test print minimum possible number of moves, which are needed to transform s$$$s$$$ into t$$$t$$$, or -1, if it is impossible to do."
     ],
     "note": [
       "In the first example, the moves in one of the optimal answers are:",
-      "for the first test case %%ZSMJ42%%\"iredppipe\", %%ZSMJ43%%\"piedpiper\": \"iredppipe\" %%ZSMJ44%% \"iedppiper\" %%ZSMJ45%% \"piedpiper\";",
-      "for the second test case %%ZSMJ46%%\"estt\", %%ZSMJ47%%\"test\": \"estt\" %%ZSMJ48%% \"test\";",
-      "for the third test case %%ZSMJ49%%\"tste\", %%ZSMJ50%%\"test\": \"tste\" %%ZSMJ51%% \"etst\" %%ZSMJ52%% \"test\"."
+      "for the first test case s=$$$s=$$$\"iredppipe\", t=$$$t=$$$\"piedpiper\": \"iredppipe\" →$$$\\rightarrow$$$ \"iedppiper\" →$$$\\rightarrow$$$ \"piedpiper\";",
+      "for the second test case s=$$$s=$$$\"estt\", t=$$$t=$$$\"test\": \"estt\" →$$$\\rightarrow$$$ \"test\";",
+      "for the third test case s=$$$s=$$$\"tste\", t=$$$t=$$$\"test\": \"tste\" →$$$\\rightarrow$$$ \"etst\" →$$$\\rightarrow$$$ \"test\"."
     ]
   },
   "examples": [
@@ -50,5 +50,39 @@
       "input": "4\n1\na\nz\n5\nadhas\ndasha\n5\naashd\ndasha\n5\naahsd\ndasha",
       "output": "-1\n2\n2\n3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

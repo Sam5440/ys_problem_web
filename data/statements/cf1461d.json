@@ -9,39 +9,39 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Mike received an array a%%ZSMJ0%% of length n%%ZSMJ1%% as a birthday present and decided to test how pretty it is.",
-      "An array would pass the i%%ZSMJ2%%-th prettiness test if there is a way to get an array with a sum of elements totaling si%%ZSMJ3%%, using some number (possibly zero) of slicing operations.",
+      "Mike received an array a$$$a$$$ of length n$$$n$$$ as a birthday present and decided to test how pretty it is.",
+      "An array would pass the i$$$i$$$-th prettiness test if there is a way to get an array with a sum of elements totaling si$$$s_i$$$, using some number (possibly zero) of slicing operations.",
       "![](https://espresso.codeforces.com/99f4c210795e0c4204b631fa29ffe14c107dfbb0.png)",
       "An array slicing operation is conducted in the following way:",
-      "assume mid=⌊max(array)+min(array)2⌋%%ZSMJ4%%, where max%%ZSMJ5%% and min%%ZSMJ6%% — are functions that find the maximum and the minimum array elements. In other words, mid%%ZSMJ7%% is the sum of the maximum and the minimum element of array%%ZSMJ8%% divided by 2%%ZSMJ9%% rounded down.",
-      "Then the array is split into two parts left%%ZSMJ10%% and right%%ZSMJ11%%. The left%%ZSMJ12%% array contains all elements which are less than or equal mid%%ZSMJ13%%, and the right%%ZSMJ14%% array contains all elements which are greater than mid%%ZSMJ15%%. Elements in left%%ZSMJ16%% and right%%ZSMJ17%% keep their relative order from array%%ZSMJ18%%.",
-      "During the third step we choose which of the left%%ZSMJ19%% and right%%ZSMJ20%% arrays we want to keep. The chosen array replaces the current one and the other is permanently discarded.",
-      "You need to help Mike find out the results of q%%ZSMJ21%% prettiness tests.",
-      "Note that you test the prettiness of the array a%%ZSMJ22%%, so you start each prettiness test with the primordial (initial) array a%%ZSMJ23%%. Thus, the first slice (if required) is always performed on the array a%%ZSMJ24%%."
+      "assume mid=⌊max(array)+min(array)2⌋$$$mid = \\lfloor\\frac{max(array) + min(array)}{2}\\rfloor$$$, where max$$$max$$$ and min$$$min$$$ — are functions that find the maximum and the minimum array elements. In other words, mid$$$mid$$$ is the sum of the maximum and the minimum element of array$$$array$$$ divided by 2$$$2$$$ rounded down.",
+      "Then the array is split into two parts left$$$\\mathit{left}$$$ and right$$$right$$$. The left$$$\\mathit{left}$$$ array contains all elements which are less than or equal mid$$$mid$$$, and the right$$$right$$$ array contains all elements which are greater than mid$$$mid$$$. Elements in left$$$\\mathit{left}$$$ and right$$$right$$$ keep their relative order from array$$$array$$$.",
+      "During the third step we choose which of the left$$$\\mathit{left}$$$ and right$$$right$$$ arrays we want to keep. The chosen array replaces the current one and the other is permanently discarded.",
+      "You need to help Mike find out the results of q$$$q$$$ prettiness tests.",
+      "Note that you test the prettiness of the array a$$$a$$$, so you start each prettiness test with the primordial (initial) array a$$$a$$$. Thus, the first slice (if required) is always performed on the array a$$$a$$$."
     ],
     "input": [
-      "Each test contains one or more test cases. The first line contains the number of test cases t%%ZSMJ25%% (1≤t≤100%%ZSMJ26%%).",
-      "The first line of each test case contains two integers n%%ZSMJ27%% and q%%ZSMJ28%% (1≤n,q≤105)%%ZSMJ29%% — the length of the array a%%ZSMJ30%% and the total number of prettiness tests.",
-      "The second line of each test case contains n%%ZSMJ31%% integers a1,a2,...,an%%ZSMJ32%% (1≤ai≤106)%%ZSMJ33%% — the contents of the array a%%ZSMJ34%%.",
-      "Next q%%ZSMJ35%% lines of each test case contain a single integer si%%ZSMJ36%% (1≤si≤109)%%ZSMJ37%% — the sum of elements which Mike wants to get in the i%%ZSMJ38%%-th test.",
-      "It is guaranteed that the sum of n%%ZSMJ39%% and the sum of q%%ZSMJ40%% does not exceed 105%%ZSMJ41%% (∑n,∑q≤105%%ZSMJ42%%)."
+      "Each test contains one or more test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤100$$$1 \\le t \\le 100$$$).",
+      "The first line of each test case contains two integers n$$$n$$$ and q$$$q$$$ (1≤n,q≤105)$$$(1 \\le n, q \\le 10^5)$$$ — the length of the array a$$$a$$$ and the total number of prettiness tests.",
+      "The second line of each test case contains n$$$n$$$ integers a1,a2,...,an$$$a_1, a_2, ..., a_n$$$ (1≤ai≤106)$$$(1 \\le a_i \\le 10^6)$$$ — the contents of the array a$$$a$$$.",
+      "Next q$$$q$$$ lines of each test case contain a single integer si$$$s_i$$$ (1≤si≤109)$$$(1 \\le s_i \\le 10^9)$$$ — the sum of elements which Mike wants to get in the i$$$i$$$-th test.",
+      "It is guaranteed that the sum of n$$$n$$$ and the sum of q$$$q$$$ does not exceed 105$$$10^5$$$ (∑n,∑q≤105$$$\\sum n, \\sum q \\le 10^5$$$)."
     ],
     "output": [
-      "Print q%%ZSMJ43%% lines, each containing either a \"Yes\" if the corresponding prettiness test is passed and \"No\" in the opposite case."
+      "Print q$$$q$$$ lines, each containing either a \"Yes\" if the corresponding prettiness test is passed and \"No\" in the opposite case."
     ],
     "note": [
       "Explanation of the first test case:",
-      "We can get an array with the sum s1=1%%ZSMJ44%% in the following way: 1.1 a=[1,2,3,4,5]%%ZSMJ45%%, mid=1+52=3%%ZSMJ46%%, left=[1,2,3]%%ZSMJ47%%, right=[4,5]%%ZSMJ48%%. We choose to keep the left%%ZSMJ49%% array.\n 1.2 a=[1,2,3]%%ZSMJ50%%, mid=1+32=2%%ZSMJ51%%, left=[1,2]%%ZSMJ52%%, right=[3]%%ZSMJ53%%. We choose to keep the left%%ZSMJ54%% array.\n 1.3 a=[1,2]%%ZSMJ55%%, mid=1+22=1%%ZSMJ56%%, left=[1]%%ZSMJ57%%, right=[2]%%ZSMJ58%%. We choose to keep the left%%ZSMJ59%% array with the sum equalling 1%%ZSMJ60%%.",
-      "It can be demonstrated that an array with the sum s2=8%%ZSMJ61%% is impossible to generate.",
-      "An array with the sum s3=9%%ZSMJ62%% can be generated in the following way: 3.1 a=[1,2,3,4,5]%%ZSMJ63%%, mid=1+52=3%%ZSMJ64%%, left=[1,2,3]%%ZSMJ65%%, right=[4,5]%%ZSMJ66%%. We choose to keep the right%%ZSMJ67%% array with the sum equalling 9%%ZSMJ68%%.",
-      "It can be demonstrated that an array with the sum s4=12%%ZSMJ69%% is impossible to generate.",
-      "We can get an array with the sum s5=6%%ZSMJ70%% in the following way: 5.1 a=[1,2,3,4,5]%%ZSMJ71%%, mid=1+52=3%%ZSMJ72%%, left=[1,2,3]%%ZSMJ73%%, right=[4,5]%%ZSMJ74%%. We choose to keep the left%%ZSMJ75%% with the sum equalling 6%%ZSMJ76%%.",
+      "We can get an array with the sum s1=1$$$s_1 = 1$$$ in the following way: 1.1 a=[1,2,3,4,5]$$$a = [1, 2, 3, 4, 5]$$$, mid=1+52=3$$$mid = \\frac{1+5}{2} = 3$$$, left=[1,2,3]$$$\\mathit{left} = [1, 2, 3]$$$, right=[4,5]$$$right = [4, 5]$$$. We choose to keep the left$$$\\mathit{left}$$$ array.\n 1.2 a=[1,2,3]$$$a = [1, 2, 3]$$$, mid=1+32=2$$$mid = \\frac{1+3}{2} = 2$$$, left=[1,2]$$$\\mathit{left} = [1, 2]$$$, right=[3]$$$right = [3]$$$. We choose to keep the left$$$\\mathit{left}$$$ array.\n 1.3 a=[1,2]$$$a = [1, 2]$$$, mid=1+22=1$$$mid = \\frac{1+2}{2} = 1$$$, left=[1]$$$\\mathit{left} = [1]$$$, right=[2]$$$right = [2]$$$. We choose to keep the left$$$\\mathit{left}$$$ array with the sum equalling 1$$$1$$$.",
+      "It can be demonstrated that an array with the sum s2=8$$$s_2 = 8$$$ is impossible to generate.",
+      "An array with the sum s3=9$$$s_3 = 9$$$ can be generated in the following way: 3.1 a=[1,2,3,4,5]$$$a = [1, 2, 3, 4, 5]$$$, mid=1+52=3$$$mid = \\frac{1+5}{2} = 3$$$, left=[1,2,3]$$$\\mathit{left} = [1, 2, 3]$$$, right=[4,5]$$$right = [4, 5]$$$. We choose to keep the right$$$right$$$ array with the sum equalling 9$$$9$$$.",
+      "It can be demonstrated that an array with the sum s4=12$$$s_4 = 12$$$ is impossible to generate.",
+      "We can get an array with the sum s5=6$$$s_5 = 6$$$ in the following way: 5.1 a=[1,2,3,4,5]$$$a = [1, 2, 3, 4, 5]$$$, mid=1+52=3$$$mid = \\frac{1+5}{2} = 3$$$, left=[1,2,3]$$$\\mathit{left} = [1, 2, 3]$$$, right=[4,5]$$$right = [4, 5]$$$. We choose to keep the left$$$\\mathit{left}$$$ with the sum equalling 6$$$6$$$.",
       "Explanation of the second test case:",
-      "It can be demonstrated that an array with the sum s1=1%%ZSMJ77%% is imposssible to generate.",
-      "We can get an array with the sum s2=2%%ZSMJ78%% in the following way: 2.1 a=[3,1,3,1,3]%%ZSMJ79%%, mid=1+32=2%%ZSMJ80%%, left=[1,1]%%ZSMJ81%%, right=[3,3,3]%%ZSMJ82%%. We choose to keep the left%%ZSMJ83%% array with the sum equalling 2%%ZSMJ84%%.",
-      "It can be demonstrated that an array with the sum s3=3%%ZSMJ85%% is imposssible to generate.",
-      "We can get an array with the sum s4=9%%ZSMJ86%% in the following way: 4.1 a=[3,1,3,1,3]%%ZSMJ87%%, mid=1+32=2%%ZSMJ88%%, left=[1,1]%%ZSMJ89%%, right=[3,3,3]%%ZSMJ90%%. We choose to keep the right%%ZSMJ91%% array with the sum equalling 9%%ZSMJ92%%.",
-      "We can get an array with the sum s5=11%%ZSMJ93%% with zero slicing operations, because array sum is equal to 11%%ZSMJ94%%."
+      "It can be demonstrated that an array with the sum s1=1$$$s_1 = 1$$$ is imposssible to generate.",
+      "We can get an array with the sum s2=2$$$s_2 = 2$$$ in the following way: 2.1 a=[3,1,3,1,3]$$$a = [3, 1, 3, 1, 3]$$$, mid=1+32=2$$$mid = \\frac{1+3}{2} = 2$$$, left=[1,1]$$$\\mathit{left} = [1, 1]$$$, right=[3,3,3]$$$right = [3, 3, 3]$$$. We choose to keep the left$$$\\mathit{left}$$$ array with the sum equalling 2$$$2$$$.",
+      "It can be demonstrated that an array with the sum s3=3$$$s_3 = 3$$$ is imposssible to generate.",
+      "We can get an array with the sum s4=9$$$s_4 = 9$$$ in the following way: 4.1 a=[3,1,3,1,3]$$$a = [3, 1, 3, 1, 3]$$$, mid=1+32=2$$$mid = \\frac{1+3}{2} = 2$$$, left=[1,1]$$$\\mathit{left} = [1, 1]$$$, right=[3,3,3]$$$right = [3, 3, 3]$$$. We choose to keep the right$$$right$$$ array with the sum equalling 9$$$9$$$.",
+      "We can get an array with the sum s5=11$$$s_5 = 11$$$ with zero slicing operations, because array sum is equal to 11$$$11$$$."
     ]
   },
   "examples": [
@@ -49,5 +49,42 @@
       "input": "2\n5 5\n1 2 3 4 5\n1\n8\n9\n12\n6\n5 5\n3 1 3 1 3\n1\n2\n3\n9\n11",
       "output": "Yes\nNo\nYes\nNo\nYes\nNo\nYes\nNo\nYes\nYes"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

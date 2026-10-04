@@ -9,26 +9,26 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "After a long day, Alice and Bob decided to play a little game. The game board consists of n%%ZSMJ0%% cells in a straight line, numbered from 1%%ZSMJ1%% to n%%ZSMJ2%%, where each cell contains a number ai%%ZSMJ3%% between 1%%ZSMJ4%% and n%%ZSMJ5%%. Furthermore, no two cells contain the same number.",
-      "A token is placed in one of the cells. They take alternating turns of moving the token around the board, with Alice moving first. The current player can move from cell i%%ZSMJ6%% to cell j%%ZSMJ7%% only if the following two conditions are satisfied:",
-      "the number in the new cell j%%ZSMJ8%% must be strictly larger than the number in the old cell i%%ZSMJ9%% (i.e. aj>ai%%ZSMJ10%%), and",
-      "the distance that the token travels during this turn must be a multiple of the number in the old cell (i.e. |i−j|modai=0%%ZSMJ11%%).",
+      "After a long day, Alice and Bob decided to play a little game. The game board consists of n$$$n$$$ cells in a straight line, numbered from 1$$$1$$$ to n$$$n$$$, where each cell contains a number ai$$$a_i$$$ between 1$$$1$$$ and n$$$n$$$. Furthermore, no two cells contain the same number.",
+      "A token is placed in one of the cells. They take alternating turns of moving the token around the board, with Alice moving first. The current player can move from cell i$$$i$$$ to cell j$$$j$$$ only if the following two conditions are satisfied:",
+      "the number in the new cell j$$$j$$$ must be strictly larger than the number in the old cell i$$$i$$$ (i.e. aj>ai$$$a_j  \\gt  a_i$$$), and",
+      "the distance that the token travels during this turn must be a multiple of the number in the old cell (i.e. |i−j|modai=0$$$|i-j|\\bmod a_i = 0$$$).",
       "Whoever is unable to make a move, loses. For each possible starting position, determine who wins if they both play optimally. It can be shown that the game is always finite, i.e. there always is a winning strategy for one of the players."
     ],
     "input": [
-      "The first line contains a single integer n%%ZSMJ12%% (1≤n≤105%%ZSMJ13%%) — the number of numbers.",
-      "The second line contains n%%ZSMJ14%% integers a1,a2,…,an%%ZSMJ15%% (1≤ai≤n%%ZSMJ16%%). Furthermore, there are no pair of indices i≠j%%ZSMJ17%% such that ai=aj%%ZSMJ18%%."
+      "The first line contains a single integer n$$$n$$$ (1≤n≤105$$$1 \\le n \\le 10^5$$$) — the number of numbers.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai≤n$$$1 \\le a_i \\le n$$$). Furthermore, there are no pair of indices i≠j$$$i \\neq j$$$ such that ai=aj$$$a_i = a_j$$$."
     ],
     "output": [
-      "Print s%%ZSMJ19%% — a string of n%%ZSMJ20%% characters, where the i%%ZSMJ21%%-th character represents the outcome of the game if the token is initially placed in the cell i%%ZSMJ22%%. If Alice wins, then si%%ZSMJ23%% has to be equal to \"A\"; otherwise, si%%ZSMJ24%% has to be equal to \"B\"."
+      "Print s$$$s$$$ — a string of n$$$n$$$ characters, where the i$$$i$$$-th character represents the outcome of the game if the token is initially placed in the cell i$$$i$$$. If Alice wins, then si$$$s_i$$$ has to be equal to \"A\"; otherwise, si$$$s_i$$$ has to be equal to \"B\"."
     ],
     "note": [
       "In the first sample, if Bob puts the token on the number (not position):",
-      "1%%ZSMJ25%%: Alice can move to any number. She can win by picking 7%%ZSMJ26%%, from which Bob has no move.",
-      "2%%ZSMJ27%%: Alice can move to 3%%ZSMJ28%% and 5%%ZSMJ29%%. Upon moving to 5%%ZSMJ30%%, Bob can win by moving to 8%%ZSMJ31%%. If she chooses 3%%ZSMJ32%% instead, she wins, as Bob has only a move to 4%%ZSMJ33%%, from which Alice can move to 8%%ZSMJ34%%.",
-      "3%%ZSMJ35%%: Alice can only move to 4%%ZSMJ36%%, after which Bob wins by moving to 8%%ZSMJ37%%.",
-      "4%%ZSMJ38%%, 5%%ZSMJ39%%, or 6%%ZSMJ40%%: Alice wins by moving to 8%%ZSMJ41%%.",
-      "7%%ZSMJ42%%, 8%%ZSMJ43%%: Alice has no move, and hence she loses immediately."
+      "1$$$1$$$: Alice can move to any number. She can win by picking 7$$$7$$$, from which Bob has no move.",
+      "2$$$2$$$: Alice can move to 3$$$3$$$ and 5$$$5$$$. Upon moving to 5$$$5$$$, Bob can win by moving to 8$$$8$$$. If she chooses 3$$$3$$$ instead, she wins, as Bob has only a move to 4$$$4$$$, from which Alice can move to 8$$$8$$$.",
+      "3$$$3$$$: Alice can only move to 4$$$4$$$, after which Bob wins by moving to 8$$$8$$$.",
+      "4$$$4$$$, 5$$$5$$$, or 6$$$6$$$: Alice wins by moving to 8$$$8$$$.",
+      "7$$$7$$$, 8$$$8$$$: Alice has no move, and hence she loses immediately."
     ]
   },
   "examples": [
@@ -40,5 +40,29 @@
       "input": "15\n3 11 2 5 10 9 7 13 15 8 4 12 6 1 14",
       "output": "ABAAAABBBAABAAB"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

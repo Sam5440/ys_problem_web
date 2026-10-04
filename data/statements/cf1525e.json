@@ -10,27 +10,27 @@
   "sections": {
     "legend": [
       "Monocarp is playing a game \"Assimilation IV\". In this game he manages a great empire: builds cities and conquers new lands.",
-      "Monocarp's empire has n%%ZSMJ0%% cities. In order to conquer new lands he plans to build one Monument in each city. The game is turn-based and, since Monocarp is still amateur, he builds exactly one Monument per turn.",
-      "Monocarp has m%%ZSMJ1%% points on the map he'd like to control using the constructed Monuments. For each point he knows the distance between it and each city. Monuments work in the following way: when built in some city, a Monument controls all points at distance at most 1%%ZSMJ2%% to this city. Next turn, the Monument controls all points at distance at most 2%%ZSMJ3%%, the turn after — at distance at most 3%%ZSMJ4%%, and so on. Monocarp will build n%%ZSMJ5%% Monuments in n%%ZSMJ6%% turns and his empire will conquer all points that are controlled by at least one Monument.",
-      "Monocarp can't figure out any strategy, so during each turn he will choose a city for a Monument randomly among all remaining cities (cities without Monuments). Monocarp wants to know how many points (among m%%ZSMJ7%% of them) he will conquer at the end of turn number n%%ZSMJ8%%. Help him to calculate the expected number of conquered points!"
+      "Monocarp's empire has n$$$n$$$ cities. In order to conquer new lands he plans to build one Monument in each city. The game is turn-based and, since Monocarp is still amateur, he builds exactly one Monument per turn.",
+      "Monocarp has m$$$m$$$ points on the map he'd like to control using the constructed Monuments. For each point he knows the distance between it and each city. Monuments work in the following way: when built in some city, a Monument controls all points at distance at most 1$$$1$$$ to this city. Next turn, the Monument controls all points at distance at most 2$$$2$$$, the turn after — at distance at most 3$$$3$$$, and so on. Monocarp will build n$$$n$$$ Monuments in n$$$n$$$ turns and his empire will conquer all points that are controlled by at least one Monument.",
+      "Monocarp can't figure out any strategy, so during each turn he will choose a city for a Monument randomly among all remaining cities (cities without Monuments). Monocarp wants to know how many points (among m$$$m$$$ of them) he will conquer at the end of turn number n$$$n$$$. Help him to calculate the expected number of conquered points!"
     ],
     "input": [
-      "The first line contains two integers n%%ZSMJ9%% and m%%ZSMJ10%% (1≤n≤20%%ZSMJ11%%; 1≤m≤5⋅104%%ZSMJ12%%) — the number of cities and the number of points.",
-      "Next n%%ZSMJ13%% lines contains m%%ZSMJ14%% integers each: the j%%ZSMJ15%%-th integer of the i%%ZSMJ16%%-th line di,j%%ZSMJ17%% (1≤di,j≤n+1%%ZSMJ18%%) is the distance between the i%%ZSMJ19%%-th city and the j%%ZSMJ20%%-th point."
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (1≤n≤20$$$1 \\le n \\le 20$$$; 1≤m≤5⋅104$$$1 \\le m \\le 5 \\cdot 10^4$$$) — the number of cities and the number of points.",
+      "Next n$$$n$$$ lines contains m$$$m$$$ integers each: the j$$$j$$$-th integer of the i$$$i$$$-th line di,j$$$d_{i, j}$$$ (1≤di,j≤n+1$$$1 \\le d_{i, j} \\le n + 1$$$) is the distance between the i$$$i$$$-th city and the j$$$j$$$-th point."
     ],
     "output": [
-      "It can be shown that the expected number of points Monocarp conquers at the end of the n%%ZSMJ21%%-th turn can be represented as an irreducible fraction xy%%ZSMJ22%%. Print this fraction modulo 998244353%%ZSMJ23%%, i. e. value x⋅y−1mod998244353%%ZSMJ24%% where y−1%%ZSMJ25%% is such number that y⋅y−1mod998244353=1%%ZSMJ26%%."
+      "It can be shown that the expected number of points Monocarp conquers at the end of the n$$$n$$$-th turn can be represented as an irreducible fraction xy$$$\\frac{x}{y}$$$. Print this fraction modulo 998244353$$$998\\,244\\,353$$$, i. e. value x⋅y−1mod998244353$$$x \\cdot y^{-1} \\bmod 998244353$$$ where y−1$$$y^{-1}$$$ is such number that y⋅y−1mod998244353=1$$$y \\cdot y^{-1} \\bmod 998244353 = 1$$$."
     ],
     "note": [
       "Let's look at all possible orders of cities Monuments will be build in:",
-      "[1,2,3]%%ZSMJ27%%:   the first city controls all points at distance at most 3%%ZSMJ28%%, in other words, points 1%%ZSMJ29%% and 4%%ZSMJ30%%;",
-      "the second city controls all points at distance at most 2%%ZSMJ31%%, or points 1%%ZSMJ32%%, 3%%ZSMJ33%% and 5%%ZSMJ34%%;",
-      "the third city controls all points at distance at most 1%%ZSMJ35%%, or point 1%%ZSMJ36%%.",
-      "[1,3,2]%%ZSMJ38%%: the first city controls points 1%%ZSMJ39%% and 4%%ZSMJ40%%; the second city — points 1%%ZSMJ41%% and 3%%ZSMJ42%%; the third city — point 1%%ZSMJ43%%. In total, 3%%ZSMJ44%% points.",
-      "[2,1,3]%%ZSMJ45%%: the first city controls point 1%%ZSMJ46%%; the second city — points 1%%ZSMJ47%%, 3%%ZSMJ48%% and 5%%ZSMJ49%%; the third city — point 1%%ZSMJ50%%. In total, 3%%ZSMJ51%% points.",
-      "[2,3,1]%%ZSMJ52%%: the first city controls point 1%%ZSMJ53%%; the second city — points 1%%ZSMJ54%%, 3%%ZSMJ55%% and 5%%ZSMJ56%%; the third city — point 1%%ZSMJ57%%. In total, 3%%ZSMJ58%% points.",
-      "[3,1,2]%%ZSMJ59%%: the first city controls point 1%%ZSMJ60%%; the second city — points 1%%ZSMJ61%% and 3%%ZSMJ62%%; the third city — points 1%%ZSMJ63%% and 5%%ZSMJ64%%. In total, 3%%ZSMJ65%% points.",
-      "[3,2,1]%%ZSMJ66%%: the first city controls point 1%%ZSMJ67%%; the second city — points 1%%ZSMJ68%%, 3%%ZSMJ69%% and 5%%ZSMJ70%%; the third city — points 1%%ZSMJ71%% and 5%%ZSMJ72%%. In total, 3%%ZSMJ73%% points."
+      "[1,2,3]$$$[1, 2, 3]$$$:   the first city controls all points at distance at most 3$$$3$$$, in other words, points 1$$$1$$$ and 4$$$4$$$;",
+      "the second city controls all points at distance at most 2$$$2$$$, or points 1$$$1$$$, 3$$$3$$$ and 5$$$5$$$;",
+      "the third city controls all points at distance at most 1$$$1$$$, or point 1$$$1$$$.",
+      "[1,3,2]$$$[1, 3, 2]$$$: the first city controls points 1$$$1$$$ and 4$$$4$$$; the second city — points 1$$$1$$$ and 3$$$3$$$; the third city — point 1$$$1$$$. In total, 3$$$3$$$ points.",
+      "[2,1,3]$$$[2, 1, 3]$$$: the first city controls point 1$$$1$$$; the second city — points 1$$$1$$$, 3$$$3$$$ and 5$$$5$$$; the third city — point 1$$$1$$$. In total, 3$$$3$$$ points.",
+      "[2,3,1]$$$[2, 3, 1]$$$: the first city controls point 1$$$1$$$; the second city — points 1$$$1$$$, 3$$$3$$$ and 5$$$5$$$; the third city — point 1$$$1$$$. In total, 3$$$3$$$ points.",
+      "[3,1,2]$$$[3, 1, 2]$$$: the first city controls point 1$$$1$$$; the second city — points 1$$$1$$$ and 3$$$3$$$; the third city — points 1$$$1$$$ and 5$$$5$$$. In total, 3$$$3$$$ points.",
+      "[3,2,1]$$$[3, 2, 1]$$$: the first city controls point 1$$$1$$$; the second city — points 1$$$1$$$, 3$$$3$$$ and 5$$$5$$$; the third city — points 1$$$1$$$ and 5$$$5$$$. In total, 3$$$3$$$ points."
     ]
   },
   "examples": [
@@ -38,5 +38,31 @@
       "input": "3 5\n1 4 4 3 4\n1 4 1 4 2\n1 4 4 4 3",
       "output": "166374062"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

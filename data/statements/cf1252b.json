@@ -9,23 +9,23 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "The new ICPC town has N%%ZSMJ0%% junctions (numbered from 1%%ZSMJ1%% to N%%ZSMJ2%%) which are connected by N−1%%ZSMJ3%% roads. It is possible from one junction to go to any other junctions by going through one or more roads. To make sure all the junctions are well-maintained, the government environment agency is planning to deploy their newest advanced cleaning robots. In addition to its cleaning ability, each robot is also equipped with a movement ability such that it can move from one junction to any other junctions connected by roads. However, as you might have guessed, such robots are not cheap. Therefore, the agency is considering the following deployment plan.",
-      "Let Tk%%ZSMJ4%% be the set of junctions which should be cleaned by the kth%%ZSMJ5%% robot (also known as, the robot's task), and |Tk|≥1%%ZSMJ6%% be the number of junctions in Tk%%ZSMJ7%%. The junctions in Tk%%ZSMJ8%% form a path, i.e. there exists a sequence of v1,v2,…,v|Tk|%%ZSMJ9%% where vi∈Tk%%ZSMJ10%% and vi≠vj%%ZSMJ11%% for all i≠j%%ZSMJ12%% such that each adjacent junction in this sequence is connected by a road. The union of T%%ZSMJ13%% for all robots is equal to the set of all junctions in ICPC town. On the other hand, no two robots share a common junction, i.e. Ti∩Tj=∅%%ZSMJ14%% if i≠j%%ZSMJ15%%.",
-      "To avoid complaints from citizens for an inefficient operation, the deployment plan should be irreducible; in other words, there should be no two robots, i%%ZSMJ16%% and j%%ZSMJ17%%, such that Ti∪Tj%%ZSMJ18%% forms a (longer) path. Note that the agency does not care whether the number of robots being used is minimized as long as all the tasks are irreducible.",
+      "The new ICPC town has N$$$N$$$ junctions (numbered from 1$$$1$$$ to N$$$N$$$) which are connected by N−1$$$N-1$$$ roads. It is possible from one junction to go to any other junctions by going through one or more roads. To make sure all the junctions are well-maintained, the government environment agency is planning to deploy their newest advanced cleaning robots. In addition to its cleaning ability, each robot is also equipped with a movement ability such that it can move from one junction to any other junctions connected by roads. However, as you might have guessed, such robots are not cheap. Therefore, the agency is considering the following deployment plan.",
+      "Let Tk$$$T_k$$$ be the set of junctions which should be cleaned by the kth$$$k^{th}$$$ robot (also known as, the robot's task), and |Tk|≥1$$$|T_k| \\ge 1$$$ be the number of junctions in Tk$$$T_k$$$. The junctions in Tk$$$T_k$$$ form a path, i.e. there exists a sequence of v1,v2,…,v|Tk|$$$v_1, v_2, \\dots, v_{|T_k|}$$$ where vi∈Tk$$$v_i \\in T_k$$$ and vi≠vj$$$v_i \\neq v_j$$$ for all i≠j$$$i \\neq j$$$ such that each adjacent junction in this sequence is connected by a road. The union of T$$$T$$$ for all robots is equal to the set of all junctions in ICPC town. On the other hand, no two robots share a common junction, i.e. Ti∩Tj=∅$$$T_i \\cap T_j = \\emptyset$$$ if i≠j$$$i \\neq j$$$.",
+      "To avoid complaints from citizens for an inefficient operation, the deployment plan should be irreducible; in other words, there should be no two robots, i$$$i$$$ and j$$$j$$$, such that Ti∪Tj$$$T_i \\cup T_j$$$ forms a (longer) path. Note that the agency does not care whether the number of robots being used is minimized as long as all the tasks are irreducible.",
       "Your task in this problem is to count the number of feasible deployment plan given the town's layout. A plan is feasible if and only if it satisfies all the above-mentioned requirements.",
-      "For example, let N=6%%ZSMJ19%% and the roads are {(1,3),(2,3),(3,4),(4,5),(4,6)}%%ZSMJ20%%. There are 5%%ZSMJ21%% feasible deployment plans as shown in the following figure.",
+      "For example, let N=6$$$N = 6$$$ and the roads are {(1,3),(2,3),(3,4),(4,5),(4,6)}$$$\\{(1,3),(2,3),(3,4),(4,5),(4,6)\\}$$$. There are 5$$$5$$$ feasible deployment plans as shown in the following figure.",
       "![](https://espresso.codeforces.com/a2ab9a92d4f58eedf151f5cccfe32fa9dc97d463.png)",
-      "The first plan uses 2%%ZSMJ22%% robots (labeled as A and B in the figure) to clean {1,2,3}%%ZSMJ23%% and {4,5,6}%%ZSMJ24%%.",
-      "The second plan uses 3%%ZSMJ25%% robots (labeled as A, B, and C in the figure) to clean {1,3,4,6}%%ZSMJ26%%, {2}%%ZSMJ27%%, and {5}%%ZSMJ28%%.",
-      "The third plan uses 3%%ZSMJ29%% robots to clean {1,3,4,5}%%ZSMJ30%%, {2}%%ZSMJ31%%, and {6}%%ZSMJ32%%.",
-      "The fourth plan uses 3%%ZSMJ33%% robots to clean {1}%%ZSMJ34%%, {2,3,4,6}%%ZSMJ35%%, and {5}%%ZSMJ36%%.",
-      "The fifth plan uses 3%%ZSMJ37%% robots to clean {1}%%ZSMJ38%%, {2,3,4,5}%%ZSMJ39%%, and {6}%%ZSMJ40%%."
+      "The first plan uses 2$$$2$$$ robots (labeled as A and B in the figure) to clean {1,2,3}$$$\\{1,2,3\\}$$$ and {4,5,6}$$$\\{4,5,6\\}$$$.",
+      "The second plan uses 3$$$3$$$ robots (labeled as A, B, and C in the figure) to clean {1,3,4,6}$$$\\{1,3,4,6\\}$$$, {2}$$$\\{2\\}$$$, and {5}$$$\\{5\\}$$$.",
+      "The third plan uses 3$$$3$$$ robots to clean {1,3,4,5}$$$\\{1,3,4,5\\}$$$, {2}$$$\\{2\\}$$$, and {6}$$$\\{6\\}$$$.",
+      "The fourth plan uses 3$$$3$$$ robots to clean {1}$$$\\{1\\}$$$, {2,3,4,6}$$$\\{2,3,4,6\\}$$$, and {5}$$$\\{5\\}$$$.",
+      "The fifth plan uses 3$$$3$$$ robots to clean {1}$$$\\{1\\}$$$, {2,3,4,5}$$$\\{2,3,4,5\\}$$$, and {6}$$$\\{6\\}$$$."
     ],
     "input": [
-      "Input begins with a line containing an integer: N%%ZSMJ47%% (1≤N≤100000%%ZSMJ48%%) representing the number of junctions. The next N−1%%ZSMJ49%% lines each contains two integers: ui%%ZSMJ50%% vi%%ZSMJ51%% (1≤ui<vi≤N%%ZSMJ52%%) representing a road connecting junction ui%%ZSMJ53%% and junction vi%%ZSMJ54%%. It is guaranteed that it is possible from one junction to go to any other junctions by going through one or more roads."
+      "Input begins with a line containing an integer: N$$$N$$$ (1≤N≤100000$$$1 \\le N \\le 100\\,000$$$) representing the number of junctions. The next N−1$$$N-1$$$ lines each contains two integers: ui$$$u_i$$$ vi$$$v_i$$$ (1≤ui<vi≤N$$$1 \\le u_i  \\lt  v_i \\le N$$$) representing a road connecting junction ui$$$u_i$$$ and junction vi$$$v_i$$$. It is guaranteed that it is possible from one junction to go to any other junctions by going through one or more roads."
     ],
     "output": [
-      "Output in a line an integer representing the number of feasible deployment plans. As this output can be large, you need to modulo the output by 1000000007%%ZSMJ55%%."
+      "Output in a line an integer representing the number of feasible deployment plans. As this output can be large, you need to modulo the output by 1000000007$$$1\\,000\\,000\\,007$$$."
     ],
     "note": [
       "Explanation for the sample input/output #1",
@@ -41,5 +41,30 @@
       "input": "5\n1 2\n2 3\n2 4\n4 5",
       "output": "3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

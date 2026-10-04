@@ -1,0 +1,31 @@
+{
+  "code": "GYM102862I",
+  "letter": "I",
+  "title": "I. Strange Mex",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102862/problem/I",
+  "difficulty": "*1900",
+  "timeLimit": "3 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a multiset of integers, which is initially empty. Then you need to process q%%ZSMJ0%% queries. With each query, you either add or remove a single integer in the multiset.",
+      "After each query you need to calculate the maximum possible mex of the multiset you can obtain, if you can apply the following operations. With a single operation, you can take an element x%%ZSMJ1%% that appears at least twice in the multiset, remove one of them and add either x−1%%ZSMJ2%% or x+1%%ZSMJ3%%. These operations do not affect the multiset for the next query.",
+      "Mex stands for \"minimum excluded\": the mex of a multiset of numbers is equal to the smallest non-negative integer which is not present in the multiset. For example, mex({0,1,1,2,4,4})=3%%ZSMJ4%%. However, in this problem you can convert this multiset to {0,1,2,3,4,5}%%ZSMJ5%%, in which case mex becomes 6%%ZSMJ6%%."
+    ],
+    "input": [
+      "The first line contains a single integer q%%ZSMJ7%% (1≤q≤106%%ZSMJ8%%), the number of queries. The next q%%ZSMJ9%% lines describe the queries. The i%%ZSMJ10%%-th of them contains two integers ti%%ZSMJ11%%, ai%%ZSMJ12%% (1≤ti≤2%%ZSMJ13%%, 0≤ai≤106%%ZSMJ14%%):",
+      "if ti=1%%ZSMJ15%%, you need to add ai%%ZSMJ16%% to the multiset;",
+      "if ti=2%%ZSMJ17%%, you need to remove one element ai%%ZSMJ18%% from the multiset."
+    ],
+    "output": [
+      "After each query, output a single integer, the maximum possible mex of the multiset you can obtain using the given operations."
+    ]
+  },
+  "examples": [
+    {
+      "input": "9\n1 0\n1 1\n1 1\n1 2\n1 4\n1 4\n2 1\n2 2\n1 4",
+      "output": "1\n2\n3\n4\n5\n6\n5\n2\n5"
+    }
+  ]
+}

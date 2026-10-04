@@ -1,0 +1,34 @@
+{
+  "code": "GYM100488L",
+  "letter": "L",
+  "title": "L. Two Heads Are Better",
+  "contest": null,
+  "url": "https://codeforces.com/gym/100488/problem/L",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "World famous scientist Innokentiy has started studying сomputability theory and invented a new abstract executor that represents a tape of n cells, each of which contains a lowercase Latin letter. Two heads can move along the tape, each pointing at some cell. This device can execute the following instructions: to move the specified head to the left or to the right by one cell, to reverse the part of the tape between two heads, including the cells the heads point at, and to answer the request which symbol the specified head points at. Innokentiy asked you to help him to emulate the work of this device since the program he has written works too slow."
+    ],
+    "input": [
+      "The first line contains three integers separated by spaces: n, l and r (1 ≤ n ≤ 105, 1 ≤ l < r ≤ n) — the number of cells in the tape and the initial positions of the left and the right head, correspondingly.",
+      "The second line contains n lowercase Latin letters, written in the cells.",
+      "The third line contains a single integer m (1 ≤ m ≤ 3·105) — the number of queries.",
+      "In the next m lines there are the queries in the following form.",
+      "S X Y — to move the head X in direction Y, where X can be L for the left head and R for the right one, and Y can be L for moving left or R for moving right.",
+      "R — to reverse the part of the tape between the heads, including the cells the heads point at.",
+      "Q X — to ask which character the head X points at, where X can be L for the left head and R for the right one.",
+      "It is guaranteed that the left head always remains to the left of the right head and that the heads don't move out of the tape."
+    ],
+    "output": [
+      "Output one string, containing all the answers for the queries of the last type. The k-th character of this string must be the answer to the k-th query of the type «Q X»."
+    ]
+  },
+  "examples": [
+    {
+      "input": "11 2 6\nabracadabra\n12\nQ L\nQ R\nR\nQ L\nQ R\nS L R\nS R R\nQ L\nQ R\nR\nQ L\nQ R",
+      "output": "baabcddc"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "code": "CF1957C",
+  "letter": "C",
+  "title": "C. How Does the Rook Move?",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1957/C",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an n×n%%ZSMJ0%% chessboard where you and the computer take turns alternatingly to place white rooks & black rooks on the board respectively. While placing rooks, you have to ensure that no two rooks attack each other. Two rooks attack each other if they share the same row or column regardless of color.",
+      "A valid move is placing a rook on a position (r%%ZSMJ1%%, c%%ZSMJ2%%) such that it doesn't attack any other rook.",
+      "You start first, and when you make a valid move in your turn, placing a white rook at position (r%%ZSMJ3%%, c%%ZSMJ4%%), the computer will mirror you and place a black rook at position (c%%ZSMJ5%%, r%%ZSMJ6%%) in its turn. If r=c%%ZSMJ7%%, then the computer can't mirror your move, and skips its turn.",
+      "You have already played k%%ZSMJ8%% moves with the computer (the computer tries to mirror these moves too), and you must continue playing the game until there are no valid moves remaining. How many different final configurations are possible when you continue the game after the k%%ZSMJ9%% moves? It is guaranteed that the k%%ZSMJ10%% moves and the implied computer moves are valid. Since the answer may be large, print it modulo 109+7%%ZSMJ11%%.",
+      "Two configurations are considered different if there exists a coordinate (r%%ZSMJ12%%, c%%ZSMJ13%%) which has a rook in one configuration, but not in the other or the color of the rook on the coordinate is different."
+    ],
+    "input": [
+      "The first line contains a single integer t%%ZSMJ14%% (1≤t≤104%%ZSMJ15%%) — the number of test cases.",
+      "The first line of each test case contains two integers n%%ZSMJ16%% and k%%ZSMJ17%% (1≤n≤3⋅105%%ZSMJ18%%, 0≤k≤n%%ZSMJ19%%) — the size of the chessboard and the number of moves you have already played respectively.",
+      "Each of the next k%%ZSMJ20%% lines of the test case contains two integers ri%%ZSMJ21%% and ci%%ZSMJ22%%, denoting the i%%ZSMJ23%%-th move you made.",
+      "It is guaranteed that the k%%ZSMJ24%% moves and the implied computer moves are valid.",
+      "It is guaranteed that the sum of n%%ZSMJ25%% over all test cases does not exceed 3⋅105%%ZSMJ26%%."
+    ],
+    "output": [
+      "For each test case, output a single integer on a new line — the total number of possible final configurations modulo 109+7%%ZSMJ27%%."
+    ],
+    "note": [
+      "In the first test case, we have a 4×4%%ZSMJ28%% grid and you've already played 1%%ZSMJ29%% move. After you and the computer play a turn, we have a white rook at (1%%ZSMJ30%%, 2%%ZSMJ31%%), and a black rook at (2%%ZSMJ32%%, 1%%ZSMJ33%%). There are three possible configurations from this state —",
+      "You place a white rook at (3%%ZSMJ34%%, 4%%ZSMJ35%%) and the computer places a black rook at (4%%ZSMJ36%%, 3%%ZSMJ37%%) as a response.",
+      "You place a white rook at (4%%ZSMJ38%%, 3%%ZSMJ39%%) and the computer places a black rook at (3%%ZSMJ40%%, 4%%ZSMJ41%%) as a response.",
+      "You place a white rook at (3%%ZSMJ42%%, 3%%ZSMJ43%%) and then at (4%%ZSMJ44%%, 4%%ZSMJ45%%), or the other way around. They both result in the same configuration.",
+      "![](https://espresso.codeforces.com/393ca3da2a463c5f4157d901fb4ff2f4cbc9a101.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4 1\n1 2\n8 1\n7 6\n1000 4\n4 4\n952 343\n222 333\n90 91",
+      "output": "3\n331\n671968183"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "code": "CF1067B",
+  "letter": "B",
+  "title": "B. Multihedgehog",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1067/B",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Someone give a strange birthday present to Ivan. It is hedgehog — connected undirected graph in which one vertex has degree at least 3%%ZSMJ0%% (we will call it center) and all other vertices has degree 1. Ivan thought that hedgehog is too boring and decided to make himself k%%ZSMJ1%%-multihedgehog.",
+      "Let us define k%%ZSMJ2%%-multihedgehog as follows:",
+      "1%%ZSMJ3%%-multihedgehog is hedgehog: it has one vertex of degree at least 3%%ZSMJ4%% and some vertices of degree 1.",
+      "For all k≥2%%ZSMJ5%%, k%%ZSMJ6%%-multihedgehog is (k−1)%%ZSMJ7%%-multihedgehog in which the following changes has been made for each vertex v%%ZSMJ8%% with degree 1: let u%%ZSMJ9%% be its only neighbor; remove vertex v%%ZSMJ10%%, create a new hedgehog with center at vertex w%%ZSMJ11%% and connect vertices u%%ZSMJ12%% and w%%ZSMJ13%% with an edge. New hedgehogs can differ from each other and the initial gift.",
+      "Thereby k%%ZSMJ14%%-multihedgehog is a tree. Ivan made k%%ZSMJ15%%-multihedgehog but he is not sure that he did not make any mistakes. That is why he asked you to check if his tree is indeed k%%ZSMJ16%%-multihedgehog."
+    ],
+    "input": [
+      "First line of input contains 2%%ZSMJ17%% integers n%%ZSMJ18%%, k%%ZSMJ19%% (1≤n≤105%%ZSMJ20%%, 1≤k≤109%%ZSMJ21%%) — number of vertices and hedgehog parameter.",
+      "Next n−1%%ZSMJ22%% lines contains two integers u%%ZSMJ23%% v%%ZSMJ24%% (1≤u,v≤n;u≠v%%ZSMJ25%%) — indices of vertices connected by edge.",
+      "It is guaranteed that given graph is a tree."
+    ],
+    "output": [
+      "Print \"Yes\" (without quotes), if given graph is k%%ZSMJ26%%-multihedgehog, and \"No\" (without quotes) otherwise."
+    ],
+    "note": [
+      "2-multihedgehog from the first example looks like this:",
+      "![](https://espresso.codeforces.com/eb97e0cdfc23392dd97429ddb201075dca861d9d.png)",
+      "Its center is vertex 13%%ZSMJ27%%. Hedgehogs created on last step are: [4 (center), 1, 2, 3], [6 (center), 7, 8, 9], [5 (center), 10, 11, 12, 13].",
+      "Tree from second example is not a hedgehog because degree of center should be at least 3%%ZSMJ28%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "14 2\n1 4\n2 4\n3 4\n4 13\n10 5\n11 5\n12 5\n14 5\n5 13\n6 7\n8 6\n13 6\n9 6",
+      "output": "Yes"
+    },
+    {
+      "input": "3 1\n1 3\n2 3",
+      "output": "No"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "code": "CF1118E",
+  "letter": "E",
+  "title": "E. Yet Another Ball Problem",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1118/E",
+  "difficulty": "1700",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The king of Berland organizes a ball! n%%ZSMJ0%% pair are invited to the ball, they are numbered from 1%%ZSMJ1%% to n%%ZSMJ2%%. Each pair consists of one man and one woman. Each dancer (either man or woman) has a monochrome costume. The color of each costume is represented by an integer from 1%%ZSMJ3%% to k%%ZSMJ4%%, inclusive.",
+      "Let bi%%ZSMJ5%% be the color of the man's costume and gi%%ZSMJ6%% be the color of the woman's costume in the i%%ZSMJ7%%-th pair. You have to choose a color for each dancer's costume (i.e. values b1,b2,…,bn%%ZSMJ8%% and g1,g2,…gn%%ZSMJ9%%) in such a way that:",
+      "for every i%%ZSMJ10%%: bi%%ZSMJ11%% and gi%%ZSMJ12%% are integers between 1%%ZSMJ13%% and k%%ZSMJ14%%, inclusive;",
+      "there are no two completely identical pairs, i.e. no two indices i,j%%ZSMJ15%% (i≠j%%ZSMJ16%%) such that bi=bj%%ZSMJ17%% and gi=gj%%ZSMJ18%% at the same time;",
+      "there is no pair such that the color of the man's costume is the same as the color of the woman's costume in this pair, i.e. bi≠gi%%ZSMJ19%% for every i%%ZSMJ20%%;",
+      "for each two consecutive (adjacent) pairs both man's costume colors and woman's costume colors differ, i.e. for every i%%ZSMJ21%% from 1%%ZSMJ22%% to n−1%%ZSMJ23%% the conditions bi≠bi+1%%ZSMJ24%% and gi≠gi+1%%ZSMJ25%% hold.",
+      "Let's take a look at the examples of bad and good color choosing (for n=4%%ZSMJ26%% and k=3%%ZSMJ27%%, man is the first in a pair and woman is the second):",
+      "Bad color choosing:",
+      "(1,2)%%ZSMJ28%%, (2,3)%%ZSMJ29%%, (3,2)%%ZSMJ30%%, (1,2)%%ZSMJ31%% — contradiction with the second rule (there are equal pairs);",
+      "(2,3)%%ZSMJ32%%, (1,1)%%ZSMJ33%%, (3,2)%%ZSMJ34%%, (1,3)%%ZSMJ35%% — contradiction with the third rule (there is a pair with costumes of the same color);",
+      "(1,2)%%ZSMJ36%%, (2,3)%%ZSMJ37%%, (1,3)%%ZSMJ38%%, (2,1)%%ZSMJ39%% — contradiction with the fourth rule (there are two consecutive pairs such that colors of costumes of men/women are the same).",
+      "Good color choosing:",
+      "(1,2)%%ZSMJ40%%, (2,1)%%ZSMJ41%%, (1,3)%%ZSMJ42%%, (3,1)%%ZSMJ43%%;",
+      "(1,2)%%ZSMJ44%%, (3,1)%%ZSMJ45%%, (2,3)%%ZSMJ46%%, (3,2)%%ZSMJ47%%;",
+      "(3,1)%%ZSMJ48%%, (1,2)%%ZSMJ49%%, (2,3)%%ZSMJ50%%, (3,2)%%ZSMJ51%%.",
+      "You have to find any suitable color choosing or say that no suitable choosing exists."
+    ],
+    "input": [
+      "The only line of the input contains two integers n%%ZSMJ52%% and k%%ZSMJ53%% (2≤n,k≤2⋅105%%ZSMJ54%%) — the number of pairs and the number of colors."
+    ],
+    "output": [
+      "If it is impossible to find any suitable colors choosing, print \"NO\".",
+      "Otherwise print \"YES\" and then the colors of the costumes of pairs in the next n%%ZSMJ55%% lines. The i%%ZSMJ56%%-th line should contain two integers bi%%ZSMJ57%% and gi%%ZSMJ58%% — colors of costumes of man and woman in the i%%ZSMJ59%%-th pair, respectively.",
+      "You can print each letter in any case (upper or lower). For example, \"YeS\", \"no\" and \"yES\" are all acceptable."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 3",
+      "output": "YES\n3 1\n1 3\n3 2\n2 3"
+    },
+    {
+      "input": "10 4",
+      "output": "YES\n2 1\n1 3\n4 2\n3 4\n4 3\n3 2\n2 4\n4 1\n1 4\n3 1"
+    },
+    {
+      "input": "13 4",
+      "output": "NO"
+    }
+  ]
+}

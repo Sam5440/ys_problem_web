@@ -1,0 +1,39 @@
+{
+  "code": "CF590B",
+  "letter": "B",
+  "title": "B. Chip 'n Dale Rescue Rangers",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/590/B",
+  "difficulty": "2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A team of furry rescue rangers was sitting idle in their hollow tree when suddenly they received a signal of distress. In a few moments they were ready, and the dirigible of the rescue chipmunks hit the road.",
+      "We assume that the action takes place on a Cartesian plane. The headquarters of the rescuers is located at point (x1, y1), and the distress signal came from the point (x2, y2).",
+      "Due to Gadget's engineering talent, the rescuers' dirigible can instantly change its current velocity and direction of movement at any moment and as many times as needed. The only limitation is: the speed of the aircraft relative to the air can not exceed ![](https://espresso.codeforces.com/05a28aed63c92fafe8f32513b33646154faf8683.png) meters per second.",
+      "Of course, Gadget is a true rescuer and wants to reach the destination as soon as possible. The matter is complicated by the fact that the wind is blowing in the air and it affects the movement of the dirigible. According to the weather forecast, the wind will be defined by the vector (vx, vy) for the nearest t seconds, and then will change to (wx, wy). These vectors give both the direction and velocity of the wind. Formally, if a dirigible is located at the point (x, y), while its own velocity relative to the air is equal to zero and the wind (ux, uy) is blowing, then after ![](https://espresso.codeforces.com/c9148a5f77a39b4083611f2ac760c9479d17582c.png) seconds the new position of the dirigible will be ![](https://espresso.codeforces.com/f42cccc4419e311f702830ad221b81f335011df6.png).",
+      "Gadget is busy piloting the aircraft, so she asked Chip to calculate how long will it take them to reach the destination if they fly optimally. He coped with the task easily, but Dale is convinced that Chip has given the random value, aiming only not to lose the face in front of Gadget. Dale has asked you to find the right answer.",
+      "It is guaranteed that the speed of the wind at any moment of time is strictly less than the maximum possible speed of the airship relative to the air."
+    ],
+    "input": [
+      "The first line of the input contains four integers x1, y1, x2, y2 (|x1|,  |y1|,  |x2|,  |y2| ≤ 10 000) — the coordinates of the rescuers' headquarters and the point, where signal of the distress came from, respectively.",
+      "The second line contains two integers ![](https://espresso.codeforces.com/05a28aed63c92fafe8f32513b33646154faf8683.png) and t (0 < v, t ≤ 1000), which are denoting the maximum speed of the chipmunk dirigible relative to the air and the moment of time when the wind changes according to the weather forecast, respectively.",
+      "Next follow one per line two pairs of integer (vx, vy) and (wx, wy), describing the wind for the first t seconds and the wind that will blow at all the remaining time, respectively. It is guaranteed that ![](https://espresso.codeforces.com/4ddbd171d9061576ebb160327d6360a2129809aa.png) and ![](https://espresso.codeforces.com/e2970f5978fa0d3691dc2f7ae02f0c21a76e2d47.png)."
+    ],
+    "output": [
+      "Print a single real value — the minimum time the rescuers need to get to point (x2, y2). You answer will be considered correct if its absolute or relative error does not exceed 10 - 6.",
+      "Namely: let's assume that your answer is a, and the answer of the jury is b. The checker program will consider your answer correct, if ![](https://espresso.codeforces.com/c97ba2000ebfad962bff7ffd8d043594f5ae1086.png)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "0 0 5 5\n3 2\n-1 -1\n-1 0",
+      "output": "3.729935587093555327"
+    },
+    {
+      "input": "0 0 0 1000\n100 1000\n-50 0\n50 0",
+      "output": "11.547005383792516398"
+    }
+  ]
+}

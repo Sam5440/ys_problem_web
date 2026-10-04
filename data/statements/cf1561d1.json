@@ -1,0 +1,47 @@
+{
+  "code": "CF1561D1",
+  "letter": "D1",
+  "title": "D1. Up the Strip (simplified version)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1561/D1",
+  "difficulty": "1700",
+  "timeLimit": "6 seconds",
+  "memoryLimit": "128 megabytes",
+  "sections": {
+    "legend": [
+      "This version of the problem differs from the next one only in the constraint on n%%ZSMJ0%%.",
+      "Note that the memory limit in this problem is lower than in others.",
+      "You have a vertical strip with n%%ZSMJ1%% cells, numbered consecutively from 1%%ZSMJ2%% to n%%ZSMJ3%% from top to bottom.",
+      "You also have a token that is initially placed in cell n%%ZSMJ4%%. You will move the token up until it arrives at cell 1%%ZSMJ5%%.",
+      "Let the token be in cell x>1%%ZSMJ6%% at some moment. One shift of the token can have either of the following kinds:",
+      "Subtraction: you choose an integer y%%ZSMJ7%% between 1%%ZSMJ8%% and x−1%%ZSMJ9%%, inclusive, and move the token from cell x%%ZSMJ10%% to cell x−y%%ZSMJ11%%.",
+      "Floored division: you choose an integer z%%ZSMJ12%% between 2%%ZSMJ13%% and x%%ZSMJ14%%, inclusive, and move the token from cell x%%ZSMJ15%% to cell ⌊xz⌋%%ZSMJ16%% (x%%ZSMJ17%% divided by z%%ZSMJ18%% rounded down).",
+      "Find the number of ways to move the token from cell n%%ZSMJ19%% to cell 1%%ZSMJ20%% using one or more shifts, and print it modulo m%%ZSMJ21%%. Note that if there are several ways to move the token from one cell to another in one shift, all these ways are considered distinct (check example explanation for a better understanding)."
+    ],
+    "input": [
+      "The only line contains two integers n%%ZSMJ22%% and m%%ZSMJ23%% (2≤n≤2⋅105%%ZSMJ24%%; 108<m<109%%ZSMJ25%%; m%%ZSMJ26%% is a prime number) — the length of the strip and the modulo."
+    ],
+    "output": [
+      "Print the number of ways to move the token from cell n%%ZSMJ27%% to cell 1%%ZSMJ28%%, modulo m%%ZSMJ29%%."
+    ],
+    "note": [
+      "In the first test, there are three ways to move the token from cell 3%%ZSMJ30%% to cell 1%%ZSMJ31%% in one shift: using subtraction of y=2%%ZSMJ32%%, or using division by z=2%%ZSMJ33%% or z=3%%ZSMJ34%%.",
+      "There are also two ways to move the token from cell 3%%ZSMJ35%% to cell 1%%ZSMJ36%% via cell 2%%ZSMJ37%%: first subtract y=1%%ZSMJ38%%, and then either subtract y=1%%ZSMJ39%% again or divide by z=2%%ZSMJ40%%.",
+      "Therefore, there are five ways in total."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 998244353",
+      "output": "5"
+    },
+    {
+      "input": "5 998244353",
+      "output": "25"
+    },
+    {
+      "input": "42 998244353",
+      "output": "793019428"
+    }
+  ]
+}

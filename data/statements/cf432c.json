@@ -1,0 +1,39 @@
+{
+  "code": "CF432C",
+  "letter": "C",
+  "title": "C. Prime Swaps",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/432/C",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You have an array a[1], a[2], ..., a[n], containing distinct integers from 1 to n. Your task is to sort this array in increasing order with the following operation (you may need to apply it multiple times):",
+      "choose two indexes, i and j (1 ≤ i < j ≤ n; (j - i + 1) is a prime number);",
+      "swap the elements on positions i and j; in other words, you are allowed to apply the following sequence of assignments: tmp = a[i], a[i] = a[j], a[j] = tmp (tmp is a temporary variable).",
+      "You do not need to minimize the number of used operations. However, you need to make sure that there are at most 5n operations."
+    ],
+    "input": [
+      "The first line contains integer n (1 ≤ n ≤ 105). The next line contains n distinct integers a[1], a[2], ..., a[n] (1 ≤ a[i] ≤ n)."
+    ],
+    "output": [
+      "In the first line, print integer k (0 ≤ k ≤ 5n) — the number of used operations. Next, print the operations. Each operation must be printed as \"i j\" (1 ≤ i < j ≤ n; (j - i + 1) is a prime).",
+      "If there are multiple answers, you can print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n3 2 1",
+      "output": "1\n1 3"
+    },
+    {
+      "input": "2\n1 2",
+      "output": "0"
+    },
+    {
+      "input": "4\n4 2 3 1",
+      "output": "3\n2 4\n1 2\n2 4"
+    }
+  ]
+}

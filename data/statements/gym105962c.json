@@ -1,0 +1,52 @@
+{
+  "code": "GYM105962C",
+  "letter": "C",
+  "title": "C. Hacking the Matrix",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105962/problem/C",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/3de1874bb3d73bc03ca036820539d1cc2247b75f.png)",
+      "Cláudia is an outstanding researcher and is always looking for new challenges. Thus, she decides to attack the root of all evil in society: the Matrix.",
+      "The Matrix can be seen as an N×N%%ZSMJ0%% binary grid, that is, a table with N%%ZSMJ1%% rows and N%%ZSMJ2%% columns consisting only of 0%%ZSMJ3%%s and 1%%ZSMJ4%%s.",
+      "With all her knowledge, Cláudia can perform two operations on the Matrix:",
+      "Choose two integers i%%ZSMJ5%% and j%%ZSMJ6%% (1≤i,j≤N%%ZSMJ7%% and i≠j%%ZSMJ8%%) and swap column i%%ZSMJ9%% with column j%%ZSMJ10%% of the grid, that is, for all 1≤k≤N%%ZSMJ11%%, swap the positions (k,i)%%ZSMJ12%% and (k,j)%%ZSMJ13%% of the grid;",
+      "Choose two integers i%%ZSMJ14%% and j%%ZSMJ15%% (1≤i,j≤N%%ZSMJ16%% and i≠j%%ZSMJ17%%) and swap row i%%ZSMJ18%% with row j%%ZSMJ19%% of the grid, that is, for all 1≤k≤N%%ZSMJ20%%, swap the positions (i,k)%%ZSMJ21%% and (j,k)%%ZSMJ22%% of the grid;",
+      "Thus, to demonstrate her dominance over the Matrix, Cláudia decides to form a C (for Cláudia) in the cells of the Matrix made up of 1%%ZSMJ23%%s. We say that a C of size x%%ZSMJ24%% made up of 1%%ZSMJ25%%s exists in the grid if, for a pair of integers a%%ZSMJ26%% and b%%ZSMJ27%% (1≤a,b≤N%%ZSMJ28%%), the positions (a+i,b)%%ZSMJ29%%, (a,b+i)%%ZSMJ30%%, and (a+x,b+i)%%ZSMJ31%% of the grid contain 1%%ZSMJ32%%s for all 0≤i≤x−1%%ZSMJ33%%.",
+      "Help Cláudia by telling, for a given configuration of the Matrix, what is the largest C she can form using the operations at her disposal.",
+      "Due to the time limit of the problem, it is important to submit Python solutions using the PyPy3 compiler."
+    ],
+    "input": [
+      "The first line of the input contains an integer N%%ZSMJ34%% (1≤N≤500%%ZSMJ35%%).",
+      "There will be N%%ZSMJ36%% following lines, where the i%%ZSMJ37%%-th (1≤i≤N%%ZSMJ38%%) contains N%%ZSMJ39%% integers, where the j%%ZSMJ40%%-th (1≤j≤N%%ZSMJ41%%) is the value ai,j%%ZSMJ42%% (0≤ai,j≤1%%ZSMJ43%%) at position (i,j)%%ZSMJ44%% of the Matrix grid."
+    ],
+    "output": [
+      "Print a single integer — the side length of the largest C made up of 1%%ZSMJ45%%s that can be formed by performing any number of operations."
+    ],
+    "note": [
+      "Explanation of the first example: by swapping the second and fourth columns, we get the following configuration of the Matrix:",
+      "0111",
+      "0100",
+      "0111",
+      "0010",
+      "The underlined part shows the C of size 3%%ZSMJ46%% that is formed in the grid after this operation. It can be shown that it is not possible to form a larger C in this case."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n0111\n1001\n0111\n0010",
+      "output": "3"
+    },
+    {
+      "input": "5\n01101\n11001\n01111\n11101\n00010",
+      "output": "3"
+    },
+    {
+      "input": "3\n000\n100\n000",
+      "output": "1"
+    }
+  ]
+}

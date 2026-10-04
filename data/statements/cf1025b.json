@@ -1,0 +1,45 @@
+{
+  "code": "CF1025B",
+  "letter": "B",
+  "title": "B. Weakened Common Divisor",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1025/B",
+  "difficulty": "1600",
+  "timeLimit": "1.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "During the research on properties of the greatest common divisor (GCD) of a set of numbers, Ildar, a famous mathematician, introduced a brand new concept of the weakened common divisor (WCD) of a list of pairs of integers.",
+      "For a given list of pairs of integers (a1,b1)%%ZSMJ0%%, (a2,b2)%%ZSMJ1%%, ..., (an,bn)%%ZSMJ2%% their WCD is arbitrary integer greater than 1%%ZSMJ3%%, such that it divides at least one element in each pair. WCD may not exist for some lists.",
+      "For example, if the list looks like [(12,15),(25,18),(10,24)]%%ZSMJ4%%, then their WCD can be equal to 2%%ZSMJ5%%, 3%%ZSMJ6%%, 5%%ZSMJ7%% or 6%%ZSMJ8%% (each of these numbers is strictly greater than 1%%ZSMJ9%% and divides at least one number in each pair).",
+      "You're currently pursuing your PhD degree under Ildar's mentorship, and that's why this problem was delegated to you. Your task is to calculate WCD efficiently."
+    ],
+    "input": [
+      "The first line contains a single integer n%%ZSMJ10%% (1≤n≤150000%%ZSMJ11%%) — the number of pairs.",
+      "Each of the next n%%ZSMJ12%% lines contains two integer values ai%%ZSMJ13%%, bi%%ZSMJ14%% (2≤ai,bi≤2⋅109%%ZSMJ15%%)."
+    ],
+    "output": [
+      "Print a single integer — the WCD of the set of pairs.",
+      "If there are multiple possible answers, output any; if there is no answer, print −1%%ZSMJ16%%."
+    ],
+    "note": [
+      "In the first example the answer is 6%%ZSMJ17%% since it divides 18%%ZSMJ18%% from the first pair, 24%%ZSMJ19%% from the second and 12%%ZSMJ20%% from the third ones. Note that other valid answers will also be accepted.",
+      "In the second example there are no integers greater than 1%%ZSMJ21%% satisfying the conditions.",
+      "In the third example one of the possible answers is 5%%ZSMJ22%%. Note that, for example, 15%%ZSMJ23%% is also allowed, but it's not necessary to maximize the output."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n17 18\n15 24\n12 15",
+      "output": "6"
+    },
+    {
+      "input": "2\n10 16\n7 17",
+      "output": "-1"
+    },
+    {
+      "input": "5\n90 108\n45 105\n75 40\n165 175\n33 30",
+      "output": "5"
+    }
+  ]
+}

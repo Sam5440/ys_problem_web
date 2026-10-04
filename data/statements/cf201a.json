@@ -1,0 +1,39 @@
+{
+  "code": "CF201A",
+  "letter": "A",
+  "title": "A. Clear Symmetry",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/201/A",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Consider some square matrix A with side n consisting of zeros and ones. There are n rows numbered from 1 to n from top to bottom and n columns numbered from 1 to n from left to right in this matrix. We'll denote the element of the matrix which is located at the intersection of the i-row and the j-th column as Ai, j.",
+      "Let's call matrix A clear if no two cells containing ones have a common side.",
+      "Let's call matrix A symmetrical if it matches the matrices formed from it by a horizontal and/or a vertical reflection. Formally, for each pair (i, j) (1 ≤ i, j ≤ n) both of the following conditions must be met: Ai, j = An - i + 1, j and Ai, j = Ai, n - j + 1.",
+      "Let's define the sharpness of matrix A as the number of ones in it.",
+      "Given integer x, your task is to find the smallest positive integer n such that there exists a clear symmetrical matrix A with side n and sharpness x."
+    ],
+    "input": [
+      "The only line contains a single integer x (1 ≤ x ≤ 100) — the required sharpness of the matrix."
+    ],
+    "output": [
+      "Print a single number — the sought value of n."
+    ],
+    "note": [
+      "The figure below shows the matrices that correspond to the samples:",
+      "![](https://espresso.codeforces.com/75837ded3a1bddf0fb8c9f6a165cdecfa23a9e87.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4",
+      "output": "3"
+    },
+    {
+      "input": "9",
+      "output": "5"
+    }
+  ]
+}

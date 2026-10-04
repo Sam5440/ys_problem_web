@@ -1,0 +1,48 @@
+{
+  "code": "GYM103439J",
+  "letter": "J",
+  "title": "J. Jason ABC",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103439/problem/J",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a string S%%ZSMJ0%% of length 3n%%ZSMJ1%%, consisting of the characters A, B and C. You are allowed to perform the following operation:",
+      "Select some subsegment of this string and a character c%%ZSMJ2%% (one of A, B and C). Then, replace all the characters on the subsegment with c%%ZSMJ3%%.",
+      "Find the smallest number of times that you would have to apply the operation above to get a string which contains each of characters A, B and C exactly n%%ZSMJ4%% times. It can be shown that it is always possible to get such a string.",
+      "In addition, find a sequence of operations of the smallest possible length. If there are many such sequences, you can output any of them."
+    ],
+    "input": [
+      "The first line of input contains a single integer n%%ZSMJ5%% (1≤n≤3⋅105%%ZSMJ6%%).",
+      "The second line of the input contains a string S%%ZSMJ7%% of length 3n%%ZSMJ8%%, consisting of the characters A, B and C."
+    ],
+    "output": [
+      "In the first line print the minimum number of operations k%%ZSMJ9%%.",
+      "In the i%%ZSMJ10%%-th of the next k%%ZSMJ11%% lines print 2%%ZSMJ12%% integers li,ri%%ZSMJ13%% and a character ci%%ZSMJ14%% (1≤li≤ri≤3n%%ZSMJ15%%, ci∈{A,B,C}%%ZSMJ16%%), denoting that in the i%%ZSMJ17%%-th operation you will replace each of the characters Sli,Sli+1,…,Sri%%ZSMJ18%% with ci%%ZSMJ19%%.",
+      "If there is more than one solution with a minimum number of operations, you can print any one of them."
+    ],
+    "note": [
+      "In the first sample, the string will undergo the following transformations:",
+      "AAA →%%ZSMJ20%% ABB →%%ZSMJ21%% ABC.",
+      "In the second sample, the string already contains exactly one A, one B and one C.",
+      "In the third sample, the string will undergo the following transformation:",
+      "ABABCABAB →%%ZSMJ22%% CCABCABAB. Now, it contains each letter 3%%ZSMJ23%% times."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\nAAA",
+      "output": "2\n2 3 B\n3 3 C"
+    },
+    {
+      "input": "1\nCAB",
+      "output": "0"
+    },
+    {
+      "input": "3\nABABCABAB",
+      "output": "1\n1 2 C"
+    }
+  ]
+}

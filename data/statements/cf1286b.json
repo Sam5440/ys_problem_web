@@ -1,0 +1,37 @@
+{
+  "code": "CF1286B",
+  "letter": "B",
+  "title": "B. Numbers on Tree",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1286/B",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Evlampiy was gifted a rooted tree. The vertices of the tree are numbered from 1%%ZSMJ0%% to n%%ZSMJ1%%. Each of its vertices also has an integer ai%%ZSMJ2%% written on it. For each vertex i%%ZSMJ3%%, Evlampiy calculated ci%%ZSMJ4%% — the number of vertices j%%ZSMJ5%% in the subtree of vertex i%%ZSMJ6%%, such that aj<ai%%ZSMJ7%%.",
+      "![](https://espresso.codeforces.com/f5dda49bc62f72dcd05825f4d2b40d4d7a64a2fb.png)",
+      "After the new year, Evlampiy could not remember what his gift was! He remembers the tree and the values of ci%%ZSMJ10%%, but he completely forgot which integers ai%%ZSMJ11%% were written on the vertices.",
+      "Help him to restore initial integers!"
+    ],
+    "input": [
+      "The first line contains an integer n%%ZSMJ12%% (1≤n≤2000)%%ZSMJ13%% — the number of vertices in the tree.",
+      "The next n%%ZSMJ14%% lines contain descriptions of vertices: the i%%ZSMJ15%%-th line contains two integers pi%%ZSMJ16%% and ci%%ZSMJ17%% (0≤pi≤n%%ZSMJ18%%; 0≤ci≤n−1%%ZSMJ19%%), where pi%%ZSMJ20%% is the parent of vertex i%%ZSMJ21%% or 0%%ZSMJ22%% if vertex i%%ZSMJ23%% is root, and ci%%ZSMJ24%% is the number of vertices j%%ZSMJ25%% in the subtree of vertex i%%ZSMJ26%%, such that aj<ai%%ZSMJ27%%.",
+      "It is guaranteed that the values of pi%%ZSMJ28%% describe a rooted tree with n%%ZSMJ29%% vertices."
+    ],
+    "output": [
+      "If a solution exists, in the first line print \"YES\", and in the second line output n%%ZSMJ30%% integers ai%%ZSMJ31%% (1≤ai≤109)%%ZSMJ32%%. If there are several solutions, output any of them. One can prove that if there is a solution, then there is also a solution in which all ai%%ZSMJ33%% are between 1%%ZSMJ34%% and 109%%ZSMJ35%%.",
+      "If there are no solutions, print \"NO\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2 0\n0 2\n2 0",
+      "output": "YES\n1 2 1"
+    },
+    {
+      "input": "5\n0 1\n1 3\n2 1\n3 0\n2 0",
+      "output": "YES\n2 3 2 1 2"
+    }
+  ]
+}

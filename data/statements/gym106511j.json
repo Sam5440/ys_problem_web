@@ -1,0 +1,48 @@
+{
+  "code": "GYM106511J",
+  "letter": "J",
+  "title": "J. Permutation Game",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106511/problem/J",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "It is a sunny day on Columbia campus, and Alice and Bob decide to go to Butler Lawns to play their favorite game: Permutation Game. Since the weather is so nice, Alice wants to stay on the lawns as long as possible, while Bob has a midterm the next day and wants to get home to study.",
+      "Permutation Game is played as follows:",
+      "Alice receives a permutation a%%ZSMJ0%% and Bob receives a permutation b%%ZSMJ1%%, both of size n%%ZSMJ2%%∗%%ZSMJ3%%.",
+      "Alice chooses an index i%%ZSMJ4%% (1≤i≤n%%ZSMJ5%%) and places a token on position i%%ZSMJ6%% of her permutation a%%ZSMJ7%%.",
+      "Bob, after seeing where Alice has placed her token, chooses an index j%%ZSMJ8%% (1≤j≤n%%ZSMJ9%%) and places his own token on position j%%ZSMJ10%% of his permutation b%%ZSMJ11%%.",
+      "Alice and Bob each follow their permutation one step at a time:   Alice moves her token to index ai%%ZSMJ12%%, then aai%%ZSMJ13%%, and so on.",
+      "Bob moves his token to index bj%%ZSMJ14%%, then bbj%%ZSMJ15%%, and so on.",
+      "∗%%ZSMJ16%%A permutation of length n%%ZSMJ17%% is an array consisting of n%%ZSMJ18%% distinct integers from 1%%ZSMJ19%% to n%%ZSMJ20%% in arbitrary order. For example, [2%%ZSMJ21%%, 3%%ZSMJ22%%, 1%%ZSMJ23%%, 5%%ZSMJ24%%, 4%%ZSMJ25%%] is a permutation, but [1%%ZSMJ26%%, 2%%ZSMJ27%%, 2%%ZSMJ28%%] is not a permutation (2%%ZSMJ29%% appears twice in the array), and [1%%ZSMJ30%%, 3%%ZSMJ31%%, 4%%ZSMJ32%%] is also not a permutation (n=3%%ZSMJ33%% but there is a 4%%ZSMJ34%% in the array)."
+    ],
+    "input": [
+      "The first line of input contains a single integer n%%ZSMJ35%% (1≤n≤2⋅105%%ZSMJ36%%).",
+      "The second line of input contains n%%ZSMJ37%% distinct integers a1,a2,...,an%%ZSMJ38%% — Alice's permutation a%%ZSMJ39%%.",
+      "The third line of input contains n%%ZSMJ40%% distinct integers b1,b2,...,bn%%ZSMJ41%% — Bob's permutation b%%ZSMJ42%%."
+    ],
+    "output": [
+      "Output a single integer — the number of steps that will be performed in the game, assuming both players play optimally."
+    ],
+    "note": [
+      "In the first sample, regardless of which indices Alice and Bob place their tokens on to start, the process will last for just one step.",
+      "In the second example, Alice may place her token at index 3%%ZSMJ43%%, and Bob, seeing where Alice has placed her token, places his at index 1%%ZSMJ44%%. After one step, Alice's token will be at index 4%%ZSMJ45%% and Bob's will be at index 3%%ZSMJ46%%. After two steps, Alice's token will be at index 5%%ZSMJ47%% and Bob's will be at 5%%ZSMJ48%%. And after three steps, Alice's token returns to index 3%%ZSMJ49%%, while Bob's returns to index 1%%ZSMJ50%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 2 3\n1 2 3",
+      "output": "1"
+    },
+    {
+      "input": "5\n2 1 4 5 3\n3 4 5 2 1",
+      "output": "3"
+    },
+    {
+      "input": "10\n2 8 1 5 4 7 6 10 9 3\n7 3 9 10 2 1 6 8 4 5",
+      "output": "5"
+    }
+  ]
+}

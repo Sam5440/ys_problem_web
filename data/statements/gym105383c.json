@@ -1,0 +1,49 @@
+{
+  "code": "GYM105383C",
+  "letter": "C",
+  "title": "C. Cards",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105383/problem/C",
+  "difficulty": "*2300",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Diana is a student who likes to play various types of board games. Today, she receives a deck of cards from her teacher as her birthday gift!",
+      "The deck of cards is special: there are n%%ZSMJ0%% cards in the deck, and each card has a number on its front and another number on its back. Each number on the front or the back is an integer from 1%%ZSMJ1%% to n%%ZSMJ2%%. Furthermore, all n%%ZSMJ3%% numbers on the front are unique, and so are the n%%ZSMJ4%% numbers on the back. In other words, numbers on the front and the back are two different permutations of numbers from 1%%ZSMJ5%% to n%%ZSMJ6%%.",
+      "Apart from board games, Diana is also interested in mathematics and computer science. While she is playing with those cards, the concept of inversions in a permutation comes to her mind. An inversion is defined as a pair of indices (i,j)%%ZSMJ7%% such that i<j%%ZSMJ8%% and the element at position i%%ZSMJ9%% is greater than the element at position j%%ZSMJ10%%. In other words, an inversion represents a situation where two elements are \"out of order\" relative to their positions. A permutation has inversion count c%%ZSMJ11%% if there are c%%ZSMJ12%% inversions can be found within it.",
+      "Diana wonders if she could rearrange the cards in some order so that the permutation on the front has the same inversion count as the permutation on the back (she cannot flip or throw away some cards). She cannot solve the problem in a while, so she wants to hear your solution.",
+      "In formal, you are given two permutations of integers from 1%%ZSMJ13%% to n%%ZSMJ14%%: a1,a2,…,an%%ZSMJ15%% and b1,b2,…,bn%%ZSMJ16%%. You have to find another permutation of the first n%%ZSMJ17%% positive integers p1,p2,…,pn%%ZSMJ18%%, such that a′=[ap1,ap2,…,apn]%%ZSMJ19%% and b′=[bp1,bp2,…,bpn]%%ZSMJ20%% have the same inversion count. Output the sequences a′%%ZSMJ21%% and b′%%ZSMJ22%%."
+    ],
+    "input": [
+      "The first line of the input contains an integer n%%ZSMJ23%%, denoting the number cards in the deck. The second line of the input contains n%%ZSMJ24%% integers a1,a2,…,an%%ZSMJ25%%, where ai%%ZSMJ26%% is the number on the front of the i%%ZSMJ27%%-th card. The third line of the input contains n%%ZSMJ28%% integers b1,b2,…,bn%%ZSMJ29%%, where bi%%ZSMJ30%% is the number on the back of the i%%ZSMJ31%%-th card.",
+      "Technical Specification",
+      "1≤n≤5×105%%ZSMJ32%%",
+      "1≤ai≤n%%ZSMJ33%% for i∈{1,2,…,n}%%ZSMJ34%%",
+      "1≤bi≤n%%ZSMJ35%% for i∈{1,2,…,n}%%ZSMJ36%%",
+      "It is guaranteed that a1,a2,…,an%%ZSMJ37%% and b1,b2,…,bn%%ZSMJ38%% are both permutations of integers 1,2,…,n%%ZSMJ39%%."
+    ],
+    "output": [
+      "If it is impossible to rearrange the cards so that the aforementioned condition is satisfied, print No. Otherwise, print Yes in the first line of the output. Then in the second line of the output, print n%%ZSMJ40%% integers a′1,a′2,…,a′n%%ZSMJ41%%, denoting the numbers on the front of the cards after the rearrangement. In the third line of the output, print n%%ZSMJ42%% integers b′1,b′2,⋯,b′n%%ZSMJ43%%, denoting the numbers on the back of the cards after the rearrangement.",
+      "If there are multiple possible solutions, print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 5 1 4 3\n4 2 5 3 1",
+      "output": "Yes\n3 1 5 2 4\n1 5 2 4 3"
+    },
+    {
+      "input": "4\n2 4 1 3\n3 1 2 4",
+      "output": "No"
+    },
+    {
+      "input": "10\n7 4 3 1 6 10 5 2 9 8\n8 6 2 9 5 10 7 1 4 3",
+      "output": "Yes\n2 3 8 1 4 5 9 6 7 10\n1 2 3 9 6 7 4 5 8 10"
+    },
+    {
+      "input": "7\n1 2 3 4 5 6 7\n1 2 3 4 5 6 7",
+      "output": "Yes\n1 2 3 4 5 6 7\n1 2 3 4 5 6 7"
+    }
+  ]
+}

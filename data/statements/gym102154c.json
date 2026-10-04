@@ -1,0 +1,49 @@
+{
+  "code": "GYM102154C",
+  "letter": "C",
+  "title": "C. Quick sort",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102154/problem/C",
+  "difficulty": "*2400",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "The scientists invented the new UL-2018 processor that is able to quickly process arrays in some special way. A key feature of its architecture is the separation operation of a segment of the array.",
+      "Consider an array [a1,a2,…,an]%%ZSMJ0%%. The separation operation is characterized by two integers L%%ZSMJ1%% and R%%ZSMJ2%%. Let S(L,R)%%ZSMJ3%% denote the operation of the segment [aL,aL+1,…,aR]%%ZSMJ4%%. Executing the S(L,R)%%ZSMJ5%% operation reorders the elements in this segment as follows. First, the elements aL+1,aL+3,aL+5,…%%ZSMJ6%% are taken, that is elements ai%%ZSMJ7%% that i−L%%ZSMJ8%% is odd. Their relative order remains unchanged. Then, the elements aL,aL+2,aL+4,…%%ZSMJ9%% are taken (ai%%ZSMJ10%% that i−L%%ZSMJ11%% is even). These retain the relative order too.",
+      "For example, consider the array [2,4,1,5,3,6,7,8]%%ZSMJ12%%. Applying the operation S(2,6)%%ZSMJ13%% changes the segment [4,1,5,3,6]%%ZSMJ14%% into [1,3,4,5,6]%%ZSMJ15%%, so the entire array becomes [2,1,3,4,5,6,7,8]%%ZSMJ16%%.",
+      "To demonstrate the capabilities of the new processor, the scientists decided to use separation operations to sort an array of distinct numbers. You will be given an array of size n%%ZSMJ17%% (1≤n≤3000%%ZSMJ18%%) with distinct numbers from 1%%ZSMJ19%% to n%%ZSMJ20%%. You must sort it in ascending order using no more than 15000%%ZSMJ21%% separation operations.",
+      "For example, the mentioned array [2,4,1,5,3,6,7,8]%%ZSMJ22%% can be sorted in two separation operations. First, apply S(2,6)%%ZSMJ23%% to get [2,1,3,4,5,6,7,8]%%ZSMJ24%%, and then the operation S(1,2)%%ZSMJ25%% makes the array sorted increasingly: [1,2,3,4,5,6,7,8]%%ZSMJ26%%.",
+      "Your task is to write a program that for a given array determines the sequence of at most 15000%%ZSMJ27%% separation operations, after which the specified array will be sorted in ascending order. It isn't necessary to minimize the number of operations performed (just use at most 15000%%ZSMJ28%%)."
+    ],
+    "input": [
+      "The first line of the input contains an integer n%%ZSMJ29%% — the number of elements in the given array (1≤n≤3000%%ZSMJ30%%).",
+      "The second line contains n%%ZSMJ31%% distinct integers a1,a2,…,an%%ZSMJ32%% — the elements of the given array (1≤ai≤n%%ZSMJ33%%, all ai%%ZSMJ34%% are different)."
+    ],
+    "output": [
+      "The first line of the output should contain an integer k%%ZSMJ35%% — the number of separation operations performed (0≤k≤15000%%ZSMJ36%%).",
+      "In the following k%%ZSMJ37%% lines, you should print the description of the operations, in the order they are executed. Each operation is described by two integers L%%ZSMJ38%% and R%%ZSMJ39%% — the beginning and the end of the segment to which the separation operation should be applied (1≤L≤R≤n%%ZSMJ40%%).",
+      "Note that you don't have to minimize the number k%%ZSMJ41%%. You can output any sequence of separation operations that contains at most 15000%%ZSMJ42%% operations and sorts the given array in ascending order. It is guaranteed that at least one such sequence exists.",
+      "SubtaskPointsConstraintsDependencies120n≤100; there is a solution with k=1230n≤1000,1330n≤10000−2420n≤30000−3%%ZSMJ43%%",
+      "You will get points for a group if you pass all tests in this group and all groups listed in the dependencies. The group 0%%ZSMJ44%% denotes the sample test(s) from the statement."
+    ],
+    "note": [
+      "The second sample test is analyzed in detail in the problem statement.",
+      "In the third sample test, there is a solution with a single separation operation, but since you don't have to minimize the number of operations, the provided output is also correct."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3 1 4 2 5",
+      "output": "1\n1 5"
+    },
+    {
+      "input": "8\n2 4 1 5 3 6 7 8",
+      "output": "2\n2 6\n1 2"
+    },
+    {
+      "input": "2\n2 1",
+      "output": "3\n1 1\n2 2\n1 2"
+    }
+  ]
+}

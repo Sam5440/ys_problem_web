@@ -1,0 +1,46 @@
+{
+  "code": "CF1146D",
+  "letter": "D",
+  "title": "D. Frog Jumping",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1146/D",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A frog is initially at position 0%%ZSMJ0%% on the number line. The frog has two positive integers a%%ZSMJ1%% and b%%ZSMJ2%%. From a position k%%ZSMJ3%%, it can either jump to position k+a%%ZSMJ4%% or k−b%%ZSMJ5%%.",
+      "Let f(x)%%ZSMJ6%% be the number of distinct integers the frog can reach if it never jumps on an integer outside the interval [0,x]%%ZSMJ7%%. The frog doesn't need to visit all these integers in one trip, that is, an integer is counted if the frog can somehow reach it if it starts from 0%%ZSMJ8%%.",
+      "Given an integer m%%ZSMJ9%%, find ∑mi=0f(i)%%ZSMJ10%%. That is, find the sum of all f(i)%%ZSMJ11%% for i%%ZSMJ12%% from 0%%ZSMJ13%% to m%%ZSMJ14%%."
+    ],
+    "input": [
+      "The first line contains three integers m,a,b%%ZSMJ15%% (1≤m≤109,1≤a,b≤105%%ZSMJ16%%)."
+    ],
+    "output": [
+      "Print a single integer, the desired sum."
+    ],
+    "note": [
+      "In the first example, we must find f(0)+f(1)+…+f(7)%%ZSMJ17%%. We have f(0)=1,f(1)=1,f(2)=1,f(3)=1,f(4)=1,f(5)=3,f(6)=3,f(7)=8%%ZSMJ18%%. The sum of these values is 19%%ZSMJ19%%.",
+      "In the second example, we have f(i)=i+1%%ZSMJ20%%, so we want to find ∑109i=0i+1%%ZSMJ21%%.",
+      "In the third example, the frog can't make any jumps in any case."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7 5 3",
+      "output": "19"
+    },
+    {
+      "input": "1000000000 1 2019",
+      "output": "500000001500000001"
+    },
+    {
+      "input": "100 100000 1",
+      "output": "101"
+    },
+    {
+      "input": "6 4 5",
+      "output": "10"
+    }
+  ]
+}

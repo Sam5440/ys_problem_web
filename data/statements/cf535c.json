@@ -1,0 +1,36 @@
+{
+  "code": "CF535C",
+  "letter": "C",
+  "title": "C. Tavas and Karafs",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/535/C",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Karafs is some kind of vegetable in shape of an 1 × h rectangle. Tavaspolis people love Karafs and they use Karafs in almost any kind of food. Tavas, himself, is crazy about Karafs.",
+      "![](https://espresso.codeforces.com/490095996c5002df1b561c10c9d09a5f14620af0.png)",
+      "Each Karafs has a positive integer height. Tavas has an infinite 1-based sequence of Karafses. The height of the i-th Karafs is si = A + (i - 1) × B.",
+      "For a given m, let's define an m-bite operation as decreasing the height of at most m distinct not eaten Karafses by 1. Karafs is considered as eaten when its height becomes zero.",
+      "Now SaDDas asks you n queries. In each query he gives you numbers l, t and m and you should find the largest number r such that l ≤ r and sequence sl, sl + 1, ..., sr can be eaten by performing m-bite no more than t times or print -1 if there is no such number r."
+    ],
+    "input": [
+      "The first line of input contains three integers A, B and n (1 ≤ A, B ≤ 106, 1 ≤ n ≤ 105).",
+      "Next n lines contain information about queries. i-th line contains integers l, t, m (1 ≤ l, t, m ≤ 106) for i-th query."
+    ],
+    "output": [
+      "For each query, print its answer in a single line."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 1 4\n1 5 3\n3 3 10\n7 10 2\n6 4 8",
+      "output": "4\n-1\n8\n-1"
+    },
+    {
+      "input": "1 5 2\n1 5 10\n2 7 4",
+      "output": "1\n2"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "code": "CF1887B",
+  "letter": "B",
+  "title": "B. Time Travel",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1887/B",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Berland is a country with ancient history, where roads were built and destroyed for centuries. It is known that there always were n%%ZSMJ0%% cities in Berland. You also have records of t%%ZSMJ1%% key moments in the history of the country, numbered from 1%%ZSMJ2%% to t%%ZSMJ3%%. Each record contains a list of bidirectional roads between some pairs of cities, which could be used for travel in Berland at a specific moment in time.",
+      "You have discovered a time machine that transports you between key moments. Unfortunately, you cannot choose what point in time to end up at, but you know the order consisting of k%%ZSMJ4%% moments in time ai%%ZSMJ5%%, in which the machine will transport you. Since there is little time between the travels, when you find yourself in the next key moment in time (including after the last time travel), you can travel on at most one existing road at that moment, coming out from the city you were in before time travel.",
+      "Currently, you are in city 1%%ZSMJ6%%, and the time machine has already transported you to moment a1%%ZSMJ7%%. You want to reach city n%%ZSMJ8%% as quickly as possible. Determine the minimum number of time travels, including the first one, that you need to make in order to reach city n%%ZSMJ9%%."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ10%% and t%%ZSMJ11%% (2≤n≤2⋅105,1≤t≤2⋅105%%ZSMJ12%%) — the number of cities in Berland and the number of records about key moments in history. Then follows the description of each of the t%%ZSMJ13%% records.",
+      "The first line of each record description contains a single integer mi%%ZSMJ14%% (0≤mi≤min(n(n−1)2,2⋅105)%%ZSMJ15%%) — the number of roads in the i%%ZSMJ16%%-th record.",
+      "Each of the next mi%%ZSMJ17%% lines contains two integers vj%%ZSMJ18%% and uj%%ZSMJ19%% (1≤vj,uj≤n%%ZSMJ20%%, vj≠uj%%ZSMJ21%%) — the numbers of cities connected by the j%%ZSMJ22%%-th road in the i%%ZSMJ23%%-th key moment in history.",
+      "The next line contains a single integer k%%ZSMJ24%% (1≤k≤2⋅105%%ZSMJ25%%) — the number of time moments between which movements will occur.",
+      "The next line contains k%%ZSMJ26%% integers a1,a2,…,ak%%ZSMJ27%% (1≤ai≤t%%ZSMJ28%%) — the time moments at which you will be after each movement.",
+      "It is guaranteed that the sum of mi%%ZSMJ29%% does not exceed 2⋅105%%ZSMJ30%%. It is guaranteed that each unordered pair (u,v)%%ZSMJ31%% occurs in the road description for one record no more than once."
+    ],
+    "output": [
+      "Output a single integer — the minimum number of time travels required to reach city n%%ZSMJ32%% from city 1%%ZSMJ33%%, or −1%%ZSMJ34%% if it is impossible.",
+      "Note that movement to time moment a1%%ZSMJ35%% is also considered a movement."
+    ],
+    "note": [
+      "In the first example, you are in city 1%%ZSMJ36%% and move to moment a1=2%%ZSMJ37%%. Since there are no suitable roads to pass, you do nothing and move to moment a2=1%%ZSMJ38%%, after which you travel along the road (1,2)%%ZSMJ39%%. Moving to moment a3=2%%ZSMJ40%%, you travel along the road (2,3)%%ZSMJ41%%. Moving to moment a4=1%%ZSMJ42%%, you stay in city 3%%ZSMJ43%% and make the next time travel. At time moment a5=2%%ZSMJ44%%, you travel along the road (3,5)%%ZSMJ45%% and end up in the final city after 5%%ZSMJ46%% time travels.",
+      "In the second example, it can be shown that it is impossible to reach city 5%%ZSMJ47%% with the given time travels."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 2\n4\n1 2\n2 3\n3 4\n4 5\n2\n2 3\n3 5\n6\n2 1 2 1 2 1",
+      "output": "5"
+    },
+    {
+      "input": "5 2\n3\n1 2\n3 1\n4 3\n2\n2 1\n4 5\n5\n1 2 1 1 1",
+      "output": "-1"
+    }
+  ]
+}

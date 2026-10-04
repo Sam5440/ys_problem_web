@@ -1,0 +1,37 @@
+{
+  "code": "CF490E",
+  "letter": "E",
+  "title": "E. Restoring Increasing Sequence",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/490/E",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Peter wrote on the board a strictly increasing sequence of positive integers a1, a2, ..., an. Then Vasil replaced some digits in the numbers of this sequence by question marks. Thus, each question mark corresponds to exactly one lost digit.",
+      "Restore the the original sequence knowing digits remaining on the board."
+    ],
+    "input": [
+      "The first line of the input contains integer n (1 ≤ n ≤ 105) — the length of the sequence. Next n lines contain one element of the sequence each. Each element consists only of digits and question marks. No element starts from digit 0. Each element has length from 1 to 8 characters, inclusive."
+    ],
+    "output": [
+      "If the answer exists, print in the first line \"YES\" (without the quotes). Next n lines must contain the sequence of positive integers — a possible variant of Peter's sequence. The found sequence must be strictly increasing, it must be transformed from the given one by replacing each question mark by a single digit. All numbers on the resulting sequence must be written without leading zeroes. If there are multiple solutions, print any of them.",
+      "If there is no answer, print a single line \"NO\" (without the quotes)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n?\n18\n1?",
+      "output": "YES\n1\n18\n19"
+    },
+    {
+      "input": "2\n??\n?",
+      "output": "NO"
+    },
+    {
+      "input": "5\n12224\n12??5\n12226\n?0000\n?00000",
+      "output": "YES\n12224\n12225\n12226\n20000\n100000"
+    }
+  ]
+}

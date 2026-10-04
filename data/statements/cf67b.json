@@ -1,0 +1,34 @@
+{
+  "code": "CF67B",
+  "letter": "B",
+  "title": "B. Restoration of the Permutation",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/67/B",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let A = {a1, a2, ..., an} be any permutation of the first n natural numbers {1, 2, ..., n}. You are given a positive integer k and another sequence B = {b1, b2, ..., bn}, where bi is the number of elements aj in A to the left of the element at = i such that aj ≥ (i + k).",
+      "For example, if n = 5, a possible A is {5, 1, 4, 2, 3}. For k = 2, B is given by {1, 2, 1, 0, 0}. But if k = 3, then B = {1, 1, 0, 0, 0}.",
+      "For two sequences X = {x1, x2, ..., xn} and Y = {y1, y2, ..., yn}, let i-th elements be the first elements such that xi ≠ yi. If xi < yi, then X is lexicographically smaller than Y, while if xi > yi, then X is lexicographically greater than Y.",
+      "Given n, k and B, you need to determine the lexicographically smallest A."
+    ],
+    "input": [
+      "The first line contains two space separated integers n and k (1 ≤ n ≤ 1000, 1 ≤ k ≤ n). On the second line are n integers specifying the values of B = {b1, b2, ..., bn}."
+    ],
+    "output": [
+      "Print on a single line n integers of A = {a1, a2, ..., an} such that A is lexicographically minimal. It is guaranteed that the solution exists."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 2\n1 2 1 0 0",
+      "output": "4 1 5 2 3"
+    },
+    {
+      "input": "4 2\n1 0 0 0",
+      "output": "2 3 1 4"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "code": "CF1970D1",
+  "letter": "D1",
+  "title": "D1. Arithmancy (Easy)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1970/D1",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Professor Vector is preparing to teach her Arithmancy class. She needs to prepare n%%ZSMJ0%% distinct magic words for the class. Each magic word is a string consisting of characters X and O. A spell is a string created by concatenating two magic words together. The power of a spell is equal to the number of its different non-empty substrings. For example, the power of the spell XOXO is equal to 7, because it has 7 different substrings: X, O, XO, OX, XOX, OXO and XOXO.",
+      "Each student will create their own spell by concatenating two magic words. Since the students are not very good at magic yet, they will choose each of the two words independently and uniformly at random from the n%%ZSMJ1%% words provided by Professor Vector. It is therefore also possible that the two words a student chooses are the same. Each student will then compute the power of their spell, and tell it to Professor Vector. In order to check their work, and of course to impress the students, Professor Vector needs to find out which two magic words and in which order were concatenated by each student.",
+      "Your program needs to perform the role of Professor Vector: first, create n%%ZSMJ2%% distinct magic words, and then handle multiple requests where it is given the spell power and needs to determine the indices of the two magic words, in the correct order, that were used to create the corresponding spell.",
+      "Interaction",
+      "This is an interactive problem.",
+      "First, your program should read a single integer n%%ZSMJ3%% (1≤n≤3%%ZSMJ4%%), the number of magic words to prepare. Then, it should print n%%ZSMJ5%% magic words it has created, one per line. The magic words must be distinct, each magic word must have at least 1 and at most 30⋅n%%ZSMJ6%% characters, and each character must be either X or O. We will denote the i%%ZSMJ7%%-th magic word you printed as wi%%ZSMJ8%% (1≤i≤n%%ZSMJ9%%).",
+      "Then, your program should read a single integer q%%ZSMJ10%% (1≤q≤1000%%ZSMJ11%%), the number of students in the class. Then, it should repeat the following process q%%ZSMJ12%% times, one per student.",
+      "For the j%%ZSMJ13%%-th student, it should first read a single integer pj%%ZSMJ14%%, the power of their spell. It is guaranteed that this number is computed by choosing two indices uj%%ZSMJ15%% and vj%%ZSMJ16%% independently and uniformly at random between 1 and n%%ZSMJ17%% inclusive, concatenating wuj%%ZSMJ18%% and wvj%%ZSMJ19%%, and finding the number of different non-empty substrings of the resulting string. Then, your program must print the numbers uj%%ZSMJ20%% and vj%%ZSMJ21%%, in this order (1≤uj,vj≤n%%ZSMJ22%%).",
+      "Note that it is not enough to find any two magic words that concatenate into a spell with the given power. You must find the exact words used by the student in the exact order.",
+      "Remember to flush the output stream after printing all magic words and after printing uj%%ZSMJ23%% and vj%%ZSMJ24%% for each student."
+    ],
+    "input": [],
+    "output": []
+  },
+  "examples": [
+    {
+      "input": "2\n\n\n2\n15\n\n11",
+      "output": "\nXOXO\nX\n\n\n1 1\n\n2 1"
+    }
+  ]
+}

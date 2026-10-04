@@ -1,0 +1,40 @@
+{
+  "code": "GYM106414G",
+  "letter": "G",
+  "title": "G. Longest Step-function Subsequence",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106414/problem/G",
+  "difficulty": "*1400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "We say that a sequence x1,x2,…,xn%%ZSMJ0%% is a step-function if there exist two distinct numbers A%%ZSMJ1%% and B%%ZSMJ2%% and some index 1<k≤n%%ZSMJ3%% such that xi=A%%ZSMJ4%% for i<k%%ZSMJ5%% and xi=B%%ZSMJ6%% for i≥k%%ZSMJ7%%.",
+      "Informally, a step-function is a sequence that changes value exactly once, so that it looks like [A,A,…,A,B,B,…,B]%%ZSMJ8%%.",
+      "For example, the sequences [1,1,1,3,3,3]%%ZSMJ9%%, [7,7,7,6]%%ZSMJ10%%, and [100,101,101]%%ZSMJ11%% are all step-functions, and the sequences [1,2,3]%%ZSMJ12%% and [0,0,0,0]%%ZSMJ13%% are not.",
+      "You are given an array a%%ZSMJ14%% of length n%%ZSMJ15%%. Your task is to find the length of the longest subsequence of a%%ZSMJ16%% that is a step-function. If there is no such subsequence, output 0%%ZSMJ17%%.",
+      "A sequence x%%ZSMJ18%% is a subsequence of another sequence y%%ZSMJ19%% if x%%ZSMJ20%% can be obtained by deleting several (possibly zero or all) elements from y%%ZSMJ21%%, without changing the order of the remaining elements. For example, [1,3,4,7]%%ZSMJ22%% is a subsequence of [1,2,3,4,5,6,7,8]%%ZSMJ23%%, and [3,3]%%ZSMJ24%% is a subsequence of itself, but [4,3]%%ZSMJ25%% is not a subsequence of [1,2,3,4]%%ZSMJ26%%."
+    ],
+    "input": [
+      "Each test consists of multiple test cases.",
+      "The first line of input contains a single integer t%%ZSMJ27%% (1≤t≤104%%ZSMJ28%%) — the number of test cases.",
+      "The first line of each test case contains a single integer n%%ZSMJ29%% (1≤n≤105%%ZSMJ30%%)  – the length of the array a%%ZSMJ31%%.",
+      "The second line of each test case contains n%%ZSMJ32%% integers a1,…,an%%ZSMJ33%% (−109≤ai≤109%%ZSMJ34%%) — the values in the array a%%ZSMJ35%%.",
+      "It is guaranteed that the sum of n%%ZSMJ36%% over all test cases does not exceed 105%%ZSMJ37%%."
+    ],
+    "output": [
+      "For each test case output a single integer  – the length of the longest subsequence of a%%ZSMJ38%% that is a step-function, or 0%%ZSMJ39%% of no such subsequence exists."
+    ],
+    "note": [
+      "In the first test case, the longest step-function subsequence is [1,1,1,0,0,0]%%ZSMJ40%%.",
+      "In the second test case, the longest step-function subsequences are [6,6,6,7,7]%%ZSMJ41%% and [7,7,6,6,6]%%ZSMJ42%%. The subsequence [6,6,6,6,6,6]%%ZSMJ43%% is longer, but it is not a step-function subsequence because it does not contain two distinct values.",
+      "In the third test case, there are no step-function subsequences because there is only one distinct value in the array."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n11\n2 1 3 1 2 1 0 2 0 3 0\n8\n6 6 6 7 7 6 6 6\n4\n0 0 0 0\n14\n-3 -1 -3 -1 -3 -1 -1 -2 -1 -2 -1 -1 -1 -4",
+      "output": "6\n5\n0\n9"
+    }
+  ]
+}

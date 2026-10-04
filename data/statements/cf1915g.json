@@ -1,0 +1,35 @@
+{
+  "code": "CF1915G",
+  "letter": "G",
+  "title": "G. Bicycles",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1915/G",
+  "difficulty": "1800",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "All of Slavic's friends are planning to travel from the place where they live to a party using their bikes. And they all have a bike except Slavic. There are n%%ZSMJ0%% cities through which they can travel. They all live in the city 1%%ZSMJ1%% and want to go to the party located in the city n%%ZSMJ2%%. The map of cities can be seen as an undirected graph with n%%ZSMJ3%% nodes and m%%ZSMJ4%% edges. Edge i%%ZSMJ5%% connects cities ui%%ZSMJ6%% and vi%%ZSMJ7%% and has a length of wi%%ZSMJ8%%.",
+      "Slavic doesn't have a bike, but what he has is money. Every city has exactly one bike for sale. The bike in the i%%ZSMJ9%%-th city has a slowness factor of si%%ZSMJ10%%. Once Slavic buys a bike, he can use it whenever to travel from the city he is currently in to any neighboring city, by taking wi⋅sj%%ZSMJ11%% time, considering he is traversing edge i%%ZSMJ12%% using a bike j%%ZSMJ13%% he owns.",
+      "Slavic can buy as many bikes as he wants as money isn't a problem for him. Since Slavic hates traveling by bike, he wants to get from his place to the party in the shortest amount of time possible. And, since his informatics skills are quite rusty, he asks you for help.",
+      "What's the shortest amount of time required for Slavic to travel from city 1%%ZSMJ14%% to city n%%ZSMJ15%%? Slavic can't travel without a bike. It is guaranteed that it is possible for Slavic to travel from city 1%%ZSMJ16%% to any other city."
+    ],
+    "input": [
+      "The first line contains a single integer t%%ZSMJ17%% (1≤t≤100%%ZSMJ18%%) — the number of test cases. The description of the test cases follows.",
+      "The first line of each test case contains two space-separated integers n%%ZSMJ19%% and m%%ZSMJ20%% (2≤n≤1000%%ZSMJ21%%; n−1≤m≤1000%%ZSMJ22%%) — the number of cities and the number of roads, respectively.",
+      "The i%%ZSMJ23%%-th of the following m%%ZSMJ24%% lines each contain three integers ui%%ZSMJ25%%, vi%%ZSMJ26%%, wi%%ZSMJ27%% (1≤ui,vi≤n%%ZSMJ28%%, ui≠vi%%ZSMJ29%%; 1≤wi≤105%%ZSMJ30%%), denoting that there is a road between cities ui%%ZSMJ31%% and vi%%ZSMJ32%% of length wi%%ZSMJ33%%. The same pair of cities can be connected by more than one road.",
+      "The next line contains n%%ZSMJ34%% integers s1,…,sn%%ZSMJ35%% (1≤si≤1000%%ZSMJ36%%) — the slowness factor of each bike.",
+      "The sum of n%%ZSMJ37%% over all test cases does not exceed 1000%%ZSMJ38%%, and the sum of m%%ZSMJ39%% over all test cases does not exceed 1000%%ZSMJ40%%.",
+      "Additional constraint on the input: it is possible to travel from city 1%%ZSMJ41%% to any other city."
+    ],
+    "output": [
+      "For each test case, output a single integer denoting the shortest amount of time Slavic can reach city n%%ZSMJ42%% starting from city 1%%ZSMJ43%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n5 5\n1 2 2\n3 2 1\n2 4 5\n2 5 7\n4 5 1\n5 2 1 3 3\n5 10\n1 2 5\n1 3 5\n1 4 4\n1 5 8\n2 3 6\n2 4 3\n2 5 2\n3 4 1\n3 5 8\n4 5 2\n7 2 8 4 1\n7 10\n3 2 8\n2 1 4\n2 5 7\n2 6 4\n7 1 2\n4 3 5\n6 4 2\n6 7 1\n6 7 4\n4 5 9\n7 6 5 4 3 2 1",
+      "output": "19\n36\n14"
+    }
+  ]
+}

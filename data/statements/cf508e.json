@@ -1,0 +1,46 @@
+{
+  "code": "CF508E",
+  "letter": "E",
+  "title": "E. Arthur and Brackets",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/508/E",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "128 megabytes",
+  "sections": {
+    "legend": [
+      "Notice that the memory limit is non-standard.",
+      "Recently Arthur and Sasha have studied correct bracket sequences. Arthur understood this topic perfectly and become so amazed about correct bracket sequences, so he even got himself a favorite correct bracket sequence of length 2n. Unlike Arthur, Sasha understood the topic very badly, and broke Arthur's favorite correct bracket sequence just to spite him.",
+      "All Arthur remembers about his favorite sequence is for each opening parenthesis ('(') the approximate distance to the corresponding closing one (')'). For the i-th opening bracket he remembers the segment [li, ri], containing the distance to the corresponding closing bracket.",
+      "Formally speaking, for the i-th opening bracket (in order from left to right) we know that the difference of its position and the position of the corresponding closing bracket belongs to the segment [li, ri].",
+      "Help Arthur restore his favorite correct bracket sequence!"
+    ],
+    "input": [
+      "The first line contains integer n (1 ≤ n ≤ 600), the number of opening brackets in Arthur's favorite correct bracket sequence.",
+      "Next n lines contain numbers li and ri (1 ≤ li ≤ ri < 2n), representing the segment where lies the distance from the i-th opening bracket and the corresponding closing one.",
+      "The descriptions of the segments are given in the order in which the opening brackets occur in Arthur's favorite sequence if we list them from left to right."
+    ],
+    "output": [
+      "If it is possible to restore the correct bracket sequence by the given data, print any possible choice.",
+      "If Arthur got something wrong, and there are no sequences corresponding to the given information, print a single line \"IMPOSSIBLE\" (without the quotes)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1 1\n1 1\n1 1\n1 1",
+      "output": "()()()()"
+    },
+    {
+      "input": "3\n5 5\n3 3\n1 1",
+      "output": "((()))"
+    },
+    {
+      "input": "3\n5 5\n3 3\n2 2",
+      "output": "IMPOSSIBLE"
+    },
+    {
+      "input": "3\n2 3\n1 4\n1 4",
+      "output": "(())()"
+    }
+  ]
+}

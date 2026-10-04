@@ -1,0 +1,37 @@
+{
+  "code": "GYM103316J",
+  "letter": "J",
+  "title": "J. Random Resources",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103316/problem/J",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Rake Mully has arrived on a new planet to collect a secret resource named hardtogetium. Hardtogetium is freely available on a location called the world tree, and Rake plans to traverse parts of the world tree and collect as much of this resource as he can.",
+      "Specifically, the world tree consists of n%%ZSMJ0%% hardtogetium mines, where the i%%ZSMJ1%%th mine contains wi%%ZSMJ2%% tons of hardtogetium. Furthermore, given any two mines, it is guaranteed that there exists a unique path between those two mines that Rake can travel along.",
+      "Rake has limited capacity, so he's decided to mine hardtogetium in the following way. Rake will randomly select two distinct vertices, u,v%%ZSMJ3%%, and will collect all the hardtogetium from the mine with the maximum amount of hardtogetium on the path from u%%ZSMJ4%% to v%%ZSMJ5%%, and he must consume hardtogetium equal to the amount in mine with the minimum hardtogetium on the path to power his mining apparatus. Specifically, given u%%ZSMJ6%% and v%%ZSMJ7%%, he will collect maxxwx−minxwx%%ZSMJ8%% for all x%%ZSMJ9%% on the path from u%%ZSMJ10%% to v%%ZSMJ11%%.",
+      "Given that he is equally likely to pick any possible u,v%%ZSMJ12%%, what is the expected number of tons of hardtogetium that Rake will collect. This number can be expressed as a non-reducible fraction pq%%ZSMJ13%%, so output pq−1(mod109+7)%%ZSMJ14%%."
+    ],
+    "input": [
+      "The first line consists of a single integer n%%ZSMJ15%% (1≤n≤105)%%ZSMJ16%% giving the number of mines. The next line consists of n%%ZSMJ17%% integers where the i%%ZSMJ18%%th integer wi%%ZSMJ19%% gives the number of tons of hardtogetium on mine i%%ZSMJ20%%. The next n−1%%ZSMJ21%% lines consist of two integers ui,vi%%ZSMJ22%% (1≤ui,vi≤n)%%ZSMJ23%%, which indicates that there is an edge that Rake can travel across between ui%%ZSMJ24%% and vi%%ZSMJ25%%."
+    ],
+    "output": [
+      "Output the expected number of tons of hardtogetium that Rake will collect. This number can be expressed as a non-reducible fraction pq%%ZSMJ26%%, so output pq−1(mod109+7)%%ZSMJ27%%."
+    ],
+    "note": [
+      "For the first input, Rake can expect to collect 6−4+6−4+5−43%%ZSMJ28%% tons, which gives us 53%%ZSMJ29%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4 5 6\n1 2\n1 3",
+      "output": "666666673"
+    },
+    {
+      "input": "5\n5 2 1 4 6\n1 2\n1 3\n2 4\n3 5",
+      "output": "4"
+    }
+  ]
+}

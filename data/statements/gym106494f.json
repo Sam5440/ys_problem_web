@@ -1,0 +1,41 @@
+{
+  "code": "GYM106494F",
+  "letter": "F",
+  "title": "F. Thanos Sort",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106494/problem/F",
+  "difficulty": "*2000",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Thanos sort is one of the sorting algorithms that works in time linear in the length of the array.",
+      "The sorting algorithm is as follows:",
+      "1) If the array a=(a1,⋯,an)%%ZSMJ0%% is already sorted, then the process stops. An array is considered sorted if for every i%%ZSMJ1%% from 2%%ZSMJ2%% to n%%ZSMJ3%%, it holds that ai−1≤ai%%ZSMJ4%%.",
+      "2) Otherwise, either the first ⌈n2⌉%%ZSMJ5%% elements of the array or the last ⌊n2⌋%%ZSMJ6%% elements are chosen uniformly at random. All of them are removed, and the algorithm proceeds to step 1.",
+      "For example, sorting the array [10,4,5,6,8]%%ZSMJ7%% may look as follows:",
+      "[10,4,5,6,8]%%ZSMJ8%% -> [6,8]%%ZSMJ9%%",
+      "Or:",
+      "[10,4,5,6,8]%%ZSMJ10%% -> [10,4,5]%%ZSMJ11%% -> [10,4]%%ZSMJ12%% -> [10]%%ZSMJ13%%",
+      "Since many elements may disappear during Thanos sort, for an array a%%ZSMJ14%%, let f(a)%%ZSMJ15%% be the expected number of elements remaining in the final array.",
+      "You are given some array a%%ZSMJ16%%.",
+      "You need to process the following queries:",
+      "i,x%%ZSMJ17%% – assign ai:=x%%ZSMJ18%%.",
+      "After each query, you need to output f(a)%%ZSMJ19%% for the current array."
+    ],
+    "input": [
+      "The first line contains two integers n,q%%ZSMJ20%% (1≤n,q≤106%%ZSMJ21%%) – the length of the array and the number of queries, respectively.",
+      "The second line contains n%%ZSMJ22%% integers a1,a2,…,an(0≤ai≤109)%%ZSMJ23%% – the initial values of the array a%%ZSMJ24%%.",
+      "Each of the next q%%ZSMJ25%% lines contains a pair of integers i,x%%ZSMJ26%% (1≤i≤n,0≤x≤109%%ZSMJ27%%) – the parameters of the next query."
+    ],
+    "output": [
+      "After each query, output f(a)%%ZSMJ28%% modulo 998244353%%ZSMJ29%% on a separate line."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 8\n10 4 5 6 8\n1 5\n5 0\n3 3\n2 11\n4 7\n3 12\n5 17\n4 13",
+      "output": "499122178\n1\n1\n748683266\n748683266\n2\n499122179\n5"
+    }
+  ]
+}

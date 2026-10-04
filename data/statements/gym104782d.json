@@ -1,0 +1,44 @@
+{
+  "code": "GYM104782D",
+  "letter": "D",
+  "title": "D. Edenland",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104782/problem/D",
+  "difficulty": "*1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alice and Bob go to edenland. Edenland is a famous adventure park where people can play various games which take place inside of a forest.",
+      "At edenland, you have numerous tracks, each consisting of several games. We will only focus on one track. This track consists of n%%ZSMJ0%% games, separated by platforms. Alice takes ai%%ZSMJ1%% time to finish the ith%%ZSMJ2%% game, while Bob takes bi%%ZSMJ3%% time. We consider that it takes no time to pass a platform. Alice goes on the track first, followed by Bob.",
+      "However, at edenland there is a special rule: you can't overtake the person in front of you, that is, if you start behind someone, you will always be behind that person. To complete a track, you first start by playing the first game, then the second, and so on. As Bob will always be behind Alice, this rule will not change, and Alice will start the track before Bob.",
+      "There is another very important rule at edenland: no two people can play the same game at the same time, as it is not safe. Thus, if Bob is on the platform before the ith%%ZSMJ4%% game, he will wait on that platform until Alice has finished the ith%%ZSMJ5%% game.",
+      "Now, you are curious, for q%%ZSMJ6%% intervals [l,r]%%ZSMJ7%%, what is the amount of time Bob will finish the track after Alice, if we consider only the track consisting of games l,l+1,…,r%%ZSMJ8%%."
+    ],
+    "input": [
+      "In the first line of input, you will read integer n%%ZSMJ9%% (1≤n≤2⋅105%%ZSMJ10%%), representing the total number of games.",
+      "In the second lines of input, you will read n%%ZSMJ11%% integers a1,a2,…,an%%ZSMJ12%%. (1≤ai≤109%%ZSMJ13%%)",
+      "In the third line of input, you will read n%%ZSMJ14%% integers b1,b2,…,bn%%ZSMJ15%%. (1≤bi≤109%%ZSMJ16%%)",
+      "In the fourth line of input, you will read one integer q%%ZSMJ17%%, the number of queries (1≤q≤2⋅105%%ZSMJ18%%).",
+      "Every one of the next q%%ZSMJ19%% lines contains two integers l%%ZSMJ20%% and r%%ZSMJ21%%. (1≤l,r≤n%%ZSMJ22%%)"
+    ],
+    "output": [
+      "You should output q%%ZSMJ23%% space-separated integers, the ith%%ZSMJ24%% of them representing the answer for the ith%%ZSMJ25%% query."
+    ],
+    "note": [
+      "In the second query of the first test, Alice will complete game 4%%ZSMJ26%% in 5%%ZSMJ27%% seconds, then Bob will start it and complete it 9%%ZSMJ28%% seconds later.",
+      "In the third query of the first test, Bob will start the first game when Alice finishes it. Alice will finish the second game 9%%ZSMJ29%% seconds later, while Bob will finish the first game 10%%ZSMJ30%% seconds later. Then, Bob will finish the second game another 5%%ZSMJ31%% seconds later, so he will end 6%%ZSMJ32%% seconds later than Alice.",
+      "The explanation for the rest of the examples is truly remarkable, but we consider the explanations for the second and third queries of the first test sufficient."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n4 9 4 5 3\n10 5 2 9 8\n3\n1 5\n4 4\n1 2",
+      "output": "14\n9\n6"
+    },
+    {
+      "input": "8\n9 10 5 10 1 7 8 10\n6 3 7 4 3 1 2 9\n5\n6 8\n3 4\n2 7\n4 7\n1 3",
+      "output": "9\n4\n2\n2\n7"
+    }
+  ]
+}

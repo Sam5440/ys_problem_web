@@ -1,0 +1,54 @@
+{
+  "code": "GYM105401J",
+  "letter": "J",
+  "title": "J. Running in the Plane",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105401/problem/J",
+  "difficulty": "*2200",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 mebibytes",
+  "sections": {
+    "legend": [
+      "You are given a set S={(a1,b1),(a2,b2),…,(an,bn)}%%ZSMJ0%% of n%%ZSMJ1%% points in the plane. All coordinates of S%%ZSMJ2%% are integers.",
+      "A set T={(c1,d1),(c2,d2),…,(cm,dm)}%%ZSMJ3%% of m%%ZSMJ4%% 2-dimensional vectors is called a good set of S%%ZSMJ5%% if it satisfies the following:",
+      "There exists a nonempty finite sequence ((x0,y0),(x1,y1),…,(xl,yl))%%ZSMJ6%% of points in the plane such that   (x0,y0)=(0,0)%%ZSMJ7%%.",
+      "For all points p%%ZSMJ8%% in S%%ZSMJ9%%, there exists an integer i%%ZSMJ10%% (0≤i≤l%%ZSMJ11%%) such that (xi,yi)=p%%ZSMJ12%%.",
+      "For all integers i%%ZSMJ13%% (0≤i<l%%ZSMJ14%%), the vector (xi+1−xi,yi+1−yi)%%ZSMJ15%% is in T%%ZSMJ16%%.",
+      "For all integers i%%ZSMJ17%% (1≤i≤m%%ZSMJ18%%), two numbers ci%%ZSMJ19%% and di%%ZSMJ20%% are integers between −1018%%ZSMJ21%% and 1018%%ZSMJ22%% inclusive.",
+      "Find any good set of minimum size."
+    ],
+    "input": [
+      "The input consists of multiple test cases. The first line contains an integer Q%%ZSMJ23%% — the number of test cases. The description of the test cases follows. For each test case:",
+      "The first line of the test case contains an integer n%%ZSMJ24%% — the number of points in S%%ZSMJ25%%.",
+      "The i%%ZSMJ26%%-th of the next n%%ZSMJ27%% lines contains two integers ai%%ZSMJ28%% and bi%%ZSMJ29%% — the coordinates of each point in S%%ZSMJ30%%."
+    ],
+    "output": [
+      "For each test case:",
+      "Let T={(c1,d1),(c2,d2),…,(cm,dm)}%%ZSMJ31%% be a minimum-size good set of S%%ZSMJ32%%.",
+      "In the first line of the test case, print an integer m%%ZSMJ33%% — the number of vectors in T%%ZSMJ34%%.",
+      "In the i%%ZSMJ35%%-th of the next m%%ZSMJ36%% lines, print two integers ci%%ZSMJ37%% and di%%ZSMJ38%% — the coordinates of each vector.",
+      "If there are multiple solutions, print any of them.",
+      "It can be proved that, under the constraints of this problem, a good set of S%%ZSMJ39%% with size at most 10×n%%ZSMJ40%% always exists.",
+      "1≤Q≤50000%%ZSMJ41%%",
+      "The sum of n%%ZSMJ42%% over all test cases does not exceed 105%%ZSMJ43%%.",
+      "2≤n≤105%%ZSMJ44%%",
+      "−108≤ai,bi≤108%%ZSMJ45%% (1≤i≤n%%ZSMJ46%%)",
+      "(ai,bi)≠(aj,bj)%%ZSMJ47%% (1≤i<j≤n%%ZSMJ48%%)",
+      "m≥0%%ZSMJ49%%",
+      "−1018≤ci,di≤1018%%ZSMJ50%% (1≤i≤m%%ZSMJ51%%)",
+      "(ci,di)≠(cj,dj)%%ZSMJ52%% (1≤i<j≤m%%ZSMJ53%%)"
+    ],
+    "note": [
+      "In the first test case, T={(−10,10)}%%ZSMJ54%% is a minimum-size good set of S={(−30,30),(−50,50)}%%ZSMJ55%%.",
+      "We can take a sequence ((0,0),(−10,10),(−20,20),(−30,30)_,(−40,40),(−50,50)_)%%ZSMJ56%%. Here, the underlined points are in S%%ZSMJ57%%.",
+      "In the second test case, T={(1,0),(1,1)}%%ZSMJ58%% is a minimum-size good set of S={(2,1),(1,0),(4,1)}%%ZSMJ59%%.",
+      "We can take a sequence ((0,0),(1,0)_,(2,1)_,(3,1),(4,1)_)%%ZSMJ60%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n2\n-30 30\n-50 50\n3\n2 1\n1 0\n4 1",
+      "output": "1\n-10 10\n2\n1 0\n1 1"
+    }
+  ]
+}

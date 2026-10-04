@@ -1,0 +1,47 @@
+{
+  "code": "GYM106404J",
+  "letter": "J",
+  "title": "J. Balancing",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106404/problem/J",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "On the Ovine Island, you are in charge of a herd of big fat sheeps.",
+      "To protect them from big bad wolves, you have arranged them into an n×m%%ZSMJ0%% rectangular pen (n,m≤2000%%ZSMJ1%%). Each cell in the pen is either empty (weight 0%%ZSMJ2%%) or contains a sheep with weight gi,j,%%ZSMJ3%% an integer between [1,106]%%ZSMJ4%%.",
+      "Your boss is wondering if there are special properties of the weights of your sheep.",
+      "You are given q%%ZSMJ5%% queries, each describing a rectangle. For each rectangle, consider all non-empty weights inside it. Determine whether you can choose three different cells in the rectangle such that if their weights are a,b,c%%ZSMJ6%%, then the largest of them is strictly less than half of their sum: max(a,b,c)<a+b+c2.%%ZSMJ7%%"
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ8%% and m%%ZSMJ9%% (1≤n,m≤2000%%ZSMJ10%%).",
+      "The next n%%ZSMJ11%% lines each contain m%%ZSMJ12%% integers gi,j%%ZSMJ13%% (0≤gi,j≤106%%ZSMJ14%%), where gi,j=0%%ZSMJ15%% means the cell is empty.",
+      "The next line contains an integer q%%ZSMJ16%% (1≤q≤105%%ZSMJ17%%).",
+      "Each of the next q%%ZSMJ18%% lines contains four integers x1,y1,x2,y2%%ZSMJ19%% (1≤x1≤x2≤n%%ZSMJ20%%, 1≤y1≤y2≤m%%ZSMJ21%%), describing a rectangle with corners (x1,y1)%%ZSMJ22%% and (x2,y2)%%ZSMJ23%% (inclusive)."
+    ],
+    "output": [
+      "For each query, print YES (case-insensitive) if there exist three different non-empty cells inside the rectangle whose weights satisfy max(a,b,c)<a+b+c2,%%ZSMJ24%% and print NO (case-insensitive) otherwise."
+    ],
+    "note": [
+      "Query 1:  1 1 3 3",
+      "This rectangle covers the entire grid. The non-empty weights inside are: {1,2,3,10,4}%%ZSMJ25%%.",
+      "We need three different cells with weights a,b,c%%ZSMJ26%% such that max(a,b,c)<a+b+c2.%%ZSMJ27%%",
+      "Choose the triple (2,3,4)%%ZSMJ28%%. We have max(2,3,4)=4%%ZSMJ29%% and 2+3+42=92=4.5%%ZSMJ30%%.",
+      "Since 4<4.5,%%ZSMJ31%% the condition holds.",
+      "Therefore, the answer for Query 1 is YES%%ZSMJ32%%.",
+      "%%ZSMJ33%%",
+      "Query 2:  2 1 2 3",
+      "This rectangle covers row 2%%ZSMJ34%% and columns 1%%ZSMJ35%% through 3%%ZSMJ36%%. The non-empty weights inside are: {2,3,10}%%ZSMJ37%%.",
+      "The only possible triple is (2,3,10)%%ZSMJ38%%. We have max(2,3,10)=10%%ZSMJ39%% and 2+3+102=152=7.5%%ZSMJ40%%.",
+      "Since 10≮7.5%%ZSMJ41%%, the condition does not hold.",
+      "Therefore, the answer for Query 2 is NO%%ZSMJ42%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n1 0 0\n2 3 10\n0 4 0\n5\n1 1 3 3\n2 1 2 3\n1 1 2 2\n2 1 3 2\n1 1 1 1",
+      "output": "YES\nNO\nNO\nYES\nNO"
+    }
+  ]
+}

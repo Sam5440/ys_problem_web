@@ -1,0 +1,42 @@
+{
+  "code": "CF850A",
+  "letter": "A",
+  "title": "A. Five Dimensional Points",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/850/A",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given set of n points in 5-dimensional space. The points are labeled from 1 to n. No two points coincide.",
+      "We will call point a bad if there are different points b and c, not equal to a, from the given set such that angle between vectors ![](https://espresso.codeforces.com/bc6e3d5e5515bb66791ca9a052249e959af2a9a6.png) and ![](https://espresso.codeforces.com/d2b2e44b4b49d4da671b9d05dd70bf58772fc6a6.png) is acute (i.e. strictly less than ![](https://espresso.codeforces.com/362ac8c7a7496dffc06cd0c843287cd822be63c3.png)). Otherwise, the point is called good.",
+      "The angle between vectors ![](https://espresso.codeforces.com/f8914399eadbd8be3c3196100658870e03c61fee.png) and ![](https://espresso.codeforces.com/453598e99a6c6151192723fb952c1caf35bfa782.png) in 5-dimensional space is defined as ![](https://espresso.codeforces.com/73dfa232ec919ce1de408d890c24b9d49969d069.png), where ![](https://espresso.codeforces.com/707f1153862986f1b7f8d6ea585c4674982e3bab.png) is the scalar product and ![](https://espresso.codeforces.com/1ac438acfe8cbf49b733409b450a909ac2b06085.png) is length of ![](https://espresso.codeforces.com/f8914399eadbd8be3c3196100658870e03c61fee.png).",
+      "Given the list of points, print the indices of the good points in ascending order."
+    ],
+    "input": [
+      "The first line of input contains a single integer n (1 ≤ n ≤ 103) — the number of points.",
+      "The next n lines of input contain five integers ai, bi, ci, di, ei (|ai|, |bi|, |ci|, |di|, |ei| ≤ 103)  — the coordinates of the i-th point. All points are distinct."
+    ],
+    "output": [
+      "First, print a single integer k — the number of good points.",
+      "Then, print k integers, each on their own line — the indices of the good points in ascending order."
+    ],
+    "note": [
+      "In the first sample, the first point forms exactly a ![](https://espresso.codeforces.com/362ac8c7a7496dffc06cd0c843287cd822be63c3.png) angle with all other pairs of points, so it is good.",
+      "In the second sample, along the cd plane, we can see the points look as follows:",
+      "![](https://espresso.codeforces.com/b47e1fa6958eae10e2164a9d9282fdcbcb92a857.png)",
+      "We can see that all angles here are acute, so no points are good."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n0 0 0 0 0\n1 0 0 0 0\n0 1 0 0 0\n0 0 1 0 0\n0 0 0 1 0\n0 0 0 0 1",
+      "output": "1\n1"
+    },
+    {
+      "input": "3\n0 0 1 2 0\n0 0 9 2 0\n0 0 5 9 0",
+      "output": "0"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "code": "GYM103503A",
+  "letter": "A",
+  "title": "A. Make Sum Great Again",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103503/problem/A",
+  "difficulty": "*1400",
+  "timeLimit": "1 second",
+  "memoryLimit": "64 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array a%%ZSMJ0%% of n%%ZSMJ1%% distinct positive integers. Unfortunately, the array is way past its prime, so you have decided to help it relive \"the good old days\"!",
+      "The array remembers that in the \"the good old days\" it had a sum of elements greater than or equal to a given threshold s%%ZSMJ2%%. To help the array, you are allowed to perform a sequence of operations. In one operation, you may choose any positive integer x%%ZSMJ3%% which is not already present in the array, and append it to the end of a%%ZSMJ4%%.",
+      "In a stroke of genius and insecurity, you have come to the rational conclusion that once the array realizes that the sum of its elements is greater than or equal to s%%ZSMJ5%%, it will no longer allow you to perform any more operations and leave forever. To postpone the inevitable departure of the array, you have decided to make the helping process as lengthy as possible. More formally, you would like to maximize the number of operations before the array realizes that the sum of its elements is greater than or equal to s%%ZSMJ6%%.",
+      "What is the maximum final length of array a%%ZSMJ7%%?"
+    ],
+    "input": [
+      "The first line of input contains two integers n%%ZSMJ8%% and s%%ZSMJ9%% (1≤n≤2⋅105%%ZSMJ10%%, 1≤s≤1018)%%ZSMJ11%% — the length of the initial array, and the given threshold for the sum. The second line of input contains n%%ZSMJ12%% integers a1,a2,…,an%%ZSMJ13%% (1≤ai≤1012%%ZSMJ14%%) — the elements of the initial array."
+    ],
+    "output": [
+      "Print one integer, the maximum possible final length of the array.",
+      "Subtask 1 (20 points): 1≤n≤1000%%ZSMJ15%%, 1≤s≤109%%ZSMJ16%%;",
+      "Subtask 2 (30 points): 1≤n≤105%%ZSMJ17%%, 1≤s≤1012%%ZSMJ18%%;",
+      "Subtask 3 (50 points): No further constraints"
+    ],
+    "note": [
+      "In the first sample, a way to get an array of size 6%%ZSMJ19%% is to append, in order, integers 4%%ZSMJ20%%, 2%%ZSMJ21%% and 7%%ZSMJ22%%, giving us the array a=[6,1,3,4,2,7]%%ZSMJ23%%. When 7%%ZSMJ24%% is appended, the sum of the elements will become 6+1+3+4+2+7=23%%ZSMJ25%%, which is greater than or equal to s=17%%ZSMJ26%%.",
+      "In the second sample, the sum of the elements of the array is 6+8+1+5+9=29%%ZSMJ27%%, which is already greater than or equal to s=28%%ZSMJ28%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 17\n6 1 3",
+      "output": "6"
+    },
+    {
+      "input": "5 28\n6 8 1 5 9",
+      "output": "5"
+    }
+  ]
+}

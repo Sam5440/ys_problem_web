@@ -1,0 +1,46 @@
+{
+  "code": "CF228C",
+  "letter": "C",
+  "title": "C. Fractal Detector",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/228/C",
+  "difficulty": "2000",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Little Vasya likes painting fractals very much.",
+      "He does it like this. First the boy cuts out a 2 × 2-cell square out of squared paper. Then he paints some cells black. The boy calls the cut out square a fractal pattern. Then he takes a clean square sheet of paper and paints a fractal by the following algorithm:",
+      "He divides the sheet into four identical squares. A part of them is painted black according to the fractal pattern.",
+      "Each square that remained white, is split into 4 lesser white squares, some of them are painted according to the fractal pattern. Each square that remained black, is split into 4 lesser black squares.",
+      "In each of the following steps step 2 repeats. To draw a fractal, the boy can make an arbitrary positive number of steps of the algorithm. But he need to make at least two steps. In other words step 2 of the algorithm must be done at least once. The resulting picture (the square with painted cells) will be a fractal. The figure below shows drawing a fractal (here boy made three steps of the algorithm).",
+      "![](https://espresso.codeforces.com/78a13eced5dcd89d10f2f7113fe60f37ce70a44f.png)",
+      "One evening Vasya got very tired, so he didn't paint the fractal, he just took a sheet of paper, painted a n × m-cell field. Then Vasya paint some cells black.",
+      "Now he wonders, how many squares are on the field, such that there is a fractal, which can be obtained as described above, and which is equal to that square. Square is considered equal to some fractal if they consist of the same amount of elementary not divided cells and for each elementary cell of the square corresponding elementary cell of the fractal have the same color."
+    ],
+    "input": [
+      "The first line contains two space-separated integers n, m (2 ≤ n, m ≤ 500) — the number of rows and columns of the field, correspondingly.",
+      "Next n lines contain m characters each — the description of the field, painted by Vasya. Character \".\" represents a white cell, character \"*\" represents a black cell.",
+      "It is guaranteed that the field description doesn't contain other characters than \".\" and \"*\"."
+    ],
+    "output": [
+      "On a single line print a single integer — the number of squares on the field, such that these squares contain a drawn fractal, which can be obtained as described above."
+    ],
+    "note": [
+      "The answer for the first sample is shown on the picture below. Fractals are outlined by red, blue and green squares.",
+      "![](https://espresso.codeforces.com/e190b17d556e28a76fbc1b2d251284d0f891bb37.png)",
+      "The answer for the second sample is 0. There is no fractal, equal to the given picture.",
+      "![](https://espresso.codeforces.com/c9ac30c1dde3d408ea8f951780188bfc8f14f58b.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 11\n......*.***\n*.*.*....**\n.***....*.*\n..***.*....\n.*.*.....**\n......*.*..",
+      "output": "3"
+    },
+    {
+      "input": "4 4\n..**\n..**\n....\n....",
+      "output": "0"
+    }
+  ]
+}

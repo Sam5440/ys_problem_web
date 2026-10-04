@@ -1,0 +1,55 @@
+{
+  "code": "GYM106531D",
+  "letter": "D",
+  "title": "D. DJ Sandália's Electric Trio",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106531/problem/D",
+  "difficulty": "*1900",
+  "timeLimit": "0.5 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Every February, the streets of Salvador surrender to the Carnaval, and no one feels it more than DJ Sandália, the legendary selector who rides the oldest trio elétrico circling the Campo Grande circuit. The folião crowd shouts song requests all night long, and DJ Sandália has carefully written down, for each of the N%%ZSMJ0%% songs in the repertoire, an integer \"weight\" Pi%%ZSMJ1%% that measures how badly the crowd wants to hear song i%%ZSMJ2%%.",
+      "To keep the party fair, DJ Sandália wants to pick the next song at random so that song i%%ZSMJ3%% is chosen with probability exactly Pi/(P1+P2+⋯+PN)%%ZSMJ4%%.",
+      "There is just one problem: the trio's randomizer is a battered piece of hardware from the 1980s, and the only thing it knows how to do is to draw an integer uniformly at random from a given range. It cannot weight anything by itself; every draw it produces is perfectly uniform.",
+      "Working only with this uniform randomizer, DJ Sandália came up with the following strategy. First, choose a single integer K%%ZSMJ5%% and build three arrays A%%ZSMJ6%%, B%%ZSMJ7%% and C%%ZSMJ8%%, each of length N%%ZSMJ9%%. Then, to pick a song:",
+      "draw x%%ZSMJ10%% uniformly from 1%%ZSMJ11%% to N%%ZSMJ12%%;",
+      "draw y%%ZSMJ13%% uniformly from 0%%ZSMJ14%% to K%%ZSMJ15%%;",
+      "if y<Cx%%ZSMJ16%%, play song Ax%%ZSMJ17%%; otherwise, play song Bx%%ZSMJ18%%.",
+      "Help DJ Sandália choose K%%ZSMJ19%% and the arrays A%%ZSMJ20%%, B%%ZSMJ21%% and C%%ZSMJ22%% so that this procedure plays song i%%ZSMJ23%% with probability exactly Pi/(P1+⋯+PN)%%ZSMJ24%%, for every song i%%ZSMJ25%%."
+    ],
+    "input": [
+      "The first line contains a single integer N%%ZSMJ26%% (1≤N≤1000%%ZSMJ27%%), the number of songs.",
+      "The second line contains N%%ZSMJ28%% integers P1,P2,…,PN%%ZSMJ29%% (1≤Pi≤109%%ZSMJ30%%), the weight of each song."
+    ],
+    "output": [
+      "On the first line, print a single integer K%%ZSMJ31%% (0≤K≤1018%%ZSMJ32%%).",
+      "On the second line, print N%%ZSMJ33%% integers A1,…,AN%%ZSMJ34%% (1≤Ai≤N%%ZSMJ35%%).",
+      "On the third line, print N%%ZSMJ36%% integers B1,…,BN%%ZSMJ37%% (1≤Bi≤N%%ZSMJ38%%).",
+      "On the fourth line, print N%%ZSMJ39%% integers C1,…,CN%%ZSMJ40%% (0≤Ci≤K%%ZSMJ41%%).",
+      "Your answer is accepted if, for every song i%%ZSMJ42%%, the probability that the described procedure plays song i%%ZSMJ43%% equals Pi/(P1+⋯+PN)%%ZSMJ44%% exactly. Any valid answer will be accepted."
+    ],
+    "note": [
+      "Explanation for example 1",
+      "With a single song, K=4%%ZSMJ45%% and the only bucket points to song 1%%ZSMJ46%% on both sides, so song 1%%ZSMJ47%% is always chosen.",
+      "Explanation for example 2",
+      "Here K=3%%ZSMJ48%%. With the printed table, Pr[1]=14=P1S%%ZSMJ49%% and Pr[2]=34=P2S%%ZSMJ50%%, so it is a valid answer.",
+      "Explanation for example 3",
+      "Here K=3%%ZSMJ51%%. The printed table gives Pr[1]=Pr[2]=14%%ZSMJ52%% and Pr[3]=12%%ZSMJ53%%, matching Pi/S%%ZSMJ54%%. Any other valid table is also accepted."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n5",
+      "output": "4\n1\n1\n4"
+    },
+    {
+      "input": "2\n1 3",
+      "output": "3\n1 2\n2 2\n2 3"
+    },
+    {
+      "input": "3\n1 1 2",
+      "output": "3\n1 2 3\n3 3 3\n3 3 3"
+    }
+  ]
+}

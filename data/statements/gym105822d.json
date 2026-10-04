@@ -1,0 +1,42 @@
+{
+  "code": "GYM105822D",
+  "letter": "D",
+  "title": "D. Beaverland",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105822/problem/D",
+  "difficulty": "*1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Busy Beaver wants to have a tour in Beaverland! Beaverland consists of N%%ZSMJ0%% cities and M%%ZSMJ1%% bidirectional roads between them. It is guaranteed that it is possible to travel between any pair of cities along the M%%ZSMJ2%% roads, and that all roads have length 1%%ZSMJ3%%.",
+      "So far, Busy Beaver has planned out his tour, and wishes to visit the cities x1,x2,…,xK%%ZSMJ4%%. He views his tour to be interesting if dist(1,x1)<dist(1,x2)<⋯<dist(1,xK)%%ZSMJ5%% where dist(x,y)%%ZSMJ6%% for two cities x,y%%ZSMJ7%% is equal to the length of the shortest path connecting the two cities.",
+      "However, it might not be the case that Busy Beaver's tour is currently interesting! To fix this, he can add up to 5⋅105%%ZSMJ8%% more roads between any pairs of cities. Each of the added roads is also bidirectional and has length 1%%ZSMJ9%%.",
+      "Determine whether it is possible to make Busy Beaver's tour interesting by adding some roads (possibly none). Additionally, if it is possible, provide any valid construction."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line of input contains a single integer T%%ZSMJ10%% (1≤T≤104)%%ZSMJ11%%, the number of test cases. The description of each test case follows.",
+      "The first line of each test case contains three integers N,M,K%%ZSMJ12%% (1≤K≤N,N−1≤M≤2⋅105%%ZSMJ13%%) — the total number of cities, roads, and the number of cities in Busy Beaver's tour, respectively.",
+      "The next line contains K%%ZSMJ14%% integers x1,x2,…,xK%%ZSMJ15%% (1≤xi≤N%%ZSMJ16%%, xi%%ZSMJ17%% distinct) — the cities that Busy Beaver plans to visit.",
+      "The i%%ZSMJ18%%-th of the next M%%ZSMJ19%% lines contains two integers ui%%ZSMJ20%% and vi%%ZSMJ21%% (1≤ui,vi≤N%%ZSMJ22%%, ui≠vi%%ZSMJ23%%) — indicating that there is a road between cities ui%%ZSMJ24%% and vi%%ZSMJ25%%. It is guaranteed that there is at most 1%%ZSMJ26%% edge between any two distinct cities.",
+      "The sum of N%%ZSMJ27%%, the sum of M%%ZSMJ28%%, and the sum of K%%ZSMJ29%% over all test cases all do not exceed 2⋅105%%ZSMJ30%%."
+    ],
+    "output": [
+      "For each test case, if it is possible to make the tour interesting, the first line of output should contain an integer L%%ZSMJ31%% (0≤L≤5⋅105%%ZSMJ32%%) — the number of added roads. Each of the next L%%ZSMJ33%% lines of output should then contain two integers ui,vi%%ZSMJ34%% (1≤ui,vi≤N%%ZSMJ35%%, ui≠vi%%ZSMJ36%%) representing a road to be added.",
+      "If there are multiple solutions, print any of them. Otherwise, if there is no solution, print a single integer −1%%ZSMJ37%% instead.",
+      "Due to judging constraints, you may use at most 5⋅105%%ZSMJ38%% roads in total, over all test cases. It can be shown that this is enough to solve the problem."
+    ],
+    "note": [
+      "In the first test case, adding a road between cities 1,2%%ZSMJ39%% causes dist(1,1)=0,dist(1,2)=1%%ZSMJ40%%, making the tour interesting.",
+      "In the second test case, it can be shown that the task is impossible.",
+      "In the third test case, by adding a road between cities 1,3%%ZSMJ41%% we have dist(1,3)=1,dist(1,5)=2%%ZSMJ42%%, making the tour interesting.",
+      "In the fourth test case, the tour is already interesting, and no roads need to be added."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n3 3 2\n1 2\n1 2\n1 3\n2 3\n3 3 3\n1 2 3\n1 2\n1 3\n2 3\n5 5 2\n3 5\n1 2\n2 3\n1 4\n4 5\n2 4\n6 6 5\n1 2 3 4 5\n1 2\n2 3\n3 4\n4 5\n5 6\n4 6",
+      "output": "1\n1 2\n-1\n1\n1 3\n0"
+    }
+  ]
+}

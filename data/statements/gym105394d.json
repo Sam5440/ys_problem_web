@@ -1,0 +1,39 @@
+{
+  "code": "GYM105394D",
+  "letter": "D",
+  "title": "D. Dark Alley",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105394/problem/D",
+  "difficulty": "*1900",
+  "timeLimit": "2.5 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "One cold and foggy night, you walk down a shady alley. There should be a lamp every few metres but none of them seem to work, and in this night, not even the moon enlightens your path. Alone and in the dark, you wonder: \"Even if there was a working lamp somewhere, how much would it lighten my way?\". Now, back at home, you want to calculate this.",
+      "The alley can be modelled as a line with a length of n%%ZSMJ0%% metres. The fog has a uniform density and reduces the light of a lamp by a factor of 1−p%%ZSMJ1%% every metre. The brightness at one point is the sum of the light that reaches this point from every lamp. You want to calculate this brightness at some points after placing some lamps."
+    ],
+    "input": [
+      "The input consists of:",
+      "One line with two integers n%%ZSMJ2%% and q%%ZSMJ3%% and one real number p%%ZSMJ4%% (1≤n,q≤2⋅105,0<p<1%%ZSMJ5%%),   the length of the alley, the number of queries and the density of the fog.   The density p%%ZSMJ6%% of the fog will be given with at most 6%%ZSMJ7%% digits behind the decimal point.",
+      "q%%ZSMJ8%% lines containing one of three query types:   [noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]     \"+ b x\" given two integers b%%ZSMJ9%% and x%%ZSMJ10%% (1≤b≤109%%ZSMJ11%% and 1≤x≤n%%ZSMJ12%%), place a lamp with brightness b%%ZSMJ13%% at position x%%ZSMJ14%%.",
+      "\"- b x\" given integers b%%ZSMJ15%% and x%%ZSMJ16%% (1≤b≤109%%ZSMJ17%% and 1≤x≤n%%ZSMJ18%%), remove a lamp with brightness b%%ZSMJ19%% at position x%%ZSMJ20%%.    It is guaranteed that a lamp with that brightness was placed there earlier.",
+      "\"? x\" given one integer x%%ZSMJ21%% (1≤x≤n%%ZSMJ22%%), calculate the brightness at position x%%ZSMJ23%%."
+    ],
+    "output": [
+      "It can be shown that the brightness can be calculated as a fraction PQ%%ZSMJ24%% where Q%%ZSMJ25%% is not divisible by 109+7%%ZSMJ26%%.  For each query of type \"?\", print the brightness as P⋅Q−1mod109+7%%ZSMJ27%% in a single line."
+    ],
+    "note": [
+      "The brightness in the alley after placing the lamp will look like this:"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 6 0.25\n+ 4 2\n? 1\n? 2\n? 3\n? 4\n? 5",
+      "output": "3\n4\n3\n250000004\n187500003"
+    },
+    {
+      "input": "5 7 0.33\n+ 9 1\n? 5\n+ 4 3\n? 2\n? 5\n- 9 1\n? 2",
+      "output": "312342734\n470000012\n341542736\n760000008"
+    }
+  ]
+}

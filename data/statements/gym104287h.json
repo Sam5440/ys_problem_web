@@ -1,0 +1,57 @@
+{
+  "code": "GYM104287H",
+  "letter": "H",
+  "title": "H. A Certain Scientific Tree Problem",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104287/problem/H",
+  "difficulty": "*1300",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/1d2f2a8fb96b89640dc41f1ef49de62f572482f5.png)",
+      "Misaka has come up with a very good problem for this contest. Unfortunately, that problem already exists (on at least 3 different online judges!) so she has to add a creative twist to it!",
+      "Consider a full binary tree of depth d%%ZSMJ0%%. Remember a full binary tree with depth d%%ZSMJ1%% has 2d−1%%ZSMJ2%% nodes and there is an edge from each node u%%ZSMJ3%% (2≤u≤2d−1)%%ZSMJ4%% to its parent ⌊u2⌋%%ZSMJ5%%. Misaka asks you to find the sum of distances between every pair of nodes on the tree.",
+      "Formally if n=2d−1%%ZSMJ6%% (n=#%%ZSMJ7%% nodes on the tree), compute:",
+      "S=n∑i=1n∑j=1dist(i,j)%%ZSMJ8%%",
+      "where dist(i,j)%%ZSMJ9%% is the minimum number of edges on any path between node i%%ZSMJ10%% to node j%%ZSMJ11%%."
+    ],
+    "input": [
+      "The first line will contain one integer T%%ZSMJ12%% denoting the number of multitests (1≤T≤5)%%ZSMJ13%%.",
+      "The first line of each test will contain one integer d%%ZSMJ14%% the depth of the binary tree (1≤d≤105)%%ZSMJ15%%.",
+      "—",
+      "Testcases in subtasks are numbered 1−20%%ZSMJ16%% with samples skipped.",
+      "Testcases 1−4%%ZSMJ17%% satisfy i%%ZSMJ18%%'th multitest of the j%%ZSMJ19%%'th testcase has d=(j−1)⋅5+i%%ZSMJ20%%. For instance testcase 2%%ZSMJ21%% will consist of d=[6,7,8,9,10]%%ZSMJ22%% across the 5%%ZSMJ23%% multitests.",
+      "Testcases 5−8%%ZSMJ24%% satisfy 1≤d≤102%%ZSMJ25%%.",
+      "Testcases 9−12%%ZSMJ26%% satisfy 1≤d≤103%%ZSMJ27%%.",
+      "The remaining testcases do not satisfy any additional constraints."
+    ],
+    "output": [
+      "Output one integer S%%ZSMJ28%% per testcase denoting the sum of distances across all pairs of nodes on the tree. Since this number may be very large, please find it modulo 109+7%%ZSMJ29%%."
+    ],
+    "note": [
+      "In the first sample, the tree only has 1%%ZSMJ30%% node. As dist(1,1)=0%%ZSMJ31%%, the answer would just be 0%%ZSMJ32%%.",
+      "In the second sample, there are 3%%ZSMJ33%% nodes on a full binary tree with depth 2%%ZSMJ34%%. There are edges 1−2%%ZSMJ35%% and 1−3%%ZSMJ36%%.",
+      "dist(1,1)=0%%ZSMJ37%%",
+      "dist(1,2)=1%%ZSMJ38%%",
+      "dist(1,3)=1%%ZSMJ39%%",
+      "dist(2,1)=1%%ZSMJ40%%",
+      "dist(2,2)=0%%ZSMJ41%%",
+      "dist(2,3)=2%%ZSMJ42%%",
+      "dist(3,1)=1%%ZSMJ43%%",
+      "dist(3,2)=2%%ZSMJ44%%",
+      "dist(3,3)=0%%ZSMJ45%%",
+      "0+1+1+1+0+2+1+2+0=8%%ZSMJ46%% so 8%%ZSMJ47%% is the answer.",
+      "—",
+      "Idea: 3366",
+      "Preparation: 3366",
+      "Occurrences: Novice 9, Advanced 4"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1\n2\n3\n20\n3366",
+      "output": "0\n8\n96\n443317199\n359215119"
+    }
+  ]
+}

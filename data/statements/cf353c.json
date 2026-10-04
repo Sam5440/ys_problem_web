@@ -1,0 +1,38 @@
+{
+  "code": "CF353C",
+  "letter": "C",
+  "title": "C. Find Maximum",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/353/C",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Valera has array a, consisting of n integers a0, a1, ..., an - 1, and function f(x), taking an integer from 0 to 2n - 1 as its single argument. Value f(x) is calculated by formula ![](https://espresso.codeforces.com/eba4794e67d3b5ce144adcffa5217705a92db70f.png), where value bit(i) equals one if the binary representation of number x contains a 1 on the i-th position, and zero otherwise.",
+      "For example, if n = 4 and x = 11 (11 = 20 + 21 + 23), then f(x) = a0 + a1 + a3.",
+      "Help Valera find the maximum of function f(x) among all x, for which an inequality holds: 0 ≤ x ≤ m."
+    ],
+    "input": [
+      "The first line contains integer n (1 ≤ n ≤ 105) — the number of array elements. The next line contains n space-separated integers a0, a1, ..., an - 1 (0 ≤ ai ≤ 104) — elements of array a.",
+      "The third line contains a sequence of digits zero and one without spaces s0s1... sn - 1 — the binary representation of number m. Number m equals ![](https://espresso.codeforces.com/77407fd65d8594ac862f8de69093d5a75e54d3c5.png)."
+    ],
+    "output": [
+      "Print a single integer — the maximum value of function f(x) for all ![](https://espresso.codeforces.com/82bfd78b9ec5ce07767875a86696eb7b2eb3031c.png)."
+    ],
+    "note": [
+      "In the first test case m = 20 = 1, f(0) = 0, f(1) = a0 = 3.",
+      "In the second sample m = 20 + 21 + 23 = 11, the maximum value of function equals f(5) = a0 + a2 = 17 + 10 = 27."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3 8\n10",
+      "output": "3"
+    },
+    {
+      "input": "5\n17 0 10 2 1\n11010",
+      "output": "27"
+    }
+  ]
+}

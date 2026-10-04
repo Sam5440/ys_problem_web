@@ -1,0 +1,44 @@
+{
+  "code": "GYM106495E",
+  "letter": "E",
+  "title": "E. Erasmus Valthron",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106495/problem/E",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Erasmus Valthorn is the Chief Archivist of the Celestial Library of Numeris — a vast hall where every integer from 1 to N exists as a physical tome, its spine engraved with the number it represents.",
+      "After decades of cataloguing by mere numeric order, Erasmus has grown restless. He believes that numbers have a true identity — not their face value, but their prime essence: the sorted sequence of prime factors that compose them.",
+      "He calls this the Canonical Form of a number. For example:",
+      "48=2×2×2×2×3⇒[2,2,2,2,3]%%ZSMJ0%%",
+      "9=3×3⇒[3,3]%%ZSMJ1%%",
+      "Erasmus now wishes to rearrange all tomes according to their Canonical Form, sorted lexicographically. Under this order, the tome of 48 precedes the tome of 9, since the first element of its sequence — 2 — is less than 3.",
+      "The number 1, having no prime factors, is represented by the empty sequence [ ], which is lexicographically smallest of all, and thus occupies the very first shelf.",
+      "However, Erasmus is old and forgetful. He keeps losing track of where specific tomes end up in the new arrangement. He has written down Q questions — each asking: \"In this new order, which number sits at position K?\"",
+      "Help Erasmus answer his queries before the next lunar eclipse!"
+    ],
+    "input": [
+      "The first line contains two integers N%%ZSMJ2%% and Q%%ZSMJ3%% (1≤N≤106, 1≤Q≤105)%%ZSMJ4%%, the number of tomes in the library and the number of queries Erasmus has written down.",
+      "Each of the next Q%%ZSMJ5%% lines contains a single integer Ki%%ZSMJ6%% (1≤Ki≤N)%%ZSMJ7%%, a position in the sorted arrangement."
+    ],
+    "output": [
+      "For each query, print a single integer — the number occupying position Ki%%ZSMJ8%% in Erasmus's new ordering."
+    ]
+  },
+  "examples": [
+    {
+      "input": "10 10\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10",
+      "output": "1\n2\n4\n8\n6\n10\n3\n9\n5\n7"
+    },
+    {
+      "input": "10 4\n1\n4\n7\n10",
+      "output": "1\n8\n3\n7"
+    },
+    {
+      "input": "5 1\n5",
+      "output": "5"
+    }
+  ]
+}

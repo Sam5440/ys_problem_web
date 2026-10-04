@@ -1,0 +1,46 @@
+{
+  "code": "GYM105056E",
+  "letter": "E",
+  "title": "E. POS Kiosk",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105056/problem/E",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Odoo has introduced its new POS Kiosk app, which allows restaurants to receive orders from clients in their shop and process them easily. So basically, there are 2 main functionalities of the POS kiosk: add order , mark order as done so it's removed from the screen.",
+      "For performance reasons, the updates in the database are made in batches. It means that for each batch of updates, there is only one query executed to remove/add records to the database.",
+      "To test the database performance, Odoo developers came up with the following process :",
+      "There will be a randomly generated array of operations A%%ZSMJ0%% of size n%%ZSMJ1%% based on analytics of real data where Ai%%ZSMJ2%% is the difference between the created and deleted records of that batch of updates. For example, if Ai=3%%ZSMJ3%% , it means there are 3 more created records than deleted records in that batch of operations.",
+      "Now for every integers L%%ZSMJ4%% to R%%ZSMJ5%% (1≤L≤R≤n)%%ZSMJ6%% they will calculate f(A,L,R)%%ZSMJ7%% which goes as follows, from L%%ZSMJ8%% to R%%ZSMJ9%%, executes the queries one by one, and reports the maximum extra units of space needed from its initial state if we consider that each record needs 1%%ZSMJ10%% unit of space. It means that if Ai>0%%ZSMJ11%% we need extra Ai%%ZSMJ12%% units of space to be able to execute that query , otherwise we free −Ai%%ZSMJ13%% units of space from the database that can be filled later by some other updates. For example, for the sequence 2%%ZSMJ14%% 3%%ZSMJ15%% −4%%ZSMJ16%% 6%%ZSMJ17%%, the answer is 7%%ZSMJ18%%, and for 2%%ZSMJ19%% 3%%ZSMJ20%% −4%%ZSMJ21%% 3%%ZSMJ22%%, the answer is 5%%ZSMJ23%%.",
+      "Given the generated array A%%ZSMJ24%%, can you simulate the experiment and find : ∑1≤L≤R≤nf(A,L,R)%%ZSMJ25%%"
+    ],
+    "input": [
+      "The first line contains an integer T%%ZSMJ26%% (1≤T≤2⋅105)%%ZSMJ27%%, the number of testcases.",
+      "For each test case:",
+      "The first line contains an integer n%%ZSMJ28%% (1≤n≤2⋅105)%%ZSMJ29%%, the size of the generated array of updates.",
+      "The second line contains n%%ZSMJ30%% integers Ai%%ZSMJ31%% (−2⋅103≤Ai≤2⋅103)%%ZSMJ32%%, the data of the generated array.",
+      "The sum of n%%ZSMJ33%% over all test cases doesn't exceed 2⋅105%%ZSMJ34%%"
+    ],
+    "output": [
+      "Print T%%ZSMJ35%% lines where the ith%%ZSMJ36%% line contains the answer for the ith%%ZSMJ37%% testcase."
+    ],
+    "note": [
+      "Explanation of the first test case:",
+      "for [−2]%%ZSMJ38%% the answer is 0%%ZSMJ39%%",
+      "for [−2,3]%%ZSMJ40%% the answer is 1%%ZSMJ41%%",
+      "for [−2,3,−5]%%ZSMJ42%% the answer is 1%%ZSMJ43%%",
+      "for [3]%%ZSMJ44%% the answer is 3%%ZSMJ45%%",
+      "for [3,−5]%%ZSMJ46%% the answer is 3%%ZSMJ47%%",
+      "for [−5]%%ZSMJ48%% the answer is 0%%ZSMJ49%%",
+      "The total sum is equal to 8%%ZSMJ50%%"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3\n-2 3 -5\n7\n1 -2 3 4 5 -10 223",
+      "output": "8\n1672"
+    }
+  ]
+}

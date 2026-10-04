@@ -1,0 +1,35 @@
+{
+  "code": "GYM103821K",
+  "letter": "K",
+  "title": "K. Movie Planning",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103821/problem/K",
+  "difficulty": "*1500",
+  "timeLimit": "1.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are planning to visit the movies with your friends after the end of the exams. The movie theater has N%%ZSMJ0%% movies, you know the start and end moments of each movie. The theater contains many halls, so there could be more than one movie playing at the same time, the movie theater will be open for M%%ZSMJ1%% moments.",
+      "If you reach the movies at the beginning of moment L%%ZSMJ2%% and you stay until the end of moment R%%ZSMJ3%%, then you can watch any movie that starts at moment L%%ZSMJ4%% or later and ends at moment R%%ZSMJ5%% or earlier. You are planning to watch exactly 2%%ZSMJ6%% complete movies, so you can't start watching the second movie until you finish watching the first one.",
+      "Since you are sharp-minded, you thought of all possible scenarios of arriving and leaving the movies, in other words, for every possible arriving time Li%%ZSMJ7%% from 1%%ZSMJ8%% to M%%ZSMJ9%%, and for every possible leaving time Rj%%ZSMJ10%% from Li+1%%ZSMJ11%% to M%%ZSMJ12%%. For each scenario you need to count how many pairs of movies are possible to watch during this period. You have to print the sum of pairs for all possible scenarios. Note that if some pair of movies is present in more than one scenario then you should count them independently in each scenario."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases T%%ZSMJ13%% (1≤T≤2×105%%ZSMJ14%%). Description of the test cases follows.",
+      "The first line of each test case contains two integers N%%ZSMJ15%% (1≤N≤2×105%%ZSMJ16%%) and M%%ZSMJ17%% (1≤M≤2×105%%ZSMJ18%%).",
+      "Each of the next N%%ZSMJ19%% lines of each test case contains Li%%ZSMJ20%% and Ri%%ZSMJ21%%(1≤Li≤Ri≤M%%ZSMJ22%%), the start and the end moments of the ith%%ZSMJ23%% movie for each i%%ZSMJ24%% from 1%%ZSMJ25%% to N%%ZSMJ26%%.",
+      "It is guaranteed%%ZSMJ27%% that the sum of N%%ZSMJ28%% and sum of M%%ZSMJ29%% over all test cases does not exceed 2×105%%ZSMJ30%%."
+    ],
+    "output": [
+      "For each test case, output a single integer denoting the answer for the test case, since the answer could be very large, please print the remainder of dividing it by 1000000007%%ZSMJ31%%."
+    ],
+    "note": [
+      "In the first test case, all the movies are overlapping, in other words you can't pick two movies to watch entirely in any possible period of time, so the answer is 0%%ZSMJ32%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3 6\n1 3\n2 5\n3 6\n4 12\n1 6\n2 8\n9 10\n11 12",
+      "output": "0\n21"
+    }
+  ]
+}

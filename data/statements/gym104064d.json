@@ -1,0 +1,41 @@
+{
+  "code": "GYM104064D",
+  "letter": "D",
+  "title": "D. Dyson Circle",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104064/problem/D",
+  "difficulty": "*1700",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "A Dyson Sphere is a theoretical construction around the sun or another star, that captures the entire energy output of the star. Science fiction writers have speculated that advanced civilizations will eventually build such a sphere, as the energy demands of such a society continue to grow without bounds. In our three-dimensional space, Dyson spheres are still in the realm of fiction. {Dy & Son}, the main energy company of your dimensional neighbours, has tasked you with carrying out a feasibility study in the two-dimensional world of Flatland.",
+      "{Dy & Son} has developed a modular Dyson Circle. It consists of independent square Dyson Units that can chain together to form a closed loop that gathers energy. Your task is to figure out how many of these Dyson units they actually need to enclose the star or stars they are interested in. Note that they want a single Dyson Circle, not a separate one for each star.",
+      "For convenience, both the stars {Dy & Son} wants to enclose and the Dyson Units used for this are modeled as squares of exactly 1%%ZSMJ0%% by 1%%ZSMJ1%% Intergalactic Unit, aligned to the Intergalactic Coordinate System. Your Dyson units connect if they have at least a corner in common. See Figure below for an example.",
+      "![](https://espresso.codeforces.com/4636991984855402273c73f61e930ed54fde49f0.png)",
+      "Formally, select some squares in the plane to turn into Dyson Units, such that the remaining squares can be split into inside and outside squares. All the stars must be inside squares. The inside squares must form a contiguous region (connected via edges) and not connect to the outside squares (via edges). The outside squares form a contiguous region stretching off to infinity."
+    ],
+    "input": [
+      "The input consists of:",
+      "One line with an integer n%%ZSMJ2%% (1≤n≤2⋅105%%ZSMJ3%%), the number of stars.",
+      "n%%ZSMJ4%% lines, each containing two integers x%%ZSMJ5%% and y%%ZSMJ6%% (−106≤x,y≤106%%ZSMJ7%%), the location of the center of a star."
+    ],
+    "output": [
+      "Output the least number of Dyson units required to capture the energy of all stars in the input."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n2 5\n-5 2\n-2 -5\n5 -2",
+      "output": "32"
+    },
+    {
+      "input": "2\n1 1\n3 2",
+      "output": "8"
+    },
+    {
+      "input": "2\n2 3\n4 5",
+      "output": "9"
+    }
+  ]
+}

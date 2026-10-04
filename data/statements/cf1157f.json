@@ -1,0 +1,43 @@
+{
+  "code": "CF1157F",
+  "letter": "F",
+  "title": "F. Maximum Balanced Circle",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1157/F",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are n%%ZSMJ0%% people in a row. The height of the i%%ZSMJ1%%-th person is ai%%ZSMJ2%%. You can choose any subset of these people and try to arrange them into a balanced circle.",
+      "A balanced circle is such an order of people that the difference between heights of any adjacent people is no more than 1%%ZSMJ3%%. For example, let heights of chosen people be [ai1,ai2,…,aik]%%ZSMJ4%%, where k%%ZSMJ5%% is the number of people you choose. Then the condition |aij−aij+1|≤1%%ZSMJ6%% should be satisfied for all j%%ZSMJ7%% from 1%%ZSMJ8%% to k−1%%ZSMJ9%% and the condition |ai1−aik|≤1%%ZSMJ10%% should be also satisfied. |x|%%ZSMJ11%% means the absolute value of x%%ZSMJ12%%. It is obvious that the circle consisting of one person is balanced.",
+      "Your task is to choose the maximum number of people and construct a balanced circle consisting of all chosen people. It is obvious that the circle consisting of one person is balanced so the answer always exists."
+    ],
+    "input": [
+      "The first line of the input contains one integer n%%ZSMJ13%% (1≤n≤2⋅105%%ZSMJ14%%) — the number of people.",
+      "The second line of the input contains n%%ZSMJ15%% integers a1,a2,…,an%%ZSMJ16%% (1≤ai≤2⋅105%%ZSMJ17%%), where ai%%ZSMJ18%% is the height of the i%%ZSMJ19%%-th person."
+    ],
+    "output": [
+      "In the first line of the output print k%%ZSMJ20%% — the number of people in the maximum balanced circle.",
+      "In the second line print k%%ZSMJ21%% integers res1,res2,…,resk%%ZSMJ22%%, where resj%%ZSMJ23%% is the height of the j%%ZSMJ24%%-th person in the maximum balanced circle. The condition |resj−resj+1|≤1%%ZSMJ25%% should be satisfied for all j%%ZSMJ26%% from 1%%ZSMJ27%% to k−1%%ZSMJ28%% and the condition |res1−resk|≤1%%ZSMJ29%% should be also satisfied."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n4 3 5 1 2 2 1",
+      "output": "5\n2 1 1 2 3"
+    },
+    {
+      "input": "5\n3 7 5 1 5",
+      "output": "2\n5 5"
+    },
+    {
+      "input": "3\n5 1 4",
+      "output": "2\n4 5"
+    },
+    {
+      "input": "7\n2 2 3 2 1 2 2",
+      "output": "7\n1 2 2 2 2 3 2"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "code": "CF1970B2",
+  "letter": "B2",
+  "title": "B2. Exact Neighbours (Medium)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1970/B2",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The only difference between this and the hard version is that a1=0%%ZSMJ0%%.",
+      "After some recent attacks on Hogwarts Castle by the Death Eaters, the Order of the Phoenix has decided to station n%%ZSMJ1%% members in Hogsmead Village. The houses will be situated on a picturesque n×n%%ZSMJ2%% square field. Each wizard will have their own house, and every house will belong to some wizard. Each house will take up the space of one square.",
+      "However, as you might know wizards are very superstitious. During the weekends, each wizard i%%ZSMJ3%% will want to visit the house that is exactly ai%%ZSMJ4%% (0≤ai≤n)%%ZSMJ5%% away from their own house. The roads in the village are built horizontally and vertically, so the distance between points (xi,yi)%%ZSMJ6%% and (xj,yj)%%ZSMJ7%% on the n×n%%ZSMJ8%% field is |xi−xj|+|yi−yj|%%ZSMJ9%%. The wizards know and trust each other, so one wizard can visit another wizard's house when the second wizard is away. The houses to be built will be big enough for all n%%ZSMJ10%% wizards to simultaneously visit any house.",
+      "Apart from that, each wizard is mandated to have a view of the Hogwarts Castle in the north and the Forbidden Forest in the south, so the house of no other wizard should block the view. In terms of the village, it means that in each column of the n×n%%ZSMJ11%% field, there can be at most one house, i.e. if the i%%ZSMJ12%%-th house has coordinates (xi,yi)%%ZSMJ13%%, then xi≠xj%%ZSMJ14%% for all i≠j%%ZSMJ15%%.",
+      "The Order of the Phoenix doesn't yet know if it is possible to place n%%ZSMJ16%% houses in such a way that will satisfy the visit and view requirements of all n%%ZSMJ17%% wizards, so they are asking for your help in designing such a plan.",
+      "If it is possible to have a correct placement, where for the i%%ZSMJ18%%-th wizard there is a house that is ai%%ZSMJ19%% away from it and the house of the i%%ZSMJ20%%-th wizard is the only house in their column, output YES, the position of houses for each wizard, and to the house of which wizard should each wizard go during the weekends.",
+      "If it is impossible to have a correct placement, output NO."
+    ],
+    "input": [
+      "The first line contains n%%ZSMJ21%% (2≤n≤2⋅105%%ZSMJ22%%), the number of houses to be built.",
+      "The second line contains n%%ZSMJ23%% integers a1,…,an%%ZSMJ24%% (0≤ai≤n)%%ZSMJ25%%, a1=0%%ZSMJ26%%."
+    ],
+    "output": [
+      "If there exists such a placement, output YES on the first line; otherwise, output NO.",
+      "If the answer is YES, output n+1%%ZSMJ27%% more lines describing the placement.",
+      "The next n%%ZSMJ28%% lines should contain the positions of the houses 1≤xi,yi≤n%%ZSMJ29%% for each wizard.",
+      "The i%%ZSMJ30%%-th element of the last line should contain the index of the wizard, the house of which is exactly ai%%ZSMJ31%% away from the house of the i%%ZSMJ32%%-th wizard. If there are multiple such wizards, you can output any.",
+      "If there are multiple house placement configurations, you can output any."
+    ],
+    "note": [
+      "For the sample, the house of the 1st wizard is located at (4,4)%%ZSMJ33%%, of the 2nd at (1,3)%%ZSMJ34%%, of the 3rd at (2,4)%%ZSMJ35%%, of the 4th at (3,1)%%ZSMJ36%%.",
+      "The distance from the house of the 1st wizard to the house of the 1st wizard is |4−4|+|4−4|=0%%ZSMJ37%%.",
+      "The distance from the house of the 2nd wizard to the house of the 1st wizard is |1−4|+|3−4|=4%%ZSMJ38%%.",
+      "The distance from the house of the 3rd wizard to the house of the 1st wizard is |2−4|+|4−4|=2%%ZSMJ39%%.",
+      "The distance from the house of the 4th wizard to the house of the 3rd wizard is |3−2|+|1−4|=4%%ZSMJ40%%.",
+      "The view and the distance conditions are satisfied for all houses, so the placement is correct.",
+      "![](https://espresso.codeforces.com/46fb6d77c3efe790c6b2474d41827ea5fbb74911.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n0 4 2 4",
+      "output": "YES\n4 4\n1 3\n2 4\n3 1\n1 1 1 3"
+    },
+    {
+      "input": "4\n0 1 3 1",
+      "output": "YES\n1 1\n2 1\n4 1\n3 1\n1 1 1 3"
+    }
+  ]
+}

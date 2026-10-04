@@ -1,0 +1,57 @@
+{
+  "code": "GYM104287O",
+  "letter": "O",
+  "title": "O. Prefix queries",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104287/problem/O",
+  "difficulty": "*2100",
+  "timeLimit": "8 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Note the higher time limit than usual.",
+      "You are given an array a%%ZSMJ0%% of n%%ZSMJ1%% integers and q%%ZSMJ2%% queries to process.",
+      "Each query consists of three integers, l%%ZSMJ3%%, r%%ZSMJ4%% and x%%ZSMJ5%%, and indicates that each value of a%%ZSMJ6%% between l%%ZSMJ7%% and r%%ZSMJ8%%, inclusive, is incremented by x%%ZSMJ9%%. Note that the updates are not independent, so the increments persist for the following queries.",
+      "After each query, print the minimum i%%ZSMJ10%% that satisfies the following conditions:",
+      "2≤i≤n%%ZSMJ11%%.",
+      "a1+a2+…+ai−1≤ai%%ZSMJ12%%."
+    ],
+    "input": [
+      "The first line contains two integers, n%%ZSMJ15%% and q%%ZSMJ16%%, the size of the array and the number of queries, respectively. (2≤n≤106;1≤q≤106)%%ZSMJ17%%.",
+      "The next line contains n%%ZSMJ18%% integers, a1a2…an%%ZSMJ19%%. (−109≤ai≤109)%%ZSMJ20%%.",
+      "The following q%%ZSMJ21%% lines will each contain three integers, l%%ZSMJ22%%, r%%ZSMJ23%% and x%%ZSMJ24%%. (1≤l≤r≤n;1≤x≤109)%%ZSMJ25%%.",
+      "It is guaranteed that the sum of (r−l+1)⋅x%%ZSMJ26%% over all queries is never greater than 1018%%ZSMJ27%%.",
+      "−%%ZSMJ28%%",
+      "Testcases in the subtasks are numbered from 1−20%%ZSMJ29%% with samples skipped.",
+      "For testcases 1−5%%ZSMJ30%%, 2≤n≤1000%%ZSMJ31%% and 1≤q≤1000%%ZSMJ32%%.",
+      "The remaining testcases do not satisfy any additional constraints."
+    ],
+    "output": [
+      "For each query, output the minimum i%%ZSMJ33%% that satisfies the following conditions:",
+      "2≤i≤n%%ZSMJ34%%.",
+      "a1+a2+…+ai−1≤ai%%ZSMJ35%%."
+    ],
+    "note": [
+      "Explanation of the first sample:",
+      "After the first query, the array a%%ZSMJ38%% looks like this: [2,−1,1,1,1,1].%%ZSMJ39%% The smallest i%%ZSMJ40%% which satisfies the condition is 3%%ZSMJ41%%, as a1+a2≤a3%%ZSMJ42%%.",
+      "After the second query, the array a%%ZSMJ43%% looks like this: [6,−1,1,1,1,1].%%ZSMJ44%% There is no i%%ZSMJ45%% which satisfies the constraints.",
+      "After the third query, the array a%%ZSMJ46%% looks like this: [6,8,1,1,1,1].%%ZSMJ47%% The smallest i%%ZSMJ48%% which satisfies the condition is 2%%ZSMJ49%%, as a1≤a2%%ZSMJ50%%.",
+      "After the fourth query, the array a%%ZSMJ51%% looks like this: [6,8,1,21,21,21].%%ZSMJ52%% The smallest i%%ZSMJ53%% which satisfies the condition is 2%%ZSMJ54%%, as a1≤a2%%ZSMJ55%%.",
+      "After the fifth query, the array a%%ZSMJ56%% looks like this: [9,8,1,21,21,21].%%ZSMJ57%% The smallest i%%ZSMJ58%% which satisfies the condition is 4%%ZSMJ59%%, as a1+a2+a3≤a4%%ZSMJ60%%.",
+      "−%%ZSMJ61%%",
+      "Idea: Esomer",
+      "Preparation: Esomer",
+      "Ocurrences: Advanced 10"
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 5\n2 -1 1 0 0 1\n4 5 1\n1 1 4\n2 2 9\n4 6 20\n1 1 3",
+      "output": "3\n-1\n2\n2\n4"
+    },
+    {
+      "input": "5 10\n9 -17 -6 1 -58\n1 4 4\n3 4 5\n1 4 7\n5 5 1\n2 2 3\n5 5 6\n5 5 7\n2 3 10\n2 4 7\n2 4 7",
+      "output": "4\n3\n-1\n-1\n-1\n-1\n-1\n-1\n-1\n2"
+    }
+  ]
+}

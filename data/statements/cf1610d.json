@@ -1,0 +1,44 @@
+{
+  "code": "CF1610D",
+  "letter": "D",
+  "title": "D. Not Quite Lee",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1610/D",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Lee couldn't sleep lately, because he had nightmares. In one of his nightmares (which was about an unbalanced global round), he decided to fight back and propose a problem below (which you should solve) to balance the round, hopefully setting him free from the nightmares.",
+      "A non-empty array b1,b2,…,bm%%ZSMJ0%% is called good, if there exist m%%ZSMJ1%% integer sequences which satisfy the following properties:",
+      "The i%%ZSMJ2%%-th sequence consists of bi%%ZSMJ3%% consecutive integers (for example if bi=3%%ZSMJ4%% then the i%%ZSMJ5%%-th sequence can be (−1,0,1)%%ZSMJ6%% or (−5,−4,−3)%%ZSMJ7%% but not (0,−1,1)%%ZSMJ8%% or (1,2,3,4)%%ZSMJ9%%).",
+      "Assuming the sum of integers in the i%%ZSMJ10%%-th sequence is sumi%%ZSMJ11%%, we want sum1+sum2+…+summ%%ZSMJ12%% to be equal to 0%%ZSMJ13%%.",
+      "You are given an array a1,a2,…,an%%ZSMJ14%%. It has 2n−1%%ZSMJ15%% nonempty subsequences. Find how many of them are good.",
+      "As this number can be very large, output it modulo 109+7%%ZSMJ16%%.",
+      "An array c%%ZSMJ17%% is a subsequence of an array d%%ZSMJ18%% if c%%ZSMJ19%% can be obtained from d%%ZSMJ20%% by deletion of several (possibly, zero or all) elements."
+    ],
+    "input": [
+      "The first line contains a single integer n%%ZSMJ21%% (2≤n≤2⋅105%%ZSMJ22%%) — the size of array a%%ZSMJ23%%.",
+      "The second line contains n%%ZSMJ24%% integers a1,a2,…,an%%ZSMJ25%% (1≤ai≤109%%ZSMJ26%%) — elements of the array."
+    ],
+    "output": [
+      "Print a single integer — the number of nonempty good subsequences of a%%ZSMJ27%%, modulo 109+7%%ZSMJ28%%."
+    ],
+    "note": [
+      "For the first test, two examples of good subsequences are [2,7]%%ZSMJ29%% and [2,2,4,7]%%ZSMJ30%%:",
+      "For b=[2,7]%%ZSMJ31%% we can use (−3,−4)%%ZSMJ32%% as the first sequence and (−2,−1,…,4)%%ZSMJ33%% as the second. Note that subsequence [2,7]%%ZSMJ34%% appears twice in [2,2,4,7]%%ZSMJ35%%, so we have to count it twice.",
+      "![](https://espresso.codeforces.com/b6ad5af9afce7e25684d3b2326e02cc11a922c7b.png)",
+      "For b=[2,2,4,7]%%ZSMJ38%% the following sequences would satisfy the properties: (−1,0)%%ZSMJ39%%, (−3,−2)%%ZSMJ40%%, (0,1,2,3)%%ZSMJ41%% and (−3,−2,…,3)%%ZSMJ42%%"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n2 2 4 7",
+      "output": "10"
+    },
+    {
+      "input": "10\n12391240 103904 1000000000 4142834 12039 142035823 1032840 49932183 230194823 984293123",
+      "output": "996"
+    }
+  ]
+}

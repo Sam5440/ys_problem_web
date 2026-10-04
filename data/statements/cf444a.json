@@ -1,0 +1,50 @@
+{
+  "code": "CF444A",
+  "letter": "A",
+  "title": "A. DZY Loves Physics",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/444/A",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "DZY loves Physics, and he enjoys calculating density.",
+      "Almost everything has density, even a graph. We define the density of a non-directed graph (nodes and edges of the graph have some values) as follows:",
+      "![](https://espresso.codeforces.com/ddc049109c41af6c53df4e3447546ae396059ce4.png)",
+      "Once DZY got a graph G, now he wants to find a connected induced subgraph G' of the graph, such that the density of G' is as large as possible.",
+      "An induced subgraph G'(V', E') of a graph G(V, E) is a graph that satisfies:",
+      "![](https://espresso.codeforces.com/46e20b4dfc895713f2da511b00037f3b583b7786.png);",
+      "edge ![](https://espresso.codeforces.com/3323e65c2bb0e7b15e71bc8acf5bbdd103bbd406.png) if and only if ![](https://espresso.codeforces.com/ff784919ccab7c1de161efd8c454dd842ca9a194.png), and edge ![](https://espresso.codeforces.com/5bd600027111301384bc3bf759bd32d812f393dd.png);",
+      "the value of an edge in G' is the same as the value of the corresponding edge in G, so as the value of a node.",
+      "Help DZY to find the induced subgraph with maximum density. Note that the induced subgraph you choose must be connected.",
+      "![](https://espresso.codeforces.com/1252c805e97e9fa5fc53301fd7c5c88f2bc08313.png)"
+    ],
+    "input": [
+      "The first line contains two space-separated integers n (1 ≤ n ≤ 500), ![](https://espresso.codeforces.com/bed2d5acbcccaf59b2f85a26a90ab00d2b92e1c4.png). Integer n represents the number of nodes of the graph G, m represents the number of edges.",
+      "The second line contains n space-separated integers xi (1 ≤ xi ≤ 106), where xi represents the value of the i-th node. Consider the graph nodes are numbered from 1 to n.",
+      "Each of the next m lines contains three space-separated integers ai, bi, ci (1 ≤ ai < bi ≤ n; 1 ≤ ci ≤ 103), denoting an edge between node ai and bi with value ci. The graph won't contain multiple edges."
+    ],
+    "output": [
+      "Output a real number denoting the answer, with an absolute or relative error of at most 10 - 9."
+    ],
+    "note": [
+      "In the first sample, you can only choose an empty subgraph, or the subgraph containing only node 1.",
+      "In the second sample, choosing the whole graph is optimal."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 0\n1",
+      "output": "0.000000000000000"
+    },
+    {
+      "input": "2 1\n1 2\n1 2 1",
+      "output": "3.000000000000000"
+    },
+    {
+      "input": "5 6\n13 56 73 98 17\n1 2 56\n1 3 29\n1 4 42\n2 3 95\n2 4 88\n3 4 63",
+      "output": "2.965517241379311"
+    }
+  ]
+}

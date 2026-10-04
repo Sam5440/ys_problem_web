@@ -1,0 +1,42 @@
+{
+  "code": "CF2041M",
+  "letter": "M",
+  "title": "M. Selection Sort",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/2041/M",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/c890509ce2af8567113a1a2d4b388e8763870e18.png)",
+      "Every student enrolled in the algorithms course is required to submit an assignment this week. The task is to implement an O(n2)%%ZSMJ0%%-time algorithm to sort n%%ZSMJ1%% given integers in non-decreasing order. Alice has already completed her assignment, and her implementation is shown below.",
+      {
+        "pre": "int alice_sort(int *s, int n){\n  for(int i = 0; i < n; ++i){\n    for(int j = i + 1; j < n; ++j){\n      if(s[i] > s[j]){\n        int swap = s[i];\n        s[i] = s[j];\n        s[j] = swap;\n      }\n    }\n  }\n  return 0;\n}"
+      },
+      "While you have access to Alice's code, you prefer not to simply copy it. Instead, you want to use Alice's sorting function as a building block for your own solution. There are two ways as listed below you can utilize her function, but each of them can be applied at most once. The order in which these two operations are invoked can be arbitrary.",
+      "Prefix sort: choose a length i∈{1,2,…,n}%%ZSMJ2%% and call alicesort(s,i)%%ZSMJ3%%. This sorts the first i%%ZSMJ4%% elements in the array s%%ZSMJ5%%.",
+      "Suffix sort: choose a length i∈{1,2,…,n}%%ZSMJ6%% and call alicesort(s+n−i,i)%%ZSMJ7%%. This sorts the last i%%ZSMJ8%% elements in the array s%%ZSMJ9%%.",
+      "Due to the time complexity of the sorting algorithm, the cost of performing either a prefix or suffix sort is i2%%ZSMJ10%%, where i%%ZSMJ11%% is the length of the chosen subarray. Your goal is to determine the minimum cost to sort the input array s%%ZSMJ12%% of n%%ZSMJ13%% integers in non-decreasing order using Alice's function, following the rules mentioned above.",
+      "For example, Let s=[3,2,5,5,4,1]%%ZSMJ14%%. We can first perform a suffix sort of length 4%%ZSMJ15%%, and the array becomes [3,2,1,4,5,5]%%ZSMJ16%%. Then, we perform a prefix sort of length 3%%ZSMJ17%%, and the array becomes [1,2,3,4,5,5]%%ZSMJ18%%, which is a sorted array. The cost is 42+32=25%%ZSMJ19%%. Here is another example, let s=[4,3,2,1]%%ZSMJ20%%. We can complete the sorting by performing only a prefix sort of length 4%%ZSMJ21%%, and the cost is 42=16%%ZSMJ22%%."
+    ],
+    "input": [
+      "The first line contains exactly one integer n%%ZSMJ23%% which indicates the number of integers in the array s%%ZSMJ24%%. The second line contains the n%%ZSMJ25%% integers in s=[s0,s1,…,sn−1]%%ZSMJ26%%.",
+      "1≤n≤106%%ZSMJ27%%",
+      "For all i%%ZSMJ28%% (0≤i<n%%ZSMJ29%%), 0≤si<231−1%%ZSMJ30%%."
+    ],
+    "output": [
+      "Output an integer on a line, indicating the minimum cost to sort the input array s%%ZSMJ31%% of n%%ZSMJ32%% integers in non-decreasing order using Alice's function, following the rules mentioned above."
+    ]
+  },
+  "examples": [
+    {
+      "input": "int alice_sort(int *s, int n){\n  for(int i = 0; i < n; ++i){\n    for(int j = i + 1; j < n; ++j){\n      if(s[i] > s[j]){\n        int swap = s[i];\n        s[i] = s[j];\n        s[j] = swap;\n      }\n    }\n  }\n  return 0;\n}",
+      "output": "6\n3 2 5 5 4 1"
+    },
+    {
+      "input": "25",
+      "output": "4\n4 3 2 1"
+    }
+  ]
+}

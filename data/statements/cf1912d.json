@@ -1,0 +1,39 @@
+{
+  "code": "CF1912D",
+  "letter": "D",
+  "title": "D. Divisibility Test",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1912/D",
+  "difficulty": "1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Daisy has recently learned divisibility rules for integers and she is fascinated by them. One of the tests she learned is a divisibility test by 3. You can find a sum of all digits of a decimal number and check if the resulting sum is divisible by 3. Moreover, the resulting sum of digits is congruent modulo 3 to the original number — the remainder modulo 3 is preserved. For example, 75 \\equiv 7 + 5 \\pmod 3%%ZSMJ0%%. Daisy is specifically interested in such remainder preserving divisibility tests.",
+      "There are more examples like that that she learned for decimal integers (integers base 10):",
+      "To test divisibility modulo 11, find an alternating sum of digits. Counting digits from the last (least significant) digit, add digits on odd positions (the last, 3rd to the last, etc) and subtract digits on even positions (2nd to the last, 4th to the last, etc) to get the sum that is congruent modulo 11 to the original number. For example, 123 \\equiv 1 - 2 + 3 \\pmod {11}%%ZSMJ1%%.",
+      "To test divisibility modulo 4, keep the last two digits. Their value is congruent modulo 4 to the original number. For example, 876543 \\equiv 43 \\pmod 4%%ZSMJ2%%.",
+      "To test divisibility modulo 7, find an alternating sum of groups of three digits. For example, 4389328 \\equiv 4 - 389 + 328 \\pmod 7%%ZSMJ3%%.",
+      "Similar tests can be found in other bases. For example, to test divisibility modulo 5 for octal numbers (base 8), find an alternating sum of groups of two digits. For example, 1234_8 \\equiv -12_8 + 34_8 \\pmod 5%%ZSMJ4%%.",
+      "Daisy wants to find such rules for a given base b%%ZSMJ5%%. She is interested in three kinds of divisibility rules:",
+      "Kind 1 — take the last k%%ZSMJ6%% digits of an integer in base b%%ZSMJ7%%.",
+      "Kind 2 — take a sum of groups of k%%ZSMJ8%% digits of an integer in base b%%ZSMJ9%%.",
+      "Kind 3 — take an alternating sum of groups of k%%ZSMJ10%% digits of an integer in base b%%ZSMJ11%%.",
+      "It is not always possible to find such a divisibility rule. For example, in base 10 there is no such test for divisibility modulo 6, even though different approaches to testing divisibility by 6 exist.",
+      "Given base b%%ZSMJ12%% and modulo n%%ZSMJ13%%, Daisy wants to know the smallest group size k%%ZSMJ14%% for which such a divisibility test exits."
+    ],
+    "input": [
+      "There are several tests in the input. The first line of the input contains an integer t%%ZSMJ15%% — the number of tests. The next t%%ZSMJ16%% lines describe the tests.",
+      "Each test consists of a line with two integers b%%ZSMJ17%% and n%%ZSMJ18%% — the base and the modulo (b, n \\ge 2%%ZSMJ19%%). The sum of all b%%ZSMJ20%% values in the input does not exceed 10^6%%ZSMJ21%%, and the sum of all n%%ZSMJ22%% values in the input does not exceed 10^6%%ZSMJ23%%."
+    ],
+    "output": [
+      "Write t%%ZSMJ24%% lines — a line for each test in the input. On a line for a test write a single integer 0%%ZSMJ25%% if the divisibility test for a given b%%ZSMJ26%% and n%%ZSMJ27%% does not exist. Otherwise, write two integers a%%ZSMJ28%% and k%%ZSMJ29%%, where a%%ZSMJ30%% is the kind of the divisibility test (1, 2, or 3) and k%%ZSMJ31%% is the number of digits in a group for the test, such that k%%ZSMJ32%% is the lowest among all possible divisiblity tests for the given b%%ZSMJ33%% and n%%ZSMJ34%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n10 3\n10 11\n10 4\n10 7\n8 5\n10 6",
+      "output": "2 1\n3 1\n1 2\n3 3\n3 2\n0"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "code": "GYM103102B",
+  "letter": "B",
+  "title": "B. Reverse Game",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103102/problem/B",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alice and Bob are playing a turn-based game. The rules of the game are as follows:",
+      "At the beginning of the game some binary string s%%ZSMJ0%% is chosen.",
+      "On his turn player has to choose some substring t%%ZSMJ1%% of s%%ZSMJ2%%, equal to one of 10, 110, 100, 1010. Then the player has to reverse t%%ZSMJ3%%. For example, if s=%%ZSMJ4%% 010101, the player can select substring t=%%ZSMJ5%% 1010 and reverse it, obtaining s=%%ZSMJ6%% 001011",
+      "The player who can't make a move (who can't choose an appropriate substring t%%ZSMJ7%%) loses.",
+      "The players cannot skip a turn.",
+      "A string a%%ZSMJ8%% is a substring of a string b%%ZSMJ9%% if a%%ZSMJ10%% can be obtained from b%%ZSMJ11%% by deletion of several (possibly, zero or all) characters from the beginning and several (possibly, zero or all) characters from the end."
+    ],
+    "input": [
+      "The only line of the input contains a binary string s%%ZSMJ12%% (1≤|s|≤106%%ZSMJ13%%) — the string with which Alice and Bob play."
+    ],
+    "output": [
+      "If Alice wins, output Alice. Otherwise, output Bob."
+    ],
+    "note": [
+      "In the first sample, Alice can choose substring 10 of 010 and reverse it, obtaining string 001. Bob can't make any move with this string, and loses.",
+      "In the second sample, Alice can't make a single move and loses."
+    ]
+  },
+  "examples": [
+    {
+      "input": "010",
+      "output": "Alice"
+    },
+    {
+      "input": "1111",
+      "output": "Bob"
+    },
+    {
+      "input": "1010",
+      "output": "Bob"
+    },
+    {
+      "input": "1010001011001",
+      "output": "Alice"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "code": "GYM106082J",
+  "letter": "J",
+  "title": "J. Desert Travel",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106082/problem/J",
+  "difficulty": "*2000",
+  "timeLimit": "8 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are stuck in a desert. The desert can be thought of as a Cartesian grid. There are many oases in the desert of which you know the xy%%ZSMJ0%%-coordinates. You are going to be making a series of trips between pairs of oases, i.e., each trip has a starting oasis and an ending oasis. For any trip, you can stop in other oases along the way (as many as you'd like).",
+      "You obviously need water to travel in the desert. It turns out that every 1%%ZSMJ1%% unit traveled in the desert requires 1%%ZSMJ2%% unit of water. You need to determine what canteen size to use for each trip. You'd like to use the smallest canteen size for each trip (no one wants to carry more than what is needed).",
+      "You can fill up the canteen used in a trip at each oasis along the way to hold you until the next oasis. Thus, the maximum Euclidean distance between pairs of consecutive oases along your path for the trip determines the canteen size you need. For example, if you traveled from (0,0)%%ZSMJ3%% to (2,4)%%ZSMJ4%% to (4,5)%%ZSMJ5%%, then your maximum distance would be approximately 4.472%%ZSMJ6%%, the distance between (0,0)%%ZSMJ7%% and (2,4)%%ZSMJ8%%, because this is longer than the distance between (2,4)%%ZSMJ9%% and (4,5)%%ZSMJ10%%. This distance determines the canteen size needed for the trip.",
+      "Given the number of oases in the desert and several trips (each trip with a starting oasis and an ending oasis), determine the maximum Euclidean distance between pairs of consecutive oases along the path for each trip."
+    ],
+    "input": [
+      "The first input line contains an integer, O%%ZSMJ11%% (1≤O≤5000)%%ZSMJ12%%, representing the number of oases. Each of the following O%%ZSMJ13%% input lines contains two integers, the i%%ZSMJ14%%-th of which contains xi%%ZSMJ15%% and yi%%ZSMJ16%% (−106≤xi,yi≤106%%ZSMJ17%%, representing the x%%ZSMJ18%% and y%%ZSMJ19%% coordinate of the i%%ZSMJ20%%-th oasis. (Assume the oases are numbered 1,2,3,...,O%%ZSMJ21%%.)",
+      "The next input line contains an integer, Q%%ZSMJ22%% (1≤Q≤5⋅105)%%ZSMJ23%%, representing the number of trips. Each of the following Q%%ZSMJ24%% input lines contains two integers, the i%%ZSMJ25%%-th of which contains si%%ZSMJ26%% and ei%%ZSMJ27%% (1≤si,ei≤O)%%ZSMJ28%%, representing the starting and ending oasis numbers for the i%%ZSMJ29%%-th trip."
+    ],
+    "output": [
+      "For each trip, print on a single line by itself a single number: the maximum Euclidean distance between pairs of consecutive oases along the path for that trip. Answers within 10−6%%ZSMJ30%% absolute or relative of the expected answers will be considered correct."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n0 0\n3 7\n1 2\n2 0\n4 5\n2 5\n3\n1 2\n6 5\n3 1",
+      "output": "3.1622776601683795\n2.0\n2.23606797749979"
+    }
+  ]
+}

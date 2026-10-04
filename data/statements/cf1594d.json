@@ -1,0 +1,41 @@
+{
+  "code": "CF1594D",
+  "letter": "D",
+  "title": "D. The Number of Imposters",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1594/D",
+  "difficulty": "1700",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Theofanis started playing the new online game called \"Among them\". However, he always plays with Cypriot players, and they all have the same name: \"Andreas\" (the most common name in Cyprus).",
+      "In each game, Theofanis plays with n%%ZSMJ0%% other players. Since they all have the same name, they are numbered from 1%%ZSMJ1%% to n%%ZSMJ2%%.",
+      "The players write m%%ZSMJ3%% comments in the chat. A comment has the structure of \"i%%ZSMJ4%% j%%ZSMJ5%% c%%ZSMJ6%%\" where i%%ZSMJ7%% and j%%ZSMJ8%% are two distinct integers and c%%ZSMJ9%% is a string (1≤i,j≤n%%ZSMJ10%%; i≠j%%ZSMJ11%%; c%%ZSMJ12%% is either imposter or crewmate). The comment means that player i%%ZSMJ13%% said that player j%%ZSMJ14%% has the role c%%ZSMJ15%%.",
+      "An imposter always lies, and a crewmate always tells the truth.",
+      "Help Theofanis find the maximum possible number of imposters among all the other Cypriot players, or determine that the comments contradict each other (see the notes for further explanation).",
+      "Note that each player has exactly one role: either imposter or crewmate."
+    ],
+    "input": [
+      "The first line contains a single integer t%%ZSMJ16%% (1≤t≤104%%ZSMJ17%%) — the number of test cases. Description of each test case follows.",
+      "The first line of each test case contains two integers n%%ZSMJ18%% and m%%ZSMJ19%% (1≤n≤2⋅105%%ZSMJ20%%; 0≤m≤5⋅105%%ZSMJ21%%) — the number of players except Theofanis and the number of comments.",
+      "Each of the next m%%ZSMJ22%% lines contains a comment made by the players of the structure \"i%%ZSMJ23%% j%%ZSMJ24%% c%%ZSMJ25%%\" where i%%ZSMJ26%% and j%%ZSMJ27%% are two distinct integers and c%%ZSMJ28%% is a string (1≤i,j≤n%%ZSMJ29%%; i≠j%%ZSMJ30%%; c%%ZSMJ31%% is either imposter or crewmate).",
+      "There can be multiple comments for the same pair of (i,j)%%ZSMJ32%%.",
+      "It is guaranteed that the sum of all n%%ZSMJ33%% does not exceed 2⋅105%%ZSMJ34%% and the sum of all m%%ZSMJ35%% does not exceed 5⋅105%%ZSMJ36%%."
+    ],
+    "output": [
+      "For each test case, print one integer — the maximum possible number of imposters. If the comments contradict each other, print −1%%ZSMJ37%%."
+    ],
+    "note": [
+      "In the first test case, imposters can be Andreas 2%%ZSMJ38%% and 3%%ZSMJ39%%.",
+      "In the second test case, imposters can be Andreas 1%%ZSMJ40%%, 2%%ZSMJ41%%, 3%%ZSMJ42%% and 5%%ZSMJ43%%.",
+      "In the third test case, comments contradict each other. This is because player 1%%ZSMJ44%% says that player 2%%ZSMJ45%% is an imposter, and player 2%%ZSMJ46%% says that player 1%%ZSMJ47%% is a crewmate. If player 1%%ZSMJ48%% is a crewmate, then he must be telling the truth, so player 2%%ZSMJ49%% must be an imposter. But if player 2%%ZSMJ50%% is an imposter then he must be lying, so player 1%%ZSMJ51%% can't be a crewmate. Contradiction."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3 2\n1 2 imposter\n2 3 crewmate\n5 4\n1 3 crewmate\n2 5 crewmate\n2 4 imposter\n3 4 imposter\n2 2\n1 2 imposter\n2 1 crewmate\n3 5\n1 2 imposter\n1 2 imposter\n3 2 crewmate\n3 2 crewmate\n1 3 imposter\n5 0",
+      "output": "2\n4\n-1\n2\n5"
+    }
+  ]
+}

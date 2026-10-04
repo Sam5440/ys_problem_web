@@ -1,0 +1,36 @@
+{
+  "code": "CF1277D",
+  "letter": "D",
+  "title": "D. Let's Play the Words?",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1277/D",
+  "difficulty": "1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Polycarp has n%%ZSMJ0%% different binary words. A word called binary if it contains only characters '0' and '1'. For example, these words are binary: \"0001\", \"11\", \"0\" and \"0011100\".",
+      "Polycarp wants to offer his set of n%%ZSMJ1%% binary words to play a game \"words\". In this game, players name words and each next word (starting from the second) must start with the last character of the previous word. The first word can be any. For example, these sequence of words can be named during the game: \"0101\", \"1\", \"10\", \"00\", \"00001\".",
+      "Word reversal is the operation of reversing the order of the characters. For example, the word \"0111\" after the reversal becomes \"1110\", the word \"11010\" after the reversal becomes \"01011\".",
+      "Probably, Polycarp has such a set of words that there is no way to put them in the order correspondent to the game rules. In this situation, he wants to reverse some words from his set so that:",
+      "the final set of n%%ZSMJ2%% words still contains different words (i.e. all words are unique);",
+      "there is a way to put all words of the final set of words in the order so that the final sequence of n%%ZSMJ3%% words is consistent with the game rules.",
+      "Polycarp wants to reverse minimal number of words. Please, help him."
+    ],
+    "input": [
+      "The first line of the input contains one integer t%%ZSMJ4%% (1≤t≤104%%ZSMJ5%%) — the number of test cases in the input. Then t%%ZSMJ6%% test cases follow.",
+      "The first line of a test case contains one integer n%%ZSMJ7%% (1≤n≤2⋅105%%ZSMJ8%%) — the number of words in the Polycarp's set. Next n%%ZSMJ9%% lines contain these words. All of n%%ZSMJ10%% words aren't empty and contains only characters '0' and '1'. The sum of word lengths doesn't exceed 4⋅106%%ZSMJ11%%. All words are different.",
+      "Guaranteed, that the sum of n%%ZSMJ12%% for all test cases in the input doesn't exceed 2⋅105%%ZSMJ13%%. Also, guaranteed that the sum of word lengths for all test cases in the input doesn't exceed 4⋅106%%ZSMJ14%%."
+    ],
+    "output": [
+      "Print answer for all of t%%ZSMJ15%% test cases in the order they appear.",
+      "If there is no answer for the test case, print -1. Otherwise, the first line of the output should contain k%%ZSMJ16%% (0≤k≤n%%ZSMJ17%%) — the minimal number of words in the set which should be reversed. The second line of the output should contain k%%ZSMJ18%% distinct integers — the indexes of the words in the set which should be reversed. Words are numerated from 1%%ZSMJ19%% to n%%ZSMJ20%% in the order they appear. If k=0%%ZSMJ21%% you can skip this line (or you can print an empty line). If there are many answers you can print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n4\n0001\n1000\n0011\n0111\n3\n010\n101\n0\n2\n00000\n00001\n4\n01\n001\n0001\n00001",
+      "output": "1\n3 \n-1\n0\n\n2\n1 2"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "code": "GYM105010D",
+  "letter": "D",
+  "title": "D. Divisibility Game",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105010/problem/D",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "As stated in a previous problem, Yessine is a wealthy business man who founded Iceberg Corporation and hired Oussama to work for him. The start-up grew significantly, so he bought a big office and hired one additional employee who can't be anyone other than Rami . The three of them would meet every evening (because none of them would wake up in the morning), and they would work together. Everything was perfect, except for one thing... Sometimes, Rami and Yessine would make Shisha and start smoking in the office. Oussama doesn't really like smoking, so he asked them to stop. They refused at first, but he kept insisting, so they told him they will stop if he wins in a divisibility game.",
+      "Oussama and Rami will play on an array A%%ZSMJ0%% of n%%ZSMJ1%% positive integers, and they agreed on some odd integer k%%ZSMJ2%% before starting the game. Oussama and Rami will make alternating moves. But this time, and unlike previous Winter Cups, Oussama insisted on going first. In each turn, the current player will play as follows:",
+      "If every element is divisible by k%%ZSMJ3%%, the player loses the game.",
+      "Otherwise, the player will have to choose two elements Ai%%ZSMJ4%% and Aj%%ZSMJ5%%, remove them, and add Ai+Aj%%ZSMJ6%% to the end of the array.",
+      "It's guaranteed that the sum of the elements of the array is divisible by k%%ZSMJ7%%.",
+      "Oussama is very good at games, but so is Rami, so both players play optimally. Help Oussama win before his lungs get sick from Shisha."
+    ],
+    "input": [
+      "The first line of the input contains two integers n,k,%%ZSMJ8%% with:",
+      "1≤n≤105:%%ZSMJ9%% The size of the array.",
+      "1≤k≤109:%%ZSMJ10%% An odd integer defining the game."
+    ],
+    "output": [
+      "\"Oussama\" if Oussama will win. Otherwise, \"Rami\" if Rami will win."
+    ],
+    "note": [
+      "In the first test case, Oussama can select elements A2=2%%ZSMJ13%% and A3=3%%ZSMJ14%% and replace them with 5=2+3.%%ZSMJ15%% The new array will be A′=[0,5].%%ZSMJ16%% Rami will not be able to make a move, and so Oussama will win.",
+      "In the second test case, Rami will win no matter what Oussama makes on his first move."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 5\n0 2 3",
+      "output": "Oussama"
+    },
+    {
+      "input": "3 5\n1 1 3",
+      "output": "Rami"
+    }
+  ]
+}

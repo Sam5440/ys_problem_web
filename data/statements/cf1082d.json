@@ -1,0 +1,57 @@
+{
+  "code": "CF1082D",
+  "letter": "D",
+  "title": "D. Maximum Diameter Graph",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1082/D",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Graph constructive problems are back! This time the graph you are asked to build should match the following properties.",
+      "The graph is connected if and only if there exists a path between every pair of vertices.",
+      "The diameter (aka \"longest shortest path\") of a connected undirected graph is the maximum number of edges in the shortest path between any pair of its vertices.",
+      "The degree of a vertex is the number of edges incident to it.",
+      "Given a sequence of n%%ZSMJ0%% integers a1,a2,…,an%%ZSMJ1%% construct a connected undirected graph of n%%ZSMJ2%% vertices such that:",
+      "the graph contains no self-loops and no multiple edges;",
+      "the degree di%%ZSMJ3%% of the i%%ZSMJ4%%-th vertex doesn't exceed ai%%ZSMJ5%% (i.e. di≤ai%%ZSMJ6%%);",
+      "the diameter of the graph is maximum possible.",
+      "Output the resulting graph or report that no solution exists."
+    ],
+    "input": [
+      "The first line contains a single integer n%%ZSMJ7%% (3≤n≤500%%ZSMJ8%%) — the number of vertices in the graph.",
+      "The second line contains n%%ZSMJ9%% integers a1,a2,…,an%%ZSMJ10%% (1≤ai≤n−1%%ZSMJ11%%) — the upper limits to vertex degrees."
+    ],
+    "output": [
+      "Print \"NO\" if no graph can be constructed under the given conditions.",
+      "Otherwise print \"YES\" and the diameter of the resulting graph in the first line.",
+      "The second line should contain a single integer m%%ZSMJ12%% — the number of edges in the resulting graph.",
+      "The i%%ZSMJ13%%-th of the next m%%ZSMJ14%% lines should contain two integers vi,ui%%ZSMJ15%% (1≤vi,ui≤n%%ZSMJ16%%, vi≠ui%%ZSMJ17%%) — the description of the i%%ZSMJ18%%-th edge. The graph should contain no multiple edges — for each pair (x,y)%%ZSMJ19%% you output, you should output no more pairs (x,y)%%ZSMJ20%% or (y,x)%%ZSMJ21%%."
+    ],
+    "note": [
+      "Here are the graphs for the first two example cases. Both have diameter of 2%%ZSMJ22%%.",
+      "![](https://espresso.codeforces.com/f0b2f0e9602ea657b8a2c2331cab718313eeea74.png)",
+      "d2=2≤a2=2%%ZSMJ24%%",
+      "d3=1≤a3=2%%ZSMJ25%%",
+      "![](https://espresso.codeforces.com/c5cf7fa69e76b1d89a232572b373ad252ab20107.png)",
+      "d2=4≤a2=4%%ZSMJ27%%",
+      "d3=1≤a3=1%%ZSMJ28%%",
+      "d4=1≤a4=1%%ZSMJ29%%"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2 2 2",
+      "output": "YES 2\n2\n1 2\n2 3"
+    },
+    {
+      "input": "5\n1 4 1 1 1",
+      "output": "YES 2\n4\n1 2\n3 2\n4 2\n5 2"
+    },
+    {
+      "input": "3\n1 1 1",
+      "output": "NO"
+    }
+  ]
+}

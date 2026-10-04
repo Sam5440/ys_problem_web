@@ -1,0 +1,53 @@
+{
+  "code": "CF925B",
+  "letter": "B",
+  "title": "B. Resource Distribution",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/925/B",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "One department of some software company has n%%ZSMJ0%% servers of different specifications. Servers are indexed with consecutive integers from 1%%ZSMJ1%% to n%%ZSMJ2%%. Suppose that the specifications of the j%%ZSMJ3%%-th server may be expressed with a single integer number cj%%ZSMJ4%% of artificial resource units.",
+      "In order for production to work, it is needed to deploy two services S1%%ZSMJ5%% and S2%%ZSMJ6%% to process incoming requests using the servers of the department. Processing of incoming requests of service Si%%ZSMJ7%% takes xi%%ZSMJ8%% resource units.",
+      "The described situation happens in an advanced company, that is why each service may be deployed using not only one server, but several servers simultaneously. If service Si%%ZSMJ9%% is deployed using ki%%ZSMJ10%% servers, then the load is divided equally between these servers and each server requires only xi/ki%%ZSMJ11%% (that may be a fractional number) resource units.",
+      "Each server may be left unused at all, or be used for deploying exactly one of the services (but not for two of them simultaneously). The service should not use more resources than the server provides.",
+      "Determine if it is possible to deploy both services using the given servers, and if yes, determine which servers should be used for deploying each of the services."
+    ],
+    "input": [
+      "The first line contains three integers n%%ZSMJ12%%, x1%%ZSMJ13%%, x2%%ZSMJ14%% (2≤n≤300000%%ZSMJ15%%, 1≤x1,x2≤109%%ZSMJ16%%) — the number of servers that the department may use, and resource units requirements for each of the services.",
+      "The second line contains n%%ZSMJ17%% space-separated integers c1,c2,…,cn%%ZSMJ18%% (1≤ci≤109%%ZSMJ19%%) — the number of resource units provided by each of the servers."
+    ],
+    "output": [
+      "If it is impossible to deploy both services using the given servers, print the only word \"No\" (without the quotes).",
+      "Otherwise print the word \"Yes\" (without the quotes).",
+      "In the second line print two integers k1%%ZSMJ20%% and k2%%ZSMJ21%% (1≤k1,k2≤n%%ZSMJ22%%) — the number of servers used for each of the services.",
+      "In the third line print k1%%ZSMJ23%% integers, the indices of the servers that will be used for the first service.",
+      "In the fourth line print k2%%ZSMJ24%% integers, the indices of the servers that will be used for the second service.",
+      "No index may appear twice among the indices you print in the last two lines. If there are several possible answers, it is allowed to print any of them."
+    ],
+    "note": [
+      "In the first sample test each of the servers 1, 2 and 6 will will provide 8/3=2.(6)%%ZSMJ25%% resource units and each of the servers 5, 4 will provide 16/2=8%%ZSMJ26%% resource units.",
+      "In the second sample test the first server will provide 20%%ZSMJ27%% resource units and each of the remaining servers will provide 32/3=10.(6)%%ZSMJ28%% resource units."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 8 16\n3 5 2 9 8 7",
+      "output": "Yes\n3 2\n1 2 6\n5 4"
+    },
+    {
+      "input": "4 20 32\n21 11 11 12",
+      "output": "Yes\n1 3\n1\n2 3 4"
+    },
+    {
+      "input": "4 11 32\n5 5 16 16",
+      "output": "No"
+    },
+    {
+      "input": "5 12 20\n7 8 4 11 9",
+      "output": "No"
+    }
+  ]
+}

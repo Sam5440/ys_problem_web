@@ -1,0 +1,49 @@
+{
+  "code": "GYM105863G",
+  "letter": "G",
+  "title": "G. A Counting Problem",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105863/problem/G",
+  "difficulty": "*1800",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Note: You may want to use 64%%ZSMJ0%%-bit integers instead of 32%%ZSMJ1%%-bit integers in this task. For example, in Java, you may want to use long instead of int. In C++, you may want to use long long.",
+      "Given an array a%%ZSMJ2%% of size m%%ZSMJ3%%, let f(a)%%ZSMJ4%% be the number of numbers 1≤i≤m%%ZSMJ5%% where min(a1,a2,…,ai)=ai%%ZSMJ6%%.",
+      "For example, if a=[2,4,3,2,1]%%ZSMJ7%%, f(a)=3%%ZSMJ8%% because a1=min(a1)%%ZSMJ9%%, a4=min(a1,a2,a3,a4)%%ZSMJ10%%, and a5=min(a1,a2,a3,a4,a5)%%ZSMJ11%%.",
+      "Seele gives you two integers n%%ZSMJ12%% and k%%ZSMJ13%%.",
+      "There are kn%%ZSMJ14%% length-n%%ZSMJ15%% arrays such that each element is a positive integer from 1%%ZSMJ16%% to k%%ZSMJ17%%, inclusive. Over all such arrays, Seele asks you to output the sum of f(a)%%ZSMJ18%% over all such arrays a%%ZSMJ19%%.",
+      "Since the answer may be huge, output the answer modulo 998244353%%ZSMJ20%%."
+    ],
+    "input": [
+      "The first test case contains an integer t%%ZSMJ21%% – the number of independent test cases (1≤t≤104%%ZSMJ22%%).",
+      "The only line of each test case contains two integers n,k%%ZSMJ23%% (1≤n≤109,1≤k≤3⋅105%%ZSMJ24%%).",
+      "It is guaranteed that the sum of k%%ZSMJ25%% does not exceed 3⋅105%%ZSMJ26%% over all test cases.",
+      "Scoring",
+      "Partial credits will be given to programs who pass tests with smaller constraints outlined below."
+    ],
+    "output": [
+      "For each test case, output the answer modulo 998244353%%ZSMJ38%%."
+    ],
+    "note": [
+      "The first examples satisfies subtask 4%%ZSMJ39%% and the second example satisfies subtask 5%%ZSMJ40%%.",
+      "In the first test case of the first example, we need to consider the following four arrays:",
+      "f([1,1])=2%%ZSMJ41%%.",
+      "f([1,2])=1%%ZSMJ42%%.",
+      "f([2,1])=2%%ZSMJ43%%.",
+      "f([2,2])=2%%ZSMJ44%%.",
+      "The sum over all arrays is 7%%ZSMJ45%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 2\n3 2\n3 3\n5 5\n888 999",
+      "output": "7\n19\n59\n8479\n667852386"
+    },
+    {
+      "input": "1\n1000000000 300000",
+      "output": "732088305"
+    }
+  ]
+}

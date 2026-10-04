@@ -1,0 +1,48 @@
+{
+  "code": "CF1214E",
+  "letter": "E",
+  "title": "E. Petya and Construction Set",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1214/E",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "It's Petya's birthday party and his friends have presented him a brand new \"Electrician-$$$n$$$\" construction set, which they are sure he will enjoy as he always does with weird puzzles they give him.",
+      "Construction set \"Electrician-$$$n$$$\" consists of $$$2n - 1$$$ wires and $$$2n$$$ light bulbs. Each bulb has its own unique index that is an integer from $$$1$$$ to $$$2n$$$, while all wires look the same and are indistinguishable. In order to complete this construction set one has to use each of the wires to connect two distinct bulbs. We define a chain in a completed construction set as a sequence of distinct bulbs of length at least two, such that every two consecutive bulbs in this sequence are directly connected by a wire. Completed construction set configuration is said to be correct if a resulting network of bulbs and wires has a tree structure, i.e. any two distinct bulbs are the endpoints of some chain.",
+      "Petya was assembling different configurations for several days, and he noticed that sometimes some of the bulbs turn on. After a series of experiments he came up with a conclusion that bulbs indexed $$$2i$$$ and $$$2i - 1$$$ turn on if the chain connecting them consists of exactly $$$d_i$$$ wires. Moreover, the following important condition holds: the value of $$$d_i$$$ is never greater than $$$n$$$.",
+      "Petya did his best but was not able to find a configuration that makes all bulbs to turn on, so he seeks your assistance. Please, find out a configuration that makes all bulbs shine. It is guaranteed that such configuration always exists."
+    ],
+    "input": [
+      "The first line of the input contains a single integer $$$n$$$ ($$$1 \\leq n \\leq 100\\,000$$$) — the parameter of a construction set that defines the number of bulbs and the number of wires.",
+      "Next line contains $$$n$$$ integers $$$d_1, d_2, \\ldots, d_n$$$ ($$$1 \\leq d_i \\leq n$$$), where $$$d_i$$$ stands for the number of wires the chain between bulbs $$$2i$$$ and $$$2i - 1$$$ should consist of."
+    ],
+    "output": [
+      "Print $$$2n - 1$$$ lines. The $$$i$$$-th of them should contain two distinct integers $$$a_i$$$ and $$$b_i$$$ ($$$1 \\leq a_i, b_i \\leq 2n$$$, $$$a_i \\ne b_i$$$) — indices of bulbs connected by a wire.",
+      "If there are several possible valid answer you can print any of them."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/27a758093031f9327df8cc7d0df52dfec727e664.png)",
+      "![](https://espresso.codeforces.com/7860714083483e8556d4431d868dd02b60558c36.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2 2 2",
+      "output": "1 6\n2 6\n3 5\n3 6\n4 5"
+    },
+    {
+      "input": "4\n2 2 2 1",
+      "output": "1 6\n1 7\n2 6\n3 5\n3 6\n4 5\n7 8"
+    },
+    {
+      "input": "6\n2 2 2 2 2 2",
+      "output": "1 3\n2 3\n3 5\n4 5\n5 7\n6 7\n7 12\n8 12\n9 11\n9 12\n10 11"
+    },
+    {
+      "input": "2\n1 1",
+      "output": "1 2\n1 4\n3 4"
+    }
+  ]
+}

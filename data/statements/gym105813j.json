@@ -1,0 +1,43 @@
+{
+  "code": "GYM105813J",
+  "letter": "J",
+  "title": "J. Another Expected Value Problem",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105813/problem/J",
+  "difficulty": "*1500",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array a%%ZSMJ0%% of n%%ZSMJ1%% integers. You then perform the following process k%%ZSMJ2%% times.",
+      "Choose an integer i%%ZSMJ3%% where 1≤i≤n%%ZSMJ4%%, uniformly at random.",
+      "For each 1≤j≤n%%ZSMJ5%%, move aj%%ZSMJ6%% one unit closer to ai%%ZSMJ7%%. Formally, for each j%%ZSMJ8%%,  If aj<ai%%ZSMJ9%%, increment aj%%ZSMJ10%% by 1%%ZSMJ11%%",
+      "If aj>ai%%ZSMJ12%%, decrement aj%%ZSMJ13%% by 1%%ZSMJ14%%",
+      "If aj=ai%%ZSMJ15%%, do not modify the value of aj%%ZSMJ16%%.",
+      "After performing this process k%%ZSMJ17%% times, you select an integer i%%ZSMJ18%% where 1≤i≤n%%ZSMJ19%% uniformly at random. What is the expected value of ai%%ZSMJ20%%?",
+      "It can be shown that this value can be represented as PQ%%ZSMJ21%% where P%%ZSMJ22%% and Q%%ZSMJ23%% are coprime integers and Q \\not\\equiv 0 \\mod 10^9+7%%ZSMJ24%%. Print the value of P\\cdot Q^{-1}%%ZSMJ25%% modulo 10^9+7%%ZSMJ26%%."
+    ],
+    "input": [
+      "The first line of the input contains a single integer t%%ZSMJ27%% (1\\le t\\le 10^4%%ZSMJ28%%) — the number of test cases.",
+      "The first line of each test case contains two integers n%%ZSMJ29%% and k%%ZSMJ30%% (1\\le n,k \\le 2\\cdot 10^5%%ZSMJ31%%) — the length of the array and the number of operations you will perform.",
+      "The second line of each test case will contain n%%ZSMJ32%% integers a_1, a_2, \\cdots a_n%%ZSMJ33%% (1 \\le a_i \\le 10^9%%ZSMJ34%%) — the initial array a%%ZSMJ35%%.",
+      "It is guaranteed that the sum of n%%ZSMJ36%% over all test cases, and the sum of k%%ZSMJ37%% over all test cases, do not exceed 2\\cdot 10^5%%ZSMJ38%%."
+    ],
+    "output": [
+      "For each test case, output a single line containing the expected value of a_i%%ZSMJ39%% at the end of this process, modulo 10^9+7%%ZSMJ40%% as described above."
+    ],
+    "note": [
+      "In the first sample case, since all elements of a%%ZSMJ41%% are initially equal, none of them will change after any of the k=5%%ZSMJ42%% operations. Therefore, the final array will be [8, 8, 8]%%ZSMJ43%%, so the expected value of a random element of the final array is 8%%ZSMJ44%%.",
+      "In the second sample case, there is a 50\\%%%ZSMJ45%% chance of choosing i = 1%%ZSMJ46%% in the operation, and a 50\\%%%ZSMJ47%% chance of choosing i = 2%%ZSMJ48%%.",
+      "If i = 1%%ZSMJ49%% is chosen, all elements of the array will move closer to a_1 = 10%%ZSMJ50%%, so a%%ZSMJ51%% will go from [10, 11]%%ZSMJ52%% to [10, 10]%%ZSMJ53%%. The expected value of a random element of this array is 10%%ZSMJ54%%.",
+      "If i = 2%%ZSMJ55%% is chosen, all elements of the array will move closer to a_2 = 11%%ZSMJ56%%, so a%%ZSMJ57%% will go from [10, 11]%%ZSMJ58%% to [11, 11]%%ZSMJ59%%. The expected value of a random element of this array is 11%%ZSMJ60%%.",
+      "So there is a 50\\%%%ZSMJ61%% chance of the expected value being 10%%ZSMJ62%%, and a 50\\%%%ZSMJ63%% chance of it being 11%%ZSMJ64%%. Therefore, the final expected value is 10.5 = \\frac{21}{2}%%ZSMJ65%%, which is equivalent to 5000000014%%ZSMJ66%% modulo 10^9+7%%ZSMJ67%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n3 5\n8 8 8\n2 1\n10 11\n7 7\n9 8 7 6 5 4 2",
+      "output": "8\n500000014\n857142869"
+    }
+  ]
+}

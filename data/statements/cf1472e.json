@@ -1,0 +1,48 @@
+{
+  "code": "CF1472E",
+  "letter": "E",
+  "title": "E. Correct Placement",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1472/E",
+  "difficulty": "1700",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Polycarp has invited n%%ZSMJ0%% friends to celebrate the New Year. During the celebration, he decided to take a group photo of all his friends. Each friend can stand or lie on the side.",
+      "Each friend is characterized by two values hi%%ZSMJ1%% (their height) and wi%%ZSMJ2%% (their width). On the photo the i%%ZSMJ3%%-th friend will occupy a rectangle hi×wi%%ZSMJ4%% (if they are standing) or wi×hi%%ZSMJ5%% (if they are lying on the side).",
+      "The j%%ZSMJ6%%-th friend can be placed in front of the i%%ZSMJ7%%-th friend on the photo if his rectangle is lower and narrower than the rectangle of the i%%ZSMJ8%%-th friend. Formally, at least one of the following conditions must be fulfilled:",
+      "hj<hi%%ZSMJ9%% and wj<wi%%ZSMJ10%% (both friends are standing or both are lying);",
+      "wj<hi%%ZSMJ11%% and hj<wi%%ZSMJ12%% (one of the friends is standing and the other is lying).",
+      "For example, if n=3%%ZSMJ13%%, h=[3,5,3]%%ZSMJ14%% and w=[4,4,3]%%ZSMJ15%%, then:",
+      "the first friend can be placed in front of the second: w1<h2%%ZSMJ16%% and h1<w2%%ZSMJ17%% (one of the them is standing and the other one is lying);",
+      "the third friend can be placed in front of the second: h3<h2%%ZSMJ18%% and w3<w2%%ZSMJ19%% (both friends are standing or both are lying).",
+      "In other cases, the person in the foreground will overlap the person in the background.",
+      "Help Polycarp for each i%%ZSMJ20%% find any j%%ZSMJ21%%, such that the j%%ZSMJ22%%-th friend can be located in front of the i%%ZSMJ23%%-th friend (i.e. at least one of the conditions above is fulfilled).",
+      "Please note that you do not need to find the arrangement of all people for a group photo. You just need to find for each friend i%%ZSMJ24%% any other friend j%%ZSMJ25%% who can be located in front of him. Think about it as you need to solve n%%ZSMJ26%% separate independent subproblems."
+    ],
+    "input": [
+      "The first line contains one integer t%%ZSMJ27%% (1≤t≤104%%ZSMJ28%%) — the number of test cases. Then t%%ZSMJ29%% test cases follow.",
+      "The first line of each test case contains one integer n%%ZSMJ30%% (1≤n≤2⋅105%%ZSMJ31%%) — the number of friends.",
+      "This is followed by n%%ZSMJ32%% lines, each of which contains a description of the corresponding friend. Each friend is described by two integers hi%%ZSMJ33%% and wi%%ZSMJ34%% (1≤hi,wi≤109%%ZSMJ35%%) — height and width of the i%%ZSMJ36%%-th friend, respectively.",
+      "It is guaranteed that the sum of n%%ZSMJ37%% over all test cases does not exceed 2⋅105%%ZSMJ38%%."
+    ],
+    "output": [
+      "For each test case output n%%ZSMJ39%% integers on a separate line, where the i%%ZSMJ40%%-th number is the index of a friend that can be placed in front of the i%%ZSMJ41%%-th. If there is no such friend, then output -1.",
+      "If there are several answers, output any."
+    ],
+    "note": [
+      "The first test case is described in the statement.",
+      "In the third test case, the following answers are also correct:",
+      "[−1,−1,1,2]%%ZSMJ42%%;",
+      "[−1,−1,1,1]%%ZSMJ43%%;",
+      "[−1,−1,2,1]%%ZSMJ44%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n3\n3 4\n5 4\n3 3\n3\n1 3\n2 2\n3 1\n4\n2 2\n3 1\n6 3\n5 4\n4\n2 2\n2 3\n1 1\n4 4",
+      "output": "-1 3 -1 \n-1 -1 -1 \n-1 -1 2 2 \n3 3 -1 3"
+    }
+  ]
+}

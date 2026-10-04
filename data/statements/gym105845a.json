@@ -1,0 +1,38 @@
+{
+  "code": "GYM105845A",
+  "letter": "A",
+  "title": "A. Supermarket",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105845/problem/A",
+  "difficulty": "*2400",
+  "timeLimit": "2 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are at a 1%%ZSMJ0%% dollar supermarket where there are n%%ZSMJ1%% sub-shops, each second a new customer comes in every shop, inititally all of them are empty%%ZSMJ2%%.",
+      "Since this is a 1%%ZSMJ3%% dollar supermarket there is only one worker. Each second this worker chooses uniformaly randomly a shop and serves all it's customers instantly.",
+      "To do some savings the boss doesn't hire extra workers unless all%%ZSMJ4%% the shops are all floaded. That is if we denote the number of customers of the i−%%ZSMJ5%%th shop to be ai%%ZSMJ6%%.",
+      "Then the shops are floaded whenever forall i∈[1,n],ai≥bi%%ZSMJ7%% for some pre-fixed bi%%ZSMJ8%%.",
+      "- Extra constraints : %%ZSMJ9%% we assume that b1=0%%ZSMJ10%%.",
+      "One may prove that the shops will be floaded almost certaintly, your task is to calculate the expected time at which the boss will have to hire extra workers.",
+      "It can be shown that the answer can be represented as PQ%%ZSMJ11%%, where P and Q are coprime integers and Q≢%%ZSMJ12%% mod 10^9 + 7%%ZSMJ13%%. Print the value of P\\cdot Q^{-1}%%ZSMJ14%% mod 10^9+7%%ZSMJ15%%."
+    ],
+    "input": [
+      "The first line of the input you will be given 1 \\le n \\le 2 \\cdot 10^5%%ZSMJ16%% the number of shops.",
+      "The second line of the input contains n%%ZSMJ17%% space separated integers b_1, ... b_n (0 \\le b_i \\le 10^{18})%%ZSMJ18%% and b_1 = 0%%ZSMJ19%%."
+    ],
+    "output": [
+      "Output a single integer the expected time at which the boss will have to hire extra workers modulo 10^9 + 7%%ZSMJ20%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n0 1 1",
+      "output": "3"
+    },
+    {
+      "input": "8\n0 7 5 6 7 10 6 7",
+      "output": "149135259"
+    }
+  ]
+}

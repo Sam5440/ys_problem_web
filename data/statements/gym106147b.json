@@ -1,0 +1,44 @@
+{
+  "code": "GYM106147B",
+  "letter": "B",
+  "title": "B. Digging Bot",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106147/problem/B",
+  "difficulty": "*2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem.",
+      "During the excavation at the ruins of the ancient city-kingdom of Salamis archaeologist found a hidden royal tomb, buried at an unknown depth of n%%ZSMJ0%% meters below the surface. Your task is to find the number n%%ZSMJ1%% by making experiments with your digging bot.",
+      "In each experiment, you give the bot a set of integer numbers a1,a2,...,ak%%ZSMJ2%%, and ask it to dig from the surface (depth 0) to depth n%%ZSMJ3%%, using only steps of length ai%%ZSMJ4%%. That means, if the bot's current depth is x%%ZSMJ5%%, it can move to depths x+a1%%ZSMJ6%%, x+a2%%ZSMJ7%%, ..., or x+ak%%ZSMJ8%%. When the bot reaches the depth n%%ZSMJ9%%, it tells you the number of steps it made. The bot is very intelligent and always makes the minimal possible number of steps to reach the depth n%%ZSMJ10%%.",
+      "For example, let the hidden number be n=23%%ZSMJ11%%. If you give the bot a set a=[1,3,8]%%ZSMJ12%%, it can reach depth n%%ZSMJ13%% in 5 steps (for example 0→3→4→7→15→23%%ZSMJ14%%), and if you give the bot a set a=[9,5]%%ZSMJ15%%, it can reach depth n%%ZSMJ16%% in 3 steps (0→9→18→23%%ZSMJ17%%).",
+      "Your task is to guess the number n%%ZSMJ18%% after making several experiments with the following constraints:",
+      "The hidden number n%%ZSMJ19%% is in range from 1 to 30000 (inclusive).",
+      "The total number of experiments should be at most 20.",
+      "The total size of sets a%%ZSMJ20%% in all experiments should be at most 250.",
+      "In each experiment, it should be possible for the bot to reach the depth n%%ZSMJ21%%.",
+      "Your solution will be tested on 100 tests. If your solution fails to guess the number n%%ZSMJ22%%, or exceeds the given limits in at least one test, it will get 0 points.",
+      "If your solution successfully guesses the number n%%ZSMJ23%%, and does not exceed the limits in all tests, the score will be calculated based on the total number of steps the bot made in all experiments.",
+      "Let si%%ZSMJ24%% be the total number of steps the bot made in all experiments in test i%%ZSMJ25%%, and let S%%ZSMJ26%% be maximum of si%%ZSMJ27%% for all 100 tests. Then your score will be calculated based on the following table:",
+      "Interaction",
+      "To make an experiment, your program should print one line of the form: \"? k a1%%ZSMJ40%% a2%%ZSMJ41%% ...%%ZSMJ42%% ak%%ZSMJ43%%\", where k%%ZSMJ44%% (1≤k≤250%%ZSMJ45%%) is the size of the set and ai%%ZSMJ46%% (1≤ai≤30000)%%ZSMJ47%% are the elements of the set. After that, your program should read a single integer m%%ZSMJ48%%, the minimum number of steps the bot needed to do to reach the depth n%%ZSMJ49%%.",
+      "When your program is ready to guess the number n%%ZSMJ50%%, it should output the following line: \"! n%%ZSMJ51%%\". After that, your program should exit.",
+      "After printing each query do not forget to output the end of line and flush the output.",
+      "If, at any interaction step, you read −1%%ZSMJ52%% instead of valid data, your solution must exit immediately. This means that your solution will receive Wrong answer because of an invalid query or any other mistake. Failing to exit can result in an arbitrary verdict because your solution will continue to read from a closed stream.",
+      "To flush, use:",
+      "fflush(stdout) or cout.flush() in C++;",
+      "sys.stdout.flush() in Python;",
+      "System.out.flush() in Java;",
+      "see the documentation for other languages."
+    ],
+    "input": [],
+    "output": []
+  },
+  "examples": [
+    {
+      "input": "\n5\n\n3",
+      "output": "? 3 1 3 8\n\n? 2 9 5\n\n! 23"
+    }
+  ]
+}

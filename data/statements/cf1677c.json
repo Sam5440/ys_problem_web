@@ -1,0 +1,45 @@
+{
+  "code": "CF1677C",
+  "letter": "C",
+  "title": "C. Tokitsukaze and Two Colorful Tapes",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1677/C",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Tokitsukaze has two colorful tapes. There are n%%ZSMJ0%% distinct colors, numbered 1%%ZSMJ1%% through n%%ZSMJ2%%, and each color appears exactly once on each of the two tapes. Denote the color of the i%%ZSMJ3%%-th position of the first tape as cai%%ZSMJ4%%, and the color of the i%%ZSMJ5%%-th position of the second tape as cbi%%ZSMJ6%%.",
+      "Now Tokitsukaze wants to select each color an integer value from 1%%ZSMJ7%% to n%%ZSMJ8%%, distinct for all the colors. After that she will put down the color values in each colored position on the tapes. Denote the number of the i%%ZSMJ9%%-th position of the first tape as numai%%ZSMJ10%%, and the number of the i%%ZSMJ11%%-th position of the second tape as numbi%%ZSMJ12%%.",
+      "![](https://espresso.codeforces.com/c43e6f42a4cd7b8a218983155bef73e1fb7807c9.png)",
+      "For example, for the above picture, assuming that the color red has value x%%ZSMJ13%% (1≤x≤n%%ZSMJ14%%), it appears at the 1%%ZSMJ15%%-st position of the first tape and the 3%%ZSMJ16%%-rd position of the second tape, so numa1=numb3=x%%ZSMJ17%%.",
+      "Note that each color i%%ZSMJ18%% from 1%%ZSMJ19%% to n%%ZSMJ20%% should have a distinct value, and the same color which appears in both tapes has the same value.",
+      "After labeling each color, the beauty of the two tapes is calculated as n∑i=1|numai−numbi|.%%ZSMJ21%%",
+      "Please help Tokitsukaze to find the highest possible beauty."
+    ],
+    "input": [
+      "The first contains a single positive integer t%%ZSMJ22%% (1≤t≤104%%ZSMJ23%%) — the number of test cases.",
+      "For each test case, the first line contains a single integer n%%ZSMJ24%% (1≤n≤105%%ZSMJ25%%) — the number of colors.",
+      "The second line contains n%%ZSMJ26%% integers ca1,ca2,…,can%%ZSMJ27%% (1≤cai≤n%%ZSMJ28%%) — the color of each position of the first tape. It is guaranteed that ca%%ZSMJ29%% is a permutation.",
+      "The third line contains n%%ZSMJ30%% integers cb1,cb2,…,cbn%%ZSMJ31%% (1≤cbi≤n%%ZSMJ32%%) — the color of each position of the second tape. It is guaranteed that cb%%ZSMJ33%% is a permutation.",
+      "It is guaranteed that the sum of n%%ZSMJ34%% over all test cases does not exceed 2⋅105%%ZSMJ35%%."
+    ],
+    "output": [
+      "For each test case, print a single integer — the highest possible beauty."
+    ],
+    "note": [
+      "An optimal solution for the first test case is shown in the following figure:",
+      "![](https://espresso.codeforces.com/33efd0f1d29332f2920727cec796463f3416ab5a.png)",
+      "The beauty is |4−3|+|3−5|+|2−4|+|5−2|+|1−6|+|6−1|=18%%ZSMJ36%%.",
+      "An optimal solution for the second test case is shown in the following figure:",
+      "![](https://espresso.codeforces.com/be704f7644a30ed1c595245dc0cc4754a2fa91cd.png)",
+      "The beauty is |2−2|+|1−6|+|3−3|+|6−1|+|4−4|+|5−5|=10%%ZSMJ37%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n6\n1 5 4 3 2 6\n5 3 1 4 6 2\n6\n3 5 4 6 2 1\n3 6 4 5 2 1\n1\n1\n1",
+      "output": "18\n10\n0"
+    }
+  ]
+}

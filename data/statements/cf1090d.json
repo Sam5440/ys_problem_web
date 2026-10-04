@@ -1,0 +1,41 @@
+{
+  "code": "CF1090D",
+  "letter": "D",
+  "title": "D. Similar Arrays",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1090/D",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Vasya had an array of n%%ZSMJ0%% integers, each element of the array was from 1%%ZSMJ1%% to n%%ZSMJ2%%. He chose m%%ZSMJ3%% pairs of different positions and wrote them down to a sheet of paper. Then Vasya compared the elements at these positions, and wrote down the results of the comparisons to another sheet of paper. For each pair he wrote either \"greater\", \"less\", or \"equal\".",
+      "After several years, he has found the first sheet of paper, but he couldn't find the second one. Also he doesn't remember the array he had. In particular, he doesn't remember if the array had equal elements. He has told this sad story to his informatics teacher Dr Helen.",
+      "She told him that it could be the case that even if Vasya finds his second sheet, he would still not be able to find out whether the array had two equal elements.",
+      "Now Vasya wants to find two arrays of integers, each of length n%%ZSMJ4%%. All elements of the first array must be distinct, and there must be two equal elements in the second array. For each pair of positions Vasya wrote at the first sheet of paper, the result of the comparison must be the same for the corresponding elements of the first array, and the corresponding elements of the second array.",
+      "Help Vasya find two such arrays of length n%%ZSMJ5%%, or find out that there are no such arrays for his sets of pairs."
+    ],
+    "input": [
+      "The first line of input contains two integers n%%ZSMJ6%%, m%%ZSMJ7%% — the number of elements in the array and number of comparisons made by Vasya (1≤n≤100000%%ZSMJ8%%, 0≤m≤100000%%ZSMJ9%%).",
+      "Each of the following m%%ZSMJ10%% lines contains two integers ai%%ZSMJ11%%, bi%%ZSMJ12%%  — the positions of the i%%ZSMJ13%%-th comparison (1≤ai,bi≤n%%ZSMJ14%%; ai≠bi%%ZSMJ15%%). It's guaranteed that any unordered pair is given in the input at most once."
+    ],
+    "output": [
+      "The first line of output must contain \"YES\" if there exist two arrays, such that the results of comparisons would be the same, and all numbers in the first one are distinct, and the second one contains two equal numbers. Otherwise it must contain \"NO\".",
+      "If the arrays exist, the second line must contain the array of distinct integers, the third line must contain the array, that contains at least one pair of equal elements. Elements of the arrays must be integers from 1%%ZSMJ16%% to n%%ZSMJ17%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 0",
+      "output": "NO"
+    },
+    {
+      "input": "3 1\n1 2",
+      "output": "YES\n1 3 2 \n1 3 1"
+    },
+    {
+      "input": "4 3\n1 2\n1 3\n2 4",
+      "output": "YES\n1 3 4 2 \n1 3 4 1"
+    }
+  ]
+}

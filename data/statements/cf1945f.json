@@ -1,0 +1,39 @@
+{
+  "code": "CF1945F",
+  "letter": "F",
+  "title": "F. Kirill and Mushrooms",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1945/F",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "As soon as everyone in the camp fell asleep, Kirill sneaked out of the tent and went to the Wise Oak to gather mushrooms.",
+      "It is known that there are n%%ZSMJ0%% mushrooms growing under the Oak, each of which has magic power vi%%ZSMJ1%%. Kirill really wants to make a magical elixir of maximum strength from the mushrooms.",
+      "The strength of the elixir is equal to the product of the number of mushrooms in it and the minimum magic power among these mushrooms. To prepare the elixir, Kirill will sequentially pick one mushroom growing under the Oak. Kirill can gather mushrooms in any order.",
+      "However, it's not that simple. The Wise Oak informed Kirill of a permutation of numbers p%%ZSMJ2%% from 1%%ZSMJ3%% to n%%ZSMJ4%%. If Kirill picks only k%%ZSMJ5%% mushrooms, then the magic power of all mushrooms with indices p1,p2,…,pk−1%%ZSMJ6%% will become 0%%ZSMJ7%%. Kirill will not use mushrooms with zero magic power to prepare the elixir.",
+      "Your task is to help Kirill gather mushrooms in such a way that he can brew the elixir of maximum possible strength. However, Kirill is a little scared to stay near the oak for too long, so out of all the suitable options for gathering mushrooms, he asks you to find the one with the minimum number of mushrooms.",
+      "A permutation of length n%%ZSMJ8%% is an array consisting of n%%ZSMJ9%% different integers from 1%%ZSMJ10%% to n%%ZSMJ11%% in any order. For example, [2,3,1,5,4]%%ZSMJ12%% is a permutation, but [1,2,2]%%ZSMJ13%% is not a permutation (2%%ZSMJ14%% appears in the array twice) and [1,3,4]%%ZSMJ15%% is also not a permutation (n=3%%ZSMJ16%%, but 4%%ZSMJ17%% appears in the array)."
+    ],
+    "input": [
+      "Each test consists of multiple test cases. The first line contains a single integer t%%ZSMJ18%% (1≤t≤104%%ZSMJ19%%) — the number of test cases. The description of the test cases follows.",
+      "The first line of each test case contains a single integer n%%ZSMJ20%% (1≤n≤200000%%ZSMJ21%%) — the number of mushrooms.",
+      "The second line contains an array v%%ZSMJ22%% of size n%%ZSMJ23%% (1≤vi≤109%%ZSMJ24%%) — the magic powers of the mushrooms.",
+      "The third line contains a permutation p%%ZSMJ25%% of numbers from 1%%ZSMJ26%% to n%%ZSMJ27%%.",
+      "It is guaranteed that the sum of the values of n%%ZSMJ28%% over all test cases does not exceed 2⋅105%%ZSMJ29%%."
+    ],
+    "output": [
+      "For each test case, output two integers separated by a space — the maximum strength of the elixir that can be brewed and the minimum number of mushrooms that Kirill needs to use for this."
+    ],
+    "note": [
+      "In the first example, you need to take the mushrooms with indices 1%%ZSMJ30%% and 2%%ZSMJ31%%, so the strength of the elixir is equal to 2⋅min%%ZSMJ32%%. Note that the magic power of the mushroom with index 3%%ZSMJ33%% after picking two mushrooms will become 0%%ZSMJ34%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n3\n9 8 14\n3 2 1\n5\n1 2 3 4 5\n1 2 3 4 5\n6\n1 2 3 4 5 6\n6 5 4 3 2 1\n5\n1 4 6 10 10\n2 1 4 5 3\n4\n2 2 5 5\n4 2 3 1\n5\n1 2 9 10 10\n1 4 2 3 5",
+      "output": "16 2\n9 3\n8 2\n20 2\n5 1\n20 2"
+    }
+  ]
+}

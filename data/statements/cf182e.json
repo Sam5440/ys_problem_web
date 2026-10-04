@@ -1,0 +1,48 @@
+{
+  "code": "CF182E",
+  "letter": "E",
+  "title": "E. Wooden Fence",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/182/E",
+  "difficulty": "1800",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Vasya has recently bought some land and decided to surround it with a wooden fence.",
+      "He went to a company called \"Wooden board\" that produces wooden boards for fences. Vasya read in the catalog of products that the company has at its disposal n different types of wood. The company uses the i-th type of wood to produce a board of this type that is a rectangular ai by bi block.",
+      "Vasya decided to order boards in this company and build a fence from them. It turned out that the storehouse of the company is so large that Vasya can order arbitrary number of boards of every type. Note that Vasya is allowed to turn the boards as he builds the fence. However, Vasya cannot turn square boards.",
+      "Vasya is required to construct a fence of length l, however, an arbitrary fence won't do. Vasya wants his fence to look beautiful. We'll say that a fence is beautiful if and only if the following two conditions are fulfilled:",
+      "there are no two successive boards of the same type",
+      "the first board of the fence has an arbitrary length, and the length of each subsequent board equals the width of the previous one",
+      "In other words, the fence is considered beautiful, if the type of the i-th board in the fence is different from the i - 1-th board's type; besides, the i-th board's length is equal to the i - 1-th board's width (for all i, starting from 2).",
+      "Now Vasya wonders, how many variants of arranging a fence for his land exist. Your task is to count the number of different beautiful fences of length l.",
+      "Two fences will be considered the same if the corresponding sequences of fence boards types and rotations are the same, otherwise the fences are different. Since the sought number can be large enough, you need to calculate the answer modulo 1000000007 (109 + 7)."
+    ],
+    "input": [
+      "The first line contains two integers n and l (1 ≤ n ≤ 100, 1 ≤ l ≤ 3000) — the number of different board types and the fence length, correspondingly. Next n lines contain descriptions of board types: the i-th line contains two integers ai and bi (1 ≤ ai, bi ≤ 100) — the sizes of the board of the i-th type. All numbers on the lines are separated by spaces."
+    ],
+    "output": [
+      "Print a single integer — the sought number of variants modulo 1000000007 (109 + 7)."
+    ],
+    "note": [
+      "In the first sample there are exactly two variants of arranging a beautiful fence of length 3:",
+      "As the first fence board use the board of the first type of length 1 and width 2. As the second board use board of the second type of length 2 and width 3.",
+      "Use one board of the second type after you turn it. That makes its length equal 3, and width — 2."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 3\n1 2\n2 3",
+      "output": "2"
+    },
+    {
+      "input": "1 2\n2 2",
+      "output": "1"
+    },
+    {
+      "input": "6 6\n2 1\n3 2\n2 5\n3 3\n5 1\n2 1",
+      "output": "20"
+    }
+  ]
+}

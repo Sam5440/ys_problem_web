@@ -1,0 +1,50 @@
+{
+  "code": "CF1949C",
+  "letter": "C",
+  "title": "C. Annual Ants' Gathering",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1949/C",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Deep within a forest lies an ancient tree, home to n%%ZSMJ0%% ants living in n%%ZSMJ1%% tiny houses, indexed from 1%%ZSMJ2%% to n%%ZSMJ3%%, connected by the branches of the tree.",
+      "![](https://espresso.codeforces.com/f70e1da504e377f7ca9e855cb38e24e50dc6b054.png)",
+      "Once a year, all the ants need to gather to watch the EUC. For this, all ants move along the n−1%%ZSMJ4%% branches of the tree they live on to meet at the home of one ant.",
+      "However, this year the ants could not agree on where to meet and need your help to gather up. You can tell all the ants currently at house u%%ZSMJ5%% to move to house v%%ZSMJ6%% if there is a branch directly connecting those two houses. However, the ants ignore your command if there are fewer ants gathered in house v%%ZSMJ7%% than in house u%%ZSMJ8%%, i.e., if it would be easier for the ants from house v%%ZSMJ9%% to move. This even holds true if no ant at all is currently in house v%%ZSMJ10%%. You can give this kind of commands as many times as you want.",
+      "Is it possible for you to gather all the ants in a single house?"
+    ],
+    "input": [
+      "The first line contains one integer n%%ZSMJ11%% (1≤n≤200000%%ZSMJ12%%) — the number of ant homes.",
+      "Each of the following n−1%%ZSMJ13%% lines contains two integers u%%ZSMJ14%% and v%%ZSMJ15%% (1≤u,v≤n%%ZSMJ16%%) — there is a branch directly connecting the house u%%ZSMJ17%% and house v%%ZSMJ18%%. It is guaranteed that every ant can reach the house of any other ant just by following the branches of the tree."
+    ],
+    "output": [
+      "Print YES%%ZSMJ19%% if it is possible to gather all the ants in a single house. Otherwise, print NO%%ZSMJ20%%."
+    ],
+    "note": [
+      "In the first sample, you can gather all the ants at house 3%%ZSMJ21%% as follows:",
+      "You tell to the ant at house 4%%ZSMJ22%% to move to house 6%%ZSMJ23%%.",
+      "You tell to the ant at house 2%%ZSMJ24%% to move to house 3%%ZSMJ25%%.",
+      "You tell to the two ants at house 6%%ZSMJ26%% to move to house 3%%ZSMJ27%% (which already contains two ants).",
+      "You tell to the ant at house 5%%ZSMJ28%% to move to house 1%%ZSMJ29%%.",
+      "You tell to the ant at house 7%%ZSMJ30%% to move to house 1%%ZSMJ31%% (which already contains two ants).",
+      "You tell to the three ants at house 1%%ZSMJ32%% to move to house 3%%ZSMJ33%% (which already contains four ants).",
+      "In the second sample, it is impossible to gather all the ants in a single house."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n5 1\n3 2\n4 6\n3 6\n7 1\n1 3",
+      "output": "YES"
+    },
+    {
+      "input": "5\n1 4\n4 2\n3 2\n5 3",
+      "output": "NO"
+    },
+    {
+      "input": "6\n4 5\n5 6\n6 1\n2 6\n3 2",
+      "output": "YES"
+    }
+  ]
+}

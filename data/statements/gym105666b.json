@@ -1,0 +1,46 @@
+{
+  "code": "GYM105666B",
+  "letter": "B",
+  "title": "B. Monster Fighting",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105666/problem/B",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Busy Beaver is playing his favorite adventure game, where he battles wild monsters with monsters of his own!",
+      "![](https://espresso.codeforces.com/11a7a3528bcb8d0f781ac7899361ab9c5aa3af29.png)",
+      "In this game, there are two types of monsters: light and dark. Each monster has exactly one type, and some positive integer power level. A monster with power p%%ZSMJ0%% can defeat another monster q%%ZSMJ1%% if either p≥q%%ZSMJ2%%, or if they have the same type and 2p≥q%%ZSMJ3%%.",
+      "Busy Beaver has just encountered N%%ZSMJ4%% monsters, and he also has N%%ZSMJ5%% monsters in his party. To defend against the encounter, he needs to pair his monsters with the opposing monsters such that in each pair, Busy Beaver's monster can defeat the opposing monster according to the rules above. Given the types and power levels of each of the monsters, please report whether or not such a pairing exists."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line of input contains a single integer T%%ZSMJ6%% (1≤T≤105)%%ZSMJ7%%, the number of test cases. The description of each test case follows.",
+      "The first line of each test case contains a single positive integer N%%ZSMJ8%% (1≤N≤2⋅105%%ZSMJ9%%).",
+      "Then, N%%ZSMJ10%% lines of input follow, describing Busy Beaver's monsters. The i%%ZSMJ11%%th line contains two positive integers pi,si%%ZSMJ12%% (1≤pi≤109,si∈{0,1}%%ZSMJ13%%) — the power level pi%%ZSMJ14%% and type si%%ZSMJ15%% of the i%%ZSMJ16%%th monster. si=0%%ZSMJ17%% denotes a light-type monster, and si=1%%ZSMJ18%% denotes a dark-type monster.",
+      "After that, there are N%%ZSMJ19%% more lines of input, describing the encountered monsters. The i%%ZSMJ20%%th line contains two positive integers qi,ti%%ZSMJ21%% (1≤qi≤109,ti∈{0,1}%%ZSMJ22%%) — the power level qi%%ZSMJ23%% and type ti%%ZSMJ24%% of the i%%ZSMJ25%%th monster. ti=0%%ZSMJ26%% denotes a light-type monster, and ti=1%%ZSMJ27%% denotes a dark-type monster.",
+      "It is guaranteed that the sum of N%%ZSMJ28%% across all test cases is no more than 2⋅105%%ZSMJ29%%."
+    ],
+    "output": [
+      "For each test case, output \"YES\" (without quotes) if a desired pairing exists, and \"NO\" (without quotes) otherwise.",
+      "You can output \"YES\" and \"NO\" in any case (for example, strings \"yES\", \"yes\" and \"Yes\" will be recognized as a positive response).",
+      "There are two subtasks for this problem.",
+      "(30%%ZSMJ30%% points): The sum of N%%ZSMJ31%% across all test cases does not exceed 2⋅103%%ZSMJ32%%.",
+      "(70%%ZSMJ33%% points): No additional constraints."
+    ],
+    "note": [
+      "In the sample input, there are two test cases. For the first case, we can construct a pairing as follows:",
+      "Your light type monster of power level 2%%ZSMJ34%% can defeat the identical opposing monster.",
+      "Your light type monster of power level 3%%ZSMJ35%% can defeat the identical opposing monster.",
+      "Your first dark type monster of power level 1%%ZSMJ36%% can defeat the opposing dark type monster of power level 2%%ZSMJ37%%.",
+      "Your second dark type monster of power level 1%%ZSMJ38%% can defeat the opposing light type monster of power level 1%%ZSMJ39%%.",
+      "In the second case, it can be shown that no pairing exists."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n4\n2 0\n3 0\n1 1\n1 1\n1 0\n2 0\n3 0\n2 1\n2\n1 1\n5 1\n1 0\n1000000000 0",
+      "output": "YES\nNO"
+    }
+  ]
+}

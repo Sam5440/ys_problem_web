@@ -1,0 +1,51 @@
+{
+  "code": "GYM105822C",
+  "letter": "C",
+  "title": "C. Feeding Beavers",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105822/problem/C",
+  "difficulty": "*1700",
+  "timeLimit": "2.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "It's dinner time, and Busy Beaver has to feed his baby beavers.",
+      "Busy Beaver has N%%ZSMJ0%% baby beavers, numbered from 1%%ZSMJ1%% to N%%ZSMJ2%%. The older baby beavers have bigger indices than the younger ones; for example, beaver 1%%ZSMJ3%% is the youngest while beaver N%%ZSMJ4%% is the oldest.",
+      "Busy Beaver also has 2N%%ZSMJ5%% dishes, which are numbered from 1%%ZSMJ6%% to 2N%%ZSMJ7%%. If a beaver eats dish i%%ZSMJ8%%, its satisfaction will increase by i%%ZSMJ9%%. Each beaver starts with 0%%ZSMJ10%% satisfaction.",
+      "Now, Busy Beaver wants to distribute the dishes amongst his baby beavers subject to the following constraints:",
+      "Each beaver should get exactly two dishes.",
+      "After all dishes are consumed, older beavers should have at least as much satisfaction as younger beavers. Formally, for any i,j%%ZSMJ11%% with 1≤i<j≤N%%ZSMJ12%%, beaver i%%ZSMJ13%%'s satisfaction should not exceed beaver j%%ZSMJ14%%'s satisfaction.",
+      "The parity of beaver i%%ZSMJ15%%'s satisfaction should be ci%%ZSMJ16%% (odd or even).",
+      "Determine if there exists a way to feed all N%%ZSMJ17%% beavers that respects these constraints. Additionally, if the task is possible, print any valid assignment of dishes to beavers."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains a single integer T%%ZSMJ18%% (1≤T≤104%%ZSMJ19%%) — the number of test cases. The description of each test case follows.",
+      "The first line of each test case contains an integer N%%ZSMJ20%% (1≤N≤105%%ZSMJ21%%) — the number of baby beavers.",
+      "The second line of each test case contains a string c%%ZSMJ22%% of length N%%ZSMJ23%%, where each of the characters ci%%ZSMJ24%% is either 'O' or 'E'. If ci%%ZSMJ25%% is 'O', the beaver i%%ZSMJ26%% wants its satisfaction to be an odd number. If ci%%ZSMJ27%% is 'E', the beaver i%%ZSMJ28%% wants its satisfaction to be an even number.",
+      "It is guaranteed that the sum of N%%ZSMJ29%% across all test cases is no more than 105%%ZSMJ30%%."
+    ],
+    "output": [
+      "For each test case, if it is possible to feed the beavers, output \"YES\" (without quotes) on the first line. Next, print N%%ZSMJ31%% lines describing how to feed each beaver. The i%%ZSMJ32%%-th of these lines should contain two integers, which denote the indices of the two dishes that will be given to beaver i%%ZSMJ33%%.",
+      "If it is impossible to feed the beavers, output \"NO\" (without quotes).",
+      "You can output \"YES\" and \"NO\" in any case (for example, strings \"yES\", \"yes\" and \"Yes\" will be recognized as a positive response).",
+      "There are two subtasks for this problem.",
+      "(25%%ZSMJ34%% points): For each test case, the string c%%ZSMJ35%% either only consists of 'O's or only consists of 'E's.",
+      "(75%%ZSMJ36%% points): No additional constraints."
+    ],
+    "note": [
+      "In the first test case, one possible way to feed the beavers is as follows:",
+      "Feed dishes 2%%ZSMJ37%% and 3%%ZSMJ38%% to beaver 1%%ZSMJ39%%. Beaver 1%%ZSMJ40%% gains satisfaction of 5%%ZSMJ41%%, which is odd.",
+      "Feed dishes 5%%ZSMJ42%% and 1%%ZSMJ43%% to beaver 2%%ZSMJ44%%. Beaver 2%%ZSMJ45%% gains satisfaction of 6%%ZSMJ46%%, which is even.",
+      "Feed dishes 4%%ZSMJ47%% and 8%%ZSMJ48%% to beaver 3%%ZSMJ49%%. Beaver 3%%ZSMJ50%% gains satisfaction of 12%%ZSMJ51%%, which is even.",
+      "Feed dishes 7%%ZSMJ52%% and 6%%ZSMJ53%% to beaver 4%%ZSMJ54%%. Beaver 4%%ZSMJ55%% gains satisfaction of 13%%ZSMJ56%%, which is odd.",
+      "The satisfaction of the four beavers in increasing order of age are [5,6,12,13]%%ZSMJ57%%. It can be checked that this assignment satisfies the conditions.",
+      "In the second test case, it can be shown that the task is impossible."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4\nOEEO\n7\nOEOEOEO\n6\nOOOOOO",
+      "output": "YES\n2 3\n5 1\n4 8\n7 6\nNO\nYES\n1 12\n2 11\n3 10\n4 9\n5 8\n6 7"
+    }
+  ]
+}

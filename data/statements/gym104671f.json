@@ -1,0 +1,40 @@
+{
+  "code": "GYM104671F",
+  "letter": "F",
+  "title": "F. Subset AND",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104671/problem/F",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an integer array a1,a2,...,an%%ZSMJ0%%, and two integers k%%ZSMJ1%% and q%%ZSMJ2%%. Please answer the following q%%ZSMJ3%% queries:",
+      "For each query, you are given two integers l%%ZSMJ4%% and r%%ZSMJ5%%. Your task is to determine whether there exists a nonempty subset of {al,al+1,...,ar}%%ZSMJ6%% whose bitwise AND is equal to exactly k%%ZSMJ7%%.",
+      "We define the bitwise AND of a nonempty integer subset {b1,b2,...,bm}%%ZSMJ8%% to be b1%%ZSMJ9%% if m=1%%ZSMJ10%%, and b1 AND b2 AND ... AND bm%%ZSMJ11%% otherwise."
+    ],
+    "input": [
+      "The first line of input consists of three space-separated integers n%%ZSMJ12%%, k%%ZSMJ13%%, and q%%ZSMJ14%% (1≤n,q≤2⋅105%%ZSMJ15%%, 0≤k<230)%%ZSMJ16%%.",
+      "The second line consists of n%%ZSMJ17%% space-separated integers a1,a2,...,an%%ZSMJ18%% (0≤ai<230)%%ZSMJ19%%.",
+      "The next q%%ZSMJ20%% lines each consist of two space-separated integers l%%ZSMJ21%% and r%%ZSMJ22%% (1≤l≤r≤n)%%ZSMJ23%%."
+    ],
+    "output": [
+      "Output q%%ZSMJ24%% lines. On the i%%ZSMJ25%%th line, output YES if the answer to the i%%ZSMJ26%%th query is yes, and NO otherwise."
+    ],
+    "note": [
+      "In the first sample test case, the answer to the first query is YES, since 6 AND 10=2%%ZSMJ27%%.",
+      "There is no nonempty subset of {1,6}%%ZSMJ28%% with AND equal to 2%%ZSMJ29%%, so the answer to the second query is NO.",
+      "For the third query, the subset {2}%%ZSMJ30%% can be picked."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 2 3\n1 6 10 0 2\n1 3\n1 2\n3 5",
+      "output": "YES\nNO\nYES"
+    },
+    {
+      "input": "10 2 10\n2 10 6 8 14 7 13 6 9 8\n2 7\n5 6\n1 6\n4 8\n4 10\n2 7\n6 8\n2 8\n5 8\n1 1",
+      "output": "YES\nNO\nYES\nNO\nNO\nYES\nNO\nYES\nNO\nYES"
+    }
+  ]
+}

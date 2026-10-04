@@ -1,0 +1,40 @@
+{
+  "code": "GYM105109C",
+  "letter": "C",
+  "title": "C. A Noteworthy Debut",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105109/problem/C",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/773e39ffa6c6be84d4a168286c45502aaeeb3444.png)",
+      "After many years of songwriting and practicing, the up-and-coming UTBC (UT Beats Club) is finally ready to debut! In order to do so, they must choose some of their songs to record for their debut album.",
+      "Currently, they have written a total of n%%ZSMJ0%% songs, each with their own excitement level. The list of songs can be represented by an array a%%ZSMJ1%%, where the i%%ZSMJ2%%-th song in the array has an excitement level of ai%%ZSMJ3%%. In order for their album to be thematically coherent, UTBC has decided they want to choose a subarray†%%ZSMJ4%% of songs from a%%ZSMJ5%% to put on the album.",
+      "UTBC doesn't want their debut to be a flop, so they want to choose which songs they put on their record album carefully. After extensive market research, they have discovered that audiences love an album that contains a song that stands out. In particular, a record album is considered noteworthy if it contains a song whose excitement level is strictly greater than the sum of the excitement levels of all the other songs on the album. For example, [3, 1, 1] is noteworthy because 3>1+1%%ZSMJ6%%, whereas [2, 2] and [1, 2, 3] are not.",
+      "Now UTBC wants to know, given the array a%%ZSMJ7%% of their songs, how many different possible noteworthy record albums could they produce as their debut album? Help them calculate this answer before they debut!",
+      "†%%ZSMJ8%%A subarray of a%%ZSMJ9%% is defined as a sequence of consecutive elements of a%%ZSMJ10%%, i.e. the array ai,ai+1,…,aj%%ZSMJ11%% for some 1≤i≤j≤n%%ZSMJ12%%."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ13%% (1≤t≤104)%%ZSMJ14%%. The description of the test cases follows.",
+      "The first line of each test case contains an integer n%%ZSMJ15%% (1≤n≤2⋅105)%%ZSMJ16%% — the number of songs written by UTBC.",
+      "The second line of each test case contains n%%ZSMJ17%% integers a1,a2,…,an%%ZSMJ18%% (1≤ai≤109)%%ZSMJ19%% — the excitement levels of the songs in the array.",
+      "It is guaranteed that the sum of the values of n%%ZSMJ20%% for all test cases does not exceed 2⋅105%%ZSMJ21%%."
+    ],
+    "output": [
+      "For each test case output one integer — the number of different subarrays of songs that will produce a noteworthy record album."
+    ],
+    "note": [
+      "For the first test case, the only noteworthy subarray is [1].",
+      "For the second test case, the noteworthy subarrays are [1], [2], [1, 2].",
+      "For the third test case, the noteworthy subarrays are [3], [1], [1], [3, 1], [3, 1, 1]."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1\n1\n2\n1 2\n3\n3 1 1\n4\n1 5 2 1\n5\n1 3 5 10 12",
+      "output": "1\n3\n5\n10\n12"
+    }
+  ]
+}

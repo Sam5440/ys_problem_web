@@ -1,0 +1,64 @@
+{
+  "code": "GYM106414H",
+  "letter": "H",
+  "title": "H. NP-hard Problem",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106414/problem/H",
+  "difficulty": "*2400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is a run-twice (communication) problem.",
+      "Alice and Bob have the same undirected graph with $$$n$$$ vertices and $$$m$$$ edges. Bob wants to construct a $$$3$$$-coloring$$$^{\\text{∗}}$$$ of this graph.",
+      "Fortunately, Alice already has an array $$$c$$$ representing a $$$3$$$-coloring of this graph. However, the only way she can communicate with Bob is by sending him an array $$$a$$$ of length $$$k$$$ such that $$$0 \\le k \\le \\lfloor \\frac n 2 \\rfloor$$$ and $$$a_i \\in \\{1, 2, 3\\}$$$.",
+      "Bob wants to construct any $$$3$$$-coloring of the graph. Note that this $$$3$$$-coloring does not have to be the same as the array $$$c$$$.",
+      "Your task is to implement the strategy for both Alice and Bob.",
+      "$$$^{\\text{∗}}$$$A 3-coloring is an array $$$x$$$ of size $$$n$$$ where $$$x_i \\in \\{1, 2, 3\\}$$$ and $$$x_u \\ne x_v$$$ for all edges $$$(u, v)$$$"
+    ],
+    "input": [
+      "Your code will be run exactly two times on each test. On the first run, you will act as Alice, and on the second you will act as Bob.",
+      "First Run Input",
+      "The first line of the input contains the string first. The purpose of this is so your program recognizes that this is its first run, and it should act as Alice.",
+      "Each test consists of multiple test cases.",
+      "The second line of input contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "The first line of each test case consists of two integers $$$n$$$ and $$$m$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$, $$$0 \\le m \\le 3 \\cdot 10^5$$$) — the number of vertices and the number of edges, respectively.",
+      "The second line of each test case contains $$$n$$$ integers $$$c_1, \\ldots, c_n$$$ ($$$1 \\le c_i \\le 3$$$) — Alice's 3-coloring of this graph.",
+      "Then, $$$m$$$ lines follow. The $$$i$$$-th line contains two integers $$$u_i$$$ and $$$v_i$$$ ($$$1 \\le u_i, v_i \\le n$$$) — the two vertices that the $$$i$$$-th edge connects. It is guaranteed that there are no self-loops or duplicate edges in the graph.",
+      "It is guaranteed that the array $$$c$$$ is a valid $$$3$$$-coloring of the given graph.",
+      "Second Run Input",
+      "The first line of the input contains the string second. The purpose of this is so your program recognizes that this is its second run, and it should act as Bob.",
+      "Each test consists of multiple test cases.",
+      "The second line of input contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "The first line of each test case consists of three integers $$$n$$$, $$$m$$$, and $$$k$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$, $$$0 \\le m \\le 3 \\cdot 10^5$$$, $$$0 \\le k \\le \\lfloor \\frac n 2 \\rfloor$$$) — the number of vertices, the number of edges, and the length of the array sent by Alice, respectively.",
+      "The second line of each test case contains $$$k$$$ integers $$$a_1, \\ldots, a_k$$$ ($$$1 \\le a_i \\le 3$$$) — the array sent by Alice.",
+      "Then, $$$m$$$ lines follow. The $$$i$$$-th line contains two integers $$$u_i$$$ and $$$v_i$$$ ($$$1 \\le u_i, v_i \\le n$$$) — the two vertices that the $$$i$$$-th edge connects. It is guaranteed that there are no self-loops or duplicate edges in the graph.",
+      "The graph in both runs is exactly the same, and the edges are given in the same order in both runs.",
+      "In both runs of the input, it is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2\\cdot 10^5$$$, and the sum of $$$m$$$ over all test cases does not exceed $$$3\\cdot 10^5$$$."
+    ],
+    "output": [
+      "First Run Output",
+      "For each test case, print two lines.",
+      "On the first line, print a single integer $$$k$$$ ($$$0 \\le k \\le \\lfloor \\frac n 2 \\rfloor$$$) — the size of the array Alice will send to Bob.",
+      "On the second line, print $$$k$$$ integers $$$a_1, \\ldots, a_k$$$ — Alice's chosen array.",
+      "Second Run Output",
+      "For each test case, print $$$n$$$ integers $$$b_1, \\ldots, b_n$$$ — Bob's $$$3$$$-coloring of the graph. If there are multiple solutions, you may print any."
+    ],
+    "note": [
+      "In the first test case of the first run, Alice has the 3-coloring $$$[1, 2, 3, 1]$$$ and chooses the array $$$a = [3, 1]$$$. Alice's coloring is shown below.",
+      "![](https://espresso.codeforces.com/2e37f7899e62dfeec06abc9cc54775a1e83e044f.png)",
+      "In the second run, Bob receives the array $$$a = [3, 1]$$$. Bob chooses the 3-coloring $$$b = [3, 2, 1, 1]$$$. Bob's coloring is shown below.",
+      "![](https://espresso.codeforces.com/ef94d8507164172b2bf9359f90fed80c3ba3a4dc.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "first\n2\n4 4\n1 2 3 1\n1 2\n2 3\n1 3\n2 4\n3 0\n1 1 1",
+      "output": "2\n3 1\n1\n1"
+    },
+    {
+      "input": "second\n2\n4 4 2\n3 1\n1 2\n2 3\n1 3\n2 4\n3 0 1\n1",
+      "output": "3 2 1 1\n1 1 1"
+    }
+  ]
+}

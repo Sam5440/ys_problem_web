@@ -1,0 +1,35 @@
+{
+  "code": "GYM105900M",
+  "letter": "M",
+  "title": "M. Minimum Path",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105900/problem/M",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "After a successful expedition for a marathon at UFG, the competitors AlbertoTDNeto, duduFreire, EYZ, henriqueramos.qs, and MagePetrus made a pact: every time the 5 of them meet, they must roll a D100 (100-sided die). If the rolled number is 100, they must immediately go to Goiânia.",
+      "After many meetings, this finally happened, and the competitors will keep their promises. They all get into Henrique's car, which will drive them to Goiânia. The marathon runners want to take the shortest possible route from Brasília to Goiânia, of course. Additionally, since the car is quite heavy, Henrique is worried about the possibility of running out of fuel in the middle of the road. So, among the shortest paths, he wants a path that minimizes the longest distance the car will travel between two gas stations.",
+      "The gas stations are numbered from 1%%ZSMJ0%% to N%%ZSMJ1%%. Henrique will start from Brasília at gas station number 1%%ZSMJ2%% and will finish his journey at gas station number N%%ZSMJ3%%, in Goiânia. There are M%%ZSMJ4%% roads connecting pairs of distinct gas stations. For each i%%ZSMJ5%% from 1%%ZSMJ6%% to M%%ZSMJ7%%, road number i%%ZSMJ8%% starts from gas station ai%%ZSMJ9%%, leads to gas station bi%%ZSMJ10%%, and has a length of wi%%ZSMJ11%% kilometers. It is only possible to travel this road in the direction from ai%%ZSMJ12%% to bi%%ZSMJ13%%. It is guaranteed that there is a path from 1%%ZSMJ14%% to N%%ZSMJ15%%.",
+      "Help Henrique find a shortest path that minimizes the longest distance traveled between two consecutive gas stations."
+    ],
+    "input": [
+      "The first line contains two integers 2≤N,M≤2⋅105%%ZSMJ16%%: the number of gas stations and the number of roads connecting pairs of distinct gas stations, respectively.",
+      "Next, there are M%%ZSMJ17%% input lines. The i%%ZSMJ18%%-th of these lines contains three integers ai,bi%%ZSMJ19%%, and wi%%ZSMJ20%%, with 1≤ai,bi≤N%%ZSMJ21%% and 1≤wi≤105%%ZSMJ22%%, representing a one-way road from gas station ai%%ZSMJ23%% to gas station bi%%ZSMJ24%% with a length of wi%%ZSMJ25%% kilometers."
+    ],
+    "output": [
+      "Print two integers, in this order: the length of the shortest path and the length of the longest edge traveled in a shortest path that minimizes the longest edge traveled."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 6\n1 2 1\n1 3 10\n1 4 1\n2 3 3\n3 5 2\n4 5 5",
+      "output": "6 3"
+    },
+    {
+      "input": "2 2\n1 2 1\n1 2 2",
+      "output": "1 1"
+    }
+  ]
+}

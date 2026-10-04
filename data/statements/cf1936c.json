@@ -1,0 +1,47 @@
+{
+  "code": "CF1936C",
+  "letter": "C",
+  "title": "C. Pokémon Arena",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1936/C",
+  "difficulty": "*2400",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "You are at a dueling arena. You also possess n%%ZSMJ0%% Pokémons. Initially, only the 1%%ZSMJ1%%-st Pokémon is standing in the arena.",
+      "Each Pokémon has m%%ZSMJ2%% attributes. The j%%ZSMJ3%%-th attribute of the i%%ZSMJ4%%-th Pokémon is ai,j%%ZSMJ5%%. Each Pokémon also has a cost to be hired: the i%%ZSMJ6%%-th Pokémon's cost is ci%%ZSMJ7%%.",
+      "You want to have the n%%ZSMJ8%%-th Pokémon stand in the arena. To do that, you can perform the following two types of operations any number of times in any order:",
+      "Choose three integers i%%ZSMJ9%%, j%%ZSMJ10%%, k%%ZSMJ11%% (1≤i≤n%%ZSMJ12%%, 1≤j≤m%%ZSMJ13%%, k>0%%ZSMJ14%%), increase ai,j%%ZSMJ15%% by k%%ZSMJ16%% permanently. The cost of this operation is k%%ZSMJ17%%.",
+      "Choose two integers i%%ZSMJ18%%, j%%ZSMJ19%% (1≤i≤n%%ZSMJ20%%, 1≤j≤m%%ZSMJ21%%) and hire the i%%ZSMJ22%%-th Pokémon to duel with the current Pokémon in the arena based on the j%%ZSMJ23%%-th attribute. The i%%ZSMJ24%%-th Pokémon will win if ai,j%%ZSMJ25%% is greater than or equal to the j%%ZSMJ26%%-th attribute of the current Pokémon in the arena (otherwise, it will lose). After the duel, only the winner will stand in the arena. The cost of this operation is ci%%ZSMJ27%%.",
+      "Find the minimum cost you need to pay to have the n%%ZSMJ28%%-th Pokémon stand in the arena."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ29%% (1≤t≤105%%ZSMJ30%%). The description of the test cases follows.",
+      "The first line of each test case contains two integers n%%ZSMJ31%% and m%%ZSMJ32%% (2≤n≤4⋅105%%ZSMJ33%%, 1≤m≤2⋅105%%ZSMJ34%%, 2≤n⋅m≤4⋅105%%ZSMJ35%%).",
+      "The second line of each test case contains n%%ZSMJ36%% integers c1,c2,…,cn%%ZSMJ37%% (1≤ci≤109%%ZSMJ38%%).",
+      "The i%%ZSMJ39%%-th of the following n%%ZSMJ40%% lines contains m%%ZSMJ41%% integers ai,1,ai,2,…,ai,m%%ZSMJ42%% (1≤ai,j≤109%%ZSMJ43%%).",
+      "It is guaranteed that the sum of n⋅m%%ZSMJ44%% over all test cases does not exceed 4⋅105%%ZSMJ45%%."
+    ],
+    "output": [
+      "For each test case, output the minimum cost to make the n%%ZSMJ46%%-th Pokémon stand in the arena."
+    ],
+    "note": [
+      "In the first test case, the attribute array of the 1%%ZSMJ47%%-st Pokémon (which is standing in the arena initially) is [2,9,9]%%ZSMJ48%%.",
+      "In the first operation, you can choose i=3%%ZSMJ49%%, j=1%%ZSMJ50%%, k=1%%ZSMJ51%%, and increase a3,1%%ZSMJ52%% by 1%%ZSMJ53%% permanently. Now the attribute array of the 3%%ZSMJ54%%-rd Pokémon is [2,2,1]%%ZSMJ55%%. The cost of this operation is k=1%%ZSMJ56%%.",
+      "In the second operation, you can choose i=3%%ZSMJ57%%, j=1%%ZSMJ58%%, and hire the 3%%ZSMJ59%%-rd Pokémon to duel with the current Pokémon in the arena based on the 1%%ZSMJ60%%-st attribute. Since ai,j=a3,1=2≥2=a1,1%%ZSMJ61%%, the 3%%ZSMJ62%%-rd Pokémon will win. The cost of this operation is c3=1%%ZSMJ63%%.",
+      "Thus, we have made the 3%%ZSMJ64%%-rd Pokémon stand in the arena within the cost of 2%%ZSMJ65%%. It can be proven that 2%%ZSMJ66%% is minimum possible.",
+      "In the second test case, the attribute array of the 1%%ZSMJ67%%-st Pokémon in the arena is [9,9,9]%%ZSMJ68%%.",
+      "In the first operation, you can choose i=2%%ZSMJ69%%, j=3%%ZSMJ70%%, k=2%%ZSMJ71%%, and increase a2,3%%ZSMJ72%% by 2%%ZSMJ73%% permanently. Now the attribute array of the 2%%ZSMJ74%%-nd Pokémon is [6,1,9]%%ZSMJ75%%. The cost of this operation is k=2%%ZSMJ76%%.",
+      "In the second operation, you can choose i=2%%ZSMJ77%%, j=3%%ZSMJ78%%, and hire the 2%%ZSMJ79%%-nd Pokémon to duel with the current Pokémon in the arena based on the 3%%ZSMJ80%%-rd attribute. Since ai,j=a2,3=9≥9=a1,3%%ZSMJ81%%, the 2%%ZSMJ82%%-nd Pokémon will win. The cost of this operation is c2=3%%ZSMJ83%%.",
+      "In the third operation, you can choose i=3%%ZSMJ84%%, j=2%%ZSMJ85%%, and hire the 3%%ZSMJ86%%-rd Pokémon to duel with the current Pokémon in the arena based on the 2%%ZSMJ87%%-nd attribute. Since ai,j=a1,2=2≥1=a2,2%%ZSMJ88%%, the 3%%ZSMJ89%%-rd Pokémon can win. The cost of this operation is c3=1%%ZSMJ90%%.",
+      "Thus, we have made the 3%%ZSMJ91%%-rd Pokémon stand in the arena within the cost of 6%%ZSMJ92%%. It can be proven that 6%%ZSMJ93%% is minimum possible."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n3 3\n2 3 1\n2 9 9\n6 1 7\n1 2 1\n3 3\n2 3 1\n9 9 9\n6 1 7\n1 2 1\n4 2\n2 8 3 5\n18 24\n17 10\n1 10\n1 1\n6 3\n21412674 3212925 172015806 250849370 306960171 333018900\n950000001 950000001 950000001\n821757276 783362401 760000001\n570000001 700246226 600757652\n380000001 423513575 474035234\n315201473 300580025 287023445\n1 1 1",
+      "output": "2\n6\n17\n1224474550"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "code": "GYM106020G",
+  "letter": "G",
+  "title": "G. Pretty Prime Collection",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106020/problem/G",
+  "difficulty": "*2000",
+  "timeLimit": "5 s",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a deck of n%%ZSMJ0%% cards, each labeled with a number ai%%ZSMJ1%%. The game begins with an empty hand and an initial total score of zero.",
+      "On the i%%ZSMJ2%%-th turn, you must pick up the i%%ZSMJ3%%-th card with value ai%%ZSMJ4%%, then optionally discard some cards from your hand, ensuring that after this step, the bitwise XOR[8]%%ZSMJ5%% of any two remaining cards in hand is a prime number[11]%%ZSMJ6%%. The score for this turn is the sum of the values of all cards in your hand, which is then added to the total score.",
+      "Determine the maximum possible total score after completing all n%%ZSMJ7%% turns."
+    ],
+    "input": [
+      "Each test consists of multiple test cases. The first line contains a single integer t%%ZSMJ8%% (1≤t≤50%%ZSMJ9%%) — the number of test cases. The description of the test cases follows.",
+      "The first line of each test case contains one integer n%%ZSMJ10%% (1≤n≤150%%ZSMJ11%%).",
+      "The second line of each test case contains n%%ZSMJ12%% integers a1,a2,…,an%%ZSMJ13%% (1≤ai<220%%ZSMJ14%%).",
+      "It is guaranteed that the sum of n%%ZSMJ15%% over all test cases does not exceed 150%%ZSMJ16%%."
+    ],
+    "output": [
+      "For each test case, output one line containing a single integer — the maximum score you can get."
+    ],
+    "note": [
+      "Cards picked during their respective turns are underlined, while discarded cards are crossed out.",
+      "In the first test case, you can process the initial empty hand {}%%ZSMJ17%% and total score 0%%ZSMJ18%% as follows:",
+      "after completing the first turn: {1_}%%ZSMJ19%% following removal→%%ZSMJ20%% {1}%%ZSMJ21%% and a total score of 0+1=1%%ZSMJ22%%;",
+      "after completing the second turn: {1,2_}%%ZSMJ23%% following removal→%%ZSMJ24%% {1,2}%%ZSMJ25%% and a total score of 1+3=4%%ZSMJ26%%;",
+      "after completing the third turn: {1,⧸2,3_}%%ZSMJ27%% following removal→%%ZSMJ28%% {1,3}%%ZSMJ29%% and a total score of 4+4=8%%ZSMJ30%%. Note that cards with values 2%%ZSMJ31%% and 3%%ZSMJ32%% cannot be held in hand simultaneously since 2⊕3=1%%ZSMJ33%%, which isn't a prime number. To resolve this, we can discard the card with value 2%%ZSMJ34%%;",
+      "after completing the fourth turn: {1,3,4_}%%ZSMJ35%% following removal→%%ZSMJ36%% {1,3,4}%%ZSMJ37%% and a total score of 8+8=16%%ZSMJ38%%;",
+      "after completing the fifth turn: {1,3,4,⧸5_}%%ZSMJ39%% following removal→%%ZSMJ40%% {1,3,4}%%ZSMJ41%% and a total score of 16+8=24%%ZSMJ42%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n5\n1 2 3 4 5\n9\n9 9 8 2 4 4 3 5 3\n2\n323468 765165",
+      "output": "24 \n103 \n1412101"
+    }
+  ]
+}

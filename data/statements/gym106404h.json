@@ -1,0 +1,43 @@
+{
+  "code": "GYM106404H",
+  "letter": "H",
+  "title": "H. Volcanic Islands",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106404/problem/H",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Volcanoes are erupting over the ovine homeland! Help the Sheep King escape the lava.",
+      "There are n%%ZSMJ0%% islands connected by m%%ZSMJ1%% undirected bridges. Each bridge has a length w%%ZSMJ2%%: crossing that bridge takes exactly w%%ZSMJ3%% days (for both the sheep and the lava).",
+      "Each island i%%ZSMJ4%% has a volcano that erupts on day ai%%ZSMJ5%%. When a volcano erupts, all bridges connected to that island burn down and become unusable.",
+      "Lava spreads through the bridge network over time, using the same travel times as the Sheep King (it needs w%%ZSMJ6%% days to cross a bridge of length w%%ZSMJ7%%). If lava reaches an island before its volcano erupts, that island burns at the moment lava arrives.",
+      "The Sheep King starts on island 1%%ZSMJ8%% at day 0%%ZSMJ9%% and wants to reach island n%%ZSMJ10%% to escape. If he arrives at an island exactly when it burns, he is considered safe and may still depart from it at that time."
+    ],
+    "input": [
+      "The first line contains an integer t%%ZSMJ11%% (1≤t≤104)%%ZSMJ12%% — the number of test cases.",
+      "For each test case:",
+      "The first line contains two integers n%%ZSMJ13%% and m%%ZSMJ14%% (1≤n≤105, 0≤m≤105)%%ZSMJ15%%.",
+      "The second line contains n%%ZSMJ16%% integers a1,a2,…,an%%ZSMJ17%% (1≤ai≤109)%%ZSMJ18%% — the eruption days of the volcanoes.",
+      "Each of the next m%%ZSMJ19%% lines contains three integers xj%%ZSMJ20%%, yj%%ZSMJ21%%, and wj%%ZSMJ22%% (1≤xj<yj≤n,1≤wj≤109)%%ZSMJ23%% denoting an undirected bridge between islands xj%%ZSMJ24%% and yj%%ZSMJ25%% of length wj%%ZSMJ26%%.",
+      "It is guaranteed that the sum of n%%ZSMJ27%% over all test cases does not exceed 105%%ZSMJ28%%, and the sum of m%%ZSMJ29%% over all test cases does not exceed 105%%ZSMJ30%%."
+    ],
+    "output": [
+      "For each test case, print Yes (case-insensitive) if it is possible to travel from island 1%%ZSMJ31%% to island n%%ZSMJ32%%. Otherwise, print No (case-insensitive)."
+    ],
+    "note": [
+      "The Sheep King can travel from island 1%%ZSMJ33%% to island 2%%ZSMJ34%% in 2%%ZSMJ35%% days. He arrives at island 2%%ZSMJ36%% on day 2%%ZSMJ37%%, exactly when it burns. He is still safe, so he can continue to island 3%%ZSMJ38%% and arrive there on day 4%%ZSMJ39%%. The answer is Yes."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n3 2\n100 2 100\n1 2 2\n2 3 2",
+      "output": "YES"
+    },
+    {
+      "input": "2\n5 7\n46 34 5 60 36\n1 3 23\n1 3 29\n1 5 7\n2 5 25\n4 5 8\n4 5 11\n4 5 29\n5 7\n25 53 5 49 7\n1 2 4\n1 4 7\n1 5 23\n2 5 23\n2 5 24\n3 4 12\n4 5 20",
+      "output": "YES\nNO"
+    }
+  ]
+}

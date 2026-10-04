@@ -1,0 +1,40 @@
+{
+  "code": "GYM105666A",
+  "letter": "A",
+  "title": "A. Number Reduction",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105666/problem/A",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Busy Beaver is given a positive integer k%%ZSMJ0%% (1≤k≤1018%%ZSMJ1%%) written in base 10%%ZSMJ2%%. Then, he repeatedly performs the following operation:",
+      "Choose a digit in k%%ZSMJ3%% that is greater than 1%%ZSMJ4%%. If k%%ZSMJ5%% is divisible by that digit, divide k%%ZSMJ6%% by that digit. Repeat this process on the resulting number until either 1%%ZSMJ7%% is reached or there are no more legal operations. Call k%%ZSMJ8%% valid if there exists a way to reduce it to 1%%ZSMJ9%% via this operation.",
+      "Compute the number of k%%ZSMJ10%% in the range 1,…,N%%ZSMJ11%% that are valid."
+    ],
+    "input": [
+      "The first line of input contains the given integer N%%ZSMJ12%% (1≤N≤1018%%ZSMJ13%%)."
+    ],
+    "output": [
+      "Output a single line, with a single integer equivalent to the number of integers from 1%%ZSMJ14%% to N%%ZSMJ15%% that have a way to reach 1%%ZSMJ16%% using the operation.",
+      "There are two subtasks for this problem.",
+      "(25%%ZSMJ17%% Points): N≤105%%ZSMJ18%%.",
+      "(75%%ZSMJ19%% Points): No additional constraints."
+    ],
+    "note": [
+      "In the first test case, all integers from 1%%ZSMJ20%% to 9%%ZSMJ21%% can be divided by themselves to reach 1%%ZSMJ22%%, so the answer is 9%%ZSMJ23%%.",
+      "In the second test case, all integers from 1%%ZSMJ24%% to 9%%ZSMJ25%% are valid, as mentioned in the first test case. 10%%ZSMJ26%%, 11%%ZSMJ27%%, and 13%%ZSMJ28%% have no digits greater than 1%%ZSMJ29%% that are divisors of themselves, and therefore cannot be reduced to 1%%ZSMJ30%%. However, 12%%ZSMJ31%% can be divided by 2%%ZSMJ32%% to get 6%%ZSMJ33%%, which can in turn be divided by 6%%ZSMJ34%% to get 1%%ZSMJ35%%. Therefore, the numbers 1%%ZSMJ36%% through 9%%ZSMJ37%% and 12%%ZSMJ38%% are valid, giving an answer of 10%%ZSMJ39%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "9",
+      "output": "9"
+    },
+    {
+      "input": "13",
+      "output": "10"
+    }
+  ]
+}

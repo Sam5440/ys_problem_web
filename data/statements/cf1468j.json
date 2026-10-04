@@ -1,0 +1,48 @@
+{
+  "code": "CF1468J",
+  "letter": "J",
+  "title": "J. Road Reform",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1468/J",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "There are n%%ZSMJ0%% cities and m%%ZSMJ1%% bidirectional roads in Berland. The i%%ZSMJ2%%-th road connects the cities xi%%ZSMJ3%% and yi%%ZSMJ4%%, and has the speed limit si%%ZSMJ5%%. The road network allows everyone to get from any city to any other city.",
+      "The Berland Transport Ministry is planning a road reform.",
+      "First of all, maintaining all m%%ZSMJ6%% roads is too costly, so m−(n−1)%%ZSMJ7%% roads will be demolished in such a way that the remaining (n−1)%%ZSMJ8%% roads still allow to get to any city from any other city. Formally, the remaining roads should represent an undirected tree.",
+      "Secondly, the speed limits on the remaining roads might be changed. The changes will be done sequentially, each change is either increasing the speed limit on some road by 1%%ZSMJ9%%, or decreasing it by 1%%ZSMJ10%%. Since changing the speed limit requires a lot of work, the Ministry wants to minimize the number of changes.",
+      "The goal of the Ministry is to have a road network of (n−1)%%ZSMJ11%% roads with the maximum speed limit over all roads equal to exactly k%%ZSMJ12%%. They assigned you the task of calculating the minimum number of speed limit changes they have to perform so the road network meets their requirements.",
+      "For example, suppose the initial map of Berland looks like that, and k=7%%ZSMJ13%%:",
+      "![](https://espresso.codeforces.com/733cb599cc7e9bd751cb590866cace5a207dec6f.png)",
+      "Then one of the optimal courses of action is to demolish the roads 1%%ZSMJ14%%–4%%ZSMJ15%% and 3%%ZSMJ16%%–4%%ZSMJ17%%, and then decrease the speed limit on the road 2%%ZSMJ18%%–3%%ZSMJ19%% by 1%%ZSMJ20%%, so the resulting road network looks like that:",
+      "![](https://espresso.codeforces.com/aafdedd23e3077335800387927eedf7dbdf99a6c.png)"
+    ],
+    "input": [
+      "The first line contains one integer t%%ZSMJ21%% (1≤t≤1000%%ZSMJ22%%) — the number of test cases.",
+      "The first line of each test case contains three integers n%%ZSMJ23%%, m%%ZSMJ24%% and k%%ZSMJ25%% (2≤n≤2⋅105%%ZSMJ26%%; n−1≤m≤min(2⋅105,n(n−1)2)%%ZSMJ27%%; 1≤k≤109%%ZSMJ28%%) — the number of cities, the number of roads and the required maximum speed limit, respectively.",
+      "Then m%%ZSMJ29%% lines follow. The i%%ZSMJ30%%-th line contains three integers xi%%ZSMJ31%%, yi%%ZSMJ32%% and si%%ZSMJ33%% (1≤xi,yi≤n%%ZSMJ34%%; xi≠yi%%ZSMJ35%%; 1≤si≤109%%ZSMJ36%%) — the cities connected by the i%%ZSMJ37%%-th road and the speed limit on it, respectively. All roads are bidirectional.",
+      "The road network in each test case is connected (that is, it is possible to reach any city from any other city by traveling along the road), and each pair of cities is connected by at most one road.",
+      "The sum of n%%ZSMJ38%% over all test cases does not exceed 2⋅105%%ZSMJ39%%. Similarly, the sum of m%%ZSMJ40%% over all test cases does not exceed 2⋅105%%ZSMJ41%%."
+    ],
+    "output": [
+      "For each test case, print one integer — the minimum number of changes the Ministry has to perform so that the maximum speed limit among the remaining (n−1)%%ZSMJ42%% roads is exactly k%%ZSMJ43%%."
+    ],
+    "note": [
+      "The explanation for the example test:",
+      "The first test case is described in the problem statement.",
+      "In the second test case, the road network initially looks like that:",
+      "![](https://espresso.codeforces.com/af2714f5b8e774568184a3fbec53af2f54476fef.png)",
+      "The Ministry can demolish the roads 1%%ZSMJ44%%–2%%ZSMJ45%%, 3%%ZSMJ46%%–2%%ZSMJ47%% and 3%%ZSMJ48%%–4%%ZSMJ49%%, and then increase the speed limit on the road 1%%ZSMJ50%%–4%%ZSMJ51%% three times.",
+      "In the third test case, the road network already meets all the requirements.",
+      "In the fourth test case, it is enough to demolish the road 1%%ZSMJ52%%–2%%ZSMJ53%% so the resulting road network meets the requirements."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n4 5 7\n4 1 3\n1 2 5\n2 3 8\n2 4 1\n3 4 4\n4 6 5\n1 2 1\n1 3 1\n1 4 2\n2 4 1\n4 3 1\n3 2 1\n3 2 10\n1 2 8\n1 3 10\n5 5 15\n1 2 17\n3 1 15\n2 3 10\n1 4 14\n2 5 8",
+      "output": "1\n3\n0\n0"
+    }
+  ]
+}

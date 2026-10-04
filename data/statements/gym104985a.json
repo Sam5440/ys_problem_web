@@ -1,0 +1,37 @@
+{
+  "code": "GYM104985A",
+  "letter": "A",
+  "title": "A. Episodes",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104985/problem/A",
+  "difficulty": "*1200",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Cat Miston started downloading the series \"Police Cat\". The series consists of n%%ZSMJ0%% episodes, where the i%%ZSMJ1%%-th episode is currently being downloaded at a speed of vi%%ZSMJ2%% and the browser indicates that the i%%ZSMJ3%%-th episode will be downloaded exactly in ti%%ZSMJ4%% minutes, which is not entirely true.",
+      "The browser calculates the time based on the assumption that the download speed of the i%%ZSMJ5%%-th episode will not change. However, when a certain episode is completely downloaded, the download speed of other episodes increases (there are no other reasons for changes in the download speed of any episode). At the same time, the ratios of download speeds of the remaining episodes remain unchanged. In other words, if vti%%ZSMJ6%% is the download speed of the i%%ZSMJ7%%-th episode at time t%%ZSMJ8%%, then for any i%%ZSMJ9%% and j%%ZSMJ10%% it holds that for all t%%ZSMJ11%% less than the moment of download completion of the i%%ZSMJ12%%-th or j%%ZSMJ13%%-th episode the value of vtivtj%%ZSMJ14%% is the same.",
+      "There is no other network load besides downloading the n%%ZSMJ15%% episodes. In other words, the total download speed n∑i=1vti%%ZSMJ16%% is constant (the same at any moment t%%ZSMJ17%%).",
+      "Determine the actual time at which each episode will be fully downloaded."
+    ],
+    "input": [
+      "The first line of input contains an integer n%%ZSMJ18%% — the number of episodes in the series (1≤n≤3⋅105%%ZSMJ19%%).",
+      "Each of the following n%%ZSMJ20%% lines contains two integers vi%%ZSMJ21%% and ti%%ZSMJ22%% — the current download speed and the download time assumed by the browser for the i%%ZSMJ23%%-th episode (1≤vi,ti≤1018%%ZSMJ24%%; n∑i=1vi≤1018%%ZSMJ25%%)."
+    ],
+    "output": [
+      "For each episode output the actual time it will take to download it.",
+      "Your answer will be accepted if its absolute or relative error does not exceed 10−6%%ZSMJ26%%. Formally, let your answer be a%%ZSMJ27%% and the jury's answer be b%%ZSMJ28%%. Your answer will be accepted if |a−b|max(1,b)≤10−6%%ZSMJ29%%.",
+      "Points for each subtask are awarded only if all tests for that subtask and the necessary subtasks are successfully passed."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n2 4\n3 5",
+      "output": "4\n4.6"
+    },
+    {
+      "input": "3\n1 4\n5 2\n2 3",
+      "output": "2.5\n2\n2.375"
+    }
+  ]
+}

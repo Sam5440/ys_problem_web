@@ -1,0 +1,46 @@
+{
+  "code": "GYM102419D",
+  "letter": "D",
+  "title": "D. Xor the graph",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102419/problem/D",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an undirected graph with n%%ZSMJ0%% nodes and m%%ZSMJ1%% edges.",
+      "The graph doesn't contain self-loops but it may contain multiple edges.",
+      "There is a number ai%%ZSMJ2%% attached to the ith%%ZSMJ3%% (1≤i≤n)%%ZSMJ4%% node.",
+      "You can do the following operation once: Choose a set of nodes and a value x%%ZSMJ5%% (0≤x<220)%%ZSMJ6%% and change all the values of the nodes in the set from ai%%ZSMJ7%% into ai⨁x%%ZSMJ8%%.",
+      "You should choose any set and any value x%%ZSMJ9%% so that for each edge the values of the nodes connected with that edge are different.",
+      "Is it possible?"
+    ],
+    "input": [
+      "The first line of input contains two integers n%%ZSMJ10%% and m%%ZSMJ11%%, which are the number of nodes and the number of edges (1≤n,m≤3×105)%%ZSMJ12%%.",
+      "The second line contains n%%ZSMJ13%% integers, the ith%%ZSMJ14%% one is ai%%ZSMJ15%% which is the value attached to the ith%%ZSMJ16%% node (0≤ai<220)%%ZSMJ17%%.",
+      "The next m%%ZSMJ18%% lines will contain two integers for each u%%ZSMJ19%% and v%%ZSMJ20%%, (1≤u,v≤n)%%ZSMJ21%% (u≠v)%%ZSMJ22%%, which means that there is an edge between nodes u%%ZSMJ23%% and v%%ZSMJ24%%.",
+      "it is guaranteed that the given graph doesn't contain self-loops but it may contain multiple edges."
+    ],
+    "output": [
+      "If there is no way to choose a set and a value x%%ZSMJ25%%, print −1%%ZSMJ26%%.",
+      "Otherwise print two integers k%%ZSMJ27%% and x%%ZSMJ28%% on the first line, which is the size of the chosen set and the chosen value, (1≤k≤n)%%ZSMJ29%% (0≤x<220)%%ZSMJ30%%.",
+      "In the second line print k%%ZSMJ31%% integers, which describes the chosen nodes in the set.",
+      "Make sure that no node appears more than one time in the set."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n1 1 1\n1 2\n2 3\n1 3",
+      "output": "-1"
+    },
+    {
+      "input": "3 3\n1 1 2\n1 2\n2 3\n1 3",
+      "output": "1 1\n2"
+    },
+    {
+      "input": "5 4\n1 2 3 4 5\n1 2\n1 3\n1 4\n4 5",
+      "output": "0 1"
+    }
+  ]
+}

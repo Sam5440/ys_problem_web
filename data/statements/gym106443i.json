@@ -1,0 +1,43 @@
+{
+  "code": "GYM106443I",
+  "letter": "I",
+  "title": "I. Infinity Money Glitch",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106443/problem/I",
+  "difficulty": "*1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Tiago was playing the famous Directed Bank game with his friends Leonardo, Gabriel, and Paulo.",
+      "As everyone knows, the Directed Bank board has N%%ZSMJ0%% positions and M%%ZSMJ1%% possible moves, with the i%%ZSMJ2%%-th move represented by the tuple (Ui,Vi,Wi)%%ZSMJ3%%; that is, if the player is on position Ui%%ZSMJ4%%, they can move to position Vi%%ZSMJ5%%, adding Wi%%ZSMJ6%% to their balance. It's possible for the balance to become negative during the game.",
+      "The game always starts from position number 1, and in a round, the player can make a valid move or wait on the same spot, without losing or gaining anything.",
+      "Being an expert Directed Bank player, Tiago soon discovers a bug feature in the game! It's possible to accumulate infinite money! But it's not so clear how this could happen, and Leonardo and Gabriel disagreed with the statement, demanding proof. Tiago said he would demonstrate with an example of infinite moves during the game, which would also take an infinitely long time.",
+      "But since the pizza they ordered was almost arriving, there was only enough time for Tiago to play a finite number of rounds, and the problem remained open.",
+      "Knowing that you are a great programmer and that you are training for the UFPE Programming Contest, Paulo proposed you a challenge: prove or disprove Tiago!",
+      "But since infinity is a very long time, you only need to simulate 10998244353%%ZSMJ7%% rounds to convince the group of friends. That is, given the description of the board, state the largest possible average value per round that can be obtained on this board after 10998244353%%ZSMJ8%% rounds."
+    ],
+    "input": [
+      "The first line of input contains two integers 2≤N≤2000%%ZSMJ9%%, 1≤M≤2000%%ZSMJ10%%, representing the number of positions on the board and the number of possible valid moves.",
+      "The following M%%ZSMJ11%% lines contain three integers Ui,Vi,Wi%%ZSMJ12%%, with 1≤Ui,Vi≤N%%ZSMJ13%% and −109≤Wi≤109%%ZSMJ14%%, where Ui≠Vi%%ZSMJ15%%. This represents the list of valid moves.",
+      "Note that multiple edges between the same pair of positions are allowed."
+    ],
+    "output": [
+      "Print a real number, the answer to the problem. Your solution will be considered correct if it has a relative or absolute error less than or equal to 10−6%%ZSMJ16%%."
+    ],
+    "note": [
+      "In sample 1, a valid strategy is to go from square 1 to square 2, return to square 1, then go to square 2, and so on (1,2,1,2,1,2,…)%%ZSMJ17%%. After infinite rounds, the average points accumulated per round will be 0.5%%ZSMJ18%%.",
+      "In sample 2, a valid strategy is to never leave the first square, thus never losing points in the balance."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 2\n1 2 2\n2 1 -1",
+      "output": "0.5"
+    },
+    {
+      "input": "3 3\n1 2 -5\n2 3 5\n3 1 -5",
+      "output": "0"
+    }
+  ]
+}

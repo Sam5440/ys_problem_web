@@ -1,0 +1,50 @@
+{
+  "code": "GYM106170A",
+  "letter": "A",
+  "title": "A. Rainbow",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106170/problem/A",
+  "difficulty": "*2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let T=(V,E)%%ZSMJ0%% be a tree with n%%ZSMJ1%% vertices and n−1%%ZSMJ2%% edges. Each edge of the tree can be assigned a colour from {0,1,…,K−1}%%ZSMJ3%%.",
+      "A simple path in a tree is called a K%%ZSMJ4%%-rainbow path if all edges along the path of length K%%ZSMJ5%% have distinct colours. An edge is said to be K%%ZSMJ6%%-rainbow-valid if it lies on at least one K%%ZSMJ7%%-rainbow path. A tree is called a K%%ZSMJ8%%-tree if every edge in the tree is K%%ZSMJ9%%-rainbow-valid.",
+      "Your task is to assign colours to the edges of a given tree to form a K-tree with the largest possible K%%ZSMJ10%%. For each edge e%%ZSMJ11%%, you must report its assigned colour c(e)∈{0,1,…,K−1}%%ZSMJ12%% and the endpoints of a K-rainbow path that contains e%%ZSMJ13%%.",
+      "All indices are zero-based. If multiple valid colourings or paths exist, any may be output."
+    ],
+    "input": [
+      "The first line contains a single integer n%%ZSMJ14%% (2≤n≤105)%%ZSMJ15%%. In the next n−1%%ZSMJ16%% lines you are given the edges of the tree. In each of these lines you are given u%%ZSMJ17%% and v%%ZSMJ18%% (0≤u,v≤n−1)%%ZSMJ19%% describing an edge between nodes u%%ZSMJ20%% and v%%ZSMJ21%%."
+    ],
+    "output": [
+      "Your output must consist of n%%ZSMJ22%% lines.",
+      "In the first line print the maximum possible K%%ZSMJ23%%.",
+      "In the next n−1%%ZSMJ24%% lines, each line should contain three integers: c%%ZSMJ25%%, u%%ZSMJ26%% and v%%ZSMJ27%%, where 0≤c≤K−1%%ZSMJ28%% and 0≤u,v≤n−1%%ZSMJ29%%. These integers specify the colour c%%ZSMJ30%% of an edge and the path between u%%ZSMJ31%% and v%%ZSMJ32%%. This path includes the edge e%%ZSMJ33%% and is a K-rainbow. The order of u%%ZSMJ34%% and v%%ZSMJ35%% does not matter.",
+      "Edges must be printed in the order they were given in the input."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/df09f1826b3f1c290233d3258ee520a52c6d3490.png)",
+      "This is the second sample test. We have a tree with 6 nodes. Colours are written on the edges. Maximum possible K is 3 and for every edge e%%ZSMJ36%% there exists a path that includes e%%ZSMJ37%% and is a 3-rainbow.",
+      "Edge e1={0,4}%%ZSMJ38%% has colour 2, the path between 3 and 4 includes e1%%ZSMJ39%% and is a 3-rainbow.",
+      "Edge e2={2,3}%%ZSMJ40%% has colour 0, the path between 4 and 3 includes e2%%ZSMJ41%% and is a 3-rainbow.",
+      "Edge e3={5,0}%%ZSMJ42%% has colour 2, the path between 3 and 5 includes e3%%ZSMJ43%% and is a 3-rainbow.",
+      "Edge e4={2,1}%%ZSMJ44%% has colour 0, the path between 4 and 1 includes e4%%ZSMJ45%% and is a 3-rainbow.",
+      "Edge e5={2,0}%%ZSMJ46%% has colour 1, the path between 3 and 4 includes e5%%ZSMJ47%% and is a 3-rainbow."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n0 1\n2 1",
+      "output": "2\n1 2 0\n0 0 2"
+    },
+    {
+      "input": "6\n0 4\n2 3\n5 0\n2 1\n2 0",
+      "output": "3\n2 3 4\n0 4 3\n2 3 5\n0 4 1\n1 3 4"
+    },
+    {
+      "input": "16\n2 3\n2 4\n4 5\n5 0\n1 5\n6 7\n4 6\n8 7\n3 9\n4 10\n7 11\n8 12\n10 13\n14 12\n15 9",
+      "output": "7\n6 8 15\n5 8 15\n5 14 0\n6 14 0\n6 14 1\n3 3 14\n4 8 15\n2 3 14\n0 8 15\n5 14 13\n2 15 11\n1 3 14\n6 14 13\n0 3 14\n1 8 15"
+    }
+  ]
+}

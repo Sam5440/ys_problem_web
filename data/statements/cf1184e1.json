@@ -1,0 +1,39 @@
+{
+  "code": "CF1184E1",
+  "letter": "E1",
+  "title": "E1. Daleks' Invasion (easy)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1184/E1",
+  "difficulty": "1900",
+  "timeLimit": "6 seconds",
+  "memoryLimit": "128 megabytes",
+  "sections": {
+    "legend": [
+      "Heidi found out that the Daleks have created a network of bidirectional Time Corridors connecting different destinations (at different times!). She suspects that they are planning another invasion on the entire Space and Time. In order to counter the invasion, she plans to deploy a trap in the Time Vortex, along a carefully chosen Time Corridor. She knows that tinkering with the Time Vortex is dangerous, so she consulted the Doctor on how to proceed. She has learned the following:",
+      "Different Time Corridors require different amounts of energy to keep stable.",
+      "Daleks are unlikely to use all corridors in their invasion. They will pick a set of Corridors that requires the smallest total energy to maintain, yet still makes (time) travel possible between any two destinations (for those in the know: they will use a minimum spanning tree).",
+      "Setting the trap may modify the energy required to keep the Corridor stable.",
+      "Heidi decided to carry out a field test and deploy one trap, placing it along the first Corridor. But she needs to know whether the Daleks are going to use this corridor after the deployment of the trap.",
+      "She gives you a map of Time Corridors (an undirected graph) with energy requirements for each Corridor.",
+      "For a Corridor c%%ZSMJ0%%, Emax(c)%%ZSMJ1%% is the largest e≤109%%ZSMJ2%% such that if we changed the required amount of energy of c%%ZSMJ3%% to e%%ZSMJ4%%, then the Daleks may still be using c%%ZSMJ5%% in their invasion (that is, it belongs to some minimum spanning tree). Your task is to calculate Emax(c1)%%ZSMJ6%% for the Corridor c1%%ZSMJ7%% that Heidi plans to arm with a trap, which is the first edge in the graph."
+    ],
+    "input": [
+      "The first line contains integers n%%ZSMJ8%% and m%%ZSMJ9%% (2≤n≤105%%ZSMJ10%%, n−1≤m≤106%%ZSMJ11%%), number of destinations to be invaded and the number of Time Corridors.",
+      "Each of the next m%%ZSMJ12%% lines describes a Corridor: destinations a%%ZSMJ13%%, b%%ZSMJ14%% and energy e%%ZSMJ15%% (1≤a,b≤n%%ZSMJ16%%, a≠b%%ZSMJ17%%, 0≤e≤109%%ZSMJ18%%).",
+      "It's guaranteed, that no pair {a,b}%%ZSMJ19%% will repeat and that the graph is connected — that is, it is possible to travel between any two destinations using zero or more Time Corridors."
+    ],
+    "output": [
+      "Output a single integer: Emax(c1)%%ZSMJ20%% for the first Corridor c1%%ZSMJ21%% from the input."
+    ],
+    "note": [
+      "After the trap is set, the new energy requirement for the first Corridor may be either smaller, larger, or equal to the old energy requiremenet.",
+      "In the example, if the energy of the first Corridor is set to 4%%ZSMJ22%% or less, then the Daleks may use the set of Corridors {{1,2},{2,3}}%%ZSMJ23%% (in particular, if it were set to less than 4%%ZSMJ24%%, then this would be the only set of Corridors that they would use). However, if it is larger than 4%%ZSMJ25%%, then they will instead use the set {{2,3},{3,1}}%%ZSMJ26%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n1 2 8\n2 3 3\n3 1 4",
+      "output": "4"
+    }
+  ]
+}

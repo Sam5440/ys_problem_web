@@ -1,0 +1,53 @@
+{
+  "code": "GYM106054J",
+  "letter": "J",
+  "title": "J. Jaimito's blocks",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106054/problem/J",
+  "difficulty": "*1500",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Jaimito is a manufacturer of educational children's games. His latest game contains a certain number of wooden blocks that can be placed on a board forming T%%ZSMJ0%% towers of blocks. Each tower is in a specific position on the board, designated by a different integer between 1%%ZSMJ1%% and T%%ZSMJ2%% inclusive. These positions can be empty, meaning that some of the towers may not contain blocks.",
+      "The blocks in a tower are stacked one on top of the other, so that each block in that tower has exactly one block underneath and exactly one block on top, except for the bottom block which has the board underneath, and the top block which has nothing on top.",
+      "Each block has a certain weight that is a positive integer. As part of the game rules, the stability rule must always be respected: it is not allowed for a block to be placed on top of another block with strictly smaller weight. In other words, the blocks of each tower, when viewed from the board upwards, are ordered in a non-increasing manner by weight. A configuration of blocks that respects the stability rule is called stable. The following figure shows two stable configurations for a game with T=3%%ZSMJ3%% towers.",
+      "![](https://espresso.codeforces.com/00080184c6c6829c90b095c4fd017087191c8b8c.png)",
+      "A permitted move in the game consists of taking the top block from a non-empty tower and placing it on top of another (possibly empty) tower, always respecting the stability rule.",
+      "Jaimito needs your help to determine, given two stable configurations, an initial and a final one, whether it is possible to reach the final configuration from the initial configuration through zero or more permitted moves."
+    ],
+    "input": [
+      "The first line contains an integer T%%ZSMJ4%% (1≤T≤2⋅105%%ZSMJ5%%) indicating the number of towers.",
+      "Each of the following 2T%%ZSMJ6%% lines describes a tower. The first T%%ZSMJ7%% lines describe the towers of the initial configuration, in order from tower 1%%ZSMJ8%% to tower T%%ZSMJ9%%, while the remaining T%%ZSMJ10%% lines describe the towers of the final configuration, in the same order.",
+      "The line describing each tower contains an integer K≥0%%ZSMJ11%% followed by K%%ZSMJ12%% integers X1,X2,…,XK%%ZSMJ13%% (1≤Xi≤109%%ZSMJ14%%), indicating that the tower contains K%%ZSMJ15%% blocks and that Xi%%ZSMJ16%% is the weight of the i%%ZSMJ17%%-th block of the tower, counting from the board upwards.",
+      "It is guaranteed that the initial and final configurations are stable, and that neither has more than 2⋅105%%ZSMJ18%% blocks."
+    ],
+    "output": [
+      "A line with the uppercase letter \"S\" if it is possible to reach the final configuration from the initial configuration through zero or more permitted moves, or the uppercase letter \"N\" otherwise."
+    ],
+    "note": [
+      "In the first example, we can make the following sequence of permitted moves to reach from the initial configuration to the final configuration:",
+      "![](https://espresso.codeforces.com/31df4268d6399690b8ebc830897e52942a5468fb.png)",
+      "The moves are:",
+      "Move the block with weight 4%%ZSMJ19%% from the second tower to the fourth.",
+      "Move the block with weight 2%%ZSMJ20%% from the first tower to the second.",
+      "Move the block with weight 1%%ZSMJ21%% from the third tower to the second.",
+      "Move the block with weight 3%%ZSMJ22%% from the first tower to the third.",
+      "In the statement, there is an image that shows the initial configuration and the final configuration corresponding to the second example."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n2 3 2\n1 4\n2 3 1\n1 4\n0\n2 2 1\n2 3 3\n2 4 4",
+      "output": "S"
+    },
+    {
+      "input": "3\n2 6 5\n2 6 3\n1 8\n1 6\n0\n3 8 6 5",
+      "output": "N"
+    },
+    {
+      "input": "1\n0\n0",
+      "output": "S"
+    }
+  ]
+}

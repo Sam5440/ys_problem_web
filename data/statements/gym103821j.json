@@ -1,0 +1,39 @@
+{
+  "code": "GYM103821J",
+  "letter": "J",
+  "title": "J. Nour's Balls",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103821/problem/J",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Nour has just arrived at MIT. He is now standing in front of their gates fully ready to get inside. Unfortunately, there is one more task that the guards asked him to solve to let him get inside.",
+      "The guards gave Nour the magical box, which contains N%%ZSMJ0%% balls such that the ith%%ZSMJ1%% ball has color Ci%%ZSMJ2%%. Then, they put K%%ZSMJ3%% empty boxes in front of Nour and asked him the following question: How many ways there are to partition all N%%ZSMJ4%% balls into all K%%ZSMJ5%% boxes, such that:",
+      "None of the K%%ZSMJ6%% empty boxes is left empty.",
+      "Balls inside each box are considered as multi-set of their colors. i.e a box of colors {1,2,2,3}%%ZSMJ7%% and a box of colors {1,2,3,2}%%ZSMJ8%% are considered the same box, while {1,2,2,3}%%ZSMJ9%% and {1,2,3,3}%%ZSMJ10%% are two different boxes.",
+      "Boxes within each other are ordered. For example, if the set of colors in the magical box is 1,2,2,3%%ZSMJ11%% and K=2%%ZSMJ12%%, then [{1,2}%%ZSMJ13%%, {2,3}%%ZSMJ14%%] and [{2,3}%%ZSMJ15%%, {1,2}%%ZSMJ16%%] are two different ways of partitioning.",
+      "In conclusion, two ways are considered different if they differ by at least one i-th box. For example, if colors of balls in the magical box are 1,2,2%%ZSMJ17%% and K=2%%ZSMJ18%%, then there are 4%%ZSMJ19%% ways: [{1}%%ZSMJ20%%, {2,2}%%ZSMJ21%%], [{2,2}%%ZSMJ22%%, {1}%%ZSMJ23%%], [{1,2}%%ZSMJ24%%, {2}%%ZSMJ25%%], [{2}%%ZSMJ26%%, {1,2}%%ZSMJ27%%].",
+      "This problem is very hard for Nour, can you help him so that he does not get rejected from MIT? If you can, find the answer and print it modulo 1000000007%%ZSMJ28%%."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases T%%ZSMJ29%%. Description of the test cases follows.",
+      "The first line of each test case contains two integers N%%ZSMJ30%% and K%%ZSMJ31%%, (1≤N≤103)%%ZSMJ32%%, (1≤K≤N)%%ZSMJ33%% - the number of balls in the magical box and the number of empty boxes.",
+      "The second line of each test case contains N%%ZSMJ34%% elements of the array C%%ZSMJ35%% describing the color of each ball in the magical box (1≤Ci≤N)%%ZSMJ36%%.",
+      "It's guaranteed that the sum of N×K%%ZSMJ37%% over all test cases does not exceed 106%%ZSMJ38%%"
+    ],
+    "output": [
+      "For each test case, print a single line containing the described answer modulo 1000000007%%ZSMJ39%%."
+    ],
+    "note": [
+      "In the second test case, we have 4%%ZSMJ40%% balls and 4%%ZSMJ41%% boxes, so it is equal to the number of permutations with repetition of array [1,2,2,3]%%ZSMJ42%%, which is 4!2!=12%%ZSMJ43%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n6 3\n1 2 2 1 4 3\n4 4\n1 2 3 2",
+      "output": "219\n12"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "code": "CF1231E",
+  "letter": "E",
+  "title": "E. Middle-Out",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1231/E",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The problem was inspired by Pied Piper story. After a challenge from Hooli's compression competitor Nucleus, Richard pulled an all-nighter to invent a new approach to compression: middle-out.",
+      "You are given two strings %%ZSMJ0%% and %%ZSMJ1%% of the same length %%ZSMJ2%%. Their characters are numbered from %%ZSMJ3%% to %%ZSMJ4%% from left to right (i.e. from the beginning to the end).",
+      "In a single move you can do the following sequence of actions:",
+      "choose any valid index %%ZSMJ5%% (%%ZSMJ6%%),",
+      "move the %%ZSMJ7%%-th character of %%ZSMJ8%% from its position to the beginning of the string or move the %%ZSMJ9%%-th character of %%ZSMJ10%% from its position to the end of the string.",
+      "Note, that the moves don't change the length of the string %%ZSMJ11%%. You can apply a move only to the string %%ZSMJ12%%.",
+      "For example, if %%ZSMJ13%%\"test\" in one move you can obtain:",
+      "if %%ZSMJ14%% and you move to the beginning, then the result is \"test\" (the string doesn't change),",
+      "if %%ZSMJ15%% and you move to the beginning, then the result is \"etst\",",
+      "if %%ZSMJ16%% and you move to the beginning, then the result is \"stet\",",
+      "if %%ZSMJ17%% and you move to the beginning, then the result is \"ttes\",",
+      "if %%ZSMJ18%% and you move to the end, then the result is \"estt\",",
+      "if %%ZSMJ19%% and you move to the end, then the result is \"tste\",",
+      "if %%ZSMJ20%% and you move to the end, then the result is \"tets\",",
+      "if %%ZSMJ21%% and you move to the end, then the result is \"test\" (the string doesn't change).",
+      "You want to make the string %%ZSMJ22%% equal to the string %%ZSMJ23%%. What is the minimum number of moves you need? If it is impossible to transform %%ZSMJ24%% to %%ZSMJ25%%, print -1."
+    ],
+    "input": [
+      "The first line contains integer %%ZSMJ26%% (%%ZSMJ27%%) — the number of independent test cases in the input.",
+      "Each test case is given in three lines. The first line of a test case contains %%ZSMJ28%% (%%ZSMJ29%%) — the length of the strings %%ZSMJ30%% and %%ZSMJ31%%. The second line contains %%ZSMJ32%%, the third line contains %%ZSMJ33%%. Both strings %%ZSMJ34%% and %%ZSMJ35%% have length %%ZSMJ36%% and contain only lowercase Latin letters.",
+      "There are no constraints on the sum of %%ZSMJ37%% in the test (i.e. the input with %%ZSMJ38%% and all %%ZSMJ39%% is allowed)."
+    ],
+    "output": [
+      "For every test print minimum possible number of moves, which are needed to transform %%ZSMJ40%% into %%ZSMJ41%%, or -1, if it is impossible to do."
+    ],
+    "note": [
+      "In the first example, the moves in one of the optimal answers are:",
+      "for the first test case %%ZSMJ42%%\"iredppipe\", %%ZSMJ43%%\"piedpiper\": \"iredppipe\" %%ZSMJ44%% \"iedppiper\" %%ZSMJ45%% \"piedpiper\";",
+      "for the second test case %%ZSMJ46%%\"estt\", %%ZSMJ47%%\"test\": \"estt\" %%ZSMJ48%% \"test\";",
+      "for the third test case %%ZSMJ49%%\"tste\", %%ZSMJ50%%\"test\": \"tste\" %%ZSMJ51%% \"etst\" %%ZSMJ52%% \"test\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n9\niredppipe\npiedpiper\n4\nestt\ntest\n4\ntste\ntest",
+      "output": "2\n1\n2"
+    },
+    {
+      "input": "4\n1\na\nz\n5\nadhas\ndasha\n5\naashd\ndasha\n5\naahsd\ndasha",
+      "output": "-1\n2\n2\n3"
+    }
+  ]
+}

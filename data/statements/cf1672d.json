@@ -1,0 +1,40 @@
+{
+  "code": "CF1672D",
+  "letter": "D",
+  "title": "D. Cyclic Rotation",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1672/D",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There is an array a%%ZSMJ0%% of length n%%ZSMJ1%%. You may perform the following operation any number of times:",
+      "Choose two indices l%%ZSMJ2%% and r%%ZSMJ3%% where 1≤l<r≤n%%ZSMJ4%% and al=ar%%ZSMJ5%%. Then, set a[l…r]=[al+1,al+2,…,ar,al]%%ZSMJ6%%.",
+      "You are also given another array b%%ZSMJ7%% of length n%%ZSMJ8%% which is a permutation of a%%ZSMJ9%%. Determine whether it is possible to transform array a%%ZSMJ10%% into an array b%%ZSMJ11%% using the above operation some number of times."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains a single integer t%%ZSMJ12%% (1≤t≤104%%ZSMJ13%%)  — the number of test cases. The description of the test cases follows.",
+      "The first line of each test case contains an integer n%%ZSMJ14%% (1≤n≤2⋅105%%ZSMJ15%%)  — the length of array a%%ZSMJ16%% and b%%ZSMJ17%%.",
+      "The second line of each test case contains n%%ZSMJ18%% integers a1,a2,…,an%%ZSMJ19%% (1≤ai≤n%%ZSMJ20%%)  — elements of the array a%%ZSMJ21%%.",
+      "The third line of each test case contains n%%ZSMJ22%% integers b1,b2,…,bn%%ZSMJ23%% (1≤bi≤n%%ZSMJ24%%)  — elements of the array b%%ZSMJ25%%.",
+      "It is guaranteed that b%%ZSMJ26%% is a permutation of a%%ZSMJ27%%.",
+      "It is guaranteed that the sum of n%%ZSMJ28%% over all test cases does not exceed 2⋅105%%ZSMJ29%%"
+    ],
+    "output": [
+      "For each test case, print \"YES\" (without quotes) if it is possible to transform array a%%ZSMJ30%% to b%%ZSMJ31%%, and \"NO\" (without quotes) otherwise.",
+      "You can output \"YES\" and \"NO\" in any case (for example, strings \"yEs\", \"yes\" and \"Yes\" will be recognized as a positive response)."
+    ],
+    "note": [
+      "In the first test case, we can choose l=2%%ZSMJ32%% and r=5%%ZSMJ33%% to form [1,3,3,2,2]%%ZSMJ34%%.",
+      "In the second test case, we can choose l=2%%ZSMJ35%% and r=4%%ZSMJ36%% to form [1,4,2,2,1]%%ZSMJ37%%. Then, we can choose l=1%%ZSMJ38%% and r=5%%ZSMJ39%% to form [4,2,2,1,1]%%ZSMJ40%%.",
+      "In the third test case, it can be proven that it is not possible to transform array a%%ZSMJ41%% to b%%ZSMJ42%% using the operation."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n5\n1 2 3 3 2\n1 3 3 2 2\n5\n1 2 4 2 1\n4 2 2 1 1\n5\n2 4 5 5 2\n2 2 4 5 5\n3\n1 2 3\n1 2 3\n3\n1 1 2\n2 1 1",
+      "output": "YES\nYES\nNO\nYES\nNO"
+    }
+  ]
+}

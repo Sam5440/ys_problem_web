@@ -1,0 +1,41 @@
+{
+  "code": "CF1027C",
+  "letter": "C",
+  "title": "C. Minimum Value Rectangle",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1027/C",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You have n%%ZSMJ0%% sticks of the given lengths.",
+      "Your task is to choose exactly four of them in such a way that they can form a rectangle. No sticks can be cut to pieces, each side of the rectangle must be formed by a single stick. No stick can be chosen multiple times. It is guaranteed that it is always possible to choose such sticks.",
+      "Let S%%ZSMJ1%% be the area of the rectangle and P%%ZSMJ2%% be the perimeter of the rectangle.",
+      "The chosen rectangle should have the value P2S%%ZSMJ3%% minimal possible. The value is taken without any rounding.",
+      "If there are multiple answers, print any of them.",
+      "Each testcase contains several lists of sticks, for each of them you are required to solve the problem separately."
+    ],
+    "input": [
+      "The first line contains a single integer T%%ZSMJ4%% (T≥1%%ZSMJ5%%) — the number of lists of sticks in the testcase.",
+      "Then 2T%%ZSMJ6%% lines follow — lines (2i−1)%%ZSMJ7%% and 2i%%ZSMJ8%% of them describe the i%%ZSMJ9%%-th list. The first line of the pair contains a single integer n%%ZSMJ10%% (4≤n≤106%%ZSMJ11%%) — the number of sticks in the i%%ZSMJ12%%-th list. The second line of the pair contains n%%ZSMJ13%% integers a1,a2,…,an%%ZSMJ14%% (1≤aj≤104%%ZSMJ15%%) — lengths of the sticks in the i%%ZSMJ16%%-th list.",
+      "It is guaranteed that for each list there exists a way to choose four sticks so that they form a rectangle.",
+      "The total number of sticks in all T%%ZSMJ17%% lists doesn't exceed 106%%ZSMJ18%% in each testcase."
+    ],
+    "output": [
+      "Print T%%ZSMJ19%% lines. The i%%ZSMJ20%%-th line should contain the answer to the i%%ZSMJ21%%-th list of the input. That is the lengths of the four sticks you choose from the i%%ZSMJ22%%-th list, so that they form a rectangle and the value P2S%%ZSMJ23%% of this rectangle is minimal possible. You can print these four lengths in arbitrary order.",
+      "If there are multiple answers, print any of them."
+    ],
+    "note": [
+      "There is only one way to choose four sticks in the first list, they form a rectangle with sides 2%%ZSMJ24%% and 7%%ZSMJ25%%, its area is 2⋅7=14%%ZSMJ26%%, perimeter is 2(2+7)=18%%ZSMJ27%%. 18214≈23.143%%ZSMJ28%%.",
+      "The second list contains subsets of four sticks that can form rectangles with sides (1,2)%%ZSMJ29%%, (2,8)%%ZSMJ30%% and (1,8)%%ZSMJ31%%. Their values are 622=18%%ZSMJ32%%, 20216=25%%ZSMJ33%% and 1828=40.5%%ZSMJ34%%, respectively. The minimal one of them is the rectangle (1,2)%%ZSMJ35%%.",
+      "You can choose any four of the 5%%ZSMJ36%% given sticks from the third list, they will form a square with side 5%%ZSMJ37%%, which is still a rectangle with sides (5,5)%%ZSMJ38%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4\n7 2 2 7\n8\n2 8 1 4 8 2 1 5\n5\n5 5 5 5 5",
+      "output": "2 7 7 2\n2 2 1 1\n5 5 5 5"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "code": "CF1136D",
+  "letter": "D",
+  "title": "D. Nastya Is Buying Lunch",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1136/D",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "At the big break Nastya came to the school dining room. There are n%%ZSMJ0%% pupils in the school, numbered from 1%%ZSMJ1%% to n%%ZSMJ2%%. Unfortunately, Nastya came pretty late, so that all pupils had already stood in the queue, i.e. Nastya took the last place in the queue. Of course, it's a little bit sad for Nastya, but she is not going to despond because some pupils in the queue can agree to change places with some other pupils.",
+      "Formally, there are some pairs u%%ZSMJ3%%, v%%ZSMJ4%% such that if the pupil with number u%%ZSMJ5%% stands directly in front of the pupil with number v%%ZSMJ6%%, Nastya can ask them and they will change places.",
+      "Nastya asks you to find the maximal number of places in queue she can move forward."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ7%% and m%%ZSMJ8%% (1≤n≤3⋅105%%ZSMJ9%%, 0≤m≤5⋅105%%ZSMJ10%%) — the number of pupils in the queue and number of pairs of pupils such that the first one agrees to change places with the second one if the first is directly in front of the second.",
+      "The second line contains n%%ZSMJ11%% integers p1%%ZSMJ12%%, p2%%ZSMJ13%%, ..., pn%%ZSMJ14%% — the initial arrangement of pupils in the queue, from the queue start to its end (1≤pi≤n%%ZSMJ15%%, p%%ZSMJ16%% is a permutation of integers from 1%%ZSMJ17%% to n%%ZSMJ18%%). In other words, pi%%ZSMJ19%% is the number of the pupil who stands on the i%%ZSMJ20%%-th position in the queue.",
+      "The i%%ZSMJ21%%-th of the following m%%ZSMJ22%% lines contains two integers ui%%ZSMJ23%%, vi%%ZSMJ24%% (1≤ui,vi≤n,ui≠vi%%ZSMJ25%%), denoting that the pupil with number ui%%ZSMJ26%% agrees to change places with the pupil with number vi%%ZSMJ27%% if ui%%ZSMJ28%% is directly in front of vi%%ZSMJ29%%. It is guaranteed that if i≠j%%ZSMJ30%%, than vi≠vj%%ZSMJ31%% or ui≠uj%%ZSMJ32%%. Note that it is possible that in some pairs both pupils agree to change places with each other.",
+      "Nastya is the last person in the queue, i.e. the pupil with number pn%%ZSMJ33%%."
+    ],
+    "output": [
+      "Print a single integer — the number of places in queue she can move forward."
+    ],
+    "note": [
+      "In the first example Nastya can just change places with the first pupil in the queue.",
+      "Optimal sequence of changes in the second example is",
+      "change places for pupils with numbers 1%%ZSMJ34%% and 3%%ZSMJ35%%.",
+      "change places for pupils with numbers 3%%ZSMJ36%% and 2%%ZSMJ37%%.",
+      "change places for pupils with numbers 1%%ZSMJ38%% and 2%%ZSMJ39%%.",
+      "The queue looks like [3,1,2]%%ZSMJ40%%, then [1,3,2]%%ZSMJ41%%, then [1,2,3]%%ZSMJ42%%, and finally [2,1,3]%%ZSMJ43%% after these operations."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 1\n1 2\n1 2",
+      "output": "1"
+    },
+    {
+      "input": "3 3\n3 1 2\n1 2\n3 1\n3 2",
+      "output": "2"
+    },
+    {
+      "input": "5 2\n3 1 5 4 2\n5 2\n5 4",
+      "output": "1"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "code": "GYM106225F",
+  "letter": "F",
+  "title": "F. Factory Table",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106225/problem/F",
+  "difficulty": "*1400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/70f36411e37b254e20b5ae90459481bfc785fbff.png)",
+      "You are playing the sandbox game Mathcraft. Each crafting table of level k%%ZSMJ0%% can produce all possible products obtained by multiplying two numbers between 1%%ZSMJ1%% and k%%ZSMJ2%%.",
+      "If you unroll the k%%ZSMJ3%%-th crafting table, you get the array [1⋅1,1⋅2,…,1⋅k,2⋅1,2⋅2,…,2⋅k,…,k⋅1,k⋅2,…,k⋅k]%%ZSMJ4%%. For example, for k=4%%ZSMJ5%%, the unrolled table is [1,2,3,4,2,4,6,8,3,6,9,12,4,8,12,16]%%ZSMJ6%%.",
+      "Your friend Bob crafted a (contiguous) subarray of one unrolled crafting table. This subarray is a1,a2,…,an%%ZSMJ7%%.",
+      "You want to know how skilled Bob is, so you want to find the minimum possible level of his crafting table. Specifically, you want to determine the smallest k%%ZSMJ8%% such that a1,a2,…,an%%ZSMJ9%% appears as a subarray of the k%%ZSMJ10%%-th unrolled table.",
+      "An array b%%ZSMJ11%% is a subarray of an array c%%ZSMJ12%% if b%%ZSMJ13%% can be obtained from c%%ZSMJ14%% by deleting several (possibly zero or all) elements from the beginning and several (possibly zero or all) elements from the end."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ15%% (1≤t≤500%%ZSMJ16%%). The description of the test cases follows.",
+      "The first line of each test case contains a single integer n%%ZSMJ17%% (2≤n≤100%%ZSMJ18%%) — the length of the array a1,a2,…,an%%ZSMJ19%%.",
+      "The second line of each test case contains n%%ZSMJ20%% integers a1,a2,…,an%%ZSMJ21%% (1≤ai≤109%%ZSMJ22%%).",
+      "Note that there are no constraints on the sum of n%%ZSMJ23%% over all test cases."
+    ],
+    "output": [
+      "For each test case, output a single line containing an integer: the smallest crafting table level k%%ZSMJ24%% such that the array a1,a2,…,an%%ZSMJ25%% appears as a contiguous subarray of the k%%ZSMJ26%%-th unrolled table. For the given input, such a k%%ZSMJ27%% always exists."
+    ],
+    "note": [
+      "Explanation of sample 1. In the first test case, the array [4,6,8,10]%%ZSMJ28%% is a subarray of the 5%%ZSMJ29%%-th unrolled table, which is [1,2,3,4,5,2,4,6,8,10,…,5,10,15,20,25]%%ZSMJ30%%. There is no smaller valid k%%ZSMJ31%%, so the answer is 5%%ZSMJ32%%.",
+      "In the second test case, the array [8,3,6,9,12,4]%%ZSMJ33%% is a subarray of the 4%%ZSMJ34%%-th unrolled table, which is [1,2,3,4,2,4,6,8,3,6,9,12,4,8,12,16]%%ZSMJ35%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n4\n4 6 8 10\n6\n8 3 6 9 12 4\n5\n30 40 50 60 70\n4\n1 2 2 4",
+      "output": "5\n4\n10\n2"
+    }
+  ]
+}

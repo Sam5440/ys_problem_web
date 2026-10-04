@@ -1,0 +1,37 @@
+{
+  "code": "CF1941F",
+  "letter": "F",
+  "title": "F. Rudolf and Imbalance",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1941/F",
+  "difficulty": "1800",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Rudolf has prepared a set of n%%ZSMJ0%% problems with complexities a1<a2<a3<⋯<an%%ZSMJ1%%. He is not entirely satisfied with the balance, so he wants to add at most one problem to fix it.",
+      "For this, Rudolf came up with m%%ZSMJ2%% models of problems and k%%ZSMJ3%% functions. The complexity of the i%%ZSMJ4%%-th model is di%%ZSMJ5%%, and the complexity of the j%%ZSMJ6%%-th function is fj%%ZSMJ7%%. To create a problem, he selects values i%%ZSMJ8%% and j%%ZSMJ9%% (1≤i≤m%%ZSMJ10%%, 1≤j≤k%%ZSMJ11%%) and by combining the i%%ZSMJ12%%-th model with the j%%ZSMJ13%%-th function, he obtains a new problem with complexity di+fj%%ZSMJ14%% (a new element is inserted into the array a%%ZSMJ15%%).",
+      "To determine the imbalance of the set, Rudolf sorts the complexities of the problems in ascending order and finds the largest value of ai−ai−1%%ZSMJ16%% (i>1%%ZSMJ17%%).",
+      "What is the minimum value of imbalance that Rudolf can achieve by adding at most one problem, created according to the described rules?"
+    ],
+    "input": [
+      "The first line of the input contains a single integer t%%ZSMJ18%% (1≤t≤104%%ZSMJ19%%) — the number of testcases.",
+      "The first line of each test case contains three integers n%%ZSMJ20%%, m%%ZSMJ21%%, and k%%ZSMJ22%% (2≤n≤105%%ZSMJ23%%, 1≤m,k≤2⋅105%%ZSMJ24%%) — the number of prepared problems, the number of models, and the number of functions, respectively.",
+      "The second line of each test case contains n%%ZSMJ25%% integers a1,a2,a3,…an%%ZSMJ26%% (1≤ai≤2⋅109%%ZSMJ27%%, ai<ai+1%%ZSMJ28%%) — the complexities of the prepared problems.",
+      "The third line of each test case contains m%%ZSMJ29%% integers d1,d2,d3,…dm%%ZSMJ30%% (1≤di≤109%%ZSMJ31%%) — the complexities of the models.",
+      "The fourth line of each test case contains k%%ZSMJ32%% integers f1,f2,f3,…fk%%ZSMJ33%% (1≤fi≤109%%ZSMJ34%%) — the complexities of the functions.",
+      "It is guaranteed that the sum of n%%ZSMJ35%% over all testcases does not exceed 105%%ZSMJ36%%.",
+      "It is guaranteed that the sum of m%%ZSMJ37%% over all testcases does not exceed 2⋅105%%ZSMJ38%%.",
+      "It is guaranteed that the sum of k%%ZSMJ39%% over all testcases does not exceed 2⋅105%%ZSMJ40%%."
+    ],
+    "output": [
+      "For each testcase, output a single number — the minimum imbalance that Rudolf can achieve."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n5 5 5\n5 10 15 20 26\n11 14 16 13 8\n16 4 5 3 1\n7 6 5\n1 4 7 10 18 21 22\n2 3 5 7 4 2\n6 8 9 3 2\n7 6 5\n1 4 7 10 18 21 22\n2 3 5 7 4 2\n6 8 13 3 2\n5 6 3\n2 10 13 20 25\n11 6 10 16 14 5\n6 17 15\n4 2 2\n11 12 14 15\n19 14\n10 6\n8 4 2\n3 10 16 18 21 22 29 30\n9 13 16 15\n4 2\n2 4 7\n4 21\n4 15 14 5\n20 1 15 1 12 5 11",
+      "output": "5\n4\n5\n8\n2\n7\n11"
+    }
+  ]
+}

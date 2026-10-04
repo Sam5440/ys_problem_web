@@ -1,0 +1,43 @@
+{
+  "code": "CF2060F",
+  "letter": "F",
+  "title": "F. Multiplicative Arrays",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/2060/F",
+  "difficulty": "2200",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "You're given integers k%%ZSMJ0%% and n%%ZSMJ1%%. For each integer x%%ZSMJ2%% from 1%%ZSMJ3%% to k%%ZSMJ4%%, count the number of integer arrays a%%ZSMJ5%% such that all of the following are satisfied:",
+      "1≤|a|≤n%%ZSMJ6%% where |a|%%ZSMJ7%% represents the length of a%%ZSMJ8%%.",
+      "1≤ai≤k%%ZSMJ9%% for all 1≤i≤|a|%%ZSMJ10%%.",
+      "a1×a2×⋯×a|a|=x%%ZSMJ11%% (i.e., the product of all elements is x%%ZSMJ12%%).",
+      "Note that two arrays b%%ZSMJ13%% and c%%ZSMJ14%% are different if either their lengths are different, or if there exists an index 1≤i≤|b|%%ZSMJ15%% such that bi≠ci%%ZSMJ16%%.",
+      "Output the answer modulo 998244353%%ZSMJ17%%."
+    ],
+    "input": [
+      "The first line contains an integer t%%ZSMJ18%% (1≤t≤103%%ZSMJ19%%) — the number of independent test cases.",
+      "The only line of each test case contains two integers k%%ZSMJ20%% and n%%ZSMJ21%% (1≤k≤105,1≤n≤9⋅108%%ZSMJ22%%).",
+      "It is guaranteed that the sum of k%%ZSMJ23%% over all test cases does not exceed 105%%ZSMJ24%%."
+    ],
+    "output": [
+      "For each test case, output k%%ZSMJ25%% space-separated integers on a new line: the number of arrays for x=1,2,…,k%%ZSMJ26%%, modulo 998244353%%ZSMJ27%%."
+    ],
+    "note": [
+      "In the first test case, there are 2%%ZSMJ28%% arrays a%%ZSMJ29%% with |a|≤2%%ZSMJ30%% and the product of elements equal to 1%%ZSMJ31%%:",
+      "[1]%%ZSMJ32%%",
+      "[1,1]%%ZSMJ33%%",
+      "There are 3%%ZSMJ34%% arrays a%%ZSMJ35%% with |a|≤2%%ZSMJ36%% and the product of elements equal to 2%%ZSMJ37%%:",
+      "[2]%%ZSMJ38%%",
+      "[1,2]%%ZSMJ39%%",
+      "[2,1]%%ZSMJ40%%"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2 2\n4 3\n10 6969420",
+      "output": "2 3\n3 6 6 10\n6969420 124188773 124188773 729965558 124188773 337497990 124188773 50981194 729965558 337497990"
+    }
+  ]
+}

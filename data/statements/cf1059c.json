@@ -1,0 +1,45 @@
+{
+  "code": "CF1059C",
+  "letter": "C",
+  "title": "C. Sequence Transformation",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1059/C",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let's call the following process a transformation of a sequence of length n%%ZSMJ0%%.",
+      "If the sequence is empty, the process ends. Otherwise, append the greatest common divisor (GCD) of all the elements of the sequence to the result and remove one arbitrary element from the sequence. Thus, when the process ends, we have a sequence of n%%ZSMJ1%% integers: the greatest common divisors of all the elements in the sequence before each deletion.",
+      "You are given an integer sequence 1,2,…,n%%ZSMJ2%%. Find the lexicographically maximum result of its transformation.",
+      "A sequence a1,a2,…,an%%ZSMJ3%% is lexicographically larger than a sequence b1,b2,…,bn%%ZSMJ4%%, if there is an index i%%ZSMJ5%% such that aj=bj%%ZSMJ6%% for all j<i%%ZSMJ7%%, and ai>bi%%ZSMJ8%%."
+    ],
+    "input": [
+      "The first and only line of input contains one integer n%%ZSMJ9%% (1≤n≤106%%ZSMJ10%%)."
+    ],
+    "output": [
+      "Output n%%ZSMJ11%% integers  — the lexicographically maximum result of the transformation."
+    ],
+    "note": [
+      "In the first sample the answer may be achieved this way:",
+      "Append GCD(1,2,3)=1%%ZSMJ12%%, remove 2%%ZSMJ13%%.",
+      "Append GCD(1,3)=1%%ZSMJ14%%, remove 1%%ZSMJ15%%.",
+      "Append GCD(3)=3%%ZSMJ16%%, remove 3%%ZSMJ17%%.",
+      "We get the sequence [1,1,3]%%ZSMJ18%% as the result."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3",
+      "output": "1 1 3"
+    },
+    {
+      "input": "2",
+      "output": "1 2"
+    },
+    {
+      "input": "1",
+      "output": "1"
+    }
+  ]
+}

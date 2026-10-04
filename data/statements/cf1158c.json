@@ -1,0 +1,39 @@
+{
+  "code": "CF1158C",
+  "letter": "C",
+  "title": "C. Permutation recovery",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1158/C",
+  "difficulty": "2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Vasya has written some permutation p1,p2,…,pn%%ZSMJ0%% of integers from 1%%ZSMJ1%% to n%%ZSMJ2%%, so for all 1≤i≤n%%ZSMJ3%% it is true that 1≤pi≤n%%ZSMJ4%% and all p1,p2,…,pn%%ZSMJ5%% are different. After that he wrote n%%ZSMJ6%% numbers next1,next2,…,nextn%%ZSMJ7%%. The number nexti%%ZSMJ8%% is equal to the minimal index i<j≤n%%ZSMJ9%%, such that pj>pi%%ZSMJ10%%. If there is no such j%%ZSMJ11%% let's let's define as nexti=n+1%%ZSMJ12%%.",
+      "In the evening Vasya went home from school and due to rain, his notebook got wet. Now it is impossible to read some written numbers. Permutation and some values nexti%%ZSMJ13%% are completely lost! If for some i%%ZSMJ14%% the value nexti%%ZSMJ15%% is lost, let's say that nexti=−1%%ZSMJ16%%.",
+      "You are given numbers next1,next2,…,nextn%%ZSMJ17%% (maybe some of them are equal to −1%%ZSMJ18%%). Help Vasya to find such permutation p1,p2,…,pn%%ZSMJ19%% of integers from 1%%ZSMJ20%% to n%%ZSMJ21%%, that he can write it to the notebook and all numbers nexti%%ZSMJ22%%, which are not equal to −1%%ZSMJ23%%, will be correct."
+    ],
+    "input": [
+      "The first line contains one integer t%%ZSMJ24%% — the number of test cases (1≤t≤100000%%ZSMJ25%%).",
+      "Next 2⋅t%%ZSMJ26%% lines contains the description of test cases,two lines for each. The first line contains one integer n%%ZSMJ27%% — the length of the permutation, written by Vasya (1≤n≤500000%%ZSMJ28%%). The second line contains n%%ZSMJ29%% integers next1,next2,…,nextn%%ZSMJ30%%, separated by spaces (nexti=−1%%ZSMJ31%% or i<nexti≤n+1%%ZSMJ32%%).",
+      "It is guaranteed, that the sum of n%%ZSMJ33%% in all test cases doesn't exceed 500000%%ZSMJ34%%.",
+      "In hacks you can only use one test case, so T=1%%ZSMJ35%%."
+    ],
+    "output": [
+      "Print T%%ZSMJ36%% lines, in i%%ZSMJ37%%-th of them answer to the i%%ZSMJ38%%-th test case.",
+      "If there is no such permutations p1,p2,…,pn%%ZSMJ39%% of integers from 1%%ZSMJ40%% to n%%ZSMJ41%%, that Vasya could write, print the only number −1%%ZSMJ42%%.",
+      "In the other case print n%%ZSMJ43%% different integers p1,p2,…,pn%%ZSMJ44%%, separated by spaces (1≤pi≤n%%ZSMJ45%%). All defined values of nexti%%ZSMJ46%% which are not equal to −1%%ZSMJ47%% should be computed correctly p1,p2,…,pn%%ZSMJ48%% using defenition given in the statement of the problem. If there exists more than one solution you can find any of them."
+    ],
+    "note": [
+      "In the first test case for permutation p=[1,2,3]%%ZSMJ49%% Vasya should write next=[2,3,4]%%ZSMJ50%%, because each number in permutation is less than next. It's easy to see, that it is the only satisfying permutation.",
+      "In the third test case, any permutation can be the answer because all numbers nexti%%ZSMJ51%% are lost.",
+      "In the fourth test case, there is no satisfying permutation, so the answer is −1%%ZSMJ52%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n3\n2 3 4\n2\n3 3\n3\n-1 -1 -1\n3\n3 4 -1\n1\n2\n4\n4 -1 4 5",
+      "output": "1 2 3\n2 1\n2 1 3\n-1\n1\n3 2 1 4"
+    }
+  ]
+}

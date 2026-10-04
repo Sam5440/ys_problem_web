@@ -1,0 +1,53 @@
+{
+  "code": "CF1906J",
+  "letter": "J",
+  "title": "J. Count BFS Graph",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1906/J",
+  "difficulty": "2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are currently researching a graph traversal algorithm called the Breadth First Search (BFS). Suppose you have an input graph of N%%ZSMJ0%% nodes (numbered from 1%%ZSMJ1%% to N%%ZSMJ2%%). The graph is represented by an adjacency matrix M%%ZSMJ3%%, for which node u%%ZSMJ4%% can traverse to node v%%ZSMJ5%% if Mu,v%%ZSMJ6%% is 1%%ZSMJ7%%, otherwise it is 0%%ZSMJ8%%. Your algorithm will output the order the nodes are visited in the BFS. The pseudocode of the algorithm is presented as follows.",
+      {
+        "pre": "\n    BFS(M[1..N][1..N]):\n        let A be an empty array\n        let Q be an empty queue\n\n        append 1 to A\n        push 1 to Q\n\n        while Q is not empty:\n            pop the front element of Q into u\n            for v = 1 to N:\n                if M[u][v] == 1 and v is not in A:\n                    append v to A\n                    push v to Q\n\n        return A"
+      },
+      "During your research, you are interested in the following problem. Given an array A%%ZSMJ9%% such that A%%ZSMJ10%% is a permutation of 1%%ZSMJ11%% to N%%ZSMJ12%% and A1=1%%ZSMJ13%%. How many simple undirected graph with N%%ZSMJ14%% nodes and adjacency matrix M%%ZSMJ15%% such that BFS(M)=A%%ZSMJ16%%? Since the answer can be very large, calculate the answer modulo 998244353%%ZSMJ17%%.",
+      "A simple graph has no self-loop (Mi,i=0%%ZSMJ18%% for 1≤i≤N%%ZSMJ19%%) and there is at most one edge that connects a pair of nodes. In an undirected graph, if node u%%ZSMJ20%% is adjacent to node v%%ZSMJ21%%, then node v%%ZSMJ22%% is also adjacent to node u%%ZSMJ23%%; formally, Mu,v=Mv,u%%ZSMJ24%% for 1≤u<v≤N%%ZSMJ25%%.",
+      "Two graphs are considered different if there is an edge that exists in one graph but not the other. In other words, two graphs are considered different if their adjacency matrices are different."
+    ],
+    "input": [
+      "The first line consists of an integer N%%ZSMJ26%% (2≤N≤5000%%ZSMJ27%%).",
+      "The second line consists of N%%ZSMJ28%% integers Ai%%ZSMJ29%%. The array A%%ZSMJ30%% is a permutation of 1%%ZSMJ31%% to N%%ZSMJ32%% and A1=1%%ZSMJ33%%."
+    ],
+    "output": [
+      "Output an integer representing the number of simple undirected graphs with N%%ZSMJ34%% nodes and adjacency matrix M%%ZSMJ35%% such that BFS(M)=A%%ZSMJ36%%. Since the answer can be very large, output the answer modulo 998244353%%ZSMJ37%%."
+    ],
+    "note": [
+      "Explanation for the sample input/output #1",
+      "The following illustration shows all graphs that satisfy the requirements.",
+      "![](https://espresso.codeforces.com/3f0782cd9b2c34e24e5cf48fce0b15eb8be8d9aa.png)",
+      "Explanation for the sample input/output #2",
+      "The only graph that satisfies the requirements is a graph with two edges: one that connects nodes 1%%ZSMJ38%% and 3%%ZSMJ39%%, and another one that connects nodes 3%%ZSMJ40%% and 2%%ZSMJ41%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "\n    BFS(M[1..N][1..N]):\n        let A be an empty array\n        let Q be an empty queue\n\n        append 1 to A\n        push 1 to Q\n\n        while Q is not empty:\n            pop the front element of Q into u\n            for v = 1 to N:\n                if M[u][v] == 1 and v is not in A:\n                    append v to A\n                    push v to Q\n\n        return A",
+      "output": "3\n1 2 3"
+    },
+    {
+      "input": "3",
+      "output": "3\n1 3 2"
+    },
+    {
+      "input": "1",
+      "output": "5\n1 3 2 4 5"
+    },
+    {
+      "input": "17",
+      "output": "11\n1 2 3 4 5 6 7 8 9 10 11"
+    }
+  ]
+}

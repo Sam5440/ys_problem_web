@@ -1,0 +1,35 @@
+{
+  "code": "GYM104574E",
+  "letter": "E",
+  "title": "E. Shifty Shuffling",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104574/problem/E",
+  "difficulty": "*1100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are playing a strange card game involving undead attackers and botanical garden defenders. Your opponent is Deranged David, who plays on the side of the defenders, while you play on the side of the attackers.",
+      "This deck has 52 cards total, and would normally consist of cards like \"Lizard Walker,\" \"Sasquatch Ghoul,\" and \"Giga-Colossus.\" For simplicity, let's just number the cards, turning them into a standard deck (4 copies each of 1,2,3,...,13%%ZSMJ0%%). Note that we take the ace to be 1 and the jack, queen, and king to be 11, 12, and 13, respectively.",
+      "At the beginning of the game, the deck is shuffled an arbitrary number of times. You shuffle the deck by perfectly interleaving the first and second halves of the deck. That is, given a deck of cards [a1,a2,…,a26,a27,…a52]%%ZSMJ1%%, the first half of the deck is interleaved with the second half of the deck in an alternating order to form the new deck [a1,a27,a2,a28,…,a26,a52]%%ZSMJ2%%.",
+      "This game is not fair – you know that the cards labeled 1 (the aces) are by far the strongest card. You know that you can only win if all four aces start in the first half of the deck, e.g. between positions 1 and 26 inclusive.",
+      "Luckily, David has agreed to let you shuffle the cards. Given an initial permutation of the cards, can you determine if you can shuffle the deck (an arbitrary number of times) such that all four aces are in the first half of the deck, or are you doomed to succumb to Deranged David's defense?"
+    ],
+    "input": [
+      "The first and only line of input contains 52 space-separated integers a1,a2,...,a52%%ZSMJ3%%, denoting the initial permutation of cards. Note that each integer between 1 and 13 inclusive will occur exactly 4 times."
+    ],
+    "output": [
+      "Output a single line: \"YES\" if you can guarantee all the aces wind up in the first half of the deck, or \"NO\" otherwise."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 5 9 7 9 11 12 13 8 7 13 2 12 1 10 10 3 7 4 3 4 8 8 3 5 4 1 11 5 1 10 4 2 13 3 2 9 12 6 6 6 12 9 6 11 10 8 5 2 7 13 11",
+      "output": "YES"
+    },
+    {
+      "input": "12 11 5 8 3 2 13 6 1 3 12 3 12 5 7 10 6 7 9 4 6 4 1 13 1 9 5 10 9 2 4 9 2 8 11 8 13 2 10 7 3 7 8 4 10 1 13 5 11 11 6 12",
+      "output": "NO"
+    }
+  ]
+}

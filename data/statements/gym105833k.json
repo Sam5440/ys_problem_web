@@ -1,0 +1,49 @@
+{
+  "code": "GYM105833K",
+  "letter": "K",
+  "title": "K. Kanto To Johto",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105833/problem/K",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Red is a Pokemon trainer who has beaten the Kanto Pokemon League, and wants to get to Johto for new challenges. To get there, he needs to travel by train.",
+      "The region has N%%ZSMJ0%% train stations labelled from 1%%ZSMJ1%% to N%%ZSMJ2%%. Ash starts at station 1%%ZSMJ3%% and needs to get to station N%%ZSMJ4%% to enter Johto. There are M%%ZSMJ5%% bidirectional train lines, where the ith%%ZSMJ6%% train line connects stations Xi%%ZSMJ7%% and Yi%%ZSMJ8%%, and multiple train lines may connect the same pair of cities. It is possible to get from city 1%%ZSMJ9%% to city N%%ZSMJ10%% with the train lines, but it may not be possible to get from city 1%%ZSMJ11%% to some other cities with the train lines.",
+      "To use the ith%%ZSMJ12%% train line, Red needs to pay Ci%%ZSMJ13%% dollars for a lifetime pass, after which he may use the train line as many times as he wants. He can only purchase the pass for the ith%%ZSMJ14%% train line when he is at station Xi%%ZSMJ15%% or Yi%%ZSMJ16%%, and he can only purchase it once.",
+      "The payment system is online, where Red only needs to make a delayed bulk payment for the passes he bought when he enters Johto (due to immigration policies). Note that when he reaches station N%%ZSMJ17%%, he does not need to pay yet, and can continue taking trains. He only pays when he exits station N%%ZSMJ18%% and reaches the immigration counter.",
+      "Due to a bug in the system, he will only need to pay for the passes with the K%%ZSMJ19%% smallest costs (or all of them if he bought fewer than K%%ZSMJ20%% passes) when he reaches Johto.",
+      "Help Red determine the minimum amount of money (in dollars) he needs to spend to get from Kanto to Johto."
+    ],
+    "input": [
+      "The first line of the input contains 3 integers N,M,K%%ZSMJ21%% (2≤N≤105%%ZSMJ22%%, 1≤K≤M≤2⋅105%%ZSMJ23%%).",
+      "The next M%%ZSMJ24%% lines of the input each contain 3 integers Xi,Yi,Ci%%ZSMJ25%% (1≤Xi,Yi≤N%%ZSMJ26%%, Xi≠Yi%%ZSMJ27%%, 1≤Ci≤109%%ZSMJ28%%).",
+      "It is guaranteed that Red can get from station 1%%ZSMJ29%% to station N%%ZSMJ30%% using the train lines."
+    ],
+    "output": [
+      "Output a single integer, the minimum amount of money (in dollars) Red needs to spend to get from station 1 to station N%%ZSMJ31%%."
+    ],
+    "note": [
+      "In the first sample, note that Red cannot buy the pass for the train line connecting stations 3%%ZSMJ32%% and 6%%ZSMJ33%%, as there is no way to reach those cities by train.",
+      "To get to city N%%ZSMJ34%%, Red may buy the pass to travel between stations 1%%ZSMJ35%% and 2%%ZSMJ36%%, travel to station 2%%ZSMJ37%%, buy the pass to travel between stations 2%%ZSMJ38%% and 7%%ZSMJ39%%, travel to station 7%%ZSMJ40%%, buy the pass to travel between stations 7%%ZSMJ41%% and 5%%ZSMJ42%%, travel to station 5%%ZSMJ43%%, buy the pass to travel between stations 5%%ZSMJ44%% and 4%%ZSMJ45%%, travel back to station 7%%ZSMJ46%% (note that he does not have to travel to station 4%%ZSMJ47%% after buying the pass), then go to immigration.",
+      "The passes he buys cost 3,3,2,2%%ZSMJ48%% in that order, and he pays for the K=2%%ZSMJ49%% cheapest, for a cost of 2+2=4%%ZSMJ50%%. It can be shown this is the minimum possible.",
+      "In the second sample, Red may travel 1→2→6→4→7%%ZSMJ51%%, buying the passes between consecutive cities in the route, and pay 4+3+2+3=12%%ZSMJ52%% as he only buys 4%%ZSMJ53%% passes but K=5%%ZSMJ54%%. It can be shown this is the minimum possible.",
+      "In the third sample, Red may buy all the passes, and he only pays for the K=2%%ZSMJ55%% passes between stations 1%%ZSMJ56%% and 2%%ZSMJ57%% which cost 1%%ZSMJ58%% each, for a total cost of 1+1=2%%ZSMJ59%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7 5 2\n1 2 3\n2 7 3\n5 4 2\n7 5 2\n3 6 1",
+      "output": "4"
+    },
+    {
+      "input": "7 10 5\n1 2 4\n2 6 3\n6 4 2\n3 5 7\n4 7 3\n3 7 1\n2 4 10\n1 3 12\n5 7 4\n4 5 4",
+      "output": "12"
+    },
+    {
+      "input": "3 4 2\n1 2 1\n1 2 1\n1 2 2\n2 3 2",
+      "output": "2"
+    }
+  ]
+}

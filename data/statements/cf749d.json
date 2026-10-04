@@ -1,0 +1,50 @@
+{
+  "code": "CF749D",
+  "letter": "D",
+  "title": "D. Leaving Auction",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/749/D",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are n people taking part in auction today. The rules of auction are classical. There were n bids made, though it's not guaranteed they were from different people. It might happen that some people made no bids at all.",
+      "Each bid is define by two integers (ai, bi), where ai is the index of the person, who made this bid and bi is its size. Bids are given in chronological order, meaning bi < bi + 1 for all i < n. Moreover, participant never makes two bids in a row (no one updates his own bid), i.e. ai ≠ ai + 1 for all i < n.",
+      "Now you are curious with the following question: who (and which bid) will win the auction if some participants were absent? Consider that if someone was absent, all his bids are just removed and no new bids are added.",
+      "Note, that if during this imaginary exclusion of some participants it happens that some of the remaining participants makes a bid twice (or more times) in a row, only first of these bids is counted. For better understanding take a look at the samples.",
+      "You have several questions in your mind, compute the answer for each of them."
+    ],
+    "input": [
+      "The first line of the input contains an integer n (1 ≤ n ≤ 200 000) — the number of participants and bids.",
+      "Each of the following n lines contains two integers ai and bi (1 ≤ ai ≤ n, 1 ≤ bi ≤ 109, bi < bi + 1) — the number of participant who made the i-th bid and the size of this bid.",
+      "Next line contains an integer q (1 ≤ q ≤ 200 000) — the number of question you have in mind.",
+      "Each of next q lines contains an integer k (1 ≤ k ≤ n), followed by k integers lj (1 ≤ lj ≤ n) — the number of people who are not coming in this question and their indices. It is guarenteed that lj values are different for a single question.",
+      "It's guaranteed that the sum of k over all question won't exceed 200 000."
+    ],
+    "output": [
+      "For each question print two integer — the index of the winner and the size of the winning bid. If there is no winner (there are no remaining bids at all), print two zeroes."
+    ],
+    "note": [
+      "Consider the first sample:",
+      "In the first question participant number 3 is absent so the sequence of bids looks as follows:   1 10",
+      "2 100",
+      "1 10 000",
+      "2 100 000",
+      "In the second question participants 2 and 3 are absent, so the sequence of bids looks:   1 10",
+      "1 10 000",
+      "In the third question participants 1 and 2 are absent and the sequence is:   3 1 000",
+      "3 1 000 000"
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n1 10\n2 100\n3 1000\n1 10000\n2 100000\n3 1000000\n3\n1 3\n2 2 3\n2 1 2",
+      "output": "2 100000\n1 10\n3 1000"
+    },
+    {
+      "input": "3\n1 10\n2 100\n1 1000\n2\n2 1 2\n2 2 3",
+      "output": "0 0\n1 10"
+    }
+  ]
+}

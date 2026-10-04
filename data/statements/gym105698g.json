@@ -1,0 +1,40 @@
+{
+  "code": "GYM105698G",
+  "letter": "G",
+  "title": "G. Get Mex Range Add Linear",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105698/problem/G",
+  "difficulty": "*1800",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Sorry, we have had the theme of adding up integers so many times elsewhere. So we give you a different definition of addition — adding an element to a set.",
+      "You are given a%%ZSMJ0%%, a sequence of n%%ZSMJ1%% sets. Initially, ai={0}%%ZSMJ2%% (set only containing 0%%ZSMJ3%%) for all 1≤i≤n%%ZSMJ4%%.",
+      "You are asked to solve q%%ZSMJ5%% queries of the following kinds.",
+      "1lr%%ZSMJ6%%: Set ai←ai∪{i−l+1}%%ZSMJ7%% for all l≤i≤r%%ZSMJ8%%. (1≤l≤r≤n%%ZSMJ9%%)",
+      "2i%%ZSMJ10%%: Output the value of mex(ai)%%ZSMJ11%%†%%ZSMJ12%%. (1≤i≤n%%ZSMJ13%%)",
+      "†%%ZSMJ14%% Given a set of nonnegative integers S%%ZSMJ15%%, mex(S)%%ZSMJ16%% is defined as the smallest nonnegative integer not in S%%ZSMJ17%%."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ18%% and q%%ZSMJ19%% — the number of sets and queries. (1≤n,q≤5⋅105%%ZSMJ20%%)",
+      "Each of the q%%ZSMJ21%% following lines contains a query. Each query is given in the format described above."
+    ],
+    "output": [
+      "For each query of type 2%%ZSMJ22%%, print the answer on a new line."
+    ],
+    "note": [
+      "The sample input is explained as follows.",
+      "After the first query of type 1%%ZSMJ23%%, a%%ZSMJ24%% changes to [{0,1},{0,2},{0,3},{0,4},{0,5}]%%ZSMJ25%%.",
+      "Then, the mex%%ZSMJ26%% of {0,1}%%ZSMJ27%% and {0,5}%%ZSMJ28%% are 2%%ZSMJ29%% and 1%%ZSMJ30%% correspondingly.",
+      "After three more queries of type 1%%ZSMJ31%%, a%%ZSMJ32%% changes to [{0,1},{0,1,2},{0,1,2,3},{0,1,4},{0,2,5}]%%ZSMJ33%%.",
+      "Then, the mex%%ZSMJ34%% of {0,1,2}%%ZSMJ35%%, {0,1,2,3}%%ZSMJ36%%, {0,1,4}%%ZSMJ37%% are 3%%ZSMJ38%%, 4%%ZSMJ39%%, 2%%ZSMJ40%% correspondingly."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 9\n1 1 5\n2 1\n2 5\n1 2 3\n1 4 5\n1 3 3\n2 2\n2 3\n2 4",
+      "output": "2\n1\n3\n4\n2"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "code": "CF1190D",
+  "letter": "D",
+  "title": "D. Tokitsukaze and Strange Rectangle",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1190/D",
+  "difficulty": "2000",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are n%%ZSMJ0%% points on the plane, the i%%ZSMJ1%%-th of which is at (xi,yi)%%ZSMJ2%%. Tokitsukaze wants to draw a strange rectangular area and pick all the points in the area.",
+      "The strange area is enclosed by three lines, x=l%%ZSMJ3%%, y=a%%ZSMJ4%% and x=r%%ZSMJ5%%, as its left side, its bottom side and its right side respectively, where l%%ZSMJ6%%, r%%ZSMJ7%% and a%%ZSMJ8%% can be any real numbers satisfying that l<r%%ZSMJ9%%. The upper side of the area is boundless, which you can regard as a line parallel to the x%%ZSMJ10%%-axis at infinity. The following figure shows a strange rectangular area.",
+      "![](https://espresso.codeforces.com/da2aefca33f93cc613b170675755eb2a06da1a9c.png)",
+      "A point (xi,yi)%%ZSMJ11%% is in the strange rectangular area if and only if l<xi<r%%ZSMJ12%% and yi>a%%ZSMJ13%%. For example, in the above figure, p1%%ZSMJ14%% is in the area while p2%%ZSMJ15%% is not.",
+      "Tokitsukaze wants to know how many different non-empty sets she can obtain by picking all the points in a strange rectangular area, where we think two sets are different if there exists at least one point in one set of them but not in the other."
+    ],
+    "input": [
+      "The first line contains a single integer n%%ZSMJ16%% (1≤n≤2×105%%ZSMJ17%%) — the number of points on the plane.",
+      "The i%%ZSMJ18%%-th of the next n%%ZSMJ19%% lines contains two integers xi%%ZSMJ20%%, yi%%ZSMJ21%% (1≤xi,yi≤109%%ZSMJ22%%) — the coordinates of the i%%ZSMJ23%%-th point.",
+      "All points are distinct."
+    ],
+    "output": [
+      "Print a single integer — the number of different non-empty sets of points she can obtain."
+    ],
+    "note": [
+      "For the first example, there is exactly one set having k%%ZSMJ24%% points for k=1,2,3%%ZSMJ25%%, so the total number is 3%%ZSMJ26%%.",
+      "For the second example, the numbers of sets having k%%ZSMJ27%% points for k=1,2,3%%ZSMJ28%% are 3%%ZSMJ29%%, 2%%ZSMJ30%%, 1%%ZSMJ31%% respectively, and their sum is 6%%ZSMJ32%%.",
+      "For the third example, as the following figure shows, there are",
+      "2%%ZSMJ33%% sets having one point;",
+      "3%%ZSMJ34%% sets having two points;",
+      "1%%ZSMJ35%% set having four points.",
+      "Therefore, the number of different non-empty sets in this example is 2+3+0+1=6%%ZSMJ36%%.",
+      "![](https://espresso.codeforces.com/e7cd405fe393c00f0a28e99a5ad42fe9951c0bf1.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 1\n1 2\n1 3",
+      "output": "3"
+    },
+    {
+      "input": "3\n1 1\n2 1\n3 1",
+      "output": "6"
+    },
+    {
+      "input": "4\n2 1\n2 2\n3 1\n3 2",
+      "output": "6"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "code": "CF1986F",
+  "letter": "F",
+  "title": "F. Non-academic Problem",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1986/F",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a connected undirected graph, the vertices of which are numbered with integers from 1%%ZSMJ0%% to n%%ZSMJ1%%. Your task is to minimize the number of pairs of vertices 1≤u<v≤n%%ZSMJ2%% between which there exists a path in this graph. To achieve this, you can remove exactly one edge from the graph.",
+      "Find the smallest number of pairs of vertices!"
+    ],
+    "input": [
+      "Each test consists of several sets of input data. The first line contains a single integer t%%ZSMJ3%% (1≤t≤104%%ZSMJ4%%) — the number of sets of input data. Then follows their description.",
+      "The first line of each set of input data contains two integers n%%ZSMJ5%% and m%%ZSMJ6%% (2≤n≤105%%ZSMJ7%%, n−1≤m≤min(105,n⋅(n−1)2)%%ZSMJ8%%) — the number of vertices in the graph and the number of edges.",
+      "Each of the next m%%ZSMJ9%% lines contains two integers u%%ZSMJ10%% and v%%ZSMJ11%% (1≤u,v≤n,u≠v%%ZSMJ12%%), indicating that there is an undirected edge in the graph between vertices u%%ZSMJ13%% and v%%ZSMJ14%%.",
+      "It is guaranteed that the given graph is connected and without multiple edges.",
+      "It is guaranteed that the sum of n%%ZSMJ15%% and the sum of m%%ZSMJ16%% over all sets of input data does not exceed 2⋅105%%ZSMJ17%%."
+    ],
+    "output": [
+      "For each set of input data, output the smallest number of pairs of reachable vertices, if exactly one edge can be removed."
+    ],
+    "note": [
+      "In the first set of input data, we will remove the single edge (1,2)%%ZSMJ18%% and the only pair of vertices (1,2)%%ZSMJ19%% will become unreachable from each other.",
+      "In the second set of input data, no matter which edge we remove, all vertices will be reachable from each other.",
+      "In the fourth set of input data, the graph looks like this initially.",
+      "![](https://espresso.codeforces.com/374872f585ce28149acd3b381875efadf03e3f9f.png)",
+      "We will remove the edge (3,4)%%ZSMJ20%% and then the only reachable pairs of vertices will be (1,2)%%ZSMJ21%%, (1,3)%%ZSMJ22%%, (2,3)%%ZSMJ23%%, (4,5)%%ZSMJ24%%, (4,6)%%ZSMJ25%%, (5,6)%%ZSMJ26%%.",
+      "![](https://espresso.codeforces.com/adb68230f3dce64b691c34d8c62b1aae1d001832.png)",
+      "In the sixth set of input data, the graph looks like this initially.",
+      "![](https://espresso.codeforces.com/af198d53b65fc93300eea0a58cf54fbbf3f62159.png)",
+      "After removing the edge (2,4)%%ZSMJ27%%, the graph will look like this. Thus, there will be 21%%ZSMJ28%% pairs of reachable vertices.",
+      "![](https://espresso.codeforces.com/c6412c8719740b67fbeec45ec0428b1bf6adc5c4.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n2 1\n1 2\n3 3\n1 2\n2 3\n1 3\n5 5\n1 2\n1 3\n3 4\n4 5\n5 3\n6 7\n1 2\n1 3\n2 3\n3 4\n4 5\n4 6\n5 6\n5 5\n1 2\n1 3\n2 3\n2 4\n3 5\n10 12\n1 2\n1 3\n2 3\n2 4\n4 5\n5 6\n6 7\n7 4\n3 8\n8 9\n9 10\n10 8",
+      "output": "0\n3\n4\n6\n6\n21"
+    }
+  ]
+}

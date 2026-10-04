@@ -1,0 +1,37 @@
+{
+  "code": "GYM106073F",
+  "letter": "F",
+  "title": "F. Frangolino ali na mesa",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106073/problem/F",
+  "difficulty": "*1700",
+  "timeLimit": "0.5 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Washington, a chef enthusiastic about artificial intelligence and passionate about cooking, decided to build a waiter-robot for his new restaurant, Frangolino, which specializes in breaded chicken. Washington will open the restaurant for a special night with friends and decided to test the waiter-robot on that occasion.",
+      "The restaurant will serve N%%ZSMJ0%% tables, numbered from 1 to N%%ZSMJ1%%, and will offer only one dish: chicken milanesa. Washington loves playing with words and decided to define two commands for the waiter-robot: the command \"ali na mesa X%%ZSMJ2%%\" (go to table X%%ZSMJ3%%) and the command \"a milanesa X%%ZSMJ4%%\" (milanesa X%%ZSMJ5%%).",
+      "The command \"ali na mesa X%%ZSMJ6%%\" means that the waiter-robot should move to table X%%ZSMJ7%% and wait for the next instruction. The command \"a milanesa X%%ZSMJ8%%\" means that the waiter-robot should register in the system an order for X%%ZSMJ9%% chicken milanesas for the table where it is currently located. At the beginning of the night, the waiter-robot is at table 1.",
+      "Unfortunately, the waiter-robot has a flaw and cannot handle anagrams properly. For each command received, the robot has a 50% chance of executing it correctly and a 50% chance of executing the other command. Your task is, given the history of commands received by the robot, to determine, for each table in the restaurant, the expected number of chicken milanesas that will be served."
+    ],
+    "input": [
+      "The first line of input contains two integers N%%ZSMJ10%% and Q%%ZSMJ11%% (1≤N,Q≤105%%ZSMJ12%%), the number of tables and the number of waiter-robot commands, respectively.",
+      "The second line contains Q%%ZSMJ13%% integers X1,…,XQ%%ZSMJ14%% (1≤Xi≤N%%ZSMJ15%%) separated by spaces. Each Xi%%ZSMJ16%% describes the argument of one of the commands that the waiter-robot received, in the order they occurred.",
+      "Note that the command itself is not provided, since the waiter-robot will execute either one with 50% probability."
+    ],
+    "output": [
+      "The output should contain N%%ZSMJ17%% lines. The i%%ZSMJ18%%-th line should contain the expected number of chicken milanesas that will be served at table i%%ZSMJ19%%, as described below.",
+      "The expected value may not be an integer, but it will always be a rational number and, therefore, can be represented by an irreducible fraction pq%%ZSMJ20%%. Since p%%ZSMJ21%% and q%%ZSMJ22%% can be very large, you should print p×q−1mod(109+7)%%ZSMJ23%%, where q−1%%ZSMJ24%% is the multiplicative inverse of q%%ZSMJ25%% modulo 109+7%%ZSMJ26%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 3\n1 2 1",
+      "output": "750000007\n250000002"
+    },
+    {
+      "input": "4 4\n1 2 3 4",
+      "output": "750000008\n250000003\n1\n0"
+    }
+  ]
+}

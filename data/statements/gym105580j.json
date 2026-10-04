@@ -1,0 +1,56 @@
+{
+  "code": "GYM105580J",
+  "letter": "J",
+  "title": "J. Maze",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105580/problem/J",
+  "difficulty": "*1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem.",
+      "You are given a maze that consists of a grid of N×M%%ZSMJ0%% (3≤N,M≤30%%ZSMJ1%%) rooms. Any two rooms that are adjacent by a side are connected by a bidirectional colored corridor. There are only four colors that the corridors can be painted: red, green, blue, and yellow.",
+      "One of the rooms in the maze is the starting room, and one is the ending room. You can only move between adjacent rooms through the connecting corridors. You are allowed to move through a corridor into another room and then return. As you move, a sequence of your moves is formed. When you move forward, the color of the corridor you are passing through is added to the sequence, and when you move back, the last element is removed from the sequence. However, there is one restriction: you cannot pass through a corridor of color C%%ZSMJ2%% if among the last three elements of the sequence there is C%%ZSMJ3%%.",
+      "Neither the maze, the starting position, nor the ending position are known to the participant. You need to reach the ending room from the starting room. It is guaranteed that the ending room is reachable.",
+      "Interaction",
+      "At the beginning, the jury program outputs two numbers N%%ZSMJ4%% and M%%ZSMJ5%%. Then for each move the participant makes, the jury program outputs the success of that step or asks to end the program if the participant has reached the ending room.",
+      "Each move must be one of these commands:",
+      "\"MOVE LEFT\" — if you want to go to the room located to the left of you;",
+      "\"MOVE RIGHT\" — if you want to go to the room located to the right of you;",
+      "\"MOVE UP\" — if you want to go to the room located above you;",
+      "\"MOVE DOWN\" — if you want to go to the room located below you;",
+      "\"BACK\" — to move back.",
+      "The jury program will reply with one of these:",
+      "\"OK\" — if your move was successful and you moved to another room;",
+      "\"FAIL\" — if your move was unsuccessful, meaning you tried to pass through a corridor of an invalid color or tried to go back with an empty sequence;",
+      "\"EXIT\" — if you have reached the ending room.",
+      "Starting from test 22%%ZSMJ6%%, the jury's program is adaptive to the participant's program output.",
+      "The total number of moves must not exceed 100000%%ZSMJ7%%."
+    ],
+    "input": [],
+    "output": [],
+    "note": [
+      "In the first test, the jury has the following maze:",
+      "![](https://espresso.codeforces.com/9a3b160d6a02e91b4065cf4ccabbd71b3c259984.png)",
+      "Black dots represent rooms. The corridors between rooms are represented by lines. The letter next to the corridor indicates its color (\"Y\" — yellow, \"R\" — red, \"G\" — green, \"B\" — blue). Initially, the participant is in the room marked with a bold dot. Next to the room that is the final destination for the participant is the letter \"X\". Neither the maze, nor the starting position, nor the ending position are known to the participant.",
+      "The first command is BACK, but since there have been no moves yet, nothing happens. The jury program reports that the move was unsuccessful (\"FAIL\").",
+      "The second command is MOVE DOWN. After this, the sequence of colors of the passed corridors will be: \"yellow\".",
+      "The movement is shown in the picture below.",
+      "![](https://espresso.codeforces.com/fc9e7a2d6706c465e0deea4b7bb0cddbbe570af8.png)",
+      "The next command is MOVE LEFT. With this command, the participant tries to pass through the yellow corridor, which is already the last in the sequence, so the jury informs that the move was unsuccessful.",
+      "The next command is MOVE RIGHT. The sequence of colors now becomes: \"yellow, blue\". The movement is shown in the picture below.",
+      "![](https://espresso.codeforces.com/37c03826e36090105014b1360f6d9a6c940bbbfe.png)",
+      "In the next three commands, the participant attempts to pass through corridors of blue or yellow colors, which are already included in the last three elements of the sequence, so the jury reports that those moves are unsuccessful.",
+      "The following command is BACK. The sequence of moves is: \"yellow\".",
+      "The next command is BACK again. The sequence of moves is: \"\" (empty).",
+      "The next command is MOVE UP. The sequence of moves will be \"blue\". Since the participant reached the ending room, the jury asks the participant to end the program."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\nFAIL\nOK\nFAIL\nOK\nFAIL\nFAIL\nFAIL\nOK\nOK\nEXIT",
+      "output": "\nBACK\nMOVE DOWN\nMOVE LEFT\nMOVE RIGHT\nMOVE LEFT\nMOVE UP\nMOVE DOWN\nBACK\nBACK\nMOVE UP"
+    }
+  ]
+}

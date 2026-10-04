@@ -1,0 +1,34 @@
+{
+  "code": "CF1329B",
+  "letter": "B",
+  "title": "B. Dreamoon Likes Sequences",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1329/B",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Dreamoon likes sequences very much. So he created a problem about the sequence that you can't find in OEIS:",
+      "You are given two integers d,m%%ZSMJ0%%, find the number of arrays a%%ZSMJ1%%, satisfying the following constraints:",
+      "The length of a%%ZSMJ2%% is n%%ZSMJ3%%, n≥1%%ZSMJ4%%",
+      "1≤a1<a2<⋯<an≤d%%ZSMJ5%%",
+      "Define an array b%%ZSMJ6%% of length n%%ZSMJ7%% as follows: b1=a1%%ZSMJ8%%, ∀i>1,bi=bi−1⊕ai%%ZSMJ9%%, where ⊕%%ZSMJ10%% is the bitwise exclusive-or (xor). After constructing an array b%%ZSMJ11%%, the constraint b1<b2<⋯<bn−1<bn%%ZSMJ12%% should hold.",
+      "Since the number of possible arrays may be too large, you need to find the answer modulo m%%ZSMJ13%%."
+    ],
+    "input": [
+      "The first line contains an integer t%%ZSMJ14%% (1≤t≤100%%ZSMJ15%%) denoting the number of test cases in the input.",
+      "Each of the next t%%ZSMJ16%% lines contains two integers d,m%%ZSMJ17%% (1≤d,m≤109%%ZSMJ18%%).",
+      "Note that m%%ZSMJ19%% is not necessary the prime!"
+    ],
+    "output": [
+      "For each test case, print the number of arrays a%%ZSMJ20%%, satisfying all given constrains, modulo m%%ZSMJ21%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "10\n1 1000000000\n2 999999999\n3 99999998\n4 9999997\n5 999996\n6 99995\n7 9994\n8 993\n9 92\n10 1",
+      "output": "1\n3\n5\n11\n17\n23\n29\n59\n89\n0"
+    }
+  ]
+}

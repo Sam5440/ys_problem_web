@@ -1,0 +1,36 @@
+{
+  "code": "GYM104013C",
+  "letter": "C",
+  "title": "C. Corrupted Sort",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104013/problem/C",
+  "difficulty": "*1500",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem.",
+      "Chloe wants to test her sorting skills. She has n%%ZSMJ0%% cards with distinct integers from 1%%ZSMJ1%% to n%%ZSMJ2%% written on them. She asks her little brother Connor to first blindfold her and then arrange all cards in a row in some order. Positions of cards are numbered from 1%%ZSMJ3%% to n%%ZSMJ4%% from left to right.",
+      "Chloe doesn't know the order of the cards, but she wants to sort them, so that the leftmost card has number 1%%ZSMJ5%% and the rightmost card has number n%%ZSMJ6%% on it. Formally, for each i%%ZSMJ7%% she wants the card on position i%%ZSMJ8%% to have number i%%ZSMJ9%% on it. To achieve the goal, Chloe can ask Connor to do one or more operations.",
+      "Each operation can be denoted by two integers posi%%ZSMJ10%% and posj%%ZSMJ11%% (1≤posi<posj≤n%%ZSMJ12%%). Connor looks at the cards on positions posi%%ZSMJ13%% and posj%%ZSMJ14%%, and if the card on position posi%%ZSMJ15%% has a bigger number than the card on position posj%%ZSMJ16%%, he swaps them. Otherwise, he does nothing. Connor also tells Chloe if he swapped the cards or not.",
+      "To make the game more interesting, after every 2n%%ZSMJ17%% operations Connor chooses two distinct cards uniformly at random and swaps them without telling anything to Chloe.",
+      "If after some of Chloe's operations all cards become sorted, Chloe wins. Help Chloe to sort all cards using at most 10 000%%ZSMJ18%% operations.",
+      "Interaction",
+      "Your program should start by reading a single integer n%%ZSMJ19%% (2≤n≤50%%ZSMJ20%%) — the number of cards.",
+      "Your program can ask to do the specified operation one or more times. To do the operation, your program should print its description formatted as \"posi%%ZSMJ21%% posj%%ZSMJ22%%\" — two distinct numbers denoting the positions of cards (1≤posi<posj≤n%%ZSMJ23%%). Remember to flush the output after printing each operation description. Then your program should read the outcome of the operation — it will be a single word SWAPPED if the cards were swapped, or a single word STAYED if nothing changed.",
+      "If instead of an operation outcome your program receives a single word WIN, it means that the cards have become sorted. Your program should terminate silently after that, it is not allowed to output any extra operations.",
+      "After every 2n%%ZSMJ24%% operations two distinct cards are chosen randomly and swapped without telling anything to your program. Each pair of cards has equal probability to be chosen. This swap is not counted as an operation."
+    ],
+    "input": [],
+    "output": [],
+    "note": [
+      "Initial card ordering in the example was 3%%ZSMJ25%% 1%%ZSMJ26%% 2%%ZSMJ27%% (that is, the card on position 1%%ZSMJ28%% had number 3%%ZSMJ29%% on it, the card on position 2%%ZSMJ30%% had number 1%%ZSMJ31%%, and the card on position 3%%ZSMJ32%% had number 2%%ZSMJ33%%)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n\nSWAPPED\n\nSTAYED\n\nWIN",
+      "output": "\n1 2\n\n1 3\n\n2 3"
+    }
+  ]
+}

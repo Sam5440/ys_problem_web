@@ -1,0 +1,36 @@
+{
+  "code": "GYM106495H",
+  "letter": "H",
+  "title": "H. Hidden Symmetry of Valdris",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106495/problem/H",
+  "difficulty": "*2000",
+  "timeLimit": "0.5 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Deep beneath the Citadel of Eternal Letters lies the Whispering Archives — a vault sealed for millennia, whose enchanted doors open only to those who can recite two simultaneous palindromic incantations.",
+      "The vault's guardian, Valdris the Scribe, inscribed its secrets across two sacred scrolls: A%%ZSMJ0%% and B%%ZSMJ1%%. To unseal the vault, a supplicant must pick a split point i%%ZSMJ2%% and a meeting index j%%ZSMJ3%%, then chant both of the following at once:",
+      "P1=A[1…i]+B[j…|B|]%%ZSMJ4%%",
+      "P2=B[1…i]+A[j…|A|]%%ZSMJ5%%",
+      "Both P1%%ZSMJ6%% and P2%%ZSMJ7%% must be palindromes simultaneously. Centuries of failed attempts have filled the antechamber with very flat scholars. Help the next adventurer survive by counting every valid pair (i,j)%%ZSMJ8%% such that 1≤i,j≤|A|%%ZSMJ9%%."
+    ],
+    "input": [
+      "The first line contains T (1≤T≤105)%%ZSMJ10%%.",
+      "Each test case consists of two lines containing strings A%%ZSMJ11%% and B%%ZSMJ12%% of lowercase English letters, with |A|=|B|%%ZSMJ13%% (1≤|A|,|B|≤106%%ZSMJ14%%).",
+      "Sum of |A|+|B|%%ZSMJ15%% over all test cases is less than 2×106%%ZSMJ16%%"
+    ],
+    "output": [
+      "For each test case, a single integer — the number of valid pairs (i,j)%%ZSMJ17%%."
+    ],
+    "note": [
+      "A string S%%ZSMJ18%% of length ℓ%%ZSMJ19%% is a palindrome if S[k]=S[ℓ−k+1]%%ZSMJ20%% for all 1≤k≤ℓ%%ZSMJ21%%. The empty string is considered a palindrome."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\nabacaba\nabacaba\naaa\naaa\nabc\ncba\nabyyycd\ndczzzba",
+      "output": "25\n9\n7\n10"
+    }
+  ]
+}

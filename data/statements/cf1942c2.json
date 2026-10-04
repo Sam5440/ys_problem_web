@@ -1,0 +1,39 @@
+{
+  "code": "CF1942C2",
+  "letter": "C2",
+  "title": "C2. Bessie's Birthday Cake (Hard Version)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1942/C2",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is the hard version of the problem. The only difference between the two versions is the constraint on y%%ZSMJ0%%. In this version 0≤y≤n−x%%ZSMJ1%%. You can make hacks only if both versions are solved.",
+      "Bessie has received a birthday cake from her best friend Elsie, and it came in the form of a regular polygon with n%%ZSMJ2%% sides. The vertices of the cake are numbered from 1%%ZSMJ3%% to n%%ZSMJ4%% clockwise. You and Bessie are going to choose some of those vertices to cut non-intersecting diagonals into the cake. In other words, the endpoints of the diagonals must be part of the chosen vertices.",
+      "Bessie would only like to give out pieces of cake which result in a triangle to keep consistency. The size of the pieces doesn't matter, and the whole cake does not have to be separated into all triangles (other shapes are allowed in the cake, but those will not be counted).",
+      "Bessie has already chosen x%%ZSMJ5%% of those vertices that can be used to form diagonals. She wants you to choose no more than y%%ZSMJ6%% other vertices such that the number of triangular pieces of cake she can give out is maximized.",
+      "What is the maximum number of triangular pieces of cake Bessie can give out?"
+    ],
+    "input": [
+      "The first line contains a single integer t%%ZSMJ7%% (1≤t≤104%%ZSMJ8%%) — the number of test cases.",
+      "The first line of each test case consists of three integers, n%%ZSMJ9%%, x%%ZSMJ10%%, and y%%ZSMJ11%% (4≤n≤109%%ZSMJ12%%, 2≤x≤min%%ZSMJ13%%, 0 \\leq y \\leq n - x%%ZSMJ14%%) — the number of sides of the polygon, number of vertices Bessie has chosen, and the maximum number of other vertices you can choose.",
+      "The second line consists of x%%ZSMJ15%% distinct integers from 1%%ZSMJ16%% to n%%ZSMJ17%%, representing the vertices Bessie has chosen.",
+      "It is guaranteed the sum of x%%ZSMJ18%% over all test cases does not exceed 2 \\cdot 10^5%%ZSMJ19%%."
+    ],
+    "output": [
+      "For each test case, output a single integer: the maximum number of non-intersecting triangular pieces of cake she can give out."
+    ],
+    "note": [
+      "In test cases 1%%ZSMJ20%%, 2%%ZSMJ21%% and 3%%ZSMJ22%%, you can get 6%%ZSMJ23%%, 5%%ZSMJ24%% and 2%%ZSMJ25%% non-intersecting triangular pieces of cake, respectively. A possible construction is shown in the following pictures:",
+      "The green dots represent vertices that Bessie chose, the yellow dots represent vertices that you chose, the blue lines represent diagonals that are drawn, and the red numbers represent triangles that are counted.",
+      "![](https://espresso.codeforces.com/eb068b17dec75e17318bdcc858935ef84a178fd5.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n8 4 2\n1 6 2 5\n7 3 1\n6 4 3\n4 2 2\n1 3",
+      "output": "6\n5\n2"
+    }
+  ]
+}

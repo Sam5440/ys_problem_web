@@ -1,0 +1,49 @@
+{
+  "code": "CF1580A",
+  "letter": "A",
+  "title": "A. Portal",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1580/A",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "CQXYM found a rectangle A%%ZSMJ0%% of size n×m%%ZSMJ1%%. There are n%%ZSMJ2%% rows and m%%ZSMJ3%% columns of blocks. Each block of the rectangle is an obsidian block or empty. CQXYM can change an obsidian block to an empty block or an empty block to an obsidian block in one operation.",
+      "A rectangle M%%ZSMJ4%% size of a×b%%ZSMJ5%% is called a portal if and only if it satisfies the following conditions:",
+      "a≥5,b≥4%%ZSMJ6%%.",
+      "For all 1<x<a%%ZSMJ7%%, blocks Mx,1%%ZSMJ8%% and Mx,b%%ZSMJ9%% are obsidian blocks.",
+      "For all 1<x<b%%ZSMJ10%%, blocks M1,x%%ZSMJ11%% and Ma,x%%ZSMJ12%% are obsidian blocks.",
+      "For all 1<x<a,1<y<b%%ZSMJ13%%, block Mx,y%%ZSMJ14%% is an empty block.",
+      "M1,1,M1,b,Ma,1,Ma,b%%ZSMJ15%% can be any type.",
+      "Note that corners can be any type",
+      "CQXYM wants to know the minimum number of operations he needs to make at least one sub-rectangle a portal."
+    ],
+    "input": [
+      "The first line contains an integer t%%ZSMJ20%% (t≥1%%ZSMJ21%%), which is the number of test cases.",
+      "For each test case, the first line contains two integers n%%ZSMJ22%% and m%%ZSMJ23%% (5≤n≤400%%ZSMJ24%%, 4≤m≤400%%ZSMJ25%%).",
+      "Then n%%ZSMJ26%% lines follow, each line contains m%%ZSMJ27%% characters 0%%ZSMJ28%% or 1%%ZSMJ29%%. If the j%%ZSMJ30%%-th character of i%%ZSMJ31%%-th line is 0%%ZSMJ32%%, block Ai,j%%ZSMJ33%% is an empty block. Otherwise, block Ai,j%%ZSMJ34%% is an obsidian block.",
+      "It is guaranteed that the sum of n%%ZSMJ35%% over all test cases does not exceed 400%%ZSMJ36%%.",
+      "It is guaranteed that the sum of m%%ZSMJ37%% over all test cases does not exceed 400%%ZSMJ38%%."
+    ],
+    "output": [
+      "Output t%%ZSMJ39%% answers, and each answer in a line."
+    ],
+    "note": [
+      "In the first test case, the final portal is like this:",
+      {
+        "pre": "\n1110\n1001\n1001\n1001\n0111"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n5 4\n1000\n0000\n0110\n0000\n0001",
+      "output": "12"
+    },
+    {
+      "input": "1\n9 9\n001010001\n101110100\n000010011\n100000001\n101010101\n110001111\n000001111\n111100000\n000110000",
+      "output": "5"
+    }
+  ]
+}

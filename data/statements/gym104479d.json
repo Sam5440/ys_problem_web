@@ -1,0 +1,34 @@
+{
+  "code": "GYM104479D",
+  "letter": "D",
+  "title": "D. DAG Probability",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104479/problem/D",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Three integers n%%ZSMJ0%%, a%%ZSMJ1%% and b%%ZSMJ2%% are given.",
+      "A directed graph with n%%ZSMJ3%% vertices numbered 1%%ZSMJ4%% to n%%ZSMJ5%% and n(n−1)2%%ZSMJ6%% edges is created in the following way: for every pair of integers u%%ZSMJ7%% and v%%ZSMJ8%% where 1≤u<v≤n%%ZSMJ9%%, add an edge which is directed from u%%ZSMJ10%% to v%%ZSMJ11%% with probability ab%%ZSMJ12%% or from v%%ZSMJ13%% to u%%ZSMJ14%% otherwise. All edges are chosen independently.",
+      "Find the probability that the created graph doesn't contain any cycle."
+    ],
+    "input": [
+      "The input contains three integers n%%ZSMJ15%%, a%%ZSMJ16%% and b%%ZSMJ17%% (1≤n≤106%%ZSMJ18%%, 1≤a<b<998244353%%ZSMJ19%%)."
+    ],
+    "output": [
+      "Output the probability modulo 998244353%%ZSMJ20%%.",
+      "Formally, let M=998244353%%ZSMJ21%%. It can be shown that the answer can be expressed as an irreducible fraction pq%%ZSMJ22%%, where p%%ZSMJ23%% and q%%ZSMJ24%% are integers and q \\not \\equiv 0 \\pmod{M}%%ZSMJ25%%. Output the integer equal to p \\cdot q^{-1} \\bmod M%%ZSMJ26%%. In other words, output an integer x%%ZSMJ27%% such that 0 \\le x  \\lt  M%%ZSMJ28%% and x \\cdot q \\equiv p \\pmod{M}%%ZSMJ29%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "15 1 3",
+      "output": "527217576"
+    },
+    {
+      "input": "410977 606205472 662422794",
+      "output": "694202137"
+    }
+  ]
+}

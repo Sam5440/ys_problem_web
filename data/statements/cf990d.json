@@ -1,0 +1,37 @@
+{
+  "code": "CF990D",
+  "letter": "D",
+  "title": "D. Graph And Its Complement",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/990/D",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Given three numbers n,a,b%%ZSMJ0%%. You need to find an adjacency matrix of such an undirected graph that the number of components in it is equal to a%%ZSMJ1%%, and the number of components in its complement is b%%ZSMJ2%%. The matrix must be symmetric, and all digits on the main diagonal must be zeroes.",
+      "In an undirected graph loops (edges from a vertex to itself) are not allowed. It can be at most one edge between a pair of vertices.",
+      "The adjacency matrix of an undirected graph is a square matrix of size n%%ZSMJ3%% consisting only of \"0\" and \"1\", where n%%ZSMJ4%% is the number of vertices of the graph and the i%%ZSMJ5%%-th row and the i%%ZSMJ6%%-th column correspond to the i%%ZSMJ7%%-th vertex of the graph. The cell (i,j)%%ZSMJ8%% of the adjacency matrix contains 1%%ZSMJ9%% if and only if the i%%ZSMJ10%%-th and j%%ZSMJ11%%-th vertices in the graph are connected by an edge.",
+      "A connected component is a set of vertices X%%ZSMJ12%% such that for every two vertices from this set there exists at least one path in the graph connecting this pair of vertices, but adding any other vertex to X%%ZSMJ13%% violates this rule.",
+      "The complement or inverse of a graph G%%ZSMJ14%% is a graph H%%ZSMJ15%% on the same vertices such that two distinct vertices of H%%ZSMJ16%% are adjacent if and only if they are not adjacent in G%%ZSMJ17%%."
+    ],
+    "input": [
+      "In a single line, three numbers are given n,a,b(1≤n≤1000,1≤a,b≤n)%%ZSMJ18%%: is the number of vertexes of the graph, the required number of connectivity components in it, and the required amount of the connectivity component in it's complement."
+    ],
+    "output": [
+      "If there is no graph that satisfies these constraints on a single line, print \"NO\" (without quotes).",
+      "Otherwise, on the first line, print \"YES\"(without quotes). In each of the next n%%ZSMJ19%% lines, output n%%ZSMJ20%% digits such that j%%ZSMJ21%%-th digit of i%%ZSMJ22%%-th line must be 1%%ZSMJ23%% if and only if there is an edge between vertices i%%ZSMJ24%% and j%%ZSMJ25%% in G%%ZSMJ26%% (and 0%%ZSMJ27%% otherwise). Note that the matrix must be symmetric, and all digits on the main diagonal must be zeroes.",
+      "If there are several matrices that satisfy the conditions — output any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1 2",
+      "output": "YES\n001\n001\n110"
+    },
+    {
+      "input": "3 3 3",
+      "output": "NO"
+    }
+  ]
+}

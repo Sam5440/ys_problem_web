@@ -1,0 +1,37 @@
+{
+  "code": "GYM105813M",
+  "letter": "M",
+  "title": "M. Subsequence MEX",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105813/problem/M",
+  "difficulty": "*2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Define a number b%%ZSMJ0%% to be a subsequence of a number a%%ZSMJ1%% if, when you write out a%%ZSMJ2%% in decimal notation, you can erase some (but not all) of its digits so that the remaining digits, in order, form b%%ZSMJ3%%. For example, 356%%ZSMJ4%% is a subsequence of 1234567%%ZSMJ5%%, because you can erase the 1%%ZSMJ6%%, 2%%ZSMJ7%%, 4%%ZSMJ8%%, and 7%%ZSMJ9%% to form 356%%ZSMJ10%%. However, 0%%ZSMJ11%% is not a subsequence of 23527%%ZSMJ12%%, because the digit 0%%ZSMJ13%% is not present in 23527%%ZSMJ14%%.",
+      "You are given a number x%%ZSMJ15%%. Find any number n%%ZSMJ16%% such that the MEX%%ZSMJ17%% of the set of all subsequences of n%%ZSMJ18%% is equal to x%%ZSMJ19%%. It can be shown that such an n%%ZSMJ20%% always exists.",
+      "The MEX%%ZSMJ21%% of a set of integers is defined as the smallest non-negative integer which does not occur in the set. For example, the MEX%%ZSMJ22%% of {0,1,2,4}%%ZSMJ23%% is 3%%ZSMJ24%%, and the MEX%%ZSMJ25%% of {1,4,6,8}%%ZSMJ26%% is 0%%ZSMJ27%%."
+    ],
+    "input": [
+      "The first line of the input contains a single integer t%%ZSMJ28%% (1≤t≤1000%%ZSMJ29%%) — the number of test cases. The description of the test cases follows.",
+      "Each test case consists of a single line containing an integer x%%ZSMJ30%% (1≤x<1010000%%ZSMJ31%%) — the desired MEX%%ZSMJ32%% of the subsequences of n%%ZSMJ33%%. It is guaranteed that x%%ZSMJ34%% does not contain any leading zeroes.",
+      "It is guaranteed that the sum of the number of digits of x%%ZSMJ35%% across all test cases is at most 10000%%ZSMJ36%%."
+    ],
+    "output": [
+      "For each test case, output a single positive integer n%%ZSMJ37%% — any number such that the MEX%%ZSMJ38%% of its subsequences is x%%ZSMJ39%%. n%%ZSMJ40%% may not contain leading zeroes.",
+      "If there are multiple solutions, you may print any.",
+      "The sum of the number of digits of n%%ZSMJ41%% across all test cases must not exceed 106%%ZSMJ42%%."
+    ],
+    "note": [
+      "In the first sample case, the subsequences of 70%%ZSMJ43%% are 7%%ZSMJ44%%, 0%%ZSMJ45%%, and 70%%ZSMJ46%%, and the MEX%%ZSMJ47%% of {0,7,70}%%ZSMJ48%% is 1%%ZSMJ49%%.",
+      "In the second sample case, 12836880457%%ZSMJ50%% contains every digit except 9%%ZSMJ51%%, and therefore the MEX%%ZSMJ52%% of its subsequences is 9%%ZSMJ53%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1\n9\n10\n22",
+      "output": "70\n12836880457\n2468013579\n12013456789"
+    }
+  ]
+}

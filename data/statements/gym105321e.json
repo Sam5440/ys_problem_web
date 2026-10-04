@@ -1,0 +1,45 @@
+{
+  "code": "GYM105321E",
+  "letter": "E",
+  "title": "E. Final Showdown",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105321/problem/E",
+  "difficulty": "*1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Within a well-known video game, our hero faces \"The Beast\", the final boss of the game, and wants to know if he is capable of defeating her or not.",
+      "The hero has P%%ZSMJ0%% power points and has N%%ZSMJ1%% different weapons at his disposal. Each weapon is characterized by three integers A%%ZSMJ2%%, B%%ZSMJ3%%, and C%%ZSMJ4%%. When attacking with a weapon, if the hero currently has P%%ZSMJ5%% power points, he will have ⌊P−BA⌋%%ZSMJ6%% power points after the attack, inflicting damage to The Beast such that she loses C%%ZSMJ7%% health points. After hitting The Beast, the weapons break. For this reason, each weapon can be used at most once.",
+      "The hero wins the confrontation if he manages to defeat The Beast. To achieve this, his power points must be non-negative, and The Beast's health points must be zero or negative.",
+      "What is the maximum amount of health points V%%ZSMJ8%% that The Beast can initially have for the hero to be able to defeat her?",
+      "Note: ⌊x⌋%%ZSMJ9%% is the largest integer such that ⌊x⌋≤x%%ZSMJ10%%. For example, ⌊2.5⌋=2,⌊π⌋=3,⌊−2.75⌋=−3%%ZSMJ11%%."
+    ],
+    "input": [
+      "A line with two integers N%%ZSMJ12%% and P%%ZSMJ13%% (1≤N≤200,1≤P≤105)%%ZSMJ14%%, the number of weapons and the initial amount of power points of the hero.",
+      "Then N%%ZSMJ15%% lines that describe the weapons with three integers A%%ZSMJ16%%, B%%ZSMJ17%%, and C%%ZSMJ18%% (1≤A,B,C≤105)%%ZSMJ19%%."
+    ],
+    "output": [
+      "A line with an integer V%%ZSMJ20%%, the maximum amount of health points that The Beast can have."
+    ],
+    "note": [
+      "In the first example, if The Beast has 11%%ZSMJ21%% health points, the hero can use the second weapon, reducing his power points from 66%%ZSMJ22%% to ⌊66−88⌋=7%%ZSMJ23%% and The Beast's health points to 2%%ZSMJ24%%. Then, he can use the third weapon, reducing his power points from 7%%ZSMJ25%% to ⌊7−52⌋=1%%ZSMJ26%% and The Beast's health points to 0%%ZSMJ27%%. If The Beast starts with 12%%ZSMJ28%% health points or more, then it is impossible to defeat her.",
+      "In the second example, if The Beast has 10%%ZSMJ29%% health points, the hero can first use the second weapon and then the first, reducing his power points to 0%%ZSMJ30%% and The Beast's health points to 0%%ZSMJ31%%.",
+      "In the third example, the only way for the hero to win is if The Beast has 0%%ZSMJ32%% health points initially."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 66\n8 8 6\n8 8 9\n2 5 2",
+      "output": "11"
+    },
+    {
+      "input": "2 10\n3 1 4\n2 8 6",
+      "output": "10"
+    },
+    {
+      "input": "1 6\n3 7 5",
+      "output": "0"
+    }
+  ]
+}

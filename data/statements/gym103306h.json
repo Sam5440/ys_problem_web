@@ -1,0 +1,37 @@
+{
+  "code": "GYM103306H",
+  "letter": "H",
+  "title": "H. Haunted House",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103306/problem/H",
+  "difficulty": "*2000",
+  "timeLimit": "3 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Haunted houses are one of the most popular Halloween attractions. Bob plans to open his own haunted house for Halloween this year. His haunted house consists of N%%ZSMJ0%% rooms numbered from 0%%ZSMJ1%% to N−1%%ZSMJ2%%.",
+      "Bob has N%%ZSMJ3%% ghosts and each of them has a unique energy value between 1%%ZSMJ4%% and N%%ZSMJ5%%. A ghost with energy x%%ZSMJ6%% can be active for x%%ZSMJ7%% consecutive seconds, and then it needs to rest for x%%ZSMJ8%% seconds until it can be active again. But there is one more flaw, if that ghost scares a person while it's active, then it needs to rest immediately for x%%ZSMJ9%% seconds until it can be active again, since scaring people is tiring for ghosts.",
+      "Before deciding where to place the ghosts, Bob wants to simulate some scenarios. A scenario is defined by a permutation p0,p1,…,pN−1%%ZSMJ10%%, indicating that Bob places a ghost with energy pi%%ZSMJ11%% in the room i%%ZSMJ12%%, and a sequence t0,t1,…,tM−1%%ZSMJ13%%, indicating the arriving time of people to the haunted house.",
+      "If a person arrives to the house at second tj%%ZSMJ14%%, then they visit the cell 0%%ZSMJ15%% at second tj%%ZSMJ16%%. When a person visits the cell i%%ZSMJ17%% at second T%%ZSMJ18%%, there are two cases:",
+      "If there is an active ghost in the room, then the person gets scared and abandons the house immediately. The ghost starts resting at second T+1%%ZSMJ19%%.",
+      "Otherwise, the person visits to the room i+1%%ZSMJ20%% at second T+1%%ZSMJ21%% or abandons the house if i+1=N%%ZSMJ22%%.",
+      "You are given a scenario, help Bob to simulate it and find what is the room where the people get scared and the second when that happens. Note that all ghosts start being active at second 0%%ZSMJ23%%."
+    ],
+    "input": [
+      "The first line contains two integers N%%ZSMJ24%% and M%%ZSMJ25%% (1≤N,M≤105%%ZSMJ26%%). The second line contains a permutation p0,p1,…,pN−1%%ZSMJ27%% of size N%%ZSMJ28%% (1≤pi≤N%%ZSMJ29%%), indicating that a ghost with energy pi%%ZSMJ30%% is placed in room i%%ZSMJ31%%. The third line contains M%%ZSMJ32%% integers t0,t1,…tM−1%%ZSMJ33%% (0≤ti≤105%%ZSMJ34%%), the second when the people arrive to the house. All people arrive at different time."
+    ],
+    "output": [
+      "Print M%%ZSMJ35%% lines. In the j%%ZSMJ36%%-th line print two space-separated integers: the number of the room where the person with number (j−1)%%ZSMJ37%% get scared and the second when they get scared. If the person abandons the house without being scared in any room, print two −1%%ZSMJ38%% separated by a space."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 3\n2 1\n0 2 5",
+      "output": "0 0\n-1 -1\n1 6"
+    },
+    {
+      "input": "3 3\n3 1 2\n0 4 10",
+      "output": "0 0\n0 4\n0 10"
+    }
+  ]
+}

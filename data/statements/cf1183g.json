@@ -1,0 +1,42 @@
+{
+  "code": "CF1183G",
+  "letter": "G",
+  "title": "G. Candy Box (hard version)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1183/G",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This problem is a version of problem D from the same contest with some additional constraints and tasks.",
+      "There are n%%ZSMJ0%% candies in a candy box. The type of the i%%ZSMJ1%%-th candy is ai%%ZSMJ2%% (1≤ai≤n%%ZSMJ3%%).",
+      "You have to prepare a gift using some of these candies with the following restriction: the numbers of candies of each type presented in a gift should be all distinct (i. e. for example, a gift having two candies of type 1%%ZSMJ4%% and two candies of type 2%%ZSMJ5%% is bad).",
+      "It is possible that multiple types of candies are completely absent from the gift. It is also possible that not all candies of some types will be taken to a gift.",
+      "You really like some of the candies and don't want to include them into the gift, but you want to eat them yourself instead. For each candy, a number fi%%ZSMJ6%% is given, which is equal to 0%%ZSMJ7%% if you really want to keep i%%ZSMJ8%%-th candy for yourself, or 1%%ZSMJ9%% if you don't mind including it into your gift. It is possible that two candies of the same type have different values of fi%%ZSMJ10%%.",
+      "You want your gift to be as large as possible, but you don't want to include too many of the candies you want to eat into the gift. So, you want to calculate the maximum possible number of candies that can be included into a gift, and among all ways to choose maximum number of candies, you want to maximize the number of candies having fi=1%%ZSMJ11%% in your gift.",
+      "You have to answer q%%ZSMJ12%% independent queries.",
+      "If you are Python programmer, consider using PyPy instead of Python when you submit your code."
+    ],
+    "input": [
+      "The first line of the input contains one integer q%%ZSMJ13%% (1≤q≤2⋅105%%ZSMJ14%%) — the number of queries.",
+      "The first line of each query contains one integer n%%ZSMJ15%% (1≤n≤2⋅105%%ZSMJ16%%) — the number of candies.",
+      "Then n%%ZSMJ17%% lines follow, each containing two integers ai%%ZSMJ18%% and fi%%ZSMJ19%% (1≤ai≤n%%ZSMJ20%%, 0≤fi≤1%%ZSMJ21%%), where ai%%ZSMJ22%% is the type of the i%%ZSMJ23%%-th candy, and fi%%ZSMJ24%% denotes whether you want to keep the i%%ZSMJ25%%-th candy for yourself (0%%ZSMJ26%% if you want to keep it, 1%%ZSMJ27%% if you don't mind giving it away).",
+      "It is guaranteed that the sum of n%%ZSMJ28%% over all queries does not exceed 2⋅105%%ZSMJ29%%."
+    ],
+    "output": [
+      "For each query print two integers:",
+      "the maximum number of candies in a gift you can compose, according to the constraints in the statement;",
+      "the maximum number of candies having fi=1%%ZSMJ30%% in a gift you can compose that contains the maximum possible number of candies."
+    ],
+    "note": [
+      "In the first query, you can include two candies of type 4%%ZSMJ31%% and one candy of type 5%%ZSMJ32%%. All of them have fi=1%%ZSMJ33%% and you don't mind giving them away as part of the gift."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n8\n1 0\n4 1\n2 0\n4 1\n5 1\n6 1\n3 0\n2 0\n4\n1 1\n1 1\n2 1\n2 1\n9\n2 0\n2 0\n4 1\n4 1\n4 1\n7 0\n7 1\n7 0\n7 1",
+      "output": "3 3\n3 3\n9 5"
+    }
+  ]
+}

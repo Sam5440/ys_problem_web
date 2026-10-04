@@ -1,0 +1,41 @@
+{
+  "code": "CF1835A",
+  "letter": "A",
+  "title": "A. k-th equality",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1835/A",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Consider all equalities of form a+b=c%%ZSMJ0%%, where a%%ZSMJ1%% has A%%ZSMJ2%% digits, b%%ZSMJ3%% has B%%ZSMJ4%% digits, and c%%ZSMJ5%% has C%%ZSMJ6%% digits. All the numbers are positive integers and are written without leading zeroes. Find the k%%ZSMJ7%%-th lexicographically smallest equality when written as a string like above or determine that it does not exist.",
+      "For example, the first three equalities satisfying A=1%%ZSMJ8%%, B=1%%ZSMJ9%%, C=2%%ZSMJ10%% are",
+      "1+9=10%%ZSMJ11%%,",
+      "2+8=10%%ZSMJ12%%,",
+      "2+9=11%%ZSMJ13%%.",
+      "An equality s%%ZSMJ14%% is lexicographically smaller than an equality t%%ZSMJ15%% with the same lengths of the numbers if and only if the following holds:",
+      "in the first position where s%%ZSMJ16%% and t%%ZSMJ17%% differ, the equality s%%ZSMJ18%% has a smaller digit than the corresponding digit in t%%ZSMJ19%%."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line of input contains a single integer t%%ZSMJ20%% (1≤t≤103%%ZSMJ21%%) — the number of test cases. The description of test cases follows.",
+      "The first line of each test case contains integers A%%ZSMJ22%%, B%%ZSMJ23%%, C%%ZSMJ24%%, k%%ZSMJ25%% (1≤A,B,C≤6%%ZSMJ26%%, 1≤k≤1012%%ZSMJ27%%).",
+      "Each input file has at most 5%%ZSMJ28%% test cases which do not satisfy A,B,C≤3%%ZSMJ29%%."
+    ],
+    "output": [
+      "For each test case, if there are strictly less than k%%ZSMJ30%% valid equalities, output −1%%ZSMJ31%%.",
+      "Otherwise, output the k%%ZSMJ32%%-th equality as a string of form a+b=c%%ZSMJ33%%."
+    ],
+    "note": [
+      "In the first test case, the first 9%%ZSMJ34%% solutions are: ⟨1,1,2⟩,⟨1,2,3⟩,⟨1,3,4⟩,⟨1,4,5⟩,⟨1,5,6⟩,⟨1,6,7⟩,⟨1,7,8⟩,⟨1,8,9⟩,⟨2,1,3⟩%%ZSMJ35%%.",
+      "Int the third test case, there are no solutions as the smallest possible values for a%%ZSMJ36%% and b%%ZSMJ37%% are larger than the maximal possible value of c%%ZSMJ38%% — 10+10=20>9%%ZSMJ39%%.",
+      "Please note that whitespaces in the output matter."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n1 1 1 9\n2 2 3 1\n2 2 1 1\n1 5 6 42\n1 6 6 10000000\n5 5 6 3031568815\n6 6 6 1000000000000",
+      "output": "2 + 1 = 3\n10 + 90 = 100\n-1\n9 + 99996 = 100005\n-1\n78506 + 28543 = 107049\n-1"
+    }
+  ]
+}

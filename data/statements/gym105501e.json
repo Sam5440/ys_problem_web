@@ -1,0 +1,34 @@
+{
+  "code": "GYM105501E",
+  "letter": "E",
+  "title": "E. Piano Pirates",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105501/problem/E",
+  "difficulty": "*1300",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A curious trend is taking place among pirates that sail the seven seas. To add a touch of sophistication to their rallying cries, the most notorious pirate ships have begun to play piano melodies before they hoist their flag and officially mount their attack.",
+      "Captain Beethoven is an expert sea-farer that has memorized $$$n$$$ pirate melodies. He is lawfully enjoying his trip across the second sea when he makes out a piano tune on the wind...",
+      "Beethoven would like to identify the ship from the melody he heard. Please find which pirate ship is approaching Captain Beethoven.",
+      "–",
+      "A pirate melody is a list of $$$m$$$ integers. Beethoven hears a melody with length $$$m$$$. The melody he hears matches a pirate ship's melody if all the notes he hears appear in the ship's melody in the same order. Pirate melodies repeat after $$$m$$$ notes, and the sequence Beethoven hears may start at a place that's different than what he memorized.",
+      "Return the index of the ship that has a matching melody to the song Beethoven hears. If there are two possible ships, return the ship with the earlier index. If there is no matching ship, return $$$-1$$$."
+    ],
+    "input": [
+      "The first line contains $$$n$$$ and $$$m$$$ ($$$1 \\leq n, m \\leq 10^3$$$) — the number of pirate melodies and the length of each melody (including the melody that Beethoven hears) respectively.",
+      "The next line contains $$$m$$$ space-separated integers $$$s_1, s_2, ... s_m$$$ ($$$0 \\leq s_i \\leq 10^3$$$) — the $$$i$$$-th note in the melody that Beethoven hears.",
+      "The next $$$n$$$ lines each contain $$$m$$$ space-separated integers $$$a_{i,1}, a_{i,2}, ..., a_{i,m}$$$ ($$$0 \\leq s_{i,j} \\leq 10^3$$$) — the $$$j$$$-th note in the melody of the $$$i$$$-th ship."
+    ],
+    "output": [
+      "A single integer representing the index of the first matching ship or $$$-1$$$ if no ships match."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 4\n1 2 3 4\n4 1 2 3\n1 1 2 3\n1 2 3 1",
+      "output": "1"
+    }
+  ]
+}

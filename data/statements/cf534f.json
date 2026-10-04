@@ -1,0 +1,42 @@
+{
+  "code": "CF534F",
+  "letter": "F",
+  "title": "F. Simplified Nonogram",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/534/F",
+  "difficulty": "2400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "In this task you have to write a program dealing with nonograms on fields no larger than 5 × 20.",
+      "Simplified nonogram is a task where you have to build such field (each cell is either white or black) that satisfies the given information about rows and columns. For each row and each column the number of contiguous black segments is specified.",
+      "For example if size of the field is n = 3, m = 5, аnd numbers of contiguous black segments in rows are: [2, 3, 2] and in columns are: [1, 0, 1, 2, 1] then the solution may look like:",
+      "![](https://espresso.codeforces.com/ec484a998e5c5a92da1f4c2ae8f212b9cd64db15.png)",
+      "It is guaranteed that on each test in the testset there exists at least one solution."
+    ],
+    "input": [
+      "In the first line there follow two integers n, m (1 ≤ n ≤ 5, 1 ≤ m ≤ 20) — number of rows and number of columns respectively.",
+      "Second line contains n integers a1, a2, ..., an where ai is the number of contiguous black segments in i-th row of the field.",
+      "Similarly, third line contains m integers b1, b2, ..., bm where bi is the number of contiguous black segments in the i-th column of the field.",
+      "It is guaranteed that there exists at least one solution."
+    ],
+    "output": [
+      "Output any possible solution. Output should consist of n lines each containing m characters. Denote white cell as \".\" and black cell as \"*\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 5\n2 3 2\n1 0 1 2 1",
+      "output": "*.**.\n*.*.*\n*..**"
+    },
+    {
+      "input": "3 3\n2 1 2\n2 1 2",
+      "output": "*.*\n.*.\n*.*"
+    },
+    {
+      "input": "3 3\n1 0 1\n2 2 2",
+      "output": "***\n...\n***"
+    }
+  ]
+}

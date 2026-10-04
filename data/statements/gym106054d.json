@@ -1,0 +1,52 @@
+{
+  "code": "GYM106054D",
+  "letter": "D",
+  "title": "D. Day of rain",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106054/problem/D",
+  "difficulty": "*2100",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "On a gray and rainy day, Lautaro and Fiorella decided to take shelter under the eaves of the gallery and spend the afternoon playing brisca, a traditional card game. But since their deck of cards was wet, they replaced it with a very strange one they found among their grandfather's old books. This deck has some peculiarities:",
+      "Each card has a suit and a value.",
+      "There are no two distinct cards with the same suit and value.",
+      "The deck contains an arbitrary number of distinct suits, not necessarily the four usual suits.",
+      "The game of brisca is played in rounds. In each round, both players take a card from the deck, then the two cards are compared to decide who wins the round, and finally, the two cards are discarded. In the first round, Lautaro plays first, and then, the winner of a round plays first in the following round. The game ends when there are no more cards left in the deck.",
+      "At the beginning of the game, a trump suit is chosen, which beats any other suit in the deck. The rules for deciding the winner of each round take this trump suit into account and are as follows:",
+      "If both cards are of the same suit, the one who played the card of higher value wins (remember that all cards are distinct, so there can be no ties).",
+      "If the cards are of different suits, but one is the trump suit, the one who played the trump wins.",
+      "If the cards are of different suits and neither is the trump suit, the one who played first in the round wins.",
+      "Lautaro, always meticulous, noted in his notebook which card each player played in each round and how many rounds each one won. However, he forgot to note which was the trump suit. Luckily, you can help him. Your task is to determine which suit in the deck could have been the trump, such that the number of rounds won by each player matches what Lautaro recorded."
+    ],
+    "input": [
+      "The first line contains two integers M%%ZSMJ0%% and N%%ZSMJ1%% (0≤M,N≤105%%ZSMJ2%% and M+N≥1%%ZSMJ3%%), indicating the number of rounds won by Lautaro and Fiorella respectively.",
+      "Each of the following M+N%%ZSMJ4%% lines describes the cards played in a round with four values: V%%ZSMJ5%%, P%%ZSMJ6%%, W%%ZSMJ7%%, and Q%%ZSMJ8%%. The values V%%ZSMJ9%% and P%%ZSMJ10%% describe the card played by Lautaro in the round, while W%%ZSMJ11%% and Q%%ZSMJ12%% describe Fiorella's card. The values V%%ZSMJ13%% and W%%ZSMJ14%% are integers (1≤V,W≤109%%ZSMJ15%%) representing the value of the cards, while P%%ZSMJ16%% and Q%%ZSMJ17%% are non-empty strings of at most ten characters formed by uppercase letters, indicating the suits. The rounds are described in the order they were played."
+    ],
+    "output": [
+      "A string reporting the suit that was chosen as trump, which must be one of the suits that appear in the input.",
+      "If there is more than one possible suit, any of them will be considered valid.",
+      "If no suit from the input could have been chosen as trump, the character \"*\" (asterisk) should be printed."
+    ],
+    "note": [
+      "In the first example, if \"BLANCO\" is the trump suit, Lautaro wins the first round (because he plays first), while Fiorella wins the second (because she plays trump). If another suit were trump, one of the two players would win both rounds.",
+      "In the second example, Lautaro wins the first round regardless of which suit is trump, so it is impossible for Fiorella to win both rounds. None of the suits could have been chosen as trump.",
+      "In the third example, \"PERA\" could also have been a valid response."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 1\n2 ROJO 3 NARANJA\n1 AZUL 4 BLANCO",
+      "output": "BLANCO"
+    },
+    {
+      "input": "0 2\n3 PLATA 2 PLATA\n8 BRONCE 1 ORO",
+      "output": "*"
+    },
+    {
+      "input": "4 3\n1 COCO 2 FRUTILLA\n8 FRUTILLA 4 PERA\n4 MANZANA 3 PERA\n100 ANANA 10 ANANA\n5 PERA 5 FRUTILLA\n2 COCO 9 FRUTILLA\n3 FRUTILLA 99 PERA",
+      "output": "FRUTILLA"
+    }
+  ]
+}

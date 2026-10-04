@@ -1,0 +1,38 @@
+{
+  "code": "GYM106414B",
+  "letter": "B",
+  "title": "B. The String Only Contains a, b, and c",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106414/problem/B",
+  "difficulty": "*1100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a string s%%ZSMJ0%% consisting only of the letters a, b, and c. You want to split s%%ZSMJ1%% into contiguous substrings such that the average number of distinct characters over all the substrings is exactly 2%%ZSMJ2%%. For example, here is one way you could split up the string abcabaaaaccbabcc (along with the number of distinct characters in each section):",
+      "![](https://espresso.codeforces.com/be19cb9214b9c1aac8c80ce95175ebab34d1a294.png)",
+      "Since the average number of characters in each substring is 3+1+3+14=2%%ZSMJ3%%, this is a suitable way to split up the string."
+    ],
+    "input": [
+      "Each test consists of multiple test cases.",
+      "The first line of input contains a single integer t%%ZSMJ4%% (1≤t≤104%%ZSMJ5%%) — the number of test cases.",
+      "The first line of each test case contains a single integer n%%ZSMJ6%% (1≤n≤105%%ZSMJ7%%) — the length of s%%ZSMJ8%%. The next line of each test case contains a single string of length n%%ZSMJ9%% consisting only of the letters a, b, and c — the string s%%ZSMJ10%%.",
+      "It is guaranteed that the sum of n%%ZSMJ11%% over all test cases does not exceed 105%%ZSMJ12%%."
+    ],
+    "output": [
+      "For each test case, print YES if there is a valid way to split up the string s%%ZSMJ13%%, and NO otherwise. You may print every letter in any case you want (so, for example, the strings \"yEs\", \"yes\", \"Yes\" and \"YES\" will all be recognized as positive answers)."
+    ],
+    "note": [
+      "The first test case corresponds to the image above.",
+      "In the second test case, the string s=%%ZSMJ14%%abcabc can be divided up into ab, ca, and bc, each of which contains two distinct characters.",
+      "In the third test case, we can prove that there is no suitable partition of s%%ZSMJ15%%.",
+      "In the fourth test case, we can include all of s%%ZSMJ16%% in one substring, since there are two distinct characters in cb."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n16\nabcabaaaaccbabcc\n6\nabcabc\n5\naaaaa\n2\ncb",
+      "output": "YES\nYES\nNO\nYES"
+    }
+  ]
+}

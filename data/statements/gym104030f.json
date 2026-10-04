@@ -1,0 +1,44 @@
+{
+  "code": "GYM104030F",
+  "letter": "F",
+  "title": "F. Foreign Football",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104030/problem/F",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "You are on vacation in a foreign country. This country has a local football league, and you don't know any of the team names. However, you have found a table of all the results from this season, and next to every match is the concatenated names of the two teams that played.",
+      "There are n%%ZSMJ0%% teams in total, named s1,s2,⋯,sn%%ZSMJ1%%. You are given the concatenation si+sj%%ZSMJ2%% for every ordered pair i≠j%%ZSMJ3%%. Find the teams names s1,s2,⋯,sn%%ZSMJ4%%. Team names must be nonempty, but they do not need to be distinct."
+    ],
+    "input": [
+      "The first line of input contains the integer n%%ZSMJ5%% (2≤n≤500%%ZSMJ6%%).",
+      "The following n%%ZSMJ7%% lines each contain n%%ZSMJ8%% strings, the table of concatenated team names. The j%%ZSMJ9%%:th string on the i%%ZSMJ10%%:th of these lines will contain the string si+sj%%ZSMJ11%% if i≠j%%ZSMJ12%%, and \"*\" if i=j%%ZSMJ13%%. The concatenated team names will consist of lower case characters a-z.",
+      "The total number of characters in concatenated team names is at most 106%%ZSMJ14%%."
+    ],
+    "output": [
+      "If there is no solution, print \"NONE\".",
+      "If there is more than one solution, print \"MANY\".",
+      "If there is one unique solution, print \"UNIQUE\", followed by n%%ZSMJ15%% lines containing s1,s2,⋯,sn%%ZSMJ16%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n* difaik difhammarby\naikdif * aikhammarby\nhammarbydif hammarbyaik *",
+      "output": "UNIQUE\ndif\naik\nhammarby"
+    },
+    {
+      "input": "2\n* aaaa\naaaa *",
+      "output": "MANY"
+    },
+    {
+      "input": "3\n* a ab\na * b\nba b *",
+      "output": "NONE"
+    },
+    {
+      "input": "2\n* zz\nzz *",
+      "output": "UNIQUE\nz\nz"
+    }
+  ]
+}

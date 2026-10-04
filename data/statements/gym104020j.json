@@ -1,0 +1,37 @@
+{
+  "code": "GYM104020J",
+  "letter": "J",
+  "title": "J. Jagged Skyline",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104020/problem/J",
+  "difficulty": "*2000",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "The future is here! The Boxes And Parcels Centre has decided to start delivering parcels using drones. Being a BrAinPort Company, naturally the first deliveries will be to Eindhoven.",
+      "To keep the flight logic simple, the first prototype will only deliver to the roofs of the tallest buildings. After take-off, the drone will take a $$$w\\times h$$$ ($$$1 \\leq w\\leq 10\\,000$$$, $$$1\\leq h\\leq 10^{18}$$$) photo of the skyline, as shown in Figure 1. You have been tasked with the problem of determining the location and height of the tallest building in this photo, so that the drone knows where to go.",
+      "You have access to a classifier that can determine for each pixel whether it is \"sky\" or \"building\". You can use this multiple times for different pixels. To avoid unnecessary delays, you may run the classifier at most $$$12\\,000$$$ times.",
+      "It is guaranteed that the buildings will not contain any hovering parts: whenever a pixel that is not on the bottom row of the photo is classified as building, the pixels below it will also be classified as building.",
+      "![](https://espresso.codeforces.com/e415600b72bda53369e257afb0a5bfc7ffd04852.png)",
+      "Interaction",
+      "This is an interactive problem. Your submission will be run against an interactor, which reads from the standard output of your submission and writes to the standard input of your submission. This interaction needs to follow a specific protocol:",
+      "The interactor first sends one line with two integers $$$w$$$ and $$$h$$$ ($$$1\\leq w\\leq 10\\,000$$$, $$$1\\leq h\\leq 10^{18}$$$), the width and height of the photo in pixels.",
+      "Then, your program should make at most $$$12\\,000$$$ queries to find the highest building. Each query is made by printing one line of the form \"? $$$x$$$ $$$y$$$\" ($$$1\\leq x\\leq w$$$, $$$1\\leq y\\leq h$$$). The interactor will respond with either \"sky\" or \"building\", indicating the classification of the pixel at coordinates $$$(x, y)$$$.",
+      "When you have determined the $$$x$$$-coordinate of one of the highest buildings and its height $$$y$$$, print one line of the form \"! $$$x$$$ $$$y$$$\", after which the interaction will stop. Printing the answer does not count as a query.",
+      "The interactor is not adaptive: the skyline is fixed up front, and does not depend on your queries.",
+      "If there are multiple valid solutions, you may output any one of them.",
+      "Make sure you flush the buffer after each write.",
+      "A testing tool is provided to help you develop your solution.",
+      "Using more than $$$12\\,000$$$ queries will result in a wrong answer."
+    ],
+    "input": [],
+    "output": []
+  },
+  "examples": [
+    {
+      "input": "10 6\n\nsky\n\nbuilding\n\nsky\n\nbuilding",
+      "output": "\n? 1 1\n\n? 3 5\n\n? 7 3\n\n? 9 2\n\n! 3 5"
+    }
+  ]
+}

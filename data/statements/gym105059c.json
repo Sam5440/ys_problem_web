@@ -1,0 +1,37 @@
+{
+  "code": "GYM105059C",
+  "letter": "C",
+  "title": "C. SeaTac",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105059/problem/C",
+  "difficulty": "*1700",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Seba and Cam are roommates in Seattle. Seba is a frequent flyer, and Cam often has to drive Seba to and from SeaTac airport. Cam's car gets decent gas mileage, but not enough to be driving Seba around Seattle for free all the time, so Cam asks Seba to reimburse him for the gas. Seba needed a ride to SeaTac today, so Seba agreed to fill up Cam's tank when they arrived at SeaTac. The catch is Seba will be giving Cam directions and can direct him anywhere in Seattle, leaving him none the wiser.",
+      "Seattle can be modeled as an undirected, connected graph with n%%ZSMJ0%% nodes and m%%ZSMJ1%% roads. Seba and Cam's house is at node 1%%ZSMJ2%%, and SeaTac is at node n%%ZSMJ3%%. A path P%%ZSMJ4%% of length k%%ZSMJ5%% is a sequence of k%%ZSMJ6%% nodes such that for all 1≤i≤k−1%%ZSMJ7%%, there is an edge between Pi%%ZSMJ8%% and Pi+1%%ZSMJ9%%. Seba can choose any path P%%ZSMJ10%% such that P1=1%%ZSMJ11%% and Pk=n%%ZSMJ12%%.",
+      "Cam's gas tank can hold g%%ZSMJ13%% gallons of gasoline, and it starts off full. It takes one gallon of gasoline to traverse a single road. Whenever Cam runs out of gas, he has to stop and fill up, paying out of his own pocket. Suppose the gas tank has x%%ZSMJ14%% gallons when Seba and Cam reach SeaTac. Then, Seba will pay for the remaining g−x%%ZSMJ15%% gallons of gasoline.",
+      "Seba wants to direct Cam on a route such that the amount of gas Seba is required to pay for is minimized! Seba is far too busy last minute packing for their trip, so they have tasked you with finding an optimal route through Seattle from their house to SeaTac.",
+      "Cam's car is European, so the capacity of his gas tank is always prime."
+    ],
+    "input": [
+      "The first line contains three integers n%%ZSMJ16%%, m%%ZSMJ17%%, and g%%ZSMJ18%% (2≤n≤2⋅105%%ZSMJ19%%, 1≤m≤2⋅105%%ZSMJ20%%, 2≤g≤2⋅105%%ZSMJ21%%, g%%ZSMJ22%% is prime) — the number of nodes, the number of roads, and the size of Cam's gas tank, respectively.",
+      "Each of the following m%%ZSMJ23%% lines contains two integers ui%%ZSMJ24%% and vi%%ZSMJ25%% (1≤ui,vi≤n%%ZSMJ26%%, ui≠vi%%ZSMJ27%%) — i%%ZSMJ28%%th undirected edge connecting nodes ui%%ZSMJ29%% and vi%%ZSMJ30%%.",
+      "It is guaranteed that the graph is connected and that there is at most one edge between any pair of nodes."
+    ],
+    "output": [
+      "Output the number of gallons of gasoline that Seba has to pay for."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 5 2\n1 2\n1 3\n2 4\n3 4\n4 5",
+      "output": "1"
+    },
+    {
+      "input": "4 3 3\n1 2\n2 3\n3 4",
+      "output": "0"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "code": "GYM106020C",
+  "letter": "C",
+  "title": "C. GCD on Tree",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106020/problem/C",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Given a tree[6]%%ZSMJ0%% with n%%ZSMJ1%% vertices, where the i%%ZSMJ2%%-th vertex is labeled with a positive integer ai%%ZSMJ3%%. A tree is eggy when the greatest common divisor of all its vertex-values is equal to 1%%ZSMJ4%%.",
+      "You have to process q%%ZSMJ5%% queries as follows:",
+      "ix%%ZSMJ6%%: update the value of ith%%ZSMJ7%% vertex by assigning ai=x%%ZSMJ8%%.",
+      "After each update, check if there's any edge in the tree that, when removed, splits the tree into two trees, where at least one of those trees is eggy."
+    ],
+    "input": [
+      "The first line contains a single integer n%%ZSMJ9%% (2≤n≤105%%ZSMJ10%%) — denoting the number of vertices in the tree.",
+      "The second line contains n%%ZSMJ11%% integers a1,a2,…,an%%ZSMJ12%% (1≤ai≤1018%%ZSMJ13%%) — representing the values of the vertices.",
+      "Each of the following n−1%%ZSMJ14%% lines contains two integers u%%ZSMJ15%% and v%%ZSMJ16%% (1≤u,v≤n%%ZSMJ17%%, u≠v%%ZSMJ18%%) — denoting the indices of the vertices connected by an edge.",
+      "The next line contains a single integer q%%ZSMJ19%% (1≤q≤105%%ZSMJ20%%) — representing the number of queries.",
+      "Each of the next q%%ZSMJ21%% lines contains two integers i%%ZSMJ22%% and x%%ZSMJ23%% (1≤i≤n,1≤x≤1018%%ZSMJ24%%).",
+      "It is guaranteed that the given edges form a tree."
+    ],
+    "output": [
+      "After each query, print \"YES\" (without quotes) if there's any valid edge in the tree, and \"NO\" (without quotes) otherwise.",
+      "You can output the answer in any case (upper or lower). For example, the strings \"yEs\", \"yes\", \"Yes\", and \"YES\" will be recognized as positive responses."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n2 2\n1 2\n4\n1 3\n2 1\n1 2\n2 2",
+      "output": "No\nYes\nYes\nNo"
+    },
+    {
+      "input": "3\n6 2 3\n1 2\n1 3\n5\n2 6\n1 2\n1 3\n3 5\n3 6",
+      "output": "No\nYes\nNo\nYes\nNo"
+    }
+  ]
+}

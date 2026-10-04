@@ -1,0 +1,40 @@
+{
+  "code": "GYM105335I",
+  "letter": "I",
+  "title": "I. Ideal Permutation Pairing",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105335/problem/I",
+  "difficulty": "*1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "A permutation of size N%%ZSMJ0%% is a sequence of N%%ZSMJ1%% positive integers containing the numbers 1%%ZSMJ2%% to N%%ZSMJ3%% where each number appears exactly once in the sequence. For example, [1,4,5,3,2]%%ZSMJ4%% is a permutation of size 5%%ZSMJ5%%, while [1,1,4,3,5]%%ZSMJ6%% and [1,6,2,3,4]%%ZSMJ7%% are not.",
+      "We can compare two permutations using lexicographical order. For two permutations p%%ZSMJ8%% and p%%ZSMJ9%% of the same size N%%ZSMJ10%% where p=[a1,a2,...,aN]%%ZSMJ11%% and q=[b1,b2,...,bN]%%ZSMJ12%%, we define p%%ZSMJ13%% is smaller than q%%ZSMJ14%% if and only if there exists an index i%%ZSMJ15%% such that aj=bj%%ZSMJ16%% for every j<i%%ZSMJ17%% and ai<bi%%ZSMJ18%%. For example, [1,3,4,2,5]%%ZSMJ19%% is ordered before [1,3,5,2,4]%%ZSMJ20%%.",
+      "Two permutations p%%ZSMJ21%% and q%%ZSMJ22%% of size N%%ZSMJ23%% are considered an ideal pair if, when all N!%%ZSMJ24%% permutations of size N%%ZSMJ25%% are arranged in a circle based on lexicographic order, permutation p%%ZSMJ26%% and permutation q%%ZSMJ27%% are positioned directly opposite each other in the circle.",
+      "![](https://espresso.codeforces.com/1e576bcaaeb4591101eb95ee1370810851ac581e.png)",
+      "Given a permutation p%%ZSMJ29%%, your task is to identify the permutation q%%ZSMJ30%% that together forms an ideal pair."
+    ],
+    "input": [
+      "The first line contains one integer N%%ZSMJ31%% (2≤N≤1,000,000)%%ZSMJ32%% — size of the permutation.",
+      "The second line contains N%%ZSMJ33%% distinct integers from 1%%ZSMJ34%% to N%%ZSMJ35%% — the given permutation p%%ZSMJ36%%."
+    ],
+    "output": [
+      "One line contains N%%ZSMJ37%% distinct integers that are the permutation that forms an ideal pair with permutation p%%ZSMJ38%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 2 3",
+      "output": "2 3 1"
+    },
+    {
+      "input": "4\n3 2 1 4",
+      "output": "1 3 2 4"
+    },
+    {
+      "input": "9\n7 4 6 9 5 3 8 2 1",
+      "output": "2 9 6 8 5 4 7 3 1"
+    }
+  ]
+}

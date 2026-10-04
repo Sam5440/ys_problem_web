@@ -1,0 +1,46 @@
+{
+  "code": "CF1176C",
+  "letter": "C",
+  "title": "C. Lose it!",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1176/C",
+  "difficulty": "*1400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array a%%ZSMJ0%% consisting of n%%ZSMJ1%% integers. Each ai%%ZSMJ2%% is one of the six following numbers: 4,8,15,16,23,42%%ZSMJ3%%.",
+      "Your task is to remove the minimum number of elements to make this array good.",
+      "An array of length k%%ZSMJ4%% is called good if k%%ZSMJ5%% is divisible by 6%%ZSMJ6%% and it is possible to split it into k6%%ZSMJ7%% subsequences 4,8,15,16,23,42%%ZSMJ8%%.",
+      "Examples of good arrays:",
+      "[4,8,15,16,23,42]%%ZSMJ9%% (the whole array is a required sequence);",
+      "[4,8,4,15,16,8,23,15,16,42,23,42]%%ZSMJ10%% (the first sequence is formed from first, second, fourth, fifth, seventh and tenth elements and the second one is formed from remaining elements);",
+      "[]%%ZSMJ11%% (the empty array is good).",
+      "Examples of bad arrays:",
+      "[4,8,15,16,42,23]%%ZSMJ12%% (the order of elements should be exactly 4,8,15,16,23,42%%ZSMJ13%%);",
+      "[4,8,15,16,23,42,4]%%ZSMJ14%% (the length of the array is not divisible by 6%%ZSMJ15%%);",
+      "[4,8,15,16,23,42,4,8,15,16,23,23]%%ZSMJ16%% (the first sequence can be formed from first six elements but the remaining array cannot form the required sequence)."
+    ],
+    "input": [
+      "The first line of the input contains one integer n%%ZSMJ17%% (1≤n≤5⋅105%%ZSMJ18%%) — the number of elements in a%%ZSMJ19%%.",
+      "The second line of the input contains n%%ZSMJ20%% integers a1,a2,…,an%%ZSMJ21%% (each ai%%ZSMJ22%% is one of the following numbers: 4,8,15,16,23,42%%ZSMJ23%%), where ai%%ZSMJ24%% is the i%%ZSMJ25%%-th element of a%%ZSMJ26%%."
+    ],
+    "output": [
+      "Print one integer — the minimum number of elements you have to remove to obtain a good array."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n4 8 15 16 23",
+      "output": "5"
+    },
+    {
+      "input": "12\n4 8 4 15 16 8 23 15 16 42 23 42",
+      "output": "0"
+    },
+    {
+      "input": "15\n4 8 4 8 15 16 8 16 23 15 16 4 42 23 42",
+      "output": "3"
+    }
+  ]
+}

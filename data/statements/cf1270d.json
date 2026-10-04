@@ -1,0 +1,53 @@
+{
+  "code": "CF1270D",
+  "letter": "D",
+  "title": "D. Strange Device",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1270/D",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This problem is interactive.",
+      "We have hidden an array a%%ZSMJ0%% of n%%ZSMJ1%% pairwise different numbers (this means that no two numbers are equal). You can get some information about this array using a new device you just ordered on Amazon.",
+      "This device can answer queries of the following form: in response to the positions of k%%ZSMJ2%% different elements of the array, it will return the position and value of the m%%ZSMJ3%%-th among them in the ascending order.",
+      "Unfortunately, the instruction for the device was lost during delivery. However, you remember k%%ZSMJ4%%, but don't remember m%%ZSMJ5%%. Your task is to find m%%ZSMJ6%% using queries to this device.",
+      "You can ask not more than n%%ZSMJ7%% queries.",
+      "Note that the array a%%ZSMJ8%% and number m%%ZSMJ9%% are fixed before the start of the interaction and don't depend on your queries. In other words, interactor is not adaptive.",
+      "Note that you don't have to minimize the number of queries, and you don't need to guess array a%%ZSMJ10%%. You just have to guess m%%ZSMJ11%%."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ12%% and k%%ZSMJ13%% (1≤k<n≤500%%ZSMJ14%%) — the length of the array and the number of the elements in the query.",
+      "It is guaranteed that number m%%ZSMJ15%% satisfies 1≤m≤k%%ZSMJ16%%, elements a1,a2,…,an%%ZSMJ17%% of the array satisfy 0≤ai≤109%%ZSMJ18%%, and all of them are different.",
+      "You begin the interaction by reading n%%ZSMJ19%% and k%%ZSMJ20%%.",
+      "To ask a question about elements on positions x1,x2,…,xk%%ZSMJ21%%, in a separate line output",
+      "?%%ZSMJ22%% x1%%ZSMJ23%% x2%%ZSMJ24%% x3%%ZSMJ25%% ... xk%%ZSMJ26%%",
+      "Numbers in the query have to satisfy 1≤xi≤n%%ZSMJ27%%, and all xi%%ZSMJ28%% have to be different. Don't forget to 'flush', to get the answer.",
+      "In response, you will receive two integers pos%%ZSMJ29%% and apos%%ZSMJ30%% — the position in the array a%%ZSMJ31%% of the m%%ZSMJ32%%-th in ascending order element among ax1,ax2,…,axk%%ZSMJ33%%, and the element on this position.",
+      "In case your query is invalid or you asked more than n%%ZSMJ34%% queries, the program will print −1%%ZSMJ35%% and will finish interaction. You will receive a Wrong answer verdict. Make sure to exit immediately to avoid getting other verdicts.",
+      "When you determine m%%ZSMJ36%%, output",
+      "!%%ZSMJ37%% m%%ZSMJ38%%",
+      "After printing a query do not forget to output end of line and flush the output. Otherwise, you will get Idleness limit exceeded. To do this, use:",
+      "fflush(stdout) or cout.flush() in C++;",
+      "System.out.flush() in Java;",
+      "flush(output) in Pascal;",
+      "stdout.flush() in Python;",
+      "see documentation for other languages.",
+      "Hack format",
+      "For the hacks use the following format:",
+      "The first line has to contain three integers n,k,m%%ZSMJ39%% (1≤m≤k<n≤500%%ZSMJ40%%) — the length of the array, number of elements in the query, and which in the ascending order number the device returns.",
+      "In the next line output n%%ZSMJ41%% integers a1,a2,…,an%%ZSMJ42%% (0≤ai≤109%%ZSMJ43%%) — the elements of the array. They have to be pairwise different."
+    ],
+    "output": [],
+    "note": [
+      "In the example, n=4%%ZSMJ44%%, k=3%%ZSMJ45%%, m=3%%ZSMJ46%%, a=[2,0,1,9]%%ZSMJ47%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 3\n4 9\n4 9\n4 9\n1 2",
+      "output": "? 2 3 4\n? 1 3 4\n? 1 2 4\n? 1 2 3\n! 3"
+    }
+  ]
+}

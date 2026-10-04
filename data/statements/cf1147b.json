@@ -1,0 +1,48 @@
+{
+  "code": "CF1147B",
+  "letter": "B",
+  "title": "B. Chladni Figure",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1147/B",
+  "difficulty": "1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Inaka has a disc, the circumference of which is n%%ZSMJ0%% units. The circumference is equally divided by n%%ZSMJ1%% points numbered clockwise from 1%%ZSMJ2%% to n%%ZSMJ3%%, such that points i%%ZSMJ4%% and i+1%%ZSMJ5%% (1≤i<n%%ZSMJ6%%) are adjacent, and so are points n%%ZSMJ7%% and 1%%ZSMJ8%%.",
+      "There are m%%ZSMJ9%% straight segments on the disc, the endpoints of which are all among the aforementioned n%%ZSMJ10%% points.",
+      "Inaka wants to know if her image is rotationally symmetrical, i.e. if there is an integer k%%ZSMJ11%% (1≤k<n%%ZSMJ12%%), such that if all segments are rotated clockwise around the center of the circle by k%%ZSMJ13%% units, the new image will be the same as the original one."
+    ],
+    "input": [
+      "The first line contains two space-separated integers n%%ZSMJ14%% and m%%ZSMJ15%% (2≤n≤100000%%ZSMJ16%%, 1≤m≤200000%%ZSMJ17%%) — the number of points and the number of segments, respectively.",
+      "The i%%ZSMJ18%%-th of the following m%%ZSMJ19%% lines contains two space-separated integers ai%%ZSMJ20%% and bi%%ZSMJ21%% (1≤ai,bi≤n%%ZSMJ22%%, ai≠bi%%ZSMJ23%%) that describe a segment connecting points ai%%ZSMJ24%% and bi%%ZSMJ25%%.",
+      "It is guaranteed that no segments coincide."
+    ],
+    "output": [
+      "Output one line — \"Yes\" if the image is rotationally symmetrical, and \"No\" otherwise (both excluding quotation marks).",
+      "You can output each letter in any case (upper or lower)."
+    ],
+    "note": [
+      "The first two examples are illustrated below. Both images become the same as their respective original ones after a clockwise rotation of 120%%ZSMJ26%% degrees around the center.",
+      "![](https://espresso.codeforces.com/6e3900bb62e506a0e30bafab1154ac2ebcbab33b.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "12 6\n1 3\n3 7\n5 7\n7 11\n9 11\n11 3",
+      "output": "Yes"
+    },
+    {
+      "input": "9 6\n4 5\n5 6\n7 8\n8 9\n1 2\n2 3",
+      "output": "Yes"
+    },
+    {
+      "input": "10 3\n1 2\n3 2\n7 2",
+      "output": "No"
+    },
+    {
+      "input": "10 2\n1 6\n2 7",
+      "output": "Yes"
+    }
+  ]
+}

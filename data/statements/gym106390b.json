@@ -1,0 +1,39 @@
+{
+  "code": "GYM106390B",
+  "letter": "B",
+  "title": "B. Save the world? Save the cat!",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106390/problem/B",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Oh no! Amy the pink cat is stuck in a time loop! To save her, Rover the black cat has to make a journey to The Origin to defeat Aleph-1 the evil cat!",
+      "Define a multiverse as a network of %%ZSMJ0%% universes numbered from %%ZSMJ1%% to %%ZSMJ2%%, with The Origin located at node %%ZSMJ3%%. These universes are connected by a set of %%ZSMJ4%% undirected tunnels, each taking %%ZSMJ5%% time to traverse. It is guarantee that all universes belongs to the same component (in other words, a multiverse is a tree).",
+      "At the start of his journey, Rover can choose to teleport to any universe %%ZSMJ6%%. Define %%ZSMJ7%% as the number of tunnel Rover has to traverse from universe %%ZSMJ8%% to get to The Origin. At any point during his journey, if Rover is in universe %%ZSMJ9%%, he can perform a Super Jump and teleport to any universe %%ZSMJ10%% such that %%ZSMJ11%%. Super Jump cost no time and can only be performed once during the entire journey.",
+      "Unfortunately, Rover the black cat is not good at math. Therefore, he asked you to find the minimum time needed to traverse from universe %%ZSMJ12%% to The Origin satisfying the given constraint for every starting universe %%ZSMJ13%% from %%ZSMJ14%% to %%ZSMJ15%%."
+    ],
+    "input": [
+      "Each test consists of multiple test cases. The first line contains an integer t (%%ZSMJ16%%) — the number of test cases. Then follows the description of the test cases.",
+      "The first line of each test case contains a single integer %%ZSMJ17%% (%%ZSMJ18%%), denoting the number of universes.",
+      "Each of the following %%ZSMJ19%% lines contains three integers %%ZSMJ20%%, %%ZSMJ21%%, %%ZSMJ22%% (%%ZSMJ23%%), denoting the endpoints and the time needed to traverse the tunnel. It's guaranteed that all universes are connected via tunnels."
+    ],
+    "output": [
+      "For each testcases, print %%ZSMJ24%% integer %%ZSMJ25%%, denoting the minimum time taken to get from universe %%ZSMJ26%% to The Origin if Rover starts his journey at universe %%ZSMJ27%%."
+    ],
+    "note": [
+      "In the first testcase:",
+      "If Rover starts in universe %%ZSMJ28%%, it is optimal to perform a Super Jump from universe %%ZSMJ29%% to universe %%ZSMJ30%%.",
+      "In the second testcase:",
+      "if Rover starts in universe %%ZSMJ31%%, it is optimal to perform a Super Jump from universe %%ZSMJ32%% to universe %%ZSMJ33%%.",
+      "If Rover starts in universe %%ZSMJ34%%, it is optimal to perform a Super Jump from universe %%ZSMJ35%% to universe %%ZSMJ36%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n3\n1 2 67\n1 3 36\n5\n1 2 3\n2 3 6\n1 4 2\n4 5 10\n5\n1 2 3\n2 3 3\n1 4 2\n4 5 10",
+      "output": "0 36 36 \n0 2 8 2 9 \n0 2 5 2 6"
+    }
+  ]
+}

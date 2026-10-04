@@ -1,0 +1,38 @@
+{
+  "code": "GYM106015K",
+  "letter": "K",
+  "title": "K. Roads of the Goose",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106015/problem/K",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The dense, whispering woods of the Unknown stretched endlessly before the three. After a particularly perplexing encounter with a musical grumpkin, they found themselves utterly lost. \"If only Adham were here,\" sighed Omar, staring at a tangle of gnarled roots that looked suspiciously like a forgotten road. \"He always knows the shortest path.\"",
+      "Just then, a peculiar figure emerged from the shadows – Adham, perched precariously on the back of a majestic, shimmering goose named Halzoom! Halzoom, it turns out, wasn't just any goose; she possessed an innate, almost magical, understanding of the forest's pathways.",
+      "Adham, ever the strategist, explained their predicament. The forest, he revealed, was a vast network of N%%ZSMJ0%% quaint, peculiar towns, connected by M%%ZSMJ1%% winding roads. Each road i%%ZSMJ2%% connected two towns, ui%%ZSMJ3%% and vi%%ZSMJ4%%, and took a specific number of days, wi%%ZSMJ5%%, to traverse. Halzoom's magic wasn't about changing the speed of roads, but about finding the optimal set of paths.",
+      "However, there was a catch. Halzoom's magic only worked if they could choose exactly N−1%%ZSMJ6%% roads from the existing M%%ZSMJ7%% roads to form a specific type of travel network. This chosen set of N−1%%ZSMJ8%% roads, which Adham calls a \"Halzoom Highway\", must satisfy two crucial conditions:",
+      "The chosen roads must form a tree on the N%%ZSMJ9%% towns. This means all towns must be connected, and there should be no cycles.",
+      "For every pair of towns u,v%%ZSMJ10%%, the shortest-travel-time between them on the \"Halzoom Highway\" (using the original wi%%ZSMJ11%% days for the selected roads) must be exactly equal to the shortest-travel-time between them in the original forest (using all M%%ZSMJ12%% roads and their original wi%%ZSMJ13%% days).",
+      "Adham, with a glint in his eye, turned to his friends. \"Can you help me figure this out? We need to know if it's even possible to construct such a 'Halzoom Highway'!\""
+    ],
+    "input": [
+      "The first line contains two integers N%%ZSMJ14%% , M%%ZSMJ15%% (1≤N≤2⋅105,N−1≤M≤min(2⋅105, n⋅(n−1)2)%%ZSMJ16%%).",
+      "Then M%%ZSMJ17%% lines follow. The ith%%ZSMJ18%% line contains 3 integers ui%%ZSMJ19%% , vi%%ZSMJ20%% (1≤ui,vi≤n)%%ZSMJ21%% and wi%%ZSMJ22%% (1≤wi≤109)%%ZSMJ23%%."
+    ],
+    "output": [
+      "Print \"YES\" if there exists a tree that meets the above conditions , otherwise print \"NO\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n1 2 1\n3 4 11\n1 3 4\n2 4 3",
+      "output": "YES"
+    },
+    {
+      "input": "4 4\n1 2 1\n3 4 2\n1 3 4\n2 4 3",
+      "output": "NO"
+    }
+  ]
+}

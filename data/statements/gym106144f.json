@@ -1,0 +1,39 @@
+{
+  "code": "GYM106144F",
+  "letter": "F",
+  "title": "F. Jenga",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106144/problem/F",
+  "difficulty": "*1600",
+  "timeLimit": "2 s",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Jenga is a game played by two or more players. They start with a tower of n%%ZSMJ0%% rows, each row consists of 3%%ZSMJ1%% rectangular blocks. Then they remove blocks one by one until the tower falls. The player which breaks the tower loses. Removed blocks are usually placed on top of the tower forming the new row; however, in this problem, we'll consider a modified version of the game: removed blocks are put aside and are never returned to the tower.",
+      "![](https://espresso.codeforces.com/0cd058b5c91e25dbf01e4cf721d365136479b324.png)",
+      "Monocarp and Polycarp play Jenga a lot. They noticed that a tower row remains stable if it contains either the two side blocks, or the central block. Of course, if there are any additional blocks in the row, it is also stable. Thus, rows xxx, x.x, xx., .xx, .x. are stable, while rows x.., ..x and ... are unstable. Here and further on, the character 'x' depicts a block which is not removed yet, and '.' represents an empty space after removing a block. If at least one row (even the topmost one) in the tower becomes unstable, the tower immediately falls.",
+      "Currently, Monocarp and Polycarp have a tower of n%%ZSMJ2%% rows, where some blocks may already be removed (but each row is stable). It is Monocarp's turn now. Given the state of the tower (which blocks are removed and which are still present), you have to determine who wins, assuming both players play optimally."
+    ],
+    "input": [
+      "The first line contains one integer t%%ZSMJ3%% (1≤t≤5⋅104%%ZSMJ4%%) — the number of test cases.",
+      "The first line of each test case contains one integer n%%ZSMJ5%% (1≤n≤5⋅104%%ZSMJ6%%) — the number of rows in the tower.",
+      "Then, n%%ZSMJ7%% lines follow, the i%%ZSMJ8%%-th of them contains 6%%ZSMJ9%% characters in the format ***=== or ===***, where each '*' is either 'x' or '.' — the state of the i%%ZSMJ10%%-th row from the top. Rows ***=== and ===*** alternate, describing the Jenga tower.",
+      "Additional constraints on the input: the sum of n%%ZSMJ11%% over all test cases does not exceed 5⋅104%%ZSMJ12%%, and each row of the tower is stable."
+    ],
+    "output": [
+      "For each test case, print Monocarp if Monocarp wins; otherwise, print Polycarp."
+    ],
+    "note": [
+      "In the first test case, Monocarp should remove the central block from the bottom row. After this, it is possible to remove only two blocks from the Jenga tower: the first block from the first row and the third block from the third row. If any other block is removed, the tower falls. Whatever block Polycarp removes, Monocarp takes the other one, leaving Polycarp with no choice.",
+      "In the second test case, no blocks can be removed without breaking Jenga. So, Polycarp wins.",
+      "In the third test case, Monocarp has a winning strategy.",
+      "The fourth test case represents the configuration shown in the picture."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n4\nxx.===\n===x.x\n.xx===\n===xxx\n2\n===x.x\n.x.===\n3\n===xxx\nxxx===\n===xxx\n10\n===xxx\nx.x===\n===xxx\n.xx===\n===xxx\nxx.===\n===xxx\nx.x===\n===xxx\nxxx===",
+      "output": "Monocarp\nPolycarp\nMonocarp\nPolycarp"
+    }
+  ]
+}

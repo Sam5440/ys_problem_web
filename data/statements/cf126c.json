@@ -1,0 +1,32 @@
+{
+  "code": "CF126C",
+  "letter": "C",
+  "title": "C. E-reader Display",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/126/C",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "After years of hard work scientists invented an absolutely new e-reader display. The new display has a larger resolution, consumes less energy and its production is cheaper. And besides, one can bend it. The only inconvenience is highly unusual management. For that very reason the developers decided to leave the e-readers' software to programmers.",
+      "The display is represented by n × n square of pixels, each of which can be either black or white. The display rows are numbered with integers from 1 to n upside down, the columns are numbered with integers from 1 to n from the left to the right. The display can perform commands like \"x, y\". When a traditional display fulfills such command, it simply inverts a color of (x, y), where x is the row number and y is the column number. But in our new display every pixel that belongs to at least one of the segments (x, x) - (x, y) and (y, y) - (x, y) (both ends of both segments are included) inverts a color.",
+      "For example, if initially a display 5 × 5 in size is absolutely white, then the sequence of commands (1, 4), (3, 5), (5, 1), (3, 3) leads to the following changes:",
+      "![](https://espresso.codeforces.com/65564c00ccc3e99fc733fd178651e2f4f920f62a.png)",
+      "You are an e-reader software programmer and you should calculate minimal number of commands needed to display the picture. You can regard all display pixels as initially white."
+    ],
+    "input": [
+      "The first line contains number n (1 ≤ n ≤ 2000).",
+      "Next n lines contain n characters each: the description of the picture that needs to be shown. \"0\" represents the white color and \"1\" represents the black color."
+    ],
+    "output": [
+      "Print one integer z — the least number of commands needed to display the picture."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n01110\n10010\n10001\n10011\n11110",
+      "output": "4"
+    }
+  ]
+}

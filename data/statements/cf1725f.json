@@ -1,0 +1,50 @@
+{
+  "code": "CF1725F",
+  "letter": "F",
+  "title": "F. Field Photography",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1725/F",
+  "difficulty": "2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Pak Chanek is traveling to Manado. It turns out that OSN (Indonesian National Scientific Olympiad) 2019 is being held. The contestants of OSN 2019 are currently lining up in a field to be photographed. The field is shaped like a grid of size N×10100%%ZSMJ0%% with N%%ZSMJ1%% rows and 10100%%ZSMJ2%% columns. The rows are numbered from 1%%ZSMJ3%% to N%%ZSMJ4%% from north to south, the columns are numbered from 1%%ZSMJ5%% to 10100%%ZSMJ6%% from west to east. The tile in row r%%ZSMJ7%% and column c%%ZSMJ8%% is denoted as (r,c)%%ZSMJ9%%.",
+      "There are N%%ZSMJ10%% provinces that participate in OSN 2019. Initially, each contestant who represents province i%%ZSMJ11%% stands in tile (i,p)%%ZSMJ12%% for each p%%ZSMJ13%% satisfying Li≤p≤Ri%%ZSMJ14%%. So, we can see that there are Ri−Li+1%%ZSMJ15%% contestants who represent province i%%ZSMJ16%%.",
+      "Pak Chanek has a variable Z%%ZSMJ17%% that is initially equal to 0%%ZSMJ18%%. In one operation, Pak Chanek can choose a row i%%ZSMJ19%% and a positive integer k%%ZSMJ20%%. Then, Pak Chanek will do one of the two following possibilities:",
+      "Move all contestants in row i%%ZSMJ21%% exactly k%%ZSMJ22%% tiles to the west. In other words, a contestant who is in (i,p)%%ZSMJ23%% is moved to (i,p−k)%%ZSMJ24%%.",
+      "Move all contestants in row i%%ZSMJ25%% exactly k%%ZSMJ26%% tiles to the east. In other words, a contestant who is in (i,p)%%ZSMJ27%% is moved to (i,p+k)%%ZSMJ28%%.",
+      "After each operation, the value of Z%%ZSMJ29%% will change into Z OR k%%ZSMJ30%%, with OR%%ZSMJ31%% being the bitwise OR operation. Note that Pak Chanek can do operations to the same row more than once. Also note that Pak Chanek is not allowed to move contestants out of the grid.",
+      "There are Q%%ZSMJ32%% questions. For the j%%ZSMJ33%%-th question, you are given a positive integer Wj%%ZSMJ34%%, Pak Chanek must do zero or more operations so that the final value of Z%%ZSMJ35%% is exactly Wj%%ZSMJ36%%. Define M%%ZSMJ37%% as the biggest number such that after all operations, there is at least one column that contains exactly M%%ZSMJ38%% contestants. For each question, you must find the biggest possible M%%ZSMJ39%% for all sequences of operations that can be done by Pak Chanek. Note that the operations done by Pak Chanek for one question do not carry over to other questions."
+    ],
+    "input": [
+      "The first line contains a single integer N%%ZSMJ40%% (1≤N≤105%%ZSMJ41%%) — the number of rows in the grid and also the number of provinces that participate in OSN 2019.",
+      "The i%%ZSMJ42%%-th of the next N%%ZSMJ43%% lines contains two integers Li%%ZSMJ44%% and Ri%%ZSMJ45%% (1≤Li≤Ri≤109%%ZSMJ46%%) describing the positions of the contestants who represent province i%%ZSMJ47%%.",
+      "The next line contains a single integer Q%%ZSMJ48%% (1≤Q≤105%%ZSMJ49%%) — the number of questions.",
+      "The j%%ZSMJ50%%-th of the next Q%%ZSMJ51%% lines contains a single integer Wj%%ZSMJ52%% (1≤Wj≤109%%ZSMJ53%%) — the required final value of Z%%ZSMJ54%% for the j%%ZSMJ55%%-th question."
+    ],
+    "output": [
+      "Output Q%%ZSMJ56%% lines, with the j%%ZSMJ57%%-th line containing an integer that is the answer to the j%%ZSMJ58%%-th question."
+    ],
+    "note": [
+      "For the 1%%ZSMJ59%%-st question, Pak Chanek can do the following operations to get M=2%%ZSMJ60%%:",
+      "Move all contestants in row 2%%ZSMJ61%% to the east by 4%%ZSMJ62%% tiles. Z%%ZSMJ63%% changes into 0 OR 4=4%%ZSMJ64%%.",
+      "Move all contestants in row 1%%ZSMJ65%% to the east by 12%%ZSMJ66%% tiles. Z%%ZSMJ67%% changes into 4 OR 12=12%%ZSMJ68%%.",
+      "Now, columns 14%%ZSMJ69%% and 15%%ZSMJ70%% each contains exactly 2%%ZSMJ71%% contestants.",
+      "For the 2%%ZSMJ72%%-nd question, Pak Chanek can do the following operations to get M=3%%ZSMJ73%%:",
+      "Move all contestants in row 3%%ZSMJ74%% to the east by 4%%ZSMJ75%% tiles. Z%%ZSMJ76%% changes into 0 OR 4=4%%ZSMJ77%%.",
+      "Move all contestants in row 3%%ZSMJ78%% to the west by 1%%ZSMJ79%% tiles. Z%%ZSMJ80%% changes into 4 OR 1=5%%ZSMJ81%%.",
+      "Move all contestants in row 1%%ZSMJ82%% to the east by 5%%ZSMJ83%% tiles. Z%%ZSMJ84%% changes into 5 OR 5=5%%ZSMJ85%%.",
+      "Move all contestants in row 1%%ZSMJ86%% to the east by 5%%ZSMJ87%% tiles. Z%%ZSMJ88%% changes into 5 OR 5=5%%ZSMJ89%%.",
+      "Now, column 11%%ZSMJ90%% contains exactly 3%%ZSMJ91%% contestants.",
+      "The following is an illustration of the example operations for the 2%%ZSMJ92%%-nd question.",
+      "![](https://espresso.codeforces.com/2d17b6eb6f7ef1e4b0d3777543772e736d20b7fa.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 5\n10 11\n8 8\n2\n12\n5",
+      "output": "2\n3"
+    }
+  ]
+}

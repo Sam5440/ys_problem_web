@@ -1,0 +1,58 @@
+{
+  "code": "CF2206J",
+  "letter": "J",
+  "title": "J. Worldwide Playlist",
+  "contest": null,
+  "url": "https://codeforces.com/contest/2206/problem/J",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are planning a trip around the world. For this trip, you have installed a music app containing n%%ZSMJ0%% songs, numbered from 1%%ZSMJ1%% to n%%ZSMJ2%%.",
+      "Initially, the app generates a playlist for these n%%ZSMJ3%% songs in the form of a permutation of 1,2,…,n%%ZSMJ4%%, denoted by a1,a2,…,an%%ZSMJ5%%. It plays the n%%ZSMJ6%% songs in the order a1,a2,…,an%%ZSMJ7%%: song a1%%ZSMJ8%% plays first, song a2%%ZSMJ9%% plays second, and so on. The playlist is infinite: each time after song an%%ZSMJ10%% plays, it starts all over from song a1%%ZSMJ11%%.",
+      "The next song starts playing automatically when the current song finishes. Before a song finishes, you may instead press a skip button to immediately jump to the next song in the playlist.",
+      "You have a desired permutation of the n%%ZSMJ12%% songs, denoted by b1,b2,…,bn%%ZSMJ13%%. This means that you want to listen to n%%ZSMJ14%% songs in full in the order of b1,b2,…,bn%%ZSMJ15%% by strategically pressing the skip button zero or more times. In other words, you want the first song you listen to in full (not skipped) to be song b1%%ZSMJ16%%, the second to be song b2%%ZSMJ17%%, and so on, until the n%%ZSMJ18%%-th is song bn%%ZSMJ19%%. After listening to these n%%ZSMJ20%% songs in full, you stop listening.",
+      "You use this playlist for d%%ZSMJ21%% days. Between each pair of consecutive days, you update the permutations using three integers c%%ZSMJ22%%, x%%ZSMJ23%%, and y%%ZSMJ24%% as follows:",
+      "If c=1%%ZSMJ25%%, then you swap ax%%ZSMJ26%% and ay%%ZSMJ27%%.",
+      "If c=2%%ZSMJ28%%, then you swap bx%%ZSMJ29%% and by%%ZSMJ30%%.",
+      "Note that the effect of each update persists to subsequent days.",
+      "For each day, assuming you start listening from song a1%%ZSMJ31%%, determine the minimum number of times you need to press the skip button so that the songs you listen to in full are b1,b2,…,bn%%ZSMJ32%% in this order."
+    ],
+    "input": [
+      "The first line of input contains two integers n%%ZSMJ33%% and d%%ZSMJ34%% (2≤n≤200000%%ZSMJ35%%; 2≤d≤200000%%ZSMJ36%%).",
+      "The second line contains n%%ZSMJ37%% integers representing the initial values of a1,a2,…,an%%ZSMJ38%% (1≤ai≤n%%ZSMJ39%%; ai≠aj%%ZSMJ40%% for all i≠j%%ZSMJ41%%).",
+      "The third line contains n%%ZSMJ42%% integers representing the initial values of b1,b2,…,bn%%ZSMJ43%% (1≤bi≤n%%ZSMJ44%%; bi≠bj%%ZSMJ45%% for all i≠j%%ZSMJ46%%).",
+      "The k%%ZSMJ47%%-th of the next d−1%%ZSMJ48%% lines contains three integers c%%ZSMJ49%%, x%%ZSMJ50%%, and y%%ZSMJ51%% (c∈{1,2}%%ZSMJ52%%; 1≤x<y≤n%%ZSMJ53%%), representing the update between the k%%ZSMJ54%%-th and (k+1)%%ZSMJ55%%-th days."
+    ],
+    "output": [
+      "Output d%%ZSMJ56%% lines, where the k%%ZSMJ57%%-th line should contain the minimum number of skips for the k%%ZSMJ58%%-th day."
+    ],
+    "note": [
+      "Explanation for the sample input/output #1",
+      "On the first day, (a1,…,a4)=(1,4,2,3)%%ZSMJ59%% and (b1,…,b4)=(3,2,1,4)%%ZSMJ60%%. You can listen to these songs in full in the desired order with 6%%ZSMJ61%% skips:",
+      "Song 1%%ZSMJ62%% plays. Skip this song.",
+      "Song 4%%ZSMJ63%% plays. Skip this song.",
+      "Song 2%%ZSMJ64%% plays. Skip this song.",
+      "Song 3%%ZSMJ65%% plays. Listen to this song in full.",
+      "Song 1%%ZSMJ66%% plays. Skip this song.",
+      "Song 4%%ZSMJ67%% plays. Skip this song.",
+      "Song 2%%ZSMJ68%% plays. Listen to this song in full.",
+      "Song 3%%ZSMJ69%% plays. Skip this song.",
+      "Song 1%%ZSMJ70%% plays. Listen to this song in full.",
+      "Song 4%%ZSMJ71%% plays. Listen to this song in full.",
+      "On the second day, the permutations are (a1,…,a4)=(1,4,3,2)%%ZSMJ72%% and (b1,…,b4)=(3,2,1,4)%%ZSMJ73%%. The minimum number of skips is 2%%ZSMJ74%%.",
+      "On the third day, the permutations are (a1,…,a4)=(1,4,3,2)%%ZSMJ75%% and (b1,…,b4)=(1,2,3,4)%%ZSMJ76%%. The minimum number of skips is 6%%ZSMJ77%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 3\n1 4 2 3\n3 2 1 4\n1 3 4\n2 1 3",
+      "output": "6\n2\n6"
+    },
+    {
+      "input": "7 5\n4 7 1 2 6 5 3\n2 6 5 1 4 3 7\n1 2 5\n2 6 7\n1 6 7\n2 1 5",
+      "output": "16\n26\n21\n20\n6"
+    }
+  ]
+}

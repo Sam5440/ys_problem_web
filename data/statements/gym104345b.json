@@ -1,0 +1,36 @@
+{
+  "code": "GYM104345B",
+  "letter": "B",
+  "title": "B. Query on a Tree",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104345/problem/B",
+  "difficulty": "*1700",
+  "timeLimit": "3 s",
+  "memoryLimit": "1024 mebibytes",
+  "sections": {
+    "legend": [
+      "You are given a tree where vertices are labeled with integers 1,2,…,N%%ZSMJ0%%.",
+      "For a subset of vertices S⊆{1,2,…,N}%%ZSMJ1%%, we say two vertices (u,v)%%ZSMJ2%% are connected under S%%ZSMJ3%% if there exists a path that only passes through the vertices in S%%ZSMJ4%%. Note that this includes endpoints of the path, so u,v∈S%%ZSMJ5%% should hold.",
+      "For example, consider the following tree and the set S={1,2,3,4,5,6}%%ZSMJ6%%.",
+      "![](https://espresso.codeforces.com/8e89e443c8adae2e1d2e5c02190cab395b05a8c1.png)",
+      "In this case, (1,2)%%ZSMJ7%%, (3,5)%%ZSMJ8%% and (4,6)%%ZSMJ9%% are connected under S%%ZSMJ10%%, while (1,6)%%ZSMJ11%% and (2,7)%%ZSMJ12%% are not connected under S%%ZSMJ13%%.",
+      "Let strength(S)%%ZSMJ14%% be the number of pairs of vertices (u,v)%%ZSMJ15%% such that u≠v%%ZSMJ16%% and (u,v)%%ZSMJ17%% are connected under S%%ZSMJ18%%. You are given Q%%ZSMJ19%% queries, where each query contains a set S%%ZSMJ20%%. For each query, you should compute the quantity strength(S)%%ZSMJ21%%."
+    ],
+    "input": [
+      "The first line contains a single integer N%%ZSMJ22%%, the number of vertices (2≤N≤250000%%ZSMJ23%%).",
+      "Each of the next N−1%%ZSMJ24%% lines contains two space-separated integers a%%ZSMJ25%% and b%%ZSMJ26%%: the vertices connected by an edge (1≤a,b≤N%%ZSMJ27%%). Together, the edges form a tree.",
+      "The next line contains a single integer Q%%ZSMJ28%%, the number of queries (1≤Q≤100000%%ZSMJ29%%).",
+      "Each of the next Q%%ZSMJ30%% lines contains a query, denoted by space-separated integers. A query starts with an integer K%%ZSMJ31%%, the size of the set (1≤K≤N%%ZSMJ32%%). It is followed by K%%ZSMJ33%% distinct integers from 1%%ZSMJ34%% to N%%ZSMJ35%% in arbitrary order: the vertices of set S%%ZSMJ36%%.",
+      "The sum of K%%ZSMJ37%% in each test case is at most 1000000%%ZSMJ38%%."
+    ],
+    "output": [
+      "For each of the Q%%ZSMJ39%% queries, print a single line with the integer strength(S)%%ZSMJ40%% as defined above."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n1 2\n1 3\n1 5\n2 7\n4 6\n4 7\n6\n1 1\n2 1 2\n4 1 2 3 4\n5 1 2 4 6 7\n6 1 2 3 4 5 6\n7 1 2 3 4 5 6 7",
+      "output": "0\n1\n3\n10\n7\n21"
+    }
+  ]
+}

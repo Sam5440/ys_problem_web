@@ -1,0 +1,40 @@
+{
+  "code": "CF203D",
+  "letter": "D",
+  "title": "D. Hit Ball",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/203/D",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "When Valera was playing football on a stadium, it suddenly began to rain. Valera hid in the corridor under the grandstand not to get wet. However, the desire to play was so great that he decided to train his hitting the ball right in this corridor. Valera went back far enough, put the ball and hit it. The ball bounced off the walls, the ceiling and the floor corridor and finally hit the exit door. As the ball was wet, it left a spot on the door. Now Valera wants to know the coordinates for this spot.",
+      "Let's describe the event more formally. The ball will be considered a point in space. The door of the corridor will be considered a rectangle located on plane xOz, such that the lower left corner of the door is located at point (0, 0, 0), and the upper right corner is located at point (a, 0, b) . The corridor will be considered as a rectangular parallelepiped, infinite in the direction of increasing coordinates of y. In this corridor the floor will be considered as plane xOy, and the ceiling as plane, parallel to xOy and passing through point (a, 0, b). We will also assume that one of the walls is plane yOz, and the other wall is plane, parallel to yOz and passing through point (a, 0, b).",
+      "We'll say that the ball hit the door when its coordinate y was equal to 0. Thus the coordinates of the spot are point (x0, 0, z0), where 0 ≤ x0 ≤ a, 0 ≤ z0 ≤ b. To hit the ball, Valera steps away from the door at distance m and puts the ball in the center of the corridor at point ![](https://espresso.codeforces.com/4c2f11493ea210fe11ac6861f1085dd5f9435332.png). After the hit the ball flies at speed (vx, vy, vz). This means that if the ball has coordinates (x, y, z), then after one second it will have coordinates (x + vx, y + vy, z + vz).",
+      "See image in notes for clarification.",
+      "When the ball collides with the ceiling, the floor or a wall of the corridor, it bounces off in accordance with the laws of reflection (the angle of incidence equals the angle of reflection). In the problem we consider the ideal physical model, so we can assume that there is no air resistance, friction force, or any loss of energy."
+    ],
+    "input": [
+      "The first line contains three space-separated integers a, b, m (1 ≤ a, b, m ≤ 100). The first two integers specify point (a, 0, b), through which the ceiling and one of the corridor walls pass. The third integer is the distance at which Valera went away from the door.",
+      "The second line has three space-separated integers vx, vy, vz (|vx|, |vy|, |vz| ≤ 100, vy < 0, vz ≥ 0) — the speed of the ball after the hit.",
+      "It is guaranteed that the ball hits the door."
+    ],
+    "output": [
+      "Print two real numbers x0, z0 — the x and z coordinates of point (x0, 0, z0), at which the ball hits the exit door. The answer will be considered correct, if its absolute or relative error does not exceed 10  - 6."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/9d97cf044b3b1f256a3b2aa857e858c62b35104c.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "7 2 11\n3 -11 2",
+      "output": "6.5000000000 2.0000000000"
+    },
+    {
+      "input": "7 2 11\n4 -3 3",
+      "output": "4.1666666667 1.0000000000"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "code": "GYM106270E",
+  "letter": "E",
+  "title": "E. Love Marriage",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106270/problem/E",
+  "difficulty": "*2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Shanto has finally decided that it's time for him to get married!",
+      "Although it took a while for him to reach this decision, it didn't take long for the news to spread like wildfire. Soon, Shanto's phone started to ring nonstop, with n%%ZSMJ0%% girls requesting to chat with him, each seeing him as a perfect life partner. Being overwhelmed, Shanto devised an algorithm to find his favorite girl.",
+      "Here's his plan:",
+      "Tomorrow, Shanto will chat with the girls one by one in the order they called.",
+      "For every girl, Shanto will calculate the happiness he feels during the chat.",
+      "At any point, Shanto will keep track of the favorite girl he's met so far.",
+      "After chatting with the first girl, she's automatically the favorite girl (for now).",
+      "For subsequent girls:      If the happiness Shanto feels chatting with her is less than that of the current favorite girl, he will stick with his favorite girl.",
+      "If it's greater, she will become the new favorite girl.",
+      "If it's equal, Shanto will flip an unbiased coin. If the coin lands on heads, he will stick to his current favorite girl. Otherwise, this girl will become the new favorite girl.",
+      "If Shanto can finish chatting with all the girls, he will choose his favorite girl to become his wife.",
+      "However, at any point, if Shanto chats with k%%ZSMJ1%% consecutive girls and no girl strictly surpasses his maximum happiness, he'll cancel the rest of the dates and go to sleep. In this case, his current favorite girl gets to become \"Mrs. Shanto\"!",
+      "Being an honest boy, Shanto shares all the details about the algorithm with the girls. But here's a twist: Shanto himself doesn't know the value of k%%ZSMJ2%% yet. Influenced by one of his roommates, Shanto has developed a habit of making important decisions at the last moment. So, he decided to sleep on it and choose k%%ZSMJ3%% tomorrow morning.",
+      "Meanwhile, the girls, excited and anxious, started fantasizing about their chances. Some have tried to read Shanto's mind and guess the value of k%%ZSMJ4%%. Others have decided to pray for an optimal k%%ZSMJ5%% to maximize their chances. Now, they've turned to you, the only person who can predict Shanto's happiness levels, for help.",
+      "Your task is to calm their nerves by answering their queries."
+    ],
+    "input": [
+      "The first line of the input contains two space-separated integers n(2≤n≤105)%%ZSMJ6%% and q(1≤q≤2×105)%%ZSMJ7%% — the number of girls who called Shanto and the number of queries.",
+      "The second line contains n%%ZSMJ8%% space-separated integers a1%%ZSMJ9%%, a2%%ZSMJ10%%, ..., an%%ZSMJ11%% — where ai(1≤ai≤109)%%ZSMJ12%% is the predicted happiness Shanto will feel when chatting with the i%%ZSMJ13%%-th girl.",
+      "Then q%%ZSMJ14%% lines follow, each containing a query of one of the following two types:",
+      "\"1 i k\": the i%%ZSMJ15%%-th girl (1≤i≤n)%%ZSMJ16%% asks about the probability of her becoming Shanto's wife for the given value of k(1≤k≤n)%%ZSMJ17%%.",
+      "\"2 i\": the i%%ZSMJ18%%-th girl (1≤i≤n)%%ZSMJ19%% asks about the optimal value of k%%ZSMJ20%% that maximizes the probability of her becoming Shanto's wife and the corresponding probability."
+    ],
+    "output": [
+      "For each query, output the corresponding answer in a line.",
+      "For each query of type 1, output one integer p(0≤p<109+7)%%ZSMJ21%%.",
+      "For each query of type 2, output two space-separated integers k(1≤k≤n)%%ZSMJ22%% and p(0≤p<109+7)%%ZSMJ23%%. If multiple values of k%%ZSMJ24%% are optimal, you can output any of them.",
+      "Output all probabilities modulo (109+7)%%ZSMJ25%%. Formally, if a probability can be expressed as an irreducible fraction xy%%ZSMJ26%%, you have to output p=xy−1mod(109+7)%%ZSMJ27%%, where y−1%%ZSMJ28%% is an integer such that yy−1mod(109+7)=1%%ZSMJ29%%."
+    ],
+    "note": [
+      "In the sample test case, if k=5%%ZSMJ30%%, Shanto will chat with the first 8%%ZSMJ31%% girls and then go to sleep. Here, the 3%%ZSMJ32%%rd girl and the 6%%ZSMJ33%%th girl are valid candidates for being Shanto's favorite girl, each having a 12%%ZSMJ34%% probability of becoming Shanto's wife."
+    ]
+  },
+  "examples": [
+    {
+      "input": "15 6\n5 2 7 6 3 7 2 4 4 7 5 9 1 10 9\n1 1 1\n1 3 5\n2 6\n2 9\n2 14\n2 12",
+      "output": "1\n500000004\n5 500000004\n1 0\n15 1\n8 0"
+    }
+  ]
+}

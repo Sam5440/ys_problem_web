@@ -1,0 +1,37 @@
+{
+  "code": "CF1184A2",
+  "letter": "A2",
+  "title": "A2. Heidi Learns Hashing (Medium)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1184/A2",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "After learning about polynomial hashing, Heidi decided to learn about shift-xor hashing. In particular, she came across this interesting problem.",
+      "Given a bitstring y∈{0,1}n%%ZSMJ0%% find out the number of different k%%ZSMJ1%% (0≤k<n%%ZSMJ2%%) such that there exists x∈{0,1}n%%ZSMJ3%% for which y=x⊕shiftk(x).%%ZSMJ4%%",
+      "In the above, ⊕%%ZSMJ5%% is the xor operation and shiftk%%ZSMJ6%% is the operation of shifting a bitstring cyclically to the right k%%ZSMJ7%% times. For example, 001⊕111=110%%ZSMJ8%% and shift3(00010010111000)=00000010010111%%ZSMJ9%%."
+    ],
+    "input": [
+      "The first line contains an integer n%%ZSMJ10%% (1≤n≤2⋅105%%ZSMJ11%%), the length of the bitstring y%%ZSMJ12%%.",
+      "The second line contains the bitstring y%%ZSMJ13%%."
+    ],
+    "output": [
+      "Output a single integer: the number of suitable values of k%%ZSMJ14%%."
+    ],
+    "note": [
+      "In the first example:",
+      "1100⊕shift1(1100)=1010%%ZSMJ15%%",
+      "1000⊕shift2(1000)=1010%%ZSMJ16%%",
+      "0110⊕shift3(0110)=1010%%ZSMJ17%%",
+      "There is no x%%ZSMJ18%% such that x⊕x=1010%%ZSMJ19%%, hence the answer is 3%%ZSMJ20%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1010",
+      "output": "3"
+    }
+  ]
+}

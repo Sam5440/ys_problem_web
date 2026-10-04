@@ -1,0 +1,40 @@
+{
+  "code": "GYM102569D",
+  "letter": "D",
+  "title": "D. Lexicographically Minimal Shortest Path",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102569/problem/D",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a connected undirected unweighted graph with n%%ZSMJ0%% vertices and m%%ZSMJ1%% edges. The graph does not contain self-loops and parallel edges. Additionally, on each edge (ui,vi)%%ZSMJ2%% the letter ci%%ZSMJ3%% is written.",
+      "You have to find the shortest path from the vertex 1 to the vertex n%%ZSMJ4%%, and if there are several such paths, to find the one which has the string formed by the letters of this path to be lexicographically minimal."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ5%% and m%%ZSMJ6%% (2≤n≤200000,1≤m≤200000%%ZSMJ7%%) — the number of vertices and the number of edges in the graph.",
+      "Each of the next m%%ZSMJ8%% lines contains two integers ui%%ZSMJ9%%, vi%%ZSMJ10%% (1≤ui,vi≤n,ui≠vi%%ZSMJ11%%) — the vertices connected by the i%%ZSMJ12%%-th edge, and the lowercase Latin letter ci%%ZSMJ13%% written on this edge."
+    ],
+    "output": [
+      "In the first line output the integer k%%ZSMJ14%% — the length of the shortest path from the vertex 1 to the vertex n%%ZSMJ15%%.",
+      "In the second line output (k+1)%%ZSMJ16%% integers — the sequence of vertices in the shortest path.",
+      "In the third line output the string with k%%ZSMJ17%% characters — the sequence of letters on this path. This string must be lexicographically minimal among all strings formed by shortest paths from vertex 1 to vertex n%%ZSMJ18%%.",
+      "If there are several possible answers, output any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 2\n1 2 a\n2 3 b",
+      "output": "2\n1 2 3 \nab"
+    },
+    {
+      "input": "3 3\n1 3 z\n1 2 a\n2 3 b",
+      "output": "1\n1 3 \nz"
+    },
+    {
+      "input": "4 4\n1 2 b\n2 4 a\n1 3 a\n3 4 z",
+      "output": "2\n1 3 4 \naz"
+    }
+  ]
+}

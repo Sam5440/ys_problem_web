@@ -1,0 +1,40 @@
+{
+  "code": "CF1279D",
+  "letter": "D",
+  "title": "D. Santa's Bot",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1279/D",
+  "difficulty": "1700",
+  "timeLimit": "5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Santa Claus has received letters from n%%ZSMJ0%% different kids throughout this year. Of course, each kid wants to get some presents from Santa: in particular, the i%%ZSMJ1%%-th kid asked Santa to give them one of ki%%ZSMJ2%% different items as a present. Some items could have been asked by multiple kids.",
+      "Santa is really busy, so he wants the New Year Bot to choose the presents for all children. Unfortunately, the Bot's algorithm of choosing presents is bugged. To choose a present for some kid, the Bot does the following:",
+      "choose one kid x%%ZSMJ3%% equiprobably among all n%%ZSMJ4%% kids;",
+      "choose some item y%%ZSMJ5%% equiprobably among all kx%%ZSMJ6%% items kid x%%ZSMJ7%% wants;",
+      "choose a kid z%%ZSMJ8%% who will receive the present equipropably among all n%%ZSMJ9%% kids (this choice is independent of choosing x%%ZSMJ10%% and y%%ZSMJ11%%); the resulting triple (x,y,z)%%ZSMJ12%% is called the decision of the Bot.",
+      "If kid z%%ZSMJ13%% listed item y%%ZSMJ14%% as an item they want to receive, then the decision valid. Otherwise, the Bot's choice is invalid.",
+      "Santa is aware of the bug, but he can't estimate if this bug is really severe. To do so, he wants to know the probability that one decision generated according to the aforementioned algorithm is valid. Can you help him?"
+    ],
+    "input": [
+      "The first line contains one integer n%%ZSMJ15%% (1≤n≤106%%ZSMJ16%%) — the number of kids who wrote their letters to Santa.",
+      "Then n%%ZSMJ17%% lines follow, the i%%ZSMJ18%%-th of them contains a list of items wanted by the i%%ZSMJ19%%-th kid in the following format: ki%%ZSMJ20%% ai,1%%ZSMJ21%% ai,2%%ZSMJ22%% ... ai,ki%%ZSMJ23%% (1≤ki,ai,j≤106%%ZSMJ24%%), where ki%%ZSMJ25%% is the number of items wanted by the i%%ZSMJ26%%-th kid, and ai,j%%ZSMJ27%% are the items themselves. No item is contained in the same list more than once.",
+      "It is guaranteed that n∑i=1ki≤106%%ZSMJ28%%."
+    ],
+    "output": [
+      "Print the probatility that the Bot produces a valid decision as follows:",
+      "Let this probability be represented as an irreducible fraction xy%%ZSMJ29%%. You have to print x \\cdot y^{-1} \\mod 998244353%%ZSMJ30%%, where y^{-1}%%ZSMJ31%% is the inverse element of y%%ZSMJ32%% modulo 998244353%%ZSMJ33%% (such integer that y \\cdot y^{-1}%%ZSMJ34%% has remainder 1%%ZSMJ35%% modulo 998244353%%ZSMJ36%%)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n2 2 1\n1 1",
+      "output": "124780545"
+    },
+    {
+      "input": "5\n2 1 2\n2 3 1\n3 2 4 3\n2 1 4\n3 4 3 2",
+      "output": "798595483"
+    }
+  ]
+}

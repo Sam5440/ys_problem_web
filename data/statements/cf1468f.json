@@ -1,0 +1,32 @@
+{
+  "code": "CF1468F",
+  "letter": "F",
+  "title": "F. Full Turn",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1468/F",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "There are n%%ZSMJ0%% persons located on a plane. The i%%ZSMJ1%%-th person is located at the point (xi,yi)%%ZSMJ2%% and initially looks at the point (ui,vi)%%ZSMJ3%%.",
+      "At the same moment of time, all persons will start to rotate clockwise synchronously with the same angular speed. They will rotate until they do one full 360%%ZSMJ4%%-degree turn.",
+      "It is said that persons A%%ZSMJ5%% and B%%ZSMJ6%% made eye contact if person A%%ZSMJ7%% looks in person B%%ZSMJ8%%'s direction at the same moment when person B%%ZSMJ9%% looks in person A%%ZSMJ10%%'s direction. If there is a person C%%ZSMJ11%% located between persons A%%ZSMJ12%% and B%%ZSMJ13%%, that will not obstruct A%%ZSMJ14%% and B%%ZSMJ15%% from making eye contact. A person can make eye contact with more than one person at the same time.",
+      "Calculate the number of pairs of persons that will make eye contact at least once during the rotation (including the initial moment)."
+    ],
+    "input": [
+      "The first line contains one integer t%%ZSMJ16%% (1≤t≤104%%ZSMJ17%%) — the number of test cases.",
+      "The first line of each test case contains a single integer n%%ZSMJ18%% (1≤n≤105%%ZSMJ19%%) — the number of persons. The following n%%ZSMJ20%% lines describe persons, each line containing four space-separated integers xi,yi,ui,vi%%ZSMJ21%% (|xi|,|yi|,|ui|,|vi|≤109%%ZSMJ22%%; xi≠ui%%ZSMJ23%% or yi≠vi%%ZSMJ24%%), where (xi,yi%%ZSMJ25%%) are the coordinates of the point where the i%%ZSMJ26%%-th person is located and (ui%%ZSMJ27%%, vi%%ZSMJ28%%) are the coordinates of the point that the i%%ZSMJ29%%-th person looks at initially. Each person's location is unique in each test case.",
+      "The sum of n%%ZSMJ30%% over all test cases does not exceed 105%%ZSMJ31%%."
+    ],
+    "output": [
+      "For each test case, print one integer — the number of pairs of persons who will make eye contact at least once during the rotation, including the initial moment."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2\n0 0 0 1\n1 0 2 0\n3\n0 0 1 1\n1 1 0 0\n1 0 2 0\n6\n0 0 0 1\n1 0 1 2\n2 0 2 3\n3 0 3 -5\n4 0 4 -5\n5 0 5 -5",
+      "output": "0\n1\n9"
+    }
+  ]
+}

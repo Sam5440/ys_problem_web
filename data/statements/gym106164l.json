@@ -1,0 +1,40 @@
+{
+  "code": "GYM106164L",
+  "letter": "L",
+  "title": "L. Laser",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106164/problem/L",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "A mega-scale project to convert laser light into usable energy for general purposes has begun in the almost infinite experiment area with laser-amplifying glass panes.",
+      "The experiment was conducted by placing a laser emitter in one room. After that, the N%%ZSMJ0%% laser receivers were placed in room coordinates (xi,yi)%%ZSMJ1%%; each room has a glass pane on the vertical and horizontal side which is shared between adjacent rooms.",
+      "When the laser passes through each vertical glass pane, the laser intensity is increased by A%%ZSMJ2%% units.",
+      "When the laser passes through each horizontal glass pane, the laser intensity is increased by B%%ZSMJ3%% units.",
+      "![](https://espresso.codeforces.com/dbbf0cc59f3f3d5e9d626d2f5e840ec03e836f77.png)",
+      "Furthermore, the administrator of the project has provided 1 L-shaped reflector to change the trajectory of the laser from horizontal to vertical or vice versa. You want to run Q%%ZSMJ5%% simulation tests to provide the information on the minimum possible laser intensity given the starting point for the laser at coordinates (si,ti)%%ZSMJ6%%; your task is to come up with the resulting laser intensity."
+    ],
+    "input": [
+      "The first line contains four integers N,Q,A,B%%ZSMJ7%% (0≤A,B≤109,1≤N,Q≤100000%%ZSMJ8%%) — number of laser receivers, simulations, amplification power of vertical and horizontal glass panes.",
+      "Next, N%%ZSMJ9%% lines contain xi,yi,ci%%ZSMJ10%% (0≤xi,yi≤109,0≤ci≤1018%%ZSMJ11%%) — laser receiver coordinates in the Cartesian plane and laser amplification power.",
+      "Next, Q%%ZSMJ12%% lines contain si,ti%%ZSMJ13%% (0≤si,ti≤109%%ZSMJ14%%) — laser emitter starting coordinates in the Cartesian plane in each simulation."
+    ],
+    "output": [
+      "Print Q%%ZSMJ15%% lines, each line contains a single integer — the minimum possible laser intensity for the simulation."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/8ae15cf1b01738efb75a6ab063aaeffb3ef0af67.png)",
+      "For the first simulation, the L-shaped reflector can be placed on coordinate (3,4); by activating the second receiver, the minimum final laser intensity is 1+2+0=3%%ZSMJ16%%.",
+      "For the second simulation, the L-shaped reflector is not used; by activating the second receiver, the minimum final laser intensity is 2+0=2%%ZSMJ17%%.",
+      "For the third simulation, the L-shaped reflector can be placed on coordinate (1,5); by activating the fifth receiver, the minimum final laser intensity is 2+1+1+1+2=7%%ZSMJ18%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 3 1 2\n1 1 0\n4 2 0\n2 3 3\n5 4 0\n4 5 2\n3 3\n4 1\n1 6",
+      "output": "3\n2\n7"
+    }
+  ]
+}

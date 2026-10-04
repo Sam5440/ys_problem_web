@@ -1,0 +1,37 @@
+{
+  "code": "CF317B",
+  "letter": "B",
+  "title": "B. Ants",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/317/B",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "It has been noted that if some ants are put in the junctions of the graphene integer lattice then they will act in the following fashion: every minute at each junction (x, y) containing at least four ants a group of four ants will be formed, and these four ants will scatter to the neighbouring junctions (x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1) — one ant in each direction. No other ant movements will happen. Ants never interfere with each other.",
+      "Scientists have put a colony of n ants into the junction (0, 0) and now they wish to know how many ants will there be at some given junctions, when the movement of the ants stops."
+    ],
+    "input": [
+      "First input line contains integers n (0 ≤ n ≤ 30000) and t (1 ≤ t ≤ 50000), where n is the number of ants in the colony and t is the number of queries. Each of the next t lines contains coordinates of a query junction: integers xi, yi ( - 109 ≤ xi, yi ≤ 109). Queries may coincide.",
+      "It is guaranteed that there will be a certain moment of time when no possible movements can happen (in other words, the process will eventually end)."
+    ],
+    "output": [
+      "Print t integers, one per line — the number of ants at the corresponding junctions when the movement of the ants stops."
+    ],
+    "note": [
+      "In the first sample the colony consists of the one ant, so nothing happens at all.",
+      "In the second sample the colony consists of 6 ants. At the first minute 4 ants scatter from (0, 0) to the neighbouring junctions. After that the process stops."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 3\n0 1\n0 0\n0 -1",
+      "output": "0\n1\n0"
+    },
+    {
+      "input": "6 5\n0 -2\n0 -1\n0 0\n0 1\n0 2",
+      "output": "0\n1\n2\n1\n0"
+    }
+  ]
+}

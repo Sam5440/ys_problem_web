@@ -1,16 +1,16 @@
 /**
- * Saves the current workflow run's full job log into the repo:
+ * Saves the workflow run's full job log into the repo:
  *   public/ci-logs/<UTC date>-<run id>.log   (raw log, noise-filtered)
  *   public/ci-logs/<UTC date>-<run id>.json  (header + parsed summary)
  * then prunes files older than RETENTION_DAYS and pushes both in their own
- * commit. Runs as the workflow's last step, so the downloaded log covers
- * everything up to the data commit; the save step's own output is naturally
- * absent.
+ * commit. Runs as a SEPARATE job that `needs` the sync job — the job-log
+ * download endpoint only serves completed jobs, so this must not live in
+ * the job whose log it saves.
  *
  * Auth: the workflow's GITHUB_TOKEN with `actions: read` permission (the
  * job-log download endpoint requires it even on public repos).
  */
-import { readFile, writeFile, readdir, mkdir, unlink } from 'node:fs/promises';
+import { writeFile, readdir, mkdir, unlink } from 'node:fs/promises';
 import path from 'node:path';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
@@ -22,6 +22,9 @@ const REPO = process.env.GITHUB_REPOSITORY; // e.g. Sam5440/ys_problem_web
 const RUN_ID = process.env.GITHUB_RUN_ID;
 const EVENT = process.env.GITHUB_EVENT_NAME;
 const TOKEN = process.env.GITHUB_TOKEN;
+// the job whose log we want (set via SOURCE_JOB_NAME in the workflow) — not
+// this job, whose own log is necessarily incomplete
+const SOURCE_JOB_NAME = process.env.SOURCE_JOB_NAME || 'update';
 
 if (!REPO || !RUN_ID || !TOKEN) {
   console.error('save-ci-log: missing GITHUB_* env — not running in Actions, skipping.');
@@ -33,19 +36,26 @@ const gh = { Authorization: `Bearer ${TOKEN}`, Accept: 'application/vnd.github+j
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function fetchJobLog() {
-  // find this run's job (single-job workflow; GITHUB_JOB names it "update")
+  // find the completed sync job of this run
   let job = null;
-  for (let i = 0; i < 3 && !job; i++) {
+  for (let i = 0; i < 6 && !job; i++) {
     const res = await fetch(api(`/runs/${RUN_ID}/jobs?per_page=20`), { headers: gh });
     if (res.ok) {
       const jobs = (await res.json()).jobs || [];
-      job = jobs.find((j) => j.name === process.env.GITHUB_JOB) || jobs[0] || null;
+      job =
+        jobs.find((j) => j.name === SOURCE_JOB_NAME && j.conclusion) ||
+        jobs.find((j) => j.conclusion) ||
+        null;
+      if (!job) {
+        console.warn(`no completed job yet (try ${i + 1}), waiting…`);
+        await sleep(10000);
+      }
     } else {
       console.warn(`jobs list HTTP ${res.status} (try ${i + 1})`);
+      await sleep(5000);
     }
-    if (!job) await sleep(5000);
   }
-  if (!job) throw new Error('could not locate the run job via API');
+  if (!job) throw new Error('could not locate the completed sync job via API');
 
   let text = null;
   for (let i = 0; i < 3; i++) {

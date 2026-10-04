@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { Activity } from 'lucide-react';
 import LogsView from '@/components/logs-view';
 
 export const metadata = {
@@ -32,11 +33,18 @@ function loadRuns() {
 export default function LogsPage() {
   const runs = loadRuns();
   return (
-    <main className="mx-auto w-full max-w-4xl px-4 py-8">
-      <h1 className="text-2xl font-bold tracking-tight">CI 日志</h1>
-      <p className="mt-1 mb-6 text-sm text-muted-foreground">
-        每次数据同步 workflow 结束后自动把完整日志存进仓库（滚动保留 60 天）。点击任一次运行查看拉取、翻译明细与完整日志。
-      </p>
+    <main className="mx-auto w-full max-w-6xl px-4 py-8">
+      <div className="mb-6 flex items-start gap-3">
+        <span className="mt-1 rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-2">
+          <Activity className="h-5 w-5 text-emerald-500" />
+        </span>
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight">CI 日志</h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            每次数据同步 workflow 结束后自动把完整日志存进仓库（滚动保留 60 天）。展开任一次运行可查看流水线时序图、抓取 / 翻译明细与原始日志。
+          </p>
+        </div>
+      </div>
       <LogsView runs={runs} />
     </main>
   );

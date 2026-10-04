@@ -1,0 +1,40 @@
+{
+  "code": "CF1168A",
+  "letter": "A",
+  "title": "A. Increasing by Modulo",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1168/A",
+  "difficulty": "1700",
+  "timeLimit": "2.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Toad Zitz has an array of integers, each integer is between 0%%ZSMJ0%% and m−1%%ZSMJ1%% inclusive. The integers are a1,a2,…,an%%ZSMJ2%%.",
+      "In one operation Zitz can choose an integer k%%ZSMJ3%% and k%%ZSMJ4%% indices i1,i2,…,ik%%ZSMJ5%% such that 1≤i1<i2<…<ik≤n%%ZSMJ6%%. He should then change aij%%ZSMJ7%% to ((aij+1)mod%%ZSMJ8%% for each chosen integer i_j%%ZSMJ9%%. The integer m%%ZSMJ10%% is fixed for all operations and indices.",
+      "Here x \\bmod y%%ZSMJ11%% denotes the remainder of the division of x%%ZSMJ12%% by y%%ZSMJ13%%.",
+      "Zitz wants to make his array non-decreasing with the minimum number of such operations. Find this minimum number of operations."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ14%% and m%%ZSMJ15%% (1 \\leq n, m \\leq 300\\,000%%ZSMJ16%%) — the number of integers in the array and the parameter m%%ZSMJ17%%.",
+      "The next line contains n%%ZSMJ18%% space-separated integers a_1, a_2, \\ldots, a_n%%ZSMJ19%% (0 \\leq a_i  \\lt  m%%ZSMJ20%%) — the given array."
+    ],
+    "output": [
+      "Output one integer: the minimum number of described operations Zitz needs to make his array non-decreasing. If no operations required, print 0%%ZSMJ21%%.",
+      "It is easy to see that with enough operations Zitz can always make his array non-decreasing."
+    ],
+    "note": [
+      "In the first example, the array is already non-decreasing, so the answer is 0%%ZSMJ22%%.",
+      "In the second example, you can choose k=2%%ZSMJ23%%, i_1 = 2%%ZSMJ24%%, i_2 = 5%%ZSMJ25%%, the array becomes [0,0,1,3,3]%%ZSMJ26%%. It is non-decreasing, so the answer is 1%%ZSMJ27%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 3\n0 0 0 1 2",
+      "output": "0"
+    },
+    {
+      "input": "5 7\n0 6 1 3 2",
+      "output": "1"
+    }
+  ]
+}

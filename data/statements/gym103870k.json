@@ -1,0 +1,46 @@
+{
+  "code": "GYM103870K",
+  "letter": "K",
+  "title": "K. Rock Paper Scissors (Easy Version)",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103870/problem/K",
+  "difficulty": "*1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is the easy version. The difference between the easy version and the hard version is the constraints.",
+      "Misaka Imouto 1%%ZSMJ0%%, Misaka Imouto 2%%ZSMJ1%%, ..., and Misaka Imouto n%%ZSMJ2%% are all playing rock paper scissors to determine who should go buy the cake. Since they are all connected to the same network, let's assume that all Misaka Imouto's act the same.",
+      "A game of rock paper scissors is dictated as follows:",
+      "If there is 1%%ZSMJ3%% person, the game ends immediately (taking 0%%ZSMJ4%% rounds).",
+      "Otherwise, each Misaka Imouto throws out a choice between rock, paper, and scissors with exactly 13%%ZSMJ5%% probability. All choices are independent of each other.",
+      "If all options of rock, paper, and scissors are present, then the game is a tie and no one steps out of the game. If only one option is present, the game is a tie and no one steps out of the game. However, if only two options are present, then the winners and the losers are well defined, and the losers step out of the game. All people who are still in the game repeat step 1 for a new round.",
+      "One possible game between 3%%ZSMJ6%% Misaka Imouto's could be as follows: RPS, RRS, SSX, SRX, and ending with the second Misaka winning after 4%%ZSMJ7%% rounds. In this game, R means rock, S means scissors, P means paper, and X means that this Misaka Imouto has lost already and was not allowed to play.",
+      "For each i%%ZSMJ8%% from 1%%ZSMJ9%% to n%%ZSMJ10%%, find the expected number of rounds a game with i%%ZSMJ11%% Misaka Imoutos initially lasts."
+    ],
+    "input": [
+      "The input contains two numbers n%%ZSMJ12%% and P%%ZSMJ13%%, (2≤n≤104,108≤P≤109)%%ZSMJ14%%. It is guaranteed that P%%ZSMJ15%% is a prime.",
+      "For tests 1−4%%ZSMJ16%%, (2≤n≤50)%%ZSMJ17%% will be satisfied.",
+      "For tests 5−8%%ZSMJ18%%, (2≤n≤3366)%%ZSMJ19%% will be satisfied.",
+      "The remaining test data do not satisfy any additional constraints."
+    ],
+    "output": [
+      "Output n%%ZSMJ20%% integers, the i%%ZSMJ21%%'th integer denoting the expected number of rounds a game with i%%ZSMJ22%% Misakas initially will last.",
+      "So for each i%%ZSMJ23%% from 1%%ZSMJ24%% to n%%ZSMJ25%%, let the final expected number of rounds of a game with i%%ZSMJ26%% Misaka Imoutos be xiyi%%ZSMJ27%%, output zi%%ZSMJ28%% (0≤zi<P)%%ZSMJ29%% where x_i \\equiv y_i \\cdot z_i \\pmod P%%ZSMJ30%%."
+    ],
+    "note": [
+      "50000005%%ZSMJ31%% is also \\frac{3}{2} \\mod 100000007%%ZSMJ32%%",
+      "25000004%%ZSMJ33%% is also \\frac{9}{4} \\mod 100000007%%ZSMJ34%%",
+      "—",
+      "Idea: 3366",
+      "Preparation: 3366",
+      "Occurrences: Intermediate 10, Advanced 4"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 100000007",
+      "output": "0 50000005 25000004 64285722 25714292"
+    }
+  ]
+}

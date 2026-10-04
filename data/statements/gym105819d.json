@@ -1,0 +1,46 @@
+{
+  "code": "GYM105819D",
+  "letter": "D",
+  "title": "D. Please solve this in O(N^3)",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105819/problem/D",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an undirected graph with N%%ZSMJ0%% nodes and M%%ZSMJ1%% edges. Each node is assigned a bitmask A%%ZSMJ2%% (where 1≤A≤230−1%%ZSMJ3%%). A node is said to 'contain' color c%%ZSMJ4%% (with 0≤c≤29%%ZSMJ5%%) if the bit in the 2c%%ZSMJ6%% place in the binary representation of A%%ZSMJ7%% is 1%%ZSMJ8%%. This expression using bitwise operators would evaluate to true if and only if A%%ZSMJ9%% contains the color c%%ZSMJ10%%.",
+      "(A & (1≪c))==(1≪c)%%ZSMJ11%%",
+      "A path between two nodes i%%ZSMJ12%% and j%%ZSMJ13%% is considered valid if there exists at least one color c%%ZSMJ14%% such that every node along the path (including i%%ZSMJ15%% and j%%ZSMJ16%%) contains color c%%ZSMJ17%%.",
+      "Your task is to determine, for every node i%%ZSMJ18%%, which nodes j%%ZSMJ19%% are reachable from i%%ZSMJ20%% via some valid path. Output an N×N%%ZSMJ21%% matrix of characters, where the j%%ZSMJ22%%th character in the i%%ZSMJ23%%th row is '1' if there exists at least one valid path from node i%%ZSMJ24%% to node j%%ZSMJ25%%, and '0' otherwise."
+    ],
+    "input": [
+      "The first line contains two integers N(1≤N≤500)%%ZSMJ26%% and M(0≤M≤N×(N−1)2)%%ZSMJ27%%, the number of nodes and the number of edges.",
+      "The second line contains N%%ZSMJ28%% integers, where the i%%ZSMJ29%%th integer is the bitmask Ai(1≤Ai≤230−1)%%ZSMJ30%% for node i%%ZSMJ31%%.",
+      "The following M%%ZSMJ32%% lines each contain two integers u%%ZSMJ33%% and v%%ZSMJ34%% representing an undirected edge between nodes u%%ZSMJ35%% and v%%ZSMJ36%%. Nodes are numbered from 1%%ZSMJ37%% to N%%ZSMJ38%%. It is guaranteed there are no duplicate edges or self loops.",
+      "—",
+      "Tests in subtasks are numbered from 1−20%%ZSMJ39%% with samples skipped. Each test is worth 10020=5%%ZSMJ40%% points.",
+      "Test 1%%ZSMJ41%% satisfies M=0%%ZSMJ42%%.",
+      "Test 2%%ZSMJ43%% satisfies M=N×(N−1)2%%ZSMJ44%%.",
+      "Tests 3−6%%ZSMJ45%% satisfy Ai=1%%ZSMJ46%%.",
+      "Tests 7−20%%ZSMJ47%% satisfy no additional constraints."
+    ],
+    "output": [
+      "Output N%%ZSMJ48%% lines. The i%%ZSMJ49%%th line should be a string of N%%ZSMJ50%% characters. The j%%ZSMJ51%%th character in this string should be '1' if there exists a valid path from node i%%ZSMJ52%% to node j%%ZSMJ53%%, and '0' otherwise.",
+      "—",
+      "Problem Idea: Alex_C",
+      "Problem Preparation: nyctivoe",
+      "Occurrences: Novice D"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 5\n1 2 3 4 5\n1 3\n2 3\n3 5\n5 4\n2 4",
+      "output": "10101\n01100\n11101\n00011\n10111"
+    },
+    {
+      "input": "10 13\n3 5 2 7 1 8 6 9 10 4\n1 2\n1 3\n2 4\n3 4\n4 5\n1 4\n2 3\n6 8\n8 9\n9 7\n7 10\n8 10\n4 7",
+      "output": "1111101010\n1101101001\n1011001010\n1111101011\n1101100000\n0000010110\n1111001011\n0000010110\n1011011110\n0101001001"
+    }
+  ]
+}

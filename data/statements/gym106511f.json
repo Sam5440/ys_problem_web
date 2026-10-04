@@ -1,0 +1,38 @@
+{
+  "code": "GYM106511F",
+  "letter": "F",
+  "title": "F. Manhattan Patrol",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106511/problem/F",
+  "difficulty": "*1100",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "The NYPD is making a plan for patrolling a neighborhood of Manhattan.",
+      "The neighborhood can be represented by a n×m%%ZSMJ0%% grid of square blocks with coordinates from (1,1)%%ZSMJ1%% to (n,m)%%ZSMJ2%%. Each block is patrolled by one particular officer. For training purposes, every once in a while the NYPD wants to change assignments of officers to blocks. However, to maintain the existing cooperations, they want to preserve the Manhattan distance between each pair of officers.",
+      "More formally, let (x1,y1)%%ZSMJ3%% and (x2,y2)%%ZSMJ4%% be the initial coordinates of two officers, and (x′1,y′1)%%ZSMJ5%% and (x′2,y′2)%%ZSMJ6%% be their final coordinates after reassignment. Then, the following must hold: |x1−x2|+|y1−y2|=|x′1−x′2|+|y′1−y′2|%%ZSMJ7%%.",
+      "How many possible assignments of officers to blocks are there which preserve the pairwise Manhattan distances?",
+      "Two assignments are considered different if some officer is moved to a different block. The officers are allowed to stay in original positions. Since the answer might be large, output its remainder modulo 998244353%%ZSMJ8%%."
+    ],
+    "input": [
+      "The problem consists of T%%ZSMJ9%% independent test cases.",
+      "The first line contains a single integer T%%ZSMJ10%% (1≤T≤104%%ZSMJ11%%) — the number of independent test cases to process.",
+      "Each of the next T%%ZSMJ12%% lines contains two integers n%%ZSMJ13%% and m%%ZSMJ14%% (1≤n,m≤5000%%ZSMJ15%%) — the dimensions of the neighborhood grid."
+    ],
+    "output": [
+      "For each test case, output a single line — the number of assignments of officers to blocks which preserve the pairwise Manhattan distances modulo 998244353%%ZSMJ16%%."
+    ],
+    "note": [
+      "In the first test case, there is only one assignment for a 1×1%%ZSMJ17%% grid.",
+      "In the second test case, there are 4 valid assignments for a 2×3%%ZSMJ18%% grid. Two of them are shown below. On the right, an invalid assignment is shown: the distance between officers 2%%ZSMJ19%% and 5%%ZSMJ20%% changes from 1%%ZSMJ21%% to 3%%ZSMJ22%%.",
+      "![](https://espresso.codeforces.com/b0b09693a3ed61204c173f7247af116db98b6bfd.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 1\n2 3",
+      "output": "1\n4"
+    }
+  ]
+}

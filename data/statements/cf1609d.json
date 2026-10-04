@@ -1,0 +1,41 @@
+{
+  "code": "CF1609D",
+  "letter": "D",
+  "title": "D. Social Network",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1609/D",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/c43f6bdabab64957bbed2ebb101fcf642a19ed6c.png)",
+      "William arrived at a conference dedicated to cryptocurrencies. Networking, meeting new people, and using friends' connections are essential to stay up to date with the latest news from the world of cryptocurrencies.",
+      "The conference has n%%ZSMJ0%% participants, who are initially unfamiliar with each other. William can introduce any two people, a%%ZSMJ1%% and b%%ZSMJ2%%, who were not familiar before, to each other.",
+      "William has d%%ZSMJ3%% conditions, i%%ZSMJ4%%'th of which requires person xi%%ZSMJ5%% to have a connection to person yi%%ZSMJ6%%. Formally, two people x%%ZSMJ7%% and y%%ZSMJ8%% have a connection if there is such a chain p1=x,p2,p3,…,pk=y%%ZSMJ9%% for which for all i%%ZSMJ10%% from 1%%ZSMJ11%% to k−1%%ZSMJ12%% it's true that two people with numbers pi%%ZSMJ13%% and pi+1%%ZSMJ14%% know each other.",
+      "For every i%%ZSMJ15%% (1≤i≤d%%ZSMJ16%%) William wants you to calculate the maximal number of acquaintances one person can have, assuming that William satisfied all conditions from 1%%ZSMJ17%% and up to and including i%%ZSMJ18%% and performed exactly i%%ZSMJ19%% introductions. The conditions are being checked after William performed i%%ZSMJ20%% introductions. The answer for each i%%ZSMJ21%% must be calculated independently. It means that when you compute an answer for i%%ZSMJ22%%, you should assume that no two people have been introduced to each other yet."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ23%% and d%%ZSMJ24%% (2≤n≤103,1≤d≤n−1%%ZSMJ25%%), the number of people, and number of conditions, respectively.",
+      "Each of the next d%%ZSMJ26%% lines each contain two integers xi%%ZSMJ27%% and yi%%ZSMJ28%% (1≤xi,yi≤n,xi≠yi%%ZSMJ29%%), the numbers of people which must have a connection according to condition i%%ZSMJ30%%."
+    ],
+    "output": [
+      "Output d%%ZSMJ31%% integers. i%%ZSMJ32%%th number must equal the number of acquaintances the person with the maximal possible acquaintances will have, if William performed i%%ZSMJ33%% introductions and satisfied the first i%%ZSMJ34%% conditions."
+    ],
+    "note": [
+      "The explanation for the first test case:",
+      "In this explanation, the circles and the numbers in them denote a person with the corresponding number. The line denotes that William introduced two connected people. The person marked with red has the most acquaintances. These are not the only correct ways to introduce people.",
+      "![](https://espresso.codeforces.com/0c014d3a638835c213347a0ecd6726618aba50b3.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "7 6\n1 2\n3 4\n2 4\n7 6\n6 5\n1 7",
+      "output": "1\n1\n3\n3\n3\n6"
+    },
+    {
+      "input": "10 8\n1 2\n2 3\n3 4\n1 4\n6 7\n8 9\n8 10\n1 4",
+      "output": "1\n2\n3\n4\n5\n5\n6\n8"
+    }
+  ]
+}

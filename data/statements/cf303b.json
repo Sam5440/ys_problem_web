@@ -1,0 +1,35 @@
+{
+  "code": "CF303B",
+  "letter": "B",
+  "title": "B. Rectangle Puzzle II",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/303/B",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a rectangle grid. That grid's size is n × m. Let's denote the coordinate system on the grid. So, each point on the grid will have coordinates — a pair of integers (x, y) (0 ≤ x ≤ n, 0 ≤ y ≤ m).",
+      "Your task is to find a maximum sub-rectangle on the grid (x1, y1, x2, y2) so that it contains the given point (x, y), and its length-width ratio is exactly (a, b). In other words the following conditions must hold: 0 ≤ x1 ≤ x ≤ x2 ≤ n, 0 ≤ y1 ≤ y ≤ y2 ≤ m, ![](https://espresso.codeforces.com/0c36d1eac2611e4dc89474c61ba622f0db130f00.png).",
+      "The sides of this sub-rectangle should be parallel to the axes. And values x1, y1, x2, y2 should be integers.",
+      "![](https://espresso.codeforces.com/ac3aa7cc3149c9508428a2289c61e2c69bfbea3a.png)",
+      "If there are multiple solutions, find the rectangle which is closest to (x, y). Here \"closest\" means the Euclid distance between (x, y) and the center of the rectangle is as small as possible. If there are still multiple solutions, find the lexicographically minimum one. Here \"lexicographically minimum\" means that we should consider the sub-rectangle as sequence of integers (x1, y1, x2, y2), so we can choose the lexicographically minimum one."
+    ],
+    "input": [
+      "The first line contains six integers n, m, x, y, a, b (1 ≤ n, m ≤ 109, 0 ≤ x ≤ n, 0 ≤ y ≤ m, 1 ≤ a ≤ n, 1 ≤ b ≤ m)."
+    ],
+    "output": [
+      "Print four integers x1, y1, x2, y2, which represent the founded sub-rectangle whose left-bottom point is (x1, y1) and right-up point is (x2, y2)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "9 9 5 5 2 1",
+      "output": "1 3 9 7"
+    },
+    {
+      "input": "100 100 52 50 46 56",
+      "output": "17 8 86 92"
+    }
+  ]
+}

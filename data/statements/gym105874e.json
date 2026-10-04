@@ -1,0 +1,34 @@
+{
+  "code": "GYM105874E",
+  "letter": "E",
+  "title": "E. RADiant queries",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105874/problem/E",
+  "difficulty": "*1900",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let rad(n)%%ZSMJ0%% denote the product of all distinct prime divisors of the number n%%ZSMJ1%%. For example, rad(504)%%ZSMJ2%% = rad(23⋅32⋅7)%%ZSMJ3%% =2⋅3⋅7%%ZSMJ4%% =42%%ZSMJ5%%. We define rad(1)=1%%ZSMJ6%%.",
+      "The statement of this problem is simple: you have an array a%%ZSMJ7%% of size n%%ZSMJ8%%. You are given q%%ZSMJ9%% queries [ℓ;r]%%ZSMJ10%%, and you need to compute rad of the product of the numbers aℓ,aℓ+1,…,ar%%ZSMJ11%%, that is: rad(r∏i=ℓai)=rad(aℓ×aℓ+1×⋯×ar)%%ZSMJ12%% Since this number can be quite large, output it modulo 109+7%%ZSMJ13%%."
+    ],
+    "input": [
+      "The first line of input contains two numbers n,q%%ZSMJ14%% (1≤n,q≤5⋅105%%ZSMJ15%%), the number of elements in the array and the number of queries.",
+      "The second line of input contains n%%ZSMJ16%% numbers ai%%ZSMJ17%% (1≤ai≤2⋅105%%ZSMJ18%%), the array a%%ZSMJ19%%.",
+      "In the following q%%ZSMJ20%% lines, two numbers ℓ,r%%ZSMJ21%% (1≤ℓ≤r≤n%%ZSMJ22%%) are given, which are the boundaries of the next query."
+    ],
+    "output": [
+      "In q%%ZSMJ23%% lines of output, print one number per line, the answer to the problem modulo 109+7%%ZSMJ24%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 6\n42 35 11 26 13\n1 3\n2 4\n3 5\n1 5\n2 2\n4 5",
+      "output": "2310\n10010\n286\n30030\n35\n26"
+    },
+    {
+      "input": "2 1\n2 2\n1 2",
+      "output": "2"
+    }
+  ]
+}

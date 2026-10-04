@@ -1,0 +1,41 @@
+{
+  "code": "CF1010D",
+  "letter": "D",
+  "title": "D. Mars rover",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1010/D",
+  "difficulty": "2000",
+  "timeLimit": "5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Natasha travels around Mars in the Mars rover. But suddenly it broke down, namely — the logical scheme inside it. The scheme is an undirected tree (connected acyclic graph) with a root in the vertex 1%%ZSMJ0%%, in which every leaf (excluding root) is an input, and all other vertices are logical elements, including the root, which is output. One bit is fed to each input. One bit is returned at the output.",
+      "There are four types of logical elements: AND (2%%ZSMJ1%% inputs), OR (2%%ZSMJ2%% inputs), XOR (2%%ZSMJ3%% inputs), NOT (1%%ZSMJ4%% input). Logical elements take values from their direct descendants (inputs) and return the result of the function they perform. Natasha knows the logical scheme of the Mars rover, as well as the fact that only one input is broken. In order to fix the Mars rover, she needs to change the value on this input.",
+      "For each input, determine what the output will be if Natasha changes this input."
+    ],
+    "input": [
+      "The first line contains a single integer n%%ZSMJ5%% (2≤n≤106%%ZSMJ6%%) — the number of vertices in the graph (both inputs and elements).",
+      "The i%%ZSMJ7%%-th of the next n%%ZSMJ8%% lines contains a description of i%%ZSMJ9%%-th vertex: the first word \"AND\", \"OR\", \"XOR\", \"NOT\" or \"IN\" (means the input of the scheme) is the vertex type. If this vertex is \"IN\", then the value of this input follows (0%%ZSMJ10%% or 1%%ZSMJ11%%), otherwise follow the indices of input vertices of this element: \"AND\", \"OR\", \"XOR\" have 2%%ZSMJ12%% inputs, whereas \"NOT\" has 1%%ZSMJ13%% input. The vertices are numbered from one.",
+      "It is guaranteed that input data contains a correct logical scheme with an output produced by the vertex 1%%ZSMJ14%%."
+    ],
+    "output": [
+      "Print a string of characters '0' and '1' (without quotes) — answers to the problem for each input in the ascending order of their vertex indices."
+    ],
+    "note": [
+      "The original scheme from the example (before the input is changed):",
+      "![](https://espresso.codeforces.com/2f0636d140ebaa2b5cbe6f2d54c27b7add86bf7c.png)",
+      "Green indicates bits '1', yellow indicates bits '0'.",
+      "If Natasha changes the input bit 2%%ZSMJ15%% to 0%%ZSMJ16%%, then the output will be 1%%ZSMJ17%%.",
+      "If Natasha changes the input bit 3%%ZSMJ18%% to 0%%ZSMJ19%%, then the output will be 0%%ZSMJ20%%.",
+      "If Natasha changes the input bit 6%%ZSMJ21%% to 1%%ZSMJ22%%, then the output will be 1%%ZSMJ23%%.",
+      "If Natasha changes the input bit 8%%ZSMJ24%% to 0%%ZSMJ25%%, then the output will be 1%%ZSMJ26%%.",
+      "If Natasha changes the input bit 9%%ZSMJ27%% to 0%%ZSMJ28%%, then the output will be 0%%ZSMJ29%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "10\nAND 9 4\nIN 1\nIN 1\nXOR 6 5\nAND 3 7\nIN 0\nNOT 10\nIN 1\nIN 1\nAND 2 8",
+      "output": "10110"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "code": "CF1252B",
+  "letter": "B",
+  "title": "B. Cleaning Robots",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1252/B",
+  "difficulty": "2300",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The new ICPC town has N%%ZSMJ0%% junctions (numbered from 1%%ZSMJ1%% to N%%ZSMJ2%%) which are connected by N−1%%ZSMJ3%% roads. It is possible from one junction to go to any other junctions by going through one or more roads. To make sure all the junctions are well-maintained, the government environment agency is planning to deploy their newest advanced cleaning robots. In addition to its cleaning ability, each robot is also equipped with a movement ability such that it can move from one junction to any other junctions connected by roads. However, as you might have guessed, such robots are not cheap. Therefore, the agency is considering the following deployment plan.",
+      "Let Tk%%ZSMJ4%% be the set of junctions which should be cleaned by the kth%%ZSMJ5%% robot (also known as, the robot's task), and |Tk|≥1%%ZSMJ6%% be the number of junctions in Tk%%ZSMJ7%%. The junctions in Tk%%ZSMJ8%% form a path, i.e. there exists a sequence of v1,v2,…,v|Tk|%%ZSMJ9%% where vi∈Tk%%ZSMJ10%% and vi≠vj%%ZSMJ11%% for all i≠j%%ZSMJ12%% such that each adjacent junction in this sequence is connected by a road. The union of T%%ZSMJ13%% for all robots is equal to the set of all junctions in ICPC town. On the other hand, no two robots share a common junction, i.e. Ti∩Tj=∅%%ZSMJ14%% if i≠j%%ZSMJ15%%.",
+      "To avoid complaints from citizens for an inefficient operation, the deployment plan should be irreducible; in other words, there should be no two robots, i%%ZSMJ16%% and j%%ZSMJ17%%, such that Ti∪Tj%%ZSMJ18%% forms a (longer) path. Note that the agency does not care whether the number of robots being used is minimized as long as all the tasks are irreducible.",
+      "Your task in this problem is to count the number of feasible deployment plan given the town's layout. A plan is feasible if and only if it satisfies all the above-mentioned requirements.",
+      "For example, let N=6%%ZSMJ19%% and the roads are {(1,3),(2,3),(3,4),(4,5),(4,6)}%%ZSMJ20%%. There are 5%%ZSMJ21%% feasible deployment plans as shown in the following figure.",
+      "![](https://espresso.codeforces.com/a2ab9a92d4f58eedf151f5cccfe32fa9dc97d463.png)",
+      "The first plan uses 2%%ZSMJ22%% robots (labeled as A and B in the figure) to clean {1,2,3}%%ZSMJ23%% and {4,5,6}%%ZSMJ24%%.",
+      "The second plan uses 3%%ZSMJ25%% robots (labeled as A, B, and C in the figure) to clean {1,3,4,6}%%ZSMJ26%%, {2}%%ZSMJ27%%, and {5}%%ZSMJ28%%.",
+      "The third plan uses 3%%ZSMJ29%% robots to clean {1,3,4,5}%%ZSMJ30%%, {2}%%ZSMJ31%%, and {6}%%ZSMJ32%%.",
+      "The fourth plan uses 3%%ZSMJ33%% robots to clean {1}%%ZSMJ34%%, {2,3,4,6}%%ZSMJ35%%, and {5}%%ZSMJ36%%.",
+      "The fifth plan uses 3%%ZSMJ37%% robots to clean {1}%%ZSMJ38%%, {2,3,4,5}%%ZSMJ39%%, and {6}%%ZSMJ40%%."
+    ],
+    "input": [
+      "Input begins with a line containing an integer: N%%ZSMJ47%% (1≤N≤100000%%ZSMJ48%%) representing the number of junctions. The next N−1%%ZSMJ49%% lines each contains two integers: ui%%ZSMJ50%% vi%%ZSMJ51%% (1≤ui<vi≤N%%ZSMJ52%%) representing a road connecting junction ui%%ZSMJ53%% and junction vi%%ZSMJ54%%. It is guaranteed that it is possible from one junction to go to any other junctions by going through one or more roads."
+    ],
+    "output": [
+      "Output in a line an integer representing the number of feasible deployment plans. As this output can be large, you need to modulo the output by 1000000007%%ZSMJ55%%."
+    ],
+    "note": [
+      "Explanation for the sample input/output #1",
+      "This is the example from the problem description."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n1 3\n2 3\n3 4\n4 5\n4 6",
+      "output": "5"
+    },
+    {
+      "input": "5\n1 2\n2 3\n2 4\n4 5",
+      "output": "3"
+    }
+  ]
+}

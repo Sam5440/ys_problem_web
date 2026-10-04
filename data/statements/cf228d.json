@@ -1,0 +1,49 @@
+{
+  "code": "CF228D",
+  "letter": "D",
+  "title": "D. Zigzag",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/228/D",
+  "difficulty": "2100",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The court wizard Zigzag wants to become a famous mathematician. For that, he needs his own theorem, like the Cauchy theorem, or his sum, like the Minkowski sum. But most of all he wants to have his sequence, like the Fibonacci sequence, and his function, like the Euler's totient function.",
+      "The Zigag's sequence with the zigzag factor z is an infinite sequence Siz (i ≥ 1; z ≥ 2), that is determined as follows:",
+      "Siz = 2, when ![](https://espresso.codeforces.com/51bbc88da75b54dcdcb2c2613259cdb7dabe1294.png);",
+      "![](https://espresso.codeforces.com/3fc20322d0b5ffae1c3d0284a12bf23e11eaf17a.png), when ![](https://espresso.codeforces.com/461f79f84094b56b6e5513c1f92583def26c2f82.png);",
+      "![](https://espresso.codeforces.com/4dc72e713993d7ff03be2790751dfc0516c1e2b9.png), when ![](https://espresso.codeforces.com/bb9c23fd7526e8b8019832016ef7e229963b5f2b.png).",
+      "Operation ![](https://espresso.codeforces.com/f58f159973d4609d919286c1821e69cd34d81118.png) means taking the remainder from dividing number x by number y. For example, the beginning of sequence Si3 (zigzag factor 3) looks as follows: 1, 2, 3, 2, 1, 2, 3, 2, 1.",
+      "Let's assume that we are given an array a, consisting of n integers. Let's define element number i (1 ≤ i ≤ n) of the array as ai. The Zigzag function is function ![](https://espresso.codeforces.com/9d7bd279425165bd11f674f425aeec826f592718.png), where l, r, z satisfy the inequalities 1 ≤ l ≤ r ≤ n, z ≥ 2.",
+      "To become better acquainted with the Zigzag sequence and the Zigzag function, the wizard offers you to implement the following operations on the given array a.",
+      "The assignment operation. The operation parameters are (p, v). The operation denotes assigning value v to the p-th array element. After the operation is applied, the value of the array element ap equals v.",
+      "The Zigzag operation. The operation parameters are (l, r, z). The operation denotes calculating the Zigzag function Z(l, r, z).",
+      "Explore the magical powers of zigzags, implement the described operations."
+    ],
+    "input": [
+      "The first line contains integer n (1 ≤ n ≤ 105) — The number of elements in array a. The second line contains n space-separated integers: a1, a2, ..., an (1 ≤ ai ≤ 109) — the elements of the array.",
+      "The third line contains integer m (1 ≤ m ≤ 105) — the number of operations. Next m lines contain the operations' descriptions. An operation's description starts with integer ti (1 ≤ ti ≤ 2) — the operation type.",
+      "If ti = 1 (assignment operation), then on the line follow two space-separated integers: pi, vi (1 ≤ pi ≤ n; 1 ≤ vi ≤ 109) — the parameters of the assigning operation.",
+      "If ti = 2 (Zigzag operation), then on the line follow three space-separated integers: li, ri, zi (1 ≤ li ≤ ri ≤ n; 2 ≤ zi ≤ 6) — the parameters of the Zigzag operation.",
+      "You should execute the operations in the order, in which they are given in the input."
+    ],
+    "output": [
+      "For each Zigzag operation print the calculated value of the Zigzag function on a single line. Print the values for Zigzag functions in the order, in which they are given in the input.",
+      "Please, do not use the %lld specifier to read or write 64-bit integers in С++. It is preferred to use cin, cout streams or the %I64d specifier."
+    ],
+    "note": [
+      "Explanation of the sample test:",
+      "Result of the first operation is Z(2, 3, 2) = 3·1 + 1·2 = 5.",
+      "Result of the second operation is Z(1, 5, 3) = 2·1 + 3·2 + 1·3 + 5·2 + 5·1 = 26.",
+      "After the third operation array a is equal to 2, 3, 5, 5, 5.",
+      "Result of the forth operation is Z(1, 5, 3) = 2·1 + 3·2 + 5·3 + 5·2 + 5·1 = 38."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 3 1 5 5\n4\n2 2 3 2\n2 1 5 3\n1 3 5\n2 1 5 3",
+      "output": "5\n26\n38"
+    }
+  ]
+}

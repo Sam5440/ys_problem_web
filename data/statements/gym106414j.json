@@ -1,0 +1,44 @@
+{
+  "code": "GYM106414J",
+  "letter": "J",
+  "title": "J. Superset Polygon",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106414/problem/J",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a set S%%ZSMJ0%% of n%%ZSMJ1%% integer lattice points in the plane. Find a simple lattice polygon with no 180%%ZSMJ2%% degree angles that contains each point in S%%ZSMJ3%% as a vertex.",
+      "For example, here is an example of the set S%%ZSMJ4%% and a valid polygon:",
+      "![](https://espresso.codeforces.com/fa76020ecf8efa4f738ee9a98d64c8af52d39d1b.png)",
+      "The below polygon would NOT be valid, because of the 180%%ZSMJ5%% degree angle at (5,3)%%ZSMJ6%%.",
+      "![](https://espresso.codeforces.com/2cd8eecd5eac82f02e2347d480137e3d6b466fca.png)",
+      "The polygon must be simple, meaning its edges may only intersect at vertices, and all of its vertices must be at lattice points, but it does not have to be convex, as shown in the example."
+    ],
+    "input": [
+      "Each test consists of multiple test cases.",
+      "The first line of input contains a single integer t%%ZSMJ7%% (1≤t≤2⋅105%%ZSMJ8%%) — the number of test cases.",
+      "The first line of each test case consists of a single integer n%%ZSMJ9%% (1≤n≤2⋅105%%ZSMJ10%%) — the size of S%%ZSMJ11%%.",
+      "The i%%ZSMJ12%%th of the next n%%ZSMJ13%% lines of each test case consists of two integers xi%%ZSMJ14%% and yi%%ZSMJ15%% (−108≤x,y≤108%%ZSMJ16%%) — the coordinates of the i%%ZSMJ17%%-th element of S%%ZSMJ18%%. It is guaranteed that all points in S%%ZSMJ19%% are distinct.",
+      "It is guaranteed that the sum of n%%ZSMJ20%% over all test cases does not exceed 2⋅105%%ZSMJ21%%."
+    ],
+    "output": [
+      "The first line of output for each test case should consist of a single integer m%%ZSMJ22%% (3≤m≤10⋅n%%ZSMJ23%%) — the number of vertices of the polygon. You do not need to minimize m%%ZSMJ24%%.",
+      "The i%%ZSMJ25%%th of the next m%%ZSMJ26%% lines should consist of two integers xi%%ZSMJ27%% and yi%%ZSMJ28%% (−109≤xi,yi≤109%%ZSMJ29%%) — the coordinates of the i%%ZSMJ30%%-th vertex of the polygon. All the vertices of S%%ZSMJ31%% should be among these.",
+      "Under the given input conditions, it can be shown that there exists a solution with the given restrictions on m%%ZSMJ32%% and (xi,yi)%%ZSMJ33%%.",
+      "If there are multiple solutions, you may print any."
+    ],
+    "note": [
+      "The first test case corresponds to the image above.",
+      "Here are the points and polygon for the second test case:",
+      "![](https://espresso.codeforces.com/e9846816ec0fc7eb6592f900854dfc23b11077d7.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n5\n2 4\n3 6\n4 4\n5 3\n6 2\n4\n0 0\n1 0\n2 0\n3 0",
+      "output": "7\n2 4\n3 6\n4 4\n5 3\n6 3\n6 2\n2 2\n6\n0 0\n1 0\n1 1\n2 0\n3 0\n3 -1"
+    }
+  ]
+}

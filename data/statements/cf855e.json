@@ -1,0 +1,45 @@
+{
+  "code": "CF855E",
+  "letter": "E",
+  "title": "E. Salazar Slytherin's Locket",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/855/E",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Harry came to know from Dumbledore that Salazar Slytherin's locket is a horcrux. This locket was present earlier at 12 Grimmauld Place, the home of Sirius Black's mother. It was stolen from there and is now present in the Ministry of Magic in the office of Dolorous Umbridge, Harry's former Defense Against the Dark Arts teacher.",
+      "Harry, Ron and Hermione are infiltrating the Ministry. Upon reaching Umbridge's office, they observed a code lock with a puzzle asking them to calculate count of magic numbers between two integers l and r (both inclusive).",
+      "Harry remembered from his detention time with Umbridge that she defined a magic number as a number which when converted to a given base b, all the digits from 0 to b - 1 appear even number of times in its representation without any leading zeros.",
+      "You have to answer q queries to unlock the office. Each query has three integers bi, li and ri, the base and the range for which you have to find the count of magic numbers."
+    ],
+    "input": [
+      "First line of input contains q (1 ≤ q ≤ 105) — number of queries.",
+      "Each of the next q lines contain three space separated integers bi, li, ri (2 ≤ bi ≤ 10, 1 ≤ li ≤ ri ≤ 1018)."
+    ],
+    "output": [
+      "You have to output q lines, each containing a single integer, the answer to the corresponding query."
+    ],
+    "note": [
+      "In sample test case 1, for first query, when we convert numbers 4 to 9 into base 2, we get:",
+      "4 = 1002,",
+      "5 = 1012,",
+      "6 = 1102,",
+      "7 = 1112,",
+      "8 = 10002,",
+      "9 = 10012.",
+      "Out of these, only base 2 representation of 9 has even number of 1 and 0. Thus, the answer is 1."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n2 4 9\n3 1 10",
+      "output": "1\n2"
+    },
+    {
+      "input": "2\n2 1 100\n5 1 100",
+      "output": "21\n4"
+    }
+  ]
+}

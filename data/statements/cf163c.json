@@ -1,0 +1,41 @@
+{
+  "code": "CF163C",
+  "letter": "C",
+  "title": "C. Conveyor",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/163/C",
+  "difficulty": "2200",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Anton came to a chocolate factory. There he found a working conveyor and decided to run on it from the beginning to the end.",
+      "The conveyor is a looped belt with a total length of 2l meters, of which l meters are located on the surface and are arranged in a straight line. The part of the belt which turns at any moment (the part which emerges from under the floor to the surface and returns from the surface under the floor) is assumed to be negligibly short.",
+      "The belt is moving uniformly at speed v1 meters per second. Anton will be moving on it in the same direction at the constant speed of v2 meters per second, so his speed relatively to the floor will be v1 + v2 meters per second. Anton will neither stop nor change the speed or the direction of movement.",
+      "Here and there there are chocolates stuck to the belt (n chocolates). They move together with the belt, and do not come off it. Anton is keen on the chocolates, but he is more keen to move forward. So he will pick up all the chocolates he will pass by, but nothing more. If a chocolate is at the beginning of the belt at the moment when Anton starts running, he will take it, and if a chocolate is at the end of the belt at the moment when Anton comes off the belt, he will leave it.",
+      "![](https://espresso.codeforces.com/7fcbe21ac233256be6e14c9e08608208248d66ce.png)",
+      "You are given the positions of the chocolates relative to the initial start position of the belt 0 ≤ a1 < a2 < ... < an < 2l. The positions on the belt from 0 to l correspond to the top, and from l to 2l — to the the bottom half of the belt (see example). All coordinates are given in meters.",
+      "Anton begins to run along the belt at a random moment of time. This means that all possible positions of the belt at the moment he starts running are equiprobable. For each i from 0 to n calculate the probability that Anton will pick up exactly i chocolates."
+    ],
+    "input": [
+      "The first line contains space-separated integers n, l, v1 and v2 (1 ≤ n ≤ 105, 1 ≤ l, v1, v2 ≤ 109) — the number of the chocolates, the length of the conveyor's visible part, the conveyor's speed and Anton's speed.",
+      "The second line contains a sequence of space-separated integers a1, a2, ..., an (0 ≤ a1 < a2 < ... < an < 2l) — the coordinates of the chocolates."
+    ],
+    "output": [
+      "Print n + 1 numbers (one per line): the probabilities that Anton picks up exactly i chocolates, for each i from 0 (the first line) to n (the last line). The answer will be considered correct if each number will have absolute or relative error of at most than 10 - 9."
+    ],
+    "note": [
+      "In the first sample test Anton can pick up a chocolate if by the moment he starts running its coordinate is less than 0.5; but if by the moment the boy starts running the chocolate's coordinate is greater than or equal to 0.5, then Anton won't be able to pick it up. As all positions of the belt are equiprobable, the probability of picking up the chocolate equals ![](https://espresso.codeforces.com/55d1d7955c1e59f407eb6baa7601582a54eeac4f.png), and the probability of not picking it up equals ![](https://espresso.codeforces.com/0e79ad74cc0314b318cc094369c845c55b37c9ef.png)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 1 1 1\n0",
+      "output": "0.75000000000000000000\n0.25000000000000000000"
+    },
+    {
+      "input": "2 3 1 2\n2 5",
+      "output": "0.33333333333333331000\n0.66666666666666663000\n0.00000000000000000000"
+    }
+  ]
+}

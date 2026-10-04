@@ -1,0 +1,52 @@
+{
+  "code": "CF1878F",
+  "letter": "F",
+  "title": "F. Vasilije Loves Number Theory",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1878/F",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Vasilije is a smart student and his discrete mathematics teacher Sonja taught him number theory very well.",
+      "He gave Ognjen a positive integer n%%ZSMJ0%%.",
+      "Denote d(n)%%ZSMJ1%% as the number of positive integer divisors of n%%ZSMJ2%%, and denote gcd(a,b)%%ZSMJ3%% as the largest integer g%%ZSMJ4%% such that a%%ZSMJ5%% is divisible by g%%ZSMJ6%% and b%%ZSMJ7%% is divisible by g%%ZSMJ8%%.",
+      "After that, he gave Ognjen q%%ZSMJ9%% queries, and there are 2%%ZSMJ10%% types of queries.",
+      "1%%ZSMJ11%%, x%%ZSMJ12%% — set n%%ZSMJ13%% to n⋅x%%ZSMJ14%%, and then answer the following question: does there exist a positive integer a%%ZSMJ15%% such that gcd(a,n)=1%%ZSMJ16%%, and d(n⋅a)=n%%ZSMJ17%%?",
+      "2%%ZSMJ18%% — reset n%%ZSMJ19%% to its initial value (before any queries).",
+      "Note that n%%ZSMJ20%% does not get back to its initial value after the type 1 query.",
+      "Since Ognjen is afraid of number theory, Vasilije promised him that after each query, d(n)≤109%%ZSMJ21%%, however, even with that constraint, he still needs your help with this problem."
+    ],
+    "input": [
+      "The first line contains a positive integer t%%ZSMJ22%%, (1≤t≤100%%ZSMJ23%%) — the number of test cases.",
+      "The first line of each test case contains 2%%ZSMJ24%% integers, n%%ZSMJ25%% and q%%ZSMJ26%% (1≤n≤106%%ZSMJ27%%, 1≤q≤1000%%ZSMJ28%%) — the number n%%ZSMJ29%% and the number of queries.",
+      "The following q%%ZSMJ30%% lines contain an integer k%%ZSMJ31%% (1≤k≤2%%ZSMJ32%%), if k=1%%ZSMJ33%% then there is another integer in this line x%%ZSMJ34%% (1≤x≤106%%ZSMJ35%%) — the description of the queries.",
+      "It is guaranteed that, for the given input, d(n)%%ZSMJ36%% does not exceed 109%%ZSMJ37%% at any point.",
+      "It is guaranteed that the sum of q%%ZSMJ38%% over all test cases doesn't exceed 103%%ZSMJ39%%."
+    ],
+    "output": [
+      "For each type 1 query, you should output \"YES\" if there exist such positive integer a%%ZSMJ40%% that gcd(a,n)=1%%ZSMJ41%% and d(n⋅a)=n%%ZSMJ42%%, and \"NO\" if he can't.",
+      "You can output the answer in any case (for example, the strings \"yEs\", \"yes\", \"Yes\", and \"YES\" will be recognized as a positive answer)."
+    ],
+    "note": [
+      "In the first test case, we initially have n=1%%ZSMJ43%%.",
+      "After the first query: n=1%%ZSMJ44%%, d(n)=1%%ZSMJ45%%, so by taking a=1%%ZSMJ46%%, d(n⋅a)=n%%ZSMJ47%%, and the answer to this query is \"YES\".",
+      "After the second query: n=2%%ZSMJ48%%, d(n)=2%%ZSMJ49%%, we can, again, take a=1%%ZSMJ50%%, d(n⋅a)=n%%ZSMJ51%%, and the answer to this query is \"YES\".",
+      "After the third query n=1%%ZSMJ52%%, and this is a type 2%%ZSMJ53%% query so we don't answer it.",
+      "After the fourth query: n=8%%ZSMJ54%%, and by taking a=3%%ZSMJ55%%, d(n⋅a)=d(24)=8=n%%ZSMJ56%%, so the answer is \"YES\".",
+      "After the fifth query: n=72%%ZSMJ57%%, now we can take a=637%%ZSMJ58%% to get n⋅a=45864%%ZSMJ59%%, and d(n⋅a)=72=n%%ZSMJ60%%, so the answer is \"YES\".",
+      "In the second test case, we initially have n=20%%ZSMJ61%%.",
+      "After the first query: n=60%%ZSMJ62%%, and the answer is \"YES\".",
+      "After the second query: n=20%%ZSMJ63%%, this is a type 2%%ZSMJ64%% query, so we don't answer it.",
+      "After the third query: n=140%%ZSMJ65%%, and it can be proven that no matter which positive integer a%%ZSMJ66%% we take, d(n⋅a)%%ZSMJ67%% will never be equal to n%%ZSMJ68%%, so the answer to this query is \"NO\".",
+      "After the fourth query: n=1680%%ZSMJ69%%. It can be proven that there exists a positive integer a%%ZSMJ70%%, such that d(n⋅a)=n%%ZSMJ71%%, so the answer is \"YES\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n1 5\n1 1\n1 2\n2\n1 8\n1 9\n20 4\n1 3\n2\n1 7\n1 12\n16 10\n1 6\n1 6\n1 10\n1 9\n1 1\n1 9\n1 7\n1 3\n1 2\n1 10\n9 1\n1 3\n8 1\n1 2\n8 3\n1 5\n1 8\n1 10\n11 5\n1 8\n1 2\n1 1\n1 3\n1 1",
+      "output": "YES\nYES\nYES\nYES\n\nYES\nNO\nYES\n\nYES\nNO\nYES\nYES\nYES\nNO\nYES\nNO\nYES\nYES\n\nNO\n\nNO\n\nYES\nNO\nNO\n\nYES\nNO\nNO\nNO\nNO"
+    }
+  ]
+}

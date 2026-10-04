@@ -1,0 +1,47 @@
+{
+  "code": "GYM106100F",
+  "letter": "F",
+  "title": "F. Unlock the Chest",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106100/problem/F",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The Committee of the National Archeological Research in eXploration of Organized Zones (NARXOZ) found an old chest in the Almaty region. But there is a lock on the chest with the password that consists of n%%ZSMJ0%% positive numbers.",
+      "Luckily, scientists also found the correct version of this list — the one that opens the chest.",
+      "So, you are given the two lists of numbers: the password that is now on the lock and the password that opens the chest.",
+      "To change the current password into the correct one, you can use this operation:",
+      "Choose an index i%%ZSMJ1%% such that 1≤i<n%%ZSMJ2%%.",
+      "Let x%%ZSMJ3%% = value at position i%%ZSMJ4%% before the operation. Let y%%ZSMJ5%% = value at position i+1%%ZSMJ6%% before the operation.",
+      "After the operation: The number at position i%%ZSMJ7%% becomes y−1%%ZSMJ8%%. The number at position i+1%%ZSMJ9%% becomes x+1%%ZSMJ10%%.",
+      "You can repeat this operation as many times as needed. Your goal is to make the current list exactly the same as the correct list, using the smallest number of operations.",
+      "If it is not possible to make the two lists the same, output -1.",
+      "NARXOZ is holding a contest: the fastest person who solves this problem will get a great job offer. You want to win — so get to work!"
+    ],
+    "input": [
+      "The first line contains one integer n%%ZSMJ11%% (1≤n≤3∗105%%ZSMJ12%%) — the length of the password.",
+      "The second line contains n%%ZSMJ13%% positive integers — the current version of the password.",
+      "The third line contains n%%ZSMJ14%% positive integers — the correct version of the password.",
+      "All values of the integers are positive and do not exceed 109%%ZSMJ15%%."
+    ],
+    "output": [
+      "Print one number — the minimum number of operations needed to turn the current list into the correct list. If it is impossible, print -1."
+    ],
+    "note": [
+      "In the first sample we can perform operations in the following order: Swap (1,2)%%ZSMJ16%%, swap (2,3)%%ZSMJ17%% and swap (1,2)%%ZSMJ18%%. It can be shown, that there is no other option with less number of operations.",
+      "In the second sample there is no valid order of operations to get the correct version of the password from the current one."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4 7 3\n1 7 6",
+      "output": "3"
+    },
+    {
+      "input": "4\n3 1 4 2\n2 2 3 3",
+      "output": "-1"
+    }
+  ]
+}

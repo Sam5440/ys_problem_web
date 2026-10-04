@@ -1,0 +1,35 @@
+{
+  "code": "CF412D",
+  "letter": "D",
+  "title": "D. Giving Awards",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/412/D",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The employees of the R1 company often spend time together: they watch football, they go camping, they solve contests. So, it's no big deal that sometimes someone pays for someone else.",
+      "Today is the day of giving out money rewards. The R1 company CEO will invite employees into his office one by one, rewarding each one for the hard work this month. The CEO knows who owes money to whom. And he also understands that if he invites person x to his office for a reward, and then immediately invite person y, who has lent some money to person x, then they can meet. Of course, in such a situation, the joy of person x from his brand new money reward will be much less. Therefore, the R1 CEO decided to invite the staff in such an order that the described situation will not happen for any pair of employees invited one after another.",
+      "However, there are a lot of employees in the company, and the CEO doesn't have a lot of time. Therefore, the task has been assigned to you. Given the debt relationships between all the employees, determine in which order they should be invited to the office of the R1 company CEO, or determine that the described order does not exist."
+    ],
+    "input": [
+      "The first line contains space-separated integers n and m ![](https://espresso.codeforces.com/3974398fd0ef91df2b19ee0ccc8cc1815a11c9d5.png) — the number of employees in R1 and the number of debt relations. Each of the following m lines contains two space-separated integers ai, bi (1 ≤ ai, bi ≤ n; ai ≠ bi), these integers indicate that the person number ai owes money to a person a number bi. Assume that all the employees are numbered from 1 to n.",
+      "It is guaranteed that each pair of people p, q is mentioned in the input data at most once. In particular, the input data will not contain pairs p, q and q, p simultaneously."
+    ],
+    "output": [
+      "Print -1 if the described order does not exist. Otherwise, print the permutation of n distinct integers. The first number should denote the number of the person who goes to the CEO office first, the second number denote the person who goes second and so on.",
+      "If there are multiple correct orders, you are allowed to print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 1\n1 2",
+      "output": "2 1"
+    },
+    {
+      "input": "3 3\n1 2\n2 3\n3 1",
+      "output": "2 1 3"
+    }
+  ]
+}

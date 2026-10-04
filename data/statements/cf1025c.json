@@ -1,0 +1,38 @@
+{
+  "code": "CF1025C",
+  "letter": "C",
+  "title": "C. Plasticine zebra",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1025/C",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Is there anything better than going to the zoo after a tiresome week at work? No wonder Grisha feels the same while spending the entire weekend accompanied by pretty striped zebras.",
+      "Inspired by this adventure and an accidentally found plasticine pack (represented as a sequence of black and white stripes), Grisha now wants to select several consequent (contiguous) pieces of alternating colors to create a zebra. Let's call the number of selected pieces the length of the zebra.",
+      "Before assembling the zebra Grisha can make the following operation 0%%ZSMJ0%% or more times. He splits the sequence in some place into two parts, then reverses each of them and sticks them together again. For example, if Grisha has pieces in the order \"bwbbw\" (here 'b' denotes a black strip, and 'w' denotes a white strip), then he can split the sequence as bw|bbw (here the vertical bar represents the cut), reverse both parts and obtain \"wbwbb\".",
+      "Determine the maximum possible length of the zebra that Grisha can produce."
+    ],
+    "input": [
+      "The only line contains a string s%%ZSMJ1%% (1≤|s|≤105%%ZSMJ2%%, where |s|%%ZSMJ3%% denotes the length of the string s%%ZSMJ4%%) comprised of lowercase English letters 'b' and 'w' only, where 'w' denotes a white piece and 'b' denotes a black piece."
+    ],
+    "output": [
+      "Print a single integer — the maximum possible zebra length."
+    ],
+    "note": [
+      "In the first example one of the possible sequence of operations is bwwwbww|bw →%%ZSMJ5%% w|wbwwwbwb →%%ZSMJ6%% wbwbwwwbw, that gives the answer equal to 5%%ZSMJ7%%.",
+      "In the second example no operation can increase the answer."
+    ]
+  },
+  "examples": [
+    {
+      "input": "bwwwbwwbw",
+      "output": "5"
+    },
+    {
+      "input": "bwwbwwb",
+      "output": "3"
+    }
+  ]
+}

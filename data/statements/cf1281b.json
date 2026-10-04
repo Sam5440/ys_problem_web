@@ -1,0 +1,43 @@
+{
+  "code": "CF1281B",
+  "letter": "B",
+  "title": "B. Azamon Web Services",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1281/B",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Your friend Jeff Zebos has been trying to run his new online company, but it's not going very well. He's not getting a lot of sales on his website which he decided to call Azamon. His big problem, you think, is that he's not ranking high enough on the search engines. If only he could rename his products to have better names than his competitors, then he'll be at the top of the search results and will be a millionaire.",
+      "After doing some research, you find out that search engines only sort their results lexicographically. If your friend could rename his products to lexicographically smaller strings than his competitor's, then he'll be at the top of the rankings!",
+      "To make your strategy less obvious to his competitors, you decide to swap no more than two letters of the product names.",
+      "Please help Jeff to find improved names for his products that are lexicographically smaller than his competitor's!",
+      "Given the string s%%ZSMJ0%% representing Jeff's product name and the string c%%ZSMJ1%% representing his competitor's product name, find a way to swap at most one pair of characters in s%%ZSMJ2%% (that is, find two distinct indices i%%ZSMJ3%% and j%%ZSMJ4%% and swap si%%ZSMJ5%% and sj%%ZSMJ6%%) such that the resulting new name becomes strictly lexicographically smaller than c%%ZSMJ7%%, or determine that it is impossible.",
+      "Note: String a%%ZSMJ8%% is strictly lexicographically smaller than string b%%ZSMJ9%% if and only if one of the following holds:",
+      "a%%ZSMJ10%% is a proper prefix of b%%ZSMJ11%%, that is, a%%ZSMJ12%% is a prefix of b%%ZSMJ13%% such that a≠b%%ZSMJ14%%;",
+      "There exists an integer 1≤i≤min(|a|,|b|)%%ZSMJ15%% such that ai<bi%%ZSMJ16%% and aj=bj%%ZSMJ17%% for 1≤j<i%%ZSMJ18%%."
+    ],
+    "input": [
+      "The first line of input contains a single integer t%%ZSMJ19%% (1≤t≤1500%%ZSMJ20%%) denoting the number of test cases. The next lines contain descriptions of the test cases.",
+      "Each test case consists of a single line containing two space-separated strings s%%ZSMJ21%% and c%%ZSMJ22%% (2≤|s|≤5000,1≤|c|≤5000%%ZSMJ23%%). The strings s%%ZSMJ24%% and c%%ZSMJ25%% consists of uppercase English letters.",
+      "It is guaranteed that the sum of |s|%%ZSMJ26%% in the input is at most 5000%%ZSMJ27%% and the sum of the |c|%%ZSMJ28%% in the input is at most 5000%%ZSMJ29%%."
+    ],
+    "output": [
+      "For each test case, output a single line containing a single string, which is either",
+      "the new name which is obtained after swapping no more than one pair of characters that is strictly lexicographically smaller than c%%ZSMJ30%%. In case there are many possible such strings, you can output any of them;",
+      "three dashes (the string \"---\" without quotes) if it is impossible."
+    ],
+    "note": [
+      "In the first test case, it is possible to swap the second and the fourth letters of the string and the resulting string \"AMAZON\" is lexicographically smaller than \"APPLE\".",
+      "It is impossible to improve the product's name in the second test case and satisfy all conditions.",
+      "In the third test case, it is possible not to swap a pair of characters. The name \"APPLE\" is lexicographically smaller than \"BANANA\". Note that there are other valid answers, e.g., \"APPEL\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\nAZAMON APPLE\nAZAMON AAAAAAAAAAALIBABA\nAPPLE BANANA",
+      "output": "AMAZON\n---\nAPPLE"
+    }
+  ]
+}

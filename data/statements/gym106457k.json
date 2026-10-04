@@ -1,0 +1,42 @@
+{
+  "code": "GYM106457K",
+  "letter": "K",
+  "title": "K. Larila",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106457/problem/K",
+  "difficulty": "*1900",
+  "timeLimit": "2 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Chief Scientist Randward Lirili want to explore a N×N%%ZSMJ0%% grid on Larila using rovers.",
+      "Due to the high cost, each rover is programmable, but only with a sequence of M%%ZSMJ1%% instructions moving the rover North (N), East (E), South (S), or West (W). The rover repeats this sequence of instructions infinitely.",
+      "Some of the tiles on the grid are too precarious for the rover to travel through, if the rover needs to execute an instruction that will cause the rover to travel onto one of these tiles, the rover will skip this instruction and go to the next one. Moving outside of the grid is also considered precarious.",
+      "The rover is said to have returned to base if the rover reaches one of the ships that have landed in this grid. When the rover reaches the ship, it stops.",
+      "Given a sequence of instructions, determine whether a rover will return to base for every starting tile on the grid. If a rover starts on a tile that is precarious, it crashes and burns and automatically fails to return to base."
+    ],
+    "input": [
+      "The first line contains two integers N%%ZSMJ2%% and M%%ZSMJ3%% (1≤N,M≤500%%ZSMJ4%%).",
+      "Each of the next N%%ZSMJ5%% lines contains a string of N%%ZSMJ6%% characters describing a row of the grid, from north to south. Each character is one of . (safe), # (precarious), or S (ship).",
+      "The last line contains a string of M%%ZSMJ7%% characters describing the move sequence. Each character is one of N (north), S (south), E (east), or W (west)."
+    ],
+    "output": [
+      "Print N%%ZSMJ8%% lines, each containing N%%ZSMJ9%% characters. The character at row i%%ZSMJ10%%, column j%%ZSMJ11%% should be 1 if a rover starting at that cell returns to base, and 0 otherwise."
+    ],
+    "note": [
+      "(1,1)%%ZSMJ12%% is a ship — returned to base immediately.",
+      "(1,2)%%ZSMJ13%% and (1,3)%%ZSMJ14%%: already on row 1, so N moves do nothing. Then W moves slide them toward (1,1)%%ZSMJ15%%, the sink.",
+      "(2,1)%%ZSMJ16%% and (2,3)%%ZSMJ17%% are precarious — output 0.",
+      "(2,2)%%ZSMJ18%%: N goes to (1,2)%%ZSMJ19%%, then N does nothing (already row 1), then WW slides to (1,1)%%ZSMJ20%%. Escapes.",
+      "(3,1)%%ZSMJ21%%: N would go to (2,1)%%ZSMJ22%%, which is precarious. So N does nothing, N does nothing, W does nothing (already column 1), W does nothing. After one cycle it is still at (3,1)%%ZSMJ23%%. Stuck forever — output 0.",
+      "(3,2)%%ZSMJ24%%: NN goes to (1,2)%%ZSMJ25%%, WW slides to (1,1)%%ZSMJ26%%. Escapes.",
+      "(3,3)%%ZSMJ27%%: N would go to (2,3)%%ZSMJ28%% — precarious, blocked. Stays at (3,3)%%ZSMJ29%%. Repeats forever — output 0."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 4\nS..\n#.#\n...\nNNWW",
+      "output": "111\n010\n010"
+    }
+  ]
+}

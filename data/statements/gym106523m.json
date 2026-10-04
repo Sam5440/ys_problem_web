@@ -1,0 +1,45 @@
+{
+  "code": "GYM106523M",
+  "letter": "M",
+  "title": "M. Minimum Parking Cost",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106523/problem/M",
+  "difficulty": "*2300",
+  "timeLimit": "2.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Henrique wants to park his car in the parking lot of the University of Brasília (UnB).",
+      "The parking spots are numbered from 1%%ZSMJ0%% to n%%ZSMJ1%%. Spot number i%%ZSMJ2%% is characterized by two numbers: its distance di%%ZSMJ3%% from the main entrance and the probability pi%%ZSMJ4%% that it is free. Henrique visits the spots sequentially, starting from spot 1%%ZSMJ5%%. Upon arriving at spot i%%ZSMJ6%%, two situations may occur:",
+      "With probability pi%%ZSMJ7%%, spot i%%ZSMJ8%% is free. In this case, Henrique has two options: park in spot i%%ZSMJ9%% (Henrique is extremely fast, so we may consider that he takes 0%%ZSMJ10%% seconds to park), or move on to the next spot, which is spot i+1%%ZSMJ11%% if i≠n%%ZSMJ12%% and spot 1%%ZSMJ13%% if i=n%%ZSMJ14%%.",
+      "With probability 1−pi%%ZSMJ15%%, spot i%%ZSMJ16%% is occupied. In this case, Henrique is forced to continue to the next spot.",
+      "Each time Henrique moves on to the next spot, he spends 1%%ZSMJ17%% second. After visiting spot i%%ZSMJ18%% once, it is possible that in subsequent visits its state will be different, since the UnB parking lot is very busy and a driver may have occupied or vacated the spot during the time Henrique took to return to it. This behaviour will be dictated by the probability pi%%ZSMJ19%%, which remains fixed throughout the entire problem.",
+      "Henrique wants to act so that the expected value of the sum of the total time spent choosing a spot and the distance of the spot where he finally parks is as small as possible. If Henrique acts optimally, what is this value?"
+    ],
+    "input": [
+      "The first line of the input contains an integer n%%ZSMJ20%% (2≤n≤3⋅105)%%ZSMJ21%%.",
+      "The second line of the input contains n%%ZSMJ22%% integers d1,d2,…,dn%%ZSMJ23%% (1≤di≤106)%%ZSMJ24%%.",
+      "Finally, the third line of the input contains n%%ZSMJ25%% real numbers p1,p2,…,pn%%ZSMJ26%% (0.001≤pi≤1)%%ZSMJ27%%. Each pi%%ZSMJ28%% is given with at most 3 decimal places."
+    ],
+    "output": [
+      "Print a single real number: the expected value of the sum of the total time spent choosing a spot and the distance of the spot where he parks under the best strategy. Your answer will be considered correct if the absolute or relative error does not exceed 10−6%%ZSMJ29%%. That is, if your answer is a%%ZSMJ30%% and the correct answer is b%%ZSMJ31%%, your answer will be accepted if and only if |a−b|max(1,|b|)≤10−6%%ZSMJ32%%."
+    ],
+    "note": [
+      "In the first test case, Henrique should park in spot number 4%%ZSMJ33%%. He takes a total of 3%%ZSMJ34%% seconds to reach it, and it is at a distance of 4%%ZSMJ35%% meters from the entrance, so the sum of the time spent and the distance is 3+4=7%%ZSMJ36%%. Since all spots are always free, he always achieves this value."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n8 9 9 4 6 3 2\n1 1 1 1 1 1 1",
+      "output": "7"
+    },
+    {
+      "input": "2\n1 1000000\n0.5 1",
+      "output": "3"
+    },
+    {
+      "input": "6\n31 415 92 6535 89 79323\n0.461 0.884 0.500 0.972 0.149 0.111",
+      "output": "38.01518438177870962136"
+    }
+  ]
+}

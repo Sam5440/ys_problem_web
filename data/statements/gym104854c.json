@@ -1,0 +1,35 @@
+{
+  "code": "GYM104854C",
+  "letter": "C",
+  "title": "C. Continued Fractions",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104854/problem/C",
+  "difficulty": "*2000",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Continued fractions are a powerful mathematical tool. They are however, too complicated, so we have created our own definition.",
+      "Let (a,b)%%ZSMJ0%% be a pair of positive integers. We call the sequence {a+nb+n}∞n=0%%ZSMJ1%% the continued fractions of the pair (a,b)%%ZSMJ2%%. For example, if a=14%%ZSMJ3%% and b=2%%ZSMJ4%%, the sequence of continued fractions begins with 142%%ZSMJ5%%, 153%%ZSMJ6%%, 164%%ZSMJ7%%, 175%%ZSMJ8%%, 186%%ZSMJ9%%, 197%%ZSMJ10%%.",
+      "Note that if a≠b%%ZSMJ11%% the sequence of continued fractions contains only a finite number of integers. In the above example, the elements that are integers are those with indices n=0,1,2,4,10%%ZSMJ12%%.",
+      "We define the integrity of a pair of integers (a,b)%%ZSMJ13%% to be the length of the longest prefix of the sequence of continued fractions that contains only integers. For example integrity(14,2)=3%%ZSMJ14%%.",
+      "You are given a positive integer p%%ZSMJ15%%. Your task is to find and report all pairs of integers (a,b)%%ZSMJ16%% that satisfy the following two conditions:",
+      "ab=p%%ZSMJ17%%",
+      "integrity(a,b)≥3%%ZSMJ18%%"
+    ],
+    "input": [
+      "The first line of input contains a single integer t%%ZSMJ19%% (1≤t≤20%%ZSMJ20%%) — the number of test cases.",
+      "t%%ZSMJ21%% lines follow (one for each test case), the i%%ZSMJ22%%-th of which (1≤i≤t%%ZSMJ23%%) is containing a single integer pi%%ZSMJ24%% (2≤pi≤1018%%ZSMJ25%%) — corresponding to the p%%ZSMJ26%% from the description above."
+    ],
+    "output": [
+      "For each test case, first output one line containing a single integer k%%ZSMJ27%%  – the number of pairs (a,b)%%ZSMJ28%% satisfying the two conditions from the problem statement. Then output k%%ZSMJ29%% integers b1,b2,…,bk%%ZSMJ30%% — the values of b%%ZSMJ31%% sorted in ascending order.",
+      "Note that under the constraints of the problem it can be shown that the sum of all k%%ZSMJ32%% is at most 100000%%ZSMJ33%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n7",
+      "output": "2\n1 2"
+    }
+  ]
+}

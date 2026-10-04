@@ -1,0 +1,44 @@
+{
+  "code": "CF1210B",
+  "letter": "B",
+  "title": "B. Marcin and Training Camp",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1210/B",
+  "difficulty": "1700",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Marcin is a coach in his university. There are n%%ZSMJ0%% students who want to attend a training camp. Marcin is a smart coach, so he wants to send only the students that can work calmly with each other.",
+      "Let's focus on the students. They are indexed with integers from 1%%ZSMJ1%% to n%%ZSMJ2%%. Each of them can be described with two integers ai%%ZSMJ3%% and bi%%ZSMJ4%%; bi%%ZSMJ5%% is equal to the skill level of the i%%ZSMJ6%%-th student (the higher, the better). Also, there are 60%%ZSMJ7%% known algorithms, which are numbered with integers from 0%%ZSMJ8%% to 59%%ZSMJ9%%. If the i%%ZSMJ10%%-th student knows the j%%ZSMJ11%%-th algorithm, then the j%%ZSMJ12%%-th bit (2j%%ZSMJ13%%) is set in the binary representation of ai%%ZSMJ14%%. Otherwise, this bit is not set.",
+      "Student x%%ZSMJ15%% thinks that he is better than student y%%ZSMJ16%% if and only if x%%ZSMJ17%% knows some algorithm which y%%ZSMJ18%% doesn't know. Note that two students can think that they are better than each other. A group of students can work together calmly if no student in this group thinks that he is better than everyone else in this group.",
+      "Marcin wants to send a group of at least two students which will work together calmly and will have the maximum possible sum of the skill levels. What is this sum?"
+    ],
+    "input": [
+      "The first line contains one integer n%%ZSMJ19%% (1≤n≤7000%%ZSMJ20%%) — the number of students interested in the camp.",
+      "The second line contains n%%ZSMJ21%% integers. The i%%ZSMJ22%%-th of them is ai%%ZSMJ23%% (0≤ai<260%%ZSMJ24%%).",
+      "The third line contains n%%ZSMJ25%% integers. The i%%ZSMJ26%%-th of them is bi%%ZSMJ27%% (1≤bi≤109%%ZSMJ28%%)."
+    ],
+    "output": [
+      "Output one integer which denotes the maximum sum of bi%%ZSMJ29%% over the students in a group of students which can work together calmly. If no group of at least two students can work together calmly, print 0."
+    ],
+    "note": [
+      "In the first sample test, it's optimal to send the first, the second and the third student to the camp. It's also possible to send only the first and the third student, but they'd have a lower sum of bi%%ZSMJ30%%.",
+      "In the second test, in each group of at least two students someone will always think that he is better than everyone else in the subset."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n3 2 3 6\n2 8 5 10",
+      "output": "15"
+    },
+    {
+      "input": "3\n1 2 3\n1 2 3",
+      "output": "0"
+    },
+    {
+      "input": "1\n0\n1",
+      "output": "0"
+    }
+  ]
+}

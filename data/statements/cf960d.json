@@ -1,0 +1,52 @@
+{
+  "code": "CF960D",
+  "letter": "D",
+  "title": "D. Full Binary Tree Queries",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/960/D",
+  "difficulty": "2100",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You have a full binary tree having infinite levels.",
+      "Each node has an initial value. If a node has value x, then its left child has value 2·x and its right child has value 2·x + 1.",
+      "The value of the root is 1.",
+      "You need to answer Q queries.",
+      "There are 3 types of queries:",
+      "Cyclically shift the values of all nodes on the same level as node with value X by K units. (The values/nodes of any other level are not affected).",
+      "Cyclically shift the nodes on the same level as node with value X by K units. (The subtrees of these nodes will move along with them).",
+      "Print the value of every node encountered on the simple path from the node with value X to the root.",
+      "Positive K implies right cyclic shift and negative K implies left cyclic shift.",
+      "It is guaranteed that atleast one type 3 query is present."
+    ],
+    "input": [
+      "The first line contains a single integer Q (1 ≤ Q ≤ 105).",
+      "Then Q queries follow, one per line:",
+      "Queries of type 1 and 2 have the following format: T X K (1 ≤ T ≤ 2; 1 ≤ X ≤ 1018; 0 ≤ |K| ≤ 1018), where T is type of the query.",
+      "Queries of type 3 have the following format: 3 X (1 ≤ X ≤ 1018)."
+    ],
+    "output": [
+      "For each query of type 3, print the values of all nodes encountered in descending order."
+    ],
+    "note": [
+      "Following are the images of the first 4 levels of the tree in the first test case:",
+      "Original:",
+      "![](https://espresso.codeforces.com/4e484f16a168a67eac3e1ec0d26b44f3809a5250.png)",
+      "After query 1 2 1:",
+      "![](https://espresso.codeforces.com/ab9ad516ceb0f64227a0d37a7cf1bfe27cd2be59.png)",
+      "After query 2 4 -1:",
+      "![](https://espresso.codeforces.com/037a33ef65fee09fc4ba5367d7cc258b66e4048e.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3 12\n1 2 1\n3 12\n2 4 -1\n3 8",
+      "output": "12 6 3 1 \n12 6 2 1 \n8 4 2 1"
+    },
+    {
+      "input": "5\n3 14\n1 5 -3\n3 14\n1 3 1\n3 14",
+      "output": "14 7 3 1 \n14 6 3 1 \n14 6 2 1"
+    }
+  ]
+}

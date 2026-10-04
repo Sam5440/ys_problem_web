@@ -1,0 +1,43 @@
+{
+  "code": "CF441E",
+  "letter": "E",
+  "title": "E. Valera and Number",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/441/E",
+  "difficulty": "2400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Valera is a coder. Recently he wrote a funny program. The pseudo code for this program is given below:",
+      {
+        "pre": "\n//input: integers x, k, p\na = x;\nfor(step = 1; step <= k; step = step + 1){\n    rnd = [random integer from 1 to 100];\n    if(rnd <= p)\n        a = a * 2;\n    else\n        a = a + 1;\n}\n\ns = 0;\n\nwhile(remainder after dividing a by 2 equals 0){\n    a = a / 2;\n    s = s + 1;\n}"
+      },
+      "Now Valera wonders: given the values x, k and p, what is the expected value of the resulting number s?"
+    ],
+    "input": [
+      "The first line of the input contains three integers x, k, p (1 ≤ x ≤ 109; 1 ≤ k ≤ 200; 0 ≤ p ≤ 100)."
+    ],
+    "output": [
+      "Print the required expected value. Your answer will be considered correct if the absolute or relative error doesn't exceed 10 - 6."
+    ],
+    "note": [
+      "If the concept of expected value is new to you, you can read about it by the link:",
+      "http://en.wikipedia.org/wiki/Expected_value"
+    ]
+  },
+  "examples": [
+    {
+      "input": "\n//input: integers x, k, p\na = x;\nfor(step = 1; step <= k; step = step + 1){\n    rnd = [random integer from 1 to 100];\n    if(rnd <= p)\n        a = a * 2;\n    else\n        a = a + 1;\n}\n\ns = 0;\n\nwhile(remainder after dividing a by 2 equals 0){\n    a = a / 2;\n    s = s + 1;\n}",
+      "output": "1 1 50"
+    },
+    {
+      "input": "1.0000000000000",
+      "output": "5 3 0"
+    },
+    {
+      "input": "3.0000000000000",
+      "output": "5 3 25"
+    }
+  ]
+}

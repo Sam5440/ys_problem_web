@@ -1,0 +1,39 @@
+{
+  "code": "GYM104847E",
+  "letter": "E",
+  "title": "E. Raiffeisenbank Logistics",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104847/problem/E",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "One of important business tasks for Raiffeisenbank is to improve the process of delivering cards, valuables, papers and so forth between banks, clients, pick-up points and other locations. You work in a pilot project that plans to revolutionize the world of delivery by using air drones and optimal routing algorithms.",
+      "You are now performing the very first tests at onsite training ground that consists of n%%ZSMJ0%% landing spots. There is a drone at spot 1%%ZSMJ1%% and it needs to fly to spot n%%ZSMJ2%%. Drone's remote control can run m%%ZSMJ3%% routing programs, the i%%ZSMJ4%%-th program is able to move drone from spot ui%%ZSMJ5%% to spot vi%%ZSMJ6%% (if the drone is not at spot ui%%ZSMJ7%%, the program will do nothing), and it was written using ti%%ZSMJ8%% version of your drone control library. As this is one of the first tests of your project you are not sure about compatibility of different versions of software, so each routing program you run (except for the very first) must have version of drone control library strictly greater, then the previous one.",
+      "After looking at the code of routing programs you found out that you can make little changes there. In particular, you can take any program i%%ZSMJ9%% and swap its starting and destination spots. So, if the i%%ZSMJ10%%-th program moves drone from spot ui%%ZSMJ11%% to spot vi%%ZSMJ12%%, after the changes it will move from from spot vi%%ZSMJ13%% to spot ui%%ZSMJ14%%. Library version ti%%ZSMJ15%% will remain unchanged.",
+      "Now you wonder, what is the minimum number of programs you need to change, so there will exist a sequence of programs p1,p2,…,pk%%ZSMJ16%% that being run in this order moves drone from spot 1%%ZSMJ17%% to spot n%%ZSMJ18%%, and tp1<tp2<tp3<…<tpk%%ZSMJ19%%."
+    ],
+    "input": [
+      "The first line of the input contains a single integer t%%ZSMJ20%% (1≤t≤1000%%ZSMJ21%%) — the number of test cases. Then follow t%%ZSMJ22%% tests descriptions.",
+      "Each test description starts with two integers n%%ZSMJ23%% and m%%ZSMJ24%% (2≤n≤500000%%ZSMJ25%%, 1≤m≤500000%%ZSMJ26%%), the number of landing spots at the training ground and the number of routing programs respectively.",
+      "Then follow m%%ZSMJ27%% lines, the i%%ZSMJ28%%-th of them describes the i%%ZSMJ29%%-th program with three integers ui%%ZSMJ30%%, vi%%ZSMJ31%% and ti%%ZSMJ32%% (1≤ui,vi≤n%%ZSMJ33%%, 1≤ti≤109%%ZSMJ34%%), meaning this program moves drone from spot ui%%ZSMJ35%% to spot vi%%ZSMJ36%% and uses ti%%ZSMJ37%%-th version of drone control library.",
+      "There can be multiple programs with the same version of software. There can be multiple programs connecting the same pair of spots (in each direction). There can be programs that move drone from some spot to itself.",
+      "It is guaranteed that sum of n%%ZSMJ38%% over all tests won't exceed 500000%%ZSMJ39%%. It is guaranteed that sum of m%%ZSMJ40%% over all tests won't exceed 500000%%ZSMJ41%%."
+    ],
+    "output": [
+      "If there is no way to change programs and move drone from spot 1%%ZSMJ42%% to spot n%%ZSMJ43%% obeying condition that every next program you run must have greater version of drone control library, print -1 in the only line of the output.",
+      "Otherwise, print the minimum number of programs you need to change to achieve the goal."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n4 3\n2 1 1\n2 3 2\n4 3 3",
+      "output": "2"
+    },
+    {
+      "input": "2\n4 3\n2 1 1\n2 3 2\n4 3 2\n8 9\n1 2 5\n2 3 10\n4 3 15\n4 5 20\n5 8 25\n1 6 2\n6 5 30\n7 6 3\n8 7 4",
+      "output": "-1\n1"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "code": "GYM102569J",
+  "letter": "J",
+  "title": "J. The Battle of Mages",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102569/problem/J",
+  "difficulty": "*1400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Two mages play the game. Both of them has their own set of creatures. Each creature is characterized by the integer — its strength. At the beginning of the game each mage summons k%%ZSMJ0%% distinct random creatures from their set of creatures, and each subset of k%%ZSMJ1%% creatures can be summoned equally likely. The mage who has the greater sum of strengths of their creatures wins. If the sums of strength are equal, the process repeats. If every subset of creatures of both mages always has the same strength, the draw is declared.",
+      "It has turned out, that if k=1%%ZSMJ2%% or k=3%%ZSMJ3%%, the first mage has strictly greater chances to win, and if k=2%%ZSMJ4%%, the second mage has. You have to give an example of sets of creatures of the first and the second mages."
+    ],
+    "input": [
+      "This problem has only one test, and it is empty."
+    ],
+    "output": [
+      "In the first line output one integer n1%%ZSMJ5%% (3≤n1≤10%%ZSMJ6%%) — the number of creatures in the first mage's set.",
+      "In the second line output n1%%ZSMJ7%% integers s1i%%ZSMJ8%% (1≤s1i≤10%%ZSMJ9%%) — the strengths of creatures of the first mage.",
+      "In the third line output one integer n2%%ZSMJ10%% (3≤n2≤10%%ZSMJ11%%) — the number of creatures in the second mage's set.",
+      "In the fourth line output n2%%ZSMJ12%% integers s2i%%ZSMJ13%% (1≤s2i≤10%%ZSMJ14%%) — the strengths of creatures of the second mage.",
+      "If there are several possible answers, output any of them. It is guaranteed that the solution in the given constraints exists."
+    ],
+    "note": [
+      "The output example is not an answer for the problem and is given only for better understanding of output format and to clarify the problem statement.",
+      "The first mage has three creatures, their strengths are 1, 2 and 3. The second mage has three creatures, all their strengths are equal to 2.",
+      "If k=1%%ZSMJ15%%, the second mage always has fixed strength 2. If the first mage summons the creature with the strength 2, the process repeats. If he summons the creature with the strength 3, he wins, and with the strength 1 — loses. The probability of the first mage to win is 0.5, but the problem requires the first mage to have strictly better chances.",
+      "If k=2%%ZSMJ16%%, the second mage always has strength 4. The first mage can summon the following subsets of creatures: (1, 2), (1, 3), (2, 3). If it is (1, 2), the first mage loses (as 3 < 4), if it is (1, 3) — the game starts again (as 4 = 4), and if it's (2, 3) — he wins. The resulting probability is again 0.5, but the second mage should have better chances in this case.",
+      "If k=3%%ZSMJ17%%, the subsets of the first and second mages are always (1, 2, 3) and (2, 2, 2). They have equal strengths, and we got infinite game restarts. According to the rules, the draw is declared in this case, so the probability of the first mage winning is not greater again."
+    ]
+  },
+  "examples": []
+}

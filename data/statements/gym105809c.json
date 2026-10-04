@@ -1,0 +1,36 @@
+{
+  "code": "GYM105809C",
+  "letter": "C",
+  "title": "C. Chess in 3D",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105809/problem/C",
+  "difficulty": "*2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "In the mystical kingdom of TriDChess, the ancient game of chess has evolved into a thrilling three—dimensional contest of strategy and intellect. The game is played on a board with dimensions A×B×C%%ZSMJ0%%, where each of the three axes represents a spatial dimension. This board forms a cuboid, filled with possibilities for cunning moves and strategic placements.",
+      "The piece of focus in this game is the 3D Knight, a nimble entity that combines the powers of traditional chess knights with the freedom of movement afforded by the third dimension. These 3D Knights have the ability to move in an L—shape across the board, jumping over other pieces. Their movement is defined as follows:",
+      "1. L—Shaped Movement: A 3D Knight can move in an L—shape from its current position (x,y,z)%%ZSMJ1%%:",
+      "Move two squares along one axis and one square along another axis:",
+      "(x±2,y±1,z)%%ZSMJ2%%, (x±2,y,z±1)%%ZSMJ3%%, (x±1,y±2,z)%%ZSMJ4%%, (x,y±2,z±1)%%ZSMJ5%%, (x±1,y,z±2)%%ZSMJ6%%, (x,y±1,z±2)%%ZSMJ7%%.",
+      "2. The Knight's jump allows it to move over other pieces, but it must land within the bounds of the board, where 1≤x≤A%%ZSMJ8%%, 1≤y≤B%%ZSMJ9%%, 1≤z≤C%%ZSMJ10%%.",
+      "Additionally, there are between 1 and 500 blocked cells on the board where Knights cannot be placed. These cells are specified by their coordinates and must be avoided when placing Knights.",
+      "The challenge you face is to determine the maximum number of these agile 3D Knights that can be placed on the cuboid board such that no two Knights are capable of attacking each other. This means no two Knights should be in a position where one could reach the other in a single move."
+    ],
+    "input": [
+      "The first line contains three integers A%%ZSMJ11%%, B%%ZSMJ12%%, and C%%ZSMJ13%% (1≤A,B,C≤10%%ZSMJ14%%), representing the dimensions of the 3D board.",
+      "The second line contains an integer K%%ZSMJ15%% (1≤K≤500%%ZSMJ16%%), representing the number of blocked cells.",
+      "The next K%%ZSMJ17%% lines each contain three integers x,y,z%%ZSMJ18%% (1≤x≤A%%ZSMJ19%%, 1≤y≤B%%ZSMJ20%%, 1≤z≤C%%ZSMJ21%%), representing the coordinates of a blocked cell."
+    ],
+    "output": [
+      "Output a single integer that represents the maximum number of 3D Knights that can be positioned on the A×B×C%%ZSMJ22%% board without any two Knights threatening one another."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3 3\n1\n2 2 2",
+      "output": "14"
+    }
+  ]
+}

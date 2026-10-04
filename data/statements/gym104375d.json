@@ -1,0 +1,48 @@
+{
+  "code": "GYM104375D",
+  "letter": "D",
+  "title": "D. Dynamic Collection",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104375/problem/D",
+  "difficulty": "*1400",
+  "timeLimit": "3.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a collection of elements, each of which is a positive integer. Duplicate elements are allowed in this collection. There are two types of operations that you can perform on this collection. Operation 1 is for updating the collection, and Operation 2 is for querying the collection. The format for these operations are as follows:",
+      "Operation 1: \"1 k\"",
+      "Operation 2: \"2 a b\"",
+      "For Operation 1, k%%ZSMJ0%% is an integer upon which the following rules will be applied in order:",
+      "If the element k%%ZSMJ1%% is already in the collection, the collection remains the same.",
+      "If the element k%%ZSMJ2%% is greater than any of the elements in the collection, it is added to the collection.",
+      "The first occurrence of the smallest element greater than k%%ZSMJ3%% is replaced by k%%ZSMJ4%%.",
+      "For Operation 2, a%%ZSMJ5%% and b%%ZSMJ6%% are two integers that define a range. The purpose of this operation is to query how many elements in the collection fall within this range (inclusive)."
+    ],
+    "input": [
+      "The input consists of a single test case.",
+      "The first line contains two positive integers, n and q (1≤n≤106;1≤q≤106)%%ZSMJ7%%, which represent the number of elements in the collection and the total number of operations to be performed on the collection, respectively.",
+      "The second line contains exactly n space-separated integers a1%%ZSMJ8%%, a2%%ZSMJ9%%, ..., aN%%ZSMJ10%% (1≤ai≤109)%%ZSMJ11%%.",
+      "The next q lines each represent an operation. Each operation is either of type 1 or type 2, and follows the format: \"1 k\" or \"2 a b\", (1≤a,b,k≤109;a≤b)%%ZSMJ12%%"
+    ],
+    "output": [
+      "For each Operation 2 (query operation) in the input, print a single line containing a positive integer, which represents the total number of elements in the collection that fall within the range [a, b]."
+    ],
+    "note": [
+      "Let's consider the first four operations in the example:",
+      "The initial collection is the following:",
+      "C={7, 1, 7, 1, 3, 9, 7, 9, 10, 4}%%ZSMJ13%%",
+      "After the operation \"2 2 8\" the output is 5.",
+      "After the operation \"1 8\" the collection becomes:",
+      "C={7, 1, 7, 1, 3, 8, 7, 9, 10, 4}%%ZSMJ14%%",
+      "Now, after operation \"2 2 8\" the output is 6.",
+      "After the operation \"1 20\" the collection becomes:",
+      "C={7, 1, 7, 1, 3, 8, 7, 9, 10, 4, 20}%%ZSMJ15%%"
+    ]
+  },
+  "examples": [
+    {
+      "input": "10 11\n7 1 7 1 3 9 7 9 10 4\n2 2 8\n1 8\n2 2 8\n2 1 20\n1 20\n2 1 20\n2 7 12\n1 5\n2 7 12\n1 12\n2 7 12",
+      "output": "5\n6\n10\n11\n6\n5\n6"
+    }
+  ]
+}

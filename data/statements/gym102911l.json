@@ -1,0 +1,64 @@
+{
+  "code": "GYM102911L",
+  "letter": "L",
+  "title": "L. L Textiles",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102911/problem/L",
+  "difficulty": "*2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The Philippines is home to more than 175 ethnolinguistic groups, with many indigenous peoples still carrying on their heritage through traditions which are hundreds of years old. Among these traditions is the weaving of fabric and textiles adorned with intricate geometric patterns which reflect the rich history and philosophies of the various indigenous peoples throughout the country.",
+      "Bob, inspired by these patterns, decided to create geometric patterns of his own, which he decided to call \"L-Textiles\". Of course, he is not skilled in weaving or even embroidery, so he will plan out his design on the computer first.",
+      "The fabric where the pattern is to be placed can be represented as a 2N×2N%%ZSMJ0%% square unit grid. Bob envisions that the pattern with primarily consist of many L-shaped pieces which consist of three adjacent unit squares, all of the same color, in the shape of an \"L\" (see picture). The pieces can be rotated. Bob's L-shaped pieces come in 26 different colors, and he has an infinite amount of each color of piece.",
+      "![](https://espresso.codeforces.com/e956dcaa76e639da0db1a3c1544cb2e1e1823308.png)",
+      "Unfortunately, Bob realized that it is always impossible to completely cover the 2N×2N%%ZSMJ1%% grid using only L-shaped tiles because its area (in square units) will never be divisible by 3. To fix this, he blacked out the 1×1%%ZSMJ2%% square located at (x,y)%%ZSMJ3%% (the square in the x%%ZSMJ4%%th row from the top and the y%%ZSMJ5%%th column from the left). Now, Bob desires to create a pattern that satisfies the following.",
+      "The entire mural is completely covered by the L-shaped pieces, except the square at (x,y)%%ZSMJ6%%.",
+      "Only the L-shaped pieces are used",
+      "The L-shaped pieces do not overlap and the L-shaped pieces cannot be broken into smaller pieces.",
+      "No two touching L-shaped pieces in the finished pattern may be of the same color. Two pieces are considered \"touching\" if they share an edge in common (it's okay for them to touch at corners).",
+      "Bob has already made some patterns of his own, but now he challenges you to make some too! Of course, if the task is impossible, you must tell Bob that he made a mistake.",
+      "To aid in creating your pattern, you may download the following app.",
+      "L-Painter.jar"
+    ],
+    "input": [
+      "The first line of input contains a single integer N%%ZSMJ7%%.",
+      "The second line of input contains two space-separated integers x%%ZSMJ8%% and y%%ZSMJ9%%."
+    ],
+    "output": [
+      "If the task is impossible, output NO on a single line. Otherwise, output YES.",
+      "If YES, output 2N%%ZSMJ10%% more lines, each containing a string with 2N%%ZSMJ11%% characters. The y%%ZSMJ12%%th character of the x%%ZSMJ13%%th line should be the hash character #. Each other character must be an upper case English letter, representing the color of some L-shaped piece. An L-shaped piece is represented by three touching characters on the grid that are the same letter, in an L-shape. Two L-shaped pieces are considered the same color if (and only if) they are represented by the same letter.",
+      "1≤N≤8%%ZSMJ14%%",
+      "1≤x,y≤2N%%ZSMJ15%%",
+      "Subtask 1 (20 points):",
+      "N≤1%%ZSMJ16%%",
+      "Subtask 2 (15 points):",
+      "N≤2%%ZSMJ17%%",
+      "Subtask 3 (15 points):",
+      "N≤3%%ZSMJ18%%",
+      "Subtask 4 (15 points):",
+      "N≤4%%ZSMJ19%%",
+      "Subtask 5 (20 points):",
+      "x=y=1%%ZSMJ20%%",
+      "Subtask 6 (15 points):",
+      "No further constraints."
+    ],
+    "note": [
+      "Here is Bob's pattern for the first sample test case.",
+      "![](https://espresso.codeforces.com/a28643633bcca3171036f019c852b9276f60f1f5.png)",
+      "Here is Bob's pattern for the second sample test case.",
+      "![](https://espresso.codeforces.com/6cb12c9882824393139105c2c6e4e0b15a52b95c.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 3",
+      "output": "YES\nCC#A\nCBAA\nABBC\nAACC"
+    },
+    {
+      "input": "3\n5 7",
+      "output": "YES\nAABBCCBB\nADBAACAB\nDDCADDAA\nAACCADBB\nCADAAB#B\nCCDDBBAA\nBAABAABA\nBBABBABB"
+    }
+  ]
+}

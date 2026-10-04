@@ -1,0 +1,42 @@
+{
+  "code": "GYM106159D",
+  "letter": "D",
+  "title": "D. Djqifs Tijgu",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106159/problem/D",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Arthur is a spy from the renowned secret agency MI-9548. In his missions, for security reasons, he uses the most sophisticated encryption algorithm to communicate with headquarters: the Shift Cipher.",
+      "The messages sent by Arthur are represented by lists containing integer values between 0%%ZSMJ0%% and 9999%%ZSMJ1%%. The Shift Cipher consists of choosing a \"shift\" between 0%%ZSMJ2%% and 9999%%ZSMJ3%% and adding that same value to all elements of the list. If this application causes the value of an element to exceed 9999%%ZSMJ4%%, the remainder of the value when divided by 10000%%ZSMJ5%% should be taken.",
+      "For example, if Arthur's message is [1,2,3,4]%%ZSMJ6%% and we choose the shift 3%%ZSMJ7%%, we will have the new list [4,5,6,7]%%ZSMJ8%%. If we choose the shift 9998%%ZSMJ9%%, we will have the list [9999,0,1,2]%%ZSMJ10%%.",
+      "Arthur has a favorite phrase B%%ZSMJ11%%, represented by a list of numbers, and he would like to choose the encryption shift in such a way that this phrase appears as many times as possible in the encrypted message.",
+      "For example, if the message to be encrypted is [1,2,3,1,2]%%ZSMJ12%% and Arthur likes the phrase [6,7]%%ZSMJ13%%, he should choose the shift 5%%ZSMJ14%%, as this will result in the message [6,7,8,6,7]%%ZSMJ15%%, which contains Arthur's phrase twice.",
+      "Help Arthur by finding the shift that results in the highest number of occurrences of his favorite phrase in the message A%%ZSMJ16%% to be encrypted, and additionally report the number of occurrences. If more than one shift maximizes the number of occurrences, find the smallest one."
+    ],
+    "input": [
+      "The first line of input contains two integers N%%ZSMJ17%% and M%%ZSMJ18%% (2≤M≤N≤106)%%ZSMJ19%%, which correspond to the length of the message A%%ZSMJ20%% and the length of the phrase B%%ZSMJ21%%, respectively.",
+      "The second line contains N%%ZSMJ22%% integers separated by spaces: the message A%%ZSMJ23%% (0≤Ai<104)%%ZSMJ24%%.",
+      "The third line contains M%%ZSMJ25%% integers separated by spaces: the phrase B%%ZSMJ26%% (0≤Bi<104)%%ZSMJ27%%."
+    ],
+    "output": [
+      "The output should contain two numbers separated by a space: a value between 0%%ZSMJ28%% and 9999%%ZSMJ29%%, representing the smallest shift that maximizes the occurrences of the phrase, and the number of occurrences."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 2\n1 2 3 1 2\n6 7",
+      "output": "5 2"
+    },
+    {
+      "input": "4 2\n1 2 3 4\n0 0",
+      "output": "0 0"
+    },
+    {
+      "input": "2 2\n452 453\n0 1",
+      "output": "9548 1"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "code": "GYM104891E",
+  "letter": "E",
+  "title": "E. Inverse Topological Sort",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104891/problem/E",
+  "difficulty": "*1800",
+  "timeLimit": "1 s",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Bobo recently learned the concept of topological ordering. One day, he observed a directed acyclic graph (DAG) G=(V,E)%%ZSMJ0%% with |V|=n%%ZSMJ1%% vertices numbered from 1%%ZSMJ2%% to n%%ZSMJ3%%, and immediately wrote down on the paper two sequences A=(a1,a2,…,an)%%ZSMJ4%% and B=(b1,b2,…,bn)%%ZSMJ5%%, such that A%%ZSMJ6%% is the lexicographically smallest topological ordering of G%%ZSMJ7%%, and B%%ZSMJ8%% is the lexicographically largest topological ordering of G%%ZSMJ9%%.",
+      "Unfortunately, now Bobo has forgotten what the original DAG G%%ZSMJ10%% looks like, and all he has is the two sequences A%%ZSMJ11%% and B%%ZSMJ12%%. Can you help Bobo recover the original graph G%%ZSMJ13%%? There might be multiple possible graphs corresponding to A%%ZSMJ14%% and B%%ZSMJ15%%, or Bobo might write down the sequences incorrectly so that no valid graphs exist.",
+      "Refer to the note section for formal definitions of the underlined items."
+    ],
+    "input": [
+      "The first line of input contains an integer n%%ZSMJ16%% (1≤n≤105)%%ZSMJ17%%, denoting the length of the two sequences.",
+      "The second line of input contains n%%ZSMJ18%% pairwise distinct integers a1,a2,…,an%%ZSMJ19%% (1≤ai≤n)%%ZSMJ20%%, denoting the first sequence A%%ZSMJ21%%.",
+      "The second line of input contains n%%ZSMJ22%% pairwise distinct integers b1,b2,…,bn%%ZSMJ23%% (1≤bi≤n)%%ZSMJ24%%, denoting the second sequence B%%ZSMJ25%%."
+    ],
+    "output": [
+      "If there exists a directed graph G%%ZSMJ26%% that satisfies the condition, output \"Yes\" in the first line; otherwise, output \"No\" in the first line. You can output each letter in any case (lowercase or uppercase). For example, the strings \"yEs\", \"yes\", \"Yes\", and \"YES\" will all be considered as positive replies.",
+      "If your answer is \"Yes\", output an integer m%%ZSMJ27%% (0≤m≤min(n(n−1)/2,106))%%ZSMJ28%% in the first line. Then, in the following m%%ZSMJ29%% lines, output two integers u,v%%ZSMJ30%% (1≤u,v≤n)%%ZSMJ31%% each, denoting a directed edge (u,v)%%ZSMJ32%% in the graph G%%ZSMJ33%%. The graph G%%ZSMJ34%% you output should satisfy that it is a directed acyclic graph, A%%ZSMJ35%% is the lexicographically smallest topological ordering of G%%ZSMJ36%%, and B%%ZSMJ37%% is the lexicographically largest topological ordering of G%%ZSMJ38%%. If multiple solutions exist, outputting any of them will be considered correct.",
+      "Note again that the graph you output must have no more than 106%%ZSMJ39%% edges. It can be shown that if there exists any valid graph, there exists a valid one with no more than 106%%ZSMJ40%% edges."
+    ],
+    "note": [
+      "Here, we provide formal definitions of some underlined items in the statement.",
+      "A topological ordering of a directed graph G=(V,E)%%ZSMJ41%% is a linear ordering (i.e., permutation) of its vertices such that for every directed edge (u,v)∈E%%ZSMJ42%% from vertex u%%ZSMJ43%% to vertex v%%ZSMJ44%%, u%%ZSMJ45%% comes before v%%ZSMJ46%% in the ordering. It can be shown that a directed graph admits at least one topological ordering if and only if it is acyclic.",
+      "For two sequences A=(a1,a2,…,an)%%ZSMJ47%% and B=(b1,b2,…,bn)%%ZSMJ48%% with the same length n%%ZSMJ49%%, A%%ZSMJ50%% is said to be lexicographically smaller than B%%ZSMJ51%% if and only if there exists some index 1≤i≤n%%ZSMJ52%%, such that   ai<bi%%ZSMJ53%%;",
+      "aj=bj%%ZSMJ54%% for all j<i%%ZSMJ55%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 2 3\n1 2 3",
+      "output": "Yes\n3\n1 2\n2 3\n1 3"
+    },
+    {
+      "input": "3\n1 2 3\n3 2 1",
+      "output": "Yes\n0"
+    },
+    {
+      "input": "3\n3 2 1\n1 2 3",
+      "output": "No"
+    }
+  ]
+}

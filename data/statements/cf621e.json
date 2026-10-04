@@ -1,0 +1,42 @@
+{
+  "code": "CF621E",
+  "letter": "E",
+  "title": "E. Wet Shark and Blocks",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/621/E",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are b blocks of digits. Each one consisting of the same n digits, which are given to you in the input. Wet Shark must choose exactly one digit from each block and concatenate all of those digits together to form one large integer. For example, if he chooses digit 1 from the first block and digit 2 from the second block, he gets the integer 12.",
+      "Wet Shark then takes this number modulo x. Please, tell him how many ways he can choose one digit from each block so that he gets exactly k as the final result. As this number may be too large, print it modulo 109 + 7.",
+      "Note, that the number of ways to choose some digit in the block is equal to the number of it's occurrences. For example, there are 3 ways to choose digit 5 from block 3 5 6 7 8 9 5 1 1 1 1 5."
+    ],
+    "input": [
+      "The first line of the input contains four space-separated integers, n, b, k and x (2 ≤ n ≤ 50 000, 1 ≤ b ≤ 109, 0 ≤ k < x ≤ 100, x ≥ 2) — the number of digits in one block, the number of blocks, interesting remainder modulo x and modulo x itself.",
+      "The next line contains n space separated integers ai (1 ≤ ai ≤ 9), that give the digits contained in each block."
+    ],
+    "output": [
+      "Print the number of ways to pick exactly one digit from each blocks, such that the resulting integer equals k modulo x."
+    ],
+    "note": [
+      "In the second sample possible integers are 22, 26, 62 and 66. None of them gives the remainder 1 modulo 2.",
+      "In the third sample integers 11, 13, 21, 23, 31 and 33 have remainder 1 modulo 2. There is exactly one way to obtain each of these integers, so the total answer is 6."
+    ]
+  },
+  "examples": [
+    {
+      "input": "12 1 5 10\n3 5 6 7 8 9 5 1 1 1 1 5",
+      "output": "3"
+    },
+    {
+      "input": "3 2 1 2\n6 2 2",
+      "output": "0"
+    },
+    {
+      "input": "3 2 1 2\n3 1 2",
+      "output": "6"
+    }
+  ]
+}

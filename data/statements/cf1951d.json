@@ -1,0 +1,43 @@
+{
+  "code": "CF1951D",
+  "letter": "D",
+  "title": "D. Buying Jewels",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1951/D",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alice has n%%ZSMJ0%% coins and wants to shop at Bob's jewelry store. Today, although Bob has not set up the store yet, Bob wants to make sure Alice will buy exactly k%%ZSMJ1%% jewels. To set up the store, Bob can erect at most 60%%ZSMJ2%% stalls (each containing an unlimited amount of jewels) and set the price per jewel for each stall to be an integer number of coins between 1%%ZSMJ3%% and 1018%%ZSMJ4%%.",
+      "Fortunately, Bob knows that Alice buys greedily: and she will go to stall 1%%ZSMJ5%%, buy as many jewels as possible, then go to stall 2%%ZSMJ6%%, buy as many jewels as possible, and so on until the last stall. Knowing this, Bob can choose the number of stalls to set up, as well as set the price for each stall so that Alice buys exactly k%%ZSMJ7%% jewels. Help Bob fulfill the task, or determine if it is impossible to do so.",
+      "Note that Alice does not need to spend all her coins."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains an integer t%%ZSMJ8%% (1≤t≤1000%%ZSMJ9%%) — the number of test cases. The description of the test cases follows.",
+      "Each test case contains two positive integers n%%ZSMJ10%% and k%%ZSMJ11%% (1≤n,k≤1018%%ZSMJ12%%) — the number of coins Alice has and the number of jewels Bob wants Alice to have bought at the end."
+    ],
+    "output": [
+      "For each test case, print on one line \"YES\" if Bob can erect at most 60%%ZSMJ13%% stalls and set the prices for the stalls such that Alice buys exactly k%%ZSMJ14%% jewels, or \"NO\" if it is impossible to do so.",
+      "If the answer is \"YES\", on the second line, print an integer s%%ZSMJ15%% (1≤s≤60%%ZSMJ16%%) — the number of stalls to be set up by Bob. On the third line, print s%%ZSMJ17%% positive integers p1,p2,…,ps%%ZSMJ18%% (1≤pi≤1018)%%ZSMJ19%% that represent such a satisfactory pricing p%%ZSMJ20%%, where pi%%ZSMJ21%% is the price per jewel for stall i%%ZSMJ22%%. If there are multiple such p%%ZSMJ23%%'s, print any of them."
+    ],
+    "note": [
+      "In the first test case, at the first stall, Alice buys 3%%ZSMJ24%% jewels and is left with 1%%ZSMJ25%% coin. This is not enough to buy any jewels for any of the remaining stalls, so Alice buys exactly 3%%ZSMJ26%% jewels at the end.",
+      "In the third test case,",
+      "At the first stall, Alice buys 1%%ZSMJ27%% jewel and is left with 127%%ZSMJ28%% coins.",
+      "At the second stall, Alice buys 1%%ZSMJ29%% jewel and is left with 63%%ZSMJ30%% coins.",
+      "At the third stall, Alice buys 1%%ZSMJ31%% jewel and is left with 31%%ZSMJ32%% coins.",
+      "At the fourth stall, Alice buys 1%%ZSMJ33%% jewel and is left with 15%%ZSMJ34%% coins.",
+      "At the fifth stall, Alice buys 1%%ZSMJ35%% jewel and is left with 7%%ZSMJ36%% coins.",
+      "At the sixth stall, Alice buys 1%%ZSMJ37%% jewel and is left with 3%%ZSMJ38%% coins.",
+      "At the seventh stall, Alice buys 1%%ZSMJ39%% jewel and is left with 1%%ZSMJ40%% coin.",
+      "At the eighth stall, Alice buys 1%%ZSMJ41%% jewel and is left with 0%%ZSMJ42%% coins."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n7 3\n6 4\n255 8",
+      "output": "YES\n10\n2 3 4 5 6 7 8 9 10 11\nNO\nYES\n8\n128 64 32 16 8 4 2 1"
+    }
+  ]
+}

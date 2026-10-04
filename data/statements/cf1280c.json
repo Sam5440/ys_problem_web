@@ -1,0 +1,49 @@
+{
+  "code": "CF1280C",
+  "letter": "C",
+  "title": "C. Jeremy Bearimy",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1280/C",
+  "difficulty": "2000",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Welcome! Everything is fine.",
+      "You have arrived in The Medium Place, the place between The Good Place and The Bad Place. You are assigned a task that will either make people happier or torture them for eternity.",
+      "You have a list of k%%ZSMJ0%% pairs of people who have arrived in a new inhabited neighborhood. You need to assign each of the 2k%%ZSMJ1%% people into one of the 2k%%ZSMJ2%% houses. Each person will be the resident of exactly one house, and each house will have exactly one resident.",
+      "Of course, in the neighborhood, it is possible to visit friends. There are 2k−1%%ZSMJ3%% roads, each of which connects two houses. It takes some time to traverse a road. We will specify the amount of time it takes in the input. The neighborhood is designed in such a way that from anyone's house, there is exactly one sequence of distinct roads you can take to any other house. In other words, the graph with the houses as vertices and the roads as edges is a tree.",
+      "The truth is, these k%%ZSMJ4%% pairs of people are actually soulmates. We index them from 1%%ZSMJ5%% to k%%ZSMJ6%%. We denote by f(i)%%ZSMJ7%% the amount of time it takes for the i%%ZSMJ8%%-th pair of soulmates to go to each other's houses.",
+      "As we have said before, you will need to assign each of the 2k%%ZSMJ9%% people into one of the 2k%%ZSMJ10%% houses. You have two missions, one from the entities in The Good Place and one from the entities of The Bad Place. Here they are:",
+      "The first mission, from The Good Place, is to assign the people into the houses such that the sum of f(i)%%ZSMJ11%% over all pairs i%%ZSMJ12%% is minimized. Let's define this minimized sum as G%%ZSMJ13%%. This makes sure that soulmates can easily and efficiently visit each other;",
+      "The second mission, from The Bad Place, is to assign the people into the houses such that the sum of f(i)%%ZSMJ14%% over all pairs i%%ZSMJ15%% is maximized. Let's define this maximized sum as B%%ZSMJ16%%. This makes sure that soulmates will have a difficult time to visit each other.",
+      "What are the values of G%%ZSMJ17%% and B%%ZSMJ18%%?"
+    ],
+    "input": [
+      "The first line of input contains a single integer t%%ZSMJ19%% (1≤t≤500%%ZSMJ20%%) denoting the number of test cases. The next lines contain descriptions of the test cases.",
+      "The first line of each test case contains a single integer k%%ZSMJ21%% denoting the number of pairs of people (1≤k≤105%%ZSMJ22%%). The next 2k−1%%ZSMJ23%% lines describe the roads; the i%%ZSMJ24%%-th of them contains three space-separated integers ai,bi,ti%%ZSMJ25%% which means that the i%%ZSMJ26%%-th road connects the ai%%ZSMJ27%%-th and bi%%ZSMJ28%%-th houses with a road that takes ti%%ZSMJ29%% units of time to traverse (1≤ai,bi≤2k%%ZSMJ30%%, ai≠bi%%ZSMJ31%%, 1≤ti≤106%%ZSMJ32%%). It is guaranteed that the given roads define a tree structure.",
+      "It is guaranteed that the sum of the k%%ZSMJ33%% in a single file is at most 3⋅105%%ZSMJ34%%."
+    ],
+    "output": [
+      "For each test case, output a single line containing two space-separated integers G%%ZSMJ35%% and B%%ZSMJ36%%."
+    ],
+    "note": [
+      "For the sample test case, we have a minimum sum equal to G=15%%ZSMJ37%%. One way this can be achieved is with the following assignment:",
+      "The first pair of people get assigned to houses 5%%ZSMJ38%% and 6%%ZSMJ39%%, giving us f(1)=5%%ZSMJ40%%;",
+      "The second pair of people get assigned to houses 1%%ZSMJ41%% and 4%%ZSMJ42%%, giving us f(2)=6%%ZSMJ43%%;",
+      "The third pair of people get assigned to houses 3%%ZSMJ44%% and 2%%ZSMJ45%%, giving us f(3)=4%%ZSMJ46%%.",
+      "Note that the sum of the f(i)%%ZSMJ47%% is 5+6+4=15%%ZSMJ48%%.",
+      "We also have a maximum sum equal to B=33%%ZSMJ49%%. One way this can be achieved is with the following assignment:",
+      "The first pair of people get assigned to houses 1%%ZSMJ50%% and 4%%ZSMJ51%%, giving us f(1)=6%%ZSMJ52%%;",
+      "The second pair of people get assigned to houses 6%%ZSMJ53%% and 2%%ZSMJ54%%, giving us f(2)=14%%ZSMJ55%%;",
+      "The third pair of people get assigned to houses 3%%ZSMJ56%% and 5%%ZSMJ57%%, giving us f(3)=13%%ZSMJ58%%.",
+      "Note that the sum of the f(i)%%ZSMJ59%% is 6+14+13=33%%ZSMJ60%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3\n1 2 3\n3 2 4\n2 4 3\n4 5 6\n5 6 5\n2\n1 2 1\n1 3 2\n1 4 3",
+      "output": "15 33\n6 6"
+    }
+  ]
+}

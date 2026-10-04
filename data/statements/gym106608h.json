@@ -1,0 +1,36 @@
+{
+  "code": "GYM106608H",
+  "letter": "H",
+  "title": "H. GCD Queries with Updates",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106608/problem/H",
+  "difficulty": "*2000",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array a%%ZSMJ0%% of length n%%ZSMJ1%% consisting of positive integers. You have to process q%%ZSMJ2%% queries of two types:",
+      "1 i g — print the number of indices j%%ZSMJ3%% (j≠i%%ZSMJ4%%) such that gcd(ai,aj)=g%%ZSMJ5%%;",
+      "2 i x — assign ai←x%%ZSMJ6%% (this update affects subsequent queries).",
+      "All indices are 1%%ZSMJ7%%-based."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ8%% (1≤t≤103)%%ZSMJ9%%. The first line of each test case contains two integers n%%ZSMJ10%% and q%%ZSMJ11%% (1≤n≤105; 1≤q≤105)%%ZSMJ12%%. The second line contains n%%ZSMJ13%% integers a1,…,an%%ZSMJ14%% (1≤ai≤106)%%ZSMJ15%%. Each of the next q%%ZSMJ16%% lines is one of:",
+      "1 i g (1≤i≤n; 1≤g≤106)%%ZSMJ17%%",
+      "2 i x (1≤i≤n; 1≤x≤106)%%ZSMJ18%%"
+    ],
+    "output": [
+      "For each query of type 1, print a single integer — the number of indices j%%ZSMJ21%% (j≠i%%ZSMJ22%%) such that gcd(ai,aj)=g%%ZSMJ23%%. Print each answer on a separate line."
+    ],
+    "note": [
+      "In the first test case, for the first query we need to find elements in the array that satisfy gcd(ai,12)=12∀i≠1%%ZSMJ24%%. No such numbers exist in the array so the answer is 0. For the second query we need to find elements such that gcd(ai,18)=2∀i≠4%%ZSMJ25%%",
+      "In the second test case, for the first query all the numbers in the given array satisfy gcd(ai,1)=1%%ZSMJ26%%, so the answer is 4. For the second query, only a3=2%%ZSMJ27%% satisfies gcd(6,ai)=2%%ZSMJ28%%. After the third query, the array remains unchanged and after the fourth query it becomes [1,1,1,3,6]%%ZSMJ29%%. For the fifth query, only one element a4=3%%ZSMJ30%% satisfies gcd(6,aj)=3%%ZSMJ31%%"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n4 2\n12 8 9 18\n1 1 12\n1 4 2\n5 10\n1 1 2 3 6\n1 1 1\n1 5 2\n2 2 1\n2 3 1\n1 5 3\n1 4 6\n2 1 6\n1 1 6\n2 1 6\n1 2 1",
+      "output": "0\n1\n4\n1\n1\n0\n1\n4"
+    }
+  ]
+}

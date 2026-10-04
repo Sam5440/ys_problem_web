@@ -1,0 +1,39 @@
+{
+  "code": "GYM106511G",
+  "letter": "G",
+  "title": "G. Median Solve Order",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106511/problem/G",
+  "difficulty": "*1200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The students at Rubgers University are organizing a programming contest. Since a lot of strong teams will participate, they expect some of them to solve all problems. To distinguish between them, a special prize will be awarded to the team with a special solve order.",
+      "The contest consists of N≤26%%ZSMJ0%% problems labelled A%%ZSMJ1%%, B%%ZSMJ2%%, etc: the first N%%ZSMJ3%% letters of the English alphabet.",
+      "A solve order for a team is a sequence of letters denoting the order in which it solved all the problems: e.g., for N=3%%ZSMJ4%%, a possible solve order is BAC%%ZSMJ5%% — B%%ZSMJ6%% solved first, then A%%ZSMJ7%%, then C%%ZSMJ8%%. We only consider teams which solve every problem exactly once, so, e.g., AC%%ZSMJ9%% or ABAC%%ZSMJ10%% are not valid solve orders.",
+      "Solve order a%%ZSMJ11%% is lexicographically smaller than solve order b%%ZSMJ12%% if, at the first position where they differ, the character in a%%ZSMJ13%% comes in the alphabet before the character in b%%ZSMJ14%%. E.g., ACB%%ZSMJ15%% is lexicographically smaller than BAC%%ZSMJ16%%, which is lexicographically smaller than BCA%%ZSMJ17%%.",
+      "Consider all possible solve orders of the N%%ZSMJ18%% problems. Let their number be M%%ZSMJ19%%. Sort the M%%ZSMJ20%% solve orders from lexicographically smallest to largest. In this list, the median solve order is located at position ⌈M2⌉%%ZSMJ21%% (M2%%ZSMJ22%% rounded up).",
+      "Any team with the median solve order will get a special prize. Help Rubgers students decide what the order is!"
+    ],
+    "input": [
+      "The problem consists of T%%ZSMJ23%% independent test cases.",
+      "The first line contains a single integer T%%ZSMJ24%% (1≤T≤26%%ZSMJ25%%) — the number of independent test cases to process.",
+      "Each of the next T%%ZSMJ26%% lines contains a single integer N%%ZSMJ27%% (1≤N≤26%%ZSMJ28%%) — the number of problems in the contest."
+    ],
+    "output": [
+      "For each test case, output a single line containing the median solve order for the contest with N%%ZSMJ29%% problems."
+    ],
+    "note": [
+      "In the first test case, N=1%%ZSMJ30%%, so the only solve order is A%%ZSMJ31%%.",
+      "In the second test case, the solve orders in lexicographical order are AB,BA%%ZSMJ32%%. The median is AB%%ZSMJ33%%.",
+      "In the third test case, the solve orders in lexicographical order are ABC,ACB,BAC,BCA,CAB,CBA%%ZSMJ34%%. The median is BAC%%ZSMJ35%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1\n2\n3",
+      "output": "A\nAB\nBAC"
+    }
+  ]
+}

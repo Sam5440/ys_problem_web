@@ -1,0 +1,47 @@
+{
+  "code": "CF2077C",
+  "letter": "C",
+  "title": "C. Binary Subsequence Value Sum",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/2077/C",
+  "difficulty": "2300",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "For a binary string∗%%ZSMJ0%% v%%ZSMJ1%%, the score of v%%ZSMJ2%% is defined as the maximum value of",
+      "F(v,1,i)⋅F(v,i+1,|v|)%%ZSMJ3%%",
+      "over all i%%ZSMJ4%% (0≤i≤|v|%%ZSMJ5%%).",
+      "Here, F(v,l,r)=r−l+1−2⋅zero(v,l,r)%%ZSMJ6%%, where zero(v,l,r)%%ZSMJ7%% denotes the number of 0%%ZSMJ8%%s in vlvl+1…vr%%ZSMJ9%%. If l>r%%ZSMJ10%%, then F(v,l,r)=0%%ZSMJ11%%.",
+      "You are given a binary string s%%ZSMJ12%% of length n%%ZSMJ13%% and a positive integer q%%ZSMJ14%%.",
+      "You will be asked q%%ZSMJ15%% queries.",
+      "In each query, you are given an integer i%%ZSMJ16%% (1≤i≤n%%ZSMJ17%%). You must flip si%%ZSMJ18%% from 0%%ZSMJ19%% to 1%%ZSMJ20%% (or from 1%%ZSMJ21%% to 0%%ZSMJ22%%). Find the sum of the scores over all non-empty subsequences†%%ZSMJ23%% of s%%ZSMJ24%% after each modification query.",
+      "Since the result may be large, output the answer modulo 998244353%%ZSMJ25%%.",
+      "Note that the modifications are persistent.",
+      "∗%%ZSMJ26%%A binary string is a string that consists only of the characters 0%%ZSMJ27%% and 1%%ZSMJ28%%.",
+      "†%%ZSMJ29%%A binary string x%%ZSMJ30%% is a subsequence of a binary string y%%ZSMJ31%% if x%%ZSMJ32%% can be obtained from y%%ZSMJ33%% by deleting several (possibly zero or all) characters."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ34%% (1≤t≤104%%ZSMJ35%%). The description of the test cases follows.",
+      "The first line of each test case contains two integers n%%ZSMJ36%% and q%%ZSMJ37%% (1≤n≤2⋅105%%ZSMJ38%%, 1≤q≤2⋅105%%ZSMJ39%%) — the length of the string s%%ZSMJ40%% and the number of modification queries, respectively.",
+      "The second line contains the binary string s%%ZSMJ41%% of length n%%ZSMJ42%%, consisting of characters 0%%ZSMJ43%% and 1%%ZSMJ44%%.",
+      "The following q%%ZSMJ45%% lines each contain an integer i%%ZSMJ46%% (1≤i≤n%%ZSMJ47%%), indicating that si%%ZSMJ48%% is flipped from 0%%ZSMJ49%% to 1%%ZSMJ50%% or from 1%%ZSMJ51%% to 0%%ZSMJ52%%.",
+      "It is guaranteed that neither the total sum of all values of n%%ZSMJ53%% nor the total sum of all values of q%%ZSMJ54%% across all test cases exceeds 2⋅105%%ZSMJ55%%."
+    ],
+    "output": [
+      "For each test case, output q%%ZSMJ56%% lines, each line containing a single integer — the required sum modulo 998244353%%ZSMJ57%%."
+    ],
+    "note": [
+      "For the first test case, after the first modification, we have s=110%%ZSMJ58%%. We can compute the sum of scores over all subsequences as follows:",
+      "Summing up: 0+0+1+0+0+0+0=1%%ZSMJ73%%.",
+      "After the second modification, we have s=111%%ZSMJ74%%. We can compute the sum of scores over all subsequences as follows:",
+      "Summing up: 0+0+1+0+1+1+2=5%%ZSMJ89%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n3 2\n010\n1\n3\n10 3\n0101000110\n3\n5\n10\n24 1\n011001100110000101111000\n24",
+      "output": "1\n5\n512\n768\n1536\n23068672"
+    }
+  ]
+}

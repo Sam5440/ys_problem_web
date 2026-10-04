@@ -1,0 +1,48 @@
+{
+  "code": "GYM106575B",
+  "letter": "B",
+  "title": "B. Mukhtar's Escape Plan",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106575/problem/B",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Mukhtar is obsessed with octopuses and the deep sea.",
+      "At the Dead Sea, floating salt formations act as platforms connected by unusual water currents caused by natural conditions. Mukhtar uses these platforms to move around.",
+      "The platforms are represented as nodes of an undirected graph. If there is an edge between two platforms, then Mukhtar can directly move between them.",
+      "Unfortunately, some platforms are overcrowded with Salt creatures, so Mukhtar cannot stand on them.",
+      "Mukhtar has a special ability if an overcrowded platform v%%ZSMJ0%% lies between two platforms u%%ZSMJ1%% and w%%ZSMJ2%% such that there is an edge (u,v)%%ZSMJ3%% and an edge (v,w)%%ZSMJ4%%, then he may skip platform v%%ZSMJ5%% and move directly from u%%ZSMJ6%% to w%%ZSMJ7%% without standing on v%%ZSMJ8%%. Using this ability on platform v%%ZSMJ9%% costs f(v)%%ZSMJ10%%.",
+      "Mukhtar starts at platform 1%%ZSMJ11%% and wants to reach platform n%%ZSMJ12%%.",
+      "However, his energy is limited. If the total cost of skipped platforms used in his path exceeds c%%ZSMJ13%%, Mukhtar gets trapped and cannot escape until the conditions improve.",
+      "Determine whether Mukhtar can escape.",
+      "If there is no valid route from platform 1%%ZSMJ14%% to platform n%%ZSMJ15%%, or if the minimum possible total cost is greater than c%%ZSMJ16%%, print −1%%ZSMJ17%%. Otherwise, print the minimum total cost."
+    ],
+    "input": [
+      "The first line contains four integers n%%ZSMJ18%%, m%%ZSMJ19%%, k%%ZSMJ20%%, and c%%ZSMJ21%% (2≤n,m≤2⋅105%%ZSMJ22%%, 0≤k≤n−2%%ZSMJ23%%, 0≤c≤1018%%ZSMJ24%%) — the number of platforms, the number of edges, the number of crowded platforms, and the maximum total skip cost Mukhtar can afford respectively.",
+      "The second line contains k%%ZSMJ25%% distinct integers — the indices of the crowded platforms.",
+      "The third line contains n%%ZSMJ26%% integers f(1),f(2),…,f(n)%%ZSMJ27%% (0≤f(i)≤109%%ZSMJ28%%), where f(i)%%ZSMJ29%% is the cost of skipping platform i%%ZSMJ30%%.",
+      "Each of the next m%%ZSMJ31%% lines contains two integers u%%ZSMJ32%% and v%%ZSMJ33%% (1≤u,v≤n%%ZSMJ34%%, u≠v%%ZSMJ35%%), denoting an undirected edge between platforms u%%ZSMJ36%% and v%%ZSMJ37%%.",
+      "It is guaranteed that platforms 1%%ZSMJ38%% and n%%ZSMJ39%% are not crowded."
+    ],
+    "output": [
+      "Print the minimum possible total skip cost or −1%%ZSMJ40%% if its Impossible."
+    ],
+    "note": [
+      "First test case explanation:",
+      "The crowded platforms are 3%%ZSMJ41%% and 5%%ZSMJ42%%, with skip costs f(3)=8%%ZSMJ43%% and f(5)=2%%ZSMJ44%%.",
+      "Mukhtar can use the allowed operation to skip platform 5%%ZSMJ45%% while traversing a valid path, resulting in a total cost of 2%%ZSMJ46%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 6 2 10\n3 5\n0 0 8 0 2 0\n1 2\n2 3\n3 6\n2 4\n4 5\n5 6",
+      "output": "2"
+    },
+    {
+      "input": "5 3 1 10\n3\n0 0 4 0 0\n1 2\n2 3\n4 5",
+      "output": "-1"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "code": "GYM104974N",
+  "letter": "N",
+  "title": "N. Memory Problems",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104974/problem/N",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Danny always suffers because of his terrible memory. Last time, he forgot the anniversary of his couple, and Dannita got extremely mad at him. Needless to say, he spent a terrible week after that.",
+      "This time, Dannita gave him an array A%%ZSMJ0%% as a present for Saint Valentine. Unfortunately, Danny lost it, and he can't remember its elements. He is in big trouble if he doesn't get it back!!",
+      "Luckily, Danny remembers a few facts about the array.",
+      "First of all, he remembers that it is a permutation of the numbers from 0%%ZSMJ1%% to N−1%%ZSMJ2%%. That means that it contains every number from 0%%ZSMJ3%% to N−1%%ZSMJ4%% exactly once.",
+      "Secondly, he remembers that the array has the following property. Let B%%ZSMJ5%% be the array constructed as follows: bi=ai xor 1%%ZSMJ6%% for each 1≤i≤N%%ZSMJ7%%, where xor refers to the bitwise xor operation. Let inv(A)%%ZSMJ8%% be the number of inversions of the array A%%ZSMJ9%% and inv(B)%%ZSMJ10%% be the number of inversions of the array B%%ZSMJ11%% (the number of inversions is the number of pairs (i,j)%%ZSMJ12%% such that i<j%%ZSMJ13%% and ai>aj%%ZSMJ14%% ). Danny remembers the difference between inv(B)%%ZSMJ15%% and inv(A)%%ZSMJ16%%. In other words, Danny remembers an integer D%%ZSMJ17%% where D=inv(B)−inv(A)%%ZSMJ18%%.",
+      "Thirdly, Danny remembers that for all 0≤x≤N−1%%ZSMJ19%%, x%%ZSMJ20%% and x xor 1%%ZSMJ21%% are NOT adjacent in the array A.",
+      "Can you help Danny find the number of possible arrays A that satisfy all these conditions"
+    ],
+    "input": [
+      "The first and only line of input contains two integers N%%ZSMJ22%% and D%%ZSMJ23%% (1≤N≤105,0≤|D|≤1018%%ZSMJ24%%)"
+    ],
+    "output": [
+      "A single integer: the number of arrays that satisfy the conditions.",
+      "Since it can be very large, print the answer modulo 998244353%%ZSMJ25%%."
+    ],
+    "note": [
+      "The four possible arrays are [0,3,1,2],[1,2,0,3],[2,1,3,0], and [3,0,2,1]%%ZSMJ26%%"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 0",
+      "output": "4"
+    }
+  ]
+}

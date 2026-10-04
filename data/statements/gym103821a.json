@@ -1,0 +1,39 @@
+{
+  "code": "GYM103821A",
+  "letter": "A",
+  "title": "A. Laser Tag",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103821/problem/A",
+  "difficulty": "*1700",
+  "timeLimit": "2.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Laser tag is a team shooting game, where players attempt to shoot other individuals by tagging them with a laser emitting gun.",
+      "Ali and Resli decided to play a match, so each one of them gathered a team of n%%ZSMJ0%% players.",
+      "The Arena where the match will be held is a N×N%%ZSMJ1%% 2d%%ZSMJ2%% plane, the ith%%ZSMJ3%% player of Resli's team will stand at coordinates (i,0)%%ZSMJ4%%, while the ith%%ZSMJ5%% player of Ali's team will stand at coordinates (i,N)%%ZSMJ6%%.",
+      "To make things challenging, the arena has Q%%ZSMJ7%% walls, each wall is parallel to the x-axis and is given by three integers x1,x2,y%%ZSMJ8%% which means that the wall extends between points (x1,y)%%ZSMJ9%% and (x2,y)%%ZSMJ10%%.",
+      "To ensure his win, Resli modified his team's guns, such that when a laser beam hits some wall, the beam will stop and two new beams will be generated at the endpoints of the wall (at coordinates (x1,y)%%ZSMJ11%% and (x2,y)%%ZSMJ12%% ) and will continue forward in the same direction as the original laser beam, and if one of these new generated laser beams hits a wall, the previously mentioned process will happen again (see notes for clarification).",
+      "Can you help Resli to find out how many players of Ali's team will be tagged by at least one laser beam if each player of Resli's team shot one laser beam in a direction parallel to the y axis towards the opposite team player (the ith%%ZSMJ13%% player of Resli's team will shoot one laser beam in the direction of the ith%%ZSMJ14%% player of Ali's team)."
+    ],
+    "input": [
+      "The first line contains a single integer T%%ZSMJ15%% (1≤T≤104%%ZSMJ16%%), the number of test cases.",
+      "The first line of each test case contains two integers n%%ZSMJ17%% (2≤n≤2×105%%ZSMJ18%%) and q%%ZSMJ19%% (1≤q≤n%%ZSMJ20%%).",
+      "Each of the next q%%ZSMJ21%% lines of each test case contains three integers x1%%ZSMJ22%%,x2%%ZSMJ23%%,y%%ZSMJ24%% (1≤x1≤x2≤n%%ZSMJ25%%), (1≤y≤n−1%%ZSMJ26%%), which means there is a wall between coordinates (x1,y)%%ZSMJ27%% and (x2,y)%%ZSMJ28%%.",
+      "The sum of n%%ZSMJ29%% over all test cases will not exceed 2×105%%ZSMJ30%%.",
+      "It's guaranteed that no two walls will overlap or share a common point.%%ZSMJ31%%"
+    ],
+    "output": [
+      "Output T%%ZSMJ32%% lines, the ith%%ZSMJ33%% line contains the answer for the ith%%ZSMJ34%% test case."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/9f3e9f1fbf353990989071cc67ce31f1a098d7f7.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n5 4\n1 4 1\n4 5 2\n2 3 3\n3 5 4",
+      "output": "3"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "code": "CF183C",
+  "letter": "C",
+  "title": "C. Cyclic Coloring",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/183/C",
+  "difficulty": "2200",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a directed graph G with n vertices and m arcs (multiple arcs and self-loops are allowed). You have to paint each vertex of the graph into one of the k (k ≤ n) colors in such way that for all arcs of the graph leading from a vertex u to vertex v, vertex v is painted with the next color of the color used to paint vertex u.",
+      "The colors are numbered cyclically 1 through k. This means that for each color i (i < k) its next color is color i + 1. In addition, the next color of color k is color 1. Note, that if k = 1, then the next color for color 1 is again color 1.",
+      "Your task is to find and print the largest possible value of k (k ≤ n) such that it's possible to color G as described above with k colors. Note that you don't necessarily use all the k colors (that is, for each color i there does not necessarily exist a vertex that is colored with color i)."
+    ],
+    "input": [
+      "The first line contains two space-separated integers n and m (1 ≤ n, m ≤ 105), denoting the number of vertices and the number of arcs of the given digraph, respectively.",
+      "Then m lines follow, each line will contain two space-separated integers ai and bi (1 ≤ ai, bi ≤ n), which means that the i-th arc goes from vertex ai to vertex bi.",
+      "Multiple arcs and self-loops are allowed."
+    ],
+    "output": [
+      "Print a single integer — the maximum possible number of the colors that can be used to paint the digraph (i.e. k, as described in the problem statement). Note that the desired value of k must satisfy the inequality 1 ≤ k ≤ n."
+    ],
+    "note": [
+      "For the first example, with k = 2, this picture depicts the two colors (arrows denote the next color of that color).",
+      "![](https://espresso.codeforces.com/2204e45c7cdec8b9e033b64d3b071f1ea46540ed.png)",
+      "With k = 2 a possible way to paint the graph is as follows.",
+      "![](https://espresso.codeforces.com/f74a23cd10bab711fc8eb9a300afa06eb043c011.png)",
+      "It can be proven that no larger value for k exists for this test case.",
+      "For the second example, here's the picture of the k = 5 colors.",
+      "![](https://espresso.codeforces.com/37e73da0648a2e8e00fa84aadd0d190bc5624255.png)",
+      "A possible coloring of the graph is:",
+      "![](https://espresso.codeforces.com/5fa6c53d384b7deb5b0ce1a7cafdcca7a831c73f.png)",
+      "For the third example, here's the picture of the k = 3 colors.",
+      "![](https://espresso.codeforces.com/ac17cdf134f23d1072185b46149650087a26d4c7.png)",
+      "A possible coloring of the graph is:",
+      "![](https://espresso.codeforces.com/493930fd8877c4ded4011b055b0051a7283cc817.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n1 2\n2 1\n3 4\n4 3",
+      "output": "2"
+    },
+    {
+      "input": "5 2\n1 4\n2 5",
+      "output": "5"
+    },
+    {
+      "input": "4 5\n1 2\n2 3\n3 1\n2 4\n4 1",
+      "output": "3"
+    },
+    {
+      "input": "4 4\n1 1\n1 2\n2 1\n1 2",
+      "output": "1"
+    }
+  ]
+}

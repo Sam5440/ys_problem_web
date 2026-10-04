@@ -1,0 +1,36 @@
+{
+  "code": "CF1098A",
+  "letter": "A",
+  "title": "A. Sum in the tree",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1098/A",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Mitya has a rooted tree with n%%ZSMJ0%% vertices indexed from 1%%ZSMJ1%% to n%%ZSMJ2%%, where the root has index 1%%ZSMJ3%%. Each vertex v%%ZSMJ4%% initially had an integer number av≥0%%ZSMJ5%% written on it. For every vertex v%%ZSMJ6%% Mitya has computed sv%%ZSMJ7%%: the sum of all values written on the vertices on the path from vertex v%%ZSMJ8%% to the root, as well as hv%%ZSMJ9%% — the depth of vertex v%%ZSMJ10%%, which denotes the number of vertices on the path from vertex v%%ZSMJ11%% to the root. Clearly, s1=a1%%ZSMJ12%% and h1=1%%ZSMJ13%%.",
+      "Then Mitya erased all numbers av%%ZSMJ14%%, and by accident he also erased all values sv%%ZSMJ15%% for vertices with even depth (vertices with even hv%%ZSMJ16%%). Your task is to restore the values av%%ZSMJ17%% for every vertex, or determine that Mitya made a mistake. In case there are multiple ways to restore the values, you're required to find one which minimizes the total sum of values av%%ZSMJ18%% for all vertices in the tree."
+    ],
+    "input": [
+      "The first line contains one integer n%%ZSMJ19%% — the number of vertices in the tree (2≤n≤105%%ZSMJ20%%). The following line contains integers p2%%ZSMJ21%%, p3%%ZSMJ22%%, ... pn%%ZSMJ23%%, where pi%%ZSMJ24%% stands for the parent of vertex with index i%%ZSMJ25%% in the tree (1≤pi<i%%ZSMJ26%%). The last line contains integer values s1%%ZSMJ27%%, s2%%ZSMJ28%%, ..., sn%%ZSMJ29%% (−1≤sv≤109%%ZSMJ30%%), where erased values are replaced by −1%%ZSMJ31%%."
+    ],
+    "output": [
+      "Output one integer — the minimum total sum of all values av%%ZSMJ32%% in the original tree, or −1%%ZSMJ33%% if such tree does not exist."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 1 1 1\n1 -1 -1 -1 -1",
+      "output": "1"
+    },
+    {
+      "input": "5\n1 2 3 1\n1 -1 2 -1 -1",
+      "output": "2"
+    },
+    {
+      "input": "3\n1 2\n2 -1 1",
+      "output": "-1"
+    }
+  ]
+}

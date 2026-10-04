@@ -1,0 +1,63 @@
+{
+  "code": "CF1991E",
+  "letter": "E",
+  "title": "E. Coloring Game",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1991/E",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem.",
+      "Consider an undirected connected graph consisting of n%%ZSMJ0%% vertices and m%%ZSMJ1%% edges. Each vertex can be colored with one of three colors: 1%%ZSMJ2%%, 2%%ZSMJ3%%, or 3%%ZSMJ4%%. Initially, all vertices are uncolored.",
+      "Alice and Bob are playing a game consisting of n%%ZSMJ5%% rounds. In each round, the following two-step process happens:",
+      "Alice chooses two different colors.",
+      "Bob chooses an uncolored vertex and colors it with one of the two colors chosen by Alice.",
+      "Alice wins if there exists an edge connecting two vertices of the same color. Otherwise, Bob wins.",
+      "You are given the graph. Your task is to decide which player you wish to play as and win the game."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains a single integer t%%ZSMJ6%% (1≤t≤1000%%ZSMJ7%%) — the number of test cases. The description of test cases follows.",
+      "The first line of each test case contains two integers n%%ZSMJ8%%, m%%ZSMJ9%% (1≤n≤104%%ZSMJ10%%, n−1≤m≤min%%ZSMJ11%%) — the number of vertices and the number of edges in the graph, respectively.",
+      "Each of the next m%%ZSMJ12%% lines of each test case contains two integers u_i%%ZSMJ13%%, v_i%%ZSMJ14%% (1 \\le u_i, v_i \\le n%%ZSMJ15%%) — the edges of the graph. It is guaranteed that the graph is connected and there are no multiple edges or self-loops.",
+      "It is guaranteed that the sum of n%%ZSMJ16%% and the sum of m%%ZSMJ17%% over all test cases does not exceed 10^4%%ZSMJ18%%.",
+      "For each test case, you need to output a single line containing either \"Alice\" or \"Bob\", representing the player you choose.",
+      "Then for each of the following n%%ZSMJ19%% rounds, the following two-step process happens:",
+      "Alice (either you or the interactor) will output two integers a%%ZSMJ20%% and b%%ZSMJ21%% (1 \\le a, b \\le 3%%ZSMJ22%%, a \\neq b%%ZSMJ23%%) — the colors chosen by Alice.",
+      "Bob (either you or the interactor) will output two integers i%%ZSMJ24%% and c%%ZSMJ25%% (1 \\le i \\le n%%ZSMJ26%%, c = a%%ZSMJ27%% or c = b%%ZSMJ28%%) — the vertex and the color chosen by Bob. Vertex i%%ZSMJ29%% must be a previously uncolored vertex.",
+      "If any of your outputs are invalid, the jury will output \"-1\" and you will receive a Wrong Answer verdict.",
+      "At the end of all n%%ZSMJ30%% turns, if you have lost the game, the jury will output \"-1\" and you will receive a Wrong Answer verdict.",
+      "If your program has received a -1%%ZSMJ31%% instead of a valid value, it must terminate immediately. Otherwise, you may receive an arbitrary verdict because your solution might be reading from a closed stream.",
+      "Note that if you are playing as Alice, and there already exists an edge connected two vertices of the same color, the interactor will not terminate early and you will keep playing all n%%ZSMJ32%% rounds.",
+      "After outputting, do not forget to output end of line and flush the output. Otherwise, you will get Idleness limit exceeded. To do this, use:",
+      "fflush(stdout) or cout.flush() in C++;",
+      "System.out.flush() in Java;",
+      "flush(output) in Pascal;",
+      "stdout.flush() in Python;",
+      "see documentation for other languages.",
+      "In this problem, hacks are disabled."
+    ],
+    "output": [],
+    "note": [
+      "Note that the sample test cases are example games and do not necessarily represent the optimal strategy for both players.",
+      "In the first test case, you choose to play as Alice.",
+      "Alice chooses two colors: 3%%ZSMJ33%% and 1%%ZSMJ34%%. Bob chooses vertex 3%%ZSMJ35%% and colors it with color 1%%ZSMJ36%%.",
+      "Alice chooses two colors: 1%%ZSMJ37%% and 2%%ZSMJ38%%. Bob chooses vertex 2%%ZSMJ39%% and colors it with color 2%%ZSMJ40%%.",
+      "Alice chooses two colors: 2%%ZSMJ41%% and 1%%ZSMJ42%%. Bob chooses vertex 1%%ZSMJ43%% and colors it with color 1%%ZSMJ44%%.",
+      "Alice wins because the edge (3, 1)%%ZSMJ45%% connects two vertices of the same color.",
+      "In the second test case, you choose to play as Bob.",
+      "Alice chooses two colors: 2%%ZSMJ46%% and 3%%ZSMJ47%%. Bob chooses vertex 1%%ZSMJ48%% and colors it with color 2%%ZSMJ49%%.",
+      "Alice chooses two colors: 1%%ZSMJ50%% and 2%%ZSMJ51%%. Bob chooses vertex 2%%ZSMJ52%% and colors it with color 1%%ZSMJ53%%.",
+      "Alice chooses two colors: 2%%ZSMJ54%% and 1%%ZSMJ55%%. Bob chooses vertex 4%%ZSMJ56%% and colors it with color 1%%ZSMJ57%%.",
+      "Alice chooses two colors: 3%%ZSMJ58%% and 1%%ZSMJ59%%. Bob chooses vertex 3%%ZSMJ60%% and colors it with color 3%%ZSMJ61%%.",
+      "Bob wins because there are no edges with vertices of the same color."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3 3\n1 2\n2 3\n3 1\n\n\n3 1\n\n2 2\n\n1 1\n4 4\n1 2\n2 3\n3 4\n4 1\n\n2 3\n\n1 2\n\n2 1\n\n3 1",
+      "output": "\n\n\n\n\nAlice\n3 1\n\n1 2\n\n2 1\n\n\n\n\n\n\nBob\n\n1 2\n\n2 1\n\n4 1\n\n3 3"
+    }
+  ]
+}

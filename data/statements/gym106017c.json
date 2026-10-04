@@ -1,0 +1,53 @@
+{
+  "code": "GYM106017C",
+  "letter": "C",
+  "title": "C. Aboreo Warehouse",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106017/problem/C",
+  "difficulty": "*1700",
+  "timeLimit": "0.8 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are responsible for a company that produces and distributes Aboreo, an alcoholic beverage valued for the variety in its oplo degree, a component that provides sweetness. Using specialized rays, it is possible to precisely modify the oplo degree of stored bottles. You must develop a system to simulate the state of a warehouse where Aboreo bottles are stored and modified. Initially, the warehouse is empty. A total of $$$q$$$ operations will be performed on the warehouse, each in one of the following forms:",
+      "1. '1 x' (Add bottle): A new bottle with an oplo degree of $$$x$$$ ($$$1 \\leq x \\leq 10^8$$$) is added to the warehouse.",
+      "2. '2 x' (Increase oplo): The oplo degree of each bottle in the warehouse increases by $$$x$$$ ($$$-10^8 \\leq x \\leq 10^8$$$). If the oplo degree of the $$$j$$$-th bottle was $$$v_j$$$ before the operation, it becomes $$$v_j + x$$$ afterward.",
+      "3. '3 p q' (Multiply oplo): The oplo degree of each bottle is multiplied by $$$\\frac{p}{q}$$$ ($$$-10^8 \\leq p, q \\leq 10^8$$$, $$$q \\neq 0$$$, $$$p \\neq 0$$$). If the oplo degree of the $$$j$$$-th bottle was $$$v_j$$$ before the operation, it becomes $$$v_j \\cdot \\frac{p}{q}$$$ afterward.",
+      "4. '4 j' (Query degree): Print the oplo degree of the bottle added in operation $$$j$$$ ($$$1 \\leq j \\leq i$$$), considering all operations performed up to that point.",
+      "Notes:",
+      "- The oplo degree may become extremely large, small, negative, or non-integer after operations. - For queries (type 4), it is guaranteed that the oplo degree of the queried bottle is an integer $$$0 \\leq v \\leq 10^8$$$, avoiding precision issues",
+      "Implement an algorithm that performs this simulation efficiently."
+    ],
+    "input": [
+      "The input begins with an integer $$$q$$$ indicating the number of operations to perform ($$$2 \\leq q \\leq 10^5$$$). This is followed by $$$q$$$ lines, each describing an operation in one of the following formats:",
+      "- '1 x': Add a new bottle with oplo degree $$$x$$$ ($$$1 \\leq x \\leq 10^8$$$).",
+      "- '2 x': Increase the oplo degree of all bottles by $$$x$$$ ($$$-10^8 \\leq x \\leq 10^8$$$).",
+      "- '3 p q': Multiply the oplo degree of all bottles by $$$\\frac{p}{q}$$$ ($$$-10^8 \\leq p, q \\leq 10^8$$$, $$$q \\neq 0$$$, $$$p \\neq 0$$$).",
+      "- '4 j': Query the oplo degree of the bottle added in operation $$$j$$$ ($$$1 \\leq j \\leq i$$$, where $$$i$$$ is the current operation number).",
+      "Additional constraints:",
+      "- There will be at least one operation of type 4 (query). - For type 4 operations, the oplo degree of the queried bottle is guaranteed to be an integer $$$0 \\leq v \\leq 10^8$$$. Additionally, operation $$$j$$$ is always of type 1 (add bottle)."
+    ],
+    "output": [
+      "For each operation of type '4 j', print a single line containing an integer representing the oplo degree of the bottle added in operation $$$j$$$, after applying all operations up to that point."
+    ],
+    "note": [
+      "In the first example, the following operations are performed in this order:",
+      "- A bottle arrives with an oplo degree of $$$3$$$.",
+      "- The oplo degree of all bottles is multiplied by $$$\\frac{1}{2}$$$. The bottle added in the first operation now has an oplo degree of $$$\\frac{3}{2}$$$.",
+      "- A bottle arrives with an oplo degree of $$$1$$$.",
+      "- The oplo degree of all bottles is increased by $$$1$$$.",
+      "- The oplo degree of all bottles is multiplied by $$$4$$$.",
+      "- Finally, the oplo degree of the bottle added in the first operation and the bottle added in the third operation must be printed."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n1 3\n3 1 2\n1 1\n2 1\n3 4 1\n4 1\n4 3",
+      "output": "10\n8"
+    },
+    {
+      "input": "4\n1 1\n2 -6\n3 3 -5\n4 1",
+      "output": "3"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "code": "GYM106407B",
+  "letter": "B",
+  "title": "B. Grasshopper",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106407/problem/B",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A grasshopper starts at position 0%%ZSMJ0%% on a number line containing the points 0,1,2,…,n%%ZSMJ1%%.",
+      "Each minute, the grasshopper chooses a point j∈{0,1,…,n}%%ZSMJ2%% that it has not chosen before and jumps over it. If the grasshopper is currently at position i%%ZSMJ3%% and jumps over point j%%ZSMJ4%%, it lands at position 2j−i%%ZSMJ5%%.",
+      "After exactly n+1%%ZSMJ6%% minutes, the grasshopper has jumped over every point 0,1,…,n%%ZSMJ7%% exactly once. It is guaranteed that after all jumps, the grasshopper returns to position 0%%ZSMJ8%%.",
+      "Your task is to count how many permutations of the jump-over points result in this behavior."
+    ],
+    "input": [
+      "The first line contains an integer t%%ZSMJ9%% — the number of test cases.",
+      "Each of the next t%%ZSMJ10%% lines contains a single integer n%%ZSMJ11%% (2≤n≤75)%%ZSMJ12%%.",
+      "It is guaranteed that the sum of all values of n%%ZSMJ13%% over all test cases does not exceed 75%%ZSMJ14%%."
+    ],
+    "output": [
+      "For each test case, output a single integer — the number of valid orders of jump-over points modulo 109+7%%ZSMJ15%%."
+    ],
+    "note": [
+      "Each point from 0%%ZSMJ16%% to n%%ZSMJ17%% must be jumped over exactly once.",
+      "The order of jump-over points matters.",
+      "Some values of n%%ZSMJ18%% may have zero valid permutations.",
+      "Since the answer can be large, all results are taken modulo 109+7%%ZSMJ19%%.",
+      "For example, when n=4%%ZSMJ20%%, one valid order is: [ 0, 1, 2, 4, 3 ] After performing these jumps, the grasshopper returns to position 0%%ZSMJ21%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n2\n3\n4\n8",
+      "output": "0\n8\n24\n31680"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "code": "CF675D",
+  "letter": "D",
+  "title": "D. Tree Construction",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/675/D",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "During the programming classes Vasya was assigned a difficult problem. However, he doesn't know how to code and was unable to find the solution in the Internet, so he asks you to help.",
+      "You are given a sequence a%%ZSMJ0%%, consisting of n%%ZSMJ1%% distinct integers, that is used to construct the binary search tree. Below is the formal description of the construction process.",
+      "First element a1%%ZSMJ2%% becomes the root of the tree.",
+      "Elements a2,a3,…,an%%ZSMJ3%% are added one by one. To add element ai%%ZSMJ4%% one needs to traverse the tree starting from the root and using the following rules:   The pointer to the current node is set to the root.",
+      "If ai%%ZSMJ5%% is greater than the value in the current node, then its right child becomes the current node. Otherwise, the left child of the current node becomes the new current node.",
+      "If at some point there is no required child, the new node is created, it is assigned value ai%%ZSMJ6%% and becomes the corresponding child of the current node."
+    ],
+    "input": [
+      "The first line of the input contains a single integer n%%ZSMJ7%% (2≤n≤100000%%ZSMJ8%%) — the length of the sequence a%%ZSMJ9%%.",
+      "The second line contains n%%ZSMJ10%% distinct integers ai%%ZSMJ11%% (1≤ai≤109%%ZSMJ12%%) — the sequence a%%ZSMJ13%% itself."
+    ],
+    "output": [
+      "Output n−1%%ZSMJ14%% integers. For all i>1%%ZSMJ15%% print the value written in the node that is the parent of the node with value ai%%ZSMJ16%% in it."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 2 3",
+      "output": "1 2"
+    },
+    {
+      "input": "5\n4 2 3 1 6",
+      "output": "4 2 2 4"
+    }
+  ]
+}

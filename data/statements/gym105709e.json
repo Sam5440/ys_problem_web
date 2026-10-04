@@ -1,0 +1,36 @@
+{
+  "code": "GYM105709E",
+  "letter": "E",
+  "title": "E. Finch Sanctuaries",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105709/problem/E",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Darwin is currently researching various traits of his n%%ZSMJ0%% finches that are each currently stored in their own sanctuary. He is trying to understand which finches might be evolutionarily related, so he wants to group them together based on common traits. Specifically, Darwin cares about k%%ZSMJ1%% traits of these finches, and has labeled every variant of each trait with a letter between 'a' and 'j'. There is a lot of coordination to be done in moving these finches around so Darwin needs your help processing and keeping track of all the information. Specifically, there are three types of queries he can request of you:",
+      "Since he discovered that trait j%%ZSMJ2%% is a key indicator of genetic similarity, combine any groups with finches which share a value of this trait.",
+      "Compute how many birds are currently in Finch i%%ZSMJ3%%'s sanctuary (including Finch i%%ZSMJ4%% itself)?",
+      "Compute how many birds are in the most populated sanctuary?"
+    ],
+    "input": [
+      "The first line contains three integers n%%ZSMJ5%%, k%%ZSMJ6%%, and q%%ZSMJ7%%. (1≤n,k,q≤105,nk≤106%%ZSMJ8%%) — the number of birds, the number of traits, and the number of queries, respectively.",
+      "The next n%%ZSMJ9%% lines contain a string si%%ZSMJ10%% (|si|=k%%ZSMJ11%%) — the values of the k%%ZSMJ12%% traits of the bird, respectively. Every trait value is a character between 'a' and 'j'.",
+      "The next q%%ZSMJ13%% lines contain a description of the corresponding query. The line begins with an integer t%%ZSMJ14%% (t∈{1,2,3}%%ZSMJ15%%.",
+      "If t=1%%ZSMJ16%%, then the line contains another integer j%%ZSMJ17%% (1≤j≤k%%ZSMJ18%%) — the trait which finches should now also be grouped by.",
+      "If t=2%%ZSMJ19%%, then the line contains another integer i%%ZSMJ20%% (1≤i≤n%%ZSMJ21%%) — the finch which the second query should be performed on.",
+      "If t=3%%ZSMJ22%%, then there is nothing else on the line.",
+      "It is guaranteed that there is at least one query of type two or three. Note that queries of type 1 may be repeated."
+    ],
+    "output": [
+      "Output the answers for the second and third queries in order on their own lines."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 5 14\nabcdj\nacdei\nbcffh\nbffgg\n2 4\n3\n1 3\n2 3\n2 1\n3\n1 1\n2 3\n2 1\n3\n1 2\n2 3\n2 1\n3",
+      "output": "1\n1\n2\n1\n2\n2\n2\n2\n4\n4\n4"
+    }
+  ]
+}

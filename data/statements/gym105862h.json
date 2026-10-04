@@ -1,0 +1,36 @@
+{
+  "code": "GYM105862H",
+  "letter": "H",
+  "title": "H. Expected Value Of Function",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105862/problem/H",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Given an array a%%ZSMJ0%% of length n%%ZSMJ1%% (1≤n≤2∗105)%%ZSMJ2%% its elements are numbered from 0 to n−1%%ZSMJ3%% (a0,a1,...,an−1)%%ZSMJ4%%.",
+      "For two integers start%%ZSMJ5%% and step%%ZSMJ6%% (0≤start,step≤n−1)%%ZSMJ7%% define f(start,step)%%ZSMJ8%% as follows:",
+      "first set an integer current%%ZSMJ9%% to start%%ZSMJ10%% and set another integer sum%%ZSMJ11%% to zero, that is current=start%%ZSMJ12%% and sum=0%%ZSMJ13%%.Then repeat this steps n%%ZSMJ14%% times:",
+      "add acurrent%%ZSMJ15%% to sum%%ZSMJ16%%, that is sum=sum+acurrent%%ZSMJ17%%.",
+      "set acurrent%%ZSMJ18%% to zero, that is acurrent=0%%ZSMJ19%%.",
+      "add step%%ZSMJ20%% to current%%ZSMJ21%% modulo n%%ZSMJ22%%, that is current=(current+step)%%ZSMJ23%% mod%%ZSMJ24%% n%%ZSMJ25%%",
+      "If We Choose start%%ZSMJ28%% and step%%ZSMJ29%% randomly, what is the expected value of the function f(start,step)%%ZSMJ30%% modulo 109+7%%ZSMJ31%%."
+    ],
+    "input": [
+      "The first line contains a single integer t%%ZSMJ32%% (1≤t≤105)%%ZSMJ33%%, the number of test cases.",
+      "The first line of each test case contains a single integer n%%ZSMJ34%% (1≤n≤2∗105)%%ZSMJ35%%, the size of the array a%%ZSMJ36%%.",
+      "The second line of each test case contains n%%ZSMJ37%% integers (1≤ai≤109)%%ZSMJ38%%, the elements of array a%%ZSMJ39%%.",
+      "It is guranteed that the sum of n%%ZSMJ40%% over all test cases doesn't exceeds 2∗105%%ZSMJ41%%."
+    ],
+    "output": [
+      "For each test case output the expected value of the function f(start,step)%%ZSMJ42%% modulo 109+7%%ZSMJ43%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n5\n1 2 3 4 5\n4\n10 20 80 90\n3\n70 2 1\n7\n1 1 1 1 1 1 1\n4\n2 1 2 1000000000",
+      "output": "200000014\n500000141\n777777840\n142857150\n625000003"
+    }
+  ]
+}

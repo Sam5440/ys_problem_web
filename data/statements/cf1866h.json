@@ -1,0 +1,53 @@
+{
+  "code": "CF1866H",
+  "letter": "H",
+  "title": "H. Happy Sets",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1866/H",
+  "difficulty": "2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Define a set A%%ZSMJ0%% as a child of set B%%ZSMJ1%% if and only if for each element of value x%%ZSMJ2%% that is in A%%ZSMJ3%%, there exists an element of value x+1%%ZSMJ4%% that is in B%%ZSMJ5%%.",
+      "Given integers N%%ZSMJ6%% and K%%ZSMJ7%%. In order to make Chaneka happy, you must find the number of different arrays containing N%%ZSMJ8%% sets [S1,S2,S3,…,SN]%%ZSMJ9%% such that: - Each set can only contain zero or more different integers from 1%%ZSMJ10%% to K%%ZSMJ11%%. - There exists a way to rearrange the order of the array of sets into [S′1,S′2,S′3,…,S′N]%%ZSMJ12%% such that S′i%%ZSMJ13%% is a child of S′i+1%%ZSMJ14%% for each 1≤i≤N−1%%ZSMJ15%%.",
+      "Print the answer modulo 998244353%%ZSMJ16%%.",
+      "Two sets are considered different if and only if there is at least one value that only occurs in one of the two sets.",
+      "Two arrays of sets are considered different if and only if there is at least one index i%%ZSMJ17%% such that the sets at index i%%ZSMJ18%% in the two arrays are different."
+    ],
+    "input": [
+      "The only line contains two integers N%%ZSMJ19%% and K%%ZSMJ20%% (1≤N,K≤2⋅105%%ZSMJ21%%) — the number of sets in the array and the maximum limit for the values in the sets."
+    ],
+    "output": [
+      "An integer representing the number of different arrays of sets that satisfy the problem condition, modulo 998244353%%ZSMJ22%%."
+    ],
+    "note": [
+      "In the first example, there are 11%%ZSMJ23%% different arrays of sets possible, which are:",
+      "[{},{}]%%ZSMJ24%%",
+      "[{},{1}]%%ZSMJ25%%",
+      "[{},{1,2}]%%ZSMJ26%%",
+      "[{},{2}]%%ZSMJ27%%",
+      "[{1},{}]%%ZSMJ28%%",
+      "[{1},{1,2}]%%ZSMJ29%%",
+      "[{1},{2}]%%ZSMJ30%%",
+      "[{1,2},{}]%%ZSMJ31%%",
+      "[{1,2},{1}]%%ZSMJ32%%",
+      "[{2},{}]%%ZSMJ33%%",
+      "[{2},{1}]%%ZSMJ34%%"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 2",
+      "output": "11"
+    },
+    {
+      "input": "1 3",
+      "output": "8"
+    },
+    {
+      "input": "3 1",
+      "output": "4"
+    }
+  ]
+}

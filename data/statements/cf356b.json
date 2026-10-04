@@ -1,0 +1,45 @@
+{
+  "code": "CF356B",
+  "letter": "B",
+  "title": "B. Xenia and Hamming",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/356/B",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Xenia is an amateur programmer. Today on the IT lesson she learned about the Hamming distance.",
+      "The Hamming distance between two strings s = s1s2... sn and t = t1t2... tn of equal length n is value ![](https://espresso.codeforces.com/e1d6a090dd97e9f4f63508113d5e76da503b5b3d.png). Record [si ≠ ti] is the Iverson notation and represents the following: if si ≠ ti, it is one, otherwise — zero.",
+      "Now Xenia wants to calculate the Hamming distance between two long strings a and b. The first string a is the concatenation of n copies of string x, that is, ![](https://espresso.codeforces.com/ae2441c6f66fcbeb4042a21ad7bf1d53880db895.png). The second string b is the concatenation of m copies of string y.",
+      "Help Xenia, calculate the required Hamming distance, given n, x, m, y."
+    ],
+    "input": [
+      "The first line contains two integers n and m (1 ≤ n, m ≤ 1012). The second line contains a non-empty string x. The third line contains a non-empty string y. Both strings consist of at most 106 lowercase English letters.",
+      "It is guaranteed that strings a and b that you obtain from the input have the same length."
+    ],
+    "output": [
+      "Print a single integer — the required Hamming distance.",
+      "Please, do not use the %lld specifier to read or write 64-bit integers in С++. It is preferred to use the cin, cout streams or the %I64d specifier."
+    ],
+    "note": [
+      "In the first test case string a is the same as string b and equals 100 letters a. As both strings are equal, the Hamming distance between them is zero.",
+      "In the second test case strings a and b differ in their 3-rd, 5-th, 6-th and 7-th characters. Thus, the Hamming distance equals 4.",
+      "In the third test case string a is rzrrzr and string b is azazaz. The strings differ in all characters apart for the second one, the Hamming distance between them equals 5."
+    ]
+  },
+  "examples": [
+    {
+      "input": "100 10\na\naaaaaaaaaa",
+      "output": "0"
+    },
+    {
+      "input": "1 1\nabacaba\nabzczzz",
+      "output": "4"
+    },
+    {
+      "input": "2 3\nrzr\naz",
+      "output": "5"
+    }
+  ]
+}

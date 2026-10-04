@@ -1,0 +1,43 @@
+{
+  "code": "GYM104879C",
+  "letter": "C",
+  "title": "C. Public Transportation",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104879/problem/C",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The project of a new city involves the construction of a grid of size n×m%%ZSMJ0%% cells. A house with ti,j%%ZSMJ1%% residents will be located at the intersection of the i%%ZSMJ2%%-th row and the j%%ZSMJ3%%-th column.",
+      "Three houses in cells (i,j)%%ZSMJ4%%, (i+a,j)%%ZSMJ5%% and (i,j+b)%%ZSMJ6%% form a good triangle suitable for a public transportation line if:",
+      "a>0%%ZSMJ7%% and b>0%%ZSMJ8%%;",
+      "in the house (i,j)%%ZSMJ9%%, exactly a+b%%ZSMJ10%% residents live;",
+      "in the house (i+a,j)%%ZSMJ11%%, exactly b%%ZSMJ12%% residents live;",
+      "and in the house (i,j+b)%%ZSMJ13%%, exactly a%%ZSMJ14%% residents live.",
+      "You can change the construction plan by increasing or decreasing all ti,j%%ZSMJ15%% by the same integer d%%ZSMJ16%%. If ti,j%%ZSMJ17%% should become less than zero, consider it to be equal to zero. Let T+d%%ZSMJ18%% denote the matrix of values ti,j+d%%ZSMJ19%%, and let △(T+d)%%ZSMJ20%% be the number of good triangles when the city is constructed accordingly.",
+      "Find +∞∑d=−∞△(T+d),%%ZSMJ21%% or in other words, the total number of good triangles for all possible construction plans."
+    ],
+    "input": [
+      "The first line of input contains two integers n%%ZSMJ22%% and m%%ZSMJ23%% separated by a space, representing the number of rows and columns of the grid, respectively (1≤n,m≤1000%%ZSMJ24%%).",
+      "In the i%%ZSMJ25%%-th of the following n%%ZSMJ26%% lines, there are m%%ZSMJ27%% integers ti,j%%ZSMJ28%% listed, representing the number of residents in each house of the i%%ZSMJ29%%-th row of the grid (1≤ti,j≤109%%ZSMJ30%%)."
+    ],
+    "output": [
+      "Output a single integer, the number of sets of three cells that satisfy the given conditions.",
+      "Points for each subtask are awarded only if all tests of this subtask and the necessary subtasks are successfully passed."
+    ],
+    "note": [
+      "In this problem the input data size is large so it may be useful to use fast IO."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n3 1 1\n1 2 1\n1 1 1",
+      "output": "2"
+    },
+    {
+      "input": "2 4\n5 4 3 2\n4 3 2 1",
+      "output": "6"
+    }
+  ]
+}

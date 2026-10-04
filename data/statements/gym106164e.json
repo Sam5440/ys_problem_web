@@ -1,0 +1,43 @@
+{
+  "code": "GYM106164E",
+  "letter": "E",
+  "title": "E. Elena and Travel Pass",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106164/problem/E",
+  "difficulty": "*2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Elena the Ashen Witch has decided to spend some time in a magical country and is now searching for a place to stay. The country consists of N%%ZSMJ0%% cities, numbered from 1%%ZSMJ1%% to N%%ZSMJ2%%, connected by M%%ZSMJ3%% one-way streets. Since flying magic has been banned for intercity travel, Elena must rely on these streets to move from one city to another.",
+      "Each street is described by four integers u%%ZSMJ4%%, v%%ZSMJ5%%, p%%ZSMJ6%%, and h%%ZSMJ7%% — meaning there is a road leading from city u%%ZSMJ8%% to city v%%ZSMJ9%% that requires a pass level of p%%ZSMJ10%% and takes h%%ZSMJ11%% hours to traverse. To use a street, Elena needs a travel pass. If she holds a pass of level p%%ZSMJ12%%, she can use any streets that require a pass level less than or equal to p%%ZSMJ13%%. There may be multiple streets from city u%%ZSMJ14%% to city v%%ZSMJ15%%.",
+      "Elena has prepared Q%%ZSMJ16%% questions for her journey, each falling into one of the following two types:",
+      "Type 1: Elena is considering staying in city u%%ZSMJ17%% and wants to know the minimum pass level required so that, with that pass, the travel time from city u%%ZSMJ18%% to any city does not exceed h%%ZSMJ19%% hours.",
+      "Type 2: Elena is choosing where to stay and wants to find a city such that, from that city, she can reach any city within h%%ZSMJ20%% hours while requiring the lowest possible pass level. If multiple cities achieve the same minimum requirement, she will choose the one with the smallest city number, since the average cost of living there is lower."
+    ],
+    "input": [
+      "The first line contains three integers N%%ZSMJ21%%, M%%ZSMJ22%%, and Q%%ZSMJ23%% (2≤N≤100%%ZSMJ24%%, 1≤M≤104%%ZSMJ25%%, 1≤Q≤105%%ZSMJ26%%) — the number of cities, the number of streets, and the number of queries, respectively.",
+      "Each of the following M%%ZSMJ27%% lines contains four integers u%%ZSMJ28%%, v%%ZSMJ29%%, p%%ZSMJ30%%, and h%%ZSMJ31%% (1≤u,v≤N%%ZSMJ32%%, u≠v%%ZSMJ33%%, 1≤p≤109%%ZSMJ34%%, 1≤h≤109%%ZSMJ35%%), indicating that there is a road from city u%%ZSMJ36%% to city v%%ZSMJ37%% that requires a pass level of p%%ZSMJ38%% and takes h%%ZSMJ39%% hours to travel.",
+      "The next Q%%ZSMJ40%% lines describe the queries, each following one of the two formats below:",
+      "Type 1: 1 u h (1≤u≤N%%ZSMJ41%%, 1≤h≤1012%%ZSMJ42%%, u%%ZSMJ43%% and h%%ZSMJ44%% are integers)",
+      "Type 2: 2 h (1≤h≤1012%%ZSMJ45%%, h%%ZSMJ46%% is integer)"
+    ],
+    "output": [
+      "Output For each query i%%ZSMJ47%% (1≤i≤Q%%ZSMJ48%%), output the answer to the i%%ZSMJ49%%-th query.",
+      "If the query is of Type 1, print a single integer — the minimum pass level required. If there is no valid answer, print -1.",
+      "If the query is of Type 2, print two integers — the city and the minimum pass level required. If it is impossible, print -1 -1. If there is more than one city achieving the minimum pass level, print the one with the lowest number."
+    ],
+    "note": [
+      "In the first question, Elena decides to stay in city 1. With the pass level 1%%ZSMJ50%%, city 5%%ZSMJ51%% takes the most time out of other cities with 9%%ZSMJ52%% hours — still in time.",
+      "In the second question, with a pass level 1%%ZSMJ53%%, Elena can travel from city 2%%ZSMJ54%% to any city in 8%%ZSMJ55%% hours. City 5%%ZSMJ56%% also achieves the same time, but the number is higher.",
+      "In the third question, with a pass level 2%%ZSMJ57%%, Elena can travel from city 1%%ZSMJ58%% to city 2%%ZSMJ59%% in 3%%ZSMJ60%% hours, to city 3%%ZSMJ61%% in 1%%ZSMJ62%% hour, city 4%%ZSMJ63%% in 3%%ZSMJ64%% hours, and city 5%%ZSMJ65%% in 6%%ZSMJ66%% hours.",
+      "In the fourth question, Elena cannot travel from city 1%%ZSMJ67%% to city 5%%ZSMJ68%% in less than 6%%ZSMJ69%% hours with any pass level."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 6 4\n1 2 1 3\n2 3 1 1\n3 4 1 2\n4 5 1 3\n5 1 1 2\n1 3 2 1\n1 1 9\n2 8\n1 1 8\n1 1 5",
+      "output": "1\n2 1\n2\n-1"
+    }
+  ]
+}

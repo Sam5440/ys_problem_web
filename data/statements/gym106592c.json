@@ -1,0 +1,39 @@
+{
+  "code": "GYM106592C",
+  "letter": "C",
+  "title": "C. Self Citation",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106592/problem/C",
+  "difficulty": "*1300",
+  "timeLimit": "3 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Professor Aubergine cares a lot about his citation count. He wants to increase his total number of citations as much as possible.",
+      "He plans to publish exactly n%%ZSMJ0%% papers over the next k%%ZSMJ1%% months. In the i%%ZSMJ2%%-th month, he can publish at most ai%%ZSMJ3%% papers due to submission limits.",
+      "Every paper he publishes in a month self cites all of his papers published in all previous months. However, papers published in the same month cannot cite each other.",
+      "Let bi%%ZSMJ4%% be the number of papers he publishes in month i%%ZSMJ5%%. Your task is to find a sequence b1,b2,…,bk%%ZSMJ6%% that gives the maximum possible number of total citations. The sequence must satisfy 0≤bi≤ai%%ZSMJ7%% for all i%%ZSMJ8%%, and the total sum of all bi%%ZSMJ9%% must be exactly n%%ZSMJ10%%."
+    ],
+    "input": [
+      "The first line contains a single integer t%%ZSMJ11%% (1≤t≤103%%ZSMJ12%%) — the number of test cases. Then the description of the test cases follows.",
+      "The first line of each test case contains two space-separated integers n%%ZSMJ13%% and k%%ZSMJ14%% (1≤n≤2⋅1015%%ZSMJ15%%, 1≤k≤2⋅106%%ZSMJ16%%) — the total number of papers and the number of months.",
+      "The second line of each test case contains k%%ZSMJ17%% space-separated integers a1,a2,…,ak%%ZSMJ18%% (0≤ai≤109%%ZSMJ19%%, n≤a1+a2+⋯+ak%%ZSMJ20%%) — the maximum number of papers he can publish in each month.",
+      "It is guaranteed that the sum of k%%ZSMJ21%% over all test cases does not exceed 2⋅106%%ZSMJ22%%."
+    ],
+    "output": [
+      "For each test case, print k%%ZSMJ23%% space-separated integers b1,b2,…,bk%%ZSMJ24%% — the optimal number of papers to publish each month.",
+      "If there are multiple sequences that give the same maximum number of citations, you may print any of them."
+    ],
+    "note": [
+      "In the first test case, the submission limits for the 3 months are a=[3,4,5]%%ZSMJ25%% and we need to choose a sequence that sums up to n=10%%ZSMJ26%%.",
+      "If we choose b=[3,4,3]%%ZSMJ27%%, the citations are calculated as follows:  Number of self citations in the second month = 4×3=12%%ZSMJ28%%  Number of self citations in the third month = 3×(3+4)=21%%ZSMJ29%%  Total citations = 12+21=33%%ZSMJ30%%.",
+      "Alternatively, b=[3,3,4]%%ZSMJ31%% is also a valid answer."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n10 3\n3 4 5\n12 3\n2 4 10",
+      "output": "3 3 4 \n2 4 6"
+    }
+  ]
+}

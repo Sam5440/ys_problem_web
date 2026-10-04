@@ -1,0 +1,43 @@
+{
+  "code": "GYM106527C",
+  "letter": "C",
+  "title": "C. Educational Round",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106527/problem/C",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You wrote a contest where you competed against n%%ZSMJ0%% other participants, and you were given p%%ZSMJ1%% problems to solve.",
+      "You solved exactly x%%ZSMJ2%% problems. For each problem i%%ZSMJ3%%, you know that it was solved by exactly ki%%ZSMJ4%% of your competitors.",
+      "You do not know which participants solved which problems. Find the minimum possible number of participants who solved strictly more problems than you."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ5%% (1≤t≤1000%%ZSMJ6%%). The description of the test cases follows.",
+      "The first line of each test case contains three integers n%%ZSMJ7%%, p%%ZSMJ8%%, and x%%ZSMJ9%% (1≤n,p≤106%%ZSMJ10%%, 0≤x≤p%%ZSMJ11%%) — the number of your competitors, the number of problems, and the number of problems you solved.",
+      "The second line of each test case contains p%%ZSMJ12%% integers k1,k2,…,kp%%ZSMJ13%% (0≤ki≤n%%ZSMJ14%%), where ki%%ZSMJ15%% is the number of other competitors who solved problem i%%ZSMJ16%%.",
+      "It is guaranteed that the sum of n%%ZSMJ17%% and the sum of p%%ZSMJ18%% over all test cases do not exceed 106%%ZSMJ19%%."
+    ],
+    "output": [
+      "For each test case, output a single integer — the minimum possible number of participants who could have solved strictly more problems than you."
+    ],
+    "note": [
+      "In the first test, both of your competitors solved all 4%%ZSMJ20%% problems, but you solved just one, so you are definitely behind both of them.",
+      "In the fourth test case, you could have lost to 2%%ZSMJ21%% competitors if they solved the following sets of problems:",
+      "5:A.CDEF",
+      "5:AB.DEF",
+      "3:ABC...",
+      "3:...DEF",
+      "3:ABC...",
+      "3:.BC..F",
+      "It can be shown that there is no more optimal solution."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n2 4 1\n2 2 2 2\n5 2 1\n0 1\n4 5 3\n4 4 3 3 0\n6 6 3\n4 4 4 3 3 4",
+      "output": "2\n0\n2\n2"
+    }
+  ]
+}

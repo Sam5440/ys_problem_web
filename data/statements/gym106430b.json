@@ -1,0 +1,44 @@
+{
+  "code": "GYM106430B",
+  "letter": "B",
+  "title": "B. Bessie And Rounding",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106430/problem/B",
+  "difficulty": "*1300",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Bessie is trying to convert a number X%%ZSMJ0%% to Y%%ZSMJ1%%.",
+      "In one operation, Bessie can choose an integer M%%ZSMJ2%% (M≥1%%ZSMJ3%%) and round X%%ZSMJ4%% to the nearest multiple of M%%ZSMJ5%%. If X%%ZSMJ6%% is exactly in the middle of two multiples of M%%ZSMJ7%%, it is rounded up. Note that 0%%ZSMJ8%% is a multiple of every number.",
+      "What is the least number of operations Bessie needs to perform to convert X%%ZSMJ9%% to Y%%ZSMJ10%%? Output this number, or −1%%ZSMJ11%% if it is impossible."
+    ],
+    "input": [
+      "The first line contains a single integer T%%ZSMJ12%% (1≤T≤104%%ZSMJ13%%) — the number of test cases.",
+      "Each of the next T%%ZSMJ14%% lines contains two integers X%%ZSMJ15%% and Y%%ZSMJ16%% (1≤X,Y≤109%%ZSMJ17%%) — the initial number and the target number."
+    ],
+    "output": [
+      "For each test case, output a single integer — the minimum number of operations required, or −1%%ZSMJ18%% if it is impossible."
+    ],
+    "note": [
+      "In the first testcase of the first sample, X=2%%ZSMJ19%% and Y=5%%ZSMJ20%%. Bessie can perform the following 2%%ZSMJ21%% operations:",
+      "Choose M=4%%ZSMJ22%%. The multiples of 4%%ZSMJ23%% are 0,4,8,…%%ZSMJ24%%. X=2%%ZSMJ25%% is exactly in the middle of 0%%ZSMJ26%% and 4%%ZSMJ27%%, so it rounds up to 4%%ZSMJ28%%. Now X=4%%ZSMJ29%%.",
+      "Choose M=5%%ZSMJ30%%. The multiples of 5%%ZSMJ31%% are 0,5,10,…%%ZSMJ32%%. The nearest multiple to 4%%ZSMJ33%% is 5%%ZSMJ34%%. Now X=5%%ZSMJ35%%.",
+      "It can be proven that it is impossible to do this in fewer than 2%%ZSMJ36%% operations.",
+      "In the second testcase of the first sample, X=6%%ZSMJ37%% and Y=4%%ZSMJ38%%.",
+      "Choose M=5%%ZSMJ39%%. X=6%%ZSMJ40%% is nearest to 5%%ZSMJ41%%. Now X=5%%ZSMJ42%%.",
+      "Choose M=4%%ZSMJ43%%. X=5%%ZSMJ44%% is nearest to 4%%ZSMJ45%%. Now X=4%%ZSMJ46%%.",
+      "It can be proven that it is impossible to do this in fewer than 2%%ZSMJ47%% operations."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 5\n6 4\n4 1\n3 3\n1 10",
+      "output": "2\n2\n-1\n0\n4"
+    },
+    {
+      "input": "7\n1 1000000000\n999999999 1\n999999999 10\n999999999 11\n999999999 12\n999999999 13\n1000000000 100",
+      "output": "30\n-1\n46\n46\n46\n46\n40"
+    }
+  ]
+}

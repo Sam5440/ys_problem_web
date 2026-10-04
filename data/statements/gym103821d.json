@@ -1,0 +1,41 @@
+{
+  "code": "GYM103821D",
+  "letter": "D",
+  "title": "D. Fairplay",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103821/problem/D",
+  "difficulty": "*1200",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are playing an online game, you have a team of N%%ZSMJ0%% players, and you decided to challenge your friend's team that also consists of N%%ZSMJ1%% players, let's call them team A%%ZSMJ2%% and team B%%ZSMJ3%% respectively. Each player has a specific strength, more specifically the ith%%ZSMJ4%% player in team A%%ZSMJ5%% has strength equal to i%%ZSMJ6%% for each i%%ZSMJ7%% between 1%%ZSMJ8%% and N%%ZSMJ9%%, and the jth%%ZSMJ10%% player from team B%%ZSMJ11%% has strength equal to j+1%%ZSMJ12%% for each j%%ZSMJ13%% between 1%%ZSMJ14%% and N%%ZSMJ15%%.",
+      "The total strength of a team is the product of strengths of all players in the team. To make the game fair, you can swap the ith%%ZSMJ16%% player from team A%%ZSMJ17%% with the ith%%ZSMJ18%% player from team B%%ZSMJ19%% for any i%%ZSMJ20%% between 1%%ZSMJ21%% and N%%ZSMJ22%%, in other words, you can only swap players that have the same index in both teams. You can repeat the previous operation any number of times.",
+      "A game is fair when both of the teams have a equal strengths. Can you make the game fair?"
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases T%%ZSMJ23%% (1≤T≤105%%ZSMJ24%%). Description of the test cases follows.",
+      "Each of the following T%%ZSMJ25%% lines, contains a single integer N%%ZSMJ26%% (1≤N≤105%%ZSMJ27%%)."
+    ],
+    "output": [
+      "For each test case, if you can make the game fair then print in one line an integer M%%ZSMJ28%%,the total number of operations needed, on the next line print M%%ZSMJ29%% (1≤M≤N%%ZSMJ30%%) distinct integers, the indices where you want to apply the swap operation. If you can't make the game fair, then print in one line the value −1%%ZSMJ31%%.",
+      "Note that you don't have to minimize the total number of operations. If there exists more than one answer print any of them."
+    ],
+    "note": [
+      "In the first test case, the initial strengths are:",
+      "team A%%ZSMJ32%%: 1,2,3,4,5,6,7,8%%ZSMJ33%% with total team strength equal to 40320%%ZSMJ34%%.",
+      "team B%%ZSMJ35%%: 2,3,4,5,6,7,8,9%%ZSMJ36%% with total team strength equal to 362880%%ZSMJ37%%.",
+      "After swapping the players in indices 1,4%%ZSMJ38%% and 5%%ZSMJ39%%, the strengths become like this:",
+      "team A%%ZSMJ40%%: 2,2,3,5,6,6,7,8%%ZSMJ41%% with total team strength equal to 120960%%ZSMJ42%%.",
+      "team B%%ZSMJ43%%: 1,3,4,4,5,7,8,9%%ZSMJ44%% with total team strength equal to 120960%%ZSMJ45%%.",
+      "So the strengths are now equal and the game is fair.",
+      "In the second test case, you can't make the strengths equal no matter how you perform the swaps."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n8\n4",
+      "output": "3\n1 4 5\n-1"
+    }
+  ]
+}

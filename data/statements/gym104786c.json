@@ -1,0 +1,49 @@
+{
+  "code": "GYM104786C",
+  "letter": "C",
+  "title": "C. John and Olaf",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104786/problem/C",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "John and his dog Olaf are in a complicated relationship. Therefore, John is trying to run away from his canine companion, but Olaf, surely enough, won't let him.",
+      "The road from their house to the park is a straight line. The line consists of N%%ZSMJ0%% points labeled from 1%%ZSMJ1%% to N%%ZSMJ2%%. John and Olaf can move from any point to an adjacent one in 1%%ZSMJ3%% minute. Olaf is at point x%%ZSMJ4%% and John at point y%%ZSMJ5%%.",
+      "John, being very tired, is stumbling. Thus, he moves uniformly at random each minute, either to the left or right. In the meantime, Olaf moves to the right one step each minute. Due to some suspicious law of the universe, John can't move to the right of the park, located at the N%%ZSMJ6%%th point. As a result, when he is at the Nth point, John will certainly go to the left during the next minute.",
+      "You have to calculate the expected number of minutes after which they will meet. The expected value can be written in the form pq%%ZSMJ7%%. Please output p⋅q−1(mod1000000007)%%ZSMJ8%%, where q−1%%ZSMJ9%% is the modular inverse of q%%ZSMJ10%%.",
+      "It is guaranteed that x<y%%ZSMJ11%%.",
+      "Please note, they do not have to meet at a point, they can meet between points. In that case, we still consider only whole minutes (see the examples)."
+    ],
+    "input": [
+      "The first line contains three integers N%%ZSMJ12%%, x%%ZSMJ13%% and y%%ZSMJ14%%.",
+      "1≤x<y≤N≤2000%%ZSMJ15%%"
+    ],
+    "output": [
+      "Print a single line, the expected number of minutes until our characters meet."
+    ],
+    "note": [
+      "In the first test case, they will always meet in 1 minute because John can only go to the left 1 step and Olaf goes to the right one step.",
+      "In the second test case, they meet half-way, the answer is still 1."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1 3",
+      "output": "1"
+    },
+    {
+      "input": "3 2 3",
+      "output": "1"
+    },
+    {
+      "input": "5 2 5",
+      "output": "500000006"
+    },
+    {
+      "input": "30 10 17",
+      "output": "858335509"
+    }
+  ]
+}

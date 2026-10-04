@@ -1,0 +1,34 @@
+{
+  "code": "CF1217C",
+  "letter": "C",
+  "title": "C. The Number Of Good Substrings",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1217/C",
+  "difficulty": "1700",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a binary string s%%ZSMJ0%% (recall that a string is binary if each character is either 0%%ZSMJ1%% or 1%%ZSMJ2%%).",
+      "Let f(t)%%ZSMJ3%% be the decimal representation of integer t%%ZSMJ4%% written in binary form (possibly with leading zeroes). For example f(011)=3,f(00101)=5,f(00001)=1,f(10)=2,f(000)=0%%ZSMJ5%% and f(000100)=4%%ZSMJ6%%.",
+      "The substring sl,sl+1,…,sr%%ZSMJ7%% is good if r−l+1=f(sl…sr)%%ZSMJ8%%.",
+      "For example string s=1011%%ZSMJ9%% has 5%%ZSMJ10%% good substrings: s1…s1=1%%ZSMJ11%%, s3…s3=1%%ZSMJ12%%, s4…s4=1%%ZSMJ13%%, s1…s2=10%%ZSMJ14%% and s2…s4=011%%ZSMJ15%%.",
+      "Your task is to calculate the number of good substrings of string s%%ZSMJ16%%.",
+      "You have to answer t%%ZSMJ17%% independent queries."
+    ],
+    "input": [
+      "The first line contains one integer t%%ZSMJ18%% (1≤t≤1000%%ZSMJ19%%) — the number of queries.",
+      "The only line of each query contains string s%%ZSMJ20%% (1≤|s|≤2⋅105%%ZSMJ21%%), consisting of only digits 0%%ZSMJ22%% and 1%%ZSMJ23%%.",
+      "It is guaranteed that t∑i=1|si|≤2⋅105%%ZSMJ24%%."
+    ],
+    "output": [
+      "For each query print one integer — the number of good substrings of string s%%ZSMJ25%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n0110\n0101\n00001000\n0001000",
+      "output": "4\n3\n4\n3"
+    }
+  ]
+}

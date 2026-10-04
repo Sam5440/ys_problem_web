@@ -1,0 +1,42 @@
+{
+  "code": "GYM105242B",
+  "letter": "B",
+  "title": "B. Tree Tour",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105242/problem/B",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Given a tree consisting of $$$n$$$ nodes.",
+      "Is there a walk that visits all the nodes of the tree at least once and at most twice?",
+      "Note that the node you start the walk at is considered visited at the beginning.",
+      "A walk is a sequence of nodes $$$v_1, v_2, \\dots, v_k$$$ such that for each $$$i$$$ ($$$1 \\le i  \\lt  k$$$), $$$v_i$$$ and $$$v_{i + 1}$$$ are connected by an edge."
+    ],
+    "input": [
+      "The first line of the input contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^5$$$) — the number of testcases.",
+      "The first line of each testcase contains a single integer $$$n$$$ ($$$2 \\le n \\le 2 \\cdot 10^5$$$) — the number of nodes in the tree.",
+      "Each of the following $$$n - 1$$$ lines of each testcase consists of two space-separated integers $$$u$$$ and $$$v$$$ ($$$1 \\le u, v \\le n$$$) denoting an edge between nodes $$$u$$$ and $$$v$$$ in the tree.",
+      "It is guaranteed that the given edges form a tree.",
+      "It is guaranteed that the sum of $$$n$$$ over all the testcases will not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each testcase, print \"YES\" (without quotes) if there exists a walk that satisfies the conditions, otherwise print \"NO\" (without quotes).",
+      "You can output \"YES\" and \"NO\" in any case (for example, strings \"yEs\", \"yes\", \"Yes\" and \"YES\" will be recognized as a positive response)."
+    ],
+    "note": [
+      "Explanation of the first testcase: we can start at node $$$1$$$ then go to node $$$2$$$ and stop there.",
+      "Explanation of the second testcase: a valid walk may look like this: $$$5$$$ — $$$3$$$ — $$$4$$$ — $$$3$$$ — $$$1$$$ — $$$2$$$ — $$$1$$$.",
+      "Notice that it is not necessary to start at node $$$1$$$.",
+      "Nodes $$$1$$$ and $$$3$$$ were visited twice, whereas nodes $$$2$$$, $$$4$$$, and $$$5$$$ were visited once. Thus, each node is visited at least once and at most twice and the walk is valid.",
+      "Explanation of the third testcase: it can be shown that there does not exist a walk that satisfies the conditions."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2\n1 2\n5\n1 2\n1 3\n3 4\n3 5\n5\n2 1\n1 3\n1 4\n1 5",
+      "output": "YES\nYES\nNO"
+    }
+  ]
+}

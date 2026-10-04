@@ -1,0 +1,57 @@
+{
+  "code": "CF1065E",
+  "letter": "E",
+  "title": "E. Side Transmutations",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1065/E",
+  "difficulty": "2300",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Consider some set of distinct characters A%%ZSMJ0%% and some string S%%ZSMJ1%%, consisting of exactly n%%ZSMJ2%% characters, where each character is present in A%%ZSMJ3%%.",
+      "You are given an array of m%%ZSMJ4%% integers b%%ZSMJ5%% (b1<b2<⋯<bm%%ZSMJ6%%).",
+      "You are allowed to perform the following move on the string S%%ZSMJ7%%:",
+      "Choose some valid i%%ZSMJ8%% and set k=bi%%ZSMJ9%%;",
+      "Take the first k%%ZSMJ10%% characters of S=Prk%%ZSMJ11%%;",
+      "Take the last k%%ZSMJ12%% characters of S=Suk%%ZSMJ13%%;",
+      "Substitute the first k%%ZSMJ14%% characters of S%%ZSMJ15%% with the reversed Suk%%ZSMJ16%%;",
+      "Substitute the last k%%ZSMJ17%% characters of S%%ZSMJ18%% with the reversed Prk%%ZSMJ19%%.",
+      "For example, let's take a look at S=%%ZSMJ20%% \"abcdefghi\" and k=2%%ZSMJ21%%. Pr2=%%ZSMJ22%% \"ab\", Su2=%%ZSMJ23%% \"hi\". Reversed Pr2=%%ZSMJ24%% \"ba\", Su2=%%ZSMJ25%% \"ih\". Thus, the resulting S%%ZSMJ26%% is \"ihcdefgba\".",
+      "The move can be performed arbitrary number of times (possibly zero). Any i%%ZSMJ27%% can be selected multiple times over these moves.",
+      "Let's call some strings S%%ZSMJ28%% and T%%ZSMJ29%% equal if and only if there exists such a sequence of moves to transmute string S%%ZSMJ30%% to string T%%ZSMJ31%%. For the above example strings \"abcdefghi\" and \"ihcdefgba\" are equal. Also note that this implies S=S%%ZSMJ32%%.",
+      "The task is simple. Count the number of distinct strings.",
+      "The answer can be huge enough, so calculate it modulo 998244353%%ZSMJ33%%."
+    ],
+    "input": [
+      "The first line contains three integers n%%ZSMJ34%%, m%%ZSMJ35%% and |A|%%ZSMJ36%% (2≤n≤109%%ZSMJ37%%, 1≤m≤min(n2,2⋅105)%%ZSMJ38%%, 1≤|A|≤109%%ZSMJ39%%) — the length of the strings, the size of the array b%%ZSMJ40%% and the size of the set A%%ZSMJ41%%, respectively.",
+      "The second line contains m%%ZSMJ42%% integers b1,b2,…,bm%%ZSMJ43%% (1≤bi≤n2%%ZSMJ44%%, b1<b2<⋯<bm%%ZSMJ45%%)."
+    ],
+    "output": [
+      "Print a single integer — the number of distinct strings of length n%%ZSMJ46%% with characters from set A%%ZSMJ47%% modulo 998244353%%ZSMJ48%%."
+    ],
+    "note": [
+      "Here are all the distinct strings for the first example. The chosen letters 'a' and 'b' are there just to show that the characters in A%%ZSMJ49%% are different.",
+      "\"aaa\"",
+      "\"aab\" = \"baa\"",
+      "\"aba\"",
+      "\"abb\" = \"bba\"",
+      "\"bab\"",
+      "\"bbb\""
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1 2\n1",
+      "output": "6"
+    },
+    {
+      "input": "9 2 26\n2 3",
+      "output": "150352234"
+    },
+    {
+      "input": "12 3 1\n2 5 6",
+      "output": "1"
+    }
+  ]
+}

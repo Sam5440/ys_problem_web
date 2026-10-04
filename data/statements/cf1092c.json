@@ -1,0 +1,45 @@
+{
+  "code": "CF1092C",
+  "letter": "C",
+  "title": "C. Prefixes and Suffixes",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1092/C",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Ivan wants to play a game with you. He picked some string s%%ZSMJ0%% of length n%%ZSMJ1%% consisting only of lowercase Latin letters.",
+      "You don't know this string. Ivan has informed you about all its improper prefixes and suffixes (i.e. prefixes and suffixes of lengths from 1%%ZSMJ2%% to n−1%%ZSMJ3%%), but he didn't tell you which strings are prefixes and which are suffixes.",
+      "Ivan wants you to guess which of the given 2n−2%%ZSMJ4%% strings are prefixes of the given string and which are suffixes. It may be impossible to guess the string Ivan picked (since multiple strings may give the same set of suffixes and prefixes), but Ivan will accept your answer if there is at least one string that is consistent with it. Let the game begin!"
+    ],
+    "input": [
+      "The first line of the input contains one integer number n%%ZSMJ5%% (2≤n≤100%%ZSMJ6%%) — the length of the guessed string s%%ZSMJ7%%.",
+      "The next 2n−2%%ZSMJ8%% lines are contain prefixes and suffixes, one per line. Each of them is the string of length from 1%%ZSMJ9%% to n−1%%ZSMJ10%% consisting only of lowercase Latin letters. They can be given in arbitrary order.",
+      "It is guaranteed that there are exactly 2%%ZSMJ11%% strings of each length from 1%%ZSMJ12%% to n−1%%ZSMJ13%%. It is also guaranteed that these strings are prefixes and suffixes of some existing string of length n%%ZSMJ14%%."
+    ],
+    "output": [
+      "Print one string of length 2n−2%%ZSMJ15%% — the string consisting only of characters 'P' and 'S'. The number of characters 'P' should be equal to the number of characters 'S'. The i%%ZSMJ16%%-th character of this string should be 'P' if the i%%ZSMJ17%%-th of the input strings is the prefix and 'S' otherwise.",
+      "If there are several possible answers, you can print any."
+    ],
+    "note": [
+      "The only string which Ivan can guess in the first example is \"ababa\".",
+      "The only string which Ivan can guess in the second example is \"aaa\". Answers \"SPSP\", \"SSPP\" and \"PSPS\" are also acceptable.",
+      "In the third example Ivan can guess the string \"ac\" or the string \"ca\". The answer \"SP\" is also acceptable."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\nba\na\nabab\na\naba\nbaba\nab\naba",
+      "output": "SPPSPSPS"
+    },
+    {
+      "input": "3\na\naa\naa\na",
+      "output": "PPSS"
+    },
+    {
+      "input": "2\na\nc",
+      "output": "PS"
+    }
+  ]
+}

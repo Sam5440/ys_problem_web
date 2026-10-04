@@ -1,0 +1,35 @@
+{
+  "code": "GYM105446D",
+  "letter": "D",
+  "title": "D. Drone Control",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105446/problem/D",
+  "difficulty": "*1300",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are designing a controller for an interesting aircraft called the Single Copter. It only has one propeller, but the outgoing air flow is further shaped by four flaps that control three Euler angles (pitch, roll and yaw) that help maintain the requested orientation of the craft. Each of these flaps can assume any angle requested by the flight controller, and the effects of the flaps being at certain angles should translate to exerting the requested forces on pitch, roll and yaw.",
+      "![](https://espresso.codeforces.com/9a4656f8fb1c66efd19ae27d6124578106728aaf.png)",
+      "![](https://espresso.codeforces.com/978204b3b999f4963169a37f8bc3edd46294b40a.png)",
+      "![](https://espresso.codeforces.com/650bacdc351ae7a7b3a94cc1d35c8844ead37aeb.png)",
+      "Define the angles of the flaps to be n%%ZSMJ0%%, e%%ZSMJ1%%, s%%ZSMJ2%%, and w%%ZSMJ3%% (for \"north\", \"east\", \"south\" and \"west\" respectively). The forces in the directions of pitch, roll and yaw are defined by the following equations:",
+      "As there are four variables and three constraints, you decided that, from the perspective of aerodynamics, it makes sense to make the maximum of the flap angles as small as possible, that is, you additionally want to minimise max{|n|,|e|,|s|,|w|}%%ZSMJ7%%.",
+      "Find the best parameters to send to the Single Copter to achieve the desired pitch, yaw, and roll."
+    ],
+    "input": [
+      "One line containing the number q%%ZSMJ8%%, 1≤q≤104%%ZSMJ9%%, the number of requests to follow.",
+      "i%%ZSMJ10%% further lines, each containing three real numbers pi%%ZSMJ11%%, ri%%ZSMJ12%%, yi%%ZSMJ13%% (−1≤pi,ri,yi≤+1%%ZSMJ14%%)."
+    ],
+    "output": [
+      "Output q%%ZSMJ15%% lines. In the i%%ZSMJ16%%-th line, output the solution for the i%%ZSMJ17%%-th request, four numbers ni%%ZSMJ18%%, ei%%ZSMJ19%%, si%%ZSMJ20%%, wi%%ZSMJ21%%, separated by whitespace.",
+      "Your answer will be considered correct if the resulting pitch, roll and yaw differ by at most 10−6%%ZSMJ22%% from the requested ones, and the maximum of the absolute values of flap outputs does not exceed the true value by more than 10−6%%ZSMJ23%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "8\n0 0 0\n1 0 0\n0 1 0\n0 0 1\n1 1 0\n1 0 1\n0 1 1\n1 1 1",
+      "output": "0.0 0.0 0.0 0.0\n0.0 0.5 0.0 -0.5\n0.5 0.0 -0.5 0.0\n0.25 0.25 0.25 0.25\n0.5 0.5 -0.5 -0.5\n0.5 0.5 0.5 -0.5\n0.5 0.5 -0.5 0.5\n0.75 0.75 -0.25 -0.25"
+    }
+  ]
+}

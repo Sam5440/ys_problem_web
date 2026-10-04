@@ -1,0 +1,62 @@
+{
+  "code": "CF932D",
+  "letter": "D",
+  "title": "D. Tree",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/932/D",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a node of the tree with index 1 and with weight 0. Let cnt be the number of nodes in the tree at any instant (initially, cnt is set to 1). Support Q queries of following two types:",
+      "![](https://espresso.codeforces.com/3c53d1886cd6252f58663221e2b5768b1981acff.png) Add a new node (index cnt + 1) with weight W and add edge between node R and this node.",
+      "![](https://espresso.codeforces.com/3ca7b8a948d44b13bf24c54f54602fe3dbc94f6d.png) Output the maximum length of sequence of nodes which   starts with R.",
+      "Every node in the sequence is an ancestor of its predecessor.",
+      "Sum of weight of nodes in sequence does not exceed X.",
+      "For some nodes i, j that are consecutive in the sequence if i is an ancestor of j then w[i] ≥ w[j] and there should not exist a node k on simple path from i to j such that w[k] ≥ w[j]",
+      "The tree is rooted at node 1 at any instant.",
+      "Note that the queries are given in a modified way."
+    ],
+    "input": [
+      "First line containing the number of queries Q (1 ≤ Q ≤ 400000).",
+      "Let last be the answer for previous query of type 2 (initially last equals 0).",
+      "Each of the next Q lines contains a query of following form:",
+      "1 p q (1 ≤ p, q ≤ 1018): This is query of first type where ![](https://espresso.codeforces.com/23caaf5370a4d35b830e404cf70088925e1a9749.png) and ![](https://espresso.codeforces.com/92f7f390372274897cb1fbe68b8e5fcbbbd9710c.png). It is guaranteed that 1 ≤ R ≤ cnt and 0 ≤ W ≤ 109.",
+      "2 p q (1 ≤ p, q ≤ 1018): This is query of second type where ![](https://espresso.codeforces.com/23caaf5370a4d35b830e404cf70088925e1a9749.png) and ![](https://espresso.codeforces.com/07ae7521dbc6857c85e4d6cc6df38a9db5a96d28.png). It is guaranteed that 1 ≤ R ≤ cnt and 0 ≤ X ≤ 1015.",
+      "![](https://espresso.codeforces.com/5f9a3eda18f3a09bbf898be93ace22143cf6584a.png) denotes bitwise XOR of a and b.",
+      "It is guaranteed that at least one query of type 2 exists."
+    ],
+    "output": [
+      "Output the answer to each query of second type in separate line."
+    ],
+    "note": [
+      "In the first example,",
+      "last = 0",
+      "- Query 1: 1 1 1, Node 2 with weight 1 is added to node 1.",
+      "- Query 2: 2 2 0, No sequence of nodes starting at 2 has weight less than or equal to 0. last = 0",
+      "- Query 3: 2 2 1, Answer is 1 as sequence will be {2}. last = 1",
+      "- Query 4: 1 2 1, Node 3 with weight 1 is added to node 2.",
+      "- Query 5: 2 3 1, Answer is 1 as sequence will be {3}. Node 2 cannot be added as sum of weights cannot be greater than 1. last = 1",
+      "- Query 6: 2 3 3, Answer is 2 as sequence will be {3, 2}. last = 2"
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n1 1 1\n2 2 0\n2 2 1\n1 3 0\n2 2 0\n2 2 2",
+      "output": "0\n1\n1\n2"
+    },
+    {
+      "input": "6\n1 1 0\n2 2 0\n2 0 3\n1 0 2\n2 1 3\n2 1 6",
+      "output": "2\n2\n3\n2"
+    },
+    {
+      "input": "7\n1 1 2\n1 2 3\n2 3 3\n1 0 0\n1 5 1\n2 5 0\n2 4 0",
+      "output": "1\n1\n2"
+    },
+    {
+      "input": "7\n1 1 3\n1 2 3\n2 3 4\n1 2 0\n1 5 3\n2 5 5\n2 7 22",
+      "output": "1\n2\n3"
+    }
+  ]
+}

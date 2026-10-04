@@ -1,0 +1,39 @@
+{
+  "code": "GYM104479J",
+  "letter": "J",
+  "title": "J. Joining Arrays",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104479/problem/J",
+  "difficulty": "*2000",
+  "timeLimit": "30 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Define the permutation scaling of an array [B1,B2,…,Bm]%%ZSMJ0%% as the unique permutation P%%ZSMJ1%% of [1,2,3,…,m]%%ZSMJ2%% such that for each pair of indices 1≤i<j≤m%%ZSMJ3%%, Pi<Pj%%ZSMJ4%% if and only if Bi≤Bj%%ZSMJ5%%. For example, the permutation scaling of the array [2,1,1,5,8,3]%%ZSMJ6%% is [3,1,2,5,6,4]%%ZSMJ7%%.",
+      "There are n%%ZSMJ8%% sets of integers S1,S2,…,Sn%%ZSMJ9%%. An array [A1,A2,…,An]%%ZSMJ10%% is formed by choosing one element from each set, that is, Ai∈Si%%ZSMJ11%% for i=1,2,…,n%%ZSMJ12%%.",
+      "How many ways are there to choose the elements such that the permutation scaling of A%%ZSMJ13%% is lexicographically maximal?"
+    ],
+    "input": [
+      "The first line of input contains an integer n%%ZSMJ14%% (1≤n≤5×105%%ZSMJ15%%).",
+      "Then the descriptions of S1,S2,…,Sn%%ZSMJ16%% follow. The description of each set Si%%ZSMJ17%% contains two lines. The first line contains an integer ki%%ZSMJ18%%, the size of Si%%ZSMJ19%% (1≤ki≤5×105%%ZSMJ20%%). The second line contains ki%%ZSMJ21%% distinct integers s1,s2,…,ski%%ZSMJ22%%, the elements of Si%%ZSMJ23%% (1≤sj≤109%%ZSMJ24%%).",
+      "It is guaranteed that ∑ni=1ki≤5×105%%ZSMJ25%%."
+    ],
+    "output": [
+      "Print one integer — the number of ways. Since it can be very large, output it modulo 998244353%%ZSMJ26%%."
+    ],
+    "note": [
+      "In the first example, the lexicographically maximal permutation scaling is [3,2,4,1]%%ZSMJ27%% and there are 13 different ways to choose the array A%%ZSMJ28%%: [7,4,15,1]%%ZSMJ29%%, [7,6,15,1]%%ZSMJ30%%, [7,6,15,5]%%ZSMJ31%%, [10,4,15,1]%%ZSMJ32%%, [10,6,15,1]%%ZSMJ33%%, [10,6,15,5]%%ZSMJ34%%, [10,8,15,1]%%ZSMJ35%%, [10,8,15,5]%%ZSMJ36%%, [11,6,15,1]%%ZSMJ37%%, [11,6,15,5]%%ZSMJ38%%, [11,8,15,1]%%ZSMJ39%% and [11,8,15,5]%%ZSMJ40%%.",
+      "In the second example, the lexicographically maximal permutation scaling is [2,1,3,4]%%ZSMJ41%% and there are 3 different ways to choose the array A%%ZSMJ42%%: [2,1,3,5]%%ZSMJ43%%, [2,1,3,6]%%ZSMJ44%% and [2,1,3,7]%%ZSMJ45%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n5\n7 11 3 10 1\n3\n8 6 4\n1\n15\n3\n1 5 99",
+      "output": "13"
+    },
+    {
+      "input": "4\n2\n2 1\n3\n5 1 6\n1\n3\n3\n6 5 7",
+      "output": "3"
+    }
+  ]
+}

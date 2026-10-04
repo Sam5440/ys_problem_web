@@ -1,0 +1,41 @@
+{
+  "code": "GYM106414K",
+  "letter": "K",
+  "title": "K. Grid Coloring",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106414/problem/K",
+  "difficulty": "*1900",
+  "timeLimit": "0.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There is an n%%ZSMJ0%% by m%%ZSMJ1%% grid of white squares. You want to color each of these squares either red, green, or blue such that no two squares that share a side are the same color. In addition, there are three special squares in the grid, and no two special squares are allowed to be the same color.",
+      "![](https://espresso.codeforces.com/08730f51bf2ae7ce37a5b4af491f3e4863f64ac0.png)",
+      "Give a valid coloring or state that none exist."
+    ],
+    "input": [
+      "Each test consists of multiple test cases.",
+      "The first line of input contains a single integer t%%ZSMJ2%% (1≤t≤200%%ZSMJ3%%) — the number of test cases.",
+      "The first line of each test case contains two integers n%%ZSMJ4%% and m%%ZSMJ5%% (1≤n,m≤1000%%ZSMJ6%%, n⋅m≥3%%ZSMJ7%%) — the number of rows and columns in the grid, respectively.",
+      "Each of the next three lines contains two integers x%%ZSMJ8%% and y%%ZSMJ9%% (1≤x≤n%%ZSMJ10%%, 1≤y≤m%%ZSMJ11%%) — the position (x,y)%%ZSMJ12%% of one of the special squares, where (1,1)%%ZSMJ13%% is the top left corner and (n,m)%%ZSMJ14%% is the bottom right corner. It is guaranteed that no two special squares are in the same position.",
+      "It is guaranteed that the sum of n%%ZSMJ15%% across all test cases does not exceed 1000%%ZSMJ16%%, and the sum of m%%ZSMJ17%% across all test cases does not exceed 1000%%ZSMJ18%%."
+    ],
+    "output": [
+      "For each test case, print YES if there is a solution, and NO otherwise. You may print every letter in any case you want (so, for example, the strings \"yEs\", \"yes\", \"Yes\" and \"YES\" will all be recognized as positive answers).",
+      "If you printed YES, print n%%ZSMJ19%% additional lines. The i%%ZSMJ20%%-th of these should contain m%%ZSMJ21%% characters R, G, or B, indicating the colors of the squares in the i%%ZSMJ22%%-th row of the grid in your coloring.",
+      "If there are multiple solutions, you may print any."
+    ],
+    "note": [
+      "The first test case corresponds to the image above.",
+      "The second test case uses this coloring:",
+      "![](https://espresso.codeforces.com/2bd9d1f18021e40dd8a3485a9f45d9ed786bcd23.png)",
+      "In the third test case, we can show that there is no solution."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n4 5\n1 1\n2 4\n3 4\n1 5\n1 2\n1 4\n1 3\n3 3\n2 1\n3 2\n2 3\n10 8\n1 5\n3 7\n4 8",
+      "output": "YES\nRGBRG\nGBRGB\nBRGBG\nGBRGR\nYES\nRBRGR\nNO\nYES\nRBGBGBRB\nGRBRBRBR\nRGRGRGRG\nGRGBGRGB\nRGRGBGBR\nBRBRGRGB\nRGRGBGBG\nBRGRGRGR\nRBRBRGBG\nBGBRGRGR"
+    }
+  ]
+}

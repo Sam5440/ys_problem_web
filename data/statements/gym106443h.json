@@ -1,0 +1,38 @@
+{
+  "code": "GYM106443H",
+  "letter": "H",
+  "title": "H. Hungry pou",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106443/problem/H",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Pou, Grisi, and Guilherme were starving, so they decided to have dinner at Subway. While they sat waiting for their meals and playing Brawl Stars, the kitchen exploded out of nowhere, sending food flying everywhere! Pou, being the only one quick on his feet, decided to take advantage of the situation to satisfy his hunger. He closed his game and prepared to attack!",
+      "All food items and Pou are located on a two-dimensional plane, where y=0%%ZSMJ0%% represents the ground. At time t=0%%ZSMJ1%%, Pou is at position (0,0)%%ZSMJ2%% and the i%%ZSMJ3%%-th food is at position (xi,yi)%%ZSMJ4%%. Each food falls at a constant vertical speed of 1%%ZSMJ5%% unit per second, while Pou can move left or right at a constant speed of 1%%ZSMJ6%% unit per second.",
+      "In other words, if in a time t%%ZSMJ7%% a food item is at (x,y)%%ZSMJ8%%, at time t+1%%ZSMJ9%% it will be at (x,y−1)%%ZSMJ10%%. Simultaneously, if in a time t%%ZSMJ11%% Pou is at (x,0)%%ZSMJ12%%, at time t+1%%ZSMJ13%% he can be at (x,0)%%ZSMJ14%%, (x+1,0)%%ZSMJ15%%, or (x−1,0)%%ZSMJ16%%.",
+      "Pou can eat food item i%%ZSMJ17%% if and only if he is at position xi%%ZSMJ18%% at the exact moment the food hits the ground (y=0%%ZSMJ19%%). For hygiene reasons, he will not eat any food that has already touched the ground before his arrival.",
+      "![](https://espresso.codeforces.com/faab0d7eb8f7663c7b082595bdec0b0b2fc129ea.png)",
+      "Grisi and Guilherme were so stunned by the explosion that they forgot how many food items Pou ate, but they remember the initial positions of all the food items. Knowing that Pou ate the maximum possible amount of food, your mission is to determine that number."
+    ],
+    "input": [
+      "The input consists of several lines. The first line contains n%%ZSMJ20%% (1≤n≤2⋅103%%ZSMJ21%%), the number of food items.",
+      "The following n%%ZSMJ22%% lines contain two integers x%%ZSMJ23%% and y%%ZSMJ24%% (1≤x,y≤106%%ZSMJ25%%), the i%%ZSMJ26%%-th line represents the initial position of food i%%ZSMJ27%%.",
+      "It is guaranteed that no two food items occupy the same initial position, that is: ∀i∀j((i≠j)⟹(xi,yi)≠(xj,yj))%%ZSMJ28%%."
+    ],
+    "output": [
+      "The output must contain a single integer: the maximum number of food items Pou could have eaten."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2 2\n4 3\n6 6",
+      "output": "2"
+    },
+    {
+      "input": "3\n2 3\n2 4\n727 67",
+      "output": "2"
+    }
+  ]
+}

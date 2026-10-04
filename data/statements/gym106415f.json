@@ -1,0 +1,46 @@
+{
+  "code": "GYM106415F",
+  "letter": "F",
+  "title": "F. The Carthaginian Cipher",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106415/problem/F",
+  "difficulty": "*1400",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem",
+      "In ancient Carthage, scholars created a secret numerical cipher to protect their most valuable trade secrets. This cipher, believed to be a function f%%ZSMJ0%%, that maps each natural number to a secret value, was known only to the High Council of Merchants. The cipher was lost when Rome destroyed Carthage in 146 BC.",
+      "For centuries, archaeologists have searched for the legendary \"Stone of Accounts\", the key to unlocking this ancient secret.",
+      "Recently, in the ruins of ancient Carthage near modern-day Tunis, you've discovered the fabled Stone of Accounts! It's a mysterious device with two input slots and one output display. Ancient Punic inscriptions explain how it works: \"Place two numbered stones in the slots. If their numbers sum to a power of two, the stone reveals the sum of their hidden values. Otherwise, it reveals nothing.\"",
+      "Formally, The Stone accepts two positive integers n%%ZSMJ1%% and m%%ZSMJ2%%:",
+      "If n+m%%ZSMJ3%% is a power of two, it outputs f(n)+f(m)%%ZSMJ4%%",
+      "Otherwise, it outputs 0%%ZSMJ5%%",
+      "Centuries ago, archaeologists discovered ancient Carthaginian scrolls containing encrypted trade secrets: S=[S1,…,Sn].%%ZSMJ7%% For generations, scholars have tried to decipher them, but without the Stone of Accounts, all attempts failed.",
+      "Now, with the Stone finally discovered, you have a chance to succeed where others could not.",
+      "Your mission: Recover the true message M=[f(S1),…,f(Sn)].%%ZSMJ8%% But be careful! The Stone is ancient and fragile. You can use it at most 10,000 times before it breaks forever."
+    ],
+    "input": [
+      "The first line contains one integer 1≤n≤100%%ZSMJ9%%, denoting the length of the encrypted message.",
+      "The second line contains n%%ZSMJ10%% integers 1≤S1,…,Sn≤1018%%ZSMJ11%%, denoting the encrypted message.",
+      "Your program will interact via standard input/output with the black box.",
+      "Starting from i=1%%ZSMJ12%%, two modes of operations are supported:",
+      "Query the Stone, ? n m: You give two positive integers 1≤n,m<264%%ZSMJ13%% to the Stone. The Stone responds with R s where:   s=f(n)+f(m)%%ZSMJ14%% if n+m%%ZSMJ15%% is power of two",
+      "s=0%%ZSMJ16%% otherwise",
+      "Declare a Decrypted Value, ! d: This means you've determined that d=f(Si)%%ZSMJ17%%. After this command:   You receive N.",
+      "You move to the next encrypted number: i←i+1%%ZSMJ18%%",
+      "When all numbers are decrypted, your program can exit."
+    ],
+    "output": [],
+    "note": [
+      "It is guaranteed that f%%ZSMJ19%% exists and is unique.",
+      "It is guaranteed that: ∀n∈N,f(n)≤1018%%ZSMJ20%%"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 3 4\nR 0\nR 2\nN\nR 4\nN\nR 8\nN",
+      "output": "? 1 2\n? 1 1\n! 1\n? 3 1\n! 3\n? 4 4\n! 4"
+    }
+  ]
+}

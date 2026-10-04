@@ -1,0 +1,45 @@
+{
+  "code": "GYM106197F",
+  "letter": "F",
+  "title": "F. XOR Sorting",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106197/problem/F",
+  "difficulty": "*2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There is a permutation†%%ZSMJ0%% p%%ZSMJ1%% of size n%%ZSMJ2%% that you are trying to sort. To do so, you may perform up to 20%%ZSMJ3%% operations of the following form:",
+      "Select a subset of distinct indices i1,i2,⋯ik%%ZSMJ4%% such that the value of pi1⊕pi2⊕⋯⊕pik%%ZSMJ5%%, where ⊕%%ZSMJ6%% represents the bitwise XOR operation, is zero.",
+      "Sort the values of p%%ZSMJ7%% on indices i1,i2,⋯ik%%ZSMJ8%%.",
+      "For example, for p=[7,3,4,1,2,6,5]%%ZSMJ9%%, you could choose the indices [2,4,5]%%ZSMJ10%%, since p2⊕p4⊕p5=1⊕2⊕3=0%%ZSMJ11%%. After this operation, p%%ZSMJ12%% would be equal to [7,1,4,2,3,6,5]%%ZSMJ13%%.",
+      "It can be shown that if it is possible to sort the permutation in any number of operations, then it is possible in at most 20%%ZSMJ14%%.",
+      "†%%ZSMJ15%% A permutation of length n%%ZSMJ16%% is an array consisting of n%%ZSMJ17%% distinct integers from 1%%ZSMJ18%% to n%%ZSMJ19%% in arbitrary order. For example, [2,3,1,5,4]%%ZSMJ20%% is a permutation, but [1,2,2]%%ZSMJ21%% is not a permutation (2%%ZSMJ22%% appears twice in the array), and [1,3,4]%%ZSMJ23%% is also not a permutation (n=3%%ZSMJ24%% but there is 4%%ZSMJ25%% in the array)."
+    ],
+    "input": [
+      "The first line of the input contains a single integer t%%ZSMJ26%% (1≤t≤2⋅105%%ZSMJ27%%) — the number of test cases.",
+      "The first line of each test case contains a single integer n%%ZSMJ28%% (1≤n≤2⋅105%%ZSMJ29%%) — the size of the permutation.",
+      "The second line of each test case will contain n%%ZSMJ30%% distinct integers p1,p2,⋯pn%%ZSMJ31%% (1≤pi≤n%%ZSMJ32%%) — the elements of p%%ZSMJ33%%.",
+      "It is guaranteed that the sum of n%%ZSMJ34%% over all test cases does not exceed 2⋅105%%ZSMJ35%%."
+    ],
+    "output": [
+      "For each test case, if there is no solution, print −1%%ZSMJ36%%.",
+      "Otherwise, the first line of output should contain a single integer m%%ZSMJ37%% (0≤m≤20%%ZSMJ38%%) — the number of operations you will perform.",
+      "Each of the next m%%ZSMJ39%% lines should contain an integer k%%ZSMJ40%%, followed by k%%ZSMJ41%% distinct integers i1,i2,⋯ik%%ZSMJ42%% (1≤ij≤n%%ZSMJ43%%) — a description of the operations you will perform, in order. After these operations, the permutation should be sorted.",
+      "If there are multiple solutions, you can print any."
+    ],
+    "note": [
+      "In the first test case, p=[8,6,3,4,9,5,2,7,1]%%ZSMJ44%%. We then perform the following operations, where the red numbers indicate the positions that we choose in the operation:",
+      "[8,6,3,4,9,5,2,7,1]→[8,6,3,4,9,5,2,7,1]→[1,2,3,4,6,5,8,7,9]%%ZSMJ45%% [1,2,3,4,6,5,8,7,9]→[1,2,3,4,6,5,8,7,9]→[1,2,3,4,6,5,7,8,9]%%ZSMJ46%% [1,2,3,4,6,5,7,8,9]→[1,2,3,4,6,5,7,8,9]→[1,2,3,4,5,6,7,8,9]%%ZSMJ47%%",
+      "So this process successfully sorts the permutation.",
+      "In the second test case, p%%ZSMJ48%% is already sorted, so there is no need to perform any operations.",
+      "We can show that the permutation in the third test case cannot be sorted, no matter how many operations we perform."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n9\n8 6 3 4 9 5 2 7 1\n1\n1\n2\n2 1",
+      "output": "3\n6 1 2 4 5 7 9\n4 5 7 8 9\n3 3 5 6\n0\n-1"
+    }
+  ]
+}

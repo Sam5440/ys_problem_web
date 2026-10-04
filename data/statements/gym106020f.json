@@ -1,0 +1,51 @@
+{
+  "code": "GYM106020F",
+  "letter": "F",
+  "title": "F. Coin Flip",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106020/problem/F",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem. Your program will interact with the judge using standard input and output.",
+      "You are given an array a%%ZSMJ0%% of n%%ZSMJ1%% positive integers and an integer k%%ZSMJ2%%, where 2k≤n%%ZSMJ3%%. You have an initial score equal to 0%%ZSMJ4%%.",
+      "You will be asked k%%ZSMJ5%% queries. For each query, you will be given an integer x∈{1,2}%%ZSMJ6%%. You must choose an index i%%ZSMJ7%% (1≤i≤n%%ZSMJ8%%) such that†%%ZSMJ9%%:",
+      "i%%ZSMJ10%% is divisible by x%%ZSMJ11%%;",
+      "The index i%%ZSMJ12%% has not been chosen in any previous query;",
+      "Whenever you choose some index i%%ZSMJ13%% in some query, the value of ai%%ZSMJ14%% is added to the score.",
+      "Your task is to maximize the score after completing all k%%ZSMJ15%% queries."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ16%% and k%%ZSMJ17%% (2≤2k≤n≤105%%ZSMJ18%%).",
+      "The second line contains n%%ZSMJ19%% integers a1,a2,…,an%%ZSMJ20%% (1≤ai≤109%%ZSMJ21%%).",
+      "The interaction proceeds as follows for k%%ZSMJ22%% times:",
+      "The judge will output a single integer x∈{1,2}%%ZSMJ23%%.",
+      "You must respond with a single integer i%%ZSMJ24%% (1≤i≤n%%ZSMJ25%%) that satisfies the conditions above†%%ZSMJ26%%.",
+      "The judge will output \"1\" if i%%ZSMJ27%% is divisible by x%%ZSMJ28%% and it has not been chosen before in any previous query, and \"0\" otherwise.",
+      "If your program makes an invalid response, then the judge's response will be \"0\". After receiving such a response, your program should immediately terminate to receive the verdict Wrong Answer. Otherwise, it may receive any other verdict.",
+      "After responding to a query, do not forget to output the end of the line and flush the output. Otherwise, you will get Idleness limit exceeded. To do this, use:",
+      "fflush(stdout) or cout.flush() in C++;",
+      "System.out.flush() in Java;",
+      "sys.stdout.flush() in Python;",
+      "std::io::stdout().flush() in Rust;",
+      "see the documentation for other languages."
+    ],
+    "output": [],
+    "note": [
+      "Sample explanation:",
+      "The size of the array is 6 and there are 3 queries. The first 2 lines describe the array and the number of queries.",
+      "In the first query, we must choose an index divisible by 1%%ZSMJ29%%, we choose the index 1%%ZSMJ30%% and since it's divisible by 1%%ZSMJ31%% and has not been chosen before, the judge will print 1%%ZSMJ32%% to confirm that the chosen index is valid.",
+      "In the second query, we must choose an index divisible by 1%%ZSMJ33%%, we choose the index 6%%ZSMJ34%% and since it's divisible by 1%%ZSMJ35%% and has not been chosen before, the judge will print 1%%ZSMJ36%% to confirm that the chosen index is valid. Note that if we chose 1%%ZSMJ37%% instead the judge will print 0%%ZSMJ38%% (since it has been chosen before).",
+      "In the third query, we must choose an index divisible by 2%%ZSMJ39%%, we choose the index 4%%ZSMJ40%% and since it's divisible by 2%%ZSMJ41%% and has not been chosen before, the judge will print 1%%ZSMJ42%% to confirm that the chosen index is valid. Note that if we chose 6%%ZSMJ43%% instead the judge will print 0%%ZSMJ44%% (since it has been chosen before), and if we chose 3%%ZSMJ45%% the judge will also print 0%%ZSMJ46%% (since it's not divisible by 2%%ZSMJ47%%).",
+      "Note that over all combinations of: two indices divisible by 1 and one index divisible by 2, the maximum possible result is 15 (which is equal to the result in the example) and all chosen indices are distinct and satisfy the divisibility condition, so the result is considered correct."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 3\n5 1 3 4 2 6\n1\n1\n1\n1\n2\n1",
+      "output": "1\n6\n4"
+    }
+  ]
+}

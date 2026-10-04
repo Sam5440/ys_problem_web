@@ -1,0 +1,40 @@
+{
+  "code": "CF201B",
+  "letter": "B",
+  "title": "B. Guess That Car!",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/201/B",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A widely known among some people Belarusian sport programmer Yura possesses lots of information about cars. That is why he has been invited to participate in a game show called \"Guess That Car!\".",
+      "The game show takes place on a giant parking lot, which is 4n meters long from north to south and 4m meters wide from west to east. The lot has n + 1 dividing lines drawn from west to east and m + 1 dividing lines drawn from north to south, which divide the parking lot into n·m 4 by 4 meter squares. There is a car parked strictly inside each square. The dividing lines are numbered from 0 to n from north to south and from 0 to m from west to east. Each square has coordinates (i, j) so that the square in the north-west corner has coordinates (1, 1) and the square in the south-east corner has coordinates (n, m). See the picture in the notes for clarifications.",
+      "Before the game show the organizers offer Yura to occupy any of the (n + 1)·(m + 1) intersection points of the dividing lines. After that he can start guessing the cars. After Yura chooses a point, he will be prohibited to move along the parking lot before the end of the game show. As Yura is a car expert, he will always guess all cars he is offered, it's just a matter of time. Yura knows that to guess each car he needs to spend time equal to the square of the euclidean distance between his point and the center of the square with this car, multiplied by some coefficient characterizing the machine's \"rarity\" (the rarer the car is, the harder it is to guess it). More formally, guessing a car with \"rarity\" c placed in a square whose center is at distance d from Yura takes c·d2 seconds. The time Yura spends on turning his head can be neglected.",
+      "It just so happened that Yura knows the \"rarity\" of each car on the parking lot in advance. Help him choose his point so that the total time of guessing all cars is the smallest possible."
+    ],
+    "input": [
+      "The first line contains two integers n and m (1 ≤ n, m ≤ 1000) — the sizes of the parking lot. Each of the next n lines contains m integers: the j-th number in the i-th line describes the \"rarity\" cij (0 ≤ cij ≤ 100000) of the car that is located in the square with coordinates (i, j)."
+    ],
+    "output": [
+      "In the first line print the minimum total time Yura needs to guess all offered cars. In the second line print two numbers li and lj (0 ≤ li ≤ n, 0 ≤ lj ≤ m) — the numbers of dividing lines that form a junction that Yura should choose to stand on at the beginning of the game show. If there are multiple optimal starting points, print the point with smaller li. If there are still multiple such points, print the point with smaller lj.",
+      "Please do not use the %lld specifier to read or write 64-bit integers in С++. It is preferred to use the cin, cout streams or the %I64d specifier."
+    ],
+    "note": [
+      "In the first test case the total time of guessing all cars is equal to 3·8 + 3·8 + 4·8 + 9·8 + 5·40 + 1·40 = 392.",
+      "The coordinate system of the field:",
+      "![](https://espresso.codeforces.com/137d495792e419abf638b48dd0c1e5d79fc5b4ca.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 3\n3 4 5\n3 9 1",
+      "output": "392\n1 1"
+    },
+    {
+      "input": "3 4\n1 0 0 0\n0 0 3 0\n0 0 5 5",
+      "output": "240\n2 3"
+    }
+  ]
+}

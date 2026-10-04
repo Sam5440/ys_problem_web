@@ -1,0 +1,48 @@
+{
+  "code": "CF1137A",
+  "letter": "A",
+  "title": "A. Skyscrapers",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1137/A",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Dora loves adventures quite a lot. During some journey she encountered an amazing city, which is formed by n%%ZSMJ0%% streets along the Eastern direction and m%%ZSMJ1%% streets across the Southern direction. Naturally, this city has nm%%ZSMJ2%% intersections. At any intersection of i%%ZSMJ3%%-th Eastern street and j%%ZSMJ4%%-th Southern street there is a monumental skyscraper. Dora instantly became curious and decided to explore the heights of the city buildings.",
+      "When Dora passes through the intersection of the i%%ZSMJ5%%-th Eastern and j%%ZSMJ6%%-th Southern street she examines those two streets. After Dora learns the heights of all the skyscrapers on those two streets she wonders: how one should reassign heights to the skyscrapers on those two streets, so that the maximum height would be as small as possible and the result of comparing the heights of any two skyscrapers on one street wouldn't change.",
+      "Formally, on every of nm%%ZSMJ7%% intersections Dora solves an independent problem. She sees n+m−1%%ZSMJ8%% skyscrapers and for each of them she knows its real height. Moreover, any two heights can be compared to get a result \"greater\", \"smaller\" or \"equal\". Now Dora wants to select some integer x%%ZSMJ9%% and assign every skyscraper a height from 1%%ZSMJ10%% to x%%ZSMJ11%%. When assigning heights, Dora wants to preserve the relative order of the skyscrapers in both streets. That is, the result of any comparison of heights of two skyscrapers in the current Eastern street shouldn't change and the result of any comparison of heights of two skyscrapers in current Southern street shouldn't change as well. Note that skyscrapers located on the Southern street are not compared with skyscrapers located on the Eastern street only. However, the skyscraper located at the streets intersection can be compared with both Southern and Eastern skyscrapers. For every intersection Dora wants to independently calculate the minimum possible x%%ZSMJ12%%.",
+      "For example, if the intersection and the two streets corresponding to it look as follows:",
+      "![](https://espresso.codeforces.com/cbafe08cba25205cf6961f155cc89a78811b66a0.png)",
+      "Then it is optimal to replace the heights of the skyscrapers as follows (note that all comparisons \"less\", \"equal\", \"greater\" inside the Eastern street and inside the Southern street are preserved)",
+      "![](https://espresso.codeforces.com/520cf0e2f93472ec60e853e5c9ec2ddda0c73c00.png)",
+      "The largest used number is 5%%ZSMJ13%%, hence the answer for this intersection would be 5%%ZSMJ14%%.",
+      "Help Dora to compute the answers for each intersection."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ15%% and m%%ZSMJ16%% (1≤n,m≤1000%%ZSMJ17%%) — the number of streets going in the Eastern direction and the number of the streets going in Southern direction.",
+      "Each of the following n%%ZSMJ18%% lines contains m%%ZSMJ19%% integers ai,1%%ZSMJ20%%, ai,2%%ZSMJ21%%, ..., ai,m%%ZSMJ22%% (1≤ai,j≤109%%ZSMJ23%%). The integer ai,j%%ZSMJ24%%, located on j%%ZSMJ25%%-th position in the i%%ZSMJ26%%-th line denotes the height of the skyscraper at the intersection of the i%%ZSMJ27%%-th Eastern street and j%%ZSMJ28%%-th Southern direction."
+    ],
+    "output": [
+      "Print n%%ZSMJ29%% lines containing m%%ZSMJ30%% integers each. The integer xi,j%%ZSMJ31%%, located on j%%ZSMJ32%%-th position inside the i%%ZSMJ33%%-th line is an answer for the problem at the intersection of i%%ZSMJ34%%-th Eastern street and j%%ZSMJ35%%-th Southern street."
+    ],
+    "note": [
+      "In the first example, it's not possible to decrease the maximum used height for the problem at any intersection, hence we don't have to change any heights.",
+      "In the second example, the answers are as follows:",
+      "For the intersection of the first line and the first column ![](https://espresso.codeforces.com/50e83fa422d46f7b717260f3f2a09c7f21bd266f.png)",
+      "For the intersection of the first line and the second column ![](https://espresso.codeforces.com/1bfbf2ead26b2b57c758dd3c2c022aa49fd6fb3c.png)",
+      "For the intersection of the second line and the first column ![](https://espresso.codeforces.com/ce9adefc2d637a5379ff48d0df4db60d4b2e4c8f.png)",
+      "For the intersection of the second line and the second column ![](https://espresso.codeforces.com/a597cf792ab7c360303238c8e78b8cb43a47d8d2.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 3\n1 2 1\n2 1 2",
+      "output": "2 2 2 \n2 2 2"
+    },
+    {
+      "input": "2 2\n1 2\n3 4",
+      "output": "2 3 \n3 2"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "code": "GYM105863F",
+  "letter": "F",
+  "title": "F. Modular Madness",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105863/problem/F",
+  "difficulty": "*1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Tingyun gives you an array a%%ZSMJ0%% of size n%%ZSMJ1%%.",
+      "Given an integer x%%ZSMJ2%%, define functions f0(x),f1(x),…,fn(x)%%ZSMJ3%% as follows:",
+      "f0(x)=x%%ZSMJ4%%",
+      "fk(x)=fk−1(x) mod ak%%ZSMJ5%% for any integer k>0%%ZSMJ6%%.",
+      "In other words, fn(x)=(…((x mod a1) mod a2)… mod an)%%ZSMJ7%%.",
+      "Note for positive integers a%%ZSMJ8%% and b%%ZSMJ9%%, a mod b%%ZSMJ10%% is the unique integer 0≤c<b%%ZSMJ11%% such that a−c%%ZSMJ12%% is divisible by b%%ZSMJ13%%. For example, 5 mod 3=2%%ZSMJ14%%.",
+      "Tingyun then gives you q%%ZSMJ15%% values of x%%ZSMJ16%%. For each x%%ZSMJ17%%, please output the value of fn(x)%%ZSMJ18%%."
+    ],
+    "input": [
+      "The first line contains an integer t%%ZSMJ19%% – the number of test cases (1≤t≤104%%ZSMJ20%%).",
+      "The first line of each test case contains two integers n%%ZSMJ21%% and q%%ZSMJ22%% (1≤n,q≤105%%ZSMJ23%%).",
+      "The second line of each test case contains n%%ZSMJ24%% integers a1,a2,…,an%%ZSMJ25%% (1≤ai≤109%%ZSMJ26%%).",
+      "The next q%%ZSMJ27%% lines each contain an integer x%%ZSMJ28%% (1≤x≤109%%ZSMJ29%%).",
+      "It is guaranteed that neither the sum of n%%ZSMJ30%% nor the sum of q%%ZSMJ31%% exceeds 105%%ZSMJ32%% over all test cases.",
+      "Scoring",
+      "Partial credits will be given to programs who pass tests with smaller constraints outlined below."
+    ],
+    "output": [
+      "Output the answer for each x%%ZSMJ36%% on a new line."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3 3\n15 13 11\n2145\n2146\n25\n5 6\n14182 5527 2319 958 724\n819248982\n912849157\n8172857\n871267639\n126471891\n918273752",
+      "output": "0\n1\n10\n516\n380\n24\n486\n108\n157"
+    }
+  ]
+}

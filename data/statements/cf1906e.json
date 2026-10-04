@@ -1,0 +1,49 @@
+{
+  "code": "CF1906E",
+  "letter": "E",
+  "title": "E. Merge Not Sort",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1906/E",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are currently researching the Merge Sort algorithm. Merge Sort is a sorting algorithm that is based on the principle of Divide and Conquer. It works by dividing an array into two subarrays of equal length, sorting each subarrays, then merging the sorted subarrays back together to form the final sorted array.",
+      "You are particularly interested in the merging routine. Common merge implementation will combine two subarrays by iteratively comparing their first elements, and move the smaller one to a new merged array. More precisely, the merge algorithm can be presented by the following pseudocode.",
+      {
+        "pre": "\n    Merge(A[1..N], B[1..N]):\n        C = []\n        i = 1\n        j = 1\n        while i <= N AND j <= N:\n            if A[i] < B[j]:\n                append A[i] to C\n                i = i + 1\n            else:\n                append B[j] to C\n                j = j + 1 \n        while i <= N:\n            append A[i] to C\n            i = i + 1 \n        while j <= N:\n            append B[j] to C\n            j = j + 1 \n        return C"
+      },
+      "During your research, you are keen to understand the behaviour of the merge algorithm when arrays A%%ZSMJ0%% and B%%ZSMJ1%% are not necessarily sorted. For example, if A=[3,1,6]%%ZSMJ2%% and B=[4,5,2]%%ZSMJ3%%, then Merge(A,B)=[3,1,4,5,2,6]%%ZSMJ4%%.",
+      "To further increase the understanding of the merge algorithm, you decided to work on the following problem. You are given an array C%%ZSMJ5%% of length 2⋅N%%ZSMJ6%% such that it is a permutation of 1%%ZSMJ7%% to 2⋅N%%ZSMJ8%%. Construct any two arrays A%%ZSMJ9%% and B%%ZSMJ10%% of the same length N%%ZSMJ11%%, such that Merge(A,B)=C%%ZSMJ12%%, or determine if it is impossible to do so."
+    ],
+    "input": [
+      "The first line consists of an integer N%%ZSMJ13%% (1≤N≤1000%%ZSMJ14%%).",
+      "The following line consists of 2⋅N%%ZSMJ15%% integers Ci%%ZSMJ16%%. The array C%%ZSMJ17%% is a permutation of 1%%ZSMJ18%% to 2⋅N%%ZSMJ19%%."
+    ],
+    "output": [
+      "If it is impossible to construct two arrays A%%ZSMJ20%% and B%%ZSMJ21%% of length N%%ZSMJ22%% such that Merge(A,B)=C%%ZSMJ23%%, then output -1.",
+      "Otherwise, output the arrays A%%ZSMJ24%% and B%%ZSMJ25%% in two lines. The first line consists of N%%ZSMJ26%% integers Ai%%ZSMJ27%%. The second line consists of N%%ZSMJ28%% integers Bi%%ZSMJ29%%. If there are several possible answers, output any of them."
+    ],
+    "note": [
+      "Explanation for the sample input/output #1",
+      "The solution A=[3,1,4]%%ZSMJ30%% and B=[5,2,6]%%ZSMJ31%% is also correct.",
+      "Explanation for the sample input/output #2",
+      "The solution A=[1,2,3,4]%%ZSMJ32%% and B=[5,6,7,8]%%ZSMJ33%% is also correct."
+    ]
+  },
+  "examples": [
+    {
+      "input": "\n    Merge(A[1..N], B[1..N]):\n        C = []\n        i = 1\n        j = 1\n        while i <= N AND j <= N:\n            if A[i] < B[j]:\n                append A[i] to C\n                i = i + 1\n            else:\n                append B[j] to C\n                j = j + 1 \n        while i <= N:\n            append A[i] to C\n            i = i + 1 \n        while j <= N:\n            append B[j] to C\n            j = j + 1 \n        return C",
+      "output": "3\n3 1 4 5 2 6"
+    },
+    {
+      "input": "3 1 6\n4 5 2",
+      "output": "4\n1 2 3 4 5 6 7 8"
+    },
+    {
+      "input": "2 3 5 7\n1 4 6 8",
+      "output": "2\n4 3 2 1"
+    }
+  ]
+}

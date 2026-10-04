@@ -1,0 +1,51 @@
+{
+  "code": "GYM104287K",
+  "letter": "K",
+  "title": "K. That Time I Got Reincarnated As A String Problem",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104287/problem/K",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/2da648a51ade7d09b827adfbd574d6d6cb5d97c7.png)",
+      "Hina has a string s%%ZSMJ0%% of lowercase letters and question marks. She wants to fill each question mark with a lowercase letter so that she is left with a string of only lowercase letters. Hina will then count over all permutations of letters in her string, the number of unique strings that can be formed. For instance, the string aab%%ZSMJ1%% has 6%%ZSMJ2%% permutations, [aab,aba,aab,aba,baa,baa]%%ZSMJ3%% but only form 3%%ZSMJ4%% unique strings.",
+      "Over all 26# of ?'s%%ZSMJ5%% ways Hina can fill in the question marks, what is the expected number of unique strings that can be formed?"
+    ],
+    "input": [
+      "The first line will contain one integer T%%ZSMJ6%%, the number of testcases (1≤T≤500)%%ZSMJ7%%.",
+      "Each following line will contain a string s%%ZSMJ8%%, the string Hina wants you to find the answer for. s%%ZSMJ9%% will only contain lowercase letters or question marks (1≤|s|≤103)%%ZSMJ10%%.",
+      "It is guaranteed that the sum of |s|%%ZSMJ11%% over all testcases will not exceed 5⋅103%%ZSMJ12%%.",
+      "—",
+      "Tests in subtasks will be numbered from 1−20%%ZSMJ13%% with samples ignored.",
+      "Tests 1−4%%ZSMJ14%% will have no strings that contain question marks.",
+      "Tests 5−6%%ZSMJ15%% will have all strings only contain question marks.",
+      "Tests 7−10%%ZSMJ16%% will have the sum of all string lengths not be greater than 100%%ZSMJ17%%.",
+      "The remaining testcases have no additional constraints."
+    ],
+    "output": [
+      "For each testcase, output a single integer E%%ZSMJ18%%, the expected number of permutations over all ways to fill in the question marks modulo 109+7%%ZSMJ19%%. The expected value can be represented as fraction xy%%ZSMJ20%% and you will output E%%ZSMJ21%% where x=E⋅ymod109+7%%ZSMJ22%%."
+    ],
+    "note": [
+      "For the string a?b%%ZSMJ23%%, when we fill the ?%%ZSMJ24%% in for a%%ZSMJ25%% or b%%ZSMJ26%%, there are 3%%ZSMJ27%% permutations but for any letter, there are 6%%ZSMJ28%%. This gives us an expected value of 3⋅2+6⋅2426=538461548mod109+7%%ZSMJ29%%.",
+      "For the string trust%%ZSMJ30%%, there are no ?%%ZSMJ31%%'s and there can be shown to exist exactly 60%%ZSMJ32%% unique strings that can be formed from permuting the letters, giving an expected value of 60%%ZSMJ33%%.",
+      "Both strings a?%%ZSMJ34%% and ??%%ZSMJ35%% have an expected value of 1⋅1+2⋅2526=5126=423076928mod109+7%%ZSMJ36%%.",
+      "For the second sample, you should watch that particular anime <3.",
+      "—",
+      "Idea: 3366",
+      "Preparation: 3366",
+      "Occurrences: Novice 11"
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\na?b\nbestgirl?\nrem??\nwhoisrem???\ntrust\n??\na?",
+      "output": "538461548\n615691672\n165680579\n840240076\n60\n423076928\n423076928"
+    },
+    {
+      "input": "2\nwhatdoyoudoattheendoftheworld?areyoubusy?willyousaveus?\nshuumatsunanishitemasuka?isogashiidesuka?sukuttemoratteiidesuka?",
+      "output": "954747861\n94849604"
+    }
+  ]
+}

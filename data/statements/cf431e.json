@@ -1,0 +1,39 @@
+{
+  "code": "CF431E",
+  "letter": "E",
+  "title": "E. Chemistry Experiment",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/431/E",
+  "difficulty": "2200",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "One day two students, Grisha and Diana, found themselves in the university chemistry lab. In the lab the students found n test tubes with mercury numbered from 1 to n and decided to conduct an experiment.",
+      "The experiment consists of q steps. On each step, one of the following actions occurs:",
+      "Diana pours all the contents from tube number pi and then pours there exactly xi liters of mercury.",
+      "Let's consider all the ways to add vi liters of water into the tubes; for each way let's count the volume of liquid (water and mercury) in the tube with water with maximum amount of liquid; finally let's find the minimum among counted maximums. That is the number the students want to count. At that, the students don't actually pour the mercury. They perform calculations without changing the contents of the tubes.",
+      "Unfortunately, the calculations proved to be too complex and the students asked you to help them. Help them conduct the described experiment."
+    ],
+    "input": [
+      "The first line contains two integers n and q (1 ≤ n, q ≤ 105) — the number of tubes ans the number of experiment steps. The next line contains n space-separated integers: h1, h2, ..., hn (0 ≤ hi ≤ 109), where hi is the volume of mercury in the і-th tube at the beginning of the experiment.",
+      "The next q lines contain the game actions in the following format:",
+      "A line of form \"1 pi xi\" means an action of the first type (1 ≤ pi ≤ n; 0 ≤ xi ≤ 109).",
+      "A line of form \"2 vi\" means an action of the second type (1 ≤ vi ≤ 1015).",
+      "It is guaranteed that there is at least one action of the second type. It is guaranteed that all numbers that describe the experiment are integers."
+    ],
+    "output": [
+      "For each action of the second type print the calculated value. The answer will be considered correct if its relative or absolute error doesn't exceed 10 - 4."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n1 2 0\n2 2\n1 2 1\n2 3",
+      "output": "1.50000\n1.66667"
+    },
+    {
+      "input": "4 5\n1 3 0 1\n2 3\n2 1\n1 3 2\n2 3\n2 4",
+      "output": "1.66667\n1.00000\n2.33333\n2.66667"
+    }
+  ]
+}

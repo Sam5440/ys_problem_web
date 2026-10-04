@@ -1,0 +1,39 @@
+{
+  "code": "GYM103855E",
+  "letter": "E",
+  "title": "E. RPS Bubble Sort",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103855/problem/E",
+  "difficulty": "*2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Yihwan is a 5-year-old genius who enjoys rock-paper-scissors. He wanted to play rock-paper-scissors alone at his house, so he showed his creativity and made a game using some cards.",
+      "Yihwan places $$$N$$$ cards, each with one of scissors, rock, or paper, on positions $$$1, 2, \\ldots, N$$$. Then, for each of $$$i = 1, 2, \\ldots, N - 1$$$ in increasing order, Yihwan swaps the card at positions $$$i$$$ and $$$i + 1$$$ if the card in the $$$i$$$-th position beats the card in the $$$i+1$$$-th position. As the process of the game is similar to bubble sort, Yihwan named this game 'Rock-paper-scissors Bubble Sort'. The win-lose relationship of the cards is as follows:",
+      "A card with scissors beats a card with paper.",
+      "A card with paper beats a card with rock.",
+      "A card with rock beats a card with scissors.",
+      "![](https://espresso.codeforces.com/85b1e2c85821cb1fdd1f9420faf6a1cd05296af0.png)",
+      "Yihwan is very good at calculating, so he played this game $$$T$$$ times and went to sleep. However, while Yihwan was sleeping, the cards were accidentally shuffled. Fortunately, since Yihwan is a genius with excellent memory, he remembered the arrangement of the initial cards before the game. However, he couldn't remember the final arrangement of cards after $$$T$$$ games and now needs your help.",
+      "Please help Yihwan by restoring the final arrangement of cards after playing the game $$$T$$$ times."
+    ],
+    "input": [
+      "The first line contains two integers denoting the number of cards $$$N$$$ ($$$ 2 \\leq N \\leq 500\\,000 $$$) and the number of times $$$T$$$ ($$$1 \\leq T \\leq 1\\,000\\,000\\,000$$$) Yihwan played the game.",
+      "The second line contains a string of length $$$N$$$. The $$$i$$$-th character indicates the type of card placed at the $$$i$$$-th position. A card with rock is R, a card with scissors is S, and a card with paper is P."
+    ],
+    "output": [
+      "Output the string of length $$$N$$$ after playing the game $$$T$$$ times."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 1\nRSPSP",
+      "output": "SRPPS"
+    },
+    {
+      "input": "10 3\nRSRRRRRRSR",
+      "output": "SRRRRSRRRR"
+    }
+  ]
+}

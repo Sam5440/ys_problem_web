@@ -1,0 +1,39 @@
+{
+  "code": "GYM104758D",
+  "letter": "D",
+  "title": "D. Determine Pool Area",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104758/problem/D",
+  "difficulty": "*1500",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Given an array of integers, your task is to find the largest pool. In this context, a pool is a contiguous subarray (l,r)%%ZSMJ0%% such that the minimum between indices l%%ZSMJ1%% and r%%ZSMJ2%% is greater than all elements within the subarray (l,r)%%ZSMJ3%%.",
+      "The area of the pool is calculated assuming it's filled with water, where L%%ZSMJ4%% and R%%ZSMJ5%% are the pool's ends, and the pool's height is equal to the value of the minimum between L%%ZSMJ6%% and R%%ZSMJ7%%. However, the area of the pool is affected by the numbers in the middle of the subarray. As you move from the ends toward the center of the subarray, the value of the minimum decreases, reducing the pool's area. Additionally, any excess water beyond the pool's edges spills over.",
+      "Write a program to find the largest pool in the array and determine its area, considering the decrease in area as you approach the center of the subarray and the spillover of water beyond the edges.",
+      "![](https://espresso.codeforces.com/83a6c902b30edff59951e24691249cab9cf69e87.png)"
+    ],
+    "input": [
+      "The first line contains an integer N%%ZSMJ8%% (1≤N≤106)%%ZSMJ9%%, the length of the array.",
+      "The second line contains N%%ZSMJ10%% integers separated by spaces, representing the array of integers A%%ZSMJ11%% (1≤Ai≤106)%%ZSMJ12%%."
+    ],
+    "output": [
+      "An integer, the area of the largest pool in the array, taking into account spillover. If no pool is found, the output should be 0."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n10 2 3 8",
+      "output": "11"
+    },
+    {
+      "input": "5\n1 4 10 4 1",
+      "output": "0"
+    },
+    {
+      "input": "9\n5 1 2 1 5 1 2 1 5",
+      "output": "11"
+    }
+  ]
+}

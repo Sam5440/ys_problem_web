@@ -1,0 +1,44 @@
+{
+  "code": "CF1019A",
+  "letter": "A",
+  "title": "A. Elections",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1019/A",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "As you know, majority of students and teachers of Summer Informatics School live in Berland for the most part of the year. Since corruption there is quite widespread, the following story is not uncommon.",
+      "Elections are coming. You know the number of voters and the number of parties — n%%ZSMJ0%% and m%%ZSMJ1%% respectively. For each voter you know the party he is going to vote for. However, he can easily change his vote given a certain amount of money. In particular, if you give i%%ZSMJ2%%-th voter ci%%ZSMJ3%% bytecoins you can ask him to vote for any other party you choose.",
+      "The United Party of Berland has decided to perform a statistical study — you need to calculate the minimum number of bytecoins the Party needs to spend to ensure its victory. In order for a party to win the elections, it needs to receive strictly more votes than any other party."
+    ],
+    "input": [
+      "The first line of input contains two integers n%%ZSMJ4%% and m%%ZSMJ5%% (1≤n,m≤3000%%ZSMJ6%%) — the number of voters and the number of parties respectively.",
+      "Each of the following n%%ZSMJ7%% lines contains two integers pi%%ZSMJ8%% and ci%%ZSMJ9%% (1≤pi≤m%%ZSMJ10%%, 1≤ci≤109%%ZSMJ11%%) — the index of this voter's preferred party and the number of bytecoins needed for him to reconsider his decision.",
+      "The United Party of Berland has the index 1%%ZSMJ12%%."
+    ],
+    "output": [
+      "Print a single number — the minimum number of bytecoins needed for The United Party of Berland to win the elections."
+    ],
+    "note": [
+      "In the first sample, The United Party wins the elections even without buying extra votes.",
+      "In the second sample, The United Party can buy the votes of the first and the fourth voter. This way The Party gets two votes, while parties 3%%ZSMJ13%%, 4%%ZSMJ14%% and 5%%ZSMJ15%% get one vote and party number 2%%ZSMJ16%% gets no votes.",
+      "In the third sample, The United Party can buy the votes of the first three voters and win, getting three votes against two votes of the fifth party."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 2\n1 100",
+      "output": "0"
+    },
+    {
+      "input": "5 5\n2 100\n3 200\n4 300\n5 400\n5 900",
+      "output": "500"
+    },
+    {
+      "input": "5 5\n2 100\n3 200\n4 300\n5 800\n5 900",
+      "output": "600"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "code": "GYM105805D",
+  "letter": "D",
+  "title": "D. Minimum Inversions",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105805/problem/D",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a sequence a%%ZSMJ0%% of length n%%ZSMJ1%%. There is a sequence b%%ZSMJ2%% which is initially empty. You need to perform n%%ZSMJ3%% operations.",
+      "In the i%%ZSMJ4%%-th operation, you can choose one of the following two types of operations:",
+      "insert ai%%ZSMJ5%% into the beginning of b%%ZSMJ6%%;",
+      "insert ai%%ZSMJ7%% into the end of b%%ZSMJ8%%.",
+      "Solve the following problem for each j%%ZSMJ9%%, where 0≤j≤n%%ZSMJ10%%: find the minimum possible number of inversions†%%ZSMJ11%% in b%%ZSMJ12%% if exactly j%%ZSMJ13%% operations of the first type are performed.",
+      "†%%ZSMJ14%% An inversion in a sequence is a pair of elements where the earlier element is greater than the later element. In other words, for a sequence b%%ZSMJ15%%, a pair (bi,bj)%%ZSMJ16%% is an inversion only if i<j%%ZSMJ17%% and bi>bj%%ZSMJ18%%."
+    ],
+    "input": [
+      "The first line contains an integer t%%ZSMJ19%% (1≤t≤105%%ZSMJ20%%), the number of test cases. For each test case:",
+      "The first line contains an integer n%%ZSMJ21%% (2≤n≤3⋅105%%ZSMJ22%%).",
+      "The second line contains n%%ZSMJ23%% space-separated integers a1,a2,…,an%%ZSMJ24%% (1≤ai≤n%%ZSMJ25%%).",
+      "It is guaranteed that the sum of n%%ZSMJ26%% over all test cases does not exceed 3⋅105%%ZSMJ27%%."
+    ],
+    "output": [
+      "For each test case, output n+1%%ZSMJ28%% integers. The j%%ZSMJ29%%-th integer should be the minimum possible number of inversions when exactly j%%ZSMJ30%% operations of the first type are performed, for j=0,…,n%%ZSMJ31%%."
+    ],
+    "note": [
+      "Consider the first test case.",
+      "If j=0%%ZSMJ32%%, the only way is to do two operations of the second type. After that, b=[2,1]%%ZSMJ33%% and the number of inversions is 1%%ZSMJ34%%.",
+      "If j=1%%ZSMJ35%%, the optimal way is to perform an operation of the second type and then perform an operation of the first type. After that, b=[1,2]%%ZSMJ36%% and the number of inversions is 0%%ZSMJ37%%.",
+      "If j=2%%ZSMJ38%%, the only way is to do two operations of the first type. After that, b=[1,2]%%ZSMJ39%% and the number of inversions is 0%%ZSMJ40%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2\n2 1\n5\n3 2 4 1 2\n6\n3 2 6 1 5 4",
+      "output": "1 0 0\n6 3 2 1 1 3\n7 4 3 3 4 6 8"
+    }
+  ]
+}

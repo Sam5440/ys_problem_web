@@ -1,0 +1,44 @@
+{
+  "code": "CF1207C",
+  "letter": "C",
+  "title": "C. Gas Pipeline",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1207/C",
+  "difficulty": "1500",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are responsible for installing a gas pipeline along a road. Let's consider the road (for simplicity) as a segment [0,n]%%ZSMJ0%% on OX%%ZSMJ1%% axis. The road can have several crossroads, but for simplicity, we'll denote each crossroad as an interval (x,x+1)%%ZSMJ2%% with integer x%%ZSMJ3%%. So we can represent the road as a binary string consisting of n%%ZSMJ4%% characters, where character 0 means that current interval doesn't contain a crossroad, and 1 means that there is a crossroad.",
+      "Usually, we can install the pipeline along the road on height of 1%%ZSMJ5%% unit with supporting pillars in each integer point (so, if we are responsible for [0,n]%%ZSMJ6%% road, we must install n+1%%ZSMJ7%% pillars). But on crossroads we should lift the pipeline up to the height 2%%ZSMJ8%%, so the pipeline won't obstruct the way for cars.",
+      "We can do so inserting several zig-zag-like lines. Each zig-zag can be represented as a segment [x,x+1]%%ZSMJ9%% with integer x%%ZSMJ10%% consisting of three parts: 0.5%%ZSMJ11%% units of horizontal pipe + 1%%ZSMJ12%% unit of vertical pipe + 0.5%%ZSMJ13%% of horizontal. Note that if pipeline is currently on height 2%%ZSMJ14%%, the pillars that support it should also have length equal to 2%%ZSMJ15%% units.",
+      "![](https://espresso.codeforces.com/d9d49d8d0560a060a2f1fc785ef616c3b1af3c0b.png)",
+      "Each unit of gas pipeline costs us a%%ZSMJ16%% bourles, and each unit of pillar — b%%ZSMJ17%% bourles. So, it's not always optimal to make the whole pipeline on the height 2%%ZSMJ18%%. Find the shape of the pipeline with minimum possible cost and calculate that cost.",
+      "Note that you must start and finish the pipeline on height 1%%ZSMJ19%% and, also, it's guaranteed that the first and last characters of the input string are equal to 0."
+    ],
+    "input": [
+      "The fist line contains one integer T%%ZSMJ20%% (1≤T≤100%%ZSMJ21%%) — the number of queries. Next 2⋅T%%ZSMJ22%% lines contain independent queries — one query per two lines.",
+      "The first line contains three integers n%%ZSMJ23%%, a%%ZSMJ24%%, b%%ZSMJ25%% (2≤n≤2⋅105%%ZSMJ26%%, 1≤a≤108%%ZSMJ27%%, 1≤b≤108%%ZSMJ28%%) — the length of the road, the cost of one unit of the pipeline and the cost of one unit of the pillar, respectively.",
+      "The second line contains binary string s%%ZSMJ29%% (|s|=n%%ZSMJ30%%, si∈{0,1}%%ZSMJ31%%, s1=sn=0%%ZSMJ32%%) — the description of the road.",
+      "It's guaranteed that the total length of all strings s%%ZSMJ33%% doesn't exceed 2⋅105%%ZSMJ34%%."
+    ],
+    "output": [
+      "Print T%%ZSMJ35%% integers — one per query. For each query print the minimum possible cost of the constructed pipeline."
+    ],
+    "note": [
+      "The optimal pipeline for the first query is shown at the picture above.",
+      "The optimal pipeline for the second query is pictured below:",
+      "![](https://espresso.codeforces.com/a41006fd19dd10b3d679b41d596923b03797cc43.png)",
+      "The optimal (and the only possible) pipeline for the third query is shown below:",
+      "![](https://espresso.codeforces.com/c500012aeed6af93d1135531ce2657d2a8f9cc76.png)",
+      "The optimal pipeline for the fourth query is shown below:",
+      "![](https://espresso.codeforces.com/f5236edc8e3bd8bf1e756268fa678efcb31f7901.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n8 2 5\n00110010\n8 1 1\n00110010\n9 100000000 100000000\n010101010\n2 5 1\n00",
+      "output": "94\n25\n2900000000\n13"
+    }
+  ]
+}

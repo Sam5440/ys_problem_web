@@ -1,0 +1,35 @@
+{
+  "code": "CF285D",
+  "letter": "D",
+  "title": "D. Permutation Sum",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/285/D",
+  "difficulty": "1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Permutation p is an ordered set of integers p1,  p2,  ...,  pn, consisting of n distinct positive integers, each of them doesn't exceed n. We'll denote the i-th element of permutation p as pi. We'll call number n the size or the length of permutation p1,  p2,  ...,  pn.",
+      "Petya decided to introduce the sum operation on the set of permutations of length n. Let's assume that we are given two permutations of length n: a1, a2, ..., an and b1, b2, ..., bn. Petya calls the sum of permutations a and b such permutation c of length n, where ci = ((ai - 1 + bi - 1) mod n) + 1 (1 ≤ i ≤ n).",
+      "Operation ![](https://espresso.codeforces.com/1d533a6df05afe2c303e325bb11b740c58acf6da.png) means taking the remainder after dividing number x by number y.",
+      "Obviously, not for all permutations a and b exists permutation c that is sum of a and b. That's why Petya got sad and asked you to do the following: given n, count the number of such pairs of permutations a and b of length n, that exists permutation c that is sum of a and b. The pair of permutations x, y (x ≠ y) and the pair of permutations y, x are considered distinct pairs.",
+      "As the answer can be rather large, print the remainder after dividing it by 1000000007 (109 + 7)."
+    ],
+    "input": [
+      "The single line contains integer n (1 ≤ n ≤ 16)."
+    ],
+    "output": [
+      "In the single line print a single non-negative integer — the number of such pairs of permutations a and b, that exists permutation c that is sum of a and b, modulo 1000000007 (109 + 7)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3",
+      "output": "18"
+    },
+    {
+      "input": "5",
+      "output": "1800"
+    }
+  ]
+}

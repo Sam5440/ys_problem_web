@@ -1,0 +1,73 @@
+{
+  "code": "CF744B",
+  "letter": "B",
+  "title": "B. Hongcow's Game",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/744/B",
+  "difficulty": "1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem. In the interaction section below you will see the information about flushing the output.",
+      "In this problem, you will be playing a game with Hongcow. How lucky of you!",
+      "Hongcow has a hidden n by n matrix M. Let Mi, j denote the entry i-th row and j-th column of the matrix. The rows and columns are labeled from 1 to n.",
+      "The matrix entries are between 0 and 109. In addition, Mi, i = 0 for all valid i. Your task is to find the minimum value along each row, excluding diagonal elements. Formally, for each i, you must find ![](https://espresso.codeforces.com/3943866668dac6c7c35903f90df68a3d53ff6de1.png).",
+      "To do this, you can ask Hongcow some questions.",
+      "A question consists of giving Hongcow a subset of distinct indices {w1, w2, ..., wk}, with 1 ≤ k ≤ n. Hongcow will respond with n integers. The i-th integer will contain the minimum value of min1 ≤ j ≤ kMi, wj.",
+      "You may only ask Hongcow at most 20 questions — he thinks you only need that many questions answered.",
+      "When you are ready to answer, print out a single integer  - 1 on its own line, then n integers on the next line. The i-th integer should be the minimum value in the i-th row of the matrix, excluding the i-th element. Do not forget to flush the final answer as well. Printing the answer does not count as asking a question.",
+      "You will get Wrong Answer verdict if",
+      "Your question or answers are not in the format described in this statement.",
+      "You ask strictly more than 20 questions.",
+      "Your question contains duplicate indices.",
+      "The value of k in your question does not lie in the range from 1 to n, inclusive.",
+      "Your final answer is not correct."
+    ],
+    "input": [
+      "The first line of input will contain a single integer n (2 ≤ n ≤ 1, 000)."
+    ],
+    "output": [
+      "To print the final answer, print out the string -1 on its own line. Then, the next line should contain n integers. The i-th integer should be the minimum value of the i-th row of the matrix, excluding elements on the diagonal. Do not forget to flush your answer!",
+      "To ask a question, print out a single integer k on its own line, denoting the size of your subset. Then, the next line should contain k integers w1, w2, ... wk. Note, you must flush your output to get a response.",
+      "Hongcow will respond by printing out a line with n integers. The i-th integer in this line represents the minimum value of Mi, wj where j is between 1 and k.",
+      "You may only ask a question at most 20 times, otherwise, you will get Wrong Answer.",
+      "To flush you can use (just after printing an integer and end-of-line):",
+      "fflush(stdout) in C++;",
+      "System.out.flush() in Java;",
+      "stdout.flush() in Python;",
+      "flush(output) in Pascal;",
+      "See the documentation for other languages.",
+      "Hacking To hack someone, use the following format",
+      {
+        "pre": "\nn\nM_{1,1} M_{1,2} ... M_{1,n}\nM_{2,1} M_{2,2} ... M_{2,n}\n...\nM_{n,1} M_{n,2} ... M_{n,n}"
+      },
+      "Of course, contestant programs will not be able to see this input."
+    ],
+    "note": [
+      "In the first sample, Hongcow has the hidden matrix",
+      {
+        "pre": "\n[\n [0, 3, 2],\n [5, 0, 7],\n [4, 8 ,0],\n]"
+      },
+      "Here is a more readable version demonstrating the interaction. The column on the left represents Hongcow, while the column on the right represents the contestant.",
+      {
+        "pre": "\n3\n              3\n              1 2 3\n0 0 0\n              1\n              3\n2 7 0\n              2\n              1 2\n0 0 4\n              1\n              2\n3 0 8\n              1\n              1\n0 5 4\n              -1\n              2 5 4"
+      },
+      "For the second sample, it is possible for off-diagonal elements of the matrix to be zero."
+    ]
+  },
+  "examples": [
+    {
+      "input": "\nn\nM_{1,1} M_{1,2} ... M_{1,n}\nM_{2,1} M_{2,2} ... M_{2,n}\n...\nM_{n,1} M_{n,2} ... M_{n,n}",
+      "output": "3\n0 0 0\n2 7 0\n0 0 4\n3 0 8\n0 5 4"
+    },
+    {
+      "input": "3\n1 2 3\n1\n3\n2\n1 2\n1\n2\n1\n1\n-1\n2 5 4",
+      "output": "2\n0 0\n0 0"
+    },
+    {
+      "input": "1\n2\n1\n1\n-1\n0 0",
+      "output": "\n[\n [0, 3, 2],\n [5, 0, 7],\n [4, 8 ,0],\n]"
+    }
+  ]
+}

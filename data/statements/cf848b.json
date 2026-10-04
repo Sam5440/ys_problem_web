@@ -1,0 +1,46 @@
+{
+  "code": "CF848B",
+  "letter": "B",
+  "title": "B. Rooter's Song",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/848/B",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Wherever the destination is, whoever we meet, let's render this song together.",
+      "On a Cartesian coordinate plane lies a rectangular stage of size w × h, represented by a rectangle with corners (0, 0), (w, 0), (w, h) and (0, h). It can be seen that no collisions will happen before one enters the stage.",
+      "On the sides of the stage stand n dancers. The i-th of them falls into one of the following groups:",
+      "Vertical: stands at (xi, 0), moves in positive y direction (upwards);",
+      "Horizontal: stands at (0, yi), moves in positive x direction (rightwards).",
+      "![](https://espresso.codeforces.com/8aba07adc75f9cf705def164ff858509481b54c7.png)",
+      "According to choreography, the i-th dancer should stand still for the first ti milliseconds, and then start moving in the specified direction at 1 unit per millisecond, until another border is reached. It is guaranteed that no two dancers have the same group, position and waiting time at the same time.",
+      "When two dancers collide (i.e. are on the same point at some time when both of them are moving), they immediately exchange their moving directions and go on.",
+      "![](https://espresso.codeforces.com/a99291578f37557be4d80124c9bb6c84d22580a1.png)",
+      "Dancers stop when a border of the stage is reached. Find out every dancer's stopping position."
+    ],
+    "input": [
+      "The first line of input contains three space-separated positive integers n, w and h (1 ≤ n ≤ 100 000, 2 ≤ w, h ≤ 100 000) — the number of dancers and the width and height of the stage, respectively.",
+      "The following n lines each describes a dancer: the i-th among them contains three space-separated integers gi, pi, and ti (1 ≤ gi ≤ 2, 1 ≤ pi ≤ 99 999, 0 ≤ ti ≤ 100 000), describing a dancer's group gi (gi = 1 — vertical, gi = 2 — horizontal), position, and waiting time. If gi = 1 then pi = xi; otherwise pi = yi. It's guaranteed that 1 ≤ xi ≤ w - 1 and 1 ≤ yi ≤ h - 1. It is guaranteed that no two dancers have the same group, position and waiting time at the same time."
+    ],
+    "output": [
+      "Output n lines, the i-th of which contains two space-separated integers (xi, yi) — the stopping position of the i-th dancer in the input."
+    ],
+    "note": [
+      "The first example corresponds to the initial setup in the legend, and the tracks of dancers are marked with different colours in the following figure.",
+      "![](https://espresso.codeforces.com/9af64013ccf58cb225463c40fd9f075bcf7ea913.png)",
+      "In the second example, no dancers collide."
+    ]
+  },
+  "examples": [
+    {
+      "input": "8 10 8\n1 1 10\n1 4 13\n1 7 1\n1 8 2\n2 2 0\n2 5 14\n2 6 0\n2 6 1",
+      "output": "4 8\n10 5\n8 8\n10 6\n10 2\n1 8\n7 8\n10 6"
+    },
+    {
+      "input": "3 2 3\n1 1 2\n2 1 1\n1 1 5",
+      "output": "1 3\n2 1\n1 3"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "code": "CF1006D",
+  "letter": "D",
+  "title": "D. Two Strings Swaps",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1006/D",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given two strings a%%ZSMJ0%% and b%%ZSMJ1%% consisting of lowercase English letters, both of length n%%ZSMJ2%%. The characters of both strings have indices from 1%%ZSMJ3%% to n%%ZSMJ4%%, inclusive.",
+      "You are allowed to do the following changes:",
+      "Choose any index i%%ZSMJ5%% (1≤i≤n%%ZSMJ6%%) and swap characters ai%%ZSMJ7%% and bi%%ZSMJ8%%;",
+      "Choose any index i%%ZSMJ9%% (1≤i≤n%%ZSMJ10%%) and swap characters ai%%ZSMJ11%% and an−i+1%%ZSMJ12%%;",
+      "Choose any index i%%ZSMJ13%% (1≤i≤n%%ZSMJ14%%) and swap characters bi%%ZSMJ15%% and bn−i+1%%ZSMJ16%%.",
+      "Note that if n%%ZSMJ17%% is odd, you are formally allowed to swap a⌈n2⌉%%ZSMJ18%% with a⌈n2⌉%%ZSMJ19%% (and the same with the string b%%ZSMJ20%%) but this move is useless. Also you can swap two equal characters but this operation is useless as well.",
+      "You have to make these strings equal by applying any number of changes described above, in any order. But it is obvious that it may be impossible to make two strings equal by these swaps.",
+      "In one preprocess move you can replace a character in a%%ZSMJ21%% with another character. In other words, in a single preprocess move you can choose any index i%%ZSMJ22%% (1≤i≤n%%ZSMJ23%%), any character c%%ZSMJ24%% and set ai:=c%%ZSMJ25%%.",
+      "Your task is to find the minimum number of preprocess moves to apply in such a way that after them you can make strings a%%ZSMJ26%% and b%%ZSMJ27%% equal by applying some number of changes described in the list above.",
+      "Note that the number of changes you make after the preprocess moves does not matter. Also note that you cannot apply preprocess moves to the string b%%ZSMJ28%% or make any preprocess moves after the first change is made."
+    ],
+    "input": [
+      "The first line of the input contains one integer n%%ZSMJ29%% (1≤n≤105%%ZSMJ30%%) — the length of strings a%%ZSMJ31%% and b%%ZSMJ32%%.",
+      "The second line contains the string a%%ZSMJ33%% consisting of exactly n%%ZSMJ34%% lowercase English letters.",
+      "The third line contains the string b%%ZSMJ35%% consisting of exactly n%%ZSMJ36%% lowercase English letters."
+    ],
+    "output": [
+      "Print a single integer — the minimum number of preprocess moves to apply before changes, so that it is possible to make the string a%%ZSMJ37%% equal to string b%%ZSMJ38%% with a sequence of changes from the list above."
+    ],
+    "note": [
+      "In the first example preprocess moves are as follows: a1:=%%ZSMJ39%%'b', a3:=%%ZSMJ40%%'c', a4:=%%ZSMJ41%%'a' and a5:=%%ZSMJ42%%'b'. Afterwards, a=%%ZSMJ43%%\"bbcabba\". Then we can obtain equal strings by the following sequence of changes: swap(a2,b2)%%ZSMJ44%% and swap(a2,a6)%%ZSMJ45%%. There is no way to use fewer than 4%%ZSMJ46%% preprocess moves before a sequence of changes to make string equal, so the answer in this example is 4%%ZSMJ47%%.",
+      "In the second example no preprocess moves are required. We can use the following sequence of changes to make a%%ZSMJ48%% and b%%ZSMJ49%% equal: swap(b1,b5)%%ZSMJ50%%, swap(a2,a4)%%ZSMJ51%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\nabacaba\nbacabaa",
+      "output": "4"
+    },
+    {
+      "input": "5\nzcabd\ndbacz",
+      "output": "0"
+    }
+  ]
+}

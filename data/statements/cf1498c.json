@@ -1,0 +1,55 @@
+{
+  "code": "CF1498C",
+  "letter": "C",
+  "title": "C. Planar Reflections",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1498/C",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Gaurang has grown up in a mystical universe. He is faced by n%%ZSMJ0%% consecutive 2D planes. He shoots a particle of decay age k%%ZSMJ1%% at the planes.",
+      "A particle can pass through a plane directly, however, every plane produces an identical copy of the particle going in the opposite direction with a decay age k−1%%ZSMJ2%%. If a particle has decay age equal to 1%%ZSMJ3%%, it will NOT produce a copy.",
+      "For example, if there are two planes and a particle is shot with decay age 3%%ZSMJ4%% (towards the right), the process is as follows: (here, D(x)%%ZSMJ5%% refers to a single particle with decay age x%%ZSMJ6%%)",
+      "the first plane produces a D(2)%%ZSMJ7%% to the left and lets D(3)%%ZSMJ8%% continue on to the right;",
+      "the second plane produces a D(2)%%ZSMJ9%% to the left and lets D(3)%%ZSMJ10%% continue on to the right;",
+      "the first plane lets D(2)%%ZSMJ11%% continue on to the left and produces a D(1)%%ZSMJ12%% to the right;",
+      "the second plane lets D(1)%%ZSMJ13%% continue on to the right (D(1)%%ZSMJ14%% cannot produce any copies).",
+      "In total, the final multiset S%%ZSMJ15%% of particles is {D(3),D(2),D(2),D(1)}%%ZSMJ16%%. (See notes for visual explanation of this test case.)",
+      "Gaurang is unable to cope up with the complexity of this situation when the number of planes is too large. Help Gaurang find the size of the multiset S%%ZSMJ17%%, given n%%ZSMJ18%% and k%%ZSMJ19%%.",
+      "Since the size of the multiset can be very large, you have to output it modulo 109+7%%ZSMJ20%%.",
+      "Note: Particles can go back and forth between the planes without colliding with each other."
+    ],
+    "input": [
+      "The first line of the input contains the number of test cases t%%ZSMJ21%% (1≤t≤100%%ZSMJ22%%). Then, t%%ZSMJ23%% lines follow, each containing two integers n%%ZSMJ24%% and k%%ZSMJ25%% (1≤n,k≤1000%%ZSMJ26%%).",
+      "Additionally, the sum of n%%ZSMJ27%% over all test cases will not exceed 1000%%ZSMJ28%%, and the sum of k%%ZSMJ29%% over all test cases will not exceed 1000%%ZSMJ30%%. All test cases in one test are different."
+    ],
+    "output": [
+      "Output t%%ZSMJ31%% integers. The i%%ZSMJ32%%-th of them should be equal to the answer to the i%%ZSMJ33%%-th test case."
+    ],
+    "note": [
+      "Let us explain the first example with four test cases.",
+      "Test case 1: (n=2%%ZSMJ34%%, k=3%%ZSMJ35%%) is already explained in the problem statement.",
+      "See the below figure of this simulation. Each straight line with a different color represents the path of a different particle. As you can see, there are four distinct particles in the multiset. Note that the vertical spacing between reflected particles is for visual clarity only (as mentioned before, no two distinct particles collide with each other)",
+      "![](https://espresso.codeforces.com/91b8b91bc97b8e5dbdaf5b5beafb5787dd887133.png)",
+      "Test case 2: (n=2%%ZSMJ36%%, k=2%%ZSMJ37%%) is explained as follows:",
+      "the first plane produces a D(1)%%ZSMJ38%% to the left and lets D(2)%%ZSMJ39%% continue on to the right;",
+      "the second plane produces a D(1)%%ZSMJ40%% to the left and lets D(2)%%ZSMJ41%% continue on to the right;",
+      "the first plane lets D(1)%%ZSMJ42%% continue on to the left (D(1)%%ZSMJ43%% cannot produce any copies).",
+      "Total size of multiset obtained {D(1),D(1),D(2)}%%ZSMJ44%% is equal to three.",
+      "Test case 3: (n=3%%ZSMJ45%%, k=1%%ZSMJ46%%), there are three planes, but decay age is only one. So no new copies are produced while the one particle passes through the planes. Hence, the answer is one.",
+      "Test case 4: (n=1%%ZSMJ47%%, k=3%%ZSMJ48%%) there is only one plane. The particle produces a new copy to the left. The multiset {D(2),D(3)}%%ZSMJ49%% is of size two."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n2 3\n2 2\n3 1\n1 3",
+      "output": "4\n3\n1\n2"
+    },
+    {
+      "input": "3\n1 1\n1 500\n500 250",
+      "output": "1\n2\n257950823"
+    }
+  ]
+}

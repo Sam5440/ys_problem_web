@@ -1,0 +1,52 @@
+{
+  "code": "CF1080D",
+  "letter": "D",
+  "title": "D. Olya and magical square",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1080/D",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Recently, Olya received a magical square with the size of 2n×2n%%ZSMJ0%%.",
+      "It seems to her sister that one square is boring. Therefore, she asked Olya to perform exactly k%%ZSMJ1%% splitting operations.",
+      "A Splitting operation is an operation during which Olya takes a square with side a%%ZSMJ2%% and cuts it into 4 equal squares with side a2%%ZSMJ3%%. If the side of the square is equal to 1%%ZSMJ4%%, then it is impossible to apply a splitting operation to it (see examples for better understanding).",
+      "Olya is happy to fulfill her sister's request, but she also wants the condition of Olya's happiness to be satisfied after all operations.",
+      "The condition of Olya's happiness will be satisfied if the following statement is fulfilled:",
+      "Let the length of the side of the lower left square be equal to a%%ZSMJ5%%, then the length of the side of the right upper square should also be equal to a%%ZSMJ6%%. There should also be a path between them that consists only of squares with the side of length a%%ZSMJ7%%. All consecutive squares on a path should have a common side.",
+      "Obviously, as long as we have one square, these conditions are met. So Olya is ready to fulfill her sister's request only under the condition that she is satisfied too. Tell her: is it possible to perform exactly k%%ZSMJ8%% splitting operations in a certain order so that the condition of Olya's happiness is satisfied? If it is possible, tell also the size of the side of squares of which the path from the lower left square to the upper right one will consist."
+    ],
+    "input": [
+      "The first line contains one integer t%%ZSMJ9%% (1≤t≤103%%ZSMJ10%%) — the number of tests.",
+      "Each of the following t%%ZSMJ11%% lines contains two integers ni%%ZSMJ12%% and ki%%ZSMJ13%% (1≤ni≤109,1≤ki≤1018%%ZSMJ14%%) — the description of the i%%ZSMJ15%%-th test, which means that initially Olya's square has size of 2ni×2ni%%ZSMJ16%% and Olya's sister asks her to do exactly ki%%ZSMJ17%% splitting operations."
+    ],
+    "output": [
+      "Print t%%ZSMJ18%% lines, where in the i%%ZSMJ19%%-th line you should output \"YES\" if it is possible to perform ki%%ZSMJ20%% splitting operations in the i%%ZSMJ21%%-th test in such a way that the condition of Olya's happiness is satisfied or print \"NO\" otherwise. If you printed \"YES\", then also print the log2%%ZSMJ22%% of the length of the side of the squares through space, along which you can build a path from the lower left square to the upper right one.",
+      "You can output each letter in any case (lower or upper).",
+      "If there are multiple answers, print any."
+    ],
+    "note": [
+      "In each of the illustrations, the pictures are shown in order in which Olya applied the operations. The recently-created squares are highlighted with red.",
+      "In the first test, Olya can apply splitting operations in the following order:",
+      "![](https://espresso.codeforces.com/768cce8af3da264fdd86c8348cac16befc24d9b5.png)",
+      "The condition of Olya's happiness will be met, since there is a path of squares of the same size from the lower left square to the upper right one:",
+      "![](https://espresso.codeforces.com/ae566b872acc0aafd41cecfd6b0fb271bb58472f.png)",
+      "The length of the sides of the squares on the path is 1%%ZSMJ23%%. log2(1)=0%%ZSMJ24%%.",
+      "In the second test, Olya can apply splitting operations in the following order:",
+      "![](https://espresso.codeforces.com/a32c042723d8b177e9de9c8a98d4029fb8dddaf8.png)",
+      "The condition of Olya's happiness will be met, since there is a path of squares of the same size from the lower left square to the upper right one:",
+      "![](https://espresso.codeforces.com/25ab730661401ca52b30120b09c4d6b502f0ff30.png)",
+      "The length of the sides of the squares on the path is 2%%ZSMJ25%%. log2(2)=1%%ZSMJ26%%.",
+      "In the third test, it takes 5%%ZSMJ27%% operations for Olya to make the square look like this:",
+      "![](https://espresso.codeforces.com/ac3ff5043e9a84d07a7d00b89710f3744084fc6c.png)",
+      "Since it requires her to perform 7%%ZSMJ28%% splitting operations, and it is impossible to perform them on squares with side equal to 1%%ZSMJ29%%, then Olya cannot do anything more and the answer is \"NO\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 1\n2 2\n2 12",
+      "output": "YES 0\nYES 1\nNO"
+    }
+  ]
+}

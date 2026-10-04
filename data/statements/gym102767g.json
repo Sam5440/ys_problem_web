@@ -1,0 +1,53 @@
+{
+  "code": "GYM102767G",
+  "letter": "G",
+  "title": "G. Singhal and Multiplication",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102767/problem/G",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Singhal has a sequence of integers a1,a2,…,an%%ZSMJ0%%.",
+      "Recall,",
+      "A subarray is the sequence of consecutive elements of the array.",
+      "a(modn)%%ZSMJ1%% is the remainder of the Euclidean division of a by n, where a is the dividend and n is the divisor.",
+      "A subarray ai,ai+1,…,aj%%ZSMJ2%% is good if",
+      "(ai∗ai+1∗⋯∗aj)(modn)=1%%ZSMJ3%%",
+      "Formally,",
+      "(j∏k=iak)(modn)=1%%ZSMJ4%%",
+      "Help him to find if a good subarray is present in his sequence or not. If there are many good subarray tell the smallest possible in length."
+    ],
+    "input": [
+      "The first line contains a single integer t(1≤t≤105)%%ZSMJ5%% — the number of test cases in the input. Then t%%ZSMJ6%% test cases follow.",
+      "Each query contains two lines. The first line contains one integer n(1≤n≤105)%%ZSMJ7%%: the number of integers in the sequence, and the second line contains n%%ZSMJ8%% integers a1,…,an(1≤ai≤109)%%ZSMJ9%%.",
+      "It is guaranteed that the total sum of n%%ZSMJ10%% is at most 105%%ZSMJ11%%."
+    ],
+    "output": [
+      "Print t%%ZSMJ12%% answers to the test cases. Each answer must be consisting of single integer — the smallest possible length of good subarray if present in the sequence , if not output 0%%ZSMJ13%%."
+    ],
+    "note": [
+      "In the first query, possible subarray are —",
+      "(2)−2(mod3)=2%%ZSMJ14%%",
+      "(2)−2(mod3)=2%%ZSMJ15%%",
+      "(6)−6(mod3)=0%%ZSMJ16%%",
+      "(2,2)−(2∗2)(mod3)=1%%ZSMJ17%%",
+      "(2,6)−(2∗6)(mod3)=0%%ZSMJ18%%",
+      "(2,2,6)−(2∗2∗6)(mod3)=0%%ZSMJ19%%",
+      "Only one good subarray (2,2)%%ZSMJ20%% , length - 2%%ZSMJ21%%.",
+      "In the second query , only one good subarray (3,3)−(3∗3)(mod4)=1%%ZSMJ22%% , length - 2%%ZSMJ23%%.",
+      "In third query , no good subarray possible.",
+      "In fourth query , two good subarray possible —",
+      "(1)−1(mod3)=1%%ZSMJ24%%",
+      "(2,1,2)−(2∗1∗2)(mod3)=1%%ZSMJ25%%",
+      "We have to choose one with smallest length , i.e. 1%%ZSMJ26%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n3\n2 2 6\n4\n2 2 3 3\n2\n2 2\n3\n2 1 2",
+      "output": "2\n2\n0\n1"
+    }
+  ]
+}

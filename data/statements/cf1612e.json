@@ -1,0 +1,55 @@
+{
+  "code": "CF1612E",
+  "letter": "E",
+  "title": "E. Messages",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1612/E",
+  "difficulty": "2000",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Monocarp is a tutor of a group of n%%ZSMJ0%% students. He communicates with them using a conference in a popular messenger.",
+      "Today was a busy day for Monocarp — he was asked to forward a lot of posts and announcements to his group, that's why he had to write a very large number of messages in the conference. Monocarp knows the students in the group he is tutoring quite well, so he understands which message should each student read: Monocarp wants the student i%%ZSMJ1%% to read the message mi%%ZSMJ2%%.",
+      "Of course, no one's going to read all the messages in the conference. That's why Monocarp decided to pin some of them. Monocarp can pin any number of messages, and if he wants anyone to read some message, he should pin it — otherwise it will definitely be skipped by everyone.",
+      "Unfortunately, even if a message is pinned, some students may skip it anyway. For each student i%%ZSMJ3%%, Monocarp knows that they will read at most ki%%ZSMJ4%% messages. Suppose Monocarp pins t%%ZSMJ5%% messages; if t≤ki%%ZSMJ6%%, then the i%%ZSMJ7%%-th student will read all the pinned messages; but if t>ki%%ZSMJ8%%, the i%%ZSMJ9%%-th student will choose exactly ki%%ZSMJ10%% random pinned messages (all possible subsets of pinned messages of size ki%%ZSMJ11%% are equiprobable) and read only the chosen messages.",
+      "Monocarp wants to maximize the expected number of students that read their respective messages (i.e. the number of such indices i%%ZSMJ12%% that student i%%ZSMJ13%% reads the message mi%%ZSMJ14%%). Help him to choose how many (and which) messages should he pin!"
+    ],
+    "input": [
+      "The first line contains one integer n%%ZSMJ15%% (1≤n≤2⋅105%%ZSMJ16%%) — the number of students in the conference.",
+      "Then n%%ZSMJ17%% lines follow. The i%%ZSMJ18%%-th line contains two integers mi%%ZSMJ19%% and ki%%ZSMJ20%% (1≤mi≤2⋅105%%ZSMJ21%%; 1≤ki≤20%%ZSMJ22%%) — the index of the message which Monocarp wants the i%%ZSMJ23%%-th student to read and the maximum number of messages the i%%ZSMJ24%%-th student will read, respectively."
+    ],
+    "output": [
+      "In the first line, print one integer t%%ZSMJ25%% (1≤t≤2⋅105%%ZSMJ26%%) — the number of messages Monocarp should pin. In the second line, print t%%ZSMJ27%% distinct integers c1%%ZSMJ28%%, c2%%ZSMJ29%%, ..., ct%%ZSMJ30%% (1≤ci≤2⋅105%%ZSMJ31%%) — the indices of the messages Monocarp should pin. The messages can be listed in any order.",
+      "If there are multiple answers, print any of them."
+    ],
+    "note": [
+      "Let's consider the examples from the statement.",
+      "In the first example, Monocarp pins the messages 5%%ZSMJ32%% and 10%%ZSMJ33%%.  if the first student reads the message 5%%ZSMJ34%%, the second student reads the messages 5%%ZSMJ35%% and 10%%ZSMJ36%%, and the third student reads the messages 5%%ZSMJ37%% and 10%%ZSMJ38%%, the number of students which have read their respective messages will be 2%%ZSMJ39%%;",
+      "if the first student reads the message 10%%ZSMJ40%%, the second student reads the messages 5%%ZSMJ41%% and 10%%ZSMJ42%%, and the third student reads the messages 5%%ZSMJ43%% and 10%%ZSMJ44%%, the number of students which have read their respective messages will be 3%%ZSMJ45%%.",
+      "So, the expected number of students which will read their respective messages is 52%%ZSMJ46%%.",
+      "In the second example, Monocarp pins the message 10%%ZSMJ47%%.  if the first student reads the message 10%%ZSMJ48%%, the second student reads the message 10%%ZSMJ49%%, and the third student reads the message 10%%ZSMJ50%%, the number of students which have read their respective messages will be 2%%ZSMJ51%%.",
+      "So, the expected number of students which will read their respective messages is 2%%ZSMJ52%%. If Monocarp had pinned both messages 5%%ZSMJ53%% and 10%%ZSMJ54%%, the expected number of students which read their respective messages would have been 2%%ZSMJ55%% as well.",
+      "In the third example, the expected number of students which will read their respective messages is 83%%ZSMJ56%%.",
+      "In the fourth example, the expected number of students which will read their respective messages is 2%%ZSMJ57%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n10 1\n10 2\n5 2",
+      "output": "2\n5 10"
+    },
+    {
+      "input": "3\n10 1\n5 2\n10 1",
+      "output": "1\n10"
+    },
+    {
+      "input": "4\n1 1\n2 2\n3 3\n4 4",
+      "output": "3\n2 3 4"
+    },
+    {
+      "input": "3\n13 2\n42 2\n37 2",
+      "output": "3\n42 13 37"
+    }
+  ]
+}

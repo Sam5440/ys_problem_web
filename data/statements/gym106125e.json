@@ -1,0 +1,36 @@
+{
+  "code": "GYM106125E",
+  "letter": "E",
+  "title": "E. Entropy Evasion",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106125/problem/E",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Last week, you were contacted by aliens. Strangely, no one you tell seems to believe you – this is likely some form of alien brainwashing. Nonetheless, you decided to reply to the message, and with the help of a few video tutorials, a rocket with a picture of you and your cat is currently long underway to the aliens. Perhaps more importantly, the rocket also contains an array of n%%ZSMJ0%% bits, all set to 0%%ZSMJ1%%. This was specifically requested by the aliens: \"State your intentions. Send an array of bits set to 1%%ZSMJ2%% to indicate you wish to remain peaceful. In any other case, we will destroy your planet.\" Wait, what? Set to 1%%ZSMJ3%%? Whoops.",
+      "Luckily, the rocket is equipped with a Bit Array Protection Controller (BAPC). The BAPC can be opened up to expose a contiguous section of the bit array to interstellar radiation, independently setting each of the exposed bits to either 0%%ZSMJ4%% or 1%%ZSMJ5%%, each with a probability of 50%%%ZSMJ6%%. Your idea is to exploit this randomness to set most of the bits in the array to 1%%ZSMJ7%%. The aliens sounded serious, but not that serious, so setting at least 70%%%ZSMJ8%% of the bits to 1%%ZSMJ9%% is probably fine. Unfortunately, the rocket has almost reached its destination, so you can open up the BAPC at most 125%%ZSMJ10%% times before the aliens read the array. Send the correct commands to the BAPC to ensure at least 70%%%ZSMJ11%% of the bits are set to 1%%ZSMJ12%%.",
+      "Interaction",
+      "This is an interactive problem. Your submission will be run against an interactor, which reads from the standard output of your submission and writes to the standard input of your submission. This interaction needs to follow a specific protocol:",
+      "The interactor first sends one line with an integer n%%ZSMJ13%% (1≤n≤1000%%ZSMJ14%%), the length of the bit array v%%ZSMJ15%%.",
+      "Then, your program should send at most 125%%ZSMJ16%% commands to set at least 70%%ZSMJ17%%% of the bits to 1%%ZSMJ18%%. Each command is sent by printing one line of the form \"ℓ%%ZSMJ19%% r%%ZSMJ20%%\" (1≤ℓ≤r≤n%%ZSMJ21%%), which will expose the bits in positions [ℓ,r]%%ZSMJ22%% to interstellar radiation. The interactor will respond with two lines. The first line consists of n%%ZSMJ23%% integers v1,v2,…,vn%%ZSMJ24%% (vi∈{0,1}%%ZSMJ25%% for each i%%ZSMJ26%%), the new state of the array. The second line contains a single integer p%%ZSMJ27%% (0≤p≤100%%ZSMJ28%%), the current percentage of ones, rounded down.",
+      "When the percentage of ones is at least 70%%ZSMJ29%%, the interaction will stop. Sending any additional commands after this point or using more than 125%%ZSMJ30%% commands will result in a wrong answer.",
+      "For each of your submissions, the interactor uses a new random seed. The interactor is not adaptive. Your submission will be run on at most 100%%ZSMJ31%% test cases.",
+      "Make sure you flush the buffer after each write.",
+      "A testing tool is provided to help you develop your solution."
+    ],
+    "input": [],
+    "output": []
+  },
+  "examples": [
+    {
+      "input": "4\n\n0 0 0 0\n0\n\n1 1 1 0\n75",
+      "output": "\n1 4\n\n\n1 3"
+    },
+    {
+      "input": "3\n\n1 0 0\n33\n\n1 0 0\n33\n\n1 1 0\n66\n\n1 1 1\n100",
+      "output": "\n1 3\n\n\n2 2\n\n\n2 2\n\n\n3 3"
+    }
+  ]
+}

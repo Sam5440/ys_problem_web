@@ -1,0 +1,42 @@
+{
+  "code": "CF1575K",
+  "letter": "K",
+  "title": "K. Knitting Batik",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1575/K",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Mr. Chanek wants to knit a batik, a traditional cloth from Indonesia. The cloth forms a grid a%%ZSMJ0%% with size n×m%%ZSMJ1%%. There are k%%ZSMJ2%% colors, and each cell in the grid can be one of the k%%ZSMJ3%% colors.",
+      "Define a sub-rectangle as an ordered pair of two cells ((x1,y1),(x2,y2))%%ZSMJ4%%, denoting the top-left cell and bottom-right cell (inclusively) of a sub-rectangle in a%%ZSMJ5%%. Two sub-rectangles ((x1,y1),(x2,y2))%%ZSMJ6%% and ((x3,y3),(x4,y4))%%ZSMJ7%% have the same pattern if and only if the following holds:",
+      "they have the same width (x2−x1=x4−x3%%ZSMJ8%%);",
+      "they have the same height (y2−y1=y4−y3%%ZSMJ9%%);",
+      "for every pair (i,j)%%ZSMJ10%% where 0≤i≤x2−x1%%ZSMJ11%% and 0≤j≤y2−y1%%ZSMJ12%%, the color of cells (x1+i,y1+j)%%ZSMJ13%% and (x3+i,y3+j)%%ZSMJ14%% are equal.",
+      "Count the number of possible batik color combinations, such that the subrectangles ((ax,ay),(ax+r−1,ay+c−1))%%ZSMJ15%% and ((bx,by),(bx+r−1,by+c−1))%%ZSMJ16%% have the same pattern.",
+      "Output the answer modulo 109+7%%ZSMJ17%%."
+    ],
+    "input": [
+      "The first line contains five integers n%%ZSMJ18%%, m%%ZSMJ19%%, k%%ZSMJ20%%, r%%ZSMJ21%%, and c%%ZSMJ22%% (1≤n,m≤109%%ZSMJ23%%, 1≤k≤109%%ZSMJ24%%, 1≤r≤min%%ZSMJ25%%, 1 \\leq c \\leq \\min(10^6, m)%%ZSMJ26%%) — the size of the batik, the number of colors, and size of the sub-rectangle.",
+      "The second line contains four integers a_x%%ZSMJ27%%, a_y%%ZSMJ28%%, b_x%%ZSMJ29%%, and b_y%%ZSMJ30%% (1 \\leq a_x, b_x \\leq n%%ZSMJ31%%, 1 \\leq a_y, b_y \\leq m%%ZSMJ32%%) — the top-left corners of the first and second sub-rectangle. Both of the sub-rectangles given are inside the grid (1 \\leq a_x + r - 1%%ZSMJ33%%, b_x + r - 1 \\leq n%%ZSMJ34%%, 1 \\leq a_y + c - 1%%ZSMJ35%%, b_y + c - 1 \\leq m%%ZSMJ36%%)."
+    ],
+    "output": [
+      "Output an integer denoting the number of possible batik color combinations modulo 10^9 + 7%%ZSMJ37%%."
+    ],
+    "note": [
+      "The following are all 32%%ZSMJ38%% possible color combinations in the first example.",
+      "![](https://espresso.codeforces.com/6d72e338e6664267b5e2e0e8b2e3acf7391a5559.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3 2 2 2\n1 1 2 2",
+      "output": "32"
+    },
+    {
+      "input": "4 5 170845 2 2\n1 4 3 1",
+      "output": "756680455"
+    }
+  ]
+}

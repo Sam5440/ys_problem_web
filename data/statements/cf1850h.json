@@ -1,0 +1,47 @@
+{
+  "code": "CF1850H",
+  "letter": "H",
+  "title": "H. The Third Letter",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1850/H",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "In order to win his toughest battle, Mircea came up with a great strategy for his army. He has n%%ZSMJ0%% soldiers and decided to arrange them in a certain way in camps. Each soldier has to belong to exactly one camp, and there is one camp at each integer point on the x%%ZSMJ1%%-axis (at points ⋯,−2,−1,0,1,2,⋯%%ZSMJ2%%).",
+      "The strategy consists of m%%ZSMJ3%% conditions. Condition i%%ZSMJ4%% tells that soldier ai%%ZSMJ5%% should belong to a camp that is situated di%%ZSMJ6%% meters in front of the camp that person bi%%ZSMJ7%% belongs to. (If di<0%%ZSMJ8%%, then ai%%ZSMJ9%%'s camp should be −di%%ZSMJ10%% meters behind bi%%ZSMJ11%%'s camp.)",
+      "Now, Mircea wonders if there exists a partition of soldiers that respects the condition and he asks for your help! Answer \"YES\" if there is a partition of the n%%ZSMJ12%% soldiers that satisfies all of the m%%ZSMJ13%% conditions and \"NO\" otherwise.",
+      "Note that two different soldiers may be placed in the same camp."
+    ],
+    "input": [
+      "The first line contains a single integer t%%ZSMJ14%% (1≤t≤100%%ZSMJ15%%) — the number of test cases.",
+      "The first line of each test case contains two positive integers n%%ZSMJ16%% and m%%ZSMJ17%% (2≤n≤2⋅105%%ZSMJ18%%; 1≤m≤n%%ZSMJ19%%) — the number of soldiers, and the number of conditions respectively.",
+      "Then m%%ZSMJ20%% lines follow, each of them containing 3%%ZSMJ21%% integers: ai%%ZSMJ22%%, bi%%ZSMJ23%%, di%%ZSMJ24%% (ai≠bi%%ZSMJ25%%; 1≤ai,bi≤n%%ZSMJ26%%; −109≤di≤109%%ZSMJ27%%) — denoting the conditions explained in the statement. Note that if di%%ZSMJ28%% is positive, ai%%ZSMJ29%% should be di%%ZSMJ30%% meters in front of bi%%ZSMJ31%% and if it is negative, ai%%ZSMJ32%% should be −di%%ZSMJ33%% meters behind bi%%ZSMJ34%%.",
+      "Note that the sum of n%%ZSMJ35%% over all test cases doesn't exceed 2⋅105%%ZSMJ36%%."
+    ],
+    "output": [
+      "For each test case, output \"YES\" if there is an arrangement of the n%%ZSMJ37%% soldiers that satisfies all of the m%%ZSMJ38%% conditions and \"NO\" otherwise."
+    ],
+    "note": [
+      "For the first test case, we can partition the soldiers into camps in the following way: soldier:",
+      "Soldier 1%%ZSMJ39%% in the camp with the coordinate x=3%%ZSMJ40%%.",
+      "Soldier 2%%ZSMJ41%% in the camp with the coordinate x=5%%ZSMJ42%%.",
+      "Soldier 3%%ZSMJ43%% in the camp with the coordinate x=9%%ZSMJ44%%.",
+      "Soldier 4%%ZSMJ45%% in the camp with the coordinate x=11%%ZSMJ46%%.",
+      "For the second test case, there is no partition that can satisfy all the constraints at the same time.",
+      "For the third test case, there is no partition that satisfies all the constraints since we get contradictory information about the same pair.",
+      "For the fourth test case, in order to satisfy the only condition, a possible partition is:",
+      "Soldier 1%%ZSMJ47%% in the camp with the coordinate x=10%%ZSMJ48%%.",
+      "Soldier 2%%ZSMJ49%% in the camp with the coordinate x=13%%ZSMJ50%%.",
+      "Soldier 3%%ZSMJ51%% in the camp with the coordinate x=−2023%%ZSMJ52%%.",
+      "Soldier 4%%ZSMJ53%% in the camp with the coordinate x=−2023%%ZSMJ54%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n5 3\n1 2 2\n2 3 4\n4 2 -6\n6 5\n1 2 2\n2 3 4\n4 2 -6\n5 4 4\n3 5 100\n2 2\n1 2 5\n1 2 4\n4 1\n1 2 3",
+      "output": "YES\nNO\nNO\nYES"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "code": "CF923A",
+  "letter": "A",
+  "title": "A. Primal Sport",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/923/A",
+  "difficulty": "1700",
+  "timeLimit": "1.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alice and Bob begin their day with a quick game. They first choose a starting number X0 ≥ 3 and try to reach one million by the process described below.",
+      "Alice goes first and then they take alternating turns. In the i-th turn, the player whose turn it is selects a prime number smaller than the current number, and announces the smallest multiple of this prime number that is not smaller than the current number.",
+      "Formally, he or she selects a prime p < Xi - 1 and then finds the minimum Xi ≥ Xi - 1 such that p divides Xi. Note that if the selected prime p already divides Xi - 1, then the number does not change.",
+      "Eve has witnessed the state of the game after two turns. Given X2, help her determine what is the smallest possible starting number X0. Note that the players don't necessarily play optimally. You should consider all possible game evolutions."
+    ],
+    "input": [
+      "The input contains a single integer X2 (4 ≤ X2 ≤ 106). It is guaranteed that the integer X2 is composite, that is, is not prime."
+    ],
+    "output": [
+      "Output a single integer — the minimum possible X0."
+    ],
+    "note": [
+      "In the first test, the smallest possible starting number is X0 = 6. One possible course of the game is as follows:",
+      "Alice picks prime 5 and announces X1 = 10",
+      "Bob picks prime 7 and announces X2 = 14.",
+      "In the second case, let X0 = 15.",
+      "Alice picks prime 2 and announces X1 = 16",
+      "Bob picks prime 5 and announces X2 = 20."
+    ]
+  },
+  "examples": [
+    {
+      "input": "14",
+      "output": "6"
+    },
+    {
+      "input": "20",
+      "output": "15"
+    },
+    {
+      "input": "8192",
+      "output": "8191"
+    }
+  ]
+}

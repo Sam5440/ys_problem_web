@@ -1,0 +1,48 @@
+{
+  "code": "CF1320B",
+  "letter": "B",
+  "title": "B. Navigation System",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1320/B",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "The map of Bertown can be represented as a set of n%%ZSMJ0%% intersections, numbered from 1%%ZSMJ1%% to n%%ZSMJ2%% and connected by m%%ZSMJ3%% one-way roads. It is possible to move along the roads from any intersection to any other intersection. The length of some path from one intersection to another is the number of roads that one has to traverse along the path. The shortest path from one intersection v%%ZSMJ4%% to another intersection u%%ZSMJ5%% is the path that starts in v%%ZSMJ6%%, ends in u%%ZSMJ7%% and has the minimum length among all such paths.",
+      "Polycarp lives near the intersection s%%ZSMJ8%% and works in a building near the intersection t%%ZSMJ9%%. Every day he gets from s%%ZSMJ10%% to t%%ZSMJ11%% by car. Today he has chosen the following path to his workplace: p1%%ZSMJ12%%, p2%%ZSMJ13%%, ..., pk%%ZSMJ14%%, where p1=s%%ZSMJ15%%, pk=t%%ZSMJ16%%, and all other elements of this sequence are the intermediate intersections, listed in the order Polycarp arrived at them. Polycarp never arrived at the same intersection twice, so all elements of this sequence are pairwise distinct. Note that you know Polycarp's path beforehand (it is fixed), and it is not necessarily one of the shortest paths from s%%ZSMJ17%% to t%%ZSMJ18%%.",
+      "Polycarp's car has a complex navigation system installed in it. Let's describe how it works. When Polycarp starts his journey at the intersection s%%ZSMJ19%%, the system chooses some shortest path from s%%ZSMJ20%% to t%%ZSMJ21%% and shows it to Polycarp. Let's denote the next intersection in the chosen path as v%%ZSMJ22%%. If Polycarp chooses to drive along the road from s%%ZSMJ23%% to v%%ZSMJ24%%, then the navigator shows him the same shortest path (obviously, starting from v%%ZSMJ25%% as soon as he arrives at this intersection). However, if Polycarp chooses to drive to another intersection w%%ZSMJ26%% instead, the navigator rebuilds the path: as soon as Polycarp arrives at w%%ZSMJ27%%, the navigation system chooses some shortest path from w%%ZSMJ28%% to t%%ZSMJ29%% and shows it to Polycarp. The same process continues until Polycarp arrives at t%%ZSMJ30%%: if Polycarp moves along the road recommended by the system, it maintains the shortest path it has already built; but if Polycarp chooses some other path, the system rebuilds the path by the same rules.",
+      "Here is an example. Suppose the map of Bertown looks as follows, and Polycarp drives along the path [1,2,3,4]%%ZSMJ31%% (s=1%%ZSMJ32%%, t=4%%ZSMJ33%%):",
+      "Check the picture by the link http://tk.codeforces.com/a.png",
+      "When Polycarp starts at 1%%ZSMJ34%%, the system chooses some shortest path from 1%%ZSMJ35%% to 4%%ZSMJ36%%. There is only one such path, it is [1,5,4]%%ZSMJ37%%;",
+      "Polycarp chooses to drive to 2%%ZSMJ38%%, which is not along the path chosen by the system. When Polycarp arrives at 2%%ZSMJ39%%, the navigator rebuilds the path by choosing some shortest path from 2%%ZSMJ40%% to 4%%ZSMJ41%%, for example, [2,6,4]%%ZSMJ42%% (note that it could choose [2,3,4]%%ZSMJ43%%);",
+      "Polycarp chooses to drive to 3%%ZSMJ44%%, which is not along the path chosen by the system. When Polycarp arrives at 3%%ZSMJ45%%, the navigator rebuilds the path by choosing the only shortest path from 3%%ZSMJ46%% to 4%%ZSMJ47%%, which is [3,4]%%ZSMJ48%%;",
+      "Polycarp arrives at 4%%ZSMJ49%% along the road chosen by the navigator, so the system does not have to rebuild anything.",
+      "Overall, we get 2%%ZSMJ50%% rebuilds in this scenario. Note that if the system chose [2,3,4]%%ZSMJ51%% instead of [2,6,4]%%ZSMJ52%% during the second step, there would be only 1%%ZSMJ53%% rebuild (since Polycarp goes along the path, so the system maintains the path [3,4]%%ZSMJ54%% during the third step).",
+      "The example shows us that the number of rebuilds can differ even if the map of Bertown and the path chosen by Polycarp stays the same. Given this information (the map and Polycarp's path), can you determine the minimum and the maximum number of rebuilds that could have happened during the journey?"
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ55%% and m%%ZSMJ56%% (2≤n≤m≤2⋅105%%ZSMJ57%%) — the number of intersections and one-way roads in Bertown, respectively.",
+      "Then m%%ZSMJ58%% lines follow, each describing a road. Each line contains two integers u%%ZSMJ59%% and v%%ZSMJ60%% (1≤u,v≤n%%ZSMJ61%%, u≠v%%ZSMJ62%%) denoting a road from intersection u%%ZSMJ63%% to intersection v%%ZSMJ64%%. All roads in Bertown are pairwise distinct, which means that each ordered pair (u,v)%%ZSMJ65%% appears at most once in these m%%ZSMJ66%% lines (but if there is a road (u,v)%%ZSMJ67%%, the road (v,u)%%ZSMJ68%% can also appear).",
+      "The following line contains one integer k%%ZSMJ69%% (2≤k≤n%%ZSMJ70%%) — the number of intersections in Polycarp's path from home to his workplace.",
+      "The last line contains k%%ZSMJ71%% integers p1%%ZSMJ72%%, p2%%ZSMJ73%%, ..., pk%%ZSMJ74%% (1≤pi≤n%%ZSMJ75%%, all these integers are pairwise distinct) — the intersections along Polycarp's path in the order he arrived at them. p1%%ZSMJ76%% is the intersection where Polycarp lives (s=p1%%ZSMJ77%%), and pk%%ZSMJ78%% is the intersection where Polycarp's workplace is situated (t=pk%%ZSMJ79%%). It is guaranteed that for every i∈[1,k−1]%%ZSMJ80%% the road from pi%%ZSMJ81%% to pi+1%%ZSMJ82%% exists, so the path goes along the roads of Bertown."
+    ],
+    "output": [
+      "Print two integers: the minimum and the maximum number of rebuilds that could have happened during the journey."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 9\n1 5\n5 4\n1 2\n2 3\n3 4\n4 1\n2 6\n6 4\n4 2\n4\n1 2 3 4",
+      "output": "1 2"
+    },
+    {
+      "input": "7 7\n1 2\n2 3\n3 4\n4 5\n5 6\n6 7\n7 1\n7\n1 2 3 4 5 6 7",
+      "output": "0 0"
+    },
+    {
+      "input": "8 13\n8 7\n8 6\n7 5\n7 4\n6 5\n6 4\n5 3\n5 2\n4 3\n4 2\n3 1\n2 1\n1 8\n5\n8 7 5 2 1",
+      "output": "0 3"
+    }
+  ]
+}

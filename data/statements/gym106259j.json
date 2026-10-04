@@ -1,0 +1,36 @@
+{
+  "code": "GYM106259J",
+  "letter": "J",
+  "title": "J. The Power of the Sun",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106259/problem/J",
+  "difficulty": "*1900",
+  "timeLimit": "2 s",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Dr. Otto Octavius is a brilliant nuclear physicist working on his life's work: a sustainable fusion power source. He claims to have \"the power of the sun, in the palm of his hand\" with his new Infinite Factorial Reactor.",
+      "The reactor consists of n%%ZSMJ0%% fusion cores lined up in a row, indexed from 1%%ZSMJ1%% to n%%ZSMJ2%%. Initially, the i%%ZSMJ3%%-th core holds an energy level of ai%%ZSMJ4%%.",
+      "Octavius uses his mechanical arms to conduct q%%ZSMJ5%% operations. In each operation, he interacts with a specific range of cores [l,r]%%ZSMJ6%%. The operations are of two types:",
+      "Fusion Ignition: Octavius triggers a reaction in the cores from index l%%ZSMJ7%% to r%%ZSMJ8%%. The energy level of every core in this range transforms into its own factorial. Formally, for each i%%ZSMJ9%% such that l≤i≤r%%ZSMJ10%%, the energy level ai%%ZSMJ11%% becomes ai!%%ZSMJ12%% (where 0!=1%%ZSMJ13%% and x!=1×2×⋯×x%%ZSMJ14%% for x≥1%%ZSMJ15%%).",
+      "Stability Check: Octavius measures the total energy output of the cores from index l%%ZSMJ16%% to r%%ZSMJ17%%. However, the inhibitor chip has a limit and can only display the result modulo 998244353%%ZSMJ18%%. Formally, the reading is (∑ri=lai)(mod998244353)%%ZSMJ19%%.",
+      "Help Dr. Octavius simulate the reactor's behavior and determine the energy readings for all type 2 operations."
+    ],
+    "input": [
+      "The first line contains a single integer t%%ZSMJ20%% (1≤t≤105%%ZSMJ21%%) — the number of test cases.",
+      "The first line of each test case contains two integers n%%ZSMJ22%% and q%%ZSMJ23%% (1≤n,q≤5⋅105%%ZSMJ24%%) — the number of fusion cores and the number of operations.",
+      "The second line contains n%%ZSMJ25%% integers a1,a2,…,an%%ZSMJ26%% (0≤ai≤5⋅105%%ZSMJ27%%) — the initial energy levels of the cores.",
+      "Each of the next q%%ZSMJ28%% lines contains three integers type%%ZSMJ29%%, l%%ZSMJ30%%, r%%ZSMJ31%% (type∈{1,2}%%ZSMJ32%%, 1≤l≤r≤n%%ZSMJ33%%) — describing an operation of the corresponding type on the range [l,r]%%ZSMJ34%%.",
+      "It is guaranteed that the sum of n%%ZSMJ35%% over all test cases does not exceed 5⋅105%%ZSMJ36%% and the sum of q%%ZSMJ37%% over all test cases does not exceed 5⋅105%%ZSMJ38%%."
+    ],
+    "output": [
+      "For each operation of type 2%%ZSMJ39%%, print a single integer — the sum of energy levels in the range modulo 998244353%%ZSMJ40%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n5 4\n3 2 4 1 0\n2 1 5\n1 1 3\n2 1 5\n2 2 4",
+      "output": "10\n33\n27"
+    }
+  ]
+}

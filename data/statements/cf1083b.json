@@ -1,0 +1,47 @@
+{
+  "code": "CF1083B",
+  "letter": "B",
+  "title": "B. The Fair Nut and Strings",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1083/B",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Recently, the Fair Nut has written k%%ZSMJ0%% strings of length n%%ZSMJ1%%, consisting of letters \"a\" and \"b\". He calculated c%%ZSMJ2%% — the number of strings that are prefixes of at least one of the written strings. Every string was counted only one time.",
+      "Then, he lost his sheet with strings. He remembers that all written strings were lexicographically not smaller than string s%%ZSMJ3%% and not bigger than string t%%ZSMJ4%%. He is interested: what is the maximum value of c%%ZSMJ5%% that he could get.",
+      "A string a%%ZSMJ6%% is lexicographically smaller than a string b%%ZSMJ7%% if and only if one of the following holds:",
+      "a%%ZSMJ8%% is a prefix of b%%ZSMJ9%%, but a≠b%%ZSMJ10%%;",
+      "in the first position where a%%ZSMJ11%% and b%%ZSMJ12%% differ, the string a%%ZSMJ13%% has a letter that appears earlier in the alphabet than the corresponding letter in b%%ZSMJ14%%."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ15%% and k%%ZSMJ16%% (1≤n≤5⋅105%%ZSMJ17%%, 1≤k≤109%%ZSMJ18%%).",
+      "The second line contains a string s%%ZSMJ19%% (|s|=n%%ZSMJ20%%) — the string consisting of letters \"a\" and \"b.",
+      "The third line contains a string t%%ZSMJ21%% (|t|=n%%ZSMJ22%%) — the string consisting of letters \"a\" and \"b.",
+      "It is guaranteed that string s%%ZSMJ23%% is lexicographically not bigger than t%%ZSMJ24%%."
+    ],
+    "output": [
+      "Print one number — maximal value of c%%ZSMJ25%%."
+    ],
+    "note": [
+      "In the first example, Nut could write strings \"aa\", \"ab\", \"ba\", \"bb\". These 4%%ZSMJ26%% strings are prefixes of at least one of the written strings, as well as \"a\" and \"b\". Totally, 6%%ZSMJ27%% strings.",
+      "In the second example, Nut could write strings \"aba\", \"baa\", \"bba\".",
+      "In the third example, there are only two different strings that Nut could write. If both of them are written, c=8%%ZSMJ28%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 4\naa\nbb",
+      "output": "6"
+    },
+    {
+      "input": "3 3\naba\nbba",
+      "output": "8"
+    },
+    {
+      "input": "4 5\nabbb\nbaaa",
+      "output": "8"
+    }
+  ]
+}

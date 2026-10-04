@@ -1,0 +1,52 @@
+{
+  "code": "GYM102896C",
+  "letter": "C",
+  "title": "C. Color the Tree",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102896/problem/C",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Christina has a rooted tree with n%%ZSMJ0%% vertices. Initially, all vertices are colored green, except for the root, which is colored red. Christina thinks that the tree is beautiful if two rules are satisfied:",
+      "The root is colored red.",
+      "If the vertex is colored red, all vertices on the shortest path between it and the root are also red.",
+      "Christina repeatedly performs the following operation on the tree — chooses a vertex and changes its color (if it was red, colors it green; if it was green, colors it red). The following rules must be satisfied while performing the operations:",
+      "The tree should stay beautiful.",
+      "The coloring of vertices should be unique. That means there is no moment in the past when each vertex had the same color as it has right now.",
+      "Your task is to help Christina build the longest possible sequence of operations following the rules."
+    ],
+    "input": [
+      "The first line contains an integer n%%ZSMJ1%% (1≤n≤20%%ZSMJ2%%) — the number of vertices in the tree.",
+      "The second line contains n−1%%ZSMJ3%% integers pi%%ZSMJ4%% (1≤pi≤i%%ZSMJ5%% for 1≤i≤n−1%%ZSMJ6%%), denoting parent vertices in the tree. The vertices in the tree are numbered from 1%%ZSMJ7%% to n%%ZSMJ8%%, the root has number 1%%ZSMJ9%%, the i%%ZSMJ10%%-th vertex has parent pi−1%%ZSMJ11%% for 2≤i≤n%%ZSMJ12%%."
+    ],
+    "output": [
+      "On the first line output an integer m%%ZSMJ13%% — the maximum number of operations.",
+      "On the second line output m%%ZSMJ14%% integers oi%%ZSMJ15%% (2≤oi≤n)%%ZSMJ16%%. oi%%ZSMJ17%% is the number of the vertex that changes color during the corresponding operation.",
+      "If there are several possible longest sequences, output any one of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1 1 1",
+      "output": "7\n4 3 4 2 4 3 4"
+    },
+    {
+      "input": "4\n1 2 3",
+      "output": "3\n2 3 4"
+    },
+    {
+      "input": "6\n1 1 2 2 2",
+      "output": "17\n3 2 3 6 3 5 3 6 3 4 3 6 3 5 3 6 3"
+    },
+    {
+      "input": "5\n1 2 1 1",
+      "output": "11\n5 4 5 2 5 4 5 3 5 4 5"
+    },
+    {
+      "input": "5\n1 1 2 3",
+      "output": "8\n3 5 2 5 3 4 3 5"
+    }
+  ]
+}

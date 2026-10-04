@@ -1,0 +1,46 @@
+{
+  "code": "CF1148C",
+  "letter": "C",
+  "title": "C. Crazy Diamond",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1148/C",
+  "difficulty": "1700",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a permutation p%%ZSMJ0%% of integers from 1%%ZSMJ1%% to n%%ZSMJ2%%, where n%%ZSMJ3%% is an even number.",
+      "Your goal is to sort the permutation. To do so, you can perform zero or more operations of the following type:",
+      "take two indices i%%ZSMJ4%% and j%%ZSMJ5%% such that 2⋅|i−j|≥n%%ZSMJ6%% and swap pi%%ZSMJ7%% and pj%%ZSMJ8%%.",
+      "There is no need to minimize the number of operations, however you should use no more than 5⋅n%%ZSMJ9%% operations. One can show that it is always possible to do that."
+    ],
+    "input": [
+      "The first line contains a single integer n%%ZSMJ10%% (2≤n≤3⋅105%%ZSMJ11%%, n%%ZSMJ12%% is even) — the length of the permutation.",
+      "The second line contains n%%ZSMJ13%% distinct integers p1,p2,…,pn%%ZSMJ14%% (1≤pi≤n%%ZSMJ15%%) — the given permutation."
+    ],
+    "output": [
+      "On the first line print m%%ZSMJ16%% (0≤m≤5⋅n%%ZSMJ17%%) — the number of swaps to perform.",
+      "Each of the following m%%ZSMJ18%% lines should contain integers ai,bi%%ZSMJ19%% (1≤ai,bi≤n%%ZSMJ20%%, |ai−bi|≥n2%%ZSMJ21%%) — the indices that should be swapped in the corresponding swap.",
+      "Note that there is no need to minimize the number of operations. We can show that an answer always exists."
+    ],
+    "note": [
+      "In the first example, when one swap elements on positions 1%%ZSMJ22%% and 2%%ZSMJ23%%, the array becomes sorted.",
+      "In the second example, pay attention that there is no need to minimize number of swaps.",
+      "In the third example, after swapping elements on positions 1%%ZSMJ24%% and 5%%ZSMJ25%% the array becomes: [4,5,3,1,2,6]%%ZSMJ26%%. After swapping elements on positions 2%%ZSMJ27%% and 5%%ZSMJ28%% the array becomes [4,2,3,1,5,6]%%ZSMJ29%% and finally after swapping elements on positions 1%%ZSMJ30%% and 4%%ZSMJ31%% the array becomes sorted: [1,2,3,4,5,6]%%ZSMJ32%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n2 1",
+      "output": "1\n1 2"
+    },
+    {
+      "input": "4\n3 4 1 2",
+      "output": "4\n1 4\n1 4\n1 3\n2 4"
+    },
+    {
+      "input": "6\n2 5 3 1 4 6",
+      "output": "3\n1 5\n2 5\n1 4"
+    }
+  ]
+}

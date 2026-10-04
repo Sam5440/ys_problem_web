@@ -1,0 +1,41 @@
+{
+  "code": "CF1482D",
+  "letter": "D",
+  "title": "D. Playlist",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1482/D",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Arkady has a playlist that initially consists of n%%ZSMJ0%% songs, numerated from 1%%ZSMJ1%% to n%%ZSMJ2%% in the order they appear in the playlist. Arkady starts listening to the songs in the playlist one by one, starting from song 1%%ZSMJ3%%. The playlist is cycled, i. e. after listening to the last song, Arkady will continue listening from the beginning.",
+      "Each song has a genre ai%%ZSMJ4%%, which is a positive integer. Let Arkady finish listening to a song with genre y%%ZSMJ5%%, and the genre of the next-to-last listened song be x%%ZSMJ6%%. If gcd(x,y)=1%%ZSMJ7%%, he deletes the last listened song (with genre y%%ZSMJ8%%) from the playlist. After that he continues listening normally, skipping the deleted songs, and forgetting about songs he listened to before. In other words, after he deletes a song, he can't delete the next song immediately.",
+      "Here gcd(x,y)%%ZSMJ9%% denotes the greatest common divisor (GCD) of integers x%%ZSMJ10%% and y%%ZSMJ11%%.",
+      "For example, if the initial songs' genres were [5,9,2,10,15]%%ZSMJ12%%, then the playlist is converted as follows: [5, 9, 2, 10, 15] →%%ZSMJ13%% [5, 9, 2, 10, 15] →%%ZSMJ14%% [5, 2, 10, 15] (because gcd(5,9)=1%%ZSMJ15%%) →%%ZSMJ16%% [5, 2, 10, 15] →%%ZSMJ17%% [5, 2, 10, 15] →%%ZSMJ18%% [5, 2, 10, 15] →%%ZSMJ19%% [5, 2, 10, 15] →%%ZSMJ20%% [5, 2, 10, 15] →%%ZSMJ21%% [5, 10, 15] (because gcd(5,2)=1%%ZSMJ22%%) →%%ZSMJ23%% [5, 10, 15] →%%ZSMJ24%% [5, 10, 15] →%%ZSMJ25%% ... The bold numbers represent the two last played songs. Note that after a song is deleted, Arkady forgets that he listened to that and the previous songs.",
+      "Given the initial playlist, please determine which songs are eventually deleted and the order these songs are deleted."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ26%% (1≤t≤10000%%ZSMJ27%%). Description of the test cases follows.",
+      "The first line of each test case contains a single integer n%%ZSMJ28%% (1≤n≤105%%ZSMJ29%%) — the number of songs.",
+      "The second line contains n%%ZSMJ30%% integers a1,a2,…,an%%ZSMJ31%% (1≤ai≤109%%ZSMJ32%%) — the genres of the songs.",
+      "It is guaranteed that the sum of n%%ZSMJ33%% over all test cases does not exceed 105%%ZSMJ34%%."
+    ],
+    "output": [
+      "For each test case, print a single line. First, print a single integer k%%ZSMJ35%% — the number of deleted songs. After that print k%%ZSMJ36%% distinct integers: deleted songs in the order of their deletion."
+    ],
+    "note": [
+      "Explanation of the first test case is given in the statement.",
+      "In the second test case, the playlist is converted as follows: [1, 2, 4, 2, 4, 2] →%%ZSMJ37%% [1, 2, 4, 2, 4, 2] →%%ZSMJ38%% [1, 4, 2, 4, 2] (because gcd(1,2)=1%%ZSMJ39%%) →%%ZSMJ40%% [1, 4, 2, 4, 2] →%%ZSMJ41%% [1, 4, 2, 4, 2] →%%ZSMJ42%% [1, 4, 2, 4, 2] →%%ZSMJ43%% [1, 4, 2, 4, 2] →%%ZSMJ44%% [1, 4, 2, 4, 2] →%%ZSMJ45%% [4, 2, 4, 2] (because gcd(2,1)=1%%ZSMJ46%%) →%%ZSMJ47%% [4, 2, 4, 2] →%%ZSMJ48%% ...",
+      "In the third test case, the playlist is converted as follows: [1, 2] →%%ZSMJ49%% [1, 2] →%%ZSMJ50%% [1] (because gcd(1,2)=1%%ZSMJ51%%) →%%ZSMJ52%% [1] →%%ZSMJ53%% [1] (Arkady listened to the same song twice in a row) →%%ZSMJ54%% [] (because gcd(1,1)=1%%ZSMJ55%%).",
+      "The fourth test case is same as the third after deletion of the second song.",
+      "In the fifth test case, the same song is listened to over and over again, but since gcd(2,2)≠1%%ZSMJ56%%, it is not deleted."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n5\n5 9 2 10 15\n6\n1 2 4 2 4 2\n2\n1 2\n1\n1\n1\n2",
+      "output": "2 2 3 \n2 2 1 \n2 2 1 \n1 1 \n0"
+    }
+  ]
+}

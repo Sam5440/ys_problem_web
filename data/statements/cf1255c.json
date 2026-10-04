@@ -1,0 +1,35 @@
+{
+  "code": "CF1255C",
+  "letter": "C",
+  "title": "C. League of Leesins",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1255/C",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Bob is an avid fan of the video game \"League of Leesins\", and today he celebrates as the League of Leesins World Championship comes to an end!",
+      "The tournament consisted of n%%ZSMJ0%% (n≥5%%ZSMJ1%%) teams around the world. Before the tournament starts, Bob has made a prediction of the rankings of each team, from 1%%ZSMJ2%%-st to n%%ZSMJ3%%-th. After the final, he compared the prediction with the actual result and found out that the i%%ZSMJ4%%-th team according to his prediction ended up at the pi%%ZSMJ5%%-th position (1≤pi≤n%%ZSMJ6%%, all pi%%ZSMJ7%% are unique). In other words, p%%ZSMJ8%% is a permutation of 1,2,…,n%%ZSMJ9%%.",
+      "As Bob's favorite League player is the famous \"3ga\", he decided to write down every 3%%ZSMJ10%% consecutive elements of the permutation p%%ZSMJ11%%. Formally, Bob created an array q%%ZSMJ12%% of n−2%%ZSMJ13%% triples, where qi=(pi,pi+1,pi+2)%%ZSMJ14%% for each 1≤i≤n−2%%ZSMJ15%%. Bob was very proud of his array, so he showed it to his friend Alice.",
+      "After learning of Bob's array, Alice declared that she could retrieve the permutation p%%ZSMJ16%% even if Bob rearranges the elements of q%%ZSMJ17%% and the elements within each triple. Of course, Bob did not believe in such magic, so he did just the same as above to see Alice's respond.",
+      "For example, if n=5%%ZSMJ18%% and p=[1,4,2,3,5]%%ZSMJ19%%, then the original array q%%ZSMJ20%% will be [(1,4,2),(4,2,3),(2,3,5)]%%ZSMJ21%%. Bob can then rearrange the numbers within each triple and the positions of the triples to get [(4,3,2),(2,3,5),(4,1,2)]%%ZSMJ22%%. Note that [(1,4,2),(4,2,2),(3,3,5)]%%ZSMJ23%% is not a valid rearrangement of q%%ZSMJ24%%, as Bob is not allowed to swap numbers belong to different triples.",
+      "As Alice's friend, you know for sure that Alice was just trying to show off, so you decided to save her some face by giving her any permutation p%%ZSMJ25%% that is consistent with the array q%%ZSMJ26%% she was given."
+    ],
+    "input": [
+      "The first line contains a single integer n%%ZSMJ27%% (5≤n≤105%%ZSMJ28%%) — the size of permutation p%%ZSMJ29%%.",
+      "The i%%ZSMJ30%%-th of the next n−2%%ZSMJ31%% lines contains 3%%ZSMJ32%% integers qi,1%%ZSMJ33%%, qi,2%%ZSMJ34%%, qi,3%%ZSMJ35%% (1≤qi,j≤n%%ZSMJ36%%) — the elements of the i%%ZSMJ37%%-th triple of the rearranged (shuffled) array qi%%ZSMJ38%%, in random order. Remember, that the numbers within each triple can be rearranged and also the positions of the triples can be rearranged.",
+      "It is guaranteed that there is at least one permutation p%%ZSMJ39%% that is consistent with the input."
+    ],
+    "output": [
+      "Print n%%ZSMJ40%% distinct integers p1,p2,…,pn%%ZSMJ41%% (1≤pi≤n%%ZSMJ42%%) such that p%%ZSMJ43%% is consistent with array q%%ZSMJ44%%.",
+      "If there are multiple answers, print any."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n4 3 2\n2 3 5\n4 1 2",
+      "output": "1 4 2 3 5"
+    }
+  ]
+}

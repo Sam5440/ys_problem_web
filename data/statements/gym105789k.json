@@ -1,0 +1,53 @@
+{
+  "code": "GYM105789K",
+  "letter": "K",
+  "title": "K. Keep Fighting",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105789/problem/K",
+  "difficulty": "*1800",
+  "timeLimit": "0.5 s",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Bob is playing a card game where he must defeat a monster. Before the game starts, Bob's power is set to P%%ZSMJ0%%, the monster's health is set to H%%ZSMJ1%%, and Bob receives a deck of N%%ZSMJ2%% cards in his hands.",
+      "Each card in the deck belongs to one of the following types:",
+      "Multiply:  a card of this type  has a number X%%ZSMJ3%% written on it.  Playing it multiplies Bob's current power by X%%ZSMJ4%%.",
+      "Add:  a card of this type  also has a number Y%%ZSMJ5%% written on it.  Playing it increases Bob's current power by Y%%ZSMJ6%%.",
+      "Attack:  a card of this type  allows Bob to attack the monster.  Playing it reduces the monster's current health by Bob's current power.",
+      "The game is played in turns. In each turn, Bob must play exactly one card from his hand, after which the card is moved to a discard pile. If Bob has no cards left in his hand at the end of a turn, he retrieves all cards from the discard pile and can use them again in any order.",
+      "The monster is beaten as soon as its health reaches 0%%ZSMJ7%% or less. Is it possible for Bob to beat the monster? If so, what is the minimum number of turns required?"
+    ],
+    "input": [
+      "The first line contains three integers N%%ZSMJ8%% (1≤N≤50%%ZSMJ9%%), P%%ZSMJ10%% (0≤P≤109%%ZSMJ11%%) and H%%ZSMJ12%% (1≤H≤109%%ZSMJ13%%), indicating respectively the number of cards in the deck, Bob's initial power and the monster's initial health.",
+      "Each of the next N%%ZSMJ14%% lines describes a card. The content of the line depends on the type of the card, as follows:",
+      "Multiply:  the line contains the character '*' (asterisk) and an integer X%%ZSMJ15%% (1≤X≤109%%ZSMJ16%%),  representing the multiply factor provided by the card.",
+      "Add:  the line contains the character '+' (plus sign) and an integer Y%%ZSMJ17%% (1≤Y≤109%%ZSMJ18%%),  indicating the increment provided by the card.",
+      "Attack:  the line contains the character '!' (exclamation mark)."
+    ],
+    "output": [
+      "Output a single line with an integer indicating the minimum number of turns required to beat the monster, or the character '*' (asterisk) if it is impossible to beat the monster."
+    ],
+    "note": [
+      "Explanation of sample 1:",
+      "To beat the monster in 4%%ZSMJ19%% turns, Bob can play as follows:",
+      "Bob plays the + 5 card, so his power becomes 5.",
+      "Bob plays the * 2 card, so his power becomes 10.",
+      "Bob plays the ! card, so the monster's health becomes 10. Since now Bob has no cards in his hands, all three cards go back to him.",
+      "Bob plays the ! card, so the monster's health becomes 0, and the monster is beaten."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 0 20\n* 2\n!\n+ 5",
+      "output": "4"
+    },
+    {
+      "input": "1 0 1\n!",
+      "output": "*"
+    },
+    {
+      "input": "1 1 1\n+ 1",
+      "output": "*"
+    }
+  ]
+}

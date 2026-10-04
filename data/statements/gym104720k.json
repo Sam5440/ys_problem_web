@@ -1,0 +1,46 @@
+{
+  "code": "GYM104720K",
+  "letter": "K",
+  "title": "K. Donut Rings",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104720/problem/K",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Emily is a famous donut chef, known worldwide for her critically acclaimed donuts of varying sizes. Being at the forefront of donut development, Emily has come up with an idea for a new donut creation: nesting donuts within other donuts! Emily currently has n%%ZSMJ0%% donuts, the i%%ZSMJ1%%th of which can be described by two integers ri%%ZSMJ2%% and Ri%%ZSMJ3%%, denoting the inner and outer radius of the donut — the area between the circles of radius ri%%ZSMJ4%% and Ri%%ZSMJ5%% being the donut itself, and the area within the circle of radius ri%%ZSMJ6%% being the empty space making up the hole of the donut. A donut can be nested within another donut if it can fit within the hole of the other donut; in other words, if its outer radius is less than or equal to the inner radius of the other donut. Emily would like to take some of her donuts and nest them within each other to form a series of concentric donuts, which she is calling a \"donut ring\".",
+      "Some examples of valid and invalid donut rings:",
+      "![](https://espresso.codeforces.com/5b718482e0c1a8b1b8ac1ddc1f7a912a73caebf5.png)",
+      "![](https://espresso.codeforces.com/5854aead6e3a541426fcc017beb3ae87ef385f9f.png)",
+      "![](https://espresso.codeforces.com/5aab13207063a619b2c2f8caedf01e4cf190b86b.png)",
+      "Obviously, critics would be pleased by a donut ring that contains a large amount of donut, but too much empty space inside the ring detracts from the presentation as well! To this end, define the beauty of a donut ring as the area of the donuts in the ring, minus the area of the empty space contained in the ring.",
+      "Emily has high expectations for her creations, so she wants to create a donut ring with the greatest beauty. Unfortunately, she has specialized too much in donut making and neglected her studies in donut math, so she has turned to you for help! Can you help Emily find the maximum beauty of a donut ring that she can make? Output this value divided by π%%ZSMJ10%%."
+    ],
+    "input": [
+      "The first line of input contains a single integer n%%ZSMJ11%% (1≤n≤105)%%ZSMJ12%% — the number of donuts Emily has.",
+      "The i%%ZSMJ13%%th of the next n%%ZSMJ14%% lines contain two integers, ri%%ZSMJ15%% and Ri%%ZSMJ16%% (1≤ri<Ri≤109)%%ZSMJ17%%, denoting the inner and outer radius of the i%%ZSMJ18%%th donut."
+    ],
+    "output": [
+      "Output a single integer, the maximum beauty of a donut ring that Emily can make divided by π%%ZSMJ19%%."
+    ],
+    "note": [
+      "In the first example, the Emily can use all three donuts to create a donut ring, with donut area 15π%%ZSMJ20%% and enclosed empty space of π%%ZSMJ21%%, resulting in a beauty of 14π%%ZSMJ22%%.",
+      "In the second example, Emily only has one donut, so the only donut ring she can make is comprised of just that donut with donut area 4375π%%ZSMJ23%% and enclosed empty space of 5625π%%ZSMJ24%%, resulting in a beauty of −1250π%%ZSMJ25%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 2\n2 3\n3 4",
+      "output": "14"
+    },
+    {
+      "input": "1\n75 100",
+      "output": "-1250"
+    },
+    {
+      "input": "5\n9 10\n6 7\n3 7\n1 6\n15 16",
+      "output": "47"
+    }
+  ]
+}

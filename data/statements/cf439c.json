@@ -1,0 +1,39 @@
+{
+  "code": "CF439C",
+  "letter": "C",
+  "title": "C. Devu and Partitioning of the Array",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/439/C",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Devu being a small kid, likes to play a lot, but he only likes to play with arrays. While playing he came up with an interesting question which he could not solve, can you please solve it for him?",
+      "Given an array consisting of distinct integers. Is it possible to partition the whole array into k disjoint non-empty parts such that p of the parts have even sum (each of them must have even sum) and remaining k - p have odd sum? (note that parts need not to be continuous).",
+      "If it is possible to partition the array, also give any possible way of valid partitioning."
+    ],
+    "input": [
+      "The first line will contain three space separated integers n, k, p (1 ≤ k ≤ n ≤ 105; 0 ≤ p ≤ k). The next line will contain n space-separated distinct integers representing the content of array a: a1, a2, ..., an (1 ≤ ai ≤ 109)."
+    ],
+    "output": [
+      "In the first line print \"YES\" (without the quotes) if it is possible to partition the array in the required way. Otherwise print \"NO\" (without the quotes).",
+      "If the required partition exists, print k lines after the first line. The ith of them should contain the content of the ith part. Print the content of the part in the line in the following way: firstly print the number of elements of the part, then print all the elements of the part in arbitrary order. There must be exactly p parts with even sum, each of the remaining k - p parts must have odd sum.",
+      "As there can be multiple partitions, you are allowed to print any valid partition."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 5 3\n2 6 10 5 9",
+      "output": "YES\n1 9\n1 5\n1 10\n1 6\n1 2"
+    },
+    {
+      "input": "5 5 3\n7 14 2 9 5",
+      "output": "NO"
+    },
+    {
+      "input": "5 3 1\n1 2 3 7 5",
+      "output": "YES\n3 5 1 3\n1 7\n1 2"
+    }
+  ]
+}

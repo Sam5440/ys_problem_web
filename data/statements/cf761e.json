@@ -1,0 +1,47 @@
+{
+  "code": "CF761E",
+  "letter": "E",
+  "title": "E. Dasha and Puzzle",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/761/E",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Dasha decided to have a rest after solving the problem. She had been ready to start her favourite activity — origami, but remembered the puzzle that she could not solve.",
+      "![](https://espresso.codeforces.com/993f9826045f00eab45061e07146e461060398df.png)",
+      "The tree is a non-oriented connected graph without cycles. In particular, there always are n - 1 edges in a tree with n vertices.",
+      "The puzzle is to position the vertices at the points of the Cartesian plane with integral coordinates, so that the segments between the vertices connected by edges are parallel to the coordinate axes. Also, the intersection of segments is allowed only at their ends. Distinct vertices should be placed at different points.",
+      "Help Dasha to find any suitable way to position the tree vertices on the plane.",
+      "It is guaranteed that if it is possible to position the tree vertices on the plane without violating the condition which is given above, then you can do it by using points with integral coordinates which don't exceed 1018 in absolute value."
+    ],
+    "input": [
+      "The first line contains single integer n (1 ≤ n ≤ 30) — the number of vertices in the tree.",
+      "Each of next n - 1 lines contains two integers ui, vi (1 ≤ ui, vi ≤ n) that mean that the i-th edge of the tree connects vertices ui and vi.",
+      "It is guaranteed that the described graph is a tree."
+    ],
+    "output": [
+      "If the puzzle doesn't have a solution then in the only line print \"NO\".",
+      "Otherwise, the first line should contain \"YES\". The next n lines should contain the pair of integers xi, yi (|xi|, |yi| ≤ 1018) — the coordinates of the point which corresponds to the i-th vertex of the tree.",
+      "If there are several solutions, print any of them."
+    ],
+    "note": [
+      "In the first sample one of the possible positions of tree is: ![](https://espresso.codeforces.com/e6990dc13943fd5dfda8c2bff6b56c498af05f58.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n1 2\n1 3\n2 4\n2 5\n3 6\n3 7",
+      "output": "YES\n0 0\n1 0\n0 1\n2 0\n1 -1\n-1 1\n0 2"
+    },
+    {
+      "input": "6\n1 2\n2 3\n2 4\n2 5\n2 6",
+      "output": "NO"
+    },
+    {
+      "input": "4\n1 2\n2 3\n3 4",
+      "output": "YES\n3 3\n4 3\n5 3\n6 3"
+    }
+  ]
+}

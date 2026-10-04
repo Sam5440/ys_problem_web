@@ -1,0 +1,46 @@
+{
+  "code": "GYM105633K",
+  "letter": "K",
+  "title": "K. Scheduling Two Meetings",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105633/problem/K",
+  "difficulty": "*2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are the chief judge of the International Collegiate Quiz Contest (ICQC) this year. You want to hold judge meetings twice for preparing the problem set of the contest. You proposed candidate schedules for the meetings, and all the judges answered for each of the time slots whether they would attend the meeting on-site or remotely via a video conference tool.",
+      "You have to choose a pair of two distinct time slots, so that every judge attends at least one of the two meetings on-site. When there are multiple such pairs, you'd like to choose one with the largest number of judges attending both meetings on-site. If multiple pairs are still equally desirable with these criteria, one with the earlier first meeting is preferred. If there still remain multiple pairs with the same time slot for the first meeting, the one with the earliest second meeting should be chosen."
+    ],
+    "input": [
+      "The input consists of a single test case of the following format.",
+      "Two integers n%%ZSMJ9%% and m%%ZSMJ10%% are given in the first line. The first integer n%%ZSMJ11%% (2≤n≤2×105%%ZSMJ12%%) is the number of candidate time slots. Here, the candidate time slots are numbered 1%%ZSMJ13%% through n%%ZSMJ14%%, and smaller numbers mean earlier time slots. The second integer m%%ZSMJ15%% (2≤m≤20%%ZSMJ16%%) is the number of judges.",
+      "In the following n%%ZSMJ17%% lines, ai,j%%ZSMJ18%% is either a character Y indicating that the j%%ZSMJ19%%-th judge attends a meeting at the i%%ZSMJ20%%-th candidate time slot on-site, or a character N indicating remote attendance."
+    ],
+    "output": [
+      "Output a line containing the two time slot numbers of the most preferable choice, separated by a space, with the earlier time slot first. If there are no pairs of time slots satisfying the condition, output No."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 3\nNNY\nYYN\nYNY\nNYY",
+      "output": "2 3"
+    },
+    {
+      "input": "3 6\nNNNYYY\nYYNYYN\nYYYNNN",
+      "output": "1 3"
+    },
+    {
+      "input": "6 5\nNNNNN\nYNNNY\nYYNNN\nYYNNN\nNYYNY\nNNYYY",
+      "output": "3 6"
+    },
+    {
+      "input": "3 3\nYNN\nNYN\nNNY",
+      "output": "No"
+    },
+    {
+      "input": "4 4\nNYNN\nYNYY\nYNYN\nNNYY",
+      "output": "1 2"
+    }
+  ]
+}

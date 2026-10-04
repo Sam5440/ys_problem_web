@@ -1,0 +1,49 @@
+{
+  "code": "GYM106523H",
+  "letter": "H",
+  "title": "H. Hours in Class",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106523/problem/H",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "AnaLu spent the whole day at LINF studying Number Theory, so she decided to put her new knowledge into practice! Because of that, when she got home, she went straight to her room to solve problems. Then, after many ACs, she ended up falling asleep. And she had a dream...",
+      "In this dream, AnaLu was once again a 6th-grade student, and the class of the day was about multiplication, exponentiation, and divisibility. The teacher wrote the following definitions on the board:",
+      "Consider positive integers A%%ZSMJ0%% and X%%ZSMJ1%%.",
+      "A⋅X%%ZSMJ2%%: A%%ZSMJ3%% multiplied by X%%ZSMJ4%%.",
+      "AX%%ZSMJ5%%: A%%ZSMJ6%% raised to the power X%%ZSMJ7%% (which is the same as doing A⋅A⋅A⋅…⋅A%%ZSMJ8%%, with X%%ZSMJ9%% factors equal to A%%ZSMJ10%%).",
+      "A|X%%ZSMJ11%%: means that A%%ZSMJ12%% divides X%%ZSMJ13%%, that is, there exists some positive integer B%%ZSMJ14%% such that A⋅B=X%%ZSMJ15%%.",
+      "But, not satisfied, the teacher decided to challenge her students. She asked each one to keep in their notebook the value of the number A%%ZSMJ16%%, which initially is equal to 1%%ZSMJ17%%. The teacher will make Q%%ZSMJ18%% queries about this number A%%ZSMJ19%%, in which a number X%%ZSMJ20%% will be written on the board and all students must either update the value of A%%ZSMJ21%% accordingly or answer a question, depending on the type of the query. There are three types:",
+      "All students must update the value of A%%ZSMJ22%% to A=A⋅X%%ZSMJ23%% in their notebook.",
+      "All students must update the value of A%%ZSMJ24%% to A=AX%%ZSMJ25%% in their notebook.",
+      "All students must answer (in English, with \"Yes\" or \"No\"): X|A%%ZSMJ26%%?",
+      "AnaLu then realized that she was in a dream, since, depending on the teacher's queries, the number A%%ZSMJ27%% could become so large that it would be impossible to write it down even if all the notebooks in the universe were put together. Even so, she realized that it would still be possible to answer the teacher's divisibility queries (type 3%%ZSMJ28%%) correctly with the help of a computer.",
+      "But AnaLu did not bring any computer into the dream, so you must help her answer the queries!"
+    ],
+    "input": [
+      "The first line contains an integer Q%%ZSMJ29%% (1≤Q≤105)%%ZSMJ30%%, the number of queries.",
+      "The next Q%%ZSMJ31%% lines contain two integers t%%ZSMJ32%% (1≤t≤3)%%ZSMJ33%% and X%%ZSMJ34%% (2≤X≤105)%%ZSMJ35%%, the type of the query and its parameter. It is guaranteed that there is at least one query of type 3."
+    ],
+    "output": [
+      "For each query of type 3%%ZSMJ36%%, print a line with the answer to that query: \"Yes\" if X%%ZSMJ37%% is a divisor of A%%ZSMJ38%%, or \"No\" otherwise."
+    ],
+    "note": [
+      "Explanation of the example:",
+      "Initially, A=1%%ZSMJ39%%.",
+      "After the first query, A=1100000=1%%ZSMJ40%%.",
+      "After the second query, A=1⋅3=3%%ZSMJ41%%.",
+      "After the third query, A=33=27%%ZSMJ42%%.",
+      "After the fourth query, A=27⋅2=54%%ZSMJ43%%.",
+      "For the fifth query, 12%%ZSMJ44%% does not divide A%%ZSMJ45%%, so the answer to the query is \"No\".",
+      "For the sixth query, 18%%ZSMJ46%% divides A%%ZSMJ47%%, so the answer to the query is \"Yes\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n2 100000\n1 3\n2 3\n1 2\n3 12\n3 18",
+      "output": "No\nYes"
+    }
+  ]
+}

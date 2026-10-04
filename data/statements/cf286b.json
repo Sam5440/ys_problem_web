@@ -1,0 +1,46 @@
+{
+  "code": "CF286B",
+  "letter": "B",
+  "title": "B. Shifting",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/286/B",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "John Doe has found the beautiful permutation formula.",
+      "Let's take permutation p = p1, p2, ..., pn. Let's define transformation f of this permutation:",
+      "![](https://espresso.codeforces.com/0a705f2454ef08a9dae1484aa12af1da33f1d1d2.png)",
+      "where k (k > 1) is an integer, the transformation parameter, r is such maximum integer that rk ≤ n. If rk = n, then elements prk + 1, prk + 2 and so on are omitted. In other words, the described transformation of permutation p cyclically shifts to the left each consecutive block of length k and the last block with the length equal to the remainder after dividing n by k.",
+      "John Doe thinks that permutation f(f( ... f(p = [1, 2, ..., n], 2) ... , n - 1), n) is beautiful. Unfortunately, he cannot quickly find the beautiful permutation he's interested in. That's why he asked you to help him.",
+      "Your task is to find a beautiful permutation for the given n. For clarifications, see the notes to the third sample."
+    ],
+    "input": [
+      "A single line contains integer n (2 ≤ n ≤ 106)."
+    ],
+    "output": [
+      "Print n distinct space-separated integers from 1 to n — a beautiful permutation of size n."
+    ],
+    "note": [
+      "A note to the third test sample:",
+      "f([1, 2, 3, 4], 2) = [2, 1, 4, 3]",
+      "f([2, 1, 4, 3], 3) = [1, 4, 2, 3]",
+      "f([1, 4, 2, 3], 4) = [4, 2, 3, 1]"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2",
+      "output": "2 1"
+    },
+    {
+      "input": "3",
+      "output": "1 3 2"
+    },
+    {
+      "input": "4",
+      "output": "4 2 3 1"
+    }
+  ]
+}

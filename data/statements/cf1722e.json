@@ -1,0 +1,40 @@
+{
+  "code": "CF1722E",
+  "letter": "E",
+  "title": "E. Counting Rectangles",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1722/E",
+  "difficulty": "1600",
+  "timeLimit": "6 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You have n%%ZSMJ0%% rectangles, the i%%ZSMJ1%%-th rectangle has height hi%%ZSMJ2%% and width wi%%ZSMJ3%%.",
+      "You are asked q%%ZSMJ4%% queries of the form hs ws hb wb%%ZSMJ5%%.",
+      "For each query output, the total area of rectangles you own that can fit a rectangle of height hs%%ZSMJ6%% and width ws%%ZSMJ7%% while also fitting in a rectangle of height hb%%ZSMJ8%% and width wb%%ZSMJ9%%. In other words, print ∑hi⋅wi%%ZSMJ10%% for i%%ZSMJ11%% such that hs<hi<hb%%ZSMJ12%% and ws<wi<wb%%ZSMJ13%%.",
+      "Please note, that if two rectangles have the same height or the same width, then they cannot fit inside each other. Also note that you cannot rotate rectangles.",
+      "Please note that the answer for some test cases won't fit into 32-bit integer type, so you should use at least 64-bit integer type in your programming language (like long long for C++)."
+    ],
+    "input": [
+      "The first line of the input contains an integer t%%ZSMJ14%% (1≤t≤100%%ZSMJ15%%) — the number of test cases.",
+      "The first line of each test case two integers n,q%%ZSMJ16%% (1≤n≤105%%ZSMJ17%%; 1≤q≤105%%ZSMJ18%%) — the number of rectangles you own and the number of queries.",
+      "Then n%%ZSMJ19%% lines follow, each containing two integers hi,wi%%ZSMJ20%% (1≤hi,wi≤1000%%ZSMJ21%%) — the height and width of the i%%ZSMJ22%%-th rectangle.",
+      "Then q%%ZSMJ23%% lines follow, each containing four integers hs,ws,hb,wb%%ZSMJ24%% (1≤hs<hb, ws<wb≤1000%%ZSMJ25%%) — the description of each query.",
+      "The sum of q%%ZSMJ26%% over all test cases does not exceed 105%%ZSMJ27%%, and the sum of n%%ZSMJ28%% over all test cases does not exceed 105%%ZSMJ29%%."
+    ],
+    "output": [
+      "For each test case, output q%%ZSMJ30%% lines, the i%%ZSMJ31%%-th line containing the answer to the i%%ZSMJ32%%-th query."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/aa51b7dfff92458931d37d604395e88d39f0df91.png)",
+      "In the first test case, there is only one query. We need to find the sum of areas of all rectangles that can fit a 1×1%%ZSMJ33%% rectangle inside of it and fit into a 3×4%%ZSMJ34%% rectangle.",
+      "Only the 2×3%%ZSMJ35%% rectangle works, because 1<2%%ZSMJ36%% (comparing heights) and 1<3%%ZSMJ37%% (comparing widths), so the 1×1%%ZSMJ38%% rectangle fits inside, and 2<3%%ZSMJ39%% (comparing heights) and 3<4%%ZSMJ40%% (comparing widths), so it fits inside the 3×4%%ZSMJ41%% rectangle. The 3×2%%ZSMJ42%% rectangle is too tall to fit in a 3×4%%ZSMJ43%% rectangle. The total area is 2⋅3=6%%ZSMJ44%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2 1\n2 3\n3 2\n1 1 3 4\n5 5\n1 1\n2 2\n3 3\n4 4\n5 5\n3 3 6 6\n2 1 4 5\n1 1 2 10\n1 1 100 100\n1 1 3 3\n3 1\n999 999\n999 999\n999 998\n1 1 1000 1000",
+      "output": "6\n41\n9\n0\n54\n4\n2993004"
+    }
+  ]
+}

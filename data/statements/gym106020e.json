@@ -1,0 +1,37 @@
+{
+  "code": "GYM106020E",
+  "letter": "E",
+  "title": "E. Permutation Game",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106020/problem/E",
+  "difficulty": "*1600",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Given a permutation$$$^{[3]}$$$ $$$p$$$ of length $$$n$$$. Obada and the Harraaak are playing a game with this permutation with an initial score of $$$0$$$.",
+      "The players must follow a set of rules described as follows:",
+      "On each turn, a player must choose an integer $$$x$$$ from the permutation that has not been selected before. The player either adds or subtracts $$$x$$$ from the score.",
+      "During the first turn, a player can select any integer.",
+      "For all turns except the first, if $$$m$$$ is the integer selected in the previous turn and $$$p_m$$$ is not chosen yet, then the player must select $$$p_m$$$ in this turn. Otherwise, they can pick any integer that has not been selected yet.",
+      "The game terminates when all integers in the permutation have been selected.",
+      "The players alternate turns, with Obada starting first. Obada aims to maximize the score of the game, while the Harraaak aims to minimize it.",
+      "Your task is to find the final score of the game when both players play optimally."
+    ],
+    "input": [
+      "The first line of the input contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "The first line of each test case contains a single integer $$$n$$$ ($$$1 \\le n \\le 10^6$$$) — the length of the permutation.",
+      "The second line of each test case consists of $$$n$$$ space-separated integers $$$p_1, p_2, \\dots, p_n$$$ ($$$1 \\le p_i \\le n$$$).",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$10^6$$$."
+    ],
+    "output": [
+      "Output $$$t$$$ lines, the $$$i$$$-th of which contains a single integer — the final score of the game for the $$$i$$$-th test case when both players play optimally."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n3\n2 3 1\n1\n1\n4\n1 2 3 4",
+      "output": "4\n1\n2"
+    }
+  ]
+}

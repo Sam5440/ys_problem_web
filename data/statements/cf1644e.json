@@ -1,0 +1,48 @@
+{
+  "code": "CF1644E",
+  "letter": "E",
+  "title": "E. Expand the Path",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1644/E",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Consider a grid of size n×n%%ZSMJ0%%. The rows are numbered top to bottom from 1%%ZSMJ1%% to n%%ZSMJ2%%, the columns are numbered left to right from 1%%ZSMJ3%% to n%%ZSMJ4%%.",
+      "The robot is positioned in a cell (1,1)%%ZSMJ5%%. It can perform two types of moves:",
+      "D — move one cell down;",
+      "R — move one cell right.",
+      "The robot is not allowed to move outside the grid.",
+      "You are given a sequence of moves s%%ZSMJ6%% — the initial path of the robot. This path doesn't lead the robot outside the grid.",
+      "You are allowed to perform an arbitrary number of modifications to it (possibly, zero). With one modification, you can duplicate one move in the sequence. That is, replace a single occurrence of D with DD or a single occurrence of R with RR.",
+      "Count the number of cells such that there exists at least one sequence of modifications that the robot visits this cell on the modified path and doesn't move outside the grid."
+    ],
+    "input": [
+      "The first line contains a single integer t%%ZSMJ7%% (1≤t≤104%%ZSMJ8%%) — the number of testcases.",
+      "The first line of each testcase contains the single integer n%%ZSMJ9%% (2≤n≤108%%ZSMJ10%%) — the number of rows and columns in the grid.",
+      "The second line of each testcase contains a non-empty string s%%ZSMJ11%%, consisting only of characters D and R, — the initial path of the robot. This path doesn't lead the robot outside the grid.",
+      "The total length of strings s%%ZSMJ12%% over all testcases doesn't exceed 2⋅105%%ZSMJ13%%."
+    ],
+    "output": [
+      "For each testcase, print a single integer — the number of cells such that there exists at least one sequence of modifications that the robot visits this cell on the modified path and doesn't move outside the grid."
+    ],
+    "note": [
+      "In the first testcase, it's enough to consider the following modified paths:",
+      "RD →%%ZSMJ14%% RRD →%%ZSMJ15%% RRRD →%%ZSMJ16%% RRRDD →%%ZSMJ17%% RRRDDD — this path visits cells (1,1)%%ZSMJ18%%, (1,2)%%ZSMJ19%%, (1,3)%%ZSMJ20%%, (1,4)%%ZSMJ21%%, (2,4)%%ZSMJ22%%, (3,4)%%ZSMJ23%% and (4,4)%%ZSMJ24%%;",
+      "RD →%%ZSMJ25%% RRD →%%ZSMJ26%% RRDD →%%ZSMJ27%% RRDDD — this path visits cells (1,1)%%ZSMJ28%%, (1,2)%%ZSMJ29%%, (1,3)%%ZSMJ30%%, (2,3)%%ZSMJ31%%, (3,3)%%ZSMJ32%% and (4,3)%%ZSMJ33%%;",
+      "RD →%%ZSMJ34%% RDD →%%ZSMJ35%% RDDD — this path visits cells (1,1)%%ZSMJ36%%, (1,2)%%ZSMJ37%%, (2,2)%%ZSMJ38%%, (3,2)%%ZSMJ39%% and (4,2)%%ZSMJ40%%.",
+      "Thus, the cells that are visited on at least one modified path are: (1,1)%%ZSMJ41%%, (1,2)%%ZSMJ42%%, (1,3)%%ZSMJ43%%, (1,4)%%ZSMJ44%%, (2,2)%%ZSMJ45%%, (2,3)%%ZSMJ46%%, (2,4)%%ZSMJ47%%, (3,2)%%ZSMJ48%%, (3,3)%%ZSMJ49%%, (3,4)%%ZSMJ50%%, (4,2)%%ZSMJ51%%, (4,3)%%ZSMJ52%% and (4,4)%%ZSMJ53%%.",
+      "In the second testcase, there is no way to modify the sequence without moving the robot outside the grid. So the only visited cells are the ones that are visited on the path DRDRDRDR.",
+      "In the third testcase, the cells that are visited on at least one modified path are: (1,1)%%ZSMJ54%%, (2,1)%%ZSMJ55%% and (3,1)%%ZSMJ56%%.",
+      "Here are the cells for all testcases:",
+      "![](https://espresso.codeforces.com/c8171b800ca1afc25bdb969142d73dc8239f2f0e.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4\nRD\n5\nDRDRDRDR\n3\nD",
+      "output": "13\n9\n3"
+    }
+  ]
+}

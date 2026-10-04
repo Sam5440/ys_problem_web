@@ -1,0 +1,51 @@
+{
+  "code": "CF2195E",
+  "letter": "E",
+  "title": "E. Idiot First Search",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/2195/E",
+  "difficulty": "*1500",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "There is a binary tree of n+1%%ZSMJ0%% vertices (n%%ZSMJ1%% is odd), with vertices labeled 0,1,…,n%%ZSMJ2%%. At most one letter can be written on each vertex of the tree, and all vertices initially have nothing written on them. The root of the tree is vertex 0%%ZSMJ3%%.",
+      "In the tree, vertex 0%%ZSMJ4%% is the parent of vertex 1%%ZSMJ5%%, while all other vertices have either 2%%ZSMJ6%% children or 0%%ZSMJ7%% children.",
+      "Bob is lost in one vertex of the tree and wishes to escape the tree by reaching vertex 0%%ZSMJ8%%. This is very easy for most people with common sense. However, since Bob is an idiot, he created a new way of traversing the tree; introducing the \"Idiot First Search\".",
+      "When Bob is on vertex v%%ZSMJ9%% (1≤v≤n%%ZSMJ10%%), Bob's movement is determined as follows:",
+      "If vertex v%%ZSMJ11%% is a leaf, Bob always moves to the parent of v%%ZSMJ12%%; otherwise, check the next few conditions.",
+      "If nothing is written on vertex v%%ZSMJ13%%, Bob writes 'L' on vertex v%%ZSMJ14%% and moves to the left child of v%%ZSMJ15%%;",
+      "If 'L' is written on vertex v%%ZSMJ16%%, Bob overwrites it to 'R' and moves to the right child of v%%ZSMJ17%%;",
+      "If 'R' is written on vertex v%%ZSMJ18%%, Bob erases it and moves to the parent of v%%ZSMJ19%%.",
+      "It takes exactly 1%%ZSMJ20%% second for Bob to move to an adjacent vertex, so Bob will take exactly x%%ZSMJ21%% seconds to perform x%%ZSMJ22%% moves.",
+      "It has been shown that regardless of which vertex Bob starts on, Bob can reach vertex 0%%ZSMJ23%% in a finite (though possibly inexplicably large) amount of time. We don't know who proved it; surely it can't be Bob, but it is definitely proven.",
+      "For each vertex k=1,2,…,n%%ZSMJ24%%, please determine the total time it takes to reach vertex 0%%ZSMJ25%% if Bob started on vertex k%%ZSMJ26%%, in seconds. As the values may be huge, you are only asked to compute them modulo 109+7%%ZSMJ27%%."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ28%% (1≤t≤104%%ZSMJ29%%). The description of the test cases follows.",
+      "The first line of each test case contains a single integer n%%ZSMJ30%% (1≤n≤300001%%ZSMJ31%%, n%%ZSMJ32%% is odd).",
+      "Each of the next n%%ZSMJ33%% lines contains two integers li%%ZSMJ34%% and ri%%ZSMJ35%% denoting the children of vertex i%%ZSMJ36%% (0≤li,ri≤n%%ZSMJ37%%).",
+      "For each vertex, li=ri=0%%ZSMJ38%% is given if the vertex has no children. Otherwise, li%%ZSMJ39%% and ri%%ZSMJ40%% are the left and right children of vertex i%%ZSMJ41%%.",
+      "It is guaranteed that the input defines a valid binary tree satisfying the conditions given in the statement.",
+      "It is guaranteed that the sum of n%%ZSMJ42%% over all test cases does not exceed 300001%%ZSMJ43%%."
+    ],
+    "output": [
+      "For each test case, output n%%ZSMJ44%% integers τ1,τ2,…,τn%%ZSMJ45%% separated by spaces.",
+      "Here, τk%%ZSMJ46%% denotes the total time it takes to reach vertex 0%%ZSMJ47%% if Bob started on vertex k%%ZSMJ48%%, modulo 109+7%%ZSMJ49%%."
+    ],
+    "note": [
+      "On the first test case, there are only two vertices, vertex 0%%ZSMJ50%% and vertex 1%%ZSMJ51%%. It takes only 1%%ZSMJ52%% second for Bob to reach vertex 0%%ZSMJ53%% from vertex 1%%ZSMJ54%%.",
+      "On the second test case, the tree is given as follows.",
+      "![](https://espresso.codeforces.com/dfccc9cd793030983f22e97a4aefba2172a64dd9.png)",
+      "It takes 14%%ZSMJ55%% seconds for Bob to reach vertex 0%%ZSMJ56%% from vertex 3%%ZSMJ57%%. The moves are as follows:",
+      "3L→4X→3R→5X→3X→1L→2X→1R→3L→4X→3R→5X→3X→1X→0%%ZSMJ58%%",
+      "Here, the letters above the arrows denote the letter on the vertex before moving to the adjacent vertex, where X%%ZSMJ59%% denotes nothing written."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1\n0 0\n5\n2 3\n0 0\n4 5\n0 0\n0 0\n7\n2 3\n4 5\n0 0\n6 7\n0 0\n0 0\n0 0",
+      "output": "1\n9 10 14 15 15\n13 22 14 27 23 28 28"
+    }
+  ]
+}

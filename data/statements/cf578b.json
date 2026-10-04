@@ -1,0 +1,37 @@
+{
+  "code": "CF578B",
+  "letter": "B",
+  "title": "B. \"Or\" Game",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/578/B",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given n numbers a1, a2, ..., an. You can perform at most k operations. For each operation you can multiply one of the numbers by x. We want to make ![](https://espresso.codeforces.com/1faa5be276f646dfb07d2a01bf67449ad72c0ef7.png) as large as possible, where ![](https://espresso.codeforces.com/ddbf6923ea3f08cb83b08ed026f40a80751dff3f.png) denotes the bitwise OR.",
+      "Find the maximum possible value of ![](https://espresso.codeforces.com/1faa5be276f646dfb07d2a01bf67449ad72c0ef7.png) after performing at most k operations optimally."
+    ],
+    "input": [
+      "The first line contains three integers n, k and x (1 ≤ n ≤ 200 000, 1 ≤ k ≤ 10, 2 ≤ x ≤ 8).",
+      "The second line contains n integers a1, a2, ..., an (0 ≤ ai ≤ 109)."
+    ],
+    "output": [
+      "Output the maximum value of a bitwise OR of sequence elements after performing operations."
+    ],
+    "note": [
+      "For the first sample, any possible choice of doing one operation will result the same three numbers 1, 1, 2 so the result is ![](https://espresso.codeforces.com/1ee73b671ed4bc53f2f96ed1a85fd98388e1712b.png).",
+      "For the second sample if we multiply 8 by 3 two times we'll get 72. In this case the numbers will become 1, 2, 4, 72 so the OR value will be 79 and is the largest possible result."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1 2\n1 1 1",
+      "output": "3"
+    },
+    {
+      "input": "4 2 3\n1 2 4 8",
+      "output": "79"
+    }
+  ]
+}

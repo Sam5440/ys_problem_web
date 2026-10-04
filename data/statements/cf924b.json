@@ -1,0 +1,51 @@
+{
+  "code": "CF924B",
+  "letter": "B",
+  "title": "B. Three-level Laser",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/924/B",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "An atom of element X can exist in n distinct states with energies E1 < E2 < ... < En. Arkady wants to build a laser on this element, using a three-level scheme. Here is a simplified description of the scheme.",
+      "Three distinct states i, j and k are selected, where i < j < k. After that the following process happens:",
+      "initially the atom is in the state i,",
+      "we spend Ek - Ei energy to put the atom in the state k,",
+      "the atom emits a photon with useful energy Ek - Ej and changes its state to the state j,",
+      "the atom spontaneously changes its state to the state i, losing energy Ej - Ei,",
+      "the process repeats from step 1.",
+      "Let's define the energy conversion efficiency as ![](https://espresso.codeforces.com/b1353c834ae20a0534a47916c2f0fbe98d7f4b7c.png), i. e. the ration between the useful energy of the photon and spent energy.",
+      "Due to some limitations, Arkady can only choose such three states that Ek - Ei ≤ U.",
+      "Help Arkady to find such the maximum possible energy conversion efficiency within the above constraints."
+    ],
+    "input": [
+      "The first line contains two integers n and U (3 ≤ n ≤ 105, 1 ≤ U ≤ 109) — the number of states and the maximum possible difference between Ek and Ei.",
+      "The second line contains a sequence of integers E1, E2, ..., En (1 ≤ E1 < E2... < En ≤ 109). It is guaranteed that all Ei are given in increasing order."
+    ],
+    "output": [
+      "If it is not possible to choose three states that satisfy all constraints, print -1.",
+      "Otherwise, print one real number η — the maximum possible energy conversion efficiency. Your answer is considered correct its absolute or relative error does not exceed 10 - 9.",
+      "Formally, let your answer be a, and the jury's answer be b. Your answer is considered correct if ![](https://espresso.codeforces.com/9507f804b12e83894b76ffa48fe1dcd911259459.png)."
+    ],
+    "note": [
+      "In the first example choose states 1, 2 and 3, so that the energy conversion efficiency becomes equal to ![](https://espresso.codeforces.com/147ae7a830722917b0aa37d064df8eb74cfefb97.png).",
+      "In the second example choose states 4, 5 and 9, so that the energy conversion efficiency becomes equal to ![](https://espresso.codeforces.com/f68f268de4eb2242167e6ec64e6b8aa60a5703ae.png)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n1 3 5 7",
+      "output": "0.5"
+    },
+    {
+      "input": "10 8\n10 13 15 16 17 19 20 22 24 25",
+      "output": "0.875"
+    },
+    {
+      "input": "3 1\n2 5 10",
+      "output": "-1"
+    }
+  ]
+}

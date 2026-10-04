@@ -1,0 +1,69 @@
+{
+  "code": "CF1280A",
+  "letter": "A",
+  "title": "A. Cut and Paste",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1280/A",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "We start with a string s%%ZSMJ0%% consisting only of the digits 1%%ZSMJ1%%, 2%%ZSMJ2%%, or 3%%ZSMJ3%%. The length of s%%ZSMJ4%% is denoted by |s|%%ZSMJ5%%. For each i%%ZSMJ6%% from 1%%ZSMJ7%% to |s|%%ZSMJ8%%, the i%%ZSMJ9%%-th character of s%%ZSMJ10%% is denoted by si%%ZSMJ11%%.",
+      "There is one cursor. The cursor's location ℓ%%ZSMJ12%% is denoted by an integer in {0,…,|s|}%%ZSMJ13%%, with the following meaning:",
+      "If ℓ=0%%ZSMJ14%%, then the cursor is located before the first character of s%%ZSMJ15%%.",
+      "If ℓ=|s|%%ZSMJ16%%, then the cursor is located right after the last character of s%%ZSMJ17%%.",
+      "If 0<ℓ<|s|%%ZSMJ18%%, then the cursor is located between sℓ%%ZSMJ19%% and sℓ+1%%ZSMJ20%%.",
+      "We denote by sleft%%ZSMJ21%% the string to the left of the cursor and sright%%ZSMJ22%% the string to the right of the cursor.",
+      "We also have a string c%%ZSMJ23%%, which we call our clipboard, which starts out as empty. There are three types of actions:",
+      "The Move action. Move the cursor one step to the right. This increments ℓ%%ZSMJ24%% once.",
+      "The Cut action. Set c←sright%%ZSMJ25%%, then set s←sleft%%ZSMJ26%%.",
+      "The Paste action. Append the value of c%%ZSMJ27%% to the end of the string s%%ZSMJ28%%. Note that this doesn't modify c%%ZSMJ29%%.",
+      "The cursor initially starts at ℓ=0%%ZSMJ30%%. Then, we perform the following procedure:",
+      "Perform the Move action once.",
+      "Perform the Cut action once.",
+      "Perform the Paste action sℓ%%ZSMJ31%% times.",
+      "If ℓ=x%%ZSMJ32%%, stop. Otherwise, return to step 1.",
+      "You're given the initial string s%%ZSMJ33%% and the integer x%%ZSMJ34%%. What is the length of s%%ZSMJ35%% when the procedure stops? Since this value may be very large, only find it modulo 109+7%%ZSMJ36%%.",
+      "It is guaranteed that ℓ≤|s|%%ZSMJ37%% at any time."
+    ],
+    "input": [
+      "The first line of input contains a single integer t%%ZSMJ38%% (1≤t≤1000%%ZSMJ39%%) denoting the number of test cases. The next lines contain descriptions of the test cases.",
+      "The first line of each test case contains a single integer x%%ZSMJ40%% (1≤x≤106%%ZSMJ41%%). The second line of each test case consists of the initial string s%%ZSMJ42%% (1≤|s|≤500%%ZSMJ43%%). It is guaranteed, that s%%ZSMJ44%% consists of the characters \"1\", \"2\", \"3\".",
+      "It is guaranteed that the sum of x%%ZSMJ45%% in a single file is at most 106%%ZSMJ46%%. It is guaranteed that in each test case before the procedure will stop it will be true that ℓ≤|s|%%ZSMJ47%% at any time."
+    ],
+    "output": [
+      "For each test case, output a single line containing a single integer denoting the answer for that test case modulo 109+7%%ZSMJ48%%."
+    ],
+    "note": [
+      "Let's illustrate what happens with the first test case. Initially, we have s=%%ZSMJ49%% 231. Initially, ℓ=0%%ZSMJ50%% and c=ε%%ZSMJ51%% (the empty string). The following things happen if we follow the procedure above:",
+      "Step 1, Move once: we get ℓ=1%%ZSMJ52%%.",
+      "Step 2, Cut once: we get s=%%ZSMJ53%% 2 and c=%%ZSMJ54%% 31.",
+      "Step 3, Paste sℓ=%%ZSMJ55%% 2 times: we get s=%%ZSMJ56%% 23131.",
+      "Step 4: ℓ=1≠x=5%%ZSMJ57%%, so we return to step 1.",
+      "Step 1, Move once: we get ℓ=2%%ZSMJ58%%.",
+      "Step 2, Cut once: we get s=%%ZSMJ59%% 23 and c=%%ZSMJ60%% 131.",
+      "Step 3, Paste sℓ=%%ZSMJ61%% 3 times: we get s=%%ZSMJ62%% 23131131131.",
+      "Step 4: ℓ=2≠x=5%%ZSMJ63%%, so we return to step 1.",
+      "Step 1, Move once: we get ℓ=3%%ZSMJ64%%.",
+      "Step 2, Cut once: we get s=%%ZSMJ65%% 231 and c=%%ZSMJ66%% 31131131.",
+      "Step 3, Paste sℓ=%%ZSMJ67%% 1 time: we get s=%%ZSMJ68%% 23131131131.",
+      "Step 4: ℓ=3≠x=5%%ZSMJ69%%, so we return to step 1.",
+      "Step 1, Move once: we get ℓ=4%%ZSMJ70%%.",
+      "Step 2, Cut once: we get s=%%ZSMJ71%% 2313 and c=%%ZSMJ72%% 1131131.",
+      "Step 3, Paste sℓ=%%ZSMJ73%% 3 times: we get s=%%ZSMJ74%% 2313113113111311311131131.",
+      "Step 4: ℓ=4≠x=5%%ZSMJ75%%, so we return to step 1.",
+      "Step 1, Move once: we get ℓ=5%%ZSMJ76%%.",
+      "Step 2, Cut once: we get s=%%ZSMJ77%% 23131 and c=%%ZSMJ78%% 13113111311311131131.",
+      "Step 3, Paste sℓ=%%ZSMJ79%% 1 times: we get s=%%ZSMJ80%% 2313113113111311311131131.",
+      "Step 4: ℓ=5=x%%ZSMJ81%%, so we stop.",
+      "At the end of the procedure, s%%ZSMJ82%% has length 25%%ZSMJ83%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n5\n231\n7\n2323\n6\n333\n24\n133321333",
+      "output": "25\n1438\n1101\n686531475"
+    }
+  ]
+}

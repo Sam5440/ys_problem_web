@@ -1,0 +1,37 @@
+{
+  "code": "GYM106007D",
+  "letter": "D",
+  "title": "D. Master of the Arena",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106007/problem/D",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are the master of an arena with n%%ZSMJ0%% fighters under your control, numbered from 1%%ZSMJ1%% to n%%ZSMJ2%%. Fighter 1%%ZSMJ3%% is your favourite—you want them to emerge as the sole champion.",
+      "You are given an n×n%%ZSMJ4%% matrix M%%ZSMJ5%%. For i≠j%%ZSMJ6%%:",
+      "Mi,j=1%%ZSMJ7%% means fighter i%%ZSMJ8%% definitely beats fighter j%%ZSMJ9%%.",
+      "Mi,j=0%%ZSMJ10%% means fighter i%%ZSMJ11%% definitely loses to fighter j%%ZSMJ12%%.",
+      "Mi,j=?%%ZSMJ13%% means the outcome is undecided and you may choose it.",
+      "It is guaranteed that Mi,i=0%%ZSMJ14%% for all i%%ZSMJ15%%, and for all i≠j%%ZSMJ16%%, the pair (Mi,j,Mj,i)%%ZSMJ17%% is one of: (1,0)%%ZSMJ18%%, (0,1)%%ZSMJ19%%, or (?,?)%%ZSMJ20%%.",
+      "You must schedule exactly n−1%%ZSMJ21%% one-on-one matches so that in the end exactly one fighter remains undefeated, and that fighter must be number 1%%ZSMJ22%%. A fighter may appear in multiple matches (until eliminated).",
+      "Decide any choices for the '?' entries and output a sequence of n−1%%ZSMJ23%% matches (a,b)%%ZSMJ24%% meaning \"a%%ZSMJ25%% defeats b%%ZSMJ26%%\". If it's impossible to make fighter 1 the unique champion, print No%%ZSMJ27%%."
+    ],
+    "input": [
+      "The first line contains a single integer t%%ZSMJ28%% (1≤t≤500)%%ZSMJ29%% — the number of test cases.",
+      "The first line of each test case contains integer n%%ZSMJ30%% (2≤n≤1000%%ZSMJ31%%) — the number of fighters.",
+      "Then in each test case follow n%%ZSMJ32%% lines each with a string of length n%%ZSMJ33%%, the i%%ZSMJ34%%-th line being Mi,1Mi,2…Mi,n%%ZSMJ35%%.",
+      "It is guaranteed that the sum of n%%ZSMJ36%% over all test cases doesn't exceed 1000%%ZSMJ37%%."
+    ],
+    "output": [
+      "In each test case, if it is impossible to guarantee fighter 1%%ZSMJ38%% wins, print No%%ZSMJ39%%. Otherwise, print Yes%%ZSMJ40%% followed by n−1%%ZSMJ41%% lines. Each line should contain two integers a%%ZSMJ42%% and b%%ZSMJ43%% indicating that fighter a%%ZSMJ44%% defeats fighter b%%ZSMJ45%% in a scheduled match. You may print each character in either case, for example YES%%ZSMJ46%% and yEs%%ZSMJ47%% will also be accepted."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n3\n010\n001\n100\n5\n01000\n00100\n100?0\n11?01\n11100\n5\n01000\n00100\n10000\n11101\n11100",
+      "output": "Yes\n2 3\n1 2\n\nYes\n4 5\n3 4\n2 3\n1 2\n\nNo"
+    }
+  ]
+}

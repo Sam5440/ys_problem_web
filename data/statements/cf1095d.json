@@ -1,0 +1,35 @@
+{
+  "code": "CF1095D",
+  "letter": "D",
+  "title": "D. Circular Dance",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1095/D",
+  "difficulty": "1600",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are n%%ZSMJ0%% kids, numbered from 1%%ZSMJ1%% to n%%ZSMJ2%%, dancing in a circle around the Christmas tree. Let's enumerate them in a clockwise direction as p1%%ZSMJ3%%, p2%%ZSMJ4%%, ..., pn%%ZSMJ5%% (all these numbers are from 1%%ZSMJ6%% to n%%ZSMJ7%% and are distinct, so p%%ZSMJ8%% is a permutation). Let the next kid for a kid pi%%ZSMJ9%% be kid pi+1%%ZSMJ10%% if i<n%%ZSMJ11%% and p1%%ZSMJ12%% otherwise. After the dance, each kid remembered two kids: the next kid (let's call him x%%ZSMJ13%%) and the next kid for x%%ZSMJ14%%. Each kid told you which kids he/she remembered: the kid i%%ZSMJ15%% remembered kids ai,1%%ZSMJ16%% and ai,2%%ZSMJ17%%. However, the order of ai,1%%ZSMJ18%% and ai,2%%ZSMJ19%% can differ from their order in the circle.",
+      "![](https://espresso.codeforces.com/4b7194b47baa591e9db3cb6908976996d197073d.png)",
+      "You have to restore the order of the kids in the circle using this information. If there are several answers, you may print any. It is guaranteed that at least one solution exists.",
+      "If you are Python programmer, consider using PyPy instead of Python when you submit your code."
+    ],
+    "input": [
+      "The first line of the input contains one integer n%%ZSMJ31%% (3≤n≤2⋅105%%ZSMJ32%%) — the number of the kids.",
+      "The next n%%ZSMJ33%% lines contain 2%%ZSMJ34%% integers each. The i%%ZSMJ35%%-th line contains two integers ai,1%%ZSMJ36%% and ai,2%%ZSMJ37%% (1≤ai,1,ai,2≤n,ai,1≠ai,2%%ZSMJ38%%) — the kids the i%%ZSMJ39%%-th kid remembered, given in arbitrary order."
+    ],
+    "output": [
+      "Print n%%ZSMJ40%% integers p1%%ZSMJ41%%, p2%%ZSMJ42%%, ..., pn%%ZSMJ43%% — permutation of integers from 1%%ZSMJ44%% to n%%ZSMJ45%%, which corresponds to the order of kids in the circle. If there are several answers, you may print any (for example, it doesn't matter which kid is the first in the circle). It is guaranteed that at least one solution exists."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3 5\n1 4\n2 4\n1 5\n2 3",
+      "output": "3 2 4 1 5"
+    },
+    {
+      "input": "3\n2 3\n3 1\n1 2",
+      "output": "3 1 2"
+    }
+  ]
+}

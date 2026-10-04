@@ -1,0 +1,46 @@
+{
+  "code": "GYM104805K",
+  "letter": "K",
+  "title": "K. Get the numbers",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104805/problem/K",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Slava has a set of N%%ZSMJ0%% numbers: x1,x2,x3,…,xn%%ZSMJ1%%. At one turn, he can get a non-empty set y1,y2,y3,…,ym%%ZSMJ2%%, in which for any i%%ZSMJ3%% from 1%%ZSMJ4%% to m%%ZSMJ5%% yi%%ZSMJ6%% is included in the set x1,x2,…,xn%%ZSMJ7%%, and then he can add in the set X%%ZSMJ8%% sum of all products of numbers of all the possible subsets y1,y2,…,ym%%ZSMJ9%%. Slava is wondering: how many numbers not superior to L%%ZSMJ10%% exist that can be calculated by the above-described method for the finite number of actions? (For better understanding, see the note)."
+    ],
+    "input": [
+      "The first line of the input data consists of numbers N%%ZSMJ11%% and L%%ZSMJ12%% (2≤N≤20,1≤L≤1012)%%ZSMJ13%%.",
+      "The second line consists of N%%ZSMJ14%% numbers xi%%ZSMJ15%% (2≤xi≤15)%%ZSMJ16%%."
+    ],
+    "output": [
+      "In one line, output the number – the amount of numbers not superior to L%%ZSMJ17%% that can be calculated by the above-described method for a finite number of actions."
+    ],
+    "note": [
+      "Consider set of numbers X=[14,15],L=100%%ZSMJ18%%.",
+      "We can get set Y%%ZSMJ19%% like that:",
+      "[14],[15],[14,14],[14,15],[15,15],[14,14,14],…%%ZSMJ20%%",
+      "Then we get numbers:",
+      "14+14+14∗14=224%%ZSMJ21%%",
+      "15+15+15∗15=255%%ZSMJ22%%",
+      "14=14%%ZSMJ23%%",
+      "15=15%%ZSMJ24%%",
+      "14+15+14∗15=239%%ZSMJ25%%",
+      "14+14+14+14∗14+14∗14+14∗14+14∗14∗14=3374%%ZSMJ26%%",
+      "…%%ZSMJ27%%",
+      "Among these numbers, only two are not superior to 100: 14, 15%%ZSMJ28%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 7\n2 2 3",
+      "output": "2"
+    },
+    {
+      "input": "2 100\n14 15",
+      "output": "2"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "code": "CF1102F",
+  "letter": "F",
+  "title": "F. Elongated Matrix",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1102/F",
+  "difficulty": "2000",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a matrix a%%ZSMJ0%%, consisting of n%%ZSMJ1%% rows and m%%ZSMJ2%% columns. Each cell contains an integer in it.",
+      "You can change the order of rows arbitrarily (including leaving the initial order), but you can't change the order of cells in a row. After you pick some order of rows, you traverse the whole matrix the following way: firstly visit all cells of the first column from the top row to the bottom one, then the same for the second column and so on. During the traversal you write down the sequence of the numbers on the cells in the same order you visited them. Let that sequence be s1,s2,…,snm%%ZSMJ3%%.",
+      "The traversal is k%%ZSMJ4%%-acceptable if for all i%%ZSMJ5%% (1≤i≤nm−1%%ZSMJ6%%) |si−si+1|≥k%%ZSMJ7%%.",
+      "Find the maximum integer k%%ZSMJ8%% such that there exists some order of rows of matrix a%%ZSMJ9%% that it produces a k%%ZSMJ10%%-acceptable traversal."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ11%% and m%%ZSMJ12%% (1≤n≤16%%ZSMJ13%%, 1≤m≤104%%ZSMJ14%%, 2≤nm%%ZSMJ15%%) — the number of rows and the number of columns, respectively.",
+      "Each of the next n%%ZSMJ16%% lines contains m%%ZSMJ17%% integers (1≤ai,j≤109%%ZSMJ18%%) — the description of the matrix."
+    ],
+    "output": [
+      "Print a single integer k%%ZSMJ19%% — the maximum number such that there exists some order of rows of matrix a%%ZSMJ20%% that it produces an k%%ZSMJ21%%-acceptable traversal."
+    ],
+    "note": [
+      "In the first example you can rearrange rows as following to get the 5%%ZSMJ22%%-acceptable traversal:",
+      {
+        "pre": "\n5 3\n10 8\n4 3\n9 9"
+      },
+      "Then the sequence s%%ZSMJ23%% will be [5,10,4,9,3,8,3,9]%%ZSMJ24%%. Each pair of neighbouring elements have at least k=5%%ZSMJ25%% difference between them.",
+      "In the second example the maximum k=0%%ZSMJ26%%, any order is 0%%ZSMJ27%%-acceptable.",
+      "In the third example the given order is already 3%%ZSMJ28%%-acceptable, you can leave it as it is."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 2\n9 9\n10 8\n5 3\n4 3",
+      "output": "5"
+    },
+    {
+      "input": "2 4\n1 2 3 4\n10 3 7 3",
+      "output": "0"
+    },
+    {
+      "input": "6 1\n3\n6\n2\n5\n1\n4",
+      "output": "3"
+    }
+  ]
+}

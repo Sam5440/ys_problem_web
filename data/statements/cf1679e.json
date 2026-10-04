@@ -1,0 +1,57 @@
+{
+  "code": "CF1679E",
+  "letter": "E",
+  "title": "E. Typical Party in Dorm",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1679/E",
+  "difficulty": "2400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Today is a holiday in the residence hall — Oleh arrived, in honor of which the girls gave him a string. Oleh liked the gift a lot, so he immediately thought up and offered you, his best friend, the following problem.",
+      "You are given a string s%%ZSMJ0%% of length n%%ZSMJ1%%, which consists of the first 17%%ZSMJ2%% lowercase Latin letters {a%%ZSMJ3%%, b%%ZSMJ4%%, c%%ZSMJ5%%, …%%ZSMJ6%%, p%%ZSMJ7%%, q%%ZSMJ8%%} and question marks. And q%%ZSMJ9%% queries. Each query is defined by a set of pairwise distinct lowercase first 17%%ZSMJ10%% letters of the Latin alphabet, which can be used to replace the question marks in the string s%%ZSMJ11%%.",
+      "The answer to the query is the sum of the number of distinct substrings that are palindromes over all strings that can be obtained from the original string s%%ZSMJ12%% by replacing question marks with available characters. The answer must be calculated modulo 998244353%%ZSMJ13%%.",
+      "Pay attention! Two substrings are different when their start and end positions in the string are different. So, the number of different substrings that are palindromes for the string aba will be 4%%ZSMJ14%%: a, b, a, aba.",
+      "Consider examples of replacing question marks with letters. For example, from the string aba??ee when querying {a%%ZSMJ15%%, b%%ZSMJ16%%} you can get the strings ababaee or abaaaee but you cannot get the strings pizza,  abaee, abacaba, aba?fee, aba47ee, or abatree.",
+      "Recall that a palindrome is a string that reads the same from left to right as from right to left."
+    ],
+    "input": [
+      "The first line contains a single integer n%%ZSMJ17%% (1≤n≤1000%%ZSMJ18%%) — the length of the string s%%ZSMJ19%%.",
+      "The second line contains the string s%%ZSMJ20%%, which consists of n%%ZSMJ21%% lowercase Latin letters and question marks. It is guaranteed that all letters in the string belong to the set {a%%ZSMJ22%%, b%%ZSMJ23%%, c%%ZSMJ24%%, …%%ZSMJ25%%, p%%ZSMJ26%%, q%%ZSMJ27%%}.",
+      "The third line contains a single integer q%%ZSMJ28%% (1≤q≤2⋅105%%ZSMJ29%%) — the number of queries.",
+      "This is followed by q%%ZSMJ30%% lines, each containing a single line t%%ZSMJ31%% — a set of characters that can replace question marks (1≤|t|≤17%%ZSMJ32%%). It is guaranteed that all letters in the string belong to the set {a%%ZSMJ33%%, b%%ZSMJ34%%, c%%ZSMJ35%%, …%%ZSMJ36%%, p%%ZSMJ37%%, q%%ZSMJ38%%} and occur at most once."
+    ],
+    "output": [
+      "For each query print one number — the total numbers of palindromic substrings in all strings that can be obtained from the string s%%ZSMJ39%%, modulo 998244353%%ZSMJ40%%."
+    ],
+    "note": [
+      "Consider the first example and the first query in it. We can get only one string as a result of replacing the question marks  — abaaaba. It has the following palindrome substrings:",
+      "a  — substring [1%%ZSMJ41%%; 1%%ZSMJ42%%].",
+      "b  — substring [2%%ZSMJ43%%; 2%%ZSMJ44%%].",
+      "a  — substring [3%%ZSMJ45%%; 3%%ZSMJ46%%].",
+      "a  — substring [4%%ZSMJ47%%; 4%%ZSMJ48%%].",
+      "a  — substring [5%%ZSMJ49%%; 5%%ZSMJ50%%].",
+      "b  — substring [6%%ZSMJ51%%; 6%%ZSMJ52%%].",
+      "a  — substring [7%%ZSMJ53%%; 7%%ZSMJ54%%].",
+      "aa  — substring [3%%ZSMJ55%%; 4%%ZSMJ56%%].",
+      "aa  — substring [4%%ZSMJ57%%; 5%%ZSMJ58%%].",
+      "aba  — substring [1%%ZSMJ59%%; 3%%ZSMJ60%%].",
+      "aaa  — substring [3%%ZSMJ61%%; 5%%ZSMJ62%%].",
+      "aba  — substring [5%%ZSMJ63%%; 7%%ZSMJ64%%].",
+      "baaab  — substring [2%%ZSMJ65%%; 6%%ZSMJ66%%].",
+      "abaaaba  — substring [1%%ZSMJ67%%; 7%%ZSMJ68%%].",
+      "In the third request, we get 4 lines: abaaaba, abababa, abbaaba, abbbaba."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\nab??aba\n8\na\nb\nab\nabc\nabcd\nabcde\nabcdef\nabcdefg",
+      "output": "14\n13\n55\n105\n171\n253\n351\n465"
+    },
+    {
+      "input": "11\n???????????\n6\nabcdefghijklmnopq\necpnkhbmlidgfjao\nolehfan\ncodef\nglhf\nq",
+      "output": "900057460\n712815817\n839861037\n756843750\n70840320\n66"
+    }
+  ]
+}

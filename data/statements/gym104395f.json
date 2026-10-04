@@ -1,0 +1,34 @@
+{
+  "code": "GYM104395F",
+  "letter": "F",
+  "title": "F. Cycles",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104395/problem/F",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Trotles is given a set of n%%ZSMJ0%% nodes and wants to construct a functional graph where the in-degree and out-degree of each node is 1%%ZSMJ1%%. Luckily for him, he is already given the some of the edges. For the rest of the edges he randomly chooses a node with the out-degree 0%%ZSMJ2%% and a node with in-degree 0%%ZSMJ3%% (they can be the same node) and draw an edge from the first one to the second one. Calculate the expected number of cycles in the graph modulo 109+7%%ZSMJ4%%."
+    ],
+    "input": [
+      "The first line contain n%%ZSMJ5%% and m%%ZSMJ6%%, the number of nodes and the number of given edges respectively. 1≤m≤n≤105%%ZSMJ7%%",
+      "The next m%%ZSMJ8%% lines contain two numbers a%%ZSMJ9%% and b%%ZSMJ10%% which means that there is an edge drawn between nodes a%%ZSMJ11%% and b%%ZSMJ12%%. 1≤a,b≤n%%ZSMJ13%%",
+      "It is guaranteed that the in-degree and out-degree of each node given in the test case will be less than or equal to 1%%ZSMJ14%%."
+    ],
+    "output": [
+      "Print a single integer representing the expected number of cycles.",
+      "If the number of cycles is pq%%ZSMJ15%% then print p \\cdot q^{-1} \\pmod {10^9 + 7}%%ZSMJ16%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 2\n2 4\n3 1",
+      "output": "500000005"
+    },
+    {
+      "input": "9 6\n9 4\n6 6\n7 7\n1 8\n3 1\n8 2",
+      "output": "833333343"
+    }
+  ]
+}

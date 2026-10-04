@@ -1,0 +1,48 @@
+{
+  "code": "GYM105418A",
+  "letter": "A",
+  "title": "A. Phoenix Against the Monsters",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105418/problem/A",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Phoenix, a skilled warrior, has been assigned an important mission: to deliver critical information from the city of Nagpur to the stronghold of Mumbai. The journey is filled with danger, as monsters guard the roads connecting different cities. Each road has a certain number of monsters that Phoenix will need to fight.",
+      "Phoenix has a special ability that he can use once during his journey. This ability allows him to halve the number of monsters (rounded down to the nearest whole number) on either one road or two consecutive roads. By using this ability wisely, Phoenix can reduce the total number of monsters he has to fight and increase his chances of completing the mission.",
+      "Your task is to help Phoenix find the minimum total number of monsters he must face to deliver the information to Mumbai."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ0%% and m%%ZSMJ1%% (2≤n≤105%%ZSMJ2%% and 1≤m≤2⋅105%%ZSMJ3%%): the number of cities and the number of roads connecting them. The cities are numbered 1,%%ZSMJ4%% 2,%%ZSMJ5%% …%%ZSMJ6%% n%%ZSMJ7%%. City 1%%ZSMJ8%% is Nagpur, and city n%%ZSMJ9%% is Mumbai.",
+      "After this, there are m%%ZSMJ10%% lines describing the roads. Each line contains three integers u%%ZSMJ11%%, v%%ZSMJ12%%, and w%%ZSMJ13%% (1≤u,v≤n%%ZSMJ14%% and 1≤w≤109%%ZSMJ15%%): a road starts at city u%%ZSMJ16%%, ends at city v%%ZSMJ17%%, and has w%%ZSMJ18%% monsters on that road. Each road is unidirectional.",
+      "You can assume that it is always possible to get from Nagpur to Mumbai."
+    ],
+    "output": [
+      "Output a single integer — the minimum total number of monsters Phoenix must face to deliver the information from Nagpur to Mumbai."
+    ],
+    "note": [
+      "In the first sample, Phoenix starts in City 1%%ZSMJ19%% (Nagpur).",
+      "He takes the road to City 2%%ZSMJ20%%, which has 5%%ZSMJ21%% monsters.",
+      "He then proceeds from City 2%%ZSMJ22%% to City 3%%ZSMJ23%%, where the road has 2%%ZSMJ24%% monsters.",
+      "From City 3%%ZSMJ25%%, he travels to City 5%%ZSMJ26%% on a road with only 1%%ZSMJ27%% monster.",
+      "Phoenix uses his special ability to halve the number of monsters on the roads between City 1%%ZSMJ28%% and City 2%%ZSMJ29%%, and City 2%%ZSMJ30%% and City 3%%ZSMJ31%%, reducing the monsters to 2%%ZSMJ32%% and 1%%ZSMJ33%% respectively.",
+      "This results in a total of 4%%ZSMJ34%% monsters he must fight to deliver the information to City 5%%ZSMJ35%% (Mumbai).",
+      "In the second sample, Phoenix must travel directly from City 1%%ZSMJ36%% (Nagpur) to City 2%%ZSMJ37%% (Mumbai) on a road with 5%%ZSMJ38%% monsters. He uses his ability to halve the monsters on this road, reducing the count to 2%%ZSMJ39%%. Thus, Phoenix only faces 2%%ZSMJ40%% monsters in total."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 6\n1 2 5\n2 3 2\n3 5 1\n1 4 10\n4 5 5\n2 4 3",
+      "output": "4"
+    },
+    {
+      "input": "2 1\n1 2 5",
+      "output": "2"
+    },
+    {
+      "input": "6 8\n1 2 7\n1 3 4\n2 4 3\n2 5 2\n3 4 6\n4 6 2\n5 6 4\n3 5 8",
+      "output": "6"
+    }
+  ]
+}

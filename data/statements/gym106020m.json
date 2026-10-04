@@ -1,0 +1,35 @@
+{
+  "code": "GYM106020M",
+  "letter": "M",
+  "title": "M. Hayyan and Subarray Sums",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106020/problem/M",
+  "difficulty": "*1300",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Given an array $$$a$$$ of length $$$n$$$. A partition of the array $$$a$$$ is dividing it into subarrays$$$^{[1]}$$$ such that each element of $$$a$$$ belongs to exactly one subarray. Two partitions are considered different if there is a subarray that is present in one of the partitions but not in both of them.",
+      "We define the cost of a partition of $$$a$$$ as the following:",
+      "Let's initialize cost to be equal to $$$0$$$.",
+      "For each subarray of $$$a$$$ (i.e. $$$a[l, l + 1, \\ldots, r]$$$) that is present in the partition, let $$$s$$$ be equal to the sum of integers in this subarray (i.e. $$$\\displaystyle\\sum_{i=l}^r a_i$$$).",
+      "Update cost to be equal to cost $$$\\oplus$$$ $$$s$$$, where $$$\\oplus$$$ is the bitwise XOR$$$^{[8]}$$$ operator.",
+      "Find the bitwise XOR of the costs of all possible partitions of $$$a$$$."
+    ],
+    "input": [
+      "The first line of the input contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^5$$$) — the number of test cases.",
+      "For each test case, the first line contains a single integer $$$n$$$ ($$$1 \\le n \\le 10^6$$$) — the length of the array $$$a$$$.",
+      "The second line consists of $$$n$$$ spaces-separated integers $$$a_1, a_2, \\dots, a_n$$$ ($$$1 \\le a_i \\le 10^9$$$).",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases doesn't exceed $$$10^6$$$."
+    ],
+    "output": [
+      "Output $$$t$$$ lines, the $$$i$$$-th of which contains a single integer — the answer for the $$$i$$$-th test case."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1\n1\n2\n1 2\n3\n1 2 3",
+      "output": "1\n0\n2"
+    }
+  ]
+}

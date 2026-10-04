@@ -1,0 +1,34 @@
+{
+  "code": "CF2052J",
+  "letter": "J",
+  "title": "J. Judicious Watching",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/2052/J",
+  "difficulty": "2000",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Jill loves having good grades in university, so she never misses deadlines for her homework assignments. But even more, she loves watching the series and discussing it with her best friend Johnny. And unfortunately, today she needs to choose between these two activities!",
+      "Jill needs to complete n%%ZSMJ0%% homework tasks. The i%%ZSMJ1%%-th task would require ai%%ZSMJ2%% minutes to complete and needs to be submitted to the teacher at most di%%ZSMJ3%% minutes from now. Also, there are m%%ZSMJ4%% new episodes of the series that Johnny and Jill want to discuss. The j%%ZSMJ5%%-th episode lasts lj%%ZSMJ6%% minutes. Jill can complete tasks in any order, but she needs to watch the episodes in the order they come. Neither completing a homework task nor watching an episode can be interrupted after starting.",
+      "Johnny and Jill need to agree on a time tk%%ZSMJ7%% when they would have a call to discuss the series. They are not sure yet which time to choose. For each possible time, compute the maximum number of episodes Jill could watch before that time while still being able to complete all n%%ZSMJ8%% homework tasks in time.",
+      "Note that for the purpose of this problem we assume that discussing the series with Johnny at time tk%%ZSMJ9%% does not consume significant time from Jill and can happen even if she is in the middle of completing any of her homework tasks."
+    ],
+    "input": [
+      "There are several test cases in the input. The input begins with the number of test cases T%%ZSMJ10%% (1≤T≤1000%%ZSMJ11%%).",
+      "Each test case starts with a line with three integers n%%ZSMJ12%% (1≤n≤200000%%ZSMJ13%%) — the number of homework tasks, m%%ZSMJ14%% (1≤m≤200000%%ZSMJ15%%) — the number of episodes, and q%%ZSMJ16%% (1≤q≤200000%%ZSMJ17%%) — the number of possible times for the call with Jill.",
+      "The second line contains n%%ZSMJ18%% integers ai%%ZSMJ19%% (1≤ai≤109%%ZSMJ20%%) — the number of minutes it takes to complete the task. The next line contains n%%ZSMJ21%% integers di%%ZSMJ22%% (1≤di≤1015%%ZSMJ23%%) — the deadline before which this task must be completed. The next line contains m%%ZSMJ24%% integers lj%%ZSMJ25%% (1≤lj≤109%%ZSMJ26%%) — the length of episodes in the order they need to be watched. The next line contains q%%ZSMJ27%% integers tk%%ZSMJ28%% (1≤tk≤1015%%ZSMJ29%%) — the possible times of call with Jill.",
+      "It is possible to complete all tasks within their respective deadlines.",
+      "The sum of each of n%%ZSMJ30%%, m%%ZSMJ31%%, q%%ZSMJ32%% over all test cases in input doesn't exceed 200000%%ZSMJ33%%."
+    ],
+    "output": [
+      "For each test case output a single line with q%%ZSMJ34%% integers — for each possible time tk%%ZSMJ35%% the maximum number of episodes Jill can watch."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 2 3\n10\n15\n5 5\n5 15 20\n3 4 5\n8 100 8\n10 150 20\n2 32 1 1\n9 200 51 50 10",
+      "output": "1 1 2\n1 4 2 2 1"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "code": "CF1956D",
+  "letter": "D",
+  "title": "D. Nene and the Mex Operator",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1956/D",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Nene gave you an array of integers a1,a2,…,an%%ZSMJ0%% of length n%%ZSMJ1%%.",
+      "You can perform the following operation no more than 5⋅105%%ZSMJ2%% times (possibly zero):",
+      "Choose two integers l%%ZSMJ3%% and r%%ZSMJ4%% such that 1≤l≤r≤n%%ZSMJ5%%, compute x%%ZSMJ6%% as MEX({al,al+1,…,ar})%%ZSMJ7%%, and simultaneously set al:=x,al+1:=x,…,ar:=x%%ZSMJ8%%.",
+      "Here, MEX%%ZSMJ9%% of a set of integers {c1,c2,…,ck}%%ZSMJ10%% is defined as the smallest non-negative integer m%%ZSMJ11%% which does not occur in the set c%%ZSMJ12%%.",
+      "Your goal is to maximize the sum of the elements of the array a%%ZSMJ13%%. Find the maximum sum and construct a sequence of operations that achieves this sum. Note that you don't need to minimize the number of operations in this sequence, you only should use no more than 5⋅105%%ZSMJ14%% operations in your solution."
+    ],
+    "input": [
+      "The first line contains an integer n%%ZSMJ15%% (1≤n≤18%%ZSMJ16%%) — the length of the array a%%ZSMJ17%%.",
+      "The second line contains n%%ZSMJ18%% integers a1,a2,…,an%%ZSMJ19%% (0≤ai≤107%%ZSMJ20%%) — the array a%%ZSMJ21%%."
+    ],
+    "output": [
+      "In the first line, output two integers s%%ZSMJ22%% and m%%ZSMJ23%% (0≤m≤5⋅105%%ZSMJ24%%) — the maximum sum of elements of the array a%%ZSMJ25%% and the number of operations in your solution.",
+      "In the i%%ZSMJ26%%-th of the following m%%ZSMJ27%% lines, output two integers l%%ZSMJ28%% and r%%ZSMJ29%% (1≤l≤r≤n%%ZSMJ30%%), representing the parameters of the i%%ZSMJ31%%-th operation.",
+      "It can be shown that the maximum sum of elements of the array a%%ZSMJ32%% can always be obtained in no more than 5⋅105%%ZSMJ33%% operations."
+    ],
+    "note": [
+      "In the first example, after the operation with l=1%%ZSMJ34%% and r=2%%ZSMJ35%% the array a%%ZSMJ36%% becomes equal to [2,2]%%ZSMJ37%%. It can be shown that it is impossible to achieve a larger sum of the elements of a%%ZSMJ38%%, so the answer is 4%%ZSMJ39%%.",
+      "In the second example, the initial sum of elements is 13%%ZSMJ40%% which can be shown to be the largest.",
+      "In the third example, the array a%%ZSMJ41%% changes as follows:",
+      "after the first operation (l=3%%ZSMJ42%%, r=3%%ZSMJ43%%), the array a%%ZSMJ44%% becomes equal to [1,100,0,1]%%ZSMJ45%%;",
+      "after the second operation (l=3%%ZSMJ46%%, r=4%%ZSMJ47%%), the array a%%ZSMJ48%% becomes equal to [1,100,2,2]%%ZSMJ49%%.",
+      "It can be shown that it is impossible to achieve a larger sum of the elements of a%%ZSMJ50%%, so the answer is 105%%ZSMJ51%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n0 1",
+      "output": "4 1\n1 2"
+    },
+    {
+      "input": "3\n1 3 9",
+      "output": "13 0"
+    },
+    {
+      "input": "4\n1 100 2 1",
+      "output": "105 2\n3 3\n3 4"
+    },
+    {
+      "input": "1\n0",
+      "output": "1 1\n1 1"
+    }
+  ]
+}

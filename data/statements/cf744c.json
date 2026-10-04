@@ -1,0 +1,51 @@
+{
+  "code": "CF744C",
+  "letter": "C",
+  "title": "C. Hongcow Buys a Deck of Cards",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/744/C",
+  "difficulty": "2400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "One day, Hongcow goes to the store and sees a brand new deck of n special cards. Each individual card is either red or blue. He decides he wants to buy them immediately. To do this, he needs to play a game with the owner of the store.",
+      "This game takes some number of turns to complete. On a turn, Hongcow may do one of two things:",
+      "Collect tokens. Hongcow collects 1 red token and 1 blue token by choosing this option (thus, 2 tokens in total per one operation).",
+      "Buy a card. Hongcow chooses some card and spends tokens to purchase it as specified below.",
+      "The i-th card requires ri red resources and bi blue resources. Suppose Hongcow currently has A red cards and B blue cards. Then, the i-th card will require Hongcow to spend max(ri - A, 0) red tokens, and max(bi - B, 0) blue tokens. Note, only tokens disappear, but the cards stay with Hongcow forever. Each card can be bought only once.",
+      "Given a description of the cards and their costs determine the minimum number of turns Hongcow needs to purchase all cards."
+    ],
+    "input": [
+      "The first line of input will contain a single integer n (1 ≤ n ≤ 16).",
+      "The next n lines of input will contain three tokens ci, ri and bi. ci will be 'R' or 'B', denoting the color of the card as red or blue. ri will be an integer denoting the amount of red resources required to obtain the card, and bi will be an integer denoting the amount of blue resources required to obtain the card (0 ≤ ri, bi ≤ 107)."
+    ],
+    "output": [
+      "Output a single integer, denoting the minimum number of turns needed to acquire all the cards."
+    ],
+    "note": [
+      "For the first sample, Hongcow's four moves are as follows:",
+      "Collect tokens",
+      "Buy card 1",
+      "Buy card 2",
+      "Buy card 3",
+      "For the second sample, one optimal strategy is as follows:",
+      "Collect tokens",
+      "Collect tokens",
+      "Buy card 2",
+      "Collect tokens",
+      "Buy card 3",
+      "Buy card 1"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\nR 0 1\nB 1 0\nR 1 1",
+      "output": "4"
+    },
+    {
+      "input": "3\nR 3 0\nR 2 0\nR 1 0",
+      "output": "6"
+    }
+  ]
+}

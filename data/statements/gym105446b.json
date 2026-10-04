@@ -1,0 +1,40 @@
+{
+  "code": "GYM105446B",
+  "letter": "B",
+  "title": "B. Budget Analysis",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105446/problem/B",
+  "difficulty": "*1700",
+  "timeLimit": "15 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are an analyst, studying the relationship between advertisement budget spending (denoted by x%%ZSMJ0%%) and sales (denoted by y%%ZSMJ1%%) over the period of n%%ZSMJ2%% months. More specifically, for every month of time from 1 to n you have the value of spending xi%%ZSMJ3%% and sales yi%%ZSMJ4%%.",
+      "To quantify the relationship you are using linear regression with regularisation, which means that you are modelling y%%ZSMJ5%% as y=Kx+B%%ZSMJ6%%, where K%%ZSMJ7%% and B%%ZSMJ8%% are real numbers minimising the penalty function:",
+      "(Note: this is the standard penalty function for L2 regularised linear regression.)",
+      "For the report requested by your manager, you need to make several predictions. More specifically, you have a list of prediction queries, each described by four numbers — Lj%%ZSMJ10%%, Rj%%ZSMJ11%%, λj%%ZSMJ12%% and Xj%%ZSMJ13%%. To process such a query you need to perform the following steps:",
+      "take the spending and sales values for the months from Lj%%ZSMJ14%% to Rj%%ZSMJ15%% inclusive;",
+      "find the coefficients K%%ZSMJ16%% and B%%ZSMJ17%%, which minimise the penalty function for the given regularisation coefficient λj%%ZSMJ18%%;",
+      "plug the Xj%%ZSMJ19%% into the resulting model and compute the prediction.",
+      "You are given the ads spending and sales data, and the prediction queries descriptions. You are to process the queries and output the predictions."
+    ],
+    "input": [
+      "First line of the input file contains an integer number n%%ZSMJ20%% (2≤n≤106%%ZSMJ21%%) denoting the number of months in the period you are studying.",
+      "Each of the following n%%ZSMJ22%% lines describes one month and contains two non-negative real numbers xi%%ZSMJ23%% and yi%%ZSMJ24%% not exceeding 10. They denote the budget spending and sales in the corresponding month.",
+      "The following line contains an integer number m%%ZSMJ25%% (1≤m≤106%%ZSMJ26%%) denoting the number of predictions to be made. Each of the following m%%ZSMJ27%% lines contains four numbers: Lj%%ZSMJ28%%, Rj%%ZSMJ29%%, λj%%ZSMJ30%% and Xj%%ZSMJ31%% (1≤Lj<Rj≤n%%ZSMJ32%%, 0≤λj,Xj≤10%%ZSMJ33%%). First two of them are integers, the remaining are real."
+    ],
+    "output": [
+      "For each prediction query output one real number on a separate line — the predicted sales assuming the advertisement spending is Xj%%ZSMJ34%% and the linear model has been fitted on months from Lj%%ZSMJ35%% to Rj%%ZSMJ36%% using L2-regularisation with λj%%ZSMJ37%% regularisation coefficient. The output must be accurate to an absolute or relative error of at most 10−6%%ZSMJ38%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 2\n3 4\n5 6\n7 8\n9 0\n2\n1 3 0 10\n1 5 1 10",
+      "output": "11.00000000000000000\n4.90566037735849036"
+    },
+    {
+      "input": "3\n1 1.0\n2 2.1\n3 2.8\n3\n1 2 0 1.5\n2 3 0 2.5\n1 3 0 1.5",
+      "output": "1.55000000000000004\n2.45000000000000018\n1.51666666666666750"
+    }
+  ]
+}

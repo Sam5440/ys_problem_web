@@ -1,0 +1,39 @@
+{
+  "code": "CF1575L",
+  "letter": "L",
+  "title": "L. Longest Array Deconstruction",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1575/L",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Mr. Chanek gives you a sequence a%%ZSMJ0%% indexed from 1%%ZSMJ1%% to n%%ZSMJ2%%. Define f(a)%%ZSMJ3%% as the number of indices where ai=i%%ZSMJ4%%.",
+      "You can pick an element from the current sequence and remove it, then concatenate the remaining elements together. For example, if you remove the 3%%ZSMJ5%%-rd element from the sequence [4,2,3,1]%%ZSMJ6%%, the resulting sequence will be [4,2,1]%%ZSMJ7%%.",
+      "You want to remove some elements from a%%ZSMJ8%% in order to maximize f(a)%%ZSMJ9%%, using zero or more operations. Find the largest possible f(a)%%ZSMJ10%%."
+    ],
+    "input": [
+      "The first line contains one integer n%%ZSMJ11%% (1≤n≤2⋅105%%ZSMJ12%%) — the initial length of the sequence.",
+      "The second line contains n%%ZSMJ13%% integers a1,a2,…,an%%ZSMJ14%% (1≤ai≤2⋅105%%ZSMJ15%%) — the initial sequence a%%ZSMJ16%%."
+    ],
+    "output": [
+      "Output an integer denoting the largest f(a)%%ZSMJ17%% that can be obtained by doing zero or more operations."
+    ],
+    "note": [
+      "In the first example, f(A)=3%%ZSMJ18%% by doing the following operations.",
+      "[2,1,4,2,5,3,7]→[2,1,2,5,3,7]→[1,2,5,3,7]→[1,2,5,3]→[1,2,3]%%ZSMJ19%%",
+      "In the second example, f(A)=2%%ZSMJ20%% and no additional operation is needed."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n2 1 4 2 5 3 7",
+      "output": "3"
+    },
+    {
+      "input": "4\n4 2 3 1",
+      "output": "2"
+    }
+  ]
+}

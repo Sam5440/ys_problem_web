@@ -1,0 +1,47 @@
+{
+  "code": "CF1648C",
+  "letter": "C",
+  "title": "C. Tyler and Strings",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1648/C",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "While looking at the kitchen fridge, the little boy Tyler noticed magnets with symbols, that can be aligned into a string s%%ZSMJ0%%.",
+      "Tyler likes strings, and especially those that are lexicographically smaller than another string, t%%ZSMJ1%%. After playing with magnets on the fridge, he is wondering, how many distinct strings can be composed out of letters of string s%%ZSMJ2%% by rearranging them, so that the resulting string is lexicographically smaller than the string t%%ZSMJ3%%? Tyler is too young, so he can't answer this question. The alphabet Tyler uses is very large, so for your convenience he has already replaced the same letters in s%%ZSMJ4%% and t%%ZSMJ5%% to the same integers, keeping that different letters have been replaced to different integers.",
+      "We call a string x%%ZSMJ6%% lexicographically smaller than a string y%%ZSMJ7%% if one of the followings conditions is fulfilled:",
+      "There exists such position of symbol m%%ZSMJ8%% that is presented in both strings, so that before m%%ZSMJ9%%-th symbol the strings are equal, and the m%%ZSMJ10%%-th symbol of string x%%ZSMJ11%% is smaller than m%%ZSMJ12%%-th symbol of string y%%ZSMJ13%%.",
+      "String x%%ZSMJ14%% is the prefix of string y%%ZSMJ15%% and x≠y%%ZSMJ16%%.",
+      "Because the answer can be too large, print it modulo 998244353%%ZSMJ17%%."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ18%% and m%%ZSMJ19%% (1≤n,m≤200000%%ZSMJ20%%) — the lengths of strings s%%ZSMJ21%% and t%%ZSMJ22%% respectively.",
+      "The second line contains n%%ZSMJ23%% integers s1,s2,s3,…,sn%%ZSMJ24%% (1≤si≤200000%%ZSMJ25%%) — letters of the string s%%ZSMJ26%%.",
+      "The third line contains m%%ZSMJ27%% integers t1,t2,t3,…,tm%%ZSMJ28%% (1≤ti≤200000%%ZSMJ29%%) — letters of the string t%%ZSMJ30%%."
+    ],
+    "output": [
+      "Print a single number — the number of strings lexicographically smaller than t%%ZSMJ31%% that can be obtained by rearranging the letters in s%%ZSMJ32%%, modulo 998244353%%ZSMJ33%%."
+    ],
+    "note": [
+      "In the first example, the strings we are interested in are [122]%%ZSMJ34%% and [212]%%ZSMJ35%%. The string [221]%%ZSMJ36%% is lexicographically larger than the string [2121]%%ZSMJ37%%, so we don't count it.",
+      "In the second example, all strings count except [4321]%%ZSMJ38%%, so the answer is 4!−1=23%%ZSMJ39%%.",
+      "In the third example, only the string [1112]%%ZSMJ40%% counts."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 4\n1 2 2\n2 1 2 1",
+      "output": "2"
+    },
+    {
+      "input": "4 4\n1 2 3 4\n4 3 2 1",
+      "output": "23"
+    },
+    {
+      "input": "4 3\n1 1 1 2\n1 1 2",
+      "output": "1"
+    }
+  ]
+}

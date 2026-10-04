@@ -1,0 +1,32 @@
+{
+  "code": "GYM105018A",
+  "letter": "A",
+  "title": "A. Antiprefix Function",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105018/problem/A",
+  "difficulty": "*1700",
+  "timeLimit": "2.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let the antiprefix function of the string $$$s$$$ be an array $$$[q_{1},q_{2},...,q_{n}]$$$, where $$$q_{i}$$$ is the greatest integer $$$j \\in [0,i-1]$$$ such that $$$s[1..j]$$$ differs from $$$s[i-j+1..i]$$$ in every position.",
+      "For example, for the string $$$011001$$$, its antiprefix function is $$$[0,1,1,2,3,4]$$$.",
+      "You are given a binary string $$$s$$$ of length $$$n$$$, find its antiprefix function."
+    ],
+    "input": [
+      "The first line contains one integer $$$t$$$ $$$( 1 \\le t \\le 10^4)$$$ — the number of test cases.",
+      "The first line of each test case contains one integer $$$n$$$ $$$(1 \\le n \\le 10^5)$$$ — the length of the binary string $$$s$$$.",
+      "The second line of each test case contains a binary string consisting of $$$n$$$ characters.",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2.10^5$$$"
+    ],
+    "output": [
+      "For each test case, output $$$n$$$ integers : the antiprefix function of the string $$$s$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n6\n011001\n9\n010101010",
+      "output": "0 1 1 2 3 4 \n0 1 2 3 4 5 6 7 8"
+    }
+  ]
+}

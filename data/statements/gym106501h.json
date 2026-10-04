@@ -1,0 +1,40 @@
+{
+  "code": "GYM106501H",
+  "letter": "H",
+  "title": "H. Maka",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106501/problem/H",
+  "difficulty": "*1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Auchenai is playing a long series of n%%ZSMJ0%% Riichi Mahjong games. After each game, he receives a positive performance feedback score from the MAKA AI and records his placement tier.",
+      "For the i%%ZSMJ1%%-th game, let ai%%ZSMJ2%% be MAKA's feedback score and bi∈{1,2}%%ZSMJ3%% be Auchenai's placement tier. A subsequence of games is called calm if the placement tiers are nondecreasing.",
+      "Given an integer K%%ZSMJ4%%, Auchenai wants to know the maximum length L%%ZSMJ5%% of a calm subsequence whose average MAKA score is at least K%%ZSMJ6%%. That is, the maximum L%%ZSMJ7%% such that there exists a sequence 1≤i1≤i2≤…≤iL≤n%%ZSMJ8%% satisfying bi1≤bi2≤…≤biL%%ZSMJ9%% and ai1+ai2+⋯+aiLL≥K.%%ZSMJ10%%",
+      "If no such subsequence exists, output 0%%ZSMJ11%%."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ12%% and K%%ZSMJ13%% (1≤n≤2⋅105%%ZSMJ14%%, 1≤K≤109%%ZSMJ15%%) — the number of games and the desired average MAKA score.",
+      "The second line contains n%%ZSMJ16%% integers a1,a2,…,an%%ZSMJ17%% (1≤ai≤109%%ZSMJ18%%) — the MAKA scores.",
+      "The third line contains n%%ZSMJ19%% integers b1,b2,…,bn%%ZSMJ20%% (bi∈{1,2}%%ZSMJ21%%) — the placement tiers."
+    ],
+    "output": [
+      "Output a single integer — the maximum length L%%ZSMJ22%% of a calm subsequence with average MAKA score at least K%%ZSMJ23%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 4\n5 4 6 4 3\n1 1 2 2 2",
+      "output": "5"
+    },
+    {
+      "input": "8 6\n9 2 8 7 1 2 10 6\n1 2 1 2 1 1 2 2",
+      "output": "6"
+    },
+    {
+      "input": "8 8\n3 9 3 9 3 9 3 9\n1 2 1 2 1 2 1 2",
+      "output": "4"
+    }
+  ]
+}

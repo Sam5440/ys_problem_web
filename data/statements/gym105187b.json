@@ -1,0 +1,40 @@
+{
+  "code": "GYM105187B",
+  "letter": "B",
+  "title": "B. Soccer",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105187/problem/B",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "There are 2⋅n%%ZSMJ0%% teams in the Soccer League. Teams are numbered from 0%%ZSMJ1%% to 2⋅n−1%%ZSMJ2%%.",
+      "Before the last round, the i%%ZSMJ3%%-th team has p[i]%%ZSMJ4%% points. There will be n%%ZSMJ5%% games in the last round, where teams a[i]%%ZSMJ6%% and b[i]%%ZSMJ7%% will play against each other.",
+      "Each team wonders about the best final place their team can get. This is your task to calculate these values.",
+      "The team's final place equals the number of teams with strictly more points than their team +1%%ZSMJ8%%. Teams with same points get the same place.",
+      "The winner of the game gets 3%%ZSMJ9%% points, whereas the loser gets 0%%ZSMJ10%% points. If the game ends in a draw, both teams get 1%%ZSMJ11%% point each."
+    ],
+    "input": [
+      "First line contains an integer n%%ZSMJ12%% – the number of games. (1≤n≤105%%ZSMJ13%%)",
+      "Second line contains 2⋅n%%ZSMJ14%% integers – p[0],p[1],…,p[2⋅n−1]%%ZSMJ15%%. (0≤p[i]≤5⋅105%%ZSMJ16%%)",
+      "Next n%%ZSMJ17%% lines contain a[i]%%ZSMJ18%% and b[i]%%ZSMJ19%%. (0≤a[i],b[i]≤2⋅n−1%%ZSMJ20%%)",
+      "It is guaranteed that each number from 0%%ZSMJ21%% to 2⋅n−1%%ZSMJ22%% occurs exactly once among arrays a%%ZSMJ23%% and b%%ZSMJ24%%."
+    ],
+    "output": [
+      "In the single line print 2⋅n%%ZSMJ25%% space-separated integers t[0],t[1],…,t[2⋅n−1]%%ZSMJ26%%. Here, t[i]%%ZSMJ27%% must equal the best final place i%%ZSMJ28%%-th team can get."
+    ],
+    "note": [
+      "Here, p=[47,45,50,48]%%ZSMJ45%% and team 0%%ZSMJ46%% will play against 2%%ZSMJ47%%, whereas team 3%%ZSMJ48%% will play against 1%%ZSMJ49%%. Let's calculate the best place team 0%%ZSMJ50%% can get:",
+      "team 0%%ZSMJ51%% should win team 2%%ZSMJ52%%. Team 0%%ZSMJ53%% now has 47+3=50%%ZSMJ54%% points and team 2%%ZSMJ55%% has 50%%ZSMJ56%% points too.",
+      "the game between teams 3%%ZSMJ57%% and 1%%ZSMJ58%% should end in a draw. Team 3%%ZSMJ59%% now has 48+1=49%%ZSMJ60%% points and team 1%%ZSMJ61%% has 45+1=46%%ZSMJ62%% points.",
+      "In another scenario, team 3%%ZSMJ69%% can get first place, so t[3]=1%%ZSMJ70%%. However, team 1%%ZSMJ71%% can only get second place in their best scenario, so t[1]%%ZSMJ72%% should be 2%%ZSMJ73%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n47 45 50 48\n0 2\n3 1",
+      "output": "1 2 1 1"
+    }
+  ]
+}

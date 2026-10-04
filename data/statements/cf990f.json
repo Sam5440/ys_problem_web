@@ -1,0 +1,38 @@
+{
+  "code": "CF990F",
+  "letter": "F",
+  "title": "F. Flow Control",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/990/F",
+  "difficulty": "2400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You have to handle a very complex water distribution system. The system consists of n%%ZSMJ0%% junctions and m%%ZSMJ1%% pipes, i%%ZSMJ2%%-th pipe connects junctions xi%%ZSMJ3%% and yi%%ZSMJ4%%.",
+      "The only thing you can do is adjusting the pipes. You have to choose m%%ZSMJ5%% integer numbers f1%%ZSMJ6%%, f2%%ZSMJ7%%, ..., fm%%ZSMJ8%% and use them as pipe settings. i%%ZSMJ9%%-th pipe will distribute fi%%ZSMJ10%% units of water per second from junction xi%%ZSMJ11%% to junction yi%%ZSMJ12%% (if fi%%ZSMJ13%% is negative, then the pipe will distribute |fi|%%ZSMJ14%% units of water per second from junction yi%%ZSMJ15%% to junction xi%%ZSMJ16%%). It is allowed to set fi%%ZSMJ17%% to any integer from −2⋅109%%ZSMJ18%% to 2⋅109%%ZSMJ19%%.",
+      "In order for the system to work properly, there are some constraints: for every i∈[1,n]%%ZSMJ20%%, i%%ZSMJ21%%-th junction has a number si%%ZSMJ22%% associated with it meaning that the difference between incoming and outcoming flow for i%%ZSMJ23%%-th junction must be exactly si%%ZSMJ24%% (if si%%ZSMJ25%% is not negative, then i%%ZSMJ26%%-th junction must receive si%%ZSMJ27%% units of water per second; if it is negative, then i%%ZSMJ28%%-th junction must transfer |si|%%ZSMJ29%% units of water per second to other junctions).",
+      "Can you choose the integers f1%%ZSMJ30%%, f2%%ZSMJ31%%, ..., fm%%ZSMJ32%% in such a way that all requirements on incoming and outcoming flows are satisfied?"
+    ],
+    "input": [
+      "The first line contains an integer n%%ZSMJ33%% (1≤n≤2⋅105%%ZSMJ34%%) — the number of junctions.",
+      "The second line contains n%%ZSMJ35%% integers s1,s2,…,sn%%ZSMJ36%% (−104≤si≤104%%ZSMJ37%%) — constraints for the junctions.",
+      "The third line contains an integer m%%ZSMJ38%% (0≤m≤2⋅105%%ZSMJ39%%) — the number of pipes.",
+      "i%%ZSMJ40%%-th of the next m%%ZSMJ41%% lines contains two integers xi%%ZSMJ42%% and yi%%ZSMJ43%% (1≤xi,yi≤n%%ZSMJ44%%, xi≠yi%%ZSMJ45%%) — the description of i%%ZSMJ46%%-th pipe. It is guaranteed that each unordered pair (x,y)%%ZSMJ47%% will appear no more than once in the input (it means that there won't be any pairs (x,y)%%ZSMJ48%% or (y,x)%%ZSMJ49%% after the first occurrence of (x,y)%%ZSMJ50%%). It is guaranteed that for each pair of junctions there exists a path along the pipes connecting them."
+    ],
+    "output": [
+      "If you can choose such integer numbers f1,f2,…,fm%%ZSMJ51%% in such a way that all requirements on incoming and outcoming flows are satisfied, then output \"Possible\" in the first line. Then output m%%ZSMJ52%% lines, i%%ZSMJ53%%-th line should contain fi%%ZSMJ54%% — the chosen setting numbers for the pipes. Pipes are numbered in order they appear in the input.",
+      "Otherwise output \"Impossible\" in the only line."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n3 -10 6 1\n5\n1 2\n3 2\n2 4\n3 4\n3 1",
+      "output": "Possible\n4\n-6\n8\n-7\n7"
+    },
+    {
+      "input": "4\n3 -10 6 4\n5\n1 2\n3 2\n2 4\n3 4\n3 1",
+      "output": "Impossible"
+    }
+  ]
+}

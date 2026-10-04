@@ -1,0 +1,44 @@
+{
+  "code": "GYM106414L",
+  "letter": "L",
+  "title": "L. MEXpected Value",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106414/problem/L",
+  "difficulty": "*1600",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given arrays a%%ZSMJ0%%, p%%ZSMJ1%%, and q%%ZSMJ2%% of n%%ZSMJ3%% nonnegative integers each, and a multiset S%%ZSMJ4%% that is initially empty. For each 1≤i≤n%%ZSMJ5%% in order, you then add ai%%ZSMJ6%% to S%%ZSMJ7%% with probability piqi%%ZSMJ8%%. What is the expected value of the MEX%%ZSMJ9%% of S%%ZSMJ10%% at the end of this process, taken modulo 109+7%%ZSMJ11%%?",
+      "The MEX%%ZSMJ12%% of a set of integers is defined as the smallest non-negative integer which does not occur in the set. For example, the MEX%%ZSMJ13%% of {0,1,2,4}%%ZSMJ14%% is 3%%ZSMJ15%%, and the MEX%%ZSMJ16%% of {1,4,6,8}%%ZSMJ17%% is 0%%ZSMJ18%%."
+    ],
+    "input": [
+      "Each test consists of multiple test cases.",
+      "The first line of input contains a single integer t%%ZSMJ19%% (1≤t≤104%%ZSMJ20%%) — the number of test cases.",
+      "The first line of each test case contains a single integer n%%ZSMJ21%% (1≤n≤2⋅105%%ZSMJ22%%) — the length of the array a%%ZSMJ23%%.",
+      "The i%%ZSMJ24%%-th of the next n%%ZSMJ25%% lines contains three integers ai%%ZSMJ26%%, pi%%ZSMJ27%%, and qi%%ZSMJ28%% (0≤ai≤n%%ZSMJ29%%, 0≤pi≤109%%ZSMJ30%%, max%%ZSMJ31%%, p_i%%ZSMJ32%% and q_i%%ZSMJ33%% are coprime) — a_i%%ZSMJ34%% and the two values representing the probability that a_i%%ZSMJ35%% is added to S%%ZSMJ36%%, as described above, respectively.",
+      "It is guaranteed that the sum of n%%ZSMJ37%% over all test cases does not exceed 2\\cdot 10^5%%ZSMJ38%%."
+    ],
+    "output": [
+      "For each test case, output the expected \\operatorname{MEX}%%ZSMJ39%% of S%%ZSMJ40%% modulo 10^9+7%%ZSMJ41%%.",
+      "Formally, it can be shown that the exact answer can be expressed as an irreducible fraction \\frac{x}{y}%%ZSMJ42%%, where x%%ZSMJ43%% and y%%ZSMJ44%% are integers and y\\not\\equiv 0 \\mod 10^9+7%%ZSMJ45%%. Output the integer equal to x\\cdot y^{-1}\\mod 10^9+7%%ZSMJ46%%. In other words, output the integer k%%ZSMJ47%% such that 0\\leq k \\lt 10^9+7%%ZSMJ48%% and k\\cdot y\\equiv x \\mod 10^9+7%%ZSMJ49%%."
+    ],
+    "note": [
+      "In the first test case, we include a_1 = 0%%ZSMJ50%% in S%%ZSMJ51%% with probability \\frac{1}{3}%%ZSMJ52%%. So \\frac{1}{3}%%ZSMJ53%% of the time, S = \\{0\\}%%ZSMJ54%%, which has a \\operatorname{MEX}%%ZSMJ55%% of 1%%ZSMJ56%%, and otherwise S = \\{\\}%%ZSMJ57%%, with a \\operatorname{MEX}%%ZSMJ58%% of 0%%ZSMJ59%%.",
+      "Therefore the expected value of the \\operatorname{MEX}%%ZSMJ60%% is \\frac{1}{3}%%ZSMJ61%%, which is 333333336%%ZSMJ62%% modulo 10^9+7%%ZSMJ63%%.",
+      "In the second test case, we include a_1 = 0%%ZSMJ64%% in S%%ZSMJ65%% with probability \\frac{1}{2}%%ZSMJ66%% and a_2 = 1%%ZSMJ67%% in S%%ZSMJ68%% with probability \\frac{1}{2}%%ZSMJ69%%. So there are four possible outcomes for S%%ZSMJ70%%, each with probability \\frac{1}{4}%%ZSMJ71%% of occurring:",
+      "S = \\{\\}%%ZSMJ72%% with a \\operatorname{MEX}%%ZSMJ73%% of 0%%ZSMJ74%%",
+      "S = \\{0\\}%%ZSMJ75%% with a \\operatorname{MEX}%%ZSMJ76%% of 1%%ZSMJ77%%",
+      "S = \\{1\\}%%ZSMJ78%% with a \\operatorname{MEX}%%ZSMJ79%% of 0%%ZSMJ80%%",
+      "S = \\{0, 1\\}%%ZSMJ81%% with a \\operatorname{MEX}%%ZSMJ82%% of 2%%ZSMJ83%%",
+      "So the expected value of the \\operatorname{MEX}%%ZSMJ84%% is \\frac{0 + 1 + 0 + 2}{4} = \\frac{3}{4}%%ZSMJ85%%, which is 750000006%%ZSMJ86%% modulo 10^9+7%%ZSMJ87%%.",
+      "In the third test case, we include a_1 = 0%%ZSMJ88%%, a_2 = 0%%ZSMJ89%%, and a_3 = 0%%ZSMJ90%% in S%%ZSMJ91%% each with independent probability \\frac{1}{2}%%ZSMJ92%%. So there is a \\frac{7}{8}%%ZSMJ93%% chance that we include at least one of them and the \\operatorname{MEX}%%ZSMJ94%% of S%%ZSMJ95%% is 1%%ZSMJ96%%, and otherwise S%%ZSMJ97%% is empty with a \\operatorname{MEX}%%ZSMJ98%% of 0%%ZSMJ99%%. So the expected value of the \\operatorname{MEX}%%ZSMJ100%% is \\frac{7}{8}%%ZSMJ101%%, which is 875000007%%ZSMJ102%% modulo 10^9+7%%ZSMJ103%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1\n0 1 3\n2\n0 1 2\n1 1 2\n3\n0 1 2\n0 1 2\n0 1 2\n6\n0 1 4\n6 2 7\n1 4 9\n1 2 5\n2 1 1\n0 3 5\n5\n0 1 1\n1 4 7\n2 3 8\n3 19 20\n4 0 1",
+      "output": "333333336\n750000006\n875000007\n433333338\n389285719"
+    }
+  ]
+}

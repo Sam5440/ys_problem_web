@@ -1,0 +1,53 @@
+{
+  "code": "CF1028D",
+  "letter": "D",
+  "title": "D. Order book",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1028/D",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let's consider a simplified version of order book of some stock. The order book is a list of orders (offers) from people that want to buy or sell one unit of the stock, each order is described by direction (BUY or SELL) and price.",
+      "At every moment of time, every SELL offer has higher price than every BUY offer.",
+      "In this problem no two ever existed orders will have the same price.",
+      "The lowest-price SELL order and the highest-price BUY order are called the best offers, marked with black frames on the picture below.",
+      "![](https://espresso.codeforces.com/778909826a3b7aa52c1bfb0b871c8217cd2de3fc.png)",
+      "There are two possible actions in this orderbook:",
+      "Somebody adds a new order of some direction with some price.",
+      "Somebody accepts the best possible SELL or BUY offer (makes a deal). It's impossible to accept not the best SELL or BUY offer (to make a deal at worse price). After someone accepts the offer, it is removed from the orderbook forever.",
+      "It is allowed to add new BUY order only with prices less than the best SELL offer (if you want to buy stock for higher price, then instead of adding an order you should accept the best SELL offer). Similarly, one couldn't add a new SELL order with price less or equal to the best BUY offer. For example, you can't add a new offer \"SELL 20%%ZSMJ2%%\" if there is already an offer \"BUY 20%%ZSMJ3%%\" or \"BUY 25%%ZSMJ4%%\" — in this case you just accept the best BUY offer.",
+      "You have a damaged order book log (in the beginning the are no orders in book). Every action has one of the two types:",
+      "\"ADD p%%ZSMJ5%%\" denotes adding a new order with price p%%ZSMJ6%% and unknown direction. The order must not contradict with orders still not removed from the order book.",
+      "\"ACCEPT p%%ZSMJ7%%\" denotes accepting an existing best offer with price p%%ZSMJ8%% and unknown direction.",
+      "The directions of all actions are lost. Information from the log isn't always enough to determine these directions. Count the number of ways to correctly restore all ADD action directions so that all the described conditions are satisfied at any moment. Since the answer could be large, output it modulo 109+7%%ZSMJ9%%. If it is impossible to correctly restore directions, then output 0%%ZSMJ10%%."
+    ],
+    "input": [
+      "The first line contains an integer n%%ZSMJ11%% (1≤n≤363304%%ZSMJ12%%) — the number of actions in the log.",
+      "Each of the next n%%ZSMJ13%% lines contains a string \"ACCEPT\" or \"ADD\" and an integer p%%ZSMJ14%% (1≤p≤308983066%%ZSMJ15%%), describing an action type and price.",
+      "All ADD actions have different prices. For ACCEPT action it is guaranteed that the order with the same price has already been added but has not been accepted yet."
+    ],
+    "output": [
+      "Output the number of ways to restore directions of ADD actions modulo 109+7%%ZSMJ16%%."
+    ],
+    "note": [
+      "In the first example each of orders may be BUY or SELL.",
+      "In the second example the order with price 1%%ZSMJ17%% has to be BUY order, the order with the price 3%%ZSMJ18%% has to be SELL order."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\nADD 1\nACCEPT 1\nADD 2\nACCEPT 2\nADD 3\nACCEPT 3",
+      "output": "8"
+    },
+    {
+      "input": "4\nADD 1\nADD 2\nADD 3\nACCEPT 2",
+      "output": "2"
+    },
+    {
+      "input": "7\nADD 1\nADD 2\nADD 3\nADD 4\nADD 5\nACCEPT 3\nACCEPT 5",
+      "output": "0"
+    }
+  ]
+}

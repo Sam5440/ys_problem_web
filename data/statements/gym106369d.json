@@ -1,0 +1,56 @@
+{
+  "code": "GYM106369D",
+  "letter": "D",
+  "title": "D. Good Goalie",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106369/problem/D",
+  "difficulty": "*1700",
+  "timeLimit": "5 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "The 2023 FIFA Women's World Cup was held during the summer. Several games ended in ties and penalty kicks had to be taken to determine the winner.",
+      "The professional soccer goal size (length) is 7.32m. The success rate of penalty kicks at the professional level is above 80%%%ZSMJ0%%. If the goal length was much longer, can this success rate reach 100%%%ZSMJ1%%?",
+      "To simplify the problem, we will assume that there is no concept of time or ball speed, so if the goalie's reach intersects the ball's travel path, the goalie will block the ball.",
+      "As illustrated in the picture below, we'll assume the goalie is at (0,0)%%ZSMJ2%% and the penalty taker (kicker) is at (0,y)%%ZSMJ3%%; y%%ZSMJ4%% will be a positive integer.",
+      "The kicker will kick the ball towards the goal line (to the left or right of the goalie). We'll assume the ball will intersect the goal line at (x,0)%%ZSMJ5%%; x%%ZSMJ6%% will be a non-zero integer.",
+      "The goalie will dive to the left or right (based on the direction of the ball). The goalie has a limited reach r%%ZSMJ7%%; r%%ZSMJ8%% will be a positive integer.",
+      "![](https://espresso.codeforces.com/a0f6d24c32626cfef17ba59ea5027cd302238672.png)",
+      "The goalie will save the penalty if the point representing the ball (while travelling) is on the line representing the goalie's reach. The goalie can save the penalty (i.e., block the ball) on the x%%ZSMJ9%%-axis as well.",
+      "The primary objective for the goalie is to save the penalty and the secondary objective is to dive as close to the x%%ZSMJ10%%-axis as possible, i.e., the angle between the goalie's reach and the x%%ZSMJ11%%-axis is as small as possible.",
+      "Given the kicker's position (y%%ZSMJ12%%), intersection point of the ball with the goal line (x%%ZSMJ13%%) and the goalie's reach (r%%ZSMJ14%%), determine whether the goalie will save (block) the penalty kick."
+    ],
+    "input": [
+      "There is only one input line; it provides three integers y%%ZSMJ15%%, x%%ZSMJ16%% and r%%ZSMJ17%%, as described above. Assume 1≤y≤103%%ZSMJ18%%, −103≤x≤103%%ZSMJ19%% (excluding zero), and 1≤r≤103%%ZSMJ20%%."
+    ],
+    "output": [
+      "Print -1 if the goalie cannot save the penalty; otherwise print the minimum angle that the goalie needs to dive to block the ball. Answers within an absolute or relative error of 10−6%%ZSMJ21%% will be accepted."
+    ]
+  },
+  "examples": [
+    {
+      "input": "10 100 2",
+      "output": "-1"
+    },
+    {
+      "input": "10 3 3",
+      "output": "0"
+    },
+    {
+      "input": "3 10 6",
+      "output": "11.9151974458468181694570375839"
+    },
+    {
+      "input": "20 -200 5",
+      "output": "-1"
+    },
+    {
+      "input": "20 -5 5",
+      "output": "0"
+    },
+    {
+      "input": "5 -20 8",
+      "output": "23.2890180235694685961789218709"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "code": "CF1238F",
+  "letter": "F",
+  "title": "F. The Maximum Subtree",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1238/F",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Assume that you have k%%ZSMJ0%% one-dimensional segments s1,s2,…sk%%ZSMJ1%% (each segment is denoted by two integers — its endpoints). Then you can build the following graph on these segments. The graph consists of k%%ZSMJ2%% vertexes, and there is an edge between the i%%ZSMJ3%%-th and the j%%ZSMJ4%%-th vertexes (i≠j%%ZSMJ5%%) if and only if the segments si%%ZSMJ6%% and sj%%ZSMJ7%% intersect (there exists at least one point that belongs to both of them).",
+      "For example, if s1=[1,6],s2=[8,20],s3=[4,10],s4=[2,13],s5=[17,18]%%ZSMJ8%%, then the resulting graph is the following:",
+      "![](https://espresso.codeforces.com/dab4ac82405a1620546f322e17b3af15164e5c30.png)",
+      "A tree of size m%%ZSMJ9%% is good if it is possible to choose m%%ZSMJ10%% one-dimensional segments so that the graph built on these segments coincides with this tree.",
+      "You are given a tree, you have to find its good subtree with maximum possible size. Recall that a subtree is a connected subgraph of a tree.",
+      "Note that you have to answer q%%ZSMJ11%% independent queries."
+    ],
+    "input": [
+      "The first line contains one integer q%%ZSMJ12%% (1≤q≤15⋅104%%ZSMJ13%%) — the number of the queries.",
+      "The first line of each query contains one integer n%%ZSMJ14%% (2≤n≤3⋅105%%ZSMJ15%%) — the number of vertices in the tree.",
+      "Each of the next n−1%%ZSMJ16%% lines contains two integers x%%ZSMJ17%% and y%%ZSMJ18%% (1≤x,y≤n%%ZSMJ19%%) denoting an edge between vertices x%%ZSMJ20%% and y%%ZSMJ21%%. It is guaranteed that the given graph is a tree.",
+      "It is guaranteed that the sum of all n%%ZSMJ22%% does not exceed 3⋅105%%ZSMJ23%%."
+    ],
+    "output": [
+      "For each query print one integer — the maximum size of a good subtree of the given tree."
+    ],
+    "note": [
+      "In the first query there is a good subtree of size 8%%ZSMJ24%%. The vertices belonging to this subtree are 9,4,10,2,5,1,6,3%%ZSMJ25%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n10\n1 2\n1 3\n1 4\n2 5\n2 6\n3 7\n3 8\n4 9\n4 10",
+      "output": "8"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "code": "CF1133F2",
+  "letter": "F2",
+  "title": "F2. Spanning Tree with One Fixed Degree",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1133/F2",
+  "difficulty": "1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an undirected unweighted connected graph consisting of n%%ZSMJ0%% vertices and m%%ZSMJ1%% edges. It is guaranteed that there are no self-loops or multiple edges in the given graph.",
+      "Your task is to find any spanning tree of this graph such that the degree of the first vertex (vertex with label 1%%ZSMJ2%% on it) is equal to D%%ZSMJ3%% (or say that there are no such spanning trees). Recall that the degree of a vertex is the number of edges incident to it."
+    ],
+    "input": [
+      "The first line contains three integers n%%ZSMJ4%%, m%%ZSMJ5%% and D%%ZSMJ6%% (2≤n≤2⋅105%%ZSMJ7%%, n−1≤m≤min(2⋅105,n(n−1)2),1≤D<n%%ZSMJ8%%) — the number of vertices, the number of edges and required degree of the first vertex, respectively.",
+      "The following m%%ZSMJ9%% lines denote edges: edge i%%ZSMJ10%% is represented by a pair of integers vi%%ZSMJ11%%, ui%%ZSMJ12%% (1≤vi,ui≤n%%ZSMJ13%%, ui≠vi%%ZSMJ14%%), which are the indices of vertices connected by the edge. There are no loops or multiple edges in the given graph, i. e. for each pair (vi,ui%%ZSMJ15%%) there are no other pairs (vi,ui%%ZSMJ16%%) or (ui,vi%%ZSMJ17%%) in the list of edges, and for each pair (vi,ui)%%ZSMJ18%% the condition vi≠ui%%ZSMJ19%% is satisfied."
+    ],
+    "output": [
+      "If there is no spanning tree satisfying the condition from the problem statement, print \"NO\" in the first line.",
+      "Otherwise print \"YES\" in the first line and then print n−1%%ZSMJ20%% lines describing the edges of a spanning tree such that the degree of the first vertex (vertex with label 1%%ZSMJ21%% on it) is equal to D%%ZSMJ22%%. Make sure that the edges of the printed spanning tree form some subset of the input edges (order doesn't matter and edge (v,u)%%ZSMJ23%% is considered the same as the edge (u,v)%%ZSMJ24%%).",
+      "If there are multiple possible answers, print any of them."
+    ],
+    "note": [
+      "The picture corresponding to the first and second examples: ![](https://espresso.codeforces.com/33c3b3b16f15de62b4d00ab31a33182a790cbefb.png)",
+      "The picture corresponding to the third example: ![](https://espresso.codeforces.com/1588a91880fd07a7a4d9a090317437ef299a8baf.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 5 1\n1 2\n1 3\n1 4\n2 3\n3 4",
+      "output": "YES\n2 1\n2 3\n3 4"
+    },
+    {
+      "input": "4 5 3\n1 2\n1 3\n1 4\n2 3\n3 4",
+      "output": "YES\n1 2\n1 3\n4 1"
+    },
+    {
+      "input": "4 4 3\n1 2\n1 4\n2 3\n3 4",
+      "output": "NO"
+    }
+  ]
+}

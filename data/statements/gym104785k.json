@@ -1,0 +1,40 @@
+{
+  "code": "GYM104785K",
+  "letter": "K",
+  "title": "K. Kernel Scheduler",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104785/problem/K",
+  "difficulty": "*1600",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "You are developing the scheduling module for the new operating system. This module takes n%%ZSMJ0%% tasks to be executed and the dependencies between them and then puts them in a certain order for execution.",
+      "More formally, there are n%%ZSMJ1%% tasks numbered from 1%%ZSMJ2%% to n%%ZSMJ3%%. You are also given m%%ZSMJ4%% dependencies numbered from 1%%ZSMJ5%% to m%%ZSMJ6%%; i%%ZSMJ7%%-th of them is described by two numbers — ai%%ZSMJ8%% and bi%%ZSMJ9%%, meaning that the task ai%%ZSMJ10%% should be executed before the task bi%%ZSMJ11%%.",
+      "In some cases, there are cyclical dependencies — situations when according to the dependencies given some task t1%%ZSMJ12%% should be executed before t2%%ZSMJ13%%, t2%%ZSMJ14%% before t3%%ZSMJ15%%, ..., and tk−1%%ZSMJ16%% before tk%%ZSMJ17%% and tk%%ZSMJ18%% before t1%%ZSMJ19%%. Cyclical dependencies create a problem for scheduling, so you decided to remove some of the given dependencies in such a way that the resulting set does not contain any cyclical ones.",
+      "However, you still need to keep at least m/2%%ZSMJ20%% original dependencies to preserve some of the original information. You are to write the program performing this task."
+    ],
+    "input": [
+      "One line containing the numbers n%%ZSMJ21%% and m%%ZSMJ22%% (2≤n≤105%%ZSMJ23%%, 1≤m≤3⋅105%%ZSMJ24%%).",
+      "m%%ZSMJ25%% further lines, each containing two numbers ai%%ZSMJ26%% and bi%%ZSMJ27%% (1≤ai,bi≤n%%ZSMJ28%%, ai≠bi%%ZSMJ29%%), describing the corresponding dependency between two tasks ai%%ZSMJ30%% and bi%%ZSMJ31%%."
+    ],
+    "output": [
+      "The first line should should contain YES in case the desired subset of dependencies exists, and NO otherwise.",
+      "In the YES case second line should contain the number k%%ZSMJ32%% of the selected dependencies (please note that k%%ZSMJ33%% should be at least m/2%%ZSMJ34%%) and the third line should contain k%%ZSMJ35%% numbers — the ids of the selected dependencies. They are numbered from 1%%ZSMJ36%% to m%%ZSMJ37%% in the order given in the input."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n1 2\n2 3\n3 1",
+      "output": "YES\n2\n1 2"
+    },
+    {
+      "input": "2 5\n1 2\n1 2\n1 2\n2 1\n2 1",
+      "output": "YES\n3\n1 2 3"
+    },
+    {
+      "input": "4 4\n1 2\n2 3\n2 4\n3 4",
+      "output": "YES\n4\n1 2 3 4"
+    }
+  ]
+}

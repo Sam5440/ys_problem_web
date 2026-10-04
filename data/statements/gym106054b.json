@@ -1,0 +1,44 @@
+{
+  "code": "GYM106054B",
+  "letter": "B",
+  "title": "B. Block sum array",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106054/problem/B",
+  "difficulty": "*2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Given an array A%%ZSMJ0%% of length N%%ZSMJ1%%, whose elements are A1,A2,…,AN%%ZSMJ2%%, its array of K%%ZSMJ3%%-sums blocks is defined as the array of length N−K+1%%ZSMJ4%% that satisfies Bi=Ai+Ai+1+⋯+Ai+K−1%%ZSMJ5%%",
+      "For example, for A=[0,1,1,0,1]%%ZSMJ6%%, its array of 4%%ZSMJ7%%-sums blocks is B=[2,3]%%ZSMJ8%%, since B1=0+1+1+0=2%%ZSMJ9%% and B2=1+1+0+1=3%%ZSMJ10%%.",
+      "Given an array B%%ZSMJ11%% of length N−K+1%%ZSMJ12%%, count how many arrays A%%ZSMJ13%% of length N%%ZSMJ14%% exist such that their array of K%%ZSMJ15%%-sums blocks is B%%ZSMJ16%%. Both B%%ZSMJ17%% and the possible arrays A%%ZSMJ18%% consist of non-negative integers. Since the number of arrays A%%ZSMJ19%% can be very large, the answer must be given modulo 998244353%%ZSMJ20%%.",
+      "Note that the sums of the K%%ZSMJ21%%-sums blocks array are exact and not modular, meaning the modulo should only be applied to the answer."
+    ],
+    "input": [
+      "The first line contains two integers N%%ZSMJ22%% and K%%ZSMJ23%% (1≤K≤N≤2⋅105%%ZSMJ24%%).",
+      "The second line contains N−K+1%%ZSMJ25%% integers B1,B2,…,BN−K+1%%ZSMJ26%% (0≤Bi≤109%%ZSMJ27%%), the elements of the array B%%ZSMJ28%%."
+    ],
+    "output": [
+      "A line with an integer indicating the number (modulo 998244353%%ZSMJ29%%) of possible arrays A%%ZSMJ30%% formed by non-negative integers such that B%%ZSMJ31%% is their array of K%%ZSMJ32%%-sums blocks."
+    ],
+    "note": [
+      "In the first example, there are 10%%ZSMJ33%% possible arrays A%%ZSMJ34%%. These are [0,1,1,0,1]%%ZSMJ35%%, [1,0,1,0,2]%%ZSMJ36%%, [0,0,1,1,1]%%ZSMJ37%%, and 7%%ZSMJ38%% other arrays.",
+      "In the second example, the only possible array is [2,3,0,8,2,5]%%ZSMJ39%%.",
+      "In the third example, remember that the answer must be given modulo 998244353%%ZSMJ40%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 4\n2 3",
+      "output": "10"
+    },
+    {
+      "input": "6 1\n2 3 0 8 2 5",
+      "output": "1"
+    },
+    {
+      "input": "2 2\n1000000000",
+      "output": "1755648"
+    }
+  ]
+}

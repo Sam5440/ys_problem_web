@@ -1,0 +1,46 @@
+{
+  "code": "CF343",
+  "letter": "C",
+  "title": "C. Read Time",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/343/C",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Mad scientist Mike does not use slow hard disks. His modification of a hard drive has not one, but n different heads that can read data in parallel.",
+      "When viewed from the side, Mike's hard drive is an endless array of tracks. The tracks of the array are numbered from left to right with integers, starting with 1. In the initial state the i-th reading head is above the track number hi. For each of the reading heads, the hard drive's firmware can move the head exactly one track to the right or to the left, or leave it on the current track. During the operation each head's movement does not affect the movement of the other heads: the heads can change their relative order; there can be multiple reading heads above any of the tracks. A track is considered read if at least one head has visited this track. In particular, all of the tracks numbered h1, h2, ..., hn have been read at the beginning of the operation.",
+      "![](https://espresso.codeforces.com/ca9f4791774195cd732cefa3624a34c47835fa8a.png)",
+      "Mike needs to read the data on m distinct tracks with numbers p1, p2, ..., pm. Determine the minimum time the hard drive firmware needs to move the heads and read all the given tracks. Note that an arbitrary number of other tracks can also be read."
+    ],
+    "input": [
+      "The first line of the input contains two space-separated integers n, m (1 ≤ n, m ≤ 105) — the number of disk heads and the number of tracks to read, accordingly. The second line contains n distinct integers hi in ascending order (1 ≤ hi ≤ 1010, hi < hi + 1) — the initial positions of the heads. The third line contains m distinct integers pi in ascending order (1 ≤ pi ≤ 1010, pi < pi + 1) - the numbers of tracks to read.",
+      "Please, do not use the %lld specifier to read or write 64-bit integers in С++. It is recommended to use the cin, cout streams or the %I64d specifier."
+    ],
+    "output": [
+      "Print a single number — the minimum time required, in seconds, to read all the needed tracks."
+    ],
+    "note": [
+      "The first test coincides with the figure. In this case the given tracks can be read in 2 seconds in the following way:",
+      "during the first second move the 1-st head to the left and let it stay there;",
+      "move the second head to the left twice;",
+      "move the third head to the right twice (note that the 6-th track has already been read at the beginning).",
+      "One cannot read the tracks in 1 second as the 3-rd head is at distance 2 from the 8-th track."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 4\n2 5 6\n1 3 6 8",
+      "output": "2"
+    },
+    {
+      "input": "3 3\n1 2 3\n1 2 3",
+      "output": "0"
+    },
+    {
+      "input": "1 2\n165\n142 200",
+      "output": "81"
+    }
+  ]
+}

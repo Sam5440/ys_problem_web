@@ -1,0 +1,34 @@
+{
+  "code": "GYM104094B",
+  "letter": "B",
+  "title": "B. GPS Hack",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104094/problem/B",
+  "difficulty": "*2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Denis is a student and he's failed his data security exam, so today he's having a retake. He woke up late and decided to take a taxi.",
+      "Denis lives in a city, which can be represented as n%%ZSMJ0%% crossroads connected by m%%ZSMJ1%% bidirectional roads. For every road it is known, how much it takes to drive along it. Denis lives near a crossroad with number s%%ZSMJ2%% and the university is near crossroad t%%ZSMJ3%%. As soon as the taxi is near the university, Denis immediately leaves it and rushes for his exam.",
+      "Unfortunately, everything is a bit more complicated — hackers had hacked a GPS in Denis's taxi. When the GPS works properly, it helps you to reach your destination as fast, as it's possible. On every crossroad it shows, which road should be taken in order to finish your journey in the fastest way. If there are more than one possible road, GPS can show you any. Hackers can make GPS show you any road they want, but no more than once.",
+      "Denis doesn't remember exactly, how did he get to the university, but he remembers the time L%%ZSMJ4%% the road took. It turned out that his teacher had already known about the attack on GPS, so he asked Denis to calculate the number of different possible routes from his place to the university as a part of his retake.",
+      "Help Denis calculate the number of routes from crossroad s%%ZSMJ5%% to crossroad t%%ZSMJ6%%, that took L%%ZSMJ7%% time and were possible considering the GPS hack. As this number might be very large, find it modulo 109+7%%ZSMJ8%%."
+    ],
+    "input": [
+      "The first line contains two integers n%%ZSMJ9%% and m%%ZSMJ10%% — number of crossroads and roads between them in the city, where Denis lives (2≤n≤2⋅105%%ZSMJ11%%, 1≤m≤min(2⋅105,n(n−1)2)%%ZSMJ12%%).",
+      "The second line contains three integers s%%ZSMJ13%%, t%%ZSMJ14%% and L%%ZSMJ15%% — crossroad number, where Denis lives, number of the crossroad near the university and the ride time (1≤s,t≤n%%ZSMJ16%%, s≠t%%ZSMJ17%%, 1≤L≤2⋅1014%%ZSMJ18%%).",
+      "The next m%%ZSMJ19%% lines contain descriptions of roads between crossroads. The description contains three integers v%%ZSMJ20%%, u%%ZSMJ21%%, w%%ZSMJ22%% (1≤v,u≤n%%ZSMJ23%%, v≠u%%ZSMJ24%%, 1≤w≤109%%ZSMJ25%%) — numbers of the two crossroads connected by this road and the time, needed to drive along it.",
+      "All the roads are bidirectional, any pair of crossroads is connected with no more than one road. No roads connect a crossroad with itself. It is guaranteed that it is possible to get from crossroad s%%ZSMJ26%% to the crossroad t%%ZSMJ27%%."
+    ],
+    "output": [
+      "Print the only integer — number of routes Denis could have modulo 109+7%%ZSMJ28%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 7\n1 6 12\n1 2 2\n1 3 4\n2 5 2\n3 5 4\n2 4 4\n4 6 6\n5 6 4",
+      "output": "4"
+    }
+  ]
+}

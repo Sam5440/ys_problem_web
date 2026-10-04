@@ -1,0 +1,47 @@
+{
+  "code": "CF1201D",
+  "letter": "D",
+  "title": "D. Treasure Hunting",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1201/D",
+  "difficulty": "2100",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are on the island which can be represented as a n×m%%ZSMJ0%% table. The rows are numbered from 1%%ZSMJ1%% to n%%ZSMJ2%% and the columns are numbered from 1%%ZSMJ3%% to m%%ZSMJ4%%. There are k%%ZSMJ5%% treasures on the island, the i%%ZSMJ6%%-th of them is located at the position (ri,ci)%%ZSMJ7%%.",
+      "Initially you stand at the lower left corner of the island, at the position (1,1)%%ZSMJ8%%. If at any moment you are at the cell with a treasure, you can pick it up without any extra time. In one move you can move up (from (r,c)%%ZSMJ9%% to (r+1,c)%%ZSMJ10%%), left (from (r,c)%%ZSMJ11%% to (r,c−1)%%ZSMJ12%%), or right (from position (r,c)%%ZSMJ13%% to (r,c+1)%%ZSMJ14%%). Because of the traps, you can't move down.",
+      "However, moving up is also risky. You can move up only if you are in a safe column. There are q%%ZSMJ15%% safe columns: b1,b2,…,bq%%ZSMJ16%%. You want to collect all the treasures as fast as possible. Count the minimum number of moves required to collect all the treasures."
+    ],
+    "input": [
+      "The first line contains integers n%%ZSMJ17%%, m%%ZSMJ18%%, k%%ZSMJ19%% and q%%ZSMJ20%% (2≤n,m,k,q≤2⋅105%%ZSMJ21%%, q≤m%%ZSMJ22%%) — the number of rows, the number of columns, the number of treasures in the island and the number of safe columns.",
+      "Each of the next k%%ZSMJ23%% lines contains two integers ri,ci%%ZSMJ24%%, (1≤ri≤n%%ZSMJ25%%, 1≤ci≤m%%ZSMJ26%%) — the coordinates of the cell with a treasure. All treasures are located in distinct cells.",
+      "The last line contains q%%ZSMJ27%% distinct integers b1,b2,…,bq%%ZSMJ28%% (1≤bi≤m%%ZSMJ29%%) — the indices of safe columns."
+    ],
+    "output": [
+      "Print the minimum number of moves required to collect all the treasures."
+    ],
+    "note": [
+      "In the first example you should use the second column to go up, collecting in each row treasures from the first column.",
+      "![](https://espresso.codeforces.com/94823c612b5b926e2a2ad550634cf0feed84586f.png)",
+      "In the second example, it is optimal to use the first column to go up.",
+      "![](https://espresso.codeforces.com/9157ad0f18870b663cebb5f7b6c6d024b09777ea.png)",
+      "In the third example, it is optimal to collect the treasure at cell (1;6)%%ZSMJ30%%, go up to row 2%%ZSMJ31%% at column 6%%ZSMJ32%%, then collect the treasure at cell (2;2)%%ZSMJ33%%, go up to the top row at column 1%%ZSMJ34%% and collect the last treasure at cell (3;4)%%ZSMJ35%%. That's a total of 15%%ZSMJ36%% moves.",
+      "![](https://espresso.codeforces.com/2735b28b994176268d4f364fdb73cf30e5888714.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3 3 2\n1 1\n2 1\n3 1\n2 3",
+      "output": "6"
+    },
+    {
+      "input": "3 5 3 2\n1 2\n2 3\n3 1\n1 5",
+      "output": "8"
+    },
+    {
+      "input": "3 6 3 2\n1 6\n2 2\n3 4\n1 6",
+      "output": "15"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "code": "GYM104328D",
+  "letter": "D",
+  "title": "D. John and President",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104328/problem/D",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "John wants to become the president of Nicolina. We all know that the neighborhood of Nicolina can be viewed as a tree with n%%ZSMJ0%% vertices and in each vertice i%%ZSMJ1%% lives a person that has the political opinion pi%%ZSMJ2%%. To win the election one must be voted by more than n2%%ZSMJ3%% inhabitants that form a continuous path in the tree. John really wants to win so he will choose a political plan x%%ZSMJ4%% such that there exists such a path of voters. John will receive a person's vote if and only if x|pi%%ZSMJ5%% (x%%ZSMJ6%% divides pi%%ZSMJ7%%).",
+      "The elections are very soon and John needs to start his political campaign. Knowing the political opinions of the inhabitants and the tree that represent Nicolina, John wants to know if there exists a political plan x%%ZSMJ8%% such that there exists a continuous path of more than n2%%ZSMJ9%% voters in Nicolina. Of course, John cannot choose x=1%%ZSMJ10%% because the people in the neighborhood will think that he is dishonest."
+    ],
+    "input": [
+      "The first line of the input contains one integer n%%ZSMJ11%% (2≤n≤2⋅105)%%ZSMJ12%% - the number of vertices in Nicolina. The second line contains n%%ZSMJ13%% integers pi%%ZSMJ14%% (2≤pi≤107)%%ZSMJ15%% - the political opinions of each of the inhabitants Each of the following n−1%%ZSMJ16%% lines contains two integers u%%ZSMJ17%% and v%%ZSMJ18%% (1≤u,v≤n,u≠v)%%ZSMJ19%% - the vertices connected by an edge. It is guaranteed that these edges form a tree."
+    ],
+    "output": [
+      "Output \"YES\" (without quotes) if John can win the game, and \"NO\" (without quotes) otherwise.",
+      "You can output the answer in any case (for example, the strings \"yEs\", \"yes\", \"Yes\" and \"YES\" will be recognized as a positive answer)."
+    ],
+    "note": [
+      "In the first example, John can't choose a political plan such that he wins the elections.",
+      "In the second example, John can choose x=2%%ZSMJ20%% and there exists such path of voters. Such a path could be 3−5−4−2%%ZSMJ21%%"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n19 2 4 1 14\n3 4\n1 3\n2 5\n2 1",
+      "output": "NO"
+    },
+    {
+      "input": "7\n18 2 20 14 18 13 10\n7 6\n3 1\n5 4\n4 2\n5 3\n3 7",
+      "output": "YES"
+    }
+  ]
+}

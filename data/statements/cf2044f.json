@@ -1,0 +1,57 @@
+{
+  "code": "CF2044F",
+  "letter": "F",
+  "title": "F. Easy Demon Problem",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/2044/F",
+  "difficulty": "1900",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "For an arbitrary grid, Robot defines its beauty to be the sum of elements in the grid.",
+      "Robot gives you an array a%%ZSMJ0%% of length n%%ZSMJ1%% and an array b%%ZSMJ2%% of length m%%ZSMJ3%%. You construct a n%%ZSMJ4%% by m%%ZSMJ5%% grid M%%ZSMJ6%% such that Mi,j=ai⋅bj%%ZSMJ7%% for all 1≤i≤n%%ZSMJ8%% and 1≤j≤m%%ZSMJ9%%.",
+      "Then, Robot gives you q%%ZSMJ10%% queries, each consisting of a single integer x%%ZSMJ11%%. For each query, determine whether or not it is possible to perform the following operation exactly once so that M%%ZSMJ12%% has a beauty of x%%ZSMJ13%%:",
+      "Choose integers r%%ZSMJ14%% and c%%ZSMJ15%% such that 1≤r≤n%%ZSMJ16%% and 1≤c≤m%%ZSMJ17%%",
+      "Set Mi,j%%ZSMJ18%% to be 0%%ZSMJ19%% for all ordered pairs (i,j)%%ZSMJ20%% such that i=r%%ZSMJ21%%, j=c%%ZSMJ22%%, or both.",
+      "Note that queries are not persistent, meaning that you do not actually set any elements to 0%%ZSMJ23%% in the process — you are only required to output if it is possible to find r%%ZSMJ24%% and c%%ZSMJ25%% such that if the above operation is performed, the beauty of the grid will be x%%ZSMJ26%%. Also, note that you must perform the operation for each query, even if the beauty of the original grid is already x%%ZSMJ27%%."
+    ],
+    "input": [
+      "The first line contains three integers n%%ZSMJ28%%, m%%ZSMJ29%%, and q%%ZSMJ30%% (1≤n,m≤2⋅105,1≤q≤5⋅104%%ZSMJ31%%) — the length of a%%ZSMJ32%%, the length of b%%ZSMJ33%%, and the number of queries respectively.",
+      "The second line contains n%%ZSMJ34%% integers a1,a2,…,an%%ZSMJ35%% (0≤|ai|≤n%%ZSMJ36%%).",
+      "The third line contains m%%ZSMJ37%% integers b1,b2,…,bm%%ZSMJ38%% (0≤|bi|≤m%%ZSMJ39%%).",
+      "The following q%%ZSMJ40%% lines each contain a single integer x%%ZSMJ41%% (1≤|x|≤2⋅105%%ZSMJ42%%), the beauty of the grid you wish to achieve by setting all elements in a row and a column to 0%%ZSMJ43%%."
+    ],
+    "output": [
+      "For each testcase, output \"YES\" (without quotes) if there is a way to perform the aforementioned operation such that the beauty is x%%ZSMJ44%%, and \"NO\" (without quotes) otherwise.",
+      "You can output \"YES\" and \"NO\" in any case (for example, strings \"yES\", \"yes\" and \"Yes\" will be recognized as a positive response)."
+    ],
+    "note": [
+      "In the second example, the grid is",
+      "0 -2 5 0 -3",
+      "0 4 -10 0 6",
+      "0 -6 15 0 -9",
+      "0 0 0 0 0",
+      "0 0 0 0 0",
+      "By performing the operation with r=4%%ZSMJ45%% and c=2%%ZSMJ46%%, we create the following grid:",
+      "0 0 5 0 -3",
+      "0 0 -10 0 6",
+      "0 0 15 0 -9",
+      "0 0 0 0 0",
+      "0 0 0 0 0",
+      "which has beauty 4%%ZSMJ47%%. Thus, we output YES.",
+      "In the second query, selecting r=3%%ZSMJ48%% and c=5%%ZSMJ49%% creates a grid with beauty −3%%ZSMJ50%%.",
+      "In the third query, selecting r=3%%ZSMJ51%% and c=3%%ZSMJ52%% creates a grid with beauty 5%%ZSMJ53%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3 6\n-2 3 -3\n-2 2 -1\n-1\n1\n-2\n2\n-3\n3",
+      "output": "NO\nYES\nNO\nNO\nYES\nNO"
+    },
+    {
+      "input": "5 5 6\n1 -2 3 0 0\n0 -2 5 0 -3\n4\n-3\n5\n2\n-1\n2",
+      "output": "YES\nYES\nYES\nYES\nNO\nYES"
+    }
+  ]
+}

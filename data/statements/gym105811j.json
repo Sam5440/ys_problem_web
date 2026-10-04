@@ -1,0 +1,41 @@
+{
+  "code": "GYM105811J",
+  "letter": "J",
+  "title": "J. Security Breach",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105811/problem/J",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The group is welcomed to the nation's capital, Washington D.C.!",
+      "The city is home to the greatest collection of museums in the world. One museum, the Smithsonian Museum of Natural History, houses the Hope Diamond, one of the largest diamonds in the world, worth >200 million USD.",
+      "To keep the diamond safer, the Smithsonian is considering new floorplans for the museum. A floorplan can be described as a collection of n%%ZSMJ0%% rooms connected by m%%ZSMJ1%% one-way doors. Each one-way door requires a certain access-level to go through in one direction, and is impossible to go through in the other direction. Each person visiting the museum (visitors and employees) have keycards giving them some constant access-level. If their keycard grants them access level k%%ZSMJ2%%, they can go through all one way doors requiring ≤k%%ZSMJ3%% access-level. The only entrance/exit to the museum is at room 1%%ZSMJ4%%.",
+      "We call a museum floorplan foolproof if it is not possible to get stuck in the museum. Specifically, it is possible to get stuck in the museum if there exists an access-level k%%ZSMJ5%% such that a person with access-level k%%ZSMJ6%% could reach a room in the museum from room 1 for which it is impossible to return to room 1 with access-level k%%ZSMJ7%%.",
+      "Please determine if the given floorplan is foolproof!"
+    ],
+    "input": [
+      "The first line contains integers n,m%%ZSMJ8%% (1≤n,m≤105%%ZSMJ9%%) — the number of rooms and the number of hallways.",
+      "The i%%ZSMJ10%%-th of the next m%%ZSMJ11%% lines contains three integers, ai,bi,ci%%ZSMJ12%% (1≤ci≤109,1≤ai,bi≤n,ai≠bi%%ZSMJ13%%) specifying that there is a one-way door leading from room ai%%ZSMJ14%% to room bi%%ZSMJ15%% requiring access-level ci%%ZSMJ16%%.",
+      "For each pair of rooms x%%ZSMJ17%% and y%%ZSMJ18%% it is guaranteed that there is at most one one-way door from room x%%ZSMJ19%% to room y%%ZSMJ20%%. Note that there can exist both a door from x%%ZSMJ21%% to y%%ZSMJ22%% and from y%%ZSMJ23%% to x%%ZSMJ24%%."
+    ],
+    "output": [
+      "Output one word, \"YES\" or \"NO\", answering whether the given floorplan is foolproof."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/c86bf0c9c7d3d4919249efe46e8e02603080cb3e.png)",
+      "![](https://espresso.codeforces.com/330bdf30ac68ef680514f021437641e2a851fe2a.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 5\n1 2 1\n2 4 2\n4 3 2\n2 3 1\n3 1 1",
+      "output": "YES"
+    },
+    {
+      "input": "4 5\n1 2 2\n2 3 3\n3 4 4\n4 1 5\n4 2 1",
+      "output": "NO"
+    }
+  ]
+}

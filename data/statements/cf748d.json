@@ -1,0 +1,42 @@
+{
+  "code": "CF748D",
+  "letter": "D",
+  "title": "D. Santa Claus and a Palindrome",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/748/D",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Santa Claus likes palindromes very much. There was his birthday recently. k of his friends came to him to congratulate him, and each of them presented to him a string si having the same length n. We denote the beauty of the i-th string by ai. It can happen that ai is negative — that means that Santa doesn't find this string beautiful at all.",
+      "Santa Claus is crazy about palindromes. He is thinking about the following question: what is the maximum possible total beauty of a palindrome which can be obtained by concatenating some (possibly all) of the strings he has? Each present can be used at most once. Note that all strings have the same length n.",
+      "Recall that a palindrome is a string that doesn't change after one reverses it.",
+      "Since the empty string is a palindrome too, the answer can't be negative. Even if all ai's are negative, Santa can obtain the empty string."
+    ],
+    "input": [
+      "The first line contains two positive integers k and n divided by space and denoting the number of Santa friends and the length of every string they've presented, respectively (1 ≤ k, n ≤ 100 000; n·k  ≤ 100 000).",
+      "k lines follow. The i-th of them contains the string si and its beauty ai ( - 10 000 ≤ ai ≤ 10 000). The string consists of n lowercase English letters, and its beauty is integer. Some of strings may coincide. Also, equal strings can have different beauties."
+    ],
+    "output": [
+      "In the only line print the required maximum possible beauty."
+    ],
+    "note": [
+      "In the first example Santa can obtain abbaaaxyxaaabba by concatenating strings 5, 2, 7, 6 and 3 (in this order)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7 3\nabb 2\naaa -3\nbba -1\nzyz -4\nabb 5\naaa 7\nxyx 4",
+      "output": "12"
+    },
+    {
+      "input": "3 1\na 1\na 2\na 3",
+      "output": "6"
+    },
+    {
+      "input": "2 5\nabcde 10000\nabcde 10000",
+      "output": "0"
+    }
+  ]
+}

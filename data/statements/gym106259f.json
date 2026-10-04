@@ -1,0 +1,41 @@
+{
+  "code": "GYM106259F",
+  "letter": "F",
+  "title": "F. Survival of the Fated",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106259/problem/F",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are organizing a tournament for n%%ZSMJ0%% gladiators. The i%%ZSMJ1%%-th gladiator has a strength level ai%%ZSMJ2%%.",
+      "The tournament consists of exactly n−1%%ZSMJ3%% duels. In each duel:",
+      "Two distinct gladiators are chosen uniformly at random from those remaining in the tournament. Let their strengths be x%%ZSMJ4%% and y%%ZSMJ5%%. Note that two distinct gladiators may have equal strengths.",
+      "The duel generates a brutality of |x−y|%%ZSMJ6%%.",
+      "One of the two gladiators is chosen uniformly at random to be eliminated, while the other remains in the tournament.",
+      "The process continues until only one gladiator remains. Compute the expected total brutality of the tournament modulo 998244353%%ZSMJ7%%."
+    ],
+    "input": [
+      "The first line contains a single integer t%%ZSMJ8%% (1≤t≤104%%ZSMJ9%%) — the number of test cases.",
+      "The first line of each test case contains an integer n%%ZSMJ10%% (2≤n≤3⋅105%%ZSMJ11%%) — the number of gladiators.",
+      "The second line contains n%%ZSMJ12%% integers a1,a2,…,an%%ZSMJ13%% (−109≤ai≤109%%ZSMJ14%%) — the strength levels of the gladiators.",
+      "It is guaranteed that the sum of n%%ZSMJ15%% over all test cases does not exceed 3⋅105%%ZSMJ16%%."
+    ],
+    "output": [
+      "For each test case, output a single integer — the expected total brutality modulo 998244353%%ZSMJ17%%.",
+      "Formally, let M=998244353%%ZSMJ18%%. It can be shown that the answer can be expressed as an irreducible fraction pq%%ZSMJ19%%, where p%%ZSMJ20%% and q%%ZSMJ21%% are integers and q \\not\\equiv 0 \\pmod M%%ZSMJ22%%. Output the integer equal to p \\cdot q^{-1} \\pmod M%%ZSMJ23%%."
+    ],
+    "note": [
+      "In the first test case, let the gladiators be A%%ZSMJ24%%, B%%ZSMJ25%%, C%%ZSMJ26%% with strengths 1%%ZSMJ27%%, 4%%ZSMJ28%%, 2%%ZSMJ29%% respectively. The tournament tree looks like:",
+      "![](https://espresso.codeforces.com/cb3afb77cc2a81ca975e966361cc49df7e5cb7b6.png)",
+      "Here, b%%ZSMJ30%% denotes brutality, -X%%ZSMJ31%% on an edge means gladiator X%%ZSMJ32%% is eliminated, and the boxed numbers are the total brutality for each scenario. There are 6%%ZSMJ33%% equally likely scenarios, so the expected total brutality is: \\frac{5 + 4 + 3 + 4 + 3 + 5}{6} = \\frac{24}{6} = 4.%%ZSMJ34%%"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3\n1 4 2\n4\n-5 -1 -3 -2\n5\n10 10 10 10 10\n3\n1000000000 -1000000000 0\n6\n3 8 -4 7 -2 5",
+      "output": "4\n499122183\n0\n337429843\n665496265"
+    }
+  ]
+}

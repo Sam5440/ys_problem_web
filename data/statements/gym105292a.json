@@ -1,0 +1,37 @@
+{
+  "code": "GYM105292A",
+  "letter": "A",
+  "title": "A. Akari",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105292/problem/A",
+  "difficulty": "*1400",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Akari, also known as Light Up, is a logic puzzle played on a rectangular grid. The player places light bulbs in empty cells until the entire grid is illuminated.",
+      "A light bulb lights up its own cell and all cells along the horizontal and vertical directions until its light hits an obstacle or the edge of the grid. No two light bulbs should be illuminated by each other. There are clue cells in the original rules indicating exactly how many bulbs must be placed in adjacent cells. However, determining whether a puzzle is solvable has been proven to be NP-complete.",
+      "![](https://espresso.codeforces.com/32251b3f31f01c8083a3d27cc5d48b6ec2fc83e2.png)",
+      "![](https://espresso.codeforces.com/02c121aa8b47d1f39998ec1ccf53c57b2bf8d7bc.png)",
+      "In this problem, a puzzle without clue cells will be provided for each test case. Please find a solution to the puzzle."
+    ],
+    "input": [
+      "The first line of the input contains two integers N%%ZSMJ0%% and M%%ZSMJ1%% — the number of rows and columns in the puzzle.",
+      "The following N%%ZSMJ2%% lines contain the description of the puzzle. Each line contains a string of length M%%ZSMJ3%%, consisting of characters '.' and '#'. The character '.' denotes an empty cell and the character '#' denotes an obstacle that blocks the light.",
+      "1≤N,M≤2000%%ZSMJ4%%"
+    ],
+    "output": [
+      "Mark the light bulbs you placed with the letter 'L' and output the final configuration in the same format as the given puzzle in the input. If there are multiple solutions, print any of them. It is guaranteed that at least one solution exists for the given input."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n...\n.#.\n...",
+      "output": "L..\n.#L\n.L."
+    },
+    {
+      "input": "4 5\n..#..\n.###.\n..#..\n.#.#.",
+      "output": "L.#L.\n.###L\n.L#L.\n.#L#."
+    }
+  ]
+}

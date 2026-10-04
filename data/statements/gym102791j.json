@@ -1,0 +1,53 @@
+{
+  "code": "GYM102791J",
+  "letter": "J",
+  "title": "J. Divide The String",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102791/problem/J",
+  "difficulty": "*1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You have a string s%%ZSMJ0%% consisting of lowercase letters of the Latin alphabet.",
+      "You need to split this string into substrings according to the following requirements:",
+      "in each substring, the first character is equal to the last character;",
+      "each substring contains at least two characters;",
+      "each character of the string s%%ZSMJ1%% belongs to exactly one of these substrings.",
+      "Therefore, if we concatenate all the resulting substrings in the same order, we'll get the original string s%%ZSMJ2%%.",
+      "A substring of the string s%%ZSMJ3%% is a non-empty sequence of consecutive letters of the string s%%ZSMJ4%%.",
+      "For example, the string aadddzxxz can be split into substrings aa, ddd and zxxz.",
+      "Find the maximum number of substrings that the string s%%ZSMJ5%% can be split into, and also the sizes of each of these substrings. If the string s%%ZSMJ6%% cannot be split as described, report it."
+    ],
+    "input": [
+      "The first line contains an integer n%%ZSMJ7%% (2≤n≤4⋅105%%ZSMJ8%%) — the length of the string s%%ZSMJ9%%.",
+      "The second line contains a string s%%ZSMJ10%% of length n%%ZSMJ11%% consisting of lowercase letters of the Latin alphabet."
+    ],
+    "output": [
+      "If the string cannot be split into substrings of greater than one length that start and end with the same letter, print −1%%ZSMJ12%%.",
+      "Otherwise, in the first line, print k%%ZSMJ13%% — the maximum number of substrings that the string s%%ZSMJ14%% can be split into. In the second line, print k%%ZSMJ15%% integers — the sizes of substrings that the string s%%ZSMJ16%% can be split into, in order from left to right. The sum of the output k%%ZSMJ17%% numbers must be equal to n%%ZSMJ18%%."
+    ],
+    "note": [
+      "In the first example, the string can be split into two substrings of length two, each of which starts and ends with the letter a.",
+      "In the second example, the string can be split into three substrings abcbca, ccbbc and abca."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\naaaa",
+      "output": "2\n2 2"
+    },
+    {
+      "input": "15\nabcbcaccbbcabca",
+      "output": "3\n6 5 4"
+    },
+    {
+      "input": "4\nabcd",
+      "output": "-1"
+    },
+    {
+      "input": "5\nabcda",
+      "output": "1\n5"
+    }
+  ]
+}

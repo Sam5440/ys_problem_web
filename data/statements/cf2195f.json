@@ -1,0 +1,48 @@
+{
+  "code": "CF2195F",
+  "letter": "F",
+  "title": "F. Parabola Independence",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/2195/F",
+  "difficulty": "*1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a set of n%%ZSMJ0%% quadratic functions F={f1,f2,…,fn}%%ZSMJ1%%, where fi(x)=aix2+bix+ci%%ZSMJ2%%.",
+      "Two functions f%%ZSMJ3%% and g%%ZSMJ4%% are called independent if f(x)≠g(x)%%ZSMJ5%% for all x∈R%%ZSMJ6%%.",
+      "Also, a set of functions G={g1,g2,…,gk}%%ZSMJ7%% is called organized if the two functions gi%%ZSMJ8%% and gj%%ZSMJ9%% are independent for all 1≤i<j≤|G|%%ZSMJ10%%.",
+      "For each i=1,2,…,n%%ZSMJ11%%, please find the size of the largest organized subset of F%%ZSMJ12%% that contains fi%%ZSMJ13%% as an element."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ14%% (1≤t≤104%%ZSMJ15%%). The description of the test cases follows.",
+      "The first line of each test case contains a single integer n%%ZSMJ16%% (1≤n≤3000%%ZSMJ17%%).",
+      "Each of the n%%ZSMJ18%% following lines contains three integers ai%%ZSMJ19%%, bi%%ZSMJ20%%, ci%%ZSMJ21%% denoting the function fi%%ZSMJ22%% (−106≤ai,bi,ci≤106%%ZSMJ23%%, ai≠0%%ZSMJ24%%).",
+      "It is guaranteed that the functions in one test case are pairwise distinct.",
+      "It is guaranteed that the sum of n2%%ZSMJ25%% over all test cases does not exceed 30002%%ZSMJ26%%."
+    ],
+    "output": [
+      "For each test case, output n%%ZSMJ27%% integers s1,s2,…,sn%%ZSMJ28%%, where si%%ZSMJ29%% is the size of the largest organized subset that contains fi%%ZSMJ30%%."
+    ],
+    "note": [
+      "In the first test case, the functions are as follows:",
+      "f1(x)=x2+2x−1%%ZSMJ31%%;",
+      "f2(x)=−3x2−3%%ZSMJ32%%;",
+      "f3(x)=−x2+4x−5%%ZSMJ33%%;",
+      "f4(x)=x2+2x−4%%ZSMJ34%%.",
+      "The functions' graphs are as shown below:",
+      "![](https://espresso.codeforces.com/168b5d6d822586244824257fcad8369941df3285.png)",
+      "The largest organized subsets of F%%ZSMJ35%% containing each function are as follows:",
+      "{f1,f3,f4}%%ZSMJ36%% is the largest organized subset that contains f1%%ZSMJ37%%;",
+      "{f1,f2}%%ZSMJ38%% is the largest organized subset that contains f2%%ZSMJ39%%;",
+      "{f1,f3,f4}%%ZSMJ40%% is the largest organized subset that contains f3%%ZSMJ41%%;",
+      "{f1,f3,f4}%%ZSMJ42%% is the largest organized subset that contains f4%%ZSMJ43%%."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4\n1 2 -1\n-3 0 -3\n-1 4 -5\n1 2 -4\n5\n3 0 0\n1 0 -5\n-3 0 0\n-1 0 10\n1 0 -10\n5\n884 -667 497\n680 -973 213\n23 -548 -412\n826 359 -333\n773 212 218",
+      "output": "3 2 3 3\n3 3 2 2 3\n3 3 3 1 2"
+    }
+  ]
+}

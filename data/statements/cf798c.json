@@ -1,0 +1,43 @@
+{
+  "code": "CF798C",
+  "letter": "C",
+  "title": "C. Mike and gcd problem",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/798/C",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Mike has a sequence A = [a1, a2, ..., an] of length n. He considers the sequence B = [b1, b2, ..., bn] beautiful if the gcd of all its elements is bigger than 1, i.e. ![](https://espresso.codeforces.com/1829934399ec1245c6050a62cf6e36810163b03b.png).",
+      "Mike wants to change his sequence in order to make it beautiful. In one move he can choose an index i (1 ≤ i < n), delete numbers ai, ai + 1 and put numbers ai - ai + 1, ai + ai + 1 in their place instead, in this order. He wants perform as few operations as possible. Find the minimal number of operations to make sequence A beautiful if it's possible, or tell him that it is impossible to do so.",
+      "![](https://espresso.codeforces.com/69b4319fc56f0d760506d7f84e7647ff65f6bdc5.png) is the biggest non-negative number d such that d divides bi for every i (1 ≤ i ≤ n)."
+    ],
+    "input": [
+      "The first line contains a single integer n (2 ≤ n ≤ 100 000) — length of sequence A.",
+      "The second line contains n space-separated integers a1, a2, ..., an (1 ≤ ai ≤ 109) — elements of sequence A."
+    ],
+    "output": [
+      "Output on the first line \"YES\" (without quotes) if it is possible to make sequence A beautiful by performing operations described above, and \"NO\" (without quotes) otherwise.",
+      "If the answer was \"YES\", output the minimal number of moves needed to make sequence A beautiful."
+    ],
+    "note": [
+      "In the first example you can simply make one move to obtain sequence [0, 2] with ![](https://espresso.codeforces.com/6ddb490b8e898198d30c56c6edce2cf15e6f998a.png).",
+      "In the second example the gcd of the sequence is already greater than 1."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 1",
+      "output": "YES\n1"
+    },
+    {
+      "input": "3\n6 2 4",
+      "output": "YES\n0"
+    },
+    {
+      "input": "2\n1 3",
+      "output": "YES\n1"
+    }
+  ]
+}

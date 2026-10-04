@@ -1,0 +1,39 @@
+{
+  "code": "GYM103503B",
+  "letter": "B",
+  "title": "B. Binary Search Search",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103503/problem/B",
+  "difficulty": "*1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "64 megabytes",
+  "sections": {
+    "legend": [
+      "Binary Search Search (BSS) is a cross between Breadth First Search and Binary Search. Its pseoudocode can be found below:",
+      {
+        "pre": "read n\nqueue of pairs q\npush(q,pair(1,n))\n\nwhile(q is not empty){\n\n    pair current = front(q)\n\n    mid = (current.first + current.second) / 2\n    print mid\n\n    if(mid > current.first)\n         push(q,pair(current.first, mid - 1))\n\n    if(mid < current.second)\n         push(q,pair(mid + 1, current.second))\n\n    pop_front(q)\n}"
+      },
+      "For example, if n=7%%ZSMJ0%%, this algorithm will print [4%%ZSMJ1%% 2%%ZSMJ2%% 6%%ZSMJ3%% 1%%ZSMJ4%% 3%%ZSMJ5%% 5%%ZSMJ6%% 7%%ZSMJ7%%].",
+      "Even though BSS doesn't have any practical applications, you are curious as to how long it takes for this algorithm to print certain integers. More formally, you are given t%%ZSMJ8%% testcases, each testcase containing two integers n%%ZSMJ9%% and k%%ZSMJ10%%. For each testcase, print one integer p%%ZSMJ11%% — the position of k%%ZSMJ12%% in the array printed by BSS."
+    ],
+    "input": [
+      "The first line of input contains one integer t%%ZSMJ13%% (1≤t≤105%%ZSMJ14%%) — the number of testcases. Each testcase contains two integers n%%ZSMJ15%% and k%%ZSMJ16%% (1≤k≤n≤1018%%ZSMJ17%%) — as described in the statement."
+    ],
+    "output": [
+      "For each testcase, print one integer p%%ZSMJ18%% — the position of k%%ZSMJ19%% in the array printed by BSS.",
+      "Subtask 1 (20 points): 1≤t,n≤1000%%ZSMJ20%%;",
+      "Subtask 2 (30 points): 1≤t≤1000%%ZSMJ21%%, 1≤n≤109%%ZSMJ22%%;",
+      "Subtask 3 (24 points): 1≤t≤104%%ZSMJ23%%;",
+      "Subtask 4 (26 points): No further constraints"
+    ],
+    "note": [
+      "For n=7%%ZSMJ24%%, BSS will print [4%%ZSMJ25%% 2%%ZSMJ26%% 6%%ZSMJ27%% 1%%ZSMJ28%% 3%%ZSMJ29%% 5%%ZSMJ30%% 7%%ZSMJ31%%]. 1%%ZSMJ32%% is the fourth printed integer, 2%%ZSMJ33%% is the second, 3%%ZSMJ34%% is the fifth, 4%%ZSMJ35%% is the first and 5%%ZSMJ36%% is the sixth."
+    ]
+  },
+  "examples": [
+    {
+      "input": "read n\nqueue of pairs q\npush(q,pair(1,n))\n\nwhile(q is not empty){\n\n    pair current = front(q)\n\n    mid = (current.first + current.second) / 2\n    print mid\n\n    if(mid > current.first)\n         push(q,pair(current.first, mid - 1))\n\n    if(mid < current.second)\n         push(q,pair(mid + 1, current.second))\n\n    pop_front(q)\n}",
+      "output": "7\n7 1\n7 2\n7 3\n7 4\n7 5\n4 1\n4 4"
+    }
+  ]
+}

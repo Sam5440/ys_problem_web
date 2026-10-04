@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: update-data
@@ -110,5 +111,28 @@ jobs:
             echo "No data changes"
           else
             git commit -m "chore: sync daily problems data"
+            git push
+          fi
+
+      # Save this run's full job log into the repo (public/ci-logs/, rolling
+      # 60-day retention enforced by the script) and push it as its own
+      # commit. Runs after the data commit so the downloaded log includes it;
+      # its own output is necessarily absent. Runs even if an earlier step
+      # failed so failures are logged too.
+      - name: Save CI log into the repo
+        if: ${{ !cancelled() && (steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch') }}
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/save-ci-log.mjs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/ci-logs
+          if git diff --cached --quiet; then
+            echo "No log changes"
+          else
+            git commit -m "ci: save run log $(date -u +%F) run ${GITHUB_RUN_ID}"
+            git pull --rebase origin main || true
             git push
           fi

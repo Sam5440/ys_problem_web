@@ -17,11 +17,11 @@ export default function LanguageSidebar() {
   if (!mounted) return null;
 
   const channels = (settings.sidebarChannels || []).filter((id) =>
-    ['deepl', 'youdao', 'caiyun', 'iflyrec', 'ai'].includes(id),
+    ['deepl', 'youdao', 'caiyun', 'iflyrec', 'ai', 'ai_custom'].includes(id),
   );
 
   const pickChannel = (id) => {
-    if (id === 'ai' && !aiReady) {
+    if (id === 'ai_custom' && !aiReady) {
       openSettings(); // configure the AI endpoint first
       return;
     }
@@ -37,9 +37,10 @@ export default function LanguageSidebar() {
     },
     ...channels.map((id) => ({
       key: `zh:${id}`,
-      label: `中文(${channelLabel(id)})`,
+      // the two AI entries carry their full label; the MT ones read 中文(渠道)
+      label: id === 'ai' || id === 'ai_custom' ? channelLabel(id) : `中文(${channelLabel(id)})`,
       active: lang.mode === 'zh' && lang.channel === id,
-      dim: id === 'ai' && !aiReady,
+      dim: id === 'ai_custom' && !aiReady,
       on: () => pickChannel(id),
     })),
     {

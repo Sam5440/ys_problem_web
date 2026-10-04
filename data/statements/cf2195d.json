@@ -9,29 +9,29 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "There is a hidden sequence a1,a2,…,an%%ZSMJ0%% of n%%ZSMJ1%% integers (n≥2%%ZSMJ2%%). It is guaranteed that |ai|≤1000%%ZSMJ3%% for all 1≤i≤n%%ZSMJ4%%.",
-      "Let's define a function f(x)%%ZSMJ5%% as follows:",
-      "f(x)=n∑i=1ai⋅|i−x|%%ZSMJ6%%",
-      "Given n%%ZSMJ7%% values f(1),f(2),…,f(n)%%ZSMJ8%%, please determine the values of a1,a2,…,an%%ZSMJ9%%.",
-      "It is guaranteed that the values a1,a2,…,an%%ZSMJ10%% can be determined uniquely."
+      "There is a hidden sequence a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ of n$$$n$$$ integers (n≥2$$$n \\ge 2$$$). It is guaranteed that |ai|≤1000$$$|a_i| \\le 1000$$$ for all 1≤i≤n$$$1 \\le i \\le n$$$.",
+      "Let's define a function f(x)$$$f(x)$$$ as follows:",
+      "f(x)=n∑i=1ai⋅|i−x|\n$$f(x)=\\sum_{i=1}^n a_i \\cdot |i-x|$$",
+      "Given n$$$n$$$ values f(1),f(2),…,f(n)$$$f(1),f(2),\\ldots,f(n)$$$, please determine the values of a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$.",
+      "It is guaranteed that the values a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ can be determined uniquely."
     ],
     "input": [
-      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ11%% (1≤t≤104%%ZSMJ12%%). The description of the test cases follows.",
-      "The first line of each test case contains a single integer n%%ZSMJ13%% (2≤n≤300000%%ZSMJ14%%).",
-      "The second line of each test case contains n%%ZSMJ15%% integers f(1),f(2),…,f(n)%%ZSMJ16%% (−1014≤f(i)≤1014%%ZSMJ17%%).",
-      "It is guaranteed that the sum of n%%ZSMJ18%% over all test cases does not exceed 300000%%ZSMJ19%%."
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$). The description of the test cases follows.",
+      "The first line of each test case contains a single integer n$$$n$$$ (2≤n≤300000$$$\\color{red}{2} \\le n \\le 300\\,000$$$).",
+      "The second line of each test case contains n$$$n$$$ integers f(1),f(2),…,f(n)$$$f(1),f(2),\\ldots,f(n)$$$ (−1014≤f(i)≤1014$$$-10^{14} \\le f(i) \\le 10^{14}$$$).",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 300000$$$300\\,000$$$."
     ],
     "output": [
-      "For each test case, output n%%ZSMJ20%% integers a1,a2,…,an%%ZSMJ21%% on a separate line (|ai|≤1000%%ZSMJ22%%).",
-      "It is guaranteed that the values a1,a2,…,an%%ZSMJ23%% can be determined uniquely."
+      "For each test case, output n$$$n$$$ integers a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ on a separate line (|ai|≤1000$$$|a_i| \\le 1000$$$).",
+      "It is guaranteed that the values a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ can be determined uniquely."
     ],
     "note": [
-      "In the first test case, the hidden sequence is a=[1,4,2,3]%%ZSMJ24%%.",
-      "The values f(1),f(2),…,f(n)%%ZSMJ25%% are as follows:",
-      "f(1)=1⋅|1−1|+4⋅|2−1|+2⋅|3−1|+3⋅|4−1|=0+4+4+9=17%%ZSMJ26%%;",
-      "f(2)=1⋅|1−2|+4⋅|2−2|+2⋅|3−2|+3⋅|4−2|=1+0+2+6=9%%ZSMJ27%%;",
-      "f(3)=1⋅|1−3|+4⋅|2−3|+2⋅|3−3|+3⋅|4−3|=2+4+0+3=9%%ZSMJ28%%;",
-      "f(4)=1⋅|1−4|+4⋅|2−4|+2⋅|3−4|+3⋅|4−4|=3+8+2+0=13%%ZSMJ29%%."
+      "In the first test case, the hidden sequence is a=[1,4,2,3]$$$a=[1,4,2,3]$$$.",
+      "The values f(1),f(2),…,f(n)$$$f(1),f(2),\\ldots,f(n)$$$ are as follows:",
+      "f(1)=1⋅|1−1|+4⋅|2−1|+2⋅|3−1|+3⋅|4−1|=0+4+4+9=17$$$f(1) = 1 \\cdot |1-1| + 4 \\cdot |2-1| + 2 \\cdot |3-1| + 3 \\cdot |4-1| = 0+4+4+9 = 17$$$;",
+      "f(2)=1⋅|1−2|+4⋅|2−2|+2⋅|3−2|+3⋅|4−2|=1+0+2+6=9$$$f(2) = 1 \\cdot |1-2| + 4 \\cdot |2-2| + 2 \\cdot |3-2| + 3 \\cdot |4-2| = 1+0+2+6 = 9$$$;",
+      "f(3)=1⋅|1−3|+4⋅|2−3|+2⋅|3−3|+3⋅|4−3|=2+4+0+3=9$$$f(3) = 1 \\cdot |1-3| + 4 \\cdot |2-3| + 2 \\cdot |3-3| + 3 \\cdot |4-3| = 2+4+0+3 = 9$$$;",
+      "f(4)=1⋅|1−4|+4⋅|2−4|+2⋅|3−4|+3⋅|4−4|=3+8+2+0=13$$$f(4) = 1 \\cdot |1-4| + 4 \\cdot |2-4| + 2 \\cdot |3-4| + 3 \\cdot |4-4| = 3+8+2+0 = 13$$$."
     ]
   },
   "examples": [
@@ -39,5 +39,32 @@
       "input": "4\n4\n17 9 9 13\n6\n-37 -32 -15 4 27 42\n5\n-26 -32 -24 -4 2\n2\n420 -69",
       "output": "1 4 2 3\n3 6 1 2 -4 -7\n-6 7 6 -7 -6\n-69 420"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

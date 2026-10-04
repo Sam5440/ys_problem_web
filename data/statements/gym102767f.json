@@ -9,29 +9,29 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Given a sequence of integers a1,a2,…,an%%ZSMJ0%% and a prime number x%%ZSMJ1%%.",
-      "We have a function which takes length%%ZSMJ2%% as a parameter and return the maximum possible value of  (a_i\\times a_{i+1}\\times \\cdots \\times a_{i+length-1})\\pmod x%%ZSMJ3%% , where 1 \\le i \\le (n-length+1) %%ZSMJ4%%.",
-      "For example – a = [2,3,4,2] , x = 5 %%ZSMJ5%%.",
-      "For length = 1%%ZSMJ6%% , function return \\max(2,3,4,2) = 4%%ZSMJ7%%.",
-      "For length = 2%%ZSMJ8%% , function return \\max((2\\times 3)\\pmod 5 , (3\\times 4)\\pmod 5 , (4\\times 2)\\pmod 5) = \\max(1,2,3) = 3%%ZSMJ9%%.",
-      "For length = 3%%ZSMJ10%% , function return \\max((2\\times 3\\times 4)\\pmod 5 , (3\\times 4\\times 2)\\pmod 5) = \\max(4,4) = 4%%ZSMJ11%%.",
-      "For length = 4%%ZSMJ12%% , function return \\max((2\\times 3\\times 4\\times 2)\\pmod 5) = \\max(3) = 3%%ZSMJ13%%.",
+      "Given a sequence of integers a1,a2,…,an$$$a_1 , a_2 , \\ldots , a_n$$$ and a prime number x$$$x$$$.",
+      "We have a function which takes length$$$length$$$ as a parameter and return the maximum possible value of (ai×ai+1×⋯×ai+length−1)(modx)$$$ (a_i\\times a_{i+1}\\times \\cdots \\times a_{i+length-1})\\pmod x$$$ , where 1≤i≤(n−length+1)$$$1 \\le i \\le (n-length+1) $$$.",
+      "For example – a=[2,3,4,2],x=5$$$a = [2,3,4,2] , x = 5 $$$.",
+      "For length=1$$$length = 1$$$ , function return max(2,3,4,2)=4$$$\\max(2,3,4,2) = 4$$$.",
+      "For length=2$$$length = 2$$$ , function return max((2×3)(mod5),(3×4)(mod5),(4×2)(mod5))=max(1,2,3)=3$$$\\max((2\\times 3)\\pmod 5 , (3\\times 4)\\pmod 5 , (4\\times 2)\\pmod 5) = \\max(1,2,3) = 3$$$.",
+      "For length=3$$$length = 3$$$ , function return max((2×3×4)(mod5),(3×4×2)(mod5))=max(4,4)=4$$$\\max((2\\times 3\\times 4)\\pmod 5 , (3\\times 4\\times 2)\\pmod 5) = \\max(4,4) = 4$$$.",
+      "For length=4$$$length = 4$$$ , function return max((2×3×4×2)(mod5))=max(3)=3$$$\\max((2\\times 3\\times 4\\times 2)\\pmod 5) = \\max(3) = 3$$$.",
       "Your task is to find the smallest length for which this function return maximum possible value."
     ],
     "input": [
-      "The first line contains a single integer t (1 \\le t \\le 10^5)%%ZSMJ14%% — the number of test cases in the input. Then t%%ZSMJ15%% test cases follow.",
-      "Each query contains two lines. The first line contains two integer n (1 \\le n \\le 10^5)%%ZSMJ16%%: the number of integers in the sequence and x (2 \\le x \\le 97)%%ZSMJ17%%, and the second line contains n%%ZSMJ18%% integers a_1, \\ldots ,a_n (1\\le a_i  \\lt  x)%%ZSMJ19%%.",
-      "It is guaranteed that the total sum of n%%ZSMJ20%% is at most 10^5%%ZSMJ21%% and x%%ZSMJ22%% be a prime number."
+      "The first line contains a single integer t(1≤t≤105)$$$t (1 \\le t \\le 10^5)$$$ — the number of test cases in the input. Then t$$$t$$$ test cases follow.",
+      "Each query contains two lines. The first line contains two integer n(1≤n≤105)$$$n (1 \\le n \\le 10^5)$$$: the number of integers in the sequence and x(2≤x≤97)$$$x (2 \\le x \\le 97)$$$, and the second line contains n$$$n$$$ integers a1,…,an(1≤ai<x)$$$a_1, \\ldots ,a_n (1\\le a_i  \\lt  x)$$$.",
+      "It is guaranteed that the total sum of n$$$n$$$ is at most 105$$$10^5$$$ and x$$$x$$$ be a prime number."
     ],
     "output": [
-      "Print t%%ZSMJ23%% answers to the test cases. Each answer must be consisting of two integers — the maximum possible value of function and the smallest length for which function return maximum possible value."
+      "Print t$$$t$$$ answers to the test cases. Each answer must be consisting of two integers — the maximum possible value of function and the smallest length for which function return maximum possible value."
     ],
     "note": [
-      "In the first query — Explained in Problem Statement. For length = 1%%ZSMJ24%% and 3%%ZSMJ25%%, Function return maximum value i.e 4%%ZSMJ26%%. We have to return the minimum length i.e 1%%ZSMJ27%%.",
+      "In the first query — Explained in Problem Statement. For length=1$$$length = 1$$$ and 3$$$3$$$, Function return maximum value i.e 4$$$4$$$. We have to return the minimum length i.e 1$$$1$$$.",
       "In the fourth query —",
-      "For length = 1%%ZSMJ28%% , function return \\max(5,5,5) = 5%%ZSMJ29%%.",
-      "For length = 2%%ZSMJ30%% , function return \\max((5\\times 5)\\pmod 7 , (5\\times 5)\\pmod 7) = \\max(4,4) = 4%%ZSMJ31%%.",
-      "For length = 3%%ZSMJ32%% , function return \\max((5\\times 5\\times 5)\\pmod 7) = \\max(6) = 6%%ZSMJ33%%."
+      "For length=1$$$length = 1$$$ , function return max(5,5,5)=5$$$\\max(5,5,5) = 5$$$.",
+      "For length=2$$$length = 2$$$ , function return max((5×5)(mod7),(5×5)(mod7))=max(4,4)=4$$$\\max((5\\times 5)\\pmod 7 , (5\\times 5)\\pmod 7) = \\max(4,4) = 4$$$.",
+      "For length=3$$$length = 3$$$ , function return max((5×5×5)(mod7))=max(6)=6$$$\\max((5\\times 5\\times 5)\\pmod 7) = \\max(6) = 6$$$."
     ]
   },
   "examples": [
@@ -39,5 +39,32 @@
       "input": "5\n4 5\n2 3 4 2\n4 3\n1 1 1 1\n3 7\n2 3 6\n3 7\n5 5 5\n3 11\n5 6 7",
       "output": "4 1\n1 1\n6 1\n6 3\n9 2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

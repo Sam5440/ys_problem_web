@@ -10,17 +10,17 @@
   "sections": {
     "legend": [
       "One of the longest-running events of the Office Olympics is the Toilet High Jump. This event was initially introduced to the Olympics by Thomas Crapper in 1905 as a means to get his employees more excited to sell toilets. The event rewards the ability to jump to very tall heights, with the gold medal being awarded to the employee who can jump the highest.",
-      "The way the event is structured is as follows: The n%%ZSMJ0%% employees of Crapper & Co. each have predetermined \"jump heights\" ji%%ZSMJ1%% (measured in units) that determine the maximum height they can jump. The event will consist of m%%ZSMJ2%% rounds. Initially, there is a sequence of k%%ZSMJ3%% tiles containing exactly one toilet each. During the i%%ZSMJ4%%-th round, Thomas will choose two indices li%%ZSMJ5%% and ri%%ZSMJ6%% (subject to 1≤li≤ri≤k%%ZSMJ7%%) and then an integer xi%%ZSMJ8%% and stack exactly xi%%ZSMJ9%% unique toilets upon the existing toilets in the tiles li,li+1,…,ri%%ZSMJ10%%. That is to say, the number of toilets within each of the tiles in the range [li,ri]%%ZSMJ11%% will increase by xi%%ZSMJ12%%.",
-      "Importantly, each toilet has a height of 1 unit, and when a new toilet is added to a tile, the height of the toilets in that tile increases by 1 unit. Once the toilets in the i%%ZSMJ13%%-th round have been added, each of the n%%ZSMJ14%% employees will attempt to jump from tile 1%%ZSMJ15%% to tile k%%ZSMJ16%%. Initially, each employee will be standing atop the pile of toilets in tile 1%%ZSMJ17%%, and to jump from tile i%%ZSMJ18%% to tile i+1%%ZSMJ19%% (assuming the current heights of toilets in tiles i%%ZSMJ20%% and i+1%%ZSMJ21%% are hi%%ZSMJ22%% and hi+1%%ZSMJ23%%, respectively), the employee must have a jump height of at least max(0,hi+1−hi)%%ZSMJ24%%. Obviously, it could be the case that some employees cannot finish the course and won't earn a point for that specific round.",
-      "As the referee of the event, your job is simple. You must carefully observe each round and determine how many employees earn points after each of the m%%ZSMJ25%% rounds. Then, you must report this information to Thomas Crapper so that he may determine the winner (and thus the employee(s) who will receive the gold medal). Note that toilets are not reset between rounds, that is, added toilets remain stacked in their respective tiles."
+      "The way the event is structured is as follows: The n$$$n$$$ employees of Crapper & Co. each have predetermined \"jump heights\" ji$$$j_i$$$ (measured in units) that determine the maximum height they can jump. The event will consist of m$$$m$$$ rounds. Initially, there is a sequence of k$$$k$$$ tiles containing exactly one toilet each. During the i$$$i$$$-th round, Thomas will choose two indices li$$$l_i$$$ and ri$$$r_i$$$ (subject to 1≤li≤ri≤k$$$1 \\leq l_i \\leq r_i \\leq k$$$) and then an integer xi$$$x_i$$$ and stack exactly xi$$$x_i$$$ unique toilets upon the existing toilets in the tiles li,li+1,…,ri$$$l_i, l_i + 1, \\dots, r_i$$$. That is to say, the number of toilets within each of the tiles in the range [li,ri]$$$[l_i, r_i]$$$ will increase by xi$$$x_i$$$.",
+      "Importantly, each toilet has a height of 1 unit, and when a new toilet is added to a tile, the height of the toilets in that tile increases by 1 unit. Once the toilets in the i$$$i$$$-th round have been added, each of the n$$$n$$$ employees will attempt to jump from tile 1$$$1$$$ to tile k$$$k$$$. Initially, each employee will be standing atop the pile of toilets in tile 1$$$1$$$, and to jump from tile i$$$i$$$ to tile i+1$$$i+1$$$ (assuming the current heights of toilets in tiles i$$$i$$$ and i+1$$$i+1$$$ are hi$$$h_i$$$ and hi+1$$$h_{i+1}$$$, respectively), the employee must have a jump height of at least max(0,hi+1−hi)$$$\\text{max}(0, h_{i+1} - h_i)$$$. Obviously, it could be the case that some employees cannot finish the course and won't earn a point for that specific round.",
+      "As the referee of the event, your job is simple. You must carefully observe each round and determine how many employees earn points after each of the m$$$m$$$ rounds. Then, you must report this information to Thomas Crapper so that he may determine the winner (and thus the employee(s) who will receive the gold medal). Note that toilets are not reset between rounds, that is, added toilets remain stacked in their respective tiles."
     ],
     "input": [
-      "The input will begin with a line containing three space-separated integers, n%%ZSMJ26%% (1≤n≤105%%ZSMJ27%%), m%%ZSMJ28%% (1≤m≤105%%ZSMJ29%%), and k%%ZSMJ30%% (1≤k≤105%%ZSMJ31%%) as described above.",
-      "The next line of input will consist of n%%ZSMJ32%% space-separated integers ji%%ZSMJ33%% (1≤ji≤1018%%ZSMJ34%%), denoting the jump heights of the n%%ZSMJ35%% employees.",
-      "The next m%%ZSMJ36%% lines of input will each describe one of the rounds of the event. Each of these m%%ZSMJ37%% lines will consist of three space-separated integers li%%ZSMJ38%%, ri%%ZSMJ39%% (1≤li≤ri≤k%%ZSMJ40%%), and xi%%ZSMJ41%% (1≤xi≤2⋅109%%ZSMJ42%%). These three integers describe the i%%ZSMJ43%%-th round of the event as explained above."
+      "The input will begin with a line containing three space-separated integers, n$$$n$$$ (1≤n≤105$$$1 \\leq n \\leq 10^5$$$), m$$$m$$$ (1≤m≤105$$$1 \\leq m \\leq 10^5$$$), and k$$$k$$$ (1≤k≤105$$$1 \\leq k \\leq 10^5$$$) as described above.",
+      "The next line of input will consist of n$$$n$$$ space-separated integers ji$$$j_i$$$ (1≤ji≤1018$$$1 \\leq j_i \\leq 10^{18}$$$), denoting the jump heights of the n$$$n$$$ employees.",
+      "The next m$$$m$$$ lines of input will each describe one of the rounds of the event. Each of these m$$$m$$$ lines will consist of three space-separated integers li$$$l_i$$$, ri$$$r_i$$$ (1≤li≤ri≤k$$$1 \\leq l_i \\leq r_i \\leq k$$$), and xi$$$x_i$$$ (1≤xi≤2⋅109$$$1 \\leq x_i \\leq 2 \\cdot 10^9$$$). These three integers describe the i$$$i$$$-th round of the event as explained above."
     ],
     "output": [
-      "Your output should consist of exactly m%%ZSMJ44%% lines, one for each of the rounds of the event. The i%%ZSMJ45%%-th line of output should represent the number of employees who are able to complete the i%%ZSMJ46%%-th round of the event."
+      "Your output should consist of exactly m$$$m$$$ lines, one for each of the rounds of the event. The i$$$i$$$-th line of output should represent the number of employees who are able to complete the i$$$i$$$-th round of the event."
     ]
   },
   "examples": [
@@ -28,5 +28,21 @@
       "input": "5 4 5\n1 2 3 4 5\n2 5 2\n1 1 3\n3 4 4\n1 2 3",
       "output": "4\n5\n2\n5"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

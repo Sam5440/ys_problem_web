@@ -10,30 +10,30 @@
   "sections": {
     "legend": [
       "Polycarp is very fond of playing the game Minesweeper. Recently he found a similar game and there are such rules.",
-      "There are mines on the field, for each the coordinates of its location are known (xi,yi%%ZSMJ0%%). Each mine has a lifetime in seconds, after which it will explode. After the explosion, the mine also detonates all mines vertically and horizontally at a distance of k%%ZSMJ1%% (two perpendicular lines). As a result, we get an explosion on the field in the form of a \"plus\" symbol ('+'). Thus, one explosion can cause new explosions, and so on.",
+      "There are mines on the field, for each the coordinates of its location are known (xi,yi$$$x_i, y_i$$$). Each mine has a lifetime in seconds, after which it will explode. After the explosion, the mine also detonates all mines vertically and horizontally at a distance of k$$$k$$$ (two perpendicular lines). As a result, we get an explosion on the field in the form of a \"plus\" symbol ('+'). Thus, one explosion can cause new explosions, and so on.",
       "Also, Polycarp can detonate anyone mine every second, starting from zero seconds. After that, a chain reaction of explosions also takes place. Mines explode instantly and also instantly detonate other mines according to the rules described above.",
       "Polycarp wants to set a new record and asks you to help him calculate in what minimum number of seconds all mines can be detonated."
     ],
     "input": [
-      "The first line of the input contains an integer t%%ZSMJ2%% (1≤t≤104%%ZSMJ3%%) — the number of test cases in the test.",
+      "The first line of the input contains an integer t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$) — the number of test cases in the test.",
       "An empty line is written in front of each test suite.",
-      "Next comes a line that contains integers n%%ZSMJ4%% and k%%ZSMJ5%% (1≤n≤2⋅105%%ZSMJ6%%, 0≤k≤109%%ZSMJ7%%) — the number of mines and the distance that hit by mines during the explosion, respectively.",
-      "Then n%%ZSMJ8%% lines follow, the i%%ZSMJ9%%-th of which describes the x%%ZSMJ10%% and y%%ZSMJ11%% coordinates of the i%%ZSMJ12%%-th mine and the time until its explosion (−109≤x,y≤109%%ZSMJ13%%, 0≤timer≤109%%ZSMJ14%%). It is guaranteed that all mines have different coordinates.",
-      "It is guaranteed that the sum of the values n%%ZSMJ15%% over all test cases in the test does not exceed 2⋅105%%ZSMJ16%%."
+      "Next comes a line that contains integers n$$$n$$$ and k$$$k$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$, 0≤k≤109$$$0 \\le k \\le 10^9$$$) — the number of mines and the distance that hit by mines during the explosion, respectively.",
+      "Then n$$$n$$$ lines follow, the i$$$i$$$-th of which describes the x$$$x$$$ and y$$$y$$$ coordinates of the i$$$i$$$-th mine and the time until its explosion (−109≤x,y≤109$$$-10^9 \\le x, y \\le 10^9$$$, 0≤timer≤109$$$0 \\le timer \\le 10^9$$$). It is guaranteed that all mines have different coordinates.",
+      "It is guaranteed that the sum of the values n$$$n$$$ over all test cases in the test does not exceed 2⋅105$$$2 \\cdot 10^5$$$."
     ],
     "output": [
-      "Print t%%ZSMJ17%% lines, each of the lines must contain the answer to the corresponding set of input data  — the minimum number of seconds it takes to explode all the mines."
+      "Print t$$$t$$$ lines, each of the lines must contain the answer to the corresponding set of input data  — the minimum number of seconds it takes to explode all the mines."
     ],
     "note": [
       "![](https://espresso.codeforces.com/b54edbbac5e8e00269b5594b5d0b049aadf51020.png)",
       "First example:",
-      "0%%ZSMJ18%% second: we explode a mine at the cell (2,2)%%ZSMJ19%%, it does not detonate any other mine since k=0%%ZSMJ20%%.",
-      "1%%ZSMJ21%% second: we explode the mine at the cell (0,1)%%ZSMJ22%%, and the mine at the cell (0,0)%%ZSMJ23%% explodes itself.",
-      "2%%ZSMJ24%% second: we explode the mine at the cell (1,1)%%ZSMJ25%%, and the mine at the cell (1,0)%%ZSMJ26%% explodes itself.",
+      "0$$$0$$$ second: we explode a mine at the cell (2,2)$$$(2, 2)$$$, it does not detonate any other mine since k=0$$$k=0$$$.",
+      "1$$$1$$$ second: we explode the mine at the cell (0,1)$$$(0, 1)$$$, and the mine at the cell (0,0)$$$(0, 0)$$$ explodes itself.",
+      "2$$$2$$$ second: we explode the mine at the cell (1,1)$$$(1, 1)$$$, and the mine at the cell (1,0)$$$(1, 0)$$$ explodes itself.",
       "Second example:",
-      "0%%ZSMJ27%% second: we explode a mine at the cell (2,2)%%ZSMJ28%% we get:",
+      "0$$$0$$$ second: we explode a mine at the cell (2,2)$$$(2, 2)$$$ we get:",
       "![](https://espresso.codeforces.com/2801f4738af5fd4af5d46fa774b162bed5319cd2.png)",
-      "1%%ZSMJ29%% second: the mine at coordinate (0,0)%%ZSMJ30%% explodes and since k=2%%ZSMJ31%% the explosion detonates mines at the cells (0,1)%%ZSMJ32%% and (1,0)%%ZSMJ33%%, and their explosions detonate the mine at the cell (1,1)%%ZSMJ34%% and there are no mines left on the field."
+      "1$$$1$$$ second: the mine at coordinate (0,0)$$$(0, 0)$$$ explodes and since k=2$$$k=2$$$ the explosion detonates mines at the cells (0,1)$$$(0, 1)$$$ and (1,0)$$$(1, 0)$$$, and their explosions detonate the mine at the cell (1,1)$$$(1, 1)$$$ and there are no mines left on the field."
     ]
   },
   "examples": [
@@ -41,5 +41,34 @@
       "input": "3\n\n5 0\n0 0 1\n0 1 4\n1 0 2\n1 1 3\n2 2 9\n\n5 2\n0 0 1\n0 1 4\n1 0 2\n1 1 3\n2 2 9\n\n6 1\n1 -1 3\n0 -1 9\n0 1 7\n-1 0 1\n-1 1 9\n-1 -1 7",
       "output": "2\n1\n0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

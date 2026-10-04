@@ -10,23 +10,23 @@
   "sections": {
     "legend": [
       "Ghosts live in harmony and peace, they travel the space without any purpose other than scare whoever stands in their way.",
-      "There are n%%ZSMJ0%% ghosts in the universe, they move in the OXY%%ZSMJ1%% plane, each one of them has its own velocity that does not change in time: →V=Vx→i+Vy→j%%ZSMJ2%% where Vx%%ZSMJ3%% is its speed on the x%%ZSMJ4%%-axis and Vy%%ZSMJ5%% is on the y%%ZSMJ6%%-axis.",
-      "A ghost i%%ZSMJ7%% has experience value EXi%%ZSMJ8%%, which represent how many ghosts tried to scare him in his past. Two ghosts scare each other if they were in the same cartesian point at a moment of time.",
-      "As the ghosts move with constant speed, after some moment of time there will be no further scaring (what a relief!) and the experience of ghost kind GX=∑ni=1EXi%%ZSMJ9%% will never increase.",
-      "Tameem is a red giant, he took a picture of the cartesian plane at a certain moment of time T%%ZSMJ10%%, and magically all the ghosts were aligned on a line of the form y=a⋅x+b%%ZSMJ11%%. You have to compute what will be the experience index of the ghost kind GX%%ZSMJ12%% in the indefinite future, this is your task for today.",
-      "Note that when Tameem took the picture, GX%%ZSMJ13%% may already be greater than 0%%ZSMJ14%%, because many ghosts may have scared one another at any moment between [−∞,T]%%ZSMJ15%%."
+      "There are n$$$n$$$ ghosts in the universe, they move in the OXY$$$OXY$$$ plane, each one of them has its own velocity that does not change in time: →V=Vx→i+Vy→j$$$\\overrightarrow{V} = V_{x}\\overrightarrow{i} + V_{y}\\overrightarrow{j}$$$ where Vx$$$V_{x}$$$ is its speed on the x$$$x$$$-axis and Vy$$$V_{y}$$$ is on the y$$$y$$$-axis.",
+      "A ghost i$$$i$$$ has experience value EXi$$$EX_i$$$, which represent how many ghosts tried to scare him in his past. Two ghosts scare each other if they were in the same cartesian point at a moment of time.",
+      "As the ghosts move with constant speed, after some moment of time there will be no further scaring (what a relief!) and the experience of ghost kind GX=∑ni=1EXi$$$GX = \\sum_{i=1}^{n} EX_i$$$ will never increase.",
+      "Tameem is a red giant, he took a picture of the cartesian plane at a certain moment of time T$$$T$$$, and magically all the ghosts were aligned on a line of the form y=a⋅x+b$$$y = a \\cdot x + b$$$. You have to compute what will be the experience index of the ghost kind GX$$$GX$$$ in the indefinite future, this is your task for today.",
+      "Note that when Tameem took the picture, GX$$$GX$$$ may already be greater than 0$$$0$$$, because many ghosts may have scared one another at any moment between [−∞,T]$$$[-\\infty, T]$$$."
     ],
     "input": [
-      "The first line contains three integers n%%ZSMJ16%%, a%%ZSMJ17%% and b%%ZSMJ18%% (1≤n≤200000%%ZSMJ19%%, 1≤|a|≤109%%ZSMJ20%%, 0≤|b|≤109%%ZSMJ21%%) — the number of ghosts in the universe and the parameters of the straight line.",
-      "Each of the next n%%ZSMJ22%% lines contains three integers xi%%ZSMJ23%%, Vxi%%ZSMJ24%%, Vyi%%ZSMJ25%% (−109≤xi≤109%%ZSMJ26%%, −109≤Vxi,Vyi≤109%%ZSMJ27%%), where xi%%ZSMJ28%% is the current x%%ZSMJ29%%-coordinate of the i%%ZSMJ30%%-th ghost (and yi=a⋅xi+b%%ZSMJ31%%).",
-      "It is guaranteed that no two ghosts share the same initial position, in other words, it is guaranteed that for all (i,j)%%ZSMJ32%% xi≠xj%%ZSMJ33%% for i≠j%%ZSMJ34%%."
+      "The first line contains three integers n$$$n$$$, a$$$a$$$ and b$$$b$$$ (1≤n≤200000$$$1 \\leq n \\leq 200000$$$, 1≤|a|≤109$$$1 \\leq |a| \\leq 10^9$$$, 0≤|b|≤109$$$0 \\le |b| \\le 10^9$$$) — the number of ghosts in the universe and the parameters of the straight line.",
+      "Each of the next n$$$n$$$ lines contains three integers xi$$$x_i$$$, Vxi$$$V_{xi}$$$, Vyi$$$V_{yi}$$$ (−109≤xi≤109$$$-10^9 \\leq x_i \\leq 10^9$$$, −109≤Vxi,Vyi≤109$$$-10^9 \\leq V_{x i}, V_{y i} \\leq 10^9$$$), where xi$$$x_i$$$ is the current x$$$x$$$-coordinate of the i$$$i$$$-th ghost (and yi=a⋅xi+b$$$y_i = a \\cdot x_i + b$$$).",
+      "It is guaranteed that no two ghosts share the same initial position, in other words, it is guaranteed that for all (i,j)$$$(i,j)$$$ xi≠xj$$$x_i \\neq x_j$$$ for i≠j$$$i \\ne j$$$."
     ],
     "output": [
-      "Output one line: experience index of the ghost kind GX%%ZSMJ35%% in the indefinite future."
+      "Output one line: experience index of the ghost kind GX$$$GX$$$ in the indefinite future."
     ],
     "note": [
-      "There are four collisions (1,2,T−0.5)%%ZSMJ36%%, (1,3,T−1)%%ZSMJ37%%, (2,4,T+1)%%ZSMJ38%%, (3,4,T+0.5)%%ZSMJ39%%, where (u,v,t)%%ZSMJ40%% means a collision happened between ghosts u%%ZSMJ41%% and v%%ZSMJ42%% at moment t%%ZSMJ43%%. At each collision, each ghost gained one experience point, this means that GX=4⋅2=8%%ZSMJ44%%.",
-      "In the second test, all points will collide when t=T+1%%ZSMJ45%%.",
+      "There are four collisions (1,2,T−0.5)$$$(1,2,T-0.5)$$$, (1,3,T−1)$$$(1,3,T-1)$$$, (2,4,T+1)$$$(2,4,T+1)$$$, (3,4,T+0.5)$$$(3,4,T+0.5)$$$, where (u,v,t)$$$(u,v,t)$$$ means a collision happened between ghosts u$$$u$$$ and v$$$v$$$ at moment t$$$t$$$. At each collision, each ghost gained one experience point, this means that GX=4⋅2=8$$$GX = 4 \\cdot 2 = 8$$$.",
+      "In the second test, all points will collide when t=T+1$$$t = T + 1$$$.",
       "![](https://espresso.codeforces.com/632930388686f4065fba42f9dba9a1c12c028844.png)",
       "The red arrow represents the 1-st ghost velocity, orange represents the 2-nd ghost velocity, and blue represents the 3-rd ghost velocity."
     ]
@@ -44,5 +44,29 @@
       "input": "3 1 0\n0 0 0\n1 0 0\n2 0 0",
       "output": "0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

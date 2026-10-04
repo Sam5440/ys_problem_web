@@ -9,34 +9,34 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "There are n%%ZSMJ0%% candles on a Hanukkah menorah, and some of its candles are initially lit. We can describe which candles are lit with a binary string s%%ZSMJ1%%, where the i%%ZSMJ2%%-th candle is lit if and only if si=1%%ZSMJ3%%.",
+      "There are n$$$n$$$ candles on a Hanukkah menorah, and some of its candles are initially lit. We can describe which candles are lit with a binary string s$$$s$$$, where the i$$$i$$$-th candle is lit if and only if si=1$$$s_i=1$$$.",
       "![](https://espresso.codeforces.com/a64b634ae534f61590da22af0f8f1e6e4fa4900d.png)",
-      "Initially, the candle lights are described by a string a%%ZSMJ4%%. In an operation, you select a candle that is currently lit. By doing so, the candle you selected will remain lit, and every other candle will change (if it was lit, it will become unlit and if it was unlit, it will become lit).",
-      "You would like to make the candles look the same as string b%%ZSMJ5%%. Your task is to determine if it is possible, and if it is, find the minimum number of operations required."
+      "Initially, the candle lights are described by a string a$$$a$$$. In an operation, you select a candle that is currently lit. By doing so, the candle you selected will remain lit, and every other candle will change (if it was lit, it will become unlit and if it was unlit, it will become lit).",
+      "You would like to make the candles look the same as string b$$$b$$$. Your task is to determine if it is possible, and if it is, find the minimum number of operations required."
     ],
     "input": [
-      "The first line contains an integer t%%ZSMJ6%% (1≤t≤104%%ZSMJ7%%) — the number of test cases. Then t%%ZSMJ8%% cases follow.",
-      "The first line of each test case contains a single integer n%%ZSMJ9%% (1≤n≤105%%ZSMJ10%%) — the number of candles.",
-      "The second line contains a string a%%ZSMJ11%% of length n%%ZSMJ12%% consisting of symbols 0 and 1 — the initial pattern of lights.",
-      "The third line contains a string b%%ZSMJ13%% of length n%%ZSMJ14%% consisting of symbols 0 and 1 — the desired pattern of lights.",
-      "It is guaranteed that the sum of n%%ZSMJ15%% does not exceed 105%%ZSMJ16%%."
+      "The first line contains an integer t$$$t$$$ (1≤t≤104$$$1\\le t\\le 10^4$$$) — the number of test cases. Then t$$$t$$$ cases follow.",
+      "The first line of each test case contains a single integer n$$$n$$$ (1≤n≤105$$$1\\le n\\le 10^5$$$) — the number of candles.",
+      "The second line contains a string a$$$a$$$ of length n$$$n$$$ consisting of symbols 0 and 1 — the initial pattern of lights.",
+      "The third line contains a string b$$$b$$$ of length n$$$n$$$ consisting of symbols 0 and 1 — the desired pattern of lights.",
+      "It is guaranteed that the sum of n$$$n$$$ does not exceed 105$$$10^5$$$."
     ],
     "output": [
-      "For each test case, output the minimum number of operations required to transform a%%ZSMJ17%% to b%%ZSMJ18%%, or −1%%ZSMJ19%% if it's impossible."
+      "For each test case, output the minimum number of operations required to transform a$$$a$$$ to b$$$b$$$, or −1$$$-1$$$ if it's impossible."
     ],
     "note": [
       "In the first test case, the two strings are already equal, so we don't have to perform any operations.",
-      "In the second test case, we can perform a single operation selecting the second candle to transform 01%%ZSMJ20%% into 11%%ZSMJ21%%.",
+      "In the second test case, we can perform a single operation selecting the second candle to transform 01$$$01$$$ into 11$$$11$$$.",
       "In the third test case, it's impossible to perform any operations because there are no lit candles to select.",
-      "In the fourth test case, we can perform the following operations to transform a%%ZSMJ22%% into b%%ZSMJ23%%:",
-      "Select the 7%%ZSMJ24%%-th candle: 100010111→011101100%%ZSMJ25%%.",
-      "Select the 2%%ZSMJ26%%-nd candle: 011101100→110010011%%ZSMJ27%%.",
-      "Select the 1%%ZSMJ28%%-st candle: 110010011→101101100%%ZSMJ29%%.",
-      "In the fifth test case, we can perform the following operations to transform a%%ZSMJ30%% into b%%ZSMJ31%%:",
-      "Select the 6%%ZSMJ32%%-th candle: 001011011→110101100%%ZSMJ33%%",
-      "Select the 2%%ZSMJ34%%-nd candle: 110101100→011010011%%ZSMJ35%%",
-      "Select the 8%%ZSMJ36%%-th candle: 011010011→100101110%%ZSMJ37%%",
-      "Select the 7%%ZSMJ38%%-th candle: 100101110→011010101%%ZSMJ39%%"
+      "In the fourth test case, we can perform the following operations to transform a$$$a$$$ into b$$$b$$$:",
+      "Select the 7$$$7$$$-th candle: 100010111→011101100$$$100010{\\color{red}1}11\\to 011101{\\color{red} 1}00$$$.",
+      "Select the 2$$$2$$$-nd candle: 011101100→110010011$$$0{\\color{red} 1}1101100\\to 1{\\color{red} 1}0010011$$$.",
+      "Select the 1$$$1$$$-st candle: 110010011→101101100$$${\\color{red}1}10010011\\to {\\color{red}1}01101100$$$.",
+      "In the fifth test case, we can perform the following operations to transform a$$$a$$$ into b$$$b$$$:",
+      "Select the 6$$$6$$$-th candle: 001011011→110101100$$$00101{\\color{red}1}011\\to 11010{\\color{red}1}100$$$",
+      "Select the 2$$$2$$$-nd candle: 110101100→011010011$$$1{\\color{red}1}0101100\\to 0{\\color{red}1}1010011$$$",
+      "Select the 8$$$8$$$-th candle: 011010011→100101110$$$0110100{\\color{red}1}1\\to 1001011{\\color{red}1}0$$$",
+      "Select the 7$$$7$$$-th candle: 100101110→011010101$$$100101{\\color{red}1}10\\to 011010{\\color{red}1}01$$$"
     ]
   },
   "examples": [
@@ -44,5 +44,37 @@
       "input": "5\n5\n11010\n11010\n2\n01\n11\n3\n000\n101\n9\n100010111\n101101100\n9\n001011011\n011010101",
       "output": "0\n1\n-1\n3\n4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

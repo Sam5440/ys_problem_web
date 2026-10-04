@@ -9,28 +9,28 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "There are n%%ZSMJ0%% players sitting at the card table. Each player has a favorite number. The favorite number of the j%%ZSMJ1%%-th player is fj%%ZSMJ2%%.",
-      "There are k⋅n%%ZSMJ3%% cards on the table. Each card contains a single integer: the i%%ZSMJ4%%-th card contains number ci%%ZSMJ5%%. Also, you are given a sequence h1,h2,…,hk%%ZSMJ6%%. Its meaning will be explained below.",
-      "The players have to distribute all the cards in such a way that each of them will hold exactly k%%ZSMJ7%% cards. After all the cards are distributed, each player counts the number of cards he has that contains his favorite number. The joy level of a player equals ht%%ZSMJ8%% if the player holds t%%ZSMJ9%% cards containing his favorite number. If a player gets no cards with his favorite number (i.e., t=0%%ZSMJ10%%), his joy level is 0%%ZSMJ11%%.",
-      "Print the maximum possible total joy levels of the players after the cards are distributed. Note that the sequence h1,…,hk%%ZSMJ12%% is the same for all the players."
+      "There are n$$$n$$$ players sitting at the card table. Each player has a favorite number. The favorite number of the j$$$j$$$-th player is fj$$$f_j$$$.",
+      "There are k⋅n$$$k \\cdot n$$$ cards on the table. Each card contains a single integer: the i$$$i$$$-th card contains number ci$$$c_i$$$. Also, you are given a sequence h1,h2,…,hk$$$h_1, h_2, \\dots, h_k$$$. Its meaning will be explained below.",
+      "The players have to distribute all the cards in such a way that each of them will hold exactly k$$$k$$$ cards. After all the cards are distributed, each player counts the number of cards he has that contains his favorite number. The joy level of a player equals ht$$$h_t$$$ if the player holds t$$$t$$$ cards containing his favorite number. If a player gets no cards with his favorite number (i.e., t=0$$$t=0$$$), his joy level is 0$$$0$$$.",
+      "Print the maximum possible total joy levels of the players after the cards are distributed. Note that the sequence h1,…,hk$$$h_1, \\dots, h_k$$$ is the same for all the players."
     ],
     "input": [
-      "The first line of input contains two integers n%%ZSMJ13%% and k%%ZSMJ14%% (1≤n≤500,1≤k≤10%%ZSMJ15%%) — the number of players and the number of cards each player will get.",
-      "The second line contains k⋅n%%ZSMJ16%% integers c1,c2,…,ck⋅n%%ZSMJ17%% (1≤ci≤105%%ZSMJ18%%) — the numbers written on the cards.",
-      "The third line contains n%%ZSMJ19%% integers f1,f2,…,fn%%ZSMJ20%% (1≤fj≤105%%ZSMJ21%%) — the favorite numbers of the players.",
-      "The fourth line contains k%%ZSMJ22%% integers h1,h2,…,hk%%ZSMJ23%% (1≤ht≤105%%ZSMJ24%%), where ht%%ZSMJ25%% is the joy level of a player if he gets exactly t%%ZSMJ26%% cards with his favorite number written on them. It is guaranteed that the condition ht−1<ht%%ZSMJ27%% holds for each t∈[2..k]%%ZSMJ28%%."
+      "The first line of input contains two integers n$$$n$$$ and k$$$k$$$ (1≤n≤500,1≤k≤10$$$1 \\le n \\le 500, 1 \\le k \\le 10$$$) — the number of players and the number of cards each player will get.",
+      "The second line contains k⋅n$$$k \\cdot n$$$ integers c1,c2,…,ck⋅n$$$c_1, c_2, \\dots, c_{k \\cdot n}$$$ (1≤ci≤105$$$1 \\le c_i \\le 10^5$$$) — the numbers written on the cards.",
+      "The third line contains n$$$n$$$ integers f1,f2,…,fn$$$f_1, f_2, \\dots, f_n$$$ (1≤fj≤105$$$1 \\le f_j \\le 10^5$$$) — the favorite numbers of the players.",
+      "The fourth line contains k$$$k$$$ integers h1,h2,…,hk$$$h_1, h_2, \\dots, h_k$$$ (1≤ht≤105$$$1 \\le h_t \\le 10^5$$$), where ht$$$h_t$$$ is the joy level of a player if he gets exactly t$$$t$$$ cards with his favorite number written on them. It is guaranteed that the condition ht−1<ht$$$h_{t - 1}  \\lt  h_t$$$ holds for each t∈[2..k]$$$t \\in [2..k]$$$."
     ],
     "output": [
       "Print one integer — the maximum possible total joy levels of the players among all possible card distributions."
     ],
     "note": [
       "In the first example, one possible optimal card distribution is the following:",
-      "Player 1%%ZSMJ29%% gets cards with numbers [1,3,8]%%ZSMJ30%%;",
-      "Player 2%%ZSMJ31%% gets cards with numbers [2,2,8]%%ZSMJ32%%;",
-      "Player 3%%ZSMJ33%% gets cards with numbers [2,2,8]%%ZSMJ34%%;",
-      "Player 4%%ZSMJ35%% gets cards with numbers [5,5,5]%%ZSMJ36%%.",
-      "Thus, the answer is 2+6+6+7=21%%ZSMJ37%%.",
-      "In the second example, no player can get a card with his favorite number. Thus, the answer is 0%%ZSMJ38%%."
+      "Player 1$$$1$$$ gets cards with numbers [1,3,8]$$$[1, 3, 8]$$$;",
+      "Player 2$$$2$$$ gets cards with numbers [2,2,8]$$$[2, 2, 8]$$$;",
+      "Player 3$$$3$$$ gets cards with numbers [2,2,8]$$$[2, 2, 8]$$$;",
+      "Player 4$$$4$$$ gets cards with numbers [5,5,5]$$$[5, 5, 5]$$$.",
+      "Thus, the answer is 2+6+6+7=21$$$2 + 6 + 6 + 7 = 21$$$.",
+      "In the second example, no player can get a card with his favorite number. Thus, the answer is 0$$$0$$$."
     ]
   },
   "examples": [
@@ -42,5 +42,31 @@
       "input": "3 3\n9 9 9 9 9 9 9 9 9\n1 2 3\n1 2 3",
       "output": "0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

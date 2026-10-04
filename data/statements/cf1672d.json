@@ -9,26 +9,26 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "There is an array a%%ZSMJ0%% of length n%%ZSMJ1%%. You may perform the following operation any number of times:",
-      "Choose two indices l%%ZSMJ2%% and r%%ZSMJ3%% where 1≤l<r≤n%%ZSMJ4%% and al=ar%%ZSMJ5%%. Then, set a[l…r]=[al+1,al+2,…,ar,al]%%ZSMJ6%%.",
-      "You are also given another array b%%ZSMJ7%% of length n%%ZSMJ8%% which is a permutation of a%%ZSMJ9%%. Determine whether it is possible to transform array a%%ZSMJ10%% into an array b%%ZSMJ11%% using the above operation some number of times."
+      "There is an array a$$$a$$$ of length n$$$n$$$. You may perform the following operation any number of times:",
+      "Choose two indices l$$$l$$$ and r$$$r$$$ where 1≤l<r≤n$$$1 \\le l  \\lt  r \\le n$$$ and al=ar$$$a_l = a_r$$$. Then, set a[l…r]=[al+1,al+2,…,ar,al]$$$a[l \\ldots r] = [a_{l+1}, a_{l+2}, \\ldots, a_r, a_l]$$$.",
+      "You are also given another array b$$$b$$$ of length n$$$n$$$ which is a permutation of a$$$a$$$. Determine whether it is possible to transform array a$$$a$$$ into an array b$$$b$$$ using the above operation some number of times."
     ],
     "input": [
-      "Each test contains multiple test cases. The first line contains a single integer t%%ZSMJ12%% (1≤t≤104%%ZSMJ13%%)  — the number of test cases. The description of the test cases follows.",
-      "The first line of each test case contains an integer n%%ZSMJ14%% (1≤n≤2⋅105%%ZSMJ15%%)  — the length of array a%%ZSMJ16%% and b%%ZSMJ17%%.",
-      "The second line of each test case contains n%%ZSMJ18%% integers a1,a2,…,an%%ZSMJ19%% (1≤ai≤n%%ZSMJ20%%)  — elements of the array a%%ZSMJ21%%.",
-      "The third line of each test case contains n%%ZSMJ22%% integers b1,b2,…,bn%%ZSMJ23%% (1≤bi≤n%%ZSMJ24%%)  — elements of the array b%%ZSMJ25%%.",
-      "It is guaranteed that b%%ZSMJ26%% is a permutation of a%%ZSMJ27%%.",
-      "It is guaranteed that the sum of n%%ZSMJ28%% over all test cases does not exceed 2⋅105%%ZSMJ29%%"
+      "Each test contains multiple test cases. The first line contains a single integer t$$$t$$$ (1≤t≤104$$$1 \\leq t \\leq 10^4$$$)  — the number of test cases. The description of the test cases follows.",
+      "The first line of each test case contains an integer n$$$n$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10 ^ 5$$$)  — the length of array a$$$a$$$ and b$$$b$$$.",
+      "The second line of each test case contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai≤n$$$1 \\le a_i \\le n$$$)  — elements of the array a$$$a$$$.",
+      "The third line of each test case contains n$$$n$$$ integers b1,b2,…,bn$$$b_1, b_2, \\ldots, b_n$$$ (1≤bi≤n$$$1 \\le b_i \\le n$$$)  — elements of the array b$$$b$$$.",
+      "It is guaranteed that b$$$b$$$ is a permutation of a$$$a$$$.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 2⋅105$$$2 \\cdot 10 ^ 5$$$"
     ],
     "output": [
-      "For each test case, print \"YES\" (without quotes) if it is possible to transform array a%%ZSMJ30%% to b%%ZSMJ31%%, and \"NO\" (without quotes) otherwise.",
+      "For each test case, print \"YES\" (without quotes) if it is possible to transform array a$$$a$$$ to b$$$b$$$, and \"NO\" (without quotes) otherwise.",
       "You can output \"YES\" and \"NO\" in any case (for example, strings \"yEs\", \"yes\" and \"Yes\" will be recognized as a positive response)."
     ],
     "note": [
-      "In the first test case, we can choose l=2%%ZSMJ32%% and r=5%%ZSMJ33%% to form [1,3,3,2,2]%%ZSMJ34%%.",
-      "In the second test case, we can choose l=2%%ZSMJ35%% and r=4%%ZSMJ36%% to form [1,4,2,2,1]%%ZSMJ37%%. Then, we can choose l=1%%ZSMJ38%% and r=5%%ZSMJ39%% to form [4,2,2,1,1]%%ZSMJ40%%.",
-      "In the third test case, it can be proven that it is not possible to transform array a%%ZSMJ41%% to b%%ZSMJ42%% using the operation."
+      "In the first test case, we can choose l=2$$$l=2$$$ and r=5$$$r=5$$$ to form [1,3,3,2,2]$$$[1, 3, 3, 2, 2]$$$.",
+      "In the second test case, we can choose l=2$$$l=2$$$ and r=4$$$r=4$$$ to form [1,4,2,2,1]$$$[1, 4, 2, 2, 1]$$$. Then, we can choose l=1$$$l=1$$$ and r=5$$$r=5$$$ to form [4,2,2,1,1]$$$[4, 2, 2, 1, 1]$$$.",
+      "In the third test case, it can be proven that it is not possible to transform array a$$$a$$$ to b$$$b$$$ using the operation."
     ]
   },
   "examples": [
@@ -36,5 +36,29 @@
       "input": "5\n5\n1 2 3 3 2\n1 3 3 2 2\n5\n1 2 4 2 1\n4 2 2 1 1\n5\n2 4 5 5 2\n2 2 4 5 5\n3\n1 2 3\n1 2 3\n3\n1 1 2\n2 1 1",
       "output": "YES\nYES\nNO\nYES\nNO"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null
+    ]
+  }
 }

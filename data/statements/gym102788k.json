@@ -9,14 +9,14 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "In an effort to master their skills, participants in the programming championship regularly solve the \"Tower of Hanoi\" problem. All teams use the standard classical algorithm of moving, consisting of 2N−1%%ZSMJ0%% moves.",
+      "In an effort to master their skills, participants in the programming championship regularly solve the \"Tower of Hanoi\" problem. All teams use the standard classical algorithm of moving, consisting of 2N−1$$$2^N-1$$$ moves.",
       {
         "pre": "\nProcedure Hanoi (X, Y, Z: char; N: integer); \nBegin \n If N>0 then  \n    Begin \n       Hanoi (X, Z, Y, N-1); \n       Writeln('Disk ', N, ' from ', X, ' to ', Y); \n       Hanoi (Z, Y, X, N-1) \n    End \nEnd; "
       },
-      "We have the intermediate results that some teams have achieved. All results are represented as rows of length N%%ZSMJ1%% (the number of disks), where element i%%ZSMJ2%% of the string is the symbol denoting the rod on which disk i%%ZSMJ3%% is located. For instance, let N=4%%ZSMJ4%%. Then the record \"BBCA\"%%ZSMJ5%% means that the first and second disks are on rod B%%ZSMJ6%%, the third disk on rod C%%ZSMJ7%% and the fourth on rod A%%ZSMJ8%%. The table below shows all the 7%%ZSMJ9%% moves necessary to solve the Tower of Hanoi puzzle with three disks.  \\begin{array}{|c|c|} \\hline \\text{Move No} & \\text{Distribution of disks among the rods} \\cr \\hline 0 & AAA \\cr \\hline 1 & BAA \\cr \\hline 2 & BCA \\cr \\hline 3 & CCA \\cr \\hline 4 & CCB \\cr \\hline 5 & ACB \\cr \\hline 6 & ABB \\cr \\hline 7 & BBB \\cr \\hline \\end{array} %%ZSMJ10%% Write a program that will identify the number of the team with the maximum amount of moves in the Tower of Hanoi. If there are several such teams, determine the number of the first one."
+      "We have the intermediate results that some teams have achieved. All results are represented as rows of length N$$$N$$$ (the number of disks), where element i$$$i$$$ of the string is the symbol denoting the rod on which disk i$$$i$$$ is located. For instance, let N=4$$$N = 4$$$. Then the record \"BBCA\"$$$\"BBCA\"$$$ means that the first and second disks are on rod B$$$B$$$, the third disk on rod C$$$C$$$ and the fourth on rod A$$$A$$$. The table below shows all the 7$$$7$$$ moves necessary to solve the Tower of Hanoi puzzle with three disks. Move NoDistribution of disks among the rods0AAA1BAA2BCA3CCA4CCB5ACB6ABB7BBB$$ \\begin{array}{|c|c|} \\hline \\text{Move No} & \\text{Distribution of disks among the rods} \\cr \\hline 0 & AAA \\cr \\hline 1 & BAA \\cr \\hline 2 & BCA \\cr \\hline 3 & CCA \\cr \\hline 4 & CCB \\cr \\hline 5 & ACB \\cr \\hline 6 & ABB \\cr \\hline 7 & BBB \\cr \\hline \\end{array} $$ Write a program that will identify the number of the team with the maximum amount of moves in the Tower of Hanoi. If there are several such teams, determine the number of the first one."
     ],
     "input": [
-      "The first line contains two integers: N%%ZSMJ11%% – the number of disks and M%%ZSMJ12%% – the number of teams that solved the puzzle. The next M%%ZSMJ13%% lines contain N%%ZSMJ14%% symbols. Line i%%ZSMJ15%% contains the result of team i%%ZSMJ16%%. Each line represents the distribution of disks among rods A%%ZSMJ17%%, B%%ZSMJ18%%, and C%%ZSMJ19%% after performing move K%%ZSMJ20%% (0 \\leq K \\leq 2^N-1)%%ZSMJ21%%. All teams use the standard classical algorithm of moving with the maximum of 2^N-1%%ZSMJ22%% moves. The number of disks N%%ZSMJ23%% satisfies the condition 1 \\leq N \\leq 10^3%%ZSMJ24%%. Number of teams: 1 \\leq M \\leq 10^3.%%ZSMJ25%%"
+      "The first line contains two integers: N$$$N$$$ – the number of disks and M$$$M$$$ – the number of teams that solved the puzzle. The next M$$$M$$$ lines contain N$$$N$$$ symbols. Line i$$$i$$$ contains the result of team i$$$i$$$. Each line represents the distribution of disks among rods A$$$A$$$, B$$$B$$$, and C$$$C$$$ after performing move K$$$K$$$ (0≤K≤2N−1)$$$(0 \\leq K \\leq 2^N-1)$$$. All teams use the standard classical algorithm of moving with the maximum of 2N−1$$$2^N-1$$$ moves. The number of disks N$$$N$$$ satisfies the condition 1≤N≤103$$$1 \\leq N \\leq 10^3$$$. Number of teams: 1≤M≤103.$$$1 \\leq M \\leq 10^3.$$$"
     ],
     "output": [
       "A single positive integer – the number of the team with the maximum amount of moves. If there are several such teams, the team with minimum number of them is displayed."
@@ -31,5 +31,18 @@
       "input": "3",
       "output": "3 4\nAAA\nBBB\nBAA\nBBB"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

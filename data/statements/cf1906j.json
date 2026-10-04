@@ -9,27 +9,27 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "You are currently researching a graph traversal algorithm called the Breadth First Search (BFS). Suppose you have an input graph of N%%ZSMJ0%% nodes (numbered from 1%%ZSMJ1%% to N%%ZSMJ2%%). The graph is represented by an adjacency matrix M%%ZSMJ3%%, for which node u%%ZSMJ4%% can traverse to node v%%ZSMJ5%% if Mu,v%%ZSMJ6%% is 1%%ZSMJ7%%, otherwise it is 0%%ZSMJ8%%. Your algorithm will output the order the nodes are visited in the BFS. The pseudocode of the algorithm is presented as follows.",
+      "You are currently researching a graph traversal algorithm called the Breadth First Search (BFS). Suppose you have an input graph of N$$$N$$$ nodes (numbered from 1$$$1$$$ to N$$$N$$$). The graph is represented by an adjacency matrix M$$$M$$$, for which node u$$$u$$$ can traverse to node v$$$v$$$ if Mu,v$$$M_{u, v}$$$ is 1$$$1$$$, otherwise it is 0$$$0$$$. Your algorithm will output the order the nodes are visited in the BFS. The pseudocode of the algorithm is presented as follows.",
       {
         "pre": "\n    BFS(M[1..N][1..N]):\n        let A be an empty array\n        let Q be an empty queue\n\n        append 1 to A\n        push 1 to Q\n\n        while Q is not empty:\n            pop the front element of Q into u\n            for v = 1 to N:\n                if M[u][v] == 1 and v is not in A:\n                    append v to A\n                    push v to Q\n\n        return A"
       },
-      "During your research, you are interested in the following problem. Given an array A%%ZSMJ9%% such that A%%ZSMJ10%% is a permutation of 1%%ZSMJ11%% to N%%ZSMJ12%% and A1=1%%ZSMJ13%%. How many simple undirected graph with N%%ZSMJ14%% nodes and adjacency matrix M%%ZSMJ15%% such that BFS(M)=A%%ZSMJ16%%? Since the answer can be very large, calculate the answer modulo 998244353%%ZSMJ17%%.",
-      "A simple graph has no self-loop (Mi,i=0%%ZSMJ18%% for 1≤i≤N%%ZSMJ19%%) and there is at most one edge that connects a pair of nodes. In an undirected graph, if node u%%ZSMJ20%% is adjacent to node v%%ZSMJ21%%, then node v%%ZSMJ22%% is also adjacent to node u%%ZSMJ23%%; formally, Mu,v=Mv,u%%ZSMJ24%% for 1≤u<v≤N%%ZSMJ25%%.",
+      "During your research, you are interested in the following problem. Given an array A$$$A$$$ such that A$$$A$$$ is a permutation of 1$$$1$$$ to N$$$N$$$ and A1=1$$$A_1 = 1$$$. How many simple undirected graph with N$$$N$$$ nodes and adjacency matrix M$$$M$$$ such that BFS(M)=A$$$\\text{BFS}(M) = A$$$? Since the answer can be very large, calculate the answer modulo 998244353$$$998\\,244\\,353$$$.",
+      "A simple graph has no self-loop (Mi,i=0$$$M_{i, i} = 0$$$ for 1≤i≤N$$$1 \\leq i \\leq N$$$) and there is at most one edge that connects a pair of nodes. In an undirected graph, if node u$$$u$$$ is adjacent to node v$$$v$$$, then node v$$$v$$$ is also adjacent to node u$$$u$$$; formally, Mu,v=Mv,u$$$M_{u, v} = M_{v, u}$$$ for 1≤u<v≤N$$$1 \\leq u  \\lt  v \\leq N$$$.",
       "Two graphs are considered different if there is an edge that exists in one graph but not the other. In other words, two graphs are considered different if their adjacency matrices are different."
     ],
     "input": [
-      "The first line consists of an integer N%%ZSMJ26%% (2≤N≤5000%%ZSMJ27%%).",
-      "The second line consists of N%%ZSMJ28%% integers Ai%%ZSMJ29%%. The array A%%ZSMJ30%% is a permutation of 1%%ZSMJ31%% to N%%ZSMJ32%% and A1=1%%ZSMJ33%%."
+      "The first line consists of an integer N$$$N$$$ (2≤N≤5000$$$2 \\leq N \\leq 5000$$$).",
+      "The second line consists of N$$$N$$$ integers Ai$$$A_i$$$. The array A$$$A$$$ is a permutation of 1$$$1$$$ to N$$$N$$$ and A1=1$$$A_1 = 1$$$."
     ],
     "output": [
-      "Output an integer representing the number of simple undirected graphs with N%%ZSMJ34%% nodes and adjacency matrix M%%ZSMJ35%% such that BFS(M)=A%%ZSMJ36%%. Since the answer can be very large, output the answer modulo 998244353%%ZSMJ37%%."
+      "Output an integer representing the number of simple undirected graphs with N$$$N$$$ nodes and adjacency matrix M$$$M$$$ such that BFS(M)=A$$$\\text{BFS}(M) = A$$$. Since the answer can be very large, output the answer modulo 998244353$$$998\\,244\\,353$$$."
     ],
     "note": [
       "Explanation for the sample input/output #1",
       "The following illustration shows all graphs that satisfy the requirements.",
       "![](https://espresso.codeforces.com/3f0782cd9b2c34e24e5cf48fce0b15eb8be8d9aa.png)",
       "Explanation for the sample input/output #2",
-      "The only graph that satisfies the requirements is a graph with two edges: one that connects nodes 1%%ZSMJ38%% and 3%%ZSMJ39%%, and another one that connects nodes 3%%ZSMJ40%% and 2%%ZSMJ41%%."
+      "The only graph that satisfies the requirements is a graph with two edges: one that connects nodes 1$$$1$$$ and 3$$$3$$$, and another one that connects nodes 3$$$3$$$ and 2$$$2$$$."
     ]
   },
   "examples": [
@@ -49,5 +49,28 @@
       "input": "17",
       "output": "11\n1 2 3 4 5 6 7 8 9 10 11"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

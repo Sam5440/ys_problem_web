@@ -12,28 +12,28 @@
       "This is an interactive problem.",
       "Diana the shark has built a new machine for her project: the Discombobulator 3000. It is capable of solving any interactive programming problem that involves a permutation!",
       "One day, while Diana was swimming peacefully, the machine fell out of her pocket and landed on the ocean floor. Because of this, it broke into two pieces. Diana was not able to repair it immediately, but she knew how the machine works, even if it was broken:",
-      "One piece of the machine contains a sequence a0,a1,…,an−1%%ZSMJ0%% of n%%ZSMJ1%% integers. The sequence is a permutation of the integers from 1 to n%%ZSMJ2%%. That is, each integer between 1 and n%%ZSMJ3%% (inclusive) appears in this sequence exactly once.",
-      "The other piece of the machine contains a sequence b0,b1,…,bn−1%%ZSMJ4%% of n%%ZSMJ5%% integers. The sequence is also a permutation of the integers from 1 to n%%ZSMJ6%%.",
-      "There is an integer k%%ZSMJ7%% such that 0≤k≤n−1%%ZSMJ8%% and the relation ai=b(i+k)modn%%ZSMJ9%% holds for i=0,1,…,n−1%%ZSMJ10%%.",
-      "Unfortunately, Diana only knew the integer n%%ZSMJ11%%, and had no knowledge about k%%ZSMJ12%% or the sequences. The only way to access the sequences is via a special button on the machine. When you press the button, the machine will ask you for two integers x%%ZSMJ13%% and y%%ZSMJ14%% and reply with the value max(ax,by)%%ZSMJ15%%. The button cannot be pressed for more than 2n%%ZSMJ16%% times in total, otherwise everything will explode.",
-      "Diana was discombobulated by the situation, and now she needs your help. If you can find out the integer k%%ZSMJ17%%, then she will be able to combine the two pieces back into the Discombobulator 3000. Can you do that by interacting with the machine?"
+      "One piece of the machine contains a sequence a0,a1,…,an−1$$$a_0, a_1, \\dots, a_{n-1}$$$ of n$$$n$$$ integers. The sequence is a permutation of the integers from 1 to n$$$n$$$. That is, each integer between 1 and n$$$n$$$ (inclusive) appears in this sequence exactly once.",
+      "The other piece of the machine contains a sequence b0,b1,…,bn−1$$$b_0, b_1, \\dots, b_{n-1}$$$ of n$$$n$$$ integers. The sequence is also a permutation of the integers from 1 to n$$$n$$$.",
+      "There is an integer k$$$k$$$ such that 0≤k≤n−1$$$0 \\le k \\le n - 1$$$ and the relation ai=b(i+k)modn$$$a_i=b_{(i+k)\\;\\operatorname{mod}\\;n}$$$ holds for i=0,1,…,n−1$$$i=0,1,\\dots,n-1$$$.",
+      "Unfortunately, Diana only knew the integer n$$$n$$$, and had no knowledge about k$$$k$$$ or the sequences. The only way to access the sequences is via a special button on the machine. When you press the button, the machine will ask you for two integers x$$$x$$$ and y$$$y$$$ and reply with the value max(ax,by)$$$\\max(a_x, b_y)$$$. The button cannot be pressed for more than 2n$$$2n$$$ times in total, otherwise everything will explode.",
+      "Diana was discombobulated by the situation, and now she needs your help. If you can find out the integer k$$$k$$$, then she will be able to combine the two pieces back into the Discombobulator 3000. Can you do that by interacting with the machine?"
     ],
     "input": [
-      "The first line of input contains the integer n%%ZSMJ18%%.",
-      "The input has q%%ZSMJ19%% more lines if you press the button q%%ZSMJ20%% times. Each of these lines contains an integer - the number that the machine replies with.",
+      "The first line of input contains the integer n$$$n$$$.",
+      "The input has q$$$q$$$ more lines if you press the button q$$$q$$$ times. Each of these lines contains an integer - the number that the machine replies with.",
       "Technical specification:",
-      "2≤n≤200%%ZSMJ21%%",
-      "0≤k≤n−1%%ZSMJ22%%"
+      "2≤n≤200$$$2 \\le n \\le 200$$$",
+      "0≤k≤n−1$$$0 \\le k \\le n - 1$$$"
     ],
     "output": [
-      "Your output should consist of q+1%%ZSMJ23%% lines if you press the button q%%ZSMJ24%% times.",
-      "Each time you wish to press the button, print a line in the form \"? x%%ZSMJ25%% y%%ZSMJ26%%\", where x%%ZSMJ27%% and y%%ZSMJ28%% are the numbers you tell the machine. The machine's reply will be sent as one line of input (described above). Don't forget to flush the output stream after printing a line.",
-      "The last line should be in the form \"! k%%ZSMJ29%%\", where k%%ZSMJ30%% is the integer you have to find.",
-      "Your output must satisfy 0≤q≤2n%%ZSMJ31%% and 0≤x,y≤n−1%%ZSMJ32%% in each line."
+      "Your output should consist of q+1$$$q+1$$$ lines if you press the button q$$$q$$$ times.",
+      "Each time you wish to press the button, print a line in the form \"? x$$$x$$$ y$$$y$$$\", where x$$$x$$$ and y$$$y$$$ are the numbers you tell the machine. The machine's reply will be sent as one line of input (described above). Don't forget to flush the output stream after printing a line.",
+      "The last line should be in the form \"! k$$$k$$$\", where k$$$k$$$ is the integer you have to find.",
+      "Your output must satisfy 0≤q≤2n$$$0 \\le q \\le 2n$$$ and 0≤x,y≤n−1$$$0 \\le x, y \\le n - 1$$$ in each line."
     ],
     "note": [
-      "In the example, the sequences are a=[2,3,1,4]%%ZSMJ33%% and b=[4,2,3,1]%%ZSMJ34%%. The answer is k=1%%ZSMJ35%%.",
-      "Remember that you don't have to find the two sequences, only the integer k%%ZSMJ36%%."
+      "In the example, the sequences are a=[2,3,1,4]$$$a = [2,3,1,4]$$$ and b=[4,2,3,1]$$$b = [4,2,3,1]$$$. The answer is k=1$$$k=1$$$.",
+      "Remember that you don't have to find the two sequences, only the integer k$$$k$$$."
     ]
   },
   "examples": [
@@ -41,5 +41,34 @@
       "input": "4\n1\n2\n2\n4\n2",
       "output": "? 2 3\n? 0 1\n? 0 3\n? 3 1\n? 2 1\n! 1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

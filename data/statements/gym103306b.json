@@ -9,18 +9,18 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "It is well known that Alan is a great mathematics enthusiast and he enjoys learning about mathematics facts. Recently, he read about a fact related to the first digit of numbers: the Benford's law, also known as the first-digit law. This law states that, in many collections of numbers from the real life, the most frequent first-digit is 1%%ZSMJ0%%. Moreover, it also states that the small digits are more likely to be the first-digits than the greater digits.",
-      "Alan read that the law is satisfied in many collections of numbers, such as river lengths, mountain heights, country populations, prices, people ages, house numbers, etc. In all of these collections, the digit 1%%ZSMJ1%% is the most likely to be the first digit. Fascinated with this fact, Alan decided to make his own experiment and see if Benford's law is satisfied.",
-      "Before beginning with the experiment, Alan put N%%ZSMJ2%% buckets in a line and prepared K%%ZSMJ3%% balls. The experiment consists of K%%ZSMJ4%% steps. During the i%%ZSMJ5%%-th step, he selects a bucket randomly and inserts the i%%ZSMJ6%%-th ball in that bucket. The selection of the bucket is independent across each step and all buckets have the same probability of being selected.",
-      "Once all steps are finished, Alan will count the number of balls in each bucket and write the results in a list L%%ZSMJ7%%. Let cd%%ZSMJ8%% be the number of elements in L%%ZSMJ9%% which has d%%ZSMJ10%% as the first-digit, Alan wants to check if c1%%ZSMJ11%% is the greater across all cd%%ZSMJ12%% to see if Benford's law is satisfied (spoiler: for large values of N%%ZSMJ13%%, Benford's law is satisfied in this experiment).",
-      "But when there was M%%ZSMJ14%% steps left to finish the experiment, Alan got tired of selecting buckets and inserting balls. So, he decided to ask you for help to finish his experiment. Given the number of balls in each bucket so far, what is the expected value of c1,c2,…,c9%%ZSMJ15%% after performing the remaining M%%ZSMJ16%% steps?"
+      "It is well known that Alan is a great mathematics enthusiast and he enjoys learning about mathematics facts. Recently, he read about a fact related to the first digit of numbers: the Benford's law, also known as the first-digit law. This law states that, in many collections of numbers from the real life, the most frequent first-digit is 1$$$1$$$. Moreover, it also states that the small digits are more likely to be the first-digits than the greater digits.",
+      "Alan read that the law is satisfied in many collections of numbers, such as river lengths, mountain heights, country populations, prices, people ages, house numbers, etc. In all of these collections, the digit 1$$$1$$$ is the most likely to be the first digit. Fascinated with this fact, Alan decided to make his own experiment and see if Benford's law is satisfied.",
+      "Before beginning with the experiment, Alan put N$$$N$$$ buckets in a line and prepared K$$$K$$$ balls. The experiment consists of K$$$K$$$ steps. During the i$$$i$$$-th step, he selects a bucket randomly and inserts the i$$$i$$$-th ball in that bucket. The selection of the bucket is independent across each step and all buckets have the same probability of being selected.",
+      "Once all steps are finished, Alan will count the number of balls in each bucket and write the results in a list L$$$L$$$. Let cd$$$c_d$$$ be the number of elements in L$$$L$$$ which has d$$$d$$$ as the first-digit, Alan wants to check if c1$$$c_1$$$ is the greater across all cd$$$c_d$$$ to see if Benford's law is satisfied (spoiler: for large values of N$$$N$$$, Benford's law is satisfied in this experiment).",
+      "But when there was M$$$M$$$ steps left to finish the experiment, Alan got tired of selecting buckets and inserting balls. So, he decided to ask you for help to finish his experiment. Given the number of balls in each bucket so far, what is the expected value of c1,c2,…,c9$$$c_1, c_2, \\dots, c_9$$$ after performing the remaining M$$$M$$$ steps?"
     ],
     "input": [
-      "The first line contains two integers N%%ZSMJ17%% and M%%ZSMJ18%% (1≤N≤105%%ZSMJ19%% and 0≤M≤105%%ZSMJ20%%), the number of buckets in the experiment and the number of remaining steps.",
-      "The second line contains N%%ZSMJ21%% characters a1,a2,…,an%%ZSMJ22%% (0≤ai≤105%%ZSMJ23%%), where ai%%ZSMJ24%% is the number of ball in the i%%ZSMJ25%%-th bucket so far."
+      "The first line contains two integers N$$$N$$$ and M$$$M$$$ (1≤N≤105$$$1 \\leq N \\leq 10^5$$$ and 0≤M≤105$$$0 \\leq M \\leq 10^5$$$), the number of buckets in the experiment and the number of remaining steps.",
+      "The second line contains N$$$N$$$ characters a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (0≤ai≤105$$$0 \\leq a_i \\leq 10^5$$$), where ai$$$a_i$$$ is the number of ball in the i$$$i$$$-th bucket so far."
     ],
     "output": [
-      "Print 9%%ZSMJ26%% lines. In the i%%ZSMJ27%%-th line, print the expected value of ci%%ZSMJ28%%. We can show that the expected value can be represented in the form pq%%ZSMJ29%%, where q≠0%%ZSMJ30%% and gcd(p,q)=1%%ZSMJ31%%. Print the expected value as p∗q−1%%ZSMJ32%% modulo 998244353%%ZSMJ33%%."
+      "Print 9$$$9$$$ lines. In the i$$$i$$$-th line, print the expected value of ci$$$c_i$$$. We can show that the expected value can be represented in the form pq$$$\\frac{p}{q}$$$, where q≠0$$$q \\neq 0$$$ and gcd(p,q)=1$$$gcd(p,q) = 1$$$. Print the expected value as p∗q−1$$$p*q^{-1}$$$ modulo 998244353$$$998244353$$$."
     ]
   },
   "examples": [
@@ -36,5 +36,21 @@
       "input": "13 17\n0 1 5 3 1 0 2 1 4 2 5 2 1",
       "output": "126914455\n362778099\n800719102\n15040153\n238529512\n843998224\n698108042\n421844973\n174968030"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

@@ -10,27 +10,27 @@
   "sections": {
     "legend": [
       "A binary search tree is a rooted binary tree whose nodes store keys so that each node's key is greater than all the keys in the node's left subtree and less than those in its right subtree.",
-      "A binary search tree can be used to maintain sorted sets and allows to perform different types of queries on the set. A query that we are considering in this problem is finding the number of values in the range [L,R]%%ZSMJ0%% within the set.",
-      "Let S%%ZSMJ1%% be the set of all keys in the binary search tree. You are given two values L%%ZSMJ2%% and R%%ZSMJ3%%. The query is to find the number of such x∈S%%ZSMJ4%% so that L≤x≤R%%ZSMJ5%%. The following recursive function computes this value when called with the parameters lookup(root, L, R), where root is the root of the binary search tree.",
+      "A binary search tree can be used to maintain sorted sets and allows to perform different types of queries on the set. A query that we are considering in this problem is finding the number of values in the range [L,R]$$$[L, R]$$$ within the set.",
+      "Let S$$$S$$$ be the set of all keys in the binary search tree. You are given two values L$$$L$$$ and R$$$R$$$. The query is to find the number of such x∈S$$$x \\in S$$$ so that L≤x≤R$$$L \\le x \\le R$$$. The following recursive function computes this value when called with the parameters lookup(root, L, R), where root is the root of the binary search tree.",
       {
         "pre": "\nfunction lookup(v, L, R):\n  if v == null:\n    return 0\n  if L <= v.min and v.max <= R:\n    return v.count\n  if v.max < L or R < v.min:\n    return 0\n  res = 0\n  if L <= v.key and v.key <= R:\n    res += 1\n  res += lookup(v.left, L, R)\n  res += lookup(v.right, L, R)\n  return res"
       },
       "Values v.left, v.right, v.min, v.max, v.key, and v.count are the fields of the nodes of the binary search tree.",
-      "v.left and v.right are the left and the right children of node v%%ZSMJ6%%, respectively.",
-      "v.min and v.max are the minimum and the maximum keys in the subtree rooted at node v%%ZSMJ7%%.",
-      "v.key is the key of node v%%ZSMJ8%%.",
-      "v.count is the number of nodes in the subtree rooted at node v%%ZSMJ9%%.",
-      "You are given a binary search tree with integer keys. You are also given queries, each query consisting of two integers L%%ZSMJ10%% and R%%ZSMJ11%%. Find the number of calls of the lookup function that are made when lookup(root, L, R) is called, including the initial lookup(root, L, R) call itself."
+      "v.left and v.right are the left and the right children of node v$$$v$$$, respectively.",
+      "v.min and v.max are the minimum and the maximum keys in the subtree rooted at node v$$$v$$$.",
+      "v.key is the key of node v$$$v$$$.",
+      "v.count is the number of nodes in the subtree rooted at node v$$$v$$$.",
+      "You are given a binary search tree with integer keys. You are also given queries, each query consisting of two integers L$$$L$$$ and R$$$R$$$. Find the number of calls of the lookup function that are made when lookup(root, L, R) is called, including the initial lookup(root, L, R) call itself."
     ],
     "input": [
-      "The first line contains an integer n%%ZSMJ12%% (1≤n≤200000%%ZSMJ13%%) — the number of nodes in the binary search tree.",
-      "The next n%%ZSMJ14%% lines describe the nodes of the tree. The i%%ZSMJ15%%-th of these lines contains three integers li%%ZSMJ16%%, ri%%ZSMJ17%%, and ki%%ZSMJ18%% denoting the left child, the right child and the key of the i%%ZSMJ19%%-th node. If the node does not have the left or/and the right child, the corresponding value is 0 (li=0%%ZSMJ20%% or i<li≤n%%ZSMJ21%%; ri=0%%ZSMJ22%% or i<ri≤n%%ZSMJ23%%; −109≤ki≤109%%ZSMJ24%%). The root of the tree is at node 1 and it is guaranteed to be a well-formed binary search tree.",
-      "Note that the values v.min, v.max and v.count are not given in the input explicitly, since they can be deduced from li%%ZSMJ25%%, ri%%ZSMJ26%% and ki%%ZSMJ27%%.",
-      "The next line contains an integer q%%ZSMJ28%% (1≤q≤200000%%ZSMJ29%%) — the number of the queries.",
-      "Each of the next q%%ZSMJ30%% lines contains two integers L%%ZSMJ31%% and R%%ZSMJ32%% (−109≤L≤R≤109%%ZSMJ33%%) — the parameters given to the lookup function."
+      "The first line contains an integer n$$$n$$$ (1≤n≤200000$$$1 \\le n \\le 200\\,000$$$) — the number of nodes in the binary search tree.",
+      "The next n$$$n$$$ lines describe the nodes of the tree. The i$$$i$$$-th of these lines contains three integers li$$$l_i$$$, ri$$$r_i$$$, and ki$$$k_i$$$ denoting the left child, the right child and the key of the i$$$i$$$-th node. If the node does not have the left or/and the right child, the corresponding value is 0 (li=0$$$l_i = 0$$$ or i<li≤n$$$i  \\lt  l_i \\le n$$$; ri=0$$$r_i = 0$$$ or i<ri≤n$$$i  \\lt  r_i \\le n$$$; −109≤ki≤109$$$-10^9 \\le k_i \\le 10^9$$$). The root of the tree is at node 1 and it is guaranteed to be a well-formed binary search tree.",
+      "Note that the values v.min, v.max and v.count are not given in the input explicitly, since they can be deduced from li$$$l_i$$$, ri$$$r_i$$$ and ki$$$k_i$$$.",
+      "The next line contains an integer q$$$q$$$ (1≤q≤200000$$$1 \\le q \\le 200\\,000$$$) — the number of the queries.",
+      "Each of the next q$$$q$$$ lines contains two integers L$$$L$$$ and R$$$R$$$ (−109≤L≤R≤109$$$-10^9 \\le L \\le R \\le 10^9$$$) — the parameters given to the lookup function."
     ],
     "output": [
-      "Output q%%ZSMJ34%% lines, the i%%ZSMJ35%%-th line containing a single integer — the number of calls of the lookup function that are made for the i%%ZSMJ36%%-th query."
+      "Output q$$$q$$$ lines, the i$$$i$$$-th line containing a single integer — the number of calls of the lookup function that are made for the i$$$i$$$-th query."
     ]
   },
   "examples": [
@@ -38,5 +38,29 @@
       "input": "\nfunction lookup(v, L, R):\n  if v == null:\n    return 0\n  if L <= v.min and v.max <= R:\n    return v.count\n  if v.max < L or R < v.min:\n    return 0\n  res = 0\n  if L <= v.key and v.key <= R:\n    res += 1\n  res += lookup(v.left, L, R)\n  res += lookup(v.right, L, R)\n  return res",
       "output": "7\n2 3 4\n4 0 2\n5 6 8\n0 0 1\n0 7 5\n0 0 9\n0 0 6\n5\n2 7\n0 10\n2 8\n4 4\n3 3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

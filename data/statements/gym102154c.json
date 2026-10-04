@@ -10,22 +10,22 @@
   "sections": {
     "legend": [
       "The scientists invented the new UL-2018 processor that is able to quickly process arrays in some special way. A key feature of its architecture is the separation operation of a segment of the array.",
-      "Consider an array [a1,a2,…,an]%%ZSMJ0%%. The separation operation is characterized by two integers L%%ZSMJ1%% and R%%ZSMJ2%%. Let S(L,R)%%ZSMJ3%% denote the operation of the segment [aL,aL+1,…,aR]%%ZSMJ4%%. Executing the S(L,R)%%ZSMJ5%% operation reorders the elements in this segment as follows. First, the elements aL+1,aL+3,aL+5,…%%ZSMJ6%% are taken, that is elements ai%%ZSMJ7%% that i−L%%ZSMJ8%% is odd. Their relative order remains unchanged. Then, the elements aL,aL+2,aL+4,…%%ZSMJ9%% are taken (ai%%ZSMJ10%% that i−L%%ZSMJ11%% is even). These retain the relative order too.",
-      "For example, consider the array [2,4,1,5,3,6,7,8]%%ZSMJ12%%. Applying the operation S(2,6)%%ZSMJ13%% changes the segment [4,1,5,3,6]%%ZSMJ14%% into [1,3,4,5,6]%%ZSMJ15%%, so the entire array becomes [2,1,3,4,5,6,7,8]%%ZSMJ16%%.",
-      "To demonstrate the capabilities of the new processor, the scientists decided to use separation operations to sort an array of distinct numbers. You will be given an array of size n%%ZSMJ17%% (1≤n≤3000%%ZSMJ18%%) with distinct numbers from 1%%ZSMJ19%% to n%%ZSMJ20%%. You must sort it in ascending order using no more than 15000%%ZSMJ21%% separation operations.",
-      "For example, the mentioned array [2,4,1,5,3,6,7,8]%%ZSMJ22%% can be sorted in two separation operations. First, apply S(2,6)%%ZSMJ23%% to get [2,1,3,4,5,6,7,8]%%ZSMJ24%%, and then the operation S(1,2)%%ZSMJ25%% makes the array sorted increasingly: [1,2,3,4,5,6,7,8]%%ZSMJ26%%.",
-      "Your task is to write a program that for a given array determines the sequence of at most 15000%%ZSMJ27%% separation operations, after which the specified array will be sorted in ascending order. It isn't necessary to minimize the number of operations performed (just use at most 15000%%ZSMJ28%%)."
+      "Consider an array [a1,a2,…,an]$$$[a_1, a_2, \\ldots, a_n]$$$. The separation operation is characterized by two integers L$$$L$$$ and R$$$R$$$. Let S(L,R)$$$S(L, R)$$$ denote the operation of the segment [aL,aL+1,…,aR]$$$[a_L, a_{L+1}, \\ldots, a_R]$$$. Executing the S(L,R)$$$S(L, R)$$$ operation reorders the elements in this segment as follows. First, the elements aL+1,aL+3,aL+5,…$$$a_{L+1}, a_{L+3}, a_{L+5}, \\ldots$$$ are taken, that is elements ai$$$a_i$$$ that i−L$$$i - L$$$ is odd. Their relative order remains unchanged. Then, the elements aL,aL+2,aL+4,…$$$a_L, a_{L+2}, a_{L+4}, \\ldots$$$ are taken (ai$$$a_i$$$ that i−L$$$i - L$$$ is even). These retain the relative order too.",
+      "For example, consider the array [2,4,1,5,3,6,7,8]$$$[2, 4, 1, 5, 3, 6, 7, 8]$$$. Applying the operation S(2,6)$$$S(2, 6)$$$ changes the segment [4,1,5,3,6]$$$[4, 1, 5, 3, 6]$$$ into [1,3,4,5,6]$$$[1, 3, 4, 5, 6]$$$, so the entire array becomes [2,1,3,4,5,6,7,8]$$$[2, 1, 3, 4, 5, 6, 7, 8]$$$.",
+      "To demonstrate the capabilities of the new processor, the scientists decided to use separation operations to sort an array of distinct numbers. You will be given an array of size n$$$n$$$ (1≤n≤3000$$$1 \\le n \\le 3\\,000$$$) with distinct numbers from 1$$$1$$$ to n$$$n$$$. You must sort it in ascending order using no more than 15000$$$15\\,000$$$ separation operations.",
+      "For example, the mentioned array [2,4,1,5,3,6,7,8]$$$[2, 4, 1, 5, 3, 6, 7, 8]$$$ can be sorted in two separation operations. First, apply S(2,6)$$$S(2, 6)$$$ to get [2,1,3,4,5,6,7,8]$$$[2, 1, 3, 4, 5, 6, 7, 8]$$$, and then the operation S(1,2)$$$S(1, 2)$$$ makes the array sorted increasingly: [1,2,3,4,5,6,7,8]$$$[1, 2, 3, 4, 5, 6, 7, 8]$$$.",
+      "Your task is to write a program that for a given array determines the sequence of at most 15000$$$15\\,000$$$ separation operations, after which the specified array will be sorted in ascending order. It isn't necessary to minimize the number of operations performed (just use at most 15000$$$15\\,000$$$)."
     ],
     "input": [
-      "The first line of the input contains an integer n%%ZSMJ29%% — the number of elements in the given array (1≤n≤3000%%ZSMJ30%%).",
-      "The second line contains n%%ZSMJ31%% distinct integers a1,a2,…,an%%ZSMJ32%% — the elements of the given array (1≤ai≤n%%ZSMJ33%%, all ai%%ZSMJ34%% are different)."
+      "The first line of the input contains an integer n$$$n$$$ — the number of elements in the given array (1≤n≤3000$$$1 \\le n \\le 3000$$$).",
+      "The second line contains n$$$n$$$ distinct integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ — the elements of the given array (1≤ai≤n$$$1 \\le a_i \\le n$$$, all ai$$$a_i$$$ are different)."
     ],
     "output": [
-      "The first line of the output should contain an integer k%%ZSMJ35%% — the number of separation operations performed (0≤k≤15000%%ZSMJ36%%).",
-      "In the following k%%ZSMJ37%% lines, you should print the description of the operations, in the order they are executed. Each operation is described by two integers L%%ZSMJ38%% and R%%ZSMJ39%% — the beginning and the end of the segment to which the separation operation should be applied (1≤L≤R≤n%%ZSMJ40%%).",
-      "Note that you don't have to minimize the number k%%ZSMJ41%%. You can output any sequence of separation operations that contains at most 15000%%ZSMJ42%% operations and sorts the given array in ascending order. It is guaranteed that at least one such sequence exists.",
-      "SubtaskPointsConstraintsDependencies120n≤100; there is a solution with k=1230n≤1000,1330n≤10000−2420n≤30000−3%%ZSMJ43%%",
-      "You will get points for a group if you pass all tests in this group and all groups listed in the dependencies. The group 0%%ZSMJ44%% denotes the sample test(s) from the statement."
+      "The first line of the output should contain an integer k$$$k$$$ — the number of separation operations performed (0≤k≤15000$$$0 \\le k \\le 15\\,000$$$).",
+      "In the following k$$$k$$$ lines, you should print the description of the operations, in the order they are executed. Each operation is described by two integers L$$$L$$$ and R$$$R$$$ — the beginning and the end of the segment to which the separation operation should be applied (1≤L≤R≤n$$$1 \\le L \\le R \\le n$$$).",
+      "Note that you don't have to minimize the number k$$$k$$$. You can output any sequence of separation operations that contains at most 15000$$$15\\,000$$$ operations and sorts the given array in ascending order. It is guaranteed that at least one such sequence exists.",
+      "SubtaskPointsConstraintsDependencies120n≤100; there is a solution with k=1230n≤1000,1330n≤10000−2420n≤30000−3\n$$ \\begin{array}{|c|c|c|c|} \\hline \\text{Subtask} & \\text{Points} & \\text{Constraints} & \\text{Dependencies} \\\\ \\hline 1 & 20 & n \\le 100; \\ \\text{there is a solution with } k = 1 & \\\\ \\hline 2 & 30 & n \\le 100 & 0, 1 \\\\ \\hline 3 & 30 & n \\le 1\\,000 & 0-2 \\\\ \\hline 4 & 20 & n \\le 3\\,000 & 0-3 \\\\ \\hline \\end{array}$$",
+      "You will get points for a group if you pass all tests in this group and all groups listed in the dependencies. The group 0$$$0$$$ denotes the sample test(s) from the statement."
     ],
     "note": [
       "The second sample test is analyzed in detail in the problem statement.",
@@ -45,5 +45,30 @@
       "input": "2\n2 1",
       "output": "3\n1 1\n2 2\n1 2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

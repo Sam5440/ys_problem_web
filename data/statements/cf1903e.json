@@ -11,22 +11,22 @@
     "legend": [
       "This is an interactive problem.",
       "Theofanis and his sister are playing the following game.",
-      "They have n%%ZSMJ0%% points in a 2D plane and a starting point (sx,sy)%%ZSMJ1%%. Each player (starting from the first player) chooses one of the n%%ZSMJ2%% points that wasn't chosen before and adds to the sum (which is initially 0%%ZSMJ3%%) the square of the Euclidean distance from the previous point (which is either the starting point or it was chosen by the other person) to the new point (that the current player selected).",
-      "The game ends after exactly n%%ZSMJ4%% moves (after all the points are chosen). The first player wins if the sum is even in the end. Otherwise, the second player wins.",
+      "They have n$$$n$$$ points in a 2D plane and a starting point (sx,sy)$$$(s_x,s_y)$$$. Each player (starting from the first player) chooses one of the n$$$n$$$ points that wasn't chosen before and adds to the sum (which is initially 0$$$0$$$) the square of the Euclidean distance from the previous point (which is either the starting point or it was chosen by the other person) to the new point (that the current player selected).",
+      "The game ends after exactly n$$$n$$$ moves (after all the points are chosen). The first player wins if the sum is even in the end. Otherwise, the second player wins.",
       "Theofanis is a very competitive person and he hates losing. Thus, he wants to choose whether he should play first or second. Can you show him, which player to choose, and how he should play to beat his sister?"
     ],
     "input": [
-      "The first line contains a single integer t%%ZSMJ5%% (1≤t≤2000%%ZSMJ6%%) — the number of test cases.",
+      "The first line contains a single integer t$$$t$$$ (1≤t≤2000$$$1 \\le t \\le 2000$$$) — the number of test cases.",
       "The data for each test case is only available after the end of the interaction (the end of the game) for all previous test cases.",
-      "The first line of each test case contains a single integer n%%ZSMJ7%% (1≤n≤105%%ZSMJ8%%) — the number of points.",
-      "The second line of each test case contains two integers sx%%ZSMJ9%%, sy%%ZSMJ10%% (0≤sx,sy≤109%%ZSMJ11%%) — the coordinates of the starting point.",
+      "The first line of each test case contains a single integer n$$$n$$$ (1≤n≤105$$$1 \\le n \\le 10^{5}$$$) — the number of points.",
+      "The second line of each test case contains two integers sx$$$s_x$$$, sy$$$s_y$$$ (0≤sx,sy≤109$$$0 \\le s_x, s_y \\le 10^{9}$$$) — the coordinates of the starting point.",
       "Two or more points may have the same coordinates.",
-      "The i%%ZSMJ12%%-th of the following n%%ZSMJ13%% lines contains two integers xi%%ZSMJ14%% and yi%%ZSMJ15%% (0≤xi,yi≤109%%ZSMJ16%%) — the coordinates of the i%%ZSMJ17%%-th point.",
-      "It is guaranteed that the sum of n%%ZSMJ18%% over all test cases does not exceed 105%%ZSMJ19%%.",
+      "The i$$$i$$$-th of the following n$$$n$$$ lines contains two integers xi$$$x_i$$$ and yi$$$y_i$$$ (0≤xi,yi≤109$$$0 \\le x_i, y_i \\le 10^{9}$$$) — the coordinates of the i$$$i$$$-th point.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 105$$$10^{5}$$$.",
       "For each test case, you should first output the player that you want to play as (First or Second).",
-      "Then, you should play the game. When it's your turn, you should output the index j%%ZSMJ20%% (1≤j≤n%%ZSMJ21%%) of the point that you want to choose, and when it's the other player's turn, you should read the index that they choose.",
+      "Then, you should play the game. When it's your turn, you should output the index j$$$j$$$ (1≤j≤n$$$1 \\le j \\le n$$$) of the point that you want to choose, and when it's the other player's turn, you should read the index that they choose.",
       "When all the turns are done, continue with reading the input for the next test case, or finish the program, if there are none.",
-      "If you receive the integer −1%%ZSMJ22%% instead of an index or a valid value of n%%ZSMJ23%%, it means your program has made an invalid move or has lost the game in the previous test case. Your program must terminate immediately to receive a Wrong Answer verdict. Otherwise, you can get an arbitrary verdict because your solution will continue to read from a closed stream.",
+      "If you receive the integer −1$$$-1$$$ instead of an index or a valid value of n$$$n$$$, it means your program has made an invalid move or has lost the game in the previous test case. Your program must terminate immediately to receive a Wrong Answer verdict. Otherwise, you can get an arbitrary verdict because your solution will continue to read from a closed stream.",
       "After printing a choice for a player, or a turn, do not forget to output the end of line and flush the output. Otherwise, you will get Idleness limit exceeded. To do this, use:",
       "fflush(stdout) or cout.flush() in C++;",
       "System.out.flush() in Java;",
@@ -35,11 +35,11 @@
       "see the documentation for other languages.",
       "Hacks",
       "To hack, use the following format.",
-      "The first line contains a single integer t%%ZSMJ24%% (1≤t≤2000%%ZSMJ25%%) — the number of test cases.",
-      "The first line of each test case contains a single integer n%%ZSMJ26%% (1≤n≤105%%ZSMJ27%%) — the number of points.",
-      "The second line of each test case contains two integers sx%%ZSMJ28%%, sy%%ZSMJ29%% (0≤sx,sy≤109%%ZSMJ30%%) — the coordinates of the starting point.",
-      "The i%%ZSMJ31%%-th of the following n%%ZSMJ32%% lines contains two integers xi%%ZSMJ33%% and yi%%ZSMJ34%% (0≤xi,yi≤109%%ZSMJ35%%) — the coordinates of the i%%ZSMJ36%%-th point.",
-      "The sum of n%%ZSMJ37%% over all test cases should not exceed 105%%ZSMJ38%%."
+      "The first line contains a single integer t$$$t$$$ (1≤t≤2000$$$1 \\le t \\le 2000$$$) — the number of test cases.",
+      "The first line of each test case contains a single integer n$$$n$$$ (1≤n≤105$$$1 \\le n \\le 10^{5}$$$) — the number of points.",
+      "The second line of each test case contains two integers sx$$$s_x$$$, sy$$$s_y$$$ (0≤sx,sy≤109$$$0 \\le s_x, s_y \\le 10^{9}$$$) — the coordinates of the starting point.",
+      "The i$$$i$$$-th of the following n$$$n$$$ lines contains two integers xi$$$x_i$$$ and yi$$$y_i$$$ (0≤xi,yi≤109$$$0 \\le x_i, y_i \\le 10^{9}$$$) — the coordinates of the i$$$i$$$-th point.",
+      "The sum of n$$$n$$$ over all test cases should not exceed 105$$$10^{5}$$$."
     ],
     "output": [],
     "note": [
@@ -53,5 +53,46 @@
       "input": "2\n6\n4 6\n7 6\n8 5\n2 1\n6 2\n6 4\n3 3\n\n2\n\n5\n\n1\n4\n1 1\n3 2\n2 1\n3 3\n1 2\n\n\n2\n\n3",
       "output": "Second\n\n4\n\n6\n\n3\nFirst\n1\n\n4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [],
+    "note": [
+      null,
+      null,
+      null
+    ]
+  }
 }

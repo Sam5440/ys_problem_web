@@ -9,28 +9,28 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "You are given a simple undirected graph with n%%ZSMJ0%% nodes and m%%ZSMJ1%% edges. Note that the graph is not necessarily connected. The nodes are labeled from 1%%ZSMJ2%% to n%%ZSMJ3%%.",
-      "We define a graph to be a Fish Graph if it contains a simple cycle with a special node u%%ZSMJ4%% belonging to the cycle. Apart from the edges in the cycle, the graph should have exactly 2%%ZSMJ5%% extra edges. Both edges should connect to node u%%ZSMJ6%%, but they should not be connected to any other node of the cycle.",
+      "You are given a simple undirected graph with n$$$n$$$ nodes and m$$$m$$$ edges. Note that the graph is not necessarily connected. The nodes are labeled from 1$$$1$$$ to n$$$n$$$.",
+      "We define a graph to be a Fish Graph if it contains a simple cycle with a special node u$$$u$$$ belonging to the cycle. Apart from the edges in the cycle, the graph should have exactly 2$$$2$$$ extra edges. Both edges should connect to node u$$$u$$$, but they should not be connected to any other node of the cycle.",
       "Determine if the graph contains a subgraph that is a Fish Graph, and if so, find any such subgraph.",
       "In this problem, we define a subgraph as a graph obtained by taking any subset of the edges of the original graph.",
       "![](https://espresso.codeforces.com/d4948becce5d44359306c804c5e536e116fca5cd.png)"
     ],
     "input": [
-      "The first line of input contains the integer t%%ZSMJ7%% (1≤t≤1000%%ZSMJ8%%), the number of test cases. The description of test cases follows.",
-      "The first line of each test case contains two integers, n%%ZSMJ9%% and m%%ZSMJ10%% (1≤n,m≤2000%%ZSMJ11%%) — the number of nodes and the number of edges.",
-      "Each of the next m%%ZSMJ12%% lines contains the description of an edge. Each line contains two integers ui%%ZSMJ13%% and vi%%ZSMJ14%% (1≤ui,vi≤n%%ZSMJ15%%, ui≠vi%%ZSMJ16%%) — an edge connects node ui%%ZSMJ17%% to node vi%%ZSMJ18%%.",
+      "The first line of input contains the integer t$$$t$$$ (1≤t≤1000$$$1 \\leq t \\leq 1000$$$), the number of test cases. The description of test cases follows.",
+      "The first line of each test case contains two integers, n$$$n$$$ and m$$$m$$$ (1≤n,m≤2000$$$1 \\le n, m \\le 2\\,000$$$) — the number of nodes and the number of edges.",
+      "Each of the next m$$$m$$$ lines contains the description of an edge. Each line contains two integers ui$$$u_i$$$ and vi$$$v_i$$$ (1≤ui,vi≤n$$$1 \\leq u_i, v_i \\leq n$$$, ui≠vi$$$u_i\\neq v_i$$$) — an edge connects node ui$$$u_i$$$ to node vi$$$v_i$$$.",
       "It is guaranteed that no two edges connect the same unordered pair of nodes.",
-      "Furthermore, it is guaranteed that the sum of n%%ZSMJ19%% and the sum of m%%ZSMJ20%% over all test cases both do not exceed 2000%%ZSMJ21%%."
+      "Furthermore, it is guaranteed that the sum of n$$$n$$$ and the sum of m$$$m$$$ over all test cases both do not exceed 2000$$$2\\,000$$$."
     ],
     "output": [
       "For each testcase, output \"YES\" if the graph contains a subgraph that is a Fish Graph, otherwise print \"NO\". If the answer is \"YES\", on the following lines output a description of the subgraph.",
-      "The first line of the description contains one integer k%%ZSMJ22%% — the number of edges of the subgraph.",
-      "On the next k%%ZSMJ23%% lines, output the edges of the chosen subgraph. Each of the k%%ZSMJ24%% lines should contains two integers u%%ZSMJ25%% and v%%ZSMJ26%% (1≤u,v≤n%%ZSMJ27%%, u≠v%%ZSMJ28%%) — the edge between u%%ZSMJ29%% and v%%ZSMJ30%% belongs to the subgraph. The order in which u%%ZSMJ31%% and v%%ZSMJ32%% are printed does not matter, as long as the two nodes are connected by an edge in the original graph. The order in which you print the edges does not matter, as long as the resulting subgraph is a fish graph.",
+      "The first line of the description contains one integer k$$$k$$$ — the number of edges of the subgraph.",
+      "On the next k$$$k$$$ lines, output the edges of the chosen subgraph. Each of the k$$$k$$$ lines should contains two integers u$$$u$$$ and v$$$v$$$ (1≤u,v≤n$$$1\\le u, v\\le n$$$, u≠v$$$u\\neq v$$$) — the edge between u$$$u$$$ and v$$$v$$$ belongs to the subgraph. The order in which u$$$u$$$ and v$$$v$$$ are printed does not matter, as long as the two nodes are connected by an edge in the original graph. The order in which you print the edges does not matter, as long as the resulting subgraph is a fish graph.",
       "If there are multiple solutions, print any."
     ],
     "note": [
-      "In the first example, a possible valid subgraph contains the cycle 1→2→3→4→1%%ZSMJ33%%. The special node of this cycle is node 4%%ZSMJ34%%. The two extra edges 4−5%%ZSMJ35%% and 4−6%%ZSMJ36%% are both connected to 4%%ZSMJ37%%, completing the Fish Graph.",
-      "In the second example, a possible valid subgraph contains the cycle 1→3→4→1%%ZSMJ38%%. The special node of this cycle is node 3%%ZSMJ39%%. The two extra edges 3−2%%ZSMJ40%% and 3−5%%ZSMJ41%% are both connected to 3%%ZSMJ42%%, completing the Fish Graph.",
+      "In the first example, a possible valid subgraph contains the cycle 1→2→3→4→1$$$1 \\rightarrow 2 \\rightarrow 3 \\rightarrow 4 \\rightarrow 1$$$. The special node of this cycle is node 4$$$4$$$. The two extra edges 4−5$$$4 - 5$$$ and 4−6$$$4 - 6$$$ are both connected to 4$$$4$$$, completing the Fish Graph.",
+      "In the second example, a possible valid subgraph contains the cycle 1→3→4→1$$$1 \\rightarrow 3 \\rightarrow 4 \\rightarrow 1$$$. The special node of this cycle is node 3$$$3$$$. The two extra edges 3−2$$$3 - 2$$$ and 3−5$$$3 - 5$$$ are both connected to 3$$$3$$$, completing the Fish Graph.",
       "In the last example, it can be proven that there is no valid subgraph."
     ]
   },
@@ -39,5 +39,32 @@
       "input": "3\n7 8\n1 2\n2 3\n3 4\n4 1\n4 5\n4 6\n4 2\n6 7\n7 7\n6 7\n1 2\n2 3\n3 4\n4 1\n1 3\n3 5\n4 4\n1 3\n3 4\n4 1\n1 2",
       "output": "YES\n6\n5 4\n6 4\n4 3\n1 4\n2 1\n3 2\nYES\n5\n5 3\n2 3\n3 1\n4 3\n1 4\nNO"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null
+    ]
+  }
 }

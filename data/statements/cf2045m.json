@@ -9,24 +9,24 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "You are given a grid of R%%ZSMJ0%% rows (numbered from 1%%ZSMJ1%% to R%%ZSMJ2%% from north to south) and C%%ZSMJ3%% columns (numbered from 1%%ZSMJ4%% to C%%ZSMJ5%% from west to east). Every cell in this grid is a square of the same size. The cell located at row r%%ZSMJ6%% and column c%%ZSMJ7%% is denoted as (r,c)%%ZSMJ8%%. Each cell can either be empty or have a mirror in one of the cell's diagonals. Each mirror is represented by a line segment. The mirror is type 1%%ZSMJ9%% if it is positioned diagonally from the southwest corner to the northeast corner of the cell, or type 2%%ZSMJ10%% for the other diagonal.",
-      "These mirrors follow the law of reflection, that is, the angle of reflection equals the angle of incidence. Formally, for type 1%%ZSMJ11%% mirror, if a beam of light comes from the north, south, west, or east of the cell, then it will be reflected to the west, east, north, and south of the cell, respectively. Similarly, for type 2%%ZSMJ12%% mirror, if a beam of light comes from the north, south, west, or east of the cell, then it will be reflected to the east, west, south, and north of the cell, respectively.",
+      "You are given a grid of R$$$R$$$ rows (numbered from 1$$$1$$$ to R$$$R$$$ from north to south) and C$$$C$$$ columns (numbered from 1$$$1$$$ to C$$$C$$$ from west to east). Every cell in this grid is a square of the same size. The cell located at row r$$$r$$$ and column c$$$c$$$ is denoted as (r,c)$$$(r, c)$$$. Each cell can either be empty or have a mirror in one of the cell's diagonals. Each mirror is represented by a line segment. The mirror is type 1$$$1$$$ if it is positioned diagonally from the southwest corner to the northeast corner of the cell, or type 2$$$2$$$ for the other diagonal.",
+      "These mirrors follow the law of reflection, that is, the angle of reflection equals the angle of incidence. Formally, for type 1$$$1$$$ mirror, if a beam of light comes from the north, south, west, or east of the cell, then it will be reflected to the west, east, north, and south of the cell, respectively. Similarly, for type 2$$$2$$$ mirror, if a beam of light comes from the north, south, west, or east of the cell, then it will be reflected to the east, west, south, and north of the cell, respectively.",
       "![](https://espresso.codeforces.com/51ae63e20d94f6a5c323e9885ba0c734bb1b025e.png)",
-      "You want to put a laser from outside the grid such that all mirrors are hit by the laser beam. There are 2⋅(R+C)%%ZSMJ13%% possible locations to put the laser:",
-      "from the north side of the grid at column c%%ZSMJ14%%, for 1≤c≤C%%ZSMJ15%%, shooting a laser beam to the south;",
-      "from the south side of the grid at column c%%ZSMJ16%%, for 1≤c≤C%%ZSMJ17%%, shooting a laser beam to the north;",
-      "from the east side of the grid at row r%%ZSMJ18%%, for 1≤r≤R%%ZSMJ19%%, shooting a laser beam to the west; and",
-      "from the west side of the grid at row r%%ZSMJ20%%, for 1≤r≤R%%ZSMJ21%%, shooting a laser beam to the east.",
+      "You want to put a laser from outside the grid such that all mirrors are hit by the laser beam. There are 2⋅(R+C)$$$2 \\cdot (R+C)$$$ possible locations to put the laser:",
+      "from the north side of the grid at column c$$$c$$$, for 1≤c≤C$$$1 \\leq c \\leq C$$$, shooting a laser beam to the south;",
+      "from the south side of the grid at column c$$$c$$$, for 1≤c≤C$$$1 \\leq c \\leq C$$$, shooting a laser beam to the north;",
+      "from the east side of the grid at row r$$$r$$$, for 1≤r≤R$$$1 \\leq r \\leq R$$$, shooting a laser beam to the west; and",
+      "from the west side of the grid at row r$$$r$$$, for 1≤r≤R$$$1 \\leq r \\leq R$$$, shooting a laser beam to the east.",
       "![](https://espresso.codeforces.com/d8b8bddfdf81f8b1cf8a0fbdd4d5fd5c329330b3.png)",
       "Determine all possible locations for the laser such that all mirrors are hit by the laser beam."
     ],
     "input": [
-      "The first line consists of two integers R%%ZSMJ22%% C%%ZSMJ23%% (1≤R,C≤200%%ZSMJ24%%).",
-      "Each of the next R%%ZSMJ25%% lines consists of a string Sr%%ZSMJ26%% of length C%%ZSMJ27%%. The c%%ZSMJ28%%-th character of string Sr%%ZSMJ29%% represents cell (r,c)%%ZSMJ30%%. Each character can either be . if the cell is empty, / if the cell has type 1%%ZSMJ31%% mirror, or \\ if the cell has type 2%%ZSMJ32%% mirror. There is at least one mirror in the grid."
+      "The first line consists of two integers R$$$R$$$ C$$$C$$$ (1≤R,C≤200$$$1 \\leq R, C \\leq 200$$$).",
+      "Each of the next R$$$R$$$ lines consists of a string Sr$$$S_r$$$ of length C$$$C$$$. The c$$$c$$$-th character of string Sr$$$S_r$$$ represents cell (r,c)$$$(r, c)$$$. Each character can either be . if the cell is empty, / if the cell has type 1$$$1$$$ mirror, or \\ if the cell has type 2$$$2$$$ mirror. There is at least one mirror in the grid."
     ],
     "output": [
-      "Output a single integer representing the number of possible locations for the laser such that all mirrors are hit by the laser beam. Denote this number as k%%ZSMJ33%%.",
-      "If k>0%%ZSMJ34%%, then output k%%ZSMJ35%% space-separated strings representing the location of the laser. Each string consists of a character followed without any space by an integer. The character represents the side of the grid, which could be N, S, E, or W if you put the laser on the north, south, east, or west side of the grid, respectively. The integer represents the row/column number. You can output the strings in any order."
+      "Output a single integer representing the number of possible locations for the laser such that all mirrors are hit by the laser beam. Denote this number as k$$$k$$$.",
+      "If k>0$$$k  \\gt  0$$$, then output k$$$k$$$ space-separated strings representing the location of the laser. Each string consists of a character followed without any space by an integer. The character represents the side of the grid, which could be N, S, E, or W if you put the laser on the north, south, east, or west side of the grid, respectively. The integer represents the row/column number. You can output the strings in any order."
     ],
     "note": [
       "Explanation for the sample input/output #1",
@@ -50,5 +50,35 @@
       "input": "4 4\n....\n./\\.\n.\\/.\n....",
       "output": "0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

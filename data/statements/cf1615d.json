@@ -9,35 +9,35 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "'Twas the night before Christmas, and Santa's frantically setting up his new Christmas tree! There are n%%ZSMJ0%% nodes in the tree, connected by n−1%%ZSMJ1%% edges. On each edge of the tree, there's a set of Christmas lights, which can be represented by an integer in binary representation.",
+      "'Twas the night before Christmas, and Santa's frantically setting up his new Christmas tree! There are n$$$n$$$ nodes in the tree, connected by n−1$$$n-1$$$ edges. On each edge of the tree, there's a set of Christmas lights, which can be represented by an integer in binary representation.",
       "![](https://espresso.codeforces.com/ac792042be1b2dc3f360dee6803da9f5563cdbf4.png)",
-      "He has m%%ZSMJ2%% elves come over and admire his tree. Each elf is assigned two nodes, a%%ZSMJ3%% and b%%ZSMJ4%%, and that elf looks at all lights on the simple path between the two nodes. After this, the elf's favorite number becomes the bitwise XOR of the values of the lights on the edges in that path.",
-      "However, the North Pole has been recovering from a nasty bout of flu. Because of this, Santa forgot some of the configurations of lights he had put on the tree, and he has already left the North Pole! Fortunately, the elves came to the rescue, and each one told Santa what pair of nodes he was assigned (ai,bi)%%ZSMJ5%%, as well as the parity of the number of set bits in his favorite number. In other words, he remembers whether the number of 1%%ZSMJ6%%'s when his favorite number is written in binary is odd or even.",
+      "He has m$$$m$$$ elves come over and admire his tree. Each elf is assigned two nodes, a$$$a$$$ and b$$$b$$$, and that elf looks at all lights on the simple path between the two nodes. After this, the elf's favorite number becomes the bitwise XOR of the values of the lights on the edges in that path.",
+      "However, the North Pole has been recovering from a nasty bout of flu. Because of this, Santa forgot some of the configurations of lights he had put on the tree, and he has already left the North Pole! Fortunately, the elves came to the rescue, and each one told Santa what pair of nodes he was assigned (ai,bi)$$$(a_i, b_i)$$$, as well as the parity of the number of set bits in his favorite number. In other words, he remembers whether the number of 1$$$1$$$'s when his favorite number is written in binary is odd or even.",
       "Help Santa determine if it's possible that the memories are consistent, and if it is, remember what his tree looked like, and maybe you'll go down in history!"
     ],
     "input": [
-      "The first line contains one integer t%%ZSMJ7%% (1≤t≤2⋅104%%ZSMJ8%%) — the number of test cases. Then t%%ZSMJ9%% cases follow.",
-      "The first line of each test case contains two integers, n%%ZSMJ10%% and m%%ZSMJ11%% (2≤n≤2⋅105%%ZSMJ12%%; 1≤m≤2⋅105%%ZSMJ13%%) — the size of tree and the number of elves respectively.",
-      "The next n−1%%ZSMJ14%% lines of each test case each contains three integers, x%%ZSMJ15%%, y%%ZSMJ16%%, and v%%ZSMJ17%% (1≤x,y≤n%%ZSMJ18%%; −1≤v<230%%ZSMJ19%%) — meaning that there's an edge between nodes x%%ZSMJ20%% and y%%ZSMJ21%%. If",
-      "v=−1%%ZSMJ22%%: Santa doesn't remember what the set of lights were on for this edge.",
-      "v≥0%%ZSMJ23%%: The set of lights on the edge is v%%ZSMJ24%%.",
-      "The next m%%ZSMJ25%% lines of each test case each contains three integers, a%%ZSMJ26%%, b%%ZSMJ27%%, and p%%ZSMJ28%% (1≤a,b≤n%%ZSMJ29%%; a≠b%%ZSMJ30%%; 0≤p≤1%%ZSMJ31%%) — the nodes that the elf was assigned to, and the parity of the number of set bits in the elf's favorite number.",
-      "It is guaranteed that the sum of all n%%ZSMJ32%% and the sum of all m%%ZSMJ33%% don't exceed 2⋅105%%ZSMJ34%% each.",
+      "The first line contains one integer t$$$t$$$ (1≤t≤2⋅104$$$1 \\leq t \\leq 2 \\cdot 10^4$$$) — the number of test cases. Then t$$$t$$$ cases follow.",
+      "The first line of each test case contains two integers, n$$$n$$$ and m$$$m$$$ (2≤n≤2⋅105$$$2 \\leq n \\leq 2 \\cdot 10^5$$$; 1≤m≤2⋅105$$$1 \\leq m \\leq 2 \\cdot 10^5$$$) — the size of tree and the number of elves respectively.",
+      "The next n−1$$$n-1$$$ lines of each test case each contains three integers, x$$$x$$$, y$$$y$$$, and v$$$v$$$ (1≤x,y≤n$$$1 \\leq x, y \\leq n$$$; −1≤v<230$$$-1 \\leq v  \\lt  2^{30}$$$) — meaning that there's an edge between nodes x$$$x$$$ and y$$$y$$$. If",
+      "v=−1$$$v = -1$$$: Santa doesn't remember what the set of lights were on for this edge.",
+      "v≥0$$$v \\geq 0$$$: The set of lights on the edge is v$$$v$$$.",
+      "The next m$$$m$$$ lines of each test case each contains three integers, a$$$a$$$, b$$$b$$$, and p$$$p$$$ (1≤a,b≤n$$$1 \\leq a, b \\leq n$$$; a≠b$$$a \\neq b$$$; 0≤p≤1$$$0 \\leq p \\leq 1$$$) — the nodes that the elf was assigned to, and the parity of the number of set bits in the elf's favorite number.",
+      "It is guaranteed that the sum of all n$$$n$$$ and the sum of all m$$$m$$$ don't exceed 2⋅105$$$2 \\cdot 10^5$$$ each.",
       "It is guaranteed that the given edges form a tree."
     ],
     "output": [
       "For each test case, first print either YES or NO (in any case), whether there's a tree consistent with Santa's memory or not.",
-      "If the answer is YES, print n−1%%ZSMJ35%% lines each containing three integers: x%%ZSMJ36%%, y%%ZSMJ37%%, and v%%ZSMJ38%% (1≤x,y≤n%%ZSMJ39%%; 0≤v<230%%ZSMJ40%%) — the edge and the integer on that edge. The set of edges must be the same as in the input, and if the value of some edge was specified earlier, it can not change. You can print the edges in any order.",
+      "If the answer is YES, print n−1$$$n-1$$$ lines each containing three integers: x$$$x$$$, y$$$y$$$, and v$$$v$$$ (1≤x,y≤n$$$1 \\le x, y \\le n$$$; 0≤v<230$$$0 \\le v  \\lt  2^{30}$$$) — the edge and the integer on that edge. The set of edges must be the same as in the input, and if the value of some edge was specified earlier, it can not change. You can print the edges in any order.",
       "If there are multiple answers, print any."
     ],
     "note": [
       "The first test case is the image in the statement.",
-      "One possible answer is assigning the value of the edge (1,2)%%ZSMJ41%% to 5%%ZSMJ42%%, and the value of the edge (2,5)%%ZSMJ43%% to 3%%ZSMJ44%%. This is correct because:",
-      "The first elf goes from node 2%%ZSMJ45%% to node 3%%ZSMJ46%%. This elf's favorite number is 4%%ZSMJ47%%, so he remembers the value 1%%ZSMJ48%% (as 4%%ZSMJ49%% has an odd number of 1%%ZSMJ50%% bits in its binary representation).",
-      "The second elf goes from node 2%%ZSMJ51%% to node 5%%ZSMJ52%%. This elf's favorite number is 3%%ZSMJ53%%, so he remembers the value 0%%ZSMJ54%% (as 3%%ZSMJ55%% has an even number of 1%%ZSMJ56%% bits in its binary representation).",
-      "The third elf goes from node 5%%ZSMJ57%% to node 6%%ZSMJ58%%. This elf's favorite number is 7%%ZSMJ59%%, so he remembers the value 1%%ZSMJ60%% (as 7%%ZSMJ61%% has an odd number of 1%%ZSMJ62%% bits in its binary representation).",
-      "The fourth elf goes from node 6%%ZSMJ63%% to node 1%%ZSMJ64%%. This elf's favorite number is 1%%ZSMJ65%%, so he remembers the value 1%%ZSMJ66%% (as 1%%ZSMJ67%% has an odd number of 1%%ZSMJ68%% bits in its binary representation).",
-      "The fifth elf goes from node 4%%ZSMJ69%% to node 5%%ZSMJ70%%. This elf's favorite number is 4%%ZSMJ71%%, so he remembers the number 1%%ZSMJ72%% (as 4%%ZSMJ73%% has an odd number of 1%%ZSMJ74%% bits in its binary representation).",
+      "One possible answer is assigning the value of the edge (1,2)$$$(1, 2)$$$ to 5$$$5$$$, and the value of the edge (2,5)$$$(2, 5)$$$ to 3$$$3$$$. This is correct because:",
+      "The first elf goes from node 2$$$2$$$ to node 3$$$3$$$. This elf's favorite number is 4$$$4$$$, so he remembers the value 1$$$1$$$ (as 4$$$4$$$ has an odd number of 1$$$1$$$ bits in its binary representation).",
+      "The second elf goes from node 2$$$2$$$ to node 5$$$5$$$. This elf's favorite number is 3$$$3$$$, so he remembers the value 0$$$0$$$ (as 3$$$3$$$ has an even number of 1$$$1$$$ bits in its binary representation).",
+      "The third elf goes from node 5$$$5$$$ to node 6$$$6$$$. This elf's favorite number is 7$$$7$$$, so he remembers the value 1$$$1$$$ (as 7$$$7$$$ has an odd number of 1$$$1$$$ bits in its binary representation).",
+      "The fourth elf goes from node 6$$$6$$$ to node 1$$$1$$$. This elf's favorite number is 1$$$1$$$, so he remembers the value 1$$$1$$$ (as 1$$$1$$$ has an odd number of 1$$$1$$$ bits in its binary representation).",
+      "The fifth elf goes from node 4$$$4$$$ to node 5$$$5$$$. This elf's favorite number is 4$$$4$$$, so he remembers the number 1$$$1$$$ (as 4$$$4$$$ has an odd number of 1$$$1$$$ bits in its binary representation).",
       "Note that there are other possible answers."
     ]
   },
@@ -46,5 +46,39 @@
       "input": "4\n6 5\n1 2 -1\n1 3 1\n4 2 7\n6 3 0\n2 5 -1\n2 3 1\n2 5 0\n5 6 1\n6 1 1\n4 5 1\n5 3\n1 2 -1\n1 3 -1\n1 4 1\n4 5 -1\n2 4 0\n3 4 1\n2 3 1\n3 3\n1 2 -1\n1 3 -1\n1 2 0\n1 3 1\n2 3 0\n2 1\n1 2 1\n1 2 0",
       "output": "YES\n1 2 0\n1 3 1\n2 4 7\n3 6 0\n2 5 0\nYES\n1 2 1\n1 3 0\n1 4 1\n4 5 1\nNO\nNO"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

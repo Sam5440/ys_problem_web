@@ -10,18 +10,18 @@
   "sections": {
     "legend": [
       "Rake Mully has arrived on a new planet to collect a secret resource named hardtogetium. Hardtogetium is freely available on a location called the world tree, and Rake plans to traverse parts of the world tree and collect as much of this resource as he can.",
-      "Specifically, the world tree consists of n%%ZSMJ0%% hardtogetium mines, where the i%%ZSMJ1%%th mine contains wi%%ZSMJ2%% tons of hardtogetium. Furthermore, given any two mines, it is guaranteed that there exists a unique path between those two mines that Rake can travel along.",
-      "Rake has limited capacity, so he's decided to mine hardtogetium in the following way. Rake will randomly select two distinct vertices, u,v%%ZSMJ3%%, and will collect all the hardtogetium from the mine with the maximum amount of hardtogetium on the path from u%%ZSMJ4%% to v%%ZSMJ5%%, and he must consume hardtogetium equal to the amount in mine with the minimum hardtogetium on the path to power his mining apparatus. Specifically, given u%%ZSMJ6%% and v%%ZSMJ7%%, he will collect maxxwx−minxwx%%ZSMJ8%% for all x%%ZSMJ9%% on the path from u%%ZSMJ10%% to v%%ZSMJ11%%.",
-      "Given that he is equally likely to pick any possible u,v%%ZSMJ12%%, what is the expected number of tons of hardtogetium that Rake will collect. This number can be expressed as a non-reducible fraction pq%%ZSMJ13%%, so output pq−1(mod109+7)%%ZSMJ14%%."
+      "Specifically, the world tree consists of n$$$n$$$ hardtogetium mines, where the i$$$i$$$th mine contains wi$$$w_i$$$ tons of hardtogetium. Furthermore, given any two mines, it is guaranteed that there exists a unique path between those two mines that Rake can travel along.",
+      "Rake has limited capacity, so he's decided to mine hardtogetium in the following way. Rake will randomly select two distinct vertices, u,v$$$u, v$$$, and will collect all the hardtogetium from the mine with the maximum amount of hardtogetium on the path from u$$$u$$$ to v$$$v$$$, and he must consume hardtogetium equal to the amount in mine with the minimum hardtogetium on the path to power his mining apparatus. Specifically, given u$$$u$$$ and v$$$v$$$, he will collect maxxwx−minxwx$$$\\max_x w_x - min_x w_x$$$ for all x$$$x$$$ on the path from u$$$u$$$ to v$$$v$$$.",
+      "Given that he is equally likely to pick any possible u,v$$$u, v$$$, what is the expected number of tons of hardtogetium that Rake will collect. This number can be expressed as a non-reducible fraction pq$$$\\frac{p}{q}$$$, so output pq−1(mod109+7)$$$pq^{-1} \\pmod {10^9 + 7}$$$."
     ],
     "input": [
-      "The first line consists of a single integer n%%ZSMJ15%% (1≤n≤105)%%ZSMJ16%% giving the number of mines. The next line consists of n%%ZSMJ17%% integers where the i%%ZSMJ18%%th integer wi%%ZSMJ19%% gives the number of tons of hardtogetium on mine i%%ZSMJ20%%. The next n−1%%ZSMJ21%% lines consist of two integers ui,vi%%ZSMJ22%% (1≤ui,vi≤n)%%ZSMJ23%%, which indicates that there is an edge that Rake can travel across between ui%%ZSMJ24%% and vi%%ZSMJ25%%."
+      "The first line consists of a single integer n$$$n$$$ (1≤n≤105)$$$(1 \\leq n \\leq 10^5)$$$ giving the number of mines. The next line consists of n$$$n$$$ integers where the i$$$i$$$th integer wi$$$w_i$$$ gives the number of tons of hardtogetium on mine i$$$i$$$. The next n−1$$$n - 1$$$ lines consist of two integers ui,vi$$$u_i, v_i$$$ (1≤ui,vi≤n)$$$(1 \\leq u_i, v_i \\leq n)$$$, which indicates that there is an edge that Rake can travel across between ui$$$u_i$$$ and vi$$$v_i$$$."
     ],
     "output": [
-      "Output the expected number of tons of hardtogetium that Rake will collect. This number can be expressed as a non-reducible fraction pq%%ZSMJ26%%, so output pq−1(mod109+7)%%ZSMJ27%%."
+      "Output the expected number of tons of hardtogetium that Rake will collect. This number can be expressed as a non-reducible fraction pq$$$\\frac{p}{q}$$$, so output pq−1(mod109+7)$$$pq^{-1} \\pmod {10^9 + 7}$$$."
     ],
     "note": [
-      "For the first input, Rake can expect to collect 6−4+6−4+5−43%%ZSMJ28%% tons, which gives us 53%%ZSMJ29%%."
+      "For the first input, Rake can expect to collect 6−4+6−4+5−43$$$\\frac{6 - 4 + 6 - 4 + 5 - 4}{3}$$$ tons, which gives us 53$$$\\frac{5}{3}$$$."
     ]
   },
   "examples": [
@@ -33,5 +33,22 @@
       "input": "5\n5 2 1 4 6\n1 2\n1 3\n2 4\n3 5",
       "output": "4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null
+    ]
+  }
 }

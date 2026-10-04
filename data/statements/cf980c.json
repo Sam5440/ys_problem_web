@@ -10,25 +10,25 @@
   "sections": {
     "legend": [
       "Professor Ibrahim has prepared the final homework for his algorithm’s class. He asked his students to implement the Posterization Image Filter.",
-      "Their algorithm will be tested on an array of integers, where the i%%ZSMJ0%%-th integer represents the color of the i%%ZSMJ1%%-th pixel in the image. The image is in black and white, therefore the color of each pixel will be an integer between 0 and 255 (inclusive).",
-      "To implement the filter, students are required to divide the black and white color range [0, 255] into groups of consecutive colors, and select one color in each group to be the group’s key. In order to preserve image details, the size of a group must not be greater than k%%ZSMJ2%%, and each color should belong to exactly one group.",
+      "Their algorithm will be tested on an array of integers, where the i$$$i$$$-th integer represents the color of the i$$$i$$$-th pixel in the image. The image is in black and white, therefore the color of each pixel will be an integer between 0 and 255 (inclusive).",
+      "To implement the filter, students are required to divide the black and white color range [0, 255] into groups of consecutive colors, and select one color in each group to be the group’s key. In order to preserve image details, the size of a group must not be greater than k$$$k$$$, and each color should belong to exactly one group.",
       "Finally, the students will replace the color of each pixel in the array with that color’s assigned group key.",
-      "To better understand the effect, here is an image of a basking turtle where the Posterization Filter was applied with increasing k%%ZSMJ3%% to the right.",
+      "To better understand the effect, here is an image of a basking turtle where the Posterization Filter was applied with increasing k$$$k$$$ to the right.",
       "![](https://espresso.codeforces.com/0e1be1716cabc713374d2a7de753e569a9f2fa7e.png)",
       "To make the process of checking the final answer easier, Professor Ibrahim wants students to divide the groups and assign the keys in a way that produces the lexicographically smallest possible array."
     ],
     "input": [
-      "The first line of input contains two integers n%%ZSMJ4%% and k%%ZSMJ5%% (1≤n≤105%%ZSMJ6%%, 1≤k≤256%%ZSMJ7%%), the number of pixels in the image, and the maximum size of a group, respectively.",
-      "The second line contains n%%ZSMJ8%% integers p1,p2,…,pn%%ZSMJ9%% (0≤pi≤255%%ZSMJ10%%), where pi%%ZSMJ11%% is the color of the i%%ZSMJ12%%-th pixel."
+      "The first line of input contains two integers n$$$n$$$ and k$$$k$$$ (1≤n≤105$$$1 \\leq n \\leq 10^5$$$, 1≤k≤256$$$1 \\leq k \\leq 256$$$), the number of pixels in the image, and the maximum size of a group, respectively.",
+      "The second line contains n$$$n$$$ integers p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$ (0≤pi≤255$$$0 \\leq p_i \\leq 255$$$), where pi$$$p_i$$$ is the color of the i$$$i$$$-th pixel."
     ],
     "output": [
-      "Print n%%ZSMJ13%% space-separated integers; the lexicographically smallest possible array that represents the image after applying the Posterization filter."
+      "Print n$$$n$$$ space-separated integers; the lexicographically smallest possible array that represents the image after applying the Posterization filter."
     ],
     "note": [
       "One possible way to group colors and assign keys for the first sample:",
-      "Color 2%%ZSMJ14%% belongs to the group [0,2]%%ZSMJ15%%, with group key 0%%ZSMJ16%%.",
-      "Color 14%%ZSMJ17%% belongs to the group [12,14]%%ZSMJ18%%, with group key 12%%ZSMJ19%%.",
-      "Colors 3%%ZSMJ20%% and 4%%ZSMJ21%% belong to group [3,5]%%ZSMJ22%%, with group key 3%%ZSMJ23%%.",
+      "Color 2$$$2$$$ belongs to the group [0,2]$$$[0,2]$$$, with group key 0$$$0$$$.",
+      "Color 14$$$14$$$ belongs to the group [12,14]$$$[12,14]$$$, with group key 12$$$12$$$.",
+      "Colors 3$$$3$$$ and 4$$$4$$$ belong to group [3,5]$$$[3, 5]$$$, with group key 3$$$3$$$.",
       "Other groups won't affect the result so they are not listed here."
     ]
   },
@@ -41,5 +41,30 @@
       "input": "5 2\n0 2 1 255 254",
       "output": "0 1 1 254 254"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

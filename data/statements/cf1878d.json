@@ -9,44 +9,44 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "You are given a string s%%ZSMJ0%% of length n%%ZSMJ1%%, containing lowercase Latin letters.",
-      "Next you will be given a positive integer k%%ZSMJ2%% and two arrays, l%%ZSMJ3%% and r%%ZSMJ4%% of length k%%ZSMJ5%%.",
+      "You are given a string s$$$s$$$ of length n$$$n$$$, containing lowercase Latin letters.",
+      "Next you will be given a positive integer k$$$k$$$ and two arrays, l$$$l$$$ and r$$$r$$$ of length k$$$k$$$.",
       "It is guaranteed that the following conditions hold for these 2 arrays:",
-      "l1=1%%ZSMJ6%%;",
-      "rk=n%%ZSMJ7%%;",
-      "li≤ri%%ZSMJ8%%, for each positive integer i%%ZSMJ9%% such that 1≤i≤k%%ZSMJ10%%;",
-      "li=ri−1+1%%ZSMJ11%%, for each positive integer i%%ZSMJ12%% such that 2≤i≤k%%ZSMJ13%%;",
-      "Now you will be given a positive integer q%%ZSMJ14%% which represents the number of modifications you need to do on s%%ZSMJ15%%.",
-      "Each modification is defined with one positive integer x%%ZSMJ16%%:",
-      "Find an index i%%ZSMJ17%% such that li≤x≤ri%%ZSMJ18%% (notice that such i%%ZSMJ19%% is unique).",
-      "Let a=min%%ZSMJ20%% and let b=\\max(x, r_i+l_i-x)%%ZSMJ21%%.",
-      "Reverse the substring of s%%ZSMJ22%% from index a%%ZSMJ23%% to index b%%ZSMJ24%%.",
-      "Reversing the substring [a, b]%%ZSMJ25%% of a string s%%ZSMJ26%% means to make s%%ZSMJ27%% equal to s_1, s_2, \\dots, s_{a-1},\\ s_b, s_{b-1}, \\dots, s_{a+1}, s_a,\\ s_{b+1}, s_{b+2}, \\dots, s_{n-1}, s_n%%ZSMJ28%%.",
-      "Print s%%ZSMJ29%% after the last modification is finished."
+      "l1=1$$$l_1 = 1$$$;",
+      "rk=n$$$r_k = n$$$;",
+      "li≤ri$$$l_i \\le r_i$$$, for each positive integer i$$$i$$$ such that 1≤i≤k$$$1 \\le i \\le k$$$;",
+      "li=ri−1+1$$$l_i = r_{i-1}+1$$$, for each positive integer i$$$i$$$ such that 2≤i≤k$$$2 \\le i \\le k$$$;",
+      "Now you will be given a positive integer q$$$q$$$ which represents the number of modifications you need to do on s$$$s$$$.",
+      "Each modification is defined with one positive integer x$$$x$$$:",
+      "Find an index i$$$i$$$ such that li≤x≤ri$$$l_i \\le x \\le r_i$$$ (notice that such i$$$i$$$ is unique).",
+      "Let a=min(x,ri+li−x)$$$a=\\min(x, r_i+l_i-x)$$$ and let b=max(x,ri+li−x)$$$b=\\max(x, r_i+l_i-x)$$$.",
+      "Reverse the substring of s$$$s$$$ from index a$$$a$$$ to index b$$$b$$$.",
+      "Reversing the substring [a,b]$$$[a, b]$$$ of a string s$$$s$$$ means to make s$$$s$$$ equal to s1,s2,…,sa−1, sb,sb−1,…,sa+1,sa, sb+1,sb+2,…,sn−1,sn$$$s_1, s_2, \\dots, s_{a-1},\\ s_b, s_{b-1}, \\dots, s_{a+1}, s_a,\\ s_{b+1}, s_{b+2}, \\dots, s_{n-1}, s_n$$$.",
+      "Print s$$$s$$$ after the last modification is finished."
     ],
     "input": [
-      "Each test contains multiple test cases. The first line contains a single integer t%%ZSMJ30%% (1 \\le t \\le 10^4%%ZSMJ31%%) — the number of test cases. Description of the test cases follows.",
-      "The first line of each test case contains two integers n%%ZSMJ32%% and k%%ZSMJ33%% (1 \\le k \\le n \\le 2\\cdot 10^5%%ZSMJ34%%) — the length of the string s%%ZSMJ35%%, and the length of arrays l%%ZSMJ36%% and r%%ZSMJ37%%.",
-      "The second line of each test case contains the string s%%ZSMJ38%% ( |s| = n%%ZSMJ39%%) containing lowercase Latin letters — the initial string.",
-      "The third line of each test case contains k%%ZSMJ40%% positive integers l_1, l_2, \\dots, l_k%%ZSMJ41%% (1 \\le l_i \\le n%%ZSMJ42%%) — the array l%%ZSMJ43%%.",
-      "The fourth line of each test case contains k%%ZSMJ44%% positive integers r_1, r_2, \\dots, r_k%%ZSMJ45%% (1 \\le r_i \\le n%%ZSMJ46%%) — the array r%%ZSMJ47%%.",
-      "The fifth line of each test case contains a positive integer q%%ZSMJ48%% (1 \\le q \\le 2 \\cdot 10^5 %%ZSMJ49%%) — the number of modifications you need to do to s%%ZSMJ50%%.",
-      "The sixth line of each test case contains q%%ZSMJ51%% positive integers x_1, x_2, \\dots, x_q%%ZSMJ52%% (1\\le x_i \\le n%%ZSMJ53%%) — the description of the modifications.",
-      "It is guaranteed that the sum of n%%ZSMJ54%% over all test cases does not exceed 2\\cdot10^5%%ZSMJ55%%.",
-      "It is guaranteed that the sum of q%%ZSMJ56%% over all test cases does not exceed 2\\cdot10^5%%ZSMJ57%%.",
-      "It is guaranteed that the conditions in the statement hold for the arrays l%%ZSMJ58%% and r%%ZSMJ59%%."
+      "Each test contains multiple test cases. The first line contains a single integer t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$) — the number of test cases. Description of the test cases follows.",
+      "The first line of each test case contains two integers n$$$n$$$ and k$$$k$$$ (1≤k≤n≤2⋅105$$$1 \\le k \\le n \\le 2\\cdot 10^5$$$) — the length of the string s$$$s$$$, and the length of arrays l$$$l$$$ and r$$$r$$$.",
+      "The second line of each test case contains the string s$$$s$$$ (|s|=n$$$ |s| = n$$$) containing lowercase Latin letters — the initial string.",
+      "The third line of each test case contains k$$$k$$$ positive integers l1,l2,…,lk$$$l_1, l_2, \\dots, l_k$$$ (1≤li≤n$$$1 \\le l_i \\le n$$$) — the array l$$$l$$$.",
+      "The fourth line of each test case contains k$$$k$$$ positive integers r1,r2,…,rk$$$r_1, r_2, \\dots, r_k$$$ (1≤ri≤n$$$1 \\le r_i \\le n$$$) — the array r$$$r$$$.",
+      "The fifth line of each test case contains a positive integer q$$$q$$$ (1≤q≤2⋅105$$$1 \\le q \\le 2 \\cdot 10^5 $$$) — the number of modifications you need to do to s$$$s$$$.",
+      "The sixth line of each test case contains q$$$q$$$ positive integers x1,x2,…,xq$$$x_1, x_2, \\dots, x_q$$$ (1≤xi≤n$$$1\\le x_i \\le n$$$) — the description of the modifications.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 2⋅105$$$2\\cdot10^5$$$.",
+      "It is guaranteed that the sum of q$$$q$$$ over all test cases does not exceed 2⋅105$$$2\\cdot10^5$$$.",
+      "It is guaranteed that the conditions in the statement hold for the arrays l$$$l$$$ and r$$$r$$$."
     ],
     "output": [
-      "For each test case, in a new line, output the string s%%ZSMJ60%% after the last modification is done."
+      "For each test case, in a new line, output the string s$$$s$$$ after the last modification is done."
     ],
     "note": [
       "In the first test case:",
-      "The initial string is \"abcd\". In the first modification, we have x=1%%ZSMJ61%%. Since l_1=1\\leq x \\leq r_1=2%%ZSMJ62%%, we find the index i = 1%%ZSMJ63%%. We reverse the substring from index x=1%%ZSMJ64%% to l_1+r_1-x=1+2-1=2%%ZSMJ65%%. After this modification, our string is \"bacd\".",
-      "In the second modification (and the last modification), we have x=3%%ZSMJ66%%. Since l_2=3\\leq x \\leq r_2=4%%ZSMJ67%%, we find the index i = 2%%ZSMJ68%%. We reverse the substring from index x=3%%ZSMJ69%% to l_2+r_2-x=3+4-3=4%%ZSMJ70%%. After this modification, our string is \"badc\".",
+      "The initial string is \"abcd\". In the first modification, we have x=1$$$x=1$$$. Since l1=1≤x≤r1=2$$$l_1=1\\leq x \\leq r_1=2$$$, we find the index i=1$$$i = 1$$$. We reverse the substring from index x=1$$$x=1$$$ to l1+r1−x=1+2−1=2$$$l_1+r_1-x=1+2-1=2$$$. After this modification, our string is \"bacd\".",
+      "In the second modification (and the last modification), we have x=3$$$x=3$$$. Since l2=3≤x≤r2=4$$$l_2=3\\leq x \\leq r_2=4$$$, we find the index i=2$$$i = 2$$$. We reverse the substring from index x=3$$$x=3$$$ to l2+r2−x=3+4−3=4$$$l_2+r_2-x=3+4-3=4$$$. After this modification, our string is \"badc\".",
       "In the second test case:",
-      "The initial string is \"abcde\". In the first modification, we have x=1%%ZSMJ71%%. Since l_1=1\\leq x \\leq r_1=1%%ZSMJ72%%, we find the index i = 1%%ZSMJ73%%. We reverse the substring from index x=1%%ZSMJ74%% to l_1+r_1-x=1+1-1=1%%ZSMJ75%%. After this modification, our string hasn't changed (\"abcde\").",
-      "In the second modification, we have x=2%%ZSMJ76%%. Since l_2=2\\leq x \\leq r_2=2%%ZSMJ77%%, we find the index i = 2%%ZSMJ78%%. We reverse the substring from index x=2%%ZSMJ79%% to l_2+r_2-x=2+2-2=2%%ZSMJ80%%. After this modification, our string hasn't changed (\"abcde\").",
-      "In the third modification (and the last modification), we have x=3%%ZSMJ81%%. Since l_3=3\\leq x \\leq r_3=5%%ZSMJ82%%, we find the index i = 3%%ZSMJ83%%. We reverse the substring from index x=3%%ZSMJ84%% to l_3+r_3-x=3+5-3=5%%ZSMJ85%%. After this modification, our string is \"abedc\"."
+      "The initial string is \"abcde\". In the first modification, we have x=1$$$x=1$$$. Since l1=1≤x≤r1=1$$$l_1=1\\leq x \\leq r_1=1$$$, we find the index i=1$$$i = 1$$$. We reverse the substring from index x=1$$$x=1$$$ to l1+r1−x=1+1−1=1$$$l_1+r_1-x=1+1-1=1$$$. After this modification, our string hasn't changed (\"abcde\").",
+      "In the second modification, we have x=2$$$x=2$$$. Since l2=2≤x≤r2=2$$$l_2=2\\leq x \\leq r_2=2$$$, we find the index i=2$$$i = 2$$$. We reverse the substring from index x=2$$$x=2$$$ to l2+r2−x=2+2−2=2$$$l_2+r_2-x=2+2-2=2$$$. After this modification, our string hasn't changed (\"abcde\").",
+      "In the third modification (and the last modification), we have x=3$$$x=3$$$. Since l3=3≤x≤r3=5$$$l_3=3\\leq x \\leq r_3=5$$$, we find the index i=3$$$i = 3$$$. We reverse the substring from index x=3$$$x=3$$$ to l3+r3−x=3+5−3=5$$$l_3+r_3-x=3+5-3=5$$$. After this modification, our string is \"abedc\"."
     ]
   },
   "examples": [
@@ -54,5 +54,47 @@
       "input": "5\n4 2\nabcd\n1 3\n2 4\n2\n1 3\n5 3\nabcde\n1 2 3\n1 2 5\n3\n1 2 3\n3 1\ngaf\n1\n3\n2\n2 2\n10 1\naghcdegdij\n1\n10\n5\n1 2 3 4 2\n1 1\na\n1\n1\n1\n1",
       "output": "badc\nabedc\ngaf\njihgedcdga\na"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

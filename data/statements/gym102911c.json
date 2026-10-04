@@ -11,39 +11,39 @@
     "legend": [
       "Alice is madly in love with Bob and she hopes to impress him by beating him in yet another chocolate game.",
       "The game begins with two piles of chocolate cookies, one on the left and one on the right. Alice and Bob will take turns.",
-      "On each player's turn, they must choose exactly one of the piles, and eat some positive number of cookies from it such that the number of cookies remaining is a positive divisor of the previous pile size. More formally, if there are n%%ZSMJ0%% cookies in the chosen pile, then they can only eat k%%ZSMJ1%% cookies from that pile if k%%ZSMJ2%% is a positive integer and n−k%%ZSMJ3%% is a positive divisor of n%%ZSMJ4%%.",
-      "The player with no valid move (the person whose turn it is when both piles are size 1%%ZSMJ5%%) is declared the loser.",
+      "On each player's turn, they must choose exactly one of the piles, and eat some positive number of cookies from it such that the number of cookies remaining is a positive divisor of the previous pile size. More formally, if there are n$$$n$$$ cookies in the chosen pile, then they can only eat k$$$k$$$ cookies from that pile if k$$$k$$$ is a positive integer and n−k$$$n-k$$$ is a positive divisor of n$$$n$$$.",
+      "The player with no valid move (the person whose turn it is when both piles are size 1$$$1$$$) is declared the loser.",
       "Alice always goes first.",
       "Alice and Bob are supergenius, perfectly rational grandmaster prodigies who always make the optimal move in any game they play. Alice considers a game to be WINNABLE if there is some strategy she can follow so that she is guaranteed to win no matter what Bob does (so long as Alice plays correctly). Alice considers a game UNWINNABLE if Bob has a strategy he can follow so that she is guaranteed to lose no matter what she does (so long as Bob is playing correctly).",
-      "Bob is madly in love with Cindy, so he places M%%ZSMJ6%% cookies in the left pile and N%%ZSMJ7%% cookies in the right pile, since M%%ZSMJ8%% and N%%ZSMJ9%% are Cindy's favorite numbers.",
-      "Cindy is madly in love with Alice, so she will rig the game such that it will be WINNABLE for Alice, by taking some number of cookies from each pile. So that Bob does not notice the changes, she can only take at most X%%ZSMJ10%% cookies from the left pile, and at most Y%%ZSMJ11%% cookies from the right pile. Cindy can also choose not to take any cookies from either pile. You are also assured that X<M%%ZSMJ12%% and Y<N%%ZSMJ13%%.",
-      "How many different ways can Cindy rig the game in Alice's favor? Formally, count the number of ordered pairs of integers (x,y)%%ZSMJ14%% such that 0≤x≤X%%ZSMJ15%% and 0≤y≤Y%%ZSMJ16%%, and a game that initially begins with piles of size M−x%%ZSMJ17%% and N−y%%ZSMJ18%% is WINNABLE for Alice."
+      "Bob is madly in love with Cindy, so he places M$$$M$$$ cookies in the left pile and N$$$N$$$ cookies in the right pile, since M$$$M$$$ and N$$$N$$$ are Cindy's favorite numbers.",
+      "Cindy is madly in love with Alice, so she will rig the game such that it will be WINNABLE for Alice, by taking some number of cookies from each pile. So that Bob does not notice the changes, she can only take at most X$$$X$$$ cookies from the left pile, and at most Y$$$Y$$$ cookies from the right pile. Cindy can also choose not to take any cookies from either pile. You are also assured that X<M$$$X  \\lt  M$$$ and Y<N$$$Y  \\lt  N$$$.",
+      "How many different ways can Cindy rig the game in Alice's favor? Formally, count the number of ordered pairs of integers (x,y)$$$(x,y)$$$ such that 0≤x≤X$$$0 \\leq x \\leq X$$$ and 0≤y≤Y$$$0 \\leq y \\leq Y$$$, and a game that initially begins with piles of size M−x$$$M-x$$$ and N−y$$$N-y$$$ is WINNABLE for Alice."
     ],
     "input": [
-      "Input consists of a single line with four space-separated integers M%%ZSMJ19%%, N%%ZSMJ20%%, X%%ZSMJ21%%, and Y%%ZSMJ22%%."
+      "Input consists of a single line with four space-separated integers M$$$M$$$, N$$$N$$$, X$$$X$$$, and Y$$$Y$$$."
     ],
     "output": [
       "Output a single integer, the number of different ways that Cindy can rig the game in Alice's favor.",
       "It is recommended that Python users submit to PyPy for this problem.",
-      "0≤X<M%%ZSMJ23%%",
-      "0≤Y<N%%ZSMJ24%%",
+      "0≤X<M$$$0 \\leq X  \\lt  M$$$",
+      "0≤Y<N$$$0 \\leq Y  \\lt  N$$$",
       "Subtask 1 (30 points):",
-      "1≤M,N≤10%%ZSMJ25%%",
+      "1≤M,N≤10$$$1 \\leq M,N \\leq 10$$$",
       "Subtask 2 (20 points):",
-      "1≤M,N≤100%%ZSMJ26%%",
+      "1≤M,N≤100$$$1 \\leq M,N \\leq 100$$$",
       "Subtask 3 (20 points):",
-      "1≤M,N≤1000%%ZSMJ27%%",
+      "1≤M,N≤1000$$$1 \\leq M,N \\leq 1000$$$",
       "Subtask 4 (15 points):",
-      "1≤M,N≤5⋅104%%ZSMJ28%%",
+      "1≤M,N≤5⋅104$$$1 \\leq M,N \\leq 5\\cdot 10^4$$$",
       "Subtask 5 (15 points):",
-      "1≤M,N≤5⋅106%%ZSMJ29%%"
+      "1≤M,N≤5⋅106$$$1 \\leq M,N \\leq 5\\cdot 10^6$$$"
     ],
     "note": [
-      "In the first sample test case, suppose Cindy took x=0%%ZSMJ30%% cookies from the left pile and y=1%%ZSMJ31%% cookies from the right pile. Then, the game will have pile sizes 5%%ZSMJ32%% and 9%%ZSMJ33%%, which we can show is WINNABLE for Alice.",
-      "First, she eats 6%%ZSMJ34%% cookies from the right pile, which she can do because 9−6=3%%ZSMJ35%% and 3%%ZSMJ36%% is a positive divisor of 9%%ZSMJ37%%.",
-      "Now, the pile sizes are 5%%ZSMJ38%% and 3%%ZSMJ39%%. If Bob eats from the left pile, his only choice is to eat 4%%ZSMJ40%% cookies from it; then, Alice eats 2%%ZSMJ41%% cookies from the right pile. If Bob eats from the right pile, his only choice is to eat 2%%ZSMJ42%% cookies it; then, Alice eats 4%%ZSMJ43%% cookies from the left pile.",
-      "In either case, there is only 1%%ZSMJ44%% cookie left in each pile on Bob's turn, so he loses.",
-      "We can show that the full list of solutions are (0,0)%%ZSMJ45%%, (0,1)%%ZSMJ46%%, (0,2)%%ZSMJ47%%, and (1,2)%%ZSMJ48%% for the first sample test case."
+      "In the first sample test case, suppose Cindy took x=0$$$x=0$$$ cookies from the left pile and y=1$$$y=1$$$ cookies from the right pile. Then, the game will have pile sizes 5$$$5$$$ and 9$$$9$$$, which we can show is WINNABLE for Alice.",
+      "First, she eats 6$$$6$$$ cookies from the right pile, which she can do because 9−6=3$$$9-6 = 3$$$ and 3$$$3$$$ is a positive divisor of 9$$$9$$$.",
+      "Now, the pile sizes are 5$$$5$$$ and 3$$$3$$$. If Bob eats from the left pile, his only choice is to eat 4$$$4$$$ cookies from it; then, Alice eats 2$$$2$$$ cookies from the right pile. If Bob eats from the right pile, his only choice is to eat 2$$$2$$$ cookies it; then, Alice eats 4$$$4$$$ cookies from the left pile.",
+      "In either case, there is only 1$$$1$$$ cookie left in each pile on Bob's turn, so he loses.",
+      "We can show that the full list of solutions are (0,0)$$$(0,0)$$$, (0,1)$$$(0,1)$$$, (0,2)$$$(0,2)$$$, and (1,2)$$$(1,2)$$$ for the first sample test case."
     ]
   },
   "examples": [
@@ -55,5 +55,44 @@
       "input": "10 10 9 9",
       "output": "66"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

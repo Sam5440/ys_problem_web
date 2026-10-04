@@ -9,27 +9,27 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "You are given an array of n%%ZSMJ0%% nonnegative integers a1,a2,…,an%%ZSMJ1%%.",
-      "Let m%%ZSMJ2%% be a variable that is initialized to 0%%ZSMJ3%%, Jellyfish will perform the following operation n%%ZSMJ4%% times:",
-      "select an index i%%ZSMJ5%% (1≤i≤|a|%%ZSMJ6%%) and delete ai%%ZSMJ7%% from a%%ZSMJ8%%.",
-      "add MEX(a)†%%ZSMJ9%% to m%%ZSMJ10%%.",
-      "Now Jellyfish wants to know the minimum possible final value of m%%ZSMJ11%% if he performs all the operations optimally.",
-      "†%%ZSMJ12%% The MEX (minimum excluded) of an array is the smallest non-negative integer that does not belong to the array. For instance:",
-      "The MEX of [2,2,1]%%ZSMJ13%% is 0%%ZSMJ14%%, because 0%%ZSMJ15%% does not belong to the array.",
-      "The MEX of [3,1,0,1]%%ZSMJ16%% is 2%%ZSMJ17%%, because 0%%ZSMJ18%% and 1%%ZSMJ19%% belong to the array, but 2%%ZSMJ20%% does not.",
-      "The MEX of [0,3,1,2]%%ZSMJ21%% is 4%%ZSMJ22%% because 0%%ZSMJ23%%, 1%%ZSMJ24%%, 2%%ZSMJ25%%, and 3%%ZSMJ26%% belong to the array, but 4%%ZSMJ27%% does not."
+      "You are given an array of n$$$n$$$ nonnegative integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$.",
+      "Let m$$$m$$$ be a variable that is initialized to 0$$$0$$$, Jellyfish will perform the following operation n$$$n$$$ times:",
+      "select an index i$$$i$$$ (1≤i≤|a|$$$1 \\leq i \\leq |a|$$$) and delete ai$$$a_i$$$ from a$$$a$$$.",
+      "add MEX(a)†$$$\\operatorname{MEX}(a)^{\\dagger}$$$ to m$$$m$$$.",
+      "Now Jellyfish wants to know the minimum possible final value of m$$$m$$$ if he performs all the operations optimally.",
+      "†$$$^{\\dagger}$$$ The MEX (minimum excluded) of an array is the smallest non-negative integer that does not belong to the array. For instance:",
+      "The MEX of [2,2,1]$$$[2,2,1]$$$ is 0$$$0$$$, because 0$$$0$$$ does not belong to the array.",
+      "The MEX of [3,1,0,1]$$$[3,1,0,1]$$$ is 2$$$2$$$, because 0$$$0$$$ and 1$$$1$$$ belong to the array, but 2$$$2$$$ does not.",
+      "The MEX of [0,3,1,2]$$$[0,3,1,2]$$$ is 4$$$4$$$ because 0$$$0$$$, 1$$$1$$$, 2$$$2$$$, and 3$$$3$$$ belong to the array, but 4$$$4$$$ does not."
     ],
     "input": [
-      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ28%% (1≤t≤5000%%ZSMJ29%%). The description of the test cases follows.",
-      "The first line of each test case contains a single integer n%%ZSMJ30%% (1≤n≤5000%%ZSMJ31%%) — the size of the array.",
-      "The second line of each test case contains n%%ZSMJ32%% integers a1,a2,…,an%%ZSMJ33%% (0≤ai≤109%%ZSMJ34%%) — the integers in the array.",
-      "It is guaranteed that the sum of n%%ZSMJ35%% over all test cases does not exceed 5000%%ZSMJ36%%."
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤5000$$$1 \\leq t \\leq 5000$$$). The description of the test cases follows.",
+      "The first line of each test case contains a single integer n$$$n$$$ (1≤n≤5000$$$1 \\leq n \\leq 5000$$$) — the size of the array.",
+      "The second line of each test case contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (0≤ai≤109$$$0 \\leq a_i \\leq 10^9$$$) — the integers in the array.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 5000$$$5000$$$."
     ],
     "output": [
-      "For each test case, output a single integer — the minimum value of m%%ZSMJ37%% if the operations are performed optimally."
+      "For each test case, output a single integer — the minimum value of m$$$m$$$ if the operations are performed optimally."
     ],
     "note": [
-      "In the first test case, we delete elements from a%%ZSMJ38%% in the following order: [5,2,1,0,3,0,4,0]→[5,2,0,3,0,4,0]→[5,2,0,3,4,0]→[5,2,3,4,0]→[5,2,3,4]→[5,2,4]→[2,4]→[4]→[ ]%%ZSMJ39%%. The value of m%%ZSMJ40%% will be 1+1+1+0+0+0+0+0=3%%ZSMJ41%%."
+      "In the first test case, we delete elements from a$$$a$$$ in the following order: [5,2,1,0,3,0,4,0]→[5,2,0,3,0,4,0]→[5,2,0,3,4,0]→[5,2,3,4,0]→[5,2,3,4]→[5,2,4]→[2,4]→[4]→[ ]$$$[5,2,\\color{red}{1},0,3,0,4,0] \\to [5,2,0,3,\\color{red}{0},4,0] \\to [5,2,\\color{red}{0},3,4,0] \\to [5,2,3,4,\\color{red}{0}] \\to [5,2,\\color{red}{3},4] \\to [\\color{red}{5},2,4] \\to [\\color{red}{2},4] \\to [\\color{red}{4}] \\to [~]$$$. The value of m$$$m$$$ will be 1+1+1+0+0+0+0+0=3$$$1+1+1+0+0+0+0+0=3$$$."
     ]
   },
   "examples": [
@@ -37,5 +37,30 @@
       "input": "4\n8\n5 2 1 0 3 0 4 0\n2\n1 2\n5\n1 0 2 114514 0\n8\n0 1 2 0 1 2 0 3",
       "output": "3\n0\n2\n7"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null
+    ]
+  }
 }

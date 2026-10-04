@@ -9,23 +9,23 @@
   "memoryLimit": "512 megabytes",
   "sections": {
     "legend": [
-      "Mr. Chanek wants to knit a batik, a traditional cloth from Indonesia. The cloth forms a grid a%%ZSMJ0%% with size n×m%%ZSMJ1%%. There are k%%ZSMJ2%% colors, and each cell in the grid can be one of the k%%ZSMJ3%% colors.",
-      "Define a sub-rectangle as an ordered pair of two cells ((x1,y1),(x2,y2))%%ZSMJ4%%, denoting the top-left cell and bottom-right cell (inclusively) of a sub-rectangle in a%%ZSMJ5%%. Two sub-rectangles ((x1,y1),(x2,y2))%%ZSMJ6%% and ((x3,y3),(x4,y4))%%ZSMJ7%% have the same pattern if and only if the following holds:",
-      "they have the same width (x2−x1=x4−x3%%ZSMJ8%%);",
-      "they have the same height (y2−y1=y4−y3%%ZSMJ9%%);",
-      "for every pair (i,j)%%ZSMJ10%% where 0≤i≤x2−x1%%ZSMJ11%% and 0≤j≤y2−y1%%ZSMJ12%%, the color of cells (x1+i,y1+j)%%ZSMJ13%% and (x3+i,y3+j)%%ZSMJ14%% are equal.",
-      "Count the number of possible batik color combinations, such that the subrectangles ((ax,ay),(ax+r−1,ay+c−1))%%ZSMJ15%% and ((bx,by),(bx+r−1,by+c−1))%%ZSMJ16%% have the same pattern.",
-      "Output the answer modulo 109+7%%ZSMJ17%%."
+      "Mr. Chanek wants to knit a batik, a traditional cloth from Indonesia. The cloth forms a grid a$$$a$$$ with size n×m$$$n \\times m$$$. There are k$$$k$$$ colors, and each cell in the grid can be one of the k$$$k$$$ colors.",
+      "Define a sub-rectangle as an ordered pair of two cells ((x1,y1),(x2,y2))$$$((x_1, y_1), (x_2, y_2))$$$, denoting the top-left cell and bottom-right cell (inclusively) of a sub-rectangle in a$$$a$$$. Two sub-rectangles ((x1,y1),(x2,y2))$$$((x_1, y_1), (x_2, y_2))$$$ and ((x3,y3),(x4,y4))$$$((x_3, y_3), (x_4, y_4))$$$ have the same pattern if and only if the following holds:",
+      "they have the same width (x2−x1=x4−x3$$$x_2 - x_1 = x_4 - x_3$$$);",
+      "they have the same height (y2−y1=y4−y3$$$y_2 - y_1 = y_4 - y_3$$$);",
+      "for every pair (i,j)$$$(i, j)$$$ where 0≤i≤x2−x1$$$0 \\leq i \\leq x_2 - x_1$$$ and 0≤j≤y2−y1$$$0 \\leq j \\leq y_2 - y_1$$$, the color of cells (x1+i,y1+j)$$$(x_1 + i, y_1 + j)$$$ and (x3+i,y3+j)$$$(x_3 + i, y_3 + j)$$$ are equal.",
+      "Count the number of possible batik color combinations, such that the subrectangles ((ax,ay),(ax+r−1,ay+c−1))$$$((a_x, a_y),(a_x + r - 1, a_y + c - 1))$$$ and ((bx,by),(bx+r−1,by+c−1))$$$((b_x, b_y),(b_x + r - 1, b_y + c - 1))$$$ have the same pattern.",
+      "Output the answer modulo 109+7$$$10^9 + 7$$$."
     ],
     "input": [
-      "The first line contains five integers n%%ZSMJ18%%, m%%ZSMJ19%%, k%%ZSMJ20%%, r%%ZSMJ21%%, and c%%ZSMJ22%% (1≤n,m≤109%%ZSMJ23%%, 1≤k≤109%%ZSMJ24%%, 1≤r≤min%%ZSMJ25%%, 1 \\leq c \\leq \\min(10^6, m)%%ZSMJ26%%) — the size of the batik, the number of colors, and size of the sub-rectangle.",
-      "The second line contains four integers a_x%%ZSMJ27%%, a_y%%ZSMJ28%%, b_x%%ZSMJ29%%, and b_y%%ZSMJ30%% (1 \\leq a_x, b_x \\leq n%%ZSMJ31%%, 1 \\leq a_y, b_y \\leq m%%ZSMJ32%%) — the top-left corners of the first and second sub-rectangle. Both of the sub-rectangles given are inside the grid (1 \\leq a_x + r - 1%%ZSMJ33%%, b_x + r - 1 \\leq n%%ZSMJ34%%, 1 \\leq a_y + c - 1%%ZSMJ35%%, b_y + c - 1 \\leq m%%ZSMJ36%%)."
+      "The first line contains five integers n$$$n$$$, m$$$m$$$, k$$$k$$$, r$$$r$$$, and c$$$c$$$ (1≤n,m≤109$$$1 \\leq n, m \\leq 10^9$$$, 1≤k≤109$$$1 \\leq k \\leq 10^9$$$, 1≤r≤min(106,n)$$$1 \\leq r \\leq \\min(10^6, n)$$$, 1≤c≤min(106,m)$$$1 \\leq c \\leq \\min(10^6, m)$$$) — the size of the batik, the number of colors, and size of the sub-rectangle.",
+      "The second line contains four integers ax$$$a_x$$$, ay$$$a_y$$$, bx$$$b_x$$$, and by$$$b_y$$$ (1≤ax,bx≤n$$$1 \\leq a_x, b_x \\leq n$$$, 1≤ay,by≤m$$$1 \\leq a_y, b_y \\leq m$$$) — the top-left corners of the first and second sub-rectangle. Both of the sub-rectangles given are inside the grid (1≤ax+r−1$$$1 \\leq a_x + r - 1$$$, bx+r−1≤n$$$b_x + r - 1 \\leq n$$$, 1≤ay+c−1$$$1 \\leq a_y + c - 1$$$, by+c−1≤m$$$b_y + c - 1 \\leq m$$$)."
     ],
     "output": [
-      "Output an integer denoting the number of possible batik color combinations modulo 10^9 + 7%%ZSMJ37%%."
+      "Output an integer denoting the number of possible batik color combinations modulo 109+7$$$10^9 + 7$$$."
     ],
     "note": [
-      "The following are all 32%%ZSMJ38%% possible color combinations in the first example.",
+      "The following are all 32$$$32$$$ possible color combinations in the first example.",
       "![](https://espresso.codeforces.com/6d72e338e6664267b5e2e0e8b2e3acf7391a5559.png)"
     ]
   },
@@ -38,5 +38,27 @@
       "input": "4 5 170845 2 2\n1 4 3 1",
       "output": "756680455"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

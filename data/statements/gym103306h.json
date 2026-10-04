@@ -9,19 +9,19 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Haunted houses are one of the most popular Halloween attractions. Bob plans to open his own haunted house for Halloween this year. His haunted house consists of N%%ZSMJ0%% rooms numbered from 0%%ZSMJ1%% to N−1%%ZSMJ2%%.",
-      "Bob has N%%ZSMJ3%% ghosts and each of them has a unique energy value between 1%%ZSMJ4%% and N%%ZSMJ5%%. A ghost with energy x%%ZSMJ6%% can be active for x%%ZSMJ7%% consecutive seconds, and then it needs to rest for x%%ZSMJ8%% seconds until it can be active again. But there is one more flaw, if that ghost scares a person while it's active, then it needs to rest immediately for x%%ZSMJ9%% seconds until it can be active again, since scaring people is tiring for ghosts.",
-      "Before deciding where to place the ghosts, Bob wants to simulate some scenarios. A scenario is defined by a permutation p0,p1,…,pN−1%%ZSMJ10%%, indicating that Bob places a ghost with energy pi%%ZSMJ11%% in the room i%%ZSMJ12%%, and a sequence t0,t1,…,tM−1%%ZSMJ13%%, indicating the arriving time of people to the haunted house.",
-      "If a person arrives to the house at second tj%%ZSMJ14%%, then they visit the cell 0%%ZSMJ15%% at second tj%%ZSMJ16%%. When a person visits the cell i%%ZSMJ17%% at second T%%ZSMJ18%%, there are two cases:",
-      "If there is an active ghost in the room, then the person gets scared and abandons the house immediately. The ghost starts resting at second T+1%%ZSMJ19%%.",
-      "Otherwise, the person visits to the room i+1%%ZSMJ20%% at second T+1%%ZSMJ21%% or abandons the house if i+1=N%%ZSMJ22%%.",
-      "You are given a scenario, help Bob to simulate it and find what is the room where the people get scared and the second when that happens. Note that all ghosts start being active at second 0%%ZSMJ23%%."
+      "Haunted houses are one of the most popular Halloween attractions. Bob plans to open his own haunted house for Halloween this year. His haunted house consists of N$$$N$$$ rooms numbered from 0$$$0$$$ to N−1$$$N-1$$$.",
+      "Bob has N$$$N$$$ ghosts and each of them has a unique energy value between 1$$$1$$$ and N$$$N$$$. A ghost with energy x$$$x$$$ can be active for x$$$x$$$ consecutive seconds, and then it needs to rest for x$$$x$$$ seconds until it can be active again. But there is one more flaw, if that ghost scares a person while it's active, then it needs to rest immediately for x$$$x$$$ seconds until it can be active again, since scaring people is tiring for ghosts.",
+      "Before deciding where to place the ghosts, Bob wants to simulate some scenarios. A scenario is defined by a permutation p0,p1,…,pN−1$$$p_0, p_1, \\dots, p_{N-1}$$$, indicating that Bob places a ghost with energy pi$$$p_i$$$ in the room i$$$i$$$, and a sequence t0,t1,…,tM−1$$$t_0, t_1, \\dots, t_{M-1}$$$, indicating the arriving time of people to the haunted house.",
+      "If a person arrives to the house at second tj$$$t_j$$$, then they visit the cell 0$$$0$$$ at second tj$$$t_j$$$. When a person visits the cell i$$$i$$$ at second T$$$T$$$, there are two cases:",
+      "If there is an active ghost in the room, then the person gets scared and abandons the house immediately. The ghost starts resting at second T+1$$$T+1$$$.",
+      "Otherwise, the person visits to the room i+1$$$i+1$$$ at second T+1$$$T+1$$$ or abandons the house if i+1=N$$$i+1=N$$$.",
+      "You are given a scenario, help Bob to simulate it and find what is the room where the people get scared and the second when that happens. Note that all ghosts start being active at second 0$$$0$$$."
     ],
     "input": [
-      "The first line contains two integers N%%ZSMJ24%% and M%%ZSMJ25%% (1≤N,M≤105%%ZSMJ26%%). The second line contains a permutation p0,p1,…,pN−1%%ZSMJ27%% of size N%%ZSMJ28%% (1≤pi≤N%%ZSMJ29%%), indicating that a ghost with energy pi%%ZSMJ30%% is placed in room i%%ZSMJ31%%. The third line contains M%%ZSMJ32%% integers t0,t1,…tM−1%%ZSMJ33%% (0≤ti≤105%%ZSMJ34%%), the second when the people arrive to the house. All people arrive at different time."
+      "The first line contains two integers N$$$N$$$ and M$$$M$$$ (1≤N,M≤105$$$1 \\leq N, M \\leq 10^5$$$). The second line contains a permutation p0,p1,…,pN−1$$$p_0, p_1, \\dots, p_{N-1}$$$ of size N$$$N$$$ (1≤pi≤N$$$1 \\leq p_i \\leq N$$$), indicating that a ghost with energy pi$$$p_i$$$ is placed in room i$$$i$$$. The third line contains M$$$M$$$ integers t0,t1,…tM−1$$$t_0, t_1, \\dots t_{M-1}$$$ (0≤ti≤105$$$0 \\leq t_i \\leq 10^5$$$), the second when the people arrive to the house. All people arrive at different time."
     ],
     "output": [
-      "Print M%%ZSMJ35%% lines. In the j%%ZSMJ36%%-th line print two space-separated integers: the number of the room where the person with number (j−1)%%ZSMJ37%% get scared and the second when they get scared. If the person abandons the house without being scared in any room, print two −1%%ZSMJ38%% separated by a space."
+      "Print M$$$M$$$ lines. In the j$$$j$$$-th line print two space-separated integers: the number of the room where the person with number (j−1)$$$(j-1)$$$ get scared and the second when they get scared. If the person abandons the house without being scared in any room, print two −1$$$-1$$$ separated by a space."
     ]
   },
   "examples": [
@@ -33,5 +33,22 @@
       "input": "3 3\n3 1 2\n0 4 10",
       "output": "0 0\n0 4\n0 10"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

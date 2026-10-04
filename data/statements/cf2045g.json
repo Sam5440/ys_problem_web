@@ -9,24 +9,24 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "Mount ICPC can be represented as a grid of R%%ZSMJ0%% rows (numbered from 1%%ZSMJ1%% to R%%ZSMJ2%%) and C%%ZSMJ3%% columns (numbered from 1%%ZSMJ4%% to C%%ZSMJ5%%). The cell located at row r%%ZSMJ6%% and column c%%ZSMJ7%% is denoted as (r,c)%%ZSMJ8%% and has a height of Hr,c%%ZSMJ9%%. Two cells are adjacent to each other if they share a side. Formally, (r,c)%%ZSMJ10%% is adjacent to (r−1,c)%%ZSMJ11%%, (r+1,c)%%ZSMJ12%%, (r,c−1)%%ZSMJ13%%, and (r,c+1)%%ZSMJ14%%, if any exists.",
-      "You can move only between adjacent cells, and each move comes with a penalty. With an aura of an odd positive integer X%%ZSMJ15%%, moving from a cell with height h1%%ZSMJ16%% to a cell with height h2%%ZSMJ17%% gives you a penalty of (h1−h2)X%%ZSMJ18%%. Note that the penalty can be negative.",
-      "You want to answer Q%%ZSMJ19%% independent scenarios. In each scenario, you start at the starting cell (Rs,Cs)%%ZSMJ20%% and you want to go to the destination cell (Rf,Cf)%%ZSMJ21%% with minimum total penalty. In some scenarios, the total penalty might become arbitrarily small; such a scenario is called invalid. Find the minimum total penalty to move from the starting cell to the destination cell, or determine if the scenario is invalid."
+      "Mount ICPC can be represented as a grid of R$$$R$$$ rows (numbered from 1$$$1$$$ to R$$$R$$$) and C$$$C$$$ columns (numbered from 1$$$1$$$ to C$$$C$$$). The cell located at row r$$$r$$$ and column c$$$c$$$ is denoted as (r,c)$$$(r, c)$$$ and has a height of Hr,c$$$H_{r, c}$$$. Two cells are adjacent to each other if they share a side. Formally, (r,c)$$$(r, c)$$$ is adjacent to (r−1,c)$$$(r-1, c)$$$, (r+1,c)$$$(r+1, c)$$$, (r,c−1)$$$(r, c-1)$$$, and (r,c+1)$$$(r, c+1)$$$, if any exists.",
+      "You can move only between adjacent cells, and each move comes with a penalty. With an aura of an odd positive integer X$$$X$$$, moving from a cell with height h1$$$h_1$$$ to a cell with height h2$$$h_2$$$ gives you a penalty of (h1−h2)X$$$(h_1 - h_2)^X$$$. Note that the penalty can be negative.",
+      "You want to answer Q$$$Q$$$ independent scenarios. In each scenario, you start at the starting cell (Rs,Cs)$$$(R_s, C_s)$$$ and you want to go to the destination cell (Rf,Cf)$$$(R_f, C_f)$$$ with minimum total penalty. In some scenarios, the total penalty might become arbitrarily small; such a scenario is called invalid. Find the minimum total penalty to move from the starting cell to the destination cell, or determine if the scenario is invalid."
     ],
     "input": [
-      "The first line consists of three integers R%%ZSMJ22%% C%%ZSMJ23%% X%%ZSMJ24%% (1≤R,C≤1000;1≤X≤9;X%%ZSMJ25%% is an odd integer).",
-      "Each of the next R%%ZSMJ26%% lines consists of a string Hr%%ZSMJ27%% of length C%%ZSMJ28%%. Each character in Hr%%ZSMJ29%% is a number from 0 to 9. The c%%ZSMJ30%%-th character of Hr%%ZSMJ31%% represents the height of cell (r,c)%%ZSMJ32%%, or Hr,c%%ZSMJ33%%.",
-      "The next line consists of an integer Q%%ZSMJ34%% (1≤Q≤100000)%%ZSMJ35%%.",
-      "Each of the next Q%%ZSMJ36%% lines consists of four integers Rs%%ZSMJ37%% Cs%%ZSMJ38%% Rf%%ZSMJ39%% Cf%%ZSMJ40%% (1≤Rs,Rf≤R;1≤Cs,Cf≤C%%ZSMJ41%%)."
+      "The first line consists of three integers R$$$R$$$ C$$$C$$$ X$$$X$$$ (1≤R,C≤1000;1≤X≤9;X$$$1 \\leq R, C \\leq 1000; 1 \\leq X \\leq 9; X$$$ is an odd integer).",
+      "Each of the next R$$$R$$$ lines consists of a string Hr$$$H_r$$$ of length C$$$C$$$. Each character in Hr$$$H_r$$$ is a number from 0 to 9. The c$$$c$$$-th character of Hr$$$H_r$$$ represents the height of cell (r,c)$$$(r, c)$$$, or Hr,c$$$H_{r, c}$$$.",
+      "The next line consists of an integer Q$$$Q$$$ (1≤Q≤100000)$$$1 \\leq Q \\leq 100\\,000)$$$.",
+      "Each of the next Q$$$Q$$$ lines consists of four integers Rs$$$R_s$$$ Cs$$$C_s$$$ Rf$$$R_f$$$ Cf$$$C_f$$$ (1≤Rs,Rf≤R;1≤Cs,Cf≤C$$$1 \\leq R_s, R_f \\leq R; 1 \\leq C_s, C_f \\leq C$$$)."
     ],
     "output": [
       "For each scenario, output the following in a single line. If the scenario is invalid, output INVALID. Otherwise, output a single integer representing the minimum total penalty to move from the starting cell to the destination cell."
     ],
     "note": [
       "Explanation for the sample input/output #1",
-      "For the first scenario, one of the solutions is to move as follows: (1,1)→(2,1)→(3,1)→(3,2)→(3,3)→(3,4)%%ZSMJ42%%. The total penalty of this solution is (3−4)1+(4−3)1+(3−6)1+(6−8)1+(8−1)1=2%%ZSMJ43%%.",
+      "For the first scenario, one of the solutions is to move as follows: (1,1)→(2,1)→(3,1)→(3,2)→(3,3)→(3,4)$$$(1, 1) \\rightarrow (2, 1) \\rightarrow (3, 1) \\rightarrow (3, 2) \\rightarrow (3, 3) \\rightarrow (3, 4)$$$. The total penalty of this solution is (3−4)1+(4−3)1+(3−6)1+(6−8)1+(8−1)1=2$$$(3 - 4)^1 + (4 - 3)^1 + (3 - 6)^1 + (6 - 8)^1 + (8 - 1)^1 = 2$$$.",
       "Explanation for the sample input/output #2",
-      "For the first scenario, the cycle (1,1)→(2,1)→(2,2)→(1,2)→(1,1)%%ZSMJ44%% has a penalty of (1−2)5+(2−0)5+(0−9)5+(9−1)5=−26250%%ZSMJ45%%. You can keep repeating this cycle to make your total penalty arbitrarily small. Similarly, for the second scenario, you can move to (1,1)%%ZSMJ46%% first, then repeat the same cycle."
+      "For the first scenario, the cycle (1,1)→(2,1)→(2,2)→(1,2)→(1,1)$$$(1, 1) \\rightarrow (2, 1) \\rightarrow (2, 2) \\rightarrow (1, 2) \\rightarrow (1, 1)$$$ has a penalty of (1−2)5+(2−0)5+(0−9)5+(9−1)5=−26250$$$(1 - 2)^5 + (2 - 0)^5 + (0 - 9)^5 + (9 - 1)^5 = -26250$$$. You can keep repeating this cycle to make your total penalty arbitrarily small. Similarly, for the second scenario, you can move to (1,1)$$$(1, 1)$$$ first, then repeat the same cycle."
     ]
   },
   "examples": [
@@ -42,5 +42,27 @@
       "input": "3 3 9\n135\n357\n579\n2\n3 3 1 1\n2 2 2 2",
       "output": "2048\n0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

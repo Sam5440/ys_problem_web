@@ -10,7 +10,7 @@ on:
 
 permissions:
   contents: write
-  actions: read
+  actions: write
 
 concurrency:
   group: update-data
@@ -75,8 +75,15 @@ jobs:
       # the AI backfill below / client-side MT). Resumable — files without
       # tokens are skipped, so the backlog shrinks every run until no-op.
       - name: Repair ZSMJ-polluted statements
+        id: repair
         if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
-        run: xvfb-run -a node scripts/repair-zsmj.mjs --limit 200 --delay 6000
+        run: |
+          OUT=$(xvfb-run -a node scripts/repair-zsmj.mjs --limit 200 --delay 6000)
+          echo "$OUT"
+          REPAIRED=$(echo "$OUT" | grep -oE 'Done: [0-9]+ repaired' | grep -oE '[0-9]+' || echo 0)
+          REMAINING=$(grep -l '%%ZSMJ' data/statements/*.json 2>/dev/null | wc -l | tr -d ' ')
+          echo "repaired=$REPAIRED" >> "$GITHUB_OUTPUT"
+          echo "remaining=$REMAINING" >> "$GITHUB_OUTPUT"
         env:
           CF_START_MODE: chrome-headful
         continue-on-error: true
@@ -129,6 +136,19 @@ jobs:
             git commit -m "chore: sync daily problems data"
             git push
           fi
+
+      # Self-chain the repair backlog: GitHub keeps only the newest pending
+      # run per concurrency group, so queueing several dispatches up front
+      # does not work — instead each run triggers the next one while the
+      # previous batch made progress and polluted files remain. Stops by
+      # itself when the backlog is gone or a batch fully failed.
+      - name: Chain next repair batch
+        if: ${{ steps.repair.outputs.repaired > 0 && steps.repair.outputs.remaining > 0 }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api "repos/${{ github.repository }}/actions/workflows/update-data.yml/dispatches" -f ref=main
+          echo "Queued next repair batch; ${{ steps.repair.outputs.remaining }} statement files still polluted."
 
   # Second job: the job-log download API only serves COMPLETED jobs, so the
   # sync job cannot save its own log — this one waits for it, downloads the

@@ -85,9 +85,15 @@ function findSpanClose(s, openIdx) {
 }
 
 // MathJax sometimes finishes before we snapshot the DOM: the $$$…$$$ text is
-// gone, replaced by rendered frame spans plus <script type="math/tex"> holders.
+// gone, replaced by rendered frames plus <script type="math/tex"> holders.
 // Restore the original TeX delimiters and drop the rendered frames, so parsing
 // works no matter which side of the transformation we captured.
+//
+// Two page layouts exist:
+//   MathJax v2 — the script holder lives INSIDE a <span class="MathJax"> frame;
+//   MathJax v3 — the script is a SIBLING of an <mjx-container> block, so the
+//   token never appears inside any span frame (this was the cause of raw
+//   %%ZSMJn%% tokens leaking into 800+ archived statements).
 function unmathjax(html) {
   const stash = [];
   // The ([^>]*) tail matters: real pages carry extra attributes after the type
@@ -98,6 +104,8 @@ function unmathjax(html) {
     return `%%ZSMJ${stash.length - 1}%%`;
   });
   if (!stash.length) return html;
+  // v2: the token lives INSIDE the frame span — replace the whole frame with
+  // its stashed TeX.
   let out = '';
   let idx = 0;
   for (;;) {
@@ -109,7 +117,12 @@ function unmathjax(html) {
     out += html.slice(idx, pos) + (m ? stash[Number(m[1])] : '');
     idx = close === -1 ? html.length : close;
   }
-  return out + html.slice(idx);
+  html = out + html.slice(idx);
+  // v3: rendered <mjx-container> blocks with the token as a sibling — drop the
+  // containers (with their assistive MathML), then restore every surviving
+  // token, whatever layout produced it.
+  html = html.replace(/<mjx-container\b[\s\S]*?<\/mjx-container>/g, '');
+  return html.replace(/%%ZSMJ(\d+)%%/g, (m, n) => stash[Number(n)] ?? m);
 }
 
 // Index just past the </div> that closes the <div …> opening at openIdx.

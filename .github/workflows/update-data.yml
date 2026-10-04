@@ -69,6 +69,25 @@ jobs:
         env:
           CF_START_MODE: chrome-headful
 
+      # Backlog repair: statements parsed before the MathJax v3 parser fix
+      # contain leaked %%ZSMJ<n>%% tokens. Re-fetch with the fixed parser and
+      # merge (translations for changed segments are dropped and refilled by
+      # the AI backfill below / client-side MT). Resumable — files without
+      # tokens are skipped, so the backlog shrinks every run until no-op.
+      - name: Repair ZSMJ-polluted statements
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: xvfb-run -a node scripts/repair-zsmj.mjs --limit 200 --delay 6000
+        env:
+          CF_START_MODE: chrome-headful
+        continue-on-error: true
+
+      # Mount the freshly repaired statements into daily.json so the AI
+      # backfill below sees the segments it just cleared.
+      - name: Re-attach repaired statements
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: >
+          CF_STATEMENTS=0 TRANSLATE=0 node scripts/update-data.mjs
+
       # AI backfill for the newest statements (OpenAI-compatible endpoint via
       # repo secrets). Fills the `ai` channel of sectionsZh newest-first with
       # a per-run segment budget; the client-side MT pipeline on the site

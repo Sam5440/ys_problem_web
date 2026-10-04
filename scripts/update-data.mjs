@@ -8,10 +8,12 @@
  * - Attaches full problem statements: curated files in data/statements/*.json win;
  *   otherwise a best-effort fetch from Codeforces (may 403 from CI, that is fine).
  * - Parses categories/*.md into method -> problems listings.
- * - Merges with the existing data/daily.json and keeps the most recent MAX_DAYS days.
+ * - Merges with the existing data/daily.json and keeps the most recent MAX_DAYS days
+ *   (default: all days ever published upstream).
  *
  * Env: GITHUB_TOKEN / GH_TOKEN (optional, raises the API rate limit),
- *      MAX_DAYS (default 60), CF_STATEMENTS=0 to disable Codeforces fetching.
+ *      MAX_DAYS (default: unlimited — sync the whole upstream history),
+ *      CF_STATEMENTS=0 to disable Codeforces fetching.
  */
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -25,7 +27,7 @@ const STATEMENTS_DIR = path.join(ROOT, 'data', 'statements');
 const UPSTREAM = 'Yawn-Sean/Daily_CF_Problems';
 const BRANCH = 'main';
 const LEADERBOARD_BRANCH = 'gh-pages'; // records.js (community leaderboard) is published there
-const MAX_DAYS = Number(process.env.MAX_DAYS || 60);
+const MAX_DAYS = Number(process.env.MAX_DAYS || Infinity);
 const FETCH_STATEMENTS = process.env.CF_STATEMENTS !== '0';
 const API_BASE = `https://api.github.com/repos/${UPSTREAM}`;
 const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';

@@ -200,7 +200,7 @@ function SegmentCard({ seg, idx, code, channel, onChannel, showEn, tokens }) {
   );
 }
 
-export default function AiTranslateDetail({ runs = [] }) {
+export default function AiTranslateDetail({ runs = [], embedded = false }) {
   const [runIdx, setRunIdx] = useState(0);
   const [problemIdx, setProblemIdx] = useState(0);
   const [filter, setFilter] = useState('all'); // all | ai | todo
@@ -228,37 +228,39 @@ export default function AiTranslateDetail({ runs = [] }) {
 
   return (
     <div className="space-y-4">
-      {/* run switcher + meta */}
+      {/* run switcher (standalone mode) + meta */}
       <div className="rounded-xl border bg-muted/20 p-3">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="flex items-center gap-1 text-xs font-semibold">
-            <Bot className="h-3.5 w-3.5 text-violet-500" /> 数据来源运行
-          </span>
-          <div className="flex flex-wrap gap-1.5">
-            {runs.map((r, i) => (
-              <button
-                key={r.runId || i}
-                type="button"
-                onClick={() => {
-                  setRunIdx(i);
-                  setProblemIdx(0);
-                  setSegChannel({});
-                }}
-                className={`rounded-lg border px-2 py-1 font-mono text-[11px] transition ${
-                  i === runIdx
-                    ? 'border-violet-500/50 bg-violet-500/10 text-violet-400'
-                    : 'border-border bg-background text-muted-foreground hover:bg-muted hover:text-foreground'
-                }`}
-              >
-                run {r.runId || '—'}
-                <span className="ml-1 rounded bg-muted px-1 text-[9px] text-muted-foreground">{r.aiDone} 段</span>
-              </button>
-            ))}
+        {!embedded && (
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="flex items-center gap-1 text-xs font-semibold">
+              <Bot className="h-3.5 w-3.5 text-violet-500" /> 数据来源运行
+            </span>
+            <div className="flex flex-wrap gap-1.5">
+              {runs.map((r, i) => (
+                <button
+                  key={r.runId || i}
+                  type="button"
+                  onClick={() => {
+                    setRunIdx(i);
+                    setProblemIdx(0);
+                    setSegChannel({});
+                  }}
+                  className={`rounded-lg border px-2 py-1 font-mono text-[11px] transition ${
+                    i === runIdx
+                      ? 'border-violet-500/50 bg-violet-500/10 text-violet-400'
+                      : 'border-border bg-background text-muted-foreground hover:bg-muted hover:text-foreground'
+                  }`}
+                >
+                  run {r.runId || '—'}
+                  <span className="ml-1 rounded bg-muted px-1 text-[9px] text-muted-foreground">{r.aiDone} 段</span>
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-        <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-muted-foreground">
-          <span>{EVENT_LABEL[run.event] || run.event}</span>
-          {run.startedAt && (
+        )}
+        <p className={`flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-muted-foreground ${embedded ? '' : 'mt-2'}`}>
+          {!embedded && <span>{EVENT_LABEL[run.event] || run.event}</span>}
+          {!embedded && run.startedAt && (
             <span className="flex items-center gap-1">
               <Timer className="h-3 w-3" />
               {new Date(run.startedAt).toLocaleString('zh-CN')}
@@ -278,7 +280,7 @@ export default function AiTranslateDetail({ runs = [] }) {
             </span>
           )}
           {run.url && run.url.startsWith('http') && (
-            <a href={run.url} target="_blank" rel="noreferrer" className="ml-auto flex items-center gap-0.5 hover:text-foreground">
+            <a href={run.url} target="_blank" rel="noreferrer" className={`flex items-center gap-0.5 hover:text-foreground ${embedded ? '' : 'ml-auto'}`}>
               GitHub 运行记录 <ArrowUpRight className="h-3 w-3" />
             </a>
           )}

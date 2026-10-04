@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import AiTranslateDetail from '@/components/ai-translate-detail';
+import { buildTokensBySeg, loadStatementPairs } from '@/lib/ai-record.mjs';
 
 export const metadata = {
   title: 'AI 翻译明细 · Demo · YS Problem Web',
@@ -16,7 +17,7 @@ function loadRuns() {
     return [];
   }
   return files
-    .filter((f) => f.endsWith('.json'))
+    .filter((f) => f.endsWith('.json') && !f.endsWith('.ai.json'))
     .map((f) => {
       try {
         return JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
@@ -28,36 +29,6 @@ function loadRuns() {
     .sort((a, b) => (a.startedAt < b.startedAt ? 1 : -1));
 }
 
-/** Build {key,i,en,zh:{channel:text}} pairs for one statement file. */
-function loadProblemDetail(code) {
-  const file = path.join(process.cwd(), 'data', 'statements', `${code.toLowerCase()}.json`);
-  let st;
-  try {
-    st = JSON.parse(fs.readFileSync(file, 'utf8'));
-  } catch {
-    return null;
-  }
-  const segs = [];
-  if (typeof st.title === 'string' && st.title.trim()) {
-    const zh =
-      typeof st.titleZh === 'string' ? { legacy: st.titleZh } : st.titleZh && typeof st.titleZh === 'object' ? { ...st.titleZh } : {};
-    segs.push({ key: 'title', i: 0, en: st.title, zh });
-  }
-  for (const [key, list] of Object.entries(st.sections || {})) {
-    (list || []).forEach((en, i) => {
-      if (typeof en !== 'string' || !en.trim()) return;
-      const e = st.sectionsZh?.[key]?.[i];
-      segs.push({
-        key,
-        i,
-        en,
-        zh: e && typeof e === 'object' ? { ...e } : typeof e === 'string' ? { legacy: e } : {},
-      });
-    });
-  }
-  return { code: st.code || code.toUpperCase(), title: st.title || '', segs };
-}
-
 const FALLBACK_CODES = ['GYM106235A', 'GYM106235B'];
 
 export default function AiDemoPage() {
@@ -66,13 +37,8 @@ export default function AiDemoPage() {
   for (const run of runs) {
     const s = run.summary || {};
     if (!s.aiByProblem?.length) continue;
-    const problems = s.aiByProblem.map(loadProblemDetail).filter(Boolean);
+    const problems = s.aiByProblem.map((c) => loadStatementPairs(process.cwd(), c)).filter(Boolean);
     if (!problems.length) continue;
-    // per-segment token usage from the CI log summary, keyed `code:seg[i]`
-    const tokensBySeg = {};
-    for (const t of s.tokenSegments || []) {
-      if (t?.code && t.seg) tokensBySeg[`${t.code.toLowerCase()}:${t.seg}`] = { in: t.in, out: t.out };
-    }
     demoRuns.push({
       runId: run.runId,
       event: run.event,
@@ -81,7 +47,7 @@ export default function AiDemoPage() {
       aiDone: s.aiDone || 0,
       failures: s.aiLines?.filter((l) => l.startsWith('✗')).length || 0,
       tokenUsage: s.tokenUsage || null,
-      tokensBySeg,
+      tokensBySeg: buildTokensBySeg(s.tokenSegments),
       problems: problems.map((p) => ({
         ...p,
         aiCount: p.segs.filter((x) => x.zh.ai).length,
@@ -89,7 +55,7 @@ export default function AiDemoPage() {
     });
   }
   if (!demoRuns.length) {
-    const problems = FALLBACK_CODES.map(loadProblemDetail).filter(Boolean);
+    const problems = FALLBACK_CODES.map((c) => loadStatementPairs(process.cwd(), c)).filter(Boolean);
     demoRuns.push({
       runId: 0,
       event: 'demo',

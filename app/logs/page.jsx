@@ -17,11 +17,16 @@ function loadRuns() {
     return [];
   }
   return files
-    .filter((f) => f.endsWith('.json'))
+    .filter((f) => f.endsWith('.json') && !f.endsWith('.ai.json')) // .ai.json = per-run translation records, fetched lazily on expand
     .map((f) => {
       try {
         const j = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
-        return { ...j, logFile: `/ci-logs/${f.replace(/\.json$/, '.log')}` };
+        const base = f.replace(/\.json$/, '');
+        return {
+          ...j,
+          logFile: `/ci-logs/${base}.log`,
+          ...(j.summary?.aiByProblem?.length ? { aiFile: `/ci-logs/${base}.ai.json` } : {}),
+        };
       } catch {
         return null;
       }

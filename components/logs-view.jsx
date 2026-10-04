@@ -44,6 +44,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import AiTranslateDetail from '@/components/ai-translate-detail';
 
 const DAY = 86_400_000;
 const DEFAULT_DAYS = 7;
@@ -719,6 +720,10 @@ function RunCard({ run, expanded, onToggle, now }) {
   const [logState, setLogState] = useState('idle');
   const [showRaw, setShowRaw] = useState(false);
   const startedRef = useRef(false); // guard: don't re-fetch on logState transitions
+  // per-run translation record (<runId>.ai.json), fetched lazily on expand
+  const [aiData, setAiData] = useState(null);
+  const [aiState, setAiState] = useState('idle'); // idle: no record file | loading | ready | missing
+  const aiStartedRef = useRef(false);
   const s = run.summary || {};
   const filename = (run.logFile || '').split('/').pop();
 
@@ -742,6 +747,19 @@ function RunCard({ run, expanded, onToggle, now }) {
         setLogState('error');
       });
   }, [expanded, run.logFile]);
+
+  useEffect(() => {
+    if (!expanded || !run.aiFile || aiStartedRef.current) return;
+    aiStartedRef.current = true;
+    setAiState('loading');
+    fetch(run.aiFile)
+      .then((res) => (res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`))))
+      .then((data) => {
+        setAiData(data);
+        setAiState('ready');
+      })
+      .catch(() => setAiState('missing'));
+  }, [expanded, run.aiFile]);
 
   const fetchedN = s.fetched?.length || 0;
   const failedN = s.fetchFailed?.length || 0;
@@ -797,25 +815,55 @@ function RunCard({ run, expanded, onToggle, now }) {
 
           {aiN > 0 && (
             <DetailSection title="AI 翻译明细" icon={Bot} count={s.aiDone || null} defaultOpen={false}>
-              {s.tokenUsage && (
-                <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2.5 py-2 text-[11px]">
-                  <span className="flex items-center gap-1 font-medium text-amber-500"><Coins className="h-3 w-3" />Token 用量</span>
-                  {s.tokenUsage.model && <span className="font-mono text-muted-foreground">{s.tokenUsage.model}</span>}
-                  <span className="text-muted-foreground">请求成功 {s.tokenUsage.ok ?? 0} / 失败 {s.tokenUsage.fail ?? 0}</span>
-                  <span className="tabular-nums">输入 <b className="font-semibold">{fmtTokFull(s.tokenUsage.in)}</b></span>
-                  <span className="tabular-nums">输出 <b className="font-semibold">{fmtTokFull(s.tokenUsage.out)}</b></span>
-                  <span className="tabular-nums">合计 <b className="font-semibold text-amber-500">{fmtTokFull(s.tokenUsage.totalTokens)}</b></span>
+              {aiState === 'loading' && (
+                <div className="flex items-center gap-2 py-6 text-xs text-muted-foreground">
+                  <RefreshCw className="h-3.5 w-3.5 animate-spin" /> 正在加载本次运行的翻译记录…
                 </div>
               )}
-              {s.aiByProblem?.length > 0 && (
-                <div className="mb-2 flex flex-wrap gap-1.5">
-                  {s.aiByProblem.map((c) => (
-                    <span key={c} className="rounded-md border border-violet-500/30 bg-violet-500/10 px-1.5 py-0.5 font-mono text-[10px] text-violet-500">{c}</span>
-                  ))}
-                </div>
+              {aiState === 'ready' && aiData && (
+                <AiTranslateDetail
+                  embedded
+                  runs={[
+                    {
+                      runId: run.runId,
+                      event: run.event,
+                      startedAt: run.startedAt,
+                      url: run.url,
+                      aiDone: s.aiDone || 0,
+                      failures: s.aiLines?.filter((l) => l.startsWith('✗')).length || 0,
+                      tokenUsage: aiData.tokenUsage,
+                      tokensBySeg: aiData.tokensBySeg,
+                      problems: aiData.problems,
+                    },
+                  ]}
+                />
               )}
-              {s.tokenSegments?.length > 0 && <TokenSegmentTable segments={s.tokenSegments} />}
-              {s.aiLines?.length > 0 && <AiLines lines={s.aiLines} />}
+              {(aiState === 'idle' || aiState === 'missing') && (
+                <>
+                  <p className="mb-3 text-[11px] text-muted-foreground">
+                    {run.aiFile ? '翻译记录加载失败，显示日志摘要。' : '该运行早于逐段翻译记录（.ai.json），仅显示日志摘要。'}
+                  </p>
+                  {s.tokenUsage && (
+                    <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2.5 py-2 text-[11px]">
+                      <span className="flex items-center gap-1 font-medium text-amber-500"><Coins className="h-3 w-3" />Token 用量</span>
+                      {s.tokenUsage.model && <span className="font-mono text-muted-foreground">{s.tokenUsage.model}</span>}
+                      <span className="text-muted-foreground">请求成功 {s.tokenUsage.ok ?? 0} / 失败 {s.tokenUsage.fail ?? 0}</span>
+                      <span className="tabular-nums">输入 <b className="font-semibold">{fmtTokFull(s.tokenUsage.in)}</b></span>
+                      <span className="tabular-nums">输出 <b className="font-semibold">{fmtTokFull(s.tokenUsage.out)}</b></span>
+                      <span className="tabular-nums">合计 <b className="font-semibold text-amber-500">{fmtTokFull(s.tokenUsage.totalTokens)}</b></span>
+                    </div>
+                  )}
+                  {s.aiByProblem?.length > 0 && (
+                    <div className="mb-2 flex flex-wrap gap-1.5">
+                      {s.aiByProblem.map((c) => (
+                        <span key={c} className="rounded-md border border-violet-500/30 bg-violet-500/10 px-1.5 py-0.5 font-mono text-[10px] text-violet-500">{c}</span>
+                      ))}
+                    </div>
+                  )}
+                  {s.tokenSegments?.length > 0 && <TokenSegmentTable segments={s.tokenSegments} />}
+                  {s.aiLines?.length > 0 && <AiLines lines={s.aiLines} />}
+                </>
+              )}
             </DetailSection>
           )}
 

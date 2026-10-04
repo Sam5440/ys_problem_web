@@ -12,6 +12,7 @@
  */
 import { writeFile, readdir, mkdir, unlink } from 'node:fs/promises';
 import path from 'node:path';
+import { buildAiRecord } from '../lib/ai-record.mjs';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const OUT_DIR = path.join(ROOT, 'public', 'ci-logs');
@@ -159,6 +160,23 @@ async function main() {
     JSON.stringify({ ...header, failure, summary }, null, 2) + '\n',
   );
   console.log(`saved ${base}.log (${logText.length} chars)`);
+
+  // Per-run AI translation record (source↔translation pairs + token usage)
+  // consumed by the /logs expanded run cards. Written from THIS job's fresh
+  // checkout, which already contains the statements the update job just
+  // pushed — segments this run translated are exactly current here.
+  if (summary) {
+    try {
+      const record = buildAiRecord(ROOT, { runId: Number(RUN_ID), startedAt, summary });
+      if (record) {
+        const segs = record.problems.reduce((a, p) => a + p.segs.length, 0);
+        await writeFile(path.join(OUT_DIR, `${base}.ai.json`), JSON.stringify(record) + '\n');
+        console.log(`saved ${base}.ai.json (${record.problems.length} problem(s), ${segs} segment(s))`);
+      }
+    } catch (e) {
+      console.warn(`ai record generation failed (non-fatal): ${e.message}`);
+    }
+  }
 
   // prune entries older than the retention window (filename date prefix)
   const cutoff = Date.now() - RETENTION_DAYS * 86_400_000;

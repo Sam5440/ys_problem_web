@@ -20,10 +20,14 @@ export const ARCHIVED_CHANNELS = ['deepl', 'youdao', 'caiyun', 'iflyrec'];
 
 // 对照 mode walks this list per segment: the first channel with a translation
 // wins. Translations come from the repo archive or from this browser, which
-// requests all four channels itself (lib/zh-store.js) and caches them.
-export const DEFAULT_PRIORITY = ['deepl', 'caiyun', 'iflyrec', 'youdao'];
+// requests the four MT channels itself (lib/zh-store.js) and caches them.
+// 'ai' is the CI job's archived AI translation (AI 内置); the user's own
+// endpoint (AI 外置) translates on demand in the explicit 中文(AI) mode.
+export const DEFAULT_PRIORITY = ['deepl', 'caiyun', 'iflyrec', 'youdao', 'ai'];
 
 export const channelLabel = (id) => CHANNELS.find((c) => c.id === id)?.label || id;
+// inside the priority editor 'ai' means the CI-archived translation
+const priorityLabel = (id) => (id === 'ai' ? 'AI（内置）' : channelLabel(id));
 
 const DEFAULT_SETTINGS = {
   defaultChannel: 'deepl',
@@ -63,8 +67,8 @@ function loadSettings() {
       // keep every known archived channel in the priority list: custom order
       // first, channels saved before an upgrade appended in default position.
       const saved = Array.isArray(merged.zhPriority) ? merged.zhPriority : [];
-      merged.zhPriority = [...new Set([...saved, ...ARCHIVED_CHANNELS])].filter((id) =>
-        ARCHIVED_CHANNELS.includes(id),
+      merged.zhPriority = [...new Set([...saved, ...ARCHIVED_CHANNELS, 'ai'])].filter(
+        (id) => ARCHIVED_CHANNELS.includes(id) || id === 'ai',
       );
       return merged;
     }
@@ -220,21 +224,22 @@ function SettingsDialog({ onClose }) {
 
         <div className="space-y-2">
           <p className="text-xs font-medium text-muted-foreground">
-            对照翻译优先级（每段取首个已有译文的渠道；缺失的译文由本机向各渠道实时请求，约每 3 秒一条，结果保存在本机浏览器）
+            对照翻译优先级（每段取首个已有译文的渠道，段落结尾标注来源；缺失的译文由本机向各渠道实时请求，约每 3 秒一条，结果保存在本机浏览器）。AI（内置）
+            = CI 任务自动翻译的存档；想让全站优先显示 AI 译文，把它拖到第一位即可。
           </p>
           <ul className="space-y-1">
             {(settings.zhPriority || []).map((id, i) => (
               <li key={id} className="flex items-center justify-between rounded-md border px-2.5 py-1 text-xs">
                 <span>
                   <span className="mr-2 inline-block w-3 text-muted-foreground">{i + 1}</span>
-                  {channelLabel(id)}
+                  {priorityLabel(id)}
                 </span>
                 <span className="flex gap-0.5">
                   <button
                     type="button"
                     onClick={() => movePriority(i, -1)}
                     disabled={i === 0}
-                    aria-label={`${channelLabel(id)} 上移`}
+                    aria-label={`${priorityLabel(id)} 上移`}
                     className="rounded px-1.5 py-0.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground disabled:opacity-25"
                   >
                     ↑
@@ -243,7 +248,7 @@ function SettingsDialog({ onClose }) {
                     type="button"
                     onClick={() => movePriority(i, 1)}
                     disabled={i === settings.zhPriority.length - 1}
-                    aria-label={`${channelLabel(id)} 下移`}
+                    aria-label={`${priorityLabel(id)} 下移`}
                     className="rounded px-1.5 py-0.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground disabled:opacity-25"
                   >
                     ↓

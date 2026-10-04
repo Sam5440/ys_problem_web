@@ -9,30 +9,30 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Mikhail walks on a Cartesian plane. He starts at the point (0,0)%%ZSMJ0%%, and in one move he can go to any of eight adjacent points. For example, if Mikhail is currently at the point (0,0)%%ZSMJ1%%, he can go to any of the following points in one move:",
-      "(1,0)%%ZSMJ2%%;",
-      "(1,1)%%ZSMJ3%%;",
-      "(0,1)%%ZSMJ4%%;",
-      "(−1,1)%%ZSMJ5%%;",
-      "(−1,0)%%ZSMJ6%%;",
-      "(−1,−1)%%ZSMJ7%%;",
-      "(0,−1)%%ZSMJ8%%;",
-      "(1,−1)%%ZSMJ9%%.",
-      "If Mikhail goes from the point (x1,y1)%%ZSMJ10%% to the point (x2,y2)%%ZSMJ11%% in one move, and x1≠x2%%ZSMJ12%% and y1≠y2%%ZSMJ13%%, then such a move is called a diagonal move.",
-      "Mikhail has q%%ZSMJ14%% queries. For the i%%ZSMJ15%%-th query Mikhail's target is to go to the point (ni,mi)%%ZSMJ16%% from the point (0,0)%%ZSMJ17%% in exactly ki%%ZSMJ18%% moves. Among all possible movements he want to choose one with the maximum number of diagonal moves. Your task is to find the maximum number of diagonal moves or find that it is impossible to go from the point (0,0)%%ZSMJ19%% to the point (ni,mi)%%ZSMJ20%% in ki%%ZSMJ21%% moves.",
+      "Mikhail walks on a Cartesian plane. He starts at the point (0,0)$$$(0, 0)$$$, and in one move he can go to any of eight adjacent points. For example, if Mikhail is currently at the point (0,0)$$$(0, 0)$$$, he can go to any of the following points in one move:",
+      "(1,0)$$$(1, 0)$$$;",
+      "(1,1)$$$(1, 1)$$$;",
+      "(0,1)$$$(0, 1)$$$;",
+      "(−1,1)$$$(-1, 1)$$$;",
+      "(−1,0)$$$(-1, 0)$$$;",
+      "(−1,−1)$$$(-1, -1)$$$;",
+      "(0,−1)$$$(0, -1)$$$;",
+      "(1,−1)$$$(1, -1)$$$.",
+      "If Mikhail goes from the point (x1,y1)$$$(x1, y1)$$$ to the point (x2,y2)$$$(x2, y2)$$$ in one move, and x1≠x2$$$x1 \\ne x2$$$ and y1≠y2$$$y1 \\ne y2$$$, then such a move is called a diagonal move.",
+      "Mikhail has q$$$q$$$ queries. For the i$$$i$$$-th query Mikhail's target is to go to the point (ni,mi)$$$(n_i, m_i)$$$ from the point (0,0)$$$(0, 0)$$$ in exactly ki$$$k_i$$$ moves. Among all possible movements he want to choose one with the maximum number of diagonal moves. Your task is to find the maximum number of diagonal moves or find that it is impossible to go from the point (0,0)$$$(0, 0)$$$ to the point (ni,mi)$$$(n_i, m_i)$$$ in ki$$$k_i$$$ moves.",
       "Note that Mikhail can visit any point any number of times (even the destination point!)."
     ],
     "input": [
-      "The first line of the input contains one integer q%%ZSMJ22%% (1≤q≤104%%ZSMJ23%%) — the number of queries.",
-      "Then q%%ZSMJ24%% lines follow. The i%%ZSMJ25%%-th of these q%%ZSMJ26%% lines contains three integers ni%%ZSMJ27%%, mi%%ZSMJ28%% and ki%%ZSMJ29%% (1≤ni,mi,ki≤1018%%ZSMJ30%%) — x%%ZSMJ31%%-coordinate of the destination point of the query, y%%ZSMJ32%%-coordinate of the destination point of the query and the number of moves in the query, correspondingly."
+      "The first line of the input contains one integer q$$$q$$$ (1≤q≤104$$$1 \\le q \\le 10^4$$$) — the number of queries.",
+      "Then q$$$q$$$ lines follow. The i$$$i$$$-th of these q$$$q$$$ lines contains three integers ni$$$n_i$$$, mi$$$m_i$$$ and ki$$$k_i$$$ (1≤ni,mi,ki≤1018$$$1 \\le n_i, m_i, k_i \\le 10^{18}$$$) — x$$$x$$$-coordinate of the destination point of the query, y$$$y$$$-coordinate of the destination point of the query and the number of moves in the query, correspondingly."
     ],
     "output": [
-      "Print q%%ZSMJ33%% integers. The i%%ZSMJ34%%-th integer should be equal to -1 if Mikhail cannot go from the point (0,0)%%ZSMJ35%% to the point (ni,mi)%%ZSMJ36%% in exactly ki%%ZSMJ37%% moves described above. Otherwise the i%%ZSMJ38%%-th integer should be equal to the the maximum number of diagonal moves among all possible movements."
+      "Print q$$$q$$$ integers. The i$$$i$$$-th integer should be equal to -1 if Mikhail cannot go from the point (0,0)$$$(0, 0)$$$ to the point (ni,mi)$$$(n_i, m_i)$$$ in exactly ki$$$k_i$$$ moves described above. Otherwise the i$$$i$$$-th integer should be equal to the the maximum number of diagonal moves among all possible movements."
     ],
     "note": [
-      "One of the possible answers to the first test case: (0,0)→(1,0)→(1,1)→(2,2)%%ZSMJ39%%.",
-      "One of the possible answers to the second test case: (0,0)→(0,1)→(1,2)→(0,3)→(1,4)→(2,3)→(3,2)→(4,3)%%ZSMJ40%%.",
-      "In the third test case Mikhail cannot reach the point (10,1)%%ZSMJ41%% in 9 moves."
+      "One of the possible answers to the first test case: (0,0)→(1,0)→(1,1)→(2,2)$$$(0, 0) \\to (1, 0) \\to (1, 1) \\to (2, 2)$$$.",
+      "One of the possible answers to the second test case: (0,0)→(0,1)→(1,2)→(0,3)→(1,4)→(2,3)→(3,2)→(4,3)$$$(0, 0) \\to (0, 1) \\to (1, 2) \\to (0, 3) \\to (1, 4) \\to (2, 3) \\to (3, 2) \\to (4, 3)$$$.",
+      "In the third test case Mikhail cannot reach the point (10,1)$$$(10, 1)$$$ in 9 moves."
     ]
   },
   "examples": [
@@ -40,5 +40,33 @@
       "input": "3\n2 2 3\n4 3 7\n10 1 9",
       "output": "1\n6\n-1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null
+    ]
+  }
 }

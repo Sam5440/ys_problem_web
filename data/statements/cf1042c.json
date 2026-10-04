@@ -9,33 +9,33 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "You are given an array a%%ZSMJ0%% consisting of n%%ZSMJ1%% integers. You can perform the following operations with it:",
-      "Choose some positions i%%ZSMJ2%% and j%%ZSMJ3%% (1≤i,j≤n,i≠j%%ZSMJ4%%), write the value of ai⋅aj%%ZSMJ5%% into the j%%ZSMJ6%%-th cell and remove the number from the i%%ZSMJ7%%-th cell;",
-      "Choose some position i%%ZSMJ8%% and remove the number from the i%%ZSMJ9%%-th cell (this operation can be performed no more than once and at any point of time, not necessarily in the beginning).",
+      "You are given an array a$$$a$$$ consisting of n$$$n$$$ integers. You can perform the following operations with it:",
+      "Choose some positions i$$$i$$$ and j$$$j$$$ (1≤i,j≤n,i≠j$$$1 \\le i, j \\le n, i \\ne j$$$), write the value of ai⋅aj$$$a_i \\cdot a_j$$$ into the j$$$j$$$-th cell and remove the number from the i$$$i$$$-th cell;",
+      "Choose some position i$$$i$$$ and remove the number from the i$$$i$$$-th cell (this operation can be performed no more than once and at any point of time, not necessarily in the beginning).",
       "The number of elements decreases by one after each operation. However, the indexing of positions stays the same. Deleted numbers can't be used in the later operations.",
-      "Your task is to perform exactly n−1%%ZSMJ10%% operations with the array in such a way that the only number that remains in the array is maximum possible. This number can be rather large, so instead of printing it you need to print any sequence of operations which leads to this maximum number. Read the output format to understand what exactly you need to print."
+      "Your task is to perform exactly n−1$$$n - 1$$$ operations with the array in such a way that the only number that remains in the array is maximum possible. This number can be rather large, so instead of printing it you need to print any sequence of operations which leads to this maximum number. Read the output format to understand what exactly you need to print."
     ],
     "input": [
-      "The first line contains a single integer n%%ZSMJ11%% (2≤n≤2⋅105%%ZSMJ12%%) — the number of elements in the array.",
-      "The second line contains n%%ZSMJ13%% integers a1,a2,…,an%%ZSMJ14%% (−109≤ai≤109%%ZSMJ15%%) — the elements of the array."
+      "The first line contains a single integer n$$$n$$$ (2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$) — the number of elements in the array.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (−109≤ai≤109$$$-10^9 \\le a_i \\le 10^9$$$) — the elements of the array."
     ],
     "output": [
-      "Print n−1%%ZSMJ16%% lines. The k%%ZSMJ17%%-th line should contain one of the two possible operations.",
-      "The operation of the first type should look like this: 1 ik jk%%ZSMJ18%%, where 1%%ZSMJ19%% is the type of operation, ik%%ZSMJ20%% and jk%%ZSMJ21%% are the positions of the chosen elements.",
-      "The operation of the second type should look like this: 2 ik%%ZSMJ22%%, where 2%%ZSMJ23%% is the type of operation, ik%%ZSMJ24%% is the position of the chosen element. Note that there should be no more than one such operation.",
+      "Print n−1$$$n - 1$$$ lines. The k$$$k$$$-th line should contain one of the two possible operations.",
+      "The operation of the first type should look like this: 1 ik jk$$$1~ i_k~ j_k$$$, where 1$$$1$$$ is the type of operation, ik$$$i_k$$$ and jk$$$j_k$$$ are the positions of the chosen elements.",
+      "The operation of the second type should look like this: 2 ik$$$2~ i_k$$$, where 2$$$2$$$ is the type of operation, ik$$$i_k$$$ is the position of the chosen element. Note that there should be no more than one such operation.",
       "If there are multiple possible sequences of operations leading to the maximum number — print any of them."
     ],
     "note": [
       "Let X be the removed number in the array. Let's take a look at all the examples:",
-      "The first example has, for example, the following sequence of transformations of the array: [5,−2,0,1,−3]→[5,−2,X,1,−3]→[X,−10,X,1,−3]→%%ZSMJ25%% [X,X,X,−10,−3]→[X,X,X,X,30]%%ZSMJ26%%. Thus, the maximum answer is 30%%ZSMJ27%%. Note, that other sequences that lead to the answer 30%%ZSMJ28%% are also correct.",
-      "The second example has, for example, the following sequence of transformations of the array: [5,2,0,4,0]→[5,2,X,4,0]→[5,2,X,4,X]→[X,10,X,4,X]→%%ZSMJ29%% [X,X,X,40,X]%%ZSMJ30%%. The following answer is also allowed:",
+      "The first example has, for example, the following sequence of transformations of the array: [5,−2,0,1,−3]→[5,−2,X,1,−3]→[X,−10,X,1,−3]→$$$[5, -2, 0, 1, -3] \\to [5, -2, X, 1, -3] \\to [X, -10, X, 1, -3] \\to$$$ [X,X,X,−10,−3]→[X,X,X,X,30]$$$[X, X, X, -10, -3] \\to [X, X, X, X, 30]$$$. Thus, the maximum answer is 30$$$30$$$. Note, that other sequences that lead to the answer 30$$$30$$$ are also correct.",
+      "The second example has, for example, the following sequence of transformations of the array: [5,2,0,4,0]→[5,2,X,4,0]→[5,2,X,4,X]→[X,10,X,4,X]→$$$[5, 2, 0, 4, 0] \\to [5, 2, X, 4, 0] \\to [5, 2, X, 4, X] \\to [X, 10, X, 4, X] \\to$$$ [X,X,X,40,X]$$$[X, X, X, 40, X]$$$. The following answer is also allowed:",
       {
         "pre": "\n1 5 3\n1 4 2\n1 2 1\n2 3"
       },
-      "Then the sequence of transformations of the array will look like this: [5,2,0,4,0]→[5,2,0,4,X]→[5,8,0,X,X]→[40,X,0,X,X]→%%ZSMJ31%% [40,X,X,X,X]%%ZSMJ32%%.",
-      "The third example can have the following sequence of transformations of the array: [2,−1]→[2,X]%%ZSMJ33%%.",
-      "The fourth example can have the following sequence of transformations of the array: [0,−10,0,0]→[X,0,0,0]→[X,X,0,0]→[X,X,X,0]%%ZSMJ34%%.",
-      "The fifth example can have the following sequence of transformations of the array: [0,0,0,0]→[X,0,0,0]→[X,X,0,0]→[X,X,X,0]%%ZSMJ35%%."
+      "Then the sequence of transformations of the array will look like this: [5,2,0,4,0]→[5,2,0,4,X]→[5,8,0,X,X]→[40,X,0,X,X]→$$$[5, 2, 0, 4, 0] \\to [5, 2, 0, 4, X] \\to [5, 8, 0, X, X] \\to [40, X, 0, X, X] \\to$$$ [40,X,X,X,X]$$$[40, X, X, X, X]$$$.",
+      "The third example can have the following sequence of transformations of the array: [2,−1]→[2,X]$$$[2, -1] \\to [2, X]$$$.",
+      "The fourth example can have the following sequence of transformations of the array: [0,−10,0,0]→[X,0,0,0]→[X,X,0,0]→[X,X,X,0]$$$[0, -10, 0, 0] \\to [X, 0, 0, 0] \\to [X, X, 0, 0] \\to [X, X, X, 0]$$$.",
+      "The fifth example can have the following sequence of transformations of the array: [0,0,0,0]→[X,0,0,0]→[X,X,0,0]→[X,X,X,0]$$$[0, 0, 0, 0] \\to [X, 0, 0, 0] \\to [X, X, 0, 0] \\to [X, X, X, 0]$$$."
     ]
   },
   "examples": [
@@ -59,5 +59,34 @@
       "input": "4\n0 0 0 0",
       "output": "1 1 2\n1 2 3\n1 3 4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

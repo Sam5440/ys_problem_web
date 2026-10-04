@@ -10,22 +10,22 @@
   "sections": {
     "legend": [
       "After learning about polynomial hashing, Heidi decided to learn about shift-xor hashing. In particular, she came across this interesting problem.",
-      "Given a bitstring y∈{0,1}n%%ZSMJ0%% find out the number of different k%%ZSMJ1%% (0≤k<n%%ZSMJ2%%) such that there exists x∈{0,1}n%%ZSMJ3%% for which y=x⊕shiftk(x).%%ZSMJ4%%",
-      "In the above, ⊕%%ZSMJ5%% is the xor operation and shiftk%%ZSMJ6%% is the operation of shifting a bitstring cyclically to the right k%%ZSMJ7%% times. For example, 001⊕111=110%%ZSMJ8%% and shift3(00010010111000)=00000010010111%%ZSMJ9%%."
+      "Given a bitstring y∈{0,1}n$$$y \\in \\{0,1\\}^n$$$ find out the number of different k$$$k$$$ (0≤k<n$$$0 \\leq k  \\lt  n$$$) such that there exists x∈{0,1}n$$$x \\in \\{0,1\\}^n$$$ for which y=x⊕shiftk(x).$$$y = x \\oplus \\mbox{shift}^k(x).$$$",
+      "In the above, ⊕$$$\\oplus$$$ is the xor operation and shiftk$$$\\mbox{shift}^k$$$ is the operation of shifting a bitstring cyclically to the right k$$$k$$$ times. For example, 001⊕111=110$$$001 \\oplus 111 = 110$$$ and shift3(00010010111000)=00000010010111$$$\\mbox{shift}^3(00010010111000) = 00000010010111$$$."
     ],
     "input": [
-      "The first line contains an integer n%%ZSMJ10%% (1≤n≤2⋅105%%ZSMJ11%%), the length of the bitstring y%%ZSMJ12%%.",
-      "The second line contains the bitstring y%%ZSMJ13%%."
+      "The first line contains an integer n$$$n$$$ (1≤n≤2⋅105$$$1 \\leq n \\leq 2 \\cdot 10^5$$$), the length of the bitstring y$$$y$$$.",
+      "The second line contains the bitstring y$$$y$$$."
     ],
     "output": [
-      "Output a single integer: the number of suitable values of k%%ZSMJ14%%."
+      "Output a single integer: the number of suitable values of k$$$k$$$."
     ],
     "note": [
       "In the first example:",
-      "1100⊕shift1(1100)=1010%%ZSMJ15%%",
-      "1000⊕shift2(1000)=1010%%ZSMJ16%%",
-      "0110⊕shift3(0110)=1010%%ZSMJ17%%",
-      "There is no x%%ZSMJ18%% such that x⊕x=1010%%ZSMJ19%%, hence the answer is 3%%ZSMJ20%%."
+      "1100⊕shift1(1100)=1010$$$1100\\oplus \\mbox{shift}^1(1100) = 1010$$$",
+      "1000⊕shift2(1000)=1010$$$1000\\oplus \\mbox{shift}^2(1000) = 1010$$$",
+      "0110⊕shift3(0110)=1010$$$0110\\oplus \\mbox{shift}^3(0110) = 1010$$$",
+      "There is no x$$$x$$$ such that x⊕x=1010$$$x \\oplus x = 1010$$$, hence the answer is 3$$$3$$$."
     ]
   },
   "examples": [
@@ -33,5 +33,26 @@
       "input": "4\n1010",
       "output": "3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

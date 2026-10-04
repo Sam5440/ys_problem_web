@@ -9,23 +9,23 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "There are n%%ZSMJ0%% cities in Berland. Some pairs of cities are connected by roads. All roads are bidirectional. Each road connects two different cities. There is at most one road between a pair of cities. The cities are numbered from 1%%ZSMJ1%% to n%%ZSMJ2%%.",
-      "It is known that, from the capital (the city with the number 1%%ZSMJ3%%), you can reach any other city by moving along the roads.",
-      "The President of Berland plans to improve the country's road network. The budget is enough to repair exactly n−1%%ZSMJ4%% roads. The President plans to choose a set of n−1%%ZSMJ5%% roads such that:",
-      "it is possible to travel from the capital to any other city along the n−1%%ZSMJ6%% chosen roads,",
-      "if di%%ZSMJ7%% is the number of roads needed to travel from the capital to city i%%ZSMJ8%%, moving only along the n−1%%ZSMJ9%% chosen roads, then d1+d2+⋯+dn%%ZSMJ10%% is minimized (i.e. as minimal as possible).",
-      "In other words, the set of n−1%%ZSMJ11%% roads should preserve the connectivity of the country, and the sum of distances from city 1%%ZSMJ12%% to all cities should be minimized (where you can only use the n−1%%ZSMJ13%% chosen roads).",
-      "The president instructed the ministry to prepare k%%ZSMJ14%% possible options to choose n−1%%ZSMJ15%% roads so that both conditions above are met.",
-      "Write a program that will find k%%ZSMJ16%% possible ways to choose roads for repair. If there are fewer than k%%ZSMJ17%% ways, then the program should output all possible valid ways to choose roads."
+      "There are n$$$n$$$ cities in Berland. Some pairs of cities are connected by roads. All roads are bidirectional. Each road connects two different cities. There is at most one road between a pair of cities. The cities are numbered from 1$$$1$$$ to n$$$n$$$.",
+      "It is known that, from the capital (the city with the number 1$$$1$$$), you can reach any other city by moving along the roads.",
+      "The President of Berland plans to improve the country's road network. The budget is enough to repair exactly n−1$$$n-1$$$ roads. The President plans to choose a set of n−1$$$n-1$$$ roads such that:",
+      "it is possible to travel from the capital to any other city along the n−1$$$n-1$$$ chosen roads,",
+      "if di$$$d_i$$$ is the number of roads needed to travel from the capital to city i$$$i$$$, moving only along the n−1$$$n-1$$$ chosen roads, then d1+d2+⋯+dn$$$d_1 + d_2 + \\dots + d_n$$$ is minimized (i.e. as minimal as possible).",
+      "In other words, the set of n−1$$$n-1$$$ roads should preserve the connectivity of the country, and the sum of distances from city 1$$$1$$$ to all cities should be minimized (where you can only use the n−1$$$n-1$$$ chosen roads).",
+      "The president instructed the ministry to prepare k$$$k$$$ possible options to choose n−1$$$n-1$$$ roads so that both conditions above are met.",
+      "Write a program that will find k$$$k$$$ possible ways to choose roads for repair. If there are fewer than k$$$k$$$ ways, then the program should output all possible valid ways to choose roads."
     ],
     "input": [
-      "The first line of the input contains integers n%%ZSMJ18%%, m%%ZSMJ19%% and k%%ZSMJ20%% (2≤n≤2⋅105,n−1≤m≤2⋅105,1≤k≤2⋅105%%ZSMJ21%%), where n%%ZSMJ22%% is the number of cities in the country, m%%ZSMJ23%% is the number of roads and k%%ZSMJ24%% is the number of options to choose a set of roads for repair. It is guaranteed that m⋅k≤106%%ZSMJ25%%.",
-      "The following m%%ZSMJ26%% lines describe the roads, one road per line. Each line contains two integers ai%%ZSMJ27%%, bi%%ZSMJ28%% (1≤ai,bi≤n%%ZSMJ29%%, ai≠bi%%ZSMJ30%%) — the numbers of the cities that the i%%ZSMJ31%%-th road connects. There is at most one road between a pair of cities. The given set of roads is such that you can reach any city from the capital."
+      "The first line of the input contains integers n$$$n$$$, m$$$m$$$ and k$$$k$$$ (2≤n≤2⋅105,n−1≤m≤2⋅105,1≤k≤2⋅105$$$2 \\le n \\le 2\\cdot10^5, n-1 \\le m \\le 2\\cdot10^5, 1 \\le k \\le 2\\cdot10^5$$$), where n$$$n$$$ is the number of cities in the country, m$$$m$$$ is the number of roads and k$$$k$$$ is the number of options to choose a set of roads for repair. It is guaranteed that m⋅k≤106$$$m \\cdot k \\le 10^6$$$.",
+      "The following m$$$m$$$ lines describe the roads, one road per line. Each line contains two integers ai$$$a_i$$$, bi$$$b_i$$$ (1≤ai,bi≤n$$$1 \\le a_i, b_i \\le n$$$, ai≠bi$$$a_i \\ne b_i$$$) — the numbers of the cities that the i$$$i$$$-th road connects. There is at most one road between a pair of cities. The given set of roads is such that you can reach any city from the capital."
     ],
     "output": [
-      "Print t%%ZSMJ32%% (1≤t≤k%%ZSMJ33%%) — the number of ways to choose a set of roads for repair. Recall that you need to find k%%ZSMJ34%% different options; if there are fewer than k%%ZSMJ35%% of them, then you need to find all possible different valid options.",
-      "In the following t%%ZSMJ36%% lines, print the options, one per line. Print an option as a string of m%%ZSMJ37%% characters where the j%%ZSMJ38%%-th character is equal to '1' if the j%%ZSMJ39%%-th road is included in the option, and is equal to '0' if the road is not included. The roads should be numbered according to their order in the input. The options can be printed in any order. All the t%%ZSMJ40%% lines should be different.",
-      "Since it is guaranteed that m⋅k≤106%%ZSMJ41%%, the total length of all the t%%ZSMJ42%% lines will not exceed 106%%ZSMJ43%%.",
+      "Print t$$$t$$$ (1≤t≤k$$$1 \\le t \\le k$$$) — the number of ways to choose a set of roads for repair. Recall that you need to find k$$$k$$$ different options; if there are fewer than k$$$k$$$ of them, then you need to find all possible different valid options.",
+      "In the following t$$$t$$$ lines, print the options, one per line. Print an option as a string of m$$$m$$$ characters where the j$$$j$$$-th character is equal to '1' if the j$$$j$$$-th road is included in the option, and is equal to '0' if the road is not included. The roads should be numbered according to their order in the input. The options can be printed in any order. All the t$$$t$$$ lines should be different.",
+      "Since it is guaranteed that m⋅k≤106$$$m \\cdot k \\le 10^6$$$, the total length of all the t$$$t$$$ lines will not exceed 106$$$10^6$$$.",
       "If there are several answers, output any of them."
     ]
   },
@@ -42,5 +42,27 @@
       "input": "5 6 2\n1 2\n1 3\n2 4\n2 5\n3 4\n3 5",
       "output": "2\n111100\n110110"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

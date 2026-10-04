@@ -9,35 +9,35 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Alice received a set of Toy Train™ from Bob. It consists of one train and a connected railway network of n%%ZSMJ0%% stations, enumerated from 1%%ZSMJ1%% through n%%ZSMJ2%%. The train occupies one station at a time and travels around the network of stations in a circular manner. More precisely, the immediate station that the train will visit after station i%%ZSMJ3%% is station i+1%%ZSMJ4%% if 1≤i<n%%ZSMJ5%% or station 1%%ZSMJ6%% if i=n%%ZSMJ7%%. It takes the train 1%%ZSMJ8%% second to travel to its next station as described.",
-      "Bob gave Alice a fun task before he left: to deliver m%%ZSMJ9%% candies that are initially at some stations to their independent destinations using the train. The candies are enumerated from 1%%ZSMJ10%% through m%%ZSMJ11%%. Candy i%%ZSMJ12%% (1≤i≤m%%ZSMJ13%%), now at station ai%%ZSMJ14%%, should be delivered to station bi%%ZSMJ15%% (ai≠bi%%ZSMJ16%%).",
+      "Alice received a set of Toy Train™ from Bob. It consists of one train and a connected railway network of n$$$n$$$ stations, enumerated from 1$$$1$$$ through n$$$n$$$. The train occupies one station at a time and travels around the network of stations in a circular manner. More precisely, the immediate station that the train will visit after station i$$$i$$$ is station i+1$$$i+1$$$ if 1≤i<n$$$1 \\leq i  \\lt  n$$$ or station 1$$$1$$$ if i=n$$$i = n$$$. It takes the train 1$$$1$$$ second to travel to its next station as described.",
+      "Bob gave Alice a fun task before he left: to deliver m$$$m$$$ candies that are initially at some stations to their independent destinations using the train. The candies are enumerated from 1$$$1$$$ through m$$$m$$$. Candy i$$$i$$$ (1≤i≤m$$$1 \\leq i \\leq m$$$), now at station ai$$$a_i$$$, should be delivered to station bi$$$b_i$$$ (ai≠bi$$$a_i \\neq b_i$$$).",
       "![](https://espresso.codeforces.com/b0446d5fef91d9211f27892951cd7e0d35c9590d.png)",
       "The train has infinite capacity, and it is possible to load off any number of candies at a station. However, only at most one candy can be loaded from a station onto the train before it leaves the station. You can choose any candy at this station. The time it takes to move the candies is negligible.",
       "Now, Alice wonders how much time is needed for the train to deliver all candies. Your task is to find, for each station, the minimum time the train would need to deliver all the candies were it to start from there."
     ],
     "input": [
-      "The first line contains two space-separated integers n%%ZSMJ19%% and m%%ZSMJ20%% (2≤n≤5000%%ZSMJ21%%; 1≤m≤20000%%ZSMJ22%%) — the number of stations and the number of candies, respectively.",
-      "The i%%ZSMJ23%%-th of the following m%%ZSMJ24%% lines contains two space-separated integers ai%%ZSMJ25%% and bi%%ZSMJ26%% (1≤ai,bi≤n%%ZSMJ27%%; ai≠bi%%ZSMJ28%%) — the station that initially contains candy i%%ZSMJ29%% and the destination station of the candy, respectively."
+      "The first line contains two space-separated integers n$$$n$$$ and m$$$m$$$ (2≤n≤5000$$$2 \\leq n \\leq 5\\,000$$$; 1≤m≤20000$$$1 \\leq m \\leq 20\\,000$$$) — the number of stations and the number of candies, respectively.",
+      "The i$$$i$$$-th of the following m$$$m$$$ lines contains two space-separated integers ai$$$a_i$$$ and bi$$$b_i$$$ (1≤ai,bi≤n$$$1 \\leq a_i, b_i \\leq n$$$; ai≠bi$$$a_i \\neq b_i$$$) — the station that initially contains candy i$$$i$$$ and the destination station of the candy, respectively."
     ],
     "output": [
-      "In the first and only line, print n%%ZSMJ30%% space-separated integers, the i%%ZSMJ31%%-th of which is the minimum time, in seconds, the train would need to deliver all the candies were it to start from station i%%ZSMJ32%%."
+      "In the first and only line, print n$$$n$$$ space-separated integers, the i$$$i$$$-th of which is the minimum time, in seconds, the train would need to deliver all the candies were it to start from station i$$$i$$$."
     ],
     "note": [
       "Consider the second sample.",
-      "If the train started at station 1%%ZSMJ33%%, the optimal strategy is as follows.",
+      "If the train started at station 1$$$1$$$, the optimal strategy is as follows.",
       "Load the first candy onto the train.",
-      "Proceed to station 2%%ZSMJ34%%. This step takes 1%%ZSMJ35%% second.",
+      "Proceed to station 2$$$2$$$. This step takes 1$$$1$$$ second.",
       "Deliver the first candy.",
-      "Proceed to station 1%%ZSMJ36%%. This step takes 1%%ZSMJ37%% second.",
+      "Proceed to station 1$$$1$$$. This step takes 1$$$1$$$ second.",
       "Load the second candy onto the train.",
-      "Proceed to station 2%%ZSMJ38%%. This step takes 1%%ZSMJ39%% second.",
+      "Proceed to station 2$$$2$$$. This step takes 1$$$1$$$ second.",
       "Deliver the second candy.",
-      "Proceed to station 1%%ZSMJ40%%. This step takes 1%%ZSMJ41%% second.",
+      "Proceed to station 1$$$1$$$. This step takes 1$$$1$$$ second.",
       "Load the third candy onto the train.",
-      "Proceed to station 2%%ZSMJ42%%. This step takes 1%%ZSMJ43%% second.",
+      "Proceed to station 2$$$2$$$. This step takes 1$$$1$$$ second.",
       "Deliver the third candy.",
-      "Hence, the train needs 5%%ZSMJ44%% seconds to complete the tasks.",
-      "If the train were to start at station 2%%ZSMJ45%%, however, it would need to move to station 1%%ZSMJ46%% before it could load the first candy, which would take one additional second. Thus, the answer in this scenario is 5+1=6%%ZSMJ47%% seconds."
+      "Hence, the train needs 5$$$5$$$ seconds to complete the tasks.",
+      "If the train were to start at station 2$$$2$$$, however, it would need to move to station 1$$$1$$$ before it could load the first candy, which would take one additional second. Thus, the answer in this scenario is 5+1=6$$$5+1 = 6$$$ seconds."
     ]
   },
   "examples": [
@@ -49,5 +49,38 @@
       "input": "2 3\n1 2\n1 2\n1 2",
       "output": "5 6"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

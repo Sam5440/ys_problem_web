@@ -9,32 +9,32 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Medicine faculty of Berland State University has just finished their admission campaign. As usual, about 80%%%ZSMJ0%% of applicants are girls and majority of them are going to live in the university dormitory for the next 4%%ZSMJ1%% (hopefully) years.",
-      "The dormitory consists of n%%ZSMJ2%% rooms and a single mouse! Girls decided to set mouse traps in some rooms to get rid of the horrible monster. Setting a trap in room number i%%ZSMJ3%% costs ci%%ZSMJ4%% burles. Rooms are numbered from 1%%ZSMJ5%% to n%%ZSMJ6%%.",
-      "Mouse doesn't sit in place all the time, it constantly runs. If it is in room i%%ZSMJ7%% in second t%%ZSMJ8%% then it will run to room ai%%ZSMJ9%% in second t+1%%ZSMJ10%% without visiting any other rooms inbetween (i=ai%%ZSMJ11%% means that mouse won't leave room i%%ZSMJ12%%). It's second 0%%ZSMJ13%% in the start. If the mouse is in some room with a mouse trap in it, then the mouse get caught into this trap.",
-      "That would have been so easy if the girls actually knew where the mouse at. Unfortunately, that's not the case, mouse can be in any room from 1%%ZSMJ14%% to n%%ZSMJ15%% at second 0%%ZSMJ16%%.",
+      "Medicine faculty of Berland State University has just finished their admission campaign. As usual, about 80%$$$80\\%$$$ of applicants are girls and majority of them are going to live in the university dormitory for the next 4$$$4$$$ (hopefully) years.",
+      "The dormitory consists of n$$$n$$$ rooms and a single mouse! Girls decided to set mouse traps in some rooms to get rid of the horrible monster. Setting a trap in room number i$$$i$$$ costs ci$$$c_i$$$ burles. Rooms are numbered from 1$$$1$$$ to n$$$n$$$.",
+      "Mouse doesn't sit in place all the time, it constantly runs. If it is in room i$$$i$$$ in second t$$$t$$$ then it will run to room ai$$$a_i$$$ in second t+1$$$t + 1$$$ without visiting any other rooms inbetween (i=ai$$$i = a_i$$$ means that mouse won't leave room i$$$i$$$). It's second 0$$$0$$$ in the start. If the mouse is in some room with a mouse trap in it, then the mouse get caught into this trap.",
+      "That would have been so easy if the girls actually knew where the mouse at. Unfortunately, that's not the case, mouse can be in any room from 1$$$1$$$ to n$$$n$$$ at second 0$$$0$$$.",
       "What it the minimal total amount of burles girls can spend to set the traps in order to guarantee that the mouse will eventually be caught no matter the room it started from?"
     ],
     "input": [
-      "The first line contains as single integers n%%ZSMJ17%% (1≤n≤2⋅105%%ZSMJ18%%) — the number of rooms in the dormitory.",
-      "The second line contains n%%ZSMJ19%% integers c1,c2,…,cn%%ZSMJ20%% (1≤ci≤104%%ZSMJ21%%) — ci%%ZSMJ22%% is the cost of setting the trap in room number i%%ZSMJ23%%.",
-      "The third line contains n%%ZSMJ24%% integers a1,a2,…,an%%ZSMJ25%% (1≤ai≤n%%ZSMJ26%%) — ai%%ZSMJ27%% is the room the mouse will run to the next second after being in room i%%ZSMJ28%%."
+      "The first line contains as single integers n$$$n$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$) — the number of rooms in the dormitory.",
+      "The second line contains n$$$n$$$ integers c1,c2,…,cn$$$c_1, c_2, \\dots, c_n$$$ (1≤ci≤104$$$1 \\le c_i \\le 10^4$$$) — ci$$$c_i$$$ is the cost of setting the trap in room number i$$$i$$$.",
+      "The third line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (1≤ai≤n$$$1 \\le a_i \\le n$$$) — ai$$$a_i$$$ is the room the mouse will run to the next second after being in room i$$$i$$$."
     ],
     "output": [
       "Print a single integer — the minimal total amount of burles girls can spend to set the traps in order to guarantee that the mouse will eventually be caught no matter the room it started from."
     ],
     "note": [
-      "In the first example it is enough to set mouse trap in rooms 1%%ZSMJ29%% and 4%%ZSMJ30%%. If mouse starts in room 1%%ZSMJ31%% then it gets caught immideately. If mouse starts in any other room then it eventually comes to room 4%%ZSMJ32%%.",
-      "In the second example it is enough to set mouse trap in room 2%%ZSMJ33%%. If mouse starts in room 2%%ZSMJ34%% then it gets caught immideately. If mouse starts in any other room then it runs to room 2%%ZSMJ35%% in second 1%%ZSMJ36%%.",
+      "In the first example it is enough to set mouse trap in rooms 1$$$1$$$ and 4$$$4$$$. If mouse starts in room 1$$$1$$$ then it gets caught immideately. If mouse starts in any other room then it eventually comes to room 4$$$4$$$.",
+      "In the second example it is enough to set mouse trap in room 2$$$2$$$. If mouse starts in room 2$$$2$$$ then it gets caught immideately. If mouse starts in any other room then it runs to room 2$$$2$$$ in second 1$$$1$$$.",
       "Here are the paths of the mouse from different starts from the third example:",
-      "1→2→2→…%%ZSMJ37%%;",
-      "2→2→…%%ZSMJ38%%;",
-      "3→2→2→…%%ZSMJ39%%;",
-      "4→3→2→2→…%%ZSMJ40%%;",
-      "5→6→7→6→…%%ZSMJ41%%;",
-      "6→7→6→…%%ZSMJ42%%;",
-      "7→6→7→…%%ZSMJ43%%;",
-      "So it's enough to set traps in rooms 2%%ZSMJ44%% and 6%%ZSMJ45%%."
+      "1→2→2→…$$$1 \\rightarrow 2 \\rightarrow 2 \\rightarrow \\dots$$$;",
+      "2→2→…$$$2 \\rightarrow 2 \\rightarrow \\dots$$$;",
+      "3→2→2→…$$$3 \\rightarrow 2 \\rightarrow 2 \\rightarrow \\dots$$$;",
+      "4→3→2→2→…$$$4 \\rightarrow 3 \\rightarrow 2 \\rightarrow 2 \\rightarrow \\dots$$$;",
+      "5→6→7→6→…$$$5 \\rightarrow 6 \\rightarrow 7 \\rightarrow 6 \\rightarrow \\dots$$$;",
+      "6→7→6→…$$$6 \\rightarrow 7 \\rightarrow 6 \\rightarrow \\dots$$$;",
+      "7→6→7→…$$$7 \\rightarrow 6 \\rightarrow 7 \\rightarrow \\dots$$$;",
+      "So it's enough to set traps in rooms 2$$$2$$$ and 6$$$6$$$."
     ]
   },
   "examples": [
@@ -50,5 +50,35 @@
       "input": "7\n1 1 1 1 1 1 1\n2 2 2 3 6 7 6",
       "output": "2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

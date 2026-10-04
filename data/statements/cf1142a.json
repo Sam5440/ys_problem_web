@@ -9,22 +9,22 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Recently a Golden Circle of Beetlovers was found in Byteland. It is a circle route going through n⋅k%%ZSMJ0%% cities. The cities are numerated from 1%%ZSMJ1%% to n⋅k%%ZSMJ2%%, the distance between the neighboring cities is exactly 1%%ZSMJ3%% km.",
-      "Sergey does not like beetles, he loves burgers. Fortunately for him, there are n%%ZSMJ4%% fast food restaurants on the circle, they are located in the 1%%ZSMJ5%%-st, the (k+1)%%ZSMJ6%%-st, the (2k+1)%%ZSMJ7%%-st, and so on, the ((n−1)k+1)%%ZSMJ8%%-st cities, i.e. the distance between the neighboring cities with fast food restaurants is k%%ZSMJ9%% km.",
-      "Sergey began his journey at some city s%%ZSMJ10%% and traveled along the circle, making stops at cities each l%%ZSMJ11%% km (l>0%%ZSMJ12%%), until he stopped in s%%ZSMJ13%% once again. Sergey then forgot numbers s%%ZSMJ14%% and l%%ZSMJ15%%, but he remembers that the distance from the city s%%ZSMJ16%% to the nearest fast food restaurant was a%%ZSMJ17%% km, and the distance from the city he stopped at after traveling the first l%%ZSMJ18%% km from s%%ZSMJ19%% to the nearest fast food restaurant was b%%ZSMJ20%% km. Sergey always traveled in the same direction along the circle, but when he calculated distances to the restaurants, he considered both directions.",
-      "Now Sergey is interested in two integers. The first integer x%%ZSMJ21%% is the minimum number of stops (excluding the first) Sergey could have done before returning to s%%ZSMJ22%%. The second integer y%%ZSMJ23%% is the maximum number of stops (excluding the first) Sergey could have done before returning to s%%ZSMJ24%%."
+      "Recently a Golden Circle of Beetlovers was found in Byteland. It is a circle route going through n⋅k$$$n \\cdot k$$$ cities. The cities are numerated from 1$$$1$$$ to n⋅k$$$n \\cdot k$$$, the distance between the neighboring cities is exactly 1$$$1$$$ km.",
+      "Sergey does not like beetles, he loves burgers. Fortunately for him, there are n$$$n$$$ fast food restaurants on the circle, they are located in the 1$$$1$$$-st, the (k+1)$$$(k + 1)$$$-st, the (2k+1)$$$(2k + 1)$$$-st, and so on, the ((n−1)k+1)$$$((n-1)k + 1)$$$-st cities, i.e. the distance between the neighboring cities with fast food restaurants is k$$$k$$$ km.",
+      "Sergey began his journey at some city s$$$s$$$ and traveled along the circle, making stops at cities each l$$$l$$$ km (l>0$$$l  \\gt  0$$$), until he stopped in s$$$s$$$ once again. Sergey then forgot numbers s$$$s$$$ and l$$$l$$$, but he remembers that the distance from the city s$$$s$$$ to the nearest fast food restaurant was a$$$a$$$ km, and the distance from the city he stopped at after traveling the first l$$$l$$$ km from s$$$s$$$ to the nearest fast food restaurant was b$$$b$$$ km. Sergey always traveled in the same direction along the circle, but when he calculated distances to the restaurants, he considered both directions.",
+      "Now Sergey is interested in two integers. The first integer x$$$x$$$ is the minimum number of stops (excluding the first) Sergey could have done before returning to s$$$s$$$. The second integer y$$$y$$$ is the maximum number of stops (excluding the first) Sergey could have done before returning to s$$$s$$$."
     ],
     "input": [
-      "The first line contains two integers n%%ZSMJ25%% and k%%ZSMJ26%% (1≤n,k≤100000%%ZSMJ27%%) — the number of fast food restaurants on the circle and the distance between the neighboring restaurants, respectively.",
-      "The second line contains two integers a%%ZSMJ28%% and b%%ZSMJ29%% (0≤a,b≤k2%%ZSMJ30%%) — the distances to the nearest fast food restaurants from the initial city and from the city Sergey made the first stop at, respectively."
+      "The first line contains two integers n$$$n$$$ and k$$$k$$$ (1≤n,k≤100000$$$1 \\le n, k \\le 100\\,000$$$) — the number of fast food restaurants on the circle and the distance between the neighboring restaurants, respectively.",
+      "The second line contains two integers a$$$a$$$ and b$$$b$$$ (0≤a,b≤k2$$$0 \\le a, b \\le \\frac{k}{2}$$$) — the distances to the nearest fast food restaurants from the initial city and from the city Sergey made the first stop at, respectively."
     ],
     "output": [
-      "Print the two integers x%%ZSMJ31%% and y%%ZSMJ32%%."
+      "Print the two integers x$$$x$$$ and y$$$y$$$."
     ],
     "note": [
-      "In the first example the restaurants are located in the cities 1%%ZSMJ33%% and 4%%ZSMJ34%%, the initial city s%%ZSMJ35%% could be 2%%ZSMJ36%%, 3%%ZSMJ37%%, 5%%ZSMJ38%%, or 6%%ZSMJ39%%. The next city Sergey stopped at could also be at cities 2,3,5,6%%ZSMJ40%%. Let's loop through all possible combinations of these cities. If both s%%ZSMJ41%% and the city of the first stop are at the city 2%%ZSMJ42%% (for example, l=6%%ZSMJ43%%), then Sergey is at s%%ZSMJ44%% after the first stop already, so x=1%%ZSMJ45%%. In other pairs Sergey needs 1,2,3%%ZSMJ46%%, or 6%%ZSMJ47%% stops to return to s%%ZSMJ48%%, so y=6%%ZSMJ49%%.",
-      "In the second example Sergey was at cities with fast food restaurant both initially and after the first stop, so l%%ZSMJ50%% is 2%%ZSMJ51%%, 4%%ZSMJ52%%, or 6%%ZSMJ53%%. Thus x=1%%ZSMJ54%%, y=3%%ZSMJ55%%.",
-      "In the third example there is only one restaurant, so the possible locations of s%%ZSMJ56%% and the first stop are: (6,8)%%ZSMJ57%% and (6,4)%%ZSMJ58%%. For the first option l=2%%ZSMJ59%%, for the second l=8%%ZSMJ60%%. In both cases Sergey needs x=y=5%%ZSMJ61%% stops to go to s%%ZSMJ62%%."
+      "In the first example the restaurants are located in the cities 1$$$1$$$ and 4$$$4$$$, the initial city s$$$s$$$ could be 2$$$2$$$, 3$$$3$$$, 5$$$5$$$, or 6$$$6$$$. The next city Sergey stopped at could also be at cities 2,3,5,6$$$2, 3, 5, 6$$$. Let's loop through all possible combinations of these cities. If both s$$$s$$$ and the city of the first stop are at the city 2$$$2$$$ (for example, l=6$$$l = 6$$$), then Sergey is at s$$$s$$$ after the first stop already, so x=1$$$x = 1$$$. In other pairs Sergey needs 1,2,3$$$1, 2, 3$$$, or 6$$$6$$$ stops to return to s$$$s$$$, so y=6$$$y = 6$$$.",
+      "In the second example Sergey was at cities with fast food restaurant both initially and after the first stop, so l$$$l$$$ is 2$$$2$$$, 4$$$4$$$, or 6$$$6$$$. Thus x=1$$$x = 1$$$, y=3$$$y = 3$$$.",
+      "In the third example there is only one restaurant, so the possible locations of s$$$s$$$ and the first stop are: (6,8)$$$(6, 8)$$$ and (6,4)$$$(6, 4)$$$. For the first option l=2$$$l = 2$$$, for the second l=8$$$l = 8$$$. In both cases Sergey needs x=y=5$$$x=y=5$$$ stops to go to s$$$s$$$."
     ]
   },
   "examples": [
@@ -40,5 +40,25 @@
       "input": "1 10\n5 3",
       "output": "5 5"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null
+    ]
+  }
 }

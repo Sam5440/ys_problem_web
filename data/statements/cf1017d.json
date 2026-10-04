@@ -10,36 +10,36 @@
   "sections": {
     "legend": [
       "Childan is making up a legendary story and trying to sell his forgery — a necklace with a strong sense of \"Wu\" to the Kasouras. But Mr. Kasoura is challenging the truth of Childan's story. So he is going to ask a few questions about Childan's so-called \"personal treasure\" necklace.",
-      "This \"personal treasure\" is a multiset S%%ZSMJ0%% of m%%ZSMJ1%% \"01-strings\".",
-      "A \"01-string\" is a string that contains n%%ZSMJ2%% characters \"0\" and \"1\". For example, if n=4%%ZSMJ3%%, strings \"0110\", \"0000\", and \"1110\" are \"01-strings\", but \"00110\" (there are 5%%ZSMJ4%% characters, not 4%%ZSMJ5%%) and \"zero\" (unallowed characters) are not.",
-      "Note that the multiset S%%ZSMJ6%% can contain equal elements.",
-      "Frequently, Mr. Kasoura will provide a \"01-string\" t%%ZSMJ7%% and ask Childan how many strings s%%ZSMJ8%% are in the multiset S%%ZSMJ9%% such that the \"Wu\" value of the pair (s,t)%%ZSMJ10%% is not greater than k%%ZSMJ11%%.",
-      "Mrs. Kasoura and Mr. Kasoura think that if si=ti%%ZSMJ12%% (1≤i≤n%%ZSMJ13%%) then the \"Wu\" value of the character pair equals to wi%%ZSMJ14%%, otherwise 0%%ZSMJ15%%. The \"Wu\" value of the \"01-string\" pair is the sum of the \"Wu\" values of every character pair. Note that the length of every \"01-string\" is equal to n%%ZSMJ16%%.",
-      "For example, if w=[4,5,3,6]%%ZSMJ17%%, \"Wu\" of (\"1001\", \"1100\") is 7%%ZSMJ18%% because these strings have equal characters only on the first and third positions, so w1+w3=4+3=7%%ZSMJ19%%.",
-      "You need to help Childan to answer Mr. Kasoura's queries. That is to find the number of strings in the multiset S%%ZSMJ20%% such that the \"Wu\" value of the pair is not greater than k%%ZSMJ21%%."
+      "This \"personal treasure\" is a multiset S$$$S$$$ of m$$$m$$$ \"01-strings\".",
+      "A \"01-string\" is a string that contains n$$$n$$$ characters \"0\" and \"1\". For example, if n=4$$$n=4$$$, strings \"0110\", \"0000\", and \"1110\" are \"01-strings\", but \"00110\" (there are 5$$$5$$$ characters, not 4$$$4$$$) and \"zero\" (unallowed characters) are not.",
+      "Note that the multiset S$$$S$$$ can contain equal elements.",
+      "Frequently, Mr. Kasoura will provide a \"01-string\" t$$$t$$$ and ask Childan how many strings s$$$s$$$ are in the multiset S$$$S$$$ such that the \"Wu\" value of the pair (s,t)$$$(s, t)$$$ is not greater than k$$$k$$$.",
+      "Mrs. Kasoura and Mr. Kasoura think that if si=ti$$$s_i = t_i$$$ (1≤i≤n$$$1\\leq i\\leq n$$$) then the \"Wu\" value of the character pair equals to wi$$$w_i$$$, otherwise 0$$$0$$$. The \"Wu\" value of the \"01-string\" pair is the sum of the \"Wu\" values of every character pair. Note that the length of every \"01-string\" is equal to n$$$n$$$.",
+      "For example, if w=[4,5,3,6]$$$w=[4, 5, 3, 6]$$$, \"Wu\" of (\"1001\", \"1100\") is 7$$$7$$$ because these strings have equal characters only on the first and third positions, so w1+w3=4+3=7$$$w_1+w_3=4+3=7$$$.",
+      "You need to help Childan to answer Mr. Kasoura's queries. That is to find the number of strings in the multiset S$$$S$$$ such that the \"Wu\" value of the pair is not greater than k$$$k$$$."
     ],
     "input": [
-      "The first line contains three integers n%%ZSMJ22%%, m%%ZSMJ23%%, and q%%ZSMJ24%% (1≤n≤12%%ZSMJ25%%, 1≤q,m≤5⋅105%%ZSMJ26%%) — the length of the \"01-strings\", the size of the multiset S%%ZSMJ27%%, and the number of queries.",
-      "The second line contains n%%ZSMJ28%% integers w1,w2,…,wn%%ZSMJ29%% (0≤wi≤100%%ZSMJ30%%) — the value of the i%%ZSMJ31%%-th caracter.",
-      "Each of the next m%%ZSMJ32%% lines contains the \"01-string\" s%%ZSMJ33%% of length n%%ZSMJ34%% — the string in the multiset S%%ZSMJ35%%.",
-      "Each of the next q%%ZSMJ36%% lines contains the \"01-string\" t%%ZSMJ37%% of length n%%ZSMJ38%% and integer k%%ZSMJ39%% (0≤k≤100%%ZSMJ40%%) — the query."
+      "The first line contains three integers n$$$n$$$, m$$$m$$$, and q$$$q$$$ (1≤n≤12$$$1\\leq n\\leq 12$$$, 1≤q,m≤5⋅105$$$1\\leq q, m\\leq 5\\cdot 10^5$$$) — the length of the \"01-strings\", the size of the multiset S$$$S$$$, and the number of queries.",
+      "The second line contains n$$$n$$$ integers w1,w2,…,wn$$$w_1, w_2, \\ldots, w_n$$$ (0≤wi≤100$$$0 \\le w_i \\le 100$$$) — the value of the i$$$i$$$-th caracter.",
+      "Each of the next m$$$m$$$ lines contains the \"01-string\" s$$$s$$$ of length n$$$n$$$ — the string in the multiset S$$$S$$$.",
+      "Each of the next q$$$q$$$ lines contains the \"01-string\" t$$$t$$$ of length n$$$n$$$ and integer k$$$k$$$ (0≤k≤100$$$0\\leq k\\leq 100$$$) — the query."
     ],
     "output": [
       "For each query, print the answer for this query."
     ],
     "note": [
       "In the first example, we can get:",
-      "\"Wu\" of (\"01\", \"00\") is 40%%ZSMJ41%%.",
-      "\"Wu\" of (\"10\", \"00\") is 20%%ZSMJ42%%.",
-      "\"Wu\" of (\"11\", \"00\") is 0%%ZSMJ43%%.",
-      "\"Wu\" of (\"01\", \"11\") is 20%%ZSMJ44%%.",
-      "\"Wu\" of (\"10\", \"11\") is 40%%ZSMJ45%%.",
-      "\"Wu\" of (\"11\", \"11\") is 60%%ZSMJ46%%.",
-      "In the first query, pairs (\"11\", \"00\") and (\"10\", \"00\") satisfy the condition since their \"Wu\" is not greater than 20%%ZSMJ47%%.",
+      "\"Wu\" of (\"01\", \"00\") is 40$$$40$$$.",
+      "\"Wu\" of (\"10\", \"00\") is 20$$$20$$$.",
+      "\"Wu\" of (\"11\", \"00\") is 0$$$0$$$.",
+      "\"Wu\" of (\"01\", \"11\") is 20$$$20$$$.",
+      "\"Wu\" of (\"10\", \"11\") is 40$$$40$$$.",
+      "\"Wu\" of (\"11\", \"11\") is 60$$$60$$$.",
+      "In the first query, pairs (\"11\", \"00\") and (\"10\", \"00\") satisfy the condition since their \"Wu\" is not greater than 20$$$20$$$.",
       "In the second query, all strings satisfy the condition.",
-      "In the third query, pairs (\"01\", \"11\") and (\"01\", \"11\") satisfy the condition. Note that since there are two \"01\" strings in the multiset, the answer is 2%%ZSMJ48%%, not 1%%ZSMJ49%%.",
-      "In the fourth query, since k%%ZSMJ50%% was increased, pair (\"10\", \"11\") satisfies the condition too.",
-      "In the fifth query, since k%%ZSMJ51%% was increased, pair (\"11\", \"11\") satisfies the condition too."
+      "In the third query, pairs (\"01\", \"11\") and (\"01\", \"11\") satisfy the condition. Note that since there are two \"01\" strings in the multiset, the answer is 2$$$2$$$, not 1$$$1$$$.",
+      "In the fourth query, since k$$$k$$$ was increased, pair (\"10\", \"11\") satisfies the condition too.",
+      "In the fifth query, since k$$$k$$$ was increased, pair (\"11\", \"11\") satisfies the condition too."
     ]
   },
   "examples": [
@@ -51,5 +51,40 @@
       "input": "1 2 4\n100\n0\n1\n0 0\n0 100\n1 0\n1 100",
       "output": "1\n2\n1\n2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

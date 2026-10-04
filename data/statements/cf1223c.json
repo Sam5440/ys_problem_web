@@ -10,32 +10,32 @@
   "sections": {
     "legend": [
       "You are an environmental activist at heart but the reality is harsh and you are just a cashier in a cinema. But you can still do something!",
-      "You have n%%ZSMJ0%% tickets to sell. The price of the i%%ZSMJ1%%-th ticket is pi%%ZSMJ2%%. As a teller, you have a possibility to select the order in which the tickets will be sold (i.e. a permutation of the tickets). You know that the cinema participates in two ecological restoration programs applying them to the order you chose:",
-      "The x%%%ZSMJ3%% of the price of each the a%%ZSMJ4%%-th sold ticket (a%%ZSMJ5%%-th, 2a%%ZSMJ6%%-th, 3a%%ZSMJ7%%-th and so on) in the order you chose is aimed for research and spreading of renewable energy sources.",
-      "The y%%%ZSMJ8%% of the price of each the b%%ZSMJ9%%-th sold ticket (b%%ZSMJ10%%-th, 2b%%ZSMJ11%%-th, 3b%%ZSMJ12%%-th and so on) in the order you chose is aimed for pollution abatement.",
-      "If the ticket is in both programs then the (x+y)%%%ZSMJ13%% are used for environmental activities. Also, it's known that all prices are multiples of 100%%ZSMJ14%%, so there is no need in any rounding.",
-      "For example, if you'd like to sell tickets with prices [400,100,300,200]%%ZSMJ15%% and the cinema pays 10%%%ZSMJ16%% of each 2%%ZSMJ17%%-nd sold ticket and 20%%%ZSMJ18%% of each 3%%ZSMJ19%%-rd sold ticket, then arranging them in order [100,200,300,400]%%ZSMJ20%% will lead to contribution equal to 100⋅0+200⋅0.1+300⋅0.2+400⋅0.1=120%%ZSMJ21%%. But arranging them in order [100,300,400,200]%%ZSMJ22%% will lead to 100⋅0+300⋅0.1+400⋅0.2+200⋅0.1=130%%ZSMJ23%%.",
-      "Nature can't wait, so you decided to change the order of tickets in such a way, so that the total contribution to programs will reach at least k%%ZSMJ24%% in minimum number of sold tickets. Or say that it's impossible to do so. In other words, find the minimum number of tickets which are needed to be sold in order to earn at least k%%ZSMJ25%%."
+      "You have n$$$n$$$ tickets to sell. The price of the i$$$i$$$-th ticket is pi$$$p_i$$$. As a teller, you have a possibility to select the order in which the tickets will be sold (i.e. a permutation of the tickets). You know that the cinema participates in two ecological restoration programs applying them to the order you chose:",
+      "The x%$$$x\\%$$$ of the price of each the a$$$a$$$-th sold ticket (a$$$a$$$-th, 2a$$$2a$$$-th, 3a$$$3a$$$-th and so on) in the order you chose is aimed for research and spreading of renewable energy sources.",
+      "The y%$$$y\\%$$$ of the price of each the b$$$b$$$-th sold ticket (b$$$b$$$-th, 2b$$$2b$$$-th, 3b$$$3b$$$-th and so on) in the order you chose is aimed for pollution abatement.",
+      "If the ticket is in both programs then the (x+y)%$$$(x + y) \\%$$$ are used for environmental activities. Also, it's known that all prices are multiples of 100$$$100$$$, so there is no need in any rounding.",
+      "For example, if you'd like to sell tickets with prices [400,100,300,200]$$$[400, 100, 300, 200]$$$ and the cinema pays 10%$$$10\\%$$$ of each 2$$$2$$$-nd sold ticket and 20%$$$20\\%$$$ of each 3$$$3$$$-rd sold ticket, then arranging them in order [100,200,300,400]$$$[100, 200, 300, 400]$$$ will lead to contribution equal to 100⋅0+200⋅0.1+300⋅0.2+400⋅0.1=120$$$100 \\cdot 0 + 200 \\cdot 0.1 + 300 \\cdot 0.2 + 400 \\cdot 0.1 = 120$$$. But arranging them in order [100,300,400,200]$$$[100, 300, 400, 200]$$$ will lead to 100⋅0+300⋅0.1+400⋅0.2+200⋅0.1=130$$$100 \\cdot 0 + 300 \\cdot 0.1 + 400 \\cdot 0.2 + 200 \\cdot 0.1 = 130$$$.",
+      "Nature can't wait, so you decided to change the order of tickets in such a way, so that the total contribution to programs will reach at least k$$$k$$$ in minimum number of sold tickets. Or say that it's impossible to do so. In other words, find the minimum number of tickets which are needed to be sold in order to earn at least k$$$k$$$."
     ],
     "input": [
-      "The first line contains a single integer q%%ZSMJ26%% (1≤q≤100%%ZSMJ27%%) — the number of independent queries. Each query consists of 5%%ZSMJ28%% lines.",
-      "The first line of each query contains a single integer n%%ZSMJ29%% (1≤n≤2⋅105%%ZSMJ30%%) — the number of tickets.",
-      "The second line contains n%%ZSMJ31%% integers p1,p2,…,pn%%ZSMJ32%% (100≤pi≤109%%ZSMJ33%%, pimod%%ZSMJ34%%) — the corresponding prices of tickets.",
-      "The third line contains two integers x%%ZSMJ35%% and a%%ZSMJ36%% (1 \\le x \\le 100%%ZSMJ37%%, x + y \\le 100%%ZSMJ38%%, 1 \\le a \\le n%%ZSMJ39%%) — the parameters of the first program.",
-      "The fourth line contains two integers y%%ZSMJ40%% and b%%ZSMJ41%% (1 \\le y \\le 100%%ZSMJ42%%, x + y \\le 100%%ZSMJ43%%, 1 \\le b \\le n%%ZSMJ44%%) — the parameters of the second program.",
-      "The fifth line contains single integer k%%ZSMJ45%% (1 \\le k \\le 10^{14}%%ZSMJ46%%) — the required total contribution.",
-      "It's guaranteed that the total number of tickets per test doesn't exceed 2 \\cdot 10^5%%ZSMJ47%%."
+      "The first line contains a single integer q$$$q$$$ (1≤q≤100$$$1 \\le q \\le 100$$$) — the number of independent queries. Each query consists of 5$$$5$$$ lines.",
+      "The first line of each query contains a single integer n$$$n$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$) — the number of tickets.",
+      "The second line contains n$$$n$$$ integers p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$ (100≤pi≤109$$$100 \\le p_i \\le 10^9$$$, pimod100=0$$$p_i \\bmod 100 = 0$$$) — the corresponding prices of tickets.",
+      "The third line contains two integers x$$$x$$$ and a$$$a$$$ (1≤x≤100$$$1 \\le x \\le 100$$$, x+y≤100$$$x + y \\le 100$$$, 1≤a≤n$$$1 \\le a \\le n$$$) — the parameters of the first program.",
+      "The fourth line contains two integers y$$$y$$$ and b$$$b$$$ (1≤y≤100$$$1 \\le y \\le 100$$$, x+y≤100$$$x + y \\le 100$$$, 1≤b≤n$$$1 \\le b \\le n$$$) — the parameters of the second program.",
+      "The fifth line contains single integer k$$$k$$$ (1≤k≤1014$$$1 \\le k \\le 10^{14}$$$) — the required total contribution.",
+      "It's guaranteed that the total number of tickets per test doesn't exceed 2⋅105$$$2 \\cdot 10^5$$$."
     ],
     "output": [
-      "Print q%%ZSMJ48%% integers — one per query.",
-      "For each query, print the minimum number of tickets you need to sell to make the total ecological contribution of at least k%%ZSMJ49%% if you can sell tickets in any order.",
-      "If the total contribution can not be achieved selling all the tickets, print -1%%ZSMJ50%%."
+      "Print q$$$q$$$ integers — one per query.",
+      "For each query, print the minimum number of tickets you need to sell to make the total ecological contribution of at least k$$$k$$$ if you can sell tickets in any order.",
+      "If the total contribution can not be achieved selling all the tickets, print −1$$$-1$$$."
     ],
     "note": [
-      "In the first query the total contribution is equal to 50 + 49 = 99  \\lt  100%%ZSMJ51%%, so it's impossible to gather enough money.",
-      "In the second query you can rearrange tickets in a following way: [100, 100, 200, 200, 100, 200, 100, 100]%%ZSMJ52%% and the total contribution from the first 6%%ZSMJ53%% tickets is equal to 100 \\cdot 0 + 100 \\cdot 0.1 + 200 \\cdot 0.15 + 200 \\cdot 0.1 + 100 \\cdot 0 + 200 \\cdot 0.25 = 10 + 30 + 20 + 50 = 110%%ZSMJ54%%.",
+      "In the first query the total contribution is equal to 50+49=99<100$$$50 + 49 = 99  \\lt  100$$$, so it's impossible to gather enough money.",
+      "In the second query you can rearrange tickets in a following way: [100,100,200,200,100,200,100,100]$$$[100, 100, 200, 200, 100, 200, 100, 100]$$$ and the total contribution from the first 6$$$6$$$ tickets is equal to 100⋅0+100⋅0.1+200⋅0.15+200⋅0.1+100⋅0+200⋅0.25=10+30+20+50=110$$$100 \\cdot 0 + 100 \\cdot 0.1 + 200 \\cdot 0.15 + 200 \\cdot 0.1 + 100 \\cdot 0 + 200 \\cdot 0.25 = 10 + 30 + 20 + 50 = 110$$$.",
       "In the third query the full price of each ticket goes to the environmental activities.",
-      "In the fourth query you can rearrange tickets as [100, 200, 100, 100, 100]%%ZSMJ55%% and the total contribution from the first 4%%ZSMJ56%% tickets is 100 \\cdot 0 + 200 \\cdot 0.31 + 100 \\cdot 0 + 100 \\cdot 0.31 = 62 + 31 = 93%%ZSMJ57%%."
+      "In the fourth query you can rearrange tickets as [100,200,100,100,100]$$$[100, 200, 100, 100, 100]$$$ and the total contribution from the first 4$$$4$$$ tickets is 100⋅0+200⋅0.31+100⋅0+100⋅0.31=62+31=93$$$100 \\cdot 0 + 200 \\cdot 0.31 + 100 \\cdot 0 + 100 \\cdot 0.31 = 62 + 31 = 93$$$."
     ]
   },
   "examples": [
@@ -43,5 +43,36 @@
       "input": "4\n1\n100\n50 1\n49 1\n100\n8\n100 200 100 200 100 200 100 100\n10 2\n15 3\n107\n3\n1000000000 1000000000 1000000000\n50 1\n50 1\n3000000000\n5\n200 100 100 100 100\n69 5\n31 2\n90",
       "output": "-1\n6\n3\n4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

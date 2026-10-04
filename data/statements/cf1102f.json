@@ -9,26 +9,26 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "You are given a matrix a%%ZSMJ0%%, consisting of n%%ZSMJ1%% rows and m%%ZSMJ2%% columns. Each cell contains an integer in it.",
-      "You can change the order of rows arbitrarily (including leaving the initial order), but you can't change the order of cells in a row. After you pick some order of rows, you traverse the whole matrix the following way: firstly visit all cells of the first column from the top row to the bottom one, then the same for the second column and so on. During the traversal you write down the sequence of the numbers on the cells in the same order you visited them. Let that sequence be s1,s2,…,snm%%ZSMJ3%%.",
-      "The traversal is k%%ZSMJ4%%-acceptable if for all i%%ZSMJ5%% (1≤i≤nm−1%%ZSMJ6%%) |si−si+1|≥k%%ZSMJ7%%.",
-      "Find the maximum integer k%%ZSMJ8%% such that there exists some order of rows of matrix a%%ZSMJ9%% that it produces a k%%ZSMJ10%%-acceptable traversal."
+      "You are given a matrix a$$$a$$$, consisting of n$$$n$$$ rows and m$$$m$$$ columns. Each cell contains an integer in it.",
+      "You can change the order of rows arbitrarily (including leaving the initial order), but you can't change the order of cells in a row. After you pick some order of rows, you traverse the whole matrix the following way: firstly visit all cells of the first column from the top row to the bottom one, then the same for the second column and so on. During the traversal you write down the sequence of the numbers on the cells in the same order you visited them. Let that sequence be s1,s2,…,snm$$$s_1, s_2, \\dots, s_{nm}$$$.",
+      "The traversal is k$$$k$$$-acceptable if for all i$$$i$$$ (1≤i≤nm−1$$$1 \\le i \\le nm - 1$$$) |si−si+1|≥k$$$|s_i - s_{i + 1}| \\ge k$$$.",
+      "Find the maximum integer k$$$k$$$ such that there exists some order of rows of matrix a$$$a$$$ that it produces a k$$$k$$$-acceptable traversal."
     ],
     "input": [
-      "The first line contains two integers n%%ZSMJ11%% and m%%ZSMJ12%% (1≤n≤16%%ZSMJ13%%, 1≤m≤104%%ZSMJ14%%, 2≤nm%%ZSMJ15%%) — the number of rows and the number of columns, respectively.",
-      "Each of the next n%%ZSMJ16%% lines contains m%%ZSMJ17%% integers (1≤ai,j≤109%%ZSMJ18%%) — the description of the matrix."
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (1≤n≤16$$$1 \\le n \\le 16$$$, 1≤m≤104$$$1 \\le m \\le 10^4$$$, 2≤nm$$$2 \\le nm$$$) — the number of rows and the number of columns, respectively.",
+      "Each of the next n$$$n$$$ lines contains m$$$m$$$ integers (1≤ai,j≤109$$$1 \\le a_{i, j} \\le 10^9$$$) — the description of the matrix."
     ],
     "output": [
-      "Print a single integer k%%ZSMJ19%% — the maximum number such that there exists some order of rows of matrix a%%ZSMJ20%% that it produces an k%%ZSMJ21%%-acceptable traversal."
+      "Print a single integer k$$$k$$$ — the maximum number such that there exists some order of rows of matrix a$$$a$$$ that it produces an k$$$k$$$-acceptable traversal."
     ],
     "note": [
-      "In the first example you can rearrange rows as following to get the 5%%ZSMJ22%%-acceptable traversal:",
+      "In the first example you can rearrange rows as following to get the 5$$$5$$$-acceptable traversal:",
       {
         "pre": "\n5 3\n10 8\n4 3\n9 9"
       },
-      "Then the sequence s%%ZSMJ23%% will be [5,10,4,9,3,8,3,9]%%ZSMJ24%%. Each pair of neighbouring elements have at least k=5%%ZSMJ25%% difference between them.",
-      "In the second example the maximum k=0%%ZSMJ26%%, any order is 0%%ZSMJ27%%-acceptable.",
-      "In the third example the given order is already 3%%ZSMJ28%%-acceptable, you can leave it as it is."
+      "Then the sequence s$$$s$$$ will be [5,10,4,9,3,8,3,9]$$$[5, 10, 4, 9, 3, 8, 3, 9]$$$. Each pair of neighbouring elements have at least k=5$$$k = 5$$$ difference between them.",
+      "In the second example the maximum k=0$$$k = 0$$$, any order is 0$$$0$$$-acceptable.",
+      "In the third example the given order is already 3$$$3$$$-acceptable, you can leave it as it is."
     ]
   },
   "examples": [
@@ -44,5 +44,27 @@
       "input": "6 1\n3\n6\n2\n5\n1\n4",
       "output": "3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

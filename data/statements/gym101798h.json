@@ -41,7 +41,8 @@
     "deepl": "H.圆柱图形",
     "caiyun": "H. 柱状图",
     "youdao": "H.柱形图",
-    "iflyrec": "H.圆柱图"
+    "iflyrec": "H.圆柱图",
+    "ai": "H. 圆柱图"
   },
   "sectionsZh": {
     "input": [
@@ -49,13 +50,15 @@
         "deepl": "第一行输入包含一个偶数整数 n（6 ≤ n ≤ 105），即图形中的节点数。",
         "caiyun": "输入的第一行包含一个偶数整数 n(6 ≤ n ≤ 105)，即图中节点的数量。",
         "youdao": "输入的第一行包含一个偶数n(6≤n≤105)，即图中的节点数。",
-        "iflyrec": "输入的第一行包含偶数n（6≤n≤105），即图中的节点数。"
+        "iflyrec": "输入的第一行包含偶数n（6≤n≤105），即图中的节点数。",
+        "ai": "输入的第一行包含一个偶数整数 n（6 ≤ n ≤ 10^5），表示图中的节点数。"
       },
       {
         "deepl": "下面 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 的每一行都包含两个整数 u 和 v(1 ≤ u，v ≤ n，u≠v)，代表连接节点 u 和 v 的一条边。",
         "caiyun": "以下 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 行中的每一行都包含两个整数 u 和 v(1≤u,v≤n,u≠v)，表示连接节点 u 和 v 的边。每对节点最多由一条边连接。",
         "youdao": "下面的每条![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)行包含两个整数u和v(1≤u, v≤n, u≠v)，表示连接节点u和v的一条边。每对节点最多由一条边连接。",
-        "iflyrec": "以下![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)行中的每一行包含两个整数u和V(1≤u，v≤n，u≠V)，表示连接节点u和V的边。每对节点最多由一条边连接。"
+        "iflyrec": "以下![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)行中的每一行包含两个整数u和V(1≤u，v≤n，u≠V)，表示连接节点u和V的边。每对节点最多由一条边连接。",
+        "ai": "接下来 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 行，每行两个整数 u 和 v(1 ≤ u, v ≤ n，u ≠ v)，表示连接节点 u 和 v 的一条边。每对节点之间至多由一条边连接。"
       }
     ],
     "output": [
@@ -100,19 +103,22 @@
         "deepl": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
         "youdao": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
         "caiyun": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
-        "iflyrec": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)"
+        "iflyrec": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
+        "ai": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)"
       },
       {
         "deepl": "如果可以将一个无向图分割成两个长度相等的互不相交的简单循环，使得第一个循环中的第 i 个节点与第二个循环中的第 i 个节点相连，那么这个无向图就是圆柱图。",
         "caiyun": "无向图是圆柱形的，如果它可以被分割成两个长度相等的不相交简单循环，使得第一个循环中的第一个节点与第二个循环中的第一个节点相连。",
         "youdao": "如果一个无向图可以被分割成两个不等长的不相交的简单循环，使得第一个循环中的第i个节点与第二个循环中的第i个节点相连，那么这个图就是圆柱形的。",
-        "iflyrec": "一个无向图是柱面的，如果它可以被分成两个长度相等的不相交的简单圈，使得第一个圈中的第I个节点连接到第二个圈中的第I个节点。"
+        "iflyrec": "一个无向图是柱面的，如果它可以被分成两个长度相等的不相交的简单圈，使得第一个圈中的第I个节点连接到第二个圈中的第I个节点。",
+        "ai": "如果一个无向图能够被拆分成两个长度相等且不相交的简单环，使得第一个环中的第 i 个节点与第二个环中的第 i 个节点相连，那么它就是圆柱形的。"
       },
       {
         "deepl": "给定一个偶数个节点 n 和 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 条边的无向图，判断它是否是圆柱形，如果是，则打印出构成它的两个循环(具体要求请查看输出部分)。",
         "caiyun": "给定一个由偶数个节点 n 和 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 边组成的无向图，确定它是否为圆柱形，如果是，打印形成它的两个循环 (查看输出部分以了解确切的要求)。",
         "youdao": "给定一个有偶数个节点n和![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)条边的无向图，确定它是否是圆柱形的，如果是，打印形成它的两个循环(检查输出部分以获得确切的要求)。",
-        "iflyrec": "给定一个具有偶数个节点n和![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)条边的无向图，确定它是否是圆柱形的，如果是，则打印形成它的两个循环(检查输出部分的确切要求)。"
+        "iflyrec": "给定一个具有偶数个节点n和![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)条边的无向图，确定它是否是圆柱形的，如果是，则打印形成它的两个循环(检查输出部分的确切要求)。",
+        "ai": "给定一个无向图，它有偶数个节点 n 和 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 条边，判断它是否为圆柱图；如果是，则输出构成它的两个环(确切要求见输出部分)。"
       }
     ]
   },

@@ -9,21 +9,21 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "There is a city that can be represented as a square grid with corner points in (0,0)%%ZSMJ0%% and (106,106)%%ZSMJ1%%.",
-      "The city has n%%ZSMJ2%% vertical and m%%ZSMJ3%% horizontal streets that goes across the whole city, i. e. the i%%ZSMJ4%%-th vertical streets goes from (xi,0)%%ZSMJ5%% to (xi,106)%%ZSMJ6%% and the j%%ZSMJ7%%-th horizontal street goes from (0,yj)%%ZSMJ8%% to (106,yj)%%ZSMJ9%%.",
+      "There is a city that can be represented as a square grid with corner points in (0,0)$$$(0, 0)$$$ and (106,106)$$$(10^6, 10^6)$$$.",
+      "The city has n$$$n$$$ vertical and m$$$m$$$ horizontal streets that goes across the whole city, i. e. the i$$$i$$$-th vertical streets goes from (xi,0)$$$(x_i, 0)$$$ to (xi,106)$$$(x_i, 10^6)$$$ and the j$$$j$$$-th horizontal street goes from (0,yj)$$$(0, y_j)$$$ to (106,yj)$$$(10^6, y_j)$$$.",
       "All streets are bidirectional. Borders of the city are streets as well.",
-      "There are k%%ZSMJ10%% persons staying on the streets: the p%%ZSMJ11%%-th person at point (xp,yp)%%ZSMJ12%% (so either xp%%ZSMJ13%% equal to some xi%%ZSMJ14%% or yp%%ZSMJ15%% equal to some yj%%ZSMJ16%%, or both).",
+      "There are k$$$k$$$ persons staying on the streets: the p$$$p$$$-th person at point (xp,yp)$$$(x_p, y_p)$$$ (so either xp$$$x_p$$$ equal to some xi$$$x_i$$$ or yp$$$y_p$$$ equal to some yj$$$y_j$$$, or both).",
       "Let's say that a pair of persons form an inconvenient pair if the shortest path from one person to another going only by streets is strictly greater than the Manhattan distance between them.",
-      "Calculate the number of inconvenient pairs of persons (pairs (x,y)%%ZSMJ17%% and (y,x)%%ZSMJ18%% are the same pair).",
-      "Let's recall that Manhattan distance between points (x1,y1)%%ZSMJ19%% and (x2,y2)%%ZSMJ20%% is |x1−x2|+|y1−y2|%%ZSMJ21%%."
+      "Calculate the number of inconvenient pairs of persons (pairs (x,y)$$$(x, y)$$$ and (y,x)$$$(y, x)$$$ are the same pair).",
+      "Let's recall that Manhattan distance between points (x1,y1)$$$(x_1, y_1)$$$ and (x2,y2)$$$(x_2, y_2)$$$ is |x1−x2|+|y1−y2|$$$|x_1 - x_2| + |y_1 - y_2|$$$."
     ],
     "input": [
-      "The first line contains a single integer t%%ZSMJ22%% (1≤t≤1000%%ZSMJ23%%) — the number of test cases.",
-      "The first line of each test case contains three integers n%%ZSMJ24%%, m%%ZSMJ25%% and k%%ZSMJ26%% (2≤n,m≤2⋅105%%ZSMJ27%%; 2≤k≤3⋅105%%ZSMJ28%%) — the number of vertical and horizontal streets and the number of persons.",
-      "The second line of each test case contains n%%ZSMJ29%% integers x1,x2,…,xn%%ZSMJ30%% (0=x1<x2<⋯<xn−1<xn=106%%ZSMJ31%%) — the x%%ZSMJ32%%-coordinates of vertical streets.",
-      "The third line contains m%%ZSMJ33%% integers y1,y2,…,ym%%ZSMJ34%% (0=y1<y2<⋯<ym−1<ym=106%%ZSMJ35%%) — the y%%ZSMJ36%%-coordinates of horizontal streets.",
-      "Next k%%ZSMJ37%% lines contains description of people. The p%%ZSMJ38%%-th line contains two integers xp%%ZSMJ39%% and yp%%ZSMJ40%% (0≤xp,yp≤106%%ZSMJ41%%; xp∈{x1,…,xn}%%ZSMJ42%% or yp∈{y1,…,ym}%%ZSMJ43%%) — the coordinates of the p%%ZSMJ44%%-th person. All points are distinct.",
-      "It guaranteed that sum of n%%ZSMJ45%% doesn't exceed 2⋅105%%ZSMJ46%%, sum of m%%ZSMJ47%% doesn't exceed 2⋅105%%ZSMJ48%% and sum of k%%ZSMJ49%% doesn't exceed 3⋅105%%ZSMJ50%%."
+      "The first line contains a single integer t$$$t$$$ (1≤t≤1000$$$1 \\le t \\le 1000$$$) — the number of test cases.",
+      "The first line of each test case contains three integers n$$$n$$$, m$$$m$$$ and k$$$k$$$ (2≤n,m≤2⋅105$$$2 \\le n, m \\le 2 \\cdot 10^5$$$; 2≤k≤3⋅105$$$2 \\le k \\le 3 \\cdot 10^5$$$) — the number of vertical and horizontal streets and the number of persons.",
+      "The second line of each test case contains n$$$n$$$ integers x1,x2,…,xn$$$x_1, x_2, \\dots, x_n$$$ (0=x1<x2<⋯<xn−1<xn=106$$$0 = x_1  \\lt  x_2  \\lt  \\dots  \\lt  x_{n - 1}  \\lt  x_n = 10^6$$$) — the x$$$x$$$-coordinates of vertical streets.",
+      "The third line contains m$$$m$$$ integers y1,y2,…,ym$$$y_1, y_2, \\dots, y_m$$$ (0=y1<y2<⋯<ym−1<ym=106$$$0 = y_1  \\lt  y_2  \\lt  \\dots  \\lt  y_{m - 1}  \\lt  y_m = 10^6$$$) — the y$$$y$$$-coordinates of horizontal streets.",
+      "Next k$$$k$$$ lines contains description of people. The p$$$p$$$-th line contains two integers xp$$$x_p$$$ and yp$$$y_p$$$ (0≤xp,yp≤106$$$0 \\le x_p, y_p \\le 10^6$$$; xp∈{x1,…,xn}$$$x_p \\in \\{x_1, \\dots, x_n\\}$$$ or yp∈{y1,…,ym}$$$y_p \\in \\{y_1, \\dots, y_m\\}$$$) — the coordinates of the p$$$p$$$-th person. All points are distinct.",
+      "It guaranteed that sum of n$$$n$$$ doesn't exceed 2⋅105$$$2 \\cdot 10^5$$$, sum of m$$$m$$$ doesn't exceed 2⋅105$$$2 \\cdot 10^5$$$ and sum of k$$$k$$$ doesn't exceed 3⋅105$$$3 \\cdot 10^5$$$."
     ],
     "output": [
       "For each test case, print the number of inconvenient pairs."
@@ -31,9 +31,9 @@
     "note": [
       "The second test case is pictured below:",
       "![](https://espresso.codeforces.com/de51d237420786306769c01484c6ead4ac13b259.png)",
-      "For example, points 3%%ZSMJ51%% and 4%%ZSMJ52%% form an inconvenient pair, since the shortest path between them (shown red and equal to 7%%ZSMJ53%%) is greater than its Manhattan distance (equal to 5%%ZSMJ54%%).",
-      "Points 3%%ZSMJ55%% and 5%%ZSMJ56%% also form an inconvenient pair: the shortest path equal to 1000001%%ZSMJ57%% (shown green) is greater than the Manhattan distance equal to 999999%%ZSMJ58%%.",
-      "But points 5%%ZSMJ59%% and 9%%ZSMJ60%% don't form an inconvenient pair, since the shortest path (shown purple) is equal to its Manhattan distance."
+      "For example, points 3$$$3$$$ and 4$$$4$$$ form an inconvenient pair, since the shortest path between them (shown red and equal to 7$$$7$$$) is greater than its Manhattan distance (equal to 5$$$5$$$).",
+      "Points 3$$$3$$$ and 5$$$5$$$ also form an inconvenient pair: the shortest path equal to 1000001$$$1000001$$$ (shown green) is greater than the Manhattan distance equal to 999999$$$999999$$$.",
+      "But points 5$$$5$$$ and 9$$$9$$$ don't form an inconvenient pair, since the shortest path (shown purple) is equal to its Manhattan distance."
     ]
   },
   "examples": [
@@ -41,5 +41,34 @@
       "input": "2\n2 2 4\n0 1000000\n0 1000000\n1 0\n1000000 1\n999999 1000000\n0 999999\n5 4 9\n0 1 2 6 1000000\n0 4 8 1000000\n4 4\n2 5\n2 2\n6 3\n1000000 1\n3 8\n5 8\n8 8\n6 8",
       "output": "2\n5"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

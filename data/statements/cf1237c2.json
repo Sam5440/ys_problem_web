@@ -9,23 +9,23 @@
   "memoryLimit": "512 megabytes",
   "sections": {
     "legend": [
-      "This is a harder version of the problem. In this version, n≤50000%%ZSMJ0%%.",
-      "There are n%%ZSMJ1%% distinct points in three-dimensional space numbered from 1%%ZSMJ2%% to n%%ZSMJ3%%. The i%%ZSMJ4%%-th point has coordinates (xi,yi,zi)%%ZSMJ5%%. The number of points n%%ZSMJ6%% is even.",
-      "You'd like to remove all n%%ZSMJ7%% points using a sequence of n2%%ZSMJ8%% snaps. In one snap, you can remove any two points a%%ZSMJ9%% and b%%ZSMJ10%% that have not been removed yet and form a perfectly balanced pair. A pair of points a%%ZSMJ11%% and b%%ZSMJ12%% is perfectly balanced if no other point c%%ZSMJ13%% (that has not been removed yet) lies within the axis-aligned minimum bounding box of points a%%ZSMJ14%% and b%%ZSMJ15%%.",
-      "Formally, point c%%ZSMJ16%% lies within the axis-aligned minimum bounding box of points a%%ZSMJ17%% and b%%ZSMJ18%% if and only if min%%ZSMJ19%%, \\min(y_a, y_b) \\le y_c \\le \\max(y_a, y_b)%%ZSMJ20%%, and \\min(z_a, z_b) \\le z_c \\le \\max(z_a, z_b)%%ZSMJ21%%. Note that the bounding box might be degenerate.",
-      "Find a way to remove all points in \\frac{n}{2}%%ZSMJ22%% snaps."
+      "This is a harder version of the problem. In this version, n≤50000$$$n \\le 50\\,000$$$.",
+      "There are n$$$n$$$ distinct points in three-dimensional space numbered from 1$$$1$$$ to n$$$n$$$. The i$$$i$$$-th point has coordinates (xi,yi,zi)$$$(x_i, y_i, z_i)$$$. The number of points n$$$n$$$ is even.",
+      "You'd like to remove all n$$$n$$$ points using a sequence of n2$$$\\frac{n}{2}$$$ snaps. In one snap, you can remove any two points a$$$a$$$ and b$$$b$$$ that have not been removed yet and form a perfectly balanced pair. A pair of points a$$$a$$$ and b$$$b$$$ is perfectly balanced if no other point c$$$c$$$ (that has not been removed yet) lies within the axis-aligned minimum bounding box of points a$$$a$$$ and b$$$b$$$.",
+      "Formally, point c$$$c$$$ lies within the axis-aligned minimum bounding box of points a$$$a$$$ and b$$$b$$$ if and only if min(xa,xb)≤xc≤max(xa,xb)$$$\\min(x_a, x_b) \\le x_c \\le \\max(x_a, x_b)$$$, min(ya,yb)≤yc≤max(ya,yb)$$$\\min(y_a, y_b) \\le y_c \\le \\max(y_a, y_b)$$$, and min(za,zb)≤zc≤max(za,zb)$$$\\min(z_a, z_b) \\le z_c \\le \\max(z_a, z_b)$$$. Note that the bounding box might be degenerate.",
+      "Find a way to remove all points in n2$$$\\frac{n}{2}$$$ snaps."
     ],
     "input": [
-      "The first line contains a single integer n%%ZSMJ23%% (2 \\le n \\le 50\\,000%%ZSMJ24%%; n%%ZSMJ25%% is even), denoting the number of points.",
-      "Each of the next n%%ZSMJ26%% lines contains three integers x_i%%ZSMJ27%%, y_i%%ZSMJ28%%, z_i%%ZSMJ29%% (-10^8 \\le x_i, y_i, z_i \\le 10^8%%ZSMJ30%%), denoting the coordinates of the i%%ZSMJ31%%-th point.",
+      "The first line contains a single integer n$$$n$$$ (2≤n≤50000$$$2 \\le n \\le 50\\,000$$$; n$$$n$$$ is even), denoting the number of points.",
+      "Each of the next n$$$n$$$ lines contains three integers xi$$$x_i$$$, yi$$$y_i$$$, zi$$$z_i$$$ (−108≤xi,yi,zi≤108$$$-10^8 \\le x_i, y_i, z_i \\le 10^8$$$), denoting the coordinates of the i$$$i$$$-th point.",
       "No two points coincide."
     ],
     "output": [
-      "Output \\frac{n}{2}%%ZSMJ32%% pairs of integers a_i, b_i%%ZSMJ33%% (1 \\le a_i, b_i \\le n%%ZSMJ34%%), denoting the indices of points removed on snap i%%ZSMJ35%%. Every integer between 1%%ZSMJ36%% and n%%ZSMJ37%%, inclusive, must appear in your output exactly once.",
+      "Output n2$$$\\frac{n}{2}$$$ pairs of integers ai,bi$$$a_i, b_i$$$ (1≤ai,bi≤n$$$1 \\le a_i, b_i \\le n$$$), denoting the indices of points removed on snap i$$$i$$$. Every integer between 1$$$1$$$ and n$$$n$$$, inclusive, must appear in your output exactly once.",
       "We can show that it is always possible to remove all points. If there are many solutions, output any of them."
     ],
     "note": [
-      "In the first example, here is what points and their corresponding bounding boxes look like (drawn in two dimensions for simplicity, as all points lie on z = 0%%ZSMJ38%% plane). Note that order of removing matters: for example, points 5%%ZSMJ39%% and 1%%ZSMJ40%% don't form a perfectly balanced pair initially, but they do after point 3%%ZSMJ41%% is removed.",
+      "In the first example, here is what points and their corresponding bounding boxes look like (drawn in two dimensions for simplicity, as all points lie on z=0$$$z = 0$$$ plane). Note that order of removing matters: for example, points 5$$$5$$$ and 1$$$1$$$ don't form a perfectly balanced pair initially, but they do after point 3$$$3$$$ is removed.",
       "![](https://espresso.codeforces.com/167454c917d62a801abf3bf4c75746f11b6da23e.png)"
     ]
   },
@@ -38,5 +38,27 @@
       "input": "8\n0 1 1\n1 0 1\n1 1 0\n1 1 1\n2 2 2\n3 2 2\n2 3 2\n2 2 3",
       "output": "4 5\n1 6\n2 7\n3 8"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

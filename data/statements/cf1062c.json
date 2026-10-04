@@ -10,23 +10,23 @@
   "sections": {
     "legend": [
       "JATC loves Banh-mi (a Vietnamese food). His affection for Banh-mi is so much that he always has it for breakfast. This morning, as usual, he buys a Banh-mi and decides to enjoy it in a special way.",
-      "First, he splits the Banh-mi into n%%ZSMJ0%% parts, places them on a row and numbers them from 1%%ZSMJ1%% through n%%ZSMJ2%%. For each part i%%ZSMJ3%%, he defines the deliciousness of the part as xi∈{0,1}%%ZSMJ4%%. JATC's going to eat those parts one by one. At each step, he chooses arbitrary remaining part and eats it. Suppose that part is the i%%ZSMJ5%%-th part then his enjoyment of the Banh-mi will increase by xi%%ZSMJ6%% and the deliciousness of all the remaining parts will also increase by xi%%ZSMJ7%%. The initial enjoyment of JATC is equal to 0%%ZSMJ8%%.",
-      "For example, suppose the deliciousness of 3%%ZSMJ9%% parts are [0,1,0]%%ZSMJ10%%. If JATC eats the second part then his enjoyment will become 1%%ZSMJ11%% and the deliciousness of remaining parts will become [1,_,1]%%ZSMJ12%%. Next, if he eats the first part then his enjoyment will become 2%%ZSMJ13%% and the remaining parts will become [_,_,2]%%ZSMJ14%%. After eating the last part, JATC's enjoyment will become 4%%ZSMJ15%%.",
-      "However, JATC doesn't want to eat all the parts but to save some for later. He gives you q%%ZSMJ16%% queries, each of them consisting of two integers li%%ZSMJ17%% and ri%%ZSMJ18%%. For each query, you have to let him know what is the maximum enjoyment he can get if he eats all the parts with indices in the range [li,ri]%%ZSMJ19%% in some order.",
-      "All the queries are independent of each other. Since the answer to the query could be very large, print it modulo 109+7%%ZSMJ20%%."
+      "First, he splits the Banh-mi into n$$$n$$$ parts, places them on a row and numbers them from 1$$$1$$$ through n$$$n$$$. For each part i$$$i$$$, he defines the deliciousness of the part as xi∈{0,1}$$$x_i \\in \\{0, 1\\}$$$. JATC's going to eat those parts one by one. At each step, he chooses arbitrary remaining part and eats it. Suppose that part is the i$$$i$$$-th part then his enjoyment of the Banh-mi will increase by xi$$$x_i$$$ and the deliciousness of all the remaining parts will also increase by xi$$$x_i$$$. The initial enjoyment of JATC is equal to 0$$$0$$$.",
+      "For example, suppose the deliciousness of 3$$$3$$$ parts are [0,1,0]$$$[0, 1, 0]$$$. If JATC eats the second part then his enjoyment will become 1$$$1$$$ and the deliciousness of remaining parts will become [1,_,1]$$$[1, \\_, 1]$$$. Next, if he eats the first part then his enjoyment will become 2$$$2$$$ and the remaining parts will become [_,_,2]$$$[\\_, \\_, 2]$$$. After eating the last part, JATC's enjoyment will become 4$$$4$$$.",
+      "However, JATC doesn't want to eat all the parts but to save some for later. He gives you q$$$q$$$ queries, each of them consisting of two integers li$$$l_i$$$ and ri$$$r_i$$$. For each query, you have to let him know what is the maximum enjoyment he can get if he eats all the parts with indices in the range [li,ri]$$$[l_i, r_i]$$$ in some order.",
+      "All the queries are independent of each other. Since the answer to the query could be very large, print it modulo 109+7$$$10^9+7$$$."
     ],
     "input": [
-      "The first line contains two integers n%%ZSMJ21%% and q%%ZSMJ22%% (1≤n,q≤100000%%ZSMJ23%%).",
-      "The second line contains a string of n%%ZSMJ24%% characters, each character is either '0' or '1'. The i%%ZSMJ25%%-th character defines the deliciousness of the i%%ZSMJ26%%-th part.",
-      "Each of the following q%%ZSMJ27%% lines contains two integers li%%ZSMJ28%% and ri%%ZSMJ29%% (1≤li≤ri≤n%%ZSMJ30%%) — the segment of the corresponding query."
+      "The first line contains two integers n$$$n$$$ and q$$$q$$$ (1≤n,q≤100000$$$1 \\le n, q \\le 100\\,000$$$).",
+      "The second line contains a string of n$$$n$$$ characters, each character is either '0' or '1'. The i$$$i$$$-th character defines the deliciousness of the i$$$i$$$-th part.",
+      "Each of the following q$$$q$$$ lines contains two integers li$$$l_i$$$ and ri$$$r_i$$$ (1≤li≤ri≤n$$$1 \\le l_i \\le r_i \\le n$$$) — the segment of the corresponding query."
     ],
     "output": [
-      "Print q%%ZSMJ31%% lines, where i%%ZSMJ32%%-th of them contains a single integer — the answer to the i%%ZSMJ33%%-th query modulo 109+7%%ZSMJ34%%."
+      "Print q$$$q$$$ lines, where i$$$i$$$-th of them contains a single integer — the answer to the i$$$i$$$-th query modulo 109+7$$$10^9 + 7$$$."
     ],
     "note": [
       "In the first example:",
-      "For query 1%%ZSMJ35%%: One of the best ways for JATC to eats those parts is in this order: 1%%ZSMJ36%%, 4%%ZSMJ37%%, 3%%ZSMJ38%%, 2%%ZSMJ39%%.",
-      "For query 2%%ZSMJ40%%: Both 3%%ZSMJ41%%, 4%%ZSMJ42%% and 4%%ZSMJ43%%, 3%%ZSMJ44%% ordering give the same answer.",
+      "For query 1$$$1$$$: One of the best ways for JATC to eats those parts is in this order: 1$$$1$$$, 4$$$4$$$, 3$$$3$$$, 2$$$2$$$.",
+      "For query 2$$$2$$$: Both 3$$$3$$$, 4$$$4$$$ and 4$$$4$$$, 3$$$3$$$ ordering give the same answer.",
       "In the second example, any order of eating parts leads to the same answer."
     ]
   },
@@ -39,5 +39,28 @@
       "input": "3 2\n111\n1 2\n3 3",
       "output": "3\n1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

@@ -9,23 +9,23 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "Deep in Busy Beaver's robotics lab sits an experimental Busy Beaver machine. Given a positive integer X%%ZSMJ0%% written in base B%%ZSMJ1%%, it attempts to produce two positive integers Y%%ZSMJ2%% and Z%%ZSMJ3%% such that X+Y=Z%%ZSMJ4%%, and the base-B%%ZSMJ5%% representations of Y%%ZSMJ6%% and Z%%ZSMJ7%% contain exactly the same multiset of digits.",
-      "The machine never produces leading zeroes and never outputs numbers with 2⋅105%%ZSMJ8%% or more digits. It has recently stopped functioning, so your task is to determine whether such Y%%ZSMJ9%% and Z%%ZSMJ10%% exist, and to output them if they do. You are given the digits of X%%ZSMJ11%% in base B%%ZSMJ12%% without leading zeroes."
+      "Deep in Busy Beaver's robotics lab sits an experimental Busy Beaver machine. Given a positive integer X$$$X$$$ written in base B$$$B$$$, it attempts to produce two positive integers Y$$$Y$$$ and Z$$$Z$$$ such that X+Y=Z$$$X + Y = Z$$$, and the base-B$$$B$$$ representations of Y$$$Y$$$ and Z$$$Z$$$ contain exactly the same multiset of digits.",
+      "The machine never produces leading zeroes and never outputs numbers with 2⋅105$$$2 \\cdot 10^5$$$ or more digits. It has recently stopped functioning, so your task is to determine whether such Y$$$Y$$$ and Z$$$Z$$$ exist, and to output them if they do. You are given the digits of X$$$X$$$ in base B$$$B$$$ without leading zeroes."
     ],
     "input": [
-      "The first line contains a single integer T%%ZSMJ13%% (1≤T≤100%%ZSMJ14%%), the number of test cases.",
-      "Each test case consists of two lines. The first line of each test case contains two integers N%%ZSMJ15%% and B%%ZSMJ16%% (1≤N≤105%%ZSMJ17%%; 2≤B≤105%%ZSMJ18%%).",
-      "The second line of each test case contains N%%ZSMJ19%% integers a1,a2,…,aN%%ZSMJ20%% (0≤ai≤B−1%%ZSMJ21%%; a1≠0%%ZSMJ22%%), representing the digits of X%%ZSMJ23%% in base B%%ZSMJ24%%: X=a1BN−1+a2BN−2+⋯+aN.%%ZSMJ25%%",
-      "The sum of N%%ZSMJ26%% over all test cases does not exceed 2⋅105%%ZSMJ27%%."
+      "The first line contains a single integer T$$$T$$$ (1≤T≤100$$$1 \\le T \\le 100$$$), the number of test cases.",
+      "Each test case consists of two lines. The first line of each test case contains two integers N$$$N$$$ and B$$$B$$$ (1≤N≤105$$$1 \\le N \\le 10^5$$$; 2≤B≤105$$$2 \\le B \\le 10^5$$$).",
+      "The second line of each test case contains N$$$N$$$ integers a1,a2,…,aN$$$a_1, a_2, \\ldots, a_N$$$ (0≤ai≤B−1$$$0 \\le a_i \\le B-1$$$; a1≠0$$$a_1 \\ne 0$$$), representing the digits of X$$$X$$$ in base B$$$B$$$: X=a1BN−1+a2BN−2+⋯+aN.\n$$ X = a_1 B^{N-1} + a_2 B^{N-2} + \\cdots + a_N. $$",
+      "The sum of N$$$N$$$ over all test cases does not exceed 2⋅105$$$2 \\cdot 10^5$$$."
     ],
     "output": [
       "For each test case, if no valid solution exists, output a single line containing NO.",
-      "Otherwise, output YES on the first line. On the second line output an integer M%%ZSMJ28%% (1≤M≤2⋅105%%ZSMJ29%%), the number of digits in both Y%%ZSMJ30%% and Z%%ZSMJ31%%.",
-      "On the next line output M%%ZSMJ32%% digits p1,p2,…,pM%%ZSMJ33%% (0≤pi≤B−1%%ZSMJ34%%; p1≠0%%ZSMJ35%%), representing Y=p1BM−1+p2BM−2+⋯+pM.%%ZSMJ36%% On the following line output M%%ZSMJ37%% digits q1,q2,…,qM%%ZSMJ38%% (0≤qi≤B−1%%ZSMJ39%%; q1≠0%%ZSMJ40%%), representing Z=q1BM−1+q2BM−2+⋯+qM.%%ZSMJ41%% The digit sequences (p1,…,pM)%%ZSMJ42%% and (q1,…,qM)%%ZSMJ43%% must use exactly the same multiset of digits, and the integers they represent must satisfy X+Y=Z%%ZSMJ44%%. You may print YES and NO in any mixture of uppercase and lowercase letters."
+      "Otherwise, output YES on the first line. On the second line output an integer M$$$M$$$ (1≤M≤2⋅105$$$1 \\le M \\le 2 \\cdot 10^5$$$), the number of digits in both Y$$$Y$$$ and Z$$$Z$$$.",
+      "On the next line output M$$$M$$$ digits p1,p2,…,pM$$$p_1, p_2, \\ldots, p_M$$$ (0≤pi≤B−1$$$0 \\le p_i \\le B-1$$$; p1≠0$$$p_1 \\ne 0$$$), representing Y=p1BM−1+p2BM−2+⋯+pM.\n$$ Y = p_1 B^{M-1} + p_2 B^{M-2} + \\cdots + p_M. $$ On the following line output M$$$M$$$ digits q1,q2,…,qM$$$q_1, q_2, \\ldots, q_M$$$ (0≤qi≤B−1$$$0 \\le q_i \\le B-1$$$; q1≠0$$$q_1 \\ne 0$$$), representing Z=q1BM−1+q2BM−2+⋯+qM.\n$$ Z = q_1 B^{M-1} + q_2 B^{M-2} + \\cdots + q_M. $$ The digit sequences (p1,…,pM)$$$(p_1, \\ldots, p_M)$$$ and (q1,…,qM)$$$(q_1, \\ldots, q_M)$$$ must use exactly the same multiset of digits, and the integers they represent must satisfy X+Y=Z$$$X + Y = Z$$$. You may print YES and NO in any mixture of uppercase and lowercase letters."
     ],
     "note": [
-      "In the first test case, with B=10%%ZSMJ45%% and X=36%%ZSMJ46%%, a valid solution is Y=15%%ZSMJ47%% and Z=51%%ZSMJ48%%, since 51=36+15%%ZSMJ49%% and both numbers use the digits {1,5}%%ZSMJ50%%.",
-      "In the second test case, with B=5%%ZSMJ51%% and X%%ZSMJ52%% given by digits (1,4,3,4)5%%ZSMJ53%%, X=1⋅53+4⋅52+3⋅51+4=244.%%ZSMJ54%% One valid pair is Y=(1,4,3,2)5=242,Z=(3,4,2,1)5=486,%%ZSMJ55%% which share the digit multiset {1,2,3,4}%%ZSMJ56%% and satisfy X+Y=Z%%ZSMJ57%%."
+      "In the first test case, with B=10$$$B = 10$$$ and X=36$$$X = 36$$$, a valid solution is Y=15$$$Y = 15$$$ and Z=51$$$Z = 51$$$, since 51=36+15$$$51 = 36 + 15$$$ and both numbers use the digits {1,5}$$$\\{1,5\\}$$$.",
+      "In the second test case, with B=5$$$B = 5$$$ and X$$$X$$$ given by digits (1,4,3,4)5$$$(1, 4, 3, 4)_5$$$, X=1⋅53+4⋅52+3⋅51+4=244.\n$$ X = 1 \\cdot 5^3 + 4 \\cdot 5^2 + 3 \\cdot 5^1 + 4 = 244. $$ One valid pair is Y=(1,4,3,2)5=242,Z=(3,4,2,1)5=486,\n$$ Y = (1, 4, 3, 2)_5 = 242, \\qquad Z = (3, 4, 2, 1)_5 = 486, $$ which share the digit multiset {1,2,3,4}$$$\\{1,2,3,4\\}$$$ and satisfy X+Y=Z$$$X + Y = Z$$$."
     ]
   },
   "examples": [
@@ -33,5 +33,26 @@
       "input": "3\n2 10\n3 6\n4 5\n1 4 3 4\n5 12\n4 8 8 3 1",
       "output": "YES\n2\n1 5\n5 1\nYES\n4\n1 4 3 2\n3 4 2 1\nNO"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

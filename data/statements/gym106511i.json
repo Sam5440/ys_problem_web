@@ -11,28 +11,28 @@
     "legend": [
       "This is an interactive problem.",
       "The Entomology department at Columbia wants to expand its colony of ants.",
-      "The colony currently consists of n%%ZSMJ0%% male and n%%ZSMJ1%% female ants, each numbered 1%%ZSMJ2%% through n%%ZSMJ3%%. The scientists want to find a female ant to mate with each male ant. Since ants are polyandrous, one female can mate with multiple males at once.",
+      "The colony currently consists of n$$$n$$$ male and n$$$n$$$ female ants, each numbered 1$$$1$$$ through n$$$n$$$. The scientists want to find a female ant to mate with each male ant. Since ants are polyandrous, one female can mate with multiple males at once.",
       "Two ants can mate only if they are attracted to each other. One male ant may be attracted to multiple female ants, and vice versa.",
-      "To find which pairs of ants are attracted to each other, the scientists can run experiments with the aid of an AI (Ant Inspection) tool by Ant-ropic. In one experiment, they take x%%ZSMJ4%% male ants and y%%ZSMJ5%% female ants, and place them in a cell. The AI observes their behaviour and reports one pair of ants which are attracted to each other, or that none exist. The cost of this experiment is x+y%%ZSMJ6%% dollars.",
+      "To find which pairs of ants are attracted to each other, the scientists can run experiments with the aid of an AI (Ant Inspection) tool by Ant-ropic. In one experiment, they take x$$$x$$$ male ants and y$$$y$$$ female ants, and place them in a cell. The AI observes their behaviour and reports one pair of ants which are attracted to each other, or that none exist. The cost of this experiment is x+y$$$x + y$$$ dollars.",
       "More formally, you can make the following queries to the interactor:",
-      "\"? xi1i2…ixyj1j2…jy%%ZSMJ7%%\" — run the experiment on male ants i1,i2,…,ix%%ZSMJ8%% and female ants j1,j2,…,jy%%ZSMJ9%%. The interactor replies with some pair of attracted ants \"ikjℓ%%ZSMJ10%%\", meaning that ik%%ZSMJ11%%-th male ant can mate with jℓ%%ZSMJ12%%-th female ant, or \"−1−1%%ZSMJ13%%\" if no such pair exists. The same pair may be reported in multiple experiments. The cost of this query is x+y%%ZSMJ14%% dollars.",
-      "After running some experiments, the scientists need to report, for each male ant, which female ant it can mate with, or −1%%ZSMJ15%% if no such ant exists. Since the scientists are on a budget, the total cost of all experiments may not exceed 35000%%ZSMJ16%% dollars."
+      "\"? xi1i2…ixyj1j2…jy$$$x \\; i_1 \\; i_2 \\ldots i_x \\; y \\; j_1 \\; j_2 \\; \\ldots j_y$$$\" — run the experiment on male ants i1,i2,…,ix$$$i_1, i_2, \\ldots, i_x$$$ and female ants j1,j2,…,jy$$$j_1, j_2, \\ldots, j_y$$$. The interactor replies with some pair of attracted ants \"ikjℓ$$$i_k \\; j_\\ell$$$\", meaning that ik$$$i_k$$$-th male ant can mate with jℓ$$$j_\\ell$$$-th female ant, or \"−1−1$$$-1 \\; -1$$$\" if no such pair exists. The same pair may be reported in multiple experiments. The cost of this query is x+y$$$x + y$$$ dollars.",
+      "After running some experiments, the scientists need to report, for each male ant, which female ant it can mate with, or −1$$$-1$$$ if no such ant exists. Since the scientists are on a budget, the total cost of all experiments may not exceed 35000$$$35 \\, 000$$$ dollars."
     ],
     "input": [
-      "The only line of input contains an integer n%%ZSMJ17%% (1≤n≤400%%ZSMJ18%%) — the size of the male and the female ant colonies.",
+      "The only line of input contains an integer n$$$n$$$ (1≤n≤400$$$1 \\leq n \\leq 400$$$) — the size of the male and the female ant colonies.",
       "After you read this line of input, the interaction begins with your first query.",
       "To make a query, output a line (without quotes) in the following format:",
-      "\"? xi1i2…ixyj1j2…jy%%ZSMJ19%%\" (1≤x,y≤n%%ZSMJ20%%, 1≤i1,i2,…ix≤n%%ZSMJ21%%, 1≤j1,j2,…jy≤n%%ZSMJ22%%).",
-      "After each query, read two space-separated integers — the answer to the query. If an attracted pair exists, the answer will be \"ikjℓ%%ZSMJ25%%\" for some k%%ZSMJ26%% and ℓ%%ZSMJ27%% (1≤k≤x%%ZSMJ28%%, 1≤ℓ≤y%%ZSMJ29%%), indicating the attracted pair. Otherwise, the answer will be \"−1−1%%ZSMJ30%%\".",
-      "The cost of this query is x+y%%ZSMJ31%%.",
-      "The total cost of all queries must not exceed 35000%%ZSMJ32%%.",
-      "An answer to the problem is a sequence p1,p2,…,pn%%ZSMJ33%%, where pi%%ZSMJ34%% is the index of a female ant with which the i%%ZSMJ35%%-th male ant can mate, or −1%%ZSMJ36%% if no such ant exists.",
+      "\"? xi1i2…ixyj1j2…jy$$$x \\; i_1 \\; i_2 \\ldots i_x \\; y \\; j_1 \\; j_2 \\; \\ldots j_y$$$\" (1≤x,y≤n$$$1 \\leq x, y \\leq n$$$, 1≤i1,i2,…ix≤n$$$1 \\leq i_1, i_2, \\ldots i_x \\leq n$$$, 1≤j1,j2,…jy≤n$$$1 \\leq j_1, j_2, \\ldots j_y \\leq n$$$).",
+      "After each query, read two space-separated integers — the answer to the query. If an attracted pair exists, the answer will be \"ikjℓ$$$i_k \\; j_\\ell$$$\" for some k$$$k$$$ and ℓ$$$\\ell$$$ (1≤k≤x$$$1 \\leq k \\leq x$$$, 1≤ℓ≤y$$$1 \\leq \\ell \\leq y$$$), indicating the attracted pair. Otherwise, the answer will be \"−1−1$$$-1 \\; -1$$$\".",
+      "The cost of this query is x+y$$$x + y$$$.",
+      "The total cost of all queries must not exceed 35000$$$35 \\, 000$$$.",
+      "An answer to the problem is a sequence p1,p2,…,pn$$$p_1, p_2, \\ldots, p_n$$$, where pi$$$p_i$$$ is the index of a female ant with which the i$$$i$$$-th male ant can mate, or −1$$$-1$$$ if no such ant exists.",
       "Once you have determined an answer to the problem, print the line (without quotes) in the following format:",
-      "\"! p1p2…pn%%ZSMJ37%%\" (pi=−1%%ZSMJ38%% or 1≤pi≤n%%ZSMJ39%%)",
+      "\"! p1p2…pn$$$p_1 \\; p_2 \\ldots p_n$$$\" (pi=−1$$$p_i = -1$$$ or 1≤pi≤n$$$1 \\leq p_i \\leq n$$$)",
       "If there are multiple correct answers, output any.",
       "After this, terminate the program.",
       "The interactor in this task is not adaptive. In other words, the pairs of attracted ants do not change throughout the interaction.",
-      "If you make queries of total cost more than 35000%%ZSMJ40%%, your program must terminate immediately, and you will receive the Wrong Answer verdict. Otherwise, you can get an arbitrary verdict because your solution will continue to read from a closed stream.",
+      "If you make queries of total cost more than 35000$$$35 \\, 000$$$, your program must terminate immediately, and you will receive the Wrong Answer verdict. Otherwise, you can get an arbitrary verdict because your solution will continue to read from a closed stream.",
       "After printing each line, do not forget to output the end of line and flush the output buffer. Otherwise, you will receive the Idleness Limit Exceeded verdict. To flush, use:",
       "fflush(stdout) or cout.flush() in C++;",
       "System.out.flush() in Java;",
@@ -41,7 +41,7 @@
     ],
     "output": [],
     "note": [
-      "In the sample test case, male ant 1%%ZSMJ41%% is attracted to both female ants, and male ant 2%%ZSMJ42%% is attracted to none. In the first query, the AI reveals one of the two attractions. In the second query, no attractions are found. The total cost of these queries is 6%%ZSMJ43%%."
+      "In the sample test case, male ant 1$$$1$$$ is attracted to both female ants, and male ant 2$$$2$$$ is attracted to none. In the first query, the AI reveals one of the two attractions. In the second query, no attractions are found. The total cost of these queries is 6$$$6$$$."
     ]
   },
   "examples": [
@@ -49,5 +49,42 @@
       "input": "2\n\n1 2\n\n-1 -1",
       "output": "\n? 1 1 2 1 2\n\n? 1 2 2 1 2\n\n! 2 -1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [],
+    "note": [
+      null
+    ]
+  }
 }

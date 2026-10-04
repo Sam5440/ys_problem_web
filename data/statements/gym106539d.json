@@ -9,39 +9,39 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "There are N%%ZSMJ0%% players participating in a game involving a glass bridge. The bridge consists of M%%ZSMJ1%% steps, and each step has two glass panels: one is safe, and the other is fragile and will break if stepped upon.",
+      "There are N$$$N$$$ players participating in a game involving a glass bridge. The bridge consists of M$$$M$$$ steps, and each step has two glass panels: one is safe, and the other is fragile and will break if stepped upon.",
       "![](https://espresso.codeforces.com/7686e9c5b9d12e8fcd15840fc2709f966612f285.png)",
-      "The players cross the bridge one at a time, following their position in a queue from 1%%ZSMJ2%% to N%%ZSMJ3%%. The rules are as follows:",
-      "Players must cross the bridge in the sequence of their queue positions (1,2,…,N%%ZSMJ4%%).",
-      "Each step i%%ZSMJ5%% has one safe panel and one fragile panel.",
-      "When a player's turn comes, they start from step 1%%ZSMJ6%% and move forward.",
+      "The players cross the bridge one at a time, following their position in a queue from 1$$$1$$$ to N$$$N$$$. The rules are as follows:",
+      "Players must cross the bridge in the sequence of their queue positions (1,2,…,N$$$1, 2, \\dots, N$$$).",
+      "Each step i$$$i$$$ has one safe panel and one fragile panel.",
+      "When a player's turn comes, they start from step 1$$$1$$$ and move forward.",
       "If a player reaches a step that was previously cleared by a predecessor, they simply step on the known safe panel and continue.",
-      "If a player reaches a step i%%ZSMJ7%% that has not been successfully crossed yet:   They must choose one of the two panels.",
-      "If they choose the fragile panel, they are eliminated. Their turn ends, and the next player in the queue begins their attempt from step 1%%ZSMJ8%%, now knowing which panel at step i%%ZSMJ9%% is the safe one.",
-      "If they choose the safe panel, they proceed to step i+1%%ZSMJ10%%.",
-      "The game ends immediately when a player successfully lands on the safe panel of the M%%ZSMJ11%%-th step. That player is the sole winner.",
-      "Every player is rational and will use all information revealed by previous players. If a player reaches a step where the safe panel is unknown, they will choose one of the two panels with a 50%%%ZSMJ12%% probability of success.",
-      "You have the chance to bribe the organizers to pick any starting position from 1%%ZSMJ13%% to N%%ZSMJ14%%. Your goal is to choose the position k%%ZSMJ15%% that maximizes your probability of being the sole winner. If multiple positions yield the same maximum probability, choose any such k%%ZSMJ16%%."
+      "If a player reaches a step i$$$i$$$ that has not been successfully crossed yet:   They must choose one of the two panels.",
+      "If they choose the fragile panel, they are eliminated. Their turn ends, and the next player in the queue begins their attempt from step 1$$$1$$$, now knowing which panel at step i$$$i$$$ is the safe one.",
+      "If they choose the safe panel, they proceed to step i+1$$$i+1$$$.",
+      "The game ends immediately when a player successfully lands on the safe panel of the M$$$M$$$-th step. That player is the sole winner.",
+      "Every player is rational and will use all information revealed by previous players. If a player reaches a step where the safe panel is unknown, they will choose one of the two panels with a 50%$$$50\\%$$$ probability of success.",
+      "You have the chance to bribe the organizers to pick any starting position from 1$$$1$$$ to N$$$N$$$. Your goal is to choose the position k$$$k$$$ that maximizes your probability of being the sole winner. If multiple positions yield the same maximum probability, choose any such k$$$k$$$."
     ],
     "input": [
-      "The first line contains an integer t%%ZSMJ17%% (1≤t≤2⋅105%%ZSMJ18%%) — the number of test cases.",
+      "The first line contains an integer t$$$t$$$ (1≤t≤2⋅105$$$1 \\le t \\le 2 \\cdot 10^5$$$) — the number of test cases.",
       "Each test case consists of a single line containing two integers:",
-      "N%%ZSMJ19%% (1≤N≤2⋅105%%ZSMJ20%%) — total number of players.",
-      "M%%ZSMJ21%% (1≤M≤2⋅105%%ZSMJ22%%) — number of steps on the bridge."
+      "N$$$N$$$ (1≤N≤2⋅105$$$1 \\le N \\le 2 \\cdot 10^5$$$) — total number of players.",
+      "M$$$M$$$ (1≤M≤2⋅105$$$1 \\le M \\le 2 \\cdot 10^5$$$) — number of steps on the bridge."
     ],
     "output": [
-      "For each test case, output a single integer — the optimal position k%%ZSMJ23%% (1≤k≤N%%ZSMJ24%%) to maximize your winning probability."
+      "For each test case, output a single integer — the optimal position k$$$k$$$ (1≤k≤N$$$1 \\le k \\le N$$$) to maximize your winning probability."
     ],
     "note": [
       "The following diagram illustrates the glass bridge for the second test case:",
       "![](https://espresso.codeforces.com/c3b7d6a8023c40db962caefe412a69b2235f3da6.png)",
-      "For the second test case, if you start at position 1%%ZSMJ25%% in the queue, then you must correctly choose the safe panel on both steps. Since each unknown step has a success probability of 1/2%%ZSMJ26%%, your probability of winning is:",
-      "12×12=14=25%.%%ZSMJ27%%",
-      "However, if you start at position 2%%ZSMJ28%%, there are two cases where you win:",
-      "The first player fails on the first step with probability 1/2%%ZSMJ29%%. In this case, the safe panel of the first step becomes known, and you only need to correctly guess the second step. Therefore, your probability of winning in this scenario is: 12×12=14.%%ZSMJ30%%",
-      "The first player successfully crosses the first step and then fails on the second step with probability: 12×12=14.%%ZSMJ31%% In this case, both safe panels become known, so you win with probability 1%%ZSMJ32%%. Therefore, your probability of winning in this scenario is: 14×1=14.%%ZSMJ33%%",
-      "Hence, the total probability of winning when starting at position 2%%ZSMJ34%% is:",
-      "14+14=12=50%.%%ZSMJ35%%"
+      "For the second test case, if you start at position 1$$$1$$$ in the queue, then you must correctly choose the safe panel on both steps. Since each unknown step has a success probability of 1/2$$$1/2$$$, your probability of winning is:",
+      "12×12=14=25%.$$ \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4} = 25\\%. $$",
+      "However, if you start at position 2$$$2$$$, there are two cases where you win:",
+      "The first player fails on the first step with probability 1/2$$$1/2$$$. In this case, the safe panel of the first step becomes known, and you only need to correctly guess the second step. Therefore, your probability of winning in this scenario is: 12×12=14.$$ \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}. $$",
+      "The first player successfully crosses the first step and then fails on the second step with probability: 12×12=14.$$ \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}. $$ In this case, both safe panels become known, so you win with probability 1$$$1$$$. Therefore, your probability of winning in this scenario is: 14×1=14.$$ \\frac{1}{4} \\times 1 = \\frac{1}{4}. $$",
+      "Hence, the total probability of winning when starting at position 2$$$2$$$ is:",
+      "14+14=12=50%.$$ \\frac{1}{4} + \\frac{1}{4} = \\frac{1}{2} = 50\\%. $$"
     ]
   },
   "examples": [
@@ -49,5 +49,42 @@
       "input": "3\n1 1\n2 2\n3 3",
       "output": "1\n2\n3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

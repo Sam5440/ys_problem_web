@@ -9,30 +9,30 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "There is a permutation†%%ZSMJ0%% p%%ZSMJ1%% of size n%%ZSMJ2%% that you are trying to sort. To do so, you may perform up to 20%%ZSMJ3%% operations of the following form:",
-      "Select a subset of distinct indices i1,i2,⋯ik%%ZSMJ4%% such that the value of pi1⊕pi2⊕⋯⊕pik%%ZSMJ5%%, where ⊕%%ZSMJ6%% represents the bitwise XOR operation, is zero.",
-      "Sort the values of p%%ZSMJ7%% on indices i1,i2,⋯ik%%ZSMJ8%%.",
-      "For example, for p=[7,3,4,1,2,6,5]%%ZSMJ9%%, you could choose the indices [2,4,5]%%ZSMJ10%%, since p2⊕p4⊕p5=1⊕2⊕3=0%%ZSMJ11%%. After this operation, p%%ZSMJ12%% would be equal to [7,1,4,2,3,6,5]%%ZSMJ13%%.",
-      "It can be shown that if it is possible to sort the permutation in any number of operations, then it is possible in at most 20%%ZSMJ14%%.",
-      "†%%ZSMJ15%% A permutation of length n%%ZSMJ16%% is an array consisting of n%%ZSMJ17%% distinct integers from 1%%ZSMJ18%% to n%%ZSMJ19%% in arbitrary order. For example, [2,3,1,5,4]%%ZSMJ20%% is a permutation, but [1,2,2]%%ZSMJ21%% is not a permutation (2%%ZSMJ22%% appears twice in the array), and [1,3,4]%%ZSMJ23%% is also not a permutation (n=3%%ZSMJ24%% but there is 4%%ZSMJ25%% in the array)."
+      "There is a permutation†$$$^\\dagger$$$ p$$$p$$$ of size n$$$n$$$ that you are trying to sort. To do so, you may perform up to 20$$$20$$$ operations of the following form:",
+      "Select a subset of distinct indices i1,i2,⋯ik$$$i_1, i_2, \\cdots i_k$$$ such that the value of pi1⊕pi2⊕⋯⊕pik$$$p_{i_1} \\oplus p_{i_2} \\oplus \\cdots \\oplus p_{i_k}$$$, where ⊕$$$\\oplus$$$ represents the bitwise XOR operation, is zero.",
+      "Sort the values of p$$$p$$$ on indices i1,i2,⋯ik$$$i_1, i_2, \\cdots i_k$$$.",
+      "For example, for p=[7,3,4,1,2,6,5]$$$p = [7, 3, 4, 1, 2, 6, 5]$$$, you could choose the indices [2,4,5]$$$[2, 4, 5]$$$, since p2⊕p4⊕p5=1⊕2⊕3=0$$$p_2 \\oplus p_4 \\oplus p_5 = 1 \\oplus 2 \\oplus 3 = 0$$$. After this operation, p$$$p$$$ would be equal to [7,1,4,2,3,6,5]$$$[7, 1, 4, 2, 3, 6, 5]$$$.",
+      "It can be shown that if it is possible to sort the permutation in any number of operations, then it is possible in at most 20$$$20$$$.",
+      "†$$$^\\dagger$$$ A permutation of length n$$$n$$$ is an array consisting of n$$$n$$$ distinct integers from 1$$$1$$$ to n$$$n$$$ in arbitrary order. For example, [2,3,1,5,4]$$$[2, 3, 1, 5, 4]$$$ is a permutation, but [1,2,2]$$$[1, 2, 2]$$$ is not a permutation (2$$$2$$$ appears twice in the array), and [1,3,4]$$$[1, 3, 4]$$$ is also not a permutation (n=3$$$n=3$$$ but there is 4$$$4$$$ in the array)."
     ],
     "input": [
-      "The first line of the input contains a single integer t%%ZSMJ26%% (1≤t≤2⋅105%%ZSMJ27%%) — the number of test cases.",
-      "The first line of each test case contains a single integer n%%ZSMJ28%% (1≤n≤2⋅105%%ZSMJ29%%) — the size of the permutation.",
-      "The second line of each test case will contain n%%ZSMJ30%% distinct integers p1,p2,⋯pn%%ZSMJ31%% (1≤pi≤n%%ZSMJ32%%) — the elements of p%%ZSMJ33%%.",
-      "It is guaranteed that the sum of n%%ZSMJ34%% over all test cases does not exceed 2⋅105%%ZSMJ35%%."
+      "The first line of the input contains a single integer t$$$t$$$ (1≤t≤2⋅105$$$1\\le t\\le 2\\cdot 10^5$$$) — the number of test cases.",
+      "The first line of each test case contains a single integer n$$$n$$$ (1≤n≤2⋅105$$$1\\le n \\le 2\\cdot 10^5$$$) — the size of the permutation.",
+      "The second line of each test case will contain n$$$n$$$ distinct integers p1,p2,⋯pn$$$p_1, p_2, \\cdots p_n$$$ (1≤pi≤n$$$1 \\le p_i \\le n$$$) — the elements of p$$$p$$$.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 2⋅105$$$2\\cdot 10^5$$$."
     ],
     "output": [
-      "For each test case, if there is no solution, print −1%%ZSMJ36%%.",
-      "Otherwise, the first line of output should contain a single integer m%%ZSMJ37%% (0≤m≤20%%ZSMJ38%%) — the number of operations you will perform.",
-      "Each of the next m%%ZSMJ39%% lines should contain an integer k%%ZSMJ40%%, followed by k%%ZSMJ41%% distinct integers i1,i2,⋯ik%%ZSMJ42%% (1≤ij≤n%%ZSMJ43%%) — a description of the operations you will perform, in order. After these operations, the permutation should be sorted.",
+      "For each test case, if there is no solution, print −1$$$-1$$$.",
+      "Otherwise, the first line of output should contain a single integer m$$$m$$$ (0≤m≤20$$$0 \\le m \\le 20$$$) — the number of operations you will perform.",
+      "Each of the next m$$$m$$$ lines should contain an integer k$$$k$$$, followed by k$$$k$$$ distinct integers i1,i2,⋯ik$$$i_1, i_2, \\cdots i_k$$$ (1≤ij≤n$$$1 \\le i_j \\le n$$$) — a description of the operations you will perform, in order. After these operations, the permutation should be sorted.",
       "If there are multiple solutions, you can print any."
     ],
     "note": [
-      "In the first test case, p=[8,6,3,4,9,5,2,7,1]%%ZSMJ44%%. We then perform the following operations, where the red numbers indicate the positions that we choose in the operation:",
-      "[8,6,3,4,9,5,2,7,1]→[8,6,3,4,9,5,2,7,1]→[1,2,3,4,6,5,8,7,9]%%ZSMJ45%% [1,2,3,4,6,5,8,7,9]→[1,2,3,4,6,5,8,7,9]→[1,2,3,4,6,5,7,8,9]%%ZSMJ46%% [1,2,3,4,6,5,7,8,9]→[1,2,3,4,6,5,7,8,9]→[1,2,3,4,5,6,7,8,9]%%ZSMJ47%%",
+      "In the first test case, p=[8,6,3,4,9,5,2,7,1]$$$p=[8, 6, 3, 4, 9, 5, 2, 7, 1]$$$. We then perform the following operations, where the red numbers indicate the positions that we choose in the operation:",
+      "[8,6,3,4,9,5,2,7,1]→[8,6,3,4,9,5,2,7,1]→[1,2,3,4,6,5,8,7,9]\n$$[8, 6, 3, 4, 9, 5, 2, 7, 1] \\rightarrow [\\color{red}8, \\color{red}6, 3, \\color{red}4, \\color{red}9, 5, \\color{red}2, 7, \\color{red}1] \\rightarrow [\\color{red}1, \\color{red}2, 3, \\color{red}4, \\color{red}6, 5, \\color{red}8, 7, \\color{red}9]$$ [1,2,3,4,6,5,8,7,9]→[1,2,3,4,6,5,8,7,9]→[1,2,3,4,6,5,7,8,9]\n$$[1, 2, 3, 4, 6, 5, 8, 7, 9] \\rightarrow [1, 2, 3, 4, \\color{red}6, 5, \\color{red}8, \\color{red}7, \\color{red}9] \\rightarrow [1, 2, 3, 4, \\color{red}6, 5, \\color{red}7, \\color{red}8, \\color{red}9]$$ [1,2,3,4,6,5,7,8,9]→[1,2,3,4,6,5,7,8,9]→[1,2,3,4,5,6,7,8,9]\n$$[1, 2, 3, 4, 6, 5, 7, 8, 9] \\rightarrow [1, 2, \\color{red}3, 4, \\color{red}6, \\color{red}5, 7, 8, 9] \\rightarrow [1, 2, \\color{red}3, 4, \\color{red}5, \\color{red}6, 7, 8, 9]$$",
       "So this process successfully sorts the permutation.",
-      "In the second test case, p%%ZSMJ48%% is already sorted, so there is no need to perform any operations.",
+      "In the second test case, p$$$p$$$ is already sorted, so there is no need to perform any operations.",
       "We can show that the permutation in the third test case cannot be sorted, no matter how many operations we perform."
     ]
   },
@@ -41,5 +41,34 @@
       "input": "3\n9\n8 6 3 4 9 5 2 7 1\n1\n1\n2\n2 1",
       "output": "3\n6 1 2 4 5 7 9\n4 5 7 8 9\n3 3 5 6\n0\n-1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

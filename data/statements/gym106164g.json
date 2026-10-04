@@ -9,24 +9,24 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "In a galaxy far, far away, there are N%%ZSMJ0%% planets. The i%%ZSMJ1%%-th planet is located at coordinates (xi,yi,zi)%%ZSMJ2%%. The planets are connected by a galactic railway system consisting of N−1%%ZSMJ3%% bi-directional railways, forming a tree structure.",
+      "In a galaxy far, far away, there are N$$$N$$$ planets. The i$$$i$$$-th planet is located at coordinates (xi,yi,zi)$$$(x_i,y_i,z_i)$$$. The planets are connected by a galactic railway system consisting of N−1$$$N-1$$$ bi-directional railways, forming a tree structure.",
       "As an agent of the Galactic Adventure Agency, you are planning a promotional campaign. For this campaign, you must choose two planets to highlight. Wanderers can journey between these two planets in two different ways:",
       "By galactic train: Traveling along the unique simple path that connects the two planets in the railway system. Each railway has an associated satisfaction score (it can be negative), and the total satisfaction is the sum of the scores along the path.",
-      "By private rocket: Traveling directly between the two planets along the x%%ZSMJ4%%, y%%ZSMJ5%%, and z%%ZSMJ6%% axes. The satisfaction score for this option is equal to the Manhattan distance between the two planets, i.e. |xi−xj|+|yi−yj|+|zi−zj|%%ZSMJ7%%.",
-      "To please both types of tourists, you want to select a pair of planets (u,v)%%ZSMJ8%% that maximizes the combined satisfaction value, defined as the sum of the train satisfaction and the rocket satisfaction between them.",
+      "By private rocket: Traveling directly between the two planets along the x$$$x$$$, y$$$y$$$, and z$$$z$$$ axes. The satisfaction score for this option is equal to the Manhattan distance between the two planets, i.e. |xi−xj|+|yi−yj|+|zi−zj|$$$|x_i - x_j| + |y_i - y_j| + |z_i - z_j|$$$.",
+      "To please both types of tourists, you want to select a pair of planets (u,v)$$$(u, v)$$$ that maximizes the combined satisfaction value, defined as the sum of the train satisfaction and the rocket satisfaction between them.",
       "Your task is to find this maximum combined satisfaction value."
     ],
     "input": [
-      "The first line of input contains one integer N%%ZSMJ9%% (2≤N≤2⋅105%%ZSMJ10%%) — the number of planets.",
-      "Each of the next N−1%%ZSMJ11%% lines contains three integers, u%%ZSMJ12%%, v%%ZSMJ13%%, and w%%ZSMJ14%%, — a railway between planet u%%ZSMJ15%% and planet v%%ZSMJ16%% with a satisfaction score of w%%ZSMJ17%% (1≤u,v≤N,u≠v,|w|≤109%%ZSMJ18%%). It is guaranteed that these edges form a tree.",
-      "Each of the next N%%ZSMJ19%% lines contains three integers, x%%ZSMJ20%%, y%%ZSMJ21%%, and z%%ZSMJ22%% — the coordinates of the planet u%%ZSMJ23%% (1≤x,y,z≤1014%%ZSMJ24%%)."
+      "The first line of input contains one integer N$$$N$$$ (2≤N≤2⋅105$$$2 \\le N \\le 2 \\cdot 10^5$$$) — the number of planets.",
+      "Each of the next N−1$$$N-1$$$ lines contains three integers, u$$$u$$$, v$$$v$$$, and w$$$w$$$, — a railway between planet u$$$u$$$ and planet v$$$v$$$ with a satisfaction score of w$$$w$$$ (1≤u,v≤N,u≠v,|w|≤109$$$1\\le u,v\\le N , u \\neq v, |w| \\le 10^9$$$). It is guaranteed that these edges form a tree.",
+      "Each of the next N$$$N$$$ lines contains three integers, x$$$x$$$, y$$$y$$$, and z$$$z$$$ — the coordinates of the planet u$$$u$$$ (1≤x,y,z≤1014$$$1\\le x,y,z\\le 10^{14}$$$)."
     ],
     "output": [
       "A line contains one integer — the maximum combined satisfaction value.",
       "If the maximum combined satisfaction value is less than zero, output zero."
     ],
     "note": [
-      "For the example, if you choose planet 1%%ZSMJ25%% and planet 4%%ZSMJ26%%, the train satisfaction is equal to −2+5=3%%ZSMJ27%% and the rocket satisfaction is |8−3|+|3−6|+|2−3|=9%%ZSMJ28%%, the combined satisfaction is equal to 9+3=12%%ZSMJ29%%, which can be shown to be the maximum."
+      "For the example, if you choose planet 1$$$1$$$ and planet 4$$$4$$$, the train satisfaction is equal to −2+5=3$$$-2+5=3$$$ and the rocket satisfaction is |8−3|+|3−6|+|2−3|=9$$$|8-3|+|3-6|+|2-3| = 9$$$, the combined satisfaction is equal to 9+3=12$$$9+3=12$$$, which can be shown to be the maximum."
     ]
   },
   "examples": [
@@ -34,5 +34,27 @@
       "input": "5\n1 2 -2\n2 4 5\n3 4 1\n4 5 -5\n8 3 2\n7 6 1\n8 6 2\n3 6 3\n1 1 1",
       "output": "12"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null
+    ],
+    "note": [
+      null
+    ]
+  }
 }

@@ -9,38 +9,38 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "There are n%%ZSMJ0%% valuable artifacts arranged in a row, where the i%%ZSMJ1%%-th artifact has a cost ci%%ZSMJ2%%. Thomas is planning on stealing some of the artifacts. He is going to iterate through each artifact in order, and steal any artifact whose cost is at least the MEX%%ZSMJ3%% of the artifacts he has already stolen.",
-      "The MEX%%ZSMJ4%% of a set of integers is defined as the smallest non-negative integer which does not occur in the set. For example, the MEX%%ZSMJ5%% of {0,1,2,4}%%ZSMJ6%% is 3%%ZSMJ7%%, and the MEX%%ZSMJ8%% of {1,4,6,8}%%ZSMJ9%% is 0%%ZSMJ10%%.",
-      "For example, if Thomas has previously stolen artifacts with costs of {1,2,1,0,6,5}%%ZSMJ11%%, the next artifact he steals must have a cost of at least 3%%ZSMJ12%%.",
-      "There is a special artifact initially at position k%%ZSMJ13%% in the row, and your goal is to prevent Thomas from stealing it. To do so, you may swap the positions of any pair of artifacts. Is it possible to stop Thomas from stealing the special artifact, and if so, which swap should you make?"
+      "There are n$$$n$$$ valuable artifacts arranged in a row, where the i$$$i$$$-th artifact has a cost ci$$$c_i$$$. Thomas is planning on stealing some of the artifacts. He is going to iterate through each artifact in order, and steal any artifact whose cost is at least the MEX$$$\\operatorname{MEX}$$$ of the artifacts he has already stolen.",
+      "The MEX$$$\\operatorname{MEX}$$$ of a set of integers is defined as the smallest non-negative integer which does not occur in the set. For example, the MEX$$$\\operatorname{MEX}$$$ of {0,1,2,4}$$$\\{0, 1, 2, 4\\}$$$ is 3$$$3$$$, and the MEX$$$\\operatorname{MEX}$$$ of {1,4,6,8}$$$\\{1, 4, 6, 8\\}$$$ is 0$$$0$$$.",
+      "For example, if Thomas has previously stolen artifacts with costs of {1,2,1,0,6,5}$$$\\{1, 2, 1, 0, 6, 5\\}$$$, the next artifact he steals must have a cost of at least 3$$$3$$$.",
+      "There is a special artifact initially at position k$$$k$$$ in the row, and your goal is to prevent Thomas from stealing it. To do so, you may swap the positions of any pair of artifacts. Is it possible to stop Thomas from stealing the special artifact, and if so, which swap should you make?"
     ],
     "input": [
       "Each test consists of multiple test cases.",
-      "The first line of input contains a single integer t%%ZSMJ14%% (1≤t≤104%%ZSMJ15%%) — the number of test cases.",
-      "The first line of each test case contains two integers n%%ZSMJ16%% and k%%ZSMJ17%% (1≤n≤2⋅105%%ZSMJ18%%, 1≤k≤n%%ZSMJ19%%) — the number of artifacts and the initial position of the special artifact, respectively.",
-      "The second line of each test case contains n%%ZSMJ20%% integers c1,c2,⋯cn%%ZSMJ21%% (0≤ci≤n%%ZSMJ22%%) — the costs of the artifacts, in order.",
-      "It is guaranteed that the sum of n%%ZSMJ23%% over all test cases does not exceed 2⋅105%%ZSMJ24%%."
+      "The first line of input contains a single integer t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "The first line of each test case contains two integers n$$$n$$$ and k$$$k$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2\\cdot 10^5$$$, 1≤k≤n$$$1 \\le k \\le n$$$) — the number of artifacts and the initial position of the special artifact, respectively.",
+      "The second line of each test case contains n$$$n$$$ integers c1,c2,⋯cn$$$c_1, c_2, \\cdots c_n$$$ (0≤ci≤n$$$0 \\le c_i \\le n$$$) — the costs of the artifacts, in order.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 2⋅105$$$2\\cdot 10^5$$$."
     ],
     "output": [
       "For each test case, if it is impossible to stop Thomas from stealing the special artifact, print -1 -1.",
-      "Otherwise, print two integers i%%ZSMJ25%% and j%%ZSMJ26%% (1≤i,j≤n%%ZSMJ27%%) — the positions of the two artifacts to swap. You are allowed to choose a pair with i=j%%ZSMJ28%%, in which case no swap will be made.",
+      "Otherwise, print two integers i$$$i$$$ and j$$$j$$$ (1≤i,j≤n$$$1 \\le i, j \\le n$$$) — the positions of the two artifacts to swap. You are allowed to choose a pair with i=j$$$i = j$$$, in which case no swap will be made.",
       "If there are multiple solutions, you may print any."
     ],
     "note": [
-      "In the first test case, we swap artifacts 3%%ZSMJ29%% and 5%%ZSMJ30%%, so this is what the row of artifacts will look like before and after the swap (with the special artifact in red):",
-      "[1,0,1,2,2]→[1,0,2,2,1]%%ZSMJ31%%",
-      "After the swap, Thomas will make the following moves, where S%%ZSMJ32%% is the set of costs of artifacts Thomas has stolen.",
-      "For the first artifact, S={}%%ZSMJ33%%, with a MEX%%ZSMJ34%% of 0%%ZSMJ35%%. Since c1=1≥0%%ZSMJ36%%, he steals the first artifact and adds 1%%ZSMJ37%% to S%%ZSMJ38%%.",
-      "For the second artifact, S={1}%%ZSMJ39%%, with a MEX%%ZSMJ40%% of 0%%ZSMJ41%%. Since c2=0≥0%%ZSMJ42%%, he steals the second artifact and adds 0%%ZSMJ43%% to S%%ZSMJ44%%.",
-      "For the third artifact, S={0,1}%%ZSMJ45%%, with a MEX%%ZSMJ46%% of 2%%ZSMJ47%%. Since c3=2≥2%%ZSMJ48%%, he steals the third artifact and adds 2%%ZSMJ49%% to S%%ZSMJ50%%.",
-      "For the fourth artifact, S={0,1,2}%%ZSMJ51%%, with a MEX%%ZSMJ52%% of 3%%ZSMJ53%%. Since c4=2<3%%ZSMJ54%%, he does not steal the fourth artifact.",
-      "For the fifth artifact, S={0,1,2}%%ZSMJ55%%, with a MEX%%ZSMJ56%% of 3%%ZSMJ57%%. Since c5=1<3%%ZSMJ58%%, he does not steal the fifth artifact.",
-      "Since he doesn't steal the special artifact on position 4%%ZSMJ59%%, we have succeeded.",
-      "In the second test case, we swap artifacts 1%%ZSMJ60%% and 4%%ZSMJ61%%, so the artifacts will look like this before and after the swap:",
-      "[1,0,1,2,2]→[2,0,1,1,2]%%ZSMJ62%%",
-      "Note that the position of the special artifact has changed, so our goal is to stop Thomas from stealing the artifact in position 4%%ZSMJ63%% after the swap. If we simulate the process as in the first test case, we can see that Thomas will not steal it.",
-      "In the third test case, we can show that no matter what swap we make, Thomas will always steal the artifact with cost 0%%ZSMJ64%%.",
-      "In the fourth test case, since there are no artifacts with cost 0%%ZSMJ65%%, the MEX%%ZSMJ66%% of the costs of the stolen artifacts will always be 0%%ZSMJ67%%, and Thomas will steal every artifact, no matter what swap is made."
+      "In the first test case, we swap artifacts 3$$$3$$$ and 5$$$5$$$, so this is what the row of artifacts will look like before and after the swap (with the special artifact in red):",
+      "[1,0,1,2,2]→[1,0,2,2,1]$$[1, 0, 1, \\color{red}{2}, 2] \\rightarrow [1, 0, 2, \\color{red}{2}, 1]$$",
+      "After the swap, Thomas will make the following moves, where S$$$S$$$ is the set of costs of artifacts Thomas has stolen.",
+      "For the first artifact, S={}$$$S = \\{\\}$$$, with a MEX$$$\\operatorname{MEX}$$$ of 0$$$0$$$. Since c1=1≥0$$$c_1 = 1 \\ge 0$$$, he steals the first artifact and adds 1$$$1$$$ to S$$$S$$$.",
+      "For the second artifact, S={1}$$$S = \\{1\\}$$$, with a MEX$$$\\operatorname{MEX}$$$ of 0$$$0$$$. Since c2=0≥0$$$c_2 = 0 \\ge 0$$$, he steals the second artifact and adds 0$$$0$$$ to S$$$S$$$.",
+      "For the third artifact, S={0,1}$$$S = \\{0, 1\\}$$$, with a MEX$$$\\operatorname{MEX}$$$ of 2$$$2$$$. Since c3=2≥2$$$c_3 = 2 \\ge 2$$$, he steals the third artifact and adds 2$$$2$$$ to S$$$S$$$.",
+      "For the fourth artifact, S={0,1,2}$$$S = \\{0, 1, 2\\}$$$, with a MEX$$$\\operatorname{MEX}$$$ of 3$$$3$$$. Since c4=2<3$$$c_4 = 2  \\lt  3$$$, he does not steal the fourth artifact.",
+      "For the fifth artifact, S={0,1,2}$$$S = \\{0, 1, 2\\}$$$, with a MEX$$$\\operatorname{MEX}$$$ of 3$$$3$$$. Since c5=1<3$$$c_5 = 1  \\lt  3$$$, he does not steal the fifth artifact.",
+      "Since he doesn't steal the special artifact on position 4$$$4$$$, we have succeeded.",
+      "In the second test case, we swap artifacts 1$$$1$$$ and 4$$$4$$$, so the artifacts will look like this before and after the swap:",
+      "[1,0,1,2,2]→[2,0,1,1,2]$$[\\color{red}{1}, 0, 1, 2, 2] \\rightarrow [2, 0, 1, \\color{red}{1}, 2]$$",
+      "Note that the position of the special artifact has changed, so our goal is to stop Thomas from stealing the artifact in position 4$$$4$$$ after the swap. If we simulate the process as in the first test case, we can see that Thomas will not steal it.",
+      "In the third test case, we can show that no matter what swap we make, Thomas will always steal the artifact with cost 0$$$0$$$.",
+      "In the fourth test case, since there are no artifacts with cost 0$$$0$$$, the MEX$$$\\operatorname{MEX}$$$ of the costs of the stolen artifacts will always be 0$$$0$$$, and Thomas will steal every artifact, no matter what swap is made."
     ]
   },
   "examples": [
@@ -48,5 +48,41 @@
       "input": "6\n5 4\n1 0 1 2 2\n5 1\n1 0 1 2 2\n5 2\n1 0 1 2 2\n10 6\n2 2 1 1 4 2 6 2 3 3\n6 1\n0 1 2 0 3 1\n10 3\n1 0 3 2 1 0 3 1 0 2",
       "output": "3 5\n1 4\n-1 -1\n-1 -1\n1 5\n8 3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

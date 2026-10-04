@@ -10,25 +10,25 @@
   "sections": {
     "legend": [
       "They call him the Seal, not because he swims, but because every case he touches gets closed. Stamped shut.  Sealed. A few miles up the coast from Aqua Badran sprawls Aquarbour, a city so overcrowded that three people can witness a murder and all swear they were looking the other way. Last Tuesday, someone walked into the Aquarbour National Archive and walked out with the Ledger, a book the city's elite would very much prefer remained unread. The Seal took the case for one shawarma sandwich and a cup of Al Ameed coffee. His only lead: the thief left behind two coded sequences, scratched into the marble floor in two parallel rows.",
-      "Row a%%ZSMJ0%% contains n%%ZSMJ1%% marks bearing each odd number from 1%%ZSMJ2%% to 2n%%ZSMJ3%%, in some order.",
-      "Row b%%ZSMJ4%% contains n%%ZSMJ5%% marks bearing each even number from 1%%ZSMJ6%% to 2n%%ZSMJ7%%, in some order.",
+      "Row a$$$a$$$ contains n$$$n$$$ marks bearing each odd number from 1$$$1$$$ to 2n$$$2n$$$, in some order.",
+      "Row b$$$b$$$ contains n$$$n$$$ marks bearing each even number from 1$$$1$$$ to 2n$$$2n$$$, in some order.",
       "choose one of the two rows,",
-      "pick an index i%%ZSMJ10%% from 1%%ZSMJ11%% to n−1%%ZSMJ12%%,",
-      "swap the marks at positions i%%ZSMJ13%% and i+1%%ZSMJ14%% of that row.",
-      "Row a%%ZSMJ15%% was cut into soft limestone, each swap costs ca%%ZSMJ16%% units of effort.",
-      "Row b%%ZSMJ17%% was cut into hard Aquarbour granite, each swap costs cb%%ZSMJ18%%."
+      "pick an index i$$$i$$$ from 1$$$1$$$ to n−1$$$n-1$$$,",
+      "swap the marks at positions i$$$i$$$ and i+1$$$i+1$$$ of that row.",
+      "Row a$$$a$$$ was cut into soft limestone, each swap costs ca$$$c_a$$$ units of effort.",
+      "Row b$$$b$$$ was cut into hard Aquarbour granite, each swap costs cb$$$c_b$$$."
     ],
     "input": [
-      "The first line contains t%%ZSMJ25%% (1≤t≤104%%ZSMJ26%%), the number of cases on the Seal's desk. For each test case:",
-      "The first line contains three integers n%%ZSMJ27%%, ca%%ZSMJ28%%, cb%%ZSMJ29%% (1≤n≤105%%ZSMJ30%%; 1≤ca,cb≤109%%ZSMJ31%%).",
-      "The second line contains n%%ZSMJ32%% integers a1,…,an%%ZSMJ33%%, all odd, pairwise distinct, each between 1%%ZSMJ34%% and 2n%%ZSMJ35%%.",
-      "The third line contains n%%ZSMJ36%% integers b1,…,bn%%ZSMJ37%%, all even, pairwise distinct, each between 1%%ZSMJ38%% and 2n%%ZSMJ39%%."
+      "The first line contains t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$), the number of cases on the Seal's desk. For each test case:",
+      "The first line contains three integers n$$$n$$$, ca$$$c_a$$$, cb$$$c_b$$$ (1≤n≤105$$$1 \\le n \\le 10^5$$$; 1≤ca,cb≤109$$$1 \\le c_a, c_b \\le 10^9$$$).",
+      "The second line contains n$$$n$$$ integers a1,…,an$$$a_1, \\ldots, a_n$$$, all odd, pairwise distinct, each between 1$$$1$$$ and 2n$$$2n$$$.",
+      "The third line contains n$$$n$$$ integers b1,…,bn$$$b_1, \\ldots, b_n$$$, all even, pairwise distinct, each between 1$$$1$$$ and 2n$$$2n$$$."
     ],
     "output": [
       "For each test case, print one integer, the minimum effort the Seal must spend before the marble gives up its name."
     ],
     "note": [
-      "Case 1. The marble is already talking (3<4%%ZSMJ42%%). The Seal lights a cigarette and writes the name down. Cost: 0%%ZSMJ43%%. Case 2. Granite is unforgiving (cb=3%%ZSMJ44%%). The Seal works only the limestone row, sliding 1%%ZSMJ45%% to the front of row a%%ZSMJ46%% in two swaps: [1,5,3]%%ZSMJ47%%, which already reads smaller than [2,4,6]%%ZSMJ48%%. Cost: 2⋅1=2%%ZSMJ49%%. Case 3. Now both chisels come out. One swap on row a%%ZSMJ50%% (cost 4%%ZSMJ51%%) brings 5%%ZSMJ52%% to the front: [5,7,3,1]%%ZSMJ53%%. One swap on row b%%ZSMJ54%% (cost 3%%ZSMJ55%%) brings 6%%ZSMJ56%% to the front: [6,2,4,8]%%ZSMJ57%%. Since 5<6%%ZSMJ58%%, the marble confesses. Total cost: 4+3=7%%ZSMJ59%%."
+      "Case 1. The marble is already talking (3<4$$$3  \\lt  4$$$). The Seal lights a cigarette and writes the name down. Cost: 0$$$0$$$. Case 2. Granite is unforgiving (cb=3$$$c_b = 3$$$). The Seal works only the limestone row, sliding 1$$$1$$$ to the front of row a$$$a$$$ in two swaps: [1,5,3]$$$[1, 5, 3]$$$, which already reads smaller than [2,4,6]$$$[2, 4, 6]$$$. Cost: 2⋅1=2$$$2 \\cdot 1 = 2$$$. Case 3. Now both chisels come out. One swap on row a$$$a$$$ (cost 4$$$4$$$) brings 5$$$5$$$ to the front: [5,7,3,1]$$$[5, 7, 3, 1]$$$. One swap on row b$$$b$$$ (cost 3$$$3$$$) brings 6$$$6$$$ to the front: [6,2,4,8]$$$[6, 2, 4, 8]$$$. Since 5<6$$$5  \\lt  6$$$, the marble confesses. Total cost: 4+3=7$$$4 + 3 = 7$$$."
     ]
   },
   "examples": [
@@ -36,5 +36,29 @@
       "input": "3\n2 1 1\n3 1\n4 2\n3 1 3\n5 3 1\n2 4 6\n4 4 3\n7 5 3 1\n2 6 4 8",
       "output": "0\n2\n7"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null
+    ]
+  }
 }

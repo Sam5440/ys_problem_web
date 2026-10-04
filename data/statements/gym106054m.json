@@ -9,24 +9,24 @@
   "memoryLimit": "1024 megabytes",
   "sections": {
     "legend": [
-      "Marco Molo is a famous walking traveler in the distant kingdom of Mlogomia. The kingdom has N%%ZSMJ0%% cities and M%%ZSMJ1%% bidirectional paths. Each path connects two different cities, allowing direct walking from one to the other. The geometry in Mlogomia is extremely peculiar, and all paths have exactly the same length.",
-      "Marco intends to travel from Factorial to Primorial, the two most important cities in Mlogomia. Each day he is willing to walk between 1%%ZSMJ2%% and K%%ZSMJ3%% paths, having to rest at night to continue his journey the next day.",
-      "Marco does not care about the total number of paths he has to walk to go from Factorial to Primorial, but he does want to ensure that he uses the least number of days possible. How many different ways can Marco make his journey? Since this value can be very large, it must be calculated modulo 998244353%%ZSMJ4%%.",
-      "A daily walk of Marco can be described with a sequence of t+1%%ZSMJ5%% cities, such that 1≤t≤K%%ZSMJ6%% and there is a path between each city and the next. Two daily walks are different if they differ in the number of cities, or if the i%%ZSMJ7%%-th city is not the same in both walks.",
-      "A journey of Marco can be described with a sequence of d%%ZSMJ8%% daily walks, such that the first walk starts in Factorial, the last walk ends in Primorial, and each walk ends in the same city where the next one begins. Moreover, d%%ZSMJ9%% is minimal, meaning it is impossible to travel from Factorial to Primorial with fewer walks. Two journeys are different if the i%%ZSMJ10%%-th daily walk of one differs from the corresponding walk in the other."
+      "Marco Molo is a famous walking traveler in the distant kingdom of Mlogomia. The kingdom has N$$$N$$$ cities and M$$$M$$$ bidirectional paths. Each path connects two different cities, allowing direct walking from one to the other. The geometry in Mlogomia is extremely peculiar, and all paths have exactly the same length.",
+      "Marco intends to travel from Factorial to Primorial, the two most important cities in Mlogomia. Each day he is willing to walk between 1$$$1$$$ and K$$$K$$$ paths, having to rest at night to continue his journey the next day.",
+      "Marco does not care about the total number of paths he has to walk to go from Factorial to Primorial, but he does want to ensure that he uses the least number of days possible. How many different ways can Marco make his journey? Since this value can be very large, it must be calculated modulo 998244353$$$998244353$$$.",
+      "A daily walk of Marco can be described with a sequence of t+1$$$t+1$$$ cities, such that 1≤t≤K$$$1 \\le t \\leq K$$$ and there is a path between each city and the next. Two daily walks are different if they differ in the number of cities, or if the i$$$i$$$-th city is not the same in both walks.",
+      "A journey of Marco can be described with a sequence of d$$$d$$$ daily walks, such that the first walk starts in Factorial, the last walk ends in Primorial, and each walk ends in the same city where the next one begins. Moreover, d$$$d$$$ is minimal, meaning it is impossible to travel from Factorial to Primorial with fewer walks. Two journeys are different if the i$$$i$$$-th daily walk of one differs from the corresponding walk in the other."
     ],
     "input": [
-      "The first line contains three integers N%%ZSMJ11%%, M%%ZSMJ12%%, and K%%ZSMJ13%% (2≤N≤2000%%ZSMJ14%% and 1≤M,K≤2000%%ZSMJ15%%), which indicate respectively the number of cities in Mlogomia, the number of paths, and the maximum number of paths Marco can walk in a day. Each city is identified by a distinct integer between 1%%ZSMJ16%% and N%%ZSMJ17%%, with Factorial being city 1%%ZSMJ18%% and Primorial being city 2%%ZSMJ19%%.",
-      "Each of the following M%%ZSMJ20%% lines describes a path by two integers U%%ZSMJ21%% and V%%ZSMJ22%% (1≤U,V≤N%%ZSMJ23%% and U≠V%%ZSMJ24%%), which indicate the two cities that this path connects. It is guaranteed that there are no two different paths connecting the same pair of cities."
+      "The first line contains three integers N$$$N$$$, M$$$M$$$, and K$$$K$$$ (2≤N≤2000$$$2 \\leq N \\leq 2000$$$ and 1≤M,K≤2000$$$1 \\leq M,K \\leq 2000$$$), which indicate respectively the number of cities in Mlogomia, the number of paths, and the maximum number of paths Marco can walk in a day. Each city is identified by a distinct integer between 1$$$1$$$ and N$$$N$$$, with Factorial being city 1$$$1$$$ and Primorial being city 2$$$2$$$.",
+      "Each of the following M$$$M$$$ lines describes a path by two integers U$$$U$$$ and V$$$V$$$ (1≤U,V≤N$$$1 \\leq U,V \\leq N$$$ and U≠V$$$U \\neq V$$$), which indicate the two cities that this path connects. It is guaranteed that there are no two different paths connecting the same pair of cities."
     ],
     "output": [
-      "A single line with one integer, indicating the number of different journeys Marco can make, modulo 998244353%%ZSMJ25%%."
+      "A single line with one integer, indicating the number of different journeys Marco can make, modulo 998244353$$$998244353$$$."
     ],
     "note": [
       "In the first example, the two possible journeys are as follows:",
-      "The first day's walk is 1,3%%ZSMJ26%% and the second is 3,4,2%%ZSMJ27%%.",
-      "The first day's walk is 1,3,4%%ZSMJ28%% and the second is 4,2%%ZSMJ29%%.",
-      "For the second example, one of the 4%%ZSMJ31%% possible journeys uses a single daily walk 1,3,4,3,4,2%%ZSMJ32%%. Notice that it is valid to repeat cities in a walk."
+      "The first day's walk is 1,3$$$1, 3$$$ and the second is 3,4,2$$$3, 4, 2$$$.",
+      "The first day's walk is 1,3,4$$$1, 3, 4$$$ and the second is 4,2$$$4, 2$$$.",
+      "For the second example, one of the 4$$$4$$$ possible journeys uses a single daily walk 1,3,4,3,4,2$$$1, 3, 4, 3, 4, 2$$$. Notice that it is valid to repeat cities in a walk."
     ]
   },
   "examples": [
@@ -42,5 +42,27 @@
       "input": "10 1 100\n1 5",
       "output": "0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

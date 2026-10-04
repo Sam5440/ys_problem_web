@@ -10,42 +10,42 @@
   "sections": {
     "legend": [
       "Busy Beaver is causing chaos at the farmers' market again! This time, he is starting a food fight among the stalls.",
-      "The stalls are numbered from 1%%ZSMJ0%% to N%%ZSMJ1%% and are connected by N−1%%ZSMJ2%% roads, forming a tree. In other words, it is possible to travel from any stall to any other stall by following the roads, and there is exactly one simple path between any two stalls.",
+      "The stalls are numbered from 1$$$1$$$ to N$$$N$$$ and are connected by N−1$$$N-1$$$ roads, forming a tree. In other words, it is possible to travel from any stall to any other stall by following the roads, and there is exactly one simple path between any two stalls.",
       "Busy Beaver assigns each stall to either Team Potato or Team Tomato as follows:",
-      "He starts at stall 1%%ZSMJ3%%, travels along the roads, visits every stall, and finally returns to stall 1%%ZSMJ4%%. Among all such routes, he chooses one with the minimum possible total number of roads traversed.",
-      "Stall 1%%ZSMJ5%% is assigned to Team Potato.",
-      "Whenever Busy Beaver visits a stall for the first time (other than stall 1%%ZSMJ6%%), he immediately assigns it to one of the two teams. To keep the fight fair, he alternates the team assignment each time he assigns a new stall. That is, if the most recently assigned stall was assigned to Team Potato, then the next newly visited stall must be assigned to Team Tomato, and vice versa.",
-      "Your task is to count the number of possible team assignments. Note that different minimum-length routes may produce the same final assignment; such assignments should be counted only once. Since the answer may be enormous, output it modulo 109+7%%ZSMJ7%%."
+      "He starts at stall 1$$$1$$$, travels along the roads, visits every stall, and finally returns to stall 1$$$1$$$. Among all such routes, he chooses one with the minimum possible total number of roads traversed.",
+      "Stall 1$$$1$$$ is assigned to Team Potato.",
+      "Whenever Busy Beaver visits a stall for the first time (other than stall 1$$$1$$$), he immediately assigns it to one of the two teams. To keep the fight fair, he alternates the team assignment each time he assigns a new stall. That is, if the most recently assigned stall was assigned to Team Potato, then the next newly visited stall must be assigned to Team Tomato, and vice versa.",
+      "Your task is to count the number of possible team assignments. Note that different minimum-length routes may produce the same final assignment; such assignments should be counted only once. Since the answer may be enormous, output it modulo 109+7$$$10^9+7$$$."
     ],
     "input": [
-      "The first line contains a single integer T%%ZSMJ8%% (1≤T≤104%%ZSMJ9%%) — the number of test cases.",
-      "The first line of each test case contains a single integer N%%ZSMJ10%% (2≤N≤105%%ZSMJ11%%).",
-      "Each of the next N−1%%ZSMJ12%% lines contains two integers u%%ZSMJ13%% and v%%ZSMJ14%% (1≤u,v≤N%%ZSMJ15%%, u≠v%%ZSMJ16%%), indicating that there is a road between stalls u%%ZSMJ17%% and v%%ZSMJ18%%.",
-      "The sum of N%%ZSMJ19%% across all test cases does not exceed 2⋅105%%ZSMJ20%%."
+      "The first line contains a single integer T$$$T$$$ (1≤T≤104$$$1 \\le T \\le 10^4$$$) — the number of test cases.",
+      "The first line of each test case contains a single integer N$$$N$$$ (2≤N≤105$$$2 \\le N \\le 10^5$$$).",
+      "Each of the next N−1$$$N-1$$$ lines contains two integers u$$$u$$$ and v$$$v$$$ (1≤u,v≤N$$$1 \\le u, v \\le N$$$, u≠v$$$u \\neq v$$$), indicating that there is a road between stalls u$$$u$$$ and v$$$v$$$.",
+      "The sum of N$$$N$$$ across all test cases does not exceed 2⋅105$$$2 \\cdot 10^5$$$."
     ],
     "output": [
-      "For each test case, output a single integer: the number of possible final team assignments modulo 109+7%%ZSMJ21%%.",
+      "For each test case, output a single integer: the number of possible final team assignments modulo 109+7$$$10^9+7$$$.",
       "There are two subtasks for this problem.",
-      "(10%%ZSMJ22%% points): The stalls form a star graph rooted at stall 1%%ZSMJ23%%. More specifically, stall 1%%ZSMJ24%% has N−1%%ZSMJ25%% roads connected to it.",
-      "(20%%ZSMJ26%% points): The stalls form a binary tree rooted at stall 1%%ZSMJ27%%. More specifically, stall 1%%ZSMJ28%% has at most 2%%ZSMJ29%% roads connected to it, and every other stall has at most 3%%ZSMJ30%% roads connected to it.",
-      "(70%%ZSMJ31%% points): No additional constraints."
+      "(10$$$10$$$ points): The stalls form a star graph rooted at stall 1$$$1$$$. More specifically, stall 1$$$1$$$ has N−1$$$N-1$$$ roads connected to it.",
+      "(20$$$20$$$ points): The stalls form a binary tree rooted at stall 1$$$1$$$. More specifically, stall 1$$$1$$$ has at most 2$$$2$$$ roads connected to it, and every other stall has at most 3$$$3$$$ roads connected to it.",
+      "(70$$$70$$$ points): No additional constraints."
     ],
     "note": [
-      "The sample contains 4%%ZSMJ32%% test cases:",
-      "Test case 1%%ZSMJ33%% satisfies the second subtask (binary tree).",
-      "Test case 2%%ZSMJ34%% satisfies the first subtask (star graph).",
-      "Test case 3%%ZSMJ35%% satisfies the second subtask (binary tree).",
-      "Test case 4%%ZSMJ36%% satisfies the third subtask (no additional constraints).",
+      "The sample contains 4$$$4$$$ test cases:",
+      "Test case 1$$$1$$$ satisfies the second subtask (binary tree).",
+      "Test case 2$$$2$$$ satisfies the first subtask (star graph).",
+      "Test case 3$$$3$$$ satisfies the second subtask (binary tree).",
+      "Test case 4$$$4$$$ satisfies the third subtask (no additional constraints).",
       "In the first test case, one possible team assignment is shown below.",
       "![](https://espresso.codeforces.com/ad0735a243778132b8a2457578ab486896da7ada.png)",
-      "One minimum-length route is: 1→2→3→2→4→2→1.%%ZSMJ37%%",
-      "Its total length is 6%%ZSMJ38%%, which is the smallest possible for a route that starts at stall 1%%ZSMJ39%%, visits every stall, and returns to stall 1%%ZSMJ40%%.",
+      "One minimum-length route is: 1→2→3→2→4→2→1.$$ 1 \\to 2 \\to 3 \\to 2 \\to 4 \\to 2 \\to 1. $$",
+      "Its total length is 6$$$6$$$, which is the smallest possible for a route that starts at stall 1$$$1$$$, visits every stall, and returns to stall 1$$$1$$$.",
       "The stalls are then assigned in the order in which they are first visited:",
-      "Stall 1%%ZSMJ41%% is assigned to Team Potato.",
-      "Stall 2%%ZSMJ42%% is assigned to Team Tomato.",
-      "Stall 3%%ZSMJ43%% is assigned to Team Potato.",
-      "Stall 4%%ZSMJ44%% is assigned to Team Tomato.",
-      "The other possible team assignment is obtained by visiting stall 4%%ZSMJ45%% before stall 3%%ZSMJ46%%, which swaps their teams. Therefore, the total number of possible team assignments is 2%%ZSMJ47%%."
+      "Stall 1$$$1$$$ is assigned to Team Potato.",
+      "Stall 2$$$2$$$ is assigned to Team Tomato.",
+      "Stall 3$$$3$$$ is assigned to Team Potato.",
+      "Stall 4$$$4$$$ is assigned to Team Tomato.",
+      "The other possible team assignment is obtained by visiting stall 4$$$4$$$ before stall 3$$$3$$$, which swaps their teams. Therefore, the total number of possible team assignments is 2$$$2$$$."
     ]
   },
   "examples": [
@@ -53,5 +53,46 @@
       "input": "4\n4\n1 2\n2 3\n2 4\n7\n1 2\n1 3\n1 4\n1 5\n1 6\n1 7\n7\n1 2\n1 3\n2 4\n2 5\n3 6\n3 7\n7\n1 2\n1 3\n1 4\n2 5\n2 6\n2 7",
       "output": "2\n20\n8\n12"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
 }

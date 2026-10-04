@@ -9,25 +9,25 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "You are an intern at a hyperscale AI data center that manages a linear array of n%%ZSMJ0%% GPUs. The i%%ZSMJ1%%-th GPU currently runs a compute load of ai%%ZSMJ2%%.",
-      "The data center hosts workloads for m%%ZSMJ3%% different companies. Each company j%%ZSMJ4%% uses a contiguous range of GPUs from index Lj%%ZSMJ5%% to Rj%%ZSMJ6%%. Different companies may share some GPUs if their computations are colocated for efficiency, so these ranges can overlap.",
-      "Before a major demonstration, the management team sets strict balance requirements. For each company j%%ZSMJ7%%, the total effective compute load across its range must lie between Aj%%ZSMJ8%% and Bj%%ZSMJ9%% inclusive.",
-      "You are allowed to adjust the load of each GPU by applying an integer change Δi%%ZSMJ10%%. Each adjustment can either increase or decrease the load, but all must stay within a non-negative common safety limit k%%ZSMJ11%%, meaning every GPU's load can change by at most k%%ZSMJ12%% units. The smaller the limit, the better the system stability, so you aim to meet all company requirements using the smallest possible k%%ZSMJ13%%.",
-      "Additionally, for hardware stability, each GPU must remain above the minimal safe operating load after adjustment: ai+Δi≥1%%ZSMJ14%% for all i%%ZSMJ15%%.",
-      "Find the minimum integer k%%ZSMJ16%% such that there exist integer adjustments Δ1,Δ2,…,Δn%%ZSMJ17%% satisfying, for every company j%%ZSMJ18%%,",
-      "Aj≤(aLj+ΔLj)+(aLj+1+ΔLj+1)+⋯+(aRj+ΔRj)≤Bj.%%ZSMJ19%%",
-      "If this is impossible for any k%%ZSMJ20%%, output -1."
+      "You are an intern at a hyperscale AI data center that manages a linear array of n$$$n$$$ GPUs. The i$$$i$$$-th GPU currently runs a compute load of ai$$$a_i$$$.",
+      "The data center hosts workloads for m$$$m$$$ different companies. Each company j$$$j$$$ uses a contiguous range of GPUs from index Lj$$$L_j$$$ to Rj$$$R_j$$$. Different companies may share some GPUs if their computations are colocated for efficiency, so these ranges can overlap.",
+      "Before a major demonstration, the management team sets strict balance requirements. For each company j$$$j$$$, the total effective compute load across its range must lie between Aj$$$A_j$$$ and Bj$$$B_j$$$ inclusive.",
+      "You are allowed to adjust the load of each GPU by applying an integer change Δi$$$\\Delta_i$$$. Each adjustment can either increase or decrease the load, but all must stay within a non-negative common safety limit k$$$k$$$, meaning every GPU's load can change by at most k$$$k$$$ units. The smaller the limit, the better the system stability, so you aim to meet all company requirements using the smallest possible k$$$k$$$.",
+      "Additionally, for hardware stability, each GPU must remain above the minimal safe operating load after adjustment: ai+Δi≥1$$$a_i + \\Delta_i \\ge 1$$$ for all i$$$i$$$.",
+      "Find the minimum integer k$$$k$$$ such that there exist integer adjustments Δ1,Δ2,…,Δn$$$\\Delta_1, \\Delta_2, \\ldots, \\Delta_n$$$ satisfying, for every company j$$$j$$$,",
+      "Aj≤(aLj+ΔLj)+(aLj+1+ΔLj+1)+⋯+(aRj+ΔRj)≤Bj.\n$$ A_j \\le (a_{L_j} + \\Delta_{L_j}) + (a_{L_j+1} + \\Delta_{L_j+1}) + \\dots + (a_{R_j} + \\Delta_{R_j}) \\le B_j. $$",
+      "If this is impossible for any k$$$k$$$, output -1."
     ],
     "input": [
-      "The first line contains two integers n%%ZSMJ21%% and m%%ZSMJ22%% (1≤n,m≤1⋅103)%%ZSMJ23%% — the number of GPUs and the number of companies.",
-      "The second line contains n%%ZSMJ24%% integers a1,a2,…,an%%ZSMJ25%% (1≤ai≤109)%%ZSMJ26%% — the current compute loads of the GPUs.",
-      "Each of the following m%%ZSMJ27%% lines describes one company and contains four integers Lj%%ZSMJ28%%, Rj%%ZSMJ29%%, Aj%%ZSMJ30%%, and Bj%%ZSMJ31%% (1≤Lj≤Rj≤n,1≤Aj≤Bj≤1012)%%ZSMJ32%%, meaning the j%%ZSMJ33%%-th company uses all GPUs from index Lj%%ZSMJ34%% to Rj%%ZSMJ35%% and its total load must lie between Aj%%ZSMJ36%% and Bj%%ZSMJ37%% inclusive."
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (1≤n,m≤1⋅103)$$$(1 \\le n, m \\le 1 \\cdot 10^3)$$$ — the number of GPUs and the number of companies.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai≤109)$$$(1 \\le a_i \\le 10^9)$$$ — the current compute loads of the GPUs.",
+      "Each of the following m$$$m$$$ lines describes one company and contains four integers Lj$$$L_j$$$, Rj$$$R_j$$$, Aj$$$A_j$$$, and Bj$$$B_j$$$ (1≤Lj≤Rj≤n,1≤Aj≤Bj≤1012)$$$(1 \\le L_j \\le R_j \\le n,\\; 1 \\le A_j \\le B_j \\le 10^{12})$$$, meaning the j$$$j$$$-th company uses all GPUs from index Lj$$$L_j$$$ to Rj$$$R_j$$$ and its total load must lie between Aj$$$A_j$$$ and Bj$$$B_j$$$ inclusive."
     ],
     "output": [
-      "Print a single integer: the minimal possible k%%ZSMJ38%% such that there exist integer adjustments meeting all company conditions, the per-GPU safety floor ai+Δi≥1%%ZSMJ39%%, and |Δi|≤k%%ZSMJ40%% for all GPUs. If no such k%%ZSMJ41%% exists, print −1%%ZSMJ42%%."
+      "Print a single integer: the minimal possible k$$$k$$$ such that there exist integer adjustments meeting all company conditions, the per-GPU safety floor ai+Δi≥1$$$a_i + \\Delta_i \\ge 1$$$, and |Δi|≤k$$$|\\Delta_i| \\le k$$$ for all GPUs. If no such k$$$k$$$ exists, print −1$$$-1$$$."
     ],
     "note": [
-      "For the sample test, k=0%%ZSMJ43%% or k=1%%ZSMJ44%% are not feasible. For k=2%%ZSMJ45%%, possible final compute load distributions include [4,7,4,6,3]%%ZSMJ46%% or [3,8,4,6,2]%%ZSMJ47%%."
+      "For the sample test, k=0$$$k = 0$$$ or k=1$$$k = 1$$$ are not feasible. For k=2$$$k = 2$$$, possible final compute load distributions include [4,7,4,6,3]$$$[4, 7, 4, 6, 3]$$$ or [3,8,4,6,2]$$$[3, 8, 4, 6, 2]$$$."
     ]
   },
   "examples": [
@@ -35,5 +35,28 @@
       "input": "5 3\n2 8 5 7 4\n1 3 15 20\n2 5 16 20\n4 4 6 6",
       "output": "2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ],
+    "note": [
+      null
+    ]
+  }
 }

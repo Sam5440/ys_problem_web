@@ -10,27 +10,27 @@
   "sections": {
     "legend": [
       "This is an interactive problem.",
-      "There is a hidden binary string s%%ZSMJ0%% of length n%%ZSMJ1%%. It is guaranteed that s%%ZSMJ2%% contains at least one character 1, and you wish to find a 1.",
-      "In each query, you may ask if a substring slsl+1…sr%%ZSMJ3%% contains a 1. However, there is an additional restriction:",
-      "If your previous query had length L%%ZSMJ4%%, then every future query must have length at least L%%ZSMJ5%%. In other words, the sequence of query lengths must be nondecreasing.",
-      "Find the index of any character 1 using at most 100%%ZSMJ6%% queries.",
-      "The length of a query ?lr%%ZSMJ7%% is defined as r−l+1%%ZSMJ8%%."
+      "There is a hidden binary string s$$$s$$$ of length n$$$n$$$. It is guaranteed that s$$$s$$$ contains at least one character 1, and you wish to find a 1.",
+      "In each query, you may ask if a substring slsl+1…sr$$$s_ls_{l+1} \\ldots s_r$$$ contains a 1. However, there is an additional restriction:",
+      "If your previous query had length L$$$L$$$, then every future query must have length at least L$$$L$$$. In other words, the sequence of query lengths must be nondecreasing.",
+      "Find the index of any character 1 using at most 100$$$100$$$ queries.",
+      "The length of a query ?lr$$$\\texttt{?}\\;l\\; r$$$ is defined as r−l+1$$$r - l + 1$$$."
     ],
     "input": [
-      "At the beginning of the interaction, you are given a single integer n%%ZSMJ9%% (1≤n≤104%%ZSMJ10%%) — the length of the hidden string.",
+      "At the beginning of the interaction, you are given a single integer n$$$n$$$ (1≤n≤104$$$1\\le n\\le 10^4$$$) — the length of the hidden string.",
       "It is guaranteed that the hidden string contains no characters other than 0s and 1s, and that it contains at least one 1.",
       "To make a query, print a line in the following format:",
-      "?lr%%ZSMJ11%% (1≤l≤r≤n%%ZSMJ12%%) — the indices chosen for the query.",
+      "?lr$$$\\texttt{?}\\;l\\;r$$$ (1≤l≤r≤n$$$1\\le l\\le r\\le n$$$) — the indices chosen for the query.",
       "After you print a query, the interactor will respond with a single integer:",
-      "1 if the substring slsl+1…sr%%ZSMJ13%% contains at least one 1;",
+      "1 if the substring slsl+1…sr$$$s_l s_{l+1}\\ldots s_r$$$ contains at least one 1;",
       "0 otherwise.",
       "When you are ready to give the final answer, print a line of the form",
-      "! p%%ZSMJ14%%, where 1≤p≤n%%ZSMJ15%% and sp=1%%ZSMJ16%%,",
-      "If you make an invalid query, ask more than 100%%ZSMJ17%% queries, or break the nondecreasing-length rule, the interactor may reply with -1. In that case, your program must terminate immediately.",
+      "! p$$$p$$$, where 1≤p≤n$$$1\\le p\\le n$$$ and sp=1$$$s_p=\\texttt{1}$$$,",
+      "If you make an invalid query, ask more than 100$$$100$$$ queries, or break the nondecreasing-length rule, the interactor may reply with -1. In that case, your program must terminate immediately.",
       "Note that the final answer does not count as a query.",
-      "After printing each query do not forget to output the end of line and flush∗%%ZSMJ18%% the output. Otherwise, you will get Idleness limit exceeded verdict. If, at any interaction step, you read −1%%ZSMJ19%% instead of valid data, your solution must exit immediately. This means that your solution will receive Wrong answer because of an invalid query or any other mistake. Failing to exit can result in an arbitrary verdict because your solution will continue to read from a closed stream.",
+      "After printing each query do not forget to output the end of line and flush∗$$$^{\\text{∗}}$$$ the output. Otherwise, you will get Idleness limit exceeded verdict. If, at any interaction step, you read −1$$$-1$$$ instead of valid data, your solution must exit immediately. This means that your solution will receive Wrong answer because of an invalid query or any other mistake. Failing to exit can result in an arbitrary verdict because your solution will continue to read from a closed stream.",
       "The interactor is not adaptive; the hidden string is fixed before the interaction starts.",
-      "∗%%ZSMJ20%%To flush, use:",
+      "∗$$$^{\\text{∗}}$$$To flush, use:",
       "fflush(stdout) or cout.flush() in C++;",
       "sys.stdout.flush() in Python;",
       "see the documentation for other languages."
@@ -38,7 +38,7 @@
     "output": [],
     "note": [
       "The hidden string in this test is 00100001.",
-      "Note that the lengths of the three queries are 1%%ZSMJ21%%, 3%%ZSMJ22%%, and 3%%ZSMJ23%% in order. Because s8=1%%ZSMJ24%%, the answer to the query ?68%%ZSMJ25%% is 1%%ZSMJ26%%."
+      "Note that the lengths of the three queries are 1$$$1$$$, 3$$$3$$$, and 3$$$3$$$ in order. Because s8=1$$$s_8 = \\texttt{1}$$$, the answer to the query ?68$$$\\texttt{?}\\;6\\;8$$$ is 1$$$1$$$."
     ]
   },
   "examples": [
@@ -46,5 +46,39 @@
       "input": "8\n\n0\n\n1\n\n0",
       "output": "\n? 4 4\n\n? 6 8\n\n? 5 7\n\n! 8"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

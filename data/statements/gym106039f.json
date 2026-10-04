@@ -10,18 +10,18 @@
   "sections": {
     "legend": [
       "China has been unified, ending the Warring States Period and ushering in an era of innovations, such as teleportation. To connect the empire, the emperor has installed teleporters in various cities.",
-      "The empire consists of n%%ZSMJ0%% cities connected by m%%ZSMJ1%% roads, such that it is always possible to travel between any two cities using only these roads. Each road allows for bidirectional traffic and has a fixed travel cost.",
-      "Additionally, there are k%%ZSMJ2%% different types of teleporters. Two cities can connect instantly via teleportation only if both have a teleporter of the same type. However, the cost of using a teleporter depends on the city of origin, as each mayor sets the fee to be paid for leaving the city using the magical device. That is, even for the same type of teleporter, the usage cost can vary between cities.",
-      "The Japanese traveler Mori, upon arriving in China, does not understand its complex structure and is unable to determine the best routes for travel. He wishes to travel from city 1%%ZSMJ3%% to city n%%ZSMJ4%%. What is the minimum possible cost to make this journey, considering both the available roads and teleporters?"
+      "The empire consists of n$$$n$$$ cities connected by m$$$m$$$ roads, such that it is always possible to travel between any two cities using only these roads. Each road allows for bidirectional traffic and has a fixed travel cost.",
+      "Additionally, there are k$$$k$$$ different types of teleporters. Two cities can connect instantly via teleportation only if both have a teleporter of the same type. However, the cost of using a teleporter depends on the city of origin, as each mayor sets the fee to be paid for leaving the city using the magical device. That is, even for the same type of teleporter, the usage cost can vary between cities.",
+      "The Japanese traveler Mori, upon arriving in China, does not understand its complex structure and is unable to determine the best routes for travel. He wishes to travel from city 1$$$1$$$ to city n$$$n$$$. What is the minimum possible cost to make this journey, considering both the available roads and teleporters?"
     ],
     "input": [
-      "The first line of input contains three integers: n%%ZSMJ5%%, m%%ZSMJ6%%, and k%%ZSMJ7%%, representing the number of cities, the number of roads, and the number of distinct teleporter types, respectively. The values adhere to the constraints 2≤n≤2⋅105%%ZSMJ8%%, n−1≤m≤min(n(n−1)2,2⋅105)%%ZSMJ9%%, and 0≤k≤2⋅105%%ZSMJ10%%.",
-      "Each of the next m%%ZSMJ11%% lines describes an existing road between two cities. Each line contains three integers u%%ZSMJ12%%, v%%ZSMJ13%%, and c%%ZSMJ14%%, indicating that there is a bidirectional road connecting cities u%%ZSMJ15%% and v%%ZSMJ16%% with a cost of c%%ZSMJ17%%, where 1≤u,v≤n%%ZSMJ18%% and 1≤c≤109%%ZSMJ19%%. It is guaranteed that there is at least one path between any two cities using only roads, that there are no two distinct roads connecting the same pair of cities, and that no road connects a city to itself.",
-      "Next, for each of the n%%ZSMJ20%% cities, there is a line containing an integer t%%ZSMJ21%%, indicating the number of teleporters available in that city, with 0≤t≤2⋅105%%ZSMJ22%%. This line is followed by t%%ZSMJ23%% pairs of integers (ui,ci)%%ZSMJ24%%, representing that a teleporter of type ui%%ZSMJ25%% is available in the city, and the cost to use it from this city is ci%%ZSMJ26%%, where 1≤ui≤k%%ZSMJ27%% and 1≤ci≤109%%ZSMJ28%%. A single teleporter type may not exist in any city, exist in only one, or exist in multiple cities.",
-      "It is guaranteed that the same teleporter type does not appear twice in the same city and that the total sum of available teleporters across all cities does not exceed min(nk,2⋅105)%%ZSMJ29%%."
+      "The first line of input contains three integers: n$$$n$$$, m$$$m$$$, and k$$$k$$$, representing the number of cities, the number of roads, and the number of distinct teleporter types, respectively. The values adhere to the constraints 2≤n≤2⋅105$$$2 \\leq n \\leq 2 \\cdot 10^5$$$, n−1≤m≤min(n(n−1)2,2⋅105)$$$n - 1 \\leq m \\leq \\min\\left(\\frac{n(n - 1)}{2}, 2 \\cdot 10^5\\right)$$$, and 0≤k≤2⋅105$$$0 \\leq k \\leq 2 \\cdot 10^5$$$.",
+      "Each of the next m$$$m$$$ lines describes an existing road between two cities. Each line contains three integers u$$$u$$$, v$$$v$$$, and c$$$c$$$, indicating that there is a bidirectional road connecting cities u$$$u$$$ and v$$$v$$$ with a cost of c$$$c$$$, where 1≤u,v≤n$$$1 \\leq u, v \\leq n$$$ and 1≤c≤109$$$1 \\leq c \\leq 10^9$$$. It is guaranteed that there is at least one path between any two cities using only roads, that there are no two distinct roads connecting the same pair of cities, and that no road connects a city to itself.",
+      "Next, for each of the n$$$n$$$ cities, there is a line containing an integer t$$$t$$$, indicating the number of teleporters available in that city, with 0≤t≤2⋅105$$$0 \\leq t \\leq 2 \\cdot 10^5$$$. This line is followed by t$$$t$$$ pairs of integers (ui,ci)$$$(u_i, c_i)$$$, representing that a teleporter of type ui$$$u_i$$$ is available in the city, and the cost to use it from this city is ci$$$c_i$$$, where 1≤ui≤k$$$1 \\leq u_i \\leq k$$$ and 1≤ci≤109$$$1 \\leq c_i \\leq 10^9$$$. A single teleporter type may not exist in any city, exist in only one, or exist in multiple cities.",
+      "It is guaranteed that the same teleporter type does not appear twice in the same city and that the total sum of available teleporters across all cities does not exceed min(nk,2⋅105)$$$\\min(nk, 2 \\cdot 10^5)$$$."
     ],
     "output": [
-      "Print a single integer representing the minimum cost to travel between cities 1%%ZSMJ30%% and n%%ZSMJ31%%."
+      "Print a single integer representing the minimum cost to travel between cities 1$$$1$$$ and n$$$n$$$."
     ]
   },
   "examples": [
@@ -33,5 +33,22 @@
       "input": "6 7 2\n1 2 1\n2 3 3\n1 3 5\n2 4 2\n3 5 2\n5 6 7\n4 6 5\n1\n1 7\n2\n1 5\n2 1\n0\n0\n0\n1\n1 100",
       "output": "6"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null
+    ]
+  }
 }

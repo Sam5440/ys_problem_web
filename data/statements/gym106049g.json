@@ -9,26 +9,26 @@
   "memoryLimit": "256 megabytes",
   "sections": {
     "legend": [
-      "You are given three integers n%%ZSMJ0%%, L%%ZSMJ1%%, and R%%ZSMJ2%%.",
+      "You are given three integers n$$$n$$$, L$$$L$$$, and R$$$R$$$.",
       "You need to do the following:",
-      "Pick an integer m%%ZSMJ3%% such that 1≤m≤n%%ZSMJ4%%;",
-      "Partition the interval [1,n]%%ZSMJ5%% into m%%ZSMJ6%% intervals [l1,r1],[l2,r2],…,[lm,rm]%%ZSMJ7%% such that:   l1=1%%ZSMJ8%% and rm=n%%ZSMJ9%%;",
-      "li≤ri%%ZSMJ10%% for all 1≤i≤m%%ZSMJ11%%;",
-      "ri=li+1−1%%ZSMJ12%% for all 1≤i<m%%ZSMJ13%%;",
-      "L≤ri−li+1≤R%%ZSMJ14%%.",
-      "Note Pi=Πrilii%%ZSMJ15%%. Find the minimum of gcd(P1,P2,…,Pm)%%ZSMJ16%%, and output your interval partition scheme. Here, gcd%%ZSMJ17%% means greatest common divisor.",
-      "For example, n=7%%ZSMJ18%%, L=3%%ZSMJ19%% and R=4%%ZSMJ20%%, one optimal scheme is to choose m=2%%ZSMJ21%% and intervals [1,4]%%ZSMJ22%% and [5,7]%%ZSMJ23%%. In this case, gcd(P1,P2)=gcd(1⋅2⋅3⋅4,5⋅6⋅7)=gcd(24,210)=6%%ZSMJ24%%, which can be proven to be the minimum value.",
-      "Since the value of gcd(P1,P2,…,Pm)%%ZSMJ25%% may be large, you need to output it modulo 998244353%%ZSMJ26%%. If there is not any valid interval partition scheme, output −1%%ZSMJ27%% instead."
+      "Pick an integer m$$$m$$$ such that 1≤m≤n$$$1 \\leq m \\leq n$$$;",
+      "Partition the interval [1,n]$$$[1, n]$$$ into m$$$m$$$ intervals [l1,r1],[l2,r2],…,[lm,rm]$$$[l_1, r_1], [l_2, r_2], \\ldots, [l_m, r_m]$$$ such that:   l1=1$$$l_1 = 1$$$ and rm=n$$$r_m = n$$$;",
+      "li≤ri$$$l_i \\leq r_i$$$ for all 1≤i≤m$$$1 \\leq i \\leq m$$$;",
+      "ri=li+1−1$$$r_i = l_{i+1} - 1$$$ for all 1≤i<m$$$1 \\leq i  \\lt  m$$$;",
+      "L≤ri−li+1≤R$$$L \\leq r_i - l_i + 1 \\leq R$$$.",
+      "Note Pi=Πrilii$$$P_i= \\Pi_{l_i}^{r_i}i$$$. Find the minimum of gcd(P1,P2,…,Pm)$$$\\gcd(P_1, P_2,\\ldots,P_m)$$$, and output your interval partition scheme. Here, gcd$$$\\gcd$$$ means greatest common divisor.",
+      "For example, n=7$$$n=7$$$, L=3$$$L=3$$$ and R=4$$$R=4$$$, one optimal scheme is to choose m=2$$$m=2$$$ and intervals [1,4]$$$[1,4]$$$ and [5,7]$$$[5,7]$$$. In this case, gcd(P1,P2)=gcd(1⋅2⋅3⋅4,5⋅6⋅7)=gcd(24,210)=6$$$\\gcd(P_1,P_2)=\\gcd(1 \\cdot 2 \\cdot 3 \\cdot 4,5 \\cdot 6 \\cdot 7)=\\gcd(24,210)=6$$$, which can be proven to be the minimum value.",
+      "Since the value of gcd(P1,P2,…,Pm)$$$\\gcd(P_1, P_2,\\ldots,P_m)$$$ may be large, you need to output it modulo 998244353$$$998\\,244\\,353$$$. If there is not any valid interval partition scheme, output −1$$$-1$$$ instead."
     ],
     "input": [
-      "Each test contains multiple test cases. The first line contains the number of test cases t%%ZSMJ28%% (1≤t≤104%%ZSMJ29%%). The description of the test cases follows.",
-      "The only line of each test case contains three integers n%%ZSMJ30%%, L%%ZSMJ31%%, and R%%ZSMJ32%% (1≤n≤105%%ZSMJ33%%, 1≤L≤R≤n%%ZSMJ34%%).",
-      "It is guaranteed that the sum of n%%ZSMJ35%% over all test cases does not exceed 105%%ZSMJ36%%."
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$). The description of the test cases follows.",
+      "The only line of each test case contains three integers n$$$n$$$, L$$$L$$$, and R$$$R$$$ (1≤n≤105$$$1 \\le n \\le 10^5$$$, 1≤L≤R≤n$$$1 \\le L \\le R \\le n$$$).",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 105$$$10^5$$$."
     ],
     "output": [
-      "For each test case, if there is not any valid interval partition scheme, output −1%%ZSMJ37%%.",
-      "Otherwise, in the first line output two integers m%%ZSMJ38%% and g%%ZSMJ39%%, where m%%ZSMJ40%% is the number of intervals and g%%ZSMJ41%% is the minimum value of gcd(P1,P2,…,Pm)%%ZSMJ42%% modulo 998244353%%ZSMJ43%%.",
-      "In the following m%%ZSMJ44%% lines, output two numbers li%%ZSMJ45%% and ri%%ZSMJ46%%, representing the left and right endpoints of the intervals. The intervals must satisfy all the conditions in the statement.",
+      "For each test case, if there is not any valid interval partition scheme, output −1$$$-1$$$.",
+      "Otherwise, in the first line output two integers m$$$m$$$ and g$$$g$$$, where m$$$m$$$ is the number of intervals and g$$$g$$$ is the minimum value of gcd(P1,P2,…,Pm)$$$\\gcd(P_1, P_2,\\ldots,P_m)$$$ modulo 998244353$$$998\\,244\\,353$$$.",
+      "In the following m$$$m$$$ lines, output two numbers li$$$l_i$$$ and ri$$$r_i$$$, representing the left and right endpoints of the intervals. The intervals must satisfy all the conditions in the statement.",
       "If there are multiple answers, output any."
     ],
     "note": [
@@ -41,5 +41,34 @@
       "input": "5\n5 3 4\n7 3 4\n8 3 4\n3 1 1\n13 7 13",
       "output": "-1\n2 6\n1 4\n5 7\n2 24\n1 4\n5 8\n3 1\n1 1\n2 2\n3 3\n1 237554682\n1 13"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "input": [
+      null,
+      null,
+      null
+    ],
+    "output": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "note": [
+      null,
+      null
+    ]
+  }
 }

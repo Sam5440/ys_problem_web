@@ -47,6 +47,12 @@ async function restoreFrom(branch, paths, label) {
   const fetchHead = (await git(['rev-parse', 'FETCH_HEAD'])).stdout;
   const usable = await treeHas(fetchHead, paths);
   if (!usable.length) {
+    if (label === 'statements') {
+      console.warn(
+        `⚠️  ${PROBLEMS_BRANCH} exists but carries no data/statements — the branch tip is empty! ` +
+          'publish-deploy will refuse to ship a statements-less deploy. Rebuild the branch from a commit that still tracks statements.',
+      );
+    }
     console.log(`${label}: branch carries none of ${paths.join(', ')} — nothing restored`);
     return;
   }
@@ -73,7 +79,6 @@ async function main() {
       console.log(`statements: ${PROBLEMS_BRANCH} does not exist yet — starting cold`);
     }
   }
-
   if (wantDaily) {
     if (branches.has(DEPLOY_BRANCH)) {
       await restoreFrom(DEPLOY_BRANCH, ['data/daily.json'], 'daily');

@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { AI_MODELS, aiTranslate } from './ai-translate';
 import { clearZhCache } from '@/lib/zh-store';
+import GithubMark from './github-mark';
 
 /* ---------------- constants ---------------- */
 
@@ -348,6 +349,32 @@ function SettingsDialog({ onClose }) {
               {test.state === 'ok' ? `✓ ${test.msg}` : `✗ ${test.msg}`}
             </p>
           )}
+        </div>
+
+        <div className="space-y-1.5">
+          <p className="text-xs font-medium text-muted-foreground">项目仓库</p>
+          <div className="space-y-1">
+            <a
+              href="https://github.com/Sam5440/ys_problem_web"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 rounded-md border px-2.5 py-1.5 text-xs text-foreground transition-colors hover:bg-accent"
+            >
+              <GithubMark className="size-3.5 shrink-0" />
+              <span className="font-medium">本站仓库</span>
+              <span className="text-muted-foreground">Sam5440/ys_problem_web</span>
+            </a>
+            <a
+              href="https://github.com/Yawn-Sean/Daily_CF_Problems"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 rounded-md border px-2.5 py-1.5 text-xs text-foreground transition-colors hover:bg-accent"
+            >
+              <GithubMark className="size-3.5 shrink-0" />
+              <span className="font-medium">题目来源</span>
+              <span className="text-muted-foreground">Yawn-Sean/Daily_CF_Problems</span>
+            </a>
+          </div>
         </div>
 
         <div className="flex items-center justify-between gap-2">

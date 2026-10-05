@@ -4,7 +4,7 @@ import { Activity } from 'lucide-react';
 import LogsView from '@/components/logs-view';
 
 export const metadata = {
-  title: 'CI 日志 · YS Problem Web',
+  title: 'CI 日志 · 小羊肖恩的每日两题',
   description:
     '数据同步 workflow 的运行日志：完整运行后自动落盘提交到仓库（滚动保留 60 天），空跑等未产生提交的运行从 GitHub Actions 实时同步显示。',
 };

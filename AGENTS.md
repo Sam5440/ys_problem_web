@@ -22,6 +22,54 @@ Codeforces 每日两题镜像站（数据来自上游 [Yawn-Sean/Daily_CF_Proble
 - 改了 statements 之后的发布路径：`npm run reattach` → `node scripts/push-data-branches.mjs --problems` → `npm run data:publish`。**不要试图把数据提交进 main**。
 - `daily.json` 不入任何长期分支（可由上游 + statements 重导出），CI 每轮从 deploy 恢复上一份作为增量基线。
 
+## 发布准则（main → deploy / 数据分支的同步逻辑）
+
+Vercel 的生产分支是 `deploy`，**直接 push main 不会立即上线**——main 只存代码，真正上线的是 CI 组装的 `deploy` 分支。所有发布路径最终汇入同一条规则：
+
+> **deploy = main 最新代码 + 数据分支最新内容**，由 `scripts/publish-deploy.mjs` 组装成孤立单提交 force-push；树内容没变时自动跳过推送。
+
+### 同步方向总图
+
+```
+main（代码）──git push──▶ publish-deploy.yml（Action，自动）──┐
+                                                               ├──▶ 组装 deploy ──▶ Vercel 自动部署生产
+上游题库 ──update-data.yml（每小时轮询 / 手动 dispatch）──────┤        （孤立提交 force-push）
+                                                               │
+本地工作区 ──npm run data:publish（手动版，需先 data:pull）───┘
+
+上游 ──update-data.yml──▶ data/daily.json（临时）＋ statements
+                            │ push-data-branches
+                            ├──▶ data/problems    题面+翻译（并集语义，永久）
+                            └──▶ data/misc-<日期> 排行榜/CI日志/SHA标记（纯快照，60天滚动）
+
+本地工作区 ◀──npm run data:pull── 数据分支（只读恢复，不碰远端）
+```
+
+### 核心不变式（任何改动都不得破坏）
+
+1. **main 永远没有数据**。`data/`、`public/ci-logs/` 被 gitignore，数据只进数据分支（plumbing 脚本绕过 ignore 强制 add）。在 main 上普通 `git add data` 会把数据带进主分支历史，毁掉瘦身效果——这是本仓库最严重的破坏性操作。
+2. **deploy 是纯投影、可随时重放**。它没有历史（单孤立提交）= publish 时刻的 main HEAD 树 + 数据分支内容。所以「主仓库的任何改动，push 到 main 后的下一次 publish 自动带进 deploy」；deploy 被改坏也无需修复，`npm run data:publish` 随时重建。
+3. **两条数据分支寿命与语义不同**。`data/problems` 是**并集**（先叠加远端 tip 再快照，防并发丢题面）、永久保留，丢了只能重抓；`data/misc-<UTC日期>` 是**纯快照**（滚动删除必须生效）、保留 60 天（见高频坑 #4，改 `push-data-branches.mjs` 时必须保住这两条）。
+4. **Vercel 只部署 deploy**。数据分支树内注入了禁用部署的 `vercel.json`（`data/*` minimatch）；main/PR 分支构建时 `prepare-build.mjs` 自动从 origin/deploy 拉数据快照，属预览性质，不影响生产。
+
+### 场景 SOP：什么改动走哪条路
+
+| 你改了什么 | 发布路径 | 上线方式与说明 |
+|---|---|---|
+| 代码（页面/组件/样式/脚本/workflow） | `git push origin main` 即可 | push 自动触发 `publish-deploy.yml`：恢复数据 → 清理过期 misc → 重建 deploy → Vercel 约 2 分钟上线。**无需手动 publish** |
+| statements（题面/翻译文本） | `npm run reattach` → `node scripts/push-data-branches.mjs --problems` → `npm run data:publish` | 手动三连，顺序不能乱：不 reattach 站点仍渲染旧题面；只推 problems 不 publish 时线上不变 |
+| 想立刻拉取上游新题 | `gh workflow run update-data.yml`（或本地 `npm run update-data` + 上一行 statements 三连） | CI 全链路：同步 → 补抓 → AI 翻译 → 推数据分支 → 重建 deploy |
+| deploy 被改坏 / 想强制重建 | `npm run data:pull && npm run data:publish` | 本地重建 deploy；内容没变自动跳过推送；缺 daily.json 脚本会守卫报错 |
+| 新机器克隆 / 工作区数据丢了 | `npm run data:pull` | 只恢复工作区，不碰任何远端分支；`npm run build` 缺数据时也会自愈拉 deploy 快照 |
+
+### 主仓库操作对各分支的因果清单
+
+- **push main** → 触发 `publish-deploy.yml`：restore-data → prune 过期 misc → 重建 deploy。**只影响 deploy，不写 data/problems、不改 misc 内容**。删掉/改名 main 里的文件，下一次 publish 后 deploy 同步消失。
+- **手动 `npm run data:publish`** → 只重建 deploy（要求工作区已有数据，缺了先 `data:pull`）。
+- **手动 `node scripts/push-data-branches.mjs --problems`** → 工作区 `data/statements/*.json` 并集叠加进 `data/problems`；`--misc` 纯快照覆盖当天 misc；`--prune` 只删过期 misc 分支。不跑 publish 就不影响线上。
+- **CI update job**（每小时轮询 / 手动 dispatch / 自链）→ 唯一自动化写 `data/problems`、`data/misc-*` 并重建 deploy 的路径；save-log job 追加日志进当天 misc 后也会再 publish 一次。
+- **本地工作区**的 `data/`、`public/ci-logs/` 永远只是数据分支的投影（未跟踪文件），删了随时 `data:pull` 找回，不影响任何远端。
+
 ## 常用命令
 
 ```bash

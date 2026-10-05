@@ -11,7 +11,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { date } = await params;
-  return { title: `${formatDateCN(date)} · YS Problem Web` };
+  return { title: `${formatDateCN(date)} · 小羊肖恩的每日两题` };
 }
 
 export default async function DayPage({ params }) {

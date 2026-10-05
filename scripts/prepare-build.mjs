@@ -58,6 +58,9 @@ async function downloadDataSnapshot() {
   const { readdir } = await import('node:fs/promises');
   const root = path.join(workdir, (await readdir(workdir))[0]);
   try {
+    // parents may be absent on data-less checkouts (git does not track the
+    // empty public/ dir on main)
+    await mkdir('public', { recursive: true });
     await rename(path.join(root, 'data'), 'data');
     await rename(path.join(root, 'public', 'ci-logs'), path.join('public', 'ci-logs'));
   } catch (e) {

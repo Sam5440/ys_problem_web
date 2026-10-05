@@ -99,13 +99,15 @@ export async function commitTree(tree, parents, message) {
   return stdout;
 }
 
-/** Tree oid of a commit-ish (null when the ref does not exist remotely). */
-export async function remoteTree(branch) {
-  const { stdout } = await git(['ls-remote', 'origin', `refs/heads/${branch}`], { check: false });
-  const sha = stdout.split('\t')[0];
-  if (!sha) return { sha: null, tree: null };
-  const t = (await git(['rev-parse', `${sha}^{tree}`], { check: false })).stdout;
-  return { sha, tree: t || null };
+/** Branch tip via a depth-1 fetch, so the commit object (and its tree) is
+    guaranteed to exist locally for parent links and tree comparisons.
+    Returns {sha:null} when the branch does not exist on the remote. */
+export async function branchTip(branch) {
+  const r = await git(['fetch', '--quiet', '--depth=1', 'origin', branch], { check: false });
+  if (r.code !== 0) return { sha: null, tree: null };
+  const sha = (await git(['rev-parse', 'FETCH_HEAD'])).stdout;
+  const tree = (await git(['rev-parse', `${sha}^{tree}`])).stdout;
+  return { sha, tree: tree || null };
 }
 
 /** Push a commit sha to a branch. force=true rewrites (deploy model). */

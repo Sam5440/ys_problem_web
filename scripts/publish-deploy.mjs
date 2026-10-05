@@ -11,14 +11,14 @@
  * clobbering push is self-healed by the next hourly run. An unchanged tree
  * skips the push so Vercel does not rebuild identical snapshots.
  */
-import { buildTree, commitTree, remoteTree, pushCommit } from './lib/git-plumbing.mjs';
+import { buildTree, commitTree, branchTip, pushCommit } from './lib/git-plumbing.mjs';
 import { DEPLOY_BRANCH, DEPLOY_PATHS } from './lib/data-branches.mjs';
 
 const runId = process.env.GITHUB_RUN_ID ? ` (run ${process.env.GITHUB_RUN_ID})` : '';
 
 async function main() {
   const tree = await buildTree({ base: 'HEAD', paths: DEPLOY_PATHS });
-  const { sha, tree: remoteTreeOid } = await remoteTree(DEPLOY_BRANCH);
+  const { sha, tree: remoteTreeOid } = await branchTip(DEPLOY_BRANCH);
   if (remoteTreeOid && tree === remoteTreeOid) {
     console.log(`deploy: tree unchanged (${tree.slice(0, 12)}) — skipping push`);
     return;

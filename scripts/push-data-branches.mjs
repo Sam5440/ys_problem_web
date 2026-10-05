@@ -22,7 +22,7 @@
  * data/* (minimatch) — without it each data push would deploy ~10-30MB of raw
  * JSON as a junk preview site.
  */
-import { git, buildTree, commitTree, remoteTree, pushCommit, isNonFastForward } from './lib/git-plumbing.mjs';
+import { git, buildTree, commitTree, branchTip, pushCommit, isNonFastForward } from './lib/git-plumbing.mjs';
 import {
   PROBLEMS_BRANCH,
   PROBLEMS_PATHS,
@@ -42,9 +42,11 @@ const NO_PREVIEW = {
   'vercel.json': `${JSON.stringify({ git: { deploymentEnabled: { 'data/*': false } } }, null, 2)}\n`,
 };
 
-/** Overlay a branch's tracked paths (within `paths`) onto the worktree. */
+/** Fetch a branch (depth 1) and overlay the tracked paths (within `paths`)
+    that it actually carries onto the worktree. Returns the fetched tip sha. */
 async function overlayBranchFiles(branch, paths) {
-  await git(['fetch', '--depth=1', 'origin', branch]);
+  await git(['fetch', '--quiet', '--depth=1', 'origin', branch]);
+  const tip = (await git(['rev-parse', 'FETCH_HEAD'])).stdout;
   const usable = (await git(['ls-tree', '--name-only', 'FETCH_HEAD', '--', ...paths], { check: false })).stdout
     .split('\n')
     .filter(Boolean);
@@ -52,6 +54,7 @@ async function overlayBranchFiles(branch, paths) {
     await git(['restore', '--source', 'FETCH_HEAD', '--worktree', '--', ...usable]);
     console.log(`${branch}: overlaid ${usable.join(', ')} from remote tip`);
   }
+  return tip;
 }
 
 /**
@@ -61,10 +64,14 @@ async function overlayBranchFiles(branch, paths) {
  */
 async function pushSnapshot(branch, paths, message, { union = false, parentBranch = null } = {}) {
   for (let attempt = 1; attempt <= 3; attempt++) {
-    const own = await remoteTree(branch);
-    if (own.sha && union) await overlayBranchFiles(branch, paths);
-    const parentSha =
-      own.sha || (parentBranch && parentBranch !== branch ? (await remoteTree(parentBranch)).sha : null);
+    const own = await branchTip(branch);
+    let parentSha = null;
+    if (own.sha) {
+      parentSha = union ? await overlayBranchFiles(branch, paths) : own.sha;
+    } else if (parentBranch && parentBranch !== branch) {
+      const prev = await branchTip(parentBranch);
+      parentSha = prev.sha;
+    }
     const tree = await buildTree({ paths, extraFiles: NO_PREVIEW });
     if (own.sha && tree === own.tree) {
       console.log(`${branch}: unchanged (tree ${tree.slice(0, 12)}) — nothing to push`);
@@ -77,10 +84,10 @@ async function pushSnapshot(branch, paths, message, { union = false, parentBranc
       return { pushed: true };
     } catch (e) {
       if (!isNonFastForward(e) || attempt === 3) throw e;
-      // The branch moved between our ls-remote and the push: overlay their
-      // files onto our worktree and retry.
+      // The branch moved between our fetch and the push: overlay their files
+      // onto our worktree and retry.
       console.log(`${branch}: remote moved, overlaying remote files and retrying (${attempt}/3)`);
-      await overlayBranchFiles(branch, paths);
+      parentSha = await overlayBranchFiles(branch, paths);
     }
   }
 }

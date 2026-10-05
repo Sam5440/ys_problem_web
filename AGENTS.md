@@ -1,23 +1,44 @@
 # AGENTS.md
 
-给 AI 编码代理的仓库指南。改动前先读一遍，尤其是「高频坑」。
+给 AI 编码代理的仓库指南。改动前先读一遍，尤其是「分支模型」和「高频坑」。
 
 ## 项目概览
 
 Codeforces 每日两题镜像站（数据来自上游 [Yawn-Sean/Daily_CF_Problems](https://github.com/Yawn-Sean/Daily_CF_Problems)）：Next.js 15 App Router + Tailwind CSS v4 + 手写 shadcn 风格组件（`components/ui/`）+ KaTeX + marked，**全站静态预渲染**，Vercel 自动部署。数据由 GitHub Action 每小时轮询上游自动更新。
 
+## 分支模型（先读这个）
+
+**main 只有代码，没有任何数据。** 数据按寿命分级存放在专门分支，CI 每次把「main 代码 + 最新数据」组装成 `deploy` 分支供 Vercel 构建：
+
+| 分支 | 内容 | 保留策略 |
+|---|---|---|
+| `main` | 代码，`data/`、`public/ci-logs/` 均被 gitignore | 永久 |
+| `data/problems` | 题面 + 翻译（`data/statements/*.json`） | **永久**，完整历史 |
+| `data/misc-<UTC日期>` | 排行榜 / CI 日志 / `.upstream-sha`、`.leaderboard-sha` 标记 | 滚动 60 天，每日清理 |
+| `deploy` | main 代码 + 数据快照 | 单提交孤立分支，每次 force-push 覆盖 |
+
+- **本地开发第一步永远是 `npm run data:pull`**（从数据分支恢复数据进工作区）。工作区里的 `data/`、`public/ci-logs/` 是未跟踪文件，属正常状态。
+- **deploy 是纯投影**（main 代码 + 数据分支内容），不带历史、不会冲突，`npm run data:publish` 可随时重建；内容未变时脚本自动跳过推送。
+- 改了 statements 之后的发布路径：`npm run reattach` → `node scripts/push-data-branches.mjs --problems` → `npm run data:publish`。**不要试图把数据提交进 main**。
+- `daily.json` 不入任何长期分支（可由上游 + statements 重导出），CI 每轮从 deploy 恢复上一份作为增量基线。
+
 ## 常用命令
 
 ```bash
+npm run data:pull      # 从数据分支恢复 data/ 与 public/ci-logs/（克隆后第一步）
 npm run dev            # 开发服务器
-npx next build         # 生产构建（跳过 prebuild；npm run build 会先从上游拉数据并可能改写 data/daily.json）
+npm run build          # prepare-build（数据缺失自动从 deploy 拉）+ next build
 npm run reattach       # 把 data/statements/*.json 重新挂载进 data/daily.json
 npm run update-data    # 同步上游（CF_STATEMENTS=0 TRANSLATE=0 等环境变量控制子步骤）
+npm run data:publish   # 手动重建 deploy 发布分支（孤立提交，强推）
 node scripts/fetch-statements.mjs --limit N   # 补抓题面（续传式）
 node scripts/translate-ai.mjs                 # AI 翻译回填（需 AI_BASE_URL/AI_API_KEY）
 node scripts/sync-leaderboard.mjs             # 仅同步排行榜（records.js → data/leaderboard.json，内容无变化不写盘）
 node scripts/repair-zsmj.mjs --limit N        # 重抓 ZSMJ 污染题面
 node scripts/save-ci-log.mjs                  # 仅在 Actions 内可用（依赖 GITHUB_* env，缺了会跳过）
+node scripts/push-data-branches.mjs [--problems] [--misc] [--prune]   # 手动推送数据分支
+node --test scripts/tests/                    # 分支逻辑单测
+bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（夹具仓库，不碰 origin）
 ```
 
 ## 架构与数据流
@@ -26,17 +47,24 @@ node scripts/save-ci-log.mjs                  # 仅在 Actions 内可用（依�
 上游仓库 ──(update-data.mjs 每小时 CI)──▶ data/daily.json ◀──(reattach-statements.mjs)── data/statements/*.json
                                             │
                                             ▼
-                                   Next.js 静态预渲染（app/）
+                                   Next.js 静态预渲染（app/，构建于 deploy 分支）
 ```
 
 - **站点渲染的是 `data/daily.json` 内嵌的题面副本，不是 statements/*.json**。任何脚本或手工改动 statements 之后，必须跑 `npm run reattach`，否则预渲染页面仍是旧数据（历史上曾因此误判为构建缓存问题）。
 - 路由：`/`（今日两题）、`/archive`（全量历史归档）、`/categories`、`/leaderboard`、`/day/[date]`、`/logs`（CI 日志看板）、`/logs/ai-demo`（翻译明细演示页）、`/api/mt/[channel]`（浏览器 MT 跨域中继）。
+- 构建期读取：`data/daily.json`（`lib/data.js` 直接 import）、`data/leaderboard.json`、`public/ci-logs/`、`data/statements/`（ai-demo 页构建期读）。这些只存在于 deploy 分支 / 本地恢复后的工作区。
 
 ### 目录地图
 
 | 路径 | 作用 |
 |---|---|
 | `scripts/update-data.mjs` | 同步上游 problems/题解/排行榜 → `data/daily.json`、`data/leaderboard.json`（全量历史，MAX_DAYS 默认 Infinity） |
+| `scripts/lib/git-plumbing.mjs` | 数据分支 git 底层操作：临时 index 组树、commit-tree、branchTip（fetch 取 tip）、push 助手 |
+| `scripts/lib/data-branches.mjs` | 分支命名（`data/misc-YYYY-MM-DD`）、60 天保留期选择、最新 misc 分支查找 |
+| `scripts/restore-data.mjs` | 把数据分支内容恢复进工作区（`--misc`/`--statements`/`--daily` 可组合；`git restore` 只动工作区不动 index） |
+| `scripts/push-data-branches.mjs` | 题面→`data/problems`（**并集语义**：先叠加远端 tip 再快照，防并发丢文件）；杂项→当天 misc 分支（**纯快照**：滚动删除必须生效）；`--prune` 清理过期分支 |
+| `scripts/publish-deploy.mjs` | 组装 deploy 孤立提交（HEAD 树 + daily/leaderboard/statements/ci-logs）并 force-push；树未变自动跳过 |
+| `scripts/prepare-build.mjs` | 构建自愈：数据缺失时从 origin/deploy 拉快照，再跑 write-public-data（vercel.json buildCommand） |
 | `scripts/lib/cf-statement.mjs` | CF 题面解析器（Playwright 抓取、unmathjax 还原公式） |
 | `scripts/fetch-statements.mjs` | 抓题面：无头 Chromium ↔ 有头 Chrome 自适应过 Cloudflare，Xvfb 下运行 |
 | `scripts/lib/translate.mjs` + `scripts/translate-statements.mjs` | 四渠道网页版 MT（DeepL/有道/彩云/讯飞，移植 OJBetter，GPL-3.0） |
@@ -48,17 +76,21 @@ node scripts/save-ci-log.mjs                  # 仅在 Actions 内可用（依�
 | `lib/mt-protect.js` | 公式/代码/图片占位保护（node 与浏览器同源复用，占位符 `[M07]` 零填充格式） |
 | `components/logs-view.jsx` | /logs 仪表盘（手写 SVG 图表，时间轴锚定最新运行而非 Date.now()） |
 | `components/ai-translate-detail.jsx` | 逐段原文↔译文对照视图（/logs 运行卡内嵌 + /logs/ai-demo） |
-| `public/ci-logs/` | CI 产物三件套：`<日期>-<runId>.log/.json/.ai.json`，滚动 60 天 |
-| `data/.upstream-sha` | 上次同步的上游 main HEAD，CI 靠它跳过无更新的轮询 |
+| `public/ci-logs/` | CI 产物三件套：`<日期>-<runId>.log/.json/.ai.json`，滚动 60 天（存 misc 分支与 deploy） |
+| `data/.upstream-sha` | 上次同步的上游 main HEAD，CI 靠它跳过无更新的轮询（存 misc 分支） |
 | `data/.leaderboard-sha` | 上次同步的上游 gh-pages HEAD——**排行榜独立于 main 更新，必须单独记 SHA**（见 CI 一节） |
 
 ### CI workflow（`.github/workflows/update-data.yml`，每小时 :12）
 
 双 job：
-1. **update**：`git ls-remote` 比对**两个**上游 SHA——main（`data/.upstream-sha`）与 gh-pages（`data/.leaderboard-sha`，排行榜 records.js 在 gh-pages 独立更新，主分支不动也会变；只比对 main 曾导致排行榜长期不刷新）。两者都一致→9 秒空跑结束；仅 gh-pages 变→只跑 `sync-leaderboard.mjs`（零依赖，不装 npm 不启 Playwright）；main 变或手动触发→全量同步 → 补抓 4 题 → 修复 ZSMJ（`continue-on-error`；若 `repaired>0 && remaining>0` 用 `gh api .../dispatches` **自链下一轮**——GitHub 并发组只保留最新排队运行，预先排队会被取消，必须 run 内自链）→ AI 翻译回填（预算 60 段，`continue-on-error`）→ 提交 `data/` 并 push（rebase 重试 3 次防竞争；仅榜单变更时提交信息为 `chore: sync community leaderboard`）。
-2. **save-log**（`needs: update`，`if: !cancelled()`）：job 日志只有完成后才能下载，所以必须独立 job。写 `.log`（清洗 + 400KB 留尾）+ `.json`（摘要含 `tokenUsage`/`tokenSegments`/`leaderboard`）+ `.ai.json`（逐段翻译记录）。仅榜单变更的运行也归档（否则 /logs 会把有提交的运行误判成空跑）。
+1. **update**：检出 main（仅代码）→ `restore-data --misc` 恢复标记 → `git ls-remote` 比对**两个**上游 SHA——main（`data/.upstream-sha`）与 gh-pages（`data/.leaderboard-sha`，排行榜 records.js 在 gh-pages 独立更新，主分支不动也会变；只比对 main 曾导致排行榜长期不刷新）。两者都一致→秒级空跑结束；仅 gh-pages 变→只跑 `sync-leaderboard.mjs`（零依赖）→ 更新 misc 分支 + 重新发布 deploy；main 变或手动触发→恢复 statements+daily → 全量同步 → 补抓 4 题 → 修复 ZSMJ（`continue-on-error`；若 `repaired>0 && remaining>0` 用 `gh api .../dispatches` **自链下一轮**——GitHub 并发组只保留最新排队运行，预先排队会被取消，必须 run 内自链）→ AI 翻译回填（预算 60 段，`continue-on-error`）→ `push-data-branches --problems --misc --prune` → `publish-deploy`。**CI 不再向 main 提交任何东西。**
+2. **save-log**（`needs: update`，`if: !cancelled()`）：job 日志只有完成后才能下载，所以必须独立 job。写 `.log`（清洗 + 400KB 留尾）+ `.json`（摘要含 `tokenUsage`/`tokenSegments`/`leaderboard`）+ `.ai.json`（逐段翻译记录，需要 statements 所以先 restore）→ 追加进当天 misc 分支 → 重新发布 deploy。仅榜单变更的运行也归档（否则 /logs 会把有数据更新的运行误判成空跑）。
+
+另有 `.github/workflows/publish-deploy.yml`：main 代码推送 → 恢复数据 → 清理过期 misc 分支 → 重建 deploy（代码改动约 2 分钟直达生产）；每日 cron 兜底清理。
 
 **GitHub schedule 可靠性极差**：免费公共仓库优先级最低，实测每小时 cron 约 90% 被静默丢弃且不补跑。可靠性依赖手动 `workflow_dispatch` 或自链模式，不要假设定时任务必然执行。公共仓库 Actions 用量免费不限量。
+
+**Vercel**：Production Branch = `deploy`（项目设置）。数据分支树内注入了禁用部署的 `vercel.json`（`data/*` minimatch），别丢；main/PR 分支构建时 `prepare-build.mjs` 自动从 deploy 拉数据。
 
 ## 翻译体系
 
@@ -74,20 +106,22 @@ node scripts/save-ci-log.mjs                  # 仅在 Actions 内可用（依�
 - `save-ci-log.mjs` 解析进摘要 `summary.tokenUsage` + `summary.tokenSegments`（`summarize` 已导出可单测；env 检查在 `main()` 内而非模块顶层，避免 import 即退出）。另解析排行榜同步结果行 `LEADERBOARD-SYNC {changed,players,currentDate}` 进 `summary.leaderboard`（/logs 运行卡的「排行榜更新」徽章数据源）。
 - `.ai.json` 翻译记录：`{ runId, startedAt, tokenUsage, tokensBySeg: {"<code>:<seg>[i]": {in,out,cached}}, problems: [{code,title,segs:[{key,i,en,zh}],aiCount}] }`。构建自当时的 statements 快照（ai 段即该次运行写入的译文）。
 - /logs 相关约定：`app/logs/page.jsx` 与 `app/logs/ai-demo/page.jsx` 的 `loadRuns()` **必须排除 `.ai.json`**（只列 `.json` 摘要），运行卡展开时才懒加载对应 `.ai.json`。
-- /logs 时间轴在浏览器端实时合并 GitHub API 匿名拉取的最近 100 次 workflow 运行（`components/logs-view.jsx`，`NEXT_PUBLIC_GH_REPO` 可覆盖仓库）：有仓库存档的以存档为准（按 runId 去重）；空跑/被取消/存档未同步的运行显示「未发生仓库提交」等轻量卡片（success 且全程 <5 分钟判为空跑，完整运行 ≥10 分钟）。产出类图表只用有存档的运行，避免被空跑零值刷屏。
+- /logs 时间轴在浏览器端实时合并 GitHub API 匿名拉取的最近 100 次 workflow 运行（`components/logs-view.jsx`，`NEXT_PUBLIC_GH_REPO` 可覆盖仓库）：有仓库存档的以存档为准（按 runId 去重）；空跑/被取消/存档未同步的运行显示「未发生数据提交」等轻量卡片（success 且全程 <5 分钟判为空跑，完整运行 ≥10 分钟）。产出类图表只用有存档的运行，避免被空跑零值刷屏。
 
 ## Secrets 与环境变量
 
 - 仓库 Secrets：`AI_BASE_URL`、`AI_API_KEY`（OpenAI 兼容端点，CI AI 翻译用）；`AI_MODEL`、`AI_TRANSLATE_LIMIT` 写死在 workflow 里。设置方法：`gh secret set 名字 < 本地文件`，避免密钥进会话记录。
 - 脚本开关：`CF_STATEMENTS=0`（跳过挂载题面）、`TRANSLATE=0`（跳过 MT）、`MAX_DAYS`（历史保留天数，默认无限）、`CF_START_MODE=chrome-headful`。
+- 数据脚本身份：`DATA_BOT_NAME`/`DATA_BOT_EMAIL` 可覆盖提交者，默认 CI 里是 github-actions[bot]、本地是 git config。
 
 ## 高频坑
 
-1. **statements 改完必须 `npm run reattach`**（见架构一节）。
-2. `.gitignore` 里有全局 `*.log`，靠 `!public/ci-logs/*.log` 例外放行 CI 日志——改 ignore 时别弄丢。
-3. **rebase 冲突**（CI 机器人提交频繁，push 前常需 `git pull --rebase`）：生成物 `daily.json` 撞车取**超集方**（注意 `--ours` 是 origin 侧、`--theirs` 是自己正重放的提交，曾取反丢过 813 天数据）；statements 与 CI 的 AI 回填撞车取 origin 侧即可；rebase 后必须核验推上去的生成物。
-4. 解析器 `unmathjax()`：MathJax v2（frame span）与 v3（`<mjx-container>`）布局要都覆盖，恢复失败曾导致 805 个文件泄漏 `%%ZSMJ%%` 占位符（只能重抓修复）。
-5. 前端基建：`postcss.config.mjs` 必须 ESM 导出；新版 lucide-react 无品牌图标（Github 等需内联 SVG）；"Element type is invalid" 报错的真因常是某个导入为 undefined。
-6. React 水合：effect 依赖里不要放会变化的 state（cleanup 会掐死 in-flight fetch 导致永挂 loading），用 ref 做真值源（见 `logs-view.jsx` 的 `startedRef` 模式）；图表时间轴锚定最新运行的 `startedAt` 而非 `Date.now()`，保证 SSR/水合一致。历史遗留的 React #418 警告（`renderRich` 嵌套 `<p>`）非回归、无功能影响。
-7. 多会话并行开发此仓库：git 操作前先 `git fetch` 对齐，生成物冲突取一侧后重跑 `npm run reattach` 重新生成。
-8. 验证方式：`npx next build`（822+ 静态页全过才算过）；UI 改动用 Playwright headless 截图评审；测 AI 翻译链路用本地 mock OpenAI 端点——**mock 必须回显输入中的占位符**（否则 restoreMath 校验失败）且带 CORS 头。
+1. **克隆后 main 里没有数据**——先 `npm run data:pull`，再 dev/build。`data/`、`public/ci-logs/` 是 gitignore 的，工作区里出现它们属正常。
+2. **statements 改完必须 `npm run reattach`**（见架构一节）；要发布则再 `push-data-branches --problems` + `data:publish`。
+3. **不要把数据提交进 main**：数据分支推送由 plumbing 强制 add（绕过 ignore），但普通 `git add data` 在 main 上会真的把数据带进主分支历史，毁掉瘦身效果。
+4. `push-data-branches` 的语义差异：`--problems` 是并集（远端文件先叠加，防并发丢题面），`--misc` 是纯快照（60 天滚动删除必须生效）——改任何一个都要保住这两条不变式。
+5. 解析器 `unmathjax()`：MathJax v2（frame span）与 v3（`<mjx-container>`）布局要都覆盖，恢复失败曾导致 805 个文件泄漏 `%%ZSMJ%%` 占位符（只能重抓修复）。
+6. 前端基建：`postcss.config.mjs` 必须 ESM 导出；新版 lucide-react 无品牌图标（Github 等需内联 SVG）；"Element type is invalid" 报错的真因常是某个导入为 undefined。
+7. React 水合：effect 依赖里不要放会变化的 state（cleanup 会掐死 in-flight fetch 导致永挂 loading），用 ref 做真值源（见 `logs-view.jsx` 的 `startedRef` 模式）；图表时间轴锚定最新运行的 `startedAt` 而非 `Date.now()`，保证 SSR/水合一致。历史遗留的 React #418 警告（`renderRich` 嵌套 `<p>`）非回归、无功能影响。
+8. 多会话并行开发此仓库：git 操作前先 `git fetch` 对齐；数据分支推送撞车时脚本会自动叠加远端重试，deploy 无历史永不冲突。
+9. 验证方式：`npm run build`（822+ 静态页全过才算过，数据缺失会自动从 deploy 拉）；UI 改动用 Playwright headless 截图评审；测 AI 翻译链路用本地 mock OpenAI 端点——**mock 必须回显输入中的占位符**（否则 restoreMath 校验失败）且带 CORS 头；数据分支模型改动跑 `bash scripts/tests/e2e-data-branches.sh`。

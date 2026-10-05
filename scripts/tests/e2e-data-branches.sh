@@ -151,7 +151,7 @@ node scripts/restore-data.mjs
 [ -f public/ci-logs/2026-10-05-111.log ] || { echo "FAIL: ci-logs not restored"; exit 1; }
 STAGED=$(git diff --cached --name-only | wc -l | tr -d ' ')
 [ "$STAGED" = "0" ] || { echo "FAIL: restore staged $STAGED files into the index"; exit 1; }
-DIRTY=$(git status --porcelain | grep -v '^??' | wc -l | tr -d ' ')
+DIRTY=$(git status --porcelain | { grep -v '^??' || true; } | wc -l | tr -d ' ')
 [ "$DIRTY" = "0" ] || { echo "FAIL: restore dirtied tracked files"; exit 1; }
 echo "fresh-clone restore OK, index clean"
 

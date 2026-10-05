@@ -82,6 +82,7 @@ jobs:
             echo "${{ steps.upstream.outputs.lb_sha }}" > data/.leaderboard-sha
           fi
           node scripts/push-data-branches.mjs --misc --prune
+          node scripts/restore-data.mjs --daily
           node scripts/publish-deploy.mjs
 
       # Full pipeline below: bring statements + the previous daily.json (from
@@ -216,7 +217,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Restore data from data branches
-        run: node scripts/restore-data.mjs --misc --statements
+        run: node scripts/restore-data.mjs
 
       - name: Save CI log into the data branches
         env:

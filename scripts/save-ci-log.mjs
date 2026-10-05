@@ -91,6 +91,8 @@ function summarize(text) {
   let tokenUsage = null;
   const tokenSegments = [];
   let curCode = null;
+  // leaderboard sync result (LEADERBOARD-SYNC line from the sync lib)
+  let leaderboard = null;
   for (const l of lines) {
     let m;
     if ((m = l.match(/^\s*(?:\[\d+\/\d+\])?\s*✓\s*([A-Z]{1,4}\d+[A-Za-z0-9]*)\s+—\s+(.+?)(?:\s*\(\d+ samples?\))?\s*$/))) {
@@ -102,10 +104,12 @@ function summarize(text) {
       aiByProblem.push(m[1]);
     } else if ((m = l.match(/^TOKEN-USAGE (\{.*\})\s*$/))) {
       try { tokenUsage = JSON.parse(m[1]); } catch { tokenUsage = null; }
+    } else if ((m = l.match(/^LEADERBOARD-SYNC (\{.*\})\s*$/))) {
+      try { leaderboard = JSON.parse(m[1]); } catch { leaderboard = null; }
     } else if (/✓ (title|legend|input|output|note)\[/.test(l) || /✗ \S/.test(l)) {
       if (aiLines.length < 30) aiLines.push(l.trim());
-      const t = l.match(/✓ \S+?: .*\[tokens in=(\d+) out=(\d+)\]/);
-      if (t && curCode) tokenSegments.push({ code: curCode, seg: (l.match(/✓ (\S+?):/) || [])[1], in: Number(t[1]), out: Number(t[2]) });
+      const t = l.match(/✓ \S+?: .*\[tokens in=(\d+) out=(\d+)(?: cached=(\d+))?\]/);
+      if (t && curCode) tokenSegments.push({ code: curCode, seg: (l.match(/✓ (\S+?):/) || [])[1], in: Number(t[1]), out: Number(t[2]), cached: Number(t[3] || 0) });
     } else if ((m = l.match(/create mode 100\d+ (data\/(?:statements|daily|leaderboard)\S*)/))) {
       addedFiles.push(m[1]);
     }
@@ -116,6 +120,7 @@ function summarize(text) {
     fetched, fetchFailed, aiByProblem, aiLines, aiDone, addedFiles, pushed,
     ...(tokenUsage ? { tokenUsage } : {}),
     ...(tokenSegments.length ? { tokenSegments } : {}),
+    ...(leaderboard ? { leaderboard } : {}),
   };
 }
 

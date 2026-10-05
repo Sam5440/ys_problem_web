@@ -9,7 +9,7 @@ export default function LeaderboardPage() {
         <h1 className="text-3xl font-bold tracking-tight">排行榜</h1>
         <p className="mt-2 max-w-3xl text-muted-foreground">
           源仓库社区的每日两题打卡榜：每人每天最多计 2 题，连击按连续提交天数累计。
-          数据同步自上游 gh-pages 的 records 统计，本站每日随题库自动刷新。
+          数据同步自上游 gh-pages 的 records 统计，每次 CI 轮询检测到上游榜单有更新即自动刷新。
         </p>
       </section>
       <LeaderboardClient />

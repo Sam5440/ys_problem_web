@@ -15,6 +15,7 @@ npm run reattach       # 把 data/statements/*.json 重新挂载进 data/daily.j
 npm run update-data    # 同步上游（CF_STATEMENTS=0 TRANSLATE=0 等环境变量控制子步骤）
 node scripts/fetch-statements.mjs --limit N   # 补抓题面（续传式）
 node scripts/translate-ai.mjs                 # AI 翻译回填（需 AI_BASE_URL/AI_API_KEY）
+node scripts/sync-leaderboard.mjs             # 仅同步排行榜（records.js → data/leaderboard.json，内容无变化不写盘）
 node scripts/repair-zsmj.mjs --limit N        # 重抓 ZSMJ 污染题面
 node scripts/save-ci-log.mjs                  # 仅在 Actions 内可用（依赖 GITHUB_* env，缺了会跳过）
 ```
@@ -39,7 +40,8 @@ node scripts/save-ci-log.mjs                  # 仅在 Actions 内可用（依�
 | `scripts/lib/cf-statement.mjs` | CF 题面解析器（Playwright 抓取、unmathjax 还原公式） |
 | `scripts/fetch-statements.mjs` | 抓题面：无头 Chromium ↔ 有头 Chrome 自适应过 Cloudflare，Xvfb 下运行 |
 | `scripts/lib/translate.mjs` + `scripts/translate-statements.mjs` | 四渠道网页版 MT（DeepL/有道/彩云/讯飞，移植 OJBetter，GPL-3.0） |
-| `scripts/translate-ai.mjs` | CI 侧 AI 翻译回填（OpenAI 兼容端点），逐段记录 Token，输出 `TOKEN-USAGE` 汇总行 |
+| `scripts/translate-ai.mjs` | CI 侧 AI 翻译回填（OpenAI 兼容端点），逐段记录 Token（含缓存命中 cached），输出 `TOKEN-USAGE` 汇总行 |
+| `scripts/lib/leaderboard.mjs` + `scripts/sync-leaderboard.mjs` | 排行榜同步（上游 gh-pages records.js），解析与写盘共用库；轻量脚本供 CI 仅榜单路径用（零依赖） |
 | `scripts/repair-zsmj.mjs` | 重抓被旧解析器 `%%ZSMJ%%` 污染的题面（幂等续传） |
 | `scripts/save-ci-log.mjs` | CI 第二个 job：日志 + 摘要 + 翻译记录落盘 `public/ci-logs/` |
 | `lib/ai-record.mjs` | 构建逐段 原文↔译文 翻译记录（save-ci-log 与 demo 页共用） |
@@ -47,13 +49,14 @@ node scripts/save-ci-log.mjs                  # 仅在 Actions 内可用（依�
 | `components/logs-view.jsx` | /logs 仪表盘（手写 SVG 图表，时间轴锚定最新运行而非 Date.now()） |
 | `components/ai-translate-detail.jsx` | 逐段原文↔译文对照视图（/logs 运行卡内嵌 + /logs/ai-demo） |
 | `public/ci-logs/` | CI 产物三件套：`<日期>-<runId>.log/.json/.ai.json`，滚动 60 天 |
-| `data/.upstream-sha` | 上次同步的上游 HEAD，CI 靠它跳过无更新的轮询 |
+| `data/.upstream-sha` | 上次同步的上游 main HEAD，CI 靠它跳过无更新的轮询 |
+| `data/.leaderboard-sha` | 上次同步的上游 gh-pages HEAD——**排行榜独立于 main 更新，必须单独记 SHA**（见 CI 一节） |
 
 ### CI workflow（`.github/workflows/update-data.yml`，每小时 :12）
 
 双 job：
-1. **update**：`git ls-remote` 比对上游 SHA（一致→9 秒空跑结束）→ 同步 → 补抓 4 题 → 修复 ZSMJ（`continue-on-error`；若 `repaired>0 && remaining>0` 用 `gh api .../dispatches` **自链下一轮**——GitHub 并发组只保留最新排队运行，预先排队会被取消，必须 run 内自链）→ AI 翻译回填（预算 60 段，`continue-on-error`）→ 提交 `data/` 并 push（rebase 重试 3 次防竞争）。
-2. **save-log**（`needs: update`，`if: !cancelled()`）：job 日志只有完成后才能下载，所以必须独立 job。写 `.log`（清洗 + 400KB 留尾）+ `.json`（摘要含 `tokenUsage`/`tokenSegments`）+ `.ai.json`（逐段翻译记录）。
+1. **update**：`git ls-remote` 比对**两个**上游 SHA——main（`data/.upstream-sha`）与 gh-pages（`data/.leaderboard-sha`，排行榜 records.js 在 gh-pages 独立更新，主分支不动也会变；只比对 main 曾导致排行榜长期不刷新）。两者都一致→9 秒空跑结束；仅 gh-pages 变→只跑 `sync-leaderboard.mjs`（零依赖，不装 npm 不启 Playwright）；main 变或手动触发→全量同步 → 补抓 4 题 → 修复 ZSMJ（`continue-on-error`；若 `repaired>0 && remaining>0` 用 `gh api .../dispatches` **自链下一轮**——GitHub 并发组只保留最新排队运行，预先排队会被取消，必须 run 内自链）→ AI 翻译回填（预算 60 段，`continue-on-error`）→ 提交 `data/` 并 push（rebase 重试 3 次防竞争；仅榜单变更时提交信息为 `chore: sync community leaderboard`）。
+2. **save-log**（`needs: update`，`if: !cancelled()`）：job 日志只有完成后才能下载，所以必须独立 job。写 `.log`（清洗 + 400KB 留尾）+ `.json`（摘要含 `tokenUsage`/`tokenSegments`/`leaderboard`）+ `.ai.json`（逐段翻译记录）。仅榜单变更的运行也归档（否则 /logs 会把有提交的运行误判成空跑）。
 
 **GitHub schedule 可靠性极差**：免费公共仓库优先级最低，实测每小时 cron 约 90% 被静默丢弃且不补跑。可靠性依赖手动 `workflow_dispatch` 或自链模式，不要假设定时任务必然执行。公共仓库 Actions 用量免费不限量。
 
@@ -67,9 +70,9 @@ node scripts/save-ci-log.mjs                  # 仅在 Actions 内可用（依�
 
 ## Token 与翻译记录
 
-- `translate-ai.mjs` 每段日志：`✓ key[i]: 译文… [tokens in=X out=Y]`；结束打印 `TOKEN-USAGE {model,ok,fail,in,out,segments[],totalTokens}` 单行 JSON。
-- `save-ci-log.mjs` 解析进摘要 `summary.tokenUsage` + `summary.tokenSegments`（`summarize` 已导出可单测；env 检查在 `main()` 内而非模块顶层，避免 import 即退出）。
-- `.ai.json` 翻译记录：`{ runId, startedAt, tokenUsage, tokensBySeg: {"<code>:<seg>[i]": {in,out}}, problems: [{code,title,segs:[{key,i,en,zh}],aiCount}] }`。构建自当时的 statements 快照（ai 段即该次运行写入的译文）。
+- `translate-ai.mjs` 每段日志：`✓ key[i]: 译文… [tokens in=X out=Y cached=Z]`；结束打印 `TOKEN-USAGE {model,ok,fail,in,out,cached,segments[],totalTokens}` 单行 JSON。cached 取自 `usage.prompt_cache_hit_tokens`（DeepSeek）或 `prompt_tokens_details.cached_tokens`（OpenAI 兼容），是输入的子集、按更低的缓存价计费；旧日志无 cached，前端一律按 0/「—」兜底。
+- `save-ci-log.mjs` 解析进摘要 `summary.tokenUsage` + `summary.tokenSegments`（`summarize` 已导出可单测；env 检查在 `main()` 内而非模块顶层，避免 import 即退出）。另解析排行榜同步结果行 `LEADERBOARD-SYNC {changed,players,currentDate}` 进 `summary.leaderboard`（/logs 运行卡的「排行榜更新」徽章数据源）。
+- `.ai.json` 翻译记录：`{ runId, startedAt, tokenUsage, tokensBySeg: {"<code>:<seg>[i]": {in,out,cached}}, problems: [{code,title,segs:[{key,i,en,zh}],aiCount}] }`。构建自当时的 statements 快照（ai 段即该次运行写入的译文）。
 - /logs 相关约定：`app/logs/page.jsx` 与 `app/logs/ai-demo/page.jsx` 的 `loadRuns()` **必须排除 `.ai.json`**（只列 `.json` 摘要），运行卡展开时才懒加载对应 `.ai.json`。
 - /logs 时间轴在浏览器端实时合并 GitHub API 匿名拉取的最近 100 次 workflow 运行（`components/logs-view.jsx`，`NEXT_PUBLIC_GH_REPO` 可覆盖仓库）：有仓库存档的以存档为准（按 runId 去重）；空跑/被取消/存档未同步的运行显示「未发生仓库提交」等轻量卡片（success 且全程 <5 分钟判为空跑，完整运行 ≥10 分钟）。产出类图表只用有存档的运行，避免被空跑零值刷屏。
 

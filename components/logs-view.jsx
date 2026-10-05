@@ -44,6 +44,7 @@ import {
   ScrollText,
   Terminal,
   Timer,
+  Trophy,
   Wrench,
   XCircle,
 } from 'lucide-react';
@@ -100,6 +101,7 @@ const TONE = {
   sky: { solid: '#0ea5e9', light: '#38bdf8', text: 'text-sky-500', soft: 'bg-sky-500/10', border: 'border-sky-500/40' },
   violet: { solid: '#8b5cf6', light: '#a78bfa', text: 'text-violet-500', soft: 'bg-violet-500/10', border: 'border-violet-500/40' },
   amber: { solid: '#f59e0b', light: '#fbbf24', text: 'text-amber-500', soft: 'bg-amber-500/10', border: 'border-amber-500/40' },
+  rose: { solid: '#f43f5e', light: '#fb7185', text: 'text-rose-500', soft: 'bg-rose-500/10', border: 'border-rose-500/40' },
   red: { solid: '#ef4444', light: '#f87171', text: 'text-red-400', soft: 'bg-red-500/10', border: 'border-red-500/40' },
   zinc: { solid: '#71717a', light: '#a1a1aa', text: 'text-zinc-400', soft: 'bg-zinc-500/10', border: 'border-zinc-500/40' },
 };
@@ -516,6 +518,137 @@ function RunOutputChart({ runsChrono, onPickRun }) {
   );
 }
 
+/* --------------------------- token trend (per run) --------------------------- */
+
+/** compact y-axis label: ≥ 1万 shown as 万, otherwise bare integer */
+const fmtAxis = (n) => (n >= 10000 ? `${Number((n / 10000).toFixed(1))}万` : `${n}`);
+
+/**
+ * Token usage per run as stacked bars: cached prompt input (cache-hit, billed
+ * at a fraction of the normal rate) + uncached input + completion output.
+ * Runs without token data (pre-token logs) render as baseline dots, matching
+ * RunOutputChart. Click a bar to jump to the run card.
+ */
+function TokenTrendChart({ runsChrono, onPickRun }) {
+  const id = useId();
+  const [tip, setTip] = useState(null);
+  const data = useMemo(
+    () =>
+      runsChrono.slice(-40).map((r) => {
+        const tu = r.summary?.tokenUsage || {};
+        const cached = Math.min(tu.cached || 0, tu.in || 0); // cached ⊆ input
+        return {
+          runId: r.runId,
+          startedAt: r.startedAt,
+          failure: r.failure,
+          cached,
+          uncached: Math.max(0, (tu.in || 0) - cached),
+          out: tu.out || 0,
+          total: tu.totalTokens || (tu.in || 0) + (tu.out || 0),
+        };
+      }),
+    [runsChrono],
+  );
+
+  const W = 860;
+  const H = 210;
+  const padL = 44;
+  const padR = 8;
+  const padT = 14;
+  const padB = 34;
+  const iw = W - padL - padR;
+  const ih = H - padT - padB;
+  const slot = iw / Math.max(1, data.length);
+  const { max: yMax, ticks } = niceScale(Math.max(1, ...data.map((d) => d.total)));
+  const y = (v) => padT + ih - (v / yMax) * ih;
+  const barW = Math.min(14, slot * 0.3);
+  const labelEvery = Math.max(1, Math.ceil(data.length / 10));
+
+  return (
+    <div className="relative" onMouseLeave={() => setTip(null)}>
+      <ChartTip tip={tip} />
+      <svg viewBox={`0 0 ${W} ${H}`} className="w-full">
+        <defs>
+          <linearGradient id={`${id}-c`} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={TONE.emerald.light} />
+            <stop offset="100%" stopColor={TONE.emerald.solid} />
+          </linearGradient>
+          <linearGradient id={`${id}-i`} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={TONE.amber.light} />
+            <stop offset="100%" stopColor={TONE.amber.solid} />
+          </linearGradient>
+          <linearGradient id={`${id}-o`} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={TONE.rose.light} />
+            <stop offset="100%" stopColor={TONE.rose.solid} />
+          </linearGradient>
+        </defs>
+        {ticks.map((t) => (
+          <g key={t}>
+            <line x1={padL} x2={W - padR} y1={y(t)} y2={y(t)} stroke="currentColor" className="text-border" strokeOpacity={t === 0 ? 0.9 : 0.45} strokeDasharray={t === 0 ? '' : '3 4'} />
+            <text x={padL - 6} y={y(t) + 3.5} textAnchor="end" className="fill-muted-foreground text-[9px] tabular-nums">{fmtAxis(t)}</text>
+          </g>
+        ))}
+        {data.map((d, i) => {
+          const cx = padL + slot * i + slot / 2;
+          const cY = y(d.cached);
+          const iY = y(d.cached + d.uncached);
+          const tY = y(d.total);
+          return (
+            <g key={d.runId}>
+              {d.total > 0 ? (
+                <>
+                  {d.cached > 0 && <rect x={cx - barW / 2} y={cY} width={barW} height={Math.max(1.5, padT + ih - cY)} rx={Math.min(3, barW / 2)} fill={`url(#${id}-c)`} />}
+                  {d.uncached > 0 && <rect x={cx - barW / 2} y={iY} width={barW} height={Math.max(1.5, cY - iY)} rx={Math.min(3, barW / 2)} fill={`url(#${id}-i)`} />}
+                  {d.out > 0 && <rect x={cx - barW / 2} y={tY} width={barW} height={Math.max(1.5, iY - tY)} fill={`url(#${id}-o)`} />}
+                </>
+              ) : (
+                <circle cx={cx} cy={padT + ih - 1} r="2" className="fill-muted-foreground/40" />
+              )}
+              {i % labelEvery === 0 && (
+                <text x={cx} y={H - 16} textAnchor="middle" className="fill-muted-foreground text-[9px]">{dayLabel(isoDay(Date.parse(d.startedAt)))}</text>
+              )}
+              <rect
+                x={padL + slot * i} y={padT} width={slot} height={ih} fill="transparent" className="cursor-pointer"
+                onMouseEnter={() =>
+                  setTip({
+                    left: `${(cx / W) * 100}%`,
+                    top: `${(Math.min(tY, padT + ih / 2) / H) * 100}%`,
+                    node: (
+                      <>
+                        <p className="font-medium">
+                          run {d.runId} · {new Date(d.startedAt).toLocaleString('zh-CN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+                          {d.failure ? ' · 失败' : ''}
+                        </p>
+                        {d.total > 0 ? (
+                          <>
+                            <p className="mt-0.5 text-muted-foreground">
+                              输入 {fmtTokFull(d.cached + d.uncached)}
+                              {d.cached > 0 ? <span className="text-emerald-500/90">（缓存 {fmtTokFull(d.cached)}）</span> : ''} · 输出 {fmtTokFull(d.out)}
+                            </p>
+                            <p className="mt-0.5 text-muted-foreground">合计 {fmtTokFull(d.total)} tokens · 点击查看</p>
+                          </>
+                        ) : (
+                          <p className="mt-0.5 text-muted-foreground">本次运行无 AI 翻译 · 点击查看</p>
+                        )}
+                      </>
+                    ),
+                  })
+                }
+                onClick={() => onPickRun(d.runId)}
+              />
+            </g>
+          );
+        })}
+      </svg>
+      <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 pl-11 text-[10px] text-muted-foreground">
+        <span className="flex items-center gap-1.5"><span className="inline-block h-2 w-2 rounded-sm bg-emerald-500" />缓存命中输入</span>
+        <span className="flex items-center gap-1.5"><span className="inline-block h-2 w-2 rounded-sm bg-amber-500" />未缓存输入</span>
+        <span className="flex items-center gap-1.5"><span className="inline-block h-2 w-2 rounded-sm bg-rose-500" />输出</span>
+      </div>
+    </div>
+  );
+}
+
 /* ------------------------------- flow diagram -------------------------------- */
 
 function FlowDiagram({ log, logState, run }) {
@@ -787,6 +920,7 @@ function TokenSegmentTable({ segments = [] }) {
             <th className="px-2 py-1 font-medium">题目</th>
             <th className="px-2 py-1 font-medium">段落</th>
             <th className="px-2 py-1 text-right font-medium">输入</th>
+            <th className="px-2 py-1 text-right font-medium">缓存</th>
             <th className="px-2 py-1 text-right font-medium">输出</th>
             <th className="px-2 py-1 text-right font-medium">合计</th>
           </tr>
@@ -797,6 +931,7 @@ function TokenSegmentTable({ segments = [] }) {
               <td className="px-2 py-1 font-mono text-violet-500">{t.code}</td>
               <td className="px-2 py-1 font-mono text-muted-foreground">{t.seg}</td>
               <td className="px-2 py-1 text-right tabular-nums">{fmtTokFull(t.in)}</td>
+              <td className="px-2 py-1 text-right tabular-nums text-emerald-600 dark:text-emerald-400">{t.cached > 0 ? fmtTokFull(t.cached) : '—'}</td>
               <td className="px-2 py-1 text-right tabular-nums">{fmtTokFull(t.out)}</td>
               <td className="px-2 py-1 text-right font-medium tabular-nums">{fmtTokFull(t.in + t.out)}</td>
             </tr>
@@ -893,8 +1028,13 @@ function RunCard({ run, expanded, onToggle, now }) {
               </span>
             )}
             {failedN > 0 && <span className="rounded-md border border-amber-500/40 bg-amber-500/10 px-1.5 py-0.5 text-[10px] text-amber-500">{failedN} 题未抓到</span>}
+            {s.leaderboard?.changed && (
+              <span className="inline-flex items-center gap-1 rounded-md border border-emerald-500/40 bg-emerald-500/10 px-1.5 py-0.5 text-[10px] text-emerald-500">
+                <Trophy className="h-3 w-3" />排行榜更新 {s.leaderboard.players} 人 · 数据至 {s.leaderboard.currentDate}
+              </span>
+            )}
             {s.addedFiles?.length > 0 && <span className="rounded-md border border-border bg-muted px-1.5 py-0.5 text-[10px] text-muted-foreground">入库 {s.addedFiles.length} 文件</span>}
-            {!run.failure && !fetchedN && !aiN && <span className="rounded-md border border-border bg-muted px-1.5 py-0.5 text-[10px] text-muted-foreground">无数据变更</span>}
+            {!run.failure && !fetchedN && !aiN && !s.leaderboard?.changed && <span className="rounded-md border border-border bg-muted px-1.5 py-0.5 text-[10px] text-muted-foreground">无数据变更</span>}
           </span>
         </span>
         <ChevronDown className={`mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform ${expanded ? 'rotate-180' : ''}`} />
@@ -946,6 +1086,7 @@ function RunCard({ run, expanded, onToggle, now }) {
                       {s.tokenUsage.model && <span className="font-mono text-muted-foreground">{s.tokenUsage.model}</span>}
                       <span className="text-muted-foreground">请求成功 {s.tokenUsage.ok ?? 0} / 失败 {s.tokenUsage.fail ?? 0}</span>
                       <span className="tabular-nums">输入 <b className="font-semibold">{fmtTokFull(s.tokenUsage.in)}</b></span>
+                      {s.tokenUsage.cached > 0 && <span className="tabular-nums text-emerald-500">缓存命中 <b className="font-semibold">{fmtTokFull(s.tokenUsage.cached)}</b></span>}
                       <span className="tabular-nums">输出 <b className="font-semibold">{fmtTokFull(s.tokenUsage.out)}</b></span>
                       <span className="tabular-nums">合计 <b className="font-semibold text-amber-500">{fmtTokFull(s.tokenUsage.totalTokens)}</b></span>
                     </div>
@@ -1053,12 +1194,13 @@ export default function LogsView({ runs = [] }) {
     const ai = visible.reduce((a, r) => a + (r.summary?.aiDone || 0), 0);
     const tokIn = visible.reduce((a, r) => a + (r.summary?.tokenUsage?.in || 0), 0);
     const tokOut = visible.reduce((a, r) => a + (r.summary?.tokenUsage?.out || 0), 0);
+    const tokCached = visible.reduce((a, r) => a + (r.summary?.tokenUsage?.cached || 0), 0);
     const durs = visible.map((r) => (r.savedAt && r.startedAt ? Date.parse(r.savedAt) - Date.parse(r.startedAt) : null)).filter(Boolean);
     const avgDur = durs.length ? durs.reduce((a, b) => a + b, 0) / durs.length : null;
     const perRunFetched = chronoLogged.map((r) => r.summary?.fetched?.length || 0);
     const perRunAi = chronoLogged.map((r) => r.summary?.aiDone || 0);
     const perRunTokens = chronoLogged.map((r) => r.summary?.tokenUsage?.totalTokens || 0);
-    return { fail, ok: visible.length - fail, fetched, ai, tokIn, tokOut, avgDur, perRunFetched, perRunAi, perRunTokens };
+    return { fail, ok: visible.length - fail, fetched, ai, tokIn, tokOut, tokCached, avgDur, perRunFetched, perRunAi, perRunTokens };
   }, [visible, chronoLogged]);
 
   // 近几日 Token 汇总:按天分组,天内列出每次运行的用量,附每日小计
@@ -1068,11 +1210,12 @@ export default function LogsView({ runs = [] }) {
       const tu = r.summary?.tokenUsage;
       if (!tu) continue;
       const key = isoDay(Date.parse(r.startedAt));
-      const e = byDay.get(key) || { runs: [], segs: 0, in: 0, out: 0, total: 0 };
+      const e = byDay.get(key) || { runs: [], segs: 0, in: 0, out: 0, cached: 0, total: 0 };
       e.runs.push(r);
       e.segs += r.summary?.aiDone || 0;
       e.in += tu.in || 0;
       e.out += tu.out || 0;
+      e.cached += tu.cached || 0;
       e.total += tu.totalTokens || 0;
       byDay.set(key, e);
     }
@@ -1146,8 +1289,9 @@ export default function LogsView({ runs = [] }) {
             icon={Coins}
             label="Token 消耗"
             value={fmtTok(stats.tokIn + stats.tokOut)}
-            sub={`输入 ${fmtTokFull(stats.tokIn)} · 输出 ${fmtTokFull(stats.tokOut)}`}
+            sub={`输入 ${fmtTokFull(stats.tokIn)} · 输出 ${fmtTokFull(stats.tokOut)}${stats.tokCached > 0 ? ` · 缓存 ${fmtTokFull(stats.tokCached)}` : ''}`}
             tone="amber"
+            spark={stats.perRunTokens}
           />
           <StatCard icon={Timer} label="平均全程耗时" value={stats.avgDur ? fmtDur(stats.avgDur) : '—'} sub="启动 → 日志落盘" tone="emerald" />
         </div>
@@ -1190,6 +1334,19 @@ export default function LogsView({ runs = [] }) {
         </Card>
       )}
 
+      {/* token trend: stacked per-run bars splitting cached prompt tokens */}
+      {chronoLogged.some((r) => (r.summary?.tokenUsage?.totalTokens || 0) > 0) && (
+        <Card>
+          <CardContent className="p-4">
+            <p className="text-xs font-semibold">Token 消耗趋势</p>
+            <p className="mb-2 text-[11px] text-muted-foreground">
+              每次运行的 token 用量堆叠：缓存命中输入（按缓存价计费）+ 未缓存输入 + 输出；无 AI 翻译的运行画为圆点，点击柱子展开对应运行
+            </p>
+            <TokenTrendChart runsChrono={chronoLogged} onPickRun={pick} />
+          </CardContent>
+        </Card>
+      )}
+
       {/* token usage: per-day aggregation with per-run breakdown */}
       {tokenDays.length > 0 && (
         <Card>
@@ -1198,18 +1355,20 @@ export default function LogsView({ runs = [] }) {
               <p className="text-xs font-semibold">Token 用量 · 近几日汇总</p>
               <p className="text-[11px] text-muted-foreground">
                 按天汇总每次运行的 AI 翻译消耗，窗口内合计 输入 {fmtTokFull(stats.tokIn)} + 输出 {fmtTokFull(stats.tokOut)} = {fmtTokFull(stats.tokIn + stats.tokOut)} tokens
+                {stats.tokCached > 0 ? `（其中缓存命中 ${fmtTokFull(stats.tokCached)}）` : ''}
               </p>
             </div>
             <div className="mt-3 overflow-x-auto">
-              <table className="w-full min-w-[640px] border-separate border-spacing-0 text-xs">
+              <table className="w-full min-w-[720px] border-separate border-spacing-0 text-xs">
                 <thead>
                   <tr className="text-left text-[11px] text-muted-foreground">
                     <th className="border-b px-2 py-1.5 font-medium">日期</th>
                     <th className="border-b px-2 py-1.5 font-medium">运行</th>
                     <th className="border-b px-2 py-1.5 text-right font-medium">翻译段数</th>
                     <th className="border-b px-2 py-1.5 text-right font-medium">输入 tokens</th>
+                    <th className="border-b px-2 py-1.5 text-right font-medium">其中缓存</th>
                     <th className="border-b px-2 py-1.5 text-right font-medium">输出 tokens</th>
-                    <th className="w-[30%] border-b px-2 py-1.5 text-right font-medium">合计 tokens</th>
+                    <th className="w-[28%] border-b px-2 py-1.5 text-right font-medium">合计 tokens</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1222,6 +1381,7 @@ export default function LogsView({ runs = [] }) {
                           <td className="border-b border-border/60 px-2 py-1.5 text-muted-foreground">{d.runs.length} 次运行</td>
                           <td className="border-b border-border/60 px-2 py-1.5 text-right tabular-nums">{d.segs}</td>
                           <td className="border-b border-border/60 px-2 py-1.5 text-right tabular-nums">{fmtTokFull(d.in)}</td>
+                          <td className="border-b border-border/60 px-2 py-1.5 text-right tabular-nums text-emerald-600 dark:text-emerald-400">{d.cached > 0 ? fmtTokFull(d.cached) : '—'}</td>
                           <td className="border-b border-border/60 px-2 py-1.5 text-right tabular-nums">{fmtTokFull(d.out)}</td>
                           <td className="border-b border-border/60 px-2 py-1.5 text-right">
                             <span className="inline-flex items-center justify-end gap-2">
@@ -1243,6 +1403,7 @@ export default function LogsView({ runs = [] }) {
                               </td>
                               <td className="border-b border-border/30 px-2 py-1 text-right tabular-nums">{r.summary?.aiDone || 0}</td>
                               <td className="border-b border-border/30 px-2 py-1 text-right tabular-nums">{fmtTokFull(tu.in)}</td>
+                              <td className="border-b border-border/30 px-2 py-1 text-right tabular-nums">{tu.cached > 0 ? fmtTokFull(tu.cached) : '—'}</td>
                               <td className="border-b border-border/30 px-2 py-1 text-right tabular-nums">{fmtTokFull(tu.out)}</td>
                               <td className="border-b border-border/30 px-2 py-1 text-right tabular-nums">{fmtTokFull(tu.totalTokens)}</td>
                             </tr>
@@ -1254,7 +1415,7 @@ export default function LogsView({ runs = [] }) {
                 </tbody>
               </table>
             </div>
-            <p className="mt-2 text-[10px] text-muted-foreground">点击任一运行行可跳转到对应的运行卡片。仅统计已记录 Token 的运行（旧日志无此数据）。</p>
+            <p className="mt-2 text-[10px] text-muted-foreground">点击任一运行行可跳转到对应的运行卡片。仅统计已记录 Token 的运行（旧日志无此数据）；缓存命中为提示词前缀复用，计费远低于未缓存输入。</p>
           </CardContent>
         </Card>
       )}

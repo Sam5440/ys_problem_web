@@ -54,9 +54,15 @@ async function aiTranslate(raw) {
   const out = data?.choices?.[0]?.message?.content?.trim();
   if (!out) throw new Error('empty response');
   const u = data.usage || {};
+  // Cached prompt tokens: DeepSeek exposes prompt_cache_hit_tokens, OpenAI-
+  // compatible endpoints prompt_tokens_details.cached_tokens. A subset of
+  // `in` billed at the cheaper cache-hit rate — tracked separately so the
+  // /logs token chart can split billed vs cached input.
+  const cached = Number(u.prompt_cache_hit_tokens ?? u.prompt_tokens_details?.cached_tokens ?? 0);
   const usage = {
     in: Number(u.prompt_tokens ?? 0),
     out: Number(u.completion_tokens ?? 0),
+    ...(cached > 0 ? { cached } : {}),
   };
   const restored = restoreMath(out, stash);
   if (!restored) throw new Error('placeholder mangled');
@@ -104,7 +110,7 @@ async function main() {
 
   // Token accounting: per-segment usage goes both to the per-line log (human
   // + save-ci-log parser) and into a final machine-readable TOKEN-USAGE line.
-  const usage = { model: MODEL, ok: 0, fail: 0, in: 0, out: 0, segments: [] };
+  const usage = { model: MODEL, ok: 0, fail: 0, in: 0, out: 0, cached: 0, segments: [] };
   const fmt = (n) => n.toLocaleString('en-US');
 
   for (const day of days) {
@@ -149,7 +155,8 @@ async function main() {
           usage.ok += 1;
           usage.in += u.in;
           usage.out += u.out;
-          usage.segments.push({ code: pcode, seg: `${seg.key}[${seg.i}]`, in: u.in, out: u.out });
+          usage.cached += u.cached || 0;
+          usage.segments.push({ code: pcode, seg: `${seg.key}[${seg.i}]`, in: u.in, out: u.out, cached: u.cached || 0 });
           if (seg.key === 'title') {
             st.titleZh = typeof st.titleZh === 'object' && st.titleZh !== null ? st.titleZh : {};
             st.titleZh.ai = text;
@@ -165,7 +172,7 @@ async function main() {
           }
           done += 1;
           console.log(
-            `  ✓ ${seg.key}[${seg.i}]: ${text.slice(0, 48)}… [tokens in=${u.in} out=${u.out}]`,
+            `  ✓ ${seg.key}[${seg.i}]: ${text.slice(0, 48)}… [tokens in=${u.in} out=${u.out} cached=${u.cached || 0}]`,
           );
         }
         await sleep(DELAY_MS);
@@ -179,6 +186,7 @@ async function main() {
   console.log('── AI Token 用量（本次运行）──');
   console.log(`  模型 ${MODEL} · 请求成功 ${usage.ok} / 失败 ${usage.fail}`);
   console.log(`  输入 ${fmt(usage.in)} + 输出 ${fmt(usage.out)} = 合计 ${fmt(total)} tokens`);
+  console.log(`  其中缓存命中 ${fmt(usage.cached)} tokens（计费远低于未命中输入）`);
   // Machine-readable line for scripts/save-ci-log.mjs to parse into the log summary.
   console.log(`TOKEN-USAGE ${JSON.stringify({ ...usage, totalTokens: total })}`);
   if (aborted && done === 0) process.exit(1);

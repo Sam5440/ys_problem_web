@@ -72,13 +72,15 @@ function CopyBtn({ text, title = '复制' }) {
 }
 
 function TokenChip({ tokens }) {
+  const cached = tokens.cached || 0;
   return (
     <span
-      title={`本次调用消耗：输入 ${fmtInt(tokens.in)} + 输出 ${fmtInt(tokens.out)} tokens`}
+      title={`本次调用消耗：输入 ${fmtInt(tokens.in)}${cached > 0 ? `（缓存命中 ${fmtInt(cached)}）` : ''} + 输出 ${fmtInt(tokens.out)} tokens`}
       className="inline-flex items-center gap-1 rounded-md border border-amber-500/40 bg-amber-500/10 px-1.5 py-px font-mono text-[10px] tabular-nums text-amber-500"
     >
       <Coins className="h-2.5 w-2.5" />
       {fmtInt(tokens.in)}+{fmtInt(tokens.out)}={fmtInt((tokens.in || 0) + (tokens.out || 0))} tok
+      {cached > 0 && <span className="text-emerald-500/90">·缓存 {fmtInt(cached)}</span>}
     </span>
   );
 }
@@ -273,10 +275,11 @@ export default function AiTranslateDetail({ runs = [], embedded = false }) {
           {run.tokenUsage && (
             <span
               className="inline-flex items-center gap-1 rounded border border-amber-500/40 bg-amber-500/10 px-1 py-px tabular-nums text-amber-500"
-              title={`输入 ${fmtInt(run.tokenUsage.in)} + 输出 ${fmtInt(run.tokenUsage.out)}`}
+              title={`输入 ${fmtInt(run.tokenUsage.in)}${run.tokenUsage.cached > 0 ? `（缓存命中 ${fmtInt(run.tokenUsage.cached)}）` : ''} + 输出 ${fmtInt(run.tokenUsage.out)}`}
             >
               <Coins className="h-2.5 w-2.5" />
               Token 合计 {fmtInt(run.tokenUsage.totalTokens)}
+              {run.tokenUsage.cached > 0 && <span className="text-emerald-500/90">·缓存 {fmtInt(run.tokenUsage.cached)}</span>}
             </span>
           )}
           {run.url && run.url.startsWith('http') && (

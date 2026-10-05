@@ -21,27 +21,53 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       changed: ${{ steps.upstream.outputs.changed }}
+      lb_changed: ${{ steps.upstream.outputs.lb_changed }}
     steps:
       - uses: actions/checkout@v4
 
       # Cheap poll: compare upstream HEAD with the SHA recorded at the last
-      # full sync (data/.upstream-sha). Unchanged runs skip every step below
-      # and finish in under a minute, so the schedule can poll often without
-      # paying for Playwright, statement fetches or translations. Manual
-      # workflow_dispatch always runs fully (also refreshes the marker).
-      # If the upstream check itself fails, fall through to a full run.
+      # full sync (data/.upstream-sha) AND the upstream gh-pages SHA with its
+      # own marker (data/.leaderboard-sha) — records.js (the community
+      # leaderboard) is published on gh-pages by a separate upstream workflow
+      # and changes WITHOUT any main-branch commit, so it needs its own gate.
+      # Unchanged runs skip every step below and finish in under a minute, so
+      # the schedule can poll often without paying for Playwright, statement
+      # fetches or translations. Manual workflow_dispatch always runs fully
+      # (also refreshes the markers). If the main check itself fails, fall
+      # through to a full run.
       - name: Check upstream for updates
         id: upstream
         run: |
-          UPSTREAM_SHA=$(git ls-remote https://github.com/Yawn-Sean/Daily_CF_Problems.git HEAD | cut -f1)
-          LAST_SHA=$(cat data/.upstream-sha 2>/dev/null || true)
-          if [ -n "$UPSTREAM_SHA" ] && [ "$UPSTREAM_SHA" = "$LAST_SHA" ]; then
-            echo "Upstream unchanged since last sync — skipping heavy steps."
-            echo "changed=false" >> "$GITHUB_OUTPUT"
+          CHANGED=false
+          LB_CHANGED=false
+          if UPSTREAM_SHA=$(git ls-remote https://github.com/Yawn-Sean/Daily_CF_Problems.git HEAD | cut -f1) && [ -n "$UPSTREAM_SHA" ]; then
+            LAST_SHA=$(cat data/.upstream-sha 2>/dev/null || true)
+            [ "$UPSTREAM_SHA" != "$LAST_SHA" ] && CHANGED=true
           else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            # check itself failed — fall through to a full run (safe fallback)
+            CHANGED=true
           fi
+          # empty output = gh-pages missing → nothing to sync; a failure here
+          # is covered by the main-branch fallback above (same network)
+          LB_SHA=$(git ls-remote https://github.com/Yawn-Sean/Daily_CF_Problems.git gh-pages | cut -f1 || true)
+          if [ -n "$LB_SHA" ]; then
+            LAST_LB_SHA=$(cat data/.leaderboard-sha 2>/dev/null || true)
+            [ "$LB_SHA" != "$LAST_LB_SHA" ] && LB_CHANGED=true
+          fi
+          echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
+          echo "lb_changed=$LB_CHANGED" >> "$GITHUB_OUTPUT"
           echo "sha=$UPSTREAM_SHA" >> "$GITHUB_OUTPUT"
+          echo "lb_sha=$LB_SHA" >> "$GITHUB_OUTPUT"
+
+      # Leaderboard-only path: upstream records changed while main did not.
+      # Sync just the leaderboard (no heavy deps needed — node builtins only),
+      # never the full pipeline. Skipped on workflow_dispatch, where the full
+      # run below refreshes the leaderboard anyway.
+      - name: Sync leaderboard (upstream records changed)
+        if: ${{ steps.upstream.outputs.lb_changed == 'true' && steps.upstream.outputs.changed != 'true' && github.event_name != 'workflow_dispatch' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/sync-leaderboard.mjs
 
       - name: Install dependencies
         if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
@@ -117,12 +143,18 @@ jobs:
         run: >
           CF_STATEMENTS=0 TRANSLATE=0 node scripts/update-data.mjs
 
-      # Persist the upstream HEAD we just synced so later polls can no-op.
+      # Persist the upstream SHAs we just synced so later polls can no-op.
+      # Also runs on the leaderboard-only path (and dispatch) to record the
+      # gh-pages marker; if the leaderboard sync failed, its step already
+      # aborted the job, so the marker is only written after a good sync.
       - name: Record synced upstream SHA
-        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        if: ${{ steps.upstream.outputs.changed == 'true' || steps.upstream.outputs.lb_changed == 'true' || github.event_name == 'workflow_dispatch' }}
         run: |
           if [ -n "${{ steps.upstream.outputs.sha }}" ]; then
             echo "${{ steps.upstream.outputs.sha }}" > data/.upstream-sha
+          fi
+          if [ -n "${{ steps.upstream.outputs.lb_sha }}" ]; then
+            echo "${{ steps.upstream.outputs.lb_sha }}" > data/.leaderboard-sha
           fi
 
       - name: Commit and push if data changed
@@ -130,8 +162,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
+          # leaderboard-only change → a commit message that says so
+          MSG="chore: sync daily problems data"
+          if [ -z "$(git status --porcelain data/ | grep -v leaderboard)" ]; then
+            MSG="chore: sync community leaderboard"
+          fi
           if ! git diff --cached --quiet; then
-            git commit -m "chore: sync daily problems data"
+            git commit -m "$MSG"
           fi
           # A repair batch runs ~45 min; anything pushed to main in that
           # window (local work, the log job) rejects the push. Rebase over
@@ -165,7 +202,9 @@ jobs:
   save-log:
     runs-on: ubuntu-latest
     needs: update
-    if: ${{ !cancelled() && (needs.update.outputs.changed == 'true' || github.event_name == 'workflow_dispatch') }}
+    # lb_changed runs make a real commit too — archive them so /logs doesn't
+    # misread them as no-ops
+    if: ${{ !cancelled() && (needs.update.outputs.changed == 'true' || needs.update.outputs.lb_changed == 'true' || github.event_name == 'workflow_dispatch') }}
     steps:
       - uses: actions/checkout@v4
 

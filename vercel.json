@@ -1,3 +1,9 @@
 {
-  "buildCommand": "node scripts/write-public-data.mjs && next build"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "node scripts/prepare-build.mjs && next build",
+  "git": {
+    "deploymentEnabled": {
+      "data/*": false
+    }
+  }
 }

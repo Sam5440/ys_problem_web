@@ -25,6 +25,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # main is code-only: pull the sync markers (+ logs/leaderboard for the
+      # later publish steps) from the latest data/misc-* branch so the cheap
+      # poll below can gate on them.
+      - name: Restore misc data from data branches
+        run: node scripts/restore-data.mjs --misc
+
       # Cheap poll: compare upstream HEAD with the SHA recorded at the last
       # full sync (data/.upstream-sha) AND the upstream gh-pages SHA with its
       # own marker (data/.leaderboard-sha) — records.js (the community
@@ -68,6 +74,21 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/sync-leaderboard.mjs
+
+      - name: Persist leaderboard-only update to data branches
+        if: ${{ steps.upstream.outputs.lb_changed == 'true' && steps.upstream.outputs.changed != 'true' && github.event_name != 'workflow_dispatch' }}
+        run: |
+          if [ -n "${{ steps.upstream.outputs.lb_sha }}" ]; then
+            echo "${{ steps.upstream.outputs.lb_sha }}" > data/.leaderboard-sha
+          fi
+          node scripts/push-data-branches.mjs --misc --prune
+          node scripts/publish-deploy.mjs
+
+      # Full pipeline below: bring statements + the previous daily.json (from
+      # the deploy snapshot) into the worktree first.
+      - name: Restore statements and daily snapshot
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: node scripts/restore-data.mjs --statements --daily
 
       - name: Install dependencies
         if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
@@ -157,30 +178,15 @@ jobs:
             echo "${{ steps.upstream.outputs.lb_sha }}" > data/.leaderboard-sha
           fi
 
-      - name: Commit and push if data changed
+      # Data lives on dedicated branches — main is never touched:
+      #   statements  -> data/problems (permanent history)
+      #   misc + logs -> data/misc-<today> (rolling 60d, pruned)
+      #   everything  -> deploy (orphan snapshot, force-pushed; Vercel builds it)
+      - name: Push data branches and publish deploy
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/
-          # leaderboard-only change → a commit message that says so
-          MSG="chore: sync daily problems data"
-          if [ -z "$(git status --porcelain data/ | grep -v leaderboard)" ]; then
-            MSG="chore: sync community leaderboard"
-          fi
-          if ! git diff --cached --quiet; then
-            git commit -m "$MSG"
-          fi
-          # A repair batch runs ~45 min; anything pushed to main in that
-          # window (local work, the log job) rejects the push. Rebase over
-          # it and retry a few times.
-          for i in 1 2 3; do
-            if git pull --rebase origin main && git push; then
-              exit 0
-            fi
-            echo "push attempt $i failed, retrying after rebase"
-            sleep 15
-          done
-          exit 1
+          node scripts/push-data-branches.mjs --problems --misc --prune
+          node scripts/publish-deploy.mjs
 
       # Self-chain the repair backlog: GitHub keeps only the newest pending
       # run per concurrency group, so queueing several dispatches up front
@@ -198,31 +204,27 @@ jobs:
   # Second job: the job-log download API only serves COMPLETED jobs, so the
   # sync job cannot save its own log — this one waits for it, downloads the
   # full log, stores it in public/ci-logs/ (rolling 60-day retention) and
-  # pushes it. Runs even when the sync job failed, so failures are logged.
+  # appends it to today's data/misc branch + republishes deploy so /logs sees
+  # the fresh run. Runs even when the sync job failed, so failures are logged.
   save-log:
     runs-on: ubuntu-latest
     needs: update
-    # lb_changed runs make a real commit too — archive them so /logs doesn't
-    # misread them as no-ops
+    # lb_changed runs make a real data update too — archive them so /logs
+    # doesn't misread them as no-ops
     if: ${{ !cancelled() && (needs.update.outputs.changed == 'true' || needs.update.outputs.lb_changed == 'true' || github.event_name == 'workflow_dispatch') }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Save CI log into the repo
+      - name: Restore data from data branches
+        run: node scripts/restore-data.mjs --misc --statements
+
+      - name: Save CI log into the data branches
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SOURCE_JOB_NAME: update
         run: node scripts/save-ci-log.mjs
 
-      - name: Commit and push log
+      - name: Append log to misc branch and republish deploy
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/ci-logs
-          if git diff --cached --quiet; then
-            echo "No log changes"
-          else
-            git commit -m "ci: save run log $(date -u +%F) run ${GITHUB_RUN_ID}"
-            git pull --rebase origin main || true
-            git push
-          fi
+          node scripts/push-data-branches.mjs --misc
+          node scripts/publish-deploy.mjs

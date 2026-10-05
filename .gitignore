@@ -4,14 +4,16 @@ out/
 .DS_Store
 *.log
 .env*
+.vercel
 
-# CI run logs are committed intentionally (rolling 60-day retention)
-!public/ci-logs/*.log
-!public/ci-logs/*.json
+# Data lives on dedicated branches (data/problems, data/misc-*, deploy) and is
+# restored into the worktree by `npm run data:pull` / scripts/restore-data.mjs.
+# The CI data scripts force-add these paths via git plumbing, so ignore rules
+# here only affect the code-only main branch.
+/data/
+/public/ci-logs/
 
 # generated at build time (scripts/write-public-data.mjs)
 public/build-info.json
 public/leaderboard.json
 public/archive.json
-
-.vercel

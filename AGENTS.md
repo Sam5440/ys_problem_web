@@ -124,6 +124,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 | `lib/mt-protect.js` | 公式/代码/图片占位保护（node 与浏览器同源复用，占位符 `[M07]` 零填充格式） |
 | `components/logs-view.jsx` | /logs 仪表盘（手写 SVG 图表，时间轴锚定最新运行而非 Date.now()） |
 | `components/ai-translate-detail.jsx` | 逐段原文↔译文对照视图（/logs 运行卡内嵌 + /logs/ai-demo） |
+| `components/UpstreamLatest.jsx` + `lib/upstream-readme.mjs` | 首页「上游已更新」横幅：访客浏览器匿名拉上游 README（单次请求），解析 `## Today's Problem` 表（日期取自题解链接的 `daily_problems/…` 路径），本地快照落后时提示上游最新题号；sessionStorage 缓存 10 分钟，失败/已最新均静默不渲染 |
 | `public/ci-logs/` | CI 产物三件套：`<日期>-<runId>.log/.json/.ai.json`，滚动 60 天（存 misc 分支与 deploy） |
 | `data/.upstream-sha` | 上次同步的上游 main HEAD，CI 靠它跳过无更新的轮询（存 misc 分支） |
 | `data/.leaderboard-sha` | 上次同步的上游 gh-pages HEAD——**排行榜独立于 main 更新，必须单独记 SHA**（见 CI 一节） |

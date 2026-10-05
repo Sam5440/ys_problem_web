@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Layers } from 'lucide-react';
 import DayView from '@/components/DayView';
+import UpstreamLatest from '@/components/UpstreamLatest';
 import { Button } from '@/components/ui/button';
 import { getLatestDay, getAllDays } from '@/lib/data';
 
@@ -25,7 +26,7 @@ export default function Home() {
         </h1>
         <p className="mt-4 max-w-xl text-muted-foreground">
           完整题面 · 提示 · 题解，直接在网页上阅读。来自开源社区 Daily_CF_Problems
-          的每日练习，已收录 {days.length} 天，每天 0 点 / 4 点自动刷新。
+          的每日练习，已收录 {days.length} 天，每小时自动同步上游。
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Button asChild>
@@ -42,6 +43,10 @@ export default function Home() {
           </Button>
         </div>
       </section>
+      <UpstreamLatest
+        localDate={day.date}
+        localCodes={day.problems.map((p) => p.code.toLowerCase())}
+      />
       <DayView day={day} latest />
     </>
   );

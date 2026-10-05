@@ -5,7 +5,8 @@ import LogsView from '@/components/logs-view';
 
 export const metadata = {
   title: 'CI 日志 · YS Problem Web',
-  description: '数据同步 workflow 的运行日志：每次运行后自动落盘提交到仓库，滚动保留 60 天。',
+  description:
+    '数据同步 workflow 的运行日志：完整运行后自动落盘提交到仓库（滚动保留 60 天），空跑等未产生提交的运行从 GitHub Actions 实时同步显示。',
 };
 
 function loadRuns() {
@@ -46,7 +47,7 @@ export default function LogsPage() {
         <div>
           <h1 className="text-2xl font-bold tracking-tight">CI 日志</h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            每次数据同步 workflow 结束后自动把完整日志存进仓库（滚动保留 60 天）。展开任一次运行可查看流水线时序图、抓取 / 翻译明细与原始日志。
+            每次完整运行（上游有更新或手动触发）结束后自动把完整日志存进仓库（滚动保留 60 天），空跑等未产生仓库提交的运行会从 GitHub Actions 实时同步显示。展开任一次运行可查看流水线时序图、抓取 / 翻译明细与原始日志。
           </p>
         </div>
       </div>

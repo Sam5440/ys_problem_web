@@ -2,21 +2,26 @@
 
 /**
  * CI 日志 dashboard. The server page reads public/ci-logs/*.json (written by
- * the workflow's save step after every run) and passes them in as props — no
- * API at runtime. Expanding a run lazily fetches its static raw log from
- * /ci-logs/<file> (Vercel CDN), parses the `##[group]Run` step markers and
- * their timestamps into a pipeline flow diagram, and keeps the raw text in a
- * terminal panel.
+ * the workflow's save step after every run) and passes them in as props.
+ * On the client the recent workflow runs are additionally synced live from
+ * the anonymous GitHub API, so runs with no archived log (upstream-unchanged
+ * no-ops produce no commit → no rebuild → no log file) still appear as
+ * lightweight cards saying so. Expanding a run lazily fetches its static raw
+ * log from /ci-logs/<file> (Vercel CDN), parses the `##[group]Run` step
+ * markers and their timestamps into a pipeline flow diagram, and keeps the
+ * raw text in a terminal panel.
  *
  * All charts are hand-rolled SVG (no chart lib) to match the site's
  * hand-written shadcn components. Time anchor for windows/axes is the newest
- * run (not Date.now()) so SSR and hydration render the same tree.
+ * run (not Date.now()) so SSR and hydration render the same tree; the remote
+ * sync only kicks in via setState after mount.
  */
 
-import { Fragment, useEffect, useId, useMemo, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import {
   Activity,
   ArrowUpRight,
+  Ban,
   Bot,
   Bookmark,
   CheckCircle2,
@@ -49,6 +54,11 @@ import AiTranslateDetail from '@/components/ai-translate-detail';
 const DAY = 86_400_000;
 const DEFAULT_DAYS = 7;
 const RETENTION_DAYS = 60;
+
+/* live sync of recent workflow runs (anonymous GitHub API is fine for public
+   repos; 60 req/h per IP is plenty for one page) */
+const GH_REPO = process.env.NEXT_PUBLIC_GH_REPO || 'Sam5440/ys_problem_web';
+const WORKFLOW_FILE = 'update-data.yml';
 
 /* ---------------------------------- helpers --------------------------------- */
 
@@ -95,6 +105,46 @@ const TONE = {
 };
 
 const EVENT_LABEL = { schedule: '定时', workflow_dispatch: '手动', push: '推送' };
+
+/**
+ * Merge locally archived runs with the recent runs pulled live from the
+ * GitHub API. Archived data always wins (matched by run id); API-only runs —
+ * no-op upstream checks, cancelled runs, or runs whose log isn't in the
+ * current deployment yet — become lightweight entries. A successful run
+ * shorter than 5 minutes is a no-op: the upstream-unchanged skip finishes in
+ * seconds while any real run takes ≥10 min.
+ */
+function mergeRemoteRuns(local, remoteRuns) {
+  const have = new Set(local.map((r) => Number(r.runId)));
+  const synth = [];
+  for (const r of remoteRuns || []) {
+    if (!r.conclusion || have.has(r.id)) continue;
+    const startedAt = r.run_started_at || r.created_at;
+    const durMs = startedAt && r.updated_at ? Math.max(0, Date.parse(r.updated_at) - Date.parse(startedAt)) : null;
+    synth.push({
+      runId: r.id,
+      event: r.event,
+      startedAt,
+      savedAt: null,
+      url: r.html_url,
+      failure: r.conclusion === 'failure',
+      conclusion: r.conclusion,
+      remoteOnly: true,
+      noop: r.conclusion === 'success' && durMs != null && durMs < 5 * 60_000,
+      durMs,
+    });
+  }
+  if (!synth.length) return local;
+  return [...local, ...synth].sort((a, b) => (a.startedAt < b.startedAt ? 1 : -1));
+}
+
+/** timeline rail dot color: red=failure, amber=cancelled, zinc=no-archive, emerald=logged success */
+function timelineDot(r) {
+  if (r.failure) return 'bg-red-500 shadow-[0_0_0_3px_rgba(239,68,68,0.2)]';
+  if (r.remoteOnly && r.conclusion === 'cancelled') return 'bg-amber-500 shadow-[0_0_0_3px_rgba(245,158,11,0.2)]';
+  if (r.remoteOnly) return 'bg-zinc-500 shadow-[0_0_0_3px_rgba(113,113,122,0.2)]';
+  return 'bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,0.2)]';
+}
 
 /* ------------------------------ log step parser ----------------------------- */
 
@@ -158,14 +208,13 @@ function parseSteps(logText) {
 
 /* ------------------------------ tiny svg pieces ------------------------------ */
 
-function Sparkline({ data = [], tone = 'emerald' }) {
+function Sparkline({ data = [], tone = 'emerald', width: w = 120 }) {
   const id = useId();
   const t = TONE[tone];
-  const w = 120;
   const h = 32;
   if (!data.length || data.every((v) => v === 0)) {
     return (
-      <svg viewBox={`0 0 ${w} ${h}`} className="h-8 w-[120px]" aria-hidden>
+      <svg viewBox={`0 0 ${w} ${h}`} className="h-8 shrink-0" style={{ width: w }} aria-hidden>
         <line x1="0" y1={h - 6} x2={w} y2={h - 6} stroke={t.solid} strokeOpacity="0.25" strokeWidth="2" strokeLinecap="round" strokeDasharray="2 4" />
       </svg>
     );
@@ -175,7 +224,7 @@ function Sparkline({ data = [], tone = 'emerald' }) {
   const py = (v) => h - 4 - (v / max) * (h - 10);
   const pts = data.map((v, i) => `${px(i)},${py(v)}`).join(' ');
   return (
-    <svg viewBox={`0 0 ${w} ${h}`} className="h-8 w-[120px]" aria-hidden>
+    <svg viewBox={`0 0 ${w} ${h}`} className="h-8 shrink-0" style={{ width: w }} aria-hidden>
       <defs>
         <linearGradient id={id} x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor={t.light} stopOpacity="0.35" />
@@ -204,12 +253,10 @@ function StatCard({ icon: Icon, label, value, sub, tone = 'emerald', spark }) {
           </span>
         </div>
         <div className="mt-1 flex items-end justify-between gap-2">
-          <div className="min-w-0">
-            <p className="text-2xl font-bold tabular-nums tracking-tight">{value}</p>
-            {sub && <p className="mt-0.5 truncate text-[11px] text-muted-foreground">{sub}</p>}
-          </div>
-          {spark && <Sparkline data={spark} tone={tone} />}
+          <p className="min-w-0 truncate text-2xl font-bold tabular-nums tracking-tight">{value}</p>
+          {spark && <Sparkline data={spark} tone={tone} width={76} />}
         </div>
+        {sub && <p className="mt-0.5 truncate text-[11px] text-muted-foreground">{sub}</p>}
       </CardContent>
     </Card>
   );
@@ -603,6 +650,56 @@ function LogTerminal({ filename, text }) {
   );
 }
 
+/* ------------------------------- run card --------------------------------- */
+
+/**
+ * Minimal non-expandable card for runs synced from the GitHub API that have
+ * no archived log in this deployment: upstream-unchanged no-ops (the common
+ * case), cancelled runs, and rare failures that skipped log archiving.
+ */
+function RemoteRunCard({ run, now }) {
+  const cancelled = run.conclusion === 'cancelled';
+  const t = run.failure ? TONE.red : cancelled ? TONE.amber : TONE.zinc;
+  const Icon = run.failure ? XCircle : cancelled ? Ban : Radar;
+  const [badge, note] = run.failure
+    ? ['运行失败', '本次运行失败，且没有对应的日志存档。']
+    : cancelled
+      ? ['已取消', '在并发队列中被新运行取代而取消，未产生仓库提交。']
+      : run.noop
+        ? ['空跑 · 未发生仓库提交', '上游无更新，本次运行未发生任何仓库提交。']
+        : ['无日志存档', '本次运行有实际改动，但日志尚未同步到当前部署。'];
+  return (
+    <Card className="scroll-mt-24 overflow-hidden" id={`run-${run.runId}`}>
+      <div className="flex items-start gap-3 p-4">
+        <span className={`mt-0.5 rounded-lg border p-1.5 ${t.border} ${t.soft}`}>
+          <Icon className={`h-4 w-4 ${t.text}`} />
+        </span>
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span className="text-sm font-semibold">{EVENT_LABEL[run.event] || run.event}运行</span>
+            <span className="rounded border border-border bg-muted px-1 py-px font-mono text-[10px] text-muted-foreground">run {run.runId}</span>
+          </div>
+          <div className="mt-1 flex flex-wrap items-center gap-x-2.5 gap-y-0.5 text-[11px] text-muted-foreground">
+            <span>{new Date(run.startedAt).toLocaleString('zh-CN')}</span>
+            {now && <span>· {fmtDur(Math.max(0, now - Date.parse(run.startedAt)))}前</span>}
+            {run.durMs != null && <span className="flex items-center gap-1"><Timer className="h-3 w-3" />全程 {fmtDur(run.durMs)}</span>}
+          </div>
+          <div className="mt-2 flex flex-wrap items-center gap-1.5">
+            <span className={`rounded-md border ${t.border} ${t.soft} px-1.5 py-0.5 text-[10px] ${t.text}`}>{badge}</span>
+            <span className="text-[11px] text-muted-foreground">{note}</span>
+          </div>
+        </div>
+        <a
+          href={run.url} target="_blank" rel="noreferrer"
+          className="ml-1 inline-flex shrink-0 items-center gap-1 self-center rounded-md border border-border px-2 py-1 text-[11px] text-muted-foreground transition hover:bg-muted hover:text-foreground"
+        >
+          GitHub <ArrowUpRight className="h-3 w-3" />
+        </a>
+      </div>
+    </Card>
+  );
+}
+
 /* ---------------------------------- run card --------------------------------- */
 
 function DetailSection({ title, icon: Icon, count, children, defaultOpen = true }) {
@@ -899,6 +996,11 @@ export default function LogsView({ runs = [] }) {
   const [window7, setWindow7] = useState(true);
   const [expandedId, setExpandedId] = useState(null);
   const [now, setNow] = useState(null);
+  // recent runs synced live from the GitHub API — empty until the client
+  // fetch below resolves, so SSR and the first hydration render the repo
+  // archive only (no hydration mismatch)
+  const [remote, setRemote] = useState({ state: 'idle', runs: [] });
+  const busyRef = useRef(false);
 
   useEffect(() => {
     setNow(Date.now());
@@ -906,13 +1008,44 @@ export default function LogsView({ runs = [] }) {
     return () => clearInterval(t);
   }, []);
 
+  const syncRemote = useCallback(async () => {
+    if (busyRef.current) return;
+    busyRef.current = true;
+    setRemote((r) => ({ ...r, state: 'loading' }));
+    try {
+      const res = await fetch(
+        `https://api.github.com/repos/${GH_REPO}/actions/workflows/${WORKFLOW_FILE}/runs?per_page=100`,
+        { cache: 'no-store', headers: { Accept: 'application/vnd.github+json' } },
+      );
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const j = await res.json();
+      setRemote({ state: 'ready', runs: j.workflow_runs || [] });
+    } catch {
+      // keep the last good list merged; only the status line flips to the error note
+      setRemote((r) => ({ ...r, state: 'error' }));
+    } finally {
+      busyRef.current = false;
+    }
+  }, []);
+
+  useEffect(() => {
+    syncRemote();
+    const t = setInterval(syncRemote, 300_000);
+    return () => clearInterval(t);
+  }, [syncRemote]);
+
+  const merged = useMemo(() => mergeRemoteRuns(runs, remote.runs), [runs, remote.runs]);
+  const remoteOnlyN = merged.length - runs.length;
   const anchorMs = useMemo(
-    () => (runs.length ? Date.parse(runs[0].startedAt) : Date.parse('2026-01-01T00:00:00Z')),
-    [runs],
+    () => (merged.length ? Date.parse(merged[0].startedAt) : Date.parse('2026-01-01T00:00:00Z')),
+    [merged],
   );
   const cutoff = anchorMs - (window7 ? DEFAULT_DAYS : RETENTION_DAYS) * DAY;
-  const visible = useMemo(() => runs.filter((r) => Date.parse(r.startedAt) >= cutoff), [runs, cutoff]);
+  const visible = useMemo(() => merged.filter((r) => Date.parse(r.startedAt) >= cutoff), [merged, cutoff]);
   const chrono = useMemo(() => [...visible].reverse(), [visible]);
+  // runs without an archive carry no output data — the per-run output chart
+  // and its sparklines would otherwise fill up with zero bars for no-ops
+  const chronoLogged = useMemo(() => chrono.filter((r) => !r.remoteOnly), [chrono]);
 
   const stats = useMemo(() => {
     const fail = visible.filter((r) => r.failure).length;
@@ -922,11 +1055,11 @@ export default function LogsView({ runs = [] }) {
     const tokOut = visible.reduce((a, r) => a + (r.summary?.tokenUsage?.out || 0), 0);
     const durs = visible.map((r) => (r.savedAt && r.startedAt ? Date.parse(r.savedAt) - Date.parse(r.startedAt) : null)).filter(Boolean);
     const avgDur = durs.length ? durs.reduce((a, b) => a + b, 0) / durs.length : null;
-    const perRunFetched = chrono.map((r) => r.summary?.fetched?.length || 0);
-    const perRunAi = chrono.map((r) => r.summary?.aiDone || 0);
-    const perRunTokens = chrono.map((r) => r.summary?.tokenUsage?.totalTokens || 0);
+    const perRunFetched = chronoLogged.map((r) => r.summary?.fetched?.length || 0);
+    const perRunAi = chronoLogged.map((r) => r.summary?.aiDone || 0);
+    const perRunTokens = chronoLogged.map((r) => r.summary?.tokenUsage?.totalTokens || 0);
     return { fail, ok: visible.length - fail, fetched, ai, tokIn, tokOut, avgDur, perRunFetched, perRunAi, perRunTokens };
-  }, [visible, chrono]);
+  }, [visible, chronoLogged]);
 
   // 近几日 Token 汇总:按天分组,天内列出每次运行的用量,附每日小计
   const tokenDays = useMemo(() => {
@@ -961,23 +1094,45 @@ export default function LogsView({ runs = [] }) {
 
   return (
     <div className="space-y-6">
-      {/* window switch */}
+      {/* window switch + remote sync status */}
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-xs text-muted-foreground">
-          仓库内滚动保留 {RETENTION_DAYS} 天 · 共载入 {runs.length} 次运行记录
-        </p>
-        <div className="inline-flex rounded-lg border border-border bg-muted/40 p-0.5">
-          {[
-            ['近 7 天', true],
-            ['全部记录', false],
-          ].map(([label, val]) => (
-            <button
-              key={label} type="button" onClick={() => setWindow7(val)}
-              className={`rounded-md px-2.5 py-1 text-xs transition ${window7 === val ? 'bg-background font-medium text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}
-            >
-              {label}
-            </button>
-          ))}
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+          <span>仓库存档 {runs.length} 次运行 · 滚动保留 {RETENTION_DAYS} 天</span>
+          {remote.state === 'loading' && (
+            <span className="flex items-center gap-1">
+              <RefreshCw className="h-3 w-3 animate-spin" />正在同步 GitHub Actions…
+            </span>
+          )}
+          {remote.state === 'ready' && (
+            <span className="flex items-center gap-1 text-emerald-500/90">
+              <CheckCircle2 className="h-3 w-3" />
+              已同步 GitHub Actions 最近 {remote.runs.length} 次{remoteOnlyN > 0 ? ` · ${remoteOnlyN} 次无存档` : ''}
+            </span>
+          )}
+          {remote.state === 'error' && (
+            <span className="text-amber-500">GitHub Actions 同步失败（限流或网络），仅显示仓库存档</span>
+          )}
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="inline-flex rounded-lg border border-border bg-muted/40 p-0.5">
+            {[
+              ['近 7 天', true],
+              ['全部记录', false],
+            ].map(([label, val]) => (
+              <button
+                key={label} type="button" onClick={() => setWindow7(val)}
+                className={`rounded-md px-2.5 py-1 text-xs transition ${window7 === val ? 'bg-background font-medium text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'}`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          <Button
+            variant="outline" size="sm" className="h-7 w-7 p-0"
+            onClick={syncRemote} title="重新同步 GitHub Actions 最近运行"
+          >
+            <RefreshCw className={`h-3.5 w-3.5 ${remote.state === 'loading' ? 'animate-spin' : ''}`} />
+          </Button>
         </div>
       </div>
 
@@ -1029,8 +1184,8 @@ export default function LogsView({ runs = [] }) {
         <Card>
           <CardContent className="p-4">
             <p className="text-xs font-semibold">单次运行产出对比</p>
-            <p className="mb-2 text-[11px] text-muted-foreground">每次运行的抓取/修复题数与 AI 翻译段数，点击柱子展开对应运行</p>
-            <RunOutputChart runsChrono={chrono} onPickRun={pick} />
+            <p className="mb-2 text-[11px] text-muted-foreground">每次运行的抓取/修复题数与 AI 翻译段数（空跑无产出不绘制），点击柱子展开对应运行</p>
+            <RunOutputChart runsChrono={chronoLogged} onPickRun={pick} />
           </CardContent>
         </Card>
       )}
@@ -1118,7 +1273,7 @@ export default function LogsView({ runs = [] }) {
               </span>
               <p className="text-sm font-medium">暂无日志</p>
               <p className="max-w-sm text-xs text-muted-foreground">
-                每次完整运行（上游有更新或手动触发）结束后会自动把完整日志提交到仓库并显示在这里。
+                每次完整运行（上游有更新或手动触发）结束后会自动把完整日志提交到仓库并显示在这里；空跑运行没有日志文件，会以轻量卡片形式从 GitHub Actions 同步显示。
               </p>
             </CardContent>
           </Card>
@@ -1127,10 +1282,12 @@ export default function LogsView({ runs = [] }) {
             <span className="pointer-events-none absolute bottom-4 left-[9px] top-4 w-px bg-gradient-to-b from-emerald-500/50 via-border to-transparent" />
             {visible.map((r) => (
               <div key={r.runId} className="relative">
-                <span
-                  className={`absolute -left-7 top-5 h-[19px] w-[19px] rounded-full border-[5px] border-background ${r.failure ? 'bg-red-500 shadow-[0_0_0_3px_rgba(239,68,68,0.2)]' : 'bg-emerald-500 shadow-[0_0_0_3px_rgba(16,185,129,0.2)]'}`}
-                />
-                <RunCard run={r} expanded={expandedId === r.runId} onToggle={() => setExpandedId(expandedId === r.runId ? null : r.runId)} now={now} />
+                <span className={`absolute -left-7 top-5 h-[19px] w-[19px] rounded-full border-[5px] border-background ${timelineDot(r)}`} />
+                {r.remoteOnly ? (
+                  <RemoteRunCard run={r} now={now} />
+                ) : (
+                  <RunCard run={r} expanded={expandedId === r.runId} onToggle={() => setExpandedId(expandedId === r.runId ? null : r.runId)} now={now} />
+                )}
               </div>
             ))}
           </div>

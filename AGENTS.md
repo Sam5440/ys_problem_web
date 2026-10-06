@@ -116,7 +116,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 | `scripts/lib/cf-statement.mjs` | CF 题面解析器（Playwright 抓取、unmathjax 还原公式） |
 | `scripts/fetch-statements.mjs` | 抓题面：无头 Chromium ↔ 有头 Chrome 自适应过 Cloudflare，Xvfb 下运行 |
 | `scripts/lib/translate.mjs` + `scripts/translate-statements.mjs` | 四渠道网页版 MT（DeepL/有道/彩云/讯飞，移植 OJBetter，GPL-3.0） |
-| `scripts/translate-ai.mjs` | CI 侧 AI 翻译回填（OpenAI 兼容端点），逐段记录 Token（含缓存命中 cached），输出 `TOKEN-USAGE` 汇总行 |
+| `scripts/translate-ai.mjs` | CI 侧 AI 翻译回填（OpenAI 兼容端点），批前先发 system-only 预热请求把系统提示词前缀落盘成 DeepSeek 硬盘缓存单元（`AI_WARM_CACHE=0` 跳过），逐段记录 Token（含缓存命中 cached），输出 `TOKEN-USAGE` 汇总行（含 warmup 计量） |
 | `scripts/lib/leaderboard.mjs` + `scripts/sync-leaderboard.mjs` | 排行榜同步（上游 gh-pages records.js），解析与写盘共用库；轻量脚本供 CI 仅榜单路径用（零依赖） |
 | `scripts/repair-zsmj.mjs` | 重抓被旧解析器 `%%ZSMJ%%` 污染的题面（幂等续传） |
 | `scripts/save-ci-log.mjs` | CI 第二个 job：日志 + 摘要 + 翻译记录落盘 `public/ci-logs/` |
@@ -151,7 +151,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 
 ## Token 与翻译记录
 
-- `translate-ai.mjs` 每段日志：`✓ key[i]: 译文… [tokens in=X out=Y cached=Z]`；结束打印 `TOKEN-USAGE {model,ok,fail,in,out,cached,segments[],totalTokens}` 单行 JSON。cached 取自 `usage.prompt_cache_hit_tokens`（DeepSeek）或 `prompt_tokens_details.cached_tokens`（OpenAI 兼容），是输入的子集、按更低的缓存价计费；旧日志无 cached，前端一律按 0/「—」兜底。
+- `translate-ai.mjs` 每段日志：`✓ key[i]: 译文… [tokens in=X out=Y cached=Z]`；结束打印 `TOKEN-USAGE {model,ok,fail,in,out,cached,segments[],totalTokens,warmup}` 单行 JSON。cached 取自 `usage.prompt_cache_hit_tokens`（DeepSeek）或 `prompt_tokens_details.cached_tokens`（OpenAI 兼容），是输入的子集、按更低的缓存价计费；旧日志无 cached，前端一律按 0/「—」兜底。`warmup` 字段单独计量批前缓存预热探针（mode/in/out/cached），不混入逐段统计。预热原理（DeepSeek 缓存按前缀完整匹配、自动落盘）：system-only 请求让「用户输入结束」边界正好落在系统提示词末尾、将其落盘成缓存单元，之后所有请求共享该字节级不变的前缀即可命中——不要在 system 前插入变化内容、不要并行请求（会破坏前缀匹配）。
 - `save-ci-log.mjs` 解析进摘要 `summary.tokenUsage` + `summary.tokenSegments`（`summarize` 已导出可单测；env 检查在 `main()` 内而非模块顶层，避免 import 即退出）。另解析排行榜同步结果行 `LEADERBOARD-SYNC {changed,players,currentDate}` 进 `summary.leaderboard`（/logs 运行卡的「排行榜更新」徽章数据源）。
 - `.ai.json` 翻译记录：`{ runId, startedAt, tokenUsage, tokensBySeg: {"<code>:<seg>[i]": {in,out,cached}}, problems: [{code,title,segs:[{key,i,en,zh}],aiCount}] }`。构建自当时的 statements 快照（ai 段即该次运行写入的译文）。
 - /logs 相关约定：`app/logs/page.jsx` 与 `app/logs/ai-demo/page.jsx` 的 `loadRuns()` **必须排除 `.ai.json`**（只列 `.json` 摘要），运行卡展开时才懒加载对应 `.ai.json`。

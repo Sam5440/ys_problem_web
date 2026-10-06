@@ -7,7 +7,7 @@ import DataFreshness from '@/components/DataFreshness';
 import GithubMark from '@/components/github-mark';
 
 export const metadata = {
-  title: '小羊肖恩的每日两题',
+  title: 'Yawn-Sean 的每日两题',
   description:
     '将 Yawn-Sean/Daily_CF_Problems 的每日 Codeforces 两题转换为直观的网页展示：完整题面、提示、题解与分类一览。',
 };

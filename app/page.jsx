@@ -20,9 +20,7 @@ export default function Home() {
     <>
       <section className="py-12 sm:py-16">
         <h1 className="max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">
-          每日 Codeforces 两题，
-          <br />
-          <span className="text-muted-foreground">直接读题面。</span>
+          Yawn-Sean <span className="text-muted-foreground">的每日两题</span>
         </h1>
         <p className="mt-4 max-w-xl text-muted-foreground">
           完整题面 · 提示 · 题解，直接在网页上阅读。来自开源社区 Daily_CF_Problems

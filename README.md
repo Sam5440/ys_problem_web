@@ -1,4 +1,4 @@
-# 🐑 小羊肖恩的每日两题
+# 🐑 Yawn-Sean 的每日两题
 
 把 [Yawn-Sean/Daily_CF_Problems](https://github.com/Yawn-Sean/Daily_CF_Problems) 的每日 Codeforces 两题镜像成开箱即读的网页：完整题面（KaTeX 公式渲染）、提示与中文题解，多渠道中文翻译，另有全量历史归档、按算法分类浏览、社区排行榜，以及完整的 CI 运行日志与 AI 翻译记录看板。
 

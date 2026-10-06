@@ -4,7 +4,7 @@ import AiTranslateDetail from '@/components/ai-translate-detail';
 import { buildTokensBySeg, loadStatementPairs } from '@/lib/ai-record.mjs';
 
 export const metadata = {
-  title: 'AI 翻译明细 · Demo · 小羊肖恩的每日两题',
+  title: 'AI 翻译明细 · Demo · Yawn-Sean 的每日两题',
   description: 'Demo：逐段原文↔译文对照视图（本地演示，未发布）。',
 };
 

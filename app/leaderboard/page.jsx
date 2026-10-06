@@ -1,6 +1,6 @@
 import LeaderboardClient from '@/components/LeaderboardClient';
 
-export const metadata = { title: '排行榜 · 小羊肖恩的每日两题' };
+export const metadata = { title: '排行榜 · Yawn-Sean 的每日两题' };
 
 export default function LeaderboardPage() {
   return (

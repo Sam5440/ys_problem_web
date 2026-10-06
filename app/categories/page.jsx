@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-export const metadata = { title: '题目分类 · 小羊肖恩的每日两题' };
+export const metadata = { title: '题目分类 · Yawn-Sean 的每日两题' };
 
 const SHOW_PER_CATEGORY = 30;
 

@@ -1,6 +1,6 @@
 import ArchiveClient from '@/components/ArchiveClient';
 
-export const metadata = { title: '历史归档 · 小羊肖恩的每日两题' };
+export const metadata = { title: '历史归档 · Yawn-Sean 的每日两题' };
 
 export default function ArchivePage() {
   return (

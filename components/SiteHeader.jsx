@@ -22,7 +22,7 @@ export default function SiteHeader() {
         <Link href="/" className="flex items-center gap-2.5">
           <span className="grid size-7 place-items-center rounded-md bg-primary text-sm">🐑</span>
           <span className="text-[15px] font-semibold tracking-tight">
-            小羊肖恩<span className="text-muted-foreground">的每日两题</span>
+            Yawn-Sean <span className="text-muted-foreground">的每日两题</span>
           </span>
         </Link>
         <nav className="ml-2 hidden items-center gap-1 sm:flex">

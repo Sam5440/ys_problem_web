@@ -237,8 +237,8 @@ function SettingsDialog({ onClose }) {
 
         <div className="space-y-2">
           <p className="text-xs font-medium text-muted-foreground">
-            对照翻译优先级（每段取首个已有译文的渠道，段落结尾标注来源；缺失的译文由本机向各渠道实时请求，约每 3 秒一条，结果保存在本机浏览器）。AI（内置）
-            = CI 任务自动翻译的存档；想让全站优先显示 AI 译文，把它拖到第一位即可。
+            对照翻译优先级（每段取首个已有译文的渠道，段落结尾标注来源；缺失的译文由本机向各渠道实时请求，约每 3 秒一条，结果保存在本机浏览器）。AI (CI翻译)
+            = CI 任务自动翻译的存档，芯片标注所用模型；想让全站优先显示 AI 译文，把它拖到第一位即可。
           </p>
           <ul className="space-y-1">
             {(settings.zhPriority || []).map((id, i) => (

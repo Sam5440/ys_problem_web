@@ -10,7 +10,7 @@
 - **「上游已更新」横幅**：站点快照落后于上游时，首页自动提示上游最新题号并附 Codeforces 链接（访客浏览器匿名查上游 README，单次请求、10 分钟本地缓存，已最新或请求失败一律静默）。
 - **中文翻译（对照模式）**：默认原文 + 译文逐段对照，译文按用户可拖拽的优先级链取第一个有译文的渠道——默认 **AI (CI翻译) → DeepL → 彩云 → 讯飞 → 有道**，每段结尾始终带来源芯片标注实际生效渠道。
   - 四条免费 MT 渠道由**每位访客的浏览器实时翻译**：按段轮转分发、并发限流、结果缓存进 IndexedDB；DeepL / 有道 / 讯飞经站内同源中继 `/api/mt/[channel]` 解决跨域，彩云直连。公式、行内代码、图片经占位保护原样保留。
-  - **AI (CI翻译)**：CI 管道用仓库配置的 OpenAI 兼容端点预生成并存档，访客直接读取、零配置。
+  - **AI (CI翻译)**：CI 管道用仓库配置的 OpenAI 兼容端点预生成并存档，访客直接读取、零配置；来源芯片标注实际使用的模型（换模型只需改 workflow 里的 `AI_MODEL_LABEL`，历史无记录的段落按 GLM 5.3 Flash 展示）。
   - **AI (用户自定义)**：右上角 ⚙ 设置里填任意 OpenAI 兼容接口，浏览器端逐段实时翻译；Key 只存本机、只发往用户自己的端点。
 - **历史归档**：2024-02 起全量上游历史按月分组索引，进入单日页面阅读当日两题。
 - **题目分类**：上游按算法/技巧整理的题目一览（DP、贪心、构造……）。
@@ -78,7 +78,7 @@ main 有代码推送时约 2 分钟内带着最新数据重建 deploy——**pus
 1. 点击按钮导入仓库。
 2. **把项目的 Production Branch 设为 `deploy`**（Settings → Git → Production Branch）——deploy 分支含全部数据，Vercel 按 `vercel.json` 执行 `node scripts/prepare-build.mjs && next build`。
 3. 此后 GitHub Action 每小时把新数据发布到 deploy，Vercel 自动刷新站点，无需任何数据库。
-4. 可选：在仓库 Secrets 配置 `AI_BASE_URL` / `AI_API_KEY`（OpenAI 兼容端点）启用 CI 侧 AI 翻译回填；`AI_MODEL`、`AI_TRANSLATE_LIMIT` 写死在 workflow 里，可按需修改。
+4. 可选：在仓库 Secrets 配置 `AI_BASE_URL` / `AI_API_KEY`（OpenAI 兼容端点）启用 CI 侧 AI 翻译回填；`AI_MODEL`（请求参数）、`AI_MODEL_LABEL`（题面上展示的模型名，写入每段 `aiModel`）、`AI_TRANSLATE_LIMIT` 写死在 workflow 里，可按需修改。
 
 > main / PR 分支本身不含数据，构建时 `prepare-build.mjs` 会自动从 deploy 分支拉取数据快照（经 codeload 下载 tarball，不依赖 git fetch），预览构建同样开箱可用。
 

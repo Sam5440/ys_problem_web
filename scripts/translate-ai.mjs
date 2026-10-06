@@ -7,6 +7,9 @@
  * has no `ai` entry yet, requests a translation and merges it into the
  * statement file's sectionsZh / titleZh as the `ai` channel — the site's
  * 对照 chain picks it up as a last resort after the four MT channels.
+ * Each written segment also records the serving model's display name
+ * (AI_MODEL_LABEL, falling back to AI_MODEL) as `aiModel` next to the
+ * translation so the UI can label it; TOKEN-USAGE carries it as `modelLabel`.
  * Idempotent: covered segments are skipped, so repeated runs only translate
  * what is new. AI_TRANSLATE_LIMIT caps the per-run segment budget.
  *
@@ -30,6 +33,10 @@ const STATEMENTS_DIR = path.join(ROOT, 'data', 'statements');
 const BASE_URL = (process.env.AI_BASE_URL || '').trim().replace(/\/+$/, '');
 const API_KEY = (process.env.AI_API_KEY || '').trim();
 const MODEL = process.env.AI_MODEL || 'deepseek-v4-flash';
+// 记录进每段译文（sectionsZh[..][i].aiModel）与 TOKEN-USAGE.modelLabel 的
+// 展示名——请求参数用 AI_MODEL，端点若做模型别名/转发，实际服务模型以
+// AI_MODEL_LABEL 为准；换模型时 workflow 里两个变量要一起改。
+const MODEL_LABEL = (process.env.AI_MODEL_LABEL || '').trim() || MODEL;
 const LIMIT = Number(process.env.AI_TRANSLATE_LIMIT || 60);
 const WARM_CACHE = process.env.AI_WARM_CACHE !== '0';
 const MAX_CONSECUTIVE_FAILS = 5;
@@ -182,7 +189,7 @@ async function main() {
   // + save-ci-log parser) and into a final machine-readable TOKEN-USAGE line.
   // Warm-up tokens are metered separately (warmup field) so per-segment
   // charts stay clean.
-  const usage = { model: MODEL, ok: 0, fail: 0, in: 0, out: 0, cached: 0, segments: [] };
+  const usage = { model: MODEL, modelLabel: MODEL_LABEL, ok: 0, fail: 0, in: 0, out: 0, cached: 0, segments: [] };
   let warmup = null;
   const fmt = (n) => n.toLocaleString('en-US');
 
@@ -237,6 +244,7 @@ async function main() {
           if (seg.key === 'title') {
             st.titleZh = typeof st.titleZh === 'object' && st.titleZh !== null ? st.titleZh : {};
             st.titleZh.ai = text;
+            st.titleZh.aiModel = MODEL_LABEL;
           } else {
             st.sectionsZh[seg.key] ||= [];
             const entry =
@@ -245,6 +253,7 @@ async function main() {
                 ? st.sectionsZh[seg.key][seg.i]
                 : {};
             entry.ai = text;
+            entry.aiModel = MODEL_LABEL;
             st.sectionsZh[seg.key][seg.i] = entry;
           }
           done += 1;

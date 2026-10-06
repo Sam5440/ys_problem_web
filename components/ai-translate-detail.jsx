@@ -24,6 +24,7 @@ import {
   Timer,
 } from 'lucide-react';
 import { renderRich } from '@/lib/render';
+import { aiModelOf } from '@/lib/ai-model';
 
 const CH_ORDER = ['ai', 'deepl', 'caiyun', 'iflyrec', 'youdao', 'legacy'];
 const CH_META = {
@@ -147,7 +148,10 @@ function SegmentCard({ seg, idx, code, channel, onChannel, showEn, tokens }) {
             {active ? (
               <>
                 <CheckCircle2 className={`h-3 w-3 ${active.text}`} />
-                <span className={active.text}>译文 · {active.label}</span>
+                <span className={active.text}>
+                  译文 · {active.label}
+                  {zhKey === 'ai' && `（${aiModelOf(seg.zh.aiModel)}）`}
+                </span>
               </>
             ) : (
               <>
@@ -269,6 +273,14 @@ export default function AiTranslateDetail({ runs = [], embedded = false }) {
             </span>
           )}
           <span className="rounded border border-violet-500/40 bg-violet-500/10 px-1 py-px text-violet-500">AI 译 {run.aiDone} 段</span>
+          {run.tokenUsage?.modelLabel && (
+            <span
+              className="rounded border border-violet-500/40 bg-violet-500/10 px-1 py-px tabular-nums text-violet-500"
+              title="本次运行 AI 翻译使用的模型"
+            >
+              {run.tokenUsage.modelLabel}
+            </span>
+          )}
           {run.failures > 0 && (
             <span className="rounded border border-red-500/40 bg-red-500/10 px-1 py-px text-red-400">{run.failures} 段失败</span>
           )}

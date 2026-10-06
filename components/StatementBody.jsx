@@ -5,6 +5,7 @@ import CopyBox from './CopyBox';
 import { useAiSegment } from './ai-translate';
 import { useSettings, channelLabel, DEFAULT_PRIORITY } from './settings';
 import { hydrateStatement, useZhSegment } from '@/lib/zh-store';
+import { aiModelOf } from '@/lib/ai-model';
 import { renderRich } from '@/lib/render';
 
 function SectionHeading({ children }) {
@@ -23,8 +24,9 @@ function UntranslatedMark({ note }) {
 
 /* ---------------- end-of-line source chips ----------------
  * Every translated line ends with a small chip naming the engine that
- * produced it: the four MT channels, AI 内置 (archived by the CI job) or
- * AI 外置 (translated live via the user's own endpoint). */
+ * produced it: the four MT channels, AI (CI翻译) (archived by the CI job,
+ * with the serving model's name in parens) or AI 外置 (translated live via
+ * the user's own endpoint). */
 
 const ICON_GLOBE =
   '<svg class="inline-block size-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
@@ -33,20 +35,25 @@ const ICON_SPARKLES =
 
 const SOURCE_LABELS = { deepl: 'DeepL', youdao: '有道', caiyun: '彩云', iflyrec: '讯飞' };
 
-const sourceChipHtml = (source) => {
+// channel ids that may appear in an archived segmentsZh entry — guards the
+// Object.entries walks below against the non-channel `aiModel` metadata key
+const ARCHIVE_CHANNEL_IDS = new Set(['deepl', 'youdao', 'caiyun', 'iflyrec', 'ai']);
+
+const sourceChipHtml = (source, model) => {
   const ai = source === 'ai:builtin' || source === 'ai:external';
   const icon = ai ? ICON_SPARKLES : ICON_GLOBE;
-  const label = source === 'ai:builtin' ? 'AI 内置' : source === 'ai:external' ? 'AI 外置' : SOURCE_LABELS[source] || source;
+  let label = source === 'ai:builtin' ? 'AI (CI翻译)' : source === 'ai:external' ? 'AI 外置' : SOURCE_LABELS[source] || source;
+  if (source === 'ai:builtin') label += `（${aiModelOf(model)}）`;
   const tone = ai
     ? 'border-violet-500/40 bg-violet-500/10 text-violet-400'
     : 'border-border bg-muted text-muted-foreground';
   return `<span class="ml-1.5 inline-flex items-center gap-0.5 rounded border px-1 py-px align-middle text-[10px] leading-4 ${tone}">${icon}${label}</span>`;
 };
 
-function WithSourceChip({ html, source, className }) {
+function WithSourceChip({ html, source, model, className }) {
   // inject before the LAST closing </p> so the chip stays on the final line
   // of the rendered markdown instead of floating below it
-  const chip = sourceChipHtml(source);
+  const chip = sourceChipHtml(source, model);
   const withChip = /<\/p>\s*$/.test(html) ? html.replace(/<\/p>(\s*)$/, `${chip}</p>$1`) : html + chip;
   return <div className={className} dangerouslySetInnerHTML={{ __html: withChip }} />;
 }
@@ -106,7 +113,8 @@ function mergedChannels(seg, rec) {
   }
   if (seg && typeof seg === 'object') {
     for (const [ch, t] of Object.entries(seg)) {
-      if (typeof t === 'string' && t.trim()) merged[ch] = t;
+      // `aiModel` rides alongside the channels as segment metadata — skip it
+      if (ARCHIVE_CHANNEL_IDS.has(ch) && typeof t === 'string' && t.trim()) merged[ch] = t;
     }
   }
   return merged;
@@ -130,7 +138,13 @@ function ChainZhLine({ segKey, seg, priority, note }) {
   const hitIdx = prio.findIndex((ch) => typeof merged[ch] === 'string' && merged[ch].trim());
   if (hitIdx >= 0) {
     const hitCh = prio[hitIdx];
-    return <WithSourceChip html={renderRich(merged[hitCh])} source={hitCh === 'ai' ? 'ai:builtin' : hitCh} />;
+    return (
+      <WithSourceChip
+        html={renderRich(merged[hitCh])}
+        source={hitCh === 'ai' ? 'ai:builtin' : hitCh}
+        model={hitCh === 'ai' ? seg?.aiModel : undefined}
+      />
+    );
   }
   // spinner logic only watches the client pipeline's channels — archived `ai`
   // has no client task to wait for
@@ -158,7 +172,13 @@ function ZhLine({ segKey, seg, channel, note }) {
   const local = typeof rec.zh[channel] === 'string' && rec.zh[channel].trim() ? rec.zh[channel] : null;
   const zh = archived || local;
   if (zh) {
-    return <WithSourceChip html={renderRich(zh)} source={channel} />;
+    return (
+      <WithSourceChip
+        html={renderRich(zh)}
+        source={channel}
+        model={channel === 'ai' && zh === archived ? seg?.aiModel : undefined}
+      />
+    );
   }
   if (rec.status[channel] === 'failed') {
     return <UntranslatedMark note={note ? `${note}（${channelLabel(channel)}）` : undefined} />;
@@ -212,7 +232,8 @@ function Section({ label, list, zhList, mode, channel, ai, chain, segPrefix }) {
  * Full statement body (sections + examples), language-aware.
  *
  * `statement.sectionsZh[key][i]` is the repo-side archive: a per-channel map
- * ({ deepl: …, youdao: … }) or a legacy plain string. Anything the archive
+ * ({ deepl: …, youdao: … }) or a legacy plain string; the `ai` channel's
+ * serving model name rides next to it as `aiModel`. Anything the archive
  * does not cover is translated on this machine by lib/zh-store.js — all four
  * channels, every paragraph, round-robin dispatched, 3s-paced per channel,
  * results persisted in IndexedDB — and the lines below upgrade live as

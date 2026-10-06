@@ -116,7 +116,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 | `scripts/lib/cf-statement.mjs` | CF 题面解析器（Playwright 抓取、unmathjax 还原公式） |
 | `scripts/fetch-statements.mjs` | 抓题面：无头 Chromium ↔ 有头 Chrome 自适应过 Cloudflare，Xvfb 下运行 |
 | `scripts/lib/translate.mjs` + `scripts/translate-statements.mjs` | 四渠道网页版 MT（DeepL/有道/彩云/讯飞，移植 OJBetter，GPL-3.0） |
-| `scripts/translate-ai.mjs` | CI 侧 AI 翻译回填（OpenAI 兼容端点），批前先发 system-only 预热请求把系统提示词前缀落盘成 DeepSeek 硬盘缓存单元（`AI_WARM_CACHE=0` 跳过），逐段记录 Token（含缓存命中 cached），输出 `TOKEN-USAGE` 汇总行（含 warmup 计量） |
+| `scripts/translate-ai.mjs` | CI 侧 AI 翻译回填（OpenAI 兼容端点），批前先发 system-only 预热请求把系统提示词前缀落盘成 DeepSeek 硬盘缓存单元（`AI_WARM_CACHE=0` 跳过），逐段记录 Token（含缓存命中 cached）并写入模型展示名 `aiModel`（`AI_MODEL_LABEL`，换模型时与 `AI_MODEL` 一起改），输出 `TOKEN-USAGE` 汇总行（含 warmup 计量） |
 | `scripts/lib/leaderboard.mjs` + `scripts/sync-leaderboard.mjs` | 排行榜同步（上游 gh-pages records.js），解析与写盘共用库；轻量脚本供 CI 仅榜单路径用（零依赖） |
 | `scripts/repair-zsmj.mjs` | 重抓被旧解析器 `%%ZSMJ%%` 污染的题面（幂等续传） |
 | `scripts/save-ci-log.mjs` | CI 第二个 job：日志 + 摘要 + 翻译记录落盘 `public/ci-logs/` |
@@ -143,7 +143,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 
 ## 翻译体系
 
-- 数据模型：`sectionsZh[key][i] = { deepl, youdao, caiyun, iflyrec, ai }`（对象=多渠道；旧版单字符串视为 `legacy`）。标题在 `titleZh`，结构相同。
+- 数据模型：`sectionsZh[key][i] = { deepl, youdao, caiyun, iflyrec, ai }`（对象=多渠道；旧版单字符串视为 `legacy`）。标题在 `titleZh`，结构相同。`ai` 译文旁可带元数据键 `aiModel`（该段所用模型的展示名，由 `translate-ai.mjs` 从 `AI_MODEL_LABEL` 写入、缺省回退请求模型名；无此键的旧段按常量 `GLM 5.3 Flash` 展示，见 `lib/ai-model.js`）。**遍历条目键必须按渠道白名单过滤，别把 `aiModel` 当渠道**（参照 `StatementBody.jsx` 的 `mergedChannels` 与 `zh-store.js` 的 `archivedChannels`）。
 - 显示优先级链 `DEFAULT_PRIORITY = ['ai', 'deepl', 'caiyun', 'iflyrec', 'youdao']`（`components/settings.jsx`），用户可拖拽调整；每段译文结尾**始终**注入来源芯片（必须注进 `renderRich` 输出的最后一个 `<p>` 内部，外包 `<p>` 会因非法嵌套被丢弃）。
 - 渠道分三类：MT 四渠道由**访客浏览器**实时翻译（`lib/zh-store.js` 轮转分发 + IndexedDB 缓存；DeepL/有道/讯飞走 `/api/mt/[channel]` 同源中继，彩云直连）；`ai`=CI 存档（侧栏「AI (CI翻译)」，无需配置）；`ai_custom`=用户自配端点实时翻译。
 - **CI runner 的出口 IP 被四家 MT 服务风控，CI 端 MT 几乎全灭**——缺译文只靠 AI 渠道回填或访客浏览器端翻译，不要试图在 CI 里修 MT。
@@ -151,7 +151,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 
 ## Token 与翻译记录
 
-- `translate-ai.mjs` 每段日志：`✓ key[i]: 译文… [tokens in=X out=Y cached=Z]`；结束打印 `TOKEN-USAGE {model,ok,fail,in,out,cached,segments[],totalTokens,warmup}` 单行 JSON。cached 取自 `usage.prompt_cache_hit_tokens`（DeepSeek）或 `prompt_tokens_details.cached_tokens`（OpenAI 兼容），是输入的子集、按更低的缓存价计费；旧日志无 cached，前端一律按 0/「—」兜底。`warmup` 字段单独计量批前缓存预热探针（mode/in/out/cached），不混入逐段统计。预热原理（DeepSeek 缓存按前缀完整匹配、自动落盘）：system-only 请求让「用户输入结束」边界正好落在系统提示词末尾、将其落盘成缓存单元，之后所有请求共享该字节级不变的前缀即可命中——不要在 system 前插入变化内容、不要并行请求（会破坏前缀匹配）。
+- `translate-ai.mjs` 每段日志：`✓ key[i]: 译文… [tokens in=X out=Y cached=Z]`；结束打印 `TOKEN-USAGE {model,modelLabel,ok,fail,in,out,cached,segments[],totalTokens,warmup}` 单行 JSON。cached 取自 `usage.prompt_cache_hit_tokens`（DeepSeek）或 `prompt_tokens_details.cached_tokens`（OpenAI 兼容），是输入的子集、按更低的缓存价计费；旧日志无 cached，前端一律按 0/「—」兜底。`modelLabel` 与逐段写入的 `aiModel` 同源（`AI_MODEL_LABEL` env，缺省回退 `AI_MODEL`），/logs 运行卡据此标注本次运行所用模型。`warmup` 字段单独计量批前缓存预热探针（mode/in/out/cached），不混入逐段统计。预热原理（DeepSeek 缓存按前缀完整匹配、自动落盘）：system-only 请求让「用户输入结束」边界正好落在系统提示词末尾、将其落盘成缓存单元，之后所有请求共享该字节级不变的前缀即可命中——不要在 system 前插入变化内容、不要并行请求（会破坏前缀匹配）。
 - `save-ci-log.mjs` 解析进摘要 `summary.tokenUsage` + `summary.tokenSegments`（`summarize` 已导出可单测；env 检查在 `main()` 内而非模块顶层，避免 import 即退出）。另解析排行榜同步结果行 `LEADERBOARD-SYNC {changed,players,currentDate}` 进 `summary.leaderboard`（/logs 运行卡的「排行榜更新」徽章数据源）。
 - `.ai.json` 翻译记录：`{ runId, startedAt, tokenUsage, tokensBySeg: {"<code>:<seg>[i]": {in,out,cached}}, problems: [{code,title,segs:[{key,i,en,zh}],aiCount}] }`。构建自当时的 statements 快照（ai 段即该次运行写入的译文）。
 - /logs 相关约定：`app/logs/page.jsx` 与 `app/logs/ai-demo/page.jsx` 的 `loadRuns()` **必须排除 `.ai.json`**（只列 `.json` 摘要），运行卡展开时才懒加载对应 `.ai.json`。
@@ -159,7 +159,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 
 ## Secrets 与环境变量
 
-- 仓库 Secrets：`AI_BASE_URL`、`AI_API_KEY`（OpenAI 兼容端点，CI AI 翻译用）；`AI_MODEL`、`AI_TRANSLATE_LIMIT` 写死在 workflow 里。设置方法：`gh secret set 名字 < 本地文件`，避免密钥进会话记录。
+- 仓库 Secrets：`AI_BASE_URL`、`AI_API_KEY`（OpenAI 兼容端点，CI AI 翻译用）；`AI_MODEL`（请求参数）、`AI_MODEL_LABEL`（写入每段 `aiModel` 的模型展示名，换模型时两个一起改）、`AI_TRANSLATE_LIMIT` 写死在 workflow 里。设置方法：`gh secret set 名字 < 本地文件`，避免密钥进会话记录。
 - 脚本开关：`CF_STATEMENTS=0`（跳过挂载题面）、`TRANSLATE=0`（跳过 MT）、`MAX_DAYS`（历史保留天数，默认无限）、`CF_START_MODE=chrome-headful`。
 - 数据脚本身份：`DATA_BOT_NAME`/`DATA_BOT_EMAIL` 可覆盖提交者，默认 CI 里是 github-actions[bot]、本地是 git config。
 

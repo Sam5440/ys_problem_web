@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CalendarCheck2, Flame, Trophy, Users } from 'lucide-react';
 import { buildLeaderboardRows } from '@/lib/leaderboard';
+import { parseRecordsJs, recordsSignature, UPSTREAM_RECORDS_URL } from '@/lib/records';
 import LeaderboardView from '@/components/LeaderboardView';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -23,22 +24,73 @@ function StatCard({ icon: Icon, label, value, hint }) {
   );
 }
 
+// Live refresh straight from upstream gh-pages (29KB, anonymous, CORS-open):
+// our CI-synced snapshot is only as fresh as the last surviving hourly run,
+// so the browser re-pulls the source of truth on every visit instead.
+const CACHE_KEY = 'lb-upstream-v1';
+const CACHE_TTL_MS = 10 * 60 * 1000;
+
+function readUpstreamCache() {
+  try {
+    const hit = JSON.parse(sessionStorage.getItem(CACHE_KEY));
+    if (hit && Date.now() - hit.savedAt < CACHE_TTL_MS && hit.data) return hit;
+  } catch {}
+  return null;
+}
+
+function fetchUpstreamRecords() {
+  const cached = readUpstreamCache();
+  if (cached) return Promise.resolve(cached);
+  return fetch(UPSTREAM_RECORDS_URL, { signal: AbortSignal.timeout(15000) })
+    .then((r) => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.text();
+    })
+    .then((text) => {
+      const hit = { savedAt: Date.now(), data: parseRecordsJs(text) };
+      try {
+        sessionStorage.setItem(CACHE_KEY, JSON.stringify(hit));
+      } catch {}
+      return hit;
+    });
+}
+
 /** Data arrives from /leaderboard.json (generated at build time) instead of
     being serialized into the prerendered page — the RSC payload used to carry
-    every player's full day series (~15MB per deployment). */
+    every player's full day series (~15MB per deployment). After the snapshot
+    renders, the upstream records.js is fetched live; the snapshot only backs
+    the page when the visitor's network can't reach it. */
 export default function LeaderboardClient() {
   const [data, setData] = useState(undefined); // undefined = loading, null = no data
+  const [live, setLive] = useState(null); // null = pending/failed, {savedAt} = live-synced
+  const sigRef = useRef(null);
 
   useEffect(() => {
     let alive = true;
     fetch('/leaderboard.json')
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => {
-        if (alive) setData(buildLeaderboardRows(j));
+        if (alive && j) {
+          sigRef.current = recordsSignature(j);
+          setData(buildLeaderboardRows(j));
+        }
       })
       .catch(() => {
         if (alive) setData(null);
       });
+    // The live refresh runs even while the snapshot is still loading —
+    // whichever finishes first paints, the other one just updates state.
+    fetchUpstreamRecords()
+      .then((hit) => {
+        if (!alive) return;
+        const sig = recordsSignature(hit.data);
+        if (sig !== sigRef.current) {
+          sigRef.current = sig;
+          setData(buildLeaderboardRows(hit.data));
+        }
+        setLive({ savedAt: hit.savedAt });
+      })
+      .catch(() => {}); // snapshot stays; the 统计截至 dates tell the story
     return () => {
       alive = false;
     };
@@ -81,13 +133,20 @@ export default function LeaderboardClient() {
 
   return (
     <>
-      <section className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+      {live && (
+        <p className="mb-4 flex items-center gap-1.5 text-xs text-muted-foreground">
+          <span className="inline-block size-1.5 animate-pulse rounded-full bg-emerald-500" />
+          已实时同步上游 gh-pages（访客浏览器直拉，
+          {new Date(live.savedAt).toLocaleTimeString('zh-CN', { hour12: false })}）
+        </p>
+      )}
+      <section className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <StatCard icon={Users} label="上榜玩家" value={rows.length} hint={`统计截至 ${currentDate}`} />
         <StatCard icon={Trophy} label="最长连击纪录" value={`${record.maxStreak} 天`} hint={`保持者 ${record.user}`} />
         <StatCard icon={Flame} label="最近一日满贯" value={`${perfect} 人`} hint="当日两题全对" />
         <StatCard icon={CalendarCheck2} label="累计解题" value={totalSolves} hint="全体玩家总和" />
       </section>
-      <section className="pb-14">
+      <section className="mt-6 pb-14">
         <LeaderboardView data={data} />
       </section>
     </>

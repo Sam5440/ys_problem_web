@@ -117,13 +117,15 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 | `scripts/fetch-statements.mjs` | 抓题面：无头 Chromium ↔ 有头 Chrome 自适应过 Cloudflare，Xvfb 下运行 |
 | `scripts/lib/translate.mjs` + `scripts/translate-statements.mjs` | 四渠道网页版 MT（DeepL/有道/彩云/讯飞，移植 OJBetter，GPL-3.0） |
 | `scripts/translate-ai.mjs` | CI 侧 AI 翻译回填（OpenAI 兼容端点），批前先发 system-only 预热请求把系统提示词前缀落盘成 DeepSeek 硬盘缓存单元（`AI_WARM_CACHE=0` 跳过），逐段记录 Token（含缓存命中 cached）并写入模型展示名 `aiModel`（`AI_MODEL_LABEL`，换模型时与 `AI_MODEL` 一起改），输出 `TOKEN-USAGE` 汇总行（含 warmup 计量） |
-| `scripts/lib/leaderboard.mjs` + `scripts/sync-leaderboard.mjs` | 排行榜同步（上游 gh-pages records.js），解析与写盘共用库；轻量脚本供 CI 仅榜单路径用（零依赖） |
+| `scripts/lib/leaderboard.mjs` + `scripts/sync-leaderboard.mjs` | 排行榜同步（上游 gh-pages records.js），解析与写盘共用库（解析纯函数在 `lib/records.js`，node/浏览器共用）；轻量脚本供 CI 仅榜单路径用（零依赖） |
+| `lib/records.js` | 上游 records.js 纯解析（`parseRecordsJs`/`decodeSkippedDates`/内容签名），node 同步与浏览器实时榜单共用（无 node 内置依赖，`sync-leaderboard.mjs` 从这里 re-export） |
 | `scripts/repair-zsmj.mjs` | 重抓被旧解析器 `%%ZSMJ%%` 污染的题面（幂等续传） |
 | `scripts/save-ci-log.mjs` | CI 第二个 job：日志 + 摘要 + 翻译记录落盘 `public/ci-logs/` |
 | `lib/ai-record.mjs` | 构建逐段 原文↔译文 翻译记录（save-ci-log 与 demo 页共用） |
 | `lib/mt-protect.js` | 公式/代码/图片占位保护（node 与浏览器同源复用，占位符 `[M07]` 零填充格式） |
 | `components/logs-view.jsx` | /logs 仪表盘（手写 SVG 图表，时间轴锚定最新运行而非 Date.now()） |
 | `components/ai-translate-detail.jsx` | 逐段原文↔译文对照视图（/logs 运行卡内嵌 + /logs/ai-demo） |
+| `components/LeaderboardClient.jsx` | /leaderboard 客户端：先渲染 `/leaderboard.json` 构建快照，随后**浏览器匿名直拉上游 gh-pages records.js（29KB、CORS 开放）实时覆盖**——hourly CI 轮询被 GitHub 大量丢弃会让榜单滞后数日，快照只作直连失败时的兜底；内容签名相同则不重渲染；sessionStorage 缓存 10 分钟；成功显示「已实时同步」徽章、失败静默 |
 | `components/UpstreamLatest.jsx` + `lib/upstream-readme.mjs` | 首页「上游已更新」横幅：访客浏览器匿名拉上游 README（单次请求），解析 `## Today's Problem` 表（日期取自题解链接的 `daily_problems/…` 路径），本地快照落后时提示上游最新题号；sessionStorage 缓存 10 分钟，失败/已最新均静默不渲染 |
 | `public/ci-logs/` | CI 产物三件套：`<日期>-<runId>.log/.json/.ai.json`，滚动 60 天（存 misc 分支与 deploy） |
 | `data/.upstream-sha` | 上次同步的上游 main HEAD，CI 靠它跳过无更新的轮询（存 misc 分支） |

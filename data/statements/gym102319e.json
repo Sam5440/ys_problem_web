@@ -1,0 +1,94 @@
+{
+  "code": "GYM102319E",
+  "letter": "E",
+  "title": "E. Enegue's Enigmatic Lanterns",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102319/problem/E",
+  "difficulty": "*1600",
+  "timeLimit": "5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Enegue is enjoying life as he strolls down a mildly overgrown path through the forest. At times, he could catch glimpses of the waning moon through gaps in the canopy. As the he followed the winding path through the undergrowth, Enegue suddenly felt the presence of a being somewhere just beyond his vision. Pausing momentarily, Enegue heard the rustling of leaves somewhere in the distance. Then, n$$$n$$$ lanterns appeared in a row in front of Enegue.",
+      "\"Who,\" a voice asked.",
+      "\"Enegue the eyqs,\" responded Enegue, \"who are you?\"",
+      "The voice simply replied \"who.\" Then, with a bright flash, Enegue saw the silhouette of an owl before all the lanterns went dark. After a brief moment of darkness, k$$$k$$$ of the lanterns turned on again, and the owl was nowhere to be seen or heard. Suddenly struck by inspiration, Enegue decides to make you guess which k$$$k$$$ of the n$$$n$$$ lanterns are shining.",
+      "Enegue has a row of n$$$n$$$ lanterns, of which k$$$k$$$ are on. He wants you to guess which k$$$k$$$ of the n$$$n$$$ lanterns are on, but he will only answer your questions in a very cryptic fashion. For each question, you are allowed to choose any subset S$$$S$$$ of the n$$$n$$$ lanterns. Enegue will then count the number of lanterns on in S$$$S$$$. Let this number be x$$$x$$$, but Enegue will not tell you x$$$x$$$. Instead, he will tell you the number of composite divisors of x$$$x$$$. (eg. the composite divisors of 12 are {4,6,12}$$$\\{4,6,12\\}$$$, so if x=12$$$x=12$$$, then Enegue will answer with 3).",
+      "Since Enegue is a cactus, he will get bored after 2×105$$$2\\times10^5$$$ questions, so you'll need to guess the k$$$k$$$ lanterns that are on before he gets bored."
+    ],
+    "input": [
+      "The initial line of input contains two space-separated integers n$$$n$$$ and k$$$k$$$ (4≤k≤n≤100$$$4\\le k\\le n\\le 100$$$), where n$$$n$$$ is the total number of lanterns, and k$$$k$$$ is the number of lanterns that are on.",
+      "This is an interactive problem. Your program should use standard input and output to communicate with the judge's program.",
+      "You are allowed 2×105$$$2\\times10^5$$$ queries. Each query should contain the character '?' and a string S$$$S$$$ of length n$$$n$$$, separated by one space. The string S$$$S$$$ represents the chosen subset, where the i$$$i$$$-th character of S$$$S$$$ is a '1' if and only if the i$$$i$$$-th lantern is in the subset.",
+      "The response to each query will be a single integer as described above. A response of −1$$$-1$$$ means the query is malformed or you have submitted more than 2×105$$$2\\times10^5$$$ queries, in which case your program should exit immediately and get a \"Wrong Answer\".",
+      "Once you are ready to guess the k$$$k$$$ lanterns, output a single line starting with the character '!' and a string T$$$T$$$ of length n$$$n$$$, separated by one space. The string T$$$T$$$ represents the subset of k$$$k$$$ lanterns in the same format as the string S$$$S$$$ above. You will get \"Accepted\" if the guess is correct."
+    ],
+    "output": [],
+    "note": [
+      "The sample input and output only show how the interaction works. It will probably get wrong answer."
+    ]
+  },
+  "examples": [
+    {
+      "input": "9 5\n\n0\n\n0",
+      "output": "// output to show interaction\n? 111111111\n\n? 000001111\n\n! 101100101"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Enegue 正一边沿着一条穿过森林、略微杂草丛生的小路漫步，一边享受着生活。偶尔，他能透过树冠的缝隙瞥见残月。当他沿着蜿蜒的小路穿过灌木丛时，Enegue 突然感到有一个存在就在他视野之外。他稍作停顿，听见远处某处传来树叶的沙沙声。接着，n$$$n$$$ 盏灯笼排成一排出现在 Enegue 面前。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "“谁，”一个声音问道。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "“Enegue的eyqs，”Enegue回应道，“你是谁？”",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "那个声音只是回答：“谁。”接着，伴随一道亮光，Enegue 在所有灯笼熄灭前看到了一只猫头鹰的剪影。短暂黑暗之后，k$$$k$$$ 盏灯笼再次亮起，而猫头鹰已不见踪影，也听不到声音。突然灵光一现，Enegue 决定让你猜 n$$$n$$$ 盏灯笼中哪 k$$$k$$$ 盏在发光。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      null,
+      {
+        "ai": "由于 Enegue 是个仙人掌，他在 2×105$$$2\\times10^5$$$ 次询问后就会感到无聊，所以你需要在 Enegue 感到无聊之前猜出亮着的是哪 k$$$k$$$ 盏灯笼。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个以空格分隔的整数 n$$$n$$$ 和 k$$$k$$$(4≤k≤n≤100$$$4\\le k\\le n\\le 100$$$)，其中 n$$$n$$$ 是灯笼总数，k$$$k$$$ 是亮着的灯笼数。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "这是一道交互题。你的程序应当使用标准输入输出来与评测程序进行交互。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "你最多可以进行 2×105$$$2\\times10^5$$$ 次询问。每次询问应包含字符 '?' 和一个长度为 n$$$n$$$ 的字符串 S$$$S$$$，中间用一个空格分隔。字符串 S$$$S$$$ 表示选出的子集，其中当且仅当第 i$$$i$$$ 盏灯笼在子集中时，S$$$S$$$ 的第 i$$$i$$$ 个字符为 '1'。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "对于每个查询，返回值将是如上所述的单个整数。返回 −1$$$-1$$$ 表示该查询格式错误，或者你已提交超过 2×105$$$2\\times10^5$$$ 次查询；在这种情况下，你的程序应立即退出并得到 “Wrong Answer”。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "当你准备好猜测 k$$$k$$$ 盏灯笼时，输出一行，以字符 '!' 开头，后接一个长度为 n$$$n$$$ 的字符串 T$$$T$$$，两者用一个空格分隔。字符串 T$$$T$$$ 表示 k$$$k$$$ 盏灯笼的子集，格式与上面的字符串 S$$$S$$$ 相同。如果猜测正确，你将得到 \"Accepted\"。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例输入和输出仅展示交互是如何进行的。它很可能会得到错误答案。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. Enegue 的神秘灯笼",
+    "aiModel": "GLM 5.3 Flash"
+  }
+}

@@ -25,7 +25,10 @@ export default function DayView({ day, latest }) {
         )}
       </div>
       <Separator className="mb-6" />
-      <div className="grid gap-6 pb-4">
+      {/* grid-cols-1 pins the track to minmax(0,1fr): without it the implicit
+          auto track grows to the min-content width of a long unbreakable line
+          (code block in the editorial) and drags the whole page wider. */}
+      <div className="grid grid-cols-1 gap-6 pb-4">
         {day.problems.map((p) => (
           <ProblemCard key={p.code} problem={p} />
         ))}

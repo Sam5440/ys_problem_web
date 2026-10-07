@@ -146,6 +146,25 @@
   @apply my-2 leading-7;
 }
 
+/* Unbreakable runs (inline KaTeX is white-space:nowrap, bare URLs) must scroll
+   inside their paragraph instead of stretching the page on narrow screens. */
+.stmt-body p,
+.md-body p,
+.md-body li {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* statement <pre> blocks share the md-body code-block chrome (incl. the
+   horizontal scroll that keeps long lines from widening the card) */
+.stmt-body pre.code-block {
+  @apply relative my-3 overflow-x-auto rounded-lg border bg-background p-4 pt-8 font-mono text-[13px] leading-6 text-foreground/90;
+}
+.stmt-body pre.code-block::before {
+  content: attr(data-lang);
+  @apply absolute right-3 top-1.5 font-sans text-[11px] font-medium uppercase tracking-wider text-muted-foreground;
+}
+
 /* statement images (hotlinked from Codeforces, can be very wide) */
 .stmt-body img {
   @apply my-2 h-auto max-w-full rounded-md;

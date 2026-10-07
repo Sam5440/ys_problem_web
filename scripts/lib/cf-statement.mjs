@@ -90,7 +90,10 @@ function findSpanClose(s, openIdx) {
 // works no matter which side of the transformation we captured.
 //
 // Two page layouts exist:
-//   MathJax v2 — the script holder lives INSIDE a <span class="MathJax"> frame;
+//   MathJax v2 — the script holder lives INSIDE a <span class="MathJax"> frame,
+//   or (older gym mirrors) NEXT TO it as a sibling; either way a
+//   <span class="MathJax_Preview"> holding the original plain-text math sits in
+//   front and must go, or its content rides along once tag-stripped ("n$$$n$$$").
 //   MathJax v3 — the script is a SIBLING of an <mjx-container> block, so the
 //   token never appears inside any span frame (this was the cause of raw
 //   %%ZSMJn%% tokens leaking into 800+ archived statements).
@@ -104,6 +107,15 @@ function unmathjax(html) {
     return `%%ZSMJ${stash.length - 1}%%`;
   });
   if (!stash.length) return html;
+  // v2 preview: MathJax keeps the original math as plain text while rendering;
+  // once the TeX is stashed that copy is pure duplication. Drop the whole span
+  // (balanced — the preview may nest the page's own HTML-math spans).
+  for (;;) {
+    const pos = html.indexOf('<span class="MathJax_Preview"');
+    if (pos === -1) break;
+    const close = findSpanClose(html, pos);
+    html = html.slice(0, pos) + (close === -1 ? '' : html.slice(close));
+  }
   // v2: the token lives INSIDE the frame span — replace the whole frame with
   // its stashed TeX.
   let out = '';

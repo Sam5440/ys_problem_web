@@ -419,6 +419,7 @@ PAGE = """<!doctype html>
   table.stats th { color:#8a93a3; font-weight:500; }
   table.stats tr:last-child td { border-bottom:none; }
   .st-ok { color:#5dd39e; } .st-wait { color:#e3b341; } .st-dead { color:#ff7b72; }
+  .key-mask { display:block; font:10px/1.4 ui-monospace,monospace; color:#6b7686; }
   pre { background:#171c26; border:1px solid #2c3442; border-radius:10px; padding:12px 14px; font:12px/1.7 ui-monospace,Menlo,monospace; overflow:auto; max-height:340px; white-space:pre-wrap; word-break:break-all; margin:0; }
   .foot { margin-top:14px; font-size:11px; color:#5b6472; }
 </style>
@@ -467,6 +468,14 @@ PAGE = """<!doctype html>
 const $ = (id) => document.getElementById(id);
 const fmt = (n) => (n ?? 0).toLocaleString("en-US");
 const esc = (s) => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+function ago(iso) {  // ISO 时间戳 → 「x秒/分/时前」；空值显示 —
+  if (!iso) return "—";
+  const s = Math.max(0, Math.round((Date.now() - Date.parse(iso)) / 1000));
+  if (s < 60) return s + "s前";
+  if (s < 3600) return Math.floor(s / 60) + "m前";
+  if (s < 86400) return Math.floor(s / 3600) + "h前";
+  return Math.floor(s / 86400) + "d前";
+}
 
 function badge(text, cls) { return `<span class="badge ${cls||""}">${esc(text)}</span>`; }
 
@@ -515,16 +524,20 @@ function render(d) {
   const tbl = $("platStats");
   const rows = (r.platforms || []);
   if (!rows.length) {
-    tbl.innerHTML = `<tr><td colspan="7">暂无运行数据</td></tr>`;
+    tbl.innerHTML = `<tr><td colspan="9">暂无运行数据</td></tr>`;
   } else {
-    tbl.innerHTML = `<tr><th>平台</th><th>模型</th><th>并发</th><th>成功/失败</th><th>tokens(in/out/cached)</th><th>429</th><th>状态</th></tr>` +
+    // key 脱敏串来自平台配置（编辑器数据 platRows），按平台名联接展示
+    const keyOf = (n) => { const x = (platRows || []).find((y) => y.name === n); return x && x.keyMasked ? x.keyMasked : ""; };
+    tbl.innerHTML = `<tr><th>平台 / Key</th><th>模型</th><th>并发</th><th>累计 ✓/✗</th><th>10min ✓</th><th>最近成功</th><th>tokens (in/out/cached)</th><th>429</th><th>状态</th></tr>` +
       rows.map((p) => {
         const st = p.dead ? `<span class="st-dead">已下线 ${esc(p.deadReason || "")}</span>`
           : p.quotaDead ? `<span class="st-dead">配额放弃</span>`
           : p.quotaWaiting ? `<span class="st-wait">⛔ 配额等待</span>`
           : `<span class="st-ok">运行中</span>`;
-        return `<tr><td><b>${esc(p.name)}</b></td><td>${esc(p.model)}</td><td>${p.conc}（峰值 ${p.peakConc}）</td>` +
+        const k = keyOf(p.name);
+        return `<tr><td><b>${esc(p.name)}</b>${k ? `<span class="key-mask">${esc(k)}</span>` : ""}</td><td>${esc(p.model)}</td><td>${p.conc}（峰值 ${p.peakConc}）</td>` +
           `<td><span class="st-ok">✓${fmt(p.ok)}</span> / ✗${fmt(p.fail)}</td>` +
+          `<td><b>${fmt(p.ok10m)}</b></td><td>${ago(p.lastOkAt)}</td>` +
           `<td>${fmt(p.in)} / ${fmt(p.out)} / ${fmt(p.cached)}</td>` +
           `<td>${fmt(p.hits429)}</td><td>${st}</td></tr>`;
       }).join("");

@@ -247,6 +247,8 @@ function makePlatform(cfg) {
     conc: START_CONC,
     peakConc: START_CONC,
     usage: { ok: 0, fail: 0, in: 0, out: 0, cached: 0 },
+    okTimes: [], // 成功时间戳环形缓冲（供「最近10分钟成功次数」滑动窗口统计）
+    lastOkAt: null,
     hits429: 0,
     retries: 0,
     batchOk: 0,
@@ -521,13 +523,19 @@ async function main() {
       updatedAt: new Date().toISOString(),
       recentRatePerSec: Number(recentRate().toFixed(3)),
       finishedAt: platforms.every((p) => p.dead) || agg.done >= total ? new Date().toISOString() : null,
-      platforms: platforms.map((p) => ({
-        name: p.name, model: p.model, label: p.label,
-        conc: p.conc, peakConc: p.peakConc, batchOk: p.batchOk, batchStruct: p.batchStruct,
-        ok: p.usage.ok, fail: p.usage.fail, in: p.usage.in, out: p.usage.out, cached: p.usage.cached,
-        hits429: p.hits429, retries: p.retries, quotaPauses: p.quotaPauses,
-        quotaWaiting: !!p.quotaResumer, quotaDead: p.quotaDead, dead: p.dead, deadReason: p.deadReason,
-      })),
+      platforms: platforms.map((p) => {
+        // 滑动窗口：先剪掉 10 分钟外的时间戳再计数，顺带控制内存
+        const cutoff = Date.now() - 600000;
+        p.okTimes = p.okTimes.filter((t) => t > cutoff);
+        return {
+          name: p.name, model: p.model, label: p.label,
+          conc: p.conc, peakConc: p.peakConc, batchOk: p.batchOk, batchStruct: p.batchStruct,
+          ok: p.usage.ok, fail: p.usage.fail, in: p.usage.in, out: p.usage.out, cached: p.usage.cached,
+          ok10m: p.okTimes.length, lastOkAt: p.lastOkAt ? new Date(p.lastOkAt).toISOString() : null,
+          hits429: p.hits429, retries: p.retries, quotaPauses: p.quotaPauses,
+          quotaWaiting: !!p.quotaResumer, quotaDead: p.quotaDead, dead: p.dead, deadReason: p.deadReason,
+        };
+      }),
     };
     writeFile(PROGRESS_FILE, JSON.stringify(payload, null, 2) + '\n').catch(() => {});
   };
@@ -615,6 +623,8 @@ async function main() {
       applyTranslation(t, text);
       scheduleSave(t.file);
       p.usage.ok += 1;
+      p.okTimes.push(Date.now());
+      p.lastOkAt = Date.now();
       p.usage.in += u.in;
       p.usage.out += u.out;
       p.usage.cached += u.cached || 0;
@@ -663,6 +673,8 @@ async function main() {
         applyTranslation(t, part.text);
         scheduleSave(t.file);
         p.usage.ok += 1;
+        p.okTimes.push(Date.now());
+        p.lastOkAt = Date.now();
         recomputeAgg();
         console.log(`✓ [${p.name}] [${fmt(agg.done)}/${fmt(total)}] ${t.code} · ${t.key}[${t.i}] · 批${head.length} · ${part.text.slice(0, 44)}…`);
       });

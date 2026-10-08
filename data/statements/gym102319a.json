@@ -1,0 +1,35 @@
+{
+  "code": "GYM102319A",
+  "letter": "A",
+  "title": "A. Andrew and Efficient Change",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102319/problem/A",
+  "difficulty": "*1800",
+  "timeLimit": "2 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The kid Andrew doesn't like coins. His country currently uses n different coin types, each with a different value. It is guaranteed that the coin with value 1 is one of the different coin types.",
+      "Andrew's weekly taco-pizza grocery list contains r - l + 1 items with costs l, l + 1, ..., r. Unfortunately, Andrew needs to buy each of these items separately as they are sold at different stores. Furthermore, these stores do not give any change, so Andrew must pay the exact amount in coins. Andrew is rather unhappy with the amount of coins he needs to handle every week, so he wants to convince his country to start using a new coin type to minimize the total number of coins needed to buy groceries for his weekly taco-pizza needs.",
+      "Andrew is too busy infiltrating UBC, so he wants you to tell him the best coin type to add, or that no new coin types can decrease the amount of coins he needs to use."
+    ],
+    "input": [
+      "The first line of the input will include an integer n (1 ≤ n ≤ 420), the number of coin types available.",
+      "The next line will include two integers l and r (1 ≤ l ≤ r ≤ 200000, r - l ≤ 50), the range of costs for Andrew's grocery list.",
+      "The next line will include n integers ci (1 ≤ ci ≤ 200000), the value of each coin type that is currently being used. It is guaranteed that no ci is repeated, and there will be some i such that ci = 1."
+    ],
+    "output": [
+      "The output should contain a single integer. If no new coin type can decrease the total number of coins used, print 0. Otherwise, print a single integer 1 ≤ c ≤ r, the value of the coin type which, when added to the coin system, minimizes the total number of coins Andrew uses. If there are multiple solutions, output any."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n10 10\n1",
+      "output": "10"
+    },
+    {
+      "input": "3\n10 15\n1 5 10",
+      "output": "12"
+    }
+  ]
+}

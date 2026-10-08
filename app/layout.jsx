@@ -3,6 +3,7 @@ import 'katex/dist/katex.min.css';
 import SiteHeader from '@/components/SiteHeader';
 import { SettingsProvider } from '@/components/settings';
 import KatexRuntime from '@/components/KatexRuntime';
+import HighlightRuntime from '@/components/HighlightRuntime';
 import DataFreshness from '@/components/DataFreshness';
 import GithubMark from '@/components/github-mark';
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="zh-CN" className="dark">
       <body className="flex min-h-screen flex-col">
         <KatexRuntime />
+        <HighlightRuntime />
         <SettingsProvider>
           <SiteHeader />
           <main className="mx-auto w-full max-w-6xl flex-1 px-4">{children}</main>

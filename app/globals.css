@@ -177,3 +177,66 @@
 .katex-display {
   @apply my-3 overflow-x-auto overflow-y-hidden;
 }
+
+/* ---------- syntax highlighting (highlight.js, applied client-side by
+   HighlightRuntime) — token palette tuned to the site's dark theme instead of
+   an imported hljs theme, so cards keep their own background/border ---------- */
+.code-block .hljs {
+  @apply text-foreground/90;
+}
+.code-block .hljs-comment,
+.code-block .hljs-quote {
+  @apply italic text-muted-foreground/80;
+}
+.code-block .hljs-keyword,
+.code-block .hljs-selector-tag,
+.code-block .hljs-literal,
+.code-block .hljs-section,
+.code-block .hljs-doctag,
+.code-block .hljs-type,
+.code-block .hljs-name,
+.code-block .hljs-strong {
+  @apply text-[#ff7b9c];
+}
+.code-block .hljs-string,
+.code-block .hljs-regexp,
+.code-block .hljs-addition,
+.code-block .hljs-attribute,
+.code-block .hljs-meta .hljs-string {
+  @apply text-[#f2c07a];
+}
+.code-block .hljs-number,
+.code-block .hljs-symbol,
+.code-block .hljs-bullet,
+.code-block .hljs-link,
+.code-block .hljs-deletion {
+  @apply text-[#6fd7b0];
+}
+.code-block .hljs-title,
+.code-block .hljs-function .hljs-title,
+.code-block .hljs-title.function_,
+.code-block .hljs-built_in,
+.code-block .hljs-class .hljs-title,
+.code-block .hljs-title.class_ {
+  @apply text-[#82aaff];
+}
+.code-block .hljs-attr,
+.code-block .hljs-variable,
+.code-block .hljs-template-variable,
+.code-block .hljs-params,
+.code-block .hljs-selector-attr,
+.code-block .hljs-selector-class,
+.code-block .hljs-selector-id {
+  @apply text-[#c7a5ff];
+}
+.code-block .hljs-meta,
+.code-block .hljs-comment.hljs-meta,
+.code-block .hljs-shebang {
+  @apply text-[#56c8d8];
+}
+.code-block .hljs-emphasis {
+  @apply italic;
+}
+.code-block .hljs-subst {
+  @apply text-foreground/90;
+}

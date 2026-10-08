@@ -189,7 +189,13 @@ function ZhLine({ segKey, seg, channel, note }) {
 function Paragraphs({ list, zhList, mode, channel, ai, chain, segPrefix }) {
   const items = list.map((p, i) => {
     if (typeof p !== 'string') {
-      return <pre key={i} className="code-block" dangerouslySetInnerHTML={{ __html: renderRich(p.pre) }} />;
+      // literal statement code — raw escaped text, highlighted post-mount by
+      // HighlightRuntime (markdown would mangle #include-style lines)
+      return (
+        <pre key={i} className="code-block">
+          <code>{p.pre}</code>
+        </pre>
+      );
     }
     if (mode === 'en') {
       return <p key={i} dangerouslySetInnerHTML={{ __html: renderRich(p) }} />;

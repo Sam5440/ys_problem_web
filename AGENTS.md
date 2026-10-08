@@ -127,6 +127,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 | `components/ai-translate-detail.jsx` | 逐段原文↔译文对照视图（/logs 运行卡内嵌 + /logs/ai-demo） |
 | `components/LeaderboardClient.jsx` | /leaderboard 客户端：先渲染 `/leaderboard.json` 构建快照，随后**浏览器匿名直拉上游 gh-pages records.js（29KB、CORS 开放）实时覆盖**——hourly CI 轮询被 GitHub 大量丢弃会让榜单滞后数日，快照只作直连失败时的兜底；内容签名相同则不重渲染；sessionStorage 缓存 10 分钟；成功显示「已实时同步」徽章、失败静默 |
 | `components/RecentDaysNav.jsx` | 首页「最近 7 天」快速入口：7 张日期卡（日期整卡可点 → /day/[date]，两道题各自直达题面锚点 #CODE），纯服务端组件、构建期取自 daily.json（无客户端 JS） |
+| `components/HighlightRuntime.jsx` | 全站代码块语法高亮：highlight.js/lib-common 按需动态加载（页面无代码块不拉 chunk），MutationObserver 后挂载转换（题解手风琴懒挂载/翻译重渲染都覆盖）；`pre.code-block` 的 `data-lang` 小写后按语言高亮、无标签自动检测；暗色 token 配色手写在 globals.css（不引 hljs 主题）。题面 `<pre>` 段在 StatementBody 直出原文不过 markdown（#include 行不被吞），与 fence 块统一为 `pre.code-block > code` |
 | `components/UpstreamLatest.jsx` + `lib/upstream-readme.mjs` | 首页「上游已更新」横幅：访客浏览器匿名拉上游 README（单次请求），解析 `## Today's Problem` 表（日期取自题解链接的 `daily_problems/…` 路径），本地快照落后时提示上游最新题号；sessionStorage 缓存 10 分钟，失败/已最新均静默不渲染 |
 | `public/ci-logs/` | CI 产物三件套：`<日期>-<runId>.log/.json/.ai.json`，滚动 60 天（存 misc 分支与 deploy） |
 | `data/.upstream-sha` | 上次同步的上游 main HEAD，CI 靠它跳过无更新的轮询（存 misc 分支） |

@@ -22,6 +22,7 @@ jobs:
     outputs:
       changed: ${{ steps.upstream.outputs.changed }}
       lb_changed: ${{ steps.upstream.outputs.lb_changed }}
+      retry_changed: ${{ steps.retry.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
 
@@ -83,6 +84,45 @@ jobs:
           fi
           node scripts/push-data-branches.mjs --misc --prune
           node scripts/restore-data.mjs --daily
+          node scripts/publish-deploy.mjs
+
+      # Every-run retry: segments from the newest 3 days that still lack an AI
+      # translation (failed in an earlier run — transient endpoint/quota errors)
+      # get another attempt on EVERY run, not just when upstream moves. Without
+      # this a failed segment would wait up to a day for the next upstream
+      # update. Zero-dependency path (restore + translate + reattach are all
+      # node-builtins-only), so it runs without npm ci; skipped on the full
+      # pipeline, whose newest-first translate step already covers recent days.
+      - name: Retry AI translation for the newest 3 days
+        id: retry
+        if: ${{ steps.upstream.outputs.changed != 'true' && github.event_name != 'workflow_dispatch' }}
+        env:
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_MODEL: deepseek-v4-flash
+          AI_MODEL_LABEL: GLM 5.3 Flash
+          AI_RECENT_DAYS: "3"
+          AI_TRANSLATE_LIMIT: "60"
+        run: |
+          node scripts/restore-data.mjs --statements --daily
+          OUT=$(node scripts/translate-ai.mjs)
+          echo "$OUT"
+          DONE=$(echo "$OUT" | grep -oE 'Done: [0-9]+' | grep -oE '[0-9]+' || echo 0)
+          echo "done=$DONE" >> "$GITHUB_OUTPUT"
+          if [ "${DONE:-0}" -gt 0 ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+          node scripts/reattach-statements.mjs
+        continue-on-error: true
+
+      # Retry pass translated something on a run the full pipeline skipped —
+      # push the refreshed statements and republish so the site picks them up.
+      - name: Publish recent-retry translations
+        if: ${{ steps.retry.outputs.changed == 'true' && steps.upstream.outputs.changed != 'true' && github.event_name != 'workflow_dispatch' }}
+        run: |
+          node scripts/push-data-branches.mjs --problems
           node scripts/publish-deploy.mjs
 
       # Full pipeline below: bring statements + the previous daily.json (from
@@ -214,9 +254,9 @@ jobs:
   save-log:
     runs-on: ubuntu-latest
     needs: update
-    # lb_changed runs make a real data update too — archive them so /logs
-    # doesn't misread them as no-ops
-    if: ${{ !cancelled() && (needs.update.outputs.changed == 'true' || needs.update.outputs.lb_changed == 'true' || github.event_name == 'workflow_dispatch') }}
+    # lb_changed / recent-retry runs make a real data update too — archive
+    # them so /logs doesn't misread them as no-ops
+    if: ${{ !cancelled() && (needs.update.outputs.changed == 'true' || needs.update.outputs.lb_changed == 'true' || needs.update.outputs.retry_changed == 'true' || github.event_name == 'workflow_dispatch') }}
     steps:
       - uses: actions/checkout@v4
 

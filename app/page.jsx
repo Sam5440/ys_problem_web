@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, BookOpen, Layers } from 'lucide-react';
 import DayView from '@/components/DayView';
+import RecentDaysNav from '@/components/RecentDaysNav';
 import UpstreamLatest from '@/components/UpstreamLatest';
 import { Button } from '@/components/ui/button';
 import { getLatestDay, getAllDays } from '@/lib/data';
@@ -45,6 +46,7 @@ export default function Home() {
         localDate={day.date}
         localCodes={day.problems.map((p) => p.code.toLowerCase())}
       />
+      <RecentDaysNav days={days} />
       <DayView day={day} latest />
     </>
   );

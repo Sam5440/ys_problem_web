@@ -38,6 +38,10 @@ const MODEL = process.env.AI_MODEL || 'deepseek-v4-flash';
 // AI_MODEL_LABEL 为准；换模型时 workflow 里两个变量要一起改。
 const MODEL_LABEL = (process.env.AI_MODEL_LABEL || '').trim() || MODEL;
 const LIMIT = Number(process.env.AI_TRANSLATE_LIMIT || 60);
+// AI_RECENT_DAYS=N：只翻 daily.json 里最近 N 个日期的题目段落（每工作流对
+// 近几天缺译段的例行二次尝试——失败段在下一次运行自动重试，不再等上游更新）。
+// 0/未设 = 全量最新优先（原有行为）。
+const RECENT_DAYS = Number(process.env.AI_RECENT_DAYS || 0);
 const WARM_CACHE = process.env.AI_WARM_CACHE !== '0';
 const MAX_CONSECUTIVE_FAILS = 5;
 const TIMEOUT_MS = 120000;
@@ -177,6 +181,12 @@ async function main() {
 
   const daily = JSON.parse(await readFile(DATA_FILE, 'utf8'));
   const days = [...(daily.days || [])].sort((a, b) => (a.date < b.date ? 1 : -1));
+  const scope = RECENT_DAYS > 0 ? days.slice(0, RECENT_DAYS) : days;
+  if (RECENT_DAYS > 0) {
+    console.log(
+      `Recent-days mode: only the newest ${scope.length} day(s) — ${scope.map((d) => d.date).join(', ')}`,
+    );
+  }
 
   // Newest statement files first; dedupe codes across days.
   const seen = new Set();
@@ -193,7 +203,7 @@ async function main() {
   let warmup = null;
   const fmt = (n) => n.toLocaleString('en-US');
 
-  for (const day of days) {
+  for (const day of scope) {
     if (aborted || budget <= 0) break;
     for (const problem of day.problems || []) {
       if (aborted || budget <= 0) break;

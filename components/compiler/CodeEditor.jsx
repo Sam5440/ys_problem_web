@@ -23,8 +23,8 @@ import { useEffect, useRef } from 'react';
 import {
   CPP_FUNCTIONS, CPP_TYPES, CPP_OBJECTS, CPP_MEMBERS, CPP_HEADERS, CPP_KEYWORDS, CPP_SNIPPETS,
   PY_FUNCTIONS, PY_MEMBER_TABLES, PY_TYPE_MEMBERS, PY_KEYWORDS, PY_SNIPPETS,
-  toSuggestion, keywordSuggestion, signatureLookup, splitSignatureParams, includeContext,
-  isCppMemberAccess, pyPrefixPath,
+  toSuggestion, keywordSuggestion, lookupSignature, splitSignatureParams,
+  includeContext, cppAccessKind, pyPrefixPath,
 } from '../../lib/compiler/completions.js';
 
 let monacoPromise = null;
@@ -164,8 +164,15 @@ function registerProviders(monaco, getCppContext) {
         return { suggestions: [] };
       }
 
-      const memberCtx = isCppMemberAccess(lineText, position.column);
-      if (memberCtx) {
+      // 成员访问分三态：`.`/`->` 出通用成员表；`::`（std:: 等）出全量 std
+      // 符号——不带 using namespace std 的写法在作用域里也要能补 sort
+      const access = cppAccessKind(lineText, position.column);
+      if (access === 'scope') {
+        for (const f of CPP_FUNCTIONS) suggestions.push(toSuggestion(monaco, f, K.Function, { sortBoost: '1', range }));
+        for (const t of CPP_TYPES) suggestions.push(toSuggestion(monaco, t, K.Class, { sortBoost: '1', range }));
+        for (const o of CPP_OBJECTS) suggestions.push(toSuggestion(monaco, o, K.Variable, { sortBoost: '1', range }));
+        for (const m of CPP_MEMBERS) suggestions.push(toSuggestion(monaco, m, K.Method, { sortBoost: '2', range }));
+      } else if (access) {
         for (const m of CPP_MEMBERS) suggestions.push(toSuggestion(monaco, m, K.Method, { sortBoost: '2', range }));
       } else {
         for (const k of CPP_KEYWORDS) suggestions.push(keywordSuggestion(monaco, k, range));
@@ -215,9 +222,9 @@ function registerProviders(monaco, getCppContext) {
           } finally {
             ctx.onStatus?.(null);
           }
-        } else if (memberCtx && hitCache) {
+        } else if (access && hitCache) {
           mergeClangItems(suggestions, clangCache.items, K.Method, range);
-        } else if (memberCtx && context.triggerKind === TriggerCharacter) {
+        } else if (access && context.triggerKind === TriggerCharacter) {
           // 后台跑：不阻塞本次返回；期间有新输入/新请求（seq 变化）则丢弃
           const seq = ++clangCompleteSeq;
           const source = model.getValue();
@@ -240,7 +247,7 @@ function registerProviders(monaco, getCppContext) {
     signatureHelpTriggerCharacters: ['(', ','],
     provideSignatureHelp(model, position) {
       const text = model.getValueInRange({ startLineNumber: 1, startColumn: 1, endLineNumber: position.lineNumber, endColumn: position.column });
-      const hit = signatureLookup(text, [CPP_FUNCTIONS]);
+      const hit = lookupSignature(text, [CPP_FUNCTIONS], [CPP_MEMBERS]);
       if (!hit) return null;
       const info = toSignatureInfo(hit, 'cpp');
       return {
@@ -307,7 +314,7 @@ function registerProviders(monaco, getCppContext) {
     signatureHelpTriggerCharacters: ['(', ','],
     provideSignatureHelp(model, position) {
       const text = model.getValueInRange({ startLineNumber: 1, startColumn: 1, endLineNumber: position.lineNumber, endColumn: position.column });
-      const hit = signatureLookup(text, [PY_FUNCTIONS]);
+      const hit = lookupSignature(text, [PY_FUNCTIONS], [...Object.values(PY_MEMBER_TABLES), PY_TYPE_MEMBERS]);
       if (!hit) return null;
       const info = toSignatureInfo(hit, 'python');
       return {

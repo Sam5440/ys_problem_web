@@ -8,7 +8,8 @@ import assert from 'node:assert/strict';
 import {
   CPP_FUNCTIONS, CPP_TYPES, CPP_OBJECTS, CPP_MEMBERS, CPP_HEADERS, CPP_KEYWORDS, CPP_SNIPPETS,
   PY_FUNCTIONS, PY_MEMBER_TABLES, PY_TYPE_MEMBERS, PY_KEYWORDS, PY_SNIPPETS,
-  signatureLookup, splitSignatureParams, includeContext, isCppMemberAccess, pyPrefixPath,
+  signatureLookup, lookupSignature, splitSignatureParams, includeContext,
+  cppAccessKind, isCppMemberAccess, pyPrefixPath,
   toSuggestion, keywordSuggestion,
 } from '../../lib/compiler/completions.js';
 
@@ -52,6 +53,19 @@ check('C++ 表含裸名 cout/cin/sort（co 前缀可命中）',
   CPP_OBJECTS.some((x) => x.label === 'cin') &&
   CPP_FUNCTIONS.some((x) => x.label === 'sort'));
 
+// 关键函数覆盖（2026-10 扩表）：竞赛高频自由函数 / 成员 / 类型 / manipulator
+check('CPP_FUNCTIONS 含 memset/freopen/iota/nth_element/set_union',
+  ['memset', 'freopen', 'iota', 'nth_element', 'set_union'].every((l) => CPP_FUNCTIONS.some((x) => x.label === l)));
+check('CPP_FUNCTIONS 含 iomanip 三件套（setprecision/setw/setfill）',
+  ['setprecision', 'setw', 'setfill'].every((l) => CPP_FUNCTIONS.some((x) => x.label === l)));
+check('CPP_FUNCTIONS 含位运算内建（popcount/ctz/clz）',
+  ['__builtin_popcount', '__builtin_ctzll', '__builtin_clz'].every((l) => CPP_FUNCTIONS.some((x) => x.label === l)));
+check('CPP_MEMBERS 含 contains/emplace/lower_bound/ignore/flush',
+  ['contains', 'emplace', 'lower_bound', 'ignore', 'flush'].every((l) => CPP_MEMBERS.some((x) => x.label === l)));
+check('CPP_TYPES 含 greater/__int128', CPP_TYPES.some((x) => x.label === 'greater') && CPP_TYPES.some((x) => x.label === '__int128'));
+check('CPP_OBJECTS 含 fixed/stdin', CPP_OBJECTS.some((x) => x.label === 'fixed') && CPP_OBJECTS.some((x) => x.label === 'stdin'));
+check('CPP_HEADERS 含 iomanip', CPP_HEADERS.includes('iomanip'));
+
 /* ---- signatureLookup ---- */
 
 {
@@ -83,6 +97,45 @@ check('C++ 表含裸名 cout/cin/sort（co 前缀可命中）',
 
   hit = signatureLookup('unknown_fn(', [T]);
   check('表外函数返回 null', hit === null);
+
+  hit = signatureLookup('v.push_back(', [T]);
+  check('成员调用 isMember=true', hit?.isMember === true);
+
+  hit = signatureLookup('sort(a, ', [T]);
+  check('裸调用 isMember=false', hit?.isMember === false);
+
+  hit = signatureLookup('std::sort(', [T]);
+  check('命名空间调用 isMember=true', hit?.isMember === true);
+}
+
+/* ---- lookupSignature 成员/裸名消歧 ---- */
+
+{
+  // 同名异义：count 在自由函数表与成员表都存在，语义不同
+  const FREE = [{ label: 'count', signature: 'ptrdiff_t count(InputIt first, InputIt last, const T& value)' }];
+  const MEMBER = [{ label: 'count', signature: 'size_type count(const Key& key) const' }];
+
+  let hit = lookupSignature('    v.count(', [FREE], [MEMBER]);
+  check('v.count( 命中成员表签名', hit?.match.signature.startsWith('size_type count(const Key'), JSON.stringify(hit?.match));
+
+  hit = lookupSignature('    count(', [FREE], [MEMBER]);
+  check('裸 count( 命中自由函数表签名', hit?.match.signature.startsWith('ptrdiff_t count('), JSON.stringify(hit?.match));
+
+  hit = lookupSignature('    v.sort(', [[{ label: 'sort', signature: 'void sort(RandomIt first, RandomIt last)' }]], [[{ label: 'sort', signature: 'void sortmember()' }]]);
+  check('成员调用优先成员表（同 label 双表语义消歧）', hit?.match.signature === 'void sortmember()', JSON.stringify(hit?.match));
+
+  hit = lookupSignature('    v.map(', [[{ label: 'map', signature: 'OutputIt map(InputIt first, InputIt last, Fun f)' }]], []);
+  check('成员表未命中回落自由函数表', hit?.match.label === 'map');
+
+  const PY_MEMBER = Object.values(PY_MEMBER_TABLES);
+  hit = lookupSignature('heapq.heappush(', [PY_FUNCTIONS], [...PY_MEMBER, PY_TYPE_MEMBERS]);
+  check('heapq.heappush( 命中模块成员签名', hit?.match.label === 'heappush');
+
+  hit = lookupSignature('print(', [PY_FUNCTIONS], [...PY_MEMBER, PY_TYPE_MEMBERS]);
+  check('裸 print( 命中内置函数签名', hit?.match.label === 'print');
+
+  hit = lookupSignature('    a.sort(', [PY_FUNCTIONS], [...PY_MEMBER, PY_TYPE_MEMBERS]);
+  check('list.sort( 命中类型成员签名（key/reverse）', hit?.match.signature.includes('key=None'), JSON.stringify(hit?.match));
 }
 
 /* ---- splitSignatureParams ---- */
@@ -127,6 +180,23 @@ check('label 冒号 → false', isCppMemberAccess('public:', 8) === false);
 check('浮点字面量 1.5 → false', isCppMemberAccess('    1.5', 8) === false);
 check('移出成员后 v.size() → false', isCppMemberAccess('    v.size();', 13) === false);
 check('流输出 cout << x → false', isCppMemberAccess('    cout << x', 14) === false);
+
+/* ---- cppAccessKind 三态（isCppMemberAccess 的细化） ---- */
+
+check('v. → dot', cppAccessKind('    v.', 7) === 'dot');
+check('it-> → arrow', cppAccessKind('    it->', 9) === 'arrow');
+check('std:: → scope', cppAccessKind('    std::', 10) === 'scope');
+check('std::so → scope（剥部分词逐键保持）', cppAccessKind('    std::so', 13) === 'scope');
+check('全局 :: → scope', cppAccessKind('    ::', 7) === 'scope');
+check('链式 a.b. → dot', cppAccessKind('    a.b.', 9) === 'dot');
+check('嵌套 ns::Inner:: → scope', cppAccessKind('    ns::Inner::', 16) === 'scope');
+check('case 1: → null', cppAccessKind('    case 1:', 12) === null);
+check('label 冒号 → null', cppAccessKind('public:', 8) === null);
+check('三元单冒号 a ? b : → null', cppAccessKind('    x = a ? b :', 16) === null);
+check('比较 > → null', cppAccessKind('    if (a >', 12) === null);
+check('isCppMemberAccess 与三态一致（dot/arrow/scope 均 true）',
+  [cppAccessKind('    v.', 7), cppAccessKind('    it->', 9), cppAccessKind('    std::', 10)].every((k) => k !== null)
+  && isCppMemberAccess('    cout << x', 14) === false);
 
 /* ---- pyPrefixPath ---- */
 

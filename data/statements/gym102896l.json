@@ -43,68 +43,68 @@
     "legend": [
       {
         "ai": "二叉搜索树是一棵有根二叉树，其中的节点存储键，并且每个节点的键都大于其左子树中的所有键，小于其右子树中的所有键。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "二叉搜索树可以用于维护有序集合，并支持对集合执行不同类型的查询。本题考虑的查询是：求集合中位于范围 [L,R]$$$[L, R]$$$ 内的值的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "令 S$$$S$$$ 表示二叉搜索树中所有键组成的集合。给定两个值 L$$$L$$$ 和 R$$$R$$$。查询需要求满足 L≤x≤R$$$L \\le x \\le R$$$ 的 x∈S$$$x \\in S$$$ 的数量。当使用参数 lookup(root, L, R) 调用时，下面的递归函数会计算该值，其中 root 是二叉搜索树的根节点。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       null,
       {
         "ai": "值 v.left、v.right、v.min、v.max、v.key 和 v.count 是二叉搜索树节点的字段。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "v.left 和 v.right 分别是节点 v$$$v$$$ 的左孩子和右孩子。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "v.min 和 v.max 分别是以节点 v$$$v$$$ 为根的子树中的最小键和最大键。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "v.key 是节点 v$$$v$$$ 的键。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "v.count 是以节点 v$$$v$$$ 为根的子树中的节点数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "给定一棵键为整数的二叉搜索树。你还会得到若干查询，每个查询由两个整数 L$$$L$$$ 和 R$$$R$$$ 组成。求调用 lookup(root, L, R) 时查找函数被调用的次数，包括初始的 lookup(root, L, R) 调用本身。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤200000$$$1 \\le n \\le 200\\,000$$$)——二叉搜索树中的节点数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 n$$$n$$$ 行描述这棵树的节点。第 i$$$i$$$ 行包含三个整数 li$$$l_i$$$、ri$$$r_i$$$ 和 ki$$$k_i$$$，分别表示第 i$$$i$$$ 个节点的左子节点、右子节点和键。如果该节点没有左子节点和/或右子节点，对应的值为 0(li=0$$$l_i = 0$$$ 或 i<li≤n$$$i  \\lt  l_i \\le n$$$；ri=0$$$r_i = 0$$$ 或 i<ri≤n$$$i  \\lt  r_i \\le n$$$；−109≤ki≤109$$$-10^9 \\le k_i \\le 10^9$$$)。树的根是节点 1，并且保证这是一棵结构正确的二叉搜索树。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "注意，输入中没有明确给出 v.min、v.max 和 v.count 的值，因为可以根据 li$$$l_i$$$、ri$$$r_i$$$ 和 ki$$$k_i$$$ 推导出它们。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "下一行包含一个整数 q$$$q$$$(1≤q≤200000$$$1 \\le q \\le 200\\,000$$$)——查询的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 q$$$q$$$ 行中，每行包含两个整数 L$$$L$$$ 和 R$$$R$$$(−109≤L≤R≤109$$$-10^9 \\le L \\le R \\le 10^9$$$)——传递给查找函数的参数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出 q$$$q$$$ 行，第 i$$$i$$$ 行包含一个整数——对于第 i$$$i$$$ 次查询，查找函数被调用的次数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },

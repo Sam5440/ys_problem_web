@@ -45,92 +45,92 @@
     "legend": [
       {
         "ai": "在一条长度为 n$$$n$$$ 的土地上有 k$$$k$$$ 台空调：第 i$$$i$$$ 台空调位于编号为 ai$$$a_i$$$ 的单元格中(1≤ai≤n$$$1 \\le a_i \\le n$$$)。同一个单元格中不能放置两台或更多空调(即所有 ai$$$a_i$$$ 互不相同)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每台空调由一个参数表征：温度。第 i$$$i$$$ 台空调的温度设为 ti$$$t_i$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/d603b553d049b7bf9a634f173e94f1e4d86e0053.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于每个格子 i$$$i$$$(1≤i≤n$$$1 \\le i \\le n$$$)，求出它的温度，该温度可以通过公式 min1≤j≤k(tj+|aj−i|),$$\\min_{1 \\le j \\le k}(t_j + |a_j - i|),$$ 计算得到。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "其中，|aj−i|$$$|a_j - i|$$$ 表示差值 aj−i$$$a_j - i$$$ 的绝对值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "换句话说，格子 i$$$i$$$ 中的温度等于所有空调的温度加上其到格子 i$$$i$$$ 的距离后所得结果中的最小值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "来看一个例子。设 n=6,k=2$$$n=6, k=2$$$，第一台空调位于格子 a1=2$$$a_1=2$$$，温度设为 t1=14$$$t_1=14$$$；第二台空调位于格子 a2=5$$$a_2=5$$$，温度设为 t2=16$$$t_2=16$$$。在这种情况下，各个格子中的温度为：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第1个单元格的温度$$$1$$$为：min(14+|2−1|,16+|5−1|)=min(14+1,16+4)=min(15,20)=15$$$\\min(14 + |2 - 1|, 16 + |5 - 1|)=\\min(14 + 1, 16 + 4)=\\min(15, 20)=15$$$;",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第2个单元格的温度$$$2$$$为：min(14+|2−2|,16+|5−2|)=min(14+0,16+3)=min(14,19)=14$$$\\min(14 + |2 - 2|, 16 + |5 - 2|)=\\min(14 + 0, 16 + 3)=\\min(14, 19)=14$$$;",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第3个单元格的温度$$$3$$$为：min(14+|2−3|,16+|5−3|)=min(14+1,16+2)=min(15,18)=15$$$\\min(14 + |2 - 3|, 16 + |5 - 3|)=\\min(14 + 1, 16 + 2)=\\min(15, 18)=15$$$;",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第4个单元格的温度$$$4$$$为：min(14+|2−4|,16+|5−4|)=min(14+2,16+1)=min(16,17)=16$$$\\min(14 + |2 - 4|, 16 + |5 - 4|)=\\min(14 + 2, 16 + 1)=\\min(16, 17)=16$$$;",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第5个单元格的温度$$$5$$$为：min(14+|2−5|,16+|5−5|)=min(14+3,16+0)=min(17,16)=16$$$\\min(14 + |2 - 5|, 16 + |5 - 5|)=\\min(14 + 3, 16 + 0)=\\min(17, 16)=16$$$;",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第6个单元格的温度$$$6$$$为：min(14+|2−6|,16+|5−6|)=min(14+4,16+1)=min(18,17)=17$$$\\min(14 + |2 - 6|, 16 + |5 - 6|)=\\min(14 + 4, 16 + 1)=\\min(18, 17)=17$$$.",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "求出从 1$$$1$$$ 到 n$$$n$$$ 的每个格子中的温度。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 q$$$q$$$(1≤q≤104$$$1 \\le q \\le 10^4$$$)——输入中的测试用例数。接下来是各个测试用例。每个测试用例之前都有一个空行。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例包含三行。第一行包含两个整数 n$$$n$$$(1≤n≤3⋅105$$$1 \\le n \\le 3 \\cdot 10^5$$$)和 k$$$k$$$(1≤k≤n$$$1 \\le k \\le n$$$)——这段土地的长度以及空调的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行包含 k$$$k$$$ 个整数 a1,a2,…,ak$$$a_1, a_2, \\ldots, a_k$$$(1≤ai≤n$$$1 \\le a_i \\le n$$$)——空调在这段土地上的位置。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三行包含 k$$$k$$$ 个整数 t1,t2,…,tk$$$t_1, t_2, \\ldots, t_k$$$(1≤ti≤109$$$1 \\le t_i \\le 10^9$$$)——空调的温度。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 3⋅105$$$3 \\cdot 10^5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "每个测试用例输出 n$$$n$$$ 个以空格分隔的整数，表示各单元格中的空气温度。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "E. 空调",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

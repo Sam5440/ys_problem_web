@@ -46,90 +46,90 @@
     "legend": [
       {
         "ai": "给定一棵有 n$$$n$$$ 个顶点的无向树，顶点编号从 0$$$0$$$ 到 n−1$$$n-1$$$。这棵树有 n−1$$$n-1$$$ 条边，且连通且无环。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你的任务是恰好选择 k$$$k$$$ 个顶点(2≤k≤n$$$2 \\leq k \\leq n$$$)，使得所有被选顶点对之间的路径的 MEX$$$\\operatorname{MEX}$$$ 值的最小值最大化。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于任意两个顶点 u$$$u$$$ 和 v$$$v$$$，将它们之间唯一的简单路径上出现的顶点标签集合定义为 Puv$$$P_{uv}$$$。函数 MEX(Puv)$$$\\operatorname{MEX}(P_{uv})$$$ 定义为未出现在 Puv$$$P_{uv}$$$ 中的最小非负整数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "形式化地，对于一个选定的顶点集合 S$$$S$$$，满足 |S|=k$$$|S| = k$$$，定义：f(S)=minu,v∈S,u≠vMEX(Puv).$$ f(S) = \\min_{u, v \\in S, u \\neq v} \\operatorname{MEX}(P_{uv}). $$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你的目标是在所有合法的 S$$$S$$$ 选择中最大化 f(S)$$$f(S)$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于从 2$$$2$$$ 到 n$$$n$$$ 的每个整数 k$$$k$$$，计算 f(S)$$$f(S)$$$ 的可能最大值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 t$$$t$$$ (1≤t≤104)$$$(1 \\leq t \\leq 10^4)$$$，表示测试用例的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$ (3≤n≤105)$$$(3 \\leq n \\leq 10^5)$$$，表示树中的节点数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 n−1$$$n-1$$$ 行每行包含两个整数 u$$$u$$$ 和 v$$$v$$$ (0≤u,v<n)$$$(0 \\leq u, v  \\lt  n)$$$，表示节点 u$$$u$$$ 和 v$$$v$$$ 之间的一条无向边。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 106$$$10^6$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个测试用例，输出 n−1$$$n-1$$$ 个整数。第 i$$$i$$$ 个整数表示选择 k=i+1$$$k = i+1$$$ 个节点时，最小 MEX$$$\\operatorname{MEX}$$$ 的最大可能值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "给定的树有 n=5$$$n = 5$$$ 个节点，其结构如下：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/21751268f878df4f23811b4a0b3405c926621da1.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "节点 0$$$0$$$ 与节点 1$$$1$$$ 和 2$$$2$$$ 相连。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "节点 1$$$1$$$ 与节点 3$$$3$$$ 和 4$$$4$$$ 相连。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于 k$$$k$$$ 的不同取值：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "当 k=2$$$k = 2$$$ 时，选择节点 {2,3}$$$\\{2, 3\\}$$$ 可使 f(S)$$$f(S)$$$ 最大，从而得到 MEX(P2,3)=4$$$\\operatorname{MEX}(\\mathcal{P}_{2,3}) = 4$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "当 k=3$$$k = 3$$$ 时，选择节点 {0,1,2}$$$\\{0, 1, 2\\}$$$ 可得到最大值 f(S)=1$$$f(S) = 1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "当 k=4$$$k = 4$$$ 和 k=5$$$k = 5$$$ 时，f(S)$$$f(S)$$$ 的最大值为 0$$$0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "N. 最大化最小 MEX",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

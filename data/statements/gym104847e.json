@@ -40,56 +40,56 @@
     "legend": [
       {
         "ai": "Raiffeisenbank 的重要业务任务之一，是改进在银行、客户、取件点和其他地点之间运送卡片、贵重物品、文件等的流程。你参与了一个试点项目，该项目计划通过使用空中无人机和最优路由算法，彻底改变配送行业。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "现在，你正在由 n$$$n$$$ 个降落点组成的现场训练场进行最初的测试。降落点 1$$$1$$$ 处有一架无人机，它需要飞往降落点 n$$$n$$$。无人机的遥控器可以运行 m$$$m$$$ 个路由程序，第 i$$$i$$$ 个程序能够将无人机从降落点 ui$$$u_i$$$ 移动到降落点 vi$$$v_i$$$(如果无人机不在降落点 ui$$$u_i$$$，该程序将什么也不做)，并且该程序使用你的无人机控制库的 ti$$$t_i$$$ 版本编写。由于这是项目的最初测试之一，你无法确定不同软件版本之间的兼容性，因此，除了第一次运行的路由程序外，你运行的每个路由程序所使用的无人机控制库版本都必须严格大于前一个程序所使用的版本。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "查看路由程序的代码后，你发现可以对它们进行一些小的修改。具体来说，你可以任选一个程序 i$$$i$$$，交换其起点和目的地。因此，如果第 i$$$i$$$ 个程序将无人机从地点 ui$$$u_i$$$ 移动到地点 vi$$$v_i$$$，修改后它将从地点 vi$$$v_i$$$ 移动到地点 ui$$$u_i$$$。库版本 ti$$$t_i$$$ 保持不变。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "现在你想知道，最少需要修改多少个程序，才能存在一个程序序列 p1,p2,…,pk$$$p_1, p_2, \\ldots, p_k$$$，按照该顺序运行这些程序可以将无人机从地点 1$$$1$$$ 移动到地点 n$$$n$$$，并且 tp1<tp2<tp3<…<tpk$$$t_{p_1}  \\lt  t_{p_2}  \\lt  t_{p_3}  \\lt  \\ldots  \\lt  t_{p_k}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤1000$$$1 \\leq t \\leq 1000$$$)，表示测试用例的数量。接下来是 t$$$t$$$ 个测试用例的描述。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的描述以两个整数 n$$$n$$$ 和 m$$$m$$$ 开始(2≤n≤500000$$$2 \\leq n \\leq 500\\,000$$$，1≤m≤500000$$$1 \\leq m \\leq 500\\,000$$$)，分别表示训练场中的降落地点数量和路由程序数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来有 m$$$m$$$ 行，其中第 i$$$i$$$ 行描述第 i$$$i$$$ 个程序，包含三个整数 ui$$$u_i$$$、vi$$$v_i$$$ 和 ti$$$t_i$$$(1≤ui,vi≤n$$$1 \\leq u_i, v_i \\leq n$$$，1≤ti≤109$$$1 \\leq t_i \\leq 10^9$$$)，表示该程序将无人机从地点 ui$$$u_i$$$ 移动到地点 vi$$$v_i$$$，并使用无人机控制库的第 ti$$$t_i$$$ 个版本。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "多个程序可能使用同一个软件版本。可能存在连接同一对地点的多个程序（每个方向上都可能有多个）。也可能存在将无人机从某个地点移动到该地点自身的程序。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 500000$$$500\\,000$$$。保证所有测试用例中 m$$$m$$$ 的总和不超过 500000$$$500\\,000$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "如果不存在一种修改程序并将无人机从位置 1$$$1$$$ 移动到位置 n$$$n$$$ 的方案，使得每次运行的下一个程序都必须使用版本更高的无人机控制库，则在输出的唯一一行中输出 -1。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "否则，输出为达到目标所需修改的程序数量的最小值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "E. Raiffeisenbank 物流",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

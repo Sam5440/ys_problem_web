@@ -44,88 +44,88 @@
     "output": [
       {
         "ai": "进行查询时，你需要输出 \"? x1 y1 x2 y2\"（不含引号）（1 ≤ x1 ≤ x2 ≤ n，1 ≤ y1 ≤ y2 ≤ n），其中（x1, y1）表示查询矩形左下角单元格的位置，（x2, y2）表示查询矩形右上角单元格的位置。你最多可以进行 200 次查询。每次查询后，你都应该执行 \"flush\" 操作并读取答案。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果你认为已经确定了两个矩形的位置（或查询次数已用尽），则应输出 \"! x11 y11 x12 y12 x21 y21 x22 y22\"（不含引号），其中前四个整数描述第一个矩形的左下角和右上角单元格，后四个整数描述第二个矩形对应的单元格。你可以按任意顺序输出这两个矩形。输出答案后，输出行尾并执行 \"flush\"。输出答案后，你的程序应立即终止。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "要执行 flush，你可以使用（在输出一个整数和行尾之后）：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "C++ 中的 fflush(stdout)；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Java 中的 System.out.flush()；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Python 中的 stdout.flush()；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Pascal 中的 flush(output)；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "其他语言请参阅相关文档。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果你进行超过 200 次查询，或者输出了错误的坐标，将会得到 Wrong Answer 判定。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果你没有输出任何内容（但你应该输出），或者忘记刷新输出缓冲区（更多信息见下文），你将得到 Idleness Limit Exceeded 判定。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "破解。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第一行应包含一个整数 n（2 ≤ n ≤ 2¹⁶）。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行应包含四个整数 x1、y1、x2、y2（1 ≤ x1 ≤ x2 ≤ n，1 ≤ y1 ≤ y2 ≤ n），表示第一个矩形。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三行以类似的方式包含第二个矩形的描述。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "legend": [
       {
         "ai": "Filya 刚刚学会了一种新的几何图形——矩形。现在给定一个由 n × n 个单位方格组成的网格。行从下到上编号为 1 到 n，列从左到右编号为 1 到 n。位于第 r 行和第 c 列交点处的方格记为 (r, c)。Filya 涂出了两个矩形，使得它们的边均与坐标轴平行，并且每个方格要么完全位于矩形内部，要么完全位于矩形外部。此外，没有任何方格同时位于两个矩形中。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "后来，刺猬 Filya 对他的矩形所在的位置产生了兴趣，但他找不到涂有这些矩形的纸张了。纸张被 Sonya 拿走了，现在她想和 Filya 玩一个小游戏。他告诉她一个查询矩形，她需要回答完全位于该查询矩形内的初始矩形数量。查询矩形需要满足与初始矩形相同的条件。如果一个矩形的每个方格都位于查询矩形内，则称该矩形完全位于查询矩形内。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Filya 非常了解 Sonya，因此确信如果他提问超过 200 次，她就会停止回答。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入的第一行包含一个整数 n（2 ≤ n ≤ 2¹⁶），表示场地的大小。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于每次查询，都会返回一个介于 0 和 2 之间的整数，表示完全位于查询矩形内的初始矩形数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "B. 矩形查询",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

@@ -55,94 +55,94 @@
     "legend": [
       {
         "ai": "给定一个包含 R$$$R$$$ 行的网格(行从北到南编号为 1$$$1$$$ 至 R$$$R$$$)和包含 C$$$C$$$ 列的网格(列从西到东编号为 1$$$1$$$ 至 C$$$C$$$)。网格中的每个单元格都是大小相同的正方形。位于第 r$$$r$$$ 行、第 c$$$c$$$ 列的单元格记作 (r,c)$$$(r, c)$$$。每个单元格可以为空，也可以在其某条对角线上放置一面镜子。每面镜子由一条线段表示。如果镜子位于从单元格西南角到东北角的对角线上，则称其为 1$$$1$$$ 型镜子；位于另一条对角线上的则称其为 2$$$2$$$ 型镜子。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "这些镜子遵循反射定律，即反射角等于入射角。形式化地，对于类型 1$$$1$$$ 镜子，如果一束光从该单元格的北、南、西或东方向射来，那么它将分别被反射到该单元格的西、东、北或南方向。类似地，对于类型 2$$$2$$$ 镜子，如果一束光从该单元格的北、南、西或东方向射来，那么它将分别被反射到该单元格的东、西、南或北方向。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/51ae63e20d94f6a5c323e9885ba0c734bb1b025e.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你想从网格外放置一台激光器，使所有镜子都被激光束照射到。放置激光器有 2⋅(R+C)$$$2 \\cdot (R+C)$$$ 个可能的位置：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在网格北侧第 c$$$c$$$ 列的位置，向南发射激光束，其中 1≤c≤C$$$1 \\leq c \\leq C$$$；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在网格南侧第 c$$$c$$$ 列的位置，向北发射激光束，其中 1≤c≤C$$$1 \\leq c \\leq C$$$；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "从网格东侧的第 r$$$r$$$ 行(1≤r≤R$$$1 \\leq r \\leq R$$$)向西发射一束激光；以及",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "从网格西侧第 r$$$r$$$ 行向东发射一束激光，其中 1≤r≤R$$$1 \\leq r \\leq R$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/d8b8bddfdf81f8b1cf8a0fbdd4d5fd5c329330b3.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "确定激光的所有可能位置，使得所有镜子都被激光束击中。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含两个整数 R$$$R$$$ 和 C$$$C$$$(1≤R,C≤200$$$1 \\leq R, C \\leq 200$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 R$$$R$$$ 行中的每一行都包含一个长度为 C$$$C$$$ 的字符串 Sr$$$S_r$$$。字符串 Sr$$$S_r$$$ 的第 c$$$c$$$ 个字符表示单元格 (r,c)$$$(r, c)$$$。每个字符可以是以下之一：如果单元格为空，则为 .；如果单元格中有类型为 1$$$1$$$ 的镜子，则为 /；如果单元格中有类型为 2$$$2$$$ 的镜子，则为 \\。网格中至少有一面镜子。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出一个整数，表示使所有镜子都被激光束击中的激光可能位置数量。将这个数量记为 k$$$k$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果 k>0$$$k  \\gt  0$$$，则输出 k$$$k$$$ 个以空格分隔的字符串，表示激光的位置。每个字符串由一个字符和一个紧随其后的整数构成，中间不含空格。该字符表示网格的一侧：如果将激光放在网格的北、南、东或西侧，则分别可以是 N、S、E 或 W。整数表示行号/列号。你可以按任意顺序输出这些字符串。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "样例输入/输出 #1 的解释",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "下面的图示展示了该样例的一种解法。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/d06ff905ed6f16d8a7027d495cff05aa497a50f4.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "样例输入/输出 #2 的解释",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "下面的图示展示了该样例的一种解法。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/33e00f54fd8c8a069b2c630a5a728122cfc5f527.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "M. 镜子迷宫",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

@@ -43,78 +43,78 @@
     "legend": [
       {
         "ai": "给定一个 n×n$$$n \\times n$$$ 的棋盘，你和计算机轮流在棋盘上分别放置白色车和黑色车。在放置车的过程中，你必须保证任意两只车都不会互相攻击。无论颜色如何，只要两只车位于同一行或同一列，它们就会互相攻击。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "合法操作是将一只车放置在位置 (r$$$r$$$, c$$$c$$$)，使其不会攻击其他任何车。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你先手，当你在自己的回合进行一次合法操作，在位置 (r$$$r$$$, c$$$c$$$) 放置一只白色车后，计算机会进行镜像操作，并在它的回合将一只黑色车放置在位置 (c$$$c$$$, r$$$r$$$)。如果 r=c$$$r = c$$$，那么计算机无法镜像你的操作，并跳过自己的回合。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你已经和计算机进行了 k$$$k$$$ 次操作(计算机也会尝试镜像这些操作)，并且必须继续进行游戏，直到不再存在合法操作。继续进行 k$$$k$$$ 次操作后，最终可能得到多少种不同的配置？保证这 k$$$k$$$ 次操作以及计算机执行的相应操作都是合法的。由于答案可能很大，请输出答案对 109+7$$$10^9+7$$$ 取模。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果存在某个坐标 (r$$$r$$$, c$$$c$$$)，在一种配置中有车而在另一种配置中没有，或者该坐标上的车颜色不同，则认为两种配置不同。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\leq t \\leq 10^4$$$)——测试用例的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$ 和 k$$$k$$$(1≤n≤3⋅105$$$1 \\leq n \\leq 3 \\cdot 10^5$$$，0≤k≤n$$$0 \\leq k \\leq n$$$)，分别表示棋盘的大小以及你已经走过的步数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 k$$$k$$$ 行中，每行包含两个整数 ri$$$r_i$$$ 和 ci$$$c_i$$$，表示你所进行的第 i$$$i$$$ 步。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证这 k$$$k$$$ 步以及由此确定的电脑走法都是合法的。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 3⋅105$$$3 \\cdot 10^5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个测试用例，输出一个整数，表示可能的最终配置总数对 109+7$$$10^9+7$$$ 取模的结果，单独占一行。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个测试用例中，我们有一个 4×4$$$4 \\times 4$$$ 的网格，并且你已经走了 1$$$1$$$ 步。在你和电脑各走一步后，白车位于 (1$$$1$$$, 2$$$2$$$)，黑车位于 (2$$$2$$$, 1$$$1$$$)。从这个状态出发有三种可能的配置——",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你将一个白色车放置在 (3$$$3$$$, 4$$$4$$$)，作为回应，计算机将一个黑色车放置在 (4$$$4$$$, 3$$$3$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你将一个白色车放置在 (4$$$4$$$, 3$$$3$$$)，作为回应，计算机将一个黑色车放置在 (3$$$3$$$, 4$$$4$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你将一个白色车放置在 (3$$$3$$$, 3$$$3$$$)，然后再放置在 (4$$$4$$$, 4$$$4$$$)，或者反过来。两种方式都会得到相同的配置。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/393ca3da2a463c5f4157d901fb4ff2f4cbc9a101.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "C. 车是如何移动的？",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

@@ -49,102 +49,102 @@
     "legend": [
       {
         "ai": "Berland 有 n$$$n$$$ 个城市和 m$$$m$$$ 条双向道路。第 i$$$i$$$ 条道路连接城市 xi$$$x_i$$$ 和 yi$$$y_i$$$，限速为 si$$$s_i$$$。该道路网络保证任何人都可以从任意城市到达其他任意城市。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "伯兰交通部正在规划一项道路改革。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "首先，维护全部 m$$$m$$$ 条道路的成本过高，因此将拆除 m−(n−1)$$$m - (n - 1)$$$ 条道路，并确保剩余的 (n−1)$$$(n - 1)$$$ 条道路仍然可以从任意城市到达其他任意城市。形式化地说，剩余的道路应构成一棵无向树。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "其次，剩余道路的限速可能会发生变化。这些变化将依次进行，每次变化要么将某条道路的限速提高 1$$$1$$$，要么将其降低 1$$$1$$$。由于改变限速需要付出大量工作，交通部希望最小化变化次数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "交通部的目标是得到一个包含 (n−1)$$$(n - 1)$$$ 条道路的道路网络，使所有道路中的最大限速恰好等于 k$$$k$$$。他们交给你的任务是计算为使道路网络满足要求，最少需要进行多少次限速变化。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "例如，假设伯兰的初始地图如下所示，且 k=7$$$k = 7$$$：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/733cb599cc7e9bd751cb590866cace5a207dec6f.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "那么，一种最优的操作方案是拆除道路 1$$$1$$$–4$$$4$$$ 和 3$$$3$$$–4$$$4$$$，然后将道路 2$$$2$$$–3$$$3$$$ 的限速降低 1$$$1$$$，这样得到的道路网络如下所示：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/aafdedd23e3077335800387927eedf7dbdf99a6c.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤1000$$$1 \\le t \\le 1000$$$)——测试用例的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第一行包含三个整数 n$$$n$$$、m$$$m$$$ 和 k$$$k$$$(2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$；n−1≤m≤min(2⋅105,n(n−1)2)$$$n - 1 \\le m \\le \\min(2 \\cdot 10^5, \\frac{n(n-1)}{2})$$$；1≤k≤109$$$1 \\le k \\le 10^9$$$)——分别表示城市数量、道路数量以及要求的最大限速。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来是 m$$$m$$$ 行。第 i$$$i$$$ 行包含三个整数 xi$$$x_i$$$、yi$$$y_i$$$ 和 si$$$s_i$$$(1≤xi,yi≤n$$$1 \\le x_i, y_i \\le n$$$；xi≠yi$$$x_i \\ne y_i$$$；1≤si≤109$$$1 \\le s_i \\le 10^9$$$)——分别表示第 i$$$i$$$ 条道路连接的城市以及该道路的限速。所有道路都是双向的。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例中的道路网络都是连通的（也就是说，可以沿着道路从任意城市到达其他任意城市），并且每对城市之间至多有一条道路。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "所有测试用例中 n$$$n$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。同样地，所有测试用例中 m$$$m$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个测试用例，输出一个整数，即 Ministry 需要执行的最少修改次数，使得剩余的 (n−1)$$$(n - 1)$$$ 条道路中的最高限速恰好为 k$$$k$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "样例测试的解释：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第一个测试用例已在题面中进行描述。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个测试用例中，道路网络最初如下所示：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/af2714f5b8e774568184a3fbec53af2f54476fef.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "交通部可以拆除道路 1$$$1$$$–2$$$2$$$、3$$$3$$$–2$$$2$$$ 和 3$$$3$$$–4$$$4$$$，然后将道路 1$$$1$$$–4$$$4$$$ 的限速提高三次。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第三个测试用例中，道路网络已经满足所有要求。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第四个测试用例中，只需拆除道路 1$$$1$$$–2$$$2$$$，得到的道路网络就能满足要求。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "J. 道路改革",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

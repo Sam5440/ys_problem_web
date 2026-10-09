@@ -58,45 +58,45 @@
     "legend": [
       {
         "ai": "对于任意一个网格，Robot 将其美丽度定义为网格中所有元素之和。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Robot 给你一个长度为 n$$$n$$$ 的数组 a$$$a$$$ 以及一个长度为 m$$$m$$$ 的数组 b$$$b$$$。你需要构造一个 n$$$n$$$×m$$$m$$$ 的网格 M$$$M$$$，使得对于所有 1≤i≤n$$$1 \\leq i \\leq n$$$ 且 1≤j≤m$$$1 \\leq j \\leq m$$$，Mi,j=ai⋅bj$$$M_{i,j}=a_i\\cdot b_j$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "随后，Robot 给你 q$$$q$$$ 个查询，每个查询由一个整数 x$$$x$$$ 构成。对于每个查询，判断是否可以恰好执行一次以下操作，使得 M$$$M$$$ 的美丽度为 x$$$x$$$：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "选择整数 r$$$r$$$ 和 c$$$c$$$，满足 1≤r≤n$$$1 \\leq r \\leq n$$$ 且 1≤c≤m$$$1 \\leq c \\leq m$$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于所有满足 i=r$$$i=r$$$、j=c$$$j=c$$$ 或二者同时成立的有序对 (i,j)$$$(i,j)$$$，将 Mi,j$$$M_{i,j}$$$ 设为 0$$$0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "注意，查询之间并不相互影响，这意味着在此过程中你实际上不会将任何元素设为 0$$$0$$$——你只需要输出是否能够找到 r$$$r$$$ 和 c$$$c$$$，使得执行上述操作后，网格的美丽度为 x$$$x$$$。此外，即使原网格的美丽度已经是 x$$$x$$$，你也必须对每个查询执行该操作。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含三个整数 n$$$n$$$、m$$$m$$$ 和 q$$$q$$$(1≤n,m≤2⋅105，1≤q≤5⋅104$$$1 \\leq n,m \\leq 2\\cdot 10^5, 1 \\leq q \\leq 5\\cdot 10^4$$$)——分别表示 a$$$a$$$ 的长度、b$$$b$$$ 的长度以及查询次数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$(0≤|ai|≤n$$$0 \\leq |a_i| \\leq n$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三行包含 m$$$m$$$ 个整数 b1,b2,…,bm$$$b_1, b_2, \\ldots, b_m$$$(0≤|bi|≤m$$$0 \\leq |b_i| \\leq m$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 q$$$q$$$ 行中，每行包含一个整数 x$$$x$$$(1≤|x|≤2⋅105$$$1 \\leq |x| \\leq 2\\cdot 10^5$$$)，表示你希望通过将某一行和某一列中的所有元素设为 0$$$0$$$ 后得到的网格美丽度。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
@@ -128,52 +128,52 @@
       },
       {
         "ai": "0 0 0 0 0",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "0 0 0 0 0",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "执行 r=4$$$r=4$$$ 且 c=2$$$c=2$$$ 的操作后，我们得到如下网格：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "0 0 5 0 -3",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "0 0 -10 0 6",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "0 0 15 0 -9",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "0 0 0 0 0",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "0 0 0 0 0",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "其美丽度为 4$$$4$$$。因此，我们输出 YES。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二次查询中，选择 r=3$$$r=3$$$ 和 c=5$$$c=5$$$ 会得到一个美丽度为 −3$$$-3$$$ 的网格。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第三次查询中，选择 r=3$$$r=3$$$ 和 c=3$$$c=3$$$ 会得到一个美丽度为 5$$$5$$$ 的网格。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "F. 简单恶魔问题",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

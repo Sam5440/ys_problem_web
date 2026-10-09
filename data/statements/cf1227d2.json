@@ -53,102 +53,102 @@
     "legend": [
       {
         "ai": "这是该问题的困难版本。在此版本中，1≤n,m≤2⋅105$$$1 \\le n, m \\le 2\\cdot10^5$$$。如果你锁定了该题，就可以对其进行 hack。但只有在同时锁定了前一个问题和该问题的情况下，才能 hack 前一个问题。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "给定一个长度为 n$$$n$$$ 的整数序列 a=[a1,a2,…,an]$$$a=[a_1,a_2,\\dots,a_n]$$$。从序列 a$$$a$$$ 中移除零个或多个元素即可得到它的子序列(这些元素不一定是连续的)。例如，对于序列 a=[11,20,11,33,11,20,11]$$$a=[11,20,11,33,11,20,11]$$$：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "[11,20,11,33,11,20,11]$$$[11,20,11,33,11,20,11]$$$、[11,20,11,33,11,20]$$$[11,20,11,33,11,20]$$$、[11,11,11,11]$$$[11,11,11,11]$$$、[20]$$$[20]$$$、[33,20]$$$[33,20]$$$ 都是子序列(这里只列出了很长的列表中的一部分)；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "[40]$$$[40]$$$、[33,33]$$$[33,33]$$$、[33,20,20]$$$[33,20,20]$$$、[20,20,11,11]$$$[20,20,11,11]$$$ 都不是子序列。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "现在给定一个额外的非负整数 k$$$k$$$(1≤k≤n$$$1 \\le k \\le n$$$)，如果一个子序列满足以下条件，则称其为最优子序列：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "其长度为 k$$$k$$$，且在所有长度为 k$$$k$$$ 的子序列中，其元素之和最大；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在所有满足上一条件的长度为 k$$$k$$$ 的子序列中，它的字典序最小。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "回顾一下，如果存在它们从左侧起第一个不同的元素，并且该元素在序列 b$$$b$$$ 中小于在序列 c$$$c$$$ 中的对应元素，那么序列 b=[b1,b2,…,bk]$$$b=[b_1, b_2, \\dots, b_k]$$$ 按字典序小于序列 c=[c1,c2,…,ck]$$$c=[c_1, c_2, \\dots, c_k]$$$。形式化地说：存在 t$$$t$$$(1≤t≤k$$$1 \\le t \\le k$$$)，使得 b1=c1$$$b_1=c_1$$$，b2=c2$$$b_2=c_2$$$，……，bt−1=ct−1$$$b_{t-1}=c_{t-1}$$$，并且同时满足 bt<ct$$$b_t \\lt c_t$$$。例如：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "[10,20,20]$$$[10, 20, 20]$$$ 按字典序小于 [10,21,1]$$$[10, 21, 1]$$$，",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "[7,99,99]$$$[7, 99, 99]$$$ 按字典序小于 [10,21,1]$$$[10, 21, 1]$$$，",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "[10,21,0]$$$[10, 21, 0]$$$ 按字典序小于 [10,21,1]$$$[10, 21, 1]$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "给定一个序列 a=[a1,a2,…,an]$$$a=[a_1,a_2,\\dots,a_n]$$$ 和 m$$$m$$$ 个查询，每个查询由两个数字 kj$$$k_j$$$ 和 posj$$$pos_j$$$ 组成(1≤k≤n$$$1 \\le k \\le n$$$，1≤posj≤kj$$$1 \\le pos_j \\le k_j$$$)。对于每个查询，请输出给定序列 a$$$a$$$ 在 k=kj$$$k=k_j$$$ 时的最优子序列中下标为 posj$$$pos_j$$$ 的元素值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "例如，当 n=4$$$n=4$$$，a=[10,20,30,20]$$$a=[10,20,30,20]$$$，kj=2$$$k_j=2$$$ 时，最优子序列为 [20,30]$$$[20,30]$$$——在所有长度为 2$$$2$$$ 且元素总和最大的子序列中，它的字典序最小。因此，对于查询 kj=2$$$k_j=2$$$，posj=1$$$pos_j=1$$$，答案是数字 20$$$20$$$；对于查询 kj=2$$$k_j=2$$$，posj=2$$$pos_j=2$$$，答案是数字 30$$$30$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤2⋅105$$$1 \\le n \\le 2\\cdot10^5$$$)，表示序列 a$$$a$$$ 的长度。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行包含序列 a$$$a$$$ 的元素：整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三行包含一个整数 m$$$m$$$(1≤m≤2⋅105$$$1 \\le m \\le 2\\cdot10^5$$$)，表示查询的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 m$$$m$$$ 行包含整数对 kj$$$k_j$$$ 和 posj$$$pos_j$$$(1≤k≤n$$$1 \\le k \\le n$$$，1≤posj≤kj$$$1 \\le pos_j \\le k_j$$$)，表示查询。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出 m$$$m$$$ 个整数 r1,r2,…,rm$$$r_1, r_2, \\dots, r_m$$$(1≤rj≤109$$$1 \\le r_j \\le 10^9$$$)，每行一个，表示按照它们在输入中出现的顺序排列的查询答案。rj$$$r_j$$$ 的值应等于 k=kj$$$k=k_j$$$ 时最优子序列中位置 posj$$$pos_j$$$ 所包含的值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个样例中，对于 a=[10,20,10]$$$a=[10,20,10]$$$，最优子序列为：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "当 k=1$$$k=1$$$ 时：[20]$$$[20]$$$，",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "当 k=2$$$k=2$$$ 时：[10,20]$$$[10,20]$$$，",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "当 k=3$$$k=3$$$ 时：[10,20,10]$$$[10,20,10]$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "D2. 最优子序列（困难版本）",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

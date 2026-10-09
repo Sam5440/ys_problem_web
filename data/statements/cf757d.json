@@ -50,90 +50,90 @@
     "note": [
       {
         "ai": "在第一个样例中，有效切点集合如下：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "大小为 2：|1|011、1|01|1、10|1|1、101|1|。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "大小为 3：|1|01|1、|10|1|1、10|1|1|、1|01|1|。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "大小为 4：|10|1|1|、|1|01|1|。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "因此，f(2) = 4，f(3) = 4 且 f(4) = 2。因此，s = 10。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个样例中，有效切分的集合为：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "大小为 2：|1|0。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "因此，f(2) = 1 且 f(3) = 0。所以，s 的值为 1。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "legend": [
       {
         "ai": "道馆馆主们对在 Felicity 营地发生的进化过程十分着迷。因此，他们想知道宝可梦进化背后的秘密。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "营地的组织者给了道馆馆主们一个 PokeBlock，它是由 n 个成分组成的序列。每个成分的类型可以是 0 或 1。组织者告诉道馆馆主们，要使一只类型为 k（k ≥ 2）的宝可梦进化，他们需要在 PokeBlock 上进行 k 次有效切割，从而得到更小的方块。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "假设给定的 PokeBlock 序列为 b₀b₁b₂...bₙ - ₁。你可以选择在 n + 1 个位置进行切割，即 b₀ 之前、b₀ 和 b₁ 之间、b₁ 和 b₂ 之间、……、bₙ - ₂ 和 bₙ - ₁ 之间，以及 bₙ - ₁ 之后。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "n + 1 个可切割位置如下（其中 | 表示一个可能的切割位置）：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "考虑一组 k 次切割。现在，每一对相邻切割之间都会包含一个由成分类型组成的二进制字符串。第一次切割之前和最后一次切割之后的成分会被浪费，也就是说它们不予考虑。因此，恰好会有 k - 1 个这样的二进制子串。每个子串都可以看作一个二进制数。令 m 为得到的这些数中的最大值。如果所有得到的数都是正数，并且得到的数的集合包含从 1 到 m 的所有整数，那么这组切割就称为一组有效切割。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "例如，假设给定的 PokeBlock 序列为 101101001110，并按如下方式进行了 5 次切割：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "因此得到的 4 个二进制子串为：11、010、01 和 1，它们分别对应数字 3、2、1 和 1。这里 m = 3，因为它是得到的数字中的最大值。并且所有得到的数字都是正数，我们得到了从 1 到 m 的所有整数。因此，这组切点是一个有效的 5 个切点集合。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "类型为 k 的宝可梦只有在使用包含 k 个切点的有效集合切割 PokeBlock 时才会进化。相同大小的有效集合可能有很多个。如果一个集合中存在某个切点，而另一个集合中不存在，则这两个包含 k 个切点的有效集合被视为不同。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "令 f(k) 表示包含 k 个切点的有效集合数量。求 ![](https://espresso.codeforces.com/1f553c10ee29622384beda9934a033e929407c9c.png) 的值。由于 s 的值可能非常大，请输出 s 对 109 + 7 取模的结果。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入包含两行。第一行包含一个整数 n（1 ≤ n ≤ 75）——PokeBlock 的长度。下一行包含 PokeBlock，它是一个长度为 n 的二进制字符串。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出一个整数，表示问题的答案，即 s 对 109 + 7 取模的结果。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "D. Felicity 的重大秘密揭晓",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

@@ -49,70 +49,70 @@
     "legend": [
       {
         "ai": "鬼魂们和谐而和平地生活着，它们在空间中移动，唯一的目的就是吓唬任何挡在它们前面的人。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "宇宙中有 n$$$n$$$ 个鬼魂，它们在 OXY$$$OXY$$$ 平面上移动，每个鬼魂都有一个不会随时间改变的速度：→V=Vx→i+Vy→j$$$\\overrightarrow{V} = V_{x}\\overrightarrow{i} + V_{y}\\overrightarrow{j}$$$，其中 Vx$$$V_{x}$$$ 是它在 x$$$x$$$ 轴方向上的速度，Vy$$$V_{y}$$$ 是它在 y$$$y$$$ 轴方向上的速度。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "鬼魂 i$$$i$$$ 拥有经验值 EXi$$$EX_i$$$，表示过去曾有多少个鬼魂试图吓唬它。如果两个鬼魂在某一时刻处于同一个笛卡尔坐标点，那么它们就会互相吓唬。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "由于鬼魂以恒定速度移动，经过一段时间后，将不会再发生吓唬事件(真是令人宽慰！)，鬼魂群体的经验值 GX=∑ni=1EXi$$$GX = \\sum_{i=1}^{n} EX_i$$$ 将永远不会增加。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Tameem 是一颗红巨星，他在某个时刻 T$$$T$$$ 拍下了直角坐标系的照片，并且神奇地发现所有鬼魂都排列在形如 y=a⋅x+b$$$y = a \\cdot x + b$$$ 的直线上。你需要计算在无限遥远的未来，GX$$$GX$$$ 种类鬼魂的经验指数，这就是今天的任务。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "注意，在 Tameem 拍照时，GX$$$GX$$$ 可能已经大于 0$$$0$$$，因为在 [−∞,T]$$$[-\\infty, T]$$$ 之间的任意时刻，都可能有许多鬼魂互相吓唬过。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含三个整数 n$$$n$$$、a$$$a$$$ 和 b$$$b$$$(1≤n≤200000$$$1 \\leq n \\leq 200000$$$，1≤|a|≤109$$$1 \\leq |a| \\leq 10^9$$$，0≤|b|≤109$$$0 \\le |b| \\le 10^9$$$)——宇宙中鬼魂的数量以及直线的参数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 n$$$n$$$ 行中的每一行包含三个整数 xi$$$x_i$$$、Vxi$$$V_{xi}$$$、Vyi$$$V_{yi}$$$(−109≤xi≤109$$$-10^9 \\leq x_i \\leq 10^9$$$，−109≤Vxi,Vyi≤109$$$-10^9 \\leq V_{x i}, V_{y i} \\leq 10^9$$$)，其中 xi$$$x_i$$$ 是第 i$$$i$$$ 个鬼魂当前的 x$$$x$$$ 坐标(且 yi=a⋅xi+b$$$y_i = a \\cdot x_i + b$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证没有两个鬼魂拥有相同的初始位置，换句话说，对于所有 (i,j)$$$(i,j)$$$，当 i≠j$$$i \\ne j$$$ 时都有 xi≠xj$$$x_i \\neq x_j$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出一行：在无限遥远的未来，GX$$$GX$$$ 种类鬼魂的经验指数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "共有四次碰撞：(1,2,T−0.5)$$$(1,2,T-0.5)$$$、(1,3,T−1)$$$(1,3,T-1)$$$、(2,4,T+1)$$$(2,4,T+1)$$$、(3,4,T+0.5)$$$(3,4,T+0.5)$$$，其中 (u,v,t)$$$(u,v,t)$$$ 表示幽灵 u$$$u$$$ 和 v$$$v$$$ 在时刻 t$$$t$$$ 发生了一次碰撞。每次碰撞中，每个幽灵都会获得 1 点经验值，这意味着 GX=4⋅2=8$$$GX = 4 \\cdot 2 = 8$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个测试用例中，所有点将在 t=T+1$$$t = T + 1$$$ 时发生碰撞。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/632930388686f4065fba42f9dba9a1c12c028844.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "红色箭头表示第 1 个幽灵的速度，橙色表示第 2 个幽灵的速度，蓝色表示第 3 个幽灵的速度。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "D. 鬼魂",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

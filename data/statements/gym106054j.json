@@ -54,90 +54,90 @@
     "legend": [
       {
         "ai": "Jaimito 是一家益智儿童游戏制造商。他最新的游戏包含一定数量的木制积木，这些积木可以放在棋盘上，组成 T$$$T$$$ 座积木塔。每座塔都位于棋盘上的一个特定位置，并由 1$$$1$$$ 到 T$$$T$$$ 之间的不同整数表示。位置可以为空，也就是说，某些塔中可能没有积木。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "一座塔中的积木彼此上下堆叠，因此，除了底部积木下方是棋盘、顶部积木上方没有任何东西以外，该塔中的每块积木下方恰好有一块积木，上方也恰好有一块积木。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每块积木都有一个正整数重量。作为游戏规则的一部分，必须始终遵守稳定性规则：不允许将一块积木放在另一块重量严格更小的积木上方。换句话说，每座塔中的积木从棋盘向上观察时，其重量应按非递增顺序排列。遵守稳定性规则的积木配置称为稳定配置。下图展示了一个有 T=3$$$T=3$$$ 座塔的游戏中的两种稳定配置。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/00080184c6c6829c90b095c4fd017087191c8b8c.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "游戏中的一次允许操作是从一座非空塔中取出顶部积木，并将其放到另一座塔（可以是空塔）的顶部，同时始终遵守稳定性规则。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Jaimito 需要你的帮助来判断：给定两个稳定配置，一个初始配置和一个最终配置，是否可以通过零次或多次允许的移动，从初始配置到达最终配置。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤2⋅105$$$1 \\leq T \\leq 2 \\cdot 10^5$$$)，表示塔的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 2T$$$2T$$$ 行中的每一行描述一座塔。前 T$$$T$$$ 行按顺序描述初始配置中的塔，从塔 1$$$1$$$ 到塔 T$$$T$$$；剩余的 T$$$T$$$ 行按相同顺序描述最终配置中的塔。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "描述每座塔的行包含一个整数 K≥0$$$K \\ge 0$$$，后跟 K$$$K$$$ 个整数 X1,X2,…,XK$$${X_1}, {X_2}, \\ldots, {X_K}$$$(1≤Xi≤109$$$1 \\leq X_i \\leq 10^9$$$)，表示该塔包含 K$$$K$$$ 个方块，且从底板向上数，塔中第 i$$$i$$$ 个方块的重量为 Xi$$$X_i$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证初始配置和最终配置均稳定，且二者包含的方块数均不超过 2⋅105$$$2 \\cdot 10^5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "如果可以通过零次或多次允许的移动从初始配置到达最终配置，则输出一个包含大写字母“S”的行；否则输出一个包含大写字母“N”的行。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个样例中，我们可以执行以下一系列允许的移动，将初始配置变为最终配置：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/31df4268d6399690b8ebc830897e52942a5468fb.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "移动步骤如下：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将重量为 4 的方块$$$4$$$从第二根柱子移动到第四根柱子。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将重量为 2 的方块$$$2$$$从第一根柱子移动到第二根柱子。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将重量为 1 的方块$$$1$$$从第三根柱子移动到第二根柱子。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将重量为 3$$$3$$$ 的方块从第一座塔移动到第三座塔。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "题面中有一张图片，展示了与第二个样例对应的初始配置和最终配置。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "J. Jaimito 的积木",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

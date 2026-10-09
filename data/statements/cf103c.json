@@ -45,54 +45,54 @@
     "legend": [
       {
         "ai": "在我们都知道的奥兰多发生的所有事件之后，Sasha 和 Roma 决定找出谁仍然是队里最倒霉的人。幸运的是，Masha 不知从哪里找到了一把左轮手枪，其旋转弹巢有 n 个装弹槽，恰好可以装下 k 发子弹；现在男孩们有机会一劳永逸地解决这个问题了。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Sasha 任意选择 n 个槽位中的 k 个，并在其中放入子弹。Roma 旋转弹筒，使弹筒的 n 种可能移位等概率。随后游戏开始，玩家轮流行动，Sasha 先手：他将枪对准自己的头部并扣动扳机。如果扳机前没有子弹，弹筒旋转一个位置，并将武器交给 Roma 进行相同的操作。游戏持续到有人中枪为止，幸存者获胜。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Sasha 不想输，因此他必须选择一种放置子弹的方式，使自己输掉的概率最小。在所有可能的方案中，他希望选择字典序最小的方案，其中空槽位在字典序上小于装有子弹的槽位。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "更形式化地说，包含 k 发子弹的 n 个槽位的弹筒可以表示为一个长度为 n 的字符串。其中恰有 k 个字符是“X”（装有子弹的槽位），其余字符是“.”（未装子弹的槽位）。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "下面描述射击过程。假设扳机位于字符串第一个字符（第一个槽位）的前方。如果射击没有杀死任何人且弹筒发生移位，那么字符串向左移动。因此，第一个字符变为最后一个字符，第二个字符变为第一个字符，依此类推。但扳机不会移动，它仍然位于移动后字符串的第一个字符前方。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在所有使输掉的概率最小的字符串中，Sasha 选择字典序最小的一个。随后，他按照这个字符串给枪装入子弹。你需要帮助 Sasha 完成装弹。具体来说，对于每个查询 x_i，需要回答位置 x_i 上是否有子弹。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含三个整数 n、k 和 p（1 ≤ n ≤ 10^18，0 ≤ k ≤ n，1 ≤ p ≤ 1000），分别表示弹筒中的槽位数、子弹数和查询数。接下来有 p 行，每行表示一个查询。每行包含一个整数 x_i（1 ≤ x_i ≤ n），表示要查询的槽位编号。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "请不要在 C++ 中使用 %lld 格式说明符来读写 64 位整数。建议使用 cin、cout 流或 %I64d 格式说明符。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每次查询，如果该位置应为空，则输出“.”；如果该位置应充电，则输出“X”。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "字典序比较由现代编程语言中的 < 运算符执行。如果存在某个 i（1 ≤ i ≤ n）使得 aᵢ < bᵢ，并且对于任意 j（1 ≤ j < i）都有 aⱼ = bⱼ，则字符串 a 的字典序小于字符串 b。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "C. 俄罗斯轮盘赌",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

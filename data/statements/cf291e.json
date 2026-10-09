@@ -45,70 +45,70 @@
     "legend": [
       {
         "ai": "有根树是一个无向连通且无环的图，其中有一个指定的顶点，称为树根。考虑一棵由 n 个顶点组成的有根树，其顶点编号为 1 到 n。在本题中，树根是编号为 1 的顶点。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将树中顶点 v 和 u 之间最短路径的边数记为 d(v, u)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在根为顶点 r 的有根树中，对于 v ≠ r，顶点 v 的父节点是顶点 p_v，满足 d(r, p_v) + 1 = d(r, v) 且 d(p_v, v) = 1。例如，在图中，顶点 v = 5 的父节点是顶点 p_5 = 2。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "一天，Polycarpus 遇到了一棵由 n 个顶点组成的有根树。这棵树并不完全普通：它的边上写有字符串。Polycarpus 将这棵树放置在平面上，使得从父节点走向子节点时，所有边都从上到下延伸（见图）。对于从顶点 p_v 到顶点 v 的任意一条边（1 < v ≤ n），他知道边上写着的字符串 s_v。所有字符串都沿着从上到下的方向写在边上。例如，在图中，s_7 = \"ba\"。字符串中的字符编号从 0 开始。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/2358a87b1302583cb41f1d8aa514a32b02f411ec.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Polycarpus 将树中的一个位置定义为某个字符串中的一个特定字符。位置表示为一对整数 (v, x)，表示该位置是字符串 s_v 中的第 x 个字符（1 < v ≤ n，0 ≤ x < |s_v|），其中 |s_v| 是字符串 s_v 的长度。例如，图中标出的字符对应的位置为 (2, 1) 和 (3, 1)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "考虑 Polycarpus 的树中的两个位置 (v, x) 和 (u, y)，并且从第一个位置到第二个位置的路径在每一步都向下。我们称这样的一对位置定义了字符串 z。字符串 z 由从 (v, x) 到 (u, y) 的路径上的所有字符组成，并按照路径经过的顺序排列。例如，在图中，标出的位置定义了字符串 \"bacaba\"。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Polycarpus 有一个字符串 t，他想知道有多少对位置能够定义字符串 t。注意，一对位置中从第一个位置到第二个位置的路径必须始终向下。请帮助他解决这个具有挑战性的树上字符串问题！",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含整数 n（2 ≤ n ≤ 10^5）——Polycarpus 的树的顶点数。接下来的 n - 1 行包含树的边。其中第 i 行包含数字 p_{i+1} 和字符串 s_{i+1}（1 ≤ p_{i+1} ≤ n；p_{i+1} ≠ (i + 1)）。字符串 s_{i+1} 非空，由小写英文字母组成。最后一行包含字符串 t。字符串 t 由小写英文字母组成，长度至少为 2。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证输入中至多包含 3·10^5 个英文字母。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出一个整数——所求的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "请不要在 C++ 中使用 %lld 格式说明符来读写 64 位整数。建议使用 cin、cout 流，或使用 %I64d 格式说明符。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个测试用例中，字符串“aba”由以下位置对确定：(2, 0) 和 (5, 0)；(5, 2) 和 (6, 1)；(5, 2) 和 (3, 1)；(4, 0) 和 (4, 2)；(4, 4) 和 (4, 6)；(3, 3) 和 (3, 5)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "注意，位置对 (7, 1) 和 (5, 0) 并不能定义该字符串，因为它们之间的路径并不总是向下。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "E. 树-字符串问题",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

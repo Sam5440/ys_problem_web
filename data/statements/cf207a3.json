@@ -45,70 +45,70 @@
     "legend": [
       {
         "ai": "ABBYY 的聪明海狸再次让我们大吃一惊！他研发了一种新的计算设备，并将其命名为“海狸的计算器 1.0”。它非常独特，计划用于各种科学问题。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "为了测试它，Smart Beaver 邀请了 n 位科学家，他们的编号从 1 到 n。第 i 位科学家为 ABBYY 的 Smart Beaver 开发的设备带来了 ki 道题目。第 i 位科学家的题目编号从 1 到 ki，并且必须按照给定顺序依次计算，因为每道题的计算都高度依赖于前一道题的计算结果。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每位科学家的每道题都由一个整数 ai,j 描述，其中 i（1 ≤ i ≤ n）表示科学家的编号，j（1 ≤ j ≤ ki）表示题目的编号，而 ai,j 表示计算设备解决该题所需的资源单位数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Smart Beaver 开发的计算设备相当特殊。它会按顺序逐个解决题目。解决某道题后、处理下一道题之前，计算设备会分配或释放资源。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于计算设备而言，代价最高的操作是释放资源，其速度远慢于分配资源。因此，最好让计算设备接下来处理的每道题所需的资源不少于前一道题。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "现在给出科学家们提供的题目信息。你需要将这些题目排列成某种顺序，使列表中相邻“坏”题对的数量尽可能少。如果列表中前一道题所需的资源多于后一道题，我们就称这两个连续的题目构成一个“坏题对”。请不要忘记，同一位科学家的题目必须按照固定顺序解决。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 n——科学家的数量。为了减小输入规模，接下来的 n 行中每行包含五个整数 ki、ai,1、xi、yi、mi（0 ≤ ai,1 < mi ≤ 10^9，1 ≤ xi、yi ≤ 10^9）——第 i 位科学家的题目数量、第一道题所需的资源数，以及用于生成后续 ai,j 的三个参数。对于所有满足 2 ≤ j ≤ ki 的 j，应根据公式 ai,j = (ai,j-1 * xi + yi) mod mi 计算 ai,j，其中 a mod b 表示 a 除以 b 的余数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "要获得第一组测试的全部分数，只需解决 n = 2、1 ≤ kᵢ ≤ 2000 的问题。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "要获得第二组测试的全部分数，只需解决 n = 2、1 ≤ kᵢ ≤ 200000 的问题。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "要获得第三组测试的全部分数，只需解决 1 ≤ n ≤ 5000、1 ≤ kᵢ ≤ 5000 的问题。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "在第一行输出一个整数——最优顺序中“坏”数对的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果问题总数不超过 200000，还需输出 ![](https://espresso.codeforces.com/a16730dcbb2402871e20647c8aba55beada5c1b6.png) 行——问题的最优顺序。在每一行中输出两个用一个空格分隔的整数，分别表示该问题所需的资源数量和提出该问题的科学家的编号。科学家的编号按照输入顺序从 1 到 n 编号。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个样例中，n = 2，k₁ = 2，a₁,₁ = 1，a₁,₂ = 2，k₂ = 2，a₂,₁ = 3，a₂,₂ = 4。共有两位科学家，每位科学家都有两道计算题。第一位科学家的题目需要 1 和 2 个资源单位，第二位科学家的题目需要 3 和 4 个资源单位。下面列出所有可能的计算题顺序（每道题仅由其所需的资源单位数表示）：(1, 2, 3, 4)、(1, 3, 2, 4)、(3, 1, 2, 4)、(1, 3, 4, 2)、(3, 4, 1, 2)、(3, 1, 4, 2)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "序列 (1, 3, 2, 4) 有一对“坏”对（3 和 2），(3, 1, 4, 2) 有两对“坏”对（3 和 1、4 和 2），而 (1, 2, 3, 4) 没有“坏”对。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "A3. 海狸的计算器 1.0",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

@@ -39,46 +39,46 @@
     "legend": [
       {
         "ai": "Valera 有一条向两个方向无限延伸、由格子组成的条带。格子用整数编号。编号为 0 的格子中有一个机器人。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "机器人拥有一些指令——也就是它必须执行的移动序列。每次移动时，机器人会根据指令向左移动一个单元格或向右移动一个单元格。在机器人开始移动之前，Valera 会在条带上的一些单元格中放置障碍物，但不包括编号为 0 的单元格。如果根据指令机器人应该进入一个有障碍物的单元格，那么它会跳过这次移动。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "此外，Valera 还指定了终点单元格，机器人执行完全部指令后必须位于该单元格中。终点单元格必须与起始单元格不同。如果机器人在移动过程中恰好访问终点单元格一次，并且是在最后一次移动时访问的，那么就认为它成功完成了这些指令。此外，最后一次移动不能被跳过。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "设 k 是 Valera 必须放置的最少障碍物数量，使机器人能够成功完成整个指令序列并最终到达某个终点单元格。你需要计算 Valera 选择这 k 个障碍物和终点单元格，使机器人能够成功完成这些指令的方案数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个不含空格的字符序列 s1s2... sn（1 ≤ n ≤ 106），仅由字母“L”和“R”组成。如果字符 si 等于“L”，那么机器人在第 i 次移动时必须尝试向左移动一个单元格。如果第 i 个字符等于“R”，那么机器人在第 i 次移动时必须尝试向右移动一个单元格。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出一个整数——所求的方案数。保证该数可以用 64 位有符号整数类型表示。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个样例中，Valera 不需要添加任何障碍物，且终点单元格必须是编号为 2 的单元格。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个样例中，Valera 必须在编号为 1 的格子中添加一个障碍物，并且终点格必须是编号为 -1 的格子。在这种情况下，机器人会跳过前两步，并在第三步时从起点直接前往终点。但如果 Valera 不添加任何障碍物，或将障碍物添加到其他格子中，那么机器人会多次经过终点格。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "E. 一维迷宫",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

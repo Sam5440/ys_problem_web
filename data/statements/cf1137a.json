@@ -49,86 +49,86 @@
     "legend": [
       {
         "ai": "Dora 非常喜欢冒险。在一次旅途中，她遇到了一座神奇的城市，这座城市由沿东向的 n$$$n$$$ 条街道和沿南向的 m$$$m$$$ 条街道组成。显然，这座城市有 nm$$$nm$$$ 个交叉口。在第 i$$$i$$$ 条东向街道与第 j$$$j$$$ 条南向街道的每个交叉口处，都有一座摩天大楼。Dora 立刻产生了好奇心，决定探索这座城市中建筑物的高度。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "当 Dora 经过第 i$$$i$$$ 条东向街道和第 j$$$j$$$ 条南向街道的交叉口时，她会观察这两条街道。得知这两条街道上所有摩天大楼的高度后，她想知道：应该如何重新分配这两条街道上摩天大楼的高度，使得最大高度尽可能小，并且同一条街道上任意两座摩天大楼的高度比较结果都不发生改变。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "形式化地说，对于 nm$$$nm$$$ 个交叉口中的每一个，Dora 都要独立解决一个问题。她可以看到 n+m−1$$$n + m - 1$$$ 座摩天大楼，并且知道其中每一座的真实高度。此外，任意两个高度都可以进行比较，比较结果为“大于”“小于”或“等于”。现在，Dora 想选择某个整数 x$$$x$$$，并将每座摩天大楼的高度设为 1$$$1$$$ 到 x$$$x$$$ 之间的某个值。在分配高度时，Dora 希望保持两条街道上摩天大楼的相对顺序不变。也就是说，当前东向街道上任意两座摩天大楼的高度比较结果不应改变，当前南向街道上任意两座摩天大楼的高度比较结果也不应改变。注意，南向街道上的摩天大楼不会与东向街道上的摩天大楼进行比较。不过，位于两条街道交叉口处的摩天大楼可以分别与南向和东向街道上的摩天大楼进行比较。对于每个交叉口，Dora 都希望独立计算可能的最小 x$$$x$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "例如，如果某个交叉口及与其对应的两条街道如下所示：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/cbafe08cba25205cf6961f155cc89a78811b66a0.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "那么，最优的做法是按如下方式重新设置摩天大楼的高度（注意，东向街道内部和南向街道内部的所有“小于”“等于”“大于”比较关系都得到了保留）。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/520cf0e2f93472ec60e853e5c9ec2ddda0c73c00.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "使用的最大数字是 5$$$5$$$，因此这个交叉口的答案将是 5$$$5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "帮助 Dora 计算每个交叉口的答案。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤1000$$$1 \\le n, m \\le 1000$$$)——分别表示向东延伸的街道数量和向南延伸的街道数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 n$$$n$$$ 行中，每行包含 m$$$m$$$ 个整数 ai,1$$$a_{i,1}$$$、ai,2$$$a_{i,2}$$$、...、ai,m$$$a_{i,m}$$$(1≤ai,j≤109$$$1 \\le a_{i,j} \\le 10^9$$$)。位于第 i$$$i$$$ 行第 j$$$j$$$ 个位置的整数 ai,j$$$a_{i,j}$$$ 表示第 i$$$i$$$ 条向东街道与第 j$$$j$$$ 条向南街道交叉口处摩天大楼的高度。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出 n$$$n$$$ 行，每行包含 m$$$m$$$ 个整数。位于第 i$$$i$$$ 行第 j$$$j$$$ 个位置的整数 xi,j$$$x_{i,j}$$$ 是第 i$$$i$$$ 条向东街道与第 j$$$j$$$ 条向南街道交叉口处问题的答案。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个样例中，在任何交点处都无法降低该问题所需的最大高度，因此我们不需要改变任何高度。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个样例中，答案如下：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第一行与第一列的交点 ![](https://espresso.codeforces.com/50e83fa422d46f7b717260f3f2a09c7f21bd266f.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第一行与第二列的交点 ![](https://espresso.codeforces.com/1bfbf2ead26b2b57c758dd3c2c022aa49fd6fb3c.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行与第一列的交点 ![](https://espresso.codeforces.com/ce9adefc2d637a5379ff48d0df4db60d4b2e4c8f.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行与第二列的交点 ![](https://espresso.codeforces.com/a597cf792ab7c360303238c8e78b8cb43a47d8d2.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "A. 摩天大楼",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

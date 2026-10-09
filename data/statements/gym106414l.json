@@ -45,86 +45,86 @@
     "legend": [
       {
         "ai": "给定数组 a$$$a$$$、p$$$p$$$ 和 q$$$q$$$，每个数组均包含 n$$$n$$$ 个非负整数，以及一个初始为空的多重集合 S$$$S$$$。随后按顺序，对于每个 1≤i≤n$$$1 \\le i \\le n$$$，以概率 piqi$$$\\frac{p_i}{q_i}$$$ 将 ai$$$a_i$$$ 加入 S$$$S$$$。求该过程结束时 S$$$S$$$ 的 MEX$$$\\operatorname{MEX}$$$ 的期望值，并对 109+7$$$10^9+7$$$ 取模。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "整数集合的 MEX$$$\\operatorname{MEX}$$$ 定义为集合中未出现的最小非负整数。例如，{0,1,2,4}$$$\\{0, 1, 2, 4\\}$$$ 的 MEX$$$\\operatorname{MEX}$$$ 为 3$$$3$$$，而 {1,4,6,8}$$$\\{1, 4, 6, 8\\}$$$ 的 MEX$$$\\operatorname{MEX}$$$ 为 0$$$0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "每个测试由多个测试用例组成。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤2⋅105$$$1 \\le n \\le 2\\cdot 10^5$$$)——数组 a$$$a$$$ 的长度。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 n$$$n$$$ 行中的第 i$$$i$$$ 行包含三个整数 ai$$$a_i$$$、pi$$$p_i$$$ 和 qi$$$q_i$$$(0≤ai≤n$$$0 \\le a_i \\le n$$$，0≤pi≤109$$$0 \\le p_i \\le 10^9$$$，max(1,pi)≤qi≤109$$$\\max(1, p_i) \\le q_i \\le 10^9$$$，pi$$$p_i$$$ 与 qi$$$q_i$$$ 互质)——这三个数分别为 ai$$$a_i$$$，以及如上所述表示将 ai$$$a_i$$$ 加入 S$$$S$$$ 的概率的两个数值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 2⋅105$$$2\\cdot 10^5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个测试用例，输出 S$$$S$$$ 的 MEX$$$\\operatorname{MEX}$$$ 期望值对 109+7$$$10^9+7$$$ 取模的结果。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "形式化地，可以证明精确答案可以表示为最简分数 xy$$$\\frac{x}{y}$$$，其中 x$$$x$$$ 和 y$$$y$$$ 是整数，且 y≢0mod109+7$$$y\\not\\equiv 0 \\mod 10^9+7$$$。输出等于 x⋅y−1mod109+7$$$x\\cdot y^{-1}\\mod 10^9+7$$$ 的整数。换句话说，输出满足 0≤k<109+7$$$0\\leq k \\lt 10^9+7$$$ 且 k⋅y≡xmod109+7$$$k\\cdot y\\equiv x \\mod 10^9+7$$$ 的整数 k$$$k$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个测试用例中，我们以 13$$$\\frac{1}{3}$$$ 的概率将 a1=0$$$a_1 = 0$$$ 加入 S$$$S$$$。因此，有 13$$$\\frac{1}{3}$$$ 的概率 S={0}$$$S = \\{0\\}$$$，其 MEX$$$\\operatorname{MEX}$$$ 为 1$$$1$$$；否则 S={}$$$S = \\{\\}$$$，其 MEX$$$\\operatorname{MEX}$$$ 为 0$$$0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "因此，MEX$$$\\operatorname{MEX}$$$ 的期望值为 13$$$\\frac{1}{3}$$$，在模 109+7$$$10^9+7$$$ 意义下等于 333333336$$$333333336$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个测试用例中，我们以 12$$$\\frac{1}{2}$$$ 的概率将 a1=0$$$a_1 = 0$$$ 加入 S$$$S$$$，并以 12$$$\\frac{1}{2}$$$ 的概率将 a2=1$$$a_2 = 1$$$ 加入 S$$$S$$$。因此，S$$$S$$$ 有四种可能的结果，每种结果出现的概率均为 14$$$\\frac{1}{4}$$$：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "S={}$$$S = \\{\\}$$$ 的 MEX$$$\\operatorname{MEX}$$$ 为 0$$$0$$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "S={0}$$$S = \\{0\\}$$$ 的 MEX$$$\\operatorname{MEX}$$$ 为 1$$$1$$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "S={1}$$$S = \\{1\\}$$$ 的 MEX$$$\\operatorname{MEX}$$$ 为 0$$$0$$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "S={0,1}$$$S = \\{0, 1\\}$$$ 的 MEX$$$\\operatorname{MEX}$$$ 为 2$$$2$$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "因此，MEX$$$\\operatorname{MEX}$$$ 的期望值为 0+1+0+24=34$$$\\frac{0 + 1 + 0 + 2}{4} = \\frac{3}{4}$$$，其对 109+7$$$10^9+7$$$ 取模后的结果为 750000006$$$750000006$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第三个测试用例中，我们将 a1=0$$$a_1 = 0$$$、a2=0$$$a_2 = 0$$$ 和 a3=0$$$a_3 = 0$$$ 加入 S$$$S$$$，每个元素被加入的事件相互独立，概率为 12$$$\\frac{1}{2}$$$。因此，以 78$$$\\frac{7}{8}$$$ 的概率，我们至少会加入其中一个，此时 S$$$S$$$ 的 MEX$$$\\operatorname{MEX}$$$ 为 1$$$1$$$；否则 S$$$S$$$ 为空，其 MEX$$$\\operatorname{MEX}$$$ 为 0$$$0$$$。因此，MEX$$$\\operatorname{MEX}$$$ 的期望值为 78$$$\\frac{7}{8}$$$，其对 109+7$$$10^9+7$$$ 取模后的结果为 875000007$$$875000007$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "L. MEXpected Value",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

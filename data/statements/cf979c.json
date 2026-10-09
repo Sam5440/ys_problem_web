@@ -50,90 +50,90 @@
     "legend": [
       {
         "ai": "Kuro 生活在一个名为 Uberland 的国家，该国由 n$$$n$$$ 个城镇组成，城镇编号从 1$$$1$$$ 到 n$$$n$$$，并有 n−1$$$n - 1$$$ 条双向道路连接这些城镇。任意两个城镇之间都可以相互到达。每条道路连接两个城镇 a$$$a$$$ 和 b$$$b$$$。Kuro 喜欢步行，他计划参加一场步行马拉松。在比赛中，他会选择一对城镇 (u,v)$$$(u, v)$$$(u≠v$$$u \\neq v$$$)，并沿着从 u$$$u$$$ 到 v$$$v$$$ 的最短路径行走(注意，(u,v)$$$(u, v)$$$ 与 (v,u)$$$(v, u)$$$ 被视为不同)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "奇怪的是，Uberland 有 2 个特别的城镇，分别名为 Flowrisa(编号为 x$$$x$$$)和 Beetopia(编号为 y$$$y$$$)。Flowrisa 是一个有许多香气浓郁的花朵的城镇，Beetopia 则是另一个有许多蜜蜂栖息的城镇。特别地，如果从 u$$$u$$$ 到 v$$$v$$$ 的路径上，Kuro 先经过 Flowrisa、之后才到达 Beetopia，他就会避开这对城镇 (u,v)$$$(u, v)$$$，因为蜜蜂会被 Kuro 身上的花香吸引并蜇他。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Kuro 想知道有多少对城镇 (u,v)$$$(u, v)$$$ 可以作为他的路线。由于他不太聪明，所以请你帮他解决这个问题。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含三个整数 n$$$n$$$、x$$$x$$$ 和 y$$$y$$$(1≤n≤3⋅105$$$1 \\leq n \\leq 3 \\cdot 10^5$$$，1≤x,y≤n$$$1 \\leq x, y \\leq n$$$，x≠y$$$x \\ne y$$$)，分别表示城镇数、Flowrisa 所在城镇的编号和 Beetopia 所在城镇的编号。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来有 n−1$$$n - 1$$$ 行，每行包含两个整数 a$$$a$$$ 和 b$$$b$$$(1≤a,b≤n$$$1 \\leq a, b \\leq n$$$，a≠b$$$a \\ne b$$$)，表示一条连接城镇 a$$$a$$$ 和 b$$$b$$$ 的道路。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证从每个城镇出发，都可以通过给定的道路到达城市中的其他所有城镇。也就是说，给定的城镇和道路构成一棵树。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "一个整数，表示 Kuro 可以选择作为步行路线的城镇对 (u,v)$$$(u, v)$$$ 的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个样例中，Kuro 可以选择以下城镇对：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "(1,2)$$$(1, 2)$$$：他的路线为 1→2$$$1 \\rightarrow 2$$$，",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "(2,3)$$$(2, 3)$$$：他的路线为 2→3$$$2 \\rightarrow 3$$$，",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "(3,2)$$$(3, 2)$$$：他的路线为 3→2$$$3 \\rightarrow 2$$$，",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "(2,1)$$$(2, 1)$$$：他的路线将是 2→1$$$2 \\rightarrow 1$$$，",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "(3,1)$$$(3, 1)$$$：他的路线将是 3→2→1$$$3 \\rightarrow 2 \\rightarrow 1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Kuro 不能选择二元组 (1,3)$$$(1, 3)$$$，因为他的步行路线将是 1→2→3$$$1 \\rightarrow 2 \\rightarrow 3$$$，在这条路线中，Kuro 会先访问城镇 1$$$1$$$(Flowrisa)，然后访问城镇 3$$$3$$$(Beetopia)，这是不允许的(注意，二元组 (3,1)$$$(3, 1)$$$ 仍然是允许的，因为尽管 Kuro 访问了 Flowrisa 和 Beetopia，但他并不是按这个顺序访问它们的)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个样例中，Kuro 可以选择以下二元组：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "(1,2)$$$(1, 2)$$$：他的路线将是 1→2$$$1 \\rightarrow 2$$$，",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "(2,1)$$$(2, 1)$$$：他的路线将是 2→1$$$2 \\rightarrow 1$$$，",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "(3,2)$$$(3, 2)$$$：他的路线将是 3→1→2$$$3 \\rightarrow 1 \\rightarrow 2$$$，",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "(3,1)$$$(3, 1)$$$：他的路线将是 3→1$$$3 \\rightarrow 1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "C. Kuro 与步行路线",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

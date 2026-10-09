@@ -45,86 +45,86 @@
     "legend": [
       {
         "ai": "你负责沿着一条道路铺设燃气管道。我们将道路(为简单起见)看作 OX$$$OX$$$ 轴上的线段 [0,n]$$$[0, n]$$$。道路上可能有多个十字路口，但为简单起见，我们将每个十字路口表示为区间 (x,x+1)$$$(x, x + 1)$$$，其中 x$$$x$$$ 为整数。因此，我们可以将道路表示为一个由 n$$$n$$$ 个字符组成的二进制字符串，其中字符 0 表示当前区间不包含十字路口，字符 1 表示包含十字路口。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "通常，我们可以将管道沿道路铺设在高度为 1$$$1$$$ 个单位的位置，并在每个整数点设置支柱(因此，如果我们负责铺设 [0,n]$$$[0, n]$$$ 道路的管道，就必须安装 n+1$$$n + 1$$$ 根支柱)。但在十字路口处，我们应将管道抬高至高度 2$$$2$$$，这样管道就不会妨碍汽车通行。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "我们可以通过插入若干条类似之字形的线段来实现这一点。每条之字形线段都可以表示为区间 [x,x+1]$$$[x, x + 1]$$$，其中 x$$$x$$$ 为整数，并由三部分组成：长度为 0.5$$$0.5$$$ 个单位的水平管道 + 长度为 1$$$1$$$ 个单位的竖直管道 + 长度为 0.5$$$0.5$$$ 个单位的水平管道。注意，如果管道当前处于高度 2$$$2$$$，支撑它的支柱长度也应等于 2$$$2$$$ 个单位。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/d9d49d8d0560a060a2f1fc785ef616c3b1af3c0b.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "燃气管道的每个单位需要花费 a$$$a$$$ 布尔，每个单位支柱需要花费 b$$$b$$$ 布尔。因此，将整条管道建在高度 2$$$2$$$ 并不总是最优。请找出成本可能最小的管道形状，并计算该成本。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "注意，你必须在高度 1$$$1$$$ 开始和结束管道，并且保证输入字符串的第一个和最后一个字符都等于 0。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤100$$$1 \\le T \\le 100$$$)——查询的数量。接下来的 2⋅T$$$2 \\cdot T$$$ 行包含相互独立的查询——每个查询占两行。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第一行包含三个整数 n$$$n$$$、a$$$a$$$、b$$$b$$$(2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$，1≤a≤108$$$1 \\le a \\le 10^8$$$，1≤b≤108$$$1 \\le b \\le 10^8$$$)——道路的长度、单位管道的费用以及单位支柱的费用。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行包含二进制字符串 s$$$s$$$(|s|=n$$$|s| = n$$$，si∈{0,1}$$$s_i \\in \\{0, 1\\}$$$，s1=sn=0$$$s_1 = s_n = 0$$$)——道路的描述。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有字符串 s$$$s$$$ 的总长度不超过 2⋅105$$$2 \\cdot 10^5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出 T$$$T$$$ 个整数——每个查询输出一个。对于每个查询，输出所构造流水线的可能的最小代价。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "第一个查询的最优流水线如上图所示。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二个查询的最优流水线如下图所示：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/a41006fd19dd10b3d679b41d596923b03797cc43.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三个查询的最优（也是唯一可能的）流水线如下图所示：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/c500012aeed6af93d1135531ce2657d2a8f9cc76.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第四个查询的最优流程如下：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/f5236edc8e3bd8bf1e756268fa678efcb31f7901.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "C. 燃气管道",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

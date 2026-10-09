@@ -41,60 +41,60 @@
     "legend": [
       {
         "ai": "你是一名分析师，正在研究为期 n$$$n$$$ 个月的时间内，广告预算支出(记为 x$$$x$$$)与销售额(记为 y$$$y$$$)之间的关系。更具体地说，对于从 1 到 n 的每个月，你都有支出 xi$$$x_i$$$ 和销售额 yi$$$y_i$$$ 的值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "为了量化这种关系，你使用带正则化的线性回归，即将 y$$$y$$$ 建模为 y=Kx+B$$$y=Kx+B$$$，其中 K$$$K$$$ 和 B$$$B$$$ 是使惩罚函数最小化的实数：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "（注意：这是 L2 正则化线性回归的标准惩罚函数。）",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于经理要求的报告，你需要进行若干预测。更具体地说，你有一个预测查询列表，每个查询由四个数字描述——Lj$$$L_j$$$、Rj$$$R_j$$$、λj$$$\\lambda_j$$$ 和 Xj$$$X_j$$$。处理此类查询时，你需要执行以下步骤：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "取从 Lj$$$L_j$$$ 到 Rj$$$R_j$$$(包括这两个月)期间各个月的支出和销售额数据；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "求出在给定正则化系数 λj$$$\\lambda_j$$$ 下使惩罚函数最小的系数 K$$$K$$$ 和 B$$$B$$$；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将 Xj$$$X_j$$$ 代入所得模型并计算预测值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "给定广告支出和销售额数据以及预测查询的描述。你需要处理这些查询并输出预测结果。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入文件第一行包含一个整数 n$$$n$$$(2≤n≤106$$$2 \\le n \\le 10^6$$$)，表示所研究时间段内的月份数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 n$$$n$$$ 行每行描述一个月份，包含两个不超过 10 的非负实数 xi$$$x_i$$$ 和 yi$$$y_i$$$。它们分别表示对应月份的预算支出和销售额。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "下一行包含一个整数 m$$$m$$$(1≤m≤106$$$1 \\le m \\le 10^6$$$)，表示需要进行的预测数量。接下来的 m$$$m$$$ 行中，每行包含四个数：Lj$$$L_j$$$、Rj$$$R_j$$$、λj$$$\\lambda_j$$$ 和 Xj$$$X_j$$$(1≤Lj<Rj≤n$$$1 \\le L_j  \\lt  R_j \\le n$$$，0≤λj,Xj≤10$$$0 \\le \\lambda_j, X_j \\le 10$$$)。其中前两个是整数，后两个是实数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个预测查询，输出一个实数，每个数单独占一行，表示广告支出为 Xj$$$X_j$$$，并使用从 Lj$$$L_j$$$ 到 Rj$$$R_j$$$ 的月份数据、正则化系数为 λj$$$\\lambda_j$$$ 的 L2 正则化拟合线性模型时的预测销售额。输出结果的绝对误差或相对误差不得超过 10−6$$$10^{-6}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "B. 预算分析",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

@@ -41,44 +41,44 @@
     "legend": [
       {
         "ai": "你正在为新的操作系统开发调度模块。该模块接收 n$$$n$$$ 个待执行的任务及它们之间的依赖关系，然后将它们按某种顺序安排执行。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "更正式地说，有 n$$$n$$$ 个任务，编号从 1$$$1$$$ 到 n$$$n$$$。此外，给定 m$$$m$$$ 条依赖关系，编号从 1$$$1$$$ 到 m$$$m$$$；其中第 i$$$i$$$ 条依赖关系由两个数表示——ai$$$a_i$$$ 和 bi$$$b_i$$$，这意味着任务 ai$$$a_i$$$ 应在任务 bi$$$b_i$$$ 之前执行。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在某些情况下，存在循环依赖——根据给定的依赖关系，某个任务 t1$$$t_1$$$ 应在 t2$$$t_2$$$ 之前执行，t2$$$t_2$$$ 应在 t3$$$t_3$$$ 之前执行，……，tk−1$$$t_{k-1}$$$ 应在 tk$$$t_k$$$ 之前执行，并且 tk$$$t_k$$$ 应在 t1$$$t_1$$$ 之前执行。循环依赖会给调度带来问题，因此你决定删除部分给定的依赖关系，使得到的依赖关系集合不包含任何循环依赖。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "然而，为了保留部分原始信息，你仍需至少保留 m/2$$$m/2$$$ 条原始依赖关系。请编写程序完成这一任务。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "一行包含两个数字 n$$$n$$$ 和 m$$$m$$$(2≤n≤105$$$2 \\le n \\le 10^5$$$，1≤m≤3⋅105$$$1 \\le m \\le 3 \\cdot 10^5$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 m$$$m$$$ 行，每行包含两个数字 ai$$$a_i$$$ 和 bi$$$b_i$$$(1≤ai,bi≤n$$$1 \\le a_i, b_i \\le n$$$，ai≠bi$$$a_i \\ne b_i$$$)，描述任务 ai$$$a_i$$$ 和 bi$$$b_i$$$ 之间对应的依赖关系。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "如果存在符合要求的依赖关系子集，第一行应包含 YES，否则应包含 NO。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果答案为 YES，第二行应包含选出的依赖关系数量 k$$$k$$$(注意，k$$$k$$$ 至少应为 m/2$$$m/2$$$)，第三行应包含 k$$$k$$$ 个数字，即选出的依赖关系编号。它们按照输入中的顺序从 1$$$1$$$ 到 m$$$m$$$ 编号。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "K. 内核调度器",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

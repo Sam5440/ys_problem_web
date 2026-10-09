@@ -53,61 +53,61 @@
       },
       {
         "ai": "例如，Alice 可能想要存储一条消息 M = (0, 15, 9, 18)。她生成了一个密钥 K = (16, 7, 6, 3)。因此，加密后的消息为 A = (16, 8, 15, 17)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Alice 意识到，她无法将密钥和加密后的消息存储在一起。于是 Alice 将她的密钥 K 发送给 Bob，并删除了自己手中的副本。Alice 很聪明。真的，要像 Alice 一样。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Bob 意识到，只要密钥是保密的，加密后的消息就是安全的。因此，Bob 在存储密钥之前随机打乱了密钥的顺序。Bob 认为这样一来，即使 Eve 同时获得了加密后的消息和密钥，她也无法读出消息。Bob 不聪明。不要学 Bob。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在上面的例子中，Bob 例如可以选择排列 (3, 4, 1, 2)，并存储打乱顺序后的密钥 P = (6, 3, 16, 7)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "一年过去了，Alice 想要解密她的消息。直到这时 Bob 才意识到这是不可能的。由于他随机打乱了密钥的顺序，这条消息永远丢失了。我们提过 Bob 不聪明吗？",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Bob 想从这条消息中至少挽救一些信息。由于他没那么聪明，所以向你求助。你知道加密后的消息 A 和打乱顺序后的密钥 P。对于给定的加密文本，可能得到的消息中字典序最小的是哪一个？",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "更准确地说，给定 A 和 P，请找出字典序最小的消息 O，使得存在一个排列 π，对于每个 i 都有 ![](https://espresso.codeforces.com/a13e05dbed3e9a47b9d8d6d0f07297a940549234.png)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "注意，如果存在一个下标 i，使得 Si < Ti，且对于所有 j < i 都满足 Sj = Tj，则序列 S 在字典序上小于序列 T。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 N（1 ≤ N ≤ 300000），表示消息的长度。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行包含 N 个整数 A1、A2、...、AN（0 ≤ Ai < 230），表示加密后的消息。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三行包含 N 个整数 P1、P2、...、PN（0 ≤ Pi < 230），表示置换后的加密密钥。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出一行，包含 N 个整数，即字典序最小的可能消息 O。注意，其所有元素都应为非负数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一种情况下，答案是 (10, 3, 28)，因为 ![](https://espresso.codeforces.com/a896b30a69636d1bfbfa981eae10650f5fee843c.png)、![](https://espresso.codeforces.com/e383e4333ea37c4652ce2ac1ccfc2cfcf96e0896.png) 和 ![](https://espresso.codeforces.com/c24ed3c6f88805eb3710487b3fe07ff64034151a.png)。密钥的其他可能排列会得到消息 (25, 6, 10)、(25, 3, 15)、(10, 21, 10)、(15, 21, 15) 和 (15, 6, 28)，它们在字典序上都大于该答案。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },

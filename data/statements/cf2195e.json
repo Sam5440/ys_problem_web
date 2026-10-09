@@ -52,73 +52,73 @@
     "legend": [
       {
         "ai": "有一棵包含 n+1$$$n+1$$$ 个顶点的二叉树(n$$$n$$$ 为奇数)，顶点编号为 0,1,…,n$$$0,1,\\ldots,n$$$。树中的每个顶点至多可以写入一个字母，且初始时所有顶点上都没有写入任何内容。树的根是顶点 0$$$0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在这棵树中，顶点 0$$$0$$$ 是顶点 1$$$1$$$ 的父节点，而其他所有顶点要么有 2$$$2$$$ 个子节点，要么有 0$$$0$$$ 个子节点。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Bob 在树中的某个顶点处迷路了，并希望通过到达顶点 0$$$0$$$ 逃出这棵树。对于大多数有常识的人来说，这非常容易。然而，由于 Bob 是个笨蛋，他创造了一种遍历这棵树的新方法；这就是“愚人优先搜索”。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "当 Bob 位于顶点 v$$$v$$$(1≤v≤n$$$1 \\le v \\le n$$$)时，Bob 的移动方式如下：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果顶点 v$$$v$$$ 是叶子节点，Bob 总是移动到 v$$$v$$$ 的父节点；否则，检查接下来的几个条件。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果顶点 v$$$v$$$ 上没有写任何内容，Bob 就在顶点 v$$$v$$$ 上写下“L”，并移动到 v$$$v$$$ 的左儿子；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果顶点 v$$$v$$$ 上写着“L”，Bob 就将其改写为“R”，并移动到 v$$$v$$$ 的右儿子；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果顶点 v$$$v$$$ 上写着“R”，Bob 就将其擦除，并移动到 v$$$v$$$ 的父节点。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Bob 移动到相邻顶点恰好需要 1$$$1$$$ 秒，因此 Bob 执行 x$$$x$$$ 次移动恰好需要 x$$$x$$$ 秒。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "事实证明，无论 Bob 从哪个顶点开始，他都能在有限的(尽管可能大得无法解释的)时间内到达顶点 0$$$0$$$。我们不知道是谁证明了这一点；肯定不可能是 Bob，但这确实已经被证明了。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于每个顶点 k=1,2,…,n$$$k=1,2,\\ldots,n$$$，请确定如果 Bob 从顶点 k$$$k$$$ 开始，到达顶点 0$$$0$$$ 所需的总时间，单位为秒。由于这些数值可能非常大，你只需计算它们对 109+7$$$10^9+7$$$ 取模后的结果。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)。接下来是各个测试用例的描述。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤300001$$$1 \\le n \\le 300\\,001$$$，n$$$n$$$ 为奇数)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 n$$$n$$$ 行中，每行包含两个整数 li$$$l_i$$$ 和 ri$$$r_i$$$，表示顶点 i$$$i$$$ 的子节点(0≤li,ri≤n$$$0 \\le l_i,r_i \\le n$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于每个顶点，如果该顶点没有子节点，则给出 li=ri=0$$$l_i=r_i=0$$$。否则，li$$$l_i$$$ 和 ri$$$r_i$$$ 分别表示顶点 i$$$i$$$ 的左子节点和右子节点。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证输入定义了一棵满足题面所给条件的合法二叉树。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 300001$$$300\\,001$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
@@ -150,16 +150,16 @@
       },
       {
         "ai": "3L→4X→3R→5X→3X→1L→2X→1R→3L→4X→3R→5X→3X→1X→0 $$3 \\xrightarrow{\\mathtt{L}} 4 \\xrightarrow{\\mathtt{X}} 3 \\xrightarrow{\\mathtt{R}} 5 \\xrightarrow{\\mathtt{X}} 3 \\xrightarrow{\\mathtt{X}} 1 \\xrightarrow{\\mathtt{L}} 2 \\xrightarrow{\\mathtt{X}} 1 \\xrightarrow{\\mathtt{R}} 3 \\xrightarrow{\\mathtt{L}} 4 \\xrightarrow{\\mathtt{X}} 3 \\xrightarrow{\\mathtt{R}} 5 \\xrightarrow{\\mathtt{X}} 3 \\xrightarrow{\\mathtt{X}} 1 \\xrightarrow{\\mathtt{X}} 0$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "这里，箭头上方的字母表示移动到相邻顶点之前该顶点上的字母，其中 X$$$\\mathtt{X}$$$ 表示没有写任何内容。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "E. 愚人优先搜索",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

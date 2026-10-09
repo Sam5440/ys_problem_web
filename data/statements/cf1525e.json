@@ -43,78 +43,78 @@
     "legend": [
       {
         "ai": "Monocarp 正在玩一款名为“Assimilation IV”的游戏。在这款游戏中，他管理着一个庞大的帝国：建造城市并征服新的土地。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Monocarp 的帝国有 n$$$n$$$ 座城市。为了征服新的土地，他计划在每座城市中建造一座纪念碑。游戏按回合进行，而且由于 Monocarp 还是个新手，他每回合恰好建造一座纪念碑。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "地图上有 m$$$m$$$ 个 Monocarp 希望通过建造的纪念碑控制的点。对于每个点，他都知道该点与每座城市之间的距离。纪念碑的工作方式如下：在某座城市建成后，纪念碑会控制与该城市的距离不超过 1$$$1$$$ 的所有点。下一回合，纪念碑会控制与该城市的距离不超过 2$$$2$$$ 的所有点；再下一回合，控制与该城市的距离不超过 3$$$3$$$ 的所有点，依此类推。Monocarp 将在 n$$$n$$$ 个回合内建造 n$$$n$$$ 座纪念碑，他的帝国将征服至少被一座纪念碑控制的所有点。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Monocarp 想不出任何策略，因此在每个回合中，他都会从所有剩余的城市(没有纪念碑的城市)中随机选择一座城市建造纪念碑。Monocarp 想知道在第 n$$$n$$$ 回合结束时，他将征服多少个点(总共 m$$$m$$$ 个点)。请帮助他计算征服点数的期望值！",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n≤20$$$1 \\le n \\le 20$$$；1≤m≤5⋅104$$$1 \\le m \\le 5 \\cdot 10^4$$$)，分别表示城市的数量和点的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来 n$$$n$$$ 行每行包含 m$$$m$$$ 个整数：第 i$$$i$$$ 行的第 j$$$j$$$ 个整数 di,j$$$d_{i, j}$$$(1≤di,j≤n+1$$$1 \\le d_{i, j} \\le n + 1$$$)表示第 i$$$i$$$ 座城市与第 j$$$j$$$ 个点之间的距离。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "可以证明，Monocarp 在第 n$$$n$$$ 回合结束时征服的点数的期望值可以表示为最简分数 x/y$$$\\frac{x}{y}$$$。请输出该分数对 998244353$$$998\\,244\\,353$$$ 取模的结果，即 x⋅y−1mod998244353$$$x \\cdot y^{-1} \\bmod 998244353$$$，其中 y−1$$$y^{-1}$$$ 满足 y⋅y−1mod998244353=1$$$y \\cdot y^{-1} \\bmod 998244353 = 1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "让我们来看看所有可能的城市建造纪念碑的顺序：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "[1,2,3]$$$[1, 2, 3]$$$：第一座城市控制距离不超过 3$$$3$$$ 的所有点，换句话说，就是点 1$$$1$$$ 和点 4$$$4$$$；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二座城市控制距离不超过 2$$$2$$$ 的所有点，或点 1$$$1$$$、3$$$3$$$ 和 5$$$5$$$；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三座城市控制距离不超过 1$$$1$$$ 的所有点，或点 1$$$1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "[1,3,2]$$$[1, 3, 2]$$$：第一座城市控制点 1$$$1$$$ 和 4$$$4$$$；第二座城市控制点 1$$$1$$$ 和 3$$$3$$$；第三座城市控制点 1$$$1$$$。总计有 3$$$3$$$ 个点。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "[2,1,3]$$$[2, 1, 3]$$$：第一座城市控制点 1$$$1$$$；第二座城市控制点 1$$$1$$$、3$$$3$$$ 和 5$$$5$$$；第三座城市控制点 1$$$1$$$。总计有 3$$$3$$$ 个点。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "[2,3,1]$$$[2, 3, 1]$$$：第一座城市控制点 1$$$1$$$；第二座城市控制点 1$$$1$$$、3$$$3$$$ 和 5$$$5$$$；第三座城市控制点 1$$$1$$$。总计有 3$$$3$$$ 个点。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "[3,1,2]$$$[3, 1, 2]$$$：第一座城市控制点 1$$$1$$$；第二座城市控制点 1$$$1$$$ 和 3$$$3$$$；第三座城市控制点 1$$$1$$$ 和 5$$$5$$$。总计有 3$$$3$$$ 个点。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "[3,2,1]$$$[3, 2, 1]$$$：第一个城市控制点 1$$$1$$$；第二个城市控制点 1$$$1$$$、3$$$3$$$ 和 5$$$5$$$；第三个城市控制点 1$$$1$$$ 和 5$$$5$$$。总计 3$$$3$$$ 个点。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "E. Assimilation IV",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

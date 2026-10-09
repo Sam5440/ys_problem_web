@@ -59,110 +59,110 @@
     "legend": [
       {
         "ai": "Polycarp 刚刚尝试通过驾驶考试。他沿着一条笔直的道路行驶，路上有四种类型的标志。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "限速：该标志带有一个正整数——车辆通过该标志后的最大速度（取消此前同类型标志的作用）；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "允许超车：此标志表示，某辆车经过它后，就可以超越任何其他车辆；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "不限速：该标志会取消已有的限速（车辆通过此标志后可以以任意速度行驶）；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "禁止超车：车辆通过此标志后不能超越任何其他车辆。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Polycarp 依次经过这些标志，每个新标志都会取消所有先前同类标志（限速/超车）的作用。两个或更多“禁止超车”标志可能连续出现，其间没有“允许超车”标志。“不限速”和“允许超车”标志也是如此。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在行程开始时允许超车，且没有限速。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "给出按时间顺序排列的事件序列——这些是 Polycarp 在行程中经历的事件。事件有以下几种类型：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Polycarp 将他的汽车速度改为指定值（该事件附带一个正整数）；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Polycarp 的汽车超过另一辆汽车；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Polycarp 的汽车驶过“限速”标志（该标志附带一个正整数）；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Polycarp 的汽车驶过“允许超车”标志；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Polycarp 的汽车经过了“限速解除”标志；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Polycarp 的汽车经过了“禁止超车”标志；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证按时间顺序排列的第一个事件是类型 1 的事件（Polycarp 将他的汽车速度改变为指定值）。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "考试结束后，Polycarp 可以告诉驾驶教练他只是没有注意到某些标志，以此为自己违反规则辩解。Polycarp 至少应该说自己没有注意到多少个标志，才能使他在自己看来没有违反任何规则？",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 n（1 ≤ n ≤ 2·10^5）——事件的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 n 行中的每一行以一个整数 t 开头（1 ≤ t ≤ 6）——事件的类型。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第一类和第三类查询中会给出一个整数 s（如果是第一类查询，则它表示 Polycarp 的汽车的新速度；如果是第三类查询，则它表示新的限速）。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证按时间顺序发生的第一个事件是 1 类事件（Polycarp 将他的汽车速度更改为指定值）。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出 Polycarp 应声称自己没有注意到的道路标志的最少数量，使得从他的角度来看他不会违反任何规则。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个样例中，Polycarp 应该说自己没有注意到限速为 70 的“限速”标志，以及第二个限速为 120 的“限速”标志。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个样例中，Polycarp 没有违反任何规则。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第三个样例中，Polycarp 应该说自己没有注意到“允许超车”标志之后出现的两个“禁止超车”标志。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "D. 驾驶测试",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

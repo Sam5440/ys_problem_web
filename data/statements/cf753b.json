@@ -44,82 +44,82 @@
     "legend": [
       {
         "ai": "这道题有些特殊。在这里，你需要实现与评测系统的交互。这意味着你可以在在线模式下发出查询并获得响应。请务必在输出每次查询后使用刷新流的操作，以免部分输出留在某个缓冲区中。例如，在 C++ 中，你需要使用 fflush(stdout) 函数；在 Java 中调用 System.out.flush()；在 Pascal 中调用 flush(output)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Bulls and Cows（也称为 Cows and Bulls、Pigs and Bulls 或 Bulls and Cleots）是一种古老的双人纸笔破译游戏，早于类似的商业化棋盘游戏 Mastermind。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在一张纸上，第一位玩家想出一个秘密字符串。该字符串仅由数字组成，长度为 4。字符串中的数字必须全部不同，不允许有两个或更多相同的数字。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "然后，第二位玩家尝试猜测对手的字符串。对于每次猜测，第一位玩家会给出匹配的数量。如果匹配的数字位于正确的位置，它们就是“公牛”；如果位于不同的位置，则是“奶牛”。因此，回答是一对数字——“公牛”的数量和“奶牛”的数量。一次猜测中可以包含相同的数字。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "更正式地说，设秘密字符串为 s，第二位玩家试图用字符串 x 猜测它。“公牛”的数量是满足 1 ≤ i ≤ 4 且 s[i] = x[i] 的位置 i 的数量。“奶牛”的数量是这样的数字 c 的数量：s 在位置 i 包含 c（即 s[i] = c），x 包含 c，但 x[i] ≠ c。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "例如，秘密字符串是 \"0427\"，对手的猜测是 \"0724\"，则答案是 2 个公牛和 2 个奶牛（公牛是 \"0\" 和 \"2\"，奶牛是 \"4\" 和 \"7\"）。如果秘密字符串是 \"0123\"，对手的猜测是 \"0330\"，则答案是 1 个公牛和 1 个奶牛。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在本题中，你需要猜出系统所选定的字符串 s。你只知道所选定的字符串由 4 个互不相同的数字组成。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你可以向测试系统发起查询，每次查询都是输出一个 4 位字符串。查询的答案是公牛数和奶牛数。如果系统的回答等于“4 0”，则表示交互已经结束，程序必须终止。这可能有两个原因——程序猜中了数字 x，或者进行了无效操作（例如输出了字母而不是数字）。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你的程序最多可以进行 50 次查询。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你可以通过提供一个包含互不相同数字的 4 位字符串（秘密字符串）来 hack 其他参赛者的程序。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "为了读取查询的答案，程序必须使用标准输入。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "程序将从输入中接收非负整数对，每行一对。每对中的第一个数是字符串 s 与程序输出的字符串 x_i 之间的公牛数，第二个数是奶牛数。如果系统的回答等于“4 0”，那么你的解法应当终止。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "测试系统只有在你的程序输出相应的系统查询后，才会允许程序从输入中读取第 i 对整数：在单独一行输出 xi 的值，并执行刷新操作。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "程序必须使用标准输出来输出查询。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你的程序必须输出请求——长度为 4 的字符串 x1、x2、……，每行一个。输出每一行后，程序必须执行刷新操作。程序应当从标准输入中读取查询的答案。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你的程序最多可以进行 50 次查询。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "样例中的秘密字符串 s 是 \"0123\"。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "B. 交互式公牛与奶牛（简单版）",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

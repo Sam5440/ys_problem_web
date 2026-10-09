@@ -54,74 +54,74 @@
     "legend": [
       {
         "ai": "为简洁起见，省略了主要字符。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "给定一个不含自环的无权有向图，其中有 n$$$n$$$ 个顶点，以及图中的一条路径(该路径不一定是简单路径)，这条路径由一个包含 m$$$m$$$ 个顶点的序列 p1,p2,…,pm$$$p_1, p_2, \\ldots, p_m$$$ 给出；对于每个 1≤i<m$$$1 \\leq i  \\lt  m$$$，都存在一条从 pi$$$p_i$$$ 到 pi+1$$$p_{i+1}$$$ 的弧。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果序列 v1,v2,…,vk$$$v_1, v_2, \\ldots, v_k$$$(包含 k$$$k$$$ 个顶点)满足以下条件，则称其为好的：v$$$v$$$ 是 p$$$p$$$ 的子序列，v1=p1$$$v_1 = p_1$$$，vk=pm$$$v_k = p_m$$$，并且 p$$$p$$$ 是一条按此顺序经过顶点 v1$$$v_1$$$、…$$$\\ldots$$$、vk$$$v_k$$$ 的最短路径。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果可以通过删除序列 b$$$b$$$ 中的若干个元素(可以是零个或全部)得到 a$$$a$$$，则称序列 a$$$a$$$ 是序列 b$$$b$$$ 的子序列。显然，序列 p$$$p$$$ 是好的，但你的任务是找出最短的好子序列。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果存在多个最短的好子序列，输出其中任意一个。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 n$$$n$$$(2≤n≤100$$$2 \\le n \\le 100$$$)——图中顶点的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 n$$$n$$$ 行通过邻接矩阵描述该图：如果存在一条从顶点 i$$$i$$$ 到顶点 j$$$j$$$ 的弧，则第 i$$$i$$$ 行中的第 j$$$j$$$ 个字符等于 1$$$1$$$，否则等于 0$$$0$$$。保证该图不含自环。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "下一行包含一个整数 m$$$m$$$(2≤m≤106$$$2 \\le m \\le 10^6$$$)——路径中顶点的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "下一行包含 m$$$m$$$ 个整数 p1,p2,…,pm$$$p_1, p_2, \\ldots, p_m$$$(1≤pi≤n$$$1 \\le p_i \\le n$$$)——路径中的顶点序列。保证对于任意 1≤i<m$$$1 \\leq i  \\lt  m$$$，都存在一条从 pi$$$p_i$$$ 到 pi+1$$$p_{i+1}$$$ 的弧。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "第一行输出一个整数 k$$$k$$$(2≤k≤m$$$2 \\leq k \\leq m$$$)——最短合法子序列的长度。第二行输出 k$$$k$$$ 个整数 v1$$$v_1$$$、…$$$\\ldots$$$、vk$$$v_k$$$(1≤vi≤n$$$1 \\leq v_i \\leq n$$$)——子序列中的顶点。如果存在多个最短子序列，输出任意一个。任意两个相邻的数都应互不相同。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "下面是第一个样例中的图：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/3e0af0adb4ab1272fc9152aae8708228c6014c45.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "给定路径经过顶点 1$$$1$$$、2$$$2$$$、3$$$3$$$、4$$$4$$$。序列 1−2−4$$$1-2-4$$$ 是合法的，因为它是给定路径的子序列，其首元素和末元素分别等于给定路径的首元素和末元素，并且按该顺序经过顶点 1$$$1$$$、2$$$2$$$ 和 4$$$4$$$ 的最短路径为 1−2−3−4$$$1-2-3-4$$$。注意，子序列 1−4$$$1-4$$$ 和 1−3−4$$$1-3-4$$$ 不是合法的，因为在这两种情况下，经过这些序列中顶点的最短路径都是 1−3−4$$$1-3-4$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第三个样例中，图是完全的，因此任何一个相邻元素互不相同的顶点序列，都定义了一条包含相同数量顶点的路径。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第四个样例中，路径 1−2−4$$$1-2-4$$$ 和 1−3−4$$$1-3-4$$$ 是经过顶点 1$$$1$$$ 和 4$$$4$$$ 的最短路径。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "C. Anna、Svyatoslav 与地图",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

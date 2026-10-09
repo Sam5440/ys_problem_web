@@ -43,68 +43,68 @@
     "legend": [
       {
         "ai": "Cindy 正在为她的社会学科项目，对中国历史上的三国时期进行广泛研究。她的主要资料来源是以传奇般的蜀国军师诸葛亮（字孔明）为中心的媒体作品，其范围从推测一位孔明级别的谋士在现代激烈竞争的行业中将如何表现的科幻作品，到突出诸葛亮个人战斗能力，以及他使用魔法一次性大量歼灭数百名敌人的严谨战斗模拟。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "通过她的研究，她遇到了下面这段颇为有趣的摘录：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "我要求我的军队将自己分成若干小队，使得每个小队包含相同数量的士兵。我知道，他们会尽其所能完成这项任务，尽可能多地组成这么多人的小队。然而，根据我选择的小队人数，即使他们已经尽力，仍可能有一些士兵无法组成一个完整的小队而剩下。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "我要求他们组成每队人数为 a1$$$a_1$$$ 的小队，但遗憾的是，这导致有 k$$$k$$$ 人剩下。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "我要求他们组成每队人数为 a2$$$a_2$$$ 的小队，但遗憾的是，这导致有 k$$$k$$$ 人剩下。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "我要求他们组成每队人数为 a3$$$a_3$$$ 的小队，但遗憾的是，这导致有 k$$$k$$$ 人剩下。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "……以此类推。我一共进行了 n$$$n$$$ 次操作，要求他们依次尽可能多地组成每队人数为 a1$$$a_1$$$、然后为 a2$$$a_2$$$、……、最后为 an$$$a_n$$$ 的小队，但每一次都恰好有 k$$$k$$$ 人剩下，无法组成一个完整的小队。真是巧合！",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Cindy 通过另一个来源得知，诸葛亮的军队人数在 ℓ$$$\\ell$$$ 和 r$$$r$$$ 之间(包含两端)。根据这一信息，诸葛亮的军队中有多少名士兵？",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果有多个可能的答案，输出其中任意一个。如果不存在可能的答案（即历史资料不准确），也必须说明这一点。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入的第一行包含用空格分隔的整数 n$$$n$$$、ℓ$$$\\ell$$$、r$$$r$$$ 和 k$$$k$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "输入的第二行包含 n$$$n$$$ 个互不相同的、用空格分隔的整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "如果答案存在，输出任意一个满足 ℓ≤x≤r$$$\\ell \\leq x \\leq r$$$ 的整数 x$$$x$$$，使得有 x$$$x$$$ 名士兵时会出现所描述的情形。如果有多个可能的答案，输出其中任意一个。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果不存在可能的答案，则输出 −1$$$-1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "所有子任务的约束条件\n1 ≤ n ≤ 10^5\n1 ≤ ℓ ≤ r ≤ 10^10\n1 ≤ k ≤ 10^9\n对于所有 i，2 ≤ a_i ≤ 10^10\n若 i ≠ j，则 a_i ≠ a_j\n\n子任务　分值　约束条件\n1　40　r − ℓ ≤ 10^2\n2　20　n = 1\n3　20　对于所有 i，a_i 是素数\n4　20　无额外约束。$$\\begin{align*}  &\\begin{array}{|l|} \\hline \\text{Constraints For All Subtasks} \\\\ \\hline 1 \\leq n \\leq 10^5 \\\\ 1 \\leq \\ell \\leq r \\leq 10^{10} \\\\ 1 \\leq k \\leq 10^9 \\\\ \\text{$2 \\leq a_i \\leq 10^{10}$ for all $i$} \\\\ \\text{$a_i \\neq a_j$ if $i \\neq j$} \\\\ \\hline \\end{array}\\\\  &\\begin{array}{|c|c|l|} \\hline \\text{Subtask} & \\text{Points} & \\text{Constraints} \\\\ \\hline 1 & \\mathbf{40} & r - \\ell \\leq 10 \\\\ \\hline 2 & \\mathbf{20} & n = 1 \\\\ \\hline 3 & \\mathbf{20} & \\text{$a_i$ is prime, for all $i$} \\\\ \\hline 4 & \\mathbf{20} & \\text{No further constraints.} \\\\ \\hline \\end{array}\\\\  \\end{align*}$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "C. 中国剩余问题",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

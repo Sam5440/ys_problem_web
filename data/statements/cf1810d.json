@@ -48,98 +48,98 @@
     "legend": [
       {
         "ai": "蜗牛正在爬树。树的高度为 h$$$h$$$ 米，蜗牛从位置 0$$$0$$$ 出发。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每只蜗牛有两个属性 a$$$a$$$ 和 b$$$b$$$(a>b$$$a  \\gt  b$$$)。从第 1$$$1$$$ 天开始，一只蜗牛按照如下方式爬树：白天，它向上爬 a$$$a$$$ 米；夜晚，蜗牛休息，并向下滑 b$$$b$$$ 米。如果在第 n$$$n$$$ 天，蜗牛第一次到达位置 h$$$h$$$(即树顶)，它就会完成攀爬，我们称这只蜗牛花费了 n$$$n$$$ 天爬树。注意，在爬树的最后一天，蜗牛不一定会向上爬 a$$$a$$$ 米，因为它到树顶的距离可能小于 a$$$a$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "遗憾的是，一开始你不知道树的确切高度 h$$$h$$$，但你知道 h$$$h$$$ 是一个正整数。共有 q$$$q$$$ 个事件，分为两种。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "类型 1$$$1$$$ 事件：一只属性为 a$$$a$$$、b$$$b$$$ 的蜗牛到来，声称它花费了 n$$$n$$$ 天爬树。如果该消息与之前采纳的信息相矛盾(即不存在一棵树，使得之前采纳的所有陈述和这条陈述都为真)，则忽略它。否则，采纳它。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "类型 2$$$2$$$ 事件：一只属性为 a$$$a$$$、b$$$b$$$ 的蜗牛到来，并询问它爬树需要花费多少天。你只能根据截至目前所采纳的信息给出答案。如果无法精确确定答案，请报告无法确定。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你需要按顺序处理所有事件。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "每个测试包含多个测试用例。第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)——测试用例的数量。接下来是这些测试用例的描述。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第一行包含一个整数 q$$$q$$$(1≤q≤2⋅105$$$1\\le q \\le 2\\cdot 10^5$$$)——事件的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 q$$$q$$$ 行中，每行的第一个整数为 1$$$1$$$ 或 2$$$2$$$，表示事件类型。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果事件类型为 1$$$1$$$，则其后跟着三个整数 a$$$a$$$、b$$$b$$$ 和 n$$$n$$$(1≤a,b,n≤109$$$1\\le a,b,n \\le 10^9$$$，a>b$$$a \\gt b$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果事件类型为 2$$$2$$$，则其后跟着两个整数 a$$$a$$$ 和 b$$$b$$$(1≤a,b≤109$$$1\\le a,b \\le 10^9$$$，a>b$$$a \\gt b$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有测试用例中 q$$$q$$$ 的总和不超过 2⋅105$$$2\\cdot 10^5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个测试用例，在一行中输出 q$$$q$$$ 个整数，每个事件对应一个，顺序与事件相同。具体来说，",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于每个类型为 1$$$1$$$ 的事件，如果你采纳该消息，则输出 1$$$1$$$；如果忽略它，则输出 0$$$0$$$；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于每个类型为 2$$$2$$$ 的事件，输出一个整数，表示蜗牛将花费的天数。如果无法确定，则输出 −1$$$-1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个测试用例中，我们可以通过第一条消息确定 h=7$$$h=7$$$，因此我们知道第二只蜗牛和第三只蜗牛分别需要花费 2$$$2$$$ 天和 5$$$5$$$ 天到达顶部。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "让我们展示第二只蜗牛是如何爬行的：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第 1$$$1$$$ 天的白天：向上爬了 4$$$4$$$ 米，现在位于位置 4$$$4$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第 1$$$1$$$ 天的夜晚：向下滑了 1$$$1$$$ 米，现在位于位置 3$$$3$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第 2$$$2$$$ 天的白天：爬升了 4$$$4$$$ 米，现在位于位置 7$$$7$$$(到达顶部)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第三个测试用例中，第二只蜗牛的消息与第一只蜗牛的消息相矛盾，因为第二只蜗牛说自己花了 3$$$3$$$ 天，而在最初的 3$$$3$$$ 天中它最多只能爬升 1+1+2=4$$$1+1+2=4$$$ 米。然而，第一只蜗牛只需要 1$$$1$$$ 天就能爬升 4$$$4$$$ 米。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "D. 爬树",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

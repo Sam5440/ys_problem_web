@@ -50,57 +50,57 @@
     "legend": [
       {
         "ai": "在这道题中，你需要模拟一台单线程服务器的工作流程。有 n 个查询需要处理，第 i 个查询将在时刻 ti 到达，并需要处理 di 个时间单位。保证所有 ti 互不相同。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "当一个查询出现时，服务器可能有以下三种反应：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果服务器空闲且查询队列为空，那么服务器会立即开始处理该查询。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果服务器正忙且队列中的查询少于 b 个，那么新查询会被加入队列末尾。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果服务器正忙，并且队列中已经有 b 个查询等待处理，那么新的查询将被直接拒绝，永远不会被处理。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "服务器一处理完某个查询，就会从队列中取出一个新的查询（当然，前提是队列不为空）。如果一个新查询在时刻 x 到达，而服务器恰好也在这一时刻处理完另一个查询，我们认为服务器会先从队列中取出查询，然后新查询才会到达。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于每个查询，求出服务器处理完它的时刻；如果该查询会被拒绝，则输出 -1。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "考虑第一个样例。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "服务器将在时刻 2 开始处理第一个请求，并将在时刻 11 完成处理。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "时刻 4 出现第二个请求，并进入队列。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "时刻 10 出现第三个请求。然而，服务器仍在处理请求 1，b = 1，并且队列中已经有请求 2 在等待，因此第三个请求会被直接拒绝。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "时刻 11，服务器将完成对第一个请求的处理，并从队列中取出第二个请求。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "时刻 15 出现第四个请求。由于服务器当前正忙，该请求进入队列。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在时刻 19，两个事件同时发生：服务器完成处理第二个查询，第五个查询出现。正如题面所述，服务器会先完成处理第二个查询，然后从队列中取出第四个查询，之后第五个查询才会出现。由于队列为空，第五个查询在那里被处理。",
@@ -118,22 +118,22 @@
     "input": [
       {
         "ai": "输入的第一行包含两个整数 n 和 b（1 ≤ n，b ≤ 200 000），分别表示查询的数量和查询队列可能达到的最大长度。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来 n 行按照时间顺序给出查询的描述。每个描述包含两个整数 ti 和 di（1 ≤ ti，di ≤ 109），其中 ti 表示第 i 个查询到达的时刻，di 表示服务器处理该查询所需的时间。保证对于所有 i > 1，都有 ti - 1 < ti。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出由 n 个整数 e1，e2，...，en 组成的序列，其中 ei 表示服务器处理完第 i 个查询的时刻（查询按照它们在输入中出现的顺序编号）；如果对应的查询被拒绝，则 ei 为  -1。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "B. 处理查询",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

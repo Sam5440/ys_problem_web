@@ -46,74 +46,74 @@
     "legend": [
       {
         "ai": "Miyako 带着一把尤克里里来到了跳蚤王国。她与当地的跳蚤居民成为了好朋友，并且每天为他们演奏美妙的音乐。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "作为回报，跳蚤们为她制作了一把更大的尤克里里：它有 n$$$n$$$ 根弦，每根弦有 (1018+1)$$$(10^{18} + 1)$$$ 个品位，编号从 0$$$0$$$ 到 1018$$$10^{18}$$$。跳蚤们使用数组 s1,s2,…,sn$$$s_1, s_2, \\ldots, s_n$$$ 来描述尤克里里的调音，也就是说，第 i$$$i$$$ 根弦上第 j$$$j$$$ 个品位的音高为整数 si+j$$$s_i + j$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Miyako 即将离开这个王国，但跳蚤们希望 Miyako 能为它们回答最后几个问题。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个问题的形式如下：“如果考虑所有弦上编号在 l$$$l$$$ 到 r$$$r$$$(包含两端)之间的品位，共有多少种不同的音高？”",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Miyako 即将前往蟋蟀王国，没有时间回答所有问题。请帮助她完成这项任务！",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "形式化地说，给定一个有 n$$$n$$$ 行和 (1018+1)$$$(10^{18}+1)$$$ 列的矩阵，其中第 i$$$i$$$ 行第 j$$$j$$$ 列的单元格(0≤j≤1018$$$0 \\le j \\le 10^{18}$$$)中包含整数 si+j$$$s_i + j$$$。你需要回答 q$$$q$$$ 个查询，在第 k$$$k$$$ 个查询中，需要回答矩阵中从第 lk$$$l_k$$$ 列到第 rk$$$r_k$$$ 列(包含两端)之间有多少个不同的整数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤100000$$$1 \\leq n \\leq 100\\,000$$$)，表示弦的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行包含 n$$$n$$$ 个整数 s1,s2,…,sn$$$s_1, s_2, \\ldots, s_n$$$(0≤si≤1018$$$0 \\leq s_i \\leq 10^{18}$$$)——尤克里里的调音。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三行包含一个整数 q$$$q$$$(1≤q≤100000$$$1 \\leq q \\leq 100\\,000$$$)——问题的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 q$$$q$$$ 行中的第 k$$$k$$$ 行包含两个整数 lk$$$l_k$$$，rk$$$r_k$$$(0≤lk≤rk≤1018$$$0 \\leq l_k \\leq r_k \\leq 10^{18}$$$)——跳蚤提出的问题。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个问题输出一个数字，数字之间用空格分隔——不同音高的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "对于第一个样例，6$$$6$$$ 根弦上的音高如下所示。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "品格01234567…s1：345678910…s2：12345678…s3：4567891011…s4：12345678…s5：56789101112…s6：910111213141516…$$ \\begin{matrix} \\textbf{Fret} & \\textbf{0} & \\textbf{1} & \\textbf{2} & \\textbf{3} & \\textbf{4} & \\textbf{5} & \\textbf{6} & \\textbf{7} & \\ldots \\\\ s_1: & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & \\dots \\\\ s_2: & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \\dots \\\\ s_3: & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & \\dots \\\\ s_4: & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \\dots \\\\ s_5: & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & \\dots \\\\ s_6: & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & \\dots \\end{matrix} $$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第 7$$$7$$$ 品上有 5$$$5$$$ 种不同的音高——8、10、11、12、16$$$8, 10, 11, 12, 16$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第 0、1、2$$$0, 1, 2$$$ 品上有 10$$$10$$$ 种不同的音高——1、2、3、4、5、6、7、9、10、11$$$1, 2, 3, 4, 5, 6, 7, 9, 10, 11$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "D. Frets On Fire",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

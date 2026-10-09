@@ -38,58 +38,58 @@
     "legend": [
       {
         "ai": "在 Busy Beaver 的机器人实验室深处，坐落着一台实验性的 Busy Beaver 机器。给定一个用 B$$$B$$$ 进制表示的正整数 X$$$X$$$，它尝试生成两个正整数 Y$$$Y$$$ 和 Z$$$Z$$$，使得 X+Y=Z$$$X + Y = Z$$$，并且 Y$$$Y$$$ 和 Z$$$Z$$$ 的 B$$$B$$$ 进制表示恰好包含完全相同的数字多重集。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "机器从不生成前导零，也从不输出位数达到 2⋅105$$$2 \\cdot 10^5$$$ 或更多的数字。它最近停止工作了，因此你的任务是判断这样的 Y$$$Y$$$ 和 Z$$$Z$$$ 是否存在，并在存在时输出它们。给定的是 X$$$X$$$ 在 B$$$B$$$ 进制下的各位数字，且不含前导零。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤100$$$1 \\le T \\le 100$$$)，表示测试用例的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例由两行组成。每个测试用例的第一行包含两个整数 N$$$N$$$ 和 B$$$B$$$(1≤N≤105$$$1 \\le N \\le 10^5$$$；2≤B≤105$$$2 \\le B \\le 10^5$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第二行包含 N$$$N$$$ 个整数 a1,a2,…,aN$$$a_1, a_2, \\ldots, a_N$$$(0≤ai≤B−1$$$0 \\le a_i \\le B-1$$$；a1≠0$$$a_1 \\ne 0$$$)，表示 X$$$X$$$ 在 B$$$B$$$ 进制下的各位数字：X=a1BN−1+a2BN−2+⋯+aN。$$ X = a_1 B^{N-1} + a_2 B^{N-2} + \\cdots + a_N. $$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "所有测试用例的 N$$$N$$$ 之和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个测试用例，如果不存在有效解，输出一行 NO。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "否则，第一行输出 YES。第二行输出一个整数 M$$$M$$$(1≤M≤2⋅105$$$1 \\le M \\le 2 \\cdot 10^5$$$)，表示 Y$$$Y$$$ 和 Z$$$Z$$$ 中的数字个数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "下一行输出 M$$$M$$$ 个数字 p1,p2,…,pM$$$p_1, p_2, \\ldots, p_M$$$(0≤pi≤B−1$$$0 \\le p_i \\le B-1$$$；p1≠0$$$p_1 \\ne 0$$$)，表示 Y=p1BM−1+p2BM−2+⋯+pM。$$ Y = p_1 B^{M-1} + p_2 B^{M-2} + \\cdots + p_M. $$ 接下来一行输出 M$$$M$$$ 个数字 q1,q2,…,qM$$$q_1, q_2, \\ldots, q_M$$$(0≤qi≤B−1$$$0 \\le q_i \\le B-1$$$；q1≠0$$$q_1 \\ne 0$$$)，表示 Z=q1BM−1+q2BM−2+⋯+qM。$$ Z = q_1 B^{M-1} + q_2 B^{M-2} + \\cdots + q_M. $$ 数字序列 (p1,…,pM)$$$(p_1, \\ldots, p_M)$$$ 和 (q1,…,qM)$$$(q_1, \\ldots, q_M)$$$ 必须使用完全相同的数字多重集，并且它们表示的整数必须满足 X+Y=Z$$$X + Y = Z$$$。YES 和 NO 的大小写可以任意混用。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个测试用例中，当 B=10$$$B = 10$$$ 且 X=36$$$X = 36$$$ 时，一个有效解是 Y=15$$$Y = 15$$$ 和 Z=51$$$Z = 51$$$，因为 51=36+15$$$51 = 36 + 15$$$，且两个数都使用数字 {1,5}$$$\\{1,5\\}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个测试用例中，B=5$$$B = 5$$$，且 X$$$X$$$ 的数字表示为 (1,4,3,4)5$$$(1, 4, 3, 4)_5$$$，X=1⋅53+4⋅52+3⋅51+4=244。$$ X = 1 \\cdot 5^3 + 4 \\cdot 5^2 + 3 \\cdot 5^1 + 4 = 244. $$ 一个有效的数对是 Y=(1,4,3,2)5=242，Z=(3,4,2,1)5=486，$$ Y = (1, 4, 3, 2)_5 = 242, \\qquad Z = (3, 4, 2, 1)_5 = 486, $$ 它们共有数字多重集 {1,2,3,4}$$$\\{1,2,3,4\\}$$$，并且满足 X+Y=Z$$$X + Y = Z$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "G. Busy Beaver 的故障机器",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

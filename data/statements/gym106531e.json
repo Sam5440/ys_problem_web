@@ -66,73 +66,73 @@
       },
       {
         "ai": "若 d=+1$$$d = +1$$$，街道是直线 y=x+k$$$y = x + k$$$。当快递员站在这条街道上的一个网格点时，除了普通移动外，还可以在一分钟内移动到 (x+1,y+1)$$$(x+1, y+1)$$$ 或 (x−1,y−1)$$$(x-1, y-1)$$$，并保持在街道上。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "若 d=−1$$$d = -1$$$，街道是直线 y=−x+k$$$y = -x + k$$$。当快递员站在这条街道上的一个网格点时，除了普通移动外，还可以在一分钟内移动到 (x+1,y−1)$$$(x+1, y-1)$$$ 或 (x−1,y+1)$$$(x-1, y+1)$$$，并保持在街道上。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "这些额外的斜向移动仅在快递员当前位于属于相应斜街的网格点时可用。每次移动，无论是普通移动还是斜向移动，都恰好耗时 1$$$1$$$ 分钟。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "例如，假设 A=(0,0)$$$A = (0, 0)$$$、B=(3,3)$$$B = (3, 3)$$$，且只有一条斜街 (k,d)=(0,+1)$$$(k, d) = (0, +1)$$$，即直线 y=x$$$y = x$$$。快递员可以沿着这条街道在 3$$$3$$$ 分钟内从 A$$$A$$$ 到达 B$$$B$$$：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/d2dc3d3ae8efd117f55b023e20144523b0c59a42.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "帮助小组找出从 A$$$A$$$ 到 B$$$B$$$ 所需的最少分钟数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含四个整数 ax$$$a_x$$$、ay$$$a_y$$$、bx$$$b_x$$$ 和 by$$$b_y$$$(−109≤ax,ay,bx,by≤109$$$-10^{9} \\leq a_x, a_y, b_x, b_y \\leq 10^{9}$$$)，表示 A$$$A$$$ 和 B$$$B$$$ 的坐标。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行包含一个整数 M$$$M$$$(0≤M≤2×105$$$0 \\leq M \\leq 2 \\times 10^{5}$$$)，表示斜向街道的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 M$$$M$$$ 行中，每行包含两个整数 k$$$k$$$ 和 d$$$d$$$(−2×109≤k≤2×109$$$-2 \\times 10^{9} \\leq k \\leq 2 \\times 10^{9}$$$，d∈{−1,+1}$$$d \\in \\{-1, +1\\}$$$)，描述一条如上文所定义的斜向街道。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出一个整数：从 A$$$A$$$ 前往 B$$$B$$$ 所需的最少分钟数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "样例 1 解释",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "k=0$$$k = 0$$$、d=+1$$$d = +1$$$ 的斜向街道是直线 y=x$$$y = x$$$，它同时经过 A=(0,0)$$$A = (0, 0)$$$ 和 B=(3,3)$$$B = (3, 3)$$$。快递员沿着这条街道行驶三步斜向步伐 (0,0)→(1,1)→(2,2)→(3,3)$$$(0,0) \\to (1,1) \\to (2,2) \\to (3,3)$$$，总计需要 3$$$3$$$ 分钟。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "样例 2 解释",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "没有斜街(M=0$$$M = 0$$$)，因此快递员每次只能移动一个街区。从 A=(0,0)$$$A = (0, 0)$$$ 到 B=(2,3)$$$B = (2, 3)$$$ 的一条最短路线需要 5$$$5$$$ 分钟。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "样例 3 解释",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "k=0$$$k = 0$$$、d=+1$$$d = +1$$$ 的斜街是直线 y=x$$$y = x$$$，A=(0,0)$$$A = (0, 0)$$$ 位于该直线上，而 B=(5,1)$$$B = (5, 1)$$$ 不在其上。快递员先沿斜街走一步，从 (0,0)→(1,1)$$$(0, 0) \\to (1, 1)$$$，然后步行 (1,1)→(2,1)→(3,1)→(4,1)→(5,1)$$$(1,1) \\to (2,1) \\to (3,1) \\to (4,1) \\to (5,1)$$$，总计需要 5$$$5$$$ 分钟。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },

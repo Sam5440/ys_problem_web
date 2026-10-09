@@ -52,103 +52,103 @@
     "legend": [
       {
         "ai": "这是一道交互题。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Bob 生活在一个大小为 n×n$$$n \\times n$$$ 的方格网格中，行从上到下编号为 1$$$1$$$ 到 n$$$n$$$，列从左到右编号为 1$$$1$$$ 到 n$$$n$$$。每个格子要么是可通行的，要么是被阻塞的，但你不知道网格的具体情况。你只会得到一个整数 n$$$n$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Bob 可以在可通行的格子中移动，但只能沿有限的几个方向移动。当 Bob 位于网格中的一个可通行格子时，如果相邻格子也是可通行的，他可以向下或向右移动到该格子。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你最多可以提出 4⋅n$$$4 \\cdot n$$$ 次形式为 \"? r1$$$r_1$$$ c1$$$c_1$$$ r2$$$r_2$$$ c2$$$c_2$$$\" 的查询(1≤r1≤r2≤n$$$1 \\le r_1 \\le r_2 \\le n$$$，1≤c1≤c2≤n$$$1 \\le c_1 \\le c_2 \\le n$$$)。如果 Bob 可以从格子 (r1,c1)$$$(r_1, c_1)$$$ 到达格子 (r2,c2)$$$(r_2, c_2)$$$，答案将为 \"YES\"，否则为 \"NO\"。特别地，如果两个格子中有一个(或两个)是被阻塞的格子，那么答案一定是 \"NO\"。由于 Bob 不喜欢短途移动，因此只有当两个格子之间的曼哈顿距离至少为 n−1$$$n - 1$$$ 时，才能提出查询，即必须满足以下条件：(r2−r1)+(c2−c1)≥n−1$$$(r_2 - r_1) + (c_2 - c_1) \\ge n - 1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证 Bob 可以从左上角 (1,1)$$$(1, 1)$$$ 到达右下角 (n,n)$$$(n, n)$$$，你的任务是找出一条路径。你应当以 \"! S\" 的形式输出答案，其中 S$$$S$$$ 是一个长度为 2⋅n−2$$$2 \\cdot n - 2$$$、由字符 'D' 和 'R' 组成的字符串，分别表示向下和向右移动。向下移动会使第一个坐标增加 1$$$1$$$，向右移动会使第二个坐标增加 1$$$1$$$。如果存在多种解，输出其中任意一种都可以。输出解后应立即结束程序。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入仅包含一行，一个整数 n$$$n$$$ (2≤n≤500$$$2 \\le n \\le 500$$$)，表示网格的大小。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "准备输出答案时，输出一行，其中包含 \"! S\"，其中 S$$$S$$$ 是一个长度为 2⋅n−2$$$2 \\cdot n - 2$$$、由字符 'D' 和 'R' 组成的字符串，分别表示向下和向右移动。这条路径必须是从单元格 (1,1)$$$(1, 1)$$$ 到单元格 (n,n)$$$(n, n)$$$ 的有效路径，并且只能经过允许的单元格。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你最多可以进行 4⋅n$$$4 \\cdot n$$$ 次查询。要进行一次查询，请输出一行，其中包含 \"? r1$$$r_1$$$ c1$$$c_1$$$ r2$$$r_2$$$ c2$$$c_2$$$\" (1≤r1≤r2≤n$$$1 \\le r_1 \\le r_2 \\le n$$$，1≤c1≤c2≤n$$$1 \\le c_1 \\le c_2 \\le n$$$)。之后，你应当读取一行，其中包含 \"YES\" 或 \"NO\"，具体取决于查询的答案。\"YES\" 表示 Bob 可以从单元格 (r1,c1)$$$(r_1, c_1)$$$ 到达单元格 (r2,c2)$$$(r_2, c_2)$$$，\"NO\" 表示相反的情况。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "注意，网格在你的程序开始运行前就已经固定，并且不会依赖于你的查询。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "输出查询后，不要忘记输出换行并刷新输出。否则你将收到 Idleness limit exceeded 或其他否定结果。为此，请使用：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在 C++ 中使用 fflush(stdout) 或 cout.flush()；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在 Java 中使用 System.out.flush()；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在 Pascal 中使用 flush(output)；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在 Python 中使用 stdout.flush()；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "其他语言请参阅相关文档。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果输出 \"BAD\" 而不是 \"YES\" 或 \"NO\"，则表示你进行了无效查询。收到 \"BAD\" 后立即退出，此时你将得到 Wrong answer 判定。否则，由于你的解法会继续从已关闭的流中读取数据，你可能会得到任意判定。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "第一个样例见下图。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/4bcdeab2ec8d0a3c5e6d71bf5a192d3236646d15.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "若要进行 hack，请使用以下输入格式：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第一行应包含一个整数 n$$$n$$$(2≤n≤500$$$2 \\le n \\le 500$$$)——网格的大小。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 n$$$n$$$ 行中的每一行应包含一个由 n$$$n$$$ 个字符 '#' 或 '.' 组成的字符串，其中 '#' 表示被阻塞的单元格，'.' 表示可通行的单元格。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "例如，下面的文本描述了上面所示的样例：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       null
     ]
   },
   "titleZh": {
     "ai": "E. 向下或向右",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

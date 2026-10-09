@@ -44,82 +44,82 @@
     "legend": [
       {
         "ai": "Gildong 有一块正方形棋盘，由 n$$$n$$$ 行、n$$$n$$$ 列的方格组成，每个方格中包含一个数字(从 0$$$0$$$ 到 9$$$9$$$ 的单个数字)。第 i$$$i$$$ 行第 j$$$j$$$ 列的方格可以表示为 (i,j)$$$(i, j)$$$，且每个方格的边长为 1$$$1$$$。Gildong 喜欢大的东西，因此对于每个数字 d$$$d$$$，他想找到一个三角形，使得：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "三角形的每个顶点都位于某个单元格的中心。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "三角形每个顶点所在单元格的数字都是 d$$$d$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "三角形至少有一条边平行于棋盘的一条边。可以假设长度为 0$$$0$$$ 的边同时平行于棋盘的两条边。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "三角形的面积最大。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "当然，他不能只满足于直接找到这些三角形。因此，对于每个数字 d$$$d$$$，他会将棋盘上恰好一个单元格的数字改为 d$$$d$$$，然后寻找这样的一个三角形。处理完每个数字后，他会将该单元格改回原来的数字。求对于每个数字，他能够构造出的三角形的最大面积。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "注意，他可以将三角形的多个顶点放在同一个单元格中，并且三角形可以是退化三角形；也就是说，三角形的面积可以为 0$$$0$$$。此外，注意他可以将一个单元格的数字从 d$$$d$$$ 改为 d$$$d$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "每个测试包含一个或多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤1000$$$1 \\le t \\le 1000$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤2000$$$1 \\le n \\le 2000$$$)——棋盘的行数和列数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例接下来的 n$$$n$$$ 行中，每行都包含一个由 n$$$n$$$ 个数字组成且不含空格的字符串。第 i$$$i$$$ 行的第 j$$$j$$$ 个数字是位于 (i,j)$$$(i, j)$$$ 的单元格中的数字。每个数字都是字符 0$$$0$$$ 到 9$$$9$$$ 中的一个。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有测试用例中 n2$$$n^2$$$ 的总和不超过 4⋅106$$$4 \\cdot 10^6$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个测试用例，输出一行包含 10$$$10$$$ 个整数。第 i$$$i$$$ 个整数是 Gildong 在 d=i−1$$$d = i-1$$$ 时能够构成的三角形的最大面积乘以 2$$$2$$$ 的结果。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个测试用例中，当 d=0$$$d=0$$$ 时，无论他选择哪个单元格，顶点位于 (1,1)$$$(1, 1)$$$、(1,3)$$$(1, 3)$$$ 和 (3,1)$$$(3, 1)$$$ 的三角形都是最大的三角形，其面积为 2⋅22=2$$$\\cfrac{2 \\cdot 2}{2} = 2$$$。由于我们应输出其乘以 2$$$2$$$ 后的值，因此 d=0$$$d=0$$$ 时的答案为 4$$$4$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于 d=1$$$d=1$$$，Gildong 可以将位于 (1,3)$$$(1, 3)$$$ 的格子中的数字改为 1$$$1$$$，从而以所有三个 1$$$1$$$ 所在的位置为顶点组成一个面积为 2$$$2$$$ 的三角形。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于 d=2$$$d=2$$$，Gildong 可以将以下六个格子中的一个格子的数字改为 2$$$2$$$，从而组成一个面积为 12$$$\\cfrac{1}{2}$$$ 的三角形：(1,1)$$$(1, 1)$$$、(1,2)$$$(1, 2)$$$、(1,3)$$$(1, 3)$$$、(3,1)$$$(3, 1)$$$、(3,2)$$$(3, 2)$$$ 和 (3,3)$$$(3, 3)$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于剩余的数字(从 3$$$3$$$ 到 9$$$9$$$)，Gildong 选择修改的格子将是唯一包含该数字的格子。因此，三角形始终会是一个面积为 0$$$0$$$ 的退化三角形。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第三种情况下，对于 d=4$$$d=4$$$，注意，如果 Gildong 修改 (1,4)$$$(1, 4)$$$ 处格子中的数字，并将其与 (2,1)$$$(2, 1)$$$ 和 (4,3)$$$(4, 3)$$$ 处的格子一起使用，那么三角形的面积会大于答案，但这是无效的，因为它违反了三角形至少有一条边必须平行于棋盘某条边的条件。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "C. 三角形",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

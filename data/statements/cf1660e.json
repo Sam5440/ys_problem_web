@@ -46,90 +46,90 @@
     "legend": [
       {
         "ai": "给定一个大小为 $$$n \\times n$$$ 的二进制矩阵 $$$A$$$。行从上到下编号为 $$$1$$$ 到 $$$n$$$，列从左到右编号为 $$$1$$$ 到 $$$n$$$。位于第 $$$i$$$ 行和第 $$$j$$$ 列交点处的元素称为 $$$A_{ij}$$$。考虑一组包含 $$$4$$$ 个操作的操作：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将所有行循环上移。编号为 $$$i$$$ 的行将被写入编号为 $$$i-1$$$ 的行的位置($$$2 \\le i \\le n$$$)，编号为 $$$1$$$ 的行将被写入编号为 $$$n$$$ 的行的位置。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将所有行循环下移。编号为 $$$i$$$ 的行将被写入编号为 $$$i+1$$$ 的行的位置($$$1 \\le i \\le n - 1$$$)，编号为 $$$n$$$ 的行将被写入编号为 $$$1$$$ 的行的位置。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将所有列循环左移。编号为 $$$j$$$ 的列将被写入编号为 $$$j-1$$$ 的列的位置($$$2 \\le j \\le n$$$)，编号为 $$$1$$$ 的列将被写入编号为 $$$n$$$ 的列的位置。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将所有列循环右移。编号为 $$$j$$$ 的列将被写入编号为 $$$j+1$$$ 的列的位置($$$1 \\le j \\le n - 1$$$)，编号为 $$$n$$$ 的列将被写入编号为 $$$1$$$ 的列的位置。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/f3922cf1689c2176413d7f60a8fb3753e52b7e6a.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你可以对该矩阵执行任意（可能为零）次操作；这些操作可以按任意顺序执行。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "之后，你可以执行任意（可能为零）次新的异或操作：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "选择任意元素 $$$A_{ij}$$$，并将其赋予新值 $$$A_{ij} \\oplus 1$$$。换句话说，需要将 $$$(A_{ij} + 1) \\bmod 2$$$ 的值写入元素 $$$A_{ij}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每次执行该异或操作需要花费一个 burle。注意，$$$4$$$ 移位操作是免费的。这些 $$$4$$$ 操作只能在执行异或操作之前进行。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "输出使 $$$A$$$ 矩阵成为单位矩阵所需支付的最少 burle 数量。单位矩阵是主对角线上的元素均为 1、其余元素均为 0 的矩阵(即，当 $$$i = j$$$ 时为 $$$A_{ij} = 1$$$，否则为 $$$A_{ij} = 0$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入的第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)，表示测试中的测试用例数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "下面给出测试用例的描述。在每个测试用例之前，输入中会有一个空行。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第一行包含一个数字 $$$n$$$($$$1 \\le n \\le 2000$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来是 $$$n$$$ 行，每行恰好包含 $$$n$$$ 个字符，且只由 0 和 1 组成。这些行描述矩阵各元素中的值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有测试用例中 $$$n^2$$$ 的总和不超过 $$$4 \\cdot 10^6$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个测试用例，输出使 $$$A$$$ 矩阵成为单位矩阵所需支付的最少卢布数。换句话说，在对矩阵进行循环移位后，输出使 $$$A$$$ 矩阵成为单位矩阵所需执行的最少异或操作次数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个测试用例中，可以进行如下操作：首先将所有行向下循环移动，此时矩阵的主对角线将只包含“1”。然后，需要对唯一一个不在主对角线上的“1”执行异或操作。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个测试用例中，可以通过对该矩阵执行操作 $$$2$$$——将行向上循环移位两次——来得到一个酉矩阵。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "E. 矩阵与位移",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

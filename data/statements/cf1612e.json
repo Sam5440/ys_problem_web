@@ -56,82 +56,82 @@
     "legend": [
       {
         "ai": "Monocarp 是一个有 n$$$n$$$ 名学生的小组的辅导老师。他通过一款流行的即时通信软件中的群聊与他们交流。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "今天对 Monocarp 来说是忙碌的一天——有人要求他将许多帖子和公告转发给他的小组，因此他不得不在群聊中发送大量消息。Monocarp 很了解自己辅导的小组中的学生，所以他知道每个学生应该阅读哪条消息：Monocarp 希望学生 i$$$i$$$ 阅读消息 mi$$$m_i$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "当然，没有人会阅读群聊中的所有消息。因此，Monocarp 决定将其中一些消息置顶。Monocarp 可以置顶任意数量的消息；如果他希望某人阅读某条消息，就应该将其置顶——否则这条消息肯定会被所有人跳过。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "遗憾的是，即使一条消息被置顶，一些学生仍可能跳过它。对于每个学生 i$$$i$$$，Monocarp 知道他们至多会阅读 ki$$$k_i$$$ 条消息。假设 Monocarp 将 t$$$t$$$ 条消息置顶；如果 t≤ki$$$t \\le k_i$$$，那么第 i$$$i$$$ 个学生会阅读所有置顶消息；但如果 t>ki$$$t  \\gt  k_i$$$，第 i$$$i$$$ 个学生会从置顶消息中随机选择恰好 ki$$$k_i$$$ 条(所有大小为 ki$$$k_i$$$ 的置顶消息子集被选中的概率相同)，并且只阅读被选中的消息。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Monocarp 想要最大化阅读了各自消息的学生人数的期望值(也就是满足学生 i$$$i$$$ 阅读消息 mi$$$m_i$$$ 的下标 i$$$i$$$ 的数量)。请帮助他选择应该置顶多少条消息，以及置顶哪些消息！",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$)——会议中的学生人数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来有 n$$$n$$$ 行。第 i$$$i$$$ 行包含两个整数 mi$$$m_i$$$ 和 ki$$$k_i$$$(1≤mi≤2⋅105$$$1 \\le m_i \\le 2 \\cdot 10^5$$$；1≤ki≤20$$$1 \\le k_i \\le 20$$$)——分别表示 Monocarp 希望第 i$$$i$$$ 个学生阅读的消息编号，以及第 i$$$i$$$ 个学生将阅读的消息数量上限。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "第一行输出一个整数 t$$$t$$$(1≤t≤2⋅105$$$1 \\le t \\le 2 \\cdot 10^5$$$)——Monocarp 应该置顶的消息数量。第二行输出 t$$$t$$$ 个互不相同的整数 c1$$$c_1$$$、c2$$$c_2$$$、...、ct$$$c_t$$$(1≤ci≤2⋅105$$$1 \\le c_i \\le 2 \\cdot 10^5$$$)——Monocarp 应该置顶的消息编号。消息可以按任意顺序列出。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果有多个答案，输出其中任意一个。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "让我们来看题面中的样例。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第一个样例中，Monocarp 置顶了消息 5$$$5$$$ 和 10$$$10$$$。如果第一个学生阅读消息 5$$$5$$$，第二个学生阅读消息 5$$$5$$$ 和 10$$$10$$$，第三个学生阅读消息 5$$$5$$$ 和 10$$$10$$$，那么阅读了各自对应消息的学生人数为 2$$$2$$$；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果第一个学生阅读消息 10$$$10$$$，第二个学生阅读消息 5$$$5$$$ 和 10$$$10$$$，第三个学生阅读消息 5$$$5$$$ 和 10$$$10$$$，那么阅读了各自对应消息的学生人数为 3$$$3$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "因此，阅读各自对应消息的学生人数的期望值为 52$$$\\frac{5}{2}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个样例中，Monocarp 置顶了消息 10$$$10$$$。如果第一个学生阅读消息 10$$$10$$$，第二个学生阅读消息 10$$$10$$$，第三个学生阅读消息 10$$$10$$$，那么阅读了各自对应消息的学生人数为 2$$$2$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "因此，阅读各自对应消息的学生人数的期望值为 2$$$2$$$。如果 Monocarp 同时置顶了消息 5$$$5$$$ 和 10$$$10$$$，那么阅读各自对应消息的学生人数的期望值也会是 2$$$2$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第三个样例中，阅读各自对应消息的学生人数的期望值为 83$$$\\frac{8}{3}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第四个样例中，将阅读各自消息的学生的期望数量为 2$$$2$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "E. 消息",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

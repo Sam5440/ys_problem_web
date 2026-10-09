@@ -53,91 +53,91 @@
     "input": [
       {
         "ai": "输入的唯一一行包含两个数 n 和 k（2 ≤ k ≤ n ≤ 10^5），分别表示菜单中的菜品数量以及 Noora 点的菜品数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "如果你想给出答案，请输出形如 2 x y 的字符串（1 ≤ x, y ≤ n，x ≠ y）。这表示你认为菜品 x 和 y 在 Noora 点的菜品之中。之后刷新输出并终止程序。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在帮助 Leha 的过程中，你至多可以向 Noora 询问 60 次。每次查询都应单独输出一行，格式为 1 x y（1 ≤ x, y ≤ n）。你必须同时输出换行符并刷新输出。刷新后，应从输入中读取该查询的答案。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每次查询后，评测程序会根据女孩的回答，在输入流中输出一行 «TAK» 或 «NIE»（不含引号）。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你可以使用以下方式刷新输出（在输出一个整数和换行符之后）：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "C++ 中的 fflush(stdout)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Java 中的 System.out.flush()；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Python 中的 stdout.flush()；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Pascal 中的 flush(output)；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "其他语言请参阅相关文档。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Hack",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "进行 Hack 时，你应在第一行输入两个整数 n 和 k（2 ≤ k ≤ n ≤ 105），并在第二行输入 k 个互不相同的整数 a1, a2, ..., ak（1 ≤ ai ≤ n）来描述 Noora 点的菜，这些整数应按升序排列。当然，你想要 Hack 的解法将无法读取已点菜品的编号。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "样例中有三道菜。Noora 点了编号为 2 和 3 的菜，这是 Leha 需要猜出的。如果 Noora 收到第一道菜(x = 1)的请求，那么她会选择第二道菜(a = 2)作为具有最小值 ![](https://espresso.codeforces.com/e5a4a1705bc256e413564795cc8b70857f0ae44c.png) 的菜。对于第二道菜(x = 2)和第三道菜(x = 3)，选择它们本身就是最优的，因为此时 ![](https://espresso.codeforces.com/79add195d023131e992b60a354fec89501759e75.png)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Leha 询问 Noora 接下来的两道菜：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "x = 1，y = 2，此时他会得到 «NIE» 的回答，因为 |1 - 2| > |2 - 2|",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "x = 2，y = 1，此时他会得到 «TAK» 的回答，因为 |2 - 2| ≤ |1 - 2|",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "x = 1，y = 3，此时他会得到 «NIE» 的回答，因为 |1 - 2| > |3 - 3|",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "x = 3，y = 1，此时他会得到 «TAK» 的回答，因为 |3 - 3| ≤ |1 - 2|",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "x = 2，y = 3，那么他将得到 «TAK» 答案，因为 |2 - 2| ≤ |3 - 3|",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "x = 3，y = 2，那么他将得到 «TAK» 答案，因为 |3 - 3| ≤ |2 - 2|",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "根据现有信息，可以得出 Nura 点了编号为 2 和 3 的菜。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "legend": [

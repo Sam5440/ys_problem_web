@@ -40,56 +40,56 @@
     "legend": [
       {
         "ai": "桌上你面前有两副牌，其中一些牌正面朝上，另一些牌正面朝下。你想将它们合并成一副牌，并使每张牌都正面朝下。你需要分两个阶段完成这一操作。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第一阶段是以一种不改变同一副牌中各张牌相对顺序的方式合并两副牌。也就是说，对于同一副牌中的任意两张不同的牌 i 和 j，如果牌 i 位于牌 j 的上方，那么合并后牌 i 也必须位于牌 j 的上方。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二阶段在第一阶段得到的牌堆上进行。在这一阶段，可以执行翻转操作。一次翻转中，你可以取出顶部的若干张牌，将它们全部翻转后再放回去。因此，每张被取出的牌都会被翻转，同时这些牌的顺序也会反转。也就是说，翻转前位于底部的牌，翻转后会位于顶部。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你的任务是确保所有牌都正面朝下。请找出第一阶段中合并牌的顺序以及第二阶段中的翻转操作序列，使所有牌都正面朝下，并且翻转次数最少。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入的第一行包含一个整数 n——第一副牌中牌的数量（1 ≤ n ≤ 10^5）。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行输入包含 n 个整数 a1, a2, ..., an，整数之间用一个空格分隔（0 ≤ ai ≤ 1）。如果第 i 张牌正面朝下，则 ai 的值为 0；如果牌正面朝上，则 ai 的值为 1。牌按照从最上面一张到最下面一张的顺序给出。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三行输入包含一个整数 m——第二叠牌中的牌数（1 ≤ m ≤ 10^5）。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第四行输入包含 m 个整数 b1, b2, ..., bm，整数之间用一个空格分隔（0 ≤ bi ≤ 1）。如果第 i 张牌正面朝下，则 bi 的值为 0；如果牌正面朝上，则 bi 的值为 1。牌按照从最上面一张到最下面一张的顺序给出。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "第一行输出 n + m 个用空格分隔的整数，表示第一阶段结束后牌的排列顺序。请按照从上到下的顺序输出这些牌。第一叠牌中的牌应按照从上到下的顺序对应编号 1 到 n。第二叠牌中的牌应按照从上到下的顺序对应编号加 n 后的结果，即 n + 1 到 n + m。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行输出一个整数 x——使牌堆中的所有牌都正面朝下所需的最少翻转操作次数。第三行输出 x 个整数：c1, c2, ..., cx（1 ≤ ci ≤ n + m），其中每个整数表示执行一次翻转操作时需要从牌堆顶取出的牌数。请按照执行顺序输出这些操作。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果存在多个最优解，输出其中任意一个即可。保证最少操作次数不超过 6·10^5。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "H. 合并两副牌",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

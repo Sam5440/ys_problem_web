@@ -82,83 +82,83 @@
     "legend": [
       {
         "ai": "这是一道交互题。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "一座城市有 n2$$$n^2$$$ 座建筑物，它们被划分为 n$$$n$$$ 行、n$$$n$$$ 列的网格。你需要在每一对上下或左右相邻的建筑物 A$$$A$$$ 和 B$$$B$$$ 之间修建一条长度为 D(A,B)$$$D(A,B)$$$ 的道路，长度由你自行决定。由于预算限制和法律规定，每条道路的长度必须为正整数，且所有道路的总长度不得超过 48000$$$48\\,000$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "城市中有一名小偷，他将从最上方、最左侧的建筑物（第一行第一列）出发，在城市中四处游荡，并偶尔从某些建筑物中偷取文物。他可以通过连接两座相邻建筑物的道路，从一座建筑物移动到另一座建筑物。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你无法追踪他会光顾哪些建筑物，也无法得知他前往这些建筑物时所经过的路径。不过，城市中有一种追踪装置。该装置能够存储一个整数 x$$$x$$$，其初始值为 0$$$0$$$。每当小偷从建筑物 A$$$A$$$ 经过一条长度为 D(A,B)$$$D(A,B)$$$ 的道路前往另一栋相邻建筑物 B$$$B$$$ 时，追踪装置会将 x$$$x$$$ 变为 x⊕D(A,B)$$$x\\oplus D(A,B)$$$。每当小偷从一栋建筑物中盗窃时，追踪装置会报告其中存储的值 x$$$x$$$，并将其重置为 0$$$0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "事先已知小偷将恰好在 k$$$k$$$ 栋建筑物中进行盗窃，但只有在盗窃实际发生后，你才能知道追踪装置返回的值。你的任务是选择道路的长度，使得无论小偷采取何种策略、经过何种路径，你都能根据追踪装置返回的值，准确确定所有发生盗窃的建筑物的位置。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "交互",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "首先读取一行，其中包含两个整数 n$$$n$$$(2≤n≤32)$$$(2\\leq n\\leq 32)$$$ 和 k$$$k$$$(1≤k≤1024)$$$(1\\leq k\\leq 1024)$$$，分别表示行数和盗窃次数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "记第 i$$$i$$$ 行中的第 j$$$j$$$ 栋建筑物为 Bi,j$$$B_{i,j}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "然后输出 n$$$n$$$ 行，每行包含 n−1$$$n-1$$$ 个整数。第 i$$$i$$$ 行中的第 j$$$j$$$ 个整数必须为 D(Bi,j,Bi,j+1)$$$D(B_{i,j},B_{i,j+1})$$$ 的值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "然后输出 n−1$$$n-1$$$ 行，每行包含 n$$$n$$$ 个整数。第 i$$$i$$$ 行的第 j$$$j$$$ 个整数必须是 D(Bi,j,Bi+1,j)$$$D(B_{i,j},B_{i+1,j})$$$ 的值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "记住，道路的总长度不得超过 48000$$$48\\,000$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "然后回答 k$$$k$$$ 个查询。首先读入追踪器返回的值 x$$$x$$$。然后输出发生盗窃的建筑所在的行号和列号，共两个整数。之后你就可以回答下一个查询(如果存在)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "输出答案后，不要忘记输出换行符并刷新输出缓冲区。否则你将得到 Idleness limit exceeded 判定。要刷新缓冲区，请使用：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在 C++ 中使用 fflush(stdout) 或 cout.flush()；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在 Java 中使用 System.out.flush()。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Pascal 中的 flush(output)；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Python 中的 stdout.flush()；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "请阅读其他语言的文档。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Hack",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你不能在本题中进行 Hack。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [],
@@ -166,156 +166,156 @@
     "note": [
       {
         "ai": "对于样例测试，n=2$$$n=2$$$，k=4$$$k=4$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你选择修建长度如下的道路：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/ecceb8e844d103a4c2df2d68233ebcb8b1f45d70.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "小偷采取以下策略：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "从 B1,1$$$B_{1,1}$$$ 出发。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "向右移动到 B1,2$$$B_{1,2}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "向下移动到 B2,2$$$B_{2,2}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "向左移动至 B2,1$$$B_{2,1}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "向上移动至 B1,1$$$B_{1,1}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "向右移动至 B1,2$$$B_{1,2}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "从 B1,2$$$B_{1,2}$$$ 偷取。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "向左移动至 B1,1$$$B_{1,1}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "从 B1,1$$$B_{1,1}$$$ 偷取。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "向下移动至 B2,1$$$B_{2,1}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "向右移动至 B2,2$$$B_{2,2}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "向上移动至 B1,2$$$B_{1,2}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "从 B1,2$$$B_{1,2}$$$ 偷取。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "向左移动至 B1,1$$$B_{1,1}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "向下移动至 B2,1$$$B_{2,1}$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "从 B2,1$$$B_{2,1}$$$ 中窃取。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "追踪器作出如下响应：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "初始化 x=0$$$x=0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将 x$$$x$$$ 修改为 x⊕1=0⊕1=1$$$x\\oplus 1=0\\oplus1=1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将 x$$$x$$$ 修改为 x⊕4=1⊕4=5$$$x\\oplus 4=1\\oplus4=5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将 x$$$x$$$ 修改为 x⊕8=5⊕8=13$$$x\\oplus 8=5\\oplus8=13$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将 x$$$x$$$ 修改为 x⊕2=13⊕2=15$$$x\\oplus 2=13\\oplus2=15$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将 x$$$x$$$ 修改为 x⊕1=15⊕1=14$$$x\\oplus 1=15\\oplus1=14$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "返回 x=14$$$x=14$$$，并重新初始化 x=0$$$x=0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将 x$$$x$$$ 修改为 x⊕1=0⊕1=1$$$x\\oplus 1=0\\oplus1=1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "返回 x=1$$$x=1$$$，并重新初始化 x=0$$$x=0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将 x$$$x$$$ 修改为 x⊕2=0⊕2=2$$$x\\oplus 2=0\\oplus2=2$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将 x$$$x$$$ 修改为 x⊕8=2⊕8=10$$$x\\oplus 8=2\\oplus8=10$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将 x$$$x$$$ 修改为 x⊕4=10⊕4=14$$$x\\oplus 4=10\\oplus4=14$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "返回 x=14$$$x=14$$$，并重新初始化 x=0$$$x=0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将 x$$$x$$$ 修改为 x⊕1=0⊕1=1$$$x\\oplus 1=0\\oplus1=1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "将 x$$$x$$$ 修改为 x⊕2=1⊕2=3$$$x\\oplus 2=1\\oplus2=3$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "返回 x=3$$$x=3$$$，并重新初始化 x=0$$$x=0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "F. 防盗道路规划",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

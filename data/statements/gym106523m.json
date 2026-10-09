@@ -46,58 +46,58 @@
     "legend": [
       {
         "ai": "Henrique 想把车停在巴西利亚大学（UnB）的停车场。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "停车位的编号从 1$$$1$$$ 到 n$$$n$$$。编号为 i$$$i$$$ 的停车位由两个数值描述：它与主入口的距离 di$$$d_i$$$，以及它空闲的概率 pi$$$p_i$$$。Henrique 按顺序依次查看停车位，从 1$$$1$$$ 号停车位开始。到达 i$$$i$$$ 号停车位时，可能出现以下两种情况：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "停车位 i$$$i$$$ 以 pi$$$p_i$$$ 的概率空闲。此时，Henrique 有两个选择：停在 i$$$i$$$ 号停车位(Henrique 的速度极快，因此可以认为他停车耗时为 0$$$0$$$ 秒)，或者继续前往下一个停车位：若 i≠n$$$i \\neq n$$$，则前往 i+1$$$i+1$$$ 号停车位；若 i=n$$$i = n$$$，则前往 1$$$1$$$ 号停车位。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "以概率 1−pi$$$1-p_i$$$，车位 i$$$i$$$ 已被占用。在这种情况下，Henrique 只能继续前往下一个车位。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Henrique 每次前往下一个车位都要花费 1$$$1$$$ 秒。在第一次到达车位 i$$$i$$$ 后，之后再次到达时该车位的状态可能会不同，因为 UnB 停车场十分繁忙，在 Henrique 返回该车位的这段时间内，可能有司机占用或驶离该车位。这一行为将由概率 pi$$$p_i$$$ 决定，该概率在整个问题中保持不变。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Henrique 希望采取行动，使选择车位所花费的总时间与他最终停车的车位距离之和的期望值尽可能小。如果 Henrique 采取最优策略，这个值是多少？",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入的第一行包含一个整数 n$$$n$$$(2≤n≤3⋅105)$$$(2 \\leq n \\leq 3 \\cdot 10^5)$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "输入的第二行包含 n$$$n$$$ 个整数 d1,d2,…,dn$$$d_1, d_2, \\dots, d_n$$$(1≤di≤106)$$$(1 \\leq d_i \\leq 10^6)$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "最后，输入的第三行包含 n$$$n$$$ 个实数 p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$(0.001≤pi≤1)$$$(0.001 \\leq p_i \\leq 1)$$$。每个 pi$$$p_i$$$ 至多包含 3 位小数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出一个实数：在最优策略下，他选择车位所花费的总时间与停车车位到入口的距离之和的期望值。如果绝对误差或相对误差不超过 10−6$$$10^{-6}$$$，则你的答案将被视为正确。也就是说，如果你的答案是 a$$$a$$$，正确答案是 b$$$b$$$，当且仅当 |a−b|max(1,|b|)≤10−6$$$\\frac{|a-b|}{\\operatorname{max}(1, |b|)} \\le 10^{-6}$$$ 时，你的答案才会被接受。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个测试用例中，Henrique 应该停在编号为 4$$$4$$$ 的车位上。他总共花费 3$$$3$$$ 秒到达该车位，而该车位距离入口 4$$$4$$$ 米，因此所花时间与距离之和为 3+4=7$$$3 + 4 = 7$$$。由于所有车位始终空闲，他总能达到这个数值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "M. 最低停车费用",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

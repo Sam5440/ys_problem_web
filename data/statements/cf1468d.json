@@ -48,98 +48,98 @@
     "legend": [
       {
         "ai": "考虑一条长走廊，它可以被划分为 n$$$n$$$ 个大小为 1×1$$$1 \\times 1$$$ 的方格。这些方格从左到右编号为 1$$$1$$$ 到 n$$$n$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "走廊中有两个人，一个流氓和一名保安。最初，流氓位于第 a$$$a$$$ 个方格中，保安位于第 b$$$b$$$ 个方格中(a≠b$$$a \\ne b$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/4073caadae3a5477671e10e43f8bcbb12944e8ca.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "流氓的口袋里有 m$$$m$$$ 个鞭炮，第 i$$$i$$$ 个鞭炮会在点燃后 si$$$s_i$$$ 秒爆炸。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "以下事件每秒发生一次（依次进行，严格按照以下顺序）：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "首先，流氓要么移动到相邻的格子(从格子 i$$$i$$$ 出发，他可以移动到格子 (i+1)$$$(i + 1)$$$ 或格子 (i−1)$$$(i - 1)$$$，且不能离开走廊)，要么留在当前所在的格子。如果流氓不移动，他可以点燃一枚鞭炮并将其放下。流氓不能移动到守卫所在的格子；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "其次，一些已经被放下的鞭炮可能会爆炸。形式化地说，如果第 j$$$j$$$ 个鞭炮在第 T$$$T$$$ 秒被放下，那么它将在第 (T+sj)$$$(T + s_j)$$$ 秒爆炸(例如，如果一枚 sj=2$$$s_j = 2$$$ 的鞭炮在第 4$$$4$$$ 秒被放下，它将在第 6$$$6$$$ 秒爆炸)；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "最后，守卫向流氓所在的方向移动一格。如果守卫移动到流氓所在的格子，流氓就会被抓住。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "显然，由于走廊是有限的，流氓迟早会被抓住。他的目标是在被抓住之前让尽可能多的鞭炮爆炸；也就是说，他会采取行动，使在被抓住之前爆炸的鞭炮数量最大化。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你的任务是计算，如果流氓采取最优策略，他能引爆多少个这样的爆竹。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤1000$$$1 \\le t \\le 1000$$$)——测试用例的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例由两行组成。第一行包含四个整数 n$$$n$$$、m$$$m$$$、a$$$a$$$ 和 b$$$b$$$(2≤n≤109$$$2 \\le n \\le 10^9$$$；1≤m≤2⋅105$$$1 \\le m \\le 2 \\cdot 10^5$$$；1≤a,b≤n$$$1 \\le a, b \\le n$$$；a≠b$$$a \\ne b$$$)——分别表示走廊的长度、爆竹的数量、流氓的初始位置和警卫的初始位置。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行包含 m$$$m$$$ 个整数 s1$$$s_1$$$、s2$$$s_2$$$、...、sm$$$s_m$$$(1≤si≤109$$$1 \\le s_i \\le 10^9$$$)，其中 si$$$s_i$$$ 表示第 i$$$i$$$ 个爆竹点燃后爆炸所需的时间。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有测试用例中 m$$$m$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个测试用例，输出一个整数——流氓在被抓住之前能够引爆的爆竹的最大数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个测试用例中，流氓可以例如按照如下方式行动：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第 1 秒：放下第二个鞭炮，因此它将在第 5$$$5$$$ 秒爆炸。警卫移动到 5$$$5$$$ 号格子；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第 2 秒：移动到 2$$$2$$$ 号格子。警卫移动到 4$$$4$$$ 号格子；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第 3 秒：放下第一个鞭炮，因此它将在第 4$$$4$$$ 秒爆炸。警卫移动到 3$$$3$$$ 号格子；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第 4 秒：移动到 1$$$1$$$ 号格子。第一个鞭炮爆炸。警卫移动到 2$$$2$$$ 号格子；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第 5 秒：停留在 1$$$1$$$ 号格子。第二个鞭炮爆炸。警卫移动到 1$$$1$$$ 号格子并抓住了流氓。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "D. 鞭炮",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

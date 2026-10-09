@@ -51,110 +51,110 @@
     "legend": [
       {
         "ai": "圣诞节前夜，圣诞老人正手忙脚乱地搭建他的新圣诞树！这棵树有 n$$$n$$$ 个节点，由 n−1$$$n-1$$$ 条边连接。树的每条边上都有一组圣诞彩灯，可以用一个二进制表示的整数表示。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/ac792042be1b2dc3f360dee6803da9f5563cdbf4.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "他请来了 m$$$m$$$ 个精灵来欣赏他的树。每个精灵被分配了两个节点 a$$$a$$$ 和 b$$$b$$$，该精灵会观察这两个节点之间的简单路径上的所有灯光。之后，该精灵最喜欢的数字变为该路径上各条边的灯光值的按位异或。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "然而，北极一直在从一场严重的流感中恢复。由于这个原因，圣诞老人忘记了他在树上设置的一些灯光配置，而且他已经离开了北极！幸运的是，精灵们前来帮忙，每个精灵都告诉了圣诞老人自己被分配的节点对 (ai,bi)$$$(a_i, b_i)$$$，以及其最喜欢的数字中置位的位数的奇偶性。换句话说，他记得当其最喜欢的数字写成二进制时，其中 1$$$1$$$ 的数量是奇数还是偶数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "帮助圣诞老人判断这些记忆是否可能相互一致；如果可以，记住他的树是什么样的，说不定你会名垂青史！",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤2⋅104$$$1 \\leq t \\leq 2 \\cdot 10^4$$$)——测试用例的数量。接下来有 t$$$t$$$ 个测试用例。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(2≤n≤2⋅105$$$2 \\leq n \\leq 2 \\cdot 10^5$$$；1≤m≤2⋅105$$$1 \\leq m \\leq 2 \\cdot 10^5$$$)——分别表示树的大小和精灵的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 n−1$$$n-1$$$ 行中，每行包含三个整数 x$$$x$$$、y$$$y$$$ 和 v$$$v$$$(1≤x,y≤n$$$1 \\leq x, y \\leq n$$$；−1≤v<230$$$-1 \\leq v  \\lt  2^{30}$$$)——表示节点 x$$$x$$$ 和 y$$$y$$$ 之间存在一条边。如果",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "v=−1$$$v = -1$$$：圣诞老人不记得这条边上亮着的灯的集合。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "v≥0$$$v \\geq 0$$$：这条边上亮着的灯的集合为 v$$$v$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例接下来的 m$$$m$$$ 行中，每行包含三个整数 a$$$a$$$、b$$$b$$$ 和 p$$$p$$$(1≤a,b≤n$$$1 \\leq a, b \\leq n$$$；a≠b$$$a \\neq b$$$；0≤p≤1$$$0 \\leq p \\leq 1$$$)——精灵被分配到的节点，以及精灵最喜欢的数字的二进制表示中 1 的个数的奇偶性。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有 n$$$n$$$ 的总和以及所有 m$$$m$$$ 的总和分别不超过 2⋅105$$$2 \\cdot 10^5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证给出的边构成一棵树。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个测试用例，首先输出 YES 或 NO（大小写均可），表示是否存在一棵与圣诞老人的记忆一致的树。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果答案为 YES，输出 n−1$$$n-1$$$ 行，每行包含三个整数：x$$$x$$$、y$$$y$$$ 和 v$$$v$$$(1≤x,y≤n$$$1 \\le x, y \\le n$$$；0≤v<230$$$0 \\le v  \\lt  2^{30}$$$)——边以及该边上的整数值。边集必须与输入中的相同；如果某条边的值在之前已被指定，则不能更改。可以按任意顺序输出这些边。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果有多个答案，输出任意一个。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "第一个测试用例是题面中的图片。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "一种可能的答案是将边 (1,2)$$$(1, 2)$$$ 的权值设为 5$$$5$$$，将边 (2,5)$$$(2, 5)$$$ 的权值设为 3$$$3$$$。这是正确的，因为：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第一个精灵从节点 2$$$2$$$ 前往节点 3$$$3$$$。这个精灵最喜欢的数字是 4$$$4$$$，所以他记住的值是 1$$$1$$$(因为 4$$$4$$$ 的二进制表示中有奇数个 1$$$1$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二个精灵从节点 2$$$2$$$ 前往节点 5$$$5$$$。这个精灵最喜欢的数字是 3$$$3$$$，所以他记住的值是 0$$$0$$$(因为 3$$$3$$$ 的二进制表示中有偶数个 1$$$1$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三个精灵从节点 5$$$5$$$ 前往节点 6$$$6$$$。这个精灵最喜欢的数字是 7$$$7$$$，所以他记住的值是 1$$$1$$$(因为 7$$$7$$$ 的二进制表示中有奇数个 1$$$1$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第四个精灵从节点 6$$$6$$$ 前往节点 1$$$1$$$。这个精灵最喜欢的数字是 1$$$1$$$，所以他记住的值是 1$$$1$$$(因为 1$$$1$$$ 的二进制表示中有奇数个 1$$$1$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第五个精灵从节点 4$$$4$$$ 前往节点 5$$$5$$$。这个精灵最喜欢的数字是 4$$$4$$$，所以他记住了数字 1$$$1$$$(因为 4$$$4$$$ 的二进制表示中有奇数个 1$$$1$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "注意，还存在其他可能的答案。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "D. X(or)-mas 树",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

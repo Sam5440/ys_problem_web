@@ -43,62 +43,62 @@
     "legend": [
       {
         "ai": "Gennady 是 Berland 最优秀的儿童牙医之一。今天有 n 个孩子预约了他的诊疗，他们在他的诊室前排起了队。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "所有孩子都喜欢在牙医诊所的接待处大声哭泣。我们按照孩子们排队的顺序，用从 1 到 n 的整数为他们编号。每个孩子都有一个信心值 p_i。孩子们依次进入诊室；每次排在队伍最前面的孩子都会去看医生。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "当 Gennady 为第 i 个孩子治疗牙齿时，这个孩子会以 \\(v_i\\) 的音量哭泣。此时，队伍中第一个孩子的信心值会减少 \\(v_i\\)，第二个孩子的信心值会减少 \\(v_i-1\\)，依此类推。队伍中排在第 \\(v_i\\) 个孩子之后的孩子几乎听不到哭声，因此他们的信心值保持不变。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果在某一时刻第 \\(j\\) 个孩子的信心值小于零，他就会以 \\(d_j\\) 的音量开始哭泣，并离开队伍，向出口跑去，而不会进入医生的诊室。此时，队伍中排在第 \\(j\\) 个孩子之后的所有孩子的信心值都会减少 \\(d_j\\)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "所有这些事件都会按照某种顺序一个接一个地立即发生。有些哭声可能会引起其他哭声，从而导致连锁反应。走廊里安静下来后，队伍中的第一个孩子就会进入医生的诊室。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "请帮助牙医 Gennady 确定他会治疗牙齿的孩子的编号，并按时间顺序输出这些编号。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "第一行输出一个整数 k——Gennady 将为其治疗牙齿的儿童数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行输出 k 个整数——最终到达队伍末尾的儿童编号，并按递增顺序排列。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个样例中，Gennady 首先为第一个孩子治疗牙齿，该孩子会以 4 的音量哭喊。其余孩子的信心值将分别变为 -2、1、3、1。因此，第二个孩子也会以 1 的音量哭喊并跑向出口。其余孩子的信心值将变为 0、2、0。随后，第三个孩子进入诊室，并以 5 的音量哭喊。其他孩子无法忍受，于是他们大声哭喊着跑向出口。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个样例中，首先第一个孩子进入诊室，并以 4 的音量哭喊。其余孩子的信心值将变为 5、-1、6、8。因此，第三个孩子会以 1 的音量哭喊并跑向出口。其余孩子的信心值将变为 5、5、7。之后，第二个孩子进入诊室，并以 5 的音量哭喊。其余孩子的信心值将变为 0、3。然后，第四个孩子进入诊室，并以 2 的音量哭喊。由于此事，第五个孩子的信心值变为 1，随后他最后进入诊室。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入的第一行包含一个正整数 \\(n\\)（\\(1 \\le n \\le 4000\\)）——队伍中孩子的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 \\(n\\) 行中，每行包含三个整数 \\(v_i,d_i,p_i\\)（\\(1 \\le v_i,d_i,p_i \\le 10^6\\)）——分别表示该孩子在诊室中的哭声音量、在走廊中的哭声音量以及第 \\(i\\) 个孩子的信心值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "A. 牙医 Gennady",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

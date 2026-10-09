@@ -76,64 +76,64 @@
     "legend": [
       {
         "ai": "程序员 Vasya 正在学习一种新的编程语言 &K*。&K* 语言的语法类似于 C 语言家族。然而，它更加强大，因此实际 C 类语言中的规则并不适用于它。为了完全理解题意，请仔细阅读下面的语言描述，并遵循其中的规则，而不要套用现实编程语言中的类似规则。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在 &K* 中存在一套非常强大的指针系统——你可以在已有类型 X 的右侧添加一个星号，从而得到新类型 X * 。这被称为指针定义操作。此外，还有与之相反的操作——对于任何作为指针的 X 类型，你可以添加一个 & 符号，从而得到类型 &X，该类型指向 X。这被称为解引用操作。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "&K* 语言只有两种基本数据类型——void 和 errtype。此外，该语言还具有 typedef 和 typeof 运算符。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "运算符“typedef A B”定义一个新的数据类型 B，它等价于 A。A 中可以包含星号和 & 符号，而 B 中不能包含它们。例如，运算符 typedef void** ptptvoid 将创建一个新类型 ptptvoid，该类型可以像 void** 一样使用。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "运算符“typeof A”返回 A 的类型，并将其转换为以 void 开头的形式，也就是说，它返回类型 void**...*，即添加必要数量星号后与其等价的类型（星号数量可能为零）。也就是说，在如上所示定义了 ptptvoid 类型后，typeof ptptvoid 运算符将返回 void**。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "尝试对 void 类型进行解引用将导致错误，即得到一种特殊的数据类型 errtype。对于 errtype，有如下等式：errtype* = &errtype = errtype。尝试使用此前尚未定义的数据类型也会得到 errtype。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "使用 typedef，我们可以多次定义同一个类型。在所有定义中，只有最后一次定义有效。但是，之前使用该类型定义的所有类型都不会发生变化。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "还需要注意，解引用运算的优先级低于指针运算，换句话说，&T * 始终等于 T。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "注意，运算符是逐个连续执行的。如果有两个运算符“typedef &void a”和“typedef a* b”，那么首先 a 变为 errtype，之后 b 变为 errtype* = errtype，而不是 &void* = void（见样例 2）。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Vasya 尚未完全理解这项强大的技术，因此他请求你帮助他。请编写一个程序来分析这些运算符。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 n（1 ≤ n ≤ 100）——运算符的数量。接下来 n 行，每行包含一个运算符。每个运算符属于以下两种类型之一：要么是“typedef A B”，要么是“typeof A”。在第一种情况下，B 类型不同于 void 和 errtype 类型，并且不包含任何星号和与号。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "所有数据类型名称均为非空字符串，由不超过 20 个小写拉丁字母组成。在任意运算符中，一个类型里星号和与号的数量分别不超过 10；但是，如果通过若干个星号将某些类型转换为 void，它们的数量可能超过 10。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个 typeof 运算符，在单独一行输出该运算符的答案——该运算符返回的类型。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "B. Vasya 与类型",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

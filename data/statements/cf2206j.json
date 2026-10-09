@@ -59,126 +59,126 @@
     "legend": [
       {
         "ai": "你正在计划一次环球旅行。为此，你安装了一个包含 n$$$n$$$ 首歌曲的音乐应用，这些歌曲的编号从 1$$$1$$$ 到 n$$$n$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "最初，应用会将这 n$$$n$$$ 首歌曲生成一个播放列表，形式为 1,2,…,n$$$1, 2, \\ldots, n$$$ 的一个排列，记为 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$。它会按照 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ 的顺序播放这 n$$$n$$$ 首歌曲：歌曲 a1$$$a_1$$$ 首先播放，歌曲 a2$$$a_2$$$ 第二首播放，依此类推。播放列表是无限的：每次歌曲 an$$$a_n$$$ 播放完毕后，都会从歌曲 a1$$$a_1$$$ 重新开始。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "当前歌曲播放完毕后，下一首歌曲会自动开始播放。在歌曲播放完毕之前，你也可以按下跳过按钮，立即跳转到播放列表中的下一首歌曲。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你有一个由 n$$$n$$$ 首歌曲组成的目标排列，记为 b1,b2,…,bn$$$b_1, b_2, \\ldots, b_n$$$。这意味着你希望通过有策略地按下跳过按钮零次或多次，按照 b1,b2,…,bn$$$b_1, b_2, \\ldots, b_n$$$ 的顺序完整听完 n$$$n$$$ 首歌曲。换句话说，你希望完整听完的第一首歌曲(未被跳过)是歌曲 b1$$$b_1$$$，第二首是歌曲 b2$$$b_2$$$，依此类推，直到第 n$$$n$$$ 首歌曲为 bn$$$b_n$$$。完整听完这 n$$$n$$$ 首歌曲后，你将停止听歌。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你将使用这个播放列表 d$$$d$$$ 天。在连续两天之间，你会使用三个整数 c$$$c$$$、x$$$x$$$ 和 y$$$y$$$ 按如下方式更新排列：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果 c=1$$$c = 1$$$，则交换 ax$$$a_x$$$ 和 ay$$$a_y$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果 c=2$$$c = 2$$$，则交换 bx$$$b_x$$$ 和 by$$$b_y$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "注意，每次更新的效果都会持续到之后的天数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于每天，假设你从歌曲 a1$$$a_1$$$ 开始听，确定为了使你完整听到的歌曲依次为 b1,b2,…,bn$$$b_1, b_2, \\ldots, b_n$$$，最少需要按下多少次跳过按钮。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入的第一行包含两个整数 n$$$n$$$ 和 d$$$d$$$(2≤n≤200000$$$2 \\le n \\le 200\\,000$$$；2≤d≤200000$$$2 \\le d \\le 200\\,000$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行包含 n$$$n$$$ 个整数，表示 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ 的初始值(1≤ai≤n$$$1 \\le a_i \\le n$$$；对于所有 i≠j，都有 ai≠aj$$$a_i \\neq a_j$$$ $$$i \\neq j$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三行包含 n$$$n$$$ 个整数，表示 b1,b2,…,bn$$$b_1, b_2, \\ldots, b_n$$$ 的初始值(1≤bi≤n$$$1 \\le b_i \\le n$$$；对于所有 i≠j，都有 bi≠bj$$$b_i \\neq b_j$$$ $$$i \\neq j$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 d−1$$$d-1$$$ 行中的第 k$$$k$$$ 行包含三个整数 c$$$c$$$、x$$$x$$$ 和 y$$$y$$$(c∈{1,2}$$$c \\in \\{1, 2\\}$$$；1≤x<y≤n$$$1 \\le x  \\lt  y \\le n$$$)，表示第 k$$$k$$$ 天和第 (k+1)$$$(k+1)$$$ 天之间的更新操作。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出 d$$$d$$$ 行，其中第 k$$$k$$$ 行应包含第 k$$$k$$$ 天所需跳过的最少次数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "样例输入/输出 #1 的解释",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第一天，(a1,…,a4)=(1,4,2,3)$$$(a_1, \\ldots, a_4) = (1, 4, 2, 3)$$$，且 (b1,…,b4)=(3,2,1,4)$$$(b_1, \\ldots, b_4) = (3, 2, 1, 4)$$$。你可以按所需顺序完整听完这些歌曲，并进行 6$$$6$$$ 次跳过：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "歌曲 1$$$1$$$ 播放。跳过这首歌。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "歌曲 4$$$4$$$ 播放。跳过这首歌。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "歌曲 2$$$2$$$ 播放。跳过这首歌。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "歌曲 3$$$3$$$ 播放。完整听完这首歌。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "歌曲 1$$$1$$$ 播放。跳过这首歌。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "歌曲 4$$$4$$$ 正在播放。跳过这首歌。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "歌曲 2$$$2$$$ 正在播放。完整听完这首歌。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "歌曲 3$$$3$$$ 正在播放。跳过这首歌。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "歌曲 1$$$1$$$ 正在播放。完整听完这首歌。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "歌曲 4$$$4$$$ 正在播放。完整听完这首歌。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二天，排列为 (a1,…,a4)=(1,4,3,2)$$$(a_1, \\ldots, a_4) = (1, 4, \\mathbf{3}, \\mathbf{2})$$$ 和 (b1,…,b4)=(3,2,1,4)$$$(b_1, \\ldots, b_4) = (3, 2, 1, 4)$$$。最少跳过次数为 2$$$2$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三天，排列为 (a1,…,a4)=(1,4,3,2)$$$(a_1, \\ldots, a_4) = (1, 4, 3, 2)$$$ 和 (b1,…,b4)=(1,2,3,4)$$$(b_1, \\ldots, b_4) = (\\mathbf{1}, 2, \\mathbf{3}, 4)$$$。最少需要跳过 6$$$6$$$ 次。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "J. 全球播放列表",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

@@ -49,102 +49,102 @@
     "legend": [
       {
         "ai": "汉努卡烛台上有 n$$$n$$$ 根蜡烛，其中一些蜡烛最初处于点燃状态。我们可以用一个 01 串 s$$$s$$$ 描述哪些蜡烛被点燃：第 i$$$i$$$ 根蜡烛被点燃，当且仅当 s_i=1$$$s_i=1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "![](https://espresso.codeforces.com/a64b634ae534f61590da22af0f8f1e6e4fa4900d.png)",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "最初，蜡烛的点燃状态由字符串 a$$$a$$$ 描述。一次操作中，你选择一根当前被点燃的蜡烛。执行操作后，你选择的蜡烛仍保持点燃，而其他每根蜡烛的状态都会改变(如果原本被点燃，就会熄灭；如果原本未被点燃，就会被点燃)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你希望使蜡烛的状态与字符串 b$$$b$$$ 相同。你的任务是判断是否可以做到，如果可以，求所需的最少操作次数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1\\le t\\le 10^4$$$)——测试用例的数量。接下来有 t$$$t$$$ 个测试用例。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤105$$$1\\le n\\le 10^5$$$)——蜡烛的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行包含一个长度为 n$$$n$$$ 的字符串 a$$$a$$$，仅由字符 0 和 1 组成——灯光的初始状态。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三行包含一个长度为 n$$$n$$$ 的字符串 b$$$b$$$，仅由字符 0 和 1 组成——灯光的目标状态。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证 n$$$n$$$ 的总和不超过 105$$$10^5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个测试用例，输出将 a$$$a$$$ 变为 b$$$b$$$ 所需的最少操作次数；如果无法完成，则输出 −1$$$-1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个测试用例中，两个字符串已经相等，因此无需进行任何操作。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个测试用例中，我们可以执行一次操作，选择第二根蜡烛，将 01$$$01$$$ 变为 11$$$11$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第三个测试用例中，由于没有亮着的蜡烛可供选择，因此无法执行任何操作。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第四个测试用例中，我们可以执行以下操作，将 a$$$a$$$ 变为 b$$$b$$$：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "选择第 7$$$7$$$ 根蜡烛：100010111→011101100$$$100010{\\color{red}1}11\\to 011101{\\color{red} 1}00$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "选择第 2$$$2$$$ 根蜡烛：011101100→110010011$$$0{\\color{red} 1}1101100\\to 1{\\color{red} 1}0010011$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "选择第 1$$$1$$$ 根蜡烛：110010011→101101100$$${\\color{red}1}10010011\\to {\\color{red}1}01101100$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第五个测试用例中，我们可以执行以下操作，将 a$$$a$$$ 变为 b$$$b$$$：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "选择第 6$$$6$$$ 根蜡烛：001011011→110101100$$$00101{\\color{red}1}011\\to 11010{\\color{red}1}100$$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "选择第 2$$$2$$$ 根蜡烛：110101100→011010011$$$1{\\color{red}1}0101100\\to 0{\\color{red}1}1010011$$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "选择第 8$$$8$$$ 根蜡烛：011010011→100101110$$$0110100{\\color{red}1}1\\to 1001011{\\color{red}1}0$$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "选择第 7$$$7$$$ 根蜡烛：100101110→011010101$$$100101{\\color{red}1}10\\to 011010{\\color{red}1}01$$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "C. 烛台",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

@@ -52,53 +52,53 @@
     "legend": [
       {
         "ai": "如果你说 Arkady 下跳棋有点老派，那可就错了。还有一款现代电子游戏，Arkady 和他的朋友们都很喜欢。我们不讨论它的规则；对本题来说，唯一重要的一点是，每位玩家都必须在游戏开始时选择一位不同的英雄。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "有 2$$$2$$$ 支队伍，每支队伍有 n$$$n$$$ 名玩家，还有 2n$$$2n$$$ 位英雄分配给两支队伍。两支队伍轮流选择英雄：首先，第一支队伍为自己选择一位英雄，然后第二支队伍选择一位英雄，依此类推。注意，一位英雄被选中后，两支队伍都不能再选择他。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "朋友们认为第 i$$$i$$$ 位英雄的战力为 pi$$$p_i$$$。每支队伍都想最大化本队英雄的总战力。不过有一个例外：有 m$$$m$$$ 对英雄彼此特别克制，因此当任意一支队伍选择了这类配对中的一位英雄时，另一支队伍必须在自己的回合选择另一位英雄。每位英雄至多属于一对。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "这是一道交互题。你需要编写一个程序，为其中一支队伍选择最优的英雄，而评测程序会为另一支队伍进行选择。注意，评测程序的行为可能并不高效；在这种情况下，你必须抓住机会，仍然最大化本队的总战力。形式化地说，如果无论评测程序如何选择，你都有机会使总战力达到 q$$$q$$$ 或更高，那么你必须使总战力达到 q$$$q$$$ 或更高，才能通过测试。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n≤103$$$1 \\le n \\le 10^3$$$，0≤m≤n$$$0 \\le m \\le n$$$)——一支队伍的玩家人数和特殊英雄对数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行包含 2n$$$2n$$$ 个整数 p1,p2,…,p2n$$$p_1, p_2, \\ldots, p_{2n}$$$(1≤pi≤103$$$1 \\le p_i \\le 10^3$$$)——各位英雄的战力。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 m$$$m$$$ 行每行包含两个整数 a$$$a$$$ 和 b$$$b$$$(1≤a,b≤2n$$$1 \\le a, b \\le 2n$$$，a≠b$$$a \\ne b$$$)——一对彼此特别强大的英雄。保证每个英雄在此列表中至多出现一次。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "下一行包含一个整数 t$$$t$$$(1≤t≤2$$$1 \\le t \\le 2$$$)——你所代表的队伍。如果 t=1$$$t = 1$$$，则第一回合由你进行，否则你进行第二回合。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Hack",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "为了进行 Hack，请使用上文所述格式，并额外增加一行。在该行中输出从 1$$$1$$$ 到 2n$$$2n$$$ 的 2n$$$2n$$$ 个互不相同的整数——评测队伍的优先级顺序。评测队伍将在每个回合从该列表中选择第一个可选的英雄。这里的“可选”是指该英雄尚未被选取，且不违反有关特殊英雄对的规则。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "轮到你时，输出一个整数 x$$$x$$$(1≤x≤2n$$$1 \\le x \\le 2n$$$)——你选择的英雄的编号。注意，你不能选择你或另一名玩家之前选择的英雄，并且必须遵守有关特殊英雄对的规则。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "轮到另一支队伍时，读取一行，其中包含一个整数 x$$$x$$$(1≤x≤2n$$$1 \\le x \\le 2n$$$)——另一支队伍选择的英雄的编号。保证此前未选择该编号，且另一支队伍也遵守有关特殊英雄对的规则。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "最后一轮结束后，你应直接结束程序，不要输出任何内容。",
@@ -126,27 +126,27 @@
       },
       {
         "ai": "其他语言请参阅文档。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "评测器的答案为 −1$$$-1$$$ 而不是有效选择，意味着你进行了一次无效回合。收到 −1$$$-1$$$ 后立即退出，否则你将看到 Wrong answer 判定。否则，由于你的程序会继续从已关闭的流中读取，你可能会得到任意判定。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [],
     "note": [
       {
         "ai": "在第一个样例中，第一回合由你进行。在该样例中，你选择 6$$$6$$$，另一支队伍被迫选择 2$$$2$$$ 作为回应。你选择 5$$$5$$$，另一支队伍选择 4$$$4$$$。最后，你选择 3$$$3$$$，另一支队伍选择 1$$$1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个样例中，第二回合由你进行。另一支队伍选择 6$$$6$$$，你选择 5$$$5$$$，迫使另一支队伍选择 1$$$1$$$。现在你选择 4$$$4$$$，另一支队伍选择 3$$$3$$$，你选择 2$$$2$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "C. 挑选英雄",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

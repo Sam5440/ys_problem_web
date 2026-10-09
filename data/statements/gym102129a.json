@@ -40,7 +40,7 @@
     "youdao": "A.三段式",
     "iflyrec": "A.Tritwise Mex",
     "ai": "A. 三进制 mex",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   },
   "sectionsZh": {
     "input": [
@@ -50,7 +50,7 @@
         "youdao": "输入的第一行包含一个整数$$$k$$$ ($$$1 \\leq k \\leq 12$$$)。",
         "iflyrec": "输入的第一行包含单个整数$$$k$$$($$$1 \\leq k \\leq 12$$$)。",
         "ai": "输入的第一行包含一个整数 $$$k$$$($$$1 \\leq k \\leq 12$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "deepl": "第二行输入包含 $$$3^k$$$ 个整数 $$$a_0, \\dots, a_{3^k-1}$$$ ($$$0 \\leq a_i \\leq 10^3$$$)。",
@@ -58,7 +58,7 @@
         "youdao": "第二行输入包含$$$3^k$$$个整数$$$a_0, \\dots, a_{3^k-1}$$$ ($$$0 \\leq a_i \\leq 10^3$$$)。",
         "iflyrec": "输入的第二行包含$$$3^k$$$整数$$$a_0, \\dots, a_{3^k-1}$$$($$$0 \\leq a_i \\leq 10^3$$$)。",
         "ai": "输入的第二行包含 $$$3^k$$$ 个整数 $$$a_0, \\dots, a_{3^k-1}$$$($$$0 \\leq a_i \\leq 10^3$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "deepl": "第三行输入包含 $$$3^k$$$ 整数 $$$b_0, \\dots, b_{3^k-1}$$$ ($$$0 \\leq b_i \\leq 10^3$$$)。",
@@ -66,7 +66,7 @@
         "youdao": "第三行输入包含$$$3^k$$$个整数$$$b_0, \\dots, b_{3^k-1}$$$ ($$$0 \\leq b_i \\leq 10^3$$$)。",
         "iflyrec": "输入的第三行包含$$$3^k$$$整数$$$b_0, \\dots, b_{3^k-1}$$$($$$0 \\leq b_i \\leq 10^3$$$)。",
         "ai": "输入的第三行包含 $$$3^k$$$ 个整数 $$$b_0, \\dots, b_{3^k-1}$$$($$$0 \\leq b_i \\leq 10^3$$$)。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
@@ -76,7 +76,7 @@
         "youdao": "参考：$$$3^{12} = 531\\,441$$$。",
         "iflyrec": "参考：$$$3^{12} = 531\\,441$$$。",
         "ai": "供参考：$$$3^{12} = 531\\,441$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
@@ -86,7 +86,7 @@
         "youdao": "输出$$$3^k$$$个以空格分隔的整数$$$c_0, \\dots, c_{3^k-1}$$$。",
         "iflyrec": "输出由空格分隔的$$$3^k$$$个整数$$$c_0, \\dots, c_{3^k-1}$$$。",
         "ai": "输出 $$$3^k$$$ 个整数 $$$c_0, \\dots, c_{3^k-1}$$$，用空格分隔。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "legend": [
@@ -95,7 +95,7 @@
         "caiyun": "让我们将 $$$\\text{mex}(a, b)$$$(minimum exclundant) 表示为既不等于 $$$a$$$ 也不等于 $$$b$$$ 的最小非负整数。它始终保持为 $$$\\text{mex}(a,b)  \\lt  3$$$，因此我们可以定义三次混合。如果我们用三元记法写 $$$a$$$ 和 $$$b$$$:$$$$$$a = \\sum\\limits_{i=0}^{k-1}a_i \\cdot 3^i,~~b=\\sum\\limits_{i=0}^{k-1} b_i \\cdot 3^i\\text{,}$$$$$$ where $$$ a_i$$$ and $$$ b_i$$$ are integers from $$$ 0$$$ to $$$ 2$$$, we define $$$\\mathrm{mex}_3$$$ as follows: $$$$$$\\mathrm{mex}_3(a, b) = \\sum\\limits_{i=0}^{k-1}\\mathrm{mex}(a_i,b_i) \\cdot 3^i\\text{.}$$$$$$ You are given two sequences $$$ a_0,\\dots,a_{3^k-1}$$$ and $$$ b_0,\\dots,b_{3^k-1}$$$. You have to compute the sequence $$$ c_0,\\dots,c_{3^k-1}$$$: $$$$$$c_k = \\sum\\limits_{\\mathrm{mex}_3(i,j)=k}a_i \\cdot b_j\\text{.}$$$$$$",
         "iflyrec": "让我们将$$$\\text{mex}(a, b)$$$(最小排除)表示为既不等于$$$a$$$也不等于$$$b$$$的最小非负整数。它总是保持$$$\\text{mex}(a,b)  \\lt  3$$$，因此我们可以定义Tritwise Mex。如果我们用三进制记数法写出$$$a$$$和$$$b$$$：$$$$$$a = \\sum\\limits_{i=0}^{k-1}a_i \\cdot 3^i,~~b=\\sum\\limits_{i=0}^{k-1} b_i \\cdot 3^i\\text{,}$$$$$$ where $$$a_I$$$ and $$$B_I$$$ are integers from $$$0$$$ to $$$2$$$, we define $$$\\mathrm{mex}_3$$$ as follows: $$$$$$\\mathrm{mex}_3(a, b) = \\sum\\limits_{i=0}^{k-1}\\mathrm{mex}(a_i,b_i) \\cdot 3^i\\text{.}$$$$$$ You are given two sequences $$$a_0，\\dots，_{3^K-1}$$$ and $$$B_0，\\dots，B_{3^K-1}$$$. You have to compute the sequence $$$C_0，\\dots，C_{3^K-1}$$$: $$$$$$c_k = \\sum\\limits_{\\mathrm{mex}_3(i,j)=k}a_i \\cdot b_j\\text{.}$$$$$$",
         "ai": "我们将 $$$\\text{mex}(a, b)$$$(minimum excludant)定义为既不等于 $$$a$$$ 也不等于 $$$b$$$ 的最小非负整数。始终有 $$$\\text{mex}(a,b)  \\lt  3$$$，因此我们可以定义三进制 mex。若我们用三进制表示 $$$a$$$ 和 $$$b$$$：$$$$$$a = \\sum\\limits_{i=0}^{k-1}a_i \\cdot 3^i,~~b=\\sum\\limits_{i=0}^{k-1} b_i \\cdot 3^i\\text{,}$$$$$$ where $$$a_i$$$ and $$$b_i$$$ are integers from $$$0$$$ to $$$2$$$, we define $$$\\mathrm{mex}_3$$$ as follows: $$$$$$\\mathrm{mex}_3(a, b) = \\sum\\limits_{i=0}^{k-1}\\mathrm{mex}(a_i,b_i) \\cdot 3^i\\text{.}$$$$$$ You are given two sequences $$$a_0,\\dots,a_{3^k-1}$$$ and $$$b_0,\\dots,b_{3^k-1}$$$. You have to compute the sequence $$$c_0,\\dots,c_{3^k-1}$$$: $$$$$$c_k = \\sum\\limits_{\\mathrm{mex}_3(i,j)=k}a_i \\cdot b_j\\text{.}$$$$$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },

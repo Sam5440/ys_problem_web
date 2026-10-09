@@ -41,70 +41,70 @@
     "legend": [
       {
         "ai": "你目前正在学习 AlgoHell 课程，而且拖延得有些过头了。今天已经是当前题目的截止日期。幸运的是，你有一个正确的算法，但它的时间复杂度非常糟糕。因此，你闯入了 HG 顶部穹顶中的 ETH 顶级机密超级计算机。不幸的是，你的算法复杂度实在太差，即使在超级计算机上运行也太慢了。它无法在截止时间前给出结果。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "为了加快计算，你需要给超级计算机降温。它有 n$$$n$$$ 个不同的服务器机架，其中 n$$$n$$$ 是偶数，因为服务器架构师只能以 2 个为一组购买机架。由于你的并行化没有均匀地分配工作负载，每个机架都有唯一的热度 ai$$$a_i$$$。所有机架排成一行；机架 i$$$i$$$ 与机架 i+1$$$i+1$$$ 相邻。你希望热度较低的相邻机架为热度较高的机架降温。热度差越大，降温效果越好。因此，你希望最大化相邻服务器机架热度绝对差之和：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "maxn∑i=2|ai−1−ai|$$\\max\\sum_{i=2}^n |a_{i-1} - a_i|$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "由于你以前来过这里，你知道所有相邻机架之间都连接着一根电线。你可以利用这根电线传输工作负载，并交换一个服务器机架与其相邻机架的热度。然而，你还希望最小化交换次数，因为每次交换大约需要 1 分钟，而你必须在截止时间前提交答案。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "现在你想回答 2 个问题，以判断计算能否及时完成：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "你最多能实现多少降温效果，也就是热度绝对差之和的最大值是多少？",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "达到这种冷却效率需要多少时间？也就是说，达到这个总和所需的最少相邻交换次数是多少？",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入的第一行包含一个整数 t$$$t$$$ (1≤t≤2⋅105$$$1 \\leq t \\leq 2 \\cdot 10^5$$$)，表示测试用例的数量。接下来有 t$$$t$$$ 行，每行描述一个测试用例。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$ (2≤n≤4⋅105$$$2 \\leq n \\leq 4 \\cdot 10^5$$$)，表示超级计算机中的服务器机架数量。由于服务器架构师并不奇怪，保证 n$$$n$$$ 为偶数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第二行包含 n 个互不相同的整数 a1,...,an$$$a_1,...,a_n$$$ (1≤ai≤n$$$1 \\leq a_i \\leq n$$$)，其中 ai$$$a_i$$$ 表示第 i$$$i$$$ 个机架的热量等级。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有测试用例的 n$$$n$$$ 之和不超过 4⋅105$$$4 \\cdot 10^5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个测试用例，输出两个整数：热量等级绝对差之和的最大值，以及达到该最大值所需的最少相邻交换次数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个测试用例中，无需交换任何工作负载即可达到最大差值 1=|1−2|$$$1 = |1 - 2|$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个测试用例中，可以将热度等级 3$$$3$$$ 交换到最左侧。经过 4 次交换后，得到加热配置 3,6,5,1,4,2$$$3, 6, 5, 1, 4, 2$$$。然后可以将 4$$$4$$$ 与 2$$$2$$$ 交换，并将 5$$$5$$$ 与 1$$$1$$$ 交换，得到 3,6,1,5,2,4$$$3, 6, 1, 5, 2, 4$$$。仅经过 6 次交换后，该排列的差值总和最大，为 3+5+4+3+2=17$$$3 + 5 + 4 + 3 + 2 = 17$$$。可以证明，这是最大的差值总和以及达到该总和所需的最少相邻交换次数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "J. 只是太多拖延",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

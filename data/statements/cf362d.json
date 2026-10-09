@@ -45,54 +45,54 @@
     "legend": [
       {
         "ai": "你一定在地理课上听说过关于愚人国的一切。具体来说，你应该知道，这个国家的联邦结构数百年来一直保持不变。这个国家由 n 座城市组成，其中一些城市对之间由双向道路连接，每条道路都有一个长度 li。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "愚人们曾在自己的国土上快乐地生活，但最近的一场革命更换了国王。现在的国王是熊瓦西里。瓦西里将这个国家的城市划分为若干个地区，使得同一地区内任意两座城市之间都存在一条沿道路通行的路径，而不同地区的任意两座城市之间都不存在这样的路径。随后，瓦西里决定升级道路网络，并在国内修建恰好 p 条新道路。修建一条道路的过程如下：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "我们选择一对不同的城市 u、v，用一条新道路将它们连接起来（此时，这两个城市之间可能已经存在一条道路）。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "我们定义新道路的长度：如果城市 u、v 属于不同的区域，则其长度为 min(10^9, S + 1)（S——相连区域中所有现有道路的总长度）；否则，我们认为其长度等于 1000。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "我们在选定的城市之间修建一条指定长度的道路。如果新道路连接了两个不同的区域，那么修建道路后，这两个区域将合并为一个新的区域。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Vasily 希望道路修建过程最终使该国恰好由 q 个区域组成。你的任务是为 Vasily 设计一个满足要求且使所修建道路总长度最小的道路修建方案。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "如果无法按照要求修建道路，请输出一个字符串 \"NO\"（不含引号）。否则，第一行输出单词 \"YES\"（不含引号），接下来的 p 行输出道路修建方案。方案中的每一行必须由两个互不相同的整数构成，表示由一条道路连接的两个城市编号。方案中道路出现的顺序必须与它们需要修建的顺序一致。如果存在多个最优方案，可以输出其中任意一个。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "考虑第一个样例。改革前，Foolland 由四个地区组成。第一个地区包括城市 1、2、3，第二个地区包括城市 4 和 6，第三个地区包括城市 5、7、8，第四个地区包括城市 9。这些地区中道路的总长度分别为 11、20、5 和 0。根据方案，我们首先修建城市 5 和 9 之间长度为 6 的道路，然后修建城市 1 和 9 之间长度为 23 的道路。因此，已修建道路的总长度为 29。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "第一行包含四个整数 n（1 ≤ n ≤ 10^5）、m（0 ≤ m ≤ 10^5）、p（0 ≤ p ≤ 10^5）、q（1 ≤ q ≤ n）——Foolland 中的城市数量、现有道路数量、计划修建的道路数量以及所需的区域数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 m 行描述道路改造开始时已经存在的道路。每行包含三个整数 x_i、y_i、l_i：x_i、y_i——由该道路连接的城市编号（1 ≤ x_i, y_i ≤ n，x_i ≠ y_i）；l_i——道路长度（1 ≤ l_i ≤ 10^9）。注意，一对城市之间可以由多条道路连接。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "D. 愚人和万无一失的道路",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

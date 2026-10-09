@@ -47,78 +47,78 @@
     "legend": [
       {
         "ai": "有 n$$$n$$$ 名玩家坐在牌桌旁。每名玩家都有一个喜欢的数字。第 j$$$j$$$ 名玩家喜欢的数字是 fj$$$f_j$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "桌上有 k⋅n$$$k \\cdot n$$$ 张卡片。每张卡片上写着一个整数：第 i$$$i$$$ 张卡片上写着数字 ci$$$c_i$$$。此外，给定一个序列 h1,h2,…,hk$$$h_1, h_2, \\dots, h_k$$$。其含义将在下文解释。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "玩家需要以一种方式分配所有卡片，使得每位玩家恰好拿到 k$$$k$$$ 张卡片。所有卡片分配完毕后，每位玩家统计自己拿到的卡片中写有其最喜欢数字的卡片数量。如果一名玩家拿到了 t$$$t$$$ 张写有其最喜欢数字的卡片，那么该玩家的快乐值为 ht$$$h_t$$$。如果一名玩家没有拿到写有其最喜欢数字的卡片(即 t=0$$$t=0$$$)，那么其快乐值为 0$$$0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "输出分配卡片后所有玩家快乐值之和的最大可能值。注意，序列 h1,…,hk$$$h_1, \\dots, h_k$$$ 对所有玩家都相同。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入的第一行包含两个整数 n$$$n$$$ 和 k$$$k$$$(1≤n≤500，1≤k≤10$$$1 \\le n \\le 500, 1 \\le k \\le 10$$$)，分别表示玩家数量以及每位玩家将拿到的卡片数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第二行包含 k⋅n$$$k \\cdot n$$$ 个整数 c1,c2,…,ck⋅n$$$c_1, c_2, \\dots, c_{k \\cdot n}$$$(1≤ci≤105$$$1 \\le c_i \\le 10^5$$$)，表示卡片上写的数字。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第三行包含 n$$$n$$$ 个整数 f1,f2,…,fn$$$f_1, f_2, \\dots, f_n$$$(1≤fj≤105$$$1 \\le f_j \\le 10^5$$$)，表示各位玩家最喜欢的数字。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "第四行包含 k$$$k$$$ 个整数 h1,h2,…,hk$$$h_1, h_2, \\dots, h_k$$$(1≤ht≤105$$$1 \\le h_t \\le 10^5$$$)，其中 ht$$$h_t$$$ 表示一名玩家恰好获得 t$$$t$$$ 张写有其喜爱数字的卡片时的快乐值。保证对于每个 t∈[2..k]$$$t \\in [2..k]$$$，均满足条件 ht−1<ht$$$h_{t - 1}  \\lt  h_t$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "输出一个整数——在所有可能的卡片分配方案中，玩家快乐值总和的最大可能值。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个样例中，一种可能的最优卡片分配如下：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "玩家 1$$$1$$$ 获得数字为 [1,3,8]$$$[1, 3, 8]$$$ 的卡片；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "玩家 2$$$2$$$ 获得数字为 [2,2,8]$$$[2, 2, 8]$$$ 的卡片；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "玩家 3$$$3$$$ 获得数字为 [2,2,8]$$$[2, 2, 8]$$$ 的卡片。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "玩家 4$$$4$$$ 获得编号为 [5,5,5]$$$[5, 5, 5]$$$ 的卡牌。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "因此，答案为 2+6+6+7=21$$$2 + 6 + 6 + 7 = 21$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个样例中，没有玩家能获得带有自己喜欢的数字的卡牌。因此，答案为 0$$$0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "F. 卡牌与快乐",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

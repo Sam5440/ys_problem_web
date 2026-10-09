@@ -53,118 +53,118 @@
     "legend": [
       {
         "ai": "有 n$$$n$$$ 件珍贵文物排成一行，其中第 i$$$i$$$ 件文物的价值为 ci$$$c_i$$$。托马斯计划偷走其中一些文物。他将按顺序遍历每件文物，并偷走任何价值至少为其已偷走文物的 MEX$$$\\operatorname{MEX}$$$ 的文物。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "整数集合的 MEX$$$\\operatorname{MEX}$$$ 定义为集合中未出现的最小非负整数。例如，{0,1,2,4}$$$\\{0, 1, 2, 4\\}$$$ 的 MEX$$$\\operatorname{MEX}$$$ 是 3$$$3$$$，而 {1,4,6,8}$$$\\{1, 4, 6, 8\\}$$$ 的 MEX$$$\\operatorname{MEX}$$$ 是 0$$$0$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "例如，如果 Thomas 之前偷取的文物的代价为 {1,2,1,0,6,5}$$$\\{1, 2, 1, 0, 6, 5\\}$$$，那么他下一件偷取的文物的代价至少为 3$$$3$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "一排中有一个特殊文物，初始位于位置 k$$$k$$$，你的目标是阻止 Thomas 偷走它。为此，你可以交换任意一对文物的位置。你能否阻止 Thomas 偷走特殊文物？如果可以，应进行哪一次交换？",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "每个测试包含多个测试用例。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "输入的第一行包含一个整数 t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$ 和 k$$$k$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2\\cdot 10^5$$$，1≤k≤n$$$1 \\le k \\le n$$$)——分别表示文物的数量和特殊文物的初始位置。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 c1,c2,⋯cn$$$c_1, c_2, \\cdots c_n$$$ (0≤ci≤n$$$0 \\le c_i \\le n$$$)，依次表示这些物品的费用。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 2⋅105$$$2\\cdot 10^5$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个测试用例，如果无法阻止 Thomas 偷走特殊物品，则输出 -1 -1。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "否则，输出两个整数 i$$$i$$$ 和 j$$$j$$$ (1≤i,j≤n$$$1 \\le i, j \\le n$$$)，表示要交换的两个物品的位置。你可以选择 i=j$$$i = j$$$ 的情况，此时不会进行交换。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果有多个解，你可以输出任意一个。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在第一个测试用例中，我们交换了物品 3$$$3$$$ 和 5$$$5$$$，因此交换前后物品排列如下所示(特殊物品用红色表示)：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "[1,0,1,2,2]→[1,0,2,2,1]$$[1, 0, 1, \\color{red}{2}, 2] \\rightarrow [1, 0, 2, \\color{red}{2}, 1]$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "交换后，Thomas 将进行以下操作，其中 S$$$S$$$ 是 Thomas 偷取的文物的成本集合。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于第一个文物，S={}$$$S = \\{\\}$$$，其 MEX$$$\\operatorname{MEX}$$$ 为 0$$$0$$$。由于 c1=1≥0$$$c_1 = 1 \\ge 0$$$，他偷取第一个文物，并将 1$$$1$$$ 加入 S$$$S$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于第二个文物，S={1}$$$S = \\{1\\}$$$，其 MEX$$$\\operatorname{MEX}$$$ 为 0$$$0$$$。由于 c2=0≥0$$$c_2 = 0 \\ge 0$$$，他偷取第二个文物，并将 0$$$0$$$ 加入 S$$$S$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于第三个文物，S={0,1}$$$S = \\{0, 1\\}$$$，其 MEX$$$\\operatorname{MEX}$$$ 为 2$$$2$$$。由于 c3=2≥2$$$c_3 = 2 \\ge 2$$$，他偷取第三个文物，并将 2$$$2$$$ 加入 S$$$S$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于第四个文物，S={0,1,2}$$$S = \\{0, 1, 2\\}$$$，其 MEX$$$\\operatorname{MEX}$$$ 为 3$$$3$$$。由于 c4=2<3$$$c_4 = 2  \\lt  3$$$，他不会偷取第四个文物。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "对于第五件物品，S={0,1,2}$$$S = \\{0, 1, 2\\}$$$，其 MEX$$$\\operatorname{MEX}$$$ 为 3$$$3$$$。由于 c5=1<3$$$c_5 = 1  \\lt  3$$$，他不会偷走第五件物品。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "由于他不会偷走位置 4$$$4$$$ 上的特殊物品，我们成功了。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第二个测试用例中，我们交换了物品 1$$$1$$$ 和 4$$$4$$$，因此交换前后的物品排列如下：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "[1,0,1,2,2]→[2,0,1,1,2]$$[\\color{red}{1}, 0, 1, 2, 2] \\rightarrow [2, 0, 1, \\color{red}{1}, 2]$$",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "注意，特殊物品的位置发生了变化，因此我们的目标是在交换后阻止 Thomas 偷走位置 4$$$4$$$ 上的物品。如果按照第一个测试用例中的方式模拟这一过程，可以看到 Thomas 不会偷走它。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第三个测试用例中，我们可以证明，无论进行怎样的交换，Thomas 总会偷走成本为 0$$$0$$$ 的物品。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第四个测试用例中，由于不存在费用为 0$$$0$$$ 的文物，被盗文物的费用的 MEX$$$\\operatorname{MEX}$$$ 将始终为 0$$$0$$$，因此无论进行什么交换，Thomas 都会偷走每件文物。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "D. 怀疑的托马斯",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

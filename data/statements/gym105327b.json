@@ -35,52 +35,52 @@
     "legend": [
       {
         "ai": "Carlinhos 喜欢电影，最近他对 Bacon 数很着迷，其定义如下。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "演员 Kevin Bacon 的 Bacon 数等于 0$$$0$$$；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "如果与 X 出演过同一部电影的演员中，Bacon 数的最小值为 b$$$b$$$，则演员 X 的 Bacon 数为 b+1$$$b+1$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "也就是说，贝肯数表示任意演员与演员 Kevin Bacon 之间的最短路径；如果两名演员出演过同一部电影，则认为他们相连。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "Carlinhos 对一个更一般的问题感兴趣：给定两名演员，如何通过中间的电影和演员将他们连接起来？给定 N$$$N$$$ 部电影，以及对于每部电影，给出 M$$$M$$$ 名现有演员中出演该电影的那些演员。Carlinhos 希望回答 Q$$$Q$$$ 个查询：在第 i$$$i$$$ 个查询中，我们希望计算出一种将演员 xi$$$x_i$$$ 与演员 yi$$$y_i$$$ 连接起来的方法。我们必须找到某个序列 xi=a1,f1,a2,f2,…,fk−1,ak=yi$$$x_i = a_1, f_1, a_2, f_2, \\dots, f_{k-1}, a_k = y_i$$$，其中 1≤aj≤M$$$1 \\leq a_j \\leq M$$$ 的是演员，1≤fj≤N$$$1 \\leq f_j \\leq N$$$ 的是电影，并且演员 aj$$$a_j$$$ 出演了电影 fj−1$$$f_{j-1}$$$ 和 fj$$$f_j$$$；或者指出不存在这样的序列。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "input": [
       {
         "ai": "输入的第一行给出两个整数 N$$$N$$$ (1≤N≤100)$$$(1 \\leq N \\leq 100)$$$ 和 M$$$M$$$ (1≤M≤106)$$$(1 \\leq M \\leq 10^6)$$$，分别表示电影数和演员数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来有 N$$$N$$$ 行。第 i$$$i$$$ 行中，第一个整数 ni$$$n_i$$$ (1≤ni≤M)$$$(1 \\leq n_i \\leq M)$$$ 表示电影 i$$$i$$$ 中的演员数。接下来是按升序排列、以空格分隔的 ni$$$n_i$$$ 个数：出演电影 i$$$i$$$ 的演员编号，编号范围从 1$$$1$$$ 到 M$$$M$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "下一行包含一个整数 Q$$$Q$$$ (1≤Q≤104)$$$(1 \\leq Q \\leq 10^4)$$$，表示查询数量。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "接下来的 Q$$$Q$$$ 行描述查询。在第 i$$$i$$$ 个查询中，读入两个数 xi,yi$$$x_i, y_i$$$ (1≤xi≠yi≤M)$$$(1 \\leq x_i \\neq y_i \\leq M)$$$，表示我们要连接的演员。保证所有电影中的演员总数至多为 106$$$10^6$$$。也就是说，∑ini≤106$$$\\sum_i n_i \\leq 10^6$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "output": [
       {
         "ai": "对于每个查询，如果不存在这样的序列，输出一行 −1$$$-1$$$。否则，输出两行。第一行输出用于连接 xi$$$x_i$$$ 和 yi$$$y_i$$$ 的演员数量 ki$$$k_i$$$ (2≤ki≤106)$$$(2 \\leq k_i \\leq 10^6)$$$。第二行按照上述描述输出该序列，其中演员和电影交替出现，共有 ki$$$k_i$$$ 名演员和 ki−1$$$k_i - 1$$$ 部电影。如果连接这些演员的方式不止一种，输出任意一种即可。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "B. Bacon 数",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

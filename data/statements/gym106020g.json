@@ -42,7 +42,7 @@
     "legend": [
       {
         "ai": "给定一副包含 n$$$n$$$ 张牌的牌堆，每张牌上标有一个数字 ai$$$a_i$$$。游戏开始时，手牌为空，初始总分为零。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第 i$$$i$$$ 轮，你必须拿起第 i$$$i$$$ 张价值为 ai$$$a_i$$$ 的牌，然后可以选择弃掉手中若干张牌，确保此步骤之后，手中任意两张剩余牌的按位异或[8]$$$^{[8]}$$$ 都是一个素数[11]$$$^{[11]}$$$。这一轮的得分为你手中所有牌的价值之和，并累加到总分中。",
@@ -74,42 +74,42 @@
     "output": [
       {
         "ai": "对于每个测试用例，输出一行，其中包含一个整数，即你能够获得的最大分数。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ],
     "note": [
       {
         "ai": "在相应回合中选取的卡片带有下划线，而被弃置的卡片会被划掉。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "在第一个测试用例中，你可以按如下方式处理初始的空手牌 {}$$$\\{\\}$$$ 和总分 0$$$0$$$：",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "完成第一个回合后：{1_}$$$\\{\\underline{1}\\}$$$ 移除后→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1}$$$\\{1\\}$$$，总分为 0+1=1$$$0 + 1 = 1$$$；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "完成第二个回合后：{1,2_}$$$\\{1, \\underline{2}\\}$$$ 移除后→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1,2}$$$\\{1, 2\\}$$$，总分为 1+3=4$$$1 + 3 = 4$$$；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "完成第三个回合后：{1,⧸2,3_}$$$\\{1, \\not{2}, \\underline{3}\\}$$$ 移除后→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1,3}$$$\\{1, 3\\}$$$，总分为 4+4=8$$$4 + 4 = 8$$$。注意，由于 2⊕3=1$$$2 \\oplus 3 = 1$$$ 不是素数，因此数值为 2$$$2$$$ 和 3$$$3$$$ 的卡片不能同时保留在手牌中。为了解决这个问题，我们可以弃置数值为 2$$$2$$$ 的卡片；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "完成第四回合后：{1,3,4_}$$$\\{1, 3, \\underline{4}\\}$$$ 移除后→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1,3,4}$$$\\{1, 3, 4\\}$$$，总得分为 8+8=16$$$8 + 8 = 16$$$；",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       },
       {
         "ai": "完成第五回合后：{1,3,4,⧸5_}$$$\\{1, 3, 4, \\not{\\underline{5}}\\}$$$ 移除后→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1,3,4}$$$\\{1, 3, 4\\}$$$，总得分为 16+8=24$$$16 + 8 = 24$$$。",
-        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+        "aiModel": "GPT 5.6 Terra"
       }
     ]
   },
   "titleZh": {
     "ai": "G. 漂亮的素数集合",
-    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+    "aiModel": "GPT 5.6 Terra"
   }
 }

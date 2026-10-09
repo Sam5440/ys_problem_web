@@ -10,10 +10,11 @@
  *
  * Snapshot semantics differ by branch:
  *   - problems is an ADD-ONLY domain, so its snapshot is built as a UNION:
- *     the remote tip's files are overlaid into the worktree first, guaranteeing
- *     a concurrent push is never silently dropped. (Remote wins on shared
- *     files — acceptable, CI runs are serialized by the workflow concurrency
- *     group, so a shared-file race means a rare manual push.)
+ *     remote files the worktree is MISSING are overlaid first, guaranteeing
+ *     a concurrent push is never silently dropped. Files present locally win —
+ *     the everyday pipeline edits existing statements in place (translation
+ *     backfill), and a whole-directory restore would silently revert those
+ *     edits and drop them from the permanent archive.
  *   - misc is a pure SNAPSHOT: files pruned from the worktree (60-day log
  *     retention) must drop out of the branch tip, so nothing is overlaid.
  *     Push races fall through to the reject → overlay → retry path.
@@ -22,7 +23,12 @@
  * data/* (minimatch) — without it each data push would deploy ~10-30MB of raw
  * JSON as a junk preview site.
  */
+import { access } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { git, buildTree, commitTree, branchTip, pushCommit, isNonFastForward } from './lib/git-plumbing.mjs';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 import {
   PROBLEMS_BRANCH,
   PROBLEMS_PATHS,
@@ -40,16 +46,26 @@ const argv = new Set(process.argv.slice(2));
 const runId = process.env.GITHUB_RUN_ID ? ` (run ${process.env.GITHUB_RUN_ID})` : '';
 
 /** Fetch a branch (depth 1) and overlay the tracked paths (within `paths`)
-    that it actually carries onto the worktree. Returns the fetched tip sha. */
+    that it actually carries onto the worktree — but only files the worktree
+    is missing (ours-win on shared files, see the header comment). Returns the
+    fetched tip sha. */
 async function overlayBranchFiles(branch, paths) {
   await git(['fetch', '--quiet', '--depth=1', 'origin', branch]);
   const tip = (await git(['rev-parse', 'FETCH_HEAD'])).stdout;
-  const usable = (await git(['ls-tree', '--name-only', 'FETCH_HEAD', '--', ...paths], { check: false })).stdout
+  const remoteFiles = (await git(['ls-tree', '-r', '--name-only', 'FETCH_HEAD', '--', ...paths], { check: false })).stdout
     .split('\n')
     .filter(Boolean);
-  if (usable.length) {
-    await git(['restore', '--source', 'FETCH_HEAD', '--worktree', '--', ...usable]);
-    console.log(`${branch}: overlaid ${usable.join(', ')} from remote tip`);
+  const missing = [];
+  for (const f of remoteFiles) {
+    try {
+      await access(path.join(ROOT, f));
+    } catch {
+      missing.push(f);
+    }
+  }
+  if (missing.length) {
+    await git(['restore', '--source', 'FETCH_HEAD', '--worktree', '--', ...missing]);
+    console.log(`${branch}: overlaid ${missing.length} file(s) missing locally from remote tip`);
   }
   return tip;
 }

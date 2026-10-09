@@ -403,7 +403,12 @@ export default function CodeEditor({ language, value, onChange, diagnostics = []
         renderLineHighlight: 'line',
         scrollbar: { verticalScrollbarSize: 10, horizontalScrollbarSize: 10 },
         padding: { top: 10, bottom: 10 },
-        fixedOverflowWidgets: true,
+        // 溢出 widget（补全/悬停/签名提示）必须走绝对定位（Monaco 默认）：
+        // fixed 模式下，带 transform/translate 的祖先（CompilerDock 面板的
+        // translate-x-0 收开动画）会成为 position:fixed 的包含块，widget 坐标
+        // 整体偏移出屏幕——表现为「补全弹了但看不见」（2026-10 实测根因）。
+        // 绝对定位相对编辑器盒计算，不受祖先 transform 影响。
+        fixedOverflowWidgets: false,
       });
       editorRef.current = editor;
       monacoRef.current = monaco;

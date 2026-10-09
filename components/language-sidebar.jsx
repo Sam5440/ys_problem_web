@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react';
 import { useSettings, channelLabel } from './settings';
 
 /**
- * Right-edge language sidebar: 英文 / 中文(每渠道) / 对照, per user's
- * enabled channels. Wide screens: always-visible card pinned to the right
- * edge. Narrower screens: floating pill that expands on tap.
+ * 左下角语言切换浮标：英文 / 中文(每渠道) / 对照，per user's enabled
+ * channels。全宽宽统一的 floating pill，向上展开；原先的右缘中部侧栏与
+ * 右下角浮标合并于此——编译器面板占据右侧后两者不再冲突，打开面板时
+ * 语言栏仍可用。
  */
 export default function LanguageSidebar() {
   const { lang, setLang, settings, openSettings, aiReady } = useSettings();
@@ -78,23 +79,17 @@ export default function LanguageSidebar() {
   );
 
   return (
-    <>
-      {/* wide screens: pinned right-edge sidebar */}
-      // compiler-open 时编译器面板占据右侧，语言侧栏让位（globals.css 隐藏）
-      <aside className="language-sidebar fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 min-[1440px]:block">{list()}</aside>
-
-      {/* narrower screens: floating pill that expands upward */}
-      <div className="fixed bottom-5 right-4 z-40 min-[1440px]:hidden">
-        {expanded && list('mb-2')}
-        <button
-          type="button"
-          onClick={() => setExpanded((v) => !v)}
-          className="ml-auto flex size-10 items-center justify-center rounded-full border bg-card text-sm font-medium shadow-lg transition-colors hover:text-foreground"
-          aria-label="题面语言"
-        >
-          译
-        </button>
-      </div>
-    </>
+    <div className="fixed bottom-5 left-4 z-40">
+      {expanded && list('mb-2')}
+      <button
+        type="button"
+        onClick={() => setExpanded((v) => !v)}
+        className="flex size-10 items-center justify-center rounded-full border bg-card text-sm font-medium shadow-lg transition-colors hover:text-foreground"
+        aria-label="题面语言"
+        aria-expanded={expanded}
+      >
+        译
+      </button>
+    </div>
   );
 }

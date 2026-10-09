@@ -33,6 +33,8 @@ const priorityLabel = (id) => channelLabel(id);
 
 const DEFAULT_SETTINGS = {
   defaultChannel: 'deepl',
+  // 首次访问（无本机选择记录）时的题面语言模式：对照（原文 + 优先级链译文）
+  defaultLangMode: 'both',
   sidebarChannels: ['deepl', 'youdao', 'caiyun', 'iflyrec', 'ai', 'ai_custom'],
   zhPriority: DEFAULT_PRIORITY,
   ai: { baseUrl: '', apiKey: '', model: AI_MODELS[0] },
@@ -41,7 +43,7 @@ const DEFAULT_SETTINGS = {
 const LANG_KEY = 'stmt-lang-v2';
 const SETTINGS_KEY = 'stmt-settings-v1';
 
-function loadLang(defaultChannel) {
+function loadLang(defaultChannel, defaultMode = 'both') {
   try {
     const raw = window.localStorage.getItem(LANG_KEY);
     if (raw) {
@@ -57,7 +59,7 @@ function loadLang(defaultChannel) {
     if (legacy === 'zh') return { mode: 'zh', channel: defaultChannel };
     if (legacy === 'both') return { mode: 'both', channel: defaultChannel };
   } catch {}
-  return { mode: 'both', channel: defaultChannel }; // default: 对照（原文 + 优先级链译文）
+  return { mode: defaultMode, channel: defaultChannel }; // 默认：设置里的「默认题面语言」（出厂为对照）
 }
 
 function loadSettings() {
@@ -104,8 +106,9 @@ export function SettingsProvider({ children }) {
   const [dialogOpen, setDialogOpen] = useState(false);
 
   useEffect(() => {
-    setSettingsState(loadSettings());
-    setLangState(loadLang(loadSettings().defaultChannel));
+    const s = loadSettings();
+    setSettingsState(s);
+    setLangState(loadLang(s.defaultChannel, s.defaultLangMode));
   }, []);
 
   const setSettings = (next) => {
@@ -187,11 +190,17 @@ function Field({ label, hint, children }) {
 }
 
 function SettingsDialog({ onClose }) {
-  const { settings, setSettings, aiReady } = useSettings();
+  const { settings, setSettings, aiReady, lang, setLang } = useSettings();
   const [ai, setAi] = useState(settings.ai);
   const [test, setTest] = useState(null); // {state: 'loading'|'ok'|'fail', msg}
 
   const patchAi = (p) => setAi((prev) => ({ ...prev, ...p }));
+
+  // 切换默认题面语言：立即作用于当前浏览，同时存为本机没有选择记录时的默认
+  const pickLangMode = (mode) => {
+    setLang((prev) => ({ mode, channel: prev.channel }));
+    setSettings({ defaultLangMode: mode });
+  };
 
   const saveAi = () => {
     setSettings((prev) => ({ ...prev, ai }));
@@ -234,6 +243,33 @@ function SettingsDialog({ onClose }) {
           <button type="button" onClick={onClose} className="text-muted-foreground hover:text-foreground" aria-label="关闭">
             ✕
           </button>
+        </div>
+
+        <div className="space-y-1.5">
+          <p className="text-xs font-medium text-muted-foreground">
+            默认题面语言（全局默认为对照：原文 + 优先级链译文并列显示；左下角的译字浮标可随时切换）
+          </p>
+          <div className="flex rounded-md border p-0.5">
+            {[
+              { id: 'both', label: '对照' },
+              { id: 'en', label: '英文' },
+              { id: 'zh', label: '中文' },
+            ].map((m) => (
+              <button
+                key={m.id}
+                type="button"
+                onClick={() => pickLangMode(m.id)}
+                aria-pressed={lang.mode === m.id}
+                className={`flex-1 rounded px-2 py-1 text-xs transition-colors ${
+                  lang.mode === m.id
+                    ? 'bg-primary font-medium text-primary-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                {m.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="space-y-2">

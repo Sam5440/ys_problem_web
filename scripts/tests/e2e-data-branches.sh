@@ -82,6 +82,16 @@ COUNT=$(git ls-tree origin/data/problems data/statements/ | wc -l | tr -d ' ')
 [ "$COUNT" = "3" ] || { echo "FAIL: union lost files ($COUNT != 3: 1000a/1000b/1000c)"; exit 1; }
 echo "union OK — all 3 statements on data/problems"
 
+step "4b. local edit to a shared file wins (ours-win union)"
+# CI 的翻译回填改的正是既有题面文件：overlay 若整目录 restore 远端，会把
+# 刚写好的译文覆盖回旧版并悄悄丢出归档（曾致 problems 长期落后站点）。
+echo '{"code":"1000A","patched":true}' > data/statements/1000a.json
+OUT=$(node scripts/push-data-branches.mjs --problems)
+echo "$OUT" | grep -q pushed || { echo "FAIL: shared-file edit not pushed, got: $OUT"; exit 1; }
+git fetch --quiet origin
+git show origin/data/problems:data/statements/1000a.json | grep -q patched || { echo "FAIL: overlay clobbered the shared-file edit"; exit 1; }
+echo "ours-win OK — shared-file edit landed"
+
 step "5. new UTC day chains onto the latest surviving misc branch"
 OLD="data/misc-$(AGO 2)"
 cd "$WORK/b"

@@ -113,7 +113,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 
 | 路径 | 作用 |
 |---|---|
-| `components/compiler/CompilerDock.jsx` | 题目右侧编译器停靠面板（DayView 内挂载，首页/日页共用）：语言切换、样例对拍/交互运行/编译检查三模式、控制台、收起抽屉；xl 布局靠 `body.compiler-open` 的 globals.css 规则把主内容左移 42rem |
+| `components/compiler/CompilerDock.jsx` | 题目右侧编译器停靠面板（DayView 内挂载，首页/日页共用）：语言切换、样例对拍/交互运行/编译检查三模式、控制台、收起抽屉；≥1024px 布局靠 `body.compiler-open` 的 globals.css 规则把主内容左移出 `--compiler-w`（xl 42rem、1024–1279 收窄 34rem），题目与编译器并列；更窄为覆盖式抽屉 |
 | `components/compiler/CodeEditor.jsx` | Monaco 编辑器封装（next/dynamic 按需加载）：高亮、诊断标记（clang/-fsyntax-only 与 py ast.parse 注入）、静态补全 + Ctrl+Space 触发 clang `-code-completion-at` 动态补全；editor.worker 用相对 node_modules 路径打包（monaco 0.57 exports 不允许裸包名进 new URL） |
 | `components/compiler/CompilerSettingsSection.jsx` | 设置弹窗「编译器」区块：运行时下载管理（Cache API + 进度）、默认模板编辑、默认语言/标准/超时偏好、观望中运行时占位 |
 | `lib/compiler/runtimes.js` | 运行时清单：Pyodide 版本（默认 314.0.7 = Python 3.14.2）、clang22 文件与尺寸、「观望中」占位（更新的 clang 发行版不适合刷题时留位） |
@@ -130,7 +130,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 | `scripts/lib/git-plumbing.mjs` | 数据分支 git 底层操作：临时 index 组树、commit-tree、branchTip（fetch 取 tip）、push 助手 |
 | `scripts/lib/data-branches.mjs` | 分支命名（`data/misc-YYYY-MM-DD`）、60 天保留期选择、最新 misc 分支查找 |
 | `scripts/restore-data.mjs` | 把数据分支内容恢复进工作区（`--misc`/`--statements`/`--daily` 可组合；`git restore` 只动工作区不动 index） |
-| `scripts/push-data-branches.mjs` | 题面→`data/problems`（**并集语义**：先叠加远端 tip 再快照，防并发丢文件）；杂项→当天 misc 分支（**纯快照**：滚动删除必须生效）；`--prune` 清理过期分支 |
+| `scripts/push-data-branches.mjs` | 题面→`data/problems`（**并集语义**：远端只补本地缺失的文件、既有文件以工作区为准——CI 翻译回填改的正是既有文件，整目录 restore 会把译文盖回旧版悄悄丢出归档）；杂项→当天 misc 分支（**纯快照**：滚动删除必须生效）；`--prune` 清理过期分支 |
 | `scripts/publish-deploy.mjs` | 组装 deploy 孤立提交（HEAD 树 + daily/leaderboard/statements/ci-logs）并 force-push；树未变自动跳过 |
 | `scripts/prepare-build.mjs` | 构建自愈：数据缺失时从 origin/deploy 拉快照，再跑 write-public-data（vercel.json buildCommand） |
 | `scripts/lib/cf-statement.mjs` | CF 题面解析器（Playwright 抓取、unmathjax 还原公式） |
@@ -168,6 +168,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 ## 翻译体系
 
 - 数据模型：`sectionsZh[key][i] = { deepl, youdao, caiyun, iflyrec, ai }`（对象=多渠道；旧版单字符串视为 `legacy`）。标题在 `titleZh`，结构相同。`ai` 译文旁可带元数据键 `aiModel`（该段所用模型的展示名，由 `translate-ai.mjs` 从 `AI_MODEL_LABEL` 写入、缺省回退请求模型名；无此键的旧段按常量 `GLM 5.3 Flash` 展示，见 `lib/ai-model.js`）。**遍历条目键必须按渠道白名单过滤，别把 `aiModel` 当渠道**（参照 `StatementBody.jsx` 的 `mergedChannels` 与 `zh-store.js` 的 `archivedChannels`）。
+- 题面语言（`components/language-sidebar.jsx`，左下角「译」浮标 + 设置弹窗「默认题面语言」）：`英文 / 中文(每渠道) / 对照` 三态存 `stmt-lang-v2`；**出厂默认与设置默认均为对照**（`DEFAULT_SETTINGS.defaultLangMode`，仅在本机没有选择记录时生效）。
 - 显示优先级链 `DEFAULT_PRIORITY = ['ai', 'deepl', 'caiyun', 'iflyrec', 'youdao']`（`components/settings.jsx`），用户可拖拽调整；每段译文结尾**始终**注入来源芯片（必须注进 `renderRich` 输出的最后一个 `<p>` 内部，外包 `<p>` 会因非法嵌套被丢弃）。
 - 渠道分三类：MT 四渠道由**访客浏览器**实时翻译（`lib/zh-store.js` 轮转分发 + IndexedDB 缓存；DeepL/有道/讯飞走 `/api/mt/[channel]` 同源中继，彩云直连）；`ai`=CI 存档（侧栏「AI (CI翻译)」，无需配置）；`ai_custom`=用户自配端点实时翻译。
 - **CI runner 的出口 IP 被四家 MT 服务风控，CI 端 MT 几乎全灭**——缺译文只靠 AI 渠道回填或访客浏览器端翻译，不要试图在 CI 里修 MT。
@@ -201,7 +202,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 - **缓存**：设置页下载写入 Cache API（`compiler-runtime-v1`，显式 Content-Type 重建 Response，否则 wasm streaming 解析失败）；worker 侧 Cache 优先、回退同源 `/compiler/*`（带 `.gz` + DecompressionStream 首试）。`hasRuntime` 对同源未缓存的运行时做 HEAD 探测（deploy 已带运行时则免下载），跨源必须已缓存。
 - **本站对 vendored shared.js 的约定**：`cpp-worker.js` 用正则把 IIFE 的 `return API;` 尾句 patch 成 `return { API, MemFS };` 取出 MemFS 类（顶层作用域本无 MemFS 标识符；外层取回 `return API` 即对子），并给 `MemFS.prototype` 打 stdin 补丁——**必须先于 `new API()`**（emscripten 导入表构造即 bind 固化）。上游改版导致断言报「shared.js 结构变化」时同步这里的正则。
 - **Python worker 是 module worker**（`py-client.js` `new Worker(url, { type: 'module' })`）：Pyodide 314 线（Python 3.14）在 classic worker 里直接抛 "Classic web workers are not supported"；py-worker 无 importScripts，两种作用域通吃。C++ 的 cpp-worker 必须保持 classic（依赖 importScripts 挂 bridge.js）。
-- **Monaco 0.57**：exports map 把裸子路径全映射进 `esm/vs/*.js`——editor.worker 只能用相对 node_modules 路径进 `new URL`，且勿显式引 `min/vs/editor.main.css`（ESM 构建内联 css import）。**补全架构**：数据在 `lib/compiler/completions.js`（竞赛向**裸名**静态表 + 签名 + 中文文档，node/浏览器同源可单测；首版带 `std::` 前缀，`using namespace std;` 下打 co 无任何匹配——静态表必须存裸名），`CodeEditor.jsx` 做 Monaco 适配：打字即弹静态表；`(`/`,` 出签名提示（参数高亮 + 说明）；悬停出原型文档；`#include <`/`"` 出头文件表；clang `-code-completion-at` 分层接入——Ctrl+Space 手动走 await（keydown 打标手动触发），成员触发字符那一下静态表立即返回 + clang 后台跑进缓存（key=光标前全文，序号防竞态），后续成员上下文击键按前缀命中合并，**不逐键发起 clang**（全量编译秒级），后台完成后不刷新已开 widget（Monaco 0.57 无可靠公开机制，hide+triggerSuggest 互相踩）。坑：① `quickSuggestions` 默认 `offWhenInlineCompletions`（实测打字母不弹），必须显式 `{ other: 'on' }`；② `model.findMatches` 第 6 参 `captureMatches` 必须 true——false 时 `FindMatch.matches` 是 null，取 `[0]` 即抛且异常被 Monaco 吞掉（表现为补全列表恒空）；③ signature help 的 DOM 类名是 `.parameter-hints-widget`（不是 signature-help-widget）；④ 成员上下文判断（`isCppMemberAccess`）必须**先剥光标前正在打的部分词**（`v.pu` 仍是成员上下文），只看紧邻字符会在 `v.p` 处退回普通表、成员候选消失；`.` 前词元须字母/下划线开头（浮点 `1.5` 不弹成员）；⑤ E2E 断言补全必须真实键盘——`executeEdits`/`setValue` 程序化编辑不触发 suggest，且 `v.` 后候选按字母序排，断言要续打部分词过滤（`v.pu`→push_back）而不是指望目标项在可视区。**上下文三态与签名消歧**（2026-10 扩表）：`cppAccessKind` 区分 `dot`/`arrow`/`scope`——`.`/`->` 出通用成员表，`::`（`std::` 等）出全量 std 符号（函数+类型+对象+成员，否则不带 using namespace std 时 `std::so` 补不出 sort）；签名提示走 `lookupSignature(text, 自由函数表, 成员表)`——成员形状 callee（含 `.`/`->`/`::`）优先查成员表、裸名优先自由函数表，`v.count(` 与裸 `count(` 同名不同义各得其所；静态表覆盖 memset/freopen/scanf/printf、erase-remove 族、nth_element、set_union 族、iota/partial_sum、位内建 ctz/clz、iomanip（setprecision/setw/setfill）、成员 contains/emplace/lower_bound 与 cin.ignore/cout.flush 等流成员。
+- **Monaco 0.57**：exports map 把裸子路径全映射进 `esm/vs/*.js`——editor.worker 只能用相对 node_modules 路径进 `new URL`，且勿显式引 `min/vs/editor.main.css`（ESM 构建内联 css import）。**补全架构**：数据在 `lib/compiler/completions.js`（竞赛向**裸名**静态表 + 签名 + 中文文档，node/浏览器同源可单测；首版带 `std::` 前缀，`using namespace std;` 下打 co 无任何匹配——静态表必须存裸名），`CodeEditor.jsx` 做 Monaco 适配：打字即弹静态表；`(`/`,` 出签名提示（参数高亮 + 说明）；悬停出原型文档；`#include <`/`"` 出头文件表；clang `-code-completion-at` 分层接入——Ctrl+Space 手动走 await（keydown 打标手动触发），成员触发字符那一下静态表立即返回 + clang 后台跑进缓存（key=光标前全文，序号防竞态），后续成员上下文击键按前缀命中合并，**不逐键发起 clang**（全量编译秒级），后台完成后不刷新已开 widget（Monaco 0.57 无可靠公开机制，hide+triggerSuggest 互相踩）。坑：① `quickSuggestions` 默认 `offWhenInlineCompletions`（实测打字母不弹），必须显式 `{ other: 'on' }`；② `model.findMatches` 第 6 参 `captureMatches` 必须 true——false 时 `FindMatch.matches` 是 null，取 `[0]` 即抛且异常被 Monaco 吞掉（表现为补全列表恒空）；③ signature help 的 DOM 类名是 `.parameter-hints-widget`（不是 signature-help-widget）；④ 成员上下文判断（`isCppMemberAccess`）必须**先剥光标前正在打的部分词**（`v.pu` 仍是成员上下文），只看紧邻字符会在 `v.p` 处退回普通表、成员候选消失；`.` 前词元须字母/下划线开头（浮点 `1.5` 不弹成员）；⑤ E2E 断言补全必须真实键盘——`executeEdits`/`setValue` 程序化编辑不触发 suggest，且 `v.` 后候选按字母序排，断言要续打部分词过滤（`v.pu`→push_back）而不是指望目标项在可视区；⑥ 溢出 widget（suggest/hover/signature）必须 `fixedOverflowWidgets: false`（Monaco 默认绝对定位）——fixed 模式下带 transform/translate 的祖先（面板 `translate-x-0` 收开动画）会成为 fixed 包含块，widget 坐标整体偏移出屏幕，表现为「补全弹了但看不见」。**上下文三态与签名消歧**（2026-10 扩表）：`cppAccessKind` 区分 `dot`/`arrow`/`scope`——`.`/`->` 出通用成员表，`::`（`std::` 等）出全量 std 符号（函数+类型+对象+成员，否则不带 using namespace std 时 `std::so` 补不出 sort）；签名提示走 `lookupSignature(text, 自由函数表, 成员表)`——成员形状 callee（含 `.`/`->`/`::`）优先查成员表、裸名优先自由函数表，`v.count(` 与裸 `count(` 同名不同义各得其所；静态表覆盖 memset/freopen/scanf/printf、erase-remove 族、nth_element、set_union 族、iota/partial_sum、位内建 ctz/clz、iomanip（setprecision/setw/setfill）、成员 contains/emplace/lower_bound 与 cin.ignore/cout.flush 等流成员。
 
 ## Secrets 与环境变量
 
@@ -214,7 +215,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 1. **克隆后 main 里没有数据**——先 `npm run data:pull`，再 dev/build。`data/`、`public/ci-logs/` 是 gitignore 的，工作区里出现它们属正常。
 2. **statements 改完必须 `npm run reattach`**（见架构一节）；要发布则再 `push-data-branches --problems` + `data:publish`。
 3. **不要把数据提交进 main**：数据分支推送由 plumbing 强制 add（绕过 ignore），但普通 `git add data` 在 main 上会真的把数据带进主分支历史，毁掉瘦身效果。
-4. `push-data-branches` 的语义差异：`--problems` 是并集（远端文件先叠加，防并发丢题面），`--misc` 是纯快照（60 天滚动删除必须生效）——改任何一个都要保住这两条不变式。
+4. `push-data-branches` 的语义差异：`--problems` 是并集（远端只补本地**缺失**的文件，既有文件以本地为准——既能接住并发新增的题面，又不吞掉 CI/本地对既有文件的翻译回填；e2e 第 4/4b 步钉死），`--misc` 是纯快照（60 天滚动删除必须生效）——改任何一个都要保住这两条不变式。
 5. 解析器 `unmathjax()`：MathJax v2（frame span）与 v3（`<mjx-container>`）布局要都覆盖，恢复失败曾导致 805 个文件泄漏 `%%ZSMJ%%` 占位符（只能重抓修复）。
 6. 前端基建：`postcss.config.mjs` 必须 ESM 导出；新版 lucide-react 无品牌图标（Github 等需内联 SVG）；"Element type is invalid" 报错的真因常是某个导入为 undefined。
 7. React 水合：effect 依赖里不要放会变化的 state（cleanup 会掐死 in-flight fetch 导致永挂 loading），用 ref 做真值源（见 `logs-view.jsx` 的 `startedRef` 模式）；图表时间轴锚定最新运行的 `startedAt` 而非 `Date.now()`，保证 SSR/水合一致。历史遗留的 React #418 警告（`renderRich` 嵌套 `<p>`）非回归、无功能影响。

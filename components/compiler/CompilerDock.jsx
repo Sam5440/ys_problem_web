@@ -8,8 +8,9 @@
  * - 模式：样例测试（题目 examples 逐例对拍，C++ 编译一次多例复用）/
  *   交互运行（SharedArrayBuffer 阻塞喂入，需跨域隔离）/ 编译检查
  *   （C++ -fsyntax-only；Python ast.parse；编辑停顿 2s 自动跑）。
- * - 布局：xl 起占据右侧固定列（body.compiler-open 由 CSS 推开主内容），
- *   窄屏为覆盖式抽屉；收起后状态（草稿/控制台/结果）保留。
+ * - 布局：≥1024px 起占据右侧固定列（body.compiler-open 由 CSS 把主内容左移
+ *   出面板宽度 --compiler-w，题目与编译器并列；1024–1279 面板收窄 34rem），
+ *   更窄的屏幕为覆盖式抽屉；收起后状态（草稿/控制台/结果）保留。
  */
 
 import dynamic from 'next/dynamic';
@@ -414,19 +415,23 @@ export default function CompilerDock({ problems }) {
 
   return (
     <>
-      {/* 右缘开合舌片 */}
+      {/* 右缘开合按钮（右侧边栏入口）：收起态全宽可见，展开态 ≥xl 保留为收起舌片 */}
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? '收起编译器' : '展开编译器'}
-        className={`fixed right-0 top-[55%] z-50 flex items-center gap-1 rounded-l-md border border-r-0 bg-card px-1 py-3 text-xs text-muted-foreground shadow-sm transition-colors hover:text-foreground ${open ? 'hidden xl:flex' : ''}`}
+        title={open ? '收起编译器' : '展开编译器（与题目并排，手机上浮于题目上方）'}
+        className={`fixed right-0 top-[55%] z-50 flex items-center gap-1 rounded-l-md border border-r-0 bg-card px-1 py-2.5 text-xs text-muted-foreground shadow-sm transition-colors hover:text-foreground ${open ? 'hidden xl:flex' : 'flex'}`}
       >
-        <span className="[writing-mode:vertical-rl] tracking-widest">编译器</span>
+        <span className="flex flex-col items-center gap-1 [writing-mode:vertical-rl] tracking-widest">
+          <Terminal className="size-3.5" />
+          编译器
+        </span>
         <ChevronRight className={`size-3.5 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
 
       <aside
-        className={`fixed bottom-0 right-0 top-14 z-40 flex w-[42rem] max-w-[calc(100vw-0.5rem)] flex-col border-l bg-card shadow-2xl transition-transform duration-200 ${open ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed bottom-0 right-0 top-14 z-40 flex w-[var(--compiler-w)] max-w-[calc(100vw-0.5rem)] flex-col border-l bg-card shadow-2xl transition-transform duration-200 ${open ? 'translate-x-0' : 'translate-x-full'}`}
         aria-label="编译器面板"
         aria-hidden={!open}
       >

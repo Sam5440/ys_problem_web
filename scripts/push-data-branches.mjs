@@ -33,14 +33,11 @@ import {
   listRemoteBranches,
   latestMiscBranch,
   selectExpiredMiscBranches,
+  NO_PREVIEW_FILES,
 } from './lib/data-branches.mjs';
 
 const argv = new Set(process.argv.slice(2));
 const runId = process.env.GITHUB_RUN_ID ? ` (run ${process.env.GITHUB_RUN_ID})` : '';
-
-const NO_PREVIEW = {
-  'vercel.json': `${JSON.stringify({ git: { deploymentEnabled: { 'data/*': false } } }, null, 2)}\n`,
-};
 
 /** Fetch a branch (depth 1) and overlay the tracked paths (within `paths`)
     that it actually carries onto the worktree. Returns the fetched tip sha. */
@@ -72,7 +69,7 @@ async function pushSnapshot(branch, paths, message, { union = false, parentBranc
       const prev = await branchTip(parentBranch);
       parentSha = prev.sha;
     }
-    const tree = await buildTree({ paths, extraFiles: NO_PREVIEW });
+    const tree = await buildTree({ paths, extraFiles: NO_PREVIEW_FILES });
     if (own.sha && tree === own.tree) {
       console.log(`${branch}: unchanged (tree ${tree.slice(0, 12)}) — nothing to push`);
       return { pushed: false };

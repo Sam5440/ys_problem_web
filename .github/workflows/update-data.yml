@@ -30,7 +30,7 @@ jobs:
       # later publish steps) from the latest data/misc-* branch so the cheap
       # poll below can gate on them.
       - name: Restore misc data from data branches
-        run: node scripts/restore-data.mjs --misc
+        run: node scripts/restore-data.mjs --misc --runtime
 
       # Cheap poll: compare upstream HEAD with the SHA recorded at the last
       # full sync (data/.upstream-sha) AND the upstream gh-pages SHA with its
@@ -83,7 +83,7 @@ jobs:
             echo "${{ steps.upstream.outputs.lb_sha }}" > data/.leaderboard-sha
           fi
           node scripts/push-data-branches.mjs --misc --prune
-          node scripts/restore-data.mjs --daily
+          node scripts/restore-data.mjs --daily --runtime
           node scripts/publish-deploy.mjs
 
       # Every-run retry: segments from the newest 3 days that still lack an AI
@@ -104,7 +104,7 @@ jobs:
           AI_RECENT_DAYS: "3"
           AI_TRANSLATE_LIMIT: "60"
         run: |
-          node scripts/restore-data.mjs --statements --daily
+          node scripts/restore-data.mjs --statements --daily --runtime
           OUT=$(node scripts/translate-ai.mjs)
           echo "$OUT"
           DONE=$(echo "$OUT" | grep -oE 'Done: [0-9]+' | grep -oE '[0-9]+' || echo 0)
@@ -129,7 +129,7 @@ jobs:
       # the deploy snapshot) into the worktree first.
       - name: Restore statements and daily snapshot
         if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
-        run: node scripts/restore-data.mjs --statements --daily
+        run: node scripts/restore-data.mjs --statements --daily --runtime
 
       - name: Install dependencies
         if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
@@ -261,7 +261,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Restore data from data branches
-        run: node scripts/restore-data.mjs
+        run: node scripts/restore-data.mjs --misc --statements --daily --runtime
 
       - name: Save CI log into the data branches
         env:

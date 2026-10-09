@@ -12,6 +12,7 @@ import { git } from './git-plumbing.mjs';
 
 export const PROBLEMS_BRANCH = 'data/problems';
 export const MISC_PREFIX = 'data/misc-';
+export const RUNTIME_BRANCH = 'data/runtime';
 export const DEPLOY_BRANCH = 'deploy';
 export const RETENTION_DAYS = 60;
 
@@ -24,8 +25,15 @@ export const MISC_PATHS = [
   'data/.history-backfill-failed.json',
   'public/ci-logs',
 ];
+/** Browser compiler runtime binaries, self-hosted same-origin (permanent). */
+export const RUNTIME_PATHS = ['public/compiler'];
+/** Injected into every data-only branch tree: disables Vercel deployments for
+    branches matching `data/*` so nobody accidentally deploys 150MB of blobs. */
+export const NO_PREVIEW_FILES = {
+  'vercel.json': `${JSON.stringify({ git: { deploymentEnabled: { 'data/*': false } } }, null, 2)}\n`,
+};
 /** Paths layered on top of the code tree to form the deploy snapshot. */
-export const DEPLOY_PATHS = ['data/daily.json', 'data/leaderboard.json', 'data/statements', 'public/ci-logs'];
+export const DEPLOY_PATHS = ['data/daily.json', 'data/leaderboard.json', 'data/statements', 'public/ci-logs', 'public/compiler'];
 
 export const utcToday = (now = new Date()) => now.toISOString().slice(0, 10);
 

@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Restore data from data branches
-        run: node scripts/restore-data.mjs
+        run: node scripts/restore-data.mjs --misc --statements --daily --runtime
 
       - name: Prune expired misc branches
         run: node scripts/push-data-branches.mjs --prune

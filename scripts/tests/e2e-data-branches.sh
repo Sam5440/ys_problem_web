@@ -9,6 +9,8 @@
 #   4. a concurrent update pushed by another clone survives ours (union)
 #   5. a new UTC day chains onto the latest surviving misc branch
 #   6. prune deletes misc branches older than the retention window (boundary kept)
+#   6b. runtime branch: orphan snapshot + unchanged skip + content replace +
+#       restore-data --runtime round-trip + deploy layers public/compiler
 #   7. publish-deploy produces an orphan deploy snapshot (code+data), skips
 #      when unchanged, and force-replaces itself when data moves
 #   8. a fresh clone restores the full data set with a clean index
@@ -114,6 +116,31 @@ LEFT=$(git ls-remote --heads origin 'refs/heads/data/misc-*' | wc -l | tr -d ' '
 echo "misc branches left: $LEFT (expect 3: today, -2d, -60d boundary)"
 [ "$LEFT" = "3" ] || { echo "FAIL: expected 3 misc branches after prune, got $LEFT"; exit 1; }
 
+step "6b. runtime branch: orphan snapshot + unchanged skip + replace + restore"
+mkdir -p public/compiler
+for f in clang22 clang22-noeh lld22 lld22-noeh sysroot22.tar memfs; do
+  echo "bin-$f" > "public/compiler/$f"
+done
+node scripts/push-runtime-branch.mjs
+git fetch --quiet origin data/runtime
+RT_TOP=$(git ls-tree --name-only origin/data/runtime | sort | tr '\n' ' ')
+[ "$RT_TOP" = "public vercel.json " ] || { echo "FAIL: runtime tree top = [$RT_TOP]"; exit 1; }
+PARENTS=$(git rev-list --parents -n1 origin/data/runtime | wc -w | tr -d ' ')
+[ "$PARENTS" = "1" ] || { echo "FAIL: runtime commit is not an orphan (rev-list words = $PARENTS)"; exit 1; }
+git show origin/data/runtime:vercel.json | grep -q '"data/\*"' || { echo "FAIL: runtime no-preview vercel.json missing/wrong"; exit 1; }
+OUT=$(node scripts/push-runtime-branch.mjs)
+echo "$OUT" | grep -q "skipping push" || { echo "FAIL: unchanged runtime should skip, got: $OUT"; exit 1; }
+echo bin-memfs-v2 > public/compiler/memfs
+node scripts/push-runtime-branch.mjs
+git fetch --quiet origin data/runtime
+[ "$(git show origin/data/runtime:public/compiler/memfs)" = "bin-memfs-v2" ] || { echo "FAIL: runtime content replace lost"; exit 1; }
+rm -rf public/compiler
+node scripts/restore-data.mjs --runtime
+[ "$(cat public/compiler/memfs)" = "bin-memfs-v2" ] || { echo "FAIL: restore-data --runtime did not restore"; exit 1; }
+STAGED=$(git diff --cached --name-only | wc -l | tr -d ' ')
+[ "$STAGED" = "0" ] || { echo "FAIL: runtime restore staged $STAGED files"; exit 1; }
+echo "runtime branch OK (orphan + skip + replace + restore round-trip)"
+
 step "7. publish-deploy"
 node scripts/publish-deploy.mjs
 git fetch --quiet origin deploy
@@ -137,6 +164,7 @@ D2=$(git rev-parse origin/deploy)
 PARENTS=$(git rev-list --parents -n1 origin/deploy | wc -w | tr -d ' ')
 [ "$PARENTS" = "1" ] || { echo "FAIL: replacement deploy commit not orphan"; exit 1; }
 git show origin/deploy:data/statements/1000d.json | grep -q 1000D || { echo "FAIL: new data missing on deploy"; exit 1; }
+git cat-file -e origin/deploy:public/compiler/memfs || { echo "FAIL: deploy did not layer public/compiler"; exit 1; }
 echo "deploy orphan + replace OK"
 
 step "8. fresh clone restore"

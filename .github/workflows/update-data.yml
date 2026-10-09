@@ -86,22 +86,22 @@ jobs:
           node scripts/restore-data.mjs --daily --runtime
           node scripts/publish-deploy.mjs
 
-      # Every-run retry: segments from the newest 3 days that still lack an AI
+      # Every-run retry: segments from the newest 14 days that still lack an AI
       # translation (failed in an earlier run — transient endpoint/quota errors)
       # get another attempt on EVERY run, not just when upstream moves. Without
       # this a failed segment would wait up to a day for the next upstream
       # update. Zero-dependency path (restore + translate + reattach are all
       # node-builtins-only), so it runs without npm ci; skipped on the full
       # pipeline, whose newest-first translate step already covers recent days.
-      - name: Retry AI translation for the newest 3 days
+      - name: Retry AI translation for the newest 14 days
         id: retry
         if: ${{ steps.upstream.outputs.changed != 'true' && github.event_name != 'workflow_dispatch' }}
         env:
           AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
-          AI_MODEL: glm-5.3-flash
-          AI_MODEL_LABEL: GLM 5.3 Flash
-          AI_RECENT_DAYS: "3"
+          AI_MODEL: gpt-5.6-terra
+          AI_MODEL_LABEL: GPT 5.6 Terra
+          AI_RECENT_DAYS: "14"
           AI_TRANSLATE_LIMIT: "60"
         run: |
           node scripts/restore-data.mjs --statements --daily --runtime
@@ -194,11 +194,11 @@ jobs:
         env:
           AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
-          AI_MODEL: glm-5.3-flash
+          AI_MODEL: gpt-5.6-terra
           # Recorded per segment (sectionsZh[..][i].aiModel) and shown on the
           # site's source chips — the name of the model actually serving the
           # endpoint. Update together with AI_MODEL when switching models.
-          AI_MODEL_LABEL: GLM 5.3 Flash
+          AI_MODEL_LABEL: GPT 5.6 Terra
           AI_TRANSLATE_LIMIT: 60
         continue-on-error: true
 

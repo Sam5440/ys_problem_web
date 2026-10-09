@@ -44,7 +44,7 @@ const LIMIT = Number(process.env.AI_TRANSLATE_LIMIT || 60);
 const RECENT_DAYS = Number(process.env.AI_RECENT_DAYS || 0);
 const WARM_CACHE = process.env.AI_WARM_CACHE !== '0';
 const MAX_CONSECUTIVE_FAILS = 5;
-const TIMEOUT_MS = 120000;
+const TIMEOUT_MS = 180000; // gpt-5.6-terra（wuyou 中转）首字节慢（推理型，非流式 >90s），留足余量
 const WARM_TIMEOUT_MS = 30000;
 const DELAY_MS = 300;
 

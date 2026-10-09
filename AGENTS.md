@@ -81,7 +81,7 @@ npm run reattach       # 把 data/statements/*.json 重新挂载进 data/daily.j
 npm run update-data    # 同步上游（CF_STATEMENTS=0 TRANSLATE=0 等环境变量控制子步骤）
 npm run data:publish   # 手动重建 deploy 发布分支（孤立提交，强推）
 node scripts/fetch-statements.mjs --limit N   # 补抓题面（续传式）
-node scripts/translate-ai.mjs                 # AI 翻译回填（需 AI_BASE_URL/AI_API_KEY；AI_RECENT_DAYS=N 只翻最近 N 个日期，CI 空跑轮次用它对近 3 天缺译段做二次尝试）
+node scripts/translate-ai.mjs                 # AI 翻译回填（需 AI_BASE_URL/AI_API_KEY；AI_RECENT_DAYS=N 只翻最近 N 个日期，CI 空跑轮次用它对近 14 天缺译段做二次尝试）
 node scripts/sync-leaderboard.mjs             # 仅同步排行榜（records.js → data/leaderboard.json，内容无变化不写盘）
 node scripts/repair-zsmj.mjs --limit N        # 重抓 ZSMJ 污染题面
 node scripts/save-ci-log.mjs                  # 仅在 Actions 内可用（依赖 GITHUB_* env，缺了会跳过）
@@ -156,7 +156,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 ### CI workflow（`.github/workflows/update-data.yml`，每小时 :12）
 
 双 job：
-1. **update**：检出 main（仅代码）→ `restore-data --misc` 恢复标记 → `git ls-remote` 比对**两个**上游 SHA——main（`data/.upstream-sha`）与 gh-pages（`data/.leaderboard-sha`，排行榜 records.js 在 gh-pages 独立更新，主分支不动也会变；只比对 main 曾导致排行榜长期不刷新）。两者都一致→秒级空跑结束；仅 gh-pages 变→只跑 `sync-leaderboard.mjs`（零依赖）→ 更新 misc 分支 + 重新发布 deploy；main 变或手动触发→恢复 statements+daily → 全量同步 → 补抓 4 题 → 修复 ZSMJ（`continue-on-error`；若 `repaired>0 && remaining>0` 用 `gh api .../dispatches` **自链下一轮**——GitHub 并发组只保留最新排队运行，预先排队会被取消，必须 run 内自链）→ AI 翻译回填（预算 60 段，`continue-on-error`）→ `push-data-branches --problems --misc --prune` → `publish-deploy`。**非完整运行的每一轮**（空跑/仅榜单）还会执行「近 3 天缺译二次尝试」：`translate-ai.mjs` 带 `AI_RECENT_DAYS=3`（零依赖路径：restore → translate → reattach，无需 npm ci），译到就推 problems + 重发 deploy，且 `retry_changed` 计入 save-log 归档条件（否则 /logs 会把真实数据更新误判成空跑）；完整运行自身已有最新优先的翻译步，不重复跑该步。**CI 不再向 main 提交任何东西。**
+1. **update**：检出 main（仅代码）→ `restore-data --misc` 恢复标记 → `git ls-remote` 比对**两个**上游 SHA——main（`data/.upstream-sha`）与 gh-pages（`data/.leaderboard-sha`，排行榜 records.js 在 gh-pages 独立更新，主分支不动也会变；只比对 main 曾导致排行榜长期不刷新）。两者都一致→秒级空跑结束；仅 gh-pages 变→只跑 `sync-leaderboard.mjs`（零依赖）→ 更新 misc 分支 + 重新发布 deploy；main 变或手动触发→恢复 statements+daily → 全量同步 → 补抓 4 题 → 修复 ZSMJ（`continue-on-error`；若 `repaired>0 && remaining>0` 用 `gh api .../dispatches` **自链下一轮**——GitHub 并发组只保留最新排队运行，预先排队会被取消，必须 run 内自链）→ AI 翻译回填（预算 60 段，`continue-on-error`）→ `push-data-branches --problems --misc --prune` → `publish-deploy`。**非完整运行的每一轮**（空跑/仅榜单）还会执行「近 14 天缺译二次尝试」：`translate-ai.mjs` 带 `AI_RECENT_DAYS=14`（零依赖路径：restore → translate → reattach，无需 npm ci），译到就推 problems + 重发 deploy，且 `retry_changed` 计入 save-log 归档条件（否则 /logs 会把真实数据更新误判成空跑）；完整运行自身已有最新优先的翻译步，不重复跑该步。**CI 不再向 main 提交任何东西。**
 2. **save-log**（`needs: update`，`if: !cancelled()`）：job 日志只有完成后才能下载，所以必须独立 job。写 `.log`（清洗 + 400KB 留尾）+ `.json`（摘要含 `tokenUsage`/`tokenSegments`/`leaderboard`）+ `.ai.json`（逐段翻译记录，需要 statements 所以先 restore）→ 追加进当天 misc 分支 → 重新发布 deploy。仅榜单变更的运行也归档（否则 /logs 会把有数据更新的运行误判成空跑）。
 
 另有 `.github/workflows/publish-deploy.yml`：main 代码推送 → 恢复数据 → 清理过期 misc 分支 → 重建 deploy（代码改动约 2 分钟直达生产）；每日 cron 兜底清理。

@@ -49,28 +49,80 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Vasya 有一个机器人，机器人位于无限大的笛卡尔平面上，初始位于单元格 (0,0)$$$(0, 0)$$$。机器人可以执行以下四种操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "U — 从 (x,y)$$$(x, y)$$$ 移动到 (x,y+1)$$$(x, y + 1)$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "D — 从 (x,y)$$$(x, y)$$$ 移动到 (x,y−1)$$$(x, y - 1)$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "L — 从 (x,y)$$$(x, y)$$$ 移动到 (x−1,y)$$$(x - 1, y)$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "R — 从 (x,y)$$$(x, y)$$$ 移动到 (x+1,y)$$$(x + 1, y)$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Vasya 还有一个包含 n$$$n$$$ 个操作的序列。Vasya 想要修改这个序列，使得执行完这些操作后机器人最终停在 (x,y)$$$(x, y)$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Vasya 想要修改序列，使得被修改子段的长度尽可能小。这个长度可以按如下方式计算：maxID−minID+1$$$maxID - minID + 1$$$，其中 maxID$$$maxID$$$ 是被修改操作的最大下标，minID$$$minID$$$ 是被修改操作的最小下标。例如，如果 Vasya 把 RRRRRRR 改成 RLRRLRL，那么下标为 2$$$2$$$、5$$$5$$$ 和 7$$$7$$$ 的操作被修改，因此被修改子段的长度为 7−2+1=6$$$7 - 2 + 1 = 6$$$。另一个例子：如果 Vasya 把 DDDD 改成 DDRD，那么被修改子段的长度为 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果没有修改，那么被修改子段的长度为 0$$$0$$$。修改一个操作是指把它替换为某个操作(可能与原来相同)；Vasya 不能向序列中插入新操作，也不能删除操作。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "帮帮 Vasya！告诉他需要修改的子段的最小长度，使得机器人能从 (0,0)$$$(0, 0)$$$ 到达 (x,y)$$$(x, y)$$$，或者告诉他这是不可能的。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n (1≤n≤2⋅105)$$$n~(1 \\le n \\le 2 \\cdot 10^5)$$$ — 操作的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行包含操作序列，即一个长度为 n$$$n$$$ 的字符串。每个字符均为 U、D、L 或 R。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三行包含两个整数 x,y(−109≤x,y≤109)$$$x, y~(-10^9 \\le x, y \\le 10^9)$$$，表示机器人应结束路径的单元格坐标。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数，即为使操作序列发生改变后，机器人从 (0,0)$$$(0, 0)$$$ 移动到 (x,y)$$$(x, y)$$$，所需改变的子段的最小可能长度。如果无法完成改变，输出 −1$$$-1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中，可以将序列改变为 LULUU。因此，改变的子段长度为 3−1+1=3$$$3 - 1 + 1 = 3$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，给定的序列已经可以使机器人到达 (x,y)$$$(x, y)$$$，因此改变的子段长度为 0$$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个样例中，机器人无法在单元格 (x,y)$$$(x, y)$$$ 结束路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. Vasya 与机器人",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

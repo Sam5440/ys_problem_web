@@ -51,30 +51,88 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "有 n$$$n$$$ 种不同颜色的球；第 i$$$i$$$ 种颜色的球的数量为 ai$$$a_i$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "可以将这些球组合成若干组。每组至多包含 2$$$2$$$ 个球，且每种颜色的球至多包含 1$$$1$$$ 个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "考虑所有 2n$$$2^n$$$ 个颜色集合。对于一个颜色集合，定义其价值为将这些颜色的球分配到若干组中所需的最少组数。例如，如果有三种颜色，球的数量分别为 3$$$3$$$、1$$$1$$$ 和 7$$$7$$$，那么它们可以组合成 7$$$7$$$ 组(不可能少于 7$$$7$$$ 组)，因此该颜色集合的价值为 7$$$7$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是计算所有 2n$$$2^n$$$ 个可能的颜色集合的价值之和。由于答案可能很大，请输出对 998244353$$$998\\,244\\,353$$$ 取模后的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤5000$$$1 \\le n \\le 5000$$$)——颜色的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤5000$$$1 \\le a_i \\le 5000$$$)——第 i$$$i$$$ 种颜色的球的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入的额外约束：球的总数不超过 5000$$$5000$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数——所有 2n$$$2^n$$$ 个颜色集合的价值之和，对 998244353$$$998\\,244\\,353$$$ 取模。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "考虑第一个样例。共有 8$$$8$$$ 个颜色集合：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于空集，其值为 0$$$0$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于集合 {1}$$$\\{1\\}$$$，其值为 1$$$1$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于集合 {2}$$$\\{2\\}$$$，其值为 1$$$1$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于集合 {3}$$$\\{3\\}$$$，其值为 2$$$2$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于集合 {1,2}$$$\\{1,2\\}$$$，其值为 1$$$1$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于集合 {1,3}$$$\\{1,3\\}$$$，其值为 2$$$2$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于集合 {2,3}$$$\\{2,3\\}$$$，它的值为 2$$$2$$$；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于集合 {1,2,3}$$$\\{1,2,3\\}$$$，它的值为 2$$$2$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "因此，所有 2n$$$2^n$$$ 个颜色集合的值的总和为 11$$$11$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 彩色球",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

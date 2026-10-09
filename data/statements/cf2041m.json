@@ -41,22 +41,59 @@
   ],
   "sectionsZh": {
     "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/c890509ce2af8567113a1a2d4b388e8763870e18.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每一名修读算法课程的学生都必须在本周提交一份作业。任务是实现一个运行时间为 O(n2)$$$O(n^2)$$$ 的算法，将给定的 n$$$n$$$ 个整数按非递减顺序排序。Alice 已经完成了她的作业，下面给出了她的实现。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
       null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "虽然你可以访问 Alice 的代码，但你不愿意直接复制它。相反，你想将 Alice 的排序函数作为你自己解决方案的构建块。下面列出了两种可以利用她的函数的方式，但每种方式最多只能使用一次。这两个操作的调用顺序可以任意。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "前缀排序：选择一个长度 i∈{1,2,…,n}$$$i \\in \\{1, 2, \\ldots, n\\}$$$ 并调用 alicesort(s,i)$$$\\texttt{alicesort(}s, i\\texttt{)}$$$。这会对数组 s$$$s$$$ 中前 i$$$i$$$ 个元素进行排序。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "后缀排序：选择一个长度 i∈{1,2,…,n}$$$i \\in \\{1, 2, \\ldots, n\\}$$$ 并调用 alicesort(s+n−i,i)$$$\\texttt{alicesort(}s+n-i, i\\texttt{)}$$$。这会对数组 s$$$s$$$ 中后 i$$$i$$$ 个元素进行排序。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "由于排序算法的时间复杂度，执行一次前缀排序或后缀排序的代价为 i2$$$i^2$$$，其中 i$$$i$$$ 是所选子数组的长度。你的目标是按照上述规则，使用 Alice 的函数将包含 n$$$n$$$ 个整数的输入数组 s$$$s$$$ 按非递减顺序排序，并确定最小代价。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "例如，设 s=[3,2,5,5,4,1]$$$s=[3,2,5,5,4,1]$$$。我们可以先执行长度为 4$$$4$$$ 的后缀排序，数组变为 [3,2,1,4,5,5]$$$[3,2,1,4,5,5]$$$。然后执行长度为 3$$$3$$$ 的前缀排序，数组变为 [1,2,3,4,5,5]$$$[1,2,3,4,5,5]$$$，这是一个有序数组。代价为 42+32=25$$$4^2+3^2=25$$$。另一个例子，设 s=[4,3,2,1]$$$s=[4,3,2,1]$$$。我们可以仅执行长度为 4$$$4$$$ 的前缀排序来完成排序，代价为 42=16$$$4^2=16$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含恰好一个整数 n$$$n$$$，表示数组 s$$$s$$$ 中整数的个数。第二行包含 s=[s0,s1,…,sn−1]$$$s=[s_0, s_1, \\ldots, s_{n-1}]$$$ 中的 n$$$n$$$ 个整数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "1≤n≤106$$$1 \\le n \\le 10^6$$$",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于所有 i$$$i$$$(0≤i<n$$$0\\le i  \\lt  n$$$)，有 0≤si<231−1$$$0\\le s_i  \\lt  2^{31}-1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "在一行输出一个整数，表示按照上述规则使用 Alice 的函数将包含 n$$$n$$$ 个整数的输入数组 s$$$s$$$ 按非递减顺序排序所需的最小代价。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "M. 选择排序",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

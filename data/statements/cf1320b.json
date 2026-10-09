@@ -47,26 +47,78 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Bertown 的地图可以表示为由 n$$$n$$$ 个路口组成的集合，这些路口编号从 1$$$1$$$ 到 n$$$n$$$，并由 m$$$m$$$ 条单向道路连接。沿着道路可以从任意一个路口到达任意另一个路口。从一个路口到另一个路口的某条路径的长度，是沿该路径需要经过的道路数量。从一个路口 v$$$v$$$ 到另一个路口 u$$$u$$$ 的最短路径，是一条从 v$$$v$$$ 出发、在 u$$$u$$$ 结束，并且在所有此类路径中长度最小的路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Polycarp 住在路口 s$$$s$$$ 附近，并在路口 t$$$t$$$ 附近的一栋楼里工作。他每天开车从 s$$$s$$$ 前往 t$$$t$$$。今天他选择了如下路线前往工作地点：p1$$$p_1$$$, p2$$$p_2$$$, ..., pk$$$p_k$$$，其中 p1=s$$$p_1 = s$$$，pk=t$$$p_k = t$$$，序列中的其他所有元素都是中间路口，按照 Polycarp 到达它们的顺序列出。Polycarp 从未两次到达同一个路口，因此该序列中的所有元素都两两不同。注意，你事先知道 Polycarp 的路线(它是固定的)，并且它不一定是从 s$$$s$$$ 到 t$$$t$$$ 的最短路径之一。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Polycarp 的汽车中安装了一个复杂的导航系统。下面介绍它的工作方式。当 Polycarp 在路口 s$$$s$$$ 开始行程时，系统会选择一条从 s$$$s$$$ 到 t$$$t$$$ 的最短路径并将其显示给 Polycarp。设所选路径中的下一个路口为 v$$$v$$$。如果 Polycarp 选择沿着从 s$$$s$$$ 到 v$$$v$$$ 的道路行驶，那么导航器会向他显示同一条最短路径(显然，在他到达该路口后，路径从 v$$$v$$$ 开始)。但是，如果 Polycarp 选择前往另一个路口 w$$$w$$$，导航器就会重新规划路径：Polycarp 一到达 w$$$w$$$，导航系统就会选择一条从 w$$$w$$$ 到 t$$$t$$$ 的最短路径并将其显示给他。这个过程会一直持续，直到 Polycarp 到达 t$$$t$$$：如果 Polycarp 沿着系统推荐的道路行驶，系统就会保留已经规划好的最短路径；但如果 Polycarp 选择了其他道路，系统就会按照相同的规则重新规划路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下面给出一个例子。假设 Bertown 的地图如下所示，并且 Polycarp 沿着路径 [1,2,3,4]$$$[1, 2, 3, 4]$$$ 行驶(s=1$$$s = 1$$$，t=4$$$t = 4$$$)：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请通过链接 http://tk.codeforces.com/a.png 查看图片",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当 Polycarp 从 1$$$1$$$ 出发时，系统会选择一条从 1$$$1$$$ 到 4$$$4$$$ 的最短路径。这样的路径只有一条，即 [1,5,4]$$$[1, 5, 4]$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Polycarp 选择驾车前往 2$$$2$$$，这不在系统所选的路径上。当 Polycarp 到达 2$$$2$$$ 时，导航器通过选择一条从 2$$$2$$$ 到 4$$$4$$$ 的最短路径来重建路径，例如 [2,6,4]$$$[2, 6, 4]$$$(注意，它也可能选择 [2,3,4]$$$[2, 3, 4]$$$)；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Polycarp 选择驾车前往 3$$$3$$$，这不在系统所选的路径上。当 Polycarp 到达 3$$$3$$$ 时，导航器通过选择从 3$$$3$$$ 到 4$$$4$$$ 的唯一最短路径来重建路径，该路径为 [3,4]$$$[3, 4]$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Polycarp 沿着导航器选择的道路到达 4$$$4$$$，因此系统无需重建任何内容。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "总的来说，在这种情况下我们需要重建 2$$$2$$$ 次。注意，如果系统在第二步选择了 [2,3,4]$$$[2, 3, 4]$$$ 而不是 [2,6,4]$$$[2, 6, 4]$$$，那么只需要重建 1$$$1$$$ 次(因为 Polycarp 会沿着该路径行驶，所以在第三步中系统会保留路径 [3,4]$$$[3, 4]$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "这个例子告诉我们，即使 Bertown 的地图和 Polycarp 选择的路径保持不变，重建次数也可能不同。给定这些信息（地图和 Polycarp 的路径），你能确定这次旅途中可能发生的最少和最多重建次数吗？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(2≤n≤m≤2⋅105$$$2 \\le n \\le m \\le 2 \\cdot 10^5$$$)——分别表示 Bertown 中的路口数量和单向道路数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来有 m$$$m$$$ 行，每行描述一条道路。每行包含两个整数 u$$$u$$$ 和 v$$$v$$$(1≤u,v≤n$$$1 \\le u, v \\le n$$$，u≠v$$$u \\ne v$$$)，表示一条从路口 u$$$u$$$ 到路口 v$$$v$$$ 的道路。Bertown 中的所有道路两两不同，这意味着每个有序对 (u,v)$$$(u, v)$$$ 在这 m$$$m$$$ 行中最多出现一次(但如果存在道路 (u,v)$$$(u, v)$$$，道路 (v,u)$$$(v, u)$$$ 也可能出现)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下面一行包含一个整数 k$$$k$$$(2≤k≤n$$$2 \\le k \\le n$$$)——Polycarp 从家到工作地点的路径上包含的路口数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最后一行包含 k$$$k$$$ 个整数 p1$$$p_1$$$、p2$$$p_2$$$、...、pk$$$p_k$$$(1≤pi≤n$$$1 \\le p_i \\le n$$$，这些整数两两不同)——按照 Polycarp 到达它们的顺序给出其路径上的路口。p1$$$p_1$$$ 是 Polycarp 居住的路口(s=p1$$$s = p_1$$$)，而 pk$$$p_k$$$ 是 Polycarp 工作地点所在的路口(t=pk$$$t = p_k$$$)。保证对于每个 i∈[1,k−1]$$$i \\in [1, k - 1]$$$，从 pi$$$p_i$$$ 到 pi+1$$$p_{i + 1}$$$ 的道路都存在，因此这条路径沿着 Bertown 的道路行进。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出两个整数：旅途中可能发生的重建次数的最小值和最大值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. 导航系统",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

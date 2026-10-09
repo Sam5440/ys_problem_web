@@ -53,32 +53,96 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Berland 国立大学医学院刚刚结束了招生工作。和往常一样，大约 80%$$$80\\%$$$ 的申请者是女生，其中大多数将在接下来的 4$$$4$$$ 年(希望如此)里住在大学宿舍中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "宿舍由 n$$$n$$$ 个房间和一只老鼠组成！女生们决定在一些房间里设置捕鼠夹，以摆脱这只可怕的怪物。在编号为 i$$$i$$$ 的房间设置捕鼠夹需要花费 ci$$$c_i$$$ 布尔。房间编号从 1$$$1$$$ 到 n$$$n$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "老鼠不会一直待在原地，它会不停地奔跑。如果在第 t$$$t$$$ 秒时老鼠位于房间 i$$$i$$$，那么在第 t+1$$$t + 1$$$ 秒时，它会跑到房间 ai$$$a_i$$$，期间不会经过其他任何房间(i=ai$$$i = a_i$$$ 表示老鼠不会离开房间 i$$$i$$$)。初始时刻为第 0$$$0$$$ 秒。如果老鼠位于设置了捕鼠夹的房间中，那么它就会被捕鼠夹抓住。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果女生们知道老鼠在哪里，那事情本来会简单得多。遗憾的是，事实并非如此：在第 0$$$0$$$ 秒时，老鼠可能位于从 1$$$1$$$ 到 n$$$n$$$ 的任意房间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "女生们为了设置捕鼠夹，保证无论老鼠从哪个房间开始，最终都一定会被抓住，所需花费的最少布尔总数是多少？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$)——宿舍中的房间数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 c1,c2,…,cn$$$c_1, c_2, \\dots, c_n$$$(1≤ci≤104$$$1 \\le c_i \\le 10^4$$$)——ci$$$c_i$$$ 表示在编号为 i$$$i$$$ 的房间中设置捕鼠器的费用。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤n$$$1 \\le a_i \\le n$$$)——ai$$$a_i$$$ 表示老鼠在房间 i$$$i$$$ 中时，下一秒将跑到的房间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数——女生们为了设置捕鼠器，从而保证无论老鼠从哪个房间开始，最终都能将其捕获，所需花费的最小总金额。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中，只需在房间 1$$$1$$$ 和 4$$$4$$$ 中设置捕鼠器即可。如果老鼠从房间 1$$$1$$$ 开始，它会立即被捕获。如果老鼠从其他任意房间开始，它最终都会到达房间 4$$$4$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，只需在房间 2$$$2$$$ 中设置捕鼠器即可。如果老鼠从房间 2$$$2$$$ 开始，它会立即被捕获。如果老鼠从其他任意房间开始，它会在第 1$$$1$$$ 秒跑到房间 2$$$2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "以下是第三个样例中老鼠从不同起点出发的路径：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1→2→2→…$$$1 \\rightarrow 2 \\rightarrow 2 \\rightarrow \\dots$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "2→2→…$$$2 \\rightarrow 2 \\rightarrow \\dots$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "3→2→2→…$$$3 \\rightarrow 2 \\rightarrow 2 \\rightarrow \\dots$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "4→3→2→2→…$$$4 \\rightarrow 3 \\rightarrow 2 \\rightarrow 2 \\rightarrow \\dots$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "5→6→7→6→…$$$5 \\rightarrow 6 \\rightarrow 7 \\rightarrow 6 \\rightarrow \\dots$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "6→7→6→…$$$6 \\rightarrow 7 \\rightarrow 6 \\rightarrow \\dots$$$;",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "7→6→7→…$$$7 \\rightarrow 6 \\rightarrow 7 \\rightarrow \\dots$$$;",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "因此，只需在第 2$$$2$$$ 号房间和第 6$$$6$$$ 号房间设置陷阱即可。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 捕鼠行动",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

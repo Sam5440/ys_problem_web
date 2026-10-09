@@ -45,28 +45,80 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定两个由小写英文字母组成的字符串 a$$$a$$$ 和 b$$$b$$$，二者长度均为 n$$$n$$$。两个字符串中的字符下标均从 1$$$1$$$ 到 n$$$n$$$(包含端点)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以进行以下操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择任意下标 i$$$i$$$(1≤i≤n$$$1 \\le i \\le n$$$)，交换字符 ai$$$a_i$$$ 和 bi$$$b_i$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择任意下标 i$$$i$$$(1≤i≤n$$$1 \\le i \\le n$$$)，交换字符 ai$$$a_i$$$ 和 an−i+1$$$a_{n - i + 1}$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择任意下标 i$$$i$$$(1≤i≤n$$$1 \\le i \\le n$$$)，交换字符 bi$$$b_i$$$ 和 bn−i+1$$$b_{n - i + 1}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，如果 n$$$n$$$ 为奇数，形式上允许交换 a⌈n2⌉$$$a_{\\lceil\\frac{n}{2}\\rceil}$$$ 和 a⌈n2⌉$$$a_{\\lceil\\frac{n}{2}\\rceil}$$$(字符串 b$$$b$$$ 中也同样如此)，但这一操作没有意义。此外，你也可以交换两个相同的字符，但这一操作同样没有意义。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你需要按照任意顺序应用任意次上述操作，使这两个字符串相等。但显然，仅通过这些交换操作可能无法使两个字符串相等。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在一次预处理操作中，你可以将字符串 a$$$a$$$ 中的一个字符替换为另一个字符。换句话说，在一次预处理操作中，你可以选择任意下标 i$$$i$$$(1≤i≤n$$$1 \\le i \\le n$$$)、任意字符 c$$$c$$$，并令 ai:=c$$$a_i := c$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是求出所需进行的预处理操作的最少次数，使得在完成这些操作后，可以通过应用上面列表中描述的若干次操作使字符串 a$$$a$$$ 和 b$$$b$$$ 相等。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，预处理操作之后所进行的操作次数并不重要。此外，注意你不能对字符串 b$$$b$$$ 应用预处理操作，也不能在进行第一次操作后再进行任何预处理操作。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "输入第一行包含一个整数 n$$$n$$$(1≤n≤105$$$1 \\le n \\le 10^5$$$)——字符串 a$$$a$$$ 和 b$$$b$$$ 的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含字符串 a$$$a$$$，它恰好由 n$$$n$$$ 个小写英文字母组成。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三行包含字符串 b$$$b$$$，该字符串恰好由 n$$$n$$$ 个小写英文字母组成。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数——在进行变换之前需要执行的最少预处理操作次数，使得可以通过上述列表中的一系列操作将字符串 a$$$a$$$ 变得与字符串 b$$$b$$$ 相等。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个样例中，预处理操作如下：a1:=$$$a_1 := $$$'b'，a3:=$$$a_3 := $$$'c'，a4:=$$$a_4 := $$$'a' 以及 a5:=$$$a_5:=$$$'b'。之后，a=$$$a = $$$\"bbcabba\"。随后，我们可以通过以下操作序列使两个字符串相等：swap(a2,b2)$$$swap(a_2, b_2)$$$ 和 swap(a2,a6)$$$swap(a_2, a_6)$$$。在执行一系列操作使字符串相等之前，不可能使用少于 4$$$4$$$ 次预处理操作，因此该样例中的答案是 4$$$4$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中不需要进行预处理操作。我们可以使用以下操作序列使 a$$$a$$$ 和 b$$$b$$$ 相等：swap(b1,b5)$$$swap(b_1, b_5)$$$，swap(a2,a4)$$$swap(a_2, a_4)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 两个字符串交换",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -42,5 +42,67 @@
       "input": "2 300 185 230\n0 300",
       "output": "2\n185 230"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Valery 是 Berland 一所学校的体育老师。学生们很快要参加跳远测试，而 Valery 弄丢了他最喜欢的尺子！",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "然而，不必失望，因为 Valery 找到了另一把尺子，它的长度为 l 厘米。这把尺子上已经有 n 个刻度，他可以用这些刻度进行测量。我们假设刻度按从尺子起点到终点的顺序编号为 1 到 n。第一个点与尺子起点重合，代表原点。最后一个刻度与尺子终点重合，距原点距离为 l。这把尺子可以用一个递增序列 a1, a2, ..., an 来表示，其中 ai 表示第 i 个刻度到原点的距离（a1 = 0，an = l）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Valery 认为，用这把尺子可以量出距离 d 厘米，当且仅当存在一对整数 i 和 j（1 ≤ i ≤ j ≤ n），使得第 i 个刻度与第 j 个刻度之间的距离恰好等于 d（换句话说，aj - ai = d）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "按照规定，女生至少应能跳 x 厘米，男生至少应能跳 y 厘米（x < y）。为了测试孩子们的能力，Valery 需要用尺子分别量出距离 x 和 y。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你的任务是确定最少需要在尺子上添加多少个额外的刻度，使得它们可以用来量出距离 x 和 y。Valery 可以在距原点不超过尺子长度的任意非负整数距离处添加刻度。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含四个空格分隔的正整数 n, l, x, y（2 ≤ n ≤ 10^5，2 ≤ l ≤ 10^9，1 ≤ x < y ≤ l），分别表示刻度数量、尺子长度以及女生和男生的跳跃标准。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行包含 n 个整数组成的序列 a1, a2, ..., an（0 = a1 < a2 < ... < an = l），其中 ai 表示第 i 个刻度到原点的距离。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出一个非负整数 v——你需要在尺子上添加的刻度的最小数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行输出 v 个空格分隔的整数 p1, p2, ..., pv（0 ≤ pi ≤ l）。数字 pi 表示第 i 个刻度应位于距离原点 pi 厘米处。可以按任意顺序输出这些刻度。如果有多种解，输出任意一种即可。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，初始时无法量出 230 厘米的距离。为此，只需添加一个 20 厘米的刻度或一个 230 厘米的刻度即可。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个样例中，你已经可以用尺子量出 185 厘米和 230 厘米的距离，因此不必添加新刻度。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第三个样例中，尺子只包含起点刻度和终点刻度。我们需要添加两个刻度，才能测试孩子们的能力。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 长跳跃",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

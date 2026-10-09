@@ -41,5 +41,63 @@
       "input": "7\n10 20 40 50 70 90 30",
       "output": "0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Polycarp 计划对他的新项目 Fakebook 进行负载测试。他已经和朋友们约定，在特定的时间点向 Fakebook 发送请求。负载测试将持续 n 分钟，在第 i 分钟，朋友们会发送 ai 个请求。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Polycarp 计划在一种特殊的负载下测试 Fakebook。如果有关 Fakebook 的信息登上大众媒体，Polycarp 希望负载先单调增加，随后用户对该服务的兴趣单调下降。Polycarp 想要测试这种形式的负载。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是确定 Polycarp 至少需要添加多少个请求，使得在某个时刻之前，服务器上的负载严格递增，而在该时刻之后严格递减。递增部分和递减部分都可以为空（即不存在）。递减部分应当紧接在递增部分之后。特别地，负载中不能出现两个相邻且相等的值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，如果负载由数组 [1, 2, 8, 4, 3]、[1, 3, 5] 或 [10] 中的一个描述，那么这样的负载满足 Polycarp 的要求（在每种情况下，都存在一个递增部分，其后紧接着一个递减部分）。如果负载由数组 [1, 2, 2, 1]、[2, 1, 2] 或 [10, 10] 中的一个描述，那么这样的负载不满足 Polycarp 的要求。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请帮助 Polycarp 添加最少数量的请求，使得最终的负载满足 Polycarp 的要求。他可以在从 1 到 n 的任意一分钟内添加任意数量的请求。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 100 000），表示负载测试的持续时间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n 个整数 a1, a2, ..., an（1 ≤ ai ≤ 109），其中 ai 表示负载测试第 i 分钟来自朋友的请求数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Polycarp 需要添加的最少请求数量，使得负载开始时严格递增，之后严格递减。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Polycarp 必须在第三分钟额外发送两个请求，并在第四分钟额外发送四个请求。因此，最终的负载将如下所示：[1, 4, 5, 6, 5]。总计 Polycarp 将额外发送 6 个请求。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，只需在第三分钟额外发送一个请求，因此答案是 1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个样例中，负载已经满足题目中描述的所有条件，因此答案是 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "H. 负载测试",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

@@ -38,5 +38,89 @@
       "input": "3\n1 1 1\n0 1 1\n1 0 0\n12\n3\n2 3\n3\n2 2\n2 2\n1 3\n3\n3\n1 2\n2 1\n1 1\n3",
       "output": "01001"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Little Chris 是线性代数的超级粉丝。这一次，他的作业是研究方阵的非寻常平方。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "两个大小为 n 的整数向量 x 和 y 的点积，是两个向量对应分量乘积之和。n × n 方阵 A 的非寻常平方定义为 n 个点积之和。其中第 i 个点积是矩阵 A 的第 i 行向量与第 i 列向量的点积。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "幸运的是，Chris 只需要在 GF(2) 中进行运算！这意味着所有运算（加法、乘法）都对 2 取模。事实上，矩阵 A 是二进制矩阵：A 的每个元素都只能是 0 或 1。例如，考虑下面的矩阵 A：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/2c3ad2b03d2ce423c3d5acf492c838080055234f.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "A 的特殊平方等于 (1·1 + 1·0 + 1·1) + (0·1 + 1·1 + 1·0) + (1·1 + 0·1 + 0·0) = 0 + 1 + 1 = 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "然而，这份作业的内容远不止这些。Chris 需要处理 q 次查询；每次查询可能是以下操作之一：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定行下标 i，将 A 的第 i 行中的所有值翻转；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定列下标 i，将 A 的第 i 列中的所有值翻转；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "求 A 的特殊平方。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "翻转位值 w，意味着将其变为 1 - w，即将 1 变为 0，将 0 变为 1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定初始矩阵 A，输出每次第三类查询的答案！你能解决 Chris 的家庭作业吗？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（1 ≤ n ≤ 1000），表示矩阵 A 的行数和列数。接下来的 n 行描述该矩阵：第 i 行包含 n 个以空格分隔的位，并描述 A 的第 i 行。第 i 行中的第 j 个数 aij（0 ≤ aij ≤ 1）是 A 中第 i 行与第 j 列交点处的元素。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入的下一行包含一个整数 q（1 ≤ q ≤ 106），表示查询的数量。接下来的 q 行中的每一行描述一个查询，查询可以是以下几种之一：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1 i —— 翻转第 i 行的所有值；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "2 i —— 翻转第 i 列的所有值；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "3 —— 输出 A 的非寻常平方。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意：由于输入和输出的规模可能非常大，请不要在你所使用的语言中采用缓慢的输出方式。例如，在 C++ 中不要使用输入输出流（cin、cout）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "设输入中第 3 类查询的数量为 m。输出一个长度为 m 的字符串 s，其中 s 的第 i 个字符是输入中第 i 个第 3 类查询对应的 A 的非寻常平方的值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 非寻常乘积",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

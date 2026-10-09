@@ -37,20 +37,54 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Pou、Grisi 和 Guilherme 饿极了，于是决定去 Subway 吃晚餐。当他们坐在那里一边等餐一边玩《荒野乱斗》时，厨房毫无征兆地爆炸了，食物飞得到处都是！Pou 是唯一一个反应迅速的人，于是决定利用这一情况来填饱肚子。他关掉游戏，准备发起攻击！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所有食物和 Pou 都位于一个二维平面上，其中 y=0$$$y = 0$$$ 表示地面。在时间 t=0$$$t = 0$$$ 时，Pou 位于位置 (0,0)$$$(0,0)$$$，第 i$$$i$$$ 个食物位于位置 (xi,yi)$$$(x_i,y_i)$$$。每个食物都以每秒 1$$$1$$$ 个单位的恒定竖直速度下落，而 Pou 可以以每秒 1$$$1$$$ 个单位的恒定速度向左或向右移动。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "换句话说，如果某个食物在时间 t$$$t$$$ 位于 (x,y)$$$(x,y)$$$，那么在时间 t+1$$$t+1$$$ 时它将位于 (x,y−1)$$$(x,y-1)$$$。同时，如果 Pou 在时间 t$$$t$$$ 位于 (x,0)$$$(x,0)$$$，那么在时间 t+1$$$t+1$$$ 时，他可以位于 (x,0)$$$(x,0)$$$、(x+1,0)$$$(x+1,0)$$$ 或 (x−1,0)$$$(x-1,0)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当且仅当食物 i$$$i$$$ 落地的确切时刻(y=0$$$y = 0$$$)，Pou 位于位置 xi$$$x_i$$$ 时，他才能吃掉该食物。出于卫生原因，他不会吃任何在他到达之前就已经接触过地面的食物。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/faab0d7eb8f7663c7b082595bdec0b0b2fc129ea.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Grisi 和 Guilherme 被爆炸惊呆了，以至于忘记了 Pou 吃了多少食物，但他们记得所有食物的初始位置。已知 Pou 吃掉了尽可能多的食物，你的任务是确定这个数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "输入由若干行组成。第一行包含 n$$$n$$$(1≤n≤2⋅103$$$1 \\le n \\le 2 \\cdot 10^3$$$)，表示食物的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行每行包含两个整数 x$$$x$$$ 和 y$$$y$$$(1≤x,y≤106$$$1 \\le x,y \\le 10^6$$$)，第 i$$$i$$$ 行表示食物 i$$$i$$$ 的初始位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证没有两个食物占据相同的初始位置，即：∀i∀j((i≠j)⟹(xi,yi)≠(xj,yj))$$$\\forall i\\forall j((i\\neq j) \\implies (x_i,y_i) \\neq (x_j,y_j))$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出必须包含一个整数：Pou 最多可能吃掉的食物数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "H. 饥饿的 Pou",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

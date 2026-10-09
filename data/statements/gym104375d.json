@@ -47,34 +47,104 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定一个元素集合，其中每个元素都是正整数。该集合中允许存在重复元素。你可以对这个集合执行两种操作。操作 1 用于更新集合，操作 2 用于查询集合。这些操作的格式如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "操作 1：“1 k”",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "操作 2：“2 a b”",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于操作 1，k$$$k$$$ 是一个整数，将依次应用以下规则：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果元素 k$$$k$$$ 已经在集合中，则集合保持不变。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果元素 k$$$k$$$ 大于集合中的所有元素，则将其加入集合。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将大于 k$$$k$$$ 的最小元素的第一次出现替换为 k$$$k$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于操作 2，a$$$a$$$ 和 b$$$b$$$ 是定义一个区间的两个整数。该操作用于查询集合中有多少个元素落在此区间内(包括端点)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入仅包含一个测试用例。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一行包含两个正整数 n 和 q(1≤n≤106;1≤q≤106)$$$(1 \\leq n \\leq 10^6; 1 \\leq q \\leq 10^6)$$$，分别表示集合中的元素数量以及将在集合上执行的操作总数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含恰好 n 个由空格分隔的整数 a1$$$a_1$$$、a2$$$a_2$$$、……、aN$$$a_N$$$(1≤ai≤109)$$$(1 \\leq a_i \\leq 10^9)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 q 行分别表示一个操作。每个操作的类型为 1 或 2，并遵循以下格式：“1 k”或“2 a b”，(1≤a,b,k≤109;a≤b)$$$(1 \\leq a, b, k \\leq 10^9; a \\leq b)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于输入中的每个操作 2（查询操作），输出一行，其中包含一个正整数，表示集合中处于区间 [a, b] 内的元素总数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "让我们考虑样例中的前四个操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "初始集合如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "C={7, 1, 7, 1, 3, 9, 7, 9, 10, 4}$$$C = \\{7, ~1, ~7, ~1, ~3, ~9, ~7, ~9, ~10, ~4\\}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "操作“2 2 8”后，输出为 5。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "操作“1 8”后，集合变为：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "C={7, 1, 7, 1, 3, 8, 7, 9, 10, 4}$$$C = \\{7, ~1, ~7, ~1, ~3, ~8, ~7, ~9, ~10, ~4\\}$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "现在，操作“2 2 8”后，输出为 6。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "操作“1 20”后，集合变为：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "C={7, 1, 7, 1, 3, 8, 7, 9, 10, 4, 20}$$$C = \\{7, ~1, ~7, ~1, ~3, ~8, ~7, ~9, ~10, ~4, ~20\\}$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 动态集合",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

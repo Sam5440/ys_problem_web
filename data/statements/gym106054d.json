@@ -51,30 +51,88 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在一个阴冷多雨的日子里，Lautaro 和 Fiorella 决定在长廊的屋檐下避雨，整个下午玩传统纸牌游戏 brisca。但由于他们的牌组被淋湿了，他们用从祖父的旧书中找到的一副非常奇怪的牌组替代了它。这副牌有一些特殊之处：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每张牌都有一个花色和一个牌面值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "不存在两张花色和牌面值都相同的不同牌。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "牌组中包含任意数量的互不相同的花色，不一定是通常的四种花色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "brisca 分轮进行。每轮中，两名玩家各从牌组中抽取一张牌，然后比较这两张牌以决定谁赢得该轮，最后将两张牌弃置。第一轮由 Lautaro 先出牌，之后每轮由上一轮的获胜者先出牌。当牌组中没有剩余牌时，游戏结束。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在游戏开始时，会选定一种王牌花色，它可以击败牌组中的任何其他花色。决定每轮获胜者的规则会考虑这一王牌花色，具体如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果两张牌属于同一花色，则出牌点数较高的一方获胜（请记住，所有牌都各不相同，因此不会出现平局）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果两张牌的花色不同，但其中一张牌属于将牌花色，则打出将牌花色牌的一方获胜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果两张牌的花色不同且都不属于将牌花色，则本回合中先出牌的一方获胜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Lautaro 一向一丝不苟，他在笔记本中记下了每个回合中每位玩家打出的牌，以及每位玩家赢得的回合数。然而，他忘记记录将牌花色是什么。幸运的是，你可以帮助他。你的任务是确定牌组中的哪种花色可能是将牌花色，使得每位玩家赢得的回合数与 Lautaro 的记录一致。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 M$$$M$$$ 和 N$$$N$$$(0≤M,N≤105$$$0 \\leq M, N \\leq 10^5$$$ 且 M+N≥1$$$M + N \\ge 1$$$)，分别表示 Lautaro 和 Fiorella 获胜的回合数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 M+N$$$M + N$$$ 行中的每一行描述一个回合中打出的牌，包含四个值：V$$$V$$$、P$$$P$$$、W$$$W$$$ 和 Q$$$Q$$$。值 V$$$V$$$ 和 P$$$P$$$ 描述 Lautaro 在该回合打出的牌，值 W$$$W$$$ 和 Q$$$Q$$$ 描述 Fiorella 打出的牌。值 V$$$V$$$ 和 W$$$W$$$ 是整数(1≤V,W≤109$$$1 \\leq V, W \\leq 10^9$$$)，表示牌的点数；P$$$P$$$ 和 Q$$$Q$$$ 是由大写字母组成的、长度至多为十个字符的非空字符串，表示花色。各回合按照实际进行的顺序给出。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null
+      {
+        "ai": "一个字符串，表示被选为将牌的花色，它必须是输入中出现过的花色之一。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果存在多种可能的花色，输出其中任意一种均可视为正确。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果输入中没有哪一种花色可能被选为将牌，则应输出字符“*”（星号）。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个示例中，如果将牌花色为“BLANCO”，则 Lautaro 赢得第一轮（因为他先出牌），而 Fiorella 赢得第二轮（因为她打出了将牌）。如果其他花色为将牌，则两名玩家中会有一人赢下两轮。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个示例中，无论哪种花色为将牌，Lautaro 都会赢得第一轮，因此 Fiorella 不可能赢下两轮。没有任何花色可能被选为将牌。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第三个示例中，“PERA”也可以是一个合法的回答。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 雨天",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

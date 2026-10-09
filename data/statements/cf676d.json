@@ -50,5 +50,115 @@
       "input": "2 3\n<><\n><>\n1 1\n2 1",
       "output": "4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 m（1 ≤ n，m ≤ 1000），分别表示迷宫的行数和列数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n 行中，每行包含 m 个字符，用于描述迷宫中的方块。可能出现的字符如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "«+» 表示该方块有 4 扇门（分别通往每个相邻方块）；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "«-» 表示该方块有 2 扇门——分别通向左侧和右侧的相邻方块；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "«|» 表示该方块有 2 扇门——分别通向上方和下方的相邻方块；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "«^» 表示该方块有 1 扇门——通向上方的相邻方块；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "«>» 表示该方块有 1 扇门——通向右侧的相邻方块；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "«<» 表示该方块有 1 扇门——通向左侧的相邻方块；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "«v» 表示该方块有 1 扇门——通向下方的相邻方块；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "«L» 表示该方块有 3 扇门，通向除左侧邻居之外的所有邻居；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "«R» 表示该方块有 3 扇门，通向除右侧邻居之外的所有邻居；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "«U» 表示该方块有 3 扇门，通向除上方邻居之外的所有邻居；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "«D» 表示该方块有 3 扇门，通向除下方邻居之外的所有邻居；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "«*» 表示该方块是一堵墙，没有任何门。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当将迷宫表示为一个表格时，左、右、上和下的定义如下：行从上到下编号为 1 至 n，列从左到右编号为 1 至 m。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行包含两个整数——方块的坐标 (xT, yT)（1 ≤ xT ≤ n，1 ≤ yT ≤ m），Theseus 初始位于此处。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最后一行包含两个整数——方块的坐标 (xM, yM)（1 ≤ xM ≤ n，1 ≤ yM ≤ m），Minotaur 藏身于此处。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证 Theseus 的起始方块和 Minotaur 藏身的方块都至少有一扇门。Theseus 和 Minotaur 最初可能位于同一个方块。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Theseus 刚刚抵达克里特岛，准备与 Minotaur 战斗。他发现了一座迷宫，迷宫呈大小为 n × m 的矩形场地形式，由大小为 1 × 1 的方块组成。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "迷宫中的每个方块都有一个按钮，可以使所有方块顺时针旋转 90 度。每个方块都绕自身中心旋转，且不会改变其在迷宫中的位置。此外，每个方块还有若干扇门（也可能没有门）。在一分钟内，Theseus 可以选择按下按钮，使所有方块顺时针旋转 90 度，或者走到相邻方块。只有当方块 A 有一扇通往方块 B 的门，并且方块 B 也有一扇通往方块 A 的门时，Theseus 才能从方块 A 走到相邻的方块 B。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Theseus 找到了迷宫的入口，现在位于方块 (xT, yT) 中，即第 xT 行、第 yT 列的方块。Theseus 知道 Minotaur 藏在方块 (xM, yM) 中，并想知道到达那里所需的最少分钟数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Theseus 是一名英雄，而不是程序员，所以他请你帮助他。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 Theseus 无法到达 Minotaur 所在的方块，则在输出的唯一一行中输出 -1。否则，输出到达 Minotaur 藏身方块所需的最少分钟数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "假设 Theseus 在时刻 0 位于方块 (xT, yT)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Theseus 和迷宫",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

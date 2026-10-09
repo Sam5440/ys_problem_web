@@ -39,22 +39,56 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Toad Zitz 有一个整数数组，每个整数都在 0$$$0$$$ 到 m−1$$$m-1$$$ 之间(含两端)。这些整数为 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "一次操作中，Zitz 可以选择一个整数 k$$$k$$$ 和 k$$$k$$$ 个下标 i1,i2,…,ik$$$i_1, i_2, \\ldots, i_k$$$，满足 1≤i1<i2<…<ik≤n$$$1 \\leq i_1  \\lt  i_2  \\lt  \\ldots  \\lt  i_k \\leq n$$$。然后，对于每个被选中的下标 ij$$$i_j$$$，他将 aij$$$a_{i_j}$$$ 改为 ((aij+1)modm)$$$((a_{i_j}+1) \\bmod m)$$$。整数 m$$$m$$$ 对所有操作和所有下标都是固定的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "这里，xmody$$$x \\bmod y$$$ 表示 x$$$x$$$ 除以 y$$$y$$$ 的余数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Zitz 希望用最少的此类操作使他的数组变为非递减数组。求出这个最少操作次数。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤300000$$$1 \\leq n, m \\leq 300\\,000$$$)，分别表示数组中整数的数量和参数 m$$$m$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行包含 n$$$n$$$ 个由空格分隔的整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$(0≤ai<m$$$0 \\leq a_i  \\lt  m$$$)，表示给定的数组。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null
+      {
+        "ai": "输出一个整数：Zitz 需要执行所描述操作以使其数组变为非递减的最少操作次数。如果不需要执行任何操作，输出 0$$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "显然，经过足够多次操作后，Zitz 总能使他的数组变为非递减。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个样例中，数组已经是非递减的，因此答案为 0$$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，可以选择 k=2$$$k=2$$$、i1=2$$$i_1 = 2$$$、i2=5$$$i_2 = 5$$$，此时数组变为 [0,0,1,3,3]$$$[0,0,1,3,3]$$$。它是非递减的，因此答案为 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "A. 按模递增",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

@@ -39,26 +39,72 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Jack 正在和他的猫 Salmon 玩一个游戏。在一个架子上，Jack 有一组编号从 1$$$1$$$ 到 N$$$N$$$ 的漫画书，它们从左到右按某种顺序排列。所有书的大小都相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Jack 和 Salmon 将恰好重复以下移动序列 M$$$M$$$ 次(其中 M$$$M$$$ 可能为 0)：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Jack 选择一本不是最右侧的漫画书，并将它敲落到地上。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "然后，他将该位置右侧的所有书向左移动以填补空隙，使架子最右端留下空位。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最后，Salmon 捡起掉落的书，并将它放入最右侧位置的空位中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是找出字典序最大的书的初始排列，使得在按题目描述恰好执行 M$$$M$$$ 组移动后，存在 Jack 的一种选择序列，能使书从左到右按卷号 1$$$1$$$ 到卷号 N$$$N$$$ 升序排列。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "两个包含 N$$$N$$$ 本书的不同排列 A$$$A$$$ 和 B$$$B$$$ 按如下方式比较字典序：若从左起第一个不同的位置 i$$$i$$$ 处有 Ai>Bi$$$A_i  \\gt  B_i$$$，则称 A$$$A$$$ 的字典序大于 B$$$B$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "输入 第一行包含一个整数 T$$$T$$$(1≤T≤105$$$1 \\le T \\le 10^5$$$)——表示测试用例数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个测试用例为一行，包含两个整数 N$$$N$$$ 和 M$$$M$$$(1≤N≤105$$$1 \\le N \\le 10^5$$$，1≤M≤109$$$1 \\le M \\le 10^9$$$)——分别表示书架上漫画书的数量和执行移动的组数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "保证所有测试用例的 N$$$N$$$ 之和不超过 105$$$10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出 N$$$N$$$ 个整数——即在 Jack 最优选择书的情况下，恰好经过 M$$$M$$$ 次移动后能使卷号排列为 1,2,…,N$$$1, 2, \\ldots, N$$$ 的字典序最大的初始排列。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，Jack 可以击倒编号为 3$$$3$$$ 的书，Salmon 将其插入最右侧的位置，得到 [ 1 2 3. ]",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "另一种可能的初始排列是 1 3 2，但其输出的字典序更大。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "初始排列 1 2 3 是不可能的：击倒书 1$$$1$$$ 会得到 2 3 1，而击倒书 2$$$2$$$ 会得到 1 3 2。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. 将其移到末尾",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

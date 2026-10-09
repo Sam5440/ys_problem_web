@@ -53,5 +53,79 @@
       "input": "4 1\n4 3 1 2\n2 1 4 3",
       "output": "NO"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "小 Petya 非常喜欢排列。最近，他的妈妈送给了他一个长度为 n 的排列 q1, q2, ..., qn。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "长度为 n 的排列 a 是一个整数序列 a1, a2, ..., an（1 ≤ ai ≤ n），其中所有整数均互不相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Petya 喜欢排列，但更喜欢和小玛莎一起玩。原来，玛莎也有一个长度为 n 的排列。Petya 决定不惜一切代价得到与之相同的排列。为此，他设计了一个遵循以下规则的游戏：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "游戏开始前，Petya 在黑板上写下排列 1, 2, ..., n。之后，Petya 恰好进行 k 次操作，具体如下。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在一次操作中，Petya 会抛一次硬币。如果硬币正面朝上，他执行第 1 条；如果硬币反面朝上，他执行第 2 条。假设此时黑板上写着排列 p1, p2, ..., pn。那么 Petya 会将黑板上的排列 p 擦掉，改写为另一个排列：pq1, pq2, ..., pqn。换句话说，Petya 将他从母亲那里得到的排列 q 应用到了排列 p 上。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所有操作都与第 1 条相同，只是 Petya 在黑板上写下排列 t，并满足：对于从 1 到 n 的所有 i，都有 tqi = pi。换句话说，Petya 将 q 的逆排列应用到了排列 p 上。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "我们知道，第 k 次操作后，黑板上写着玛莎的排列 s1, s2, ..., sn。此外，我们还知道，在整个游戏过程中，直到第 k 次操作之前，玛莎的排列从未出现在黑板上。注意，游戏恰好进行了 k 次操作，也就是说，整个游戏过程中恰好抛了 k 次硬币。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是判断所描述的情况是否可能；如果不可能，则说明 Petya 在某处弄错了。请参阅样例及其注释，以便更好地理解题意。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Masha 的排列与游戏开始前写在黑板上的排列相同。因此，这违反了 Masha 的排列在执行 k 次操作之前从未出现在黑板上的条件。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，题目所描述的情况是可能的，前提是抛硬币后得到反面。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三个样例中，一种可能的抛硬币序列是：正面-反面-反面。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第四个样例中，可能的抛硬币序列为：正面-正面。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 k（1 ≤ n, k ≤ 100）。第二行包含 n 个以空格分隔的整数 q1, q2, ..., qn（1 ≤ qi ≤ n）——Petya 收到的排列。第三行以类似格式给出 Masha 的排列 s。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证给定的序列 q 和 s 都是合法的排列。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果题面所描述的情况是可能的，输出 \"YES\"（不含引号），否则输出 \"NO\"（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 与排列玩耍",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

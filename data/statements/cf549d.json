@@ -51,5 +51,87 @@
       "input": "4 4\nBBBB\nBBBB\nBBBB\nBBBW",
       "output": "4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "2001 年，Paul Viola 和 Michael Jones 开发了第一种能够实时在图像中检测人脸的算法。该算法的一部分是计算 Haar 特征的过程。作为本题的一部分，我们将考虑这一概念的简化模型。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "考虑一个用大小为 n × m 的表格表示的矩形图像。表格元素为整数，表示图像中每个像素的亮度。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "特征也是一个大小为 n × m 的矩形表格。特征的每个格子被涂成黑色或白色。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "要计算给定特征在给定图像上的取值，需要执行以下步骤。首先将特征表格覆盖在图像表格上（不允许旋转或翻转），这样每个像素都完全被黑色或白色格子覆盖。特征在图像中的取值等于 W - B，其中 W 是被白色特征格子覆盖的像素的总亮度，B 是被黑色特征格子覆盖的像素的总亮度。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "下面给出一些最常用的 Haar 特征的示例。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/7b607f43d52a051b4a30ee0a9cc80a09135d83e4.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你的任务是确定使用所谓的前缀矩形来计算该特征所需的操作次数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "前缀矩形是图像上的任意一个矩形，其左上角与图像的左上角重合。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你有一个变量，其值初始为零。在一次操作中，你可以计算任意前缀矩形内像素值之和，将其乘以任意整数，并加到变量的值上。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定一个特征。你需要计算在任意图像上计算该特征值所需的最少操作次数。为了更好地理解题意，请阅读第一个样例的解释。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个用空格分隔的整数 n 和 m（1 ≤ n，m ≤ 100）——特征的行数和列数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来 n 行包含特征的描述。每行由 m 个字符组成。如果该特征的第 i 行第 j 个元素为白色，则第 i 行的第 j 个字符为“W”；如果为黑色，则为“B”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——计算该特征的值所需进行的最少操作次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例对应于图中所示的特征 B。对于大小为 6 × 8 的图像，该特征的值等于图像下半部分与上半部分像素总亮度之差。要计算其值，执行以下两个操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将右下角位于第 6 行第 8 列的前缀矩形中像素的总和乘以系数 1，加到变量 value 上(该矩形用红框标出)；![](https://espresso.codeforces.com/b58310c85de9a0f17f6a1997100232c0c7481f84.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将右下角位于第 3 行第 8 列的前缀矩形中像素的数量乘以系数  - 2，加到变量 value 上。![](https://espresso.codeforces.com/b38cf76c02a599fdaf334479e2b06a7d0f798d12.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "因此，图像下方三行中的所有像素都将以系数 1 计入，而图像上方三行中的所有像素都将以系数 1 - 2 =  - 1 计入，正如要求的那样。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Haar 特征",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

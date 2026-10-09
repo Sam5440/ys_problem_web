@@ -45,5 +45,79 @@
       "input": "2\n1 10",
       "output": "YES\n4 9"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "有一个大小为 x × y 的矩阵 A，其中填有整数。对于每个 ![](https://espresso.codeforces.com/e87325918316c52884e4063f23cf77cfe475ee7c.png)，有 ![](https://espresso.codeforces.com/b2547b0e9acdacd0f9e1ca13295a4cc301cde743.png) Ai, j = y(i - 1) + j。显然，整数 [1..xy] 中的每个整数都恰好在该矩阵中出现一次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你在这个矩阵中走过了一条路径。你的路径可以表示为一个访问过的单元格序列 a1, a2, ..., an，这表示你从包含数字 a1 的单元格出发，然后移动到包含数字 a2 的单元格，以此类推。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从位于第 i 行、第 j 列的单元格（记作 (i, j)）出发，你可以移动到以下单元格之一：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(i + 1, j) —— 仅当 i < x 时；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(i, j + 1) —— 仅当 j < y 时；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(i - 1, j) —— 仅当 i > 1 时；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(i, j - 1) —— 仅当 j > 1 时。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，进行一次移动要求你前往相邻的单元格。不允许停留在同一个单元格中。你并不知道 x 和 y 的确切值，但你必须为这两个数找到任意一组可能的值，使得你可以从包含整数 a1 的单元格出发，然后一步移动到包含 a2 的单元格，再一步移动到包含 a3 的单元格，依此类推。你能否选择 x 和 y，使它们与移动序列不矛盾？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 200000），表示你在路径上访问过的单元格数量（如果某个单元格被访问了两次，那么它会被列出两次）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n 个整数 a1, a2, ..., an（1 ≤ ai ≤ 109），表示路径上各个单元格中的整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果所有满足 1 ≤ x, y ≤ 109 的 x 和 y 的可能取值都与关于路径的信息相矛盾，则输出 NO。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，在第一行输出 YES，并在第二行输出数值 x 和 y，使得在矩阵具有这样的行数和列数时，你的路径是可行的。请记住，它们必须是正整数且不超过 10^9。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个测试用例中的矩阵及其上的路径如下所示：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/190a823a508d8dcf4bd86277a5f22b80210849c6.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "此外，对于第一个和第三个样例，都存在多个正确答案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 矩阵行走",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

@@ -50,33 +50,100 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "![](https://espresso.codeforces.com/2da648a51ade7d09b827adfbd574d6d6cb5d97c7.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Hina 有一个由小写字母和问号组成的字符串 s$$$s$$$。她想将每个问号替换成一个小写字母，使最终得到的字符串只包含小写字母。随后，Hina 会统计对她的字符串中的字母进行排列后，能够形成多少种互不相同的字符串。例如，字符串 aab$$$aab$$$ 有 6$$$6$$$ 种排列方式：[aab,aba,aab,aba,baa,baa]$$$[aab, aba, aab, aba, baa, baa]$$$，但只能形成 3$$$3$$$ 种互不相同的字符串。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 Hina 填写问号的所有 26# of ?'s$$$26^{\\#\\text{ of ?'s}}$$$ 种方式中，能够形成的不同字符串数量的期望值是多少？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$，表示测试用例的数量 (1≤T≤500)$$$(1 \\leq T \\leq 500)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的每一行包含一个字符串 s$$$s$$$，你需要为该字符串求出答案。s$$$s$$$ 只包含小写字母或问号 (1≤|s|≤103)$$$(1 \\leq |s| \\leq 10^3)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 |s|$$$|s|$$$ 的总和不超过 5⋅103$$$5 \\cdot 10^3$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "—",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "子任务中的测试点将从 1−20$$$1 - 20$$$ 编号，样例不计入。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "测试点 1−4$$$1-4$$$ 中不会出现包含问号的字符串。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "测试点 5−6$$$5-6$$$ 中所有字符串都只包含问号。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "测试点 7−10$$$7-10$$$ 中所有字符串长度之和不大于 100$$$100$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "剩余的测试用例没有额外约束。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出一个整数 E$$$E$$$，即所有填充问号的方式中排列数的期望值对 109+7$$$10^9 + 7$$$ 取模的结果。期望值可以表示为分数 xy$$$\\frac{x}{y}$$$，你需要输出 E$$$E$$$，其中 x=E⋅y mod 109+7$$$x = E \\cdot y \\mod 10^9 + 7$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "对于字符串 a?b$$$a?b$$$，当把 ?$$$?$$$ 填成 a$$$a$$$ 或 b$$$b$$$ 时，有 3$$$3$$$ 种排列；而对于其他任意字母，则有 6$$$6$$$ 种。因此期望值为 3⋅2+6⋅2426=538461548mod109+7$$$\\frac{3 \\cdot 2 + 6 \\cdot 24}{26} = 538461548 \\mod 10^9 +7$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于字符串 trust$$$trust$$$，其中没有 ?$$$?$$$，可以证明由该字符串的字母排列恰好能得到 60$$$60$$$ 个不同的字符串，因此期望值为 60$$$60$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "字符串 a?$$$a?$$$ 和 ??$$$??$$$ 的期望值均为 1⋅1+2⋅2526=5126=423076928mod109+7$$$\\frac{1 \\cdot 1 + 2 \\cdot 25}{26} = \\frac{51}{26} = 423076928 \\mod 10^9 + 7$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于第二个样例，你应该去看那部特别的动漫 <3。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "—",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "思路：3366",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "准备：3366",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "出现次数：新手 11",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "K. 那次我转生成了字符串问题",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

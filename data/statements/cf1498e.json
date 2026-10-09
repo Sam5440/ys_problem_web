@@ -51,34 +51,107 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "这是一道交互题。请记住，在与测试程序通信时及时刷新输出。你可以在 C++ 中使用 fflush(stdout)，在 Java 中使用 system.out.flush()，在 Python 中使用 stdout.flush()，或在 Pascal 中使用 flush(output) 来刷新输出。如果你使用其他编程语言，请查阅其相关文档。你也可以参考交互题指南：https://codeforces.com/blog/entry/45307.",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "有一座城市，Dixit 居住在那里。这座城市中有 n$$$n$$$ 座房子。任意两座房子之间恰好有一条有向道路。例如，考虑两座房子 A 和 B，它们之间要么有一条从 A 通往 B 的有向道路，要么有一条从 B 通往 A 的有向道路，但不会同时存在两条。通往第 i$$$i$$$ 座房子的道路数量为 ki$$$k_i$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 A 可以从 B 到达，并且 B 也可以从 A 到达，则称两座房子 A 和 B 是双向可达的。当存在一条从房子 A 到房子 B 的路径时，我们称房子 B 可以从房子 A 到达。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Dixit 想在这座城市中购买两栋房子，也就是说，一栋用于居住，另一栋用于学习。当然，他希望能够从一栋房子前往另一栋房子。因此，他想找到一对双向可达的房子 A 和 B。在所有这样的房屋对中，他希望选择 |kA−kB|$$$|k_A - k_B|$$$ 最大的一对，其中 ki$$$k_i$$$ 表示通向房子 i$$$i$$$ 的道路数量。如果存在多组最优房屋对，选择其中任意一组即可。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "由于 Dixit 正忙于准备 CodeCraft，你能帮他找到所需的房屋对，或者告诉他不存在这样的房屋吗？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在题目的输入中，不会给出每条道路的方向。对于每栋房子，你只会得到通向该房子的道路数量(ki$$$k_i$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你只能向评测器发起一种类型的查询：给出两栋房子 A 和 B，评测器会回答 B 是否可以从 A 到达。查询次数没有上限。但是，一旦评测器对你的某次查询回答“是”，你就不能再发起更多查询。此外，不能重复发起相同的查询。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当你已经用尽所有查询（或者评测器对你的某次查询回答“是”）后，你的程序必须输出它猜测的两栋房子并退出。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "更多细节请参见下面的交互部分。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(3≤n≤500$$$3 \\le n \\le 500$$$)，表示城市中的房屋数量。下一行包含 n$$$n$$$ 个以空格分隔的整数 k1,k2,…,kn$$$k_1, k_2, \\dots, k_n$$$(0≤ki≤n−1$$$0 \\le k_i \\le n - 1$$$)，其中第 i$$$i$$$ 个数表示通往第 i$$$i$$$ 个房屋的道路数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "要进行一次查询，请输出 \"? A B\"(1≤A,B≤N,A≠B)$$$(1 \\leq A,B \\leq N, A\\neq B)$$$。如果房屋 B 可以从房屋 A 到达，交互器将回复 \"Yes\"，否则回复 \"No\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "要输出最终答案，请输出 \"! A B\"，其中 A 和 B 双向可达，且 |kA−kB|$$$|k_A - k_B|$$$ 的值尽可能大。如果不存在这样的房屋对 A 和 B，请输出 \"! 0 0\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输出最终答案后，你的程序必须立即终止，否则将收到 Wrong Answer 判定。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你不能重复进行同一个查询。你所进行的查询次数没有上限，但是，在交互器对你的任意一次查询回复 \"Yes\" 后，你不能再进行更多查询。此时，你的程序必须输出最终答案（\"! A B\" 或 \"! 0 0\"）并终止。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果你以错误的格式进行查询，或重复之前的查询，你将收到 Wrong Answer 判定。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输出查询后，不要忘记输出行末符并刷新输出。否则，你将收到“超出空闲限制”的错误。请使用以下方式：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 C++ 中使用 `fflush(stdout)` 或 `cout.flush()`；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 Java 中使用 `System.out.flush()`；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 Pascal 中使用 `flush(output)`；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 Python 中使用 `stdout.flush()`；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "其他语言请参阅相关文档。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个输入样例中，给定了一座有 3 所房子的城市，每所房子各有一条入边。用户程序发起一次查询：“? 1 2”：询问是否可以从房子 1$$$1$$$ 到达房子 2$$$2$$$。评测器回答“Yes”。用户程序现在得出结论：这些信息已经足以确定正确答案。因此，它输出“! 1 2”并退出。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个输入样例中，用户程序查询了 6 对不同的房子，最后回答“! 0 0”，因为它确信这座城市中不存在题目所要求的两个房子。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E. 两座房子",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

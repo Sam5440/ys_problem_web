@@ -44,23 +44,60 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "一场多科目竞赛即将开始！这场竞赛有 m$$$m$$$ 个不同的科目可供参赛者选择。因此，教练 Alex 需要从他的学生中组建一支参赛队伍。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "他有 n$$$n$$$ 名候选人。对于他认识的第 i$$$i$$$ 个人，他知道该候选人专长的科目为 si$$$s_i$$$，以及其在该专长领域的技能水平为 ri$$$r_i$$$(这个水平可能为负数！)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "竞赛规则要求每支队伍选择一些他们将参加的科目。唯一的限制是，对于每一个被选中的科目，队伍中参加该科目的学生人数必须相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alex 决定让每位候选人只参加自己所擅长的科目。现在 Alex 想知道他应该选择哪些人，才能使所有代表的技能水平总和最大；或者，如果每支合法的非空队伍的总和都为负数，就放弃参加今年的竞赛。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "（当然，Alex 没有多余的钱，因此他选择的每位代表都必须参加竞赛。）",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n≤105$$$1 \\le n \\le 10^5$$$，1≤m≤105$$$1 \\le m \\le 10^5$$$)——候选人的数量和科目的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行中，每行包含两个整数：si$$$s_i$$$ 和 ri$$$r_i$$$(1≤si≤m$$$1 \\le s_i \\le m$$$，−104≤ri≤104$$$-10^4 \\le r_i \\le 10^4$$$)——第 i$$$i$$$ 位候选人的专业科目和技能水平。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数——组成合法代表团的代表的技能总和的最大值(根据上述规则)，如果所有非空合法代表团的技能总和都为负数，则输出 0$$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中，选择候选人 1$$$1$$$、2$$$2$$$、3$$$3$$$、4$$$4$$$ 是最优的，其中两人专攻第 2$$$2$$$ 个科目，另外两人专攻第 3$$$3$$$ 个科目。技能总和为 6+6+5+5=22$$$6 + 6 + 5 + 5 = 22$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，选择候选人 1$$$1$$$、2$$$2$$$ 和 5$$$5$$$ 是最优的。每个科目各有一人，技能总和为 6+6+11=23$$$6 + 6 + 11 = 23$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个样例中，无法得到非负的技能总和。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. 多科目竞赛",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -41,28 +41,80 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "与 E1 的唯一不同之处在于题目所提出的问题。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Vlad 用 n$$$n$$$ 个房间和 n−1$$$n-1$$$ 条双向走廊建造了一个迷宫。从任意房间 u$$$u$$$ 都可以通过一系列走廊到达任意其他房间 v$$$v$$$。因此，房间系统构成一棵无向树。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Vlad 邀请了 k$$$k$$$ 位朋友来和他一起玩游戏。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Vlad 从房间 1$$$1$$$ 开始游戏；如果他到达一个不是 1$$$1$$$ 且恰好有一条走廊通向它的房间，就获胜。朋友们被安置在迷宫中：编号为 i$$$i$$$ 的朋友位于房间 xi$$$x_i$$$，并且没有两个朋友位于同一个房间(也就是说，对于所有 i≠j$$$i \\neq j$$$，都有 xi≠xj$$$x_i \\neq x_j$$$)。如果在 Vlad 获胜之前，其中一人在任意房间或走廊中遇到 Vlad，朋友们就获胜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在一个时间单位内，游戏中的每位参与者都可以通过一条走廊。所有参与者同时移动。参与者也可以选择不移动。每个房间可以同时容纳所有参与者。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "朋友们了解迷宫的布局，并打算获胜。他们不想浪费太多体力。他们请你判断他们是否能够获胜；如果能，确定为了始终抓住 Vlad，迷宫中至少需要留下多少名朋友。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "换句话说，你需要确定能够抓住 Vlad 的朋友子集的最小大小（按元素个数计算），或者说明不存在这样的子集。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)——输入中的测试用例数量。每个测试用例之前都有一个空行。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "测试用例的第一行包含两个数 n$$$n$$$ 和 k$$$k$$$(1≤k<n≤2⋅105$$$1 \\le k  \\lt  n \\le 2\\cdot 10^5$$$)——分别表示房间数和朋友数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "测试用例的下一行包含 k$$$k$$$ 个整数 x1,x2,…,xk$$$x_1, x_2, \\dots, x_k$$$(2≤xi≤n$$$2 \\le x_i \\le n$$$)——表示有朋友所在的房间编号。所有 xi$$$x_i$$$ 均不相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n−1$$$n-1$$$ 行包含对各条走廊的描述，每行有两个数字 vj$$$v_j$$$ 和 uj$$$u_j$$$(1≤uj,vj≤n$$$1 \\le u_j, v_j \\le n$$$)——表示与第 j$$$j$$$ 条走廊相连的房间编号。所有走廊都是双向的。从任意房间出发，都可以沿着走廊到达其他任意房间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中的 n$$$n$$$ 之和不超过 2⋅105$$$2\\cdot10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出 t$$$t$$$ 行，每行包含对应测试用例的答案。如果 Vlad 无论如何都会获胜，则该测试用例的答案应为 −1$$$-1$$$；否则为最少需要的朋友数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "在第一组输入中，即使所有朋友都留在迷宫中，Vlad 仍然可以获胜。因此，答案为“-1”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二组输入中，只需让 6$$$6$$$ 号和 7$$$7$$$ 号房间的朋友离开即可。这样 Vlad 就无法获胜。答案为“2”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三组和第四组输入中，只有当他的所有朋友都留在迷宫中时，Vlad 才无法获胜。因此答案分别为“1”和“2”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E2. 逃离迷宫（困难版）",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

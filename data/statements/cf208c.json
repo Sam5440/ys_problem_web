@@ -35,5 +35,55 @@
       "input": "11 14\n1 2\n1 3\n2 4\n3 4\n4 5\n4 6\n5 11\n6 11\n1 8\n8 9\n9 7\n11 7\n1 10\n10 4",
       "output": "1.714285714286"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Berland 的道路网络由 n 座城市和 m 条双向道路组成。城市编号从 1 到 n，其中主要首都的编号为 n，文化首都的编号为 1。该道路网络保证任意城市都可以通过道路到达其他任意城市。在每条道路上向任意方向行驶所需的时间都相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Berland 的所有居民都非常懒惰，因此当他们想要从城市 v 到达城市 u 时，总会选择一条最短路径（无论是哪一条）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Berland 政府希望让这个国家的道路网络更加安全。为此，他们计划在某座城市中设置一个警察局。警察局具有一种相当奇特的性质：当 Berland 的居民沿着一端设有警察局的道路行驶时，他们会更加小心，因此所有这类道路都被视为安全道路。两端都不是设有警察局的城市的道路则是危险的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "现在，政府想知道应将警察局设在哪里，才能使从文化首都到主首都的所有最短路径中，安全道路数量的平均值达到最大。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 m(2 ≤ n ≤ 100， ![](https://espresso.codeforces.com/830edae867a954b8b9fed8adb7a01c55020312a0.png))——分别表示 Berland 中城市和道路的数量。接下来的 m 行包含两个整数 vi、ui(1 ≤ vi，ui ≤ n，vi ≠ ui)——表示由第 i 条道路连接的城市编号。每行中的数字以空格分隔。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证任意一对城市之间至多有一条道路，并且沿着 Berland 的道路可以从任意城市到达任意其他城市。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出从文化首都到主首都的所有最短路径中，安全道路数量平均值的最大可能值。当答案的绝对误差或相对误差不超过 10 - 6 时，将被视为正确。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，可以将警察局设在其中一个首都，这样每条路径都恰好有一条安全道路。如果不将警察局设在首都，那么安全道路数量的平均值也会达到 ![](https://espresso.codeforces.com/8f23cc2cd3bef67bde56e16911c7af627da25d4d.png)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，如果将警察局设在城市 4，就可以得到所求的最大值。此时有 6 条路径各包含 2 条安全道路，另有 1 条路径包含 0 条安全道路，因此答案等于 ![](https://espresso.codeforces.com/d7723df54e28c93b1c3b9d4c68b039b5071092af.png)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 警察局",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

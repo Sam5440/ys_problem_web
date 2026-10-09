@@ -41,5 +41,79 @@
       "input": "4\n2 1 3 2",
       "output": "2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一天，Squidward、Spongebob 和 Patrick 决定去海滩。不幸的是，天气很糟糕，所以朋友们无法冲浪。然而，他们决定把时间花在堆沙堡上。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "一天结束时，朋友们一共建造了 n 座城堡。城堡的编号从 1 到 n，第 i 座城堡的高度等于 h_i。朋友们正要离开时，Squidward 注意到城堡的高度没有按顺序排列，这看起来很难看。现在，朋友们打算重新排列城堡，使得对于 i 从 1 到 n−1 的所有值，都满足 h_i ≤ h_{i+1}。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Squidward 提出了以下对城堡进行排序的过程：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "城堡被分成若干块——每块由连续的城堡组成。因此，从 i 到 j 的块将包含城堡 i、i+1、...、j。一块可以只由一个城堡组成。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "划分的方式应保证每座城堡恰好属于一个块。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个块都独立于其他块进行排序，也就是说，序列 h_i、h_{i+1}、...、h_j 会变为有序序列。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "划分应满足这样的条件：在每个块排序后，序列 h 也变得有序。这总是可以通过将整个序列视为一个块来实现。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "甚至 Patrick 也明白，增加划分中的块数会使排序过程更加容易。现在，朋友们请你计算满足上述所有要求的划分中，块数的最大可能值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（1 ≤ n ≤ 100000）——Spongebob、Patrick 和 Squidward 白天用沙子堆成的城堡数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行包含 n 个整数 h_i（1 ≤ h_i ≤ 10^9）。其中第 i 个整数表示第 i 座城堡的高度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出合法划分中块数的最大可能值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，划分如下：[1][2][3]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/982507039f7537a2dfca523fb24428b17f8bbe4c.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，划分为：[2, 1][3, 2]",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/c5ef82b357dc2fcfde30c16f79fdb3dc713faa89.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 海滩之日",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

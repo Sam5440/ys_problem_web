@@ -42,5 +42,67 @@
       "input": "3 4 5 4\n..*B\n..**\nD...",
       "output": "7"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Berland 的首都是一个由 n × m 个街区组成的矩形。所有街区分为三类：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "普通街区（标有字符 '.'）——这类街区不会产生噪声，但也不会阻碍噪声传播；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "噪声源（标有从 'A' 到 'Z' 的大写拉丁字母）——这类街区是噪声源，不会阻碍噪声传播；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "高密度建筑区（标有字符 '*'）——这类街区经过隔音处理，噪声无法进入其中，并且它们本身会阻碍噪声传播。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "标有字母“A”的街区会产生 q 个噪声单位。标有字母“B”的街区会产生 2·q 个噪声单位。以此类推，标有字母“Z”的街区会产生 26·q 个噪声单位。城市中每种字母标记的街区数量可以是任意的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "噪声从噪声源传播时，每移动到一个与当前街区共边的街区，噪声级就会减半（当一个奇数除以 2 时，向下取整）。噪声会沿着这条链传播。例如，如果某个街区与噪声源的距离为 2，那么传到该街区的噪声值会除以 4。因此，噪声源传播到某个街区的噪声级只取决于两者之间最短路径的长度。建筑密集的街区是障碍物，噪声无法穿透它们。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/985e6cfcaf374bf2c1080c5819a7f73a7658a14d.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "某个街区的噪声级定义为所有噪声源产生的噪声之和。为了评估 Berland 首都居民的生活质量，需要求出噪声级超过允许值 p 的街区数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含四个整数 n、m、q 和 p（1 ≤ n，m ≤ 250，1 ≤ q，p ≤ 106）——Berland 首都的大小、一个字母为“A”的街区产生的噪声单位数，以及允许的噪声级。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n 行中，每行包含 m 个字符，表示首都中的街区，格式如题面上文所述。Berland 首都中可能不存在任何类型的街区。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出噪声水平超过允许水平 p 的街区数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例的插图位于题面正文中。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "I. 噪声等级",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

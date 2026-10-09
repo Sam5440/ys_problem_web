@@ -42,5 +42,51 @@
       "input": "1 4 10",
       "output": "Missing"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你们都知道狄利克雷原理，其要点是：如果 n 个盒子中有不少于 n+1 个物品，那么必然存在一个盒子，其中至少有两个物品。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "听说过这个原理，却没有掌握逻辑思维技巧的 8 岁孩子 Stas 和 Masha 发明了一种游戏。游戏中有 a 个不同的盒子和 b 个不同的物品，每回合玩家可以添加一个新盒子或一个新物品。某个玩家行动后，将 b 个物品放入 a 个盒子的方法数达到或超过给定的数 n，该玩家就输。所有盒子和物品都视为互不相同。盒子可以为空。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果双方都采取最优策略，且 Stas 先行动，那么谁会输？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入仅一行，包含三个整数 a、b、n（1 ≤ a ≤ 10000，1 ≤ b ≤ 30，2 ≤ n ≤ 10⁹），分别表示初始盒子数、物品数以及对方法数的限制值。保证初始方法数严格小于 n。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 Masha 获胜，输出 \"Stas\"。如果 Stas 获胜，输出 \"Masha\"。如果平局，输出 \"Missing\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第二个样例中，初始方法数等于 3125。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 Stas 增加盒子的数量，他将会输，因为 Masha 可以在她的回合中再次增加盒子的数量。之后 Stas 的任何操作都会导致失败。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "但是，如果 Stas 增加物品的数量，那么 Masha 的任何操作都会导致失败。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 这和狄利克雷有什么关系？",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

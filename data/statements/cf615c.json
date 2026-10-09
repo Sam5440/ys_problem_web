@@ -38,5 +38,51 @@
       "input": "ami\nno",
       "output": "-1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一个名叫 Ayrat 的男孩生活在 AMI-1511 星球上。这个星球上的每个居民都有一项天赋。具体来说，Ayrat 喜欢跑步，而且仅仅跑步还不能满足他。他梦想着将跑步变成一门真正的艺术。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "首先，他想用涂层 t 建造跑道。在 AMI-1511 星球上，跑道的涂层由一串彩色方块组成，其中每个方块都用一个小写英文字母表示。因此，每种涂层都可以看作一个字符串。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "遗憾的是，方块不会向非商业客户自由出售，但 Ayrat 找到了无限量的涂层 s。他还有剪刀和胶水。Ayrat 打算购买一些涂层 s，然后从每种涂层中恰好剪下一段连续的部分（子串），并将其粘到跑道涂层的末尾。此外，他可以在粘贴前翻转这段内容。Ayrat 想知道，为了得到跑道所需的涂层 t，他至少需要购买多少份涂层 s。当然，他还想知道一种实现该答案的方法。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含字符串 s——商店里有的涂层。第二行包含字符串 t——Ayrat 想要得到的涂层。两个字符串均非空，只由小写英文字母组成，且长度不超过 2100。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行应包含所需的最少片段数 n；如果无法构造出所需的字符串，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果答案不是 -1，则接下来 n 行每行应包含两个整数 xi 和 yi —— 对应片段中两端的方块编号。如果 xi ≤ yi，则该片段按正常顺序使用；如果 xi > yi，则该片段按相反顺序使用。按照拼接后能得到字符串 t 的顺序输出这些片段。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，字符串 \"cbaabc\" = \"cba\" + \"abc\"。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个样例中：\"ayrat\" = \"a\" + \"yr\" + \"at\"。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 跑道",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

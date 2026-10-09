@@ -42,25 +42,68 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Tiago 正在和他的朋友 Leonardo、Gabriel 以及 Paulo 一起玩著名的 Directed Bank 游戏。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "众所周知，Directed Bank 的棋盘有 N$$$N$$$ 个位置和 M$$$M$$$ 种可能的移动，第 i$$$i$$$ 次移动用三元组 (Ui,Vi,Wi)$$$(U_i, V_i, W_i)$$$ 表示；也就是说，如果玩家位于位置 Ui$$$U_i$$$，就可以移动到位置 Vi$$$V_i$$$，并将 Wi$$$W_i$$$ 加到余额中。游戏过程中余额可能变为负数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "游戏总是从编号为 1 的位置开始。在一回合中，玩家可以进行一次合法移动，或者停留在原地，且余额不会增加或减少。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "作为一名经验丰富的 Directed Bank 玩家，Tiago 很快发现了游戏中的一个漏洞特性！竟然有可能积累无限多的钱！但这如何发生并不明确，Leonardo 和 Gabriel 不同意这一说法，要求给出证明。Tiago 说他将通过展示游戏中无限次移动的例子来证明，而这也将花费无限长的时间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "不过，由于他们点的披萨马上就要送到了，Tiago 只有足够的时间进行有限回合的游戏，因此问题仍未解决。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "知道你是一名优秀的程序员，并且正在为 UFPE 编程竞赛训练，Paulo 向你提出挑战：证明或反驳 Tiago！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "不过，由于无限长时间太久了，你只需模拟 10998244353$$$10^{998244353}$$$ 个回合就能说服这群朋友。也就是说，给定棋盘的描述，求在经过 10998244353$$$10^{998244353}$$$ 个回合后，在该棋盘上能够获得的每回合平均值的最大可能值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含两个整数 2≤N≤2000$$$2 \\le N \\le 2000$$$、1≤M≤2000$$$1 \\le M \\le 2000$$$，分别表示棋盘上的位置数量和可能的有效移动数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 M$$$M$$$ 行包含三个整数 Ui、Vi、Wi$$$U_i, V_i, W_i$$$，其中 1≤Ui,Vi≤N$$$1 \\le U_i, V_i \\le N$$$ 且 −109≤Wi≤109$$$-10^9 \\le W_i \\le 10^9$$$，并且 Ui≠Vi$$$U_i \\neq V_i$$$。这些整数表示有效移动的列表。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，同一对位置之间允许存在多条边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个实数，即该问题的答案。如果相对误差或绝对误差小于或等于 10−6$$$10^{-6}$$$，则你的解法将被视为正确。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在样例 1 中，一种有效策略是从方格 1 走到方格 2，返回方格 1，然后再走到方格 2，如此往复(1,2,1,2,1,2,…)$$$(1, 2, 1, 2, 1, 2, \\ldots)$$$。经过无限轮次后，每轮累积的平均得分将为 0.5$$$0.5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在样例 2 中，一种有效策略是永远不离开第一个方格，因此不会损失积分。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "I. 无限金钱漏洞",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

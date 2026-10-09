@@ -45,28 +45,80 @@
   ],
   "sectionsZh": {
     "legend": [
-      null
+      {
+        "ai": "Slava 有一个由 N$$$N$$$ 个数组成的集合：x1,x2,x3,…,xn$$$x_1, x_2, x_3, \\dots, x_n$$$。在一次操作中，他可以选择一个非空集合 y1,y2,…,ym$$$y_1, y_2, y_3, \\dots, y_m$$$，其中对于从 1$$$1$$$ 到 m$$$m$$$ 的任意 i$$$i$$$，yi$$$y_i$$$ 都包含在集合 x1,x2,…,xn$$$x_1, x_2, \\dots, x_n$$$ 中；然后他可以把 y1,y2,…,ym$$$y_1, y_2, \\dots, y_m$$$ 的所有可能子集中的数的乘积之和加入集合 X$$$X$$$。Slava 想知道：存在多少个不超过 L$$$L$$$ 的数，可以通过上述方法用有限次操作计算出来？(为了更好地理解，请参见注释。)",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "输入数据的第一行包含两个数 N$$$N$$$ 和 L$$$L$$$(2≤N≤20，1≤L≤1012)$$$(2 \\le N \\le 20, 1 \\le L \\le 10^{12})$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行包含 N$$$N$$$ 个数 xi$$$x_i$$$(2≤xi≤15)$$$(2 \\le x_i \\le 15)$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "在一行中输出一个数——即不超过 L$$$L$$$ 且能通过有限次上述操作计算出的数的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "考虑数的集合 X=[14,15]，L=100$$$X = [14, 15], L = 100$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "我们可以这样得到集合 Y$$$Y$$$：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "[14],[15],[14,14],[14,15],[15,15],[14,14,14],…$$$[14], [15], [14, 14], [14, 15], [15, 15], [14, 14, 14], \\dots$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "然后我们得到数：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "14+14+14∗14=224$$$14 + 14 + 14 * 14 = 224$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "15+15+15∗15=255$$$15 + 15 + 15 * 15 = 255$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "14=14$$$14 = 14$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "15=15$$$15 = 15$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "14+15+14∗15=239$$$14 + 15 + 14 * 15 = 239$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "14+14+14+14∗14+14∗14+14∗14+14∗14∗14=3374$$$14 + 14 + 14 + 14 * 14 + 14 * 14 + 14 * 14 + 14 * 14 * 14 = 3374$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "…$$$\\dots$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在这些数中，只有两个不大于 100：14、15$$$100:~14,~15$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "K. 取数",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

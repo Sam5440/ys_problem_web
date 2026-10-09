@@ -35,5 +35,71 @@
       "input": "3\n0 1 2",
       "output": "0 2 1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Bill 是 BubbleLand 的一位著名数学家。得益于他革命性的数学发现，他赚到了足够的钱，建造了一座美丽的房子。遗憾的是，由于没有按时缴纳财产税，法院决定惩罚 Bill，让他失去部分财产。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Bill 的财产可以看作一个凸正 2n 边形 A0 A1... A2n - 1 A2n，  A2n =  A0，其每条边的长度恰好为 1 米。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "法院规定，移除他部分财产的规则如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将每条边 Ak Ak + 1（k = 0... 2n - 1）等分为 n 份，每份长度为 1 / n，并标记点 P0，P1，...，Pn - 1",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在每条边 A2k A2k + 1 上， k = 0... n - 1，法庭将选择一个点 B2k = Pi，其中 i = 0，...，n - 1，使得 ![](https://espresso.codeforces.com/82be7fdb09b6214407fa34174365142e65a61665.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在每条边 A2k + 1A2k + 2 上， k = 0...n - 1，比尔将选择一个点 B2k + 1 = Pi，其中 i = 0，...，n - 1，使得 ![](https://espresso.codeforces.com/3212ccd11483d157eac0daeb0ef542d5197e2cee.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "比尔可以保留 2n 边形 B0 B1... B2n - 1 内部的财产。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "幸运的是，比尔得知了法庭选择的 B2k 点。尽管他是一位伟大的数学家，但他的房子非常大，计算起来很困难。因此，他请求你帮助他选择点，使他能够保留的财产面积最大。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（2 ≤ n ≤ 50000），表示 2n 边形的边数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n 个互不相同的整数 B2k（0 ≤ B2k ≤ n - 1， k = 0... n - 1），整数之间以单个空格分隔，表示法庭选择的点。如果 B2k = i，则法庭在边 A2k A2k + 1 上选择了点 Pi。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 个互不相同的整数，整数之间用一个空格分隔，表示 Bill 应按顺序选择的点 B1、B3、...、B2n - 1，以使图形面积最大。如果有多个方案都能使面积最大，输出其中任意一个即可。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "为了使面积最大，Bill 应选择以下点：B1 = P0，B3 = P2，B5 = P1",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/2f6820e290c879f16d07d79d039cecea64b7cbb8.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 财产",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

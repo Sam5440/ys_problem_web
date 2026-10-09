@@ -33,20 +33,54 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Denis 是一名学生，他的数据安全考试没及格，所以今天要补考。他起床晚了，决定打车去。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Denis 所在的城市可以表示成有 n$$$n$$$ 个路口、由 m$$$m$$$ 条双向道路连接。每条道路都知道开车通过需要多长时间。Denis 住在编号为 s$$$s$$$ 的路口附近，大学在编号为 t$$$t$$$ 的路口附近。出租车一靠近大学，Denis 就立刻下车冲向考场。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "不幸的是，事情要更复杂一些——黑客入侵了 Denis 出租车上的 GPS。GPS 正常工作时，会帮助你尽可能快地到达目的地。它在每个路口显示为了以最快方式走完全程应该走哪条路。如果有多条可选道路，GPS 可以显示其中任意一条。黑客可以让 GPS 显示他们想要的任意一条道路，但这种篡改最多只能发生一次。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Denis 记不清自己具体是怎么到大学的，但他记得这段路程用了 L$$$L$$$ 时间。原来他的老师已经知道 GPS 被攻击的事，所以老师让 Denis 计算从家到大学有多少条不同的可能路线，作为补考的一部分。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "请帮助 Denis 计算从路口 s$$$s$$$ 到路口 t$$$t$$$ 的路线数量，这些路线耗时恰好为 L$$$L$$$，并且在 GPS 被攻击的情况下是有可能发生的。由于这个数字可能非常大，请输出它对 109+7$$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$——Denis 所在城市的路口数量以及路口之间的道路数量(2≤n≤2⋅105$$$2 \\leq n \\leq 2 \\cdot 10^5$$$，1≤m≤min(2⋅105,n(n−1)2)$$$1 \\leq m \\leq \\min{(2 \\cdot 10^5, \\frac{n(n - 1)}{2})}$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行包含三个整数 s$$$s$$$、t$$$t$$$ 和 L$$$L$$$，分别表示十字路口的编号、Denis 居住的十字路口编号、大学附近的十字路口编号以及乘车时间(1≤s,t≤n$$$1 \\leq s, t \\leq n$$$，s≠t$$$s \\neq t$$$，1≤L≤2⋅1014$$$1 \\leq L \\leq 2 \\cdot 10^{14}$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行描述十字路口之间的道路。每行包含三个整数 v$$$v$$$、u$$$u$$$、w$$$w$$$(1≤v,u≤n$$$1 \\leq v, u \\leq n$$$，v≠u$$$v \\neq u$$$，1≤w≤109$$$1 \\leq w \\leq 10^9$$$)，分别表示这条道路连接的两个十字路口编号，以及沿着这条道路行驶所需的时间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所有道路都是双向的，任意两个十字路口之间至多有一条道路。没有道路连接某个十字路口和自身。保证可以从十字路口 s$$$s$$$ 到达十字路口 t$$$t$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出唯一一个整数，即 Denis 可以选择的路线数量对 109+7$$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. GPS Hack",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

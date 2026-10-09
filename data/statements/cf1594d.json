@@ -40,27 +40,76 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Theofanis 开始玩一款名为“Among them”的新在线游戏。然而，他总是与塞浦路斯玩家一起游戏，并且他们都有相同的名字：“Andreas”（这是塞浦路斯最常见的名字）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在每场游戏中，Theofanis 会与 n$$$n$$$ 名其他玩家一起进行游戏。由于他们都有相同的名字，因此他们的编号从 1$$$1$$$ 到 n$$$n$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "玩家们在聊天中发送了 m$$$m$$$ 条评论。一条评论的格式为“i$$$i$$$ j$$$j$$$ c$$$c$$$”，其中 i$$$i$$$ 和 j$$$j$$$ 是两个不同的整数，c$$$c$$$ 是一个字符串(1≤i,j≤n$$$1 \\le i, j \\le n$$$；i≠j$$$i \\neq j$$$；c$$$c$$$ 要么是 imposter，要么是 crewmate)。这条评论表示玩家 i$$$i$$$ 说玩家 j$$$j$$$ 的身份是 c$$$c$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "冒充者总是说谎，而船员总是说真话。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "帮助 Theofanis 找出其他塞浦路斯玩家中冒充者数量的最大可能值，或者判断这些评论相互矛盾（详见注释中的进一步说明）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，每名玩家恰好拥有一个身份：冒充者或船员。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)，表示测试用例的数量。接下来是每个测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$；0≤m≤5⋅105$$$0 \\le m \\le 5 \\cdot 10^5$$$)，分别表示除 Theofanis 外的玩家数量和评论数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中的每一行包含一条由玩家发表的评论，格式为“i$$$i$$$ j$$$j$$$ c$$$c$$$”，其中 i$$$i$$$ 和 j$$$j$$$ 是两个不同的整数，c$$$c$$$ 是一个字符串(1≤i,j≤n$$$1 \\le i, j \\le n$$$；i≠j$$$i \\neq j$$$；c$$$c$$$ 为 imposter 或 crewmate)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "同一对 (i,j)$$$(i, j)$$$ 可能有多条评论。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有 n$$$n$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$，所有 m$$$m$$$ 的总和不超过 5⋅105$$$5 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出一个整数，即内鬼数量的最大可能值。如果评论相互矛盾，则输出 −1$$$-1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，内鬼可以是 Andreas 2$$$2$$$ 和 3$$$3$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试用例中，内鬼可以是 Andreas 1$$$1$$$、2$$$2$$$、3$$$3$$$ 和 5$$$5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个测试用例中，评论相互矛盾。这是因为玩家 1$$$1$$$ 说玩家 2$$$2$$$ 是内鬼，而玩家 2$$$2$$$ 说玩家 1$$$1$$$ 是船员。如果玩家 1$$$1$$$ 是船员，那么他说的必须是真话，因此玩家 2$$$2$$$ 必须是内鬼。但如果玩家 2$$$2$$$ 是内鬼，那么他说的必定是假话，所以玩家 1$$$1$$$ 不可能是船员。矛盾。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 冒充者的数量",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

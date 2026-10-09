@@ -41,5 +41,63 @@
       "input": "5 1 1\n1 2 2\n2 2 2\n2 2 2\n1 2 2\n2 2 2\n2 2 2",
       "output": "0 0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Ilya 正在一家制造机器人的公司工作。Ilya 为娱乐机器人编写程序，而他当前的项目是“Bob”，一种新一代的游戏机器人。Ilya 的老板想了解他目前的进展，尤其关心 Bob 在进行不同游戏时是否比之前的模型“Alice”更出色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "因此，现在 Ilya 想在一个名为“1-2-3”的简单游戏中比较他的机器人性能。这个游戏类似于“石头剪刀布”：两个机器人都秘密地从集合 {1, 2, 3} 中选择一个数字，并在同一时刻说出这个数字。如果两个机器人选择了相同的数字，则为平局，双方都不得分。但如果选择的数字不同，则其中一个机器人得一分：3 胜 2，2 胜 1，1 胜 3。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "两台机器人的程序会让它们按照这样的方式选择数字：它们在第 \\(i+1\\) 局中的选择只取决于它们在第 \\(i\\) 局中选择的数字。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Ilya 知道机器人将进行 \\(k\\) 局游戏，Alice 在第一局选择数字 \\(a\\)，Bob 在第一局选择数字 \\(b\\)。他还知道两台机器人的程序，并且可以根据它们上一局的选择判断每台机器人将选择什么。Ilya 不想等到机器人完成全部 \\(k\\) 局游戏，因此他请你预测它们在最后一局结束后各自获得的分数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个数字 \\(k\\)、\\(a\\)、\\(b\\)（\\(1 \\le k \\le 10^{18}\\)，\\(1 \\le a,b \\le 3\\)）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来有 3 行，第 \\(i\\) 行包含 3 个数字 \\(A_{i,1}\\)、\\(A_{i,2}\\)、\\(A_{i,3}\\)，其中 \\(A_{i,j}\\) 表示 Alice 在上一局选择 \\(i\\) 且 Bob 选择 \\(j\\) 时，Alice 在本局的选择（\\(1 \\le A_{i,j} \\le 3\\)）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来有 3 行，第 \\(i\\) 行包含 3 个数字 \\(B_{i,1}\\)、\\(B_{i,2}\\)、\\(B_{i,3}\\)，其中 \\(B_{i,j}\\) 表示 Alice 在上一局选择 \\(i\\) 且 Bob 选择 \\(j\\) 时，Bob 在本局的选择（\\(1 \\le B_{i,j} \\le 3\\)）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出两个数字。第一个数字应等于 Alice 获得的分数，第二个数字应等于 Bob 在进行 \\(k\\) 局游戏后的分数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第二个样例中的游戏过程如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/1e21b6e200707470571d69c9946ace6b56f5279b.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第四局和第七局由 Bob 获胜，第一局为和棋，其余各局由 Alice 获胜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 1-2-3",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

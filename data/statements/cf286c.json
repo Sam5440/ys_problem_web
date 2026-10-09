@@ -45,5 +45,69 @@
       "input": "4\n1 2 2 1\n2 3 4",
       "output": "YES\n1 2 -2 -1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含整数 n (1 ≤ n ≤ 106)。第二行包含 n 个整数：p1, p2, ..., pn (1 ≤ pi ≤ 109)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第三行包含整数 t（0 ≤ t ≤ n），其后是 t 个互不相同的整数 q1，q2，...，qt（1 ≤ qi ≤ n）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每行中的数字由空格分隔。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 Vova 弄错了，且不存在合适的序列 {x1，x2，...，xn}，则输出一个字符串 \"NO\"（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，第一行输出 \"YES\"（不含引号），第二行输出 n 个整数 x1，x2，...，xn（|xi| = pi；xqj < 0）。如果有多个序列符合加密要求，你可以输出其中任意一个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "如你所知，Vova 最近成为了 Ultima Thule 城的一名新萨满。因此，他获得了关于合法括号序列的萨满知识。Ultima Thule 的萨满们自古以来就使用许多不同类型的括号。一种括号类型是一个正整数。萨满们按如下方式定义合法括号序列：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "空序列是合法括号序列。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果 {a1, a2, ..., al} 和 {b1, b2, ..., bk} 都是合法括号序列，那么序列 {a1, a2, ..., al, b1, b2, ..., bk}（它们的拼接）也是合法括号序列。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果 {a1, a2, ..., al} 是一个合法括号序列，那么序列 ![](https://espresso.codeforces.com/23d6a879e6e73067450bcb6f00ab4d78bc7731a6.png) 也是一个合法括号序列，其中 v (v > 0) 是整数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "例如，序列 {1, 1,  - 1, 2,  - 2,  - 1} 和 {3,  - 3} 都是合法括号序列，而 {2,  - 3} 不是。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "此外，在 Vova 成为萨满之后，他学到了最重要的合法括号序列 {x1, x2, ..., xn}，它由 n 个整数组成。由于序列 x 是最重要的，Vova 决定以防万一将其加密。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "加密由两个序列组成。第一个序列 {p1, p2, ..., pn} 包含括号的类型，即 pi = |xi| (1 ≤ i ≤ n)。第二个序列 {q1, q2, ..., qt} 包含 t 个整数——某些位置（可能不是全部），这些位置在序列 {x1, x2, ..., xn} 中对应的数为负数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "不幸的是，Vova 忘记了主序列。但他足够幸运地保留了加密结果：序列 {p1, p2, ..., pn} 和 {q1, q2, ..., qt}。请帮助 Vova 根据加密结果恢复序列 x。如果存在多个序列与该加密结果对应，恢复其中任意一个。如果不存在这样的序列，你应该告知这一点。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 主序列",
+    "aiModel": "DeepSeek V4 Flash"
+  }
 }

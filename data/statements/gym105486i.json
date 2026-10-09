@@ -41,28 +41,80 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Lawliet 有一个长度为 n$$$n$$$ 的数列，记为 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$，他想确定存在多少种好的划分。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果划分大小 k$$$k$$$ 满足 1≤k≤n$$$1 \\leq k \\leq n$$$，并且按照划分大小将数列 a$$$a$$$ 划分成若干部分后，每个得到的子序列都是非递减的，则称 k 为一个好的划分大小。划分方式如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "数列 a$$$a$$$ 被划分为 ⌈nk⌉$$$\\lceil \\frac{n}{k} \\rceil$$$ 个部分。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于第 i$$$i$$$ 个部分(1≤i≤⌈nk⌉−1$$$1 \\leq i \\leq \\lceil \\frac{n}{k} \\rceil - 1$$$)，其中的元素为 a(i−1)×k+1,a(i−1)×k+2,…,ai×k$$$a_{(i - 1) \\times k + 1}, a_{(i - 1) \\times k + 2}, \\ldots, a_{i \\times k}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于第 ⌈nk⌉$$$\\lceil \\frac{n}{k} \\rceil$$$ 个部分，其中的元素为 a(⌈nk⌉−1)×k+1,…,an$$$a_{(\\lceil \\frac{n}{k} \\rceil - 1) \\times k + 1}, \\ldots, a_n$$$。注意，最后一个部分的长度可能小于 k$$$k$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Lawliet 觉得这个问题太简单了，因此他将进行 q$$$q$$$ 次修改。每次修改给出两个正整数 p$$$p$$$ 和 v$$$v$$$，表示 ap$$$a_p$$$ 的值将被修改为 v$$$v$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是帮助 Lawliet 计算在进行任何修改之前以及每次修改之后的优良划分大小数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤10$$$1\\le T \\le 10$$$)，表示测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每个测试用例，第一行包含两个整数 n$$$n$$$(1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$)和 q$$$q$$$(1≤q≤2⋅105$$$1 \\le q \\le 2 \\cdot 10^5$$$)，分别表示序列的长度和修改次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数，表示序列 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$(1≤ai≤2⋅109$$$1\\le a_i\\le 2\\cdot 10^9$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行中，每行包含两个整数 p$$$p$$$(1≤p≤n$$$1 \\le p \\le n$$$)和 v$$$v$$$(1≤v≤2⋅109$$$1 \\le v \\le 2 \\cdot 10^9$$$)，表示序列中第 p$$$p$$$ 个位置的元素将被修改为 v$$$v$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和与 q$$$q$$$ 的总和分别不超过 2⋅105$$$2\\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出 q+1$$$q + 1$$$ 行，分别表示任意修改之前以及每次修改之后好的划分大小的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "初始时，唯一好的划分大小是 k=1$$$k = 1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第一次修改后，序列变为 [4,5,2,6,1]$$$[4, 5, 2, 6, 1]$$$。k=1$$$k = 1$$$ 和 k=2$$$k = 2$$$ 都是好的划分大小。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二次修改后，序列变为 [4,5,5,6,1]$$$[4, 5, 5, 6, 1]$$$。好的划分大小有 k=1$$$k = 1$$$、k=2$$$k = 2$$$ 和 k=4$$$k = 4$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "I. 好的划分",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

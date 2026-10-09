@@ -37,20 +37,54 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "你需要处理一个非常复杂的供水系统。该系统由 n$$$n$$$ 个交汇点和 m$$$m$$$ 条管道组成，第 i$$$i$$$ 条管道连接交汇点 xi$$$x_i$$$ 和 yi$$$y_i$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你唯一能做的就是调整管道。你需要选择 m$$$m$$$ 个整数 f1$$$f_1$$$、f2$$$f_2$$$、...、fm$$$f_m$$$，并将它们作为管道设置。第 i$$$i$$$ 条管道每秒会从交汇点 xi$$$x_i$$$ 向交汇点 yi$$$y_i$$$ 输送 fi$$$f_i$$$ 单位的水(如果 fi$$$f_i$$$ 为负数，那么该管道会每秒从交汇点 yi$$$y_i$$$ 向交汇点 xi$$$x_i$$$ 输送 |fi|$$$|f_i|$$$ 单位的水)。fi$$$f_i$$$ 可以设置为从 −2⋅109$$$-2 \\cdot 10^9$$$ 到 2⋅109$$$2 \\cdot 10^9$$$ 之间的任意整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "为了使系统正常工作，需要满足一些约束条件：对于每个 i∈[1,n]$$$i \\in [1, n]$$$，第 i$$$i$$$ 个接头都关联着一个数 si$$$s_i$$$，这意味着第 i$$$i$$$ 个接头的流入量与流出量之差必须恰好等于 si$$$s_i$$$(如果 si$$$s_i$$$ 非负，那么第 i$$$i$$$ 个接头每秒必须接收 si$$$s_i$$$ 单位的水；如果它为负数，那么第 i$$$i$$$ 个接头必须每秒向其他接头输送 |si|$$$|s_i|$$$ 单位的水)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你能否选择整数 f1$$$f_1$$$、f2$$$f_2$$$、...、fm$$$f_m$$$，使所有关于流入量和流出量的要求都得到满足？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$)——交汇点的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 s1,s2,…,sn$$$s_1, s_2, \\dots, s_n$$$(−104≤si≤104$$$-10^4 \\le s_i \\le 10^4$$$)——交汇点的约束条件。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三行包含一个整数 m$$$m$$$(0≤m≤2⋅105$$$0 \\le m \\le 2 \\cdot 10^5$$$)——管道的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中的第 i$$$i$$$ 行包含两个整数 xi$$$x_i$$$ 和 yi$$$y_i$$$(1≤xi,yi≤n$$$1 \\le x_i, y_i \\le n$$$，xi≠yi$$$x_i \\ne y_i$$$)——第 i$$$i$$$ 条管道的描述。保证每个无序对 (x,y)$$$(x, y)$$$ 在输入中至多出现一次(这意味着在 (x,y)$$$(x, y)$$$ 第一次出现之后，不会再出现 (x,y)$$$(x, y)$$$ 或 (y,x)$$$(y, x)$$$)。保证对于每一对接点，都存在一条沿管道连接它们的路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null
+      {
+        "ai": "如果你能选择这样的整数 f1,f2,…,fm$$$f_1, f_2, \\dots, f_m$$$，使得所有关于流入和流出流量的要求都得到满足，那么在第一行输出“Possible”。随后输出 m$$$m$$$ 行，第 i$$$i$$$ 行应包含 fi$$$f_i$$$——为管道选择的设定值。管道按照它们在输入中出现的顺序编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则在唯一一行中输出“Impossible”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "F. 流程控制",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

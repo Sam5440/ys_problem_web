@@ -31,18 +31,52 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Vector 教授正准备教授她的算术占卜课程。她需要为这堂课准备 n$$$n$$$ 个互不相同的魔法单词。每个魔法单词都是一个由字符 X 和 O 组成的字符串。咒语是通过将两个魔法单词拼接在一起得到的字符串。咒语的威力等于其中不同的非空子串的数量。例如，咒语 XOXO 的威力等于 7，因为它有 7 个不同的子串：X、O、XO、OX、XOX、OXO 和 XOXO。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每位学生都会通过拼接两个魔法单词来创造自己的咒语。由于学生们还不太擅长魔法，他们会从 Vector 教授提供的 n$$$n$$$ 个单词中，独立且等概率地随机选择这两个单词。因此，学生选择的两个单词也可能相同。随后，每位学生会计算自己咒语的力量，并将其告知 Vector 教授。为了检查学生的答案，当然也是为了给学生们留下深刻印象，Vector 教授需要找出每位学生拼接了哪两个魔法单词，以及拼接的顺序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的程序需要扮演 Vector 教授的角色：首先创建 n$$$n$$$ 个互不相同的魔法单词，然后处理多次请求。每次请求会给出咒语的力量，你需要确定按照正确顺序构成该咒语的两个魔法单词的编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "交互",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "这是一道交互题。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "首先，你的程序应读入一个整数 n$$$n$$$(1≤n≤3$$$1 \\le n \\le 3$$$)，表示需要准备的魔法单词数量。然后，输出它所创建的 n$$$n$$$ 个魔法单词，每行一个。魔法单词必须互不相同，每个魔法单词的长度至少为 1，至多为 30⋅n$$$30\\cdot n$$$，且每个字符必须是 X 或 O。我们将你输出的第 i$$$i$$$ 个魔法单词记为 wi$$$w_i$$$(1≤i≤n$$$1 \\le i \\le n$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接着，你的程序应读入一个整数 q$$$q$$$(1≤q≤1000$$$1 \\le q \\le 1000$$$)，表示班级中的学生数量。然后，重复以下过程 q$$$q$$$ 次，每位学生执行一次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于第 j$$$j$$$ 位学生，首先应读入一个整数 pj$$$p_j$$$，表示其咒语的强度。保证该数的计算方式是：在 1 到 n$$$n$$$(含)之间独立且等概率地随机选择两个下标 uj$$$u_j$$$ 和 vj$$$v_j$$$，将 wuj$$$w_{u_j}$$$ 与 wvj$$$w_{v_j}$$$ 拼接起来，并求所得字符串中不同的非空子串数量。然后，你的程序必须按此顺序输出下标 uj$$$u_j$$$ 和 vj$$$v_j$$$(1≤uj,vj≤n$$$1 \\le u_j, v_j \\le n$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，找到任意两个拼接后能得到具有给定强度的咒语的魔法单词是不够的。你必须准确找出该学生使用的单词及其顺序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "记得在输出所有魔法单词后，以及为每位学生输出 uj$$$u_j$$$ 和 vj$$$v_j$$$ 后，刷新输出流。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [],
     "output": []
+  },
+  "titleZh": {
+    "ai": "D1. 算术占卜（简单）",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

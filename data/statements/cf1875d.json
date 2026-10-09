@@ -40,27 +40,76 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定一个包含 n$$$n$$$ 个非负整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ 的数组。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "令 m$$$m$$$ 为一个初始值为 0$$$0$$$ 的变量，Jellyfish 将执行以下操作 n$$$n$$$ 次：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择一个下标 i$$$i$$$(1≤i≤|a|$$$1 \\leq i \\leq |a|$$$)，并从 a$$$a$$$ 中删除 ai$$$a_i$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将 MEX(a)†$$$\\operatorname{MEX}(a)^{\\dagger}$$$ 加到 m$$$m$$$ 中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "现在 Jellyfish 想知道，如果他以最优方式执行所有操作，m$$$m$$$ 最终可能达到的最小值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "†$$$^{\\dagger}$$$ 数组的 MEX(未出现的最小值)是数组中不存在的最小非负整数。例如：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "数组 [2,2,1]$$$[2,2,1]$$$ 的 MEX 是 0$$$0$$$，因为 0$$$0$$$ 不属于该数组。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "数组 [3,1,0,1]$$$[3,1,0,1]$$$ 的 MEX 是 2$$$2$$$，因为 0$$$0$$$ 和 1$$$1$$$ 属于该数组，但 2$$$2$$$ 不属于该数组。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "数组 [0,3,1,2]$$$[0,3,1,2]$$$ 的 MEX 是 4$$$4$$$，因为 0$$$0$$$、1$$$1$$$、2$$$2$$$ 和 3$$$3$$$ 属于该数组，但 4$$$4$$$ 不属于该数组。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤5000$$$1 \\leq t \\leq 5000$$$)。下面给出测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤5000$$$1 \\leq n \\leq 5000$$$)——数组的大小。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(0≤ai≤109$$$0 \\leq a_i \\leq 10^9$$$)——数组中的整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 5000$$$5000$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出一个整数——如果以最优方式执行操作，m$$$m$$$ 的最小值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null
+      {
+        "ai": "在第一个测试用例中，我们按以下顺序从 a$$$a$$$ 中删除元素：[5,2,1,0,3,0,4,0]→[5,2,0,3,0,4,0]→[5,2,0,3,4,0]→[5,2,3,4,0]→[5,2,3,4]→[5,2,4]→[2,4]→[4]→[ ]$$$[5,2,\\color{red}{1},0,3,0,4,0] \\to [5,2,0,3,\\color{red}{0},4,0] \\to [5,2,\\color{red}{0},3,4,0] \\to [5,2,3,4,\\color{red}{0}] \\to [5,2,\\color{red}{3},4] \\to [\\color{red}{5},2,4] \\to [\\color{red}{2},4] \\to [\\color{red}{4}] \\to [~]$$$。m$$$m$$$ 的值为 1+1+1+0+0+0+0+0=3$$$1+1+1+0+0+0+0+0=3$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. Jellyfish 与 Mex",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

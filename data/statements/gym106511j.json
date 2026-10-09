@@ -47,26 +47,72 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "哥伦比亚大学校园里阳光明媚，Alice 和 Bob 决定去 Butler Lawns 玩他们最喜欢的游戏：排列游戏。由于天气这么好，Alice 想尽可能久地待在草坪上，而 Bob 第二天有期中考试，想回家学习。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "排列游戏的规则如下：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Alice 得到一个排列 a$$$a$$$，Bob 得到一个排列 b$$$b$$$，两者的规模均为 n$$$n$$$∗$$$^{\\text{∗}}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Alice 选择一个下标 i$$$i$$$(1≤i≤n$$$1 \\leq i \\leq n$$$)，并将一枚棋子放到她的排列 a$$$a$$$ 的位置 i$$$i$$$ 上。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Bob 在看到 Alice 放置棋子的位置后，选择一个下标 j$$$j$$$(1≤j≤n$$$1 \\leq j \\leq n$$$)，并将自己的棋子放到他的排列 b$$$b$$$ 的位置 j$$$j$$$ 上。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Alice 和 Bob 各自按照自己的排列一步一步移动：Alice 先将棋子移到下标 ai$$$a_i$$$，然后移到 aai$$$a_{a_i}$$$，依此类推。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Bob 将他的棋子移动到下标 bj$$$b_j$$$，然后移动到下标 bbj$$$b_{b_j}$$$，以此类推。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "∗$$$^{\\text{∗}}$$$长度为 n$$$n$$$ 的排列是一个数组，其中包含 n$$$n$$$ 个从 1$$$1$$$ 到 n$$$n$$$ 中取出的互不相同的整数，顺序任意。例如，[2$$$2$$$, 3$$$3$$$, 1$$$1$$$, 5$$$5$$$, 4$$$4$$$] 是一个排列，但 [1$$$1$$$, 2$$$2$$$, 2$$$2$$$] 不是排列(2$$$2$$$ 在数组中出现了两次)，[1$$$1$$$, 3$$$3$$$, 4$$$4$$$] 也不是排列(n=3$$$n = 3$$$，但数组中有一个 4$$$4$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$(1≤n≤2⋅105$$$1 \\leq n \\leq 2 \\cdot 10^5$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入的第二行包含 n$$$n$$$ 个互不相同的整数 a1,a2,...,an$$$a_1, a_2, ..., a_n$$$——Alice 的排列 a$$$a$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入的第三行包含 n$$$n$$$ 个互不相同的整数 b1,b2,...,bn$$$b_1, b_2, ...,b_n$$$——Bob 的排列 b$$$b$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数——在双方都采取最优策略的情况下，游戏中将执行的步数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个样例中，无论 Alice 和 Bob 一开始将自己的棋子放在哪些下标位置，整个过程都只会持续一步。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，Alice 可以将她的棋子放在下标 3$$$3$$$ 处，而 Bob 看到 Alice 放置棋子的位置后，将自己的棋子放在下标 1$$$1$$$ 处。一步之后，Alice 的棋子会位于下标 4$$$4$$$ 处，而 Bob 的棋子会位于下标 3$$$3$$$ 处。两步之后，Alice 的棋子会位于下标 5$$$5$$$ 处，而 Bob 的棋子会位于下标 5$$$5$$$ 处。三步之后，Alice 的棋子会回到下标 3$$$3$$$ 处，而 Bob 的棋子会回到下标 1$$$1$$$ 处。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "J. 排列游戏",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

@@ -43,26 +43,72 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "寻路是寻找两点之间路线的任务。它经常出现在许多问题中。例如，在 GPS 导航软件中，驾驶员可以查询推荐路线；在机器人运动规划中，机器人需要找到完成某些任务的有效移动序列；或者在简单的迷宫求解器中，需要找到从一个点到另一个点的有效路径。本题与迷宫求解有关。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "本题中的迷宫是一个 N×N$$$N \\times N$$$ 的整数矩阵 A$$$A$$$。每个单元格的值由两个长度均为 N$$$N$$$ 的给定数组 R$$$R$$$ 和 C$$$C$$$ 生成。具体来说，第 ith$$$i^{th}$$$ 行、第 jth$$$j^{th}$$$ 列的单元格 (i,j)$$$(i,j)$$$ 的值等于 Ri+Cj$$$R_i + C_j$$$。注意，本题中的所有下标均从 1$$$1$$$ 到 N$$$N$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "迷宫中的一条路径定义为一个单元格序列 (r1,c1),(r2,c2),…,(rk,ck)$$$(r_1,c_1), (r_2,c_2), \\dots, (r_k,c_k)$$$，满足对于所有 1≤i<k$$$1 \\le i  \\lt  k$$$，均有 |ri−ri+1|+|ci−ci+1|=1$$$|r_i - r_{i+1}| + |c_i - c_{i+1}| = 1$$$。换句话说，每两个相邻单元格只相差 1$$$1$$$ 行或只相差 1$$$1$$$ 列。本迷宫中的偶数路径定义为路径上的所有单元格中只包含偶数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定一个元组 ⟨ra,ca,rb,cb⟩$$$\\langle r_a,c_a,r_b,c_b \\rangle$$$ 作为查询，你的任务是判断是否存在一条从单元格 (ra,ca)$$$(r_a,c_a)$$$ 到单元格 (rb,cb)$$$(r_b,c_b)$$$ 的偶数路径。为简化问题，保证单元格 (ra,ca)$$$(r_a,c_a)$$$ 和单元格 (rb,cb)$$$(r_b,c_b)$$$ 中都包含偶数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，令 N=5$$$N = 5$$$，R={6,2,7,8,3}$$$R = \\{6, 2, 7, 8, 3\\}$$$，C={3,4,8,5,1}$$$C = \\{3, 4, 8, 5, 1\\}$$$。下图描绘了一个由给定数组 R$$$R$$$ 和 C$$$C$$$ 生成的 5×5$$$5 \\times 5$$$ 矩阵 A$$$A$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/6b5e0abfb808bbde1d8107e036d5b3d752ff8625.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "让我们考虑几个查询：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "⟨2,2,1,3⟩$$$\\langle 2, 2, 1, 3 \\rangle$$$：从单元格 (2,2)$$$(2,2)$$$ 到单元格 (1,3)$$$(1,3)$$$ 存在一条偶数路径，例如 (2,2),(2,3),(1,3)$$$(2,2), (2,3), (1,3)$$$。当然，(2,2),(1,2),(1,3)$$$(2,2), (1,2), (1,3)$$$ 也是一条合法的偶数路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "⟨4,2,4,3⟩$$$\\langle 4, 2, 4, 3 \\rangle$$$：从单元格 (4,2)$$$(4,2)$$$ 到单元格 (4,3)$$$(4,3)$$$ 存在一条偶数路径，即 (4,2),(4,3)$$$(4,2), (4,3)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "⟨5,1,3,4⟩$$$\\langle 5, 1, 3, 4 \\rangle$$$：从单元格 (5,1)$$$(5,1)$$$ 到单元格 (3,4)$$$(3,4)$$$ 不存在偶数路径。注意，(5,1)$$$(5,1)$$$ 唯一的两个相邻单元格是 (5,2)$$$(5,2)$$$ 和 (4,1)$$$(4,1)$$$，并且它们都包含奇数(分别为 7 和 11)，因此，不可能存在任何从单元格 (5,1)$$$(5,1)$$$ 出发的偶数路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null
+      {
+        "ai": "输入的第一行包含两个整数：N$$$N$$$ Q$$$Q$$$(2≤N≤100000$$$2 \\le N \\le 100\\,000$$$；1≤Q≤100000$$$1 \\le Q \\le 100\\,000$$$)，分别表示迷宫的大小和查询次数。下一行包含 N$$$N$$$ 个整数：Ri$$$R_i$$$(0≤Ri≤106$$$0 \\le R_i \\le 10^6$$$)，表示数组 R$$$R$$$。再下一行包含 N$$$N$$$ 个整数：Ci$$$C_i$$$(0≤Ci≤106$$$0 \\le C_i \\le 10^6$$$)，表示数组 C$$$C$$$。接下来的 Q$$$Q$$$ 行中，每行包含四个整数：ra$$$r_a$$$ ca$$$c_a$$$ rb$$$r_b$$$ cb$$$c_b$$$(1≤ra,ca,rb,cb≤N$$$1 \\le r_a, c_a, r_b, c_b \\le N$$$)，表示一个 ⟨ra,ca,rb,cb⟩$$$\\langle r_a, c_a, r_b, c_b \\rangle$$$ 查询。保证 (ra,ca)$$$(r_a,c_a)$$$ 和 (rb,cb)$$$(r_b,c_b)$$$ 是迷宫中的两个不同格子，并且它们都包含偶数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个查询，按照输入顺序输出一行字符串 \"YES\"(不含引号)或 \"NO\"(不含引号)，表示是否存在一条从格子 (ra,ca)$$$(r_a,c_a)$$$ 到格子 (rb,cb)$$$(r_b,c_b)$$$ 的偶数路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "样例输入/输出 #1 的解释",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "这是题面中的示例。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. 偶数路径",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

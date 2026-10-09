@@ -42,5 +42,67 @@
       "input": "2 2 1 2\n1 2 1\n1 2 2",
       "output": "YES\nNO"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含四个整数 n、m、s 和 t（2 ≤ n ≤ 105；1 ≤ m ≤ 105；1 ≤ s、t ≤ n）——Berland 的城市数和道路数、首都的编号以及总统故乡的编号（s ≠ t）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m 行包含道路信息。每条道路由三个整数 ai、bi、li（1 ≤ ai, bi ≤ n；ai ≠ bi；1 ≤ li ≤ 106）表示，分别代表第 i 条道路连接的城市以及沿该道路行驶所需的时间。道路方向为从城市 ai 到城市 bi。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "城市编号从 1 到 n。任意一对城市之间可能存在多条道路。保证沿着这些道路存在一条从 s 到 t 的路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 m 行。第 i 行应包含第 i 条道路的信息（道路按照其在输入中出现的顺序编号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果总统在他的行程中一定会沿着这条道路行驶，则该行必须包含一个单词 \"YES\"（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，如果可以修复第 i 条道路，使得其行驶时间仍为正数，并且总统之后一定会沿着这条道路行驶，则输出以空格分隔的单词 \"CAN\"（不含引号）以及修复的最小费用。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果无法使总统一定会沿着这条道路行驶，则输出 \"NO\"（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Berland 有 n 座城市，首都位于城市 s，总统的历史故乡位于城市 t（s ≠ t）。城市之间由单向道路连接，每条道路的通行时间都是正整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "总统每年都会访问一次他的故乡 t。在此期间，他的车队会沿着从 s 到 t 的某条路径行驶（他总是乘坐私人飞机返回）。由于总统非常繁忙，他总是选择从 s 到 t 的最快路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "道路与铁路部希望了解每条道路的以下信息：总统在出行过程中是否一定会经过这条道路；如果不一定，是否可以对其进行维修，使其一定包含在从首都到总统故乡的最短路径中。显然，不能通过维修使道路的通行时间小于 1。Berland 的部门和其他部门一样，都希望节约预算，因此希望知道维修这条道路的最小花费。此外，该部门非常重视准确性，因此维修后道路的通行时间始终为正整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "修复道路的花费是修复前后沿该道路骑行所需时间的差值。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一个样例中，总统最初可以选择以下两条骑行路线之一：1 → 2 → 4 → 5 → 6 或 1 → 2 → 3 → 5 → 6。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 总统与道路",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

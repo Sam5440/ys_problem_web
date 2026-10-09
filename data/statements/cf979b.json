@@ -47,22 +47,56 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "大型生日派对结束后，Katie 仍然想让 Shiro 再玩一会儿。后来，她想出了一个名为“寻宝”的游戏。当然，她邀请了自己最好的朋友 Kuro 和 Shiro 与她一起玩。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "三位朋友都非常聪明，因此他们很快就通过了所有挑战，最终抵达了目的地。但是宝藏只能属于一只猫，于是他们开始思考如何确定谁配得上这份宝藏。Kuro 立刻想到了丝带。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "一条随机的彩色缎带被送给每只猫。缎带的每一种颜色都可以用一个大写或小写拉丁字母表示。我们将缎带中出现的连续颜色子序列称为子缎带。缎带的美丽值定义为其某个子缎带在缎带中出现的最大次数。子缎带出现得越多，缎带就越美丽。例如，缎带 aaaaaaa 的美丽值为 7$$$7$$$，因为其子缎带 a 出现了 7$$$7$$$ 次；缎带 abcdabc 的美丽值为 2$$$2$$$，因为其子缎带 abc 出现了两次。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "规则很简单。游戏将进行 n$$$n$$$ 轮。每一轮，每只猫都必须将自己缎带中恰好一个位置的颜色改成与该位置原来颜色不同的任意颜色。例如，缎带 aaab 在一轮中可以变成 acab。在 n$$$n$$$ 轮之后拥有最美丽缎带的猫将赢得宝藏。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果它们都以最优策略游玩，你能找出谁会是赢家吗？",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(0≤n≤109$$$0 \\leq n \\leq 10^{9}$$$)——轮数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来 3 行分别包含 Kuro、Shiro 和 Katie 的 3 条缎带，每行一条。每条缎带是一个由不超过 105$$$10^{5}$$$ 个大写和小写拉丁字母组成的非空字符串。为了保证公平，保证所有缎带的长度相等。注意，大写字母和小写字母被视为不同的颜色。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出赢家的名字（\"Kuro\"、\"Shiro\" 或 \"Katie\"）。如果至少有两只猫拥有相同的最大美丽值，输出 \"Draw\"。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个样例中，经过 3$$$3$$$ 回合后，Kuro 可以将他的彩带变成 ooooo，其美丽度为 5$$$5$$$，而 Shiro 和 Katie 无法达到这样的美丽度(两者最多只能达到 4$$$4$$$，例如可以将 Shiro 的彩带变成 SSiSS，将 Katie 的彩带变成 Kaaaa)。因此，获胜者是 Kuro。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第四个样例中，由于每个字符串的长度都是 9$$$9$$$，而回合数为 15$$$15$$$，所以每个人都能以某种方式改变自己的彩带，达到最大美丽度 9$$$9$$$：经过 9 个回合将字符串变成 zzzzzzzzz，然后反复将字符串变成 azzzzzzzz 再变回 zzzzzzzzz，共重复三次。因此，游戏以平局告终。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. 寻宝",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

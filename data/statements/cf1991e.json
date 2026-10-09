@@ -62,49 +62,167 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "本题为交互题。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "考虑一个由 n$$$n$$$ 个顶点和 m$$$m$$$ 条边组成的无向连通图。每个顶点可以被染成三种颜色之一：1$$$1$$$、2$$$2$$$ 或 3$$$3$$$。初始时，所有顶点均未着色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice 和 Bob 正在进行一个由 n$$$n$$$ 个回合组成的游戏。每个回合中，会进行以下两步：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice 选择两种不同的颜色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Bob 选择一个未着色的顶点，并用 Alice 选择的两种颜色中的一种为其着色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果存在一条边连接着两个颜色相同的顶点，则 Alice 获胜。否则，Bob 获胜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定该图。你的任务是决定选择扮演哪位玩家，并赢得这场游戏。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含一个整数 t$$$t$$$(1≤t≤1000$$$1 \\le t \\le 1000$$$)——测试用例的数量。接下来是测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$、m$$$m$$$(1≤n≤104$$$1 \\le n \\le 10^4$$$，n−1≤m≤min(n⋅(n−1)2,104)$$$n - 1 \\le m \\le \\min(\\frac{n \\cdot (n - 1)}{2}, 10^4)$$$)——分别表示图中顶点的数量和边的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中，每行包含两个整数 ui$$$u_i$$$、vi$$$v_i$$$(1≤ui,vi≤n$$$1 \\le u_i, v_i \\le n$$$)——表示图中的一条边。保证图是连通的，且不存在重边或自环。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和以及 m$$$m$$$ 的总和均不超过 104$$$10^4$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每个测试用例，你需要输出一行，其中包含“Alice”或“Bob”之一，表示你选择的玩家。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来进行以下 n$$$n$$$ 轮，每一轮都会进行如下两步：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice(可能是你，也可能是交互器)将输出两个整数 a$$$a$$$ 和 b$$$b$$$(1≤a,b≤3$$$1 \\le a, b \\le 3$$$，a≠b$$$a \\neq b$$$)——Alice 选择的颜色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Bob(可能是你，也可能是交互器)将输出两个整数 i$$$i$$$ 和 c$$$c$$$(1≤i≤n$$$1 \\le i \\le n$$$，c=a$$$c = a$$$ 或 c=b$$$c = b$$$)——Bob 选择的顶点和颜色。顶点 i$$$i$$$ 必须是之前未着色的顶点。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果你的任何一次输出无效，裁判将输出 \"-1\"，你将得到 Wrong Answer 判定。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在全部 n$$$n$$$ 回合结束时，如果你输掉了游戏，裁判将输出 \"-1\"，你将得到 Wrong Answer 判定。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果你的程序收到的是 −1$$$-1$$$ 而不是有效值，则必须立即终止。否则，你可能会得到任意判定，因为你的解法可能正在从已关闭的流中读取数据。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，如果你作为 Alice 进行游戏，并且已经存在一条连接两个同色顶点的边，交互器不会提前终止，你将继续进行全部 n$$$n$$$ 回合。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输出后，不要忘记输出换行符并刷新输出缓冲区。否则，您将超过空闲限制。要做到这一点，请使用：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 C++ 中使用 fflush(stdout) 或 cout.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 Java 中使用 System.out.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 Pascal 中使用 flush(output)；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 Python 中使用 stdout.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "其他语言请参阅相关文档。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在本题中，禁止 hack。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "注意，样例测试用例是游戏过程示例，不一定代表双方的最优策略。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第一个测试用例中，你选择扮演 Alice。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice 选择两种颜色：3$$$3$$$ 和 1$$$1$$$。Bob 选择顶点 3$$$3$$$，并将其染成颜色 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice 选择两种颜色：1$$$1$$$ 和 2$$$2$$$。Bob 选择顶点 2$$$2$$$，并将其染成颜色 2$$$2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice 选择两种颜色：2$$$2$$$ 和 1$$$1$$$。Bob 选择顶点 1$$$1$$$，并将其染成颜色 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice 获胜，因为边 (3,1)$$$(3, 1)$$$ 连接了两个颜色相同的顶点。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试用例中，你选择扮演 Bob。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice 选择两种颜色：2$$$2$$$ 和 3$$$3$$$。Bob 选择顶点 1$$$1$$$，并将其染成颜色 2$$$2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice 选择两种颜色：1$$$1$$$ 和 2$$$2$$$。Bob 选择顶点 2$$$2$$$，并将其染成颜色 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice 选择两种颜色：2$$$2$$$ 和 1$$$1$$$。Bob 选择顶点 4$$$4$$$，并将其染成颜色 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice 选择两种颜色：3$$$3$$$ 和 1$$$1$$$。Bob 选择顶点 3$$$3$$$，并将其染成颜色 3$$$3$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Bob 获胜，因为不存在两个端点颜色相同的边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E. 染色游戏",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

@@ -36,23 +36,60 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "在了解多项式哈希后，Heidi 决定学习移位异或哈希。具体来说，她遇到了下面这个有趣的问题。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定一个位串 y∈{0,1}n$$$y \\in \\{0,1\\}^n$$$，求满足下列条件的不同 k$$$k$$$(0≤k<n$$$0 \\leq k  \\lt  n$$$)的数量：存在 x∈{0,1}n$$$x \\in \\{0,1\\}^n$$$，使得 y=x⊕shiftk(x)。$$$y = x \\oplus \\mbox{shift}^k(x).$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在上文中，⊕$$$\\oplus$$$ 表示异或运算，shiftk$$$\\mbox{shift}^k$$$ 表示将位串循环向右移动 k$$$k$$$ 次的操作。例如，001⊕111=110$$$001 \\oplus 111 = 110$$$，并且 shift3(00010010111000)=00000010010111$$$\\mbox{shift}^3(00010010111000) = 00000010010111$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤2⋅105$$$1 \\leq n \\leq 2 \\cdot 10^5$$$)，表示 01 串 y$$$y$$$ 的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 01 串 y$$$y$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数：满足条件的 k$$$k$$$ 的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1100⊕shift1(1100)=1010$$$1100\\oplus \\mbox{shift}^1(1100) = 1010$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1000⊕shift2(1000)=1010$$$1000\\oplus \\mbox{shift}^2(1000) = 1010$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "0110⊕shift3(0110)=1010$$$0110\\oplus \\mbox{shift}^3(0110) = 1010$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "不存在满足 x$$$x$$$ 且使得 x⊕x=1010$$$x \\oplus x = 1010$$$ 的 x，因此答案是 3$$$3$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "A2. Heidi 学习哈希（中等）",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

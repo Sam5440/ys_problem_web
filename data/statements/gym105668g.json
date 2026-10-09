@@ -41,28 +41,80 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Busy Beaver 和 Calico Bear 正在一个 N$$$N$$$ 行、M$$$M$$$ 列的非负整数网格上进行游戏，网格中的数为 ai,j$$$a_{i,j}$$$。初始时，任意两个边相邻的数都不相等。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/e844ed8051fb77eec1f8fe2996c13424a87aeb3b.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每回合，玩家选择网格中的一个正整数并将其减小 1$$$1$$$，但操作后仍需满足任意两个边相邻的数都不相等，且所有数均为非负数。如果轮到某位玩家时没有合法操作，该玩家输，另一位玩家获胜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Busy Beaver 先手，之后双方交替行动。假设双方都采取最优策略，判断 Busy Beaver 是否有必胜策略。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "每个输入包含多个测试用例。输入的第一行包含一个整数 T$$$T$$$(1≤T≤104$$$1 \\leq T \\leq 10^4$$$)，表示测试用例的数量。接下来是各测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个正整数 N$$$N$$$ 和 M$$$M$$$(1≤N,M,N⋅M≤2.5⋅105$$$1 \\leq N, M, N \\cdot M \\leq 2.5 \\cdot 10^5$$$)，表示网格的行数和列数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行中的第 i$$$i$$$ 行包含 M$$$M$$$ 个以空格分隔的非负整数 ai,1,…,ai,M$$$a_{i,1}, \\dots, a_{i,M}$$$(0≤ai,j≤109$$$0 \\leq a_{i,j} \\leq 10^9$$$)，其中 ai,j$$$a_{i,j}$$$ 表示网格中第 i$$$i$$$ 行第 j$$$j$$$ 列的整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所有测试用例中 N⋅M$$$N \\cdot M$$$ 的总和不超过 2.5⋅105$$$2.5 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "对于每个测试用例，如果 Busy Beaver 获胜，则输出 \"YES\"（不含引号）；如果 Calico Bear 获胜，则输出 \"NO\"（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以以任意大小写形式输出 \"YES\" 和 \"NO\"（例如，字符串 \"yES\"、\"yes\" 和 \"Yes\" 都会被识别为肯定回答）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "本题有两个子任务。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(20$$$20$$$ 分)0≤ai,j≤100$$$0 \\leq a_{i,j} \\leq 100$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(80$$$80$$$ 分)没有额外约束。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，Busy Beaver 可以将 1$$$1$$$ 减小为 0$$$0$$$。之后 Calico Bear 无法进行任何操作，因此 Busy Beaver 有必胜策略。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试用例中，Busy Beaver 没有合法操作。因此 Calico Bear 有必胜策略。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个测试用例中，Busy Beaver 首先将中间的 3$$$3$$$ 减小为 2$$$2$$$。之后，无论 Calico Bear 选择将哪个 10$$$10$$$ 减小，Busy Beaver 都可以将另一个减小。因此，Calico Bear 会比 Busy Beaver 更早无步可走，Busy Beaver 有必胜策略。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "G. 网格与数字游戏",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

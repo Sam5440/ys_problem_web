@@ -41,5 +41,79 @@
       "input": "5 4 2\n3 1 5 2 4\n4 4 4 4",
       "output": "8"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "在第一个测试中，初始配置如下：(123)(456)(78)，也就是说，第一个屏幕包含应用程序 1、2、3 的图标，第二个屏幕包含应用程序 4、5、6 的图标，第三个屏幕包含应用程序 7、8 的图标。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "启动应用程序 7 后，图标的新排列为 (123)(457)(68)。为了启动它，Anya 需要做 3 次手势。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "启动应用程序 8 后，配置变为 (123)(457)(86)。为了启动它，Anya 需要做 3 次手势。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "启动应用程序 1 后，菜单中的图标排列没有改变。为了启动它，Anya 只需要做 1 次手势。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "总计 Anya 需要做 7 次手势。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Anya 买了一部使用 Berdroid 操作系统的新智能手机。手机菜单中恰好有 n 个应用程序，每个应用程序都有自己的图标。这些图标分布在不同的屏幕上，每个屏幕包含 k 个图标。第一个到第 k 个图标位于第一个屏幕上，第 k+1 个到第 2k 个图标位于第二个屏幕上，依此类推（最后一个屏幕可能未填满）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最初，手机菜单显示的是第 1 个屏幕。要启动图标位于第 t 个屏幕上的应用程序，Anya 需要进行以下操作：首先，她进行 t-1 次手势滑动到所需的第 t 个屏幕，然后再进行一次手势，恰好按下所需应用程序的图标一次以启动它。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "应用程序启动后，菜单会返回第一个屏幕。也就是说，要启动下一个应用程序，需要再次从第 1 个屏幕开始浏览菜单。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所有应用程序的编号为 1 到 n。我们知道一开始菜单中应用程序图标的排列顺序，但在使用操作系统的过程中，这个顺序会发生变化。Berdroid 是一个智能系统，因此它会将使用得更频繁的图标移到列表的开头。具体来说，在应用程序启动后，Berdroid 会立即交换该应用程序的图标和它前面的应用程序图标（即菜单顺序中位置比它小 1 的应用程序的图标）。前面的图标可能位于相邻的屏幕上。唯一的例外是，若启动的应用程序图标已经位于第一位，则图标排列不会发生变化。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Anya 已经规划好了启动应用程序的顺序。为了按照规划的顺序启动这些应用程序，Anya 需要进行多少次手势操作？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，一个应用程序可能被启动多次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含三个数 n、m、k（1 ≤ n，m，k ≤ 10^5）——Anya 的智能手机上拥有的应用程序数量、将要启动的应用程序数量，以及位于同一屏幕上的图标数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行包含 n 个整数，即排列 a1，a2，...，an——菜单中图标从左到右（从第一个到最后一个）的初始顺序。ai 表示图标在菜单中排在第 i 位的应用程序编号。1 到 n 中的每个整数在 ai 中恰好出现一次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三行包含 m 个整数 b1，b2，...，bm（1 ≤ bi ≤ n）——按照计划顺序启动的应用程序的编号。一个应用程序可能被启动多次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——Anya 按照所需顺序启动所有应用程序需要进行的手势操作次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Anya 与智能手机",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

@@ -38,25 +38,68 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "你是一个超大规模 AI 数据中心的实习生，该数据中心管理着一个包含 n$$$n$$$ 个 GPU 的线性数组。第 i$$$i$$$ 个 GPU 当前运行的计算负载为 ai$$$a_i$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "数据中心承载 m$$$m$$$ 家不同公司的工作负载。每家公司 j$$$j$$$ 使用从索引 Lj$$$L_j$$$ 到 Rj$$$R_j$$$ 的连续 GPU 区间。不同公司可能共享一些 GPU，以便将其计算任务共置来提高效率，因此这些区间可能重叠。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在一次重要演示之前，管理团队设定了严格的平衡要求。对于每家公司 j$$$j$$$，其区间内的总有效计算负载必须介于 Aj$$$A_j$$$ 和 Bj$$$B_j$$$ 之间(含边界)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以通过对每个 GPU 施加整数变化 Δi$$$\\Delta_i$$$ 来调整其负载。每次调整都可以增加或减少负载，但所有调整都必须位于一个非负的公共安全上限 k$$$k$$$ 内，这意味着每个 GPU 的负载变化量至多为 k$$$k$$$ 个单位。上限越小，系统稳定性越好，因此你的目标是使用尽可能小的 k$$$k$$$ 满足所有公司的要求。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "此外，为了硬件稳定性，调整后每个 GPU 都必须保持不低于最低安全运行负载：ai+Δi≥1$$$a_i + \\Delta_i \\ge 1$$$ 对所有 i$$$i$$$ 均成立。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "求最小的整数 k$$$k$$$，使得存在整数调整量 Δ1,Δ2,…,Δn$$$\\Delta_1, \\Delta_2, \\ldots, \\Delta_n$$$，满足对于每家公司 j$$$j$$$，",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Aj≤(aLj+ΔLj)+(aLj+1+ΔLj+1)+⋯+(aRj+ΔRj)≤Bj. $$ A_j \\le (a_{L_j} + \\Delta_{L_j}) + (a_{L_j+1} + \\Delta_{L_j+1}) + \\dots + (a_{R_j} + \\Delta_{R_j}) \\le B_j. $$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果不存在任何 k$$$k$$$ 使其可行，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$ (1≤n,m≤1⋅103)$$$(1 \\le n, m \\le 1 \\cdot 10^3)$$$——GPU 的数量和公司的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai≤109)$$$(1 \\le a_i \\le 10^9)$$$——GPU 当前的计算负载。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中，每行描述一家公司，并包含四个整数 Lj$$$L_j$$$、Rj$$$R_j$$$、Aj$$$A_j$$$ 和 Bj$$$B_j$$$ (1≤Lj≤Rj≤n,1≤Aj≤Bj≤1012)$$$(1 \\le L_j \\le R_j \\le n,\\; 1 \\le A_j \\le B_j \\le 10^{12})$$$，表示第 j$$$j$$$ 家公司使用下标从 Lj$$$L_j$$$ 到 Rj$$$R_j$$$ 的所有 GPU，且其总负载必须位于 Aj$$$A_j$$$ 和 Bj$$$B_j$$$ 之间(包括端点)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数：满足所有公司条件、每个 GPU 的安全下限 ai+Δi≥1$$$a_i + \\Delta_i \\ge 1$$$，以及对所有 GPU 均有 |Δi|≤k$$$|\\Delta_i| \\le k$$$ 的最小可能 k$$$k$$$。如果不存在这样的 k$$$k$$$，输出 −1$$$-1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null
+      {
+        "ai": "对于样例测试，k=0$$$k = 0$$$ 或 k=1$$$k = 1$$$ 不可行。对于 k=2$$$k = 2$$$，可能的最终计算负载分布包括 [4,7,4,6,3]$$$[4, 7, 4, 6, 3]$$$ 或 [3,8,4,6,2]$$$[3, 8, 4, 6, 2]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "K. 超大规模 AI 数据中心",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

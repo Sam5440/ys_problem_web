@@ -52,39 +52,127 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "这是一道交互题。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "我们隐藏了一个包含 n$$$n$$$ 个两两不同数字(即任意两个数字都不相等)的数组 a$$$a$$$。你可以使用刚从亚马逊订购的一台新设备获取关于这个数组的一些信息。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于数组中 k$$$k$$$ 个不同元素的位置，该设备会返回这些元素按升序排列后第 m$$$m$$$ 个元素的位置和值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "遗憾的是，设备的说明书在运送过程中丢失了。不过，你记得 k$$$k$$$，却不记得 m$$$m$$$。你的任务是通过向该设备进行查询来找出 m$$$m$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你最多可以进行 n$$$n$$$ 次查询。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，数组 a$$$a$$$ 和数字 m$$$m$$$ 在交互开始前就已经确定，并且不会依赖于你的查询。换句话说，交互器不是自适应的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，你不必最小化查询次数，也不需要猜出数组 a$$$a$$$。你只需要猜出 m$$$m$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 k$$$k$$$(1≤k<n≤500$$$1\\le k  \\lt  n \\le 500$$$)——数组的长度以及查询中元素的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证整数 m$$$m$$$ 满足 1≤m≤k$$$1\\le m \\le k$$$，数组中的元素 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ 满足 0≤ai≤109$$$0\\le a_i \\le 10^9$$$，且它们互不相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你需要通过读入 n$$$n$$$ 和 k$$$k$$$ 来开始交互。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "若要询问位置 x1,x2,…,xk$$$x_1, x_2, \\dots, x_k$$$ 上的元素，请在单独一行输出",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "?$$$?$$$ x1$$$x_1$$$ x2$$$x_2$$$ x3$$$x_3$$$ ... xk$$$x_k$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "查询中的数字必须满足 1≤xi≤n$$$1 \\le x_i \\le n$$$，且所有 xi$$$x_i$$$ 必须互不相同。不要忘记执行“flush”，以获取答案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "作为响应，你将收到两个整数 pos$$$pos$$$ 和 apos$$$a_{pos}$$$：数组 a$$$a$$$ 中位于 ax1,ax2,…,axk$$$a_{x_1}, a_{x_2}, \\dots, a_{x_k}$$$ 里的第 m$$$m$$$ 小元素的位置，以及该位置上的元素。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果你的查询无效，或你发出的查询次数超过了 n$$$n$$$ 次，程序将输出 −1$$$-1$$$ 并结束交互。你将收到 Wrong answer 判定。请确保立即退出，以免得到其他判定。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当你确定 m$$$m$$$ 后，输出",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "!$$$!$$$ m$$$m$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输出查询后，不要忘记输出换行并刷新输出缓冲区。否则，你将得到 Idleness limit exceeded。请使用：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 C++ 中使用 fflush(stdout) 或 cout.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Java 中的 System.out.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Pascal 中的 flush(output)；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Python 中的 stdout.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "其他语言请参阅文档。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Hack 格式",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "进行 Hack 时请使用以下格式：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一行必须包含三个整数 n,k,m$$$n, k, m$$$(1≤m≤k<n≤500$$$1 \\le m \\le k  \\lt  n \\le 500$$$)，分别表示数组的长度、查询中元素的数量，以及设备返回升序排列中的第几个数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行输出 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(0≤ai≤109$$$0\\le a_i \\le 10^9$$$)，表示数组中的元素。这些元素必须两两不同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [],
     "note": [
-      null
+      {
+        "ai": "在这个例子中，n=4$$$n = 4$$$，k=3$$$k = 3$$$，m=3$$$m = 3$$$，a=[2,0,1,9]$$$a = [2, 0, 1, 9]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 奇怪的设备",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

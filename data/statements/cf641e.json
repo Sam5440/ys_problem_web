@@ -41,5 +41,85 @@
       "input": "3\n1 1 1\n2 2 1\n3 3 1",
       "output": "0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "小 Artem 发明了一台时间机器！他可以前往任何时间，但他所有的想法当然都与计算机科学有关。他想将这台时间机器应用于一种众所周知的数据结构：多重集合。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Artem 想要创建一个由整数构成的基本多重集合。他希望该数据结构支持以下三种类型的操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "向多重集合中加入一个整数。注意，集合与多重集合的区别在于，多重集合可以存储同一个整数的多个实例。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从多重集合中移除一个整数。只会移除该整数的一个实例。Artem 不想处理任何异常，因此他假设每次调用移除操作时，该整数都存在于多重集合中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "统计多重集合中存储的给定整数的实例数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "但是时间机器该怎么办呢？Artem 不会简单地逐个对多重集合应用操作，而是会前往不同的时间点，并在那里执行他的操作。请考虑下面的例子。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "首先，Artem 在第 1 个时刻将整数 5 加入多重集合。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "然后，Artem 在第 5 个时刻将整数 3 加入多重集合。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "然后 Artem 询问在时刻 6 多重集中有多少个 5。答案是 1。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "然后 Artem 回到过去，询问在时刻 4 集合中有多少个整数 3。由于 3 只在时刻 5 被加入，时刻 4 时整数 3 的数量等于 0。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "然后 Artem 再次回到过去，在时刻 3 从多重集合中移除 5。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "最后 Artyom 在时刻 7 询问集合中有多少个整数 5。结果是 0，因为我们在时刻 3 移除了 5。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "注意，Artem 非常讨厌特殊情况，因此他保证在他每次做出修改之后，所有删除操作只会作用于多重集合中当前存在的元素。第三类查询的答案是在 Artem 发出对应查询的时刻计算的，不会受到他未来任何修改的影响。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "帮助 Artem 实现一个时间旅行者的多重集合。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（1 ≤ n ≤ 100 000），表示 Artem 的查询数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来是 n 行查询描述。每行包含三个整数 ai、ti 和 xi（1 ≤ ai ≤ 3，1 ≤ ti, xi ≤ 10^9），分别表示查询类型、Artem 为执行该查询而前往的时间点以及查询本身的值。保证所有时间点互不相同，并且在应用每次操作后，所有第一类和第二类操作都是一致的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个询问操作，输出给定时间点被查询整数出现的次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 小 Artem 与时间机器",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

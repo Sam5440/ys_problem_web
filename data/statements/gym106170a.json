@@ -49,28 +49,80 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "设 T=(V,E)$$$T = (V, E)$$$ 是一棵有 n$$$n$$$ 个顶点和 n−1$$$n-1$$$ 条边的树。树的每条边都可以被赋予一个来自 {0,1,…,K−1}$$$\\{0, 1, \\dots, K-1\\}$$$ 的颜色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "树中的一条简单路径称为 K$$$K$$$-彩虹路径，当且仅当该路径上长度为 K$$$K$$$ 的部分中的所有边颜色互不相同。如果一条边位于至少一条 K$$$K$$$-彩虹路径上，则称该边是 K$$$K$$$-彩虹有效的。如果树中的每条边都是 K$$$K$$$-彩虹有效的，则称这棵树为 K$$$K$$$-树。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是为给定树的边赋予颜色，使其构成 K-树，并使 K$$$K$$$ 尽可能大。对于每条边 e$$$e$$$，你必须报告其被赋予的颜色 c(e)∈{0,1,…,K−1}$$$c(e) \\in \\{0, 1, \\dots, K-1\\}$$$，以及一条包含 e$$$e$$$ 的 K-彩虹路径的两个端点。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所有下标均从 0 开始。如果存在多种有效的染色方案或路径，输出任意一种即可。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$ n $$$(2≤n≤105)$$$(2 \\leq n \\leq 10^5)$$$。接下来 n−1$$$n - 1$$$ 行给出树的边。每一行给出 u$$$u$$$ 和 v$$$v$$$(0≤u,v≤n−1)$$$(0 \\leq u, v \\leq n - 1)$$$，描述节点 u$$$u$$$ 和 v$$$v$$$ 之间的一条边。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "你的输出必须包含 n$$$n$$$ 行。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一行输出可能的最大值 K$$$K$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在接下来的 n−1$$$n - 1$$$ 行中，每行应包含三个整数：c$$$c$$$、u$$$u$$$ 和 v$$$v$$$，其中 0≤c≤K−1$$$0 \\leq c \\leq K - 1$$$，0≤u,v≤n−1$$$0 \\leq u, v \\leq n - 1$$$。这些整数指定一条边的颜色 c$$$c$$$ 以及 u$$$u$$$ 和 v$$$v$$$ 之间的路径。这条路径包含边 e$$$e$$$，并且是一条 K-彩虹。u$$$u$$$ 和 v$$$v$$$ 的顺序无关紧要。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "边必须按照输入中给出的顺序输出。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "![](https://espresso.codeforces.com/df09f1826b3f1c290233d3258ee520a52c6d3490.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "这是第二个样例测试。我们有一棵包含 6 个节点的树。边上标有颜色。K 的可能最大值为 3，并且对于每条边 e$$$e$$$，都存在一条包含 e$$$e$$$ 且为 3-彩虹路径的路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "边 e1={0,4}$$$e_1 = \\{0, 4\\}$$$ 的颜色为 2，3 和 4 之间的路径包含 e1$$$e_1$$$，并且是一条 3-彩虹路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "边 e2={2,3}$$$e_2 = \\{2, 3\\}$$$ 的颜色为 0，4 和 3 之间的路径包含 e2$$$e_2$$$，并且是一条 3-彩虹路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "边 e3={5,0}$$$e_3 = \\{5, 0\\}$$$ 的颜色为 2，3 和 5 之间的路径包含 e3$$$e_3$$$，并且是一条 3-彩虹路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "边 e4={2,1}$$$e_4 = \\{2, 1\\}$$$ 的颜色为 0，4 和 1 之间的路径包含 e4$$$e_4$$$，并且是一条 3-彩虹路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "边 e5={2,0}$$$e_5 = \\{2, 0\\}$$$ 的颜色为 1，3 和 4 之间的路径包含 e5$$$e_5$$$，并且是一条 3-彩虹路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "A. 彩虹",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

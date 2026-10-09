@@ -45,5 +45,95 @@
       "input": "3 5\n1 4\n2 3\n11 14",
       "output": "0.0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "素数是一个正整数，它只能被 1 和自身整除。1 不被认为是素数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "考虑第一个样例。第一条鲨鱼会产生 1 到 2 朵花，第二条鲨鱼会产生 420 到 421 朵花，第三条鲨鱼会产生 420420 到 420421 朵花。对于每条鲨鱼产生的花朵数量 (s0, s1, s2)，一共有八种情况：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(1, 420, 420420)：注意，s0·s1 = 420，s1·s2 = 176576400，且 s2·s0 = 420420。对于每一对鲨鱼，每条鲨鱼将获得 1000 美元。因此，每条鲨鱼将获得 2000 美元，总计 6000 美元。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(1, 420, 420421)：现在，乘积 s2·s0 不能被 2 整除。因此，鲨鱼 s0 和 s2 将获得 1000 美元，而鲨鱼 s1 将获得 2000 美元。总计为 4000 美元。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(1, 421, 420420)：总计为 4000 美元。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(1, 421, 420421)：总计为 0 美元。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(2, 420, 420420)：总计为 6000 美元。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(2, 420, 420421)：总计为 6000 美元。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(2, 421, 420420)：总数为 6000。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(2, 421, 420421)：总数为 4000。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "期望值为 ![](https://espresso.codeforces.com/dfe520d00a8615f7c270ccbccbebe182cc7db883.png)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，无论选择何种数量组合，鲨鱼都无法赚到钱。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "有 n 条鲨鱼为湿鲨鱼种植鲜花。它们围坐在一张桌子旁，使得对于从 1 到 n - 1 的所有 i，鲨鱼 i 和 i + 1 互为邻居。鲨鱼 n 和鲨鱼 1 也互为邻居。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每条鲨鱼都会种植数量为 si 的鲜花。对于第 i 条鲨鱼，数值 si 是在 li 到 ri 的范围内等概率随机选取的整数。湿鲨鱼有一个最喜欢的素数 p，他非常喜欢这个素数！如果对于任意一对相邻的鲨鱼 i 和 j，乘积 si·sj 能被 p 整除，那么湿鲨鱼就会感到高兴，并给这两条鲨鱼各 1000 美元。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "一天结束时，鲨鱼们将湿鲨鱼发给它们的所有钱加起来。求这个总金额的期望值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个用空格分隔的整数 n 和 p（3 ≤ n ≤ 100 000， 2 ≤ p ≤ 109）——鲨鱼的数量以及 Wet Shark 最喜欢的素数。保证 p 是素数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n 行中，第 i 行包含关于第 i 条鲨鱼的信息——两个用空格分隔的整数 li 和 ri（1 ≤ li ≤ ri ≤ 109），表示第 i 条鲨鱼能够产生的花朵数量范围。请记住，si 在从 li 到 ri（包括 li 和 ri）的所有整数中等概率地选取。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个实数——鲨鱼总共获得的美元数量的期望值。如果你的答案的绝对误差或相对误差不超过 10 - 6，则会被判定为正确。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "具体来说：假设你的答案为 a，评测答案为 b。检查程序会在 ![](https://espresso.codeforces.com/c97ba2000ebfad962bff7ffd8d043594f5ae1086.png) 时判定你的答案正确。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 湿鲨鱼与鲜花",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

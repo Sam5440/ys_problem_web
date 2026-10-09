@@ -38,5 +38,57 @@
       "input": "1 3 5 2\nABA\nBBB\nBBA\nBAB\nABB",
       "output": "11\n1 0\n3 1\n2 3\n4 2\n5 1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含四个整数 n、m、k、w（1 ≤ n，m ≤ 10；1 ≤ k，w ≤ 1000）。接下来是 k 个关卡的描述。每个关卡由 n 行组成，每行包含 m 个字符。每个字符要么是英文字母，要么是点号（“.”）。请注意，字母的大小写是有区别的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出所需传输的最少字节数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来输出 k 对整数 x1、y1、x2、y2、...、xk、yk，描述传输关卡的方式。数对 xi、yi 表示关卡 xi 需要通过方式 yi 进行传输。如果 yi 等于 0，则表示该关卡必须使用第一种方式传输；否则 yi 必须等于一个之前已经传输的关卡的编号。这意味着你将通过传输关卡 yi 和关卡 xi 之间的差异来传输关卡 xi。请按照传输关卡的顺序输出这些数对。关卡按照它们在输入中出现的顺序编号为 1 至 k。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果存在多个最优解，你可以输出其中任意一个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "在加载游戏“Dungeons and Candies”时，你需要从服务器获取 k 个关卡的描述。每个描述都是一个 n × m 的方格矩形区域地图。区域中的某些格子包含糖果（每个格子至多包含一颗糖果）。空格子在地图上用“.”表示；如果一个格子中有糖果，则用英文字母表中的一个字母表示。一个关卡中可能包含相同的糖果，此时地图上对应格子中的字母也会相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/cdd8d81e392298ff9e83e9300c270413d026c364.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "通过网络传输信息时，你希望尽量减少流量，即传输数据的总大小。关卡可以按照任意顺序传输。传输当前关卡 A 有两种方式：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以传输整个关卡 A。此时需要通过网络传输 n·m 字节。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以传输关卡 A 与之前某个已传输关卡 B（如果存在）之间的差异；此操作需要传输 dA, B·w 字节，其中 dA, B 是关卡 A 和 B 中不同格子的数量，w 是一个常数。注意，计算 dA, B 时只能比较关卡 A 和 B 中对应的格子。你不能变换关卡地图，即不能将它们相互旋转或平移。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是找到一种传输所有 k 个关卡的方案，使流量最小。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 地牢与糖果",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

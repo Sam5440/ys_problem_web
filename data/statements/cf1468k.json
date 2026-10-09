@@ -38,25 +38,74 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "有一个机器人位于一块向所有方向无限延伸的方格场地上。起初，机器人位于坐标为 (0,0)$$$(0, 0)$$$ 的格子中。它将执行由大写拉丁字母 'L'、'R'、'D'、'U' 组成的字符串所描述的指令。执行一条指令时，机器人只会向相应的方向移动：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "'L'：向左移动一个格子(当前格子的 x$$$x$$$ 坐标减小 1$$$1$$$)；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "'R'：向右移动一个格子(当前格子的 x$$$x$$$ 坐标增加 1$$$1$$$)；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "'D'：向下移动一格(当前单元格的 y$$$y$$$ 坐标减少 1$$$1$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "'U'：向上移动一格(当前单元格的 y$$$y$$$ 坐标增加 1$$$1$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你的任务是在场地的一个单元格中放置障碍物，使得执行完这些命令后，机器人会回到其路径的起始单元格 (0,0)$$$(0, 0)$$$。当然，障碍物不能放在起始单元格 (0,0)$$$(0, 0)$$$。保证如果不放置障碍物，机器人不会回到起始单元格。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "障碍物按如下方式影响机器人的移动：如果它试图朝某个方向移动，而该处有障碍物，那么它就会停留在原地（障碍物也仍然存在，即不会消失）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "请找出场地上任意一个这样的单元格(除 (0,0)$$$(0, 0)$$$ 外)：如果将障碍物放在那里，机器人在执行完所有命令后会回到单元格 (0,0)$$$(0, 0)$$$。如果无解，请报告无解。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$ (1≤t≤500$$$1 \\le t \\le 500$$$)——测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个测试用例包含一行，其中包含 s$$$s$$$ —— 仅由大写拉丁字母 'L'、'R'、'D'、'U' 组成的指令序列。s$$$s$$$ 的长度在 1$$$1$$$ 到 5000$$$5000$$$ 之间(包括端点)。对 s$$$s$$$ 的额外约束是：如果没有障碍物，执行这列指令会使机器人到达某个不同于 (0,0)$$$(0, 0)$$$ 的格子。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在一个测试中，所有 s$$$s$$$ 的长度之和不超过 5000$$$5000$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "对于每个测试用例，输出一行：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果存在解，输出两个整数 x$$$x$$$ 和 y$$$y$$$(−109≤x,y≤109$$$-10^9 \\le x,y \\le 10^9$$$)，使得在 (x,y)$$$(x, y)$$$ 处放置一个障碍物后，机器人将被迫返回格子 (0,0)$$$(0, 0)$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，输出两个零（即 0 0）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果有多个答案，可以输出任意一个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "K. 机器人",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

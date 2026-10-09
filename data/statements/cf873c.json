@@ -36,5 +36,59 @@
       "input": "3 2 1\n1 0\n0 1\n0 0",
       "output": "2 0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n、m 和 k（1 ≤ k ≤ n ≤ 100，1 ≤ m ≤ 100）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来有 n 行，第 i 行包含 m 个整数——矩阵 a 的第 i 行的元素。每个数都是 0 或 1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出两个数：Ivan 能获得的最大分数，以及获得该分数所需的最少替换次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Ivan 会替换元素 a_{1, 2}。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "伊万正在玩一个奇怪的游戏。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "他有一个 n 行 m 列的矩阵 a。矩阵中的每个元素都等于 0 或 1。行和列均从 1 开始编号。伊万可以将矩阵中任意数量的 1 替换为 0。之后，他在游戏中的得分将按如下方式计算：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "初始时，伊万的得分为 0；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每一列，伊万会找到最上面的 1（也就是说，如果当前列为 j，那么他会找到满足 aᵢ,ⱼ = 1 的最小 i）。如果该列中没有 1，则跳过这一列；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "伊万会查看该列中接下来的 min(k, n - i + 1) 个元素（从找到的元素开始），并统计这些元素中 1 的数量。这个数量将加到他的得分中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当然，伊万希望最大化他在这个奇怪游戏中的得分。同时，他也不想修改太多元素，因此他会将尽可能少的 1 替换为 0。请帮助他确定能够获得的最大得分，以及达到该得分所需替换的最少次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 矩阵上的奇怪游戏",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

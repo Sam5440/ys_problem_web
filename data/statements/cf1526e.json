@@ -48,23 +48,60 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "曾几何时，Oolimry 看到了一个后缀数组。他想知道有多少个字符串可以生成这个后缀数组。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "更形式化地，给定一个长度为 n$$$n$$$、字母表大小为 k$$$k$$$ 的后缀数组，计算能产生该后缀数组的字符串数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "设 s$$$s$$$ 是一个长度为 n$$$n$$$ 的字符串。那么 s$$$s$$$ 的第 i$$$i$$$ 个后缀是子串 s[i…n−1]$$$s[i \\ldots n-1]$$$。后缀数组是一个整数数组，表示给定字符串的所有后缀按字典序排序后的起始下标。例如，字符串 oolimry 的后缀数组是 [3,2,4,1,0,5,6]$$$[3,2,4,1,0,5,6]$$$，因为排序后的后缀序列为 [imry,limry,mry,olimry,oolimry,ry,y]$$$[\\texttt{imry},\\texttt{limry},\\texttt{mry},\\texttt{olimry},\\texttt{oolimry},\\texttt{ry},\\texttt{y}]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "字符串 x$$$x$$$ 的字典序小于字符串 y$$$y$$$，当且仅当以下情况之一成立：x$$$x$$$ 是 y$$$y$$$ 的前缀(且 x≠y$$$x\\neq y$$$)；或者存在这样的 i$$$i$$$，使得 xi<yi$$$x_i  \\lt  y_i$$$，并且对于任意 1≤j<i$$$1\\leq j  \\lt  i$$$，都有 xj=yj$$$x_j = y_j$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含 2 个整数 n$$$n$$$ 和 k$$$k$$$(1≤n≤200000,1≤k≤200000$$$1 \\leq n \\leq 200000,1 \\leq k \\leq 200000$$$)——分别表示后缀数组的长度和字母表大小。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 s0,s1,s2,…,sn−1$$$s_0, s_1, s_2, \\ldots, s_{n-1}$$$(0≤si≤n−1$$$0 \\leq s_i \\leq n-1$$$)，其中 si$$$s_i$$$ 是后缀数组中的第 i$$$i$$$ 个元素，也就是字典序第 i$$$i$$$ 小的后缀的起始位置。保证对于所有 0≤i<j≤n−1$$$0 \\leq i \\lt  j \\leq n-1$$$，si≠sj$$$s_i \\neq s_j$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出能产生该后缀数组的字符串数量。由于该数量可能非常大，请输出答案对 998244353$$$998244353$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，“abb”是唯一可能的解。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试用例中，可以很容易地证明不存在可能的字符串，因为所有字母都必须相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第四个测试用例中，一个可能的字符串是“ddbacef”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请记得将答案对 998244353$$$998244353$$$ 取模后输出。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E. Oolimry 与后缀数组",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

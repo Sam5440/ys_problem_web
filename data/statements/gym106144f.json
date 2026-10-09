@@ -38,25 +38,68 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "叠叠乐是一种由两名或更多玩家参与的游戏。游戏开始时，他们面前有一座由 n$$$n$$$ 层组成的塔，每层由 3$$$3$$$ 块长方体积木组成。随后，他们逐块移除积木，直到塔倒塌。导致塔倒塌的玩家输掉游戏。通常，被移除的积木会放在塔顶，组成新的一层；不过在本题中，我们考虑该游戏的一个变体：被移除的积木会被放在一旁，永远不会重新放回塔中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/0cd058b5c91e25dbf01e4cf721d365136479b324.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Monocarp 和 Polycarp 经常玩叠叠乐。他们注意到，如果某一层中包含两块侧边积木，或者包含中间的积木，那么这一层就能保持稳定。当然，如果这一层中还有其他积木，它也能保持稳定。因此，xxx、x.x、xx.、.xx、.x. 这些层是稳定的，而 x..、..x 和 ... 这些层不稳定。下文中，字符 'x' 表示尚未被移除的积木，'.' 表示移除积木后留下的空位。如果塔中至少有一层（即使是最顶层）变得不稳定，塔就会立即倒塌。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "现在，Monocarp 和 Polycarp 有一座由 n$$$n$$$ 层组成的塔，其中一些积木可能已经被移除(但每一层都保持稳定)。现在轮到 Monocarp 行动。给定塔的状态(哪些积木已被移除，哪些仍然存在)，假设两位玩家都采取最优策略，你需要判断谁会获胜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤5⋅104$$$1 \\le t \\le 5 \\cdot 10^4$$$)——测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤5⋅104$$$1 \\le n \\le 5 \\cdot 10^4$$$)——塔中的行数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来是 n$$$n$$$ 行，其中第 i$$$i$$$ 行包含 6$$$6$$$ 个字符，格式为 ***=== 或 ===***，其中每个 '*' 要么是 'x'，要么是 '.' ——从顶部开始第 i$$$i$$$ 行的状态。***=== 和 ===*** 两种行交替出现，描述了这座叠叠乐塔。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入的额外约束：所有测试用例中 n$$$n$$$ 的总和不超过 5⋅104$$$5 \\cdot 10^4$$$，且塔的每一行都处于稳定状态。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，如果 Monocarp 获胜，则输出 Monocarp；否则输出 Polycarp。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，Monocarp 应移除最底行中央的方块。此后，叠叠乐塔中只有两个方块可以被移除：第一行的第一个方块和第三行的第三个方块。如果移除任何其他方块，塔就会倒塌。无论 Polycarp 移除哪个方块，Monocarp 都会拿走另一个，从而让 Polycarp 毫无选择。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试用例中，不破坏叠叠乐的情况下无法移除任何方块。因此，Polycarp 获胜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个测试用例中，Monocarp 有必胜策略。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第四个测试用例表示图片中所示的配置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "F. 叠叠乐",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

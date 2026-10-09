@@ -46,5 +46,89 @@
       "input": "3 2 5 3\n1 3 1",
       "output": "1 2 2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "今天举行 Berland 议会选举。投票正在如火如荼地进行！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "总共有 n 名候选人，他们的编号从 1 到 n。根据选举结果，排名前 k（1 ≤ k ≤ n）的候选人将获得议会席位。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "投票结束后，会统计每位候选人的得票数。在最终的表格中，候选人按得票数排序。若出现平票（得票数相同），则按最后一票投出的时间排序。最后一票投出时间更早的候选人在最终表格中的排名更高。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "因此，在最终的表格中，候选人首先按得票数排序（得票越多，排名越高）；如果两位候选人的得票数相同，则按最后一票投出的时间排序（最后一票投出时间更早，排名越高）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "得票数为零的候选人不可能在议会中获得席位。因此，最终可能只有少于 k 位候选人在议会中获得席位。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 Berland，有 m 名公民可以参加投票。他们每个人都会投票给某位候选人。每位公民恰好会给 n 位候选人中的一位投票。选举中没有“反对所有人”这一选项。不允许投废票或不参加选举。因此，m 名公民中的每一位都会恰好给 n 位候选人中的一位投票。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "目前已经有 a 名公民投过票（1 ≤ a ≤ m）。这是一次公开选举，因此每位公民投给了哪位候选人都是已知的。形式化地说，第 j 位公民投给了候选人 gj。已经投票的公民按照时间顺序编号；也就是说，第 (j + 1) 位公民是在第 j 位公民之后投票的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "剩下的 m - a 名公民将在选举结束前投票，他们每个人都会投给 n 位候选人中的一位。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是确定每位候选人可能出现的三种结果之一：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "无论剩余 m - a 位公民如何投票，该候选人都会当选进入议会；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 n 位公民全部投票后，该候选人有可能当选进入议会；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "无论剩余 m - a 位公民如何投票，该候选人都不可能当选进入议会。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含四个整数 n、k、m 和 a（1 ≤ k ≤ n ≤ 100，1 ≤ m ≤ 100，1 ≤ a ≤ m）——候选人数量、议会席位数、Berland 公民数量，以及已经投票的公民数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含一个由 a 个整数 g1, g2, ..., ga 组成的序列（1 ≤ gj ≤ n），其中 gj 表示第 j 位公民投票支持的候选人。已投票的公民按照投票时间递增编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出由 n 个整数 r₁、r₂、……、rₙ 组成的序列，其中：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "rᵢ = 1 表示无论剩余 m − a 名公民的投票结果如何，第 i 位候选人都必然能在议会中获得席位；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "rᵢ = 2 表示第 i 位候选人有机会在议会中获得席位，即剩余 m − a 名公民可以通过投票使该候选人获得议会席位；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "rᵢ = 3 表示无论剩余 m − a 名公民的投票结果如何，第 i 位候选人都不会在议会中获得席位。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. Berland 选举",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

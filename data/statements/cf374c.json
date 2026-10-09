@@ -44,5 +44,75 @@
       "input": "5 5\nDIMAD\nDIMAI\nDIMAM\nDDMAA\nAAMID",
       "output": "4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Inna 和 Dima 在商店里买了一张大小为 n × m 的桌子。桌子的每个单元格中都包含一个字母：“D”、“I”、“M”或“A”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Inna 喜欢 Dima，因此她希望在桌子中移动时，尽可能多次地走过他的名字。为此，Inna 按照以下方式行动：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最初，Inna 选择桌子中写有字母“D”的某个单元格；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "然后 Inna 可以移动到某个边相邻的、包含字母“I”的表格格子；接着她可以从这个格子走到某个边相邻的、写有字母“M”的表格格子；然后她可以走到某个边相邻的、包含字母“A”的格子。此时 Inna 认为她已经走过了心上人的名字；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Inna 的下一步可以是走到某个边相邻的、包含字母“D”的表格格子，然后以类似的方式继续走完名字 DIMA。Inna 从不跳过字母。因此，从字母“D”她总是走到字母“I”，从字母“I”她总是走到字母“M”，从字母“M”她总是走到字母“A”，从字母“A”她总是走到字母“D”。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "根据初始表格格子的选择不同，Inna 可以无限次地走过名字 DIMA，也可以走过有限的正数次，或者一次也无法走过他的名字。请帮助 Inna 求出她最多能走过名字 DIMA 多少次。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 m（1≤n,m≤10^3）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来有 n 行，描述 Inna 和 Dima 的表格。每行包含 m 个字符。每个字符是以下四种字符之一：“D”、“I”、“M”、“A”。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "注意，不保证表格中至少包含一个字母“D”。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 Inna 一次也无法走出名字 DIMA，则输出一行 \"Poor Dima!\"（不含引号）。如果 Inna 可以走出无限多个名字 DIMA，则输出 \"Poor Inna!\"（不含引号）。否则输出一个整数——Inna 最多能走出名字 DIMA 的次数。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例说明：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一个样例中，Inna 一次也无法走出名字 DIMA。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个样例中，Inna 可以走出无限多个名字 DIMA。为此，她应从右下角出发，沿顺时针方向移动。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第三个样例中，最佳策略是从表格左上角的格子出发。从这个格子出发，Inna 可以走出四次名字 DIMA。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Inna 和 Dima",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

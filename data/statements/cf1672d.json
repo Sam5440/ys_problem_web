@@ -39,26 +39,72 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "有一个长度为 n$$$n$$$ 的数组 a$$$a$$$。你可以执行以下操作任意次：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择两个下标 l$$$l$$$ 和 r$$$r$$$，满足 1≤l<r≤n$$$1 \\le l  \\lt  r \\le n$$$ 且 a_l=a_r$$$a_l = a_r$$$。然后令 a[l…r]=[a_l+1,a_l+2,…,a_r,a_l]$$$a[l \\ldots r] = [a_{l+1}, a_{l+2}, \\ldots, a_r, a_l]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "另给定一个长度为 n$$$n$$$ 的数组 b$$$b$$$，它是 a$$$a$$$ 的一个排列。请判断是否可以通过若干次上述操作，将数组 a$$$a$$$ 变为数组 b$$$b$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含一个整数 t$$$t$$$ (1≤t≤104$$$1 \\leq t \\leq 10^4$$$)，表示测试用例的数量。接下来是各个测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10 ^ 5$$$)，表示数组 a$$$a$$$ 和 b$$$b$$$ 的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai≤n$$$1 \\le a_i \\le n$$$)，表示数组 a$$$a$$$ 的元素。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第三行包含 n$$$n$$$ 个整数 b1,b2,…,bn$$$b_1, b_2, \\ldots, b_n$$$ (1≤bi≤n$$$1 \\le b_i \\le n$$$)，表示数组 b$$$b$$$ 的元素。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证 b$$$b$$$ 是 a$$$a$$$ 的一个排列。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 2⋅105$$$2 \\cdot 10 ^ 5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null
+      {
+        "ai": "对于每个测试用例，如果可以将数组 a$$$a$$$ 变为 b$$$b$$$，则输出 \"YES\"(不含引号)，否则输出 \"NO\"(不含引号)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以以任意大小写形式输出 \"YES\" 和 \"NO\"（例如，字符串 \"yEs\"、\"yes\" 和 \"Yes\" 都会被识别为肯定回答）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，我们可以选择 l=2$$$l=2$$$ 和 r=5$$$r=5$$$，得到 [1,3,3,2,2]$$$[1, 3, 3, 2, 2]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试用例中，我们可以选择 l=2$$$l=2$$$ 和 r=4$$$r=4$$$，得到 [1,4,2,2,1]$$$[1, 4, 2, 2, 1]$$$。然后，我们可以选择 l=1$$$l=1$$$ 和 r=5$$$r=5$$$，得到 [4,2,2,1,1]$$$[4, 2, 2, 1, 1]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个测试用例中，可以证明无法使用该操作将数组 a$$$a$$$ 变为 b$$$b$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 循环旋转",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

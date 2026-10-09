@@ -49,5 +49,111 @@
       "input": "4\n1 1\n2 -6\n3 3 -5\n4 1",
       "output": "3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你负责一家生产和经销 Aboreo 的公司。Aboreo 是一种酒精饮料，其价值在于 oplo 度的多样性；oplo 是一种提供甜味的成分。使用专用射线，可以精确调整储存瓶装饮料的 oplo 度。你需要开发一个系统，用于模拟存放和调整 Aboreo 瓶装饮料的仓库状态。起初，仓库为空。总共会对仓库执行 $$$q$$$ 次操作，每次操作属于以下形式之一：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1. '1 x'(添加瓶子)：向仓库中添加一个 oplo 度数为 $$$x$$$($$$1 \\leq x \\leq 10^8$$$)的新瓶子。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "2. '2 x'(增加 oplo)：仓库中每个瓶子的 oplo 度数增加 $$$x$$$($$$-10^8 \\leq x \\leq 10^8$$$)。如果第 $$$j$$$ 个瓶子的 oplo 度数在操作前为 $$$v_j$$$，则操作后变为 $$$v_j + x$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "3. '3 p q'(乘 oplo)：每个瓶子的 oplo 度数乘以 $$$\\frac{p}{q}$$$($$$-10^8 \\leq p, q \\leq 10^8$$$、$$$q \\neq 0$$$、$$$p \\neq 0$$$)。如果第 $$$j$$$ 个瓶子的 oplo 度数在操作前为 $$$v_j$$$，则操作后变为 $$$v_j \\cdot \\frac{p}{q}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "4. '4 j'(查询度数)：输出操作 $$$j$$$($$$1 \\leq j \\leq i$$$)中添加的瓶子的 oplo 度数，并考虑截至该时刻执行的所有操作。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意事项：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "- 操作后，oplo 度数可能变得极大、极小、为负数或非整数。- 对于查询(类型 4)，保证被查询瓶子的 oplo 度数是整数 $$$0 \\leq v \\leq 10^8$$$，从而避免精度问题。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "实现一个能够高效执行该模拟的算法。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入以一个整数 $$$q$$$ 开始，表示要执行的操作数($$$2 \\leq q \\leq 10^5$$$)。接下来有 $$$q$$$ 行，每行按以下格式之一描述一个操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "- '1 x'：添加一个 oplo 度数为 $$$x$$$($$$1 \\leq x \\leq 10^8$$$)的新瓶子。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "- '2 x'：将所有瓶子的 oplo 度数增加 $$$x$$$($$$-10^8 \\leq x \\leq 10^8$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "- '3 p q'：将所有瓶子的 oplo 度数乘以 $$$\\frac{p}{q}$$$($$$-10^8 \\leq p, q \\leq 10^8$$$、$$$q \\neq 0$$$、$$$p \\neq 0$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "- '4 j'：查询在操作 $$$j$$$ 中添加的瓶子的 oplo 度数($$$1 \\leq j \\leq i$$$，其中 $$$i$$$ 是当前操作编号)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "额外约束：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "- 至少会有一个类型为 4(查询)的操作。- 对于类型为 4 的操作，被查询瓶子的 oplo 度数保证是整数 $$$0 \\leq v \\leq 10^8$$$。此外，操作 $$$j$$$ 始终为类型 1(添加瓶子)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个类型为 '4 j' 的操作，输出一行，其中包含一个整数，表示在操作 $$$j$$$ 中添加的瓶子的 oplo 度数(应用截至此时的所有操作后)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，按如下顺序执行以下操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "- 一个 oplo 度数为 $$$3$$$ 的瓶子到达。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "- 所有瓶子的 oplo 度数乘以 $$$\\frac{1}{2}$$$。第一次操作中添加的瓶子此时的 oplo 度数为 $$$\\frac{3}{2}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "- 一个瓶子到达时，其 oplo 度为 $$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "- 所有瓶子的 oplo 度增加 $$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "- 所有瓶子的 oplo 度乘以 $$$4$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "- 最后，必须输出第一次操作中加入的瓶子和第三次操作中加入的瓶子的 oplo 度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Aboreo 仓库",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

@@ -40,5 +40,59 @@
       "input": "123 1 2143435 4\n54343 -13 6 124",
       "output": "inf"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含四个整数 b1、q、l、m（-109 ≤ b1, q ≤ 109，1 ≤ l ≤ 109，1 ≤ m ≤ 105）——等比数列的首项和公比、可以写在黑板上的数的绝对值上限，以及“坏”整数的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 m 个互不相同的整数 a1、a2、...、am（-109 ≤ ai ≤ 109）——这些数永远不会被写在黑板上。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数：如果会被写在黑板上的数列项数量有限，则输出该数量；否则输出“inf”（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Masha 会写下整数 3、12、24。数列项 6 会被跳过，因为它是一个“坏”整数。大于 24 的项不会被写下，因为它们的绝对值超过了 l。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二种情况下，Masha 不会写下任何数，因为所有项都等于 123，而 123 是一个“坏”整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三种情况下，Masha 会写下无穷多个 123。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Masha 非常喜欢代数。上一节课上，她严厉的老师 Dvastan 给她布置了一道新练习题。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定一个由两个整数 b1 和 q 定义的等比数列 b。回忆一下，等比数列是一个整数序列 b1、b2、b3、……，其中对于每个 i > 1，相应的项满足 bi = bi - 1·q，其中 q 被称为该数列的公比。Uzhlyandia 的等比数列很不寻常：b1 和 q 都可以等于 0。此外，Dvastan 还给了 Masha m 个“坏”整数 a1、a2、……、am，以及一个整数 l。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "只要满足条件 |bi| ≤ l，Masha 就会将数列中的所有项（包括重复项）依次写在黑板上（|x| 表示 x 的绝对值）。但有一个例外：如果某一项等于某个“坏”整数，Masha 就跳过它（不将其写在黑板上），并继续处理下一项。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "但是课程马上就要结束了，所以 Masha 必须计算会有多少个整数被写在黑板上。为了避免陷入抑郁，Masha 向你求助：请帮助她计算她将写下多少个数；如果她需要写下无限多个整数，则输出“inf”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Masha 与几何抑郁",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

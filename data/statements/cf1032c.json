@@ -44,23 +44,60 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "小保罗想学习如何弹钢琴。他已经有一段想从中开始练习的旋律。为简单起见，他将这段旋律表示为一个由琴键编号组成的序列 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$：编号越大，就越靠近钢琴键盘的右端。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保罗非常聪明，知道关键在于为将要弹奏的音符正确分配手指。如果他选择了不合适的指法，那么他会浪费大量时间尝试用这些手指学会弹奏这段旋律，而且很可能无法成功。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "我们用从 1$$$1$$$ 到 5$$$5$$$ 的数字表示手指。我们称任意一个由手指编号组成的序列 b1,…,bn$$$b_1, \\ldots, b_n$$$ 为一种指法。当对于所有 1≤i≤n−1$$$1\\leq i \\leq n - 1$$$ 都满足以下条件时，这种指法是合适的：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 ai<ai+1$$$a_i  \\lt  a_{i+1}$$$，那么 bi<bi+1$$$b_i  \\lt  b_{i+1}$$$，否则保罗就需要将手从键盘上移开才能弹奏第 (i+1)$$$(i+1)$$$ 个音符；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 ai>ai+1$$$a_i  \\gt  a_{i+1}$$$，那么 bi>bi+1$$$b_i  \\gt  b_{i+1}$$$，原因相同；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 ai=ai+1$$$a_i = a_{i+1}$$$，那么 bi≠bi+1$$$b_i\\neq b_{i+1}$$$，因为连续两次使用同一根手指是不明智的。请注意，bi$$$b_i$$$ 与 bi+1$$$b_{i+1}$$$ 之间是 ≠$$$\\neq$$$，而不是 =$$$=$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "请给出任意一种方便的指法，或者确定不存在这样的指法。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤105$$$1 \\le n \\le 10^5$$$)，表示音符的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$(1≤ai≤2⋅105$$$1 \\le a_i \\le 2\\cdot10^5$$$)，表示音符在键盘上的位置。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "如果不存在方便的指法，则输出 −1$$$-1$$$。否则，输出 n$$$n$$$ 个数 b1,b2,…,bn$$$b_1, b_2, \\ldots, b_n$$$，每个数在 1$$$1$$$ 到 5$$$5$$$ 之间，表示一种方便的指法，用空格分隔。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "note": [
-      null
+      {
+        "ai": "第三个样例测试有点像 Reflex 的歌曲 \"Non stop\"。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. 弹钢琴",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

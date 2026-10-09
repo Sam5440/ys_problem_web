@@ -38,5 +38,67 @@
       "input": "13 3 2 3\n1000000010001",
       "output": "2\n7 11"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "第一行输出最少需要选择的单元格数量，使得如果 Galya 向所有这些单元格射击，她至少能够击中一艘船。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二行输出 Galya 应该射击的格子。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个格子都应恰好输出一次。你可以按任意顺序输出这些格子。格子的编号从左到右为 1 到 n。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果有多个答案，你可以输出其中任意一个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例中有一艘船。它可能位于 Galya 已经进行的射击（字符“1”）的左侧或右侧。因此，需要进行两次射击：一次射击左侧部分，一次射击右侧部分。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Galya 正在一个 1 × n 的网格上玩一维海战。在这个游戏中，网格上放置了 a 艘船。每艘船由 b 个连续的单元格组成。任何单元格都不能属于两艘船，但船只之间可以相互接触。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Galya 不知道船只的位置。她可以向某些单元格射击，每次射击后都会被告知该单元格是否属于某艘船（这种情况称为“命中”），否则（这种情况称为“未命中”）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Galya 已经进行了 k 次射击，并且全部未命中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是计算出最少需要选择多少个单元格，使得如果 Galya 向所有这些单元格射击，她至少能够击中一艘船。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证至少存在一种合法的船只放置方案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含四个正整数 n、a、b、k（1 ≤ n ≤ 2·105，1 ≤ a、b ≤ n，0 ≤ k ≤ n - 1），分别表示网格的长度、网格上船只的数量、每艘船的长度，以及 Galya 已经进行的射击次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含一个长度为 n、仅由 0 和 1 组成的字符串。如果第 i 个字符为 1，表示 Galya 已经向该单元格射击过；否则表示她尚未向该单元格射击。保证该字符串中恰好有 k 个 1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 海战",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

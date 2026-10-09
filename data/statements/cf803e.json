@@ -39,5 +39,61 @@
       "input": "20 5\n?LLLLLWWWWW?????????",
       "output": "WLLLLLWWWWWWWWLWLWDW"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "每天晚上，Roma 都会在他最喜欢的网站上玩在线扑克。这个网站上的扑克规则有些奇怪：一局中始终有两名玩家，不下注，获胜者会从失败者那里赢得 1 个虚拟 bourle。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "昨晚 Roma 开始玩扑克。他决定最多花费 k 个虚拟 bourle；如果他的失败次数超过获胜次数达到 k 次，他就会立即停止游戏。此外，如果他在当晚赢得了足够多的钱，也就是获胜次数超过失败次数达到 k 次，Roma 也会离开游戏。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二天早上，Roma 发现了一张纸，上面写着一个表示他比赛结果的序列。Roma 不记得具体的比赛结果了，而且序列中的一些字符书写得难以辨认，因此 Roma 无法回忆起自己究竟赢了 k 局还是输了 k 局。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Roma 写下的序列是一个由字符 W（Roma 赢下对应的一局）、L（Roma 输掉对应的一局）、D（平局）和 ?（未知结果）组成的字符串 s。Roma 想要通过将所有 ? 字符改为 W、L 或 D，来还原出任意一个合法的序列。如果满足以下所有条件，则称该序列是合法的：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最终，获胜局数与失败局数之差的绝对值等于 k；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "不存在这样的一局：在这一局之前，获胜局数与失败局数之差的绝对值等于 k。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请帮助 Roma 还原出任意一个这样的序列。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n（Roma 的序列长度）和 k（1 ≤ n，k ≤ 1000）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含由字符 W、L、D 和 ? 组成的序列 s。该序列中恰好有 n 个字符。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果不存在通过将 s 中所有的 ? 替换为 W、L 或 D 所得到的合法序列，则输出 NO。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则输出该序列。如果有多个答案，输出其中任意一个即可。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. Roma 与扑克",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

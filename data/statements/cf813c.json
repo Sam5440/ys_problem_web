@@ -49,5 +49,111 @@
       "input": "5 2\n1 2\n2 3\n3 4\n2 5",
       "output": "6"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Alice 厌倦了按通常规则玩捉人游戏，于是她向 Bob 提出了一个小小的修改。现在游戏将在一棵包含 n 个顶点的无向有根树上进行，顶点 1 是树的根。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Alice 从顶点 1 出发，Bob 从顶点 x 出发（x ≠ 1）。双方轮流移动，Bob 先手。每次移动可以选择停在当前顶点，或移动到相邻顶点。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "当 Alice 到达 Bob 所在的同一顶点时游戏结束。Alice 希望最小化总移动次数，Bob 希望最大化它。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你需要编写一个程序，确定游戏会持续多少次移动。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 x（2 ≤ n ≤ 2·10^5，2 ≤ x ≤ n）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来 n - 1 行，每行包含两个整数 a 和 b（1 ≤ a, b ≤ n），表示树的一条边。保证这些边构成一棵合法的树。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，树如下所示：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/19db10c60e984271fd50b19d153bf0538f762ec3.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "红色顶点是 Alice 的起始位置，蓝色顶点是 Bob 的起始位置。Bob 在整个游戏过程中都站在顶点 3 上，这样可以使游戏持续时间最长。因此，移动过程如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "B：停留在顶点 3",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "A：前往顶点 2",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "B：停留在顶点 3",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "A：前往顶点 3",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，树如下所示：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/ca6d5723922ddcb95fced46f31945771a79c2955.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最优策略中的移动如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "B：前往顶点 3",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "A：前往顶点 2",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "B：前往顶点 4",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "A：前往顶点 3",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "B：停留在顶点 4",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "A：前往顶点 4",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Alice 和 Bob 将进行的移动总次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 捉人游戏",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

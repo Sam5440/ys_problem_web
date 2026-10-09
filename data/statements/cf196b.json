@@ -35,5 +35,55 @@
       "input": "5 4\n##.#\n##S#\n#..#\n..#.\n#.##",
       "output": "No"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "我们有一个 n × m 个单元格的矩形迷宫。每个单元格要么可以通行，要么是墙(不可通行)。一个小男孩发现了这个迷宫，并用它周期性地铺满了整个平面，使平面变成了一个无限迷宫。现在，在这个平面上，当且仅当单元格 ![](https://espresso.codeforces.com/5820f73507b71bbab0564415ed80476b7cbd4b71.png) 是墙时，单元格 (x，y) 才是墙。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在本题中，![](https://espresso.codeforces.com/6dd276f849101e7efda6cb8031d4056744d532a1.png) 表示整数 a 除以整数 b 所得的余数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "小男孩站在平面上的某个单元格中，他想知道自己是否能够无限远地走离起点。从单元格 (x，y) 出发，他可以前往以下单元格之一：(x，y - 1)、(x，y + 1)、(x - 1，y) 和 (x + 1，y)，前提是要前往的单元格不是墙。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个以空格分隔的整数 n 和 m（1 ≤ n，m ≤ 1500），分别表示男孩用来周期性铺满平面的迷宫的高度和宽度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n 行中，每行包含 m 个字符，表示迷宫的描述。每个字符要么是表示墙的 \"#\"，要么是表示可通行单元格的 \".\"，要么是表示小男孩起点的 \"S\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "起点是一个可以通行的单元格。保证输入中字符 “S” 恰好出现一次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果小男孩可以从起点无限远地走下去，则输出 “Yes”（不含引号）。否则，输出 “No”（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，小男孩可以一直向上走，因为存在一条竖直方向的“畅通路径”。他只需无限重复以下步骤：向上、向上、向左、向上、向上、向右、向上。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，竖直路径被阻断了。向左的路径也行不通，因为迷宫的下一个“副本”会困住小男孩。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 无限迷宫",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

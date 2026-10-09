@@ -35,22 +35,56 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定一个长度为 n$$$n$$$ 的数组 a$$$a$$$，其中包含正整数。你需要处理 q$$$q$$$ 个两种类型的查询：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1 i g — 输出满足 gcd(ai,aj)=g$$$\\gcd(a_i,a_j)=g$$$ 且 j≠i$$$j \\ne i$$$ 的下标 j$$$j$$$ 的数量；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "2 i x — 将 ai←x$$$a_i \\gets x$$$ 赋值(该更新会影响后续查询)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所有下标均从 1$$$1$$$ 开始。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例数量 t$$$t$$$(1≤t≤103$$$(1 \\le t \\le 10^{3})$$$)。每个测试用例的第一行包含两个整数 n$$$n$$$ 和 q$$$q$$$(1≤n≤105；1≤q≤105$$$(1 \\le n \\le 10^{5};\\ 1 \\le q \\le 10^{5})$$$)。第二行包含 n$$$n$$$ 个整数 a1,…,an$$$a_1,\\dots,a_n$$$(1≤ai≤106$$$(1 \\le a_i \\le 10^{6})$$$)。接下来的 q$$$q$$$ 行每行是以下操作之一：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1 i g(1≤i≤n；1≤g≤106)$$$(1 \\le i \\le n;\\ 1 \\le g \\le 10^{6})$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "2 i x(1≤i≤n；1≤x≤106)$$$(1 \\le i \\le n;\\ 1 \\le x \\le 10^{6})$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个类型 1 的查询，输出一个整数——满足 gcd(ai,aj)=g$$$\\gcd(a_i,a_j)=g$$$ 的下标 j$$$j$$$ 的数量，其中 j≠i$$$j \\ne i$$$。每个答案单独占一行。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，对于第一个查询，我们需要在数组中寻找满足 gcd(ai,12)=12∀i≠1$$$ \\gcd(a_i, 12) = 12 \\, \\forall \\, i \\neq 1$$$ 的元素。数组中不存在这样的数，因此答案为 0。对于第二个查询，我们需要寻找满足 gcd(ai,18)=2∀i≠4$$$ \\gcd(a_i, 18) = 2 \\, \\forall \\, i \\neq 4$$$ 的元素。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试用例中，对于第一个查询，给定数组中的所有数字都满足 gcd(ai,1)=1$$$ \\gcd(a_i, 1) = 1$$$，因此答案为 4。对于第二个查询，只有 a3=2$$$a_3 = 2$$$ 满足 gcd(6,ai)=2$$$ \\gcd (6, a_i) = 2$$$。第三个查询后，数组保持不变；第四个查询后，数组变为 [1,1,1,3,6]$$$ [1,1,1,3,6] $$$。对于第五个查询，只有一个元素 a4=3$$$ a_4 = 3 $$$ 满足 gcd(6,aj)=3$$$ \\gcd(6, a_j)=3 $$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "H. 带更新的最大公约数查询",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

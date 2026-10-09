@@ -47,22 +47,56 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Alice 和 Bob 正在进行一场回合制游戏。游戏规则如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在游戏开始时，会选定一个二进制字符串 s$$$s$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在自己的回合中，玩家必须从 s$$$s$$$ 中选择一个子串 t$$$t$$$，其内容为 10、110、100、1010 中的一个。然后，玩家必须将 t$$$t$$$ 翻转。例如，若 s=$$$s = $$$ 010101，玩家可以选择子串 t=$$$t = $$$ 1010 并将其翻转，得到 s=$$$s = $$$ 001011",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "无法进行操作的玩家(无法选择合适的子串 t$$$t$$$)输掉游戏。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "玩家不能跳过回合。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果可以通过从 b$$$b$$$ 的开头删除若干个(可能为零个或全部)字符，并从末尾删除若干个(可能为零个或全部)字符得到 a$$$a$$$，则字符串 a$$$a$$$ 是字符串 b$$$b$$$ 的子串。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null
+      {
+        "ai": "输入仅一行，包含一个 01 串 s$$$s$$$(1≤|s|≤106$$$1 \\le |s| \\le 10^6$$$)——Alice 和 Bob 用来进行游戏的字符串。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "如果 Alice 获胜，输出 Alice；否则，输出 Bob。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个样例中，Alice 可以选择 010 的子串 10 并将其翻转，得到字符串 001。Bob 无法在这个字符串上进行任何操作，因此输掉比赛。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，Alice 一步也无法进行，因此输掉比赛。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. 反转游戏",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

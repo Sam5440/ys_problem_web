@@ -56,39 +56,124 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "今天是宿舍的节日——Oleh 来了，为了庆祝他的到来，女孩们送给他一个字符串。Oleh 非常喜欢这份礼物，于是他立即想出了下面这个问题，并将它交给了你这位最好的朋友。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定一个长度为 n$$$n$$$ 的字符串 s$$$s$$$，它由前 17$$$17$$$ 个小写拉丁字母 {a$$$a$$$、b$$$b$$$、c$$$c$$$、…$$$\\ldots$$$、p$$$p$$$、q$$$q$$$} 和问号组成。另有 q$$$q$$$ 次查询。每次查询由一个集合定义，该集合中的字符是拉丁字母表前 17$$$17$$$ 个小写字母，且两两不同；这些字符可以用来替换字符串 s$$$s$$$ 中的问号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "一次查询的答案是：对于所有通过将原字符串 s$$$s$$$ 中的问号替换为可用字符后得到的字符串，统计其中回文不同子串的数量之和。答案必须对 998244353$$$998\\,244\\,353$$$ 取模。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意！当两个子串在字符串中的起始位置和结束位置不同时，它们就是不同的。因此，对于字符串 aba，回文不同子串的数量为 4$$$4$$$：a、b、a、aba。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "考虑将问号替换为字母的例子。例如，对于字符串 aba??ee，当查询字符集合 {a$$$a$$$, b$$$b$$$} 时，可以得到字符串 ababaee 或 abaaaee，但无法得到字符串 pizza、abaee、abacaba、aba?fee、aba47ee 或 abatree。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "回文串是指从左向右读和从右向左读都相同的字符串。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤1000$$$1 \\le n \\le 1\\,000$$$)，表示字符串 s$$$s$$$ 的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含字符串 s$$$s$$$，该字符串由 n$$$n$$$ 个小写拉丁字母和问号组成。保证字符串中的所有字母都属于集合 {a$$$a$$$, b$$$b$$$, c$$$c$$$, …$$$\\ldots$$$, p$$$p$$$, q$$$q$$$}。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三行包含一个整数 q$$$q$$$(1≤q≤2⋅105$$$1 \\le q \\le 2 \\cdot 10^5$$$)，表示查询次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来有 q$$$q$$$ 行，每行包含一个字符串 t$$$t$$$，表示可以替换问号的字符集合(1≤|t|≤17$$$1 \\le |t| \\le 17$$$)。保证字符串中的所有字母都属于集合 {a$$$a$$$, b$$$b$$$, c$$$c$$$, …$$$\\ldots$$$, p$$$p$$$, q$$$q$$$}，且每个字母最多出现一次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每次查询，输出一个数，即所有可以由字符串 s$$$s$$$ 得到的字符串中回文子串的总数，对 998244353$$$998\\,244\\,353$$$ 取模。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "考虑第一个样例及其中的第一次查询。将问号替换后，我们只能得到一个字符串：abaaaba。它包含以下回文子串：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "a —— 子串 [1$$$1$$$; 1$$$1$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "b —— 子串 [2$$$2$$$; 2$$$2$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "a —— 子串 [3$$$3$$$; 3$$$3$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "a —— 子串 [4$$$4$$$; 4$$$4$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "a  — 子串 [5$$$5$$$; 5$$$5$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "b  — 子串 [6$$$6$$$; 6$$$6$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "a  — 子串 [7$$$7$$$; 7$$$7$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "aa  — 子串 [3$$$3$$$; 4$$$4$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "aa  — 子串 [4$$$4$$$; 5$$$5$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "aba  — 子串 [1$$$1$$$; 3$$$3$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "aaa —— 子串 [3$$$3$$$; 5$$$5$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "aba —— 子串 [5$$$5$$$; 7$$$7$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "baaab —— 子串 [2$$$2$$$; 6$$$6$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "abaaaba —— 子串 [1$$$1$$$; 7$$$7$$$]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三次请求中，我们得到 4 行：abaaaba、abababa、abbaaba、abbbaba。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E. 宿舍里的典型聚会",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -39,26 +39,72 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "足球联赛中有 2⋅n$$$2 \\cdot n$$$ 支球队。球队编号从 0$$$0$$$ 到 2⋅n−1$$$2 \\cdot n - 1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最后一轮开始前，第 i$$$i$$$ 支球队有 p[i]$$$p[i]$$$ 分。最后一轮将进行 n$$$n$$$ 场比赛，其中球队 a[i]$$$a[i]$$$ 和 b[i]$$$b[i]$$$ 将相互对阵。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每支球队都想知道自己的球队最终能取得的最好名次。你的任务是计算这些值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "该队的最终名次等于积分严格高于该队的球队数量加 1$$$+ 1$$$。积分相同的球队名次相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "比赛获胜的队伍得到 3$$$3$$$ 分，而失败的队伍得到 0$$$0$$$ 分。如果比赛以平局结束，则两支队伍各得 1$$$1$$$ 分。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$——比赛的场数。(1≤n≤105$$$1 \\le n \\le 10^5$$$)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 2⋅n$$$2 \\cdot n$$$ 个整数——p[0]、p[1]、…、p[2⋅n−1]$$$p[0], p[1], \\ldots, p[2 \\cdot n - 1]$$$。(0≤p[i]≤5⋅105$$$0 \\le p[i] \\le 5 \\cdot 10^5$$$)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行包含 a[i]$$$a[i]$$$ 和 b[i]$$$b[i]$$$。(0≤a[i],b[i]≤2⋅n−1$$$0 \\le a[i], b[i] \\le 2 \\cdot n - 1$$$)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证从 0$$$0$$$ 到 2⋅n−1$$$2 \\cdot n - 1$$$ 的每个数在数组 a$$$a$$$ 和 b$$$b$$$ 中恰好出现一次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "在单独一行中输出 2⋅n$$$2 \\cdot n$$$ 个以空格分隔的整数 t[0],t[1],…,t[2⋅n−1]$$$t[0], t[1], \\ldots, t[2 \\cdot n - 1]$$$。其中，t[i]$$$t[i]$$$ 必须等于第 i$$$i$$$ 名球队最终能够取得的最佳名次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "这里，p=[47,45,50,48]$$$p = [47, 45, 50, 48]$$$，球队 0$$$0$$$ 将与球队 2$$$2$$$ 进行比赛，而球队 3$$$3$$$ 将与球队 1$$$1$$$ 进行比赛。让我们计算球队 0$$$0$$$ 能取得的最佳名次：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "球队 0$$$0$$$ 应战胜球队 2$$$2$$$。此时，球队 0$$$0$$$ 有 47+3=50$$$47+3=50$$$ 分，球队 2$$$2$$$ 也有 50$$$50$$$ 分。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "球队 3$$$3$$$ 与球队 1$$$1$$$ 之间的比赛应以平局结束。此时，球队 3$$$3$$$ 有 48+1=49$$$48+1=49$$$ 分，而球队 1$$$1$$$ 有 45+1=46$$$45+1=46$$$ 分。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在另一种情况下，球队 3$$$3$$$ 可以获得第一名，因此 t[3]=1$$$t[3] = 1$$$。然而，在其最佳情况下，球队 1$$$1$$$ 只能获得第二名，因此 t[1]$$$t[1]$$$ 应为 2$$$2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. 足球",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

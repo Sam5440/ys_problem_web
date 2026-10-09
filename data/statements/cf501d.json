@@ -43,5 +43,71 @@
       "input": "3\n1 2 0\n2 1 0",
       "output": "1 0 2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "我们将两个由数字 0, 1, ..., (n - 1) 构成的排列 p 和 q 的和定义为排列 ![](https://espresso.codeforces.com/a6967136eb87d05a01f795f6061b884a1a9f4f4b.png)，其中 Perm(x) 表示由数字 0, 1, ..., (n - 1) 构成的按字典序排列中的第 x 个排列(从 0 开始计数)，Ord(p) 表示排列 p 在字典序中的序号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，Perm(0) = (0, 1, ..., n - 2, n - 1)，Perm(n! - 1) = (n - 1, n - 2, ..., 1, 0)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Misha 有两个排列 p 和 q。你的任务是求它们的和。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果存在某个 k，使得 a0 = b0，a1 = b1，...，ak - 1 = bk - 1，且 ak < bk，则称排列 a = (a0, a1, ..., an - 1) 的字典序小于排列 b = (b0, b1, ..., bn - 1)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 200 000）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n 个两两不同的整数，这些整数介于 0 和 n - 1 之间，以空格分隔，构成排列 p。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三行包含 n 个互不相同的、范围从 0 到 n - 1 的整数，它们以空格分隔，构成排列 q。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 个互不相同的、范围从 0 到 n - 1 的整数，构成给定排列之和。数字之间用空格分隔。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "范围从 0 到 1 的数的排列按字典序排列为：(0, 1)、(1, 0)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第一个样例中，Ord(p) = 0 且 Ord(q) = 0，因此答案是 ![](https://espresso.codeforces.com/8ce4cd76db7c3f712f9101b410c36891976581b8.png)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，Ord(p) = 0 且 Ord(q) = 1，因此答案是 ![](https://espresso.codeforces.com/5684e4e2deb5ed60419a5c9e765f0cd4cb995652.png)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "范围从 0 到 2 的数的排列按字典序排列为：(0, 1, 2)、(0, 2, 1)、(1, 0, 2)、(1, 2, 0)、(2, 0, 1)、(2, 1, 0)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个样例中，Ord(p) = 3 且 Ord(q) = 5，因此答案是 ![](https://espresso.codeforces.com/da14f774ebda9f417649f5334d329ec7b7c07778.png)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Misha 与排列求和",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

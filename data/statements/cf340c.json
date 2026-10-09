@@ -36,5 +36,75 @@
       "input": "3\n2 3 5",
       "output": "22 3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Iahub 是一名旅游爱好者。他想亲自成为一名游客，因此计划了一次旅行。有一条笔直的道路，路上有 n 个 Iahub 想要参观的目的地。Iahub 从 0 千米处开始这次旅行。这 n 个目的地由一个非负整数序列 a1, a2, ..., an 描述。数值 ak 表示第 k 个目的地距离起点 ak 千米。任意两个目的地都不在同一位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Iahub 希望每个目的地只参观一次。注意，经过某个目的地并不算参观，除非 Iahub 明确想在经过该处时参观它。此外，在参观完最后一个目的地后，Iahub 不会返回 0 千米处，而是将旅行终点设在最后一个目的地。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "位于 x 千米处的目的地与下一个位于 y 千米处的目的地之间的距离为 |x - y| 千米。我们将参观各个目的地的顺序称为一条“路线”。Iahub 可以按照任意顺序参观目的地，只要他参观所有 n 个目的地，且不会重复参观任何一个目的地。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Iahub 开始在纸上写下所有可能的路线，并为每条路线记录他需要行走的总距离。他想知道选择一条路线时所行走距离的平均值。由于写下所有路线让他感到厌烦，因此他请你帮助他。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（2 ≤ n ≤ 105）。第二行包含 n 个互不相同的整数 a1, a2, ..., an（1 ≤ ai ≤ 107）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出两个整数——一个分数的分子和分母，该分数等于所求的平均距离。这个分数必须是最简分数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "考虑 6 条可能的路线：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "[2, 3, 5]：总行驶距离：|2 – 0| + |3 – 2| + |5 – 3| = 5；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "[2, 5, 3]：|2 – 0| + |5 – 2| + |3 – 5| = 7；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "[3, 2, 5]：|3 – 0| + |2 – 3| + |5 – 2| = 7；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "[3, 5, 2]：|3 – 0| + |5 – 3| + |2 – 5| = 8；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "[5, 2, 3]：|5 – 0| + |2 – 5| + |3 – 2| = 9；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "[5, 3, 2]: |5 – 0| + |3 – 5| + |2 – 3| = 8.",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "平均移动距离为 ![](https://espresso.codeforces.com/29119d3733c79f70eb2d77186ac1606bf938508a.png) = ![](https://espresso.codeforces.com/ee9d5516ed2ca1d2b65ed21f8a64f58f94954c30.png) = ![](https://espresso.codeforces.com/ed5cc8cb7dd43cfb27f2459586062538e44de7bd.png)。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 游客问题",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

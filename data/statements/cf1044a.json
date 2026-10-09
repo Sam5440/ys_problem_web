@@ -63,34 +63,104 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在一个宽度为 109$$$10^9$$$、高度为 109$$$10^9$$$ 的棋盘上，行从下到上编号为 1$$$1$$$ 到 109$$$10^9$$$，列从左到右编号为 1$$$1$$$ 到 109$$$10^9$$$。因此，棋盘上的每个格子都可以赋予坐标 (x,y)$$$(x,y)$$$，其中 x$$$x$$$ 是列号，y$$$y$$$ 是行号。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每天这块棋盘上都有黑白棋子之间的战斗。今天，黑方赢了，但付出了什么代价？只有车幸存下来，并且它被逼到了左下角——坐标为 (1,1)$$$(1,1)$$$ 的格子。但它依然很开心，因为胜利已经赢得，是时候庆祝了！为此，车需要回家，也就是——回到棋盘的上边(即任意一个位于编号为 109$$$10^9$$$ 的行中的格子)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "本来一切都会很顺利，但阴险的白方棋子在比赛结束前对棋盘的一些位置施放了咒语。咒语有两种类型：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "竖直咒语。每个由单个数字 x$$$x$$$ 定义。此类咒语在第 x$$$x$$$ 列与第 x+1$$$x+1$$$ 列之间创建一条无限长的阻挡线。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "水平咒语。每个由三个数字 x1$$$x_1$$$、x2$$$x_2$$$、y$$$y$$$ 定义。此类咒语创建一条阻挡线段，该线段穿过位于第 y$$$y$$$ 行、列号从 x1$$$x_1$$$ 到 x2$$$x_2$$$(含)的单元格的上边界。这些咒语的特殊之处在于，任意两个此类咒语都不可能存在公共点。注意，水平咒语可以与竖直咒语存在公共点。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/90c70dd895c54815d19d5dc78635ba32c56114b6.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "让我们回顾一下，车是一种棋子，一步可以移动到与其初始位置同一行或同一列的任意位置。在本任务中，车可以从格子 (r0,c0)$$$(r_0,c_0)$$$ 移动到格子 (r1,c1)$$$(r_1,c_1)$$$，仅当满足 r1=r0$$$r_1 = r_0$$$ 或 c1=c0$$$c_1 = c_0$$$，并且这两个格子之间没有阻挡线或阻挡线段时才可以(为了更好地理解，请看样例)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "幸运的是，车可以移除咒语，但为此需要付出巨大的努力，因此它希望移除尽可能少的咒语，使得在这之后它能回到家中。求这个数量！",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(0≤n,m≤105$$$0 \\le n,m \\le 10^5$$$)——竖直咒语和水平咒语的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行中的每一行包含一个整数 x$$$x$$$(1≤x<109$$$1 \\le x  \\lt  10^9$$$)——对竖直法术的描述。它将在第 x$$$x$$$ 列和第 x+1$$$x+1$$$ 列之间生成一条阻挡线。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中的每一行包含三个整数 x1$$$x_1$$$、x2$$$x_2$$$ 和 y$$$y$$$(1≤x1≤x2≤109$$$1 \\le x_{1} \\le x_{2} \\le 10^9$$$，1≤y<109$$$1 \\le y  \\lt  10^9$$$)——描述水平法术的数字。它将在编号为 y$$$y$$$ 的行中、从第 x1$$$x_1$$$ 列到第 x2$$$x_2$$$ 列(包含两端)的单元格的上边穿过，并生成一条阻挡线段。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有法术均不相同，并且对于任意一对水平法术，它们所描述的线段没有公共点。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "请在一行中输出一个整数——车需要移除的最少法术数量，使其能够从单元格 (1,1)$$$(1,1)$$$ 到达编号为 109$$$10^9$$$ 的行中的至少一个单元格。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中，为了让车回到家，只需移除第二个水平法术。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/79ba3e377dac6034a170469f1b79bf64978aede3.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，为了让车回到家，只需移除唯一的竖直法术。如果我们只尝试移除一个横向法术，车仍然无法回到家，因为它的上方会被剩下的横向法术之一（第一个或第二个）挡住，而右侧会被一个竖直法术挡住。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/7605a14fd36ffc8483622bcccb2053ffac4693c3.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个样例中，有两个横向法术贯穿整个场地。这些法术无法绕过，因此我们需要将它们全部移除。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/8722835dc84cd3988660017beacd92a58254528f.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第四个样例中，没有任何法术，这意味着我们不需要移除任何东西。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第五个样例中，我们可以移除第一个竖直法术和第三个横向法术。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/6ff2f6d42f11a3f3dcea6f4f2fc7d1cc20557a06.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "A. 车要回家",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

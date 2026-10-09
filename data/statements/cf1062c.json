@@ -42,25 +42,68 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "JATC 喜欢 Banh-mi（一种越南食物）。他非常喜爱 Banh-mi，因此总是把它当作早餐。今天早上，他像往常一样买了一个 Banh-mi，并决定用一种特别的方式享用它。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "首先，他将 Banh-mi 分成 n$$$n$$$ 份，将它们排成一列，并从 1$$$1$$$ 到 n$$$n$$$ 编号。对于每一份 i$$$i$$$，他将该份的美味度定义为 xi∈{0,1}$$$x_i \\in \\{0, 1\\}$$$。JATC 将依次吃掉这些部分。在每一步中，他会任意选择一份尚未被吃掉的部分并将其吃掉。假设该部分是第 i$$$i$$$ 份，那么他的 Banh-mi 愉悦度将增加 xi$$$x_i$$$，并且所有剩余部分的美味度也将增加 xi$$$x_i$$$。JATC 初始的愉悦度为 0$$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，假设 3$$$3$$$ 份的美味度为 [0,1,0]$$$[0, 1, 0]$$$。如果 JATC 吃掉第二份，那么他的愉悦度将变为 1$$$1$$$，剩余部分的美味度将变为 [1,_,1]$$$[1, \\_, 1]$$$。接下来，如果他吃掉第一份，那么他的愉悦度将变为 2$$$2$$$，剩余部分将变为 [_,_,2]$$$[\\_, \\_, 2]$$$。吃掉最后一份后，JATC 的愉悦度将变为 4$$$4$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "然而，JATC 不想吃掉所有部分，而是想留一些以后再吃。他给你 q$$$q$$$ 个查询，每个查询由两个整数 li$$$l_i$$$ 和 ri$$$r_i$$$ 组成。对于每个查询，你需要告诉他：如果他以某种顺序吃掉下标位于区间 [li,ri]$$$[l_i, r_i]$$$ 内的所有部分，他能够获得的最大愉悦度是多少。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所有查询彼此独立。由于查询的答案可能非常大，请输出答案对 109+7$$$10^9+7$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 q$$$q$$$(1≤n,q≤100000$$$1 \\le n, q \\le 100\\,000$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含一个长度为 n$$$n$$$ 的字符串，其中每个字符都为 '0' 或 '1'。第 i$$$i$$$ 个字符定义了第 i$$$i$$$ 份的美味度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "以下 q$$$q$$$ 行中的每行包含两个整数 li$$$l_i$$$ 和 ri$$$r_i$$$(1≤li≤ri≤n$$$1 \\le l_i \\le r_i \\le n$$$)，表示对应查询的区间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出 q$$$q$$$ 行，其中第 i$$$i$$$ 行包含一个整数，即第 i$$$i$$$ 个查询的答案对 109+7$$$10^9 + 7$$$ 取模后的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于查询 1$$$1$$$，JATC 吃掉这些部分的最佳顺序之一是：1$$$1$$$、4$$$4$$$、3$$$3$$$、2$$$2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于查询 2$$$2$$$，无论按 3$$$3$$$、4$$$4$$$ 的顺序还是按 4$$$4$$$、3$$$3$$$ 的顺序，得到的答案都相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，以任意顺序吃掉这些部分都会得到相同的答案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. Banh-mi",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

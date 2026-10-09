@@ -45,32 +45,96 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Busy Beaver 正在玩他最喜欢的冒险游戏，在游戏中，他用自己的怪物与野生怪物战斗！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/11a7a3528bcb8d0f781ac7899361ab9c5aa3af29.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "一个力量为 p$$$p$$$ 的怪物可以击败另一个怪物 q$$$q$$$，当且仅当满足以下条件之一：p≥q$$$p \\geq q$$$，或者它们类型相同且 2p≥q$$$2p \\geq q$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Busy Beaver 刚刚遇到了 N$$$N$$$ 只怪物，而他的队伍中也有 N$$$N$$$ 只怪物。为了应对这次遭遇，他需要将自己的怪物与对方的怪物配对，使得每一对中，Busy Beaver 的怪物都能根据上述规则击败对方的怪物。给定每只怪物的类型和力量值，请报告是否存在这样的配对。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "每个测试包含多个测试用例。输入的第一行包含一个整数 T$$$T$$$ (1≤T≤105)$$$(1 \\leq T \\leq 10^5)$$$，表示测试用例的数量。接下来是每个测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个正整数 N$$$N$$$(1≤N≤2⋅105$$$1 \\leq N \\leq 2 \\cdot 10^5$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来输入 N$$$N$$$ 行，描述 Busy Beaver 的怪物。第 i$$$i$$$ 行包含两个正整数 pi,si$$$p_i, s_i$$$(1≤pi≤109,si∈{0,1}$$$1 \\leq p_i \\leq 10^9, s_i \\in \\{0, 1\\}$$$)——第 i$$$i$$$ 个怪物的力量等级 pi$$$p_i$$$ 和类型 si$$$s_i$$$。si=0$$$s_i = 0$$$ 表示光属性怪物，si=1$$$s_i = 1$$$ 表示暗属性怪物。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "随后输入中还有 N$$$N$$$ 行，描述遇到的怪物。第 i$$$i$$$ 行包含两个正整数 qi,ti$$$q_i, t_i$$$(1≤qi≤109,ti∈{0,1}$$$1 \\leq q_i \\leq 10^9, t_i \\in \\{0, 1\\}$$$)——第 i$$$i$$$ 个怪物的力量等级 qi$$$q_i$$$ 和类型 ti$$$t_i$$$。ti=0$$$t_i = 0$$$ 表示光属性怪物，ti=1$$$t_i = 1$$$ 表示暗属性怪物。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 N$$$N$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "对于每个测试用例，如果存在满足要求的配对，输出 \"YES\"（不含引号），否则输出 \"NO\"（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以以任意大小写输出 \"YES\" 和 \"NO\"（例如，字符串 \"yES\"、\"yes\" 和 \"Yes\" 都会被识别为肯定回答）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "该问题有两个子任务。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(30$$$30$$$ 分)：所有测试用例中 N$$$N$$$ 的总和不超过 2⋅103$$$2 \\cdot 10^3$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(70$$$70$$$ 分)：没有额外的约束条件。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在输入样例中，有两个测试用例。对于第一个测试用例，我们可以按如下方式构造一个配对：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的力量等级为 2$$$2$$$ 的光属性怪物可以击败对方相同的怪物。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的力量等级为 3$$$3$$$ 的光属性怪物可以击败对方相同的怪物。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的第一个等级为 1$$$1$$$ 的暗属性怪兽可以击败对方等级为 2$$$2$$$ 的暗属性怪兽。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的第二个等级为 1$$$1$$$ 的暗属性怪兽可以击败对方等级为 1$$$1$$$ 的光属性怪兽。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二种情况下，可以证明不存在配对。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. 怪物战斗",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -38,25 +38,68 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Alice 和 Bob 正在数组 a$$$a$$$ 上进行游戏，该数组最初包含 n$$$n$$$ 个正整数，Alice 先手。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在每位玩家的回合中，如果 a$$$a$$$ 是非递减的∗$$$^{\\text{∗}}$$$，游戏立即结束。否则，该玩家可以从数组中选择一个元素 x$$$x$$$，以及满足 1<y,z<x$$$1  \\lt  y,z  \\lt  x$$$ 且 x=yz$$$x=yz$$$ 的正整数 y 和 z，并将数组中的 x$$$x$$$ 替换为两个元素 y$$$y$$$ 和 z$$$z$$$(以任意顺序放置在 x$$$x$$$ 原来的位置)。如果不存在这样的操作，游戏结束。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "游戏结束后，如果 a$$$a$$$ 是非递减的，那么 Bob 获胜。否则，Alice 获胜。确定在双方均采取最优策略的情况下谁将赢得游戏。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "∗$$$^{\\text{∗}}$$$如果对于所有 1≤i≤m−1$$$1\\leq i\\leq m-1$$$，都有 ai≤ai+1$$$a_i\\leq a_{i+1}$$$，则称 a$$$a$$$ 是非递减的，其中 m$$$m$$$ 是 a$$$a$$$ 的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\leq t \\leq 10^4$$$)，表示测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤105$$$1 \\leq n \\leq 10^5$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤106$$$1 \\leq a_i \\leq 10^6$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所有测试用例中 n$$$n$$$ 的总和不超过 105$$$10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，如果 Alice 获胜，则输出一行 \"Alice\"；如果 Bob 获胜，则输出一行 \"Bob\"。评测器区分大小写。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，如果双方都采取最优策略，Alice 将获胜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试用例中，无论 Alice 如何行动，Bob 总能获胜。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第三个测试用例中，Alice 可以通过将 6$$$6$$$ 替换为 3$$$3$$$ 和 2$$$2$$$ 来获胜。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第四个测试用例中，游戏立即结束，Bob 获胜。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E. 分裂之战",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

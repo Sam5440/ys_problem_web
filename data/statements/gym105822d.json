@@ -41,28 +41,80 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Busy Beaver 想要在 Beaverland 进行一次旅行！Beaverland 由 N$$$N$$$ 座城市和连接它们的 M$$$M$$$ 条双向道路组成。保证沿着这 M$$$M$$$ 条道路可以在任意一对城市之间通行，并且所有道路的长度均为 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "到目前为止，Busy Beaver 已经规划好了他的行程，并希望访问城市 x1,x2,…,xK$$$x_1, x_2, \\dots, x_K$$$。如果 dist(1,x1)<dist(1,x2)<⋯<dist(1,xK)$$\\mathrm{dist}(1,x_1)  \\lt  \\mathrm{dist}(1,x_2)  \\lt  \\dots  \\lt  \\mathrm{dist}(1,x_K)$$，他就认为自己的行程很有趣，其中对于两个城市 x,y$$$x, y$$$，dist(x,y)$$$\\mathrm{dist}(x, y)$$$ 等于连接这两个城市的最短路径长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "然而，Busy Beaver 的旅行目前可能并不有趣！为了解决这个问题，他可以在任意两座城市之间增加最多 5⋅105$$$5 \\cdot 10^5$$$ 条道路。每条新增的道路同样也是双向的，长度为 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "判断是否可以通过增加一些道路（也可能不增加）使得 Busy Beaver 的旅行变得有趣。此外，如果可能，请给出任意一组合法构造。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "每个测试包含多个测试用例。输入的第一行包含一个整数 T$$$T$$$(1≤T≤104)$$$(1 \\leq T \\leq 10^4)$$$，表示测试用例的数量。每个测试用例的描述如下。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个测试用例的第一行包含三个整数 N,M,K$$$N,M,K$$$(1≤K≤N，N−1≤M≤2⋅105$$$1 \\le K \\le N, N-1 \\le M \\le 2 \\cdot 10^5$$$)——分别表示城市总数、道路总数以及 Busy Beaver 旅行中的城市数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "下一行包含 K$$$K$$$ 个整数 x1,x2,…,xK$$$x_1,x_2, \\dots, x_K$$$(1≤xi≤N$$$1 \\le x_i \\le N$$$，xi$$$x_i$$$ 互不相同)——即 Busy Beaver 计划访问的城市。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来 M$$$M$$$ 行中的第 i$$$i$$$ 行包含两个整数 ui$$$u_i$$$ 和 vi$$$v_i$$$(1≤ui,vi≤N$$$1 \\le u_i, v_i \\le N$$$，ui≠vi$$$u_i \\neq v_i$$$)，表示城市 ui$$$u_i$$$ 和 vi$$$v_i$$$ 之间有一条道路。保证任意两个不同城市之间至多有 1$$$1$$$ 条边。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "所有测试用例中 N$$$N$$$ 之和、M$$$M$$$ 之和以及 K$$$K$$$ 之和均不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null
+      {
+        "ai": "对于每个测试用例，如果可以使旅程变得有趣，输出的第一行应包含一个整数 L$$$L$$$(0≤L≤5⋅105$$$0 \\leq L \\leq 5 \\cdot 10^5$$$)——添加的道路数量。接下来的 L$$$L$$$ 行输出中，每行应包含两个整数 ui,vi$$$u_i,v_i$$$(1≤ui,vi≤N$$$1 \\leq u_i , v_i \\leq N$$$，ui≠vi$$$u_i \\neq v_i$$$)，表示一条要添加的道路。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果有多种方案，输出任意一种。否则，如果不存在方案，则输出一个整数 −1$$$-1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "由于评测限制，所有测试用例总共至多可以使用 5⋅105$$$5 \\cdot 10^5$$$ 条道路。可以证明，这足以解决本题。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，在城市 1,2$$$1, 2$$$ 之间添加一条道路会使 dist(1,1)=0,dist(1,2)=1$$$dist(1,1) = 0, dist(1,2) = 1$$$，从而使旅程变得有趣。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试用例中，可以证明该任务是不可能的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个测试用例中，通过在城市 1 和 3$$$1, 3$$$ 之间修建一条道路，我们有 dist(1,3)=1，dist(1,5)=2$$$dist(1,3) = 1, dist(1,5) = 2$$$，从而使这次游览变得有趣。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第四个测试用例中，这次游览已经很有趣，无需添加任何道路。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 河狸国",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

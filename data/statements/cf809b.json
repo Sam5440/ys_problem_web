@@ -48,5 +48,123 @@
       "input": "3 2\nNIE\nTAK\nNIE\nTAK\nTAK\nTAK",
       "output": "1 1 2\n1 2 1\n1 1 3\n1 3 1\n1 2 3\n1 3 2\n2 2 3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的唯一一行包含两个数 n 和 k（2 ≤ k ≤ n ≤ 10^5），分别表示菜单中的菜品数量以及 Noora 点的菜品数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果你想给出答案，请输出形如 2 x y 的字符串（1 ≤ x, y ≤ n，x ≠ y）。这表示你认为菜品 x 和 y 在 Noora 点的菜品之中。之后刷新输出并终止程序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在帮助 Leha 的过程中，你至多可以向 Noora 询问 60 次。每次查询都应单独输出一行，格式为 1 x y（1 ≤ x, y ≤ n）。你必须同时输出换行符并刷新输出。刷新后，应从输入中读取该查询的答案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每次查询后，评测程序会根据女孩的回答，在输入流中输出一行 «TAK» 或 «NIE»（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以使用以下方式刷新输出（在输出一个整数和换行符之后）：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "C++ 中的 fflush(stdout)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Java 中的 System.out.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Python 中的 stdout.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Pascal 中的 flush(output)；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "其他语言请参阅相关文档。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Hack",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "进行 Hack 时，你应在第一行输入两个整数 n 和 k（2 ≤ k ≤ n ≤ 105），并在第二行输入 k 个互不相同的整数 a1, a2, ..., ak（1 ≤ ai ≤ n）来描述 Noora 点的菜，这些整数应按升序排列。当然，你想要 Hack 的解法将无法读取已点菜品的编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例中有三道菜。Noora 点了编号为 2 和 3 的菜，这是 Leha 需要猜出的。如果 Noora 收到第一道菜(x = 1)的请求，那么她会选择第二道菜(a = 2)作为具有最小值 ![](https://espresso.codeforces.com/e5a4a1705bc256e413564795cc8b70857f0ae44c.png) 的菜。对于第二道菜(x = 2)和第三道菜(x = 3)，选择它们本身就是最优的，因为此时 ![](https://espresso.codeforces.com/79add195d023131e992b60a354fec89501759e75.png)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Leha 询问 Noora 接下来的两道菜：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "x = 1，y = 2，此时他会得到 «NIE» 的回答，因为 |1 - 2| > |2 - 2|",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "x = 2，y = 1，此时他会得到 «TAK» 的回答，因为 |2 - 2| ≤ |1 - 2|",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "x = 1，y = 3，此时他会得到 «NIE» 的回答，因为 |1 - 2| > |3 - 3|",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "x = 3，y = 1，此时他会得到 «TAK» 的回答，因为 |3 - 3| ≤ |1 - 2|",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "x = 2，y = 3，那么他将得到 «TAK» 答案，因为 |2 - 2| ≤ |3 - 3|",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "x = 3，y = 2，那么他将得到 «TAK» 答案，因为 |3 - 3| ≤ |2 - 2|",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "根据现有信息，可以得出 Nura 点了编号为 2 和 3 的菜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "这是一个交互题。在下面的输出部分，你会看到关于刷新输出的信息。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "周日，黑客 Leha 把 Nura 从她住的房子里带出来，和她一起去了 Vičkopolis 最豪华的餐厅之一。到达后，他们把车停在餐厅附近的一个巨大停车场，然后匆匆走进大楼。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在餐厅里，一位礼貌的服务员立刻把菜单递给 Leha 和 Noora，菜单上有 n 道菜。有趣的是，菜单中的所有菜肴都用 1 到 n 的整数编号。稍作思考后，女孩从菜单中点了恰好 k 道不同的菜。为了在厨师准备所点菜肴时打发等待时间，女孩邀请黑客玩一个游戏，这个游戏能帮助他们更好地了解彼此。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "游戏本身非常简单：Noora 想让 Leha 在所有已点的菜中猜出任意两道。同时，她只准备回答一种类型的问题。Leha 可以说出两个数 x 和 y(1 ≤ x, y ≤ n)。之后 Noora 会为数字 x 选择一道菜 a，要求：首先，a 是 Noora 所点菜肴中的一道(x 可以等于 a)；其次，![](https://espresso.codeforces.com/e5a4a1705bc256e413564795cc8b70857f0ae44c.png) 的值尽可能小。女孩按照同样的规则为 y 选择菜 b。之后，如果 ![](https://espresso.codeforces.com/a65cb6a9b614699e12e529560e2d39ffa39127db.png)，Noora 就对 Leha 说“TAK”，否则说“NIE”。然而，餐厅上菜很快，所以 Leha 最多只能问 60 个问题。之后，他需要说出 Noora 所点的任意两道菜的编号。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "帮助 Leha 解决这个问题！",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 很高兴见到你！",
+    "aiModel": "DeepSeek V4 Flash"
+  }
 }

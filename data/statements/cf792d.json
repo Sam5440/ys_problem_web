@@ -31,5 +31,61 @@
       "input": "15 2\n4\nUURL\n8\nLRLLLLLLLL",
       "output": "10\n5"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 q（1 ≤ n ≤ 10^18，q ≥ 1）。保证 n + 1 是 2 的幂。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 2q 行表示若干查询；每个查询由连续的两行组成。其中第一行包含 ui（1 ≤ ui ≤ n），第二行包含非空字符串 si。si 中只包含字符 'L'、'R' 和 'U'。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有 si 的长度之和（对每个满足 1 ≤ i ≤ q 的 i）不超过 10^5。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 q 个数，第 i 个数必须是第 i 个查询的答案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "T 是一棵由 n 个顶点组成的完全二叉树。这意味着其中恰好有一个顶点是根，并且每个顶点要么是叶子（没有子节点），要么是内部节点（恰好有两个子节点）。完全二叉树的所有叶子深度都相同（即到根的距离相同）。因此，n 是一个满足 n + 1 为 2 的幂的数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "图中展示了一棵 n = 15 的完全二叉树。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/7cf45e9d9e44d8d0a3972224b62a35dd86b5f1b3.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "顶点以一种特殊的递归方式从 1 编号到 n：我们先递归地为左子树中的所有顶点编号（如果当前顶点不是叶子），然后为当前顶点编号，最后递归地为右子树中的所有顶点编号（如果右子树存在）。图中的顶点正是使用该算法编号的。显然，对于每一种大小的完全二叉树，为所有顶点编号的方法都恰好只有一种。这种编号方式称为对称编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你需要编写一个程序，对于给定的 n，回答树上的 q 个查询。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个查询由一个整数 ui（1 ≤ ui ≤ n）和一个字符串 si 组成，其中 ui 是顶点的编号，si 表示从该顶点开始的路径。字符串 si 只包含字符 'L'、'R' 和 'U'，分别表示移动到左儿子、右儿子和父节点。需要从左到右处理 si 中的字符，并将 ui 视为路径的起点。如果无法处理某个字符（例如，从叶子移动到左儿子），则跳过该字符。答案是由 si 表示的路径结束时所在顶点的编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，如果 ui = 4 且 si = «UURL»，那么答案是 10。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 完全二叉树中的路径",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

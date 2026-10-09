@@ -45,5 +45,63 @@
       "input": "0 0\nD",
       "output": "Yes"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Fox Ciel 在一个二维平面上有一个机器人。初始时它位于 (0, 0)。Fox Ciel 为它编写了一条指令。这条指令由字符串 s 表示。s 的每个字符代表一次移动操作。一共有四种移动操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "'U'：向上移动，(x, y)  →  (x, y+1)；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "'D'：向下移动，(x, y)  →  (x, y-1)；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "'L'：向左移动，(x, y)  →  (x-1, y)；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "'R'：向右移动，(x, y)  →  (x+1, y)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "机器人会从左到右执行 s 中的操作，并无限次重复。请帮助 Fox Ciel 判断：经过若干步后，机器人是否会到达 (a, b)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 a 和 b（ - 109 ≤ a, b ≤ 109）。第二行包含一个字符串 s（1 ≤ |s| ≤ 100，s 仅包含字符 'U'、'D'、'L'、'R'）——表示指令。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果机器人将位于 (a, b)，输出 \"Yes\"，否则输出 \"No\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个和第二个测试用例中，指令字符串为 \"RU\"，因此机器人会先向右移动，然后向上移动，接着向右移动，再向上移动，如此循环。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "它移动经过的位置为 (0, 0)  →  (1, 0)  →  (1, 1)  →  (2, 1)  →  (2, 2)  →  ...",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "因此它可以到达 (2, 2)，但不能到达 (1, 2)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. Ciel 与机器人",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

@@ -37,5 +37,63 @@
       "input": "2\n1 2 2",
       "output": "ambiguous\n0 1 1 3 3\n0 1 1 3 2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Sasha 正在参加一场编程竞赛。在其中一道题中，她需要判断一些有根树是否同构。她以前从未见过这道题，但作为一名经验丰富的参赛者，她猜测应该将树与某些序列进行匹配，然后比较这些序列，而不是直接比较树。Sasha 希望将每棵树与一个序列 a0、a1、...、ah 匹配，其中 h 是树的高度，ai 等于距离根恰好 i 条边的顶点数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "遗憾的是，这一次 Sasha 的直觉错了，可能存在多棵与同一序列相匹配的树。为了说明这一点，你需要编写一个程序，给定序列 ai，构造两棵不同构的有根树，使它们都与该序列相匹配；或者判断这样的树是否只有一棵。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果可以对第一棵树的顶点重新编号，使得其根的编号与第二棵树的根的编号相同，并且重新编号后的两棵树完全相同，那么称这两棵有根树同构。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "有根树的高度是从根到任意其他顶点的路径上边数的最大值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 h（2 ≤ h ≤ 10^5）——树的高度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 h + 1 个整数——序列 a0, a1, ..., ah（1 ≤ ai ≤ 2·10^5）。所有 ai 的总和不超过 2·10^5。保证至少存在一棵与该序列相匹配的树。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果与该序列相匹配的树只有一棵，则输出 \"perfect\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，第一行输出 \"ambiguous\"。第二行和第三行按照以下格式输出两棵树的描述：在一行中输出 ![](https://espresso.codeforces.com/84c4dd28c25918521bfe375641bc52bcedd18589.png) 个整数，其中第 k 个数应为顶点 k 的父节点；如果第 k 个顶点是根，则该数应为 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "这两棵树应当不同构，并且应与给定的序列相匹配。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一组样例中的唯一一棵树和第二组样例中输出的两棵树如图所示：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/391ac13640fa692361683e9c23619eb4e8bce1c5.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 树哈希",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

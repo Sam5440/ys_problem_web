@@ -48,25 +48,65 @@
   ],
   "sectionsZh": {
     "legend": [
+      {
+        "ai": "你目前正在研究归并排序算法。归并排序是一种基于分治原理的排序算法。它将数组分成两个长度相等的子数组，分别对每个子数组进行排序，然后将排好序的子数组合并，得到最终的有序数组。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你尤其对合并过程感兴趣。常见的合并实现会通过迭代比较两个子数组的首元素，并将较小的元素移动到一个新的合并数组中，从而合并这两个子数组。更准确地说，合并算法可以由以下伪代码表示。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
       null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "你希望了解当数组 A$$$A$$$ 和 B$$$B$$$ 不一定有序时，合并算法的行为。例如，如果 A=[3,1,6]$$$A = [3, 1, 6]$$$ 且 B=[4,5,2]$$$B = [4, 5, 2]$$$，那么 Merge(A,B)=[3,1,4,5,2,6]$$$\\text{Merge}(A, B) = [3, 1, 4, 5, 2, 6]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "为了进一步理解合并算法，你决定解决以下问题。给定数组 C$$$C$$$，其长度为 2⋅N$$$2 \\cdot N$$$，且是从 1$$$1$$$ 到 2⋅N$$$2 \\cdot N$$$ 的一个排列。构造两个长度均为 N$$$N$$$ 的数组 A$$$A$$$ 和 B$$$B$$$，使得 Merge(A,B)=C$$$\\text{Merge}(A, B) = C$$$，或者判断是否无法做到。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 N$$$N$$$(1≤N≤1000$$$1 \\leq N \\leq 1000$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行包含 2⋅N$$$2 \\cdot N$$$ 个整数 Ci$$$C_i$$$。数组 C$$$C$$$ 是从 1$$$1$$$ 到 2⋅N$$$2 \\cdot N$$$ 的一个排列。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null
+      {
+        "ai": "如果无法构造两个长度为 N$$$N$$$ 的数组 A$$$A$$$ 和 B$$$B$$$，使得 Merge(A,B)=C$$$\\text{Merge}(A, B) = C$$$，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，分两行输出数组 A$$$A$$$ 和 B$$$B$$$。第一行包含 N$$$N$$$ 个整数 Ai$$$A_i$$$。第二行包含 N$$$N$$$ 个整数 Bi$$$B_i$$$。如果有多个可行答案，输出任意一个即可。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "样例输入/输出 #1 的解释",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "解 A=[3,1,4]$$$A = [3, 1, 4]$$$ 和 B=[5,2,6]$$$B = [5, 2, 6]$$$ 也是正确的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "样例输入/输出 #2 的解释",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "解法 A=[1,2,3,4]$$$A = [1, 2, 3, 4]$$$、B=[5,6,7,8]$$$B = [5, 6, 7, 8]$$$ 也是正确的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E. 合并而非排序",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

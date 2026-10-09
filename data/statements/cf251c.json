@@ -40,5 +40,59 @@
       "input": "1000000000000000000 1 3",
       "output": "666666666666666667"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "输出一个整数——将数字 a 变为数字 b 所需的最少秒数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Petya 在尝试得到数字 b 时获得的数字序列如下：10  →  8  →  6  →  4  →  3  →  2  →  1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，一种可能的数字序列如下：6  →  4  →  3。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "小 Petya 非常喜欢正整数。最近，他的妈妈送给了他一个正整数 a。只有一件事是 Petya 比数字更喜欢的，那就是和小 Masha 一起玩。结果发现，Masha 已经有了一个正整数 b。Petya 决定通过依次执行以下两类操作，将他的数字 a 变成数字 b：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将他的数减去 1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择一个从 2 到 k（包含 2 和 k）的任意整数 x。然后从他的数 a 中减去 (a mod x)。操作 a mod x 表示用数字 x 除数字 a 所得的余数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Petya 每秒执行一次操作。每次在当前步中，他都会选择要执行的操作，而不论截至此时他执行过什么类型的操作。特别地，这意味着他可以连续多次执行同一个操作。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "现在，他想知道最少需要多少秒才能将他的数 a 变为数 b。请注意，每次执行第二类操作时，都会重新选择其中的 x，且各次选择相互独立。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "唯一一行包含三个整数 a、b（1 ≤ b ≤ a ≤ 1018）和 k（2 ≤ k ≤ 15）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请不要在 C++ 中使用 %lld 格式说明符读写 64 位整数。建议使用 cin、cout 流或 %I64d 格式说明符。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 数字变换",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

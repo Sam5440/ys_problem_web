@@ -33,5 +33,47 @@
       "input": "codeforces\nforceofcode",
       "output": "60"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "让我们写出第一个样例中构成答案的所有“x y”对：“s[1...1] t[1]”、“s[2...2] t[1]”、“s[1...1] t[2]”、“s[2...2] t[2]”、“s[1...2] t[1 2]”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "有一天，Polycarpus 得到了两个由小写拉丁字母组成的非空字符串 s 和 t。Polycarpus 很擅长处理字符串，因此他立即想知道，满足以下条件的不同的“x y”对共有多少个：x 是字符串 s 的子串，y 是字符串 t 的子序列，并且 x 与 y 的内容相同。如果两个二元组中包含的字符串 s 的子串不同，或字符串 t 的子序列不同，则认为这两个二元组不同。请阅读完整题面，以了解不同子串和子序列的定义。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "字符串 s 的长度就是其中包含的字符个数。如果将字符串 s 的长度记为 |s|，则可以将该字符串表示为 s = s₁s₂... s|s|。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "s 的子串是一个非空字符串 x = s[a... b] = sₐsₐ + ₁... sᵦ（1 ≤ a ≤ b ≤ |s|）。例如，\"code\" 和 \"force\" 是 \"codeforces\" 的子串，而 \"coders\" 不是。若 a ≠ c 或 b ≠ d，则认为两个子串 s[a... b] 和 s[c... d] 不同。例如，当 s=\"codeforces\" 时，s[2...2] 和 s[6...6] 是不同的，尽管它们的内容相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "s 的子序列是一个非空字符串 y = s[p₁p₂... p|y|] = sₚ₁sₚ₂... sₚ|y|（1 ≤ p₁ < p₂ < ... < p|y| ≤ |s|）。例如，\"coders\" 是 \"codeforces\" 的一个子序列。若下标序列 p 和 q 不同，则认为两个子序列 u = s[p₁p₂... p|u|] 和 v = s[q₁q₂... q|v|] 不同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入包含两行。第一行包含字符串 s（1 ≤ |s| ≤ 5000），第二行包含字符串 t（1 ≤ |t| ≤ 5000）。两个字符串均由小写拉丁字母组成。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——满足以下条件的不同“x y”对的数量：x 是字符串 s 的子串，y 是字符串 t 的子序列，并且 x 与 y 的内容相同。由于答案可能很大，请对 1000000007（10⁹ + 7）取模后输出。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 子串和子序列",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

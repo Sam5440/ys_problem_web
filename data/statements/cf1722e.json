@@ -39,26 +39,72 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "你有 n$$$n$$$ 个矩形，第 i$$$i$$$ 个矩形的高度为 hi$$$h_i$$$，宽度为 wi$$$w_i$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你需要处理 q$$$q$$$ 个形如 hs ws hb wb$$$h_s \\ w_s \\ h_b \\ w_b$$$ 的查询。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每个查询，输出你拥有的、能够容纳一个高度为 hs$$$h_s$$$、宽度为 ws$$$w_s$$$ 的矩形，同时又能放入一个高度为 hb$$$h_b$$$、宽度为 wb$$$w_b$$$ 的矩形的所有矩形的总面积。换句话说，对于满足 hs<hi<hb$$$h_s  \\lt  h_i  \\lt  h_b$$$ 且 ws<wi<wb$$$w_s  \\lt  w_i  \\lt  w_b$$$ 的 i$$$i$$$，输出 ∑hi⋅wi$$$\\sum h_i \\cdot w_i$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请注意，如果两个矩形的高度相同或宽度相同，则它们无法相互放入。还要注意，不能旋转矩形。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请注意，某些测试用例的答案无法用 32 位整数类型表示，因此你应在编程语言中至少使用 64 位整数类型（例如 C++ 中的 long long）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤100$$$1 \\leq t \\leq 100$$$)——测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n,q$$$n, q$$$(1≤n≤105$$$1 \\leq n \\leq 10^5$$$；1≤q≤105$$$1 \\leq q \\leq 10^5$$$)——你拥有的矩形数量和查询数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来给出 n$$$n$$$ 行，每行包含两个整数 hi,wi$$$h_i, w_i$$$ (1≤hi,wi≤1000$$$1 \\leq h_i, w_i \\leq 1000$$$)——第 i$$$i$$$ 个矩形的高和宽。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来给出 q$$$q$$$ 行，每行包含四个整数 hs,ws,hb,wb$$$h_s, w_s, h_b, w_b$$$ (1≤hs<hb, ws<wb≤1000$$$1 \\leq h_s  \\lt  h_b,\\ w_s  \\lt  w_b \\leq 1000$$$)——每次查询的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所有测试用例中 q$$$q$$$ 的总和不超过 105$$$10^5$$$，所有测试用例中 n$$$n$$$ 的总和不超过 105$$$10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出 q$$$q$$$ 行，第 i$$$i$$$ 行包含第 i$$$i$$$ 次查询的答案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "![](https://espresso.codeforces.com/aa51b7dfff92458931d37d604395e88d39f0df91.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第一个测试用例中，只有一个查询。我们需要求出所有既能容纳一个 1×1$$$1 \\times 1$$$ 矩形，又能放入一个 3×4$$$3 \\times 4$$$ 矩形的矩形的面积之和。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "只有 2×3$$$2 \\times 3$$$ 矩形可行，因为 1<2$$$1  \\lt  2$$$(比较高度)且 1<3$$$1  \\lt  3$$$(比较宽度)，所以 1×1$$$1 \\times 1$$$ 矩形可以放入其中；并且 2<3$$$2  \\lt  3$$$(比较高度)且 3<4$$$3  \\lt  4$$$(比较宽度)，所以它可以放入 3×4$$$3 \\times 4$$$ 矩形中。3×2$$$3 \\times 2$$$ 矩形太高，无法放入 3×4$$$3 \\times 4$$$ 矩形。总面积为 2⋅3=6$$$2 \\cdot 3 = 6$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E. 矩形计数",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

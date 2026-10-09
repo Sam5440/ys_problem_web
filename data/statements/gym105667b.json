@@ -47,34 +47,104 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在矩形网格上，大小为 k$$$k$$$ 的蛇被定义为如下图中前 k$$$k$$$ 个编号格子构成的格子子集，其中格子沿一条交替向右和向下的路径编号：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/26dc1656b09e33ce0a3679946c1cd42148f37e77.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "此外，这些形状经过旋转、平移或翻转后得到的子集也被视为蛇。如果网格中由相等值构成的每个连通分量都是蛇，则称该网格是好的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Busy Beaver 有一个 N×M$$$N \\times M$$$ 的网格，行编号为 0,…,N−1$$$0, \\dots, N-1$$$，列编号为 0,…,M−1$$$0, \\dots, M-1$$$，其中第 i$$$i$$$ 行、第 j$$$j$$$ 列的每个格子 (i,j)$$$(i, j)$$$ 都有一个值 aij$$$a_{ij}$$$。由于他害怕蛇，他想让你回答 Q$$$Q$$$ 个如下查询：给定网格的一个连续子矩形，判断该子网格是否是好的。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含 2 个整数 N$$$N$$$ 和 M$$$M$$$(1≤N,M≤1000$$$1 \\leq N, M \\leq 1000$$$)——网格的尺寸。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行中，每行包含 M$$$M$$$ 个整数，其中第 i$$$i$$$ 行的第 j$$$j$$$ 个元素为 ai,j$$$a_{i,j}$$$ (1≤ai,j≤106$$$1 \\leq a_{i, j} \\leq 10^6$$$)，表示写在第 i$$$i$$$ 行第 j$$$j$$$ 个单元格中的数字。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行包含一个整数 Q$$$Q$$$ (1≤Q≤5⋅105$$$1 \\leq Q \\leq 5 \\cdot 10^5$$$)，表示查询的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 Q$$$Q$$$ 行描述这些查询。每行包含 4 个整数 x1$$$x_1$$$、y1$$$y_1$$$、x2$$$x_2$$$、y2$$$y_2$$$ (0≤x1≤x2<N,$$$(0 \\leq x_1 \\leq x_2  \\lt  N,$$$ 0≤y1≤y2<M)$$$ 0 \\leq y_1 \\leq y_2  \\lt  M)$$$，表示询问左上角位于 (x1,y1)$$$(x_1, y_1)$$$、右下角位于 (x2,y2)$$$(x_2, y_2)$$$ 的矩形子网格是否是好的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "对于每次查询，如果对应的子网格中只包含蛇，则输出 \"YES\"（不含引号），否则输出 \"NO\"（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以使用任意大小写形式输出 \"YES\" 和 \"NO\"（例如，字符串 \"yES\"、\"yes\" 和 \"Yes\" 都会被识别为肯定回答）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "本题共有四个子任务。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(15$$$15$$$ 分)：所有查询的面积之和不超过 106$$$10^6$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(15$$$15$$$ 分)：网格中每个相同值的连通分量大小至多为 4$$$4$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(30$$$30$$$ 分)：网格中每个相同值的连通分量大小至多为 5$$$5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(40$$$40$$$ 分)：没有额外约束。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "如果根据每个单元格中的值为样例网格染色，我们得到",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/8fa54fef22303577f4771932a1c0af77be2853b9.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/2ae19d0272688671077666f933f9a7205d458848.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/402ec6e838c5a12e3a4dc21f5d4661abcf5e5949.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/75b1738a076d25e52319410e495e08a57317ad80.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/3d37029b571569ae2faebcd85f301d34730d3eb3.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/d277a19c9575e641d1b2db3a2c2290cb2c6e5e67.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. 网格上的蛇",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

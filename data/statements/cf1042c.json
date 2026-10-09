@@ -62,31 +62,89 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定一个由 n$$$n$$$ 个整数组成的数组 a$$$a$$$。你可以对其执行以下操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择两个位置 i$$$i$$$ 和 j$$$j$$$(1≤i,j≤n，i≠j$$$1 \\le i, j \\le n, i \\ne j$$$)，将 ai⋅aj$$$a_i \\cdot a_j$$$ 的值写入第 j$$$j$$$ 个单元格，并从第 i$$$i$$$ 个单元格中删除该数字；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择一个位置 i$$$i$$$，并从第 i$$$i$$$ 个单元格中删除该数字(该操作最多只能执行一次，且可以在任意时刻执行，不一定要在开始时执行)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每次操作后，元素数量减少一个。但是，位置的编号保持不变。被删除的数字不能用于后续操作。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是对数组恰好执行 n−1$$$n - 1$$$ 次操作，使得数组中最后剩下的唯一一个数尽可能大。这个数可能相当大，因此你不需要输出它，而是要输出任意一组能够得到这个最大数的操作序列。请阅读输出格式，以了解你具体需要输出什么。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$)——数组中元素的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(−109≤ai≤109$$$-10^9 \\le a_i \\le 10^9$$$)——数组中的元素。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输出 n−1$$$n - 1$$$ 行。第 k$$$k$$$ 行应包含两种可能的操作之一。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一类操作应如下所示：1 ik jk$$$1~ i_k~ j_k$$$，其中 1$$$1$$$ 表示操作类型，ik$$$i_k$$$ 和 jk$$$j_k$$$ 表示所选元素的位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二类操作应如下所示：2 ik$$$2~ i_k$$$，其中 2$$$2$$$ 表示操作类型，ik$$$i_k$$$ 表示所选元素的位置。注意，这样的操作最多只能有一次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果存在多种可能的操作序列可以达到最大值——输出其中任意一种即可。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "note": [
+      {
+        "ai": "设 X 为数组中被移除的数。让我们看看所有样例：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于第一个样例，例如有以下数组变换序列： [5,−2,0,1,−3]→[5,−2,X,1,−3]→[X,−10,X,1,−3]→$$$[5, -2, 0, 1, -3] \\to [5, -2, X, 1, -3] \\to [X, -10, X, 1, -3] \\to$$$ [X,X,X,−10,−3]→[X,X,X,X,30]$$$[X, X, X, -10, -3] \\to [X, X, X, X, 30]$$$。因此，最大答案为 30$$$30$$$。注意，其他也能得到答案 30$$$30$$$ 的序列同样是正确的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于第二个样例，例如有以下数组变换序列： [5,2,0,4,0]→[5,2,X,4,0]→[5,2,X,4,X]→[X,10,X,4,X]→$$$[5, 2, 0, 4, 0] \\to [5, 2, X, 4, 0] \\to [5, 2, X, 4, X] \\to [X, 10, X, 4, X] \\to$$$ [X,X,X,40,X]$$$[X, X, X, 40, X]$$$。以下答案也是允许的：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
       null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "那么数组变换序列将如下所示： [5,2,0,4,0]→[5,2,0,4,X]→[5,8,0,X,X]→[40,X,0,X,X]→$$$[5, 2, 0, 4, 0] \\to [5, 2, 0, 4, X] \\to [5, 8, 0, X, X] \\to [40, X, 0, X, X] \\to$$$ [40,X,X,X,X]$$$[40, X, X, X, X]$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第三个样例可以有如下数组变换序列： [2,−1]→[2,X]$$$[2, -1] \\to [2, X]$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第四个样例可以有以下数组变换序列：[0,−10,0,0]→[X,0,0,0]→[X,X,0,0]→[X,X,X,0]$$$[0, -10, 0, 0] \\to [X, 0, 0, 0] \\to [X, X, 0, 0] \\to [X, X, X, 0]$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第五个样例可以有以下数组变换序列：[0,0,0,0]→[X,0,0,0]→[X,X,0,0]→[X,X,X,0]$$$[0, 0, 0, 0] \\to [X, 0, 0, 0] \\to [X, X, 0, 0] \\to [X, X, X, 0]$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. 数组乘积",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

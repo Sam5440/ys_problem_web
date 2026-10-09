@@ -43,22 +43,56 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Marcin 是他所在大学的一名教练。有 n$$$n$$$ 名学生想参加训练营。Marcin 是一名聪明的教练，因此他只想派出能够彼此平和相处的学生。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "让我们关注这些学生。他们的编号是从 1$$$1$$$ 到 n$$$n$$$ 的整数。每名学生可以用两个整数 ai$$$a_i$$$ 和 bi$$$b_i$$$ 描述；其中，bi$$$b_i$$$ 等于第 i$$$i$$$ 名学生的技能等级(越高越好)。此外，还有 60$$$60$$$ 种已知算法，它们的编号是从 0$$$0$$$ 到 59$$$59$$$ 的整数。如果第 i$$$i$$$ 名学生掌握第 j$$$j$$$ 种算法，那么 ai$$$a_i$$$ 的二进制表示中第 j$$$j$$$ 位(2j$$$2^j$$$)为 1；否则，该位为 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当且仅当学生 x$$$x$$$ 掌握了某种学生 y$$$y$$$ 不掌握的算法时，学生 x$$$x$$$ 才会认为自己比学生 y$$$y$$$ 更优秀。注意，两个学生可能会互相认为自己比对方更优秀。如果一个学生组中没有任何学生认为自己比该组中的所有其他学生都更优秀，那么这个学生组就可以平静地一起工作。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Marcin 想要派出一个至少包含两名学生的学生组，使他们能够平静地一起工作，并且技能等级总和达到可能的最大值。这个总和是多少？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤7000$$$1 \\leq n \\leq 7000$$$)，表示对夏令营感兴趣的学生人数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数。其中第 i$$$i$$$ 个整数为 ai$$$a_i$$$(0≤ai<260$$$0 \\leq a_i  \\lt  2^{60}$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三行包含 n$$$n$$$ 个整数。其中第 i$$$i$$$ 个整数为 bi$$$b_i$$$(1≤bi≤109$$$1 \\leq b_i \\leq 10^9$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数，表示一组能够平静地一起工作的学生中 bi$$$b_i$$$ 之和的最大值。如果不存在至少两名学生能够平静地一起工作，输出 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个样例测试中，将第一名、第二名和第三名学生送去夏令营是最优的。也可以只将第一名和第三名学生送去，但这样 bi$$$b_i$$$ 之和会更小。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试中，对于每个至少包含两名学生的组，其中总会有人认为自己比该子集中的所有其他人都优秀。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. Marcin 与训练营",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -42,5 +42,67 @@
       "input": "2 2\n1 1\n2 10",
       "output": "10"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 T（1 ≤ n ≤ 1000，1 ≤ T ≤ 100）——Polycarp 制作的任务数量，以及玩家完成任务所能使用的最长时间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n 行每行包含两个整数 t_i、q_i（1 ≤ t_i ≤ T，1 ≤ q_i ≤ 1000）——分别表示完成第 i 个任务所需的时间（分钟）和该任务的趣味值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——任务中所有任务的总趣味值的最大可能值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例测试中，全部五个任务都可以补充四个问题，并合并成一个任务。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例测试中，不可能使用全部五个任务，但可以选择其中两个，即最有趣的两个任务。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个样例测试中，最优策略是只将第二个任务加入任务中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下面是展示样例测试答案的图片。蓝色圆圈表示问题，从每个圆圈出发的两条箭头表示一个人根据该问题的答案所前往的方向。任务用红色椭圆表示。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/f97e6272831f8a54fec4cbaf8219a63aea601d95.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Polycarp 正在为他的朋友们制作一个任务流程。他已经设计了 n 个任务，对于每个任务，这个男孩将其趣味度评估为一个整数 q_i，并记录了完成该任务所需的时间 t_i（分钟）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "他的任务流程有一个有趣的特点：每位参与者都应该根据自己的偏好获得最适合自己的任务。任务通过一个由若干问题组成的交互式问答来选择。玩家应当用“是”或“否”回答这些问题。根据问题的答案，参与者要么前往另一个问题，要么前往任务流程中的某个任务。换句话说，任务流程是一棵二叉树，其节点包含问题，叶子包含任务。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "我们知道，在获得任务之前回答每个问题，都会恰好花费任务流程参与者一分钟。Polycarp 知道他的朋友们都很忙，无法参与任务流程超过 T 分钟。Polycarp 希望从他设计的 n 个任务中选择一些，为它们设计相应的问题集合，并将其组成一棵二叉树形式的交互式问答，使得无论玩家如何回答问题，完成整个任务流程所花费的时间都不超过 T 分钟（也就是说，要回答所有问题并完成任务）。特别地，任务流程可以不包含任何问题，直接进入任务。每个任务只能使用一次（也就是说，对问题给出不同答案的人应当获得不同的任务）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Polycarp 希望任务流程中所涉及任务的总“趣味度”尽可能大。请帮助他确定，在无论以何种方式回答问题都能在 T 分钟内完成任务流程的前提下，任务总趣味度的最大可能值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 任务",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

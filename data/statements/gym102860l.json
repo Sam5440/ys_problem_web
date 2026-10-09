@@ -39,5 +39,77 @@
       "input": "7 7\n1 3 6\n1 3 4\n1 5 6\n2 3\n2 4\n2 5\n2 6",
       "output": "3 0\n4 0\n3 2\n4 2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你有一块边长为$$$10^9 \\times 10^9$$$的正方形磁力板，坐标系原点位于左下角。板上有$$$n$$$块磁铁，编号从$$$1$$$到$$$n$$$。每块磁铁都是边长为$$$1 \\times 1$$$的正方形。初始时，磁铁的摆放方式使得第$$$i$$$块磁铁的右下角坐标为$$$(i, 0)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/7c2968f04c4661c6b55362fad43a971ff9c4c669.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你将收到 $$$q$$$ 个查询，查询分为两种类型：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "类型为 $$$1$$$ 的查询由两个整数 $$$l$$$ 和 $$$r$$$($$$1 \\leq l \\leq r \\leq n$$$)描述：取编号从 $$$l$$$ 到 $$$r$$$(包括两端)的磁铁，并将它们旋转 $$$90^{\\circ}$$$。如果所选磁铁构成水平线段，则应逆时针旋转 $$$90^{\\circ}$$$，使其变为竖直线段。如果所选磁铁构成竖直线段，则应顺时针旋转 $$$90^{\\circ}$$$，使其变为水平线段。所有旋转都以编号最小的磁铁为基准。在处理此查询时，保证编号从 $$$l$$$ 到 $$$r$$$ 的磁铁构成一条连续的水平或竖直线段。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "类型为 $$$2$$$ 的查询由一个整数 $$$j$$$($$$1 \\leq j \\leq n$$$)描述：输出编号为 $$$j$$$ 的磁铁的右下角坐标 $$$(x, y)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下面给出了 $$$n=6$$$ 时的棋盘状态，以及一系列第一类查询 $$$(l_1=2,r_1=5)$$$、$$$(l_2=3,r_2=4)$$$、$$$(l_3=2,r_3=3)$$$、$$$(l_4=6,r_4=6)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/cf7a8e0a6c81d34febbf959380fe94475e31278e.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/83f1e851aa727b305bc6f48c14c7859ff473da1b.png)   处理一个第一类查询 $$$(l_1=2,r_1=5)$$$ 后。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/9f5bfeff050ab5a13cf2c38c77a666fef2a35ce9.png) 处理完第一类查询 $$$(l_2=3,r_2=4)$$$ 后。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/67a3ee0c040f79ada8de2158a3b6a5ba84a42e30.png)   处理第一类查询 $$$(l_3=2,r_3=3)$$$ 后。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/67a3ee0c040f79ada8de2158a3b6a5ba84a42e30.png)   处理完第一类查询 $$$(l_4=6,r_4=6)$$$ 后。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每个 $$$2$$$ 类型的查询，你应输出对应编号磁铁右下角的坐标。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 $$$n$$$ 和 $$$q$$$($$$1 \\le n, q \\le 2 \\cdot 10^5$$$)，分别表示棋盘上磁铁的数量和查询的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 $$$q$$$ 行中的每一行包含一个 $$$1$$$ 类型或 $$$2$$$ 类型的查询。$$$1$$$ 类型的查询包含 $$$3$$$ 个整数 $$$1$$$ $$$l$$$ $$$r$$$ $$$(1 \\le l \\le r \\le n)$$$，$$$2$$$ 类型的查询包含 $$$2$$$ 个整数 $$$2$$$ $$$j$$$ $$$(1 \\le j \\le n)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个类型为 $$$2$$$ 的查询，输出 $$$x$$$ 和 $$$y$$$——处理对应查询时，编号为 $$$j$$$ 的磁铁的右下角坐标。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "L. 磁铁",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

@@ -46,5 +46,105 @@
       "input": "5 1 6\n+ 123 0\n+ 234 1\n+ 345 2\n- 234\n+ 456 0\n+ 567 0",
       "output": "4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "来自 ABBYY 的 Smart Beaver 有很多爱好。其中之一是构造高效的哈希表。哈希表最严重的问题之一就是解决冲突。Beaver 对此问题非常感兴趣，并决定深入研究它。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "我们假设哈希表由 h 个槽位组成，编号从 0 到 h-1。对象会被加入和移出该表。每个对象都有自己唯一的标识符；此外，每个对象都有一个对应的哈希值——一个在 0 到 h-1（含端点）之间的整数。当向表中加入一个对象时，如果该对象哈希值对应的槽位是空闲的，那么这个对象就放入该槽位；如果该槽位已被另一个对象占用，则发生冲突。当从表中删除一个对象时，它所占用的槽位会变为空。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Smart Beaver 最近学习了用线性探测解决冲突的方法。其过程如下：假设要加入的对象的哈希值为 t，且表中第 t 个槽位已被占用。那么我们尝试将该对象加入槽位 (t + m) mod h。如果该槽位也被占用，则再尝试槽位 (t + 2·m) mod h，然后是槽位 (t + 3·m) mod h，依此类推。注意，在某些情况下新对象可能无法加入哈希表。题目保证输入数据中不会出现这种情况。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "运算 a mod b 表示取数 a 除以数 b 的余数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "这种方法在海狸看来立刻显得非常低效，于是它决定评估该方法的低效程度。现在，给定一个操作序列，其中每个操作要么是向表中添加一个对象，要么是从表中删除一个对象。添加新对象时，会对表执行一系列查询。对已被占用的单元格进行的查询称为虚假查询。换句话说，如果上述算法的结果是将要添加的对象放入单元格 (t + i·m) mod h（i ≥ 0），那么恰好执行了 i 次虚假查询。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是计算给定添加和删除操作序列中对表进行虚假查询的总次数。删除表中的对象时，认为不会执行任何虚假查询。在执行操作之前，表为空，也就是说，初始时表中不包含任何对象。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含三个整数 h、m 和 n（1 ≤ m < h），它们之间用空格分隔。其中，h 是哈希表的大小，m 是用于解决冲突的数值，n 是操作的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n 行包含操作的描述。操作的执行顺序与它们在输入文件中的出现顺序一致。每个操作由单独一行描述。操作描述如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"+ id hash\"这是向表中添加对象的操作格式。第一个字符是“+”（ASCII 码 43），后跟一个空格，然后是对象标识符 id（0 ≤ id ≤ 109），再后跟一个空格，最后是给定对象的哈希值 hash（0 ≤ hash < h）。对象标识符和该对象的哈希值均为整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"- id\"这是从表中删除对象的操作格式。第一个字符是“-”（ASCII 码 45），后跟一个空格，然后是对象标识符 id（0 ≤ id ≤ 109）。对象标识符为整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证对于所有添加操作，id 的值都是唯一的。同时保证初始数据是正确的，也就是说，始终可以向哈希表中添加对象，并且不会删除不存在的对象。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "获得 20 分的输入约束为：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1 ≤ h ≤ 5000",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1 ≤ n ≤ 5000",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "获得 50 分的输入约束为：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1 ≤ h ≤ 5·104",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1 ≤ n ≤ 5·104",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "获得 100 分的输入限制为：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1 ≤ h ≤ 2·105",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1 ≤ n ≤ 2·105",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个数，即对哈希表进行虚拟调用的总次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请不要在 С++ 中使用 %lld 格式说明符来读写 64 位整数。建议使用 cin、cout 流以及 %I64d 格式说明符。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C3. Smart Beaver 与解决冲突",
+    "aiModel": "DeepSeek V4 Flash"
+  }
 }

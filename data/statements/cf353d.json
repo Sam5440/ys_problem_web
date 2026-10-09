@@ -38,5 +38,51 @@
       "input": "FFMMM",
       "output": "0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含一个不含空格的字母序列 s1s2... sn（1 ≤ n ≤ 106），由大写英文字母 M 和 F 组成。如果字母 si 等于 M，这表示最初队伍中第 i 个位置上是一个男孩。如果字母 si 等于 F，则表示最初队伍中第 i 个位置上是一个女孩。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，即将队伍中的所有女孩移动到男孩前面所需的秒数。如果队伍中只有男孩或只有女孩，则输出 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，变化过程如下：MFM  →  FMM。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个样例对应题面中的样例。变化过程如下：MMFF  →  MFMF  →  FMFM  →  FFMM。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "有 n 名学生，包括男生和女生，正在学校食堂的包子摊前排队。包子还没有准备好，而队伍正在发生变化。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每秒钟，所有正好站在女生前面的男生会同时与女生交换位置（这样女生就能更靠近队伍的前端）。换句话说，如果某一时刻第 i 个位置是男生，而第 (i + 1) 个位置是女生，那么一秒后，第 i 个位置将变成女生，第 (i + 1) 个位置将变成男生。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "举一个由四个人组成的队伍的例子：男生、男生、女生、女生（从队伍前端到末尾）。下一秒，队伍将变为：男生、女生、男生、女生。再下一秒将变为：女生、男生、女生、男生。再下一秒将变为：女生、女生、男生、男生。之后队伍将不再发生变化。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是：给定队伍中学生的排列，确定让所有女生都排在男生前面所需的时间（在上面的例子中需要 3 秒）。包子需要很长时间才能做好，因此在队伍停止变化之前，没有人会离开队伍。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 队列",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

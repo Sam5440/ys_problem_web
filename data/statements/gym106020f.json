@@ -50,37 +50,119 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "这是一个交互题。你的程序将通过标准输入和标准输出与评测器进行交互。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定一个包含 n$$$n$$$ 个正整数的数组 a$$$a$$$，以及一个整数 k$$$k$$$，其中 2k≤n$$$2k \\leq n$$$。你的初始分数为 0$$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你将被要求处理 k$$$k$$$ 次查询。对于每次查询，你会得到一个整数 x∈{1,2}$$$x \\in \\{1, 2\\}$$$。你必须选择一个下标 i$$$i$$$(1≤i≤n$$$1 \\leq i \\leq n$$$)，使得†$$$^\\dagger$$$：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下标 i$$$i$$$ 能被 x$$$x$$$ 整除；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下标 i$$$i$$$ 尚未在之前的任何查询中被选取；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每当你在某次查询中选择某个下标 i$$$i$$$ 时，ai$$$a_i$$$ 的值就会被加入得分。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是在完成全部 k$$$k$$$ 次查询后使得分最大。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 k$$$k$$$(2≤2k≤n≤105$$$2 \\le 2k \\le n \\le 10^5$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$(1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "交互过程将进行 k$$$k$$$ 次，具体如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "评测器将输出一个整数 x∈{1,2}$$$x \\in \\{1, 2\\}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你必须回复一个满足上述条件†$$$^\\dagger$$$的整数 i$$$i$$$(1≤i≤n$$$1 \\leq i \\leq n$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 i$$$i$$$ 能被 x$$$x$$$ 整除，且此前的任何查询中都未选择过它，评测器将输出 \"1\"；否则输出 \"0\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果你的程序作出无效响应，评测器的响应将为 \"0\"。收到此类响应后，你的程序应立即终止，以获得判定结果 Wrong Answer。否则，它可能会得到其他任何判定结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对查询作出回复后，不要忘记输出行尾并刷新输出。否则，你将得到 Idleness limit exceeded。要做到这一点，请使用：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "C++ 中的 fflush(stdout) 或 cout.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Java 中的 System.out.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Python 中的 sys.stdout.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Rust 中的 std::io::stdout().flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "其他语言请参阅文档。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "样例解释：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "数组的大小为 6，共有 3 个查询。前 2 行描述数组和查询的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第一次查询中，我们必须选择一个能被 1$$$1$$$ 整除的下标，我们选择下标 1$$$1$$$，由于它能被 1$$$1$$$ 整除且之前尚未被选择，评测器将输出 1$$$1$$$，以确认所选下标有效。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二次查询中，我们必须选择一个能被 1$$$1$$$ 整除的下标，我们选择下标 6$$$6$$$，由于它能被 1$$$1$$$ 整除且之前尚未被选择，评测器将输出 1$$$1$$$，以确认所选下标有效。注意，如果我们改为选择 1$$$1$$$，评测器将输出 0$$$0$$$(因为它之前已经被选择过)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三次查询中，我们必须选择一个能被 2$$$2$$$ 整除的下标，我们选择下标 4$$$4$$$，由于它能被 2$$$2$$$ 整除且之前尚未被选择，评测器将输出 1$$$1$$$，以确认所选下标有效。注意，如果我们改为选择 6$$$6$$$，评测器将输出 0$$$0$$$(因为它之前已经被选择过)；如果我们选择 3$$$3$$$，评测器也将输出 0$$$0$$$(因为它不能被 2$$$2$$$ 整除)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，在所有由两个能被 1 整除的下标和一个能被 2 整除的下标组成的组合中，可能的最大结果是 15（这与样例中的结果相同），并且所有选中的下标都互不相同且满足整除条件，因此该结果被认为是正确的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "F. 抛硬币",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

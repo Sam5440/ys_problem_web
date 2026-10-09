@@ -38,17 +38,42 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "大型强子对撞机正在进行一项实验，以测试各种不同粒子的相位性质。有 N$$$N$$$ 个滤波器排列成一个圆圈，其中第 i$$$i$$$ 个滤波器允许相位小于或等于其上限 Ai$$$A_i$$$ 的粒子通过。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "实验开始时，在第 i$$$i$$$ 个滤波器的位置释放一个粒子，其初始相位设为 Ai$$$A_i$$$。当粒子经过滤波器 i$$$i$$$(包括第一个滤波器)时：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果粒子的相位大于上限 Ai$$$A_i$$$，则粒子会被过滤掉，实验结束。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，粒子通过该滤波器，将其相位增加 K$$$K$$$，并移动到右侧的下一个滤波器，即第 (imodN)+1$$$(i \\bmod N) + 1$$$ 个滤波器。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "我们希望模拟该实验的结果，以便与通过实验验证的结果进行比较。为此，我们需要创建一个大小为 N$$$N$$$ 的向量 Bi$$$B_i$$$，其中 Bi$$$B_i$$$(1≤Bi≤N$$$1 \\leq B_i \\leq N$$$)表示使从位置 i$$$i$$$ 开始的粒子停止的滤波器的位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null
+      {
+        "ai": "第一行包含两个整数 N$$$N$$$(1≤N≤2⋅105$$$1 \\leq N \\leq 2 \\cdot 10^5$$$)和 K$$$K$$$(1≤K≤109$$$1 \\leq K \\leq 10^9$$$)。第二行包含 N$$$N$$$ 个整数 A1,A2,…,AN$$$A_1, A_2, \\ldots, A_N$$$(−109≤Ai≤109$$$-10^9 \\leq A_i \\leq 10^9$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一行，包含 N$$$N$$$ 个整数 B1,B2,…,BN$$$B_1, B_2, \\ldots, B_N$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "J. 粒子的旅程",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

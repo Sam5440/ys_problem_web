@@ -44,31 +44,92 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "有一个大小为 n$$$n$$$ 的排列†$$$^\\dagger$$$ p$$$p$$$，你需要对它进行排序。为此，你最多可以执行 20$$$20$$$ 次以下形式的操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择一组互不相同的下标 i1,i2,⋯ik$$$i_1, i_2, \\cdots i_k$$$，使得 pi1⊕pi2⊕⋯⊕pik$$$p_{i_1} \\oplus p_{i_2} \\oplus \\cdots \\oplus p_{i_k}$$$ 的值为零，其中 ⊕$$$\\oplus$$$ 表示按位异或运算。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将 p$$$p$$$ 在下标 i1,i2,⋯ik$$$i_1, i_2, \\cdots i_k$$$ 处的值排序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，对于 p=[7,3,4,1,2,6,5]$$$p = [7, 3, 4, 1, 2, 6, 5]$$$，你可以选择下标 [2,4,5]$$$[2, 4, 5]$$$，因为 p2⊕p4⊕p5=1⊕2⊕3=0$$$p_2 \\oplus p_4 \\oplus p_5 = 1 \\oplus 2 \\oplus 3 = 0$$$。执行这次操作后，p$$$p$$$ 将变为 [7,1,4,2,3,6,5]$$$[7, 1, 4, 2, 3, 6, 5]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "可以证明，如果能通过任意次操作将该排列排序，那么最多可以在 20$$$20$$$ 次操作内完成。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "†$$$^\\dagger$$$ 长度为 n$$$n$$$ 的排列是一个由 1$$$1$$$ 到 n$$$n$$$ 中 n$$$n$$$ 个互不相同的整数按任意顺序组成的数组。例如，[2,3,1,5,4]$$$[2, 3, 1, 5, 4]$$$ 是一个排列，但 [1,2,2]$$$[1, 2, 2]$$$ 不是排列(2$$$2$$$ 在数组中出现了两次)，[1,3,4]$$$[1, 3, 4]$$$ 也不是排列(n=3$$$n=3$$$，但数组中有 4$$$4$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤2⋅105$$$1\\le t\\le 2\\cdot 10^5$$$)，表示测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤2⋅105$$$1\\le n \\le 2\\cdot 10^5$$$)，表示排列的大小。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个互不相同的整数 p1,p2,⋯pn$$$p_1, p_2, \\cdots p_n$$$(1≤pi≤n$$$1 \\le p_i \\le n$$$)，表示 p$$$p$$$ 的元素。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 2⋅105$$$2\\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "对于每个测试用例，如果无解，输出 −1$$$-1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，输出的第一行应包含一个整数 m$$$m$$$(0≤m≤20$$$0 \\le m \\le 20$$$)，表示你将执行的操作数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中，每行应包含一个整数 k$$$k$$$，后跟 k$$$k$$$ 个互不相同的整数 i1,i2,⋯ik$$$i_1, i_2, \\cdots i_k$$$(1≤ij≤n$$$1 \\le i_j \\le n$$$)，表示你将按顺序执行的操作。执行完这些操作后，排列应当有序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果有多个解，你可以输出任意一个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，p=[8,6,3,4,9,5,2,7,1]$$$p=[8, 6, 3, 4, 9, 5, 2, 7, 1]$$$。接下来我们执行以下操作，其中红色数字表示该操作中选择的位置：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "[8,6,3,4,9,5,2,7,1]→[8,6,3,4,9,5,2,7,1]→[1,2,3,4,6,5,8,7,9]\n$$[8, 6, 3, 4, 9, 5, 2, 7, 1] \\rightarrow [\\color{red}8, \\color{red}6, 3, \\color{red}4, \\color{red}9, 5, \\color{red}2, 7, \\color{red}1] \\rightarrow [\\color{red}1, \\color{red}2, 3, \\color{red}4, \\color{red}6, 5, \\color{red}8, 7, \\color{red}9]$$ [1,2,3,4,6,5,8,7,9]→[1,2,3,4,6,5,8,7,9]→[1,2,3,4,6,5,7,8,9]\n$$[1, 2, 3, 4, 6, 5, 8, 7, 9] \\rightarrow [1, 2, 3, 4, \\color{red}6, 5, \\color{red}8, \\color{red}7, \\color{red}9] \\rightarrow [1, 2, 3, 4, \\color{red}6, 5, \\color{red}7, \\color{red}8, \\color{red}9]$$ [1,2,3,4,6,5,7,8,9]→[1,2,3,4,6,5,7,8,9]→[1,2,3,4,5,6,7,8,9]\n$$[1, 2, 3, 4, 6, 5, 7, 8, 9] \\rightarrow [1, 2, \\color{red}3, 4, \\color{red}6, \\color{red}5, 7, 8, 9] \\rightarrow [1, 2, \\color{red}3, 4, \\color{red}5, \\color{red}6, 7, 8, 9]$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "因此，这一过程成功地将该排列排序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试用例中，p$$$p$$$ 已经有序，因此无需进行任何操作。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "我们可以证明，无论进行多少次操作，第三个测试用例中的排列都无法被排序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "F. 异或排序",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -36,5 +36,59 @@
       "input": "4 5\n**..*\n..***\n.*.*.\n*.*.*",
       "output": "46..3\n..732\n.6.4.\n5.4.3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个由 n × m 个单元格组成的矩形区域。每个单元格要么为空，要么不可通行（包含障碍物）。空单元格用“.”表示，不可通行的单元格用“*”表示。如果两个空单元格有公共边，则称它们相邻。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果一个单元格集合无法再扩展，并且其中任意两个单元格都可以通过相邻单元格组成的路径相互连通，则称其为一个连通分量。这是连通分量的一个典型且广为人知的定义。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每个不可通行的单元格 (x, y)，假设它是一个空单元格（其他所有单元格保持不变），并求出包含 (x, y) 的连通分量的大小（单元格数量）。对于每个不可通行的单元格，都需要独立地进行上述操作。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "答案应输出为一个 n 行 m 列的矩阵。如果某个单元格在开始时为空，则第 i 行第 j 个符号应为“.”。否则，第 i 行第 j 个符号应为唯一的一位数字，即答案对 10 取模的结果。矩阵中不应包含任何空格。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "为了提高输出速度，建议将输出构建为一个由 n 个长度为 m 的字符串组成的数组，并将其按行输出。这样会比逐字符写入快得多。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "由于输入输出的规模可能非常大，建议使用快速输入输出方法：例如，在 C++ 中优先使用 scanf/printf，而不是 cin/cout；在 Java 中优先使用 BufferedReader/PrintWriter，而不是 Scanner/System.out。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n、m（1 ≤ n，m ≤ 1000），表示网格的行数和列数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n 行中的每一行包含 m 个符号：“.” 表示空单元格，“*”表示不可通行的单元格。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "按照上述描述将答案输出为一个矩阵。请参见样例以准确了解输出格式。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个例子中，如果我们假设中心单元格为空，那么它将属于大小为 5 的连通块（十字形）。如果任意一个角落单元格为空，那么它将属于大小为 3 的连通块（角形）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 迷宫",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

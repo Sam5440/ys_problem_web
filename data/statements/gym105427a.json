@@ -37,20 +37,54 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Nick 一直难以保持习惯。问题在于，他根本无法停止保持这些习惯。如果 Nick 连续做了某件事 K$$$K$$$ 次，那么他就必须永远继续做这件事。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "幸运的是，他已经开始拜访 Patternson 医生，一位 PBT(习惯打破疗法)专家。PBT 的原理很简单：Nick 每天都会拜访 Patternson 医生，如果在某次特定的拜访中，他连续 K$$$K$$$ 次做了同一件事，医生就会向他收费。这将促使 Nick 不再继续这一习惯。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "PBT 对 Nick 来说效果非常好，因为他现在已经成功戒掉了所有习惯。除了拜访 Patternson 医生这一习惯。频繁的拜访开始对 Nick 的经济状况造成负担，因此你的任务是计算接下来的 N$$$N$$$ 天里他需要向医生付费多少次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "形式化地，令 s=s1s2s3…sN$$$s = s_1s_2s_3\\dots s_N$$$ 为一个由 0 和 1 组成的字符串。1 表示 Nick 在第 i$$$i$$$ 天需要向医生付费。该字符串按以下方式逐个字符生成：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "si=0$$$s_i = 0$$$，如果 i≤K$$$i \\leq K$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 i>K$$$i  \\gt  K$$$，那么当之前的字符中包含一个重复 K$$$K$$$ 次的模式时，si=1$$$s_i = 1$$$。更具体地，令 s′=s1s2…si−1$$$s' = s_1s_2\\dots s_{i-1}$$$。如果存在一个非空字符串 t$$$t$$$，使得 s′$$$s'$$$ 的最后 |t|⋅K$$$|t|\\cdot K$$$ 个字符可以写成 t+t+⋯+t$$$t+t+\\dots + t$$$，那么 si=1$$$s_i = 1$$$。否则 si=0$$$s_i = 0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定整数 N$$$N$$$ 和 K$$$K$$$，你的任务是计算字符串 s$$$s$$$ 中 1 的个数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/42abb7fd81fcd314457626872fd06d7b5e032593.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null
+      {
+        "ai": "输入包含一行，两个整数 N$$$N$$$ 和 K$$$K$$$(1≤N≤109$$$1 \\leq N \\leq 10^9$$$，2≤K≤109$$$2 \\leq K \\leq 10^9$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数，即字符串 s$$$s$$$ 中 1 的个数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "A. 非周期性预约",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

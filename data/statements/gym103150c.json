@@ -35,22 +35,56 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "给定字符串 abcdefghijklmnopqrstuvwxyz 的一个排列。将其记为 s$$$s$$$。你可以对 s$$$s$$$ 执行以下操作任意多次：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对 s$$$s$$$ 的任意子串进行升序排序。(回想一下，如果可以通过删除 b$$$b$$$ 开头和结尾的若干个(可能为零个)字符得到 a$$$a$$$，那么 a$$$a$$$ 就是 b$$$b$$$ 的子串。)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果可以删除 s$$$s$$$ 中的一些字符，使 s$$$s$$$ 等于字符串 ezpc，则称该字符串是简单的。经过若干次(可能为零次)操作后，能否使 s$$$s$$$ 变得简单？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "输入包含多个测试用例。第一行包含一个整数 t$$$t$$$(1≤t≤5000$$$1 \\leq t \\leq 5000$$$)——测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例仅有一行，包含一个字符串 s$$$s$$$——初始字符串。s$$$s$$$ 是字符串 abcdefghijklmnopqrstuvwxyz 的一个重排。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，如果经过若干次(可能为零次)操作后可以使 s$$$s$$$ 变得简单，则输出 YES。否则，输出 NO。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，s$$$s$$$ 已经是简单的(因此无需执行任何操作)。你可以删除 s$$$s$$$ 最后的 22$$$22$$$ 个字符，剩下的字符串就是 ezpc。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试用例中，你可以通过一次操作使 s$$$s$$$ 变得简单：zaepcbdefgh... →$$$\\rightarrow$$$ aezpbcdefgh....",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "现在，你可以删除 s$$$s$$$ 中的第一个字符、第四个字符和最后 20$$$20$$$ 个字符，从而得到字符串 ezpc：_ezp_c___.... 这里用 _ 表示被删除的字母。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "可以证明，无法使第三个测试用例中的字符串变得简单。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. EZPC 排序",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

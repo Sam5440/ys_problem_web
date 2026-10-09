@@ -38,25 +38,68 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "每年十二月，VK 都会按照传统为其员工举办一项名为“Secret Santa”的活动。活动流程如下。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "有 n$$$n$$$ 名编号从 1$$$1$$$ 到 n$$$n$$$ 的员工参加活动。每名员工 i$$$i$$$ 都被分配给一名不同的员工 bi$$$b_i$$$，员工 i$$$i$$$ 必须向该员工赠送新年礼物。每名员工恰好被分配给另一名员工，且没有人会被分配给自己(但两名员工可以互相分配给对方)。形式化地说，所有 bi$$$b_i$$$ 都必须是 1$$$1$$$ 到 n$$$n$$$ 之间的互不相同的整数，并且对于任意 i$$$i$$$，都必须满足 bi≠i$$$b_i \\ne i$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "通常情况下，这种分配是随机生成的。今年，作为一次实验，活动的所有参与者都被询问了他们希望向谁赠送礼物。每名员工 i$$$i$$$ 都表示希望向员工 ai$$$a_i$$$ 赠送礼物。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "寻找一个有效的分配 b$$$b$$$，使员工愿望得到满足的数量最大。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤105$$$1 \\le t \\le 10^5$$$)。下面给出测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例包含两行。第一行包含一个整数 n$$$n$$$(2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$)——活动参与者的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$(1≤ai≤n$$$1 \\le a_i \\le n$$$；ai≠i$$$a_i \\ne i$$$)——按照从 1$$$1$$$ 到 n$$$n$$$ 的顺序给出的员工愿望。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "对于每个测试用例，输出两行。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第一行输出一个整数 k$$$k$$$(0≤k≤n$$$0 \\le k \\le n$$$)——你的分配方案中得到满足的愿望数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二行输出 n$$$n$$$ 个互不相同的整数 b1,b2,…,bn$$$b_1, b_2, \\ldots, b_n$$$(1≤bi≤n$$$1 \\le b_i \\le n$$$；bi≠i$$$b_i \\ne i$$$)——分配给员工 1,2,…,n$$$1, 2, \\ldots, n$$$ 的员工编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "k$$$k$$$ 必须等于满足 ai=bi$$$a_i = b_i$$$ 的 i$$$i$$$ 的取值个数，并且应尽可能大。若有多个答案，输出任意一个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null
+      {
+        "ai": "在第一个测试用例中，存在两种有效的分配方案：[3,1,2]$$$[3, 1, 2]$$$ 和 [2,3,1]$$$[2, 3, 1]$$$。前一种分配方案满足了两个愿望，而后一种分配方案只满足了一个愿望。因此，k=2$$$k = 2$$$，唯一正确的答案是 [3,1,2]$$$[3, 1, 2]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. Secret Santa",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

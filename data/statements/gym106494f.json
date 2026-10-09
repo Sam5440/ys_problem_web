@@ -40,27 +40,82 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Thanos Sort 是一种排序算法，其运行时间与数组长度成线性关系。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "该排序算法如下：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "1) 如果数组 a=(a1,⋯,an)$$$a = (a_1, \\cdots , a_n)$$$ 已经有序，则过程停止。若对于从 2$$$2$$$ 到 n$$$n$$$ 的每个 i$$$i$$$ 都有 ai−1≤ai$$$a_{i-1} \\le a_i$$$，则称该数组有序。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "2) 否则，等概率随机选择数组的前 ⌈n2⌉$$$\\lceil \\frac{n}{2} \\rceil$$$ 个元素或后 ⌊n2⌋$$$\\lfloor \\frac{n}{2} \\rfloor$$$ 个元素，将它们全部删除，然后算法继续执行步骤 1。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "例如，对数组 [10,4,5,6,8]$$$[10, 4, 5, 6, 8]$$$ 进行排序的过程可能如下：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "[10,4,5,6,8]$$$[10, 4, 5, 6, 8]$$$ -> [6,8]$$$[6, 8]$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "或者：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "[10,4,5,6,8]$$$[10, 4, 5, 6, 8]$$$ -> [10,4,5]$$$[10, 4, 5]$$$ -> [10,4]$$$[10, 4]$$$ -> [10]$$$[10]$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "由于在 Thanos 排序过程中可能会有许多元素消失，对于数组 a$$$a$$$，令 f(a)$$$f(a)$$$ 表示最终数组中剩余元素数量的期望值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定一个数组 a$$$a$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你需要处理以下查询：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "i,x$$$i, x$$$——将 ai:=x$$$a_i := x$$$ 赋值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每次查询后，你需要输出当前数组的 f(a)$$$f(a)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n,q$$$n, q$$$(1≤n,q≤106$$$1 \\le n, q \\le 10^6$$$)——分别表示数组的长度和查询次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an(0≤ai≤109)$$$a_1, a_2, \\ldots, a_n\\, (0 \\le a_i \\le 10^9)$$$——数组 a$$$a$$$ 的初始值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行中，每行包含一对整数 i,x$$$i, x$$$(1≤i≤n,0≤x≤109$$$1 \\le i \\le n, 0 \\le x \\le 10^9$$$)——下一次查询的参数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "每次查询后，在单独的一行输出 f(a)$$$f(a)$$$ 对 998244353$$$998244353$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "F. Thanos Sort",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

@@ -43,5 +43,71 @@
       "input": "10\naaaaaaaaaa\n2\n10 b\n10 z",
       "output": "10\n10"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含一个正整数 n（1 ≤ n ≤ 1 500）——花环的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含一个由 n 个小写英文字母 s1s2... sn 组成的字符串——花环上纸片的初始颜色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三行包含一个正整数 q（1 ≤ q ≤ 200 000）——Nadeko 拥有的方案数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 q 行每行描述一个方案：其中第 i 行包含一个整数 mi（1 ≤ mi ≤ n）——最多可以重新涂色的纸片数量，随后是一个空格，然后是一个小写英文字母 ci——Koyomi 可能喜欢的颜色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 q 行：对于每个方案，输出一行，其中包含一个整数——按照该方案重新涂色花环后所能达到的最大 Koyomity。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，共有三个方案：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第一个方案中，至多可以重新涂 1 个棋子。将“y”棋子重新涂成“o”后得到“kooomi”，其 Koyomity 为 3，这是能够达到的最佳结果；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个方案中，至多可以重新涂 4 个棋子，得到“oooooo”，其 Koyomity 为 6；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个方案中，至多可以重新涂 4 个棋子，得到“mmmmmi”和“kmmmmm”时，二者的 Koyomity 均为 5。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Nadeko 的生日就要到了！她为聚会装饰房间时，一条由石竹花形状的纸片组成的长花环被挂在了墙上的显眼位置。Koyomi 哥哥一定会喜欢的！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "不过，Nadeko 对这条花环仍不满意，于是决定再次打磨它。花环上有 n 个纸片，从左到右编号为 1 到 n，第 i 个纸片的颜色为 si，用一个小写英文字母表示。Nadeko 最多可以重新涂 m 个纸片，并将每个纸片涂成任意的新颜色（仍用小写英文字母表示）。完成后，她找出了花环中所有仅包含颜色 c 的纸片的子段，其中 c 是 Koyomi 哥哥最喜欢的颜色，并将其中最长子段的长度称为这条花环的 Koyomity。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，假设花环表示为“kooomo”，而 Koyomi 哥哥最喜欢的颜色是“o”。在所有仅包含“o”色纸片的子段中，“ooo”最长，长度为 3。因此，这条花环的 Koyomity 等于 3。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "但是，Nadeko 不确定 Koyomi 哥哥最喜欢的颜色，而且对于要进行多少工作也有不同的想法。她有 q 个计划，每个计划都可以表示为一对整数 mi 和小写字母 ci，其含义如上所述。你需要求出按照每个计划重新涂色后能够达到的最大 Koyomity。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 一场热烈的情感传递",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

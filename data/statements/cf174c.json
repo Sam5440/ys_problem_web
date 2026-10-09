@@ -41,5 +41,68 @@
       "input": "5\n2 2\n5 5\n5 5\n5 5\n1 6",
       "output": "5\n1 0 1 0 1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "第一个样例需要对整个数组进行一次调用，另外还需要四次调用：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于区间 [2,2]（即数组的第二个元素），一个，",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于区间 [5,5]（即数组的第五个元素），三个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行输入包含一个整数 n（1 ≤ n ≤ 10^5）——数组 a[1... n] 的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含在若干次函数 rangeIncrement(l, r) 调用后得到的、以空格分隔的整数元素 a[1]、a[2]、...、a[n]（0 ≤ a[i] ≤ 10^5）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证数组中至少有一个元素为正数。保证答案中调用函数 rangeIncrement(l, r) 的次数不超过 10^5。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出 t——使输入数据中的数组得到的函数 rangeIncrement(l, r) 调用次数的最小值。保证该数不超过 10^5。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "然后输出 t 行——函数调用的描述，每行一个。每行应包含两个整数 l_i、r_i（1 ≤ l_i ≤ r_i ≤ n），表示第 i 次调用 rangeIncrement(l, r) 时的参数。调用可以按任意顺序进行。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果存在多种解，允许输出其中任意一种。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Polycarpus 是一名业余程序员。现在，他正在分析一位朋友的程序。他已经在其中找到了函数 rangeIncrement(l, r)：对于区间 [l, r] 中的所有下标，该函数会将数组 a 的每个元素加 1。换句话说，该函数执行以下操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      null,
+      {
+        "ai": "Polycarpus 知道数组 a 在一系列函数调用后的状态。他希望确定得到这种状态所需的最少函数调用次数。此外，他还希望找出在这种情况下需要进行哪些函数调用。保证所需的调用次数不超过 10^5。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "调用函数 rangeIncrement(l, r) 之前，数组中的所有元素都等于 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 区间增加",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

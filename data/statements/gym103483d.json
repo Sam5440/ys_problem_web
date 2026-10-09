@@ -50,29 +50,84 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "通常每个人都会将新年与圣诞树和节日餐桌联系在一起，但学生们会将新年与考试周联系在一起。那天是 12 月 31 日，二年级学生报名参加考试。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "他们有 n$$$n$$$ 天可以参加考试。每名学生都报名在其中某一天参加考试。因此，在第 i$$$i$$$ 天，有 ai$$$a_{i}$$$ 名学生希望参加考试，但这一天最多只能有 bi$$$b_{i}$$$ 名学生参加考试。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "老师需要确保所有学生都有机会参加考试，因此可能需要将一些学生调整到其他日期。老师可以选择任意数量的学生，并为每名学生指定任意一天参加考试。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果一名学生想在第 i$$$i$$$ 天参加考试，而老师最终将考试调整到了第 j$$$j$$$ 天，那么该学生的不满度将等于 |i−j|$$$|i - j|$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请帮助老师安排学生，使得对于所有 i$$$i$$$，在第 i$$$i$$$ 天参加考试的学生不超过 bi$$$b_i$$$ 人，并且学生中的最大不满度最小。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$——学生可以参加考试的天数(1≤n≤106$$$1 \\le n \\le 10^{6}$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入的第二行包含 n$$$n$$$ 个整数 ai$$$a_{i}$$$——想在第 i$$$i$$$ 天参加考试的学生人数(1≤ai≤109$$$1 \\le a_i \\le 10^{9}$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入的第三行包含 n$$$n$$$ 个整数 bi$$$b_{i}$$$——第 i$$$i$$$ 天最多可以参加考试的学生人数(0≤bi≤109$$$0 \\le b_i \\le 10^{9}$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数——可以使任意学生的不满度不超过 k$$$k$$$ 的最小 k$$$k$$$。如果不存在解，则输出 −1$$$-1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "考虑第一个样例测试。注意，有 70 名学生想在第三天参加考试，但只有 24 名学生可以在第 2、3、4 天参加考试。因此，答案至少为 2。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第一个样例测试中，以下是一种移动学生的方式，使得没有学生偏离自己期望的日期超过 2 天。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "6,14,70,1$$$6, 14, 70, 1$$$ — 学生的初始安排；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "6,70,14,1$$$6, 70, 14, 1$$$ — 将第三天的所有学生移到第二天，并将第二天的所有学生移到第三天；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "70,6,14,1$$$70, 6, 14, 1$$$ — 将第二天的所有学生移到第一天，并将第一天的所有学生移到第二天；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "70,6,11,4$$$70, 6, 11, 4$$$ — 将三名学生从第三天移到第四天；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "70,3,14,4$$$70, 3, 14, 4$$$ —— 将三名学生从第二天移到第三天；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，每名学生从其在日程表中的初始位置移动的天数不超过两天。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 考试报名",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

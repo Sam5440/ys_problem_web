@@ -50,37 +50,116 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定一个只包含 ′(′$$$'('$$$ 和 ′)′$$$')'$$$ 的长度为 2n$$$2n$$$ 的平衡括号序列，每个括号都附有一个值 ai$$$a_i$$$，并且每一对匹配括号的值相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，设平衡括号序列为：()(())()$$$()(())()$$$，数组 a$$$a$$$ 为：[1,1,5,1,1,5,2,2]$$$[1, 1, 5, 1, 1, 5, 2, 2]$$$。注意，索引 1$$$1$$$ 和 2$$$2$$$ 处的值相同，因为索引 2$$$2$$$ 处的括号与索引 1$$$1$$$ 处的括号匹配；索引 3$$$3$$$ 和 6$$$6$$$ 处的值相同，因为索引 6$$$6$$$ 处的括号与索引 3$$$3$$$ 处的括号匹配；平衡括号序列中的每一对匹配括号都如此。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你还需要处理两种类型的查询：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "类型 1$$$1$$$ 的查询如下：1$$$1$$$ l1$$$l_1$$$ r1$$$r_1$$$ l2$$$l_2$$$ r2$$$r_2$$$ v$$$v$$$，其中 l1$$$l_1$$$ 和 r1$$$r_1$$$ 是一对匹配括号的下标，l2$$$l_2$$$ 和 r2$$$r_2$$$ 也是一对匹配括号的下标。在这种查询中，你需要将 v$$$v$$$ 的值加到所有满足以下条件的匹配括号对的值上：其左括号位于 min(l1,l2)$$$\\min(l_1, l_2)$$$ 之前或恰好位于该位置，且右括号位于 max(r1,r2)$$$\\max(r_1, r_2)$$$ 之后或恰好位于该位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请注意，不一定有 l1≤l2$$$l1 \\le l2$$$，也不一定有 r1≤l2$$$r1 \\le l2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "类型 2$$$2$$$ 的查询如下：2$$$2$$$ l$$$l$$$ r$$$r$$$，其中 l$$$l$$$ 和 r$$$r$$$ 是一对匹配括号的下标。在这种查询中，你需要求出这两个括号的值(注意，任意一对匹配括号总是具有相同的值，你需要求出的是这个值，而不是两个括号值的和)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请参考注释并查看所描述的示例，以便更好地理解。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "平衡括号序列是一个仅由括号组成的字符串，将某些数字和数学运算插入该序列后，可以得到一个合法的数学表达式。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$ (1≤t≤105)$$$( 1 \\le t \\le 10^{5} )$$$，表示测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在每个测试用例中，你需要读入两个整数 (1≤n≤5∗105)$$$(1 \\le n \\le 5*10^{5})$$$ 和 (1≤q≤5∗105)$$$(1 \\le q \\le 5*10^{5})$$$，其中 2n$$$2n$$$ 是字符串的长度，q$$$q$$$ 是查询的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第二行包含一个括号字符串，即平衡括号序列，字符串长度为 2n$$$2n$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第三行包含数组 a$$$a$$$ (0≤ai≤109)$$$(0 \\le a_i \\le 10^{9})$$$，其中存储着与括号关联的值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行包含 q$$$q$$$ 个查询。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证查询中的所有 ls$$$ls$$$ 和 rs$$$rs$$$ 均在 1$$$1$$$ 到 2n$$$2n$$$ 之间，并且字符串仅由类型为 ()$$$()$$$ 的括号构成平衡括号序列(不包含其他类型的括号，例如 []$$$[]$$$ 或 $$${}$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 和 q$$$q$$$ 之和不超过 5∗105$$$5*10^{5}$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，你需要按照上述描述输出每个类型为 2$$$2$$$ 的查询的答案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定样例的说明：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一个查询：4$$$4$$$ 7$$$7$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下标为 4$$$4$$$ 和 7$$$7$$$ 的匹配对的值为 5$$$5$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个查询：2$$$2$$$ 3$$$3$$$ 4$$$4$$$ 7$$$7$$$ 5$$$5$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下标为 1$$$1$$$ 10$$$10$$$ 的匹配括号对是唯一一个同时包含括号对 2$$$2$$$ 3$$$3$$$ 和 4$$$4$$$ 7$$$7$$$ 的匹配括号对，因此我们将其值增加 5$$$5$$$。执行完这次查询后，值数组变为：8$$$8$$$ 1$$$1$$$ 1$$$1$$$ 5$$$5$$$ 1$$$1$$$ 1$$$1$$$ 5$$$5$$$ 2$$$2$$$ 2$$$2$$$ 8$$$8$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三次查询：1$$$1$$$ 10$$$10$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下标为 1$$$1$$$ 10$$$10$$$ 的匹配括号对的值为 8$$$8$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第四次查询：2$$$2$$$ 3$$$3$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下标为 2$$$2$$$ 3$$$3$$$ 的匹配括号对的值为 1$$$1$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "L. BBS 查询",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

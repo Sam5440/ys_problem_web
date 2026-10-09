@@ -41,24 +41,64 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null
+      {
+        "ai": "Mateo 是奥斯汀最受欢迎的视频游戏商店的店主。一天，他心情很好，决定给当时在店里的 n$$$n$$$ 个人每人送一份礼物。他有 n$$$n$$$ 个互不相同的奖品，编号为 0,1,…,n−1$$$0, 1, \\dots, n - 1$$$。由于 Mateo 从来不会用最简单的方式做事，他想出了以下发放奖品的方案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "他给店里的 n$$$n$$$ 个人分别编号为 1$$$1$$$ 到 n$$$n$$$(包括两端)。随后，他让所有人排成一列，于是可以将这些人的排列记作序列 [x1,x2,…,xn]$$$[x_1, x_2, \\dots, x_n]$$$(其中每个 xi$$$x_i$$$ 都互不相同，且满足 1≤xi≤n$$$1 \\leq x_i \\leq n$$$)。他给第 j$$$x_j$$$ 个人的奖品编号等于 x1⋅x2⋅…⋅xj−1⋅xj(modn)$$$x_1 \\cdot x_2 \\cdot \\ldots \\cdot x_{j-1} \\cdot x_{j} \\pmod{n}$$$。不幸的是，Mateo 每种奖品只有一份，因此他请你设计一个 n$$$n$$$ 个人的排列，使得每个人得到的奖品编号都互不相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null
+      {
+        "ai": "输入的第一行(也是唯一一行)包含一个整数 n$$$n$$$(1≤n≤5⋅105$$$1 \\leq n \\leq 5 \\cdot 10^5$$$)，表示店内的人数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一组由空格分隔的数字 1$$$1$$$ 到 n$$$n$$$(含两端)的排列，表示一种能让每个人获得不同奖品的人员顺序。如果不存在这样的排列，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一个人处理完后，乘积为 1$$$1$$$，因此第一个人获得奖品 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个人处理完后，乘积为 1⋅4=4≡4(mod7)$$$1 \\cdot 4 = 4 \\equiv 4 \\pmod{7}$$$，因此第二个人获得奖品 4$$$4$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三个人处理完后，乘积为 4⋅3=12≡5(mod7)$$$4 \\cdot 3 = 12 \\equiv 5 \\pmod{7}$$$，因此第三个人获得奖品 5$$$5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第四个人处理完后，乘积为 5⋅6=30≡2(mod7)$$$5 \\cdot 6 = 30 \\equiv 2 \\pmod{7}$$$，因此第四个人获得奖品 2$$$2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第五个人处理完后，乘积为 5⋅2=10≡3(mod7)$$$5 \\cdot 2 = 10 \\equiv 3 \\pmod{7}$$$，因此第五个人获得奖品 3$$$3$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第六个人处理完后，乘积为 3⋅2=6≡6(mod7)$$$3 \\cdot 2 = 6 \\equiv 6 \\pmod{7}$$$，因此第六个人获得奖品 6$$$6$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第七个人之后的乘积为 6⋅7=42≡0(mod7)$$$6 \\cdot 7 = 42 \\equiv 0 \\pmod{7}$$$，因此第七个人获得奖品 0$$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "I. 前缀奖品",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

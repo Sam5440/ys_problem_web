@@ -34,17 +34,42 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "大小为 N$$$N$$$ 的拉丁方是一个 N×N$$$N \\times N$$$ 矩阵，其中每个元素都是介于 1$$$1$$$ 和 N$$$N$$$ 之间的整数，且同一行或同一列中的任意两个元素都不相等。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice 有一个大小为 N$$$N$$$ 的拉丁方，并对其进行了一系列变换。每次变换都会交换矩阵中的两行或两列，且这两行或两列互不相同。这些变换按顺序应用：第一次变换作用于原始矩阵，第二次变换作用于第一次变换后的结果，以此类推。最终结果显然是一个 N×N$$$N \\times N$$$ 矩阵。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice 不会向你透露任何矩阵，只会提供变换列表。你的任务是判断是否存在一个原始矩阵，使其经过所有变换后与最终矩阵完全相同。如果存在这样的矩阵，还必须给出该原始矩阵的一种可能内容。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 N$$$N$$$(2≤N≤500$$$2 \\leq N \\leq 500$$$)和 T$$$T$$$(1≤T≤105$$$1 \\leq T \\leq 10^5$$$)，分别表示拉丁方的大小和变换次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 T$$$T$$$ 行按照变换的应用顺序描述这些变换，每行描述一个变换。每行包含一个字符 X$$$X$$$ 和两个整数 I$$$I$$$、J$$$J$$$(1≤I,J≤N$$$1 \\leq I, J \\leq N$$$ 且 I≠J$$$I \\neq J$$$)。字符 X$$$X$$$ 要么是大写字母 'R'，要么是大写字母 'C'，分别表示交换第 I$$$I$$$ 行与第 J$$$J$$$ 行，或第 I$$$I$$$ 列与第 J$$$J$$$ 列。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null
+      {
+        "ai": "若存在一个原始矩阵，使得它在经过所有变换后与最终矩阵完全相同，则输出 N$$$N$$$ 行，每行包含 N$$$N$$$ 个整数，表示任意一个这样的矩阵。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "若不存在这样的矩阵，则改为输出一行，包含字符 '*'（星号）。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "L. 拉丁方",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

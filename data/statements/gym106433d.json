@@ -37,24 +37,64 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Marisa 有 n$$$n$$$ 本魔法书放在书架上，它们都是同一套书中的卷册。每本书在套书中都有一个对应的编号。最初，书架上位置 i$$$i$$$ 的书是套书中的第 ai$$$a_i$$$ 卷，其中 1≤i≤n$$$1\\le i \\le n$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "由于魔法书非常脆弱，只能通过以下操作移动它们。选择两个下标 1≤i<j≤n$$$1\\le i  \\lt  j \\le n$$$，使得书架上位置 i,i+1,…,j$$$i,i+1,\\dots,j$$$ 的书的卷号两两互素∗$$$^{\\text{∗}}$$$；然后将位置 i,i+1,…,j$$$i,i+1,\\dots,j$$$ 上的书的顺序翻转。也就是说，对于每个 0≤r≤j−i$$$0\\le r \\le j-i$$$，原来在位置 i+r$$$i+r$$$ 的书会移动到位置 j−r$$$j-r$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "帮助 Marisa 判断她是否可以使用该操作任意多次对书架上的书进行排序。如果书架上的书的卷号从位于位置 1$$$1$$$ 的书到位于位置 n$$$n$$$ 的书构成一个非递减序列，我们就称书架上的书已经排好序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "∗$$$^{\\text{∗}}$$$我们回顾一下，如果两个整数的最大公约数为 1，则称它们互质。若若干个数中的任意一对都互质，则称这些数两两互质。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个正整数 T$$$T$$$，表示接下来将给出的测试用例数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例以一个整数 n$$$n$$$ 开始，表示书架上的书的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1,a_2,\\dots,a_n$$$，其中 ai$$$a_i$$$ 是最初位于位置 i$$$i$$$ 的书的卷号。注意，a1,a2,…,an$$$a_1,a_2,\\dots,a_n$$$ 不一定两两不同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，如果可以将书排好序，则在一行中输出单词 \"YES\"；否则输出单词 \"NO\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "1≤T≤1000$$$1 \\le T \\le 1000$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1≤n≤105$$$1 \\le n \\le 10^5$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1≤a1,a2,…,an≤106$$$1\\le a_1, a_2, \\dots, a_n \\le 10^6$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所有测试用例中 n$$$n$$$ 的总和不会超过 2⋅105$$$2\\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 魔法书",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

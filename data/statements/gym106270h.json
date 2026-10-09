@@ -45,32 +45,96 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定一个大小为 n$$$n$$$ 的正整数数组 A$$$A$$$。一次操作中，你可以执行以下操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择任意下标 i,j$$$i, j$$$，满足 1≤i,j≤n$$$1 \\le i, j \\le n$$$，",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择一个能整除 Ai$$$A_i$$$ 的正整数 p$$$p$$$，形式化地说，即 p∣Ai$$$p \\mid A_i$$$，",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "更新 Ai:=Aip$$$A_i := \\frac{A_i}{p}$$$，",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "更新 Aj:=Aj⋅p$$$A_j := A_j \\cdot p$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "执行任意次该操作（也可以一次都不执行）后，最终数组必须满足以下要求，这些要求分别来自你的三位朋友：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Muhaimin 希望至少有 a$$$a$$$ 个元素是偶偶数。若一个正整数没有奇素因子，则称其为偶偶数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Noshin 希望至少有 b$$$b$$$ 个元素是奇奇数。若一个正整数没有偶素因子，则称其为奇奇数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Osman 希望整个数组是平衡的。如果数组中的每个元素要么是偶偶数，要么是奇奇数，或者同时满足两者，则称该数组是平衡的。例如，[4, 27] 是平衡数组，而 [6, 9] 不是。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "确定满足全部三个要求所需的最小总费用。可以证明，总能满足全部三个要求。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤500)$$$(1 \\le t \\le 500)$$$ —— 测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含三个以空格分隔的整数 n$$$n$$$、a$$$a$$$ 和 b$$$b$$$(2≤n≤2⋅105，1≤a, b≤(n−1)，2≤a+b≤n)$$$(2 \\le n \\le 2 \\cdot 10^5, 1 \\le a, \\space b \\le (n - 1), 2 \\le a + b \\le n)$$$ —— 数组的大小、偶偶数元素所需的最少数量以及奇奇数元素所需的最少数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第三行包含 n$$$n$$$ 个整数 A1,A2,…,An$$$A_1, A_2, \\dots, A_n$$$(1≤Ai≤106)$$$(1 \\le A_i \\le 10^6)$$$ —— 数组初始时的元素。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出一个整数，表示使数组平衡所需的最小总花费，即数组中至少有 a$$$a$$$ 个偶数和至少有 b$$$b$$$ 个奇数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第二个测试用例中，我们可以选择 i=2$$$i = 2$$$、j=1$$$j = 1$$$ 和 p=4$$$p = 4$$$(将 A2$$$A_2$$$ 除以 4$$$4$$$，并将 A1$$$A_1$$$ 乘以 4$$$4$$$)，得到数组 [32,1,4]$$$[32, 1, 4]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "具有相同最小花费的其他可能最终数组为：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "[8,1,16]$$$[8, 1, 16]$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "[32,4,1]$$$[32, 4, 1]$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "[8,16,1]$$$[8, 16, 1]$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "H. 最优平衡策略",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

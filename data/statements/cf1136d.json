@@ -47,26 +47,72 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "大课间时，Nastya 来到了学校食堂。学校里有 n$$$n$$$ 名学生，编号从 1$$$1$$$ 到 n$$$n$$$。不幸的是，Nastya 来得比较晚，所有学生都已经排好了队，也就是说，Nastya 排在队伍的最后。当然，这让 Nastya 有点难过，但她并不打算沮丧，因为队伍中的一些学生可能会同意与其他学生交换位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "形式化地说，存在一些数对 u$$$u$$$、v$$$v$$$：如果编号为 u$$$u$$$ 的学生正好排在编号为 v$$$v$$$ 的学生前面，Nastya 就可以询问他们，而他们会交换位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Nastya 请你找出她最多能在队伍中向前移动多少个位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n≤3⋅105$$$1 \\leq n \\leq 3 \\cdot 10^{5}$$$，0≤m≤5⋅105$$$0 \\leq m \\leq 5 \\cdot 10^{5}$$$)——队伍中学生的数量，以及这样的学生对的数量：如果第一个学生正好排在第二个学生前面，第一个学生就同意与第二个学生交换位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 p1$$$p_1$$$、p2$$$p_2$$$、...、pn$$$p_n$$$——队伍中学生的初始排列，顺序为从队首到队尾(1≤pi≤n$$$1 \\leq p_i \\leq n$$$，p$$$p$$$ 是由 1$$$1$$$ 到 n$$$n$$$ 的整数构成的一个排列)。换句话说，pi$$$p_i$$$ 是队伍中排在第 i$$$i$$$ 个位置的学生的编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下面给出的 m$$$m$$$ 行中的第 i$$$i$$$ 行包含两个整数 ui$$$u_i$$$ 和 vi$$$v_i$$$(1≤ui,vi≤n，ui≠vi$$$1 \\leq u_i, v_i \\leq n, u_i \\neq v_i$$$)，表示编号为 ui$$$u_i$$$ 的学生同意在 ui$$$u_i$$$ 号学生正好位于 vi$$$v_i$$$ 号学生正前方时与编号为 vi$$$v_i$$$ 的学生交换位置。保证如果 i≠j$$$i \\neq j$$$，则 vi≠vj$$$v_i \\neq v_j$$$ 或 ui≠uj$$$u_i \\neq u_j$$$。注意，在某些数对中，两名学生都可能同意与对方交换位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Nastya 是队伍中的最后一个人，即编号为 pn$$$p_n$$$ 的学生。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数——她在队伍中可以向前移动的位数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中，Nastya 只需与队伍中的第一名学生交换位置即可。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个样例中的最优换位顺序为",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "交换编号为 1$$$1$$$ 和 3$$$3$$$ 的学生的位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "交换编号为 3$$$3$$$ 和 2$$$2$$$ 的学生的位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "交换编号为 1$$$1$$$ 和 2$$$2$$$ 的学生的位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "经过这些操作后，队列依次变为 [3,1,2]$$$[3, 1, 2]$$$，然后是 [1,3,2]$$$[1, 3, 2]$$$，接着是 [1,2,3]$$$[1, 2, 3]$$$，最后是 [2,1,3]$$$[2, 1, 3]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. Nastya 正在买午餐",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -31,5 +31,45 @@
       "input": "6\n1 0\n0 3\n1 8\n0 2\n0 3\n0 0",
       "output": "2 3 3\n5 3 3\n4 3 2\n1 6 0\n2 1 0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（2 ≤ n ≤ 10^5），表示树中的节点数。接下来的 n 行包含两个以空格分隔的整数 c_i、s_i（0 ≤ c_i ≤ 1，0 ≤ s_i ≤ 10^9），其中 c_i 表示第 i 个顶点的颜色（0 表示白色，1 表示黑色），s_i 表示黑板上所画的树中与第 i 个顶点相连的所有边的权值之和。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出树图中 n - 1 条边的描述。每条边的描述由三个整数 v_i、u_i、w_i 组成（1 ≤ v_i、u_i ≤ n，v_i ≠ u_i，0 ≤ w_i ≤ 10^9），其中 v_i 和 u_i 是第 i 条边所连接的节点编号，w_i 是该边的权值。注意，必须满足条件 c_{v_i} ≠ c_{u_i}。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证对于任意输入数据，至少存在一个满足这些数据的图。如果有多个解，输出任意一个即可。你可以按任意顺序输出这些边。输出数字时，请使用空格分隔。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "棋盘上有一张由 n 个节点组成的树图。提醒一下，如果一个无向图是连通的且不包含任何环，那么它就被称为树。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "图中的每个节点都被涂成黑色或白色，并且不存在两个颜色相同且由一条边相连的节点。每条边上都写有一个非负整数作为其权值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "一个名叫 Vasya 的坏男孩来到棋盘旁，在每个节点 v 附近写下数字 s_v——与该节点相连的所有边的权值之和。然后 Vasya 从棋盘上擦去了这些边及其权值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是根据节点的颜色和数字 s_v 还原原来的树。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 黑白树",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

@@ -47,30 +47,88 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Mukhtar 对章鱼和深海着迷。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在死海，漂浮的盐层充当平台，它们由自然条件造成的异常水流连接起来。Mukhtar 利用这些平台四处移动。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "这些平台被表示为无向图中的节点。如果两个平台之间存在一条边，那么 Mukhtar 就可以在它们之间直接移动。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "不幸的是，一些平台上挤满了盐生物，因此 Mukhtar 无法站在上面。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果一座拥挤的平台 v$$$v$$$ 位于两个平台 u$$$u$$$ 和 w$$$w$$$ 之间，且存在一条边 (u,v)$$$(u, v)$$$ 和一条边 (v,w)$$$(v, w)$$$，那么 Mukhtar 可以跳过平台 v$$$v$$$，从 u$$$u$$$ 直接移动到 w$$$w$$$，而无需停留在 v$$$v$$$ 上。在平台 v$$$v$$$ 上使用此能力的代价为 f(v)$$$f(v)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Mukhtar 从平台 1$$$1$$$ 出发，想要到达平台 n$$$n$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "然而，他的能量有限。如果其路径中跳过的平台的总代价超过 c$$$c$$$，Mukhtar 就会被困住，直到条件改善后才能逃脱。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "判断 Mukhtar 是否能够逃脱。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果不存在从平台 1$$$1$$$ 到平台 n$$$n$$$ 的有效路线，或可能的最小总代价大于 c$$$c$$$，输出 −1$$$-1$$$。否则，输出最小总代价。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含四个整数 n$$$n$$$、m$$$m$$$、k$$$k$$$ 和 c$$$c$$$(2≤n,m≤2⋅105$$$2 \\le n, m \\le 2 \\cdot 10^5$$$，0≤k≤n−2$$$0 \\le k \\le n-2$$$，0≤c≤1018$$$0 \\le c \\le 10^{18}$$$)——分别表示平台数量、边的数量、拥挤平台的数量，以及 Mukhtar 能够承担的最大跳过总代价。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 k$$$k$$$ 个互不相同的整数——拥挤平台的编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三行包含 n$$$n$$$ 个整数 f(1),f(2),…,f(n)$$$f(1), f(2), \\ldots, f(n)$$$ (0≤f(i)≤109$$$0 \\le f(i) \\le 10^9$$$)，其中 f(i)$$$f(i)$$$ 表示跳过平台 i$$$i$$$ 的代价。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中的每一行包含两个整数 u$$$u$$$ 和 v$$$v$$$ (1≤u,v≤n$$$1 \\le u, v \\le n$$$，u≠v$$$u \\ne v$$$)，表示平台 u$$$u$$$ 和 v$$$v$$$ 之间的一条无向边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证平台 1$$$1$$$ 和 n$$$n$$$ 不拥挤。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出可能的最小总跳过代价；如果无法做到，则输出 −1$$$-1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一个测试用例的解释：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "拥挤的平台是 3$$$3$$$ 和 5$$$5$$$，跳过代价分别为 f(3)=8$$$f(3) = 8$$$ 和 f(5)=2$$$f(5) = 2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Mukhtar 可以在经过一条合法路径时使用允许的操作跳过平台 5$$$5$$$，从而使总费用为 2$$$2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. Mukhtar 的逃脱计划",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

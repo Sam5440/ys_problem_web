@@ -37,5 +37,63 @@
       "input": "4 5 1\nababa\nccaca\nccacb\ncbabc",
       "output": "1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Vasya 最近开始学习英语。现在他需要记住如何书写英文字母。他对其中一些字母还不太确定，因此决定稍微练习一下。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "他找到了一张方格纸，并开始在上面随意书写英文字母。最后，Vasya 写下了 n 行，每行包含 m 个字符。因此，他得到了一个 n × m 的矩形表格，表格的每个单元格中都包含一个英文字母。我们将表格的行从上到下编号为 1 到 n，将列从左到右编号为 1 到 m。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "随后，Vasya 观察了生成的矩形表格，并想知道，有多少个子表格同时满足以下两个条件：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "子表格中包含至多 k 个字母“a”的单元格；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "位于子表格四个角单元格中的所有字母都相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "形式化地说，子表格的定义如下。它由四个整数 x1、y1、x2、y2 确定，满足 1 ≤ x1 < x2 ≤ n，1 ≤ y1 < y2 ≤ m。子表格包含所有满足以下不等式的单元格 (x, y)（x 是行号，y 是列号）：x1 ≤ x ≤ x2，y1 ≤ y ≤ y2。子表格的角单元格是 (x1, y1)、(x1, y2)、(x2, y1)、(x2, y2)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Vasya 写字写得太累了。因此，他请你帮忙统计他感兴趣的值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n、m、k（2 ≤ n, m ≤ 400；0 ≤ k ≤ n·m）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n 行每行包含 m 个字符，表示给定的表格。表格中的每个字符都是一个小写英文字母。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——所求子表格的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例中有两个合适的子表格：第一个子表格的左上角是单元格 (2, 2)，右下角是单元格 (3, 3)；第二个子表格的左上角是单元格 (2, 1)，右下角是单元格 (3, 4)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 字母表格 - 2",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

@@ -49,34 +49,104 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "这是一道交互题。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在未来的奇妙都市中，地铁列车不再需要驾驶员。由于技术进步，他们被人工智能（AI）取代了。不幸的是，有一天科幻作家们的预言成真了：AI 发生了叛乱，现在地铁中有一辆失控的列车。这可能非常危险！你的任务是找到这辆列车并阻止 AI。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "这座都市的地铁是一条线路(没有自交点的普通直线)，上面有 n$$$n$$$ 个车站，编号从 1$$$1$$$ 到 n$$$n$$$ 依次排列。在任意时刻，列车都位于某个车站。你需要确定该车站的编号，从而使列车得到控制。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "为了找到列车，调度员 Sarah 给了你一个装置。你可以用它选择任意的数 l$$$l$$$ 和 r$$$r$$$(l≤r$$$l \\le r$$$)，然后查询列车是否位于编号在 l$$$l$$$ 到 r$$$r$$$ 之间(包含端点)的车站。不幸的是，该装置的充电需要一定时间(并且每次使用后你都会立即再次使用它)，因此在两次使用装置之间，列车可以移动到距离当前位置至多 k$$$k$$$ 个车站的位置。形式化地说，如果使用装置时列车位于车站 x$$$x$$$，那么在下一次使用装置时，列车可以出现在满足 max(1,x−k)≤y≤min(n,x+k)$$$\\max(1, x - k) \\leq y \\leq \\min(n, x + k)$$$ 的任意车站 y$$$y$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，AI 不知道你正在试图抓住列车，因此它会按照预先制定的计划进行所有移动。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "检查装置后，你发现它非常老旧，最多只能使用 4500$$$4500$$$ 次，超过次数后装置就会损坏，你的任务也将被判定为失败。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你能否通过不超过 4500$$$4500$$$ 次使用装置，找到列车所在的车站？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 k$$$k$$$(1≤n≤1018$$$1 \\leq n \\leq 10^{18}$$$，0≤k≤10$$$0 \\leq k \\leq 10$$$)——分别表示车站数量，以及两次使用装置之间列车最多可以移动的车站数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你最多可以使用装置 4500$$$4500$$$ 次。要使用装置，你需要输出两个用空格分隔的整数 l$$$l$$$ 和 r$$$r$$$(1≤l≤r≤n$$$1 \\leq l \\leq r \\leq n$$$)。随后，如果列车位于车站 l$$$l$$$ 到 r$$$r$$$ 之间(包含两端)，你会收到字符串 \"Yes\"，否则会收到字符串 \"No\"。如果 l=r$$$l = r$$$ 且你收到 \"Yes\"，则表示你已成功找到列车，你的程序必须立即终止。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果收到 \"Bad\" 而不是 \"Yes\" 或 \"No\"，则表示你进行了无效查询或查询次数过多。收到 \"Bad\" 后立即退出，否则由于你的解决方案会继续从已关闭的输入流中读取，你可能会得到任意判定结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输出查询后，别忘了输出换行符并刷新输出缓冲区，否则你会收到 Idleness limit exceeded。要做到这一点，请使用：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 C++ 中使用 fflush(stdout) 或 cout.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Java 中的 System.out.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Pascal 中的 flush(output)；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Python 中的 stdout.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "其他语言请参阅相关文档。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Hack",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "为了进行 Hack，你应按照以下格式提交测试用例。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一行应包含三个整数 n$$$n$$$、k$$$k$$$ 和 p$$$p$$$(1≤n≤1018$$$1 \\le n \\le 10^{18}$$$，0≤k≤10$$$0 \\le k \\le 10$$$，1≤p≤n$$$1 \\le p \\le n$$$)，分别表示车站数量、列车两次使用装置之间最多可以移动的车站数，以及列车的初始位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 4500$$$4500$$$ 行中，每行应包含一个整数 x$$$x$$$(1≤x≤n$$$1 \\le x \\le n$$$)，表示每次查询后列车的位置。任意两个连续的位置(包括初始位置)之差都不应超过 k$$$k$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，下面几行是样例测试的前几行。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
       null
     ],
     "output": [],
     "note": [
-      null
+      {
+        "ai": "在第一个样例中，列车最初位于 5$$$5$$$ 号车站；第一次使用装置后没有移动，第二次使用装置后移动到了 3$$$3$$$ 号车站，第三次使用装置后又移动到了 5$$$5$$$ 号车站。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. 地铁追逐",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

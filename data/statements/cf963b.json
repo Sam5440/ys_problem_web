@@ -35,5 +35,55 @@
       "input": "4\n0 1 2 3",
       "output": "NO"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1≤n≤2·10^5），表示树中顶点的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行包含 n 个整数 p1, p2, …, pn（0≤pi≤n）。若 pi≠0，则顶点 i 和 pi 之间存在一条边。保证给定图是一棵树。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果有可能摧毁所有顶点，输出 \"YES\"（不带引号），否则输出 \"NO\"（不带引号）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果有可能摧毁所有顶点，则在接下来的 n 行中按摧毁顺序输出顶点的编号。如果有多组正确答案，输出任意一组。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，你首先必须移除编号为 1 的顶点（之后边 (1,2) 和 (1,4) 被移除），然后移除编号为 2 的顶点（边 (2,3) 和 (2,5) 也被移除）。此后树中没有任何边，因此你可以按任意顺序移除剩余的顶点。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/6e12cad71c744a2da8773d51510c1273282d8ab6.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "给定一棵树（一个有 n 个顶点和 n - 1 条边的图，并且仅使用其边就可以从任意一个顶点到达其他任意一个顶点）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果一个顶点的度数为偶数，则可以摧毁该顶点。摧毁一个顶点后，与它相连的所有边也会被删除。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "摧毁给定树中的所有顶点，或者判定这是不可能的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 树的摧毁",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

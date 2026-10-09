@@ -42,25 +42,68 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "绵羊的家园中火山正在喷发！帮助绵羊国王逃离熔岩。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "有 n$$$n$$$ 座岛屿，由 m$$$m$$$ 条无向桥相连。每座桥的长度为 w$$$w$$$：通过这座桥恰好需要 w$$$w$$$ 天(绵羊和熔岩均如此)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每座岛屿 i$$$i$$$ 上都有一座火山，会在第 ai$$$a_i$$$ 天喷发。火山喷发时，与该岛屿相连的所有桥都会烧毁并无法使用。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "熔岩会随时间通过桥梁网络扩散，使用与绵羊国王相同的通行时间(通过长度为 w$$$w$$$ 的桥需要 w$$$w$$$ 天)。如果熔岩在某座岛屿的火山喷发前到达该岛屿，则该岛屿会在熔岩到达的瞬间燃烧。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "绵羊国王在第 0$$$0$$$ 天从岛屿 1$$$1$$$ 出发，想要到达岛屿 n$$$n$$$ 逃生。如果他恰好在某座岛屿燃烧时到达，他将被视为安全，并且仍可在该时刻从那里出发。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104)$$$(1 \\le t \\le 10^4)$$$——测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每个测试用例：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n≤105，0≤m≤105)$$$(1 \\le n \\le 10^5,\\ 0 \\le m \\le 10^5)$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1,a_2,\\dots,a_n$$$(1≤ai≤109)$$$(1 \\le a_i \\le 10^9)$$$——表示火山的喷发日期。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中，每行包含三个整数 xj$$$x_j$$$、yj$$$y_j$$$ 和 wj$$$w_j$$$(1≤xj<yj≤n，1≤wj≤109)$$$(1 \\le x_j  \\lt  y_j \\le n, 1 \\le w_j \\le 10^9)$$$，表示连接岛屿 xj$$$x_j$$$ 和 yj$$$y_j$$$ 的长度为 wj$$$w_j$$$ 的无向桥。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "保证所有测试用例的 n$$$n$$$ 之和不超过 105$$$10^5$$$，且所有测试用例的 m$$$m$$$ 之和不超过 105$$$10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，如果可以从岛屿 1$$$1$$$ 到达岛屿 n$$$n$$$，则输出 Yes(不区分大小写)；否则输出 No(不区分大小写)。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "note": [
-      null
+      {
+        "ai": "绵羊国王可以在 2$$$2$$$ 天内从岛屿 1$$$1$$$ 前往岛屿 2$$$2$$$。他在第 2$$$2$$$ 天抵达岛屿 2$$$2$$$，恰好此时该岛燃烧起来。他仍然安全，因此可以继续前往岛屿 3$$$3$$$，并在第 4$$$4$$$ 天抵达那里。答案是 Yes。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "H. 火山群岛",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

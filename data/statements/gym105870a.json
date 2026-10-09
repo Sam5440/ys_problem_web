@@ -43,30 +43,88 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Busy Beaver 收集了一些对贝壳，他想把它们制成两条美丽的手链！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "他有 N$$$N$$$ 对贝壳，其中第 i$$$i$$$ 对中的两枚贝壳类型均为 ai$$$a_i$$$。他想制作两条手链，使得每条手链都恰好从每一对贝壳中取出一枚。Busy Beaver 自行定义了衡量一对手链美丽程度的标准，即使两条手链之间的最长公共子序列∗$$$^{\\text{∗}}$$$长度最小。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "形式化地，设 s$$$s$$$ 和 t$$$t$$$ 是原数组 a$$$a$$$ 的两个排列。我们希望找到使最长循环公共子序列的长度 f(s,t)$$$f(s,t)$$$ 最小的 (s,t)$$$(s,t)$$$，其定义如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "考虑数组 t$$$t$$$ 的所有循环移位，记为 t1,t2,…,tn$$$t_1,t_2,\\dots,t_n$$$†$$$^{\\text{†}}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "设 LCS(s,t)$$$\\text{LCS}(s,t)$$$ 为 s$$$s$$$ 与 t$$$t$$$ 之间的最长公共子序列的长度。则 f(s,t)=max1≤i≤nLCS(s,ti).$$f(s,t) = \\max_{1\\le i \\le n}\\text{LCS}(s,t_i).$$",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "不幸的是，Busy Beaver 的海螺太多了，无法亲手找出最漂亮的手镯对。请帮助他！",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "∗$$$^{\\text{∗}}$$$如果 s$$$s$$$ 可以通过从 t$$$t$$$ 中删除一些(可能为零个或全部)元素而由 t$$$t$$$ 得到，且不重排剩余元素，则数组 s$$$s$$$ 是数组 t$$$t$$$ 的子序列。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "†$$$^{\\text{†}}$$$数组 t=[t(1),t(2),…,t(n)]$$$t=[t^{(1)},t^{(2)},\\dots,t^{(n)}]$$$ 按 i$$$i$$$ 个位置循环移位得到 ti$$$t_i$$$ = [t(1+i),t(2+i),…,t(n+i)]$$$[t^{(1+i)},t^{(2+i)},\\dots,t^{(n+i)}]$$$，其中下标对 n$$$n$$$ 取模。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "每个测试包含多个测试用例。输入的第一行包含一个整数 T$$$T$$$ (1≤T≤500)$$$(1\\le T\\le 500)$$$，表示测试用例的数量。每个测试用例的描述如下。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个正整数 N$$$N$$$(1≤N≤500)$$$(1\\le N\\le 500)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 N$$$N$$$ 个整数 a1,a2,…,aN$$$a_1,a_2,\\dots, a_N$$$(1≤ai≤109)$$$(1\\le a_i\\le 10^9)$$$——这些是 Busy Beaver 收集到的贝壳类型。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 N$$$N$$$ 的总和不超过 500$$$500$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null
+      {
+        "ai": "对于每个测试用例，输出两行。第一行由 N$$$N$$$ 个整数 s1,s2,…,sN$$$s_1,s_2,\\dots,s_N$$$ 组成，第二行由 N$$$N$$$ 个整数 t1,t2,…,tN$$$t_1,t_2,\\dots,t_N$$$ 组成，它们表示某个 (s,t)$$$(s,t)$$$，使 f(s,t)$$$f(s,t)$$$ 最小。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果有多个解，输出任意一个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "注意，f([1,2,3],[1,3,2])$$$f([1,2,3],[1,3,2])$$$ 为 2$$$2$$$，因为 LCS([1,2,3],[1,3,2])=2$$$\\text{LCS}([1,2,3],[1,3,2]) = 2$$$([1,2]$$$[1,2]$$$ 是一个公共子序列)。这是 LCS$$$\\text{LCS}$$$ 在 t$$$t$$$ 的所有循环移位中的最大值：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "LCS([1,2,3],[1,3,2])=2$$$\\text{LCS}([1,2,3],[1,3,2]) = 2$$$([1,2]$$$[1,2]$$$ 是一个公共子序列)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "LCS([1,2,3],[3,2,1])=1$$$\\text{LCS}([1,2,3],[3,2,1]) = 1$$$([1]$$$[1]$$$ 是一个公共子序列)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "LCS([1,2,3],[2,1,3])=2$$$\\text{LCS}([1,2,3],[2,1,3]) = 2$$$([2,3]$$$[2,3]$$$ 是一个公共子序列)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "A. 美丽的手链",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

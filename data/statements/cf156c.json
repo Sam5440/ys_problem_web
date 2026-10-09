@@ -47,5 +47,87 @@
       "input": "2\nya\nklmbfxzb",
       "output": "24\n320092793"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "对于每个单词，你需要输出与它含义相同的其他不同单词的数量。这些单词不只包括输入数据中列出的单词，还包括所有可能的单词。由于所求数量可能非常大，请输出其对 1000000007 (109 + 7) 取模后的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "关于该操作的一些说明：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，对于每个字母，我们都可以明确地定义跟在它后面的字母。按字母表顺序，字母 \"b\" 在字母 \"a\" 后面，字母 \"c\" 在字母 \"b\" 后面，……，字母 \"z\" 在字母 \"y\" 后面。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "前面的字母也以类似的方式定义：字母 \"y\" 在字母 \"z\" 前面，……，字母 \"a\" 在字母 \"b\" 前面。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，该操作不会改变单词的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第一个样例中，你可以得到唯一的另一个单词 \"ba\"。在第二个样例中，你无法得到任何其他单词，因此正确答案是 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "考虑第三个样例。一次操作可以将单词“klmbfxzb”变为“klmcexzb”：我们应选择 p = 4，并将第四个字母替换为后一个字母（“b”  →  “c”），将第五个字母替换为前一个字母（“f”  →  “e”）。此外，我们还可以从这个单词得到许多其他单词。一次操作只能将单词“ya”变为另一个单词“xb”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "单词“ya”的含义与单词“xb”、“wc”、“vd”、……、“ay”相同（总共有另外 24 个单词）。单词“klmbfxzb”的变体则多得多，其含义相同的其他单词有 3320092814 个。因此，第一个单词的答案为 24，第二个单词的答案为 320092793，即 3320092814 对 109 + 7 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Sherlock Holmes 发现了两位 VIP 之间的一封神秘信件，于是决定阅读它。但问题来了！这封信件竟然经过了加密。侦探费尽心思尝试破译信件，但他什么也看不懂。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最后，经过一番思考，他想到了一个办法。设有一个由 |s| 个小写拉丁字母组成的单词 s。一次操作中，你可以选择一个位置 p（1 ≤ p < |s|），并执行以下操作之一：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "要么将字母 s_p 替换为字典序中紧随其后的字母，并将字母 s_{p + 1} 替换为字典序中紧随其前的字母；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "或将字母 sp 替换为按字母表顺序排在它之前的字母，并将字母 sp + 1 替换为按字母表顺序排在它之后的字母。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，字母“z”没有定义的后继字母，字母“a”也没有定义的前驱字母。因此，相应的变换是不允许的。如果某次操作至少需要执行一次不允许的变换，那么该操作无法执行。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当且仅当其中一个单词可以通过零次或多次操作转换为另一个单词时，这两个单词的含义相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Sherlock Holmes 需要学会快速确定对于每个单词，存在多少个与给定单词含义相同、但与给定单词至少有一个字符不同的单词。请对这个数量对 1000000007（10^9 + 7）取模后告诉他。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入数据包含多组测试。第一行包含唯一的整数 t（1 ≤ t ≤ 10^4），表示测试组数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 t 行包含这些单词，每行一个。每个单词由小写拉丁字母组成，长度在 1 到 100 之间（含端点）。不同单词的长度可以不同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 密码",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

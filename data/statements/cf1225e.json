@@ -44,23 +44,60 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "你位于一个 n×m$$$n \\times m$$$ 迷宫的左上角单元格 (1,1)$$$(1, 1)$$$。你的目标是到达右下角单元格 (n,m)$$$(n, m)$$$。你只能向右或向下移动，每次移动一个单元格。从单元格 (x,y)$$$(x, y)$$$ 向右移动会到达单元格 (x,y+1)$$$(x, y + 1)$$$，而向下移动会到达单元格 (x+1,y)$$$(x + 1, y)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "迷宫中的一些单元格里有岩石。当你移动到一个有岩石的单元格时，岩石会沿你移动的方向被推到下一个单元格。如果下一个单元格中有岩石，它会被继续向前推动，依此类推。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "迷宫被无法穿透的墙包围，因此任何会使你或任何岩石移出迷宫的移动都是非法的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "计算从起点到终点可以经过的不同合法路径数量，对 109+7$$$10^9 + 7$$$ 取模。如果至少存在一个单元格在一条路径中被访问、但在另一条路径中未被访问，则认为这两条路径不同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n,m$$$n, m$$$——迷宫的尺寸(1≤n,m≤2000$$$1 \\leq n, m \\leq 2000$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来 n$$$n$$$ 行描述迷宫。每行包含 m$$$m$$$ 个字符。这些行中第 i$$$i$$$ 行的第 j$$$j$$$ 个字符，如果单元格 (i,j)$$$(i, j)$$$ 中有岩石，则等于 \"R\"；如果单元格 (i,j)$$$(i, j)$$$ 为空，则等于 \".\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证起始单元格 (1,1)$$$(1, 1)$$$ 为空。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数——从 (1,1)$$$(1, 1)$$$ 到 (n,m)$$$(n, m)$$$ 的不同合法路径数量，对 109+7$$$10^9 + 7$$$ 取模。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中，我们无法(也无需)移动，因此唯一的路径只包含一个单元格 (1,1)$$$(1, 1)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，目标被阻挡，无法到达。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三个样例的示意图可以在这里找到：https://assets.codeforces.com/rounds/1225/index.html",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E. 岩石会被推动",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

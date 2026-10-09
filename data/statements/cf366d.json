@@ -38,5 +38,67 @@
       "input": "5 6\n1 2 1 10\n2 5 11 20\n1 4 2 5\n1 3 10 11\n3 4 12 10000\n4 5 6 6",
       "output": "Nice work, Dima!"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Dima 和 Inna 喜欢共度时光。问题在于，不知为何，Seryozha 并不太热衷于离开自己的房间。但 Dima 和 Inna 非常相爱，于是他们决定犯罪……",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Dima 构造了一个陷阱图。他喊道：“嘿，Seryozha，快来看看我酷炫的图！”以此引起室友的兴趣，然后把他踢进了第一个节点。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "陷阱图是一个由 n 个节点和 m 条边组成的无向图。对于编号为 k 的边，Dima 为其标记了一个从 lk 到 rk 的整数区间（lk ≤ rk）。为了逃出陷阱图，Seryozha 应在开始移动之前先选择某个整数（记为 x），然后从编号为 1 的起始节点出发，沿某条路径到达编号为 n 的终点节点。此时，只有当 lk ≤ x ≤ rk 时，Seryozha 才能沿着第 k 条边移动。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Seryozha 是一名数学家。他将从第 1 个节点到第 n 个节点的一条路径的忠诚度定义为满足以下条件的整数 x 的数量：如果他一开始选择其中一个 x，就能够走完整条路径。请帮助 Seryozha 找到忠诚度最大的路径，并让他尽快回到自己的房间！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个示例的解释。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "总共有 2 种从节点 1 到节点 4 的方式：首先必须沿着范围为 [1-10] 的边 1-2 行进，然后沿着两条边 2-4 中的一条行进。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "其中一条边的范围为 [3-5]，也就是说，我们可以使用数字 3、4、5 通过。因此，这条路径的忠诚度为 3。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果我们沿着范围为 [2-7] 的边 2-4 行进，那么可以使用数字 2、3、4、5、6、7 通过。忠诚度为 6。这就是答案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "边 1-2 不会影响答案，因为它的范围包含后续两条边的范围。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 m（2 ≤ n ≤ 103，0 ≤ m ≤ 3·103）。接下来 m 行描述这些边。每行包含四个整数 ak、bk、lk 和 rk（1 ≤ ak、bk ≤ n，1 ≤ lk ≤ rk ≤ 106）。这些数字表示在陷阱图中，第 k 条边连接节点 ak 和 bk，并且该边对应的整数区间为从 lk 到 rk。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，给定的图中可能存在自环和重边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在一行中输出所有从第一个节点到第 n 个节点的路径中的最大忠诚度。如果不存在这样的路径，或最大忠诚度等于 0，则在一行中输出 \"Nice work, Dima!\"，不包括引号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Dima 与陷阱图",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

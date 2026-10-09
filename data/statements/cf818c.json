@@ -52,5 +52,107 @@
       "input": "2\n2 2\n2 1 1 1\n1 2 2 2\n1 0 0 0",
       "output": "-1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含一个整数 d（1 ≤ d ≤ 10^5）——仓库中沙发的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含两个整数 n、m（1 ≤ n，m ≤ 10^5）——仓库的大小。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 d 行中，每行包含四个整数 x1、y1、x2、y2（1 ≤ x1、x2 ≤ n，1 ≤ y1、y2 ≤ m）——第 i 张沙发的坐标。保证单元格 (x1，y1) 和 (x2，y2) 具有公共边，(x1，y1) ≠ (x2，y2)，并且没有任何单元格被多于一张沙发覆盖。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最后一行包含四个整数 cntl、cntr、cntt、cntb（0 ≤ cntl、cntr、cntt、cntb ≤ d - 1）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出满足所有条件的沙发编号。输入中沙发的编号为 1 到 d。如果不存在这样的沙发，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "让我们来看第二个样例。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一张沙发左边有 0 张沙发，右边有 2 张沙发（(1, 1) 位于 (5, 5) 和 (5, 4) 的左侧），上方有 0 张沙发，下方有 2 张沙发（第 2 张和第 3 张沙发都在其下方）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二张沙发的 cntl = 2、cntr = 1、cntt = 2、cntb = 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三张沙发的 cntl = 2、cntr = 1、cntt = 1、cntb = 1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "因此第二个符合给定条件。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个样例中",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一个沙发的 cntl = 1、cntr = 1、cntt = 0 且 cntb = 1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个沙发的 cntl = 1、cntr = 1、cntt = 1 且 cntb = 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "并且不存在集合为 (1, 0, 0, 0) 的沙发，因此答案是 -1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "又一轮 DecoForces 比赛即将开始！马克斯爷爷本想参加，但有人偷走了他珍贵的沙发！遭受如此重大的损失后，他又怎么能发挥出色呢？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "幸运的是，小偷给马克斯爷爷留下了一张纸条。这张纸条把马克斯带到了沙发仓库。然而，他仍然不知道哪张沙发属于自己，因为它们看起来全都一样！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "仓库用一个 n × m 的矩阵表示。每张沙发占据两个有公共边的相邻单元格。没有任何单元格会被多于一张沙发覆盖。仓库中可以存在空单元格。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果存在两个这样的单元格 a 和 b，满足 xa < xb，且 a 被沙发 A 覆盖、b 被沙发 B 覆盖，则称沙发 A 位于沙发 B 的左侧。如果存在两个这样的单元格 a 和 b，满足 ya < yb，且 a 被沙发 A 覆盖、b 被沙发 B 覆盖，则称沙发 A 位于沙发 B 的上方。右侧和下方的条件定义方式相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，在所有条件中 A ≠ B。此外，某张沙发 A 既可能位于另一张沙发 B 的上方，也可能位于它的下方。左侧和右侧的条件同理。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注释还说明，Maks爷爷的沙发左边有 cntl 张沙发，右边有 cntr 张沙发，上方有 cntt 张沙发，下方有 cntb 张沙发。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Maks爷爷请你帮助他确定他的沙发。保证满足给定条件的沙发至多有一张。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输出Maks爷爷的沙发编号。如果不存在满足全部条件的沙发，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 沙发小偷",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

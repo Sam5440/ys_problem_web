@@ -46,33 +46,100 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "本题与困难版的唯一区别是，所有 ai$$$a_{i}$$$ 都是偶数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在食死徒最近几次袭击霍格沃茨城堡后，凤凰社决定在霍格莫德村安置 n$$$n$$$ 名成员。这些房屋将坐落在一片风景如画的 n×n$$$n\\times n$$$ 方形场地上。每位巫师都将拥有自己的房屋，并且每栋房屋都属于某位巫师。每栋房屋占据一个方格的空间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "然而，正如你可能知道的那样，巫师们非常迷信。在周末，每位编号为 i$$$i$$$ 的巫师都想去参观一座与自己的房屋恰好相距 ai$$$a_{i}$$$ (0≤ai≤n)$$$(0 \\leq a_{i} \\leq n)$$$ 的房屋。村庄中的道路均沿水平和竖直方向修建，因此在 n×n$$$n\\times n$$$ 方形场地上，点 (xi,yi)$$$(x_{i}, y_{i})$$$ 与 (xj,yj)$$$(x_{j}, y_{j})$$$ 之间的距离为 |xi−xj|+|yi−yj|$$$ |x_{i} - x_{j}| + |y_{i} - y_{j}|$$$。巫师们彼此了解并信任对方，因此当另一位巫师不在时，一位巫师可以参观另一位巫师的房屋。将要建造的房屋足够大，可以让所有 n$$$n$$$ 位巫师同时参观任意一座房屋。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "除此之外，每位巫师都必须能看到北方的霍格沃茨城堡和南方的禁林，因此不能有其他巫师的房屋遮挡视线。对于村庄而言，这意味着在 n×n$$$n\\times n$$$ 的场地中，每一列至多有一座房屋，即如果第 i$$$i$$$ 座房屋的坐标为 (xi,yi)$$$(x_{i}, y_{i})$$$，则 xi≠xj$$$x_{i} \\neq x_{j}$$$ 对所有 i≠j$$$i \\neq j$$$ 均成立。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "凤凰社还不知道是否可以以一种满足所有 n$$$n$$$ 位巫师的拜访和视野要求的方式放置 n$$$n$$$ 座房屋，因此他们请求你帮助设计这样的方案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果存在一种正确的布局，使得对于第 i$$$i$$$ 位巫师，有一座房屋与其相距 ai$$$a_{i}$$$，并且第 i$$$i$$$ 位巫师的房屋所在列中只有这一座房屋，则输出 YES、每位巫师对应房屋的位置，以及每位巫师在周末应该前往哪位巫师的房屋。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果不存在正确的布局，则输出 NO。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含 n$$$n$$$(2≤n≤2⋅105$$$2 \\leq n \\leq 2\\cdot 10^{5}$$$)，表示要建造的房屋数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,…,an$$$a_{1}, \\ldots, a_{n}$$$(0≤ai≤n)$$$(0 \\leq a_{i} \\leq n)$$$。所有 ai$$$a_{i}$$$ 均为偶数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "如果存在这样的放置方案，在第一行输出 YES；否则输出 NO。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果答案为 YES，输出另外 n+1$$$n + 1$$$ 行描述该放置方案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行应包含每个巫师的房屋位置 1≤xi,yi≤n$$$1 \\leq x_{i}, y_{i} \\leq n$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最后一行的第 i$$$i$$$ 个元素应包含这样一名巫师的编号：该巫师的房屋与第 i$$$i$$$ 名巫师的房屋之间的距离恰好为 ai$$$a_{i}$$$。如果有多名这样的巫师，可以输出任意一名。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果存在多种房屋放置方案，可以输出任意一种。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "对于样例，第 1 名巫师的房屋位于 (4,4)$$$(4, 4)$$$，第 2 名位于 (1,3)$$$(1, 3)$$$，第 3 名位于 (2,4)$$$(2, 4)$$$，第 4 名位于 (3,1)$$$(3, 1)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从第1位巫师的房子到第1位巫师的房子的距离为 |4−4|+|4−4|=0$$$|4 - 4| + |4 - 4| = 0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从第2位巫师的房子到第1位巫师的房子的距离为 |1−4|+|3−4|=4$$$|1 - 4| + |3 - 4| = 4$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从第3位巫师的房子到第1位巫师的房子的距离为 |2−4|+|4−4|=2$$$|2 - 4| + |4 - 4| = 2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从第4位巫师的房子到第3位巫师的房子的距离为 |3−2|+|1−4|=4$$$|3 - 2| + |1 - 4| = 4$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所有房子的视野条件和距离条件都满足，因此这种放置是正确的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/46fb6d77c3efe790c6b2474d41827ea5fbb74911.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B1. 精确邻居（简单版）",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

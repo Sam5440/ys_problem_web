@@ -40,27 +40,76 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "情人节就要到了！！这不仅是人类的特殊节日，也是生活在 Dinoland 的恐龙们的特殊节日！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Danny 是一只很受欢迎的恐龙，许多其他恐龙都邀请他约会。事实上，他收到了 K$$$K$$$ 个编号从 1$$$1$$$ 到 K$$$K$$$ 的约会邀请。第 i$$$i^{\\text{th}}$$$ 个约会邀请是由恐龙 i$$$i$$$ 发给他的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "不过，这里有一个小问题。Danny 有 N$$$N$$$ 个朋友，可以用一棵树来表示，其中每个节点代表 Danny 的一位朋友。如果两只恐龙之间存在一条边，则称它们是直接朋友。如果两只恐龙之间存在一条路径，则称它们是朋友，并称它们属于同一个朋友圈。Danny 的每位朋友编号从 1$$$1$$$ 到 N$$$N$$$，其中第 i$$$i^{\\text{th}}$$$ 位朋友的值为 ai$$$a_i$$$，表示其约会经历。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 Danny 接受了第 i$$$i^{\\text{th}}$$$ 个圣瓦伦丁约会邀请，所有曾与发出该邀请的恐龙约会过的朋友都会生气并离开朋友圈。当且仅当 i$$$i$$$ 能整除 aj$$$a_j$$$ 时，朋友 j$$$j$$$ 会在 Danny 接受第 i$$$i^{\\text{th}}$$$ 个约会邀请时生气。当一只恐龙离开朋友圈后，它将不再属于该朋友圈，并且它与直接朋友之间的联系也会消失。因此，朋友圈会被分割成多个更小的朋友圈。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Danny 正在权衡接受这些邀请的利弊。他请求你的帮助。对于他收到的每个邀请 i$$$i$$$，他想让你告诉他，最终会有多少个朋友圈。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行给出两个整数 N$$$N$$$ 和 K$$$K$$$(1≤N,K≤106)$$$(1 \\leq N, K \\leq 10^6)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入的第二行给出 N$$$N$$$ 个整数 a1a2...aN$$$a_1a_2 ...a_N$$$(1≤ai≤106)$$$( 1 \\leq a_i \\leq 10^6)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在接下来的 N−1$$$N-1$$$ 行输入中，每行给出两个整数 u$$$u$$$ 和 v$$$v$$$(1≤u,v≤N$$$1 \\leq u, v\\leq N$$$)，表示好友 u$$$u$$$ 和 v$$$v$$$ 是直接好友，且它们之间存在一条边。保证这些好友构成一棵树。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出 K$$$K$$$ 个整数，分别表示 Danny 接受每个邀请后剩余的好友组数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "好友构成的树最初如下所示：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/e24e89be6f332dab50462bf38c1969b036edebef.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接受邀请 1$$$1$$$ 将导致 Danny 失去所有朋友，因此剩余的朋友圈数量将为 0$$$0$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接受邀请 2$$$2$$$ 将导致 Danny 失去朋友 3$$$3$$$ 和 4$$$4$$$，从而形成两个彼此分离的剩余朋友圈。![](https://espresso.codeforces.com/0c91c71485513cdd7a0a72751cdc34765c12fec0.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接受邀请 3$$$3$$$ 将导致 Danny 失去朋友 2$$$2$$$ 和 4$$$4$$$，从而剩下一个朋友圈。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/b6d908f140e7557f8c5b21f823847d99a009fe4b.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "M. 朋友管理",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

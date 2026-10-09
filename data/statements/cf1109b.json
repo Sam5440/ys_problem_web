@@ -48,23 +48,60 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "阅读书籍是 Sasha 的爱好之一。有一次，他在阅读一本书时，结识了一个不寻常的角色。这个角色这样介绍自己：“在许多国家，我有许多名字。在精灵中，我叫 Mithrandir；在矮人中，我叫 Tharkûn；在那被遗忘的西方，我年轻时叫 Olórin；在南方，我叫 Incánus；在北方，我叫 Gandalf；至于东方，我不会去。”",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "就在那一刻，Sasha 想道：那个角色在东方会被怎样称呼呢？在东方，所有名字都是回文。如果一个字符串从前往后读和从后往前读都相同，那么它就是回文。例如，“kazak”、“oo”和“r”都是回文，而“abb”和“ij”不是。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Sasha 认为英雄将以东方诸神中的一位命名。由于不允许出现两个相同的名字，东方人采取了如下做法：他们将原始名字作为字符串写在一张纸上，然后将纸张剪切最少的 k$$$k$$$ 次，从而得到 k+1$$$k+1$$$ 张包含初始字符串子串的纸片，之后将这些纸片拼接起来得到一个新字符串。纸片不能翻面，但可以重新排列。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "通过这种方式，可以用 3$$$3$$$ 次剪切将字符串 f|de|abc|g 变为字符串 abcdefg(交换包含子串 f 和 abc 的纸片即可)。使用相同的剪切次数无法得到字符串 cbadefg。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "更正式地说，对于给定的回文串 s$$$s$$$，Sasha 想要找到这样的最小 k$$$k$$$：将该字符串剪切成 k+1$$$k + 1$$$ 个部分，然后以某种方式将它们拼接，使最终字符串为回文串且不等于初始字符串 s$$$s$$$。如果不存在答案，则输出 \"Impossible\"(不含引号)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null
+      {
+        "ai": "第一行包含一个字符串 s$$$s$$$(1≤|s|≤5000$$$1 \\le |s| \\le 5\\,000$$$)——初始名字，该名字仅由小写拉丁字母组成。保证 s$$$s$$$ 是回文串。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数 k$$$k$$$——得到新名字所需的最少剪切次数；如果无法做到，则输出 \"Impossible\"(不含引号)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中，可以在如下位置剪切字符串：no|l|on，然后按如下方式将它们拼接：on|l|no。可以证明只剪切一次不存在可行解。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，你可以恰好从字符串中间切开并交换两段，于是得到 toot。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个样例中，你无法构造出一个不等于初始字符串的字符串。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第四个样例中，你可以切下后缀 nik 并将其添加到开头，于是得到 nikkinnikkin。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. Sasha 和另一个名字",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

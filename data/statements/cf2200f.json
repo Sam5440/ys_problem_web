@@ -39,26 +39,72 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Bessie 需要尽可能多地在她自己的 Mooclear Reactor 中产生能量。她有 n$$$n$$$ 种不同的粒子。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个粒子由两个整数 x$$$x$$$ 和 y$$$y$$$ 定义。该粒子产生 x$$$x$$$ 单位的能量，但其反应性为 y$$$y$$$，这意味着它最多只能与反应堆中的 y$$$y$$$ 个其他粒子共存。形式化地说，如果选择该粒子产生能量，那么最多还可以选择 y$$$y$$$ 个粒子(除自身外)产生能量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "贝茜必须选择一个满足该约束的粒子子集来产生能量。她产生的能量等于子集中所有粒子的能量之和。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "有一家商店，里面有 m$$$m$$$ 个粒子。贝茜可以从商店中恰好购买一个粒子。对于商店中的每个粒子，确定如果她只从商店购买该粒子，能够产生的最大总能量。贝茜不一定要使用购买的粒子。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\leq t \\leq 10^4$$$)——测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤2⋅105$$$1 \\leq n, m \\leq 2 \\cdot 10^5$$$)——分别表示贝茜拥有的粒子数和商店中的粒子数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行中，第 i$$$i$$$ 行包含两个整数 x$$$x$$$ 和 y$$$y$$$(1≤x≤109$$$1 \\leq x \\leq 10^9$$$，0≤y≤n$$$0 \\leq y \\leq n$$$)——分别表示贝茜的第 i$$$i$$$ 个粒子的能量和反应性。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中，第 j$$$j$$$ 行包含两个整数 x$$$x$$$ 和 y$$$y$$$(1≤x≤109$$$1 \\leq x \\leq 10^9$$$，0≤y≤n$$$0 \\leq y \\leq n$$$)——分别表示商店中第 j$$$j$$$ 个粒子的能量和反应性。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和以及 m$$$m$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出 m$$$m$$$ 个整数。第 i$$$i$$$ 个整数应为 Bessie 从商店购买第 i$$$i$$$ 个粒子时能够产生的最大总能量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 Bessie 购买粒子 4$$$4$$$，那么对她而言最优的做法是只使用粒子 1$$$1$$$，并产生 67$$$67$$$ 个能量单位。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果她购买粒子 5$$$5$$$，那么她应该只使用粒子 5$$$5$$$，这会产生 100$$$100$$$ 个能量单位。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果她购买粒子 6$$$6$$$，那么她应该使用粒子 3$$$3$$$ 和 6$$$6$$$，总共产生 69$$$69$$$ 个能量单位。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "F. Mooclear Reactor 2",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

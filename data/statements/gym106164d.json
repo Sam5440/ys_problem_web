@@ -78,45 +78,136 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Audrey 和 Bastian 即将开始一场史诗般的地牢探险，他们将面对 R$$$R$$$ 只怪物(1≤R≤109$$$1 \\le R \\le 10^9$$$)。每只怪物的生命值(HP)在 0$$$0$$$ 到 N$$$N$$$ 之间(1≤N≤5×105$$$1 \\le N \\le 5 \\times 10^5$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "游戏规则",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "战斗按回合进行，Audrey 先手：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个回合，当前玩家选择一个生命值 >0$$$ \\gt  0$$$ 的怪物",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果所选怪物的生命值为 x$$$= x$$$，玩家可以选择造成 d$$$d$$$ 点伤害，其中 1≤d≤p[x]$$$1 \\le d \\le p[x]$$$。保证对于所有 x$$$x$$$，均有 1≤p[x]≤x$$$1 \\le p[x] \\le x$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "怪物的生命值变为 x−d$$$x - d$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "击败最后一只怪物(将最后一个非零生命值降至 0$$$0$$$)的玩家获胜",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "双方均采取最优策略。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "准备阶段",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Audrey 的准备：Audrey 是一名狡猾的冒险家，她提前准备好了地牢。她将所有 R$$$R$$$ 个怪物的初始生命值设为 a1,a2,…,aR$$$a_1, a_2, \\ldots, a_R$$$，其中 0≤ai≤N$$$0 \\le a_i \\le N$$$。Audrey 对怪物进行了配置，使得如果游戏以这些生命值进行，她一定能够获胜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Bastian 的破坏：Bastian 发现了 Audrey 的计划，并决定在战斗开始前恰好破坏一个怪物。他选择一个生命值为 ai$$$= a_i$$$ 的怪物，其中 ai≥K$$$a_i \\ge K$$$，并将其生命值减少 K$$$K$$$，使其新生命值变为 ai−K$$$a_i - K$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Bastian 的目标是扭转局面并确保自己获胜。如果 Bastian 无法选择一个能确保自己获胜的怪物，他就放弃地牢（游戏不会进行）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你需要确定在最后一天可能出现多少种不同的配置 (a1,a2,…,aR)$$$(a_1, a_2, \\ldots, a_R)$$$(如果游戏进行，则为 Bastian 破坏之后的配置)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "重要：应根据 Bastian 修改后的生命值统计配置，而不是根据 Audrey 设置的初始值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果两个配置包含不同的生命值，或包含相同的生命值但顺序不同，则认为它们不同(例如，(1,3,2)≠(1,2,3)$$$(1, 3, 2) \\neq (1, 2, 3)$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含三个整数 N$$$N$$$、K$$$K$$$ 和 R$$$R$$$，分别表示最大生命值、最大减少量和怪物数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 N$$$N$$$ 个整数 p[1],p[2],…,p[N]$$$p[1], p[2], \\ldots, p[N]$$$，其中 p[i]$$$p[i]$$$ 表示对生命值为 i$$$i$$$ 的怪物所能造成的最大伤害。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数，表示最后一天可能的怪物生命值配置数量，对 998244353$$$998244353$$$ 取模。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
+      {
+        "ai": "输入样例 1",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
       null,
+      {
+        "ai": "输出样例 1",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
       null,
+      {
+        "ai": "解释 1",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当 R=1$$$R = 1$$$ 只怪物时，最后一天的可能配置都是单怪物配置。有效的最终配置为 (3)$$$(3)$$$ 和 (5)$$$(5)$$$，因此共有 2$$$2$$$ 种可能的配置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入样例 2",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
       null,
+      {
+        "ai": "输出样例 2",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
       null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "解释 2",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "一种有效的最后一天配置示例是 (1,7,2)$$$(1, 7, 2)$$$。该配置可能由以下过程得到：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Audrey 最初选择 (1,7,5)$$$(1, 7, 5)$$$，随后 Bastian 将 HP =5$$$= 5$$$ 的怪物减少 K=3$$$K = 3$$$，使其 HP 变为 =2$$$= 2$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Audrey 最初选择了 (1,10,2)$$$(1, 10, 2)$$$，随后 Bastian 将生命值为 10$$$= 10$$$ 的怪物降低了 K=3$$$K = 3$$$，使其生命值变为 7$$$= 7$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在这两种情况下，初始配置都保证 Audrey 获胜，但在 Bastian 破坏配置后，最终配置 (1,7,2)$$$(1, 7, 2)$$$ 保证 Bastian 获胜。这样的有效最终配置总数为 194$$$194$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. Dungeons and Dragons",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

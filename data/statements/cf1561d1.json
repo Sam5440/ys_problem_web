@@ -46,25 +46,68 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "本题与下一题的唯一区别在于对 n$$$n$$$ 的约束条件不同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，本题的内存限制低于其他题目。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你有一个包含 n$$$n$$$ 个单元格的竖直条带，这些单元格从上到下依次编号为 1$$$1$$$ 到 n$$$n$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你还有一个令牌，初始时位于单元格 n$$$n$$$ 中。你需要向上移动令牌，直到它到达单元格 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在某个时刻，棋子位于编号为 x>1$$$x  \\gt  1$$$ 的格子中。棋子的一次移动可以属于以下两种类型之一：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "减法：选择一个介于 1$$$1$$$ 和 x−1$$$x-1$$$ 之间(包括两端)的整数 y$$$y$$$，将棋子从格子 x$$$x$$$ 移动到格子 x−y$$$x - y$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "向下取整除法：选择一个介于 2$$$2$$$ 和 x$$$x$$$ 之间(包括两端)的整数 z$$$z$$$，将棋子从格子 x$$$x$$$ 移动到格子 ⌊xz⌋$$$\\lfloor \\frac{x}{z} \\rfloor$$$(x$$$x$$$ 除以 z$$$z$$$ 后向下取整)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "求使用一次或多次移动，将棋子从格子 n$$$n$$$ 移动到格子 1$$$1$$$ 的方案数，并输出对 m$$$m$$$ 取模的结果。注意，如果存在多种方式通过一次移动将棋子从一个格子移动到另一个格子，则这些方式均视为不同的方案(请查看样例解释以便更好地理解)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null
+      {
+        "ai": "唯一一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$；108<m<109$$$10^8  \\lt  m  \\lt  10^9$$$；m$$$m$$$ 是素数)，分别表示带状区域的长度和模数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出将棋子从格子 n$$$n$$$ 移动到格子 1$$$1$$$ 的方案数，对 m$$$m$$$ 取模。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，将标记从单元格 3$$$3$$$ 移动到单元格 1$$$1$$$ 有三种方法：使用减法 y=2$$$y = 2$$$，或使用除法 z=2$$$z = 2$$$ 或 z=3$$$z = 3$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "还有两种方法可以将标记从单元格 3$$$3$$$ 经过单元格 2$$$2$$$ 移动到单元格 1$$$1$$$：先减去 y=1$$$y = 1$$$，然后再次减去 y=1$$$y = 1$$$ 或除以 z=2$$$z = 2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "因此，总共有五种方法。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D1. 向上移动（简化版）",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

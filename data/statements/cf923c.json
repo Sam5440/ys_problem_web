@@ -44,5 +44,75 @@
       "input": "10\n331415699 278745619 998190004 423175621 42983144 166555524 843586353 802130100 337889448 685310951\n226011312 266003835 342809544 504667531 529814910 684873393 817026985 844010788 993949858 1031395667",
       "output": "128965467 243912600 4281110 112029883 223689619 76924724 429589 119397893 613490433 362863284"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "爱丽丝有一条非常重要的消息 M，由一些非负整数组成，她想对 Eve 保密。爱丽丝知道唯一在理论上安全的加密方式是一次性密码本。爱丽丝生成了一个与消息长度相等的随机密钥 K。爱丽丝将消息和密钥中每个元素进行按位异或(![](https://espresso.codeforces.com/0c01d57961927bc12eb51d8197470990daaaa8de.png)，其中 ![](https://espresso.codeforces.com/c4b7092c0f7ce6535f2574569c98f7b3c2fe2c5f.png) 表示按位异或运算)，并存储加密后的消息 A。爱丽丝很聪明。要像爱丽丝一样。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "例如，Alice 可能想要存储一条消息 M = (0, 15, 9, 18)。她生成了一个密钥 K = (16, 7, 6, 3)。因此，加密后的消息为 A = (16, 8, 15, 17)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alice 意识到，她无法将密钥和加密后的消息存储在一起。于是 Alice 将她的密钥 K 发送给 Bob，并删除了自己手中的副本。Alice 很聪明。真的，要像 Alice 一样。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Bob 意识到，只要密钥是保密的，加密后的消息就是安全的。因此，Bob 在存储密钥之前随机打乱了密钥的顺序。Bob 认为这样一来，即使 Eve 同时获得了加密后的消息和密钥，她也无法读出消息。Bob 不聪明。不要学 Bob。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在上面的例子中，Bob 例如可以选择排列 (3, 4, 1, 2)，并存储打乱顺序后的密钥 P = (6, 3, 16, 7)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "一年过去了，Alice 想要解密她的消息。直到这时 Bob 才意识到这是不可能的。由于他随机打乱了密钥的顺序，这条消息永远丢失了。我们提过 Bob 不聪明吗？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Bob 想从这条消息中至少挽救一些信息。由于他没那么聪明，所以向你求助。你知道加密后的消息 A 和打乱顺序后的密钥 P。对于给定的加密文本，可能得到的消息中字典序最小的是哪一个？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "更准确地说，给定 A 和 P，请找出字典序最小的消息 O，使得存在一个排列 π，对于每个 i 都有 ![](https://espresso.codeforces.com/a13e05dbed3e9a47b9d8d6d0f07297a940549234.png)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，如果存在一个下标 i，使得 Si < Ti，且对于所有 j < i 都满足 Sj = Tj，则序列 S 在字典序上小于序列 T。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 N（1 ≤ N ≤ 300000），表示消息的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 N 个整数 A1、A2、...、AN（0 ≤ Ai < 230），表示加密后的消息。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三行包含 N 个整数 P1、P2、...、PN（0 ≤ Pi < 230），表示置换后的加密密钥。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一行，包含 N 个整数，即字典序最小的可能消息 O。注意，其所有元素都应为非负数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一种情况下，答案是 (10, 3, 28)，因为 ![](https://espresso.codeforces.com/a896b30a69636d1bfbfa981eae10650f5fee843c.png)、![](https://espresso.codeforces.com/e383e4333ea37c4652ce2ac1ccfc2cfcf96e0896.png) 和 ![](https://espresso.codeforces.com/c24ed3c6f88805eb3710487b3fe07ff64034151a.png)。密钥的其他可能排列会得到消息 (25, 6, 10)、(25, 3, 15)、(10, 21, 10)、(15, 21, 15) 和 (15, 6, 28)，它们在字典序上都大于该答案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 完美安全",
+    "aiModel": "DeepSeek V4 Flash"
+  }
 }

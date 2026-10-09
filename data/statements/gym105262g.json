@@ -38,25 +38,68 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Eddard 和他的秘密伙伴认为数组应当是对称的，任何非对称数组都毫无价值。因此，他们定义了函数 V(a)$$$V(a)$$$，表示数组 a$$$a$$$ 的价值，定义如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果数组是对称的*，则 V(a)$$$V(a)$$$ 等于 a$$$a$$$ 中所有元素之和。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，V(a)=0$$$V(a) = 0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定一个数组 a$$$a$$$，计算 ∑nl=1∑nr=lV(a[l..r])$$$\\sum_{l=1}^{n}\\sum_{r=l}^{n}V(a[l..r])$$$，其中 a[l..r]$$$a[l..r]$$$ 是数组 a$$$a$$$ 中从下标 l$$$l$$$ 到 r$$$r$$$ 的子数组。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "由于答案可能很大，请输出答案对 109+7$$$10^9+7$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "* 对称数组是指翻转后仍保持不变的数组。更正式地说，在一个由 n$$$n$$$ 个整数构成的对称数组 a$$$a$$$ 中，对于 1≤i≤n$$$1 \\le i \\le n$$$，都有 ai=an+1−i$$$a_i = a_{n+1-i}$$$。例如，数组 [1,3,1]、[5,9,9,5]、[25]$$$[1, 3, 1], [5, 9, 9, 5], [25]$$$ 是对称的，而 [1,2]、[4,6,4,4]$$$[1, 2], [4, 6, 4, 4]$$$ 不是。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例数量 t$$$t$$$(1≤t≤104)$$$(1 \\le t \\le 10^4)$$$。下面给出各测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含数组长度 n$$$n$$$(1≤n≤106)$$$(1 \\le n \\le 10^6)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 a1,a2,...,an$$$a_1, a_2,...,a_n$$$ (1≤ai≤109)$$$(1 \\le a_i \\le 10^9)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 106$$$10^6$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出答案对 109+7$$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，[1,2,1]$$$[1, 2, 1]$$$ 的子数组为 {[1],[2],[1],[1,2],[2,1],[1,2,1]}$$$\\{[1], [2], [1], [1, 2], [2, 1], [1, 2, 1]\\}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "只有 [1],[2],[1],[1,2,1]$$$[1], [2], [1], [1, 2, 1]$$$ 是对称的，因此答案为它们的和：(1)+(2)+(1)+(1+2+1)=8$$$(1) + (2) + (1) + (1 + 2 + 1) = 8$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "G. 对称子数组",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

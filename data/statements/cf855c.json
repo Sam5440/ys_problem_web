@@ -41,5 +41,63 @@
       "input": "3 1\n1 2\n1 3\n1 1",
       "output": "0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "哈利、罗恩和赫敏已经发现赫尔加·赫奇帕奇的杯子是一个魂器。在与贝拉特里克斯·莱斯特兰奇的接触中，赫敏得知这个杯子位于古灵阁巫师银行中贝拉特里克斯家族的金库里。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "巫师银行呈一棵树的形式，共有 n 个金库，每个金库都有一种类型，用 1 到 m 之间的一个数字表示。树是一个无向连通且无环的图。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "安保级别最高的金库类型为 k，且所有类型为 k 的金库都具有最高安保级别。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "具有最高安保级别的金库数量最多为 x 个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "此外，如果一个金库具有最高安保级别，则可以保证它相邻的金库不具有最高安保级别，并且它们的类型均小于 k。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "哈利想考虑所有可能性，以便轻松找到到达贝拉特里克斯金库的最佳路径。因此，给定古灵阁的树结构，你需要告诉他，为每个金库分配一种类型且满足上述条件的方案数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个用空格分隔的整数 n 和 m——保险库的数量以及可能的不同保险库类型数量。(1 ≤ n ≤ 10^5，1 ≤ m ≤ 10^9)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n - 1 行中，每行包含两个用空格分隔的整数 ui 和 vi (1 ≤ ui, vi ≤ n)，表示第 i 条边，说明保险库 ui 和 vi 之间存在一条路径。保证给出的图是一棵树。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入的最后一行包含两个整数 k 和 x (1 ≤ k ≤ m，1 ≤ x ≤ 10)，分别表示安全等级最高的保险库的类型，以及安全等级最高的保险库的最大可能数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示按照条件为每个保险库分配类型的方案数，对 10^9 + 7 取模。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在测试用例 1 中，不能有任何安全等级最高的保险库，因为其类型为 1，这意味着与其相邻的保险库类型必须小于 1，而这是不允许的。因此，只有一种可能的组合，即所有保险库的类型都为 2。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Helga Hufflepuff's Cup",
+    "aiModel": "DeepSeek V4 Flash"
+  }
 }

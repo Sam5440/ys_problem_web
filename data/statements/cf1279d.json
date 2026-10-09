@@ -39,22 +39,62 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "圣诞老人今年收到了来自 n$$$n$$$ 个不同孩子的信。当然，每个孩子都想从圣诞老人那里得到一些礼物：具体来说，第 i$$$i$$$ 个孩子请求圣诞老人送给他们 ki$$$k_i$$$ 种不同物品中的一种作为礼物。有些物品可能被多个孩子请求。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "圣诞老人非常忙，所以他想让新年机器人为所有孩子选择礼物。不幸的是，机器人选择礼物的算法存在错误。为了给某个孩子选择礼物，机器人会执行以下操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在全部 n$$$n$$$ 个孩子中等概率地选择一个孩子 x$$$x$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在孩子 x$$$x$$$ 想要的全部 kx$$$k_x$$$ 件物品中等概率地选择一件物品 y$$$y$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在全部 n$$$n$$$ 个孩子中等概率地选择一个将收到礼物的孩子 z$$$z$$$(该选择与选择 x$$$x$$$ 和 y$$$y$$$ 相互独立)；所得三元组 (x,y,z)$$$(x, y, z)$$$ 被称为机器人的一次决策。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果孩子 z$$$z$$$ 将物品 y$$$y$$$ 列为自己想要收到的物品之一，那么该决策有效。否则，机器人的选择无效。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Santa 知道这个 bug，但他无法估计这个 bug 是否真的很严重。为此，他想知道根据上述算法生成的一个决策有效的概率。你能帮助他吗？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$ (1≤n≤106$$$1 \\le n \\le 10^6$$$)，表示给 Santa 写信的孩子数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来有 n$$$n$$$ 行，第 i$$$i$$$ 行包含第 i$$$i$$$ 个孩子想要的物品列表，格式如下：ki$$$k_i$$$ ai,1$$$a_{i, 1}$$$ ai,2$$$a_{i, 2}$$$ ... ai,ki$$$a_{i, k_i}$$$ (1≤ki,ai,j≤106$$$1 \\le k_i, a_{i, j} \\le 10^6$$$)，其中 ki$$$k_i$$$ 是第 i$$$i$$$ 个孩子想要的物品数量，ai,j$$$a_{i, j}$$$ 表示物品本身。同一个列表中不会包含重复的物品。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证 n∑i=1ki≤106$$$\\sum \\limits_{i = 1}^{n} k_i \\le 10^6$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null
+      {
+        "ai": "请按如下方式输出 Bot 生成有效决策的概率：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "设该概率表示为最简分数 xy$$$\\frac{x}{y}$$$。你需要输出 x⋅y−1mod998244353$$$x \\cdot y^{-1} \\mod 998244353$$$，其中 y−1$$$y^{-1}$$$ 是 y$$$y$$$ 在模 998244353$$$998244353$$$ 意义下的逆元(即满足 y⋅y−1$$$y \\cdot y^{-1}$$$ 模 998244353$$$998244353$$$ 的余数为 1$$$1$$$ 的整数)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. Santa 的机器人",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

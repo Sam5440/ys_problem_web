@@ -33,20 +33,54 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定一个 01 串 s$$$s$$$(回顾：若一个字符串的每个字符要么是 0$$$0$$$ 要么是 1$$$1$$$，则它是 01 串)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "设 f(t)$$$f(t)$$$ 为以二进制形式(可能含有前导零)写出的整数 t$$$t$$$ 的十进制表示。例如，f(011)=3，f(00101)=5，f(00001)=1，f(10)=2，f(000)=0$$$f(011) = 3, f(00101) = 5, f(00001) = 1, f(10) = 2, f(000) = 0$$$，以及 f(000100)=4$$$f(000100) = 4$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "子串 sl,sl+1,…,sr$$$s_{l}, s_{l+1}, \\dots , s_{r}$$$ 是好的，当 r−l+1=f(sl…sr)$$$r - l + 1 = f(s_l \\dots s_r)$$$ 时。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，字符串 s=1011$$$s = 1011$$$ 有 5$$$5$$$ 个好的子串：s1…s1=1$$$s_1 \\dots s_1 = 1$$$、s3…s3=1$$$s_3 \\dots s_3 = 1$$$、s4…s4=1$$$s_4 \\dots s_4 = 1$$$、s1…s2=10$$$s_1 \\dots s_2 = 10$$$ 以及 s2…s4=011$$$s_2 \\dots s_4 = 011$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是计算字符串 s$$$s$$$ 中好的子串数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你需要回答 t$$$t$$$ 个相互独立的查询。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$ (1≤t≤1000$$$1 \\le t \\le 1000$$$)，表示查询的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个查询仅包含一行，其中包含字符串 s$$$s$$$ (1≤|s|≤2⋅105$$$1 \\le |s| \\le 2 \\cdot 10^5$$$)，该字符串仅由数字 0$$$0$$$ 和 1$$$1$$$ 组成。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证 t∑i=1|si|≤2⋅105$$$\\sum\\limits_{i=1}^{t} |s_i| \\le 2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个查询，输出一个整数——字符串 s$$$s$$$ 的好子串数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. 好子串的数量",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

@@ -35,22 +35,56 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定一个包含 n$$$n$$$ 个互不相同整数的集合 S$$$S$$$。此外，你还会收到 q$$$q$$$ 个查询，每个查询属于以下两种类型之一：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "查询类型 1 (1x)$$$(1\\; x)$$$：如果 x$$$x$$$ 当前在集合 S$$$S$$$ 中，则将其删除。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，将 x$$$x$$$ 加入集合。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "查询类型 2 (2t)$$$(2\\; t)$$$：输出对所有 x∈S$$$x \\in S$$$ 的 (x+t)$$$(x + t)$$$ 进行按位异或的结果。形式化地，输出 ⨁x∈S(x+t)$$$\\displaystyle\\bigoplus_{x \\in S} (x + t)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含两个整数 n$$$n$$$ 和 q$$$q$$$(1≤n,q≤3⋅105$$$1 \\leq n,q \\leq 3 \\cdot 10^5$$$)——分别表示集合的初始大小和查询次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入的下一行包含 n$$$n$$$ 个互不相同的整数 x1,x2⋯xn$$$x_1, x_2 \\cdots x_n$$$(0≤xi<220$$$0 \\le x_i  \\lt  2^{20}$$$)——表示初始集合。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行输入将描述这些查询。每行包含形如 1x$$$1\\; x$$$ 或 2t$$$2\\; t$$$ 的查询(0≤x,t<220$$$0 \\le x, t  \\lt  2^{20}$$$)，表示按照上述格式的查询。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证至少有一个类型为 2$$$2$$$ 的查询。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个类型 2$$$2$$$ 查询，输出所有 x∈S$$$x \\in S$$$ 的 (x+t)$$$(x+t)$$$ 的累计按位异或结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null
+      {
+        "ai": "在样例中，在第一次类型 2$$$2$$$ 查询时，我们有 S={1,6,15}$$$S = \\{1, 6, 15\\}$$$。由于这次查询中 t=0$$$t = 0$$$，因此输出 (1+0)⊕(6+0)⊕(15+0)=1⊕6⊕15=8$$(1 + 0) \\oplus (6 + 0) \\oplus (15 + 0) = 1 \\oplus 6 \\oplus 15 = 8$$。在第二次类型 2$$$2$$$ 查询时，我们有 S={1,5,10,15}$$$S = \\{1, 5, 10, 15\\}$$$。由于这次查询中 t=3$$$t = 3$$$，因此输出 (1+3)⊕(5+3)⊕(10+3)⊕(15+3)=4⊕8⊕13⊕18=19$$(1 + 3) \\oplus (5 + 3) \\oplus (10 + 3) \\oplus (15 + 3) = 4 \\oplus 8 \\oplus 13 \\oplus 18 = 19$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 分配律",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

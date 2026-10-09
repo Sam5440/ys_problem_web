@@ -34,21 +34,58 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "你正在为一种名为 Single Copter 的有趣飞行器设计控制器。它只有一个螺旋桨，但向外流出的气流会进一步受到四个襟翼的调节，这些襟翼控制三个欧拉角（俯仰、横滚和偏航），从而帮助保持飞行器所要求的姿态。每个襟翼都可以处于飞控所要求的任意角度，而襟翼处于特定角度时产生的影响，应当转化为在俯仰、横滚和偏航方向上施加所要求的力。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/9a4656f8fb1c66efd19ae27d6124578106728aaf.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/978204b3b999f4963169a37f8bc3edd46294b40a.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/650bacdc351ae7a7b3a94cc1d35c8844ead37aeb.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将襟翼的角度分别定义为 n$$$n$$$、e$$$e$$$、s$$$s$$$ 和 w$$$w$$$(分别表示“北”“东”“南”和“西”)。俯仰、横滚和偏航方向上的力由以下方程定义：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "由于有四个变量和三个约束条件，你决定从空气动力学的角度来看，尽可能减小襟翼角度的最大值是合理的，也就是说，你还希望最小化 max{|n|,|e|,|s|,|w|}$$$\\max\\{ |n|, |e|, |s|, |w| \\}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "找出发送给 Single Copter 的最佳参数，以实现所需的俯仰、偏航和横滚。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "一行包含请求数量 q$$$q$$$，满足 1≤q≤104$$$1 \\le q \\le 10^4$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 i$$$i$$$ 行，每行包含三个实数 pi$$$p_i$$$、ri$$$r_i$$$、yi$$$y_i$$$(−1≤pi,ri,yi≤+1$$$-1 \\le p_i, r_i, y_i \\le +1$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null
+      {
+        "ai": "输出 q$$$q$$$ 行。在第 i$$$i$$$ 行中，输出第 i$$$i$$$ 个请求的解，即四个数 ni$$$n_i$$$、ei$$$e_i$$$、si$$$s_i$$$、wi$$$w_i$$$，以空白字符分隔。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果得到的俯仰角、横滚角和偏航角与要求值的差异均不超过 10−6$$$10^{-6}$$$，并且襟翼输出绝对值的最大值比真实值大不超过 10−6$$$10^{-6}$$$，则答案将被判定为正确。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 无人机控制",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

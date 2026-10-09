@@ -36,5 +36,59 @@
       "input": "5\n9 7 8 6 5\n1 1\n2 1\n3 1\n4 1",
       "output": "4 3 2 1 0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 2·105）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n 个整数 a1, a2, ..., an (1 ≤ ai ≤ 109)，表示写在各个顶点上的整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 (n - 1) 行每行包含两个整数。第 i 行包含整数 pi 和 wi (1 ≤ pi ≤ n, 1 ≤ wi ≤ 109)，表示树中第 (i + 1) 个顶点的父节点为 pi，以及连接 pi 和 (i + 1) 的边上写的数字。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证给定的图是一棵树。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 个整数，第 i 个整数应等于第 i 个顶点所控制的顶点数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在样例测试中，顶点 1 控制顶点 3，顶点 3 控制顶点 5（注意，这并不意味着顶点 1 控制顶点 5）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Alyona 有一棵包含 n 个顶点的树。树的根是顶点 1。在每个顶点中，Alyona 都写下了一个正整数，在顶点 i 中写下的是 ai。此外，女孩还在树的每条边上写下了一个正整数（不同边上的整数可能不同）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "我们将 dist(v, u) 定义为从 v 到 u 的简单路径上各条边所写整数之和。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当且仅当 u 位于 v 的子树中且 dist(v, u) ≤ au 时，顶点 v 控制顶点 u（v ≠ u）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Alyona 想要定居在某个顶点。为此，她想知道对于每个顶点 v，有多少个顶点 u 满足 v 控制 u。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Alyona 和一棵树",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

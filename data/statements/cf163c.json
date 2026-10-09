@@ -37,5 +37,63 @@
       "input": "2 3 1 2\n2 5",
       "output": "0.33333333333333331000\n0.66666666666666663000\n0.00000000000000000000"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Anton 来到一家巧克力工厂。他在那里发现一条正在运转的传送带，并决定从起点跑到终点。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "传送带是一条总长为 2l 米的环形带，其中 l 米位于地面上，且排列成一条直线。传送带在任意时刻转弯的部分（即从地板下方升到地面、再从地面返回地板下方的部分）可视为长度极短。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "传送带以 v1 米/秒的速度匀速运动。Anton 将以 v2 米/秒的恒定速度沿同一方向在传送带上移动，因此他相对于地面的速度是 v1 + v2 米/秒。Anton 既不会停下来，也不会改变速度或移动方向。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "传送带上零散地粘着一些巧克力（共 n 块）。它们会随传送带一起移动，不会从传送带上掉下来。Anton 很喜欢巧克力，但他更想继续向前移动。因此，他会拿走所有经过的巧克力，但不会多拿。如果 Anton 开始跑动时，某块巧克力正好位于传送带的起点，他会拿走它；如果 Anton 离开传送带时，某块巧克力正好位于传送带的末端，他就会留下它。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/7fcbe21ac233256be6e14c9e08608208248d66ce.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定巧克力相对于传送带初始起点的位置 0 ≤ a1 < a2 < ... < an < 2l。传送带上从 0 到 l 的位置对应上半部分，从 l 到 2l 的位置对应下半部分（见样例）。所有坐标均以米为单位。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Anton 会在随机时刻开始沿传送带跑动。这意味着，他开始跑动时传送带的所有可能位置出现的概率均相等。对于每个 i（0 到 n），计算 Anton 恰好拿走 i 块巧克力的概率。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含以空格分隔的整数 n、l、v1 和 v2（1 ≤ n ≤ 105，1 ≤ l, v1, v2 ≤ 109）——巧克力的数量、传送带可见部分的长度、传送带的速度以及 Anton 的速度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含以空格分隔的整数序列 a1, a2, ..., an（0 ≤ a1 < a2 < ... < an < 2l）——巧克力的坐标。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n + 1 个数（每行一个）：对于每个 i（从 0（第一行）到 n（最后一行）），Anton 恰好捡起 i 块巧克力的概率。如果每个数的绝对误差或相对误差至多为 10 - 9，则答案将被认为正确。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例测试中，如果 Anton 开始跑步时巧克力的坐标小于 0.5，他就能捡起这块巧克力；但如果男孩开始跑步时巧克力的坐标大于或等于 0.5，Anton 就无法捡起它。由于传送带上的所有位置出现的概率相同，捡起这块巧克力的概率为 ![](https://espresso.codeforces.com/55d1d7955c1e59f407eb6baa7601582a54eeac4f.png)，没能捡起它的概率为 ![](https://espresso.codeforces.com/0e79ad74cc0314b318cc094369c845c55b37c9ef.png)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 传送带",
+    "aiModel": "DeepSeek V4 Flash"
+  }
 }

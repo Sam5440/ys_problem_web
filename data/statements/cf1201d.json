@@ -46,25 +46,68 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "你位于一座可以表示为 n×m$$$n \\times m$$$ 的表格的岛屿上。行的编号从 1$$$1$$$ 到 n$$$n$$$，列的编号从 1$$$1$$$ 到 m$$$m$$$。岛上有 k$$$k$$$ 件宝藏，其中第 i$$$i$$$ 件位于位置 (ri,ci)$$$(r_i, c_i)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "起初，你站在岛屿的左下角，即位置 (1,1)$$$(1, 1)$$$。如果在任意时刻你位于有宝藏的单元格中，就可以将其捡起，且不需要额外时间。一次移动中，你可以向上移动(从 (r,c)$$$(r, c)$$$ 移动到 (r+1,c)$$$(r+1, c)$$$)、向左移动(从 (r,c)$$$(r, c)$$$ 移动到 (r,c−1)$$$(r, c-1)$$$)，或向右移动(从位置 (r,c)$$$(r, c)$$$ 移动到 (r,c+1)$$$(r, c+1)$$$)。由于陷阱的存在，你不能向下移动。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "然而，向上移动同样存在风险。只有当你位于安全列时，才能向上移动。共有 q$$$q$$$ 个安全列：b1,b2,…,bq$$$b_1, b_2, \\ldots, b_q$$$。你希望尽快收集所有宝藏。请计算收集所有宝藏所需的最少移动次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含整数 n$$$n$$$、m$$$m$$$、k$$$k$$$ 和 q$$$q$$$(2≤n,m,k,q≤2⋅105$$$2 \\le n, \\, m, \\, k, \\, q \\le 2 \\cdot 10^5$$$，q≤m$$$q \\le m$$$)，分别表示行数、列数、岛上宝藏的数量以及安全列的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 k$$$k$$$ 行中，每行包含两个整数 ri、ci$$$r_i, c_i$$$(1≤ri≤n$$$1 \\le r_i \\le n$$$，1≤ci≤m$$$1 \\le c_i \\le m$$$)，表示一个宝藏所在单元格的坐标。所有宝藏都位于互不相同的单元格中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最后一行包含 q$$$q$$$ 个互不相同的整数 b1,b2,…,bq$$$b_1, b_2, \\ldots, b_q$$$(1≤bi≤m$$$1 \\le b_i \\le m$$$)，表示安全列的编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出收集所有宝藏所需的最少移动次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中，你应当使用第二列向上移动，并在每一行收集第一列中的宝藏。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/94823c612b5b926e2a2ad550634cf0feed84586f.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，使用第一列向上移动是最优的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/9157ad0f18870b663cebb5f7b6c6d024b09777ea.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个样例中，最优方案是在单元格 (1;6)$$$(1;6)$$$ 收集宝藏，在第 6$$$6$$$ 列向上移动到第 2$$$2$$$ 行，然后在单元格 (2;2)$$$(2;2)$$$ 收集宝藏，在第 1$$$1$$$ 列向上移动到最上面一行，并在单元格 (3;4)$$$(3;4)$$$ 收集最后一个宝藏。总共需要移动 15$$$15$$$ 次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/2735b28b994176268d4f364fdb73cf30e5888714.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 寻宝",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -41,20 +41,54 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "想象这样一款游戏：你扮演的角色拥有两个属性：“力量”和“智力”，它们的初始等级均为 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在游戏过程中，你将获得 m$$$m$$$ 个属性点，可以用来提升属性等级——每个属性点可以使其中一个属性提升 1 级。但有时，你会遇到所谓的“属性检定”：如果相应属性足够高，你就能通过；否则就会失败。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "经过一段时间，你终于整理出了一份列表，其中记录了你获得的所有属性点以及遇到的所有属性检定。现在你想知道：如果合理分配属性点，在一次游戏过程中最多能通过多少次属性检定？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，你不能改变记录的顺序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤m≤5000$$$1 \\le m \\le 5000$$$；m<n≤2⋅106$$$m  \\lt  n \\le 2 \\cdot 10^6$$$)——列表中的记录数以及游戏过程中将获得的属性点总数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 r1,r2,…,rn$$$r_1, r_2, \\dots, r_n$$$(−m≤ri≤m$$$-m \\le r_i \\le m$$$)，其中 ri$$$r_i$$$ 表示第 i$$$i$$$ 条记录：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 ri=0$$$r_i = 0$$$，那么第 i$$$i$$$ 条记录是获得一个属性点。你可以将其用于提升力量或智力；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 ri>0$$$r_i  \\gt  0$$$，那么这是一次智力检定：如果你的智力等级大于等于 |ri|$$$|r_i|$$$，则检定通过。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 ri<0$$$r_i  \\lt  0$$$，那么这是一次力量检定：如果你的力量等级大于等于 |ri|$$$|r_i|$$$，则检定通过。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "如果不能改变记录的顺序，你最多可以通过多少次检定？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "I. 属性检查",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -38,25 +38,68 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Heidi 发现 Daleks 已经建立了一个由双向时间走廊组成的网络，连接着不同的目的地（而且是在不同的时间！）。她怀疑他们正计划对整个空间与时间再次发动入侵。为了应对这次入侵，她计划在时间漩涡中、沿一条精心选择的时间走廊部署陷阱。她知道对时间漩涡动手脚是危险的，于是向 Doctor 请教接下来该怎么做。她了解到以下信息：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "不同的时间走廊需要不同数量的能量来保持稳定。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Daleks 在入侵时不太可能使用所有走廊。他们会选择一组维护所需总能量最小的走廊，同时仍然使得任意两个目的地之间能够进行（时间）旅行（内行的人知道：他们会使用一棵最小生成树）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "设置陷阱可能会改变维持时间走廊稳定所需的能量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Heidi 决定进行一次实地测试并部署一个陷阱，将其放置在第一条时间走廊上。但她需要知道，在部署陷阱后，Daleks 是否会使用这条走廊。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "她给你一张时间走廊的地图（一个无向图），其中标明了每条时间走廊的能量需求。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于一条时间走廊 c$$$c$$$，Emax(c)$$$E_{max}(c)$$$ 是满足 e≤109$$$e \\le 10^9$$$ 的最大 e，使得如果将 c$$$c$$$ 所需的能量修改为 e$$$e$$$，那么 Daleks 在入侵过程中仍可能使用 c$$$c$$$(即，它属于某棵最小生成树)。你的任务是计算 Heidi 计划设置陷阱的时间走廊 c1$$$c_1$$$ 的 Emax(c1)$$$E_{max}(c_1)$$$，该走廊是图中的第一条边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含整数 n$$$n$$$ 和 m$$$m$$$(2≤n≤105$$$2 \\leq n \\leq 10^5$$$，n−1≤m≤106$$$n - 1 \\leq m \\leq 10^6$$$)，分别表示将要被入侵的目的地数量和时间走廊数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中的每一行描述一条时间走廊：目的地 a$$$a$$$、b$$$b$$$ 以及能量 e$$$e$$$(1≤a,b≤n$$$1 \\leq a, b \\leq n$$$，a≠b$$$a \\neq b$$$，0≤e≤109$$$0 \\leq e \\leq 10^9$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证不存在重复的点对 {a,b}$$$\\{a, b\\}$$$，且图是连通的——也就是说，可以使用零条或更多条时间走廊在任意两个目的地之间通行。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数：输入中的第一条走廊 c1$$$c_1$$$ 的 Emax(c1)$$$E_{max}(c_1)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "设置陷阱后，第一条走廊新的能量需求可能比原来的能量需求小、大或相等。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在该示例中，如果第一条走廊的能量被设置为 4$$$4$$$ 或更低，那么 Daleks 可能会使用走廊集合 {{1,2},{2,3}}$$$\\{ \\{ 1,2 \\}, \\{ 2,3 \\} \\}$$$(特别地，如果将其设置为小于 4$$$4$$$，那么这将是它们唯一会使用的走廊集合)。但是，如果它大于 4$$$4$$$，那么它们将改为使用集合 {{2,3},{3,1}}$$$\\{ \\{2,3\\}, \\{3,1\\} \\}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E1. Daleks 的入侵（简单版）",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

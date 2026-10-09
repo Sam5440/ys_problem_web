@@ -50,37 +50,116 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在 2026 年拉丁美洲 ICPC 锦标赛上，出题人的队伍遇到了一个棘手的问题。队伍中的一名成员 Avnith 立即认出了这个问题，并声称只需 [REDACTED] 就能轻松解决。然而，实际上这个问题是通过点分治和 NTT 解决的。在从智利返程的航班上，出题人始终无法忘记这件事，于是根据 [REDACTED] 制作了一道题。现在，你需要找出 [REDACTED] 是什么，并解决这个问题。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定一棵有 n$$$n$$$ 个顶点的无向树，以及一个整数 k$$$k$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于作为根的每个顶点 r$$$r$$$，定义 dr(v)$$$d_r(v)$$$ 为从 r$$$r$$$ 到 v$$$v$$$ 的距离。对于每个包含 k$$$k$$$ 个顶点的子集 S$$$S$$$，令 lcar(S)$$$lca_r(S)$$$ 表示在以 r$$$r$$$ 为根的树中，S$$$S$$$ 中所有顶点的最近公共祖先。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "令 f(r)=∑S∈V|S|=kdr(lcar(S)) $$f(r)=\\sum_{\\substack{S\\in V\\\\|S|=k}} d_r(lca_r(S))$$ 换句话说，如果以顶点 r$$$r$$$ 为根，f(r) 就是所有包含 k$$$k$$$ 个顶点的集合的最近公共祖先的深度之和。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每个从 1$$$1$$$ 到 n$$$n$$$ 的 r$$$r$$$，求 f(r)$$$f(r)$$$。由于答案可能很大，请输出它们对 109+7$$$10^9+7$$$ 取模后的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含题面所述的两个整数 n$$$n$$$ 和 k$$$k$$$(1≤n,k≤2⋅105)$$$(1 \\leq n,k \\leq 2 \\cdot 10^5)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n−1$$$n-1$$$ 行中，每行包含两个整数，表示树中的一条边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "—",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "子任务中的测试点编号为 1−25$$$1−25$$$，跳过样例。每个测试点分值为 10025=4$$$\\frac{100}{25}=4$$$ 分。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "测试点 1−4$$$1-4$$$ 满足 n,k≤20$$$n,k \\leq 20$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第 5−12$$$5-12$$$ 组测试数据满足 n,k≤2000$$$n, k \\leq 2000$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第 13−25$$$13-25$$$ 组测试数据不含额外约束。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "一行包含 n$$$n$$$ 个整数；第 i$$$i$$$ 个整数表示 f(i)$$$f(i)$$$ 对 109+7$$$10^9+7$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "考虑以 r=1$$$r = 1$$$ 为根。该树是一条路径 1−2−3−4$$$1 - 2 - 3 - 4$$$，因此深度分别为 d1(1)=0$$$d_1(1) = 0$$$、d1(2)=1$$$d_1(2) = 1$$$、d1(3)=2$$$d_1(3) = 2$$$、d1(4)=3$$$d_1(4) = 3$$$。大小为 k=2$$$k = 2$$$ 的子集共有 (42)=6$$$\\binom{4}{2} = 6$$$ 个：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "{1,2}$$$\\{1, 2\\}$$$：lca=1$$$\\mathrm{lca} = 1$$$，深度为 0$$$0$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "{1,3}$$$\\{1, 3\\}$$$：lca=1$$$\\mathrm{lca} = 1$$$，深度为 0$$$0$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "{1,4}$$$\\{1, 4\\}$$$：最近公共祖先=1$$$\\mathrm{lca} = 1$$$，深度 0$$$0$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "{2,3}$$$\\{2, 3\\}$$$：最近公共祖先=2$$$\\mathrm{lca} = 2$$$，深度 1$$$1$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "{2,4}$$$\\{2, 4\\}$$$：最近公共祖先=2$$$\\mathrm{lca} = 2$$$，深度 1$$$1$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "{3,4}$$$\\{3, 4\\}$$$：最近公共祖先=3$$$\\mathrm{lca} = 3$$$，深度 2$$$2$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "因此 f(1)=0+0+0+1+1+2=4$$$f(1) = 0 + 0 + 0 + 1 + 1 + 2 = 4$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "—",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "题目思路：naturalselection",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "题目准备：naturalselection",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "出现位置：Advanced G",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "K. 树的计数",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

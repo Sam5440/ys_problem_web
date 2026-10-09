@@ -46,29 +46,84 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Tania 面前有 n$$$n$$$ 个糖果盒。这些盒子从左到右排成一行，编号从 1$$$1$$$ 到 n$$$n$$$。第 i$$$i$$$ 个盒子中有 ri$$$r_i$$$ 颗糖果，糖果的颜色为 ci$$$c_i$$$(颜色可以是三种值之一——红色、绿色或蓝色)。单个盒子内的所有糖果颜色都相同(且该颜色等于 ci$$$c_i$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "起初，Tanya 位于编号为 s$$$s$$$ 的盒子旁边。Tanya 可以移动到相邻的盒子(即编号相差一的盒子)，也可以吃当前盒子中的糖果。Tanya 吃糖果是瞬间完成的，但移动需要一秒钟。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 Tanya 吃掉了盒子中的糖果，那么盒子本身仍然留在原处，但其中不再有糖果。换句话说，Tanya 总是吃掉盒子中的所有糖果，并且盒子中的糖果不会重新补充。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "已知 Tanya 不能连续吃相同颜色的糖果（也就是说，她吃糖果的两个相邻盒子中的糖果颜色总是不同的）。此外，Tanya 的食欲在不断增长，因此在她吃糖果的每个后续盒子中，糖果数量都必须严格多于前一个盒子。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，对于 Tanya 将要吃糖果的第一个盒子，其颜色和糖果数量都没有限制。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Tanya 想要至少吃掉 k$$$k$$$ 颗糖果。她最少需要多少秒？记住，她吃糖果是瞬间完成的，只有移动会耗费时间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、s$$$s$$$ 和 k$$$k$$$(1≤n≤50$$$1 \\le n \\le 50$$$，1≤s≤n$$$1 \\le s \\le n$$$，1≤k≤2000$$$1 \\le k \\le 2000$$$)——盒子的数量、Tanya 的初始位置以及要吃的糖果数量下界。下一行包含 n$$$n$$$ 个整数 ri$$$r_i$$$(1≤ri≤50$$$1 \\le r_i \\le 50$$$)——每个盒子中的糖果数量。第三行包含一个由 n$$$n$$$ 个字母“R”、“G”和“B”组成的序列，表示对应盒子中糖果的颜色(“R”表示红色，“G”表示绿色，“B”表示蓝色)。请注意，每个盒子中只包含一种颜色的糖果。第三行不包含空格。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出吃掉至少 k$$$k$$$ 颗糖果所需的最少秒数。如果不存在解，输出 \"-1\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一个样例中 Tanya 的操作序列：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从盒子 3$$$3$$$ 移动到盒子 2$$$2$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从盒子 2$$$2$$$ 吃糖果；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从盒子 2$$$2$$$ 移动到盒子 3$$$3$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从盒子 3$$$3$$$ 吃一颗糖果；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从盒子 3$$$3$$$ 移到盒子 4$$$4$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从盒子 4$$$4$$$ 移到盒子 5$$$5$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从盒子 5$$$5$$$ 中吃糖果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "由于 Tanya 吃糖果不需要时间，所需时间为四秒。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. Tanya 与彩色糖果",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -44,31 +44,92 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "这是一道交互题。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Diana 这条鲨鱼为她的项目制造了一台新机器：Discombobulator 3000。它能够解决任何涉及排列的交互式编程问题！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "一天，Diana 正在平静地游泳时，这台机器从她的口袋里掉了出来，落在了海底。因此，机器断成了两部分。Diana 无法立即修好它，但即使机器已经损坏，她仍然知道它的工作原理：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "机器的一部分中包含一个由 n$$$n$$$ 个整数组成的序列 a0,a1,…,an−1$$$a_0, a_1, \\dots, a_{n-1}$$$。该序列是从 1 到 n$$$n$$$ 的整数的一个排列。也就是说，1 到 n$$$n$$$(包含边界)之间的每个整数都恰好在该序列中出现一次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "机器的另一部分中包含一个由 n$$$n$$$ 个整数组成的序列 b0,b1,…,bn−1$$$b_0, b_1, \\dots, b_{n-1}$$$。该序列同样是从 1 到 n$$$n$$$ 的整数的一个排列。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "存在一个整数 k$$$k$$$，满足 0≤k≤n−1$$$0 \\le k \\le n - 1$$$，并且对于 i=0,1,…,n−1$$$i=0,1,\\dots,n-1$$$，关系式 ai=b(i+k)modn$$$a_i=b_{(i+k)\\;\\operatorname{mod}\\;n}$$$ 成立。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "遗憾的是，Diana 只知道整数 n$$$n$$$，并不知道 k$$$k$$$ 或这两个序列的具体内容。访问这些序列的唯一方式是使用机器上的特殊按钮。按下按钮后，机器会要求你输入两个整数 x$$$x$$$ 和 y$$$y$$$，并回复 max(ax,by)$$$\\max(a_x, b_y)$$$ 的值。按钮总共不能被按下超过 2n$$$2n$$$ 次，否则一切都会爆炸。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Diana 被眼前的情况弄糊涂了，现在她需要你的帮助。如果你能找出整数 k$$$k$$$，她就能把两块重新组合成 Discombobulator 3000。你能通过与机器交互做到这一点吗？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含整数 n$$$n$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果你按下按钮 q$$$q$$$ 次，输入中还会有 q$$$q$$$ 行。每行包含一个整数，即机器回复的数字。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "技术规格：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "2≤n≤200$$$2 \\le n \\le 200$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "0≤k≤n−1$$$0 \\le k \\le n - 1$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "如果按下按钮 q$$$q$$$ 次，输出应包含 q+1$$$q+1$$$ 行。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每次想要按下按钮时，请按照 \"? x$$$x$$$ y$$$y$$$\" 的格式输出一行，其中 x$$$x$$$ 和 y$$$y$$$ 是你告知机器的数字。机器的回复将作为一行输入传给你(如上所述)。输出一行后不要忘记刷新输出流。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最后一行应为 \"! k$$$k$$$\" 格式，其中 k$$$k$$$ 是你需要求出的整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的输出必须满足：每一行中 0≤q≤2n$$$0 \\le q \\le 2n$$$ 且 0≤x,y≤n−1$$$0 \\le x, y \\le n - 1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在样例中，序列为 a=[2,3,1,4]$$$a = [2,3,1,4]$$$ 和 b=[4,2,3,1]$$$b = [4,2,3,1]$$$。答案为 k=1$$$k=1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "记住，你不需要找出这两个序列，只需得到整数 k$$$k$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. Discombobulator 3000",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

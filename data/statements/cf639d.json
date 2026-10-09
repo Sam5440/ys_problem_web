@@ -47,5 +47,87 @@
       "input": "6 2 987 789\n-8 42 -4 -65 -8 -8",
       "output": "0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Codeforces 是一个很棒的平台，其中一项功能可以体现某人对社区的贡献程度。每位注册用户都有一个贡献值——它是一个整数，不一定为正。有 n 位注册用户，其中第 i 位用户的贡献值为 t_i。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Limak 是一只小北极熊，刚开始接触竞赛编程。他甚至还没有 Codeforces 账号，但可以给已有的博客和评论点赞。我们假设每位注册用户都有无限多篇博客和评论。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Limak 可以花费 b 分钟阅读并点赞一篇博客。作者的贡献值将增加 5。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Limak 可以花费 c 分钟阅读并点赞一条评论。作者的贡献值将增加 1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，Limak 阅读博客的速度可能比阅读评论更快。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Limak 喜欢并列。他认为如果能看到至少 k 位注册用户之间出现并列，那将非常棒。为了实现这一点，他将花费一些时间进行阅读和点赞。完成后，应当存在一个整数值 x，使得至少 k 位注册用户的贡献值恰好为 x。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Limak 达成目标需要多长时间？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含四个整数 n、k、b 和 c（2 ≤ k ≤ n ≤ 200000，1 ≤ b、c ≤ 1000）——分别表示注册用户数、具有相同贡献值的用户所需的最少人数、阅读并点赞一篇博客所需的时间，以及阅读并点赞一条评论所需的时间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n 个整数 t1、t2、…、tn（|ti| ≤ 10^9），其中 ti 表示第 i 个注册用户的贡献值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Limak 使至少 k 名注册用户的贡献值相同所需花费的最少分钟数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，共有 4 名注册用户，Limak 希望至少有 3 名用户的贡献值相同。Limak 应采取如下行动。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "他花费 100 分钟阅读第 4 名用户的一篇博客，并将其贡献值从 1 提高到 6。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "然后，他花费 4·30 = 120 分钟阅读第 2 位用户的四条评论，并将其贡献值从 2 提高到 6（每次提高 1，共提高了四次）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在给定情形下，Limak 花费 100 + 4·30 = 220 分钟，此后用户 2、3、4 的贡献值均为 6。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，Limak 需要 30 分钟阅读一篇博客，100 分钟阅读一条评论。这一次，他可以花费 100 + 3·30 = 190 分钟，使 3 位用户的贡献值达到 12：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "花费 2·30 = 60 分钟阅读第 1 位用户的两篇博客，将其贡献值从 2 提高到 12。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "花费 30 + 100 分钟阅读第 3 位用户的一篇博客和一条评论。他的贡献值将从 6 变为 6 + 5 + 1 = 12。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Bear 与贡献",
+    "aiModel": "DeepSeek V4 Flash"
+  }
 }

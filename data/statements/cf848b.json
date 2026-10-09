@@ -42,5 +42,83 @@
       "input": "3 2 3\n1 1 2\n2 1 1\n1 1 5",
       "output": "1 3\n2 1\n1 3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含三个用空格分隔的正整数 n、w 和 h（1 ≤ n ≤ 100 000，2 ≤ w, h ≤ 100 000）——舞者的数量以及舞台的宽度和高度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n 行分别描述一名舞者：其中第 i 行包含三个以空格分隔的整数 gi、pi 和 ti（1 ≤ gi ≤ 2，1 ≤ pi ≤ 99 999，0 ≤ ti ≤ 100 000），分别表示舞者所在的组 gi（gi = 1 表示竖直，gi = 2 表示水平）、位置和等待时间。如果 gi = 1，那么 pi = xi；否则 pi = yi。保证 1 ≤ xi ≤ w - 1 且 1 ≤ yi ≤ h - 1。保证不存在两名舞者的组别、位置和等待时间都相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 行，第 i 行包含两个以空格分隔的整数 (xi, yi)，表示输入中第 i 名舞者的停止位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例对应题面中的初始布局，以下图中用不同颜色标记了舞者的运动轨迹。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/9af64013ccf58cb225463c40fd9f075bcf7ea913.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，没有舞者发生碰撞。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "无论目的地在哪里，无论我们遇见谁，让我们一起演奏这首歌吧。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在直角坐标平面上有一个大小为 w × h 的矩形舞台，其顶点为 (0, 0)、(w, 0)、(w, h) 和 (0, h)。可以看出，在进入舞台之前不会发生碰撞。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "舞台的边上站着 n 名舞者。第 i 名舞者属于以下类别之一：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "竖直：站在 (xi, 0) 处，沿 y 轴正方向（向上）移动；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "水平：站在 (0, yi) 处，沿 x 轴正方向（向右）移动。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/8aba07adc75f9cf705def164ff858509481b54c7.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "根据编舞安排，第 i 位舞者应在最初的 ti 毫秒内保持静止，然后以每毫秒 1 个单位的速度沿指定方向开始移动，直到到达另一侧边界。保证不会有两个舞者同时具有相同的组别、位置和等待时间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当两位舞者发生碰撞时（即在某个时刻两人都在移动且位于同一点），他们会立即交换移动方向并继续前进。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/a99291578f37557be4d80124c9bb6c84d22580a1.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "舞者到达舞台边界时停止。请找出每位舞者的停止位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Rooter 之歌",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

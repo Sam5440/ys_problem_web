@@ -42,29 +42,84 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定一个有 n$$$n$$$ 个节点、m$$$m$$$ 条边的简单无向图。注意，该图不一定连通。节点编号从 1$$$1$$$ 到 n$$$n$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果一个图包含一个简单环，并且有一个特殊节点 u$$$u$$$ 属于该环，则称该图为 Fish 图。除环上的边外，该图还应恰好包含 2$$$2$$$ 条额外边。这两条边都应连接到节点 u$$$u$$$，但不能连接到环上的其他任何节点。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "判断该图是否包含一个 Fish 图子图；如果包含，则找出任意一个这样的子图。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在本题中，子图定义为从原图中选取任意边的子集所得到的图。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/d4948becce5d44359306c804c5e536e116fca5cd.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含整数 t$$$t$$$(1≤t≤1000$$$1 \\leq t \\leq 1000$$$)，表示测试用例的数量。接下来是各个测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤2000$$$1 \\le n, m \\le 2\\,000$$$)，分别表示节点数和边数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中的每一行描述一条边。每行包含两个整数 ui$$$u_i$$$ 和 vi$$$v_i$$$(1≤ui,vi≤n$$$1 \\leq u_i, v_i \\leq n$$$，ui≠vi$$$u_i\\neq v_i$$$)，表示一条连接节点 ui$$$u_i$$$ 和节点 vi$$$v_i$$$ 的边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证不存在两条边连接同一对无序节点。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "此外，保证所有测试用例中 n$$$n$$$ 的总和以及 m$$$m$$$ 的总和均不超过 2000$$$2\\,000$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "对于每个测试用例，如果图中包含一个 Fish Graph 子图，则输出 \"YES\"，否则输出 \"NO\"。如果答案为 \"YES\"，则在接下来的若干行中输出该子图的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "描述的第一行包含一个整数 k$$$k$$$，表示该子图的边数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 k$$$k$$$ 行中，输出所选子图的边。每行 k$$$k$$$ 应包含两个整数 u$$$u$$$ 和 v$$$v$$$(1≤u,v≤n$$$1\\le u, v\\le n$$$，u≠v$$$u\\neq v$$$)，表示连接 u$$$u$$$ 和 v$$$v$$$ 的边属于该子图。u$$$u$$$ 和 v$$$v$$$ 的输出顺序无关紧要，只要这两个节点在原图中通过一条边相连即可。边的输出顺序也无关紧要，只要最终得到的子图是一个鱼图。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果有多个解，输出任意一个即可。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中，一个可能的合法子图包含环 1→2→3→4→1$$$1 \\rightarrow 2 \\rightarrow 3 \\rightarrow 4 \\rightarrow 1$$$。该环的特殊节点是节点 4$$$4$$$。两条额外的边 4−5$$$4 - 5$$$ 和 4−6$$$4 - 6$$$ 都与 4$$$4$$$ 相连，从而构成鱼图。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，一个可能的合法子图包含环 1→3→4→1$$$1 \\rightarrow 3 \\rightarrow 4 \\rightarrow 1$$$。该环的特殊节点是节点 3$$$3$$$。两条额外的边 3−2$$$3 - 2$$$ 和 3−5$$$3 - 5$$$ 都与 3$$$3$$$ 相连，从而构成鱼图。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在最后一个样例中，可以证明不存在合法的子图。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. 鱼图",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -44,31 +44,92 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定三个整数 n$$$n$$$、L$$$L$$$ 和 R$$$R$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你需要完成以下操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选取一个满足 1≤m≤n$$$1 \\leq m \\leq n$$$ 的整数 m$$$m$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将区间 [1,n]$$$[1, n]$$$ 划分成 m$$$m$$$ 个区间 [l1,r1],[l2,r2],…,[lm,rm]$$$[l_1, r_1], [l_2, r_2], \\ldots, [l_m, r_m]$$$，使得：l1=1$$$l_1 = 1$$$ 且 rm=n$$$r_m = n$$$；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对所有 1≤i≤m$$$1 \\leq i \\leq m$$$，满足 li≤ri$$$l_i \\leq r_i$$$；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对所有 1≤i<m$$$1 \\leq i  \\lt  m$$$，满足 ri=li+1−1$$$r_i = l_{i+1} - 1$$$；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "满足 L≤ri−li+1≤R$$$L \\leq r_i - l_i + 1 \\leq R$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "记 Pi=Πrilii$$$P_i= \\Pi_{l_i}^{r_i}i$$$。求 gcd(P1,P2,…,Pm)$$$\\gcd(P_1, P_2,\\ldots,P_m)$$$ 的最小值，并输出你的区间划分方案。这里，gcd$$$\\gcd$$$ 表示最大公约数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "例如，当 n=7$$$n=7$$$、L=3$$$L=3$$$、R=4$$$R=4$$$ 时，一种最优方案是取 m=2$$$m=2$$$，区间为 [1,4]$$$[1,4]$$$ 和 [5,7]$$$[5,7]$$$。此时 gcd(P1,P2)=gcd(1⋅2⋅3⋅4,5⋅6⋅7)=gcd(24,210)=6$$$\\gcd(P_1,P_2)=\\gcd(1 \\cdot 2 \\cdot 3 \\cdot 4,5 \\cdot 6 \\cdot 7)=\\gcd(24,210)=6$$$，可以证明这就是最小值。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "由于 gcd(P1,P2,…,Pm)$$$\\gcd(P_1, P_2,\\ldots,P_m)$$$ 的值可能很大，你需要输出其对 998244353$$$998\\,244\\,353$$$ 取模的结果。如果不存在任何合法的区间划分方案，则输出 −1$$$-1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "每组测试包含多个测试用例。第一行包含测试用例数量 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)。接下来是各测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的唯一一行包含三个整数 n$$$n$$$、L$$$L$$$ 和 R$$$R$$$(1≤n≤105$$$1 \\le n \\le 10^5$$$，1≤L≤R≤n$$$1 \\le L \\le R \\le n$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 105$$$10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "对于每个测试用例，如果不存在任何合法的区间划分方案，则输出 −1$$$-1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，第一行输出两个整数 m$$$m$$$ 和 g$$$g$$$，其中 m$$$m$$$ 是区间的数量，而 g$$$g$$$ 是 gcd(P1,P2,…,Pm)$$$\\gcd(P_1, P_2,\\ldots,P_m)$$$ 的最小值对 998244353$$$998\\,244\\,353$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在接下来的 m$$$m$$$ 行中，输出两个数 li$$$l_i$$$ 和 ri$$$r_i$$$，表示区间的左端点和右端点。区间必须满足题目陈述中的所有条件。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果有多个答案，输出任意一个即可。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，不存在任何合法的区间划分方案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个测试用例的解释已在上面的题目陈述中给出。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "G. 乘积划分",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

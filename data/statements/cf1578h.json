@@ -47,18 +47,46 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Helen 学习函数式编程，并且对高阶函数这一概念非常着迷，即将其他函数作为参数的函数。她决定推广函数阶数的概念，并在一些示例上进行测试。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "为了进行研究，她定义了一种简单的类型语法。在她的语法中，类型非终结符 T$$$T$$$ 被定义为以下语法产生式之一，同时 order(T)$$$\\textrm{order}(T)$$$ 定义了对应类型的阶数：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "“()”是单位类型，order(\"()\")=0$$$\\textrm{order}(\\textrm{\"}\\texttt{()}\\textrm{\"}) = 0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"(\" T$$$T$$$ \")\" 是一个带括号的类型，order(\"(\"T\")\")=order(T)$$$\\textrm{order}(\\textrm{\"}\\texttt{(}\\textrm{\"}\\,T\\,\\textrm{\"}\\texttt{)}\\textrm{\"}) = \\textrm{order}(T)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "T1$$$T_1$$$ \"->\" T2$$$T_2$$$ 是一个函数类型，order(T1\"- \\gt \"T2)=max(order(T1)+1,order(T2))$$$\\textrm{order}(T_1\\,\\textrm{\"}\\texttt{- \\gt }\\textrm{\"}\\,T_2) = max(\\textrm{order}(T_1) + 1, \\textrm{order}(T_2))$$$。函数构造符 T1$$$T_1$$$ \"->\" T2$$$T_2$$$ 是从右向左结合的，因此类型 \"()->()->()\" 与函数返回一个函数的类型 \"()->(()->())\" 相同，其阶数为 1$$$1$$$。而 \"(()->())->()\" 是一个函数，它以阶数为 1 的类型 \"(()->())\" 作为参数，其阶数为 2$$$2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Helen 请你帮忙编写一个程序，计算给定类型的阶数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null
+      {
+        "ai": "输入的单独一行包含一个字符串，由字符 '(', ')', '-', 和 '>' 组成，用来描述一个符合题目描述中语法的有效类型。该行长度至多为 104$$$10^4$$$ 个字符。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数——给定类型的阶数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "H. 高阶函数",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

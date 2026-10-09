@@ -46,5 +46,83 @@
       "input": "3 10 15 17 9 2",
       "output": "11.3333333333"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行也是唯一一行包含整数 y1、y2、yw、xb、yb、r（1 ≤ y1、y2、yw、xb、yb ≤ 106；y1 < y2 < yw；yb + r < yw；2·r < y2 - y1）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证球在场地中的位置正确，不会穿过任何墙，也不会接触 Robo-Wallace 瞄准的那面墙。球门柱不能位于场地的角落。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 Robo-Wallace 无法按照描述的方式进球，请输出 \"-1\"（不含引号）。否则，请输出一个数 xw，即他的瞄准点的横坐标。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果存在多个瞄准点，输出其中任意一个的横坐标即可。检查答案的正确性时，所有比较均允许绝对误差，误差不超过 10 - 8。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "建议尽可能多地输出小数点后的位数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "注意，在第一个和第三个样例中，横坐标 xw 还可能有其他正确取值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "这是一个美丽的四月天，Wallace 正在和朋友们踢足球。但他的朋友们不知道，Wallace 实际上和 Gromit 一起待在家里，派出了他的机器人替身。Robo-Wallace 比其他人有几个优势。例如，他可以把球直接踢到指定位置。然而，“送球”这个概念对他来说却很陌生。这些特点结合起来，使 Robo-Wallace 成为了完美的足球运动员：球一到他脚下，他就可以直接瞄准球门并射门。上半场比赛中，他一直采用这种战术，但很少能进球。对方球队有一名非常出色的守门员，能够接住大多数直接飞向球门的球。不过 Robo-Wallace 反应很快，他意识到自己可以欺骗守门员。毕竟，他们是在一个四周有坚固墙壁的足球场地中比赛。Robo-Wallace 可以把球踢向另一侧的墙，这样守门员就不会尝试接球。然后，如果球从墙上反弹后飞入球门，就终于可以得分了。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是帮助 Robo-Wallace 找到足球场地墙上的一个位置，使机器人将球踢向那里后，球恰好从这面墙反弹一次，并径直飞入球门。上半场比赛中，Robo-Wallace 的头部被球击中，受到了严重损伤。因此，他的一些装置已经损坏。由于这次损坏，Robo-Wallace 只能瞄准右侧的墙（Robo-Wallace 面朝对方球队的球门站立）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "足球场地是矩形的。建立一个二维坐标系，使得从上方观察场地时，点 (0, 0) 位于场地的左下角。Robo-Wallace 所在球队的球门在右侧。这是一个临时搭建的足球场，因此 Robo-Wallace 对手的球门可能不在左侧墙的正中间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/b39d273b4c5cd46a4d37ff55628a7060ed515f30.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在给定的坐标系中，已知：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "y1、y2——Robo-Wallace 对手球门两侧立柱的 y 坐标；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "yw——Robo-Wallace 瞄准的墙的 y 坐标；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "xb、yb——球被击中时球所在位置的坐标；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "r——球的半径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当球的中心在给定坐标系中，于 (0, y1) 和 (0, y2) 之间穿过 OY 轴时，即判定为进球。球沿直线运动。球撞墙是完全弹性的（球不会因撞击而收缩），入射角等于反射角。如果球从墙上反弹后没有进入球门，也就是说撞到了另一面墙或球门柱，那么对方队伍会接住球，而 Robo-Wallace 会开始寻找计算错误并陷入故障。若这种情况有可能发生，则应当避免。我们认为，当球心到某个物体的距离不大于球的半径 r 时，球就接触到了该物体。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Robo-Footballer",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

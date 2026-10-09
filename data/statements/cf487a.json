@@ -38,5 +38,67 @@
       "input": "100 100 100\n1 1 1\n1 1 1",
       "output": "0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一只怪物正在攻击 Cyberland！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "勇敢的 Yang 大师准备击败这只怪物。Yang 和怪物各有 3 项属性：生命值（HP）、攻击力（ATK）和防御力（DEF）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在战斗过程中，每秒怪物的 HP 会减少 max(0, ATKY - DEFM)，而 Yang 的 HP 会减少 max(0, ATKM - DEFY)，其中下标 Y 表示 Yang 大师，下标 M 表示怪物。两者的 HP 会同时减少。当怪物的 HP ≤ 0 且同时 Yang 大师的 HP > 0 时，Yang 大师获胜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Yang 大师可以从 Cyberland 的魔法商店购买属性：每点 HP 需要 h 比特币，每点 ATK 需要 a 比特币，每点 DEF 需要 d 比特币。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "现在杨大师想知道，为了获胜他最少需要花费多少比特币。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于第一个样例，ATK 和 DEF 的价格都非常高。杨大师可以购买 99 点 HP，之后他就能击败怪物，并剩下 1 点 HP。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于第二个样例，杨大师的实力足以击败怪物，因此他不需要购买任何东西。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 HPY、ATKY 和 DEFY，相邻整数之间用空格分隔，分别表示杨大师的初始生命值、攻击力和防御力。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含三个整数 HPM、ATKM 和 DEFM，相邻整数之间用空格分隔，分别表示怪物的生命值、攻击力和防御力。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三行包含三个整数 h、a 和 d，相邻整数之间用空格分隔，分别表示 1 点生命值、1 点攻击力和 1 点防御力的价格。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入中的所有数字均为整数，且均在 1 到 100（含）之间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "唯一的输出行应包含一个整数，表示杨大师为了获胜所需花费的最少比特币数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 与怪物战斗",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

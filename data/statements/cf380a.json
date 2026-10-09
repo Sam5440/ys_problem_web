@@ -28,5 +28,49 @@
       "input": "6\n1 1\n1 2\n2 2 1\n1 3\n2 5 2\n1 4\n16\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16",
       "output": "1 2 1 2 3 1 2 1 2 3 1 2 1 2 3 4"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含整数 m（1 ≤ m ≤ 10^5）——构建序列所需的阶段数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来 m 行按照阶段执行的顺序给出各阶段的描述。每行的第一个数字是阶段类型（1 或 2）。类型 1 表示向序列末尾添加一个数字，此时该行包含整数 x_i（1 ≤ x_i ≤ 10^5）——要添加的数字。类型 2 表示将长度为 l_i 的前缀复制 c_i 次并添加到末尾，此时该行还包含两个整数 l_i、c_i（1 ≤ l_i ≤ 10^5，1 ≤ c_i ≤ 10^4），其中 l_i 是前缀的长度，c_i 是复制次数。保证前缀长度 l_i 从不大于序列的当前长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行包含整数 n（1 ≤ n ≤ 10^5）——Sereja 感兴趣的元素个数。下一行包含 Sereja 感兴趣的最终序列元素的编号。这些编号按严格递增的顺序给出。保证所有编号都严格大于零且不超过最终序列的长度。将最终序列中的元素从序列开头到末尾依次编号，从 1 开始。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请不要在 C++ 中使用 %lld 格式说明符来读写 64 位整数。建议使用 cin、cout 流或 %I64d 格式说明符。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "按照这些元素的编号在输入中出现的顺序，输出 Sereja 感兴趣的元素。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Sereja 非常喜欢数列。因此他决定按照某个算法为自己构造一个新的数列。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Sereja 拿出一张空白纸，然后开始分 m 个阶段写出这个序列。每次他要么在序列末尾添加一个新数，要么取出当前序列的前 l 个元素，并将它们重复 c 次追加到末尾。更形式化地，若将当前序列表示为 a1, a2, ..., an，则执行上述操作后，序列变为 a1, a2, ..., an[, a1, a2, ..., al]（方括号中的部分需要重复 c 次）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "一天过去了，Sereja 完成了这个序列。他想知道其中某些元素的值。请帮助 Sereja。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. Sereja 与前缀",
+    "aiModel": "DeepSeek V4 Flash"
+  }
 }

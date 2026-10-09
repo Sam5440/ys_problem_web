@@ -34,21 +34,58 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Bob 是电子游戏《League of Leesins》的狂热粉丝，而今天正值 League of Leesins 世界锦标赛落下帷幕，他正在庆祝！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "比赛共有来自世界各地的 n$$$n$$$ 支队伍(n≥5$$$n \\ge 5$$$)。比赛开始前，Bob 预测了各队的排名，从第 1$$$1$$$ 名到第 n$$$n$$$ 名。决赛结束后，他将预测结果与实际结果进行比较，发现按照他的预测排名第 i$$$i$$$ 的队伍最终排在第 pi$$$p_i$$$ 位(1≤pi≤n$$$1 \\le p_i \\le n$$$，所有 pi$$$p_i$$$ 互不相同)。换句话说，p$$$p$$$ 是 1,2,…,n$$$1, 2, \\dots, n$$$ 的一个排列。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "由于 Bob 最喜欢的 League 选手是著名的“3ga”，他决定记下排列 p$$$p$$$ 中每 3$$$3$$$ 个连续的元素。形式化地说，Bob 创建了一个包含 n−2$$$n-2$$$ 个三元组的数组 q$$$q$$$，其中对于每个 1≤i≤n−2$$$1 \\le i \\le n-2$$$，都有 qi=(pi,pi+1,pi+2)$$$q_i = (p_i, p_{i+1}, p_{i+2})$$$。Bob 对自己的数组非常自豪，于是把它展示给朋友 Alice。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "得知 Bob 的数组后，Alice 声称，即使 Bob 重新排列 q$$$q$$$ 中的元素以及每个三元组内部的元素，她也能还原排列 p$$$p$$$。当然，Bob 不相信这种魔法，于是照做了一遍，想看看 Alice 会如何回应。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，当 n=5$$$n = 5$$$ 且 p=[1,4,2,3,5]$$$p = [1, 4, 2, 3, 5]$$$ 时，原数组 q$$$q$$$ 为 [(1,4,2),(4,2,3),(2,3,5)]$$$[(1, 4, 2), (4, 2, 3), (2, 3, 5)]$$$。随后，Bob 可以重新排列每个三元组中的数字以及三元组的位置，得到 [(4,3,2),(2,3,5),(4,1,2)]$$$[(4, 3, 2), (2, 3, 5), (4, 1, 2)]$$$。注意，[(1,4,2),(4,2,2),(3,3,5)]$$$[(1, 4, 2), (4, 2, 2), (3, 3, 5)]$$$ 并不是 q$$$q$$$ 的有效重排，因为 Bob 不允许交换属于不同三元组的数字。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "作为 Alice 的朋友，你非常清楚 Alice 只是想炫耀一下，因此你决定通过给出任意一个与她拿到的数组 q$$$q$$$ 一致的排列 p$$$p$$$，来帮她挽回一些面子。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(5≤n≤105$$$5 \\le n \\le 10^5$$$)——排列 p$$$p$$$ 的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来 n−2$$$n-2$$$ 行中的第 i$$$i$$$ 行包含 3$$$3$$$ 个整数 qi,1$$$q_{i, 1}$$$、qi,2$$$q_{i, 2}$$$、qi,3$$$q_{i, 3}$$$(1≤qi,j≤n$$$1 \\le q_{i, j} \\le n$$$)——重排(打乱)后的数组 qi$$$q_i$$$ 中第 i$$$i$$$ 个三元组的元素，顺序随机。请注意，每个三元组内的数字可以被重新排列，三元组的位置也可以被重新排列。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证至少存在一个与输入一致的排列 p$$$p$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null
+      {
+        "ai": "输出 n$$$n$$$ 个互不相同的整数 p1,p2,…,pn$$$p_1, p_2, \\ldots, p_n$$$(1≤pi≤n$$$1 \\le p_i \\le n$$$)，使得排列 p$$$p$$$ 与数组 q$$$q$$$ 一致。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果有多个答案，输出任意一个即可。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. Leesins 联赛",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

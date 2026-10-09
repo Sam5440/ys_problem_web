@@ -38,5 +38,67 @@
       "input": "3 4 5\n1 1 2\n2 3 0\n3 3 1\n0 1 1 100 100\n1 2 2 4 4\n2 2 1 4 7\n1 50 50 51 51",
       "output": "3\n3\n5\n0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "对于每次观测，输出所看到的星星的总亮度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "让我们考虑第一个样例。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第一次观测时，你只能看到第一颗星星。在时刻 2，它的亮度为 3，因此答案是 3。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二次观测时，你只能看到第二颗星星。在时刻 0，它的亮度为 0，因此答案是 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三次观测时，你可以看到两颗星星。在时刻 5，第一颗星星的亮度为 2，第二颗星星的亮度为 1，因此答案是 3。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "天空中建立了笛卡尔坐标系。在那里可以看到 n 颗星星，第 i 颗星星的坐标为 (xi, yi)，最大亮度为 c，所有星星的最大亮度均相同，初始亮度为 si（0 ≤ si ≤ c）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "随着时间推移，星星会闪烁。在时刻 0，第 i 颗星星的亮度为 si。设在时刻 t 某颗星星的亮度为 x，则在时刻 (t + 1)，如果 x + 1 ≤ c，该星星的亮度将变为 x + 1，否则变为 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你想要观察天空 q 次。第 i 次观察将在时刻 ti 进行，你会看到一个边与坐标轴平行的矩形，其左下角坐标为 (x1i, y1i)，右上角坐标为 (x2i, y2i)。对于每次观察，你需要知道位于所观察矩形内的星星的总亮度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果一颗星星位于矩形的边界上或严格位于矩形内部，则称这颗星星位于该矩形内。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n、q、c（1 ≤ n, q ≤ 105，1 ≤ c ≤ 10）——星星的数量、观察次数以及星星的最大亮度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n 行包含星星的描述。其中第 i 行包含三个整数 xi、yi、si（1 ≤ xi, yi ≤ 100，0 ≤ si ≤ c ≤ 10）——第 i 颗星星的坐标及其初始亮度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 q 行包含观察的描述。其中第 i 行包含五个整数 ti、x1i、y1i、x2i、y2i（0 ≤ ti ≤ 109，1 ≤ x1i < x2i ≤ 100，1 ≤ y1i < y2i ≤ 100）——第 i 次观察的时刻以及所观察矩形的坐标。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 星空",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

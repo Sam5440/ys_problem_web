@@ -40,27 +40,76 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "你有 n$$$n$$$ 根给定长度的木棍。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的任务是恰好选择其中四根木棍，使它们能够组成一个矩形。不能将木棍切成若干段，矩形的每条边都必须由一根木棍构成。同一根木棍不能被重复选择。保证总能选择出满足条件的木棍。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "令 S$$$S$$$ 表示矩形的面积，P$$$P$$$ 表示矩形的周长。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选出的矩形应使 P2S$$$\\frac{P^2}{S}$$$ 的值尽可能小。该值不进行任何舍入。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果有多个答案，输出其中任意一个即可。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例包含若干个木棍列表，对于每个列表，都需要单独解决该问题。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$(T≥1$$$T \\ge 1$$$)——测试用例中木棍列表的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来有 2T$$$2T$$$ 行——其中第 (2i−1)$$$(2i - 1)$$$ 行和第 2i$$$2i$$$ 行描述第 i$$$i$$$ 个列表。每对中的第一行包含一个整数 n$$$n$$$(4≤n≤10^6$$$4 \\le n \\le 10^6$$$)——第 i$$$i$$$ 个列表中的木棍数量。每对中的第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤aj≤10^4$$$1 \\le a_j \\le 10^4$$$)——第 i$$$i$$$ 个列表中木棍的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证对于每个列表，都存在一种选取四根木棍的方法，使它们组成一个矩形。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在每个测试用例中，所有 T$$$T$$$ 个列表中的木棍总数不超过 10^6$$$10^6$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null
+      {
+        "ai": "输出 T$$$T$$$ 行。第 i$$$i$$$ 行应包含输入中第 i$$$i$$$ 个列表对应的答案，即从第 i$$$i$$$ 个列表中选出的四根木棍的长度，使它们组成一个矩形，且该矩形的 P^2/S$$$\\frac{P^2}{S}$$$ 值尽可能小。你可以按任意顺序输出这四个长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果有多个答案，输出任意一个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一个列表中只有一种选取四根木棍的方法，它们组成的矩形边长为 2$$$2$$$ 和 7$$$7$$$，面积为 2⋅7=14$$$2 \\cdot 7 = 14$$$，周长为 2(2+7)=18$$$2(2 + 7) = 18$$$。18^2/14≈23.143$$$\\frac{18^2}{14} \\approx 23.143$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个列表包含由四根木棍组成的子集，它们可以分别组成边长为 (1,2)$$$(1, 2)$$$、(2,8)$$$(2, 8)$$$ 和 (1,8)$$$(1, 8)$$$ 的矩形。它们的值分别为 622=18$$$\\frac{6^2}{2} = 18$$$、20216=25$$$\\frac{20^2}{16} = 25$$$ 和 1828=40.5$$$\\frac{18^2}{8} = 40.5$$$。其中最小的是矩形 (1,2)$$$(1, 2)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以从第三个列表给出的 5$$$5$$$ 根木棍中任意选择四根，它们将组成一个边长为 5$$$5$$$ 的正方形，而正方形仍然是边长为 (5,5)$$$(5, 5)$$$ 的矩形。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. 最小价值矩形",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

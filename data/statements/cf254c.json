@@ -32,5 +32,43 @@
       "input": "CDBABC\nADCABD",
       "output": "2\nADBADC"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入由两行组成。第一行包含字符串 s，第二行包含字符串 t。这两个字符串长度相同（从 1 到 10^5 个字符），且仅由大写英文字母组成。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出 z——将字符串 s 变为字符串 t 的某个变位词所需的最少替换操作次数。第二行输出经过 z 次操作可以得到的字典序最小的变位词。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第二个样例中，将字符串 s 中恰好两个字母替换后，可以得到字符串 t 的 8 个变位词：\"ADBADC\"、\"ADDABC\"、\"CDAABD\"、\"CDBAAD\"、\"CDBADA\"、\"CDDABA\"、\"DDAABC\"、\"DDBAAC\"。这些变位词按照字典序排列。字典序最小的变位词是 \"ADBADC\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "如果可以重新排列字符串 x 中的字母，使其得到完全相同的字符串 y，那么字符串 x 是字符串 y 的字母异位词。例如，字符串“DOG”和“GOD”是字母异位词，字符串“BABA”和“AABB”也是，但字符串“ABBAC”和“CAABA”不是。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定两个长度相同、仅由大写英文字母组成的字符串 s 和 t。你需要通过字符串 s 得到字符串 t 的一个字母异位词。你可以进行替换操作：每次操作将字符串 s 中的某个字符替换为任意其他字符。请使用最少的替换操作次数得到字符串 t 的一个字母异位词。如果有多个字母异位词都能通过最少的操作得到，请得到字典序最小的那个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "字符串的字典序就是我们熟悉的“字典”顺序。形式化地说，对于长度均为 n 的字符串 p 和 q，如果存在某个 k（1 ≤ k ≤ n），使得 p1 = q1，p2 = q2，…，p{k−1} = q{k−1}，且 pk < qk，则称字符串 p 的字典序小于字符串 q。这里字符串中的字符从 1 开始编号。字符串中的字符按照字母表顺序进行比较。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 字母异位词",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

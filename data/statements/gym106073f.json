@@ -36,19 +36,50 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Washington 是一位热衷于人工智能且热爱烹饪的厨师，他决定为自己的新餐厅 Frangolino 制造一个服务员机器人。该餐厅专门供应裹面包屑的鸡肉。Washington 将在一个特别的夜晚与朋友们一起开门营业，并决定在那次活动中测试服务员机器人。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "餐厅将设置 N$$$N$$$ 张桌子，编号从 1 到 N$$$N$$$，并且只提供一种菜品：鸡肉米兰内萨。Washington 喜欢玩文字游戏，于是决定为服务员机器人定义两条命令：命令“ali na mesa X$$$X$$$”(前往 X$$$X$$$ 号桌)和命令“a milanesa X$$$X$$$”(X$$$X$$$ 份鸡肉米兰内萨)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "命令“ali na mesa X$$$X$$$”表示服务员机器人应移动到 X$$$X$$$ 号桌并等待下一条指令。命令“a milanesa X$$$X$$$”表示服务员机器人应在系统中为它当前所在的桌子登记 X$$$X$$$ 份鸡肉米兰内萨的订单。夜晚开始时，服务员机器人位于 1 号桌。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "不幸的是，服务员机器人存在缺陷，无法正确处理字母异位词。对于收到的每条命令，机器人都有 50% 的概率正确执行该命令，也有 50% 的概率执行另一条命令。给定机器人收到的命令历史，请确定餐厅中的每张桌子最终将供应的鸡肉米兰内萨数量的期望值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含两个整数 N$$$N$$$ 和 Q$$$Q$$$(1≤N,Q≤105$$$1 \\leq N, Q \\leq 10^5$$$)，分别表示桌子数量和服务员机器人命令的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 Q$$$Q$$$ 个整数 X1,…,XQ$$$X_1, \\ldots, X_Q$$$(1≤Xi≤N$$$1 \\leq X_i \\leq N$$$)，由空格分隔。每个 Xi$$$X_i$$$ 描述服务员机器人收到的一条命令的参数，按照这些命令发生的顺序给出。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，命令本身不会提供，因为服务员机器人将以 50% 的概率执行其中任意一条命令。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null
+      {
+        "ai": "输出应包含 N$$$N$$$ 行。第 i$$$i$$$ 行应包含如下所述将在第 i$$$i$$$ 张桌子上供应的鸡肉米兰炸排数量的期望值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "期望值可能不是整数，但始终是有理数，因此可以表示为不可约分数 pq$$$\\frac{p}{q}$$$。由于 p$$$p$$$ 和 q$$$q$$$ 可能非常大，你应输出 p×q−1mod(109+7)$$$p \\times q^{-1} \\mod (10^9 + 7)$$$，其中 q−1$$$q^{-1}$$$ 是 q$$$q$$$ 关于模 109+7$$$10^9 + 7$$$ 的乘法逆元。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "F. Frangolino 在桌上",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

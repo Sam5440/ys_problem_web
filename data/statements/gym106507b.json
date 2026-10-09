@@ -47,34 +47,104 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "Ian 到达 Mary 家后，送给 Mary 一个花环。这个花环由不同种类的花组成。为方便起见，我们为每种花分配一个编号，并用整数数组 a1,a2,...,an$$$a_1,a_2,...,a_n$$$ 表示这个花环，其中 n$$$n$$$ 是花环中花的数量，并满足 ai=aj$$$a_i=a_j$$$ 当且仅当第 i$$$i$$$ 朵花与第 j$$$j$$$ 朵花属于同一种类。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果任意两朵相邻的花种类都不相同，Mary 就称这个花环是完美的。注意，第 n$$$n$$$ 朵花与第一朵花相邻。换句话说，不存在 i$$$i$$$ 使得 ai=ai+1$$$a_i=a_{i+1}$$$，其中下标按模 n$$$n$$$ 计算。例外是，仅由 1$$$1$$$ 朵花组成的花环始终被视为完美的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Mary 想把 Ian 送给她的花环剪成若干条花链，并将每条花链的两端连接起来，分别形成新的花环。她希望所有新形成的花环都是完美的。为满足她的要求，Mary 至少需要形成多少个花环？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1\\le t\\le 10^4$$$)，表示测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤3⋅105$$$1\\le n\\le 3\\cdot10^5$$$)，表示花环中花的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 a1,a2,...,an$$$a_1,a_2,...,a_n$$$(1≤ai≤n$$$1\\le a_i\\le n$$$)，其中 ai$$$a_i$$$ 是第 i$$$i$$$ 朵花的种类。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 3⋅105$$$3\\cdot10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "—",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "除去样例，子任务中的测试编号为 1−20$$$1 - 20$$$。每个测试点的分值为 10020=5$$$\\frac{100}{20} = 5$$$ 分。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "测试 1−20$$$1-20$$$ 不存在额外约束。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出一个整数，表示 Mary 需要组成的环的最少数量，使得所有环都是至高无上的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "前三个样例的解释：(注意，表示第 i$$$i$$$ 朵花的圆圈上的数字是 i$$$i$$$；当 ai=1$$$a_i=1$$$ 时，圆圈的背景颜色为绿色，当 ai=2$$$a_i=2$$$ 时为蓝色。)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "样例 1：该圆环已经处于最优状态。因此答案为 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/051c5f0083ed89e6a422fb34d25413a561dc094c.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "样例 2：最优做法是得到三个圆环，每个圆环中有一朵花。因此答案为 3$$$3$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/516d1905a1417f0a715e7e6efdc11e81f38bcdff.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "样例 3：我们可以在花朵 1$$$1$$$ 和 4$$$4$$$ 之间，以及花朵 2$$$2$$$ 和 3$$$3$$$ 之间切割，从而得到最优的两个圆环。答案为 2$$$2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/c7d05edfb13febc0440f26757e5b170ea87669d6.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "—",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "题目思路：culver0412",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "题目准备：culver0412",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "出现：Novice B",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. 花环",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

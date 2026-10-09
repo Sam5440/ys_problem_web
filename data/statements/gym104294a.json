@@ -38,17 +38,42 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "经过多年的实验，卡卡西创造出了\"方形\"忍术，这是一种能将闪电击向大片方形区域的强大忍术。卡卡西恰好在一座山上测试他的忍术，这座山可以用一个 N×N$$$N \\times N$$$ 的网格来建模。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "山上第 1≤i≤N$$$1\\leq i\\leq N$$$ 行、第 1≤j≤N$$$1\\leq j\\leq N$$$ 列的每个格子都有一个海拔高度 ci,j$$$c_{i, j}$$$。保证对于每个格子 (i,j)$$$(i,j)$$$，都有 ci,j≤min(ci+1,j, ci,j+1, ci+1,j+1)$$$c_{i,j} \\leq \\min \\left(c_{i+1, j}, \\space c_{i, j+1}, \\space c_{i+1, j+1}\\right)$$$(将 N×N$$$N\\times N$$$ 网格之外的格子视为海拔无穷大)。同时还保证 c1,1=0$$$c_{1, 1} = 0$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "卡卡西的忍术威力强大但有限制：方形忍术可以打击任意 k×k$$$k\\times k$$$ 的方形山体格子区域，但前提是整个 k×k$$$k\\times k$$$ 区域都位于山体网格范围内，且该区域内每个格子的海拔都在某个闭区间 [a,b]$$$[a, b]$$$ 内(即目标方形内所有格子 (i,j)$$$(i,j)$$$ 都满足 a≤ci,j≤b$$$a \\leq c_{i, j} \\leq b$$$)。给定每个山体格子的海拔以及他的忍术所允许的海拔范围，卡卡西想知道他的忍术能够打击的最大方形区域包含多少个格子。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含 2 个整数 N$$$N$$$ 和 Q$$$Q$$$(1≤N≤300，1≤Q≤104$$$1 \\leq N \\leq 300, \\space 1 \\leq Q \\leq 10^4$$$)，分别表示网格的大小和测试用例的数量。每个测试用例都使用相同的山体网格。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行每行包含 N$$$N$$$ 个空格分隔的整数。第 i$$$i$$$ 行上的第 j$$$j$$$ 个整数表示海拔高度 ci,j$$$c_{i, j}$$$(0≤ci,j≤N2$$$0 \\leq c_{i, j} \\leq N^2$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 Q$$$Q$$$ 行每行描述一个测试用例，包含两个空格分隔的整数 a$$$a$$$ 和 b$$$b$$$(0≤a≤b<N2$$$0 \\leq a \\leq b  \\lt  N^2$$$)，分别表示卡卡西的方形忍术能够打击的最低和最高海拔。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出一行一个整数：Kakashi 的方术能够攻击的最大正方形土地块中山地单元格的数量。对于每个测试用例，保证 Kakashi 至少可以攻击一个单元格。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "A. Square Jutsu!",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

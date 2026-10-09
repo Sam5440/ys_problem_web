@@ -40,23 +40,60 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "Kilani 正在和他的朋友们玩一个游戏。这个游戏可以表示为一个大小为 n×m$$$n \\times m$$$ 的网格，其中每个格子要么为空，要么被阻挡，并且每名玩家在一些格子中都有一个或多个城堡(同一个格子中不会有两个城堡)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "游戏分轮进行。在每一轮中，玩家依次扩张：首先第一名玩家扩张，然后第二名玩家扩张，以此类推。扩张过程如下：对于当前玩家拥有的每座城堡，他都尝试向附近的空格子扩张。如果玩家 i$$$i$$$ 可以在不经过被阻挡的格子或其他玩家城堡所在格子的情况下，通过向左、上、右或下移动至多 si$$$s_i$$$ 步到达某个空格子，则他可以从自己的城堡所在格子扩张到该空格子(其中 si$$$s_i$$$ 是玩家的扩张速度)。玩家找出他可以扩张到的所有格子，并立即在每个格子中建造一座城堡。之后轮到下一名玩家。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当没有玩家可以进行移动时，游戏结束。给定游戏场地以及每名玩家的扩张速度，Kilani 想知道游戏结束后每名玩家将控制多少个格子（在其中拥有城堡）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、m$$$m$$$ 和 p$$$p$$$(1≤n,m≤1000$$$1 \\le n, m \\le 1000$$$，1≤p≤9$$$1 \\le p \\le 9$$$)，分别表示网格的大小和玩家数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 p$$$p$$$ 个整数 si$$$s_i$$$(1≤s≤109$$$1 \\le s \\le 10^9$$$)，表示每位玩家的扩张速度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行描述游戏网格。每行包含 m$$$m$$$ 个符号，其中“.”表示空单元格，“#”表示被阻塞的单元格，数字 x$$$x$$$(1≤x≤p$$$1 \\le x \\le p$$$)表示属于玩家 x$$$x$$$ 的城堡。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证每位玩家在网格上至少拥有一座城堡。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出 p$$$p$$$ 个整数，表示游戏结束后每位玩家所控制的单元格数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "下图展示了第一个样例中游戏开始前、第一轮结束后以及第二轮结束后的游戏状态：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/f914f492fa6d96af669ce8d109f973862a0d120e.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，第一位玩家被“阻挡”了，因此在整个游戏过程中都不会占领新的格子。其他所有玩家都会在前两轮中扩张，而在第三轮中只有第二位玩家会向左移动。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. Kilani 与游戏",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -46,33 +46,100 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "对于 01 串∗$$$^{\\text{∗}}$$$ v$$$v$$$，v$$$v$$$ 的分数定义为以下式子的最大值：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "F(v,1,i)⋅F(v,i+1,|v|)\n$$F\\big(v, 1, i\\big) \\cdot F\\big(v, i+1, |v|\\big)$$",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "遍历所有 i$$$i$$$(0≤i≤|v|$$$0 \\leq i \\leq |v|$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "这里，F(v,l,r)=r−l+1−2⋅zero(v,l,r)$$$F\\big(v, l, r\\big) = r - l + 1 - 2 \\cdot \\operatorname{zero}(v, l, r)$$$，其中 zero(v,l,r)$$$\\operatorname{zero}(v, l, r)$$$ 表示 vlvl+1…vr$$$v_lv_{l+1} \\ldots v_r$$$ 中 0$$$\\mathtt{0}$$$ 的个数。如果 l>r$$$l  \\gt  r$$$，则 F(v,l,r)=0$$$F\\big(v, l, r\\big) = 0$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "给定一个 01 串 s$$$s$$$，其长度为 n$$$n$$$，以及一个正整数 q$$$q$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你需要回答 q$$$q$$$ 个查询。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在每个查询中，给定一个整数 i$$$i$$$(1≤i≤n$$$1 \\leq i \\leq n$$$)。你必须将 si$$$s_i$$$ 从 0$$$\\mathtt{0}$$$ 翻转为 1$$$\\mathtt{1}$$$(或从 1$$$\\mathtt{1}$$$ 翻转为 0$$$\\mathtt{0}$$$)。在每次修改查询之后，求出 s$$$s$$$ 的所有非空子序列†$$$^{\\text{†}}$$$ 的得分之和。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "由于结果可能很大，请输出答案对 998244353$$$998\\,244\\,353$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "注意，这些修改是持久的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "∗$$$^{\\text{∗}}$$$二进制字符串是仅由字符 0$$$\\mathtt{0}$$$ 和 1$$$\\mathtt{1}$$$ 组成的字符串。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "†$$$^{\\text{†}}$$$如果可以通过删除 y$$$y$$$ 中若干个(可能为零个或全部)字符得到 x$$$x$$$，则二进制字符串 x$$$x$$$ 是二进制字符串 y$$$y$$$ 的子序列。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)。接下来是各个测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$ 和 q$$$q$$$(1≤n≤2⋅105$$$1 \\leq n \\leq 2 \\cdot 10^5$$$，1≤q≤2⋅105$$$1 \\leq q \\leq 2 \\cdot 10^5$$$)——字符串 s$$$s$$$ 的长度和修改查询的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含长度为 n$$$n$$$ 的二进制字符串 s$$$s$$$，该字符串由字符 0$$$\\mathtt{0}$$$ 和 1$$$\\mathtt{1}$$$ 组成。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行每行包含一个整数 i$$$i$$$(1≤i≤n$$$1 \\leq i \\leq n$$$)，表示将 si$$$s_i$$$ 从 0$$$\\mathtt{0}$$$ 翻转为 1$$$\\mathtt{1}$$$，或从 1$$$\\mathtt{1}$$$ 翻转为 0$$$\\mathtt{0}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的所有取值之和以及 q$$$q$$$ 的所有取值之和均不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出 q$$$q$$$ 行，每行包含一个整数——所求的和对 998244353$$$998\\,244\\,353$$$ 取模后的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "对于第一个测试用例，在第一次修改后，我们有 s=110$$$s = \\texttt{110}$$$。我们可以按如下方式计算所有子序列的分数之和：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "相加得到：0+0+1+0+0+0+0=1$$$0+0+1+0+0+0+0 = 1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二次修改后，我们有 s=111$$$s = \\texttt{111}$$$。我们可以按如下方式计算所有子序列的分数之和：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "相加得到：0+0+1+0+1+1+2=5$$$0+0+1+0+1+1+2 = 5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. 01 串子序列价值总和",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

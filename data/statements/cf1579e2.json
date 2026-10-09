@@ -39,26 +39,72 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "事实上，问题 E1 和 E2 并没有太多共同之处。你最好把它们看作两个独立的问题。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定一个整数数组 a[1…n]=[a1,a2,…,an]$$$a[1 \\ldots n] = [a_1, a_2, \\ldots, a_n]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "让我们考虑一个空的双端队列。双端队列是一种支持在开头和末尾添加元素的数据结构。因此，如果双端队列中当前有元素 [3,4,4]$$$[3, 4, 4]$$$，将元素 1$$$1$$$ 添加到开头会得到序列 [1,3,4,4]$$$[\\color{red}{1}, 3, 4, 4]$$$，而将同一个元素添加到末尾则会得到 [3,4,4,1]$$$[3, 4, 4, \\color{red}{1}]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "数组中的元素会依次被添加到最初为空的双端队列中，从 a1$$$a_1$$$ 开始，到 an$$$a_n$$$ 结束。在将每个元素添加到双端队列之前，你可以选择将其添加到开头还是末尾。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，若考虑数组 a=[3,7,5,5]$$$a = [3, 7, 5, 5]$$$，一种可能的操作序列如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "求整个数组处理完毕后，双端队列中逆序对数量的最小可能值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "序列 d$$$d$$$ 中的逆序对是指一对下标 (i,j)$$$(i, j)$$$，满足 i<j$$$i  \\lt  j$$$ 且 di>dj$$$d_i  \\gt  d_j$$$。例如，数组 d=[5,3,7,5]$$$d = [5, 3, 7, 5]$$$ 中恰好有两个逆序对——(1,2)$$$(1, 2)$$$ 和 (3,4)$$$(3, 4)$$$，因为 d1=5>3=d2$$$d_1 = 5  \\gt  3 = d_2$$$ 且 d3=7>5=d4$$$d_3 = 7  \\gt  5 = d_4$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$ (1≤t≤1000$$$1 \\leq t \\leq 1000$$$) —— 测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 2t$$$2t$$$ 行包含各测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例描述的第一行包含一个整数 n$$$n$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$) —— 数组大小。描述的第二行包含 n$$$n$$$ 个空格分隔的整数 ai$$$a_i$$$ (−109≤ai≤109$$$-10^9 \\le a_i \\le 10^9$$$) —— 数组中的元素。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例的 n$$$n$$$ 之和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出 t$$$t$$$ 行，每行包含对应测试用例的答案。一个测试用例的答案应为一个整数——执行所描述的算法后，双端队列中逆序对数量的可能最小值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "从初始数组 [3,7,5,5]$$$[3, 7, 5, 5]$$$(第一个输入样例)得到双端队列中的序列 [5,3,7,5]$$$[5, 3, 7, 5]$$$(其中仅含两个逆序对)的方法之一已在题面中描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "此外，在这个例子中，你也可以只需将原数组的每个元素依次放到双端队列末尾，就得到含两个逆序对的答案。这样，原序列 [3,7,5,5]$$$[3, 7, 5, 5]$$$(它也恰好含有两个逆序对)会原样保留在双端队列中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E2. 使用双端队列进行数组优化",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

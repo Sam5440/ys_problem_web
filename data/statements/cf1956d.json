@@ -53,28 +53,80 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Nene 给了你一个长度为 n$$$n$$$ 的整数数组 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以至多执行 5⋅105$$$5\\cdot 10^5$$$ 次以下操作(也可以一次都不执行)：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择两个整数 l$$$l$$$ 和 r$$$r$$$，满足 1≤l≤r≤n$$$1 \\le l \\le r \\le n$$$，将 x$$$x$$$ 计算为 MEX({al,al+1,…,ar})$$$\\operatorname{MEX}(\\{a_l, a_{l+1}, \\ldots, a_r\\})$$$，并同时令 al:=x,al+1:=x,…,ar:=x$$$a_l:=x, a_{l+1}:=x, \\ldots, a_r:=x$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "这里，整数集合 {c1,c2,…,ck}$$$\\{c_1, c_2, \\ldots, c_k\\}$$$ 的 MEX$$$\\operatorname{MEX}$$$ 定义为集合 c$$$c$$$ 中未出现的最小非负整数 m$$$m$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的目标是最大化数组 a$$$a$$$ 中所有元素的和。求出最大和，并构造一个能够达到该和的操作序列。注意，你无需最小化该序列中的操作次数，只需保证你的解中使用的操作次数不超过 5⋅105$$$5\\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤18$$$1 \\le n \\le 18$$$)——数组 a$$$a$$$ 的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$(0≤ai≤107$$$0\\leq a_i \\leq 10^7$$$)——数组 a$$$a$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行输出两个整数 s$$$s$$$ 和 m$$$m$$$(0≤m≤5⋅105$$$0\\le m\\le 5\\cdot 10^5$$$)——数组 a$$$a$$$ 中元素和的最大值，以及你的解法中的操作次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在接下来的 m$$$m$$$ 行中，第 i$$$i$$$ 行输出两个整数 l$$$l$$$ 和 r$$$r$$$(1≤l≤r≤n$$$1 \\le l \\le r \\le n$$$)，表示第 i$$$i$$$ 次操作的参数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "可以证明，数组 a$$$a$$$ 中元素和的最大值总能在不超过 5⋅105$$$5 \\cdot 10^5$$$ 次操作内得到。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中，执行 l=1$$$l=1$$$ 且 r=2$$$r=2$$$ 的操作后，数组 a$$$a$$$ 变为 [2,2]$$$[2,2]$$$。可以证明，不可能使数组 a$$$a$$$ 中元素的和更大，因此答案为 4$$$4$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，元素的初始和为 13$$$13$$$，可以证明这是可能达到的最大值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个样例中，数组 a$$$a$$$ 的变化如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一次操作 (l=3$$$l=3$$$, r=3$$$r=3$$$) 后，数组 a$$$a$$$ 变为 [1,100,0,1]$$$[1,100,0,1]$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二次操作 (l=3$$$l=3$$$, r=4$$$r=4$$$) 后，数组 a$$$a$$$ 变为 [1,100,2,2]$$$[1,100,2,2]$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "可以证明，无法使数组 a$$$a$$$ 中元素的和更大，因此答案为 105$$$105$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. Nene 与 MEX 运算符",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

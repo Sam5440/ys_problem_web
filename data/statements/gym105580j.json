@@ -55,42 +55,142 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "这是一道交互题。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定一个由 N×M$$$N \\times M$$$ 个房间组成的网格迷宫，其中 3≤N,M≤30$$$3 \\leq N, M \\leq 30$$$。任意两个共边相邻的房间之间都有一条双向的彩色走廊相连。走廊只有四种可涂成的颜色：红色、绿色、蓝色和黄色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "迷宫中的一个房间是起点房间，另一个是终点房间。你只能通过相连的走廊在相邻房间之间移动。你可以沿走廊进入另一个房间，然后再返回。移动过程中，会形成一个由你的移动组成的序列。当你向前移动时，经过的走廊颜色会被添加到序列中；当你返回时，序列中的最后一个元素会被删除。但是有一条限制：如果序列的最后三个元素中包含 C$$$C$$$，则你不能通过颜色为 C$$$C$$$ 的走廊。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "参与者不知道迷宫、起始位置和终止位置。你需要从起点房间到达终点房间。保证终点房间可以到达。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "交互",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "开始时，评测程序会输出两个数 N$$$N$$$ 和 M$$$M$$$。随后，对于参与者进行的每次移动，评测程序都会输出该步是否成功；如果参与者已经到达终点房间，则要求结束程序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每次移动必须是以下命令之一：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"MOVE LEFT\" —— 如果你想前往位于你左侧的房间；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"MOVE RIGHT\"——如果你想前往位于你右侧的房间；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"MOVE UP\"——如果你想前往位于你上方的房间；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"MOVE DOWN\"——如果你想前往位于你下方的房间；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"BACK\"——向后移动。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "评测程序将回复以下内容之一：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"OK\"——如果你的移动成功，并且你移动到了另一个房间；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "“FAIL”——如果你的移动失败了，即你尝试通过颜色无效的走廊，或尝试在序列为空时返回；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "“EXIT”——如果你已经到达终点房间。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从第 22 个测试$$$22$$$开始，评测程序会根据参赛者程序的输出进行自适应调整。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "移动总次数不得超过 100000$$$100\\,000$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [],
     "output": [],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试中，评测程序使用如下迷宫：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/9a3b160d6a02e91b4065cf4ccabbd71b3c259984.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "黑点表示房间。房间之间的走廊用线表示。走廊旁的字母表示其颜色（“Y”——黄色，“R”——红色，“G”——绿色，“B”——蓝色）。开始时，参与者位于带有粗体黑点标记的房间内。参与者的最终目的地房间旁标有字母“X”。参与者事先不知道迷宫、起始位置和终点位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一条指令是 BACK，但由于尚未进行任何移动，因此什么也没有发生。评测程序报告移动失败（“FAIL”）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二条指令是 MOVE DOWN。执行后，已经通过的走廊颜色序列将为：“黄色”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "移动过程如下图所示。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/fc9e7a2d6706c465e0deea4b7bb0cddbbe570af8.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一条指令是 MOVE LEFT。执行该指令时，参与者尝试通过黄色走廊，而黄色走廊已经是序列中的最后一条，因此评测程序告知此次移动失败。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一个指令是向右移动。颜色序列现在变为：“黄色，蓝色”。移动过程如下图所示。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/37c03826e36090105014b1360f6d9a6c940bbbfe.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在接下来的三个指令中，参赛者尝试通过蓝色或黄色的走廊，而这些颜色已经包含在序列的最后三个元素中，因此评测方报告称这些移动均未成功。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的指令是返回。移动序列为：“黄色”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一个指令仍然是返回。移动序列为：“”（空）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一个指令是向上移动。移动序列将为“蓝色”。由于参赛者已经到达终点房间，评测方要求参赛者结束程序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "J. 迷宫",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -43,26 +43,72 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "Bessie 正试图将数字 X$$$X$$$ 转换为 Y$$$Y$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "一次操作中，Bessie 可以选择一个整数 M$$$M$$$(M≥1$$$M \\ge 1$$$)，并将 X$$$X$$$ 舍入到最接近的 M$$$M$$$ 的倍数。如果 X$$$X$$$ 恰好位于 M$$$M$$$ 的两个倍数中间，则将其向上舍入。注意，0$$$0$$$ 是每个数的倍数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Bessie 将 X$$$X$$$ 转换为 Y$$$Y$$$ 至少需要进行多少次操作？输出这个次数；如果不可能，则输出 −1$$$-1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤104$$$1 \\le T \\le 10^4$$$)——测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 T$$$T$$$ 行中，每行包含两个整数 X$$$X$$$ 和 Y$$$Y$$$(1≤X,Y≤109$$$1 \\le X, Y \\le 10^9$$$)——初始数和目标数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出一个整数——所需的最少操作次数；如果无法实现，则输出 −1$$$-1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例的第一个测试用例中，X=2$$$X=2$$$，Y=5$$$Y=5$$$。Bessie 可以执行以下 2$$$2$$$ 次操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择 M=4$$$M=4$$$。4$$$4$$$ 的倍数为 0,4,8,…$$$0, 4, 8, \\dots$$$。X=2$$$X=2$$$ 恰好位于 0$$$0$$$ 和 4$$$4$$$ 的正中间，因此将其向上取整为 4$$$4$$$。此时 X=4$$$X=4$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择 M=5$$$M=5$$$。5$$$5$$$ 的倍数为 0,5,10,…$$$0, 5, 10, \\dots$$$。距离 4$$$4$$$ 最近的倍数是 5$$$5$$$。此时 X=5$$$X=5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "可以证明，用少于 2$$$2$$$ 次操作是不可能完成此操作的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一个样例的第二组测试用例中，X=6$$$X=6$$$，Y=4$$$Y=4$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "选择 M=5$$$M=5$$$。X=6$$$X=6$$$ 最接近 5$$$5$$$。现在 X=5$$$X=5$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "选择 M=4$$$M=4$$$。X=5$$$X=5$$$ 最接近 4$$$4$$$。现在 X=4$$$X=4$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "可以证明，用少于 2$$$2$$$ 次操作是不可能完成此操作的。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. Bessie 与舍入",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

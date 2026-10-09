@@ -45,5 +45,111 @@
       "input": "3\n2\n1\n3\n2\n1\n0",
       "output": "? 000\n? 001\n? 010\n? 011\n? 100\n? 101\n! 2 1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Mahmoud 和 Ehab 现在处于第四阶段。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Evil 博士有一个长度为 n 的隐藏 01 串。他保证其中至少有一个字符为 '0'，且至少有一个字符为 '1'。现在，他希望 Mahmoud 和 Ehab 找到任意一个 '0' 字符的位置和任意一个 '1' 字符的位置。为此，Mahmoud 和 Ehab 最多可以提问 15 次。他们向 Evil 博士询问一个长度为 n 的 01 串，而 Evil 博士会告知这两个字符串之间的汉明距离。两个长度相同的 01 串之间的汉明距离，是指它们对应位置上的字符不同的位置数。你可以在下面的注释部分找到汉明距离的定义。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "帮助 Mahmoud 和 Ehab 找到这两个位置。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果出现以下情况，你将得到 Wrong Answer 判定：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的查询不符合下文所述的交互协议。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你提出了严格多于 15 个问题，并且程序在超出查询次数限制后才终止。请注意，你最多可以进行 15 次询问并进行 1 次回答。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的最终答案不正确。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果超过最大查询次数，你应输出 0 并终止。在这种情况下，你将得到 Wrong Answer；如果不终止，由于你会从已关闭的流中读取数据，因此可能得到任意判定。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "要输出最终答案，请输出 \"! pos0 pos1\"（不含引号），其中 pos0 和 pos1 分别是字符串中某个 '0' 和某个 '1' 的位置（字符串的位置从 1 开始编号）。输出答案后不要忘记刷新输出！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "要提出询问，请使用 \"? s\"（不含引号）的格式，其中 s 是一个查询字符串。输出询问后不要忘记刷新输出！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每次询问后，你可以从标准输入中读取一个整数，表示隐藏字符串与查询字符串之间的汉明距离。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "要刷新输出，可以使用：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "fflush(stdout)（C++）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Java 中的 `System.out.flush()`；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Python 中的 `stdout.flush()`；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Pascal 中的 `flush(output)`；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "其他语言请参阅相关文档。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "攻击。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "要攻击某人的代码，只需输出一个长度不超过 1000 的 01 串，且其中至少包含一个 `'0'` 和一个 `'1'`。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（2 ≤ n ≤ 1000），表示隐藏二进制字符串的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "汉明距离定义：https://en.wikipedia.org/wiki/Hamming_distance",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第一个测试用例中，隐藏的二进制字符串为 101。第一次查询为 000，因此汉明距离为 2。在第二次查询中，隐藏的字符串仍为 101，查询字符串为 001，因此汉明距离为 1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "经过若干次查询后，你发现位置 2 的字符是 '0'，位置 1 的字符是 '1'，于是输出 \"! 2 1\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Mahmoud、Ehab 和 01 串",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

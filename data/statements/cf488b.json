@@ -45,5 +45,79 @@
       "input": "4\n1\n2\n2\n3",
       "output": "YES"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "如果存在解，在输出的第一行打印“YES”；如果不存在解，则打印“NO”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果存在解，你应该再输出 4 - n 行，每行包含一个整数 b，表示某个缺失盒子中的糖果数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你的所有数字 b 必须满足不等式 1 ≤ b ≤ 10^6。保证如果存在正整数解，你总能找到满足条件的这样的 b。如果有多组答案，你可以输出其中任意一组。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "给定的数 ai 在输入中可能以任意顺序出现，不一定是非递减的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "ai 在原集合中可能位于任意位置，不一定在前 n 个最小的位置上。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于第一个样例，4 个盒子中的糖果数量可以是 1, 1, 3, 3。它们的算术平均数、中位数和极差都为 2。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于第二个样例，不可能找到缺失的糖果数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第三个样例中，没有盒子丢失，并且数字满足条件。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以以任意顺序输出 b。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Cyberland 有一个古老的传统：在家中存放 4 盒糖果。如果糖果数量的算术平均数、中位数和极差都相等，那么这些糖果数量就是特殊的。根据定义，对于集合 {x1, x2, x3, x4}(x1 ≤ x2 ≤ x3 ≤ x4)，算术平均数为 ![](https://espresso.codeforces.com/daeb25d0b520beaea095158d4851903f527ffafc.png)，中位数为 ![](https://espresso.codeforces.com/7655b731471163052bb5fbb4c5414c495a2ca2e2.png)，极差为 x4 - x1。算术平均数和中位数不一定是整数。众所周知，如果这三个数相同，这些盒子就会产生一个“调试场”，场中的代码将不会有任何错误。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，1、1、3、3 是满足条件的 4 个数的一个例子，因为它们的平均数、中位数和极差都等于 2。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Jeff 有 4 个装有糖果的特殊盒子。然而，发生了一件糟糕的事情！其中一些盒子可能丢失了，现在只剩下 n（0 ≤ n ≤ 4）个盒子。第 i 个剩余的盒子中有 ai 颗糖果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "现在 Jeff 想知道：是否存在一种方案，确定丢失的 4 − n 个盒子中的糖果数量，并满足上述条件（平均数、中位数和极差相等）？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（0 ≤ n ≤ 4）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n 行每行包含一个整数 ai，表示第 i 个盒子中糖果的数量（1 ≤ ai ≤ 500）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 糖果盒",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

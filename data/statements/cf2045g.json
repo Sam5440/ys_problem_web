@@ -45,24 +45,64 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "ICPC 山可以表示为一个由 R$$$R$$$ 行(编号从 1$$$1$$$ 到 R$$$R$$$)和 C$$$C$$$ 列(编号从 1$$$1$$$ 到 C$$$C$$$)组成的网格。位于第 r$$$r$$$ 行、第 c$$$c$$$ 列的单元格记为 (r,c)$$$(r, c)$$$，其高度为 Hr,c$$$H_{r, c}$$$。如果两个单元格有公共边，则称它们相邻。形式化地说，若相应单元格存在，则 (r,c)$$$(r, c)$$$ 与 (r−1,c)$$$(r-1, c)$$$、(r+1,c)$$$(r+1, c)$$$、(r,c−1)$$$(r, c-1)$$$ 和 (r,c+1)$$$(r, c+1)$$$ 相邻。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你只能在相邻单元格之间移动，并且每次移动都会产生代价。在给定奇正整数 X$$$X$$$ 的情况下，从高度为 h1$$$h_1$$$ 的单元格移动到高度为 h2$$$h_2$$$ 的单元格会产生 (h1−h2)X$$$(h_1 - h_2)^X$$$ 的代价。注意，代价可能为负数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你需要回答 Q$$$Q$$$ 个相互独立的场景。对于每个场景，你从起始单元格 (Rs,Cs)$$$(R_s, C_s)$$$ 出发，希望以最小总代价到达目标单元格 (Rf,Cf)$$$(R_f, C_f)$$$。在某些场景中，总代价可能变得任意小；这样的场景称为无效场景。请找出从起始单元格移动到目标单元格的最小总代价，或判断该场景是否无效。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含三个整数 R$$$R$$$、C$$$C$$$ 和 X$$$X$$$(1≤R,C≤1000；1≤X≤9；X$$$1 \\leq R, C \\leq 1000; 1 \\leq X \\leq 9; X$$$ 是奇数)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 R$$$R$$$ 行中，每行包含一个长度为 C$$$C$$$ 的字符串 Hr$$$H_r$$$。Hr$$$H_r$$$ 中的每个字符都是 0 到 9 之间的数字。Hr$$$H_r$$$ 的第 c$$$c$$$ 个字符表示单元格 (r,c)$$$(r, c)$$$ 的高度，即 Hr,c$$$H_{r, c}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行包含一个整数 Q$$$Q$$$(1≤Q≤100000)$$$1 \\leq Q \\leq 100\\,000)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 Q$$$Q$$$ 行中，每行包含四个整数 Rs$$$R_s$$$、Cs$$$C_s$$$、Rf$$$R_f$$$ 和 Cf$$$C_f$$$(1≤Rs,Rf≤R；1≤Cs,Cf≤C$$$1 \\leq R_s, R_f \\leq R; 1 \\leq C_s, C_f \\leq C$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个场景，请在一行中输出以下内容。如果场景无效，输出 INVALID。否则，输出一个整数，表示从起始单元格移动到目标单元格所需的最小总罚值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "样例输入/输出 #1 的解释",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于第一个场景，一种解法是按如下方式移动：(1,1)→(2,1)→(3,1)→(3,2)→(3,3)→(3,4)$$$(1, 1) \\rightarrow (2, 1) \\rightarrow (3, 1) \\rightarrow (3, 2) \\rightarrow (3, 3) \\rightarrow (3, 4)$$$。该方案的总罚值为 (3−4)1+(4−3)1+(3−6)1+(6−8)1+(8−1)1=2$$$(3 - 4)^1 + (4 - 3)^1 + (3 - 6)^1 + (6 - 8)^1 + (8 - 1)^1 = 2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "样例输入/输出 #2 的解释",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于第一个场景，环 (1,1)→(2,1)→(2,2)→(1,2)→(1,1)$$$(1, 1) \\rightarrow (2, 1) \\rightarrow (2, 2) \\rightarrow (1, 2) \\rightarrow (1, 1)$$$ 的罚值为 (1−2)5+(2−0)5+(0−9)5+(9−1)5=−26250$$$(1 - 2)^5 + (2 - 0)^5 + (0 - 9)^5 + (9 - 1)^5 = -26250$$$。你可以不断重复这个环，使总罚值变得任意小。类似地，对于第二个场景，你可以先移动到 (1,1)$$$(1, 1)$$$，然后重复同一个环。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "G. X Aura",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

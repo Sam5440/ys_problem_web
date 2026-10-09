@@ -39,26 +39,72 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定一个排列 p$$$p$$$，它是 [1,2,…n]$$$[1, 2, \\ldots n]$$$ 的一个排列(n$$$n$$$ 为偶数)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你可以执行以下操作：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "选择一个长度为 2k$$$2k$$$ 的子序列 †$$$^\\dagger$$$(记为 t$$$t$$$；k$$$k$$$ 不必在每次操作中相同)，使得 max(t1,t2,…,tk)<min(tk+1,tk+2,…,t2k)$$$\\max(t_1, t_2, \\ldots, t_k)  \\lt  \\min(t_{k+1}, t_{k+2}, \\ldots, t_{2k})$$$ 或 min(t1,t2,…,tk)>max(tk+1,tk+2,…,t2k)$$$\\min(t_1, t_2, \\ldots, t_k)  \\gt  \\max(t_{k+1}, t_{k+2}, \\ldots, t_{2k})$$$。将 t$$$t$$$ 从 p$$$p$$$ 中删除。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你希望用最少的操作次数使 p$$$p$$$ 变为空。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你还必须输出每次操作所用的子序列，输出其中的值（而不是下标）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "†$$$^\\dagger$$$ 如果序列 x$$$x$$$ 可以通过从序列 y$$$y$$$ 中删除若干(可能为零个或全部)元素得到，则称 x$$$x$$$ 是 y$$$y$$$ 的子序列。例如，[1,3]$$$[1, 3]$$$、[1,2,3]$$$[1, 2, 3]$$$ 和 [2,3]$$$[2, 3]$$$ 都是 [1,2,3]$$$[1, 2, 3]$$$ 的子序列；而 [3,1]$$$[3, 1]$$$ 和 [2,1,3]$$$[2, 1, 3]$$$ 不是 [1,2,3]$$$[1, 2, 3]$$$ 的子序列。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\leq t \\leq 10^4$$$)，表示测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(2≤n≤2⋅105$$$2 \\leq n \\leq 2 \\cdot 10^5$$$，n$$$n$$$ 为偶数)，表示 p$$$p$$$ 的长度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 p1,p2,…,pn$$$p_1, p_2, \\ldots, p_n$$$(1≤pi≤n$$$1 \\leq p_i \\le n$$$)，表示排列 p$$$p$$$ 的元素。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例的 n$$$n$$$ 之和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，在第一行输出操作次数 x$$$x$$$。然后输出 x$$$x$$$ 行。每行输出子序列的长度，后跟一个合法子序列的元素。注意，你必须输出数值，而不是下标。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，我们可以选择 t=p$$$t = p$$$，并通过一次操作使 p$$$p$$$ 为空。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试用例中，我们仍然可以在第一次操作中选择 t=p$$$t = p$$$。我们可以看到 t$$$t$$$ 是有效的，因为 max(t1,t2)=2$$$\\max(t_1, t_2) = 2$$$ 且 min(t3,t4)=3$$$\\min(t_3, t_4) = 3$$$，并且 2<3$$$2  \\lt  3$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个测试用例中，由于 max(p1,p2)>min(p3,p4)$$$\\max(p_1, p_2)  \\gt  \\min(p_3, p_4)$$$ 且 min(p1,p2)<max(p3,p4)$$$\\min(p_1,p_2)  \\lt  \\max(p_3,p_4)$$$，无法通过一次操作使 p$$$p$$$ 为空。在第一次操作中，我们可以选择 t=[2,4]$$$t = [2, 4]$$$。从 p$$$p$$$ 中移除 t$$$t$$$ 后，我们得到 p=[3,1]$$$p = [3, 1]$$$。因此，在第二次操作中，我们可以选择 t=p$$$t = p$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 清空",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

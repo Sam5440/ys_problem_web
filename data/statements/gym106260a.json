@@ -35,22 +35,62 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "奥托·奥克塔维斯博士是一位杰出的核物理学家，正在研究他毕生的事业：一种可持续的聚变能源。他声称，借助全新的无限阶乘反应堆，他拥有“掌中太阳之力”。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "反应堆由 n$$$n$$$ 个排成一列的聚变核心组成，编号从 1$$$1$$$ 到 n$$$n$$$。初始时，第 i$$$i$$$ 个核心的能量值为 ai$$$a_i$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "奥克塔维斯使用机械臂执行 q$$$q$$$ 次操作。每次操作中，他都会对核心的特定区间 [l,r]$$$[l, r]$$$ 进行操作。操作有以下两种类型：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "聚变点火：奥克塔维斯触发编号从 l$$$l$$$ 到 r$$$r$$$ 的核心中的反应。该范围内每个核心的能量值都会变为其自身的阶乘。形式化地，对于满足 l≤i≤r$$$l \\le i \\le r$$$ 的每个 i$$$i$$$，能量值 ai$$$a_i$$$ 会变为 ai!$$$a_i!$$$(其中 0!=1$$$0! = 1$$$，且当 x≥1$$$x \\ge 1$$$ 时，x!=1×2×⋯×x$$$x! = 1 \\times 2 \\times \\dots \\times x$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "稳定性检查：奥克塔维斯测量编号从 l$$$l$$$ 到 r$$$r$$$ 的核心的总能量输出。然而，抑制器芯片存在限制，只能显示对 998244353$$$998244353$$$ 取模后的结果。形式化地，读数为 (∑ri=lai)(mod998244353)$$$\\left(\\sum_{i=l}^{r} a_i\\right) \\pmod{998244353}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请帮助奥克塔维斯博士模拟反应堆的运行过程，并确定所有类型 2 操作的能量读数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$ (1≤t≤105$$$1 \\le t \\le 10^5$$$) —— 测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$ 和 q$$$q$$$ (1≤n,q≤5⋅105$$$1 \\le n, q \\le 5 \\cdot 10^5$$$) —— 融合核心的数量和操作的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (0≤ai≤5⋅105$$$0 \\le a_i \\le 5 \\cdot 10^5$$$) —— 核心的初始能量等级。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行中，每行包含三个整数 type$$$type$$$、l$$$l$$$、r$$$r$$$ (type∈{1,2}$$$type \\in \\{1, 2\\}$$$、1≤l≤r≤n$$$1 \\le l \\le r \\le n$$$) —— 描述在区间 [l,r]$$$[l, r]$$$ 上执行的相应类型的操作。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 5⋅105$$$5 \\cdot 10^5$$$，且所有测试用例中 q$$$q$$$ 的总和不超过 5⋅105$$$5 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个类型为 2$$$2$$$ 的操作，输出一个整数 —— 区间内能量等级之和对 998244353$$$998244353$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "J. 太阳的力量",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

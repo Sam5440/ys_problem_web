@@ -42,21 +42,58 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在一节非常无聊的数学课上，Masha 在笔记本上画了一个包含 n$$$n$$$ 个顶点和 m$$$m$$$ 条边的无向图。图中的顶点编号从 1$$$1$$$ 到 n$$$n$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下课后，她去休息了。回来时，她发现图似乎发生了变化！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Masha 的同桌 Pasha 承认，Masha 不在时他对图进行了一些修改。具体来说，他执行了如下操作：选取图中的三个互不相同的顶点 a$$$a$$$、b$$$b$$$ 和 c$$$c$$$，对于每一对顶点 (a,b)$$$(a, b)$$$、(b,c)$$$(b, c)$$$ 和 (a,c)$$$(a, c)$$$，修改对应的边：如果该边在当前图中存在，就将其删除；如果不存在，就将其添加。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "他执行这一操作不止一次，而是进行了若干次(可能为零次或一次)，每次都会重新选择 a$$$a$$$、b$$$b$$$ 和 c$$$c$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Masha 想验证邻居的话是否属实，因此她请你找出任意一系列 Pasha 的操作，使其能够将原图变成 Masha 最初记在笔记本中的图。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含三个数 n$$$n$$$、m$$$m$$$ 和 k$$$k$$$(3≤n≤105$$$3 \\le n \\le 10^5$$$；0≤m,k≤105$$$0 \\le m, k \\le 10^5$$$)，分别表示顶点数、原图中的边数以及结果图中的边数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中，每行包含两个数 ui$$$u_i$$$ 和 vi$$$v_i$$$(1≤ui,vi≤n$$$1 \\le u_i, v_i \\le n$$$；ui≠vi$$$u_i \\neq v_i$$$)，表示原图中第 i$$$i$$$ 条边所连接的两个顶点。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 k$$$k$$$ 行以相同格式描述结果图。保证两个图都不含自环或重边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null
+      {
+        "ai": "若无法通过 Pasha 的操作从第一个图得到第二个图，请在一行中输出 «NO»。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，在第一行输出 «YES»。在下一行输出 Pasha 需要执行的操作次数 t$$$t$$$(0≤t≤2⋅105$$$0 \\le t \\le 2\\cdot 10^5$$$)。在接下来的 t$$$t$$$ 行中，每行输出三个数 ai$$$a_i$$$、bi$$$b_i$$$、ci$$$c_i$$$(1≤ai,bi,ci≤n$$$1 \\le a_i, b_i, c_i \\le n$$$，数 ai$$$a_i$$$、bi$$$b_i$$$、ci$$$c_i$$$ 应两两不同)，表示 Pasha 在第 i$$$i$$$ 步需要选择的顶点。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，你不需要最小化 Pasha 的操作次数，但操作次数不应超过 2⋅105$$$2\\cdot 10^5$$$。可以证明，如果存在解，那么就存在一个不超过 2⋅105$$$2\\cdot 10^5$$$ 次操作的解。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 重绘的图",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -47,5 +47,87 @@
       "input": "A,3,B,2,C,0,D,1,E,0,F,1,G,0,H,1,I,1,J,0,K,1,L,0,M,2,N,0,O,1,P,0",
       "output": "4\nA K M \nB F H L N O \nC D G I P \nE J"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "互联网上一篇罕见的文章发布时没有评论功能。而在 Polycarp 的网站上，每篇文章都有评论区。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Polycarp 网站上的每条评论都是一个非空字符串，由英文字母的大小写字母组成。评论具有树形结构，也就是说，除了根评论（最高层级的评论）之外，每条评论恰好有一条父评论。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当 Polycarp 想要将评论保存到硬盘时，他使用以下格式。对于每条评论，他按以下格式书写：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "首先，写下评论的文本；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "随后写出以该评论为父评论的评论数量（即对该评论的回复数量）；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "随后写出以该评论为父评论的评论（这些评论的写法使用相同的算法）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，如果评论如下所示：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/be9282c77361d63dfe60fe2172b1d36593c7c580.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "那么第一条评论会写成 \"hello,2,ok,0,bye,0\"，第二条写成 \"test,0\"，第三条评论写成 \"one,1,two,2,a,0,b,0\"。整个评论流写成：\"hello,2,ok,0,bye,0,test,0,one,1,two,2,a,0,b,0\"。对于给定的、格式如上所述的评论流，请以不同的格式输出这些评论：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "首先，输出一个整数 d——评论嵌套的最大深度；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "随后输出 d 行，其中第 i 行对应嵌套层级 i；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于第 i 行，按照评论在 Policarp 的评论流中出现的顺序输出嵌套层级为 i 的评论，评论之间用空格分隔。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含按上述格式给出的非空评论流。它由英文字母的大小写字母、数字和逗号组成。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证每条评论都是由英文字母大小写组成的非空字符串。每个评论数量都是整数（至少包含一位数字），且要么等于 0，要么不含前导零。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "整个字符串的长度不超过 10^6。保证给出的评论结构有效。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "按照题目中给出的格式输出评论。对于每个嵌套层级，评论应按照它们在输入中给出的顺序输出。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例在题面中有解释。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 评论",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

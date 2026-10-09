@@ -36,5 +36,75 @@
       "input": "7 4\n1 1 3 3 5 3\n1\n2\n3\n5",
       "output": "3\n2\n3\n6"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 q（2 ≤ n ≤ 300000，1 ≤ q ≤ 300000）——分别表示初始树的节点数和查询次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n-1 个整数 p2，p3，...，pn（1 ≤ pi ≤ n）——编号从 2 到 n 的节点的父节点编号。节点 1 是树的根。保证 pi 构成一棵正确的树。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 q 行中，每行包含一个整数 vi（1 ≤ vi ≤ n）——定义子树的节点编号，我们需要找到该子树的重心。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个查询，输出相应子树的一个重心的编号。如果有多个符合条件的节点，输出其中任意一个即可。保证每棵子树至少有一个重心。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "![](https://espresso.codeforces.com/b6d1f35b3db16b3f662d8b452206abbdeb5d0aa4.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一个查询询问整棵树的重心——即节点 3。删除节点 3 后，树会分裂成四个连通分量，其中两个大小为 1，另外两个大小为 2。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个节点的子树仅由该节点自身组成，因此答案是 2。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "节点 3 是其自身子树的重心。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "节点 5 的子树的重心是节点 5 和节点 6——两个答案都被认为是正确的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "一块恶魔镜子的碎片击中了 Kay 的眼睛后，他不再对玫瑰的美丽感兴趣。现在，他喜欢观察雪花。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从前，他发现了一片巨大的雪花，其形状是一棵由 n 个节点组成的树（连通无环图）。树的根节点编号为 1。Kay 对这棵树的结构非常感兴趣。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "经过一番研究后，他提出了 q 个感兴趣的查询。第 i 个查询要求找到节点 vi 的子树的一个重心。你的任务是回答所有查询。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "一个节点的子树是由该节点及其所有后代（无论直接还是间接）组成的树的一部分。换句话说，节点 v 的子树由所有满足以下条件的节点 u 构成：从 u 到根的路径上包含节点 v。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "树（或子树）的重心是这样一个节点：如果将其从树中删除，所得连通分量中的最大大小将不超过初始树（或子树）大小的一半。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Kay 和 Snowflake",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

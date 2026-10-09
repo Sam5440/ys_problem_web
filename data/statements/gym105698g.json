@@ -39,26 +39,72 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "抱歉，我们已经在其他地方太多次讨论整数相加这一主题了。因此，我们给出一个不同的加法定义——向集合中添加一个元素。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定一个 a$$$a$$$，它是一个由 n$$$n$$$ 个集合组成的序列。初始时，对于所有 1≤i≤n$$$1 \\le i \\le n$$$，ai={0}$$$a_i=\\left\\{ 0 \\right\\}$$$(即只包含 0$$$0$$$ 的集合)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你需要处理 q$$$q$$$ 个以下类型的查询。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1lr$$$1\\;l\\;r$$$：对于所有 l≤i≤r$$$l \\le i \\le r$$$，令 ai←ai∪{i−l+1}$$$a_i \\leftarrow a_i \\cup \\left\\{i-l+1\\right\\}$$$。(1≤l≤r≤n$$$1 \\le l \\le r \\le n$$$)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "2i$$$2\\;i$$$：输出 mex(ai)$$$\\text{mex}(a_i)$$$†$$$^\\dagger$$$ 的值。(1≤i≤n$$$1 \\le i \\le n$$$)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "†$$$^\\dagger$$$ 对于一个非负整数集合 S$$$S$$$，mex(S)$$$\\text{mex}(S)$$$ 定义为不属于 S$$$S$$$ 的最小非负整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 q$$$q$$$——集合和查询的数量。(1≤n,q≤5⋅105$$$1 \\le n,q \\le 5\\cdot 10^5$$$)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行每行包含一个查询。每个查询按上述格式给出。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个类型 2$$$2$$$ 的查询，在新的一行输出答案。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入样例说明如下。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一次类型 1$$$1$$$ 的查询之后，a$$$a$$$ 变为 [{0,1},{0,2},{0,3},{0,4},{0,5}]$$$[\\left\\{ 0,1 \\right\\},\\left\\{ 0,2 \\right\\},\\left\\{ 0,3 \\right\\},\\left\\{ 0,4 \\right\\},\\left\\{ 0,5 \\right\\}]$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "然后，{0,1}$$$\\left\\{ 0,1 \\right\\}$$$ 和 {0,5}$$$\\left\\{ 0,5 \\right\\}$$$ 的 mex$$$\\text{mex}$$$ 分别为 2$$$2$$$ 和 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "再经过三次类型 1$$$1$$$ 的查询后，a$$$a$$$ 变为 [{0,1},{0,1,2},{0,1,2,3},{0,1,4},{0,2,5}]$$$[\\left\\{ 0,1 \\right\\},\\left\\{ 0,1,2 \\right\\},\\left\\{ 0,1,2,3 \\right\\},\\left\\{ 0,1,4 \\right\\},\\left\\{ 0,2,5 \\right\\}]$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "那么，集合 {0,1,2}$$$\\left\\{ 0,1,2 \\right\\}$$$、{0,1,2,3}$$$\\left\\{ 0,1,2,3 \\right\\}$$$、{0,1,4}$$$\\left\\{ 0,1,4 \\right\\}$$$ 的 mex$$$\\text{mex}$$$ 分别为 3$$$3$$$、4$$$4$$$、2$$$2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "G. 求 Mex、区间加、线性",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

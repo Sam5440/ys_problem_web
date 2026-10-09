@@ -34,5 +34,51 @@
       "input": "3\n1 2 10",
       "output": "0.0740740741"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（2 ≤ n ≤ 2000），表示罐子中球的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n 个整数 ai（1 ≤ ai ≤ 5000）——第 i 个球上写的数字。保证没有两个球上的数字相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个实数——在 Andrew 赢得前两轮且 Jerry 赢得第三轮的条件下，Jerry 的总和更大的概率。如果你的答案的绝对误差或相对误差不超过 10 - 6，则会被判定为正确。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "具体来说：假设你的答案为 a，标准答案为 b。当 ![](https://espresso.codeforces.com/c97ba2000ebfad962bff7ffd8d043594f5ae1086.png) 时，校验程序会判定你的答案正确。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一种情况中，只有两个球。在前两轮中，Andrew 必须抽到 2，而 Jerry 必须抽到 1；最后一轮则相反。因此，Andrew 的总和为 5，Jerry 的总和为 4，所以 Jerry 的总和不可能更大。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二种情况中，每局可能有三种结果：10 - 2、10 - 1 或 2 - 1。当且仅当 Andrew 在前两轮中都以 2 - 1 获胜，并且 Jerry 在最后一轮抽到 10 时，Jerry 的总和才会更大。该事件的概率为 ![](https://espresso.codeforces.com/3c0ec296285f607c66d594132fb91e5e5f2bb007.png)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Andrew 和 Jerry 正在进行一场由 Harry 负责记分的游戏。游戏由三轮组成。每一轮中，Andrew 和 Jerry 从一个装有 n 个球的罐子中随机且不放回地抽取一个球，罐子中的每个球都标有一个互不相同的正整数。他们不看球上的数字，直接将球交给 Harry，由数字较大的玩家获得该轮的分数，随后将两个球放回罐子中。三轮中至少赢得两轮的玩家赢得整场游戏。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Andrew 赢得了第 1 轮和第 2 轮，而 Jerry 赢得了第 3 轮，因此 Andrew 赢得了比赛。然而，Jerry 对这种规则感到不满，认为尽管自己的总和更高，他仍然经常会输掉比赛。求 Jerry 抽到的三个球之和严格大于 Andrew 抽到的三个球之和的概率。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Jerry 的抗议",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

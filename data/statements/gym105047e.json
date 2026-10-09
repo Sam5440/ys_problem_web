@@ -45,28 +45,80 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定一个包含 n$$$n$$$ 个整数的列表，这些整数的范围为 0$$$0$$$ 到 220−1$$$2^{20}-1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "以下操作可以执行任意次（零次或多次）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择两个不同的位置 1≤x,y≤n$$$1 \\le x,y \\le n$$$，并赋值：ax:=axXORay\n$$a_x := a_x \\, \\mathsf{XOR} \\, a_y$$ 其中 XOR$$$\\mathsf{XOR}$$$ 表示两个数的按位异或。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你需要执行这些操作，使得到的列表按非递减顺序排列(即对于从 1$$$1$$$ 到 n−1$$$n-1$$$ 的每个位置 i$$$i$$$，都有 ai≤ai+1$$$a_i \\le a_{i+1}$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你能否构造出一个足够短的操作序列来完成此任务？",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$，表示列表的大小。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,…,an$$$a_1, \\ldots, a_n$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行，输出操作次数 m$$$m$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行，输出位置 x$$$x$$$ 和 y$$$y$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "（100 分）无额外限制。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "此外，你得到的分数取决于执行的操作次数：要获得满分，必须执行不超过 2500$$$2500$$$ 次操作；要获得正分，必须执行不超过 21000$$$21000$$$ 次操作。每个子任务的得分会乘以系数 M(m)$$$M(m)$$$，其中 m$$$m$$$ 是该子任务各测试用例中你执行的最大操作次数。M(m)$$$M(m)$$$ 的值由下式给出：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "M(m)={0m>210000.1+21000−m9000021000≥m>30000.3+21000−7m50003000≥m>25001.02500≥m\n$$ M(m) = \\begin{cases} 0 & m  \\gt  21000 \\\\ 0.1 + \\frac{21000-m}{90000} & 21000 \\geq m  \\gt  3000 \\\\ 0.3 + \\frac{21000-7m}{5000} & 3000 \\geq m  \\gt  2500 \\\\ 1.0 & 2500 \\geq m \\end{cases} $$",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "所有测试用例中 n=1000$$$n = 1000$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "样例展示了 n<1000$$$n \\lt 1000$$$ 的情况，仅供你参考。它们不会出现在实际测试用例中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "0≤ai≤220−1$$$0 \\le a_i \\le 2^{20}-1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你最多可以进行 21000$$$21000$$$ 次操作。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E. 异或排序",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

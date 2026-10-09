@@ -33,20 +33,48 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "Alice 和 Bob 傍晚聚在一起，在一个包含 n$$$n$$$ 个整数的序列上玩一个激动人心的游戏，序列中的每个整数都不超过 4$$$4$$$。游戏规则过于复杂，无法描述，所以我们只描述获胜条件——如果序列中所有数字的按位异或结果不为零，则 Alice 获胜；否则 Bob 获胜。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "他们邀请了 Eve 担任裁判。最初，Alice 和 Bob 用 n$$$n$$$ 个数玩游戏。一局之后，Eve 从序列中移除一个数，然后 Alice 和 Bob 用 n−1$$$n-1$$$ 个数玩游戏。Eve 再次移除一个数，之后 Alice 和 Bob 用 n−2$$$n - 2$$$ 个数玩游戏。如此继续，直到数列为空。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Eve似乎认为在这样的游戏中，Alice几乎总是获胜，因此她希望让Bob尽可能多地获胜。请确定如果Eve以最优方式移除数字，Bob最多能战胜Alice多少次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$) —— 测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行也是唯一一行，包含四个整数 pi$$$p_i$$$ (0≤pi≤200$$$0 \\le p_i \\le 200$$$) —— 游戏开始时序列中 1、2、3 和 4 的个数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，如果Eve以最优方式移除数字，请单独一行输出Bob获胜的最大次数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个样例中，Eve尚未移除任何数字时，Bob获胜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，如果Eve移除一个 1 和一个 3，Bob就会获胜。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "F. 不公平游戏",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

@@ -40,27 +40,79 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "这是一道交互题，你的程序将通过标准输入和标准输出与评测器进行通信。你的任务是重构一棵有标号的树，它有 N$$$N$$$ 个节点和 N−1$$$N - 1$$$ 条边。节点的编号从 1$$$1$$$ 到 N$$$N$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你的程序可以进行少量以下类型的查询：你的程序应输出一个长度为 N$$$N$$$ 的字符串，该字符串仅由 0 和 1 组成，每个字符对应一个节点。评测器将返回一个由 N$$$N$$$ 个空格分隔的整数构成的序列，其中第 i$$$i$$$ 个整数表示第 i$$$i$$$ 个节点的所有邻居对应的值(即查询字符串中的数字)之和。也就是说，如果节点 j$$$j$$$ 是节点 i 的邻居，那么查询字符串中的第 j$$$j$$$ 个数字会计入评测器答案中的第 i$$$i$$$ 个数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请参见下面的示例。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行输入包含数字 N$$$N$$$，表示树中节点的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来，你的程序有两种选择：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输出“QUERY”(不含引号)、一个空格，以及一个由 N$$$N$$$ 个 0 和 1 组成的字符串。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输出“ANSWER”(不含引号)、一个换行符，以及 N−1$$$N - 1$$$ 行，每行包含一对以空格分隔的整数 a,b$$$a, b$$$，表示节点 a$$$a$$$ 和 b$$$b$$$ 之间存在一条边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果你的程序输出查询，评测器随后会返回一行包含 N$$$N$$$ 个以空格分隔的整数，每个节点对应一个整数。如果你的程序输出答案，评测器将检查返回的树是否正确。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果你的查询有误，无论是由于格式错误还是因为查询次数超出限制，评测器都会输出“ERROR”（不含引号），而不是答案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "重要：请确保你的程序在输出后刷新输出，并在输出答案后正确退出。是否实现 ERROR 处理由你决定。其目的是在发生错误时，让你的程序能够正常退出，并获得 WA 而不是 TLE 判定。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入限制",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "2≤N≤3⋅104$$$2 \\leq N \\leq 3 \\cdot 10^4$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最多允许进行 2⇈3=2(22)=16$$$2 \\upuparrows 3 = 2(2^2) = 16$$$ 次查询。最终答案不计入此限制。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "所讨论的树如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1-4-2|5-3$$$\\begin{aligned} \\texttt{1-}&\\texttt{4}\\texttt{-2} \\\\ &\\texttt{|}\\\\ &\\texttt{5-3} \\end{aligned}$$$",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "利用示例中的三个查询，可以唯一地重构它。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "I. 交互式重构",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

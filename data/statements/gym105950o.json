@@ -49,28 +49,80 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "抵达火星后，宇航员 Mark Watney 和他的团队发现，这颗星球并不像他们预想的那样。火星的地形遍布巨大的沟壑，也就是地面上的裂口，这使得团队很难穿越这颗红色星球。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "幸运的是，宇航员们带来了一组长度各异的梯子；将这些梯子水平放置后，只要其展开长度大于或等于裂口的宽度，就可以帮助他们跨越沟壑。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "团队有一份日程安排，指明每天需要前往的一个目标坐标。为了完成这些访问，他们会从梯子中选择一架来帮助跨越沟壑。抵达目标地点后，宇航员必须沿原路返回他们出发的地方，也就是他们居住的区域；使用过的梯子随后会因磨损而被丢弃，之后的日子将无法再次使用。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "鉴于此，Mark 的任务是开发一个程序：给定一张显示由峡谷分隔的区域的地图、峡谷的长度、团队携带的梯子集合，以及团队每天希望访问的城市，最大化整个任务期间访问的感兴趣区域数量。Mark 是一位优秀的生物学家，但编程能力不太强，因此向你求助。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "火星地图被表示为一张图，其中有 N$$$N$$$ 个区域，编号从 1$$$1$$$ 到 N$$$N$$$，以及 M$$$M$$$ 条连接这些区域的峡谷，编号从 1$$$1$$$ 到 M$$$M$$$，其中第 i$$$i$$$ 条峡谷的长度为 wi$$$w_i$$$ 米。另一个事实是，如果可以使用一把无限长度的梯子，那么仅通过峡谷即可从任意区域到达任意其他区域。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "此外，任务将持续 D$$$D$$$ 天，第 i$$$i$$$ 天要访问的区域为 di$$$d_i$$$，并且团队恰好有 D$$$D$$$ 把梯子，编号从 1$$$1$$$ 到 D$$$D$$$，其中第 i$$$i$$$ 把梯子的长度为 ei$$$e_i$$$。注意，一把梯子可以在任意一天使用，但只能使用一次；而在一天之内，选定的梯子可以根据需要重复使用任意多次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "已知团队驻扎在区域 1$$$1$$$，请编写程序帮助 Mark 的团队完成任务！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入第一行包含两个数 N$$$N$$$ 和 M$$$M$$$(2≤N≤2⋅105)$$$(2 \\le N \\le 2 \\cdot 10^5)$$$(1≤M≤2⋅105)$$$(1 \\le M \\le 2 \\cdot 10^5)$$$，分别表示火星上的区域数和峡谷数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 M$$$M$$$ 行每行包含三个整数 ui$$$u_i$$$、vi$$$v_i$$$ 和 wi$$$w_i$$$，(1≤ui,vi≤N)$$$(1 \\le u_i, v_i \\le N)$$$(1≤wi≤109)$$$(1 \\le w_i \\le 10^9)$$$，表示区域 ui$$$u_i$$$ 和 vi$$$v_i$$$ 之间存在一条长度为 wi$$$w_i$$$ 的峡谷。保证任意两个区域之间至多有一条峡谷，且没有峡谷连接一个区域自身。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来给出一行，其中包含一个整数 D$$$D$$$(1≤D≤N)$$$(1 \\le D \\le N)$$$，表示任务的天数；随后给出两行，每行包含 D$$$D$$$ 个整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "其中第一行包含 d1,d2,⋯,dD$$$d_1, d_2, \\cdots, d_D$$$(1≤di≤N)$$$(1 \\le d_i \\le N)$$$，表示第 i$$$i$$$ 个要访问的区域编号为 di$$$d_i$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行包含 e1,e2,⋯,eD$$$e_1, e_2, \\cdots, e_D$$$(1≤ei≤109)$$$(1 \\le e_i \\le 10^9)$$$，表示第 i$$$i$$$ 部梯子的长度为 ei$$$e_i$$$ 米。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一行，包含 Mark 及其团队能够访问的区域数量的最大值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "下面是第二个样例的地图：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/3c5d5f91757afb2f5186b4548b9b14917b9ffb0c.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一天，我们可以使用一架长度为二的梯子到达节点 5$$$5$$$；然后，我们可以跳过第二天的目标，并使用长度为 11$$$11$$$ 的梯子在第三天到达节点 2$$$2$$$(经过路径 1 – 5 – 2)。注意，达到最优答案的方法可能不止一种。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "O. 火星救援",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

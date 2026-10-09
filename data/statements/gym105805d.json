@@ -40,27 +40,76 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "给定一个长度为 n$$$n$$$ 的序列 a$$$a$$$。还有一个初始为空的序列 b$$$b$$$。你需要执行 n$$$n$$$ 次操作。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第 i$$$i$$$ 次操作中，你可以选择以下两种操作之一：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将 ai$$$a_i$$$ 插入 b$$$b$$$ 的开头；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将 ai$$$a_i$$$ 插入 b$$$b$$$ 的末尾。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每个 j$$$j$$$(其中 0≤j≤n$$$0 \\le j \\le n$$$)，解决以下问题：如果恰好进行了 j$$$j$$$ 次第一类操作，求 b$$$b$$$ 中逆序对†$$$^\\dagger$$$ 数量的最小可能值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "†$$$^\\dagger$$$ 序列中的逆序对是指一对元素，其中较早出现的元素大于较晚出现的元素。换句话说，对于序列 b$$$b$$$，只有当 i<j$$$i  \\lt  j$$$ 且 bi>bj$$$b_i  \\gt  b_j$$$ 时，元素对 (bi,bj)$$$(b_i, b_j)$$$ 才是逆序对。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤105$$$1 \\le t \\le 10^5$$$)，表示测试用例的数量。对于每个测试用例：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(2≤n≤3⋅105$$$2 \\leq n \\leq 3 \\cdot 10^5$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个以空格分隔的整数 a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$(1≤ai≤n$$$1 \\leq a_i \\leq n$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 3⋅105$$$3 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出 n+1$$$n+1$$$ 个整数。第 j$$$j$$$ 个整数应为恰好进行 j$$$j$$$ 次第一类操作时，逆序对数量的最小可能值，其中 j=0,…,n$$$j=0,\\ldots,n$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "考虑第一个测试用例。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 j=0$$$j = 0$$$，唯一的做法是进行两次第二类操作。之后，b=[2,1]$$$b=[2,1]$$$，逆序对数量为 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当 j=1$$$j = 1$$$ 时，最优方法是先执行一次第二类操作，再执行一次第一类操作。之后，b=[1,2]$$$b=[1,2]$$$，逆序对数量为 0$$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当 j=2$$$j = 2$$$ 时，唯一的方法是执行两次第一类操作。之后，b=[1,2]$$$b=[1,2]$$$，逆序对数量为 0$$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "D. 最小逆序数",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

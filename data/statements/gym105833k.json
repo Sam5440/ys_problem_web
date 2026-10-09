@@ -48,27 +48,76 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Red 是一名宝可梦训练家，他已经战胜了关都宝可梦联盟，现在想前往城都迎接新的挑战。为了到达那里，他需要乘坐火车。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "该地区有 N$$$N$$$ 个火车站，编号从 1$$$1$$$ 到 N$$$N$$$。Ash 从车站 1$$$1$$$ 出发，需要到达车站 N$$$N$$$ 才能进入城都。这里有 M$$$M$$$ 条双向铁路，其中第 ith$$$i^{\\text{th}}$$$ 条铁路连接车站 Xi$$$X_i$$$ 和 Yi$$$Y_i$$$，并且同一对城市之间可能有多条铁路。通过这些铁路可以从城市 1$$$1$$$ 到达城市 N$$$N$$$，但可能无法通过这些铁路从城市 1$$$1$$$ 到达其他某些城市。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "要使用第 ith$$$i^{\\text{th}}$$$ 条铁路，Red 需要支付 Ci$$$C_i$$$ 美元购买永久通行证，之后他可以任意次使用该铁路。他只有在车站 Xi$$$X_i$$$ 或 Yi$$$Y_i$$$ 时才能购买第 ith$$$i^{\\text{th}}$$$ 条铁路的通行证，并且每条铁路的通行证只能购买一次。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "支付系统已经上线，Red 只需要在进入城都时(由于移民政策)为他购买的通行证进行一次延迟的大额付款。注意，当他到达车站 N$$$N$$$ 时，还不需要付款，并且可以继续乘坐列车。只有当他离开车站 N$$$N$$$ 并到达移民检查站时，他才需要付款。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "由于系统中的一个漏洞，当 Red 到达城都时，他只需要为费用最小的 K$$$K$$$ 张通行证付款(如果他购买的通行证少于 K$$$K$$$ 张，则为所有通行证付款)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请帮助 Red 确定他从关都前往城都所需支付的最少金额（单位：美元）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含 3 个整数 N、M、K$$$N, M, K$$$(2≤N≤105$$$2 \\leq N \\leq 10^5$$$，1≤K≤M≤2⋅105$$$1 \\leq K \\leq M \\leq 2 \\cdot 10^5$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 M$$$M$$$ 行中，每行包含 3 个整数 Xi、Yi、Ci$$$X_i, Y_i, C_i$$$(1≤Xi,Yi≤N$$$1 \\leq X_i, Y_i \\leq N$$$，Xi≠Yi$$$X_i \\neq Y_i$$$，1≤Ci≤109$$$1 \\leq C_i \\leq 10^9$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证 Red 可以使用这些铁路线路从车站 1$$$1$$$ 到达车站 N$$$N$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数，表示 Red 从车站 1 到车站 N$$$N$$$ 所需花费的最少金额(美元)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中，请注意，Red 无法购买连接车站 3$$$3$$$ 和 6$$$6$$$ 的铁路线路通行证，因为没有办法乘坐火车到达这两座城市。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "为了到达城市 N$$$N$$$，Red 可以购买车站 1$$$1$$$ 和 2$$$2$$$ 之间的通行证，前往车站 2$$$2$$$；购买车站 2$$$2$$$ 和 7$$$7$$$ 之间的通行证，前往车站 7$$$7$$$；购买车站 7$$$7$$$ 和 5$$$5$$$ 之间的通行证，前往车站 5$$$5$$$；购买车站 5$$$5$$$ 和 4$$$4$$$ 之间的通行证，然后返回车站 7$$$7$$$(注意，购买通行证后，他不必前往车站 4$$$4$$$)，最后前往移民局。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "他按此顺序购买的通行证价格为 3、3、2、2$$$3, 3, 2, 2$$$，由于只需支付其中最便宜的 K=2$$$K = 2$$$ 张通行证的费用，因此总费用为 2+2=4$$$2 + 2 = 4$$$。可以证明这是可能的最小费用。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，Red 可以按照 1→2→6→4→7$$$1 \\rightarrow 2 \\rightarrow 6 \\rightarrow 4 \\rightarrow 7$$$ 的路线行进，购买路线中相邻城市之间的通行证。由于他只购买了 4$$$4$$$ 张通行证，而 K=5$$$K = 5$$$，因此只需支付 4+3+2+3=12$$$4 + 3 + 2 + 3 = 12$$$。可以证明这是可能的最小费用。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三个样例中，Red 可以购买所有通行证，并且只需支付车站 1$$$1$$$ 和 2$$$2$$$ 之间的 K=2$$$K = 2$$$ 张通行证的费用，这些通行证每张价格为 1$$$1$$$，总费用为 1+1=2$$$1 + 1 = 2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "K. 关都到城都",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

@@ -39,5 +39,60 @@
       "input": "6",
       "output": "5 5 4\n11111\n11111\n11111\n11111\n11111"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "天空中有多少颗星星？年轻的程序员 Polycarpus 一直无法摆脱这个问题！他用数码相机拍摄了一张星空照片，现在正在分析得到的单色数字图像。这张图片由一个矩形矩阵表示，包含 n 行，每行有 m 个字符。如果对应的照片像素是白色的，则字符为 '1'；如果是黑色的，则字符为 '0'。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 Polycarpus 找到一个白色像素，并且发现它的四个相邻方向上的像素也都是白色的，他就认为自己在照片上找到了一个星星：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      null,
+      {
+        "ai": "Polycarpus 想从照片中裁剪出一块矩形区域送给妈妈作为礼物。这块区域中至少应包含 k 颗星星。星星之间可以相互交叠，也可以在照片中共享白色像素。男孩会裁剪出一个矩形区域，使其边界平行于照片的边缘，并且沿着像素边界之间的直线进行裁剪。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "现在 Polycarpus 想知道，有多少种从照片中裁剪出区域的方法能够满足上述条件。请帮助 Polycarpus 找出这个数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入数据的第一行包含三个整数 n、m 和 k（1 ≤ n，m ≤ 500；1 ≤ k ≤ nm）。接下来有 n 行，包含给定照片的描述。每行包含 m 个字符 '0' 或 '1'。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出照片中满足条件的区域数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "下文将从 1 开始为行和列编号，坐标（p，q）表示第 p 行、第 q 列的单元格。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第一个样例中，Polycarpus 应裁剪出任意一个包含这样一个矩形的区域：该矩形的两个对角顶点所在的单元格为（1，1）和（3，4）。只有两个对角顶点所在单元格为（1，1）和（x，y）的矩形满足条件，其中 x ≥ 3 且 y ≥ 4。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，任意一个每条边都不小于 4 的矩形都可以。可能的矩形尺寸为 4 × 4、4 × 5、5 × 4 和 5 × 5。这样的图形分别有 4 种、2 种、2 种和 1 种切法。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请不要在 C++ 中使用 %lld 格式说明符来读写 64 位整数。建议使用 cin、cout 流，或使用 %I64d 格式说明符。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 送给妈妈",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

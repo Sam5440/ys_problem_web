@@ -52,27 +52,76 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "某软件公司有一个部门，该部门拥有 n$$$n$$$ 台规格各不相同的服务器。服务器的编号是从 1$$$1$$$ 到 n$$$n$$$ 的连续整数。假设第 j$$$j$$$ 台服务器的规格可以用一个整数 cj$$$c_j$$$ 表示，该整数表示人造资源单位的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "为了使生产正常运行，需要使用该部门的服务器部署两个服务 S1$$$S_1$$$ 和 S2$$$S_2$$$，以处理传入的请求。处理服务 Si$$$S_i$$$ 的传入请求需要 xi$$$x_i$$$ 个资源单位。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "上述情况发生在一家先进的公司中，因此每项服务不仅可以使用一台服务器部署，也可以同时使用多台服务器部署。如果服务 Si$$$S_i$$$ 使用 ki$$$k_i$$$ 台服务器部署，那么负载将在这些服务器之间平均分配，每台服务器只需 xi/ki$$$x_i / k_i$$$ 个资源单位(该数可以是分数)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每台服务器可以完全闲置，也可以用于部署恰好一个服务（但不能同时用于两个服务）。服务使用的资源不应超过服务器所能提供的资源。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "判断是否可以使用给定的服务器部署这两项服务；如果可以，确定应分别使用哪些服务器部署每项服务。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、x1$$$x_1$$$、x2$$$x_2$$$(2≤n≤300000$$$2 \\leq n \\leq 300\\,000$$$，1≤x1,x2≤109$$$1 \\leq x_1, x_2 \\leq 10^9$$$)——该部门可以使用的服务器数量，以及两项服务各自所需的资源单位数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个以空格分隔的整数 c1,c2,…,cn$$$c_1, c_2, \\ldots, c_n$$$(1≤ci≤109$$$1 \\leq c_i \\leq 10^9$$$)——每台服务器提供的资源单位数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "如果无法使用给定的服务器部署这两项服务，输出唯一的单词“No”（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，输出单词“Yes”（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二行输出两个整数 k1$$$k_1$$$ 和 k2$$$k_2$$$(1≤k1,k2≤n$$$1 \\leq k_1, k_2 \\leq n$$$)——分别用于部署两项服务的服务器数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第三行输出 k1$$$k_1$$$ 个整数，即将用于第一项服务的服务器编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第四行输出 k2$$$k_2$$$ 个整数，即将用于第二项服务的服务器编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你在最后两行输出的编号中不能有任何重复。如果有多个可行答案，可以输出其中任意一个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个样例测试中，服务器 1、2 和 6 中的每一台将提供 8/3=2.(6)$$$8 / 3 = 2.(6)$$$ 个资源单位，而服务器 5、4 中的每一台将提供 16/2=8$$$16 / 2 = 8$$$ 个资源单位。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例测试中，第一台服务器将提供 20$$$20$$$ 个资源单位，其余每台服务器将提供 32/3=10.(6)$$$32 / 3 = 10.(6)$$$ 个资源单位。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "B. 资源分配",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

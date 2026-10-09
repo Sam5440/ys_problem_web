@@ -39,5 +39,71 @@
       "input": "5\n0 1 0 1 0",
       "output": "2\n0 0 0 0 0"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一个名叫 Vasya 的男孩喜欢阅读有关编程和数学的书籍。最近，他读到了一篇介绍中值平滑（或中值滤波）方法及其在科学和工程领域中众多应用的百科全书文章。Vasya 非常喜欢这种方法的思想，于是决定亲自尝试一下。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对数字序列 a1, a2, ..., an 应用最简单形式的中值平滑后，将按照以下算法得到一个新的序列 b1, b2, ..., bn：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "b1 = a1，bn = an，也就是说，新序列的第一个和最后一个数字分别与原序列中对应的数字相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于 i = 2, ..., n - 1，bi 的值等于三个数 ai - 1、ai 和 ai + 1 的中位数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "三个数的中位数是指将这三个数按非递减顺序排列后位于第二位的数。例如，集合 5、1、2 的中位数是 2，而集合 1、0、1 的中位数等于 1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "为了使问题更加简单，Vasya 决定只对仅由 0 和 1 组成的序列应用该方法。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "执行一次该过程后，Vasya 看着得到的序列，想到：如果再次对它应用该算法，然后再对下一次得到的结果应用该算法，如此反复，会怎样呢？Vasya 尝试了几个例子，发现经过若干次中值平滑算法的应用后，序列可能会停止变化。如果对一个序列应用中值平滑后它不发生变化，我们就称该序列是稳定的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "现在 Vasya 想知道，这个序列是否最终一定会变得稳定。他请你编写一个程序：给定一个由 0 和 1 组成的序列，判断它最终是否会变得稳定。此外，如果它最终会变得稳定，还需要确定最终稳定的序列是什么样子，以及需要对初始序列应用多少次中值平滑算法才能得到稳定序列。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（3 ≤ n ≤ 500 000）——初始序列的长度。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来一行包含 n 个整数 a1, a2, ..., an（ai = 0 或 ai = 1），即初始序列本身。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果该序列永远不会变得稳定，则输出一个数  - 1。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "否则，先输出一个整数——在变为稳定序列之前，需要对初始序列应用中值平滑算法的最少次数。第二行输出 n 个由空格分隔的数——最终得到的稳定序列。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第二个样例中，稳定化过程需要两步：![](https://espresso.codeforces.com/5a983e7baab048cbe43812cb997c15e9d7100231.png)，序列 00000 显然是稳定的。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 中值平滑",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

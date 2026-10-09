@@ -44,23 +44,66 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "经过一周的辛勤工作后，Polycarp 喜欢找点乐子。Polycarp 最喜欢的娱乐活动是画蛇。他拿出一张大小为 n×m$$$n \\times m$$$ 的矩形方格纸(其中 n$$$n$$$ 是行数，m$$$m$$$ 是列数)，然后开始在格子中画蛇。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Polycarp 使用小写拉丁字母来画蛇。他总是用符号 'a' 画第一条蛇，用符号 'b' 画第二条蛇，用符号 'c' 画第三条蛇，以此类推。每条蛇都有自己唯一的符号。拉丁字母表中只有 26$$$26$$$ 个字母，而 Polycarp 非常疲惫，不想发明新的符号，因此画出的蛇的总数不超过 26$$$26$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "由于一周结束时 Polycarp 非常疲惫，他把蛇画成不弯曲的直线。因此，每条蛇要么竖直放置，要么水平放置。任意蛇的宽度均为 1$$$1$$$，也就是说，每条蛇的大小要么是 1×l$$$1 \\times l$$$，要么是 l×1$$$l \\times 1$$$，其中 l$$$l$$$ 是蛇的长度。注意，蛇不能弯曲。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当 Polycarp 画一条新蛇时，可以使用已经被占用的格子来画蛇。在这种情况下，他会将蛇“画在上面”，覆盖格子中之前的内容。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最近，Polycarp 工作时发现了一张写有拉丁字母的方格纸。他想知道，是否可以按照上述规则，通过绘制若干条蛇，从一张空白纸得到这张纸。如果可以，他希望知道一种绘制蛇的方法。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤105$$$1 \\le t \\le 10^5$$$)——需要解决的测试用例数量。随后给出 t$$$t$$$ 个测试用例。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "测试用例描述的第一行包含两个整数 n$$$n$$$、m$$$m$$$(1≤n,m≤2000$$$1 \\le n,m \\le 2000$$$)——方格纸的长度和宽度，分别为 n 和 m。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行测试用例描述中包含 m$$$m$$$ 个符号，它们表示方格纸上对应单元格的内容。该符号可以是小写拉丁字母，也可以是点号('.')，表示空单元格。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证一次测试中所有方格纸的总面积不超过 4⋅106$$$4\\cdot10^6$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "对于输入中的每个测试用例，输出其答案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于一个测试用例，如果可以绘制蛇，使得能够从输入中得到一张纸，则在输出的第一行输出 YES。否则，输出 NO。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果答案为肯定，则按照以下格式输出绘制蛇的方法。在下一行输出一个整数 k$$$k$$$(0≤k≤26$$$0 \\le k \\le 26$$$)——蛇的数量。接下来输出 k$$$k$$$ 行，每行输出四个整数 r1,i$$$r_{1,i}$$$、c1,i$$$c_{1,i}$$$、r2,i$$$r_{2,i}$$$ 和 c2,i$$$c_{2,i}$$$——第 i$$$i$$$ 条蛇的两个端点单元格的坐标(1≤r1,i,r2,i≤n$$$1 \\le r_{1,i}, r_{2,i} \\le n$$$，1≤c1,i,c2,i≤m$$$1 \\le c_{1,i}, c_{2,i} \\le m$$$)。应按照绘制顺序输出这些蛇。如果有多种解，输出其中任意一种即可。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，Polycarp 开始绘制蛇时，纸张是空的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E. Polycarp 与蛇",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

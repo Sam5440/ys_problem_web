@@ -34,5 +34,51 @@
       "input": "4 2\n1 2 4 3\n2 3\n1 2",
       "output": "2 4 1 3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "每个月 Blake 都会收到一份包含 \"Blake Technologies\" 公司主要经济指标的报告。公司生产 n 种商品。最终报告中每种商品恰好对应一个整数，表示相应的收入。在报告送到 Blake 之前，它会经过 m 位经理之手。每位经理都可能按某种顺序重排其中的元素。具体地，第 i 位经理要么将前 ri 个数按非递减或非递增顺序排序，然后将报告交给第 i+1 位经理；要么直接交给 Blake（如果该经理的编号 i=m）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "\"Blake Technologies\" 的员工们正在准备这份报告。你知道长度为 n 的初始序列 ai，以及每位经理的描述，即值 ri 和他喜欢的顺序。你需要加快这一过程，并确定最终报告会是什么样子。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 m（1 ≤ n, m ≤ 200 000），分别表示报告中的商品数量和经理数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n 个整数 ai（|ai| ≤ 109），表示报告在交给第一位经理之前的初始状态。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来有 m 行，描述各位经理将要执行的操作。其中第 i 行包含两个整数 ti 和 ri(![](https://espresso.codeforces.com/4c7c768da8395489b31f8f3db90a6fe799bdeb0f.png)，1 ≤ ri ≤ n)，表示第 i 位经理将前 ri 个数按非递减顺序(如果 ti = 1)或非递增顺序(如果 ti = 2)排序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 个整数，表示最终的报告，该报告将由第 m 位经理交给 Blake。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，初始报告为：1 2 3。经过第一位经理后，前两个数交换了位置：2 1 3。报告就以这一形式交到了 Blake 手中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，初始报告为：1 2 4 3。经过第一位经理后，报告变为：4 2 1 3。经过第二位经理后，报告变为：2 4 1 3。这份报告随后被交给了 Blake。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 报告",
+    "aiModel": "DeepSeek V4 Flash"
+  }
 }

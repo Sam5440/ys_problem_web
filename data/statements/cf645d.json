@@ -34,5 +34,51 @@
       "input": "3 2\n1 2\n3 2",
       "output": "-1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "当 Farmer John 在 Bovinia 陌生的区域重建他的农场时，Bessie 正在尝试一些其他工作。作为一名新晋记者，Bessie 需要尽快了解编程竞赛的结果。当她报道 2016 年机器人说唱对战锦标赛时，她注意到所有机器人都运行着确定性算法。具体来说，当且仅当机器人 i 的技能等级高于机器人 j 时，机器人 i 才会战胜机器人 j。如果机器人 i 战胜了机器人 j，且机器人 j 战胜了机器人 k，那么机器人 i 也会战胜机器人 k。由于说唱是一门十分微妙的艺术，任意两个机器人都不可能拥有相同的技能等级。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定按照进行顺序排列的说唱对战结果，确定在 Bessie 能够按照技能等级为所有机器人排序之前，至少需要进行前多少场说唱对战。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数：机器人的数量 n(2 ≤ n ≤ 100 000)以及说唱对战的数量 m(![](https://espresso.codeforces.com/920ad298b2209acc704ee0aaee0c15082f0e63da.png))。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m 行按照说唱对战进行的顺序描述对战结果。每行包含两个整数 ui 和 vi（1 ≤ ui, vi ≤ n，ui ≠ vi），表示在第 i 场说唱对战中，机器人 ui 战胜了机器人 vi。任意两场说唱对战涉及的机器人对都不相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证至少存在一种机器人排列方式，能够满足全部 m 条关系。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出最小的 k，使得根据前 k 场饶舌对决的结果，可以唯一确定机器人按技能水平排序的顺序。如果存在多个满足全部 m 条关系的排序，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，从最强到最弱的机器人顺序必须为 (4, 2, 1, 3)，Bessie 在得知前四场饶舌对决的结果后就能推断出这一顺序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，在得知两场饶舌对决的结果后，机器人从最强到最弱的顺序既可能是 (1, 3, 2)，也可能是 (3, 1, 2)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 机器人说唱比赛结果报告",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

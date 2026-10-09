@@ -42,5 +42,83 @@
       "input": "6\n1 5\n6 4\n2 3\n3 5\n5 6\n6\n3 3 4\n2 5\n3 2 6\n3 1 2\n2 3\n3 3 1",
       "output": "3\n-1\n3\n2"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（2 ≤ n ≤ 105）——图中顶点的数量。接下来的 n - 1 行包含边的信息，每行给出由该边连接的两个顶点 vi、ui 的编号（1 ≤ vi，ui ≤ n，vi ≠ ui）。保证给定的图是连通的，构成一个 beard 图，且不存在自环或重边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行包含一个整数 m（1 ≤ m ≤ 3·105）——请求的数量。接下来的 m 行包含请求，格式如下：首先一行包含一个整数 type，其取值范围为 1 到 3，表示请求的类型。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 type = 1，那么当前请求是将边染成黑色的请求。此时，除整数 type 外，该行还应包含一个整数 id（1 ≤ id ≤ n - 1），表示要染色的边的编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 type = 2，那么当前请求是将边染成白色的请求，其格式与上一个请求类似。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果 type = 3，那么当前请求是查询距离。在这种情况下，除了 type 之外，该行还应包含两个整数 a、b（1 ≤ a，b ≤ n，a 可以等于 b）——需要查询距离的顶点编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所有行中的数字恰好用一个空格分隔。边按照它们在输入中给出的顺序编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个“查询顶点 a 与顶点 b 之间的距离”的请求，输出查询结果。如果不存在一条仅沿黑色边连接顶点 a 和 b 的路径，则输出“-1”（不含引号）。按照收到请求的顺序输出结果，数字之间用空格或换行分隔。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，顶点 1 和 2 由编号为 1 的边连接，顶点 2 和 3 由编号为 2 的边连接。在重新涂色编号为 2 的边之前，每个顶点都可以沿黑色边到达其他任意顶点。具体来说，顶点 1 和 3 之间的最短路径经过这两条边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果将编号为 2 的边涂成白色，顶点 3 将与其他顶点断开，也就是说，不存在从它沿黑色边到达任何其他顶点的路径。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "如果一个具有 n 个顶点和 n−1 条边的无向连通图满足：除至多一个顶点外，其余所有顶点的度数均为 2 或 1（也就是说，度数大于 2 的顶点至多有一个），则称其为胡须图。提醒一下，顶点的度数是与其相连的边的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每条边要么是黑色，要么是白色。初始时所有边均为黑色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定胡须图的描述。你的任务是处理以下类型的请求：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将编号为 i 的边涂成黑色。编号为 i 的边即描述中编号为 i 的边。保证在执行该请求时，第 i 条边为白色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将编号为 i 的边涂成白色。保证在执行该请求时，第 i 条边为黑色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "求仅沿黑色边从顶点 a 到顶点 b 的最短路径长度，或者指出二者之间不存在这样的路径（路径长度为其中边的数量）",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "顶点编号为从 1 到 n 的整数，边编号为从 1 到 n - 1 的整数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 胡须图",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

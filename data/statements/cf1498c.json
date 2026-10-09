@@ -54,37 +54,116 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Gaurang 在一个神秘的宇宙中长大。他面对着 n$$$n$$$ 个连续的二维平面。他向这些平面发射了一个衰变年龄为 k$$$k$$$ 的粒子。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "粒子可以直接穿过一个平面，但是每个平面都会产生一个沿相反方向运动的完全相同的粒子，其衰变年龄为 k−1$$$k-1$$$。如果粒子的衰变年龄等于 1$$$1$$$，它将不会产生复制体。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，如果有两个平面，并且向右发射一个衰变年龄为 3$$$3$$$ 的粒子，过程如下：(这里，D(x)$$$D(x)$$$ 表示一个衰变年龄为 x$$$x$$$ 的粒子)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一个平面向左产生一个 D(2)$$$D(2)$$$，并让 D(3)$$$D(3)$$$ 继续向右运动；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个平面在左侧产生一个 D(2)$$$D(2)$$$，并让 D(3)$$$D(3)$$$ 继续向右移动；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一个平面让 D(2)$$$D(2)$$$ 继续向左移动，并在右侧产生一个 D(1)$$$D(1)$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个平面让 D(1)$$$D(1)$$$ 继续向右移动(D(1)$$$D(1)$$$ 无法产生任何副本)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最终，粒子的多重集合 S$$$S$$$ 为 {D(3),D(2),D(2),D(1)}$$$\\{D(3), D(2), D(2), D(1)\\}$$$。(有关此测试用例的图示解释，请参见注释。)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当平面数量过多时，Gaurang 无法应对这种情况的复杂性。给定 n$$$n$$$ 和 k$$$k$$$，请帮助 Gaurang 求出多重集合 S$$$S$$$ 的大小。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "由于多重集合的大小可能非常大，你需要输出其对 109+7$$$10^9+7$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意：粒子可以在平面之间来回移动，且彼此不会发生碰撞。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "输入的第一行包含测试用例数量 t$$$t$$$(1≤t≤100$$$1 \\le t \\le 100$$$)。接下来有 t$$$t$$$ 行，每行包含两个整数 n$$$n$$$ 和 k$$$k$$$(1≤n,k≤1000$$$1 \\le n, k \\le 1000$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "此外，所有测试用例中 n$$$n$$$ 的总和不超过 1000$$$1000$$$，k$$$k$$$ 的总和不超过 1000$$$1000$$$。同一组测试中的所有测试用例均不相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出 t$$$t$$$ 个整数。其中第 i$$$i$$$ 个整数应等于第 i$$$i$$$ 个测试用例的答案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "下面我们解释第一个样例中的四个测试用例。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "测试用例 1：(n=2$$$n = 2$$$，k=3$$$k = 3$$$) 已在题面中解释。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "请看下面这幅关于该模拟的图。每条颜色不同的直线表示一个不同粒子的路径。正如你所看到的，多重集中有四个互不相同的粒子。注意，反射粒子之间的垂直间距仅用于视觉上的清晰展示（如前文所述，任意两个不同的粒子都不会相撞）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/91b8b91bc97b8e5dbdaf5b5beafb5787dd887133.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "测试用例 2：(n=2$$$n = 2$$$，k=2$$$k = 2$$$) 解释如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一个平面向左产生一个 D(1)$$$D(1)$$$，并让 D(2)$$$D(2)$$$ 继续向右运动；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个平面向左产生一个 D(1)$$$D(1)$$$，并让 D(2)$$$D(2)$$$ 继续向右运动；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一个平面让 D(1)$$$D(1)$$$ 继续向左运动(D(1)$$$D(1)$$$ 无法产生任何副本)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "所得多重集合 {D(1),D(1),D(2)}$$$\\{D(1), D(1), D(2)\\}$$$ 的大小等于 3。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "测试用例 3：(n=3$$$n = 3$$$，k=1$$$k = 1$$$)，共有三个平面，但衰减年龄只有 1。因此，当这一个粒子穿过这些平面时，不会产生新的副本。因此，答案为 1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "测试用例 4：(n=1$$$n = 1$$$，k=3$$$k = 3$$$)，只有一个平面。该粒子向左产生一个新的副本。多重集合 {D(2),D(3)}$$$\\{D(2), D(3)\\}$$$ 的大小为 2。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. 平面反射",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

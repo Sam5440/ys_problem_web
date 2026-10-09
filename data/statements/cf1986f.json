@@ -43,30 +43,88 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null
+      {
+        "ai": "给定一个连通无向图，其顶点编号为从 1$$$1$$$ 到 n$$$n$$$ 的整数。你的任务是最小化顶点对 1≤u<v≤n$$$1 \\leq u  \\lt  v \\leq n$$$ 的数量，使得这些顶点对之间在图中存在一条路径。为此，你可以从图中恰好删除一条边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "求顶点对数量的最小值！",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "每个测试包含若干组输入数据。第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\leq t \\leq 10^4$$$)——输入数据组的数量。接下来是这些数据组的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每组输入数据的第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(2≤n≤105$$$2 \\leq n \\leq 10^5$$$，n−1≤m≤min(105,n⋅(n−1)2)$$$n - 1 \\leq m \\leq \\min(10^5, \\frac{n \\cdot (n - 1)}{2})$$$)——图中顶点和边的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中，每行包含两个整数 u$$$u$$$ 和 v$$$v$$$(1≤u,v≤n,u≠v$$$1 \\leq u, v \\leq n, u \\neq v$$$)，表示顶点 u$$$u$$$ 和 v$$$v$$$ 之间存在一条无向边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证给定的图是连通的且不含重边。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有输入数据组中 n$$$n$$$ 的总和与 m$$$m$$$ 的总和均不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每组输入数据，输出恰好删除一条边后可达顶点对的最小数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一组输入数据中，我们将删除唯一的边 (1,2)$$$(1, 2)$$$，唯一的一对顶点 (1,2)$$$(1, 2)$$$ 将变得彼此不可达。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二组输入数据中，无论删除哪条边，所有顶点仍然彼此可达。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第四组输入数据中，图初始时如下所示。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/374872f585ce28149acd3b381875efadf03e3f9f.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "我们将删除边 (3,4)$$$(3, 4)$$$，此后唯一可达的顶点对将是 (1,2)$$$(1, 2)$$$、(1,3)$$$(1, 3)$$$、(2,3)$$$(2, 3)$$$、(4,5)$$$(4, 5)$$$、(4,6)$$$(4, 6)$$$、(5,6)$$$(5, 6)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/adb68230f3dce64b691c34d8c62b1aae1d001832.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第六组输入数据中，图最初如下所示。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/af198d53b65fc93300eea0a58cf54fbbf3f62159.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "删除边 (2,4)$$$(2, 4)$$$ 后，图将如下所示。因此，将有 21$$$21$$$ 对可达的顶点。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/c6412c8719740b67fbeec45ec0428b1bf6adc5c4.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "F. 非学术问题",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

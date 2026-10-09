@@ -44,31 +44,92 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Polycarp 非常喜欢玩扫雷游戏。最近，他发现了一个类似的游戏，其规则如下。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "场地上有一些地雷，每个地雷的位置坐标 (xi,yi$$$x_i, y_i$$$) 都是已知的。每个地雷都有一个以秒为单位的寿命，寿命结束后就会爆炸。爆炸后，该地雷还会引爆在垂直和水平方向上距离为 k$$$k$$$ 的所有地雷(两条相互垂直的直线)。因此，我们会在场地上得到一个“加号”形状(“+”)。所以，一次爆炸可能引发新的爆炸，如此不断进行。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "此外，Polycarp 可以从第 0 秒开始，每秒引爆任意一枚地雷。之后还会发生爆炸的连锁反应。地雷会立即爆炸，并根据上述规则立即引爆其他地雷。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Polycarp 想要创造新的纪录，并请求你帮助他计算引爆所有地雷所需的最少秒数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)，表示测试中的测试用例数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每组测试数据前都有一个空行。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来一行包含整数 n$$$n$$$ 和 k$$$k$$$(1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$，0≤k≤109$$$0 \\le k \\le 10^9$$$)，分别表示地雷的数量以及爆炸时地雷能够击中的距离。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来有 n$$$n$$$ 行，其中第 i$$$i$$$ 行描述第 i$$$i$$$ 枚地雷的坐标 x$$$x$$$ 和 y$$$y$$$，以及其爆炸倒计时(−109≤x,y≤109$$$-10^9 \\le x, y \\le 10^9$$$，0≤timer≤109$$$0 \\le timer \\le 10^9$$$)。保证所有地雷的坐标各不相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证在测试中的所有测试用例中，n$$$n$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出 t$$$t$$$ 行，每行必须包含对应输入数据组的答案——引爆所有地雷所需的最少秒数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "![](https://espresso.codeforces.com/b54edbbac5e8e00269b5594b5d0b049aadf51020.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一个样例：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "0$$$0$$$ 秒：我们引爆位于 (2,2)$$$(2, 2)$$$ 单元格中的地雷；由于 k=0$$$k=0$$$，它不会引爆其他地雷。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "1$$$1$$$ 秒：我们引爆位于 (0,1)$$$(0, 1)$$$ 单元格中的地雷，位于 (0,0)$$$(0, 0)$$$ 单元格中的地雷也自行爆炸。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第 2$$$2$$$ 秒：我们引爆了位于单元格 (1,1)$$$(1, 1)$$$ 的地雷，位于单元格 (1,0)$$$(1, 0)$$$ 的地雷自行爆炸。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个样例：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第 0$$$0$$$ 秒：我们引爆位于单元格 (2,2)$$$(2, 2)$$$ 的地雷，得到：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/2801f4738af5fd4af5d46fa774b162bed5319cd2.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第 1$$$1$$$ 秒：位于坐标 (0,0)$$$(0, 0)$$$ 的地雷爆炸。由于 k=2$$$k=2$$$，爆炸引爆了位于单元格 (0,1)$$$(0, 1)$$$ 和 (1,0)$$$(1, 0)$$$ 的地雷，而这两次爆炸又引爆了位于单元格 (1,1)$$$(1, 1)$$$ 的地雷，此时场上已经没有剩余地雷。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "G. 不寻常的扫雷",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

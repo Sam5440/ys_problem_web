@@ -51,30 +51,94 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Berland 国王要举办一场舞会！共有 n$$$n$$$ 对人受邀参加舞会，这些人对的编号从 1$$$1$$$ 到 n$$$n$$$。每一对由一名男性和一名女性组成。每位舞者(男性或女性)都穿着单色服装。每件服装的颜色用一个从 1$$$1$$$ 到 k$$$k$$$(含边界)的整数表示。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "令 bi$$$b_i$$$ 表示第 i$$$i$$$ 对中男性服装的颜色，gi$$$g_i$$$ 表示女性服装的颜色。你需要为每位舞者选择服装颜色(即选择 b1,b2,…,bn$$$b_1, b_2, \\dots, b_n$$$ 和 g1,g2,…gn$$$g_1, g_2, \\dots g_n$$$ 的值)，使得：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每个 i$$$i$$$：bi$$$b_i$$$ 和 gi$$$g_i$$$ 都是 1$$$1$$$ 到 k$$$k$$$(含边界)之间的整数；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "不存在两对完全相同的组合，即不存在两个下标 i,j$$$i, j$$$(i≠j$$$i \\ne j$$$)，使得 bi=bj$$$b_i = b_j$$$ 且 gi=gj$$$g_i = g_j$$$ 同时成立；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "不存在某一对使得该对中男性服装的颜色与女性服装的颜色相同，即对于每个 i$$$i$$$ 都有 bi≠gi$$$b_i \\ne g_i$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每两个相邻的连续配对，男性服装的颜色和女性服装的颜色都不同，即对于每个 i$$$i$$$ 从 1$$$1$$$ 到 n−1$$$n-1$$$，条件 bi≠bi+1$$$b_i \\ne b_{i + 1}$$$ 和 gi≠gi+1$$$g_i \\ne g_{i + 1}$$$ 均成立。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "让我们看一下选择糟糕颜色和良好颜色的例子(当 n=4$$$n=4$$$ 且 k=3$$$k=3$$$ 时，配对中的第一个是男性，第二个是女性)：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "糟糕的颜色选择：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(1,2)$$$(1, 2)$$$、(2,3)$$$(2, 3)$$$、(3,2)$$$(3, 2)$$$、(1,2)$$$(1, 2)$$$——违反第二条规则(存在相同的配对)；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(2,3)$$$(2, 3)$$$、(1,1)$$$(1, 1)$$$、(3,2)$$$(3, 2)$$$、(1,3)$$$(1, 3)$$$——违反第三条规则(存在一对服装颜色相同的配对)；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(1,2)$$$(1, 2)$$$、(2,3)$$$(2, 3)$$$、(1,3)$$$(1, 3)$$$、(2,1)$$$(2, 1)$$$——违反第四条规则(存在两个连续的配对，使得男性服装的颜色相同，或女性服装的颜色相同)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "良好的颜色选择：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(1,2)$$$(1, 2)$$$、(2,1)$$$(2, 1)$$$、(1,3)$$$(1, 3)$$$、(3,1)$$$(3, 1)$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(1,2)$$$(1, 2)$$$、(3,1)$$$(3, 1)$$$、(2,3)$$$(2, 3)$$$、(3,2)$$$(3, 2)$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "(3,1)$$$(3, 1)$$$、(1,2)$$$(1, 2)$$$、(2,3)$$$(2, 3)$$$、(3,2)$$$(3, 2)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你需要找到任意一种合适的颜色选择，或者说明不存在合适的选择。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null
+      {
+        "ai": "输入仅包含一行，其中有两个整数 n$$$n$$$ 和 k$$$k$$$(2≤n,k≤2⋅105$$$2 \\le n, k \\le 2 \\cdot 10^5$$$)，分别表示数对的数量和颜色的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null,
-      null
+      {
+        "ai": "如果无法找到任何合适的颜色选择方案，请输出 \"NO\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则输出 \"YES\"，然后在接下来的 n$$$n$$$ 行中输出各对服装的颜色。第 i$$$i$$$ 行应包含两个整数 bi$$$b_i$$$ 和 gi$$$g_i$$$，分别表示第 i$$$i$$$ 对中男士和女士服装的颜色。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个字母的大小写均可任意输出。例如，\"YeS\"、\"no\" 和 \"yES\" 都是可接受的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E. 又一个球的问题",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

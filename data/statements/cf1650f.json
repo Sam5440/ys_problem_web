@@ -46,29 +46,90 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Vitaly 选修了高级无用算法课程。该课程包含 n$$$n$$$ 个任务。Vitaly 计算得出，从他选修该课程的那天起，他有 ai$$$a_i$$$ 小时来完成任务 i$$$i$$$。也就是说，第 i$$$i$$$ 个任务的截止时间为 ai$$$a_i$$$ 小时。数组 a$$$a$$$ 按升序排列，换句话说，任务编号对应于作业提交的顺序。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Vitaly 做事一丝不苟，因此他希望将每个任务完成到 100$$$100$$$% 或更高。最初，他对每个任务的完成度为 0$$$0$$$%。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Vitaly 有 m$$$m$$$ 个训练选项，每个选项最多使用一次。第 i$$$i$$$ 个选项由三个整数描述：ei、ti$$$e_i, t_i$$$ 和 pi$$$p_i$$$。如果 Vitaly 使用第 i$$$i$$$ 个选项，那么在 ti$$$t_i$$$ 小时后(从当前时刻起)，他会将任务 ei$$$e_i$$$ 的进度提高 pi$$$p_i$$$ 个百分点。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，假设 Vitaly 有 3$$$3$$$ 个任务要完成。设数组 a$$$a$$$ 为：a=[5,7,8]$$$a = [5, 7, 8]$$$。假设 Vitaly 有 5$$$5$$$ 个选项：[e1=1,t1=1,p1=30]$$$[e_1=1, t_1=1, p_1=30]$$$，[e2=2,t2=3,p2=50]$$$[e_2=2, t_2=3, p_2=50]$$$，[e3=2,t3=3,p3=100]$$$[e_3=2, t_3=3, p_3=100]$$$，[e4=1,t4=1,p4=80]$$$[e_4=1, t_4=1, p_4=80]$$$，[e5=3,t5=3,p5=100]$$$[e_5=3, t_5=3, p_5=100]$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "那么，如果 Vitaly 按以下方式准备，他就能按时完成所有任务。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Vitaly 选择第 4$$$4$$$ 个选项。那么在 1$$$1$$$ 小时内，他将以 80$$$80$$$% 完成第 1$$$1$$$ 个任务。他距离第 1$$$1$$$ 个任务的截止时间还剩 4$$$4$$$ 小时。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Vitaly 选择第 3$$$3$$$ 个选项。那么在 3$$$3$$$ 小时内，他将完整完成第 2$$$2$$$ 个任务。他距离第 1$$$1$$$ 个任务的截止时间还剩 1$$$1$$$ 小时，距离第 3$$$3$$$ 个任务的截止时间还剩 4$$$4$$$ 小时。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Vitaly 选择第 1$$$1$$$ 个选项。那么经过 1$$$1$$$ 小时后，他将以 110$$$110$$$% 完成第 1$$$1$$$ 个任务，这意味着他将正好在第 1$$$1$$$ 个任务的截止时间前完成该任务。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Vitaly 选择第 5$$$5$$$ 个选项。他将花费 2$$$2$$$ 小时完成第 3$$$3$$$ 个任务，再经过 1$$$1$$$ 小时后，Vitaly 将完整完成第 3$$$3$$$ 个任务。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "因此，Vitaly 使用 4$$$4$$$ 个选项，成功完整且按时地完成了课程。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "帮助 Vitaly——输出 Vitaly 按正确顺序完成任务所需的选项。请注意：每个选项至多可以使用一次。如果有多个可行答案，可以输出其中任意一个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入数据的第一行包含一个整数 T$$$T$$$(1≤T≤104$$$1 \\le T \\le 10^4$$$)——测试中的输入测试用例数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下面给出输入测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例描述的第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤105$$$1 \\le n,m \\le 10^5$$$)——分别表示任务数量和训练选项数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行包含 n$$$n$$$ 个数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)——任务 i$$$i$$$ 截止时间之前的时间。数组中的数值是非递减的，即 a1≤a2≤⋯≤an$$$a_1 \\le a_2 \\le \\dots \\le a_n$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行包含三个数 ei,ti,pi$$$e_i, t_i, p_i$$$ (1≤ei≤n$$$1 \\le e_i \\le n$$$, 1≤ti≤109$$$1 \\le t_i \\le 10^9$$$, 1≤pi≤100$$$1 \\le p_i \\le 100$$$)——如果 Vitaly 选择这个选项，那么经过 ti$$$t_i$$$ 小时后，他会将任务 ei$$$e_i$$$ 的进度提高 pi$$$p_i$$$%。这些选项按照输入数据中的顺序从 1$$$1$$$ 到 m$$$m$$$ 编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n+m$$$n+m$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null,
-      null
+      {
+        "ai": "对于每个测试用例，第一行输出数字 k$$$k$$$，表示利用其中的 k$$$k$$$ 个选项，Vitaly 能够按时将每项任务完成到 100$$$100$$$% 或更高。选项不能重复。如果 Vitaly 无法按时完成所有任务，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果存在答案，在下一行输出 k$$$k$$$ 个 1$$$1$$$ 到 m$$$m$$$ 之间互不相同的整数——这些整数表示选项的编号，顺序任意。如果答案不止一个，可以输出其中任意一个。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "F. Vitaly 与高级无用算法",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

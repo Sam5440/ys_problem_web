@@ -35,22 +35,56 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "Alice 和 Bob 正在一块 1×n$$$1 \\times n$$$ 的棋盘上进行游戏。在 Alice 的回合，她会在棋盘上放置一块 1×a$$$1 \\times a$$$ 的方块；而在 Bob 的回合，他会放置一块 1×b$$$1 \\times b$$$ 的方块。方块必须放置在未被占用的单元格上，且不能重叠。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "无法行动的一方输掉游戏。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Alice 先手，并且为了弥补先手优势，Alice 的棋子比 Bob 的大(换句话说，a>b$$$a  \\gt  b$$$)。给定三个整数 a$$$a$$$、b$$$b$$$ 和 n$$$n$$$，判断在双方都采取最优策略的情况下谁会获胜。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤105$$$1 \\le t \\le 10^5$$$)，表示测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 t$$$t$$$ 行中，每行包含三个空格分隔的整数 a$$$a$$$、b$$$b$$$ 和 n$$$n$$$(1≤b<a≤n≤109$$$1 \\le b  \\lt  a \\le n \\le 10^9$$$)，分别表示 Alice 和 Bob 使用的棋子大小，以及棋盘长度。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，如果 Alice 获胜则输出 \"Alice\"，如果 Bob 获胜则输出 \"Bob\"。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例中，由于 Alice 先手且 a=n=10$$$a = n = 10$$$，她可以在第一步就填满整个棋盘，Bob 将没有任何合法移动，从而输掉游戏。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/eef965ad4b18a3c5b147ac6d6e6a4c57d3ee0228.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个样例中，Alice 无论如何都无法阻止 Bob 在他的第一回合放置棋子。Bob 的第一回合结束后，总共只会剩下 4$$$4$$$ 个空格子，因此 Alice 无法在她的第二回合放置棋子，并将输掉游戏。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/f373103f4daa980ae657bd08ee5661f7dc4a4883.png)",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "I. 不公平的游戏",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

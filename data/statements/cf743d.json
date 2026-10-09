@@ -39,5 +39,61 @@
       "input": "1\n-1",
       "output": "Impossible"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Chloe 和 Vladik 参加的奥林匹克竞赛的慷慨赞助商允许所有参赛者自行选择奖品。圣诞节即将到来，因此赞助商决定用他们的奖品装饰圣诞树。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "他们为参赛者准备了 n 件奖品，并在每件奖品上写下一个唯一的编号（从 1 到 n 的整数）。第 i 件礼物由整数 ai 表示其愉悦度。礼物的愉悦度可以是正数、负数或零。赞助商将礼物 1 放在树顶。其他所有礼物都悬挂在系到某件其他礼物上的绳子上，因此每件礼物都悬挂在第一件礼物下方，中间可能经过一串绳子和其他礼物。形式化地说，这些礼物构成了一棵有 n 个顶点的树，且以 1 为根。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "颁奖过程如下：参赛者依次来到这棵树前，选择任意一个尚未被选走的礼物，并剪断悬挂该奖品的绳子。注意，所有用于将其他奖品悬挂在所选奖品上的绳子都不会被剪断。因此，参赛者将获得所选礼物，以及通过一系列绳子和其他礼物悬挂在它上的所有礼物。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "我们的朋友 Chloe 和 Vladik 在奥林匹克竞赛中并列第一名，因此他们将同时选择奖品！为了避免争抢，他们决定选择两个不同的礼物，使得通过一系列绳子和其他礼物悬挂在这两个礼物上的礼物集合不相交。换句话说，不应该存在同时悬挂在 Chloe 和 Vladik 所选礼物上的礼物。在所有可能的方案中，他们将选择这样一对奖品，使得剪断绳子后两人获得的所有礼物的愉悦度之和尽可能大。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输出 Vladik 和 Chloe 能获得的愉悦度之和的最大值。如果他们无法选择不会发生争抢的礼物，则输出 Impossible。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 2·105），表示礼物的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "下一行包含 n 个整数 a1, a2, ..., an（ - 109 ≤ ai ≤ 109），表示各个礼物的愉悦度。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的（n - 1）行每行包含两个数。第 i 行包含整数 ui 和 vi（1 ≤ ui, vi ≤ n，ui ≠ vi），表示树中的一条边。也就是说，编号为 ui 和 vi 的礼物通过一根绳子相连。绳子描述中的礼物编号可以按任意顺序给出：vi 悬挂在 ui 上，或 ui 悬挂在 vi 上。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有礼物都挂在第一个礼物上，中间可能隔着一串绳子和其他礼物。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 Chloe 和 Vladik 可以在不发生争执的情况下选择奖品，请输出一个整数，即他们两人能够获得的愉悦度总和的最大值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则输出 Impossible。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Chloe 与愉快的奖品",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

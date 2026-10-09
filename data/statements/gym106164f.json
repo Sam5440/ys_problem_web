@@ -44,29 +44,81 @@
   ],
   "sectionsZh": {
     "legend": [
+      {
+        "ai": "随着隔离措施解除，Jack 的家乡决定举办一场节日庆典。Jack 对见到太多人仍然很谨慎，因此他想用一种简单的策略来规划自己穿过节日的路线，从而最大化他的快乐值。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "节日中有 N$$$N$$$ 个摊位，编号为 1$$$1$$$ 到 N$$$N$$$。如果 Jack 进入第 i$$$i$$$ 个摊位，他会遇到 pi$$$p_i$$$ 个人，并获得快乐值 hi$$$h_i$$$。他按顺序从摊位 1$$$1$$$ 走到摊位 N$$$N$$$，并且不会重访任何摊位。在每个摊位，他可以选择进入，也可以直接路过。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "保证对于所有 i<N$$$i  \\lt  N$$$，都有 pi≥pi+1$$$p_i \\ge p_{i+1}$$$，因为较早的摊位往往吸引更多的人群。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Jack 希望总共遇到至多 P$$$P$$$ 个人。他还只考虑快乐值超过某个阈值 threshold$$$threshold$$$ 的摊位。阈值 threshold$$$threshold$$$ 必须是一个非负整数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "形式化地，设 ht$$$ht$$$ 表示 Jack 的总幸福值，m$$$m$$$ 表示他遇到的人数。Jack 将遵循以下策略。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Jack 的策略（伪代码）：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
       null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "Jack 希望选择能够使其总幸福值 ht$$$ht$$$ 最大的 threshold$$$threshold$$$ 值。如果有多个 threshold 能达到相同的最大幸福值，他希望选择其中最小的 threshold。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤105$$$1 \\le T \\le 10^5$$$)——测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例包含：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一行包含两个整数 N$$$N$$$ 和 P$$$P$$$(1≤N≤2⋅105$$$1 \\le N \\le 2 \\cdot 10^5$$$，1≤P≤1018$$$1 \\le P \\le 10^{18}$$$)——摊位的数量以及 Jack 想遇到的最多人数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行中，每行包含两个整数 hi$$$h_i$$$ 和 pi$$$p_i$$$(1≤hi≤109$$$1 \\le h_i \\le 10^9$$$，1≤pi≤1018$$$1 \\le p_i \\le 10^{18}$$$)——分别表示在第 i$$$i$$$ 个摊位获得的快乐值和遇到的人数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中的 N$$$N$$$ 之和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "此外，对于每个测试用例，所有 pi$$$p_i$$$ 的总和不超过 1018$$$10^{18}$$$，且对于所有 j<N$$$j  \\lt  N$$$，均有 pj≥pj+1$$$p_j \\ge p_{j+1}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出两个整数——Jack 能获得的最大总快乐值，以及达到该总快乐值所需的最小阈值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，Jack 可以进入每一个摊位，而不会超过他想要遇到的最大人数。因此，最优阈值为 0$$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试用例中，如果将阈值设为 0$$$0$$$，Jack 将跳过摊位 3$$$3$$$，从而得到总快乐值 8$$$8$$$。如果将阈值增加到 1$$$1$$$，由于阈值条件，他将改为跳过摊位 2$$$2$$$，从而得到总快乐值 10$$$10$$$，这是可能的最大值。阈值 2$$$2$$$ 同样得到总快乐值 10$$$10$$$，但它不是最小值。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "F. 节日漫步",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

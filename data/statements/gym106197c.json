@@ -46,29 +46,87 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "有一个隐藏的正整数 k$$$k$$$，它恰好有 n$$$n$$$ 个约数。这些约数被放入数组 a$$$a$$$，然后按一个隐藏的顺序打乱。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以向交互器提出形如 ? i j 的问题，交互器会返回 gcd(ai,aj)$$$\\gcd(a_i, a_j)$$$ 在 a$$$a$$$ 中的位置。注意，由于 a$$$a$$$ 包含 k$$$k$$$ 的所有约数，因此保证该值存在且唯一。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "使用不超过 3n$$$3n$$$ 次查询，确定 a$$$a$$$ 中哪些下标对应素数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "输入仅包含一行，其中有一个整数 n$$$n$$$(1≤n≤104$$$1\\leq n\\leq 10^4$$$)，表示 k$$$k$$$ 的约数个数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，我们不保证 k$$$k$$$ 的大小。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "读入 n$$$n$$$ 后，你最多可以进行 3n$$$3n$$$ 次查询。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每次查询，输出一行，格式为 ? i j (1≤i,j≤n$$$1 \\le i, j \\le n$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输出查询后，你可以读入一个整数 x$$$x$$$，其中 ax=gcd(ai,aj)$$$a_x = \\gcd(a_i, a_j)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "确定哪些下标包含素数后，输出一行 ! m p_1 p_2 ... p_m (0≤m≤n$$$0 \\le m \\le n$$$, 1≤pi≤n$$$1 \\le p_i \\le n$$$，其中 m$$$m$$$ 是素因子的数量，p1$$$p_1$$$ 到 pm$$$p_m$$$ 是它们在 a$$$a$$$ 中的位置。这不会计入 3n$$$3n$$$ 次查询的总数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输出查询后，别忘了输出换行符并刷新输出。否则，你会得到 Idleness limit exceeded。为此，请使用：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "C++ 中的 fflush(stdout) 或 cout.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Java 中的 System.out.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Pascal 中的 flush(output)；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "Python 中的 stdout.flush()；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "其他语言请参阅相关文档。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "交互器是非自适应的。这意味着数组 a$$$a$$$ 在交互开始时就已固定，并且不会在查询之后发生变化。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个测试中，进行第一次查询后，我们知道 gcd(a2,a4)=a1$$$\\gcd(a_2, a_4) = a_1$$$。可以证明，由于 n=4$$$n=4$$$，该查询结果意味着 a2$$$a_2$$$ 和 a4$$$a_4$$$ 是 k$$$k$$$ 的质因数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第二个测试中 n=1$$$n=1$$$，因此 k=1$$$k=1$$$，因为 1$$$1$$$ 是唯一只有一个约数的正整数。由于 1$$$1$$$ 没有质因数，我们可以不进行任何查询，直接输出 ! 0。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "C. 约数格",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

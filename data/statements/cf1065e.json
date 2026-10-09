@@ -56,35 +56,108 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "考虑一个由互不相同的字符组成的集合 A$$$A$$$，以及一个恰好由 n$$$n$$$ 个字符组成的字符串 S$$$S$$$，其中每个字符都存在于 A$$$A$$$ 中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定一个包含 m$$$m$$$ 个整数 b$$$b$$$ 的数组(b1<b2<⋯<bm$$$b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_m$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你可以对字符串 S$$$S$$$ 执行以下操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "选择某个合法的 i$$$i$$$，并令 k=bi$$$k = b_i$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "取 S=Prk$$$S = Pr_k$$$ 的前 k$$$k$$$ 个字符；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "取 S=Suk$$$S = Su_k$$$ 的后 k$$$k$$$ 个字符。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将 S$$$S$$$ 的前 k$$$k$$$ 个字符替换为反转后的 Suk$$$Su_k$$$；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "将 S$$$S$$$ 的后 k$$$k$$$ 个字符替换为反转后的 Prk$$$Pr_k$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，考虑 S=$$$S =$$$ \"abcdefghi\" 且 k=2$$$k = 2$$$。Pr2=$$$Pr_2 =$$$ \"ab\"，Su2=$$$Su_2 =$$$ \"hi\"。反转后的 Pr2=$$$Pr_2 =$$$ \"ba\"，Su2=$$$Su_2 =$$$ \"ih\"。因此，得到的 S$$$S$$$ 为 \"ihcdefgba\"。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "该操作可以执行任意次数(也可以执行零次)。在这些操作中，任意 i$$$i$$$ 都可以被多次选中。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当且仅当存在这样一个操作序列，可以将字符串 S$$$S$$$ 变换为字符串 T$$$T$$$ 时，我们称字符串 S$$$S$$$ 和 T$$$T$$$ 相等。对于上面的示例字符串，\"abcdefghi\" 和 \"ihcdefgba\" 是相等的。还要注意，这意味着 S=S$$$S = S$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "任务很简单。计算不同字符串的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "答案可能非常大，因此请计算其对 998244353$$$998244353$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、m$$$m$$$ 和 |A|$$$|A|$$$(2≤n≤109$$$2 \\le n \\le 10^9$$$，1≤m≤min(n2,2⋅105)$$$1 \\le m \\le min(\\frac n 2, 2 \\cdot 10^5)$$$，1≤|A|≤109$$$1 \\le |A| \\le 10^9$$$)，分别表示字符串的长度、数组 b$$$b$$$ 的大小以及集合 A$$$A$$$ 的大小。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 m$$$m$$$ 个整数 b1,b2,…,bm$$$b_1, b_2, \\dots, b_m$$$(1≤bi≤n2$$$1 \\le b_i \\le \\frac n 2$$$，b1<b2<⋯<bm$$$b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_m$$$)。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出一个整数，即字符来自集合 A$$$A$$$ 的长度为 n$$$n$$$ 的不同字符串数量，对 998244353$$$998244353$$$ 取模。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "以下是第一个样例中的所有不同字符串。选取字母 'a' 和 'b' 只是为了说明 A$$$A$$$ 中的字符互不相同。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"aaa\"",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"aab\" = \"baa\"",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"aba\"",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"abb\" = \"bba\"",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"bab\"",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "\"bbb\"",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "E. Side Transmutations",
+    "aiModel": "DeepSeek V4 Flash"
   }
 }

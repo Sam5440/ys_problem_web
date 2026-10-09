@@ -53,5 +53,101 @@
       "input": "5 2\n3 4",
       "output": "-1"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "假设有一个数组 a、一个栈 s（初始为空）以及一个数组 b（同样初始为空）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在 a 和 s 均为空之前，你可以执行以下操作：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "取出 a 的第一个元素，将其压入 s，并从 a 中移除（如果 a 不为空）；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "取出 s 的栈顶元素，将其追加到数组 b 的末尾，并从 s 中移除（如果 s 不为空）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你可以按任意顺序执行这些操作。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果存在一种执行操作的方式，使得最终数组 b 按非递减顺序排序，则称数组 a 是栈可排序的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "例如，[3, 1, 2] 是栈可排序的，因为如果我们执行以下操作，b 将被排序：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "从 a 中移除 3 并将其压入 s；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "从 a 中移除 1，并将其压入 s；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从 s 中移除 1，并将其追加到 b 的末尾；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从 a 中移除 2，并将其压入 s；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从 s 中移除 2，并将其追加到 b 的末尾；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "从 s 中移除 3，并将其追加到 b 的末尾。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "完成所有这些操作后，b = [1, 2, 3]，因此 [3, 1, 2] 是可栈排序的。[2, 3, 1] 不是可栈排序的。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "给定某个大小为 n 的排列 p 的前 k 个元素（回忆一下，大小为 n 的排列是一个大小为 n 的数组，其中 1 到 n 的每个整数恰好出现一次）。你需要补全这个排列剩余的 n-k 个元素，使得它是一个栈可排序的排列。如果存在多个答案，选择使 p 字典序最大的答案（当且仅当存在某个整数 k，使得对所有 i<k 有 qi=pi，且 qk>pk 时，数组 q 的字典序大于数组 p）。你不能交换或修改排列的前 k 个元素。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "输出你能得到的字典序最大的排列 p。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果不存在答案，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 k（2≤n≤200000，1≤k<n），分别表示所需排列的大小和你被给定的元素个数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行包含 k 个整数 p1, p2, ..., pk（1≤pi≤n），即 p 的前 k 个元素。这些整数两两互不相同。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果能够补全一个大小为 n 的栈可排序排列 p，使得 p 的前 k 个元素与输入中给出的元素相等，则输出字典序最大的这样的排列。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "否则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 栈排序",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

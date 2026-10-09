@@ -38,5 +38,67 @@
       "input": "6 5 3\n1 5 6\n1 2\n2 3\n3 4\n4 5\n6 3\n1 5",
       "output": "3"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "在唯一一行输出问题的答案——保证 PMP 能找到公交车的最小值 q。如果 PMP 根本无法到达公交车，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例说明如下。蓝色交叉路口是志愿者所在的位置。如果 PMP 沿着虚线路径前进，则在 q=3 时可以到达公交车：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/a1f626be4f756a007133181452aa752498ded077.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个样例中，PMP 将交叉路口 6 作为中间交叉路口，因此答案为 3。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Zart PMP 获得了参加在中国哈尔滨举行的 ICPC 世界总决赛的资格。团队游览太阳岛公园的雪雕艺术展之后，PMP 必须在大巴车离开之前回到车旁。但公园真的很大，他不知道该如何找到它们。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "公园有 n 个路口，编号为 1 到 n。有 m 条双向道路连接其中的一些路口。在 k 个路口处，ICPC 志愿者正在帮助参赛队伍，为他们指明前往目的地的道路。志愿者的位置是固定且互不相同的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "当 PMP 向一名志愿者询问前往公交车站的路线时，志愿者可以告诉他整条路径。然而，公园完全被冰雪覆盖，四处看起来几乎一模一样。因此，PMP 每次询问后最多只能记住 q 个路口（不包括他当前所在的路口）。他总会告诉志愿者自己的记忆力很差；如果不存在一条长度（以道路数量计）不超过 q、通往公交车站的路径，志愿者就会引导 PMP 去找另一名志愿者（当然，这名志愿者距离他不超过 q 个路口）。ICPC 志愿者非常熟悉这片区域，并且总会告诉 PMP 最优路线。因此，只要存在通往公交车站的路径，PMP 就一定能找到它。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "PMP 的初始位置是路口 s，公交车位于路口 t。你的任务是求出能够保证 PMP 找到公交车的最小 q。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个用空格分隔的整数 n、m、k（2 ≤ n ≤ 10^5，0 ≤ m ≤ 2·10^5，1 ≤ k ≤ n）——路口、道路和志愿者的数量。下一行包含 k 个互不相同的、介于 1 和 n（含）之间的用空格分隔的整数——志愿者所在路口的编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 m 行描述道路。第 i 行包含两个用空格分隔的整数 u_i、v_i（1 ≤ u_i, v_i ≤ n，u_i ≠ v_i）——第 i 条道路连接的两个路口。任意两个路口之间至多有一条道路。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "输入的最后一行包含两个用空格分隔的整数 s、t（1 ≤ s、t ≤ n，s ≠ t）——PMP 的初始位置和公交车所在的位置。从 s 不一定总能到达 t。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证路口 s 处始终有一名志愿者。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 弱记忆",
+    "aiModel": "DeepSeek V4 Flash"
+  }
 }

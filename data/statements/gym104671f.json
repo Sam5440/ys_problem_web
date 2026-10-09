@@ -39,22 +39,56 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null,
-      null
+      {
+        "ai": "给定一个整数数组 a1,a2,...,an$$$a_1, a_2, ..., a_n$$$，以及两个整数 k$$$k$$$ 和 q$$$q$$$。请回答以下 q$$$q$$$ 个查询：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每个查询，给定两个整数 l$$$l$$$ 和 r$$$r$$$。你的任务是判断 {al,al+1,...,ar}$$$\\{a_l, a_{l + 1}, ..., a_r\\}$$$ 是否存在一个非空子集，其按位与恰好等于 k$$$k$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "我们将非空整数子集 {b1,b2,...,bm}$$$\\{b_1, b_2, ..., b_m\\}$$$ 的按位与定义为：当 m=1$$$m = 1$$$ 时为 b1$$$b_1$$$；否则为 b1 AND b2 AND ... AND bm$$$b_1 \\text{ AND } b_2 \\text{ AND } ... \\text{ AND } b_m$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null
+      {
+        "ai": "输入的第一行包含三个以空格分隔的整数 n$$$n$$$、k$$$k$$$ 和 q$$$q$$$ (1≤n,q≤2⋅105$$$(1 \\leq n, q \\leq 2 \\cdot 10^5$$$, 0≤k<230)$$$0 \\leq k  \\lt  2^{30})$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个以空格分隔的整数 a1,a2,...,an$$$a_1, a_2, ..., a_n$$$ (0≤ai<230)$$$(0 \\leq a_i  \\lt  2^{30})$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行，每行包含两个以空格分隔的整数 l$$$l$$$ 和 r$$$r$$$ (1≤l≤r≤n)$$$(1 \\leq l \\leq r \\leq n)$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "输出 q$$$q$$$ 行。第 i$$$i$$$ 行，如果第 i$$$i$$$ 个查询的答案为是，则输出 YES；否则输出 NO。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null,
-      null
+      {
+        "ai": "在第一个样例测试用例中，第一个查询的答案是 YES，因为 6 按位与 10=2$$$6 \\text{ AND } 10 = 2$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "不存在 {1,6}$$$\\{1, 6\\}$$$ 的非空子集，其按位与等于 2$$$2$$$，因此第二个查询的答案是 NO。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于第三个查询，可以选取子集 {2}$$$\\{2\\}$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "F. 子集按位与",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

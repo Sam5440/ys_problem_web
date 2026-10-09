@@ -54,5 +54,115 @@
       "input": "5\n1 1 1 3 3\n3\n2 1 6",
       "output": "NO"
     }
-  ]
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 500）——初始队列中怪物的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二行包含 n 个整数 a1， a2， ...， an（1 ≤ ai ≤ 106）——怪物的初始重量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第三行包含一个整数 k（1 ≤ k ≤ n）——恶作剧后队列中怪物的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第四行包含 k 个整数 b1， b2， ...， bk（1 ≤ bj ≤ 5·108）——恶作剧后怪物的重量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "怪物按照从队列开头到队列末尾的顺序列出。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果无法通过任何操作得到最终队列，请在唯一一行中输出“NO”（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "否则，第一行输出“YES”（不含引号）。接下来的 n-k 行按时间顺序输出操作。每行输出 x——当前队列中进行吞食的怪物的编号，随后输出一个空格和字符“L”：如果队列中位于第 x 位的怪物吞食它前面的怪物；或者输出“R”：如果队列中位于第 x 位的怪物吞食它后面的怪物。每次吞食后，都要重新给队列中的怪物编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "当一只怪物吞食另一只怪物时，队列长度会减小。如果有多个答案，输出任意一个即可。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Monstropolis 发生了一场疫情，所有怪物都生病了。为了康复，所有怪物排成队列，等待在城里唯一的医生处就诊。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "很快，怪物们饿了起来，并开始互相吞食。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "如果一个怪物的重量严格大于被吃掉怪物的重量，并且它们在队列中相邻，那么这个怪物就可以吃掉另一个怪物。怪物之间的吞食会立即完成。同一时刻不会有多个怪物被吃掉。怪物 A 吃掉怪物 B 后，怪物 A 的重量会增加被吃掉的怪物 B 的重量。吞食后，队列长度减少 1，被吃掉的怪物后面的所有怪物向前移动一位，使队列中不再有空位。一个怪物可以连续吃掉多个怪物。最初，队列中有 n 个怪物，其中第 i 个怪物的重量为 a_i。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "例如，如果重量为 [1, 2, 2, 2, 1, 2]（按照队列顺序，怪物从左到右编号为 1 到 6），那么一些可行方案如下：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一个怪物不能吃掉第二个怪物，因为 a1 = 1 不大于 a2 = 2；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个怪物不能吃掉第三个怪物，因为 a2 = 2 不大于 a3 = 2；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个怪物不能吃掉第五个怪物，因为它们不相邻；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二个怪物可以吃掉第一个怪物，队列将变为 [3, 2, 2, 1, 2]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "过了一段时间，有人讲了一个好笑的笑话，所有怪物都恢复了。在那一刻，队列中有 k（k ≤ n）个怪物，其中第 j 个怪物的重量为 bj。两个序列（a 和 b）都按照从第一个到最后一个的顺序记录了怪物的重量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "你需要给出一种导致当前队列的可能的怪物进食顺序，或者判断这种情况不可能发生。假设在怪物互相进食期间，医生没有进行任何预约。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，最初有 n=6 只怪物，它们的重量为 [1, 2, 2, 2, 1, 2]（按照从队列中的第一只怪物到最后一只怪物的顺序排列）。最终队列应为 [5, 5]。下面的吞食序列可以得到最终队列：",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第二只怪物吞食左侧的怪物（即第一只怪物），队列变为 [3, 2, 2, 1, 2]；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第一只怪物（注意，它在上一步中是第二只怪物）吞食右侧的怪物（即第二只怪物），队列变为 [5, 2, 1, 2]；",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "第四只怪物吞食左侧的怪物（即第三只怪物），队列变为 [5, 2, 3]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "最后，第三只怪物吃掉左边的怪物（即第二只怪物），队列变为 [5, 5]。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "注意，对于每一步，输出都包含按当前队列顺序排列的怪物编号。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Monstropolis 中的疫情",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
+  }
 }

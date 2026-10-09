@@ -34,21 +34,52 @@
   ],
   "sectionsZh": {
     "legend": [
-      null,
-      null
+      {
+        "ai": "一个新的社交网络即将上线，n$$$n$$$ 个人将依次注册。第 i$$$i$$$ 个人有两个备选用户名 xi$$$x_i$$$ 和 yi$$$y_i$$$(xi≠yi$$$x_i \\ne y_i$$$)，并且必须选择其中一个进行注册。任意两个人都不能使用同一个用户名。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "对于每个从 1$$$1$$$ 到 n$$$n$$$ 的 k$$$k$$$，请计算为前 k$$$k$$$ 个人中的每个人选择其两个备选用户名之一，且所有 k$$$k$$$ 个选定用户名互不相同的方案数，结果对 998244353$$$998244353$$$ 取模。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "input": [
-      null,
-      null,
-      null,
-      null
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤3⋅105$$$1 \\le n \\le 3 \\cdot 10^5$$$)——人数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "接下来 n$$$n$$$ 行中的第 i$$$i$$$ 行包含两个整数 xi$$$x_i$$$ 和 yi$$$y_i$$$(1≤xi,yi≤109$$$1 \\le x_i, y_i \\le 10^9$$$，xi≠yi$$$x_i \\ne y_i$$$)——第 i$$$i$$$ 个人心仪的两个用户名。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 3⋅105$$$3 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "output": [
-      null
+      {
+        "ai": "对于每个测试用例，输出 n$$$n$$$ 个用空格分隔的整数；其中第 k$$$k$$$ 个数是在模 998244353$$$998244353$$$ 意义下，前 k$$$k$$$ 个人的有效用户名分配方案数。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ],
     "note": [
-      null,
-      null
+      {
+        "ai": "在第一个测试用例中，唯一的那个人可以使用用户名 1$$$1$$$ 或 2$$$2$$$ 注册，因此有 2$$$2$$$ 种方案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      },
+      {
+        "ai": "在第四个测试用例中，仅考虑第一个人时有 2$$$2$$$ 种方案。考虑前两个人时，除了两人都选择 2$$$2$$$ 外，其他每种组合都可行，因此有 3$$$3$$$ 种方案。考虑全部三个人时，在 8$$$8$$$ 种组合中，只有 (1,2,3)$$$(1, 2, 3)$$$ 和 (2,3,1)$$$(2, 3, 1)$$$ 不会让任意两个人使用相同的用户名，因此有 2$$$2$$$ 种方案。",
+        "aiModel": "DeepSeek V4 Flash (xcmapi)"
+      }
     ]
+  },
+  "titleZh": {
+    "ai": "A. 属于自己的名字",
+    "aiModel": "DeepSeek V4 Flash (xcmapi)"
   }
 }

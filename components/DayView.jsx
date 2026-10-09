@@ -23,30 +23,32 @@ function compilerProblems(day) {
 
 export default function DayView({ day, latest }) {
   return (
-    <div>
+    <div className="compiler-host">
       <CompilerDock problems={compilerProblems(day)} />
       <LanguageSidebar />
-      <div className="mb-5 flex flex-wrap items-center gap-3">
-        <h2 className="text-lg font-semibold tracking-tight">{formatDateCN(day.date)}</h2>
-        {latest && <Badge>Latest</Badge>}
-        <span className="text-sm text-muted-foreground">{day.problems.length} 道题</span>
-        {!latest && (
-          <Button asChild variant="ghost" size="sm" className="ml-auto">
-            <Link href="/">
-              <ArrowLeft className="size-3.5" />
-              返回最新一期
-            </Link>
-          </Button>
-        )}
-      </div>
-      <Separator className="mb-6" />
-      {/* grid-cols-1 pins the track to minmax(0,1fr): without it the implicit
-          auto track grows to the min-content width of a long unbreakable line
-          (code block in the editorial) and drags the whole page wider. */}
-      <div className="grid grid-cols-1 gap-6 pb-4">
-        {day.problems.map((p) => (
-          <ProblemCard key={p.code} problem={p} />
-        ))}
+      <div className="problems-col min-w-0">
+        <div className="mb-5 flex flex-wrap items-center gap-3">
+          <h2 className="text-lg font-semibold tracking-tight">{formatDateCN(day.date)}</h2>
+          {latest && <Badge>Latest</Badge>}
+          <span className="text-sm text-muted-foreground">{day.problems.length} 道题</span>
+          {!latest && (
+            <Button asChild variant="ghost" size="sm" className="ml-auto">
+              <Link href="/">
+                <ArrowLeft className="size-3.5" />
+                返回最新一期
+              </Link>
+            </Button>
+          )}
+        </div>
+        <Separator className="mb-6" />
+        {/* grid-cols-1 pins the track to minmax(0,1fr): without it the implicit
+            auto track grows to the min-content width of a long unbreakable line
+            (code block in the editorial) and drags the whole page wider. */}
+        <div className="grid grid-cols-1 gap-6 pb-4">
+          {day.problems.map((p) => (
+            <ProblemCard key={p.code} problem={p} />
+          ))}
+        </div>
       </div>
     </div>
   );

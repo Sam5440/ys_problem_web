@@ -113,7 +113,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 
 | 路径 | 作用 |
 |---|---|
-| `components/compiler/CompilerDock.jsx` | 题目右侧编译器停靠面板（DayView 内挂载，首页/日页共用）：语言切换、样例对拍/交互运行/编译检查三模式、控制台、收起抽屉；≥1024px 布局靠 `body.compiler-open` 的 globals.css 规则把主内容左移出 `--compiler-w`（xl 42rem、1024–1279 收窄 34rem），题目与编译器并列；更窄为覆盖式抽屉 |
+| `components/compiler/CompilerDock.jsx` | 题目右侧编译器停靠面板（DayView 的 `.compiler-host` 两列网格内挂载，首页/日页共用）：语言切换、样例对拍/交互运行/编译检查三模式、控制台、收起抽屉；≥1024px 且展开时是**文档流内并列排版块**（`.compiler-host` 右列 sticky，题目列 minmax(0,1fr) 自适应；宽度 `--compiler-w`：xl 42rem、1024–1279 收窄 34rem），更窄为 fixed 覆盖式抽屉（形态切换全在 globals.css） |
 | `components/compiler/CodeEditor.jsx` | Monaco 编辑器封装（next/dynamic 按需加载）：高亮、诊断标记（clang/-fsyntax-only 与 py ast.parse 注入）、静态补全 + Ctrl+Space 触发 clang `-code-completion-at` 动态补全；editor.worker 用相对 node_modules 路径打包（monaco 0.57 exports 不允许裸包名进 new URL） |
 | `components/compiler/CompilerSettingsSection.jsx` | 设置弹窗「编译器」区块：运行时下载管理（Cache API + 进度）、默认模板编辑、默认语言/标准/超时偏好、观望中运行时占位 |
 | `lib/compiler/runtimes.js` | 运行时清单：Pyodide 版本（默认 314.0.7 = Python 3.14.2）、clang22 文件与尺寸、「观望中」占位（更新的 clang 发行版不适合刷题时留位） |

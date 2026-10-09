@@ -242,25 +242,68 @@
 }
 
 /* ---------- 编译器停靠面板（components/compiler/CompilerDock.jsx） ----------
-   面板本体是 fixed 右侧抽屉；≥1024px 起展开时把主内容与顶栏整体左移出面板
-   宽度（题目与编译器并列，不互相遮挡），更窄的面板为覆盖式抽屉。面板宽度
-   走 --compiler-w 变量：xl 42rem，1024–1279 收窄到 34rem 保证左侧题目列
-   仍有可读宽度。内容列上限 76rem，在「视口 − 面板」的剩余区域内居中，与
-   LeetCode 的题目+IDE 双栏一致。 */
-body {
+   同一面板按断点呈现两种形态：
+   - ≥1024px 且展开（body.compiler-open）：题目列 + 编译器列放进同一个两列
+     网格（.compiler-host），编译器是**文档流内的并列排版块**——sticky 跟随
+     滚动、与题目同层互不遮挡；列宽 --compiler-w（xl 42rem、1024–1279 收窄
+     34rem），左列 minmax(0,1fr) 自适应吃剩余宽度。
+   - <1024px（手机/窄窗）：没有并排空间，退回 fixed 覆盖式抽屉，滑入滑出。 */
+:root {
   --compiler-w: 42rem;
 }
 @media (min-width: 1024px) and (max-width: 1279.98px) {
-  body {
+  :root {
     --compiler-w: 34rem;
   }
 }
+
+/* 抽屉形态（默认：<1024 或收起时）——fixed 覆盖层，藏在右缘外 */
+.compiler-box {
+  position: fixed;
+  top: 3.5rem;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  width: min(var(--compiler-w), calc(100vw - 0.5rem));
+  background: var(--card);
+  border-left: 1px solid var(--border);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.5);
+  transform: translateX(100%);
+  transition: transform 200ms ease;
+}
+.compiler-box.compiler-panel-open {
+  transform: translateX(0);
+}
+
+/* ≥1024px 且展开：进文档流，成为题目右侧的并列排版块（sticky 吸附在
+   sticky 头部下方，内部自行滚动） */
 @media (min-width: 1024px) {
-  body.compiler-open main,
-  body.compiler-open .header-inner {
-    max-width: none;
-    margin-left: 0;
-    margin-right: var(--compiler-w);
-    padding-left: max(1rem, calc((100vw - var(--compiler-w) - 76rem) / 2));
+  body.compiler-open main {
+    max-width: 110rem;
+  }
+  body.compiler-open .compiler-host {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--compiler-w);
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+  body.compiler-open .compiler-host > .problems-col {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  body.compiler-open .compiler-host > .compiler-box {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: 3.5rem;
+    bottom: auto;
+    transform: none;
+    transition: none;
+    width: auto;
+    height: calc(100vh - 3.5rem);
+    z-index: auto;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    box-shadow: none;
   }
 }

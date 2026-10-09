@@ -8,9 +8,11 @@
  * - 模式：样例测试（题目 examples 逐例对拍，C++ 编译一次多例复用）/
  *   交互运行（SharedArrayBuffer 阻塞喂入，需跨域隔离）/ 编译检查
  *   （C++ -fsyntax-only；Python ast.parse；编辑停顿 2s 自动跑）。
- * - 布局：≥1024px 起占据右侧固定列（body.compiler-open 由 CSS 把主内容左移
- *   出面板宽度 --compiler-w，题目与编译器并列；1024–1279 面板收窄 34rem），
- *   更窄的屏幕为覆盖式抽屉；收起后状态（草稿/控制台/结果）保留。
+ * - 布局：≥1024px 且展开时是**文档流内的并列排版块**（DayView 的
+ *   .compiler-host 两列网格右列，sticky 跟随滚动，与题目同层互不遮挡；
+ *   宽度走 --compiler-w：xl 42rem、1024–1279 收窄 34rem，左列题目自适应
+ *   吃剩余宽度）；更窄的屏幕为 fixed 覆盖式抽屉（globals.css 按断点切换
+ *   形态）。收起后状态（草稿/控制台/结果）保留。
  */
 
 import dynamic from 'next/dynamic';
@@ -431,7 +433,7 @@ export default function CompilerDock({ problems }) {
       </button>
 
       <aside
-        className={`fixed bottom-0 right-0 top-14 z-40 flex w-[var(--compiler-w)] max-w-[calc(100vw-0.5rem)] flex-col border-l bg-card shadow-2xl transition-transform duration-200 ${open ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`compiler-box flex flex-col ${open ? 'compiler-panel-open' : ''}`}
         aria-label="编译器面板"
         aria-hidden={!open}
       >

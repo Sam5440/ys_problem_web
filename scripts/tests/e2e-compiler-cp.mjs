@@ -280,6 +280,65 @@ async function main() {
   check('C++ UTF-8 中文输出原样', true);
   await shot('cp-08-cpp-unicode');
 
+  /* ====== 编辑器补全 / 签名提示 / 头文件补全（真实键盘触发 quickSuggestions） ======
+   * 程序化编辑（executeEdits/setValue）不触发 suggest，preset 走 evaluate、
+   * 触发片段走真实键盘。签名提示的 DOM 类名是 parameter-hints-widget。 */
+  const typeFresh = async (preset, typed) => {
+    await page.evaluate((t) => {
+      const { editor } = window.__ysMonaco;
+      const model = editor.getModel();
+      editor.executeEdits('e2e', [{ range: model.getFullModelRange(), text: t }]);
+      editor.setPosition(model.getFullModelRange().getEndPosition());
+      editor.focus();
+    }, preset);
+    await page.keyboard.type(typed, { delay: 30 });
+    await sleep(700);
+  };
+  const suggestRows = async () => page.evaluate(() => {
+    const w = document.querySelector('.monaco-editor .suggest-widget');
+    if (!w || !w.classList.contains('visible')) return [];
+    return [...w.querySelectorAll('.monaco-list-row')].map((e) => e.textContent).slice(0, 15);
+  });
+  const dismiss = () => page.keyboard.press('Escape').then(() => sleep(200));
+
+  const CPP_PRELUDE = '#include <bits/stdc++.h>\nusing namespace std;\nint main(){\n    ';
+  await typeFresh(CPP_PRELUDE, 'co');
+  {
+    const rows = await suggestRows();
+    check('打字即补全：co 弹出 cout（裸名静态表）', rows.some((r) => r.includes('cout')), JSON.stringify(rows.slice(0, 6)));
+    await dismiss();
+  }
+  await typeFresh('#include <bits/stdc++.h>\nusing namespace std;\n', 'sort(');
+  {
+    const sig = await page.evaluate(() => {
+      const w = document.querySelector('.monaco-editor .parameter-hints-widget');
+      return w && w.getClientRects().length ? w.textContent : '';
+    });
+    check('sort( 弹出签名提示（原型 + 说明）', /void sort\(RandomIt first, RandomIt last/.test(sig), sig.slice(0, 80));
+    await dismiss();
+  }
+  await typeFresh('', '#include <');
+  {
+    const rows = await suggestRows();
+    check('#include < 弹出头文件补全', rows.some((r) => r.includes('bits/stdc++.h')), JSON.stringify(rows.slice(0, 5)));
+    await dismiss();
+  }
+  await typeFresh('#include <bits/stdc++.h>\nusing namespace std;\nvector<int> v;\n', 'v.');
+  {
+    const rows = await suggestRows();
+    check('成员补全：v. 弹出成员表', rows.length > 0 && rows.some((r) => r.includes('begin')), JSON.stringify(rows.slice(0, 6)));
+  }
+  // 续打部分词仍是成员上下文（isCppMemberAccess 剥部分词），过滤出 push_back——
+  // 曾因只看紧邻字符在 v.p 处退回普通表导致成员候选消失
+  await page.keyboard.type('pu', { delay: 30 });
+  await sleep(600);
+  {
+    const rows = await suggestRows();
+    check('成员过滤：v.pu 过滤出 push_back', rows.some((r) => r.includes('push_back')), JSON.stringify(rows.slice(0, 6)));
+    await dismiss();
+  }
+  await shot('cp-08b-completion');
+
   // Python 超长行输入（SAB 行读，10k 字符）。首次用 Python：先经设置面板
   // 真实下载 Pyodide（jsDelivr），跨源运行时未缓存时 py-client 拒绝运行
   console.log('  … 真实下载 Pyodide 314（jsDelivr，约 12-15MB）');

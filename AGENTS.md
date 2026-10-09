@@ -12,10 +12,11 @@ Codeforces 每日两题镜像站（数据来自上游 [Yawn-Sean/Daily_CF_Proble
 
 | 分支 | 内容 | 保留策略 |
 |---|---|---|
-| `main` | 代码，`data/`、`public/ci-logs/` 均被 gitignore | 永久 |
+| `main` | 代码，`data/`、`public/ci-logs/`、`public/compiler/` 均被 gitignore | 永久 |
 | `data/problems` | 题面 + 翻译（`data/statements/*.json`） | **永久**，完整历史 |
 | `data/misc-<UTC日期>` | 排行榜 / CI 日志 / `.upstream-sha`、`.leaderboard-sha` 标记 | 滚动 60 天，每日清理 |
-| `deploy` | main 代码 + 数据快照 | 单提交孤立分支，每次 force-push 覆盖 |
+| `data/runtime` | 浏览器编译器运行时二进制（`public/compiler/*`，约 150MB） | **永久**，孤立快照 force-push |
+| `deploy` | main 代码 + 数据快照（含 `public/compiler/`） | 单提交孤立分支，每次 force-push 覆盖 |
 
 - **本地开发第一步永远是 `npm run data:pull`**（从数据分支恢复数据进工作区）。工作区里的 `data/`、`public/ci-logs/` 是未跟踪文件，属正常状态。
 - **deploy 是纯投影**（main 代码 + 数据分支内容），不带历史、不会冲突，`npm run data:publish` 可随时重建；内容未变时脚本自动跳过推送。
@@ -85,7 +86,13 @@ node scripts/sync-leaderboard.mjs             # 仅同步排行榜（records.js 
 node scripts/repair-zsmj.mjs --limit N        # 重抓 ZSMJ 污染题面
 node scripts/save-ci-log.mjs                  # 仅在 Actions 内可用（依赖 GITHUB_* env，缺了会跳过）
 node scripts/push-data-branches.mjs [--problems] [--misc] [--prune]   # 手动推送数据分支
-node --test scripts/tests/                    # 分支逻辑单测
+npm run data:pull:runtime   # 从 data/runtime 分支恢复 public/compiler/（改编译器运行时前先拉）
+npm run runtime:push        # public/compiler/ → data/runtime 分支（孤立快照 force-push）
+node scripts/tests/e2e-compiler.mjs           # 浏览器编译器 Playwright 全链路（需先 npm run build && npx next start）
+npm run test:cp:cpp                           # C++ 竞赛场景严格矩阵（85 例：STL/算法/IO 格式/三标准/错误谱系，Node 直驱 ~2 分钟）
+npm run test:cp:py                            # Python 竞赛场景矩阵（36 例：真 Pyodide + 交互 stdin shim 语义锁，首跑下载 ~13MB 到 /tmp）
+npm run test:cp:e2e                           # 浏览器竞赛场景 E2E（-std 切换/RE 谱系/交互时序/多行输出/0.29.3 切换）
+node --test "scripts/tests/*.test.mjs"       # 分支逻辑单测（Node 25 起目录形式会把目录当模块加载而报错，用 glob）
 bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（夹具仓库，不碰 origin）
 ```
 
@@ -106,6 +113,19 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 
 | 路径 | 作用 |
 |---|---|
+| `components/compiler/CompilerDock.jsx` | 题目右侧编译器停靠面板（DayView 内挂载，首页/日页共用）：语言切换、样例对拍/交互运行/编译检查三模式、控制台、收起抽屉；xl 布局靠 `body.compiler-open` 的 globals.css 规则把主内容左移 42rem |
+| `components/compiler/CodeEditor.jsx` | Monaco 编辑器封装（next/dynamic 按需加载）：高亮、诊断标记（clang/-fsyntax-only 与 py ast.parse 注入）、静态补全 + Ctrl+Space 触发 clang `-code-completion-at` 动态补全；editor.worker 用相对 node_modules 路径打包（monaco 0.57 exports 不允许裸包名进 new URL） |
+| `components/compiler/CompilerSettingsSection.jsx` | 设置弹窗「编译器」区块：运行时下载管理（Cache API + 进度）、默认模板编辑、默认语言/标准/超时偏好、观望中运行时占位 |
+| `lib/compiler/runtimes.js` | 运行时清单：Pyodide 版本（默认 314.0.7 = Python 3.14.2）、clang22 文件与尺寸、「观望中」占位（更新的 clang 发行版不适合刷题时留位） |
+| `lib/compiler/runtime-cache.js` | Cache API 层（`compiler-runtime-v1`）：流式进度下载、显式 Content-Type 重建 Response（wasm streaming 需要）、删除/记账 |
+| `lib/compiler/cpp-client.js` / `py-client.js` | 主线程客户端：worker 生命周期、请求队列、运行看门狗（交互等待输入时暂停计时）、超时=terminate worker（wasm 无法抢占）；py 另有 KeyboardInterrupt 两段式中断（先中断后 2s 宽限终止） |
+| `public/compiler-js/cpp-worker.js` | C++ worker：Cache API 优先读 `/compiler/*`（回退同源网络，.gz + DecompressionStream 直取）、exnref 探测降级 noeh 二进制、SAB 交互 stdin |
+| `public/compiler-js/bridge.js` | clang 编排层（改编自 cppstudio-io/wasm-clang-runtime，Apache-2.0，血统 binji/wasm-clang）：MemFS 原型补丁实现「预喂 stdin → 耗尽后 SAB 阻塞交互读」（**必须先于 new API() 打补丁**，emscripten 导入表构造即固化）、编译/链接/多样例复用/语法检查/补全 |
+| `public/compiler-js/py-worker.js` | Pyodide worker：fetch 包装接 Cache API（离线二次加载零网络）、固定 stdin 首调全量+EOF、交互 stdin SAB、ast.parse lint |
+| `public/compiler/` | **gitignore**，`data/runtime` 分支投影：clang22/-noeh、lld22/-noeh、sysroot22.tar（自重建：真身 iostream + 合成 bits/stdc++.h + 8192 节点 memfs）、manifest.json |
+| `scripts/build-cpp-runtime.mjs` + `scripts/lib/sysroot-pack.mjs` | 从 wasi-sdk 33 + 上游 release 重建 C++ 运行时到 `public/compiler/`（本地维护任务；上游 sysroot 的 iostream 是教学桩，`cin >> string` 都不可用，必须重建） |
+| `scripts/push-runtime-branch.mjs` | `public/compiler/` → `data/runtime` 分支（孤立快照 force-push；树未变跳过） |
+| `scripts/tests/e2e-compiler.mjs` | 浏览器编译器 Playwright 全链路（真实 clang/Pyodide，约 3-6 分钟）；`cpp-cp-matrix.mjs`/`py-cp-matrix.mjs` 为 Node 侧竞赛场景严格矩阵（快、可精确断言）；`e2e-compiler-cp.mjs` 为竞赛场景浏览器 E2E；`cpp-runtime-smoke.mjs` 为 Node 侧快速冒烟 |
 | `scripts/update-data.mjs` | 同步上游 problems/题解/排行榜 → `data/daily.json`、`data/leaderboard.json`（全量历史，MAX_DAYS 默认 Infinity） |
 | `scripts/lib/git-plumbing.mjs` | 数据分支 git 底层操作：临时 index 组树、commit-tree、branchTip（fetch 取 tip）、push 助手 |
 | `scripts/lib/data-branches.mjs` | 分支命名（`data/misc-YYYY-MM-DD`）、60 天保留期选择、最新 misc 分支查找 |
@@ -161,6 +181,28 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 - /logs 相关约定：`app/logs/page.jsx` 与 `app/logs/ai-demo/page.jsx` 的 `loadRuns()` **必须排除 `.ai.json`**（只列 `.json` 摘要），运行卡展开时才懒加载对应 `.ai.json`。
 - /logs 时间轴在浏览器端实时合并 GitHub API 匿名拉取的最近 100 次 workflow 运行（`components/logs-view.jsx`，`NEXT_PUBLIC_GH_REPO` 可覆盖仓库）：有仓库存档的以存档为准（按 runId 去重）；空跑/被取消/存档未同步的运行显示「未发生数据提交」等轻量卡片（success 且全程 <5 分钟判为空跑，完整运行 ≥10 分钟）。产出类图表只用有存档的运行，避免被空跑零值刷屏。
 
+## 浏览器编译器（题目右侧停靠面板）
+
+访客浏览器内的 C++/Python 刷题环境：Monaco 编辑器（高亮/诊断/补全）+ WASM 运行时，支持样例对拍、交互 stdin、语法检查，全部计算在用户浏览器完成（不耗服务器）。入口：`DayView` 挂 `CompilerDock`，设置弹窗管运行时下载与模板/偏好。
+
+- **运行时选型**：C++ = clang 22.1 + wasi-sdk 33 sysroot（[cppstudio-io/wasm-clang-runtime](https://github.com/cppstudio-io/wasm-clang-runtime) v0.1.0，Apache-2.0，血统 binji/wasm-clang），C++17/20/23；Python = Pyodide（默认 314.0.7 = CPython 3.14.2，备选 0.29.3）。更新的方案（clang 23 freestanding 发行版、CheerpX）不满足刷题需求，在 `lib/compiler/runtimes.js` 的 `PLACEHOLDERS` 留位说明。
+- **发布路径**：`public/compiler/`（约 150MB 二进制）被 gitignore，走 `data/runtime` 永久分支（孤立快照 force-push）；CI 所有 restore-data 均带 `--runtime` 把它注入 deploy，与站点同源。**改动上线顺序**：`npm run runtime:push`（若运行时变了）→ `git push origin main`（触发 publish-deploy 重组 deploy）。新克隆想本地跑编译器先 `npm run data:pull:runtime`。
+- **重建运行时**（仅当换 clang/wasi-sdk 版本）：`node scripts/build-cpp-runtime.mjs`，参数见脚本头注释（需下载上游 release + wasi-sdk 33）。上游 sysroot 的 `<iostream>` 是教学桩（`cin >> string` 都不可用），脚本从 wasi-sdk 全量重建并合成 `bits/stdc++.h`（`BITS_BLOCKLIST` 排除 wasi 无 EH/信号对应的头）。
+- **交互 stdin**：SharedArrayBuffer + `Atomics.wait`（worker 内阻塞读、主线程喂入），需要跨域隔离——`next.config.mjs` 全站注入 COOP `same-origin` + COEP `credentialless`；`crossOriginIsolated` 为 false 时自动降级为仅固定输入（禁交互模式）。固定 stdin 无需 SAB。
+- **worker 消息路由约定**：所有从 worker 主动冒出的消息（log/need-input/进度）**必须带当前请求 id**（cpp-worker 用 `currentId` 变量在 dispatch 时补上），否则 cpp-client 按 `pending.get(msg.id)` 路由时静默丢弃——历史上交互输入框因此永远不出现。日志按请求路由到该请求的 onLog（避免上一个请求的 onLog 持续接收后续日志/ANSI 灌屏；worker 侧同时剥 ANSI 码）。
+- **`-std` 必须贯穿全链路**：shared.js 的 `api.compile` 收 `extraArgs`，bridge 的 `compileLinkRunResult`/`runCases` 与 `syntaxCheck`/`codeComplete` 一样接收 `std` 并转成 `-std=` 参数，cpp-worker 从消息里透传。漏传时运行按 clang `-cc1` 默认 gnu++17 编译，与检查所用的设置标准分裂（表现为「检查通过、运行报错」）。
+- **trap 输出清理**：程序 trap（assert/abort/除零/栈溢出）时 JS 侧会在程序输出后追加 `Error: …` 与 RuntimeError 堆栈——bridge 的 `cleanStdout` 从第一个 `Error: ` 行整块截掉（切片可能以 `Error: ` 开头，正则要匹配行首），否则内部 JS 堆栈会被当程序输出进 UI/判题。
+- **样例 verdict 映射的展开顺序**：`{ index, ...j, verdict: re ? 'RE' : j.verdict }` —— `...j` 必须在 `verdict` **之前**，写反时 `judgeCase` 的 WA 会把 trap/退出码推出的 RE 覆盖回去（C++ 与 Python 两条路径都曾中招，表现为「明明 trap 了 UI 却判 WA」）。
+- **触发运行期除零的可靠写法**：`volatile int vz = 0; int zero = vz;`（volatile load 的值优化器不可假设）——`volatile x*0` 乘法与 `asm volatile("" : "+r")` 屏障都会被 clang -O2 折叠掉，不要用来防折叠。
+- **Pyodide stdout/stdin 语义**（多轮都曾因此出产品 bug）：① `setStdout({batched})` 回调在换行/flush 时触发但**文本不含换行符**，转发时必须补 `\n`，否则多行输出全部粘连；② 非 raw `setStdin` 回调是**记录式**语义——单条记录最多被 CPython 按 8192 字节分块消费，>8KB 的行被静默截断（无界 `read()` 也只消费一次回调）。两条 stdin 路径都不走 setStdin 喂业务数据，而是向解释器注入**真实字节流**替换 `sys.stdin`：固定 stdin 用 `io.TextIOWrapper(io.BytesIO(...))`（JSON 双重编码传参）；SAB 交互用自定义 `io.RawIOBase`，`readinto` 逐记录从 SAB 拉。交互 shim 三个硬约束（违背即在浏览器死锁/截断，Node 里可能侥幸通过——CPython 分块尺寸随环境不同）：**缓冲非空时绝不拉新记录**（readline 按块读 >8KB 的行要跨多次 readinto 拼接，缓冲有剩就拉下一条会阻塞在还没输入的下一行上）；记录是行且不含换行符，包装时补 `\n`、EOF 记录不补；类体内引用 JS 注入的回调**不能用双下划线名**（Python 名修饰会改写成 `_类名__xxx` 导致 NameError）。
+- **C++ 运行时行为谱系**（严格矩阵实测钉死，勿凭直觉改）：异常编译期禁用（`cannot use 'try' with exceptions disabled`，noeh 头文件栈，刷题代码别用 try/throw）；整数除零按 WASM 规范 trap（`divide by zero`）；`abort()`/assert 走 `llvm.trap`→`unreachable`；默认链接栈 1MB，深递归要防 -O2 尾递归消除（volatile 垫帧可测真溢出）；`__int128` 加减乘可靠；clang `-cc1` 默认标准是 gnu++17（`__cplusplus` 201703L）。矩阵：`npm run test:cp:cpp`。
+- **Python 侧**：异常完整可用（与 C++ 相反）；`sys.exit(n)` 以 success=false + SystemExit traceback 呈现；lint（ast.parse）诊断消息随 CPython 版本变化（3.14 报 `invalid syntax` 而非 `expected ':'`），lint 断言要跟着版本走。矩阵：`npm run test:cp:py`。
+- **超时语义**：wasm 无法被抢占，超时 = terminate 整个 worker（下次运行重新初始化，clang 重载约 10 秒）；Python 先 KeyboardInterrupt（SAB 中断标志）2 秒宽限后才 terminate。交互模式等待用户输入时看门狗暂停计时。
+- **缓存**：设置页下载写入 Cache API（`compiler-runtime-v1`，显式 Content-Type 重建 Response，否则 wasm streaming 解析失败）；worker 侧 Cache 优先、回退同源 `/compiler/*`（带 `.gz` + DecompressionStream 首试）。`hasRuntime` 对同源未缓存的运行时做 HEAD 探测（deploy 已带运行时则免下载），跨源必须已缓存。
+- **本站对 vendored shared.js 的约定**：`cpp-worker.js` 用正则把 IIFE 的 `return API;` 尾句 patch 成 `return { API, MemFS };` 取出 MemFS 类（顶层作用域本无 MemFS 标识符；外层取回 `return API` 即对子），并给 `MemFS.prototype` 打 stdin 补丁——**必须先于 `new API()`**（emscripten 导入表构造即 bind 固化）。上游改版导致断言报「shared.js 结构变化」时同步这里的正则。
+- **Python worker 是 module worker**（`py-client.js` `new Worker(url, { type: 'module' })`）：Pyodide 314 线（Python 3.14）在 classic worker 里直接抛 "Classic web workers are not supported"；py-worker 无 importScripts，两种作用域通吃。C++ 的 cpp-worker 必须保持 classic（依赖 importScripts 挂 bridge.js）。
+- **Monaco 0.57**：exports map 把裸子路径全映射进 `esm/vs/*.js`——editor.worker 只能用相对 node_modules 路径进 `new URL`，且勿显式引 `min/vs/editor.main.css`（ESM 构建内联 css import）。C++ clang 补全仅在 `CompletionTriggerKind.Invoke`（Ctrl+Space）触发，平时显示静态补全表。
+
 ## Secrets 与环境变量
 
 - 仓库 Secrets：`AI_BASE_URL`、`AI_API_KEY`（OpenAI 兼容端点，CI AI 翻译用）；`AI_MODEL`（请求参数）、`AI_MODEL_LABEL`（写入每段 `aiModel` 的模型展示名，换模型时两个一起改）、`AI_TRANSLATE_LIMIT` 写死在 workflow 里。设置方法：`gh secret set 名字 < 本地文件`，避免密钥进会话记录。
@@ -178,3 +220,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 7. React 水合：effect 依赖里不要放会变化的 state（cleanup 会掐死 in-flight fetch 导致永挂 loading），用 ref 做真值源（见 `logs-view.jsx` 的 `startedRef` 模式）；图表时间轴锚定最新运行的 `startedAt` 而非 `Date.now()`，保证 SSR/水合一致。历史遗留的 React #418 警告（`renderRich` 嵌套 `<p>`）非回归、无功能影响。
 8. 多会话并行开发此仓库：git 操作前先 `git fetch` 对齐；数据分支推送撞车时脚本会自动叠加远端重试，deploy 无历史永不冲突。
 9. 验证方式：`npm run build`（822+ 静态页全过才算过，数据缺失会自动从 deploy 拉）；UI 改动用 Playwright headless 截图评审；测 AI 翻译链路用本地 mock OpenAI 端点——**mock 必须回显输入中的占位符**（否则 restoreMath 校验失败）且带 CORS 头；数据分支模型改动跑 `bash scripts/tests/e2e-data-branches.sh`。
+10. 编译器 worker 的经典脚本边界：`cpp-worker.js` 是 classic worker，bridge.js 靠 `importScripts` 挂载（漏写时首个症状是 `self.CPBridge` undefined）；`public/compiler-js/*` 不进 webpack，改动即时生效但语法错误只会在运行时爆——改完跑 `node --check` + `e2e-compiler.mjs`。
+11. memfs（wasi 版，非 emscripten）两个硬约束：`addFile` 不覆盖同名节点（每请求用唯一文件名 `m/c/k/s+counter`）；`GetFileNodeAddress` 对目录节点必须静默返回 0（vendored memfs.c 已补丁，重建运行时时勿丢）。
+12. E2E 定位编译器面板用 `aside[aria-label="编译器面板"]` 与动作按钮 `aria-label="运行程序"/"检查程序"`——按可见文本「运行」定位会撞上「交互运行」页签（DOM 顺序页签在前）；裸 `locator('aside')` 会命中语言侧栏（strict mode 双元素报错）。`translate-x-full` 的收起面板对 Playwright 仍是「可见」（有包围盒），开合判断以 `aria-hidden` 为准。
+13. E2E 断言程序输出时锚定 `aside details` 里的「实际输出」或 `aside pre` 控制台，别用 `aside` 全文——全文会匹配到 Monaco 里的程序源码（曾把「Classic web workers are not supported」的失败运行误判成通过）。

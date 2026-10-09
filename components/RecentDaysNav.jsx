@@ -43,11 +43,21 @@ export default function RecentDaysNav({ days }) {
                   <Link
                     key={p.code}
                     href={`/day/${day.date}#${p.code}`}
-                    className="truncate font-mono text-xs text-muted-foreground hover:text-foreground hover:underline"
+                    className="flex items-center justify-between gap-1.5 font-mono text-xs text-muted-foreground hover:text-foreground hover:underline"
                     title={`${p.code} · ${p.difficulty || ''}`}
                   >
-                    <span className="mr-1.5 inline-block size-1.5 rounded-full align-middle" style={{ background: ratingColor(p.difficulty) }} />
-                    {p.code}
+                    <span className="min-w-0 truncate">
+                      <span className="mr-1.5 inline-block size-1.5 rounded-full align-middle" style={{ background: ratingColor(p.difficulty) }} />
+                      {p.code}
+                    </span>
+                    {p.difficulty ? (
+                      <span
+                        className="shrink-0 font-semibold tabular-nums"
+                        style={{ color: ratingColor(p.difficulty) }}
+                      >
+                        {String(p.difficulty).replace('*', '')}
+                      </span>
+                    ) : null}
                   </Link>
                 ))}
               </div>

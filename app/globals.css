@@ -243,21 +243,22 @@
 
 /* ---------- 编译器停靠面板（components/compiler/CompilerDock.jsx） ----------
    同一面板按断点呈现两种形态：
-   - ≥1024px 且展开（body.compiler-open）：题目列 + 编译器列放进同一个两列
+   - ≥900px 且展开（body.compiler-open）：题目列 + 编译器列放进同一个两列
      网格（.compiler-host），编译器是**文档流内的并列排版块**——sticky 跟随
-     滚动、与题目同层互不遮挡；列宽 --compiler-w（xl 42rem、1024–1279 收窄
+     滚动、与题目同层互不遮挡；列宽 --compiler-w（xl 42rem、900–1279 收窄
      34rem），左列 minmax(0,1fr) 自适应吃剩余宽度。
-   - <1024px（手机/窄窗）：没有并排空间，退回 fixed 覆盖式抽屉，滑入滑出。 */
+   - <900px（手机/窄窗）：没有并排空间，退回 fixed 覆盖式抽屉，滑入滑出；
+     且加载时不自动展开（见 CompilerDock 初始化），只有用户点名才弹出。 */
 :root {
   --compiler-w: 42rem;
 }
-@media (min-width: 1024px) and (max-width: 1279.98px) {
+@media (min-width: 900px) and (max-width: 1279.98px) {
   :root {
     --compiler-w: 34rem;
   }
 }
 
-/* 抽屉形态（默认：<1024 或收起时）——fixed 覆盖层，藏在右缘外 */
+/* 抽屉形态（默认：<900 或收起时）——fixed 覆盖层，藏在右缘外 */
 .compiler-box {
   position: fixed;
   top: 3.5rem;
@@ -275,9 +276,9 @@
   transform: translateX(0);
 }
 
-/* ≥1024px 且展开：进文档流，成为题目右侧的并列排版块（sticky 吸附在
+/* ≥900px 且展开：进文档流，成为题目右侧的并列排版块（sticky 吸附在
    sticky 头部下方，内部自行滚动） */
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   body.compiler-open main {
     max-width: 110rem;
   }

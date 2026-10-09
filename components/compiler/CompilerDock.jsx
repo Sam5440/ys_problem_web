@@ -8,11 +8,11 @@
  * - 模式：样例测试（题目 examples 逐例对拍，C++ 编译一次多例复用）/
  *   交互运行（SharedArrayBuffer 阻塞喂入，需跨域隔离）/ 编译检查
  *   （C++ -fsyntax-only；Python ast.parse；编辑停顿 2s 自动跑）。
- * - 布局：≥1024px 且展开时是**文档流内的并列排版块**（DayView 的
+ * - 布局：≥900px 且展开时是**文档流内的并列排版块**（DayView 的
  *   .compiler-host 两列网格右列，sticky 跟随滚动，与题目同层互不遮挡；
- *   宽度走 --compiler-w：xl 42rem、1024–1279 收窄 34rem，左列题目自适应
- *   吃剩余宽度）；更窄的屏幕为 fixed 覆盖式抽屉（globals.css 按断点切换
- *   形态）。收起后状态（草稿/控制台/结果）保留。
+ *   宽度走 --compiler-w：xl 42rem、900–1279 收窄 34rem，左列题目自适应
+ *   吃剩余宽度）；更窄的屏幕为 fixed 覆盖式抽屉，且加载时不自动展开
+ *   （globals.css 按断点切换形态）。收起后状态（草稿/控制台/结果）保留。
  */
 
 import dynamic from 'next/dynamic';
@@ -87,7 +87,9 @@ export default function CompilerDock({ problems }) {
     setCp(s);
     setLang(s.defaultLang);
     setMode(s.defaultMode);
-    setOpen(s.panelOpen);
+    // <900px 没有并排空间（抽屉会盖住题目）：加载时不自动展开，用户手动
+    // 点开才弹；≥900px 尊重上次的展开偏好。不回写保存值，偏好保持原样
+    setOpen(window.innerWidth >= 900 ? s.panelOpen : false);
     setMounted(true);
   }, []);
 

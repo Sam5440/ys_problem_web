@@ -80,7 +80,8 @@ export default function LanguageSidebar() {
   return (
     <>
       {/* wide screens: pinned right-edge sidebar */}
-      <aside className="fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 min-[1440px]:block">{list()}</aside>
+      // compiler-open 时编译器面板占据右侧，语言侧栏让位（globals.css 隐藏）
+      <aside className="language-sidebar fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 min-[1440px]:block">{list()}</aside>
 
       {/* narrower screens: floating pill that expands upward */}
       <div className="fixed bottom-5 right-4 z-40 min-[1440px]:hidden">

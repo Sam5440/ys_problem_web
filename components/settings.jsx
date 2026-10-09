@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { AI_MODELS, aiTranslate } from './ai-translate';
 import { clearZhCache } from '@/lib/zh-store';
 import GithubMark from './github-mark';
+import CompilerSettingsSection from './compiler/CompilerSettingsSection';
 
 /* ---------------- constants ---------------- */
 
@@ -350,6 +351,8 @@ function SettingsDialog({ onClose }) {
             </p>
           )}
         </div>
+
+        <CompilerSettingsSection />
 
         <div className="space-y-1.5">
           <p className="text-xs font-medium text-muted-foreground">项目仓库</p>

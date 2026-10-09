@@ -11,7 +11,13 @@
     "reattach": "node scripts/reattach-statements.mjs",
     "translate": "node scripts/translate-statements.mjs",
     "data:pull": "node scripts/restore-data.mjs",
-    "data:publish": "node scripts/publish-deploy.mjs"
+    "data:publish": "node scripts/publish-deploy.mjs",
+    "data:pull:runtime": "node scripts/restore-data.mjs --runtime",
+    "runtime:build": "node scripts/build-cpp-runtime.mjs",
+    "runtime:push": "node scripts/push-runtime-branch.mjs",
+    "test:cp:cpp": "node scripts/tests/cpp-cp-matrix.mjs",
+    "test:cp:py": "node scripts/tests/py-cp-matrix.mjs",
+    "test:cp:e2e": "node scripts/tests/e2e-compiler-cp.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.20",
@@ -24,6 +30,7 @@
     "katex": "^0.16.22",
     "lucide-react": "^1.50.0",
     "marked": "^15.0.12",
+    "monaco-editor": "^0.57.0",
     "next": "^15.5.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

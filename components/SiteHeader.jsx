@@ -18,7 +18,7 @@ export default function SiteHeader() {
   const pathname = usePathname();
   return (
     <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-14 w-full max-w-6xl items-center gap-6 px-4">
+      <div className="header-inner mx-auto flex h-14 w-full max-w-6xl items-center gap-6 px-4">
         <Link href="/" className="flex items-center gap-2.5">
           <span className="grid size-7 place-items-center rounded-md bg-primary text-sm">🐑</span>
           <span className="text-[15px] font-semibold tracking-tight">

@@ -240,3 +240,22 @@
 .code-block .hljs-subst {
   @apply text-foreground/90;
 }
+
+/* ---------- 编译器停靠面板（components/compiler/CompilerDock.jsx） ----------
+   面板本体是 fixed 右侧抽屉；xl 起展开时把主内容与顶栏整体左移出面板宽度，
+   窄屏面板为覆盖式抽屉（无此媒体查询）。内容列上限 76rem，在「视口 − 面板」
+   的剩余区域内居中，与 LeetCode 的题目+IDE 双栏一致。 */
+@media (min-width: 1280px) {
+  body.compiler-open main,
+  body.compiler-open .header-inner {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 42rem;
+    padding-left: max(1rem, calc((100vw - 42rem - 76rem) / 2));
+  }
+}
+
+/* 编译器面板打开时，右侧语言切换侧栏让位（避免遮挡面板操作区） */
+body.compiler-open .language-sidebar {
+  display: none;
+}

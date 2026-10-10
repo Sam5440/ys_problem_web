@@ -1,0 +1,143 @@
+{
+  "code": "CF1028D",
+  "letter": "D",
+  "title": "D. Order book",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1028/D",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let's consider a simplified version of order book of some stock. The order book is a list of orders (offers) from people that want to buy or sell one unit of the stock, each order is described by direction (BUY or SELL) and price.",
+      "At every moment of time, every SELL offer has higher price than every BUY offer.",
+      "In this problem no two ever existed orders will have the same price.",
+      "The lowest-price SELL order and the highest-price BUY order are called the best offers, marked with black frames on the picture below.",
+      "![](https://espresso.codeforces.com/778909826a3b7aa52c1bfb0b871c8217cd2de3fc.png)",
+      "There are two possible actions in this orderbook:",
+      "Somebody adds a new order of some direction with some price.",
+      "Somebody accepts the best possible SELL or BUY offer (makes a deal). It's impossible to accept not the best SELL or BUY offer (to make a deal at worse price). After someone accepts the offer, it is removed from the orderbook forever.",
+      "It is allowed to add new BUY order only with prices less than the best SELL offer (if you want to buy stock for higher price, then instead of adding an order you should accept the best SELL offer). Similarly, one couldn't add a new SELL order with price less or equal to the best BUY offer. For example, you can't add a new offer \"SELL 20$$$20$$$\" if there is already an offer \"BUY 20$$$20$$$\" or \"BUY 25$$$25$$$\" — in this case you just accept the best BUY offer.",
+      "You have a damaged order book log (in the beginning the are no orders in book). Every action has one of the two types:",
+      "\"ADD p$$$p$$$\" denotes adding a new order with price p$$$p$$$ and unknown direction. The order must not contradict with orders still not removed from the order book.",
+      "\"ACCEPT p$$$p$$$\" denotes accepting an existing best offer with price p$$$p$$$ and unknown direction.",
+      "The directions of all actions are lost. Information from the log isn't always enough to determine these directions. Count the number of ways to correctly restore all ADD action directions so that all the described conditions are satisfied at any moment. Since the answer could be large, output it modulo 109+7$$$10^9 + 7$$$. If it is impossible to correctly restore directions, then output 0$$$0$$$."
+    ],
+    "input": [
+      "The first line contains an integer n$$$n$$$ (1≤n≤363304$$$1 \\le n \\le 363\\,304$$$) — the number of actions in the log.",
+      "Each of the next n$$$n$$$ lines contains a string \"ACCEPT\" or \"ADD\" and an integer p$$$p$$$ (1≤p≤308983066$$$1 \\le p \\le 308\\,983\\,066$$$), describing an action type and price.",
+      "All ADD actions have different prices. For ACCEPT action it is guaranteed that the order with the same price has already been added but has not been accepted yet."
+    ],
+    "output": [
+      "Output the number of ways to restore directions of ADD actions modulo 109+7$$$10^9 + 7$$$."
+    ],
+    "note": [
+      "In the first example each of orders may be BUY or SELL.",
+      "In the second example the order with price 1$$$1$$$ has to be BUY order, the order with the price 3$$$3$$$ has to be SELL order."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\nADD 1\nACCEPT 1\nADD 2\nACCEPT 2\nADD 3\nACCEPT 3",
+      "output": "8"
+    },
+    {
+      "input": "4\nADD 1\nADD 2\nADD 3\nACCEPT 2",
+      "output": "2"
+    },
+    {
+      "input": "7\nADD 1\nADD 2\nADD 3\nADD 4\nADD 5\nACCEPT 3\nACCEPT 5",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "让我们考虑某只股票的订单簿的简化版本。订单簿是一个订单（报价）列表，记录了希望买入或卖出一单位该股票的人所提交的订单；每个订单由方向（BUY 或 SELL）和价格描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在任意时刻，每一笔 SELL 报价的价格都高于每一笔 BUY 报价。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在本问题中，任何两个曾经存在的订单都不会有相同的价格。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "价格最低的 SELL 订单和价格最高的 BUY 订单被称为最优报价，在下图中用黑色边框标出。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/778909826a3b7aa52c1bfb0b871c8217cd2de3fc.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "该订单簿中有两种可能的操作：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "有人以某个价格添加一笔某个方向的新订单。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "有人接受当前可能的最优 SELL 或 BUY 报价（即成交）。不可能接受不是最优的 SELL 或 BUY 报价（以更差的价格成交）。有人接受该报价后，它会从订单簿中永久移除。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "只有当价格低于最优 SELL 报价时，才允许添加新的 BUY 订单(如果你想以更高的价格买入股票，那么不应添加订单，而应接受最优 SELL 报价)。类似地，不能添加价格小于或等于最优 BUY 报价的 SELL 订单。例如，如果已有报价 \"BUY 20$$$20$$$\" 或 \"BUY 25$$$25$$$\"，则不能添加新报价 \"SELL 20$$$20$$$\"——这种情况下你只能接受最优 BUY 报价。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你有一份损坏的订单簿日志（开始时订单簿中没有任何订单）。每个操作都属于以下两种类型之一：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "\"ADD p$$$p$$$\" 表示添加一个价格为 p$$$p$$$ 的新订单，方向未知。该订单不得与尚未从订单簿中移除的订单冲突。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "\"ACCEPT p$$$p$$$\" 表示接受一个价格为 p$$$p$$$ 的现有最优报价，方向未知。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "所有操作的方向都已丢失。日志中的信息并不总是足以确定这些方向。请计算正确恢复所有 ADD 操作方向的方案数，使得任意时刻所有描述的条件都得到满足。由于答案可能很大，请输出其对 109+7$$$10^9 + 7$$$ 取模的结果。如果无法正确恢复方向，则输出 0$$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤363304$$$1 \\le n \\le 363\\,304$$$)——日志中操作的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行中，每行包含一个字符串 \"ACCEPT\" 或 \"ADD\" 和一个整数 p$$$p$$$(1≤p≤308983066$$$1 \\le p \\le 308\\,983\\,066$$$)，描述操作类型和价格。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "所有 ADD 操作的价格互不相同。对于 ACCEPT 操作，保证具有相同价格的订单已经被添加但尚未被接受。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出恢复 ADD 操作方向的方案数，对 109+7$$$10^9 + 7$$$ 取模。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，每个订单都可以是 BUY 或 SELL。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个样例中，价格为 1$$$1$$$ 的订单必须是 BUY 订单，价格为 3$$$3$$$ 的订单必须是 SELL 订单。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 订单簿",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "code": "CF2052J",
+  "letter": "J",
+  "title": "J. Judicious Watching",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/2052/J",
+  "difficulty": "2000",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Jill loves having good grades in university, so she never misses deadlines for her homework assignments. But even more, she loves watching the series and discussing it with her best friend Johnny. And unfortunately, today she needs to choose between these two activities!",
+      "Jill needs to complete n$$$n$$$ homework tasks. The i$$$i$$$-th task would require ai$$$a_i$$$ minutes to complete and needs to be submitted to the teacher at most di$$$d_i$$$ minutes from now. Also, there are m$$$m$$$ new episodes of the series that Johnny and Jill want to discuss. The j$$$j$$$-th episode lasts lj$$$l_j$$$ minutes. Jill can complete tasks in any order, but she needs to watch the episodes in the order they come. Neither completing a homework task nor watching an episode can be interrupted after starting.",
+      "Johnny and Jill need to agree on a time tk$$$t_k$$$ when they would have a call to discuss the series. They are not sure yet which time to choose. For each possible time, compute the maximum number of episodes Jill could watch before that time while still being able to complete all n$$$n$$$ homework tasks in time.",
+      "Note that for the purpose of this problem we assume that discussing the series with Johnny at time tk$$$t_k$$$ does not consume significant time from Jill and can happen even if she is in the middle of completing any of her homework tasks."
+    ],
+    "input": [
+      "There are several test cases in the input. The input begins with the number of test cases T$$$T$$$ (1≤T≤1000$$$1 \\le T \\le 1\\,000$$$).",
+      "Each test case starts with a line with three integers n$$$n$$$ (1≤n≤200000$$$1 \\le n \\le 200\\,000$$$) — the number of homework tasks, m$$$m$$$ (1≤m≤200000$$$1 \\le m \\le 200\\,000$$$) — the number of episodes, and q$$$q$$$ (1≤q≤200000$$$1 \\le q \\le 200\\,000$$$) — the number of possible times for the call with Jill.",
+      "The second line contains n$$$n$$$ integers ai$$$a_i$$$ (1≤ai≤109$$$1 \\le a_i \\le 10^9$$$) — the number of minutes it takes to complete the task. The next line contains n$$$n$$$ integers di$$$d_i$$$ (1≤di≤1015$$$1 \\le d_i \\le 10^{15}$$$) — the deadline before which this task must be completed. The next line contains m$$$m$$$ integers lj$$$l_j$$$ (1≤lj≤109$$$1 \\le l_j \\le 10^9$$$) — the length of episodes in the order they need to be watched. The next line contains q$$$q$$$ integers tk$$$t_k$$$ (1≤tk≤1015$$$1 \\le t_k \\le 10^{15}$$$) — the possible times of call with Jill.",
+      "It is possible to complete all tasks within their respective deadlines.",
+      "The sum of each of n$$$n$$$, m$$$m$$$, q$$$q$$$ over all test cases in input doesn't exceed 200000$$$200\\,000$$$."
+    ],
+    "output": [
+      "For each test case output a single line with q$$$q$$$ integers — for each possible time tk$$$t_k$$$ the maximum number of episodes Jill can watch."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 2 3\n10\n15\n5 5\n5 15 20\n3 4 5\n8 100 8\n10 150 20\n2 32 1 1\n9 200 51 50 10",
+      "output": "1 1 2\n1 4 2 2 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Jill 喜欢在大学取得好成绩，因此她从不错过作业的截止时间。但她更喜欢观看这部剧，并与她最好的朋友 Johnny 讨论这部剧。可惜，今天她需要在这两项活动之间作出选择！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Jill 需要完成 n$$$n$$$ 项作业。第 i$$$i$$$ 项任务需要 ai$$$a_i$$$ 分钟完成，并且需要在从现在起至多 di$$$d_i$$$ 分钟内提交给老师。此外，还有 m$$$m$$$ 集新剧集，Johnny 和 Jill 想要讨论这些剧集。第 j$$$j$$$ 集时长为 lj$$$l_j$$$ 分钟。Jill 可以按任意顺序完成任务，但必须按照剧集播出的顺序观看。作业任务或剧集一旦开始，就不能被中断。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Johnny 和 Jill 需要约定一个时间 tk$$$t_k$$$，在该时间打电话讨论这部剧。他们还不确定应该选择哪个时间。对于每个可能的时间，计算 Jill 在该时间之前最多可以观看多少集，同时仍能按时完成全部 n$$$n$$$ 项作业。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，对于本题，我们假设在时刻 tk$$$t_k$$$ 与 Johnny 讨论该剧集不会占用 Jill 的大量时间，即使她正在完成某项家庭作业任务，也可以进行讨论。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入中包含多个测试用例。输入首先包含测试用例的数量 T$$$T$$$(1≤T≤1000$$$1 \\le T \\le 1\\,000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含三个整数 n$$$n$$$(1≤n≤200000$$$1 \\le n \\le 200\\,000$$$)——家庭作业任务的数量，m$$$m$$$(1≤m≤200000$$$1 \\le m \\le 200\\,000$$$)——剧集的数量，以及 q$$$q$$$(1≤q≤200000$$$1 \\le q \\le 200\\,000$$$)——可以与 Jill 通话的时刻数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 ai$$$a_i$$$(1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)——完成该任务所需的分钟数。下一行包含 n$$$n$$$ 个整数 di$$$d_i$$$(1≤di≤1015$$$1 \\le d_i \\le 10^{15}$$$)——必须完成该任务的截止时间。下一行包含 m$$$m$$$ 个整数 lj$$$l_j$$$(1≤lj≤109$$$1 \\le l_j \\le 10^9$$$)——按照需要观看的顺序排列的各集长度。下一行包含 q$$$q$$$ 个整数 tk$$$t_k$$$(1≤tk≤1015$$$1 \\le t_k \\le 10^{15}$$$)——可以与 Jill 通话的时刻。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以在各自的截止时间之前完成所有任务。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于输入中的所有测试用例，n$$$n$$$、m$$$m$$$、q$$$q$$$ 各自的总和均不超过 200000$$$200\\,000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一行包含 q$$$q$$$ 个整数——对于每个可能的时间 tk$$$t_k$$$，Jill 能观看的剧集最大数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "J. 合理观剧",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

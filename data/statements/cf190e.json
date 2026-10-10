@@ -1,0 +1,104 @@
+{
+  "code": "CF190E",
+  "letter": "E",
+  "title": "E. Counter Attack",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/190/E",
+  "difficulty": "2100",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Berland has managed to repel the flatlanders' attack and is now starting the counter attack.",
+      "Flatland has n cities, numbered from 1 to n, and some pairs of them are connected by bidirectional roads. The Flatlandian maps show roads between cities if and only if there is in fact no road between this pair of cities (we do not know whether is it a clever spy-proof strategy or just saving ink). In other words, if two cities are connected by a road on a flatland map, then there is in fact no road between them. The opposite situation is also true: if two cities are not connected by a road on a flatland map, then in fact, there is a road between them.",
+      "The berlanders got hold of a flatland map. Now Vasya the Corporal is commissioned by General Touristov to find all such groups of flatland cities, that in each group of cities you can get from any city to any other one, moving along the actual roads. Also the cities from different groups are unreachable from each other, moving along the actual roads. Indeed, destroying such groups one by one is much easier than surrounding all Flatland at once!",
+      "Help the corporal complete this task and finally become a sergeant! Don't forget that a flatland map shows a road between cities if and only if there is in fact no road between them."
+    ],
+    "input": [
+      "The first line contains two space-separated integers n and m (1 ≤ n ≤ 5·105, 0 ≤ m ≤ 106) — the number of cities and the number of roads marked on the flatland map, correspondingly.",
+      "Next m lines contain descriptions of the cities on the map. The i-th line contains two integers ai and bi (1 ≤ ai, bi ≤ n, ai ≠ bi) — the numbers of cities that are connected by the i-th road on the flatland map.",
+      "It is guaranteed that each pair of cities occurs in the input no more than once."
+    ],
+    "output": [
+      "On the first line print number k — the number of groups of cities in Flatland, such that in each group you can get from any city to any other one by flatland roads. At the same time, the cities from different groups should be unreachable by flatland roads.",
+      "On each of the following k lines first print ti (1 ≤ ti ≤ n) — the number of vertexes in the i-th group. Then print space-separated numbers of cities in the i-th group.",
+      "The order of printing groups and the order of printing numbers in the groups does not matter. The total sum ti for all k groups must equal n."
+    ],
+    "note": [
+      "In the first sample there are roads only between pairs of cities 1-4 and 2-3.",
+      "In the second sample there is no road between cities 1 and 2, but still you can get from one city to the other one through city number 3."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n1 2\n1 3\n4 2\n4 3",
+      "output": "2\n2 1 4 \n2 2 3"
+    },
+    {
+      "input": "3 1\n1 2",
+      "output": "1\n3 1 2 3"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "在第一个样例中，只有连接城市 1 和 4、城市 2 和 3 的道路。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，城市 1 和城市 2 之间没有道路，但你仍然可以经过编号为 3 的城市从一个城市到达另一个城市。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Berland 成功击退了平原人的进攻，现在开始进行反击。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Flatland 有 n 座城市，编号从 1 到 n，其中一些城市对之间由双向道路连接。Flatland 的地图当且仅当某对城市之间实际上不存在道路时，才会显示这两座城市之间有道路（我们不知道这是巧妙的防间谍策略，还是单纯为了节省墨水）。换句话说，如果 Flatland 地图上显示两座城市之间有道路，那么实际上这两座城市之间没有道路。反过来也一样：如果 Flatland 地图上没有显示两座城市之间有道路，那么实际上这两座城市之间存在道路。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Berland 人得到了一张 Flatland 地图。现在，上尉 Vasya 受 General Touristov 委托，需要找出所有这样的 Flatland 城市分组：在每组城市中，沿着实际存在的道路，可以从任意一座城市到达组内任意其他城市；同时，不同分组中的城市之间沿着实际存在的道路互不可达。事实上，逐个摧毁这些分组要比一次性包围整个 Flatland 容易得多！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助这位上尉完成任务，最终晋升为中士！别忘了，Flatland 地图当且仅当两座城市之间实际上没有道路时，才会显示它们之间有道路。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个以空格分隔的整数 n 和 m（1 ≤ n ≤ 5·10^5，0 ≤ m ≤ 10^6），分别表示城市数量以及 Flatland 地图上标记的道路数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行包含地图中城市的描述。第 i 行包含两个整数 ai 和 bi（1 ≤ ai，bi ≤ n，ai ≠ bi）——平原地图中由第 i 条道路连接的城市编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证输入中每对城市最多出现一次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出整数 k——平原中城市组的数量，使得在每个组内，都可以通过平原道路从任意城市到达任意其他城市。同时，不同组中的城市之间不能通过平原道路互相到达。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 k 行中，首先输出 ti（1 ≤ ti ≤ n）——第 i 个组中的顶点数。然后输出第 i 个组中的城市编号，编号之间用空格分隔。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出各组的顺序以及各组中编号的顺序均不作要求。所有 k 个组的 ti 之和必须等于 n。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 反击",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

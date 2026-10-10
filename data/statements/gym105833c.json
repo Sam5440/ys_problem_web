@@ -1,0 +1,105 @@
+{
+  "code": "GYM105833C",
+  "letter": "C",
+  "title": "C. Chimchar Defense",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105833/problem/C",
+  "difficulty": "*1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "In Piplup Nation, they are under attack by a horde of Chimchars. The battlefield can be represented by a line with N$$$N$$$ areas labeled 1$$$1$$$ to N$$$N$$$ from left to right.",
+      "There are N$$$N$$$ Chimchars, with the ith$$$i^{\\text{th}}$$$ Chimchar currently at area i$$$i$$$ and having Hi$$$H_i$$$ health remaining.",
+      "To defend the nation, there are N$$$N$$$ Piplups, with the ith$$$i^{\\text{th}}$$$ Piplup stationed at area i$$$i$$$. Each Piplup can unleash a powerful Hydro Pump leftward, damaging Chimchars that are on its left (including its own area). Notably, the ith$$$i^{\\text{th}}$$$ Piplup can fire a Hydro Pump that deals Di$$$D_i$$$ damage to all Chimchars in area j≤i$$$j \\leq i$$$. However, each Chimchar only takes min(H,Di)$$$\\min (H, D_i)$$$ damage from the attack, where H$$$H$$$ is the current health of the Chimchar.",
+      "Since Hydro Pump is a very powerful move, it has low PP, and each Piplup can only fire it once. Additionally, due to its low accuracy, the ith$$$i^{\\text{th}}$$$ Piplup requires a certain number of X-Accuracy items, costing Ci$$$C_i$$$, to successfully launch the attack.",
+      "As the commander of the Piplup army, your goal is to maximize the following value: (Total damage dealt to Chimchars)−(Total cost)$$(\\text{Total damage dealt to Chimchars}) - (\\text{Total cost})$$"
+    ],
+    "input": [
+      "The first line of input contains an single integer N$$$N$$$ (1≤N≤5000$$$1 \\leq N \\leq 5000$$$), the number of areas.",
+      "The second line of input contains N$$$N$$$ integers, Hi$$$H_i$$$ (1≤Hi≤5000$$$1 \\leq H_i\\leq 5000$$$) the initial health of the ith$$$i^{th}$$$ Chimchars.",
+      "The third line of input contains N$$$N$$$ integers, Di$$$D_i$$$ (1≤Di≤5000$$$1 \\leq D_i \\leq 5000$$$) the attack damage of the ith$$$i^{th}$$$ Piplup.",
+      "The fourth line of input contains N$$$N$$$ integers, Ci$$$C_i$$$ (0≤Ci≤109$$$0 \\leq C_i \\leq 10^{9}$$$) the attack cost of the ith$$$i^{th}$$$ Piplup."
+    ],
+    "output": [
+      "Output a single integer representing the maximum possible value of",
+      "(Total damage to Chimchars)−(Total Cost)$$$(\\text{Total damage to Chimchars}) - (\\text{Total Cost})$$$."
+    ],
+    "note": [
+      "If we choose to make Piplup 3$$$3$$$ and 5$$$5$$$ fire, the damage dealt to the chimchars would be [6,3,2,3,1]$$$[6, 3, 2, 3, 1]$$$.",
+      "Thus, the total score would be 6+3+2+3+1−1−2=12$$$6 + 3 + 2 + 3 + 1 - 1 - 2 = 12$$$"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n6 3 2 5 1\n1 3 3 2 3\n1 5 1 10 2",
+      "output": "12"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在 Piplup Nation 中，他们正遭受一群 Chimchar 的攻击。战场可以表示为一条包含 N$$$N$$$ 个区域的线段，这些区域从左到右编号为 1$$$1$$$ 到 N$$$N$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "共有 N$$$N$$$ 个 Chimchar，第 ith$$$i^{\\text{th}}$$$ 个 Chimchar 当前位于区域 i$$$i$$$，剩余生命值为 Hi$$$H_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了保卫国家，共有 N$$$N$$$ 个 Piplup，第 ith$$$i^{\\text{th}}$$$ 个 Piplup 驻扎在区域 i$$$i$$$。每个 Piplup 都可以向左方释放强力的水之波动，伤害位于其左侧的 Chimchar(包括位于其所在区域的 Chimchar)。特别地，第 ith$$$i^{\\text{th}}$$$ 个 Piplup 可以释放水之波动，对所有位于区域 j≤i$$$j \\leq i$$$ 的 Chimchar 造成 Di$$$D_i$$$ 点伤害。然而，每个 Chimchar 从该攻击中受到的伤害最多为 min(H,Di)$$$\\min (H, D_i)$$$，其中 H$$$H$$$ 是该 Chimchar 当前的生命值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于水之波动是非常强力的招式，它的 PP 很低，因此每个 Piplup 只能释放一次。此外，由于命中率较低，第 ith$$$i^{\\text{th}}$$$ 个 Piplup 需要一定数量的 X-Accuracy 道具才能成功发动攻击，这些道具的花费为 Ci$$$C_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "作为 Piplup 军队的指挥官，你的目标是最大化以下数值：(对 Chimchar 造成的总伤害)−(总花费)$$(\\text{Total damage dealt to Chimchars}) - (\\text{Total cost})$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 N$$$N$$$(1≤N≤5000$$$1 \\leq N \\leq 5000$$$)，表示区域的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第二行包含 N$$$N$$$ 个整数 Hi$$$H_i$$$(1≤Hi≤5000$$$1 \\leq H_i\\leq 5000$$$)，表示第 i 个$$$i^{th}$$$ Chimchars 的初始生命值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第三行包含 N$$$N$$$ 个整数 Di$$$D_i$$$(1≤Di≤5000$$$1 \\leq D_i \\leq 5000$$$)，表示第 i 个$$$i^{th}$$$ Piplup 的攻击伤害。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第四行包含 N$$$N$$$ 个整数 Ci$$$C_i$$$(0≤Ci≤109$$$0 \\leq C_i \\leq 10^{9}$$$)，表示第 i 个$$$i^{th}$$$ Piplup 的攻击代价。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示以下数值的最大可能值：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(对 Chimchars 造成的总伤害)−(总花费)$$$(\\text{Total damage to Chimchars}) - (\\text{Total Cost})$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "如果我们选择让 Piplup 3$$$3$$$ 和 5$$$5$$$ 开火，那么对 chimchars 造成的伤害将为 [6,3,2,3,1]$$$[6, 3, 2, 3, 1]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，总分将为 6+3+2+3+1−1−2=12$$$6 + 3 + 2 + 3 + 1 - 1 - 2 = 12$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Chimchar 防御",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

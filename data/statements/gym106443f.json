@@ -1,0 +1,91 @@
+{
+  "code": "GYM106443F",
+  "letter": "F",
+  "title": "F. Fractions of a Stick",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106443/problem/F",
+  "difficulty": "*1400",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Toni was walking through the wild CIn parking lot, dodging beasts and trying to find where he parked his car when he stumbled upon a formidable object: a stick of exact integer length n$$$n$$$.",
+      "Like any good problem-solver, Toni's mind immediately thought of a \"gambiarra\" (a makeshift solution). He needs to build a support base for his new hardware project. For the base to be stable, he needs to form a perfect triangle using pieces of this stick.",
+      "However, Toni is exhausted after a coding marathon. He decides to cut the stick at two distinct points, chosen completely at random. He only has energy for these two cuts.",
+      "Your mission is to calculate the chances of Toni's plan working, so he knows whether or not to give up and go grab a coffee.",
+      "![](https://espresso.codeforces.com/2d63752433be2a9f7e9e75e8453102c8488677ec.png)",
+      "Formally, we have a line segment of length n$$$n$$$. The set of possible cut points consists of the internal integer coordinates {1,2,…,n−1}$$$\\{1, 2, \\dots, n-1\\}$$$.",
+      "Toni chooses two distinct cut points from this set, uniformly at random. This divides the original stick into three pieces with positive integer lengths a$$$a$$$, b$$$b$$$, and c$$$c$$$ (such that a+b+c=n$$$a+b+c = n$$$).",
+      "What is the probability that these three resulting pieces (a,b,c$$$a, b, c$$$) can form a non-degenerate triangle (i.e., a triangle with an area greater than zero)?",
+      "Since the answer can be an irreducible fraction pq$$$\\frac{p}{q}$$$, you must print the value of p⋅q−1(mod109+7)$$$p \\cdot q^{-1} \\pmod{10^9 + 7}$$$, where q−1$$$q^{-1}$$$ is the modular inverse of q$$$q$$$ modulo 109+7$$$10^9 + 7$$$."
+    ],
+    "input": [
+      "The first line of the input contains a single integer t$$$t$$$ (1≤t≤105$$$1 \\le t \\le 10^5$$$) — the number of test cases. Each of the following t$$$t$$$ lines contains a single integer n$$$n$$$ (3≤n≤109$$$3 \\le n \\le 10^9$$$), representing the length of the stick Toni found in that specific scenario."
+    ],
+    "output": [
+      "For each test case, print a single integer on a new line: the probability of the makeshift solution working, modulo 109+7$$$10^9+7$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3\n4\n5\n7\n12",
+      "output": "1\n0\n500000004\n800000006\n636363641"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Toni 正穿过荒野般的 CIn 停车场，一边躲避野兽，一边寻找自己停车的位置，途中偶然发现了一件了不起的东西：一根长度恰好为 n$$$n$$$ 的木棍。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "像任何优秀的问题解决者一样，Toni 立刻想到了一个“gambiarra”（权宜之计）。他需要为自己的新硬件项目搭建一个支撑底座。为了让底座稳固，他需要用这根木棍的几段拼成一个完美的三角形。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，Toni 在经历了一场编程马拉松后已经筋疲力尽。他决定在两个不同的位置切断木棍，这两个位置完全随机选取。他只剩下力气切这两次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是计算 Toni 的计划成功的概率，这样他就能知道自己是否该放弃，然后去喝杯咖啡。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/2d63752433be2a9f7e9e75e8453102c8488677ec.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "严格地说，我们有一条长度为 n$$$n$$$ 的线段。可能的切点集合由内部整数坐标 {1,2,…,n−1}$$$\\{1, 2, \\dots, n-1\\}$$$ 构成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Toni 从该集合中等概率随机选择两个不同的切点。这会将原木棒分成三段，长度分别为正整数 a$$$a$$$、b$$$b$$$ 和 c$$$c$$$(满足 a+b+c=n$$$a+b+c = n$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这三段最终得到的木棒(a、b、c$$$a, b, c$$$)能够组成非退化三角形(即面积大于零的三角形)的概率是多少？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于答案可以表示为最简分数 pq$$$\\frac{p}{q}$$$，你需要输出 p⋅q−1(mod109+7)$$$p \\cdot q^{-1} \\pmod{10^9 + 7}$$$ 的值，其中 q−1$$$q^{-1}$$$ 是 q$$$q$$$ 在模 109+7$$$10^9 + 7$$$ 意义下的模逆元。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入第一行包含一个整数 t$$$t$$$(1≤t≤105$$$1 \\le t \\le 10^5$$$)——测试用例的数量。接下来的 t$$$t$$$ 行中，每行包含一个整数 n$$$n$$$(3≤n≤109$$$3 \\le n \\le 10^9$$$)，表示 Toni 在该场景中找到的木棒长度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，在新的一行输出一个整数：临时方案成功的概率对 109+7$$$10^9+7$$$ 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 木棍的分数",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

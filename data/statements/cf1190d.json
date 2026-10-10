@@ -1,0 +1,133 @@
+{
+  "code": "CF1190D",
+  "letter": "D",
+  "title": "D. Tokitsukaze and Strange Rectangle",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1190/D",
+  "difficulty": "2000",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are n$$$n$$$ points on the plane, the i$$$i$$$-th of which is at (xi,yi)$$$(x_i, y_i)$$$. Tokitsukaze wants to draw a strange rectangular area and pick all the points in the area.",
+      "The strange area is enclosed by three lines, x=l$$$x = l$$$, y=a$$$y = a$$$ and x=r$$$x = r$$$, as its left side, its bottom side and its right side respectively, where l$$$l$$$, r$$$r$$$ and a$$$a$$$ can be any real numbers satisfying that l<r$$$l  \\lt  r$$$. The upper side of the area is boundless, which you can regard as a line parallel to the x$$$x$$$-axis at infinity. The following figure shows a strange rectangular area.",
+      "![](https://espresso.codeforces.com/da2aefca33f93cc613b170675755eb2a06da1a9c.png)",
+      "A point (xi,yi)$$$(x_i, y_i)$$$ is in the strange rectangular area if and only if l<xi<r$$$l  \\lt  x_i  \\lt  r$$$ and yi>a$$$y_i  \\gt  a$$$. For example, in the above figure, p1$$$p_1$$$ is in the area while p2$$$p_2$$$ is not.",
+      "Tokitsukaze wants to know how many different non-empty sets she can obtain by picking all the points in a strange rectangular area, where we think two sets are different if there exists at least one point in one set of them but not in the other."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (1≤n≤2×105$$$1 \\leq n \\leq 2 \\times 10^5$$$) — the number of points on the plane.",
+      "The i$$$i$$$-th of the next n$$$n$$$ lines contains two integers xi$$$x_i$$$, yi$$$y_i$$$ (1≤xi,yi≤109$$$1 \\leq x_i, y_i \\leq 10^9$$$) — the coordinates of the i$$$i$$$-th point.",
+      "All points are distinct."
+    ],
+    "output": [
+      "Print a single integer — the number of different non-empty sets of points she can obtain."
+    ],
+    "note": [
+      "For the first example, there is exactly one set having k$$$k$$$ points for k=1,2,3$$$k = 1, 2, 3$$$, so the total number is 3$$$3$$$.",
+      "For the second example, the numbers of sets having k$$$k$$$ points for k=1,2,3$$$k = 1, 2, 3$$$ are 3$$$3$$$, 2$$$2$$$, 1$$$1$$$ respectively, and their sum is 6$$$6$$$.",
+      "For the third example, as the following figure shows, there are",
+      "2$$$2$$$ sets having one point;",
+      "3$$$3$$$ sets having two points;",
+      "1$$$1$$$ set having four points.",
+      "Therefore, the number of different non-empty sets in this example is 2+3+0+1=6$$$2 + 3 + 0 + 1 = 6$$$.",
+      "![](https://espresso.codeforces.com/e7cd405fe393c00f0a28e99a5ad42fe9951c0bf1.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 1\n1 2\n1 3",
+      "output": "3"
+    },
+    {
+      "input": "3\n1 1\n2 1\n3 1",
+      "output": "6"
+    },
+    {
+      "input": "4\n2 1\n2 2\n3 1\n3 2",
+      "output": "6"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "平面上有 n$$$n$$$ 个点，第 i$$$i$$$ 个点的坐标为 (xi,yi)$$$(x_i, y_i)$$$。Tokitsukaze 想要画出一个奇怪的矩形区域，并选出区域内的所有点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这个奇怪的区域由三条直线围成，分别为 x=l$$$x = l$$$、y=a$$$y = a$$$ 和 x=r$$$x = r$$$，它们依次作为区域的左边界、下边界和右边界，其中 l$$$l$$$、r$$$r$$$ 和 a$$$a$$$ 可以是满足 l<r$$$l  \\lt  r$$$ 的任意实数。区域的上边界是无限延伸的，你可以将其视为无穷远处一条平行于 x$$$x$$$ 轴的直线。下图展示了一个奇怪的矩形区域。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/da2aefca33f93cc613b170675755eb2a06da1a9c.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当且仅当 l<xi<r$$$l  \\lt  x_i  \\lt  r$$$ 且 yi>a$$$y_i  \\gt  a$$$ 时，点 (xi,yi)$$$(x_i, y_i)$$$ 位于奇怪的矩形区域内。例如，在上图中，p1$$$p_1$$$ 位于区域内，而 p2$$$p_2$$$ 不在区域内。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Tokitsukaze 想知道，通过选出奇怪的矩形区域内的所有点，她能够得到多少个不同的非空集合；如果两个集合中存在至少一个点属于其中一个集合而不属于另一个集合，则认为这两个集合不同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤2×105$$$1 \\leq n \\leq 2 \\times 10^5$$$)，表示平面上点的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行中的第 i$$$i$$$ 行包含两个整数 xi$$$x_i$$$、yi$$$y_i$$$(1≤xi,yi≤109$$$1 \\leq x_i, y_i \\leq 10^9$$$)——第 i$$$i$$$ 个点的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有点互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——她能够得到的不同非空点集的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于第一个样例，k=1,2,3$$$k = 1, 2, 3$$$ 时，恰好各有一个包含 k$$$k$$$ 个点的集合，因此总数为 3$$$3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第二个样例，包含 k$$$k$$$ 个点的集合数量在 k=1,2,3$$$k = 1, 2, 3$$$ 时分别为 3$$$3$$$、2$$$2$$$、1$$$1$$$，它们的总和为 6$$$6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第三个样例，如下图所示，有",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "含有一个点的 2$$$2$$$ 个集合；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "含有两个点的 3$$$3$$$ 个集合；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "含有四个点的 1$$$1$$$ 个集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，在这个例子中不同的非空集合数量为 2+3+0+1=6$$$2 + 3 + 0 + 1 = 6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/e7cd405fe393c00f0a28e99a5ad42fe9951c0bf1.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Tokitsukaze 与奇怪的矩形",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

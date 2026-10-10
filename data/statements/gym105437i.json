@@ -1,0 +1,94 @@
+{
+  "code": "GYM105437I",
+  "letter": "I",
+  "title": "I. Attribute Checks",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105437/problem/I",
+  "difficulty": "*1700",
+  "timeLimit": "2.5 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Imagine a game where you play as a character that has two attributes: \"Strength\" and \"Intelligence\", that are at zero level initially.",
+      "During the game, you'll acquire m$$$m$$$ attribute points that allow you to increase your attribute levels — one point will increase one of the attributes by one level. But sometimes, you'll encounter a so-called \"Attribute Checks\": if your corresponding attribute is high enough, you'll pass it; otherwise, you'll fail it.",
+      "Spending some time, you finally prepared a list which contains records of all points you got and all checks you've met. And now you're wondering: what is the maximum number of attribute checks you can pass in a single run if you'd spend points wisely?",
+      "Note that you can't change the order of records."
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (1≤m≤5000$$$1 \\le m \\le 5000$$$; m<n≤2⋅106$$$m  \\lt  n \\le 2 \\cdot 10^6$$$) — the number of records in the list and the total number of points you'll get during the game.",
+      "The second line contains n$$$n$$$ integers r1,r2,…,rn$$$r_1, r_2, \\dots, r_n$$$ (−m≤ri≤m$$$-m \\le r_i \\le m$$$), where ri$$$r_i$$$ encodes the i$$$i$$$-th record:",
+      "If ri=0$$$r_i = 0$$$, then the i$$$i$$$-th record is an acquiring one attribute point. You can spend to level up either Strength or Intelligence;",
+      "If ri>0$$$r_i  \\gt  0$$$, then it's an Intelligence check: if your Intelligence level is greater than or equal to |ri|$$$|r_i|$$$, you pass.",
+      "If ri<0$$$r_i  \\lt  0$$$, then it's a Strength check: if your Strength level is greater than or equal to |ri|$$$|r_i|$$$, you pass."
+    ],
+    "output": [
+      "What is the maximum number of checks you can pass if you can't change the order of records?"
+    ]
+  },
+  "examples": [
+    {
+      "input": "10 5\n0 1 0 2 0 -3 0 -4 0 -5",
+      "output": "3"
+    },
+    {
+      "input": "3 1\n1 -1 0",
+      "output": "0"
+    },
+    {
+      "input": "9 3\n0 0 1 0 2 -3 -2 -2 1",
+      "output": "4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "想象这样一款游戏：你扮演的角色拥有两个属性：“力量”和“智力”，它们的初始等级均为 0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在游戏过程中，你将获得 m$$$m$$$ 个属性点，可以用来提升属性等级——每个属性点可以使其中一个属性提升 1 级。但有时，你会遇到所谓的“属性检定”：如果相应属性足够高，你就能通过；否则就会失败。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "经过一段时间，你终于整理出了一份列表，其中记录了你获得的所有属性点以及遇到的所有属性检定。现在你想知道：如果合理分配属性点，在一次游戏过程中最多能通过多少次属性检定？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，你不能改变记录的顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤m≤5000$$$1 \\le m \\le 5000$$$；m<n≤2⋅106$$$m  \\lt  n \\le 2 \\cdot 10^6$$$)——列表中的记录数以及游戏过程中将获得的属性点总数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 r1,r2,…,rn$$$r_1, r_2, \\dots, r_n$$$(−m≤ri≤m$$$-m \\le r_i \\le m$$$)，其中 ri$$$r_i$$$ 表示第 i$$$i$$$ 条记录：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 ri=0$$$r_i = 0$$$，那么第 i$$$i$$$ 条记录是获得一个属性点。你可以将其用于提升力量或智力；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 ri>0$$$r_i  \\gt  0$$$，那么这是一次智力检定：如果你的智力等级大于等于 |ri|$$$|r_i|$$$，则检定通过。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 ri<0$$$r_i  \\lt  0$$$，那么这是一次力量检定：如果你的力量等级大于等于 |ri|$$$|r_i|$$$，则检定通过。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果不能改变记录的顺序，你最多可以通过多少次检定？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "I. 属性检查",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "code": "CF1138B",
+  "letter": "B",
+  "title": "B. Circus",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1138/B",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Polycarp is a head of a circus troupe. There are n$$$n$$$ — an even number — artists in the troupe. It is known whether the i$$$i$$$-th artist can perform as a clown (if yes, then ci=1$$$c_i = 1$$$, otherwise ci=0$$$c_i = 0$$$), and whether they can perform as an acrobat (if yes, then ai=1$$$a_i = 1$$$, otherwise ai=0$$$a_i = 0$$$).",
+      "Split the artists into two performances in such a way that:",
+      "each artist plays in exactly one performance,",
+      "the number of artists in the two performances is equal (i.e. equal to n2$$$\\frac{n}{2}$$$),",
+      "the number of artists that can perform as clowns in the first performance is the same as the number of artists that can perform as acrobats in the second performance."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (2≤n≤5000$$$2 \\le n \\le 5\\,000$$$, n$$$n$$$ is even) — the number of artists in the troupe.",
+      "The second line contains n$$$n$$$ digits c1c2…cn$$$c_1 c_2 \\ldots c_n$$$, the i$$$i$$$-th of which is equal to 1$$$1$$$ if the i$$$i$$$-th artist can perform as a clown, and 0$$$0$$$ otherwise.",
+      "The third line contains n$$$n$$$ digits a1a2…an$$$a_1 a_2 \\ldots a_n$$$, the i$$$i$$$-th of which is equal to 1$$$1$$$, if the i$$$i$$$-th artist can perform as an acrobat, and 0$$$0$$$ otherwise."
+    ],
+    "output": [
+      "Print n2$$$\\frac{n}{2}$$$ distinct integers — the indices of the artists that should play in the first performance.",
+      "If there are multiple answers, print any.",
+      "If there is no solution, print a single integer −1$$$-1$$$."
+    ],
+    "note": [
+      "In the first example, one of the possible divisions into two performances is as follows: in the first performance artists 1$$$1$$$ and 4$$$4$$$ should take part. Then the number of artists in the first performance who can perform as clowns is equal to 1$$$1$$$. And the number of artists in the second performance who can perform as acrobats is 1$$$1$$$ as well.",
+      "In the second example, the division is not possible.",
+      "In the third example, one of the possible divisions is as follows: in the first performance artists 3$$$3$$$ and 4$$$4$$$ should take part. Then in the first performance there are 2$$$2$$$ artists who can perform as clowns. And the number of artists in the second performance who can perform as acrobats is 2$$$2$$$ as well."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n0011\n0101",
+      "output": "1 4"
+    },
+    {
+      "input": "6\n000000\n111111",
+      "output": "-1"
+    },
+    {
+      "input": "4\n0011\n1100",
+      "output": "4 3"
+    },
+    {
+      "input": "8\n00100101\n01111100",
+      "output": "1 2 3 6"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Polycarp 是一个马戏团的团长。马戏团中有 n$$$n$$$ 名艺术家，且人数为偶数。已知第 i$$$i$$$ 名艺术家是否可以扮演小丑(如果可以，则 ci=1$$$c_i = 1$$$，否则 ci=0$$$c_i = 0$$$)，以及他们是否可以表演杂技(如果可以，则 ai=1$$$a_i = 1$$$，否则 ai=0$$$a_i = 0$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将这些演员分成两场演出，使得：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每位演员恰好参加其中一场演出，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "两场演出中的演员数量相等(即均为 n2$$$\\frac{n}{2}$$$)，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一场演出中能够扮演小丑的演员人数，与第二场演出中能够表演杂技的演员人数相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(2≤n≤5000$$$2 \\le n \\le 5\\,000$$$，n$$$n$$$ 为偶数)——剧团中艺术家的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个数字 c1c2…cn$$$c_1 c_2 \\ldots c_n$$$，如果第 i$$$i$$$ 位艺术家可以扮演小丑，则其中第 i$$$i$$$ 个数字等于 1$$$1$$$，否则等于 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 n$$$n$$$ 个数字 a1a2…an$$$a_1 a_2 \\ldots a_n$$$，如果第 i$$$i$$$ 位艺术家可以表演杂技，则其中第 i$$$i$$$ 个数字等于 1$$$1$$$，否则等于 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n2$$$\\frac{n}{2}$$$ 个互不相同的整数——应在第一场演出中表演的艺术家的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个答案，输出任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果无解，输出一个整数 −1$$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，一种将其分成两场表演的方案如下：第一场表演应由艺术家 1$$$1$$$ 和 4$$$4$$$ 参加。随后，第一场表演中能够扮演小丑的艺术家数量为 1$$$1$$$。第二场表演中能够表演杂技的艺术家数量同样为 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，无法完成这样的划分。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，一种可行的划分方案如下：第一场表演应由艺术家 3$$$3$$$ 和 4$$$4$$$ 参加。随后，第一场表演中有 2$$$2$$$ 位艺术家能够扮演小丑。第二场表演中能够表演杂技的艺术家数量同样为 2$$$2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 马戏团",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

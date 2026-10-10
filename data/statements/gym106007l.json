@@ -1,0 +1,96 @@
+{
+  "code": "GYM106007L",
+  "letter": "L",
+  "title": "L. Equalize",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106007/problem/L",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array a$$$a$$$ of n$$$n$$$ non-negative integers, and a positive integer m$$$m$$$.",
+      "You need to answer q$$$q$$$ queries. In each query, you are given a non-negative integer x$$$x$$$.",
+      "You can do the following operation:",
+      "choose two integers 1≤l≤r≤n$$${1 \\le l \\le r \\le n}$$$ such that r−l+1=m$$${r - l + 1 = m}$$$, and for each l≤i≤r$$${l \\le i \\le r}$$$ replace ai$$$a_i$$$ with ai | x$$${a_i \\space | \\space x}$$$. where x | y$$${x \\space | \\space y}$$$ denotes the bit-wise OR of x$$$x$$$ and y$$$y$$$.",
+      "For each query, output the minimum number of operations needed to make the elements of the array equal, or output −1$$$-1$$$ if they cannot be made equal."
+    ],
+    "input": [
+      "The first line contains a single positive integer 1≤t≤3×105$$${1 \\le t \\le 3 \\times 10^5}$$$ — the number of testcases.",
+      "The first line of each testcase contains two positive integers n$$$n$$$ and m$$$m$$$ (1≤m≤n≤106)$$${(1 \\le m \\le n \\le 10^6)}$$$.",
+      "The next line contains n$$$n$$$ non-negative integers a1, a2, ..an$$${a_1, \\space a_2, \\space ..a_n}$$$ — the elements of array a$$$a$$$, where (0≤ai<230)$$$({0 \\le a_i  \\lt  2^{30}})$$$.",
+      "The next line contains a single positive integer q$$$q$$$ (1≤q≤106)$$${(1 \\le q \\le 10^6)}$$$ — the number of queries.",
+      "Each of the following q$$$q$$$ lines contains a single non-negative integer (0≤x<230)$$$({0 \\le x  \\lt  2^{30}})$$$.",
+      "It is guaranteed that the sum of n$$$n$$$ and q$$$q$$$ over all testcases does not exceed 106$$${10^6}$$$."
+    ],
+    "output": [
+      "For each query of each testcase, output the answer to it as described in the problem statement."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n2 1\n1 3\n2\n2\n4\n6 2\n22 4 14 30 28 12\n4\n26\n27\n30\n31",
+      "output": "1\n-1\n3\n3\n3\n3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个包含 n$$$n$$$ 个非负整数的数组 a$$$a$$$，以及一个正整数 m$$$m$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要回答 q$$$q$$$ 个查询。在每次查询中，给定一个非负整数 x$$$x$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以进行以下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择两个整数 1≤l≤r≤n$$${1 \\le l \\le r \\le n}$$$，使得 r−l+1=m$$${r - l + 1 = m}$$$，并对于每个 l≤i≤r$$${l \\le i \\le r}$$$，将 ai$$$a_i$$$ 替换为 ai | x$$${a_i \\space | \\space x}$$$。其中，x | y$$${x \\space | \\space y}$$$ 表示对 x$$$x$$$ 和 y$$$y$$$ 进行按位或运算。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每次查询，输出使数组中的元素全部相等所需的最少操作次数；如果无法使它们相等，则输出 −1$$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个正整数 1≤t≤3×105$$${1 \\le t \\le 3 \\times 10^5}$$$，表示测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个正整数 n$$$n$$$ 和 m$$$m$$$(1≤m≤n≤106)$$${(1 \\le m \\le n \\le 10^6)}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 n$$$n$$$ 个非负整数 a1、a2、..an$$${a_1, \\space a_2, \\space ..a_n}$$$，表示数组 a$$$a$$$ 的元素，其中 (0≤ai<230)$$$({0 \\le a_i  \\lt  2^{30}})$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含一个正整数 q$$$q$$$ (1≤q≤106)$$${(1 \\le q \\le 10^6)}$$$ —— 查询数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行中，每行包含一个非负整数 (0≤x<230)$$$({0 \\le x  \\lt  2^{30}})$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 与 q$$$q$$$ 之和不超过 106$$${10^6}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例中的每个查询，按题目描述输出其答案。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "L. 均衡化",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "code": "CF1219G",
+  "letter": "G",
+  "title": "G. Harvester",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1219/G",
+  "difficulty": "2000",
+  "timeLimit": "0.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "It is Bubble Cup finals season and farmer Johnny Bubbles must harvest his bubbles. The bubbles are in a rectangular bubblefield formed of N$$$N$$$ x M$$$M$$$ square parcels divided into N$$$N$$$ rows and M$$$M$$$ columns. The parcel in ith$$$i^{th}$$$ row and jth$$$j^{th}$$$ column yields Ai,j$$$A_{i,j}$$$ bubbles.",
+      "Johnny Bubbles has available a very special self-driving bubble harvester that, once manually positioned at the beginning of a row or column, automatically harvests all the bubbles in that row or column. Once the harvester reaches the end of the row or column it stops and must be repositioned. The harvester can pass through any parcel any number of times, but it can collect bubbles from the parcel only once.",
+      "Johnny is very busy farmer, so he is available to manually position the harvester at most four times per day. Johnny is also impatient, so he wants to harvest as many bubbles as possible on the first day.",
+      "Please help Johnny to calculate what is the maximum number of bubbles he can collect on the first day."
+    ],
+    "input": [
+      "The first line contains two integers N$$$N$$$ and M$$$M$$$ (1$$$1$$$ ≤$$$\\leq$$$ N$$$N$$$, M$$$M$$$ ≤$$$\\leq$$$ N$$$N$$$ * M$$$M$$$ ≤$$$\\leq$$$ 105$$$10^{5}$$$) - the bubblefield size.",
+      "Each of the next N$$$N$$$ lines contains M$$$M$$$ integers. The jth$$$j^{th}$$$ element in the ith$$$i^{th}$$$ line is Ai,j$$$A_{i,j}$$$ (0$$$0$$$ ≤$$$\\leq$$$ ai,j$$$a_{i,j}$$$ ≤$$$\\leq$$$ 109$$$10^{9}$$$) — the yield of the parcel located in the ith$$$i^{th}$$$ row and the jth$$$j^{th}$$$ column."
+    ],
+    "output": [
+      "Output contains one integer number - maximum number of the bubbles Johnny can harvest on the first day."
+    ],
+    "note": [
+      "In the first example, farmer Johnny can harvest all the bubbles by positioning the harvester on the first and the second row.",
+      "In the second example, one way Johnny can harvest maximum number of bubbles is to position the harvester in the second row, the fourth row, the second column and the fourth column."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 2\n1 2\n3 4",
+      "output": "10"
+    },
+    {
+      "input": "5 5\n0 9 2 7 0\n9 0 3 0 5\n0 8 0 3 1\n6 7 4 3 9\n3 6 4 1 0",
+      "output": "80"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "现在是 Bubble Cup 决赛季，农夫 Johnny Bubbles 必须收割他的气泡。这些气泡位于一块矩形气泡田中，该气泡田由 N$$$N$$$ x M$$$M$$$ 个方形地块组成，分为 N$$$N$$$ 行和 M$$$M$$$ 列。第 ith$$$i^{th}$$$ 行第 jth$$$j^{th}$$$ 列的地块可以产出 Ai,j$$$A_{i,j}$$$ 个气泡。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Johnny Bubbles 有一台非常特殊的自动驾驶气泡收割机：手动将它放置在某一行或某一列的起点后，它会自动收割该行或该列中的所有气泡。当收割机到达该行或该列的末端时，它会停止，必须重新放置。收割机可以任意多次经过任意地块，但每个地块中的气泡只能收集一次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Johnny 是一名非常忙碌的农夫，因此他每天最多只能手动放置收割机四次。Johnny 也很没有耐心，所以他希望在第一天收割尽可能多的气泡。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Johnny 计算他在第一天最多可以收集多少个泡泡。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 N$$$N$$$ 和 M$$$M$$$(1$$$1$$$ ≤$$$\\leq$$$ N$$$N$$$，M$$$M$$$ ≤$$$\\leq$$$ N$$$N$$$ * M$$$M$$$ ≤$$$\\leq$$$ 105$$$10^{5}$$$)，表示泡泡田的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行中，每行包含 M$$$M$$$ 个整数。第 i$$$i^{th}$$$ 行的第 j$$$j^{th}$$$ 个元素为 Ai,j$$$A_{i,j}$$$(0$$$0$$$ ≤$$$\\leq$$$ ai,j$$$a_{i,j}$$$ ≤$$$\\leq$$$ 109$$$10^{9}$$$)，表示位于第 i$$$i^{th}$$$ 行第 j$$$j^{th}$$$ 列的地块的产量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示 Johnny 在第一天最多可以收获的泡泡数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，农民 Johnny 可以将收割机放置在第一行和第二行，从而收获所有泡泡。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，Johnny 可以将收割机放置在第二行、第四行、第二列和第四列，以收获最多数量的泡泡。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. 收割机",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

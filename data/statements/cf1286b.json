@@ -1,0 +1,85 @@
+{
+  "code": "CF1286B",
+  "letter": "B",
+  "title": "B. Numbers on Tree",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1286/B",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Evlampiy was gifted a rooted tree. The vertices of the tree are numbered from 1$$$1$$$ to n$$$n$$$. Each of its vertices also has an integer ai$$$a_i$$$ written on it. For each vertex i$$$i$$$, Evlampiy calculated ci$$$c_i$$$ — the number of vertices j$$$j$$$ in the subtree of vertex i$$$i$$$, such that aj<ai$$$a_j  \\lt  a_i$$$.",
+      "![](https://espresso.codeforces.com/f5dda49bc62f72dcd05825f4d2b40d4d7a64a2fb.png)",
+      "After the new year, Evlampiy could not remember what his gift was! He remembers the tree and the values of ci$$$c_i$$$, but he completely forgot which integers ai$$$a_i$$$ were written on the vertices.",
+      "Help him to restore initial integers!"
+    ],
+    "input": [
+      "The first line contains an integer n$$$n$$$ (1≤n≤2000)$$$(1 \\leq n \\leq 2000)$$$ — the number of vertices in the tree.",
+      "The next n$$$n$$$ lines contain descriptions of vertices: the i$$$i$$$-th line contains two integers pi$$$p_i$$$ and ci$$$c_i$$$ (0≤pi≤n$$$0 \\leq p_i \\leq n$$$; 0≤ci≤n−1$$$0 \\leq c_i \\leq n-1$$$), where pi$$$p_i$$$ is the parent of vertex i$$$i$$$ or 0$$$0$$$ if vertex i$$$i$$$ is root, and ci$$$c_i$$$ is the number of vertices j$$$j$$$ in the subtree of vertex i$$$i$$$, such that aj<ai$$$a_j  \\lt  a_i$$$.",
+      "It is guaranteed that the values of pi$$$p_i$$$ describe a rooted tree with n$$$n$$$ vertices."
+    ],
+    "output": [
+      "If a solution exists, in the first line print \"YES\", and in the second line output n$$$n$$$ integers ai$$$a_i$$$ (1≤ai≤109)$$$(1 \\leq a_i \\leq {10}^{9})$$$. If there are several solutions, output any of them. One can prove that if there is a solution, then there is also a solution in which all ai$$$a_i$$$ are between 1$$$1$$$ and 109$$$10^9$$$.",
+      "If there are no solutions, print \"NO\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2 0\n0 2\n2 0",
+      "output": "YES\n1 2 1"
+    },
+    {
+      "input": "5\n0 1\n1 3\n2 1\n3 0\n2 0",
+      "output": "YES\n2 3 2 1 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Evlampiy 获得了一棵有根树。树的顶点编号从 1$$$1$$$ 到 n$$$n$$$。每个顶点上还写有一个整数 ai$$$a_i$$$。对于每个顶点 i$$$i$$$，Evlampiy 计算出了 ci$$$c_i$$$：顶点 i$$$i$$$ 的子树中满足 aj<ai$$$a_j  \\lt  a_i$$$ 的顶点 j$$$j$$$ 的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/f5dda49bc62f72dcd05825f4d2b40d4d7a64a2fb.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "新年过后，Evlampiy 忘记了他的礼物是什么！他记得这棵树以及 ci$$$c_i$$$ 的值，但完全忘记了顶点上写的是哪些整数 ai$$$a_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助他还原最初的整数！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤2000)$$$(1 \\leq n \\leq 2000)$$$，表示树中顶点的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行包含顶点的描述：第 i$$$i$$$ 行包含两个整数 pi$$$p_i$$$ 和 ci$$$c_i$$$(0≤pi≤n$$$0 \\leq p_i \\leq n$$$；0≤ci≤n−1$$$0 \\leq c_i \\leq n-1$$$)，其中 pi$$$p_i$$$ 表示顶点 i$$$i$$$ 的父节点；如果顶点 i$$$i$$$ 是根，则 pi$$$0$$$ 为 0$$$0$$$；ci$$$c_i$$$ 表示满足 aj<ai$$$a_j  \\lt  a_i$$$ 的子树中顶点 j$$$j$$$ 的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 pi$$$p_i$$$ 的值描述了一棵含有 n$$$n$$$ 个顶点的有根树。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果存在解，第一行输出“YES”，第二行输出 n$$$n$$$ 个整数 ai$$$a_i$$$(1≤ai≤109)$$$(1 \\leq a_i \\leq {10}^{9})$$$。如果有多个解，输出其中任意一个即可。可以证明，如果存在解，那么也一定存在一个满足所有 ai$$$a_i$$$ 都介于 1$$$1$$$ 和 109$$$10^9$$$ 之间的解。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果不存在解，输出“NO”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 树上的数字",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

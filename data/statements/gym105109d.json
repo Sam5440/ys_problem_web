@@ -1,0 +1,105 @@
+{
+  "code": "GYM105109D",
+  "letter": "D",
+  "title": "D. Counting Records",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105109/problem/D",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/288ad355535838030f47482960e38ba3a2fa2884.png)",
+      "Michael's favorite artist, Jackson, has recently started releasing new songs at an unprecedented rate. Michael wants to collect a physical copy of every record this artist releases, but his collection is getting too big. He already knows how many songs the artist releases over the first $$$n$$$ days, and wonders how many records he will have to buy on day $$$k$$$ if he continues to purchase every record.",
+      "Michael uses the function $$$f(x)$$$ to estimate the number of records released on day $$$x$$$. Michael already knows $$$f(x)$$$ for $$$1 \\leq x \\leq n$$$ as mentioned above. To compute future estimates, Michael uses the formula",
+      "Given the values of $$$f(x)$$$ for $$$1 \\leq x \\leq n$$$, help Michael calculate his estimate $$$f(k)$$$, modulo $$$10^9 + 7$$$."
+    ],
+    "input": [
+      "The first line of input contains two space-separated integers, $$$n$$$ ($$$1 \\leq n \\leq 50$$$) and $$$k$$$ ($$$1 \\leq k \\leq 10^{18}$$$) — the number of days where we already know how many records were released on that day, and the day we would like to estimate, respectively.",
+      "The second line of input contains $$$n$$$ space-separated integers, where the $$$i^\\text{th}$$$ number is $$$f(i)$$$ ($$$1 \\leq f(i) \\leq 10^9$$$) — the number of records purchashed on the $$$i^\\text{th}$$$ day."
+    ],
+    "output": [
+      "Print a single integer $$$f(k) \\bmod {10^9+7}$$$ — the estimate for the number of records purchased on day $$$k$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 3\n2 3",
+      "output": "72"
+    },
+    {
+      "input": "2 4\n2 3",
+      "output": "139968"
+    }
+  ],
+  "titleZh": {
+    "0": "D. 计数记录",
+    "caiyun": "D. 计数记录",
+    "youdao": "D.计数记录",
+    "iflyrec": "D.盘点记录",
+    "deepl": "D.计算记录",
+    "ai": "D. 统计记录"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "![](https://espresso.codeforces.com/288ad355535838030f47482960e38ba3a2fa2884.png)",
+        "iflyrec": "![](https://espresso.codeforces.com/288ad355535838030f47482960e38ba3a2fa2884.png)",
+        "deepl": "![](https://espresso.codeforces.com/288ad355535838030f47482960e38ba3a2fa2884.png)",
+        "youdao": "![](https://espresso.codeforces.com/288ad355535838030f47482960e38ba3a2fa2884.png)",
+        "ai": "![](https://espresso.codeforces.com/288ad355535838030f47482960e38ba3a2fa2884.png)"
+      },
+      {
+        "caiyun": "迈克尔最喜欢的艺术家杰克逊最近开始以前所未有的速度发行新歌。迈克尔想收藏这位艺术家发行的每一张唱片的实体版，但他的收藏越来越多。他已经知道这位歌手在最初的 $$$n$$$ 天里发行了多少首歌曲，不知道如果他继续购买每一张唱片，在 $$$k$$$ 天他将不得不购买多少张唱片。",
+        "iflyrec": "迈克尔最喜欢的歌手杰克逊最近开始以前所未有的速度发行新歌。迈克尔想收集这位艺术家发行的每一张唱片的实体拷贝，但他的收藏太多了。他已经知道艺术家在最初的$$$n$$$天发行了多少首歌曲，并且想知道如果他继续购买每张唱片，他在$$$k$$$天将必须购买多少张唱片。",
+        "deepl": "迈克尔最喜欢的艺术家杰克逊最近开始以前所未有的速度发行新歌。迈克尔想收藏这位艺术家发行的每一张唱片的实体版，但他的收藏越来越多。他已经知道这位歌手在最初的 $$$n$$$ 天里发行了多少首歌曲，不知道如果他继续购买每一张唱片，在 $$$k$$$ 天他将不得不购买多少张唱片。",
+        "ai": "Michael 最喜欢的艺术家 Jackson 最近以空前的速度开始发布新歌。Michael 想收集这位艺术家发行的每一张唱片的实体副本，但他的收藏已经变得太多了。他已经知道这位艺术家在前 $$$n$$$ 天内发行了多少首歌，并想知道如果他继续购买每一张唱片，那么在第 $$$k$$$ 天他将不得不购买多少张唱片。"
+      },
+      {
+        "caiyun": "Michael 使用函数 $$$f(x)$$$ 来估计当天 $$$x$$$ 发布的记录数量。如上所述，Michael 已经知道 $$$1 \\leq x \\leq n$$$ 的 $$$f(x)$$$。为了计算未来的估计，Michael 使用公式",
+        "youdao": "Michael使用函数$$$f(x)$$$来估计在$$$x$$$日发布的记录数。Michael已经知道了上面提到的$$$f(x)$$$和$$$1 \\leq x \\leq n$$$。为了计算未来的预测，Michael使用了这个公式",
+        "iflyrec": "Michael使用函数$$$f(x)$$$来估计$$$x$$$当天发布的记录数。如上所述，Michael已经知道$$$f(x)$$$对应于$$$1 \\leq x \\leq n$$$。为了计算未来的估计值，Michael使用了以下公式",
+        "deepl": "迈克尔使用函数$$$f(x)$$$来估计$$$x$$$日发布的记录数。如上所述，迈克尔已经知道 $$$1 \\leq x \\leq n$$$ 的 $$$f(x)$$$。为了计算未来的估计值，迈克尔使用公式",
+        "ai": "迈克尔使用函数 $$$f(x)$$$ 来估计第 $$$x$$$ 天发布的记录数。如上所述，迈克尔已经知道 $$$1 \\leq x \\leq n$$$ 对应的 $$$f(x)$$$。为了计算未来的估计值，迈克尔使用公式"
+      },
+      {
+        "caiyun": "给定 $$$1 \\leq x \\leq n$$$ 的 $$$f(x)$$$ 值，帮助 Michael 计算他的估计 $$$f(k)$$$，模 $$$10^9 + 7$$$。",
+        "youdao": "给定$$$1 \\leq x \\leq n$$$的$$$f(x)$$$值，帮助Michael计算他的估计值$$$f(k)$$$，对$$$10^9 + 7$$$取模。",
+        "iflyrec": "给定$$$1 \\leq x \\leq n$$$的$$$f(x)$$$值，帮助Michael计算他的估计值$$$f(k)$$$，模$$$10^9 + 7$$$。",
+        "deepl": "给出$$$1 \\leq x \\leq n$$$的$$$f(x)$$$值，帮助迈克尔计算他的估计值$$$f(k)$$$，模数为$$$10^9 + 7$$$。",
+        "ai": "给定 $$$1 \\leq x \\leq n$$$ 的 $$$f(x)$$$ 值，帮助 Michael 计算他的估计值 $$$f(k)$$$，模 $$$10^9 + 7$$$。"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "输入的第一行包含两个空格分隔的整数，$$$n$$$ ($$$1 \\leq n \\leq 50$$$）和$$$k$$$ ($$$1 \\leq k \\leq 10^{18}$$$）——我们已经知道当天发布了多少条记录的天数，以及我们想要估计的日期。",
+        "youdao": "输入的第一行包含两个空格分隔的整数，$$$n$$$ ($$$1 \\leq n \\leq 50$$$）和$$$k$$$ ($$$1 \\leq k \\leq 10^{18}$$$）——我们已经知道当天发布了多少条记录的天数，以及我们想要估计的日期。",
+        "iflyrec": "输入的第一行包含两个空格分隔的整数，$$$n$$$($$$1 \\leq n \\leq 50$$$）和$$$k$$$($$$1 \\leq k \\leq 10^{18}$$$）—分别是我们已经知道当天发布了多少条记录的天数，以及我们想要估计的日期。",
+        "deepl": "输入的第一行包含两个空格分隔的整数，$$$n$$$ ($$$1 \\leq n \\leq 50$$$) 和 $$$k$$$ ($$$1 \\leq k \\leq 10^{18}$$$) - 分别是我们已经知道当天有多少条记录发布的天数，以及我们想要估算的天数。",
+        "ai": "输入的第一行包含两个用空格分隔的整数，$$$n$$$ ($$$1 \\leq n \\leq 50$$$) 和 $$$k$$$ ($$$1 \\leq k \\leq 10^{18}$$$)——分别表示我们已经知道当天发行了多少张唱片的天数，以及我们希望估计的那一天。"
+      },
+      {
+        "caiyun": "第二行输入内容为$$$n$$$空格分隔的整数，其中$$$i^\\text{th}$$$号为$$$f(i)$$$($$$1 \\leq f(i) \\leq 10^9$$$）--$$$i^\\text{th}$$$日购买的记录数。",
+        "youdao": "第二行输入包含$$$n$$$个空格分隔的整数，其中$$$i^\\text{th}$$$个数字是$$$f(i)$$$ ($$$1 \\leq f(i) \\leq 10^9$$$）——在$$$i^\\text{th}$$$天购买的记录数。",
+        "iflyrec": "输入的第二行包含$$$n$$$空格分隔的整数，其中$$$i^\\text{th}$$$编号为$$$f(i)$$$($$$1 \\leq f(i) \\leq 10^9$$$）—在$$$i^\\text{th}$$$天购买的记录数。",
+        "deepl": "第二行输入内容为$$$n$$$空格分隔的整数，其中$$$i^\\text{th}$$$号为$$$f(i)$$$($$$1 \\leq f(i) \\leq 10^9$$$)--$$$i^\\text{th}$$$日购买的记录数。",
+        "ai": "输入的第二行包含 $$$n$$$ 个以空格分隔的整数，其中第 $$$i^\\text{th}$$$ 个数为 $$$f(i)$$$($$$1 \\leq f(i) \\leq 10^9$$$)——在第 $$$i^\\text{th}$$$ 天购买的记录数。"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "打印单个整数$$$f(k) \\bmod {10^9+7}$$$ -在$$$k$$$日购买的记录数量的估计值。",
+        "youdao": "打印单个整数$$$f(k) \\bmod {10^9+7}$$$ -在$$$k$$$日购买的记录数量的估计值。",
+        "deepl": "打印一个整数$$$f(k) \\bmod {10^9+7}$$$--当天$$$k$$$购买记录数的估计值。",
+        "iflyrec": "打印单个整数$$$f(k) \\bmod {10^9+7}$$$-在第$$$k$$$天购买的记录数的估计值。",
+        "ai": "输出单个整数 $$$$$$f(k) \\bmod {10^9+7}$$$$$$ —— 第 $$$$$$k$$$$$$ 天购买的记录数量的估计值。"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.104Z",
+  "translatedBy": [
+    "deepl",
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

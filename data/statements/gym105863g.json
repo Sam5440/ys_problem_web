@@ -1,0 +1,139 @@
+{
+  "code": "GYM105863G",
+  "letter": "G",
+  "title": "G. A Counting Problem",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105863/problem/G",
+  "difficulty": "*1800",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Note: You may want to use 64$$$64$$$-bit integers instead of 32$$$32$$$-bit integers in this task. For example, in Java, you may want to use long instead of int. In C++, you may want to use long long.",
+      "Given an array a$$$a$$$ of size m$$$m$$$, let f(a)$$$f(a)$$$ be the number of numbers 1≤i≤m$$$1\\leq i\\leq m$$$ where min(a1,a2,…,ai)=ai$$$\\min(a_1,a_2,\\ldots,a_i)=a_i$$$.",
+      "For example, if a=[2,4,3,2,1]$$$a=[2,4,3,2,1]$$$, f(a)=3$$$f(a)=3$$$ because a1=min(a1)$$$a_1=\\min(a_1)$$$, a4=min(a1,a2,a3,a4)$$$a_4=\\min(a_1,a_2,a_3,a_4)$$$, and a5=min(a1,a2,a3,a4,a5)$$$a_5=\\min(a_1,a_2,a_3,a_4,a_5)$$$.",
+      "Seele gives you two integers n$$$n$$$ and k$$$k$$$.",
+      "There are kn$$$k^n$$$ length-n$$$n$$$ arrays such that each element is a positive integer from 1$$$1$$$ to k$$$k$$$, inclusive. Over all such arrays, Seele asks you to output the sum of f(a)$$$f(a)$$$ over all such arrays a$$$a$$$.",
+      "Since the answer may be huge, output the answer modulo 998244353$$$998\\,244\\,353$$$."
+    ],
+    "input": [
+      "The first test case contains an integer t$$$t$$$ – the number of independent test cases (1≤t≤104$$$1 \\leq t \\leq 10^4$$$).",
+      "The only line of each test case contains two integers n,k$$$n,k$$$ (1≤n≤109,1≤k≤3⋅105$$$1 \\leq n \\leq 10^9, 1 \\leq k \\leq 3\\cdot 10^5$$$).",
+      "It is guaranteed that the sum of k$$$k$$$ does not exceed 3⋅105$$$3\\cdot 10^5$$$ over all test cases.",
+      "Scoring",
+      "Partial credits will be given to programs who pass tests with smaller constraints outlined below."
+    ],
+    "output": [
+      "For each test case, output the answer modulo 998244353$$$998\\,244\\,353$$$."
+    ],
+    "note": [
+      "The first examples satisfies subtask 4$$$4$$$ and the second example satisfies subtask 5$$$5$$$.",
+      "In the first test case of the first example, we need to consider the following four arrays:",
+      "f([1,1])=2$$$f([1,1])=2$$$.",
+      "f([1,2])=1$$$f([1,2])=1$$$.",
+      "f([2,1])=2$$$f([2,1])=2$$$.",
+      "f([2,2])=2$$$f([2,2])=2$$$.",
+      "The sum over all arrays is 7$$$7$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 2\n3 2\n3 3\n5 5\n888 999",
+      "output": "7\n19\n59\n8479\n667852386"
+    },
+    {
+      "input": "1\n1000000000 300000",
+      "output": "732088305"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "注意：在本任务中，你可能需要使用 64$$$64$$$ 位整数而不是 32$$$32$$$ 位整数。例如，在 Java 中，你可能想使用 long 而不是 int；在 C++ 中，你可能想使用 long long。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "给定一个大小为 m$$$m$$$ 的数组 a$$$a$$$，令 f(a)$$$f(a)$$$ 为满足 1≤i≤m$$$1\\leq i\\leq m$$$ 且 min(a1,a2,…,ai)=ai$$$\\min(a_1,a_2,\\ldots,a_i)=a_i$$$ 的 i 的个数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "例如，若 a=[2,4,3,2,1]$$$a=[2,4,3,2,1]$$$，则 f(a)=3$$$f(a)=3$$$，因为 a1=min(a1)$$$a_1=\\min(a_1)$$$，a4=min(a1,a2,a3,a4)$$$a_4=\\min(a_1,a_2,a_3,a_4)$$$，且 a5=min(a1,a2,a3,a4,a5)$$$a_5=\\min(a_1,a_2,a_3,a_4,a_5)$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Seele 给你两个整数 n$$$n$$$ 和 k$$$k$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "共有 kn$$$k^n$$$ 个长度为 n$$$n$$$ 的数组，其中每个元素都是从 1$$$1$$$ 到 k$$$k$$$(包含两端)的正整数。对于所有这样的数组 a$$$a$$$，Seele 要求你输出 f(a)$$$f(a)$$$ 的总和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于答案可能很大，请输出答案对 998244353$$$998\\,244\\,353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一个测试用例包含一个整数 t$$$t$$$——独立测试用例的数量(1≤t≤104$$$1 \\leq t \\leq 10^4$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例仅包含一行，其中有两个整数 n,k$$$n,k$$$(1≤n≤109,1≤k≤3⋅105$$$1 \\leq n \\leq 10^9, 1 \\leq k \\leq 3\\cdot 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 k$$$k$$$ 的总和不超过 3⋅105$$$3\\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "评分",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "通过下述较小约束条件测试的程序将获得部分分数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出答案对 998244353$$$998\\,244\\,353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例满足子任务 4$$$4$$$，第二个样例满足子任务 5$$$5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个样例的第一个测试用例中，我们需要考虑以下四个数组：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "f([1,1])=2$$$f([1,1])=2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "f([1,2])=1$$$f([1,2])=1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "f([2,1])=2$$$f([2,1])=2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "f([2,2])=2$$$f([2,2])=2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有数组的总和为 7$$$7$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. 计数问题",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

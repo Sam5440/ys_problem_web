@@ -1,0 +1,167 @@
+{
+  "code": "GYM106644C",
+  "letter": "C",
+  "title": "C. Close to Gray",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106644/problem/C",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a simple undirected graph $$$G$$$ with $$$n$$$ vertices and $$$m$$$ black edges. The $$$i$$$-th black edge connects vertices $$$u_i$$$ and $$$v_i$$$. For every pair of distinct vertices not connected by a black edge, there is a white edge between them.",
+      "We call two distinct vertices $$$x$$$ and $$$y$$$ close to gray if both of the following conditions hold:",
+      "It is possible to travel from $$$x$$$ to $$$y$$$ using only black edges.",
+      "It is possible to travel from $$$x$$$ to $$$y$$$ using only white edges.",
+      "Find the number of unordered pairs $$$(x, y)$$$, where $$$1 \\leq x  \\lt  y \\leq n$$$, that are close to gray."
+    ],
+    "input": [
+      "The first line contains two integers $$$n$$$ and $$$m$$$, representing the number of vertices and black edges, respectively.",
+      "Each of the next $$$m$$$ lines contains two integers $$$u_i$$$ and $$$v_i$$$, indicating that there is a black edge between them.",
+      "$$$2 \\leq n \\leq 5 \\times 10^5$$$",
+      "$$$0 \\leq m \\leq 5 \\times 10^5$$$",
+      "$$$1 \\leq u_i, v_i \\leq n$$$",
+      "$$$u_i \\neq v_i$$$",
+      "There are no multiple edges between the same pair of vertices."
+    ],
+    "output": [
+      "Output a single integer representing the number of unordered pairs that are close to gray."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n1 3\n2 3\n1 4\n2 4",
+      "output": "2"
+    },
+    {
+      "input": "6 11\n1 2\n1 3\n1 5\n2 3\n2 4\n2 6\n3 4\n3 5\n3 6\n4 5\n5 6",
+      "output": "4"
+    },
+    {
+      "input": "252525 0",
+      "output": "0"
+    }
+  ],
+  "titleZh": {
+    "0": "C.接近格雷",
+    "caiyun": "C. 接近格雷",
+    "youdao": "C.接近格雷",
+    "deepl": "C.接近灰色",
+    "iflyrec": "C.接近灰色",
+    "ai": "C. 接近格雷码",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "给定一个简单的无向图 $$$G$$$，其中包含 $$$n$$$ 顶点和 $$$m$$$ 黑边。$$$i$$$ 第三条黑边连接顶点 $$$u_i$$$ 和 $$$v_i$$$。对于每对不由黑边连接的不同顶点，它们之间都有一条白边。",
+        "youdao": "给你一个简单的无向图$$$G$$$，有$$$n$$$个顶点和$$$m$$$条黑边。$$$i$$$-黑色边缘连接顶点$$$u_i$$$和$$$v_i$$$。对于每一对没有黑边相连的不同顶点，它们之间都有一条白边。",
+        "deepl": "给你一个简单的无向图 $$$G$$$，图中有 $$$n$$$ 个顶点和 $$$m$$$ 条黑边。第 $$$i$$$ 条黑边连接顶点 $$$u_i$$$ 和 $$$v_i$$$。对于每一对没有黑边连接的不同顶点，它们之间都有一条白边。",
+        "iflyrec": "给你一个简单的无向图$$$G$$$，它有$$$n$$$个顶点和$$$m$$$条黑边。第$$$i$$$条黑边连接顶点$$$u_i$$$和$$$v_i$$$。对于每一对没有黑边连接的不同顶点，它们之间都有一条白边。",
+        "ai": "给定一个含有 $$$n$$$ 个顶点和 $$$m$$$ 条黑边的简单无向图 $$$G$$$。第 $$$i$$$ 条黑边连接顶点 $$$u_i$$$ 和 $$$v_i$$$。对于任意一对没有通过黑边连接的不同顶点，它们之间都有一条白边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "如果以下两个条件都成立，我们将两个不同的顶点 $$$x$$$ 和 $$$y$$$ 称为接近灰色：",
+        "youdao": "如果满足以下两个条件，我们称两个不同的顶点$$$x$$$和$$$y$$$接近灰色：",
+        "deepl": "如果以下两个条件都成立，我们就称两个不同的顶点 $$$x$$$ 和 $$$y$$$ 接近灰色：",
+        "iflyrec": "我们称两个不同的顶点$$$x$$$和$$$y$$$接近灰色，如果以下两个条件都成立:",
+        "ai": "如果以下两个条件均成立，我们称两个不同的顶点 $$$x$$$ 和 $$$y$$$ 互相接近灰色：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "可以仅使用黑色边缘从 $$$x$$$ 旅行到 $$$y$$$。",
+        "youdao": "只使用黑边就可以从$$$x$$$移动到$$$y$$$。",
+        "deepl": "只用黑边就可以从 $$$x$$$ 到达 $$$y$$$。",
+        "iflyrec": "可以仅使用黑色边缘从$$$x$$$移动到$$$y$$$。",
+        "ai": "可以只使用黑色边从 $$$x$$$ 到达 $$$y$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "可以仅使用白边从 $$$x$$$ 旅行到 $$$y$$$。",
+        "youdao": "只使用白色边缘就可以从$$$x$$$移动到$$$y$$$。",
+        "deepl": "只用白边就可以从 $$$x$$$ 到达 $$$y$$$。",
+        "iflyrec": "可以仅使用白边从$$$x$$$移动到$$$y$$$。",
+        "ai": "可以只使用白色边从 $$$x$$$ 到达 $$$y$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "找出接近灰色的无序对数 $$$(x, y)$$$，其中 $$$1 \\leq x  \\lt  y \\leq n$$$。",
+        "youdao": "求接近灰色的无序对$$$(x, y)$$$的个数，其中$$$1 \\leq x  \\lt  y \\leq n$$$。",
+        "deepl": "找出$$$(x, y)$$$，其中$$$1 \\leq x  \\lt  y \\leq n$$$，接近灰色的无序对的数量。",
+        "iflyrec": "找出接近灰色的无序对$$$(x, y)$$$的数量，其中$$$1 \\leq x  \\lt  y \\leq n$$$。",
+        "ai": "求满足条件的无序顶点对 $$$(x, y)$$$、$$$1 \\leq x  \\lt  y \\leq n$$$ 的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含两个整数 $$$n$$$ 和 $$$m$$$，分别表示顶点和黑边的数量。",
+        "youdao": "第一行包含两个整数$$$n$$$和$$$m$$$，分别表示顶点数和黑边数。",
+        "deepl": "第一行包含两个整数 $$$n$$$ 和 $$$m$$$，分别代表顶点和黑边的数量。",
+        "iflyrec": "第一行包含两个整数$$$n$$$和$$$m$$$，分别表示顶点和黑边的数量。",
+        "ai": "第一行包含两个整数 $$$n$$$ 和 $$$m$$$，分别表示顶点数和黑色边数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "接下来的 $$$m$$$ 行中的每一行都包含两个整数 $$$u_i$$$ 和 $$$v_i$$$，表明它们之间存在一条黑边。",
+        "youdao": "后面的每一行$$$m$$$包含两个整数$$$u_i$$$和$$$v_i$$$，表示它们之间有一条黑边。",
+        "deepl": "接下来的每一行 $$$m$$$ 都包含两个整数 $$$u_i$$$ 和 $$$v_i$$$，表示它们之间有一条黑边。",
+        "iflyrec": "接下来的$$$m$$$行中的每一行都包含两个整数$$$u_i$$$和$$$v_i$$$，表示它们之间有一条黑边。",
+        "ai": "接下来的 $$$m$$$ 行中，每行包含两个整数 $$$u_i$$$ 和 $$$v_i$$$，表示它们之间存在一条黑色边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$2 \\leq n \\leq 5 \\times 10^5$$$",
+        "deepl": "$$$2 \\leq n \\leq 5 \\times 10^5$$$",
+        "iflyrec": "$$$2 \\leq n \\leq 5 \\times 10^5$$$",
+        "ai": "$$$2 \\leq n \\leq 5 \\times 10^5$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$0 \\leq m \\leq 5 \\times 10^5$$$",
+        "deepl": "$$$0 \\leq m \\leq 5 \\times 10^5$$$",
+        "iflyrec": "$$$0 \\leq m \\leq 5 \\times 10^5$$$",
+        "ai": "$$$0 \\leq m \\leq 5 \\times 10^5$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$1 \\leq u_i, v_i \\leq n$$$",
+        "deepl": "$$$1 \\leq u_i, v_i \\leq n$$$",
+        "iflyrec": "$$$1 \\leq u_i, v_i \\leq n$$$",
+        "ai": "$$$1 \\leq u_i, v_i \\leq n$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$u_i \\neq v_i$$$",
+        "deepl": "$$$u_i \\neq v_i$$$",
+        "iflyrec": "$$$u_i \\neq v_i$$$",
+        "ai": "$$$u_i \\neq v_i$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "同一对顶点之间不存在多条边。",
+        "youdao": "在同一对顶点之间没有多条边。",
+        "deepl": "同一对顶点之间没有多条边。",
+        "iflyrec": "同一对顶点之间没有多条边。",
+        "ai": "同一对顶点之间不存在重边。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "输出一个整数，表示接近灰色的无序对的数量。",
+        "youdao": "输出单个整数，表示接近灰色的无序对的数量。",
+        "deepl": "输出一个整数，代表接近灰色的无序配对的数量。",
+        "iflyrec": "输出一个整数，表示接近灰色的无序对的数量。",
+        "ai": "输出一个整数，表示满足条件的无序对数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.118Z",
+  "translatedBy": [
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

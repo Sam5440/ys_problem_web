@@ -1,0 +1,85 @@
+{
+  "code": "GYM103102I",
+  "letter": "I",
+  "title": "I. Modulo Permutations",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103102/problem/I",
+  "difficulty": "*2100",
+  "timeLimit": "1 s",
+  "memoryLimit": "256 MB",
+  "sections": {
+    "legend": [
+      "Given a natural number n$$$n$$$, count the number of permutations (p1,p2,…,pn)$$$(p_1, p_2, \\ldots, p_n)$$$ of the numbers from 1$$$1$$$ to n$$$n$$$, such that for each i$$$i$$$ (1≤i≤n$$$1 \\le i \\le n$$$), the following property holds: pi mod pi+1≤2$$$p_i \\text{ mod } p_{i+1} \\le 2$$$, where pn+1=p1$$$p_{n+1} = p_1$$$.",
+      "As this number can be very big, output it modulo 109+7$$$10^9 + 7$$$."
+    ],
+    "input": [
+      "The only line of the input contains the integer n$$$n$$$ (1≤n≤106$$$1 \\le n \\le 10^6$$$)."
+    ],
+    "output": [
+      "Output a single integer — the number of the permutations satisfying the condition from the statement, modulo 109+7$$$10^9+7$$$."
+    ],
+    "note": [
+      "For example, for n=4$$$n = 4$$$ you should count the permutation [4,2,3,1]$$$[4, 2, 3, 1]$$$, as 4 mod 2=0≤2$$$4 \\text{ mod } 2 = 0 \\leq 2$$$, 2 mod 3=2≤2$$$2 \\text{ mod } 3 = 2 \\leq 2$$$, 3 mod 1=0≤2$$$3 \\text{ mod } 1 = 0 \\leq 2$$$, 1 mod 4=1≤2$$$1 \\text{ mod } 4 = 1 \\leq 2$$$. However, you shouldn't count the permutation [3,4,1,2]$$$[3, 4, 1, 2]$$$, as 3 mod 4=3>2$$$3 \\text{ mod } 4 = 3  \\gt  2$$$ which violates the condition from the statement."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1",
+      "output": "1"
+    },
+    {
+      "input": "2",
+      "output": "2"
+    },
+    {
+      "input": "3",
+      "output": "6"
+    },
+    {
+      "input": "4",
+      "output": "16"
+    },
+    {
+      "input": "5",
+      "output": "40"
+    },
+    {
+      "input": "1000000",
+      "output": "581177467"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个正整数 n$$$n$$$，请计算满足以下条件的数字 1$$$1$$$ 到 n$$$n$$$ 的所有排列 (p1,p2,…,pn)$$$(p_1, p_2, \\ldots, p_n)$$$ 的数量：对于每个 i$$$i$$$ (1≤i≤n$$$1 \\le i \\le n$$$)，均有 pi mod pi+1≤2$$$p_i \\text{ mod } p_{i+1} \\le 2$$$，其中 pn+1=p1$$$p_{n+1} = p_1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于这个数量可能非常大，请输出其对 109+7$$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入仅一行，包含一个整数 n$$$n$$$ (1≤n≤106$$$1 \\le n \\le 10^6$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，即满足题面条件的排列数量对 109+7$$$10^9+7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "例如，当 n=4$$$n = 4$$$ 时，应当计入排列 [4,2,3,1]$$$[4, 2, 3, 1]$$$，因为 4 mod 2=0≤2$$$4 \\text{ mod } 2 = 0 \\leq 2$$$、2 mod 3=2≤2$$$2 \\text{ mod } 3 = 2 \\leq 2$$$、3 mod 1=0≤2$$$3 \\text{ mod } 1 = 0 \\leq 2$$$、1 mod 4=1≤2$$$1 \\text{ mod } 4 = 1 \\leq 2$$$。然而，不应当计入排列 [3,4,1,2]$$$[3, 4, 1, 2]$$$，因为 3 mod 4=3>2$$$3 \\text{ mod } 4 = 3  \\gt  2$$$，不满足题面中的条件。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "I. 模排列",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "code": "CF609D",
+  "letter": "D",
+  "title": "D. Gadgets for dollars and pounds",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/609/D",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Nura wants to buy k gadgets. She has only s burles for that. She can buy each gadget for dollars or for pounds. So each gadget is selling only for some type of currency. The type of currency and the cost in that currency are not changing.",
+      "Nura can buy gadgets for n days. For each day you know the exchange rates of dollar and pound, so you know the cost of conversion burles to dollars or to pounds.",
+      "Each day (from 1 to n) Nura can buy some gadgets by current exchange rate. Each day she can buy any gadgets she wants, but each gadget can be bought no more than once during n days.",
+      "Help Nura to find the minimum day index when she will have k gadgets. Nura always pays with burles, which are converted according to the exchange rate of the purchase day. Nura can't buy dollars or pounds, she always stores only burles. Gadgets are numbered with integers from 1 to m in order of their appearing in input."
+    ],
+    "input": [
+      "First line contains four integers n, m, k, s (1 ≤ n ≤ 2·105, 1 ≤ k ≤ m ≤ 2·105, 1 ≤ s ≤ 109) — number of days, total number and required number of gadgets, number of burles Nura has.",
+      "Second line contains n integers ai (1 ≤ ai ≤ 106) — the cost of one dollar in burles on i-th day.",
+      "Third line contains n integers bi (1 ≤ bi ≤ 106) — the cost of one pound in burles on i-th day.",
+      "Each of the next m lines contains two integers ti, ci (1 ≤ ti ≤ 2, 1 ≤ ci ≤ 106) — type of the gadget and it's cost. For the gadgets of the first type cost is specified in dollars. For the gadgets of the second type cost is specified in pounds."
+    ],
+    "output": [
+      "If Nura can't buy k gadgets print the only line with the number -1.",
+      "Otherwise the first line should contain integer d — the minimum day index, when Nura will have k gadgets. On each of the next k lines print two integers qi, di — the number of gadget and the day gadget should be bought. All values qi should be different, but the values di can coincide (so Nura can buy several gadgets at one day). The days are numbered from 1 to n.",
+      "In case there are multiple possible solutions, print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 4 2 2\n1 2 3 2 1\n3 2 1 2 3\n1 1\n2 1\n1 2\n2 2",
+      "output": "3\n1 1\n2 3"
+    },
+    {
+      "input": "4 3 2 200\n69 70 71 72\n104 105 106 107\n1 1\n2 2\n1 2",
+      "output": "-1"
+    },
+    {
+      "input": "4 3 1 1000000000\n900000 910000 940000 990000\n990000 999000 999900 999990\n1 87654\n2 76543\n1 65432",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Nura 想要购买 k 件小物品。她只有 s burles。她可以用美元或英镑购买每件小物品。因此，每件小物品只接受其中一种货币支付。货币种类以及以该货币计价的价格不会发生变化。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Nura 可以在 n 天内购买小物品。对于每一天，你都知道美元和英镑的汇率，因此也知道将 burles 兑换成美元或英镑所需的费用。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每天（从第 1 天到第 n 天），Nura 都可以按照当天的汇率购买一些小物品。每天她可以购买任意想要的小物品，但每件小物品在这 n 天内最多只能购买一次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Nura 找出她买齐 k 件小物品时的最小天数。Nura 始终使用 burles 支付，并按照购买当天的汇率进行兑换。Nura 不能购买美元或英镑，她始终只持有 burles。小物品按照其在输入中出现的顺序，编号为从 1 到 m 的整数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含四个整数 n、m、k、s（1 ≤ n ≤ 2·105，1 ≤ k ≤ m ≤ 2·105，1 ≤ s ≤ 109）——天数、小物品总数、所需购买的小物品数量以及 Nura 持有的 burles 数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个整数 ai（1 ≤ ai ≤ 106）——第 i 天 1 美元兑换 burles 的费用。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 n 个整数 bi（1 ≤ bi ≤ 106）——第 i 天一英镑兑换的布勒斯数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行中，每行包含两个整数 ti、ci（1 ≤ ti ≤ 2，1 ≤ ci ≤ 106）——小工具的类型及其价格。对于第一类小工具，价格以美元计；对于第二类小工具，价格以英镑计。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 Nura 无法购买 k 个小工具，请输出唯一一行数字 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，第一行应包含一个整数 d——Nura 拥有 k 个小工具时的最小日期编号。接下来的 k 行中，每行输出两个整数 qi、di——小工具的编号以及购买该小工具的日期。所有 qi 的值都应互不相同，但 di 的值可以相同（因此 Nura 可以在同一天购买多个小工具）。日期编号从 1 到 n。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个可行解，输出其中任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 用美元和英镑购买小工具",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

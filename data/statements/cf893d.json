@@ -1,0 +1,89 @@
+{
+  "code": "CF893D",
+  "letter": "D",
+  "title": "D. Credit Card",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/893/D",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Recenlty Luba got a credit card and started to use it. Let's consider n consecutive days Luba uses the card.",
+      "She starts with 0 money on her account.",
+      "In the evening of i-th day a transaction ai occurs. If ai > 0, then ai bourles are deposited to Luba's account. If ai < 0, then ai bourles are withdrawn. And if ai = 0, then the amount of money on Luba's account is checked.",
+      "In the morning of any of n days Luba can go to the bank and deposit any positive integer amount of burles to her account. But there is a limitation: the amount of money on the account can never exceed d.",
+      "It can happen that the amount of money goes greater than d by some transaction in the evening. In this case answer will be «-1».",
+      "Luba must not exceed this limit, and also she wants that every day her account is checked (the days when ai = 0) the amount of money on her account is non-negative. It takes a lot of time to go to the bank, so Luba wants to know the minimum number of days she needs to deposit some money to her account (if it is possible to meet all the requirements). Help her!"
+    ],
+    "input": [
+      "The first line contains two integers n, d (1 ≤ n ≤ 105, 1 ≤ d ≤ 109) —the number of days and the money limitation.",
+      "The second line contains n integer numbers a1, a2, ... an ( - 104 ≤ ai ≤ 104), where ai represents the transaction in i-th day."
+    ],
+    "output": [
+      "Print -1 if Luba cannot deposit the money to her account in such a way that the requirements are met. Otherwise print the minimum number of days Luba has to deposit money."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 10\n-1 5 0 -5 3",
+      "output": "0"
+    },
+    {
+      "input": "3 4\n-10 0 20",
+      "output": "-1"
+    },
+    {
+      "input": "5 10\n-5 0 10 -11 0",
+      "output": "2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "最近，Luba 得到了一张信用卡并开始使用它。考虑 Luba 使用这张卡的连续 n 天。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "她的账户初始余额为 0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第 i 天晚上，会发生一笔金额为 ai 的交易。如果 ai > 0，则向 Luba 的账户存入 ai 卢布。如果 ai < 0，则从账户中取出 ai 卢布。如果 ai = 0，则查询 Luba 账户中的余额。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 n 天中的任意一天早晨，Luba 都可以前往银行，向她的账户存入任意正整数卢布。但有一个限制：账户中的金额绝不能超过 d。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有时，一笔交易可能会导致账户中的金额在晚上超过 d。在这种情况下，答案为 «-1»。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Luba 不能超过这一限制，同时她还希望在每天检查账户时（即 ai = 0 的日子），账户中的金额都是非负的。前往银行需要花费很多时间，因此 Luba 想知道，为了向账户存入一些钱，她最少需要多少天（如果能够满足所有要求）。请帮助她！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n、d（1 ≤ n ≤ 105，1 ≤ d ≤ 109），分别表示天数和金额限制。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个整数 a1、a2、...、an（ -104 ≤ ai ≤ 104），其中 ai 表示第 i 天进行的交易。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 Luba 无法以满足要求的方式向账户存钱，则输出 -1。否则，输出 Luba 最少需要存钱的天数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 信用卡",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

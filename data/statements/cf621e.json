@@ -1,0 +1,88 @@
+{
+  "code": "CF621E",
+  "letter": "E",
+  "title": "E. Wet Shark and Blocks",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/621/E",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are b blocks of digits. Each one consisting of the same n digits, which are given to you in the input. Wet Shark must choose exactly one digit from each block and concatenate all of those digits together to form one large integer. For example, if he chooses digit 1 from the first block and digit 2 from the second block, he gets the integer 12.",
+      "Wet Shark then takes this number modulo x. Please, tell him how many ways he can choose one digit from each block so that he gets exactly k as the final result. As this number may be too large, print it modulo 109 + 7.",
+      "Note, that the number of ways to choose some digit in the block is equal to the number of it's occurrences. For example, there are 3 ways to choose digit 5 from block 3 5 6 7 8 9 5 1 1 1 1 5."
+    ],
+    "input": [
+      "The first line of the input contains four space-separated integers, n, b, k and x (2 ≤ n ≤ 50 000, 1 ≤ b ≤ 109, 0 ≤ k < x ≤ 100, x ≥ 2) — the number of digits in one block, the number of blocks, interesting remainder modulo x and modulo x itself.",
+      "The next line contains n space separated integers ai (1 ≤ ai ≤ 9), that give the digits contained in each block."
+    ],
+    "output": [
+      "Print the number of ways to pick exactly one digit from each blocks, such that the resulting integer equals k modulo x."
+    ],
+    "note": [
+      "In the second sample possible integers are 22, 26, 62 and 66. None of them gives the remainder 1 modulo 2.",
+      "In the third sample integers 11, 13, 21, 23, 31 and 33 have remainder 1 modulo 2. There is exactly one way to obtain each of these integers, so the total answer is 6."
+    ]
+  },
+  "examples": [
+    {
+      "input": "12 1 5 10\n3 5 6 7 8 9 5 1 1 1 1 5",
+      "output": "3"
+    },
+    {
+      "input": "3 2 1 2\n6 2 2",
+      "output": "0"
+    },
+    {
+      "input": "3 2 1 2\n3 1 2",
+      "output": "6"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含四个以空格分隔的整数 n、b、k 和 x（2 ≤ n ≤ 50 000，1 ≤ b ≤ 10^9，0 ≤ k < x ≤ 100，x ≥ 2），分别表示一个方块中的数字个数、方块的数量、感兴趣的模 x 余数以及模数 x 本身。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 n 个用空格分隔的整数 ai（1 ≤ ai ≤ 9），表示每个块中包含的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出从每个块中恰好选择一个数字，使得到的整数模 x 的余数等于 k 的方案数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第二个样例中，可能得到的整数为 22、26、62 和 66。它们中没有任何一个模 2 的余数为 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，整数 11、13、21、23、31 和 33 模 2 的余数均为 1。得到这些整数中的每一个恰好有一种方案，因此答案总数为 6。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "有 b 个数字方块。每个方块都由相同的 n 个数字组成，这些数字会在输入中给出。Wet Shark 必须从每个方块中恰好选择一个数字，并将所有选出的数字拼接起来，形成一个大整数。例如，如果他从第一个方块中选择数字 1，从第二个方块中选择数字 2，那么得到的整数就是 12。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后，Wet Shark 会将这个数对 x 取模。请告诉他，有多少种从每个方块中选择一个数字的方案，使得最终结果恰好为 k。由于这个数可能很大，请将答案对 10^9 + 7 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，从一个方块中选择某个数字的方案数等于该数字出现的次数。例如，对于方块 3 5 6 7 8 9 5 1 1 1 1 5，选择数字 5 有 3 种方案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 湿鲨鱼和方块",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

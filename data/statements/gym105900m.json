@@ -1,0 +1,75 @@
+{
+  "code": "GYM105900M",
+  "letter": "M",
+  "title": "M. Minimum Path",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105900/problem/M",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "After a successful expedition for a marathon at UFG, the competitors AlbertoTDNeto, duduFreire, EYZ, henriqueramos.qs, and MagePetrus made a pact: every time the 5 of them meet, they must roll a D100 (100-sided die). If the rolled number is 100, they must immediately go to Goiânia.",
+      "After many meetings, this finally happened, and the competitors will keep their promises. They all get into Henrique's car, which will drive them to Goiânia. The marathon runners want to take the shortest possible route from Brasília to Goiânia, of course. Additionally, since the car is quite heavy, Henrique is worried about the possibility of running out of fuel in the middle of the road. So, among the shortest paths, he wants a path that minimizes the longest distance the car will travel between two gas stations.",
+      "The gas stations are numbered from 1$$$1$$$ to N$$$N$$$. Henrique will start from Brasília at gas station number 1$$$1$$$ and will finish his journey at gas station number N$$$N$$$, in Goiânia. There are M$$$M$$$ roads connecting pairs of distinct gas stations. For each i$$$i$$$ from 1$$$1$$$ to M$$$M$$$, road number i$$$i$$$ starts from gas station ai$$$a_i$$$, leads to gas station bi$$$b_i$$$, and has a length of wi$$$w_i$$$ kilometers. It is only possible to travel this road in the direction from ai$$$a_i$$$ to bi$$$b_i$$$. It is guaranteed that there is a path from 1$$$1$$$ to N$$$N$$$.",
+      "Help Henrique find a shortest path that minimizes the longest distance traveled between two consecutive gas stations."
+    ],
+    "input": [
+      "The first line contains two integers 2≤N,M≤2⋅105$$$2 \\leq N, M \\leq 2 \\cdot 10^5$$$: the number of gas stations and the number of roads connecting pairs of distinct gas stations, respectively.",
+      "Next, there are M$$$M$$$ input lines. The i$$$i$$$-th of these lines contains three integers ai,bi$$$a_i, b_i$$$, and wi$$$w_i$$$, with 1≤ai,bi≤N$$$1 \\leq a_i, b_i \\leq N$$$ and 1≤wi≤105$$$1 \\leq w_i \\leq 10^5$$$, representing a one-way road from gas station ai$$$a_i$$$ to gas station bi$$$b_i$$$ with a length of wi$$$w_i$$$ kilometers."
+    ],
+    "output": [
+      "Print two integers, in this order: the length of the shortest path and the length of the longest edge traveled in a shortest path that minimizes the longest edge traveled."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 6\n1 2 1\n1 3 10\n1 4 1\n2 3 3\n3 5 2\n4 5 5",
+      "output": "6 3"
+    },
+    {
+      "input": "2 2\n1 2 1\n1 2 2",
+      "output": "1 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在 UFG 的马拉松比赛中成功完成一次探险后，参赛者 AlbertoTDNeto、duduFreire、EYZ、henriqueramos.qs 和 MagePetrus 立下约定：每当他们五人聚在一起时，都必须掷一次 D100（100 面骰子）。如果掷出的数字是 100，他们就必须立即前往 Goiânia。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "聚会了很多次之后，这件事终于发生了，参赛者们也会信守承诺。他们全都上了 Henrique 的车，由他开车送他们去 Goiânia。当然，这些马拉松选手想要从 Brasília 到 Goiânia 走尽可能短的路线。此外，由于车相当重，Henrique 担心在路上会耗尽燃油。因此，在所有最短路径中，他想选择一条使汽车在两个加油站之间行驶的最长距离最小的路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "加油站的编号从 1$$$1$$$ 到 N$$$N$$$。Henrique 将从 Brasília 的 1$$$1$$$ 号加油站出发，并在 Goiânia 的 N$$$N$$$ 号加油站结束旅程。有 M$$$M$$$ 条道路连接两两不同的加油站。对于从 1$$$1$$$ 到 M$$$M$$$ 的每个 i$$$i$$$，编号为 i$$$i$$$ 的道路从加油站 ai$$$a_i$$$ 出发，通往加油站 bi$$$b_i$$$，长度为 wi$$$w_i$$$ 千米。这条道路只能沿 ai$$$a_i$$$ 到 bi$$$b_i$$$ 的方向行驶。保证存在一条从 1$$$1$$$ 到 N$$$N$$$ 的路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Henrique 找到一条最短路径，使得在两个相邻加油站之间行驶的最长距离最小。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 2≤N,M≤2⋅105$$$2 \\leq N, M \\leq 2 \\cdot 10^5$$$：分别表示加油站的数量，以及连接不同加油站对之间的道路数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来有 M$$$M$$$ 行输入。第 i$$$i$$$ 行包含三个整数 ai,bi$$$a_i, b_i$$$ 和 wi$$$w_i$$$，其中 1≤ai,bi≤N$$$1 \\leq a_i, b_i \\leq N$$$ 且 1≤wi≤105$$$1 \\leq w_i \\leq 10^5$$$，表示一条从加油站 ai$$$a_i$$$ 通往加油站 bi$$$b_i$$$、长度为 wi$$$w_i$$$ 千米的单行道。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "按顺序输出两个整数：最短路径的长度，以及在所有最短路径中，使经过的最长边最短时，该最长边的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "M. 最短路径",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

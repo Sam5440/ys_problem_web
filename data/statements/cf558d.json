@@ -1,0 +1,147 @@
+{
+  "code": "CF558D",
+  "letter": "D",
+  "title": "D. Guess Your Way Out! II",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/558/D",
+  "difficulty": "2300",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Amr bought a new video game \"Guess Your Way Out! II\". The goal of the game is to find an exit from the maze that looks like a perfect binary tree of height h. The player is initially standing at the root of the tree and the exit from the tree is located at some leaf node.",
+      "Let's index all the nodes of the tree such that",
+      "The root is number 1",
+      "Each internal node i (i ≤ 2h - 1 - 1) will have a left child with index = 2i and a right child with index = 2i + 1",
+      "The level of a node is defined as 1 for a root, or 1 + level of parent of the node otherwise. The vertices of the level h are called leaves. The exit to the maze is located at some leaf node n, the player doesn't know where the exit is so he has to guess his way out!",
+      "In the new version of the game the player is allowed to ask questions on the format \"Does the ancestor(exit, i) node number belong to the range [L, R]?\". Here ancestor(v, i) is the ancestor of a node v that located in the level i. The game will answer with \"Yes\" or \"No\" only. The game is designed such that it doesn't always answer correctly, and sometimes it cheats to confuse the player!.",
+      "Amr asked a lot of questions and got confused by all these answers, so he asked you to help him. Given the questions and its answers, can you identify whether the game is telling contradictory information or not? If the information is not contradictory and the exit node can be determined uniquely, output its number. If the information is not contradictory, but the exit node isn't defined uniquely, output that the number of questions is not sufficient. Otherwise output that the information is contradictory."
+    ],
+    "input": [
+      "The first line contains two integers h, q (1 ≤ h ≤ 50, 0 ≤ q ≤ 105), the height of the tree and the number of questions respectively.",
+      "The next q lines will contain four integers each i, L, R, ans (1 ≤ i ≤ h, 2i - 1 ≤ L ≤ R ≤ 2i - 1, ![](https://espresso.codeforces.com/efee5db22bd8e5a4848907ab50b074b75fa6f3c7.png)), representing a question as described in the statement with its answer (ans = 1 if the answer is \"Yes\" and ans = 0 if the answer is \"No\")."
+    ],
+    "output": [
+      "If the information provided by the game is contradictory output \"Game cheated!\" without the quotes.",
+      "Else if you can uniquely identify the exit to the maze output its index.",
+      "Otherwise output \"Data not sufficient!\" without the quotes."
+    ],
+    "note": [
+      "Node u is an ancestor of node v if and only if",
+      "u is the same node as v,",
+      "u is the parent of node v,",
+      "or u is an ancestor of the parent of node v.",
+      "In the first sample test there are 4 leaf nodes 4, 5, 6, 7. The first question says that the node isn't in the range [4, 6] so the exit is node number 7.",
+      "In the second sample test there are 8 leaf nodes. After the first question the exit is in the range [10, 14]. After the second and the third questions only node number 14 is correct. Check the picture below to fully understand.",
+      "![](https://espresso.codeforces.com/ed7035c51a810ae46fc6ef9e8e8319d343bfcfa9.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1\n3 4 6 0",
+      "output": "7"
+    },
+    {
+      "input": "4 3\n4 10 14 1\n3 6 6 0\n2 3 3 1",
+      "output": "14"
+    },
+    {
+      "input": "4 2\n3 4 6 1\n4 12 15 1",
+      "output": "Data not sufficient!"
+    },
+    {
+      "input": "4 2\n3 4 5 1\n2 3 3 1",
+      "output": "Game cheated!"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "当且仅当节点 u 是节点 v 的祖先，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "u 与 v 是同一个节点，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "u 是节点 v 的父节点，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "或者 u 是节点 v 的父节点的祖先。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个样例测试中，有 4 个叶子节点 4、5、6、7。第一个问题说明该节点不在范围 [4, 6] 内，因此出口是编号为 7 的节点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例测试中，有 8 个叶子节点。第一个问题之后，出口位于范围 [10, 14] 内。在第二个和第三个问题之后，只有编号为 14 的节点是正确的。查看下面的图片以便完全理解。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/ed7035c51a810ae46fc6ef9e8e8319d343bfcfa9.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Amr 买了一款名为“猜出你的路！II”的新电子游戏。游戏的目标是从一个看起来像高度为 h 的完美二叉树的迷宫中找到出口。玩家最初站在树的根节点，树的出口位于某个叶节点处。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在，为树中的所有节点编号，使得",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "根节点的编号为 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个内部节点 i（i ≤ 2h - 1 - 1）都有一个编号为 2i 的左孩子和一个编号为 2i + 1 的右孩子。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "节点的层数定义如下：根节点的层数为 1；对于其他节点，其层数为其父节点层数加 1。位于第 h 层的顶点称为叶节点。迷宫的出口位于某个叶节点 n，但玩家不知道出口在哪里，因此他必须猜出逃生路线！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在游戏的新版本中，玩家可以询问格式为“节点编号 ancestor(exit, i) 是否属于区间 [L, R]？”的问题。其中，ancestor(v, i) 是节点 v 在第 i 层的祖先节点。游戏只会回答“Yes”或“No”。游戏被设计成不会始终正确回答，有时还会为了迷惑玩家而撒谎！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Amr 提出了许多问题，并被这些回答弄糊涂了，因此他请你帮助他。给定这些问题及其回答，你能判断游戏是否提供了相互矛盾的信息吗？如果信息不矛盾且出口节点可以唯一确定，则输出其编号。如果信息不矛盾，但出口节点无法唯一确定，则输出问题数量不足。否则输出信息相互矛盾。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 h、q（1 ≤ h ≤ 50，0 ≤ q ≤ 105），分别表示树的高度和问题的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q 行每行包含四个整数 i、L、R、ans(1 ≤ i ≤ h，2i - 1 ≤ L ≤ R ≤ 2i - 1，![](https://espresso.codeforces.com/efee5db22bd8e5a4848907ab50b074b75fa6f3c7.png))，表示题面中所描述的一个问题及其回答(如果回答是“Yes”，则 ans = 1；如果回答是“No”，则 ans = 0)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果游戏提供的信息相互矛盾，则输出不带引号的“Game cheated!”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，如果你可以唯一确定迷宫出口，则输出其编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，输出不带引号的“Data not sufficient!”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Guess Your Way Out! II",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "code": "CF1310A",
+  "letter": "A",
+  "title": "A. Recommendations",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1310/A",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "VK news recommendation system daily selects interesting publications of one of n$$$n$$$ disjoint categories for each user. Each publication belongs to exactly one category. For each category i$$$i$$$ batch algorithm selects ai$$$a_i$$$ publications.",
+      "The latest A/B test suggests that users are reading recommended publications more actively if each category has a different number of publications within daily recommendations. The targeted algorithm can find a single interesting publication of i$$$i$$$-th category within ti$$$t_i$$$ seconds.",
+      "What is the minimum total time necessary to add publications to the result of batch algorithm execution, so all categories have a different number of publications? You can't remove publications recommended by the batch algorithm."
+    ],
+    "input": [
+      "The first line of input consists of single integer n$$$n$$$ — the number of news categories (1≤n≤200000$$$1 \\le n \\le 200\\,000$$$).",
+      "The second line of input consists of n$$$n$$$ integers ai$$$a_i$$$ — the number of publications of i$$$i$$$-th category selected by the batch algorithm (1≤ai≤109$$$1 \\le a_i \\le 10^9$$$).",
+      "The third line of input consists of n$$$n$$$ integers ti$$$t_i$$$ — time it takes for targeted algorithm to find one new publication of category i$$$i$$$ (1≤ti≤105)$$$1 \\le t_i \\le 10^5)$$$."
+    ],
+    "output": [
+      "Print one integer — the minimal required time for the targeted algorithm to get rid of categories with the same size."
+    ],
+    "note": [
+      "In the first example, it is possible to find three publications of the second type, which will take 6 seconds.",
+      "In the second example, all news categories contain a different number of publications."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3 7 9 7 8\n5 2 5 7 5",
+      "output": "6"
+    },
+    {
+      "input": "5\n1 2 3 4 5\n1 1 1 1 1",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "VK 新闻推荐系统每天为每位用户从 n$$$n$$$ 个互不相交的类别中选择感兴趣的出版物。每篇出版物恰好属于一个类别。对于每个类别 i$$$i$$$，批处理算法选择 ai$$$a_i$$$ 篇出版物。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最新的 A/B 测试表明，如果每日推荐中每个类别包含的出版物数量各不相同，用户会更加积极地阅读推荐的出版物。目标算法可以在 ti$$$t_i$$$ 秒内找到第 i$$$i$$$ 个类别中的一篇感兴趣的出版物。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了使所有类别中的出版物数量各不相同，向批处理算法执行结果中添加出版物所需的最短总时间是多少？不能删除批处理算法推荐的出版物。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$——新闻类别的数量(1≤n≤200000$$$1 \\le n \\le 200\\,000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第二行包含 n$$$n$$$ 个整数 ai$$$a_i$$$，表示批处理算法为第 i$$$i$$$ 个类别选择的出版物数量(1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第三行包含 n$$$n$$$ 个整数 ti$$$t_i$$$，表示目标算法找到一篇类别 i$$$i$$$ 的新出版物所需的时间(1≤ti≤105)$$$1 \\le t_i \\le 10^5)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示目标算法消除大小相同的类别所需的最短时间。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，可以找到 3 篇第二类出版物，这需要 6 秒。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，所有新闻类别都包含不同数量的出版物。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 推荐",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

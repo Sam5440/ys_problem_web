@@ -1,0 +1,159 @@
+{
+  "code": "GYM106632A",
+  "letter": "A",
+  "title": "A. Shaban on Mars",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106632/problem/A",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Shaban is moving from Earth to Mars, where the laws of physics are a little unusual.",
+      "On Earth, when several weights are placed on the same side of a balance scale, their weights are added together. For example, weights $$$2$$$ and $$$5$$$ have total weight $$$2 + 5 = 7$$$.",
+      "On Mars, however, weights are multiplied instead of added. Thus weights $$$2$$$ and $$$5$$$ have total weight $$$2 \\cdot 5 = 10$$$.",
+      "![](https://espresso.codeforces.com/fa0b13b8cd52ff3d1171821438ca2d5f2cd72587.png)",
+      "Shaban wants to take a collection of balance weights with positive integer values to Mars. For every vegetable whose weight is an integer from $$$1$$$ to $$$m$$$, inclusive, he must be able to determine its exact weight by placing a non-empty subset of his weights on the empty side of the balance. On Mars, this means that the product of the chosen weights must be equal to the vegetable's weight.",
+      "Multiple carried weights may have the same value.",
+      "Your task is to find the minimum number of weights Shaban needs to take."
+    ],
+    "input": [
+      "The first line contains one integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "Each test case begins with a line containing one integer $$$m$$$ ($$$1 \\le m \\le 10^6$$$)."
+    ],
+    "output": [
+      "For each test case, print one integer — the minimum number of weights Shaban needs to take so that every integer weight from $$$1$$$ to $$$m$$$ can be represented as the product of a non-empty subset of his weights."
+    ],
+    "note": [
+      "For $$$m = 6$$$, one optimal collection is $$$\\{1, 2, 3, 4, 5\\}$$$. The weight $$$1$$$ is necessary because the chosen subset must be non-empty. The weights $$$1$$$, $$$2$$$, $$$3$$$, $$$4$$$, and $$$5$$$ are represented directly, and $$$6 = 2 \\cdot 3$$$.",
+      "For $$$m = 9$$$, one optimal collection is $$$\\{1, 2, 3, 4, 5, 7, 9\\}$$$. In particular, $$$8 = 2 \\cdot 4$$$ and $$$9$$$ is represented directly."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n6\n9",
+      "output": "5\n7"
+    }
+  ],
+  "titleZh": {
+    "0": "A. 火星上的沙班",
+    "caiyun": "A. 火星上的沙班",
+    "youdao": "答：火星上的沙班",
+    "deepl": "A.火星上的沙班",
+    "iflyrec": "火星上的A.沙班",
+    "ai": "A. 火星上的 Shaban",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "沙班正在从地球移动到火星，那里的物理定律有点不寻常。",
+        "youdao": "沙班将从地球搬到火星，那里的物理定律有点不同寻常。",
+        "deepl": "沙班正从地球前往火星，那里的物理定律有点不寻常。",
+        "iflyrec": "沙班正从地球前往火星，那里的物理定律有点不寻常。",
+        "ai": "Shaban 正在从地球前往火星，那里的物理定律有些不同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "在地球上，当几个权重放在天平的同一侧时，它们的权重会相加。例如，权重 $$$2$$$ 和 $$$5$$$ 的总重量为 $$$2 + 5 = 7$$$。",
+        "youdao": "在地球上，当几个砝码放在天平的同一侧时，它们的重量会加在一起。例如，权重$$$2$$$和$$$5$$$的总权重为$$$2 + 5 = 7$$$。",
+        "deepl": "在地球上，当几个砝码放在天平秤的同一侧时，它们的重量会相加。例如，砝码 $$$2$$$ 和 $$$5$$$ 的总重量为 $$$2 + 5 = 7$$$。",
+        "iflyrec": "在地球上，当几个砝码放在天平的同一侧时，它们的重量就加在一起。例如，权重$$$2$$$和$$$5$$$具有总权重$$$2 + 5 = 7$$$。",
+        "ai": "在地球上，当若干砝码放在天平的同一侧时，它们的重量会相加。例如，砝码 $$$2$$$ 和 $$$5$$$ 的总重量为 $$$2 + 5 = 7$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "然而，在火星上，重量是相乘而非相加的。因此，重量 $$$2$$$ 和 $$$5$$$ 的总重量为 $$$2 \\cdot 5 = 10$$$。",
+        "youdao": "然而，在火星上，重量是相乘而不是相加的。因此，权重$$$2$$$和$$$5$$$的总权重为$$$2 \\cdot 5 = 10$$$。",
+        "deepl": "但在火星上，权重是相乘而不是相加的。因此，权重$$$2$$$和$$$5$$$的总权重为$$$2 \\cdot 5 = 10$$$。",
+        "iflyrec": "然而，在火星上，重量是相乘而不是相加。因此，重量$$$2$$$和$$$5$$$具有总重量$$$2 \\cdot 5 = 10$$$。",
+        "ai": "然而在火星上，砝码的重量会相乘，而不是相加。因此，砝码 $$$2$$$ 和 $$$5$$$ 的总重量为 $$$2 \\cdot 5 = 10$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "![](https://espresso.codeforces.com/fa0b13b8cd52ff3d1171821438ca2d5f2cd72587.png)",
+        "deepl": "![](https://espresso.codeforces.com/fa0b13b8cd52ff3d1171821438ca2d5f2cd72587.png)",
+        "youdao": "![](https://espresso.codeforces.com/fa0b13b8cd52ff3d1171821438ca2d5f2cd72587.png)",
+        "iflyrec": "![](https://espresso.codeforces.com/fa0b13b8cd52ff3d1171821438ca2d5f2cd72587.png)",
+        "ai": "![](https://espresso.codeforces.com/fa0b13b8cd52ff3d1171821438ca2d5f2cd72587.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "沙班想把一组具有正整数值的平衡重量带到火星。对于每种重量为 $$$1$$$ 到 $$$m$$$ 之间整数值的蔬菜，包括蔬菜在内，他必须能够通过将其重量的非空子集放在平衡的空侧来确定其确切重量。在火星上，这意味着所选重量的乘积必须等于蔬菜的重量。",
+        "youdao": "Shaban想带一组正整数的平衡权值去火星。对于重量为$$$1$$$到$$$m$$$(包括在内）之间的整数的每一种蔬菜，他必须能够通过将其重量的非空子集放在天平的空一侧来确定其确切重量。在火星上，这意味着所选重量的乘积必须等于蔬菜的重量。",
+        "ai": "Shaban 想要带一组重量为正整数的砝码前往火星。对于重量为 $$$1$$$ 到 $$$m$$$(含)之间的每一种蔬菜，他都必须能够通过将其砝码中的一个非空子集放在天平的空盘上，确定该蔬菜的准确重量。在火星上，这意味着所选砝码的乘积必须等于该蔬菜的重量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "多个承载重量可能具有相同的值。",
+        "youdao": "多个携带的重量可能具有相同的值。",
+        "deepl": "多个携带权重可能具有相同的值。",
+        "iflyrec": "多个承载权重可以具有相同的值。",
+        "ai": "所携带的砝码中可以有多个具有相同的重量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "你的任务是找到 Shaban 需要承受的最小重量。",
+        "youdao": "你的任务是找到Shaban需要承担的最小权重。",
+        "deepl": "您的任务是找出沙班需要承受的最小重量数。",
+        "iflyrec": "你的任务是找到沙班需要承受的最小重量。",
+        "ai": "你的任务是找出 Shaban 需要携带的最少砝码数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+        "youdao": "第一行包含一个整数$$$t$$$ ($$$1 \\le t \\le 10^4$$$）—测试用例的数量。",
+        "deepl": "第一行包含一个整数 $$$t$$$ ($$$1 \\le t \\le 10^4$$$）--测试用例数。",
+        "iflyrec": "第一行包含一个整数$$$t$$$($$$1 \\le t \\le 10^4$$$）—测试用例的数量。",
+        "ai": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "每个测试用例都以包含一个整数 $$$m$$$($$$1 \\le m \\le 10^6$$$) 的行开始。",
+        "youdao": "每个测试用例以包含一个整数$$$m$$$ ($$$1 \\le m \\le 10^6$$$）的一行开始。",
+        "deepl": "每个测试用例都以包含一个整数 $$$m$$$ ($$$1 \\le m \\le 10^6$$$）的一行开始。",
+        "iflyrec": "每个测试用例以包含一个整数$$$m$$$($$$1 \\le m \\le 10^6$$$）的行开始。",
+        "ai": "每个测试用例的开头一行包含一个整数 $$$m$$$($$$1 \\le m \\le 10^6$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "对于每个测试用例，打印一个整数——Shaban 所需的最小权重数，这样从 $$$1$$$ 到 $$$m$$$ 的每个整数权重都可以表示为其权重的非空子集的乘积。",
+        "youdao": "对于每个测试用例，打印一个整数——Shaban需要取的最小权值，这样从$$$1$$$到$$$m$$$的每个整数权值都可以表示为其权值的非空子集的乘积。",
+        "deepl": "对于每个测试用例，打印一个整数 - 沙班需要采取的最小权重数，以便从 $$$1$$$ 到 $$$m$$$ 的每个整数权重都可以表示为其权重的非空子集的乘积。",
+        "iflyrec": "对于每个测试用例，打印一个整数—Shaban需要采用的最小权重数，以便从$$$1$$$到$$$m$$$的每个整数权重都可以表示为其权重的非空子集的乘积。",
+        "ai": "对于每个测试用例，输出一个整数——Shaban 需要取出的砝码的最少数量，使得从 $$$1$$$ 到 $$$m$$$ 的每个整数重量都能表示为他所取砝码的一个非空子集的乘积。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "对于 $$$m = 6$$$，一个最优集合是 $$$\\{1, 2, 3, 4, 5\\}$$$。权重 $$$1$$$ 是必要的，因为选择的子集必须是非空的。权重 $$$1$$$、$$$2$$$、$$$3$$$、$$$4$$$ 和 $$$5$$$ 直接表示，并且 $$$6 = 2 \\cdot 3$$$。",
+        "youdao": "对于$$$m = 6$$$，一个最优集合是$$$\\{1, 2, 3, 4, 5\\}$$$。权值$$$1$$$是必需的，因为所选子集必须是非空的。权重$$$1$$$， $$$2$$$, $$$3$$$, $$$4$$$， $$$5$$$直接表示，$$$6 = 2 \\cdot 3$$$。",
+        "deepl": "对于 $$$m = 6$$$，一个最佳集合是 $$$\\{1, 2, 3, 4, 5\\}$$$。权重$$$1$$$是必要的，因为所选的子集必须是非空的。权重$$$1$$$、$$$2$$$、$$$3$$$、$$$4$$$和$$$5$$$可以直接表示，$$$6 = 2 \\cdot 3$$$也可以直接表示。",
+        "iflyrec": "对于$$$m = 6$$$，一个最佳集合是$$$\\{1, 2, 3, 4, 5\\}$$$。权重$$$1$$$是必需的，因为所选择的子集必须是非空的。直接表示权重$$$1$$$、$$$2$$$、$$$3$$$、$$$4$$$和$$$5$$$，以及$$$6 = 2 \\cdot 3$$$。",
+        "ai": "对于 $$$m = 6$$$，一种最优的砝码集合是 $$$\\{1, 2, 3, 4, 5\\}$$$。由于选取的子集必须非空，因此砝码 $$$1$$$ 是必要的。砝码 $$$1$$$、$$$2$$$、$$$3$$$、$$$4$$$ 和 $$$5$$$ 可以直接表示，并且 $$$6 = 2 \\cdot 3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "对于 $$$m = 9$$$，一个最优集合是 $$$\\{1, 2, 3, 4, 5, 7, 9\\}$$$。特别是 $$$8 = 2 \\cdot 4$$$ 和 $$$9$$$ 直接表示。",
+        "youdao": "对于$$$m = 9$$$，一个最优集合是$$$\\{1, 2, 3, 4, 5, 7, 9\\}$$$。其中，$$$8 = 2 \\cdot 4$$$和$$$9$$$是直接表示的。",
+        "deepl": "对于$$$m = 9$$$来说，$$$\\{1, 2, 3, 4, 5, 7, 9\\}$$$是一个最佳集合。特别是$$$8 = 2 \\cdot 4$$$和$$$9$$$可以直接表示。",
+        "iflyrec": "对于$$$m = 9$$$，一个最佳集合是$$$\\{1, 2, 3, 4, 5, 7, 9\\}$$$。特别地，直接表示$$$8 = 2 \\cdot 4$$$和$$$9$$$。",
+        "ai": "对于 $$$m = 9$$$，一种最优的砝码集合是 $$$\\{1, 2, 3, 4, 5, 7, 9\\}$$$。特别地，$$$8 = 2 \\cdot 4$$$ 和 $$$9$$$ 可以直接表示。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.115Z",
+  "translatedBy": [
+    "deepl",
+    "youdao",
+    "caiyun",
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

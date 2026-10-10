@@ -1,0 +1,89 @@
+{
+  "code": "CF97C",
+  "letter": "C",
+  "title": "C. Winning Strategy",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/97/C",
+  "difficulty": "2400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "One university has just found out about a sport programming contest called ACM ICPC v2.0. This contest doesn't differ much from the well-known ACM ICPC, for example, the participants are not allowed to take part in the finals more than two times. However, there is one notable difference: the teams in the contest should consist of exactly n participants.",
+      "Having taken part in several ACM ICPC v2.0 finals and having not won any medals, the students and the university governors realized that it's high time they changed something about the preparation process. Specifically, as the first innovation it was decided to change the teams' formation process. Having spent considerable amount of time on studying the statistics of other universities' performance, they managed to receive some interesting information: the dependence between the probability of winning a medal and the number of team members that participated in the finals in the past. More formally, we know n + 1 real numbers p0 ≤ p1 ≤ ... ≤ pn, where pi is the probability of getting a medal on the finals if the team has i participants of previous finals, and other n - i participants arrived to the finals for the first time.",
+      "Despite such useful data, the university governors are unable to determine such team forming tactics that would provide the maximum probability of winning a medal at ACM ICPC v2.0 finals on average (we are supposed to want to provide such result to the far future and we are also supposed to have an endless supply of students). And how about you, can you offer such optimal tactic? At the first stage the university governors want to know the value of maximum average probability.",
+      "More formally, suppose that the university sends a team to the k-th world finals. The team has ak participants of previous finals (0 ≤ ak ≤ n). Since each person can participate in the finals no more than twice, the following condition must be true: ![](https://espresso.codeforces.com/38ca30450ecc6c938b273b8b2bcd77d1135b220b.png). Your task is to choose sequence ![](https://espresso.codeforces.com/fca563f5585177fc694cfc79f5b85afeeb16c150.png) so that the limit Ψ exists and it's value is maximal:",
+      "![](https://espresso.codeforces.com/537d024db3ee23780c0f8489c21a46554705dd19.png)",
+      "As ![](https://espresso.codeforces.com/fca563f5585177fc694cfc79f5b85afeeb16c150.png) is an infinite sequence, you should only print the maximum value of the Ψ limit."
+    ],
+    "input": [
+      "The first line contains an integer n (3 ≤ n ≤ 100), n is the number of team participants. The second line contains n + 1 real numbers with no more than 6 digits after decimal point pi (0 ≤ i ≤ n, 0 ≤ pi ≤ 1) — the probability of that the team will win a medal if it contains i participants who has already been on the finals. Also the condition pi ≤ pi + 1 should be fulfilled for all 0 ≤ i ≤ n - 1."
+    ],
+    "output": [
+      "Print the only real number — the expected average number of medals won per year if the optimal strategy is used. The result may have absolute or relative error 10 - 6."
+    ],
+    "note": [
+      "In the second test, no matter what participants the team contains, it is doomed to be successful."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n0.115590 0.384031 0.443128 0.562356",
+      "output": "0.4286122500"
+    },
+    {
+      "input": "3\n1 1 1 1",
+      "output": "0.9999999999"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "某所大学刚刚得知一项名为 ACM ICPC v2.0 的竞技编程竞赛。该竞赛与广为人知的 ACM ICPC 并没有太大区别，例如，参赛者不允许参加决赛超过两次。然而，两者之间有一个显著的区别：该竞赛中的队伍必须恰好由 n 名参赛者组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在参加了数届 ACM ICPC v2.0 决赛却未获得任何奖牌后，学生和大学管理者意识到，现在是时候改变准备过程中的一些做法了。具体来说，他们决定进行的第一项创新是改变队伍的组建过程。在花费了大量时间研究其他大学的比赛表现统计数据后，他们获得了一些有趣的信息：获奖概率与队伍成员中曾参加过往届决赛的人数之间的关系。更正式地说，我们知道 n + 1 个实数 p0 ≤ p1 ≤ ... ≤ pn，其中，如果队伍中有 i 名成员参加过往届决赛，而其余 n - i 名成员是第一次参加决赛，那么 pi 就是该队在决赛中获得奖牌的概率。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "尽管拥有如此有用的数据，大学管理者仍无法确定一种组队策略，使得队伍在 ACM ICPC v2.0 决赛中获得奖牌的平均概率最大（我们假设他们希望在遥远的未来也能获得这样的结果，并且学生的供应是无限的）。那么你呢，能否提出这样一种最优策略？在第一阶段，大学管理者希望知道最大平均概率的值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更正式地说，假设该大学派出一支队伍参加第 k 次世界总决赛。这支队伍中有 ak 名成员参加过往届决赛(0 ≤ ak ≤ n)。由于每个人参加决赛的次数不能超过两次，因此必须满足以下条件：![](https://espresso.codeforces.com/38ca30450ecc6c938b273b8b2bcd77d1135b220b.png)。你的任务是选择序列 ![](https://espresso.codeforces.com/fca563f5585177fc694cfc79f5b85afeeb16c150.png)，使得极限 Ψ 存在且其值最大：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/537d024db3ee23780c0f8489c21a46554705dd19.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于 ![](https://espresso.codeforces.com/fca563f5585177fc694cfc79f5b85afeeb16c150.png) 是一个无限序列，你只需输出 Ψ 的极限的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（3 ≤ n ≤ 100），表示队伍中参赛者的数量。第二行包含 n + 1 个小数点后不超过 6 位的实数 p_i（0 ≤ i ≤ n，0 ≤ p_i ≤ 1），表示当队伍中有 i 名已经参加过决赛的参赛者时，队伍赢得奖牌的概率。此外，对于所有 0 ≤ i ≤ n - 1，都应满足 p_i ≤ p_{i + 1}。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个实数，即采用最优策略时每年获得奖牌数量的期望平均值。答案的绝对误差或相对误差不超过 10 - 6。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第二个测试中，无论队伍由哪些参赛者组成，队伍都必然会成功。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 获胜策略",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

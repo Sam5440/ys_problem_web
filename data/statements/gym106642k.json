@@ -1,0 +1,157 @@
+{
+  "code": "GYM106642K",
+  "letter": "K",
+  "title": "K. One More One",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106642/problem/K",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a binary grid $$$a$$$ with $$$n$$$ rows and $$$m$$$ columns.",
+      "Three cells form an angle if they can be written as $$$(i,j)$$$, $$$(i,y)$$$, and $$$(x,j)$$$, where $$$x \\ne i$$$ and $$$y \\ne j$$$, and all three cells contain $$$1$$$. The cell $$$(i,j)$$$ is the corner of the angle.",
+      "You must choose exactly one cell containing $$$0$$$ and change it to $$$1$$$.",
+      "Find the maximum possible number of angles after the change, and the number of cells whose change gives this maximum.",
+      "It is guaranteed that the grid contains at least one $$$0$$$."
+    ],
+    "input": [
+      "The first line contains an integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "The first line of each test case contains two integers $$$n$$$ and $$$m$$$ ($$$1 \\le n,m \\le 2 \\cdot 10^5$$$) — the number of rows and columns.",
+      "Each of the next $$$n$$$ lines contains a binary string of length $$$m$$$ describing one row of the grid.",
+      "Each test case contains at least one $$$0$$$.",
+      "It is guaranteed that the sum of $$$n \\cdot m$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print two integers: the maximum possible number of angles and the number of cells whose change gives this maximum."
+    ],
+    "note": [
+      "In the first test case, either zero creates one angle. In the second, changing the only zero makes each of the four cells the corner of an angle. In the fourth, any cell in the second row creates two angles. In the fifth, a one-row grid cannot contain an angle, so either zero is optimal."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 2\n10\n01\n2 2\n11\n10\n3 3\n110\n100\n000\n2 3\n111\n000\n1 4\n1010",
+      "output": "1 2\n4 1\n4 1\n2 3\n0 2"
+    }
+  ],
+  "titleZh": {
+    "0": "K. 一个又一个",
+    "caiyun": "K. 一个又一个",
+    "youdao": "K.再来一个",
+    "deepl": "K.再来一个",
+    "iflyrec": "K.再来一个。",
+    "ai": "K. 再多一个一",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "你获得了一个二进制网格 $$$a$$$，其中包含 $$$n$$$ 行和 $$$m$$$ 列。",
+        "youdao": "你得到一个二进制网格$$$a$$$，有$$$n$$$行和$$$m$$$列。",
+        "deepl": "给你一个包含 $$$n$$$ 行和 $$$m$$$ 列的二进制网格 $$$a$$$。",
+        "iflyrec": "您将得到一个二进制网格$$$a$$$，其中包含$$$n$$$行和$$$m$$$列。",
+        "ai": "给定一个含有 $$$n$$$ 行和 $$$m$$$ 列的 01 网格 $$$a$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "三个单元格形成一个角度，如果它们可以写成 $$$(i,j)$$$、$$$(i,y)$$$ 和 $$$(x,j)$$$，其中 $$$x \\ne i$$$ 和 $$$y \\ne j$$$，并且所有这三个单元格都包含 $$$1$$$。单元格 $$$(i,j)$$$ 是角度的角。",
+        "youdao": "如果三个单元格可以写成$$$(i,j)$$$， $$$(i,y)$$$, $$$(x,j)$$$，其中$$$x \\ne i$$$和$$$y \\ne j$$$，三个单元格都包含$$$1$$$，则形成一个角度。单元格$$$(i,j)$$$是角的一角。",
+        "deepl": "如果三个单元格可以写成 $$$(i,j)$$$、$$$(i,y)$$$ 和 $$$(x,j)$$$，其中 $$$x \\ne i$$$ 和 $$$y \\ne j$$$，并且三个单元格都包含 $$$1$$$，那么这三个单元格构成一个角。单元格 $$$(i,j)$$$ 是角的角。",
+        "iflyrec": "如果三个单元可以写成$$$(i,j)$$$、$$$(i,y)$$$和$$$(x,j)$$$，则它们形成一个角，其中$$$x \\ne i$$$和$$$y \\ne j$$$，并且所有三个单元都包含$$$1$$$。单元格$$$(i,j)$$$是角的角。",
+        "ai": "如果三个格子可以写成 $$$(i,j)$$$、$$$(i,y)$$$ 和 $$$(x,j)$$$ 的形式，其中 $$$x \\ne i$$$ 且 $$$y \\ne j$$$，且这三个格子都包含 $$$1$$$，则它们构成一个角。格子 $$$(i,j)$$$ 是该角的角点。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "您必须精确选择一个包含 $$$0$$$ 的单元格，并将其更改为 $$$1$$$。",
+        "youdao": "您必须选择一个包含$$$0$$$的单元格，并将其更改为$$$1$$$。",
+        "deepl": "您必须准确选择一个包含 $$$0$$$ 的单元格，并将其更改为 $$$1$$$。",
+        "iflyrec": "您必须选择一个包含$$$0$$$的单元格，并将其更改为$$$1$$$。",
+        "ai": "你必须选择恰好一个包含 $$$0$$$ 的格子，并将其改为 $$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "找出变化后可能的最大角度数，以及使变化达到最大值的单元格数。",
+        "youdao": "找出变化后的最大可能角度数，以及变化后达到这个最大值的单元格数。",
+        "deepl": "求变化后最大可能的角度数，以及变化后得出最大值的单元格数。",
+        "iflyrec": "找出变化后角度的最大可能数量，以及其变化给出该最大值的单元格的数量。",
+        "ai": "求改变后角的数量的最大可能值，以及有多少个格子的改变能取得该最大值。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "保证网格至少包含一个 $$$0$$$。",
+        "youdao": "保证网格至少包含一个$$$0$$$。",
+        "deepl": "保证网格中至少包含一个 $$$0$$$。",
+        "iflyrec": "保证网格至少包含一个$$$0$$$。",
+        "ai": "保证网格中至少包含一个 $$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+        "youdao": "第一行包含一个整数$$$t$$$ ($$$1 \\le t \\le 10^4$$$）—测试用例的数量。",
+        "deepl": "第一行包含一个整数 $$$t$$$ ($$$1 \\le t \\le 10^4$$$）--测试用例数。",
+        "iflyrec": "第一行包含整数$$$t$$$($$$1 \\le t \\le 10^4$$$）—测试用例的数量。",
+        "ai": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "每个测试用例的第一行包含两个整数 $$$n$$$ 和 $$$m$$$($$$1 \\le n,m \\le 2 \\cdot 10^5$$$)——行和列的数量。",
+        "youdao": "每个测试用例的第一行包含两个整数$$$n$$$和$$$m$$$ ($$$1 \\le n,m \\le 2 \\cdot 10^5$$$）——行数和列数。",
+        "deepl": "每个测试用例的第一行包含两个整数 $$$n$$$ 和 $$$m$$$ ($$$1 \\le n,m \\le 2 \\cdot 10^5$$$) - 行数和列数。",
+        "iflyrec": "每个测试用例的第一行包含两个整数$$$n$$$和$$$m$$$($$$1 \\le n,m \\le 2 \\cdot 10^5$$$)——行数和列数。",
+        "ai": "每个测试用例的第一行包含两个整数 $$$n$$$ 和 $$$m$$$($$$1 \\le n,m \\le 2 \\cdot 10^5$$$)——分别表示行数和列数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "接下来的每一行 $$$n$$$ 都包含一个长度为 $$$m$$$ 的二进制字符串，用于描述网格中的一行。",
+        "youdao": "接下来的每一行$$$n$$$都包含一个长度为$$$m$$$的二进制字符串，用于描述网格的一行。",
+        "deepl": "接下来每 $$$n$$$ 行包含一个长度为 $$$m$$$ 的二进制字符串，描述网格的一行。",
+        "iflyrec": "接下来的$$$n$$$行中的每一行包含描述网格的一行的长度为$$$m$$$的二进制串。",
+        "ai": "接下来的 $$$n$$$ 行中，每行包含一个长度为 $$$m$$$ 的 01 串，描述网格中的一行。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "每个测试用例至少包含一个 $$$0$$$。",
+        "youdao": "每个测试用例至少包含一个$$$0$$$。",
+        "deepl": "每个测试用例至少包含一个 $$$0$$$。",
+        "iflyrec": "每个测试用例至少包含一个$$$0$$$。",
+        "ai": "每个测试用例至少包含一个 $$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "保证所有测试用例的 $$$n \\cdot m$$$ 之和不超过 $$$2 \\cdot 10^5$$$。",
+        "youdao": "保证所有测试用例的$$$n \\cdot m$$$之和不超过$$$2 \\cdot 10^5$$$。",
+        "deepl": "保证所有测试用例的 $$$n \\cdot m$$$ 之和不超过 $$$2 \\cdot 10^5$$$。",
+        "iflyrec": "保证所有测试用例的$$$n \\cdot m$$$总和不超过$$$2 \\cdot 10^5$$$。",
+        "ai": "保证所有测试用例中 $$$n \\cdot m$$$ 的总和不超过 $$$2 \\cdot 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "对于每个测试用例，打印两个整数：可能的最大角度数和变化导致这个最大值的单元格数。",
+        "youdao": "对于每个测试用例，打印两个整数：最大可能的角度数和其变化产生该最大值的单元格数。",
+        "deepl": "对于每个测试用例，打印两个整数：可能的最大角度数和变化后得出最大角度数的单元格数。",
+        "iflyrec": "对于每个测试用例，打印两个整数：角度的最大可能数量和其变化给出该最大值的单元格的数量。",
+        "ai": "对于每个测试用例，输出两个整数：可能的最大角度数，以及达到该最大值所需改变的单元格数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "在第一个测试用例中，任何 0 都会创建一个角度。在第二个测试用例中，改变唯一的 0 会使四个单元格中的每个都成为一个角度。在第四个测试用例中，第二行中的任何单元格都会创建两个角度。在第五个测试用例中，单行网格不能包含一个角度，因此任何 0 都是最优的。",
+        "youdao": "在第一个测试用例中，两个0都创建一个角度。在第二种情况下，改变唯一的零使四个单元格中的每一个都成为一个角。在第四行中，第二行的任何单元格都创建两个角度。在第五种情况下，单行网格不能包含角度，因此任何零都是最优的。",
+        "deepl": "在第一个测试案例中，任何一个零都会产生一个角。在第二种情况下，改变唯一的零，四个单元格中的每个单元格都会成为一个角。在第四种情况中，第二行中的任何一个单元格都会产生两个角。在第五种情况中，单行网格不可能包含一个角，因此任选一个零都是最佳选择。",
+        "iflyrec": "在第一个测试用例中，零创建一个角度。在第二种情况下，改变唯一的零，使四个单元格中的每一个都成为一个角的角。在第四行中，第二行中的任何单元格都会创建两个角度。在第五种情况下，单行网格不能包含角度，因此任何一个零都是最优的。",
+        "ai": "在第一个测试用例中，任意一个 0 都会形成一个角。在第二个测试用例中，改变唯一的 0 会使四个单元格都成为某个角的角点。在第四个测试用例中，第二行中的任意单元格都会形成两个角。在第五个测试用例中，只有一行的网格无法包含角，因此任意一个 0 都是最优的。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.117Z",
+  "translatedBy": [
+    "iflyrec"
+  ]
+}

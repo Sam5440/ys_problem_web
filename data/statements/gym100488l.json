@@ -1,0 +1,86 @@
+{
+  "code": "GYM100488L",
+  "letter": "L",
+  "title": "L. Two Heads Are Better",
+  "contest": null,
+  "url": "https://codeforces.com/gym/100488/problem/L",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "World famous scientist Innokentiy has started studying сomputability theory and invented a new abstract executor that represents a tape of n cells, each of which contains a lowercase Latin letter. Two heads can move along the tape, each pointing at some cell. This device can execute the following instructions: to move the specified head to the left or to the right by one cell, to reverse the part of the tape between two heads, including the cells the heads point at, and to answer the request which symbol the specified head points at. Innokentiy asked you to help him to emulate the work of this device since the program he has written works too slow."
+    ],
+    "input": [
+      "The first line contains three integers separated by spaces: n, l and r (1 ≤ n ≤ 105, 1 ≤ l < r ≤ n) — the number of cells in the tape and the initial positions of the left and the right head, correspondingly.",
+      "The second line contains n lowercase Latin letters, written in the cells.",
+      "The third line contains a single integer m (1 ≤ m ≤ 3·105) — the number of queries.",
+      "In the next m lines there are the queries in the following form.",
+      "S X Y — to move the head X in direction Y, where X can be L for the left head and R for the right one, and Y can be L for moving left or R for moving right.",
+      "R — to reverse the part of the tape between the heads, including the cells the heads point at.",
+      "Q X — to ask which character the head X points at, where X can be L for the left head and R for the right one.",
+      "It is guaranteed that the left head always remains to the left of the right head and that the heads don't move out of the tape."
+    ],
+    "output": [
+      "Output one string, containing all the answers for the queries of the last type. The k-th character of this string must be the answer to the k-th query of the type «Q X»."
+    ]
+  },
+  "examples": [
+    {
+      "input": "11 2 6\nabracadabra\n12\nQ L\nQ R\nR\nQ L\nQ R\nS L R\nS R R\nQ L\nQ R\nR\nQ L\nQ R",
+      "output": "baabcddc"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含三个以空格分隔的整数：n、l 和 r（1 ≤ n ≤ 10^5，1 ≤ l < r ≤ n）——磁带上的单元格数量，以及左指针和右指针的初始位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含写在这些单元格中的 n 个小写拉丁字母。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含一个整数 m（1 ≤ m ≤ 3·105）——查询的次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行包含以下形式的查询。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "S X Y ——将指针 X 沿方向 Y 移动，其中 X 可以是 L，表示左指针，也可以是 R，表示右指针；Y 可以是 L，表示向左移动，也可以是 R，表示向右移动。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "R ——翻转两个指针之间的部分纸带，包括两个指针所指向的格子。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Q X ——询问指针 X 所指向的字符，其中 X 可以是 L，表示左指针，也可以是 R，表示右指针。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证左指针始终位于右指针的左侧，并且两个指针不会移出纸带。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "世界著名科学家 Innokentiy 开始研究可计算性理论，并发明了一种新的抽象执行器，它表示一条由 n 个单元格组成的磁带，每个单元格中都包含一个小写拉丁字母。两个指针可以沿磁带移动，每个指针都指向某个单元格。该设备可以执行以下指令：将指定指针向左或向右移动一个单元格，翻转两个指针之间的磁带部分（包括两个指针所指向的单元格），以及回答指定指针所指向的符号。Innokentiy 请你帮助他模拟该设备的运行，因为他编写的程序运行得太慢。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个字符串，其中包含所有最后一种类型查询的答案。该字符串的第 k 个字符必须是第 k 个类型为 «Q X» 的查询的答案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "L. 两个头总比一个好",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

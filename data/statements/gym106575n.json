@@ -1,0 +1,110 @@
+{
+  "code": "GYM106575N",
+  "letter": "N",
+  "title": "N. Spectacular Seal",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106575/problem/N",
+  "difficulty": "*1200",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "They call him the Seal, not because he swims, but because every case he touches gets closed. Stamped shut.  Sealed. A few miles up the coast from Aqua Badran sprawls Aquarbour, a city so overcrowded that three people can witness a murder and all swear they were looking the other way. Last Tuesday, someone walked into the Aquarbour National Archive and walked out with the Ledger, a book the city's elite would very much prefer remained unread. The Seal took the case for one shawarma sandwich and a cup of Al Ameed coffee. His only lead: the thief left behind two coded sequences, scratched into the marble floor in two parallel rows.",
+      "Row a$$$a$$$ contains n$$$n$$$ marks bearing each odd number from 1$$$1$$$ to 2n$$$2n$$$, in some order.",
+      "Row b$$$b$$$ contains n$$$n$$$ marks bearing each even number from 1$$$1$$$ to 2n$$$2n$$$, in some order.",
+      "choose one of the two rows,",
+      "pick an index i$$$i$$$ from 1$$$1$$$ to n−1$$$n-1$$$,",
+      "swap the marks at positions i$$$i$$$ and i+1$$$i+1$$$ of that row.",
+      "Row a$$$a$$$ was cut into soft limestone, each swap costs ca$$$c_a$$$ units of effort.",
+      "Row b$$$b$$$ was cut into hard Aquarbour granite, each swap costs cb$$$c_b$$$."
+    ],
+    "input": [
+      "The first line contains t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$), the number of cases on the Seal's desk. For each test case:",
+      "The first line contains three integers n$$$n$$$, ca$$$c_a$$$, cb$$$c_b$$$ (1≤n≤105$$$1 \\le n \\le 10^5$$$; 1≤ca,cb≤109$$$1 \\le c_a, c_b \\le 10^9$$$).",
+      "The second line contains n$$$n$$$ integers a1,…,an$$$a_1, \\ldots, a_n$$$, all odd, pairwise distinct, each between 1$$$1$$$ and 2n$$$2n$$$.",
+      "The third line contains n$$$n$$$ integers b1,…,bn$$$b_1, \\ldots, b_n$$$, all even, pairwise distinct, each between 1$$$1$$$ and 2n$$$2n$$$."
+    ],
+    "output": [
+      "For each test case, print one integer, the minimum effort the Seal must spend before the marble gives up its name."
+    ],
+    "note": [
+      "Case 1. The marble is already talking (3<4$$$3  \\lt  4$$$). The Seal lights a cigarette and writes the name down. Cost: 0$$$0$$$. Case 2. Granite is unforgiving (cb=3$$$c_b = 3$$$). The Seal works only the limestone row, sliding 1$$$1$$$ to the front of row a$$$a$$$ in two swaps: [1,5,3]$$$[1, 5, 3]$$$, which already reads smaller than [2,4,6]$$$[2, 4, 6]$$$. Cost: 2⋅1=2$$$2 \\cdot 1 = 2$$$. Case 3. Now both chisels come out. One swap on row a$$$a$$$ (cost 4$$$4$$$) brings 5$$$5$$$ to the front: [5,7,3,1]$$$[5, 7, 3, 1]$$$. One swap on row b$$$b$$$ (cost 3$$$3$$$) brings 6$$$6$$$ to the front: [6,2,4,8]$$$[6, 2, 4, 8]$$$. Since 5<6$$$5  \\lt  6$$$, the marble confesses. Total cost: 4+3=7$$$4 + 3 = 7$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2 1 1\n3 1\n4 2\n3 1 3\n5 3 1\n2 4 6\n4 4 3\n7 5 3 1\n2 6 4 8",
+      "output": "0\n2\n7"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "人们叫他“海豹”，不是因为他会游泳，而是因为经他手的每个案件都会被了结。盖章结案，封存归档。沿着海岸离 Aqua Badran 几英里处，坐落着 Aquarbour。这座城市拥挤不堪，三个人目睹一桩谋杀案后，竟都能发誓说自己当时正看向别处。上周二，有人走进 Aquarbour 国家档案馆，又带着《账册》走了出来——城里的权贵们可不愿看到这本书被人翻阅。海豹接下这桩案子，只收了一份沙威玛三明治和一杯 Al Ameed 咖啡作为报酬。他唯一的线索是：小偷留下了两串编码序列，分别刻在大理石地板上两条平行的行中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "行 a$$$a$$$ 中有 n$$$n$$$ 个标记，分别标有从 1$$$1$$$ 到 2n$$$2n$$$ 的每个奇数，顺序任意。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "行 b$$$b$$$ 中有 n$$$n$$$ 个标记，分别标有从 1$$$1$$$ 到 2n$$$2n$$$ 的每个偶数，顺序任意。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择两行中的一行，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择一个下标 i$$$i$$$，其范围从 1$$$1$$$ 到 n−1$$$n-1$$$，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交换该行位置 i$$$i$$$ 和 i+1$$$i+1$$$ 处的标记。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "行 a$$$a$$$ 被刻入软石灰岩中，每次交换需要 ca$$$c_a$$$ 单位的努力。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "b$$$b$$$ 行被刻在坚硬的 Aquarbour 花岗岩上，每次交换的代价为 cb$$$c_b$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)，表示 Seal 桌面上的测试用例数量。对于每个测试用例：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、ca$$$c_a$$$、cb$$$c_b$$$(1≤n≤105$$$1 \\le n \\le 10^5$$$；1≤ca,cb≤109$$$1 \\le c_a, c_b \\le 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,…,an$$$a_1, \\ldots, a_n$$$，它们均为奇数，且两两不同，每个数都介于 1$$$1$$$ 和 2n$$$2n$$$ 之间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 n$$$n$$$ 个整数 b1,…,bn$$$b_1, \\ldots, b_n$$$，它们均为偶数，且两两不同，每个数都介于 1$$$1$$$ 和 2n$$$2n$$$ 之间。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数，表示在 marble 放弃自己的名字之前，Seal 必须付出的最小代价。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "情况 1。弹珠已经在说话了(3<4$$$3  \\lt  4$$$)。海豹点燃一支香烟，并记下这个名字。代价：0$$$0$$$。情况 2。花岗岩毫不留情(cb=3$$$c_b = 3$$$)。海豹只处理石灰岩所在的行，将 1$$$1$$$ 通过两次交换移到行 a$$$a$$$ 的最前面：[1,5,3]$$$[1, 5, 3]$$$，这已经比 [2,4,6]$$$[2, 4, 6]$$$ 更小。代价：2⋅1=2$$$2 \\cdot 1 = 2$$$。情况 3。现在两把凿子都派上了用场。在行 a$$$a$$$ 上进行一次交换(代价为 4$$$4$$$)，将 5$$$5$$$ 移到最前面：[5,7,3,1]$$$[5, 7, 3, 1]$$$。在行 b$$$b$$$ 上进行一次交换(代价为 3$$$3$$$)，将 6$$$6$$$ 移到最前面：[6,2,4,8]$$$[6, 2, 4, 8]$$$。由于 5<6$$$5  \\lt  6$$$，弹珠招供了。总代价：4+3=7$$$4 + 3 = 7$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "N. 非凡的海豹",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

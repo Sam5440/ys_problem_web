@@ -1,0 +1,75 @@
+{
+  "code": "CF412D",
+  "letter": "D",
+  "title": "D. Giving Awards",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/412/D",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The employees of the R1 company often spend time together: they watch football, they go camping, they solve contests. So, it's no big deal that sometimes someone pays for someone else.",
+      "Today is the day of giving out money rewards. The R1 company CEO will invite employees into his office one by one, rewarding each one for the hard work this month. The CEO knows who owes money to whom. And he also understands that if he invites person x to his office for a reward, and then immediately invite person y, who has lent some money to person x, then they can meet. Of course, in such a situation, the joy of person x from his brand new money reward will be much less. Therefore, the R1 CEO decided to invite the staff in such an order that the described situation will not happen for any pair of employees invited one after another.",
+      "However, there are a lot of employees in the company, and the CEO doesn't have a lot of time. Therefore, the task has been assigned to you. Given the debt relationships between all the employees, determine in which order they should be invited to the office of the R1 company CEO, or determine that the described order does not exist."
+    ],
+    "input": [
+      "The first line contains space-separated integers n and m ![](https://espresso.codeforces.com/3974398fd0ef91df2b19ee0ccc8cc1815a11c9d5.png) — the number of employees in R1 and the number of debt relations. Each of the following m lines contains two space-separated integers ai, bi (1 ≤ ai, bi ≤ n; ai ≠ bi), these integers indicate that the person number ai owes money to a person a number bi. Assume that all the employees are numbered from 1 to n.",
+      "It is guaranteed that each pair of people p, q is mentioned in the input data at most once. In particular, the input data will not contain pairs p, q and q, p simultaneously."
+    ],
+    "output": [
+      "Print -1 if the described order does not exist. Otherwise, print the permutation of n distinct integers. The first number should denote the number of the person who goes to the CEO office first, the second number denote the person who goes second and so on.",
+      "If there are multiple correct orders, you are allowed to print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 1\n1 2",
+      "output": "2 1"
+    },
+    {
+      "input": "3 3\n1 2\n2 3\n3 1",
+      "output": "2 1 3"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含空格分隔的整数 n 和 m ![](https://espresso.codeforces.com/3974398fd0ef91df2b19ee0ccc8cc1815a11c9d5.png)，分别表示 R1 公司的员工数量和债务关系的数量。接下来的 m 行中，每行包含两个空格分隔的整数 ai、bi(1 ≤ ai、bi ≤ n；ai ≠ bi)，表示编号为 ai 的员工欠编号为 bi 的员工钱。假设所有员工的编号均为 1 至 n。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证输入数据中每一对人 p, q 最多被提及一次。特别地，输入数据不会同时包含 p, q 和 q, p 这两对。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果不存在所描述的顺序，输出 -1。否则，输出由 n 个互不相同的整数构成的排列。第一个数应表示第一个前往 CEO 办公室的人的编号，第二个数表示第二个前往的人的编号，以此类推。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在多个正确的顺序，你可以输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "R1 公司的员工经常一起消磨时间：他们一起看足球、露营、参加竞赛。因此，有时某人为另一个人付钱并不是什么大不了的事。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "今天是发放金钱奖励的日子。R1 公司的 CEO 会依次将员工邀请到办公室，为每个人奖励其本月的辛勤工作。CEO 知道谁欠谁钱。他还明白，如果他先邀请员工 x 到办公室领取奖励，然后立即邀请借过钱给员工 x 的员工 y，那么他们就会碰面。当然，在这种情况下，员工 x 得到崭新金钱奖励时的喜悦会大大减少。因此，R1 公司的 CEO 决定按照这样一种顺序邀请员工，使得对于任何两个相邻被邀请的员工，都不会发生上述情况。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，公司里有很多员工，而 CEO 没有太多时间。因此，这项任务交给了你。给定所有员工之间的债务关系，确定他们应当被邀请到 R1 公司 CEO 办公室的顺序，或者判断不存在满足条件的顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 颁发奖励",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

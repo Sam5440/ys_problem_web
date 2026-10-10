@@ -1,0 +1,64 @@
+{
+  "code": "CF1098A",
+  "letter": "A",
+  "title": "A. Sum in the tree",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1098/A",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Mitya has a rooted tree with n$$$n$$$ vertices indexed from 1$$$1$$$ to n$$$n$$$, where the root has index 1$$$1$$$. Each vertex v$$$v$$$ initially had an integer number av≥0$$$a_v \\ge 0$$$ written on it. For every vertex v$$$v$$$ Mitya has computed sv$$$s_v$$$: the sum of all values written on the vertices on the path from vertex v$$$v$$$ to the root, as well as hv$$$h_v$$$ — the depth of vertex v$$$v$$$, which denotes the number of vertices on the path from vertex v$$$v$$$ to the root. Clearly, s1=a1$$$s_1=a_1$$$ and h1=1$$$h_1=1$$$.",
+      "Then Mitya erased all numbers av$$$a_v$$$, and by accident he also erased all values sv$$$s_v$$$ for vertices with even depth (vertices with even hv$$$h_v$$$). Your task is to restore the values av$$$a_v$$$ for every vertex, or determine that Mitya made a mistake. In case there are multiple ways to restore the values, you're required to find one which minimizes the total sum of values av$$$a_v$$$ for all vertices in the tree."
+    ],
+    "input": [
+      "The first line contains one integer n$$$n$$$ — the number of vertices in the tree (2≤n≤105$$$2 \\le n \\le 10^5$$$). The following line contains integers p2$$$p_2$$$, p3$$$p_3$$$, ... pn$$$p_n$$$, where pi$$$p_i$$$ stands for the parent of vertex with index i$$$i$$$ in the tree (1≤pi<i$$$1 \\le p_i  \\lt  i$$$). The last line contains integer values s1$$$s_1$$$, s2$$$s_2$$$, ..., sn$$$s_n$$$ (−1≤sv≤109$$$-1 \\le s_v \\le 10^9$$$), where erased values are replaced by −1$$$-1$$$."
+    ],
+    "output": [
+      "Output one integer — the minimum total sum of all values av$$$a_v$$$ in the original tree, or −1$$$-1$$$ if such tree does not exist."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 1 1 1\n1 -1 -1 -1 -1",
+      "output": "1"
+    },
+    {
+      "input": "5\n1 2 3 1\n1 -1 2 -1 -1",
+      "output": "2"
+    },
+    {
+      "input": "3\n1 2\n2 -1 1",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Mitya 有一棵有根树，包含 n$$$n$$$ 个顶点，编号从 1$$$1$$$ 到 n$$$n$$$，其中根的编号为 1$$$1$$$。每个顶点 v$$$v$$$ 上最初都写有一个非负整数 av≥0$$$a_v \\ge 0$$$。对于每个顶点 v$$$v$$$，Mitya 都计算了 sv$$$s_v$$$：从顶点 v$$$v$$$ 到根的路径上所有顶点所写数值之和；还计算了 hv$$$h_v$$$——顶点 v$$$v$$$ 的深度，即从顶点 v$$$v$$$ 到根的路径上的顶点数。显然，s1=a1$$$s_1=a_1$$$ 且 h1=1$$$h_1=1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "随后 Mitya 擦除了所有数值 av$$$a_v$$$，并且不小心还擦除了深度为偶数的顶点对应的所有 sv$$$s_v$$$(即 hv$$$h_v$$$ 为偶数的顶点)。你的任务是恢复每个顶点的 av$$$a_v$$$，或者判断 Mitya 是否出错。如果有多种恢复方法，你需要找出一种使树中所有顶点的 av$$$a_v$$$ 总和最小的方法。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$——树中的顶点数(2≤n≤105$$$2 \\le n \\le 10^5$$$)。下一行包含整数 p2$$$p_2$$$, p3$$$p_3$$$, ... pn$$$p_n$$$，其中 pi$$$p_i$$$ 表示树中编号为 i$$$i$$$ 的顶点的父节点(1≤pi<i$$$1 \\le p_i  \\lt  i$$$)。最后一行包含整数值 s1$$$s_1$$$, s2$$$s_2$$$, ..., sn$$$s_n$$$(−1≤sv≤109$$$-1 \\le s_v \\le 10^9$$$)，被擦除的值用 −1$$$-1$$$ 代替。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——原树中所有 av$$$a_v$$$ 的最小总和；如果这样的树不存在，则输出 −1$$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 树上的和",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

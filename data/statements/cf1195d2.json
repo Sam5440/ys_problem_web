@@ -1,0 +1,95 @@
+{
+  "code": "CF1195D2",
+  "letter": "D2",
+  "title": "D2. Submarine in the Rybinsk Sea (hard edition)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1195/D2",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This problem differs from the previous one only in the absence of the constraint on the equal length of all numbers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$.",
+      "A team of SIS students is going to make a trip on a submarine. Their target is an ancient treasure in a sunken ship lying on the bottom of the Great Rybinsk sea. Unfortunately, the students don't know the coordinates of the ship, so they asked Meshanya (who is a hereditary mage) to help them. He agreed to help them, but only if they solve his problem.",
+      "Let's denote a function that alternates digits of two numbers f(a1a2…ap−1ap,b1b2…bq−1bq)$$$f(a_1 a_2 \\dots a_{p - 1} a_p, b_1 b_2 \\dots b_{q - 1} b_q)$$$, where a1…ap$$$a_1 \\dots a_p$$$ and b1…bq$$$b_1 \\dots b_q$$$ are digits of two integers written in the decimal notation without leading zeros.",
+      "In other words, the function f(x,y)$$$f(x, y)$$$ alternately shuffles the digits of the numbers x$$$x$$$ and y$$$y$$$ by writing them from the lowest digits to the older ones, starting with the number y$$$y$$$. The result of the function is also built from right to left (that is, from the lower digits to the older ones). If the digits of one of the arguments have ended, then the remaining digits of the other argument are written out. Familiarize with examples and formal definitions of the function below.",
+      "For example: f(1111,2222)=12121212$$f(1111, 2222) = 12121212$$ f(7777,888)=7787878$$f(7777, 888) = 7787878$$ f(33,44444)=4443434$$f(33, 44444) = 4443434$$ f(555,6)=5556$$f(555, 6) = 5556$$ f(111,2222)=2121212$$f(111, 2222) = 2121212$$",
+      "Formally,",
+      "if p≥q$$$p \\ge q$$$ then f(a1…ap,b1…bq)=a1a2…ap−q+1b1ap−q+2b2…ap−1bq−1apbq$$$f(a_1 \\dots a_p, b_1 \\dots b_q) = a_1 a_2 \\dots a_{p - q + 1} b_1 a_{p - q + 2} b_2 \\dots a_{p - 1} b_{q - 1} a_p b_q$$$;",
+      "if p<q$$$p  \\lt  q$$$ then f(a1…ap,b1…bq)=b1b2…bq−pa1bq−p+1a2…ap−1bq−1apbq$$$f(a_1 \\dots a_p, b_1 \\dots b_q) = b_1 b_2 \\dots b_{q - p} a_1 b_{q - p + 1} a_2 \\dots a_{p - 1} b_{q - 1} a_p b_q$$$.",
+      "Mishanya gives you an array consisting of n$$$n$$$ integers ai$$$a_i$$$, your task is to help students to calculate ∑ni=1∑nj=1f(ai,aj)$$$\\sum_{i = 1}^{n}\\sum_{j = 1}^{n} f(a_i, a_j)$$$ modulo 998244353$$$998\\,244\\,353$$$."
+    ],
+    "input": [
+      "The first line of the input contains a single integer n$$$n$$$ (1≤n≤100000$$$1 \\le n \\le 100\\,000$$$) — the number of elements in the array. The second line of the input contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (1≤ai≤109$$$1 \\le a_i \\le 10^9$$$) — the elements of the array."
+    ],
+    "output": [
+      "Print the answer modulo 998244353$$$998\\,244\\,353$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n12 3 45",
+      "output": "12330"
+    },
+    {
+      "input": "2\n123 456",
+      "output": "1115598"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "本题与上一题的唯一区别在于，不再限制所有数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ 的长度相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一队 SIS 学生打算乘坐潜艇旅行。他们的目标是大雷宾斯克海底部一艘沉船中的古代宝藏。遗憾的是，学生们不知道这艘船的坐标，因此他们请求 Meshanya（他是一名世袭法师）帮助他们。他同意帮助他们，但条件是他们先解决他的问题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们将两个数的数字交错排列的函数记作 f(a1a2…ap−1ap,b1b2…bq−1bq)$$$f(a_1 a_2 \\dots a_{p - 1} a_p, b_1 b_2 \\dots b_{q - 1} b_q)$$$，其中 a1…ap$$$a_1 \\dots a_p$$$ 和 b1…bq$$$b_1 \\dots b_q$$$ 分别是两个用十进制表示且不含前导零的整数的各位数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "换句话说，函数 f(x,y)$$$f(x, y)$$$ 从最低位到最高位交替取出数字 x$$$x$$$ 和 y$$$y$$$ 的各位数字，并从数字 y$$$y$$$ 开始。该函数的结果同样从右向左构造(即从低位到高位)。如果其中一个参数的数字已经取完，则将另一个参数剩余的数字依次写出。下面给出了该函数的示例和形式化定义。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如：f(1111,2222)=12121212$$f(1111, 2222) = 12121212$$ f(7777,888)=7787878$$f(7777, 888) = 7787878$$ f(33,44444)=4443434$$f(33, 44444) = 4443434$$ f(555,6)=5556$$f(555, 6) = 5556$$ f(111,2222)=2121212$$f(111, 2222) = 2121212$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 p≥q$$$p \\ge q$$$，则 f(a1…ap,b1…bq)=a1a2…ap−q+1b1ap−q+2b2…ap−1bq−1apbq$$$f(a_1 \\dots a_p, b_1 \\dots b_q) = a_1 a_2 \\dots a_{p - q + 1} b_1 a_{p - q + 2} b_2 \\dots a_{p - 1} b_{q - 1} a_p b_q$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 p<q$$$p  \\lt  q$$$，则 f(a1…ap,b1…bq)=b1b2…bq−pa1bq−p+1a2…ap−1bq−1apbq$$$f(a_1 \\dots a_p, b_1 \\dots b_q) = b_1 b_2 \\dots b_{q - p} a_1 b_{q - p + 1} a_2 \\dots a_{p - 1} b_{q - 1} a_p b_q$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Mishanya 给你一个由 n$$$n$$$ 个整数 ai$$$a_i$$$ 组成的数组，你的任务是帮助学生计算 ∑ni=1∑nj=1f(ai,aj)$$$\\sum_{i = 1}^{n}\\sum_{j = 1}^{n} f(a_i, a_j)$$$ 对 998244353$$$998\\,244\\,353$$$ 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$(1≤n≤100000$$$1 \\le n \\le 100\\,000$$$)，表示数组中元素的个数。输入的第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)，表示数组中的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出答案对 998244353$$$998\\,244\\,353$$$ 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D2. 雷宾斯克海中的潜艇（困难版）",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

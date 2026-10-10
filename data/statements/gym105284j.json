@@ -1,0 +1,127 @@
+{
+  "code": "GYM105284J",
+  "letter": "J",
+  "title": "J. Grid Product",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105284/problem/J",
+  "difficulty": "*2700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a rectangular grid B$$$B$$$ with N$$$N$$$ rows and M$$$M$$$ columns. Consider some rectangular grid A$$$A$$$ with N$$$N$$$ rows and M$$$M$$$ columns. A$$$A$$$ is considered mediocre if Ai,j$$$A_{i, j}$$$ is an integer and 0≤Ai,j≤Bi,j$$$0 \\leq A_{i, j} \\leq B_{i, j}$$$ for all (i,j)$$$(i, j)$$$.",
+      "Let F(A)=(N∏i=1(M∑j=1Ai,j))(M∏j=1(N∑i=1Ai,j))$$$F(A) = \\displaystyle\\left(\\prod_{i = 1}^{N}\\left(\\sum_{j = 1}^{M}A_{i, j}\\right)\\right) \\displaystyle\\left(\\prod_{j = 1}^{M}\\left(\\sum_{i = 1}^{N}A_{i, j}\\right)\\right)$$$.",
+      "Calculate the sum of F(A)$$$F(A)$$$ over all mediocre A$$$A$$$ modulo 998244353$$$998244353$$$."
+    ],
+    "input": [
+      "The first line contains two positive integers N$$$N$$$ and M$$$M$$$ (1≤N⋅M≤300)$$$(1 \\leq N \\cdot M \\leq 300)$$$.",
+      "Each of the next N$$$N$$$ lines contains M$$$M$$$ integers Bi,j$$$B_{i, j}$$$ (0≤Bi,j≤109)$$$(0 \\leq B_{i, j} \\leq 10^9)$$$.",
+      "—",
+      "There are 20$$$20$$$ tests, not including samples. Each test is worth 10020=5$$$\\frac{100}{20}=5$$$ points.",
+      "Tests 1−2$$$1 - 2$$$ satisfy N=1$$$N = 1$$$.",
+      "Tests 3−12$$$3 - 12$$$ satisfy N⋅M≤100$$$N \\cdot M \\leq 100$$$.",
+      "The remaining tests do not satisfy any additional constraints."
+    ],
+    "output": [
+      "Print one integer — the sum of F(A)$$$F(A)$$$ over all mediocre A$$$A$$$ modulo 998244353$$$998244353$$$."
+    ],
+    "note": [
+      "—",
+      "Problem Idea: HaccerKat",
+      "Problem Preparation: HaccerKat",
+      "Occurrences: Advanced J"
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 3\n1 2 1",
+      "output": "11"
+    },
+    {
+      "input": "2 2\n1 1\n0 1",
+      "output": "5"
+    },
+    {
+      "input": "2 3\n1 1 1\n1 1 1",
+      "output": "312"
+    },
+    {
+      "input": "3 3\n69 420 37\n666 777 888\n998244353 123456789 987654321",
+      "output": "57820980"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个有 N$$$N$$$ 行、M$$$M$$$ 列的矩形网格 B$$$B$$$。考虑一个有 N$$$N$$$ 行、M$$$M$$$ 列的矩形网格 A$$$A$$$。如果对于所有 (i,j)$$$(i, j)$$$，Ai,j$$$A_{i, j}$$$ 都是整数，且满足 0≤Ai,j≤Bi,j$$$0 \\leq A_{i, j} \\leq B_{i, j}$$$，则称 A$$$A$$$ 是平庸的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "令 F(A)=(N∏i=1(M∑j=1Ai,j))(M∏j=1(N∑i=1Ai,j))$$$F(A) = \\displaystyle\\left(\\prod_{i = 1}^{N}\\left(\\sum_{j = 1}^{M}A_{i, j}\\right)\\right) \\displaystyle\\left(\\prod_{j = 1}^{M}\\left(\\sum_{i = 1}^{N}A_{i, j}\\right)\\right)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "求所有平庸的 A$$$A$$$ 对应的 F(A)$$$F(A)$$$ 之和，结果对 998244353$$$998244353$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个正整数 N$$$N$$$ 和 M$$$M$$$ (1≤N⋅M≤300)$$$(1 \\leq N \\cdot M \\leq 300)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行中，每行包含 M$$$M$$$ 个整数 Bi,j$$$B_{i, j}$$$ (0≤Bi,j≤109)$$$(0 \\leq B_{i, j} \\leq 10^9)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "共有 20$$$20$$$ 个测试点，不包括样例。每个测试点的分值为 10020=5$$$\\frac{100}{20}=5$$$ 分。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 1−2$$$1 - 2$$$ 个测试满足 N=1$$$N = 1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 3−12$$$3 - 12$$$ 个测试满足 N⋅M≤100$$$N \\cdot M \\leq 100$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其余测试不包含任何额外约束。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——对所有平庸的 A$$$A$$$，求 F(A)$$$F(A)$$$ 之和，并对 998244353$$$998244353$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "题目思路：HaccerKat",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "题目准备：HaccerKat",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "出现次数：Advanced J",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "J. 网格乘积",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

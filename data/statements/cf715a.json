@@ -1,0 +1,153 @@
+{
+  "code": "CF715A",
+  "letter": "A",
+  "title": "A. Plus and Square Root",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/715/A",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "ZS the Coder is playing a game. There is a number displayed on the screen and there are two buttons, ' + ' (plus) and '![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)' (square root). Initially, the number 2 is displayed on the screen. There are n + 1 levels in the game and ZS the Coder start at the level 1.",
+      "When ZS the Coder is at level k, he can :",
+      "Press the ' + ' button. This increases the number on the screen by exactly k. So, if the number on the screen was x, it becomes x + k.",
+      "Press the '![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)' button. Let the number on the screen be x. After pressing this button, the number becomes ![](https://espresso.codeforces.com/dd68ff2d8e5b97302506ac32d308bb521ab84a26.png). After that, ZS the Coder levels up, so his current level becomes k + 1. This button can only be pressed when x is a perfect square, i.e. x = m2 for some positive integer m.",
+      "Additionally, after each move, if ZS the Coder is at level k, and the number on the screen is m, then m must be a multiple of k. Note that this condition is only checked after performing the press. For example, if ZS the Coder is at level 4 and current number is 100, he presses the '![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)' button and the number turns into 10. Note that at this moment, 10 is not divisible by 4, but this press is still valid, because after it, ZS the Coder is at level 5, and 10 is divisible by 5.",
+      "ZS the Coder needs your help in beating the game — he wants to reach level n + 1. In other words, he needs to press the '![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)' button n times. Help him determine the number of times he should press the ' + ' button before pressing the '![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)' button at each level.",
+      "Please note that ZS the Coder wants to find just any sequence of presses allowing him to reach level n + 1, but not necessarily a sequence minimizing the number of presses."
+    ],
+    "input": [
+      "The first and only line of the input contains a single integer n (1 ≤ n ≤ 100 000), denoting that ZS the Coder wants to reach level n + 1."
+    ],
+    "output": [
+      "Print n non-negative integers, one per line. i-th of them should be equal to the number of times that ZS the Coder needs to press the ' + ' button before pressing the '![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)' button at level i.",
+      "Each number in the output should not exceed 1018. However, the number on the screen can be greater than 1018.",
+      "It is guaranteed that at least one solution exists. If there are multiple solutions, print any of them."
+    ],
+    "note": [
+      "In the first sample case:",
+      "On the first level, ZS the Coder pressed the ' + ' button 14 times (and the number on screen is initially 2), so the number became 2 + 14·1 = 16. Then, ZS the Coder pressed the '![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)' button, and the number became ![](https://espresso.codeforces.com/c3d2663f5f74e9220fd5cbccbfaf4ca76ef7284f.png).",
+      "After that, on the second level, ZS pressed the ' + ' button 16 times, so the number becomes 4 + 16·2 = 36. Then, ZS pressed the '![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)' button, levelling up and changing the number into ![](https://espresso.codeforces.com/49ab1d31f1435b7c7b96550d63a35be671d3d85a.png).",
+      "After that, on the third level, ZS pressed the ' + ' button 46 times, so the number becomes 6 + 46·3 = 144. Then, ZS pressed the '![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)' button, levelling up and changing the number into ![](https://espresso.codeforces.com/499b57d4b7ba5e1e0957767cc182808ca48ef722.png).",
+      "Note that 12 is indeed divisible by 4, so ZS the Coder can reach level 4.",
+      "Also, note that pressing the ' + ' button 10 times on the third level before levelling up does not work, because the number becomes 6 + 10·3 = 36, and when the '![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)' button is pressed, the number becomes ![](https://espresso.codeforces.com/49ab1d31f1435b7c7b96550d63a35be671d3d85a.png) and ZS the Coder is at Level 4. However, 6 is not divisible by 4 now, so this is not a valid solution.",
+      "In the second sample case:",
+      "On the first level, ZS the Coder pressed the ' + ' button 999999999999999998 times (and the number on screen is initially 2), so the number became 2 + 999999999999999998·1 = 1018. Then, ZS the Coder pressed the '![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)' button, and the number became ![](https://espresso.codeforces.com/f07f2a60ab6cecbd2507861a0df57a16a015fd86.png).",
+      "After that, on the second level, ZS pressed the ' + ' button 44500000000 times, so the number becomes 109 + 44500000000·2 = 9·1010. Then, ZS pressed the '![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)' button, levelling up and changing the number into ![](https://espresso.codeforces.com/4c4d8829d987a7bcfd597cd1aa101327a66c0eca.png).",
+      "Note that 300000 is a multiple of 3, so ZS the Coder can reach level 3."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3",
+      "output": "14\n16\n46"
+    },
+    {
+      "input": "2",
+      "output": "999999999999999998\n44500000000"
+    },
+    {
+      "input": "4",
+      "output": "2\n17\n46\n97"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "ZS the Coder 正在玩一个游戏。屏幕上显示着一个数字，并且有两个按钮：“ + ”(加法)和“![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)”(平方根)。初始时，屏幕上显示的数字为 2。游戏中有 n + 1 个关卡，ZS the Coder 从第 1 关开始。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当 ZS the Coder 处于等级 k 时，他可以：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "按下“+”按钮。屏幕上的数字恰好增加 k。因此，如果屏幕上的数字原来是 x，就会变为 x + k。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "按下“![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)”按钮。设屏幕上的数字为 x。按下此按钮后，数字变为 ![](https://espresso.codeforces.com/dd68ff2d8e5b97302506ac32d308bb521ab84a26.png)。随后，ZS the Coder 升级，因此他的当前等级变为 k + 1。只有当 x 是完全平方数，即对于某个正整数 m，x = m² 时，才能按下此按钮。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，每次操作后，如果 ZS the Coder 处于等级 k，且屏幕上的数字为 m，那么 m 必须是 k 的倍数。注意，这一条件只会在执行按键操作后检查。例如，如果 ZS the Coder 处于 4 级，当前数字为 100，他按下“![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)”按钮，数字变为 10。注意，此时 10 不能被 4 整除，但这次按键操作仍然有效，因为操作后 ZS the Coder 处于 5 级，而 10 能被 5 整除。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "ZS the Coder 需要你的帮助来赢得这场游戏——他想要达到 n + 1 级。换句话说，他需要按下“![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)”按钮 n 次。请帮助他确定在每个等级按下“![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)”按钮之前应该按下“+”按钮的次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请注意，ZS the Coder 只想找到任意一系列能够让他达到 n + 1 级的按键操作，而不一定要使按键总次数最少。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一层，ZS the Coder 按下“ + ”按钮 14 次(屏幕上的数字初始为 2)，因此数字变为 2 + 14·1 = 16。然后，ZS the Coder 按下 “![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)” 按钮，数字变为 ![](https://espresso.codeforces.com/c3d2663f5f74e9220fd5cbccbfaf4ca76ef7284f.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此后，在第二级，ZS 按下了 16 次“ + ”按钮，因此数字变为 4 + 16·2 = 36。然后，ZS 按下“![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)”按钮，升级并将数字变为 ![](https://espresso.codeforces.com/49ab1d31f1435b7c7b96550d63a35be671d3d85a.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此后，在第三级，ZS 按下了 46 次“ + ”按钮，因此数字变为 6 + 46·3 = 144。然后，ZS 按下“![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)”按钮，升级并将数字变为 ![](https://espresso.codeforces.com/499b57d4b7ba5e1e0957767cc182808ca48ef722.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，12 确实能被 4 整除，因此 ZS the Coder 可以到达第 4 级。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，注意在升级前于第三级按下 10 次“ + ”按钮是不可行的，因为数字会变为 6 + 10·3 = 36，而按下“![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)”按钮后，数字会变为 ![](https://espresso.codeforces.com/49ab1d31f1435b7c7b96550d63a35be671d3d85a.png)，此时 ZS the Coder 处于第 4 级。然而，6 现在不能被 4 整除，因此这不是一个有效的方案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一级，ZS the Coder 按下了 999999999999999998 次“ + ”按钮(屏幕上的数字初始为 2)，因此数字变为 2 + 999999999999999998·1 = 1018。然后，ZS the Coder 按下“![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)”按钮，数字变为 ![](https://espresso.codeforces.com/f07f2a60ab6cecbd2507861a0df57a16a015fd86.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "之后，在第二层，ZS 按下“ + ”按钮 44500000000 次，因此数字变为 109 + 44500000000·2 = 9·1010。随后，ZS 按下“![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)”按钮，升级并将数字变为 ![](https://espresso.codeforces.com/4c4d8829d987a7bcfd597cd1aa101327a66c0eca.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，300000 是 3 的倍数，因此 ZS the Coder 可以达到第 3 层。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行也是唯一一行包含一个整数 n（1 ≤ n ≤ 100 000），表示 ZS the Coder 想要到达第 n + 1 层。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 个非负整数，每行一个。第 i 个数应等于 ZS the Coder 在第 i 层按下 “![](https://espresso.codeforces.com/c77ded9b8209a8cb488cc2ec7b7fe1dae32a5309.png)” 按钮之前需要按下“ + ”按钮的次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出中的每个数都不应超过 10^18。但是，屏幕上的数字可能大于 10^18。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证至少存在一种解。如果有多种解，输出其中任意一种即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 加法与平方根",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

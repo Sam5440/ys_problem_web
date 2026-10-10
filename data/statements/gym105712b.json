@@ -1,0 +1,105 @@
+{
+  "code": "GYM105712B",
+  "letter": "B",
+  "title": "B. Card Pairs",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105712/problem/B",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You have a hand of cards, where each card has one of n$$$n$$$ types. For each i$$$i$$$ from 1$$$1$$$ to n$$$n$$$, you have ai$$$a_i$$$ cards with type i$$$i$$$, and the bank has infinite cards with type i$$$i$$$.",
+      "You can perform the following trade with the bank any number of times:",
+      "Choose any two cards with the same type from your hand, and exchange them for a single card from the bank with any type except the type of the cards you just exchanged. Note that the bank only has cards with types 1$$$1$$$ through n$$$n$$$, so you cannot trade for cards with any other types.",
+      "For example, here is a valid sequence of trades on the first sample case:",
+      "![](https://espresso.codeforces.com/2f0f6fc2bd54e5f0ba14ffb85f7714c5db1d1bf1.png)",
+      "What is the maximum number of trades you can perform?"
+    ],
+    "input": [
+      "The first line of the input contains a single integer t$$$t$$$ (1≤t≤105$$$1 \\le t \\le 10^5$$$) — the number of test cases. The description of the test cases follows.",
+      "The first line of each test case contains a single integer n$$$n$$$ (2≤n≤2⋅105$$$2 \\le n \\le 2\\cdot 10^5$$$) — the number of card types.",
+      "The second line of each test case contains n$$$n$$$ integers a1,a2⋯an$$$a_1, a_2 \\cdots a_n$$$ (0≤ai≤109$$$0 \\le a_i \\le 10^9$$$), where ai$$$a_i$$$ is the number of cards of type i$$$i$$$ that you currently have.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 2⋅105$$$2\\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print a single integer — the maximum number of trades you can perform."
+    ],
+    "note": [
+      "The diagram above describes an optimal sequence of trades in the first test case.",
+      "In the fourth test case, it is impossible to perform any trades, since you don't start with any pair of cards with the same type, so the answer is 0$$$0$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "9\n4\n2 0 0 1\n2\n5 2\n6\n1 5 0 6 7 1\n4\n1 1 0 1\n2\n4 2\n7\n1 2 4 8 4 2 1\n2\n1 1\n4\n0 0 0 0\n3\n1000000000 1000000000 1000000000",
+      "output": "2\n5\n19\n0\n5\n21\n0\n0\n2999999999"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你有一手卡牌，每张牌有 n$$$n$$$ 种类型之一。对于每个从 1$$$1$$$ 到 n$$$n$$$ 的 i$$$i$$$，你有 ai$$$a_i$$$ 张类型为 i$$$i$$$ 的卡牌，而银行有无限张类型为 i$$$i$$$ 的卡牌。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以与银行进行任意次以下交易：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从手牌中选择两张类型相同的卡牌，将它们交换成银行提供的一张任意类型的卡牌，但不能是刚刚交换出去的卡牌的类型。注意，银行只有类型从 1$$$1$$$ 到 n$$$n$$$ 的卡牌，因此你不能交换得到任何其他类型的卡牌。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，下面是第一个输入样例中一组合法的交易序列：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/2f0f6fc2bd54e5f0ba14ffb85f7714c5db1d1bf1.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你最多可以进行多少次交易？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤105$$$1 \\le t \\le 10^5$$$)，表示测试用例的数量。接下来是各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(2≤n≤2⋅105$$$2 \\le n \\le 2\\cdot 10^5$$$)，表示卡牌类型的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 a1,a2⋯an$$$a_1, a_2 \\cdots a_n$$$(0≤ai≤109$$$0 \\le a_i \\le 10^9$$$)，其中 ai$$$a_i$$$ 表示你当前拥有的第 i$$$i$$$ 种卡牌的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 2⋅105$$$2\\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数，即你能够进行的交易次数的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "上图描述了第一个测试用例中的一组最优交易序列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四个测试用例中，无法进行任何交易，因为一开始你没有任何一对类型相同的卡牌，因此答案为 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 卡牌配对",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "code": "CF1238F",
+  "letter": "F",
+  "title": "F. The Maximum Subtree",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1238/F",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Assume that you have k$$$k$$$ one-dimensional segments s1,s2,…sk$$$s_1, s_2, \\dots s_k$$$ (each segment is denoted by two integers — its endpoints). Then you can build the following graph on these segments. The graph consists of k$$$k$$$ vertexes, and there is an edge between the i$$$i$$$-th and the j$$$j$$$-th vertexes (i≠j$$$i \\neq j$$$) if and only if the segments si$$$s_i$$$ and sj$$$s_j$$$ intersect (there exists at least one point that belongs to both of them).",
+      "For example, if s1=[1,6],s2=[8,20],s3=[4,10],s4=[2,13],s5=[17,18]$$$s_1 = [1, 6], s_2 = [8, 20], s_3 = [4, 10], s_4 = [2, 13], s_5 = [17, 18]$$$, then the resulting graph is the following:",
+      "![](https://espresso.codeforces.com/dab4ac82405a1620546f322e17b3af15164e5c30.png)",
+      "A tree of size m$$$m$$$ is good if it is possible to choose m$$$m$$$ one-dimensional segments so that the graph built on these segments coincides with this tree.",
+      "You are given a tree, you have to find its good subtree with maximum possible size. Recall that a subtree is a connected subgraph of a tree.",
+      "Note that you have to answer q$$$q$$$ independent queries."
+    ],
+    "input": [
+      "The first line contains one integer q$$$q$$$ (1≤q≤15⋅104$$$1 \\le q \\le 15 \\cdot 10^4$$$) — the number of the queries.",
+      "The first line of each query contains one integer n$$$n$$$ (2≤n≤3⋅105$$$2 \\le n \\le 3 \\cdot 10^5$$$) — the number of vertices in the tree.",
+      "Each of the next n−1$$$n - 1$$$ lines contains two integers x$$$x$$$ and y$$$y$$$ (1≤x,y≤n$$$1 \\le x, y \\le n$$$) denoting an edge between vertices x$$$x$$$ and y$$$y$$$. It is guaranteed that the given graph is a tree.",
+      "It is guaranteed that the sum of all n$$$n$$$ does not exceed 3⋅105$$$3 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each query print one integer — the maximum size of a good subtree of the given tree."
+    ],
+    "note": [
+      "In the first query there is a good subtree of size 8$$$8$$$. The vertices belonging to this subtree are 9,4,10,2,5,1,6,3$$${9, 4, 10, 2, 5, 1, 6, 3}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n10\n1 2\n1 3\n1 4\n2 5\n2 6\n3 7\n3 8\n4 9\n4 10",
+      "output": "8"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "假设有 k$$$k$$$ 条一维线段 s1,s2,…sk$$$s_1, s_2, \\dots s_k$$$(每条线段由两个整数表示，即其端点)。那么可以在这些线段上构造如下图。该图包含 k$$$k$$$ 个顶点，当且仅当线段 si$$$s_i$$$ 与 sj$$$s_j$$$ 相交(存在至少一个点同时属于这两条线段)时，第 i$$$i$$$ 个顶点与第 j$$$j$$$ 个顶点之间有一条边(i≠j$$$i \\neq j$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，如果 s1=[1,6],s2=[8,20],s3=[4,10],s4=[2,13],s5=[17,18]$$$s_1 = [1, 6], s_2 = [8, 20], s_3 = [4, 10], s_4 = [2, 13], s_5 = [17, 18]$$$，那么得到的图如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/dab4ac82405a1620546f322e17b3af15164e5c30.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果可以选择 m$$$m$$$ 个一维线段，使得由这些线段构成的图与这棵树重合，那么一棵大小为 m$$$m$$$ 的树就是好的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一棵树，你需要找到其中大小可能最大的好子树。回忆一下，子树是树的一个连通子图。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，你需要回答 q$$$q$$$ 个相互独立的查询。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 q$$$q$$$ (1≤q≤15⋅104$$$1 \\le q \\le 15 \\cdot 10^4$$$)——查询的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每次查询的第一行包含一个整数 n$$$n$$$(2≤n≤3⋅105$$$2 \\le n \\le 3 \\cdot 10^5$$$)——树中顶点的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n−1$$$n - 1$$$ 行中，每行包含两个整数 x$$$x$$$ 和 y$$$y$$$(1≤x,y≤n$$$1 \\le x, y \\le n$$$)，表示顶点 x$$$x$$$ 和 y$$$y$$$ 之间的一条边。保证给出的图是一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有 n$$$n$$$ 的总和不超过 3⋅105$$$3 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每次查询，输出一个整数——给定树的好子树的最大大小。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一次查询中，存在一个大小为 8$$$8$$$ 的好子树。属于该子树的顶点为 9,4,10,2,5,1,6,3$$${9, 4, 10, 2, 5, 1, 6, 3}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 最大子树",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

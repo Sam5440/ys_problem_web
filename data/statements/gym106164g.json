@@ -1,0 +1,100 @@
+{
+  "code": "GYM106164G",
+  "letter": "G",
+  "title": "G. Galactic Adventure Agency",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106164/problem/G",
+  "difficulty": "*1800",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "In a galaxy far, far away, there are N$$$N$$$ planets. The i$$$i$$$-th planet is located at coordinates (xi,yi,zi)$$$(x_i,y_i,z_i)$$$. The planets are connected by a galactic railway system consisting of N−1$$$N-1$$$ bi-directional railways, forming a tree structure.",
+      "As an agent of the Galactic Adventure Agency, you are planning a promotional campaign. For this campaign, you must choose two planets to highlight. Wanderers can journey between these two planets in two different ways:",
+      "By galactic train: Traveling along the unique simple path that connects the two planets in the railway system. Each railway has an associated satisfaction score (it can be negative), and the total satisfaction is the sum of the scores along the path.",
+      "By private rocket: Traveling directly between the two planets along the x$$$x$$$, y$$$y$$$, and z$$$z$$$ axes. The satisfaction score for this option is equal to the Manhattan distance between the two planets, i.e. |xi−xj|+|yi−yj|+|zi−zj|$$$|x_i - x_j| + |y_i - y_j| + |z_i - z_j|$$$.",
+      "To please both types of tourists, you want to select a pair of planets (u,v)$$$(u, v)$$$ that maximizes the combined satisfaction value, defined as the sum of the train satisfaction and the rocket satisfaction between them.",
+      "Your task is to find this maximum combined satisfaction value."
+    ],
+    "input": [
+      "The first line of input contains one integer N$$$N$$$ (2≤N≤2⋅105$$$2 \\le N \\le 2 \\cdot 10^5$$$) — the number of planets.",
+      "Each of the next N−1$$$N-1$$$ lines contains three integers, u$$$u$$$, v$$$v$$$, and w$$$w$$$, — a railway between planet u$$$u$$$ and planet v$$$v$$$ with a satisfaction score of w$$$w$$$ (1≤u,v≤N,u≠v,|w|≤109$$$1\\le u,v\\le N , u \\neq v, |w| \\le 10^9$$$). It is guaranteed that these edges form a tree.",
+      "Each of the next N$$$N$$$ lines contains three integers, x$$$x$$$, y$$$y$$$, and z$$$z$$$ — the coordinates of the planet u$$$u$$$ (1≤x,y,z≤1014$$$1\\le x,y,z\\le 10^{14}$$$)."
+    ],
+    "output": [
+      "A line contains one integer — the maximum combined satisfaction value.",
+      "If the maximum combined satisfaction value is less than zero, output zero."
+    ],
+    "note": [
+      "For the example, if you choose planet 1$$$1$$$ and planet 4$$$4$$$, the train satisfaction is equal to −2+5=3$$$-2+5=3$$$ and the rocket satisfaction is |8−3|+|3−6|+|2−3|=9$$$|8-3|+|3-6|+|2-3| = 9$$$, the combined satisfaction is equal to 9+3=12$$$9+3=12$$$, which can be shown to be the maximum."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 2 -2\n2 4 5\n3 4 1\n4 5 -5\n8 3 2\n7 6 1\n8 6 2\n3 6 3\n1 1 1",
+      "output": "12"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在一个遥远的星系中，有 N$$$N$$$ 颗行星。第 i$$$i$$$ 颗行星位于坐标 (xi,yi,zi)$$$(x_i,y_i,z_i)$$$。这些行星由一个包含 N−1$$$N-1$$$ 条双向铁路的星系铁路系统连接，构成一棵树结构。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "作为 Galactic Adventure Agency 的一名代理人，你正在策划一次推广活动。在这次活动中，你必须选择两颗行星进行宣传。旅行者可以通过两种不同的方式在这两颗行星之间旅行：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "乘坐星系列车：沿着铁路系统中连接这两颗行星的唯一简单路径行驶。每条铁路都有一个相关的满意度分数（可以为负数），总满意度为路径上所有分数之和。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "乘坐私人火箭：沿着 x$$$x$$$、y$$$y$$$ 和 z$$$z$$$ 轴在两颗行星之间直线飞行。此选项的满意度分数等于两颗行星之间的曼哈顿距离，即 |xi−xj|+|yi−yj|+|zi−zj|$$$|x_i - x_j| + |y_i - y_j| + |z_i - z_j|$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "为了同时满足两类游客的需求，你需要选择一对行星 (u,v)$$$(u, v)$$$，使综合满意度最大，该满意度定义为它们之间的火车满意度与火箭满意度之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是求出这个最大综合满意度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 N$$$N$$$(2≤N≤2⋅105$$$2 \\le N \\le 2 \\cdot 10^5$$$)——行星的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 N−1$$$N-1$$$ 行中，每行包含三个整数 u$$$u$$$、v$$$v$$$ 和 w$$$w$$$，表示行星 u$$$u$$$ 与行星 v$$$v$$$ 之间有一条铁路，其满意度为 w$$$w$$$(1≤u,v≤N，u≠v，|w|≤109$$$1\\le u,v\\le N , u \\neq v, |w| \\le 10^9$$$)。保证这些边构成一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行中，每行包含三个整数 x$$$x$$$、y$$$y$$$ 和 z$$$z$$$，表示行星 u$$$u$$$ 的坐标(1≤x,y,z≤1014$$$1\\le x,y,z\\le 10^{14}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "一行包含一个整数——最大综合满意度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果最大的总满意度小于零，则输出零。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "例如，如果选择星球 1$$$1$$$ 和星球 4$$$4$$$，则火车满意度等于 −2+5=3$$$-2+5=3$$$，火箭满意度为 |8−3|+|3−6|+|2−3|=9$$$|8-3|+|3-6|+|2-3| = 9$$$，总满意度等于 9+3=12$$$9+3=12$$$，可以证明这是最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. Galactic Adventure Agency",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

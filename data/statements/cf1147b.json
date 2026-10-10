@@ -1,0 +1,102 @@
+{
+  "code": "CF1147B",
+  "letter": "B",
+  "title": "B. Chladni Figure",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1147/B",
+  "difficulty": "1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Inaka has a disc, the circumference of which is n$$$n$$$ units. The circumference is equally divided by n$$$n$$$ points numbered clockwise from 1$$$1$$$ to n$$$n$$$, such that points i$$$i$$$ and i+1$$$i + 1$$$ (1≤i<n$$$1 \\leq i  \\lt  n$$$) are adjacent, and so are points n$$$n$$$ and 1$$$1$$$.",
+      "There are m$$$m$$$ straight segments on the disc, the endpoints of which are all among the aforementioned n$$$n$$$ points.",
+      "Inaka wants to know if her image is rotationally symmetrical, i.e. if there is an integer k$$$k$$$ (1≤k<n$$$1 \\leq k  \\lt  n$$$), such that if all segments are rotated clockwise around the center of the circle by k$$$k$$$ units, the new image will be the same as the original one."
+    ],
+    "input": [
+      "The first line contains two space-separated integers n$$$n$$$ and m$$$m$$$ (2≤n≤100000$$$2 \\leq n \\leq 100\\,000$$$, 1≤m≤200000$$$1 \\leq m \\leq 200\\,000$$$) — the number of points and the number of segments, respectively.",
+      "The i$$$i$$$-th of the following m$$$m$$$ lines contains two space-separated integers ai$$$a_i$$$ and bi$$$b_i$$$ (1≤ai,bi≤n$$$1 \\leq a_i, b_i \\leq n$$$, ai≠bi$$$a_i \\neq b_i$$$) that describe a segment connecting points ai$$$a_i$$$ and bi$$$b_i$$$.",
+      "It is guaranteed that no segments coincide."
+    ],
+    "output": [
+      "Output one line — \"Yes\" if the image is rotationally symmetrical, and \"No\" otherwise (both excluding quotation marks).",
+      "You can output each letter in any case (upper or lower)."
+    ],
+    "note": [
+      "The first two examples are illustrated below. Both images become the same as their respective original ones after a clockwise rotation of 120$$$120$$$ degrees around the center.",
+      "![](https://espresso.codeforces.com/6e3900bb62e506a0e30bafab1154ac2ebcbab33b.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "12 6\n1 3\n3 7\n5 7\n7 11\n9 11\n11 3",
+      "output": "Yes"
+    },
+    {
+      "input": "9 6\n4 5\n5 6\n7 8\n8 9\n1 2\n2 3",
+      "output": "Yes"
+    },
+    {
+      "input": "10 3\n1 2\n3 2\n7 2",
+      "output": "No"
+    },
+    {
+      "input": "10 2\n1 6\n2 7",
+      "output": "Yes"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Inaka 有一个圆盘，其周长为 n$$$n$$$ 个单位。圆周被 n$$$n$$$ 个点等分，这些点按顺时针方向从 1$$$1$$$ 到 n$$$n$$$ 编号，使得点 i$$$i$$$ 和 i+1$$$i + 1$$$(1≤i<n$$$1 \\leq i  \\lt  n$$$)相邻，点 n$$$n$$$ 和点 1$$$1$$$ 也相邻。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "圆盘上有 m$$$m$$$ 条线段，它们的端点均位于上述 n$$$n$$$ 个点中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Inaka 想知道她的图像是否具有旋转对称性，即是否存在一个整数 k$$$k$$$(1≤k<n$$$1 \\leq k  \\lt  n$$$)，使得将所有线段绕圆心顺时针旋转 k$$$k$$$ 个单位后，得到的新图像与原图像相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个由空格分隔的整数 n$$$n$$$ 和 m$$$m$$$(2≤n≤100000$$$2 \\leq n \\leq 100\\,000$$$，1≤m≤200000$$$1 \\leq m \\leq 200\\,000$$$)，分别表示点的数量和线段的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中的第 i$$$i$$$ 行包含两个由空格分隔的整数 ai$$$a_i$$$ 和 bi$$$b_i$$$(1≤ai,bi≤n$$$1 \\leq a_i, b_i \\leq n$$$，ai≠bi$$$a_i \\neq b_i$$$)，表示一条连接点 ai$$$a_i$$$ 和 bi$$$b_i$$$ 的线段。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证不存在重合的线段。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一行——如果图像具有旋转对称性则输出“Yes”，否则输出“No”（不包括引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个字母的大小写均可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "下面展示了前两个示例。两幅图像分别绕中心顺时针旋转 120$$$120$$$ 度后，都会与各自的原图像完全相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/6e3900bb62e506a0e30bafab1154ac2ebcbab33b.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Chladni 图形",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

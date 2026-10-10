@@ -1,0 +1,120 @@
+{
+  "code": "CF1202B",
+  "letter": "B",
+  "title": "B. You Are Given a Decimal String...",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1202/B",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Suppose you have a special x$$$x$$$-y$$$y$$$-counter. This counter can store some value as a decimal number; at first, the counter has value 0$$$0$$$.",
+      "The counter performs the following algorithm: it prints its lowest digit and, after that, adds either x$$$x$$$ or y$$$y$$$ to its value. So all sequences this counter generates are starting from 0$$$0$$$. For example, a 4$$$4$$$-2$$$2$$$-counter can act as follows:",
+      "it prints 0$$$0$$$, and adds 4$$$4$$$ to its value, so the current value is 4$$$4$$$, and the output is 0$$$0$$$;",
+      "it prints 4$$$4$$$, and adds 4$$$4$$$ to its value, so the current value is 8$$$8$$$, and the output is 04$$$04$$$;",
+      "it prints 8$$$8$$$, and adds 4$$$4$$$ to its value, so the current value is 12$$$12$$$, and the output is 048$$$048$$$;",
+      "it prints 2$$$2$$$, and adds 2$$$2$$$ to its value, so the current value is 14$$$14$$$, and the output is 0482$$$0482$$$;",
+      "it prints 4$$$4$$$, and adds 4$$$4$$$ to its value, so the current value is 18$$$18$$$, and the output is 04824$$$04824$$$.",
+      "This is only one of the possible outputs; for example, the same counter could generate 0246802468024$$$0246802468024$$$ as the output, if we chose to add 2$$$2$$$ during each step.",
+      "You wrote down a printed sequence from one of such x$$$x$$$-y$$$y$$$-counters. But the sequence was corrupted and several elements from the sequence could be erased.",
+      "Now you'd like to recover data you've lost, but you don't even know the type of the counter you used. You have a decimal string s$$$s$$$ — the remaining data of the sequence.",
+      "For all 0≤x,y<10$$$0 \\le x, y  \\lt  10$$$, calculate the minimum number of digits you have to insert in the string s$$$s$$$ to make it a possible output of the x$$$x$$$-y$$$y$$$-counter. Note that you can't change the order of digits in string s$$$s$$$ or erase any of them; only insertions are allowed."
+    ],
+    "input": [
+      "The first line contains a single string s$$$s$$$ (1≤|s|≤2⋅106$$$1 \\le |s| \\le 2 \\cdot 10^6$$$, si∈{0−9}$$$s_i \\in \\{\\text{0} - \\text{9}\\}$$$) — the remaining data you have. It's guaranteed that s1=0$$$s_1 = 0$$$."
+    ],
+    "output": [
+      "Print a 10×10$$$10 \\times 10$$$ matrix, where the j$$$j$$$-th integer (0$$$0$$$-indexed) on the i$$$i$$$-th line (0$$$0$$$-indexed too) is equal to the minimum number of digits you have to insert in the string s$$$s$$$ to make it a possible output of the i$$$i$$$-j$$$j$$$-counter, or −1$$$-1$$$ if there is no way to do so."
+    ],
+    "note": [
+      "Let's take, for example, 4$$$4$$$-3$$$3$$$-counter. One of the possible outcomes the counter could print is 0(4)8(1)4(7)0$$$0(4)8(1)4(7)0$$$ (lost elements are in the brackets).",
+      "One of the possible outcomes a 2$$$2$$$-3$$$3$$$-counter could print is 0(35)8(1)4(7)0$$$0(35)8(1)4(7)0$$$.",
+      "The 6$$$6$$$-8$$$8$$$-counter could print exactly the string 0840$$$0840$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "0840",
+      "output": "-1 17 7 7 7 -1 2 17 2 7 \n17 17 7 5 5 5 2 7 2 7 \n7 7 7 4 3 7 1 7 2 5 \n7 5 4 7 3 3 2 5 2 3 \n7 5 3 3 7 7 1 7 2 7 \n-1 5 7 3 7 -1 2 9 2 7 \n2 2 1 2 1 2 2 2 0 1 \n17 7 7 5 7 9 2 17 2 3 \n2 2 2 2 2 2 0 2 2 2 \n7 7 5 3 7 7 1 3 2 7"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "假设你有一个特殊的 x$$$x$$$-y$$$y$$$-计数器。这个计数器可以将某个值存储为十进制数；起初，计数器的值为 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "计数器执行以下算法：它输出自己的最低位数字，之后将 x$$$x$$$ 或 y$$$y$$$ 加到其数值上。因此，该计数器生成的所有序列都从 0$$$0$$$ 开始。例如，一个 4$$$4$$$-2$$$2$$$-计数器可以按如下方式运行：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "它输出 0$$$0$$$，并将 4$$$4$$$ 加到其数值上，因此当前值为 4$$$4$$$，输出为 0$$$0$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "它输出 4$$$4$$$，并将 4$$$4$$$ 加到其数值上，因此当前值为 8$$$8$$$，输出为 04$$$04$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "它输出 8$$$8$$$，并将 4$$$4$$$ 加到其数值上，因此当前值为 12$$$12$$$，输出为 048$$$048$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "它输出 2$$$2$$$，并将 2$$$2$$$ 加到其数值上，因此当前值为 14$$$14$$$，输出为 0482$$$0482$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "它输出 4$$$4$$$，并将 4$$$4$$$ 加到其值上，因此当前值为 18$$$18$$$，输出为 04824$$$04824$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "这只是其中一种可能的输出；例如，如果我们选择在每一步加上 2$$$2$$$，同一个计数器可以生成 0246802468024$$$0246802468024$$$ 作为输出。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你记下了来自某个这样的 x$$$x$$$-y$$$y$$$-计数器所产生的输出序列。但该序列遭到了损坏，其中的若干元素可能已被删除。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "现在你想恢复丢失的数据，但你甚至不知道所用计数器的类型。你有一个十进制字符串 s$$$s$$$——该序列的剩余数据。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于所有 0≤x,y<10$$$0 \\le x, y  \\lt  10$$$，计算为了使字符串 s$$$s$$$ 成为 x$$$x$$$-y$$$y$$$-计数器的可能输出，你必须在其中插入的最少数字个数。注意你不能改变字符串 s$$$s$$$ 中数字的顺序，也不能删除其中任何数字；只允许插入。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个字符串 s$$$s$$$(1≤|s|≤2⋅106$$$1 \\le |s| \\le 2 \\cdot 10^6$$$，si∈{0−9}$$$s_i \\in \\{\\text{0} - \\text{9}\\}$$$)——你拥有的剩余数据。保证 s1=0$$$s_1 = 0$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个 10×10$$$10 \\times 10$$$ 矩阵，其中第 i$$$i$$$ 行(同样从 0$$$0$$$ 开始编号)中的第 j$$$j$$$ 个整数(从 0$$$0$$$ 开始编号)等于需要在字符串 s$$$s$$$ 中插入的数字个数的最小值，使其成为 i$$$i$$$-j$$$j$$$-计数器可能输出的结果；如果无法做到，则为 −1$$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "例如，考虑 4$$$4$$$-3$$$3$$$-计数器。该计数器可能输出的结果之一是 0(4)8(1)4(7)0$$$0(4)8(1)4(7)0$$$(丢失的元素位于括号中)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2$$$2$$$-3$$$3$$$-计数器可能输出的结果之一是 0(35)8(1)4(7)0$$$0(35)8(1)4(7)0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "6$$$6$$$-8$$$8$$$-计数器可以恰好输出字符串 0840$$$0840$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 给定一个十进制字符串……",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

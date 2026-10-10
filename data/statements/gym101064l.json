@@ -1,0 +1,114 @@
+{
+  "code": "GYM101064L",
+  "letter": "L",
+  "title": "L. The Knapsack problem",
+  "contest": null,
+  "url": "https://codeforces.com/gym/101064/problem/L",
+  "difficulty": "*2200",
+  "timeLimit": "1.5 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "To prepare for the ICPC World Finals 2017, your team attended to a training camp. Glauber \"the drinker\" Sokolov was the teacher, and all teams had to answer a form so he would know what topics were the best to teach. The first day was introductory and Glauber said he would just go over well-known topics. He said \"I noticed you all answered that you knew the Knapsack problem very well, so here is a simple exercise about it, follows directly from the definitions. Solve the knapsack problem with repetitions.\".",
+      "More formally, given N types of items, each one with a weight and a cost, choose some items such that the sum of its weights does not exceed S, and the sum of costs is maximum. You may choose any number of items of each type.",
+      "Solve Glauber's exercise."
+    ],
+    "input": [
+      "On the first line two integers N and S, the number of types of items and the maximum allowed weight.",
+      "Each of the next N lines has two integers wi and ci, the weight and the cost of the ith type of item.",
+      "Limits",
+      "1 ≤ N, wi ≤ 103",
+      "0 ≤ S, ci ≤ 109"
+    ],
+    "output": [
+      "Print a single integer, the cost of the items you choose."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 100\n14 5\n13 2\n5 1",
+      "output": "35"
+    }
+  ],
+  "titleZh": {
+    "deepl": "L.Knapsack 问题",
+    "caiyun": "L. 背包问题",
+    "youdao": "L.背包问题",
+    "iflyrec": "L.背包问题",
+    "ai": "L. 背包问题"
+  },
+  "sectionsZh": {
+    "input": [
+      {
+        "deepl": "第一行有两个整数 N 和 S，即物品种类数和允许的最大重量。",
+        "caiyun": "第一行是两个整数 N 和 S，表示项目类型的数量和允许的最大权重。",
+        "youdao": "第一行是两个整数N和S，表示物品的种类和最大允许重量。",
+        "iflyrec": "第一行是两个整数n和s，表示物品类型的数量和允许的最大重量。",
+        "ai": "第一行两个整数 N 和 S，分别表示物品种类和最大允许重量。"
+      },
+      {
+        "deepl": "接下来的 N 行中，每一行都有两个整数 wi 和 ci，即第 i 种物品的重量和成本。",
+        "caiyun": "接下来的 N 行中的每一行都包含两个整数 wi 和 ci，即第 i 类项目的重量和成本。",
+        "youdao": "接下来的N行中，每一行都有两个整数wi和ci，分别表示第i种物品的权重和成本。",
+        "iflyrec": "接下来的n行中的每一行具有两个整数wi和ci，即第I类物品的重量和成本。",
+        "ai": "接下来的 N 行每行有两个整数 wi 和 ci，分别表示第 i 种物品的重量和费用。"
+      },
+      {
+        "deepl": "限制",
+        "caiyun": "限制",
+        "youdao": "限制",
+        "iflyrec": "极限",
+        "ai": "限制"
+      },
+      {
+        "deepl": "1 ≤ N, wi ≤ 103",
+        "caiyun": "1≤N,wi≤103",
+        "youdao": "一个≤N, wi≤103",
+        "iflyrec": "1≤N，WI≤103",
+        "ai": "1 ≤ N, wi ≤ 103"
+      },
+      {
+        "deepl": "0 ≤ S, ci ≤ 109",
+        "caiyun": "0≤S，我们≤109",
+        "iflyrec": "0≤S，CI≤109",
+        "ai": "0 ≤ S, ci ≤ 109"
+      }
+    ],
+    "output": [
+      {
+        "deepl": "打印一个整数，即您所选物品的成本。",
+        "caiyun": "打印一个整数，即你选择项目的成本。",
+        "youdao": "打印单个整数，即您选择的项目的成本。",
+        "iflyrec": "打印单个整数，您选择的项目的成本。",
+        "ai": "输出一个整数，表示你选择的物品的总花费。"
+      }
+    ],
+    "legend": [
+      {
+        "deepl": "为了备战 2017 年 ICPC 世界总决赛，您的团队参加了训练营。\"酒鬼 \"格劳伯-索科洛夫担任老师，所有参赛队都必须回答一份表格，以便他知道哪些题目最适合讲授。第一天是入门课，格劳伯说他只讲一些众所周知的话题。他说：\"我注意到你们都回答说你们对 Knapsack 问题非常了解，所以这里有一个关于它的简单练习，直接从定义出发。请用重复的方法解决 Knapsack 问题。",
+        "caiyun": "为了为 2017 年 ICPC 世界总决赛做准备，你的团队参加了一个训练营。“酒鬼” 索科洛夫·格劳伯是老师，所有团队都必须回答一份表格，这样他就知道哪些主题最适合教授。第一天是入门课，格劳伯说他只会简单介绍一些众所周知的主题。他说:“我注意到你们都回答说你们非常了解背包问题，所以这里有一个关于它的简单练习，直接根据定义进行。通过重复来解决背包问题。”",
+        "youdao": "为了准备2017年ICPC世界总决赛，你们参加了一个训练营。“酒鬼”格劳伯·索科洛夫（Glauber Sokolov）是老师，所有团队都必须填写一份表格，这样他就会知道哪些话题最适合教。第一天是介绍性的，格劳伯说他只会讲一些大家熟悉的话题。他说：“我注意到你们都回答说你们对背包问题很了解，所以这里有一个简单的练习，直接根据定义。用重复来解决背包问题。”",
+        "iflyrec": "为了准备2017年ICPC世界总决赛，你的团队参加了一个训练营。“酒鬼”格劳伯·索科洛夫是老师，所有的团队都必须回答一张表格，这样他就能知道哪些主题最适合教授。第一天是介绍性的，格劳伯说他只会讲一些众所周知的话题。他说，我注意到你们都回答说你们非常了解背包问题，所以这里有一个关于它的简单练习。直接从定义中得出。用重复解决背包问题..",
+        "ai": "为了准备 ICPC World Finals 2017，你的队伍参加了一个训练营。Glauber “the drinker” Sokolov 是老师，所有队伍都必须填写一份表格，以便他知道最适合教哪些主题。第一天是入门介绍，Glauber 说他会只讲解一些众所周知的主题。他说：“我注意到你们都回答说自己对背包问题非常了解，所以这里有一个关于它的简单练习，直接由定义得出。求解可重复选取的背包问题。”"
+      },
+      {
+        "deepl": "更正式地说，给定 N 种物品，每种物品都有一个权重和一个成本，请选择一些物品，使其权重之和不超过 S，成本之和为最大值。每种类型的物品数量不限。",
+        "caiyun": "更正式地说，给定 N 种类型的项目，每种项目都有重量和成本，选择一些项目，使其重量之和不超过 S，且成本之和最大。你可以选择每种类型的任意数量的项目。",
+        "youdao": "更正式地说，给定N种物品，每种物品都有一个权重和一个成本，选择一些物品，使其权重之和不超过S，成本之和最大。您可以选择每种类型的任意数量的项目。",
+        "iflyrec": "更正式地说，给定n种类型的项目，每一种都有权重和成本，选择一些项目，使其权重之和不超过s，并且成本之和最大。您可以选择每种类型的任意数量的项目。",
+        "ai": "更正式地，给定 N 种物品，每种物品都有一个重量和一个价值，选择一些物品使得其重量之和不超过 S，且价值之和最大。每种物品可以选择任意数量。"
+      },
+      {
+        "deepl": "解决格劳伯练习题。",
+        "caiyun": "解决格劳贝尔的练习题。",
+        "youdao": "解格劳伯的习题。",
+        "iflyrec": "解决格劳伯的练习。",
+        "ai": "解决 Glauber 的习题。"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.089Z",
+  "translatedBy": [
+    "iflyrec"
+  ]
+}

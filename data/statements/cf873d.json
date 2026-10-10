@@ -1,0 +1,104 @@
+{
+  "code": "CF873D",
+  "letter": "D",
+  "title": "D. Merge Sort",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/873/D",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Merge sort is a well-known sorting algorithm. The main function that sorts the elements of array a with indices from [l, r) can be implemented as follows:",
+      "If the segment [l, r) is already sorted in non-descending order (that is, for any i such that l ≤ i < r - 1 a[i] ≤ a[i + 1]), then end the function call;",
+      "Let ![](https://espresso.codeforces.com/605fe3f9e91c8128533aea46c712d4e485918a63.png);",
+      "Call mergesort(a, l, mid);",
+      "Call mergesort(a, mid, r);",
+      "Merge segments [l, mid) and [mid, r), making the segment [l, r) sorted in non-descending order. The merge algorithm doesn't call any other functions.",
+      "The array in this problem is 0-indexed, so to sort the whole array, you need to call mergesort(a, 0, n).",
+      "The number of calls of function mergesort is very important, so Ivan has decided to calculate it while sorting the array. For example, if a = {1, 2, 3, 4}, then there will be 1 call of mergesort — mergesort(0, 4), which will check that the array is sorted and then end. If a = {2, 1, 3}, then the number of calls is 3: first of all, you call mergesort(0, 3), which then sets mid = 1 and calls mergesort(0, 1) and mergesort(1, 3), which do not perform any recursive calls because segments (0, 1) and (1, 3) are sorted.",
+      "Ivan has implemented the program that counts the number of mergesort calls, but now he needs to test it. To do this, he needs to find an array a such that a is a permutation of size n (that is, the number of elements in a is n, and every integer number from [1, n] can be found in this array), and the number of mergesort calls when sorting the array is exactly k.",
+      "Help Ivan to find an array he wants!"
+    ],
+    "input": [
+      "The first line contains two numbers n and k (1 ≤ n ≤ 100000, 1 ≤ k ≤ 200000) — the size of a desired permutation and the number of mergesort calls required to sort it."
+    ],
+    "output": [
+      "If a permutation of size n such that there will be exactly k calls of mergesort while sorting it doesn't exist, output  - 1. Otherwise output n integer numbers a[0], a[1], ..., a[n - 1] — the elements of a permutation that would meet the required conditions. If there are multiple answers, print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3",
+      "output": "2 1 3"
+    },
+    {
+      "input": "4 1",
+      "output": "1 2 3 4"
+    },
+    {
+      "input": "5 6",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "归并排序是一种众所周知的排序算法。将数组 a 中下标属于 [l, r) 的元素进行排序的主函数可以实现如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果区间 [l, r) 已经按照非递减顺序排序（也就是说，对于任意满足 l ≤ i < r - 1 的 i，都有 a[i] ≤ a[i + 1]），则结束函数调用；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "令 ![](https://espresso.codeforces.com/605fe3f9e91c8128533aea46c712d4e485918a63.png)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "调用 mergesort(a, l, mid)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "调用 mergesort(a, mid, r)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "合并区间 [l, mid) 和 [mid, r)，使区间 [l, r) 按照非递减顺序排序。合并算法不会调用任何其他函数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "本题中的数组采用 0 下标，因此若要对整个数组进行排序，需要调用 mergesort(a, 0, n)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "归并排序函数 mergesort 的调用次数非常重要，因此 Ivan 决定在对数组排序的同时计算调用次数。例如，如果 a = {1, 2, 3, 4}，那么将进行 1 次 mergesort 调用，即 mergesort(0, 4)，它会检查数组是否已经有序，然后结束。如果 a = {2, 1, 3}，那么调用次数为 3：首先调用 mergesort(0, 3)，该调用将 mid = 1，然后调用 mergesort(0, 1) 和 mergesort(1, 3)，由于区间 (0, 1) 和 (1, 3) 已经有序，它们不会进行任何递归调用。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Ivan 已经实现了一个统计 mergesort 调用次数的程序，但现在他需要对其进行测试。为此，他需要找到一个数组 a，使得 a 是一个大小为 n 的排列（即 a 中有 n 个元素，并且整数 [1, n] 中的每个数都能在该数组中找到），并且对该数组排序时 mergesort 的调用次数恰好为 k。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Ivan 找到他想要的数组！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个数 n 和 k（1 ≤ n ≤ 100000，1 ≤ k ≤ 200000），分别表示所需排列的大小以及排序时所需的 mergesort 调用次数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果不存在一个大小为 n 的排列，使得对其排序时 mergesort 恰好调用 k 次，则输出  - 1。否则，输出 n 个整数 a[0]、a[1]、...、a[n - 1]，表示一个满足要求的排列。如果有多个答案，输出任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 归并排序",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

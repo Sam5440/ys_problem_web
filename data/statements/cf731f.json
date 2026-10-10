@@ -1,0 +1,84 @@
+{
+  "code": "CF731F",
+  "letter": "F",
+  "title": "F. Video Cards",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/731/F",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Little Vlad is fond of popular computer game Bota-2. Recently, the developers announced the new add-on named Bota-3. Of course, Vlad immediately bought only to find out his computer is too old for the new game and needs to be updated.",
+      "There are n video cards in the shop, the power of the i-th video card is equal to integer value ai. As Vlad wants to be sure the new game will work he wants to buy not one, but several video cards and unite their powers using the cutting-edge technology. To use this technology one of the cards is chosen as the leading one and other video cards are attached to it as secondary. For this new technology to work it's required that the power of each of the secondary video cards is divisible by the power of the leading video card. In order to achieve that the power of any secondary video card can be reduced to any integer value less or equal than the current power. However, the power of the leading video card should remain unchanged, i.e. it can't be reduced.",
+      "Vlad has an infinite amount of money so he can buy any set of video cards. Help him determine which video cards he should buy such that after picking the leading video card and may be reducing some powers of others to make them work together he will get the maximum total value of video power."
+    ],
+    "input": [
+      "The first line of the input contains a single integer n (1 ≤ n ≤ 200 000) — the number of video cards in the shop.",
+      "The second line contains n integers a1, a2, ..., an (1 ≤ ai ≤ 200 000) — powers of video cards."
+    ],
+    "output": [
+      "The only line of the output should contain one integer value — the maximum possible total power of video cards working together."
+    ],
+    "note": [
+      "In the first sample, it would be optimal to buy video cards with powers 3, 15 and 9. The video card with power 3 should be chosen as the leading one and all other video cards will be compatible with it. Thus, the total power would be 3 + 15 + 9 = 27. If he buys all the video cards and pick the one with the power 2 as the leading, the powers of all other video cards should be reduced by 1, thus the total power would be 2 + 2 + 14 + 8 = 26, that is less than 27. Please note, that it's not allowed to reduce the power of the leading video card, i.e. one can't get the total power 3 + 1 + 15 + 9 = 28.",
+      "In the second sample, the optimal answer is to buy all video cards and pick the one with the power 2 as the leading. The video card with the power 7 needs it power to be reduced down to 6. The total power would be 8 + 2 + 2 + 6 = 18."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n3 2 15 9",
+      "output": "27"
+    },
+    {
+      "input": "4\n8 2 2 7",
+      "output": "18"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "小弗拉德喜欢热门的电脑游戏 Bota-2。最近，开发者宣布了名为 Bota-3 的新扩展包。当然，弗拉德立即买了下来，却发现自己的电脑太旧，无法运行这款新游戏，需要进行升级。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "商店里有 n 张显卡，第 i 张显卡的性能等于整数 ai。由于 Vlad 想确保新游戏能够运行，他想购买的不是一张显卡，而是多张显卡，并使用尖端技术将它们的性能结合起来。使用这项技术时，需要选出一张显卡作为主卡，并将其他显卡作为副卡连接到它上面。为了使这项新技术正常工作，要求每张副卡的性能都能被主卡的性能整除。为此，可以将任意副卡的性能降低为不超过其当前性能的任意整数值。但是，主卡的性能必须保持不变，也就是说不能降低主卡的性能。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vlad 有无限多的钱，因此他可以买下任意一组显卡。请帮助他确定应该购买哪些显卡，使得在选出主卡并可以降低其他显卡的性能以使它们能够协同工作后，显卡性能总和最大。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，购买性能为 3、15 和 9 的显卡是最优选择。应选择性能为 3 的显卡作为主卡，其他所有显卡都与它兼容。因此，性能总和为 3 + 15 + 9 = 27。如果购买所有显卡，并选择性能为 2 的显卡作为主卡，那么其他显卡的性能都必须降低 1，因此性能总和为 2 + 2 + 14 + 8 = 26，小于 27。请注意，不允许降低主卡的性能，因此不能得到 3 + 1 + 15 + 9 = 28 的性能总和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，最优方案是购买所有显卡，并选择功率为 2 的显卡作为领头显卡。功率为 7 的显卡需要将其功率降低到 6。总功率为 8 + 2 + 2 + 6 = 18。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（1 ≤ n ≤ 200 000），表示商店中的显卡数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个整数 a1, a2, ..., an（1 ≤ ai ≤ 200 000），表示各张显卡的性能。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出的唯一一行应包含一个整数，表示能够协同工作的显卡性能总和的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 视频卡",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "code": "CF847I",
+  "letter": "I",
+  "title": "I. Noise Level",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/847/I",
+  "difficulty": "1900",
+  "timeLimit": "5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The Berland's capital has the form of a rectangle with sizes n × m quarters. All quarters are divided into three types:",
+      "regular (labeled with the character '.') — such quarters do not produce the noise but are not obstacles to the propagation of the noise;",
+      "sources of noise (labeled with an uppercase Latin letter from 'A' to 'Z') — such quarters are noise sources and are not obstacles to the propagation of the noise;",
+      "heavily built-up (labeled with the character '*') — such quarters are soundproofed, the noise does not penetrate into them and they themselves are obstacles to the propagation of noise.",
+      "A quarter labeled with letter 'A' produces q units of noise. A quarter labeled with letter 'B' produces 2·q units of noise. And so on, up to a quarter labeled with letter 'Z', which produces 26·q units of noise. There can be any number of quarters labeled with each letter in the city.",
+      "When propagating from the source of the noise, the noise level is halved when moving from one quarter to a quarter that shares a side with it (when an odd number is to be halved, it's rounded down). The noise spreads along the chain. For example, if some quarter is located at a distance 2 from the noise source, then the value of noise which will reach the quarter is divided by 4. So the noise level that comes from the source to the quarter is determined solely by the length of the shortest path between them. Heavily built-up quarters are obstacles, the noise does not penetrate into them.",
+      "![](https://espresso.codeforces.com/985e6cfcaf374bf2c1080c5819a7f73a7658a14d.png)",
+      "The noise level in quarter is defined as the sum of the noise from all sources. To assess the quality of life of the population of the capital of Berland, it is required to find the number of quarters whose noise level exceeds the allowed level p."
+    ],
+    "input": [
+      "The first line contains four integers n, m, q and p (1 ≤ n, m ≤ 250, 1 ≤ q, p ≤ 106) — the sizes of Berland's capital, the number of noise units that a quarter 'A' produces, and the allowable noise level.",
+      "Each of the following n lines contains m characters — the description of the capital quarters, in the format that was described in the statement above. It is possible that in the Berland's capital there are no quarters of any type."
+    ],
+    "output": [
+      "Print the number of quarters, in which the noise level exceeds the allowed level p."
+    ],
+    "note": [
+      "The illustration to the first example is in the main part of the statement."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3 100 140\n...\nA*.\n.B.",
+      "output": "3"
+    },
+    {
+      "input": "3 3 2 8\nB*.\nBB*\nBBB",
+      "output": "4"
+    },
+    {
+      "input": "3 4 5 4\n..*B\n..**\nD...",
+      "output": "7"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Berland 的首都是一个由 n × m 个街区组成的矩形。所有街区分为三类：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "普通街区（标有字符 '.'）——这类街区不会产生噪声，但也不会阻碍噪声传播；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "噪声源（标有从 'A' 到 'Z' 的大写拉丁字母）——这类街区是噪声源，不会阻碍噪声传播；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "高密度建筑区（标有字符 '*'）——这类街区经过隔音处理，噪声无法进入其中，并且它们本身会阻碍噪声传播。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "标有字母“A”的街区会产生 q 个噪声单位。标有字母“B”的街区会产生 2·q 个噪声单位。以此类推，标有字母“Z”的街区会产生 26·q 个噪声单位。城市中每种字母标记的街区数量可以是任意的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "噪声从噪声源传播时，每移动到一个与当前街区共边的街区，噪声级就会减半（当一个奇数除以 2 时，向下取整）。噪声会沿着这条链传播。例如，如果某个街区与噪声源的距离为 2，那么传到该街区的噪声值会除以 4。因此，噪声源传播到某个街区的噪声级只取决于两者之间最短路径的长度。建筑密集的街区是障碍物，噪声无法穿透它们。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/985e6cfcaf374bf2c1080c5819a7f73a7658a14d.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "某个街区的噪声级定义为所有噪声源产生的噪声之和。为了评估 Berland 首都居民的生活质量，需要求出噪声级超过允许值 p 的街区数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含四个整数 n、m、q 和 p（1 ≤ n，m ≤ 250，1 ≤ q，p ≤ 106）——Berland 首都的大小、一个字母为“A”的街区产生的噪声单位数，以及允许的噪声级。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n 行中，每行包含 m 个字符，表示首都中的街区，格式如题面上文所述。Berland 首都中可能不存在任何类型的街区。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出噪声水平超过允许水平 p 的街区数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例的插图位于题面正文中。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "I. 噪声等级",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "code": "CF1080E",
+  "letter": "E",
+  "title": "E. Sonya and Matrix Beauty",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1080/E",
+  "difficulty": "2400",
+  "timeLimit": "1.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Sonya had a birthday recently. She was presented with the matrix of size n×m$$$n\\times m$$$ and consist of lowercase Latin letters. We assume that the rows are numbered by integers from 1$$$1$$$ to n$$$n$$$ from bottom to top, and the columns are numbered from 1$$$1$$$ to m$$$m$$$ from left to right.",
+      "Let's call a submatrix (i1,j1,i2,j2)$$$(i_1, j_1, i_2, j_2)$$$ (1≤i1≤i2≤n;1≤j1≤j2≤m)$$$(1\\leq i_1\\leq i_2\\leq n; 1\\leq j_1\\leq j_2\\leq m)$$$ elements aij$$$a_{ij}$$$ of this matrix, such that i1≤i≤i2$$$i_1\\leq i\\leq i_2$$$ and j1≤j≤j2$$$j_1\\leq j\\leq j_2$$$. Sonya states that a submatrix is beautiful if we can independently reorder the characters in each row (not in column) so that all rows and columns of this submatrix form palidroms.",
+      "Let's recall that a string is called palindrome if it reads the same from left to right and from right to left. For example, strings abacaba,bcaacb,a$$$abacaba, bcaacb, a$$$ are palindromes while strings abca,acbba,ab$$$abca, acbba, ab$$$ are not.",
+      "Help Sonya to find the number of beautiful submatrixes. Submatrixes are different if there is an element that belongs to only one submatrix."
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (1≤n,m≤250)$$$(1\\leq n, m\\leq 250)$$$ — the matrix dimensions.",
+      "Each of the next n$$$n$$$ lines contains m$$$m$$$ lowercase Latin letters."
+    ],
+    "output": [
+      "Print one integer — the number of beautiful submatrixes."
+    ],
+    "note": [
+      "In the first example, the following submatrixes are beautiful: ((1,1),(1,1));((1,2),(1,2));$$$((1, 1), (1, 1)); ((1, 2), (1, 2));$$$ ((1,3),(1,3));((1,1),(1,3))$$$((1, 3), (1, 3)); ((1, 1), (1, 3))$$$.",
+      "In the second example, all submatrixes that consist of one element and the following are beautiful: ((1,1),(2,1));$$$((1, 1), (2, 1));$$$ ((1,1),(1,3));((2,1),(2,3));((1,1),(2,3));((2,1),(2,2))$$$((1, 1), (1, 3)); ((2, 1), (2, 3)); ((1, 1), (2, 3)); ((2, 1), (2, 2))$$$.",
+      "Some of the beautiful submatrixes are: ((1,1),(1,5));((1,2),(3,4));$$$((1, 1), (1, 5)); ((1, 2), (3, 4));$$$ ((1,1),(3,5))$$$((1, 1), (3, 5))$$$.",
+      "The submatrix ((1,1),(3,5))$$$((1, 1), (3, 5))$$$ is beautiful since it can be reordered as:",
+      {
+        "pre": "\naccca\naabaa\naccca"
+      },
+      "In such a matrix every row and every column form palindromes."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 3\naba",
+      "output": "4"
+    },
+    {
+      "input": "2 3\naca\naac",
+      "output": "11"
+    },
+    {
+      "input": "3 5\naccac\naaaba\ncccaa",
+      "output": "43"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Sonya 最近过生日。她收到了一个大小为 n×m$$$n\\times m$$$ 的矩阵，矩阵由小写拉丁字母组成。我们规定，行从下到上依次编号为 1$$$1$$$ 到 n$$$n$$$，列从左到右依次编号为 1$$$1$$$ 到 m$$$m$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们称一个子矩阵 (i1,j1,i2,j2)$$$(i_1, j_1, i_2, j_2)$$$ (1≤i1≤i2≤n;1≤j1≤j2≤m)$$$(1\\leq i_1\\leq i_2\\leq n; 1\\leq j_1\\leq j_2\\leq m)$$$ 由该矩阵的元素 aij$$$a_{ij}$$$ 构成，当 i1≤i≤i2$$$i_1\\leq i\\leq i_2$$$ 且 j1≤j≤j2$$$j_1\\leq j\\leq j_2$$$ 时成立。Sonya 声称，如果我们可以独立地重新排列每一行中的字符(不能重新排列列中的字符)，使得该子矩阵的所有行和所有列都构成回文串，那么这个子矩阵就是美丽的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们知道，如果一个字符串从左到右和从右到左读起来相同，那么它就是回文串。例如，字符串 abacaba,bcaacb,a$$$abacaba, bcaacb, a$$$ 是回文串，而字符串 abca,acbba,ab$$$abca, acbba, ab$$$ 不是。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Sonya 求出美丽子矩阵的数量。如果存在一个元素只属于两个子矩阵中的一个，则这两个子矩阵不同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤250)$$$(1\\leq n, m\\leq 250)$$$——矩阵的行数和列数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行中，每行包含 m$$$m$$$ 个小写拉丁字母。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——美丽子矩阵的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，以下子矩阵是美丽的：((1,1),(1,1));((1,2),(1,2));$$$((1, 1), (1, 1)); ((1, 2), (1, 2));$$$ ((1,3),(1,3));((1,1),(1,3))$$$((1, 3), (1, 3)); ((1, 1), (1, 3))$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，所有只包含一个元素的子矩阵以及以下子矩阵都是美丽的：((1,1),(2,1));$$$((1, 1), (2, 1));$$$ ((1,1),(1,3));((2,1),(2,3));((1,1),(2,3));((2,1),(2,2))$$$((1, 1), (1, 3)); ((2, 1), (2, 3)); ((1, 1), (2, 3)); ((2, 1), (2, 2))$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一些美丽的子矩阵包括：((1,1),(1,5));((1,2),(3,4));$$$((1, 1), (1, 5)); ((1, 2), (3, 4));$$$ ((1,1),(3,5))$$$((1, 1), (3, 5))$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子矩阵 ((1,1),(3,5))$$$((1, 1), (3, 5))$$$ 是美丽的，因为它可以被重新排列成：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "在这样的矩阵中，每一行和每一列都构成回文。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. Sonya 与矩阵之美",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

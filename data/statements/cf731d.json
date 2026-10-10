@@ -1,0 +1,127 @@
+{
+  "code": "CF731D",
+  "letter": "D",
+  "title": "D. 80-th Level Archeology",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/731/D",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Archeologists have found a secret pass in the dungeon of one of the pyramids of Cycleland. To enter the treasury they have to open an unusual lock on the door. The lock consists of n words, each consisting of some hieroglyphs. The wall near the lock has a round switch. Each rotation of this switch changes the hieroglyphs according to some rules. The instruction nearby says that the door will open only if words written on the lock would be sorted in lexicographical order (the definition of lexicographical comparison in given in notes section).",
+      "The rule that changes hieroglyphs is the following. One clockwise rotation of the round switch replaces each hieroglyph with the next hieroglyph in alphabet, i.e. hieroglyph x (1 ≤ x ≤ c - 1) is replaced with hieroglyph (x + 1), and hieroglyph c is replaced with hieroglyph 1.",
+      "Help archeologist determine, how many clockwise rotations they should perform in order to open the door, or determine that this is impossible, i.e. no cyclic shift of the alphabet will make the sequence of words sorted lexicographically."
+    ],
+    "input": [
+      "The first line of the input contains two integers n and c (2 ≤ n ≤ 500 000, 1 ≤ c ≤ 106) — the number of words, written on the lock, and the number of different hieroglyphs.",
+      "Each of the following n lines contains the description of one word. The i-th of these lines starts with integer li (1 ≤ li ≤ 500 000), that denotes the length of the i-th word, followed by li integers wi, 1, wi, 2, ..., wi, li (1 ≤ wi, j ≤ c) — the indices of hieroglyphs that make up the i-th word. Hieroglyph with index 1 is the smallest in the alphabet and with index c — the biggest.",
+      "It's guaranteed, that the total length of all words doesn't exceed 106."
+    ],
+    "output": [
+      "If it is possible to open the door by rotating the round switch, print integer x (0 ≤ x ≤ c - 1) that defines the required number of clockwise rotations. If there are several valid x, print any of them.",
+      "If it is impossible to open the door by this method, print  - 1."
+    ],
+    "note": [
+      "Word a1, a2, ..., am of length m is lexicographically not greater than word b1, b2, ..., bk of length k, if one of two conditions hold:",
+      "at first position i, such that ai ≠ bi, the character ai goes earlier in the alphabet than character bi, i.e. a has smaller character in the first position where they differ;",
+      "if there is no such position i and m ≤ k, i.e. the first word is a prefix of the second or two words are equal.",
+      "The sequence of words is said to be sorted in lexicographical order if each word (except the last one) is lexicographically not greater than the next word.",
+      "In the first sample, after the round switch is rotated 1 position clockwise the words look as follows:",
+      {
+        "pre": "\n1 3\n2\n3 1 2\n3 1 2 3"
+      },
+      "In the second sample, words are already sorted in lexicographical order.",
+      "In the last sample, one can check that no shift of the alphabet will work."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 3\n2 3 2\n1 1\n3 2 3 1\n4 2 3 1 2",
+      "output": "1"
+    },
+    {
+      "input": "2 5\n2 4 2\n2 4 2",
+      "output": "0"
+    },
+    {
+      "input": "4 4\n1 2\n1 3\n1 4\n1 2",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 c（2 ≤ n ≤ 500 000，1 ≤ c ≤ 10^6）——锁上写出的单词数量以及不同象形文字的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n 行中，每行描述一个单词。第 i 行以整数 l_i（1 ≤ l_i ≤ 500 000）开头，随后是 l_i 个整数 w_i, 1，w_i, 2，...，w_i, l_i（1 ≤ w_i, j ≤ c），表示组成第 i 个单词的象形文字的编号。编号为 1 的象形文字是字母表中最小的，编号为 c 的象形文字是最大的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有单词的总长度不超过 10^6。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果可以通过旋转圆形开关来打开门，则输出整数 x（0 ≤ x ≤ c - 1），它表示所需的顺时针旋转次数。如果有多个合法的 x，输出其中任意一个。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果无法通过这种方法打开门，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "长度为 m 的单词 a1, a2, ..., am 在字典序上不大于长度为 k 的单词 b1, b2, ..., bk，当以下两个条件之一成立时：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一个满足 ai ≠ bi 的位置 i 上，字符 ai 在字母表中比字符 bi 更靠前，即 a 在它们第一个不同的位置上的字符更小；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果不存在这样的位置 i 且 m ≤ k，即第一个单词是第二个单词的前缀，或者两个单词相等。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果每个单词（最后一个除外）按字典序都不大于下一个单词，则称该单词序列按字典序排列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个样例中，将圆形开关顺时针旋转 1 个位置后，单词如下所示：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "在第二个样例中，单词已经按字典序排列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在最后一个样例中，可以验证字母表的任何移位都无法奏效。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "考古学家在 Cycleland 的一座金字塔地牢中发现了一条秘密通道。为了进入宝库，他们必须打开门上的一把特殊的锁。这把锁由 n 个单词组成，每个单词由若干个象形文字构成。锁附近的墙上有一个圆形开关。每旋转一次开关，象形文字都会按照某些规则发生变化。旁边的说明写道：只有当锁上写出的单词按字典序排列时，门才会打开（字典序比较的定义见注释部分）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "改变象形文字的规则如下。顺时针旋转一次圆形开关，会将每个象形文字替换为字母表中的下一个象形文字，即象形文字 x（1 ≤ x ≤ c - 1）会被替换为象形文字（x + 1），而象形文字 c 会被替换为象形文字 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助考古学家确定需要顺时针旋转多少次才能打开门，或者判断这是不可能的，即不存在任何字母表的循环移位能使这些单词按字典序排列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 第 80 层考古学",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

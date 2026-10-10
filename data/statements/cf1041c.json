@@ -1,0 +1,89 @@
+{
+  "code": "CF1041C",
+  "letter": "C",
+  "title": "C. Coffee Break",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1041/C",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Recently Monocarp got a job. His working day lasts exactly m$$$m$$$ minutes. During work, Monocarp wants to drink coffee at certain moments: there are n$$$n$$$ minutes a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$, when he is able and willing to take a coffee break (for the sake of simplicity let's consider that each coffee break lasts exactly one minute).",
+      "However, Monocarp's boss doesn't like when Monocarp takes his coffee breaks too often. So for the given coffee break that is going to be on minute ai$$$a_i$$$, Monocarp must choose the day in which he will drink coffee during the said minute, so that every day at least d$$$d$$$ minutes pass between any two coffee breaks. Monocarp also wants to take these n$$$n$$$ coffee breaks in a minimum possible number of working days (he doesn't count days when he is not at work, and he doesn't take coffee breaks on such days). Take into account that more than d$$$d$$$ minutes pass between the end of any working day and the start of the following working day.",
+      "For each of the n$$$n$$$ given minutes determine the day, during which Monocarp should take a coffee break in this minute. You have to minimize the number of days spent."
+    ],
+    "input": [
+      "The first line contains three integers n$$$n$$$, m$$$m$$$, d$$$d$$$ (1≤n≤2⋅105,n≤m≤109,1≤d≤m)$$$(1 \\le n \\le 2\\cdot10^{5}, n \\le m \\le 10^{9}, 1 \\le d \\le m)$$$ — the number of coffee breaks Monocarp wants to have, the length of each working day, and the minimum number of minutes between any two consecutive coffee breaks.",
+      "The second line contains n$$$n$$$ distinct integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (1≤ai≤m)$$$(1 \\le a_i \\le m)$$$, where ai$$$a_i$$$ is some minute when Monocarp wants to have a coffee break."
+    ],
+    "output": [
+      "In the first line, write the minimum number of days required to make a coffee break in each of the n$$$n$$$ given minutes.",
+      "In the second line, print n$$$n$$$ space separated integers. The i$$$i$$$-th of integers should be the index of the day during which Monocarp should have a coffee break at minute ai$$$a_i$$$. Days are numbered from 1$$$1$$$. If there are multiple optimal solutions, you may print any of them."
+    ],
+    "note": [
+      "In the first example, Monocarp can take two coffee breaks during the first day (during minutes 1$$$1$$$ and 5$$$5$$$, 3$$$3$$$ minutes will pass between these breaks). One break during the second day (at minute 2$$$2$$$), and one break during the third day (at minute 3$$$3$$$).",
+      "In the second example, Monocarp can determine the day of the break as follows: if the minute when he wants to take a break is odd, then this break is on the first day, if it is even, then this break is on the second day."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 5 3\n3 5 1 2",
+      "output": "3\n3 1 1 2"
+    },
+    {
+      "input": "10 10 1\n10 5 7 4 6 3 2 1 9 8",
+      "output": "2\n2 1 1 2 2 1 2 1 1 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "最近，Monocarp 找到了一份工作。他的工作日恰好持续 m$$$m$$$ 分钟。在工作期间，Monocarp 想在某些时刻喝咖啡：有 n$$$n$$$ 个分钟 a1、a2、…、an$$$a_1, a_2, \\dots, a_n$$$，在这些分钟里他能够并且愿意休息喝咖啡(为简单起见，我们认为每次咖啡休息恰好持续一分钟)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，Monocarp 的老板不喜欢他过于频繁地休息喝咖啡。因此，对于安排在第 ai$$$a_i$$$ 分钟的这次咖啡休息，Monocarp 必须选择在哪一天的这一分钟喝咖啡，使得每天任意两次咖啡休息之间至少间隔 d$$$d$$$ 分钟。Monocarp 还希望在尽可能少的工作日内完成这 n$$$n$$$ 次咖啡休息(他不计算不上班的日子，也不会在这些日子休息喝咖啡)。请注意，每个工作日结束到下一个工作日开始之间经过的时间超过 d$$$d$$$ 分钟。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于给定的 n$$$n$$$ 个分钟，确定 Monocarp 应在哪一天在这些分钟休息喝咖啡。你需要最小化所用的天数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、m$$$m$$$、d$$$d$$$(1≤n≤2⋅105,n≤m≤109,1≤d≤m)$$$(1 \\le n \\le 2\\cdot10^{5}, n \\le m \\le 10^{9}, 1 \\le d \\le m)$$$——Monocarp 想要进行的咖啡休息次数、每个工作日的长度，以及任意两次连续咖啡休息之间的最少分钟数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个互不相同的整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤m)$$$(1 \\le a_i \\le m)$$$，其中 ai$$$a_i$$$ 是 Monocarp 想要进行咖啡休息的某个分钟。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在第一行，输出在给定的 n$$$n$$$ 个分钟中的每一分钟都进行一次咖啡休息所需的最少天数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二行，输出 n$$$n$$$ 个空格分隔的整数。第 i$$$i$$$ 个整数应表示 Monocarp 在分钟 ai$$$a_i$$$ 进行咖啡休息所在的天数编号。天数从 1$$$1$$$ 开始编号。如果存在多个最优解，可以输出其中任意一个。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Monocarp 可以在第一天进行两次咖啡休息(分别在分钟 1$$$1$$$ 和 5$$$5$$$，这两次休息之间会经过 3$$$3$$$ 分钟)。在第二天进行一次休息(在分钟 2$$$2$$$)，并在第三天进行一次休息(在分钟 3$$$3$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个样例中，Monocarp 可以按如下方式确定休息所在的天：如果他想休息的分钟是奇数，则该休息在第一天；如果是偶数，则该休息在第二天。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 咖啡休息",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

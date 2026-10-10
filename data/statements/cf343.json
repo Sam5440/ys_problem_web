@@ -1,0 +1,108 @@
+{
+  "code": "CF343",
+  "letter": "C",
+  "title": "C. Read Time",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/343/C",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Mad scientist Mike does not use slow hard disks. His modification of a hard drive has not one, but n different heads that can read data in parallel.",
+      "When viewed from the side, Mike's hard drive is an endless array of tracks. The tracks of the array are numbered from left to right with integers, starting with 1. In the initial state the i-th reading head is above the track number hi. For each of the reading heads, the hard drive's firmware can move the head exactly one track to the right or to the left, or leave it on the current track. During the operation each head's movement does not affect the movement of the other heads: the heads can change their relative order; there can be multiple reading heads above any of the tracks. A track is considered read if at least one head has visited this track. In particular, all of the tracks numbered h1, h2, ..., hn have been read at the beginning of the operation.",
+      "![](https://espresso.codeforces.com/ca9f4791774195cd732cefa3624a34c47835fa8a.png)",
+      "Mike needs to read the data on m distinct tracks with numbers p1, p2, ..., pm. Determine the minimum time the hard drive firmware needs to move the heads and read all the given tracks. Note that an arbitrary number of other tracks can also be read."
+    ],
+    "input": [
+      "The first line of the input contains two space-separated integers n, m (1 ≤ n, m ≤ 105) — the number of disk heads and the number of tracks to read, accordingly. The second line contains n distinct integers hi in ascending order (1 ≤ hi ≤ 1010, hi < hi + 1) — the initial positions of the heads. The third line contains m distinct integers pi in ascending order (1 ≤ pi ≤ 1010, pi < pi + 1) - the numbers of tracks to read.",
+      "Please, do not use the %lld specifier to read or write 64-bit integers in С++. It is recommended to use the cin, cout streams or the %I64d specifier."
+    ],
+    "output": [
+      "Print a single number — the minimum time required, in seconds, to read all the needed tracks."
+    ],
+    "note": [
+      "The first test coincides with the figure. In this case the given tracks can be read in 2 seconds in the following way:",
+      "during the first second move the 1-st head to the left and let it stay there;",
+      "move the second head to the left twice;",
+      "move the third head to the right twice (note that the 6-th track has already been read at the beginning).",
+      "One cannot read the tracks in 1 second as the 3-rd head is at distance 2 from the 8-th track."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 4\n2 5 6\n1 3 6 8",
+      "output": "2"
+    },
+    {
+      "input": "3 3\n1 2 3\n1 2 3",
+      "output": "0"
+    },
+    {
+      "input": "1 2\n165\n142 200",
+      "output": "81"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "疯狂科学家 Mike 不使用速度缓慢的硬盘。他改造的硬盘拥有 n 个不同的磁头，可以并行读取数据，而不是只有一个磁头。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从侧面看，Mike 的硬盘是一排无限延伸的磁道。这些磁道从左到右编号为整数，且从 1 开始。初始状态下，第 i 个读头位于编号为 hi 的磁道上。对于每个读头，硬盘固件可以让它恰好向右或向左移动一条磁道，也可以让它停留在当前磁道。在运行过程中，每个读头的移动不会影响其他读头的移动：读头之间可以改变相对顺序，任意一条磁道上也可以有多个读头。只要至少有一个读头访问过某条磁道，就认为该磁道已被读取。特别地，编号为 h1、h2、…、hn 的所有磁道在操作开始时就已经被读取。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/ca9f4791774195cd732cefa3624a34c47835fa8a.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Mike 需要读取编号为 p1, p2, ..., pm 的 m 条互不相同的磁道。请确定硬盘固件移动磁头并读取所有给定磁道所需的最短时间。注意，也可以读取任意数量的其他磁道。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入第一行包含两个以空格分隔的整数 n、m（1 ≤ n，m ≤ 105）——磁盘磁头的数量和要读取的磁道数量。第二行包含 n 个按升序排列的互不相同的整数 hi（1 ≤ hi ≤ 1010，hi < hi + 1）——磁头的初始位置。第三行包含 m 个按升序排列的互不相同的整数 pi（1 ≤ pi ≤ 1010，pi < pi + 1）——要读取的磁道编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请不要在 C++ 中使用 %lld 说明符来读写 64 位整数。建议使用 cin、cout 流或 %I64d 说明符。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个数字——读取所有所需磁道所需的最短时间，单位为秒。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个测试用例与图示相符。在这种情况下，可以按如下方式在 2 秒内读取给定的磁道：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第 1 秒内将第 1 个磁头向左移动，并让它停留在那里；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将第 2 个磁头向左移动两次；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将第 3 个磁头向右移动两次（注意，第 6 条轨道在开始时已经被读取）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "无法在 1 秒内读取这些轨道，因为第 3 个磁头距离第 8 条轨道有 2 个单位。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 读取时间",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

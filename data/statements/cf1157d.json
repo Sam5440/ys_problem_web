@@ -1,0 +1,98 @@
+{
+  "code": "CF1157D",
+  "letter": "D",
+  "title": "D. N Problems During K Days",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1157/D",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Polycarp has to solve exactly n$$$n$$$ problems to improve his programming skill before an important programming competition. But this competition will be held very soon, most precisely, it will start in k$$$k$$$ days. It means that Polycarp has exactly k$$$k$$$ days for training!",
+      "Polycarp doesn't want to procrastinate, so he wants to solve at least one problem during each of k$$$k$$$ days. He also doesn't want to overwork, so if he solves x$$$x$$$ problems during some day, he should solve no more than 2x$$$2x$$$ problems during the next day. And, at last, he wants to improve his skill, so if he solves x$$$x$$$ problems during some day, he should solve at least x+1$$$x+1$$$ problem during the next day.",
+      "More formally: let [a1,a2,…,ak]$$$[a_1, a_2, \\dots, a_k]$$$ be the array of numbers of problems solved by Polycarp. The i$$$i$$$-th element of this array is the number of problems Polycarp solves during the i$$$i$$$-th day of his training. Then the following conditions must be satisfied:",
+      "sum of all ai$$$a_i$$$ for i$$$i$$$ from 1$$$1$$$ to k$$$k$$$ should be n$$$n$$$;",
+      "ai$$$a_i$$$ should be greater than zero for each i$$$i$$$ from 1$$$1$$$ to k$$$k$$$;",
+      "the condition ai<ai+1≤2ai$$$a_i  \\lt  a_{i + 1} \\le 2 a_i$$$ should be satisfied for each i$$$i$$$ from 1$$$1$$$ to k−1$$$k-1$$$.",
+      "Your problem is to find any array a$$$a$$$ of length k$$$k$$$ satisfying the conditions above or say that it is impossible to do it."
+    ],
+    "input": [
+      "The first line of the input contains two integers n$$$n$$$ and k$$$k$$$ (1≤n≤109,1≤k≤105$$$1 \\le n \\le 10^9, 1 \\le k \\le 10^5$$$) — the number of problems Polycarp wants to solve and the number of days Polycarp wants to train."
+    ],
+    "output": [
+      "If it is impossible to find any array a$$$a$$$ of length k$$$k$$$ satisfying Polycarp's rules of training, print \"NO\" in the first line.",
+      "Otherwise print \"YES\" in the first line, then print k$$$k$$$ integers a1,a2,…,ak$$$a_1, a_2, \\dots, a_k$$$ in the second line, where ai$$$a_i$$$ should be the number of problems Polycarp should solve during the i$$$i$$$-th day. If there are multiple answers, you can print any."
+    ]
+  },
+  "examples": [
+    {
+      "input": "26 6",
+      "output": "YES\n1 2 4 5 6 8"
+    },
+    {
+      "input": "8 3",
+      "output": "NO"
+    },
+    {
+      "input": "1 1",
+      "output": "YES\n1"
+    },
+    {
+      "input": "9 4",
+      "output": "NO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Polycarp 必须恰好解决 n$$$n$$$ 个问题，以便在一场重要的编程竞赛前提高自己的编程能力。但这场竞赛很快就要举行了，更准确地说，竞赛将在 k$$$k$$$ 天后开始。这意味着 Polycarp 恰好有 k$$$k$$$ 天用于训练！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Polycarp 不想拖延，因此他希望在 k$$$k$$$ 天中的每一天至少解决一个问题。他也不想过度劳累，因此如果他在某天解决了 x$$$x$$$ 个问题，那么第二天解决的问题数不应超过 2x$$$2x$$$。最后，他希望提高自己的能力，因此如果他在某天解决了 x$$$x$$$ 个问题，那么第二天至少应解决 x+1$$$x+1$$$ 个问题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更正式地说：令 [a1,a2,…,ak]$$$[a_1, a_2, \\dots, a_k]$$$ 表示 Polycarp 已解决的问题数量数组。该数组的第 i$$$i$$$ 个元素表示 Polycarp 在训练的第 i$$$i$$$ 天解决的问题数量。则必须满足以下条件：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 i$$$i$$$ 从 1$$$1$$$ 到 k$$$k$$$，所有 ai$$$a_i$$$ 的总和应为 n$$$n$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个 i$$$i$$$(从 1$$$1$$$ 到 k$$$k$$$)，ai$$$a_i$$$ 应大于零；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个 i$$$i$$$(从 1$$$1$$$ 到 k−1$$$k-1$$$)，都应满足条件 ai<ai+1≤2ai$$$a_i  \\lt  a_{i + 1} \\le 2 a_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是找出任意一个长度为 k$$$k$$$ 且满足上述条件的数组 a$$$a$$$，或者说明这是不可能的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n$$$n$$$ 和 k$$$k$$$(1≤n≤109，1≤k≤105$$$1 \\le n \\le 10^9, 1 \\le k \\le 10^5$$$)，分别表示 Polycarp 想要解决的问题数量和想要训练的天数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果无法找到任何满足 Polycarp 训练规则的长度为 k$$$k$$$ 的数组 a$$$a$$$，请在第一行输出“NO”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则请在第一行输出“YES”，然后在第二行输出 k$$$k$$$ 个整数 a1,a2,…,ak$$$a_1, a_2, \\dots, a_k$$$，其中 ai$$$a_i$$$ 应表示 Polycarp 在第 i$$$i$$$ 天需要解决的问题数量。如果有多个答案，可以输出任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. K 天内的 N 个问题",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

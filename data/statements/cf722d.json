@@ -1,0 +1,99 @@
+{
+  "code": "CF722D",
+  "letter": "D",
+  "title": "D. Generating Sets",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/722/D",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a set Y of n distinct positive integers y1, y2, ..., yn.",
+      "Set X of n distinct positive integers x1, x2, ..., xn is said to generate set Y if one can transform X to Y by applying some number of the following two operation to integers in X:",
+      "Take any integer xi and multiply it by two, i.e. replace xi with 2·xi.",
+      "Take any integer xi, multiply it by two and add one, i.e. replace xi with 2·xi + 1.",
+      "Note that integers in X are not required to be distinct after each operation.",
+      "Two sets of distinct integers X and Y are equal if they are equal as sets. In other words, if we write elements of the sets in the array in the increasing order, these arrays would be equal.",
+      "Note, that any set of integers (or its permutation) generates itself.",
+      "You are given a set Y and have to find a set X that generates Y and the maximum element of X is mininum possible."
+    ],
+    "input": [
+      "The first line of the input contains a single integer n (1 ≤ n ≤ 50 000) — the number of elements in Y.",
+      "The second line contains n integers y1, ..., yn (1 ≤ yi ≤ 109), that are guaranteed to be distinct."
+    ],
+    "output": [
+      "Print n integers — set of distinct integers that generate Y and the maximum element of which is minimum possible. If there are several such sets, print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 2 3 4 5",
+      "output": "4 5 2 3 1"
+    },
+    {
+      "input": "6\n15 14 3 13 1 12",
+      "output": "12 13 14 7 3 1"
+    },
+    {
+      "input": "6\n9 7 13 17 5 11",
+      "output": "4 5 2 6 3 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个由 n 个互不相同的正整数组成的集合 Y：y1, y2, ..., yn。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果可以对 X 中的整数应用若干次以下两种操作，将 X 变为 Y，则称含有 n 个互不相同的正整数 x1、x2、…、xn 的集合 X 可以生成集合 Y：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择任意整数 xi，将其乘以 2，即将 xi 替换为 2·xi。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择任意整数 xi，将其乘以 2 再加 1，即将 xi 替换为 2·xi + 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，在每次操作之后，X 中的整数不一定互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果两个由互不相同的整数构成的集合 X 和 Y 作为集合相等，则称它们相等。换句话说，如果将集合中的元素按递增顺序写入数组，那么这两个数组应当相等。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，任意整数集合（或其排列）都可以生成自身。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个集合 Y，你需要找出一个能生成 Y 的集合 X，并使 X 中的最大元素尽可能小。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（1 ≤ n ≤ 50 000），表示 Y 中元素的个数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个整数 y1， ...，yn（1 ≤ yi ≤ 109），保证这些整数互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 个整数，即一组能生成 Y 的互不相同的整数，并且其中的最大元素尽可能小。如果有多组满足条件的集合，输出任意一组即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 生成集合",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "code": "GYM106191E",
+  "letter": "E",
+  "title": "E. Leaf",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106191/problem/E",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem",
+      "You have joined a group of researchers working on neural networks. A neural network is represented as a graph, where the vertices correspond to neurons and the edges represent connections between them. To demonstrate your skills in working with graphs, you need to solve the following problem.",
+      "You are given a directed graph with n$$$n$$$ vertices, without loops and multiple edges, but you do not know the structure of this graph. You need to find a leaf in this graph or determine that there are no leaves in it (a leaf is defined as a vertex connected to exactly one other vertex, disregarding the orientation of the edges).",
+      "To obtain information about the graph, you can make queries. In each query, you can choose sets S$$$S$$$ and T$$$T$$$, which are subsets of {1,2,…n$$$1, 2, \\ldots n$$$}. In response, you will receive the number of edges that start at one of the vertices in set S$$$S$$$ and end at one of the vertices in set T$$$T$$$ (considering the orientation of the edges). The sets S$$$S$$$ and T$$$T$$$ may overlap.",
+      "You can make no more than n$$$n$$$ queries. At any moment, you can output the answer to the problem – the index of the vertex that is a leaf, or −1$$$-1$$$ if there are no leaves in the graph.",
+      "Interaction",
+      "The first line contains the number t$$$t$$$ (1≤t≤100$$$1 \\le t \\le 100$$$) – the number of tests.",
+      "In each test, the number n$$$n$$$ (1≤n≤100$$$1 \\le n \\le 100$$$) is given – the number of vertices in the graph. It is guaranteed that the sum of n$$$n$$$ across all test cases does not exceed 1000$$$1000$$$.",
+      "Next, your program can choose sets S$$$S$$$ = {s1,s2,…,sk$$$s_1, s_2, \\ldots, s_k$$$} and T$$$T$$$ = {t1,t2,…,tr$$$t_1, t_2, \\ldots, t_r$$$} and output «? k$$$k$$$ s1$$$s_1$$$ s2…sk$$$s_2 \\ldots s_k$$$ r$$$r$$$ t1$$$t_1$$$ t2…tr$$$t_2 \\ldots t_r$$$». After that, you will receive the number of edges that start at one of the vertices in set S$$$S$$$ and end at one of the vertices in set T$$$T$$$. Note that there should be no extra spaces after the last number in the query.",
+      "As soon as the program is ready to provide an answer, you can output «! x$$$x$$$», where x$$$x$$$ is −1$$$-1$$$ if no leaf exists, or the index of the leaf otherwise (indexing starts from 1$$$1$$$). The program should then proceed to process the next test or terminate if this was the last test.",
+      "If you make more than n$$$n$$$ queries during the interaction, your program should terminate immediately, and you will receive a Wrong Answer verdict. Otherwise, you may receive an arbitrary verdict.",
+      "After each query output, do not forget to output a newline and flush the output buffer. Otherwise, you will receive a verdict of Solution stuck. To do this, use:",
+      "fflush(stdout) or cout.flush() in C++;",
+      "sys.stdout.flush() in Python;"
+    ],
+    "input": [],
+    "output": [],
+    "note": [
+      "In the first example, there are only 2 edges in the graph – 1→2 and 2→3.",
+      "In the second example, the graph is empty.",
+      "This example is given to illustrate the interaction with the interactor; it does not guarantee the possibility of finding an answer based on the given queries."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3\n\n1\n\n2\n\n2",
+      "output": "\n\n? 1 1 2 2 3\n\n? 2 1 2 2 2 3\n\n! 1\n\n! -1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是一道交互题",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你加入了一个神经网络研究小组。神经网络可以表示为一张图，其中顶点对应神经元，边表示它们之间的连接。为了展示你处理图的能力，你需要解决以下问题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一张有 n$$$n$$$ 个顶点的有向图，其中没有自环和重边，但你不知道这张图的结构。你需要找到图中的一个叶子，或者判断图中不存在叶子(叶子定义为恰好与另一个顶点相连的顶点，不考虑边的方向)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了获取有关图的信息，你可以进行查询。在每次查询中，你可以选择集合 S$$$S$$$ 和 T$$$T$$$，它们是 {1,2,…n$$$1, 2, \\ldots n$$$} 的子集。作为回应，你将得到从集合 S$$$S$$$ 中的某个顶点出发并以集合 T$$$T$$$ 中的某个顶点为终点的边数(考虑边的方向)。集合 S$$$S$$$ 和 T$$$T$$$ 可以有交集。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你最多可以进行 n$$$n$$$ 次查询。在任何时刻，你都可以输出问题的答案——作为叶子的顶点编号；如果图中没有叶子，则输出 −1$$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行包含整数 t$$$t$$$(1≤t≤100$$$1 \\le t \\le 100$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在每组测试中，给定整数 n$$$n$$$(1≤n≤100$$$1 \\le n \\le 100$$$)——图中顶点的数量。保证所有测试用例的 n$$$n$$$ 之和不超过 1000$$$1000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来，你的程序可以选择集合 S$$$S$$$ = {s1,s2,…,sk$$$s_1, s_2, \\ldots, s_k$$$} 和 T$$$T$$$ = {t1,t2,…,tr$$$t_1, t_2, \\ldots, t_r$$$}，并输出 «? k$$$k$$$ s1$$$s_1$$$ s2…sk$$$s_2 \\ldots s_k$$$ r$$$r$$$ t1$$$t_1$$$ t2…tr$$$t_2 \\ldots t_r$$$»。之后，你将收到从集合 S$$$S$$$ 中的某个顶点出发并以集合 T$$$T$$$ 中的某个顶点为终点的边数。注意，查询中最后一个数字后不应有多余的空格。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一旦程序准备好给出答案，就可以输出 «! x$$$x$$$»，其中，如果不存在叶子，x$$$x$$$ 为 −1$$$-1$$$，否则为该叶子的编号(编号从 1$$$1$$$ 开始)。随后，程序应继续处理下一个测试用例；如果这是最后一个测试用例，则终止。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你在交互过程中进行的查询次数超过 n$$$n$$$，程序应立即终止，并且你将得到 Wrong Answer 判定。否则，你可能会得到任意判定结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每次输出查询后，别忘了输出换行并刷新输出缓冲区。否则，你将得到 Solution stuck 判定。为此，请使用：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "C++ 中的 fflush(stdout) 或 cout.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Python 中的 sys.stdout.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [],
+    "output": [],
+    "note": [
+      {
+        "ai": "在第一个样例中，图中只有 2 条边——1→2 和 2→3。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，图为空。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这个样例用于说明与交互器的交互；它不保证能够根据给出的查询找到答案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 叶子",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

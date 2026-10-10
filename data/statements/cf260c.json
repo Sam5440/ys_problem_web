@@ -1,0 +1,84 @@
+{
+  "code": "CF260C",
+  "letter": "C",
+  "title": "C. Balls and Boxes",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/260/C",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Little Vasya had n boxes with balls in the room. The boxes stood in a row and were numbered with numbers from 1 to n from left to right.",
+      "Once Vasya chose one of the boxes, let's assume that its number is i, took all balls out from it (it is guaranteed that this box originally had at least one ball), and began putting balls (one at a time) to the boxes with numbers i + 1, i + 2, i + 3 and so on. If Vasya puts a ball into the box number n, then the next ball goes to box 1, the next one goes to box 2 and so on. He did it until he had no balls left in his hands. It is possible that Vasya puts multiple balls to the same box, and it is also possible that one or more balls will go to the box number i. If i = n, Vasya puts the first ball into the box number 1, then the next ball goes to box 2 and so on.",
+      "For example, let's suppose that initially Vasya had four boxes, and the first box had 3 balls, the second one had 2, the third one had 5 and the fourth one had 4 balls. Then, if i = 3, then Vasya will take all five balls out of the third box and put them in the boxes with numbers: 4, 1, 2, 3, 4. After all Vasya's actions the balls will lie in the boxes as follows: in the first box there are 4 balls, 3 in the second one, 1 in the third one and 6 in the fourth one.",
+      "At this point Vasya has completely forgotten the original arrangement of the balls in the boxes, but he knows how they are arranged now, and the number x — the number of the box, where he put the last of the taken out balls.",
+      "He asks you to help to find the initial arrangement of the balls in the boxes."
+    ],
+    "input": [
+      "The first line of the input contains two integers n and x (2 ≤ n ≤ 105, 1 ≤ x ≤ n), that represent the number of the boxes and the index of the box that got the last ball from Vasya, correspondingly. The second line contains n space-separated integers a1, a2, ..., an, where integer ai (0 ≤ ai ≤ 109, ax ≠ 0) represents the number of balls in the box with index i after Vasya completes all the actions.",
+      "Please, do not use the %lld specifier to read or write 64-bit integers in С++. It is preferred to use the cin, cout streams or the %I64d specifier."
+    ],
+    "output": [
+      "Print n integers, where the i-th one represents the number of balls in the box number i before Vasya starts acting. Separate the numbers in the output by spaces. If there are multiple correct solutions, you are allowed to print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n4 3 1 6",
+      "output": "3 2 5 4"
+    },
+    {
+      "input": "5 2\n3 2 0 2 7",
+      "output": "2 1 4 1 6"
+    },
+    {
+      "input": "3 3\n2 3 1",
+      "output": "1 2 3"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 x（2≤n≤10^5，1≤x≤n），分别表示箱子的数量，以及从瓦夏那里得到最后一个球的箱子的编号。第二行包含 n 个用空格分隔的整数 a1、a2、...、an，其中整数 ai（0≤ai≤10^9，ax≠0）表示瓦夏完成所有操作后，编号为 i 的箱子中的球数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请不要在 C++ 中使用 %lld 格式说明符来读写 64 位整数。建议使用 cin、cout 流或 %I64d 格式说明符。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 个整数，其中第 i 个整数表示 Vasya 开始操作前编号为 i 的盒子中的球数。输出中的数字之间用空格分隔。如果有多个正确答案，可以输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "小瓦夏的房间里有 n 个装有球的箱子。这些箱子排成一行，从左到右编号为 1 到 n。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有一次，瓦夏选择了其中一个箱子，设它的编号为 i，取出其中的所有球（保证这个箱子最初至少有一个球），然后开始将球（每次放入一个）依次放入编号为 i+1、i+2、i+3 等的箱子中。如果瓦夏将一个球放入 n 号箱子，那么下一个球就放入 1 号箱子，再下一个球放入 2 号箱子，以此类推。他一直这样做，直到手中没有球为止。可能有多个球被放入同一个箱子中，也可能有一个或多个球被放入 i 号箱子中。如果 i=n，瓦夏会将第一个球放入 1 号箱子，然后将下一个球放入 2 号箱子，以此类推。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，假设瓦夏最初有 4 个箱子，第一个箱子中有 3 个球，第二个箱子中有 2 个球，第三个箱子中有 5 个球，第四个箱子中有 4 个球。那么，当 i=3 时，瓦夏会从第三个箱子中取出全部 5 个球，并将它们依次放入编号为 4、1、2、3、4 的箱子中。完成所有操作后，箱子中的球分布如下：第一个箱子中有 4 个球，第二个箱子中有 3 个球，第三个箱子中有 1 个球，第四个箱子中有 6 个球。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此时，瓦夏已经完全忘记了箱子中球的初始排列方式，但他知道现在球的排列方式，以及一个数 x——他放入最后一个取出球的箱子的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他请你帮助他找出箱子中球的初始排列方式。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 球和盒子",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

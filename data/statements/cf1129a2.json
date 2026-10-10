@@ -1,0 +1,159 @@
+{
+  "code": "CF1129A2",
+  "letter": "A2",
+  "title": "A2. Toy Train",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1129/A2",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alice received a set of Toy Train™ from Bob. It consists of one train and a connected railway network of n$$$n$$$ stations, enumerated from 1$$$1$$$ through n$$$n$$$. The train occupies one station at a time and travels around the network of stations in a circular manner. More precisely, the immediate station that the train will visit after station i$$$i$$$ is station i+1$$$i+1$$$ if 1≤i<n$$$1 \\leq i  \\lt  n$$$ or station 1$$$1$$$ if i=n$$$i = n$$$. It takes the train 1$$$1$$$ second to travel to its next station as described.",
+      "Bob gave Alice a fun task before he left: to deliver m$$$m$$$ candies that are initially at some stations to their independent destinations using the train. The candies are enumerated from 1$$$1$$$ through m$$$m$$$. Candy i$$$i$$$ (1≤i≤m$$$1 \\leq i \\leq m$$$), now at station ai$$$a_i$$$, should be delivered to station bi$$$b_i$$$ (ai≠bi$$$a_i \\neq b_i$$$).",
+      "![](https://espresso.codeforces.com/b0446d5fef91d9211f27892951cd7e0d35c9590d.png)",
+      "The train has infinite capacity, and it is possible to load off any number of candies at a station. However, only at most one candy can be loaded from a station onto the train before it leaves the station. You can choose any candy at this station. The time it takes to move the candies is negligible.",
+      "Now, Alice wonders how much time is needed for the train to deliver all candies. Your task is to find, for each station, the minimum time the train would need to deliver all the candies were it to start from there."
+    ],
+    "input": [
+      "The first line contains two space-separated integers n$$$n$$$ and m$$$m$$$ (2≤n≤5000$$$2 \\leq n \\leq 5\\,000$$$; 1≤m≤20000$$$1 \\leq m \\leq 20\\,000$$$) — the number of stations and the number of candies, respectively.",
+      "The i$$$i$$$-th of the following m$$$m$$$ lines contains two space-separated integers ai$$$a_i$$$ and bi$$$b_i$$$ (1≤ai,bi≤n$$$1 \\leq a_i, b_i \\leq n$$$; ai≠bi$$$a_i \\neq b_i$$$) — the station that initially contains candy i$$$i$$$ and the destination station of the candy, respectively."
+    ],
+    "output": [
+      "In the first and only line, print n$$$n$$$ space-separated integers, the i$$$i$$$-th of which is the minimum time, in seconds, the train would need to deliver all the candies were it to start from station i$$$i$$$."
+    ],
+    "note": [
+      "Consider the second sample.",
+      "If the train started at station 1$$$1$$$, the optimal strategy is as follows.",
+      "Load the first candy onto the train.",
+      "Proceed to station 2$$$2$$$. This step takes 1$$$1$$$ second.",
+      "Deliver the first candy.",
+      "Proceed to station 1$$$1$$$. This step takes 1$$$1$$$ second.",
+      "Load the second candy onto the train.",
+      "Proceed to station 2$$$2$$$. This step takes 1$$$1$$$ second.",
+      "Deliver the second candy.",
+      "Proceed to station 1$$$1$$$. This step takes 1$$$1$$$ second.",
+      "Load the third candy onto the train.",
+      "Proceed to station 2$$$2$$$. This step takes 1$$$1$$$ second.",
+      "Deliver the third candy.",
+      "Hence, the train needs 5$$$5$$$ seconds to complete the tasks.",
+      "If the train were to start at station 2$$$2$$$, however, it would need to move to station 1$$$1$$$ before it could load the first candy, which would take one additional second. Thus, the answer in this scenario is 5+1=6$$$5+1 = 6$$$ seconds."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 7\n2 4\n5 1\n2 3\n3 4\n4 1\n5 3\n3 5",
+      "output": "10 9 10 10 9"
+    },
+    {
+      "input": "2 3\n1 2\n1 2\n1 2",
+      "output": "5 6"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Alice 从 Bob 那里收到了一套 Toy Train™。它由一列火车和一个包含 n$$$n$$$ 个车站的连通铁路网络组成，车站编号从 1$$$1$$$ 到 n$$$n$$$。火车每次占据一个车站，并以环形方式在车站网络中行驶。更准确地说，火车在车站 i$$$i$$$ 之后将访问的紧邻车站是车站 i+1$$$i+1$$$(如果 1≤i<n$$$1 \\leq i  \\lt  n$$$)，或者车站 1$$$1$$$(如果 i=n$$$i = n$$$)。如上所述，火车行驶到下一个车站需要 1$$$1$$$ 秒。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bob 离开前给 Alice 布置了一个有趣的任务：使用火车，将最初位于某些车站的 m$$$m$$$ 颗糖果运送到各自的目的地。糖果编号从 1$$$1$$$ 到 m$$$m$$$。糖果 i$$$i$$$(1≤i≤m$$$1 \\leq i \\leq m$$$)当前位于车站 ai$$$a_i$$$，应被运送到车站 bi$$$b_i$$$(ai≠bi$$$a_i \\neq b_i$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/b0446d5fef91d9211f27892951cd7e0d35c9590d.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "火车的容量是无限的，并且可以在车站卸下任意数量的糖果。然而，在火车离开车站之前，最多只能从该车站将一颗糖果装上火车。你可以选择该车站的任意一颗糖果。搬运糖果所需的时间可以忽略不计。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在，Alice 想知道火车运送所有糖果需要多长时间。你的任务是，对于每个车站，求如果火车从该车站出发，运送所有糖果所需的最短时间。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个以空格分隔的整数 n$$$n$$$ 和 m$$$m$$$(2≤n≤5000$$$2 \\leq n \\leq 5\\,000$$$；1≤m≤20000$$$1 \\leq m \\leq 20\\,000$$$)——分别表示车站数和糖果数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中的第 i$$$i$$$ 行包含两个以空格分隔的整数 ai$$$a_i$$$ 和 bi$$$b_i$$$(1≤ai,bi≤n$$$1 \\leq a_i, b_i \\leq n$$$；ai≠bi$$$a_i \\neq b_i$$$)——分别表示最初包含糖果 i$$$i$$$ 的车站和该糖果的目的地车站。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在第一行也是唯一一行中，输出 n$$$n$$$ 个以空格分隔的整数，其中第 i$$$i$$$ 个整数是：如果火车从车站 i$$$i$$$ 出发，运送所有糖果所需的最短时间(单位：秒)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "考虑第二个样例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果火车从 1 号车站$$$1$$$出发，最优策略如下。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "将第一颗糖果装上火车。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "前往 2 号车站$$$2$$$。这一步需要 1$$$1$$$ 秒。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "运送第一颗糖果。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "返回 1 号车站$$$1$$$。这一步需要 1$$$1$$$ 秒。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "将第二颗糖果装上火车。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "前往 2$$$2$$$ 号站。此步骤耗时 1$$$1$$$ 秒。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "送达第二颗糖果。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "前往 1$$$1$$$ 号站。此步骤耗时 1$$$1$$$ 秒。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "将第三颗糖果装载到火车上。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "前往 2$$$2$$$ 号站。此步骤耗时 1$$$1$$$ 秒。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "送达第三颗糖果。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "因此，火车需要 5$$$5$$$ 秒来完成这些任务。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，如果火车从车站 2$$$2$$$ 出发，那么它需要先移动到车站 1$$$1$$$，才能装载第一颗糖果，这将额外花费一秒。因此，在这种情况下，答案是 5+1=6$$$5+1 = 6$$$ 秒。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A2. 玩具火车",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

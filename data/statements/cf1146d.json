@@ -1,0 +1,92 @@
+{
+  "code": "CF1146D",
+  "letter": "D",
+  "title": "D. Frog Jumping",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1146/D",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A frog is initially at position 0$$$0$$$ on the number line. The frog has two positive integers a$$$a$$$ and b$$$b$$$. From a position k$$$k$$$, it can either jump to position k+a$$$k+a$$$ or k−b$$$k-b$$$.",
+      "Let f(x)$$$f(x)$$$ be the number of distinct integers the frog can reach if it never jumps on an integer outside the interval [0,x]$$$[0, x]$$$. The frog doesn't need to visit all these integers in one trip, that is, an integer is counted if the frog can somehow reach it if it starts from 0$$$0$$$.",
+      "Given an integer m$$$m$$$, find ∑mi=0f(i)$$$\\sum_{i=0}^{m} f(i)$$$. That is, find the sum of all f(i)$$$f(i)$$$ for i$$$i$$$ from 0$$$0$$$ to m$$$m$$$."
+    ],
+    "input": [
+      "The first line contains three integers m,a,b$$$m, a, b$$$ (1≤m≤109,1≤a,b≤105$$$1 \\leq m \\leq 10^9, 1 \\leq a,b \\leq 10^5$$$)."
+    ],
+    "output": [
+      "Print a single integer, the desired sum."
+    ],
+    "note": [
+      "In the first example, we must find f(0)+f(1)+…+f(7)$$$f(0)+f(1)+\\ldots+f(7)$$$. We have f(0)=1,f(1)=1,f(2)=1,f(3)=1,f(4)=1,f(5)=3,f(6)=3,f(7)=8$$$f(0) = 1, f(1) = 1, f(2) = 1, f(3) = 1, f(4) = 1, f(5) = 3, f(6) = 3, f(7) = 8$$$. The sum of these values is 19$$$19$$$.",
+      "In the second example, we have f(i)=i+1$$$f(i) = i+1$$$, so we want to find ∑109i=0i+1$$$\\sum_{i=0}^{10^9} i+1$$$.",
+      "In the third example, the frog can't make any jumps in any case."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7 5 3",
+      "output": "19"
+    },
+    {
+      "input": "1000000000 1 2019",
+      "output": "500000001500000001"
+    },
+    {
+      "input": "100 100000 1",
+      "output": "101"
+    },
+    {
+      "input": "6 4 5",
+      "output": "10"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一只青蛙最初位于数轴上的位置 0$$$0$$$。青蛙有两个正整数 a$$$a$$$ 和 b$$$b$$$。从位置 k$$$k$$$ 出发，它可以跳到位置 k+a$$$k+a$$$ 或 k−b$$$k-b$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "令 f(x)$$$f(x)$$$ 表示青蛙在从不跳到区间 [0,x]$$$[0, x]$$$ 之外的整数上的情况下能够到达的不同整数的数量。青蛙不需要在一次行程中访问所有这些整数，也就是说，如果青蛙从 0$$$0$$$ 出发后能够以某种方式到达某个整数，则该整数会被计数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个整数 m$$$m$$$，求 ∑mi=0f(i)$$$\\sum_{i=0}^{m} f(i)$$$。也就是说，求所有 i$$$i$$$ 从 0$$$0$$$ 到 m$$$m$$$ 时 f(i)$$$f(i)$$$ 的总和。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 m,a,b$$$m, a, b$$$(1≤m≤109，1≤a,b≤105$$$1 \\leq m \\leq 10^9, 1 \\leq a,b \\leq 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，即所求的总和。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，我们需要求 f(0)+f(1)+…+f(7)$$$f(0)+f(1)+\\ldots+f(7)$$$。我们有 f(0)=1,f(1)=1,f(2)=1,f(3)=1,f(4)=1,f(5)=3,f(6)=3,f(7)=8$$$f(0) = 1, f(1) = 1, f(2) = 1, f(3) = 1, f(4) = 1, f(5) = 3, f(6) = 3, f(7) = 8$$$。这些值的总和为 19$$$19$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，我们有 f(i)=i+1$$$f(i) = i+1$$$，因此需要求 ∑109i=0i+1$$$\\sum_{i=0}^{10^9} i+1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，青蛙在任何情况下都无法进行任何跳跃。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 青蛙跳跃",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

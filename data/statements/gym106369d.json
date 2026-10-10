@@ -1,0 +1,116 @@
+{
+  "code": "GYM106369D",
+  "letter": "D",
+  "title": "D. Good Goalie",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106369/problem/D",
+  "difficulty": "*1700",
+  "timeLimit": "5 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "The 2023 FIFA Women's World Cup was held during the summer. Several games ended in ties and penalty kicks had to be taken to determine the winner.",
+      "The professional soccer goal size (length) is 7.32m. The success rate of penalty kicks at the professional level is above 80%$$$80\\%$$$. If the goal length was much longer, can this success rate reach 100%$$$100\\%$$$?",
+      "To simplify the problem, we will assume that there is no concept of time or ball speed, so if the goalie's reach intersects the ball's travel path, the goalie will block the ball.",
+      "As illustrated in the picture below, we'll assume the goalie is at (0,0)$$$(0,0)$$$ and the penalty taker (kicker) is at (0,y)$$$(0,y)$$$; y$$$y$$$ will be a positive integer.",
+      "The kicker will kick the ball towards the goal line (to the left or right of the goalie). We'll assume the ball will intersect the goal line at (x,0)$$$(x,0)$$$; x$$$x$$$ will be a non-zero integer.",
+      "The goalie will dive to the left or right (based on the direction of the ball). The goalie has a limited reach r$$$r$$$; r$$$r$$$ will be a positive integer.",
+      "![](https://espresso.codeforces.com/a0f6d24c32626cfef17ba59ea5027cd302238672.png)",
+      "The goalie will save the penalty if the point representing the ball (while travelling) is on the line representing the goalie's reach. The goalie can save the penalty (i.e., block the ball) on the x$$$x$$$-axis as well.",
+      "The primary objective for the goalie is to save the penalty and the secondary objective is to dive as close to the x$$$x$$$-axis as possible, i.e., the angle between the goalie's reach and the x$$$x$$$-axis is as small as possible.",
+      "Given the kicker's position (y$$$y$$$), intersection point of the ball with the goal line (x$$$x$$$) and the goalie's reach (r$$$r$$$), determine whether the goalie will save (block) the penalty kick."
+    ],
+    "input": [
+      "There is only one input line; it provides three integers y$$$y$$$, x$$$x$$$ and r$$$r$$$, as described above. Assume 1≤y≤103$$$1 \\le y \\le 10^3$$$, −103≤x≤103$$$-10^3 \\le x \\le 10^3$$$ (excluding zero), and 1≤r≤103$$$1 \\le r \\le 10^3$$$."
+    ],
+    "output": [
+      "Print -1 if the goalie cannot save the penalty; otherwise print the minimum angle that the goalie needs to dive to block the ball. Answers within an absolute or relative error of 10−6$$$10^{-6}$$$ will be accepted."
+    ]
+  },
+  "examples": [
+    {
+      "input": "10 100 2",
+      "output": "-1"
+    },
+    {
+      "input": "10 3 3",
+      "output": "0"
+    },
+    {
+      "input": "3 10 6",
+      "output": "11.9151974458468181694570375839"
+    },
+    {
+      "input": "20 -200 5",
+      "output": "-1"
+    },
+    {
+      "input": "20 -5 5",
+      "output": "0"
+    },
+    {
+      "input": "5 -20 8",
+      "output": "23.2890180235694685961789218709"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "2023 年 FIFA 女足世界杯在夏季举行。几场比赛以平局告终，因此必须通过点球决出胜者。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "职业足球球门的长度为 7.32 米。职业比赛中的点球成功率超过 80%$$$80\\%$$$。如果球门长度大得多，这一成功率能达到 100%$$$100\\%$$$ 吗？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为简化问题，我们假设不存在时间和球速的概念，因此只要守门员的防守范围与球的运动路径相交，守门员就能挡住球。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如下面的图片所示，我们假设守门员位于 (0,0)$$$(0,0)$$$，主罚点球的球员(踢球者)位于 (0,y)$$$(0,y)$$$；y$$$y$$$ 将是一个正整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "踢球者会将球踢向球门线(守门员的左侧或右侧)。我们假设球会在 (x,0)$$$(x,0)$$$ 处与球门线相交；x$$$x$$$ 将是一个非零整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "守门员会向左侧或右侧扑救(取决于球的方向)。守门员的防守范围有限，为 r$$$r$$$；r$$$r$$$ 将是一个正整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/a0f6d24c32626cfef17ba59ea5027cd302238672.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果表示球的位置的点(球运动过程中)位于表示守门员防守范围的直线上，守门员就能扑出点球。守门员也可以在 x$$$x$$$ 轴上扑出点球(即挡住球)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "守门员的首要目标是扑出点球，次要目标是尽可能靠近 x$$$x$$$ 轴扑救，也就是说，守门员的伸展方向与 x$$$x$$$ 轴之间的角度应尽可能小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定罚球队员的位置 (y$$$y$$$)、球与球门线的交点 (x$$$x$$$) 以及守门员的扑救范围 (r$$$r$$$)，判断守门员能否扑出(挡住)点球。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入仅有一行，其中给出如上所述的三个整数 y$$$y$$$、x$$$x$$$ 和 r$$$r$$$。保证 1≤y≤103$$$1 \\le y \\le 10^3$$$，−103≤x≤103$$$-10^3 \\le x \\le 10^3$$$(不包括 0)，且 1≤r≤103$$$1 \\le r \\le 10^3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果守门员无法扑出点球，则输出 -1；否则输出守门员需要扑救以挡住球的最小角度。绝对误差或相对误差不超过 10−6$$$10^{-6}$$$ 的答案均会被接受。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 优秀门将",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

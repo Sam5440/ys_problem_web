@@ -1,0 +1,133 @@
+{
+  "code": "CF156C",
+  "letter": "C",
+  "title": "C. Cipher",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/156/C",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Sherlock Holmes found a mysterious correspondence of two VIPs and made up his mind to read it. But there is a problem! The correspondence turned out to be encrypted. The detective tried really hard to decipher the correspondence, but he couldn't understand anything.",
+      "At last, after some thought, he thought of something. Let's say there is a word s, consisting of |s| lowercase Latin letters. Then for one operation you can choose a certain position p (1 ≤ p < |s|) and perform one of the following actions:",
+      "either replace letter sp with the one that alphabetically follows it and replace letter sp + 1 with the one that alphabetically precedes it;",
+      "or replace letter sp with the one that alphabetically precedes it and replace letter sp + 1 with the one that alphabetically follows it.",
+      "Let us note that letter \"z\" doesn't have a defined following letter and letter \"a\" doesn't have a defined preceding letter. That's why the corresponding changes are not acceptable. If the operation requires performing at least one unacceptable change, then such operation cannot be performed.",
+      "Two words coincide in their meaning iff one of them can be transformed into the other one as a result of zero or more operations.",
+      "Sherlock Holmes needs to learn to quickly determine the following for each word: how many words can exist that coincide in their meaning with the given word, but differs from the given word in at least one character? Count this number for him modulo 1000000007 (109 + 7)."
+    ],
+    "input": [
+      "The input data contains several tests. The first line contains the only integer t (1 ≤ t ≤ 104) — the number of tests.",
+      "Next t lines contain the words, one per line. Each word consists of lowercase Latin letters and has length from 1 to 100, inclusive. Lengths of words can differ."
+    ],
+    "output": [
+      "For each word you should print the number of different other words that coincide with it in their meaning — not from the words listed in the input data, but from all possible words. As the sought number can be very large, print its value modulo 1000000007 (109 + 7)."
+    ],
+    "note": [
+      "Some explanations about the operation:",
+      "Note that for each letter, we can clearly define the letter that follows it. Letter \"b\" alphabetically follows letter \"a\", letter \"c\" follows letter \"b\", ..., \"z\" follows letter \"y\".",
+      "Preceding letters are defined in the similar manner: letter \"y\" precedes letter \"z\", ..., \"a\" precedes letter \"b\".",
+      "Note that the operation never changes a word's length.",
+      "In the first sample you can obtain the only other word \"ba\". In the second sample you cannot obtain any other word, so the correct answer is 0.",
+      "Consider the third sample. One operation can transform word \"klmbfxzb\" into word \"klmcexzb\": we should choose p = 4, and replace the fourth letter with the following one (\"b\"  →  \"c\"), and the fifth one — with the preceding one (\"f\"  →  \"e\"). Also, we can obtain many other words from this one. An operation can transform word \"ya\" only into one other word \"xb\".",
+      "Word \"ya\" coincides in its meaning with words \"xb\", \"wc\", \"vd\", ..., \"ay\" (overall there are 24 other words). The word \"klmbfxzb has many more variants — there are 3320092814 other words that coincide with in the meaning. So the answer for the first word equals 24 and for the second one equals 320092793 — the number 3320092814 modulo 109 + 7"
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\nab",
+      "output": "1"
+    },
+    {
+      "input": "1\naaaaaaaaaaa",
+      "output": "0"
+    },
+    {
+      "input": "2\nya\nklmbfxzb",
+      "output": "24\n320092793"
+    }
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "对于每个单词，你需要输出与它含义相同的其他不同单词的数量。这些单词不只包括输入数据中列出的单词，还包括所有可能的单词。由于所求数量可能非常大，请输出其对 1000000007 (109 + 7) 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "关于该操作的一些说明：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，对于每个字母，我们都可以明确地定义跟在它后面的字母。按字母表顺序，字母 \"b\" 在字母 \"a\" 后面，字母 \"c\" 在字母 \"b\" 后面，……，字母 \"z\" 在字母 \"y\" 后面。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "前面的字母也以类似的方式定义：字母 \"y\" 在字母 \"z\" 前面，……，字母 \"a\" 在字母 \"b\" 前面。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，该操作不会改变单词的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个样例中，你可以得到唯一的另一个单词 \"ba\"。在第二个样例中，你无法得到任何其他单词，因此正确答案是 0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑第三个样例。一次操作可以将单词“klmbfxzb”变为“klmcexzb”：我们应选择 p = 4，并将第四个字母替换为后一个字母（“b”  →  “c”），将第五个字母替换为前一个字母（“f”  →  “e”）。此外，我们还可以从这个单词得到许多其他单词。一次操作只能将单词“ya”变为另一个单词“xb”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "单词“ya”的含义与单词“xb”、“wc”、“vd”、……、“ay”相同（总共有另外 24 个单词）。单词“klmbfxzb”的变体则多得多，其含义相同的其他单词有 3320092814 个。因此，第一个单词的答案为 24，第二个单词的答案为 320092793，即 3320092814 对 109 + 7 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Sherlock Holmes 发现了两位 VIP 之间的一封神秘信件，于是决定阅读它。但问题来了！这封信件竟然经过了加密。侦探费尽心思尝试破译信件，但他什么也看不懂。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最后，经过一番思考，他想到了一个办法。设有一个由 |s| 个小写拉丁字母组成的单词 s。一次操作中，你可以选择一个位置 p（1 ≤ p < |s|），并执行以下操作之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要么将字母 s_p 替换为字典序中紧随其后的字母，并将字母 s_{p + 1} 替换为字典序中紧随其前的字母；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "或将字母 sp 替换为按字母表顺序排在它之前的字母，并将字母 sp + 1 替换为按字母表顺序排在它之后的字母。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，字母“z”没有定义的后继字母，字母“a”也没有定义的前驱字母。因此，相应的变换是不允许的。如果某次操作至少需要执行一次不允许的变换，那么该操作无法执行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当且仅当其中一个单词可以通过零次或多次操作转换为另一个单词时，这两个单词的含义相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Sherlock Holmes 需要学会快速确定对于每个单词，存在多少个与给定单词含义相同、但与给定单词至少有一个字符不同的单词。请对这个数量对 1000000007（10^9 + 7）取模后告诉他。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入数据包含多组测试。第一行包含唯一的整数 t（1 ≤ t ≤ 10^4），表示测试组数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 t 行包含这些单词，每行一个。每个单词由小写拉丁字母组成，长度在 1 到 100 之间（含端点）。不同单词的长度可以不同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 密码",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

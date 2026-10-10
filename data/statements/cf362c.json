@@ -1,0 +1,83 @@
+{
+  "code": "CF362C",
+  "letter": "C",
+  "title": "C. Insertion Sort",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/362/C",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Petya is a beginner programmer. He has already mastered the basics of the C++ language and moved on to learning algorithms. The first algorithm he encountered was insertion sort. Petya has already written the code that implements this algorithm and sorts the given integer zero-indexed array a of size n in the non-decreasing order.",
+      {
+        "pre": "for (int i = 1; i < n; i = i + 1)\n{\n   int j = i; \n   while (j > 0 && a[j] < a[j - 1])\n   {\n      swap(a[j], a[j - 1]); // swap elements a[j] and a[j - 1]\n      j = j - 1;\n   }\n}"
+      },
+      "Petya uses this algorithm only for sorting of arrays that are permutations of numbers from 0 to n - 1. He has already chosen the permutation he wants to sort but he first decided to swap some two of its elements. Petya wants to choose these elements in such a way that the number of times the sorting executes function swap, was minimum. Help Petya find out the number of ways in which he can make the swap and fulfill this requirement.",
+      "It is guaranteed that it's always possible to swap two elements of the input permutation in such a way that the number of swap function calls decreases."
+    ],
+    "input": [
+      "The first line contains a single integer n (2 ≤ n ≤ 5000) — the length of the permutation. The second line contains n different integers from 0 to n - 1, inclusive — the actual permutation."
+    ],
+    "output": [
+      "Print two integers: the minimum number of times the swap function is executed and the number of such pairs (i, j) that swapping the elements of the input permutation with indexes i and j leads to the minimum number of the executions."
+    ],
+    "note": [
+      "In the first sample the appropriate pairs are (0, 3) and (0, 4).",
+      "In the second sample the appropriate pairs are (0, 4), (1, 4), (2, 4) and (3, 4)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "for (int i = 1; i < n; i = i + 1)\n{\n   int j = i; \n   while (j > 0 && a[j] < a[j - 1])\n   {\n      swap(a[j], a[j - 1]); // swap elements a[j] and a[j - 1]\n      j = j - 1;\n   }\n}",
+      "output": "5\n4 0 3 1 2"
+    },
+    {
+      "input": "3 2",
+      "output": "5\n1 2 3 4 0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Petya 是一名编程初学者。他已经掌握了 C++ 语言的基础知识，并开始学习算法。他遇到的第一个算法是插入排序。Petya 已经编写了实现该算法的代码，可以将给定的大小为 n、下标从 0 开始的整数数组 a 按非递减顺序排序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "Petya 仅使用该算法对由 0 到 n−1 的数构成的排列进行排序。他已经选定了要排序的排列，但决定先交换其中的某两个元素。Petya 希望以一种使排序过程中执行 swap 函数的次数最少的方式选择这两个元素。请帮助 Petya 求出他可以进行这种交换并满足要求的方案数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证总能交换输入排列中的两个元素，使 swap 函数的调用次数减少。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（2 ≤ n ≤ 5000），表示排列的长度。第二行包含 n 个互不相同的整数，范围为 0 到 n−1（包含边界），表示实际的排列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出两个整数：swap 函数执行的最少次数，以及满足以下条件的数对 (i, j) 的数量：交换输入排列中下标为 i 和 j 的元素后，swap 函数的执行次数达到最少。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，符合条件的数对为 (0, 3) 和 (0, 4)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，符合条件的数对为 (0, 4)、(1, 4)、(2, 4) 和 (3, 4)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 插入排序",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

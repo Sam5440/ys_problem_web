@@ -1,0 +1,103 @@
+{
+  "code": "CF79C",
+  "letter": "C",
+  "title": "C. Beaver",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/79/C",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "After Fox Ciel got off a bus, she found that the bus she was on was a wrong bus and she lost her way in a strange town. However, she fortunately met her friend Beaver Taro and asked which way to go to her castle. Taro's response to her was a string s, and she tried to remember the string s correctly.",
+      "However, Ciel feels n strings b1, b2, ... , bn are really boring, and unfortunately she dislikes to remember a string that contains a boring substring. To make the thing worse, what she can remember is only the contiguous substring of s.",
+      "Determine the longest contiguous substring of s that does not contain any boring string, so that she can remember the longest part of Taro's response."
+    ],
+    "input": [
+      "In the first line there is a string s. The length of s will be between 1 and 105, inclusive.",
+      "In the second line there is a single integer n (1 ≤ n ≤ 10).  Next n lines, there is a string bi (1 ≤ i ≤ n). Each length of bi will be between 1 and 10, inclusive.",
+      "Each character of the given strings will be either a English alphabet (both lowercase and uppercase) or a underscore ('_') or a digit. Assume that these strings are case-sensitive."
+    ],
+    "output": [
+      "Output in the first line two space-separated integers len and pos: the length of the longest contiguous substring of s that does not contain any bi, and the first position of the substring (0-indexed). The position pos must be between 0 and |s| - len inclusive, where |s| is the length of string s.",
+      "If there are several solutions, output any."
+    ],
+    "note": [
+      "In the first sample, the solution is traight_alon.",
+      "In the second sample, the solution is an empty string, so the output can be «0 0», «0 1», «0 2», and so on.",
+      "In the third sample, the solution is either nagio or oisii."
+    ]
+  },
+  "examples": [
+    {
+      "input": "Go_straight_along_this_street\n5\nstr\nlong\ntree\nbiginteger\nellipse",
+      "output": "12 4"
+    },
+    {
+      "input": "IhaveNoIdea\n9\nI\nh\na\nv\ne\nN\no\nI\nd",
+      "output": "0 0"
+    },
+    {
+      "input": "unagioisii\n2\nioi\nunagi",
+      "output": "5 5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Fox Ciel 下车后，发现自己坐错了公交车，在一个陌生的小镇迷了路。不过，她幸运地遇到了朋友 Beaver Taro，便向他询问去她城堡的路。Taro 的回答是一个字符串 s，她想要准确记住这个字符串 s。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "然而，Ciel 觉得 n 个字符串 b1, b2, ... , bn 非常无聊，而且不幸的是，她不喜欢记住包含无聊子串的字符串。更糟糕的是，她能记住的只有 s 的连续子串。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "求出 s 的不包含任何无聊字符串的最长连续子串，这样她就能记住 Taro 回答中最长的部分。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行有一个字符串 s。s 的长度在 1 到 10^5 之间（含两端）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行有一个整数 n（1 ≤ n ≤ 10）。接下来 n 行，每行有一个字符串 bi（1 ≤ i ≤ n）。每个 bi 的长度在 1 到 10 之间（含两端）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "给定字符串中的每个字符要么是英文字母（小写和大写均可），要么是下划线（'_'），要么是数字。注意这些字符串区分大小写。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出两个以空格分隔的整数 len 和 pos：不包含任何 b_i 的最长连续子串的长度，以及该子串的起始位置（下标从 0 开始）。位置 pos 必须满足 0 ≤ pos ≤ |s| - len，其中 |s| 是字符串 s 的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个解，输出任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，解为 traight_alon。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，解是空字符串，因此输出可以是 «0 0»、«0 1»、«0 2» 等。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，解可以是 nagio 或 oisii。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 海狸",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

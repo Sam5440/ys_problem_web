@@ -1,0 +1,104 @@
+{
+  "code": "CF1142B",
+  "letter": "B",
+  "title": "B. Lynyrd Skynyrd",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1142/B",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Recently Lynyrd and Skynyrd went to a shop where Lynyrd bought a permutation p$$$p$$$ of length n$$$n$$$, and Skynyrd bought an array a$$$a$$$ of length m$$$m$$$, consisting of integers from 1$$$1$$$ to n$$$n$$$.",
+      "Lynyrd and Skynyrd became bored, so they asked you q$$$q$$$ queries, each of which has the following form: \"does the subsegment of a$$$a$$$ from the l$$$l$$$-th to the r$$$r$$$-th positions, inclusive, have a subsequence that is a cyclic shift of p$$$p$$$?\" Please answer the queries.",
+      "A permutation of length n$$$n$$$ is a sequence of n$$$n$$$ integers such that each integer from 1$$$1$$$ to n$$$n$$$ appears exactly once in it.",
+      "A cyclic shift of a permutation (p1,p2,…,pn)$$$(p_1, p_2, \\ldots, p_n)$$$ is a permutation (pi,pi+1,…,pn,p1,p2,…,pi−1)$$$(p_i, p_{i + 1}, \\ldots, p_{n}, p_1, p_2, \\ldots, p_{i - 1})$$$ for some i$$$i$$$ from 1$$$1$$$ to n$$$n$$$. For example, a permutation (2,1,3)$$$(2, 1, 3)$$$ has three distinct cyclic shifts: (2,1,3)$$$(2, 1, 3)$$$, (1,3,2)$$$(1, 3, 2)$$$, (3,2,1)$$$(3, 2, 1)$$$.",
+      "A subsequence of a subsegment of array a$$$a$$$ from the l$$$l$$$-th to the r$$$r$$$-th positions, inclusive, is a sequence ai1,ai2,…,aik$$$a_{i_1}, a_{i_2}, \\ldots, a_{i_k}$$$ for some i1,i2,…,ik$$$i_1, i_2, \\ldots, i_k$$$ such that l≤i1<i2<…<ik≤r$$$l \\leq i_1  \\lt  i_2  \\lt  \\ldots  \\lt  i_k \\leq r$$$."
+    ],
+    "input": [
+      "The first line contains three integers n$$$n$$$, m$$$m$$$, q$$$q$$$ (1≤n,m,q≤2⋅105$$$1 \\le n, m, q \\le 2 \\cdot 10^5$$$) — the length of the permutation p$$$p$$$, the length of the array a$$$a$$$ and the number of queries.",
+      "The next line contains n$$$n$$$ integers from 1$$$1$$$ to n$$$n$$$, where the i$$$i$$$-th of them is the i$$$i$$$-th element of the permutation. Each integer from 1$$$1$$$ to n$$$n$$$ appears exactly once.",
+      "The next line contains m$$$m$$$ integers from 1$$$1$$$ to n$$$n$$$, the i$$$i$$$-th of them is the i$$$i$$$-th element of the array a$$$a$$$.",
+      "The next q$$$q$$$ lines describe queries. The i$$$i$$$-th of these lines contains two integers li$$$l_i$$$ and ri$$$r_i$$$ (1≤li≤ri≤m$$$1 \\le l_i \\le r_i \\le m$$$), meaning that the i$$$i$$$-th query is about the subsegment of the array from the li$$$l_i$$$-th to the ri$$$r_i$$$-th positions, inclusive."
+    ],
+    "output": [
+      "Print a single string of length q$$$q$$$, consisting of 0$$$0$$$ and 1$$$1$$$, the digit on the i$$$i$$$-th positions should be 1$$$1$$$, if the subsegment of array a$$$a$$$ from the li$$$l_i$$$-th to the ri$$$r_i$$$-th positions, inclusive, contains a subsequence that is a cyclic shift of p$$$p$$$, and 0$$$0$$$ otherwise."
+    ],
+    "note": [
+      "In the first example the segment from the 1$$$1$$$-st to the 5$$$5$$$-th positions is 1,2,3,1,2$$$1, 2, 3, 1, 2$$$. There is a subsequence 1,3,2$$$1, 3, 2$$$ that is a cyclic shift of the permutation. The subsegment from the 2$$$2$$$-nd to the 6$$$6$$$-th positions also contains a subsequence 2,1,3$$$2, 1, 3$$$ that is equal to the permutation. The subsegment from the 3$$$3$$$-rd to the 5$$$5$$$-th positions is 3,1,2$$$3, 1, 2$$$, there is only one subsequence of length 3$$$3$$$ (3,1,2$$$3, 1, 2$$$), but it is not a cyclic shift of the permutation.",
+      "In the second example the possible cyclic shifts are 1,2$$$1, 2$$$ and 2,1$$$2, 1$$$. The subsegment from the 1$$$1$$$-st to the 2$$$2$$$-nd positions is 1,1$$$1, 1$$$, its subsequences are not cyclic shifts of the permutation. The subsegment from the 2$$$2$$$-nd to the 3$$$3$$$-rd positions is 1,2$$$1, 2$$$, it coincides with the permutation. The subsegment from the 3$$$3$$$ to the 4$$$4$$$ positions is 2,2$$$2, 2$$$, its subsequences are not cyclic shifts of the permutation."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 6 3\n2 1 3\n1 2 3 1 2 3\n1 5\n2 6\n3 5",
+      "output": "110"
+    },
+    {
+      "input": "2 4 3\n2 1\n1 1 2 2\n1 2\n2 3\n3 4",
+      "output": "010"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "最近，Lynyrd 和 Skynyrd 去了一家商店，Lynyrd 购买了一个长度为 n$$$n$$$ 的排列 p$$$p$$$，而 Skynyrd 购买了一个长度为 m$$$m$$$ 的数组 a$$$a$$$，其中的整数范围从 1$$$1$$$ 到 n$$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Lynyrd 和 Skynyrd 感到无聊，于是他们向你提出了 q$$$q$$$ 个查询，每个查询的形式如下：“数组 a$$$a$$$ 从第 l$$$l$$$ 个位置到第 r$$$r$$$ 个位置(含两端)组成的子数组中，是否存在一个子序列是 p$$$p$$$ 的某个循环移位？”请回答这些查询。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "长度为 n$$$n$$$ 的排列是一个由 n$$$n$$$ 个整数构成的序列，其中从 1$$$1$$$ 到 n$$$n$$$ 的每个整数都恰好出现一次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于某个 i$$$i$$$(从 1$$$1$$$ 到 n$$$n$$$)，排列 (p1,p2,…,pn)$$$(p_1, p_2, \\ldots, p_n)$$$ 的一个循环移位是排列 (pi,pi+1,…,pn,p1,p2,…,pi−1)$$$(p_i, p_{i + 1}, \\ldots, p_{n}, p_1, p_2, \\ldots, p_{i - 1})$$$。例如，排列 (2,1,3)$$$(2, 1, 3)$$$ 有三个不同的循环移位：(2,1,3)$$$(2, 1, 3)$$$、(1,3,2)$$$(1, 3, 2)$$$、(3,2,1)$$$(3, 2, 1)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "数组 a$$$a$$$ 从第 l$$$l$$$ 个位置到第 r$$$r$$$ 个位置(含两端)组成的子数组的一个子序列，是形如 ai1,ai2,…,aik$$$a_{i_1}, a_{i_2}, \\ldots, a_{i_k}$$$ 的序列，其中存在 i1,i2,…,ik$$$i_1, i_2, \\ldots, i_k$$$，使得 l≤i1<i2<…<ik≤r$$$l \\leq i_1  \\lt  i_2  \\lt  \\ldots  \\lt  i_k \\leq r$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、m$$$m$$$、q$$$q$$$(1≤n,m,q≤2⋅105$$$1 \\le n, m, q \\le 2 \\cdot 10^5$$$)，分别表示排列 p$$$p$$$ 的长度、数组 a$$$a$$$ 的长度以及查询数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 n$$$n$$$ 个介于 1$$$1$$$ 和 n$$$n$$$ 之间的整数，其中第 i$$$i$$$ 个整数是该排列的第 i$$$i$$$ 个元素。从 1$$$1$$$ 到 n$$$n$$$ 的每个整数都恰好出现一次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 m$$$m$$$ 个整数，取值范围为 1$$$1$$$ 到 n$$$n$$$，其中第 i$$$i$$$ 个数是数组 a$$$a$$$ 的第 i$$$i$$$ 个元素。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行描述查询。其中第 i$$$i$$$ 行包含两个整数 li$$$l_i$$$ 和 ri$$$r_i$$$(1≤li≤ri≤m$$$1 \\le l_i \\le r_i \\le m$$$)，表示第 i$$$i$$$ 个查询针对数组从第 li$$$l_i$$$ 个位置到第 ri$$$r_i$$$ 个位置(含两端)的子段。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个长度为 q$$$q$$$ 的 01 串，仅由 0$$$0$$$ 和 1$$$1$$$ 组成。如果数组 a$$$a$$$ 中从第 li$$$l_i$$$ 个位置到第 ri$$$r_i$$$ 个位置(含两端)的子段包含一个为 p$$$p$$$ 的循环移位的子序列，则第 i$$$i$$$ 个位置应为 1$$$1$$$，否则为 0$$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个示例中，从第 1$$$1$$$ 个位置到第 5$$$5$$$ 个位置的子段为 1,2,3,1,2$$$1, 2, 3, 1, 2$$$。其中存在一个子序列 1,3,2$$$1, 3, 2$$$，它是该排列的一个循环移位。从第 2$$$2$$$ 个位置到第 6$$$6$$$ 个位置的子段也包含一个等于该排列的子序列 2,1,3$$$2, 1, 3$$$。从第 3$$$3$$$ 个位置到第 5$$$5$$$ 个位置的子段为 3,1,2$$$3, 1, 2$$$，长度为 3$$$3$$$ 的子序列只有一个(3,1,2$$$3, 1, 2$$$)，但它不是该排列的循环移位。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个示例中，可能的循环移位为 1,2$$$1, 2$$$ 和 2,1$$$2, 1$$$。从第 1$$$1$$$ 个位置到第 2$$$2$$$ 个位置的子段是 1,1$$$1, 1$$$，它的子序列都不是该排列的循环移位。从第 2$$$2$$$ 个位置到第 3$$$3$$$ 个位置的子段是 1,2$$$1, 2$$$，它与该排列一致。从第 3$$$3$$$ 个位置到第 4$$$4$$$ 个位置的子段是 2,2$$$2, 2$$$，它的子序列都不是该排列的循环移位。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Lynyrd Skynyrd",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "code": "CF1200D",
+  "letter": "D",
+  "title": "D. White Lines",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1200/D",
+  "difficulty": "1900",
+  "timeLimit": "1.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Gildong has bought a famous painting software cfpaint. The working screen of cfpaint is square-shaped consisting of n$$$n$$$ rows and n$$$n$$$ columns of square cells. The rows are numbered from 1$$$1$$$ to n$$$n$$$, from top to bottom, and the columns are numbered from 1$$$1$$$ to n$$$n$$$, from left to right. The position of a cell at row r$$$r$$$ and column c$$$c$$$ is represented as (r,c)$$$(r, c)$$$. There are only two colors for the cells in cfpaint — black and white.",
+      "There is a tool named eraser in cfpaint. The eraser has an integer size k$$$k$$$ (1≤k≤n$$$1 \\le k \\le n$$$). To use the eraser, Gildong needs to click on a cell (i,j)$$$(i, j)$$$ where 1≤i,j≤n−k+1$$$1 \\le i, j \\le n - k + 1$$$. When a cell (i,j)$$$(i, j)$$$ is clicked, all of the cells (i′,j′)$$$(i', j')$$$ where i≤i′≤i+k−1$$$i \\le i' \\le i + k - 1$$$ and j≤j′≤j+k−1$$$j \\le j' \\le j + k - 1$$$ become white. In other words, a square with side equal to k$$$k$$$ cells and top left corner at (i,j)$$$(i, j)$$$ is colored white.",
+      "A white line is a row or a column without any black cells.",
+      "Gildong has worked with cfpaint for some time, so some of the cells (possibly zero or all) are currently black. He wants to know the maximum number of white lines after using the eraser exactly once. Help Gildong find the answer to his question."
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and k$$$k$$$ (1≤k≤n≤2000$$$1 \\le k \\le n \\le 2000$$$) — the number of rows and columns, and the size of the eraser.",
+      "The next n$$$n$$$ lines contain n$$$n$$$ characters each without spaces. The j$$$j$$$-th character in the i$$$i$$$-th line represents the cell at (i,j)$$$(i,j)$$$. Each character is given as either 'B' representing a black cell, or 'W' representing a white cell."
+    ],
+    "output": [
+      "Print one integer: the maximum number of white lines after using the eraser exactly once."
+    ],
+    "note": [
+      "In the first example, Gildong can click the cell (2,2)$$$(2, 2)$$$, then the working screen becomes:",
+      {
+        "pre": "BWWW\nWWWW\nWWWW\nWWWB"
+      },
+      "Then there are four white lines — the 2$$$2$$$-nd and 3$$$3$$$-rd row, and the 2$$$2$$$-nd and 3$$$3$$$-rd column.",
+      "In the second example, clicking the cell (2,3)$$$(2, 3)$$$ makes the 2$$$2$$$-nd row a white line.",
+      "In the third example, both the 2$$$2$$$-nd column and 5$$$5$$$-th row become white lines by clicking the cell (3,2)$$$(3, 2)$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 2\nBWWW\nWBBW\nWBBW\nWWWB",
+      "output": "4"
+    },
+    {
+      "input": "3 1\nBWB\nWWB\nBWB",
+      "output": "2"
+    },
+    {
+      "input": "5 3\nBWBBB\nBWBBB\nBBBBB\nBBBBB\nWBBBW",
+      "output": "2"
+    },
+    {
+      "input": "2 2\nBW\nWB",
+      "output": "4"
+    },
+    {
+      "input": "2 1\nWW\nWW",
+      "output": "4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Gildong 购买了一款著名的绘图软件 cfpaint。cfpaint 的工作界面为正方形，由 n$$$n$$$ 行和 n$$$n$$$ 列方形单元格组成。行从上到下编号为 1$$$1$$$ 到 n$$$n$$$，列从左到右编号为 1$$$1$$$ 到 n$$$n$$$。第 r$$$r$$$ 行、第 c$$$c$$$ 列的单元格位置表示为 (r,c)$$$(r, c)$$$。cfpaint 中的单元格只有两种颜色：黑色和白色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "cfpaint 中有一种名为橡皮擦的工具。橡皮擦的大小为整数 k$$$k$$$(1≤k≤n$$$1 \\le k \\le n$$$)。要使用橡皮擦，Gildong 需要点击一个单元格 (i,j)$$$(i, j)$$$，其中 1≤i,j≤n−k+1$$$1 \\le i, j \\le n - k + 1$$$。当点击单元格 (i,j)$$$(i, j)$$$ 时，所有满足 i≤i′≤i+k−1$$$i \\le i' \\le i + k - 1$$$ 且 j≤j′≤j+k−1$$$j \\le j' \\le j + k - 1$$$ 的单元格 (i′,j′)$$$(i', j')$$$ 都会变为白色。换句话说，以 (i,j)$$$(i, j)$$$ 为左上角、边长为 k$$$k$$$ 个单元格的正方形区域会被涂成白色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "白线是指不含任何黑色单元格的行或列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Gildong 使用 cfpaint 已经有一段时间了，因此当前有些单元格（可能为零个，也可能全部）是黑色的。他想知道使用橡皮擦恰好一次后，最多能有多少条白线。请帮助 Gildong 找到这个问题的答案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 k$$$k$$$(1≤k≤n≤2000$$$1 \\le k \\le n \\le 2000$$$)，分别表示行数和列数，以及橡皮擦的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行每行包含 n$$$n$$$ 个不含空格的字符。第 i$$$i$$$ 行的第 j$$$j$$$ 个字符表示位于 (i,j)$$$(i,j)$$$ 的单元格。每个字符均为 'B'(表示黑色单元格)或 'W'(表示白色单元格)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数：使用橡皮擦恰好一次后，白线数量的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Gildong 可以点击单元格 (2,2)$$$(2, 2)$$$，此时工作屏幕变为：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "接下来有四条白线——第 2$$$2$$$ 行和第 3$$$3$$$ 行，以及第 2$$$2$$$ 列和第 3$$$3$$$ 列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，点击单元格 (2,3)$$$(2, 3)$$$ 会使第 2$$$2$$$ 行变成白线。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，点击单元格 (3,2)$$$(3, 2)$$$ 后，第 2$$$2$$$ 列和第 5$$$5$$$ 行都会变成白线。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 白线",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

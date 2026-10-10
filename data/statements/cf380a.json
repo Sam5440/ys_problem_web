@@ -1,0 +1,76 @@
+{
+  "code": "CF380A",
+  "letter": "A",
+  "title": "A. Sereja and Prefixes",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/380/A",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Sereja loves number sequences very much. That's why he decided to make himself a new one following a certain algorithm.",
+      "Sereja takes a blank piece of paper. Then he starts writing out the sequence in m stages. Each time he either adds a new number to the end of the sequence or takes l first elements of the current sequence and adds them c times to the end. More formally, if we represent the current sequence as a1, a2, ..., an, then after we apply the described operation, the sequence transforms into a1, a2, ..., an[, a1, a2, ..., al] (the block in the square brackets must be repeated c times).",
+      "A day has passed and Sereja has completed the sequence. He wonders what are the values of some of its elements. Help Sereja."
+    ],
+    "input": [
+      "The first line contains integer m (1 ≤ m ≤ 105) — the number of stages to build a sequence.",
+      "Next m lines contain the description of the stages in the order they follow. The first number in the line is a type of stage (1 or 2). Type 1 means adding one number to the end of the sequence, in this case the line contains integer xi (1 ≤ xi ≤ 105) — the number to add. Type 2 means copying a prefix of length li to the end ci times, in this case the line further contains two integers li, ci (1 ≤ li ≤ 105, 1 ≤ ci ≤ 104), li is the length of the prefix, ci is the number of copyings. It is guaranteed that the length of prefix li is never larger than the current length of the sequence.",
+      "The next line contains integer n (1 ≤ n ≤ 105) — the number of elements Sereja is interested in. The next line contains the numbers of elements of the final sequence Sereja is interested in. The numbers are given in the strictly increasing order. It is guaranteed that all numbers are strictly larger than zero and do not exceed the length of the resulting sequence. Consider the elements of the final sequence numbered starting from 1 from the beginning to the end of the sequence.",
+      "Please, do not use the %lld specifier to read or write 64-bit integers in С++. It is preferred to use the cin, cout streams or the %I64d specifier."
+    ],
+    "output": [
+      "Print the elements that Sereja is interested in, in the order in which their numbers occur in the input."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n1 1\n1 2\n2 2 1\n1 3\n2 5 2\n1 4\n16\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16",
+      "output": "1 2 1 2 3 1 2 1 2 3 1 2 1 2 3 4"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含整数 m（1 ≤ m ≤ 10^5）——构建序列所需的阶段数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来 m 行按照阶段执行的顺序给出各阶段的描述。每行的第一个数字是阶段类型（1 或 2）。类型 1 表示向序列末尾添加一个数字，此时该行包含整数 x_i（1 ≤ x_i ≤ 10^5）——要添加的数字。类型 2 表示将长度为 l_i 的前缀复制 c_i 次并添加到末尾，此时该行还包含两个整数 l_i、c_i（1 ≤ l_i ≤ 10^5，1 ≤ c_i ≤ 10^4），其中 l_i 是前缀的长度，c_i 是复制次数。保证前缀长度 l_i 从不大于序列的当前长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含整数 n（1 ≤ n ≤ 10^5）——Sereja 感兴趣的元素个数。下一行包含 Sereja 感兴趣的最终序列元素的编号。这些编号按严格递增的顺序给出。保证所有编号都严格大于零且不超过最终序列的长度。将最终序列中的元素从序列开头到末尾依次编号，从 1 开始。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请不要在 C++ 中使用 %lld 格式说明符来读写 64 位整数。建议使用 cin、cout 流或 %I64d 格式说明符。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "按照这些元素的编号在输入中出现的顺序，输出 Sereja 感兴趣的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Sereja 非常喜欢数列。因此他决定按照某个算法为自己构造一个新的数列。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Sereja 拿出一张空白纸，然后开始分 m 个阶段写出这个序列。每次他要么在序列末尾添加一个新数，要么取出当前序列的前 l 个元素，并将它们重复 c 次追加到末尾。更形式化地，若将当前序列表示为 a1, a2, ..., an，则执行上述操作后，序列变为 a1, a2, ..., an[, a1, a2, ..., al]（方括号中的部分需要重复 c 次）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "一天过去了，Sereja 完成了这个序列。他想知道其中某些元素的值。请帮助 Sereja。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. Sereja 与前缀",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

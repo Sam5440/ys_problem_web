@@ -1,0 +1,463 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.21 0.006 285.885);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.705 0.015 286.067);
+}
+
+.dark {
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.21 0.006 285.885);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.92 0.004 286.32);
+  --primary-foreground: oklch(0.21 0.006 285.885);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
+  --accent: oklch(0.274 0.006 286.033);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.552 0.016 285.938);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, Consolas, monospace;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+/* ---------- markdown / editorial body (renderRich output) ---------- */
+
+.md-body {
+  @apply text-[15px] leading-7 text-foreground/90;
+}
+.md-body p {
+  @apply my-2.5;
+}
+.md-body a {
+  @apply font-medium text-primary underline underline-offset-4;
+}
+.md-body ul {
+  @apply my-2.5 list-disc pl-6;
+}
+.md-body ol {
+  @apply my-2.5 list-decimal pl-6;
+}
+.md-body pre.code-block {
+  @apply relative my-3 overflow-x-auto rounded-lg border bg-background p-4 pt-8 font-mono text-[13px] leading-6 text-foreground/90;
+}
+.md-body pre.code-block::before {
+  content: attr(data-lang);
+  @apply absolute right-3 top-1.5 font-sans text-[11px] font-medium uppercase tracking-wider text-muted-foreground;
+}
+.md-body pre.code-block code {
+  @apply font-mono;
+}
+.md-body .inline-code {
+  @apply rounded-md border bg-muted px-1.5 py-0.5 font-mono text-[0.85em] text-foreground;
+}
+.md-body h1,
+.md-body h2,
+.md-body h3 {
+  @apply mb-2 mt-5 font-semibold;
+}
+
+/* statement paragraphs (Codeforces TeX inside) */
+.stmt-body p {
+  @apply my-2 leading-7;
+}
+
+/* Unbreakable runs (inline KaTeX is white-space:nowrap, bare URLs) must scroll
+   inside their paragraph instead of stretching the page on narrow screens. */
+.stmt-body p,
+.md-body p,
+.md-body li {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* statement <pre> blocks share the md-body code-block chrome (incl. the
+   horizontal scroll that keeps long lines from widening the card) */
+.stmt-body pre.code-block {
+  @apply relative my-3 overflow-x-auto rounded-lg border bg-background p-4 pt-8 font-mono text-[13px] leading-6 text-foreground/90;
+}
+.stmt-body pre.code-block::before {
+  content: attr(data-lang);
+  @apply absolute right-3 top-1.5 font-sans text-[11px] font-medium uppercase tracking-wider text-muted-foreground;
+}
+
+/* statement images (hotlinked from Codeforces, can be very wide) */
+.stmt-body img {
+  @apply my-2 h-auto max-w-full rounded-md;
+}
+
+/* KaTeX tuning */
+.katex {
+  font-size: 1.02em;
+}
+.katex-display {
+  @apply my-3 overflow-x-auto overflow-y-hidden;
+}
+
+/* ---------- syntax highlighting (highlight.js, applied client-side by
+   HighlightRuntime) — token palette tuned to the site's dark theme instead of
+   an imported hljs theme, so cards keep their own background/border ---------- */
+.code-block .hljs {
+  @apply text-foreground/90;
+}
+.code-block .hljs-comment,
+.code-block .hljs-quote {
+  @apply italic text-muted-foreground/80;
+}
+.code-block .hljs-keyword,
+.code-block .hljs-selector-tag,
+.code-block .hljs-literal,
+.code-block .hljs-section,
+.code-block .hljs-doctag,
+.code-block .hljs-type,
+.code-block .hljs-name,
+.code-block .hljs-strong {
+  @apply text-[#ff7b9c];
+}
+.code-block .hljs-string,
+.code-block .hljs-regexp,
+.code-block .hljs-addition,
+.code-block .hljs-attribute,
+.code-block .hljs-meta .hljs-string {
+  @apply text-[#f2c07a];
+}
+.code-block .hljs-number,
+.code-block .hljs-symbol,
+.code-block .hljs-bullet,
+.code-block .hljs-link,
+.code-block .hljs-deletion {
+  @apply text-[#6fd7b0];
+}
+.code-block .hljs-title,
+.code-block .hljs-function .hljs-title,
+.code-block .hljs-title.function_,
+.code-block .hljs-built_in,
+.code-block .hljs-class .hljs-title,
+.code-block .hljs-title.class_ {
+  @apply text-[#82aaff];
+}
+.code-block .hljs-attr,
+.code-block .hljs-variable,
+.code-block .hljs-template-variable,
+.code-block .hljs-params,
+.code-block .hljs-selector-attr,
+.code-block .hljs-selector-class,
+.code-block .hljs-selector-id {
+  @apply text-[#c7a5ff];
+}
+.code-block .hljs-meta,
+.code-block .hljs-comment.hljs-meta,
+.code-block .hljs-shebang {
+  @apply text-[#56c8d8];
+}
+.code-block .hljs-emphasis {
+  @apply italic;
+}
+.code-block .hljs-subst {
+  @apply text-foreground/90;
+}
+
+/* ---------- 译文样式自定义（设置弹窗「译文样式」→ StatementBody 译文行） ----------
+   SettingsProvider 把偏好写到 <html>：颜色/字号是 CSS 变量，加粗/斜体/下划线
+   是开关类。.zh-styled 的回退值全部等价于无操作（currentcolor / inherit /
+   不声明），未自定义时渲染与原来逐像素一致；来源芯片、行内代码、KaTeX 等
+   自带字号/颜色的内容有自己的声明，不随偏好走。 */
+.zh-styled {
+  color: var(--zh-color, currentcolor);
+  font-size: var(--zh-font-size, inherit);
+}
+html.zh-bold .zh-styled {
+  font-weight: 600;
+}
+html.zh-italic .zh-styled {
+  font-style: italic;
+}
+html.zh-underline .zh-styled {
+  text-decoration-line: underline;
+}
+
+/* ---------- 编译器独立工作区（app/layout.jsx .compiler-workspace） ----------
+   编译器不再挂在题目列里，而是与整站平级的顶层分栏：打开（body.compiler-open）
+   时左列 .site-shell（导航+内容+页脚）平滑缩窄，右列 .compiler-track 从 0 展开
+   到 --compiler-w，sticky 吸顶保持从视口顶部到底部的整列高度——两者是并排的
+   文档流分栏，没有 fixed 覆盖层也没有蒙层，题目永远不被遮挡。动画只动
+   flex-basis + 面板 translateX（680ms 缓动，与 Demo/ 原型同款），中途反向可
+   平滑折返。CompilerDock 通过 portal 把 aside 渲染进 #compiler-dock-root。 */
+:root {
+  --compiler-w: clamp(420px, 43vw, 720px);
+  --compiler-motion: 680ms;
+  --compiler-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (max-width: 899.98px) {
+  :root {
+    --compiler-w: 52vw;
+  }
+}
+@media (max-width: 599.98px) {
+  :root {
+    --compiler-w: 64vw;
+  }
+}
+
+.compiler-workspace {
+  display: flex;
+  align-items: flex-start;
+}
+.site-shell {
+  flex: 1 1 0%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  container: site-shell / inline-size;
+}
+.compiler-track {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  flex: 0 0 0px;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--card);
+  transition: flex-basis var(--compiler-motion) var(--compiler-ease);
+}
+body.compiler-open .compiler-track {
+  flex-basis: var(--compiler-w);
+}
+.compiler-box {
+  width: var(--compiler-w);
+  height: 100%;
+  border-left: 1px solid var(--border);
+  transform: translateX(24px);
+  transition: transform var(--compiler-motion) var(--compiler-ease);
+}
+body.compiler-open .compiler-box {
+  transform: translateX(0);
+}
+
+/* ---------- 分栏拖拽（CompilerDock 的两个手柄） ----------
+   左右：面板左缘竖向手柄改 --compiler-w（px，内联在 <html> 上，优先于
+   :root 的 clamp 默认）；flex-basis 用 min() 兜底，存过的宽度超过视口时
+   自动收，保证左列至少剩 280px（窄屏保底 320px），整栏不溢出。
+   上下：编辑器下的横向手柄改下方运行/检查区高度（CompilerDock state，
+   编辑器 flex-1 吃剩余）。双击任一手柄恢复默认。 */
+body.compiler-open .compiler-track {
+  flex-basis: min(var(--compiler-w), max(320px, 100vw - 280px));
+}
+body.compiler-resizing {
+  user-select: none;
+}
+/* 拖拽中禁用开合过渡：每帧改宽度不应带着 680ms 缓动 */
+body.compiler-resizing .compiler-track,
+body.compiler-resizing .compiler-box {
+  transition: none;
+}
+.compiler-resize-w {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  z-index: 30;
+  cursor: col-resize;
+  touch-action: none;
+}
+.compiler-resize-w::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: transparent;
+  transition: background-color 150ms ease;
+}
+.compiler-resize-w:hover::before,
+.compiler-resize-w[data-dragging]::before {
+  background: var(--ring);
+}
+.compiler-resize-h {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7px;
+  cursor: row-resize;
+  touch-action: none;
+}
+.compiler-resize-h::before {
+  content: '';
+  width: 36px;
+  height: 3px;
+  border-radius: 999px;
+  background: transparent;
+  transition: background-color 150ms ease;
+}
+.compiler-resize-h:hover::before,
+.compiler-resize-h[data-dragging]::before {
+  background: var(--ring);
+}
+
+/* 右缘展开舌片（收起态唯一入口，按 Demo 样式）；展开后淡出，
+   关闭走面板 × / Esc / Ctrl+⌘J */
+.compiler-edge-tab {
+  position: fixed;
+  right: 0;
+  top: 46%;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 2.25rem;
+  padding: 1rem 0;
+  color: #c4b9f4;
+  background: #22202e;
+  border: 1px solid rgb(183 167 255 / 0.17);
+  border-right: 0;
+  border-radius: 9px 0 0 9px;
+  transition: opacity 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+.compiler-edge-tab:hover {
+  background: #302a42;
+  transform: translateX(-2px);
+}
+.compiler-edge-tab .edge-label {
+  writing-mode: vertical-rl;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+}
+body.compiler-open .compiler-edge-tab {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100%);
+}
+
+/* 顶部「编译器」启动按钮（SiteHeader）：紫色提亮，展开态保持高亮 */
+.compiler-launch {
+  background: #1c1b28;
+  color: #d0c6ff;
+  border-color: rgb(183 167 255 / 0.19);
+}
+.compiler-launch:hover {
+  background: rgb(183 167 255 / 0.1);
+  border-color: rgb(183 167 255 / 0.35);
+}
+.compiler-launch[aria-expanded='true'] {
+  background: rgb(183 167 255 / 0.1);
+}
+.compiler-launch kbd {
+  margin-left: 0.125rem;
+  font-size: 10px;
+  color: #9a90bd;
+}
+
+/* 左列缩窄后的头部自适应：按容器（而非视口）宽度收纳导航与快捷键提示。
+   未分层样式优先级高于 Tailwind utilities 层，可直接覆盖 sm:flex。 */
+@container site-shell (max-width: 760px) {
+  .header-nav {
+    display: none;
+  }
+  .compiler-launch kbd {
+    display: none;
+  }
+}
+
+/* 分栏动画期间禁用滚动锚定：重排时锚点元素会被浏览器回拨，产生跳动 */
+html {
+  overflow-anchor: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .compiler-track,
+  .compiler-box,
+  .compiler-edge-tab {
+    transition-duration: 1ms;
+  }
+}

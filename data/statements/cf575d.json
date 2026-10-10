@@ -1,0 +1,140 @@
+{
+  "code": "CF575D",
+  "letter": "D",
+  "title": "D. Tablecity",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/575/D",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There was a big bank robbery in Tablecity. In order to catch the thief, the President called none other than Albert – Tablecity’s Chief of Police. Albert does not know where the thief is located, but he does know how he moves.",
+      "Tablecity can be represented as 1000 × 2 grid, where every cell represents one district. Each district has its own unique name “(X, Y)”, where X and Y are the coordinates of the district in the grid. The thief’s movement is as",
+      "Every hour the thief will leave the district (X, Y) he is currently hiding in, and move to one of the districts: (X - 1, Y), (X + 1, Y), (X - 1, Y - 1), (X - 1, Y + 1), (X + 1, Y - 1), (X + 1, Y + 1) as long as it exists in Tablecity.",
+      "Below is an example of thief’s possible movements if he is located in district (7,1):",
+      "![](https://espresso.codeforces.com/3afa2fb1fa7e02e3ee2ef721aa30e10c64560be6.png)",
+      "Albert has enough people so that every hour he can pick any two districts in Tablecity and fully investigate them, making sure that if the thief is located in one of them, he will get caught. Albert promised the President that the thief will be caught in no more than 2015 hours and needs your help in order to achieve that."
+    ],
+    "input": [
+      "There is no input for this problem."
+    ],
+    "output": [
+      "The first line of output contains integer N – duration of police search in hours. Each of the following N lines contains exactly 4 integers Xi1, Yi1, Xi2, Yi2 separated by spaces, that represent 2 districts (Xi1, Yi1), (Xi2, Yi2) which got investigated during i-th hour. Output is given in chronological order (i-th line contains districts investigated during i-th hour) and should guarantee that the thief is caught in no more than 2015 hours, regardless of thief’s initial position and movement.",
+      "N ≤ 2015",
+      "1 ≤ X ≤ 1000",
+      "1 ≤ Y ≤ 2"
+    ],
+    "note": [
+      "Let's consider the following output:",
+      "2",
+      "5 1 50 2",
+      "8 1 80 2",
+      "This output is not guaranteed to catch the thief and is not correct. It is given to you only to show the expected output format. There exists a combination of an initial position and a movement strategy such that the police will not catch the thief.",
+      "Consider the following initial position and thief’s movement:",
+      "In the first hour, the thief is located in district (1,1). Police officers will search districts (5,1) and (50,2) and will not find him.",
+      "At the start of the second hour, the thief moves to district (2,2). Police officers will search districts (8,1) and (80,2) and will not find him.",
+      "Since there is no further investigation by the police, the thief escaped!"
+    ]
+  },
+  "examples": [
+    {
+      "input": "В этой задаче нет примеров ввода-вывода.\nThis problem doesn't have sample input and output.",
+      "output": "Смотрите замечание ниже.\nSee the note below."
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Tablecity 发生了一起重大银行抢劫案。为了抓住窃贼，总统请来了 Albert，不是别人，正是 Tablecity 的警察局长。Albert 不知道窃贼位于何处，但他知道窃贼如何移动。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Tablecity 可以表示为一个 1000 × 2 的网格，其中每个单元格代表一个区域。每个区域都有自己唯一的名称“(X, Y)”，其中 X 和 Y 是该区域在网格中的坐标。窃贼的移动方式如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每小时，窃贼都会离开他当前藏身的区域 (X, Y)，并移动到以下区域之一：(X - 1, Y)、(X + 1, Y)、(X - 1, Y - 1)、(X - 1, Y + 1)、(X + 1, Y - 1)、(X + 1, Y + 1)，前提是该区域存在于 Tablecity 中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下面给出了窃贼位于区域 (7,1) 时一种可能的移动示例：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/3afa2fb1fa7e02e3ee2ef721aa30e10c64560be6.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Albert 拥有足够多的人手，因此每个小时他都可以选择 Tablecity 中的任意两个区域并对其进行彻底搜查，确保如果小偷位于其中任何一个区域，他都会被抓住。Albert 向总统承诺，小偷将在不超过 2015 个小时内被抓获。为了实现这一目标，他需要你的帮助。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出的第一行包含一个整数 N，表示警方搜索的持续时间（单位：小时）。接下来的 N 行中，每行恰好包含 4 个由空格分隔的整数 Xi1、Yi1、Xi2、Yi2，表示在第 i 个小时被搜查的两个区域 (Xi1, Yi1)、(Xi2, Yi2)。输出按照时间顺序给出（第 i 行包含第 i 个小时搜查的区域），并且无论小偷的初始位置和移动方式如何，都应保证小偷将在不超过 2015 个小时内被抓获。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "N ≤ 2015",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1 ≤ X ≤ 1000",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1 ≤ Y ≤ 2",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "考虑以下输出：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "5 1 50 2",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "8 1 80 2",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "该输出不保证能够抓住小偷，因此是不正确的。给出该输出仅用于展示预期的输出格式。存在一种初始位置和移动策略的组合，使得警察无法抓住小偷。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑以下初始位置以及小偷的移动：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个小时内，小偷位于区域 (1,1)。警察将搜查区域 (5,1) 和 (50,2)，但不会找到他。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个小时开始时，小偷移动到区域 (2,2)。警察将搜查区域 (8,1) 和 (80,2)，但不会找到他。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于警方不再进行进一步调查，小偷逃脱了！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "本题没有输入。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Tablecity",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

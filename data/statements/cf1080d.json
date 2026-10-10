@@ -1,0 +1,170 @@
+{
+  "code": "CF1080D",
+  "letter": "D",
+  "title": "D. Olya and magical square",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1080/D",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Recently, Olya received a magical square with the size of 2n×2n$$$2^n\\times 2^n$$$.",
+      "It seems to her sister that one square is boring. Therefore, she asked Olya to perform exactly k$$$k$$$ splitting operations.",
+      "A Splitting operation is an operation during which Olya takes a square with side a$$$a$$$ and cuts it into 4 equal squares with side a2$$$\\dfrac{a}{2}$$$. If the side of the square is equal to 1$$$1$$$, then it is impossible to apply a splitting operation to it (see examples for better understanding).",
+      "Olya is happy to fulfill her sister's request, but she also wants the condition of Olya's happiness to be satisfied after all operations.",
+      "The condition of Olya's happiness will be satisfied if the following statement is fulfilled:",
+      "Let the length of the side of the lower left square be equal to a$$$a$$$, then the length of the side of the right upper square should also be equal to a$$$a$$$. There should also be a path between them that consists only of squares with the side of length a$$$a$$$. All consecutive squares on a path should have a common side.",
+      "Obviously, as long as we have one square, these conditions are met. So Olya is ready to fulfill her sister's request only under the condition that she is satisfied too. Tell her: is it possible to perform exactly k$$$k$$$ splitting operations in a certain order so that the condition of Olya's happiness is satisfied? If it is possible, tell also the size of the side of squares of which the path from the lower left square to the upper right one will consist."
+    ],
+    "input": [
+      "The first line contains one integer t$$$t$$$ (1≤t≤103$$$1 \\le t \\le 10^3$$$) — the number of tests.",
+      "Each of the following t$$$t$$$ lines contains two integers ni$$$n_i$$$ and ki$$$k_i$$$ (1≤ni≤109,1≤ki≤1018$$$1 \\le n_i \\le 10^9, 1 \\le k_i \\le 10^{18}$$$) — the description of the i$$$i$$$-th test, which means that initially Olya's square has size of 2ni×2ni$$$2^{n_i}\\times 2^{n_i}$$$ and Olya's sister asks her to do exactly ki$$$k_i$$$ splitting operations."
+    ],
+    "output": [
+      "Print t$$$t$$$ lines, where in the i$$$i$$$-th line you should output \"YES\" if it is possible to perform ki$$$k_i$$$ splitting operations in the i$$$i$$$-th test in such a way that the condition of Olya's happiness is satisfied or print \"NO\" otherwise. If you printed \"YES\", then also print the log2$$$log_2$$$ of the length of the side of the squares through space, along which you can build a path from the lower left square to the upper right one.",
+      "You can output each letter in any case (lower or upper).",
+      "If there are multiple answers, print any."
+    ],
+    "note": [
+      "In each of the illustrations, the pictures are shown in order in which Olya applied the operations. The recently-created squares are highlighted with red.",
+      "In the first test, Olya can apply splitting operations in the following order:",
+      "![](https://espresso.codeforces.com/768cce8af3da264fdd86c8348cac16befc24d9b5.png)",
+      "The condition of Olya's happiness will be met, since there is a path of squares of the same size from the lower left square to the upper right one:",
+      "![](https://espresso.codeforces.com/ae566b872acc0aafd41cecfd6b0fb271bb58472f.png)",
+      "The length of the sides of the squares on the path is 1$$$1$$$. log2(1)=0$$$log_2(1) = 0$$$.",
+      "In the second test, Olya can apply splitting operations in the following order:",
+      "![](https://espresso.codeforces.com/a32c042723d8b177e9de9c8a98d4029fb8dddaf8.png)",
+      "The condition of Olya's happiness will be met, since there is a path of squares of the same size from the lower left square to the upper right one:",
+      "![](https://espresso.codeforces.com/25ab730661401ca52b30120b09c4d6b502f0ff30.png)",
+      "The length of the sides of the squares on the path is 2$$$2$$$. log2(2)=1$$$log_2(2) = 1$$$.",
+      "In the third test, it takes 5$$$5$$$ operations for Olya to make the square look like this:",
+      "![](https://espresso.codeforces.com/ac3ff5043e9a84d07a7d00b89710f3744084fc6c.png)",
+      "Since it requires her to perform 7$$$7$$$ splitting operations, and it is impossible to perform them on squares with side equal to 1$$$1$$$, then Olya cannot do anything more and the answer is \"NO\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 1\n2 2\n2 12",
+      "output": "YES 0\nYES 1\nNO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "最近，Olya 收到了一个大小为 2n×2n$$$2^n\\times 2^n$$$ 的神奇方阵。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "她的妹妹觉得只有一个方阵很无聊。因此，她要求 Olya 恰好执行 k$$$k$$$ 次分割操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "分割操作是指 Olya 将一个边长为 a$$$a$$$ 的正方形切割成 4 个边长为 a2$$$\\dfrac{a}{2}$$$ 的相等正方形。如果正方形的边长等于 1$$$1$$$，则无法对其进行分割操作(参见示例以便更好地理解)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Olya 很乐意满足她姐妹的请求，但她还希望在所有操作完成后，Olya 的幸福条件也能得到满足。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当以下陈述成立时，Olya 的幸福条件就能得到满足：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "设左下方正方形的边长为 a$$$a$$$，那么右上方正方形的边长也应为 a$$$a$$$。此外，它们之间还应存在一条路径，该路径仅由边长为 a$$$a$$$ 的正方形组成。路径上任意两个相邻的正方形都应有一条公共边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "显然，只要我们有一个正方形，这些条件就能满足。因此，Olya 只有在自己也满意的条件下，才愿意满足她姐妹的请求。请告诉她：是否可以按某种顺序恰好进行 k$$$k$$$ 次分割操作，使 Olya 的幸福条件得到满足？如果可以，还请告诉她从左下方正方形到右上方正方形的路径所经过的正方形的边长。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤103$$$1 \\le t \\le 10^3$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "以下 t$$$t$$$ 行中的每一行包含两个整数 ni$$$n_i$$$ 和 ki$$$k_i$$$(1≤ni≤109,1≤ki≤1018$$$1 \\le n_i \\le 10^9, 1 \\le k_i \\le 10^{18}$$$)——第 i$$$i$$$ 个测试的描述，即最初 Olya 的方格大小为 2ni×2ni$$$2^{n_i}\\times 2^{n_i}$$$，并且 Olya 的妹妹要求她恰好执行 ki$$$k_i$$$ 次分裂操作。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 t$$$t$$$ 行：在第 i$$$i$$$ 行中，如果在第 i$$$i$$$ 组测试中能够执行 ki$$$k_i$$$ 次拆分操作，使得 Olya 的快乐条件成立，则输出 \"YES\"，否则输出 \"NO\"。如果输出了 \"YES\"，则还需输出这些正方形边长的 log2$$$log_2$$$；这些正方形是空间中沿其可以搭建一条从左下角方格到右上角方格的路径所经过的正方形。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你可以以任意大小写输出每个字母（小写或大写）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果存在多个答案，输出任意一个即可。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在每幅插图中，图片按照 Olya 应用操作的顺序显示。最近创建的方格用红色高亮显示。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一个测试中，Olya 可以按以下顺序应用分裂操作：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/768cce8af3da264fdd86c8348cac16befc24d9b5.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Olya 的幸福条件将得到满足，因为存在一条由大小相同的正方形组成的路径，从左下方的正方形通向右上方的正方形：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/ae566b872acc0aafd41cecfd6b0fb271bb58472f.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "路径上正方形的边长为 1$$$1$$$。log2(1)=0$$$log_2(1) = 0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试中，Olya 可以按以下顺序执行分割操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/a32c042723d8b177e9de9c8a98d4029fb8dddaf8.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Olya 的幸福条件将得到满足，因为从左下角的正方形到右上角的正方形之间存在一条由大小相同的正方形组成的路径：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/25ab730661401ca52b30120b09c4d6b502f0ff30.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "路径上正方形的边长为 2$$$2$$$。log2(2)=1$$$log_2(2) = 1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试用例中，Olya 需要进行 5$$$5$$$ 次操作，才能使正方形变成这样：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/ac3ff5043e9a84d07a7d00b89710f3744084fc6c.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于她需要进行 7$$$7$$$ 次分割操作，而无法对边长为 1$$$1$$$ 的正方形进行这些操作，因此 Olya 无法继续进行任何操作，答案是“NO”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Olya 与神奇方阵",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

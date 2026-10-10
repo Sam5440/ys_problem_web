@@ -124,8 +124,38 @@ async function main() {
   await page.waitForSelector('aside .monaco-editor', { timeout: 60000 });
   check('面板展开且 Monaco 编辑器挂载', true);
   await page.evaluate(() => document.body.classList.contains('compiler-open'));
-  const mainMargin = await page.evaluate(() => getComputedStyle(document.querySelector('main')).marginRight);
-  check('xl 布局：主内容让位面板（42rem）', mainMargin === '672px', `marginRight=${mainMargin}`);
+  // 新布局契约：整站（.site-shell）与编译器列（#compiler-dock-root）是顶层
+  // flex 分栏——打开时面板占满视口高（--compiler-w = clamp(420px,43vw,720px)，
+  // 1280 视口下为 550.4px），左列吃剩余宽度，两列无缝不重叠。
+  // openPanel 在 aria 翻转时即返回，flex-basis 过渡（680ms）未结束——等宽度收敛再量
+  await page.waitForFunction(
+    () => {
+      const t = document.getElementById('compiler-dock-root')?.getBoundingClientRect();
+      return t && Math.abs(t.width - Math.min(720, Math.max(420, innerWidth * 0.43))) < 1;
+    },
+    null,
+    { timeout: 5000 },
+  );
+  const split = await page.evaluate(() => {
+    const site = document.querySelector('.site-shell').getBoundingClientRect();
+    const track = document.getElementById('compiler-dock-root').getBoundingClientRect();
+    const expectedW = Math.min(720, Math.max(420, innerWidth * 0.43));
+    return {
+      trackW: track.width,
+      expectedW,
+      gap: track.left - site.right,
+      fullHeight: Math.abs(track.top) < 1 && Math.abs(track.bottom - innerHeight) < 1,
+      noHOverflow: document.documentElement.scrollWidth <= innerWidth,
+    };
+  });
+  check(
+    '独立工作区分栏：面板全高、整站让位、无缝无溢出',
+    Math.abs(split.trackW - split.expectedW) < 1 &&
+      Math.abs(split.gap) < 1 &&
+      split.fullHeight &&
+      split.noHOverflow,
+    JSON.stringify(split),
+  );
   await shot('01-panel-open');
 
   /* ============ 1. C++ 样例对拍：AC（打印样例1期望输出） ============ */

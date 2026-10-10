@@ -1,23 +1,27 @@
 'use client';
 
 /**
- * 编译器停靠面板（题目右侧，可收起）。
+ * 编译器独立工作区面板（首页/日页共用，全高右列）。
  *
  * - 语言：C++（clang 22 wasm，同源 /compiler 自托管运行时）与 Python
  *   （Pyodide，jsDelivr CDN + Cache API 离线缓存）；运行时在设置里下载。
  * - 模式：样例测试（题目 examples 逐例对拍，C++ 编译一次多例复用）/
  *   交互运行（SharedArrayBuffer 阻塞喂入，需跨域隔离）/ 编译检查
  *   （C++ -fsyntax-only；Python ast.parse；编辑停顿 2s 自动跑）。
- * - 布局：≥900px 且展开时是**文档流内的并列排版块**（DayView 的
- *   .compiler-host 两列网格右列，sticky 跟随滚动，与题目同层互不遮挡；
- *   宽度走 --compiler-w：xl 42rem、900–1279 收窄 34rem，左列题目自适应
- *   吃剩余宽度）；更窄的屏幕为 fixed 覆盖式抽屉，且加载时不自动展开
- *   （globals.css 按断点切换形态）。收起后状态（草稿/控制台/结果）保留。
+ * - 布局：本组件只负责面板本体，经 portal 渲染进 layout 顶层的
+ *   #compiler-dock-root（.compiler-track）。打开（body.compiler-open）时整站
+ *   缩窄为左列、面板 sticky 全高独占右列——文档流分栏，没有 fixed 覆盖层；
+ *   宽度 --compiler-w、开关动画都在 globals.css（中途中断可平滑反向）。
+ *   <900px 加载时不自动展开（并排空间太小），用户点名才开。
+ *   收起后状态（草稿/控制台/结果）保留。
+ * - 入口：右缘舌片（收起态）、顶部「编译器」按钮（经 ysc-compiler-toggle
+ *   事件）、Ctrl/⌘+J；关闭：面板 ×、Esc（焦点在面板内时不抢编辑器的 Esc）、
+ *   Ctrl/⌘+J。
  */
 
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { ChevronRight, Play, RotateCcw, Square, Terminal, X } from 'lucide-react';
 import { judgeCase, truncate } from '@/lib/compiler/diff';
 import {
@@ -78,17 +82,19 @@ export default function CompilerDock({ problems }) {
   const pyOutRef = useRef(''); // 交互/样例期间收集的 Python stdout
   const runTokenRef = useRef(0); // 使乱序完成的旧运行失效
   const checkTimerRef = useRef(null);
+  const [portalRoot, setPortalRoot] = useState(null); // layout 顶层的 #compiler-dock-root
 
   const problem = problems?.[probIdx] ?? null;
 
   /* ---------- 初始化 ---------- */
   useEffect(() => {
+    setPortalRoot(document.getElementById('compiler-dock-root'));
     const s = loadCpSettings();
     setCp(s);
     setLang(s.defaultLang);
     setMode(s.defaultMode);
-    // <900px 没有并排空间（抽屉会盖住题目）：加载时不自动展开，用户手动
-    // 点开才弹；≥900px 尊重上次的展开偏好。不回写保存值，偏好保持原样
+    // <900px 没有并排阅读空间：加载时不自动展开，用户手动点开才开；
+    // ≥900px 尊重上次的展开偏好。不回写保存值，偏好保持原样
     setOpen(window.innerWidth >= 900 ? s.panelOpen : false);
     setMounted(true);
   }, []);
@@ -102,6 +108,31 @@ export default function CompilerDock({ problems }) {
   useEffect(() => {
     if (mounted) saveCpSettings({ panelOpen: open });
   }, [open, mounted]);
+
+  /* 顶部「编译器」按钮（SiteHeader）经该事件开合面板 */
+  useEffect(() => {
+    if (!mounted) return;
+    const onExternalToggle = () => setOpen((v) => !v);
+    window.addEventListener('ysc-compiler-toggle', onExternalToggle);
+    return () => window.removeEventListener('ysc-compiler-toggle', onExternalToggle);
+  }, [mounted]);
+
+  /* Ctrl/⌘+J 全局开关；Esc 收起（焦点在面板内时不抢，留给编辑器/补全） */
+  useEffect(() => {
+    if (!mounted) return;
+    const onKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'j') {
+        e.preventDefault();
+        setOpen((v) => !v);
+        return;
+      }
+      if (e.key === 'Escape' && !e.defaultPrevented && !document.getElementById('compiler-panel')?.contains(document.activeElement)) {
+        setOpen((v) => (v ? false : v));
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [mounted]);
 
   const refreshAvailability = useCallback(async () => {
     try {
@@ -411,33 +442,35 @@ export default function CompilerDock({ problems }) {
     setRunState('running');
   };
 
-  if (!mounted || !cp) return null;
+  if (!mounted || !cp || !portalRoot) return null;
 
   const langAvailable = lang === 'cpp' ? available.cpp : available.python;
   const busy = runState !== 'idle';
   const passCount = cases.filter((c) => c.verdict === 'AC').length;
 
-  return (
+  return createPortal(
     <>
-      {/* 右缘开合按钮（右侧边栏入口）：收起态全宽可见，展开态 ≥xl 保留为收起舌片 */}
+      {/* 右缘展开舌片：收起态入口；展开后由 globals.css 淡出（pointer-events:none） */}
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => setOpen(true)}
         aria-label={open ? '收起编译器' : '展开编译器'}
-        title={open ? '收起编译器' : '展开编译器（与题目并排，手机上浮于题目上方）'}
-        className={`fixed right-0 top-[55%] z-50 flex items-center gap-1 rounded-l-md border border-r-0 bg-card px-1 py-2.5 text-xs text-muted-foreground shadow-sm transition-colors hover:text-foreground ${open ? 'hidden xl:flex' : 'flex'}`}
+        aria-controls="compiler-panel"
+        aria-expanded={open}
+        title="展开编译器（与题目并排各占一侧）"
+        className="compiler-edge-tab"
       >
-        <span className="flex flex-col items-center gap-1 [writing-mode:vertical-rl] tracking-widest">
-          <Terminal className="size-3.5" />
-          编译器
-        </span>
-        <ChevronRight className={`size-3.5 transition-transform ${open ? 'rotate-180' : ''}`} />
+        <Terminal className="size-3.5" />
+        <span className="edge-label">编译器</span>
+        <ChevronRight className="size-3.5 rotate-180" />
       </button>
 
       <aside
-        className={`compiler-box flex flex-col ${open ? 'compiler-panel-open' : ''}`}
+        id="compiler-panel"
+        className="compiler-box flex flex-col"
         aria-label="编译器面板"
         aria-hidden={!open}
+        inert={!open}
       >
         {/* 头部：题目 + 语言 */}
         <div className="flex items-center gap-2 border-b px-3 py-2">
@@ -466,7 +499,7 @@ export default function CompilerDock({ problems }) {
               </button>
             ))}
           </div>
-          <Button variant="ghost" size="icon" className="size-7" onClick={() => setOpen(false)} aria-label="收起编译器">
+          <Button variant="ghost" size="icon" className="size-7" onClick={() => setOpen(false)} aria-label="收起编译器" title="收起编译器（Esc）">
             <X className="size-4" />
           </Button>
         </div>
@@ -620,7 +653,8 @@ export default function CompilerDock({ problems }) {
           )}
         </div>
       </aside>
-    </>
+    </>,
+    portalRoot,
   );
 }
 

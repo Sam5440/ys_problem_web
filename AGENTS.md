@@ -113,7 +113,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 
 | 路径 | 作用 |
 |---|---|
-| `components/compiler/CompilerDock.jsx` | 题目右侧编译器停靠面板（DayView 的 `.compiler-host` 两列网格内挂载，首页/日页共用）：语言切换、样例对拍/交互运行/编译检查三模式、控制台、收起抽屉；≥900px 且展开时是**文档流内并列排版块**（`.compiler-host` 右列 sticky，题目列 minmax(0,1fr) 自适应；宽度 `--compiler-w`：xl 42rem、900–1279 收窄 34rem），更窄为 fixed 覆盖式抽屉且**加载时不自动展开**（形态切换全在 globals.css，自动展开门槛在 CompilerDock 初始化） |
+| `components/compiler/CompilerDock.jsx` | 编译器独立工作区面板（经 portal 渲染进 layout 顶层 `.compiler-workspace` 右列 `#compiler-dock-root`，首页/日页共用）：语言切换、样例对拍/交互运行/编译检查三模式、控制台；打开（`body.compiler-open`）时整站（SiteHeader+内容+页脚）缩窄为左列 `.site-shell`，编译器 sticky 全高独占右列——**文档流分栏，无 fixed 覆盖、无蒙层**（宽度 `--compiler-w`：clamp(420px,43vw,720px)，<900px 52vw、<600px 64vw 仍并排）；开关动画只动 flex-basis+translateX（680ms，中途中断可平滑反向，reduced-motion 降 1ms，`html` 关滚动锚定防动画跳位）；收起态入口=右缘舌片+顶部「编译器」按钮（`ysc-compiler-toggle` 事件）+Ctrl/⌘J，关闭=面板 ×/Esc（焦点在面板内时不抢）/Ctrl+⌘J，关闭时面板 `inert`；<900px 加载不自动展开（门槛在 CompilerDock 初始化） |
 | `components/compiler/CodeEditor.jsx` | Monaco 编辑器封装（next/dynamic 按需加载）：高亮、诊断标记（clang/-fsyntax-only 与 py ast.parse 注入）、静态补全 + Ctrl+Space 触发 clang `-code-completion-at` 动态补全；editor.worker 用相对 node_modules 路径打包（monaco 0.57 exports 不允许裸包名进 new URL） |
 | `components/compiler/CompilerSettingsSection.jsx` | 设置弹窗「编译器」区块：运行时下载管理（Cache API + 进度）、默认模板编辑、默认语言/标准/超时偏好、观望中运行时占位 |
 | `lib/compiler/runtimes.js` | 运行时清单：Pyodide 版本（默认 314.0.7 = Python 3.14.2）、clang22 文件与尺寸、「观望中」占位（更新的 clang 发行版不适合刷题时留位） |
@@ -182,9 +182,9 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 - /logs 相关约定：`app/logs/page.jsx` 与 `app/logs/ai-demo/page.jsx` 的 `loadRuns()` **必须排除 `.ai.json`**（只列 `.json` 摘要），运行卡展开时才懒加载对应 `.ai.json`。
 - /logs 时间轴在浏览器端实时合并 GitHub API 匿名拉取的最近 100 次 workflow 运行（`components/logs-view.jsx`，`NEXT_PUBLIC_GH_REPO` 可覆盖仓库）：有仓库存档的以存档为准（按 runId 去重）；空跑/被取消/存档未同步的运行显示「未发生数据提交」等轻量卡片（success 且全程 <5 分钟判为空跑，完整运行 ≥10 分钟）。产出类图表只用有存档的运行，避免被空跑零值刷屏。
 
-## 浏览器编译器（题目右侧停靠面板）
+## 浏览器编译器（右侧独立工作区）
 
-访客浏览器内的 C++/Python 刷题环境：Monaco 编辑器（高亮/诊断/补全）+ WASM 运行时，支持样例对拍、交互 stdin、语法检查，全部计算在用户浏览器完成（不耗服务器）。入口：`DayView` 挂 `CompilerDock`，设置弹窗管运行时下载与模板/偏好。
+访客浏览器内的 C++/Python 刷题环境：Monaco 编辑器（高亮/诊断/补全）+ WASM 运行时，支持样例对拍、交互 stdin、语法检查，全部计算在用户浏览器完成（不耗服务器）。入口：右缘「编译器」舌片 / 顶部「编译器」按钮 / Ctrl+⌘J；`DayView` 挂 `CompilerDock`（portal 到 layout 右列），设置弹窗管运行时下载与模板/偏好。
 
 - **运行时选型**：C++ = clang 22.1 + wasi-sdk 33 sysroot（[cppstudio-io/wasm-clang-runtime](https://github.com/cppstudio-io/wasm-clang-runtime) v0.1.0，Apache-2.0，血统 binji/wasm-clang），C++17/20/23；Python = Pyodide（默认 314.0.7 = CPython 3.14.2，备选 0.29.3）。更新的方案（clang 23 freestanding 发行版、CheerpX）不满足刷题需求，在 `lib/compiler/runtimes.js` 的 `PLACEHOLDERS` 留位说明。
 - **发布路径**：`public/compiler/`（约 150MB 二进制）被 gitignore，走 `data/runtime` 永久分支（孤立快照 force-push）；CI 所有 restore-data 均带 `--runtime` 把它注入 deploy，与站点同源。**改动上线顺序**：`npm run runtime:push`（若运行时变了）→ `git push origin main`（触发 publish-deploy 重组 deploy）。新克隆想本地跑编译器先 `npm run data:pull:runtime`。

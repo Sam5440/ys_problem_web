@@ -31,12 +31,17 @@ export const channelLabel = (id) => CHANNELS.find((c) => c.id === id)?.label || 
 // inside the priority editor 'ai' means the CI-archived translation
 const priorityLabel = (id) => channelLabel(id);
 
+// 译文样式偏好：空字符串/ false 均表示「跟随默认」，渲染层（.zh-styled）的
+// 回退值全部等价于无操作，不改变未自定义时的观感
+export const DEFAULT_ZH_STYLE = { color: '', fontSize: '', bold: false, italic: false, underline: false };
+
 const DEFAULT_SETTINGS = {
   defaultChannel: 'deepl',
   // 首次访问（无本机选择记录）时的题面语言模式：对照（原文 + 优先级链译文）
   defaultLangMode: 'both',
   sidebarChannels: ['deepl', 'youdao', 'caiyun', 'iflyrec', 'ai', 'ai_custom'],
   zhPriority: DEFAULT_PRIORITY,
+  zhStyle: DEFAULT_ZH_STYLE,
   ai: { baseUrl: '', apiKey: '', model: AI_MODELS[0] },
 };
 
@@ -70,6 +75,7 @@ function loadSettings() {
       const merged = {
         ...DEFAULT_SETTINGS,
         ...v,
+        zhStyle: { ...DEFAULT_ZH_STYLE, ...(v.zhStyle || {}) },
         ai: { ...DEFAULT_SETTINGS.ai, ...(v.ai || {}) },
       };
       // keep every known archived channel in the priority list; 'ai' (CI
@@ -110,6 +116,21 @@ export function SettingsProvider({ children }) {
     setSettingsState(s);
     setLangState(loadLang(s.defaultChannel, s.defaultLangMode));
   }, []);
+
+  // 译文样式偏好 → <html>：颜色/字号走 CSS 变量，加粗/斜体/下划线走开关类
+  // （globals.css 的 .zh-styled 规则消费；变量/类缺省时 = 未自定义 = 原观感）
+  useEffect(() => {
+    const st = settings.zhStyle || DEFAULT_ZH_STYLE;
+    const root = document.documentElement;
+    root.classList.toggle('zh-bold', !!st.bold);
+    root.classList.toggle('zh-italic', !!st.italic);
+    root.classList.toggle('zh-underline', !!st.underline);
+    if (st.color) root.style.setProperty('--zh-color', st.color);
+    else root.style.removeProperty('--zh-color');
+    const n = Number(st.fontSize);
+    if (st.fontSize !== '' && Number.isFinite(n) && n >= 8 && n <= 40) root.style.setProperty('--zh-font-size', `${n}px`);
+    else root.style.removeProperty('--zh-font-size');
+  }, [settings.zhStyle]);
 
   const setSettings = (next) => {
     setSettingsState((prev) => {
@@ -232,6 +253,13 @@ function SettingsDialog({ onClose }) {
     setSettings({ zhPriority: next });
   };
 
+  const zhStyle = settings.zhStyle || DEFAULT_ZH_STYLE;
+  const patchZhStyle = (p) =>
+    setSettings((prev) => ({ ...prev, zhStyle: { ...(prev.zhStyle || DEFAULT_ZH_STYLE), ...p } }));
+  const resetZhStyle = () => setSettings({ zhStyle: { ...DEFAULT_ZH_STYLE } });
+  const zhStyleCustomized =
+    zhStyle.color || zhStyle.fontSize !== '' || zhStyle.bold || zhStyle.italic || zhStyle.underline;
+
   return (
     <div className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-black/60 p-4 pt-[8vh]" onClick={onClose}>
       <div
@@ -328,6 +356,75 @@ function SettingsDialog({ onClose }) {
                 </button>
               );
             })}
+          </div>
+        </div>
+
+        <div className="space-y-2 rounded-lg border border-dashed p-3">
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-xs font-medium text-muted-foreground">译文样式（题面中文译文的外观；来源芯片、行内代码与公式不受影响）</p>
+            {zhStyleCustomized && (
+              <button
+                type="button"
+                onClick={resetZhStyle}
+                className="shrink-0 rounded-md border px-2 py-0.5 text-[11px] text-muted-foreground transition-colors hover:text-foreground"
+              >
+                恢复默认
+              </button>
+            )}
+          </div>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+            <label className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              字号
+              <input
+                type="number"
+                min={8}
+                max={40}
+                value={zhStyle.fontSize}
+                placeholder="默认"
+                onChange={(e) => patchZhStyle({ fontSize: e.target.value.replace(/[^0-9]/g, '').slice(0, 2) })}
+                className="w-16 rounded-md border bg-background px-2 py-1 text-sm outline-none focus:border-primary/60"
+              />
+              <span>px</span>
+            </label>
+            <label className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              颜色
+              <input
+                type="color"
+                value={/^#[0-9a-fA-F]{6}$/.test(zhStyle.color) ? zhStyle.color : '#8b8b9e'}
+                onChange={(e) => patchZhStyle({ color: e.target.value })}
+                aria-label="译文颜色"
+                className="size-7 cursor-pointer rounded-md border bg-background p-0.5"
+              />
+            </label>
+            <div className="ml-auto flex items-center gap-1">
+              {[
+                { key: 'bold', label: 'B', cls: 'font-bold', name: '加粗' },
+                { key: 'italic', label: 'I', cls: 'italic', name: '斜体' },
+                { key: 'underline', label: 'U', cls: 'underline', name: '下划线' },
+              ].map((t) => (
+                <button
+                  key={t.key}
+                  type="button"
+                  aria-pressed={!!zhStyle[t.key]}
+                  aria-label={`译文${t.name}`}
+                  title={`译文${t.name}`}
+                  onClick={() => patchZhStyle({ [t.key]: !zhStyle[t.key] })}
+                  className={`inline-flex size-7 items-center justify-center rounded-md border text-xs transition-colors ${t.cls} ${
+                    zhStyle[t.key]
+                      ? 'border-primary/60 bg-primary/10 text-foreground ring-1 ring-primary/50'
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  {t.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          {/* 预览：偏好即时写入 <html>（SettingsProvider effect），.zh-styled 直接生效 */}
+          <div className="rounded-md border bg-background px-2.5 py-2">
+            <p className="zh-styled text-[13px] leading-6">
+              预览：给定一个整数 n，输出 2n 的值。每次修改立即生效并保存在本机。
+            </p>
           </div>
         </div>
 

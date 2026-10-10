@@ -241,6 +241,25 @@
   @apply text-foreground/90;
 }
 
+/* ---------- 译文样式自定义（设置弹窗「译文样式」→ StatementBody 译文行） ----------
+   SettingsProvider 把偏好写到 <html>：颜色/字号是 CSS 变量，加粗/斜体/下划线
+   是开关类。.zh-styled 的回退值全部等价于无操作（currentcolor / inherit /
+   不声明），未自定义时渲染与原来逐像素一致；来源芯片、行内代码、KaTeX 等
+   自带字号/颜色的内容有自己的声明，不随偏好走。 */
+.zh-styled {
+  color: var(--zh-color, currentcolor);
+  font-size: var(--zh-font-size, inherit);
+}
+html.zh-bold .zh-styled {
+  font-weight: 600;
+}
+html.zh-italic .zh-styled {
+  font-style: italic;
+}
+html.zh-underline .zh-styled {
+  text-decoration-line: underline;
+}
+
 /* ---------- 编译器独立工作区（app/layout.jsx .compiler-workspace） ----------
    编译器不再挂在题目列里，而是与整站平级的顶层分栏：打开（body.compiler-open）
    时左列 .site-shell（导航+内容+页脚）平滑缩窄，右列 .compiler-track 从 0 展开
@@ -300,6 +319,69 @@ body.compiler-open .compiler-track {
 }
 body.compiler-open .compiler-box {
   transform: translateX(0);
+}
+
+/* ---------- 分栏拖拽（CompilerDock 的两个手柄） ----------
+   左右：面板左缘竖向手柄改 --compiler-w（px，内联在 <html> 上，优先于
+   :root 的 clamp 默认）；flex-basis 用 min() 兜底，存过的宽度超过视口时
+   自动收，保证左列至少剩 280px（窄屏保底 320px），整栏不溢出。
+   上下：编辑器下的横向手柄改下方运行/检查区高度（CompilerDock state，
+   编辑器 flex-1 吃剩余）。双击任一手柄恢复默认。 */
+body.compiler-open .compiler-track {
+  flex-basis: min(var(--compiler-w), max(320px, 100vw - 280px));
+}
+body.compiler-resizing {
+  user-select: none;
+}
+/* 拖拽中禁用开合过渡：每帧改宽度不应带着 680ms 缓动 */
+body.compiler-resizing .compiler-track,
+body.compiler-resizing .compiler-box {
+  transition: none;
+}
+.compiler-resize-w {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  z-index: 30;
+  cursor: col-resize;
+  touch-action: none;
+}
+.compiler-resize-w::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: transparent;
+  transition: background-color 150ms ease;
+}
+.compiler-resize-w:hover::before,
+.compiler-resize-w[data-dragging]::before {
+  background: var(--ring);
+}
+.compiler-resize-h {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7px;
+  cursor: row-resize;
+  touch-action: none;
+}
+.compiler-resize-h::before {
+  content: '';
+  width: 36px;
+  height: 3px;
+  border-radius: 999px;
+  background: transparent;
+  transition: background-color 150ms ease;
+}
+.compiler-resize-h:hover::before,
+.compiler-resize-h[data-dragging]::before {
+  background: var(--ring);
 }
 
 /* 右缘展开舌片（收起态唯一入口，按 Demo 样式）；展开后淡出，

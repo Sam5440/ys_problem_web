@@ -12,6 +12,10 @@
  *   #compiler-dock-root（.compiler-track）。打开（body.compiler-open）时整站
  *   缩窄为左列、面板 sticky 全高独占右列——文档流分栏，没有 fixed 覆盖层；
  *   宽度 --compiler-w、开关动画都在 globals.css（中途中断可平滑反向）。
+ *   面板宽度（左缘竖向手柄）与编辑器/结果区高度（编辑器下横向手柄）可拖拽，
+ *   双击手柄复位；偏好存 ysc-cp-settings-v1 的 panelWidth / consoleH（null =
+ *   跟随 CSS 默认），宽度内联写到 <html> 的 --compiler-w，globals.css 的
+ *   flex-basis min() 兜底保证左列不小于 280px。
  *   <900px 加载时不自动展开（并排空间太小），用户点名才开。
  *   收起后状态（草稿/控制台/结果）保留。
  * - 入口：右缘舌片（收起态）、顶部「编译器」按钮（经 ysc-compiler-toggle
@@ -56,6 +60,12 @@ const MODES = [
 
 const CONSOLE_CAP = 200 * 1024;
 
+/* 拖拽边界：面板宽度最小 360px、最多吃到只剩 280px 左列（与 globals.css 的
+   flex-basis min() 兜底一致）；结果区高度下限对齐 min-h-[9rem]，上限给编辑器
+   留足 240px 顶部+最小编辑空间 */
+const MIN_PANEL_W = 360;
+const MIN_CONSOLE_H = 144;
+
 export default function CompilerDock({ problems }) {
   const { openSettings } = useSettings();
   const [mounted, setMounted] = useState(false);
@@ -74,11 +84,16 @@ export default function CompilerDock({ problems }) {
   const [available, setAvailable] = useState({ cpp: false, python: false });
   const [inputLine, setInputLine] = useState('');
   const [completionStatus, setCompletionStatus] = useState(null);
+  const [panelW, setPanelW] = useState(null); // 面板宽度（px），null = CSS clamp 默认
+  const [consoleH, setConsoleH] = useState(null); // 结果区高度（px），null = flex 默认比例
+  const [dragging, setDragging] = useState(null); // 'w' | 'h' | null（手柄视觉态）
 
   const cppRef = useRef(null);
   const pyRef = useRef(null);
   const feedRef = useRef(null);
   const consoleRef = useRef(null);
+  const panelRef = useRef(null); // aside 本体：宽度拖拽的起始测量 + 结果区上限
+  const resultsRef = useRef(null); // 结果区：高度拖拽的起始测量
   const pyOutRef = useRef(''); // 交互/样例期间收集的 Python stdout
   const runTokenRef = useRef(0); // 使乱序完成的旧运行失效
   const checkTimerRef = useRef(null);
@@ -93,6 +108,8 @@ export default function CompilerDock({ problems }) {
     setCp(s);
     setLang(s.defaultLang);
     setMode(s.defaultMode);
+    setPanelW(Number.isFinite(s.panelWidth) ? s.panelWidth : null);
+    setConsoleH(Number.isFinite(s.consoleH) ? s.consoleH : null);
     // <900px 没有并排阅读空间：加载时不自动展开，用户手动点开才开；
     // ≥900px 尊重上次的展开偏好。不回写保存值，偏好保持原样
     setOpen(window.innerWidth >= 900 ? s.panelOpen : false);
@@ -104,6 +121,24 @@ export default function CompilerDock({ problems }) {
     document.body.classList.toggle('compiler-open', open);
     return () => document.body.classList.remove('compiler-open');
   }, [open, mounted]);
+
+  /* 拖拽过的宽度内联到 <html>（压过 :root 的 clamp 默认；null 时摘掉恢复默认） */
+  useEffect(() => {
+    if (!mounted) return;
+    const root = document.documentElement;
+    if (panelW) root.style.setProperty('--compiler-w', `${Math.round(panelW)}px`);
+    else root.style.removeProperty('--compiler-w');
+    return () => root.style.removeProperty('--compiler-w');
+  }, [panelW, mounted]);
+
+  /* 视口变小后收过的结果区高度可能放不下，跟随窗口收缩（只改当前值不回写偏好） */
+  useEffect(() => {
+    if (!mounted) return;
+    const clampH = (h) => Math.min(Math.max(h, MIN_CONSOLE_H), Math.max(MIN_CONSOLE_H, (panelRef.current?.clientHeight ?? window.innerHeight) - 240));
+    const onResize = () => setConsoleH((h) => (h ? clampH(h) : h));
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, [mounted]);
 
   useEffect(() => {
     if (mounted) saveCpSettings({ panelOpen: open });
@@ -176,6 +211,91 @@ export default function CompilerDock({ problems }) {
     const tpl = cp?.templates?.[lang] ?? '';
     clearDraft(problems[probIdx]?.code, lang);
     setCode(tpl);
+  };
+
+  /* ---------- 分栏拖拽 ----------
+     宽度：拖面板左缘竖向手柄，改 <html> 的 --compiler-w（px）；结果区高度：
+     拖编辑器下的横向手柄。都用 pointer 事件 + 文档级监听，拖拽期间给 body
+     挂 compiler-resizing 禁用开合过渡与选中文本，松手才落盘偏好。
+     双击手柄=恢复默认；聚焦后方向键微调（Shift=大步）。 */
+  const maxPanelW = () => Math.max(MIN_PANEL_W, window.innerWidth - 280);
+  const clampW = (w) => Math.min(Math.max(Math.round(w), MIN_PANEL_W), maxPanelW());
+  const maxConsoleH = () => Math.max(MIN_CONSOLE_H, (panelRef.current?.clientHeight ?? window.innerHeight) - 240);
+  const clampH = (h) => Math.min(Math.max(Math.round(h), MIN_CONSOLE_H), maxConsoleH());
+
+  const beginWidthDrag = (e) => {
+    if (e.button !== 0 || !open) return;
+    e.preventDefault();
+    const startX = e.clientX;
+    // 起始值量现渲染宽度：panelW 为 null（跟随 CSS 默认）时也是对的
+    const startW = panelRef.current?.getBoundingClientRect().width ?? 480;
+    let latest = startW;
+    setDragging('w');
+    document.body.classList.add('compiler-resizing');
+    const onMove = (ev) => {
+      latest = clampW(startW + (startX - ev.clientX)); // 面板在右，左拖=加宽
+      setPanelW(latest);
+    };
+    const onUp = () => {
+      document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerup', onUp);
+      document.removeEventListener('pointercancel', onUp);
+      document.body.classList.remove('compiler-resizing');
+      setDragging(null);
+      if (latest !== startW) saveCpSettings({ panelWidth: latest });
+    };
+    document.addEventListener('pointermove', onMove);
+    document.addEventListener('pointerup', onUp);
+    document.addEventListener('pointercancel', onUp);
+  };
+
+  const beginConsoleDrag = (e) => {
+    if (e.button !== 0) return;
+    e.preventDefault();
+    const startY = e.clientY;
+    const startH = resultsRef.current?.getBoundingClientRect().height ?? 200;
+    let latest = startH;
+    setDragging('h');
+    document.body.classList.add('compiler-resizing');
+    const onMove = (ev) => {
+      latest = clampH(startH + (startY - ev.clientY)); // 上拖=结果区加高
+      setConsoleH(latest);
+    };
+    const onUp = () => {
+      document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerup', onUp);
+      document.removeEventListener('pointercancel', onUp);
+      document.body.classList.remove('compiler-resizing');
+      setDragging(null);
+      if (latest !== startH) saveCpSettings({ consoleH: latest });
+    };
+    document.addEventListener('pointermove', onMove);
+    document.addEventListener('pointerup', onUp);
+    document.addEventListener('pointercancel', onUp);
+  };
+
+  const nudgeWidth = (d) => {
+    const base = panelW ?? panelRef.current?.getBoundingClientRect().width ?? 480;
+    const w = clampW(base + d);
+    setPanelW(w);
+    saveCpSettings({ panelWidth: w });
+  };
+
+  const nudgeConsoleH = (d) => {
+    const base = consoleH ?? resultsRef.current?.getBoundingClientRect().height ?? 200;
+    const h = clampH(base + d);
+    setConsoleH(h);
+    saveCpSettings({ consoleH: h });
+  };
+
+  const resetWidth = () => {
+    setPanelW(null);
+    saveCpSettings({ panelWidth: null });
+  };
+
+  const resetConsoleH = () => {
+    setConsoleH(null);
+    saveCpSettings({ consoleH: null });
   };
 
   /* ---------- 客户端 ---------- */
@@ -467,11 +587,34 @@ export default function CompilerDock({ problems }) {
 
       <aside
         id="compiler-panel"
-        className="compiler-box flex flex-col"
+        ref={panelRef}
+        className="compiler-box relative flex flex-col"
         aria-label="编译器面板"
         aria-hidden={!open}
         inert={!open}
       >
+        {/* 左缘分栏拖拽手柄：改面板宽度（--compiler-w），双击恢复默认 */}
+        <div
+          role="separator"
+          aria-orientation="vertical"
+          aria-label="拖动调整编译器面板宽度"
+          title="拖动调整宽度，双击恢复默认"
+          tabIndex={0}
+          data-dragging={dragging === 'w' || undefined}
+          onPointerDown={beginWidthDrag}
+          onDoubleClick={resetWidth}
+          onKeyDown={(e) => {
+            if (e.key === 'ArrowLeft') {
+              e.preventDefault();
+              nudgeWidth(e.shiftKey ? -64 : -16);
+            } else if (e.key === 'ArrowRight') {
+              e.preventDefault();
+              nudgeWidth(e.shiftKey ? 64 : 16);
+            }
+          }}
+          className="compiler-resize-w"
+        />
+
         {/* 头部：题目 + 语言 */}
         <div className="flex items-center gap-2 border-b px-3 py-2">
           <Terminal className="size-4 shrink-0 text-muted-foreground" />
@@ -505,7 +648,7 @@ export default function CompilerDock({ problems }) {
         </div>
 
         {/* 编辑器 */}
-        <div className="relative min-h-0 flex-1">
+        <div className="relative min-h-[140px] flex-1">
           <CodeEditor
             language={lang}
             value={code}
@@ -517,6 +660,28 @@ export default function CompilerDock({ problems }) {
             onStatus={setCompletionStatus}
           />
         </div>
+
+        {/* 上下分栏拖拽手柄：改下方运行/检查区高度，双击恢复默认 */}
+        <div
+          role="separator"
+          aria-orientation="horizontal"
+          aria-label="拖动调整编辑器与运行区的高度"
+          title="拖动调整高度，双击恢复默认"
+          tabIndex={0}
+          data-dragging={dragging === 'h' || undefined}
+          onPointerDown={beginConsoleDrag}
+          onDoubleClick={resetConsoleH}
+          onKeyDown={(e) => {
+            if (e.key === 'ArrowUp') {
+              e.preventDefault();
+              nudgeConsoleH(e.shiftKey ? -64 : -16);
+            } else if (e.key === 'ArrowDown') {
+              e.preventDefault();
+              nudgeConsoleH(e.shiftKey ? 64 : 16);
+            }
+          }}
+          className="compiler-resize-h"
+        />
 
         {/* 模式页签 + 操作行 */}
         <div className="flex items-center gap-2 border-t px-3 pt-2">
@@ -564,8 +729,12 @@ export default function CompilerDock({ problems }) {
           )}
         </div>
 
-        {/* 结果区 */}
-        <div className="flex min-h-[9rem] flex-1 basis-1/3 flex-col overflow-hidden px-3 pb-3 pt-2">
+        {/* 结果区：拖过高度则锁定 px（编辑器 flex-1 吃剩余），否则维持 flex 比例 */}
+        <div
+          ref={resultsRef}
+          className={`flex min-h-[9rem] flex-col overflow-hidden px-3 pb-3 pt-2 ${consoleH ? '' : 'flex-1 basis-1/3'}`}
+          style={consoleH ? { flex: '0 0 auto', height: Math.round(consoleH) } : undefined}
+        >
           {mode === 'samples' && (
             <div className="min-h-0 flex-1 space-y-2 overflow-y-auto">
               {cases.length > 0 && (

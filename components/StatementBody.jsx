@@ -55,7 +55,8 @@ function WithSourceChip({ html, source, model, className }) {
   // of the rendered markdown instead of floating below it
   const chip = sourceChipHtml(source, model);
   const withChip = /<\/p>\s*$/.test(html) ? html.replace(/<\/p>(\s*)$/, `${chip}</p>$1`) : html + chip;
-  return <div className={className} dangerouslySetInnerHTML={{ __html: withChip }} />;
+  // zh-styled：设置里「译文样式」的挂载点（颜色/字号变量 + html 开关类）
+  return <div className={`zh-styled ${className ?? ''}`} dangerouslySetInnerHTML={{ __html: withChip }} />;
 }
 
 function SpinnerNote({ children }) {
@@ -131,7 +132,7 @@ function ChainZhLine({ segKey, seg, priority, note }) {
   const rec = useZhSegment(segKey);
   // legacy v1 string: the statement's only translation
   if (typeof seg === 'string') {
-    return <p dangerouslySetInnerHTML={{ __html: renderRich(seg) }} />;
+    return <p className="zh-styled" dangerouslySetInnerHTML={{ __html: renderRich(seg) }} />;
   }
   const prio = priority?.length ? priority : DEFAULT_PRIORITY; // 'ai' (CI archive) sits wherever the user dragged it, last by default
   const merged = mergedChannels(seg, rec);
@@ -165,7 +166,7 @@ function ZhLine({ segKey, seg, channel, note }) {
   const rec = useZhSegment(segKey);
   // legacy v1 string: the statement's only translation — show it for any channel
   if (typeof seg === 'string') {
-    return <p dangerouslySetInnerHTML={{ __html: renderRich(seg) }} />;
+    return <p className="zh-styled" dangerouslySetInnerHTML={{ __html: renderRich(seg) }} />;
   }
   const archived =
     typeof seg?.[channel] === 'string' && seg[channel].trim() ? seg[channel] : null;

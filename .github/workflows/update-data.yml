@@ -83,7 +83,7 @@ jobs:
             echo "${{ steps.upstream.outputs.lb_sha }}" > data/.leaderboard-sha
           fi
           node scripts/push-data-branches.mjs --misc --prune
-          node scripts/restore-data.mjs --daily --runtime
+          node scripts/restore-data.mjs --statements --daily --runtime
           node scripts/publish-deploy.mjs
 
       # Every-run retry: segments from the newest 14 days that still lack an AI

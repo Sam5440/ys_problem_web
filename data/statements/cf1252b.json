@@ -1,0 +1,119 @@
+{
+  "code": "CF1252B",
+  "letter": "B",
+  "title": "B. Cleaning Robots",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1252/B",
+  "difficulty": "2300",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The new ICPC town has N$$$N$$$ junctions (numbered from 1$$$1$$$ to N$$$N$$$) which are connected by N−1$$$N-1$$$ roads. It is possible from one junction to go to any other junctions by going through one or more roads. To make sure all the junctions are well-maintained, the government environment agency is planning to deploy their newest advanced cleaning robots. In addition to its cleaning ability, each robot is also equipped with a movement ability such that it can move from one junction to any other junctions connected by roads. However, as you might have guessed, such robots are not cheap. Therefore, the agency is considering the following deployment plan.",
+      "Let Tk$$$T_k$$$ be the set of junctions which should be cleaned by the kth$$$k^{th}$$$ robot (also known as, the robot's task), and |Tk|≥1$$$|T_k| \\ge 1$$$ be the number of junctions in Tk$$$T_k$$$. The junctions in Tk$$$T_k$$$ form a path, i.e. there exists a sequence of v1,v2,…,v|Tk|$$$v_1, v_2, \\dots, v_{|T_k|}$$$ where vi∈Tk$$$v_i \\in T_k$$$ and vi≠vj$$$v_i \\neq v_j$$$ for all i≠j$$$i \\neq j$$$ such that each adjacent junction in this sequence is connected by a road. The union of T$$$T$$$ for all robots is equal to the set of all junctions in ICPC town. On the other hand, no two robots share a common junction, i.e. Ti∩Tj=∅$$$T_i \\cap T_j = \\emptyset$$$ if i≠j$$$i \\neq j$$$.",
+      "To avoid complaints from citizens for an inefficient operation, the deployment plan should be irreducible; in other words, there should be no two robots, i$$$i$$$ and j$$$j$$$, such that Ti∪Tj$$$T_i \\cup T_j$$$ forms a (longer) path. Note that the agency does not care whether the number of robots being used is minimized as long as all the tasks are irreducible.",
+      "Your task in this problem is to count the number of feasible deployment plan given the town's layout. A plan is feasible if and only if it satisfies all the above-mentioned requirements.",
+      "For example, let N=6$$$N = 6$$$ and the roads are {(1,3),(2,3),(3,4),(4,5),(4,6)}$$$\\{(1,3),(2,3),(3,4),(4,5),(4,6)\\}$$$. There are 5$$$5$$$ feasible deployment plans as shown in the following figure.",
+      "![](https://espresso.codeforces.com/a2ab9a92d4f58eedf151f5cccfe32fa9dc97d463.png)",
+      "The first plan uses 2$$$2$$$ robots (labeled as A and B in the figure) to clean {1,2,3}$$$\\{1,2,3\\}$$$ and {4,5,6}$$$\\{4,5,6\\}$$$.",
+      "The second plan uses 3$$$3$$$ robots (labeled as A, B, and C in the figure) to clean {1,3,4,6}$$$\\{1,3,4,6\\}$$$, {2}$$$\\{2\\}$$$, and {5}$$$\\{5\\}$$$.",
+      "The third plan uses 3$$$3$$$ robots to clean {1,3,4,5}$$$\\{1,3,4,5\\}$$$, {2}$$$\\{2\\}$$$, and {6}$$$\\{6\\}$$$.",
+      "The fourth plan uses 3$$$3$$$ robots to clean {1}$$$\\{1\\}$$$, {2,3,4,6}$$$\\{2,3,4,6\\}$$$, and {5}$$$\\{5\\}$$$.",
+      "The fifth plan uses 3$$$3$$$ robots to clean {1}$$$\\{1\\}$$$, {2,3,4,5}$$$\\{2,3,4,5\\}$$$, and {6}$$$\\{6\\}$$$."
+    ],
+    "input": [
+      "Input begins with a line containing an integer: N$$$N$$$ (1≤N≤100000$$$1 \\le N \\le 100\\,000$$$) representing the number of junctions. The next N−1$$$N-1$$$ lines each contains two integers: ui$$$u_i$$$ vi$$$v_i$$$ (1≤ui<vi≤N$$$1 \\le u_i  \\lt  v_i \\le N$$$) representing a road connecting junction ui$$$u_i$$$ and junction vi$$$v_i$$$. It is guaranteed that it is possible from one junction to go to any other junctions by going through one or more roads."
+    ],
+    "output": [
+      "Output in a line an integer representing the number of feasible deployment plans. As this output can be large, you need to modulo the output by 1000000007$$$1\\,000\\,000\\,007$$$."
+    ],
+    "note": [
+      "Explanation for the sample input/output #1",
+      "This is the example from the problem description."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n1 3\n2 3\n3 4\n4 5\n4 6",
+      "output": "5"
+    },
+    {
+      "input": "5\n1 2\n2 3\n2 4\n4 5",
+      "output": "3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "新建的 ICPC 城镇有 N$$$N$$$ 个路口(编号从 1$$$1$$$ 到 N$$$N$$$)，这些路口由 N−1$$$N-1$$$ 条道路连接。可以从任意一个路口出发，经过一条或多条道路到达任意其他路口。为了确保所有路口都得到良好维护，政府环保机构计划部署其最新的先进清洁机器人。除了清洁能力外，每个机器人还配备了移动能力，可以沿道路从一个路口移动到任意其他路口。然而，正如你可能已经猜到的，这样的机器人并不便宜。因此，该机构正在考虑以下部署方案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "设 Tk$$$T_k$$$ 为应由第 kth$$$k^{th}$$$ 个机器人清扫的路口集合(也称为该机器人的任务)，|Tk|≥1$$$|T_k| \\ge 1$$$ 表示 Tk$$$T_k$$$ 中路口的数量。Tk$$$T_k$$$ 中的路口构成一条路径，即存在一个序列 v1,v2,…,v|Tk|$$$v_1, v_2, \\dots, v_{|T_k|}$$$，其中 vi∈Tk$$$v_i \\in T_k$$$，且对于所有 i≠j$$$i \\neq j$$$，都有 vi≠vj$$$v_i \\neq v_j$$$，使得该序列中每一对相邻路口之间都有道路相连。所有机器人的 T$$$T$$$ 的并集等于 ICPC 小镇中所有路口的集合。另一方面，任意两个机器人不共享路口，即当 i≠j$$$i \\neq j$$$ 时，Ti∩Tj=∅$$$T_i \\cap T_j = \\emptyset$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了避免市民因行动效率低下而投诉，部署方案应当是不可约的；换句话说，不存在两个机器人 i$$$i$$$ 和 j$$$j$$$，使得 Ti∪Tj$$$T_i \\cup T_j$$$ 构成一条(更长的)路径。注意，只要所有任务都是不可约的，该机构并不在意所使用的机器人数量是否最少。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在本题中，你的任务是根据城镇的布局，统计可行部署方案的数量。当且仅当一个方案满足上述所有要求时，该方案才是可行的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，令 N=6$$$N = 6$$$，道路为 {(1,3),(2,3),(3,4),(4,5),(4,6)}$$$\\{(1,3),(2,3),(3,4),(4,5),(4,6)\\}$$$。如图所示，共有 5$$$5$$$ 种可行的部署方案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/a2ab9a92d4f58eedf151f5cccfe32fa9dc97d463.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一种方案使用 2$$$2$$$ 个机器人(图中标记为 A 和 B)来清扫 {1,2,3}$$$\\{1,2,3\\}$$$ 和 {4,5,6}$$$\\{4,5,6\\}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二种方案使用 3$$$3$$$ 个机器人(图中标记为 A、B 和 C)来清扫 {1,3,4,6}$$$\\{1,3,4,6\\}$$$、{2}$$$\\{2\\}$$$ 和 {5}$$$\\{5\\}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三种方案使用 3$$$3$$$ 个机器人来清扫 {1,3,4,5}$$$\\{1,3,4,5\\}$$$、{2}$$$\\{2\\}$$$ 和 {6}$$$\\{6\\}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第四种方案使用 3$$$3$$$ 个机器人来清扫 {1}$$$\\{1\\}$$$、{2,3,4,6}$$$\\{2,3,4,6\\}$$$ 和 {5}$$$\\{5\\}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第五种方案使用 3$$$3$$$ 个机器人来清扫 {1}$$$\\{1\\}$$$、{2,3,4,5}$$$\\{2,3,4,5\\}$$$ 和 {6}$$$\\{6\\}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入第一行包含一个整数：N$$$N$$$(1≤N≤100000$$$1 \\le N \\le 100\\,000$$$)，表示路口的数量。接下来的 N−1$$$N-1$$$ 行每行包含两个整数：ui$$$u_i$$$ vi$$$v_i$$$(1≤ui<vi≤N$$$1 \\le u_i  \\lt  v_i \\le N$$$)，表示一条连接路口 ui$$$u_i$$$ 和路口 vi$$$v_i$$$ 的道路。保证从一个路口可以通过一条或多条道路到达任意其他路口。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "请在一行中输出一个整数，表示可行部署方案的数量。由于该输出可能很大，你需要将输出对 1000000007$$$1\\,000\\,000\\,007$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例输入/输出 #1 的解释",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这是题面中的例子。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 清洁机器人",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

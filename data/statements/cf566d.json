@@ -1,0 +1,86 @@
+{
+  "code": "CF566D",
+  "letter": "D",
+  "title": "D. Restructuring Company",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/566/D",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Even the most successful company can go through a crisis period when you have to make a hard decision — to restructure, discard and merge departments, fire employees and do other unpleasant stuff. Let's consider the following model of a company.",
+      "There are n people working for the Large Software Company. Each person belongs to some department. Initially, each person works on his own project in his own department (thus, each company initially consists of n departments, one person in each).",
+      "However, harsh times have come to the company and the management had to hire a crisis manager who would rebuild the working process in order to boost efficiency. Let's use team(person) to represent a team where person person works. A crisis manager can make decisions of two types:",
+      "Merge departments team(x) and team(y) into one large department containing all the employees of team(x) and team(y), where x and y (1 ≤ x, y ≤ n) — are numbers of two of some company employees. If team(x) matches team(y), then nothing happens.",
+      "Merge departments team(x), team(x + 1), ..., team(y), where x and y (1 ≤ x ≤ y ≤ n) — the numbers of some two employees of the company.",
+      "At that the crisis manager can sometimes wonder whether employees x and y (1 ≤ x, y ≤ n) work at the same department.",
+      "Help the crisis manager and answer all of his queries."
+    ],
+    "input": [
+      "The first line of the input contains two integers n and q (1 ≤ n ≤ 200 000, 1 ≤ q ≤ 500 000) — the number of the employees of the company and the number of queries the crisis manager has.",
+      "Next q lines contain the queries of the crisis manager. Each query looks like type x y, where ![](https://espresso.codeforces.com/e566753f0340e5050e00bfbdcfeac4c7abd6a7d5.png). If type = 1 or type = 2, then the query represents the decision of a crisis manager about merging departments of the first and second types respectively. If type = 3, then your task is to determine whether employees x and y work at the same department. Note that x can be equal to y in the query of any type."
+    ],
+    "output": [
+      "For each question of type 3 print \"YES\" or \"NO\" (without the quotes), depending on whether the corresponding people work in the same department."
+    ]
+  },
+  "examples": [
+    {
+      "input": "8 6\n3 2 5\n1 2 5\n3 2 5\n2 4 7\n2 1 2\n3 1 7",
+      "output": "NO\nYES\nYES"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "即使是最成功的公司也可能遭遇危机，此时你不得不做出艰难的决定——进行重组、裁撤并合并部门、解雇员工，以及采取其他令人不快的措施。让我们考虑下面这个公司的模型。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "大型软件公司有 n 名员工。每个人都属于某个部门。起初，每个人都在自己的部门中负责自己的项目（因此，公司最初由 n 个部门组成，每个部门有一名员工）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，公司正处于艰难时期，管理层不得不聘请一名危机管理者来重建工作流程，以提高效率。我们用 team(person) 表示员工 person 所在的团队。危机管理者可以做出以下两种类型的决定：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将部门 team(x) 和 team(y) 合并为一个大部门，其中包含 team(x) 和 team(y) 的所有员工；其中 x 和 y（1 ≤ x，y ≤ n）是公司某两名员工的编号。如果 team(x) 与 team(y) 相同，则什么也不会发生。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "合并部门 team(x)、team(x + 1)、...、team(y)，其中 x 和 y（1 ≤ x ≤ y ≤ n）是公司某两名员工的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，危机管理者有时会询问员工 x 和 y（1 ≤ x，y ≤ n）是否在同一个部门工作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助危机管理者回答他的所有询问。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 q（1 ≤ n ≤ 200 000，1 ≤ q ≤ 500 000），分别表示公司员工数和危机管理者的查询数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q 行包含危机管理者的查询。每个查询形如 type x y，其中 ![](https://espresso.codeforces.com/e566753f0340e5050e00bfbdcfeac4c7abd6a7d5.png)。如果 type = 1 或 type = 2，则该查询分别表示危机管理者关于合并第一类部门和第二类部门的决定。如果 type = 3，则你的任务是判断员工 x 和 y 是否在同一个部门工作。注意，在任何类型的查询中，x 都可能等于 y。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个 type 为 3 的询问，根据相应的人是否在同一个部门工作，输出 \"YES\" 或 \"NO\"（不含引号）。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 公司重组",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

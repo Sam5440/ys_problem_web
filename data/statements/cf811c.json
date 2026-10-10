@@ -1,0 +1,99 @@
+{
+  "code": "CF811C",
+  "letter": "C",
+  "title": "C. Vladik and Memorable Trip",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/811/C",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Vladik often travels by trains. He remembered some of his trips especially well and I would like to tell you about one of these trips:",
+      "Vladik is at initial train station, and now n people (including Vladik) want to get on the train. They are already lined up in some order, and for each of them the city code ai is known (the code of the city in which they are going to).",
+      "Train chief selects some number of disjoint segments of the original sequence of people (covering entire sequence by segments is not necessary). People who are in the same segment will be in the same train carriage. The segments are selected in such way that if at least one person travels to the city x, then all people who are going to city x should be in the same railway carriage. This means that they can’t belong to different segments. Note, that all people who travel to the city x, either go to it and in the same railway carriage, or do not go anywhere at all.",
+      "Comfort of a train trip with people on segment from position l to position r is equal to XOR of all distinct codes of cities for people on the segment from position l to position r. XOR operation also known as exclusive OR.",
+      "Total comfort of a train trip is equal to sum of comfort for each segment.",
+      "Help Vladik to know maximal possible total comfort."
+    ],
+    "input": [
+      "First line contains single integer n (1 ≤ n ≤ 5000) — number of people.",
+      "Second line contains n space-separated integers a1, a2, ..., an (0 ≤ ai ≤ 5000), where ai denotes code of the city to which i-th person is going."
+    ],
+    "output": [
+      "The output should contain a single integer — maximal possible total comfort."
+    ],
+    "note": [
+      "In the first test case best partition into segments is: [4, 4] [2, 5, 2] [3], answer is calculated as follows: 4 + (2 xor 5) + 3 = 4 + 7 + 3 = 14",
+      "In the second test case best partition into segments is: 5 1 [3] 1 5 [2, 4, 2] 5, answer calculated as follows: 3 + (2 xor 4) = 3 + 6 = 9."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n4 4 2 5 2 3",
+      "output": "14"
+    },
+    {
+      "input": "9\n5 1 3 1 5 2 4 2 5",
+      "output": "9"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Vladik 经常乘火车旅行。他对其中一些旅行印象特别深刻，我想给你讲讲其中一次：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Vladik 在起始火车站，现在有 n 个人（包括 Vladik）想要上车。他们已经按某种顺序排好队，并且每个人的目的地城市编号 ai 已知（即他们将要前往的城市编号）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "列车长从原队伍序列中选取若干互不相交的段（不一定用这些段覆盖整个序列）。同一段中的人将坐在同一节车厢里。这些段的选取需满足：如果至少有一个人前往城市 x，那么所有前往城市 x 的人都必须在同一节车厢里。也就是说，他们不能属于不同的段。注意，所有前往城市 x 的人，要么都在同一节车厢里前往该城市，要么就根本不出行。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "从位置 l 到位置 r 的乘车区间内所有人的乘车舒适度，等于该区间内所有不同城市代码的异或和。异或运算也称为排他性或运算。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一次乘车的总舒适度等于每个区间的舒适度之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Vladik 求出可能的最大总舒适度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 5000），表示人数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个以空格分隔的整数 a1， a2， ...， an（0 ≤ ai ≤ 5000），其中 ai 表示第 i 个人要前往的城市的代码。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出应包含一个整数，即可能的最大总舒适度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，最优的分段方式是：[4, 4] [2, 5, 2] [3]，答案计算如下：4 + (2 按位异或 5) + 3 = 4 + 7 + 3 = 14",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，最优的分段方式是：5 1 [3] 1 5 [2, 4, 2] 5，答案计算如下：3 + (2 按位异或 4) = 3 + 6 = 9。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Vladik 与难忘的旅行",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

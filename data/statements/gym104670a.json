@@ -1,0 +1,66 @@
+{
+  "code": "GYM104670A",
+  "letter": "A",
+  "title": "A. Antenna Analysis",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104670/problem/A",
+  "difficulty": "*1400",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Åke has heard that there may be some suspicious 5G radiation in his city. To test this, he uses the antenna on his roof to measure the 5G level each day. However, he does not know how he should analyze the data.",
+      "We are given the measurements for $$$n$$$ consecutive days as a list of numbers $$$x_1, \\ldots, x_n$$$ (where $$$x_i$$$ denotes the measurement for day $$$i$$$) and a constant $$$c$$$ that measures how much Åke expects the radiation to vary from day to day. We want to find, for each day $$$i$$$, the most significant difference between the measurement on day $$$i$$$ and any earlier day, after the expected variations are taken into account. More precisely, the goal is to find the maximum value of",
+      "$$$$$$|x_i-x_j| - c \\cdot |i-j|$$$$$$",
+      "where $$$j \\le i$$$. I.e., we want to find a large difference in 5G level that has happened recently."
+    ],
+    "input": [
+      "The first line of input contains the two integers $$$n$$$ and $$$c$$$ ($$$1 \\le n \\le 4 \\cdot 10^5$$$, $$$1 \\le c \\le 10^6$$$), the number of measurements and expected day-to-day variation. The second input line contains the $$$n$$$ integers $$$x_1,x_2,\\dots,x_n$$$ ($$$1 \\le x_i \\le 10^6$$$ for $$$i=1,2,\\dots,n$$$), giving the measurements of the $$$n$$$ days."
+    ],
+    "output": [
+      "Output $$$n$$$ integers $$$y_1, \\ldots, y_n$$$, where $$$y_i$$$ is the most significant difference on day $$$i$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 1\n2 7 1 5 4",
+      "output": "0 4 5 3 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Åke 听说他的城市里可能存在一些可疑的 5G 辐射。为了验证这一点，他使用屋顶上的天线每天测量 5G 水平。然而，他不知道该如何分析这些数据。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定连续 $$$n$$$ 天的测量值，它们以数字列表 $$$x_1, \\ldots, x_n$$$ 的形式给出(其中 $$$x_i$$$ 表示第 $$$i$$$ 天的测量值)，以及一个常数 $$$c$$$，表示 Åke 预计辐射水平每天会变化多少。对于每天 $$$i$$$，在考虑预期变化后，我们希望找出第 $$$i$$$ 天的测量值与任意更早一天的测量值之间的最大差异。更准确地说，目标是求下式的最大值：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$$$$|x_i-x_j| - c \\cdot |i-j|$$$$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其中 $$$j \\le i$$$。也就是说，我们希望找出最近发生的较大 5G 水平差异。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 $$$n$$$ 和 $$$c$$$($$$1 \\le n \\le 4 \\cdot 10^5$$$、$$$1 \\le c \\le 10^6$$$)，分别表示测量次数和预期的日变化量。输入的第二行包含 $$$n$$$ 个整数 $$$x_1,x_2,\\dots,x_n$$$($$$i=1,2,\\dots,n$$$ 时为 $$$1 \\le x_i \\le 10^6$$$)，表示这 $$$n$$$ 天的测量值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 $$$n$$$ 个整数 $$$y_1, \\ldots, y_n$$$，其中 $$$y_i$$$ 是第 $$$i$$$ 天的最大差异。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 天线分析",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

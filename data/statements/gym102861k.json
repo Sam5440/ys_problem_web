@@ -1,0 +1,69 @@
+{
+  "code": "GYM102861K",
+  "letter": "K",
+  "title": "K. Between Us",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102861/problem/K",
+  "difficulty": "*2200",
+  "timeLimit": "0.25 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Ties are usually an issue on elections and games. Recently, a new game, called Between Us, was created. The game is played by a number of players over a social network. On each turn, there are multiple votings, where a player may receive only votes from friends. The player getting the largest number of votes wins the game.",
+      "The game is still in its design phase, but the game developers faced a very common issue: since the number of friends of a given player is usually small, ties are very common, which makes the game less fun. To avoid this situation, they decided to add a new module to the match-making system, where it will try to form groups of players such that each player has an odd number of friends in the same group.",
+      "This problems turned out to be more challenging than they expected and they are now focusing on a simpler variation: given a set of players, the module must find a partition of the players in at most two groups, satisfying the restriction that each player must have an odd number of friends in his group. The problem is that this partition is not always possible. Your task is to determine whether the partition is possible."
+    ],
+    "input": [
+      "The first line of input contains two integers, P$$$P$$$ and F$$$F$$$, the number of players and the number of friendship relations, respectively, satisfying 2≤P≤100$$$2 \\le P \\le 100$$$ and 1≤F≤P×(P−1)/2$$$1 \\le F \\le P \\times (P - 1)/2$$$. Each of the next F$$$F$$$ lines will contain two integers A$$$A$$$ and B$$$B$$$, with 1≤A,B≤P$$$1 \\le A, B \\le P$$$ and A≠B$$$A \\neq B$$$, meaning that players A$$$A$$$ and B$$$B$$$ are friends. Each friendship relation is given at most once, that is, if a line contains A$$$A$$$ and B$$$B$$$, no other line contains both numbers."
+    ],
+    "output": [
+      "Output a single line containing one character. If the partition is possible, then write the upper case letter 'Y'; otherwise write the uppercase letter 'N'."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n4 2\n1 3\n2 3\n1 4",
+      "output": "Y"
+    },
+    {
+      "input": "4 3\n4 2\n2 3\n1 2",
+      "output": "Y"
+    },
+    {
+      "input": "5 5\n3 5\n3 1\n1 4\n2 5\n2 4",
+      "output": "N"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "平局通常是选举和游戏中的一个问题。最近，一款名为 Between Us 的新游戏诞生了。该游戏由若干名玩家通过社交网络进行。在每个回合中，会进行多次投票，玩家只能从朋友那里获得选票。获得最多票数的玩家赢得游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "游戏仍处于设计阶段，但游戏开发者遇到了一个非常常见的问题：由于某个玩家的朋友数量通常很少，平局非常常见，这使得游戏变得不那么有趣。为了避免这种情况，他们决定在匹配系统中加入一个新模块，尝试组建玩家小组，使得每名玩家在同一小组中都有奇数名朋友。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "事实证明，这个问题比他们预想的更具挑战性，因此他们现在专注于一个更简单的变体：给定一组玩家，该模块必须将玩家划分为至多两个组，并满足每名玩家在其所在组中必须有奇数名朋友这一限制。问题在于，这种划分并不总是可能。你的任务是判断这种划分是否可行。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 P$$$P$$$ 和 F$$$F$$$，分别表示玩家数和朋友关系数，满足 2≤P≤100$$$2 \\le P \\le 100$$$ 且 1≤F≤P×(P−1)/2$$$1 \\le F \\le P \\times (P - 1)/2$$$。接下来的 F$$$F$$$ 行中，每行包含两个整数 A$$$A$$$ 和 B$$$B$$$，满足 1≤A,B≤P$$$1 \\le A, B \\le P$$$ 且 A≠B$$$A \\neq B$$$，表示玩家 A$$$A$$$ 和 B$$$B$$$ 是朋友。每条朋友关系最多给出一次，也就是说，如果某一行包含 A$$$A$$$ 和 B$$$B$$$，则不会有其他行同时包含这两个数字。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一行，包含一个字符。如果划分可行，则输出大写字母“Y”；否则输出大写字母“N”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "K. Between Us",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

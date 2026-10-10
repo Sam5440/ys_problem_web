@@ -1,0 +1,220 @@
+{
+  "code": "GYM106631D",
+  "letter": "D",
+  "title": "D. Outsmarting",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106631/problem/D",
+  "difficulty": "*1300",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alice and Bob play a game with strings.",
+      "Each game starts with Alice choosing a string $$$A$$$ of length $$$n$$$ consisting only of the characters 'H' and 'T' and revealing it to Bob.",
+      "The rest of the game is played according to the following procedure, in order:",
+      "Bob chooses a string $$$B$$$ of length $$$n$$$ consisting only of the characters 'H' and 'T', such that $$$A \\ne B$$$ and reveals the string to Alice.",
+      "Now Alice and Bob build a new string $$$S$$$ consisting only of the characters 'H' and 'T'. Bob chooses the first character of $$$S$$$.",
+      "Then Alice keeps appending a new character ('H' or 'T') to $$$S$$$ until the game ends.",
+      "The game ends immediately when one of the following occurs:",
+      "If $$$A$$$ appears as a substring$$$^{\\text{∗}}$$$ of $$$S$$$, then Alice wins.",
+      "If $$$B$$$ appears as a substring of $$$S$$$, then Bob wins.",
+      "If the length of $$$S$$$ becomes $$$10^{100}$$$, then Bob wins.",
+      "Both players know the rules of the game, and every action is immediately visible to both players.",
+      "Now, Alice has already chosen the string $$$A$$$ and revealed it. Given $$$n$$$ and $$$A$$$, determine the winner if both players play optimally from this point onward.",
+      "$$$^{\\text{∗}}$$$A string $$$a$$$ is a substring of a string $$$b$$$ if $$$a$$$ can be obtained from $$$b$$$ by deleting several (possibly zero) characters from the beginning and several (possibly zero) characters from the end."
+    ],
+    "input": [
+      "The first line contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$)  — the number of games. The description of the games follows.",
+      "The first line of each game contains a single integer $$$n$$$ ($$$1 \\le n \\le 3 \\cdot 10^5$$$)  — the length of the strings.",
+      "The second line contains the string $$$A$$$ of length $$$n$$$, consisting only of the characters 'H' and 'T'  — Alice's chosen string.",
+      "It is guaranteed that the sum of $$$n$$$ over all games does not exceed $$$3 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each game, output a single line containing Alice if Alice wins, and Bob otherwise."
+    ],
+    "note": [
+      "In the first game, $$$A = {}$$$\"HT\". Bob can choose $$$B = {}$$$\"TH\" and set the first character of $$$S$$$ to 'T'. After that, no matter how Alice appends the remaining characters, Bob is guaranteed to win."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2\nHT\n3\nTHT\n4\nTTHT\n3\nHHH\n1\nT",
+      "output": "Bob\nAlice\nAlice\nBob\nBob"
+    }
+  ],
+  "titleZh": {
+    "0": "D. 智慧超群",
+    "caiyun": "D. 智慧超群",
+    "youdao": "d .超越",
+    "deepl": "D.智取",
+    "iflyrec": "D.智取",
+    "ai": "D. 智取",
+    "aiModel": "DeepSeek V4 Flash"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "爱丽丝和鲍勃在玩一个用绳子的游戏。",
+        "youdao": "爱丽丝和鲍勃用绳子玩游戏。",
+        "deepl": "爱丽丝和鲍勃玩一个字符串游戏。",
+        "iflyrec": "艾丽丝和鲍勃用绳子玩游戏。",
+        "ai": "Alice 和 Bob 玩一个关于字符串的游戏。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "每个游戏都从 Alice 选择一个长度为 $$$n$$$ 的字符串 $$$A$$$ 开始，这个字符串只包含字符 ‘H’ 和 ‘T’，并将其展示给 Bob。",
+        "deepl": "每个游戏开始时，爱丽丝选择一个长度为 $$$A$$$ 的字符串 $$$n$$$，该字符串仅由字符 \"H \"和 \"T \"组成，并将其透露给鲍勃。",
+        "iflyrec": "每个游戏开始时，Alice选择长度为$$$n$$$的字符串$$$A$$$，该字符串仅由字符“ H ”和“ T ”组成，并将其显示给Bob。",
+        "ai": "每局游戏开始时，Alice 选择一个长度为 $$$n$$$、仅由字符 'H' 和 'T' 组成的字符串 $$$A$$$，并将其展示给 Bob。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "游戏的其余部分按照以下程序进行，顺序如下：",
+        "youdao": "游戏的其余部分按照以下顺序进行：",
+        "deepl": "游戏的其余部分按以下程序依次进行：",
+        "iflyrec": "游戏的其余部分按照以下顺序进行:",
+        "ai": "游戏的其余部分按以下步骤依次进行：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "Bob 选择一个长度为 $$$n$$$ 的字符串 $$$B$$$，其中只包含字符 ‘H’ 和 ‘T’，因此是 $$$A \\ne B$$$，并将这个字符串展示给 Alice。",
+        "youdao": "Bob选择了长度为$$$n$$$的字符串$$$B$$$，只包含字符‘H’和‘T’，使得$$$A \\ne B$$$，并将字符串显示给Alice。",
+        "deepl": "鲍勃选择一个长度为 $$$n$$$ 的字符串 $$$B$$$，该字符串仅由字符 \"H \"和 \"T \"组成，这样 $$$A \\ne B$$$ 并将该字符串透露给爱丽丝。",
+        "iflyrec": "Bob选择仅由字符' H '和' t '组成的长度为$$$n$$$的字符串$$$B$$$，使得$$$A \\ne B$$$并向Alice揭示该字符串。",
+        "ai": "Bob 选择一个长度为 $$$n$$$、仅由字符 'H' 和 'T' 组成的字符串 $$$B$$$，满足 $$$A \\ne B$$$，并将该字符串展示给 Alice。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "现在，Alice 和 Bob 创建了一个新的字符串 $$$S$$$，其中只包含字符 ‘H’ 和 ‘T’。Bob 选择了 $$$S$$$ 的第一个字符。",
+        "youdao": "现在Alice和Bob建立了一个新的字符串$$$S$$$，只包含字符‘H’和‘T’。鲍勃选择了$$$S$$$的第一个字符。",
+        "deepl": "现在，爱丽丝和鲍勃建立了一个新的字符串 $$$S$$$，其中只有字符 \"H \"和 \"T\"。鲍勃选择 $$$S$$$ 的第一个字符。",
+        "iflyrec": "现在，Alice和Bob构建一个仅由字符' H '和' T '组成的新字符串$$$S$$$。Bob选择$$$S$$$的第一个字符。",
+        "ai": "现在 Alice 和 Bob 构造一个新的字符串 $$$S$$$，该字符串仅由字符 'H' 和 'T' 组成。Bob 选择 $$$S$$$ 的第一个字符。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "然后 Alice 会不断地给 $$$S$$$ 添加新的角色 (‘H’ 或 ‘T’)，直到游戏结束。",
+        "youdao": "然后Alice不断向$$$S$$$添加一个新字符(“H”或“T”），直到游戏结束。",
+        "deepl": "然后，爱丽丝不断在 $$$S$$$ 后面添加新字符('H' 或 'T'），直到游戏结束。",
+        "iflyrec": "然后，Alice不断将新字符(' H '或' T ')附加到$$$S$$$，直到游戏结束。",
+        "ai": "然后 Alice 不断向 $$$S$$$ 末尾追加一个新字符('H' 或 'T')，直到游戏结束。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "当出现以下情况之一时，游戏立即结束：",
+        "youdao": "当出现以下情况之一时，游戏立即结束：",
+        "deepl": "出现以下情况之一时，游戏立即结束：",
+        "iflyrec": "当发生以下情况之一时，游戏立即结束:",
+        "ai": "当以下情况之一发生时，游戏立即结束：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "如果 $$$A$$$ 作为 $$$S$$$ 的子串 $$$^{\\text{∗}}$$$，则 Alice 获胜。",
+        "youdao": "如果$$$A$$$作为$$$S$$$的子字符串$$$^{\\text{∗}}$$$出现，那么Alice获胜。",
+        "deepl": "如果 $$$A$$$ 作为 $$$S$$$ 的子串 $$$^{\\text{∗}}$$$ 出现，那么 Alice 获胜。",
+        "iflyrec": "如果$$$A$$$作为$$$S$$$的子串$$$^{\\text{∗}}$$$出现，则Alice获胜。",
+        "ai": "如果 $$$A$$$ 作为 $$$^{\\text{∗}}$$$ 的子串出现在 $$$S$$$ 中，则 Alice 获胜。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "如果 $$$B$$$ 作为 $$$S$$$ 的子字符串出现，那么 Bob 就赢了。",
+        "youdao": "如果$$$B$$$作为$$$S$$$的子字符串出现，那么Bob获胜。",
+        "deepl": "如果 $$$B$$$ 作为 $$$S$$$ 的子串出现，则鲍勃获胜。",
+        "iflyrec": "如果$$$B$$$显示为$$$S$$$的子字符串，则Bob获胜。",
+        "ai": "如果 $$$B$$$ 作为 $$$S$$$ 的子串出现，则 Bob 获胜。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "如果 $$$S$$$ 的长度变成 $$$10^{100}$$$，那么 Bob 就赢了。",
+        "youdao": "如果$$$S$$$的长度变为$$$10^{100}$$$，那么Bob获胜。",
+        "deepl": "如果 $$$S$$$ 的长度变为 $$$10^{100}$$$，则鲍勃获胜。",
+        "iflyrec": "如果$$$S$$$的长度变为$$$10^{100}$$$，则Bob获胜。",
+        "ai": "如果 $$$S$$$ 的长度变为 $$$10^{100}$$$，那么 Bob 获胜。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "两位玩家都了解游戏规则，每一个动作都能立即被两位玩家看到。",
+        "youdao": "双方玩家都知道游戏规则，每个动作都是一目了然的。",
+        "deepl": "双方都知道游戏规则，而且每个动作都能立即被双方看到。",
+        "iflyrec": "两个玩家都知道游戏规则，每个动作都能立即被两个玩家看到。",
+        "ai": "两位玩家都知道游戏规则，并且每个操作都会立即对双方可见。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "现在，Alice 已经选择并显示了字符串 $$$A$$$。给定 $$$n$$$ 和 $$$A$$$，从这一点开始，如果两个玩家都进行了最优化的游戏，就可以确定谁是赢家。",
+        "youdao": "现在，Alice已经选择了字符串$$$A$$$并透露了它。给定$$$n$$$和$$$A$$$，如果双方从这一点开始发挥最佳，确定获胜者。",
+        "deepl": "现在，爱丽丝已经选择了字符串 $$$A$$$，并透露了它。给定 $$$n$$$ 和 $$$A$$$，如果两位棋手从此时开始都以最佳方式下棋，请确定胜者。",
+        "iflyrec": "现在，Alice已经选择了字符串$$$A$$$并显示了它。给定$$$n$$$和$$$A$$$，如果两个玩家从这一点开始发挥最佳水平，则确定获胜者。",
+        "ai": "现在，Alice 已经选定字符串 $$$A$$$ 并将其公开。给定 $$$n$$$ 和 $$$A$$$，确定如果双方从此之后都采取最优策略，获胜者是谁。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$^{\\text{∗}}$$$ 字符串 $$$a$$$ 是字符串 $$$b$$$ 的子字符串，如果 $$$a$$$ 可以通过从 $$$b$$$ 中删除开头的几个 (可能为零) 字符和结尾的几个 (可能为零) 字符来获得。",
+        "youdao": "$$$^{\\text{∗}}$$$如果$$$a$$$可以通过从$$$b$$$中删除开头的几个字符(可能为零）和末尾的几个字符(可能为零）来获得，则字符串$$$a$$$是字符串$$$b$$$的子字符串。",
+        "deepl": "$$$^{\\text{∗}}$$$一个字符串$$$a$$$是一个字符串$$$b$$$的子串，如果$$$a$$$可以从$$$b$$$通过删除开头的几个(可能是零）字符和结尾的几个(可能是零）字符得到。",
+        "iflyrec": "$$$^{\\text{∗}}$$$字符串$$$a$$$是字符串$$$b$$$的子串，如果$$$a$$$可以通过从开头删除几个(可能为零）字符和从末尾删除几个(可能为零）字符从$$$b$$$中获得。",
+        "ai": "$$$^{\\text{∗}}$$$如果从 $$$b$$$ 的开头删除若干个(可能为零个)字符，并从末尾删除若干个(可能为零个)字符可以得到 $$$a$$$，则字符串 $$$a$$$ 是字符串 $$$b$$$ 的子串。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——游戏的数量。游戏的描述如下。",
+        "youdao": "第一行包含一个整数$$$t$$$ ($$$1 \\le t \\le 10^4$$$）——游戏数。以下是游戏的描述。",
+        "deepl": "第一行包含一个整数$$$t$$$($$$1 \\le t \\le 10^4$$$）--棋局数。接下来是棋局说明。",
+        "iflyrec": "第一行包含单个整数$$$t$$$($$$1 \\le t \\le 10^4$$$）—游戏的数量。游戏的描述如下。",
+        "ai": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——游戏的数量。随后给出这些游戏的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "每个游戏的第一行包含一个整数 $$$n$$$($$$1 \\le n \\le 3 \\cdot 10^5$$$)——字符串的长度。",
+        "youdao": "每个游戏的第一行包含一个整数$$$n$$$ ($$$1 \\le n \\le 3 \\cdot 10^5$$$）——字符串的长度。",
+        "deepl": "每个游戏的第一行包含一个整数 $$$n$$$ ($$$1 \\le n \\le 3 \\cdot 10^5$$$）--字符串的长度。",
+        "iflyrec": "每个游戏的第一行包含一个整数$$$n$$$($$$1 \\le n \\le 3 \\cdot 10^5$$$）—字符串的长度。",
+        "ai": "每个游戏的第一行包含一个整数 $$$n$$$($$$1 \\le n \\le 3 \\cdot 10^5$$$)——字符串的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "第二行包含长度为 $$$n$$$ 的字符串 $$$A$$$，只包含字符 ‘H’ 和 ‘T’——这是 Alice 选择的字符串。",
+        "youdao": "第二行包含长度为$$$n$$$的字符串$$$A$$$，仅由字符‘H’和‘T’组成——Alice选择的字符串。",
+        "deepl": "第二行包含长度为 $$$n$$$ 的字符串 $$$A$$$，仅由字符 \"H \"和 \"T \"组成，这就是爱丽丝选择的字符串。",
+        "iflyrec": "第二行包含长度为$$$n$$$的字符串$$$A$$$，仅由字符“ H ”和“ T ”组成—Alice选择的字符串。",
+        "ai": "第二行包含字符串 $$$A$$$，其长度为 $$$n$$$，仅由字符 'H' 和 'T' 组成——这是 Alice 选择的字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "保证所有游戏的 $$$n$$$ 总和不超过 $$$3 \\cdot 10^5$$$。",
+        "youdao": "保证所有博弈的$$$n$$$之和不超过$$$3 \\cdot 10^5$$$。",
+        "deepl": "保证所有棋局的 $$$n$$$ 之和不超过 $$$3 \\cdot 10^5$$$。",
+        "iflyrec": "保证所有游戏的$$$n$$$总和不超过$$$3 \\cdot 10^5$$$。",
+        "ai": "保证所有对局中 $$$n$$$ 的总和不超过 $$$3 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "对于每个游戏，输出一行，如果 Alice 赢了，就包含 Alice，否则包含 Bob。",
+        "youdao": "对于每个游戏，如果Alice赢了，输出一行包含Alice，否则输出一行包含Bob。",
+        "deepl": "对于每局游戏，如果 Alice 赢了，则输出包含 Alice 的一行，否则输出包含 Bob 的一行。",
+        "iflyrec": "对于每个游戏，如果Alice获胜，则输出包含Alice的单行，否则输出包含Bob的单行。",
+        "ai": "对于每场游戏，输出一行：如果 Alice 获胜则输出 Alice，否则输出 Bob。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "在第一个游戏中，$$$A = {}$$$“HT”。Bob 可以选择 $$$B = {}$$$“TH”，并将 $$$S$$$ 的第一个字符设置为 “T”。之后，无论 Alice 如何添加剩余的字符，Bob 都必胜无疑。",
+        "youdao": "在第一场比赛中，$$$A = {}$$$“HT”。Bob可以选择$$$B = {}$$$“TH”，并将$$$S$$$的第一个字符设置为“T”。在那之后，不管Alice怎么加上剩下的字符，Bob肯定会赢。",
+        "deepl": "在第一个游戏中，$$$A = {}$$$\"HT\"。鲍勃可以选择 $$$B = {}$$$\"TH\"，并将 $$$S$$$ 的第一个字符设置为 \"T\"。此后，无论爱丽丝如何追加其余字符，鲍勃都能保证获胜。",
+        "iflyrec": "在第一场比赛中，$$$A = {}$$$“ HT ”。Bob可以选择$$$B = {}$$$“ th ”，并将$$$S$$$的第一个字符设置为“ t ”。在此之后，无论Alice如何附加剩余的字符，Bob都将获胜。",
+        "ai": "在第一局中，$$$A = {}$$$ 为 \"HT\"。Bob 可以选择 $$$B = {}$$$ 为 \"TH\"，并将 $$$S$$$ 的第一个字符设置为 'T'。此后，无论 Alice 如何追加剩余字符，Bob 都必胜。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.113Z",
+  "translatedBy": [
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

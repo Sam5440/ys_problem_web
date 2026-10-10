@@ -1,0 +1,164 @@
+{
+  "code": "GYM106235B",
+  "letter": "B",
+  "title": "B. Proof of Incorrectness",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106235/problem/B",
+  "difficulty": "*2000",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem. Remember that your program must flush the output buffer every time after printing. To flush the output buffer, you can use fflush(stdout) in C++, system.out.flush() in Java, stdout.flush() in Python, or flush(output) in Pascal. If you are using another programming language, check its documentation for how to perform this operation.",
+      "Vasya claims that he has invented a sorting algorithm for an $$$n$$$-element array $$$a$$$ (where all elements are pairwise distinct) that makes less than $$$\\lceil \\log_2 (n!)\\rceil$$$ comparisons!",
+      "Vasya will ask you no more than $$$\\lceil \\log_2 (n!)\\rceil - 1$$$ queries of the form: compare elements $$$a_i$$$ and $$$a_j$$$. Vasya claims that these queries are sufficient to uniquely determine the permutation of the positions of the array $$$a$$$ from the smallest element to the largest: $$$\\operatorname{ord}_1, \\operatorname{ord}_2, \\dots, \\operatorname{ord}_n$$$. Your task is to find a permutation of positions that differs from Vasya's permutation but is consistent with all of Vasya's queries.",
+      "Interaction",
+      "Initially, the jury's program will send a single integer $$$n$$$ ($$$3 \\le n \\le 18$$$) — the size of the array.",
+      "Then, the jury's program will send no more than $$$\\lceil \\log_2 (n!)\\rceil - 1$$$ queries in the following format:",
+      "$$$?$$$ $$$i$$$ $$$j$$$ — compare $$$a_i$$$ and $$$a_j$$$ ($$$1 \\le i, j \\le n$$$; $$$i \\ne j$$$).",
+      "For each query, your program must output < if $$$a_i  \\lt  a_j$$$, and > otherwise.",
+      "After that, the jury's program will send its answer in the following format:",
+      "$$$!$$$ $$$\\operatorname{ord}_1 \\operatorname{ord}_2 \\dots \\operatorname{ord}_n$$$",
+      "In response, your program must output a permutation that differs from the jury's permutation and is consistent with all previous queries, in the same format. If there are multiple possible permutations, output any of them. Please pay attention that you should not output the array $$$a$$$!",
+      "If your answer is correct, the jury's program will send the string CORRECT on a separate line, indicating that you can terminate the program. If the answer is incorrect, the jury's program will send the string ERROR on a separate line.",
+      "If your program violates the format of the queries, the jury will respond with the string ERROR. In this case, your program should terminate immediately to receive a Wrong answer verdict. Otherwise, you may receive an arbitrary verdict because your solution will continue to read from a closed stream.",
+      "Remember to flush the output buffer every time you print something!"
+    ],
+    "input": [],
+    "output": [],
+    "note": [
+      "Note that spaces in the examples are added only for readability. When checking solutions, the interactor will not output empty lines."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n? 2 1\n\n? 4 3\n\n? 4 2\n\n? 1 4\n\n! 1 3 4 2\n\nCORRECT",
+      "output": "\n\n>\n\n>\n\n<\n\n<\n\n! 3 1 4 2"
+    }
+  ],
+  "titleZh": {
+    "0": "B.证明不正确",
+    "caiyun": "B. 不正确性证明",
+    "youdao": "B.错误证明",
+    "deepl": "B.证明不正确",
+    "iflyrec": "B.错误证明",
+    "ai": "B. 不正确性证明"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "这是一个交互式问题。请记住，程序必须在每次打印后刷新输出缓冲区。要刷新输出缓冲区，可以使用 C++ 中的 flush(stdout)、Java 中的 system.out.flush()、Python 中的 stdout.flush() 或 Pascal 中的 flush(output)。如果你使用的是其他编程语言，请查看其文档以了解如何执行这个操作。",
+        "youdao": "这是一个互动的问题。请记住，您的程序在每次打印后都必须刷新输出缓冲区。要清空输出缓冲区，您可以使用c++中的fflush（stdout）、Java中的system.out.flush（）、Python中的stdout.flush（）或Pascal中的flush（output）。如果您正在使用其他编程语言，请查看其文档以了解如何执行此操作。",
+        "deepl": "这是一个交互式问题。请记住，每次打印后，您的程序都必须清空输出缓冲区。要刷新输出缓冲区，可以使用 C++ 中的 fflush(stdout)、Java 中的 system.out.flush()、Python 中的 stdout.flush()，或 Pascal 中的 flush(output)。如果您使用的是其他编程语言，请查看其文档了解如何执行此操作。",
+        "iflyrec": "这是一个互动的问题。请记住，您的程序必须在每次打印后刷新输出缓冲区。要刷新输出缓冲区，可以使用C++中的fflush（stdout）、Java中的System.out.flush（）、Python中的stdout.flush（）或Pascal中的flush（output）。如果您使用的是其他编程语言，请查看其文档以了解如何执行此操作。",
+        "ai": "这是一道交互题。请记住，你的程序在每次输出后都必须刷新输出缓冲区。要刷新输出缓冲区，在 C++ 中可以使用 fflush(stdout)，在 Java 中可以使用 system.out.flush()，在 Python 中可以使用 stdout.flush()，在 Pascal 中可以使用 flush(output)。如果你使用的是其他编程语言，请查阅其文档以了解如何执行此操作。"
+      },
+      {
+        "caiyun": "瓦西亚声称他发明了一种排序算法，用于 $$$n$$$-元素数组 $$$a$$$(其中所有元素都是成对不同的)，这种排序算法进行的比较少于 $$$\\lceil \\log_2 (n!)\\rceil$$$!",
+        "youdao": "Vasya声称他已经为一个包含$$$n$$$元素的数组$$$a$$$(其中所有元素都是两两不同的）发明了一种排序算法，其比较次数小于$$$\\lceil \\log_2 (n!)\\rceil$$$ ！",
+        "deepl": "瓦夏声称，他发明了一种排序算法，用于$$$n$$$元素数组$$$a$$$(其中所有元素都是成对不同的），其比较次数少于$$$\\lceil \\log_2 (n!)\\rceil$$$！",
+        "iflyrec": "Vasya声称他发明了一种排序算法，用于$$$n$$$元素数组$$$a$$$(其中所有元素都是成对不同的），该数组的比较次数少于$$$\\lceil \\log_2 (n!)\\rceil$$$！",
+        "ai": "Vasya 声称他发明了一种针对 $$$n$$$ 元素数组 $$$a$$$(其中所有元素两两不同)的排序算法，其比较次数少于 $$$\\lceil \\log_2 (n!)\\rceil$$$ 次！"
+      },
+      {
+        "caiyun": "瓦西亚不会问你更多关于 $$$\\lceil \\log_2 (n!)\\rceil - 1$$$ 的查询，形式为：比较元素 $$$a_i$$$ 和 $$$a_j$$$。瓦西亚声称这些查询足以唯一地确定数组 $$$a$$$ 的位置从最小元素到最大元素的排列:$$$\\operatorname{ord}_1, \\operatorname{ord}_2, \\dots, \\operatorname{ord}_n$$$。你的任务是找到一个与瓦西亚的排列不同但与瓦西亚的所有查询一致的位置排列。",
+        "youdao": "Vasya会问你最多$$$\\lceil \\log_2 (n!)\\rceil - 1$$$个这样的查询：比较元素$$$a_i$$$和$$$a_j$$$。Vasya声称这些查询足以唯一地确定数组$$$a$$$从最小元素到最大元素的位置排列：$$$\\operatorname{ord}_1, \\operatorname{ord}_2, \\dots, \\operatorname{ord}_n$$$。你的任务是找到与Vasya的排列不同但与Vasya的所有查询一致的位置排列。",
+        "deepl": "瓦夏会问你不超过 $$$\\lceil \\log_2 (n!)\\rceil - 1$$$ 形式的查询：比较元素 $$$a_i$$$ 和 $$$a_j$$$。瓦夏声称，这些查询足以唯一地确定数组 $$$a$$$ 从最小元素到最大元素的位置排列：$$$\\operatorname{ord}_1, \\operatorname{ord}_2, \\dots, \\operatorname{ord}_n$$$.你的任务是找出一种与 Vasya 的排列不同，但与 Vasya 的所有查询一致的位置排列。",
+        "iflyrec": "Vasya将向您询问不超过$$$\\lceil \\log_2 (n!)\\rceil - 1$$$个查询，其形式为：比较元素$$$a_i$$$和$$$a_j$$$。Vasya声称这些查询足以唯一确定数组$$$a$$$从最小元素到最大元素的位置排列：$$$\\operatorname{ord}_1, \\operatorname{ord}_2, \\dots, \\operatorname{ord}_n$$$。您的任务是找到一个位置排列，该位置排列与Vasya的排列不同，但与Vasya的所有查询一致。",
+        "ai": "Vasya 将向你提出不超过 $$$\\lceil \\log_2 (n!)\\rceil - 1$$$ 个形如：比较元素 $$$a_i$$$ 和 $$$a_j$$$ 的询问。Vasya 声称这些询问足以唯一确定数组 $$$a$$$ 的位置排列，即从最小元素到最大元素的排列：$$$\\operatorname{ord}_1, \\operatorname{ord}_2, \\dots, \\operatorname{ord}_n$$$。你的任务是找到一个与 Vasya 的排列不同、但与 Vasya 的所有询问都一致的排列。"
+      },
+      {
+        "caiyun": "互动",
+        "youdao": "交互",
+        "deepl": "互动",
+        "iflyrec": "互动",
+        "ai": "交互"
+      },
+      {
+        "caiyun": "最初，陪审团程序会发送一个整数 $$$n$$$($$$3 \\le n \\le 18$$$)——数组的大小。",
+        "youdao": "最初，陪审团的程序将发送一个整数$$$n$$$ ($$$3 \\le n \\le 18$$$）——数组的大小。",
+        "deepl": "最初，评委的程序将发送一个整数 $$$n$$$ ($$$3 \\le n \\le 18$$$）--数组的大小。",
+        "iflyrec": "最初，陪审团的程序将发送一个整数$$$n$$$($$$3 \\le n \\le 18$$$)——数组的大小。",
+        "ai": "初始时，评测程序会发送一个整数 $$$n$$$($$$3 \\le n \\le 18$$$)——数组的大小。"
+      },
+      {
+        "caiyun": "然后，陪审团程序将不再发送超过 $$$\\lceil \\log_2 (n!)\\rceil - 1$$$ 的查询，格式如下：",
+        "youdao": "然后，评审团的程序将以以下格式发送不超过$$$\\lceil \\log_2 (n!)\\rceil - 1$$$个查询：",
+        "deepl": "然后，评委程序将发送不超过 $$$\\lceil \\log_2 (n!)\\rceil - 1$$$ 的查询，格式如下：",
+        "iflyrec": "然后，陪审团的程序将以以下格式发送不超过$$$\\lceil \\log_2 (n!)\\rceil - 1$$$个查询:",
+        "ai": "然后，评测程序将按照以下格式发送不超过 $$$\\lceil \\log_2 (n!)\\rceil - 1$$$ 次询问："
+      },
+      {
+        "caiyun": "$$$?$$$$$$i$$$$$$j$$$——比较 $$$a_i$$$ 和 $$$a_j$$$($$$1 \\le i, j \\le n$$$;$$$i \\ne j$$$)。",
+        "youdao": "$$$?$$$ $$$i$$$ $$$j$$$——比较$$$a_i$$$和$$$a_j$$$ ($$$1 \\le i, j \\le n$$$; $$$i \\ne j$$$)。",
+        "deepl": "$$$?$$$ $$$i$$$ $$$j$$$ - 比较 $$$a_i$$$ 和 $$$a_j$$$ ($$$1 \\le i, j \\le n$$$；$$$i \\ne j$$$）。",
+        "iflyrec": "$$$?$$$$$$i$$$$$$j$$$—比较$$$a_i$$$和$$$a_j$$$($$$1 \\le i, j \\le n$$$$$$i \\ne j$$$）。",
+        "ai": "$$$?$$$ $$$i$$$ $$$j$$$ — 比较 $$$a_i$$$ 和 $$$a_j$$$($$$1 \\le i, j \\le n$$$；$$$i \\ne j$$$)。"
+      },
+      {
+        "caiyun": "对于每个查询，程序必须输出< if $$$a_i  \\lt  a_j$$$，否则则>。",
+        "youdao": "对于每个查询，程序必须输出< if $$$a_i  \\lt  a_j$$$，否则输出>。",
+        "deepl": "对于每个查询，如果是 $$$a_i  \\lt  a_j$$$，程序必须输出 <，否则输出 >。",
+        "iflyrec": "对于每个查询，程序必须输出<if$$$a_i  \\lt  a_j$$$，否则输出>。",
+        "ai": "对于每个询问，如果 $$$a_i  \\lt  a_j$$$，你的程序必须输出 <，否则输出 >。"
+      },
+      {
+        "caiyun": "之后，陪审团程序将以以下格式发送其答案：",
+        "youdao": "之后，评审团的程序将以以下格式发送答案：",
+        "deepl": "之后，评审团程序将按以下格式发送答案：",
+        "iflyrec": "之后，陪审团的程序将以以下格式发送其答案:",
+        "ai": "之后，评测程序将按以下格式发送它的答案："
+      },
+      {
+        "caiyun": "$$$!$$$ $$$\\operatorname{ord}_1 \\operatorname{ord}_2 \\dots \\operatorname{ord}_n$$$",
+        "youdao": "$$$!$$$ $$$\\operatorname{ord}_1 \\operatorname{ord}_2 \\dots \\operatorname{ord}_n$$$",
+        "deepl": "$$$!$$$ $$$\\operatorname{ord}_1 \\operatorname{ord}_2 \\dots \\operatorname{ord}_n$$$",
+        "iflyrec": "$$$!$$$$$$\\operatorname{ord}_1 \\operatorname{ord}_2 \\dots \\operatorname{ord}_n$$$",
+        "ai": "$$$!$$$ $$$\\operatorname{ord}_1 \\operatorname{ord}_2 \\dots \\operatorname{ord}_n$$$"
+      },
+      {
+        "caiyun": "作为回应，您的程序必须输出一个与陪审团排列不同且与之前所有查询一致的排列，格式相同。如果有多种可能的排列，请输出其中任何一种。请注意，您不应该输出数组 $$$a$$$!",
+        "youdao": "作为响应，您的程序必须以相同的格式输出与陪审团的排列不同且与之前所有查询一致的排列。如果有多种可能的排列，输出其中的任何一种。请注意不要输出数组$$$a$$$！",
+        "deepl": "作为回应，您的程序必须以相同的格式输出一个与评委的排列方式不同且与之前所有查询一致的排列方式。如果有多种可能的排列组合，则输出其中任何一种。请注意不要输出数组 $$$a$$$！",
+        "iflyrec": "作为响应，您的程序必须以相同的格式输出一个与陪审团的排列不同的排列，并且与所有以前的查询一致。如果有多个可能的排列，则输出其中的任何一个。请注意不要输出数组$$$a$$$！",
+        "ai": "作为回应，你的程序必须输出一个与评测机排列不同且与之前所有查询一致的排列，格式相同。如果有多个可能的排列，输出任意一个即可。请注意，你不应该输出数组 $$$a$$$！"
+      },
+      {
+        "caiyun": "如果你的答案是正确的，陪审团程序将在单独的一行中发送字符串 CORRECT，表示你可以终止程序。如果你的答案不正确，陪审团程序将在单独的另一行中发送字符串 ERROR。",
+        "youdao": "如果你的答案是正确的，陪审团的程序将在另一行发送字符串correct，表示你可以终止程序。如果答案不正确，陪审团的程序将在另一行发送字符串ERROR。",
+        "deepl": "如果答案正确，陪审员的程序将另起一行发送 CORRECT 字符串，表示可以终止程序。如果答案不正确，陪审团的程序将在另一行中发送字符串 ERROR。",
+        "iflyrec": "如果您的答案是正确的，陪审团的程序将在单独的行上发送正确的字符串，表示您可以终止程序。如果答案不正确，陪审团的程序将在单独的行上发送字符串错误。",
+        "ai": "如果你的答案正确，评测程序将在单独一行发送字符串 CORRECT，表示你可以终止程序。如果你的答案错误，评测程序将在单独一行发送字符串 ERROR。"
+      },
+      {
+        "caiyun": "如果你的程序违反了查询格式，评审团将以字符串 ERROR 作出响应。在这种情况下，你的程序应立即终止，以接收错误的答案判决。否则，你可能会收到一个任意的判决，因为你的解决方案将继续从一个封闭的流中读取。",
+        "youdao": "如果您的程序违反了查询的格式，陪审团将以字符串ERROR响应。在这种情况下，您的程序应该立即终止，以收到错误答案的判决。否则，您可能会收到一个武断的判决，因为您的解决方案将继续从已关闭的流中读取数据。",
+        "deepl": "如果您的程序违反了查询格式，陪审团将以字符串 ERROR 作答。在这种情况下，您的程序应立即终止，以接收错误答案判决。否则，您可能会收到一个任意判决，因为您的解决方案将继续从一个封闭的数据流中读取数据。",
+        "iflyrec": "如果您的程序违反了查询的格式，陪审团将使用字符串错误进行响应。在这种情况下，您的程序应该立即终止以接收错误答案判决。否则，您可能会收到武断的判决，因为您的解决方案将继续从封闭的流中读取。",
+        "ai": "如果你的程序违反了查询的格式，评测系统将返回字符串 ERROR。在这种情况下，你的程序应立即终止，以获得 Wrong answer 判定。否则，由于你的程序会继续从已关闭的流中读取，你可能会收到任意判定。"
+      },
+      {
+        "caiyun": "记住每次打印时都要刷新输出缓冲区！",
+        "youdao": "记得每次打印东西时刷新输出缓冲区！",
+        "deepl": "请记住，每次打印时都要清空输出缓冲区！",
+        "iflyrec": "每次打印内容时，请记住刷新输出缓冲区！",
+        "ai": "每次输出内容时，记得刷新输出缓冲区！"
+      }
+    ],
+    "input": [],
+    "output": [],
+    "note": [
+      {
+        "caiyun": "请注意，示例中的空格只是为了可读性而添加的。当检查解决方案时，交互器不会输出空行。",
+        "youdao": "注意，示例中的空格只是为了可读性而添加的。当检查解时，交互器不会输出空行。",
+        "deepl": "请注意，示例中的空格只是为了便于阅读。在检查解决方案时，交互器不会输出空行。",
+        "iflyrec": "请注意，示例中添加空格只是为了便于阅读。检查解决方案时，交互器不会输出空行。",
+        "ai": "注意，示例中的空格仅为便于阅读而添加。检查解答时，交互器不会输出空行。"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.111Z",
+  "translatedBy": [
+    "iflyrec"
+  ]
+}

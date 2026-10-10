@@ -1,0 +1,94 @@
+{
+  "code": "CF939D",
+  "letter": "D",
+  "title": "D. Love Rescue",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/939/D",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Valya and Tolya are an ideal pair, but they quarrel sometimes. Recently, Valya took offense at her boyfriend because he came to her in t-shirt with lettering that differs from lettering on her pullover. Now she doesn't want to see him and Tolya is seating at his room and crying at her photos all day long.",
+      "This story could be very sad but fairy godmother (Tolya's grandmother) decided to help them and restore their relationship. She secretly took Tolya's t-shirt and Valya's pullover and wants to make the letterings on them same. In order to do this, for one unit of mana she can buy a spell that can change some letters on the clothes. Your task is calculate the minimum amount of mana that Tolya's grandmother should spend to rescue love of Tolya and Valya.",
+      "More formally, letterings on Tolya's t-shirt and Valya's pullover are two strings with same length n consisting only of lowercase English letters. Using one unit of mana, grandmother can buy a spell of form (c1, c2) (where c1 and c2 are some lowercase English letters), which can arbitrary number of times transform a single letter c1 to c2 and vise-versa on both Tolya's t-shirt and Valya's pullover. You should find the minimum amount of mana that grandmother should spend to buy a set of spells that can make the letterings equal. In addition you should output the required set of spells."
+    ],
+    "input": [
+      "The first line contains a single integer n (1 ≤ n ≤ 105) — the length of the letterings.",
+      "The second line contains a string with length n, consisting of lowercase English letters — the lettering on Valya's pullover.",
+      "The third line contains the lettering on Tolya's t-shirt in the same format."
+    ],
+    "output": [
+      "In the first line output a single integer — the minimum amount of mana t required for rescuing love of Valya and Tolya.",
+      "In the next t lines output pairs of space-separated lowercase English letters — spells that Tolya's grandmother should buy. Spells and letters in spells can be printed in any order.",
+      "If there are many optimal answers, output any."
+    ],
+    "note": [
+      "In first example it's enough to buy two spells: ('a','d') and ('b','a'). Then first letters will coincide when we will replace letter 'a' with 'd'. Second letters will coincide when we will replace 'b' with 'a'. Third letters will coincide when we will at first replace 'b' with 'a' and then 'a' with 'd'."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\nabb\ndad",
+      "output": "2\na d\nb a"
+    },
+    {
+      "input": "8\ndrpepper\ncocacola",
+      "output": "7\nl e\ne d\nd c\nc p\np o\no r\nr a"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 105），表示字样的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个长度为 n 的字符串，由小写英文字母组成——Valya 毛衣上的字样。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行按照相同格式包含 Tolya T 恤上的字样。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出一个整数——拯救 Valya 和 Tolya 的爱情所需的最少法力值 t。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 t 行输出由空格分隔的小写英文字母对——Tolya 的祖母应该购买的咒语。咒语以及咒语中的字母可以按任意顺序输出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在多个最优答案，输出任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，只需购买两个咒语：('a','d') 和 ('b','a')。这样，当我们将字母 'a' 替换为 'd' 时，第一个字母将会相同。当我们将 'b' 替换为 'a' 时，第二个字母将会相同。对于第三个字母，我们首先将 'b' 替换为 'a'，然后将 'a' 替换为 'd'，这样它们也会相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Valya 和 Tolya 是一对理想情侣，但他们有时也会争吵。最近，Valya 因为她的男朋友穿着一件印字与她毛衣上的印字不同的 T 恤来见她而生气。现在她不想见他，而 Tolya 则整天待在自己的房间里，对着她的照片哭泣。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这个故事本来可能会非常悲伤，但仙女教母（Tolya 的祖母）决定帮助他们修复关系。她偷偷拿走了 Tolya 的 T 恤和 Valya 的毛衣，并想让它们上面的字样变得相同。为了做到这一点，她可以花费一个单位的魔力购买一种能够改变衣服上某些字母的法术。你的任务是计算 Tolya 的祖母为了挽救 Tolya 和 Valya 的爱情所需花费的最少魔力。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更形式化地说，Tolya 的 T 恤和 Valya 的毛衣上的字样是两个长度均为 n、且只包含小写英文字母的字符串。祖母可以使用一个单位的魔力购买一个形如 (c1, c2) 的法术（其中 c1 和 c2 是某些小写英文字母）。使用该法术，可以在 Tolya 的 T 恤和 Valya 的毛衣上，将单个字母 c1 任意次地变为 c2，反之亦然。你需要找出祖母为了购买一组能够使两个字样相同的法术所需花费的最少魔力。此外，你还需要输出所需的法术集合。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 爱情救援",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

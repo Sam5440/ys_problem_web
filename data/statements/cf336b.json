@@ -1,0 +1,94 @@
+{
+  "code": "CF336B",
+  "letter": "B",
+  "title": "B. Vasily the Bear and Fly",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/336/B",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "One beautiful day Vasily the bear painted 2m circles of the same radius R on a coordinate plane. Circles with numbers from 1 to m had centers at points (2R - R, 0), (4R - R, 0), ..., (2Rm - R, 0), respectively. Circles with numbers from m + 1 to 2m had centers at points (2R - R, 2R), (4R - R, 2R), ..., (2Rm - R, 2R), respectively.",
+      "Naturally, the bear painted the circles for a simple experiment with a fly. The experiment continued for m2 days. Each day of the experiment got its own unique number from 0 to m2 - 1, inclusive.",
+      "On the day number i the following things happened:",
+      "The fly arrived at the coordinate plane at the center of the circle with number ![](https://espresso.codeforces.com/b3df97a98dd984c03bd53b2f4c4c7288bd321ddc.png) (![](https://espresso.codeforces.com/1d85d9be5f5d8cb39c28e7277ba0b39c3ccd4f0e.png) is the result of dividing number x by number y, rounded down to an integer).",
+      "The fly went along the coordinate plane to the center of the circle number ![](https://espresso.codeforces.com/ce2bb6c4a4ddae405ec27cce4e3cfeaee3958192.png) (![](https://espresso.codeforces.com/f58f159973d4609d919286c1821e69cd34d81118.png) is the remainder after dividing number x by number y). The bear noticed that the fly went from the center of circle v to the center of circle u along the shortest path with all points lying on the border or inside at least one of the 2m circles. After the fly reached the center of circle u, it flew away in an unknown direction.",
+      "Help Vasily, count the average distance the fly went along the coordinate plane during each of these m2 days."
+    ],
+    "input": [
+      "The first line contains two integers m, R (1 ≤ m ≤ 105, 1 ≤ R ≤ 10)."
+    ],
+    "output": [
+      "In a single line print a single real number — the answer to the problem. The answer will be considered correct if its absolute or relative error doesn't exceed 10 - 6."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/d1872e66984f7cecf0df762f728cb7c92b032c54.png)",
+      "Figure to the second sample"
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 1",
+      "output": "2.0000000000"
+    },
+    {
+      "input": "2 2",
+      "output": "5.4142135624"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一个美好的日子，熊 Vasily 在坐标平面上画了 2m 个半径为 R 的圆。编号为 1 到 m 的圆的圆心分别在点 (2R - R, 0), (4R - R, 0), ..., (2Rm - R, 0) 处。编号为 m + 1 到 2m 的圆的圆心分别在点 (2R - R, 2R), (4R - R, 2R), ..., (2Rm - R, 2R) 处。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "当然，熊画这些圆是为了用一只苍蝇做一个简单的实验。实验持续了 m^2 天。实验的每一天都拥有一个从 0 到 m^2 - 1（含）的独特编号。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第 i 天，发生了以下事情：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "苍蝇到达坐标平面上编号为 ![](https://espresso.codeforces.com/b3df97a98dd984c03bd53b2f4c4c7288bd321ddc.png) 的圆的圆心(![](https://espresso.codeforces.com/1d85d9be5f5d8cb39c28e7277ba0b39c3ccd4f0e.png) 表示将数 x 除以数 y 后向下取整的结果)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "苍蝇在坐标平面上前往编号为 ![](https://espresso.codeforces.com/ce2bb6c4a4ddae405ec27cce4e3cfeaee3958192.png) 的圆的圆心(![](https://espresso.codeforces.com/f58f159973d4609d919286c1821e69cd34d81118.png) 表示数 x 除以数 y 后的余数)。熊注意到，苍蝇从圆 v 的圆心到圆 u 的圆心沿最短路径移动，且该路径上的所有点都位于这 2m 个圆中至少一个圆的边界上或内部。苍蝇到达圆 u 的圆心后，朝未知方向飞走了。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "帮 Vasily 计算在这 m^2 天中的每一天，这只苍蝇沿坐标平面飞行的平均距离。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 m 和 R（1 ≤ m ≤ 10^5，1 ≤ R ≤ 10）。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在单独一行中输出一个实数——问题的答案。若答案的绝对误差或相对误差不超过 10^-6，则视为正确。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "![](https://espresso.codeforces.com/d1872e66984f7cecf0df762f728cb7c92b032c54.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二个样例对应的图",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 熊 Vasily 与苍蝇",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

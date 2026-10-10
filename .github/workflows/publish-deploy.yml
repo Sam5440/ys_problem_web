@@ -1,0 +1,36 @@
+name: Publish deploy branch
+
+# Rebuilds the deploy branch (Vercel's production branch) whenever main moves —
+# data itself never touches main anymore, so code changes need their own path
+# into the published snapshot. Also runs daily as a backup prune of expired
+# data/misc-* branches (the hourly update workflow prunes on every data change
+# as well; the schedule is unreliable, hence the redundancy).
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "31 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-deploy
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore data from data branches
+        run: node scripts/restore-data.mjs --misc --statements --daily --runtime
+
+      - name: Prune expired misc branches
+        run: node scripts/push-data-branches.mjs --prune
+
+      - name: Publish deploy branch
+        run: node scripts/publish-deploy.mjs

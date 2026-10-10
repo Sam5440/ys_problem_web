@@ -1,0 +1,111 @@
+{
+  "code": "CF1015E1",
+  "letter": "E1",
+  "title": "E1. Stars Drawing (Easy Edition)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1015/E1",
+  "difficulty": "1700",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A star is a figure of the following type: an asterisk character '*' in the center of the figure and four rays (to the left, right, top, bottom) of the same positive length. The size of a star is the length of its rays. The size of a star must be a positive number (i.e. rays of length 0$$$0$$$ are not allowed).",
+      "Let's consider empty cells are denoted by '.', then the following figures are stars:",
+      "![](https://espresso.codeforces.com/8c02b8076a2983adac7612a1a545c6baca48ed49.png)",
+      "You are given a rectangular grid of size n×m$$$n \\times m$$$ consisting only of asterisks '*' and periods (dots) '.'. Rows are numbered from 1$$$1$$$ to n$$$n$$$, columns are numbered from 1$$$1$$$ to m$$$m$$$. Your task is to draw this grid using any number of stars or find out that it is impossible. Stars can intersect, overlap or even coincide with each other. The number of stars in the output can't exceed n⋅m$$$n \\cdot m$$$. Each star should be completely inside the grid. You can use stars of same and arbitrary sizes.",
+      "In this problem, you do not need to minimize the number of stars. Just find any way to draw the given grid with at most n⋅m$$$n \\cdot m$$$ stars."
+    ],
+    "input": [
+      "The first line of the input contains two integers n$$$n$$$ and m$$$m$$$ (3≤n,m≤100$$$3 \\le n, m \\le 100$$$) — the sizes of the given grid.",
+      "The next n$$$n$$$ lines contains m$$$m$$$ characters each, the i$$$i$$$-th line describes the i$$$i$$$-th row of the grid. It is guaranteed that grid consists of characters '*' and '.' only."
+    ],
+    "output": [
+      "If it is impossible to draw the given grid using stars only, print \"-1\".",
+      "Otherwise in the first line print one integer k$$$k$$$ (0≤k≤n⋅m$$$0 \\le k \\le n \\cdot m$$$) — the number of stars needed to draw the given grid. The next k$$$k$$$ lines should contain three integers each — xj$$$x_j$$$, yj$$$y_j$$$ and sj$$$s_j$$$, where xj$$$x_j$$$ is the row index of the central star character, yj$$$y_j$$$ is the column index of the central star character and sj$$$s_j$$$ is the size of the star. Each star should be completely inside the grid."
+    ],
+    "note": [
+      "In the first example the output",
+      {
+        "pre": "2\n3 4 1\n3 5 2"
+      },
+      "is also correct."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 8\n....*...\n...**...\n..*****.\n...**...\n....*...\n........",
+      "output": "3\n3 4 1\n3 5 2\n3 5 1"
+    },
+    {
+      "input": "5 5\n.*...\n****.\n.****\n..**.\n.....",
+      "output": "3\n2 2 1\n3 3 1\n3 4 1"
+    },
+    {
+      "input": "5 5\n.*...\n***..\n.*...\n.*...\n.....",
+      "output": "-1"
+    },
+    {
+      "input": "3 3\n*.*\n.*.\n*.*",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "星星是一种如下类型的图形：图形中心是一个星号字符 '*'，并且向左、右、上、下各有一条长度相同的射线。星星的大小是其射线的长度。星星的大小必须为正数(即不允许射线长度为 0$$$0$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "假设空单元格用 '.' 表示，那么以下图形是星星：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/8c02b8076a2983adac7612a1a545c6baca48ed49.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个大小为 n×m$$$n \\times m$$$ 的矩形网格，其中只包含星号 '*' 和句点(点)'.'。行编号从 1$$$1$$$ 到 n$$$n$$$，列编号从 1$$$1$$$ 到 m$$$m$$$。你的任务是使用任意数量的星星绘制出这个网格，或者判断这是不可能的。星星可以相交、重叠，甚至彼此重合。输出中的星星数量不能超过 n⋅m$$$n \\cdot m$$$。每颗星星都必须完全位于网格内。你可以使用大小相同或任意大小的星星。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "本题中，你不需要最小化星星的数量。只需找到一种用不超过 n⋅m$$$n \\cdot m$$$ 个星星绘制给定网格的方法。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(3≤n,m≤100$$$3 \\le n, m \\le 100$$$)——给定网格的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行每行包含 m$$$m$$$ 个字符，第 i$$$i$$$ 行描述网格的第 i$$$i$$$ 行。保证网格仅由字符 '*' 和 '.' 组成。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果无法仅使用星星绘制给定网格，则输出 \"-1\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，第一行输出一个整数 k$$$k$$$(0≤k≤n⋅m$$$0 \\le k \\le n \\cdot m$$$)——绘制给定网格所需的星星数量。接下来的 k$$$k$$$ 行每行应包含三个整数——xj$$$x_j$$$、yj$$$y_j$$$ 和 sj$$$s_j$$$，其中 xj$$$x_j$$$ 是中心星号字符所在的行编号，yj$$$y_j$$$ 是中心星号字符所在的列编号，sj$$$s_j$$$ 是星星的大小。每颗星星都必须完全位于网格内。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，输出",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "这也是正确的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E1. 星星绘制（简单版）",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

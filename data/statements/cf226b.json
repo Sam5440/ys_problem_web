@@ -1,0 +1,100 @@
+{
+  "code": "CF226B",
+  "letter": "B",
+  "title": "B. Naughty Stone Piles",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/226/B",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are n piles of stones of sizes a1, a2, ..., an lying on the table in front of you.",
+      "During one move you can take one pile and add it to the other. As you add pile i to pile j, the size of pile j increases by the current size of pile i, and pile i stops existing. The cost of the adding operation equals the size of the added pile.",
+      "Your task is to determine the minimum cost at which you can gather all stones in one pile.",
+      "To add some challenge, the stone piles built up conspiracy and decided that each pile will let you add to it not more than k times (after that it can only be added to another pile).",
+      "Moreover, the piles decided to puzzle you completely and told you q variants (not necessarily distinct) of what k might equal.",
+      "Your task is to find the minimum cost for each of q variants."
+    ],
+    "input": [
+      "The first line contains integer n (1 ≤ n ≤ 105) — the number of stone piles. The second line contains n space-separated integers: a1, a2, ..., an (1 ≤ ai ≤ 109) — the initial sizes of the stone piles.",
+      "The third line contains integer q (1 ≤ q ≤ 105) — the number of queries. The last line contains q space-separated integers k1, k2, ..., kq (1 ≤ ki ≤ 105) — the values of number k for distinct queries. Note that numbers ki can repeat."
+    ],
+    "output": [
+      "Print q whitespace-separated integers — the answers to the queries in the order, in which the queries are given in the input.",
+      "Please, do not use the %lld specifier to read or write 64-bit integers in C++. It is preferred to use the cin, cout streams or the %I64d specifier."
+    ],
+    "note": [
+      "In the first sample one way to get the optimal answer goes like this: we add in turns the 4-th and the 5-th piles to the 2-nd one; then we add the 1-st pile to the 3-rd one; we add the 2-nd pile to the 3-rd one. The first two operations cost 1 each; the third one costs 2, the fourth one costs 5 (the size of the 2-nd pile after the first two operations is not 3, it already is 5).",
+      "In the second sample you can add the 2-nd pile to the 3-rd one (the operations costs 3); then the 1-st one to the 3-th one (the cost is 2); then the 5-th one to the 4-th one (the costs is 1); and at last, the 4-th one to the 3-rd one (the cost is 2)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 3 4 1 1\n2\n2 3",
+      "output": "9 8"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "桌子上你面前有 n 堆石头，它们的大小分别为 a1、a2、...、an。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每次操作中，你可以取一堆石子并将其加到另一堆中。将石堆 i 加到石堆 j 时，石堆 j 的大小会增加当前石堆 i 的大小，而石堆 i 将不复存在。此次添加操作的代价等于被添加的石堆的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是确定将所有石子合并到一堆所需的最小代价。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了增加挑战性，石堆们密谋后决定：每堆石子最多允许其他石堆向其添加 k 次（此后它只能被添加到其他石堆中）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，石堆们决定彻底难倒你，于是告诉你 q 种 k 的可能取值（这些取值不一定互不相同）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是求出 q 种可能取值分别对应的最小代价。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 105），表示石堆的数量。第二行包含 n 个用空格分隔的整数：a1, a2, ..., an（1 ≤ ai ≤ 109），表示各石堆的初始大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含整数 q（1 ≤ q ≤ 105），表示查询的数量。最后一行包含 q 个以空格分隔的整数 k1， k2， ...， kq，表示不同查询中的数 k 的值。注意，数字 ki 可能重复。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 q 个以空格分隔的整数，表示按照输入中查询给出的顺序排列的查询答案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请不要在 C++ 中使用 %lld 格式说明符来读写 64 位整数。建议使用 cin、cout 流，或使用 %I64d 格式说明符。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，一种得到最优答案的方法如下：我们依次将第 4 堆和第 5 堆加入第 2 堆；然后将第 1 堆加入第 3 堆；再将第 2 堆加入第 3 堆。前两次操作的代价均为 1；第三次操作的代价为 2，第四次操作的代价为 5（前两次操作后第 2 堆的大小不是 3，而是已经变成了 5）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，你可以将第 2 堆加入第 3 堆（操作代价为 3）；然后将第 1 堆加入第 3 堆（代价为 2）；接着将第 5 堆加入第 4 堆（代价为 1）；最后将第 4 堆加入第 3 堆（代价为 2）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 顽皮的石头堆",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

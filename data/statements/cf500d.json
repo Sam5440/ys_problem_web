@@ -1,0 +1,99 @@
+{
+  "code": "CF500D",
+  "letter": "D",
+  "title": "D. New Year Santa Network",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/500/D",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "New Year is coming in Tree World! In this world, as the name implies, there are n cities connected by n - 1 roads, and for any two distinct cities there always exists a path between them. The cities are numbered by integers from 1 to n, and the roads are numbered by integers from 1 to n - 1. Let's define d(u, v) as total length of roads on the path between city u and city v.",
+      "As an annual event, people in Tree World repairs exactly one road per year. As a result, the length of one road decreases. It is already known that in the i-th year, the length of the ri-th road is going to become wi, which is shorter than its length before. Assume that the current year is year 1.",
+      "Three Santas are planning to give presents annually to all the children in Tree World. In order to do that, they need some preparation, so they are going to choose three distinct cities c1, c2, c3 and make exactly one warehouse in each city. The k-th (1 ≤ k ≤ 3) Santa will take charge of the warehouse in city ck.",
+      "It is really boring for the three Santas to keep a warehouse alone. So, they decided to build an only-for-Santa network! The cost needed to build this network equals to d(c1, c2) + d(c2, c3) + d(c3, c1) dollars. Santas are too busy to find the best place, so they decided to choose c1, c2, c3 randomly uniformly over all triples of distinct numbers from 1 to n. Santas would like to know the expected value of the cost needed to build the network.",
+      "However, as mentioned, each year, the length of exactly one road decreases. So, the Santas want to calculate the expected after each length change. Help them to calculate the value."
+    ],
+    "input": [
+      "The first line contains an integer n (3 ≤ n ≤ 105) — the number of cities in Tree World.",
+      "Next n - 1 lines describe the roads. The i-th line of them (1 ≤ i ≤ n - 1) contains three space-separated integers ai, bi, li (1 ≤ ai, bi ≤ n, ai ≠ bi, 1 ≤ li ≤ 103), denoting that the i-th road connects cities ai and bi, and the length of i-th road is li.",
+      "The next line contains an integer q (1 ≤ q ≤ 105) — the number of road length changes.",
+      "Next q lines describe the length changes. The j-th line of them (1 ≤ j ≤ q) contains two space-separated integers rj, wj (1 ≤ rj ≤ n - 1, 1 ≤ wj ≤ 103). It means that in the j-th repair, the length of the rj-th road becomes wj. It is guaranteed that wj is smaller than the current length of the rj-th road. The same road can be repaired several times."
+    ],
+    "output": [
+      "Output q numbers. For each given change, print a line containing the expected cost needed to build the network in Tree World. The answer will be considered correct if its absolute and relative error doesn't exceed 10 - 6."
+    ],
+    "note": [
+      "Consider the first sample. There are 6 triples: (1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1). Because n = 3, the cost needed to build the network is always d(1, 2) + d(2, 3) + d(3, 1) for all the triples. So, the expected cost equals to d(1, 2) + d(2, 3) + d(3, 1)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2 3 5\n1 3 3\n5\n1 4\n2 2\n1 2\n2 1\n1 1",
+      "output": "14.0000000000\n12.0000000000\n8.0000000000\n6.0000000000\n4.0000000000"
+    },
+    {
+      "input": "6\n1 5 3\n5 3 2\n6 1 7\n1 4 4\n5 2 3\n5\n1 2\n2 1\n3 5\n4 1\n5 2",
+      "output": "19.6000000000\n18.6000000000\n16.6000000000\n13.6000000000\n12.6000000000"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "新年即将到来，树世界也迎来了新年！在这个世界中，顾名思义，有 n 座城市和 n-1 条道路相连，并且任意两座不同的城市之间始终存在一条路径。城市编号为 1 到 n 的整数，道路编号为 1 到 n-1 的整数。定义 d(u, v) 为城市 u 和城市 v 之间路径上所有道路的总长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "作为一项年度活动，树世界的居民每年恰好维修一条道路。因此，其中一条道路的长度会变短。已知在第 i 年，第 ri 条道路的长度将变为 wi，该长度小于其之前的长度。假设当前年份为第 1 年。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "三位圣诞老人计划每年给树世界中的所有孩子送礼物。为了做到这一点，他们需要进行一些准备，因此他们将选择三个互不相同的城市 c1、c2、c3，并在每个城市中各建造一个仓库。第 k 位圣诞老人（1 ≤ k ≤ 3）将负责城市 ck 中的仓库。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "三位圣诞老人独自看守仓库实在太无聊了。因此，他们决定修建一个仅供圣诞老人使用的网络！修建该网络所需的费用等于 d(c1, c2) + d(c2, c3) + d(c3, c1) 美元。圣诞老人们太忙了，无法寻找最佳位置，所以他们决定在所有由 1 到 n 中三个互不相同的数字组成的三元组中等概率随机选择 c1、c2、c3。圣诞老人们想知道修建该网络所需费用的期望值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，如上所述，每年恰好有一条道路的长度会减少。因此，圣诞老人们希望计算每次长度变化后的期望值。请帮助他们计算这个值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（3 ≤ n ≤ 105），表示树世界中的城市数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n - 1 行描述道路。第 i 行（1 ≤ i ≤ n - 1）包含三个以空格分隔的整数 ai、bi、li（1 ≤ ai，bi ≤ n，ai ≠ bi，1 ≤ li ≤ 103），表示第 i 条道路连接城市 ai 和 bi，且第 i 条道路的长度为 li。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含一个整数 q（1 ≤ q ≤ 105），表示道路长度变化的次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q 行描述长度变化。第 j 行（1 ≤ j ≤ q）包含两个以空格分隔的整数 rj、wj（1 ≤ rj ≤ n - 1，1 ≤ wj ≤ 103）。这表示在第 j 次维修中，第 rj 条道路的长度变为 wj。保证 wj 小于第 rj 条道路的当前长度。同一条道路可能被维修多次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 q 个数。对于每次给定的变化，输出一行，包含在树世界中构建该网络所需费用的期望值。如果答案的绝对误差和相对误差均不超过 10 - 6，则视为正确。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "考虑第一个样例。共有 6 个三元组：(1， 2， 3)、(1， 3， 2)、(2， 1， 3)、(2， 3， 1)、(3， 1， 2)、(3， 2， 1)。由于 n = 3，对于所有三元组，构建该网络所需的费用始终为 d(1， 2) + d(2， 3) + d(3， 1)。因此，费用的期望值等于 d(1， 2) + d(2， 3) + d(3， 1)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 新年圣诞老人网络",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

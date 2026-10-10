@@ -1,0 +1,119 @@
+{
+  "code": "GYM106531H",
+  "letter": "H",
+  "title": "H. Heading to Graduation",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106531/problem/H",
+  "difficulty": "*1700",
+  "timeLimit": "0.5 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Marina is in the final stretch of her degree at UFBA. After years of balancing classes, deadlines, and endless cups of coffee, she has only one goal left: graduate as soon as possible.",
+      "To do that, she must complete all N$$$N$$$ required disciplines of her curriculum, numbered from 1$$$1$$$ to N$$$N$$$. At first, her plan seemed simple: whenever a semester begins, she would enroll in every discipline she is already allowed to take. There is no villain in this story, no unexpected internship, no exchange program, and no dramatic plot twist. There is only Marina, her graduation requirements, and the one force capable of turning any peaceful academic plan into chaos: SIGAA.",
+      "Some disciplines, of course, depend on others. There are M$$$M$$$ prerequisite relations, and each relation (u,v)$$$(u, v)$$$ means that Marina must complete discipline u$$$u$$$ before she is allowed to take discipline v$$$v$$$. In principle, this should define a sensible curriculum structure. In practice, when SIGAA is involved, Marina would not be entirely surprised if somehow a later discipline ended up demanding an earlier one, which then demanded another one, which eventually demanded the first again.",
+      "As if that were not enough, not every discipline is offered every semester. Sometimes departments change plans, sometimes classes do not open, and sometimes SIGAA behaves in ways that students prefer not to question too deeply. There are K$$$K$$$ temporary restrictions, and each restriction (j,x)$$$(j, x)$$$ means that discipline x$$$x$$$ is not offered in semester j$$$j$$$. So even if Marina is fully ready to take a discipline, SIGAA may simply decide that semester is not the chosen one.",
+      "In any semester, Marina may take any number of disciplines, as long as:",
+      "every prerequisite of each chosen discipline was completed in an earlier semester, and",
+      "the discipline is offered in that semester.",
+      "Help Marina determine the minimum number of semesters she needs to finish all disciplines, survive the bureaucratic maze, and finally graduate. If graduation is impossible, output −1$$$-1$$$ and accept that Marina will remain trapped in UFBA forever, eventually becoming yet another legendary campus animal."
+    ],
+    "input": [
+      "The first line contains two integers N$$$N$$$ and M$$$M$$$ (1≤N≤2×105$$$1 \\leq N \\leq 2 \\times 10^{5}$$$, 0≤M≤2×105$$$0 \\leq M \\leq 2 \\times 10^{5}$$$).",
+      "The next M$$$M$$$ lines each contain two integers u$$$u$$$ and v$$$v$$$ (1≤u,v≤N$$$1 \\leq u, v \\leq N$$$, u≠v$$$u \\neq v$$$), meaning that discipline u$$$u$$$ must be completed before discipline v$$$v$$$.",
+      "The next line contains one integer K$$$K$$$ (0≤K≤2×105$$$0 \\leq K \\leq 2 \\times 10^{5}$$$).",
+      "The next K$$$K$$$ lines each contain two integers j$$$j$$$ and x$$$x$$$ (1≤j≤N+K$$$1 \\leq j \\leq N + K$$$, 1≤x≤N$$$1 \\leq x \\leq N$$$), meaning that discipline x$$$x$$$ is not offered in semester j$$$j$$$.",
+      "It's guaranteed that all prerequisite pairs are distinct. Additionally, all restriction pairs are distinct."
+    ],
+    "output": [
+      "Output a single integer: the minimum number of semesters needed to complete all disciplines, or −1$$$-1$$$ if it is impossible."
+    ],
+    "note": [
+      "Note"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 3\n1 3\n2 3\n3 4\n2\n2 3\n3 4",
+      "output": "4"
+    },
+    {
+      "input": "3 3\n1 2\n2 3\n3 1\n0",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Marina 正在 UFBA 攻读学位的最后阶段。经过多年兼顾课程、截止日期和无尽的咖啡，她只剩下一个目标：尽快毕业。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了做到这一点，她必须完成培养方案中要求的全部 N$$$N$$$ 门课程，这些课程的编号从 1$$$1$$$ 到 N$$$N$$$。起初，她的计划看起来很简单：每当一个学期开始时，她就选修所有自己已经可以修读的课程。这个故事中没有反派，没有意外的实习，没有交换项目，也没有戏剧性的情节反转。这里只有 Marina、她的毕业要求，以及唯一能够将任何平静的学业计划变成混乱的力量：SIGAA。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当然，有些课程依赖于其他课程。共有 M$$$M$$$ 条先修关系，其中每条关系 (u,v)$$$(u, v)$$$ 表示 Marina 必须先修完课程 u$$$u$$$，之后才能选修课程 v$$$v$$$。原则上，这应该能定义出合理的课程体系。但实际上，涉及 SIGAA 时，即使某门后续课程要求先修一门更早的课程，而这门更早的课程又要求另一门课程，最终绕了一圈又要求第一门课程，Marina 也不会对此感到意外。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更不用说，并非每门课程都会在每个学期开设。有时院系会改变计划，有时课程不会开课，还有时 SIGAA 会以一种学生不太愿意深究的方式运行。现在有 K$$$K$$$ 条临时限制，每条限制 (j,x)$$$(j, x)$$$ 表示课程 x$$$x$$$ 不会在学期 j$$$j$$$ 开设。因此，即使 Marina 已经完全准备好修读某门课程，SIGAA 也可能简单地决定：这个学期不是开设它的时间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在任何一个学期，Marina 都可以选修任意数量的课程，只要满足以下条件：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所选每门学科的所有先修课程均已在更早的学期完成，并且",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "该课程在那个学期开设。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Marina 确定她需要多少个学期才能修完所有课程、闯过繁琐的行政迷宫，最终顺利毕业。如果无法毕业，输出 −1$$$-1$$$，并接受 Marina 将永远被困在 UFBA，最终成为又一只传奇校园动物。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 N$$$N$$$ 和 M$$$M$$$(1≤N≤2×105$$$1 \\leq N \\leq 2 \\times 10^{5}$$$，0≤M≤2×105$$$0 \\leq M \\leq 2 \\times 10^{5}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 M$$$M$$$ 行每行包含两个整数 u$$$u$$$ 和 v$$$v$$$(1≤u,v≤N$$$1 \\leq u, v \\leq N$$$，u≠v$$$u \\neq v$$$)，表示必须先修完课程 u$$$u$$$，才能修课程 v$$$v$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来一行包含一个整数 K$$$K$$$(0≤K≤2×105$$$0 \\leq K \\leq 2 \\times 10^{5}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 K$$$K$$$ 行每行包含两个整数 j$$$j$$$ 和 x$$$x$$$(1≤j≤N+K$$$1 \\leq j \\leq N + K$$$，1≤x≤N$$$1 \\leq x \\leq N$$$)，表示课程 x$$$x$$$ 在第 j$$$j$$$ 个学期不开设。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有先修课程对互不相同。此外，所有限制课程对也互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数：完成所有学科所需的最少学期数；如果不可能，则输出 −1$$$-1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "注意",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "H. 迈向毕业",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

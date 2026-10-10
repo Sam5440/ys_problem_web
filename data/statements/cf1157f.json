@@ -1,0 +1,83 @@
+{
+  "code": "CF1157F",
+  "letter": "F",
+  "title": "F. Maximum Balanced Circle",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1157/F",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are n$$$n$$$ people in a row. The height of the i$$$i$$$-th person is ai$$$a_i$$$. You can choose any subset of these people and try to arrange them into a balanced circle.",
+      "A balanced circle is such an order of people that the difference between heights of any adjacent people is no more than 1$$$1$$$. For example, let heights of chosen people be [ai1,ai2,…,aik]$$$[a_{i_1}, a_{i_2}, \\dots, a_{i_k}]$$$, where k$$$k$$$ is the number of people you choose. Then the condition |aij−aij+1|≤1$$$|a_{i_j} - a_{i_{j + 1}}| \\le 1$$$ should be satisfied for all j$$$j$$$ from 1$$$1$$$ to k−1$$$k-1$$$ and the condition |ai1−aik|≤1$$$|a_{i_1} - a_{i_k}| \\le 1$$$ should be also satisfied. |x|$$$|x|$$$ means the absolute value of x$$$x$$$. It is obvious that the circle consisting of one person is balanced.",
+      "Your task is to choose the maximum number of people and construct a balanced circle consisting of all chosen people. It is obvious that the circle consisting of one person is balanced so the answer always exists."
+    ],
+    "input": [
+      "The first line of the input contains one integer n$$$n$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$) — the number of people.",
+      "The second line of the input contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (1≤ai≤2⋅105$$$1 \\le a_i \\le 2 \\cdot 10^5$$$), where ai$$$a_i$$$ is the height of the i$$$i$$$-th person."
+    ],
+    "output": [
+      "In the first line of the output print k$$$k$$$ — the number of people in the maximum balanced circle.",
+      "In the second line print k$$$k$$$ integers res1,res2,…,resk$$$res_1, res_2, \\dots, res_k$$$, where resj$$$res_j$$$ is the height of the j$$$j$$$-th person in the maximum balanced circle. The condition |resj−resj+1|≤1$$$|res_{j} - res_{j + 1}| \\le 1$$$ should be satisfied for all j$$$j$$$ from 1$$$1$$$ to k−1$$$k-1$$$ and the condition |res1−resk|≤1$$$|res_{1} - res_{k}| \\le 1$$$ should be also satisfied."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n4 3 5 1 2 2 1",
+      "output": "5\n2 1 1 2 3"
+    },
+    {
+      "input": "5\n3 7 5 1 5",
+      "output": "2\n5 5"
+    },
+    {
+      "input": "3\n5 1 4",
+      "output": "2\n4 5"
+    },
+    {
+      "input": "7\n2 2 3 2 1 2 2",
+      "output": "7\n1 2 2 2 2 3 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "有 n$$$n$$$ 个人排成一行。第 i$$$i$$$ 个人的身高为 ai$$$a_i$$$。你可以从这些人中选择任意子集，并尝试将他们排列成一个平衡圆。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "平衡圆是指这样一种人的排列：任意相邻两人的身高之差不超过 1$$$1$$$。例如，设所选人的身高为 [ai1,ai2,…,aik]$$$[a_{i_1}, a_{i_2}, \\dots, a_{i_k}]$$$，其中 k$$$k$$$ 是你选择的人数。那么，对于从 1$$$1$$$ 到 k−1$$$k-1$$$ 的所有 j$$$j$$$，都应满足条件 |aij−aij+1|≤1$$$|a_{i_j} - a_{i_{j + 1}}| \\le 1$$$，并且还应满足条件 |ai1−aik|≤1$$$|a_{i_1} - a_{i_k}| \\le 1$$$。|x|$$$|x|$$$ 表示 x$$$x$$$ 的绝对值。显然，只由一个人组成的圆是平衡的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是选择尽可能多的人，并构造一个由所有所选人组成的平衡圆。显然，只由一个人组成的圆是平衡的，因此答案总是存在。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$(1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$)——人数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤2⋅105$$$1 \\le a_i \\le 2 \\cdot 10^5$$$)，其中 ai$$$a_i$$$ 是第 i$$$i$$$ 个人的身高。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出第一行打印 k$$$k$$$ —— 最大平衡圈中的人数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行输出 k$$$k$$$ 个整数 res1,res2,…,resk$$$res_1, res_2, \\dots, res_k$$$，其中 resj$$$res_j$$$ 是最大平衡圈中第 j$$$j$$$ 个人的身高。对于所有从 1$$$1$$$ 到 k−1$$$k-1$$$ 的 j$$$j$$$，都应满足条件 |resj−resj+1|≤1$$$|res_{j} - res_{j + 1}| \\le 1$$$，并且还应满足条件 |res1−resk|≤1$$$|res_{1} - res_{k}| \\le 1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 最大平衡圆",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "code": "CF1954D",
+  "letter": "D",
+  "title": "D. Colored Balls",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1954/D",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "There are balls of n$$$n$$$ different colors; the number of balls of the i$$$i$$$-th color is ai$$$a_i$$$.",
+      "The balls can be combined into groups. Each group should contain at most 2$$$2$$$ balls, and no more than 1$$$1$$$ ball of each color.",
+      "Consider all 2n$$$2^n$$$ sets of colors. For a set of colors, let's denote its value as the minimum number of groups the balls of those colors can be distributed into. For example, if there are three colors with 3$$$3$$$, 1$$$1$$$ and 7$$$7$$$ balls respectively, they can be combined into 7$$$7$$$ groups (and not less than 7$$$7$$$), so the value of that set of colors is 7$$$7$$$.",
+      "Your task is to calculate the sum of values over all 2n$$$2^n$$$ possible sets of colors. Since the answer may be too large, print it modulo 998244353$$$998\\,244\\,353$$$."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (1≤n≤5000$$$1 \\le n \\le 5000$$$) — the number of colors.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (1≤ai≤5000$$$1 \\le a_i \\le 5000$$$) — the number of balls of the i$$$i$$$-th color.",
+      "Additional constraint on input: the total number of balls doesn't exceed 5000$$$5000$$$."
+    ],
+    "output": [
+      "Print a single integer — the sum of values of all 2n$$$2^n$$$ sets of colors, taken modulo 998244353$$$998\\,244\\,353$$$."
+    ],
+    "note": [
+      "Consider the first example. There are 8$$$8$$$ sets of colors:",
+      "for the empty set, its value is 0$$$0$$$;",
+      "for the set {1}$$$\\{1\\}$$$, its value is 1$$$1$$$;",
+      "for the set {2}$$$\\{2\\}$$$, its value is 1$$$1$$$;",
+      "for the set {3}$$$\\{3\\}$$$, its value is 2$$$2$$$;",
+      "for the set {1,2}$$$\\{1,2\\}$$$, its value is 1$$$1$$$;",
+      "for the set {1,3}$$$\\{1,3\\}$$$, its value is 2$$$2$$$;",
+      "for the set {2,3}$$$\\{2,3\\}$$$, its value is 2$$$2$$$;",
+      "for the set {1,2,3}$$$\\{1,2,3\\}$$$, its value is 2$$$2$$$.",
+      "So, the sum of values over all 2n$$$2^n$$$ sets of colors is 11$$$11$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 1 2",
+      "output": "11"
+    },
+    {
+      "input": "1\n5",
+      "output": "5"
+    },
+    {
+      "input": "4\n1 3 3 7",
+      "output": "76"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "有 n$$$n$$$ 种不同颜色的球；第 i$$$i$$$ 种颜色的球的数量为 ai$$$a_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以将这些球组合成若干组。每组至多包含 2$$$2$$$ 个球，且每种颜色的球至多包含 1$$$1$$$ 个。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑所有 2n$$$2^n$$$ 个颜色集合。对于一个颜色集合，定义其价值为将这些颜色的球分配到若干组中所需的最少组数。例如，如果有三种颜色，球的数量分别为 3$$$3$$$、1$$$1$$$ 和 7$$$7$$$，那么它们可以组合成 7$$$7$$$ 组(不可能少于 7$$$7$$$ 组)，因此该颜色集合的价值为 7$$$7$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是计算所有 2n$$$2^n$$$ 个可能的颜色集合的价值之和。由于答案可能很大，请输出对 998244353$$$998\\,244\\,353$$$ 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤5000$$$1 \\le n \\le 5000$$$)——颜色的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤5000$$$1 \\le a_i \\le 5000$$$)——第 i$$$i$$$ 种颜色的球的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的额外约束：球的总数不超过 5000$$$5000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——所有 2n$$$2^n$$$ 个颜色集合的价值之和，对 998244353$$$998\\,244\\,353$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "考虑第一个样例。共有 8$$$8$$$ 个颜色集合：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于空集，其值为 0$$$0$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于集合 {1}$$$\\{1\\}$$$，其值为 1$$$1$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于集合 {2}$$$\\{2\\}$$$，其值为 1$$$1$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于集合 {3}$$$\\{3\\}$$$，其值为 2$$$2$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于集合 {1,2}$$$\\{1,2\\}$$$，其值为 1$$$1$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于集合 {1,3}$$$\\{1,3\\}$$$，其值为 2$$$2$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于集合 {2,3}$$$\\{2,3\\}$$$，它的值为 2$$$2$$$；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于集合 {1,2,3}$$$\\{1,2,3\\}$$$，它的值为 2$$$2$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "因此，所有 2n$$$2^n$$$ 个颜色集合的值的总和为 11$$$11$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 彩色球",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

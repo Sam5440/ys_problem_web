@@ -1,0 +1,213 @@
+{
+  "code": "GYM106164D",
+  "letter": "D",
+  "title": "D. Dungeons and Dragons",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106164/problem/D",
+  "difficulty": "*2400",
+  "timeLimit": "4 s",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Audrey and Bastian are about to start on an epic dungeon crawl where they'll face R$$$R$$$ monsters (1≤R≤109$$$1 \\le R \\le 10^9$$$). Each monster has a health point (HP) value between 0$$$0$$$ and N$$$N$$$ (1≤N≤5×105$$$1 \\le N \\le 5 \\times 10^5$$$).",
+      "Game Rules",
+      "The battle proceeds in turns, with Audrey going first:",
+      "On each turn, the current player selects a monster with HP >0$$$ \\gt  0$$$",
+      "If the chosen monster has HP =x$$$= x$$$, the player can choose to deal damage d$$$d$$$ where 1≤d≤p[x]$$$1 \\le d \\le p[x]$$$. It's guaranteed that 1≤p[x]≤x$$$1 \\le p[x] \\le x$$$ for all x$$$x$$$.",
+      "The monster's HP becomes x−d$$$x - d$$$",
+      "The player who defeats the last monster (reduces the last non-zero HP to 0$$$0$$$) wins",
+      "Both players play optimally.",
+      "The Setup Phase",
+      "Audrey's Preparation: Audrey, being a cunning adventurer, prepares the dungeon in advance. She sets the initial HP of all R$$$R$$$ monsters to values a1,a2,…,aR$$$a_1, a_2, \\ldots, a_R$$$ where 0≤ai≤N$$$0 \\le a_i \\le N$$$. Audrey configures the monsters such that she is guaranteed to win if the game proceeds with these HP values.",
+      "Bastian's Sabotage: Bastian discovers Audrey's scheme and decides to sabotage exactly one monster before the battle begins. He chooses one monster with HP =ai$$$= a_i$$$ where ai≥K$$$a_i \\ge K$$$ and decreases its HP by K$$$K$$$, making its new HP equal to ai−K$$$a_i - K$$$.",
+      "Bastian's goal is to turn the tables and guarantee his own victory. If there's no way for Bastian to choose a monster that guarantees his win, Bastian abandons the dungeon (the game doesn't happen).",
+      "You have to determine how many distinct configurations (a1,a2,…,aR)$$$(a_1, a_2, \\ldots, a_R)$$$ are possible on the final day (after Bastian's sabotage, if the game proceeds).",
+      "Important: Count configurations based on the HP values after Bastian's modification, not the initial values Audrey set.",
+      "Two configurations are considered different if they contain different HP values or the same HP values in different orders (e.g., (1,3,2)≠(1,2,3)$$$(1, 3, 2) \\neq (1, 2, 3)$$$)"
+    ],
+    "input": [
+      "The first line contains three integers N$$$N$$$, K$$$K$$$, and R$$$R$$$ — the maximum HP value, the maximum reduction amount, and the number of monsters.",
+      "The second line contains N$$$N$$$ integers p[1],p[2],…,p[N]$$$p[1], p[2], \\ldots, p[N]$$$ — where p[i]$$$p[i]$$$ is the maximum damage that can be dealt to a monster with i$$$i$$$ HP."
+    ],
+    "output": [
+      "Output a single integer — the number of possible monster HP configurations on the final day, modulo 998244353$$$998244353$$$."
+    ],
+    "note": [
+      "Sample Input 1",
+      {
+        "pre": "\n10 3 1\n1 2 1 2 1 3 4 5 4 5"
+      },
+      "Sample Output 1",
+      {
+        "pre": "\n2"
+      },
+      "Explanation 1",
+      "With R=1$$$R = 1$$$ monster, the possible configurations on the final day are single-monster configurations. The valid final configurations are (3)$$$(3)$$$ and (5)$$$(5)$$$, giving us 2$$$2$$$ possible configurations.",
+      "Sample Input 2",
+      {
+        "pre": "\n10 3 3\n1 2 1 2 1 3 4 5 4 5"
+      },
+      "Sample Output 2",
+      {
+        "pre": "\n194"
+      },
+      "Explanation 2",
+      "One example of a valid final day configuration is (1,7,2)$$$(1, 7, 2)$$$. This configuration could arise from:",
+      "Audrey initially choosing (1,7,5)$$$(1, 7, 5)$$$, then Bastian reducing the monster with HP =5$$$= 5$$$ by K=3$$$K = 3$$$ to get HP =2$$$= 2$$$",
+      "Audrey initially choosing (1,10,2)$$$(1, 10, 2)$$$, then Bastian reducing the monster with HP =10$$$= 10$$$ by K=3$$$K = 3$$$ to get HP =7$$$= 7$$$",
+      "In both cases, the initial configuration guarantees Audrey's win, but after Bastian's sabotage, the final configuration (1,7,2)$$$(1, 7, 2)$$$ guarantees Bastian's win. The total number of such valid final configurations is 194$$$194$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "10 3 1\n1 2 1 2 1 3 4 5 4 5",
+      "output": "2"
+    },
+    {
+      "input": "10 3 3\n1 2 1 2 1 3 4 5 4 5",
+      "output": "194"
+    },
+    {
+      "input": "\n10 3 1\n1 2 1 2 1 3 4 5 4 5",
+      "output": "\n2"
+    },
+    {
+      "input": "\n10 3 3\n1 2 1 2 1 3 4 5 4 5",
+      "output": "\n194"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Audrey 和 Bastian 即将开始一场史诗般的地牢探险，他们将面对 R$$$R$$$ 只怪物(1≤R≤109$$$1 \\le R \\le 10^9$$$)。每只怪物的生命值(HP)在 0$$$0$$$ 到 N$$$N$$$ 之间(1≤N≤5×105$$$1 \\le N \\le 5 \\times 10^5$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "游戏规则",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "战斗按回合进行，Audrey 先手：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个回合，当前玩家选择一个生命值 >0$$$ \\gt  0$$$ 的怪物",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果所选怪物的生命值为 x$$$= x$$$，玩家可以选择造成 d$$$d$$$ 点伤害，其中 1≤d≤p[x]$$$1 \\le d \\le p[x]$$$。保证对于所有 x$$$x$$$，均有 1≤p[x]≤x$$$1 \\le p[x] \\le x$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "怪物的生命值变为 x−d$$$x - d$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "击败最后一只怪物(将最后一个非零生命值降至 0$$$0$$$)的玩家获胜",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "双方均采取最优策略。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "准备阶段",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Audrey 的准备：Audrey 是一名狡猾的冒险家，她提前准备好了地牢。她将所有 R$$$R$$$ 个怪物的初始生命值设为 a1,a2,…,aR$$$a_1, a_2, \\ldots, a_R$$$，其中 0≤ai≤N$$$0 \\le a_i \\le N$$$。Audrey 对怪物进行了配置，使得如果游戏以这些生命值进行，她一定能够获胜。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bastian 的破坏：Bastian 发现了 Audrey 的计划，并决定在战斗开始前恰好破坏一个怪物。他选择一个生命值为 ai$$$= a_i$$$ 的怪物，其中 ai≥K$$$a_i \\ge K$$$，并将其生命值减少 K$$$K$$$，使其新生命值变为 ai−K$$$a_i - K$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bastian 的目标是扭转局面并确保自己获胜。如果 Bastian 无法选择一个能确保自己获胜的怪物，他就放弃地牢（游戏不会进行）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要确定在最后一天可能出现多少种不同的配置 (a1,a2,…,aR)$$$(a_1, a_2, \\ldots, a_R)$$$(如果游戏进行，则为 Bastian 破坏之后的配置)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "重要：应根据 Bastian 修改后的生命值统计配置，而不是根据 Audrey 设置的初始值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果两个配置包含不同的生命值，或包含相同的生命值但顺序不同，则认为它们不同(例如，(1,3,2)≠(1,2,3)$$$(1, 3, 2) \\neq (1, 2, 3)$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 N$$$N$$$、K$$$K$$$ 和 R$$$R$$$，分别表示最大生命值、最大减少量和怪物数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 N$$$N$$$ 个整数 p[1],p[2],…,p[N]$$$p[1], p[2], \\ldots, p[N]$$$，其中 p[i]$$$p[i]$$$ 表示对生命值为 i$$$i$$$ 的怪物所能造成的最大伤害。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示最后一天可能的怪物生命值配置数量，对 998244353$$$998244353$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "输入样例 1",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "输出样例 1",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "解释 1",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当 R=1$$$R = 1$$$ 只怪物时，最后一天的可能配置都是单怪物配置。有效的最终配置为 (3)$$$(3)$$$ 和 (5)$$$(5)$$$，因此共有 2$$$2$$$ 种可能的配置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入样例 2",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "输出样例 2",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "解释 2",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一种有效的最后一天配置示例是 (1,7,2)$$$(1, 7, 2)$$$。该配置可能由以下过程得到：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Audrey 最初选择 (1,7,5)$$$(1, 7, 5)$$$，随后 Bastian 将 HP =5$$$= 5$$$ 的怪物减少 K=3$$$K = 3$$$，使其 HP 变为 =2$$$= 2$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Audrey 最初选择了 (1,10,2)$$$(1, 10, 2)$$$，随后 Bastian 将生命值为 10$$$= 10$$$ 的怪物降低了 K=3$$$K = 3$$$，使其生命值变为 7$$$= 7$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在这两种情况下，初始配置都保证 Audrey 获胜，但在 Bastian 破坏配置后，最终配置 (1,7,2)$$$(1, 7, 2)$$$ 保证 Bastian 获胜。这样的有效最终配置总数为 194$$$194$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Dungeons and Dragons",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

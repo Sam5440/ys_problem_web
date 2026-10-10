@@ -1,0 +1,120 @@
+{
+  "code": "CF1611E2",
+  "letter": "E2",
+  "title": "E2. Escape The Maze (hard version)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1611/E2",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The only difference with E1 is the question of the problem.",
+      "Vlad built a maze out of n$$$n$$$ rooms and n−1$$$n-1$$$ bidirectional corridors. From any room u$$$u$$$ any other room v$$$v$$$ can be reached through a sequence of corridors. Thus, the room system forms an undirected tree.",
+      "Vlad invited k$$$k$$$ friends to play a game with them.",
+      "Vlad starts the game in the room 1$$$1$$$ and wins if he reaches a room other than 1$$$1$$$, into which exactly one corridor leads. Friends are placed in the maze: the friend with number i$$$i$$$ is in the room xi$$$x_i$$$, and no two friends are in the same room (that is, xi≠xj$$$x_i \\neq x_j$$$ for all i≠j$$$i \\neq j$$$). Friends win if one of them meets Vlad in any room or corridor before he wins.",
+      "For one unit of time, each participant of the game can go through one corridor. All participants move at the same time. Participants may not move. Each room can fit all participants at the same time.",
+      "Friends know the plan of a maze and intend to win. They don't want to waste too much energy. They ask you to determine if they can win and if they can, what minimum number of friends must remain in the maze so that they can always catch Vlad.",
+      "In other words, you need to determine the size of the minimum (by the number of elements) subset of friends who can catch Vlad or say that such a subset does not exist."
+    ],
+    "input": [
+      "The first line of the input contains an integer t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$) — the number of test cases in the input. The input contains an empty string before each test case.",
+      "The first line of the test case contains two numbers n$$$n$$$ and k$$$k$$$ (1≤k<n≤2⋅105$$$1 \\le k  \\lt  n \\le 2\\cdot 10^5$$$) — the number of rooms and friends, respectively.",
+      "The next line of the test case contains k$$$k$$$ integers x1,x2,…,xk$$$x_1, x_2, \\dots, x_k$$$ (2≤xi≤n$$$2 \\le x_i \\le n$$$) — numbers of rooms with friends. All xi$$$x_i$$$ are different.",
+      "The next n−1$$$n-1$$$ lines contain descriptions of the corridors, two numbers per line vj$$$v_j$$$ and uj$$$u_j$$$ (1≤uj,vj≤n$$$1 \\le u_j, v_j \\le n$$$) — numbers of rooms that connect the j$$$j$$$ corridor. All corridors are bidirectional. From any room, you can go to any other by moving along the corridors.",
+      "It is guaranteed that the sum of the values n$$$n$$$ over all test cases in the test is not greater than 2⋅105$$$2\\cdot10^5$$$."
+    ],
+    "output": [
+      "Print t$$$t$$$ lines, each line containing the answer to the corresponding test case. The answer to a test case should be −1$$$-1$$$ if Vlad wins anyway and a minimal number of friends otherwise."
+    ],
+    "note": [
+      "In the first set of inputs, even if all the friends stay in the maze, Vlad can still win. Therefore, the answer is \"-1\".",
+      "In the second set of inputs it is enough to leave friends from rooms 6$$$6$$$ and 7$$$7$$$. Then Vlad will not be able to win. The answer is \"2\".",
+      "In the third and fourth sets of inputs Vlad cannot win only if all his friends stay in the maze. Therefore the answers are \"1\" and \"2\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n\n8 2\n5 3\n4 7\n2 5\n1 6\n3 6\n7 2\n1 7\n6 8\n\n8 4\n6 5 7 3\n4 7\n2 5\n1 6\n3 6\n7 2\n1 7\n6 8\n\n3 1\n2\n1 2\n2 3\n\n3 2\n2 3\n3 1\n1 2",
+      "output": "-1\n2\n1\n2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "与 E1 的唯一不同之处在于题目所提出的问题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vlad 用 n$$$n$$$ 个房间和 n−1$$$n-1$$$ 条双向走廊建造了一个迷宫。从任意房间 u$$$u$$$ 都可以通过一系列走廊到达任意其他房间 v$$$v$$$。因此，房间系统构成一棵无向树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vlad 邀请了 k$$$k$$$ 位朋友来和他一起玩游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vlad 从房间 1$$$1$$$ 开始游戏；如果他到达一个不是 1$$$1$$$ 且恰好有一条走廊通向它的房间，就获胜。朋友们被安置在迷宫中：编号为 i$$$i$$$ 的朋友位于房间 xi$$$x_i$$$，并且没有两个朋友位于同一个房间(也就是说，对于所有 i≠j$$$i \\neq j$$$，都有 xi≠xj$$$x_i \\neq x_j$$$)。如果在 Vlad 获胜之前，其中一人在任意房间或走廊中遇到 Vlad，朋友们就获胜。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在一个时间单位内，游戏中的每位参与者都可以通过一条走廊。所有参与者同时移动。参与者也可以选择不移动。每个房间可以同时容纳所有参与者。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "朋友们了解迷宫的布局，并打算获胜。他们不想浪费太多体力。他们请你判断他们是否能够获胜；如果能，确定为了始终抓住 Vlad，迷宫中至少需要留下多少名朋友。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "换句话说，你需要确定能够抓住 Vlad 的朋友子集的最小大小（按元素个数计算），或者说明不存在这样的子集。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)——输入中的测试用例数量。每个测试用例之前都有一个空行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试用例的第一行包含两个数 n$$$n$$$ 和 k$$$k$$$(1≤k<n≤2⋅105$$$1 \\le k  \\lt  n \\le 2\\cdot 10^5$$$)——分别表示房间数和朋友数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试用例的下一行包含 k$$$k$$$ 个整数 x1,x2,…,xk$$$x_1, x_2, \\dots, x_k$$$(2≤xi≤n$$$2 \\le x_i \\le n$$$)——表示有朋友所在的房间编号。所有 xi$$$x_i$$$ 均不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n−1$$$n-1$$$ 行包含对各条走廊的描述，每行有两个数字 vj$$$v_j$$$ 和 uj$$$u_j$$$(1≤uj,vj≤n$$$1 \\le u_j, v_j \\le n$$$)——表示与第 j$$$j$$$ 条走廊相连的房间编号。所有走廊都是双向的。从任意房间出发，都可以沿着走廊到达其他任意房间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中的 n$$$n$$$ 之和不超过 2⋅105$$$2\\cdot10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 t$$$t$$$ 行，每行包含对应测试用例的答案。如果 Vlad 无论如何都会获胜，则该测试用例的答案应为 −1$$$-1$$$；否则为最少需要的朋友数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一组输入中，即使所有朋友都留在迷宫中，Vlad 仍然可以获胜。因此，答案为“-1”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二组输入中，只需让 6$$$6$$$ 号和 7$$$7$$$ 号房间的朋友离开即可。这样 Vlad 就无法获胜。答案为“2”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三组和第四组输入中，只有当他的所有朋友都留在迷宫中时，Vlad 才无法获胜。因此答案分别为“1”和“2”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E2. 逃离迷宫（困难版）",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

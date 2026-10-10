@@ -1,0 +1,146 @@
+{
+  "code": "CF1282E",
+  "letter": "E",
+  "title": "E. The Cake Is a Lie",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1282/E",
+  "difficulty": "2400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "We are committed to the well being of all participants. Therefore, instead of the problem, we suggest you enjoy a piece of cake.",
+      "Uh oh. Somebody cut the cake. We told them to wait for you, but they did it anyway. There is still some left, though, if you hurry back. Of course, before you taste the cake, you thought about how the cake was cut.",
+      "It is known that the cake was originally a regular n$$$n$$$-sided polygon, each vertex of which had a unique number from 1$$$1$$$ to n$$$n$$$. The vertices were numbered in random order.",
+      "Each piece of the cake is a triangle. The cake was cut into n−2$$$n - 2$$$ pieces as follows: each time one cut was made with a knife (from one vertex to another) such that exactly one triangular piece was separated from the current cake, and the rest continued to be a convex polygon. In other words, each time three consecutive vertices of the polygon were selected and the corresponding triangle was cut off.",
+      "A possible process of cutting the cake is presented in the picture below.",
+      "![](https://espresso.codeforces.com/5af71e4c05e91029e8c81773d224fe74e6ab7141.png)",
+      "You are given a set of n−2$$$n-2$$$ triangular pieces in random order. The vertices of each piece are given in random order — clockwise or counterclockwise. Each piece is defined by three numbers — the numbers of the corresponding n$$$n$$$-sided cake vertices.",
+      "For example, for the situation in the picture above, you could be given a set of pieces: [3,6,5],[5,2,4],[5,4,6],[6,3,1]$$$[3, 6, 5], [5, 2, 4], [5, 4, 6], [6, 3, 1]$$$.",
+      "You are interested in two questions.",
+      "What was the enumeration of the n$$$n$$$-sided cake vertices?",
+      "In what order were the pieces cut?",
+      "Formally, you have to find two permutations p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$ (1≤pi≤n$$$1 \\le p_i \\le n$$$) and q1,q2,…,qn−2$$$q_1, q_2, \\dots, q_{n - 2}$$$ (1≤qi≤n−2$$$1 \\le q_i \\le n - 2$$$) such that if the cake vertices are numbered with the numbers p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$ in order clockwise or counterclockwise, then when cutting pieces of the cake in the order q1,q2,…,qn−2$$$q_1, q_2, \\dots, q_{n - 2}$$$ always cuts off a triangular piece so that the remaining part forms one convex polygon.",
+      "For example, in the picture above the answer permutations could be: p=[2,4,6,1,3,5]$$$p=[2, 4, 6, 1, 3, 5]$$$ (or any of its cyclic shifts, or its reversal and after that any cyclic shift) and q=[2,4,1,3]$$$q=[2, 4, 1, 3]$$$.",
+      "Write a program that, based on the given triangular pieces, finds any suitable permutations p$$$p$$$ and q$$$q$$$."
+    ],
+    "input": [
+      "The first line contains a single integer t$$$t$$$ (1≤t≤1000$$$1 \\le t \\le 1000$$$) — the number of test cases. Then there are t$$$t$$$ independent sets of input data.",
+      "The first line of each set consists of a single integer n$$$n$$$ (3≤n≤105$$$3 \\le n \\le 10^5$$$) — the number of vertices in the cake.",
+      "The following n−2$$$n - 2$$$ lines describe the numbers of the pieces vertices: each line consists of three different integers a,b,c$$$a, b, c$$$ (1≤a,b,c≤n$$$1 \\le a, b, c \\le n$$$) — the numbers of the pieces vertices of cake given in random order. The pieces are given in random order.",
+      "It is guaranteed that the answer to each of the tests exists. It is also guaranteed that the sum of n$$$n$$$ for all test cases does not exceed 105$$$10^5$$$."
+    ],
+    "output": [
+      "Print 2t$$$2t$$$ lines — answers to given t$$$t$$$ test cases in the order in which they are written in the input. Each answer should consist of 2$$$2$$$ lines.",
+      "In the first line of an answer on a test case print n$$$n$$$ distinct numbers p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$(1≤pi≤n$$$1 \\le p_i \\le n$$$) — the numbers of the cake vertices in clockwise or counterclockwise order.",
+      "In the second line of an answer on a test case print n−2$$$n - 2$$$ distinct numbers q1,q2,…,qn−2$$$q_1, q_2, \\dots, q_{n - 2}$$$(1≤qi≤n−2$$$1 \\le q_i \\le n - 2$$$) — the order of cutting pieces of the cake. The number of a piece of the cake corresponds to its number in the input.",
+      "If there are several answers, print any. It is guaranteed that the answer to each of the tests exists."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n6\n3 6 5\n5 2 4\n5 4 6\n6 3 1\n6\n2 5 6\n2 5 1\n4 1 2\n1 3 5\n3\n1 2 3",
+      "output": "1 6 4 2 5 3 \n4 2 3 1 \n1 4 2 6 5 3 \n3 4 2 1 \n1 3 2 \n1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "我们致力于保障所有参赛者的身心健康。因此，与其做这道题，我们建议你享用一块蛋糕。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "糟糕。有人把蛋糕切开了。我们让他们等你回来，但他们还是这么做了。不过还剩下一些，如果你赶紧回来，应该还能吃到。当然，在品尝蛋糕之前，你想了想蛋糕是如何被切开的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "已知蛋糕原本是一个正 n$$$n$$$ 边形，其每个顶点都有一个从 1$$$1$$$ 到 n$$$n$$$ 的唯一编号。顶点的编号顺序是随机的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "蛋糕的每一块都是三角形。蛋糕被切成了 n−2$$$n - 2$$$ 块，过程如下：每次用刀进行一次切割(从一个顶点到另一个顶点)，使得恰好有一块三角形从当前蛋糕中分离出来，而剩余部分仍为一个凸多边形。换句话说，每次选取多边形中连续的三个顶点，并将对应的三角形切下。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下图展示了一种可能的切蛋糕过程。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/5af71e4c05e91029e8c81773d224fe74e6ab7141.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定 n−2$$$n-2$$$ 个三角形块，它们的顺序是随机的。每个三角形块的顶点也以随机顺序给出——顺时针或逆时针。每个三角形块由三个数字定义——它们分别是蛋糕这个 n$$$n$$$ 边形中对应顶点的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，对于上图中的情况，可能会给出如下的一组三角形块：[3,6,5],[5,2,4],[5,4,6],[6,3,1]$$$[3, 6, 5], [5, 2, 4], [5, 4, 6], [6, 3, 1]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要解决两个问题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "n$$$n$$$ 边形蛋糕的顶点编号是怎样的？",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "这些蛋糕块是按什么顺序切下来的？",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "形式化地说，你需要找到两个排列 p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$(1≤pi≤n$$$1 \\le p_i \\le n$$$)和 q1,q2,…,qn−2$$$q_1, q_2, \\dots, q_{n - 2}$$$(1≤qi≤n−2$$$1 \\le q_i \\le n - 2$$$)，使得如果将蛋糕的顶点按照 p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$ 的顺序顺时针或逆时针编号，那么按照 q1,q2,…,qn−2$$$q_1, q_2, \\dots, q_{n - 2}$$$ 的顺序切割蛋糕时，每次都能切下一个三角形块，并且剩余部分仍构成一个凸多边形。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "例如，在上图中，答案排列可以是：p=[2,4,6,1,3,5]$$$p=[2, 4, 6, 1, 3, 5]$$$(或其任意循环移位，或者将其翻转后再进行任意循环移位)以及 q=[2,4,1,3]$$$q=[2, 4, 1, 3]$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "编写一个程序，根据给定的三角形块，找出任意一组合适的排列 p$$$p$$$ 和 q$$$q$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤1000$$$1 \\le t \\le 1000$$$)——测试用例的数量。接下来有 t$$$t$$$ 组独立的输入数据。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个数据集的第一行包含一个整数 n$$$n$$$(3≤n≤105$$$3 \\le n \\le 10^5$$$)——蛋糕的顶点数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 n−2$$$n - 2$$$ 行描述蛋糕块的顶点编号：每行包含三个互不相同的整数 a,b,c$$$a, b, c$$$(1≤a,b,c≤n$$$1 \\le a, b, c \\le n$$$)——以随机顺序给出的蛋糕块的顶点编号。蛋糕块以随机顺序给出。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "保证每个测试的答案均存在。同时保证所有测试用例中 n$$$n$$$ 的总和不超过 105$$$10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 2t$$$2t$$$ 行——按输入中给出的顺序输出 t$$$t$$$ 个测试用例的答案。每个答案由 2$$$2$$$ 行组成。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于某个测试用例的答案，在第一行输出 n$$$n$$$ 个互不相同的数 p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$(1≤pi≤n$$$1 \\le p_i \\le n$$$)——按顺时针或逆时针顺序排列的蛋糕顶点编号。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在某个测试用例答案的第二行，输出 n−2$$$n - 2$$$ 个互不相同的数 q1,q2,…,qn−2$$$q_1, q_2, \\dots, q_{n - 2}$$$(1≤qi≤n−2$$$1 \\le q_i \\le n - 2$$$)——切割蛋糕块的顺序。蛋糕块的编号对应其在输入中的编号。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果有多个答案，输出任意一个即可。保证每个测试用例都有答案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 蛋糕是个谎言",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

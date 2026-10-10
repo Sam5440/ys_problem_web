@@ -1,0 +1,145 @@
+{
+  "code": "CF1850H",
+  "letter": "H",
+  "title": "H. The Third Letter",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1850/H",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "In order to win his toughest battle, Mircea came up with a great strategy for his army. He has n$$$n$$$ soldiers and decided to arrange them in a certain way in camps. Each soldier has to belong to exactly one camp, and there is one camp at each integer point on the x$$$x$$$-axis (at points ⋯,−2,−1,0,1,2,⋯$$$\\cdots, -2, -1, 0, 1, 2, \\cdots$$$).",
+      "The strategy consists of m$$$m$$$ conditions. Condition i$$$i$$$ tells that soldier ai$$$a_i$$$ should belong to a camp that is situated di$$$d_i$$$ meters in front of the camp that person bi$$$b_i$$$ belongs to. (If di<0$$$d_i  \\lt  0$$$, then ai$$$a_i$$$'s camp should be −di$$$-d_i$$$ meters behind bi$$$b_i$$$'s camp.)",
+      "Now, Mircea wonders if there exists a partition of soldiers that respects the condition and he asks for your help! Answer \"YES\" if there is a partition of the n$$$n$$$ soldiers that satisfies all of the m$$$m$$$ conditions and \"NO\" otherwise.",
+      "Note that two different soldiers may be placed in the same camp."
+    ],
+    "input": [
+      "The first line contains a single integer t$$$t$$$ (1≤t≤100$$$1 \\leq t \\leq 100$$$) — the number of test cases.",
+      "The first line of each test case contains two positive integers n$$$n$$$ and m$$$m$$$ (2≤n≤2⋅105$$$2 \\leq n \\leq 2 \\cdot 10^5$$$; 1≤m≤n$$$1 \\leq m \\leq n$$$) — the number of soldiers, and the number of conditions respectively.",
+      "Then m$$$m$$$ lines follow, each of them containing 3$$$3$$$ integers: ai$$$a_i$$$, bi$$$b_i$$$, di$$$d_i$$$ (ai≠bi$$$a_i \\neq b_i$$$; 1≤ai,bi≤n$$$1 \\leq a_i, b_i \\leq n$$$; −109≤di≤109$$$-10^9 \\leq d_i \\leq 10^9$$$) — denoting the conditions explained in the statement. Note that if di$$$d_i$$$ is positive, ai$$$a_i$$$ should be di$$$d_i$$$ meters in front of bi$$$b_i$$$ and if it is negative, ai$$$a_i$$$ should be −di$$$-d_i$$$ meters behind bi$$$b_i$$$.",
+      "Note that the sum of n$$$n$$$ over all test cases doesn't exceed 2⋅105$$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, output \"YES\" if there is an arrangement of the n$$$n$$$ soldiers that satisfies all of the m$$$m$$$ conditions and \"NO\" otherwise."
+    ],
+    "note": [
+      "For the first test case, we can partition the soldiers into camps in the following way: soldier:",
+      "Soldier 1$$$1$$$ in the camp with the coordinate x=3$$$x = 3$$$.",
+      "Soldier 2$$$2$$$ in the camp with the coordinate x=5$$$x = 5$$$.",
+      "Soldier 3$$$3$$$ in the camp with the coordinate x=9$$$x = 9$$$.",
+      "Soldier 4$$$4$$$ in the camp with the coordinate x=11$$$x = 11$$$.",
+      "For the second test case, there is no partition that can satisfy all the constraints at the same time.",
+      "For the third test case, there is no partition that satisfies all the constraints since we get contradictory information about the same pair.",
+      "For the fourth test case, in order to satisfy the only condition, a possible partition is:",
+      "Soldier 1$$$1$$$ in the camp with the coordinate x=10$$$x = 10$$$.",
+      "Soldier 2$$$2$$$ in the camp with the coordinate x=13$$$x = 13$$$.",
+      "Soldier 3$$$3$$$ in the camp with the coordinate x=−2023$$$x = -2023$$$.",
+      "Soldier 4$$$4$$$ in the camp with the coordinate x=−2023$$$x = -2023$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n5 3\n1 2 2\n2 3 4\n4 2 -6\n6 5\n1 2 2\n2 3 4\n4 2 -6\n5 4 4\n3 5 100\n2 2\n1 2 5\n1 2 4\n4 1\n1 2 3",
+      "output": "YES\nNO\nNO\nYES"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "为了赢得最艰难的战斗，Mircea 为他的军队制定了一个绝妙的策略。他有 n$$$n$$$ 名士兵，并决定以某种方式将他们安排在营地中。每名士兵必须恰好属于一个营地，并且 x$$$x$$$ 轴上的每个整数点处都有一个营地(位于点 ⋯,−2,−1,0,1,2,⋯$$$\\cdots, -2, -1, 0, 1, 2, \\cdots$$$ 处)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "该策略由 m$$$m$$$ 个条件组成。条件 i$$$i$$$ 说明，士兵 ai$$$a_i$$$ 应属于一个位于士兵 bi$$$b_i$$$ 所属营地正前方 di$$$d_i$$$ 米处的营地。(如果 di<0$$$d_i  \\lt  0$$$，那么士兵 ai$$$a_i$$$ 所属营地应位于士兵 bi$$$b_i$$$ 所属营地正后方 −di$$$-d_i$$$ 米处。)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在，Mircea 想知道是否存在一个满足这些条件的士兵划分，并向你寻求帮助！如果存在一种将 n$$$n$$$ 名士兵进行划分且满足全部 m$$$m$$$ 个条件的方案，输出“YES”，否则输出“NO”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，两个不同的士兵可以被安排在同一个营地。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤100$$$1 \\leq t \\leq 100$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个正整数 n$$$n$$$ 和 m$$$m$$$(2≤n≤2⋅105$$$2 \\leq n \\leq 2 \\cdot 10^5$$$；1≤m≤n$$$1 \\leq m \\leq n$$$)——分别表示士兵的数量和条件的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来给出 m$$$m$$$ 行，每行包含 3$$$3$$$ 个整数：ai$$$a_i$$$、bi$$$b_i$$$、di$$$d_i$$$(ai≠bi$$$a_i \\neq b_i$$$；1≤ai,bi≤n$$$1 \\leq a_i, b_i \\leq n$$$；−109≤di≤109$$$-10^9 \\leq d_i \\leq 10^9$$$)——表示题面中解释的条件。注意，如果 di$$$d_i$$$ 为正数，则 ai$$$a_i$$$ 应位于 bi$$$b_i$$$ 前方 di$$$d_i$$$ 米处；如果其为负数，则 ai$$$a_i$$$ 应位于 bi$$$b_i$$$ 后方 −di$$$-d_i$$$ 米处。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，所有测试用例中的 n$$$n$$$ 之和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果存在一种满足全部 m$$$m$$$ 个条件的 n$$$n$$$ 名士兵排列方式，则输出 \"YES\"，否则输出 \"NO\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于第一个测试用例，我们可以按如下方式将士兵划分到各个营地中：士兵：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "坐标为 x=3$$$x = 3$$$ 的营地中的士兵 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "坐标为 x=5$$$x = 5$$$ 的营地中的士兵 2$$$2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "坐标 x=9$$$x = 9$$$ 的营地中有士兵 3$$$3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "坐标 x=11$$$x = 11$$$ 的营地中有士兵 4$$$4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第二个测试用例，不存在能够同时满足所有约束的划分。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第三个测试用例，由于我们得到了关于同一对的矛盾信息，不存在满足所有约束的划分。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第四个测试用例，为了满足唯一的条件，一种可能的划分如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "坐标 x=10$$$x = 10$$$ 的营地中有士兵 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "坐标为 x=13$$$x = 13$$$ 的营地中的士兵 2$$$2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "坐标为 x=−2023$$$x = -2023$$$ 的营地中的士兵 3$$$3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "坐标为 x=−2023$$$x = -2023$$$ 的营地中的士兵 4$$$4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "H. 第三个字母",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "code": "CF1172B",
+  "letter": "B",
+  "title": "B. Nauuo and Circle",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1172/B",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Nauuo is a girl who loves drawing circles.",
+      "One day she has drawn a circle and wanted to draw a tree on it.",
+      "The tree is a connected undirected graph consisting of n$$$n$$$ nodes and n−1$$$n-1$$$ edges. The nodes are numbered from 1$$$1$$$ to n$$$n$$$.",
+      "Nauuo wants to draw a tree on the circle, the nodes of the tree should be in n$$$n$$$ distinct points on the circle, and the edges should be straight without crossing each other.",
+      "\"Without crossing each other\" means that every two edges have no common point or the only common point is an endpoint of both edges.",
+      "Nauuo wants to draw the tree using a permutation of n$$$n$$$ elements. A permutation of n$$$n$$$ elements is a sequence of integers p1,p2,…,pn$$$p_1,p_2,\\ldots,p_n$$$ in which every integer from 1$$$1$$$ to n$$$n$$$ appears exactly once.",
+      "After a permutation is chosen Nauuo draws the i$$$i$$$-th node in the pi$$$p_i$$$-th point on the circle, then draws the edges connecting the nodes.",
+      "The tree is given, Nauuo wants to know how many permutations are there so that the tree drawn satisfies the rule (the edges are straight without crossing each other). She only wants to know the answer modulo 998244353$$$998244353$$$, can you help her?",
+      "It is obvious that whether a permutation is valid or not does not depend on which n$$$n$$$ points on the circle are chosen."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (2≤n≤2⋅105$$$2\\le n\\le 2\\cdot 10^5$$$) — the number of nodes in the tree.",
+      "Each of the next n−1$$$n-1$$$ lines contains two integers u$$$u$$$ and v$$$v$$$ (1≤u,v≤n$$$1\\le u,v\\le n$$$), denoting there is an edge between u$$$u$$$ and v$$$v$$$.",
+      "It is guaranteed that the given edges form a tree."
+    ],
+    "output": [
+      "The output contains a single integer — the number of permutations suitable to draw the given tree on a circle satisfying the rule, modulo 998244353$$$998244353$$$."
+    ],
+    "note": [
+      "Example 1",
+      "All valid permutations and their spanning trees are as follows.",
+      "![](https://espresso.codeforces.com/4bbeb64c560c5faab632ae54f8543dbda91b3145.png)",
+      "Here is an example of invalid permutation: the edges (1,3)$$$(1,3)$$$ and (2,4)$$$(2,4)$$$ are crossed.",
+      "![](https://espresso.codeforces.com/28c77a9b93eca97a2911d8fe525f9bed5cf5a027.png)",
+      "Example 2",
+      "Every permutation leads to a valid tree, so the answer is 4!=24$$$4! = 24$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1 2\n1 3\n2 4",
+      "output": "16"
+    },
+    {
+      "input": "4\n1 2\n1 3\n1 4",
+      "output": "24"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Nauuo 是一个喜欢画圆的女孩。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一天，她画了一个圆，并想在圆上画一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这棵树是一个由 n$$$n$$$ 个节点和 n−1$$$n-1$$$ 条边组成的连通无向图。节点编号从 1$$$1$$$ 到 n$$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Nauuo 想在圆上绘制一棵树，树的节点应位于圆上的 n$$$n$$$ 个互不相同的点上，并且边应为直线且彼此不相交。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "“彼此不相交”是指任意两条边没有公共点，或者它们唯一的公共点是这两条边的端点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Nauuo 想使用一个由 n$$$n$$$ 个元素组成的排列来绘制这棵树。由 n$$$n$$$ 个元素组成的排列是一个整数序列 p1,p2,…,pn$$$p_1,p_2,\\ldots,p_n$$$，其中从 1$$$1$$$ 到 n$$$n$$$ 的每个整数都恰好出现一次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选定一个排列后，Nauuo 将第 i$$$i$$$ 个节点绘制在圆上的第 pi$$$p_i$$$ 个点上，然后绘制连接这些节点的边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定这棵树，Nauuo 想知道有多少个排列能够使绘制出的树满足规则(边为直线且彼此不相交)。她只想知道答案对 998244353$$$998244353$$$ 取模后的结果，你能帮助她吗？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "显然，一个排列是否有效与选择圆上的哪 n$$$n$$$ 个点无关。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(2≤n≤2⋅105$$$2\\le n\\le 2\\cdot 10^5$$$)，表示树中的节点数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n−1$$$n-1$$$ 行中，每行包含两个整数 u$$$u$$$ 和 v$$$v$$$(1≤u,v≤n$$$1\\le u,v\\le n$$$)，表示 u$$$u$$$ 和 v$$$v$$$ 之间存在一条边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证给出的边构成一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示满足规则、适合在圆上绘制给定树的排列数量，对 998244353$$$998244353$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "示例 1",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有合法排列及其生成树如下所示。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/4bbeb64c560c5faab632ae54f8543dbda91b3145.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下面是一个无效排列的示例：边 (1,3)$$$(1,3)$$$ 和 (2,4)$$$(2,4)$$$ 相交。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/28c77a9b93eca97a2911d8fe525f9bed5cf5a027.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "示例 2",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个排列都会得到一棵有效的树，因此答案是 4!=24$$$4! = 24$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Nauuo 与圆",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "code": "GYM105262G",
+  "letter": "G",
+  "title": "G. Symmetric Subarrays",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105262/problem/G",
+  "difficulty": "*1700",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Eddard and his secret partner believe arrays should be symmetric, and any asymmetric array is worthless. So, they defined a function V(a)$$$V(a)$$$ as the value of array a$$$a$$$ as follows:",
+      "If the array is symmetric*, V(a)$$$V(a)$$$ is equal to the sum of all elements in a$$$a$$$.",
+      "Otherwise, V(a)=0$$$V(a) = 0$$$.",
+      "Given an array a$$$a$$$, calculate ∑nl=1∑nr=lV(a[l..r])$$$\\sum_{l=1}^{n}\\sum_{r=l}^{n}V(a[l..r])$$$, where a[l..r]$$$a[l..r]$$$ is the subarray of a$$$a$$$ from index l$$$l$$$ to r$$$r$$$.",
+      "Since the answer can be too large, print it modulo 109+7$$$10^9+7$$$.",
+      "* A symmetric array is an array that stays the same when reversed. More formally, in a symmetric array a$$$a$$$ of n$$$n$$$ integers, ai=an+1−i$$$a_i = a_{n+1-i}$$$ for 1≤i≤n$$$1 \\le i \\le n$$$. For example, the arrays [1,3,1],[5,9,9,5],[25]$$$[1, 3, 1], [5, 9, 9, 5], [25]$$$ are symmetric, while [1,2],[4,6,4,4]$$$[1, 2], [4, 6, 4, 4]$$$ are not."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤104)$$$(1 \\le t \\le 10^4)$$$. The description of the test cases follows.",
+      "The first line of each test case contains the array length n$$$n$$$ (1≤n≤106)$$$(1 \\le n \\le 10^6)$$$.",
+      "The second line of each test case contains n$$$n$$$ integers a1,a2,...,an$$$a_1, a_2,...,a_n$$$ (1≤ai≤109)$$$(1 \\le a_i \\le 10^9)$$$.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 106$$$10^6$$$."
+    ],
+    "output": [
+      "For each test case, print the answer modulo 109+7$$$10^9 + 7$$$."
+    ],
+    "note": [
+      "In the first test case, the subarrays of [1,2,1]$$$[1, 2, 1]$$$ are {[1],[2],[1],[1,2],[2,1],[1,2,1]}$$$\\{[1], [2], [1], [1, 2], [2, 1], [1, 2, 1]\\}$$$.",
+      "Only [1],[2],[1],[1,2,1]$$$[1], [2], [1], [1, 2, 1]$$$ are symmetric, so the answer is their sum: (1)+(2)+(1)+(1+2+1)=8$$$(1) + (2) + (1) + (1 + 2 + 1) = 8$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3\n1 2 1\n4\n8 9 9 8\n5\n18 5 18 7 29\n2\n1 2\n5\n100 100 100 100 100",
+      "output": "8\n86\n118\n3\n3500"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Eddard 和他的秘密伙伴认为数组应当是对称的，任何非对称数组都毫无价值。因此，他们定义了函数 V(a)$$$V(a)$$$，表示数组 a$$$a$$$ 的价值，定义如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果数组是对称的*，则 V(a)$$$V(a)$$$ 等于 a$$$a$$$ 中所有元素之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，V(a)=0$$$V(a) = 0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个数组 a$$$a$$$，计算 ∑nl=1∑nr=lV(a[l..r])$$$\\sum_{l=1}^{n}\\sum_{r=l}^{n}V(a[l..r])$$$，其中 a[l..r]$$$a[l..r]$$$ 是数组 a$$$a$$$ 中从下标 l$$$l$$$ 到 r$$$r$$$ 的子数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于答案可能很大，请输出答案对 109+7$$$10^9+7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "* 对称数组是指翻转后仍保持不变的数组。更正式地说，在一个由 n$$$n$$$ 个整数构成的对称数组 a$$$a$$$ 中，对于 1≤i≤n$$$1 \\le i \\le n$$$，都有 ai=an+1−i$$$a_i = a_{n+1-i}$$$。例如，数组 [1,3,1]、[5,9,9,5]、[25]$$$[1, 3, 1], [5, 9, 9, 5], [25]$$$ 是对称的，而 [1,2]、[4,6,4,4]$$$[1, 2], [4, 6, 4, 4]$$$ 不是。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例数量 t$$$t$$$(1≤t≤104)$$$(1 \\le t \\le 10^4)$$$。下面给出各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含数组长度 n$$$n$$$(1≤n≤106)$$$(1 \\le n \\le 10^6)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 a1,a2,...,an$$$a_1, a_2,...,a_n$$$ (1≤ai≤109)$$$(1 \\le a_i \\le 10^9)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 106$$$10^6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出答案对 109+7$$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，[1,2,1]$$$[1, 2, 1]$$$ 的子数组为 {[1],[2],[1],[1,2],[2,1],[1,2,1]}$$$\\{[1], [2], [1], [1, 2], [2, 1], [1, 2, 1]\\}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "只有 [1],[2],[1],[1,2,1]$$$[1], [2], [1], [1, 2, 1]$$$ 是对称的，因此答案为它们的和：(1)+(2)+(1)+(1+2+1)=8$$$(1) + (2) + (1) + (1 + 2 + 1) = 8$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. 对称子数组",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

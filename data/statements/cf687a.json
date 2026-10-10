@@ -1,0 +1,94 @@
+{
+  "code": "CF687A",
+  "letter": "A",
+  "title": "A. NP-Hard Problem",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/687/A",
+  "difficulty": "1500",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Recently, Pari and Arya did some research about NP-Hard problems and they found the minimum vertex cover problem very interesting.",
+      "Suppose the graph G is given. Subset A of its vertices is called a vertex cover of this graph, if for each edge uv there is at least one endpoint of it in this set, i.e. ![](https://espresso.codeforces.com/01df7772bf62e4ead52b462423b3d53890cdd820.png) or ![](https://espresso.codeforces.com/4a270f9b8acd044f93b92f335e44798f6c60929d.png) (or both).",
+      "Pari and Arya have won a great undirected graph as an award in a team contest. Now they have to split it in two parts, but both of them want their parts of the graph to be a vertex cover.",
+      "They have agreed to give you their graph and you need to find two disjoint subsets of its vertices A and B, such that both A and B are vertex cover or claim it's impossible. Each vertex should be given to no more than one of the friends (or you can even keep it for yourself)."
+    ],
+    "input": [
+      "The first line of the input contains two integers n and m (2 ≤ n ≤ 100 000, 1 ≤ m ≤ 100 000) — the number of vertices and the number of edges in the prize graph, respectively.",
+      "Each of the next m lines contains a pair of integers ui and vi (1  ≤  ui,  vi  ≤  n), denoting an undirected edge between ui and vi. It's guaranteed the graph won't contain any self-loops or multiple edges."
+    ],
+    "output": [
+      "If it's impossible to split the graph between Pari and Arya as they expect, print \"-1\" (without quotes).",
+      "If there are two disjoint sets of vertices, such that both sets are vertex cover, print their descriptions. Each description must contain two lines. The first line contains a single integer k denoting the number of vertices in that vertex cover, and the second line contains k integers — the indices of vertices. Note that because of m ≥ 1, vertex cover cannot be empty."
+    ],
+    "note": [
+      "In the first sample, you can give the vertex number 2 to Arya and vertices numbered 1 and 3 to Pari and keep vertex number 4 for yourself (or give it someone, if you wish).",
+      "In the second sample, there is no way to satisfy both Pari and Arya."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 2\n1 2\n2 3",
+      "output": "1\n2 \n2\n1 3"
+    },
+    {
+      "input": "3 3\n1 2\n2 3\n1 3",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "最近，Pari 和 Arya 对 NP-hard 问题进行了一些研究，他们发现最小顶点覆盖问题非常有趣。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "假设给定图 G。若对于每条边 uv，其至少有一个端点属于集合 A，即 ![](https://espresso.codeforces.com/01df7772bf62e4ead52b462423b3d53890cdd820.png) 或 ![](https://espresso.codeforces.com/4a270f9b8acd044f93b92f335e44798f6c60929d.png)(或两者都属于)，则称其顶点子集 A 为该图的顶点覆盖。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Pari 和 Arya 在一次团队比赛中赢得了一张很大的无向图作为奖励。现在，他们需要将这张图分成两部分，但他们都希望自己得到的图部分是一个顶点覆盖。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他们同意将图交给你，你需要找出其顶点的两个不相交子集 A 和 B，使得 A 和 B 都是顶点覆盖，或者声明这是不可能的。每个顶点最多只能分配给其中一位朋友（当然，你也可以将其留给自己）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 m（2 ≤ n ≤ 100 000，1 ≤ m ≤ 100 000），分别表示奖励图的顶点数和边数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行中的每一行包含一对整数 ui 和 vi（1  ≤  ui，  vi  ≤  n），表示顶点 ui 和 vi 之间的一条无向边。保证图中不包含自环或重边。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果无法按照 Pari 和 Arya 的要求划分图，请输出 \"-1\"（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在两个不相交的顶点集合，使得两个集合都是顶点覆盖，请输出它们的描述。每个描述包含两行。第一行包含一个整数 k，表示该顶点覆盖中顶点的数量；第二行包含 k 个整数，表示这些顶点的编号。注意，由于 m ≥ 1，顶点覆盖不可能为空。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，你可以将编号为 2 的顶点分配给 Arya，将编号为 1 和 3 的顶点分配给 Pari，并将编号为 4 的顶点留给自己（如果你愿意，也可以将其分配给其他人）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，没有办法同时满足 Pari 和 Arya。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. NP-hard 问题",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

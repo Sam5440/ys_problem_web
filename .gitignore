@@ -1,0 +1,25 @@
+node_modules/
+.next/
+out/
+.DS_Store
+*.log
+.env*
+.vercel
+
+# Data lives on dedicated branches (data/problems, data/misc-*, deploy) and is
+# restored into the worktree by `npm run data:pull` / scripts/restore-data.mjs.
+# The CI data scripts force-add these paths via git plumbing, so ignore rules
+# here only affect the code-only main branch.
+/data/
+/public/ci-logs/
+
+# generated at build time (scripts/write-public-data.mjs)
+public/build-info.json
+public/leaderboard.json
+public/archive.json
+
+# browser compiler runtime binaries (data/runtime branch projection)
+/public/compiler/
+
+# 编译器独立工作区 UI 的静态审阅原型（未接入构建，保留在本地）
+/Demo/

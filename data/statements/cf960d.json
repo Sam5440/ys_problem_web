@@ -1,0 +1,154 @@
+{
+  "code": "CF960D",
+  "letter": "D",
+  "title": "D. Full Binary Tree Queries",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/960/D",
+  "difficulty": "2100",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You have a full binary tree having infinite levels.",
+      "Each node has an initial value. If a node has value x, then its left child has value 2·x and its right child has value 2·x + 1.",
+      "The value of the root is 1.",
+      "You need to answer Q queries.",
+      "There are 3 types of queries:",
+      "Cyclically shift the values of all nodes on the same level as node with value X by K units. (The values/nodes of any other level are not affected).",
+      "Cyclically shift the nodes on the same level as node with value X by K units. (The subtrees of these nodes will move along with them).",
+      "Print the value of every node encountered on the simple path from the node with value X to the root.",
+      "Positive K implies right cyclic shift and negative K implies left cyclic shift.",
+      "It is guaranteed that atleast one type 3 query is present."
+    ],
+    "input": [
+      "The first line contains a single integer Q (1 ≤ Q ≤ 105).",
+      "Then Q queries follow, one per line:",
+      "Queries of type 1 and 2 have the following format: T X K (1 ≤ T ≤ 2; 1 ≤ X ≤ 1018; 0 ≤ |K| ≤ 1018), where T is type of the query.",
+      "Queries of type 3 have the following format: 3 X (1 ≤ X ≤ 1018)."
+    ],
+    "output": [
+      "For each query of type 3, print the values of all nodes encountered in descending order."
+    ],
+    "note": [
+      "Following are the images of the first 4 levels of the tree in the first test case:",
+      "Original:",
+      "![](https://espresso.codeforces.com/4e484f16a168a67eac3e1ec0d26b44f3809a5250.png)",
+      "After query 1 2 1:",
+      "![](https://espresso.codeforces.com/ab9ad516ceb0f64227a0d37a7cf1bfe27cd2be59.png)",
+      "After query 2 4 -1:",
+      "![](https://espresso.codeforces.com/037a33ef65fee09fc4ba5367d7cc258b66e4048e.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3 12\n1 2 1\n3 12\n2 4 -1\n3 8",
+      "output": "12 6 3 1 \n12 6 2 1 \n8 4 2 1"
+    },
+    {
+      "input": "5\n3 14\n1 5 -3\n3 14\n1 3 1\n3 14",
+      "output": "14 7 3 1 \n14 6 3 1 \n14 6 2 1"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "下面给出了第一个测试用例中树的前 4 层的图像：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "原始状态：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/4e484f16a168a67eac3e1ec0d26b44f3809a5250.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "执行查询 1 2 1 后：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/ab9ad516ceb0f64227a0d37a7cf1bfe27cd2be59.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "执行查询 2 4 -1 之后：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/037a33ef65fee09fc4ba5367d7cc258b66e4048e.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 Q（1 ≤ Q ≤ 105）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来有 Q 个查询，每行一个：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "类型 1 和类型 2 的查询格式如下：T X K（1 ≤ T ≤ 2；1 ≤ X ≤ 1018；0 ≤ |K| ≤ 1018），其中 T 表示查询的类型。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "类型 3 的查询格式如下：3 X（1 ≤ X ≤ 1018）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个类型 3 的查询，按降序输出所有经过的节点的值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "你有一棵具有无限层的满二叉树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个节点都有一个初始值。如果某个节点的值为 x，那么它的左子节点的值为 2·x，右子节点的值为 2·x + 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "根的值为 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要回答 Q 个查询。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "查询有 3 种类型：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将值为 X 的节点所在层的所有节点的值循环移动 K 个位置。（其他任何层的值和节点都不会受到影响。）",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将值为 X 的节点所在层的所有节点循环移动 K 个位置。（这些节点的子树也会随之移动。）",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出从值为 X 的节点到根节点的简单路径上经过的每个节点的值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "K 为正数表示向右循环移位，K 为负数表示向左循环移位。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证至少存在一个类型 3 的查询。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 满二叉树查询",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

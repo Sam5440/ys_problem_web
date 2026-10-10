@@ -1,0 +1,98 @@
+{
+  "code": "CF718A",
+  "letter": "A",
+  "title": "A. Efim and Strange Grade",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/718/A",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Efim just received his grade for the last test. He studies in a special school and his grade can be equal to any positive decimal fraction. First he got disappointed, as he expected a way more pleasant result. Then, he developed a tricky plan. Each second, he can ask his teacher to round the grade at any place after the decimal point (also, he can ask to round to the nearest integer).",
+      "There are t seconds left till the end of the break, so Efim has to act fast. Help him find what is the maximum grade he can get in no more than t seconds. Note, that he can choose to not use all t seconds. Moreover, he can even choose to not round the grade at all.",
+      "In this problem, classic rounding rules are used: while rounding number to the n-th digit one has to take a look at the digit n + 1. If it is less than 5 than the n-th digit remain unchanged while all subsequent digits are replaced with 0. Otherwise, if the n + 1 digit is greater or equal to 5, the digit at the position n is increased by 1 (this might also change some other digits, if this one was equal to 9) and all subsequent digits are replaced with 0. At the end, all trailing zeroes are thrown away.",
+      "For example, if the number 1.14 is rounded to the first decimal place, the result is 1.1, while if we round 1.5 to the nearest integer, the result is 2. Rounding number 1.299996121 in the fifth decimal place will result in number 1.3."
+    ],
+    "input": [
+      "The first line of the input contains two integers n and t (1 ≤ n ≤ 200 000, 1 ≤ t ≤ 109) — the length of Efim's grade and the number of seconds till the end of the break respectively.",
+      "The second line contains the grade itself. It's guaranteed that the grade is a positive number, containing at least one digit after the decimal points, and it's representation doesn't finish with 0."
+    ],
+    "output": [
+      "Print the maximum grade that Efim can get in t seconds. Do not print trailing zeroes."
+    ],
+    "note": [
+      "In the first two samples Efim initially has grade 10.245.",
+      "During the first second Efim can obtain grade 10.25, and then 10.3 during the next second. Note, that the answer 10.30 will be considered incorrect.",
+      "In the third sample the optimal strategy is to not perform any rounding at all."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 1\n10.245",
+      "output": "10.25"
+    },
+    {
+      "input": "6 2\n10.245",
+      "output": "10.3"
+    },
+    {
+      "input": "3 100\n9.2",
+      "output": "9.2"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "在前两个样例中，Efim 初始成绩为 10.245。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一秒内，Efim 可以得到 10.25 的成绩，接着在下一秒内得到 10.3。注意，答案 10.30 将被判定为错误。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，最优策略是完全不进行任何舍入。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Efim 刚刚收到了上次考试的成绩。他就读于一所特殊学校，他的成绩可以是任意正的十进制小数。起初他很失望，因为他原本期待一个愉快得多的结果。然后，他制定了一个巧妙的计划。每秒钟，他都可以请求老师将成绩在小数点后的任意位置进行四舍五入（也可以请求将其四舍五入到最接近的整数）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "距离休息结束还剩 t 秒，因此 Efim 必须迅速行动。请帮助他找出在不超过 t 秒内能够获得的最高成绩。注意，他可以选择不使用全部 t 秒。此外，他甚至可以选择完全不进行四舍五入。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "本题使用经典的四舍五入规则：将一个数舍入到第 n 位时，需要查看第 n+1 位。如果它小于 5，则第 n 位保持不变，并将其后的所有位替换为 0。否则，如果第 n+1 位大于等于 5，则第 n 位加 1（如果该位原本为 9，这还可能导致其他位发生变化），并将其后的所有位替换为 0。最后，去掉所有末尾的 0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，将数字 1.14 舍入到小数点后第一位时，结果为 1.1；而将 1.5 舍入到最接近的整数时，结果为 2。将数字 1.299996121 舍入到小数点后第五位，结果为 1.3。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 t（1 ≤ n ≤ 200 000，1 ≤ t ≤ 109），分别表示 Efim 的成绩长度以及距离休息结束所剩的秒数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含成绩本身。保证该成绩为正数，小数点后至少包含一位数字，且其表示形式不以 0 结尾。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Efim 在 t 秒内能够获得的最高成绩。不要输出末尾的 0。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. Efim 与奇怪的成绩",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

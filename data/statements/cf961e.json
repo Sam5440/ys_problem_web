@@ -1,0 +1,108 @@
+{
+  "code": "CF961E",
+  "letter": "E",
+  "title": "E. Tufurama",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/961/E",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "One day Polycarp decided to rewatch his absolute favourite episode of well-known TV series \"Tufurama\". He was pretty surprised when he got results only for season 7 episode 3 with his search query of \"Watch Tufurama season 3 episode 7 online full hd free\". This got Polycarp confused — what if he decides to rewatch the entire series someday and won't be able to find the right episodes to watch? Polycarp now wants to count the number of times he will be forced to search for an episode using some different method.",
+      "TV series have n seasons (numbered 1 through n), the i-th season has ai episodes (numbered 1 through ai). Polycarp thinks that if for some pair of integers x and y (x < y) exist both season x episode y and season y episode x then one of these search queries will include the wrong results. Help Polycarp to calculate the number of such pairs!"
+    ],
+    "input": [
+      "The first line contains one integer n (1  ≤ n  ≤  2·105) — the number of seasons.",
+      "The second line contains n integers separated by space a1, a2, ..., an (1 ≤ ai ≤ 109) — number of episodes in each season."
+    ],
+    "output": [
+      "Print one integer — the number of pairs x and y (x < y) such that there exist both season x episode y and season y episode x."
+    ],
+    "note": [
+      "Possible pairs in the second example:",
+      "x = 1, y = 2 (season 1 episode 2 ![](https://espresso.codeforces.com/8774ca35b6e628888a4670e4539d47857e5e5841.png) season 2 episode 1);",
+      "x = 2, y = 3 (season 2 episode 3 ![](https://espresso.codeforces.com/8774ca35b6e628888a4670e4539d47857e5e5841.png) season 3 episode 2);",
+      "x = 1, y = 3 (season 1 episode 3 ![](https://espresso.codeforces.com/8774ca35b6e628888a4670e4539d47857e5e5841.png) season 3 episode 1).",
+      "In the third example:",
+      "x = 1, y = 2 (season 1 episode 2 ![](https://espresso.codeforces.com/8774ca35b6e628888a4670e4539d47857e5e5841.png) season 2 episode 1);",
+      "x = 1, y = 3 (season 1 episode 3 ![](https://espresso.codeforces.com/8774ca35b6e628888a4670e4539d47857e5e5841.png) season 3 episode 1)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 2 3 4 5",
+      "output": "0"
+    },
+    {
+      "input": "3\n8 12 7",
+      "output": "3"
+    },
+    {
+      "input": "3\n3 2 1",
+      "output": "2"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1  ≤ n  ≤  2·105）——季数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个用空格分隔的整数 a1, a2, ..., an（1 ≤ ai ≤ 109）——每一季的集数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——满足以下条件的二元组 x 和 y（x < y）的数量：第 x 季存在第 y 集，且第 y 季存在第 x 集。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第二个样例中的可能二元组：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "x = 1, y = 2(第 1 季第 2 集 ![](https://espresso.codeforces.com/8774ca35b6e628888a4670e4539d47857e5e5841.png) 第 2 季第 1 集)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "x = 2, y = 3(第 2 季第 3 集 ![](https://espresso.codeforces.com/8774ca35b6e628888a4670e4539d47857e5e5841.png) 第 3 季第 2 集)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "x = 1, y = 3(第 1 季第 3 集 ![](https://espresso.codeforces.com/8774ca35b6e628888a4670e4539d47857e5e5841.png) 第 3 季第 1 集)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "x = 1, y = 2(第 1 季第 2 集 ![](https://espresso.codeforces.com/8774ca35b6e628888a4670e4539d47857e5e5841.png) 第 2 季第 1 集)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "x = 1, y = 3(第 1 季第 3 集 ![](https://espresso.codeforces.com/8774ca35b6e628888a4670e4539d47857e5e5841.png) 第 3 季第 1 集)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "一天，Polycarp 决定重温著名电视剧《Tufurama》中自己最喜欢的一集。当他搜索“免费观看 Tufurama 第 3 季第 7 集完整版高清在线”时，却只得到了第 7 季第 3 集的结果，这让他非常惊讶。Polycarp 感到很困惑：如果有一天他决定重温整部电视剧，却无法找到正确的剧集来观看，该怎么办？现在，Polycarp 想要计算自己被迫使用其他方法搜索剧集的次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "电视剧共有 n 季，编号从 1 到 n，第 i 季有 ai 集，编号从 1 到 ai。Polycarp 认为，如果存在一对整数 x 和 y（x < y），使得第 x 季第 y 集和第 y 季第 x 集都存在，那么其中一个搜索结果就会包含错误的剧集。请帮助 Polycarp 计算这样的数对数量！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. Tufurama",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

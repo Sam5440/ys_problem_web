@@ -1,0 +1,100 @@
+{
+  "code": "GYM106511F",
+  "letter": "F",
+  "title": "F. Manhattan Patrol",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106511/problem/F",
+  "difficulty": "*1100",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "The NYPD is making a plan for patrolling a neighborhood of Manhattan.",
+      "The neighborhood can be represented by a n×m$$$n \\times m$$$ grid of square blocks with coordinates from (1,1)$$$(1, 1)$$$ to (n,m)$$$(n, m)$$$. Each block is patrolled by one particular officer. For training purposes, every once in a while the NYPD wants to change assignments of officers to blocks. However, to maintain the existing cooperations, they want to preserve the Manhattan distance between each pair of officers.",
+      "More formally, let (x1,y1)$$$(x_1, y_1)$$$ and (x2,y2)$$$(x_2, y_2)$$$ be the initial coordinates of two officers, and (x′1,y′1)$$$(x_1', y_1')$$$ and (x′2,y′2)$$$(x_2', y_2')$$$ be their final coordinates after reassignment. Then, the following must hold: |x1−x2|+|y1−y2|=|x′1−x′2|+|y′1−y′2|$$$|x_1-x_2|+|y_1-y_2| = |x_1'-x_2'| + |y_1'-y_2'|$$$.",
+      "How many possible assignments of officers to blocks are there which preserve the pairwise Manhattan distances?",
+      "Two assignments are considered different if some officer is moved to a different block. The officers are allowed to stay in original positions. Since the answer might be large, output its remainder modulo 998244353$$$998244353$$$."
+    ],
+    "input": [
+      "The problem consists of T$$$T$$$ independent test cases.",
+      "The first line contains a single integer T$$$T$$$ (1≤T≤104$$$1 \\leq T \\leq 10^4$$$) — the number of independent test cases to process.",
+      "Each of the next T$$$T$$$ lines contains two integers n$$$n$$$ and m$$$m$$$ (1≤n,m≤5000$$$1 \\leq n, m \\leq 5000$$$) — the dimensions of the neighborhood grid."
+    ],
+    "output": [
+      "For each test case, output a single line — the number of assignments of officers to blocks which preserve the pairwise Manhattan distances modulo 998244353$$$998244353$$$."
+    ],
+    "note": [
+      "In the first test case, there is only one assignment for a 1×1$$$1 \\times 1$$$ grid.",
+      "In the second test case, there are 4 valid assignments for a 2×3$$$2 \\times 3$$$ grid. Two of them are shown below. On the right, an invalid assignment is shown: the distance between officers 2$$$2$$$ and 5$$$5$$$ changes from 1$$$1$$$ to 3$$$3$$$.",
+      "![](https://espresso.codeforces.com/b0b09693a3ed61204c173f7247af116db98b6bfd.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 1\n2 3",
+      "output": "1\n4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "纽约市警察局（NYPD）正在制定一项在曼哈顿某街区巡逻的计划。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "该街区可以表示为一个由 n×m$$$n \\times m$$$ 个方形街区组成的网格，其坐标范围从 (1,1)$$$(1, 1)$$$ 到 (n,m)$$$(n, m)$$$。每个街区由一名特定的警员负责巡逻。为了进行训练，纽约警察局偶尔希望重新分配警员所负责的街区。然而，为了维持现有的合作关系，他们希望保留每对警员之间的曼哈顿距离。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更形式化地，设 (x1,y1)$$$(x_1, y_1)$$$ 和 (x2,y2)$$$(x_2, y_2)$$$ 是两名警员的初始坐标，(x′1,y′1)$$$(x_1', y_1')$$$ 和 (x′2,y′2)$$$(x_2', y_2')$$$ 是重新分配后的最终坐标。那么必须满足以下条件：|x1−x2|+|y1−y2|=|x′1−x′2|+|y′1−y′2|$$$|x_1-x_2|+|y_1-y_2| = |x_1'-x_2'| + |y_1'-y_2'|$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有多少种将警员分配到街区的方案，可以保持任意两名警员之间的曼哈顿距离？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果某名警员被移动到了不同的街区，则认为两种分配方案不同。允许警员留在原来的位置。由于答案可能很大，请输出其对 998244353$$$998244353$$$ 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "本题包含 T$$$T$$$ 个相互独立的测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤104$$$1 \\leq T \\leq 10^4$$$)——要处理的独立测试用例数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 T$$$T$$$ 行中，每行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤5000$$$1 \\leq n, m \\leq 5000$$$)—— 即邻域网格的尺寸。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一行 —— 将警察分配到街区且保持两两曼哈顿距离不变的方案数，对 998244353$$$998244353$$$ 取模。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，1×1$$$1 \\times 1$$$ 的网格只有一种分配方案。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个测试用例中，2×3$$$2 \\times 3$$$ 的网格共有 4 种合法分配方案。其中两种如下所示。右侧展示了一种不合法分配：警察 2$$$2$$$ 和 5$$$5$$$ 之间的距离从 1$$$1$$$ 变成了 3$$$3$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/b0b09693a3ed61204c173f7247af116db98b6bfd.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 曼哈顿巡逻",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

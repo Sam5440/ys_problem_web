@@ -1,0 +1,105 @@
+{
+  "code": "GYM103821A",
+  "letter": "A",
+  "title": "A. Laser Tag",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103821/problem/A",
+  "difficulty": "*1700",
+  "timeLimit": "2.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Laser tag is a team shooting game, where players attempt to shoot other individuals by tagging them with a laser emitting gun.",
+      "Ali and Resli decided to play a match, so each one of them gathered a team of n$$$n$$$ players.",
+      "The Arena where the match will be held is a N×N$$$N\\times N$$$ 2d$$$2d$$$ plane, the ith$$$i_{th}$$$ player of Resli's team will stand at coordinates (i,0)$$$(i, 0)$$$, while the ith$$$i_{th}$$$ player of Ali's team will stand at coordinates (i,N)$$$(i, N)$$$.",
+      "To make things challenging, the arena has Q$$$Q$$$ walls, each wall is parallel to the x-axis and is given by three integers x1,x2,y$$$x_1, x_2, y$$$ which means that the wall extends between points (x1,y)$$$(x_1, y)$$$ and (x2,y)$$$(x_2, y)$$$.",
+      "To ensure his win, Resli modified his team's guns, such that when a laser beam hits some wall, the beam will stop and two new beams will be generated at the endpoints of the wall (at coordinates (x1,y)$$$(x_1,y)$$$ and (x2,y)$$$(x_2,y)$$$ ) and will continue forward in the same direction as the original laser beam, and if one of these new generated laser beams hits a wall, the previously mentioned process will happen again (see notes for clarification).",
+      "Can you help Resli to find out how many players of Ali's team will be tagged by at least one laser beam if each player of Resli's team shot one laser beam in a direction parallel to the y axis towards the opposite team player (the ith$$$i_{th}$$$ player of Resli's team will shoot one laser beam in the direction of the ith$$$i_{th}$$$ player of Ali's team)."
+    ],
+    "input": [
+      "The first line contains a single integer T$$$T$$$ (1≤T≤104$$$1\\le{T}\\le{10}^4$$$), the number of test cases.",
+      "The first line of each test case contains two integers n$$$n$$$ (2≤n≤2×105$$$2\\le{n}\\le{2}\\times{10}^5$$$) and q$$$q$$$ (1≤q≤n$$$1\\le{q}\\le{n}$$$).",
+      "Each of the next q$$$q$$$ lines of each test case contains three integers x1$$$x_1$$$,x2$$$x_2$$$,y$$$y$$$ (1≤x1≤x2≤n$$$1\\le{x_1}\\le {x_2}\\le{n}$$$), (1≤y≤n−1$$$1\\le {y}\\le {n-1}$$$), which means there is a wall between coordinates (x1,y)$$$(x_1,y)$$$ and (x2,y)$$$(x_2,y)$$$.",
+      "The sum of n$$$n$$$ over all test cases will not exceed 2×105$$$2\\times {10}^5$$$.",
+      "It's guaranteed that no two walls will overlap or share a common point.$$$\\textbf {It's guaranteed that no two walls will overlap or share a common point.}$$$"
+    ],
+    "output": [
+      "Output T$$$T$$$ lines, the ith$$$i^{th}$$$ line contains the answer for the ith$$$i^{th}$$$ test case."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/9f3e9f1fbf353990989071cc67ce31f1a098d7f7.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n5 4\n1 4 1\n4 5 2\n2 3 3\n3 5 4",
+      "output": "3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "激光枪战是一种团队射击游戏，玩家使用发射激光的枪标记其他人，从而尝试击中他们。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Ali 和 Resli 决定进行一场比赛，因此他们各自组建了一支由 n$$$n$$$ 名玩家组成的队伍。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "比赛将在一个 N×N$$$N\\times N$$$ 的二维$$$2d$$$ 平面竞技场中进行，Resli 队伍的第 ith$$$i_{th}$$$ 名玩家将站在坐标 (i,0)$$$(i, 0)$$$ 处，而 Ali 队伍的第 ith$$$i_{th}$$$ 名玩家将站在坐标 (i,N)$$$(i, N)$$$ 处。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了增加挑战性，竞技场中有 Q$$$Q$$$ 面墙。每面墙都平行于 x 轴，并由三个整数 x1、x2、y$$$x_1, x_2, y$$$ 给出，这表示墙位于点 (x1,y)$$$(x_1, y)$$$ 和 (x2,y)$$$(x_2, y)$$$ 之间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了确保获胜，Resli 改造了自己队伍的枪，使得当一道激光束击中某面墙时，激光束会停止，并在墙的两个端点处生成两道新的激光束(坐标分别为 (x1,y)$$$(x_1,y)$$$ 和 (x2,y)$$$(x_2,y)$$$)，它们会沿着与原激光束相同的方向继续前进。如果其中一道新生成的激光束击中了一面墙，则上述过程会再次发生(具体说明请参见注释)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你能帮助 Resli 算出 Ali 队伍中有多少名玩家会至少被一道激光束标记吗？Resli 队伍的每名玩家都沿平行于 y 轴、朝向对方队伍玩家的方向发射一道激光束，其中 Resli 队伍的第 ith$$$i_{th}$$$ 名玩家会朝 Ali 队伍的第 ith$$$i_{th}$$$ 名玩家发射一道激光束。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤104$$$1\\le{T}\\le{10}^4$$$)，表示测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$(2≤n≤2×105$$$2\\le{n}\\le{2}\\times{10}^5$$$)和 q$$$q$$$(1≤q≤n$$$1\\le{q}\\le{n}$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个测试用例接下来的 q$$$q$$$ 行中，每行包含三个整数 x1$$$x_1$$$、x2$$$x_2$$$、y$$$y$$$(1≤x1≤x2≤n$$$1\\le{x_1}\\le {x_2}\\le{n}$$$)，(1≤y≤n−1$$$1\\le {y}\\le {n-1}$$$)，表示在坐标 (x1,y)$$$(x_1,y)$$$ 和 (x2,y)$$$(x_2,y)$$$ 之间有一堵墙。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "所有测试用例的 n$$$n$$$ 之和不超过 2×105$$$2\\times {10}^5$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "保证任意两面墙不会重叠或共享公共点。$$$\\textbf {It's guaranteed that no two walls will overlap or share a common point.}$$$",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 T$$$T$$$ 行，第 i$$$i^{th}$$$ 行包含第 i$$$i^{th}$$$ 个测试用例的答案。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "![](https://espresso.codeforces.com/9f3e9f1fbf353990989071cc67ce31f1a098d7f7.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 激光枪战",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "code": "CF1031C",
+  "letter": "C",
+  "title": "C. Cram Time",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1031/C",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "In a galaxy far, far away Lesha the student has just got to know that he has an exam in two days. As always, he hasn't attended any single class during the previous year, so he decided to spend the remaining time wisely.",
+      "Lesha knows that today he can study for at most a$$$a$$$ hours, and he will have b$$$b$$$ hours to study tomorrow. Note that it is possible that on his planet there are more hours in a day than on Earth. Lesha knows that the quality of his knowledge will only depend on the number of lecture notes he will read. He has access to an infinite number of notes that are enumerated with positive integers, but he knows that he can read the first note in one hour, the second note in two hours and so on. In other words, Lesha can read the note with number k$$$k$$$ in k$$$k$$$ hours. Lesha can read the notes in arbitrary order, however, he can't start reading a note in the first day and finish its reading in the second day.",
+      "Thus, the student has to fully read several lecture notes today, spending at most a$$$a$$$ hours in total, and fully read several lecture notes tomorrow, spending at most b$$$b$$$ hours in total. What is the maximum number of notes Lesha can read in the remaining time? Which notes should he read in the first day, and which — in the second?"
+    ],
+    "input": [
+      "The only line of input contains two integers a$$$a$$$ and b$$$b$$$ (0≤a,b≤109$$$0 \\leq a, b \\leq 10^{9}$$$) — the number of hours Lesha has today and the number of hours Lesha has tomorrow."
+    ],
+    "output": [
+      "In the first line print a single integer n$$$n$$$ (0≤n≤a$$$0 \\leq n \\leq a$$$) — the number of lecture notes Lesha has to read in the first day. In the second line print n$$$n$$$ distinct integers p1,p2,…,pn$$$p_1, p_2, \\ldots, p_n$$$ (1≤pi≤a$$$1 \\leq p_i \\leq a$$$), the sum of all pi$$$p_i$$$ should not exceed a$$$a$$$.",
+      "In the third line print a single integer m$$$m$$$ (0≤m≤b$$$0 \\leq m \\leq b$$$) — the number of lecture notes Lesha has to read in the second day. In the fourth line print m$$$m$$$ distinct integers q1,q2,…,qm$$$q_1, q_2, \\ldots, q_m$$$ (1≤qi≤b$$$1 \\leq q_i \\leq b$$$), the sum of all qi$$$q_i$$$ should not exceed b$$$b$$$.",
+      "All integers pi$$$p_i$$$ and qi$$$q_i$$$ should be distinct. The sum n+m$$$n + m$$$ should be largest possible."
+    ],
+    "note": [
+      "In the first example Lesha can read the third note in 3$$$3$$$ hours in the first day, and the first and the second notes in one and two hours correspondingly in the second day, spending 3$$$3$$$ hours as well. Note that Lesha can make it the other way round, reading the first and the second notes in the first day and the third note in the second day.",
+      "In the second example Lesha should read the third and the sixth notes in the first day, spending 9$$$9$$$ hours in total. In the second day Lesha should read the first, second fourth and fifth notes, spending 12$$$12$$$ hours in total."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3",
+      "output": "1\n3 \n2\n2 1"
+    },
+    {
+      "input": "9 12",
+      "output": "2\n3 6\n4\n1 2 4 5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在一个遥远的星系中，学生 Lesha 刚刚得知自己两天后要参加考试。和往常一样，他在过去的一年里一节课都没有上过，因此他决定明智地利用剩下的时间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Lesha 知道，今天他最多可以学习 a$$$a$$$ 个小时，明天则有 b$$$b$$$ 个小时用于学习。注意，在他的星球上，一天的小时数可能比地球更多。Lesha 知道，他的知识水平只取决于他阅读的讲义数量。他可以获得无限多份讲义，这些讲义用正整数编号，但他知道阅读第一份讲义需要一个小时，阅读第二份讲义需要两个小时，以此类推。换句话说，Lesha 阅读编号为 k$$$k$$$ 的讲义需要 k$$$k$$$ 个小时。Lesha 可以按照任意顺序阅读讲义，但是不能在第一天开始阅读某份讲义，然后在第二天完成阅读。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，Lesha 今天需要完整阅读若干份讲义，总计最多花费 a$$$a$$$ 小时；明天也需要完整阅读若干份讲义，总计最多花费 b$$$b$$$ 小时。在剩余时间内，Lesha 最多能阅读多少份讲义？第一天应该阅读哪些讲义，第二天应该阅读哪些讲义？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入仅一行，包含两个整数 a$$$a$$$ 和 b$$$b$$$(0≤a,b≤109$$$0 \\leq a, b \\leq 10^{9}$$$)，分别表示 Lesha 今天和明天拥有的小时数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出一个整数 n$$$n$$$(0≤n≤a$$$0 \\leq n \\leq a$$$)，表示 Lesha 第一天需要阅读的讲义数量。第二行输出 n$$$n$$$ 个互不相同的整数 p1,p2,…,pn$$$p_1, p_2, \\ldots, p_n$$$(1≤pi≤a$$$1 \\leq p_i \\leq a$$$)，所有 pi$$$p_i$$$ 的总和不应超过 a$$$a$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行输出一个整数 m$$$m$$$(0≤m≤b$$$0 \\leq m \\leq b$$$)，表示 Lesha 第二天需要阅读的讲义数量。第四行输出 m$$$m$$$ 个互不相同的整数 q1,q2,…,qm$$$q_1, q_2, \\ldots, q_m$$$(1≤qi≤b$$$1 \\leq q_i \\leq b$$$)，所有 qi$$$q_i$$$ 的总和不应超过 b$$$b$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有整数 pi$$$p_i$$$ 和 qi$$$q_i$$$ 应当互不相同。总数 n+m$$$n + m$$$ 应尽可能大。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Lesha 可以在第一天用 3$$$3$$$ 小时阅读第三份讲义，并在第二天分别用一小时和两小时阅读第一份和第二份讲义，总计同样花费 3$$$3$$$ 小时。注意，Lesha 也可以反过来安排，在第一天阅读第一份和第二份讲义，在第二天阅读第三份讲义。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，Lesha 第一天应阅读第三份和第六份笔记，总共花费 9$$$9$$$ 小时。第二天，Lesha 应阅读第一份、第二份、第四份和第五份笔记，总共花费 12$$$12$$$ 小时。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 临时抱佛脚",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

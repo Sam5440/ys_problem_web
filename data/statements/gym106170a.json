@@ -1,0 +1,128 @@
+{
+  "code": "GYM106170A",
+  "letter": "A",
+  "title": "A. Rainbow",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106170/problem/A",
+  "difficulty": "*2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let T=(V,E)$$$T = (V, E)$$$ be a tree with n$$$n$$$ vertices and n−1$$$n-1$$$ edges. Each edge of the tree can be assigned a colour from {0,1,…,K−1}$$$\\{0, 1, \\dots, K-1\\}$$$.",
+      "A simple path in a tree is called a K$$$K$$$-rainbow path if all edges along the path of length K$$$K$$$ have distinct colours. An edge is said to be K$$$K$$$-rainbow-valid if it lies on at least one K$$$K$$$-rainbow path. A tree is called a K$$$K$$$-tree if every edge in the tree is K$$$K$$$-rainbow-valid.",
+      "Your task is to assign colours to the edges of a given tree to form a K-tree with the largest possible K$$$K$$$. For each edge e$$$e$$$, you must report its assigned colour c(e)∈{0,1,…,K−1}$$$c(e) \\in \\{0, 1, \\dots, K-1\\}$$$ and the endpoints of a K-rainbow path that contains e$$$e$$$.",
+      "All indices are zero-based. If multiple valid colourings or paths exist, any may be output."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$ n $$$ (2≤n≤105)$$$(2 \\leq n \\leq 10^5)$$$. In the next n−1$$$n - 1$$$ lines you are given the edges of the tree. In each of these lines you are given u$$$u$$$ and v$$$v$$$ (0≤u,v≤n−1)$$$(0 \\leq u, v \\leq n - 1)$$$ describing an edge between nodes u$$$u$$$ and v$$$v$$$."
+    ],
+    "output": [
+      "Your output must consist of n$$$n$$$ lines.",
+      "In the first line print the maximum possible K$$$K$$$.",
+      "In the next n−1$$$n - 1$$$ lines, each line should contain three integers: c$$$c$$$, u$$$u$$$ and v$$$v$$$, where 0≤c≤K−1$$$0 \\leq c \\leq K - 1$$$ and 0≤u,v≤n−1$$$0 \\leq u, v \\leq n - 1$$$. These integers specify the colour c$$$c$$$ of an edge and the path between u$$$u$$$ and v$$$v$$$. This path includes the edge e$$$e$$$ and is a K-rainbow. The order of u$$$u$$$ and v$$$v$$$ does not matter.",
+      "Edges must be printed in the order they were given in the input."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/df09f1826b3f1c290233d3258ee520a52c6d3490.png)",
+      "This is the second sample test. We have a tree with 6 nodes. Colours are written on the edges. Maximum possible K is 3 and for every edge e$$$e$$$ there exists a path that includes e$$$e$$$ and is a 3-rainbow.",
+      "Edge e1={0,4}$$$e_1 = \\{0, 4\\}$$$ has colour 2, the path between 3 and 4 includes e1$$$e_1$$$ and is a 3-rainbow.",
+      "Edge e2={2,3}$$$e_2 = \\{2, 3\\}$$$ has colour 0, the path between 4 and 3 includes e2$$$e_2$$$ and is a 3-rainbow.",
+      "Edge e3={5,0}$$$e_3 = \\{5, 0\\}$$$ has colour 2, the path between 3 and 5 includes e3$$$e_3$$$ and is a 3-rainbow.",
+      "Edge e4={2,1}$$$e_4 = \\{2, 1\\}$$$ has colour 0, the path between 4 and 1 includes e4$$$e_4$$$ and is a 3-rainbow.",
+      "Edge e5={2,0}$$$e_5 = \\{2, 0\\}$$$ has colour 1, the path between 3 and 4 includes e5$$$e_5$$$ and is a 3-rainbow."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n0 1\n2 1",
+      "output": "2\n1 2 0\n0 0 2"
+    },
+    {
+      "input": "6\n0 4\n2 3\n5 0\n2 1\n2 0",
+      "output": "3\n2 3 4\n0 4 3\n2 3 5\n0 4 1\n1 3 4"
+    },
+    {
+      "input": "16\n2 3\n2 4\n4 5\n5 0\n1 5\n6 7\n4 6\n8 7\n3 9\n4 10\n7 11\n8 12\n10 13\n14 12\n15 9",
+      "output": "7\n6 8 15\n5 8 15\n5 14 0\n6 14 0\n6 14 1\n3 3 14\n4 8 15\n2 3 14\n0 8 15\n5 14 13\n2 15 11\n1 3 14\n6 14 13\n0 3 14\n1 8 15"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "设 T=(V,E)$$$T = (V, E)$$$ 是一棵有 n$$$n$$$ 个顶点和 n−1$$$n-1$$$ 条边的树。树的每条边都可以被赋予一个来自 {0,1,…,K−1}$$$\\{0, 1, \\dots, K-1\\}$$$ 的颜色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "树中的一条简单路径称为 K$$$K$$$-彩虹路径，当且仅当该路径上长度为 K$$$K$$$ 的部分中的所有边颜色互不相同。如果一条边位于至少一条 K$$$K$$$-彩虹路径上，则称该边是 K$$$K$$$-彩虹有效的。如果树中的每条边都是 K$$$K$$$-彩虹有效的，则称这棵树为 K$$$K$$$-树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是为给定树的边赋予颜色，使其构成 K-树，并使 K$$$K$$$ 尽可能大。对于每条边 e$$$e$$$，你必须报告其被赋予的颜色 c(e)∈{0,1,…,K−1}$$$c(e) \\in \\{0, 1, \\dots, K-1\\}$$$，以及一条包含 e$$$e$$$ 的 K-彩虹路径的两个端点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有下标均从 0 开始。如果存在多种有效的染色方案或路径，输出任意一种即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$ n $$$(2≤n≤105)$$$(2 \\leq n \\leq 10^5)$$$。接下来 n−1$$$n - 1$$$ 行给出树的边。每一行给出 u$$$u$$$ 和 v$$$v$$$(0≤u,v≤n−1)$$$(0 \\leq u, v \\leq n - 1)$$$，描述节点 u$$$u$$$ 和 v$$$v$$$ 之间的一条边。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "你的输出必须包含 n$$$n$$$ 行。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一行输出可能的最大值 K$$$K$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在接下来的 n−1$$$n - 1$$$ 行中，每行应包含三个整数：c$$$c$$$、u$$$u$$$ 和 v$$$v$$$，其中 0≤c≤K−1$$$0 \\leq c \\leq K - 1$$$，0≤u,v≤n−1$$$0 \\leq u, v \\leq n - 1$$$。这些整数指定一条边的颜色 c$$$c$$$ 以及 u$$$u$$$ 和 v$$$v$$$ 之间的路径。这条路径包含边 e$$$e$$$，并且是一条 K-彩虹。u$$$u$$$ 和 v$$$v$$$ 的顺序无关紧要。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "边必须按照输入中给出的顺序输出。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "![](https://espresso.codeforces.com/df09f1826b3f1c290233d3258ee520a52c6d3490.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "这是第二个样例测试。我们有一棵包含 6 个节点的树。边上标有颜色。K 的可能最大值为 3，并且对于每条边 e$$$e$$$，都存在一条包含 e$$$e$$$ 且为 3-彩虹路径的路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "边 e1={0,4}$$$e_1 = \\{0, 4\\}$$$ 的颜色为 2，3 和 4 之间的路径包含 e1$$$e_1$$$，并且是一条 3-彩虹路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "边 e2={2,3}$$$e_2 = \\{2, 3\\}$$$ 的颜色为 0，4 和 3 之间的路径包含 e2$$$e_2$$$，并且是一条 3-彩虹路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "边 e3={5,0}$$$e_3 = \\{5, 0\\}$$$ 的颜色为 2，3 和 5 之间的路径包含 e3$$$e_3$$$，并且是一条 3-彩虹路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "边 e4={2,1}$$$e_4 = \\{2, 1\\}$$$ 的颜色为 0，4 和 1 之间的路径包含 e4$$$e_4$$$，并且是一条 3-彩虹路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "边 e5={2,0}$$$e_5 = \\{2, 0\\}$$$ 的颜色为 1，3 和 4 之间的路径包含 e5$$$e_5$$$，并且是一条 3-彩虹路径。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 彩虹",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

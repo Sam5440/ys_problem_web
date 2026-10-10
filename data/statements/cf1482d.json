@@ -1,0 +1,115 @@
+{
+  "code": "CF1482D",
+  "letter": "D",
+  "title": "D. Playlist",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1482/D",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Arkady has a playlist that initially consists of n$$$n$$$ songs, numerated from 1$$$1$$$ to n$$$n$$$ in the order they appear in the playlist. Arkady starts listening to the songs in the playlist one by one, starting from song 1$$$1$$$. The playlist is cycled, i. e. after listening to the last song, Arkady will continue listening from the beginning.",
+      "Each song has a genre ai$$$a_i$$$, which is a positive integer. Let Arkady finish listening to a song with genre y$$$y$$$, and the genre of the next-to-last listened song be x$$$x$$$. If gcd(x,y)=1$$$\\operatorname{gcd}(x, y) = 1$$$, he deletes the last listened song (with genre y$$$y$$$) from the playlist. After that he continues listening normally, skipping the deleted songs, and forgetting about songs he listened to before. In other words, after he deletes a song, he can't delete the next song immediately.",
+      "Here gcd(x,y)$$$\\operatorname{gcd}(x, y)$$$ denotes the greatest common divisor (GCD) of integers x$$$x$$$ and y$$$y$$$.",
+      "For example, if the initial songs' genres were [5,9,2,10,15]$$$[5, 9, 2, 10, 15]$$$, then the playlist is converted as follows: [5, 9, 2, 10, 15] →$$$\\to$$$ [5, 9, 2, 10, 15] →$$$\\to$$$ [5, 2, 10, 15] (because gcd(5,9)=1$$$\\operatorname{gcd}(5, 9) = 1$$$) →$$$\\to$$$ [5, 2, 10, 15] →$$$\\to$$$ [5, 2, 10, 15] →$$$\\to$$$ [5, 2, 10, 15] →$$$\\to$$$ [5, 2, 10, 15] →$$$\\to$$$ [5, 2, 10, 15] →$$$\\to$$$ [5, 10, 15] (because gcd(5,2)=1$$$\\operatorname{gcd}(5, 2) = 1$$$) →$$$\\to$$$ [5, 10, 15] →$$$\\to$$$ [5, 10, 15] →$$$\\to$$$ ... The bold numbers represent the two last played songs. Note that after a song is deleted, Arkady forgets that he listened to that and the previous songs.",
+      "Given the initial playlist, please determine which songs are eventually deleted and the order these songs are deleted."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤10000$$$1 \\le t \\le 10\\,000$$$). Description of the test cases follows.",
+      "The first line of each test case contains a single integer n$$$n$$$ (1≤n≤105$$$1 \\le n \\le 10^5$$$) — the number of songs.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai≤109$$$1 \\le a_i \\le 10^9$$$) — the genres of the songs.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 105$$$10^5$$$."
+    ],
+    "output": [
+      "For each test case, print a single line. First, print a single integer k$$$k$$$ — the number of deleted songs. After that print k$$$k$$$ distinct integers: deleted songs in the order of their deletion."
+    ],
+    "note": [
+      "Explanation of the first test case is given in the statement.",
+      "In the second test case, the playlist is converted as follows: [1, 2, 4, 2, 4, 2] →$$$\\to$$$ [1, 2, 4, 2, 4, 2] →$$$\\to$$$ [1, 4, 2, 4, 2] (because gcd(1,2)=1$$$\\operatorname{gcd}(1, 2) = 1$$$) →$$$\\to$$$ [1, 4, 2, 4, 2] →$$$\\to$$$ [1, 4, 2, 4, 2] →$$$\\to$$$ [1, 4, 2, 4, 2] →$$$\\to$$$ [1, 4, 2, 4, 2] →$$$\\to$$$ [1, 4, 2, 4, 2] →$$$\\to$$$ [4, 2, 4, 2] (because gcd(2,1)=1$$$\\operatorname{gcd}(2, 1) = 1$$$) →$$$\\to$$$ [4, 2, 4, 2] →$$$\\to$$$ ...",
+      "In the third test case, the playlist is converted as follows: [1, 2] →$$$\\to$$$ [1, 2] →$$$\\to$$$ [1] (because gcd(1,2)=1$$$\\operatorname{gcd}(1, 2) = 1$$$) →$$$\\to$$$ [1] →$$$\\to$$$ [1] (Arkady listened to the same song twice in a row) →$$$\\to$$$ [] (because gcd(1,1)=1$$$\\operatorname{gcd}(1, 1) = 1$$$).",
+      "The fourth test case is same as the third after deletion of the second song.",
+      "In the fifth test case, the same song is listened to over and over again, but since gcd(2,2)≠1$$$\\operatorname{gcd}(2, 2) \\ne 1$$$, it is not deleted."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n5\n5 9 2 10 15\n6\n1 2 4 2 4 2\n2\n1 2\n1\n1\n1\n2",
+      "output": "2 2 3 \n2 2 1 \n2 2 1 \n1 1 \n0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Arkady 有一个播放列表，初始包含 n$$$n$$$ 首歌曲，按照它们在播放列表中出现的顺序，从 1$$$1$$$ 到 n$$$n$$$ 编号。Arkady 从歌曲 1$$$1$$$ 开始，逐首听播放列表中的歌曲。播放列表是循环的，也就是说，听完最后一首歌曲后，Arkady 会从开头继续听。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每首歌曲都有一个类型 ai$$$a_i$$$，它是一个正整数。假设 Arkady 听完了一首类型为 y$$$y$$$ 的歌曲，并且倒数第二首听过的歌曲的类型为 x$$$x$$$。如果 gcd(x,y)=1$$$\\operatorname{gcd}(x, y) = 1$$$，他就会从播放列表中删除最后听的歌曲(类型为 y$$$y$$$)。之后，他会正常继续听歌，跳过已删除的歌曲，并忘记之前听过的歌曲。换句话说，删除一首歌曲后，他不能立即删除下一首歌曲。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此处 gcd(x,y)$$$\\operatorname{gcd}(x, y)$$$ 表示整数 x$$$x$$$ 和 y$$$y$$$ 的最大公约数(GCD)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，如果初始歌曲的类型为 [5,9,2,10,15]$$$[5, 9, 2, 10, 15]$$$，那么播放列表会按如下方式转换：[5, 9, 2, 10, 15] →$$$\\to$$$ [5, 9, 2, 10, 15] →$$$\\to$$$ [5, 2, 10, 15](因为 gcd(5,9)=1$$$\\operatorname{gcd}(5, 9) = 1$$$)→$$$\\to$$$ [5, 2, 10, 15] →$$$\\to$$$ [5, 2, 10, 15] →$$$\\to$$$ [5, 2, 10, 15] →$$$\\to$$$ [5, 2, 10, 15] →$$$\\to$$$ [5, 2, 10, 15] →$$$\\to$$$ [5, 10, 15](因为 gcd(5,2)=1$$$\\operatorname{gcd}(5, 2) = 1$$$)→$$$\\to$$$ [5, 10, 15] →$$$\\to$$$ [5, 10, 15] →$$$\\to$$$ ... 粗体数字表示最近播放的两首歌曲。注意，删除一首歌曲后，Arkady 会忘记自己听过该歌曲以及之前的歌曲。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定初始播放列表，请确定最终会被删除的歌曲以及这些歌曲被删除的顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤10000$$$1 \\le t \\le 10\\,000$$$)。接下来是各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤105$$$1 \\le n \\le 10^5$$$)，表示歌曲的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$(1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)，表示歌曲的类型。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 105$$$10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一行。首先输出一个整数 k$$$k$$$，表示被删除的歌曲数量。随后输出 k$$$k$$$ 个互不相同的整数：按照删除顺序排列的被删除歌曲。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "题面中给出了第一个测试用例的解释。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，播放列表的转换过程如下：[1, 2, 4, 2, 4, 2] →$$$\\to$$$ [1, 2, 4, 2, 4, 2] →$$$\\to$$$ [1, 4, 2, 4, 2](因为 gcd(1,2)=1$$$\\operatorname{gcd}(1, 2) = 1$$$)→$$$\\to$$$ [1, 4, 2, 4, 2] →$$$\\to$$$ [1, 4, 2, 4, 2] →$$$\\to$$$ [1, 4, 2, 4, 2] →$$$\\to$$$ [1, 4, 2, 4, 2] →$$$\\to$$$ [1, 4, 2, 4, 2] →$$$\\to$$$ [4, 2, 4, 2](因为 gcd(2,1)=1$$$\\operatorname{gcd}(2, 1) = 1$$$)→$$$\\to$$$ [4, 2, 4, 2] →$$$\\to$$$ …",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试用例中，播放列表的转换过程如下：[1, 2] →$$$\\to$$$ [1, 2] →$$$\\to$$$ [1](因为 gcd(1,2)=1$$$\\operatorname{gcd}(1, 2) = 1$$$)→$$$\\to$$$ [1] →$$$\\to$$$ [1](Arkady 连续两次听了同一首歌)→$$$\\to$$$ [](因为 gcd(1,1)=1$$$\\operatorname{gcd}(1, 1) = 1$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "删除第二首歌曲后，第四个测试用例与第三个相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第五个测试用例中，同一首歌曲被反复播放，但由于最大公约数(2,2)≠1$$$\\operatorname{gcd}(2, 2) \\ne 1$$$，因此它不会被删除。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 播放列表",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

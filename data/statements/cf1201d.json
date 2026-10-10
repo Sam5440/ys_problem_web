@@ -1,0 +1,113 @@
+{
+  "code": "CF1201D",
+  "letter": "D",
+  "title": "D. Treasure Hunting",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1201/D",
+  "difficulty": "2100",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are on the island which can be represented as a n×m$$$n \\times m$$$ table. The rows are numbered from 1$$$1$$$ to n$$$n$$$ and the columns are numbered from 1$$$1$$$ to m$$$m$$$. There are k$$$k$$$ treasures on the island, the i$$$i$$$-th of them is located at the position (ri,ci)$$$(r_i, c_i)$$$.",
+      "Initially you stand at the lower left corner of the island, at the position (1,1)$$$(1, 1)$$$. If at any moment you are at the cell with a treasure, you can pick it up without any extra time. In one move you can move up (from (r,c)$$$(r, c)$$$ to (r+1,c)$$$(r+1, c)$$$), left (from (r,c)$$$(r, c)$$$ to (r,c−1)$$$(r, c-1)$$$), or right (from position (r,c)$$$(r, c)$$$ to (r,c+1)$$$(r, c+1)$$$). Because of the traps, you can't move down.",
+      "However, moving up is also risky. You can move up only if you are in a safe column. There are q$$$q$$$ safe columns: b1,b2,…,bq$$$b_1, b_2, \\ldots, b_q$$$. You want to collect all the treasures as fast as possible. Count the minimum number of moves required to collect all the treasures."
+    ],
+    "input": [
+      "The first line contains integers n$$$n$$$, m$$$m$$$, k$$$k$$$ and q$$$q$$$ (2≤n,m,k,q≤2⋅105$$$2 \\le n, \\, m, \\, k, \\, q \\le 2 \\cdot 10^5$$$, q≤m$$$q \\le m$$$) — the number of rows, the number of columns, the number of treasures in the island and the number of safe columns.",
+      "Each of the next k$$$k$$$ lines contains two integers ri,ci$$$r_i, c_i$$$, (1≤ri≤n$$$1 \\le r_i \\le n$$$, 1≤ci≤m$$$1 \\le c_i \\le m$$$) — the coordinates of the cell with a treasure. All treasures are located in distinct cells.",
+      "The last line contains q$$$q$$$ distinct integers b1,b2,…,bq$$$b_1, b_2, \\ldots, b_q$$$ (1≤bi≤m$$$1 \\le b_i \\le m$$$) — the indices of safe columns."
+    ],
+    "output": [
+      "Print the minimum number of moves required to collect all the treasures."
+    ],
+    "note": [
+      "In the first example you should use the second column to go up, collecting in each row treasures from the first column.",
+      "![](https://espresso.codeforces.com/94823c612b5b926e2a2ad550634cf0feed84586f.png)",
+      "In the second example, it is optimal to use the first column to go up.",
+      "![](https://espresso.codeforces.com/9157ad0f18870b663cebb5f7b6c6d024b09777ea.png)",
+      "In the third example, it is optimal to collect the treasure at cell (1;6)$$$(1;6)$$$, go up to row 2$$$2$$$ at column 6$$$6$$$, then collect the treasure at cell (2;2)$$$(2;2)$$$, go up to the top row at column 1$$$1$$$ and collect the last treasure at cell (3;4)$$$(3;4)$$$. That's a total of 15$$$15$$$ moves.",
+      "![](https://espresso.codeforces.com/2735b28b994176268d4f364fdb73cf30e5888714.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3 3 2\n1 1\n2 1\n3 1\n2 3",
+      "output": "6"
+    },
+    {
+      "input": "3 5 3 2\n1 2\n2 3\n3 1\n1 5",
+      "output": "8"
+    },
+    {
+      "input": "3 6 3 2\n1 6\n2 2\n3 4\n1 6",
+      "output": "15"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你位于一座可以表示为 n×m$$$n \\times m$$$ 的表格的岛屿上。行的编号从 1$$$1$$$ 到 n$$$n$$$，列的编号从 1$$$1$$$ 到 m$$$m$$$。岛上有 k$$$k$$$ 件宝藏，其中第 i$$$i$$$ 件位于位置 (ri,ci)$$$(r_i, c_i)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "起初，你站在岛屿的左下角，即位置 (1,1)$$$(1, 1)$$$。如果在任意时刻你位于有宝藏的单元格中，就可以将其捡起，且不需要额外时间。一次移动中，你可以向上移动(从 (r,c)$$$(r, c)$$$ 移动到 (r+1,c)$$$(r+1, c)$$$)、向左移动(从 (r,c)$$$(r, c)$$$ 移动到 (r,c−1)$$$(r, c-1)$$$)，或向右移动(从位置 (r,c)$$$(r, c)$$$ 移动到 (r,c+1)$$$(r, c+1)$$$)。由于陷阱的存在，你不能向下移动。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，向上移动同样存在风险。只有当你位于安全列时，才能向上移动。共有 q$$$q$$$ 个安全列：b1,b2,…,bq$$$b_1, b_2, \\ldots, b_q$$$。你希望尽快收集所有宝藏。请计算收集所有宝藏所需的最少移动次数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含整数 n$$$n$$$、m$$$m$$$、k$$$k$$$ 和 q$$$q$$$(2≤n,m,k,q≤2⋅105$$$2 \\le n, \\, m, \\, k, \\, q \\le 2 \\cdot 10^5$$$，q≤m$$$q \\le m$$$)，分别表示行数、列数、岛上宝藏的数量以及安全列的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 k$$$k$$$ 行中，每行包含两个整数 ri、ci$$$r_i, c_i$$$(1≤ri≤n$$$1 \\le r_i \\le n$$$，1≤ci≤m$$$1 \\le c_i \\le m$$$)，表示一个宝藏所在单元格的坐标。所有宝藏都位于互不相同的单元格中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最后一行包含 q$$$q$$$ 个互不相同的整数 b1,b2,…,bq$$$b_1, b_2, \\ldots, b_q$$$(1≤bi≤m$$$1 \\le b_i \\le m$$$)，表示安全列的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出收集所有宝藏所需的最少移动次数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，你应当使用第二列向上移动，并在每一行收集第一列中的宝藏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/94823c612b5b926e2a2ad550634cf0feed84586f.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，使用第一列向上移动是最优的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/9157ad0f18870b663cebb5f7b6c6d024b09777ea.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，最优方案是在单元格 (1;6)$$$(1;6)$$$ 收集宝藏，在第 6$$$6$$$ 列向上移动到第 2$$$2$$$ 行，然后在单元格 (2;2)$$$(2;2)$$$ 收集宝藏，在第 1$$$1$$$ 列向上移动到最上面一行，并在单元格 (3;4)$$$(3;4)$$$ 收集最后一个宝藏。总共需要移动 15$$$15$$$ 次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/2735b28b994176268d4f364fdb73cf30e5888714.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 寻宝",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

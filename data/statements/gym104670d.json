@@ -1,0 +1,75 @@
+{
+  "code": "GYM104670D",
+  "letter": "D",
+  "title": "D. Deceptive Directions",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104670/problem/D",
+  "difficulty": "*1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You find yourself on a remote island, searching for a legendary lost treasure. However, despite having gotten your hands on directions leading straight to the treasure, you have a problem. It turns out you have a saboteur in your expedition, and that at some point they edited the precious directions so they might no longer lead to the treasure.",
+      "The island can be viewed as a rectangular grid, and the instructions are a sequence of east/west/north/south steps to take in this grid, from a given starting position. These instructions lead straight to the treasure (but may involve walking around obstacles) in the sense that there is no shorter way of reaching the treasure. However, the saboteur has arbitrarily replaced each step of the instructions by a step in one of the other three directions. In other words, any \"west\" step has been replaced by \"east\", \"north\" or \"south\". This replacement has been done independently for each step, so one \"west\" may have been replaced by \"north\" and another by \"south\", and so on.",
+      "Because of this sabotage, the instructions seem pretty useless. But maybe they can still be used to narrow down the search. Write a program to find all possible locations of the treasure."
+    ],
+    "input": [
+      "The first line of input consists of two integers w$$$w$$$ and h$$$h$$$ (3≤w,h≤1000$$$3 \\le w, h \\le 1000$$$), the width and height of the map. Then follow h$$$h$$$ lines, each containing w$$$w$$$ characters, describing the map. Each such character is either a '.' symbolizing a walkable space, '#' symbolizing an obstacle such as a body of water, dense forest, or a mountain, or 'S' symbolizing the starting point of the directions.",
+      "Finally, there is a line containing a string I$$$I$$$ (1≤|I|≤105$$$1 \\le |I| \\le 10^5$$$) consisting only of the characters 'NWSE', giving the faulty instruction sequence.",
+      "The map has exactly one 'S' and its boundary consists only of obstacle cells. The faulty instruction sequence is such that there is at least one possible location of the treasure."
+    ],
+    "output": [
+      "Output the map in the same format as the input (without the first line specifying the dimensions), with all possible locations of the treasure indicated by exclamation marks ('!')."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 5\n#####\n#...#\n#.S.#\n#...#\n#####\nN",
+      "output": "#####\n#...#\n#!S!#\n#.!.#\n#####"
+    },
+    {
+      "input": "7 5\n#######\n#..#..#\n#..S..#\n#..#..#\n#######\nESS",
+      "output": "#######\n#!.#..#\n#..S..#\n#..#..#\n#######"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你发现自己身处一座偏远的岛屿，正在寻找传说中失落的宝藏。然而，尽管你已经拿到了一份直达宝藏的路线说明，但你遇到了一个问题。原来你的探险队中有一名破坏者，并且在某个时刻，对方修改了这份珍贵的路线，因此它可能不再通往宝藏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这座岛可以看作一个矩形网格，而这些指令是从给定起点出发，在网格中行走的一系列向东、向西、向北或向南移动的步骤。说这些指令直达宝藏（但可能需要绕过障碍物）的含义是：不存在到达宝藏的更短路径。然而，破坏者任意地将指令中的每一步替换成其他三个方向之一。换句话说，任何一个“向西”步骤都会被替换为“向东”“向北”或“向南”。这种替换对每一步都是独立进行的，因此一个“向西”可能被替换成“向北”，另一个则可能被替换成“向南”，等等。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于这次破坏，指示似乎相当没用。不过，也许仍然可以用它们来缩小搜索范围。编写一个程序，找出宝藏所有可能的位置。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 w$$$w$$$ 和 h$$$h$$$(3≤w,h≤1000$$$3 \\le w, h \\le 1000$$$)，表示地图的宽度和高度。接下来是 h$$$h$$$ 行，每行包含 w$$$w$$$ 个字符，用于描述地图。每个字符要么是 '.'，表示可通行区域；要么是 '#'，表示水域、茂密森林或山脉等障碍物；要么是 'S'，表示指示的起点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最后，有一行包含字符串 I$$$I$$$(1≤|I|≤105$$$1 \\le |I| \\le 10^5$$$)，该字符串仅由字符 'NWSE' 组成，表示错误的指令序列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "地图中恰好有一个 'S'，其边界仅由障碍物格子组成。错误的指令序列满足至少存在一个宝藏的可能位置。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出与输入格式相同的地图（不包括指定尺寸的第一行），并用感叹号（'!'）标记宝藏的所有可能位置。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 误导性的方向",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "code": "GYM105552D",
+  "letter": "D",
+  "title": "D. Fresh Avocado",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105552/problem/D",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/793e02197690222c3f063f911c3acd71e54df7c7.png)",
+      "It is early fall. The weather is just turning chilly, and the leaves are beginning to display their vibrant hues. You've just started a new job at Torchy's Tacos. You are looking forward to a long and prosperous career here.",
+      "On your very first day, a surprising order comes in from the landlord: Make me a perfect Fresh Avocado taco, or your rent goes up.",
+      "The talented Torchy's staff immediately sets upon this task. The first step to preparing the Fresh Avocado taco is to cut the avocados in half. As the new hire, that job has been given to you.",
+      "An avocado can be represented as a circle of radius r$$$r$$$ centered at the origin (0,0)$$$(0,0)$$$. You know you have the skills to perform n$$$n$$$ different types of cuts, each represented by the equation of a line that splits the avocado into two halves. Constructing the Fresh Avocado taco is a precise art, and so the avocado must be cut in as close to perfect halves as possible. Thus, you must choose a cut to perform which splits the avocado into halves that are closest in area.",
+      "If you choose the optimal cut, what proportion of the avocado is in each half of the cut?"
+    ],
+    "input": [
+      "The first line of input contains two integers n (1≤n≤105)$$$n\\ (1\\leq n \\leq 10^5)$$$ and r (1≤r≤104)$$$r\\ (1\\leq r\\leq 10^4)$$$ — the number of different cuts you can do and the radius of the avocado.",
+      "The next n$$$n$$$ lines contain three integers Ai,Bi,Ci (|Ai|,|Bi|,|Ci|≤104)$$$A_i, B_i, C_i\\ (|A_i|, |B_i|, |C_i|\\leq 10^4)$$$ describing the equation Aix+Biy+Ci=0$$$A_ix + B_iy + C_i = 0$$$ for the i$$$i$$$th cut.",
+      "It is guaranteed that each cut intersects the avocado at exactly two points, and for each cut, either Ai≠0$$$A_i\\not=0$$$ or Bi≠0$$$B_i\\not=0$$$."
+    ],
+    "output": [
+      "Output the proportion of the avocado's area of the smaller half and then the bigger half of the optimal cut. Your answer will be considered correct if its absolute or relative error doesn't exceed 10−6$$$10^{-6}$$$."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/1573c4a03da55f7c90f3bc14c4256f43632afab7.png) In the first test case, the avocado is the green circle, the first cut is the blue dotted line and the second cut is the red dotted line. Choosing the first cut is optimal as it splits the avocado in exact halves."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 2\n0 1 0\n1 0 1",
+      "output": "0.5 0.5"
+    },
+    {
+      "input": "1 10\n2 -2 -1",
+      "output": "0.4774967821 0.5225032179"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/793e02197690222c3f063f911c3acd71e54df7c7.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在是初秋。天气刚刚开始变得凉爽，树叶也开始展现出鲜艳的色彩。你刚刚在 Torchy's Tacos 找到了一份新工作，并期待能在这里拥有一段漫长而成功的职业生涯。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在你上班的第一天，房东突然提出了一个要求：给我做一个完美的新鲜牛油果塔可，否则就涨房租。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Torchy's 的优秀员工们立即开始着手完成这项任务。制作新鲜牛油果塔可的第一步是将牛油果切成两半。作为新员工，这项工作交给了你。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "牛油果可以表示为一个以原点 (0,0)$$$(0,0)$$$ 为圆心、半径为 r$$$r$$$ 的圆。你知道自己能执行 n$$$n$$$ 种不同的切法，每种切法由一条直线的方程表示，该直线将牛油果分成两半。制作 Fresh Avocado taco 是一门精确的艺术，因此必须尽可能将牛油果切成完美的两半。所以，你必须选择一种切法，使得切成的两半面积最接近。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果你选择最优的切法，牛油果被切成的每一半各占多大比例？",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n (1≤n≤105)$$$n\\ (1\\leq n \\leq 10^5)$$$ 和 r (1≤r≤104)$$$r\\ (1\\leq r\\leq 10^4)$$$ — 你可以执行的切法数量以及牛油果的半径。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行每行包含三个整数 Ai, Bi, Ci (|Ai|,|Bi|,|Ci|≤104)$$$A_i, B_i, C_i\\ (|A_i|, |B_i|, |C_i|\\leq 10^4)$$$，描述第 i$$$i$$$ 种切法的方程 Aix+Biy+Ci=0$$$A_ix + B_iy + C_i = 0$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "保证每种切法恰好与牛油果相交于两个点，并且对于每种切法，要么 Ai≠0$$$A_i\\not=0$$$ 要么 Bi≠0$$$B_i\\not=0$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出最优切法下较小一半和较大一半分别占牛油果面积的比例。如果你的答案的绝对误差或相对误差不超过 10−6$$$10^{-6}$$$，则被视为正确。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "![](https://espresso.codeforces.com/1573c4a03da55f7c90f3bc14c4256f43632afab7.png) 在第一个测试用例中，牛油果是绿色圆形，第一次切割是蓝色虚线，第二次切割是红色虚线。选择第一次切割是最优的，因为它将牛油果恰好分成两半。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 新鲜牛油果",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

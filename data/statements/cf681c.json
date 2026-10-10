@@ -1,0 +1,154 @@
+{
+  "code": "CF681C",
+  "letter": "C",
+  "title": "C. Heap Operations",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/681/C",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Petya has recently learned data structure named \"Binary heap\".",
+      "The heap he is now operating with allows the following operations:",
+      "put the given number into the heap;",
+      "get the value of the minimum element in the heap;",
+      "extract the minimum element from the heap;",
+      "Thus, at any moment of time the heap contains several integers (possibly none), some of them might be equal.",
+      "In order to better learn this data structure Petya took an empty heap and applied some operations above to it. Also, he carefully wrote down all the operations and their results to his event log, following the format:",
+      "insert x — put the element with value x in the heap;",
+      "getMin x — the value of the minimum element contained in the heap was equal to x;",
+      "removeMin — the minimum element was extracted from the heap (only one instance, if there were many).",
+      "All the operations were correct, i.e. there was at least one element in the heap each time getMin or removeMin operations were applied.",
+      "While Petya was away for a lunch, his little brother Vova came to the room, took away some of the pages from Petya's log and used them to make paper boats.",
+      "Now Vova is worried, if he made Petya's sequence of operations inconsistent. For example, if one apply operations one-by-one in the order they are written in the event log, results of getMin operations might differ from the results recorded by Petya, and some of getMin or removeMin operations may be incorrect, as the heap is empty at the moment they are applied.",
+      "Now Vova wants to add some new operation records to the event log in order to make the resulting sequence of operations correct. That is, the result of each getMin operation is equal to the result in the record, and the heap is non-empty when getMin ad removeMin are applied. Vova wants to complete this as fast as possible, as the Petya may get back at any moment. He asks you to add the least possible number of operation records to the current log. Note that arbitrary number of operations may be added at the beginning, between any two other operations, or at the end of the log."
+    ],
+    "input": [
+      "The first line of the input contains the only integer n (1 ≤ n ≤ 100 000) — the number of the records left in Petya's journal.",
+      "Each of the following n lines describe the records in the current log in the order they are applied. Format described in the statement is used. All numbers in the input are integers not exceeding 109 by their absolute value."
+    ],
+    "output": [
+      "The first line of the output should contain a single integer m — the minimum possible number of records in the modified sequence of operations.",
+      "Next m lines should contain the corrected sequence of records following the format of the input (described in the statement), one per line and in the order they are applied. All the numbers in the output should be integers not exceeding 109 by their absolute value.",
+      "Note that the input sequence of operations must be the subsequence of the output sequence.",
+      "It's guaranteed that there exists the correct answer consisting of no more than 1 000 000 operations."
+    ],
+    "note": [
+      "In the first sample, after number 3 is inserted into the heap, the minimum number is 3. To make the result of the first getMin equal to 4 one should firstly remove number 3 from the heap and then add number 4 into the heap.",
+      "In the second sample case number 1 is inserted two times, so should be similarly removed twice."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\ninsert 3\ngetMin 4",
+      "output": "4\ninsert 3\nremoveMin\ninsert 4\ngetMin 4"
+    },
+    {
+      "input": "4\ninsert 1\ninsert 1\nremoveMin\ngetMin 2",
+      "output": "6\ninsert 1\ninsert 1\nremoveMin\nremoveMin\ninsert 2\ngetMin 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Petya 最近学会了一种名为“二叉堆”的数据结构。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他目前操作的堆支持以下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将给定的数放入堆中；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "获取堆中最小元素的值；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从堆中提取最小元素；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，在任意时刻，堆中包含若干个整数（可能一个也没有），其中一些可能相等。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了更好地学习这种数据结构，Petya 取了一个空堆，并对其执行了上述操作中的一些操作。此外，他还按照以下格式，仔细地将所有操作及其结果记录在了事件日志中：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "insert x — 将值为 x 的元素放入堆中；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "getMin x — 堆中包含的最小元素的值等于 x；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "removeMin — 从堆中提取最小元素（如果有多个，只提取其中一个）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有操作都是正确的，即每次执行 getMin 或 removeMin 操作时堆中至少有一个元素。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "当 Petya 去吃午饭离开时，他的弟弟 Vova 来到房间，从 Petya 的日志中拿走了一些页面，并用它们折纸船。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "现在 Vova 担心自己是否使 Petya 的操作序列变得不一致。例如，如果按照事件日志中的写入顺序逐条执行这些操作，getMin 操作的结果可能与 Petya 记录的结果不同，而且某些 getMin 或 removeMin 操作可能是错误的，因为执行它们时堆是空的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "现在 Vova 想要向事件日志中添加一些新的操作记录，以使得最终的操作序列正确。也就是说，每个 getMin 操作的结果与记录中的结果相等，并且执行 getMin 和 removeMin 时堆非空。Vova 希望尽快完成这件事，因为 Petya 随时可能回来。他请你向当前日志中添加尽可能少的操作记录。注意，可以在日志的开头、任意两条其他操作之间，或者日志末尾添加任意数量的操作。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行只包含一个整数 n (1 ≤ n ≤ 100000) —— Petya 的日志中剩余记录的条数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 n 行中的每一行按照执行顺序描述当前日志中的记录。使用题目描述中所述的格式。输入中的所有数字均为整数，其绝对值不超过 10^9。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出的第一行应包含一个整数 m——修改后操作序列中记录数的最小可能值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行应按照输入格式（题面中有描述）包含修正后的记录序列，每行一条，顺序为它们被应用的顺序。输出中的所有数字都应为绝对值不超过 10^9 的整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，输入的操作序列必须是输出序列的子序列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证存在一个不超过 1 000 000 次操作组成的正确答案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，将数字 3 插入堆后，最小值为 3。为了使第一次 getMin 的结果等于 4，应先从堆中移除数字 3，然后将数字 4 加入堆中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，数字 1 被插入了两次，因此也应将其移除两次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 堆操作",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

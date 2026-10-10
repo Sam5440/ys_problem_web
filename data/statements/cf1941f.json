@@ -1,0 +1,101 @@
+{
+  "code": "CF1941F",
+  "letter": "F",
+  "title": "F. Rudolf and Imbalance",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1941/F",
+  "difficulty": "1800",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Rudolf has prepared a set of n$$$n$$$ problems with complexities a1<a2<a3<⋯<an$$$a_1  \\lt  a_2  \\lt  a_3  \\lt  \\dots  \\lt  a_n$$$. He is not entirely satisfied with the balance, so he wants to add at most one problem to fix it.",
+      "For this, Rudolf came up with m$$$m$$$ models of problems and k$$$k$$$ functions. The complexity of the i$$$i$$$-th model is di$$$d_i$$$, and the complexity of the j$$$j$$$-th function is fj$$$f_j$$$. To create a problem, he selects values i$$$i$$$ and j$$$j$$$ (1≤i≤m$$$1 \\le i \\le m$$$, 1≤j≤k$$$1 \\le j \\le k$$$) and by combining the i$$$i$$$-th model with the j$$$j$$$-th function, he obtains a new problem with complexity di+fj$$$d_i + f_j$$$ (a new element is inserted into the array a$$$a$$$).",
+      "To determine the imbalance of the set, Rudolf sorts the complexities of the problems in ascending order and finds the largest value of ai−ai−1$$$a_i - a_{i - 1}$$$ (i>1$$$i  \\gt  1$$$).",
+      "What is the minimum value of imbalance that Rudolf can achieve by adding at most one problem, created according to the described rules?"
+    ],
+    "input": [
+      "The first line of the input contains a single integer t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$) — the number of testcases.",
+      "The first line of each test case contains three integers n$$$n$$$, m$$$m$$$, and k$$$k$$$ (2≤n≤105$$$2 \\le n \\le 10^5$$$, 1≤m,k≤2⋅105$$$1 \\le m, k \\le 2 \\cdot 10^5$$$) — the number of prepared problems, the number of models, and the number of functions, respectively.",
+      "The second line of each test case contains n$$$n$$$ integers a1,a2,a3,…an$$$a_1, a_2, a_3, \\dots a_n$$$ (1≤ai≤2⋅109$$$1 \\le a_i \\le 2 \\cdot 10^9$$$, ai<ai+1$$$a_i  \\lt  a_{i+1}$$$) — the complexities of the prepared problems.",
+      "The third line of each test case contains m$$$m$$$ integers d1,d2,d3,…dm$$$d_1, d_2, d_3, \\dots d_m$$$ (1≤di≤109$$$1 \\le d_i \\le 10^9$$$) — the complexities of the models.",
+      "The fourth line of each test case contains k$$$k$$$ integers f1,f2,f3,…fk$$$f_1, f_2, f_3, \\dots f_k$$$ (1≤fi≤109$$$1 \\le f_i \\le 10^9$$$) — the complexities of the functions.",
+      "It is guaranteed that the sum of n$$$n$$$ over all testcases does not exceed 105$$$10^5$$$.",
+      "It is guaranteed that the sum of m$$$m$$$ over all testcases does not exceed 2⋅105$$$2 \\cdot 10^5$$$.",
+      "It is guaranteed that the sum of k$$$k$$$ over all testcases does not exceed 2⋅105$$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each testcase, output a single number — the minimum imbalance that Rudolf can achieve."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n5 5 5\n5 10 15 20 26\n11 14 16 13 8\n16 4 5 3 1\n7 6 5\n1 4 7 10 18 21 22\n2 3 5 7 4 2\n6 8 9 3 2\n7 6 5\n1 4 7 10 18 21 22\n2 3 5 7 4 2\n6 8 13 3 2\n5 6 3\n2 10 13 20 25\n11 6 10 16 14 5\n6 17 15\n4 2 2\n11 12 14 15\n19 14\n10 6\n8 4 2\n3 10 16 18 21 22 29 30\n9 13 16 15\n4 2\n2 4 7\n4 21\n4 15 14 5\n20 1 15 1 12 5 11",
+      "output": "5\n4\n5\n8\n2\n7\n11"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "鲁道夫准备了 n$$$n$$$ 个问题，其复杂度满足 a1<a2<a3<⋯<an$$$a_1  \\lt  a_2  \\lt  a_3  \\lt  \\dots  \\lt  a_n$$$。他对这种平衡状态并不完全满意，因此想要至多再添加一个问题来改善它。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为此，鲁道夫设计了 m$$$m$$$ 个问题模型和 k$$$k$$$ 个函数。第 i$$$i$$$ 个模型的复杂度为 di$$$d_i$$$，第 j$$$j$$$ 个函数的复杂度为 fj$$$f_j$$$。为了创建一个问题，他选择 i$$$i$$$ 和 j$$$j$$$(1≤i≤m$$$1 \\le i \\le m$$$，1≤j≤k$$$1 \\le j \\le k$$$)，将第 i$$$i$$$ 个模型与第 j$$$j$$$ 个函数结合，得到一个复杂度为 di+fj$$$d_i + f_j$$$ 的新问题(向数组 a$$$a$$$ 中插入一个新元素)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了确定问题集合的不平衡程度，鲁道夫将问题的复杂度按升序排序，并找出 ai−ai−1$$$a_i - a_{i - 1}$$$(i>1$$$i  \\gt  1$$$)中的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "按照上述规则添加至多一个新问题后，鲁道夫能够达到的不平衡程度的最小值是多少？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含三个整数 n$$$n$$$、m$$$m$$$ 和 k$$$k$$$(2≤n≤105$$$2 \\le n \\le 10^5$$$，1≤m,k≤2⋅105$$$1 \\le m, k \\le 2 \\cdot 10^5$$$)，分别表示准备好的题目数量、模型数量和函数数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 a1,a2,a3,…an$$$a_1, a_2, a_3, \\dots a_n$$$(1≤ai≤2⋅109$$$1 \\le a_i \\le 2 \\cdot 10^9$$$，ai<ai+1$$$a_i  \\lt  a_{i+1}$$$)，表示准备好的题目的复杂度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第三行包含 m$$$m$$$ 个整数 d1,d2,d3,…dm$$$d_1, d_2, d_3, \\dots d_m$$$(1≤di≤109$$$1 \\le d_i \\le 10^9$$$)，表示模型的复杂度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第四行包含 k$$$k$$$ 个整数 f1,f2,f3,…fk$$$f_1, f_2, f_3, \\dots f_k$$$(1≤fi≤109$$$1 \\le f_i \\le 10^9$$$)，表示函数的复杂度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 105$$$10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 m$$$m$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 k$$$k$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个数——Rudolf 能达到的最小不平衡度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 鲁道夫与不平衡",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

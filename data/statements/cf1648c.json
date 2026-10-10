@@ -1,0 +1,113 @@
+{
+  "code": "CF1648C",
+  "letter": "C",
+  "title": "C. Tyler and Strings",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1648/C",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "While looking at the kitchen fridge, the little boy Tyler noticed magnets with symbols, that can be aligned into a string s$$$s$$$.",
+      "Tyler likes strings, and especially those that are lexicographically smaller than another string, t$$$t$$$. After playing with magnets on the fridge, he is wondering, how many distinct strings can be composed out of letters of string s$$$s$$$ by rearranging them, so that the resulting string is lexicographically smaller than the string t$$$t$$$? Tyler is too young, so he can't answer this question. The alphabet Tyler uses is very large, so for your convenience he has already replaced the same letters in s$$$s$$$ and t$$$t$$$ to the same integers, keeping that different letters have been replaced to different integers.",
+      "We call a string x$$$x$$$ lexicographically smaller than a string y$$$y$$$ if one of the followings conditions is fulfilled:",
+      "There exists such position of symbol m$$$m$$$ that is presented in both strings, so that before m$$$m$$$-th symbol the strings are equal, and the m$$$m$$$-th symbol of string x$$$x$$$ is smaller than m$$$m$$$-th symbol of string y$$$y$$$.",
+      "String x$$$x$$$ is the prefix of string y$$$y$$$ and x≠y$$$x \\neq y$$$.",
+      "Because the answer can be too large, print it modulo 998244353$$$998\\,244\\,353$$$."
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (1≤n,m≤200000$$$1 \\le n, m \\le 200\\,000$$$) — the lengths of strings s$$$s$$$ and t$$$t$$$ respectively.",
+      "The second line contains n$$$n$$$ integers s1,s2,s3,…,sn$$$s_1, s_2, s_3, \\ldots, s_n$$$ (1≤si≤200000$$$1 \\le s_i \\le 200\\,000$$$) — letters of the string s$$$s$$$.",
+      "The third line contains m$$$m$$$ integers t1,t2,t3,…,tm$$$t_1, t_2, t_3, \\ldots, t_m$$$ (1≤ti≤200000$$$1 \\le t_i \\le 200\\,000$$$) — letters of the string t$$$t$$$."
+    ],
+    "output": [
+      "Print a single number — the number of strings lexicographically smaller than t$$$t$$$ that can be obtained by rearranging the letters in s$$$s$$$, modulo 998244353$$$998\\,244\\,353$$$."
+    ],
+    "note": [
+      "In the first example, the strings we are interested in are [122]$$$[1\\, 2\\, 2]$$$ and [212]$$$[2\\, 1\\, 2]$$$. The string [221]$$$[2\\, 2\\, 1]$$$ is lexicographically larger than the string [2121]$$$[2\\, 1\\, 2\\, 1]$$$, so we don't count it.",
+      "In the second example, all strings count except [4321]$$$[4\\, 3\\, 2\\, 1]$$$, so the answer is 4!−1=23$$$4! - 1 = 23$$$.",
+      "In the third example, only the string [1112]$$$[1\\, 1\\, 1\\, 2]$$$ counts."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 4\n1 2 2\n2 1 2 1",
+      "output": "2"
+    },
+    {
+      "input": "4 4\n1 2 3 4\n4 3 2 1",
+      "output": "23"
+    },
+    {
+      "input": "4 3\n1 1 1 2\n1 1 2",
+      "output": "1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Tyler 这个小男孩在观察厨房里的冰箱时，注意到了一些带有符号的磁贴，这些磁贴可以排列成字符串 s$$$s$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Tyler 喜欢字符串，尤其喜欢那些字典序小于另一个字符串 t$$$t$$$ 的字符串。在冰箱上摆弄磁贴后，他想知道：通过重新排列字符串 s$$$s$$$ 中的字母，可以组成多少个不同的字符串，使得得到的字符串的字典序小于字符串 t$$$t$$$？Tyler 还太小，无法回答这个问题。Tyler 使用的字母表非常大，因此为了方便起见，他已经将 s$$$s$$$ 和 t$$$t$$$ 中相同的字母替换成了相同的整数，并保证不同的字母被替换成不同的整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果满足以下条件之一，我们称字符串 x$$$x$$$ 的字典序小于字符串 y$$$y$$$：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "存在这样一个符号位置 m$$$m$$$，该位置在两个字符串中都存在，使得在第 m$$$m$$$ 个符号之前两个字符串完全相同，并且字符串 x$$$x$$$ 的第 m$$$m$$$ 个符号小于字符串 y$$$y$$$ 的第 m$$$m$$$ 个符号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "字符串 x$$$x$$$ 是字符串 y$$$y$$$ 的前缀，且 x≠y$$$x \\neq y$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于答案可能很大，请输出答案对 998244353$$$998\\,244\\,353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤200000$$$1 \\le n, m \\le 200\\,000$$$)，分别表示字符串 s$$$s$$$ 和 t$$$t$$$ 的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 s1,s2,s3,…,sn$$$s_1, s_2, s_3, \\ldots, s_n$$$(1≤si≤200000$$$1 \\le s_i \\le 200\\,000$$$)，表示字符串 s$$$s$$$ 中的字符。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 m$$$m$$$ 个整数 t1,t2,t3,…,tm$$$t_1, t_2, t_3, \\ldots, t_m$$$(1≤ti≤200000$$$1 \\le t_i \\le 200\\,000$$$)，表示字符串 t$$$t$$$ 中的字符。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，即通过重新排列 s$$$s$$$ 中的字符可以得到的、字典序小于 t$$$t$$$ 的字符串数量，对 998244353$$$998\\,244\\,353$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，我们关注的字符串是 [122]$$$[1\\, 2\\, 2]$$$ 和 [212]$$$[2\\, 1\\, 2]$$$。字符串 [221]$$$[2\\, 2\\, 1]$$$ 的字典序大于字符串 [2121]$$$[2\\, 1\\, 2\\, 1]$$$，因此我们不对其计数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，除了 [4321]$$$[4\\, 3\\, 2\\, 1]$$$ 之外的所有字符串都符合条件，因此答案为 4!−1=23$$$4! - 1 = 23$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，只有字符串 [1112]$$$[1\\, 1\\, 1\\, 2]$$$ 符合条件。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Tyler 与字符串",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

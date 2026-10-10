@@ -1,0 +1,108 @@
+{
+  "code": "CF164A",
+  "letter": "A",
+  "title": "A. Variable, or There and Back Again",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/164/A",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Life is not easy for the perfectly common variable named Vasya. Wherever it goes, it is either assigned a value, or simply ignored, or is being used!",
+      "Vasya's life goes in states of a program. In each state, Vasya can either be used (for example, to calculate the value of another variable), or be assigned a value, or ignored. Between some states are directed (oriented) transitions.",
+      "A path is a sequence of states v1, v2, ..., vx, where for any 1 ≤ i < x exists a transition from vi to vi + 1.",
+      "Vasya's value in state v is interesting to the world, if exists path p1, p2, ..., pk such, that pi = v for some i (1 ≤ i ≤ k), in state p1 Vasya gets assigned a value, in state pk Vasya is used and there is no state pi (except for p1) where Vasya gets assigned a value.",
+      "Help Vasya, find the states in which Vasya's value is interesting to the world."
+    ],
+    "input": [
+      "The first line contains two space-separated integers n and m (1 ≤ n, m ≤ 105) — the numbers of states and transitions, correspondingly.",
+      "The second line contains space-separated n integers f1, f2, ..., fn (0 ≤ fi ≤ 2), fi described actions performed upon Vasya in state i: 0 represents ignoring, 1 — assigning a value, 2 — using.",
+      "Next m lines contain space-separated pairs of integers ai, bi (1 ≤ ai, bi ≤ n, ai ≠ bi), each pair represents the transition from the state number ai to the state number bi. Between two states can be any number of transitions."
+    ],
+    "output": [
+      "Print n integers r1, r2, ..., rn, separated by spaces or new lines. Number ri should equal 1, if Vasya's value in state i is interesting to the world and otherwise, it should equal 0. The states are numbered from 1 to n in the order, in which they are described in the input."
+    ],
+    "note": [
+      "In the first sample the program states can be used to make the only path in which the value of Vasya interests the world, 1 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 2 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 3 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 4; it includes all the states, so in all of them Vasya's value is interesting to the world.",
+      "The second sample the only path in which Vasya's value is interesting to the world is , — 1 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 3; state 2 is not included there.",
+      "In the third sample we cannot make from the states any path in which the value of Vasya would be interesting to the world, so the value of Vasya is never interesting to the world."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 3\n1 0 0 2\n1 2\n2 3\n3 4",
+      "output": "1\n1\n1\n1"
+    },
+    {
+      "input": "3 1\n1 0 2\n1 3",
+      "output": "1\n0\n1"
+    },
+    {
+      "input": "3 1\n2 0 1\n1 3",
+      "output": "0\n0\n0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "对于名为 Vasya 的这个再普通不过的变量来说，生活并不容易。无论它出现在哪里，要么会被赋值，要么会被直接忽略，要么会被使用！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "瓦西亚的生命以程序的状态形式存在。在每个状态中，瓦西亚要么被使用（例如，用于计算另一个变量的值），要么被赋予一个值，要么被忽略。某些状态之间存在有向（带方向的）转移。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "路径是状态序列 v1, v2, ..., vx，其中对于任意 1 ≤ i < x，都存在从 vi 到 vi+1 的转移。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果存在路径 p1, p2, ..., pk，使得对于某个 i (1 ≤ i ≤ k) 有 pi = v，且在状态 p1 中瓦西亚被赋予一个值，在状态 pk 中瓦西亚被使用，并且除了 p1 之外不存在状态 pi 让瓦西亚被赋予一个值，那么瓦西亚在状态 v 中的值对世界是有意义的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "请帮助瓦西亚，找出所有瓦西亚的值对世界有意义的状态。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个空格分隔的整数 n 和 m (1 ≤ n, m ≤ 105)，分别表示状态数和转移数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行包含空格分隔的 n 个整数 f1, f2, ..., fn (0 ≤ fi ≤ 2)，fi 描述在状态 i 中对瓦西亚执行的操作：0 表示忽略，1 表示赋予一个值，2 表示使用。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 m 行包含由空格分隔的整数对 a_i、b_i（1 ≤ a_i、b_i ≤ n，a_i ≠ b_i），每对整数表示从编号为 a_i 的状态到编号为 b_i 的状态的转移。两个状态之间可以有任意条转移。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 个整数 r_1、r_2、...、r_n，以空格或换行分隔。如果 Vasya 在状态 i 中的值对世界来说是有趣的，则 r_i 应为 1，否则应为 0。状态按照它们在输入中的描述顺序编号为 1 到 n。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，可以利用程序的状态构造出唯一一条使 Vasya 的值对世界有趣的路径：1 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 2 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 3 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 4；它包含所有状态，因此在所有状态中 Vasya 的值都对世界有趣。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，唯一一条使 Vasya 的值对世界有趣的路径是 1 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 3；状态 2 不在其中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，我们无法从这些状态构造出任何一条能使 Vasya 的值对世界有趣的路径，因此 Vasya 的值永远不会对世界有趣。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 变量，或来回往返",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "code": "GYM104879C",
+  "letter": "C",
+  "title": "C. Public Transportation",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104879/problem/C",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The project of a new city involves the construction of a grid of size n×m$$$n \\times m$$$ cells. A house with ti,j$$$t_{i,j}$$$ residents will be located at the intersection of the i$$$i$$$-th row and the j$$$j$$$-th column.",
+      "Three houses in cells (i,j)$$$(i, j)$$$, (i+a,j)$$$(i + a, j)$$$ and (i,j+b)$$$(i, j + b)$$$ form a good triangle suitable for a public transportation line if:",
+      "a>0$$$a  \\gt  0$$$ and b>0$$$b  \\gt  0$$$;",
+      "in the house (i,j)$$$(i, j)$$$, exactly a+b$$$a + b$$$ residents live;",
+      "in the house (i+a,j)$$$(i + a, j)$$$, exactly b$$$b$$$ residents live;",
+      "and in the house (i,j+b)$$$(i, j + b)$$$, exactly a$$$a$$$ residents live.",
+      "You can change the construction plan by increasing or decreasing all ti,j$$$t_{i,j}$$$ by the same integer d$$$d$$$. If ti,j$$$t_{i,j}$$$ should become less than zero, consider it to be equal to zero. Let T+d$$$T + d$$$ denote the matrix of values ti,j+d$$$t_{i,j} + d$$$, and let △(T+d)$$$\\triangle(T + d)$$$ be the number of good triangles when the city is constructed accordingly.",
+      "Find +∞∑d=−∞△(T+d),$$\\sum\\limits_{d=-\\infty}^{+\\infty} \\triangle(T + d) \\text{,}$$ or in other words, the total number of good triangles for all possible construction plans."
+    ],
+    "input": [
+      "The first line of input contains two integers n$$$n$$$ and m$$$m$$$ separated by a space, representing the number of rows and columns of the grid, respectively (1≤n,m≤1000$$$1 \\le n, m \\le 1000$$$).",
+      "In the i$$$i$$$-th of the following n$$$n$$$ lines, there are m$$$m$$$ integers ti,j$$$t_{i,j}$$$ listed, representing the number of residents in each house of the i$$$i$$$-th row of the grid (1≤ti,j≤109$$$1 \\le t_{i,j} \\le 10^9$$$)."
+    ],
+    "output": [
+      "Output a single integer, the number of sets of three cells that satisfy the given conditions.",
+      "Points for each subtask are awarded only if all tests of this subtask and the necessary subtasks are successfully passed."
+    ],
+    "note": [
+      "In this problem the input data size is large so it may be useful to use fast IO."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n3 1 1\n1 2 1\n1 1 1",
+      "output": "2"
+    },
+    {
+      "input": "2 4\n5 4 3 2\n4 3 2 1",
+      "output": "6"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这个新城市项目包括建造一个大小为 n×m$$$n \\times m$$$ 个单元格的网格。一座拥有 ti,j$$$t_{i,j}$$$ 名居民的房屋将位于第 i$$$i$$$ 行与第 j$$$j$$$ 列的交点处。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "若满足以下条件，则位于格子 (i,j)$$$(i, j)$$$、 (i+a,j)$$$(i + a, j)$$$ 和 (i,j+b)$$$(i, j + b)$$$ 的三座房屋构成一个适合公共交通线路的好三角形：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "a>0$$$a  \\gt  0$$$ 且 b>0$$$b  \\gt  0$$$;",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在房子 (i,j)$$$(i, j)$$$ 中，恰好住着 a+b$$$a + b$$$ 位居民；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在房子 (i+a,j)$$$(i + a, j)$$$ 中，恰好住着 b$$$b$$$ 位居民；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在房子 (i,j+b)$$$(i, j + b)$$$ 中，恰好住着 a$$$a$$$ 位居民。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你可以通过将所有 ti,j$$$t_{i,j}$$$ 同时增加或减少同一个整数 d$$$d$$$ 来改变建设方案。若 ti,j$$$t_{i,j}$$$ 变为小于零，则将其视为零。令 T+d$$$T + d$$$ 表示由 ti,j+d$$$t_{i,j} + d$$$ 构成的矩阵，并令 △(T+d)$$$\\triangle(T + d)$$$ 表示按此建设城市时好三角形的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "求 +∞∑d=−∞△(T+d)，$$\\sum\\limits_{d=-\\infty}^{+\\infty} \\triangle(T + d) \\text{,}$$换句话说，求所有可能构造方案中的好三角形总数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$，二者之间用空格分隔，分别表示网格的行数和列数(1≤n,m≤1000$$$1 \\le n, m \\le 1000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行中的第 i$$$i$$$ 行列出了 m$$$m$$$ 个整数 ti,j$$$t_{i,j}$$$，表示网格第 i$$$i$$$ 行中每栋房屋的居民数(1≤ti,j≤109$$$1 \\le t_{i,j} \\le 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示满足给定条件的三个单元格集合的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "只有在成功通过该子任务及其必要子任务的所有测试后，才能获得该子任务的分数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "本题输入数据规模较大，因此使用快速 I/O 可能会有所帮助。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 公共交通",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "code": "CF305D",
+  "letter": "D",
+  "title": "D. Olya and Graph",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/305/D",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Olya has got a directed non-weighted graph, consisting of n vertexes and m edges. We will consider that the graph vertexes are indexed from 1 to n in some manner. Then for any graph edge that goes from vertex v to vertex u the following inequation holds: v < u.",
+      "Now Olya wonders, how many ways there are to add an arbitrary (possibly zero) number of edges to the graph so as the following conditions were met:",
+      "You can reach vertexes number i + 1, i + 2, ..., n from any vertex number i (i < n).",
+      "For any graph edge going from vertex v to vertex u the following inequation fulfills: v < u.",
+      "There is at most one edge between any two vertexes.",
+      "The shortest distance between the pair of vertexes i, j (i < j), for which j - i ≤ k holds, equals j - i edges.",
+      "The shortest distance between the pair of vertexes i, j (i < j), for which j - i > k holds, equals either j - i or j - i - k edges.",
+      "We will consider two ways distinct, if there is the pair of vertexes i, j (i < j), such that first resulting graph has an edge from i to j and the second one doesn't have it.",
+      "Help Olya. As the required number of ways can be rather large, print it modulo 1000000007 (109 + 7)."
+    ],
+    "input": [
+      "The first line contains three space-separated integers n, m, k (2 ≤ n ≤ 106, 0 ≤ m ≤ 105, 1 ≤ k ≤ 106).",
+      "The next m lines contain the description of the edges of the initial graph. The i-th line contains a pair of space-separated integers ui, vi (1 ≤ ui < vi ≤ n) — the numbers of vertexes that have a directed edge from ui to vi between them.",
+      "It is guaranteed that any pair of vertexes ui, vi has at most one edge between them. It also is guaranteed that the graph edges are given in the order of non-decreasing ui. If there are multiple edges going from vertex ui, then it is guaranteed that these edges are given in the order of increasing vi."
+    ],
+    "output": [
+      "Print a single integer — the answer to the problem modulo 1000000007 (109 + 7)."
+    ],
+    "note": [
+      "In the first sample there are two ways: the first way is not to add anything, the second way is to add a single edge from vertex 2 to vertex 5."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7 8 2\n1 2\n2 3\n3 4\n3 6\n4 5\n4 7\n5 6\n6 7",
+      "output": "2"
+    },
+    {
+      "input": "7 0 2",
+      "output": "12"
+    },
+    {
+      "input": "7 2 1\n1 3\n3 5",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Olya 有一个有向无带权图，包含 n 个顶点和 m 条边。我们假设图的顶点按某种方式从 1 到 n 编号。那么对于任意一条从顶点 v 到顶点 u 的图边，以下不等式成立：v < u。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "现在 Olya 想知道，有多少种方式可以向图中添加任意（可能为零）数量的边，使得满足以下条件：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "从任意编号为 i 的顶点（i < n）可以到达编号为 i + 1, i + 2, ..., n 的顶点。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于任意一条从顶点 v 到顶点 u 的图边，以下不等式成立：v < u。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "任意两个顶点之间至多有一条边。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于满足 j - i ≤ k 的顶点对 i, j（i < j），它们之间的最短距离等于 j - i 条边。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于满足 j-i>k 的顶点对 i、j（i<j），它们之间的最短距离等于 j-i 条边或 j-i-k 条边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在顶点对 i、j（i<j），使得第一个得到的图中有一条从 i 到 j 的边，而第二个图中没有这条边，则认为这两种方案不同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "帮助 Olya。由于所求方案数可能非常大，请输出其对 1000000007（10^9+7）取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——答案对 1000000007（109 + 7）取模。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中有两种方式：第一种是什么也不添加，第二种是从顶点 2 到顶点 5 添加一条边。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个以空格分隔的整数 n、m、k（2≤n≤10^6，0≤m≤10^5，1≤k≤10^6）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行描述初始图中的边。第 i 行包含一对以空格分隔的整数 ui、vi（1≤ui<vi≤n），表示一条从 ui 指向 vi 的有向边的两个顶点编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证任意一对顶点 ui、vi 之间至多有一条边。还保证图中的边按照 ui 非递减的顺序给出。如果有多条边从顶点 ui 出发，则保证这些边按照 vi 递增的顺序给出。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Olya 与图",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

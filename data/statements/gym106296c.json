@@ -1,0 +1,147 @@
+{
+  "code": "GYM106296C",
+  "letter": "C",
+  "title": "C. Glitch",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106296/problem/C",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem!",
+      "There's a hidden array a1,a2,…,aN$$$a_1, a_2, \\ldots, a_N$$$ of N$$$N$$$ distinct positive integers (where N$$$N$$$ is odd); an incorrect copy of this array is stored in another hidden array b$$$b$$$. Each element of array b$$$b$$$ is defined as follows:",
+      "b1=a2$$$b_1 = a_2$$$",
+      "bN=aN−1$$$b_N = a_{N-1}$$$",
+      "bi=ai−1$$$b_i = a_{i-1}$$$ or bi=ai+1$$$b_i = a_{i+1}$$$ for each i$$$i$$$ where 1<i<N$$$1  \\lt  i  \\lt  N$$$ (one of the adjacent elements)",
+      "You need to determine whether there are two indices i$$$i$$$ and j$$$j$$$ (i≠j$$$i \\neq j$$$, 1≤i,j≤N$$$1 \\leq i, j \\leq N$$$) such that bi=bj$$$b_i = b_j$$$. If such indices exist, return them; otherwise, indicate that no such indices exist.",
+      "You can query the elements of arrays a$$$a$$$ and b$$$b$$$ using the following operations:",
+      "1 i: returns the value of ai (1≤ai≤109)$$$a_i\\ (1 \\leq a_i \\leq 10^9)$$$",
+      "2 i: returns the value of bi (1≤bi≤109)$$$b_i\\ (1 \\leq b_i \\leq 10^9)$$$",
+      "You can ask up to a maximum of 20$$$20$$$ queries.",
+      "Interaction",
+      "First, you must read a line containing a single integer T$$$T$$$ (1≤T≤100$$$1 \\leq T \\leq 100$$$) denoting the number of test cases. Then follows a description of the interaction for T$$$T$$$ test cases.",
+      "For each test case, you must first read a line containing one integer N$$$N$$$ (3≤N≤2 001, N is odd$$$(3 \\leq N \\leq 2 \\ 001,\\ N \\text{ is odd}$$$).",
+      "Then interaction starts. You can print one line, containing:",
+      "1 x (Ask about ax$$$a_x$$$): Then, read one line, consisting of one integer, ax$$$a_x$$$.",
+      "2 x (Ask about bx$$$b_x$$$): Then, read one line, consisting of one integer, bx$$$b_x$$$.",
+      "3 i j (The answer: two indices i$$$i$$$, j$$$j$$$, where bi=bj$$$b_i = b_j$$$ or -1 -1 if there are no such two indices): Then, proceed to the next test if there is any; otherwise, terminate.",
+      "After outputting each line, don't forget to flush the output. For example:",
+      "fflush(stdout) in C/C++;",
+      "System.out.flush() in Java;",
+      "sys.stdout.flush() in Python;",
+      "flush(output) in Pascal;",
+      "See the documentation for other languages."
+    ],
+    "input": [],
+    "output": []
+  },
+  "examples": [
+    {
+      "input": "1\n7\n\n2\n\n2",
+      "output": "\n\n2 3\n\n2 1\n\n3 1 3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是一道交互题！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "存在一个由 N$$$N$$$ 个互不相同的正整数组成的隐藏数组 a1,a2,…,aN$$$a_1, a_2, \\ldots, a_N$$$(其中 N$$$N$$$ 为奇数)；另一个隐藏数组 b$$$b$$$ 中存储着该数组的一个错误副本。数组 b$$$b$$$ 的每个元素定义如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "b1=a2$$$b_1 = a_2$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "bN=aN−1$$$b_N = a_{N-1}$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个满足 1<i<N$$$1  \\lt  i  \\lt  N$$$ 的 i$$$i$$$，bi=ai−1$$$b_i = a_{i-1}$$$ 或 bi=ai+1$$$b_i = a_{i+1}$$$(两个相邻元素之一)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要判断是否存在两个下标 i$$$i$$$ 和 j$$$j$$$(i≠j$$$i \\neq j$$$，1≤i,j≤N$$$1 \\leq i, j \\leq N$$$)，使得 bi=bj$$$b_i = b_j$$$。如果存在这样的下标，请返回它们；否则，请说明不存在这样的下标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以使用以下操作查询数组 a$$$a$$$ 和 b$$$b$$$ 中的元素：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1 i：返回 ai 的值(1≤ai≤109)$$$a_i\\ (1 \\leq a_i \\leq 10^9)$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2 i：返回 bi 的值(1≤bi≤109)$$$b_i\\ (1 \\leq b_i \\leq 10^9)$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你最多可以进行 20$$$20$$$ 次查询。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，你必须读取一行，其中包含一个整数 T$$$T$$$(1≤T≤100$$$1 \\leq T \\leq 100$$$)，表示测试用例的数量。接下来给出关于这 T$$$T$$$ 个测试用例的交互描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个测试用例，你必须先读取一行，其中包含一个整数 N$$$N$$$(3≤N≤2 001，N 为奇数$$$(3 \\leq N \\leq 2 \\ 001,\\ N \\text{ is odd}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后开始交互。你可以输出一行，其中包含：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1 x(询问 ax$$$a_x$$$)：然后读取一行，其中包含一个整数 ax$$$a_x$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2 x(询问 bx$$$b_x$$$)：然后读取一行，其中包含一个整数 bx$$$b_x$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3 i j(答案：两个下标 i$$$i$$$、j$$$j$$$，满足 bi=bj$$$b_i = b_j$$$；如果不存在这样的两个下标，则为 -1 -1)：然后，如果还有测试用例，则进行下一个测试；否则终止。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出每一行后，不要忘记刷新输出。例如：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "C/C++ 中的 fflush(stdout)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Java 中的 System.out.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Python 中的 sys.stdout.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Pascal 中的 flush(output)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其他语言请参阅相关文档。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [],
+    "output": []
+  },
+  "titleZh": {
+    "ai": "C. 故障",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

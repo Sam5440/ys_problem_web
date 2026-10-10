@@ -1,0 +1,119 @@
+{
+  "code": "CF730A",
+  "letter": "A",
+  "title": "A. Toda 2",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/730/A",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "A group of n friends enjoys playing popular video game Toda 2. There is a rating system describing skill level of each player, initially the rating of the i-th friend is ri.",
+      "The friends decided to take part in the championship as a team. But they should have equal ratings to be allowed to compose a single team consisting of all n friends. So the friends are faced with the problem: how to make all their ratings equal.",
+      "One way to change ratings is to willingly lose in some matches. Friends can form a party consisting of two to five (but not more than n) friends and play a match in the game. When the party loses, the rating of each of its members decreases by 1. A rating can't become negative, so ri = 0 doesn't change after losing.",
+      "The friends can take part in multiple matches, each time making a party from any subset of friends (but remember about constraints on party size: from 2 to 5 members).",
+      "The friends want to make their ratings equal but as high as possible.",
+      "Help the friends develop a strategy of losing the matches so that all their ratings become equal and the resulting rating is maximum possible."
+    ],
+    "input": [
+      "The first line contains a single integer n (2 ≤ n ≤ 100) — the number of friends.",
+      "The second line contains n non-negative integers r1, r2, ..., rn (0 ≤ ri ≤ 100), where ri is the initial rating of the i-th friend."
+    ],
+    "output": [
+      "In the first line, print a single integer R — the final rating of each of the friends.",
+      "In the second line, print integer t — the number of matches the friends have to play. Each of the following t lines should contain n characters '0' or '1', where the j-th character of the i-th line is equal to:",
+      "'0', if friend j should not play in match i,",
+      "'1', if friend j should play in match i.",
+      "Each line should contain between two and five characters '1', inclusive.",
+      "The value t should not exceed 104, it is guaranteed that such solution exists.",
+      "Remember that you shouldn't minimize the value t, but you should maximize R. If there are multiple solutions, print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n4 5 1 7 4",
+      "output": "1\n8\n01010\n00011\n01010\n10010\n00011\n11000\n00011\n11000"
+    },
+    {
+      "input": "2\n1 2",
+      "output": "0\n2\n11\n11"
+    },
+    {
+      "input": "3\n1 1 1",
+      "output": "1\n0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "有 n 位朋友喜欢玩热门电子游戏 Toda 2。游戏中有一个评级系统，用于描述每位玩家的技能水平；最初，第 i 位朋友的评级为 ri。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "朋友们决定组队参加锦标赛。但是，只有当他们的评级相同时，才允许将全部 n 位朋友组成一支队伍。因此，朋友们面临着这样一个问题：如何使他们所有人的评级相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "改变评级的一种方法是在一些比赛中主动输掉。朋友们可以组成一个由 2 至 5 名（但不超过 n 名）朋友构成的小队，并在游戏中进行一场比赛。当小队输掉比赛时，其每位成员的评级都会降低 1。评级不能变为负数，因此当 ri = 0 时，输掉比赛后评级不会改变。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "朋友们可以参加多场比赛，每次都可以从任意一部分朋友中组成一个小队（但请记住小队人数的限制：必须为 2 至 5 名成员）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "朋友们希望让自己的评分相等，并且尽可能高。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助朋友们制定一种输掉比赛的策略，使得他们的评分最终全部相等，且最终评分尽可能高。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（2 ≤ n ≤ 100）——朋友的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个非负整数 r1, r2, ..., rn（0 ≤ ri ≤ 100），其中 ri 是第 i 个朋友的初始评分。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出一个整数 R——每个朋友的最终评分。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行输出一个整数 t——朋友们需要进行的比赛场数。接下来的 t 行中的每一行都应包含 n 个字符“0”或“1”，其中第 i 行的第 j 个字符等于：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果朋友 j 不应参加比赛 i，则为“0”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果朋友 j 应参加比赛 i，则为“1”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每行应包含 2 至 5 个字符“1”（包括两端）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "t 的值不应超过 104，保证一定存在这样的解。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，你不应使 t 最小化，而应使 R 最大化。如果存在多个解，输出任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. Toda 2",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

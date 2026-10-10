@@ -1,0 +1,120 @@
+{
+  "code": "GYM105284C",
+  "letter": "C",
+  "title": "C. Monkey Math Tree",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105284/problem/C",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There is a chain of n$$$n$$$ nodes with edges between nodes u$$$u$$$ and v$$$v$$$ such that |v−u|=1$$$|v - u| = 1$$$. For each node i$$$i$$$ (1≤i≤n$$$1 \\le i \\le n$$$), you will keep it with probability 1i$$$\\frac{1}{i}$$$ or delete it with probability 1−1i$$$1 - \\frac{1}{i}$$$. Find the expected number of connected components after all the deletions, modulo 109+7$$$10^9+7$$$."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line of input contains a single integer t$$$t$$$ (1≤t≤2⋅105)$$$(1 \\leq t \\leq 2 \\cdot 10^5)$$$ — the number of test cases.",
+      "Each test case contains one line consisting of a single integer n$$$n$$$ (1≤n≤106)$$$(1 \\leq n \\leq 10^6)$$$ — the number of nodes in the chain.",
+      "—",
+      "Tests in subtasks are numbered from 1−10$$$1-10$$$ with samples skipped. Each test is worth 10010=10$$$\\frac{100}{10}=10$$$ points.",
+      "Test 1$$$1$$$ satisfies 1≤n≤15$$$1 \\leq n \\leq 15$$$.",
+      "Tests 2−3$$$2-3$$$ satisfy 1≤n≤100$$$1 \\leq n \\leq 100$$$.",
+      "Tests 4−5$$$4-5$$$ satisfy t=1$$$t=1$$$.",
+      "The remaining tests do not satisfy any additional constraints."
+    ],
+    "output": [
+      "For each test case, print a single integer — the expected number of connected components after all deletions. It can be shown that the answer can be expressed as an irreducible fraction ab$$$\\frac{a}{b}$$$, where a$$$a$$$ and b$$$b$$$ are integers. Output the integer equal to a⋅b−1 mod 109+7$$$a \\cdot b^{-1} \\text{ mod } 10^9+7$$$."
+    ],
+    "note": [
+      "For the first test case in the sample test, n=1$$$n=1$$$, so there is one node that you keep with probability 11=1$$$\\frac{1}{1}=1$$$, so there can only be 1$$$1$$$ connected component in the final graph.",
+      "In the second test case in the sample test, n=2$$$n=2$$$, so you keep node 1$$$1$$$ with probability 11=1$$$\\frac{1}{1}=1$$$ and node 2$$$2$$$ with probability 12$$$\\frac{1}{2}$$$. Whether node 2$$$2$$$ is kept or not, there will be 1$$$1$$$ connected component.",
+      "—",
+      "Problem Idea: willy108, Yam",
+      "Problem Preparation: Yam",
+      "Occurrences: Novice I, Advanced C"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1\n2\n3\n4",
+      "output": "1\n1\n166666669\n333333337"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "有一条由 n$$$n$$$ 个节点组成的链，节点 u$$$u$$$ 和 v$$$v$$$ 之间有一条边，且满足 |v−u|=1$$$|v - u| = 1$$$。对于每个节点 i$$$i$$$(1≤i≤n$$$1 \\le i \\le n$$$)，你将以 1i$$$\\frac{1}{i}$$$ 的概率保留它，或以 1−1i$$$1 - \\frac{1}{i}$$$ 的概率删除它。求所有删除操作完成后连通分量数量的期望值，结果对 109+7$$$10^9+7$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多组测试用例。输入的第一行包含一个整数 t$$$t$$$(1≤t≤2⋅105)$$$(1 \\leq t \\leq 2 \\cdot 10^5)$$$——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每组测试用例包含一行，其中有一个整数 n$$$n$$$(1≤n≤106)$$$(1 \\leq n \\leq 10^6)$$$——链中节点的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务中的测试编号为 1−10$$$1-10$$$，跳过样例。每个测试的分值为 10010=10$$$\\frac{100}{10}=10$$$ 分。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试 1$$$1$$$ 满足 1≤n≤15$$$1 \\leq n \\leq 15$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试 2−3$$$2-3$$$ 满足 1≤n≤100$$$1 \\leq n \\leq 100$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试 4−5$$$4-5$$$ 满足 t=1$$$t=1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其余测试不满足任何额外的约束条件。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数，表示删除所有元素后连通分量的期望数量。可以证明，答案可以表示为最简分数 ab$$$\\frac{a}{b}$$$，其中 a$$$a$$$ 和 b$$$b$$$ 为整数。输出等于 a⋅b−1 mod 109+7$$$a \\cdot b^{-1} \\text{ mod } 10^9+7$$$ 的整数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于样例测试中的第一个测试用例，n=1$$$n=1$$$，因此有一个节点，该节点以概率 11=1$$$\\frac{1}{1}=1$$$ 被保留，所以最终图中只能有 1$$$1$$$ 个连通分量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在样例测试的第二个测试用例中，n=2$$$n=2$$$，因此保留节点 1$$$1$$$ 的概率为 11=1$$$\\frac{1}{1}=1$$$，保留节点 2$$$2$$$ 的概率为 12$$$\\frac{1}{2}$$$。无论是否保留节点 2$$$2$$$，都会有 1$$$1$$$ 个连通分量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "题解思路：willy108、Yam",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "题目准备：Yam",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "出现于：Novice I、Advanced C",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 猴子数学树",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

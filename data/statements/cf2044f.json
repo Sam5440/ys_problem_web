@@ -1,0 +1,179 @@
+{
+  "code": "CF2044F",
+  "letter": "F",
+  "title": "F. Easy Demon Problem",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/2044/F",
+  "difficulty": "1900",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "For an arbitrary grid, Robot defines its beauty to be the sum of elements in the grid.",
+      "Robot gives you an array a$$$a$$$ of length n$$$n$$$ and an array b$$$b$$$ of length m$$$m$$$. You construct a n$$$n$$$ by m$$$m$$$ grid M$$$M$$$ such that Mi,j=ai⋅bj$$$M_{i,j}=a_i\\cdot b_j$$$ for all 1≤i≤n$$$1 \\leq i \\leq n$$$ and 1≤j≤m$$$1 \\leq j \\leq m$$$.",
+      "Then, Robot gives you q$$$q$$$ queries, each consisting of a single integer x$$$x$$$. For each query, determine whether or not it is possible to perform the following operation exactly once so that M$$$M$$$ has a beauty of x$$$x$$$:",
+      "Choose integers r$$$r$$$ and c$$$c$$$ such that 1≤r≤n$$$1 \\leq r \\leq n$$$ and 1≤c≤m$$$1 \\leq c \\leq m$$$",
+      "Set Mi,j$$$M_{i,j}$$$ to be 0$$$0$$$ for all ordered pairs (i,j)$$$(i,j)$$$ such that i=r$$$i=r$$$, j=c$$$j=c$$$, or both.",
+      "Note that queries are not persistent, meaning that you do not actually set any elements to 0$$$0$$$ in the process — you are only required to output if it is possible to find r$$$r$$$ and c$$$c$$$ such that if the above operation is performed, the beauty of the grid will be x$$$x$$$. Also, note that you must perform the operation for each query, even if the beauty of the original grid is already x$$$x$$$."
+    ],
+    "input": [
+      "The first line contains three integers n$$$n$$$, m$$$m$$$, and q$$$q$$$ (1≤n,m≤2⋅105,1≤q≤5⋅104$$$1 \\leq n,m \\leq 2\\cdot 10^5, 1 \\leq q \\leq 5\\cdot 10^4$$$) — the length of a$$$a$$$, the length of b$$$b$$$, and the number of queries respectively.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (0≤|ai|≤n$$$0 \\leq |a_i| \\leq n$$$).",
+      "The third line contains m$$$m$$$ integers b1,b2,…,bm$$$b_1, b_2, \\ldots, b_m$$$ (0≤|bi|≤m$$$0 \\leq |b_i| \\leq m$$$).",
+      "The following q$$$q$$$ lines each contain a single integer x$$$x$$$ (1≤|x|≤2⋅105$$$1 \\leq |x| \\leq 2\\cdot 10^5$$$), the beauty of the grid you wish to achieve by setting all elements in a row and a column to 0$$$0$$$."
+    ],
+    "output": [
+      "For each testcase, output \"YES\" (without quotes) if there is a way to perform the aforementioned operation such that the beauty is x$$$x$$$, and \"NO\" (without quotes) otherwise.",
+      "You can output \"YES\" and \"NO\" in any case (for example, strings \"yES\", \"yes\" and \"Yes\" will be recognized as a positive response)."
+    ],
+    "note": [
+      "In the second example, the grid is",
+      "0 -2 5 0 -3",
+      "0 4 -10 0 6",
+      "0 -6 15 0 -9",
+      "0 0 0 0 0",
+      "0 0 0 0 0",
+      "By performing the operation with r=4$$$r=4$$$ and c=2$$$c=2$$$, we create the following grid:",
+      "0 0 5 0 -3",
+      "0 0 -10 0 6",
+      "0 0 15 0 -9",
+      "0 0 0 0 0",
+      "0 0 0 0 0",
+      "which has beauty 4$$$4$$$. Thus, we output YES.",
+      "In the second query, selecting r=3$$$r=3$$$ and c=5$$$c=5$$$ creates a grid with beauty −3$$$-3$$$.",
+      "In the third query, selecting r=3$$$r=3$$$ and c=3$$$c=3$$$ creates a grid with beauty 5$$$5$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3 6\n-2 3 -3\n-2 2 -1\n-1\n1\n-2\n2\n-3\n3",
+      "output": "NO\nYES\nNO\nNO\nYES\nNO"
+    },
+    {
+      "input": "5 5 6\n1 -2 3 0 0\n0 -2 5 0 -3\n4\n-3\n5\n2\n-1\n2",
+      "output": "YES\nYES\nYES\nYES\nNO\nYES"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "对于任意一个网格，Robot 将其美丽度定义为网格中所有元素之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Robot 给你一个长度为 n$$$n$$$ 的数组 a$$$a$$$ 以及一个长度为 m$$$m$$$ 的数组 b$$$b$$$。你需要构造一个 n$$$n$$$×m$$$m$$$ 的网格 M$$$M$$$，使得对于所有 1≤i≤n$$$1 \\leq i \\leq n$$$ 且 1≤j≤m$$$1 \\leq j \\leq m$$$，Mi,j=ai⋅bj$$$M_{i,j}=a_i\\cdot b_j$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "随后，Robot 给你 q$$$q$$$ 个查询，每个查询由一个整数 x$$$x$$$ 构成。对于每个查询，判断是否可以恰好执行一次以下操作，使得 M$$$M$$$ 的美丽度为 x$$$x$$$：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择整数 r$$$r$$$ 和 c$$$c$$$，满足 1≤r≤n$$$1 \\leq r \\leq n$$$ 且 1≤c≤m$$$1 \\leq c \\leq m$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于所有满足 i=r$$$i=r$$$、j=c$$$j=c$$$ 或二者同时成立的有序对 (i,j)$$$(i,j)$$$，将 Mi,j$$$M_{i,j}$$$ 设为 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，查询之间并不相互影响，这意味着在此过程中你实际上不会将任何元素设为 0$$$0$$$——你只需要输出是否能够找到 r$$$r$$$ 和 c$$$c$$$，使得执行上述操作后，网格的美丽度为 x$$$x$$$。此外，即使原网格的美丽度已经是 x$$$x$$$，你也必须对每个查询执行该操作。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、m$$$m$$$ 和 q$$$q$$$(1≤n,m≤2⋅105，1≤q≤5⋅104$$$1 \\leq n,m \\leq 2\\cdot 10^5, 1 \\leq q \\leq 5\\cdot 10^4$$$)——分别表示 a$$$a$$$ 的长度、b$$$b$$$ 的长度以及查询次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$(0≤|ai|≤n$$$0 \\leq |a_i| \\leq n$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 m$$$m$$$ 个整数 b1,b2,…,bm$$$b_1, b_2, \\ldots, b_m$$$(0≤|bi|≤m$$$0 \\leq |b_i| \\leq m$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行中，每行包含一个整数 x$$$x$$$(1≤|x|≤2⋅105$$$1 \\leq |x| \\leq 2\\cdot 10^5$$$)，表示你希望通过将某一行和某一列中的所有元素设为 0$$$0$$$ 后得到的网格美丽度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果存在一种方式执行上述操作使得美丽值为 x$$$x$$$，则输出 \"YES\"(不带引号)，否则输出 \"NO\"(不带引号)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你可以以任意大小写形式输出 \"YES\" 和 \"NO\"（例如，字符串 \"yES\"、\"yes\" 和 \"Yes\" 都将被视为肯定回答）。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第二个样例中，网格为：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "0 -2 5 0 -3",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "0 4 -10 0 6",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "0 -6 15 0 -9",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "0 0 0 0 0",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "0 0 0 0 0",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "执行 r=4$$$r=4$$$ 且 c=2$$$c=2$$$ 的操作后，我们得到如下网格：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "0 0 5 0 -3",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "0 0 -10 0 6",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "0 0 15 0 -9",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "0 0 0 0 0",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "0 0 0 0 0",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其美丽度为 4$$$4$$$。因此，我们输出 YES。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二次查询中，选择 r=3$$$r=3$$$ 和 c=5$$$c=5$$$ 会得到一个美丽度为 −3$$$-3$$$ 的网格。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三次查询中，选择 r=3$$$r=3$$$ 和 c=3$$$c=3$$$ 会得到一个美丽度为 5$$$5$$$ 的网格。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 简单恶魔问题",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

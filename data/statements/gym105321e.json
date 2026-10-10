@@ -1,0 +1,103 @@
+{
+  "code": "GYM105321E",
+  "letter": "E",
+  "title": "E. Final Showdown",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105321/problem/E",
+  "difficulty": "*1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Within a well-known video game, our hero faces \"The Beast\", the final boss of the game, and wants to know if he is capable of defeating her or not.",
+      "The hero has P$$$P$$$ power points and has N$$$N$$$ different weapons at his disposal. Each weapon is characterized by three integers A$$$A$$$, B$$$B$$$, and C$$$C$$$. When attacking with a weapon, if the hero currently has P$$$P$$$ power points, he will have ⌊P−BA⌋$$$\\displaystyle{\\left \\lfloor \\frac{P-B}{A}\\right \\rfloor}$$$ power points after the attack, inflicting damage to The Beast such that she loses C$$$C$$$ health points. After hitting The Beast, the weapons break. For this reason, each weapon can be used at most once.",
+      "The hero wins the confrontation if he manages to defeat The Beast. To achieve this, his power points must be non-negative, and The Beast's health points must be zero or negative.",
+      "What is the maximum amount of health points V$$$V$$$ that The Beast can initially have for the hero to be able to defeat her?",
+      "Note: ⌊x⌋$$$\\lfloor x \\rfloor$$$ is the largest integer such that ⌊x⌋≤x$$$\\lfloor x \\rfloor \\leq x$$$. For example, ⌊2.5⌋=2,⌊π⌋=3,⌊−2.75⌋=−3$$$\\lfloor 2.5 \\rfloor=2, \\lfloor \\pi \\rfloor=3, \\lfloor -2.75 \\rfloor=-3$$$."
+    ],
+    "input": [
+      "A line with two integers N$$$N$$$ and P$$$P$$$ (1≤N≤200,1≤P≤105)$$$(1 \\leq N \\leq 200, 1 \\leq P \\leq 10^5)$$$, the number of weapons and the initial amount of power points of the hero.",
+      "Then N$$$N$$$ lines that describe the weapons with three integers A$$$A$$$, B$$$B$$$, and C$$$C$$$ (1≤A,B,C≤105)$$$(1 \\leq A, B, C \\leq 10^5)$$$."
+    ],
+    "output": [
+      "A line with an integer V$$$V$$$, the maximum amount of health points that The Beast can have."
+    ],
+    "note": [
+      "In the first example, if The Beast has 11$$$11$$$ health points, the hero can use the second weapon, reducing his power points from 66$$$66$$$ to ⌊66−88⌋=7$$$\\lfloor \\frac{66-8}{8}\\rfloor=7$$$ and The Beast's health points to 2$$$2$$$. Then, he can use the third weapon, reducing his power points from 7$$$7$$$ to ⌊7−52⌋=1$$$\\lfloor \\frac{7-5}{2}\\rfloor=1$$$ and The Beast's health points to 0$$$0$$$. If The Beast starts with 12$$$12$$$ health points or more, then it is impossible to defeat her.",
+      "In the second example, if The Beast has 10$$$10$$$ health points, the hero can first use the second weapon and then the first, reducing his power points to 0$$$0$$$ and The Beast's health points to 0$$$0$$$.",
+      "In the third example, the only way for the hero to win is if The Beast has 0$$$0$$$ health points initially."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 66\n8 8 6\n8 8 9\n2 5 2",
+      "output": "11"
+    },
+    {
+      "input": "2 10\n3 1 4\n2 8 6",
+      "output": "10"
+    },
+    {
+      "input": "1 6\n3 7 5",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在一款知名电子游戏中，我们的英雄面对游戏的最终 Boss“野兽”，他想知道自己是否有能力击败她。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "英雄拥有 P$$$P$$$ 点力量，并有 N$$$N$$$ 种不同的武器可供使用。每种武器由三个整数 A$$$A$$$、B$$$B$$$ 和 C$$$C$$$ 描述。使用武器攻击时，若英雄当前有 P$$$P$$$ 点力量，那么攻击后他将拥有 ⌊P−BA⌋$$$\\displaystyle{\\left \\lfloor \\frac{P-B}{A}\\right \\rfloor}$$$ 点力量，同时对野兽造成伤害，使她损失 C$$$C$$$ 点生命值。击中野兽后，武器会损坏。因此，每种武器最多只能使用一次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果英雄成功击败野兽，他就赢得了这场战斗。为此，他的力量点数必须非负，并且野兽的生命值必须小于或等于零。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了让英雄能够击败野兽，野兽初始生命值 V$$$V$$$ 的最大值是多少？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意：⌊x⌋$$$\\lfloor x \\rfloor$$$ 表示满足 ⌊x⌋≤x$$$\\lfloor x \\rfloor \\leq x$$$ 的最大整数。例如，⌊2.5⌋=2，⌊π⌋=3，⌊−2.75⌋=−3$$$\\lfloor 2.5 \\rfloor=2, \\lfloor \\pi \\rfloor=3, \\lfloor -2.75 \\rfloor=-3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "一行包含两个整数 N$$$N$$$ 和 P$$$P$$$(1≤N≤200,1≤P≤105)$$$(1 \\leq N \\leq 200, 1 \\leq P \\leq 10^5)$$$，分别表示武器数量和英雄初始的力量点数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来是 N$$$N$$$ 行，每行包含三个整数 A$$$A$$$、B$$$B$$$ 和 C$$$C$$$，用于描述武器(1≤A,B,C≤105)$$$(1 \\leq A, B, C \\leq 10^5)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "一行包含一个整数 V$$$V$$$，表示 The Beast 所能拥有的最大生命值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，如果 The Beast 拥有 11$$$11$$$ 点生命值，英雄可以使用第二把武器，将自己的力量值从 66$$$66$$$ 降低到 ⌊66−88⌋=7$$$\\lfloor \\frac{66-8}{8}\\rfloor=7$$$，并将 The Beast 的生命值降低到 2$$$2$$$。随后，他可以使用第三把武器，将自己的力量值从 7$$$7$$$ 降低到 ⌊7−52⌋=1$$$\\lfloor \\frac{7-5}{2}\\rfloor=1$$$，并将 The Beast 的生命值降低到 0$$$0$$$。如果 The Beast 初始拥有 12$$$12$$$ 点生命值或更多，那么就不可能击败她。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，如果 The Beast 拥有 10$$$10$$$ 点生命值，英雄可以先使用第二把武器，然后使用第一把武器，将自己的力量值降低到 0$$$0$$$，并将 The Beast 的生命值降低到 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，英雄获胜的唯一方法是 The Beast 初始拥有 0$$$0$$$ 点生命值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 最终对决",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "code": "CF1887B",
+  "letter": "B",
+  "title": "B. Time Travel",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1887/B",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Berland is a country with ancient history, where roads were built and destroyed for centuries. It is known that there always were n$$$n$$$ cities in Berland. You also have records of t$$$t$$$ key moments in the history of the country, numbered from 1$$$1$$$ to t$$$t$$$. Each record contains a list of bidirectional roads between some pairs of cities, which could be used for travel in Berland at a specific moment in time.",
+      "You have discovered a time machine that transports you between key moments. Unfortunately, you cannot choose what point in time to end up at, but you know the order consisting of k$$$k$$$ moments in time ai$$$a_{i}$$$, in which the machine will transport you. Since there is little time between the travels, when you find yourself in the next key moment in time (including after the last time travel), you can travel on at most one existing road at that moment, coming out from the city you were in before time travel.",
+      "Currently, you are in city 1$$$1$$$, and the time machine has already transported you to moment a1$$$a_{1}$$$. You want to reach city n$$$n$$$ as quickly as possible. Determine the minimum number of time travels, including the first one, that you need to make in order to reach city n$$$n$$$."
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and t$$$t$$$ (2≤n≤2⋅105,1≤t≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5, 1 \\le t \\le 2 \\cdot 10^5$$$) — the number of cities in Berland and the number of records about key moments in history. Then follows the description of each of the t$$$t$$$ records.",
+      "The first line of each record description contains a single integer mi$$$m_{i}$$$ (0≤mi≤min(n(n−1)2,2⋅105)$$$0 \\le m_{i} \\le \\min \\left(\\frac{n(n-1)}{2}, 2 \\cdot 10^5\\right)$$$) — the number of roads in the i$$$i$$$-th record.",
+      "Each of the next mi$$$m_i$$$ lines contains two integers vj$$$v_{j}$$$ and uj$$$u_{j}$$$ (1≤vj,uj≤n$$$1 \\le v_{j}, u_{j} \\le n$$$, vj≠uj$$$v_{j} \\neq u_{j}$$$) — the numbers of cities connected by the j$$$j$$$-th road in the i$$$i$$$-th key moment in history.",
+      "The next line contains a single integer k$$$k$$$ (1≤k≤2⋅105$$$1 \\le k \\le 2 \\cdot 10^5$$$) — the number of time moments between which movements will occur.",
+      "The next line contains k$$$k$$$ integers a1,a2,…,ak$$$a_1, a_2, \\ldots, a_k$$$ (1≤ai≤t$$$1 \\le a_{i} \\le t$$$) — the time moments at which you will be after each movement.",
+      "It is guaranteed that the sum of mi$$$m_{i}$$$ does not exceed 2⋅105$$$2 \\cdot 10^5$$$. It is guaranteed that each unordered pair (u,v)$$$(u, v)$$$ occurs in the road description for one record no more than once."
+    ],
+    "output": [
+      "Output a single integer — the minimum number of time travels required to reach city n$$$n$$$ from city 1$$$1$$$, or −1$$$-1$$$ if it is impossible.",
+      "Note that movement to time moment a1$$$a_{1}$$$ is also considered a movement."
+    ],
+    "note": [
+      "In the first example, you are in city 1$$$1$$$ and move to moment a1=2$$$a_{1} = 2$$$. Since there are no suitable roads to pass, you do nothing and move to moment a2=1$$$a_{2} = 1$$$, after which you travel along the road (1,2)$$$(1, 2)$$$. Moving to moment a3=2$$$a_{3} = 2$$$, you travel along the road (2,3)$$$(2, 3)$$$. Moving to moment a4=1$$$a_{4} = 1$$$, you stay in city 3$$$3$$$ and make the next time travel. At time moment a5=2$$$a_{5} = 2$$$, you travel along the road (3,5)$$$(3, 5)$$$ and end up in the final city after 5$$$5$$$ time travels.",
+      "In the second example, it can be shown that it is impossible to reach city 5$$$5$$$ with the given time travels."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 2\n4\n1 2\n2 3\n3 4\n4 5\n2\n2 3\n3 5\n6\n2 1 2 1 2 1",
+      "output": "5"
+    },
+    {
+      "input": "5 2\n3\n1 2\n3 1\n4 3\n2\n2 1\n4 5\n5\n1 2 1 1 1",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Berland 是一个有着悠久历史的国家，几百年来，道路不断被修建和摧毁。已知 Berland 中一直有 n$$$n$$$ 座城市。你还有该国历史上 t$$$t$$$ 个关键时刻的记录，编号从 1$$$1$$$ 到 t$$$t$$$。每条记录都包含某些城市对之间的双向道路列表，这些道路在特定时刻可以用于在 Berland 境内通行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你发现了一台能够在关键时刻之间传送你的时光机。不幸的是，你无法选择最终抵达的时间点，但你知道时光机将把你依次传送到由 k$$$k$$$ 个时刻 ai$$$a_{i}$$$ 组成的序列中。由于两次传送之间时间很短，当你到达下一个关键时刻(包括最后一次时间旅行之后)时，你至多可以沿着该时刻存在的一条道路，从你进行时间旅行前所在的城市出发进行移动。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "目前，你在城市 1$$$1$$$ 中，并且时光机已经将你传送到了时刻 a1$$$a_{1}$$$。你希望尽快到达城市 n$$$n$$$。请确定为了到达城市 n$$$n$$$，包括第一次时间旅行在内，你至少需要进行多少次时间旅行。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 t$$$t$$$(2≤n≤2⋅105,1≤t≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5, 1 \\le t \\le 2 \\cdot 10^5$$$)——Berland 中城市的数量以及关于历史关键时刻的记录数量。接下来给出 t$$$t$$$ 条记录的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每条记录描述的第一行包含一个整数 mi$$$m_{i}$$$(0≤mi≤min(n(n−1)2,2⋅105)$$$0 \\le m_{i} \\le \\min \\left(\\frac{n(n-1)}{2}, 2 \\cdot 10^5\\right)$$$)——第 i$$$i$$$ 条记录中的道路数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 mi$$$m_i$$$ 行中的每一行包含两个整数 vj$$$v_{j}$$$ 和 uj$$$u_{j}$$$(1≤vj,uj≤n$$$1 \\le v_{j}, u_{j} \\le n$$$，vj≠uj$$$v_{j} \\neq u_{j}$$$)——表示历史上第 i$$$i$$$ 个关键时刻中第 j$$$j$$$ 条道路所连接的城市编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来一行包含一个整数 k$$$k$$$(1≤k≤2⋅105$$$1 \\le k \\le 2 \\cdot 10^5$$$)——将要进行移动的时间时刻数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来一行包含 k$$$k$$$ 个整数 a1,a2,…,ak$$$a_1, a_2, \\ldots, a_k$$$(1≤ai≤t$$$1 \\le a_{i} \\le t$$$)——每次移动后你所处的时间时刻。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 mi$$$m_{i}$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。保证对于每条记录，每个无序对 (u,v)$$$(u, v)$$$ 在道路描述中至多出现一次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——从城市 1$$$1$$$ 到达城市 n$$$n$$$ 所需的最少时间旅行次数；如果无法到达，则输出 −1$$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，移动到时间时刻 a1$$$a_{1}$$$ 也被视为一次移动。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，你位于城市 1$$$1$$$，并移动到时刻 a1=2$$$a_{1} = 2$$$。由于没有合适的道路可供通行，你什么也不做，移动到时刻 a2=1$$$a_{2} = 1$$$，之后沿着道路 (1,2)$$$(1, 2)$$$ 行进。移动到时刻 a3=2$$$a_{3} = 2$$$ 后，你沿着道路 (2,3)$$$(2, 3)$$$ 行进。移动到时刻 a4=1$$$a_{4} = 1$$$ 后，你留在城市 3$$$3$$$，并进行下一次时间旅行。在时刻 a5=2$$$a_{5} = 2$$$，你沿着道路 (3,5)$$$(3, 5)$$$ 行进，并在进行 5$$$5$$$ 次时间旅行后抵达最终城市。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，可以证明，利用给定的时间旅行无法到达城市 5$$$5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 时间旅行",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

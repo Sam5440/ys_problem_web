@@ -1,0 +1,148 @@
+{
+  "code": "CF689B",
+  "letter": "B",
+  "title": "B. Mike and Shortcuts",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/689/B",
+  "difficulty": "1600",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Recently, Mike was very busy with studying for exams and contests. Now he is going to chill a bit by doing some sight seeing in the city.",
+      "City consists of n intersections numbered from 1 to n. Mike starts walking from his house located at the intersection number 1 and goes along some sequence of intersections. Walking from intersection number i to intersection j requires |i - j| units of energy. The total energy spent by Mike to visit a sequence of intersections p1 = 1, p2, ..., pk is equal to ![](https://espresso.codeforces.com/b366a738332ae698b6ad24b23eec6b08a25a2fe9.png) units of energy.",
+      "Of course, walking would be boring if there were no shortcuts. A shortcut is a special path that allows Mike walking from one intersection to another requiring only 1 unit of energy. There are exactly n shortcuts in Mike's city, the ith of them allows walking from intersection i to intersection ai (i ≤ ai ≤ ai + 1) (but not in the opposite direction), thus there is exactly one shortcut starting at each intersection. Formally, if Mike chooses a sequence p1 = 1, p2, ..., pk then for each 1 ≤ i < k satisfying pi + 1 = api and api ≠ pi Mike will spend only 1 unit of energy instead of |pi - pi + 1| walking from the intersection pi to intersection pi + 1. For example, if Mike chooses a sequence p1 = 1, p2 = ap1, p3 = ap2, ..., pk = apk - 1, he spends exactly k - 1 units of total energy walking around them.",
+      "Before going on his adventure, Mike asks you to find the minimum amount of energy required to reach each of the intersections from his home. Formally, for each 1 ≤ i ≤ n Mike is interested in finding minimum possible total energy of some sequence p1 = 1, p2, ..., pk = i."
+    ],
+    "input": [
+      "The first line contains an integer n (1 ≤ n ≤ 200 000) — the number of Mike's city intersection.",
+      "The second line contains n integers a1, a2, ..., an (i ≤ ai ≤ n , ![](https://espresso.codeforces.com/a0e0e50a93f8d64ea6c764b778e4071020d4ef96.png), describing shortcuts of Mike's city, allowing to walk from intersection i to intersection ai using only 1 unit of energy. Please note that the shortcuts don't allow walking in opposite directions (from ai to i)."
+    ],
+    "output": [
+      "In the only line print n integers m1, m2, ..., mn, where mi denotes the least amount of total energy required to walk from intersection 1 to intersection i."
+    ],
+    "note": [
+      "In the first sample case desired sequences are:",
+      "1: 1; m1 = 0;",
+      "2: 1, 2; m2 = 1;",
+      "3: 1, 3; m3 = |3 - 1| = 2.",
+      "In the second sample case the sequence for any intersection 1 < i is always 1, i and mi = |1 - i|.",
+      "In the third sample case — consider the following intersection sequences:",
+      "1: 1; m1 = 0;",
+      "2: 1, 2; m2 = |2 - 1| = 1;",
+      "3: 1, 4, 3; m3 = 1 + |4 - 3| = 2;",
+      "4: 1, 4; m4 = 1;",
+      "5: 1, 4, 5; m5 = 1 + |4 - 5| = 2;",
+      "6: 1, 4, 6; m6 = 1 + |4 - 6| = 3;",
+      "7: 1, 4, 5, 7; m7 = 1 + |4 - 5| + 1 = 3."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2 2 3",
+      "output": "0 1 2"
+    },
+    {
+      "input": "5\n1 2 3 4 5",
+      "output": "0 1 2 3 4"
+    },
+    {
+      "input": "7\n4 4 4 4 7 7 7",
+      "output": "0 1 2 1 2 3 3"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "在第一个样例中，所需的序列为：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1: 1; m1 = 0;",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2: 1, 2; m2 = 1;",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3: 1, 3; m3 = |3 - 1| = 2.",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，对于任意满足 1 < i 的交点，其序列始终为 1, i，且 mi = |1 - i|。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中——考虑以下交点序列：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1: 1; m1 = 0;",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2: 1, 2; m2 = |2 - 1| = 1;",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3: 1, 4, 3; m3 = 1 + |4 - 3| = 2;",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "4: 1, 4; m4 = 1;",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "5: 1, 4, 5; m5 = 1 + |4 - 5| = 2;",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "6: 1, 4, 6; m6 = 1 + |4 - 6| = 3;",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "7: 1, 4, 5, 7; m7 = 1 + |4 - 5| + 1 = 3.",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "最近，Mike 一直忙于准备考试和参加比赛。现在，他打算通过在城市里观光来放松一下。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "城市由 n 个编号从 1 到 n 的路口组成。Mike 从位于 1 号路口的家出发，沿着某个路口序列行走。从编号为 i 的路口走到编号为 j 的路口需要消耗 |i - j| 单位的能量。Mike 访问路口序列 p1 = 1，p2，...，pk 所消耗的总能量等于 ![](https://espresso.codeforces.com/b366a738332ae698b6ad24b23eec6b08a25a2fe9.png) 单位。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当然，如果没有捷径，走路会很无聊。捷径是一种特殊的路径，允许 Mike 从一个路口走到另一个路口，只需消耗 1 单位的能量。Mike 的城市中恰好有 n 条捷径，其中第 i 条允许从路口 i 走到路口 a_i（i ≤ a_i ≤ a_{i+1}）（但不能反向行走），因此每个路口恰好有一条以其为起点的捷径。形式化地说，若 Mike 选择了一个序列 p_1 = 1，p_2，…，p_k，那么对于每个满足 1 ≤ i < k、p_{i+1} = a_{p_i} 且 a_{p_i} ≠ p_i 的 i，Mike 从路口 p_i 走到路口 p_{i+1} 时只需消耗 1 单位的能量，而不是 |p_i - p_{i+1}|。例如，如果 Mike 选择序列 p_1 = 1，p_2 = a_{p_1}，p_3 = a_{p_2}，…，p_k = a_{p_{k-1}}，那么他在这些路口之间行走总共恰好消耗 k - 1 单位的能量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在开始冒险之前，Mike 请你找出从他家到每个路口所需的最少能量。形式化地说，对于每个 1 ≤ i ≤ n，Mike 想知道某个序列 p_1 = 1，p_2，…，p_k = i 所需的可能的最小总能量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 200 000）——Mike 的城市中路口的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个整数 a_1，a_2，…，a_n(i ≤ a_i ≤ n，![](https://espresso.codeforces.com/a0e0e50a93f8d64ea6c764b778e4071020d4ef96.png)，描述 Mike 城市中的捷径；这些捷径允许仅消耗 1 单位的能量从路口 i 走到路口 a_i。请注意，捷径不允许反向行走(从 a_i 到 i)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "仅一行输出 n 个整数 m_1，m_2，…，m_n，其中 m_i 表示从路口 1 走到路口 i 所需的最少总能量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Mike 与捷径",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

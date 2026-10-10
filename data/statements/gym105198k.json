@@ -1,0 +1,90 @@
+{
+  "code": "GYM105198K",
+  "letter": "K",
+  "title": "K. Center of Attraction?",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105198/problem/K",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Once in CPLand, there was a boy named Monke. In order to impress his friend(also crush) Potato, he decided to be the center of attraction in the assembly line.",
+      "The assembly line consists of b$$$b$$$ boys and g$$$g$$$ girls, standing from left to right. Positions in the assembly line are numbered from 1$$$1$$$ to b+g$$$b+g$$$, with 1$$$1$$$ being the leftmost position, b+g$$$b+g$$$ being the rightmost.",
+      "Nanavai, the famous teacher of the school makes an arrangement of boys and girls on the assembly line. That is — he selects g$$$g$$$ positions, where girls will stand in no particular order. The boys will stand in the remaining positions. Monke thinks he is the center of attraction if at least x$$$x$$$ girls standing on his left, and at least y$$$y$$$ girls standing on his right.",
+      "That is — let i$$$i$$$ be the position of Monke on the assembly line, he thinks he is the center of attraction if there are at least x$$$x$$$ girls in position from 1$$$1$$$ to i−1$$$i - 1$$$, and there are at least y$$$y$$$ girls in position from i+1$$$i + 1$$$ to b+g$$$b + g$$$. (Yeah, his idea of the center is different from others because he is a genius)",
+      "As Monke is the best coder in the town, he can select any position reserved for boys, and stand there. He doesn't yet know the selected arrangement made by Nanavai. He wonders, how many arrangements mod109+7$$$\\bmod 10^9+7$$$ are there for which it's possible for him to be the center of attraction. Can you help him?"
+    ],
+    "input": [
+      "The input consists of multiple test cases. The first line contains an integer t (1≤t≤105)$$$t\\ (1 \\le t \\le 10^5)$$$ — the number of test cases. The description of the test cases follows.",
+      "Each test case contains four integers b,g,x,y (1≤b,g,x,y≤ 106)$$$b, g, x, y \\ (1 \\le b,g,x,y \\le \\ 10^6)$$$ — the number of boys, girls, the number of girls Monke wants on his left, the number of girls Monke wants on his right."
+    ],
+    "output": [
+      "For each test case, print the number of arrangements, mod$$$\\bmod$$$ 109+7$$$10^9+7$$$ for which it is possible for Monke to be the center of attraction."
+    ],
+    "note": [
+      "One of the possible arrangement for the first test case can be [B, G, G, G, B, G, G, B], where B denotes the position of boys, and G denotes the position of the girls, and Monke's position is underlined. He has 3$$$3$$$ (at least 2$$$2$$$) girls on his left and 2$$$2$$$ (at least 1$$$1$$$) girls on his right.",
+      "Note that Monke can stand in any position that is selected for boys."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3 5 2 1\n69 420 13 37",
+      "output": "46\n443945467"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "曾经，在 CPLand 有一个名叫 Monke 的男孩。为了给他的朋友（也是暗恋对象）Potato 留下深刻印象，他决定成为队列中的吸引力中心。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "队列由 b$$$b$$$ 名男孩和 g$$$g$$$ 名女孩组成，他们从左到右站立。队列中的位置从 1$$$1$$$ 编号到 b+g$$$b+g$$$，其中 1$$$1$$$ 是最左边的位置，b+g$$$b+g$$$ 是最右边的位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Nanavai 是学校里著名的教师，他负责安排队列中男孩和女孩的站位。也就是说——他选出 g$$$g$$$ 个位置，让女孩站在那里，顺序任意。男孩站在其余位置。Monke 认为，如果他左边至少站着 x$$$x$$$ 个女孩，右边至少站着 y$$$y$$$ 个女孩，那么自己就是吸引力中心。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "也就是说——设 i$$$i$$$ 为 Monke 在队列中的位置，如果从 1$$$1$$$ 到 i−1$$$i - 1$$$ 的位置上至少有 x$$$x$$$ 个女孩，并且从 i+1$$$i + 1$$$ 到 b+g$$$b + g$$$ 的位置上至少有 y$$$y$$$ 个女孩，那么他就认为自己是吸引力中心。(是的，他对“中心”的理解和别人不同，因为他是个天才。)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于 Monke 是镇上最优秀的程序员，他可以选择任意一个预留给男孩的位置并站在那里。他还不知道 Nanavai 选出的排列。他想知道，有多少种排列使得他有可能成为吸引力中心，答案对 mod109+7$$$\\bmod 10^9+7$$$ 取模。你能帮助他吗？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入由多个测试用例组成。第一行包含一个整数 t(1≤t≤105)$$$t\\ (1 \\le t \\le 10^5)$$$——测试用例的数量。接下来是各个测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例包含四个整数 b、g、x、y(1≤b,g,x,y≤ 106)$$$b, g, x, y \\ (1 \\le b,g,x,y \\le \\ 10^6)$$$——男孩的数量、女孩的数量、Monke 希望位于其左侧的女孩数量以及希望位于其右侧的女孩数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出满足 Monke 能够成为关注中心的排列数量，结果对 $$$\\bmod$$$ 109+7$$$10^9+7$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个测试用例的一种可行排列可以是 [B, G, G, G, B, G, G, B]，其中 B 表示男孩的位置，G 表示女孩的位置，Monke 的位置带有下划线。他左侧有 3$$$3$$$(至少 2$$$2$$$)个女孩，右侧有 2$$$2$$$(至少 1$$$1$$$)个女孩。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，Monke 可以站在为男孩选择的任意位置上。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "K. 吸引力中心？",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

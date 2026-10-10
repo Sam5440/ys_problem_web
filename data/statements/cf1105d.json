@@ -1,0 +1,99 @@
+{
+  "code": "CF1105D",
+  "letter": "D",
+  "title": "D. Kilani and the Game",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1105/D",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Kilani is playing a game with his friends. This game can be represented as a grid of size n×m$$$n \\times m$$$, where each cell is either empty or blocked, and every player has one or more castles in some cells (there are no two castles in one cell).",
+      "The game is played in rounds. In each round players expand turn by turn: firstly, the first player expands, then the second player expands and so on. The expansion happens as follows: for each castle the player owns now, he tries to expand into the empty cells nearby. The player i$$$i$$$ can expand from a cell with his castle to the empty cell if it's possible to reach it in at most si$$$s_i$$$ (where si$$$s_i$$$ is player's expansion speed) moves to the left, up, right or down without going through blocked cells or cells occupied by some other player's castle. The player examines the set of cells he can expand to and builds a castle in each of them at once. The turned is passed to the next player after that.",
+      "The game ends when no player can make a move. You are given the game field and speed of the expansion for each player. Kilani wants to know for each player how many cells he will control (have a castle their) after the game ends."
+    ],
+    "input": [
+      "The first line contains three integers n$$$n$$$, m$$$m$$$ and p$$$p$$$ (1≤n,m≤1000$$$1 \\le n, m \\le 1000$$$, 1≤p≤9$$$1 \\le p \\le 9$$$) — the size of the grid and the number of players.",
+      "The second line contains p$$$p$$$ integers si$$$s_i$$$ (1≤s≤109$$$1 \\le s \\le 10^9$$$) — the speed of the expansion for every player.",
+      "The following n$$$n$$$ lines describe the game grid. Each of them consists of m$$$m$$$ symbols, where '.' denotes an empty cell, '#' denotes a blocked cell and digit x$$$x$$$ (1≤x≤p$$$1 \\le x \\le p$$$) denotes the castle owned by player x$$$x$$$.",
+      "It is guaranteed, that each player has at least one castle on the grid."
+    ],
+    "output": [
+      "Print p$$$p$$$ integers — the number of cells controlled by each player after the game ends."
+    ],
+    "note": [
+      "The picture below show the game before it started, the game after the first round and game after the second round in the first example:",
+      "![](https://espresso.codeforces.com/f914f492fa6d96af669ce8d109f973862a0d120e.png)",
+      "In the second example, the first player is \"blocked\" so he will not capture new cells for the entire game. All other player will expand up during the first two rounds and in the third round only the second player will move to the left."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3 2\n1 1\n1..\n...\n..2",
+      "output": "6 3"
+    },
+    {
+      "input": "3 4 4\n1 1 1 1\n....\n#...\n1234",
+      "output": "1 4 3 3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Kilani 正在和他的朋友们玩一个游戏。这个游戏可以表示为一个大小为 n×m$$$n \\times m$$$ 的网格，其中每个格子要么为空，要么被阻挡，并且每名玩家在一些格子中都有一个或多个城堡(同一个格子中不会有两个城堡)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "游戏分轮进行。在每一轮中，玩家依次扩张：首先第一名玩家扩张，然后第二名玩家扩张，以此类推。扩张过程如下：对于当前玩家拥有的每座城堡，他都尝试向附近的空格子扩张。如果玩家 i$$$i$$$ 可以在不经过被阻挡的格子或其他玩家城堡所在格子的情况下，通过向左、上、右或下移动至多 si$$$s_i$$$ 步到达某个空格子，则他可以从自己的城堡所在格子扩张到该空格子(其中 si$$$s_i$$$ 是玩家的扩张速度)。玩家找出他可以扩张到的所有格子，并立即在每个格子中建造一座城堡。之后轮到下一名玩家。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当没有玩家可以进行移动时，游戏结束。给定游戏场地以及每名玩家的扩张速度，Kilani 想知道游戏结束后每名玩家将控制多少个格子（在其中拥有城堡）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、m$$$m$$$ 和 p$$$p$$$(1≤n,m≤1000$$$1 \\le n, m \\le 1000$$$，1≤p≤9$$$1 \\le p \\le 9$$$)，分别表示网格的大小和玩家数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 p$$$p$$$ 个整数 si$$$s_i$$$(1≤s≤109$$$1 \\le s \\le 10^9$$$)，表示每位玩家的扩张速度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行描述游戏网格。每行包含 m$$$m$$$ 个符号，其中“.”表示空单元格，“#”表示被阻塞的单元格，数字 x$$$x$$$(1≤x≤p$$$1 \\le x \\le p$$$)表示属于玩家 x$$$x$$$ 的城堡。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证每位玩家在网格上至少拥有一座城堡。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 p$$$p$$$ 个整数，表示游戏结束后每位玩家所控制的单元格数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "下图展示了第一个样例中游戏开始前、第一轮结束后以及第二轮结束后的游戏状态：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/f914f492fa6d96af669ce8d109f973862a0d120e.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，第一位玩家被“阻挡”了，因此在整个游戏过程中都不会占领新的格子。其他所有玩家都会在前两轮中扩张，而在第三轮中只有第二位玩家会向左移动。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Kilani 与游戏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "code": "CF309A",
+  "letter": "A",
+  "title": "A. Morning run",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/309/A",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "People like to be fit. That's why many of them are ready to wake up at dawn, go to the stadium and run. In this problem your task is to help a company design a new stadium.",
+      "The city of N has a shabby old stadium. Many people like it and every morning thousands of people come out to this stadium to run. The stadium can be represented as a circle, its length is exactly l meters with a marked start line. However, there can't be simultaneous start in the morning, so exactly at 7, each runner goes to his favorite spot on the stadium and starts running from there. Note that not everybody runs in the same manner as everybody else. Some people run in the clockwise direction, some of them run in the counter-clockwise direction. It mostly depends on the runner's mood in the morning, so you can assume that each running direction is equiprobable for each runner in any fixed morning.",
+      "The stadium is tiny and is in need of major repair, for right now there only is one running track! You can't get too playful on a single track, that's why all runners keep the same running speed — exactly 1 meter per a time unit. Nevertheless, the runners that choose different directions bump into each other as they meet.",
+      "The company wants to design a new stadium, but they first need to know how bad the old one is. For that they need the expectation of the number of bumpings by t time units after the running has begun. Help the company count the required expectation. Note that each runner chooses a direction equiprobably, independently from the others and then all runners start running simultaneously at 7 a.m. Assume that each runner runs for t time units without stopping. Consider the runners to bump at a certain moment if at that moment they found themselves at the same point in the stadium. A pair of runners can bump more than once."
+    ],
+    "input": [
+      "The first line of the input contains three integers n, l, t (1 ≤ n ≤ 106, 1 ≤ l ≤ 109, 1 ≤ t ≤ 109). The next line contains n distinct integers a1, a2, ..., an (0 ≤ a1 < a2 < ... < an < l), here ai is the clockwise distance from the start line to the i-th runner's starting position."
+    ],
+    "output": [
+      "Print a single real number — the answer to the problem with absolute or relative error of at most 10 - 6."
+    ],
+    "note": [
+      "There are two runners in the first example. If the first runner run clockwise direction, then in 1 time unit he will be 1m away from the start line. If the second runner run counter-clockwise direction then in 1 time unit he will be also 1m away from the start line. And it is the only possible way to meet. We assume that each running direction is equiprobable, so the answer for the example is equal to 0.5·0.5 = 0.25."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 5 1\n0 2",
+      "output": "0.2500000000"
+    },
+    {
+      "input": "3 7 3\n0 1 6",
+      "output": "1.5000000000"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "人们喜欢保持健康。因此，许多人愿意在黎明时分起床，前往体育场跑步。在本题中，你的任务是帮助一家公司设计一座新的体育场。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "N 城有一座破旧的老体育场。许多人喜欢这座体育场，每天早晨都有数千人来到这里跑步。体育场可以表示为一个圆，其长度恰好为 l 米，并标有一条起跑线。然而，早晨不可能同时起跑，因此每天恰好在 7 点，每位跑步者会前往体育场上自己喜欢的位置，并从那里开始跑步。注意，并不是每个人的跑步方式都相同。有些人沿顺时针方向跑，有些人沿逆时针方向跑。这主要取决于跑步者早晨的心情，因此可以认为，在任意固定的早晨，每位跑步者选择每个跑步方向的概率相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "体育场很小，而且需要进行大规模维修，因为目前那里只有一条跑道！在一条跑道上无法玩出太多花样，所以所有跑步者都保持相同的速度奔跑，即每个时间单位恰好跑 1 米。然而，选择不同方向的跑步者在相遇时会彼此碰撞。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "公司想要设计一座新的体育场，但他们首先需要知道旧体育场的状况有多糟糕。为此，他们需要知道跑步开始后经过 t 个时间单位时，碰撞次数的期望值。请帮助公司计算所需的期望值。注意，每位跑步者都等概率且独立地选择一个方向，然后所有跑步者于早上 7 点同时开始奔跑。假设每位跑步者连续奔跑 t 个时间单位而不会停下。如果在某一时刻两位跑步者位于体育场内的同一点，则认为他们在该时刻发生碰撞。一对跑步者可能碰撞不止一次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含三个整数 n、l、t（1 ≤ n ≤ 106，1 ≤ l ≤ 109，1 ≤ t ≤ 109）。下一行包含 n 个互不相同的整数 a1、a2、...、an（0 ≤ a1 < a2 < ... < an < l），其中 ai 表示从起跑线到第 i 位跑步者起始位置的顺时针距离。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个实数，即该问题的答案，绝对误差或相对误差不超过 10 - 6。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例中有两位跑步者。如果第一位跑步者沿顺时针方向跑，那么经过 1 个时间单位后，他将位于距离起跑线 1 米的位置。如果第二位跑步者沿逆时针方向跑，那么经过 1 个时间单位后，他也将位于距离起跑线 1 米的位置。这是唯一一种能够相遇的情况。我们认为每个跑步方向被等概率选择，因此该样例的答案为 0.5·0.5 = 0.25。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 晨跑",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

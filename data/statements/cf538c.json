@@ -1,0 +1,84 @@
+{
+  "code": "CF538C",
+  "letter": "C",
+  "title": "C. Tourist's Notes",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/538/C",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A tourist hiked along the mountain range. The hike lasted for n days, during each day the tourist noted height above the sea level. On the i-th day height was equal to some integer hi. The tourist pick smooth enough route for his hike, meaning that the between any two consecutive days height changes by at most 1, i.e. for all i's from 1 to n - 1 the inequality |hi - hi + 1| ≤ 1 holds.",
+      "At the end of the route the tourist rafted down a mountain river and some notes in the journal were washed away. Moreover, the numbers in the notes could have been distorted. Now the tourist wonders what could be the maximum height during his hike. Help him restore the maximum possible value of the maximum height throughout the hike or determine that the notes were so much distorted that they do not represent any possible height values that meet limits |hi - hi + 1| ≤ 1."
+    ],
+    "input": [
+      "The first line contains two space-separated numbers, n and m (1 ≤ n ≤ 108, 1 ≤ m ≤ 105) — the number of days of the hike and the number of notes left in the journal.",
+      "Next m lines contain two space-separated integers di and hdi (1 ≤ di ≤ n, 0 ≤ hdi ≤ 108) — the number of the day when the i-th note was made and height on the di-th day. It is guaranteed that the notes are given in the chronological order, i.e. for all i from 1 to m - 1 the following condition holds: di < di + 1."
+    ],
+    "output": [
+      "If the notes aren't contradictory, print a single integer — the maximum possible height value throughout the whole route.",
+      "If the notes do not correspond to any set of heights, print a single word 'IMPOSSIBLE' (without the quotes)."
+    ],
+    "note": [
+      "For the first sample, an example of a correct height sequence with a maximum of 2: (0, 0, 1, 2, 1, 1, 0, 1).",
+      "In the second sample the inequality between h7 and h8 does not hold, thus the information is inconsistent."
+    ]
+  },
+  "examples": [
+    {
+      "input": "8 2\n2 0\n7 0",
+      "output": "2"
+    },
+    {
+      "input": "8 3\n2 0\n7 0\n8 3",
+      "output": "IMPOSSIBLE"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一名游客沿着山脉徒步旅行。徒步持续了 n 天，在此期间，游客每天都会记录海拔高度。第 i 天的高度等于某个整数 h_i。游客为自己的徒步选择了一条足够平缓的路线，这意味着任意连续两天之间的高度变化至多为 1，即对于所有从 1 到 n−1 的 i，不等式 |h_i−h_{i+1}|≤1 均成立。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "路线结束时，游客乘木筏沿着一条山间河流漂流而下，日志中的一些笔记被冲走了。此外，笔记中的数字也可能被篡改。现在，游客想知道徒步期间可能达到的最大高度是多少。请帮助他恢复整个徒步过程中最大高度的可能最大值，或者判断这些笔记是否被篡改得过于严重，以至于不存在任何满足 |h_i−h_{i+1}|≤1 的可能高度值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个用空格分隔的数 n 和 m（1≤n≤10^8，1≤m≤10^5），分别表示徒步的天数和日志中剩余的笔记条数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来 m 行每行包含两个用空格分隔的整数 d_i 和 h_{d_i}（1≤d_i≤n，0≤h_{d_i}≤10^8），分别表示第 i 条笔记记录的日期编号以及第 d_i 天的高度。保证笔记按照时间顺序给出，即对于所有从 1 到 m−1 的 i，都满足 d_i<d_{i+1}。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果记录不矛盾，则输出一个整数——整条路线中可能的最大高度值。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果记录与任何一组高度都不对应，则输出单词 'IMPOSSIBLE'（不带引号）。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于第一个样例，一个正确的高度序列示例，最大值为 2：(0, 0, 1, 2, 1, 1, 0, 1)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个样例中，h7 与 h8 之间的不等式不成立，因此信息不一致。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 游客的笔记",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -144,6 +144,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 | `lib/ai-record.mjs` | 构建逐段 原文↔译文 翻译记录（save-ci-log 与 demo 页共用） |
 | `lib/mt-protect.js` | 公式/代码/图片占位保护（node 与浏览器同源复用，占位符 `[M07]` 零填充格式） |
 | `components/logs-view.jsx` | /logs 仪表盘（手写 SVG 图表，时间轴锚定最新运行而非 Date.now()） |
+| `components/BaiduAnalytics.jsx` | 百度统计：官方异步代码经 next/script `afterInteractive` 注入（app/layout.jsx 全站挂载）；本站是客户端路由，hm.js 首载自动上报一次 PV，组件监听 pathname 变化手动 `_trackPageview` 补报站内跳转（首次渲染跳过防双计） |
 | `components/ai-translate-detail.jsx` | 逐段原文↔译文对照视图（/logs 运行卡内嵌 + /logs/ai-demo） |
 | `components/LeaderboardClient.jsx` | /leaderboard 客户端：先渲染 `/leaderboard.json` 构建快照，随后**浏览器匿名直拉上游 gh-pages records.js（29KB、CORS 开放）实时覆盖**——hourly CI 轮询被 GitHub 大量丢弃会让榜单滞后数日，快照只作直连失败时的兜底；内容签名相同则不重渲染；sessionStorage 缓存 10 分钟；成功显示「已实时同步」徽章、失败静默 |
 | `components/RecentDaysNav.jsx` | 首页「最近 7 天」快速入口：7 张日期卡（日期整卡可点 → /day/[date]，两道题各自直达题面锚点 #CODE），纯服务端组件、构建期取自 daily.json（无客户端 JS） |

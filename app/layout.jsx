@@ -6,6 +6,7 @@ import KatexRuntime from '@/components/KatexRuntime';
 import HighlightRuntime from '@/components/HighlightRuntime';
 import DataFreshness from '@/components/DataFreshness';
 import GithubMark from '@/components/github-mark';
+import BaiduAnalytics from '@/components/BaiduAnalytics';
 
 export const metadata = {
   title: 'Yawn-Sean 的每日两题',
@@ -57,6 +58,7 @@ export default function RootLayout({ children }) {
             <div className="compiler-track" id="compiler-dock-root" />
           </div>
         </SettingsProvider>
+        <BaiduAnalytics />
       </body>
     </html>
   );

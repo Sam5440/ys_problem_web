@@ -119,6 +119,7 @@ export default function CompilerDock({ problems }) {
   const [dragging, setDragging] = useState(null); // 'w' | 'h' | 's' | null（手柄视觉态）
   const [isMobile, setIsMobile] = useState(false); // 移动端断点（覆盖切换 / 上下分屏）
   const [kbHidden, setKbHidden] = useState(false); // 编程键盘临时收起（点编辑器恢复）
+  const [sysKb, setSysKb] = useState(false); // 系统键盘手动开启（键盘右上角开关，输入法场景）
   const [splitH, setSplitH] = useState(null); // 分屏模式编译器高度（px），null = 50dvh
 
   const cppRef = useRef(null);
@@ -134,6 +135,9 @@ export default function CompilerDock({ problems }) {
   const [portalRoot, setPortalRoot] = useState(null); // layout 顶层的 #compiler-dock-root
 
   const problem = problems?.[probIdx] ?? null;
+  // 编程键盘可见：移动端 + 设置开启 + 面板展开 + 未被临时收起（点编辑器恢复）。
+  // 需在早退 return 之前算好：系统键盘开关联动 effect 的依赖要用它
+  const kbVisible = isMobile && !!cp?.mobileKeyboard && open && !kbHidden;
 
   /* ---------- 初始化 ---------- */
   useEffect(() => {
@@ -194,6 +198,43 @@ export default function CompilerDock({ problems }) {
     else root.style.removeProperty("--split-h");
     return () => root.style.removeProperty("--split-h");
   }, [splitH, mounted]);
+
+  /* 编程键盘收起/面板关闭/设置关闭时，系统键盘手动开关一并复位；
+     键盘（重新）展开时若编辑器还带着系统键盘焦点（点编辑器唤回键盘的场景），
+     把焦点夺回来让系统键盘收回 */
+  useEffect(() => {
+    if (!kbVisible) {
+      setSysKb(false);
+      return;
+    }
+    const host = editorApiRef.current?.editor?.getDomNode?.();
+    const active = document.activeElement;
+    if (host && active && host.contains(active)) active.blur?.();
+  }, [kbVisible]);
+
+  /* 系统键盘手动开关（编程键盘右上角）：开启时聚焦编辑器弹出系统键盘
+     （CodeEditor 的 effect 先一步解除 inputmode 抑制——子组件 effect 先于父组件
+     执行），关闭时把焦点从编辑器夺回，系统键盘随之收回 */
+  useEffect(() => {
+    const editor = editorApiRef.current?.editor;
+    const host = editor?.getDomNode?.();
+    const active = document.activeElement;
+    if (sysKb) {
+      editor?.focus?.();
+    } else if (host && active && host.contains(active)) {
+      active.blur?.();
+    }
+  }, [sysKb]);
+
+  const toggleSysKb = useCallback(() => setSysKb((v) => !v), []);
+  const hideKb = useCallback(() => {
+    // 收起键盘时把焦点移出编辑器（Monaco 无公开 blur；系统键盘跟着收回，
+    // 之后点编辑器会触发 onDidFocusEditorText 自动唤回键盘）
+    const host = editorApiRef.current?.editor?.getDomNode?.();
+    const active = document.activeElement;
+    if (host && active && host.contains(active)) active.blur?.();
+    setKbHidden(true);
+  }, []);
 
   /* 面板每次展开都把临时收起的编程键盘带回（准备写码） */
   useEffect(() => {
@@ -802,8 +843,6 @@ export default function CompilerDock({ problems }) {
   // 移动端布局：'cover' 全屏覆盖来回切换 | 'split' 上下分屏 | null 桌面并排
   const mobileMode =
     isMobile && open ? (cp.mobileLayout === "split" ? "split" : "cover") : null;
-  // 编程键盘可见：移动端 + 设置开启 + 面板展开 + 未被临时收起（点编辑器恢复）
-  const kbVisible = isMobile && !!cp.mobileKeyboard && open && !kbHidden;
 
   return (
     <>
@@ -952,7 +991,7 @@ export default function CompilerDock({ problems }) {
                 editorApiRef.current = { editor, monaco };
               }}
               onFocused={() => setKbHidden(false)}
-              suppressSoftKeyboard={isMobile && !!cp.mobileKeyboard}
+              suppressSoftKeyboard={kbVisible && !sysKb}
             />
           </div>
 
@@ -1209,12 +1248,9 @@ export default function CompilerDock({ problems }) {
             <CodeKeyboard
               editorApi={editorApiRef}
               compact={mobileMode === "split"}
-              onHide={() => {
-                // 主动让编辑器失焦：否则焦点还留在编辑器里，用户再点编辑器
-                // 不触发 onDidFocusEditorText，键盘无法被唤回
-                editorApiRef.current?.editor?.blur?.();
-                setKbHidden(true);
-              }}
+              sysKb={sysKb}
+              onToggleSysKb={toggleSysKb}
+              onHide={hideKb}
             />
           )}
         </aside>,

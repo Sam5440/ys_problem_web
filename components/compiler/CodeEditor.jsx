@@ -44,16 +44,30 @@ import {
 
 let monacoPromise = null;
 
-/** 给/不给 Monaco 的隐藏输入区设 inputmode="none"（移动端改用站内编程键盘时阻止系统软键盘）。
-    Monaco 0.57 的输入 textarea 类名是 ime-text-area（不是旧版的 inputarea），
-    另有触屏设备出现的 iPadShowKeyboard 快捷输入框一并抑制。 */
-function applySoftKeyboardSuppression(editor, suppress) {
+/** 站内编程键盘显示期间压制系统软键盘。
+    关键前提：Monaco 0.57 默认走 EditContext，键盘弹出时焦点在 native-edit-context
+    div 上——div 没有 inputmode 可压，只给隐藏 textarea 设 inputmode="none" 挡不住
+    系统键盘（真机实测）。所以调用方必须先把编辑器切回 textarea 输入路径
+    （updateOptions({editContext:false})，view.js 的 _updateEditContext 支持运行时
+    重建输入区），焦点落在真 <textarea> 上，inputmode="none" 才被 iOS Safari /
+    Android Chrome 遵守。两条路径的 textarea 类名不同（inputarea / ime-text-area），
+    另有 iOS 的 iPadShowKeyboard 快捷按钮；输入区可能被重建，MutationObserver 兜住。 */
+function watchSoftKeyboardSuppression(editor, suppress) {
   const host = editor?.getDomNode?.();
-  if (!host) return;
-  for (const ta of host.querySelectorAll("textarea.ime-text-area, textarea.iPadShowKeyboard")) {
-    if (suppress) ta.setAttribute("inputmode", "none");
-    else ta.removeAttribute("inputmode");
-  }
+  if (!host) return () => {};
+  const apply = () => {
+    for (const ta of host.querySelectorAll(
+      "textarea.inputarea, textarea.ime-text-area, textarea.iPadShowKeyboard",
+    )) {
+      if (suppress) ta.setAttribute("inputmode", "none");
+      else ta.removeAttribute("inputmode");
+    }
+  };
+  apply();
+  if (!suppress) return () => {};
+  const mo = new MutationObserver(apply);
+  mo.observe(host, { childList: true, subtree: true });
+  return () => mo.disconnect();
 }
 
 function loadMonaco() {
@@ -495,8 +509,9 @@ function registerProviders(monaco, getCppContext) {
  * @param {() => object|null} props.getCppContext clang 补全上下文（可选）
  * @param {(editor: object, monaco: object) => void} [props.onReady] 编辑器就绪（CodeKeyboard 借它拿 trigger/executeEdits）
  * @param {() => void} [props.onFocused] 编辑器获得焦点（移动端键盘收起后由此重新展开）
- * @param {boolean} [props.suppressSoftKeyboard] true 时给 Monaco 的 inputarea 设
- *   inputmode="none" 阻止系统软键盘（移动端用站内编程键盘输入）
+ * @param {boolean} [props.suppressSoftKeyboard] true 时切回 textarea 输入路径并设
+ *   inputmode="none" 阻止系统软键盘（移动端用站内编程键盘输入；EditContext 的
+ *   焦点元素是 div 压不住系统键盘，见 watchSoftKeyboardSuppression）
  */
 export default function CodeEditor({
   language,
@@ -512,6 +527,7 @@ export default function CodeEditor({
   const hostRef = useRef(null);
   const editorRef = useRef(null);
   const monacoRef = useRef(null);
+  const suppressionRef = useRef(null); // watchSoftKeyboardSuppression 的清理函数
   // 手动 clang 补全标记：Ctrl/Cmd+Space 的 keydown 置位，provider 的 Invoke 消费。
   // Monaco 里「打字母自动弹补全」与「手动触发」的 triggerKind 相同（都是 Invoke），
   // 不区分的话每次击键都会跑一次秒级全量编译。
@@ -534,6 +550,20 @@ export default function CodeEditor({
     onFocused,
     suppressSoftKeyboard,
   };
+
+  /** 按当前 suppressSoftKeyboard 重接系统键盘抑制：切 textarea 输入路径 +
+      inputmode="none"（watchSoftKeyboardSuppression 内部含 MutationObserver 兜底）。 */
+  function applySuppression() {
+    suppressionRef.current?.();
+    suppressionRef.current = null;
+    const ed = editorRef.current;
+    if (!ed) return;
+    const suppress = !!stateRef.current.suppressSoftKeyboard;
+    try {
+      ed.updateOptions({ editContext: !suppress });
+    } catch {}
+    suppressionRef.current = watchSoftKeyboardSuppression(ed, suppress);
+  }
 
   useEffect(() => {
     let disposed = false;
@@ -597,12 +627,18 @@ export default function CodeEditor({
         editor.trigger("keyboard", "editor.action.triggerSuggest", null);
       });
       stateRef.current.onReady?.(editor, monaco);
-      // 移动端站内编程键盘收起后点击编辑器 → 重新展开键盘
-      editor.onDidFocusEditorText(() => stateRef.current.onFocused?.());
-      applySoftKeyboardSuppression(
-        editor,
-        stateRef.current.suppressSoftKeyboard,
-      );
+      // 移动端站内编程键盘收起后点击编辑器 → 重新展开键盘。抑制期间顺手
+      // 调 virtualKeyboard.hide()（Chrome Android 支持），防个别浏览器在
+      // inputmode=none 之外仍短暂弹键盘
+      editor.onDidFocusEditorText(() => {
+        if (stateRef.current.suppressSoftKeyboard) {
+          try {
+            navigator.virtualKeyboard?.hide?.();
+          } catch {}
+        }
+        stateRef.current.onFocused?.();
+      });
+      applySuppression();
     });
     return () => {
       disposed = true;
@@ -666,9 +702,14 @@ export default function CodeEditor({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
-  // 站内编程键盘开关切换时同步抑制/恢复系统软键盘
+  // 站内编程键盘开合/系统键盘手动开关切换时，重接系统软键盘的抑制与恢复
   useEffect(() => {
-    applySoftKeyboardSuppression(editorRef.current, suppressSoftKeyboard);
+    applySuppression();
+    return () => {
+      suppressionRef.current?.();
+      suppressionRef.current = null;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [suppressSoftKeyboard]);
 
   return (

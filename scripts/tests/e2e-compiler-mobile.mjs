@@ -1,9 +1,10 @@
 /* 移动端编译器 E2E：覆盖切换 / 上下分屏 / 站内编程键盘。
    前置：npm run build && npx next start -p 3100（BASE_URL 可覆盖端口）。
    跑法：node scripts/tests/e2e-compiler-mobile.mjs
-   断言 22 项（布局几何 + 键盘真实 tap 输入/双击合并/退格/Tab/撤销/空格 +
-   系统键盘抑制 + 设置项 + 桌面回归），并输出 7 张视口截图到
-   $TMPDIR/ys-mobile-shots/ 供人工评审。手机态 viewport 390x844（hasTouch）。 */
+   断言 29 项（布局几何 + 键盘真实 tap 输入/双击合并/退格/Tab/撤销/空格 +
+   自动补全弹窗/点选插入 + 系统键盘抑制与右上角手动开关 + 设置项 + 桌面回归），
+   并输出 7 张视口截图到 $TMPDIR/ys-mobile-shots/ 供人工评审。
+   手机态 viewport 390x844（hasTouch）。 */
 import { chromium } from "playwright";
 import { mkdirSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -16,16 +17,14 @@ mkdirSync(OUT, { recursive: true });
 const shot = (page, name, full = true) =>
   page.screenshot({ path: `${OUT}/${name}.png`, fullPage: full });
 
-const ctx = await chromium
-  .launch()
-  .then((b) =>
-    b.newContext({
-      viewport: { width: 390, height: 844 },
-      isMobile: true,
-      hasTouch: true,
-      deviceScaleFactor: 2,
-    }),
-  );
+const ctx = await chromium.launch().then((b) =>
+  b.newContext({
+    viewport: { width: 390, height: 844 },
+    isMobile: true,
+    hasTouch: true,
+    deviceScaleFactor: 2,
+  }),
+);
 const page = await ctx.newPage();
 page.on(
   "console",
@@ -65,11 +64,25 @@ const kb = page.locator(".cp-kb");
 await kb.waitFor({ state: "visible", timeout: 8000 }).catch(() => {});
 check("编程键盘显示", await kb.isVisible().catch(() => false));
 
-// 系统键盘抑制:inputarea inputmode=none
+// 系统键盘抑制:编程键盘接管时 Monaco 必须已切回 textarea 输入路径
+// （editContext:false，焦点元素才是真 textarea、inputmode=none 才被系统遵守）
+await page
+  .waitForSelector("#compiler-panel textarea.inputarea", { timeout: 8000 })
+  .catch(() => {});
 const inputmode = await page.evaluate(() =>
   document
-    .querySelector("#compiler-panel textarea.ime-text-area")
+    .querySelector("#compiler-panel textarea.inputarea")
     ?.getAttribute("inputmode"),
+);
+const effEC = await page.evaluate(() =>
+  window.__ysMonaco?.editor.getOption(
+    window.__ysMonaco.monaco.editor.EditorOption.effectiveEditContext,
+  ),
+);
+check(
+  "键盘接管时切回 textarea 输入路径(editContext=false)",
+  effEC === false,
+  `effectiveEditContext=${effEC}`,
 );
 check(
   "Monaco inputmode=none(抑制系统键盘)",
@@ -161,6 +174,31 @@ const colAfter = await page.evaluate(
 );
 check("空格键插入", colAfter === colBefore + 1, `${colBefore} -> ${colAfter}`);
 
+// ---- 自动补全（键盘触发的 type 走 source='keyboard' 才会弹）----
+// 固定编辑器内容与光标，避免 undo 后位置不定落在字符串/注释里（那里不弹）
+await page.evaluate(() => {
+  const { editor } = window.__ysMonaco;
+  editor.setValue("int main() {\n  \n}");
+  editor.setPosition({ lineNumber: 2, column: 3 });
+});
+for (const ch of ["p", "r", "i"]) await type(ch);
+await page.waitForTimeout(600);
+const suggest = page.locator(
+  "#compiler-panel .compiler-editor-host .suggest-widget.visible",
+);
+const suggestVisible = await suggest.isVisible().catch(() => false);
+check("键盘输入触发补全弹窗", suggestVisible, "");
+const printfRow = suggest.locator('.monaco-list-row:has-text("printf")');
+const hasPrintf = suggestVisible && (await printfRow.count()) > 0;
+check("补全列表含 printf", hasPrintf, "");
+if (hasPrintf) {
+  await printfRow.first().tap();
+  await page.waitForTimeout(300);
+}
+v = await page.evaluate(() => window.__ysMonaco.editor.getValue());
+check("点选补全项插入代码", v.includes("printf"), JSON.stringify(v));
+await shot(page, "m2b-suggest", false);
+
 // 收起键盘(结果区回来)
 await page.locator('.cp-kb-key[title="收起键盘"]').tap();
 await page.waitForTimeout(300);
@@ -177,6 +215,42 @@ check(
 await page.locator('button[aria-label="显示编程键盘"]').tap();
 await page.waitForTimeout(300);
 check("恢复按钮唤回键盘", await kb.isVisible().catch(() => false));
+
+// ---- 右上角「系统键盘」手动开关：开 = 解除抑制并聚焦（弹系统输入法），关 = 收回 ----
+const sysKbKey = page.locator('.cp-kb-key[title="系统键盘（输入法）"]');
+await sysKbKey.tap();
+await page.waitForTimeout(400);
+const sysKbOn = await page.evaluate(() => ({
+  effEC: window.__ysMonaco.editor.getOption(
+    window.__ysMonaco.monaco.editor.EditorOption.effectiveEditContext,
+  ),
+  inputmode: document
+    .querySelector(
+      "#compiler-panel textarea.inputarea, #compiler-panel textarea.ime-text-area",
+    )
+    ?.getAttribute("inputmode"),
+  focused: window.__ysMonaco.editor.hasTextFocus(),
+}));
+check(
+  "系统键盘开关:解除抑制并聚焦编辑器",
+  sysKbOn.effEC === true && sysKbOn.inputmode == null && sysKbOn.focused,
+  JSON.stringify(sysKbOn),
+);
+await sysKbKey.tap();
+await page.waitForTimeout(400);
+const sysKbOff = await page.evaluate(() => ({
+  effEC: window.__ysMonaco.editor.getOption(
+    window.__ysMonaco.monaco.editor.EditorOption.effectiveEditContext,
+  ),
+  inputmode: document
+    .querySelector("#compiler-panel textarea.inputarea")
+    ?.getAttribute("inputmode"),
+}));
+check(
+  "系统键盘开关:重新抑制",
+  sysKbOff.effEC === false && sysKbOff.inputmode === "none",
+  JSON.stringify(sysKbOff),
+);
 
 // ---- 关闭面板:回题目(覆盖切换) ----
 await page.locator('#compiler-panel button[aria-label="收起编译器"]').tap();

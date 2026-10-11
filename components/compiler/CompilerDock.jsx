@@ -39,6 +39,7 @@ import {
   RotateCcw,
   Square,
   Terminal,
+  WrapText,
   X,
 } from "lucide-react";
 import { judgeCase, truncate } from "@/lib/compiler/diff";
@@ -431,6 +432,22 @@ export default function CompilerDock({ problems, day }) {
   ]);
 
   useEffect(() => () => clearTimeout(toastTimerRef.current), []);
+
+  /* ---------- 格式化（CodeEditor 注册的 Monaco provider，主线程纯函数） ----------
+     走 editor.action.formatDocument：一次编辑 = 一步 undo；无变化时 provider
+     返回空编辑不留 undo 垃圾。Shift+Alt+F 在编辑器聚焦时也直接可用。 */
+  const doFormat = useCallback(() => {
+    const editor = editorApiRef.current?.editor;
+    if (!editor) return;
+    const before = editor.getValue();
+    editor
+      .getAction("editor.action.formatDocument")
+      ?.run()
+      .then(() => {
+        flashToast(editor.getValue() === before ? "代码已是整洁状态" : "代码已格式化");
+      })
+      .catch(() => flashToast("格式化失败"));
+  }, [flashToast]);
 
   /* ---------- 分栏拖拽 ----------
      宽度：拖面板左缘竖向手柄，改 <html> 的 --compiler-w（px）；结果区高度：
@@ -1057,6 +1074,7 @@ export default function CompilerDock({ problems, day }) {
               value={code}
               onChange={setCode}
               diagnostics={diags}
+              theme={cp.editorTheme}
               getCppContext={() => ({
                 complete: ({ source, line, col }) =>
                   getCpp().complete({ source, line, col, std: cp.cppStd }),
@@ -1112,11 +1130,22 @@ export default function CompilerDock({ problems, day }) {
             <button
               type="button"
               onClick={resetToTemplate}
-              className="flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
+              aria-label="重置为模板"
+              className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
               title="重置为设置里的默认模板"
             >
               <RotateCcw className="size-3" />
-              重置为模板
+              <span className="hidden md:inline">重置为模板</span>
+            </button>
+            <button
+              type="button"
+              onClick={doFormat}
+              aria-label="格式化代码"
+              className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
+              title="格式化代码（缩进与空格规范化，Shift+Alt+F 同效）"
+            >
+              <WrapText className="size-3" />
+              <span className="hidden md:inline">格式化</span>
             </button>
             {/* 编程键盘被临时收起时的恢复入口：Monaco 0.57 用 EditContext 管
                 焦点，收起后编辑器内部焦点状态不变，「再点编辑器」不触发聚焦
@@ -1322,6 +1351,7 @@ export default function CompilerDock({ problems, day }) {
           {kbVisible && (
             <CodeKeyboard
               editorApi={editorApiRef}
+              lang={lang}
               compact={mobileMode === "split"}
               sysKb={sysKb}
               onToggleSysKb={toggleSysKb}

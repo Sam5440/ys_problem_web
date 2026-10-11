@@ -3,9 +3,11 @@
 /**
  * 移动端站内编程键盘（替代系统软键盘，设置「编程键盘」开启后随编译器面板显示）。
  *
- * 设计目标：刷题场景少翻页。数字行 + 高频符号（; ( ) < > , .）常驻字母页，
- * 其余符号在 #+= 页一击可达；顶部工具行提供 Tab / 方向键 / 行首行尾 / 撤销 /
- * 系统键盘开关 / 收起。
+ * 设计目标：刷题场景少翻页、少击键。布局**按语言感知 + 符号频率**设计
+ * （lib/compiler/kb-layouts.js，频率统计来源见该文件头注释）：字母页数字行
+ * + QWERTY 骨架不变，行尾/底行的符号槽随语言切换（C++ 常驻 ; , . ( ) < > "，
+ * Python 常驻 : _ , ( ) [ ] .）；符号页按各自语料的频率排序，第三行整行是
+ * 组合符一击键（<< == += 等，一键插完双字符）。
  *
  * 交互细节：
  * - 所有按键 pointerdown 即触发并 preventDefault（不抢编辑器焦点），插入走
@@ -45,6 +47,7 @@ import {
   ArrowBigUp,
   CornerDownLeft,
 } from "lucide-react";
+import { kbLayout } from "../../lib/compiler/kb-layouts.js";
 
 /* 可双击合并的字符 → 双写（<< >> :: == ++ -- && || ** //） */
 const MERGEABLE = new Set(["<", ">", ":", "=", "+", "-", "&", "|", "*", "/"]);
@@ -61,6 +64,14 @@ const NUM_SHIFT = {
   0: ")",
 };
 
+/* 动作键的图标在渲染时按 action 注入（布局常量放在 lib/ 不引组件库，
+   保持 node --test 可直接 import kb-layouts） */
+const ACTION_ICONS = {
+  shift: ArrowBigUp,
+  backspace: Delete,
+  enter: CornerDownLeft,
+};
+
 /* 键位定义全部模块级常量：def 引用稳定是 KbKey memo 生效的前提 */
 const TOOLS = [
   { label: "Tab", action: "tab", title: "缩进" },
@@ -74,129 +85,6 @@ const TOOLS = [
   { icon: Keyboard, action: "syskb", title: "系统键盘（输入法）" },
   { icon: ChevronDown, action: "hide", title: "收起键盘" },
 ];
-
-const ROWS = {
-  abc: [
-    [
-      { ch: "1" },
-      { ch: "2" },
-      { ch: "3" },
-      { ch: "4" },
-      { ch: "5" },
-      { ch: "6" },
-      { ch: "7" },
-      { ch: "8" },
-      { ch: "9" },
-      { ch: "0" },
-    ],
-    [
-      { ch: "q" },
-      { ch: "w" },
-      { ch: "e" },
-      { ch: "r" },
-      { ch: "t" },
-      { ch: "y" },
-      { ch: "u" },
-      { ch: "i" },
-      { ch: "o" },
-      { ch: "p" },
-    ],
-    [
-      { ch: "a" },
-      { ch: "s" },
-      { ch: "d" },
-      { ch: "f" },
-      { ch: "g" },
-      { ch: "h" },
-      { ch: "j" },
-      { ch: "k" },
-      { ch: "l" },
-      { ch: ";" },
-    ],
-    [
-      { action: "shift", icon: ArrowBigUp, title: "大写（双击锁定）" },
-      { ch: "z" },
-      { ch: "x" },
-      { ch: "c" },
-      { ch: "v" },
-      { ch: "b" },
-      { ch: "n" },
-      { ch: "m" },
-      { ch: "," },
-      {
-        action: "backspace",
-        icon: Delete,
-        title: "退格（长按连删）",
-        hold: true,
-      },
-    ],
-  ],
-  sym: [
-    [
-      { ch: "+" },
-      { ch: "-" },
-      { ch: "*" },
-      { ch: "/" },
-      { ch: "%" },
-      { ch: "=" },
-      { ch: "!" },
-      { ch: "&" },
-      { ch: "|" },
-      { ch: "_" },
-    ],
-    [
-      { ch: "{" },
-      { ch: "}" },
-      { ch: "[" },
-      { ch: "]" },
-      { ch: '"' },
-      { ch: "'" },
-      { ch: "\\" },
-      { ch: "^" },
-      { ch: "~" },
-      { ch: "@" },
-    ],
-    [
-      { ch: ":" },
-      { ch: "#" },
-      { ch: "$" },
-      { ch: "`" },
-      { ch: "?" },
-      { ch: "(" },
-      { ch: ")" },
-      { ch: "<" },
-      { ch: ">" },
-      { ch: "," },
-    ],
-  ],
-};
-
-/* 底行（空格 + 回车所在行）：sym 页里 ; . 重复出现，减少页面往返 */
-const BOTTOM = {
-  abc: [
-    { page: "sym", label: "#+=", title: "符号页" },
-    { ch: "(" },
-    { ch: ")" },
-    { ch: "<" },
-    { ch: ">" },
-    { ch: "." },
-    { ch: " ", span: 3, title: "空格" },
-    { action: "enter", icon: CornerDownLeft, title: "回车" },
-  ],
-  sym: [
-    { page: "abc", label: "ABC", title: "字母页" },
-    { ch: ";" },
-    { ch: "." },
-    { ch: " ", span: 5, title: "空格" },
-    {
-      action: "backspace",
-      icon: Delete,
-      title: "退格（长按连删）",
-      hold: true,
-    },
-    { action: "enter", icon: CornerDownLeft, title: "回车" },
-  ],
-};
 
 const CURSOR_CMD = {
   left: "cursorLeft",
@@ -219,6 +107,7 @@ export default function CodeKeyboard({
   onToggleSysKb,
   sysKb,
   compact,
+  lang = "cpp",
 }) {
   const [page, setPage] = useState("abc");
   const [shift, setShift] = useState(0); // 0 关 1 单发 2 锁定
@@ -230,6 +119,9 @@ export default function CodeKeyboard({
   // 回调 prop 经 ref 间接引用，保证下面的 useCallback 依赖稳定（KbKey memo 生效）
   const propsRef = useRef({ onHide, onToggleSysKb });
   propsRef.current = { onHide, onToggleSysKb };
+  const layout = kbLayout(lang); // 模块级常量，语言不变时引用稳定
+  const rows = page === "sym" ? layout.sym : layout.abc;
+  const bottom = layout.bottom[page];
 
   useEffect(() => () => stopHold(holdRef), []);
 
@@ -391,7 +283,7 @@ export default function CodeKeyboard({
           />
         ))}
       </div>
-      {ROWS[page].map((row, ri) => (
+      {rows.map((row, ri) => (
         <div className="cp-kb-row" key={ri}>
           {row.map((def, ci) => {
             // 键帽：Shift 态显示上档字符（数字 → 符号，字母 → 大写）
@@ -414,7 +306,7 @@ export default function CodeKeyboard({
         </div>
       ))}
       <div className="cp-kb-row">
-        {BOTTOM[page].map((def, i) => (
+        {bottom.map((def, i) => (
           <KbKey
             key={i}
             def={def}
@@ -430,7 +322,7 @@ export default function CodeKeyboard({
 }
 
 const KbKey = memo(function KbKey({ def, label, tone, onDown, onUp, active }) {
-  const Icon = def.icon;
+  const Icon = def.icon ?? (def.action ? ACTION_ICONS[def.action] : null);
   return (
     <button
       type="button"
@@ -438,7 +330,7 @@ const KbKey = memo(function KbKey({ def, label, tone, onDown, onUp, active }) {
       style={def.span ? { gridColumn: `span ${def.span}` } : undefined}
       data-active={active || undefined}
       title={def.title}
-      aria-label={def.title}
+      aria-label={def.title ?? def.ch}
       onPointerDown={(e) => {
         e.preventDefault();
         onDown(def);

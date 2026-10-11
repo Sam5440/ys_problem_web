@@ -1,9 +1,10 @@
 /* 移动端编译器 E2E：覆盖切换 / 上下分屏 / 站内编程键盘。
    前置：npm run build && npx next start -p 3100（BASE_URL 可覆盖端口）。
    跑法：node scripts/tests/e2e-compiler-mobile.mjs
-   断言 30 项（布局几何 + 键盘真实 tap 输入/双击合并/退格/Tab/撤销/空格 +
-   自动补全弹窗/点选插入 + 系统键盘抑制与右上角手动开关 + 设置项 + 桌面回归），
-   并输出 7 张视口截图到 $TMPDIR/ys-mobile-shots/ 供人工评审。
+   断言 38 项（布局几何 + 键盘真实 tap 输入/双击合并/退格/Tab/撤销/空格 +
+   自动补全弹窗/点选插入 + 系统键盘抑制与右上角手动开关 + 设置项 +
+   语言自适应键盘布局/组合符一击键 + One Dark 主题 + C++/Python 格式化 +
+   桌面回归），并输出 9 张视口截图到 $TMPDIR/ys-mobile-shots/ 供人工评审。
    手机态 viewport 390x844（hasTouch）。 */
 import { chromium } from "playwright";
 import { mkdirSync } from "node:fs";
@@ -133,8 +134,12 @@ check(
   JSON.stringify(v.split("\n").find((l) => l.includes("<")) ?? ""),
 );
 
-// Tab 缩进
-await page.keyboard.press("Home");
+// Tab 缩进（显式固定内容与光标，避免点击落点不同导致断言漂移）
+await page.evaluate(() => {
+  const { editor } = window.__ysMonaco;
+  editor.setValue("int main() {\nif\n}");
+  editor.setPosition({ lineNumber: 2, column: 1 });
+});
 await type("Tab");
 v = await page.evaluate(() => window.__ysMonaco.editor.getValue());
 check(
@@ -343,7 +348,110 @@ check(
     .isVisible()
     .catch(() => false),
 );
+check(
+  "设置含「编辑器主题」项",
+  await page3
+    .locator("text=编辑器主题")
+    .first()
+    .isVisible()
+    .catch(() => false),
+);
 await shot(page3, "m6-settings", false);
+
+// ---- 场景 4:语言自适应键盘布局 + One Dark 主题 + 格式化按钮 ----
+const page4 = await ctx.newPage();
+await page4.addInitScript(() => {
+  localStorage.setItem(
+    "ysc-cp-settings-v1",
+    JSON.stringify({
+      mobileKeyboard: true,
+      panelOpen: true,
+      editorTheme: "one-dark",
+      defaultLang: "python",
+    }),
+  );
+});
+await page4.goto(BASE, { waitUntil: "networkidle" });
+await page4.waitForTimeout(1200);
+await page4.locator(".compiler-edge-tab").tap();
+await page4.waitForTimeout(1000);
+
+// One Dark 生效：编辑器背景 #282c34
+await page4
+  .waitForSelector("#compiler-panel .monaco-editor", { timeout: 8000 })
+  .catch(() => {});
+const themeBg = await page4.evaluate(() => {
+  const el = document.querySelector("#compiler-panel .monaco-editor");
+  return el ? getComputedStyle(el).backgroundColor : null;
+});
+check("One Dark 主题背景生效", themeBg === "rgb(40, 44, 52)", String(themeBg));
+
+// Python 布局：主页常驻 :（home 行尾）与 [ ]（底行），; 不在主页
+const pyColon = await page4
+  .locator('.cp-kb-key[aria-label=":"]')
+  .isVisible()
+  .catch(() => false);
+const pyBracket = await page4
+  .locator('.cp-kb-key[aria-label="["]')
+  .isVisible()
+  .catch(() => false);
+check("Python 键盘主页有 : 与 [", pyColon && pyBracket, `:=${pyColon} [=${pyBracket}`);
+await shot(page4, "m7-python-keyboard", false);
+
+// Python 格式化按钮
+await page4.evaluate(() =>
+  window.__ysMonaco.editor.setValue("def f( a,b ):\n    return [1,2,3]\n"),
+);
+await page4.locator('button[aria-label="格式化代码"]').tap();
+await page4.waitForTimeout(500);
+const pyFormatted4 = await page4.evaluate(() => window.__ysMonaco.editor.getValue());
+check(
+  "Python 格式化（逗号空格 + 括号收窄）",
+  pyFormatted4.includes("def f(a, b):") && pyFormatted4.includes("[1, 2, 3]"),
+  JSON.stringify(pyFormatted4),
+);
+const fmtToast = await page4
+  .locator(".compiler-toast-on")
+  .textContent()
+  .catch(() => "");
+check("格式化提示浮窗", fmtToast.includes("格式化") || fmtToast.includes("整洁"), fmtToast);
+
+// 切到 C++：键盘布局换回（[ ] 从主页消失、home 行尾变 ;）
+await page4.locator('#compiler-panel button:text-is("C++")').tap();
+await page4.waitForTimeout(500);
+const cppBracket = await page4
+  .locator('.cp-kb-key[aria-label="["]')
+  .isVisible()
+  .catch(() => false);
+const cppSemi = await page4
+  .locator('.cp-kb-key[aria-label=";"]')
+  .isVisible()
+  .catch(() => false);
+check("C++ 键盘布局切换（; 回主页、[ 让位）", cppSemi && !cppBracket, `;=${cppSemi} [=${cppBracket}`);
+
+// C++ 符号页组合符一击键（<<）
+await page4.locator('.cp-kb-key', { hasText: "#+=" }).tap();
+await page4.waitForTimeout(300);
+const comboKey = await page4
+  .locator('.cp-kb-key[aria-label="<<"]')
+  .isVisible()
+  .catch(() => false);
+check("C++ 符号页组合符 << 一击键", comboKey, "");
+await page4.locator('.cp-kb-key', { hasText: "ABC" }).tap();
+
+// C++ 格式化（缩进重排）
+await page4.evaluate(() =>
+  window.__ysMonaco.editor.setValue("int main(){\nint x=1;\n}\n"),
+);
+await page4.locator('button[aria-label="格式化代码"]').tap();
+await page4.waitForTimeout(500);
+const cppFormatted = await page4.evaluate(() => window.__ysMonaco.editor.getValue());
+check(
+  "C++ 格式化（缩进重排 + = 空格）",
+  cppFormatted.includes("int main() {") && cppFormatted.includes("    int x = 1;"),
+  JSON.stringify(cppFormatted),
+);
+await shot(page4, "m8-format-theme", false);
 
 // ---- 桌面回归:1440x900 并排不变 ----
 const dctx = await chromium

@@ -12,6 +12,7 @@ import {
   PLACEHOLDERS,
   PYODIDE_VERSIONS,
 } from "@/lib/compiler/runtimes";
+import { EDITOR_THEMES } from "@/lib/compiler/themes";
 import {
   downloadAll,
   hasRuntime,
@@ -175,7 +176,7 @@ export default function CompilerSettingsSection() {
 
       <RuntimeCard
         title="C++ · Clang/LLVM 22.1.8（wasi-sdk 33）"
-        note={`支持 C++17/20/23 与万能头 bits/stdc++.h；运行时由本站同源自托管，共 ${fmtMB(CPP_FILES.reduce((a, f) => a + (f.size || 0), 0))}。`}
+        note={`支持 C++11–26（c++11/14/17/20/23/26 已实测编译通过）与万能头 bits/stdc++.h；运行时由本站同源自托管，共 ${fmtMB(CPP_FILES.reduce((a, f) => a + (f.size || 0), 0))}。`}
         state={cpp}
         total={CPP_FILES.reduce((a, f) => a + (f.size || 0), 0)}
         onDownload={downloadCpp}
@@ -262,6 +263,26 @@ export default function CompilerSettingsSection() {
         </label>
         <label className="block space-y-1">
           <span className="text-xs font-medium text-muted-foreground">
+            编辑器主题
+          </span>
+          <select
+            className={inputCls}
+            value={cp.editorTheme}
+            onChange={(e) => patch({ editorTheme: e.target.value })}
+          >
+            {EDITOR_THEMES.map((t) => (
+              <option key={t.id} value={t.id}>
+                {t.label}
+              </option>
+            ))}
+          </select>
+          <span className="block text-[11px] leading-relaxed text-muted-foreground">
+            编辑器配色（One Dark / Dracula / Monokai / GitHub / Solarized 等），
+            只作用于 Monaco 代码区，站点其余部分不变。
+          </span>
+        </label>
+        <label className="block space-y-1">
+          <span className="text-xs font-medium text-muted-foreground">
             单次运行超时（秒）
           </span>
           <input
@@ -335,11 +356,11 @@ export default function CompilerSettingsSection() {
           <span className="space-y-0.5">
             <span className="block text-xs font-medium">编程键盘</span>
             <span className="block text-[11px] leading-relaxed text-muted-foreground">
-              在手机上打开编译器时，用站内编程键盘替代系统软键盘：数字与 ; ( )
-              &lt; &gt; 等常用符号常驻、 方向键 / Tab / 行首行尾 / 撤销 /
-              系统键盘开关，退格长按连删；快速连击两下 &lt; &gt; : = +
-              等自动合并为 &lt;&lt; &gt;&gt; :: == ++。顶部工具行右侧 ⌄
-              可临时收起，点编辑器恢复。
+              在手机上打开编译器时，用站内编程键盘替代系统软键盘。布局按语言自适应
+              并依据真实题解代码的符号频率设计：C++ 常驻 ; , . ( ) &lt; &gt;
+              &quot;，Python 常驻 : _ , ( ) [ ] .；符号页按频率排序，第三行是
+              &lt;&lt; == += ** 等组合符一击键。含方向键 / Tab / 行首行尾 / 撤销 /
+              系统键盘开关，退格长按连删。顶部工具行右侧 ⌄ 可临时收起，点编辑器恢复。
             </span>
           </span>
         </label>

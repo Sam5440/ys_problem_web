@@ -41,6 +41,8 @@ import {
   cppAccessKind,
   pyPrefixPath,
 } from "../../lib/compiler/completions.js";
+import { EDITOR_THEMES, editorThemeDef } from "../../lib/compiler/themes.js";
+import { formatCode } from "../../lib/compiler/format.js";
 
 let monacoPromise = null;
 
@@ -87,18 +89,15 @@ function loadMonaco() {
       },
     };
     monacoPromise = import("monaco-editor").then((monaco) => {
-      monaco.editor.defineTheme("ys-dark", {
-        base: "vs-dark",
-        inherit: true,
-        rules: [],
-        colors: {
-          "editor.background": "#1d1d22",
-          "editorGutter.background": "#1d1d22",
-          "editor.lineHighlightBackground": "#ffffff0d",
-          "editorLineNumber.foreground": "#6b6b74",
-          "editor.selectionBackground": "#3b3b4d",
-        },
-      });
+      // 全部主题一次性注册（ys-dark 为默认；设置里可切 One Dark / Dracula 等）
+      for (const t of EDITOR_THEMES) {
+        monaco.editor.defineTheme(t.id, {
+          base: t.base,
+          inherit: t.inherit,
+          rules: t.rules,
+          colors: t.colors,
+        });
+      }
       return monaco;
     });
   }
@@ -498,6 +497,21 @@ function registerProviders(monaco, getCppContext) {
       return { contents: [{ value: md }] };
     },
   });
+
+  /* ---------------- 格式化（lib/compiler/format.js 主线程纯函数） ----------------
+     注册后 Monaco 自带入口即生效：Shift+Alt+F / 右键菜单「格式化文档」/
+     editor.action.formatDocument（面板上的「格式化」按钮走同一 action，
+     一次编辑一整个 undo 步）。格式化器语义边界见 format.js 文件头。 */
+  for (const langId of ["cpp", "python"]) {
+    monaco.languages.registerDocumentFormattingEditProvider(langId, {
+      provideDocumentFormattingEdits(model) {
+        const before = model.getValue();
+        const text = formatCode(langId, before);
+        if (text === before) return []; // 无变化：不给 Monaco 塞空编辑（不留 undo 垃圾）
+        return [{ range: model.getFullModelRange(), text }];
+      },
+    });
+  }
 }
 
 /**
@@ -507,6 +521,7 @@ function registerProviders(monaco, getCppContext) {
  * @param {(v: string) => void} props.onChange
  * @param {Array<{line:number,col:number,endLine?:number,endCol?:number,severity:string,message:string}>} props.diagnostics
  * @param {() => object|null} props.getCppContext clang 补全上下文（可选）
+ * @param {string} [props.theme] 编辑器主题 id（lib/compiler/themes.js，默认 ys-dark）
  * @param {(editor: object, monaco: object) => void} [props.onReady] 编辑器就绪（CodeKeyboard 借它拿 trigger/executeEdits）
  * @param {() => void} [props.onFocused] 编辑器获得焦点（移动端键盘收起后由此重新展开）
  * @param {boolean} [props.suppressSoftKeyboard] true 时切回 textarea 输入路径并设
@@ -519,6 +534,7 @@ export default function CodeEditor({
   onChange,
   diagnostics = [],
   getCppContext,
+  theme,
   onStatus,
   onReady,
   onFocused,
@@ -536,6 +552,7 @@ export default function CodeEditor({
     language,
     onChange,
     getCppContext,
+    theme,
     onStatus,
     onReady,
     onFocused,
@@ -545,6 +562,7 @@ export default function CodeEditor({
     language,
     onChange,
     getCppContext,
+    theme,
     onStatus,
     onReady,
     onFocused,
@@ -587,7 +605,7 @@ export default function CodeEditor({
       editor = monaco.editor.create(hostRef.current, {
         value,
         language: language === "python" ? "python" : "cpp",
-        theme: "ys-dark",
+        theme: editorThemeDef(stateRef.current.theme).id,
         automaticLayout: true,
         fontSize: 13,
         lineHeight: 20,
@@ -667,6 +685,13 @@ export default function CodeEditor({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
+
+  // 主题切换（设置弹窗改动 ysc-cp-settings 后经 CompilerDock 传入）
+  useEffect(() => {
+    const monaco = monacoRef.current;
+    if (!monaco || !theme) return;
+    monaco.editor.setTheme(editorThemeDef(theme).id);
+  }, [theme]);
 
   // 诊断标记
   useEffect(() => {

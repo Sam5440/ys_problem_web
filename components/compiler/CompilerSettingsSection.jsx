@@ -288,6 +288,25 @@ export default function CompilerSettingsSection() {
             <option value="interactive">交互运行</option>
           </select>
         </label>
+        <label className="block space-y-1">
+          <span className="text-xs font-medium text-muted-foreground">
+            Ctrl/⌘S 行为
+          </span>
+          <select
+            className={inputCls}
+            value={cp.ctrlS}
+            onChange={(e) => patch({ ctrlS: e.target.value })}
+          >
+            <option value="save">接管 · 保存代码并提示（默认）</option>
+            <option value="download">接管 · 下载当前代码文件</option>
+            <option value="off">不接管 · 浏览器保存网页</option>
+          </select>
+          <span className="block text-[11px] leading-relaxed text-muted-foreground">
+            刷题时习惯性按 Ctrl/⌘S 不会弹出浏览器「保存网页」：默认改为保存
+            编辑器代码草稿并弹提示；也可改为把代码下载成文件（文件名 =
+            题目日期_题号_时间）。
+          </span>
+        </label>
       </div>
 
       {/* 移动端（手机）适配：布局方式与编程键盘 */}
@@ -317,9 +336,9 @@ export default function CompilerSettingsSection() {
             <span className="block text-xs font-medium">编程键盘</span>
             <span className="block text-[11px] leading-relaxed text-muted-foreground">
               在手机上打开编译器时，用站内编程键盘替代系统软键盘：数字与 ; ( )
-              &lt; &gt; 等常用符号常驻、 方向键 / Tab / 行首行尾 /
-              撤销重做、退格长按连删；快速连击两下 &lt; &gt; : = + 等自动合并为
-              &lt;&lt; &gt;&gt; :: == ++。顶部工具行下方点 ⌄
+              &lt; &gt; 等常用符号常驻、 方向键 / Tab / 行首行尾 / 撤销 /
+              系统键盘开关，退格长按连删；快速连击两下 &lt; &gt; : = +
+              等自动合并为 &lt;&lt; &gt;&gt; :: == ++。顶部工具行右侧 ⌄
               可临时收起，点编辑器恢复。
             </span>
           </span>

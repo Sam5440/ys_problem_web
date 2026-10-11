@@ -1,7 +1,7 @@
 /* 移动端编译器 E2E：覆盖切换 / 上下分屏 / 站内编程键盘。
    前置：npm run build && npx next start -p 3100（BASE_URL 可覆盖端口）。
    跑法：node scripts/tests/e2e-compiler-mobile.mjs
-   断言 29 项（布局几何 + 键盘真实 tap 输入/双击合并/退格/Tab/撤销/空格 +
+   断言 30 项（布局几何 + 键盘真实 tap 输入/双击合并/退格/Tab/撤销/空格 +
    自动补全弹窗/点选插入 + 系统键盘抑制与右上角手动开关 + 设置项 + 桌面回归），
    并输出 7 张视口截图到 $TMPDIR/ys-mobile-shots/ 供人工评审。
    手机态 viewport 390x844（hasTouch）。 */
@@ -331,6 +331,14 @@ check(
   "设置含「编译器布局」项",
   await page3
     .locator("text=编译器布局")
+    .first()
+    .isVisible()
+    .catch(() => false),
+);
+check(
+  "设置含「Ctrl/⌘S 行为」项",
+  await page3
+    .locator("text=Ctrl/⌘S 行为")
     .first()
     .isVisible()
     .catch(() => false),

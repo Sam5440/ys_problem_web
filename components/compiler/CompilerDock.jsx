@@ -96,7 +96,7 @@ const CONSOLE_CAP = 200 * 1024;
 const MIN_PANEL_W = 360;
 const MIN_CONSOLE_H = 144;
 
-export default function CompilerDock({ problems }) {
+export default function CompilerDock({ problems, day }) {
   const { openSettings } = useSettings();
   const [mounted, setMounted] = useState(false);
   const [cp, setCp] = useState(null); // 编译器偏好
@@ -120,6 +120,7 @@ export default function CompilerDock({ problems }) {
   const [isMobile, setIsMobile] = useState(false); // 移动端断点（覆盖切换 / 上下分屏）
   const [kbHidden, setKbHidden] = useState(false); // 编程键盘临时收起（点编辑器恢复）
   const [sysKb, setSysKb] = useState(false); // 系统键盘手动开启（键盘右上角开关，输入法场景）
+  const [toast, setToast] = useState(null); // Ctrl+S 保存提示浮窗文案（null=隐藏）
   const [splitH, setSplitH] = useState(null); // 分屏模式编译器高度（px），null = 50dvh
 
   const cppRef = useRef(null);
@@ -132,6 +133,8 @@ export default function CompilerDock({ problems }) {
   const pyOutRef = useRef(""); // 交互/样例期间收集的 Python stdout
   const runTokenRef = useRef(0); // 使乱序完成的旧运行失效
   const checkTimerRef = useRef(null);
+  const toastTimerRef = useRef(null); // Ctrl+S 提示浮窗自动消失
+  const codeRef = useRef(""); // 编辑器最新内容（Ctrl+S 下载/落盘用，不进 effect 依赖）
   const [portalRoot, setPortalRoot] = useState(null); // layout 顶层的 #compiler-dock-root
 
   const problem = problems?.[probIdx] ?? null;
@@ -365,6 +368,69 @@ export default function CompilerDock({ problems }) {
     clearDraft(problems[probIdx]?.code, lang);
     setCode(tpl);
   };
+
+  /* ---------- Ctrl/⌘S 接管（设置 ctrlS）----------
+     'save'（默认）：立即落盘草稿（平时 500ms 去抖）+ 提示浮窗；'download'：
+     把当前代码下载成文件（文件名 = 题目日期_题号_HHMMSS.扩展名）；'off'：
+     不监听，浏览器默认保存网页。仅面板展开时接管；document 捕获阶段监听
+     在 Monaco keybinding 与浏览器默认行为之前拦下（preventDefault +
+     stopPropagation）。 */
+  codeRef.current = code;
+  const flashToast = useCallback((text) => {
+    setToast(text);
+    clearTimeout(toastTimerRef.current);
+    toastTimerRef.current = setTimeout(() => setToast(null), 2200);
+  }, []);
+
+  const downloadCodeFile = useCallback(() => {
+    const safeCode = (problems[probIdx]?.code ?? "problem").replace(
+      /[^\w.-]+/g,
+      "_",
+    );
+    const time = new Date().toTimeString().slice(0, 8).replace(/:/g, "");
+    const name = `${day ?? "undated"}_${safeCode}_${time}.${
+      lang === "python" ? "py" : "cpp"
+    }`;
+    const url = URL.createObjectURL(
+      new Blob([codeRef.current], { type: "text/plain;charset=utf-8" }),
+    );
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }, [problems, probIdx, lang, day]);
+
+  useEffect(() => {
+    if (!mounted || !open || !cp || cp.ctrlS === "off") return;
+    const onKey = (e) => {
+      if (e.altKey || !(e.ctrlKey || e.metaKey)) return;
+      if ((e.key ?? "").toLowerCase() !== "s") return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (cp.ctrlS === "download") {
+        downloadCodeFile();
+      } else {
+        saveDraft(problems[probIdx]?.code, lang, codeRef.current);
+        flashToast("代码已保存（本机草稿）");
+      }
+    };
+    document.addEventListener("keydown", onKey, true);
+    return () => document.removeEventListener("keydown", onKey, true);
+  }, [
+    mounted,
+    open,
+    cp,
+    lang,
+    probIdx,
+    problems,
+    downloadCodeFile,
+    flashToast,
+  ]);
+
+  useEffect(() => () => clearTimeout(toastTimerRef.current), []);
 
   /* ---------- 分栏拖拽 ----------
      宽度：拖面板左缘竖向手柄，改 <html> 的 --compiler-w（px）；结果区高度：
@@ -876,6 +942,15 @@ export default function CompilerDock({ problems }) {
           aria-hidden={!open}
           inert={!open}
         >
+          {/* Ctrl+S 保存提示浮窗：面板顶部居中胶囊，常挂 DOM 走透明度过渡 */}
+          <div
+            className={`compiler-toast ${toast ? "compiler-toast-on" : ""}`}
+            role="status"
+            aria-live="polite"
+          >
+            {toast}
+          </div>
+
           {/* 分屏模式顶缘手柄：拖动改编译器高度（--split-h），双击恢复 50dvh */}
           {mobileMode === "split" && (
             <div

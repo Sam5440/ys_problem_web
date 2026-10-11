@@ -538,6 +538,34 @@ html {
   background: var(--ring);
 }
 
+/* Ctrl+S 保存提示浮窗（CompilerDock）：面板顶部居中的胶囊，常挂 DOM、
+   显隐走透明度+位移过渡（reduced-motion 全局规则兜底） */
+.compiler-toast {
+  position: absolute;
+  top: 56px;
+  left: 50%;
+  z-index: 40;
+  transform: translate(-50%, -8px);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #26262f;
+  color: #e6e4f2;
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.35);
+}
+.compiler-toast.compiler-toast-on {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 /* ---------- 移动端编程键盘（components/compiler/CodeKeyboard.jsx） ----------
    站内自绘键盘替代系统软键盘：硬编码暗色（与 ys-dark 编辑器同调）。所有按键
    pointerdown 触发 + preventDefault（不抢编辑器焦点），user-select 关掉防长按弹出

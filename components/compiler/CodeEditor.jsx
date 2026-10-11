@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 /**
  * Monaco 编辑器封装：C++/Python 高亮、诊断标记、补全 / 签名提示 / 悬停文档。
@@ -19,15 +19,42 @@
  * 补全数据与纯函数在 lib/compiler/completions.js（node/浏览器同源，可单测）。
  */
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 import {
-  CPP_FUNCTIONS, CPP_TYPES, CPP_OBJECTS, CPP_MEMBERS, CPP_HEADERS, CPP_KEYWORDS, CPP_SNIPPETS,
-  PY_FUNCTIONS, PY_MEMBER_TABLES, PY_TYPE_MEMBERS, PY_KEYWORDS, PY_SNIPPETS,
-  toSuggestion, keywordSuggestion, lookupSignature, splitSignatureParams,
-  includeContext, cppAccessKind, pyPrefixPath,
-} from '../../lib/compiler/completions.js';
+  CPP_FUNCTIONS,
+  CPP_TYPES,
+  CPP_OBJECTS,
+  CPP_MEMBERS,
+  CPP_HEADERS,
+  CPP_KEYWORDS,
+  CPP_SNIPPETS,
+  PY_FUNCTIONS,
+  PY_MEMBER_TABLES,
+  PY_TYPE_MEMBERS,
+  PY_KEYWORDS,
+  PY_SNIPPETS,
+  toSuggestion,
+  keywordSuggestion,
+  lookupSignature,
+  splitSignatureParams,
+  includeContext,
+  cppAccessKind,
+  pyPrefixPath,
+} from "../../lib/compiler/completions.js";
 
 let monacoPromise = null;
+
+/** 给/不给 Monaco 的隐藏输入区设 inputmode="none"（移动端改用站内编程键盘时阻止系统软键盘）。
+    Monaco 0.57 的输入 textarea 类名是 ime-text-area（不是旧版的 inputarea），
+    另有触屏设备出现的 iPadShowKeyboard 快捷输入框一并抑制。 */
+function applySoftKeyboardSuppression(editor, suppress) {
+  const host = editor?.getDomNode?.();
+  if (!host) return;
+  for (const ta of host.querySelectorAll("textarea.ime-text-area, textarea.iPadShowKeyboard")) {
+    if (suppress) ta.setAttribute("inputmode", "none");
+    else ta.removeAttribute("inputmode");
+  }
+}
 
 function loadMonaco() {
   if (!monacoPromise) {
@@ -37,22 +64,25 @@ function loadMonaco() {
         // （monaco 0.57 的 exports 把子路径全部映射进 esm/vs，裸包名进 new URL
         //  解析不到，必须写相对文件路径）。
         return new Worker(
-          new URL('../../node_modules/monaco-editor/esm/vs/editor/editor.worker.js', import.meta.url),
-          { type: 'module' },
+          new URL(
+            "../../node_modules/monaco-editor/esm/vs/editor/editor.worker.js",
+            import.meta.url,
+          ),
+          { type: "module" },
         );
       },
     };
-    monacoPromise = import('monaco-editor').then((monaco) => {
-      monaco.editor.defineTheme('ys-dark', {
-        base: 'vs-dark',
+    monacoPromise = import("monaco-editor").then((monaco) => {
+      monaco.editor.defineTheme("ys-dark", {
+        base: "vs-dark",
         inherit: true,
         rules: [],
         colors: {
-          'editor.background': '#1d1d22',
-          'editorGutter.background': '#1d1d22',
-          'editor.lineHighlightBackground': '#ffffff0d',
-          'editorLineNumber.foreground': '#6b6b74',
-          'editor.selectionBackground': '#3b3b4d',
+          "editor.background": "#1d1d22",
+          "editorGutter.background": "#1d1d22",
+          "editor.lineHighlightBackground": "#ffffff0d",
+          "editorLineNumber.foreground": "#6b6b74",
+          "editor.selectionBackground": "#3b3b4d",
         },
       });
       return monaco;
@@ -66,11 +96,23 @@ function docTokenSuggestions(mon, model, exclude) {
   const seen = new Set();
   const out = [];
   // captureMatches 必须 true：false 时 FindMatch.matches 是 null（取 [0] 即抛）
-  for (const m of model.findMatches('[A-Za-z_][A-Za-z0-9_]*', true, true, false, null, true)) {
+  for (const m of model.findMatches(
+    "[A-Za-z_][A-Za-z0-9_]*",
+    true,
+    true,
+    false,
+    null,
+    true,
+  )) {
     const t = m.matches[0];
     if (t.length > 2 && !exclude.has(t) && !seen.has(t)) {
       seen.add(t);
-      out.push({ label: t, kind: mon.languages.CompletionItemKind.Text, insertText: t, sortText: `3${t}` });
+      out.push({
+        label: t,
+        kind: mon.languages.CompletionItemKind.Text,
+        insertText: t,
+        sortText: `3${t}`,
+      });
     }
   }
   return out;
@@ -78,9 +120,11 @@ function docTokenSuggestions(mon, model, exclude) {
 
 /** 由签名文本组 Monaco SignatureInformation（参数 label 必须是 label 的子串）。 */
 function toSignatureInfo(hit, lang) {
-  const { namePart, params, endPart } = splitSignatureParams(hit.match.signature);
+  const { namePart, params, endPart } = splitSignatureParams(
+    hit.match.signature,
+  );
   const label = endPart
-    ? namePart + params.map((p) => p.label).join(', ') + endPart
+    ? namePart + params.map((p) => p.label).join(", ") + endPart
     : hit.match.signature;
   return {
     label,
@@ -95,8 +139,10 @@ function mergeClangItems(suggestions, items, kind, range) {
   for (const item of items) {
     suggestions.unshift({
       label: item.name,
-      detail: item.pattern ?? '',
-      documentation: item.pattern ? { value: '```cpp\n' + item.pattern + '\n```' } : undefined,
+      detail: item.pattern ?? "",
+      documentation: item.pattern
+        ? { value: "```cpp\n" + item.pattern + "\n```" }
+        : undefined,
       kind,
       range,
       insertText: item.name,
@@ -118,7 +164,8 @@ function registerProviders(monaco, getCppContext) {
   providersRegistered = true;
   const K = monaco.languages.CompletionItemKind;
   const Invoke = monaco.languages.CompletionTriggerKind.Invoke;
-  const TriggerCharacter = monaco.languages.CompletionTriggerKind.TriggerCharacter;
+  const TriggerCharacter =
+    monaco.languages.CompletionTriggerKind.TriggerCharacter;
 
   const wordRange = (model, position) => {
     const word = model.getWordUntilPosition(position);
@@ -134,8 +181,8 @@ function registerProviders(monaco, getCppContext) {
 
   /* ---------------- C++ ---------------- */
 
-  monaco.languages.registerCompletionItemProvider('cpp', {
-    triggerCharacters: ['.', '>', ':', '<', '"'],
+  monaco.languages.registerCompletionItemProvider("cpp", {
+    triggerCharacters: [".", ">", ":", "<", '"'],
     async provideCompletionItems(model, position, context) {
       const range = wordRange(model, position);
       const lineText = model.getLineContent(position.lineNumber);
@@ -147,12 +194,12 @@ function registerProviders(monaco, getCppContext) {
       // 继续打字过滤时不带闭合（用户自己收尾）
       if (inc) {
         const autoClose = !word.word && Boolean(context.triggerCharacter);
-        const close = inc === '<' ? '>' : '"';
+        const close = inc === "<" ? ">" : '"';
         return {
           suggestions: CPP_HEADERS.map((h) => ({
             label: h,
             kind: K.Module,
-            detail: '头文件',
+            detail: "头文件",
             range,
             insertText: autoClose ? h + close : h,
             sortText: `0${h}`,
@@ -160,26 +207,56 @@ function registerProviders(monaco, getCppContext) {
         };
       }
       // `<<` / 比较号等非 include 场景的 < 不弹窗
-      if (context.triggerCharacter === '<' || context.triggerCharacter === '"') {
+      if (
+        context.triggerCharacter === "<" ||
+        context.triggerCharacter === '"'
+      ) {
         return { suggestions: [] };
       }
 
       // 成员访问分三态：`.`/`->` 出通用成员表；`::`（std:: 等）出全量 std
       // 符号——不带 using namespace std 的写法在作用域里也要能补 sort
       const access = cppAccessKind(lineText, position.column);
-      if (access === 'scope') {
-        for (const f of CPP_FUNCTIONS) suggestions.push(toSuggestion(monaco, f, K.Function, { sortBoost: '1', range }));
-        for (const t of CPP_TYPES) suggestions.push(toSuggestion(monaco, t, K.Class, { sortBoost: '1', range }));
-        for (const o of CPP_OBJECTS) suggestions.push(toSuggestion(monaco, o, K.Variable, { sortBoost: '1', range }));
-        for (const m of CPP_MEMBERS) suggestions.push(toSuggestion(monaco, m, K.Method, { sortBoost: '2', range }));
+      if (access === "scope") {
+        for (const f of CPP_FUNCTIONS)
+          suggestions.push(
+            toSuggestion(monaco, f, K.Function, { sortBoost: "1", range }),
+          );
+        for (const t of CPP_TYPES)
+          suggestions.push(
+            toSuggestion(monaco, t, K.Class, { sortBoost: "1", range }),
+          );
+        for (const o of CPP_OBJECTS)
+          suggestions.push(
+            toSuggestion(monaco, o, K.Variable, { sortBoost: "1", range }),
+          );
+        for (const m of CPP_MEMBERS)
+          suggestions.push(
+            toSuggestion(monaco, m, K.Method, { sortBoost: "2", range }),
+          );
       } else if (access) {
-        for (const m of CPP_MEMBERS) suggestions.push(toSuggestion(monaco, m, K.Method, { sortBoost: '2', range }));
+        for (const m of CPP_MEMBERS)
+          suggestions.push(
+            toSuggestion(monaco, m, K.Method, { sortBoost: "2", range }),
+          );
       } else {
-        for (const k of CPP_KEYWORDS) suggestions.push(keywordSuggestion(monaco, k, range));
-        for (const f of CPP_FUNCTIONS) suggestions.push(toSuggestion(monaco, f, K.Function, { sortBoost: '1', range }));
-        for (const t of CPP_TYPES) suggestions.push(toSuggestion(monaco, t, K.Class, { sortBoost: '1', range }));
-        for (const o of CPP_OBJECTS) suggestions.push(toSuggestion(monaco, o, K.Variable, { sortBoost: '1', range }));
-        suggestions.push(...docTokenSuggestions(monaco, model, new Set(CPP_KEYWORDS)));
+        for (const k of CPP_KEYWORDS)
+          suggestions.push(keywordSuggestion(monaco, k, range));
+        for (const f of CPP_FUNCTIONS)
+          suggestions.push(
+            toSuggestion(monaco, f, K.Function, { sortBoost: "1", range }),
+          );
+        for (const t of CPP_TYPES)
+          suggestions.push(
+            toSuggestion(monaco, t, K.Class, { sortBoost: "1", range }),
+          );
+        for (const o of CPP_OBJECTS)
+          suggestions.push(
+            toSuggestion(monaco, o, K.Variable, { sortBoost: "1", range }),
+          );
+        suggestions.push(
+          ...docTokenSuggestions(monaco, model, new Set(CPP_KEYWORDS)),
+        );
         for (const s of CPP_SNIPPETS) {
           suggestions.push({
             label: s.label,
@@ -187,7 +264,8 @@ function registerProviders(monaco, getCppContext) {
             kind: K.Snippet,
             range,
             insertText: s.body,
-            insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+            insertTextRules:
+              monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
             sortText: `4${s.label}`,
           });
         }
@@ -206,14 +284,21 @@ function registerProviders(monaco, getCppContext) {
       if (ctx) {
         const manual = ctx.consumeManualInvoke?.();
         const before = model.getValueInRange({
-          startLineNumber: 1, startColumn: 1, endLineNumber: position.lineNumber, endColumn: position.column,
+          startLineNumber: 1,
+          startColumn: 1,
+          endLineNumber: position.lineNumber,
+          endColumn: position.column,
         });
         const hitCache = clangCache.items && before.startsWith(clangCache.key);
         if (manual) {
           const seq = ++clangCompleteSeq;
           try {
-            ctx.onStatus?.('clang 补全中…');
-            const items = await ctx.complete({ source: model.getValue(), line: position.lineNumber, col: position.column });
+            ctx.onStatus?.("clang 补全中…");
+            const items = await ctx.complete({
+              source: model.getValue(),
+              line: position.lineNumber,
+              col: position.column,
+            });
             if (seq !== clangCompleteSeq) return { suggestions };
             clangCache = { key: before, items };
             mergeClangItems(suggestions, items, K.Method, range);
@@ -229,53 +314,69 @@ function registerProviders(monaco, getCppContext) {
           const seq = ++clangCompleteSeq;
           const source = model.getValue();
           const { lineNumber, column } = position;
-          ctx.complete({ source, line: lineNumber, col: column })
+          ctx
+            .complete({ source, line: lineNumber, col: column })
             .then((items) => {
               if (seq !== clangCompleteSeq) return;
               clangCache = { key: before, items };
             })
             .catch(() => {})
             .finally(() => ctx.onStatus?.(null));
-          ctx.onStatus?.('clang 成员补全中…');
+          ctx.onStatus?.("clang 成员补全中…");
         }
       }
       return { suggestions };
     },
   });
 
-  monaco.languages.registerSignatureHelpProvider('cpp', {
-    signatureHelpTriggerCharacters: ['(', ','],
+  monaco.languages.registerSignatureHelpProvider("cpp", {
+    signatureHelpTriggerCharacters: ["(", ","],
     provideSignatureHelp(model, position) {
-      const text = model.getValueInRange({ startLineNumber: 1, startColumn: 1, endLineNumber: position.lineNumber, endColumn: position.column });
+      const text = model.getValueInRange({
+        startLineNumber: 1,
+        startColumn: 1,
+        endLineNumber: position.lineNumber,
+        endColumn: position.column,
+      });
       const hit = lookupSignature(text, [CPP_FUNCTIONS], [CPP_MEMBERS]);
       if (!hit) return null;
-      const info = toSignatureInfo(hit, 'cpp');
+      const info = toSignatureInfo(hit, "cpp");
       return {
         value: {
           signatures: [info],
           activeSignature: 0,
-          activeParameter: Math.min(hit.activeParameter, Math.max(0, info.parameters.length - 1)),
+          activeParameter: Math.min(
+            hit.activeParameter,
+            Math.max(0, info.parameters.length - 1),
+          ),
         },
         dispose() {},
       };
     },
   });
 
-  monaco.languages.registerHoverProvider('cpp', {
+  monaco.languages.registerHoverProvider("cpp", {
     provideHover(model, position) {
       const word = model.getWordAtPosition(position);
       if (!word) return null;
-      const item = [...CPP_FUNCTIONS, ...CPP_TYPES, ...CPP_OBJECTS, ...CPP_MEMBERS].find((x) => x.label === word.word);
+      const item = [
+        ...CPP_FUNCTIONS,
+        ...CPP_TYPES,
+        ...CPP_OBJECTS,
+        ...CPP_MEMBERS,
+      ].find((x) => x.label === word.word);
       if (!item) return null;
-      const md = (item.signature ? '```cpp\n' + item.signature + '\n```\n' : '') + (item.doc ?? '');
+      const md =
+        (item.signature ? "```cpp\n" + item.signature + "\n```\n" : "") +
+        (item.doc ?? "");
       return { contents: [{ value: md }] };
     },
   });
 
   /* ---------------- Python ---------------- */
 
-  monaco.languages.registerCompletionItemProvider('python', {
-    triggerCharacters: ['.'],
+  monaco.languages.registerCompletionItemProvider("python", {
+    triggerCharacters: ["."],
     provideCompletionItems(model, position) {
       const range = wordRange(model, position);
       const lineText = model.getLineContent(position.lineNumber);
@@ -284,17 +385,39 @@ function registerProviders(monaco, getCppContext) {
 
       // 模块成员：heapq.|sys.|...
       if (path && PY_MEMBER_TABLES[path]) {
-        return { suggestions: PY_MEMBER_TABLES[path].map((m) => toSuggestion(monaco, m, K.Method, { sortBoost: '0', lang: 'python', range })) };
+        return {
+          suggestions: PY_MEMBER_TABLES[path].map((m) =>
+            toSuggestion(monaco, m, K.Method, {
+              sortBoost: "0",
+              lang: "python",
+              range,
+            }),
+          ),
+        };
       }
       // 变量成员：str/list/dict/set 方法并集兜底（精确类型推断需要 Jedi，静态并集够竞赛用）
-      if (prev === '.') {
-        return { suggestions: PY_TYPE_MEMBERS.map((m) => toSuggestion(monaco, m, K.Method, { sortBoost: '1', lang: 'python', range })) };
+      if (prev === ".") {
+        return {
+          suggestions: PY_TYPE_MEMBERS.map((m) =>
+            toSuggestion(monaco, m, K.Method, {
+              sortBoost: "1",
+              lang: "python",
+              range,
+            }),
+          ),
+        };
       }
 
       const keywords = new Set(PY_KEYWORDS);
       const suggestions = [
         ...PY_KEYWORDS.map((k) => keywordSuggestion(monaco, k, range)),
-        ...PY_FUNCTIONS.map((f) => toSuggestion(monaco, f, K.Function, { sortBoost: '1', lang: 'python', range })),
+        ...PY_FUNCTIONS.map((f) =>
+          toSuggestion(monaco, f, K.Function, {
+            sortBoost: "1",
+            lang: "python",
+            range,
+          }),
+        ),
         ...docTokenSuggestions(monaco, model, keywords),
         ...PY_SNIPPETS.map((s) => ({
           label: s.label,
@@ -302,7 +425,8 @@ function registerProviders(monaco, getCppContext) {
           kind: K.Snippet,
           range,
           insertText: s.body,
-          insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
+          insertTextRules:
+            monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
           sortText: `4${s.label}`,
         })),
       ];
@@ -310,25 +434,37 @@ function registerProviders(monaco, getCppContext) {
     },
   });
 
-  monaco.languages.registerSignatureHelpProvider('python', {
-    signatureHelpTriggerCharacters: ['(', ','],
+  monaco.languages.registerSignatureHelpProvider("python", {
+    signatureHelpTriggerCharacters: ["(", ","],
     provideSignatureHelp(model, position) {
-      const text = model.getValueInRange({ startLineNumber: 1, startColumn: 1, endLineNumber: position.lineNumber, endColumn: position.column });
-      const hit = lookupSignature(text, [PY_FUNCTIONS], [...Object.values(PY_MEMBER_TABLES), PY_TYPE_MEMBERS]);
+      const text = model.getValueInRange({
+        startLineNumber: 1,
+        startColumn: 1,
+        endLineNumber: position.lineNumber,
+        endColumn: position.column,
+      });
+      const hit = lookupSignature(
+        text,
+        [PY_FUNCTIONS],
+        [...Object.values(PY_MEMBER_TABLES), PY_TYPE_MEMBERS],
+      );
       if (!hit) return null;
-      const info = toSignatureInfo(hit, 'python');
+      const info = toSignatureInfo(hit, "python");
       return {
         value: {
           signatures: [info],
           activeSignature: 0,
-          activeParameter: Math.min(hit.activeParameter, Math.max(0, info.parameters.length - 1)),
+          activeParameter: Math.min(
+            hit.activeParameter,
+            Math.max(0, info.parameters.length - 1),
+          ),
         },
         dispose() {},
       };
     },
   });
 
-  monaco.languages.registerHoverProvider('python', {
+  monaco.languages.registerHoverProvider("python", {
     provideHover(model, position) {
       const word = model.getWordAtPosition(position);
       if (!word) return null;
@@ -342,7 +478,9 @@ function registerProviders(monaco, getCppContext) {
         if (!item) item = PY_TYPE_MEMBERS.find((x) => x.label === word.word);
       }
       if (!item) return null;
-      const md = (item.signature ? '```python\n' + item.signature + '\n```\n' : '') + (item.doc ?? '');
+      const md =
+        (item.signature ? "```python\n" + item.signature + "\n```\n" : "") +
+        (item.doc ?? "");
       return { contents: [{ value: md }] };
     },
   });
@@ -355,8 +493,22 @@ function registerProviders(monaco, getCppContext) {
  * @param {(v: string) => void} props.onChange
  * @param {Array<{line:number,col:number,endLine?:number,endCol?:number,severity:string,message:string}>} props.diagnostics
  * @param {() => object|null} props.getCppContext clang 补全上下文（可选）
+ * @param {(editor: object, monaco: object) => void} [props.onReady] 编辑器就绪（CodeKeyboard 借它拿 trigger/executeEdits）
+ * @param {() => void} [props.onFocused] 编辑器获得焦点（移动端键盘收起后由此重新展开）
+ * @param {boolean} [props.suppressSoftKeyboard] true 时给 Monaco 的 inputarea 设
+ *   inputmode="none" 阻止系统软键盘（移动端用站内编程键盘输入）
  */
-export default function CodeEditor({ language, value, onChange, diagnostics = [], getCppContext, onStatus }) {
+export default function CodeEditor({
+  language,
+  value,
+  onChange,
+  diagnostics = [],
+  getCppContext,
+  onStatus,
+  onReady,
+  onFocused,
+  suppressSoftKeyboard,
+}) {
   const hostRef = useRef(null);
   const editorRef = useRef(null);
   const monacoRef = useRef(null);
@@ -364,8 +516,24 @@ export default function CodeEditor({ language, value, onChange, diagnostics = []
   // Monaco 里「打字母自动弹补全」与「手动触发」的 triggerKind 相同（都是 Invoke），
   // 不区分的话每次击键都会跑一次秒级全量编译。
   const manualInvokeRef = useRef(false);
-  const stateRef = useRef({ language, onChange, getCppContext, onStatus });
-  stateRef.current = { language, onChange, getCppContext, onStatus };
+  const stateRef = useRef({
+    language,
+    onChange,
+    getCppContext,
+    onStatus,
+    onReady,
+    onFocused,
+    suppressSoftKeyboard,
+  });
+  stateRef.current = {
+    language,
+    onChange,
+    getCppContext,
+    onStatus,
+    onReady,
+    onFocused,
+    suppressSoftKeyboard,
+  };
 
   useEffect(() => {
     let disposed = false;
@@ -374,7 +542,7 @@ export default function CodeEditor({ language, value, onChange, diagnostics = []
       if (disposed || !hostRef.current) return;
       registerProviders(monaco, () => {
         const s = stateRef.current;
-        return s.language === 'cpp'
+        return s.language === "cpp"
           ? {
               complete: (p) => s.getCppContext?.().complete(p),
               onStatus: (t) => s.onStatus?.(t),
@@ -388,8 +556,8 @@ export default function CodeEditor({ language, value, onChange, diagnostics = []
       });
       editor = monaco.editor.create(hostRef.current, {
         value,
-        language: language === 'python' ? 'python' : 'cpp',
-        theme: 'ys-dark',
+        language: language === "python" ? "python" : "cpp",
+        theme: "ys-dark",
         automaticLayout: true,
         fontSize: 13,
         lineHeight: 20,
@@ -399,8 +567,8 @@ export default function CodeEditor({ language, value, onChange, diagnostics = []
         insertSpaces: true,
         // Monaco 0.57 默认 quickSuggestions=offWhenInlineCompletions（实测不弹），
         // 必须 显式开启字母自动补全
-        quickSuggestions: { other: 'on', comments: false, strings: false },
-        renderLineHighlight: 'line',
+        quickSuggestions: { other: "on", comments: false, strings: false },
+        renderLineHighlight: "line",
         scrollbar: { verticalScrollbarSize: 10, horizontalScrollbarSize: 10 },
         padding: { top: 10, bottom: 10 },
         // 溢出 widget（补全/悬停/签名提示）必须走绝对定位（Monaco 默认）：
@@ -414,7 +582,7 @@ export default function CodeEditor({ language, value, onChange, diagnostics = []
       monacoRef.current = monaco;
       // 自动化/测试钩子：E2E 用它做免焦点的代码注入（Monaco 点击聚焦在
       // headless 下不稳定，曾导致 Ctrl+A 选中整页、运行了旧代码）
-      if (typeof window !== 'undefined') window.__ysMonaco = { editor, monaco };
+      if (typeof window !== "undefined") window.__ysMonaco = { editor, monaco };
       editor.onDidChangeModelContent(() => {
         stateRef.current.onChange?.(editor.getValue());
       });
@@ -426,8 +594,15 @@ export default function CodeEditor({ language, value, onChange, diagnostics = []
         }
       });
       editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Space, () => {
-        editor.trigger('keyboard', 'editor.action.triggerSuggest', null);
+        editor.trigger("keyboard", "editor.action.triggerSuggest", null);
       });
+      stateRef.current.onReady?.(editor, monaco);
+      // 移动端站内编程键盘收起后点击编辑器 → 重新展开键盘
+      editor.onDidFocusEditorText(() => stateRef.current.onFocused?.());
+      applySoftKeyboardSuppression(
+        editor,
+        stateRef.current.suppressSoftKeyboard,
+      );
     });
     return () => {
       disposed = true;
@@ -442,9 +617,14 @@ export default function CodeEditor({ language, value, onChange, diagnostics = []
     const monaco = monacoRef.current;
     const editor = editorRef.current;
     if (!monaco || !editor) return;
-    const model = monaco.editor.createModel(value, language === 'python' ? 'python' : 'cpp');
+    const model = monaco.editor.createModel(
+      value,
+      language === "python" ? "python" : "cpp",
+    );
     editor.setModel(model);
-    const disp = model.onDidChangeContent(() => stateRef.current.onChange?.(model.getValue()));
+    const disp = model.onDidChangeContent(() =>
+      stateRef.current.onChange?.(model.getValue()),
+    );
     return () => {
       disp.dispose();
       model.dispose();
@@ -461,7 +641,7 @@ export default function CodeEditor({ language, value, onChange, diagnostics = []
     if (!model) return;
     monaco.editor.setModelMarkers(
       model,
-      'compiler',
+      "compiler",
       diagnostics.map((d) => ({
         startLineNumber: d.line,
         startColumn: Math.max(1, (d.col ?? 0) + 1),
@@ -469,12 +649,12 @@ export default function CodeEditor({ language, value, onChange, diagnostics = []
         endColumn: Math.max(2, (d.endCol ?? (d.col ?? 0) + 1) + 1),
         message: d.message,
         severity:
-          d.severity === 'error'
+          d.severity === "error"
             ? monaco.MarkerSeverity.Error
-            : d.severity === 'warning'
+            : d.severity === "warning"
               ? monaco.MarkerSeverity.Warning
               : monaco.MarkerSeverity.Info,
-        source: d.severity === 'syntax' ? 'python' : 'clang',
+        source: d.severity === "syntax" ? "python" : "clang",
       })),
     );
   }, [diagnostics]);
@@ -486,5 +666,16 @@ export default function CodeEditor({ language, value, onChange, diagnostics = []
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
-  return <div ref={hostRef} className="compiler-editor-host h-full w-full" aria-label="代码编辑器" />;
+  // 站内编程键盘开关切换时同步抑制/恢复系统软键盘
+  useEffect(() => {
+    applySoftKeyboardSuppression(editorRef.current, suppressSoftKeyboard);
+  }, [suppressSoftKeyboard]);
+
+  return (
+    <div
+      ref={hostRef}
+      className="compiler-editor-host h-full w-full"
+      aria-label="代码编辑器"
+    />
+  );
 }

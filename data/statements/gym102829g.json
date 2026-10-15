@@ -1,0 +1,75 @@
+{
+  "code": "GYM102829G",
+  "letter": "G",
+  "title": "G. Contrived Array Property",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102829/problem/G",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Problem-writers love coming up with incredibly specific, completely useless properties of an arrays of numbers that they want you to compute for them. Now, we can't have an ICPC tryout contest without one of those problems so here is an especially contrived example to compute:",
+      "For a given array $$$A$$$, define $$$\\psi(A)$$$ as the number of ways to negate certain elements of $$$A$$$ such that the sum of the elements of $$$A$$$ is now $$$0$$$. For example, $$$\\psi([1, 1]) = 2$$$ because you can negate the first element and the array will then be $$$[-1, 1]$$$ which has a sum of $$$0$$$ or you can negate the second element making the array $$$[1, -1]$$$ which also has a sum of $$$0$$$.",
+      "Given an array $$$A$$$ of $$$n$$$ positive integers, let $$$S$$$ be the set of all contiguous, non-empty subarrays of $$$A$$$ (aka all arrays of the form $$$a_i, a_{i+1}, \\dots a_j$$$ where $$$1 \\leq i \\leq j \\leq n$$$ where two subarrays are considered different if they start and/or end at different indices, even if the values within the subarray are the same), compute the sum of $$$\\psi(x)$$$ for all $$$x \\in S$$$ aka $$$\\sum\\limits_{x \\in S}\\psi(x)$$$.",
+      "Note this number may be very large, so print it modulo $$$10^9 + 7$$$."
+    ],
+    "input": [
+      "The first line will contain a single integer $$$n$$$, representing the number of elements in the array ($$$1 \\leq n \\leq 1000$$$).",
+      "The second line will contain $$$n$$$ space-separated positive integers, $$$a_1, a_2, \\dots, a_n$$$ where $$$1 \\leq a_i \\leq 1000$$$. It is also guaranteed that $$$a_1 + a_2 + \\dots + a_n \\leq 10000$$$."
+    ],
+    "output": [
+      "Output a single integer, the sum modulo $$$10^{9} + 7$$$ of $$$\\psi(x)$$$ for all $$$x \\in S$$$ where $$$S$$$ is the set of all contiguous, non-empty subarrays of the initial array."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 2 1",
+      "output": "2"
+    },
+    {
+      "input": "4\n1 1 1 1",
+      "output": "12"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "出题人总喜欢想出一些极其具体、完全没用的数字数组性质，然后让你替他们计算。既然没有这类题目的 ICPC 选拔赛就不完整，那么下面给出一道尤其牵强的题目供你计算：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于给定数组 $$$A$$$，定义 $$$\\psi(A)$$$ 为将 $$$A$$$ 中的某些元素取相反数，使得 $$$A$$$ 中元素的和变为 $$$0$$$ 的方法数。例如，$$$\\psi([1, 1]) = 2$$$，因为你可以将第一个元素取相反数，此时数组变为 $$$[-1, 1]$$$，其元素和为 $$$0$$$；或者将第二个元素取相反数，使数组变为 $$$[1, -1]$$$，其元素和同样为 $$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个包含$$$n$$$个正整数的数组$$$A$$$，令$$$S$$$表示$$$A$$$的所有连续非空子数组构成的集合(也就是所有形如$$$a_i, a_{i+1}, \\dots a_j$$$且满足$$$1 \\leq i \\leq j \\leq n$$$的数组；如果两个子数组的起始位置和/或结束位置不同，即使其中的数值相同，也将它们视为不同的子数组)，求所有$$$x \\in S$$$(即$$$\\sum\\limits_{x \\in S}\\psi(x)$$$)的$$$\\psi(x)$$$之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意这个数可能非常大，因此请输出它对 $$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行将包含一个整数 $$$n$$$，表示数组中的元素个数($$$1 \\leq n \\leq 1000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 $$$n$$$ 个以空格分隔的正整数 $$$a_1, a_2, \\dots, a_n$$$，其中 $$$1 \\leq a_i \\leq 1000$$$。此外，保证 $$$a_1 + a_2 + \\dots + a_n \\leq 10000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数：对所有 $$$x \\in S$$$ 对应的 $$$\\psi(x)$$$ 求和，并对 $$$10^{9} + 7$$$ 取模，其中 $$$S$$$ 是初始数组中所有连续且非空子数组组成的集合。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. 刻意构造的数组性质",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

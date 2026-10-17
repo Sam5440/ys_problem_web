@@ -1,0 +1,94 @@
+{
+  "code": "CF540B",
+  "letter": "B",
+  "title": "B. School Marks",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/540/B",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Little Vova studies programming in an elite school. Vova and his classmates are supposed to write n progress tests, for each test they will get a mark from 1 to p. Vova is very smart and he can write every test for any mark, but he doesn't want to stand out from the crowd too much. If the sum of his marks for all tests exceeds value x, then his classmates notice how smart he is and start distracting him asking to let them copy his homework. And if the median of his marks will be lower than y points (the definition of a median is given in the notes), then his mom will decide that he gets too many bad marks and forbid him to play computer games.",
+      "Vova has already wrote k tests and got marks a1, ..., ak. He doesn't want to get into the first or the second situation described above and now he needs to determine which marks he needs to get for the remaining tests. Help him do that."
+    ],
+    "input": [
+      "The first line contains 5 space-separated integers: n, k, p, x and y (1 ≤ n ≤ 999, n is odd, 0 ≤ k < n, 1 ≤ p ≤ 1000, n ≤ x ≤ n·p, 1 ≤ y ≤ p). Here n is the number of tests that Vova is planned to write, k is the number of tests he has already written, p is the maximum possible mark for a test, x is the maximum total number of points so that the classmates don't yet disturb Vova, y is the minimum median point so that mom still lets him play computer games.",
+      "The second line contains k space-separated integers: a1, ..., ak (1 ≤ ai ≤ p) — the marks that Vova got for the tests he has already written."
+    ],
+    "output": [
+      "If Vova cannot achieve the desired result, print \"-1\".",
+      "Otherwise, print n - k space-separated integers — the marks that Vova should get for the remaining tests. If there are multiple possible solutions, print any of them."
+    ],
+    "note": [
+      "The median of sequence a1, ..., an where n is odd (in this problem n is always odd) is the element staying on (n + 1) / 2 position in the sorted list of ai.",
+      "In the first sample the sum of marks equals 3 + 5 + 4 + 4 + 1 = 17, what doesn't exceed 18, that means that Vova won't be disturbed by his classmates. And the median point of the sequence {1, 3, 4, 4, 5} equals to 4, that isn't less than 4, so his mom lets him play computer games.",
+      "Please note that you do not have to maximize the sum of marks or the median mark. Any of the answers: \"4 2\", \"2 4\", \"5 1\", \"1 5\", \"4 1\", \"1 4\" for the first test is correct.",
+      "In the second sample Vova got three '5' marks, so even if he gets two '1' marks, the sum of marks will be 17, that is more than the required value of 16. So, the answer to this test is \"-1\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 3 5 18 4\n3 5 4",
+      "output": "4 1"
+    },
+    {
+      "input": "5 3 5 16 4\n5 5 5",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "如果沃娃无法达到要求的结果，请输出 \"-1\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，输出 n - k 个空格分隔的整数——Vova 在剩余测试中应得的分数。如果有多组合法解，输出任意一组即可。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于长度为 n 的序列 a1, ..., an，其中 n 为奇数（本题中 n 恒为奇数），中位数是将 ai 排序后位于第 (n + 1) / 2 个位置上的元素。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一个样例中，分数总和为 3 + 5 + 4 + 4 + 1 = 17，不超过 18，这意味着 Vova 不会被同学们打扰。而序列 {1, 3, 4, 4, 5} 的中位数为 4，不小于 4，所以他妈妈允许他玩电脑游戏。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "请注意，你不必最大化分数总和或中位数分数。对于第一个测试，答案 \"4 2\"、\"2 4\"、\"5 1\"、\"1 5\"、\"4 1\"、\"1 4\" 中的任意一个都是正确的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个样例中，Vova 已经得了三个 '5' 分，所以即使他再得两个 '1' 分，分数总和也是 17，超过了所要求的 16。因此，这个测试的答案是 \"-1\"。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "小沃娃在一所精英学校学习编程。沃娃和他的同学们需要完成 n 次阶段测试，每次测试所得分数在 1 到 p 之间。沃娃非常聪明，他可以在每次测试中取得任意分数，但他不想过于引人注目。如果他所有测试的分数总和超过 x，同学们就会注意到他的聪明之处，并开始打扰他，请求让他们抄他的作业。而且，如果他的分数的中位数低于 y 分（中位数的定义见注释），他的妈妈就会认为他得了太多低分，并禁止他玩电脑游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "沃娃已经完成了 k 次测试，并取得了分数 a1, ..., ak。他不想陷入上述第一种或第二种情况，现在需要确定剩余测试应该取得哪些分数。请帮助他完成这个任务。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含 5 个用空格分隔的整数：n、k、p、x 和 y（1 ≤ n ≤ 999，n 为奇数，0 ≤ k < n，1 ≤ p ≤ 1000，n ≤ x ≤ n·p，1 ≤ y ≤ p）。其中，n 是沃娃计划完成的测试总数，k 是他已经完成的测试数，p 是单次测试可能取得的最高分，x 是同学们还不会打扰沃娃时的总分上限，y 是妈妈仍然允许他玩电脑游戏时的中位数最低值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 k 个用空格分隔的整数：a1, ..., ak（1 ≤ ai ≤ p），表示沃娃已经完成的测试所取得的分数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 学校成绩",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

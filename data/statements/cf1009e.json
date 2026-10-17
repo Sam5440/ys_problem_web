@@ -1,0 +1,90 @@
+{
+  "code": "CF1009E",
+  "letter": "E",
+  "title": "E. Intercity Travelling",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1009/E",
+  "difficulty": "2000",
+  "timeLimit": "1.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Leha is planning his journey from Moscow to Saratov. He hates trains, so he has decided to get from one city to another by car.",
+      "The path from Moscow to Saratov can be represented as a straight line (well, it's not that straight in reality, but in this problem we will consider it to be straight), and the distance between Moscow and Saratov is n$$$n$$$ km. Let's say that Moscow is situated at the point with coordinate 0$$$0$$$ km, and Saratov — at coordinate n$$$n$$$ km.",
+      "Driving for a long time may be really difficult. Formally, if Leha has already covered i$$$i$$$ kilometers since he stopped to have a rest, he considers the difficulty of covering (i+1)$$$(i + 1)$$$-th kilometer as ai+1$$$a_{i + 1}$$$. It is guaranteed that for every i∈[1,n−1]$$$i \\in [1, n - 1]$$$ ai≤ai+1$$$a_i \\le a_{i + 1}$$$. The difficulty of the journey is denoted as the sum of difficulties of each kilometer in the journey.",
+      "Fortunately, there may be some rest sites between Moscow and Saratov. Every integer point from 1$$$1$$$ to n−1$$$n - 1$$$ may contain a rest site. When Leha enters a rest site, he may have a rest, and the next kilometer will have difficulty a1$$$a_1$$$, the kilometer after it — difficulty a2$$$a_2$$$, and so on.",
+      "For example, if n=5$$$n = 5$$$ and there is a rest site in coordinate 2$$$2$$$, the difficulty of journey will be 2a1+2a2+a3$$$2a_1 + 2a_2 + a_3$$$: the first kilometer will have difficulty a1$$$a_1$$$, the second one — a2$$$a_2$$$, then Leha will have a rest, and the third kilometer will have difficulty a1$$$a_1$$$, the fourth — a2$$$a_2$$$, and the last one — a3$$$a_3$$$. Another example: if n=7$$$n = 7$$$ and there are rest sites in coordinates 1$$$1$$$ and 5$$$5$$$, the difficulty of Leha's journey is 3a1+2a2+a3+a4$$$3a_1 + 2a_2 + a_3 + a_4$$$.",
+      "Leha doesn't know which integer points contain rest sites. So he has to consider every possible situation. Obviously, there are 2n−1$$$2^{n - 1}$$$ different distributions of rest sites (two distributions are different if there exists some point x$$$x$$$ such that it contains a rest site in exactly one of these distributions). Leha considers all these distributions to be equiprobable. He wants to calculate p$$$p$$$ — the expected value of difficulty of his journey.",
+      "Obviously, p⋅2n−1$$$p \\cdot 2^{n - 1}$$$ is an integer number. You have to calculate it modulo 998244353$$$998244353$$$."
+    ],
+    "input": [
+      "The first line contains one number n$$$n$$$ (1≤n≤106$$$1 \\le n \\le 10^6$$$) — the distance from Moscow to Saratov.",
+      "The second line contains n$$$n$$$ integer numbers a1$$$a_1$$$, a2$$$a_2$$$, ..., an$$$a_n$$$ (1≤a1≤a2≤⋯≤an≤106$$$1 \\le a_1 \\le a_2 \\le \\dots \\le a_n \\le 10^6$$$), where ai$$$a_i$$$ is the difficulty of i$$$i$$$-th kilometer after Leha has rested."
+    ],
+    "output": [
+      "Print one number — p⋅2n−1$$$p \\cdot 2^{n - 1}$$$, taken modulo 998244353$$$998244353$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 2",
+      "output": "5"
+    },
+    {
+      "input": "4\n1 3 3 7",
+      "output": "60"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Leha 正在计划从莫斯科到萨拉托夫的旅程。他讨厌火车，因此决定开车从一个城市前往另一个城市。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从莫斯科到萨拉托夫的路径可以表示为一条直线(实际上它并没有这么直，但在本题中我们将其视为直线)，莫斯科和萨拉托夫之间的距离为 n$$$n$$$ 千米。设莫斯科位于坐标为 0$$$0$$$ 千米的点，萨拉托夫位于坐标为 n$$$n$$$ 千米的点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "长时间驾驶可能会非常困难。形式化地说，如果 Leha 自上次休息以来已经行驶了 i$$$i$$$ 千米，那么他认为行驶第 (i+1)$$$(i + 1)$$$ 千米的困难度为 ai+1$$$a_{i + 1}$$$。保证对于每个 i∈[1,n−1]$$$i \\in [1, n - 1]$$$，都有 ai≤ai+1$$$a_i \\le a_{i + 1}$$$。此次旅程的困难度定义为旅程中每千米困难度之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "幸运的是，莫斯科和萨拉托夫之间可能存在一些休息点。从 1$$$1$$$ 到 n−1$$$n - 1$$$ 的每个整数点都可能包含一个休息点。当 Leha 进入休息点时，他可以休息，此后的第一千米困难度将为 a1$$$a_1$$$，再下一千米的困难度为 a2$$$a_2$$$，以此类推。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，如果 n=5$$$n = 5$$$，且坐标 2$$$2$$$ 处有一个休息点，那么旅程的困难度将为 2a1+2a2+a3$$$2a_1 + 2a_2 + a_3$$$：第一千米的困难度为 a1$$$a_1$$$，第二千米的困难度为 a2$$$a_2$$$，随后 Leha 休息，第三千米的困难度为 a1$$$a_1$$$，第四千米的困难度为 a2$$$a_2$$$，最后一千米的困难度为 a3$$$a_3$$$。再例如，如果 n=7$$$n = 7$$$，且坐标 1$$$1$$$ 和 5$$$5$$$ 处有休息点，那么 Leha 此次旅程的困难度为 3a1+2a2+a3+a4$$$3a_1 + 2a_2 + a_3 + a_4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Leha 不知道哪些整数点包含休息点。因此，他必须考虑每一种可能的情况。显然，休息点共有 2n−1$$$2^{n - 1}$$$ 种不同的分布方式(如果存在某个点 x$$$x$$$，使得它恰好在其中一种分布中包含休息点，则称两种分布不同)。Leha 认为所有这些分布等概率。他希望计算 p$$$p$$$，即其旅程困难度的期望值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "显然，p⋅2n−1$$$p \\cdot 2^{n - 1}$$$ 是一个整数。你需要计算它对 998244353$$$998244353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个数 n$$$n$$$(1≤n≤106$$$1 \\le n \\le 10^6$$$)，表示从莫斯科到萨拉托夫的距离。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1$$$a_1$$$、a2$$$a_2$$$、...、an$$$a_n$$$(1≤a1≤a2≤⋯≤an≤106$$$1 \\le a_1 \\le a_2 \\le \\dots \\le a_n \\le 10^6$$$)，其中 ai$$$a_i$$$ 表示在 Leha 休息后经过第 i$$$i$$$ 千米的难度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个数，即 p⋅2n−1$$$p \\cdot 2^{n - 1}$$$ 对 998244353$$$998244353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 城际旅行",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

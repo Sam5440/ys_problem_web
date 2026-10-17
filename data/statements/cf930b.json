@@ -1,0 +1,88 @@
+{
+  "code": "CF930B",
+  "letter": "B",
+  "title": "B. Game with String",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/930/B",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Vasya and Kolya play a game with a string, using the following rules. Initially, Kolya creates a string s, consisting of small English letters, and uniformly at random chooses an integer k from a segment [0, len(s) - 1]. He tells Vasya this string s, and then shifts it k letters to the left, i. e. creates a new string t = sk + 1sk + 2... sns1s2... sk. Vasya does not know the integer k nor the string t, but he wants to guess the integer k. To do this, he asks Kolya to tell him the first letter of the new string, and then, after he sees it, open one more letter on some position, which Vasya can choose.",
+      "Vasya understands, that he can't guarantee that he will win, but he wants to know the probability of winning, if he plays optimally. He wants you to compute this probability.",
+      "Note that Vasya wants to know the value of k uniquely, it means, that if there are at least two cyclic shifts of s that fit the information Vasya knowns, Vasya loses. Of course, at any moment of the game Vasya wants to maximize the probability of his win."
+    ],
+    "input": [
+      "The only string contains the string s of length l (3 ≤ l ≤ 5000), consisting of small English letters only."
+    ],
+    "output": [
+      "Print the only number — the answer for the problem. You answer is considered correct, if its absolute or relative error does not exceed 10 - 6.",
+      "Formally, let your answer be a, and the jury's answer be b. Your answer is considered correct if ![](https://espresso.codeforces.com/58a50d50ad372e6c1d58fc9b6217d2b8de15e091.png)"
+    ],
+    "note": [
+      "In the first example Vasya can always open the second letter after opening the first letter, and the cyclic shift is always determined uniquely.",
+      "In the second example if the first opened letter of t is \"t\" or \"c\", then Vasya can't guess the shift by opening only one other letter. On the other hand, if the first letter is \"i\" or \"a\", then he can open the fourth letter and determine the shift uniquely."
+    ]
+  },
+  "examples": [
+    {
+      "input": "technocup",
+      "output": "1.000000000000000"
+    },
+    {
+      "input": "tictictactac",
+      "output": "0.333333333333333"
+    },
+    {
+      "input": "bbaabaabbb",
+      "output": "0.100000000000000"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Vasya 和 Kolya 用一个字符串进行游戏，规则如下。首先，Kolya 创建一个仅由小写英文字母组成的字符串 s，并从区间 [0, len(s) - 1] 中等概率随机选择一个整数 k。他将字符串 s 告诉 Vasya，然后将其向左移动 k 个字符，即构造一个新字符串 t = sₖ₊₁sₖ₊₂... sₙs₁s₂... sₖ。Vasya 不知道整数 k 和字符串 t，但他想猜出整数 k。为此，他要求 Kolya 告诉他新字符串的第一个字母，然后在看到这个字母后，再公开某个位置上的一个字母，该位置由 Vasya 选择。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vasya 明白自己无法保证获胜，但他想知道在采取最优策略时获胜的概率。请你计算这个概率。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，Vasya 想要唯一确定 k，这意味着如果至少有两个 s 的循环移位符合 Vasya 已知的信息，Vasya 就会输。当然，在游戏的任何时刻，Vasya 都希望最大化自己的获胜概率。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "唯一一行包含字符串 s，其长度为 l（3 ≤ l ≤ 5000），且仅由小写英文字母组成。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "只输出一个数字——该题的答案。如果你的答案的绝对误差或相对误差不超过 10 - 6，则认为答案正确。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地，设你的答案为 a，标准答案为 b。如果 ![](https://espresso.codeforces.com/58a50d50ad372e6c1d58fc9b6217d2b8de15e091.png)，则认为你的答案正确。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Vasya 在打开第一个字母后总能打开第二个字母，并且循环移位总能被唯一确定。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，如果 t 的第一个被打开的字母是“t”或“c”，那么 Vasya 无法仅通过再打开一个字母来猜出移位。另一方面，如果第一个字母是“i”或“a”，那么他可以打开第四个字母并唯一确定移位。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 字符串游戏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

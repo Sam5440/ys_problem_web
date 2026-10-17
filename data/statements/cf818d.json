@@ -1,0 +1,128 @@
+{
+  "code": "CF818D",
+  "letter": "D",
+  "title": "D. Multicolored Cars",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/818/D",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alice and Bob got very bored during a long car trip so they decided to play a game. From the window they can see cars of different colors running past them. Cars are going one after another.",
+      "The game rules are like this. Firstly Alice chooses some color A, then Bob chooses some color B (A ≠ B). After each car they update the number of cars of their chosen color that have run past them. Let's define this numbers after i-th car cntA(i) and cntB(i).",
+      "If cntA(i) > cntB(i) for every i then the winner is Alice.",
+      "If cntB(i) ≥ cntA(i) for every i then the winner is Bob.",
+      "Otherwise it's a draw.",
+      "Bob knows all the colors of cars that they will encounter and order of their appearance. Alice have already chosen her color A and Bob now wants to choose such color B that he will win the game (draw is not a win). Help him find this color.",
+      "If there are multiple solutions, print any of them. If there is no such color then print -1."
+    ],
+    "input": [
+      "The first line contains two integer numbers n and A (1 ≤ n ≤ 105, 1 ≤ A ≤ 106) – number of cars and the color chosen by Alice.",
+      "The second line contains n integer numbers c1, c2, ..., cn (1 ≤ ci ≤ 106) — colors of the cars that Alice and Bob will encounter in the order of their appearance."
+    ],
+    "output": [
+      "Output such color B (1 ≤ B ≤ 106) that if Bob chooses it then he will win the game. If there are multiple solutions, print any of them. If there is no such color then print -1.",
+      "It is guaranteed that if there exists any solution then there exists solution with (1 ≤ B ≤ 106)."
+    ],
+    "note": [
+      "Let's consider availability of colors in the first example:",
+      "cnt2(i) ≥ cnt1(i) for every i, and color 2 can be the answer.",
+      "cnt4(2) < cnt1(2), so color 4 isn't the winning one for Bob.",
+      "All the other colors also have cntj(2) < cnt1(2), thus they are not available.",
+      "In the third example every color is acceptable except for 10."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 1\n2 1 4 2",
+      "output": "2"
+    },
+    {
+      "input": "5 2\n2 2 4 5 3",
+      "output": "-1"
+    },
+    {
+      "input": "3 10\n1 2 3",
+      "output": "4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Alice 和 Bob 在一次漫长的驾车旅行中感到非常无聊，于是他们决定玩一个游戏。他们可以从车窗看到各种颜色的汽车从身边驶过。汽车一辆接一辆地驶过。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "游戏规则如下。首先 Alice 选择一种颜色 A，然后 Bob 选择一种颜色 B（A ≠ B）。每经过一辆汽车，他们都会更新各自所选颜色的汽车驶过的数量。将经过第 i 辆汽车后这两个数量分别定义为 cntA(i) 和 cntB(i)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果对于每个 i 都有 cntA(i) > cntB(i)，那么胜者就是 Alice。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果对于每个 i 都有 cntB(i) ≥ cntA(i)，那么获胜者是 Bob。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，结果是平局。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bob 知道他们将遇到的所有汽车的颜色及其出现顺序。Alice 已经选择了她的颜色 A，现在 Bob 想选择一个颜色 B，使他能够赢得比赛（平局不算获胜）。请帮助他找到这个颜色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个解，输出其中任意一个即可。如果不存在这样的颜色，则输出 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 A（1 ≤ n ≤ 105，1 ≤ A ≤ 106），分别表示汽车的数量和 Alice 选择的颜色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个整数 c1，c2，...，cn（1 ≤ ci ≤ 106），表示 Alice 和 Bob 将按照出现顺序遇到的汽车的颜色。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个颜色 B（1 ≤ B ≤ 106），使得如果 Bob 选择它，他就能赢得游戏。如果有多个解，输出其中任意一个即可。如果不存在这样的颜色，则输出 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证如果存在任何解，那么一定存在满足（1 ≤ B ≤ 106）的解。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "让我们考虑第一个样例中的颜色可用性：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个 i，都有 cnt2(i) ≥ cnt1(i)，因此颜色 2 可以作为答案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "cnt4(2) < cnt1(2)，因此颜色 4 不是能让 Bob 获胜的颜色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有其他颜色也都满足 cntj(2) < cnt1(2)，因此它们均不可用。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，除了 10 以外的每种颜色都可以接受。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 多彩汽车",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

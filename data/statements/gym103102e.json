@@ -1,0 +1,88 @@
+{
+  "code": "GYM103102E",
+  "letter": "E",
+  "title": "E. Divisible by 3",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103102/problem/E",
+  "difficulty": "*1400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "For an array [b1,b2,…,bm]$$$[b_1, b_2, \\ldots, b_m]$$$ of integers, let's define its weight as the sum of pairwise products of its elements, namely as the sum of bibj$$$b_ib_j$$$ over 1≤i<j≤m$$$1 \\le i  \\lt  j \\le m$$$.",
+      "You are given an array of n$$$n$$$ integers [a1,a2,…,an]$$$[a_1, a_2, \\ldots, a_n]$$$, and are asked to find the number of pairs of integers (l,r)$$$(l, r)$$$ with 1≤l≤r≤n$$$1 \\le l \\le r \\le n$$$, for which the weight of the subarray [al,al+1,…,ar]$$$[a_l, a_{l+1}, \\ldots , a_r]$$$ is divisible by 3$$$3$$$."
+    ],
+    "input": [
+      "The first line of the input contains a single integer n$$$n$$$ (1≤n≤5⋅105$$$1 \\le n \\le 5\\cdot 10^5$$$) — the length of the array.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (0≤ai≤109$$$0\\le a_i \\le 10^9$$$) — the elements of the array."
+    ],
+    "output": [
+      "Output a single integer — the number of pairs of integers (l,r)$$$(l, r)$$$ with 1≤l≤r≤n$$$1 \\le l \\le r \\le n$$$, for which the weight of the corresponding subarray is divisible by 3$$$3$$$."
+    ],
+    "note": [
+      "In the first sample, the weights of exactly 4$$$4$$$ subarrays are divisible by 3$$$3$$$:",
+      "weight([5])=weight([23])=weight([2021])=0$$$\\text{weight}([5]) = \\text{weight}([23]) = \\text{weight}([2021]) = 0$$$",
+      "weight([5,23,2021])=56703=3⋅41⋅461$$$\\text{weight}([5, 23, 2021]) = 56703 = 3 \\cdot 41 \\cdot 461$$$"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n5 23 2021",
+      "output": "4"
+    },
+    {
+      "input": "5\n0 0 1 3 3",
+      "output": "15"
+    },
+    {
+      "input": "10\n0 1 2 3 4 5 6 7 8 9",
+      "output": "20"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "对于一个由整数 [b1,b2,…,bm]$$$[b_1, b_2, \\ldots, b_m]$$$ 构成的数组，我们将其权值定义为其中元素两两乘积之和，即对所有满足 1≤i<j≤m$$$1 \\le i  \\lt  j \\le m$$$ 的 i、j，求 bibj$$$b_ib_j$$$ 的和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个包含 n$$$n$$$ 个整数 [a1,a2,…,an]$$$[a_1, a_2, \\ldots, a_n]$$$ 的数组，需要求出满足 1≤l≤r≤n$$$1 \\le l \\le r \\le n$$$ 的整数对 (l,r)$$$(l, r)$$$ 的数量，使得子数组 [al,al+1,…,ar]$$$[a_l, a_{l+1}, \\ldots , a_r]$$$ 的权值能被 3$$$3$$$ 整除。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$ (1≤n≤5⋅105$$$1 \\le n \\le 5\\cdot 10^5$$$) ——数组的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (0≤ai≤109$$$0\\le a_i \\le 10^9$$$) ——数组中的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——整数对 (l,r)$$$(l, r)$$$ 的数量，其中 1≤l≤r≤n$$$1 \\le l \\le r \\le n$$$，且相应子数组的权值能被 3$$$3$$$ 整除。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，恰有 4$$$4$$$ 个子数组的权重可以被 3$$$3$$$ 整除：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "weight([5])=weight([23])=weight([2021])=0$$$\\text{weight}([5]) = \\text{weight}([23]) = \\text{weight}([2021]) = 0$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "weight([5,23,2021])=56703=3⋅41⋅461$$$\\text{weight}([5, 23, 2021]) = 56703 = 3 \\cdot 41 \\cdot 461$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 被 3 整除",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

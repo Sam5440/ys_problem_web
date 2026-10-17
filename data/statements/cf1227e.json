@@ -1,0 +1,89 @@
+{
+  "code": "CF1227E",
+  "letter": "E",
+  "title": "E. Arson In Berland Forest",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1227/E",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "The Berland Forest can be represented as an infinite cell plane. Every cell contains a tree. That is, contained before the recent events.",
+      "A destructive fire raged through the Forest, and several trees were damaged by it. Precisely speaking, you have a $$$n \\times m$$$ rectangle map which represents the damaged part of the Forest. The damaged trees were marked as \"X\" while the remaining ones were marked as \".\". You are sure that all burnt trees are shown on the map. All the trees outside the map are undamaged.",
+      "The firemen quickly extinguished the fire, and now they are investigating the cause of it. The main version is that there was an arson: at some moment of time (let's consider it as $$$0$$$) some trees were set on fire. At the beginning of minute $$$0$$$, only the trees that were set on fire initially were burning. At the end of each minute, the fire spread from every burning tree to each of $$$8$$$ neighboring trees. At the beginning of minute $$$T$$$, the fire was extinguished.",
+      "The firemen want to find the arsonists as quickly as possible. The problem is, they know neither the value of $$$T$$$ (how long the fire has been raging) nor the coordinates of the trees that were initially set on fire. They want you to find the maximum value of $$$T$$$ (to know how far could the arsonists escape) and a possible set of trees that could be initially set on fire.",
+      "Note that you'd like to maximize value $$$T$$$ but the set of trees can be arbitrary."
+    ],
+    "input": [
+      "The first line contains two integer $$$n$$$ and $$$m$$$ ($$$1 \\le n, m \\le 10^6$$$, $$$1 \\le n \\cdot m \\le 10^6$$$) — the sizes of the map.",
+      "Next $$$n$$$ lines contain the map. The $$$i$$$-th line corresponds to the $$$i$$$-th row of the map and contains $$$m$$$-character string. The $$$j$$$-th character of the $$$i$$$-th string is \"X\" if the corresponding tree is burnt and \".\" otherwise.",
+      "It's guaranteed that the map contains at least one \"X\"."
+    ],
+    "output": [
+      "In the first line print the single integer $$$T$$$ — the maximum time the Forest was on fire. In the next $$$n$$$ lines print the certificate: the map ($$$n \\times m$$$ rectangle) where the trees that were set on fire are marked as \"X\" and all other trees are marked as \".\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 6\nXXXXXX\nXXXXXX\nXXXXXX",
+      "output": "1\n......\n.X.XX.\n......"
+    },
+    {
+      "input": "10 10\n.XXXXXX...\n.XXXXXX...\n.XXXXXX...\n.XXXXXX...\n.XXXXXXXX.\n...XXXXXX.\n...XXXXXX.\n...XXXXXX.\n...XXXXXX.\n..........",
+      "output": "2\n..........\n..........\n...XX.....\n..........\n..........\n..........\n.....XX...\n..........\n..........\n.........."
+    },
+    {
+      "input": "4 5\nX....\n..XXX\n..XXX\n..XXX",
+      "output": "0\nX....\n..XXX\n..XXX\n..XXX"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含两个整数 $$$n$$$ 和 $$$m$$$($$$1 \\le n, m \\le 10^6$$$、$$$1 \\le n \\cdot m \\le 10^6$$$)——地图的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 $$$n$$$ 行包含地图。第 $$$i$$$ 行对应地图的第 $$$i$$$ 行，并包含一个长度为 $$$m$$$ 的字符串。第 $$$i$$$ 个字符串中的第 $$$j$$$ 个字符，如果对应的树被烧毁，则为“X”，否则为“.”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证地图中至少包含一个“X”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出一个整数 $$$T$$$ —— 森林着火的最长时间。接下来的 $$$n$$$ 行输出证书：一个 $$$n \\times m$$$ 矩形地图，其中被点燃的树标记为“X”，所有其他树标记为“.”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "贝尔兰德森林可以表示为一个无限的网格平面。每个格子中都包含一棵树。也就是说，在最近发生的事件之前是这样的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一场毁灭性的火灾席卷了森林，许多树因此受损。准确地说，你有一张 $$$n \\times m$$$ 的矩形地图，表示森林中受损的部分。受损的树被标记为“X”，其余树被标记为“.”。你可以确定所有被烧毁的树都显示在地图上。地图之外的所有树都未受损。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "消防员很快扑灭了火灾，现在他们正在调查火灾的原因。最有可能的情况是有人纵火：在某个时刻(记为 $$$0$$$)，一些树被点燃。在第 $$$0$$$ 分钟开始时，只有最初被点燃的树正在燃烧。在每分钟结束时，火焰会从每一棵正在燃烧的树蔓延到其 $$$8$$$ 棵相邻树中的每一棵。在第 $$$T$$$ 分钟开始时，火灾被扑灭。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "消防员希望尽快找到纵火犯。问题在于，他们既不知道 $$$T$$$ 的值(火灾持续了多久)，也不知道最初被点燃的树的坐标。他们希望你找出 $$$T$$$ 的最大值(以了解纵火犯最远可以逃出多远)，并找出一组可能最初被点燃的树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，你需要最大化 $$$T$$$，但树的集合可以任意选择。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. Berland 森林纵火ાન્ય",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "code": "CF627B",
+  "letter": "B",
+  "title": "B. Factory Repairs",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/627/B",
+  "difficulty": "1700",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A factory produces thimbles in bulk. Typically, it can produce up to a thimbles a day. However, some of the machinery is defective, so it can currently only produce b thimbles each day. The factory intends to choose a k-day period to do maintenance and construction; it cannot produce any thimbles during this time, but will be restored to its full production of a thimbles per day after the k days are complete.",
+      "Initially, no orders are pending. The factory receives updates of the form di, ai, indicating that ai new orders have been placed for the di-th day. Each order requires a single thimble to be produced on precisely the specified day. The factory may opt to fill as many or as few of the orders in a single batch as it likes.",
+      "As orders come in, the factory owner would like to know the maximum number of orders he will be able to fill if he starts repairs on a given day pi. Help the owner answer his questions."
+    ],
+    "input": [
+      "The first line contains five integers n, k, a, b, and q (1 ≤ k ≤ n ≤ 200 000, 1 ≤ b < a ≤ 10 000, 1 ≤ q ≤ 200 000) — the number of days, the length of the repair time, the production rates of the factory, and the number of updates, respectively.",
+      "The next q lines contain the descriptions of the queries. Each query is of one of the following two forms:",
+      "1 di ai (1 ≤ di ≤ n, 1 ≤ ai ≤ 10 000), representing an update of ai orders on day di, or",
+      "2 pi (1 ≤ pi ≤ n - k + 1), representing a question: at the moment, how many orders could be filled if the factory decided to commence repairs on day pi?",
+      "It's guaranteed that the input will contain at least one query of the second type."
+    ],
+    "output": [
+      "For each query of the second type, print a line containing a single integer — the maximum number of orders that the factory can fill over all n days."
+    ],
+    "note": [
+      "Consider the first sample.",
+      "We produce up to 1 thimble a day currently and will produce up to 2 thimbles a day after repairs. Repairs take 2 days.",
+      "For the first question, we are able to fill 1 order on day 1, no orders on days 2 and 3 since we are repairing, no orders on day 4 since no thimbles have been ordered for that day, and 2 orders for day 5 since we are limited to our production capacity, for a total of 3 orders filled.",
+      "For the third question, we are able to fill 1 order on day 1, 1 order on day 2, and 2 orders on day 5, for a total of 4 orders."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 2 2 1 8\n1 1 2\n1 5 3\n1 2 1\n2 2\n1 4 2\n1 3 2\n2 1\n2 3",
+      "output": "3\n6\n4"
+    },
+    {
+      "input": "5 4 10 1 6\n1 1 5\n1 5 5\n1 3 2\n1 5 2\n2 1\n2 2",
+      "output": "7\n1"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "考虑第一个样例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "目前我们每天最多生产 1 个顶针，维修后每天最多生产 2 个顶针。维修需要 2 天。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第一个问题，我们可以在第1天完成1份订单；由于正在维修，第2天和第3天没有订单；由于当天没有订购顶针，第4天没有订单；由于受到生产能力限制，第5天完成2份订单，总共完成3份订单。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第三个问题，我们可以在第1天完成1份订单，在第2天完成1份订单，并在第5天完成2份订单，总共完成4份订单。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含五个整数 n、k、a、b 和 q（1 ≤ k ≤ n ≤ 200 000，1 ≤ b < a ≤ 10 000，1 ≤ q ≤ 200 000）——天数、维修时长、工厂的生产速率以及更新次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q 行包含查询的描述。每个查询具有以下两种形式之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1 d_i（1 ≤ d_i ≤ n，1 ≤ a_i ≤ 10 000），表示在第 d_i 天增加 a_i 个订单，或者",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2 p_i（1 ≤ p_i ≤ n - k + 1），表示一个询问：此时，如果工厂决定在第 p_i 天开始维修，那么最多可以完成多少个订单？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证输入中至少包含一个第二类询问。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个第二类询问，输出一行一个整数——工厂在全部 n 天内最多可以完成的订单数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "一家工厂批量生产顶针。通常情况下，它每天最多可以生产 a 个顶针。然而，由于部分机器出现故障，目前每天只能生产 b 个顶针。工厂计划选择一个连续 k 天的时间段进行维护和施工；在此期间无法生产任何顶针，但 k 天结束后，工厂将恢复到每天生产 a 个顶针的满负荷状态。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最初没有待处理的订单。工厂会收到形如 d_i、a_i 的更新，表示在第 d_i 天有 a_i 个新订单下达。每个订单都要求在指定的那一天准确生产一个顶针。工厂可以自行决定在一次生产中完成任意多或任意少的订单。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "随着订单不断到来，工厂老板希望知道，如果他在给定的第 p_i 天开始维修，最多能够完成多少个订单。请帮助老板回答这些问题。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 工厂维修",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

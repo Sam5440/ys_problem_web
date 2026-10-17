@@ -1,0 +1,100 @@
+{
+  "code": "CF1977C",
+  "letter": "C",
+  "title": "C. Nikita and LCM",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1977/C",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Nikita is a student passionate about number theory and algorithms. He faces an interesting problem related to an array of numbers.",
+      "Suppose Nikita has an array of integers $$$a$$$ of length $$$n$$$. He will call a subsequence$$$^\\dagger$$$ of the array special if its least common multiple (LCM) is not contained in $$$a$$$. The LCM of an empty subsequence is equal to $$$0$$$.",
+      "Nikita wonders: what is the length of the longest special subsequence of $$$a$$$? Help him answer this question!",
+      "$$$^\\dagger$$$ A sequence $$$b$$$ is a subsequence of $$$a$$$ if $$$b$$$ can be obtained from $$$a$$$ by the deletion of several (possibly, zero or all) elements, without changing the order of the remaining elements. For example, $$$[5,2,3]$$$ is a subsequence of $$$[1,5,7,8,2,4,3]$$$."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line of input contains a single integer $$$t$$$ ($$$1 \\le t \\le 2000$$$) — the number of test cases. The description of the test cases follows.",
+      "The first line of each test case contains a single integer $$$n$$$ ($$$1 \\le n \\le 2000$$$) — the length of the array $$$a$$$.",
+      "The second line of each test case contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ ($$$1 \\le a_i \\le 10^9$$$) — the elements of the array $$$a$$$.",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2000$$$."
+    ],
+    "output": [
+      "For each test case, output a single integer — the length of the longest special subsequence of $$$a$$$."
+    ],
+    "note": [
+      "In the first test case, the LCM of any non-empty subsequence is contained in $$$a$$$, so the answer is $$$0$$$.",
+      "In the second test case, we can take the subsequence $$$[3, 2, 10, 1]$$$, its LCM is equal to $$$30$$$, which is not contained in $$$a$$$.",
+      "In the third test case, we can take the subsequence $$$[2, 3, 6, 100\\,003]$$$, its LCM is equal to $$$600\\,018$$$, which is not contained in $$$a$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n5\n1 2 4 8 16\n6\n3 2 10 20 60 1\n7\n2 3 4 6 12 100003 1200036\n9\n2 42 7 3 6 7 7 1 6\n8\n4 99 57 179 10203 2 11 40812\n1\n1",
+      "output": "0\n4\n4\n5\n8\n0"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。输入的第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 2000$$$)——测试用例的数量。接下来是各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 $$$n$$$($$$1 \\le n \\le 2000$$$)——数组 $$$a$$$ 的长度。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 $$$n$$$ 个整数 $$$a_1, a_2, \\ldots, a_n$$$($$$1 \\le a_i \\le 10^9$$$)——数组 $$$a$$$ 的元素。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "保证所有测试用例中 $$$n$$$ 的总和不超过 $$$2000$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数——$$$a$$$ 的最长特殊子序列的长度。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，任意非空子序列的 LCM 都包含在 $$$a$$$ 中，因此答案为 $$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个测试用例中，我们可以取子序列 $$$[3, 2, 10, 1]$$$，其 LCM 等于 $$$30$$$，而它不包含在 $$$a$$$ 中。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第三个测试用例中，我们可以取子序列 $$$[2, 3, 6, 100\\,003]$$$，其最小公倍数等于 $$$600\\,018$$$，而它不包含在 $$$a$$$ 中。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Nikita 是一名热爱数论和算法的学生。他遇到了一个与数字数组有关的有趣问题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "假设 Nikita 有一个长度为 $$$n$$$ 的整数数组 $$$a$$$。如果数组的一个子序列$$$^\\dagger$$$的最小公倍数(LCM)不在 $$$a$$$ 中，他就称其为特殊子序列。空子序列的 LCM 等于 $$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Nikita 想知道：$$$a$$$ 的最长特殊子序列的长度是多少？请帮助他回答这个问题！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$^\\dagger$$$ 如果可以通过删除 $$$a$$$ 中的若干个元素(可能删除零个或全部元素)，且不改变剩余元素的顺序来得到 $$$b$$$，则称序列 $$$b$$$ 是 $$$a$$$ 的子序列。例如，$$$[5,2,3]$$$ 是 $$$[1,5,7,8,2,4,3]$$$ 的子序列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Nikita 与最小公倍数",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

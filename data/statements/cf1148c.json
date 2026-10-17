@@ -1,0 +1,108 @@
+{
+  "code": "CF1148C",
+  "letter": "C",
+  "title": "C. Crazy Diamond",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1148/C",
+  "difficulty": "1700",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a permutation p$$$p$$$ of integers from 1$$$1$$$ to n$$$n$$$, where n$$$n$$$ is an even number.",
+      "Your goal is to sort the permutation. To do so, you can perform zero or more operations of the following type:",
+      "take two indices i$$$i$$$ and j$$$j$$$ such that 2⋅|i−j|≥n$$$2 \\cdot |i - j| \\geq n$$$ and swap pi$$$p_i$$$ and pj$$$p_j$$$.",
+      "There is no need to minimize the number of operations, however you should use no more than 5⋅n$$$5 \\cdot n$$$ operations. One can show that it is always possible to do that."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (2≤n≤3⋅105$$$2 \\leq n \\leq 3 \\cdot 10^5$$$, n$$$n$$$ is even) — the length of the permutation.",
+      "The second line contains n$$$n$$$ distinct integers p1,p2,…,pn$$$p_1, p_2, \\ldots, p_n$$$ (1≤pi≤n$$$1 \\le p_i \\le n$$$) — the given permutation."
+    ],
+    "output": [
+      "On the first line print m$$$m$$$ (0≤m≤5⋅n$$$0 \\le m \\le 5 \\cdot n$$$) — the number of swaps to perform.",
+      "Each of the following m$$$m$$$ lines should contain integers ai,bi$$$a_i, b_i$$$ (1≤ai,bi≤n$$$1 \\le a_i, b_i \\le n$$$, |ai−bi|≥n2$$$|a_i - b_i| \\ge \\frac{n}{2}$$$) — the indices that should be swapped in the corresponding swap.",
+      "Note that there is no need to minimize the number of operations. We can show that an answer always exists."
+    ],
+    "note": [
+      "In the first example, when one swap elements on positions 1$$$1$$$ and 2$$$2$$$, the array becomes sorted.",
+      "In the second example, pay attention that there is no need to minimize number of swaps.",
+      "In the third example, after swapping elements on positions 1$$$1$$$ and 5$$$5$$$ the array becomes: [4,5,3,1,2,6]$$$[4, 5, 3, 1, 2, 6]$$$. After swapping elements on positions 2$$$2$$$ and 5$$$5$$$ the array becomes [4,2,3,1,5,6]$$$[4, 2, 3, 1, 5, 6]$$$ and finally after swapping elements on positions 1$$$1$$$ and 4$$$4$$$ the array becomes sorted: [1,2,3,4,5,6]$$$[1, 2, 3, 4, 5, 6]$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n2 1",
+      "output": "1\n1 2"
+    },
+    {
+      "input": "4\n3 4 1 2",
+      "output": "4\n1 4\n1 4\n1 3\n2 4"
+    },
+    {
+      "input": "6\n2 5 3 1 4 6",
+      "output": "3\n1 5\n2 5\n1 4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个由 1$$$1$$$ 到 n$$$n$$$ 的整数构成的排列 p$$$p$$$，其中 n$$$n$$$ 是偶数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的目标是将这个排列排序。为此，你可以执行零次或多次以下类型的操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择两个下标 i$$$i$$$ 和 j$$$j$$$，满足 2⋅|i−j|≥n$$$2 \\cdot |i - j| \\geq n$$$，然后交换 pi$$$p_i$$$ 和 pj$$$p_j$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "无需最小化操作次数，但执行的操作次数不得超过 5⋅n$$$5 \\cdot n$$$。可以证明，总能做到这一点。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(2≤n≤3⋅105$$$2 \\leq n \\leq 3 \\cdot 10^5$$$，n$$$n$$$ 为偶数)，表示排列的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个互不相同的整数 p1,p2,…,pn$$$p_1, p_2, \\ldots, p_n$$$(1≤pi≤n$$$1 \\le p_i \\le n$$$)，表示给定的排列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出 m$$$m$$$(0≤m≤5⋅n$$$0 \\le m \\le 5 \\cdot n$$$)，表示要执行的交换次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的每个 m$$$m$$$ 行都应包含整数 ai,bi$$$a_i, b_i$$$(1≤ai,bi≤n$$$1 \\le a_i, b_i \\le n$$$，|ai−bi|≥n2$$$|a_i - b_i| \\ge \\frac{n}{2}$$$)，表示相应交换中应该交换的元素下标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，我们不需要最小化操作次数。我们可以证明答案总是存在。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，交换位置 1$$$1$$$ 和 2$$$2$$$ 上的元素后，数组就变得有序了。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，请注意不需要最小化交换次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，交换位置 1$$$1$$$ 和 5$$$5$$$ 上的元素后，数组变为：[4,5,3,1,2,6]$$$[4, 5, 3, 1, 2, 6]$$$。交换位置 2$$$2$$$ 和 5$$$5$$$ 上的元素后，数组变为 [4,2,3,1,5,6]$$$[4, 2, 3, 1, 5, 6]$$$，最后交换位置 1$$$1$$$ 和 4$$$4$$$ 上的元素后，数组变得有序：[1,2,3,4,5,6]$$$[1, 2, 3, 4, 5, 6]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Crazy Diamond",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

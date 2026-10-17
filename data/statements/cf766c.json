@@ -1,0 +1,154 @@
+{
+  "code": "CF766C",
+  "letter": "C",
+  "title": "C. Mahmoud and a Message",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/766/C",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Mahmoud wrote a message s of length n. He wants to send it as a birthday present to his friend Moaz who likes strings. He wrote it on a magical paper but he was surprised because some characters disappeared while writing the string. That's because this magical paper doesn't allow character number i in the English alphabet to be written on it in a string of length more than ai. For example, if a1 = 2 he can't write character 'a' on this paper in a string of length 3 or more. String \"aa\" is allowed while string \"aaa\" is not.",
+      "Mahmoud decided to split the message into some non-empty substrings so that he can write every substring on an independent magical paper and fulfill the condition. The sum of their lengths should be n and they shouldn't overlap. For example, if a1 = 2 and he wants to send string \"aaa\", he can split it into \"a\" and \"aa\" and use 2 magical papers, or into \"a\", \"a\" and \"a\" and use 3 magical papers. He can't split it into \"aa\" and \"aa\" because the sum of their lengths is greater than n. He can split the message into single string if it fulfills the conditions.",
+      "A substring of string s is a string that consists of some consecutive characters from string s, strings \"ab\", \"abc\" and \"b\" are substrings of string \"abc\", while strings \"acb\" and \"ac\" are not. Any string is a substring of itself.",
+      "While Mahmoud was thinking of how to split the message, Ehab told him that there are many ways to split it. After that Mahmoud asked you three questions:",
+      "How many ways are there to split the string into substrings such that every substring fulfills the condition of the magical paper, the sum of their lengths is n and they don't overlap? Compute the answer modulo 109 + 7.",
+      "What is the maximum length of a substring that can appear in some valid splitting?",
+      "What is the minimum number of substrings the message can be spit in?",
+      "Two ways are considered different, if the sets of split positions differ. For example, splitting \"aa|a\" and \"a|aa\" are considered different splittings of message \"aaa\"."
+    ],
+    "input": [
+      "The first line contains an integer n (1 ≤ n ≤ 103) denoting the length of the message.",
+      "The second line contains the message s of length n that consists of lowercase English letters.",
+      "The third line contains 26 integers a1, a2, ..., a26 (1 ≤ ax ≤ 103) — the maximum lengths of substring each letter can appear in."
+    ],
+    "output": [
+      "Print three lines.",
+      "In the first line print the number of ways to split the message into substrings and fulfill the conditions mentioned in the problem modulo 109  +  7.",
+      "In the second line print the length of the longest substring over all the ways.",
+      "In the third line print the minimum number of substrings over all the ways."
+    ],
+    "note": [
+      "In the first example the three ways to split the message are:",
+      "a|a|b",
+      "aa|b",
+      "a|ab",
+      "The longest substrings are \"aa\" and \"ab\" of length 2.",
+      "The minimum number of substrings is 2 in \"a|ab\" or \"aa|b\".",
+      "Notice that \"aab\" is not a possible splitting because the letter 'a' appears in a substring of length 3, while a1 = 2."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\naab\n2 3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "output": "3\n2\n2"
+    },
+    {
+      "input": "10\nabcdeabcde\n5 5 5 5 4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1",
+      "output": "401\n4\n3"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "在第一个样例中，将消息划分的三种方案为：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "a|a|b",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "aa|b",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "a|ab",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最长的子串是长度为 2 的 \"aa\" 和 \"ab\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 \"a|ab\" 或 \"aa|b\" 中，子串数量的最小值为 2。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，\"aab\" 不是一种可能的拆分，因为字母 'a' 出现在长度为 3 的子串中，而 a1 = 2。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Mahmoud 写了一条长度为 n 的消息 s。他想把它作为生日礼物送给喜欢字符串的朋友 Moaz。他把消息写在一张魔法纸上，但在书写字符串时，他惊讶地发现有些字符消失了。这是因为这张魔法纸不允许在长度大于 a_i 的字符串中写入英文字母表中的第 i 个字符。例如，如果 a_1=2，那么在长度为 3 或更长的字符串中，他就无法在这张纸上写字符 'a'。字符串 \"aa\" 是允许的，而字符串 \"aaa\" 不允许。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Mahmoud 决定将这条消息划分成若干个非空子串，这样他就能把每个子串分别写在一张独立的魔法纸上，并满足条件。所有子串的长度之和应为 n，且它们不能重叠。例如，如果 a_1=2，且他想发送字符串 \"aaa\"，那么他可以将其划分为 \"a\" 和 \"aa\"，使用 2 张魔法纸；也可以划分为 \"a\"、\"a\" 和 \"a\"，使用 3 张魔法纸。他不能将其划分为 \"aa\" 和 \"aa\"，因为它们的长度之和大于 n。如果整条消息满足条件，他也可以不进行划分。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "字符串 s 的子串是由 s 中某些连续字符组成的字符串。字符串 \"ab\"、\"abc\" 和 \"b\" 是字符串 \"abc\" 的子串，而字符串 \"acb\" 和 \"ac\" 不是。任何字符串都是其自身的子串。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Mahmoud 正在思考如何划分这条消息时，Ehab 告诉他有许多种划分方式。于是 Mahmoud 向你提出了三个问题：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有多少种方法可以将字符串划分成若干子串，使得每个子串都满足魔法纸的条件、所有子串的长度之和为 n 且它们互不重叠？请计算答案对 109 + 7 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在某种合法划分中可能出现的子串的最大长度是多少？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这条消息最少可以被划分成多少个子串？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果划分位置的集合不同，则认为两种划分不同。例如，将消息“aaa”划分为“aa|a”和“a|aa”被认为是两种不同的划分。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 10^3），表示消息的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个长度为 n 的消息 s，它由小写英文字母组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 26 个整数 a1、a2、...、a26（1 ≤ ax ≤ 10^3）——每个字母可以出现在的子串的最大长度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出三行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行输出将消息划分为若干子串并满足题目中所述条件的方案数，对 10^9 + 7 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行输出所有方案中的最长子串长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行输出所有方案中子串数量的最小值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Mahmoud 与一条消息",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

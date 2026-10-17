@@ -1,0 +1,89 @@
+{
+  "code": "CF930C",
+  "letter": "C",
+  "title": "C. Teodor is not a liar!",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/930/C",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Young Teodor enjoys drawing. His favourite hobby is drawing segments with integer borders inside his huge [1;m] segment. One day Teodor noticed that picture he just drawn has one interesting feature: there doesn't exist an integer point, that belongs each of segments in the picture. Having discovered this fact, Teodor decided to share it with Sasha.",
+      "Sasha knows that Teodor likes to show off so he never trusts him. Teodor wants to prove that he can be trusted sometimes, so he decided to convince Sasha that there is no such integer point in his picture, which belongs to each segment. However Teodor is lazy person and neither wills to tell Sasha all coordinates of segments' ends nor wills to tell him their amount, so he suggested Sasha to ask him series of questions 'Given the integer point xi, how many segments in Fedya's picture contain that point?', promising to tell correct answers for this questions.",
+      "Both boys are very busy studying and don't have much time, so they ask you to find out how many questions can Sasha ask Teodor, that having only answers on his questions, Sasha can't be sure that Teodor isn't lying to him. Note that Sasha doesn't know amount of segments in Teodor's picture. Sure, Sasha is smart person and never asks about same point twice."
+    ],
+    "input": [
+      "First line of input contains two integer numbers: n and m (1 ≤ n, m ≤ 100 000) — amount of segments of Teodor's picture and maximal coordinate of point that Sasha can ask about.",
+      "ith of next n lines contains two integer numbers li and ri (1 ≤ li ≤ ri ≤ m) — left and right ends of ith segment in the picture. Note that that left and right ends of segment can be the same point.",
+      "It is guaranteed that there is no integer point, that belongs to all segments."
+    ],
+    "output": [
+      "Single line of output should contain one integer number k – size of largest set (xi, cnt(xi)) where all xi are different, 1 ≤ xi ≤ m, and cnt(xi) is amount of segments, containing point with coordinate xi, such that one can't be sure that there doesn't exist point, belonging to all of segments in initial picture, if he knows only this set(and doesn't know n)."
+    ],
+    "note": [
+      "First example shows situation where Sasha can never be sure that Teodor isn't lying to him, because even if one knows cnt(xi) for each point in segment [1;4], he can't distinguish this case from situation Teodor has drawn whole [1;4] segment.",
+      "In second example Sasha can ask about 5 points e.g. 1, 2, 3, 5, 6, still not being sure if Teodor haven't lied to him. But once he knows information about all points in [1;6] segment, Sasha can be sure that Teodor haven't lied to him."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 4\n1 2\n3 4",
+      "output": "4"
+    },
+    {
+      "input": "4 6\n1 3\n2 3\n4 6\n5 6",
+      "output": "5"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 m（1 ≤ n，m ≤ 100 000）——Teodor 的图中线段的数量，以及 Sasha 可以询问的点的最大坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n 行中的第 i 行包含两个整数 li 和 ri（1 ≤ li ≤ ri ≤ m）——图中第 i 条线段的左端点和右端点。注意，线段的左端点和右端点可以是同一个点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证不存在属于所有线段的整数点。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一行应包含一个整数 k——集合 (xi, cnt(xi)) 的最大大小，其中所有 xi 互不相同，1 ≤ xi ≤ m，cnt(xi) 表示包含坐标为 xi 的点的线段数量；如果某人只知道这个集合（且不知道 n），就无法确定初始图中不存在一个属于所有线段的点。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例展示了这样一种情况：Sasha 永远无法确定 Teodor 没有对他撒谎，因为即使知道线段 [1;4] 中每个点的 cnt(xi)，他也无法将这种情况与 Teodor 画出了整条 [1;4] 线段的情况区分开来。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，Sasha 可以询问 5 个点，例如 1、2、3、5、6，但仍然无法确定 Teodor 是否对他撒了谎。不过，一旦他知道了 [1;6] 线段中所有点的信息，Sasha 就能确定 Teodor 没有对他撒谎。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "年轻的 Teodor 喜欢画画。他最喜欢的爱好是在他巨大的 [1;m] 线段内画端点为整数的线段。一天，Teodor 注意到自己刚画的图有一个有趣的特点：不存在一个属于图中每条线段的整数点。发现这一事实后，Teodor 决定把它告诉 Sasha。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Sasha 知道 Teodor 喜欢炫耀，因此从不相信他。Teodor 想证明自己有时是值得信任的，于是决定说服 Sasha 相信他的图中不存在属于每条线段的整数点。然而，Teodor 很懒，既不愿意告诉 Sasha 所有线段端点的坐标，也不愿意告诉他线段的数量，因此他建议 Sasha 向自己提出一系列问题：“给定整数点 xi，Fedya 的图中有多少条线段包含该点？”，并承诺回答这些问题时都会如实作答。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "两个男孩都忙于学习，没有太多时间，因此他们请你求出 Sasha 可以向 Teodor 提出多少个问题，使得仅凭这些问题的答案，Sasha 无法确定 Teodor 没有对他说谎。注意，Sasha 不知道 Teodor 的图中有多少条线段。当然，Sasha 很聪明，从不会两次询问同一个点。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Teodor 不是骗子！",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

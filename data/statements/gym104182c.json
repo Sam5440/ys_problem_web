@@ -1,0 +1,114 @@
+{
+  "code": "GYM104182C",
+  "letter": "C",
+  "title": "C. Sorting Subarrays",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104182/problem/C",
+  "difficulty": "*2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array of integers. You perform the following action exactly once: choose a non-empty subsegment of the array and order its elements in non-decreasing order.",
+      "How many different arrays can you obtain? A subsegment of an array is a collection of several consecutive elements."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ — the size of the array (1≤n≤200000$$$1 \\le n \\le 200\\,000$$$).",
+      "The second line contains n$$$n$$$ integers a1$$$a_1$$$, a2$$$a_2$$$, ... an$$$a_n$$$ — the contents of the array (1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)."
+    ],
+    "output": [
+      "Output a single integer — the number of different arrays you can obtain by sorting a subsegment once."
+    ],
+    "note": [
+      "Listed below are all eight achievable arrays in the first example. Square brackets indicate the sorted subsegment.",
+      "[3],1,4,1,5,9,2→3,1,4,1,5,9,2$$$[3], 1, 4, 1, 5, 9, 2 \\rightarrow 3, 1, 4, 1, 5, 9, 2$$$",
+      "[3,1],4,1,5,9,2→1,3,4,1,5,9,2$$$[3, 1], 4, 1, 5, 9, 2 \\rightarrow 1, 3, 4, 1, 5, 9, 2$$$",
+      "[3,1,4,1],5,9,2→1,1,3,4,5,9,2$$$[3, 1, 4, 1], 5, 9, 2 \\rightarrow 1, 1, 3, 4, 5, 9, 2$$$",
+      "[3,1,4,1,5,9,2]→1,1,2,3,4,5,9$$$[3, 1, 4, 1, 5, 9, 2] \\rightarrow 1, 1, 2, 3, 4, 5, 9$$$",
+      "3,[1,4,1],5,9,2→3,1,1,4,5,9,2$$$3, [1, 4, 1], 5, 9, 2 \\rightarrow 3, 1, 1, 4, 5, 9, 2$$$",
+      "3,[1,4,1,5,9,2]→3,1,1,2,4,5,9$$$3, [1, 4, 1, 5, 9, 2] \\rightarrow 3, 1, 1, 2, 4, 5, 9$$$",
+      "3,1,4,[1,5,9,2]→3,1,4,1,2,5,9$$$3, 1, 4, [1, 5, 9, 2] \\rightarrow 3, 1, 4, 1, 2, 5, 9$$$",
+      "3,1,4,1,5,[9,2]→3,1,4,1,5,2,9$$$3, 1, 4, 1, 5, [9, 2] \\rightarrow 3, 1, 4, 1, 5, 2, 9$$$"
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n3 1 4 1 5 9 2",
+      "output": "8"
+    },
+    {
+      "input": "4\n1 2 3 4",
+      "output": "1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个整数数组。你需要恰好执行一次以下操作：选择数组的一个非空子段，并将其中的元素按非递减顺序排列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以得到多少个不同的数组？数组的子段是由若干个连续元素组成的集合。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$ —— 数组的大小(1≤n≤200000$$$1 \\le n \\le 200\\,000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1$$$a_1$$$, a2$$$a_2$$$, ... an$$$a_n$$$ —— 数组的内容(1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数 —— 通过对一个子段进行一次排序可以得到的不同数组的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "下面列出了第一个样例中所有八个可实现的数组。方括号表示已排序的子段。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "[3],1,4,1,5,9,2→3,1,4,1,5,9,2$$$[3], 1, 4, 1, 5, 9, 2 \\rightarrow 3, 1, 4, 1, 5, 9, 2$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "[3,1],4,1,5,9,2→1,3,4,1,5,9,2$$$[3, 1], 4, 1, 5, 9, 2 \\rightarrow 1, 3, 4, 1, 5, 9, 2$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "[3,1,4,1],5,9,2→1,1,3,4,5,9,2$$$[3, 1, 4, 1], 5, 9, 2 \\rightarrow 1, 1, 3, 4, 5, 9, 2$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "[3,1,4,1,5,9,2]→1,1,2,3,4,5,9$$$[3, 1, 4, 1, 5, 9, 2] \\rightarrow 1, 1, 2, 3, 4, 5, 9$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3,[1,4,1],5,9,2→3,1,1,4,5,9,2$$$3, [1, 4, 1], 5, 9, 2 \\rightarrow 3, 1, 1, 4, 5, 9, 2$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3,[1,4,1,5,9,2]→3,1,1,2,4,5,9$$$3, [1, 4, 1, 5, 9, 2] \\rightarrow 3, 1, 1, 2, 4, 5, 9$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3,1,4,[1,5,9,2]→3,1,4,1,2,5,9$$$3, 1, 4, [1, 5, 9, 2] \\rightarrow 3, 1, 4, 1, 2, 5, 9$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3,1,4,1,5,[9,2]→3,1,4,1,5,2,9$$$3, 1, 4, 1, 5, [9, 2] \\rightarrow 3, 1, 4, 1, 5, 2, 9$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 子数组排序",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

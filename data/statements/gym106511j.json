@@ -1,0 +1,118 @@
+{
+  "code": "GYM106511J",
+  "letter": "J",
+  "title": "J. Permutation Game",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106511/problem/J",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "It is a sunny day on Columbia campus, and Alice and Bob decide to go to Butler Lawns to play their favorite game: Permutation Game. Since the weather is so nice, Alice wants to stay on the lawns as long as possible, while Bob has a midterm the next day and wants to get home to study.",
+      "Permutation Game is played as follows:",
+      "Alice receives a permutation a$$$a$$$ and Bob receives a permutation b$$$b$$$, both of size n$$$n$$$∗$$$^{\\text{∗}}$$$.",
+      "Alice chooses an index i$$$i$$$ (1≤i≤n$$$1 \\leq i \\leq n$$$) and places a token on position i$$$i$$$ of her permutation a$$$a$$$.",
+      "Bob, after seeing where Alice has placed her token, chooses an index j$$$j$$$ (1≤j≤n$$$1 \\leq j \\leq n$$$) and places his own token on position j$$$j$$$ of his permutation b$$$b$$$.",
+      "Alice and Bob each follow their permutation one step at a time:   Alice moves her token to index ai$$$a_i$$$, then aai$$$a_{a_i}$$$, and so on.",
+      "Bob moves his token to index bj$$$b_j$$$, then bbj$$$b_{b_j}$$$, and so on.",
+      "∗$$$^{\\text{∗}}$$$A permutation of length n$$$n$$$ is an array consisting of n$$$n$$$ distinct integers from 1$$$1$$$ to n$$$n$$$ in arbitrary order. For example, [2$$$2$$$, 3$$$3$$$, 1$$$1$$$, 5$$$5$$$, 4$$$4$$$] is a permutation, but [1$$$1$$$, 2$$$2$$$, 2$$$2$$$] is not a permutation (2$$$2$$$ appears twice in the array), and [1$$$1$$$, 3$$$3$$$, 4$$$4$$$] is also not a permutation (n=3$$$n = 3$$$ but there is a 4$$$4$$$ in the array)."
+    ],
+    "input": [
+      "The first line of input contains a single integer n$$$n$$$ (1≤n≤2⋅105$$$1 \\leq n \\leq 2 \\cdot 10^5$$$).",
+      "The second line of input contains n$$$n$$$ distinct integers a1,a2,...,an$$$a_1, a_2, ..., a_n$$$ — Alice's permutation a$$$a$$$.",
+      "The third line of input contains n$$$n$$$ distinct integers b1,b2,...,bn$$$b_1, b_2, ...,b_n$$$ — Bob's permutation b$$$b$$$."
+    ],
+    "output": [
+      "Output a single integer — the number of steps that will be performed in the game, assuming both players play optimally."
+    ],
+    "note": [
+      "In the first sample, regardless of which indices Alice and Bob place their tokens on to start, the process will last for just one step.",
+      "In the second example, Alice may place her token at index 3$$$3$$$, and Bob, seeing where Alice has placed her token, places his at index 1$$$1$$$. After one step, Alice's token will be at index 4$$$4$$$ and Bob's will be at index 3$$$3$$$. After two steps, Alice's token will be at index 5$$$5$$$ and Bob's will be at 5$$$5$$$. And after three steps, Alice's token returns to index 3$$$3$$$, while Bob's returns to index 1$$$1$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 2 3\n1 2 3",
+      "output": "1"
+    },
+    {
+      "input": "5\n2 1 4 5 3\n3 4 5 2 1",
+      "output": "3"
+    },
+    {
+      "input": "10\n2 8 1 5 4 7 6 10 9 3\n7 3 9 10 2 1 6 8 4 5",
+      "output": "5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "哥伦比亚大学校园里阳光明媚，Alice 和 Bob 决定去 Butler Lawns 玩他们最喜欢的游戏：排列游戏。由于天气这么好，Alice 想尽可能久地待在草坪上，而 Bob 第二天有期中考试，想回家学习。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "排列游戏的规则如下：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Alice 得到一个排列 a$$$a$$$，Bob 得到一个排列 b$$$b$$$，两者的规模均为 n$$$n$$$∗$$$^{\\text{∗}}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Alice 选择一个下标 i$$$i$$$(1≤i≤n$$$1 \\leq i \\leq n$$$)，并将一枚棋子放到她的排列 a$$$a$$$ 的位置 i$$$i$$$ 上。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Bob 在看到 Alice 放置棋子的位置后，选择一个下标 j$$$j$$$(1≤j≤n$$$1 \\leq j \\leq n$$$)，并将自己的棋子放到他的排列 b$$$b$$$ 的位置 j$$$j$$$ 上。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Alice 和 Bob 各自按照自己的排列一步一步移动：Alice 先将棋子移到下标 ai$$$a_i$$$，然后移到 aai$$$a_{a_i}$$$，依此类推。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Bob 将他的棋子移动到下标 bj$$$b_j$$$，然后移动到下标 bbj$$$b_{b_j}$$$，以此类推。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "∗$$$^{\\text{∗}}$$$长度为 n$$$n$$$ 的排列是一个数组，其中包含 n$$$n$$$ 个从 1$$$1$$$ 到 n$$$n$$$ 中取出的互不相同的整数，顺序任意。例如，[2$$$2$$$, 3$$$3$$$, 1$$$1$$$, 5$$$5$$$, 4$$$4$$$] 是一个排列，但 [1$$$1$$$, 2$$$2$$$, 2$$$2$$$] 不是排列(2$$$2$$$ 在数组中出现了两次)，[1$$$1$$$, 3$$$3$$$, 4$$$4$$$] 也不是排列(n=3$$$n = 3$$$，但数组中有一个 4$$$4$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$(1≤n≤2⋅105$$$1 \\leq n \\leq 2 \\cdot 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第二行包含 n$$$n$$$ 个互不相同的整数 a1,a2,...,an$$$a_1, a_2, ..., a_n$$$——Alice 的排列 a$$$a$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第三行包含 n$$$n$$$ 个互不相同的整数 b1,b2,...,bn$$$b_1, b_2, ...,b_n$$$——Bob 的排列 b$$$b$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——在双方都采取最优策略的情况下，游戏中将执行的步数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，无论 Alice 和 Bob 一开始将自己的棋子放在哪些下标位置，整个过程都只会持续一步。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，Alice 可以将她的棋子放在下标 3$$$3$$$ 处，而 Bob 看到 Alice 放置棋子的位置后，将自己的棋子放在下标 1$$$1$$$ 处。一步之后，Alice 的棋子会位于下标 4$$$4$$$ 处，而 Bob 的棋子会位于下标 3$$$3$$$ 处。两步之后，Alice 的棋子会位于下标 5$$$5$$$ 处，而 Bob 的棋子会位于下标 5$$$5$$$ 处。三步之后，Alice 的棋子会回到下标 3$$$3$$$ 处，而 Bob 的棋子会回到下标 1$$$1$$$ 处。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "J. 排列游戏",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

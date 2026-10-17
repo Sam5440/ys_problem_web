@@ -1,0 +1,96 @@
+{
+  "code": "GYM103627A",
+  "letter": "A",
+  "title": "A. Points",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103627/problem/A",
+  "difficulty": "*2100",
+  "timeLimit": "10 s",
+  "memoryLimit": "1024 mebibytes",
+  "sections": {
+    "legend": [
+      "There are two multisets U$$$U$$$ and V$$$V$$$ that contain two-dimensional points with integer coordinates.",
+      "We will define the following function D(U,V)$$$D(U, V)$$$ for a pair of multisets:",
+      "D(U,V)=−1$$$D(U, V) = -1$$$ if either set is empty.",
+      "D(U,V)=min(ux,uy)∈U(vx,vy)∈Vmax(ux+vx,uy+vy)$$$D(U, V) = \\min\\limits_{\\begin{smallmatrix}(u_x, u_y) \\in U \\\\ (v_x, v_y) \\in V\\end{smallmatrix}}\\max(u_x + v_x, u_y + v_y)$$$ otherwise.",
+      "In the beginning, both U$$$U$$$ and V$$$V$$$ are empty. Process Q$$$Q$$$ queries of the following form:",
+      "\"1 s$$$s$$$ x$$$x$$$ y$$$y$$$\": Add a point (x,y)$$$(x, y)$$$ to one of the sets. If s=1$$$s = 1$$$, add the point to U$$$U$$$. Otherwise, add the point to V$$$V$$$.",
+      "\"2 s$$$s$$$ x$$$x$$$ y$$$y$$$\": Delete a point (x,y)$$$(x, y)$$$ from one of the sets. If s=1$$$s = 1$$$, delete the point from U$$$U$$$. Otherwise, delete the point from V$$$V$$$.",
+      "When deleting a point, if there are multiple points at the given coordinates, you should delete only one of them. It is guaranteed that the given point exists in the given multiset at the time of each deletion.",
+      "Your task is to process the queries. After each query, print the value D(U,V)$$$D(U, V)$$$."
+    ],
+    "input": [
+      "The first line contains a single integer Q$$$Q$$$ (1≤Q≤250000$$$1 \\le Q \\le 250\\,000$$$).",
+      "Each of the next Q$$$Q$$$ lines contains a query in the form described above. Constraints for both types of queries: s∈{1,2}$$$s \\in \\{1, 2\\}$$$, 0≤x,y≤250000$$$0 \\le x, y \\le 250\\,000$$$."
+    ],
+    "output": [
+      "Output Q$$$Q$$$ lines. Each line should contain the value D(U,V)$$$D(U, V)$$$ after the corresponding query."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n1 1 100 100\n1 2 30 130\n1 1 120 170\n2 1 100 100\n1 2 70 100\n2 1 120 170",
+      "output": "-1\n230\n230\n300\n270\n-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "有两个多重集 U$$$U$$$ 和 V$$$V$$$，它们包含坐标为整数的二维点。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "对于一对多重集，我们定义以下函数 D(U,V)$$$D(U, V)$$$：",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "如果任一集合为空，则 D(U,V)=−1$$$D(U, V) = -1$$$。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "D(U,V)=min(ux,uy)∈U(vx,vy)∈Vmax(ux+vx,uy+vy)$$$D(U, V) = \\min\\limits_{\\begin{smallmatrix}(u_x, u_y) \\in U \\\\ (v_x, v_y) \\in V\\end{smallmatrix}}\\max(u_x + v_x, u_y + v_y)$$$ 否则。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "初始时，U$$$U$$$ 和 V$$$V$$$ 均为空。处理 Q$$$Q$$$ 个如下形式的查询：",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "\"1 s$$$s$$$ x$$$x$$$ y$$$y$$$\": 向其中一个集合添加一个点 (x,y)$$$(x, y)$$$。如果 s=1$$$s = 1$$$，则将该点加入 U$$$U$$$。否则，将该点加入 V$$$V$$$。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "“2 s$$$s$$$ x$$$x$$$ y$$$y$$$”：从其中一个集合中删除点 (x,y)$$$(x, y)$$$。如果 s=1$$$s = 1$$$，则从 U$$$U$$$ 中删除该点。否则，从 V$$$V$$$ 中删除该点。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "删除一个点时，如果给定坐标处有多个点，你应当只删除其中一个。保证每次删除时，给定的点都存在于给定的多重集中。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "你的任务是处理询问。每次询问后，输出 D(U,V)$$$D(U, V)$$$ 的值。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 Q$$$Q$$$ (1≤Q≤250000$$$1 \\le Q \\le 250\\,000$$$)。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "接下来的 Q$$$Q$$$ 行每行包含一个如上所述形式的询问。两类询问的约束条件均为：s∈{1,2}$$$s \\in \\{1, 2\\}$$$，0≤x,y≤250000$$$0 \\le x, y \\le 250\\,000$$$。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Q$$$Q$$$ 行。每行应包含对应查询后的 D(U,V)$$$D(U, V)$$$ 的值。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 点",
+    "aiModel": "GLM 5.3 Flash"
+  }
+}

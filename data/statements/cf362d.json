@@ -1,0 +1,98 @@
+{
+  "code": "CF362D",
+  "letter": "D",
+  "title": "D. Fools and Foolproof Roads",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/362/D",
+  "difficulty": "2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You must have heard all about the Foolland on your Geography lessons. Specifically, you must know that federal structure of this country has been the same for many centuries. The country consists of n cities, some pairs of cities are connected by bidirectional roads, each road is described by its length li.",
+      "The fools lived in their land joyfully, but a recent revolution changed the king. Now the king is Vasily the Bear. Vasily divided the country cities into regions, so that any two cities of the same region have a path along the roads between them and any two cities of different regions don't have such path. Then Vasily decided to upgrade the road network and construct exactly p new roads in the country. Constructing a road goes like this:",
+      "We choose a pair of distinct cities u, v that will be connected by a new road (at that, it is possible that there already is a road between these cities).",
+      "We define the length of the new road: if cities u, v belong to distinct regions, then the length is calculated as min(109, S + 1) (S — the total length of all roads that exist in the linked regions), otherwise we assume that the length equals 1000.",
+      "We build a road of the specified length between the chosen cities. If the new road connects two distinct regions, after construction of the road these regions are combined into one new region.",
+      "Vasily wants the road constructing process to result in the country that consists exactly of q regions. Your task is to come up with such road constructing plan for Vasily that it meets the requirement and minimizes the total length of the built roads."
+    ],
+    "input": [
+      "The first line contains four integers n (1 ≤ n ≤ 105), m (0 ≤ m ≤ 105), p (0 ≤ p ≤ 105), q (1 ≤ q ≤ n) — the number of cities in the Foolland, the number of existing roads, the number of roads that are planned to construct and the required number of regions.",
+      "Next m lines describe the roads that exist by the moment upgrading of the roads begun. Each of these lines contains three integers xi, yi, li: xi, yi — the numbers of the cities connected by this road (1 ≤ xi, yi ≤ n, xi ≠ yi), li — length of the road (1 ≤ li ≤ 109). Note that one pair of cities can be connected with multiple roads."
+    ],
+    "output": [
+      "If constructing the roads in the required way is impossible, print a single string \"NO\" (without the quotes). Otherwise, in the first line print word \"YES\" (without the quotes), and in the next p lines print the road construction plan. Each line of the plan must consist of two distinct integers, giving the numbers of the cities connected by a road. The road must occur in the plan in the order they need to be constructed. If there are multiple optimal solutions, you can print any of them."
+    ],
+    "note": [
+      "Consider the first sample. Before the reform the Foolland consists of four regions. The first region includes cities 1, 2, 3, the second region has cities 4 and 6, the third region has cities 5, 7, 8, the fourth region has city 9. The total length of the roads in these cities is 11, 20, 5 and 0, correspondingly. According to the plan, we first build the road of length 6 between cities 5 and 9, then the road of length 23 between cities 1 and 9. Thus, the total length of the built roads equals 29."
+    ]
+  },
+  "examples": [
+    {
+      "input": "9 6 2 2\n1 2 2\n3 2 1\n4 6 20\n1 3 8\n7 8 3\n5 7 2",
+      "output": "YES\n9 5\n1 9"
+    },
+    {
+      "input": "2 0 1 2",
+      "output": "NO"
+    },
+    {
+      "input": "2 0 0 2",
+      "output": "YES"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你一定在地理课上听说过关于愚人国的一切。具体来说，你应该知道，这个国家的联邦结构数百年来一直保持不变。这个国家由 n 座城市组成，其中一些城市对之间由双向道路连接，每条道路都有一个长度 li。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "愚人们曾在自己的国土上快乐地生活，但最近的一场革命更换了国王。现在的国王是熊瓦西里。瓦西里将这个国家的城市划分为若干个地区，使得同一地区内任意两座城市之间都存在一条沿道路通行的路径，而不同地区的任意两座城市之间都不存在这样的路径。随后，瓦西里决定升级道路网络，并在国内修建恰好 p 条新道路。修建一条道路的过程如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们选择一对不同的城市 u、v，用一条新道路将它们连接起来（此时，这两个城市之间可能已经存在一条道路）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们定义新道路的长度：如果城市 u、v 属于不同的区域，则其长度为 min(10^9, S + 1)（S——相连区域中所有现有道路的总长度）；否则，我们认为其长度等于 1000。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们在选定的城市之间修建一条指定长度的道路。如果新道路连接了两个不同的区域，那么修建道路后，这两个区域将合并为一个新的区域。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vasily 希望道路修建过程最终使该国恰好由 q 个区域组成。你的任务是为 Vasily 设计一个满足要求且使所修建道路总长度最小的道路修建方案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果无法按照要求修建道路，请输出一个字符串 \"NO\"（不含引号）。否则，第一行输出单词 \"YES\"（不含引号），接下来的 p 行输出道路修建方案。方案中的每一行必须由两个互不相同的整数构成，表示由一条道路连接的两个城市编号。方案中道路出现的顺序必须与它们需要修建的顺序一致。如果存在多个最优方案，可以输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "考虑第一个样例。改革前，Foolland 由四个地区组成。第一个地区包括城市 1、2、3，第二个地区包括城市 4 和 6，第三个地区包括城市 5、7、8，第四个地区包括城市 9。这些地区中道路的总长度分别为 11、20、5 和 0。根据方案，我们首先修建城市 5 和 9 之间长度为 6 的道路，然后修建城市 1 和 9 之间长度为 23 的道路。因此，已修建道路的总长度为 29。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含四个整数 n（1 ≤ n ≤ 10^5）、m（0 ≤ m ≤ 10^5）、p（0 ≤ p ≤ 10^5）、q（1 ≤ q ≤ n）——Foolland 中的城市数量、现有道路数量、计划修建的道路数量以及所需的区域数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行描述道路改造开始时已经存在的道路。每行包含三个整数 x_i、y_i、l_i：x_i、y_i——由该道路连接的城市编号（1 ≤ x_i, y_i ≤ n，x_i ≠ y_i）；l_i——道路长度（1 ≤ l_i ≤ 10^9）。注意，一对城市之间可以由多条道路连接。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 愚人和万无一失的道路",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

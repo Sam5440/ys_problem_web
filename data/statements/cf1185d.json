@@ -1,0 +1,83 @@
+{
+  "code": "CF1185D",
+  "letter": "D",
+  "title": "D. Extra Element",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1185/D",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A sequence a1,a2,…,ak$$$a_1, a_2, \\dots, a_k$$$ is called an arithmetic progression if for each i$$$i$$$ from 1$$$1$$$ to k$$$k$$$ elements satisfy the condition ai=a1+c⋅(i−1)$$$a_i = a_1 + c \\cdot (i - 1)$$$ for some fixed c$$$c$$$.",
+      "For example, these five sequences are arithmetic progressions: [5,7,9,11]$$$[5, 7, 9, 11]$$$, [101]$$$[101]$$$, [101,100,99]$$$[101, 100, 99]$$$, [13,97]$$$[13, 97]$$$ and [5,5,5,5,5]$$$[5, 5, 5, 5, 5]$$$. And these four sequences aren't arithmetic progressions: [3,1,2]$$$[3, 1, 2]$$$, [1,2,4,8]$$$[1, 2, 4, 8]$$$, [1,−1,1,−1]$$$[1, -1, 1, -1]$$$ and [1,2,3,3,3]$$$[1, 2, 3, 3, 3]$$$.",
+      "You are given a sequence of integers b1,b2,…,bn$$$b_1, b_2, \\dots, b_n$$$. Find any index j$$$j$$$ (1≤j≤n$$$1 \\le j \\le n$$$), such that if you delete bj$$$b_j$$$ from the sequence, you can reorder the remaining n−1$$$n-1$$$ elements, so that you will get an arithmetic progression. If there is no such index, output the number -1."
+    ],
+    "input": [
+      "The first line of the input contains one integer n$$$n$$$ (2≤n≤2⋅105$$$2 \\le n \\le 2\\cdot10^5$$$) — length of the sequence b$$$b$$$. The second line contains n$$$n$$$ integers b1,b2,…,bn$$$b_1, b_2, \\dots, b_n$$$ (−109≤bi≤109$$$-10^9 \\le b_i \\le 10^9$$$) — elements of the sequence b$$$b$$$."
+    ],
+    "output": [
+      "Print such index j$$$j$$$ (1≤j≤n$$$1 \\le j \\le n$$$), so that if you delete the j$$$j$$$-th element from the sequence, you can reorder the remaining elements, so that you will get an arithmetic progression. If there are multiple solutions, you are allowed to print any of them. If there is no such index, print -1."
+    ],
+    "note": [
+      "Note to the first example. If you delete the 4$$$4$$$-th element, you can get the arithmetic progression [2,4,6,8]$$$[2, 4, 6, 8]$$$.",
+      "Note to the second example. The original sequence is already arithmetic progression, so you can delete 1$$$1$$$-st or last element and you will get an arithmetical progression again."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 6 8 7 4",
+      "output": "4"
+    },
+    {
+      "input": "8\n1 2 3 4 5 6 7 8",
+      "output": "1"
+    },
+    {
+      "input": "4\n1 2 4 8",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "如果对于从 1$$$1$$$ 到 k$$$k$$$ 的每个 i$$$i$$$，各元素都满足条件 ai=a1+c⋅(i−1)$$$a_i = a_1 + c \\cdot (i - 1)$$$，其中 c$$$c$$$ 为某个固定值，那么称序列 a1,a2,…,ak$$$a_1, a_2, \\dots, a_k$$$ 为等差数列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，以下五个序列是等差数列：[5,7,9,11]$$$[5, 7, 9, 11]$$$、[101]$$$[101]$$$、[101,100,99]$$$[101, 100, 99]$$$、[13,97]$$$[13, 97]$$$ 和 [5,5,5,5,5]$$$[5, 5, 5, 5, 5]$$$。而以下四个序列不是等差数列：[3,1,2]$$$[3, 1, 2]$$$、[1,2,4,8]$$$[1, 2, 4, 8]$$$、[1,−1,1,−1]$$$[1, -1, 1, -1]$$$ 和 [1,2,3,3,3]$$$[1, 2, 3, 3, 3]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个整数序列 b1,b2,…,bn$$$b_1, b_2, \\dots, b_n$$$。请找到任意一个下标 j$$$j$$$(1≤j≤n$$$1 \\le j \\le n$$$)，使得从序列中删除 bj$$$b_j$$$ 后，可以重新排列剩下的 n−1$$$n-1$$$ 个元素，使其构成一个等差数列。如果不存在这样的下标，输出数字 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$(2≤n≤2⋅105$$$2 \\le n \\le 2\\cdot10^5$$$)，表示序列 b$$$b$$$ 的长度。第二行包含 n$$$n$$$ 个整数 b1,b2,…,bn$$$b_1, b_2, \\dots, b_n$$$(−109≤bi≤109$$$-10^9 \\le b_i \\le 10^9$$$)，表示序列 b$$$b$$$ 的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出这样的下标 j$$$j$$$(1≤j≤n$$$1 \\le j \\le n$$$)：删除序列中的第 j$$$j$$$ 个元素后，可以重新排列剩余元素，使其构成一个等差数列。如果有多个解，可以输出任意一个。如果不存在这样的下标，输出 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例的说明：删除第 4$$$4$$$ 个元素后，可以得到等差数列 [2,4,6,8]$$$[2, 4, 6, 8]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二个样例的说明：原序列已经是等差数列，因此删除第 1$$$1$$$ 个元素或最后一个元素后，仍然可以得到一个等差数列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 额外元素",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

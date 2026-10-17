@@ -1,0 +1,133 @@
+{
+  "code": "CF1321C",
+  "letter": "C",
+  "title": "C. Remove Adjacent",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1321/C",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a string s$$$s$$$ consisting of lowercase Latin letters. Let the length of s$$$s$$$ be |s|$$$|s|$$$. You may perform several operations on this string.",
+      "In one operation, you can choose some index i$$$i$$$ and remove the i$$$i$$$-th character of s$$$s$$$ (si$$$s_i$$$) if at least one of its adjacent characters is the previous letter in the Latin alphabet for si$$$s_i$$$. For example, the previous letter for b is a, the previous letter for s is r, the letter a has no previous letters. Note that after each removal the length of the string decreases by one. So, the index i$$$i$$$ should satisfy the condition 1≤i≤|s|$$$1 \\le i \\le |s|$$$ during each operation.",
+      "For the character si$$$s_i$$$ adjacent characters are si−1$$$s_{i-1}$$$ and si+1$$$s_{i+1}$$$. The first and the last characters of s$$$s$$$ both have only one adjacent character (unless |s|=1$$$|s| = 1$$$).",
+      "Consider the following example. Let s=$$$s=$$$ bacabcab.",
+      "During the first move, you can remove the first character s1=$$$s_1=$$$ b because s2=$$$s_2=$$$ a. Then the string becomes s=$$$s=$$$ acabcab.",
+      "During the second move, you can remove the fifth character s5=$$$s_5=$$$ c because s4=$$$s_4=$$$ b. Then the string becomes s=$$$s=$$$ acabab.",
+      "During the third move, you can remove the sixth character s6=$$$s_6=$$$'b' because s5=$$$s_5=$$$ a. Then the string becomes s=$$$s=$$$ acaba.",
+      "During the fourth move, the only character you can remove is s4=$$$s_4=$$$ b, because s3=$$$s_3=$$$ a (or s5=$$$s_5=$$$ a). The string becomes s=$$$s=$$$ acaa and you cannot do anything with it.",
+      "Your task is to find the maximum possible number of characters you can remove if you choose the sequence of operations optimally."
+    ],
+    "input": [
+      "The first line of the input contains one integer |s|$$$|s|$$$ (1≤|s|≤100$$$1 \\le |s| \\le 100$$$) — the length of s$$$s$$$.",
+      "The second line of the input contains one string s$$$s$$$ consisting of |s|$$$|s|$$$ lowercase Latin letters."
+    ],
+    "output": [
+      "Print one integer — the maximum possible number of characters you can remove if you choose the sequence of moves optimally."
+    ],
+    "note": [
+      "The first example is described in the problem statement. Note that the sequence of moves provided in the statement is not the only, but it can be shown that the maximum possible answer to this test is 4$$$4$$$.",
+      "In the second example, you can remove all but one character of s$$$s$$$. The only possible answer follows.",
+      "During the first move, remove the third character s3=$$$s_3=$$$ d, s$$$s$$$ becomes bca.",
+      "During the second move, remove the second character s2=$$$s_2=$$$ c, s$$$s$$$ becomes ba.",
+      "And during the third move, remove the first character s1=$$$s_1=$$$ b, s$$$s$$$ becomes a."
+    ]
+  },
+  "examples": [
+    {
+      "input": "8\nbacabcab",
+      "output": "4"
+    },
+    {
+      "input": "4\nbcda",
+      "output": "3"
+    },
+    {
+      "input": "6\nabbbbb",
+      "output": "5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个由小写拉丁字母组成的字符串 s$$$s$$$。设 s$$$s$$$ 的长度为 |s|$$$|s|$$$。你可以对这个字符串执行若干次操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在一次操作中，你可以选择某个下标 i$$$i$$$，并在 s$$$s$$$ 的第 i$$$i$$$ 个字符 si$$$s_i$$$ 的至少一个相邻字符是 si$$$s_i$$$ 在拉丁字母表中的前一个字母时，将其删除。例如，b 的前一个字母是 a，s 的前一个字母是 r，而字母 a 没有前一个字母。注意，每次删除后，字符串的长度都会减一。因此，在每次操作中，下标 i$$$i$$$ 都应满足条件 1≤i≤|s|$$$1 \\le i \\le |s|$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于字符 si$$$s_i$$$，相邻的字符是 si−1$$$s_{i-1}$$$ 和 si+1$$$s_{i+1}$$$。s$$$s$$$ 的第一个和最后一个字符都只有一个相邻字符(除非 |s|=1$$$|s| = 1$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑下面的例子。令 s=$$$s=$$$ bacabcab。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一次操作中，你可以删除第一个字符 s1=$$$s_1=$$$ b，因为 s2=$$$s_2=$$$ a。此时字符串变为 s=$$$s=$$$ acabcab。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二次操作中，你可以删除第五个字符 s5=$$$s_5=$$$ c，因为 s4=$$$s_4=$$$ b。此时字符串变为 s=$$$s=$$$ acabab。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三次操作中，你可以删除第六个字符 s6=$$$s_6=$$$'b'，因为 s5=$$$s_5=$$$ a。此时字符串变为 s=$$$s=$$$ acaba。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四次操作中，唯一可以删除的字符是 s4=$$$s_4=$$$ b，因为 s3=$$$s_3=$$$ a(或 s5=$$$s_5=$$$ a)。此时字符串变为 s=$$$s=$$$ acaa，你无法再对其进行任何操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果选择最优的操作顺序，你需要求出最多可以删除的字符数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 |s|$$$|s|$$$(1≤|s|≤100$$$1 \\le |s| \\le 100$$$)，表示 s$$$s$$$ 的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第二行包含一个由 |s|$$$|s|$$$ 个小写拉丁字母组成的字符串 s$$$s$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示选择最优的操作顺序时最多可以删除的字符数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例已在题面中描述。注意，题面中给出的操作顺序并不是唯一的，但可以证明该测试用例的最大可能答案是 4$$$4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，你可以删除 s$$$s$$$ 中除一个字符以外的所有字符。因此，答案是唯一确定的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一次移动中，移除第三个字符 s3=$$$s_3=$$$ d，s$$$s$$$ 变为 bca。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二次移动中，移除第二个字符 s2=$$$s_2=$$$ c，s$$$s$$$ 变为 ba。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "而在第三次移动中，移除第一个字符 s1=$$$s_1=$$$ b，s$$$s$$$ 变为 a。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 删除相邻字符",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

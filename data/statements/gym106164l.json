@@ -1,0 +1,110 @@
+{
+  "code": "GYM106164L",
+  "letter": "L",
+  "title": "L. Laser",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106164/problem/L",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "A mega-scale project to convert laser light into usable energy for general purposes has begun in the almost infinite experiment area with laser-amplifying glass panes.",
+      "The experiment was conducted by placing a laser emitter in one room. After that, the N$$$N$$$ laser receivers were placed in room coordinates (xi,yi)$$$(x_i,y_i)$$$; each room has a glass pane on the vertical and horizontal side which is shared between adjacent rooms.",
+      "When the laser passes through each vertical glass pane, the laser intensity is increased by A$$$A$$$ units.",
+      "When the laser passes through each horizontal glass pane, the laser intensity is increased by B$$$B$$$ units.",
+      "![](https://espresso.codeforces.com/dbbf0cc59f3f3d5e9d626d2f5e840ec03e836f77.png)",
+      "Furthermore, the administrator of the project has provided 1 L-shaped reflector to change the trajectory of the laser from horizontal to vertical or vice versa. You want to run Q$$$Q$$$ simulation tests to provide the information on the minimum possible laser intensity given the starting point for the laser at coordinates (si,ti)$$$(s_i,t_i)$$$; your task is to come up with the resulting laser intensity."
+    ],
+    "input": [
+      "The first line contains four integers N,Q,A,B$$$N,Q,A,B$$$ (0≤A,B≤109,1≤N,Q≤100000$$$0 \\le A,B \\le 10^9,1 \\le N,Q \\le 100\\,000$$$) — number of laser receivers, simulations, amplification power of vertical and horizontal glass panes.",
+      "Next, N$$$N$$$ lines contain xi,yi,ci$$$x_i,y_i,c_i$$$ (0≤xi,yi≤109,0≤ci≤1018$$$0 \\le x_i,y_i \\le 10^9,0 \\le c_i \\le 10^{18}$$$) — laser receiver coordinates in the Cartesian plane and laser amplification power.",
+      "Next, Q$$$Q$$$ lines contain si,ti$$$s_i,t_i$$$ (0≤si,ti≤109$$$0 \\le s_i,t_i \\le 10^9$$$) — laser emitter starting coordinates in the Cartesian plane in each simulation."
+    ],
+    "output": [
+      "Print Q$$$Q$$$ lines, each line contains a single integer — the minimum possible laser intensity for the simulation."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/8ae15cf1b01738efb75a6ab063aaeffb3ef0af67.png)",
+      "For the first simulation, the L-shaped reflector can be placed on coordinate (3,4); by activating the second receiver, the minimum final laser intensity is 1+2+0=3$$$1+2+0 = 3$$$.",
+      "For the second simulation, the L-shaped reflector is not used; by activating the second receiver, the minimum final laser intensity is 2+0=2$$$2+0 = 2$$$.",
+      "For the third simulation, the L-shaped reflector can be placed on coordinate (1,5); by activating the fifth receiver, the minimum final laser intensity is 2+1+1+1+2=7$$$2+1+1+1+2 = 7$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 3 1 2\n1 1 0\n4 2 0\n2 3 3\n5 4 0\n4 5 2\n3 3\n4 1\n1 6",
+      "output": "3\n2\n7"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一个将激光转换为可供一般用途使用的能量的超大规模项目，已经在几乎无限大的实验区域中启动，该区域由能够增强激光的玻璃板构成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "实验通过在一个房间内放置一个激光发射器来进行。随后，将 N$$$N$$$ 个激光接收器放置在房间坐标 (xi,yi)$$$(x_i,y_i)$$$ 处；每个房间与相邻房间共用的垂直和水平边上都安装有玻璃板。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当激光穿过每块垂直玻璃板时，激光强度会增加 A$$$A$$$ 个单位。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当激光穿过每块水平玻璃板时，激光强度增加 B$$$B$$$ 个单位。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/dbbf0cc59f3f3d5e9d626d2f5e840ec03e836f77.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，项目管理员提供了 1 个 L 形反射器，用于将激光的轨迹从水平方向改变为竖直方向，或反之。你需要运行 Q$$$Q$$$ 次模拟测试，以提供给定激光起点坐标 (si,ti)$$$(s_i,t_i)$$$ 时激光强度的可能最小值；你的任务是计算最终的激光强度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含四个整数 N、Q、A、B$$$N,Q,A,B$$$ (0≤A,B≤109,1≤N,Q≤100000$$$0 \\le A,B \\le 10^9,1 \\le N,Q \\le 100\\,000$$$)，分别表示激光接收器的数量、模拟次数，以及竖直和水平玻璃板的放大功率。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来 N$$$N$$$ 行每行包含 xi,yi,ci$$$x_i,y_i,c_i$$$ (0≤xi,yi≤109,0≤ci≤1018$$$0 \\le x_i,y_i \\le 10^9,0 \\le c_i \\le 10^{18}$$$)，分别表示笛卡尔平面中激光接收器的坐标以及激光放大功率。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来 Q$$$Q$$$ 行每行包含 si,ti$$$s_i,t_i$$$ (0≤si,ti≤109$$$0 \\le s_i,t_i \\le 10^9$$$)，表示每次模拟中激光发射器在笛卡尔平面中的起始坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Q$$$Q$$$ 行，每行包含一个整数——模拟中激光强度的可能最小值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "![](https://espresso.codeforces.com/8ae15cf1b01738efb75a6ab063aaeffb3ef0af67.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一次模拟中，L 形反射器可以放置在坐标 (3,4) 处；激活第二个接收器后，最终激光强度的最小值为 1+2+0=3$$$1+2+0 = 3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二次模拟中，不使用 L 形反射器；激活第二个接收器后，最终激光强度的最小值为 2+0=2$$$2+0 = 2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三次模拟中，L 形反射器可以放置在坐标 (1,5) 处；激活第五个接收器后，最终激光强度的最小值为 2+1+1+1+2=7$$$2+1+1+1+2 = 7$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "L. 激光",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

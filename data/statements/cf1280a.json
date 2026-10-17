@@ -1,0 +1,255 @@
+{
+  "code": "CF1280A",
+  "letter": "A",
+  "title": "A. Cut and Paste",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1280/A",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "We start with a string s$$$s$$$ consisting only of the digits 1$$$1$$$, 2$$$2$$$, or 3$$$3$$$. The length of s$$$s$$$ is denoted by |s|$$$|s|$$$. For each i$$$i$$$ from 1$$$1$$$ to |s|$$$|s|$$$, the i$$$i$$$-th character of s$$$s$$$ is denoted by si$$$s_i$$$.",
+      "There is one cursor. The cursor's location ℓ$$$\\ell$$$ is denoted by an integer in {0,…,|s|}$$$\\{0, \\ldots, |s|\\}$$$, with the following meaning:",
+      "If ℓ=0$$$\\ell = 0$$$, then the cursor is located before the first character of s$$$s$$$.",
+      "If ℓ=|s|$$$\\ell = |s|$$$, then the cursor is located right after the last character of s$$$s$$$.",
+      "If 0<ℓ<|s|$$$0  \\lt  \\ell  \\lt  |s|$$$, then the cursor is located between sℓ$$$s_\\ell$$$ and sℓ+1$$$s_{\\ell+1}$$$.",
+      "We denote by sleft$$$s_\\text{left}$$$ the string to the left of the cursor and sright$$$s_\\text{right}$$$ the string to the right of the cursor.",
+      "We also have a string c$$$c$$$, which we call our clipboard, which starts out as empty. There are three types of actions:",
+      "The Move action. Move the cursor one step to the right. This increments ℓ$$$\\ell$$$ once.",
+      "The Cut action. Set c←sright$$$c \\leftarrow s_\\text{right}$$$, then set s←sleft$$$s \\leftarrow s_\\text{left}$$$.",
+      "The Paste action. Append the value of c$$$c$$$ to the end of the string s$$$s$$$. Note that this doesn't modify c$$$c$$$.",
+      "The cursor initially starts at ℓ=0$$$\\ell = 0$$$. Then, we perform the following procedure:",
+      "Perform the Move action once.",
+      "Perform the Cut action once.",
+      "Perform the Paste action sℓ$$$s_\\ell$$$ times.",
+      "If ℓ=x$$$\\ell = x$$$, stop. Otherwise, return to step 1.",
+      "You're given the initial string s$$$s$$$ and the integer x$$$x$$$. What is the length of s$$$s$$$ when the procedure stops? Since this value may be very large, only find it modulo 109+7$$$10^9 + 7$$$.",
+      "It is guaranteed that ℓ≤|s|$$$\\ell \\le |s|$$$ at any time."
+    ],
+    "input": [
+      "The first line of input contains a single integer t$$$t$$$ (1≤t≤1000$$$1 \\le t \\le 1000$$$) denoting the number of test cases. The next lines contain descriptions of the test cases.",
+      "The first line of each test case contains a single integer x$$$x$$$ (1≤x≤106$$$1 \\le x \\le 10^6$$$). The second line of each test case consists of the initial string s$$$s$$$ (1≤|s|≤500$$$1 \\le |s| \\le 500$$$). It is guaranteed, that s$$$s$$$ consists of the characters \"1\", \"2\", \"3\".",
+      "It is guaranteed that the sum of x$$$x$$$ in a single file is at most 106$$$10^6$$$. It is guaranteed that in each test case before the procedure will stop it will be true that ℓ≤|s|$$$\\ell \\le |s|$$$ at any time."
+    ],
+    "output": [
+      "For each test case, output a single line containing a single integer denoting the answer for that test case modulo 109+7$$$10^9 + 7$$$."
+    ],
+    "note": [
+      "Let's illustrate what happens with the first test case. Initially, we have s=$$$s = $$$ 231. Initially, ℓ=0$$$\\ell = 0$$$ and c=ε$$$c = \\varepsilon$$$ (the empty string). The following things happen if we follow the procedure above:",
+      "Step 1, Move once: we get ℓ=1$$$\\ell = 1$$$.",
+      "Step 2, Cut once: we get s=$$$s = $$$ 2 and c=$$$c = $$$ 31.",
+      "Step 3, Paste sℓ=$$$s_\\ell = $$$ 2 times: we get s=$$$s = $$$ 23131.",
+      "Step 4: ℓ=1≠x=5$$$\\ell = 1 \\not= x = 5$$$, so we return to step 1.",
+      "Step 1, Move once: we get ℓ=2$$$\\ell = 2$$$.",
+      "Step 2, Cut once: we get s=$$$s = $$$ 23 and c=$$$c = $$$ 131.",
+      "Step 3, Paste sℓ=$$$s_\\ell = $$$ 3 times: we get s=$$$s = $$$ 23131131131.",
+      "Step 4: ℓ=2≠x=5$$$\\ell = 2 \\not= x = 5$$$, so we return to step 1.",
+      "Step 1, Move once: we get ℓ=3$$$\\ell = 3$$$.",
+      "Step 2, Cut once: we get s=$$$s = $$$ 231 and c=$$$c = $$$ 31131131.",
+      "Step 3, Paste sℓ=$$$s_\\ell = $$$ 1 time: we get s=$$$s = $$$ 23131131131.",
+      "Step 4: ℓ=3≠x=5$$$\\ell = 3 \\not= x = 5$$$, so we return to step 1.",
+      "Step 1, Move once: we get ℓ=4$$$\\ell = 4$$$.",
+      "Step 2, Cut once: we get s=$$$s = $$$ 2313 and c=$$$c = $$$ 1131131.",
+      "Step 3, Paste sℓ=$$$s_\\ell = $$$ 3 times: we get s=$$$s = $$$ 2313113113111311311131131.",
+      "Step 4: ℓ=4≠x=5$$$\\ell = 4 \\not= x = 5$$$, so we return to step 1.",
+      "Step 1, Move once: we get ℓ=5$$$\\ell = 5$$$.",
+      "Step 2, Cut once: we get s=$$$s = $$$ 23131 and c=$$$c = $$$ 13113111311311131131.",
+      "Step 3, Paste sℓ=$$$s_\\ell = $$$ 1 times: we get s=$$$s = $$$ 2313113113111311311131131.",
+      "Step 4: ℓ=5=x$$$\\ell = 5 = x$$$, so we stop.",
+      "At the end of the procedure, s$$$s$$$ has length 25$$$25$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n5\n231\n7\n2323\n6\n333\n24\n133321333",
+      "output": "25\n1438\n1101\n686531475"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "我们从一个字符串 s$$$s$$$ 开始，该字符串仅由数字 1$$$1$$$、2$$$2$$$ 或 3$$$3$$$ 组成。s$$$s$$$ 的长度记为 |s|$$$|s|$$$。对于从 1$$$1$$$ 到 |s|$$$|s|$$$ 的每个 i$$$i$$$，s$$$s$$$ 的第 i$$$i$$$ 个字符记为 si$$$s_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有一个光标。光标的位置 ℓ$$$\\ell$$$ 用 {0,…,|s|}$$$\\{0, \\ldots, |s|\\}$$$ 中的一个整数表示，其含义如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 ℓ=0$$$\\ell = 0$$$，那么光标位于 s$$$s$$$ 的第一个字符之前。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 ℓ=|s|$$$\\ell = |s|$$$，那么光标位于 s$$$s$$$ 的最后一个字符之后。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 0<ℓ<|s|$$$0  \\lt  \\ell  \\lt  |s|$$$，那么光标位于 sℓ$$$s_\\ell$$$ 和 sℓ+1$$$s_{\\ell+1}$$$ 之间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们用 sleft$$$s_\\text{left}$$$ 表示光标左侧的字符串，用 sright$$$s_\\text{right}$$$ 表示光标右侧的字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们还有一个字符串 c$$$c$$$，称为剪贴板，初始为空。操作有三种类型：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "移动操作。将光标向右移动一步。这会使 ℓ$$$\\ell$$$ 增加 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "剪切操作。令 c←sright$$$c \\leftarrow s_\\text{right}$$$，然后令 s←sleft$$$s \\leftarrow s_\\text{left}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "粘贴操作。将 c$$$c$$$ 的值追加到字符串 s$$$s$$$ 的末尾。注意，这不会修改 c$$$c$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "光标初始位于 ℓ=0$$$\\ell = 0$$$。然后，我们执行以下过程：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "执行一次移动操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "执行一次剪切操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "执行 sℓ$$$s_\\ell$$$ 次粘贴操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 ℓ=x$$$\\ell = x$$$，则停止。否则，返回步骤 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定初始字符串 s$$$s$$$ 和整数 x$$$x$$$。当该过程停止时，s$$$s$$$ 的长度是多少？由于该值可能非常大，只需求其对 109+7$$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证在任意时刻都有 ℓ≤|s|$$$\\ell \\le |s|$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤1000$$$1 \\le t \\le 1000$$$)，表示测试用例的数量。接下来的各行包含测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 x$$$x$$$(1≤x≤106$$$1 \\le x \\le 10^6$$$)。第二行包含初始字符串 s$$$s$$$(1≤|s|≤500$$$1 \\le |s| \\le 500$$$)。保证 s$$$s$$$ 仅由字符“1”、“2”、“3”组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证单个文件中所有 x$$$x$$$ 的总和不超过 106$$$10^6$$$。保证在每个测试用例中，过程停止之前的任意时刻都有 ℓ≤|s|$$$\\ell \\le |s|$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一行，其中包含一个整数，表示该测试用例的答案对 109+7$$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "让我们说明第一个测试用例中发生的情况。最初，我们有 s=$$$s = $$$ 231。初始时，ℓ=0$$$\\ell = 0$$$，且 c=ε$$$c = \\varepsilon$$$(空字符串)。如果按照上述过程操作，将发生以下情况：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "步骤 1，移动一次：得到 ℓ=1$$$\\ell = 1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "步骤 2，剪切一次：得到 s=$$$s = $$$ 2，且 c=$$$c = $$$ 31。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "步骤 3，将 sℓ=$$$s_\\ell = $$$ 2 次：得到 s=$$$s = $$$ 23131。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "步骤 4：ℓ=1≠x=5$$$\\ell = 1 \\not= x = 5$$$，因此返回步骤 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 1 步，移动一次：得到 ℓ=2$$$\\ell = 2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 2 步，剪切一次：得到 s=$$$s = $$$ 23，c=$$$c = $$$ 131。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 3 步，将 sℓ=$$$s_\\ell = $$$ 粘贴 3 次：得到 s=$$$s = $$$ 23131131131。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 4 步：ℓ=2≠x=5$$$\\ell = 2 \\not= x = 5$$$，因此返回第 1 步。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 1 步，移动一次：得到 ℓ=3$$$\\ell = 3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 2 步，剪切一次：得到 s=$$$s = $$$ 231，c=$$$c = $$$ 31131131。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 3 步，将 sℓ=$$$s_\\ell = $$$ 粘贴 1 次：得到 s=$$$s = $$$ 23131131131。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 4 步：ℓ=3≠x=5$$$\\ell = 3 \\not= x = 5$$$，因此返回第 1 步。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 1 步，移动一次：得到 ℓ=4$$$\\ell = 4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 2 步，切割一次：得到 s=$$$s = $$$ 2313，且 c=$$$c = $$$ 1131131。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 3 步，将 sℓ=$$$s_\\ell = $$$ 粘贴 3 次：得到 s=$$$s = $$$ 2313113113111311311131131。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 4 步：ℓ=4≠x=5$$$\\ell = 4 \\not= x = 5$$$，因此返回第 1 步。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "步骤 1，移动一次：得到 ℓ=5$$$\\ell = 5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "步骤 2，切割一次：得到 s=$$$s = $$$ 23131，c=$$$c = $$$ 13113111311311131131。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "步骤 3，粘贴 sℓ=$$$s_\\ell = $$$ 1 次：得到 s=$$$s = $$$ 2313113113111311311131131。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "步骤 4：ℓ=5=x$$$\\ell = 5 = x$$$，因此停止。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "操作结束时，s$$$s$$$ 的长度为 25$$$25$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 剪切与粘贴",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

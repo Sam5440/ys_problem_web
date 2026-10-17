@@ -1,0 +1,128 @@
+{
+  "code": "GYM105950O",
+  "letter": "O",
+  "title": "O. The Martian",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105950/problem/O",
+  "difficulty": "*1500",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Upon arriving on Mars, astronaut Mark Watney and his team discovered that the planet was not quite as they had expected. Its terrain was filled with large ravines—gaps in the ground—that made it very difficult for the team to traverse the red planet.",
+      "Fortunately, the astronauts brought along a set of ladders of various lengths; these ladders allowed them to cross the ravines when laid out horizontally, as long as their extended length was greater than or equal to the size of the gap.",
+      "The team has a schedule indicating one coordinate of interest to visit each day, and for these visits, they choose one ladder from their set to help cross the ravines. After reaching the point of interest, the astronauts must return via the same path they came from (back to the area where they reside), and the used ladder is then discarded due to wear and tear, making it unavailable for future days.",
+      "Given this, Mark was tasked with developing a program that, when provided with a map showing regions separated by ravines, the lengths of the ravines, the set of ladders brought by the team, and the cities the team wants to visit each day, maximizes the number of regions of interest visited during the entire mission. Mark, being a great biologist but not much of a programmer, called you for help.",
+      "The map of Mars is given as a graph with N$$$N$$$ regions numbered from 1$$$1$$$ to N$$$N$$$ and M$$$M$$$ ravines numbered from 1$$$1$$$ to M$$$M$$$ connecting these regions, where the i$$$i$$$-th ravine has a length of wi$$$w_i$$$ meters. It is also a fact that if it were possible to use a ladder of infinite length, one could travel from any region to any other region using only the ravines.",
+      "Additionally, the mission will last D$$$D$$$ days, where the region to be visited on the i$$$i$$$-th day is di$$$d_i$$$, and the team has exactly D$$$D$$$ ladders numbered from 1$$$1$$$ to D$$$D$$$, where the length of the i$$$i$$$-th ladder is ei$$$e_i$$$. Note that a ladder can be used on any day, but only once; and during a day, the chosen ladder can be reused as many times as necessary.",
+      "Knowing that the team resides in region 1$$$1$$$, write a program to help Mark's team with their mission!"
+    ],
+    "input": [
+      "The first line of the input consists of two numbers N$$$N$$$ and M$$$M$$$ (2≤N≤2⋅105)$$$(2 \\le N \\le 2 \\cdot 10^5)$$$ (1≤M≤2⋅105)$$$(1 \\le M \\le 2 \\cdot 10^5)$$$, the number of regions and ravines on Mars, respectively.",
+      "The next M$$$M$$$ lines each contain three integers ui$$$u_i$$$, vi$$$v_i$$$, and wi$$$w_i$$$, (1≤ui,vi≤N)$$$(1 \\le u_i, v_i \\le N)$$$ (1≤wi≤109)$$$(1 \\le w_i \\le 10^9)$$$, indicating the existence of a ravine of length wi$$$w_i$$$ between regions ui$$$u_i$$$ and vi$$$v_i$$$. It is guaranteed that there is only one ravine connecting any two regions, and no ravine connects a region to itself.",
+      "Then, a line with a single integer D$$$D$$$ (1≤D≤N)$$$(1 \\le D \\le N)$$$ is given, representing the number of days in the mission; followed by two lines with D$$$D$$$ integers each.",
+      "The first of these lines contains d1,d2,⋯,dD$$$d_1, d_2, \\cdots, d_D$$$ (1≤di≤N)$$$(1 \\le d_i \\le N)$$$, indicating that the i$$$i$$$-th region to be visited is region number di$$$d_i$$$.",
+      "The next line contains e1,e2,⋯,eD$$$e_1, e_2, \\cdots, e_D$$$ (1≤ei≤109)$$$(1 \\le e_i \\le 10^9)$$$, indicating that the i$$$i$$$-th ladder is ei$$$e_i$$$ meters long."
+    ],
+    "output": [
+      "Print a single line with the maximum number of regions that Mark and his team can visit."
+    ],
+    "note": [
+      "Below is the map for the second example:",
+      "![](https://espresso.codeforces.com/3c5d5f91757afb2f5186b4548b9b14917b9ffb0c.png)",
+      "We can use one of the ladders of length two to reach node 5$$$5$$$ on the first day; then, we can skip the second day's target and use the ladder of length 11$$$11$$$ to reach node 2$$$2$$$ on the third day (through the path 1 – 5 – 2). Note that there may be more than one way to achieve the optimal answer."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 10\n5 3 4\n3 6 3\n1 6 2\n4 1 7\n2 1 15\n6 4 19\n3 2 10\n5 1 7\n4 2 17\n5 2 5\n6\n1 2 3 4 5 6\n3 4 3 5 5 5",
+      "output": "5"
+    },
+    {
+      "input": "5 7\n2 5 3\n5 4 18\n5 1 1\n4 1 1\n4 3 13\n3 1 17\n2 1 11\n3\n5 3 2\n1 11 1",
+      "output": "2"
+    },
+    {
+      "input": "5 6\n2 1 13\n4 2 1\n5 2 1\n5 1 2\n3 2 11\n4 1 5\n2\n2 3\n1 1",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "抵达火星后，宇航员 Mark Watney 和他的团队发现，这颗星球并不像他们预想的那样。火星的地形遍布巨大的沟壑，也就是地面上的裂口，这使得团队很难穿越这颗红色星球。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "幸运的是，宇航员们带来了一组长度各异的梯子；将这些梯子水平放置后，只要其展开长度大于或等于裂口的宽度，就可以帮助他们跨越沟壑。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "团队有一份日程安排，指明每天需要前往的一个目标坐标。为了完成这些访问，他们会从梯子中选择一架来帮助跨越沟壑。抵达目标地点后，宇航员必须沿原路返回他们出发的地方，也就是他们居住的区域；使用过的梯子随后会因磨损而被丢弃，之后的日子将无法再次使用。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "鉴于此，Mark 的任务是开发一个程序：给定一张显示由峡谷分隔的区域的地图、峡谷的长度、团队携带的梯子集合，以及团队每天希望访问的城市，最大化整个任务期间访问的感兴趣区域数量。Mark 是一位优秀的生物学家，但编程能力不太强，因此向你求助。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "火星地图被表示为一张图，其中有 N$$$N$$$ 个区域，编号从 1$$$1$$$ 到 N$$$N$$$，以及 M$$$M$$$ 条连接这些区域的峡谷，编号从 1$$$1$$$ 到 M$$$M$$$，其中第 i$$$i$$$ 条峡谷的长度为 wi$$$w_i$$$ 米。另一个事实是，如果可以使用一把无限长度的梯子，那么仅通过峡谷即可从任意区域到达任意其他区域。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，任务将持续 D$$$D$$$ 天，第 i$$$i$$$ 天要访问的区域为 di$$$d_i$$$，并且团队恰好有 D$$$D$$$ 把梯子，编号从 1$$$1$$$ 到 D$$$D$$$，其中第 i$$$i$$$ 把梯子的长度为 ei$$$e_i$$$。注意，一把梯子可以在任意一天使用，但只能使用一次；而在一天之内，选定的梯子可以根据需要重复使用任意多次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "已知团队驻扎在区域 1$$$1$$$，请编写程序帮助 Mark 的团队完成任务！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入第一行包含两个数 N$$$N$$$ 和 M$$$M$$$(2≤N≤2⋅105)$$$(2 \\le N \\le 2 \\cdot 10^5)$$$(1≤M≤2⋅105)$$$(1 \\le M \\le 2 \\cdot 10^5)$$$，分别表示火星上的区域数和峡谷数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 M$$$M$$$ 行每行包含三个整数 ui$$$u_i$$$、vi$$$v_i$$$ 和 wi$$$w_i$$$，(1≤ui,vi≤N)$$$(1 \\le u_i, v_i \\le N)$$$(1≤wi≤109)$$$(1 \\le w_i \\le 10^9)$$$，表示区域 ui$$$u_i$$$ 和 vi$$$v_i$$$ 之间存在一条长度为 wi$$$w_i$$$ 的峡谷。保证任意两个区域之间至多有一条峡谷，且没有峡谷连接一个区域自身。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来给出一行，其中包含一个整数 D$$$D$$$(1≤D≤N)$$$(1 \\le D \\le N)$$$，表示任务的天数；随后给出两行，每行包含 D$$$D$$$ 个整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其中第一行包含 d1,d2,⋯,dD$$$d_1, d_2, \\cdots, d_D$$$(1≤di≤N)$$$(1 \\le d_i \\le N)$$$，表示第 i$$$i$$$ 个要访问的区域编号为 di$$$d_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 e1,e2,⋯,eD$$$e_1, e_2, \\cdots, e_D$$$(1≤ei≤109)$$$(1 \\le e_i \\le 10^9)$$$，表示第 i$$$i$$$ 部梯子的长度为 ei$$$e_i$$$ 米。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一行，包含 Mark 及其团队能够访问的区域数量的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "下面是第二个样例的地图：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/3c5d5f91757afb2f5186b4548b9b14917b9ffb0c.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一天，我们可以使用一架长度为二的梯子到达节点 5$$$5$$$；然后，我们可以跳过第二天的目标，并使用长度为 11$$$11$$$ 的梯子在第三天到达节点 2$$$2$$$(经过路径 1 – 5 – 2)。注意，达到最优答案的方法可能不止一种。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "O. 火星救援",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

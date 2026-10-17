@@ -1,0 +1,108 @@
+{
+  "code": "CF542F",
+  "letter": "F",
+  "title": "F. Quest",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/542/F",
+  "difficulty": "2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Polycarp is making a quest for his friends. He has already made n tasks, for each task the boy evaluated how interesting it is as an integer qi, and the time ti in minutes needed to complete the task.",
+      "An interesting feature of his quest is: each participant should get the task that is best suited for him, depending on his preferences. The task is chosen based on an interactive quiz that consists of some questions. The player should answer these questions with \"yes\" or \"no\". Depending on the answer to the question, the participant either moves to another question or goes to one of the tasks that are in the quest. In other words, the quest is a binary tree, its nodes contain questions and its leaves contain tasks.",
+      "We know that answering any of the questions that are asked before getting a task takes exactly one minute from the quest player. Polycarp knows that his friends are busy people and they can't participate in the quest for more than T minutes. Polycarp wants to choose some of the n tasks he made, invent the corresponding set of questions for them and use them to form an interactive quiz as a binary tree so that no matter how the player answers quiz questions, he spends at most T minutes on completing the whole quest (that is, answering all the questions and completing the task). Specifically, the quest can contain zero questions and go straight to the task. Each task can only be used once (i.e., the people who give different answers to questions should get different tasks).",
+      "Polycarp wants the total \"interest\" value of the tasks involved in the quest to be as large as possible. Help him determine the maximum possible total interest value of the task considering that the quest should be completed in T minutes at any variant of answering questions."
+    ],
+    "input": [
+      "The first line contains two integers n and T (1 ≤ n ≤ 1000, 1 ≤ T ≤ 100) — the number of tasks made by Polycarp and the maximum time a quest player should fit into.",
+      "Next n lines contain two integers ti, qi (1 ≤ ti ≤ T, 1 ≤ qi ≤ 1000) each — the time in minutes needed to complete the i-th task and its interest value."
+    ],
+    "output": [
+      "Print a single integer — the maximum possible total interest value of all the tasks in the quest."
+    ],
+    "note": [
+      "In the first sample test all the five tasks can be complemented with four questions and joined into one quest.",
+      "In the second sample test it is impossible to use all the five tasks, but you can take two of them, the most interesting ones.",
+      "In the third sample test the optimal strategy is to include only the second task into the quest.",
+      "Here is the picture that illustrates the answers to the sample tests. The blue circles represent the questions, the two arrows that go from every circle represent where a person goes depending on his answer to that question. The tasks are the red ovals.",
+      "![](https://espresso.codeforces.com/f97e6272831f8a54fec4cbaf8219a63aea601d95.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 5\n1 1\n1 1\n2 2\n3 3\n4 4",
+      "output": "11"
+    },
+    {
+      "input": "5 5\n4 1\n4 2\n4 3\n4 4\n4 5",
+      "output": "9"
+    },
+    {
+      "input": "2 2\n1 1\n2 10",
+      "output": "10"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 T（1 ≤ n ≤ 1000，1 ≤ T ≤ 100）——Polycarp 制作的任务数量，以及玩家完成任务所能使用的最长时间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n 行每行包含两个整数 t_i、q_i（1 ≤ t_i ≤ T，1 ≤ q_i ≤ 1000）——分别表示完成第 i 个任务所需的时间（分钟）和该任务的趣味值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——任务中所有任务的总趣味值的最大可能值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例测试中，全部五个任务都可以补充四个问题，并合并成一个任务。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例测试中，不可能使用全部五个任务，但可以选择其中两个，即最有趣的两个任务。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例测试中，最优策略是只将第二个任务加入任务中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下面是展示样例测试答案的图片。蓝色圆圈表示问题，从每个圆圈出发的两条箭头表示一个人根据该问题的答案所前往的方向。任务用红色椭圆表示。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/f97e6272831f8a54fec4cbaf8219a63aea601d95.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Polycarp 正在为他的朋友们制作一个任务流程。他已经设计了 n 个任务，对于每个任务，这个男孩将其趣味度评估为一个整数 q_i，并记录了完成该任务所需的时间 t_i（分钟）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他的任务流程有一个有趣的特点：每位参与者都应该根据自己的偏好获得最适合自己的任务。任务通过一个由若干问题组成的交互式问答来选择。玩家应当用“是”或“否”回答这些问题。根据问题的答案，参与者要么前往另一个问题，要么前往任务流程中的某个任务。换句话说，任务流程是一棵二叉树，其节点包含问题，叶子包含任务。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们知道，在获得任务之前回答每个问题，都会恰好花费任务流程参与者一分钟。Polycarp 知道他的朋友们都很忙，无法参与任务流程超过 T 分钟。Polycarp 希望从他设计的 n 个任务中选择一些，为它们设计相应的问题集合，并将其组成一棵二叉树形式的交互式问答，使得无论玩家如何回答问题，完成整个任务流程所花费的时间都不超过 T 分钟（也就是说，要回答所有问题并完成任务）。特别地，任务流程可以不包含任何问题，直接进入任务。每个任务只能使用一次（也就是说，对问题给出不同答案的人应当获得不同的任务）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Polycarp 希望任务流程中所涉及任务的总“趣味度”尽可能大。请帮助他确定，在无论以何种方式回答问题都能在 T 分钟内完成任务流程的前提下，任务总趣味度的最大可能值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 任务",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

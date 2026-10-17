@@ -1,0 +1,89 @@
+{
+  "code": "CF1102E",
+  "letter": "E",
+  "title": "E. Monotonic Renumeration",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1102/E",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array a$$$a$$$ consisting of n$$$n$$$ integers. Let's denote monotonic renumeration of array a$$$a$$$ as an array b$$$b$$$ consisting of n$$$n$$$ integers such that all of the following conditions are met:",
+      "b1=0$$$b_1 = 0$$$;",
+      "for every pair of indices i$$$i$$$ and j$$$j$$$ such that 1≤i,j≤n$$$1 \\le i, j \\le n$$$, if ai=aj$$$a_i = a_j$$$, then bi=bj$$$b_i = b_j$$$ (note that if ai≠aj$$$a_i \\ne a_j$$$, it is still possible that bi=bj$$$b_i = b_j$$$);",
+      "for every index i∈[1,n−1]$$$i \\in [1, n - 1]$$$ either bi=bi+1$$$b_i = b_{i + 1}$$$ or bi+1=bi+1$$$b_i + 1 = b_{i + 1}$$$.",
+      "For example, if a=[1,2,1,2,3]$$$a = [1, 2, 1, 2, 3]$$$, then two possible monotonic renumerations of a$$$a$$$ are b=[0,0,0,0,0]$$$b = [0, 0, 0, 0, 0]$$$ and b=[0,0,0,0,1]$$$b = [0, 0, 0, 0, 1]$$$.",
+      "Your task is to calculate the number of different monotonic renumerations of a$$$a$$$. The answer may be large, so print it modulo 998244353$$$998244353$$$."
+    ],
+    "input": [
+      "The first line contains one integer n$$$n$$$ (2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$) — the number of elements in a$$$a$$$.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)."
+    ],
+    "output": [
+      "Print one integer — the number of different monotonic renumerations of a$$$a$$$, taken modulo 998244353$$$998244353$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 2 1 2 3",
+      "output": "2"
+    },
+    {
+      "input": "2\n100 1",
+      "output": "2"
+    },
+    {
+      "input": "4\n1 3 3 7",
+      "output": "4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个由 n$$$n$$$ 个整数构成的数组 a$$$a$$$。我们将数组 a$$$a$$$ 的单调重新编号定义为一个由 n$$$n$$$ 个整数构成的数组 b$$$b$$$，满足以下所有条件：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "b1=0$$$b_1 = 0$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于满足 1≤i,j≤n$$$1 \\le i, j \\le n$$$ 的每一对下标 i$$$i$$$ 和 j$$$j$$$，如果 ai=aj$$$a_i = a_j$$$，那么 bi=bj$$$b_i = b_j$$$(注意，如果 ai≠aj$$$a_i \\ne a_j$$$，仍然可能有 bi=bj$$$b_i = b_j$$$)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个下标 i∈[1,n−1]$$$i \\in [1, n - 1]$$$，要么 bi=bi+1$$$b_i = b_{i + 1}$$$，要么 bi+1=bi+1$$$b_i + 1 = b_{i + 1}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，如果 a=[1,2,1,2,3]$$$a = [1, 2, 1, 2, 3]$$$，那么 a$$$a$$$ 的两种可能的单调重新编号为 b=[0,0,0,0,0]$$$b = [0, 0, 0, 0, 0]$$$ 和 b=[0,0,0,0,1]$$$b = [0, 0, 0, 0, 1]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是计算 a$$$a$$$ 的不同单调重新编号的数量。答案可能很大，因此请输出对 998244353$$$998244353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$)，表示 a$$$a$$$ 中元素的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，即数组 a$$$a$$$ 的不同单调重新编号方案数，对 998244353$$$998244353$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 单调重新编号",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

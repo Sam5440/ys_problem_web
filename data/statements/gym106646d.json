@@ -1,0 +1,139 @@
+{
+  "code": "GYM106646D",
+  "letter": "D",
+  "title": "D. Divided Banner",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106646/problem/D",
+  "difficulty": "*2000",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "The sponsor banner was left outside during the night, and the wind tore it into $$$n$$$ fragments. The banner was cut along its height, so every fragment still has the full height of the original banner, from the bottom edge to the top edge.",
+      "Each fragment is a filled convex polygon. Every fragment is contained between the horizontal lines $$$y=0$$$ and $$$y=H$$$, the bottom and the top edge of the banner, and touches both lines.",
+      "The volunteers want to hang all the fragments again on the wall behind the scoreboard, and that wall is short. They may hang the fragments in any order and move each fragment to the left or to the right by any real distance. They may not move a fragment up or down, rotate it, or turn it over: every fragment hangs from the same rail, with its bottom edge on the line $$$y=0$$$.",
+      "An arrangement is valid if the interiors of every two fragments are disjoint. Their boundaries are allowed to touch, and a fragment hung exactly against its neighbour is what the volunteers want.",
+      "The length of an arrangement is the difference between the largest and smallest $$$x$$$-coordinates occupied by any fragment, that is, the piece of wall it needs. Find the minimum possible length of a valid arrangement."
+    ],
+    "input": [
+      "The first line contains two integers $$$n$$$ and $$$H$$$ ($$$1 \\le n \\le 18$$$, $$$1 \\le H \\le 10^4$$$) — the number of fragments and their common height.",
+      "The description of the $$$n$$$ fragments follows.",
+      "For each fragment, the first line contains an integer $$$k_i$$$ ($$$3 \\le k_i \\le 300$$$) — the number of vertices of the polygon.",
+      "Each of the next $$$k_i$$$ lines contains two integers $$$x_{i,j}$$$ and $$$y_{i,j}$$$ ($$$-10^4 \\le x_{i,j} \\le 10^4$$$, $$$0 \\le y_{i,j} \\le H$$$) — the coordinates of its $$$j$$$-th vertex.",
+      "The vertices of every polygon are given in counterclockwise order. It is guaranteed that:",
+      "every polygon is convex (not necessarily strictly convex) and has positive area;",
+      "consecutive vertices on the boundary may be collinear;",
+      "every polygon has at least one point on $$$y=0$$$ and at least one point on $$$y=H$$$;",
+      "the sum of $$$k_i$$$ over all fragments does not exceed $$$300$$$.",
+      "Coordinates belonging to different fragments are expressed in independent local coordinate systems."
+    ],
+    "output": [
+      "Print one real number — the minimum possible length of a valid arrangement.",
+      "Your answer is considered correct if its absolute or relative error does not exceed $$$10^{-6}$$$."
+    ],
+    "note": [
+      "In the second example, the two triangular fragments can share a slanted boundary, so their projections on the $$$x$$$-axis may completely overlap.",
+      "In the third example, the first fragment reaches $$$x=4$$$ halfway up the banner. The rectangular fragment can be placed immediately to its right, touching it at that point, for a total length of $$$5$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 2\n4\n0 0\n3 0\n3 2\n0 2",
+      "output": "3.0000000000"
+    },
+    {
+      "input": "2 2\n3\n0 0\n2 2\n0 2\n3\n0 0\n2 0\n2 2",
+      "output": "2.0000000000"
+    },
+    {
+      "input": "2 4\n3\n0 0\n4 2\n0 4\n4\n0 0\n1 0\n1 4\n0 4",
+      "output": "5.0000000000"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "赞助商横幅昨夜被留在室外，风把它撕成了 $$$n$$$ 块。横幅是沿高度方向切开的，因此每块碎片都保留了原横幅的完整高度，从底边一直延伸到顶边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个碎片都是一个实心凸多边形。每个碎片都位于水平线 $$$y=0$$$ 和 $$$y=H$$$ 之间，这两条线分别是横幅的底边和顶边，并且每个碎片都与这两条线接触。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "志愿者们想把所有碎片重新挂到记分牌后面的墙上，但这面墙很短。他们可以按任意顺序悬挂碎片，也可以将每块碎片向左或向右移动任意实数距离。他们不能上下移动碎片、旋转碎片或翻转碎片：每块碎片都挂在同一根横杆上，且其底边都位于直线 $$$y=0$$$ 上。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果任意两个碎片的内部都不相交，则称这种排列合法。它们的边界可以接触，而志愿者希望每块碎片都恰好紧挨着相邻碎片悬挂。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 $$$n$$$ 和 $$$H$$$($$$1 \\le n \\le 18$$$、$$$1 \\le H \\le 10^4$$$)——碎片的数量及其共同高度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$n$$$ 片段的说明如下。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个片段，第一行包含一个整数 $$$k_i$$$($$$3 \\le k_i \\le 300$$$)——多边形的顶点数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 $$$k_i$$$ 行中的每一行包含两个整数 $$$x_{i,j}$$$ 和 $$$y_{i,j}$$$($$$-10^4 \\le x_{i,j} \\le 10^4$$$、$$$0 \\le y_{i,j} \\le H$$$)——表示其第 $$$j$$$ 个顶点的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个多边形的顶点均按逆时针顺序给出。保证：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个多边形都是凸的（不一定是严格凸的），且面积为正；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "边界上的相邻顶点可能共线；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个多边形在 $$$y=0$$$ 上至少有一个点，并且在 $$$y=H$$$ 上至少有一个点；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有片段中 $$$k_i$$$ 的总和不超过 $$$300$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "属于不同片段的坐标采用彼此独立的局部坐标系表示。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个实数——有效排列的最小可能长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你的答案的绝对误差或相对误差不超过 $$$10^{-6}$$$，则会被判定为正确。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第二个例子中，两个三角形碎片可以共用一条倾斜边界，因此它们在 $$$x$$$ 轴上的投影可能完全重叠。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个示例中，第一个片段延伸到横幅中部的 $$$x=4$$$ 处。矩形片段可以紧贴该点放置在它的右侧，总长度为 $$$5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 被分割的横幅",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

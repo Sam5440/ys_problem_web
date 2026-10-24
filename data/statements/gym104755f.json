@@ -1,0 +1,75 @@
+{
+  "code": "GYM104755F",
+  "letter": "F",
+  "title": "F. Pinholes",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104755/problem/F",
+  "difficulty": "*1500",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are planning lighting in a warehouse room, which in the cross section consists of the ceiling (line y=2$$$y=2$$$) and the floor (line y=0$$$y=0$$$). The room is infinite and extends to left and right indefinitely. To illuminate the room, some lamps must be installed in the ceiling, where each lamp shines in all possible downwards directions.",
+      "The ceiling is ugly (you can see all of the pipes and wires), hence an aesthetic drop ceiling will be installed (at the line y=1$$$y=1$$$). To let the lamps shine through, n$$$n$$$ pinpoint holes (pinholes) were made at distinct positions. For each pinhole, each lamp will shine through in a single straight line. The result is that there are some points on the floor which light shines on.",
+      "![](https://espresso.codeforces.com/b9ae730ec5dca8cc73f7c6fddd90345766316d22.png)",
+      "For the desired lighting, it is necessary to illuminate m$$$m$$$ distinct points on the floor (such points may be illuminated by one or multiple lamps). No other points on the floor should be illuminated. Your task is, given the list of the coordinates of n$$$n$$$ pinholes and m$$$m$$$ points on the floor required to be illuminated, determine whether it is possible to install some lamps in the ceiling so that the required points (and only such points) are illuminated."
+    ],
+    "input": [
+      "The first line of input contains two integers n$$$n$$$ and m$$$m$$$ (1≤n,m≤2000$$$1 \\leq n, m \\leq 2\\,000$$$), the numbers of pinholes and points to be illuminated. The second line contains n$$$n$$$ distinct integers a1$$$a_1$$$, …$$$\\ldots$$$, an$$$a_n$$$ (−108≤ai≤108$$$-10^8 \\leq a_i \\leq 10^8$$$) which mean that the i$$$i$$$-th pinhole is located at the coordinates (ai,1)$$$(a_i,1)$$$. The third line contains m$$$m$$$ integers b1$$$b_1$$$, …$$$\\ldots$$$, bm$$$b_m$$$ (−108≤ai≤108$$$-10^8 \\leq a_i \\leq 10^8$$$) which mean that the i$$$i$$$-th point on the floor that needs to be illuminated is located at the coordinates (bi,0)$$$(b_i,0)$$$."
+    ],
+    "output": [
+      "If the required is impossible, output \"No\". Otherwise output \"Yes\" and an integer k$$$k$$$ (1≤k≤m$$$1 \\leq k \\leq m$$$) in the next line, the number of lamps. In the third line output k$$$k$$$ distinct integers c1$$$c_1$$$, …$$$\\ldots$$$, ck$$$c_k$$$ (−109≤ci≤109$$$-10^9 \\leq c_i \\leq 10^9$$$) which mean that the i$$$i$$$-th lamp should be installed at the coordinates (ci,2)$$$(c_i,2)$$$.",
+      "If there are multiple solutions, output any of those. It can be proven that if the solution exists, then there is a solution that uses at most m$$$m$$$ lamps."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 4\n0 -1 1\n4 0 -2 2",
+      "output": "Yes\n2\n-2 0"
+    },
+    {
+      "input": "2 2\n3 4\n2 6",
+      "output": "No"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你正在规划一个仓库房间的照明。该房间的横截面由天花板(直线 y=2$$$y=2$$$)和地板(直线 y=0$$$y=0$$$)组成。房间是无限的，向左右两侧无限延伸。为了照亮房间，必须在天花板上安装一些灯，每盏灯都会向所有可能的向下方向发光。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "天花板很难看(可以看到所有管道和电线)，因此将安装一层美观的吊顶(位于直线 y=1$$$y=1$$$)。为了让灯光穿过吊顶，在不同的位置开了 n$$$n$$$ 个针尖大小的孔(针孔)。对于每个针孔，每盏灯的光都会沿一条直线穿过它。这样，地板上就会有一些点被照亮。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/b9ae730ec5dca8cc73f7c6fddd90345766316d22.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了达到所需的照明效果，必须照亮地板上的 m$$$m$$$ 个互不相同的点(这些点可以由一盏或多盏灯照亮)。地板上的其他点都不能被照亮。给定 n$$$n$$$ 个针孔的坐标，以及需要照亮的 m$$$m$$$ 个地板点的坐标，请判断能否在天花板上安装一些灯，使得且仅使得所需的点被照亮。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤2000$$$1 \\leq n, m \\leq 2\\,000$$$)，分别表示针孔数量和需要照亮的点数。第二行包含 n$$$n$$$ 个互不相同的整数 a1$$$a_1$$$、…$$$\\ldots$$$、an$$$a_n$$$(−108≤ai≤108$$$-10^8 \\leq a_i \\leq 10^8$$$)，表示第 i$$$i$$$ 个针孔位于坐标 (ai,1)$$$(a_i,1)$$$。第三行包含 m$$$m$$$ 个整数 b1$$$b_1$$$、…$$$\\ldots$$$、bm$$$b_m$$$(−108≤ai≤108$$$-10^8 \\leq a_i \\leq 10^8$$$)，表示需要照亮的第 i$$$i$$$ 个地板点位于坐标 (bi,0)$$$(b_i,0)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果无法满足要求，输出 \"No\"。否则输出 \"Yes\"，并在下一行输出一个整数 k$$$k$$$(1≤k≤m$$$1 \\leq k \\leq m$$$)，表示灯的数量。第三行输出 k$$$k$$$ 个互不相同的整数 c1$$$c_1$$$、…$$$\\ldots$$$、ck$$$c_k$$$(−109≤ci≤109$$$-10^9 \\leq c_i \\leq 10^9$$$)，表示第 i$$$i$$$ 盏灯应安装在坐标 (ci,2)$$$(c_i,2)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在多个解，输出其中任意一个即可。可以证明，如果解存在，那么一定存在一种至多使用 m$$$m$$$ 盏灯的方案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 针孔",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "code": "GYM106158B",
+  "letter": "B",
+  "title": "B. Magic Circle",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106158/problem/B",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "$n$ wizards stood in a circle and decided to perform $q$ rituals.",
+      "We number the wizards from $1$ to $n$ in a clockwise direction. The $i$-th ritual involves wizard number $k$ if there exists a non-negative integer $x$ such that $(\\mathit{first}_i + \\mathit{step}_i \\cdot x - 1) \\bmod n + 1 = k$, where mod is the modulus operation. For better understanding, it is worth looking at the illustration in the example.",
+      "Initially, each wizard had $10^{18}$ units of mana. The $i$-th ritual changes the mana of the involved wizards by $\\mathit{cost}_i$. That is, if $\\mathit{cost}_i > 0$, the mana increases by $|\\mathit{cost}_i|$ units; if $\\mathit{cost}_i < 0$, it decreases by $|\\mathit{cost}_i|$ units; and if $\\mathit{cost}_i = 0$, it remains unchanged.",
+      "Determine the number of the wizard with the most mana after all $q$ rituals. If there are several, choose the one with the smallest number.",
+      "**Scoring**",
+      "The tests for this problem consist of ten groups. Points for each group are awarded only if all tests of the group and all tests of the required groups are passed.",
+      "- Group 1 (10 points): $n, q \\le 5000$; $n$ is a multiple of $\\mathit{step}_i$ for all $i$; no required groups\n- Group 2 (10 points): $n, q \\le 5000$; $\\mathit{step}_i \\le n$ for all $i$; requires group 1\n- Group 3 (10 points): $n, q \\le 5000$; requires groups 1, 2\n- Group 4 (10 points): $\\mathit{first}_i = \\mathit{first}_j$ for all $i, j$; $n$ is a multiple of $\\mathit{step}_i$ for all $i$; no required groups\n- Group 5 (10 points): $\\mathit{step}_i = \\mathit{step}_j$ for all $i, j$; $n$ is a multiple of $\\mathit{step}_i$ for all $i$; no required groups\n- Group 6 (10 points): $n$ is a multiple of $\\mathit{step}_i$ for all $i$; requires groups 1, 4, 5\n- Group 7 (10 points): $\\mathit{first}_i = \\mathit{first}_j$ for all $i, j$; $\\mathit{step}_i \\le n$ for all $i$; requires group 4\n- Group 8 (10 points): $\\mathit{step}_i = \\mathit{step}_j$ for all $i, j$; $\\mathit{step}_i \\le n$ for all $i$; requires group 5\n- Group 9 (10 points): $\\mathit{step}_i \\le n$ for all $i$; requires groups 1, 2, 4–8\n- Group 10 (10 points): no additional constraints; requires groups 1–9"
+    ],
+    "input": [
+      "The first line contains two integers $n$ and $q$ ($1 \\le n, q \\le 2 \\cdot 10^5$).",
+      "In the $i$-th of the following $q$ lines, there are 3 integers $\\mathit{first}_i$, $\\mathit{step}_i$, and $\\mathit{cost}_i$ ($1 \\le \\mathit{first}_i \\le n$; $1 \\le \\mathit{step}_i \\le 10^9$; $-10^9 \\le \\mathit{cost}_i \\le 10^9$)."
+    ],
+    "output": [
+      "Output a single number — the number of the wizard with the most mana after all $q$ rituals. If there are several, choose the one with the smallest number."
+    ],
+    "note": [
+      "The original statement ships as a PDF and includes an illustration for the example; see the problem page on Codeforces."
+    ]
+  },
+  "examples": [
+    {
+      "input": "28 3\n28 12 8\n18 4 4\n3 1 2",
+      "output": "4"
+    }
+  ],
+  "titleZh": {
+    "0": "B. 魔法圈",
+    "caiyun": "B. 魔法圈",
+    "youdao": "B.魔法圈",
+    "deepl": "B.魔术圈",
+    "iflyrec": "B.魔法圈",
+    "ai": "B. 魔法圆环",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "$n$ 巫师们站成一圈，决定进行 $q$ 仪式。",
+        "youdao": "$q$巫师们围成一圈，决定执行$q$仪式。",
+        "deepl": "$n$巫师们围成一圈，决定举行$q$仪式。",
+        "iflyrec": "$n$巫师们站成一圈，决定举行$q$仪式。",
+        "ai": "$n$ 名巫师围成一圈，并决定进行 $q$ 次仪式。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "我们在顺时针方向上给巫师编号从 $1$ 到 $n$。如果存在一个非负整数 $x$，使得 $(\\mathit{first}_i + \\mathit{step}_i \\cdot x - 1) \\bmod n + 1 = k$，其中 mod 是模运算，则 $i$ 第一个仪式涉及巫师编号 $k$。为了更好地理解，值得参考示例中的插图。",
+        "youdao": "我们按顺时针方向从$1$到$n$编号向导。如果存在一个非负整数$x$，使得$(\\mathit{first}_i + \\mathit{step}_i \\cdot x - 1) \\bmod n + 1 = k$，那么$i$-th仪式涉及巫师数$k$，其中mod是模数运算。为了更好地理解，值得查看示例中的插图。",
+        "deepl": "我们按顺时针方向从$1$到$n$给巫师编号。如果存在一个非负整数 $x$，使得 $(\\mathit{first}_i + \\mathit{step}_i \\cdot x - 1) \\bmod n + 1 = k$，其中 mod 是模运算，则 $i$-th 仪式涉及向导编号 $k$。为了更好地理解，我们不妨看看示例中的插图。",
+        "iflyrec": "我们按顺时针方向从$1$到$n$对向导进行编号。如果存在非负整数$x$使得$(\\mathit{first}_i + \\mathit{step}_i \\cdot x - 1) \\bmod n + 1 = k$，则第$i$个仪式涉及向导数$k$，其中mod是模数运算。为了更好地理解，有必要查看示例中的插图。",
+        "ai": "我们沿顺时针方向将巫师编号为 $1$ 到 $n$。如果存在一个非负整数 $x$ 使得 $(\\mathit{first}_i + \\mathit{step}_i \\cdot x - 1) \\bmod n + 1 = k$，则第 $i$ 次仪式会涉及编号为 $k$ 的巫师，其中 mod 表示取模运算。为了更好地理解，建议查看样例中的图示。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "最初，每位魔法师的魔力都是 $10^{18}$ 单位。$i$ 仪式将相关魔法师的魔力改变 $\\mathit{cost}_i$。也就是说，如果是 $\\mathit{cost}_i > 0$，魔力增加 $|\\mathit{cost}_i|$ 单位;如果是 $\\mathit{cost}_i < 0$，魔力减少 $|\\mathit{cost}_i|$ 单位;如果是 $\\mathit{cost}_i = 0$，魔力保持不变。",
+        "youdao": "最初，每个巫师有$10^{18}$单位的法力。$i$-仪式改变了$\\mathit{cost}_i$法师的法力。也就是说，如果$\\mathit{cost}_i > 0$，魔法值增加$|\\mathit{cost}_i|$个单位；如果$\\mathit{cost}_i < 0$，则减少$|\\mathit{cost}_i|$个单位；如果$\\mathit{cost}_i = 0$，它保持不变。",
+        "deepl": "最初，每个巫师都有 $10^{18}$ 个单位的法力值。第$i$个仪式会将参与仪式的巫师的法力值改变$\\mathit{cost}_i$个单位。也就是说，如果$\\mathit{cost}_i > 0$，法力值增加$|\\mathit{cost}_i|$个单位；如果$\\mathit{cost}_i < 0$，法力值减少$|\\mathit{cost}_i|$个单位；如果$\\mathit{cost}_i = 0$，法力值保持不变。",
+        "iflyrec": "最初，每个巫师都有$10^{18}$个法力单位。第$i$个仪式将相关巫师的法力值改变$\\mathit{cost}_i$。也就是说，如果$\\mathit{cost}_i > 0$，则法力增加$|\\mathit{cost}_i|$个单位；如果$\\mathit{cost}_i < 0$，则法力减少$|\\mathit{cost}_i|$个单位；如果$\\mathit{cost}_i = 0$，则法力保持不变。",
+        "ai": "起初，每名巫师拥有 $10^{18}$ 点法力值。第 $i$ 次仪式会使涉及到的巫师的法力值改变 $\\mathit{cost}_i$。也就是说，如果 $\\mathit{cost}_i > 0$，法力值增加 $|\\mathit{cost}_i|$ 点；如果 $\\mathit{cost}_i < 0$，则减少 $|\\mathit{cost}_i|$ 点；如果 $\\mathit{cost}_i = 0$，则保持不变。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "确定所有 $q$ 仪式后法力最高的巫师数量。如果有多个，选择数量最少的那个。",
+        "youdao": "在所有$q$个仪式后，确定拥有最多法力的巫师的数量。如果有几个，选择数字最小的那个。",
+        "deepl": "确定所有 $q$ 仪式后法力值最高的巫师的编号。如果有几个，则选择数字最小的一个。",
+        "iflyrec": "确定在所有$q$仪式后拥有最多法力的巫师的数量。如果有几个，就选择数字最小的那个。",
+        "ai": "确定完成所有 $q$ 次仪式后法力值最多的巫师编号。如果有多个，选择编号最小的那个。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "** 计分 **",
+        "youdao": "* * * *",
+        "deepl": "**评分**",
+        "iflyrec": "**得分**",
+        "ai": "评分",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "这个问题的测试由十个小组组成。只有通过该小组的所有测试和所需小组的所有测试，才能获得每个小组的分数。",
+        "youdao": "这道题的测试分为十组。只有当该组的所有测试和要求的组的所有测试都通过时，每个组才能得分。",
+        "deepl": "本题的测试包括十组。每组的分数只有在该组的所有测试和所要求的组的所有测试都通过的情况下才能获得。",
+        "iflyrec": "这个问题的测试由十组组成。只有在该组的所有测试和所需组的所有测试都通过的情况下，才能获得每组的分数。",
+        "ai": "本题的测试分为十组。只有通过该组的所有测试以及所有必需组的所有测试，才能获得该组的分数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "组 1(10 个点):$n, q \\le 5000$;$n$ 是所有 $i$ 的 $\\mathit{step}_i$ 的倍数;无必要组\n组 2(10 分):$n, q \\le 5000$;$\\mathit{step}_i \\le n$ 用于所有 $i$;需要组 1\n第 3 组 (10 分):$n, q \\le 5000$;需要第 1、2 组\n第 4 组 (10 个点):对于所有 $i, j$,$\\mathit{first}_i = \\mathit{first}_j$;对于所有 $i$,$n$ 是 $\\mathit{step}_i$ 的倍数;无必要组\n第 5 组 (10 个点):对于所有 $i, j$,$\\mathit{step}_i = \\mathit{step}_j$;对于所有 $i$,$n$ 是 $\\mathit{step}_i$ 的倍数;无必要组\n组 6(10 个点):$n$ 是所有 $i$ 的 $\\mathit{step}_i$ 的倍数;需要组 1、4、5\n第 7 组 (10 分):$\\mathit{first}_i = \\mathit{first}_j$ 适用于所有 $i, j$,$\\mathit{step}_i \\le n$ 适用于所有 $i$，需要第 4 组\n第 8 组 (10 分):所有 $i, j$ 的 $\\mathit{step}_i = \\mathit{step}_j$;所有 $i$ 的 $\\mathit{step}_i \\le n$;需要第 5 组\n第 9 组 (10 分):$\\mathit{step}_i \\le n$ 适用于所有 $i$;需要第 1、2、4-8 组\n第 10 组 (10 分):无额外限制;需要第 1-9 组",
+        "youdao": "-第一组(10分）：$n, q \\le 5000$；$n$是所有$i$的$\\mathit{step}_i$的倍数；没有必要的组\n-第二组(10分）：$n, q \\le 5000$；$\\mathit{step}_i \\le n$ for all $i$；要求第一组\n-第三组(10分）：$n, q \\le 5000$；需要第1、2组\n-第四组(10分）：所有$i, j$得分为$\\mathit{first}_i = \\mathit{first}_j$；$n$是所有$i$的$\\mathit{step}_i$的倍数；没有必要的组\n-第五组(10分）：所有$i, j$得分$\\mathit{step}_i = \\mathit{step}_j$；$n$是所有$i$的$\\mathit{step}_i$的倍数；没有必要的组\n第6组(10分）：$n$是$\\mathit{step}_i$的倍数，所有$i$；需要第1、4、5组\n-第七组(10分）：所有$i, j$得分为$\\mathit{first}_i = \\mathit{first}_j$；$\\mathit{step}_i \\le n$为所有$i$；需要第4组\n-第8组(10分）：所有$i, j$得分为$\\mathit{step}_i = \\mathit{step}_j$；$\\mathit{step}_i \\le n$为所有$i$；需要第5组\n-第9组(10分）：$\\mathit{step}_i \\le n$所有$i$；需要1、2、4-8组\n-第10组(10分）：无额外限制；1-9组",
+        "deepl": "- 第 1 组(10 分）：$n, q \\le 5000$；$n$是所有$i$的$\\mathit{step}_i$的倍数；不要求分组\n- 第 2 组(10 分）：$n, q \\le 5000$；$\\mathit{step}_i \\le n$为所有$i$的倍数；要求有第 1 组\n- 第 3 组(10 分）：$n, q \\le 5000$；要求有第 1、2 组\n- 第 4 组(10 分）：所有$i, j$都是$\\mathit{first}_i = \\mathit{first}_j$；所有$i$都是$n$的倍数$\\mathit{step}_i$；不要求组别\n- 第 5 组(10 分）：所有$i, j$的$\\mathit{step}_i = \\mathit{step}_j$；所有$i$的$n$是$\\mathit{step}_i$的倍数；没有要求的分组\n- 第 6 组(10 分）：$n$是所有$i$的$\\mathit{step}_i$的倍数；要求有第 1、4、5 组\n- 第 7 组(10 分）：所有$i, j$都是$\\mathit{first}_i = \\mathit{first}_j$；所有$i$都是$\\mathit{step}_i \\le n$；要求有第 4 组\n- 第 8 组(10 分）：所有$i, j$的$\\mathit{step}_i = \\mathit{step}_j$；所有$i$的$\\mathit{step}_i \\le n$；要求第 5 组\n- 第 9 组(10 分）：所有$i$的$\\mathit{step}_i \\le n$；要求第 1、2、4-8 组\n- 第 10 组(10 分）：无附加限制；要求第 1-9 组",
+        "iflyrec": "-组1(10点）：$n, q \\le 5000$$n$是$\\mathit{step}_i$的倍数，适用于所有$i$不需要的组-第二组(10分）:$n, q \\le 5000$$\\mathit{step}_i \\le n$对于所有$i$需要组1-组3(10点）：$n, q \\le 5000$需要组1，2-第四组(10分）:$\\mathit{first}_i = \\mathit{first}_j$对于所有$i, j$$n$是$\\mathit{step}_i$的倍数对于所有$i$没有必需组-第五组(10分）:$\\mathit{step}_i = \\mathit{step}_j$对于所有$i, j$$n$是$\\mathit{step}_i$的倍数对于所有$i$没有必需组-第六组(10分）:$n$是$\\mathit{step}_i$的倍数，因为所有$i$都需要组1、4、5-第七组(10分）:$\\mathit{first}_i = \\mathit{first}_j$对于所有$i, j$$\\mathit{step}_i \\le n$对于所有$i$需要组4-第8组(10分）:$\\mathit{step}_i = \\mathit{step}_j$对于所有$i, j$$\\mathit{step}_i \\le n$对于所有$i$需要组5-第9组(10分）:$\\mathit{step}_i \\le n$对于所有$i$需要组1、2、4–8-第10组(10分）：第1-9组无额外限制",
+        "ai": "- 第 1 组(10 分)：$n, q \\le 5000$；对于所有 $i$，$n$ 是 $\\mathit{step}_i$ 的倍数；无必需组\n- 第 2 组(10 分)：$n, q \\le 5000$；对于所有 $i$，$\\mathit{step}_i \\le n$；需要第 1 组\n- 第 3 组(10 分)：$n, q \\le 5000$；需要第 1、2 组\n- 第 4 组(10 分)：对于所有 $i, j$，$\\mathit{first}_i = \\mathit{first}_j$；对于所有 $i$，$n$ 是 $\\mathit{step}_i$ 的倍数；无必需组\n- 第 5 组(10 分)：对于所有 $i, j$，$\\mathit{step}_i = \\mathit{step}_j$；对于所有 $i$，$n$ 是 $\\mathit{step}_i$ 的倍数；无必需组\n- 第 6 组(10 分)：对于所有 $i$，$n$ 是 $\\mathit{step}_i$ 的倍数；需要第 1、4、5 组\n- 第 7 组(10 分)：对于所有 $i, j$，$\\mathit{first}_i = \\mathit{first}_j$；对于所有 $i$，$\\mathit{step}_i \\le n$；需要第 4 组\n- 第 8 组(10 分)：对于所有 $i, j$，$\\mathit{step}_i = \\mathit{step}_j$；对于所有 $i$，$\\mathit{step}_i \\le n$；需要第 5 组\n- 第 9 组(10 分)：对于所有 $i$，$\\mathit{step}_i \\le n$；需要第 1、2、4–8 组\n- 第 10 组(10 分)：无额外约束；需要第 1–9 组",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含两个整数 $n$ 和 $q$($1 \\le n, q \\le 2 \\cdot 10^5$)。",
+        "youdao": "第一行包含两个整数$n$和$q$ ($1 \\le n, q \\le 2 \\cdot 10^5$）。",
+        "deepl": "第一行包含两个整数 $n$ 和 $q$ ($1 \\le n, q \\le 2 \\cdot 10^5$）。",
+        "iflyrec": "第一行包含两个整数$n$和$q$($1 \\le n, q \\le 2 \\cdot 10^5$）。",
+        "ai": "第一行包含两个整数 $n$ 和 $q$($1 \\le n, q \\le 2 \\cdot 10^5$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "在以下 $q$ 行的第 $i$ 行中，有 3 个整数 $\\mathit{first}_i$、$\\mathit{step}_i$ 和 $\\mathit{cost}_i$($1 \\le \\mathit{first}_i \\le n$、$1 \\le \\mathit{step}_i \\le 10^9$、$-10^9 \\le \\mathit{cost}_i \\le 10^9$)。",
+        "youdao": "在以下$q$行的$i$-第一行中，有3个整数$\\mathit{first}_i$， $\\mathit{step}_i$和$\\mathit{cost}_i$ ($1 \\le \\mathit{first}_i \\le n$; $1 \\le \\mathit{step}_i \\le 10^9$; $-10^9 \\le \\mathit{cost}_i \\le 10^9$）。",
+        "deepl": "在下面$q$行的$i$-th 中，有 3 个整数$\\mathit{first}_i$、$\\mathit{step}_i$和$\\mathit{cost}_i$($1 \\le \\mathit{first}_i \\le n$; $1 \\le \\mathit{step}_i \\le 10^9$; $-10^9 \\le \\mathit{cost}_i \\le 10^9$）。",
+        "iflyrec": "在以下$q$行的第$i$行中，有3个整数$\\mathit{first}_i$、$\\mathit{step}_i$和$\\mathit{cost}_i$($1 \\le \\mathit{first}_i \\le n$$1 \\le \\mathit{step}_i \\le 10^9$$-10^9 \\le \\mathit{cost}_i \\le 10^9$）。",
+        "ai": "在接下来的 $q$ 行中，第 $i$ 行包含 3 个整数 $\\mathit{first}_i$、$\\mathit{step}_i$ 和 $\\mathit{cost}_i$($1 \\le \\mathit{first}_i \\le n$；$1 \\le \\mathit{step}_i \\le 10^9$；$-10^9 \\le \\mathit{cost}_i \\le 10^9$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "输出一个数字——在所有 $q$ 仪式后，拥有最多魔力的巫师的数量。如果有多个，请选择数量最小的那个。",
+        "youdao": "输出一个数字-在所有$q$仪式后拥有最多法力的巫师的数量。如果有几个，选择数字最小的那个。",
+        "deepl": "输出一个数字 - 在所有 $q$ 仪式后法力值最高的巫师的数字。如果有几个，则选择数字最小的一个。",
+        "iflyrec": "输出单个数字——在所有$q$仪式后拥有最多法力的巫师的数字。如果有几个，就选择数字最小的那个。",
+        "ai": "输出一个数字——完成所有 $q$ 次仪式后，拥有最多法力值的巫师编号。如果有多个，选择编号最小的那个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "原始声明以 PDF 格式发布，并包含示例的插图;请参阅 Codeforces 上的问题页面。",
+        "youdao": "原始声明以PDF格式发布，并包含示例的插图；请参阅Codeforces上的问题页面。",
+        "deepl": "原始声明以 PDF 格式提供，包括示例插图；请参阅 Codeforces 上的问题页面。",
+        "iflyrec": "原始声明以PDF格式发布，并包括示例的插图（请参阅CodeForces上的问题页面）。",
+        "ai": "原题面以 PDF 形式提供，并包含样例插图；请参见 Codeforces 上的题目页面。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.108Z",
+  "translatedBy": [
+    "iflyrec"
+  ]
+}

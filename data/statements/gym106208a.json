@@ -1,0 +1,115 @@
+{
+  "code": "GYM106208A",
+  "letter": "A",
+  "title": "A. Interval and Expected Value",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106208/problem/A",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an integer interval [l,r]$$$[l,r]$$$. At first, your score sco$$$sco$$$ is equal to 0$$$0$$$.",
+      "Repeat the following process:",
+      "Choose an integer x∈[l,r]$$$x\\in [l,r]$$$ uniformly at random, and update sco:=sco+x$$$sco := sco + x$$$.",
+      "If l=r$$$l=r$$$, stop. Otherwise, replace [l,r]$$$[l,r]$$$ by a uniformly random proper subinterval of [l,r]$$$[l,r]$$$ and go back to step 1. In other words, letting len=r−l+1$$$len=r-l+1$$$, there are len(len+1)2−1$$$\\frac{len(len+1)}{2}-1$$$ proper subintervals of [l,r]$$$[l,r]$$$, each chosen with equal probability.",
+      "Your task is to find the expected value of sco$$$sco$$$. Output the answer modulo 998244353$$$998\\,244\\,353$$$.",
+      "Formally, let M=998244353$$$M = 998\\,244\\,353$$$. It can be shown that the answer can be expressed as an irreducible fraction pq$$$\\frac{p}{q}$$$, where p$$$p$$$ and q$$$q$$$ are integers and q≢0(modM)$$$q \\not \\equiv 0 \\pmod{M}$$$. Output the integer equal to p⋅q−1modM$$$p \\cdot q^{-1} \\bmod M$$$. In other words, output such an integer x$$$x$$$ that 0≤x<M$$$0 \\le x  \\lt  M$$$ and x⋅q≡p(modM)$$$x \\cdot q \\equiv p \\pmod{M}$$$."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤105$$$1 \\le t \\le 10^5$$$). The description of the test cases follows.",
+      "The only line of each testcase contains two integers l$$$l$$$ and r$$$r$$$ (1≤l≤r≤2⋅106$$$1 \\le l \\le r \\le 2 \\cdot 10^6$$$)."
+    ],
+    "output": [
+      "For each test case, print a single integer — the answer modulo 998244353$$$998\\,244\\,353$$$."
+    ],
+    "note": [
+      "In the first test case, the initial interval is [2,3]$$$[2,3]$$$. The following events occur with equal probability:",
+      "sco$$$sco$$$ is increased by 2$$$2$$$ →$$$\\rightarrow$$$ [l,r]$$$[l,r]$$$ becomes [2,2]$$$[2,2]$$$ →$$$\\rightarrow$$$ sco$$$sco$$$ is increased by 2$$$2$$$ →$$$\\rightarrow$$$ stop. The final value of sco$$$sco$$$ is 4$$$4$$$.",
+      "sco$$$sco$$$ is increased by 3$$$3$$$ →$$$\\rightarrow$$$ [l,r]$$$[l,r]$$$ becomes [3,3]$$$[3,3]$$$ →$$$\\rightarrow$$$ sco$$$sco$$$ is increased by 3$$$3$$$ →$$$\\rightarrow$$$ stop. The final value of sco$$$sco$$$ is 5$$$5$$$.",
+      "sco$$$sco$$$ is increased by 3$$$3$$$ →$$$\\rightarrow$$$ [l,r]$$$[l,r]$$$ becomes [2,2]$$$[2,2]$$$ →$$$\\rightarrow$$$ sco$$$sco$$$ is increased by 2$$$2$$$ →$$$\\rightarrow$$$ stop. The final value of sco$$$sco$$$ is 5$$$5$$$.",
+      "sco$$$sco$$$ is increased by 3$$$3$$$ →$$$\\rightarrow$$$ [l,r]$$$[l,r]$$$ becomes [3,3]$$$[3,3]$$$ →$$$\\rightarrow$$$ sco$$$sco$$$ is increased by 3$$$3$$$ →$$$\\rightarrow$$$ stop. The final value of sco$$$sco$$$ is 6$$$6$$$.",
+      "Thus, the expected value of sco$$$sco$$$ is 4+5+5+64=5$$$\\frac{4+5+5+6}{4}=5$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n2 3\n1 1\n5 8\n1 2000000",
+      "output": "5\n1\n454755778\n881266578"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个整数区间 [l,r]$$$[l,r]$$$。初始时，你的分数 sco$$$sco$$$ 等于 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "重复执行以下过程：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从 [l,r]$$$x\\in [l,r]$$$ 中等概率随机选择一个整数 x，并将 sco 更新为 sco+x$$$sco := sco + x$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 l=r$$$l=r$$$，则停止。否则，将 [l,r]$$$[l,r]$$$ 替换为 [l,r]$$$[l,r]$$$ 的一个等概率随机真子区间，然后返回第 1 步。换句话说，令 len=r−l+1$$$len=r-l+1$$$，则 [l,r]$$$[l,r]$$$ 有 len(len+1)2−1$$$\\frac{len(len+1)}{2}-1$$$ 个真子区间，每个区间被选中的概率相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是求 sco$$$sco$$$ 的期望值。输出答案对 998244353$$$998\\,244\\,353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地说，令 M=998244353$$$M = 998\\,244\\,353$$$。可以证明，答案可以表示为最简分数 pq$$$\\frac{p}{q}$$$，其中 p$$$p$$$ 和 q$$$q$$$ 为整数，且 q≢0(modM)$$$q \\not \\equiv 0 \\pmod{M}$$$。输出等于 p⋅q−1modM$$$p \\cdot q^{-1} \\bmod M$$$ 的整数。换句话说，输出一个满足 0≤x<M$$$0 \\le x  \\lt  M$$$ 且 x⋅q≡p(modM)$$$x \\cdot q \\equiv p \\pmod{M}$$$ 的整数 x$$$x$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例数量 t$$$t$$$ (1≤t≤105$$$1 \\le t \\le 10^5$$$)。接下来给出各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例仅包含一行，其中有两个整数 l$$$l$$$ 和 r$$$r$$$(1≤l≤r≤2⋅106$$$1 \\le l \\le r \\le 2 \\cdot 10^6$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数——答案对 998244353$$$998\\,244\\,353$$$ 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，初始区间为 [2,3]$$$[2,3]$$$。接下来以相同的概率发生以下事件：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "sco$$$sco$$$ 增加 2$$$2$$$ →$$$\\rightarrow$$$ [l,r]$$$[l,r]$$$ 变为 [2,2]$$$[2,2]$$$ →$$$\\rightarrow$$$ sco$$$sco$$$ 增加 2$$$2$$$ →$$$\\rightarrow$$$ 停止。sco$$$sco$$$ 的最终值为 4$$$4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "sco$$$sco$$$ 增加 3$$$3$$$ →$$$\\rightarrow$$$ [l,r]$$$[l,r]$$$ 变为 [3,3]$$$[3,3]$$$ →$$$\\rightarrow$$$ sco$$$sco$$$ 增加 3$$$3$$$ →$$$\\rightarrow$$$ 停止。sco$$$sco$$$ 的最终值为 5$$$5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "sco$$$sco$$$ 增加 3$$$3$$$ →$$$\\rightarrow$$$ [l,r]$$$[l,r]$$$ 变为 [2,2]$$$[2,2]$$$ →$$$\\rightarrow$$$ sco$$$sco$$$ 增加 2$$$2$$$ →$$$\\rightarrow$$$ 停止。sco$$$sco$$$ 的最终值为 5$$$5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "sco$$$sco$$$ 增加 3$$$3$$$ →$$$\\rightarrow$$$ [l,r]$$$[l,r]$$$ 变为 [3,3]$$$[3,3]$$$ →$$$\\rightarrow$$$ sco$$$sco$$$ 增加 3$$$3$$$ →$$$\\rightarrow$$$ 停止。sco$$$sco$$$ 的最终值为 6$$$6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，sco$$$sco$$$ 的期望值为 4+5+5+64=5$$$\\frac{4+5+5+6}{4}=5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 区间与期望值",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

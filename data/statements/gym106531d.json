@@ -1,0 +1,153 @@
+{
+  "code": "GYM106531D",
+  "letter": "D",
+  "title": "D. DJ Sandália's Electric Trio",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106531/problem/D",
+  "difficulty": "*1900",
+  "timeLimit": "0.5 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Every February, the streets of Salvador surrender to the Carnaval, and no one feels it more than DJ Sandália, the legendary selector who rides the oldest trio elétrico circling the Campo Grande circuit. The folião crowd shouts song requests all night long, and DJ Sandália has carefully written down, for each of the N$$$N$$$ songs in the repertoire, an integer \"weight\" Pi$$$P_i$$$ that measures how badly the crowd wants to hear song i$$$i$$$.",
+      "To keep the party fair, DJ Sandália wants to pick the next song at random so that song i$$$i$$$ is chosen with probability exactly Pi/(P1+P2+⋯+PN)$$$P_i / (P_1 + P_2 + \\dots + P_N)$$$.",
+      "There is just one problem: the trio's randomizer is a battered piece of hardware from the 1980s, and the only thing it knows how to do is to draw an integer uniformly at random from a given range. It cannot weight anything by itself; every draw it produces is perfectly uniform.",
+      "Working only with this uniform randomizer, DJ Sandália came up with the following strategy. First, choose a single integer K$$$K$$$ and build three arrays A$$$A$$$, B$$$B$$$ and C$$$C$$$, each of length N$$$N$$$. Then, to pick a song:",
+      "draw x$$$x$$$ uniformly from 1$$$1$$$ to N$$$N$$$;",
+      "draw y$$$y$$$ uniformly from 0$$$0$$$ to K$$$K$$$;",
+      "if y<Cx$$$y  \\lt  C_x$$$, play song Ax$$$A_x$$$; otherwise, play song Bx$$$B_x$$$.",
+      "Help DJ Sandália choose K$$$K$$$ and the arrays A$$$A$$$, B$$$B$$$ and C$$$C$$$ so that this procedure plays song i$$$i$$$ with probability exactly Pi/(P1+⋯+PN)$$$P_i / (P_1 + \\dots + P_N)$$$, for every song i$$$i$$$."
+    ],
+    "input": [
+      "The first line contains a single integer N$$$N$$$ (1≤N≤1000$$$1 \\leq N \\leq 1000$$$), the number of songs.",
+      "The second line contains N$$$N$$$ integers P1,P2,…,PN$$$P_1, P_2, \\dots, P_N$$$ (1≤Pi≤109$$$1 \\leq P_i \\leq 10^{9}$$$), the weight of each song."
+    ],
+    "output": [
+      "On the first line, print a single integer K$$$K$$$ (0≤K≤1018$$$0 \\leq K \\leq 10^{18}$$$).",
+      "On the second line, print N$$$N$$$ integers A1,…,AN$$$A_1, \\dots, A_N$$$ (1≤Ai≤N$$$1 \\leq A_i \\leq N$$$).",
+      "On the third line, print N$$$N$$$ integers B1,…,BN$$$B_1, \\dots, B_N$$$ (1≤Bi≤N$$$1 \\leq B_i \\leq N$$$).",
+      "On the fourth line, print N$$$N$$$ integers C1,…,CN$$$C_1, \\dots, C_N$$$ (0≤Ci≤K$$$0 \\leq C_i \\leq K$$$).",
+      "Your answer is accepted if, for every song i$$$i$$$, the probability that the described procedure plays song i$$$i$$$ equals Pi/(P1+⋯+PN)$$$P_i / (P_1 + \\dots + P_N)$$$ exactly. Any valid answer will be accepted."
+    ],
+    "note": [
+      "Explanation for example 1",
+      "With a single song, K=4$$$K = 4$$$ and the only bucket points to song 1$$$1$$$ on both sides, so song 1$$$1$$$ is always chosen.",
+      "Explanation for example 2",
+      "Here K=3$$$K = 3$$$. With the printed table, Pr[1]=14=P1S$$$\\Pr[1] = \\tfrac14 = \\tfrac{P_1}{S}$$$ and Pr[2]=34=P2S$$$\\Pr[2] = \\tfrac34 = \\tfrac{P_2}{S}$$$, so it is a valid answer.",
+      "Explanation for example 3",
+      "Here K=3$$$K = 3$$$. The printed table gives Pr[1]=Pr[2]=14$$$\\Pr[1] = \\Pr[2] = \\tfrac14$$$ and Pr[3]=12$$$\\Pr[3] = \\tfrac12$$$, matching Pi/S$$$P_i / S$$$. Any other valid table is also accepted."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n5",
+      "output": "4\n1\n1\n4"
+    },
+    {
+      "input": "2\n1 3",
+      "output": "3\n1 2\n2 2\n2 3"
+    },
+    {
+      "input": "3\n1 1 2",
+      "output": "3\n1 2 3\n3 3 3\n3 3 3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "每年二月，萨尔瓦多的街道都会沉浸在狂欢节的氛围中，而没有人比 DJ Sandália 更能感受到这一点——这位传奇的选曲师乘坐着沿 Campo Grande 环线巡游的最古老的 trio elétrico。狂欢者们整夜高喊着点歌请求，而 DJ Sandália 仔细地为曲目中的 N$$$N$$$ 首歌曲分别记下了一个整数“权重” Pi$$$P_i$$$，用于衡量人群有多么想听歌曲 i$$$i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了让派对公平，DJ Sandália 希望随机选择下一首歌曲，使得歌曲 i$$$i$$$ 被选中的概率恰好为 Pi/(P1+P2+⋯+PN)$$$P_i / (P_1 + P_2 + \\dots + P_N)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "但存在一个问题：这辆 trio 的随机装置是 20 世纪 80 年代的一件破旧硬件，而它唯一会做的事情，就是从给定范围内均匀随机抽取一个整数。它无法自行对任何东西加权；它每次产生的抽取结果都完全均匀。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "仅使用这个均匀随机装置，DJ Sandália 想出了如下策略。首先，选择一个整数 K$$$K$$$，并构造三个数组 A$$$A$$$、B$$$B$$$ 和 C$$$C$$$，它们的长度均为 N$$$N$$$。然后，要选择一首歌曲：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从 1$$$1$$$ 到 N$$$N$$$ 中均匀随机抽取 x$$$x$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从 0$$$0$$$ 到 K$$$K$$$ 中均匀随机抽取 y$$$y$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 y<Cx$$$y  \\lt  C_x$$$，播放歌曲 Ax$$$A_x$$$；否则，播放歌曲 Bx$$$B_x$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 DJ Sandália 选择 K$$$K$$$ 以及数组 A$$$A$$$、B$$$B$$$ 和 C$$$C$$$，使得对于每首歌曲 i$$$i$$$，该过程播放歌曲 i$$$i$$$ 的概率恰好为 Pi/(P1+⋯+PN)$$$P_i / (P_1 + \\dots + P_N)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 N$$$N$$$(1≤N≤1000$$$1 \\leq N \\leq 1000$$$)，表示歌曲的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 N$$$N$$$ 个整数 P1,P2,…,PN$$$P_1, P_2, \\dots, P_N$$$(1≤Pi≤109$$$1 \\leq P_i \\leq 10^{9}$$$)，表示每首歌曲的权重。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出一个整数 K$$$K$$$(0≤K≤1018$$$0 \\leq K \\leq 10^{18}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行输出 N$$$N$$$ 个整数 A1,…,AN$$$A_1, \\dots, A_N$$$(1≤Ai≤N$$$1 \\leq A_i \\leq N$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行输出 N$$$N$$$ 个整数 B1,…,BN$$$B_1, \\dots, B_N$$$(1≤Bi≤N$$$1 \\leq B_i \\leq N$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第四行输出 N$$$N$$$ 个整数 C1,…,CN$$$C_1, \\dots, C_N$$$(0≤Ci≤K$$$0 \\leq C_i \\leq K$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每首歌曲 i$$$i$$$，若所描述过程播放歌曲 i$$$i$$$ 的概率恰好等于 Pi/(P1+⋯+PN)$$$P_i / (P_1 + \\dots + P_N)$$$，则你的答案将被接受。任何合法答案都将被接受。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例 1 的解释",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当只有一首歌曲时，K=4$$$K = 4$$$，且唯一的桶在两侧都指向歌曲 1$$$1$$$，因此总是选择歌曲 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "样例 2 说明",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这里 K=3$$$K = 3$$$。根据给出的表格，Pr[1]=14=P1S$$$\\Pr[1] = \\tfrac14 = \\tfrac{P_1}{S}$$$ 且 Pr[2]=34=P2S$$$\\Pr[2] = \\tfrac34 = \\tfrac{P_2}{S}$$$，因此这是一个合法答案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "样例 3 说明",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这里 K=3$$$K = 3$$$。给出的表格中，Pr[1]=Pr[2]=14$$$\\Pr[1] = \\Pr[2] = \\tfrac14$$$ 且 Pr[3]=12$$$\\Pr[3] = \\tfrac12$$$，与 Pi/S$$$P_i / S$$$ 相符。任何其他合法的表格也会被接受。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. DJ Sandália 的电音花车",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

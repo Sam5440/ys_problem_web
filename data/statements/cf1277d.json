@@ -1,0 +1,96 @@
+{
+  "code": "CF1277D",
+  "letter": "D",
+  "title": "D. Let's Play the Words?",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1277/D",
+  "difficulty": "1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Polycarp has n$$$n$$$ different binary words. A word called binary if it contains only characters '0' and '1'. For example, these words are binary: \"0001\", \"11\", \"0\" and \"0011100\".",
+      "Polycarp wants to offer his set of n$$$n$$$ binary words to play a game \"words\". In this game, players name words and each next word (starting from the second) must start with the last character of the previous word. The first word can be any. For example, these sequence of words can be named during the game: \"0101\", \"1\", \"10\", \"00\", \"00001\".",
+      "Word reversal is the operation of reversing the order of the characters. For example, the word \"0111\" after the reversal becomes \"1110\", the word \"11010\" after the reversal becomes \"01011\".",
+      "Probably, Polycarp has such a set of words that there is no way to put them in the order correspondent to the game rules. In this situation, he wants to reverse some words from his set so that:",
+      "the final set of n$$$n$$$ words still contains different words (i.e. all words are unique);",
+      "there is a way to put all words of the final set of words in the order so that the final sequence of n$$$n$$$ words is consistent with the game rules.",
+      "Polycarp wants to reverse minimal number of words. Please, help him."
+    ],
+    "input": [
+      "The first line of the input contains one integer t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$) — the number of test cases in the input. Then t$$$t$$$ test cases follow.",
+      "The first line of a test case contains one integer n$$$n$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2\\cdot10^5$$$) — the number of words in the Polycarp's set. Next n$$$n$$$ lines contain these words. All of n$$$n$$$ words aren't empty and contains only characters '0' and '1'. The sum of word lengths doesn't exceed 4⋅106$$$4\\cdot10^6$$$. All words are different.",
+      "Guaranteed, that the sum of n$$$n$$$ for all test cases in the input doesn't exceed 2⋅105$$$2\\cdot10^5$$$. Also, guaranteed that the sum of word lengths for all test cases in the input doesn't exceed 4⋅106$$$4\\cdot10^6$$$."
+    ],
+    "output": [
+      "Print answer for all of t$$$t$$$ test cases in the order they appear.",
+      "If there is no answer for the test case, print -1. Otherwise, the first line of the output should contain k$$$k$$$ (0≤k≤n$$$0 \\le k \\le n$$$) — the minimal number of words in the set which should be reversed. The second line of the output should contain k$$$k$$$ distinct integers — the indexes of the words in the set which should be reversed. Words are numerated from 1$$$1$$$ to n$$$n$$$ in the order they appear. If k=0$$$k=0$$$ you can skip this line (or you can print an empty line). If there are many answers you can print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n4\n0001\n1000\n0011\n0111\n3\n010\n101\n0\n2\n00000\n00001\n4\n01\n001\n0001\n00001",
+      "output": "1\n3 \n-1\n0\n\n2\n1 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Polycarp 有 n$$$n$$$ 个互不相同的二进制单词。如果一个单词只包含字符 '0' 和 '1'，则称其为二进制单词。例如，以下单词都是二进制单词：\"0001\"、\"11\"、\"0\" 和 \"0011100\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Polycarp 想用他的 n$$$n$$$ 个二进制单词来玩一个名为“words”的游戏。在这个游戏中，玩家依次说出单词，并且每个后续单词(从第二个开始)都必须以前一个单词的最后一个字符开头。第一个单词可以是任意单词。例如，在游戏过程中可以说出如下单词序列：\"0101\"、\"1\"、\"10\"、\"00\"、\"00001\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "单词翻转是将字符顺序反转的操作。例如，单词 \"0111\" 翻转后变为 \"1110\"，单词 \"11010\" 翻转后变为 \"01011\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可能 Polycarp 有这样一组单词，无法按照游戏规则将它们排列起来。在这种情况下，他希望将集合中的一些单词翻转，使得：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最终的 n$$$n$$$ 个单词组成的集合中仍然没有重复单词(即所有单词都互不相同)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "存在一种将最终单词集合中的所有单词排列顺序的方法，使得由 n$$$n$$$ 个单词组成的最终序列符合游戏规则。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Polycarp 想要翻转最少数量的单词。请帮助他。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$)——输入中的测试用例数量。接下来是 t$$$t$$$ 个测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一个测试用例的第一行包含一个整数 n$$$n$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2\\cdot10^5$$$)——Polycarp 集合中的单词数量。接下来的 n$$$n$$$ 行包含这些单词。n$$$n$$$ 个单词均非空，且只包含字符 '0' 和 '1'。所有单词长度之和不超过 4⋅106$$$4\\cdot10^6$$$。所有单词互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证输入中所有测试用例的 n$$$n$$$ 之和不超过 2⋅105$$$2\\cdot10^5$$$。此外，保证输入中所有测试用例的单词长度之和不超过 4⋅106$$$4\\cdot10^6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "按照测试用例出现的顺序输出全部 t$$$t$$$ 个测试用例的答案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果该测试用例不存在答案，输出 -1。否则，输出的第一行应包含 k$$$k$$$(0≤k≤n$$$0 \\le k \\le n$$$)——集合中需要翻转的单词的最少数量。输出的第二行应包含 k$$$k$$$ 个互不相同的整数——集合中需要翻转的单词的编号。单词按照其出现顺序从 1$$$1$$$ 编号到 n$$$n$$$。如果 k=0$$$k=0$$$，可以省略此行(或者输出一个空行)。如果有多个答案，输出其中任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 一起来玩单词？",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "code": "GYM105242B",
+  "letter": "B",
+  "title": "B. Tree Tour",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105242/problem/B",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Given a tree consisting of $$$n$$$ nodes.",
+      "Is there a walk that visits all the nodes of the tree at least once and at most twice?",
+      "Note that the node you start the walk at is considered visited at the beginning.",
+      "A walk is a sequence of nodes $$$v_1, v_2, \\dots, v_k$$$ such that for each $$$i$$$ ($$$1 \\le i  \\lt  k$$$), $$$v_i$$$ and $$$v_{i + 1}$$$ are connected by an edge."
+    ],
+    "input": [
+      "The first line of the input contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^5$$$) — the number of testcases.",
+      "The first line of each testcase contains a single integer $$$n$$$ ($$$2 \\le n \\le 2 \\cdot 10^5$$$) — the number of nodes in the tree.",
+      "Each of the following $$$n - 1$$$ lines of each testcase consists of two space-separated integers $$$u$$$ and $$$v$$$ ($$$1 \\le u, v \\le n$$$) denoting an edge between nodes $$$u$$$ and $$$v$$$ in the tree.",
+      "It is guaranteed that the given edges form a tree.",
+      "It is guaranteed that the sum of $$$n$$$ over all the testcases will not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each testcase, print \"YES\" (without quotes) if there exists a walk that satisfies the conditions, otherwise print \"NO\" (without quotes).",
+      "You can output \"YES\" and \"NO\" in any case (for example, strings \"yEs\", \"yes\", \"Yes\" and \"YES\" will be recognized as a positive response)."
+    ],
+    "note": [
+      "Explanation of the first testcase: we can start at node $$$1$$$ then go to node $$$2$$$ and stop there.",
+      "Explanation of the second testcase: a valid walk may look like this: $$$5$$$ — $$$3$$$ — $$$4$$$ — $$$3$$$ — $$$1$$$ — $$$2$$$ — $$$1$$$.",
+      "Notice that it is not necessary to start at node $$$1$$$.",
+      "Nodes $$$1$$$ and $$$3$$$ were visited twice, whereas nodes $$$2$$$, $$$4$$$, and $$$5$$$ were visited once. Thus, each node is visited at least once and at most twice and the walk is valid.",
+      "Explanation of the third testcase: it can be shown that there does not exist a walk that satisfies the conditions."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2\n1 2\n5\n1 2\n1 3\n3 4\n3 5\n5\n2 1\n1 3\n1 4\n1 5",
+      "output": "YES\nYES\nNO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一棵由 $$$n$$$ 个节点组成的树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "是否存在一条游走，使得树中的所有节点都至少被访问一次且至多被访问两次？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，游走开始时所在的节点在一开始就被视为已访问。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一条游走是一个节点序列 $$$v_1, v_2, \\dots, v_k$$$，满足对于每个 $$$i$$$ ($$$1 \\le i  \\lt  k$$$)，$$$v_i$$$ 和 $$$v_{i + 1}$$$ 之间都有一条边相连。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果存在满足条件的游走，则输出 \"YES\"（不含引号），否则输出 \"NO\"（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以以任意大小写输出 \"YES\" 和 \"NO\"（例如，字符串 \"yEs\"、\"yes\"、\"Yes\" 和 \"YES\" 都会被识别为肯定回答）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个测试用例的解释：我们可以从节点 $$$1$$$ 出发，然后前往节点 $$$2$$$ 并在那里停止。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二个测试用例的解释：一种合法的游走可能如下所示：$$$5$$$ — $$$3$$$ — $$$4$$$ — $$$3$$$ — $$$1$$$ — $$$2$$$ — $$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，不必从节点 $$$1$$$ 出发。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "节点 $$$1$$$ 和 $$$3$$$ 被访问了两次，而节点 $$$2$$$、$$$4$$$ 和 $$$5$$$ 被访问了一次。因此，每个节点至少被访问一次且至多被访问两次，这次游走是合法的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三个测试用例的解释：可以证明不存在满足条件的游走。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 $$$t$$$ ($$$1 \\le t \\le 10^5$$$)，表示测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 $$$n$$$ ($$$2 \\le n \\le 2 \\cdot 10^5$$$)，表示树中的节点数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例接下来的 $$$n - 1$$$ 行中，每行包含两个以空格分隔的整数 $$$u$$$ 和 $$$v$$$ ($$$1 \\le u, v \\le n$$$)，表示树中节点 $$$u$$$ 和 $$$v$$$ 之间的一条边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证给出的边构成一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 $$$n$$$ 的总和不超过 $$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 树上巡游",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

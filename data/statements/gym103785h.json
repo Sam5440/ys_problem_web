@@ -1,0 +1,114 @@
+{
+  "code": "GYM103785H",
+  "letter": "H",
+  "title": "H. Perfect Array",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103785/problem/H",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Abhinav is a scientist who works in the field of perfect arrays. What's a perfect array you ask, let me explain —",
+      "A perfect array of size n$$$n$$$ is made by performing n$$$n$$$ perfect operations on an empty array and –",
+      "The p$$$p$$$-th perfect operation involves choosing a random integer q$$$q$$$ between 1$$$1$$$ and p$$$p$$$ (1≤q≤p)$$$(1\\leq q \\leq p)$$$, and inserting it in the q$$$q$$$-th position. So, for instance if before the p$$$p$$$-th operation array was like A1,A2...Aq−1,Aq,Aq+1....Ap−1$$$A_{1},A_{2}...A_{q-1},A_{q},A_{q+1}....A_{p-1}$$$, then after the p$$$p$$$-th operation array becomes A1,A2...Aq−1,q,Aq,Aq+1,Aq+2....Ap−1$$$A_{1},A_{2}...A_{q-1},q,A_{q},A_{q+1},A_{q+2}....A_{p-1}$$$.",
+      "Harsh wants to become Abhinav's assistant and to check Harsh's intelligence, Abhinav gives him an array Arr$$$Arr$$$ of size n$$$n$$$ and asks him if it is a perfect array or not. And if Arr$$$Arr$$$ is a perfect array, Harsh is required to give the sequence of n$$$n$$$ operations that built up Arr$$$Arr$$$.",
+      "Harsh is too dumb to solve this and asks for your help."
+    ],
+    "input": [
+      "The first line of input contains an integer n$$$n$$$ (1≤n≤200)$$$(1 \\leq n \\leq 200)$$$ – the size of given array.",
+      "The next line of input contains n$$$n$$$ integers, Arr1,Arr2,....Arrn$$$Arr_{1}, Arr_{2},....Arr_{n}$$$ (1≤Arri≤N)$$$(1 \\leq Arr_{i} \\leq N)$$$ – the elements of given array."
+    ],
+    "output": [
+      "If the given array is not perfect then print \"NO\".",
+      "Else, in the first line print \"YES\" and in the next line print the sequence of n$$$n$$$ operations that built up the array."
+    ],
+    "note": [
+      "In the first sample testcase,",
+      "1$$$1$$$-st operation – Add 1$$$1$$$ at 1$$$1$$$-st index. Array becomes [1]$$$[1]$$$",
+      "2$$$2$$$-nd operation – Add 1$$$1$$$ at 1$$$1$$$-st index. Array becomes [1,1]$$$[1,1]$$$",
+      "3$$$3$$$-rd operation – Add 2$$$2$$$ at 2$$$2$$$-nd index. Array becomes [1,2,1]$$$[1,2,1]$$$",
+      "In the second sample testcase, there is no possible sequence of operations that can form the array [2,2]$$$[2,2]$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 2 1",
+      "output": "YES\n1 1 2"
+    },
+    {
+      "input": "2\n2 2",
+      "output": "NO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Abhinav 是一名从事完美数组研究的科学家。你问什么是完美数组？让我来解释一下——",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一个大小为 n$$$n$$$ 的完美数组，是通过对一个空数组执行 n$$$n$$$ 次完美操作得到的，并且 –",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 p$$$p$$$ 次完美操作需要在 1$$$1$$$ 到 p$$$p$$$ 之间随机选择一个整数 q$$$q$$$(1≤q≤p)$$$(1\\leq q \\leq p)$$$，并将其插入第 q$$$q$$$ 个位置。例如，如果在第 p$$$p$$$ 次操作之前，数组为 A1,A2...Aq−1,Aq,Aq+1....Ap−1$$$A_{1},A_{2}...A_{q-1},A_{q},A_{q+1}....A_{p-1}$$$，那么在第 p$$$p$$$ 次操作之后，数组将变为 A1,A2...Aq−1,q,Aq,Aq+1,Aq+2....Ap−1$$$A_{1},A_{2}...A_{q-1},q,A_{q},A_{q+1},A_{q+2}....A_{p-1}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Harsh 想成为 Abhinav 的助手。为了检验 Harsh 的智力，Abhinav 给他一个大小为 n$$$n$$$ 的数组 Arr$$$Arr$$$，并询问它是否为完美数组。如果 Arr$$$Arr$$$ 是完美数组，Harsh 还需要给出构造 Arr$$$Arr$$$ 的 n$$$n$$$ 次操作序列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Harsh 太笨了，无法解决这个问题，因此向你寻求帮助。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$(1≤n≤200)$$$(1 \\leq n \\leq 200)$$$，表示给定数组的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的下一行包含 n$$$n$$$ 个整数 Arr1,Arr2,....Arrn$$$Arr_{1}, Arr_{2},....Arr_{n}$$$(1≤Arri≤N)$$$(1 \\leq Arr_{i} \\leq N)$$$，表示给定数组中的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果给定数组不是完美数组，则输出“NO”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，在第一行输出 \"YES\"，在下一行输出构造出该数组的 n$$$n$$$ 次操作序列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 1$$$1$$$ 次操作——在第 1$$$1$$$ 个位置加上 1$$$1$$$。数组变为 [1]$$$[1]$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 2$$$2$$$ 次操作——在第 1$$$1$$$ 个位置加上 1$$$1$$$。数组变为 [1,1]$$$[1,1]$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 3$$$3$$$ 次操作——在第 2$$$2$$$ 个位置加上 2$$$2$$$。数组变为 [1,2,1]$$$[1,2,1]$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，不存在能够构成数组 [2,2]$$$[2,2]$$$ 的操作序列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "H. 完美数组",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

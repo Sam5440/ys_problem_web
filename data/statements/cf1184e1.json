@@ -1,0 +1,105 @@
+{
+  "code": "CF1184E1",
+  "letter": "E1",
+  "title": "E1. Daleks' Invasion (easy)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1184/E1",
+  "difficulty": "1900",
+  "timeLimit": "6 seconds",
+  "memoryLimit": "128 megabytes",
+  "sections": {
+    "legend": [
+      "Heidi found out that the Daleks have created a network of bidirectional Time Corridors connecting different destinations (at different times!). She suspects that they are planning another invasion on the entire Space and Time. In order to counter the invasion, she plans to deploy a trap in the Time Vortex, along a carefully chosen Time Corridor. She knows that tinkering with the Time Vortex is dangerous, so she consulted the Doctor on how to proceed. She has learned the following:",
+      "Different Time Corridors require different amounts of energy to keep stable.",
+      "Daleks are unlikely to use all corridors in their invasion. They will pick a set of Corridors that requires the smallest total energy to maintain, yet still makes (time) travel possible between any two destinations (for those in the know: they will use a minimum spanning tree).",
+      "Setting the trap may modify the energy required to keep the Corridor stable.",
+      "Heidi decided to carry out a field test and deploy one trap, placing it along the first Corridor. But she needs to know whether the Daleks are going to use this corridor after the deployment of the trap.",
+      "She gives you a map of Time Corridors (an undirected graph) with energy requirements for each Corridor.",
+      "For a Corridor c$$$c$$$, Emax(c)$$$E_{max}(c)$$$ is the largest e≤109$$$e \\le 10^9$$$ such that if we changed the required amount of energy of c$$$c$$$ to e$$$e$$$, then the Daleks may still be using c$$$c$$$ in their invasion (that is, it belongs to some minimum spanning tree). Your task is to calculate Emax(c1)$$$E_{max}(c_1)$$$ for the Corridor c1$$$c_1$$$ that Heidi plans to arm with a trap, which is the first edge in the graph."
+    ],
+    "input": [
+      "The first line contains integers n$$$n$$$ and m$$$m$$$ (2≤n≤105$$$2 \\leq n \\leq 10^5$$$, n−1≤m≤106$$$n - 1 \\leq m \\leq 10^6$$$), number of destinations to be invaded and the number of Time Corridors.",
+      "Each of the next m$$$m$$$ lines describes a Corridor: destinations a$$$a$$$, b$$$b$$$ and energy e$$$e$$$ (1≤a,b≤n$$$1 \\leq a, b \\leq n$$$, a≠b$$$a \\neq b$$$, 0≤e≤109$$$0 \\leq e \\leq 10^9$$$).",
+      "It's guaranteed, that no pair {a,b}$$$\\{a, b\\}$$$ will repeat and that the graph is connected — that is, it is possible to travel between any two destinations using zero or more Time Corridors."
+    ],
+    "output": [
+      "Output a single integer: Emax(c1)$$$E_{max}(c_1)$$$ for the first Corridor c1$$$c_1$$$ from the input."
+    ],
+    "note": [
+      "After the trap is set, the new energy requirement for the first Corridor may be either smaller, larger, or equal to the old energy requiremenet.",
+      "In the example, if the energy of the first Corridor is set to 4$$$4$$$ or less, then the Daleks may use the set of Corridors {{1,2},{2,3}}$$$\\{ \\{ 1,2 \\}, \\{ 2,3 \\} \\}$$$ (in particular, if it were set to less than 4$$$4$$$, then this would be the only set of Corridors that they would use). However, if it is larger than 4$$$4$$$, then they will instead use the set {{2,3},{3,1}}$$$\\{ \\{2,3\\}, \\{3,1\\} \\}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n1 2 8\n2 3 3\n3 1 4",
+      "output": "4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Heidi 发现 Daleks 已经建立了一个由双向时间走廊组成的网络，连接着不同的目的地（而且是在不同的时间！）。她怀疑他们正计划对整个空间与时间再次发动入侵。为了应对这次入侵，她计划在时间漩涡中、沿一条精心选择的时间走廊部署陷阱。她知道对时间漩涡动手脚是危险的，于是向 Doctor 请教接下来该怎么做。她了解到以下信息：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "不同的时间走廊需要不同数量的能量来保持稳定。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Daleks 在入侵时不太可能使用所有走廊。他们会选择一组维护所需总能量最小的走廊，同时仍然使得任意两个目的地之间能够进行（时间）旅行（内行的人知道：他们会使用一棵最小生成树）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "设置陷阱可能会改变维持时间走廊稳定所需的能量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Heidi 决定进行一次实地测试并部署一个陷阱，将其放置在第一条时间走廊上。但她需要知道，在部署陷阱后，Daleks 是否会使用这条走廊。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "她给你一张时间走廊的地图（一个无向图），其中标明了每条时间走廊的能量需求。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于一条时间走廊 c$$$c$$$，Emax(c)$$$E_{max}(c)$$$ 是满足 e≤109$$$e \\le 10^9$$$ 的最大 e，使得如果将 c$$$c$$$ 所需的能量修改为 e$$$e$$$，那么 Daleks 在入侵过程中仍可能使用 c$$$c$$$(即，它属于某棵最小生成树)。你的任务是计算 Heidi 计划设置陷阱的时间走廊 c1$$$c_1$$$ 的 Emax(c1)$$$E_{max}(c_1)$$$，该走廊是图中的第一条边。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含整数 n$$$n$$$ 和 m$$$m$$$(2≤n≤105$$$2 \\leq n \\leq 10^5$$$，n−1≤m≤106$$$n - 1 \\leq m \\leq 10^6$$$)，分别表示将要被入侵的目的地数量和时间走廊数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中的每一行描述一条时间走廊：目的地 a$$$a$$$、b$$$b$$$ 以及能量 e$$$e$$$(1≤a,b≤n$$$1 \\leq a, b \\leq n$$$，a≠b$$$a \\neq b$$$，0≤e≤109$$$0 \\leq e \\leq 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证不存在重复的点对 {a,b}$$$\\{a, b\\}$$$，且图是连通的——也就是说，可以使用零条或更多条时间走廊在任意两个目的地之间通行。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数：输入中的第一条走廊 c1$$$c_1$$$ 的 Emax(c1)$$$E_{max}(c_1)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "设置陷阱后，第一条走廊新的能量需求可能比原来的能量需求小、大或相等。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在该示例中，如果第一条走廊的能量被设置为 4$$$4$$$ 或更低，那么 Daleks 可能会使用走廊集合 {{1,2},{2,3}}$$$\\{ \\{ 1,2 \\}, \\{ 2,3 \\} \\}$$$(特别地，如果将其设置为小于 4$$$4$$$，那么这将是它们唯一会使用的走廊集合)。但是，如果它大于 4$$$4$$$，那么它们将改为使用集合 {{2,3},{3,1}}$$$\\{ \\{2,3\\}, \\{3,1\\} \\}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E1. Daleks 的入侵（简单版）",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

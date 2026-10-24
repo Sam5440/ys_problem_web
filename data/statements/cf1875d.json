@@ -1,0 +1,115 @@
+{
+  "code": "CF1875D",
+  "letter": "D",
+  "title": "D. Jellyfish and Mex",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1875/D",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array of n$$$n$$$ nonnegative integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$.",
+      "Let m$$$m$$$ be a variable that is initialized to 0$$$0$$$, Jellyfish will perform the following operation n$$$n$$$ times:",
+      "select an index i$$$i$$$ (1≤i≤|a|$$$1 \\leq i \\leq |a|$$$) and delete ai$$$a_i$$$ from a$$$a$$$.",
+      "add MEX(a)†$$$\\operatorname{MEX}(a)^{\\dagger}$$$ to m$$$m$$$.",
+      "Now Jellyfish wants to know the minimum possible final value of m$$$m$$$ if he performs all the operations optimally.",
+      "†$$$^{\\dagger}$$$ The MEX (minimum excluded) of an array is the smallest non-negative integer that does not belong to the array. For instance:",
+      "The MEX of [2,2,1]$$$[2,2,1]$$$ is 0$$$0$$$, because 0$$$0$$$ does not belong to the array.",
+      "The MEX of [3,1,0,1]$$$[3,1,0,1]$$$ is 2$$$2$$$, because 0$$$0$$$ and 1$$$1$$$ belong to the array, but 2$$$2$$$ does not.",
+      "The MEX of [0,3,1,2]$$$[0,3,1,2]$$$ is 4$$$4$$$ because 0$$$0$$$, 1$$$1$$$, 2$$$2$$$, and 3$$$3$$$ belong to the array, but 4$$$4$$$ does not."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤5000$$$1 \\leq t \\leq 5000$$$). The description of the test cases follows.",
+      "The first line of each test case contains a single integer n$$$n$$$ (1≤n≤5000$$$1 \\leq n \\leq 5000$$$) — the size of the array.",
+      "The second line of each test case contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (0≤ai≤109$$$0 \\leq a_i \\leq 10^9$$$) — the integers in the array.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 5000$$$5000$$$."
+    ],
+    "output": [
+      "For each test case, output a single integer — the minimum value of m$$$m$$$ if the operations are performed optimally."
+    ],
+    "note": [
+      "In the first test case, we delete elements from a$$$a$$$ in the following order: [5,2,1,0,3,0,4,0]→[5,2,0,3,0,4,0]→[5,2,0,3,4,0]→[5,2,3,4,0]→[5,2,3,4]→[5,2,4]→[2,4]→[4]→[ ]$$$[5,2,\\color{red}{1},0,3,0,4,0] \\to [5,2,0,3,\\color{red}{0},4,0] \\to [5,2,\\color{red}{0},3,4,0] \\to [5,2,3,4,\\color{red}{0}] \\to [5,2,\\color{red}{3},4] \\to [\\color{red}{5},2,4] \\to [\\color{red}{2},4] \\to [\\color{red}{4}] \\to [~]$$$. The value of m$$$m$$$ will be 1+1+1+0+0+0+0+0=3$$$1+1+1+0+0+0+0+0=3$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n8\n5 2 1 0 3 0 4 0\n2\n1 2\n5\n1 0 2 114514 0\n8\n0 1 2 0 1 2 0 3",
+      "output": "3\n0\n2\n7"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个包含 n$$$n$$$ 个非负整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ 的数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "令 m$$$m$$$ 为一个初始值为 0$$$0$$$ 的变量，Jellyfish 将执行以下操作 n$$$n$$$ 次：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择一个下标 i$$$i$$$(1≤i≤|a|$$$1 \\leq i \\leq |a|$$$)，并从 a$$$a$$$ 中删除 ai$$$a_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将 MEX(a)†$$$\\operatorname{MEX}(a)^{\\dagger}$$$ 加到 m$$$m$$$ 中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在 Jellyfish 想知道，如果他以最优方式执行所有操作，m$$$m$$$ 最终可能达到的最小值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "†$$$^{\\dagger}$$$ 数组的 MEX(未出现的最小值)是数组中不存在的最小非负整数。例如：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "数组 [2,2,1]$$$[2,2,1]$$$ 的 MEX 是 0$$$0$$$，因为 0$$$0$$$ 不属于该数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "数组 [3,1,0,1]$$$[3,1,0,1]$$$ 的 MEX 是 2$$$2$$$，因为 0$$$0$$$ 和 1$$$1$$$ 属于该数组，但 2$$$2$$$ 不属于该数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "数组 [0,3,1,2]$$$[0,3,1,2]$$$ 的 MEX 是 4$$$4$$$，因为 0$$$0$$$、1$$$1$$$、2$$$2$$$ 和 3$$$3$$$ 属于该数组，但 4$$$4$$$ 不属于该数组。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤5000$$$1 \\leq t \\leq 5000$$$)。下面给出测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤5000$$$1 \\leq n \\leq 5000$$$)——数组的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(0≤ai≤109$$$0 \\leq a_i \\leq 10^9$$$)——数组中的整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 5000$$$5000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数——如果以最优方式执行操作，m$$$m$$$ 的最小值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，我们按以下顺序从 a$$$a$$$ 中删除元素：[5,2,1,0,3,0,4,0]→[5,2,0,3,0,4,0]→[5,2,0,3,4,0]→[5,2,3,4,0]→[5,2,3,4]→[5,2,4]→[2,4]→[4]→[ ]$$$[5,2,\\color{red}{1},0,3,0,4,0] \\to [5,2,0,3,\\color{red}{0},4,0] \\to [5,2,\\color{red}{0},3,4,0] \\to [5,2,3,4,\\color{red}{0}] \\to [5,2,\\color{red}{3},4] \\to [\\color{red}{5},2,4] \\to [\\color{red}{2},4] \\to [\\color{red}{4}] \\to [~]$$$。m$$$m$$$ 的值为 1+1+1+0+0+0+0+0=3$$$1+1+1+0+0+0+0+0=3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Jellyfish 与 Mex",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

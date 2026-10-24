@@ -1,0 +1,70 @@
+{
+  "code": "GYM104395F",
+  "letter": "F",
+  "title": "F. Cycles",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104395/problem/F",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Trotles is given a set of n$$$n$$$ nodes and wants to construct a functional graph where the in-degree and out-degree of each node is 1$$$1$$$. Luckily for him, he is already given the some of the edges. For the rest of the edges he randomly chooses a node with the out-degree 0$$$0$$$ and a node with in-degree 0$$$0$$$ (they can be the same node) and draw an edge from the first one to the second one. Calculate the expected number of cycles in the graph modulo 109+7$$$10^9 + 7$$$."
+    ],
+    "input": [
+      "The first line contain n$$$n$$$ and m$$$m$$$, the number of nodes and the number of given edges respectively. 1≤m≤n≤105$$$1 \\le m \\le n \\le 10^5$$$",
+      "The next m$$$m$$$ lines contain two numbers a$$$a$$$ and b$$$b$$$ which means that there is an edge drawn between nodes a$$$a$$$ and b$$$b$$$. 1≤a,b≤n$$$1 \\le a, b \\le n$$$",
+      "It is guaranteed that the in-degree and out-degree of each node given in the test case will be less than or equal to 1$$$1$$$."
+    ],
+    "output": [
+      "Print a single integer representing the expected number of cycles.",
+      "If the number of cycles is pq$$$\\frac{p}{q}$$$ then print p⋅q−1(mod109+7)$$$p \\cdot q^{-1} \\pmod {10^9 + 7}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 2\n2 4\n3 1",
+      "output": "500000005"
+    },
+    {
+      "input": "9 6\n9 4\n6 6\n7 7\n1 8\n3 1\n8 2",
+      "output": "833333343"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Trotles 得到了一组包含 n$$$n$$$ 个节点的集合，并希望构造一个函数图，使每个节点的入度和出度均为 1$$$1$$$。幸运的是，他已经得到了一些边。对于其余的边，他会随机选择一个出度为 0$$$0$$$ 的节点和一个入度为 0$$$0$$$ 的节点(它们可以是同一个节点)，并从前者向后者连一条边。计算图中环数量的期望值，并对 109+7$$$10^9 + 7$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含 n$$$n$$$ 和 m$$$m$$$，分别表示节点数和给定边的数量。1≤m≤n≤105$$$1 \\le m \\le n \\le 10^5$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行包含两个数 a$$$a$$$ 和 b$$$b$$$，表示节点 a$$$a$$$ 和 b$$$b$$$ 之间有一条边。1≤a,b≤n$$$1 \\le a, b \\le n$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证测试用例中给出的每个节点的入度和出度都小于等于 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示环数量的期望值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果环的数量是 pq$$$\\frac{p}{q}$$$，那么输出 p⋅q−1(mod109+7)$$$p \\cdot q^{-1} \\pmod {10^9 + 7}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 环",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "code": "GYM105383C",
+  "letter": "C",
+  "title": "C. Cards",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105383/problem/C",
+  "difficulty": "*2300",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Diana is a student who likes to play various types of board games. Today, she receives a deck of cards from her teacher as her birthday gift!",
+      "The deck of cards is special: there are n$$$n$$$ cards in the deck, and each card has a number on its front and another number on its back. Each number on the front or the back is an integer from 1$$$1$$$ to n$$$n$$$. Furthermore, all n$$$n$$$ numbers on the front are unique, and so are the n$$$n$$$ numbers on the back. In other words, numbers on the front and the back are two different permutations of numbers from 1$$$1$$$ to n$$$n$$$.",
+      "Apart from board games, Diana is also interested in mathematics and computer science. While she is playing with those cards, the concept of inversions in a permutation comes to her mind. An inversion is defined as a pair of indices (i,j)$$$(i, j)$$$ such that i<j$$$i  \\lt  j$$$ and the element at position i$$$i$$$ is greater than the element at position j$$$j$$$. In other words, an inversion represents a situation where two elements are \"out of order\" relative to their positions. A permutation has inversion count c$$$c$$$ if there are c$$$c$$$ inversions can be found within it.",
+      "Diana wonders if she could rearrange the cards in some order so that the permutation on the front has the same inversion count as the permutation on the back (she cannot flip or throw away some cards). She cannot solve the problem in a while, so she wants to hear your solution.",
+      "In formal, you are given two permutations of integers from 1$$$1$$$ to n$$$n$$$: a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ and b1,b2,…,bn$$$b_1,b_2,\\ldots,b_n$$$. You have to find another permutation of the first n$$$n$$$ positive integers p1,p2,…,pn$$$p_1,p_2,\\ldots,p_n$$$, such that a′=[ap1,ap2,…,apn]$$$a' = [a_{p_1}, a_{p_2}, \\ldots, a_{p_n}]$$$ and b′=[bp1,bp2,…,bpn]$$$b' = [b_{p_1}, b_{p_2}, \\ldots, b_{p_n}]$$$ have the same inversion count. Output the sequences a′$$$a'$$$ and b′$$$b'$$$."
+    ],
+    "input": [
+      "The first line of the input contains an integer n$$$n$$$, denoting the number cards in the deck. The second line of the input contains n$$$n$$$ integers a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$, where ai$$$a_i$$$ is the number on the front of the i$$$i$$$-th card. The third line of the input contains n$$$n$$$ integers b1,b2,…,bn$$$b_1,b_2,\\ldots,b_n$$$, where bi$$$b_i$$$ is the number on the back of the i$$$i$$$-th card.",
+      "Technical Specification",
+      "1≤n≤5×105$$$1 \\leq n \\leq 5 \\times 10^5$$$",
+      "1≤ai≤n$$$1 \\leq a_i \\leq n$$$ for i∈{1,2,…,n}$$$i\\in\\{1,2,\\ldots,n\\}$$$",
+      "1≤bi≤n$$$1 \\leq b_i \\leq n$$$ for i∈{1,2,…,n}$$$i\\in\\{1,2,\\ldots,n\\}$$$",
+      "It is guaranteed that a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ and b1,b2,…,bn$$$b_1,b_2,\\ldots,b_n$$$ are both permutations of integers 1,2,…,n$$$1,2,\\ldots,n$$$."
+    ],
+    "output": [
+      "If it is impossible to rearrange the cards so that the aforementioned condition is satisfied, print No. Otherwise, print Yes in the first line of the output. Then in the second line of the output, print n$$$n$$$ integers a′1,a′2,…,a′n$$$a'_1,a'_2,\\ldots,a'_n$$$, denoting the numbers on the front of the cards after the rearrangement. In the third line of the output, print n$$$n$$$ integers b′1,b′2,⋯,b′n$$$b'_1,b'_2,\\cdots,b'_n$$$, denoting the numbers on the back of the cards after the rearrangement.",
+      "If there are multiple possible solutions, print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 5 1 4 3\n4 2 5 3 1",
+      "output": "Yes\n3 1 5 2 4\n1 5 2 4 3"
+    },
+    {
+      "input": "4\n2 4 1 3\n3 1 2 4",
+      "output": "No"
+    },
+    {
+      "input": "10\n7 4 3 1 6 10 5 2 9 8\n8 6 2 9 5 10 7 1 4 3",
+      "output": "Yes\n2 3 8 1 4 5 9 6 7 10\n1 2 3 9 6 7 4 5 8 10"
+    },
+    {
+      "input": "7\n1 2 3 4 5 6 7\n1 2 3 4 5 6 7",
+      "output": "Yes\n1 2 3 4 5 6 7\n1 2 3 4 5 6 7"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Diana 是一名喜欢玩各种类型桌游的学生。今天，她从老师那里收到了一副卡牌作为生日礼物！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这副牌很特殊：牌堆中有 n$$$n$$$ 张牌，每张牌的正面有一个数字，背面还有另一个数字。正面或背面的每个数字都是一个从 1$$$1$$$ 到 n$$$n$$$ 的整数。此外，正面的所有 n$$$n$$$ 个数字互不相同，背面的所有 n$$$n$$$ 个数字也互不相同。换句话说，正面和背面的数字分别是从 1$$$1$$$ 到 n$$$n$$$ 的两个不同排列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "除了桌游之外，Diana 还对数学和计算机科学感兴趣。在玩这些卡片时，她想到了排列中的逆序对概念。逆序对被定义为一对下标 (i,j)$$$(i, j)$$$，满足 i<j$$$i  \\lt  j$$$，且位置 i$$$i$$$ 上的元素大于位置 j$$$j$$$ 上的元素。换句话说，逆序对表示两个元素相对于其位置顺序颠倒的情况。如果一个排列中有 c$$$c$$$ 个逆序对，则称其逆序对数量为 c$$$c$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Diana 想知道自己能否以某种顺序重新排列这些卡片，使得正面的排列与背面的排列具有相同的逆序对数量（她不能翻转或丢弃任何卡片）。她暂时无法解决这个问题，因此想听听你的解法。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地说，给定两个由 1$$$1$$$ 到 n$$$n$$$ 组成的整数排列 a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ 和 b1,b2,…,bn$$$b_1,b_2,\\ldots,b_n$$$。你需要找到前 n$$$n$$$ 个正整数的另一个排列 p1,p2,…,pn$$$p_1,p_2,\\ldots,p_n$$$，使得 a′=[ap1,ap2,…,apn]$$$a' = [a_{p_1}, a_{p_2}, \\ldots, a_{p_n}]$$$ 和 b′=[bp1,bp2,…,bpn]$$$b' = [b_{p_1}, b_{p_2}, \\ldots, b_{p_n}]$$$ 的逆序对数量相同。输出序列 a′$$$a'$$$ 和 b′$$$b'$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$，表示牌堆中的卡牌数量。输入的第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$，其中 ai$$$a_i$$$ 表示第 i$$$i$$$ 张卡牌正面的数字。输入的第三行包含 n$$$n$$$ 个整数 b1,b2,…,bn$$$b_1,b_2,\\ldots,b_n$$$，其中 bi$$$b_i$$$ 表示第 i$$$i$$$ 张卡牌背面的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "技术规格",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤n≤5×105$$$1 \\leq n \\leq 5 \\times 10^5$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 i∈{1,2,…,n}$$$i\\in\\{1,2,\\ldots,n\\}$$$，有 1≤ai≤n$$$1 \\leq a_i \\leq n$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 i∈{1,2,…,n}$$$i\\in\\{1,2,\\ldots,n\\}$$$，有 1≤bi≤n$$$1 \\leq b_i \\leq n$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ 和 b1,b2,…,bn$$$b_1,b_2,\\ldots,b_n$$$ 都是整数 1,2,…,n$$$1,2,\\ldots,n$$$ 的排列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果无法重新排列卡片使上述条件得到满足，请输出 No。否则，在输出的第一行输出 Yes。然后，在输出的第二行输出 n$$$n$$$ 个整数 a′1,a′2,…,a′n$$$a'_1,a'_2,\\ldots,a'_n$$$，表示重新排列后卡片正面的数字。在输出的第三行输出 n$$$n$$$ 个整数 b′1,b′2,⋯,b′n$$$b'_1,b'_2,\\cdots,b'_n$$$，表示重新排列后卡片背面的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在多个可行解，输出其中任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 卡片",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

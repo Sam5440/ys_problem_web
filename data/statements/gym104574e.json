@@ -1,0 +1,75 @@
+{
+  "code": "GYM104574E",
+  "letter": "E",
+  "title": "E. Shifty Shuffling",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104574/problem/E",
+  "difficulty": "*1100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are playing a strange card game involving undead attackers and botanical garden defenders. Your opponent is Deranged David, who plays on the side of the defenders, while you play on the side of the attackers.",
+      "This deck has 52 cards total, and would normally consist of cards like \"Lizard Walker,\" \"Sasquatch Ghoul,\" and \"Giga-Colossus.\" For simplicity, let's just number the cards, turning them into a standard deck (4 copies each of 1,2,3,...,13$$$1, 2, 3,..., 13$$$). Note that we take the ace to be 1 and the jack, queen, and king to be 11, 12, and 13, respectively.",
+      "At the beginning of the game, the deck is shuffled an arbitrary number of times. You shuffle the deck by perfectly interleaving the first and second halves of the deck. That is, given a deck of cards [a1,a2,…,a26,a27,…a52]$$$[a_1, a_2, …, a_{26}, a_{27}, … a_{52}]$$$, the first half of the deck is interleaved with the second half of the deck in an alternating order to form the new deck [a1,a27,a2,a28,…,a26,a52]$$$[a_1, a_{27}, a_2, a_{28}, … , a_{26}, a_{52}]$$$.",
+      "This game is not fair – you know that the cards labeled 1 (the aces) are by far the strongest card. You know that you can only win if all four aces start in the first half of the deck, e.g. between positions 1 and 26 inclusive.",
+      "Luckily, David has agreed to let you shuffle the cards. Given an initial permutation of the cards, can you determine if you can shuffle the deck (an arbitrary number of times) such that all four aces are in the first half of the deck, or are you doomed to succumb to Deranged David's defense?"
+    ],
+    "input": [
+      "The first and only line of input contains 52 space-separated integers a1,a2,...,a52$$$a_1, a_2, ... , a_{52}$$$, denoting the initial permutation of cards. Note that each integer between 1 and 13 inclusive will occur exactly 4 times."
+    ],
+    "output": [
+      "Output a single line: \"YES\" if you can guarantee all the aces wind up in the first half of the deck, or \"NO\" otherwise."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 5 9 7 9 11 12 13 8 7 13 2 12 1 10 10 3 7 4 3 4 8 8 3 5 4 1 11 5 1 10 4 2 13 3 2 9 12 6 6 6 12 9 6 11 10 8 5 2 7 13 11",
+      "output": "YES"
+    },
+    {
+      "input": "12 11 5 8 3 2 13 6 1 3 12 3 12 5 7 10 6 7 9 4 6 4 1 13 1 9 5 10 9 2 4 9 2 8 11 8 13 2 10 7 3 7 8 4 10 1 13 5 11 11 6 12",
+      "output": "NO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你正在玩一种奇怪的纸牌游戏，游戏中有亡灵攻击者和植物园防守者。你的对手是疯狂的 David，他扮演防守者，而你扮演攻击者。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这副牌一共有 52 张，通常由诸如“蜥蜴行者”“大脚怪食尸鬼”和“巨型巨像”之类的牌组成。为了简单起见，我们只给牌编号，将它们变成一副标准牌(1、2、3、……、13$$$1, 2, 3,..., 13$$$ 各有 4 张)。注意，A 视为 1，J、Q、K 分别视为 11、12、13。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "游戏开始时，这副牌会被任意次数地洗牌。洗牌的方式是将牌堆的前半部分与后半部分完美交错穿插。也就是说，给定一副牌 [a1,a2,…,a26,a27,…a52]$$$[a_1, a_2, …, a_{26}, a_{27}, … a_{52}]$$$，将牌堆的前半部分与后半部分交替穿插，组成新的牌堆 [a1,a27,a2,a28,…,a26,a52]$$$[a_1, a_{27}, a_2, a_{28}, … , a_{26}, a_{52}]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这个游戏并不公平——你知道标记为 1 的牌（A）强得多。你知道，只有当四张 A 都位于牌堆前半部分时，你才能获胜，例如，它们都位于第 1 至第 26 个位置（含端点）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "幸运的是，David 同意让你洗牌。给定一副初始牌序，你能否判断是否可以通过任意次数的洗牌，使四张 A 都位于牌堆前半部分？还是说你注定要败在疯狂的 David 的防守之下？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行也是唯一一行包含 52 个以空格分隔的整数 a1,a2,...,a52$$$a_1, a_2, ... , a_{52}$$$，表示初始牌序。注意，1 至 13(含端点)之间的每个整数都恰好出现 4 次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一行：如果你能保证所有 A 最终都位于牌堆的前半部分，则输出 \"YES\"；否则输出 \"NO\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 移位洗牌",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

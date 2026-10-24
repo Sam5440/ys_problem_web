@@ -1,0 +1,188 @@
+{
+  "code": "CF811D",
+  "letter": "D",
+  "title": "D. Vladik and Favorite Game",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/811/D",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem.",
+      "Vladik has favorite game, in which he plays all his free time.",
+      "Game field could be represented as n × m matrix which consists of cells of three types:",
+      "«.» — normal cell, player can visit it.",
+      "«F» — finish cell, player has to finish his way there to win. There is exactly one cell of this type.",
+      "«*» — dangerous cell, if player comes to this cell, he loses.",
+      "Initially player is located in the left top cell with coordinates (1, 1).",
+      "Player has access to 4 buttons \"U\", \"D\", \"L\", \"R\", each of them move player up, down, left and right directions respectively.",
+      "But it’s not that easy! Sometimes friends play game and change functions of buttons. Function of buttons \"L\" and \"R\" could have been swapped, also functions of buttons \"U\" and \"D\" could have been swapped. Note that functions of buttons can be changed only at the beginning of the game.",
+      "Help Vladik win the game!"
+    ],
+    "input": [
+      "First line contains two space-separated integers n and m (1 ≤ n, m ≤ 100) — number of rows and columns respectively.",
+      "Each of next n lines contains m characters describing corresponding row of field. Set of characters in field is described above.",
+      "Guaranteed that cell with coordinates (1, 1) is normal and there is at least one way from initial cell to finish cell without dangerous cells.",
+      "You can press buttons no more than 2·n·m times.",
+      "To press a button you should print \"U\", \"D\", \"L\", \"R\" in new line. It’s necessary to print newline character and flush output. After flushing buffer you should read answer from input data. Answer is the pair of space-separated integers x, y — new position of player. In case, if there is no cell in direction of moving, position will not change. If after any move player lost, in other words player move to dangerous cell, then x and y will be equal to  - 1.",
+      "If after any move player is in finish or dangerous cell, then you should terminate your program.",
+      "To finish output buffer (i. e. for operation flush) right after printing direction and newline you should do next:",
+      "fflush(stdout) in C++",
+      "System.out.flush() in Java",
+      "stdout.flush() in Python",
+      "flush(output) in Pascal",
+      "read documentation for other languages.",
+      "Hacks",
+      "To perform a hack you should use this format:",
+      {
+        "pre": "\nn m swapLR swapUD  \na_1  \na_2  \n...  \na_n"
+      },
+      "Where n, m — number of rows and columns in game field. swapLR is equal to 1 in case, when directions \"L’’ and \"R’’ is swapped, and equal to 0 otherwise. swapUD is equal to 1, when directions \"U’’ and \"D’’ is swapped, and equal to 0 otherwise. a1, a2, ..., an — description of corresponding rows of game field."
+    ],
+    "output": [],
+    "note": [
+      "In first test case all four directions swapped with their opposite directions. Protocol of interaction In more convenient form:",
+      "![](https://espresso.codeforces.com/72a61d8c41d19408adcbd41364091b2b1d7af2f1.png)",
+      "This test could be presenter for hack in following way:",
+      {
+        "pre": "\n4 3 1 1\n...\n**.\nF*.\n..."
+      }
+    ]
+  },
+  "examples": [
+    {
+      "input": "\nn m swapLR swapUD  \na_1  \na_2  \n...  \na_n",
+      "output": "4 3\n...\n**.\nF*.\n...\n1 1\n1 2\n1 3\n1 3\n2 3\n3 3\n4 3\n4 2\n4 1\n3 1"
+    },
+    {
+      "input": "R\nL\nL\nD\nU\nU\nU\nR\nR\nD",
+      "output": "\n4 3 1 1\n...\n**.\nF*.\n..."
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是一道交互题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vladik 有一款最喜欢的游戏，他把所有空闲时间都用来玩这款游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "游戏场地可以表示为一个 n × m 的矩阵，由以下三种类型的单元格组成：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "«.» —— 普通单元格，玩家可以访问它。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "«F» — 终点格，玩家必须走到这里才能获胜。这种格子恰好有一个。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "«*» — 危险格，如果玩家走到这个格子，就会输掉游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "初始时，玩家位于左上角的格子，坐标为 (1, 1)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "玩家可以使用 4 个按钮 \"U\"、\"D\"、\"L\"、\"R\"，它们分别使玩家向上、向下、向左和向右移动。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "但事情没那么简单！有时朋友们会玩这个游戏，并交换按钮的功能。按钮 \"L\" 和 \"R\" 的功能可能被交换，按钮 \"U\" 和 \"D\" 的功能也可能被交换。注意，按钮的功能只能在游戏开始时改变。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "帮助 Vladik 赢得游戏！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个用空格分隔的整数 n 和 m（1 ≤ n，m ≤ 100），分别表示行数和列数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n 行中的每一行包含 m 个字符，用于描述地图中对应的行。地图中的字符集合已在上文给出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证坐标为 (1，1) 的单元格是普通单元格，并且至少存在一条从初始单元格到终点单元格且不经过危险单元格的路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你至多可以按下 2·n·m 次按钮。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要按下按钮，你应在新的一行中输出 \"U\"、\"D\"、\"L\" 或 \"R\"。必须输出换行符并刷新输出缓冲区。刷新缓冲区后，你应从输入数据中读取答案。答案是一对用空格分隔的整数 x、y，表示玩家的新位置。如果移动方向上不存在单元格，则位置不会改变。如果玩家在任意一次移动后失败，换句话说，如果玩家移动到了危险单元格，那么 x 和 y 将等于  - 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果玩家在任意一次移动后位于终点单元格或危险单元格中，那么你应终止程序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要在输出方向和换行后立即完成输出缓冲区（即执行 flush 操作），你应该进行以下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 C++ 中使用 `fflush(stdout)`",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 Java 中使用 `System.out.flush()`",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 Python 中使用 `stdout.flush()`",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 Pascal 中使用 `flush(output)`",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其他语言请查阅相关文档。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "黑客数据",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要进行黑客测试，你应使用以下格式：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "其中，n、m 分别表示游戏场地的行数和列数。当方向 “L” 和 “R” 互换时，swapLR 等于 1，否则等于 0。当方向 “U” 和 “D” 互换时，swapUD 等于 1，否则等于 0。a1、a2、...、an 表示游戏场地中对应行的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，四个方向都与其相反方向互换。交互协议以更便于理解的形式表示为：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/72a61d8c41d19408adcbd41364091b2b1d7af2f1.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "该测试可以按以下方式作为黑客数据提供：",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Vladik 和他最喜欢的游戏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

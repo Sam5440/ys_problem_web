@@ -1,0 +1,114 @@
+{
+  "code": "CF1252C",
+  "letter": "C",
+  "title": "C. Even Path",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1252/C",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Pathfinding is a task of finding a route between two points. It often appears in many problems. For example, in a GPS navigation software where a driver can query for a suggested route, or in a robot motion planning where it should find a valid sequence of movements to do some tasks, or in a simple maze solver where it should find a valid path from one point to another point. This problem is related to solving a maze.",
+      "The maze considered in this problem is in the form of a matrix of integers A$$$A$$$ of N×N$$$N \\times N$$$. The value of each cell is generated from a given array R$$$R$$$ and C$$$C$$$ of N$$$N$$$ integers each. Specifically, the value on the ith$$$i^{th}$$$ row and jth$$$j^{th}$$$ column, cell (i,j)$$$(i,j)$$$, is equal to Ri+Cj$$$R_i + C_j$$$. Note that all indexes in this problem are from 1$$$1$$$ to N$$$N$$$.",
+      "A path in this maze is defined as a sequence of cells (r1,c1),(r2,c2),…,(rk,ck)$$$(r_1,c_1), (r_2,c_2), \\dots, (r_k,c_k)$$$ such that |ri−ri+1|+|ci−ci+1|=1$$$|r_i - r_{i+1}| + |c_i - c_{i+1}| = 1$$$ for all 1≤i<k$$$1 \\le i  \\lt  k$$$. In other words, each adjacent cell differs only by 1$$$1$$$ row or only by 1$$$1$$$ column. An even path in this maze is defined as a path in which all the cells in the path contain only even numbers.",
+      "Given a tuple ⟨ra,ca,rb,cb⟩$$$\\langle r_a,c_a,r_b,c_b \\rangle$$$ as a query, your task is to determine whether there exists an even path from cell (ra,ca)$$$(r_a,c_a)$$$ to cell (rb,cb)$$$(r_b,c_b)$$$. To simplify the problem, it is guaranteed that both cell (ra,ca)$$$(r_a,c_a)$$$ and cell (rb,cb)$$$(r_b,c_b)$$$ contain even numbers.",
+      "For example, let N=5$$$N = 5$$$, R={6,2,7,8,3}$$$R = \\{6, 2, 7, 8, 3\\}$$$, and C={3,4,8,5,1}$$$C = \\{3, 4, 8, 5, 1\\}$$$. The following figure depicts the matrix A$$$A$$$ of 5×5$$$5 \\times 5$$$ which is generated from the given array R$$$R$$$ and C$$$C$$$.",
+      "![](https://espresso.codeforces.com/6b5e0abfb808bbde1d8107e036d5b3d752ff8625.png)",
+      "Let us consider several queries:",
+      "⟨2,2,1,3⟩$$$\\langle 2, 2, 1, 3 \\rangle$$$: There is an even path from cell (2,2)$$$(2,2)$$$ to cell (1,3)$$$(1,3)$$$, e.g., (2,2),(2,3),(1,3)$$$(2,2), (2,3), (1,3)$$$. Of course, (2,2),(1,2),(1,3)$$$(2,2), (1,2), (1,3)$$$ is also a valid even path.",
+      "⟨4,2,4,3⟩$$$\\langle 4, 2, 4, 3 \\rangle$$$: There is an even path from cell (4,2)$$$(4,2)$$$ to cell (4,3)$$$(4,3)$$$, namely (4,2),(4,3)$$$(4,2), (4,3)$$$.",
+      "⟨5,1,3,4⟩$$$\\langle 5, 1, 3, 4 \\rangle$$$: There is no even path from cell (5,1)$$$(5,1)$$$ to cell (3,4)$$$(3,4)$$$. Observe that the only two neighboring cells of (5,1)$$$(5,1)$$$ are cell (5,2)$$$(5,2)$$$ and cell (4,1)$$$(4,1)$$$, and both of them contain odd numbers (7 and 11, respectively), thus, there cannot be any even path originating from cell (5,1)$$$(5,1)$$$."
+    ],
+    "input": [
+      "Input begins with a line containing two integers: N$$$N$$$ Q$$$Q$$$ (2≤N≤100000$$$2 \\le N \\le 100\\,000$$$; 1≤Q≤100000$$$1 \\le Q \\le 100\\,000$$$) representing the size of the maze and the number of queries, respectively. The next line contains N$$$N$$$ integers: Ri$$$R_i$$$ (0≤Ri≤106$$$0 \\le R_i \\le 10^6$$$) representing the array R$$$R$$$. The next line contains N$$$N$$$ integers: Ci$$$C_i$$$ (0≤Ci≤106$$$0 \\le C_i \\le 10^6$$$) representing the array C$$$C$$$. The next Q$$$Q$$$ lines each contains four integers: ra$$$r_a$$$ ca$$$c_a$$$ rb$$$r_b$$$ cb$$$c_b$$$ (1≤ra,ca,rb,cb≤N$$$1 \\le r_a, c_a, r_b, c_b \\le N$$$) representing a query of ⟨ra,ca,rb,cb⟩$$$\\langle r_a, c_a, r_b, c_b \\rangle$$$. It is guaranteed that (ra,ca)$$$(r_a,c_a)$$$ and (rb,cb)$$$(r_b,c_b)$$$ are two different cells in the maze and both of them contain even numbers."
+    ],
+    "output": [
+      "For each query in the same order as input, output in a line a string \"YES\" (without quotes) or \"NO\" (without quotes) whether there exists an even path from cell (ra,ca)$$$(r_a,c_a)$$$ to cell (rb,cb)$$$(r_b,c_b)$$$."
+    ],
+    "note": [
+      "Explanation for the sample input/output #1",
+      "This is the example from the problem description."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 3\n6 2 7 8 3\n3 4 8 5 1\n2 2 1 3\n4 2 4 3\n5 1 3 4",
+      "output": "YES\nYES\nNO"
+    },
+    {
+      "input": "3 2\n30 40 49\n15 20 25\n2 2 3 3\n1 2 2 2",
+      "output": "NO\nYES"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "寻路是寻找两点之间路线的任务。它经常出现在许多问题中。例如，在 GPS 导航软件中，驾驶员可以查询推荐路线；在机器人运动规划中，机器人需要找到完成某些任务的有效移动序列；或者在简单的迷宫求解器中，需要找到从一个点到另一个点的有效路径。本题与迷宫求解有关。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "本题中的迷宫是一个 N×N$$$N \\times N$$$ 的整数矩阵 A$$$A$$$。每个单元格的值由两个长度均为 N$$$N$$$ 的给定数组 R$$$R$$$ 和 C$$$C$$$ 生成。具体来说，第 ith$$$i^{th}$$$ 行、第 jth$$$j^{th}$$$ 列的单元格 (i,j)$$$(i,j)$$$ 的值等于 Ri+Cj$$$R_i + C_j$$$。注意，本题中的所有下标均从 1$$$1$$$ 到 N$$$N$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "迷宫中的一条路径定义为一个单元格序列 (r1,c1),(r2,c2),…,(rk,ck)$$$(r_1,c_1), (r_2,c_2), \\dots, (r_k,c_k)$$$，满足对于所有 1≤i<k$$$1 \\le i  \\lt  k$$$，均有 |ri−ri+1|+|ci−ci+1|=1$$$|r_i - r_{i+1}| + |c_i - c_{i+1}| = 1$$$。换句话说，每两个相邻单元格只相差 1$$$1$$$ 行或只相差 1$$$1$$$ 列。本迷宫中的偶数路径定义为路径上的所有单元格中只包含偶数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个元组 ⟨ra,ca,rb,cb⟩$$$\\langle r_a,c_a,r_b,c_b \\rangle$$$ 作为查询，你的任务是判断是否存在一条从单元格 (ra,ca)$$$(r_a,c_a)$$$ 到单元格 (rb,cb)$$$(r_b,c_b)$$$ 的偶数路径。为简化问题，保证单元格 (ra,ca)$$$(r_a,c_a)$$$ 和单元格 (rb,cb)$$$(r_b,c_b)$$$ 中都包含偶数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，令 N=5$$$N = 5$$$，R={6,2,7,8,3}$$$R = \\{6, 2, 7, 8, 3\\}$$$，C={3,4,8,5,1}$$$C = \\{3, 4, 8, 5, 1\\}$$$。下图描绘了一个由给定数组 R$$$R$$$ 和 C$$$C$$$ 生成的 5×5$$$5 \\times 5$$$ 矩阵 A$$$A$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/6b5e0abfb808bbde1d8107e036d5b3d752ff8625.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "让我们考虑几个查询：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "⟨2,2,1,3⟩$$$\\langle 2, 2, 1, 3 \\rangle$$$：从单元格 (2,2)$$$(2,2)$$$ 到单元格 (1,3)$$$(1,3)$$$ 存在一条偶数路径，例如 (2,2),(2,3),(1,3)$$$(2,2), (2,3), (1,3)$$$。当然，(2,2),(1,2),(1,3)$$$(2,2), (1,2), (1,3)$$$ 也是一条合法的偶数路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "⟨4,2,4,3⟩$$$\\langle 4, 2, 4, 3 \\rangle$$$：从单元格 (4,2)$$$(4,2)$$$ 到单元格 (4,3)$$$(4,3)$$$ 存在一条偶数路径，即 (4,2),(4,3)$$$(4,2), (4,3)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "⟨5,1,3,4⟩$$$\\langle 5, 1, 3, 4 \\rangle$$$：从单元格 (5,1)$$$(5,1)$$$ 到单元格 (3,4)$$$(3,4)$$$ 不存在偶数路径。注意，(5,1)$$$(5,1)$$$ 唯一的两个相邻单元格是 (5,2)$$$(5,2)$$$ 和 (4,1)$$$(4,1)$$$，并且它们都包含奇数(分别为 7 和 11)，因此，不可能存在任何从单元格 (5,1)$$$(5,1)$$$ 出发的偶数路径。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数：N$$$N$$$ Q$$$Q$$$(2≤N≤100000$$$2 \\le N \\le 100\\,000$$$；1≤Q≤100000$$$1 \\le Q \\le 100\\,000$$$)，分别表示迷宫的大小和查询次数。下一行包含 N$$$N$$$ 个整数：Ri$$$R_i$$$(0≤Ri≤106$$$0 \\le R_i \\le 10^6$$$)，表示数组 R$$$R$$$。再下一行包含 N$$$N$$$ 个整数：Ci$$$C_i$$$(0≤Ci≤106$$$0 \\le C_i \\le 10^6$$$)，表示数组 C$$$C$$$。接下来的 Q$$$Q$$$ 行中，每行包含四个整数：ra$$$r_a$$$ ca$$$c_a$$$ rb$$$r_b$$$ cb$$$c_b$$$(1≤ra,ca,rb,cb≤N$$$1 \\le r_a, c_a, r_b, c_b \\le N$$$)，表示一个 ⟨ra,ca,rb,cb⟩$$$\\langle r_a, c_a, r_b, c_b \\rangle$$$ 查询。保证 (ra,ca)$$$(r_a,c_a)$$$ 和 (rb,cb)$$$(r_b,c_b)$$$ 是迷宫中的两个不同格子，并且它们都包含偶数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个查询，按照输入顺序输出一行字符串 \"YES\"(不含引号)或 \"NO\"(不含引号)，表示是否存在一条从格子 (ra,ca)$$$(r_a,c_a)$$$ 到格子 (rb,cb)$$$(r_b,c_b)$$$ 的偶数路径。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例输入/输出 #1 的解释",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这是题面中的示例。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 偶数路径",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

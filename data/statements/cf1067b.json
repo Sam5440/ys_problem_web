@@ -1,0 +1,109 @@
+{
+  "code": "CF1067B",
+  "letter": "B",
+  "title": "B. Multihedgehog",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1067/B",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Someone give a strange birthday present to Ivan. It is hedgehog — connected undirected graph in which one vertex has degree at least 3$$$3$$$ (we will call it center) and all other vertices has degree 1. Ivan thought that hedgehog is too boring and decided to make himself k$$$k$$$-multihedgehog.",
+      "Let us define k$$$k$$$-multihedgehog as follows:",
+      "1$$$1$$$-multihedgehog is hedgehog: it has one vertex of degree at least 3$$$3$$$ and some vertices of degree 1.",
+      "For all k≥2$$$k \\ge 2$$$, k$$$k$$$-multihedgehog is (k−1)$$$(k-1)$$$-multihedgehog in which the following changes has been made for each vertex v$$$v$$$ with degree 1: let u$$$u$$$ be its only neighbor; remove vertex v$$$v$$$, create a new hedgehog with center at vertex w$$$w$$$ and connect vertices u$$$u$$$ and w$$$w$$$ with an edge. New hedgehogs can differ from each other and the initial gift.",
+      "Thereby k$$$k$$$-multihedgehog is a tree. Ivan made k$$$k$$$-multihedgehog but he is not sure that he did not make any mistakes. That is why he asked you to check if his tree is indeed k$$$k$$$-multihedgehog."
+    ],
+    "input": [
+      "First line of input contains 2$$$2$$$ integers n$$$n$$$, k$$$k$$$ (1≤n≤105$$$1 \\le n \\le 10^{5}$$$, 1≤k≤109$$$1 \\le k \\le 10^{9}$$$) — number of vertices and hedgehog parameter.",
+      "Next n−1$$$n-1$$$ lines contains two integers u$$$u$$$ v$$$v$$$ (1≤u,v≤n;u≠v$$$1 \\le u, \\,\\, v \\le n; \\,\\, u \\ne v$$$) — indices of vertices connected by edge.",
+      "It is guaranteed that given graph is a tree."
+    ],
+    "output": [
+      "Print \"Yes\" (without quotes), if given graph is k$$$k$$$-multihedgehog, and \"No\" (without quotes) otherwise."
+    ],
+    "note": [
+      "2-multihedgehog from the first example looks like this:",
+      "![](https://espresso.codeforces.com/eb97e0cdfc23392dd97429ddb201075dca861d9d.png)",
+      "Its center is vertex 13$$$13$$$. Hedgehogs created on last step are: [4 (center), 1, 2, 3], [6 (center), 7, 8, 9], [5 (center), 10, 11, 12, 13].",
+      "Tree from second example is not a hedgehog because degree of center should be at least 3$$$3$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "14 2\n1 4\n2 4\n3 4\n4 13\n10 5\n11 5\n12 5\n14 5\n5 13\n6 7\n8 6\n13 6\n9 6",
+      "output": "Yes"
+    },
+    {
+      "input": "3 1\n1 3\n2 3",
+      "output": "No"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "有人送给 Ivan 一份奇怪的生日礼物。它是一只刺猬，即一种连通无向图，其中一个顶点的度数至少为 3$$$3$$$(我们称其为中心)，而所有其他顶点的度数均为 1。Ivan 觉得刺猬太无聊了，于是决定把自己变成 k$$$k$$$-重刺猬。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "定义 k$$$k$$$-多刺猬如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1$$$1$$$-多刺猬是一只刺猬：它有一个度数至少为 3$$$3$$$ 的顶点，以及一些度数为 1 的顶点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于所有 k≥2$$$k \\ge 2$$$，k$$$k$$$-多刺猬是一个 (k−1)$$$(k-1)$$$-多刺猬，并对每个度数为 1 的顶点 v$$$v$$$ 进行如下操作：设 u$$$u$$$ 为它唯一的邻点；删除顶点 v$$$v$$$，创建一只以顶点 w$$$w$$$ 为中心的新刺猬，并在顶点 u$$$u$$$ 和 w$$$w$$$ 之间连接一条边。新创建的刺猬可以彼此不同，也可以与初始图形不同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，k$$$k$$$-多刺猬是一棵树。Ivan 构造了一棵 k$$$k$$$-多刺猬，但他不确定自己是否犯了错误。因此，他请你检查他的树是否确实是 k$$$k$$$-多刺猬。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入第一行包含 2$$$2$$$ 个整数 n$$$n$$$、k$$$k$$$(1≤n≤105$$$1 \\le n \\le 10^{5}$$$，1≤k≤109$$$1 \\le k \\le 10^{9}$$$)——顶点数和刺猬参数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来 n−1$$$n-1$$$ 行每行包含两个整数 u$$$u$$$、v$$$v$$$(1≤u,v≤n；u≠v$$$1 \\le u, \\,\\, v \\le n; \\,\\, u \\ne v$$$)——通过边相连的顶点编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证给定的图是一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果给定的图是 k$$$k$$$-重刺猬，则输出 \"Yes\"(不含引号)；否则输出 \"No\"(不含引号)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例中的 2-重刺猬如下所示：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/eb97e0cdfc23392dd97429ddb201075dca861d9d.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "它的中心是顶点 13$$$13$$$。最后一步创建的刺猬为：[4(中心)、1、2、3]、[6(中心)、7、8、9]、[5(中心)、10、11、12、13]。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二个样例中的树不是刺猬，因为中心的度数至少应为 3$$$3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 多重刺猬",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

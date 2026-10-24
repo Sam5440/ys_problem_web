@@ -1,0 +1,170 @@
+{
+  "code": "GYM106463A",
+  "letter": "A",
+  "title": "A. Circular Board Game",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106463/problem/A",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Wandering past the fresh produce, Busy Beaver's attention is captured by the local dairy vendor with a peculiar board game at his stall.",
+      "There is a circular board with N$$$N$$$ squares numbered from 0$$$0$$$ to N−1$$$N-1$$$. Busy Beaver plays a game on this board with an N$$$N$$$ sided die labelled from 0$$$0$$$ to N−1$$$N-1$$$. If he is on square s$$$s$$$ and moves by t$$$t$$$ steps, he will land directly on the square s+t(modN)$$$s+t \\pmod N$$$.",
+      "There is also one magical portal on the board, such that if the player lands exactly on square X$$$X$$$, they are instantly teleported to square Y$$$Y$$$.",
+      "Busy Beaver rolls the die K$$$K$$$ times and obtains the sequence a1,a2,…,aK$$$a_1, a_2, \\dots, a_K$$$. From his initial square, Busy Beaver will move by a1$$$a_1$$$ steps, then by a2$$$a_2$$$ steps, and so on until he has completed all K$$$K$$$ moves, where he moves by ai$$$a_i$$$ on the i$$$i$$$-th move.",
+      "For each possible initial square from 0$$$0$$$ to N−1$$$N-1$$$ (inclusive, except square X$$$X$$$), determine the square that Busy Beaver lands on after all K$$$K$$$ moves are completed (including any teleports)."
+    ],
+    "input": [
+      "The first line contains the number of test cases T$$$T$$$ (1≤T≤2⋅103$$$1 \\le T \\le 2 \\cdot 10^3$$$).",
+      "The first line of each test case contains four integers N$$$N$$$, K$$$K$$$, X$$$X$$$, and Y$$$Y$$$ (2≤N≤5⋅105$$$2 \\le N \\le 5 \\cdot 10^5$$$, 1≤K≤5⋅105$$$1 \\le K \\le 5 \\cdot 10^5$$$, 0≤X,Y<N$$$0 \\le X, Y  \\lt  N$$$, X≠Y$$$X \\ne Y$$$).",
+      "The second line of each test case contains K$$$K$$$ integers a1,a2,…,aK$$$a_1, a_2, \\dots, a_K$$$ (0≤ai<N$$$0 \\le a_i  \\lt  N$$$).",
+      "The sum of N$$$N$$$ across all test cases does not exceed 5⋅105$$$5 \\cdot 10^5$$$.",
+      "The sum of K$$$K$$$ across all test cases does not exceed 5⋅105$$$5 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, output N−1$$$N-1$$$ integers representing the square that Busy Beaver would land on if he started on square i$$$i$$$, for all 0≤i<N$$$0 \\le i  \\lt  N$$$ except for i=X$$$i = X$$$.",
+      "There are two subtasks for this problem.",
+      "(20$$$20$$$ points): The sum of N$$$N$$$ across all test cases does not exceed 5⋅103$$$5 \\cdot 10^3$$$, and the sum of K$$$K$$$ across all test cases does not exceed 5⋅103$$$5 \\cdot 10^3$$$.",
+      "(80$$$80$$$ points): No additional constraints."
+    ],
+    "note": [
+      "In the first sample test case, there are 5$$$5$$$ squares on the board and one die roll that rolls 1$$$1$$$. The portal teleports the player from square 0$$$0$$$ to square 1$$$1$$$. For each of the starting squares, here is the sequence of events:",
+      "0$$$0$$$: The portal teleports from this square; we do not need to output anything.",
+      "1$$$1$$$: starts on square 1$$$1$$$, moves by 1$$$1$$$ to square 2$$$2$$$",
+      "2$$$2$$$: starts on square 2$$$2$$$, moves by 1$$$1$$$ to square 3$$$3$$$",
+      "3$$$3$$$: starts on square 3$$$3$$$, moves by 1$$$1$$$ to square 4$$$4$$$",
+      "4$$$4$$$: starts on square 4$$$4$$$, moves by 1$$$1$$$ to square 0$$$0$$$ and teleports to square 1$$$1$$$",
+      "In the second sample test case, there are 5$$$5$$$ squares on the board and three die rolls that roll 1,2,3$$$1,2,3$$$ respectively. The portal teleports the player from square 0$$$0$$$ to square 1$$$1$$$. For each of the starting squares, here is the sequence of events:",
+      "0$$$0$$$: The portal teleports from this square; we do not need to output anything.",
+      "1$$$1$$$: starts on square 1$$$1$$$, moves by 1$$$1$$$ to square 2$$$2$$$, moves by 2$$$2$$$ to square 4$$$4$$$, moves by 3$$$3$$$ to square 2$$$2$$$",
+      "2$$$2$$$: starts on square 2$$$2$$$, moves by 1$$$1$$$ to square 3$$$3$$$, moves by 2$$$2$$$ to square 0$$$0$$$ and teleports to square 1$$$1$$$, moves by 3$$$3$$$ to square 4$$$4$$$",
+      "3$$$3$$$: starts on square 3$$$3$$$, moves by 1$$$1$$$ to square 4$$$4$$$, moves by 2$$$2$$$ to square 1$$$1$$$, moves by 3$$$3$$$ to square 4$$$4$$$",
+      "4$$$4$$$: starts on square 4$$$4$$$, moves by 1$$$1$$$ to square 0$$$0$$$ and teleports to square 1$$$1$$$, moves by 2$$$2$$$ to square 3$$$3$$$, moves by 3$$$3$$$ to square 1$$$1$$$"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n5 1 0 1\n1\n5 3 0 1\n1 2 3\n20 10 3 1\n4 15 9 2 6 5 3 5 8 9",
+      "output": "2 3 4 1 \n2 4 4 1 \n6 7 6 6 11 10 11 14 15 16 17 18 17 18 17 2 1 4 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "路过新鲜农产品区时，Busy Beaver 被当地奶制品摊位上一个奇特的棋盘游戏吸引了。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有一个圆形棋盘，上面有 N$$$N$$$ 个方格，编号从 0$$$0$$$ 到 N−1$$$N-1$$$。Busy Beaver 在这个棋盘上使用一个有 N$$$N$$$ 个面的骰子进行游戏，骰面编号从 0$$$0$$$ 到 N−1$$$N-1$$$。如果他位于方格 s$$$s$$$，并移动 t$$$t$$$ 步，那么他将正好落在方格 s+t(modN)$$$s+t \\pmod N$$$ 上。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "棋盘上还有一个魔法传送门：如果玩家恰好落在方格 X$$$X$$$ 上，就会立即被传送到方格 Y$$$Y$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Busy Beaver 掷骰子 K$$$K$$$ 次，得到序列 a1,a2,…,aK$$$a_1, a_2, \\dots, a_K$$$。从初始方格出发，Busy Beaver 将先移动 a1$$$a_1$$$ 步，然后移动 a2$$$a_2$$$ 步，依此类推，直到完成全部 K$$$K$$$ 次移动；在第 i$$$i$$$ 次移动中，他会移动 ai$$$a_i$$$ 步。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个可能的初始方格，从 0$$$0$$$ 到 N−1$$$N-1$$$(包含端点，但不包括方格 X$$$X$$$)，确定 Busy Beaver 在完成全部 K$$$K$$$ 步移动(包括任何传送)后最终落在哪个方格上。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含测试用例数量 T$$$T$$$(1≤T≤2⋅103$$$1 \\le T \\le 2 \\cdot 10^3$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含四个整数 N$$$N$$$、K$$$K$$$、X$$$X$$$ 和 Y$$$Y$$$(2≤N≤5⋅105$$$2 \\le N \\le 5 \\cdot 10^5$$$，1≤K≤5⋅105$$$1 \\le K \\le 5 \\cdot 10^5$$$，0≤X,Y<N$$$0 \\le X, Y  \\lt  N$$$，X≠Y$$$X \\ne Y$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 K$$$K$$$ 个整数 a1,a2,…,aK$$$a_1, a_2, \\dots, a_K$$$(0≤ai<N$$$0 \\le a_i  \\lt  N$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有测试用例中 N$$$N$$$ 的总和不超过 5⋅105$$$5 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有测试用例中 K$$$K$$$ 的总和不超过 5⋅105$$$5 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出 N−1$$$N-1$$$ 个整数，分别表示 Busy Beaver 从方格 i$$$i$$$ 出发时会落在哪个方格上，其中 0≤i<N$$$0 \\le i  \\lt  N$$$ 且 i=X$$$i = X$$$ 的情况除外。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这道题有两个子任务。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(20$$$20$$$ 分)：所有测试用例中 N$$$N$$$ 的总和不超过 5⋅103$$$5 \\cdot 10^3$$$，且所有测试用例中 K$$$K$$$ 的总和不超过 5⋅103$$$5 \\cdot 10^3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(80$$$80$$$ 分)：没有额外约束。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个输入样例中，棋盘上有 5$$$5$$$ 个方格，骰子的一次投掷结果为 1$$$1$$$。传送门将玩家从方格 0$$$0$$$ 传送到方格 1$$$1$$$。对于每个起始方格，事件序列如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "0$$$0$$$：传送门会从这个方格传送玩家；我们不需要输出任何内容。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1$$$1$$$：从第 1$$$1$$$ 格开始，沿 1$$$1$$$ 移动到第 2$$$2$$$ 格",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "2$$$2$$$：从第 2$$$2$$$ 格开始，沿 1$$$1$$$ 移动到第 3$$$3$$$ 格",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "3$$$3$$$：从第 3$$$3$$$ 格开始，沿 1$$$1$$$ 移动到第 4$$$4$$$ 格",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "4$$$4$$$：从第 4$$$4$$$ 格开始，沿 1$$$1$$$ 移动到第 0$$$0$$$ 格，并传送到第 1$$$1$$$ 格",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个测试用例中，棋盘上有 5$$$5$$$ 个格子，三次掷骰子分别掷出 1、2、3$$$1,2,3$$$。传送门会将玩家从第 0$$$0$$$ 格传送到第 1$$$1$$$ 格。对于每个起始格子，事件序列如下：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "0$$$0$$$：传送门会从这个格子传送；我们不需要输出任何内容。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "1$$$1$$$：从方格 1$$$1$$$ 开始，移动 1$$$1$$$ 格到方格 2$$$2$$$，移动 2$$$2$$$ 格到方格 4$$$4$$$，移动 3$$$3$$$ 格到方格 2$$$2$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2$$$2$$$：从方格 2$$$2$$$ 开始，移动 1$$$1$$$ 格到方格 3$$$3$$$，移动 2$$$2$$$ 格到方格 0$$$0$$$，然后传送到方格 1$$$1$$$，移动 3$$$3$$$ 格到方格 4$$$4$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3$$$3$$$：从方格 3$$$3$$$ 开始，移动 1$$$1$$$ 格到方格 4$$$4$$$，移动 2$$$2$$$ 格到方格 1$$$1$$$，移动 3$$$3$$$ 格到方格 4$$$4$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "4$$$4$$$：从方格 4$$$4$$$ 开始，移动 1$$$1$$$ 格到方格 0$$$0$$$，然后传送到方格 1$$$1$$$，移动 2$$$2$$$ 格到方格 3$$$3$$$，移动 3$$$3$$$ 格到方格 1$$$1$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 环形棋盘游戏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "code": "CF729E",
+  "letter": "E",
+  "title": "E. Subordinates",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/729/E",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are n workers in a company, each of them has a unique id from 1 to n. Exaclty one of them is a chief, his id is s. Each worker except the chief has exactly one immediate superior.",
+      "There was a request to each of the workers to tell how how many superiors (not only immediate). Worker's superiors are his immediate superior, the immediate superior of the his immediate superior, and so on. For example, if there are three workers in the company, from which the first is the chief, the second worker's immediate superior is the first, the third worker's immediate superior is the second, then the third worker has two superiors, one of them is immediate and one not immediate. The chief is a superior to all the workers except himself.",
+      "Some of the workers were in a hurry and made a mistake. You are to find the minimum number of workers that could make a mistake."
+    ],
+    "input": [
+      "The first line contains two positive integers n and s (1 ≤ n ≤ 2·105, 1 ≤ s ≤ n) — the number of workers and the id of the chief.",
+      "The second line contains n integers a1, a2, ..., an (0 ≤ ai ≤ n - 1), where ai is the number of superiors (not only immediate) the worker with id i reported about."
+    ],
+    "output": [
+      "Print the minimum number of workers that could make a mistake."
+    ],
+    "note": [
+      "In the first example it is possible that only the first worker made a mistake. Then:",
+      "the immediate superior of the first worker is the second worker,",
+      "the immediate superior of the third worker is the first worker,",
+      "the second worker is the chief."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 2\n2 0 2",
+      "output": "1"
+    },
+    {
+      "input": "5 3\n1 0 0 4 1",
+      "output": "2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "公司中有 n 名员工，每名员工都有一个从 1 到 n 的唯一编号。其中恰好有一名员工是上司，他的编号为 s。除上司外，每名员工都恰好有一名直属上司。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "公司要求每名员工说明自己有多少名上司（不仅包括直属上司）。员工的上司包括他的直属上司、直属上司的直属上司，以此类推。例如，公司中有三名员工，其中第一名是上司，第二名员工的直属上司是第一名，第三名员工的直属上司是第二名，那么第三名员工有两名上司，其中一名是直属上司，另一名不是直属上司。上司是除自己以外所有员工的上司。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一些员工很匆忙，因此犯了错误。请你找出可能犯错的员工数量的最小值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个正整数 n 和 s（1 ≤ n ≤ 2·105，1 ≤ s ≤ n），分别表示员工数量和上司的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个整数 a1， a2， ...， an（0 ≤ ai ≤ n - 1），其中 ai 表示编号为 i 的工人所汇报的上级人数（不仅包括直属上级）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出可能犯错的工人数量的最小值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，可能只有第一名工人犯了错误。此时：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一名工人的直属上级是第二名工人，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三名工人的直属上级是第一名工人，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二名工人是主管。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 下属",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

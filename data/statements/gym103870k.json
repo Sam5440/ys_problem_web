@@ -1,0 +1,140 @@
+{
+  "code": "GYM103870K",
+  "letter": "K",
+  "title": "K. Rock Paper Scissors (Easy Version)",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103870/problem/K",
+  "difficulty": "*1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is the easy version. The difference between the easy version and the hard version is the constraints.",
+      "Misaka Imouto 1$$$1$$$, Misaka Imouto 2$$$2$$$, ..., and Misaka Imouto n$$$n$$$ are all playing rock paper scissors to determine who should go buy the cake. Since they are all connected to the same network, let's assume that all Misaka Imouto's act the same.",
+      "A game of rock paper scissors is dictated as follows:",
+      "If there is 1$$$1$$$ person, the game ends immediately (taking 0$$$0$$$ rounds).",
+      "Otherwise, each Misaka Imouto throws out a choice between rock, paper, and scissors with exactly 13$$$\\frac{1}{3}$$$ probability. All choices are independent of each other.",
+      "If all options of rock, paper, and scissors are present, then the game is a tie and no one steps out of the game. If only one option is present, the game is a tie and no one steps out of the game. However, if only two options are present, then the winners and the losers are well defined, and the losers step out of the game. All people who are still in the game repeat step 1 for a new round.",
+      "One possible game between 3$$$3$$$ Misaka Imouto's could be as follows: RPS, RRS, SSX, SRX, and ending with the second Misaka winning after 4$$$4$$$ rounds. In this game, R means rock, S means scissors, P means paper, and X means that this Misaka Imouto has lost already and was not allowed to play.",
+      "For each i$$$i$$$ from 1$$$1$$$ to n$$$n$$$, find the expected number of rounds a game with i$$$i$$$ Misaka Imoutos initially lasts."
+    ],
+    "input": [
+      "The input contains two numbers n$$$n$$$ and P$$$P$$$, (2≤n≤104,108≤P≤109)$$$(2 \\leq n \\leq 10^4, 10^{8} \\leq P \\leq 10^{9})$$$. It is guaranteed that P$$$P$$$ is a prime.",
+      "For tests 1−4$$$1 - 4$$$, (2≤n≤50)$$$(2 \\leq n \\leq 50)$$$ will be satisfied.",
+      "For tests 5−8$$$5 - 8$$$, (2≤n≤3366)$$$(2 \\leq n \\leq 3366)$$$ will be satisfied.",
+      "The remaining test data do not satisfy any additional constraints."
+    ],
+    "output": [
+      "Output n$$$n$$$ integers, the i$$$i$$$'th integer denoting the expected number of rounds a game with i$$$i$$$ Misakas initially will last.",
+      "So for each i$$$i$$$ from 1$$$1$$$ to n$$$n$$$, let the final expected number of rounds of a game with i$$$i$$$ Misaka Imoutos be xiyi$$$\\frac{x_i}{y_i}$$$, output zi$$$z_i$$$ (0≤zi<P)$$$(0 \\leq z_i  \\lt  P)$$$ where xi≡yi⋅zi(modP)$$$x_i \\equiv y_i \\cdot z_i \\pmod P$$$."
+    ],
+    "note": [
+      "50000005$$$50000005$$$ is also 32mod100000007$$$\\frac{3}{2} \\mod 100000007$$$",
+      "25000004$$$25000004$$$ is also 94mod100000007$$$\\frac{9}{4} \\mod 100000007$$$",
+      "—",
+      "Idea: 3366",
+      "Preparation: 3366",
+      "Occurrences: Intermediate 10, Advanced 4"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 100000007",
+      "output": "0 50000005 25000004 64285722 25714292"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是简单版本。简单版本与困难版本之间的区别在于约束条件。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Misaka Imouto 1$$$1$$$、Misaka Imouto 2$$$2$$$、……以及 Misaka Imouto n$$$n$$$ 正在进行石头剪刀布，以决定谁应该去买蛋糕。由于她们都连接到同一个网络，我们假设所有 Misaka Imouto 的行为都相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "石头剪刀布游戏的规则如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有 1$$$1$$$ 个人，游戏立即结束(进行 0$$$0$$$ 轮)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，每个 Misaka Imouto 都以恰好 13$$$\\frac{1}{3}$$$ 的概率在石头、布和剪刀中选择一种。所有选择彼此独立。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果石头、布和剪刀三种选项都出现，那么本轮平局，没有人退出游戏。如果只出现一种选项，那么本轮平局，也没有人退出游戏。然而，如果只出现两种选项，那么胜者和败者是明确的，败者退出游戏。所有仍在游戏中的人重复步骤 1，进行新一轮游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3$$$3$$$ 个 Misaka Imouto 之间的一种可能的游戏过程如下：RPS、RRS、SSX、SRX，最终第二个 Misaka 在进行了 4$$$4$$$ 轮后获胜。在这个游戏中，R 表示石头，S 表示剪刀，P 表示布，X 表示该 Misaka Imouto 已经输掉比赛，因此不被允许参加游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于从 1$$$1$$$ 到 n$$$n$$$ 的每个 i$$$i$$$，求一场最初有 i$$$i$$$ 个 Misaka Imouto 的游戏所持续轮数的期望值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入包含两个数 n$$$n$$$ 和 P$$$P$$$，满足 (2≤n≤104,108≤P≤109)$$$(2 \\leq n \\leq 10^4, 10^{8} \\leq P \\leq 10^{9})$$$。保证 P$$$P$$$ 是素数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于测试 1−4$$$1 - 4$$$，满足 (2≤n≤50)$$$(2 \\leq n \\leq 50)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于测试 5−8$$$5 - 8$$$，满足 (2≤n≤3366)$$$(2 \\leq n \\leq 3366)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其余测试数据不满足任何额外的约束条件。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n$$$n$$$ 个整数，第 i$$$i$$$ 个整数表示初始有 i$$$i$$$ 个 Misaka 时，一局游戏预计持续的回合数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，对于从 1$$$1$$$ 到 n$$$n$$$ 的每个 i$$$i$$$，设初始有 i$$$i$$$ 个 Misaka Imoutos 的游戏最终预计持续回合数为 xiyi$$$\\frac{x_i}{y_i}$$$，输出满足 xi≡yi⋅zi(modP)$$$x_i \\equiv y_i \\cdot z_i \\pmod P$$$ 的 zi$$$z_i$$$(0≤zi<P)$$$(0 \\leq z_i  \\lt  P)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "50000005$$$50000005$$$ 也等于对 100000007$$$\\frac{3}{2} \\mod 100000007$$$ 取模后的 32",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "25000004$$$25000004$$$ 也等于对 100000007$$$\\frac{9}{4} \\mod 100000007$$$ 取模后的 94",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "思路：3366",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "准备：3366",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "出现次数：中级 10，高级 4",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "K. 石头剪刀布（简单版本）",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

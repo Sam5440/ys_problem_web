@@ -1,0 +1,75 @@
+{
+  "code": "GYM105453E",
+  "letter": "E",
+  "title": "E. Generation and transmission network",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105453/problem/E",
+  "difficulty": "*1400",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "We wish to construct an electricity generation and transmission network in a cluster of N$$$N$$$ islands. To this end, we have calculated a cost p(x)$$$p(x)$$$ to (potentially) build a generating station on each island x$$$x$$$, as well as a cost c(x,y)$$$c(x,y)$$$ to build an energy transmission line between any two islands x$$$x$$$ and y$$$y$$$. An island is connected to the grid if it has a generating station built on it, or if there is a sequence of power transmission lines connecting it to an island that has a generating station. Our goal is to connect all N$$$N$$$ islands to the grid, minimizing the total network construction cost."
+    ],
+    "input": [
+      "The first line of the input contains an integer N$$$N$$$ which gives the number of islands in the cluster.",
+      "The next N$$$N$$$ lines of the input are sequences of N$$$N$$$ numbers that form an N$$$N$$$-by-N$$$N$$$ array A$$$A$$$, such that each diagonal entry A[x,x]$$$A[x,x]$$$ corresponds to the cost p(x)$$$p(x)$$$ to build generating station on island x$$$x$$$ (that is, ′A[x,x]=p(x)′$$$'A[x,x] = p(x)'$$$), while each non-diagonal entry A[x,y]$$$A[x,y]$$$ corresponds to the cost c(x,y)$$$c(x,y)$$$ to build an energy transmission line between two islands x$$$x$$$ and y$$$y$$$ (that is, ′A[x,y]=c(x,y)′$$$'A[x,y] = c(x,y)'$$$)."
+    ],
+    "output": [
+      "A single integer that gives the total construction cost of the network."
+    ],
+    "note": [
+      "Limits",
+      "- 1≤N≤1000$$$1 \\leq N \\leq 1000$$$",
+      "- 1≤A[x,y]≤10000,∀1≤x,y≤N$$$1 \\leq A[x,y] \\leq 10000, \\forall 1 \\leq x,y \\leq N$$$"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n10 8 10 14\n8 15 9 13\n10 9 12 12\n14 13 12 11",
+      "output": "38"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "我们希望在一组 N$$$N$$$ 座岛屿上建造一个发电与输电网络。为此，我们计算出了在每座岛屿 x$$$x$$$ 上(可能)建设发电站的成本 p(x)$$$p(x)$$$，以及在任意两座岛屿 x$$$x$$$ 和 y$$$y$$$ 之间建设输电线路的成本 c(x,y)$$$c(x,y)$$$。如果一座岛屿上建有发电站，或者存在一系列输电线路将其连接到一座建有发电站的岛屿，则称该岛屿已连接到电网。我们的目标是在使总网络建设成本最小的同时，将全部 N$$$N$$$ 座岛屿连接到电网。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 N$$$N$$$，表示该群岛中岛屿的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行输入是由 N$$$N$$$ 个数字组成的序列，这些序列构成一个 N$$$N$$$×N$$$N$$$ 的数组 A$$$A$$$，其中每个对角元素 A[x,x]$$$A[x,x]$$$ 对应于在岛屿 x$$$x$$$ 上建造发电站的费用 p(x)$$$p(x)$$$(即，′A[x,x]=p(x)′$$$'A[x,x] = p(x)'$$$)，而每个非对角元素 A[x,y]$$$A[x,y]$$$ 对应于在两个岛屿 x$$$x$$$ 和 y$$$y$$$ 之间建造能源传输线路的费用 c(x,y)$$$c(x,y)$$$(即，′A[x,y]=c(x,y)′$$$'A[x,y] = c(x,y)'$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "一个整数，表示该网络的总建设成本。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "限制条件",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "- 1≤N≤1000$$$1 \\leq N \\leq 1000$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "- 1≤A[x,y]≤10000,∀1≤x,y≤N$$$1 \\leq A[x,y] \\leq 10000, \\forall 1 \\leq x,y \\leq N$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 发电与输电网络",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

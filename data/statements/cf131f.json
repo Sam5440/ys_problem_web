@@ -1,0 +1,98 @@
+{
+  "code": "CF131F",
+  "letter": "F",
+  "title": "F. Present to Mom",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/131/F",
+  "difficulty": "2000",
+  "timeLimit": "5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "How many stars are there in the sky? A young programmer Polycarpus can't get this question out of his head! He took a photo of the starry sky using his digital camera and now he analyzes the resulting monochrome digital picture. The picture is represented by a rectangular matrix consisting of n lines each containing m characters. A character equals '1', if the corresponding photo pixel is white and '0', if it is black.",
+      "Polycarpus thinks that he has found a star on the photo if he finds a white pixel surrounded by four side-neighboring pixels that are also white:",
+      {
+        "pre": "\n 1 \n111\n 1 "
+      },
+      "Polycarpus whats to cut out a rectangular area from the photo and give his mom as a present. This area should contain no less than k stars. The stars can intersect, have shared white pixels on the photo. The boy will cut out the rectangular area so that its borders will be parallel to the sides of the photo and the cuts will go straight between the pixel borders.",
+      "Now Polycarpus keeps wondering how many ways there are to cut an area out of the photo so that it met the conditions given above. Help Polycarpus find this number."
+    ],
+    "input": [
+      "The first line of the input data contains three integers n, m and k (1 ≤ n, m ≤ 500;1 ≤ k ≤ nm). Then follow n lines, containing the description of the given photo as a sequence of lines. Each line contains m characters '0' or '1'."
+    ],
+    "output": [
+      "Print the required number of areas on the given photo."
+    ],
+    "note": [
+      "We'll number the rows and columns below starting from 1, the coordinates (p, q) will denote a cell in row p, column q.",
+      "In the first sample Polycarpus should cut out any area containing a rectangle whose opposite corners lie in cells (1, 1) and (3, 4). Only rectangles with opposite corners in (1, 1) and (x, y), where x ≥ 3 and y ≥ 4 fit the conditions.",
+      "In the second sample any rectangle whose each side is no less than four, will do. The possible rectangle sizes are 4 × 4, 4 × 5, 5 × 4 and 5 × 5. Such figures can be cut in 4 ways, 2 ways, 2 ways and 1 way correspondingly.",
+      "Please do not use the %lld specificator to read or write 64-bit integers in C++. It is preferred to use cin, cout streams or the %I64d specificator."
+    ]
+  },
+  "examples": [
+    {
+      "input": "\n 1 \n111\n 1",
+      "output": "4 6 2\n111000\n111100\n011011\n000111"
+    },
+    {
+      "input": "6",
+      "output": "5 5 4\n11111\n11111\n11111\n11111\n11111"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "天空中有多少颗星星？年轻的程序员 Polycarpus 一直无法摆脱这个问题！他用数码相机拍摄了一张星空照片，现在正在分析得到的单色数字图像。这张图片由一个矩形矩阵表示，包含 n 行，每行有 m 个字符。如果对应的照片像素是白色的，则字符为 '1'；如果是黑色的，则字符为 '0'。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 Polycarpus 找到一个白色像素，并且发现它的四个相邻方向上的像素也都是白色的，他就认为自己在照片上找到了一个星星：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "Polycarpus 想从照片中裁剪出一块矩形区域送给妈妈作为礼物。这块区域中至少应包含 k 颗星星。星星之间可以相互交叠，也可以在照片中共享白色像素。男孩会裁剪出一个矩形区域，使其边界平行于照片的边缘，并且沿着像素边界之间的直线进行裁剪。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在 Polycarpus 想知道，有多少种从照片中裁剪出区域的方法能够满足上述条件。请帮助 Polycarpus 找出这个数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入数据的第一行包含三个整数 n、m 和 k（1 ≤ n，m ≤ 500；1 ≤ k ≤ nm）。接下来有 n 行，包含给定照片的描述。每行包含 m 个字符 '0' 或 '1'。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出照片中满足条件的区域数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "下文将从 1 开始为行和列编号，坐标（p，q）表示第 p 行、第 q 列的单元格。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个样例中，Polycarpus 应裁剪出任意一个包含这样一个矩形的区域：该矩形的两个对角顶点所在的单元格为（1，1）和（3，4）。只有两个对角顶点所在单元格为（1，1）和（x，y）的矩形满足条件，其中 x ≥ 3 且 y ≥ 4。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，任意一个每条边都不小于 4 的矩形都可以。可能的矩形尺寸为 4 × 4、4 × 5、5 × 4 和 5 × 5。这样的图形分别有 4 种、2 种、2 种和 1 种切法。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请不要在 C++ 中使用 %lld 格式说明符来读写 64 位整数。建议使用 cin、cout 流，或使用 %I64d 格式说明符。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 送给妈妈",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

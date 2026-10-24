@@ -1,0 +1,100 @@
+{
+  "code": "GYM106552I",
+  "letter": "I",
+  "title": "I. Interlingual Intermediaries",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106552/problem/I",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/4d7e0c678396b13fdbd234b324a73dc8ca7b5f2f.png)",
+      "A great meeting among diplomats from N$$$N$$$ peoples will be held to discuss the future of the continent. The event has a total of M$$$M$$$ cataloged languages. The problem is that not all diplomats share a common language. For a message to get from one point to another, it may be necessary to use other diplomats as intermediaries.",
+      "However, every time the message must be translated from one language to another (when an intermediary hears it in one language and speaks it in another), a language switch occurs. To minimize misunderstandings, the conclave organizers need to find the minimum number of switches required for two diplomats to communicate.",
+      "Given the sets of languages spoken by each of the N$$$N$$$ diplomats and Q$$$Q$$$ queries (a,b)$$$(a, b)$$$, determine the minimum number of language switches needed for diplomats a$$$a$$$ and b$$$b$$$ to communicate. If communication is impossible, print −1$$$-1$$$."
+    ],
+    "input": [
+      "The first line contains three integers N$$$N$$$, M$$$M$$$, and Q$$$Q$$$ (2≤N≤104,1≤M≤30,1≤Q≤2×105$$$2 \\leq N \\leq 10^{4}, 1 \\leq M \\leq 30, 1 \\leq Q \\leq 2 \\times 10^{5}$$$), the number of diplomats, the total number of languages, and the number of queries, respectively.",
+      "Then N$$$N$$$ lines follow, each composed first of an integer mi$$$m_i$$$ (1≤mi≤M)$$$(1 \\le m_i \\le M)$$$ – how many languages the i$$$i$$$-th diplomat speaks – followed by mi$$$m_i$$$ distinct values ℓ1,…,ℓmi$$$\\ell_1, \\ldots, \\ell_{m_i}$$$ (1≤ℓ≤M$$$1 \\leq \\ell \\leq M$$$) – the languages spoken by the diplomat.",
+      "Finally, the input contains Q$$$Q$$$ more lines, each containing two integers a$$$a$$$ and b$$$b$$$ (1≤a,b≤N,a≠b)$$$(1 \\leq a, b \\leq N, a \\ne b)$$$, the initial and final diplomats in the query."
+    ],
+    "output": [
+      "The output should contain Q$$$Q$$$ lines, each answering how many language switches are necessary for a$$$a$$$ and b$$$b$$$ to communicate; if it is not possible, print −1$$$-1$$$."
+    ],
+    "note": [
+      "Explanation for example 1",
+      "In the first query, one possible way to transmit the message is: 4language 1→6language 1→3language 2→2language 3→1$$$4 \\xrightarrow{\\text{language $$$1$$$}} 6 \\xrightarrow{\\text{language $$$1$$$}} 3 \\xrightarrow{\\text{language $$$2$$$}} 2 \\xrightarrow{\\text{language $$$3$$$}} 1$$$ – with two language switches, 1/2$$$1/2$$$ and 2/3$$$2/3$$$.",
+      "In the second query, the message can be transmitted with no language switches: 2language 2→3$$$2 \\xrightarrow{\\text{language $$$2$$$}} 3$$$.",
+      "In the third query, diplomat 5$$$5$$$ speaks only language number 4$$$4$$$, which is not spoken by anyone else, so it is not possible to transmit the message to them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 7 3\n2 3 6\n3 3 2 7\n2 1 2\n2 1 5\n1 4\n1 1\n4 1\n2 3\n2 5",
+      "output": "2\n0\n-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/4d7e0c678396b13fdbd234b324a73dc8ca7b5f2f.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "来自 N$$$N$$$ 个民族的外交官将举行一次盛大的会议，讨论这片大陆的未来。此次活动共涉及 M$$$M$$$ 种已编目的语言。问题在于，并非所有外交官都使用一种共同语言。为了让消息从一个人传到另一个人，可能需要让其他外交官充当中介。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，每当消息必须从一种语言翻译成另一种语言（即中介用一种语言听到消息，再用另一种语言说出消息）时，就会发生一次语言切换。为了尽量减少误解，大会组织者需要找出两名外交官进行交流所需的最少切换次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定 N$$$N$$$ 名外交官各自会说的语言集合，以及 Q$$$Q$$$ 个查询 (a,b)$$$(a, b)$$$，确定外交官 a$$$a$$$ 和 b$$$b$$$ 进行交流所需的最少语言切换次数。如果无法交流，输出 −1$$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 N$$$N$$$、M$$$M$$$ 和 Q$$$Q$$$(2≤N≤104，1≤M≤30，1≤Q≤2×105$$$2 \\leq N \\leq 10^{4}, 1 \\leq M \\leq 30, 1 \\leq Q \\leq 2 \\times 10^{5}$$$)，分别表示外交官数量、语言总数和查询数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来有 N$$$N$$$ 行，每行首先包含一个整数 mi$$$m_i$$$(1≤mi≤M)$$$(1 \\le m_i \\le M)$$$，表示第 i$$$i$$$ 位外交官会说的语言数量，随后是 mi$$$m_i$$$ 个互不相同的值 ℓ1,…,ℓmi$$$\\ell_1, \\ldots, \\ell_{m_i}$$$(1≤ℓ≤M$$$1 \\leq \\ell \\leq M$$$)，表示该外交官会说的语言。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最后，输入包含另外 Q$$$Q$$$ 行，每行包含两个整数 a$$$a$$$ 和 b$$$b$$$(1≤a,b≤N，a≠b)$$$(1 \\leq a, b \\leq N, a \\ne b)$$$，表示查询中的起始外交官和最终外交官。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出应包含 Q$$$Q$$$ 行，每行回答 a$$$a$$$ 和 b$$$b$$$ 进行交流所需的语言切换次数；如果无法交流，则输出 −1$$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例 1 解释",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一次查询中，一种传递消息的可行方式是：外交官 4 使用语言 1→外交官 6 使用语言 1→外交官 3 使用语言 2→外交官 2 使用语言 3→外交官 1$$$4 \\xrightarrow{\\text{language $$$1$$$}} 6 \\xrightarrow{\\text{language $$$1$$$}} 3 \\xrightarrow{\\text{language $$$2$$$}} 2 \\xrightarrow{\\text{language $$$3$$$}} 1$$$，其中进行了两次语言切换，分别是 1/2$$$1/2$$$ 和 2/3$$$2/3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二次查询中，无需切换语言即可传递消息：2语言 2→3$$$2 \\xrightarrow{\\text{language $$$2$$$}} 3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三次查询中，外交官 5$$$5$$$ 只会说编号为 4$$$4$$$ 的语言，而其他人都不会说这种语言，因此无法将消息传递给他。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "I. 跨语言中介",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

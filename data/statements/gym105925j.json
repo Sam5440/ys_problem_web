@@ -1,0 +1,79 @@
+{
+  "code": "GYM105925J",
+  "letter": "J",
+  "title": "J. Journey of the Particles",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105925/problem/J",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "An experiment at the Large Hadron Collider is being set up to test phase properties of various different particles. There are N$$$N$$$ filters arranged in a circle, where the i$$$i$$$-th filter allows particles with a phase less than or equal to its limit Ai$$$A_i$$$ to pass.",
+      "An experiment begins with the release of a particle at the position of the i$$$i$$$-th filter, with an initial phase set to Ai$$$A_i$$$. When passing through filter i$$$i$$$, including the first one, the particle:",
+      "Is filtered out if the phase of the particle is greater than the limit Ai$$$A_i$$$, ending the experiment.",
+      "Otherwise, the particle passes through the filter, increases its phase by K$$$K$$$, and moves to the next filter on the right, the (imodN)+1$$$(i \\bmod N) + 1$$$-th filter.",
+      "We want to simulate the result of this experiment to compare with the results verified empirically. To achieve this, we need to create a vector Bi$$$B_i$$$ of size N$$$N$$$, where Bi$$$B_i$$$ (1≤Bi≤N$$$1 \\leq B_i \\leq N$$$) is the position of the filter that stopped the particle that started at position i$$$i$$$."
+    ],
+    "input": [
+      "The first line contains two integers N$$$N$$$ (1≤N≤2⋅105$$$1 \\leq N \\leq 2 \\cdot 10^5$$$) and K$$$K$$$ (1≤K≤109$$$1 \\leq K \\leq 10^9$$$). The second line contains N$$$N$$$ integers A1,A2,…,AN$$$A_1, A_2, \\ldots, A_N$$$ (−109≤Ai≤109$$$-10^9 \\leq A_i \\leq 10^9$$$)."
+    ],
+    "output": [
+      "Print a line containing N$$$N$$$ integers B1,B2,…,BN$$$B_1, B_2, \\ldots, B_N$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 1\n4 3 1 2",
+      "output": "2 3 2 2"
+    },
+    {
+      "input": "5 5\n-10 -5 0 5 10",
+      "output": "1 1 1 1 1"
+    },
+    {
+      "input": "6 2\n12 4 5 9 2 3",
+      "output": "2 3 5 5 6 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "大型强子对撞机正在进行一项实验，以测试各种不同粒子的相位性质。有 N$$$N$$$ 个滤波器排列成一个圆圈，其中第 i$$$i$$$ 个滤波器允许相位小于或等于其上限 Ai$$$A_i$$$ 的粒子通过。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "实验开始时，在第 i$$$i$$$ 个滤波器的位置释放一个粒子，其初始相位设为 Ai$$$A_i$$$。当粒子经过滤波器 i$$$i$$$(包括第一个滤波器)时：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果粒子的相位大于上限 Ai$$$A_i$$$，则粒子会被过滤掉，实验结束。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，粒子通过该滤波器，将其相位增加 K$$$K$$$，并移动到右侧的下一个滤波器，即第 (imodN)+1$$$(i \\bmod N) + 1$$$ 个滤波器。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们希望模拟该实验的结果，以便与通过实验验证的结果进行比较。为此，我们需要创建一个大小为 N$$$N$$$ 的向量 Bi$$$B_i$$$，其中 Bi$$$B_i$$$(1≤Bi≤N$$$1 \\leq B_i \\leq N$$$)表示使从位置 i$$$i$$$ 开始的粒子停止的滤波器的位置。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 N$$$N$$$(1≤N≤2⋅105$$$1 \\leq N \\leq 2 \\cdot 10^5$$$)和 K$$$K$$$(1≤K≤109$$$1 \\leq K \\leq 10^9$$$)。第二行包含 N$$$N$$$ 个整数 A1,A2,…,AN$$$A_1, A_2, \\ldots, A_N$$$(−109≤Ai≤109$$$-10^9 \\leq A_i \\leq 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一行，包含 N$$$N$$$ 个整数 B1,B2,…,BN$$$B_1, B_2, \\ldots, B_N$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "J. 粒子的旅程",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

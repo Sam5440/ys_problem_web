@@ -1,0 +1,109 @@
+{
+  "code": "CF538F",
+  "letter": "F",
+  "title": "F. A Heap of Heaps",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/538/F",
+  "difficulty": "2200",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Andrew skipped lessons on the subject 'Algorithms and Data Structures' for the entire term. When he came to the final test, the teacher decided to give him a difficult task as a punishment.",
+      "The teacher gave Andrew an array of n numbers a1, ..., an. After that he asked Andrew for each k from 1 to n - 1 to build a k-ary heap on the array and count the number of elements for which the property of the minimum-rooted heap is violated, i.e. the value of an element is less than the value of its parent.",
+      "Andrew looked up on the Wikipedia that a k-ary heap is a rooted tree with vertices in elements of the array. If the elements of the array are indexed from 1 to n, then the children of element v are elements with indices k(v - 1) + 2, ..., kv + 1 (if some of these elements lie outside the borders of the array, the corresponding children are absent). In any k-ary heap every element except for the first one has exactly one parent; for the element 1 the parent is absent (this element is the root of the heap). Denote p(v) as the number of the parent of the element with the number v. Let's say that for a non-root element v the property of the heap is violated if av < ap(v).",
+      "Help Andrew cope with the task!"
+    ],
+    "input": [
+      "The first line contains a single integer n (2 ≤ n ≤ 2·105).",
+      "The second line contains n space-separated integers a1, ..., an ( - 109 ≤ ai ≤ 109)."
+    ],
+    "output": [
+      "in a single line print n - 1 integers, separate the consecutive numbers with a single space — the number of elements for which the property of the k-ary heap is violated, for k = 1, 2, ..., n - 1."
+    ],
+    "note": [
+      "Pictures with the heaps for the first sample are given below; elements for which the property of the heap is violated are marked with red.",
+      "![](https://espresso.codeforces.com/8d622c4cc988b38176d9f951b59b5a3197cf9a35.png)",
+      "![](https://espresso.codeforces.com/76f548d974e5e3435b6f8c8284e18e754f476572.png)",
+      "![](https://espresso.codeforces.com/bbae7dea32e9df8947fd536c85367d76f482bdf2.png)",
+      "![](https://espresso.codeforces.com/f5323873a4415fccb7bddf8db635195e60359539.png)",
+      "In the second sample all elements are equal, so the property holds for all pairs."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 5 4 3 2",
+      "output": "3 2 1 0"
+    },
+    {
+      "input": "6\n2 2 2 2 2 2",
+      "output": "0 0 0 0 0"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "下面给出了第一个样例中堆的图片；违反堆性质的元素用红色标出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/8d622c4cc988b38176d9f951b59b5a3197cf9a35.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/76f548d974e5e3435b6f8c8284e18e754f476572.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/bbae7dea32e9df8947fd536c85367d76f482bdf2.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/f5323873a4415fccb7bddf8db635195e60359539.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，所有元素都相等，因此该性质对所有数对都成立。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在一行中输出 n - 1 个整数，用一个空格分隔相邻的数字——对于 k = 1, 2, ..., n - 1，堆中违反 k 叉堆性质的元素数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Andrew 整个学期都逃掉了“算法与数据结构”这门课。期末考试时，老师决定给他布置一道难题作为惩罚。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "老师给了 Andrew 一个包含 n 个数的数组 a1, ..., an。随后，他要求 Andrew 对于从 1 到 n - 1 的每个 k，在该数组上构建一个 k 叉堆，并统计不满足最小堆性质的元素数量，即某个元素的值小于其父节点的值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Andrew 在 Wikipedia 上查到，k 叉堆是一棵根树，其顶点对应数组中的元素。如果数组中的元素编号为 1 到 n，那么元素 v 的子节点是编号为 k(v - 1) + 2, ..., kv + 1 的元素（如果其中某些元素超出数组边界，则相应的子节点不存在）。在任意 k 叉堆中，除了第一个元素外，每个元素都恰好有一个父节点；对于元素 1，其父节点不存在（该元素是堆的根）。记 p(v) 为编号为 v 的元素的父节点编号。对于非根元素 v，如果 av < ap(v)，则称该元素违反了堆的性质。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Andrew 完成这项任务！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（2 ≤ n ≤ 2·105）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个以空格分隔的整数 a1, ..., an（ - 109 ≤ ai ≤ 109）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 堆的堆",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

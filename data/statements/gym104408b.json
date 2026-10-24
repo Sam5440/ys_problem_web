@@ -1,0 +1,150 @@
+{
+  "code": "GYM104408B",
+  "letter": "B",
+  "title": "B. Gaz Map",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104408/problem/B",
+  "difficulty": "*1200",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Gaz is an infinite city. The streets of this city are as follows :",
+      "![](https://espresso.codeforces.com/b30f7b8cd57e4b3ba01130c6b2a6cb1af0a07148.png)",
+      "The streets of this city can be introduced on the two-dimensional coordinate system as follows :",
+      "A horizontal street coinciding with the x−$$$x-$$$axis.",
+      "A vertical street coinciding with the y−$$$y-$$$axis.",
+      "For every natural number n$$$n$$$, there is a circular street with radius n$$$n$$$ with the center of (0,0)$$$(0, 0)$$$ coordinate.",
+      "We know that Alice is currently at a junction with coordinate (x1,y1)$$$(x_1, y_1)$$$ and Bob is currently at a junction with coordinate (x2,y2)$$$(x_2, y_2)$$$. A junction is a point at intersection of two streets. For example, (0,1)$$$(0,1)$$$ and (0,−1)$$$(0,-1)$$$ are junctions formed from intersection of horizontal street and circular streets with radius 1$$$1$$$.",
+      "Alice wants to know the shortest distance that she has to walk in the streets of Gaz to reach Bob."
+    ],
+    "input": [
+      "In the first line of input you'll be given a number t$$$t$$$ −$$$-$$$ the number of the testcases.",
+      "1≤t≤100$$1 \\le t \\le 100$$",
+      "In each of the next t$$$t$$$ lines, you'll receive 4$$$4$$$ integers x1,y1,x2,y2$$$x_1, y_1, x_2, y_2$$$ which show the coordinates of the junctions where Alice and Bob are located.",
+      "−109≤x1,y1,x2,y2≤109$$-10^9 \\le x_1, y_1, x_2, y_2 \\le 10^9$$",
+      "It is guaranteed that at least one of x1,y1$$$x_1, y_1$$$ and at least one of x2,y2$$$x_2, y_2$$$ will be 0$$$0$$$."
+    ],
+    "output": [
+      "For each test, print only one line containing a single floating-point number −$$$-$$$ the minimum answer. Your answer will be considered correct if its absolute or relative error does not exceed 10−6$$$10^{-6}$$$."
+    ],
+    "note": [
+      "Explanation of testcase 1$$$1$$$ :",
+      "The shortest path between these two junctions is a path in the form of a straight line.",
+      "√(2−(−4))2+(0−0)2=6$$\\sqrt {(2 - (-4))^2 + (0 - 0)^2} = 6$$",
+      "![](https://espresso.codeforces.com/9ec4b59dbbdf10484af8d56eb57fd11b71a806e3.png)",
+      "Explanation of testcase 2$$$2$$$ :",
+      "The shortest path is like this :",
+      "14×(2π×3)+√(5−3)2+(0−0)2=3π2+2≃6.712389$$\\frac{1}{4} \\times (2\\pi \\times 3) + \\sqrt{(5 - 3)^2 + (0 - 0)^2} = \\frac{3\\pi}{2} + 2 \\simeq 6.712389$$",
+      "![](https://espresso.codeforces.com/4b9de39814246d28a43e2de3ee15ab38286c0d3d.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n2 0 -4 0\n0 3 5 0\n0 -7 0 0\n0 -5 0 -5",
+      "output": "6.000000\n6.712389\n7.000000\n0.000000"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Gaz 是一座无限大的城市。这座城市的街道如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/b30f7b8cd57e4b3ba01130c6b2a6cb1af0a07148.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这座城市的街道可以在二维坐标系中表示如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一条与 x−$$$x-$$$轴重合的水平街道。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一条与 y−$$$y-$$$轴重合的垂直街道。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个自然数 n$$$n$$$，都有一条半径为 n$$$n$$$、圆心坐标为 (0,0)$$$(0, 0)$$$ 的环形街道。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们知道，Alice 当前位于坐标为 (x1,y1)$$$(x_1, y_1)$$$ 的路口，而 Bob 当前位于坐标为 (x2,y2)$$$(x_2, y_2)$$$ 的路口。路口是两条街道的交点。例如，(0,1)$$$(0,1)$$$ 和 (0,−1)$$$(0,-1)$$$ 是水平街道与半径为 1$$$1$$$ 的环形街道相交形成的路口。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Alice 想知道她在 Gaz 的街道上到达 Bob 所需步行的最短距离。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行将给出一个数 t$$$t$$$ −$$$-$$$，表示测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤t≤100$$1 \\le t \\le 100$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 t$$$t$$$ 行中，每行将给出 4$$$4$$$ 个整数 x1,y1,x2,y2$$$x_1, y_1, x_2, y_2$$$，表示 Alice 和 Bob 所在路口的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "−109≤x1,y1,x2,y2≤109$$-10^9 \\le x_1, y_1, x_2, y_2 \\le 10^9$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 x1,y1$$$x_1, y_1$$$ 中至少有一个数，以及 x2,y2$$$x_2, y_2$$$ 中至少有一个数为 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，只输出一行，其中包含一个浮点数 −$$$-$$$ 最小答案。如果你的答案的绝对误差或相对误差不超过 10−6$$$10^{-6}$$$，则会被视为正确。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "测试用例 1 的解释$$$1$$$：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这两个路口之间的最短路径是一条直线。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "√(2−(−4))2+(0−0)2=6$$\\sqrt {(2 - (-4))^2 + (0 - 0)^2} = 6$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/9ec4b59dbbdf10484af8d56eb57fd11b71a806e3.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试用例 2 的解释$$$2$$$：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最短路径如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "14×(2π×3)+√(5−3)2+(0−0)2=3π2+2≃6.712389$$\\frac{1}{4} \\times (2\\pi \\times 3) + \\sqrt{(5 - 3)^2 + (0 - 0)^2} = \\frac{3\\pi}{2} + 2 \\simeq 6.712389$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/4b9de39814246d28a43e2de3ee15ab38286c0d3d.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Gaz 地图",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

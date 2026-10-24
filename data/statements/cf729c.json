@@ -1,0 +1,94 @@
+{
+  "code": "CF729C",
+  "letter": "C",
+  "title": "C. Road to Cinema",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/729/C",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Vasya is currently at a car rental service, and he wants to reach cinema. The film he has bought a ticket for starts in t minutes. There is a straight road of length s from the service to the cinema. Let's introduce a coordinate system so that the car rental service is at the point 0, and the cinema is at the point s.",
+      "There are k gas stations along the road, and at each of them you can fill a car with any amount of fuel for free! Consider that this operation doesn't take any time, i.e. is carried out instantly.",
+      "There are n cars in the rental service, i-th of them is characterized with two integers ci and vi — the price of this car rent and the capacity of its fuel tank in liters. It's not allowed to fuel a car with more fuel than its tank capacity vi. All cars are completely fueled at the car rental service.",
+      "Each of the cars can be driven in one of two speed modes: normal or accelerated. In the normal mode a car covers 1 kilometer in 2 minutes, and consumes 1 liter of fuel. In the accelerated mode a car covers 1 kilometer in 1 minutes, but consumes 2 liters of fuel. The driving mode can be changed at any moment and any number of times.",
+      "Your task is to choose a car with minimum price such that Vasya can reach the cinema before the show starts, i.e. not later than in t minutes. Assume that all cars are completely fueled initially."
+    ],
+    "input": [
+      "The first line contains four positive integers n, k, s and t (1 ≤ n ≤ 2·105, 1 ≤ k ≤ 2·105, 2 ≤ s ≤ 109, 1 ≤ t ≤ 2·109) — the number of cars at the car rental service, the number of gas stations along the road, the length of the road and the time in which the film starts.",
+      "Each of the next n lines contains two positive integers ci and vi (1 ≤ ci, vi ≤ 109) — the price of the i-th car and its fuel tank capacity.",
+      "The next line contains k distinct integers g1, g2, ..., gk (1 ≤ gi ≤ s - 1) — the positions of the gas stations on the road in arbitrary order."
+    ],
+    "output": [
+      "Print the minimum rent price of an appropriate car, i.e. such car that Vasya will be able to reach the cinema before the film starts (not later than in t minutes). If there is no appropriate car, print -1."
+    ],
+    "note": [
+      "In the first sample, Vasya can reach the cinema in time using the first or the third cars, but it would be cheaper to choose the first one. Its price is equal to 10, and the capacity of its fuel tank is 8. Then Vasya can drive to the first gas station in the accelerated mode in 3 minutes, spending 6 liters of fuel. After that he can full the tank and cover 2 kilometers in the normal mode in 4 minutes, spending 2 liters of fuel. Finally, he drives in the accelerated mode covering the remaining 3 kilometers in 3 minutes and spending 6 liters of fuel."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1 8 10\n10 8\n5 7\n11 9\n3",
+      "output": "10"
+    },
+    {
+      "input": "2 2 10 18\n10 4\n20 6\n5 3",
+      "output": "20"
+    }
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "输出一辆合适汽车的最低租金价格，即 Vasya 能够在电影开始前（不晚于 t 分钟）到达电影院的车。如果没有合适的汽车，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Vasya 可以使用第一辆或第三辆车按时到达电影院，但选择第一辆会更便宜。它的价格为 10，油箱容量为 8。然后 Vasya 可以以加速模式在 3 分钟内开到第一个加油站，消耗 6 升燃料。之后他可以加满油箱，并以普通模式在 4 分钟内行驶 2 公里，消耗 2 升燃料。最后，他以加速模式行驶剩余 3 公里，用时 3 分钟，消耗 6 升燃料。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "瓦夏目前在一家汽车租赁服务处，他想要到达电影院。他买票的电影将在 t 分钟后开始。从服务处到电影院有一条长度为 s 的直路。建立一个坐标系，使汽车租赁服务处位于点 0，电影院位于点 s。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "沿着这条路有 k 个加油站，在每个加油站都可以免费为汽车加任意数量的燃料！认为这一操作不需要任何时间，即可以瞬间完成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "汽车租赁服务中有 n 辆汽车，第 i 辆汽车由两个整数 c_i 和 v_i 描述——租用该车的价格以及其油箱容量（单位：升）。不允许给汽车加注超过其油箱容量 v_i 的燃油。汽车租赁服务处的所有汽车都已加满油。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每辆汽车都可以以两种速度模式之一行驶：普通模式或加速模式。在普通模式下，汽车行驶 1 千米需要 2 分钟，并消耗 1 升燃油。在加速模式下，汽车行驶 1 千米需要 1 分钟，但会消耗 2 升燃油。行驶模式可以在任意时刻切换任意次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是选择价格最低的汽车，使 Vasya 能够在电影放映开始前到达电影院，即在不超过 t 分钟的时间内到达。假设所有汽车初始时都已加满油。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含四个正整数 n、k、s 和 t（1 ≤ n ≤ 2·10^5，1 ≤ k ≤ 2·10^5，2 ≤ s ≤ 10^9，1 ≤ t ≤ 2·10^9）——汽车租赁服务中的汽车数量、道路沿途加油站的数量、道路长度以及电影开始前的时间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n 行中，每行包含两个正整数 c_i 和 v_i（1 ≤ c_i, v_i ≤ 10^9）——第 i 辆汽车的价格和油箱容量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 k 个互不相同的整数 g_1、g_2、...、g_k（1 ≤ g_i ≤ s - 1）——道路上加油站的位置，顺序任意。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 通往电影院的道路",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

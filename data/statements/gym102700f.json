@@ -1,0 +1,136 @@
+{
+  "code": "GYM102700F",
+  "letter": "F",
+  "title": "F. Free restricted flights",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102700/problem/F",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Alice and Bob are in the middle of a damn pandemic. They wanted to travel together somewhere for summer. However, they are in different countries and since the pandemic started, multiple flights have been canceled. What is worst, their respective countries do not allow tourists to enter, so they have to find another country to see each other. Nevertheless, they are allowed to use any country (including their residence countries) for stopovers.",
+      "![](https://espresso.codeforces.com/22aae2a330837f96a373ef48381033f037bd8785.png)",
+      "Alice and Bob have spent nearly all of their money on face masks, toilet paper, and disinfectant. Therefore, they need to minimize the total amount of money spent on flights, including the returning trip to their respective homes. Ironically, Alice and Bob are official members of the United Nihilistic Airlines League (UNAL), which has granted a special $$$k$$$-ticket to each of them. A $$$k$$$-ticket allows a passenger to take up to $$$k$$$ free flights, those tickets are personal and non-transferable.",
+      "Can you help them to find the country where they can see each other with minimal cost?"
+    ],
+    "input": [
+      "The first line consists of 2 integers separated by a space, $$$n$$$ and $$$m$$$ ($$$3$$$ $$$\\leq$$$ $$$n,m$$$ $$$\\leq$$$ $$$10^4$$$) — The number of countries, and the number of available flights, respectively.",
+      "The next line consists of 3 integers separated by a space, $$$a$$$, $$$b$$$ and $$$k$$$ ($$$0$$$ $$$\\leq$$$ $$$a,b$$$ $$$ \\lt $$$ $$$n$$$, $$$a \\neq b$$$, $$$0$$$ $$$\\leq$$$ $$$k$$$ $$$\\le$$$ $$$10$$$) — The country where Alice lives, the country where Bob lives, and the amount of free flights available on each $$$k$$$-ticket, respectively.",
+      "The next $$$m$$$ lines contains 3 integers each: $$$u$$$, $$$v$$$ ($$$0$$$ $$$\\leq$$$ $$$u,v$$$ $$$ \\lt $$$ $$$n$$$, $$$u \\neq v$$$) and $$$w$$$ ($$$1$$$ $$$\\leq$$$ $$$w$$$ $$$\\leq$$$ $$$10^3$$$) separated by a space, which represent a flight coming from $$$u$$$ into $$$v$$$ with cost $$$w$$$."
+    ],
+    "output": [
+      "Print two integers separated by a space, the index of the country where Alice and Bob should travel and the total round trip cost for both Alice and Bob. if there are many possible countries with minimal cost print the one with the lowest index.",
+      "If Alice and Bob cannot see each other print \">:(\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 5\n0 1 2\n0 2 2\n1 2 2\n2 3 2\n3 0 2\n3 1 2",
+      "output": "2 4"
+    },
+    {
+      "input": "3 3\n0 1 0\n0 1 1\n0 2 1\n1 2 1",
+      "output": ">:("
+    },
+    {
+      "input": "3 3\n0 1 0\n0 1 1\n1 2 1\n2 0 1",
+      "output": "2 6"
+    }
+  ],
+  "titleZh": {
+    "0": "F.免费限制航班",
+    "deepl": "F.自由限制飞行",
+    "caiyun": "F. 免费限制航班",
+    "youdao": "F.免费限制航班",
+    "iflyrec": "F.免费限制航班",
+    "ai": "F. 免费的受限航班",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "input": [
+      {
+        "deepl": "第一行由两个整数组成，中间用空格隔开，分别是 $$$n$$$ 和 $$$m$$$ ($$$3$$$ $$$\\leq$$$ $$$n,m$$$ $$$\\leq$$$ $$$10^4$$$)--国家数和可用航班数。",
+        "caiyun": "第一行由两个以空格分隔的整数 $$$n$$$ 和 $$$m$$$($$$3$$$$$$\\leq$$$$$$n,m$$$$$$\\leq$$$$$$10^4$$$) 组成——分别是国家数量和可用航班数量。",
+        "youdao": "第一行由两个以空格分隔的整数组成，$$$n$$$和$$$m$$$ ($$$3$$$ $$$\\leq$$$ $$$n,m$$$ $$$\\leq$$$ $$$10^4$$$)分别表示国家数目和可用航班数目。",
+        "iflyrec": "第一行由两个整数组成，中间用空格隔开，分别是$$$n$$$和$$$m$$$($$$3$$$$$$\\leq$$$$$$n,m$$$，$$$\\leq$$$，$$$10^4$$$)——国家数量和可用航班数量。",
+        "ai": "第一行包含 2 个由空格分隔的整数 $$$n$$$ 和 $$$m$$$($$$3$$$ $$$\\leq$$$ $$$n,m$$$ $$$\\leq$$$ $$$10^4$$$)，分别表示国家的数量和可用航班的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "deepl": "下一行由 3 个整数组成，中间用空格隔开，分别是$$$a$$$、$$$b$$$和$$$k$$$($$$0$$$ $$$\\leq$$$ $$$a,b$$$ $$$ \\lt $$$ $$$n$$$, $$$a \\neq b$$$, $$$0$$$ $$$\\leq$$$ $$$k$$$ $$$\\le$$$ $$$10$$$)--分别是 Alice 居住的国家、Bob 居住的国家以及每张$$$k$$$机票的免费航班数量。",
+        "caiyun": "下一行由三个整数组成，由空格分隔，分别是 $$$a$$$、$$$b$$$ 和 $$$k$$$($$$0$$$$$$\\leq$$$$$$a,b$$$$$$ \\lt $$$$$$n$$$、$$$a \\neq b$$$、$$$0$$$$$$\\leq$$$$$$k$$$$$$\\le$$$$$$10$$$)——分别是 Alice 居住的国家、Bob 居住的国家，以及每张 $$$k$$$ 机票的免费航班数量。",
+        "youdao": "下一行由3个整数组成，以空格分隔，$$$a$$$， $$$b$$$和$$$k$$$ ($$$0$$$ $$$\\leq$$$ $$$a,b$$$ $$$ \\lt $$$ $$$n$$$, $$$a \\neq b$$$, $$$0$$$ $$$\\leq$$$ $$$k$$$ $$$\\le$$$ $$$10$$$)分别表示Alice居住的国家，Bob居住的国家，以及每张$$$k$$$机票上的免费航班数量。",
+        "iflyrec": "下一行由空格分隔的3个整数$$$a$$$、$$$b$$$和$$$k$$$组成($$$0$$$$$$\\leq$$$$$$a,b$$$$$$ \\lt $$$$$$n$$$，$$$a \\neq b$$$，$$$0$$$$$$\\leq$$$$$$k$$$$$$\\le$$$$$$10$$$)——Alice居住的国家，Bob居住的国家，以及每张$$$k$$$机票上可用的免费航班数量。",
+        "ai": "下一行包含 3 个由空格分隔的整数 $$$a$$$、$$$b$$$ 和 $$$k$$$($$$0$$$ $$$\\leq$$$ $$$a,b$$$ $$$ \\lt $$$ $$$n$$$、$$$a \\neq b$$$、$$$0$$$ $$$\\leq$$$ $$$k$$$ $$$\\le$$$ $$$10$$$)，分别表示 Alice 居住的国家、Bob 居住的国家，以及每张 $$$k$$$ 机票可用的免费航班次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "deepl": "接下来的 $$$m$$$ 行各含 3 个整数：$$$u$$$、$$$v$$$($$$0$$$ $$$\\leq$$$ $$$u,v$$$ $$$ \\lt $$$ $$$n$$$, $$$u \\neq v$$$)和$$$w$$$($$$1$$$ $$$\\leq$$$ $$$w$$$ $$$\\leq$$$ $$$10^3$$$)，中间用空格隔开，表示航班从$$$u$$$进入$$$v$$$，费用为$$$w$$$。",
+        "caiyun": "接下来的 $$$m$$$ 行分别包含 3 个整数:$$$u$$$、$$$v$$$($$$0$$$$$$\\leq$$$$$$u,v$$$$$$ \\lt $$$$$$n$$$、$$$u \\neq v$$$) 和 $$$w$$$($$$1$$$$$$\\leq$$$$$$w$$$$$$\\leq$$$$$$10^3$$$)，它们由一个空格分隔，该空格代表从 $$$u$$$ 到 $$$v$$$ 的飞行，代价为 $$$w$$$。",
+        "youdao": "接下来的$$$m$$$行包含3个整数：$$$u$$$， $$$v$$$ ($$$0$$$ $$$\\leq$$$ $$$u,v$$$ $$$ \\lt $$$ $$$n$$$, $$$u \\neq v$$$)和$$$w$$$ ($$$1$$$ $$$\\leq$$$ $$$w$$$ $$$\\leq$$$ $$$10^3$$$)，用空格分隔，代表从$$$u$$$到$$$v$$$的飞行，代价为$$$w$$$。",
+        "iflyrec": "接下来的$$$m$$$行各包含3个整数：$$$u$$$、$$$v$$$($$$0$$$$$$\\leq$$$$$$u,v$$$$$$ \\lt $$$$$$n$$$、$$$u \\neq v$$$)和$$$w$$$($$$1$$$$$$\\leq$$$$$$w$$$$$$\\leq$$$$$$10^3$$$)，由空格分隔，表示从$$$u$$$到$$$v$$$的费用为$$$w$$$的航班。",
+        "ai": "接下来的 $$$m$$$ 行每行包含 3 个整数：$$$u$$$、$$$v$$$($$$0$$$ $$$\\leq$$$ $$$u,v$$$ $$$ \\lt $$$ $$$n$$$，$$$u \\neq v$$$)和 $$$w$$$($$$1$$$ $$$\\leq$$$ $$$w$$$ $$$\\leq$$$ $$$10^3$$$)，它们由空格分隔，表示一班从 $$$u$$$ 飞往 $$$v$$$、费用为 $$$w$$$ 的航班。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "deepl": "打印两个用空格隔开的整数，即 Alice 和 Bob 应该去的国家的索引，以及 Alice 和 Bob 的往返总费用。",
+        "caiyun": "打印两个用空格分隔的整数，即 Alice 和 Bob 应该前往的国家的索引，以及 Alice 和 Bob 的总往返费用。如果有许多可能的最低费用国家，请打印索引最低的那个。",
+        "youdao": "输出两个以空格分隔的整数，Alice和Bob应该去的国家的索引以及Alice和Bob往返的总费用。如果有许多可能的国家成本最低，请打印指数最低的国家。",
+        "iflyrec": "打印两个整数，中间用空格隔开，Alice和Bob应前往的国家的索引以及Alice和Bob的总往返费用。如果有许多国家的费用最小，则打印索引最小的国家。",
+        "ai": "输出两个由空格分隔的整数：Alice 和 Bob 应前往的国家编号，以及 Alice 和 Bob 两人的往返总费用。如果有多个国家的最低费用相同，则输出编号最小的国家。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "deepl": "如果 Alice 和 Bob 无法看到对方，则打印\">:(\"。",
+        "caiyun": "如果爱丽丝和鲍勃看不到彼此，请打印 “>:”(.",
+        "youdao": "如果Alice和Bob看不到对方，输出“>:(”。",
+        "iflyrec": "如果Alice和Bob无法看到对方，请打印“>：（”。",
+        "ai": "如果 Alice 和 Bob 彼此看不见，请输出“>:(\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "deepl": "爱丽丝和鲍勃正处于一场该死的大流行病中。他们本想暑假一起去某个地方旅行。然而，他们身处不同的国家，自从大流行病开始后，多趟航班都被取消了。最糟糕的是，他们各自的国家都不允许游客入境，所以他们只能另找一个国家见面。不过，他们可以在任何国家（包括他们的居住国）中途停留。",
+        "caiyun": "爱丽丝和鲍勃正处于一场该死的疫情中。他们本想一起去某个地方旅行度过夏天。然而，他们身处不同的国家，自疫情开始以来，多个航班已经被取消。更糟糕的是，他们各自的国家不允许游客入境，所以他们不得不另找一个国家见面。尽管如此，他们还是被允许使用任何国家 (包括他们居住的国家) 作为中转站。",
+        "youdao": "爱丽丝和鲍勃正在经历一场该死的流行病。他们想在夏天一起去某个地方旅行。然而，他们在不同的国家，自疫情开始以来，已有多个航班被取消。最糟糕的是，他们各自的国家都不允许游客入境，所以他们不得不找另一个国家去见对方。然而，他们被允许使用任何国家（包括他们的居住国）作为中途停留。",
+        "iflyrec": "爱丽丝和鲍勃正在一场该死的流行病中。他们想在夏天一起去某个地方旅行。然而，他们在不同的国家，自流感大流行开始以来，多个航班已被取消。最糟糕的是，他们各自的国家不允许游客进入，所以他们不得不找另一个国家来看对方。然而，他们被允许使用任何国家（包括他们的居住国）作为中途停留地。",
+        "ai": "艾丽斯和鲍勃正处于一场该死的疫情之中。他们原本想在夏天一起去某个地方旅行。然而，他们身处不同的国家，而且自疫情开始以来，已有多趟航班被取消。更糟糕的是，他们各自所在的国家都不允许游客入境，因此他们必须寻找另一个国家来见面。不过，他们可以使用任意国家（包括各自居住的国家）作为中转地。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "deepl": "![](https://espresso.codeforces.com/22aae2a330837f96a373ef48381033f037bd8785.png)",
+        "youdao": "![](https://espresso.codeforces.com/22aae2a330837f96a373ef48381033f037bd8785.png)",
+        "caiyun": "![](https://espresso.codeforces.com/22aae2a330837f96a373ef48381033f037bd8785.png)",
+        "iflyrec": "![](https://espresso.codeforces.com/22aae2a330837f96a373ef48381033f037bd8785.png)",
+        "ai": "![](https://espresso.codeforces.com/22aae2a330837f96a373ef48381033f037bd8785.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "deepl": "爱丽丝和鲍勃几乎把所有的钱都花在了口罩、卫生纸和消毒剂上。因此，他们需要尽量减少在航班上花费的总金额，包括返回各自家中的费用。具有讽刺意味的是，爱丽丝和鲍勃是虚无主义联合航空联盟(UNAL)的正式成员，该联盟为他们每人提供了一张特殊的$$$k$$$机票。一张$$$k$$$机票允许乘客免费乘坐多达$$$k$$$次航班，这些机票是个人的，不可转让。",
+        "caiyun": "Alice 和 Bob 几乎把所有的钱都花在了口罩、卫生纸和消毒剂上。因此，他们需要尽量减少机票的总花费，包括回家的路费。具有讽刺意味的是，Alice 和 Bob 是联合虚无航空联盟 (UNAL) 的正式成员，该联盟为他们每人颁发了一张特殊的 $$$k$$$ 机票。$$$k$$$ 机票允许乘客免费乘坐 $$$k$$$ 航班，这些机票是个人的，不可转让。",
+        "iflyrec": "爱丽丝和鲍勃几乎把所有的钱都花在了口罩、卫生纸和消毒剂上。因此，他们需要尽量减少在航班上花费的总金额，包括返回各自家园的费用。具有讽刺意味的是，爱丽丝和鲍勃是联合虚无主义航空联盟(UNAL)的正式成员，它已授予他们每个人一张特殊的$$$k$$$票。一张$$$k$$$机票允许乘客乘坐最多$$$k$$$次免费航班，这些机票是个人的，不可转让。",
+        "ai": "Alice 和 Bob 几乎把所有的钱都花在了口罩、卫生纸和消毒剂上。因此，他们需要将机票的总花费降至最低，其中包括返回各自住所的行程。讽刺的是，Alice 和 Bob 都是联合虚无主义航空联盟(UNAL)的正式成员，该联盟为他们每人发放了一张特殊的 $$$k$$$ 机票。$$$k$$$ 机票允许乘客免费乘坐至多 $$$k$$$ 次航班，这些机票仅限本人使用，不得转让。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "deepl": "您能帮助他们找到能让他们以最低成本见面的国家吗？",
+        "caiyun": "你能帮他们找到一个能以最低成本见面的国家吗？",
+        "youdao": "你能帮他们找到一个能让他们以最小的成本见面的国家吗？",
+        "iflyrec": "你能帮助他们找到一个国家，在那里他们可以用最少的费用看到对方吗？",
+        "ai": "你能帮助他们找到一个可以以最低花费相见的国家吗？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.093Z",
+  "translatedBy": [
+    "deepl",
+    "youdao",
+    "caiyun",
+    "iflyrec"
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "code": "GYM106628K",
+  "letter": "K",
+  "title": "K. Point Diameter",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106628/problem/K",
+  "difficulty": "*1600",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Zoro has somehow gotten completely lost again, this time on a flat island with $$$n$$$ landmarks. Sanji is furious and tries to guide him using a map. The $$$i$$$-th landmark is at $$$(x_{i}, y_{i})$$$.",
+      "To make things easier for Zoro's terrible sense of direction, Sanji decides to erase up to two landmarks from the map. The \"lost diameter\" of the map is the biggest Manhattan distance between any two remaining landmarks.",
+      "The Manhattan distance between $$$(x_{1}, y_{1})$$$ and $$$(x_{2}, y_{2})$$$ is $$$|x_{1}-x_{2}| + |y_{1}-y_{2}|$$$. If less than two landmarks are left, the diameter is 0.",
+      "Find the smallest possible lost diameter Sanji can achieve after removing at most two landmarks."
+    ],
+    "input": [
+      "The first line contains an integer $$$t$$$ ($$$1 \\le t \\le 10^{4}$$$) — the number of test cases.",
+      "The first line of each test case contains an integer $$$n$$$ ($$$1 \\le n \\le 2 \\times 10^{5}$$$) — the number of points.",
+      "Each of the next $$$n$$$ lines contains two integers $$$x_{i}$$$ and $$$y_{i}$$$ ($$$-10^{9} \\le x_{i}, y_{i} \\le 10^{9}$$$).",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2 \\times 10^{5}$$$."
+    ],
+    "output": [
+      "For each test case, output one integer — the smallest possible diameter."
+    ],
+    "note": [
+      "In the first test case, remove (10,0) and (0,10). Only one point remains, so the diameter is 0.",
+      "In the second test case, after removing two opposite corners, the remaining two points can have Manhattan distance 2."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3\n0 0\n10 0\n0 10\n4\n0 0\n2 0\n0 2\n2 2",
+      "output": "0\n2"
+    }
+  ],
+  "titleZh": {
+    "0": "k点直径",
+    "caiyun": "K. 点直径",
+    "youdao": "k点直径",
+    "deepl": "K.点直径",
+    "iflyrec": "K.点直径",
+    "ai": "K. 点直径",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "佐罗不知怎么又完全迷路了，这次是在一个有 $$$n$$$ 地标的平坦岛屿上。桑吉怒不可遏，试图用地图引导他。$$$i$$$ 的第二个地标在 $$$(x_{i}, y_{i})$$$。",
+        "deepl": "佐罗不知怎么又完全迷路了，这次是在一个有 $$$n$$$ 地标的平坦小岛上。山治很生气，试图用地图指引他。第 $$$i$$$ 个地标位于 $$$(x_{i}, y_{i})$$$。",
+        "iflyrec": "不知何故，佐罗又一次完全迷路了，这次是在一个有着$$$n$$$地标的平坦小岛上。山治怒不可遏，试图用地图指引他。第$$$i$$$个界标位于$$$(x_{i}, y_{i})$$$。",
+        "ai": "佐罗不知怎么又完全迷路了，这次是在一座有 $$$n$$$ 个地标的平坦岛屿上。山治怒不可遏，试图用地图引导他。第 $$$i$$$ 个地标位于 $$$(x_{i}, y_{i})$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "为了便于佐罗糟糕的方向感，桑吉决定从地图上删除最多两个地标。地图上 “缺失的直径” 是剩余两个地标之间最大的曼哈顿距离。",
+        "youdao": "为了减轻佐罗糟糕的方向感，山治决定从地图上抹去两个地标。地图上的“消失直径”是曼哈顿两个现存地标之间的最大距离。",
+        "deepl": "为了让方向感极差的佐罗更轻松，山治决定从地图上抹去最多两个地标。地图的 \"丢失直径 \"就是剩下的两个地标之间最大的曼哈顿距离。",
+        "iflyrec": "为了让佐罗可怕的方向感更容易，山治决定从地图上删除最多两个地标。地图的“丢失直径”是任何两个剩余地标之间的最大曼哈顿距离。",
+        "ai": "为了让佐罗更容易应对自己糟糕的方向感，山治决定从地图上擦除至多两个地标。地图的“迷失直径”是任意两个剩余地标之间的最大曼哈顿距离。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$(x_{1}, y_{1})$$$和$$$(x_{2}, y_{2})$$$之间的曼哈顿距离为$$$|x_{1}-x_{2}| + |y_{1}-y_{2}|$$$。如果剩下的路标少于两个，则直径为0。",
+        "youdao": "$$$(x_{1}, y_{1})$$$和$$$(x_{2}, y_{2})$$$之间的曼哈顿距离为$$$|x_{1}-x_{2}| + |y_{1}-y_{2}|$$$。如果剩下的路标少于两个，则直径为0。",
+        "iflyrec": "$$$(x_{1}, y_{1})$$$和$$$(x_{2}, y_{2})$$$之间的曼哈顿距离为$$$|x_{1}-x_{2}| + |y_{1}-y_{2}|$$$。如果剩下的界标少于两个，则直径为0。",
+        "ai": "$$$(x_{1}, y_{1})$$$ 与 $$$(x_{2}, y_{2})$$$ 之间的曼哈顿距离为 $$$|x_{1}-x_{2}| + |y_{1}-y_{2}|$$$。如果剩余的地标少于两个，则直径为 0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "找到 Sanji 在最多移除两个地标后所能达到的最小可能损失直径。",
+        "youdao": "在移除最多两个地标后，找到尽可能小的散吉损失直径。",
+        "deepl": "找出桑吉在去掉最多两个地标后可能达到的最小损失直径。",
+        "iflyrec": "找出山治在移除最多两个界标后所能达到的最小损失直径。",
+        "ai": "求出 Sanji 移除至多两个地标后能够得到的最小可能直径。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数$$$t$$$ ($$$1 \\le t \\le 10^{4}$$$）—测试用例的数量。",
+        "youdao": "第一行包含一个整数$$$t$$$ ($$$1 \\le t \\le 10^{4}$$$）—测试用例的数量。",
+        "deepl": "第一行包含一个整数 $$$t$$$ ($$$1 \\le t \\le 10^{4}$$$）--测试用例数。",
+        "iflyrec": "第一行包含整数$$$t$$$($$$1 \\le t \\le 10^{4}$$$）—测试用例的数量。",
+        "ai": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^{4}$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "每个测试用例的第一行包含一个整数 $$$n$$$($$$1 \\le n \\le 2 \\times 10^{5}$$$)——即点的数量。",
+        "youdao": "每个测试用例的第一行包含一个整数$$$n$$$ ($$$1 \\le n \\le 2 \\times 10^{5}$$$）——点的数量。",
+        "deepl": "每个测试用例的第一行都包含一个整数 $$$n$$$ ($$$1 \\le n \\le 2 \\times 10^{5}$$$）--点数。",
+        "iflyrec": "每个测试用例的第一行包含整数$$$n$$$($$$1 \\le n \\le 2 \\times 10^{5}$$$）—点数。",
+        "ai": "每个测试用例的第一行包含一个整数 $$$n$$$($$$1 \\le n \\le 2 \\times 10^{5}$$$)——点的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "接下来的每一行$$$n$$$包含两个整数$$$x_{i}$$$和$$$y_{i}$$$ ($$$-10^{9} \\le x_{i}, y_{i} \\le 10^{9}$$$）。",
+        "youdao": "接下来的每一行$$$n$$$包含两个整数$$$x_{i}$$$和$$$y_{i}$$$ ($$$-10^{9} \\le x_{i}, y_{i} \\le 10^{9}$$$）。",
+        "deepl": "接下来的每一行 $$$n$$$ 都包含两个整数 $$$x_{i}$$$ 和 $$$y_{i}$$$ ($$$-10^{9} \\le x_{i}, y_{i} \\le 10^{9}$$$）。",
+        "iflyrec": "接下来的$$$n$$$行中的每一行都包含两个整数$$$x_{i}$$$和$$$y_{i}$$$($$$-10^{9} \\le x_{i}, y_{i} \\le 10^{9}$$$）。",
+        "ai": "接下来的 $$$n$$$ 行中的每一行包含两个整数 $$$x_{i}$$$ 和 $$$y_{i}$$$($$$-10^{9} \\le x_{i}, y_{i} \\le 10^{9}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "保证所有测试用例的 $$$n$$$ 之和不超过 $$$2 \\times 10^{5}$$$。",
+        "youdao": "保证所有测试用例的$$$n$$$之和不超过$$$2 \\times 10^{5}$$$。",
+        "deepl": "保证所有测试用例的 $$$n$$$ 之和不超过 $$$2 \\times 10^{5}$$$。",
+        "iflyrec": "保证所有测试用例的$$$n$$$总和不超过$$$2 \\times 10^{5}$$$。",
+        "ai": "保证所有测试用例中 $$$n$$$ 的总和不超过 $$$2 \\times 10^{5}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "对于每个测试用例，输出一个整数——可能的最小直径。",
+        "youdao": "对于每个测试用例，输出一个整数——可能的最小直径。",
+        "deepl": "对于每个测试用例，输出一个整数 - 可能的最小直径。",
+        "iflyrec": "对于每个测试用例，输出一个整数—可能的最小直径。",
+        "ai": "对于每个测试用例，输出一个整数，即可能的最小直径。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "在第一个测试用例中，移除 (10,0) 和 (0,10)。只剩下一个点，因此直径为 0。",
+        "youdao": "在第一个测试用例中，删除（10,0）和（0,10）。只剩下一个点，所以直径是0。",
+        "deepl": "在第一个测试案例中，删除 (10,0) 和 (0,10)。只剩下一个点，因此直径为 0。",
+        "iflyrec": "在第一个测试用例中，删除（10，0）和（0，10）。只剩下一个点，因此直径为0。",
+        "ai": "在第一个测试用例中，移除 (10,0) 和 (0,10)。只剩下一个点，因此直径为 0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "在第二个测试案例中，去掉两个相对的角后，剩下的两个点的曼哈顿距离为2。",
+        "youdao": "在第二个测试案例中，去掉两个相对的角后，剩下的两个点的曼哈顿距离为2。",
+        "deepl": "在第二个测试案例中，去掉两个对角后，剩下的两个点的曼哈顿距离可以是 2。",
+        "iflyrec": "在第二个测试案例中，在移除两个对角之后，剩余的两个点可以具有曼哈顿距离2。",
+        "ai": "在第二个测试用例中，移除两个相对的角后，剩下的两个点之间的曼哈顿距离可以为 2。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.112Z",
+  "translatedBy": [
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

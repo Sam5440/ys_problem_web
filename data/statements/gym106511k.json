@@ -1,0 +1,113 @@
+{
+  "code": "GYM106511K",
+  "letter": "K",
+  "title": "K. Some 3-SUMs",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106511/problem/K",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "For an array of integers a$$$a$$$, a triplet of elements is defined by 3 distinct indices (ai,aj,ak)$$$(a_i, a_j, a_k)$$$, and their order does not matter.",
+      "Consider the triplets from a$$$a$$$ that sum to zero.",
+      "For example, the array a=[1,1,1,2,−2,0]$$$a = [1, 1, 1, 2, -2, 0]$$$ has 4$$$4$$$ triplets that sum to zero: (a1,a2,a5)$$$(a_1, a_2, a_5)$$$, (a1,a3,a5)$$$(a_1, a_3, a_5)$$$, (a2,a3,a5)$$$(a_2, a_3, a_5)$$$, and (a4,a5,a6)$$$(a_4, a_5, a_6)$$$.",
+      "Given an integer k$$$k$$$, construct an array of integers a$$$a$$$ such that exactly k$$$k$$$ triplets of elements from a$$$a$$$ sum to zero.",
+      "Your array must have size at most 5000$$$5000$$$."
+    ],
+    "input": [
+      "The single line of the input contains an integer k$$$k$$$ (0≤k≤109$$$0 \\leq k \\leq 10^9$$$) — the required number of triplets that sum to zero."
+    ],
+    "output": [
+      "Output two lines.",
+      "On the first line, output a single integer n$$$n$$$ (0≤n≤5000$$$0 \\leq n \\leq 5000$$$) — the size of a$$$a$$$.",
+      "On the second line, output n$$$n$$$ space-separated integers a1,…,an$$$a_1, \\ldots, a_n$$$ (−109≤ai≤109$$$-10^9 \\leq a_i \\leq 10^9$$$).",
+      "If there are multiple arrays satisfying these conditions, output any of them.",
+      "It can be shown that a valid answer always exists."
+    ],
+    "note": [
+      "In sample 1, no triples in the array a$$$a$$$ sum to zero.",
+      "In sample 2, the only triple that sums to zero is (a2,a4,a5)$$$(a_2, a_4, a_5)$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "0",
+      "output": "4\n1 2 3 4"
+    },
+    {
+      "input": "1",
+      "output": "5\n-1 1 -2 2 -3"
+    },
+    {
+      "input": "4",
+      "output": "6\n1 1 1 2 -2 0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "对于整数数组 a$$$a$$$，一个元素三元组由 3 个互不相同的下标 (ai,aj,ak)$$$(a_i, a_j, a_k)$$$ 定义，且它们的顺序无关紧要。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "考虑 a$$$a$$$ 中所有和为 0 的三元组。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "例如，数组 a=[1,1,1,2,−2,0]$$$a = [1, 1, 1, 2, -2, 0]$$$ 有 4$$$4$$$ 个和为 0 的三元组：(a1,a2,a5)$$$(a_1, a_2, a_5)$$$、(a1,a3,a5)$$$(a_1, a_3, a_5)$$$、(a2,a3,a5)$$$(a_2, a_3, a_5)$$$ 和 (a4,a5,a6)$$$(a_4, a_5, a_6)$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "给定整数 k$$$k$$$，构造一个整数数组 a$$$a$$$，使得 a$$$a$$$ 中恰好有 k$$$k$$$ 个和为 0 的三元组。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你的数组长度最多为 5000$$$5000$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入中仅有的一行包含一个整数 k$$$k$$$(0≤k≤109$$$0 \\leq k \\leq 10^9$$$)，即要求的和为 0 的三元组数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出两行。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一行输出一个整数 n$$$n$$$(0≤n≤5000$$$0 \\leq n \\leq 5000$$$)，表示数组 a$$$a$$$ 的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二行输出 n$$$n$$$ 个空格分隔的整数 a1,…,an$$$a_1, \\ldots, a_n$$$(−109≤ai≤109$$$-10^9 \\leq a_i \\leq 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个数组满足这些条件，输出其中任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，合法答案始终存在。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在样例 1 中，数组 a$$$a$$$ 中不存在三个数之和为零的三元组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在样例 2 中，唯一一个和为零的三元组是 (a2,a4,a5)$$$(a_2, a_4, a_5)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "K. 一些 3-SUMs",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

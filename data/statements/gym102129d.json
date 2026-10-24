@@ -1,0 +1,136 @@
+{
+  "code": "GYM102129D",
+  "letter": "D",
+  "title": "D. Basis Change",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102129/problem/D",
+  "difficulty": "*2300",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 mebibytes",
+  "sections": {
+    "legend": [
+      "You are given sequences $$$\\{a_i\\}_{i=1}^k$$$ and $$$\\{b_i\\}_{i=1}^k$$$. Consider all sequences $$$\\{F_i\\}_{i=1}^\\infty$$$ which satisfy the following linear recurrence for all $$$n  \\gt  k$$$:",
+      "$$$$$$F_n = \\sum\\limits_{i=1}^k a_i F_{n-i}\\text{.}$$$$$$",
+      "You have to find a sequence $$$\\{c_i\\}_{i=1}^k$$$ such that, for all such $$$\\{F_i\\}_{i=1}^\\infty$$$, the following linear recurrence is satisfied for all $$$n  \\gt  b_k$$$:",
+      "$$$$$$F_n = \\sum\\limits_{i=1}^k c_i F_{n-b_i}\\text{.}$$$$$$"
+    ],
+    "input": [
+      "The first line of input contains a single integer $$$k$$$ ($$$1 \\leq k \\leq 128$$$).",
+      "The second line of input contains $$$k$$$ integers $$$a_1, \\dots, a_k$$$ ($$$1 \\leq a_i \\leq 10^9$$$).",
+      "The third line of input contains $$$k$$$ integers $$$b_1, \\dots, b_k$$$ ($$$1 \\leq b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_k \\leq 10^9$$$).",
+      "It is guaranteed that the solution exists and is unique. Moreover, it is guaranteed that sequences $$$a_i$$$ and $$$b_i$$$ were uniformly randomly chosen among possible ones with some fixed number $$$k$$$ for all test cases except the example."
+    ],
+    "output": [
+      "Output $$$k$$$ integers $$$c_1, \\dots, c_k$$$ on a single line. If $$$c_k = \\frac{P}{Q}$$$ such that $$$P$$$ and $$$Q$$$ are coprime, output $$$(P \\cdot Q^{-1}) \\bmod (10^9 + 7)$$$. It is guaranteed that $$$Q \\not \\equiv 0 \\pmod{10^9+7}$$$."
+    ],
+    "note": [
+      "In the example, we have $$$F_n = F_{n-1} + F_{n-2}$$$. We can write $$$F_n - F_{n-1} = (F_{n-1} + F_{n-2}) - (F_{n-2} + F_{n-3})$$$. Thus $$$F_n = 2F_{n-1} - F_{n-3}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 1\n1 3",
+      "output": "2 1000000006"
+    }
+  ],
+  "titleZh": {
+    "0": "D.基础变更",
+    "deepl": "D.基础变化",
+    "caiyun": "D. 基础变更",
+    "youdao": "D.基础变化",
+    "iflyrec": "D.基础变更",
+    "ai": "D. 基变换",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "input": [
+      {
+        "deepl": "第一行输入包含一个整数 $$$k$$$ ($$$1 \\leq k \\leq 128$$$)。",
+        "caiyun": "输入的第一行包含一个整数 $$$k$$$($$$1 \\leq k \\leq 128$$$)。",
+        "youdao": "输入的第一行包含一个整数$$$k$$$ ($$$1 \\leq k \\leq 128$$$)。",
+        "iflyrec": "输入的第一行包含单个整数$$$k$$$($$$1 \\leq k \\leq 128$$$)。",
+        "ai": "输入的第一行包含一个整数 $$$k$$$($$$1 \\leq k \\leq 128$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "deepl": "第二行输入包含 $$$k$$$ 个整数 $$$a_1, \\dots, a_k$$$ ($$$1 \\leq a_i \\leq 10^9$$$)。",
+        "caiyun": "输入的第二行包含 $$$k$$$ 整数 $$$a_1, \\dots, a_k$$$($$$1 \\leq a_i \\leq 10^9$$$)。",
+        "youdao": "第二行输入包含$$$k$$$个整数$$$a_1, \\dots, a_k$$$ ($$$1 \\leq a_i \\leq 10^9$$$)。",
+        "iflyrec": "输入的第二行包含$$$k$$$整数$$$a_1, \\dots, a_k$$$($$$1 \\leq a_i \\leq 10^9$$$)。",
+        "ai": "输入的第二行包含 $$$k$$$ 个整数 $$$a_1, \\dots, a_k$$$($$$1 \\leq a_i \\leq 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "deepl": "第三行输入包含 $$$k$$$ 整数 $$$b_1, \\dots, b_k$$$ ($$$1 \\leq b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_k \\leq 10^9$$$)。",
+        "caiyun": "第三行输入包含 $$$k$$$ 整数 $$$b_1, \\dots, b_k$$$($$$1 \\leq b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_k \\leq 10^9$$$)。",
+        "youdao": "第三行输入包含$$$k$$$个整数$$$b_1, \\dots, b_k$$$ ($$$1 \\leq b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_k \\leq 10^9$$$)。",
+        "iflyrec": "输入的第三行包含$$$k$$$整数$$$b_1, \\dots, b_k$$$($$$1 \\leq b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_k \\leq 10^9$$$)。",
+        "ai": "输入的第三行包含 $$$k$$$ 个整数 $$$b_1, \\dots, b_k$$$($$$1 \\leq b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_k \\leq 10^9$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "deepl": "保证解是存在的，而且是唯一的。此外，保证序列 $$$a_i$$$ 和 $$$b_i$$$ 是在可能的序列中以某个固定的数字 $$$k$$$ 统一随机选择的，所有测试用例除外。",
+        "caiyun": "保证解决方案存在且唯一。此外，还保证序列 $$$a_i$$$ 和 $$$b_i$$$ 是从具有某个固定数 $$$k$$$ 的可能序列中均匀随机选择的，适用于除示例外的所有测试情况。",
+        "youdao": "它保证解存在并且是唯一的。并且保证除本例外的所有测试用例，序列$$$a_i$$$和序列$$$b_i$$$是均匀随机选择的，且序列$$$k$$$具有一定的固定数。",
+        "iflyrec": "保证解决方案存在并且是唯一的。此外，对于除示例之外的所有测试用例，保证序列$$$a_i$$$和$$$b_i$$$是在具有某个固定数量$$$k$$$的可能序列中均匀随机选择的。",
+        "ai": "保证解存在且唯一。此外，保证除样例以外的所有测试用例中，序列 $$$a_i$$$ 和 $$$b_i$$$ 都是在带有某个固定数值 $$$k$$$ 的所有可能序列中均匀随机选取的。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "deepl": "在这个例子中，我们有 $$$F_n = F_{n-1} + F_{n-2}$$$。我们可以写成 $$$F_n - F_{n-1} = (F_{n-1} + F_{n-2}) - (F_{n-2} + F_{n-3})$$$。因此是 $$$F_n = 2F_{n-1} - F_{n-3}$$$。",
+        "caiyun": "在示例中，我们有 $$$F_n = F_{n-1} + F_{n-2}$$$。我们可以写 $$$F_n - F_{n-1} = (F_{n-1} + F_{n-2}) - (F_{n-2} + F_{n-3})$$$。因此 $$$F_n = 2F_{n-1} - F_{n-3}$$$。",
+        "youdao": "在这个例子中，我们有$$$F_n = F_{n-1} + F_{n-2}$$$。我们可以写$$$F_n - F_{n-1} = (F_{n-1} + F_{n-2}) - (F_{n-2} + F_{n-3})$$$。因此$$$F_n = 2F_{n-1} - F_{n-3}$$$。",
+        "iflyrec": "在示例中，我们有$$$F_n = F_{n-1} + F_{n-2}$$$。我们可以写$$$F_n - F_{n-1} = (F_{n-1} + F_{n-2}) - (F_{n-2} + F_{n-3})$$$。因此$$$F_n = 2F_{n-1} - F_{n-3}$$$。",
+        "ai": "在样例中，我们有 $$$F_n = F_{n-1} + F_{n-2}$$$。可以写出 $$$F_n - F_{n-1} = (F_{n-1} + F_{n-2}) - (F_{n-2} + F_{n-3})$$$。因此 $$$F_n = 2F_{n-1} - F_{n-3}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "deepl": "单行输出 $$$k$$$ 个整数 $$$c_1, \\dots, c_k$$$。如果$$$c_k = \\frac{P}{Q}$$$使得$$$P$$$和$$$Q$$$是共素数，则输出$$$(P \\cdot Q^{-1}) \\bmod (10^9 + 7)$$$。保证 $$$Q \\not \\equiv 0 \\pmod{10^9+7}$$$。",
+        "caiyun": "输出 $$$k$$$ 单行整数 $$$c_1, \\dots, c_k$$$。如果 $$$c_k = \\frac{P}{Q}$$$ 使得 $$$P$$$ 和 $$$Q$$$ 是覆盖，则输出 $$$(P \\cdot Q^{-1}) \\bmod (10^9 + 7)$$$。保证 $$$Q \\not \\equiv 0 \\pmod{10^9+7}$$$。",
+        "iflyrec": "在单行上输出$$$k$$$个整数$$$c_1, \\dots, c_k$$$。如果$$$c_k = \\frac{P}{Q}$$$使得$$$P$$$和$$$Q$$$互质，则输出$$$(P \\cdot Q^{-1}) \\bmod (10^9 + 7)$$$。保证$$$Q \\not \\equiv 0 \\pmod{10^9+7}$$$。",
+        "ai": "在一行内输出 $$$k$$$ 个整数 $$$c_1, \\dots, c_k$$$。如果存在 $$$c_k = \\frac{P}{Q}$$$ 使得 $$$P$$$ 与 $$$Q$$$ 互质，则输出 $$$(P \\cdot Q^{-1}) \\bmod (10^9 + 7)$$$。保证 $$$Q \\not \\equiv 0 \\pmod{10^9+7}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "legend": [
+      {
+        "deepl": "给你序列 $$$\\{a_i\\}_{i=1}^k$$$ 和 $$$\\{b_i\\}_{i=1}^k$$$。考虑所有序列 $$$\\{F_i\\}_{i=1}^\\infty$$$，对于所有 $$$n  \\gt  k$$$，它们都满足下面的线性递推关系：",
+        "caiyun": "给定序列 $$$\\{a_i\\}_{i=1}^k$$$ 和 $$$\\{b_i\\}_{i=1}^k$$$。考虑所有满足以下所有 $$$n  \\gt  k$$$ 线性递归的序列 $$$\\{F_i\\}_{i=1}^\\infty$$$:",
+        "youdao": "给定序列$$$\\{a_i\\}_{i=1}^k$$$和$$$\\{b_i\\}_{i=1}^k$$$。考虑对所有$$$n  \\gt  k$$$满足以下线性递归的所有序列$$$\\{F_i\\}_{i=1}^\\infty$$$：",
+        "iflyrec": "您将获得序列$$$\\{a_i\\}_{i=1}^k$$$和$$$\\{b_i\\}_{i=1}^k$$$。考虑对于所有$$$n  \\gt  k$$$满足以下线性递推的所有序列$$$\\{F_i\\}_{i=1}^\\infty$$$:",
+        "ai": "给定序列 $$$\\{a_i\\}_{i=1}^k$$$ 和 $$$\\{b_i\\}_{i=1}^k$$$。考虑所有满足以下线性递推式的序列 $$$\\{F_i\\}_{i=1}^\\infty$$$，对于所有 $$$n  \\gt  k$$$：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "deepl": "$$$$$$F_n = \\sum\\limits_{i=1}^k a_i F_{n-i}\\text{.}$$$$$$",
+        "caiyun": "$$$$$$F_n = \\sum\\limits_{i=1}^k a_i F_{n-i}\\text{.}$$$$$$",
+        "iflyrec": "$$$$$$F_n = \\sum\\limits_{i=1}^k a_i F_{n-i}\\text{.}$$$$$$",
+        "ai": "$$$$$$F_n = \\sum\\limits_{i=1}^k a_i F_{n-i}\\text{.}$$$$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "deepl": "你必须找到一个序列 $$$\\{c_i\\}_{i=1}^k$$$，使得对于所有这样的 $$$\\{F_i\\}_{i=1}^\\infty$$$，下面的线性递推满足所有 $$$n  \\gt  b_k$$$：",
+        "caiyun": "你必须找到一个序列 $$$\\{c_i\\}_{i=1}^k$$$，使得对于所有这样的 $$$\\{F_i\\}_{i=1}^\\infty$$$，对于所有 $$$n  \\gt  b_k$$$，满足以下线性递归：",
+        "youdao": "你必须找到一个序列$$$\\{c_i\\}_{i=1}^k$$$，使得对于所有这样的$$$\\{F_i\\}_{i=1}^\\infty$$$，所有$$$n  \\gt  b_k$$$都满足以下线性递归：",
+        "iflyrec": "你必须找到一个序列$$$\\{c_i\\}_{i=1}^k$$$，使得对于所有这样的$$$\\{F_i\\}_{i=1}^\\infty$$$，所有$$$n  \\gt  b_k$$$都满足下面的线性递推:",
+        "ai": "你需要找出一个序列 $$$\\{c_i\\}_{i=1}^k$$$，使得对于所有这样的 $$$\\{F_i\\}_{i=1}^\\infty$$$，以下线性递推式对所有 $$$n  \\gt  b_k$$$ 均成立：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "deepl": "$$$$$$F_n = \\sum\\limits_{i=1}^k c_i F_{n-b_i}\\text{.}$$$$$$",
+        "caiyun": "$$$$$$F_n = \\sum\\limits_{i=1}^k c_i F_{n-b_i}\\text{.}$$$$$$",
+        "iflyrec": "$$$$$$F_n = \\sum\\limits_{i=1}^k c_i F_{n-b_i}\\text{.}$$$$$$",
+        "ai": "$$$$$$F_n = \\sum\\limits_{i=1}^k c_i F_{n-b_i}\\text{.}$$$$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.091Z",
+  "translatedBy": [
+    "iflyrec"
+  ]
+}

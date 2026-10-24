@@ -1,0 +1,103 @@
+{
+  "code": "CF1025B",
+  "letter": "B",
+  "title": "B. Weakened Common Divisor",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1025/B",
+  "difficulty": "1600",
+  "timeLimit": "1.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "During the research on properties of the greatest common divisor (GCD) of a set of numbers, Ildar, a famous mathematician, introduced a brand new concept of the weakened common divisor (WCD) of a list of pairs of integers.",
+      "For a given list of pairs of integers (a1,b1)$$$(a_1, b_1)$$$, (a2,b2)$$$(a_2, b_2)$$$, ..., (an,bn)$$$(a_n, b_n)$$$ their WCD is arbitrary integer greater than 1$$$1$$$, such that it divides at least one element in each pair. WCD may not exist for some lists.",
+      "For example, if the list looks like [(12,15),(25,18),(10,24)]$$$[(12, 15), (25, 18), (10, 24)]$$$, then their WCD can be equal to 2$$$2$$$, 3$$$3$$$, 5$$$5$$$ or 6$$$6$$$ (each of these numbers is strictly greater than 1$$$1$$$ and divides at least one number in each pair).",
+      "You're currently pursuing your PhD degree under Ildar's mentorship, and that's why this problem was delegated to you. Your task is to calculate WCD efficiently."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (1≤n≤150000$$$1 \\le n \\le 150\\,000$$$) — the number of pairs.",
+      "Each of the next n$$$n$$$ lines contains two integer values ai$$$a_i$$$, bi$$$b_i$$$ (2≤ai,bi≤2⋅109$$$2 \\le a_i, b_i \\le 2 \\cdot 10^9$$$)."
+    ],
+    "output": [
+      "Print a single integer — the WCD of the set of pairs.",
+      "If there are multiple possible answers, output any; if there is no answer, print −1$$$-1$$$."
+    ],
+    "note": [
+      "In the first example the answer is 6$$$6$$$ since it divides 18$$$18$$$ from the first pair, 24$$$24$$$ from the second and 12$$$12$$$ from the third ones. Note that other valid answers will also be accepted.",
+      "In the second example there are no integers greater than 1$$$1$$$ satisfying the conditions.",
+      "In the third example one of the possible answers is 5$$$5$$$. Note that, for example, 15$$$15$$$ is also allowed, but it's not necessary to maximize the output."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n17 18\n15 24\n12 15",
+      "output": "6"
+    },
+    {
+      "input": "2\n10 16\n7 17",
+      "output": "-1"
+    },
+    {
+      "input": "5\n90 108\n45 105\n75 40\n165 175\n33 30",
+      "output": "5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在研究一组数的最大公约数（GCD）的性质时，著名数学家 Ildar 提出了一个全新的概念：一列整数对的弱化公约数（WCD）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于给定的一列整数对 (a1,b1)$$$(a_1, b_1)$$$, (a2,b2)$$$(a_2, b_2)$$$, ..., (an,bn)$$$(a_n, b_n)$$$，它们的 WCD 是任意一个大于 1$$$1$$$ 的整数，且该整数能整除每对中的至少一个元素。有些列表可能不存在 WCD。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，如果列表为 [(12,15),(25,18),(10,24)]$$$[(12, 15), (25, 18), (10, 24)]$$$，那么它们的 WCD 可以是 2$$$2$$$、3$$$3$$$、5$$$5$$$ 或 6$$$6$$$(这些数都严格大于 1$$$1$$$，且都能整除每对中的至少一个数)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你目前正在 Ildar 的指导下攻读博士学位，因此这个问题被交给了你。你的任务是高效地计算 WCD。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$ (1≤n≤150000$$$1 \\le n \\le 150\\,000$$$) — 对数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行中，每行包含两个整数 ai$$$a_i$$$、bi$$$b_i$$$(2≤ai,bi≤2⋅109$$$2 \\le a_i, b_i \\le 2 \\cdot 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出这组数对的 WCD。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个可能的答案，输出任意一个；如果不存在答案，输出 −1$$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例中，答案是 6$$$6$$$，因为它能整除第一组数对中的 18$$$18$$$、第二组数对中的 24$$$24$$$，以及第三组数对中的 12$$$12$$$。注意，其他合法答案也会被接受。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二个样例中，不存在大于 1$$$1$$$ 且满足条件的整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三个样例中，一个可能的答案是 5$$$5$$$。注意，例如 15$$$15$$$ 也是允许的，但不必让输出最大化。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 弱化公约数",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

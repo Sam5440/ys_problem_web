@@ -1,0 +1,113 @@
+{
+  "code": "CF659F",
+  "letter": "F",
+  "title": "F. Polycarp and Hay",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/659/F",
+  "difficulty": "2000",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "The farmer Polycarp has a warehouse with hay, which can be represented as an n × m rectangular table, where n is the number of rows, and m is the number of columns in the table. Each cell of the table contains a haystack. The height in meters of the hay located in the i-th row and the j-th column is equal to an integer ai, j and coincides with the number of cubic meters of hay in the haystack, because all cells have the size of the base 1 × 1. Polycarp has decided to tidy up in the warehouse by removing an arbitrary integer amount of cubic meters of hay from the top of each stack. You can take different amounts of hay from different haystacks. Besides, it is allowed not to touch a stack at all, or, on the contrary, to remove it completely. If a stack is completely removed, the corresponding cell becomes empty and no longer contains the stack.",
+      "Polycarp wants the following requirements to hold after the reorganization:",
+      "the total amount of hay remaining in the warehouse must be equal to k,",
+      "the heights of all stacks (i.e., cells containing a non-zero amount of hay) should be the same,",
+      "the height of at least one stack must remain the same as it was,",
+      "for the stability of the remaining structure all the stacks should form one connected region.",
+      "The two stacks are considered adjacent if they share a side in the table. The area is called connected if from any of the stack in the area you can get to any other stack in this area, moving only to adjacent stacks. In this case two adjacent stacks necessarily belong to the same area.",
+      "Help Polycarp complete this challenging task or inform that it is impossible."
+    ],
+    "input": [
+      "The first line of the input contains three integers n, m (1 ≤ n, m ≤ 1000) and k (1 ≤ k ≤ 1018) — the number of rows and columns of the rectangular table where heaps of hay are lain and the required total number cubic meters of hay after the reorganization.",
+      "Then n lines follow, each containing m positive integers ai, j (1 ≤ ai, j ≤ 109), where ai, j is equal to the number of cubic meters of hay making the hay stack on the i-th row and j-th column of the table."
+    ],
+    "output": [
+      "In the first line print \"YES\" (without quotes), if Polycarpus can perform the reorganisation and \"NO\" (without quotes) otherwise. If the answer is \"YES\" (without quotes), then in next n lines print m numbers — the heights of the remaining hay stacks. All the remaining non-zero values should be equal, represent a connected area and at least one of these values shouldn't be altered.",
+      "If there are multiple answers, print any of them."
+    ],
+    "note": [
+      "In the first sample non-zero values make up a connected area, their values do not exceed the initial heights of hay stacks. All the non-zero values equal 7, and their number is 5, so the total volume of the remaining hay equals the required value k = 7·5 = 35. At that the stack that is on the second line and third row remained unaltered."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 3 35\n10 4 9\n9 9 7",
+      "output": "YES\n7 0 7 \n7 7 7"
+    },
+    {
+      "input": "4 4 50\n5 9 1 1\n5 1 1 5\n5 1 5 5\n5 5 7 1",
+      "output": "YES\n5 5 0 0 \n5 0 0 5 \n5 0 5 5 \n5 5 5 0"
+    },
+    {
+      "input": "2 4 12\n1 1 3 1\n1 6 2 4",
+      "output": "NO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "农夫 Polycarp 有一个存放干草的仓库，可以将其表示为一个 n × m 的矩形表格，其中 n 是表格的行数，m 是表格的列数。表格中的每个单元格都放有一堆干草。第 i 行第 j 列的干草高度（单位：米）等于整数 ai, j，同时也等于这堆干草的立方米数，因为所有单元格的底面大小都是 1 × 1。Polycarp 决定整理仓库，从每堆干草的顶部移除任意整数立方米的干草。你可以从不同的干草堆中移除不同数量的干草。此外，也可以完全不动某堆干草，或者将其全部移除。如果一堆干草被完全移除，对应的单元格就会变为空，不再包含这堆干草。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "整理完成后，Polycarp 希望满足以下要求：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "仓库中剩余干草的总量必须等于 k，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有干草堆的高度（即包含非零数量干草的单元格中的高度）都应相同，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "至少有一堆干草的高度必须与原来保持相同，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了保证剩余结构的稳定性，所有堆都应组成一个连通区域。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果两个堆在表格中共享一条边，则认为它们相邻。如果从区域中的任意一个堆出发，只通过移动到相邻的堆，就能到达该区域中的任意其他堆，则称该区域是连通的。在这种情况下，两个相邻的堆必然属于同一个区域。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Polycarp 完成这一具有挑战性的任务，或者说明这是不可能的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含三个整数 n、m（1 ≤ n，m ≤ 1000）和 k（1 ≤ k ≤ 1018），分别表示用于堆放干草的矩形表格的行数和列数，以及重新安排后所需的干草总体积（立方米）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来有 n 行，每行包含 m 个正整数 ai，j（1 ≤ ai，j ≤ 109），其中 ai，j 表示表格第 i 行第 j 列的干草堆所含的干草体积（立方米）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 Polycarpus 能够完成重新安排，则在第一行输出“YES”（不含引号），否则输出“NO”（不含引号）。如果答案为“YES”（不含引号），则接下来的 n 行中输出 m 个数，表示剩余干草堆的高度。所有剩余的非零值应当相等，组成一个连通区域，并且其中至少有一个值不应被改变。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个答案，输出其中任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，非零值构成了一个连通区域，并且它们的值不超过干草堆的初始高度。所有非零值都等于 7，共有 5 个，因此剩余干草的总体积等于所需的值 k = 7·5 = 35。位于第二行第三列的干草堆保持不变。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. Polycarp 与干草",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

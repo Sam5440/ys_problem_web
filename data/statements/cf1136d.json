@@ -1,0 +1,118 @@
+{
+  "code": "CF1136D",
+  "letter": "D",
+  "title": "D. Nastya Is Buying Lunch",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1136/D",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "At the big break Nastya came to the school dining room. There are n$$$n$$$ pupils in the school, numbered from 1$$$1$$$ to n$$$n$$$. Unfortunately, Nastya came pretty late, so that all pupils had already stood in the queue, i.e. Nastya took the last place in the queue. Of course, it's a little bit sad for Nastya, but she is not going to despond because some pupils in the queue can agree to change places with some other pupils.",
+      "Formally, there are some pairs u$$$u$$$, v$$$v$$$ such that if the pupil with number u$$$u$$$ stands directly in front of the pupil with number v$$$v$$$, Nastya can ask them and they will change places.",
+      "Nastya asks you to find the maximal number of places in queue she can move forward."
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (1≤n≤3⋅105$$$1 \\leq n \\leq 3 \\cdot 10^{5}$$$, 0≤m≤5⋅105$$$0 \\leq m \\leq 5 \\cdot 10^{5}$$$) — the number of pupils in the queue and number of pairs of pupils such that the first one agrees to change places with the second one if the first is directly in front of the second.",
+      "The second line contains n$$$n$$$ integers p1$$$p_1$$$, p2$$$p_2$$$, ..., pn$$$p_n$$$ — the initial arrangement of pupils in the queue, from the queue start to its end (1≤pi≤n$$$1 \\leq p_i \\leq n$$$, p$$$p$$$ is a permutation of integers from 1$$$1$$$ to n$$$n$$$). In other words, pi$$$p_i$$$ is the number of the pupil who stands on the i$$$i$$$-th position in the queue.",
+      "The i$$$i$$$-th of the following m$$$m$$$ lines contains two integers ui$$$u_i$$$, vi$$$v_i$$$ (1≤ui,vi≤n,ui≠vi$$$1 \\leq u_i, v_i \\leq n, u_i \\neq v_i$$$), denoting that the pupil with number ui$$$u_i$$$ agrees to change places with the pupil with number vi$$$v_i$$$ if ui$$$u_i$$$ is directly in front of vi$$$v_i$$$. It is guaranteed that if i≠j$$$i \\neq j$$$, than vi≠vj$$$v_i \\neq v_j$$$ or ui≠uj$$$u_i \\neq u_j$$$. Note that it is possible that in some pairs both pupils agree to change places with each other.",
+      "Nastya is the last person in the queue, i.e. the pupil with number pn$$$p_n$$$."
+    ],
+    "output": [
+      "Print a single integer — the number of places in queue she can move forward."
+    ],
+    "note": [
+      "In the first example Nastya can just change places with the first pupil in the queue.",
+      "Optimal sequence of changes in the second example is",
+      "change places for pupils with numbers 1$$$1$$$ and 3$$$3$$$.",
+      "change places for pupils with numbers 3$$$3$$$ and 2$$$2$$$.",
+      "change places for pupils with numbers 1$$$1$$$ and 2$$$2$$$.",
+      "The queue looks like [3,1,2]$$$[3, 1, 2]$$$, then [1,3,2]$$$[1, 3, 2]$$$, then [1,2,3]$$$[1, 2, 3]$$$, and finally [2,1,3]$$$[2, 1, 3]$$$ after these operations."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 1\n1 2\n1 2",
+      "output": "1"
+    },
+    {
+      "input": "3 3\n3 1 2\n1 2\n3 1\n3 2",
+      "output": "2"
+    },
+    {
+      "input": "5 2\n3 1 5 4 2\n5 2\n5 4",
+      "output": "1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "大课间时，Nastya 来到了学校食堂。学校里有 n$$$n$$$ 名学生，编号从 1$$$1$$$ 到 n$$$n$$$。不幸的是，Nastya 来得比较晚，所有学生都已经排好了队，也就是说，Nastya 排在队伍的最后。当然，这让 Nastya 有点难过，但她并不打算沮丧，因为队伍中的一些学生可能会同意与其他学生交换位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地说，存在一些数对 u$$$u$$$、v$$$v$$$：如果编号为 u$$$u$$$ 的学生正好排在编号为 v$$$v$$$ 的学生前面，Nastya 就可以询问他们，而他们会交换位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Nastya 请你找出她最多能在队伍中向前移动多少个位置。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n≤3⋅105$$$1 \\leq n \\leq 3 \\cdot 10^{5}$$$，0≤m≤5⋅105$$$0 \\leq m \\leq 5 \\cdot 10^{5}$$$)——队伍中学生的数量，以及这样的学生对的数量：如果第一个学生正好排在第二个学生前面，第一个学生就同意与第二个学生交换位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 p1$$$p_1$$$、p2$$$p_2$$$、...、pn$$$p_n$$$——队伍中学生的初始排列，顺序为从队首到队尾(1≤pi≤n$$$1 \\leq p_i \\leq n$$$，p$$$p$$$ 是由 1$$$1$$$ 到 n$$$n$$$ 的整数构成的一个排列)。换句话说，pi$$$p_i$$$ 是队伍中排在第 i$$$i$$$ 个位置的学生的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下面给出的 m$$$m$$$ 行中的第 i$$$i$$$ 行包含两个整数 ui$$$u_i$$$ 和 vi$$$v_i$$$(1≤ui,vi≤n，ui≠vi$$$1 \\leq u_i, v_i \\leq n, u_i \\neq v_i$$$)，表示编号为 ui$$$u_i$$$ 的学生同意在 ui$$$u_i$$$ 号学生正好位于 vi$$$v_i$$$ 号学生正前方时与编号为 vi$$$v_i$$$ 的学生交换位置。保证如果 i≠j$$$i \\neq j$$$，则 vi≠vj$$$v_i \\neq v_j$$$ 或 ui≠uj$$$u_i \\neq u_j$$$。注意，在某些数对中，两名学生都可能同意与对方交换位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Nastya 是队伍中的最后一个人，即编号为 pn$$$p_n$$$ 的学生。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——她在队伍中可以向前移动的位数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Nastya 只需与队伍中的第一名学生交换位置即可。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二个样例中的最优换位顺序为",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交换编号为 1$$$1$$$ 和 3$$$3$$$ 的学生的位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交换编号为 3$$$3$$$ 和 2$$$2$$$ 的学生的位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交换编号为 1$$$1$$$ 和 2$$$2$$$ 的学生的位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "经过这些操作后，队列依次变为 [3,1,2]$$$[3, 1, 2]$$$，然后是 [1,3,2]$$$[1, 3, 2]$$$，接着是 [1,2,3]$$$[1, 2, 3]$$$，最后是 [2,1,3]$$$[2, 1, 3]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Nastya 正在买午餐",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "code": "GYM102154C",
+  "letter": "C",
+  "title": "C. Quick sort",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102154/problem/C",
+  "difficulty": "*2400",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "The scientists invented the new UL-2018 processor that is able to quickly process arrays in some special way. A key feature of its architecture is the separation operation of a segment of the array.",
+      "Consider an array [a1,a2,…,an]$$$[a_1, a_2, \\ldots, a_n]$$$. The separation operation is characterized by two integers L$$$L$$$ and R$$$R$$$. Let S(L,R)$$$S(L, R)$$$ denote the operation of the segment [aL,aL+1,…,aR]$$$[a_L, a_{L+1}, \\ldots, a_R]$$$. Executing the S(L,R)$$$S(L, R)$$$ operation reorders the elements in this segment as follows. First, the elements aL+1,aL+3,aL+5,…$$$a_{L+1}, a_{L+3}, a_{L+5}, \\ldots$$$ are taken, that is elements ai$$$a_i$$$ that i−L$$$i - L$$$ is odd. Their relative order remains unchanged. Then, the elements aL,aL+2,aL+4,…$$$a_L, a_{L+2}, a_{L+4}, \\ldots$$$ are taken (ai$$$a_i$$$ that i−L$$$i - L$$$ is even). These retain the relative order too.",
+      "For example, consider the array [2,4,1,5,3,6,7,8]$$$[2, 4, 1, 5, 3, 6, 7, 8]$$$. Applying the operation S(2,6)$$$S(2, 6)$$$ changes the segment [4,1,5,3,6]$$$[4, 1, 5, 3, 6]$$$ into [1,3,4,5,6]$$$[1, 3, 4, 5, 6]$$$, so the entire array becomes [2,1,3,4,5,6,7,8]$$$[2, 1, 3, 4, 5, 6, 7, 8]$$$.",
+      "To demonstrate the capabilities of the new processor, the scientists decided to use separation operations to sort an array of distinct numbers. You will be given an array of size n$$$n$$$ (1≤n≤3000$$$1 \\le n \\le 3\\,000$$$) with distinct numbers from 1$$$1$$$ to n$$$n$$$. You must sort it in ascending order using no more than 15000$$$15\\,000$$$ separation operations.",
+      "For example, the mentioned array [2,4,1,5,3,6,7,8]$$$[2, 4, 1, 5, 3, 6, 7, 8]$$$ can be sorted in two separation operations. First, apply S(2,6)$$$S(2, 6)$$$ to get [2,1,3,4,5,6,7,8]$$$[2, 1, 3, 4, 5, 6, 7, 8]$$$, and then the operation S(1,2)$$$S(1, 2)$$$ makes the array sorted increasingly: [1,2,3,4,5,6,7,8]$$$[1, 2, 3, 4, 5, 6, 7, 8]$$$.",
+      "Your task is to write a program that for a given array determines the sequence of at most 15000$$$15\\,000$$$ separation operations, after which the specified array will be sorted in ascending order. It isn't necessary to minimize the number of operations performed (just use at most 15000$$$15\\,000$$$)."
+    ],
+    "input": [
+      "The first line of the input contains an integer n$$$n$$$ — the number of elements in the given array (1≤n≤3000$$$1 \\le n \\le 3000$$$).",
+      "The second line contains n$$$n$$$ distinct integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ — the elements of the given array (1≤ai≤n$$$1 \\le a_i \\le n$$$, all ai$$$a_i$$$ are different)."
+    ],
+    "output": [
+      "The first line of the output should contain an integer k$$$k$$$ — the number of separation operations performed (0≤k≤15000$$$0 \\le k \\le 15\\,000$$$).",
+      "In the following k$$$k$$$ lines, you should print the description of the operations, in the order they are executed. Each operation is described by two integers L$$$L$$$ and R$$$R$$$ — the beginning and the end of the segment to which the separation operation should be applied (1≤L≤R≤n$$$1 \\le L \\le R \\le n$$$).",
+      "Note that you don't have to minimize the number k$$$k$$$. You can output any sequence of separation operations that contains at most 15000$$$15\\,000$$$ operations and sorts the given array in ascending order. It is guaranteed that at least one such sequence exists.",
+      "SubtaskPointsConstraintsDependencies120n≤100; there is a solution with k=1230n≤1000,1330n≤10000−2420n≤30000−3\n$$ \\begin{array}{|c|c|c|c|} \\hline \\text{Subtask} & \\text{Points} & \\text{Constraints} & \\text{Dependencies} \\\\ \\hline 1 & 20 & n \\le 100; \\ \\text{there is a solution with } k = 1 & \\\\ \\hline 2 & 30 & n \\le 100 & 0, 1 \\\\ \\hline 3 & 30 & n \\le 1\\,000 & 0-2 \\\\ \\hline 4 & 20 & n \\le 3\\,000 & 0-3 \\\\ \\hline \\end{array}$$",
+      "You will get points for a group if you pass all tests in this group and all groups listed in the dependencies. The group 0$$$0$$$ denotes the sample test(s) from the statement."
+    ],
+    "note": [
+      "The second sample test is analyzed in detail in the problem statement.",
+      "In the third sample test, there is a solution with a single separation operation, but since you don't have to minimize the number of operations, the provided output is also correct."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3 1 4 2 5",
+      "output": "1\n1 5"
+    },
+    {
+      "input": "8\n2 4 1 5 3 6 7 8",
+      "output": "2\n2 6\n1 2"
+    },
+    {
+      "input": "2\n2 1",
+      "output": "3\n1 1\n2 2\n1 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "科学家发明了新型 UL-2018 处理器，它能够以某种特殊的方式快速处理数组。其架构的一个关键特性是对数组区间的分离操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑一个数组 [a1,a2,…,an]$$$[a_1, a_2, \\ldots, a_n]$$$。分离操作由两个整数 L$$$L$$$ 和 R$$$R$$$ 表示。令 S(L,R)$$$S(L, R)$$$ 表示对区间 [aL,aL+1,…,aR]$$$[a_L, a_{L+1}, \\ldots, a_R]$$$ 进行的操作。执行 S(L,R)$$$S(L, R)$$$ 操作时，会按如下方式重新排列该区间中的元素。首先取出元素 aL+1,aL+3,aL+5,…$$$a_{L+1}, a_{L+3}, a_{L+5}, \\ldots$$$，即满足 i−L$$$i - L$$$ 为奇数的元素 ai$$$a_i$$$。它们的相对顺序保持不变。然后取出元素 aL,aL+2,aL+4,…$$$a_L, a_{L+2}, a_{L+4}, \\ldots$$$(满足 i−L$$$i - L$$$ 为偶数的元素 ai$$$a_i$$$)。这些元素的相对顺序也保持不变。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，考虑数组 [2,4,1,5,3,6,7,8]$$$[2, 4, 1, 5, 3, 6, 7, 8]$$$。对其应用操作 S(2,6)$$$S(2, 6)$$$ 后，区间 [4,1,5,3,6]$$$[4, 1, 5, 3, 6]$$$ 变为 [1,3,4,5,6]$$$[1, 3, 4, 5, 6]$$$，因此整个数组变为 [2,1,3,4,5,6,7,8]$$$[2, 1, 3, 4, 5, 6, 7, 8]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了展示新处理器的能力，科学家们决定使用分离操作对一个由互不相同的数字组成的数组进行排序。给定一个大小为 n$$$n$$$ 的数组(1≤n≤3000$$$1 \\le n \\le 3\\,000$$$)，其中包含从 1$$$1$$$ 到 n$$$n$$$ 的互不相同的数字。你必须使用不超过 15000$$$15\\,000$$$ 次分离操作将其按升序排序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，上述数组 [2,4,1,5,3,6,7,8]$$$[2, 4, 1, 5, 3, 6, 7, 8]$$$ 可以通过两次分离操作完成排序。首先，对其应用 S(2,6)$$$S(2, 6)$$$，得到 [2,1,3,4,5,6,7,8]$$$[2, 1, 3, 4, 5, 6, 7, 8]$$$；然后，操作 S(1,2)$$$S(1, 2)$$$ 将数组按升序排列为：[1,2,3,4,5,6,7,8]$$$[1, 2, 3, 4, 5, 6, 7, 8]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是编写一个程序，对于给定的数组确定一个至多包含 15000$$$15\\,000$$$ 次分离操作的操作序列，执行这些操作后，给定数组将按升序排列。无需最小化所执行操作的数量(只需不超过 15000$$$15\\,000$$$ 次即可)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$——给定数组中元素的数量(1≤n≤3000$$$1 \\le n \\le 3000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个互不相同的整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$——给定数组中的元素(1≤ai≤n$$$1 \\le a_i \\le n$$$，所有 ai$$$a_i$$$ 互不相同)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出的第一行应包含一个整数 k$$$k$$$——执行的分离操作次数(0≤k≤15000$$$0 \\le k \\le 15\\,000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 k$$$k$$$ 行中，你应该按执行顺序输出各项操作的描述。每项操作由两个整数 L$$$L$$$ 和 R$$$R$$$ 描述，分别表示要进行分离操作的区间的起点和终点(1≤L≤R≤n$$$1 \\le L \\le R \\le n$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，你不必将 k$$$k$$$ 最小化。你可以输出任意一组分离操作，只要操作次数不超过 15000$$$15\\,000$$$，并且能将给定数组按升序排序。保证至少存在这样一组操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "| 子任务 | 分值 | 约束条件 | 依赖 |\n|---|---:|---|---|\n| 1 | 20 | n≤100；存在一个 k=1 的解 | |\n| 2 | 30 | n≤1000 | 1 |\n| 3 | 30 | n≤10000 | 2 |\n| 4 | 20 | n≤30000 | 3 |\n\n$$ \\begin{array}{|c|c|c|c|} \\hline \\text{Subtask} & \\text{Points} & \\text{Constraints} & \\text{Dependencies} \\\\ \\hline 1 & 20 & n \\le 100; \\ \\text{there is a solution with } k = 1 & \\\\ \\hline 2 & 30 & n \\le 100 & 0, 1 \\\\ \\hline 3 & 30 & n \\le 1\\,000 & 0-2 \\\\ \\hline 4 & 20 & n \\le 3\\,000 & 0-3 \\\\ \\hline \\end{array}$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你通过某个分组以及其依赖的所有分组中的全部测试，就能获得该分组的分数。分组 0$$$0$$$ 表示题面中的样例测试。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第二个样例测试在题面中有详细分析。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例测试中，存在只进行一次分离操作的解，但由于不要求最小化操作次数，给出的输出同样是正确的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 快速排序",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -5,6 +5,7 @@ import { AI_MODELS, aiTranslate } from './ai-translate';
 import { clearZhCache } from '@/lib/zh-store';
 import GithubMark from './github-mark';
 import CompilerSettingsSection from './compiler/CompilerSettingsSection';
+import { CHANGELOG, APP_VERSION } from '@/lib/changelog';
 
 /* ---------------- constants ---------------- */
 
@@ -207,6 +208,40 @@ function Field({ label, hint, children }) {
       {children}
       {hint && <span className="block text-[11px] leading-relaxed text-muted-foreground/70">{hint}</span>}
     </label>
+  );
+}
+
+/* 更新日志：最新版本默认展开，更早版本折叠（details，点击展开）。 */
+function ChangelogSection() {
+  return (
+    <div className="space-y-1.5">
+      <div className="flex items-center justify-between gap-2">
+        <p className="text-xs font-medium text-muted-foreground">
+          更新日志（共 {CHANGELOG.length} 个版本）
+        </p>
+        <span className="shrink-0 rounded-md border border-primary/60 bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-foreground">
+          当前 v{APP_VERSION}
+        </span>
+      </div>
+      <div className="space-y-1.5">
+        {CHANGELOG.map((v, i) => (
+          <details key={v.version} className="rounded-md border px-2.5 py-2" open={i === 0}>
+            <summary className="cursor-pointer text-xs">
+              <span className="font-medium">v{v.version}</span>{" "}
+              <span className="ml-1 text-muted-foreground">{v.date}</span>{" "}
+              <span>{v.title}</span>
+            </summary>
+            <ul className="mt-1.5 space-y-1">
+              {v.changes.map((c, j) => (
+                <li key={j} className="text-[11px] leading-relaxed text-muted-foreground">
+                  {c}
+                </li>
+              ))}
+            </ul>
+          </details>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -486,6 +521,11 @@ function SettingsDialog({ onClose }) {
         </div>
 
         <CompilerSettingsSection />
+
+        {/* 更新日志：lib/changelog.js 单一事实来源，每次功能更新在顶部加条目（AGENTS.md 规范）。
+            注意不要改成 aside 内的 details——设置弹窗在编译器 aside 之外，此处的 details 不影响
+            E2E 的 `aside details` 结果卡定位，但保持纯展示最稳。 */}
+        <ChangelogSection />
 
         <div className="space-y-1.5">
           <p className="text-xs font-medium text-muted-foreground">项目仓库</p>

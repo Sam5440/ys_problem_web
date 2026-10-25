@@ -92,9 +92,18 @@ node scripts/tests/e2e-compiler.mjs           # 浏览器编译器 Playwright �
 npm run test:cp:cpp                           # C++ 竞赛场景严格矩阵（85 例：STL/算法/IO 格式/三标准/错误谱系，Node 直驱 ~2 分钟）
 npm run test:cp:py                            # Python 竞赛场景矩阵（36 例：真 Pyodide + 交互 stdin shim 语义锁，首跑下载 ~13MB 到 /tmp）
 npm run test:cp:e2e                           # 浏览器竞赛场景 E2E（-std 切换/RE 谱系/交互时序/多行输出/0.29.3 切换）
-node --test "scripts/tests/*.test.mjs"       # 单测（分支逻辑 / 格式化 / 键位 / 样例存储 / PCH 集成；PCH 用例需 public/compiler 运行时；Node 25 起目录形式会把目录当模块加载而报错，用 glob）
+node --test "scripts/tests/*.test.mjs"       # 单测（分支逻辑 / 格式化 / 键位 / 样例存储 / 更新日志结构 / PCH 集成；PCH 用例需 public/compiler 运行时；Node 25 起目录形式会把目录当模块加载而报错，用 glob）
 bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（夹具仓库，不碰 origin）
 ```
+
+## 更新日志（每次功能更新必写）
+
+站点更新日志的唯一事实来源是 `lib/changelog.js`：设置弹窗的「更新日志」区块直接渲染它（`components/settings.jsx` 的 `ChangelogSection`，最新版本默认展开），结构不变式由 `scripts/tests/changelog.test.mjs` 钉死。
+
+- **每次功能更新提交前，必须在 `CHANGELOG` 顶部新增条目**：`version` minor +1（如 2.5 → 2.6）、`date` 用更新当天、一句话 `title`、面向用户的中文 `changes` 要点列表。纯修复合并进当前版本的 `changes`、不新增条目；major 只在站点形态级变化时递增（1.x = 站点/翻译/数据期，2.x = 浏览器编译器期）。
+- `APP_VERSION` 恒等于最新条目的 version（模块内派生），**不要在别处另存站点版本号**（package.json 的 `version` 是脚手架占位，与站点版本无关）。
+- 措辞面向用户：写「能做什么、快了多少」，不写提交哈希、内部文件名或实现术语。
+- 单测会拒绝：版本不递减/重复、缺 title/changes、日期非法或倒挂——提交前跑 `node --test scripts/tests/changelog.test.mjs`。
 
 ## 架构与数据流
 
@@ -147,6 +156,7 @@ bash scripts/tests/e2e-data-branches.sh       # 数据分支模型端到端（�
 | `scripts/save-ci-log.mjs` | CI 第二个 job：日志 + 摘要 + 翻译记录落盘 `public/ci-logs/` |
 | `lib/ai-record.mjs` | 构建逐段 原文↔译文 翻译记录（save-ci-log 与 demo 页共用） |
 | `lib/mt-protect.js` | 公式/代码/图片占位保护（node 与浏览器同源复用，占位符 `[M07]` 零填充格式） |
+| `lib/changelog.js` + 设置弹窗「更新日志」 | 站点更新日志单一事实来源（pure data）：`CHANGELOG` 顶部新条目即当前版本（`APP_VERSION` 派生），`components/settings.jsx` 的 `ChangelogSection` 渲染（最新版默认展开、更早折叠 details——弹窗在编译器 aside 之外，不碰 E2E 的 `aside details` 定位）；**每次功能更新必加条目**，维护规范见「更新日志」一节，单测 `scripts/tests/changelog.test.mjs` |
 | `components/logs-view.jsx` | /logs 仪表盘（手写 SVG 图表，时间轴锚定最新运行而非 Date.now()） |
 | `components/BaiduAnalytics.jsx` | 百度统计：官方异步代码经 next/script `afterInteractive` 注入（app/layout.jsx 全站挂载）；本站是客户端路由，hm.js 首载自动上报一次 PV，组件监听 pathname 变化手动 `_trackPageview` 补报站内跳转（首次渲染跳过防双计） |
 | `components/ai-translate-detail.jsx` | 逐段原文↔译文对照视图（/logs 运行卡内嵌 + /logs/ai-demo） |

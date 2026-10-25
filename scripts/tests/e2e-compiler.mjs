@@ -13,6 +13,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
+import { CHANGELOG, APP_VERSION } from "../../lib/changelog.js";
 
 const ROOT = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -426,6 +427,33 @@ async function main() {
     .first()
     .click();
   await page.waitForSelector("text=浏览器编译器", { timeout: 10000 });
+  {
+    // 更新日志区块（lib/changelog.js 单一事实来源）：徽标/条目数/首条默认展开
+    const cl = page.locator("text=更新日志（共").first();
+    await cl.waitFor({ timeout: 5000 });
+    const headTxt = await cl.textContent();
+    check(
+      "设置弹窗展示更新日志（当前版本徽标）",
+      headTxt.includes(`共 ${CHANGELOG.length} 个版本`) &&
+        (await page.getByText(`当前 v${APP_VERSION}`).count()) > 0,
+      headTxt,
+    );
+    const nEntries = await page
+      .locator("details summary", { hasText: /^v\d+\.\d+\s/ })
+      .count();
+    check(
+      "更新日志逐版本折叠条目数与 CHANGELOG 一致",
+      nEntries === CHANGELOG.length,
+      `页面 ${nEntries} / 模块 ${CHANGELOG.length}`,
+    );
+    // 最新条目默认展开：其要点直接可见
+    const firstChange = CHANGELOG[0].changes[0].slice(0, 18);
+    check(
+      "更新日志最新版本默认展开",
+      (await page.getByText(firstChange).count()) > 0,
+      firstChange,
+    );
+  }
   await shot("09-settings-compiler");
   await page
     .locator("div.rounded-md.border", { hasText: "Python ·" })

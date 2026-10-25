@@ -73,6 +73,15 @@
   const OUT_CAP = 2 * 1024 * 1024; // 转发给主线程的上限
   const SAB_MAGIC = 0x43505331; // 'CPS1'
 
+  // ---- 预编译头（PCH）----
+  // 竞赛代码几乎都以 #include <bits/stdc++.h> 开头，解析万能头占编译耗时的
+  // 大头（实测 clang -O2 编译 3.9s → 1.1s）。源码含万能头时注入
+  // -include-pch 复用按 -std 缓存的 PCH。硬约束：clang 会校验 PCH 与消费
+  // 方的编译选项完全一致（含优化级别！），因此构建与消费都固定带 -O2，
+  // 消费方（-fsyntax-only / -code-completion-at）原本不带 -O 也要补上。
+  const PCH_HEADER = '/include/wasm32-wasip1/noeh/c++/v1/bits/stdc++.h';
+  const BITS_INCLUDE_RE = /#\s*include\s*<\s*bits\s*\/\s*stdc\+\+\.h\s*>/;
+
   /**
    * 创建 clang API 实例 + 独立日志缓冲，并给 MemFS 打上「预喂 stdin + SAB
    * 交互读」补丁。
@@ -193,7 +202,45 @@
       interactive.u8 = null;
     }
 
-    return { api, log, runSetup, runTeardown, interactive, notify,
+    // ---- PCH 缓存（按 -std 一份；构建串行化防并发 clang 实例）----
+    const pch = { byStd: new Map(), queue: Promise.resolve() };
+
+    function ensurePch(std) {
+      if (!std) return Promise.resolve(null);
+      // 缓存命中必须返回 entry.promise（失败时为 null）；返回 entry 对象
+      // 本身恒为 truthy，会让失败标记被当成可用的 PCH 注进编译参数
+      if (pch.byStd.has(std)) return pch.byStd.get(std).promise;
+      const entry = {
+        std,
+        path: `pch-${String(std).replace(/[^a-z0-9]+/gi, '_')}.pch`,
+        state: 'building', // building | ok | failed
+        ms: 0,             // 构建耗时（成功后填充）
+        served: false,     // 首个消费方 = 本次请求触发的构建
+      };
+      const promise = pch.queue
+        .catch(() => {})
+        .then(async () => {
+          const t0 = Date.now();
+          notify({ type: 'stage', stage: `构建预编译头（${std}，一次性）` });
+          try {
+            await api.run(await api.getModule(api.clangFilename), 'clang', '-cc1', '-emit-pch',
+              ...api.clangCommonArgs, '-O2', `-std=${std}`, '-o', entry.path,
+              '-x', 'c++-header', PCH_HEADER);
+            entry.state = 'ok';
+            entry.ms = Date.now() - t0;
+          } catch (exn) {
+            entry.state = 'failed';
+            hostWrite(`⚠ 预编译头构建失败（${std}），本次会话退回普通编译：${exn.message}\n`);
+          }
+          return entry.state === 'ok' ? entry : null;
+        });
+      entry.promise = promise;
+      pch.queue = promise; // 链式推进：不同 -std 的构建也串行，防并发 clang 实例
+      pch.byStd.set(std, entry);
+      return promise;
+    }
+
+    return { api, log, runSetup, runTeardown, interactive, notify, ensurePch,
       outCapState: () => activeRequestCap };
   }
 
@@ -203,6 +250,40 @@
 
   function sliceFrom(log, start) {
     return log.text.slice(start).replace(ANSI, '');
+  }
+
+  /** 编译 + PCH 注入 + 计时。返回 { ms, pch }；pch 为 null 或
+   *  { std, builtNow, buildMs }。编译错误抛 CompileError（诊断解析同旧逻辑）。 */
+  async function compileWithPch(bundle, { input, contents, obj, std }) {
+    const { api, log } = bundle;
+    let pchInfo = null;
+    const extra = [];
+    if (std && BITS_INCLUDE_RE.test(String(contents ?? ''))) {
+      const entry = await bundle.ensurePch(std);
+      if (entry) {
+        if (!entry.served) { entry.served = true; pchInfo = { std, builtNow: true, buildMs: entry.ms }; }
+        else pchInfo = { std, builtNow: false, buildMs: entry.ms };
+        extra.push('-include-pch', entry.path);
+      }
+    }
+    const start = log.text.length;
+    const t0 = Date.now();
+    try {
+      await api.compile({ input, contents, obj, extraArgs: [...extra, ...(std ? [`-std=${std}`] : [])] });
+    } catch (exn) {
+      const slice = sliceFrom(log, start);
+      const diagnostics = parseClangDiagnostics(slice);
+      if (hasErrors(diagnostics)) throw new CompileError(diagnostics, slice);
+      throw exn;
+    }
+    return { ms: Date.now() - t0, pch: pchInfo };
+  }
+
+  /** -fsyntax-only / -code-completion-at 的 PCH 消费参数（无 PCH 时为空）。 */
+  async function pchConsumeArgs(bundle, contents, std) {
+    if (!std || !BITS_INCLUDE_RE.test(String(contents ?? ''))) return [];
+    const entry = await bundle.ensurePch(std);
+    return entry ? ['-O2', '-include-pch', entry.path] : [];
   }
 
   /** 从日志切片提取程序 stdout：剥掉命令回显、计时行与运行时错误尾块。
@@ -223,32 +304,35 @@
 
   /** 编译 + 链接 + 运行。stdin 为预喂文本；interactive 时忽略 stdin 走 SAB。
    *  std 必须与语法检查同源传递——否则运行按 clang 默认标准编译，用户选
-   *  c++20/23 时会出现「检查通过、运行报错」的分裂行为。 */
+   *  c++20/23 时会出现「检查通过、运行报错」的分裂行为。
+   *  返回值附 timings（分阶段毫秒）与 pch 信息供前端打印编译明细。 */
   async function compileLinkRunResult(bundle, { input, contents, obj, wasm, std = null, stdin = '', interactive = false, sab = null }) {
     const { api, log, runSetup, runTeardown } = bundle;
     runSetup({ sab: interactive ? sab : null });
 
+    const timings = { pch: null, compileMs: 0, linkMs: 0, moduleMs: 0, runMs: 0 };
     let start = log.text.length;
-    try {
-      await api.compile({ input, contents, obj, extraArgs: std ? [`-std=${std}`] : [] });
-    } catch (exn) {
-      const slice = sliceFrom(log, start);
-      const diagnostics = parseClangDiagnostics(slice);
-      if (hasErrors(diagnostics)) throw new CompileError(diagnostics, slice);
-      throw exn;
-    }
+    const pre = await compileWithPch(bundle, { input, contents, obj, std });
+    timings.compileMs = pre.ms;
+    timings.pch = pre.pch;
 
     start = log.text.length;
+    bundle.notify?.({ type: 'stage', stage: '链接中' });
+    const tLink = Date.now();
     try {
       await api.link(obj, wasm);
     } catch (exn) {
       throw Object.assign(new Error('链接失败'), { name: 'LinkError', rawLog: sliceFrom(log, start) });
     }
+    timings.linkMs = Date.now() - tLink;
 
     api.memfs.setStdinStr(stdin);
+    const tMod = Date.now();
     const mod = await WebAssembly.compile(api.memfs.getFileContents(wasm));
+    timings.moduleMs = Date.now() - tMod;
 
     start = log.text.length;
+    bundle.notify?.({ type: 'stage', stage: '运行中' });
     const t0 = Date.now();
     let exitCode = 0;
     let trap = null;
@@ -259,37 +343,44 @@
       else trap = exn.message ?? String(exn);
     }
     const elapsedMs = Date.now() - t0;
+    timings.runMs = elapsedMs;
     runTeardown();
 
     const stdout = cleanStdout(sliceFrom(log, start), { trap });
-    return { stdout, exitCode, trap, elapsedMs, truncated: log.truncated };
+    return { stdout, exitCode, trap, elapsedMs, truncated: log.truncated, timings };
   }
 
   /** 编译一次 + 多样例运行（同一 wasm 重复实例化，等价 judge 逐例重跑的
-   *  干净进程语义；每例独立 stdin，互不残留）。 */
+   *  干净进程语义；每例独立 stdin，互不残留）。每例完成即 notify 'case'
+   *  事件（前端逐例显示进度），最终仍整体返回 results。 */
   async function runCases(bundle, { input, contents, obj, wasm, std = null, stdins = [] }) {
     const { api, log, runSetup, runTeardown } = bundle;
     runSetup({ sab: null });
 
+    const timings = { pch: null, compileMs: 0, linkMs: 0, moduleMs: 0, runMs: 0 };
     let start = log.text.length;
-    try {
-      await api.compile({ input, contents, obj, extraArgs: std ? [`-std=${std}`] : [] });
-    } catch (exn) {
-      const slice = sliceFrom(log, start);
-      const diagnostics = parseClangDiagnostics(slice);
-      if (hasErrors(diagnostics)) throw new CompileError(diagnostics, slice);
-      throw exn;
-    }
+    const pre = await compileWithPch(bundle, { input, contents, obj, std });
+    timings.compileMs = pre.ms;
+    timings.pch = pre.pch;
+
+    start = log.text.length;
+    bundle.notify?.({ type: 'stage', stage: '链接中' });
+    const tLink = Date.now();
     try {
       await api.link(obj, wasm);
     } catch (exn) {
       throw Object.assign(new Error('链接失败'), { name: 'LinkError', rawLog: sliceFrom(log, start) });
     }
+    timings.linkMs = Date.now() - tLink;
 
+    const tMod = Date.now();
     const mod = await WebAssembly.compile(api.memfs.getFileContents(wasm));
+    timings.moduleMs = Date.now() - tMod;
+
     const results = [];
-    for (const stdinText of stdins) {
-      api.memfs.setStdinStr(stdinText);
+    for (let i = 0; i < stdins.length; i++) {
+      api.memfs.setStdinStr(stdins[i]);
+      bundle.notify?.({ type: 'stage', stage: `运行样例 ${i + 1}/${stdins.length}` });
       const mark = log.text.length;
       const t0 = Date.now();
       let exitCode = 0;
@@ -300,20 +391,23 @@
         if (typeof exn.code === 'number') exitCode = exn.code;
         else trap = exn.message ?? String(exn);
       }
-      let stdout = cleanStdout(sliceFrom(log, mark), { trap });
-      results.push({ stdout, exitCode, trap, elapsedMs: Date.now() - t0 });
+      const result = { stdout: cleanStdout(sliceFrom(log, mark), { trap }), exitCode, trap, elapsedMs: Date.now() - t0 };
+      results.push(result);
+      timings.runMs += result.elapsedMs;
+      bundle.notify?.({ type: 'case', index: i, total: stdins.length, result });
     }
     runTeardown();
-    return { results, truncated: log.truncated };
+    return { results, truncated: log.truncated, timings };
   }
 
   /** -fsyntax-only：返回主文件诊断（头文件内诊断不产生编辑器标记）。 */
-  async function syntaxCheck(bundle, { input, std = 'c++20' }) {
+  async function syntaxCheck(bundle, { input, contents, std = 'c++20' }) {
     const { api, log } = bundle;
+    const pchArgs = await pchConsumeArgs(bundle, contents, std);
     const start = log.text.length;
     try {
       await api.run(await api.getModule(api.clangFilename), 'clang', '-cc1', '-fsyntax-only',
-        ...api.clangCommonArgs, `-std=${std}`, '-x', 'c++', input);
+        ...api.clangCommonArgs, ...pchArgs, `-std=${std}`, '-x', 'c++', input);
     } catch (exn) {
       if (typeof exn.code !== 'number') throw exn;
     }
@@ -325,12 +419,13 @@
   }
 
   /** -code-completion-at：返回 [{name, pattern, kind}]。 */
-  async function codeComplete(bundle, { input, line, col, std = 'c++20' }) {
+  async function codeComplete(bundle, { input, contents, line, col, std = 'c++20' }) {
     const { api, log } = bundle;
+    const pchArgs = await pchConsumeArgs(bundle, contents, std);
     const start = log.text.length;
     try {
       await api.run(await api.getModule(api.clangFilename), 'clang', '-cc1',
-        ...api.clangCommonArgs, `-std=${std}`, '-code-completion-at', `${input}:${line}:${col}`,
+        ...api.clangCommonArgs, ...pchArgs, `-std=${std}`, '-code-completion-at', `${input}:${line}:${col}`,
         '-x', 'c++', input);
     } catch (exn) {
       if (typeof exn.code !== 'number') throw exn;

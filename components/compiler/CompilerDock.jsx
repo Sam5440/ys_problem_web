@@ -51,6 +51,12 @@ import {
   clearDraft,
 } from "@/lib/compiler/cp-settings";
 import {
+  clearSampleCases,
+  defaultCasesFrom,
+  loadSampleCases,
+  saveSampleCases,
+} from "@/lib/compiler/samples";
+import {
   CPP_FILES,
   CPP_VERSION,
   PYODIDE_VERSIONS,
@@ -123,6 +129,10 @@ export default function CompilerDock({ problems, day }) {
   const [sysKb, setSysKb] = useState(false); // 系统键盘手动开启（键盘右上角开关，输入法场景）
   const [toast, setToast] = useState(null); // Ctrl+S 保存提示浮窗文案（null=隐藏）
   const [splitH, setSplitH] = useState(null); // 分屏模式编译器高度（px），null = 50dvh
+  // 样例管理：null = 未自定义（用题目默认样例），数组 = 用户编辑后的完整样例表
+  const [sampleCases, setSampleCases] = useState(null);
+  const [samplesOpen, setSamplesOpen] = useState(false); // 样例管理手风琴展开态
+  const [dlInfo, setDlInfo] = useState(null); // 运行时下载进度 {name, got, total}
 
   const cppRef = useRef(null);
   const pyRef = useRef(null);
@@ -364,10 +374,55 @@ export default function CompilerDock({ problems, day }) {
     return () => clearTimeout(t);
   }, [code, mounted, cp, probIdx, lang, problems]);
 
+  /* ---------- 自定义样例（按题存储，null = 用题目默认） ---------- */
+  // 切题时载入该题的自定义样例记录，并清掉上一题的对拍结果展示
+  useEffect(() => {
+    if (!mounted) return;
+    setSampleCases(loadSampleCases(problems?.[probIdx]?.code));
+    setCases([]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mounted, probIdx, problems]);
+
+  // 编辑落盘（去抖）；sampleCases 为 null（未自定义）时不写
+  useEffect(() => {
+    if (!mounted || !sampleCases) return;
+    const t = setTimeout(
+      () => saveSampleCases(problems?.[probIdx]?.code, sampleCases),
+      400,
+    );
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sampleCases, mounted]);
+
   const resetToTemplate = () => {
     const tpl = cp?.templates?.[lang] ?? "";
     clearDraft(problems[probIdx]?.code, lang);
     setCode(tpl);
+  };
+
+  /* ---------- 样例编辑：首次编辑先把默认样例拷贝进可编辑列表 ---------- */
+  const defaultSamples = defaultCasesFrom(problem?.examples);
+  // 实际参与对拍的样例：自定义表优先，否则题目默认
+  const effectiveSamples = sampleCases ?? defaultSamples;
+  const samplesCustomized = sampleCases != null;
+
+  const editSamples = (fn) => {
+    setSampleCases((prev) => {
+      const base = prev ?? defaultSamples;
+      return fn(base.map((c) => ({ ...c })));
+    });
+  };
+  const updateSample = (i, field, value) =>
+    editSamples((list) => {
+      if (list[i]) list[i] = { ...list[i], [field]: value };
+      return list;
+    });
+  const addSample = () =>
+    editSamples((list) => [...list, { input: "", output: "" }]);
+  const removeSample = (i) => editSamples((list) => list.filter((_, j) => j !== i));
+  const resetSamples = () => {
+    clearSampleCases(problem?.code);
+    setSampleCases(null);
   };
 
   /* ---------- Ctrl/⌘S 接管（设置 ctrlS）----------
@@ -577,7 +632,26 @@ export default function CompilerDock({ problems, day }) {
   };
 
   /* ---------- 客户端 ---------- */
-  const getCpp = () => (cppRef.current ??= new CppClient());
+  // worker 初始化与 PCH 预热期产生的日志/下载进度没有请求 id，
+  // 挂到客户端实例的全局兜底回调上（cpp-client 按无 id 消息路由到这里）
+  const fmtDl = useCallback((dl) => {
+    if (!dl?.name) return "";
+    const got = (dl.got ?? 0) / 1048576;
+    if (dl.total > 0) {
+      return `下载 ${dl.name} ${Math.floor(((dl.got ?? 0) / dl.total) * 100)}%（${got.toFixed(1)}/${(dl.total / 1048576).toFixed(1)} MB）`;
+    }
+    return `下载 ${dl.name} ${got.toFixed(1)} MB`;
+  }, []);
+
+  const getCpp = () => {
+    if (!cppRef.current) {
+      const c = new CppClient();
+      c.onLog = (t) => appendConsole(t);
+      c.onProgress = (dl) => setDlInfo(dl);
+      cppRef.current = c;
+    }
+    return cppRef.current;
+  };
   const getPy = () => (pyRef.current ??= new PyClient());
 
   useEffect(
@@ -656,63 +730,94 @@ export default function CompilerDock({ problems, day }) {
   /* ---------- 运行 ---------- */
   const timeoutMs = (cp?.timeoutSec ?? 10) * 1000;
 
+  // C++ 单例结果 → 展示卡片。展开顺序：...j 必须在 verdict 之前，
+  // 否则 j.verdict 会把 trap/退出码推出的 RE 覆盖回去
+  const mapCppResult = (sample, r) => {
+    const j = judgeCase(sample?.output, r.stdout);
+    const re = r.trap || r.exitCode !== 0;
+    return {
+      ...j,
+      verdict: re ? "RE" : j.verdict,
+      elapsedMs: r.elapsedMs,
+      note: r.trap
+        ? `运行时错误：${truncate(r.trap, 200)}`
+        : r.exitCode !== 0
+          ? `退出码 ${r.exitCode}`
+          : null,
+    };
+  };
+
+  const fmtSec = (ms) => `${(ms / 1000).toFixed(2)}s`;
+
   const runSamples = async () => {
     if (!problem) return;
     const token = ++runTokenRef.current;
+    const samples = effectiveSamples;
     setRunState("running");
     setCases([]);
     setConsoleText("");
     setDiags([]);
     pyOutRef.current = "";
-    const examples = problem.examples?.length ? problem.examples : [];
-    if (!examples.length) {
-      appendConsole("该题没有样例数据，请改用「交互运行」模式。\n");
+    if (!samples.length) {
+      appendConsole(
+        "该题没有样例数据：可展开「样例管理」添加自定义样例，或用「交互运行」自己喂输入。\n",
+      );
       setRunState("idle");
       return;
     }
+    appendConsole(
+      `── 对拍 ${samples.length} 个样例（${lang === "cpp" ? `C++ · ${cp.cppStd}` : `Python · ${pythonVersion(cp.pythonVersion).label}`}）──\n`,
+    );
     try {
       if (lang === "cpp") {
         const client = getCpp();
+        const caseOf = (i, r) => ({ index: i, ...mapCppResult(samples[i], r) });
         const res = await client.runCases({
           source: code,
           std: cp.cppStd,
-          stdins: examples.map((e) => e.input),
-          timeoutMs: 30000 + examples.length * timeoutMs,
+          stdins: samples.map((e) => e.input),
+          timeoutMs: 30000 + samples.length * timeoutMs,
           onLog: appendConsole,
-          onStage: setStage,
+          onStage: (s) => {
+            setStage(s);
+            setDlInfo(null);
+          },
+          onProgress: (dl) => setDlInfo(dl),
+          onCase: ({ index, total, result }) => {
+            if (token !== runTokenRef.current) return;
+            const c = caseOf(index, result);
+            setCases((prev) => [...prev, c]);
+            appendConsole(`样例 ${index + 1}/${total}: ${c.verdict}（${c.elapsedMs}ms）\n`);
+          },
         });
         if (token !== runTokenRef.current) return;
-        setCases(
-          res.results.map((r, i) => {
-            const j = judgeCase(examples[i].output, r.stdout);
-            const re = r.trap || r.exitCode !== 0;
-            // 注意展开顺序：...j 必须在 verdict 之前，否则 j.verdict 会把 RE 覆盖回去
-            return {
-              index: i,
-              ...j,
-              verdict: re ? "RE" : j.verdict,
-              elapsedMs: r.elapsedMs,
-              note: r.trap
-                ? `运行时错误：${truncate(r.trap, 200)}`
-                : r.exitCode !== 0
-                  ? `退出码 ${r.exitCode}`
-                  : null,
-            };
-          }),
-        );
+        setCases(res.results.map((r, i) => caseOf(i, r)));
+        const t = res.timings;
+        if (t) {
+          const lines = ["\n── 编译耗时明细 ──"];
+          if (t.pch) {
+            lines.push(
+              `预编译头（bits/stdc++.h · ${t.pch.std}）: ${t.pch.builtNow ? `本次构建 ${fmtSec(t.pch.buildMs)}（一次性，之后秒级）` : "命中缓存"}`,
+            );
+          }
+          lines.push(
+            `clang 编译 ${fmtSec(t.compileMs)} · 链接 ${fmtSec(t.linkMs)} · wasm 实例化 ${fmtSec(t.moduleMs)} · 运行 ${res.results.length} 例 ${fmtSec(t.runMs)}`,
+          );
+          appendConsole(`${lines.join("\n")}\n`);
+        }
         appendConsole(`\n编译一次，运行 ${res.results.length} 个样例完成。\n`);
       } else {
         const client = getPy();
-        for (let i = 0; i < examples.length; i++) {
+        for (let i = 0; i < samples.length; i++) {
           if (token !== runTokenRef.current) return;
-          setStage(`样例 ${i + 1}/${examples.length}`);
+          setStage(`样例 ${i + 1}/${samples.length}`);
           appendConsole(`\n—— 样例 ${i + 1} ——\n`);
           pyOutRef.current = "";
           let res;
           try {
             res = await client.run({
               code,
-              stdin: examples[i].input,
+              stdin: samples[i].input,
               versionId: cp.pythonVersion,
               timeoutMs,
               onOutput: (kind, text) => {
@@ -737,22 +842,24 @@ export default function CompilerDock({ problems, day }) {
                 note: exn.message,
               },
             ]);
+            appendConsole(`样例 ${i + 1}/${samples.length}: TE\n`);
             continue;
           }
           if (token !== runTokenRef.current) return;
-          const j = judgeCase(examples[i].output, pyOutRef.current);
+          const j = judgeCase(samples[i].output, pyOutRef.current);
           // 展开顺序同 C++ 路径：...j 在前，verdict 覆盖才生效
-          setCases((prev) => [
-            ...prev,
-            res.success
-              ? { index: i, ...j, elapsedMs: res.elapsedMs }
-              : {
-                  index: i,
-                  ...j,
-                  verdict: "RE",
-                  note: truncate(res.error, 600),
-                },
-          ]);
+          const c = res.success
+            ? { index: i, ...j, elapsedMs: res.elapsedMs }
+            : {
+                index: i,
+                ...j,
+                verdict: "RE",
+                note: truncate(res.error, 600),
+              };
+          setCases((prev) => [...prev, c]);
+          appendConsole(
+            `样例 ${i + 1}/${samples.length}: ${c.verdict}${c.elapsedMs != null ? `（${c.elapsedMs}ms）` : ""}\n`,
+          );
         }
       }
     } catch (exn) {
@@ -763,6 +870,7 @@ export default function CompilerDock({ problems, day }) {
       if (token === runTokenRef.current) {
         setRunState("idle");
         setStage("");
+        setDlInfo(null);
       }
     }
   };
@@ -799,7 +907,11 @@ export default function CompilerDock({ problems, day }) {
           interactive: true,
           timeoutMs,
           onLog: appendConsole,
-          onStage: setStage,
+          onStage: (s) => {
+            setStage(s);
+            setDlInfo(null);
+          },
+          onProgress: (dl) => setDlInfo(dl),
           onNeedInput: needInput,
         });
         if (token !== runTokenRef.current) return;
@@ -833,6 +945,7 @@ export default function CompilerDock({ problems, day }) {
       if (token === runTokenRef.current) {
         setRunState("idle");
         setStage("");
+        setDlInfo(null);
       }
     }
   };
@@ -1163,7 +1276,10 @@ export default function CompilerDock({ problems, day }) {
               </button>
             )}
             <span className="ml-auto truncate text-[11px] text-muted-foreground">
-              {completionStatus ?? (checkState || stage || "")}
+              {completionStatus ??
+                (dlInfo
+                  ? fmtDl(dlInfo)
+                  : checkState || stage || "")}
             </span>
             {busy ? (
               <Button
@@ -1203,78 +1319,193 @@ export default function CompilerDock({ problems, day }) {
             }
           >
             {mode === "samples" && (
-              <div className="min-h-0 flex-1 space-y-2 overflow-y-auto">
-                {cases.length > 0 && (
-                  <p className="text-xs text-muted-foreground">
-                    通过 {passCount}/{cases.length}
-                    {cases.length > 0 && (
-                      <span className="ml-2">
-                        耗时 {cases.reduce((a, c) => a + (c.elapsedMs ?? 0), 0)}
-                        ms
-                      </span>
-                    )}
-                  </p>
-                )}
-                {cases.length === 0 && !busy && (
-                  <p className="text-xs leading-relaxed text-muted-foreground">
-                    点击「运行」按题目样例逐例对拍（
-                    {lang === "cpp" ? "编译一次，多样例复用" : "每例重置解释器"}
-                    ）。 需要自己喂输入调试请切「交互运行」。
-                  </p>
-                )}
-                {cases.map((c) => (
-                  <details
-                    key={c.index}
-                    className="rounded-md border text-xs"
-                    open={c.verdict !== "AC"}
+              <div className="flex min-h-0 flex-1 flex-col gap-2">
+                {/* 样例管理：编辑默认样例 / 添加自定义样例（按题存本机）。
+                    用按钮 + 条件面板而非 <details>：E2E 以 aside details 定位
+                    对拍结果卡，多一个 details 会抢 .first() */}
+                <div className="shrink-0 rounded-md border text-xs">
+                  <button
+                    type="button"
+                    onClick={() => setSamplesOpen((v) => !v)}
+                    aria-expanded={samplesOpen}
+                    aria-controls="compiler-samples-panel"
+                    className="flex w-full cursor-pointer items-center gap-2 px-2.5 py-1.5 text-left"
                   >
-                    <summary className="flex cursor-pointer items-center gap-2 px-2.5 py-1.5">
+                    <span>{samplesOpen ? "▾" : "▸"} 样例管理</span>
+                    <span className="text-muted-foreground">
+                      （{effectiveSamples.length} 例）
+                    </span>
+                    {samplesCustomized && (
                       <Badge
                         variant="outline"
-                        className={`border-transparent px-1.5 font-mono text-[10px] text-white ${
-                          c.verdict === "AC"
-                            ? "bg-emerald-600"
-                            : c.verdict === "WA"
-                              ? "bg-red-500"
-                              : "bg-amber-600"
-                        }`}
+                        className="border-transparent bg-amber-600 px-1.5 text-[10px] text-white"
                       >
-                        {c.verdict}
+                        已自定义
                       </Badge>
-                      <span>样例 {c.index + 1}</span>
-                      {c.elapsedMs != null && (
-                        <span className="text-muted-foreground">
-                          {c.elapsedMs}ms
-                        </span>
-                      )}
-                      {c.diff && (
-                        <span className="truncate text-muted-foreground">
-                          第 {c.diff.line} 行不符：期望「
-                          {truncate(c.diff.expected, 40)}」实际「
-                          {truncate(c.diff.actual, 40)}」
-                        </span>
-                      )}
-                    </summary>
-                    <div className="space-y-1.5 border-t px-2.5 py-2 font-mono">
-                      {c.note && <p className="text-amber-500">{c.note}</p>}
-                      <SampleIO
-                        label="输入"
-                        text={problem?.examples?.[c.index]?.input}
-                      />
-                      <SampleIO label="期望输出" text={c.expected} />
-                      <SampleIO
-                        label="实际输出"
-                        text={c.actual}
-                        bad={c.verdict !== "AC"}
-                      />
+                    )}
+                    <span className="ml-auto truncate text-[10px] text-muted-foreground">
+                      编辑输入 / 期望输出，运行即按此对拍
+                    </span>
+                  </button>
+                  {samplesOpen && (
+                    <div
+                      id="compiler-samples-panel"
+                      className="max-h-56 space-y-2 overflow-y-auto border-t px-2.5 py-2"
+                    >
+                      {(sampleCases ?? defaultSamples).map((c, i) => (
+                        <div key={i} className="space-y-1 rounded border p-1.5">
+                          <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                            <span>
+                              样例 {i + 1}
+                              {i >= defaultSamples.length && " · 自定义"}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => removeSample(i)}
+                              className="transition-colors hover:text-red-400"
+                              aria-label={`删除样例 ${i + 1}`}
+                            >
+                              删除
+                            </button>
+                          </div>
+                          <div className="grid grid-cols-2 gap-1.5">
+                            <textarea
+                              value={c.input}
+                              onChange={(e) =>
+                                updateSample(i, "input", e.target.value)
+                              }
+                              placeholder="输入"
+                              aria-label={`样例 ${i + 1} 输入`}
+                              spellCheck={false}
+                              className="min-h-14 w-full resize-y rounded border bg-background p-1.5 font-mono text-[11px] outline-none focus:border-primary/60"
+                            />
+                            <textarea
+                              value={c.output}
+                              onChange={(e) =>
+                                updateSample(i, "output", e.target.value)
+                              }
+                              placeholder="期望输出（可留空表示要求无输出）"
+                              aria-label={`样例 ${i + 1} 期望输出`}
+                              spellCheck={false}
+                              className="min-h-14 w-full resize-y rounded border bg-background p-1.5 font-mono text-[11px] outline-none focus:border-primary/60"
+                            />
+                          </div>
+                        </div>
+                      ))}
+                      <div className="flex items-center gap-3 pt-0.5">
+                        <button
+                          type="button"
+                          onClick={addSample}
+                          className="rounded border px-2 py-0.5 transition-colors hover:bg-secondary"
+                        >
+                          ＋ 添加样例
+                        </button>
+                        {samplesCustomized && (
+                          <button
+                            type="button"
+                            onClick={resetSamples}
+                            className="text-muted-foreground transition-colors hover:text-foreground"
+                          >
+                            恢复默认样例
+                          </button>
+                        )}
+                      </div>
                     </div>
-                  </details>
-                ))}
-                {problem?.examples?.length === 0 && (
-                  <p className="text-xs text-muted-foreground">
-                    该题暂无样例数据。
-                  </p>
-                )}
+                  )}
+                </div>
+
+                {/* 对拍结果 */}
+                <div className="min-h-0 flex-1 space-y-2 overflow-y-auto">
+                  {cases.length > 0 && (
+                    <p className="text-xs text-muted-foreground">
+                      通过 {passCount}/{cases.length}
+                      {cases.length > 0 && (
+                        <span className="ml-2">
+                          耗时{" "}
+                          {cases.reduce((a, c) => a + (c.elapsedMs ?? 0), 0)} ms
+                        </span>
+                      )}
+                    </p>
+                  )}
+                  {cases.length === 0 && !busy && (
+                    <p className="text-xs leading-relaxed text-muted-foreground">
+                      点击「运行」按样例逐例对拍（
+                      {lang === "cpp"
+                        ? "编译一次，多样例复用"
+                        : "每例重置解释器"}
+                      ）。样例可在上方「样例管理」里编辑或添加，需要自己喂输入调试请切「交互运行」。
+                    </p>
+                  )}
+                  {cases.map((c) => (
+                    <details
+                      key={c.index}
+                      className="rounded-md border text-xs"
+                      open={c.verdict !== "AC"}
+                    >
+                      <summary className="flex cursor-pointer items-center gap-2 px-2.5 py-1.5">
+                        <Badge
+                          variant="outline"
+                          className={`border-transparent px-1.5 font-mono text-[10px] text-white ${
+                            c.verdict === "AC"
+                              ? "bg-emerald-600"
+                              : c.verdict === "WA"
+                                ? "bg-red-500"
+                                : "bg-amber-600"
+                          }`}
+                        >
+                          {c.verdict}
+                        </Badge>
+                        <span>样例 {c.index + 1}</span>
+                        {c.index >= defaultSamples.length &&
+                          samplesCustomized && (
+                            <span className="text-[10px] text-muted-foreground">
+                              自定义
+                            </span>
+                          )}
+                        {c.elapsedMs != null && (
+                          <span className="text-muted-foreground">
+                            {c.elapsedMs}ms
+                          </span>
+                        )}
+                        {c.diff && (
+                          <span className="truncate text-muted-foreground">
+                            第 {c.diff.line} 行不符：期望「
+                            {truncate(c.diff.expected, 40)}」实际「
+                            {truncate(c.diff.actual, 40)}」
+                          </span>
+                        )}
+                      </summary>
+                      <div className="space-y-1.5 border-t px-2.5 py-2 font-mono">
+                        {c.note && <p className="text-amber-500">{c.note}</p>}
+                        <SampleIO
+                          label="输入"
+                          text={effectiveSamples[c.index]?.input}
+                        />
+                        <SampleIO label="期望输出" text={c.expected} />
+                        <SampleIO
+                          label="实际输出"
+                          text={c.actual}
+                          bad={c.verdict !== "AC"}
+                        />
+                      </div>
+                    </details>
+                  ))}
+                  {effectiveSamples.length === 0 && (
+                    <p className="text-xs text-muted-foreground">
+                      该题暂无样例数据，可在上方「样例管理」添加自定义样例。
+                    </p>
+                  )}
+                </div>
+
+                {/* 编译 / 运行日志（含耗时明细与逐例进度） */}
+                <pre
+                  ref={consoleRef}
+                  aria-label="编译日志"
+                  className="h-20 shrink-0 overflow-auto rounded-md border bg-background p-2 font-mono text-[11px] leading-relaxed whitespace-pre-wrap"
+                >
+                  {consoleText ||
+                    "点击「运行」后此处显示编译命令、逐例进度与耗时明细。\n"}
+                </pre>
               </div>
             )}
 
@@ -1282,6 +1513,7 @@ export default function CompilerDock({ problems, day }) {
               <div className="flex min-h-0 flex-1 flex-col gap-2">
                 <pre
                   ref={mode === "interactive" ? consoleRef : undefined}
+                  aria-label="编译日志"
                   className="min-h-0 flex-1 overflow-auto rounded-md border bg-background p-2.5 font-mono text-xs leading-relaxed whitespace-pre-wrap"
                 >
                   {consoleText ||

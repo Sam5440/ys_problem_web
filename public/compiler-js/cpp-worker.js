@@ -12,13 +12,18 @@
  *   → { id, type:'complete', source, std, line, col }
  *   ← { type:'ready', exnref }                        初始化完成握手
  *   ← { type:'log', text }                            clang/系统日志流
- *   ← { id, type:'stage', stage }                     阶段进度
+ *   ← { id, type:'stage', stage }                     阶段进度（编译/链接/逐样例）
  *   ← { id, type:'progress', dl:{name, got, total} }  资源下载进度
+ *   ← { id, type:'case', index, total, result }       样例逐例完成（流式进度）
  *   ← { id, type:'need-input' }                       交互模式等待输入
- *   ← { id, ok:true, run:{stdout, exitCode, trap, elapsedMs, truncated} }
+ *   ← { id, ok:true, run:{stdout, exitCode, trap, elapsedMs, truncated, timings} }
  *   ← { id, ok:true, check:{diagnostics, all} }
  *   ← { id, ok:true, completions:[{name, pattern}] }
  *   ← { id, ok:false, error:{kind, message, diagnostics?, rawLog?} }
+ *
+ * 初始化完成后立即预热默认标准（c++20）的 bits/stdc++.h 预编译头（PCH），
+ * 之后源码含万能头的编译/检查/补全注入 -include-pch 复用（实测编译耗时
+ * 3.9s → 1.1s）。预热期的日志/下载进度无请求 id，主线程全局兜底接收。
  *
  * 交互 stdin：主线程创建 SharedArrayBuffer 随 run 请求传入（需跨域隔离）。
  * 布局：Int32[0]=state(0空闲/1等输入/2有数据/3EOF)，Int32[1]=字节长，
@@ -149,6 +154,10 @@ async function init() {
   });
   await bridge.api.ready; // memfs 启动 + sysroot 解包
   postMessage({ type: 'ready', exnref });
+  // 后台预热默认标准（c++20）的 bits/stdc++.h 预编译头：把一次性构建
+  // 成本移到首个用户请求之前（期间产生的下载/构建日志无请求 id，由
+  // cpp-client 的全局 onLog/onProgress 兜底转发）
+  bridge.ensurePch('c++20');
 }
 
 function getBundle() {
@@ -202,7 +211,7 @@ self.onmessage = (ev) => {
         postMessage({ id, type: 'stage', stage: '编译中' });
         const input = nextInput('s');
         api.memfs.addFile(input, data.source);
-        const { results, truncated } = await self.CPBridge.runCases(bridge, {
+        const { results, truncated, timings } = await self.CPBridge.runCases(bridge, {
           input,
           contents: data.source,
           obj: `${input}.o`,
@@ -210,18 +219,20 @@ self.onmessage = (ev) => {
           std: data.std ?? null,
           stdins: data.stdins ?? [],
         });
-        postMessage({ id, ok: true, runCases: { results, truncated } });
+        postMessage({ id, ok: true, runCases: { results, truncated, timings } });
       } else if (data.type === 'check') {
         postMessage({ id, type: 'stage', stage: '语法检查中' });
         const input = nextInput('c');
         api.memfs.addFile(input, data.source);
-        const check = await self.CPBridge.syntaxCheck(bridge, { input, std: data.std });
+        const check = await self.CPBridge.syntaxCheck(bridge, {
+          input, contents: data.source, std: data.std,
+        });
         postMessage({ id, ok: true, check });
       } else if (data.type === 'complete') {
         const input = nextInput('k');
         api.memfs.addFile(input, data.source);
         const completions = await self.CPBridge.codeComplete(bridge, {
-          input, line: data.line, col: data.col, std: data.std,
+          input, contents: data.source, line: data.line, col: data.col, std: data.std,
         });
         postMessage({ id, ok: true, completions });
       } else {

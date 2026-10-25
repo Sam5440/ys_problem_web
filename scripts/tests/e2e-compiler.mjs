@@ -473,9 +473,17 @@ async function main() {
     .locator('aside[aria-label="编译器面板"] details')
     .first()
     .innerText();
+  // 期望值从当日夹具数据推导（曾硬编码旧日期样例首行「9 5」，数据更新即假失败）
+  const pyFirstLine = (problems[0].statement?.examples?.[0]?.input ?? "")
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean)[0];
+  const pyFirstRe = pyFirstLine
+    ? new RegExp(`got: ${pyFirstLine.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`)
+    : /got: \S/;
   check(
     "Python 固定 stdin 喂入生效（读到样例输入）",
-    /got: 9 5/.test(pyAside) && !/got: empty/.test(pyAside),
+    pyFirstRe.test(pyAside) && !/got: empty/.test(pyAside),
     pyAside.slice(0, 300),
   );
   await shot("11-python-run");

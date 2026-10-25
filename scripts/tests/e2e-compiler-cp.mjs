@@ -140,8 +140,8 @@ async function main() {
   const EXPECTED0 = (p0.statement?.examples?.[0]?.output ?? '').trim();
 
   /* ====== 轮 A：c++17 设置 → concepts 必须编译失败（运行也用所选标准） ======
-   * 断言走「交互运行」：samples 模式不渲染 console pre，编译失败的 ✗ 只在
-   * 交互/检查模式的控制台可见（首跑曾因此误判超时）。 */
+   * 断言走「交互运行」：编译失败的 ✗ 落在控制台，交互模式控制台立即可见
+   * （samples 模式的控制台在结果列表下方，首跑曾因看不到 ✗ 而误判超时）。 */
   await page.goto(BASE, { waitUntil: 'domcontentloaded' });
   await waitForDock(page);
   await seedSettings(page, { cppStd: 'c++17' });
@@ -178,8 +178,15 @@ async function main() {
   await clickRun(page);
   await waitSamplesDone(page);
   {
+    // 断言不依赖「所有样例同输出」的数据巧合：程序固定打印样例 1 的期望，
+    // 样例 1 必 AC；其余样例 verdict 随数据而定，只要求全部出结果
     const t = await asideText(page);
-    check('c++20 下同一代码样例全 AC（-std 修复回归）', t.includes(`通过 ${exCount}/${exCount}`), t.slice(0, 300));
+    const d1 = await page.locator('aside details').first().innerText();
+    check(
+      'c++20 下 concepts 代码编译运行出结果（-std 修复回归）',
+      new RegExp(`通过 \\d+/${exCount}`).test(t) && d1.includes('AC'),
+      `${t.slice(0, 200)} | ${d1.slice(0, 120)}`,
+    );
   }
   await shot('cp-02-concepts-std20-ac');
 
@@ -195,6 +202,75 @@ async function main() {
   }
   await shot('cp-03-trailing-space-ac');
 
+  /* ====== 轮 B2：自定义样例（编辑默认样例 + 新增样例）+ 编译日志 ====== */
+  await typeCode(page, `#include <bits/stdc++.h>\nusing namespace std;\nint main(){\n    int a, b;\n    cin >> a >> b;\n    cout << (a + b) << endl;\n}\n`);
+  await selectMode(page, '样例测试');
+  // 打开样例管理：编辑默认样例 1（输入 2 3 / 期望 5），再新增一个自定义样例
+  await page.locator('aside button', { hasText: '样例管理' }).first().click();
+  await page.waitForSelector('#compiler-samples-panel', { timeout: 10000 });
+  if (exCount === 0) {
+    check('题目有默认样例可编辑（夹具前提）', false, 'exCount=0');
+  } else {
+    const customIdx = exCount + 1; // 新增自定义样例的序号（跟随默认样例数）
+    await page.locator('textarea[aria-label="样例 1 输入"]').fill('2 3');
+    await page.locator('textarea[aria-label="样例 1 期望输出"]').fill('5');
+    await page.locator('aside button', { hasText: '＋ 添加样例' }).click();
+    await page.locator(`textarea[aria-label="样例 ${customIdx} 输入"]`).fill('10 20');
+    await page.locator(`textarea[aria-label="样例 ${customIdx} 期望输出"]`).fill('30');
+    await sleep(700); // 等去抖落盘
+    await clickRun(page);
+    await waitSamplesDone(page);
+    {
+      const t = await asideText(page);
+      check(
+        '编辑+新增样例后按新样例表对拍（总数 = 默认 + 自定义）',
+        new RegExp(`通过 \\d+/${customIdx}`).test(t),
+        t.slice(0, 300),
+      );
+      // AC 的结果卡是折叠 <details>（open={verdict!=='AC'}），innerText 不含
+      // 折叠正文——用 textContent 读完整输入/期望/实际
+      const d1 = await page.locator('aside details').first().evaluate((el) => el.textContent);
+      const dCustom = await page.locator('aside details').nth(exCount).evaluate((el) => el.textContent);
+      check('编辑后的默认样例 1 判 AC（输入 2 3 → 5）', d1.includes('AC') && d1.includes('5'), d1.slice(0, 300));
+      check(`自定义样例 ${customIdx} 判 AC（输入 10 20 → 30）`, dCustom.includes('AC') && dCustom.includes('30'), dCustom.slice(0, 300));
+    }
+    await shot('cp-03b-custom-samples');
+
+    // samples 模式控制台：编译耗时明细 + PCH 命中缓存 + 逐例进度行
+    {
+      const pre = await page.locator('aside pre[aria-label="编译日志"]').textContent();
+      check('样例模式控制台显示编译耗时明细', pre.includes('编译耗时明细'), pre.slice(-400));
+      check('预编译头命中缓存（PCH 提速生效）', /预编译头（bits\/stdc\+\+\.h · c\+\+20）: 命中缓存/.test(pre), pre.slice(-400));
+      check('控制台含逐例进度行', new RegExp(`样例 1/${customIdx}:`).test(pre), pre.slice(-200));
+    }
+
+    // 重载后自定义样例持久化，恢复默认样例回到题目原始样例
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await waitForDock(page);
+    await openPanel(page);
+    await page.waitForSelector('aside .monaco-editor', { timeout: 60000 });
+    await page.locator('aside button', { hasText: '样例管理' }).first().click();
+    await page.waitForSelector('#compiler-samples-panel', { timeout: 10000 });
+    {
+      const v = await page.locator('textarea[aria-label="样例 1 输入"]').inputValue();
+      check('自定义样例跨会话持久化（localStorage）', v === '2 3', v);
+      const t = await asideText(page);
+      check('样例管理显示已自定义徽章', t.includes('已自定义'), t.slice(0, 200));
+    }
+    await page.locator('aside button', { hasText: '恢复默认样例' }).click();
+    await sleep(500);
+    {
+      const t = await asideText(page);
+      // innerText 会在 flex 行的 span 之间插换行（样例管理\n（2 例）），允许空白
+      check(
+        '恢复默认样例（回到题目原始样例）',
+        new RegExp(`样例管理\\s*（${exCount} 例）`).test(t) && !t.includes('已自定义'),
+        t.slice(0, 200),
+      );
+    }
+    await shot('cp-03c-samples-reset');
+  }
+
   // 除零 → RE 且实际输出无 JS 堆栈（trap 清理回归）
   // volatile load 作除数：优化器无法假设其值为 0，除法不可折叠 → 运行期必 trap
   // （volatile*0 乘法与 asm "+r" 屏障都会被 clang 折叠掉，Node 矩阵已验证此写法）
@@ -204,9 +280,12 @@ async function main() {
   {
     const t = await asideText(page);
     const hasRE = /\bRE\b/.test(t);
-    const clean = !/RuntimeError|at wasm|at App\.run/.test(t);
+    // 锚定对拍结果卡的「实际输出」：样例模式控制台现在会展示 clang 原始
+    // 日志（含 trap 的 JS 堆栈，属编译日志的一部分），不能扫全面板
+    const d1 = await page.locator('aside details').first().innerText();
+    const clean = !/RuntimeError|at wasm|at App\.run/.test(d1);
     check('除零 trap 判 RE', hasRE, t.slice(0, 300));
-    check('trap 后实际输出不混入 JS 堆栈（cleanStdout 回归）', clean, t.slice(0, 500));
+    check('trap 后实际输出不混入 JS 堆栈（cleanStdout 回归）', clean, d1.slice(0, 500));
   }
   await shot('cp-04-divzero-re');
 

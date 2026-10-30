@@ -8,6 +8,8 @@
  * Cloudflare challenge — a plain HTTP client gets 403 "Just a moment...",
  * a real JS engine clears it automatically.
  */
+import { dedupeMathPreview, stripHiddenTex } from '../../lib/render.js';
+
 export function decodeEntities(s) {
   const map = { amp: '&', lt: '<', gt: '>', quot: '"', nbsp: ' ', '#39': "'", apos: "'" };
   return String(s)
@@ -42,12 +44,27 @@ function imgToMarkdown(imgTag) {
 const preserveImages = (html) => String(html).replace(/<img\b[^>]*>/gi, imgToMarkdown);
 
 // Section content -> ordered blocks: plain paragraphs + <pre> blocks preserved.
+// Bare text directly between block tags (e.g. a sentence after </ul> that CF's
+// markdown never wrapped in <p>) is captured too — dropping it silently loses
+// real statement content. MathJax frames/tokens are gone by the time we run;
+// dedupeMathPreview runs while the token is still in place so it can trim the
+// preview-span plain copy abutting it (honeypot sentences leak through there),
+// then stripHiddenTex removes anti-AI \style honeypot tokens.
 function htmlToBlocks(html) {
   const out = [];
   const re =
     /<pre[^>]*>([\s\S]*?)<\/pre>|<p>([\s\S]*?)<\/p>|<li[^>]*>([\s\S]*?)<\/li>|<img\b[^>]*>/gi;
   let m;
+  let lastEnd = 0;
+  const cleanText = (s) => stripHiddenTex(dedupeMathPreview(s));
+  const pushBare = (chunk) => {
+    if (!chunk) return;
+    const text = stripTags(preserveImages(chunk));
+    if (text) out.push(cleanText(text));
+  };
   while ((m = re.exec(html))) {
+    pushBare(html.slice(lastEnd, m.index));
+    lastEnd = m.index + m[0].length;
     if (m[1] !== undefined) {
       const text = decodeEntities(m[1].replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '')).replace(/\n+$/, '');
       if (text.trim()) out.push({ pre: text });
@@ -56,10 +73,11 @@ function htmlToBlocks(html) {
       const md = imgToMarkdown(m[0]);
       if (md) out.push(md);
     } else {
-      const text = stripTags(preserveImages(m[2] ?? m[3]));
+      const text = cleanText(stripTags(preserveImages(m[2] ?? m[3])));
       if (text) out.push(text);
     }
   }
+  pushBare(html.slice(lastEnd));
   if (!out.length) {
     const one = stripTags(preserveImages(html));
     if (one) out.push(one);
@@ -103,7 +121,11 @@ function unmathjax(html) {
   // (e.g. <script type="math/tex" id="MathJax-Element-1">) — without it the
   // script survives, the later <script truncation cuts the statement in half.
   html = html.replace(/<script type="math\/tex([^"]*)"[^>]*>([\s\S]*?)<\/script>/gi, (_, mode, tex) => {
-    stash.push(/display/i.test(mode) ? '$$' + tex + '$$' : '$$$' + tex + '$$$');
+    // Hidden honeypot TeX (\style{opacity:0…}) — invisible on Codeforces, and
+    // KaTeX has no \style, so restoring it would print the trap as garbage.
+    // Stripping leaves nothing: push '' so the token vanishes entirely.
+    const clean = stripHiddenTex(tex);
+    stash.push(clean.trim() ? (/display/i.test(mode) ? '$$' + clean + '$$' : '$$$' + clean + '$$$') : '');
     return `%%ZSMJ${stash.length - 1}%%`;
   });
   if (!stash.length) return html;
@@ -245,7 +267,17 @@ export function parseStatementHtml(pageHtml) {
   };
 
   // Legend = everything between the header div and the input specification.
-  const legendHtmlMatch = (h) => h.match(/<\/div>\s*([\s\S]*?)<div class="input-specification">/)?.[1];
+  // Start from the header's balanced close, not the first </div> — the header
+  // nests property divs, and bare-text capture would otherwise lift "time
+  // limit per test…" into the legend as a paragraph.
+  const legendHtmlMatch = (h) => {
+    const stop = h.indexOf('<div class="input-specification">');
+    if (stop === -1) return undefined;
+    const headerIdx = h.indexOf('<div class="header"');
+    const from = headerIdx === -1 ? 0 : findDivClose(h, headerIdx);
+    if (from === -1 || from >= stop) return undefined;
+    return h.slice(from, stop);
+  };
   const noteHtmlMatch = (h) =>
     h.match(/<div class="note">([\s\S]*?)(?=<div class="(?:sample-tests|note)|<script|$)/)?.[1];
 
@@ -271,15 +303,32 @@ export function parseStatementHtml(pageHtml) {
     }
   }
 
+  // "Input"/"Output"/"Note" caption divs live inside the section slices; bare
+  // text capture would lift them in as paragraphs, so drop them first (the
+  // samples pass reads the same titles from the full HTML, untouched here).
+  const dropSectionTitles = (h) => {
+    if (!h) return h;
+    let out = '';
+    let rest = h;
+    for (;;) {
+      const i = rest.indexOf('<div class="section-title"');
+      if (i === -1) return out + rest;
+      const close = findDivClose(rest, i);
+      if (close === -1) return out + rest;
+      out += rest.slice(0, i);
+      rest = rest.slice(close);
+    }
+  };
+
   const statement = {
     title: titleMatch ? decodeEntities(titleMatch[1].trim()) : null,
     timeLimit: timeMatch ? decodeEntities(timeMatch[1].trim()) : null,
     memoryLimit: memMatch ? decodeEntities(memMatch[1].trim()) : null,
     sections: {
-      legend: legendHtml ? blocksToParagraphs(htmlToBlocks(legendHtml)) : [],
-      input: htmlToBlocks(inputHtml),
-      output: htmlToBlocks(outputHtml),
-      ...(noteHtml ? { note: htmlToBlocks(noteHtml) } : {}),
+      legend: legendHtml ? blocksToParagraphs(htmlToBlocks(dropSectionTitles(legendHtml))) : [],
+      input: htmlToBlocks(dropSectionTitles(inputHtml)),
+      output: htmlToBlocks(dropSectionTitles(outputHtml)),
+      ...(noteHtml ? { note: htmlToBlocks(dropSectionTitles(noteHtml)) } : {}),
     },
     examples,
   };

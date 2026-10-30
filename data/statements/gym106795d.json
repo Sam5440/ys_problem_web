@@ -14,6 +14,7 @@
       "Whenever two adjacent monsters are of the same type, they can fuse into one monster of the opposite type:",
       "GG becomes V.",
       "VV becomes G.",
+      "The new monster takes the place of the original two, and all other monsters keep their relative order. You may perform these fusions in any order, as many times as you like.",
       "What is the minimum number of monsters that can remain?"
     ],
     "input": [
@@ -24,7 +25,7 @@
       "Print a single integer: the minimum possible number of monsters remaining after performing any number of valid fusions."
     ],
     "note": [
-      "In the sample, one possible sequence of fusions is $$$$$$\\texttt{GGVV}\\rightarrow\\texttt{VVV}\\rightarrow\\texttt{GV}.$$$$$$ No further fusion is possible. The only other possible first fusion produces GGG. From either VVV or GGG, the next fusion leaves GV or VG, so every choice stops at two monsters. Therefore, the answer is $$$2$$$."
+      "In the sample, one possible sequence of fusions is \n$$\\texttt{GGVV}\\rightarrow\\texttt{VVV}\\rightarrow\\texttt{GV}.$$ No further fusion is possible. The only other possible first fusion produces GGG. From either VVV or GGG, the next fusion leaves GV or VG, so every choice stops at two monsters. Therefore, the answer is $$$2$$$."
     ]
   },
   "examples": [
@@ -55,6 +56,7 @@
         "ai": "VV 变成 G。",
         "aiModel": "GPT 5.6 Terra"
       },
+      null,
       {
         "ai": "最多可以剩下多少只怪物？",
         "aiModel": "GPT 5.6 Terra"

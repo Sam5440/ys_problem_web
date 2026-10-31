@@ -1,0 +1,212 @@
+{
+  "code": "GYM105493C",
+  "letter": "C",
+  "title": "C. Tomorrow Will Be Better Than Yesterday",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105493/problem/C",
+  "difficulty": "*2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Pavel knows for sure — tomorrow is always better than yesterday.",
+      "He decided to prove this using geometry.",
+      "To do this, Pavel considered n consecutive days and assigned a point on the plane (xi, yi) to each day.",
+      "He considers day i + 1 to be better than day i if one of the two conditions is met:",
+      "either xi < xi + 1;",
+      "or xi = xi + 1, but yi < yi + 1.",
+      "Pavel is only unsure about one thing — whether he has chosen the correct coordinate system for his calculations. He is confident that only rotations and/or reflections can be used to find the correct coordinate system.",
+      "Help Pavel — find any rectangular (orthogonal) coordinate system in which each subsequent day will be better than the previous one."
+    ],
+    "input": [
+      "The first line contains an integer n (1 ≤ n ≤ 105) — the number of days analyzed by Pavel.",
+      "Each of the following n lines contains two integers xi and yi ( - 105 ≤ xi,  yi ≤ 105) — the point assigned by Pavel to the i-th day."
+    ],
+    "output": [
+      "In the first line, print YES if such a rectangular coordinate system exists, and NO otherwise.",
+      "If the desired coordinate system exists, print two more lines.",
+      "In the second line, print two integers Xx and Yx (|Xx|, |Yx| ≤ 109;|Xx| + |Yx| > 0) — the coordinates of the vector aligned with the axis Ox of the new coordinate system.",
+      "In the third line, print two integers Xy and Yy (|Xy|, |Yy| ≤ 109;|Xy| + |Yy| > 0) — the coordinates of the vector aligned with the axis Oy of the new coordinate system.",
+      "The vectors (Xx, Yx) and (Xy, Yy) must be perpendicular to each other.",
+      "If there are multiple valid answers, print any."
+    ],
+    "note": [
+      "First test example",
+      "First, consider the points assigned to the days and the found vectors in the original coordinate system:",
+      "![](https://espresso.codeforces.com/0d2356397e44d246d0dd08562e9d634c7eb4ce09.png)",
+      "Now let's show these same points in the coordinate system based on the found vectors:",
+      "![](https://espresso.codeforces.com/1d48a2e49ed7e7b98f2433ec9fa15fb7beb82ba2.png)",
+      "The coordinates of the points after transitioning to the new coordinate system:",
+      "(3, 3) — ( - 3, 0);",
+      "(2, 3) — ( - 2.5,  - 0.5);",
+      "(3, 2) — ( - 2.5, 0.5);",
+      "(1, 3) — ( - 2,  - 1);",
+      "(2, 2) — ( - 2, 0);",
+      "(3, 1) — ( - 2, 1);",
+      "(1, 2) — ( - 1.5,  - 0.5);",
+      "(2, 1) — ( - 1.5, 0.5);",
+      "(1, 1) — ( - 1, 0).",
+      "It is clear that each subsequent point is \"better\" than the previous one in the new coordinate system."
+    ]
+  },
+  "examples": [
+    {
+      "input": "9\n3 3\n2 3\n3 2\n1 3\n2 2\n3 1\n1 2\n2 1\n1 1",
+      "output": "YES\n-1 -1\n1 -1"
+    },
+    {
+      "input": "4\n1 1\n1 2\n2 2\n2 1",
+      "output": "NO"
+    },
+    {
+      "input": "1\n100000 100000",
+      "output": "YES\n-100000 100000\n-100000 -100000"
+    },
+    {
+      "input": "2\n0 0\n0 0",
+      "output": "NO"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "第一个测试样例",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，考虑在原坐标系中分配给各天的点以及找到的向量：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/0d2356397e44d246d0dd08562e9d634c7eb4ce09.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在，让我们在基于找到的向量的坐标系中展示这些相同的点：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/1d48a2e49ed7e7b98f2433ec9fa15fb7beb82ba2.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "点转换到新坐标系后的坐标：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(3, 3) — ( - 3, 0);",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(2, 3) — ( - 2.5,  - 0.5);",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(3, 2) — ( - 2.5, 0.5);",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(1, 3) — ( - 2,  - 1);",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(2, 2) — ( - 2, 0);",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(3, 1) — ( - 2, 1);",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(1, 2) — ( - 1.5,  - 0.5);",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(2, 1) — ( - 1.5, 0.5);",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(1, 1) — ( - 1, 0).",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "显然，在新的坐标系中，每个后续点都比前一个点“更好”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "帕维尔确信——明天总是比昨天更好。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他决定使用几何学来证明这一点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为此，帕维尔考虑了连续的 n 天，并为每一天在平面上指定了一个点 (xi, yi)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果满足以下两个条件之一，他就认为第 i + 1 天比第 i 天更好：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "或者 x_i < x_{i+1}；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "或者 x_i = x_{i+1}，但 y_i < y_{i+1}。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Pavel 只对一件事感到不确定——他是否为计算选择了正确的坐标系。他确信只有通过旋转和/或反射才能找到正确的坐标系。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Pavel——找出任意一个矩形（正交）坐标系，使得每一天都比前一天更好。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行，如果存在这样的直角坐标系，输出 YES，否则输出 NO。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果所需的坐标系存在，再输出两行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行，输出两个整数 Xx 和 Yx（|Xx|、|Yx| ≤ 10^9；|Xx| + |Yx| > 0）——与新坐标系的 Ox 轴同向的向量的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行，输出两个整数 Xy 和 Yy（|Xy|、|Yy| ≤ 10^9；|Xy| + |Yy| > 0）——与新坐标系的 Oy 轴同向的向量的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "向量 (Xx, Yx) 和 (Xy, Yy) 必须相互垂直。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个合法答案，输出任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 10^5）——Pavel 分析的天数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n 行中的每一行包含两个整数 x_i 和 y_i（-10^5 ≤ x_i，y_i ≤ 10^5）——Pavel 为第 i 天指定的点。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 明天会比昨天更好",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

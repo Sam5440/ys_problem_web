@@ -1,0 +1,110 @@
+{
+  "code": "GYM103577F",
+  "letter": "F",
+  "title": "F. Flow of binary matrix",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103577/problem/F",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 MB",
+  "sections": {
+    "legend": [
+      "A binary matrix is a matrix that has either $$$0$$$ or $$$1$$$ in all of its cells. The flow of a binary matrix is the number of rows contain only $$$1$$$'s plus the number of columns that contain only $$$1$$$'s, for example, here is a matrix with flow 3:",
+      "The flow is $$$3$$$ because row $$$2$$$ and columns $$$1$$$ and $$$4$$$ are full of $$$1$$$s.",
+      "You are given a binary matrix of size $$$n \\times n$$$, and you have to write a program to perform several operations, and for each operation your program must output the flow of the matrix after applying the operation. There are two types of operations:",
+      "1 i j b — updates the value in the $$$i$$$-th row and the $$$j$$$-th column to be equal to $$$b$$$ ($$$1 \\leq i, j \\leq n$$$ and $$$b$$$ is either $$$0$$$ or $$$1$$$).",
+      "2 b — inserts the value $$$b$$$ ($$$b$$$ is either $$$0$$$ or $$$1$$$) in the matrix at position $$$(1,1)$$$, this moves all values of the first row $$$1$$$ column to the right, the last element of the first row is removed from the first row and inserted as the first element of the second row, causing a cascade behavior that ends up in the last row having $$$n+1$$$ elements. The last value of the $$$n$$$-th row is discarded and the matrix will still have dimensions $$$n \\times n$$$."
+    ],
+    "input": [
+      "The first line of input contains two space separated integers: $$$n$$$ and $$$q$$$ ($$$2 \\leq n \\leq 5000$$$ and $$$1 \\leq q \\leq 5000$$$).",
+      "The next $$$n$$$ lines describe the binary matrix. The $$$j$$$-th character of the $$$i$$$-th line is the value of the binary matrix at position $$$(i,j)$$$.",
+      "The next $$$q$$$ lines each contain an operation. The operations follow the format described in the statement."
+    ],
+    "output": [
+      "$$$q$$$ lines, the $$$i$$$-th line must contain the flow of the binary matrix after applying the $$$i$$$-th operation."
+    ],
+    "note": [
+      "This is the initial matrix:",
+      "After applying the first operation, we get the following matrix with flow $$$3$$$:",
+      "After applying the second operation, we get the following matrix with flow $$$2$$$:",
+      "After applying the third operation, we get the following matrix with flow $$$2$$$:",
+      "After applying the fourth operation, we get the following matrix with flow $$$0$$$:"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n1011\n1111\n1101\n1101\n1 3 2 0\n2 0\n2 0\n1 2 3 0",
+      "output": "3\n2\n2\n0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "二进制矩阵是指所有单元格均为 $$$0$$$ 或 $$$1$$$ 的矩阵。二进制矩阵的流量等于只包含 $$$1$$$ 的行数加上只包含 $$$1$$$ 的列数。例如，下面是一个流量为 3 的矩阵：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "流量为 $$$3$$$，因为第 $$$2$$$ 行、第 $$$1$$$ 列和第 $$$4$$$ 列都被 $$$1$$$ 填满。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个大小为 $$$n \\times n$$$ 的二进制矩阵，你需要编写一个程序执行若干操作，并且对于每次操作，程序都必须输出应用该操作后矩阵的流。操作有两种：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1 i j b — 将第 $$$i$$$ 行、第 $$$j$$$ 列的值更新为 $$$b$$$($$$1 \\leq i, j \\leq n$$$ 和 $$$b$$$ 均为 $$$0$$$ 或 $$$1$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2 b — 将值 $$$b$$$($$$b$$$ 为 $$$0$$$ 或 $$$1$$$)插入矩阵中的位置 $$$(1,1)$$$，这会将第一行中 $$$1$$$ 列右侧的所有值向右移动；第一行的最后一个元素会从第一行移除，并作为第二行的第一个元素插入，从而产生级联效果，最终使最后一行有 $$$n+1$$$ 个元素。$$$n$$$ 行的最后一个值会被丢弃，而矩阵的维度仍为 $$$n \\times n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个由空格分隔的整数：$$$n$$$ 和 $$$q$$$($$$2 \\leq n \\leq 5000$$$ 和 $$$1 \\leq q \\leq 5000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 $$$n$$$ 行描述二进制矩阵。第 $$$i$$$ 行的第 $$$j$$$ 个字符是二进制矩阵在位置 $$$(i,j)$$$ 处的值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 $$$q$$$ 行每行包含一个操作。操作格式如题面所述。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "接下来的 $$$q$$$ 行中，第 $$$i$$$ 行必须包含对二进制矩阵执行第 $$$i$$$ 次操作后的网络流。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "这是初始矩阵：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "应用第一个操作后，我们得到如下矩阵，其网络流为 $$$3$$$：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "执行第二个操作后，我们得到如下流量为 $$$2$$$ 的矩阵：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "应用第三个操作后，我们得到如下流量为 $$$2$$$ 的矩阵：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "应用第四次操作后，我们得到如下流量为 $$$0$$$ 的矩阵：",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 二进制矩阵的流",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

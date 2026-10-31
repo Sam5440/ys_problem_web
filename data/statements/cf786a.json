@@ -1,0 +1,95 @@
+{
+  "code": "CF786A",
+  "letter": "A",
+  "title": "A. Berzerk",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/786/A",
+  "difficulty": "2000",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Rick and Morty are playing their own version of Berzerk (which has nothing in common with the famous Berzerk game). This game needs a huge space, so they play it with a computer.",
+      "In this game there are n objects numbered from 1 to n arranged in a circle (in clockwise order). Object number 1 is a black hole and the others are planets. There's a monster in one of the planet. Rick and Morty don't know on which one yet, only that he's not initially in the black hole, but Unity will inform them before the game starts. But for now, they want to be prepared for every possible scenario.",
+      "![](https://espresso.codeforces.com/511a6a2fad36df3d1e996557879abf28e1412577.png)",
+      "Each one of them has a set of numbers between 1 and n - 1 (inclusive). Rick's set is s1 with k1 elements and Morty's is s2 with k2 elements. One of them goes first and the player changes alternatively. In each player's turn, he should choose an arbitrary number like x from his set and the monster will move to his x-th next object from its current position (clockwise). If after his move the monster gets to the black hole he wins.",
+      "Your task is that for each of monster's initial positions and who plays first determine if the starter wins, loses, or the game will stuck in an infinite loop. In case when player can lose or make game infinity, it more profitable to choose infinity game."
+    ],
+    "input": [
+      "The first line of input contains a single integer n (2 ≤ n ≤ 7000) — number of objects in game.",
+      "The second line contains integer k1 followed by k1 distinct integers s1, 1, s1, 2, ..., s1, k1 — Rick's set.",
+      "The third line contains integer k2 followed by k2 distinct integers s2, 1, s2, 2, ..., s2, k2 — Morty's set",
+      "1 ≤ ki ≤ n - 1 and 1 ≤ si, 1, si, 2, ..., si, ki ≤ n - 1 for 1 ≤ i ≤ 2."
+    ],
+    "output": [
+      "In the first line print n - 1 words separated by spaces where i-th word is \"Win\" (without quotations) if in the scenario that Rick plays first and monster is initially in object number i + 1 he wins, \"Lose\" if he loses and \"Loop\" if the game will never end.",
+      "Similarly, in the second line print n - 1 words separated by spaces where i-th word is \"Win\" (without quotations) if in the scenario that Morty plays first and monster is initially in object number i + 1 he wins, \"Lose\" if he loses and \"Loop\" if the game will never end."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 3 2\n3 1 2 3",
+      "output": "Lose Win Win Loop\nLoop Win Win Win"
+    },
+    {
+      "input": "8\n4 6 2 3 4\n2 3 6",
+      "output": "Win Win Win Win Win Win Win\nLose Win Lose Lose Win Lose Lose"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Rick 和 Morty 正在玩他们自己版本的 Berzerk（这与著名的 Berzerk 游戏毫无共同之处）。这个游戏需要很大的空间，所以他们用电脑来玩。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在这个游戏中，有 n 个编号从 1 到 n 的物体按顺时针顺序排列成一个圆圈。1 号物体是黑洞，其余的是行星。其中一颗行星上有一个怪物。Rick 和 Morty 还不知道具体是哪一颗，只知道怪物一开始不在黑洞中，但 Unity 会在游戏开始前告知他们。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/511a6a2fad36df3d1e996557879abf28e1412577.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他们每人都有一个由 1 到 n - 1（包含端点）之间的数字组成的集合。Rick 的集合为 s1，包含 k1 个元素；Morty 的集合为 s2，包含 k2 个元素。其中一人先手，随后双方轮流行动。在每位玩家的回合中，他应从自己的集合中任意选择一个数字 x，怪物将从当前位置沿顺时针方向移动到第 x 个下一个物体。如果移动后怪物到达黑洞，则该玩家获胜。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是：对于怪物的每个初始位置以及先手玩家，判断先手玩家是获胜、失败，还是游戏会陷入无限循环。如果某位玩家可能输掉游戏或使游戏陷入无限循环，那么选择无限循环对他更有利。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（2 ≤ n ≤ 7000）——游戏中物体的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含整数 k1，后面跟着 k1 个互不相同的整数 s1, 1、s1, 2、…、s1, k1——Rick 的集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含整数 k2，后面跟着 k2 个互不相同的整数 s2, 1、s2, 2、…、s2, k2——Morty 的集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 1≤i≤2，有 1≤k_i≤n−1 且 1≤s_{i,1}, s_{i,2}, ..., s_{i,k_i}≤n−1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出 n−1 个用空格分隔的单词。如果在 Rick 先手且怪物初始位于编号为 i+1 的物体中的情况下 Rick 获胜，则第 i 个单词为“Win”（不含引号）；如果他失败，则为“Lose”；如果游戏永远不会结束，则为“Loop”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "同样地，第二行输出 n−1 个用空格分隔的单词。如果在 Morty 先手且怪物初始位于编号为 i+1 的物体中的情况下 Morty 获胜，则第 i 个单词为“Win”（不含引号）；如果他失败，则为“Lose”；如果游戏永远不会结束，则为“Loop”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. Berzerk",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

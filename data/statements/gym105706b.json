@@ -1,0 +1,215 @@
+{
+  "code": "GYM105706B",
+  "letter": "B",
+  "title": "B. Error of 2",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105706/problem/B",
+  "difficulty": "*2300",
+  "timeLimit": "6 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a weighted, undirected tree of N$$$N$$$ nodes. d(u,v)$$$d(u,v)$$$ is defined as the minimum sum of weights of the edges that lie on the unique, simple path between nodes u$$$u$$$ and v$$$v$$$ on the tree.",
+      "You need to answer Q$$$Q$$$ queries. In each query, you are given an integer K$$$K$$$. Determine if there exists a pair of nodes (u,v)$$$(u,v)$$$ that satisfy the following conditions:",
+      "1≤u,v≤N$$$1 \\leq u,v \\leq N$$$",
+      "K≤d(u,v)≤2⋅K$$$K \\leq d(u,v) \\leq 2 \\cdot K$$$",
+      "There are multiple test cases in each file, and thus you will be given an input parameter T$$$T$$$, denoting that you have to solve T$$$T$$$ test cases."
+    ],
+    "input": [
+      "The first line of input contains a single integer T$$$T$$$ — the number of input test cases.",
+      "The first line of each test case contains two space-separated integers N$$$N$$$ and Q$$$Q$$$ — the number of nodes in the tree and the number of queries to be answered.",
+      "The next N−1$$$N-1$$$ lines describe the edges of the tree. The i$$$i$$$-th of these N−1$$$N-1$$$ lines contains three space-separated integers ui,vi,wi$$$u_i, v_i, w_i$$$, denoting an undirected edge between nodes ui$$$u_i$$$ and vi$$$v_i$$$ with weight wi$$$w_i$$$.",
+      "The next Q$$$Q$$$ lines describe the queries. The i$$$i$$$-th of these lines contains a single integer Ki$$$K_i$$$ — the value of K$$$K$$$ for the i$$$i$$$-th query."
+    ],
+    "output": [
+      "For each test case, output a binary string S$$$S$$$ of length Q$$$Q$$$ where Si$$$S_i$$$ is 1$$$1$$$ if and only if the answer to the i$$$i$$$-th query is positive, i.e. there exists a pair of nodes (u,v)$$$(u, v)$$$ such that Ki≤d(u,v)≤2⋅Ki$$$K_i \\le d(u, v) \\le 2 \\cdot K_i$$$ (and Si$$$S_i$$$ is 0$$$0$$$ otherwise).",
+      "Constraints",
+      "It is guaranteed that",
+      "1≤T≤104$$$1 \\le T \\le 10^4$$$",
+      "2≤N≤2⋅105$$$2 \\le N \\le 2 \\cdot 10^5$$$",
+      "1≤Q≤2⋅105$$$1 \\le Q \\le 2 \\cdot 10^5$$$",
+      "1≤ui,vi≤N$$$1 \\le u_i, v_i \\le N$$$",
+      "1≤wi≤1013$$$1 \\le w_i \\le 10^{13}$$$",
+      "1≤Ki≤2⋅1018$$$1 \\le K_i \\le 2 \\cdot 10^{18}$$$",
+      "The input edges forms a tree.",
+      "The sum of N$$$N$$$ and the sum of Q$$$Q$$$ over all test cases does not exceed 2⋅105$$$2 \\cdot 10^5$$$.",
+      "Subtasks",
+      "The term Line means that the edges follow the constraint ui=i,vi=(i+1)$$$u_i = i, v_i = (i + 1)$$$ for all 1≤i≤N−1$$$1 \\le i \\le N - 1$$$.",
+      "The term Star means that the edges follow the constraint ui=1,vi=(i+1)$$$u_i = 1, v_i = (i + 1)$$$ for all 1≤i≤N−1$$$1 \\le i \\le N - 1$$$.",
+      "Subtask 1 (4 points) : N≤50,Q=1,T≤40$$$N \\le 50, Q = 1, T \\le 40$$$",
+      "Subtask 2 (7 points) : N≤2000$$$N \\le 2000$$$ and the sum of N$$$N$$$ also does not exceed 2000$$$2000$$$",
+      "Subtask 3 (9 points) : Line and the sum of N⋅Q$$$N \\cdot Q$$$ does not exceed 2⋅105$$$2 \\cdot 10^5$$$",
+      "Subtask 4 (16 points) : Star",
+      "Subtask 5 (20 points) : wi≤20$$$w_i \\le 20$$$",
+      "Subtask 6 (26 points) : Line",
+      "Subtask 7 (18 points) : No additional constraints"
+    ],
+    "note": [
+      "Test Case 1 : We can find valid vertices u$$$u$$$ and v$$$v$$$ in the first 3$$$3$$$ queries in the following way:",
+      "Query 1$$$1$$$, K=3$$$K = 3$$$ : Choose u=1$$$u = 1$$$, v=2$$$v = 2$$$ which has d(u,v)=5$$$d(u, v) = 5$$$. Note that 3≤5≤6$$$3 \\le 5 \\le 6$$$, so it is valid.",
+      "Query 2$$$2$$$, K=7$$$K = 7$$$ : Choose u=1$$$u = 1$$$, v=3$$$v = 3$$$ which has d(u,v)=7$$$d(u, v) = 7$$$. Note that 7≤7≤14$$$7 \\le 7 \\le 14$$$, so it is valid.",
+      "Query 3$$$3$$$, K=1$$$K = 1$$$ : Choose u=2$$$u = 2$$$, v=3$$$v = 3$$$ which has d(u,v)=2$$$d(u, v) = 2$$$. Note that 1≤2≤2$$$1 \\le 2 \\le 2$$$, so it is valid.",
+      "It can be proven that there is no valid pair (u,v)$$$(u, v)$$$ for the last 2$$$2$$$ queries with K=9$$$K = 9$$$ and 28$$$28$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4 5\n1 2 5\n2 3 2\n3 4 20\n3\n7\n1\n9\n28\n5 7\n1 3 9\n2 4 3\n3 2 80\n2 5 25\n10\n20\n30\n40\n100\n120\n140\n3 2\n1 2 10000000000000\n1 3 10000000000000\n18000000000000\n21000000000000",
+      "output": "11100\n0101100\n10"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一棵有 N$$$N$$$ 个节点的带权无向树。d(u,v)$$$d(u,v)$$$ 定义为树上节点 u$$$u$$$ 和 v$$$v$$$ 之间唯一的简单路径上各边权值之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要回答 Q$$$Q$$$ 个查询。在每次查询中，你会得到一个整数 K$$$K$$$。请判断是否存在一对节点 (u,v)$$$(u,v)$$$，满足以下条件：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤u,v≤N$$$1 \\leq u,v \\leq N$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "K≤d(u,v)≤2⋅K$$$K \\leq d(u,v) \\leq 2 \\cdot K$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个文件中包含多个测试用例，因此输入中会给出一个参数 T$$$T$$$，表示需要解决 T$$$T$$$ 个测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 T$$$T$$$——输入测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个由空格分隔的整数 N$$$N$$$ 和 Q$$$Q$$$，分别表示树中的节点数和需要回答的查询数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 N−1$$$N-1$$$ 行描述这棵树的边。其中第 i$$$i$$$ 行(共 N−1$$$N-1$$$ 行)包含三个由空格分隔的整数 ui,vi,wi$$$u_i, v_i, w_i$$$，表示节点 ui$$$u_i$$$ 和 vi$$$v_i$$$ 之间存在一条权重为 wi$$$w_i$$$ 的无向边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 Q$$$Q$$$ 行描述这些查询。其中第 i$$$i$$$ 行包含一个整数 Ki$$$K_i$$$，表示第 i$$$i$$$ 个查询中的 K$$$K$$$ 值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个长度为 Q$$$Q$$$ 的 01 串 S$$$S$$$。当且仅当第 i$$$i$$$ 个查询的答案为正时，Si$$$S_i$$$ 为 1$$$1$$$，也就是说，存在一对节点 (u,v)$$$(u, v)$$$，满足 Ki≤d(u,v)≤2⋅Ki$$$K_i \\le d(u, v) \\le 2 \\cdot K_i$$$(否则 Si$$$S_i$$$ 为 0$$$0$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "约束条件",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 马会有",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤T≤104$$$1 \\le T \\le 10^4$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2≤N≤2⋅105$$$2 \\le N \\le 2 \\cdot 10^5$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤Q≤2⋅105$$$1 \\le Q \\le 2 \\cdot 10^5$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤ui,vi≤N$$$1 \\le u_i, v_i \\le N$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤wi≤1013$$$1 \\le w_i \\le 10^{13}$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤Ki≤2⋅1018$$$1 \\le K_i \\le 2 \\cdot 10^{18}$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的边构成一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有测试用例中 N$$$N$$$ 的总和以及 Q$$$Q$$$ 的总和均不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "术语 Line 表示边满足约束 ui=i,vi=(i+1)$$$u_i = i, v_i = (i + 1)$$$，对所有 1≤i≤N−1$$$1 \\le i \\le N - 1$$$ 均成立。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "术语 Star 表示边满足约束 ui=1,vi=(i+1)$$$u_i = 1, v_i = (i + 1)$$$，对所有 1≤i≤N−1$$$1 \\le i \\le N - 1$$$ 均成立。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 1(4 分)：N≤50,Q=1,T≤40$$$N \\le 50, Q = 1, T \\le 40$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 2(7 分)：N≤2000$$$N \\le 2000$$$，且 N$$$N$$$ 的总和也不超过 2000$$$2000$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 3(9 分)：线形，且 N⋅Q$$$N \\cdot Q$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 4（16 分）：星形",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 5(20 分)：wi≤20$$$w_i \\le 20$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 6（26 分）：线形",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 7（18 分）：无额外约束",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "测试用例 1：我们可以按如下方式在前 3$$$3$$$ 次查询中找到有效的顶点 u$$$u$$$ 和 v$$$v$$$：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "查询 1$$$1$$$，K=3$$$K = 3$$$：选择 u=1$$$u = 1$$$、v=2$$$v = 2$$$，其 d(u,v)=5$$$d(u, v) = 5$$$。注意，3≤5≤6$$$3 \\le 5 \\le 6$$$，因此这是有效的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "查询 2$$$2$$$，K=7$$$K = 7$$$：选择 u=1$$$u = 1$$$、v=3$$$v = 3$$$，其 d(u,v)=7$$$d(u, v) = 7$$$。注意，7≤7≤14$$$7 \\le 7 \\le 14$$$，因此这是有效的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "查询 3$$$3$$$，K=1$$$K = 1$$$：选择 u=2$$$u = 2$$$、v=3$$$v = 3$$$，其 d(u,v)=2$$$d(u, v) = 2$$$。注意，1≤2≤2$$$1 \\le 2 \\le 2$$$，因此这是有效的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，对于最后 2$$$2$$$ 次查询，当 K=9$$$K = 9$$$ 和 28$$$28$$$ 时，不存在有效的点对 (u,v)$$$(u, v)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 误差为 2",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

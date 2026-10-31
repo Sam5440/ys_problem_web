@@ -1,0 +1,104 @@
+{
+  "code": "CF825C",
+  "letter": "C",
+  "title": "C. Multi-judge Solving",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/825/C",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Makes solves problems on Decoforces and lots of other different online judges. Each problem is denoted by its difficulty — a positive integer number. Difficulties are measured the same across all the judges (the problem with difficulty d on Decoforces is as hard as the problem with difficulty d on any other judge).",
+      "Makes has chosen n problems to solve on Decoforces with difficulties a1, a2, ..., an. He can solve these problems in arbitrary order. Though he can solve problem i with difficulty ai only if he had already solved some problem with difficulty ![](https://espresso.codeforces.com/04f4968ca36a1529366d4f30a9706dad435aa877.png) (no matter on what online judge was it).",
+      "Before starting this chosen list of problems, Makes has already solved problems with maximum difficulty k.",
+      "With given conditions it's easy to see that Makes sometimes can't solve all the chosen problems, no matter what order he chooses. So he wants to solve some problems on other judges to finish solving problems from his list.",
+      "For every positive integer y there exist some problem with difficulty y on at least one judge besides Decoforces.",
+      "Makes can solve problems on any judge at any time, it isn't necessary to do problems from the chosen list one right after another.",
+      "Makes doesn't have too much free time, so he asked you to calculate the minimum number of problems he should solve on other judges in order to solve all the chosen problems from Decoforces."
+    ],
+    "input": [
+      "The first line contains two integer numbers n, k (1 ≤ n ≤ 103, 1 ≤ k ≤ 109).",
+      "The second line contains n space-separated integer numbers a1, a2, ..., an (1 ≤ ai ≤ 109)."
+    ],
+    "output": [
+      "Print minimum number of problems Makes should solve on other judges in order to solve all chosen problems on Decoforces."
+    ],
+    "note": [
+      "In the first example Makes at first solves problems 1 and 2. Then in order to solve the problem with difficulty 9, he should solve problem with difficulty no less than 5. The only available are difficulties 5 and 6 on some other judge. Solving any of these will give Makes opportunity to solve problem 3.",
+      "In the second example he can solve every problem right from the start."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n2 1 9",
+      "output": "1"
+    },
+    {
+      "input": "4 20\n10 3 6 3",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n、k（1 ≤ n ≤ 10^3，1 ≤ k ≤ 10^9）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个以空格分隔的整数 a1、a2、...、an（1 ≤ ai ≤ 10^9）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Makes 为了在 Decoforces 上解决所有选中的题目而需要在其他评测平台上解决的最少题目数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Makes 首先解决了题目 1 和 2。然后，为了​​解决难度为 9 的题目，他需要解决一道难度不低于 5 的题目。在某个其他评测平台上，只有难度为 5 和 6 的题目可供选择。解决其中任意一道题都将使 Makes 有机会解决题目 3。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，他可以从一开始就解决每一道题目。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Makes 在 Decoforces 以及许多其他不同的在线评测平台上解决问题。每道题目由其难度表示，难度是一个正整数。所有评测平台上的难度标准相同（Decoforces 上难度为 d 的题目，与其他任意评测平台上难度为 d 的题目一样难）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Makes 选择了 n 道题目，准备在 Decoforces 上解决，它们的难度分别为 a1、a2、...、an。他可以按照任意顺序解决这些题目。不过，只有当他之前已经解决过某道难度为 ![](https://espresso.codeforces.com/04f4968ca36a1529366d4f30a9706dad435aa877.png) 的题目时，他才能解决第 i 道难度为 ai 的题目(无论那道题目来自哪个在线评测平台)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在开始解决这份选定的题目列表之前，Makes 已经解决了难度最大为 k 的题目。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "根据给定条件，很容易看出，有时无论 Makes 选择怎样的顺序，他都无法解决所有选定的题目。因此，他希望在其他评测平台上解决一些题目，以完成这份列表中的题目。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个正整数 y，至少有一个除 Decoforces 以外的评测平台上存在一道难度为 y 的题目。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Makes 可以随时在任意评测平台上解决题目，不必连续解决选定列表中的题目。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Makes 没有太多空闲时间，因此他请你计算：为了在 Decoforces 上解决所有选定的题目，他至少需要在其他评测平台上解决多少道题目。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 多评测机解题",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

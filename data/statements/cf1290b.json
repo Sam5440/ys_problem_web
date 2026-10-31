@@ -1,0 +1,124 @@
+{
+  "code": "CF1290B",
+  "letter": "B",
+  "title": "B. Irreducible Anagrams",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1290/B",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let's call two strings s$$$s$$$ and t$$$t$$$ anagrams of each other if it is possible to rearrange symbols in the string s$$$s$$$ to get a string, equal to t$$$t$$$.",
+      "Let's consider two strings s$$$s$$$ and t$$$t$$$ which are anagrams of each other. We say that t$$$t$$$ is a reducible anagram of s$$$s$$$ if there exists an integer k≥2$$$k \\ge 2$$$ and 2k$$$2k$$$ non-empty strings s1,t1,s2,t2,…,sk,tk$$$s_1, t_1, s_2, t_2, \\dots, s_k, t_k$$$ that satisfy the following conditions:",
+      "If we write the strings s1,s2,…,sk$$$s_1, s_2, \\dots, s_k$$$ in order, the resulting string will be equal to s$$$s$$$;",
+      "If we write the strings t1,t2,…,tk$$$t_1, t_2, \\dots, t_k$$$ in order, the resulting string will be equal to t$$$t$$$;",
+      "For all integers i$$$i$$$ between 1$$$1$$$ and k$$$k$$$ inclusive, si$$$s_i$$$ and ti$$$t_i$$$ are anagrams of each other.",
+      "If such strings don't exist, then t$$$t$$$ is said to be an irreducible anagram of s$$$s$$$. Note that these notions are only defined when s$$$s$$$ and t$$$t$$$ are anagrams of each other.",
+      "For example, consider the string s=$$$s = $$$ \"gamegame\". Then the string t=$$$t = $$$ \"megamage\" is a reducible anagram of s$$$s$$$, we may choose for example s1=$$$s_1 = $$$ \"game\", s2=$$$s_2 = $$$ \"gam\", s3=$$$s_3 = $$$ \"e\" and t1=$$$t_1 = $$$ \"mega\", t2=$$$t_2 = $$$ \"mag\", t3=$$$t_3 = $$$ \"e\":",
+      "![](https://espresso.codeforces.com/6a53aacfb1d36ae5a64a4cadf6a9c3b488e883be.png)",
+      "On the other hand, we can prove that t=$$$t = $$$ \"memegaga\" is an irreducible anagram of s$$$s$$$.",
+      "You will be given a string s$$$s$$$ and q$$$q$$$ queries, represented by two integers 1≤l≤r≤|s|$$$1 \\le l \\le r \\le |s|$$$ (where |s|$$$|s|$$$ is equal to the length of the string s$$$s$$$). For each query, you should find if the substring of s$$$s$$$ formed by characters from the l$$$l$$$-th to the r$$$r$$$-th has at least one irreducible anagram."
+    ],
+    "input": [
+      "The first line contains a string s$$$s$$$, consisting of lowercase English characters (1≤|s|≤2⋅105$$$1 \\le |s| \\le 2 \\cdot 10^5$$$).",
+      "The second line contains a single integer q$$$q$$$ (1≤q≤105$$$1 \\le q \\le 10^5$$$)  — the number of queries.",
+      "Each of the following q$$$q$$$ lines contain two integers l$$$l$$$ and r$$$r$$$ (1≤l≤r≤|s|$$$1 \\le l \\le r \\le |s|$$$), representing a query for the substring of s$$$s$$$ formed by characters from the l$$$l$$$-th to the r$$$r$$$-th."
+    ],
+    "output": [
+      "For each query, print a single line containing \"Yes\" (without quotes) if the corresponding substring has at least one irreducible anagram, and a single line containing \"No\" (without quotes) otherwise."
+    ],
+    "note": [
+      "In the first sample, in the first and third queries, the substring is \"a\", which has itself as an irreducible anagram since two or more non-empty strings cannot be put together to obtain \"a\". On the other hand, in the second query, the substring is \"aaa\", which has no irreducible anagrams: its only anagram is itself, and we may choose s1=$$$s_1 = $$$ \"a\", s2=$$$s_2 = $$$ \"aa\", t1=$$$t_1 = $$$ \"a\", t2=$$$t_2 = $$$ \"aa\" to show that it is a reducible anagram.",
+      "In the second query of the second sample, the substring is \"abb\", which has, for example, \"bba\" as an irreducible anagram."
+    ]
+  },
+  "examples": [
+    {
+      "input": "aaaaa\n3\n1 1\n2 4\n5 5",
+      "output": "Yes\nNo\nYes"
+    },
+    {
+      "input": "aabbbbbbc\n6\n1 2\n2 4\n2 2\n1 9\n5 7\n3 5",
+      "output": "No\nYes\nYes\nYes\nNo\nNo"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "如果可以重新排列字符串 s$$$s$$$ 中的符号，得到一个与 t$$$t$$$ 相等的字符串，那么称字符串 s$$$s$$$ 和 t$$$t$$$ 互为字谜。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑两个互为字谜的字符串 s$$$s$$$ 和 t$$$t$$$。如果存在一个整数 k≥2$$$k \\ge 2$$$，以及 2k$$$2k$$$ 个非空字符串 s1,t1,s2,t2,…,sk,tk$$$s_1, t_1, s_2, t_2, \\dots, s_k, t_k$$$，满足以下条件，则称 t$$$t$$$ 是 s$$$s$$$ 的可约字谜：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果我们按顺序将字符串 s1、s2、…、sk$$$s_1, s_2, \\dots, s_k$$$ 拼接起来，得到的字符串将等于 s$$$s$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果我们按顺序将字符串 t1、t2、…、tk$$$t_1, t_2, \\dots, t_k$$$ 拼接起来，得到的字符串将等于 t$$$t$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于所有介于 1$$$1$$$ 和 k$$$k$$$(含)之间的整数 i$$$i$$$，si$$$s_i$$$ 和 ti$$$t_i$$$ 互为字母异位词。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果不存在这样的字符串，那么称 t$$$t$$$ 是 s$$$s$$$ 的不可约异位词。注意，只有当 s$$$s$$$ 和 t$$$t$$$ 互为字母异位词时，这些概念才有定义。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，考虑字符串 s=$$$s = $$$ \"gamegame\"。那么字符串 t=$$$t = $$$ \"megamage\" 是 s$$$s$$$ 的可约异位词；例如，我们可以选择 s1=$$$s_1 = $$$ \"game\"、s2=$$$s_2 = $$$ \"gam\"、s3=$$$s_3 = $$$ \"e\"，以及 t1=$$$t_1 = $$$ \"mega\"、t2=$$$t_2 = $$$ \"mag\"、t3=$$$t_3 = $$$ \"e\"：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/6a53aacfb1d36ae5a64a4cadf6a9c3b488e883be.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "另一方面，我们可以证明 t=$$$t = $$$“memegaga”是 s$$$s$$$ 的一个不可约重排。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个字符串 s$$$s$$$ 和 q$$$q$$$ 个查询，每个查询由两个整数 1≤l≤r≤|s|$$$1 \\le l \\le r \\le |s|$$$ 表示(其中 |s|$$$|s|$$$ 等于字符串 s$$$s$$$ 的长度)。对于每个查询，你需要判断由 s$$$s$$$ 中第 l$$$l$$$ 个字符到第 r$$$r$$$ 个字符组成的子串是否至少存在一个不可约重排。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个字符串 s$$$s$$$，由小写英文字母组成(1≤|s|≤2⋅105$$$1 \\le |s| \\le 2 \\cdot 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个整数 q$$$q$$$(1≤q≤105$$$1 \\le q \\le 10^5$$$)，表示查询的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行中，每行包含两个整数 l$$$l$$$ 和 r$$$r$$$(1≤l≤r≤|s|$$$1 \\le l \\le r \\le |s|$$$)，表示对由 s$$$s$$$ 中第 l$$$l$$$ 个字符到第 r$$$r$$$ 个字符组成的子串的查询。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个查询，输出一行。如果对应的子串至少存在一个不可约重排，则输出“Yes”（不含引号）；否则输出“No”（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，在第一个和第三个查询里，子串为 \"a\"。它本身就是一个不可约异位词，因为无法将两个或更多非空字符串拼接起来得到 \"a\"。另一方面，在第二个查询中，子串为 \"aaa\"，它没有不可约异位词：它唯一的异位词就是自身，并且我们可以选择 s1=$$$s_1 = $$$ \"a\"、s2=$$$s_2 = $$$ \"aa\"、t1=$$$t_1 = $$$ \"a\"、t2=$$$t_2 = $$$ \"aa\"，以说明它是一个可约异位词。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例的第二个查询中，子串为 \"abb\"，例如，\"bba\" 就是它的一个不可约异位词。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 不可约的字谜",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

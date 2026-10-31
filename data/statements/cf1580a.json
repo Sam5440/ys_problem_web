@@ -1,0 +1,128 @@
+{
+  "code": "CF1580A",
+  "letter": "A",
+  "title": "A. Portal",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1580/A",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "CQXYM found a rectangle A$$$A$$$ of size n×m$$$n \\times m$$$. There are n$$$n$$$ rows and m$$$m$$$ columns of blocks. Each block of the rectangle is an obsidian block or empty. CQXYM can change an obsidian block to an empty block or an empty block to an obsidian block in one operation.",
+      "A rectangle M$$$M$$$ size of a×b$$$a \\times b$$$ is called a portal if and only if it satisfies the following conditions:",
+      "a≥5,b≥4$$$a \\geq 5,b \\geq 4$$$.",
+      "For all 1<x<a$$$1  \\lt  x  \\lt  a$$$, blocks Mx,1$$$M_{x,1}$$$ and Mx,b$$$M_{x,b}$$$ are obsidian blocks.",
+      "For all 1<x<b$$$1  \\lt  x  \\lt  b$$$, blocks M1,x$$$M_{1,x}$$$ and Ma,x$$$M_{a,x}$$$ are obsidian blocks.",
+      "For all 1<x<a,1<y<b$$$1 \\lt x \\lt a,1 \\lt y \\lt b$$$, block Mx,y$$$M_{x,y}$$$ is an empty block.",
+      "M1,1,M1,b,Ma,1,Ma,b$$$M_{1, 1}, M_{1, b}, M_{a, 1}, M_{a, b}$$$ can be any type.",
+      "Note that corners can be any type",
+      "CQXYM wants to know the minimum number of operations he needs to make at least one sub-rectangle a portal."
+    ],
+    "input": [
+      "The first line contains an integer t$$$t$$$ (t≥1$$$t \\geq 1$$$), which is the number of test cases.",
+      "For each test case, the first line contains two integers n$$$n$$$ and m$$$m$$$ (5≤n≤400$$$5 \\le n \\le 400$$$, 4≤m≤400$$$4 \\le m \\le 400$$$).",
+      "Then n$$$n$$$ lines follow, each line contains m$$$m$$$ characters 0$$$0$$$ or 1$$$1$$$. If the j$$$j$$$-th character of i$$$i$$$-th line is 0$$$0$$$, block Ai,j$$$A_{i,j}$$$ is an empty block. Otherwise, block Ai,j$$$A_{i,j}$$$ is an obsidian block.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 400$$$400$$$.",
+      "It is guaranteed that the sum of m$$$m$$$ over all test cases does not exceed 400$$$400$$$."
+    ],
+    "output": [
+      "Output t$$$t$$$ answers, and each answer in a line."
+    ],
+    "note": [
+      "In the first test case, the final portal is like this:",
+      {
+        "pre": "\n1110\n1001\n1001\n1001\n0111"
+      }
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n5 4\n1000\n0000\n0110\n0000\n0001",
+      "output": "12"
+    },
+    {
+      "input": "1\n9 9\n001010001\n101110100\n000010011\n100000001\n101010101\n110001111\n000001111\n111100000\n000110000",
+      "output": "5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "CQXYM 找到了一个矩形 A$$$A$$$，其大小为 n×m$$$n \\times m$$$。矩形中有 n$$$n$$$ 行和 m$$$m$$$ 列方块。每个方块要么是黑曜石方块，要么是空的。CQXYM 可以通过一次操作将黑曜石方块变为空方块，或将空方块变为黑曜石方块。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "大小为 a×b$$$a \\times b$$$ 的矩形 M$$$M$$$ 当且仅当满足以下条件时，称为传送门：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "a≥5,b≥4$$$a \\geq 5,b \\geq 4$$$.",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于所有满足 1<x<a$$$1  \\lt  x  \\lt  a$$$ 的 x，方块 Mx,1$$$M_{x,1}$$$ 和 Mx,b$$$M_{x,b}$$$ 都是黑曜石方块。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于所有满足 1<x<b$$$1  \\lt  x  \\lt  b$$$ 的 x，方块 M1,x$$$M_{1,x}$$$ 和 Ma,x$$$M_{a,x}$$$ 都是黑曜石方块。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于所有满足 1<x<a,1<y<b$$$1 \\lt x \\lt a,1 \\lt y \\lt b$$$ 的 x 和 y，方块 Mx,y$$$M_{x,y}$$$ 是空方块。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "M1,1、M1,b、Ma,1、Ma,b$$$M_{1, 1}, M_{1, b}, M_{a, 1}, M_{a, b}$$$ 可以是任意类型。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，角落可以是任意类型。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "CQXYM 想知道使至少一个子矩形成为传送门所需的最少操作次数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(t≥1$$$t \\geq 1$$$)，表示测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个测试用例，第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(5≤n≤400$$$5 \\le n \\le 400$$$，4≤m≤400$$$4 \\le m \\le 400$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来是 n$$$n$$$ 行，每行包含 m$$$m$$$ 个字符 0$$$0$$$ 或 1$$$1$$$。如果第 i$$$i$$$ 行的第 j$$$j$$$ 个字符是 0$$$0$$$，则方块 Ai,j$$$A_{i,j}$$$ 是空方块；否则，方块 Ai,j$$$A_{i,j}$$$ 是黑曜石方块。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例的 n$$$n$$$ 之和不超过 400$$$400$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例的 m$$$m$$$ 之和不超过 400$$$400$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 t$$$t$$$ 个答案，每个答案占一行。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，最终的传送门如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 传送门",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

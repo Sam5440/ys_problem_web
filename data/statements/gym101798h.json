@@ -1,0 +1,135 @@
+{
+  "code": "GYM101798H",
+  "letter": "H",
+  "title": "H. Cylindrical Graphs",
+  "contest": null,
+  "url": "https://codeforces.com/gym/101798/problem/H",
+  "difficulty": "*2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
+      "An undirected graph is cylindrical if it can be split it into two disjoint simple cycles of equal length such that the ith node in the first cycle is connected to the ith node in the second cycle.",
+      "Given an undirected graph of even number of nodes n and ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) edges, determine whether it is cylindrical or not, and if it is, print the two cycles that forms it (check the output section for the exact requirements)."
+    ],
+    "input": [
+      "The first line of input contains an even integer n (6 ≤ n ≤ 105), the number of nodes in the graph.",
+      "Each of the following ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) lines contains two integers u and v (1 ≤ u, v ≤ n, u ≠ v), representing an edge connecting the nodes u and v. Each pair of nodes is connected by at most one edge."
+    ],
+    "output": [
+      "Print \"NO\" if the given graph is not cylindrical. Otherwise, print \"YES\" followed by two lines, each containing the nodes of one cycle in following format:",
+      "c1 c2 ... ![](https://espresso.codeforces.com/daa41dfcc84dcd39796bc5d8adc554c0e67675ec.png)",
+      "- Each consecutive nodes in a cycle must be connected by an edge in the input. Also the first and the last nodes in the cycle must be connected.",
+      "- The ith node in the first cycle must be connected to the ith node in the second cycle.",
+      "- Each of the n nodes must belong to exactly one of the cycles.",
+      "If there is more than one solution, you can print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n1 2\n2 3\n3 1\n4 5\n4 6\n5 6\n1 5\n2 6\n3 4",
+      "output": "YES\n1 3 2\n5 4 6"
+    },
+    {
+      "input": "6\n2 6\n3 6\n1 3\n2 1\n3 4\n4 2\n4 5\n5 6\n1 5",
+      "output": "NO"
+    }
+  ],
+  "titleZh": {
+    "0": "H.圆柱图形",
+    "deepl": "H.圆柱图形",
+    "caiyun": "H. 柱状图",
+    "youdao": "H.柱形图",
+    "iflyrec": "H.圆柱图",
+    "ai": "H. 圆柱图"
+  },
+  "sectionsZh": {
+    "input": [
+      {
+        "deepl": "第一行输入包含一个偶数整数 n（6 ≤ n ≤ 105），即图形中的节点数。",
+        "caiyun": "输入的第一行包含一个偶数整数 n(6 ≤ n ≤ 105)，即图中节点的数量。",
+        "youdao": "输入的第一行包含一个偶数n(6≤n≤105)，即图中的节点数。",
+        "iflyrec": "输入的第一行包含偶数n（6≤n≤105），即图中的节点数。",
+        "ai": "输入的第一行包含一个偶数整数 n（6 ≤ n ≤ 10^5），表示图中的节点数。"
+      },
+      {
+        "deepl": "下面 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 的每一行都包含两个整数 u 和 v(1 ≤ u，v ≤ n，u≠v)，代表连接节点 u 和 v 的一条边。",
+        "caiyun": "以下 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 行中的每一行都包含两个整数 u 和 v(1≤u,v≤n,u≠v)，表示连接节点 u 和 v 的边。每对节点最多由一条边连接。",
+        "youdao": "下面的每条![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)行包含两个整数u和v(1≤u, v≤n, u≠v)，表示连接节点u和v的一条边。每对节点最多由一条边连接。",
+        "iflyrec": "以下![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)行中的每一行包含两个整数u和V(1≤u，v≤n，u≠V)，表示连接节点u和V的边。每对节点最多由一条边连接。",
+        "ai": "接下来 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 行，每行两个整数 u 和 v(1 ≤ u, v ≤ n，u ≠ v)，表示连接节点 u 和 v 的一条边。每对节点之间至多由一条边连接。"
+      }
+    ],
+    "output": [
+      {
+        "deepl": "如果给定图形不是圆柱形，则打印 \"NO\"。否则，打印 \"YES\"，然后打印两行，每行包含一个循环的节点，格式如下：",
+        "caiyun": "如果给定的图不是圆柱形的，则打印 “NO”。否则，打印 “YES”，后面跟两行，每行包含一个循环的节点，格式如下：",
+        "youdao": "如果给定的图形不是圆柱形，则打印“NO”。否则，输出“YES”，后面跟着两行，每行包含一个循环的节点，格式如下：",
+        "iflyrec": "如果给定的图形不是圆柱形的，则打印“否”。否则，打印“ Yes ”，后跟两行，每行包含一个周期的节点，格式如下:",
+        "ai": "如果给定图不是圆柱形的，则输出“NO”。否则，输出“YES”，随后两行，每行按以下格式包含一个环的节点："
+      },
+      {
+        "deepl": "c1 c2 ...![](https://espresso.codeforces.com/daa41dfcc84dcd39796bc5d8adc554c0e67675ec.png)",
+        "caiyun": "c1 c2 ... ![](https://espresso.codeforces.com/daa41dfcc84dcd39796bc5d8adc554c0e67675ec.png)",
+        "iflyrec": "C1 C2..![](https://espresso.codeforces.com/daa41dfcc84dcd39796bc5d8adc554c0e67675ec.png)",
+        "ai": "c1 c2 ... ![](https://espresso.codeforces.com/daa41dfcc84dcd39796bc5d8adc554c0e67675ec.png)"
+      },
+      {
+        "deepl": "- 循环中的每个连续节点必须通过输入中的一条边连接。此外，循环中的第一个节点和最后一个节点也必须相连。",
+        "caiyun": "- 循环中的每个连续节点都必须通过输入中的一个边连接。此外，循环中的第一个和最后一个节点也必须连接。",
+        "youdao": "—在一个循环中，每个连续的节点必须通过输入中的一条边连接。循环中的第一个节点和最后一个节点也必须连接起来。",
+        "iflyrec": "-循环中的每个连续节点必须通过输入中的边连接。此外，必须连接循环中的第一个和最后一个节点。",
+        "ai": "- 环中的每一对相邻节点必须在输入中由一条边连接。此外，环中的第一个节点和最后一个节点也必须连接。"
+      },
+      {
+        "deepl": "- 第一个循环中的第 i 个节点必须与第二个循环中的第 i 个节点相连。",
+        "caiyun": "第一个循环中的第一个节点必须连接到第二个循环中的第一个节点。",
+        "youdao": "—第一个循环的第i个节点必须连接到第二个循环的第i个节点。",
+        "iflyrec": "-第一个循环中的第I个节点必须连接到第二个循环中的第I个节点。",
+        "ai": "- 第一个环中的第 i 个节点必须连接到第二个环中的第 i 个节点。"
+      },
+      {
+        "deepl": "- n 个节点中的每个节点都必须恰好属于其中一个循环。",
+        "caiyun": "每个 n 个节点必须恰好属于其中一个循环。",
+        "youdao": "- n个节点中的每一个都必须只属于其中一个循环。",
+        "iflyrec": "-N个节点中的每个节点必须恰好属于其中一个循环。",
+        "ai": "- n 个节点中的每一个都必须恰好属于其中一个环。"
+      },
+      {
+        "deepl": "如果有多个解决方案，您可以打印其中任何一个。",
+        "caiyun": "如果有多个解决方案，你可以打印其中任何一个。",
+        "youdao": "如果有多个解决方案，则可以打印其中的任何一个。",
+        "iflyrec": "如果有多个解决方案，则可以打印其中的任何一个。",
+        "ai": "如果有多个解，你可以输出任意一个。"
+      }
+    ],
+    "legend": [
+      {
+        "deepl": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
+        "youdao": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
+        "caiyun": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
+        "iflyrec": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)",
+        "ai": "![](https://espresso.codeforces.com/d8f92fc157ec9e0adb7cf65e0517bdec9689ad52.png)"
+      },
+      {
+        "deepl": "如果可以将一个无向图分割成两个长度相等的互不相交的简单循环，使得第一个循环中的第 i 个节点与第二个循环中的第 i 个节点相连，那么这个无向图就是圆柱图。",
+        "caiyun": "无向图是圆柱形的，如果它可以被分割成两个长度相等的不相交简单循环，使得第一个循环中的第一个节点与第二个循环中的第一个节点相连。",
+        "youdao": "如果一个无向图可以被分割成两个不等长的不相交的简单循环，使得第一个循环中的第i个节点与第二个循环中的第i个节点相连，那么这个图就是圆柱形的。",
+        "iflyrec": "一个无向图是柱面的，如果它可以被分成两个长度相等的不相交的简单圈，使得第一个圈中的第I个节点连接到第二个圈中的第I个节点。",
+        "ai": "如果一个无向图能够被拆分成两个长度相等且不相交的简单环，使得第一个环中的第 i 个节点与第二个环中的第 i 个节点相连，那么它就是圆柱形的。"
+      },
+      {
+        "deepl": "给定一个偶数个节点 n 和 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 条边的无向图，判断它是否是圆柱形，如果是，则打印出构成它的两个循环(具体要求请查看输出部分)。",
+        "caiyun": "给定一个由偶数个节点 n 和 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 边组成的无向图，确定它是否为圆柱形，如果是，打印形成它的两个循环 (查看输出部分以了解确切的要求)。",
+        "youdao": "给定一个有偶数个节点n和![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)条边的无向图，确定它是否是圆柱形的，如果是，打印形成它的两个循环(检查输出部分以获得确切的要求)。",
+        "iflyrec": "给定一个具有偶数个节点n和![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png)条边的无向图，确定它是否是圆柱形的，如果是，则打印形成它的两个循环(检查输出部分的确切要求)。",
+        "ai": "给定一个无向图，它有偶数个节点 n 和 ![](https://espresso.codeforces.com/c063f76865b7aa79a2b40d593bc1237da1c85dae.png) 条边，判断它是否为圆柱图；如果是，则输出构成它的两个环(确切要求见输出部分)。"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.090Z",
+  "translatedBy": [
+    "iflyrec"
+  ]
+}

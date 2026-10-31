@@ -1,0 +1,115 @@
+{
+  "code": "GYM102860L",
+  "letter": "L",
+  "title": "L. Magnets",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102860/problem/L",
+  "difficulty": "*1800",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "You have a $$$10^9 \\times 10^9$$$ square magnetic board with the origin of the coordinate system in the lower-left corner. There are $$$n$$$ magnets on the board, numbered from $$$1$$$ to $$$n$$$. Each magnet is an $$$1 \\times 1$$$ square. Initially, the magnets are positioned in such way that the lower right corner of the $$$i$$$-th magnet has the coordinates $$$(i, 0)$$$.",
+      "![](https://espresso.codeforces.com/7c2968f04c4661c6b55362fad43a971ff9c4c669.png)",
+      "You are receiving $$$q$$$ queries of two types:",
+      "a query of type $$$1$$$ is characterized by two integers $$$l$$$ and $$$r$$$ ($$$1 \\leq l \\leq r \\leq n$$$): take magnets with numbers from $$$l$$$ to $$$r$$$ inclusive, and rotate them by $$$90^{\\circ}$$$. If the selected magnets formed a horizontal segment, then the rotation should be performed counterclockwise by $$$90^{\\circ}$$$, so they will turn into a vertical segment. If the selected magnets formed a vertical segment, then the rotation should be performed clockwise $$$90^{\\circ}$$$, so they will turn into a horizontal segment. All turns are relative to magnet with the smallest number. In this query, it is guaranteed that magnets with numbers from $$$l$$$ to $$$r$$$ form a continuous horizontal or vertical segment at the time of query processing.",
+      "a query of type $$$2$$$ is characterized by one integer $$$j$$$ ($$$1 \\leq j \\leq n$$$): output the coordinates $$$(x, y)$$$ of the lower right corner of the magnet with the number $$$j$$$.",
+      "Below are the board states for $$$n=6$$$ and the series of first type queries $$$(l_1=2,r_1=5)$$$, $$$(l_2=3,r_2=4)$$$, $$$(l_3=2,r_3=3)$$$, $$$(l_4=6,r_4=6)$$$.",
+      "![](https://espresso.codeforces.com/cf7a8e0a6c81d34febbf959380fe94475e31278e.png)",
+      "![](https://espresso.codeforces.com/83f1e851aa727b305bc6f48c14c7859ff473da1b.png)   After processing a query of the first type $$$(l_1=2,r_1=5)$$$.",
+      "![](https://espresso.codeforces.com/9f5bfeff050ab5a13cf2c38c77a666fef2a35ce9.png)   After processing a query of the first type $$$(l_2=3,r_2=4)$$$.",
+      "![](https://espresso.codeforces.com/67a3ee0c040f79ada8de2158a3b6a5ba84a42e30.png)   After processing a query of the first type $$$(l_3=2,r_3=3)$$$.",
+      "![](https://espresso.codeforces.com/67a3ee0c040f79ada8de2158a3b6a5ba84a42e30.png)   After processing a query of the first type $$$(l_4=6,r_4=6)$$$.",
+      "For each query of type $$$2$$$ you should output the coordinates of the lower right corner of the magnet with the corresponding number."
+    ],
+    "input": [
+      "The first line contains two integers $$$n$$$ and $$$q$$$ ($$$1 \\le n, q \\le 2 \\cdot 10^5$$$) — the number of magnets on the board and the number of queries, respectively.",
+      "Each of the following $$$q$$$ lines contains one query of either type $$$1$$$ or type $$$2$$$. A type $$$1$$$ query consists of $$$3$$$ integers $$$1$$$ $$$l$$$ $$$r$$$ $$$(1 \\le l \\le r \\le n)$$$, a type $$$2$$$ query consists of $$$2$$$ integers $$$2$$$ $$$j$$$ $$$(1 \\le j \\le n)$$$."
+    ],
+    "output": [
+      "For each query of the type $$$2$$$ output $$$x$$$ and $$$y$$$ — coordinates of the lower right corner of the magnet with the number $$$j$$$ at the moment of processing the corresponding query."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 8\n1 2 5\n2 5\n1 3 4\n2 4\n1 2 3\n2 6\n1 6 6\n2 1",
+      "output": "2 3\n3 1\n6 0\n1 0"
+    },
+    {
+      "input": "7 7\n1 3 6\n1 3 4\n1 5 6\n2 3\n2 4\n2 5\n2 6",
+      "output": "3 0\n4 0\n3 2\n4 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你有一块边长为$$$10^9 \\times 10^9$$$的正方形磁力板，坐标系原点位于左下角。板上有$$$n$$$块磁铁，编号从$$$1$$$到$$$n$$$。每块磁铁都是边长为$$$1 \\times 1$$$的正方形。初始时，磁铁的摆放方式使得第$$$i$$$块磁铁的右下角坐标为$$$(i, 0)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/7c2968f04c4661c6b55362fad43a971ff9c4c669.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你将收到 $$$q$$$ 个查询，查询分为两种类型：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "类型为 $$$1$$$ 的查询由两个整数 $$$l$$$ 和 $$$r$$$($$$1 \\leq l \\leq r \\leq n$$$)描述：取编号从 $$$l$$$ 到 $$$r$$$(包括两端)的磁铁，并将它们旋转 $$$90^{\\circ}$$$。如果所选磁铁构成水平线段，则应逆时针旋转 $$$90^{\\circ}$$$，使其变为竖直线段。如果所选磁铁构成竖直线段，则应顺时针旋转 $$$90^{\\circ}$$$，使其变为水平线段。所有旋转都以编号最小的磁铁为基准。在处理此查询时，保证编号从 $$$l$$$ 到 $$$r$$$ 的磁铁构成一条连续的水平或竖直线段。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "类型为 $$$2$$$ 的查询由一个整数 $$$j$$$($$$1 \\leq j \\leq n$$$)描述：输出编号为 $$$j$$$ 的磁铁的右下角坐标 $$$(x, y)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下面给出了 $$$n=6$$$ 时的棋盘状态，以及一系列第一类查询 $$$(l_1=2,r_1=5)$$$、$$$(l_2=3,r_2=4)$$$、$$$(l_3=2,r_3=3)$$$、$$$(l_4=6,r_4=6)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/cf7a8e0a6c81d34febbf959380fe94475e31278e.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/83f1e851aa727b305bc6f48c14c7859ff473da1b.png)   处理一个第一类查询 $$$(l_1=2,r_1=5)$$$ 后。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/9f5bfeff050ab5a13cf2c38c77a666fef2a35ce9.png) 处理完第一类查询 $$$(l_2=3,r_2=4)$$$ 后。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/67a3ee0c040f79ada8de2158a3b6a5ba84a42e30.png)   处理第一类查询 $$$(l_3=2,r_3=3)$$$ 后。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/67a3ee0c040f79ada8de2158a3b6a5ba84a42e30.png)   处理完第一类查询 $$$(l_4=6,r_4=6)$$$ 后。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个 $$$2$$$ 类型的查询，你应输出对应编号磁铁右下角的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 $$$n$$$ 和 $$$q$$$($$$1 \\le n, q \\le 2 \\cdot 10^5$$$)，分别表示棋盘上磁铁的数量和查询的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 $$$q$$$ 行中的每一行包含一个 $$$1$$$ 类型或 $$$2$$$ 类型的查询。$$$1$$$ 类型的查询包含 $$$3$$$ 个整数 $$$1$$$ $$$l$$$ $$$r$$$ $$$(1 \\le l \\le r \\le n)$$$，$$$2$$$ 类型的查询包含 $$$2$$$ 个整数 $$$2$$$ $$$j$$$ $$$(1 \\le j \\le n)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个类型为 $$$2$$$ 的查询，输出 $$$x$$$ 和 $$$y$$$——处理对应查询时，编号为 $$$j$$$ 的磁铁的右下角坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "L. 磁铁",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

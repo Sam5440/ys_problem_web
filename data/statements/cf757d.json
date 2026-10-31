@@ -1,0 +1,139 @@
+{
+  "code": "CF757D",
+  "letter": "D",
+  "title": "D. Felicity's Big Secret Revealed",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/757/D",
+  "difficulty": "2200",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "The gym leaders were fascinated by the evolutions which took place at Felicity camp. So, they were curious to know about the secret behind evolving Pokemon.",
+      "The organizers of the camp gave the gym leaders a PokeBlock, a sequence of n ingredients. Each ingredient can be of type 0 or 1. Now the organizers told the gym leaders that to evolve a Pokemon of type k (k ≥ 2), they need to make a valid set of k cuts on the PokeBlock to get smaller blocks.",
+      "Suppose the given PokeBlock sequence is b0b1b2... bn - 1. You have a choice of making cuts at n + 1 places, i.e., Before b0, between b0 and b1, between b1 and b2, ..., between bn - 2 and bn - 1, and after bn - 1.",
+      "The n + 1 choices of making cuts are as follows (where a | denotes a possible cut):",
+      "Consider a sequence of k cuts. Now each pair of consecutive cuts will contain a binary string between them, formed from the ingredient types. The ingredients before the first cut and after the last cut are wasted, which is to say they are not considered. So there will be exactly k - 1 such binary substrings. Every substring can be read as a binary number. Let m be the maximum number out of the obtained numbers. If all the obtained numbers are positive and the set of the obtained numbers contains all integers from 1 to m, then this set of cuts is said to be a valid set of cuts.",
+      "For example, suppose the given PokeBlock sequence is 101101001110 and we made 5 cuts in the following way:",
+      "So the 4 binary substrings obtained are: 11, 010, 01 and 1, which correspond to the numbers 3, 2, 1 and 1 respectively. Here m = 3, as it is the maximum value among the obtained numbers. And all the obtained numbers are positive and we have obtained all integers from 1 to m. Hence this set of cuts is a valid set of 5 cuts.",
+      "A Pokemon of type k will evolve only if the PokeBlock is cut using a valid set of k cuts. There can be many valid sets of the same size. Two valid sets of k cuts are considered different if there is a cut in one set which is not there in the other set.",
+      "Let f(k) denote the number of valid sets of k cuts. Find the value of ![](https://espresso.codeforces.com/1f553c10ee29622384beda9934a033e929407c9c.png). Since the value of s can be very large, output s modulo 109 + 7."
+    ],
+    "input": [
+      "The input consists of two lines. The first line consists an integer n (1 ≤ n ≤ 75) — the length of the PokeBlock. The next line contains the PokeBlock, a binary string of length n."
+    ],
+    "output": [
+      "Output a single integer, containing the answer to the problem, i.e., the value of s modulo 109 + 7."
+    ],
+    "note": [
+      "In the first sample, the sets of valid cuts are:",
+      "Size 2: |1|011, 1|01|1, 10|1|1, 101|1|.",
+      "Size 3: |1|01|1, |10|1|1, 10|1|1|, 1|01|1|.",
+      "Size 4: |10|1|1|, |1|01|1|.",
+      "Hence, f(2) = 4, f(3) = 4 and f(4) = 2. So, the value of s = 10.",
+      "In the second sample, the set of valid cuts is:",
+      "Size 2: |1|0.",
+      "Hence, f(2) = 1 and f(3) = 0. So, the value of s = 1."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1011",
+      "output": "10"
+    },
+    {
+      "input": "2\n10",
+      "output": "1"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "在第一个样例中，有效切点集合如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "大小为 2：|1|011、1|01|1、10|1|1、101|1|。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "大小为 3：|1|01|1、|10|1|1、10|1|1|、1|01|1|。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "大小为 4：|10|1|1|、|1|01|1|。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，f(2) = 4，f(3) = 4 且 f(4) = 2。因此，s = 10。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，有效切分的集合为：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "大小为 2：|1|0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，f(2) = 1 且 f(3) = 0。所以，s 的值为 1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "道馆馆主们对在 Felicity 营地发生的进化过程十分着迷。因此，他们想知道宝可梦进化背后的秘密。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "营地的组织者给了道馆馆主们一个 PokeBlock，它是由 n 个成分组成的序列。每个成分的类型可以是 0 或 1。组织者告诉道馆馆主们，要使一只类型为 k（k ≥ 2）的宝可梦进化，他们需要在 PokeBlock 上进行 k 次有效切割，从而得到更小的方块。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "假设给定的 PokeBlock 序列为 b₀b₁b₂...bₙ - ₁。你可以选择在 n + 1 个位置进行切割，即 b₀ 之前、b₀ 和 b₁ 之间、b₁ 和 b₂ 之间、……、bₙ - ₂ 和 bₙ - ₁ 之间，以及 bₙ - ₁ 之后。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "n + 1 个可切割位置如下（其中 | 表示一个可能的切割位置）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑一组 k 次切割。现在，每一对相邻切割之间都会包含一个由成分类型组成的二进制字符串。第一次切割之前和最后一次切割之后的成分会被浪费，也就是说它们不予考虑。因此，恰好会有 k - 1 个这样的二进制子串。每个子串都可以看作一个二进制数。令 m 为得到的这些数中的最大值。如果所有得到的数都是正数，并且得到的数的集合包含从 1 到 m 的所有整数，那么这组切割就称为一组有效切割。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，假设给定的 PokeBlock 序列为 101101001110，并按如下方式进行了 5 次切割：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此得到的 4 个二进制子串为：11、010、01 和 1，它们分别对应数字 3、2、1 和 1。这里 m = 3，因为它是得到的数字中的最大值。并且所有得到的数字都是正数，我们得到了从 1 到 m 的所有整数。因此，这组切点是一个有效的 5 个切点集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "类型为 k 的宝可梦只有在使用包含 k 个切点的有效集合切割 PokeBlock 时才会进化。相同大小的有效集合可能有很多个。如果一个集合中存在某个切点，而另一个集合中不存在，则这两个包含 k 个切点的有效集合被视为不同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "令 f(k) 表示包含 k 个切点的有效集合数量。求 ![](https://espresso.codeforces.com/1f553c10ee29622384beda9934a033e929407c9c.png) 的值。由于 s 的值可能非常大，请输出 s 对 109 + 7 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入包含两行。第一行包含一个整数 n（1 ≤ n ≤ 75）——PokeBlock 的长度。下一行包含 PokeBlock，它是一个长度为 n 的二进制字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示问题的答案，即 s 对 109 + 7 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Felicity 的重大秘密揭晓",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "code": "CF1575K",
+  "letter": "K",
+  "title": "K. Knitting Batik",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1575/K",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Mr. Chanek wants to knit a batik, a traditional cloth from Indonesia. The cloth forms a grid a$$$a$$$ with size n×m$$$n \\times m$$$. There are k$$$k$$$ colors, and each cell in the grid can be one of the k$$$k$$$ colors.",
+      "Define a sub-rectangle as an ordered pair of two cells ((x1,y1),(x2,y2))$$$((x_1, y_1), (x_2, y_2))$$$, denoting the top-left cell and bottom-right cell (inclusively) of a sub-rectangle in a$$$a$$$. Two sub-rectangles ((x1,y1),(x2,y2))$$$((x_1, y_1), (x_2, y_2))$$$ and ((x3,y3),(x4,y4))$$$((x_3, y_3), (x_4, y_4))$$$ have the same pattern if and only if the following holds:",
+      "they have the same width (x2−x1=x4−x3$$$x_2 - x_1 = x_4 - x_3$$$);",
+      "they have the same height (y2−y1=y4−y3$$$y_2 - y_1 = y_4 - y_3$$$);",
+      "for every pair (i,j)$$$(i, j)$$$ where 0≤i≤x2−x1$$$0 \\leq i \\leq x_2 - x_1$$$ and 0≤j≤y2−y1$$$0 \\leq j \\leq y_2 - y_1$$$, the color of cells (x1+i,y1+j)$$$(x_1 + i, y_1 + j)$$$ and (x3+i,y3+j)$$$(x_3 + i, y_3 + j)$$$ are equal.",
+      "Count the number of possible batik color combinations, such that the subrectangles ((ax,ay),(ax+r−1,ay+c−1))$$$((a_x, a_y),(a_x + r - 1, a_y + c - 1))$$$ and ((bx,by),(bx+r−1,by+c−1))$$$((b_x, b_y),(b_x + r - 1, b_y + c - 1))$$$ have the same pattern.",
+      "Output the answer modulo 109+7$$$10^9 + 7$$$."
+    ],
+    "input": [
+      "The first line contains five integers n$$$n$$$, m$$$m$$$, k$$$k$$$, r$$$r$$$, and c$$$c$$$ (1≤n,m≤109$$$1 \\leq n, m \\leq 10^9$$$, 1≤k≤109$$$1 \\leq k \\leq 10^9$$$, 1≤r≤min(106,n)$$$1 \\leq r \\leq \\min(10^6, n)$$$, 1≤c≤min(106,m)$$$1 \\leq c \\leq \\min(10^6, m)$$$) — the size of the batik, the number of colors, and size of the sub-rectangle.",
+      "The second line contains four integers ax$$$a_x$$$, ay$$$a_y$$$, bx$$$b_x$$$, and by$$$b_y$$$ (1≤ax,bx≤n$$$1 \\leq a_x, b_x \\leq n$$$, 1≤ay,by≤m$$$1 \\leq a_y, b_y \\leq m$$$) — the top-left corners of the first and second sub-rectangle. Both of the sub-rectangles given are inside the grid (1≤ax+r−1$$$1 \\leq a_x + r - 1$$$, bx+r−1≤n$$$b_x + r - 1 \\leq n$$$, 1≤ay+c−1$$$1 \\leq a_y + c - 1$$$, by+c−1≤m$$$b_y + c - 1 \\leq m$$$)."
+    ],
+    "output": [
+      "Output an integer denoting the number of possible batik color combinations modulo 109+7$$$10^9 + 7$$$."
+    ],
+    "note": [
+      "The following are all 32$$$32$$$ possible color combinations in the first example.",
+      "![](https://espresso.codeforces.com/6d72e338e6664267b5e2e0e8b2e3acf7391a5559.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3 2 2 2\n1 1 2 2",
+      "output": "32"
+    },
+    {
+      "input": "4 5 170845 2 2\n1 4 3 1",
+      "output": "756680455"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Chanek 先生想要编织一块蜡染布，这是一种来自印度尼西亚的传统布料。这块布形成一个大小为 n×m$$$n \\times m$$$ 的网格 a$$$a$$$。共有 k$$$k$$$ 种颜色，网格中的每个单元格都可以是这 k$$$k$$$ 种颜色中的一种。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "定义一个子矩形为两个单元格组成的有序对 ((x1,y1),(x2,y2))$$$((x_1, y_1), (x_2, y_2))$$$，分别表示 a$$$a$$$ 中某个子矩形的左上角和右下角单元格(均包含在内)。当且仅当满足以下条件时，两个子矩形 ((x1,y1),(x2,y2))$$$((x_1, y_1), (x_2, y_2))$$$ 和 ((x3,y3),(x4,y4))$$$((x_3, y_3), (x_4, y_4))$$$ 具有相同的图案：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "它们的宽度相同(x2−x1=x4−x3$$$x_2 - x_1 = x_4 - x_3$$$)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "它们的高度相同(y2−y1=y4−y3$$$y_2 - y_1 = y_4 - y_3$$$)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每一对 (i,j)$$$(i, j)$$$，其中 0≤i≤x2−x1$$$0 \\leq i \\leq x_2 - x_1$$$ 且 0≤j≤y2−y1$$$0 \\leq j \\leq y_2 - y_1$$$，单元格 (x1+i,y1+j)$$$(x_1 + i, y_1 + j)$$$ 和 (x3+i,y3+j)$$$(x_3 + i, y_3 + j)$$$ 的颜色相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请计算满足子矩形 ((ax,ay),(ax+r−1,ay+c−1))$$$((a_x, a_y),(a_x + r - 1, a_y + c - 1))$$$ 和 ((bx,by),(bx+r−1,by+c−1))$$$((b_x, b_y),(b_x + r - 1, b_y + c - 1))$$$ 具有相同图案的蜡染颜色组合数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出答案对 109+7$$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含五个整数 n$$$n$$$、m$$$m$$$、k$$$k$$$、r$$$r$$$ 和 c$$$c$$$(1≤n,m≤109$$$1 \\leq n, m \\leq 10^9$$$，1≤k≤109$$$1 \\leq k \\leq 10^9$$$，1≤r≤min(106,n)$$$1 \\leq r \\leq \\min(10^6, n)$$$，1≤c≤min(106,m)$$$1 \\leq c \\leq \\min(10^6, m)$$$)，分别表示蜡染布的大小、颜色数量以及子矩形的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含四个整数 ax$$$a_x$$$、ay$$$a_y$$$、bx$$$b_x$$$ 和 by$$$b_y$$$(1≤ax,bx≤n$$$1 \\leq a_x, b_x \\leq n$$$，1≤ay,by≤m$$$1 \\leq a_y, b_y \\leq m$$$)，表示第一个和第二个子矩形的左上角。给出的两个子矩形都位于网格内部(1≤ax+r−1$$$1 \\leq a_x + r - 1$$$，bx+r−1≤n$$$b_x + r - 1 \\leq n$$$，1≤ay+c−1$$$1 \\leq a_y + c - 1$$$，by+c−1≤m$$$b_y + c - 1 \\leq m$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示可能的蜡染布颜色组合数量对 109+7$$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "以下是第一个样例中全部 32$$$32$$$ 种可能的颜色组合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/6d72e338e6664267b5e2e0e8b2e3acf7391a5559.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "K. 编织蜡染",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

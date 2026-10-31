@@ -1,0 +1,124 @@
+{
+  "code": "GYM106164F",
+  "letter": "F",
+  "title": "F. Festival Stroll",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106164/problem/F",
+  "difficulty": "*2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "With the quarantine measures lifted, Jack's hometown decides to hold a festival. Jack is still cautious about meeting too many people, so he wants to plan his route through the festival to maximize his happiness using a simple strategy.",
+      "The festival has N$$$N$$$ stalls, numbered from 1$$$1$$$ to N$$$N$$$. If Jack enters the i$$$i$$$-th stall, he meets pi$$$p_i$$$ people and gains happiness hi$$$h_i$$$. He walks from stall 1$$$1$$$ to stall N$$$N$$$ in order and does not revisit any stall. At each stall, he can either enter it or walk past it.",
+      "It is guaranteed that pi≥pi+1$$$p_i \\ge p_{i+1}$$$ for all i<N$$$i  \\lt  N$$$, since earlier stalls tend to draw larger crowds.",
+      "Jack wants to meet at most P$$$P$$$ people in total. He also considers only stalls whose happiness exceeds a certain threshold value threshold$$$threshold$$$. The threshold$$$threshold$$$ should be a non-negative integer.",
+      "Formally, let ht$$$ht$$$ be Jack's total happiness and m$$$m$$$ be the number of people he has met. Jack will follow the following strategy.",
+      "Jack's strategy (pseudo-code):",
+      {
+        "pre": "\nht = 0 // initially, the total happiness is zero\nm = 0 // initially, he meets zero person\nfor i = 1 to N:\n    if h[i] > threshold and m + p[i] <= P:\n        enter stall i\n        ht = ht + h[i]\n        m = m + p[i]\n    else:\n        skip stall i"
+      },
+      "Jack wants to choose the value of threshold$$$threshold$$$ that maximizes his total happiness ht$$$ht$$$. If multiple thresholds achieve the same maximum happiness, he wants the minimum such threshold."
+    ],
+    "input": [
+      "The first line contains a single integer T$$$T$$$ (1≤T≤105$$$1 \\le T \\le 10^5$$$) — the number of test cases.",
+      "Each test case consists of:",
+      "The first line contains two integers N$$$N$$$ and P$$$P$$$ (1≤N≤2⋅105$$$1 \\le N \\le 2 \\cdot 10^5$$$, 1≤P≤1018$$$1 \\le P \\le 10^{18}$$$) — the number of stalls and the maximum number of people Jack wants to meet.",
+      "Each of the next N$$$N$$$ lines contains two integers hi$$$h_i$$$ and pi$$$p_i$$$ (1≤hi≤109$$$1 \\le h_i \\le 10^9$$$, 1≤pi≤1018$$$1 \\le p_i \\le 10^{18}$$$) — the happiness gained and the number of people met at the i$$$i$$$-th stall.",
+      "It is guaranteed that the sum of N$$$N$$$ over all test cases does not exceed 2⋅105$$$2 \\cdot 10^5$$$.",
+      "Additionally, for each test case, the sum of all pi$$$p_i$$$ does not exceed 1018$$$10^{18}$$$ and pj≥pj+1$$$p_j \\ge p_{j+1}$$$ for all j<N$$$j  \\lt  N$$$."
+    ],
+    "output": [
+      "For each test case, print two integers — the maximum total happiness Jack can achieve and the minimum threshold to achieve the total happiness."
+    ],
+    "note": [
+      "In the first test case, Jack can enter every stall without exceeding the maximum number of people he wants to meet. Therefore, the optimal threshold is 0$$$0$$$.",
+      "In the second test case, if the threshold is set to 0$$$0$$$, Jack will skip stall 3$$$3$$$, resulting in a total happiness of 8$$$8$$$. If the threshold is increased to 1$$$1$$$, he will instead skip stall 2$$$2$$$ due to the threshold condition, resulting in a total happiness of 10$$$10$$$, which is the maximum possible. Threshold value 2$$$2$$$ also resulted in total happiness of 10$$$10$$$, but it is not minimal."
+    ]
+  },
+  "examples": [
+    {
+      "input": "\nht = 0 // initially, the total happiness is zero\nm = 0 // initially, he meets zero person\nfor i = 1 to N:\n    if h[i] > threshold and m + p[i] <= P:\n        enter stall i\n        ht = ht + h[i]\n        m = m + p[i]\n    else:\n        skip stall i",
+      "output": "2\n4 15\n4 6\n1 5\n3 3\n3 1\n4 14\n4 6\n1 5\n3 3\n3 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "随着隔离措施解除，Jack 的家乡决定举办一场节日庆典。Jack 对见到太多人仍然很谨慎，因此他想用一种简单的策略来规划自己穿过节日的路线，从而最大化他的快乐值。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "节日中有 N$$$N$$$ 个摊位，编号为 1$$$1$$$ 到 N$$$N$$$。如果 Jack 进入第 i$$$i$$$ 个摊位，他会遇到 pi$$$p_i$$$ 个人，并获得快乐值 hi$$$h_i$$$。他按顺序从摊位 1$$$1$$$ 走到摊位 N$$$N$$$，并且不会重访任何摊位。在每个摊位，他可以选择进入，也可以直接路过。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "保证对于所有 i<N$$$i  \\lt  N$$$，都有 pi≥pi+1$$$p_i \\ge p_{i+1}$$$，因为较早的摊位往往吸引更多的人群。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Jack 希望总共遇到至多 P$$$P$$$ 个人。他还只考虑快乐值超过某个阈值 threshold$$$threshold$$$ 的摊位。阈值 threshold$$$threshold$$$ 必须是一个非负整数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "形式化地，设 ht$$$ht$$$ 表示 Jack 的总幸福值，m$$$m$$$ 表示他遇到的人数。Jack 将遵循以下策略。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Jack 的策略（伪代码）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "Jack 希望选择能够使其总幸福值 ht$$$ht$$$ 最大的 threshold$$$threshold$$$ 值。如果有多个 threshold 能达到相同的最大幸福值，他希望选择其中最小的 threshold。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤105$$$1 \\le T \\le 10^5$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例包含：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行包含两个整数 N$$$N$$$ 和 P$$$P$$$(1≤N≤2⋅105$$$1 \\le N \\le 2 \\cdot 10^5$$$，1≤P≤1018$$$1 \\le P \\le 10^{18}$$$)——摊位的数量以及 Jack 想遇到的最多人数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行中，每行包含两个整数 hi$$$h_i$$$ 和 pi$$$p_i$$$(1≤hi≤109$$$1 \\le h_i \\le 10^9$$$，1≤pi≤1018$$$1 \\le p_i \\le 10^{18}$$$)——分别表示在第 i$$$i$$$ 个摊位获得的快乐值和遇到的人数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中的 N$$$N$$$ 之和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，对于每个测试用例，所有 pi$$$p_i$$$ 的总和不超过 1018$$$10^{18}$$$，且对于所有 j<N$$$j  \\lt  N$$$，均有 pj≥pj+1$$$p_j \\ge p_{j+1}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出两个整数——Jack 能获得的最大总快乐值，以及达到该总快乐值所需的最小阈值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，Jack 可以进入每一个摊位，而不会超过他想要遇到的最大人数。因此，最优阈值为 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，如果将阈值设为 0$$$0$$$，Jack 将跳过摊位 3$$$3$$$，从而得到总快乐值 8$$$8$$$。如果将阈值增加到 1$$$1$$$，由于阈值条件，他将改为跳过摊位 2$$$2$$$，从而得到总快乐值 10$$$10$$$，这是可能的最大值。阈值 2$$$2$$$ 同样得到总快乐值 10$$$10$$$，但它不是最小值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 节日漫步",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

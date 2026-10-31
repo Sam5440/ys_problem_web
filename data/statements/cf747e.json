@@ -1,0 +1,133 @@
+{
+  "code": "CF747E",
+  "letter": "E",
+  "title": "E. Comments",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/747/E",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A rare article in the Internet is posted without a possibility to comment it. On a Polycarp's website each article has comments feed.",
+      "Each comment on Polycarp's website is a non-empty string consisting of uppercase and lowercase letters of English alphabet. Comments have tree-like structure, that means each comment except root comments (comments of the highest level) has exactly one parent comment.",
+      "When Polycarp wants to save comments to his hard drive he uses the following format. Each comment he writes in the following format:",
+      "at first, the text of the comment is written;",
+      "after that the number of comments is written, for which this comment is a parent comment (i. e. the number of the replies to this comments);",
+      "after that the comments for which this comment is a parent comment are written (the writing of these comments uses the same algorithm).",
+      "For example, if the comments look like:",
+      "![](https://espresso.codeforces.com/be9282c77361d63dfe60fe2172b1d36593c7c580.png)",
+      "then the first comment is written as \"hello,2,ok,0,bye,0\", the second is written as \"test,0\", the third comment is written as \"one,1,two,2,a,0,b,0\". The whole comments feed is written as: \"hello,2,ok,0,bye,0,test,0,one,1,two,2,a,0,b,0\". For a given comments feed in the format specified above print the comments in a different format:",
+      "at first, print a integer d — the maximum depth of nesting comments;",
+      "after that print d lines, the i-th of them corresponds to nesting level i;",
+      "for the i-th row print comments of nesting level i in the order of their appearance in the Policarp's comments feed, separated by space."
+    ],
+    "input": [
+      "The first line contains non-empty comments feed in the described format. It consists of uppercase and lowercase letters of English alphabet, digits and commas.",
+      "It is guaranteed that each comment is a non-empty string consisting of uppercase and lowercase English characters. Each of the number of comments is integer (consisting of at least one digit), and either equals 0 or does not contain leading zeros.",
+      "The length of the whole string does not exceed 106. It is guaranteed that given structure of comments is valid."
+    ],
+    "output": [
+      "Print comments in a format that is given in the statement. For each level of nesting, comments should be printed in the order they are given in the input."
+    ],
+    "note": [
+      "The first example is explained in the statements."
+    ]
+  },
+  "examples": [
+    {
+      "input": "hello,2,ok,0,bye,0,test,0,one,1,two,2,a,0,b,0",
+      "output": "3\nhello test one \nok bye two \na b"
+    },
+    {
+      "input": "a,5,A,0,a,0,A,0,a,0,A,0",
+      "output": "2\na \nA a A a A"
+    },
+    {
+      "input": "A,3,B,2,C,0,D,1,E,0,F,1,G,0,H,1,I,1,J,0,K,1,L,0,M,2,N,0,O,1,P,0",
+      "output": "4\nA K M \nB F H L N O \nC D G I P \nE J"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "互联网上一篇罕见的文章发布时没有评论功能。而在 Polycarp 的网站上，每篇文章都有评论区。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Polycarp 网站上的每条评论都是一个非空字符串，由英文字母的大小写字母组成。评论具有树形结构，也就是说，除了根评论（最高层级的评论）之外，每条评论恰好有一条父评论。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当 Polycarp 想要将评论保存到硬盘时，他使用以下格式。对于每条评论，他按以下格式书写：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，写下评论的文本；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "随后写出以该评论为父评论的评论数量（即对该评论的回复数量）；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "随后写出以该评论为父评论的评论（这些评论的写法使用相同的算法）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，如果评论如下所示：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/be9282c77361d63dfe60fe2172b1d36593c7c580.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "那么第一条评论会写成 \"hello,2,ok,0,bye,0\"，第二条写成 \"test,0\"，第三条评论写成 \"one,1,two,2,a,0,b,0\"。整个评论流写成：\"hello,2,ok,0,bye,0,test,0,one,1,two,2,a,0,b,0\"。对于给定的、格式如上所述的评论流，请以不同的格式输出这些评论：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，输出一个整数 d——评论嵌套的最大深度；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "随后输出 d 行，其中第 i 行对应嵌套层级 i；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第 i 行，按照评论在 Policarp 的评论流中出现的顺序输出嵌套层级为 i 的评论，评论之间用空格分隔。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含按上述格式给出的非空评论流。它由英文字母的大小写字母、数字和逗号组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证每条评论都是由英文字母大小写组成的非空字符串。每个评论数量都是整数（至少包含一位数字），且要么等于 0，要么不含前导零。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "整个字符串的长度不超过 10^6。保证给出的评论结构有效。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "按照题目中给出的格式输出评论。对于每个嵌套层级，评论应按照它们在输入中给出的顺序输出。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例在题面中有解释。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 评论",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

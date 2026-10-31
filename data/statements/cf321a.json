@@ -1,0 +1,107 @@
+{
+  "code": "CF321A",
+  "letter": "A",
+  "title": "A. Ciel and Robot",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/321/A",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Fox Ciel has a robot on a 2D plane. Initially it is located in (0, 0). Fox Ciel code a command to it. The command was represented by string s. Each character of s is one move operation. There are four move operations at all:",
+      "'U': go up, (x, y)  →  (x, y+1);",
+      "'D': go down, (x, y)  →  (x, y-1);",
+      "'L': go left, (x, y)  →  (x-1, y);",
+      "'R': go right, (x, y)  →  (x+1, y).",
+      "The robot will do the operations in s from left to right, and repeat it infinite times. Help Fox Ciel to determine if after some steps the robot will located in (a, b)."
+    ],
+    "input": [
+      "The first line contains two integers a and b, ( - 109 ≤ a, b ≤ 109). The second line contains a string s (1 ≤ |s| ≤ 100, s only contains characters 'U', 'D', 'L', 'R') — the command."
+    ],
+    "output": [
+      "Print \"Yes\" if the robot will be located at (a, b), and \"No\" otherwise."
+    ],
+    "note": [
+      "In the first and second test case, command string is \"RU\", so the robot will go right, then go up, then right, and then up and so on.",
+      "The locations of its moves are (0, 0)  →  (1, 0)  →  (1, 1)  →  (2, 1)  →  (2, 2)  →  ...",
+      "So it can reach (2, 2) but not (1, 2)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 2\nRU",
+      "output": "Yes"
+    },
+    {
+      "input": "1 2\nRU",
+      "output": "No"
+    },
+    {
+      "input": "-1 1000000000\nLRRLU",
+      "output": "Yes"
+    },
+    {
+      "input": "0 0\nD",
+      "output": "Yes"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Fox Ciel 在一个二维平面上有一个机器人。初始时它位于 (0, 0)。Fox Ciel 为它编写了一条指令。这条指令由字符串 s 表示。s 的每个字符代表一次移动操作。一共有四种移动操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "'U'：向上移动，(x, y)  →  (x, y+1)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "'D'：向下移动，(x, y)  →  (x, y-1)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "'L'：向左移动，(x, y)  →  (x-1, y)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "'R'：向右移动，(x, y)  →  (x+1, y)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "机器人会从左到右执行 s 中的操作，并无限次重复。请帮助 Fox Ciel 判断：经过若干步后，机器人是否会到达 (a, b)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 a 和 b（ - 109 ≤ a, b ≤ 109）。第二行包含一个字符串 s（1 ≤ |s| ≤ 100，s 仅包含字符 'U'、'D'、'L'、'R'）——表示指令。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果机器人将位于 (a, b)，输出 \"Yes\"，否则输出 \"No\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个和第二个测试用例中，指令字符串为 \"RU\"，因此机器人会先向右移动，然后向上移动，接着向右移动，再向上移动，如此循环。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "它移动经过的位置为 (0, 0)  →  (1, 0)  →  (1, 1)  →  (2, 1)  →  (2, 2)  →  ...",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此它可以到达 (2, 2)，但不能到达 (1, 2)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. Ciel 与机器人",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

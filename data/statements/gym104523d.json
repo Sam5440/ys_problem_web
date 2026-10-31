@@ -1,0 +1,100 @@
+{
+  "code": "GYM104523D",
+  "letter": "D",
+  "title": "D. Removing Subarrays",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104523/problem/D",
+  "difficulty": "*2000",
+  "timeLimit": "5 s",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Alex has an array a1,a2,...,an$$$a_1,a_2,...,a_n$$$. A subarray al,al+1,...,ar$$$a_l, a_{l+1},...,a_r$$$ is good if both of the following are true:",
+      "r−l+1≥2$$$r-l+1 \\geq 2$$$",
+      "max(al,al+1,...,ar)−min(al,al+1,...,ar)≤k$$$\\max(a_l, a_{l+1},...,a_r)-\\min(a_l, a_{l+1},...,a_r) \\leq k$$$",
+      "In one operation, Alex can remove any good subarray al,al+1,...,ar$$$a_l, a_{l+1},...,a_r$$$ for a cost of ⌊r−l+12⌋$$$\\lfloor \\frac{r-l+1}{2} \\rfloor$$$. He can perform the operation as many times as he likes (possibly zero times). Find the minimum size of the array that he can get as well as the minimum cost to obtain an array of minimum size."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤100)$$$(1 \\leq t \\leq 100)$$$. The description of the test cases follows.",
+      "The first line of each testcase contains 2$$$2$$$ integers, n$$$n$$$ and k$$$k$$$ (1≤n≤500,0≤k≤109)$$$(1 \\leq n \\leq 500, 0 \\leq k \\leq 10^9)$$$.",
+      "The second line contains n$$$n$$$ integers, a1,a2,...,an$$$a_1, a_2,..., a_n$$$ (1≤ai≤109)$$$(1 \\leq a_i \\leq 10^9)$$$.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases doesn't exceed 500$$$500$$$."
+    ],
+    "output": [
+      "For each test case output 2$$$2$$$ integers, the minimum size of the array that Alex can get followed by the minimum cost to obtain an array of minimum size."
+    ],
+    "note": [
+      "In the first test case, the array is initially [1,1,5,5,1,1]$$$[1, 1, 5, 5, 1, 1]$$$. Alex can remove subarray [5,5]$$$[5, 5]$$$ for a cost of 1$$$1$$$ causing the array to become [1,1,1,1]$$$[1, 1, 1, 1]$$$. He can then remove subarray [1,1,1,1]$$$[1, 1, 1, 1]$$$ for a cost of 2$$$2$$$ causing the array to become empty.",
+      "In the second test case, the array is initially [1,1,5,5,1,1]$$$[1, 1, 5, 5, 1, 1]$$$. Alex can remove subarray [1,1,5]$$$[1, 1, 5]$$$ for a cost of 1$$$1$$$ causing the array to become [5,1,1]$$$[5, 1, 1]$$$. He can then remove subarray [5,1,1]$$$[5, 1, 1]$$$ for a cost of 1$$$1$$$ causing the array to become empty.",
+      "Problem Credits: Alex Liang and Larry Xing"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n6 0\n1 1 5 5 1 1\n6 4\n1 1 5 5 1 1\n6 1\n4 3 3 1 1 6\n10 2\n3 5 3 6 4 2 2 3 3 8\n1 0\n1",
+      "output": "0 3\n0 2\n1 2\n0 4\n1 0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Alex 有一个数组 a1,a2,...,an$$$a_1,a_2,...,a_n$$$。如果以下两个条件均满足，则子数组 al,al+1,...,ar$$$a_l, a_{l+1},...,a_r$$$ 是好的：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "r−l+1≥2$$$r-l+1 \\geq 2$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "max(al,al+1,...,ar)−min(al,al+1,...,ar)≤k$$$\\max(a_l, a_{l+1},...,a_r)-\\min(a_l, a_{l+1},...,a_r) \\leq k$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在一次操作中，Alex 可以移除任意满足条件的子数组 al,al+1,...,ar$$$a_l, a_{l+1},...,a_r$$$，代价为 ⌊r−l+12⌋$$$\\lfloor \\frac{r-l+1}{2} \\rfloor$$$。他可以任意次执行该操作(也可以一次都不执行)。求他能够得到的数组的最小长度，以及得到一个最小长度数组所需的最小代价。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤100)$$$(1 \\leq t \\leq 100)$$$。接下来给出各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含 2$$$2$$$ 个整数 n$$$n$$$ 和 k$$$k$$$(1≤n≤500,0≤k≤109)$$$(1 \\leq n \\leq 500, 0 \\leq k \\leq 10^9)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,...,an$$$a_1, a_2,..., a_n$$$(1≤ai≤109)$$$(1 \\leq a_i \\leq 10^9)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 500$$$500$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出 2$$$2$$$ 个整数：Alex 能得到的数组的最小大小，以及获得最小大小数组所需的最小代价。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，数组初始为 [1,1,5,5,1,1]$$$[1, 1, 5, 5, 1, 1]$$$。Alex 可以花费 1$$$1$$$ 的代价移除子数组 [5,5]$$$[5, 5]$$$，使数组变为 [1,1,1,1]$$$[1, 1, 1, 1]$$$。随后，他可以花费 2$$$2$$$ 的代价移除子数组 [1,1,1,1]$$$[1, 1, 1, 1]$$$，使数组变为空。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，数组初始为 [1,1,5,5,1,1]$$$[1, 1, 5, 5, 1, 1]$$$。Alex 可以花费 1$$$1$$$ 的代价移除子数组 [1,1,5]$$$[1, 1, 5]$$$，使数组变为 [5,1,1]$$$[5, 1, 1]$$$。随后，他可以花费 1$$$1$$$ 的代价移除子数组 [5,1,1]$$$[5, 1, 1]$$$，使数组变为空。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "题目贡献者：Alex Liang 和 Larry Xing",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 删除子数组",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

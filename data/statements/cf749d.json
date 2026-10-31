@@ -1,0 +1,144 @@
+{
+  "code": "CF749D",
+  "letter": "D",
+  "title": "D. Leaving Auction",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/749/D",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are n people taking part in auction today. The rules of auction are classical. There were n bids made, though it's not guaranteed they were from different people. It might happen that some people made no bids at all.",
+      "Each bid is define by two integers (ai, bi), where ai is the index of the person, who made this bid and bi is its size. Bids are given in chronological order, meaning bi < bi + 1 for all i < n. Moreover, participant never makes two bids in a row (no one updates his own bid), i.e. ai ≠ ai + 1 for all i < n.",
+      "Now you are curious with the following question: who (and which bid) will win the auction if some participants were absent? Consider that if someone was absent, all his bids are just removed and no new bids are added.",
+      "Note, that if during this imaginary exclusion of some participants it happens that some of the remaining participants makes a bid twice (or more times) in a row, only first of these bids is counted. For better understanding take a look at the samples.",
+      "You have several questions in your mind, compute the answer for each of them."
+    ],
+    "input": [
+      "The first line of the input contains an integer n (1 ≤ n ≤ 200 000) — the number of participants and bids.",
+      "Each of the following n lines contains two integers ai and bi (1 ≤ ai ≤ n, 1 ≤ bi ≤ 109, bi < bi + 1) — the number of participant who made the i-th bid and the size of this bid.",
+      "Next line contains an integer q (1 ≤ q ≤ 200 000) — the number of question you have in mind.",
+      "Each of next q lines contains an integer k (1 ≤ k ≤ n), followed by k integers lj (1 ≤ lj ≤ n) — the number of people who are not coming in this question and their indices. It is guarenteed that lj values are different for a single question.",
+      "It's guaranteed that the sum of k over all question won't exceed 200 000."
+    ],
+    "output": [
+      "For each question print two integer — the index of the winner and the size of the winning bid. If there is no winner (there are no remaining bids at all), print two zeroes."
+    ],
+    "note": [
+      "Consider the first sample:",
+      "In the first question participant number 3 is absent so the sequence of bids looks as follows:   1 10",
+      "2 100",
+      "1 10 000",
+      "2 100 000",
+      "In the second question participants 2 and 3 are absent, so the sequence of bids looks:   1 10",
+      "1 10 000",
+      "In the third question participants 1 and 2 are absent and the sequence is:   3 1 000",
+      "3 1 000 000"
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n1 10\n2 100\n3 1000\n1 10000\n2 100000\n3 1000000\n3\n1 3\n2 2 3\n2 1 2",
+      "output": "2 100000\n1 10\n3 1000"
+    },
+    {
+      "input": "3\n1 10\n2 100\n1 1000\n2\n2 1 2\n2 2 3",
+      "output": "0 0\n1 10"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "今天有 n 个人参加拍卖会。拍卖会的规则是经典规则。虽然一共进行了 n 次出价，但不保证这些出价来自不同的人。可能有些人一次出价都没有。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每次出价由两个整数 (ai, bi) 定义，其中 ai 是出价者的编号，bi 是出价金额。出价按照时间顺序给出，这意味着对于所有 i < n，都有 bi < bi + 1。此外，同一参与者不会连续出价两次（即不会更新自己的出价），也就是说对于所有 i < n，都有 ai ≠ ai + 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在你想知道这样一个问题：如果某些参与者缺席，谁（以及哪一次出价）将赢得拍卖？如果某人缺席，则会删除他的所有出价，且不会添加新的出价。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，在这种假设排除某些参与者的过程中，如果剩余参与者中的某人连续出价两次（或更多次），则只计入这些出价中的第一次。请查看样例以便更好地理解。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你心中有若干个问题，请分别计算每个问题的答案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "考虑第一个样例：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个问题中，3 号参与者缺席，因此出价序列如下：   1 10",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2 100",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1 10 000",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2 100 000",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个问题中，参与者 2 和 3 缺席，因此出价序列如下：1 10",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1 10 000",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个问题中，参与者 1 和 2 缺席，序列如下：3 1 000",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3 1 000 000",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（1 ≤ n ≤ 200 000），表示参与者和出价的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n 行中的每一行包含两个整数 ai 和 bi（1 ≤ ai ≤ n，1 ≤ bi ≤ 109，bi < bi + 1），分别表示进行第 i 次出价的参与者编号以及此次出价的金额。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含一个整数 q（1 ≤ q ≤ 200 000），表示你心中的问题数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q 行中，每行包含一个整数 k（1 ≤ k ≤ n），以及 k 个整数 l_j（1 ≤ l_j ≤ n），表示本次问题中未参加的人的数量及其编号。保证同一个问题中的 l_j 互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有问题中的 k 之和不超过 200 000。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个问题，输出两个整数：获胜者的编号以及获胜出价的大小。如果不存在获胜者（完全没有剩余的出价），则输出两个 0。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 离开拍卖会",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "code": "GYM102767F",
+  "letter": "F",
+  "title": "F. Subarray with Maximum Product?",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102767/problem/F",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Given a sequence of integers a1,a2,…,an$$$a_1 , a_2 , \\ldots , a_n$$$ and a prime number x$$$x$$$.",
+      "We have a function which takes length$$$length$$$ as a parameter and return the maximum possible value of (ai×ai+1×⋯×ai+length−1)(modx)$$$ (a_i\\times a_{i+1}\\times \\cdots \\times a_{i+length-1})\\pmod x$$$ , where 1≤i≤(n−length+1)$$$1 \\le i \\le (n-length+1) $$$.",
+      "For example – a=[2,3,4,2],x=5$$$a = [2,3,4,2] , x = 5 $$$.",
+      "For length=1$$$length = 1$$$ , function return max(2,3,4,2)=4$$$\\max(2,3,4,2) = 4$$$.",
+      "For length=2$$$length = 2$$$ , function return max((2×3)(mod5),(3×4)(mod5),(4×2)(mod5))=max(1,2,3)=3$$$\\max((2\\times 3)\\pmod 5 , (3\\times 4)\\pmod 5 , (4\\times 2)\\pmod 5) = \\max(1,2,3) = 3$$$.",
+      "For length=3$$$length = 3$$$ , function return max((2×3×4)(mod5),(3×4×2)(mod5))=max(4,4)=4$$$\\max((2\\times 3\\times 4)\\pmod 5 , (3\\times 4\\times 2)\\pmod 5) = \\max(4,4) = 4$$$.",
+      "For length=4$$$length = 4$$$ , function return max((2×3×4×2)(mod5))=max(3)=3$$$\\max((2\\times 3\\times 4\\times 2)\\pmod 5) = \\max(3) = 3$$$.",
+      "Your task is to find the smallest length for which this function return maximum possible value."
+    ],
+    "input": [
+      "The first line contains a single integer t(1≤t≤105)$$$t (1 \\le t \\le 10^5)$$$ — the number of test cases in the input. Then t$$$t$$$ test cases follow.",
+      "Each query contains two lines. The first line contains two integer n(1≤n≤105)$$$n (1 \\le n \\le 10^5)$$$: the number of integers in the sequence and x(2≤x≤97)$$$x (2 \\le x \\le 97)$$$, and the second line contains n$$$n$$$ integers a1,…,an(1≤ai<x)$$$a_1, \\ldots ,a_n (1\\le a_i  \\lt  x)$$$.",
+      "It is guaranteed that the total sum of n$$$n$$$ is at most 105$$$10^5$$$ and x$$$x$$$ be a prime number."
+    ],
+    "output": [
+      "Print t$$$t$$$ answers to the test cases. Each answer must be consisting of two integers — the maximum possible value of function and the smallest length for which function return maximum possible value."
+    ],
+    "note": [
+      "In the first query — Explained in Problem Statement. For length=1$$$length = 1$$$ and 3$$$3$$$, Function return maximum value i.e 4$$$4$$$. We have to return the minimum length i.e 1$$$1$$$.",
+      "In the fourth query —",
+      "For length=1$$$length = 1$$$ , function return max(5,5,5)=5$$$\\max(5,5,5) = 5$$$.",
+      "For length=2$$$length = 2$$$ , function return max((5×5)(mod7),(5×5)(mod7))=max(4,4)=4$$$\\max((5\\times 5)\\pmod 7 , (5\\times 5)\\pmod 7) = \\max(4,4) = 4$$$.",
+      "For length=3$$$length = 3$$$ , function return max((5×5×5)(mod7))=max(6)=6$$$\\max((5\\times 5\\times 5)\\pmod 7) = \\max(6) = 6$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n4 5\n2 3 4 2\n4 3\n1 1 1 1\n3 7\n2 3 6\n3 7\n5 5 5\n3 11\n5 6 7",
+      "output": "4 1\n1 1\n6 1\n6 3\n9 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个整数序列 a1,a2,…,an$$$a_1 , a_2 , \\ldots , a_n$$$ 和一个素数 x$$$x$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们有一个以 length$$$length$$$ 为参数的函数，返回 (ai×ai+1×⋯×ai+length−1)(modx)$$$ (a_i\\times a_{i+1}\\times \\cdots \\times a_{i+length-1})\\pmod x$$$ 的可能最大值，其中 1≤i≤(n−length+1)$$$1 \\le i \\le (n-length+1) $$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如：a=[2,3,4,2],x=5$$$a = [2,3,4,2] , x = 5 $$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当 length=1$$$length = 1$$$ 时，函数返回 max(2,3,4,2)=4$$$\\max(2,3,4,2) = 4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当长度为 2$$$length = 2$$$ 时，函数返回 max((2×3)(mod5),(3×4)(mod5),(4×2)(mod5))=max(1,2,3)=3$$$\\max((2\\times 3)\\pmod 5 , (3\\times 4)\\pmod 5 , (4\\times 2)\\pmod 5) = \\max(1,2,3) = 3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当长度为 3$$$length = 3$$$ 时，函数返回 max((2×3×4)(mod5),(3×4×2)(mod5))=max(4,4)=4$$$\\max((2\\times 3\\times 4)\\pmod 5 , (3\\times 4\\times 2)\\pmod 5) = \\max(4,4) = 4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当长度为 4$$$length = 4$$$ 时，函数返回 max((2×3×4×2)(mod5))=max(3)=3$$$\\max((2\\times 3\\times 4\\times 2)\\pmod 5) = \\max(3) = 3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是找出使该函数返回可能的最大值的最小长度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t(1≤t≤105)$$$t (1 \\le t \\le 10^5)$$$，表示输入中的测试用例数量。接下来是 t$$$t$$$ 个测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个查询包含两行。第一行包含两个整数 n(1≤n≤105)$$$n (1 \\le n \\le 10^5)$$$(表示序列中整数的个数)和 x(2≤x≤97)$$$x (2 \\le x \\le 97)$$$，第二行包含 n$$$n$$$ 个整数 a1,…,an(1≤ai<x)$$$a_1, \\ldots ,a_n (1\\le a_i  \\lt  x)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 n$$$n$$$ 的总和不超过 105$$$10^5$$$，且 x$$$x$$$ 是素数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出测试用例的 t$$$t$$$ 个答案。每个答案必须由两个整数构成：函数可能取得的最大值，以及函数取得最大值时的最小长度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一次查询中，详见题目描述。对于 length=1$$$length = 1$$$ 和 3$$$3$$$，函数返回最大值，即 4$$$4$$$。我们需要返回最小长度，即 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四次查询中——",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 length=1$$$length = 1$$$，函数返回 max(5,5,5)=5$$$\\max(5,5,5) = 5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 length=2$$$length = 2$$$，函数返回 max((5×5)(mod7),(5×5)(mod7))=max(4,4)=4$$$\\max((5\\times 5)\\pmod 7 , (5\\times 5)\\pmod 7) = \\max(4,4) = 4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 length=3$$$length = 3$$$，函数返回 max((5×5×5)(mod7))=max(6)=6$$$\\max((5\\times 5\\times 5)\\pmod 7) = \\max(6) = 6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 乘积最大的子数组？",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

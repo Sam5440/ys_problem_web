@@ -1,0 +1,125 @@
+{
+  "code": "CF753B",
+  "letter": "B",
+  "title": "B. Interactive Bulls and Cows (Easy)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/753/B",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This problem is a little bit unusual. Here you are to implement an interaction with a testing system. That means that you can make queries and get responses in the online mode. Please be sure to use the stream flushing operation after each query's output in order not to leave part of your output in some buffer. For example, in C++ you've got to use the fflush(stdout) function, in Java — call System.out.flush(), and in Pascal — flush(output).",
+      "Bulls and Cows (also known as Cows and Bulls or Pigs and Bulls or Bulls and Cleots) is an old code-breaking paper and pencil game for two players, predating the similar commercially marketed board game Mastermind.",
+      "On a sheet of paper, the first player thinks a secret string. This string consists only of digits and has the length 4. The digits in the string must be all different, no two or more equal digits are allowed.",
+      "Then the second player tries to guess his opponent's string. For every guess the first player gives the number of matches. If the matching digits are on their right positions, they are \"bulls\", if on different positions, they are \"cows\". Thus a response is a pair of numbers — the number of \"bulls\" and the number of \"cows\". A try can contain equal digits.",
+      "More formally, let's the secret string is s and the second player are trying to guess it with a string x. The number of \"bulls\" is a number of such positions i (1 ≤ i ≤ 4) where s[i] = x[i]. The number of \"cows\" is a number of such digits c that s contains c in the position i (i.e. s[i] = c), x contains c, but x[i] ≠ c.",
+      "For example, the secret string is \"0427\", the opponent's try is \"0724\", then the answer is 2 bulls and 2 cows (the bulls are \"0\" and \"2\", the cows are \"4\" and \"7\"). If the secret string is \"0123\", the opponent's try is \"0330\", then the answer is 1 bull and 1 cow.",
+      "In this problem you are to guess the string s that the system has chosen. You only know that the chosen string consists of 4 distinct digits.",
+      "You can make queries to the testing system, each query is the output of a single 4-digit string. The answer to the query is the number of bulls and number of cows. If the system's response equals \"4 0\", that means the interaction with your problem is over and the program must terminate. That is possible for two reasons — the program either guessed the number x or made an invalid action (for example, printed letters instead of digits).",
+      "Your program is allowed to do at most 50 queries.",
+      "You can hack solutions of other participants providing a 4-digit string containing distinct digits — the secret string."
+    ],
+    "input": [
+      "To read answers to the queries, the program must use the standard input.",
+      "The program will receive pairs of non-negative integers in the input, one pair per line. The first number in a pair is a number of bulls and the second one is a number of cows of the string s and the string xi printed by your program. If the system response equals \"4 0\", then your solution should terminate.",
+      "The testing system will let your program read the i-th pair of integers from the input only after your program displays the corresponding system query in the output: prints value xi in a single line and executes operation flush."
+    ],
+    "output": [
+      "The program must use the standard output to print queries.",
+      "Your program must output requests — 4-digit strings x1, x2, ..., one per line. After the output of each line the program must execute flush operation. The program should read the answer to the query from the standard input.",
+      "Your program is allowed to do at most 50 queries."
+    ],
+    "note": [
+      "The secret string s in the example is \"0123\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "0 1\n2 0\n1 1\n0 4\n2 1\n4 0",
+      "output": "8000\n0179\n3159\n3210\n0112\n0123"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这道题有些特殊。在这里，你需要实现与评测系统的交互。这意味着你可以在在线模式下发出查询并获得响应。请务必在输出每次查询后使用刷新流的操作，以免部分输出留在某个缓冲区中。例如，在 C++ 中，你需要使用 fflush(stdout) 函数；在 Java 中调用 System.out.flush()；在 Pascal 中调用 flush(output)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bulls and Cows（也称为 Cows and Bulls、Pigs and Bulls 或 Bulls and Cleots）是一种古老的双人纸笔破译游戏，早于类似的商业化棋盘游戏 Mastermind。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在一张纸上，第一位玩家想出一个秘密字符串。该字符串仅由数字组成，长度为 4。字符串中的数字必须全部不同，不允许有两个或更多相同的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后，第二位玩家尝试猜测对手的字符串。对于每次猜测，第一位玩家会给出匹配的数量。如果匹配的数字位于正确的位置，它们就是“公牛”；如果位于不同的位置，则是“奶牛”。因此，回答是一对数字——“公牛”的数量和“奶牛”的数量。一次猜测中可以包含相同的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更正式地说，设秘密字符串为 s，第二位玩家试图用字符串 x 猜测它。“公牛”的数量是满足 1 ≤ i ≤ 4 且 s[i] = x[i] 的位置 i 的数量。“奶牛”的数量是这样的数字 c 的数量：s 在位置 i 包含 c（即 s[i] = c），x 包含 c，但 x[i] ≠ c。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，秘密字符串是 \"0427\"，对手的猜测是 \"0724\"，则答案是 2 个公牛和 2 个奶牛（公牛是 \"0\" 和 \"2\"，奶牛是 \"4\" 和 \"7\"）。如果秘密字符串是 \"0123\"，对手的猜测是 \"0330\"，则答案是 1 个公牛和 1 个奶牛。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在本题中，你需要猜出系统所选定的字符串 s。你只知道所选定的字符串由 4 个互不相同的数字组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以向测试系统发起查询，每次查询都是输出一个 4 位字符串。查询的答案是公牛数和奶牛数。如果系统的回答等于“4 0”，则表示交互已经结束，程序必须终止。这可能有两个原因——程序猜中了数字 x，或者进行了无效操作（例如输出了字母而不是数字）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的程序最多可以进行 50 次查询。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以通过提供一个包含互不相同数字的 4 位字符串（秘密字符串）来 hack 其他参赛者的程序。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "为了读取查询的答案，程序必须使用标准输入。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "程序将从输入中接收非负整数对，每行一对。每对中的第一个数是字符串 s 与程序输出的字符串 x_i 之间的公牛数，第二个数是奶牛数。如果系统的回答等于“4 0”，那么你的解法应当终止。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试系统只有在你的程序输出相应的系统查询后，才会允许程序从输入中读取第 i 对整数：在单独一行输出 xi 的值，并执行刷新操作。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "程序必须使用标准输出来输出查询。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的程序必须输出请求——长度为 4 的字符串 x1、x2、……，每行一个。输出每一行后，程序必须执行刷新操作。程序应当从标准输入中读取查询的答案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的程序最多可以进行 50 次查询。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例中的秘密字符串 s 是 \"0123\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 交互式公牛与奶牛（简单版）",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

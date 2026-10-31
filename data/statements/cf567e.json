@@ -1,0 +1,108 @@
+{
+  "code": "CF567E",
+  "letter": "E",
+  "title": "E. President and Roads",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/567/E",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Berland has n cities, the capital is located in city s, and the historic home town of the President is in city t (s ≠ t). The cities are connected by one-way roads, the travel time for each of the road is a positive integer.",
+      "Once a year the President visited his historic home town t, for which his motorcade passes along some path from s to t (he always returns on a personal plane). Since the president is a very busy man, he always chooses the path from s to t, along which he will travel the fastest.",
+      "The ministry of Roads and Railways wants to learn for each of the road: whether the President will definitely pass through it during his travels, and if not, whether it is possible to repair it so that it would definitely be included in the shortest path from the capital to the historic home town of the President. Obviously, the road can not be repaired so that the travel time on it was less than one. The ministry of Berland, like any other, is interested in maintaining the budget, so it wants to know the minimum cost of repairing the road. Also, it is very fond of accuracy, so it repairs the roads so that the travel time on them is always a positive integer."
+    ],
+    "input": [
+      "The first lines contain four integers n, m, s and t (2 ≤ n ≤ 105; 1 ≤ m ≤ 105; 1 ≤ s, t ≤ n) — the number of cities and roads in Berland, the numbers of the capital and of the Presidents' home town (s ≠ t).",
+      "Next m lines contain the roads. Each road is given as a group of three integers ai, bi, li (1 ≤ ai, bi ≤ n; ai ≠ bi; 1 ≤ li ≤ 106) — the cities that are connected by the i-th road and the time needed to ride along it. The road is directed from city ai to city bi.",
+      "The cities are numbered from 1 to n. Each pair of cities can have multiple roads between them. It is guaranteed that there is a path from s to t along the roads."
+    ],
+    "output": [
+      "Print m lines. The i-th line should contain information about the i-th road (the roads are numbered in the order of appearance in the input).",
+      "If the president will definitely ride along it during his travels, the line must contain a single word \"YES\" (without the quotes).",
+      "Otherwise, if the i-th road can be repaired so that the travel time on it remains positive and then president will definitely ride along it, print space-separated word \"CAN\" (without the quotes), and the minimum cost of repairing.",
+      "If we can't make the road be such that president will definitely ride along it, print \"NO\" (without the quotes)."
+    ],
+    "note": [
+      "The cost of repairing the road is the difference between the time needed to ride along it before and after the repairing.",
+      "In the first sample president initially may choose one of the two following ways for a ride: 1 → 2 → 4 → 5 → 6 or 1 → 2 → 3 → 5 → 6."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 7 1 6\n1 2 2\n1 3 10\n2 3 7\n2 4 8\n3 5 3\n4 5 2\n5 6 1",
+      "output": "YES\nCAN 2\nCAN 1\nCAN 1\nCAN 1\nCAN 1\nYES"
+    },
+    {
+      "input": "3 3 1 3\n1 2 10\n2 3 10\n1 3 100",
+      "output": "YES\nYES\nCAN 81"
+    },
+    {
+      "input": "2 2 1 2\n1 2 1\n1 2 2",
+      "output": "YES\nNO"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含四个整数 n、m、s 和 t（2 ≤ n ≤ 105；1 ≤ m ≤ 105；1 ≤ s、t ≤ n）——Berland 的城市数和道路数、首都的编号以及总统故乡的编号（s ≠ t）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行包含道路信息。每条道路由三个整数 ai、bi、li（1 ≤ ai, bi ≤ n；ai ≠ bi；1 ≤ li ≤ 106）表示，分别代表第 i 条道路连接的城市以及沿该道路行驶所需的时间。道路方向为从城市 ai 到城市 bi。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "城市编号从 1 到 n。任意一对城市之间可能存在多条道路。保证沿着这些道路存在一条从 s 到 t 的路径。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 m 行。第 i 行应包含第 i 条道路的信息（道路按照其在输入中出现的顺序编号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果总统在他的行程中一定会沿着这条道路行驶，则该行必须包含一个单词 \"YES\"（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，如果可以修复第 i 条道路，使得其行驶时间仍为正数，并且总统之后一定会沿着这条道路行驶，则输出以空格分隔的单词 \"CAN\"（不含引号）以及修复的最小费用。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果无法使总统一定会沿着这条道路行驶，则输出 \"NO\"（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Berland 有 n 座城市，首都位于城市 s，总统的历史故乡位于城市 t（s ≠ t）。城市之间由单向道路连接，每条道路的通行时间都是正整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "总统每年都会访问一次他的故乡 t。在此期间，他的车队会沿着从 s 到 t 的某条路径行驶（他总是乘坐私人飞机返回）。由于总统非常繁忙，他总是选择从 s 到 t 的最快路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "道路与铁路部希望了解每条道路的以下信息：总统在出行过程中是否一定会经过这条道路；如果不一定，是否可以对其进行维修，使其一定包含在从首都到总统故乡的最短路径中。显然，不能通过维修使道路的通行时间小于 1。Berland 的部门和其他部门一样，都希望节约预算，因此希望知道维修这条道路的最小花费。此外，该部门非常重视准确性，因此维修后道路的通行时间始终为正整数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "修复道路的花费是修复前后沿该道路骑行所需时间的差值。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一个样例中，总统最初可以选择以下两条骑行路线之一：1 → 2 → 4 → 5 → 6 或 1 → 2 → 3 → 5 → 6。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 总统与道路",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

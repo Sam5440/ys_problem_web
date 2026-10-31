@@ -1,0 +1,169 @@
+{
+  "code": "CF1017D",
+  "letter": "D",
+  "title": "D. The Wu",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1017/D",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Childan is making up a legendary story and trying to sell his forgery — a necklace with a strong sense of \"Wu\" to the Kasouras. But Mr. Kasoura is challenging the truth of Childan's story. So he is going to ask a few questions about Childan's so-called \"personal treasure\" necklace.",
+      "This \"personal treasure\" is a multiset S$$$S$$$ of m$$$m$$$ \"01-strings\".",
+      "A \"01-string\" is a string that contains n$$$n$$$ characters \"0\" and \"1\". For example, if n=4$$$n=4$$$, strings \"0110\", \"0000\", and \"1110\" are \"01-strings\", but \"00110\" (there are 5$$$5$$$ characters, not 4$$$4$$$) and \"zero\" (unallowed characters) are not.",
+      "Note that the multiset S$$$S$$$ can contain equal elements.",
+      "Frequently, Mr. Kasoura will provide a \"01-string\" t$$$t$$$ and ask Childan how many strings s$$$s$$$ are in the multiset S$$$S$$$ such that the \"Wu\" value of the pair (s,t)$$$(s, t)$$$ is not greater than k$$$k$$$.",
+      "Mrs. Kasoura and Mr. Kasoura think that if si=ti$$$s_i = t_i$$$ (1≤i≤n$$$1\\leq i\\leq n$$$) then the \"Wu\" value of the character pair equals to wi$$$w_i$$$, otherwise 0$$$0$$$. The \"Wu\" value of the \"01-string\" pair is the sum of the \"Wu\" values of every character pair. Note that the length of every \"01-string\" is equal to n$$$n$$$.",
+      "For example, if w=[4,5,3,6]$$$w=[4, 5, 3, 6]$$$, \"Wu\" of (\"1001\", \"1100\") is 7$$$7$$$ because these strings have equal characters only on the first and third positions, so w1+w3=4+3=7$$$w_1+w_3=4+3=7$$$.",
+      "You need to help Childan to answer Mr. Kasoura's queries. That is to find the number of strings in the multiset S$$$S$$$ such that the \"Wu\" value of the pair is not greater than k$$$k$$$."
+    ],
+    "input": [
+      "The first line contains three integers n$$$n$$$, m$$$m$$$, and q$$$q$$$ (1≤n≤12$$$1\\leq n\\leq 12$$$, 1≤q,m≤5⋅105$$$1\\leq q, m\\leq 5\\cdot 10^5$$$) — the length of the \"01-strings\", the size of the multiset S$$$S$$$, and the number of queries.",
+      "The second line contains n$$$n$$$ integers w1,w2,…,wn$$$w_1, w_2, \\ldots, w_n$$$ (0≤wi≤100$$$0 \\le w_i \\le 100$$$) — the value of the i$$$i$$$-th caracter.",
+      "Each of the next m$$$m$$$ lines contains the \"01-string\" s$$$s$$$ of length n$$$n$$$ — the string in the multiset S$$$S$$$.",
+      "Each of the next q$$$q$$$ lines contains the \"01-string\" t$$$t$$$ of length n$$$n$$$ and integer k$$$k$$$ (0≤k≤100$$$0\\leq k\\leq 100$$$) — the query."
+    ],
+    "output": [
+      "For each query, print the answer for this query."
+    ],
+    "note": [
+      "In the first example, we can get:",
+      "\"Wu\" of (\"01\", \"00\") is 40$$$40$$$.",
+      "\"Wu\" of (\"10\", \"00\") is 20$$$20$$$.",
+      "\"Wu\" of (\"11\", \"00\") is 0$$$0$$$.",
+      "\"Wu\" of (\"01\", \"11\") is 20$$$20$$$.",
+      "\"Wu\" of (\"10\", \"11\") is 40$$$40$$$.",
+      "\"Wu\" of (\"11\", \"11\") is 60$$$60$$$.",
+      "In the first query, pairs (\"11\", \"00\") and (\"10\", \"00\") satisfy the condition since their \"Wu\" is not greater than 20$$$20$$$.",
+      "In the second query, all strings satisfy the condition.",
+      "In the third query, pairs (\"01\", \"11\") and (\"01\", \"11\") satisfy the condition. Note that since there are two \"01\" strings in the multiset, the answer is 2$$$2$$$, not 1$$$1$$$.",
+      "In the fourth query, since k$$$k$$$ was increased, pair (\"10\", \"11\") satisfies the condition too.",
+      "In the fifth query, since k$$$k$$$ was increased, pair (\"11\", \"11\") satisfies the condition too."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 4 5\n40 20\n01\n01\n10\n11\n00 20\n00 40\n11 20\n11 40\n11 60",
+      "output": "2\n4\n2\n3\n4"
+    },
+    {
+      "input": "1 2 4\n100\n0\n1\n0 0\n0 100\n1 0\n1 100",
+      "output": "1\n2\n1\n2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Childan 正在编造一个传奇故事，并试图向 Kasouras 出售他的赝品——一条带有浓厚“Wu”气息的项链。但 Kasoura 先生正在质疑 Childan 故事的真实性。因此，他准备询问一些关于 Childan 所谓“个人珍宝”项链的问题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这个“个人珍宝”是一个多重集合 S$$$S$$$，其中包含 m$$$m$$$ 个“01 串”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "“01 串”是指包含 n$$$n$$$ 个字符“0”和“1”的字符串。例如，当 n=4$$$n=4$$$ 时，字符串“0110”、“0000”和“1110”都是“01 串”，但“00110”(包含 5$$$5$$$ 个字符，而不是 4$$$4$$$ 个)以及“zero”(含有不允许的字符)不是。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，多重集合 S$$$S$$$ 中可以包含相同的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Kasoura 先生经常会给出一个“01 串”t$$$t$$$，并询问 Childan 多重集合 S$$$S$$$ 中有多少个字符串 s$$$s$$$，使得字符串对 (s,t)$$$(s, t)$$$ 的“Wu”值不大于 k$$$k$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Kasoura 女士和 Kasoura 先生认为，如果 si=ti$$$s_i = t_i$$$(1≤i≤n$$$1\\leq i\\leq n$$$)，则对应字符对的“Wu”值等于 wi$$$w_i$$$，否则为 0$$$0$$$。两个“01 串”组成的字符串对的“Wu”值，是每一对对应字符的“Wu”值之和。注意，每个“01 串”的长度都等于 n$$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，当 w=[4,5,3,6]$$$w=[4, 5, 3, 6]$$$ 时，(\"1001\", \"1100\") 的“Wu”值为 7$$$7$$$，因为这两个字符串仅在第一个和第三个位置的字符相同，所以 w1+w3=4+3=7$$$w_1+w_3=4+3=7$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要帮助 Childan 回答 Kasoura 先生的查询。也就是说，求多重集合 S$$$S$$$ 中满足字符串对的“Wu”值不大于 k$$$k$$$ 的字符串数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、m$$$m$$$ 和 q$$$q$$$(1≤n≤12$$$1\\leq n\\leq 12$$$，1≤q,m≤5⋅105$$$1\\leq q, m\\leq 5\\cdot 10^5$$$)，分别表示“01 串”的长度、多重集合 S$$$S$$$ 的大小以及查询次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 w1,w2,…,wn$$$w_1, w_2, \\ldots, w_n$$$(0≤wi≤100$$$0 \\le w_i \\le 100$$$)，表示第 i$$$i$$$ 个字符的值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行每行包含一个长度为 n$$$n$$$ 的“01 串” s$$$s$$$，表示多重集合 S$$$S$$$ 中的字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行每行包含一个长度为 n$$$n$$$ 的“01 串” t$$$t$$$ 和一个整数 k$$$k$$$(0≤k≤100$$$0\\leq k\\leq 100$$$)，表示一次查询。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每次查询，输出该查询的答案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，我们可以得到：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(\"01\", \"00\") 的“Wu”为 40$$$40$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(\"10\", \"00\") 的“Wu”为 20$$$20$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(\"11\", \"00\") 的“Wu”为 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(\"01\", \"11\") 的“Wu”为 20$$$20$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(\"10\", \"11\") 的“Wu”为 40$$$40$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(\"11\", \"11\") 的“Wu”为 60$$$60$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一次查询中，数对(\"11\"，\"00\")和(\"10\"，\"00\")满足条件，因为它们的 \"Wu\" 不大于 20$$$20$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二次查询中，所有字符串都满足条件。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三次查询中，数对(\"01\"，\"11\")和(\"01\"，\"11\")满足条件。注意，由于多重集合中有两个 \"01\" 字符串，答案是 2$$$2$$$，而不是 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四次查询中，由于 k$$$k$$$ 增大了，数对(\"10\"，\"11\")也满足条件。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第五次查询中，由于 k$$$k$$$ 增大了，数对(\"11\"，\"11\")也满足条件。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. The Wu",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

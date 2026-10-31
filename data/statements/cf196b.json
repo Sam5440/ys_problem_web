@@ -1,0 +1,89 @@
+{
+  "code": "CF196B",
+  "letter": "B",
+  "title": "B. Infinite Maze",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/196/B",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "We've got a rectangular n × m-cell maze. Each cell is either passable, or is a wall (impassable). A little boy found the maze and cyclically tiled a plane with it so that the plane became an infinite maze. Now on this plane cell (x, y) is a wall if and only if cell ![](https://espresso.codeforces.com/5820f73507b71bbab0564415ed80476b7cbd4b71.png) is a wall.",
+      "In this problem ![](https://espresso.codeforces.com/6dd276f849101e7efda6cb8031d4056744d532a1.png) is a remainder of dividing number a by number b.",
+      "The little boy stood at some cell on the plane and he wondered whether he can walk infinitely far away from his starting position. From cell (x, y) he can go to one of the following cells: (x, y - 1), (x, y + 1), (x - 1, y) and (x + 1, y), provided that the cell he goes to is not a wall."
+    ],
+    "input": [
+      "The first line contains two space-separated integers n and m (1 ≤ n, m ≤ 1500) — the height and the width of the maze that the boy used to cyclically tile the plane.",
+      "Each of the next n lines contains m characters — the description of the labyrinth. Each character is either a \"#\", that marks a wall, a \".\", that marks a passable cell, or an \"S\", that marks the little boy's starting point.",
+      "The starting point is a passable cell. It is guaranteed that character \"S\" occurs exactly once in the input."
+    ],
+    "output": [
+      "Print \"Yes\" (without the quotes), if the little boy can walk infinitely far from the starting point. Otherwise, print \"No\" (without the quotes)."
+    ],
+    "note": [
+      "In the first sample the little boy can go up for infinitely long as there is a \"clear path\" that goes vertically. He just needs to repeat the following steps infinitely: up, up, left, up, up, right, up.",
+      "In the second sample the vertical path is blocked. The path to the left doesn't work, too — the next \"copy\" of the maze traps the boy."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 4\n##.#\n##S#\n#..#\n#.##\n#..#",
+      "output": "Yes"
+    },
+    {
+      "input": "5 4\n##.#\n##S#\n#..#\n..#.\n#.##",
+      "output": "No"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "我们有一个 n × m 个单元格的矩形迷宫。每个单元格要么可以通行，要么是墙(不可通行)。一个小男孩发现了这个迷宫，并用它周期性地铺满了整个平面，使平面变成了一个无限迷宫。现在，在这个平面上，当且仅当单元格 ![](https://espresso.codeforces.com/5820f73507b71bbab0564415ed80476b7cbd4b71.png) 是墙时，单元格 (x，y) 才是墙。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在本题中，![](https://espresso.codeforces.com/6dd276f849101e7efda6cb8031d4056744d532a1.png) 表示整数 a 除以整数 b 所得的余数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "小男孩站在平面上的某个单元格中，他想知道自己是否能够无限远地走离起点。从单元格 (x，y) 出发，他可以前往以下单元格之一：(x，y - 1)、(x，y + 1)、(x - 1，y) 和 (x + 1，y)，前提是要前往的单元格不是墙。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个以空格分隔的整数 n 和 m（1 ≤ n，m ≤ 1500），分别表示男孩用来周期性铺满平面的迷宫的高度和宽度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n 行中，每行包含 m 个字符，表示迷宫的描述。每个字符要么是表示墙的 \"#\"，要么是表示可通行单元格的 \".\"，要么是表示小男孩起点的 \"S\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "起点是一个可以通行的单元格。保证输入中字符 “S” 恰好出现一次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果小男孩可以从起点无限远地走下去，则输出 “Yes”（不含引号）。否则，输出 “No”（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，小男孩可以一直向上走，因为存在一条竖直方向的“畅通路径”。他只需无限重复以下步骤：向上、向上、向左、向上、向上、向右、向上。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，竖直路径被阻断了。向左的路径也行不通，因为迷宫的下一个“副本”会困住小男孩。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 无限迷宫",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

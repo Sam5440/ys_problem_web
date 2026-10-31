@@ -1,0 +1,158 @@
+{
+  "code": "GYM106642C",
+  "letter": "C",
+  "title": "C. Mixed Bits",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106642/problem/C",
+  "difficulty": "*1500",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array $$$a$$$ of $$$n$$$ integers. Only the lowest $$$m$$$ bits of every integer are considered.",
+      "Let $$$a_l, a_{l+1}, \\ldots, a_r$$$ be a non-empty subarray. A bit position $$$b$$$ ($$$0 \\le b  \\lt  m$$$) is called mixed in this subarray if there is at least one element whose $$$b$$$-th bit is $$$0$$$, and at least one element whose $$$b$$$-th bit is $$$1$$$.",
+      "The value of a subarray is the number of its mixed bit positions.",
+      "Count the subarrays whose value is exactly $$$k$$$."
+    ],
+    "input": [
+      "The first line contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "The first line of each test case contains three integers $$$n$$$, $$$m$$$, and $$$k$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$, $$$1 \\le m \\le 20$$$, $$$0 \\le k \\le m$$$).",
+      "The second line contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ ($$$0 \\le a_i  \\lt  2^m$$$).",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print one integer — the number of subarrays whose value is exactly $$$k$$$."
+    ],
+    "note": [
+      "In the first test case, the array is $$$[0,1,3]$$$. In binary, its elements are $$$000$$$, $$$001$$$, and $$$011$$$.",
+      "The subarrays $$$[0,1]$$$ and $$$[1,3]$$$ have exactly one mixed bit. No other subarray does.",
+      "In the fourth test case, every subarray of length at least two has all three bits mixed."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3 3 1\n0 1 3\n4 2 0\n1 1 3 3\n3 3 2\n0 1 3\n4 3 3\n0 7 0 7\n5 4 1\n5 5 7 7 5",
+      "output": "2\n6\n1\n6\n8"
+    }
+  ],
+  "titleZh": {
+    "0": "C.混合位",
+    "caiyun": "C. 混合比特",
+    "youdao": "C.混合位",
+    "deepl": "C.混合位",
+    "iflyrec": "C.混合位",
+    "ai": "C. 混合位",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "youdao": "给定一个 $$$a$$$ 的 $$$n$$$ 整数数组。只考虑每个整数的最低 $$$m$$$ 位。",
+        "caiyun": "给定一个 $$$a$$$ 的 $$$n$$$ 整数数组。只考虑每个整数的最低 $$$m$$$ 位。",
+        "deepl": "给你一个由 $$$n$$$ 个整数组成的数组 $$$a$$$。只考虑每个整数的最低 $$$m$$$ 位。",
+        "iflyrec": "给出$$$n$$$个整数的数组$$$a$$$。仅考虑每个整数的最低$$$m$$$位。",
+        "ai": "给定一个包含 $$$n$$$ 个整数的数组 $$$a$$$。对于每个整数，仅考虑其最低的 $$$m$$$ 位。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "设$$$a_l, a_{l+1}, \\ldots, a_r$$$为非空子数组。如果至少有一个元素的$$$b$$$位为$$$0$$$，并且至少有一个元素的$$$b$$$位为$$$1$$$，则将位位$$$b$$$ ($$$0 \\le b  \\lt  m$$$）称为混合位。",
+        "caiyun": "假设 $$$a_l, a_{l+1}, \\ldots, a_r$$$ 是一个非空子数组。如果该子数组中至少有一个元素的 $$$b$$$ 第一位为 $$$0$$$，且至少有一个元素的 $$$b$$$ 第一位为 $$$1$$$，则该位位 $$$b$$$($$$0 \\le b  \\lt  m$$$) 被称为 mixed。",
+        "deepl": "设 $$$a_l, a_{l+1}, \\ldots, a_r$$$ 是一个非空子数组。如果在这个子数组中，至少有一个元素的 $$$b$$$ -th bit 是 $$$0$$$，至少有一个元素的 $$$b$$$ -th bit 是 $$$1$$$，那么这个元素的 $$$b$$$ ($$$0 \\le b  \\lt  m$$$）位称为混合位。",
+        "iflyrec": "设$$$a_l, a_{l+1}, \\ldots, a_r$$$为非空子数组。如果存在至少一个第$$$b$$$比特是$$$0$$$的元素，并且至少一个第$$$b$$$比特是$$$1$$$的元素，则在该子阵列中将比特位置$$$b$$$($$$0 \\le b  \\lt  m$$$）称为混合的。",
+        "ai": "设 $$$a_l, a_{l+1}, \\ldots, a_r$$$ 是一个非空子数组。如果至少存在一个元素的第 $$$b$$$ 位为 $$$0$$$，且至少存在一个元素的第 $$$b$$$ 位为 $$$1$$$，则称位位置 $$$b$$$($$$0 \\le b  \\lt  m$$$)在该子数组中是混合的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "子数组的值是其混合位位置的数量。",
+        "caiyun": "子数组的值是其混合位位的数量。",
+        "deepl": "子数组的值是其混合位位置的个数。",
+        "iflyrec": "子数组的值是其混合位位置的数量。",
+        "ai": "子数组的值等于其中混合位位置的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "计数恰好为$$$k$$$的子数组。",
+        "caiyun": "计算值恰好为 $$$k$$$ 的子数组。",
+        "deepl": "计算值正好是 $$$k$$$ 的子数组。",
+        "iflyrec": "对值正好为$$$k$$$的子数组进行计数。",
+        "ai": "统计值恰好为 $$$k$$$ 的子数组数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "youdao": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+        "caiyun": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+        "deepl": "第一行包含一个整数 $$$t$$$ ($$$1 \\le t \\le 10^4$$$）--测试用例数。",
+        "iflyrec": "第一行包含单个整数$$$t$$$($$$1 \\le t \\le 10^4$$$）—测试用例的数量。",
+        "ai": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "每个测试用例的第一行包含三个整数 $$$n$$$、$$$m$$$ 和 $$$k$$$($$$1 \\le n \\le 2 \\cdot 10^5$$$、$$$1 \\le m \\le 20$$$、$$$0 \\le k \\le m$$$)。",
+        "caiyun": "每个测试用例的第一行包含三个整数 $$$n$$$、$$$m$$$ 和 $$$k$$$($$$1 \\le n \\le 2 \\cdot 10^5$$$、$$$1 \\le m \\le 20$$$、$$$0 \\le k \\le m$$$)。",
+        "deepl": "每个测试用例的第一行包含三个整数 $$$n$$$、$$$m$$$ 和 $$$k$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$、$$$1 \\le m \\le 20$$$、$$$0 \\le k \\le m$$$）。",
+        "iflyrec": "每个测试用例的第一行包含三个整数$$$n$$$、$$$m$$$和$$$k$$$($$$1 \\le n \\le 2 \\cdot 10^5$$$、$$$1 \\le m \\le 20$$$、$$$0 \\le k \\le m$$$）。",
+        "ai": "每个测试用例的第一行包含三个整数 $$$n$$$、$$$m$$$ 和 $$$k$$$($$$1 \\le n \\le 2 \\cdot 10^5$$$、$$$1 \\le m \\le 20$$$、$$$0 \\le k \\le m$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "第二行包含$$$n$$$个整数$$$a_1, a_2, \\ldots, a_n$$$ ($$$0 \\le a_i  \\lt  2^m$$$）。",
+        "caiyun": "第二行包含 $$$n$$$ 整数 $$$a_1, a_2, \\ldots, a_n$$$($$$0 \\le a_i  \\lt  2^m$$$)。",
+        "deepl": "第二行包含 $$$n$$$ 整数 $$$a_1, a_2, \\ldots, a_n$$$ ($$$0 \\le a_i  \\lt  2^m$$$）。",
+        "iflyrec": "第二行包含$$$n$$$个整数$$$a_1, a_2, \\ldots, a_n$$$($$$0 \\le a_i  \\lt  2^m$$$）。",
+        "ai": "第二行包含 $$$n$$$ 个整数 $$$a_1, a_2, \\ldots, a_n$$$($$$0 \\le a_i  \\lt  2^m$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "保证所有测试用例的$$$n$$$之和不超过$$$2 \\cdot 10^5$$$。",
+        "caiyun": "保证所有测试用例的 $$$n$$$ 之和不超过 $$$2 \\cdot 10^5$$$。",
+        "deepl": "保证所有测试用例的 $$$n$$$ 之和不超过 $$$2 \\cdot 10^5$$$。",
+        "iflyrec": "保证所有测试用例的$$$n$$$总和不超过$$$2 \\cdot 10^5$$$。",
+        "ai": "保证所有测试用例中 $$$n$$$ 的总和不超过 $$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "youdao": "对于每个测试用例，打印一个整数——其值恰好为 $$$k$$$ 的子数组的数量。",
+        "caiyun": "对于每个测试用例，打印一个整数——其值恰好为 $$$k$$$ 的子数组的数量。",
+        "deepl": "对于每个测试用例，打印一个整数 - 值正好是 $$$k$$$ 的子数组的数目。",
+        "iflyrec": "对于每个测试用例，打印一个整数—其值正好为$$$k$$$的子数组的数量。",
+        "ai": "对于每个测试用例，输出一个整数——值恰好为 $$$k$$$ 的子数组数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "youdao": "在第一个测试用例中，数组是$$$[0,1,3]$$$。在二进制中，它的元素是$$$000$$$， $$$001$$$和$$$011$$$。",
+        "caiyun": "在第一个测试用例中，数组为 $$$[0,1,3]$$$。在二进制中，其元素为 $$$000$$$、$$$001$$$ 和 $$$011$$$。",
+        "deepl": "在第一个测试用例中，数组是 $$$[0,1,3]$$$。在二进制中，其元素是 $$$000$$$、$$$001$$$ 和 $$$011$$$。",
+        "iflyrec": "在第一个测试用例中，数组为$$$[0,1,3]$$$。在二进制中，其元素为$$$000$$$、$$$001$$$和$$$011$$$。",
+        "ai": "在第一个测试用例中，数组为 $$$[0,1,3]$$$。用二进制表示，其元素为 $$$000$$$、$$$001$$$ 和 $$$011$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "子数组$$$[0,1]$$$和$$$[1,3]$$$只有一个混合位。其他子数组没有。",
+        "caiyun": "子数组 $$$[0,1]$$$ 和 $$$[1,3]$$$ 只有一个混合比特，其他子数组都没有。",
+        "deepl": "子数组 $$$[0,1]$$$ 和 $$$[1,3]$$$ 恰好有一个混合位。其他子数组都没有。",
+        "iflyrec": "子阵列$$$[0,1]$$$和$$$[1,3]$$$恰好具有一个混合位。没有其他子阵列。",
+        "ai": "子数组 $$$[0,1]$$$ 和 $$$[1,3]$$$ 恰好有一位是混合的。其他子数组均不是如此。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "在第四个测试用例中，每个长度至少为两位的子数组都将所有三位混合。",
+        "caiyun": "在第四个测试用例中，每个长度至少为两位的子数组都将所有三位混合。",
+        "deepl": "在第四个测试案例中，每个长度至少为 2 的子数组都有三个混合比特。",
+        "iflyrec": "在第四个测试用例中，每个长度至少为2的子数组的所有三位都是混合的。",
+        "ai": "在第四个测试用例中，所有长度至少为两的子数组的三个比特位都是混合的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.116Z",
+  "translatedBy": [
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

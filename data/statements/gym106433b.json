@@ -1,0 +1,120 @@
+{
+  "code": "GYM106433B",
+  "letter": "B",
+  "title": "B. Twin Works",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106433/problem/B",
+  "difficulty": "*1400",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The Arriaga Museum is going to replace its old system of codes assigned to the works with a new, clearer, and more organized one.",
+      "Some pieces are twin works. They are pairs of pieces that share exactly the same code because they are practically identical. In the new system, this must be maintained: two works that had the same old code must retain the same new code, and works with different codes cannot share one.",
+      "The works are placed in a long hallway in a fixed order that cannot be modified. From time to time, Mr. Ernesto Lafuente, the catalog inspector, walks down the hallway reviewing the works in that same order. It is much more convenient for him if, as he progresses, the codes he reads tend to appear in increasing order.",
+      "The Board wants to assign the new codes in such a way that, while respecting exactly the same groups of twin works as the old system, the number of times a greater code appears before a lesser one in the walkthrough is minimized.",
+      "Help them by constructing a code assignment that minimizes that number. The new codes must:",
+      "Maintain exactly the same groups of twin works as the old codes.",
+      "Minimize the number of pairs of positions i<j$$$i  \\lt  j$$$ where the code at position i$$$i$$$ is greater than the code at position j$$$j$$$, known as an inversion.",
+      "If there are multiple optimal solutions, any of them will be valid."
+    ],
+    "input": [
+      "The first line contains an integer T$$$T$$$, the number of cases to process.",
+      "The first line of each case contains n$$$n$$$, the number of works placed in the hallway.",
+      "The second line contains n$$$n$$$ positive integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$, where ai$$$a_i$$$ is the old code of the work located at position i$$$i$$$ in the hallway. Each value appears at most twice."
+    ],
+    "output": [
+      "For each case, you must print a line with n$$$n$$$ positive integers, b1,b2,…,bn$$$b_1, b_2, \\ldots, b_n$$$, representing the new codes assigned to the works to minimize the number of inversions, in the same order as in the hallway. If there are multiple optimal assignments, you can print any of them."
+    ],
+    "note": [
+      "1≤T≤105$$$1 \\le T \\le 10^5$$$",
+      "1≤n≤105$$$1 \\le n \\le 10^5$$$",
+      "The sum of n$$$n$$$ across all cases will be at most 105$$$10^5$$$.",
+      "1≤ai,bi≤n$$$1 \\le a_i, b_i \\le n$$$"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3\n3 2 1\n4\n2 1 1 2",
+      "output": "1 2 3 \n1 2 2 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Arriaga 博物馆准备将其为作品分配代码的旧系统替换为一个更清晰、更有条理的新系统。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有些作品是孪生作品。它们是成对的作品，因为实际上完全相同，所以共享完全相同的编号。在新系统中，这一点必须保持不变：旧编号相同的两个作品必须保留相同的新编号，而编号不同的作品不能共享同一个编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这些作品按照固定顺序摆放在一条长走廊中，顺序不能更改。不时地，目录检查员 Ernesto Lafuente 先生会沿着走廊按照相同的顺序检查这些作品。如果随着他的检查过程，读到的编号大致呈递增顺序，对他来说会方便得多。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "委员会希望以这样的方式分配新编号：在完全保持旧系统中孪生作品分组方式不变的前提下，使检查过程中较大的编号出现在较小编号之前的次数最少。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请通过构造一种能使该次数最少的编号分配方案来帮助他们。新编号必须：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "完全保持与旧编号相同的孪生作品分组方式。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最小化满足 i<j$$$i  \\lt  j$$$ 的位置对数量，其中位置 i$$$i$$$ 的编号大于位置 j$$$j$$$ 的编号；这种位置对称为逆序对。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在多个最优解，任意一个都将被视为有效。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$，表示需要处理的测试用例数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含 n$$$n$$$，表示走廊中放置的作品数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个正整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$，其中 ai$$$a_i$$$ 是走廊中位置 i$$$i$$$ 上作品的旧编号。每个值最多出现两次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，你需要输出一行，其中包含 n$$$n$$$ 个正整数 b1,b2,…,bn$$$b_1, b_2, \\ldots, b_n$$$，表示为这些作品分配的新编号，以最小化逆序对的数量，且顺序与它们在走廊中的顺序相同。如果存在多个最优分配，可以输出任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "1≤T≤105$$$1 \\le T \\le 10^5$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤n≤105$$$1 \\le n \\le 10^5$$$",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "所有测试用例的 n$$$n$$$ 之和至多为 105$$$10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "1≤ai,bi≤n$$$1 \\le a_i, b_i \\le n$$$",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 孪生作品",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

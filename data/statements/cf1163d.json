@@ -1,0 +1,97 @@
+{
+  "code": "CF1163D",
+  "letter": "D",
+  "title": "D. Mysterious Code",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1163/D",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "During a normal walk in the forest, Katie has stumbled upon a mysterious code! However, the mysterious code had some characters unreadable. She has written down this code as a string c$$$c$$$ consisting of lowercase English characters and asterisks (\"*\"), where each of the asterisks denotes an unreadable character. Excited with her discovery, Katie has decided to recover the unreadable characters by replacing each asterisk with arbitrary lowercase English letter (different asterisks might be replaced with different letters).",
+      "Katie has a favorite string s$$$s$$$ and a not-so-favorite string t$$$t$$$ and she would love to recover the mysterious code so that it has as many occurrences of s$$$s$$$ as possible and as little occurrences of t$$$t$$$ as possible. Formally, let's denote f(x,y)$$$f(x, y)$$$ as the number of occurrences of y$$$y$$$ in x$$$x$$$ (for example, f(aababa,ab)=2$$$f(aababa, ab) = 2$$$). Katie wants to recover the code c′$$$c'$$$ conforming to the original c$$$c$$$, such that f(c′,s)−f(c′,t)$$$f(c', s) - f(c', t)$$$ is largest possible. However, Katie is not very good at recovering codes in general, so she would like you to help her out."
+    ],
+    "input": [
+      "The first line contains string c$$$c$$$ (1≤|c|≤1000$$$1 \\leq |c| \\leq 1000$$$) — the mysterious code . It is guaranteed that c$$$c$$$ consists of lowercase English characters and asterisks \"*\" only.",
+      "The second and third line contain strings s$$$s$$$ and t$$$t$$$ respectively (1≤|s|,|t|≤50$$$1 \\leq |s|, |t| \\leq 50$$$, s≠t$$$s \\neq t$$$). It is guaranteed that s$$$s$$$ and t$$$t$$$ consist of lowercase English characters only."
+    ],
+    "output": [
+      "Print a single integer — the largest possible value of f(c′,s)−f(c′,t)$$$f(c', s) - f(c', t)$$$ of the recovered code."
+    ],
+    "note": [
+      "In the first example, for c′$$$c'$$$ equal to \"katie\" f(c′,s)=1$$$f(c', s) = 1$$$ and f(c′,t)=0$$$f(c', t) = 0$$$, which makes f(c′,s)−f(c′,t)=1$$$f(c', s) - f(c', t) = 1$$$ which is the largest possible.",
+      "In the second example, the only c′$$$c'$$$ conforming to the given c$$$c$$$ is \"caat\". The corresponding f(c′,s)−f(c′,t)=1−2=−1$$$f(c', s) - f(c', t) = 1 - 2 = -1$$$.",
+      "In the third example, there are multiple ways to recover the code such that f(c′,s)−f(c′,t)$$$f(c', s) - f(c', t)$$$ is largest possible, for example \"aaa\", \"aac\", or even \"zaz\". The value of f(c′,s)−f(c′,t)=0$$$f(c', s) - f(c', t) = 0$$$ for all of these recovered codes.",
+      "In the fourth example, the optimal recovered code c′$$$c'$$$ would be \"ccc\". The corresponding f(c′,s)−f(c′,t)=2$$$f(c', s) - f(c', t) = 2$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "*****\nkatie\nshiro",
+      "output": "1"
+    },
+    {
+      "input": "caat\ncaat\na",
+      "output": "-1"
+    },
+    {
+      "input": "*a*\nbba\nb",
+      "output": "0"
+    },
+    {
+      "input": "***\ncc\nz",
+      "output": "2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在森林中进行一次平常的散步时，Katie 偶然发现了一段神秘代码！然而，这段神秘代码中有一些字符无法辨认。她将这段代码记作字符串 c$$$c$$$，其中包含小写英文字母和星号(“*”)，每个星号表示一个无法辨认的字符。Katie 对自己的发现感到兴奋，于是决定通过将每个星号替换为任意小写英文字母来还原这些无法辨认的字符(不同的星号可以替换为不同的字母)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Katie 有一个最喜欢的字符串 s$$$s$$$，以及一个不太喜欢的字符串 t$$$t$$$。她希望还原这段神秘代码，使其中 s$$$s$$$ 的出现次数尽可能多，同时 t$$$t$$$ 的出现次数尽可能少。形式化地，定义 f(x,y)$$$f(x, y)$$$ 表示 y$$$y$$$ 在 x$$$x$$$ 中的出现次数(例如，f(aababa,ab)=2$$$f(aababa, ab) = 2$$$)。Katie 希望还原出一个符合原始字符串 c$$$c$$$ 的代码 c′$$$c'$$$，使得 f(c′,s)−f(c′,t)$$$f(c', s) - f(c', t)$$$ 尽可能大。然而，Katie 不太擅长还原代码，因此她希望你能帮助她。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含字符串 c$$$c$$$(1≤|c|≤1000$$$1 \\leq |c| \\leq 1000$$$)，表示神秘代码。保证 c$$$c$$$ 只包含小写英文字母和星号“*”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行和第三行分别包含字符串 s$$$s$$$ 和 t$$$t$$$(1≤|s|,|t|≤50$$$1 \\leq |s|, |t| \\leq 50$$$，s≠t$$$s \\neq t$$$)。保证 s$$$s$$$ 和 t$$$t$$$ 只包含小写英文字母。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，即还原后的代码中 f(c′,s)−f(c′,t)$$$f(c', s) - f(c', t)$$$ 的最大可能值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，对于 c′$$$c'$$$ 等于 \"katie\" 的情况，f(c′,s)=1$$$f(c', s) = 1$$$ 且 f(c′,t)=0$$$f(c', t) = 0$$$，因此 f(c′,s)−f(c′,t)=1$$$f(c', s) - f(c', t) = 1$$$，这是可能的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，唯一符合给定 c$$$c$$$ 的 c′$$$c'$$$ 是 \"caat\"。相应的 f(c′,s)−f(c′,t)=1−2=−1$$$f(c', s) - f(c', t) = 1 - 2 = -1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，有多种方式可以还原代码，使得 f(c′,s)−f(c′,t)$$$f(c', s) - f(c', t)$$$ 达到可能的最大值，例如 \"aaa\"、\"aac\"，甚至是 \"zaz\"。对于所有这些还原出的代码，f(c′,s)−f(c′,t)=0$$$f(c', s) - f(c', t) = 0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四个样例中，还原出的最优代码 c′$$$c'$$$ 应为 \"ccc\"。相应的 f(c′,s)−f(c′,t)=2$$$f(c', s) - f(c', t) = 2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 神秘代码",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

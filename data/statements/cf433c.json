@@ -1,0 +1,94 @@
+{
+  "code": "CF433C",
+  "letter": "C",
+  "title": "C. Ryouko's Memory Note",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/433/C",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Ryouko is an extremely forgetful girl, she could even forget something that has just happened. So in order to remember, she takes a notebook with her, called Ryouko's Memory Note. She writes what she sees and what she hears on the notebook, and the notebook became her memory.",
+      "Though Ryouko is forgetful, she is also born with superb analyzing abilities. However, analyzing depends greatly on gathered information, in other words, memory. So she has to shuffle through her notebook whenever she needs to analyze, which is tough work.",
+      "Ryouko's notebook consists of n pages, numbered from 1 to n. To make life (and this problem) easier, we consider that to turn from page x to page y, |x - y| pages should be turned. During analyzing, Ryouko needs m pieces of information, the i-th piece of information is on page ai. Information must be read from the notebook in order, so the total number of pages that Ryouko needs to turn is ![](https://espresso.codeforces.com/b19a52472036d57233f58883f6dcf82d27f98e8e.png).",
+      "Ryouko wants to decrease the number of pages that need to be turned. In order to achieve this, she can merge two pages of her notebook. If Ryouko merges page x to page y, she would copy all the information on page x to y (1 ≤ x, y ≤ n), and consequently, all elements in sequence a that was x would become y. Note that x can be equal to y, in which case no changes take place.",
+      "Please tell Ryouko the minimum number of pages that she needs to turn. Note she can apply the described operation at most once before the reading. Note that the answer can exceed 32-bit integers."
+    ],
+    "input": [
+      "The first line of input contains two integers n and m (1 ≤ n, m ≤ 105).",
+      "The next line contains m integers separated by spaces: a1, a2, ..., am (1 ≤ ai ≤ n)."
+    ],
+    "output": [
+      "Print a single integer — the minimum number of pages Ryouko needs to turn."
+    ],
+    "note": [
+      "In the first sample, the optimal solution is to merge page 4 to 3, after merging sequence a becomes {1, 2, 3, 3, 3, 2}, so the number of pages Ryouko needs to turn is |1 - 2| + |2 - 3| + |3 - 3| + |3 - 3| + |3 - 2| = 3.",
+      "In the second sample, optimal solution is achieved by merging page 9 to 4."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 6\n1 2 3 4 3 2",
+      "output": "3"
+    },
+    {
+      "input": "10 5\n9 4 3 8 8",
+      "output": "6"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Ryouko 是一个极其健忘的女孩，她甚至会忘记刚刚发生的事情。为了记住这些事情，她随身携带着一本笔记本，称为 Ryouko 的记忆笔记。她把看到的和听到的内容写在笔记本上，而这本笔记本便成了她的记忆。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "虽然 Ryouko 很健忘，但她天生拥有出色的分析能力。然而，分析很大程度上依赖于收集到的信息，换句话说，就是记忆。因此，每当她需要进行分析时，都必须翻阅笔记本，这是一项艰苦的工作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Ryouko 的笔记本由 n 页组成，页码从 1 到 n。为了让生活(以及这道题)更简单，我们认为，从第 x 页翻到第 y 页需要翻过 |x - y| 页。在分析过程中，Ryouko 需要 m 条信息，其中第 i 条信息位于第 ai 页。必须按照顺序阅读这些信息，因此 Ryouko 需要翻过的页数总和为 ![](https://espresso.codeforces.com/b19a52472036d57233f58883f6dcf82d27f98e8e.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Ryouko 想要减少需要翻动的页数。为此，她可以合并笔记本中的两页。如果 Ryouko 将页面 x 合并到页面 y，她会把页面 x 上的所有信息复制到页面 y（1 ≤ x，y ≤ n），因此，序列 a 中所有等于 x 的元素都会变为 y。注意，x 可以等于 y，此时不会发生任何变化。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请告诉 Ryouko 她至少需要翻动多少页。注意，在开始阅读前，她最多可以执行一次上述操作。注意，答案可能超过 32 位整数的范围。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，最优方案是将页面 4 合并到页面 3。合并后，序列 a 变为 {1，2，3，3，3，2}，因此 Ryouko 需要翻动的页数为 |1 - 2| + |2 - 3| + |3 - 3| + |3 - 3| + |3 - 2| = 3。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，通过将页面 9 合并到页面 4，可以得到最优解。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 m（1 ≤ n，m ≤ 10^5）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 m 个用空格分隔的整数：a1，a2，...，am（1 ≤ ai ≤ n）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，即 Ryouko 至少需要翻动的页数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Ryouko 的记忆笔记",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

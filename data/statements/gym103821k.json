@@ -1,0 +1,85 @@
+{
+  "code": "GYM103821K",
+  "letter": "K",
+  "title": "K. Movie Planning",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103821/problem/K",
+  "difficulty": "*1500",
+  "timeLimit": "1.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are planning to visit the movies with your friends after the end of the exams. The movie theater has N$$$N$$$ movies, you know the start and end moments of each movie. The theater contains many halls, so there could be more than one movie playing at the same time, the movie theater will be open for M$$$M$$$ moments.",
+      "If you reach the movies at the beginning of moment L$$$L$$$ and you stay until the end of moment R$$$R$$$, then you can watch any movie that starts at moment L$$$L$$$ or later and ends at moment R$$$R$$$ or earlier. You are planning to watch exactly 2$$$2$$$ complete movies, so you can't start watching the second movie until you finish watching the first one.",
+      "Since you are sharp-minded, you thought of all possible scenarios of arriving and leaving the movies, in other words, for every possible arriving time Li$$$L_i$$$ from 1$$$1$$$ to M$$$M$$$, and for every possible leaving time Rj$$$R_j$$$ from Li+1$$$L_i + 1$$$ to M$$$M$$$. For each scenario you need to count how many pairs of movies are possible to watch during this period. You have to print the sum of pairs for all possible scenarios. Note that if some pair of movies is present in more than one scenario then you should count them independently in each scenario."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases T$$$T$$$ (1≤T≤2×105$$$1 \\le T \\le 2\\times{10^5}$$$). Description of the test cases follows.",
+      "The first line of each test case contains two integers N$$$N$$$ (1≤N≤2×105$$$1\\le{N}\\le{2}\\times{10}^5$$$) and M$$$M$$$ (1≤M≤2×105$$$1\\le{M}\\le{2}\\times{10}^5$$$).",
+      "Each of the next N$$$N$$$ lines of each test case contains Li$$$L_i$$$ and Ri$$$R_i$$$(1≤Li≤Ri≤M$$$1\\le{L_i}\\le{R_i}\\le{M}$$$), the start and the end moments of the ith$$$i^{th}$$$ movie for each i$$$i$$$ from 1$$$1$$$ to N$$$N$$$.",
+      "It is guaranteed$$$\\bf{guaranteed}$$$ that the sum of N$$$N$$$ and sum of M$$$M$$$ over all test cases does not exceed 2×105$$$2 \\times 10^5$$$."
+    ],
+    "output": [
+      "For each test case, output a single integer denoting the answer for the test case, since the answer could be very large, please print the remainder of dividing it by 1000000007$$$1\\,000\\,000\\,007$$$."
+    ],
+    "note": [
+      "In the first test case, all the movies are overlapping, in other words you can't pick two movies to watch entirely in any possible period of time, so the answer is 0$$$0$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3 6\n1 3\n2 5\n3 6\n4 12\n1 6\n2 8\n9 10\n11 12",
+      "output": "0\n21"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你打算在考试结束后和朋友们一起去看电影。电影院有 N$$$N$$$ 部电影，你知道每部电影的开始和结束时刻。电影院有许多影厅，因此可能有不止一部电影同时播放；电影院将开放 M$$$M$$$ 个时刻。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你在时刻 L$$$L$$$ 开始时到达电影院，并一直待到时刻 R$$$R$$$ 结束，那么你可以观看任意在时刻 L$$$L$$$ 或之后开始、且在时刻 R$$$R$$$ 或之前结束的电影。你计划完整观看恰好 2$$$2$$$ 部电影，因此在看完第一部电影之前不能开始观看第二部电影。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于你思维敏捷，你考虑了所有可能的到达和离开电影院的方案；换句话说，对于每个从 1$$$1$$$ 到 M$$$M$$$ 的可能到达时刻 Li$$$L_i$$$，以及每个从 Li+1$$$L_i + 1$$$ 到 M$$$M$$$ 的可能离开时刻 Rj$$$R_j$$$，都要进行考虑。对于每种方案，你需要统计在这段时间内可以观看的电影对数量。你需要输出所有可能方案的电影对数量之和。注意，如果某个电影对出现在多个方案中，那么应在每个方案中分别计数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例数 T$$$T$$$(1≤T≤2×105$$$1 \\le T \\le 2\\times{10^5}$$$)。下面给出各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 N$$$N$$$(1≤N≤2×105$$$1\\le{N}\\le{2}\\times{10}^5$$$)和 M$$$M$$$(1≤M≤2×105$$$1\\le{M}\\le{2}\\times{10}^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例接下来的 N$$$N$$$ 行中，每行包含 Li$$$L_i$$$ 和 Ri$$$R_i$$$(1≤Li≤Ri≤M$$$1\\le{L_i}\\le{R_i}\\le{M}$$$)，表示第 i$$$i^{th}$$$ 部电影的开始和结束时刻，其中 i$$$i$$$ 从 1$$$1$$$ 到 N$$$N$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证$$$\\bf{guaranteed}$$$所有测试用例的 N$$$N$$$ 之和与 M$$$M$$$ 之和均不超过 2×105$$$2 \\times 10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数表示该测试用例的答案，由于答案可能非常大，请输出它除以 1000000007$$$1\\,000\\,000\\,007$$$ 所得的余数。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，所有电影都相互重叠，换句话说，你无法在任何时间段内完整观看两部电影，因此答案为 0$$$0$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "K. 电影规划",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

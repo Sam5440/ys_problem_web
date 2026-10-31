@@ -1,0 +1,90 @@
+{
+  "code": "GYM105813D",
+  "letter": "D",
+  "title": "D. Distributive Property",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105813/problem/D",
+  "difficulty": "*1800",
+  "timeLimit": "5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a set S$$$S$$$ of n$$$n$$$ distinct integers. You will also receive q$$$q$$$ queries, each of one of the following two types:",
+      "Query Type 1 (1x)$$$(1\\; x)$$$:   If x$$$x$$$ is currently in the set S$$$S$$$, remove it.",
+      "Otherwise, add x$$$x$$$ to the set.",
+      "Query Type 2 (2t)$$$(2\\; t)$$$:   Print the cumulative bitwise XOR of (x+t)$$$(x + t)$$$ over all x∈S$$$x \\in S$$$. Formally, print ⨁x∈S(x+t)$$$\\displaystyle\\bigoplus_{x \\in S} (x + t)$$$."
+    ],
+    "input": [
+      "The first line of the input contains two integers n$$$n$$$ and q$$$q$$$ (1≤n,q≤3⋅105$$$1 \\leq n,q \\leq 3 \\cdot 10^5$$$) — the initial size of the set and the number of queries, respectively.",
+      "The next line of the input will contain n$$$n$$$ distinct integers x1,x2⋯xn$$$x_1, x_2 \\cdots x_n$$$ (0≤xi<220$$$0 \\le x_i  \\lt  2^{20}$$$)  — the initial set.",
+      "The next q$$$q$$$ lines of the input will describe the queries. Each of them will contain a query of the form 1x$$$1\\; x$$$ or 2t$$$2\\; t$$$ (0≤x,t<220$$$0 \\le x, t  \\lt  2^{20}$$$), representing the query in the format described above.",
+      "It is guaranteed that there is at least one query of type 2$$$2$$$."
+    ],
+    "output": [
+      "For each query of type 2$$$2$$$, print the cumulative bitwise XOR of (x+t)$$$(x+t)$$$ over all x∈S$$$x \\in S$$$."
+    ],
+    "note": [
+      "In the sample case, at the time of the first type 2$$$2$$$ query, we have S={1,6,15}$$$S = \\{1, 6, 15\\}$$$. Since t=0$$$t = 0$$$ for this query, we print the value (1+0)⊕(6+0)⊕(15+0)=1⊕6⊕15=8$$(1 + 0) \\oplus (6 + 0) \\oplus (15 + 0) = 1 \\oplus 6 \\oplus 15 = 8$$ At the time of the second type 2$$$2$$$ query, we have S={1,5,10,15}$$$S = \\{1, 5, 10, 15\\}$$$. Since t=3$$$t = 3$$$ for this query, we print the value (1+3)⊕(5+3)⊕(10+3)⊕(15+3)=4⊕8⊕13⊕18=19$$(1 + 3) \\oplus (5 + 3) \\oplus (10 + 3) \\oplus (15 + 3) = 4 \\oplus 8 \\oplus 13 \\oplus 18 = 19$$"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 10\n1 6 15\n2 0\n1 5\n1 6\n1 10\n2 3\n2 12\n1 15\n2 7\n1 0\n2 7",
+      "output": "8\n19\n17\n21\n18"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个包含 n$$$n$$$ 个互不相同整数的集合 S$$$S$$$。此外，你还会收到 q$$$q$$$ 个查询，每个查询属于以下两种类型之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "查询类型 1 (1x)$$$(1\\; x)$$$：如果 x$$$x$$$ 当前在集合 S$$$S$$$ 中，则将其删除。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，将 x$$$x$$$ 加入集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "查询类型 2 (2t)$$$(2\\; t)$$$：输出对所有 x∈S$$$x \\in S$$$ 的 (x+t)$$$(x + t)$$$ 进行按位异或的结果。形式化地，输出 ⨁x∈S(x+t)$$$\\displaystyle\\bigoplus_{x \\in S} (x + t)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n$$$n$$$ 和 q$$$q$$$(1≤n,q≤3⋅105$$$1 \\leq n,q \\leq 3 \\cdot 10^5$$$)——分别表示集合的初始大小和查询次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的下一行包含 n$$$n$$$ 个互不相同的整数 x1,x2⋯xn$$$x_1, x_2 \\cdots x_n$$$(0≤xi<220$$$0 \\le x_i  \\lt  2^{20}$$$)——表示初始集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行输入将描述这些查询。每行包含形如 1x$$$1\\; x$$$ 或 2t$$$2\\; t$$$ 的查询(0≤x,t<220$$$0 \\le x, t  \\lt  2^{20}$$$)，表示按照上述格式的查询。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证至少有一个类型为 2$$$2$$$ 的查询。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个类型 2$$$2$$$ 查询，输出所有 x∈S$$$x \\in S$$$ 的 (x+t)$$$(x+t)$$$ 的累计按位异或结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在样例中，在第一次类型 2$$$2$$$ 查询时，我们有 S={1,6,15}$$$S = \\{1, 6, 15\\}$$$。由于这次查询中 t=0$$$t = 0$$$，因此输出 (1+0)⊕(6+0)⊕(15+0)=1⊕6⊕15=8$$(1 + 0) \\oplus (6 + 0) \\oplus (15 + 0) = 1 \\oplus 6 \\oplus 15 = 8$$。在第二次类型 2$$$2$$$ 查询时，我们有 S={1,5,10,15}$$$S = \\{1, 5, 10, 15\\}$$$。由于这次查询中 t=3$$$t = 3$$$，因此输出 (1+3)⊕(5+3)⊕(10+3)⊕(15+3)=4⊕8⊕13⊕18=19$$(1 + 3) \\oplus (5 + 3) \\oplus (10 + 3) \\oplus (15 + 3) = 4 \\oplus 8 \\oplus 13 \\oplus 18 = 19$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 分配律",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

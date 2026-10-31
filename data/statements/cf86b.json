@@ -1,0 +1,102 @@
+{
+  "code": "CF86B",
+  "letter": "B",
+  "title": "B. Tetris revisited",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/86/B",
+  "difficulty": "2200",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Physicist Woll likes to play one relaxing game in between his search of the theory of everything.",
+      "Game interface consists of a rectangular n × m playing field and a dashboard. Initially some cells of the playing field are filled while others are empty. Dashboard contains images of all various connected (we mean connectivity by side) figures of 2, 3, 4 and 5 cells, with all their rotations and reflections. Player can copy any figure from the dashboard and place it anywhere at the still empty cells of the playing field. Of course any figure can be used as many times as needed.",
+      "Woll's aim is to fill the whole field in such a way that there are no empty cells left, and also... just have some fun.",
+      "Every initially empty cell should be filled with exactly one cell of some figure. Every figure should be entirely inside the board.",
+      "![](https://espresso.codeforces.com/13a01b838f7f8abcc4a80e1dd1c019ac72087e2e.png)",
+      "In the picture black cells stand for initially filled cells of the field, and one-colour regions represent the figures."
+    ],
+    "input": [
+      "First line contains integers n and m (1 ≤ n, m ≤ 1000) — the height and the width of the field correspondingly. Next n lines contain m symbols each. They represent the field in a natural way: j-th character of the i-th line is \"#\" if the corresponding cell is filled, and \".\" if it is empty."
+    ],
+    "output": [
+      "If there is no chance to win the game output the only number \"-1\" (without the quotes). Otherwise output any filling of the field by the figures in the following format: each figure should be represented by some digit and figures that touch each other by side should be represented by distinct digits. Every initially filled cell should be represented by \"#\"."
+    ],
+    "note": [
+      "In the third sample, there is no way to fill a cell with no empty neighbours.",
+      "In the forth sample, Woll does not have to fill anything, so we should output the field from the input."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 3\n...\n#.#",
+      "output": "000\n#0#"
+    },
+    {
+      "input": "3 3\n.#.\n...\n..#",
+      "output": "5#1\n511\n55#"
+    },
+    {
+      "input": "3 3\n...\n.##\n.#.",
+      "output": "-1"
+    },
+    {
+      "input": "1 2\n##",
+      "output": "##"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "在第三个样例中，无法填充一个没有空邻居的单元格。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四个样例中，Woll 不需要填入任何内容，因此我们应当输出输入中的场地。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "物理学家 Woll 喜欢在探索万物理论的间隙玩一款轻松的游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "游戏界面由一个矩形 n × m 的游戏场地和一个控制面板组成。初始时，游戏场地中的一些单元格已被填充，其余单元格为空。控制面板中包含由 2、3、4 和 5 个单元格组成的所有不同连通图形（这里的连通指通过边相连），以及它们经过旋转和翻转后的所有形态。玩家可以从控制面板中复制任意图形，并将其放置在游戏场地中仍为空的单元格上的任意位置。当然，每个图形都可以根据需要使用任意多次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Woll 的目标是填满整个场地，使其中不再有空单元格，并且……只是享受一些乐趣。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个初始为空的单元格都应恰好被某个图形的一个单元格填充。每个图形都应完全位于棋盘内。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/13a01b838f7f8abcc4a80e1dd1c019ac72087e2e.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "图中，黑色单元格表示场地中初始已填充的单元格，而同色区域表示图形。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 m（1 ≤ n，m ≤ 1000），分别表示场地的高度和宽度。接下来的 n 行每行包含 m 个字符。它们以自然方式表示场地：第 i 行的第 j 个字符如果为“#”，则对应单元格已填充；如果为“.”，则为空。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果没有获胜的可能，输出唯一的数字“-1”（不含引号）。否则按照以下格式输出一种用图形填充场地的方案：每个图形应由某个数字表示，并且通过边相邻的图形应由不同的数字表示。每个初始已填充的单元格都应表示为“#”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 再探俄罗斯方块",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

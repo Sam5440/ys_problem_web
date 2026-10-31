@@ -1,0 +1,85 @@
+{
+  "code": "GYM106607F",
+  "letter": "F",
+  "title": "F. Ebb and Flow",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106607/problem/F",
+  "difficulty": "*1700",
+  "timeLimit": "2 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given two non-negative integers n$$$n$$$ and m$$$m$$$.",
+      "An array of non-negative integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ is good if for every index i$$$i$$$ (1≤i≤n$$$1 \\le i \\le n$$$), the bitwise AND of the first i$$$i$$$ elements equals the bitwise OR of the last n−i+1$$$n - i + 1$$$ elements. Formally, the array is good if a1&a2&⋯&ai=ai|ai+1|⋯|an\n$$a_1 \\mathbin{\\&} a_2 \\mathbin{\\&} \\cdots \\mathbin{\\&} a_i = a_i \\mathbin{|} a_{i+1} \\mathbin{|} \\cdots \\mathbin{|} a_n$$ holds for every 1≤i≤n$$$1 \\le i \\le n$$$.",
+      "Count the number of good arrays a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ such that 0≤ai≤m$$$0 \\le a_i \\le m$$$ holds for every index i$$$i$$$. Since the answer can be large, output it modulo 998244353$$$998244353$$$."
+    ],
+    "input": [
+      "The first line contains a single integer t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "The only line of each test case contains two integers n$$$n$$$ and m$$$m$$$ (1≤n≤1018$$$1 \\le n \\le 10^{18}$$$, 0≤m≤1018$$$0 \\le m \\le 10^{18}$$$)."
+    ],
+    "output": [
+      "For each test case, output a single integer — the number of good arrays modulo 998244353$$$998244353$$$."
+    ],
+    "note": [
+      "In the first test case, the good arrays are [0,0],[1,0],[1,1],[2,0],[2,2]$$$[0, 0], [1, 0], [1, 1], [2, 0], [2, 2]$$$. For example, [2,0]$$$[2, 0]$$$ is good because",
+      "for i=1$$$i = 1$$$, a1=2$$$a_1 = 2$$$ equals a1|a2=2$$$a_1 \\mathbin{|} a_2 = 2$$$,",
+      "for i=2$$$i = 2$$$, a1&a2=0$$$a_1 \\mathbin{\\&} a_2 = 0$$$ equals a2=0$$$a_2 = 0$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2 2\n3 4\n5 2",
+      "output": "5\n19\n11"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定两个非负整数 n$$$n$$$ 和 m$$$m$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由非负整数组成的数组 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ 是好的，当对于每个下标 i$$$i$$$(1≤i≤n$$$1 \\le i \\le n$$$)时，前 i$$$i$$$ 个元素的按位与等于后 n−i+1$$$n - i + 1$$$ 个元素的按位或。形式化地说，对于每个 1≤i≤n$$$1 \\le i \\le n$$$，若满足 a1&a2&⋯&ai=ai|ai+1|⋯|an$$a_1 \\mathbin{\\&} a_2 \\mathbin{\\&} \\cdots \\mathbin{\\&} a_i = a_i \\mathbin{|} a_{i+1} \\mathbin{|} \\cdots \\mathbin{|} a_n$$，则该数组是好的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "统计满足对于每个下标 i$$$i$$$ 都有 0≤ai≤m$$$0 \\le a_i \\le m$$$ 的好的数组 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ 的数量。由于答案可能很大，请输出答案对 998244353$$$998244353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例仅一行，包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n≤1018$$$1 \\le n \\le 10^{18}$$$，0≤m≤1018$$$0 \\le m \\le 10^{18}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数——好数组的数量对 998244353$$$998244353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，好数组为 [0,0]、[1,0]、[1,1]、[2,0]、[2,2]$$$[0, 0], [1, 0], [1, 1], [2, 0], [2, 2]$$$。例如，[2,0]$$$[2, 0]$$$ 是好数组，因为",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当 i=1$$$i = 1$$$ 时，a1=2$$$a_1 = 2$$$ 等于 a1|a2=2$$$a_1 \\mathbin{|} a_2 = 2$$$，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当 i=2$$$i = 2$$$ 时，a1&a2=0$$$a_1 \\mathbin{\\&} a_2 = 0$$$ 等于 a2=0$$$a_2 = 0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 潮起潮落",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "code": "GYM104012G",
+  "letter": "G",
+  "title": "G. Greatest Common Divisor",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104012/problem/G",
+  "difficulty": "*2100",
+  "timeLimit": "5 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Gennady is an aspiring programmer. He is currently learning the Euclidean algorithm for computing the greatest common divisor of two positive integers.",
+      "Unfortunately, Gennady sometimes confuses the integer division operator (denoted by div) with the remainder operator (denoted by mod). As an example, $$$37$$$ div $$$10 = 3$$$ and $$$37$$$ mod $$$10 = 7$$$.",
+      "Here's Gennady's latest implementation of the Euclidean algorithm:",
+      "Input: two positive integers $$$x$$$ and $$$y$$$.",
+      "While $$$y  \\gt  0$$$:      Set $$$x = x$$$ div $$$y$$$, then swap $$$x$$$ and $$$y$$$.",
+      "Output: $$$x$$$.",
+      "As you can see, if Gennady used the mod operator instead of the div operator, his implementation would be correct: the algorithm above would successfully find the greatest common divisor of $$$x$$$ and $$$y$$$. However, it turns out that even with this nasty bug the algorithm sometimes works correctly!",
+      "You are given an integer $$$n$$$. Gennady is interested in finding all input pairs $$$(x, y)$$$ such that $$$1 \\le x, y \\le n$$$, the algorithm finishes, and produces the correct output. Let $$$(x_1, y_1), (x_2, y_2), \\ldots, (x_k, y_k)$$$ be all such pairs in lexicographic order (for all $$$1 \\le i  \\lt  k$$$, either $$$x_i  \\lt  x_{i+1}$$$, or $$$x_i = x_{i+1}$$$ and $$$y_i  \\lt  y_{i+1}$$$).",
+      "You are also given $$$q$$$ queries. Query $$$i$$$ is a positive integer $$$p_i$$$, and you should print $$$x_{p_i}$$$ and $$$y_{p_i}$$$, or report that $$$p_i  \\gt  k$$$."
+    ],
+    "input": [
+      "The first line contains two integers $$$n$$$ and $$$q$$$ — the upper bound on the input values and the number of queries ($$$1 \\le n, q \\le 2 \\cdot 10^5$$$).",
+      "Each of the next $$$q$$$ lines contains a single integer $$$p_i$$$ ($$$1 \\le p_i \\le n^2$$$)."
+    ],
+    "output": [
+      "For each query, print two integers. These integers must either be $$$x_{p_i}$$$ and $$$y_{p_i}$$$, denoting the $$$p_i$$$-th input pair in lexicographic order such that the algorithm finishes and produces a correct output, or -1 -1 if there are less than $$$p_i$$$ such pairs."
+    ]
+  },
+  "examples": [
+    {
+      "input": "10 13\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13",
+      "output": "2 2\n3 3\n4 2\n4 4\n5 5\n6 6\n7 7\n8 8\n9 3\n9 9\n10 4\n10 10\n-1 -1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Gennady 是一名有志成为程序员的人。他目前正在学习用于求两个正整数最大公约数的欧几里得算法。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "不幸的是，Gennady 有时会把整数除法运算符(记作 div)和取余运算符(记作 mod)混淆。例如，$$$37$$$ div $$$10 = 3$$$ 和 $$$37$$$ mod $$$10 = 7$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这是 Gennady 最新实现的欧几里得算法：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入：两个正整数 $$$x$$$ 和 $$$y$$$ㄱ㄰。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当 $$$y  \\gt  0$$$ 时：将 $$$x = x$$$ 除以 $$$y$$$，然后交换 $$$x$$$ 和 $$$y$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出：$$$x$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "正如你所见，如果 Gennady 使用取模运算符而不是整除运算符，他的实现就会是正确的：上述算法能够成功求出 $$$x$$$ 和 $$$y$$$ 的最大公约数。然而，事实证明，即使存在这个讨厌的错误，该算法有时仍然能够正确运行！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个整数 $$$n$$$。Gennady 对找出所有满足 $$$1 \\le x, y \\le n$$$、算法能够结束并输出正确结果的输入对 $$$(x, y)$$$ 感兴趣。令 $$$(x_1, y_1), (x_2, y_2), \\ldots, (x_k, y_k)$$$ 表示按字典序排列的所有这样的输入对(对于所有 $$$1 \\le i  \\lt  k$$$，要么 $$$x_i  \\lt  x_{i+1}$$$，要么 $$$x_i = x_{i+1}$$$ 且 $$$y_i  \\lt  y_{i+1}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，你还会得到 $$$q$$$ 个询问。第 $$$i$$$ 个询问给出一个正整数 $$$p_i$$$，你需要输出 $$$x_{p_i}$$$ 和 $$$y_{p_i}$$$，或者报告 $$$p_i  \\gt  k$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 $$$n$$$ 和 $$$q$$$ —— 输入值的上界以及询问次数($$$1 \\le n, q \\le 2 \\cdot 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 $$$q$$$ 行中，每行包含一个整数 $$$p_i$$$($$$1 \\le p_i \\le n^2$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个询问，输出两个整数。这两个整数必须分别为 $$$x_{p_i}$$$ 和 $$$y_{p_i}$$$，表示按字典序排列的、使算法终止并产生正确输出的第 $$$p_i$$$ 个输入对；如果这样的输入对少于 $$$p_i$$$ 个，则输出 -1 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. 最大公约数",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

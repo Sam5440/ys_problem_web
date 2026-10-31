@@ -1,0 +1,125 @@
+{
+  "code": "CF1281B",
+  "letter": "B",
+  "title": "B. Azamon Web Services",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1281/B",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Your friend Jeff Zebos has been trying to run his new online company, but it's not going very well. He's not getting a lot of sales on his website which he decided to call Azamon. His big problem, you think, is that he's not ranking high enough on the search engines. If only he could rename his products to have better names than his competitors, then he'll be at the top of the search results and will be a millionaire.",
+      "After doing some research, you find out that search engines only sort their results lexicographically. If your friend could rename his products to lexicographically smaller strings than his competitor's, then he'll be at the top of the rankings!",
+      "To make your strategy less obvious to his competitors, you decide to swap no more than two letters of the product names.",
+      "Please help Jeff to find improved names for his products that are lexicographically smaller than his competitor's!",
+      "Given the string s$$$s$$$ representing Jeff's product name and the string c$$$c$$$ representing his competitor's product name, find a way to swap at most one pair of characters in s$$$s$$$ (that is, find two distinct indices i$$$i$$$ and j$$$j$$$ and swap si$$$s_i$$$ and sj$$$s_j$$$) such that the resulting new name becomes strictly lexicographically smaller than c$$$c$$$, or determine that it is impossible.",
+      "Note: String a$$$a$$$ is strictly lexicographically smaller than string b$$$b$$$ if and only if one of the following holds:",
+      "a$$$a$$$ is a proper prefix of b$$$b$$$, that is, a$$$a$$$ is a prefix of b$$$b$$$ such that a≠b$$$a \\neq b$$$;",
+      "There exists an integer 1≤i≤min(|a|,|b|)$$$1 \\le i \\le \\min{(|a|, |b|)}$$$ such that ai<bi$$$a_i  \\lt  b_i$$$ and aj=bj$$$a_j = b_j$$$ for 1≤j<i$$$1 \\le j  \\lt  i$$$."
+    ],
+    "input": [
+      "The first line of input contains a single integer t$$$t$$$ (1≤t≤1500$$$1 \\le t \\le 1500$$$) denoting the number of test cases. The next lines contain descriptions of the test cases.",
+      "Each test case consists of a single line containing two space-separated strings s$$$s$$$ and c$$$c$$$ (2≤|s|≤5000,1≤|c|≤5000$$$2 \\le |s| \\le 5000, 1 \\le |c| \\le 5000$$$). The strings s$$$s$$$ and c$$$c$$$ consists of uppercase English letters.",
+      "It is guaranteed that the sum of |s|$$$|s|$$$ in the input is at most 5000$$$5000$$$ and the sum of the |c|$$$|c|$$$ in the input is at most 5000$$$5000$$$."
+    ],
+    "output": [
+      "For each test case, output a single line containing a single string, which is either",
+      "the new name which is obtained after swapping no more than one pair of characters that is strictly lexicographically smaller than c$$$c$$$. In case there are many possible such strings, you can output any of them;",
+      "three dashes (the string \"---\" without quotes) if it is impossible."
+    ],
+    "note": [
+      "In the first test case, it is possible to swap the second and the fourth letters of the string and the resulting string \"AMAZON\" is lexicographically smaller than \"APPLE\".",
+      "It is impossible to improve the product's name in the second test case and satisfy all conditions.",
+      "In the third test case, it is possible not to swap a pair of characters. The name \"APPLE\" is lexicographically smaller than \"BANANA\". Note that there are other valid answers, e.g., \"APPEL\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\nAZAMON APPLE\nAZAMON AAAAAAAAAAALIBABA\nAPPLE BANANA",
+      "output": "AMAZON\n---\nAPPLE"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你的朋友 Jeff Zebos 一直在努力经营他的新在线公司，但事情进展得并不顺利。他的网站销售额不高，他决定将网站命名为 Azamon。你认为他最大的问题是，在搜索引擎中的排名还不够高。如果他能把自己的产品重新命名为比竞争对手更好的名字，那么他就会出现在搜索结果的顶部，并成为百万富翁。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "经过一些研究后，你发现搜索引擎只会按照字典序对结果进行排序。如果你的朋友能将他的产品重命名为字典序小于竞争对手产品名称的字符串，那么他就会位居排名榜首！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了让他的竞争对手不容易看出你的策略，你决定对产品名称中的至多两个字母进行交换。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Jeff 为他的产品找到改进后的名称，使其字典序小于竞争对手的产品名称！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定字符串 s$$$s$$$ 表示 Jeff 的产品名称，以及字符串 c$$$c$$$ 表示其竞争对手的产品名称，请设法在 s$$$s$$$ 中至多交换一对字符(即找到两个不同的下标 i$$$i$$$ 和 j$$$j$$$，并交换 si$$$s_i$$$ 和 sj$$$s_j$$$)，使得到的新名称严格按字典序小于 c$$$c$$$；或者确定这是不可能的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意：当且仅当以下条件之一成立时，字符串 a$$$a$$$ 的字典序严格小于字符串 b$$$b$$$：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "a$$$a$$$ 是 b$$$b$$$ 的真前缀，即 a$$$a$$$ 是 b$$$b$$$ 的前缀，且 a≠b$$$a \\neq b$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "存在一个整数 1≤i≤min(|a|,|b|)$$$1 \\le i \\le \\min{(|a|, |b|)}$$$，使得 ai<bi$$$a_i  \\lt  b_i$$$，并且当 1≤j<i$$$1 \\le j  \\lt  i$$$ 时 aj=bj$$$a_j = b_j$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤1500$$$1 \\le t \\le 1500$$$)，表示测试用例的数量。接下来的若干行包含各个测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例包含一行，其中有两个由空格分隔的字符串 s$$$s$$$ 和 c$$$c$$$(2≤|s|≤5000，1≤|c|≤5000$$$2 \\le |s| \\le 5000, 1 \\le |c| \\le 5000$$$)。字符串 s$$$s$$$ 和 c$$$c$$$ 由大写英文字母组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证输入中 |s|$$$|s|$$$ 的总和不超过 5000$$$5000$$$，且 |c|$$$|c|$$$ 的总和不超过 5000$$$5000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一行，其中包含一个字符串，该字符串为以下两者之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交换至多一对字符后得到的新名称，且其字典序严格小于 c$$$c$$$。如果有多个满足条件的字符串，可以输出其中任意一个；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果不可能，则输出三个连字符（不带引号的字符串 \"---\"）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，可以交换字符串中的第二个和第四个字母，得到的字符串 \"AMAZON\" 的字典序小于 \"APPLE\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，不可能在满足所有条件的同时改进商品的名称。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试用例中，可以不交换任何一对字符。名称 \"APPLE\" 的字典序小于 \"BANANA\"。注意，还有其他合法答案，例如 \"APPEL\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Azamon 网络服务",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

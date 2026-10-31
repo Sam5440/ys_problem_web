@@ -1,0 +1,85 @@
+{
+  "code": "CF858D",
+  "letter": "D",
+  "title": "D. Polycarp's phone book",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/858/D",
+  "difficulty": "1600",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are n phone numbers in Polycarp's contacts on his phone. Each number is a 9-digit integer, starting with a digit different from 0. All the numbers are distinct.",
+      "There is the latest version of Berdroid OS installed on Polycarp's phone. If some number is entered, is shows up all the numbers in the contacts for which there is a substring equal to the entered sequence of digits. For example, is there are three phone numbers in Polycarp's contacts: 123456789, 100000000 and 100123456, then:",
+      "if he enters 00 two numbers will show up: 100000000 and 100123456,",
+      "if he enters 123 two numbers will show up 123456789 and 100123456,",
+      "if he enters 01 there will be only one number 100123456.",
+      "For each of the phone numbers in Polycarp's contacts, find the minimum in length sequence of digits such that if Polycarp enters this sequence, Berdroid shows this only phone number."
+    ],
+    "input": [
+      "The first line contains single integer n (1 ≤ n ≤ 70000) — the total number of phone contacts in Polycarp's contacts.",
+      "The phone numbers follow, one in each line. Each number is a positive 9-digit integer starting with a digit from 1 to 9. All the numbers are distinct."
+    ],
+    "output": [
+      "Print exactly n lines: the i-th of them should contain the shortest non-empty sequence of digits, such that if Polycarp enters it, the Berdroid OS shows up only the i-th number from the contacts. If there are several such sequences, print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n123456789\n100000000\n100123456",
+      "output": "9\n000\n01"
+    },
+    {
+      "input": "4\n123456789\n193456789\n134567819\n934567891",
+      "output": "2\n193\n81\n91"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Polycarp 的手机通讯录中有 n 个电话号码。每个号码都是一个 9 位整数，且首位数字不为 0。所有号码互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Polycarp 的手机上安装了最新版本的 Berdroid 操作系统。如果输入某个号码，系统会显示通讯录中所有包含与所输入数字序列相等的子串的号码。例如，Polycarp 的通讯录中有三个电话号码：123456789、100000000 和 100123456，那么：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果他输入 00，将显示两个号码：100000000 和 100123456；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果他输入 123，将显示两个号码：123456789 和 100123456；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果他输入 01，则只会显示一个号码：100123456。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 Polycarp 通讯录中的每个电话号码，找出一个长度最小的数字序列，使得 Polycarp 输入该序列后，Berdroid 只显示这一个电话号码。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 70000），表示 Polycarp 通讯录中的电话号码总数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来 n 行每行包含一个电话号码。每个电话号码都是一个以 1 到 9 中的某个数字开头的正九位整数。所有电话号码互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "恰好输出 n 行：第 i 行应包含一个最短的非空数字序列，使得 Polycarp 输入该序列后，Berdroid 操作系统只显示通讯录中的第 i 个电话号码。如果有多个满足条件的序列，输出其中任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Polycarp 的电话簿",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

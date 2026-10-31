@@ -1,0 +1,133 @@
+{
+  "code": "GYM103483D",
+  "letter": "D",
+  "title": "D. Exam registration",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103483/problem/D",
+  "difficulty": "*1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Usually everyone associates the New Year with a Christmas tree and a festive table, but students associate the New Year with exams session. It was December 31, and second-year students signed up for the exam.",
+      "There are n$$$n$$$ days when they can take the exam. Each student signed up to take the exam on one of these days. So, on the i$$$i$$$-th day ai$$$a_{i}$$$ students want to take the exam, but the maximum number of students who can take the exam on this day is bi$$$b_{i}$$$.",
+      "Teachers need all students to have the opportunity to take the exam, so some students may have to be moved to another day. Teachers can choose any number of students and assign each of them to take the exam on any day.",
+      "If a student wanted to take the exam on the i$$$i$$$-th day, and the teachers eventually moved it to the j$$$j$$$-th day, then dissatisfaction of this student will be equal to |i−j|$$$|i - j|$$$.",
+      "Help the teachers distribute the students so that for all i$$$i$$$ on the i$$$i$$$-th day, no more than bi$$$b_i$$$ students took the exam, and the maximum dissatisfaction among the students was minimal."
+    ],
+    "input": [
+      "The first line of the input contains a single integer n$$$n$$$ — the number of days when the students can take the exam (1≤n≤106$$$1 \\le n \\le 10^{6}$$$).",
+      "The second line of the input contains n$$$n$$$ integers ai$$$a_{i}$$$ — the number of students who want to take the exam on the i$$$i$$$-th day (1≤ai≤109$$$1 \\le a_i \\le 10^{9}$$$).",
+      "The third line of the input contains n$$$n$$$ integers bi$$$b_{i}$$$ — the maximum number of students who can take the exam on the i$$$i$$$-th day (0≤bi≤109$$$0 \\le b_i \\le 10^{9}$$$)."
+    ],
+    "output": [
+      "Print a single integer — for which minimum k$$$k$$$ it is possible make the dissatisfaction of any student not to exceed k$$$k$$$. If there is no solution, you should print −1$$$-1$$$."
+    ],
+    "note": [
+      "Consider the first sample test. Note that 70 students want to take exam on the third day, but only 24 students can take exam on days 2, 3, and 4. So the answer is at least 2.",
+      "One of the ways to move the students in the first sample test so that no student is moved more than 2 days from his desired day is the following.",
+      "6,14,70,1$$$6, 14, 70, 1$$$ — initial schedule of students;",
+      "6,70,14,1$$$6, 70, 14, 1$$$ — move all students from the third day to the second day, and all students from the second day to the third day;",
+      "70,6,14,1$$$70, 6, 14, 1$$$ — move all students from the second day to the first day, and all students from the first day to the second day;",
+      "70,6,11,4$$$70, 6, 11, 4$$$ — move three students from the third day to the fourth day;",
+      "70,3,14,4$$$70, 3, 14, 4$$$ — move three students from the second day to the third day;",
+      "Note that each student was moved no more than two days from their initial position in the schedule."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n6 14 70 1\n70 3 16 5",
+      "output": "2"
+    },
+    {
+      "input": "1\n2\n2",
+      "output": "0"
+    },
+    {
+      "input": "1\n3\n2",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "通常每个人都会将新年与圣诞树和节日餐桌联系在一起，但学生们会将新年与考试周联系在一起。那天是 12 月 31 日，二年级学生报名参加考试。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他们有 n$$$n$$$ 天可以参加考试。每名学生都报名在其中某一天参加考试。因此，在第 i$$$i$$$ 天，有 ai$$$a_{i}$$$ 名学生希望参加考试，但这一天最多只能有 bi$$$b_{i}$$$ 名学生参加考试。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "老师需要确保所有学生都有机会参加考试，因此可能需要将一些学生调整到其他日期。老师可以选择任意数量的学生，并为每名学生指定任意一天参加考试。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果一名学生想在第 i$$$i$$$ 天参加考试，而老师最终将考试调整到了第 j$$$j$$$ 天，那么该学生的不满度将等于 |i−j|$$$|i - j|$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助老师安排学生，使得对于所有 i$$$i$$$，在第 i$$$i$$$ 天参加考试的学生不超过 bi$$$b_i$$$ 人，并且学生中的最大不满度最小。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$——学生可以参加考试的天数(1≤n≤106$$$1 \\le n \\le 10^{6}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第二行包含 n$$$n$$$ 个整数 ai$$$a_{i}$$$——想在第 i$$$i$$$ 天参加考试的学生人数(1≤ai≤109$$$1 \\le a_i \\le 10^{9}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第三行包含 n$$$n$$$ 个整数 bi$$$b_{i}$$$——第 i$$$i$$$ 天最多可以参加考试的学生人数(0≤bi≤109$$$0 \\le b_i \\le 10^{9}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——可以使任意学生的不满度不超过 k$$$k$$$ 的最小 k$$$k$$$。如果不存在解，则输出 −1$$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "考虑第一个样例测试。注意，有 70 名学生想在第三天参加考试，但只有 24 名学生可以在第 2、3、4 天参加考试。因此，答案至少为 2。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个样例测试中，以下是一种移动学生的方式，使得没有学生偏离自己期望的日期超过 2 天。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "6,14,70,1$$$6, 14, 70, 1$$$ — 学生的初始安排；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "6,70,14,1$$$6, 70, 14, 1$$$ — 将第三天的所有学生移到第二天，并将第二天的所有学生移到第三天；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "70,6,14,1$$$70, 6, 14, 1$$$ — 将第二天的所有学生移到第一天，并将第一天的所有学生移到第二天；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "70,6,11,4$$$70, 6, 11, 4$$$ — 将三名学生从第三天移到第四天；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "70,3,14,4$$$70, 3, 14, 4$$$ —— 将三名学生从第二天移到第三天；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，每名学生从其在日程表中的初始位置移动的天数不超过两天。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 考试报名",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

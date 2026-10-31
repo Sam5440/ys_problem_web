@@ -1,0 +1,140 @@
+{
+  "code": "GYM105666B",
+  "letter": "B",
+  "title": "B. Monster Fighting",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105666/problem/B",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Busy Beaver is playing his favorite adventure game, where he battles wild monsters with monsters of his own!",
+      "![](https://espresso.codeforces.com/11a7a3528bcb8d0f781ac7899361ab9c5aa3af29.png)",
+      "In this game, there are two types of monsters: light and dark. Each monster has exactly one type, and some positive integer power level. A monster with power p$$$p$$$ can defeat another monster q$$$q$$$ if either p≥q$$$p \\geq q$$$, or if they have the same type and 2p≥q$$$2p \\geq q$$$.",
+      "Busy Beaver has just encountered N$$$N$$$ monsters, and he also has N$$$N$$$ monsters in his party. To defend against the encounter, he needs to pair his monsters with the opposing monsters such that in each pair, Busy Beaver's monster can defeat the opposing monster according to the rules above. Given the types and power levels of each of the monsters, please report whether or not such a pairing exists."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line of input contains a single integer T$$$T$$$ (1≤T≤105)$$$(1 \\leq T \\leq 10^5)$$$, the number of test cases. The description of each test case follows.",
+      "The first line of each test case contains a single positive integer N$$$N$$$ (1≤N≤2⋅105$$$1 \\leq N \\leq 2 \\cdot 10^5$$$).",
+      "Then, N$$$N$$$ lines of input follow, describing Busy Beaver's monsters. The i$$$i$$$th line contains two positive integers pi,si$$$p_i, s_i$$$ (1≤pi≤109,si∈{0,1}$$$1 \\leq p_i \\leq 10^9, s_i \\in \\{0, 1\\}$$$) — the power level pi$$$p_i$$$ and type si$$$s_i$$$ of the i$$$i$$$th monster. si=0$$$s_i = 0$$$ denotes a light-type monster, and si=1$$$s_i = 1$$$ denotes a dark-type monster.",
+      "After that, there are N$$$N$$$ more lines of input, describing the encountered monsters. The i$$$i$$$th line contains two positive integers qi,ti$$$q_i, t_i$$$ (1≤qi≤109,ti∈{0,1}$$$1 \\leq q_i \\leq 10^9, t_i \\in \\{0, 1\\}$$$) — the power level qi$$$q_i$$$ and type ti$$$t_i$$$ of the i$$$i$$$th monster. ti=0$$$t_i = 0$$$ denotes a light-type monster, and ti=1$$$t_i = 1$$$ denotes a dark-type monster.",
+      "It is guaranteed that the sum of N$$$N$$$ across all test cases is no more than 2⋅105$$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, output \"YES\" (without quotes) if a desired pairing exists, and \"NO\" (without quotes) otherwise.",
+      "You can output \"YES\" and \"NO\" in any case (for example, strings \"yES\", \"yes\" and \"Yes\" will be recognized as a positive response).",
+      "There are two subtasks for this problem.",
+      "(30$$$30$$$ points): The sum of N$$$N$$$ across all test cases does not exceed 2⋅103$$$2 \\cdot 10^3$$$.",
+      "(70$$$70$$$ points): No additional constraints."
+    ],
+    "note": [
+      "In the sample input, there are two test cases. For the first case, we can construct a pairing as follows:",
+      "Your light type monster of power level 2$$$2$$$ can defeat the identical opposing monster.",
+      "Your light type monster of power level 3$$$3$$$ can defeat the identical opposing monster.",
+      "Your first dark type monster of power level 1$$$1$$$ can defeat the opposing dark type monster of power level 2$$$2$$$.",
+      "Your second dark type monster of power level 1$$$1$$$ can defeat the opposing light type monster of power level 1$$$1$$$.",
+      "In the second case, it can be shown that no pairing exists."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n4\n2 0\n3 0\n1 1\n1 1\n1 0\n2 0\n3 0\n2 1\n2\n1 1\n5 1\n1 0\n1000000000 0",
+      "output": "YES\nNO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Busy Beaver 正在玩他最喜欢的冒险游戏，在游戏中，他用自己的怪物与野生怪物战斗！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/11a7a3528bcb8d0f781ac7899361ab9c5aa3af29.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一个力量为 p$$$p$$$ 的怪物可以击败另一个怪物 q$$$q$$$，当且仅当满足以下条件之一：p≥q$$$p \\geq q$$$，或者它们类型相同且 2p≥q$$$2p \\geq q$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Busy Beaver 刚刚遇到了 N$$$N$$$ 只怪物，而他的队伍中也有 N$$$N$$$ 只怪物。为了应对这次遭遇，他需要将自己的怪物与对方的怪物配对，使得每一对中，Busy Beaver 的怪物都能根据上述规则击败对方的怪物。给定每只怪物的类型和力量值，请报告是否存在这样的配对。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。输入的第一行包含一个整数 T$$$T$$$ (1≤T≤105)$$$(1 \\leq T \\leq 10^5)$$$，表示测试用例的数量。接下来是每个测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个正整数 N$$$N$$$(1≤N≤2⋅105$$$1 \\leq N \\leq 2 \\cdot 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来输入 N$$$N$$$ 行，描述 Busy Beaver 的怪物。第 i$$$i$$$ 行包含两个正整数 pi,si$$$p_i, s_i$$$(1≤pi≤109,si∈{0,1}$$$1 \\leq p_i \\leq 10^9, s_i \\in \\{0, 1\\}$$$)——第 i$$$i$$$ 个怪物的力量等级 pi$$$p_i$$$ 和类型 si$$$s_i$$$。si=0$$$s_i = 0$$$ 表示光属性怪物，si=1$$$s_i = 1$$$ 表示暗属性怪物。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "随后输入中还有 N$$$N$$$ 行，描述遇到的怪物。第 i$$$i$$$ 行包含两个正整数 qi,ti$$$q_i, t_i$$$(1≤qi≤109,ti∈{0,1}$$$1 \\leq q_i \\leq 10^9, t_i \\in \\{0, 1\\}$$$)——第 i$$$i$$$ 个怪物的力量等级 qi$$$q_i$$$ 和类型 ti$$$t_i$$$。ti=0$$$t_i = 0$$$ 表示光属性怪物，ti=1$$$t_i = 1$$$ 表示暗属性怪物。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 N$$$N$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果存在满足要求的配对，输出 \"YES\"（不含引号），否则输出 \"NO\"（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以以任意大小写输出 \"YES\" 和 \"NO\"（例如，字符串 \"yES\"、\"yes\" 和 \"Yes\" 都会被识别为肯定回答）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "该问题有两个子任务。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(30$$$30$$$ 分)：所有测试用例中 N$$$N$$$ 的总和不超过 2⋅103$$$2 \\cdot 10^3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(70$$$70$$$ 分)：没有额外的约束条件。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在输入样例中，有两个测试用例。对于第一个测试用例，我们可以按如下方式构造一个配对：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的力量等级为 2$$$2$$$ 的光属性怪物可以击败对方相同的怪物。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的力量等级为 3$$$3$$$ 的光属性怪物可以击败对方相同的怪物。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的第一个等级为 1$$$1$$$ 的暗属性怪兽可以击败对方等级为 2$$$2$$$ 的暗属性怪兽。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的第二个等级为 1$$$1$$$ 的暗属性怪兽可以击败对方等级为 1$$$1$$$ 的光属性怪兽。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二种情况下，可以证明不存在配对。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 怪物战斗",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

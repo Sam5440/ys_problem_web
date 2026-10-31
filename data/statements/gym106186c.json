@@ -1,0 +1,105 @@
+{
+  "code": "GYM106186C",
+  "letter": "C",
+  "title": "C. Square Free GCD Sum",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106186/problem/C",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array a$$$a$$$ of n$$$n$$$ positive integers a1,$$$a_1,$$$ a2,$$$a_2,$$$ ... ,an$$$,a_n$$$. You are also given m$$$m$$$ distinct primes p1,$$$p_1,$$$ p2,$$$p_2,$$$ ... ,pm$$$,p_m$$$.",
+      "It is guaranteed that every ai$$$a_i$$$ can be expressed as",
+      "That is,$$$,$$$ all prime factors of all numbers are among these m$$$m$$$ primes.",
+      "For any non-empty subset S⊆{1,2,...,n},$$$S \\subseteq \\{1, 2, ..., n\\},$$$ let gcd(S$$$S$$$) = gcd(ai|i∈S$$$a_i \\; | \\; i \\in S$$$). That is, gcd(S) is the greatest common divisor of all elements of the array a$$$a$$$ with their index in that subset.",
+      "Define a function sf(x)$$$sf(x)$$$ – the squarefree part of an integer x$$$x$$$ as the product of all distinct primes dividing x$$$x$$$. For example:",
+      "sf(12)=2×3=6$$$sf(12) = 2 \\times 3 = 6$$$ – because 2$$$2$$$ and 3$$$3$$$ are the distinct primes that divide 12$$$12$$$",
+      "sf(18)=2×3=6$$$sf(18) = 2 \\times 3 = 6$$$",
+      "sf(1)=1$$$sf(1) = 1$$$",
+      "Your task is to compute, the sum of squarefree parts of gcds over all non-empty subsets of a$$$a$$$. Formally, you have to find the following value:"
+    ],
+    "input": [
+      "First line contains 2$$$2$$$ integers n$$$n$$$ and m$$$m$$$ (1≤n≤105$$$1 \\leq n \\leq 10^5$$$), (1≤m≤20$$$1 \\leq m \\leq 20$$$).",
+      "The second line contains m$$$m$$$ space-separated integers p1,$$$p_1,$$$ p2,$$$p_2,$$$ ... ,pm$$$,p_m$$$ (1≤pi≤200$$$1 \\leq p_i \\leq 200$$$).",
+      "The third line contains n$$$n$$$ space-separated integers a1,$$$a_1,$$$ a2,$$$a_2,$$$ ... ,an$$$,a_n$$$ (1≤ai≤109$$$1 \\leq a_i \\leq 10^9$$$)."
+    ],
+    "output": [
+      "Output one integer, the required sum mod (109+7$$$10^9 + 7$$$)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 3\n2 3 5\n2 6 10 30",
+      "output": "82"
+    },
+    {
+      "input": "1 1\n2\n8",
+      "output": "2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个数组 a$$$a$$$，其中包含 n$$$n$$$ 个正整数 a1、$$$a_1,$$$ a2、$$$a_2,$$$ ...、an$$$,a_n$$$。另给定 m$$$m$$$ 个互不相同的素数 p1、$$$p_1,$$$ p2、$$$p_2,$$$ ...、pm$$$,p_m$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证每个 ai$$$a_i$$$ 都可以表示为",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "也就是说，$$$,$$$ 所有数的质因数都属于这 m$$$m$$$ 个素数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于任意非空子集 S⊆{1,2,...,n}，$$$S \\subseteq \\{1, 2, ..., n\\},$$$ 令 gcd(S$$$S$$$) = gcd(ai|i∈S$$$a_i \\; | \\; i \\in S$$$)。也就是说，gcd(S) 是数组 a$$$a$$$ 中下标属于该子集的所有元素的最大公约数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "定义函数 sf(x)$$$sf(x)$$$：整数 x$$$x$$$ 的平方自由部分是所有整除 x$$$x$$$ 的互不相同素数的乘积。例如：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "sf(12)=2×3=6$$$sf(12) = 2 \\times 3 = 6$$$——因为 2$$$2$$$ 和 3$$$3$$$ 是整除 12$$$12$$$ 的互不相同的素数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "sf(18)=2×3=6$$$sf(18) = 2 \\times 3 = 6$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "sf(1)=1$$$sf(1) = 1$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是计算数组 a$$$a$$$ 的所有非空子集的最大公约数的平方自由部分之和。形式化地说，你需要求出以下值：",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含 2$$$2$$$ 个整数 n$$$n$$$ 和 m$$$m$$$(1≤n≤105$$$1 \\leq n \\leq 10^5$$$)，(1≤m≤20$$$1 \\leq m \\leq 20$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 m$$$m$$$ 个以空格分隔的整数 p1,$$$p_1,$$$ p2,$$$p_2,$$$ ... ,pm$$$,p_m$$$(1≤pi≤200$$$1 \\leq p_i \\leq 200$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 n$$$n$$$ 个以空格分隔的整数 a1,$$$a_1,$$$ a2,$$$a_2,$$$ ... ,an$$$,a_n$$$(1≤ai≤109$$$1 \\leq a_i \\leq 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，即所需总和 mod (109+7$$$10^9 + 7$$$) 的结果。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 平方自由最大公约数之和",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

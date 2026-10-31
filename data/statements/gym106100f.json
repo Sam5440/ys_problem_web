@@ -1,0 +1,129 @@
+{
+  "code": "GYM106100F",
+  "letter": "F",
+  "title": "F. Unlock the Chest",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106100/problem/F",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The Committee of the National Archeological Research in eXploration of Organized Zones (NARXOZ) found an old chest in the Almaty region. But there is a lock on the chest with the password that consists of n$$$n$$$ positive numbers.",
+      "Luckily, scientists also found the correct version of this list — the one that opens the chest.",
+      "So, you are given the two lists of numbers: the password that is now on the lock and the password that opens the chest.",
+      "To change the current password into the correct one, you can use this operation:",
+      "Choose an index i$$$i$$$ such that 1≤i<n$$$1 \\le i  \\lt  n$$$.",
+      "Let x$$$x$$$ = value at position i$$$i$$$ before the operation. Let y$$$y$$$ = value at position i+1$$$i + 1$$$ before the operation.",
+      "After the operation: The number at position i$$$i$$$ becomes y−1$$$y - 1$$$. The number at position i+1$$$i + 1$$$ becomes x+1$$$x + 1$$$.",
+      "You can repeat this operation as many times as needed. Your goal is to make the current list exactly the same as the correct list, using the smallest number of operations.",
+      "If it is not possible to make the two lists the same, output -1.",
+      "NARXOZ is holding a contest: the fastest person who solves this problem will get a great job offer. You want to win — so get to work!"
+    ],
+    "input": [
+      "The first line contains one integer n$$$n$$$ (1≤n≤3∗105$$$1 \\le n \\le 3*10^5$$$) — the length of the password.",
+      "The second line contains n$$$n$$$ positive integers — the current version of the password.",
+      "The third line contains n$$$n$$$ positive integers — the correct version of the password.",
+      "All values of the integers are positive and do not exceed 109$$$10^9$$$."
+    ],
+    "output": [
+      "Print one number — the minimum number of operations needed to turn the current list into the correct list. If it is impossible, print -1."
+    ],
+    "note": [
+      "In the first sample we can perform operations in the following order: Swap (1,2)$$$(1, 2)$$$, swap (2,3)$$$(2, 3)$$$ and swap (1,2)$$$(1, 2)$$$. It can be shown, that there is no other option with less number of operations.",
+      "In the second sample there is no valid order of operations to get the correct version of the password from the current one."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4 7 3\n1 7 6",
+      "output": "3"
+    },
+    {
+      "input": "4\n3 1 4 2\n2 2 3 3",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "国家有组织区域探索考古研究委员会(NARXOZ)在阿拉木图地区发现了一个古老的宝箱。但宝箱上有一把锁，密码由 n$$$n$$$ 个正数组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "幸运的是，科学家们还找到了这个列表的正确版本，也就是能够打开箱子的版本。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，给定两个数字列表：当前锁上的密码，以及能够打开箱子的密码。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了将当前密码变为正确的密码，你可以使用以下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择一个下标 i$$$i$$$，满足 1≤i<n$$$1 \\le i  \\lt  n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "令 x$$$x$$$ 表示操作前位置 i$$$i$$$ 上的值。令 y$$$y$$$ 表示操作前位置 i+1$$$i + 1$$$ 上的值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "操作后：位置 i$$$i$$$ 上的数字变为 y−1$$$y - 1$$$。位置 i+1$$$i + 1$$$ 上的数字变为 x+1$$$x + 1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以根据需要重复执行此操作任意次数。你的目标是使用最少的操作次数，使当前列表与正确列表完全相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果无法使两个列表相同，则输出 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "NARXOZ 正在举办一场比赛：最先解决这道题的人将获得一份很棒的工作机会。你想赢得比赛——那就开始行动吧！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤3∗105$$$1 \\le n \\le 3*10^5$$$)——密码的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个正整数——密码的当前版本。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 n$$$n$$$ 个正整数——密码的正确版本。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有整数均为正数，且不超过 109$$$10^9$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个数——将当前列表变为正确列表所需的最少操作次数。如果不可能，输出 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，我们可以按以下顺序执行操作：交换 (1,2)$$$(1, 2)$$$、交换 (2,3)$$$(2, 3)$$$ 以及交换 (1,2)$$$(1, 2)$$$。可以证明，不存在操作次数更少的其他方案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，不存在能够从当前密码得到正确版本的有效操作顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 解锁宝箱",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

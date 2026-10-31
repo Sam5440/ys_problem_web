@@ -1,0 +1,99 @@
+{
+  "code": "CF217B",
+  "letter": "B",
+  "title": "B. Blackboard Fibonacci",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/217/B",
+  "difficulty": "2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Fibonacci numbers are the sequence of integers: f0 = 0, f1 = 1, f2 = 1, f3 = 2, f4 = 3, f5 = 5, ..., fn = fn - 2 + fn - 1. So every next number is the sum of the previous two.",
+      "Bajtek has developed a nice way to compute Fibonacci numbers on a blackboard. First, he writes a 0. Then, below it, he writes a 1. Then he performs the following two operations:",
+      "operation \"T\": replace the top number with the sum of both numbers;",
+      "operation \"B\": replace the bottom number with the sum of both numbers.",
+      "If he performs n operations, starting with \"T\" and then choosing operations alternately (so that the sequence of operations looks like \"TBTBTBTB...\"), the last number written will be equal to fn + 1.",
+      "Unfortunately, Bajtek sometimes makes mistakes and repeats an operation two or more times in a row. For example, if Bajtek wanted to compute f7, then he would want to do n = 6 operations: \"TBTBTB\". If he instead performs the sequence of operations \"TTTBBT\", then he will have made 3 mistakes, and he will incorrectly compute that the seventh Fibonacci number is 10. The number of mistakes in the sequence of operations is the number of neighbouring equal operations («TT» or «BB»).",
+      "You are given the number n of operations that Bajtek has made in an attempt to compute fn + 1 and the number r that is the result of his computations (that is last written number). Find the minimum possible number of mistakes that Bajtek must have made and any possible sequence of n operations resulting in r with that number of mistakes.",
+      "Assume that Bajtek always correctly starts with operation \"T\"."
+    ],
+    "input": [
+      "The first line contains the integers n and r (1 ≤ n, r ≤ 106)."
+    ],
+    "output": [
+      "The first line of the output should contain one number — the minimum possible number of mistakes made by Bajtek. The second line should contain n characters, starting with \"T\", describing one possible sequence of operations with that number of mistakes. Each character must be either \"T\" or \"B\".",
+      "If the required sequence doesn't exist, output \"IMPOSSIBLE\" (without quotes)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 10",
+      "output": "2\nTBBTTB"
+    },
+    {
+      "input": "4 5",
+      "output": "0\nTBTB"
+    },
+    {
+      "input": "2 1",
+      "output": "IMPOSSIBLE"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "斐波那契数列是如下的整数序列：f0 = 0，f1 = 1，f2 = 1，f3 = 2，f4 = 3，f5 = 5，……，fn = fn - 2 + fn - 1。因此，每个数都是前两个数之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bajtek 想出了一种在黑板上计算斐波那契数的巧妙方法。首先，他写下一个 0。然后，在它的下方写下一个 1。接着，他执行以下两种操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "操作“T”：将顶部的数字替换为两个数字之和；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "操作“B”：将底部的数字替换为两个数字之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果他进行 n 次操作，先进行“T”操作，然后交替选择操作（因此操作序列形如“TBTBTBTB...”），最后写下的数字将等于 f_{n+1}。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "遗憾的是，Bajtek 有时会犯错，连续两次或更多次进行同一种操作。例如，如果 Bajtek 想要计算 f_7，他需要进行 n=6 次操作：“TBTBTB”。但如果他进行的操作序列是“TTTBBT”，那么他就犯了 3 个错误，并错误地计算出第七个斐波那契数为 10。操作序列中的错误次数，就是相邻的相同操作（“TT”或“BB”）的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定 Bajtek 为尝试计算 f_{n+1} 而进行的操作次数 n，以及他的计算结果 r（即最后写下的数字）。请找出 Bajtek 必须犯下的最少错误次数，以及任意一个由 n 次操作组成、结果为 r 且具有该最少错误次数的操作序列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "假设 Bajtek 总是正确地以操作“T”开始。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出的第一行应包含一个数字——Bajtek 所犯错误的最少次数。第二行应包含 n 个字符，以“T”开头，描述一个具有该错误次数的可行操作序列。每个字符必须是“T”或“B”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果所需的序列不存在，输出“IMPOSSIBLE”（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 r（1 ≤ n, r ≤ 10^6）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 黑板上的斐波那契数",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

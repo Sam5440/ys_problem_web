@@ -1,0 +1,140 @@
+{
+  "code": "CF1889B",
+  "letter": "B",
+  "title": "B. Doremy's Connecting Plan",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1889/B",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Doremy lives in a country consisting of n$$$n$$$ cities numbered from 1$$$1$$$ to n$$$n$$$, with ai$$$a_i$$$ people living in the i$$$i$$$-th city. It can be modeled as an undirected graph with n$$$n$$$ nodes.",
+      "Initially, there are no edges in the graph. Now Doremy wants to make the graph connected.",
+      "To do this, she can add an edge between i$$$i$$$ and j$$$j$$$ if",
+      "∑k∈Sak≥i⋅j⋅c,$$ \\sum_{k \\in S} a_k \\ge i\\cdot j \\cdot c, $$",
+      "where S$$$S$$$ is the set of all the nodes that are currently in the same connected component of either i$$$i$$$ or j$$$j$$$, and c$$$c$$$ is a given constant.",
+      "Can Doremy make the graph connected?",
+      "Two nodes (i,j)$$$(i, j)$$$ are in the same connected component if there exists a path from i$$$i$$$ to j$$$j$$$. A graph is connected if all its nodes are in the same connected component."
+    ],
+    "input": [
+      "The input consists of multiple test cases. The first line contains a single integer t$$$t$$$ (1≤t≤104$$$1\\le t\\le 10^4$$$) — the number of test cases. The description of the test cases follows.",
+      "The first line contains two integers n$$$n$$$, c$$$c$$$ (2≤n≤2⋅105$$$2\\le n\\le 2\\cdot 10^5$$$, 1≤c≤106$$$1 \\le c \\le 10^6$$$) — the number of nodes and the constant.",
+      "The second line of each test case contains n$$$ n $$$ integers a1,a2,…,an$$$ a_1,a_2,\\ldots,a_n $$$ (0≤ai≤1012$$$0 \\le a_i \\le 10^{12}$$$) — the number of people living in the i$$$i$$$-th city.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 2⋅105$$$2\\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print \"YES\" (without quotes), if it is possible to make the graph connected, and \"NO\" (without quotes) otherwise.",
+      "You can print letters in any case (upper or lower)."
+    ],
+    "note": [
+      "In the first test case, Doremy can add edges in the following order:",
+      "Add (1,2)$$$(1,2)$$$. This operation is valid because a1+a2=20≥i⋅j⋅c=20$$$a_1 + a_2 = 20 \\ge i\\cdot j \\cdot c = 20$$$.",
+      "Add (1,3)$$$(1,3)$$$. This operation is valid because a1+a2+a3=35≥i⋅j⋅c=30$$$a_1 + a_2 + a_3 = 35 \\ge i \\cdot j \\cdot c = 30$$$.",
+      "Add (1,4)$$$(1,4)$$$. This operation is valid because a1+a2+a3+a4=45≥i⋅j⋅c=40$$$a_1 + a_2 + a_3 + a_4 = 45 \\ge i \\cdot j \\cdot c = 40$$$.",
+      "In the second test case, Doremy can add edge (1,2)$$$(1,2)$$$ because a1+a2=2≥1⋅2⋅1$$$a_1 + a_2 =2 \\ge 1 \\cdot 2 \\cdot 1$$$. After that, the graph is connected.",
+      "In the third test case, Doremy can add edges in the order (5,4)$$$(5,4)$$$, (5,3)$$$(5,3)$$$, (5,2)$$$(5,2)$$$ and (5,1)$$$(5,1)$$$.",
+      "In the fourth test case, Doremy cannot add any edge at all."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n4 10\n0 20 15 10\n2 1\n1 1\n5 1\n0 1 0 4 199\n5 2\n1 1 3 1 1\n5 5\n5 6 1 10 2\n5 1000000\n1000000000000 1000000000000 1000000000000 1000000000000 1000000000000\n3 1\n0 0 2",
+      "output": "Yes\nYes\nYes\nNo\nNo\nYes\nNo"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Doremy 生活在一个由 n$$$n$$$ 个城市组成的国家中，这些城市的编号从 1$$$1$$$ 到 n$$$n$$$，第 i$$$i$$$ 个城市中居住着 ai$$$a_i$$$ 人。可以将其建模为一个含有 n$$$n$$$ 个节点的无向图。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "初始时，图中没有任何边。现在 Doremy 希望让图连通。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "为此，她可以在 i$$$i$$$ 和 j$$$j$$$ 之间添加一条边，如果",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "∑k∈Sak≥i⋅j⋅c,$$ \\sum_{k \\in S} a_k \\ge i\\cdot j \\cdot c, $$",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "其中 S$$$S$$$ 是当前与 i$$$i$$$ 或 j$$$j$$$ 处于同一连通分量的所有节点的集合，c$$$c$$$ 是一个给定常数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Doremy 能否使图连通？",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果存在一条从 i$$$i$$$ 到 j$$$j$$$ 的路径，那么两个节点 (i,j)$$$(i, j)$$$ 就在同一连通分量中。如果一张图的所有节点都在同一连通分量中，那么这张图是连通的。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入包含多个测试用例。第一行包含一个整数 t$$$t$$$ (1≤t≤104$$$1\\le t\\le 10^4$$$)——测试用例的数量。接下来是各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$、c$$$c$$$ (2≤n≤2⋅105$$$2\\le n\\le 2\\cdot 10^5$$$，1≤c≤106$$$1 \\le c \\le 10^6$$$)——节点数量和常数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$ n $$$ 个整数 a1,a2,…,an$$$ a_1,a_2,\\ldots,a_n $$$ (0≤ai≤1012$$$0 \\le a_i \\le 10^{12}$$$)——居住在第 i$$$i$$$ 个城市中的人数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 2⋅105$$$2\\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果可以使图连通，则输出 \"YES\"（不含引号），否则输出 \"NO\"（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出的字母大小写不限（可以是大写或小写）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，Doremy 可以按以下顺序添加边：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "添加边 (1,2)$$$(1,2)$$$。该操作合法，因为 a1+a2=20≥i⋅j⋅c=20$$$a_1 + a_2 = 20 \\ge i\\cdot j \\cdot c = 20$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "添加边 (1,3)$$$(1,3)$$$。该操作合法，因为 a1+a2+a3=35≥i⋅j⋅c=30$$$a_1 + a_2 + a_3 = 35 \\ge i \\cdot j \\cdot c = 30$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "添加边 (1,4)$$$(1,4)$$$。该操作合法，因为 a1+a2+a3+a4=45≥i⋅j⋅c=40$$$a_1 + a_2 + a_3 + a_4 = 45 \\ge i \\cdot j \\cdot c = 40$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，Doremy 可以添加边 (1,2)$$$(1,2)$$$，因为 a1+a2=2≥1⋅2⋅1$$$a_1 + a_2 =2 \\ge 1 \\cdot 2 \\cdot 1$$$。之后，图变得连通。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试用例中，Doremy 可以按 (5,4)$$$(5,4)$$$、(5,3)$$$(5,3)$$$、(5,2)$$$(5,2)$$$ 和 (5,1)$$$(5,1)$$$ 的顺序添加边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四个测试用例中，Doremy 根本无法添加任何边。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Doremy 的连接计划",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

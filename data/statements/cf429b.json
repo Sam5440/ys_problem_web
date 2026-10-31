@@ -1,0 +1,75 @@
+{
+  "code": "CF429B",
+  "letter": "B",
+  "title": "B. Working out",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/429/B",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Summer is coming! It's time for Iahub and Iahubina to work out, as they both want to look hot at the beach. The gym where they go is a matrix a with n lines and m columns. Let number a[i][j] represents the calories burned by performing workout at the cell of gym in the i-th line and the j-th column.",
+      "Iahub starts with workout located at line 1 and column 1. He needs to finish with workout a[n][m]. After finishing workout a[i][j], he can go to workout a[i + 1][j] or a[i][j + 1]. Similarly, Iahubina starts with workout a[n][1] and she needs to finish with workout a[1][m]. After finishing workout from cell a[i][j], she goes to either a[i][j + 1] or a[i - 1][j].",
+      "There is one additional condition for their training. They have to meet in exactly one cell of gym. At that cell, none of them will work out. They will talk about fast exponentiation (pretty odd small talk) and then both of them will move to the next workout.",
+      "If a workout was done by either Iahub or Iahubina, it counts as total gain. Please plan a workout for Iahub and Iahubina such as total gain to be as big as possible. Note, that Iahub and Iahubina can perform workouts with different speed, so the number of cells that they use to reach meet cell may differs."
+    ],
+    "input": [
+      "The first line of the input contains two integers n and m (3 ≤ n, m ≤ 1000). Each of the next n lines contains m integers: j-th number from i-th line denotes element a[i][j] (0 ≤ a[i][j] ≤ 105)."
+    ],
+    "output": [
+      "The output contains a single number — the maximum total gain possible."
+    ],
+    "note": [
+      "Iahub will choose exercises a[1][1] → a[1][2] → a[2][2] → a[3][2] → a[3][3]. Iahubina will choose exercises a[3][1] → a[2][1] → a[2][2] → a[2][3] → a[1][3]."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n100 100 100\n100 1 100\n100 100 100",
+      "output": "800"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "Iahub 将选择练习 a[1][1] → a[1][2] → a[2][2] → a[3][2] → a[3][3]。Iahubina 将选择练习 a[3][1] → a[2][1] → a[2][2] → a[2][3] → a[1][3]。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "夏天就要来了！Iahub 和 Iahubina 都想在海滩上展现出火辣的身材，因此是时候锻炼了。他们去的健身房是一个有 n 行 m 列的矩阵 a。数字 a[i][j] 表示在健身房第 i 行第 j 列的单元格中进行锻炼所消耗的卡路里数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Iahub 从位于第 1 行第 1 列的锻炼开始。他需要以锻炼 a[n][m] 结束。完成锻炼 a[i][j] 后，他可以前往锻炼 a[i + 1][j] 或 a[i][j + 1]。类似地，Iahubina 从锻炼 a[n][1] 开始，并需要以锻炼 a[1][m] 结束。完成单元格 a[i][j] 中的锻炼后，她可以前往 a[i][j + 1] 或 a[i - 1][j]。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他们的训练还有一个额外条件：他们必须恰好在健身房的一个单元格中相遇。在那个单元格中，他们都不会进行锻炼。他们会讨论快速幂（相当奇怪的闲聊），然后两人都会前往下一项锻炼。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果某项锻炼由 Iahub 或 Iahubina 中的任意一人完成，则该锻炼计入总收益。请为 Iahub 和 Iahubina 规划一套锻炼方案，使总收益尽可能大。注意，Iahub 和 Iahubina 可以以不同的速度进行锻炼，因此他们到达相遇单元格所经过的单元格数量可能不同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 m（3 ≤ n, m ≤ 1000）。接下来的 n 行中，每行包含 m 个整数：第 i 行的第 j 个数字表示 a[i][j]（0 ≤ a[i][j] ≤ 105）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个数，表示可能的最大总收益。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 推导",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

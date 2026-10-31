@@ -1,0 +1,109 @@
+{
+  "code": "CF1153C",
+  "letter": "C",
+  "title": "C. Serval and Parenthesis Sequence",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1153/C",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Serval soon said goodbye to Japari kindergarten, and began his life in Japari Primary School.",
+      "In his favorite math class, the teacher taught him the following interesting definitions.",
+      "A parenthesis sequence is a string, containing only characters \"(\" and \")\".",
+      "A correct parenthesis sequence is a parenthesis sequence that can be transformed into a correct arithmetic expression by inserting characters \"1\" and \"+\" between the original characters of the sequence. For example, parenthesis sequences \"()()\", \"(())\" are correct (the resulting expressions are: \"(1+1)+(1+1)\", \"((1+1)+1)\"), while \")(\" and \")\" are not. Note that the empty string is a correct parenthesis sequence by definition.",
+      "We define that |s|$$$|s|$$$ as the length of string s$$$s$$$. A strict prefix s[1…l]$$$s[1\\dots l]$$$ (1≤l<|s|)$$$(1\\leq l \\lt  |s|)$$$ of a string s=s1s2…s|s|$$$s = s_1s_2\\dots s_{|s|}$$$ is string s1s2…sl$$$s_1s_2\\dots s_l$$$. Note that the empty string and the whole string are not strict prefixes of any string by the definition.",
+      "Having learned these definitions, he comes up with a new problem. He writes down a string s$$$s$$$ containing only characters \"(\", \")\" and \"?\". And what he is going to do, is to replace each of the \"?\" in s$$$s$$$ independently by one of \"(\" and \")\" to make all strict prefixes of the new sequence not a correct parenthesis sequence, while the new sequence should be a correct parenthesis sequence.",
+      "After all, he is just a primary school student so this problem is too hard for him to solve. As his best friend, can you help him to replace the question marks? If there are many solutions, any of them is acceptable."
+    ],
+    "input": [
+      "The first line contains a single integer |s|$$$|s|$$$ (1≤|s|≤3⋅105$$$1\\leq |s|\\leq 3 \\cdot 10^5$$$), the length of the string.",
+      "The second line contains a string s$$$s$$$, containing only \"(\", \")\" and \"?\"."
+    ],
+    "output": [
+      "A single line contains a string representing the answer.",
+      "If there are many solutions, any of them is acceptable.",
+      "If there is no answer, print a single line containing \":(\" (without the quotes)."
+    ],
+    "note": [
+      "It can be proved that there is no solution for the second sample, so print \":(\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n(?????",
+      "output": "(()())"
+    },
+    {
+      "input": "10\n(???(???(?",
+      "output": ":("
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Serval 很快就告别了 Japari 幼儿园，开始了他在 Japari 小学的生活。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在他最喜欢的数学课上，老师向他讲解了以下有趣的定义。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "括号序列是一个只包含字符 \"(\" 和 \")\" 的字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "合法括号序列是一种括号序列，可以通过在该序列原有字符之间插入字符 \"1\" 和 \"+\"，将其转换为一个合法的算术表达式。例如，括号序列 \"()()\" 和 \"(())\" 是合法的（得到的表达式分别为 \"(1+1)+(1+1)\" 和 \"((1+1)+1)\"），而 \")(\" 和 \")\" 不是。注意，空字符串根据定义是合法括号序列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们定义 |s|$$$|s|$$$ 为字符串 s$$$s$$$ 的长度。字符串 s=s1s2…s|s|$$$s = s_1s_2\\dots s_{|s|}$$$ 的严格前缀 s[1…l]$$$s[1\\dots l]$$$(1≤l<|s|$$$(1\\leq l \\lt  |s|)$$$)是字符串 s1s2…sl$$$s_1s_2\\dots s_l$$$。注意，根据定义，空字符串和整个字符串都不是任何字符串的严格前缀。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "了解这些定义后，他提出了一个新问题。他写下了一个只包含字符 \"(\"、\")\" 和 \"?\" 的字符串 s$$$s$$$。他要做的是，将 s$$$s$$$ 中的每个 \"?\" 独立地替换为 \"(\" 或 \")\" 中的一个，使得新序列的所有严格前缀都不是合法的括号序列，同时新序列本身应当是一个合法的括号序列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "毕竟，他只是一名小学生，所以这个问题对他来说太难了。作为他最好的朋友，你能帮他替换这些问号吗？如果有多种方案，输出其中任意一种即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 |s|$$$|s|$$$(1≤|s|≤3⋅105$$$1\\leq |s|\\leq 3 \\cdot 10^5$$$)，表示字符串的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个字符串 s$$$s$$$，该字符串只包含 \"(\"、\")\" 和 \"?\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一行字符串，表示答案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多种解，输出其中任意一种即可。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果不存在答案，请输出一行 `:(`（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "可以证明第二个样例不存在解，因此请输出 `:(`。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Serval 与括号序列",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

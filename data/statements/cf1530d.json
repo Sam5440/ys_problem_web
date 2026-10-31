@@ -1,0 +1,105 @@
+{
+  "code": "CF1530D",
+  "letter": "D",
+  "title": "D. Secret Santa",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1530/D",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Every December, VK traditionally holds an event for its employees named \"Secret Santa\". Here's how it happens.",
+      "n$$$n$$$ employees numbered from 1$$$1$$$ to n$$$n$$$ take part in the event. Each employee i$$$i$$$ is assigned a different employee bi$$$b_i$$$, to which employee i$$$i$$$ has to make a new year gift. Each employee is assigned to exactly one other employee, and nobody is assigned to themselves (but two employees may be assigned to each other). Formally, all bi$$$b_i$$$ must be distinct integers between 1$$$1$$$ and n$$$n$$$, and for any i$$$i$$$, bi≠i$$$b_i \\ne i$$$ must hold.",
+      "The assignment is usually generated randomly. This year, as an experiment, all event participants have been asked who they wish to make a gift to. Each employee i$$$i$$$ has said that they wish to make a gift to employee ai$$$a_i$$$.",
+      "Find a valid assignment b$$$b$$$ that maximizes the number of fulfilled wishes of the employees."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤105$$$1 \\le t \\le 10^5$$$). Description of the test cases follows.",
+      "Each test case consists of two lines. The first line contains a single integer n$$$n$$$ (2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$) — the number of participants of the event.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai≤n$$$1 \\le a_i \\le n$$$; ai≠i$$$a_i \\ne i$$$) — wishes of the employees in order from 1$$$1$$$ to n$$$n$$$.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 2⋅105$$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print two lines.",
+      "In the first line, print a single integer k$$$k$$$ (0≤k≤n$$$0 \\le k \\le n$$$) — the number of fulfilled wishes in your assignment.",
+      "In the second line, print n$$$n$$$ distinct integers b1,b2,…,bn$$$b_1, b_2, \\ldots, b_n$$$ (1≤bi≤n$$$1 \\le b_i \\le n$$$; bi≠i$$$b_i \\ne i$$$) — the numbers of employees assigned to employees 1,2,…,n$$$1, 2, \\ldots, n$$$.",
+      "k$$$k$$$ must be equal to the number of values of i$$$i$$$ such that ai=bi$$$a_i = b_i$$$, and must be as large as possible. If there are multiple answers, print any."
+    ],
+    "note": [
+      "In the first test case, two valid assignments exist: [3,1,2]$$$[3, 1, 2]$$$ and [2,3,1]$$$[2, 3, 1]$$$. The former assignment fulfills two wishes, while the latter assignment fulfills only one. Therefore, k=2$$$k = 2$$$, and the only correct answer is [3,1,2]$$$[3, 1, 2]$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3\n2 1 2\n7\n6 4 6 2 4 5 6",
+      "output": "2\n3 1 2\n4\n6 4 7 2 3 5 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "每年十二月，VK 都会按照传统为其员工举办一项名为“Secret Santa”的活动。活动流程如下。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有 n$$$n$$$ 名编号从 1$$$1$$$ 到 n$$$n$$$ 的员工参加活动。每名员工 i$$$i$$$ 都被分配给一名不同的员工 bi$$$b_i$$$，员工 i$$$i$$$ 必须向该员工赠送新年礼物。每名员工恰好被分配给另一名员工，且没有人会被分配给自己(但两名员工可以互相分配给对方)。形式化地说，所有 bi$$$b_i$$$ 都必须是 1$$$1$$$ 到 n$$$n$$$ 之间的互不相同的整数，并且对于任意 i$$$i$$$，都必须满足 bi≠i$$$b_i \\ne i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "通常情况下，这种分配是随机生成的。今年，作为一次实验，活动的所有参与者都被询问了他们希望向谁赠送礼物。每名员工 i$$$i$$$ 都表示希望向员工 ai$$$a_i$$$ 赠送礼物。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "寻找一个有效的分配 b$$$b$$$，使员工愿望得到满足的数量最大。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤105$$$1 \\le t \\le 10^5$$$)。下面给出测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例包含两行。第一行包含一个整数 n$$$n$$$(2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$)——活动参与者的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$(1≤ai≤n$$$1 \\le a_i \\le n$$$；ai≠i$$$a_i \\ne i$$$)——按照从 1$$$1$$$ 到 n$$$n$$$ 的顺序给出的员工愿望。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出两行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一行输出一个整数 k$$$k$$$(0≤k≤n$$$0 \\le k \\le n$$$)——你的分配方案中得到满足的愿望数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二行输出 n$$$n$$$ 个互不相同的整数 b1,b2,…,bn$$$b_1, b_2, \\ldots, b_n$$$(1≤bi≤n$$$1 \\le b_i \\le n$$$；bi≠i$$$b_i \\ne i$$$)——分配给员工 1,2,…,n$$$1, 2, \\ldots, n$$$ 的员工编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "k$$$k$$$ 必须等于满足 ai=bi$$$a_i = b_i$$$ 的 i$$$i$$$ 的取值个数，并且应尽可能大。若有多个答案，输出任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，存在两种有效的分配方案：[3,1,2]$$$[3, 1, 2]$$$ 和 [2,3,1]$$$[2, 3, 1]$$$。前一种分配方案满足了两个愿望，而后一种分配方案只满足了一个愿望。因此，k=2$$$k = 2$$$，唯一正确的答案是 [3,1,2]$$$[3, 1, 2]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Secret Santa",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

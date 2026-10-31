@@ -1,0 +1,88 @@
+{
+  "code": "CF615C",
+  "letter": "C",
+  "title": "C. Running Track",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/615/C",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "A boy named Ayrat lives on planet AMI-1511. Each inhabitant of this planet has a talent. Specifically, Ayrat loves running, moreover, just running is not enough for him. He is dreaming of making running a real art.",
+      "First, he wants to construct the running track with coating t. On planet AMI-1511 the coating of the track is the sequence of colored blocks, where each block is denoted as the small English letter. Therefore, every coating can be treated as a string.",
+      "Unfortunately, blocks aren't freely sold to non-business customers, but Ayrat found an infinite number of coatings s. Also, he has scissors and glue. Ayrat is going to buy some coatings s, then cut out from each of them exactly one continuous piece (substring) and glue it to the end of his track coating. Moreover, he may choose to flip this block before glueing it. Ayrat want's to know the minimum number of coating s he needs to buy in order to get the coating t for his running track. Of course, he also want's to know some way to achieve the answer."
+    ],
+    "input": [
+      "First line of the input contains the string s — the coating that is present in the shop. Second line contains the string t — the coating Ayrat wants to obtain. Both strings are non-empty, consist of only small English letters and their length doesn't exceed 2100."
+    ],
+    "output": [
+      "The first line should contain the minimum needed number of coatings n or -1 if it's impossible to create the desired coating.",
+      "If the answer is not -1, then the following n lines should contain two integers xi and yi — numbers of ending blocks in the corresponding piece. If xi ≤ yi then this piece is used in the regular order, and if xi > yi piece is used in the reversed order. Print the pieces in the order they should be glued to get the string t."
+    ],
+    "note": [
+      "In the first sample string \"cbaabc\" = \"cba\" + \"abc\".",
+      "In the second sample: \"ayrat\" = \"a\" + \"yr\" + \"at\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "abc\ncbaabc",
+      "output": "2\n3 1\n1 3"
+    },
+    {
+      "input": "aaabrytaaa\nayrat",
+      "output": "3\n1 1\n6 5\n8 7"
+    },
+    {
+      "input": "ami\nno",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一个名叫 Ayrat 的男孩生活在 AMI-1511 星球上。这个星球上的每个居民都有一项天赋。具体来说，Ayrat 喜欢跑步，而且仅仅跑步还不能满足他。他梦想着将跑步变成一门真正的艺术。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，他想用涂层 t 建造跑道。在 AMI-1511 星球上，跑道的涂层由一串彩色方块组成，其中每个方块都用一个小写英文字母表示。因此，每种涂层都可以看作一个字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "遗憾的是，方块不会向非商业客户自由出售，但 Ayrat 找到了无限量的涂层 s。他还有剪刀和胶水。Ayrat 打算购买一些涂层 s，然后从每种涂层中恰好剪下一段连续的部分（子串），并将其粘到跑道涂层的末尾。此外，他可以在粘贴前翻转这段内容。Ayrat 想知道，为了得到跑道所需的涂层 t，他至少需要购买多少份涂层 s。当然，他还想知道一种实现该答案的方法。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含字符串 s——商店里有的涂层。第二行包含字符串 t——Ayrat 想要得到的涂层。两个字符串均非空，只由小写英文字母组成，且长度不超过 2100。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行应包含所需的最少片段数 n；如果无法构造出所需的字符串，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果答案不是 -1，则接下来 n 行每行应包含两个整数 xi 和 yi —— 对应片段中两端的方块编号。如果 xi ≤ yi，则该片段按正常顺序使用；如果 xi > yi，则该片段按相反顺序使用。按照拼接后能得到字符串 t 的顺序输出这些片段。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，字符串 \"cbaabc\" = \"cba\" + \"abc\"。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个样例中：\"ayrat\" = \"a\" + \"yr\" + \"at\"。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 跑道",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

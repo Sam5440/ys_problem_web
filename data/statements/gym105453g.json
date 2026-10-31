@@ -1,0 +1,105 @@
+{
+  "code": "GYM105453G",
+  "letter": "G",
+  "title": "G. Airport Departures' Optimization",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105453/problem/G",
+  "difficulty": "*1500",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Today, our airport had N$$$N$$$ flights scheduled, initially planned with multiple runways in mind. Unfortunately, due to maintenance issues, only one runway is available, which means not all flights can depart as scheduled. Some flights will leave on time, while others will be postponed until the end of the day.",
+      "Airlines, prioritizing customer satisfaction, offer bribes (denoted as bi$$$b_i$$$ for each flight i$$$i$$$) to the airport management to ensure their flights depart on time. Conversely, if a flight is delayed, the airline demands compensation (denoted as ci$$$c_i$$$ for each flight i$$$i$$$).",
+      "Your task is to determine the maximum profit the airport can achieve under these conditions, taking into account the bonuses and compensations for each flight.",
+      "Additionally, note that there must be a minimum interval of T$$$T$$$ time units between consecutive departures, and each plane takes off instantly."
+    ],
+    "input": [
+      "The first line contains two space-separated integers, the number of scheduled flights N$$$N$$$, and the minimum interval between flights T$$$T$$$.",
+      "Each of the next N$$$N$$$ lines contain three integers ti$$$t_i$$$, bi$$$b_i$$$, ci$$$c_i$$$, describing the scheduled departure time, the bonus for on-time departure and the compensation required for delay respectively, for the i$$$i$$$-th flight. The flights are listed in order of increasing departure time ti$$$t_i$$$."
+    ],
+    "output": [
+      "The output should contain a single integer P$$$P$$$: the maximum profit the airport can achieve."
+    ],
+    "note": [
+      "Limits",
+      "- 0≤N≤106$$$0 \\leq N \\leq 10^6$$$",
+      "- 0≤T≤105$$$0 \\leq T \\leq 10^5$$$",
+      "- 1≤ti≤108$$$1 \\leq t_i \\leq 10^8$$$",
+      "- 1≤bi≤1,000$$$1 \\leq b_i \\leq 1,000$$$",
+      "- −1,000≤ci≤−1$$$-1,000 \\leq c_i \\leq -1$$$"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 5\n2 1000 -100\n5 500 -500\n7 300 -500\n9 1000 -100",
+      "output": "1000"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "今天，我们机场安排了 N$$$N$$$ 个航班，最初是按照有多条跑道的情况进行计划的。不幸的是，由于维护问题，目前只有一条跑道可用，这意味着并非所有航班都能按计划起飞。一些航班会准时起飞，而其他航班将被推迟到当天结束。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "航空公司优先考虑乘客满意度，会向机场管理部门行贿，以确保其航班准时起飞。对于每个航班 i$$$i$$$，行贿金额记为 bi$$$b_i$$$。相反，如果航班延误，航空公司会要求赔偿，对于每个航班 i$$$i$$$，赔偿金额记为 ci$$$c_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是确定在这些条件下机场能够获得的最大利润，同时考虑每个航班带来的奖金和赔偿。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，请注意，连续两次起飞之间必须至少间隔 T$$$T$$$ 个时间单位，并且每架飞机均可瞬间起飞。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个用空格分隔的整数：计划起飞的航班数量 N$$$N$$$，以及航班之间的最小间隔 T$$$T$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行中，每行包含三个整数 ti$$$t_i$$$、bi$$$b_i$$$、ci$$$c_i$$$，分别描述第 i$$$i$$$ 个航班的计划起飞时间、准时起飞的奖励以及延误所需支付的赔偿。航班按照起飞时间 ti$$$t_i$$$ 递增的顺序给出。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出应包含一个整数 P$$$P$$$：机场能够获得的最大利润。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "约束条件",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "- 0≤N≤106$$$0 \\leq N \\leq 10^6$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "- 0≤T≤105$$$0 \\leq T \\leq 10^5$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "- 1≤ti≤108$$$1 \\leq t_i \\leq 10^8$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "- 1≤bi≤1,000$$$1 \\leq b_i \\leq 1,000$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "- −1,000≤ci≤−1$$$-1,000 \\leq c_i \\leq -1$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. 机场起飞安排的优化",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

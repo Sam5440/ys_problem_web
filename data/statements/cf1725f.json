@@ -1,0 +1,160 @@
+{
+  "code": "CF1725F",
+  "letter": "F",
+  "title": "F. Field Photography",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1725/F",
+  "difficulty": "2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Pak Chanek is traveling to Manado. It turns out that OSN (Indonesian National Scientific Olympiad) 2019 is being held. The contestants of OSN 2019 are currently lining up in a field to be photographed. The field is shaped like a grid of size N×10100$$$N \\times 10^{100}$$$ with N$$$N$$$ rows and 10100$$$10^{100}$$$ columns. The rows are numbered from 1$$$1$$$ to N$$$N$$$ from north to south, the columns are numbered from 1$$$1$$$ to 10100$$$10^{100}$$$ from west to east. The tile in row r$$$r$$$ and column c$$$c$$$ is denoted as (r,c)$$$(r,c)$$$.",
+      "There are N$$$N$$$ provinces that participate in OSN 2019. Initially, each contestant who represents province i$$$i$$$ stands in tile (i,p)$$$(i, p)$$$ for each p$$$p$$$ satisfying Li≤p≤Ri$$$L_i \\leq p \\leq R_i$$$. So, we can see that there are Ri−Li+1$$$R_i-L_i+1$$$ contestants who represent province i$$$i$$$.",
+      "Pak Chanek has a variable Z$$$Z$$$ that is initially equal to 0$$$0$$$. In one operation, Pak Chanek can choose a row i$$$i$$$ and a positive integer k$$$k$$$. Then, Pak Chanek will do one of the two following possibilities:",
+      "Move all contestants in row i$$$i$$$ exactly k$$$k$$$ tiles to the west. In other words, a contestant who is in (i,p)$$$(i, p)$$$ is moved to (i,p−k)$$$(i, p-k)$$$.",
+      "Move all contestants in row i$$$i$$$ exactly k$$$k$$$ tiles to the east. In other words, a contestant who is in (i,p)$$$(i, p)$$$ is moved to (i,p+k)$$$(i, p+k)$$$.",
+      "After each operation, the value of Z$$$Z$$$ will change into Z OR k$$$Z \\text{ OR } k$$$, with OR$$$\\text{OR}$$$ being the bitwise OR operation. Note that Pak Chanek can do operations to the same row more than once. Also note that Pak Chanek is not allowed to move contestants out of the grid.",
+      "There are Q$$$Q$$$ questions. For the j$$$j$$$-th question, you are given a positive integer Wj$$$W_j$$$, Pak Chanek must do zero or more operations so that the final value of Z$$$Z$$$ is exactly Wj$$$W_j$$$. Define M$$$M$$$ as the biggest number such that after all operations, there is at least one column that contains exactly M$$$M$$$ contestants. For each question, you must find the biggest possible M$$$M$$$ for all sequences of operations that can be done by Pak Chanek. Note that the operations done by Pak Chanek for one question do not carry over to other questions."
+    ],
+    "input": [
+      "The first line contains a single integer N$$$N$$$ (1≤N≤105$$$1 \\leq N \\leq 10^5$$$) — the number of rows in the grid and also the number of provinces that participate in OSN 2019.",
+      "The i$$$i$$$-th of the next N$$$N$$$ lines contains two integers Li$$$L_i$$$ and Ri$$$R_i$$$ (1≤Li≤Ri≤109$$$1 \\leq L_i \\leq R_i \\leq 10^9$$$) describing the positions of the contestants who represent province i$$$i$$$.",
+      "The next line contains a single integer Q$$$Q$$$ (1≤Q≤105$$$1 \\leq Q \\leq 10^5$$$) — the number of questions.",
+      "The j$$$j$$$-th of the next Q$$$Q$$$ lines contains a single integer Wj$$$W_j$$$ (1≤Wj≤109$$$1 \\leq W_j \\leq 10^9$$$) — the required final value of Z$$$Z$$$ for the j$$$j$$$-th question."
+    ],
+    "output": [
+      "Output Q$$$Q$$$ lines, with the j$$$j$$$-th line containing an integer that is the answer to the j$$$j$$$-th question."
+    ],
+    "note": [
+      "For the 1$$$1$$$-st question, Pak Chanek can do the following operations to get M=2$$$M=2$$$:",
+      "Move all contestants in row 2$$$2$$$ to the east by 4$$$4$$$ tiles. Z$$$Z$$$ changes into 0 OR 4=4$$$0 \\text{ OR } 4 = 4$$$.",
+      "Move all contestants in row 1$$$1$$$ to the east by 12$$$12$$$ tiles. Z$$$Z$$$ changes into 4 OR 12=12$$$4 \\text{ OR } 12 = 12$$$.",
+      "Now, columns 14$$$14$$$ and 15$$$15$$$ each contains exactly 2$$$2$$$ contestants.",
+      "For the 2$$$2$$$-nd question, Pak Chanek can do the following operations to get M=3$$$M=3$$$:",
+      "Move all contestants in row 3$$$3$$$ to the east by 4$$$4$$$ tiles. Z$$$Z$$$ changes into 0 OR 4=4$$$0 \\text{ OR } 4 = 4$$$.",
+      "Move all contestants in row 3$$$3$$$ to the west by 1$$$1$$$ tiles. Z$$$Z$$$ changes into 4 OR 1=5$$$4 \\text{ OR } 1 = 5$$$.",
+      "Move all contestants in row 1$$$1$$$ to the east by 5$$$5$$$ tiles. Z$$$Z$$$ changes into 5 OR 5=5$$$5 \\text{ OR } 5 = 5$$$.",
+      "Move all contestants in row 1$$$1$$$ to the east by 5$$$5$$$ tiles. Z$$$Z$$$ changes into 5 OR 5=5$$$5 \\text{ OR } 5 = 5$$$.",
+      "Now, column 11$$$11$$$ contains exactly 3$$$3$$$ contestants.",
+      "The following is an illustration of the example operations for the 2$$$2$$$-nd question.",
+      "![](https://espresso.codeforces.com/2d17b6eb6f7ef1e4b0d3777543772e736d20b7fa.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 5\n10 11\n8 8\n2\n12\n5",
+      "output": "2\n3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Pak Chanek 正在前往 Manado。碰巧，OSN(印度尼西亚国家科学奥林匹克竞赛)2019 正在举行。OSN 2019 的参赛者目前正在一块场地上排队，准备拍照。该场地是一个大小为 N×10100$$$N \\times 10^{100}$$$ 的网格，共有 N$$$N$$$ 行和 10100$$$10^{100}$$$ 列。行从北到南编号为 1$$$1$$$ 至 N$$$N$$$，列从西到东编号为 1$$$1$$$ 至 10100$$$10^{100}$$$。第 r$$$r$$$ 行、第 c$$$c$$$ 列的方格记为 (r,c)$$$(r,c)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "共有 N$$$N$$$ 个省份参加 OSN 2019。初始时，对于每个满足 Li≤p≤Ri$$$L_i \\leq p \\leq R_i$$$ 的 p$$$p$$$，代表省份 i$$$i$$$ 的一名参赛者站在方格 (i,p)$$$(i, p)$$$ 中。因此，可以看出代表省份 i$$$i$$$ 的参赛者共有 Ri−Li+1$$$R_i-L_i+1$$$ 名。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Pak Chanek 有一个变量 Z$$$Z$$$，其初始值为 0$$$0$$$。在一次操作中，Pak Chanek 可以选择一行 i$$$i$$$ 和一个正整数 k$$$k$$$。随后，Pak Chanek 将执行以下两种操作之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将第 i$$$i$$$ 行中的所有参赛者恰好向西移动 k$$$k$$$ 个方格。换句话说，位于 (i,p)$$$(i, p)$$$ 的参赛者会被移动到 (i,p−k)$$$(i, p-k)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将第 i$$$i$$$ 行中的所有参赛者恰好向东移动 k$$$k$$$ 个方格。换句话说，位于 (i,p)$$$(i, p)$$$ 的参赛者会被移动到 (i,p+k)$$$(i, p+k)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每次操作后，Z$$$Z$$$ 的值会变为 Z OR k$$$Z \\text{ OR } k$$$，其中 OR$$$\\text{OR}$$$ 表示按位或运算。注意，Pak Chanek 可以对同一行进行多次操作。此外，Pak Chanek 不允许将参赛者移出网格。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有 Q$$$Q$$$ 个问题。对于第 j$$$j$$$ 个问题，给定一个正整数 Wj$$$W_j$$$，Pak Chanek 必须执行零次或多次操作，使得 Z$$$Z$$$ 的最终值恰好等于 Wj$$$W_j$$$。定义 M$$$M$$$ 为最大的数，满足在所有操作结束后，至少有一列恰好包含 M$$$M$$$ 名参赛者。对于每个问题，你必须求出 Pak Chanek 可以执行的所有操作序列中，M$$$M$$$ 可能的最大值。注意，Pak Chanek 回答某个问题时所执行的操作不会延续到其他问题。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 N$$$N$$$(1≤N≤105$$$1 \\leq N \\leq 10^5$$$)，表示网格的行数，也表示参加 OSN 2019 的省份数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 N$$$i$$$ 行中，第 i$$$N$$$ 行包含两个整数 Li$$$L_i$$$ 和 Ri$$$R_i$$$(1≤Li≤Ri≤109$$$1 \\leq L_i \\leq R_i \\leq 10^9$$$)，描述代表省份 i$$$i$$$ 的参赛者的位置。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "下一行包含一个整数 Q$$$Q$$$(1≤Q≤105$$$1 \\leq Q \\leq 10^5$$$)，表示问题的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 Q$$$Q$$$ 行中，第 j$$$j$$$ 行包含一个整数 Wj$$$W_j$$$(1≤Wj≤109$$$1 \\leq W_j \\leq 10^9$$$)，即第 j$$$j$$$ 个问题所要求的 Z$$$Z$$$ 的最终值。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Q$$$Q$$$ 行，其中第 j$$$j$$$ 行包含一个整数，表示第 j$$$j$$$ 个问题的答案。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于第 1$$$1$$$ 个询问，Pak Chanek 可以执行以下操作使得 M=2$$$M=2$$$：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "将第 2$$$2$$$ 行的所有参赛者向东移动 4$$$4$$$ 格。Z$$$Z$$$ 变为 0 OR 4=4$$$0 \\text{ OR } 4 = 4$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "将第 1$$$1$$$ 行的所有参赛者向东移动 12$$$12$$$ 格。Z$$$Z$$$ 变为 4 OR 12=12$$$4 \\text{ OR } 12 = 12$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "现在，第 14$$$14$$$ 列和第 15$$$15$$$ 列各恰好包含 2$$$2$$$ 名参赛者。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于第 2$$$2$$$ 个询问，Pak Chanek 可以执行以下操作使得 M=3$$$M=3$$$：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "将第 3$$$3$$$ 行的所有参赛者向东移动 4$$$4$$$ 格。Z$$$Z$$$ 变为 0 OR 4=4$$$0 \\text{ OR } 4 = 4$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "将第 3$$$3$$$ 行中的所有选手向西移动 1$$$1$$$ 个格子。Z$$$Z$$$ 变为 4 OR 1=5$$$4 \\text{ OR } 1 = 5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将第 1$$$1$$$ 行中的所有选手向东移动 5$$$5$$$ 个格子。Z$$$Z$$$ 变为 5 OR 5=5$$$5 \\text{ OR } 5 = 5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将第 1$$$1$$$ 行中的所有选手向东移动 5$$$5$$$ 个格子。Z$$$Z$$$ 变为 5 OR 5=5$$$5 \\text{ OR } 5 = 5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在，第 11$$$11$$$ 列中恰好有 3$$$3$$$ 名选手。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下面是第 2$$$2$$$ 个问题的示例操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/2d17b6eb6f7ef1e4b0d3777543772e736d20b7fa.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 野外摄影",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

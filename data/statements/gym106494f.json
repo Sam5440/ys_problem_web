@@ -1,0 +1,121 @@
+{
+  "code": "GYM106494F",
+  "letter": "F",
+  "title": "F. Thanos Sort",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106494/problem/F",
+  "difficulty": "*2000",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Thanos sort is one of the sorting algorithms that works in time linear in the length of the array.",
+      "The sorting algorithm is as follows:",
+      "1) If the array a=(a1,⋯,an)$$$a = (a_1, \\cdots , a_n)$$$ is already sorted, then the process stops. An array is considered sorted if for every i$$$i$$$ from 2$$$2$$$ to n$$$n$$$, it holds that ai−1≤ai$$$a_{i-1} \\le a_i$$$.",
+      "2) Otherwise, either the first ⌈n2⌉$$$\\lceil \\frac{n}{2} \\rceil$$$ elements of the array or the last ⌊n2⌋$$$\\lfloor \\frac{n}{2} \\rfloor$$$ elements are chosen uniformly at random. All of them are removed, and the algorithm proceeds to step 1.",
+      "For example, sorting the array [10,4,5,6,8]$$$[10, 4, 5, 6, 8]$$$ may look as follows:",
+      "[10,4,5,6,8]$$$[10, 4, 5, 6, 8]$$$ -> [6,8]$$$[6, 8]$$$",
+      "Or:",
+      "[10,4,5,6,8]$$$[10, 4, 5, 6, 8]$$$ -> [10,4,5]$$$[10, 4, 5]$$$ -> [10,4]$$$[10, 4]$$$ -> [10]$$$[10]$$$",
+      "Since many elements may disappear during Thanos sort, for an array a$$$a$$$, let f(a)$$$f(a)$$$ be the expected number of elements remaining in the final array.",
+      "You are given some array a$$$a$$$.",
+      "You need to process the following queries:",
+      "i,x$$$i, x$$$ – assign ai:=x$$$a_i := x$$$.",
+      "After each query, you need to output f(a)$$$f(a)$$$ for the current array."
+    ],
+    "input": [
+      "The first line contains two integers n,q$$$n, q$$$ (1≤n,q≤106$$$1 \\le n, q \\le 10^6$$$) – the length of the array and the number of queries, respectively.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an(0≤ai≤109)$$$a_1, a_2, \\ldots, a_n\\, (0 \\le a_i \\le 10^9)$$$ – the initial values of the array a$$$a$$$.",
+      "Each of the next q$$$q$$$ lines contains a pair of integers i,x$$$i, x$$$ (1≤i≤n,0≤x≤109$$$1 \\le i \\le n, 0 \\le x \\le 10^9$$$) – the parameters of the next query."
+    ],
+    "output": [
+      "After each query, output f(a)$$$f(a)$$$ modulo 998244353$$$998244353$$$ on a separate line."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 8\n10 4 5 6 8\n1 5\n5 0\n3 3\n2 11\n4 7\n3 12\n5 17\n4 13",
+      "output": "499122178\n1\n1\n748683266\n748683266\n2\n499122179\n5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Thanos Sort 是一种排序算法，其运行时间与数组长度成线性关系。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "该排序算法如下：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "1) 如果数组 a=(a1,⋯,an)$$$a = (a_1, \\cdots , a_n)$$$ 已经有序，则过程停止。若对于从 2$$$2$$$ 到 n$$$n$$$ 的每个 i$$$i$$$ 都有 ai−1≤ai$$$a_{i-1} \\le a_i$$$，则称该数组有序。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "2) 否则，等概率随机选择数组的前 ⌈n2⌉$$$\\lceil \\frac{n}{2} \\rceil$$$ 个元素或后 ⌊n2⌋$$$\\lfloor \\frac{n}{2} \\rfloor$$$ 个元素，将它们全部删除，然后算法继续执行步骤 1。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "例如，对数组 [10,4,5,6,8]$$$[10, 4, 5, 6, 8]$$$ 进行排序的过程可能如下：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "[10,4,5,6,8]$$$[10, 4, 5, 6, 8]$$$ -> [6,8]$$$[6, 8]$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "或者：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "[10,4,5,6,8]$$$[10, 4, 5, 6, 8]$$$ -> [10,4,5]$$$[10, 4, 5]$$$ -> [10,4]$$$[10, 4]$$$ -> [10]$$$[10]$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于在 Thanos 排序过程中可能会有许多元素消失，对于数组 a$$$a$$$，令 f(a)$$$f(a)$$$ 表示最终数组中剩余元素数量的期望值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个数组 a$$$a$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要处理以下查询：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "i,x$$$i, x$$$——将 ai:=x$$$a_i := x$$$ 赋值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每次查询后，你需要输出当前数组的 f(a)$$$f(a)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n,q$$$n, q$$$(1≤n,q≤106$$$1 \\le n, q \\le 10^6$$$)——分别表示数组的长度和查询次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an(0≤ai≤109)$$$a_1, a_2, \\ldots, a_n\\, (0 \\le a_i \\le 10^9)$$$——数组 a$$$a$$$ 的初始值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行中，每行包含一对整数 i,x$$$i, x$$$(1≤i≤n,0≤x≤109$$$1 \\le i \\le n, 0 \\le x \\le 10^9$$$)——下一次查询的参数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "每次查询后，在单独的一行输出 f(a)$$$f(a)$$$ 对 998244353$$$998244353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. Thanos Sort",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

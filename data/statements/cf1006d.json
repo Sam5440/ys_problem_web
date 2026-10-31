@@ -1,0 +1,124 @@
+{
+  "code": "CF1006D",
+  "letter": "D",
+  "title": "D. Two Strings Swaps",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1006/D",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given two strings a$$$a$$$ and b$$$b$$$ consisting of lowercase English letters, both of length n$$$n$$$. The characters of both strings have indices from 1$$$1$$$ to n$$$n$$$, inclusive.",
+      "You are allowed to do the following changes:",
+      "Choose any index i$$$i$$$ (1≤i≤n$$$1 \\le i \\le n$$$) and swap characters ai$$$a_i$$$ and bi$$$b_i$$$;",
+      "Choose any index i$$$i$$$ (1≤i≤n$$$1 \\le i \\le n$$$) and swap characters ai$$$a_i$$$ and an−i+1$$$a_{n - i + 1}$$$;",
+      "Choose any index i$$$i$$$ (1≤i≤n$$$1 \\le i \\le n$$$) and swap characters bi$$$b_i$$$ and bn−i+1$$$b_{n - i + 1}$$$.",
+      "Note that if n$$$n$$$ is odd, you are formally allowed to swap a⌈n2⌉$$$a_{\\lceil\\frac{n}{2}\\rceil}$$$ with a⌈n2⌉$$$a_{\\lceil\\frac{n}{2}\\rceil}$$$ (and the same with the string b$$$b$$$) but this move is useless. Also you can swap two equal characters but this operation is useless as well.",
+      "You have to make these strings equal by applying any number of changes described above, in any order. But it is obvious that it may be impossible to make two strings equal by these swaps.",
+      "In one preprocess move you can replace a character in a$$$a$$$ with another character. In other words, in a single preprocess move you can choose any index i$$$i$$$ (1≤i≤n$$$1 \\le i \\le n$$$), any character c$$$c$$$ and set ai:=c$$$a_i := c$$$.",
+      "Your task is to find the minimum number of preprocess moves to apply in such a way that after them you can make strings a$$$a$$$ and b$$$b$$$ equal by applying some number of changes described in the list above.",
+      "Note that the number of changes you make after the preprocess moves does not matter. Also note that you cannot apply preprocess moves to the string b$$$b$$$ or make any preprocess moves after the first change is made."
+    ],
+    "input": [
+      "The first line of the input contains one integer n$$$n$$$ (1≤n≤105$$$1 \\le n \\le 10^5$$$) — the length of strings a$$$a$$$ and b$$$b$$$.",
+      "The second line contains the string a$$$a$$$ consisting of exactly n$$$n$$$ lowercase English letters.",
+      "The third line contains the string b$$$b$$$ consisting of exactly n$$$n$$$ lowercase English letters."
+    ],
+    "output": [
+      "Print a single integer — the minimum number of preprocess moves to apply before changes, so that it is possible to make the string a$$$a$$$ equal to string b$$$b$$$ with a sequence of changes from the list above."
+    ],
+    "note": [
+      "In the first example preprocess moves are as follows: a1:=$$$a_1 := $$$'b', a3:=$$$a_3 := $$$'c', a4:=$$$a_4 := $$$'a' and a5:=$$$a_5:=$$$'b'. Afterwards, a=$$$a = $$$\"bbcabba\". Then we can obtain equal strings by the following sequence of changes: swap(a2,b2)$$$swap(a_2, b_2)$$$ and swap(a2,a6)$$$swap(a_2, a_6)$$$. There is no way to use fewer than 4$$$4$$$ preprocess moves before a sequence of changes to make string equal, so the answer in this example is 4$$$4$$$.",
+      "In the second example no preprocess moves are required. We can use the following sequence of changes to make a$$$a$$$ and b$$$b$$$ equal: swap(b1,b5)$$$swap(b_1, b_5)$$$, swap(a2,a4)$$$swap(a_2, a_4)$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\nabacaba\nbacabaa",
+      "output": "4"
+    },
+    {
+      "input": "5\nzcabd\ndbacz",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定两个由小写英文字母组成的字符串 a$$$a$$$ 和 b$$$b$$$，二者长度均为 n$$$n$$$。两个字符串中的字符下标均从 1$$$1$$$ 到 n$$$n$$$(包含端点)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以进行以下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择任意下标 i$$$i$$$(1≤i≤n$$$1 \\le i \\le n$$$)，交换字符 ai$$$a_i$$$ 和 bi$$$b_i$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择任意下标 i$$$i$$$(1≤i≤n$$$1 \\le i \\le n$$$)，交换字符 ai$$$a_i$$$ 和 an−i+1$$$a_{n - i + 1}$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择任意下标 i$$$i$$$(1≤i≤n$$$1 \\le i \\le n$$$)，交换字符 bi$$$b_i$$$ 和 bn−i+1$$$b_{n - i + 1}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，如果 n$$$n$$$ 为奇数，形式上允许交换 a⌈n2⌉$$$a_{\\lceil\\frac{n}{2}\\rceil}$$$ 和 a⌈n2⌉$$$a_{\\lceil\\frac{n}{2}\\rceil}$$$(字符串 b$$$b$$$ 中也同样如此)，但这一操作没有意义。此外，你也可以交换两个相同的字符，但这一操作同样没有意义。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要按照任意顺序应用任意次上述操作，使这两个字符串相等。但显然，仅通过这些交换操作可能无法使两个字符串相等。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在一次预处理操作中，你可以将字符串 a$$$a$$$ 中的一个字符替换为另一个字符。换句话说，在一次预处理操作中，你可以选择任意下标 i$$$i$$$(1≤i≤n$$$1 \\le i \\le n$$$)、任意字符 c$$$c$$$，并令 ai:=c$$$a_i := c$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是求出所需进行的预处理操作的最少次数，使得在完成这些操作后，可以通过应用上面列表中描述的若干次操作使字符串 a$$$a$$$ 和 b$$$b$$$ 相等。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，预处理操作之后所进行的操作次数并不重要。此外，注意你不能对字符串 b$$$b$$$ 应用预处理操作，也不能在进行第一次操作后再进行任何预处理操作。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入第一行包含一个整数 n$$$n$$$(1≤n≤105$$$1 \\le n \\le 10^5$$$)——字符串 a$$$a$$$ 和 b$$$b$$$ 的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含字符串 a$$$a$$$，它恰好由 n$$$n$$$ 个小写英文字母组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含字符串 b$$$b$$$，该字符串恰好由 n$$$n$$$ 个小写英文字母组成。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——在进行变换之前需要执行的最少预处理操作次数，使得可以通过上述列表中的一系列操作将字符串 a$$$a$$$ 变得与字符串 b$$$b$$$ 相等。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，预处理操作如下：a1:=$$$a_1 := $$$'b'，a3:=$$$a_3 := $$$'c'，a4:=$$$a_4 := $$$'a' 以及 a5:=$$$a_5:=$$$'b'。之后，a=$$$a = $$$\"bbcabba\"。随后，我们可以通过以下操作序列使两个字符串相等：swap(a2,b2)$$$swap(a_2, b_2)$$$ 和 swap(a2,a6)$$$swap(a_2, a_6)$$$。在执行一系列操作使字符串相等之前，不可能使用少于 4$$$4$$$ 次预处理操作，因此该样例中的答案是 4$$$4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中不需要进行预处理操作。我们可以使用以下操作序列使 a$$$a$$$ 和 b$$$b$$$ 相等：swap(b1,b5)$$$swap(b_1, b_5)$$$，swap(a2,a4)$$$swap(a_2, a_4)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 两个字符串交换",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

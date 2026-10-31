@@ -1,0 +1,115 @@
+{
+  "code": "GYM106020G",
+  "letter": "G",
+  "title": "G. Pretty Prime Collection",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106020/problem/G",
+  "difficulty": "*2000",
+  "timeLimit": "5 s",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a deck of n$$$n$$$ cards, each labeled with a number ai$$$a_i$$$. The game begins with an empty hand and an initial total score of zero.",
+      "On the i$$$i$$$-th turn, you must pick up the i$$$i$$$-th card with value ai$$$a_i$$$, then optionally discard some cards from your hand, ensuring that after this step, the bitwise XOR[8]$$$^{[8]}$$$ of any two remaining cards in hand is a prime number[11]$$$^{[11]}$$$. The score for this turn is the sum of the values of all cards in your hand, which is then added to the total score.",
+      "Determine the maximum possible total score after completing all n$$$n$$$ turns."
+    ],
+    "input": [
+      "Each test consists of multiple test cases. The first line contains a single integer t$$$t$$$ (1≤t≤50$$$1 \\le t \\le 50$$$) — the number of test cases. The description of the test cases follows.",
+      "The first line of each test case contains one integer n$$$n$$$ (1≤n≤150$$$1 \\le n \\le 150$$$).",
+      "The second line of each test case contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai<220$$$1 \\le a_i  \\lt  2^{20}$$$).",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 150$$$150$$$."
+    ],
+    "output": [
+      "For each test case, output one line containing a single integer — the maximum score you can get."
+    ],
+    "note": [
+      "Cards picked during their respective turns are underlined, while discarded cards are crossed out.",
+      "In the first test case, you can process the initial empty hand {}$$$\\{\\}$$$ and total score 0$$$0$$$ as follows:",
+      "after completing the first turn: {1_}$$$\\{\\underline{1}\\}$$$ following removal→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1}$$$\\{1\\}$$$ and a total score of 0+1=1$$$0 + 1 = 1$$$;",
+      "after completing the second turn: {1,2_}$$$\\{1, \\underline{2}\\}$$$ following removal→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1,2}$$$\\{1, 2\\}$$$ and a total score of 1+3=4$$$1 + 3 = 4$$$;",
+      "after completing the third turn: {1,⧸2,3_}$$$\\{1, \\not{2}, \\underline{3}\\}$$$ following removal→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1,3}$$$\\{1, 3\\}$$$ and a total score of 4+4=8$$$4 + 4 = 8$$$. Note that cards with values 2$$$2$$$ and 3$$$3$$$ cannot be held in hand simultaneously since 2⊕3=1$$$2 \\oplus 3 = 1$$$, which isn't a prime number. To resolve this, we can discard the card with value 2$$$2$$$;",
+      "after completing the fourth turn: {1,3,4_}$$$\\{1, 3, \\underline{4}\\}$$$ following removal→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1,3,4}$$$\\{1, 3, 4\\}$$$ and a total score of 8+8=16$$$8 + 8 = 16$$$;",
+      "after completing the fifth turn: {1,3,4,⧸5_}$$$\\{1, 3, 4, \\not{\\underline{5}}\\}$$$ following removal→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1,3,4}$$$\\{1, 3, 4\\}$$$ and a total score of 16+8=24$$$16 + 8 = 24$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n5\n1 2 3 4 5\n9\n9 9 8 2 4 4 3 5 3\n2\n323468 765165",
+      "output": "24 \n103 \n1412101"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一副包含 n$$$n$$$ 张牌的牌堆，每张牌上标有一个数字 ai$$$a_i$$$。游戏开始时，手牌为空，初始总分为零。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第 i$$$i$$$ 轮，你必须拿起第 i$$$i$$$ 张价值为 ai$$$a_i$$$ 的牌，然后可以选择弃掉手中若干张牌，确保此步骤之后，手中任意两张剩余牌的按位异或[8]$$$^{[8]}$$$ 都是一个素数[11]$$$^{[11]}$$$。这一轮的得分为你手中所有牌的价值之和，并累加到总分中。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "完成全部 n$$$n$$$ 轮后，确定可能的最大总分。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含一个整数 t$$$t$$$ (1≤t≤50$$$1 \\le t \\le 50$$$) — 测试用例的数量。接下来是每个测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$ (1≤n≤150$$$1 \\le n \\le 150$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai<220$$$1 \\le a_i  \\lt  2^{20}$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "保证所有测试用例的 n$$$n$$$ 之和不超过 150$$$150$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一行，其中包含一个整数，即你能够获得的最大分数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在相应回合中选取的卡片带有下划线，而被弃置的卡片会被划掉。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个测试用例中，你可以按如下方式处理初始的空手牌 {}$$$\\{\\}$$$ 和总分 0$$$0$$$：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "完成第一个回合后：{1_}$$$\\{\\underline{1}\\}$$$ 移除后→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1}$$$\\{1\\}$$$，总分为 0+1=1$$$0 + 1 = 1$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "完成第二个回合后：{1,2_}$$$\\{1, \\underline{2}\\}$$$ 移除后→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1,2}$$$\\{1, 2\\}$$$，总分为 1+3=4$$$1 + 3 = 4$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "完成第三个回合后：{1,⧸2,3_}$$$\\{1, \\not{2}, \\underline{3}\\}$$$ 移除后→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1,3}$$$\\{1, 3\\}$$$，总分为 4+4=8$$$4 + 4 = 8$$$。注意，由于 2⊕3=1$$$2 \\oplus 3 = 1$$$ 不是素数，因此数值为 2$$$2$$$ 和 3$$$3$$$ 的卡片不能同时保留在手牌中。为了解决这个问题，我们可以弃置数值为 2$$$2$$$ 的卡片；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "完成第四回合后：{1,3,4_}$$$\\{1, 3, \\underline{4}\\}$$$ 移除后→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1,3,4}$$$\\{1, 3, 4\\}$$$，总得分为 8+8=16$$$8 + 8 = 16$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "完成第五回合后：{1,3,4,⧸5_}$$$\\{1, 3, 4, \\not{\\underline{5}}\\}$$$ 移除后→$$$\\overset{\\text{following removal}}{\\xrightarrow{\\hspace{1.3cm}}}$$$ {1,3,4}$$$\\{1, 3, 4\\}$$$，总得分为 16+8=24$$$16 + 8 = 24$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. 漂亮的素数集合",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

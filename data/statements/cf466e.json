@@ -1,0 +1,96 @@
+{
+  "code": "CF466E",
+  "letter": "E",
+  "title": "E. Information Graph",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/466/E",
+  "difficulty": "2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "There are n employees working in company \"X\" (let's number them from 1 to n for convenience). Initially the employees didn't have any relationships among each other. On each of m next days one of the following events took place:",
+      "either employee y became the boss of employee x (at that, employee x didn't have a boss before);",
+      "or employee x gets a packet of documents and signs them; then he gives the packet to his boss. The boss signs the documents and gives them to his boss and so on (the last person to sign the documents sends them to the archive);",
+      "or comes a request of type \"determine whether employee x signs certain documents\".",
+      "Your task is to write a program that will, given the events, answer the queries of the described type. At that, it is guaranteed that throughout the whole working time the company didn't have cyclic dependencies."
+    ],
+    "input": [
+      "The first line contains two integers n and m (1 ≤ n, m ≤ 105) — the number of employees and the number of events.",
+      "Each of the next m lines contains the description of one event (the events are given in the chronological order). The first number of the line determines the type of event t (1 ≤ t ≤ 3).",
+      "If t = 1, then next follow two integers x and y (1 ≤ x, y ≤ n) — numbers of the company employees. It is guaranteed that employee x doesn't have the boss currently.",
+      "If t = 2, then next follow integer x (1 ≤ x ≤ n) — the number of the employee who got a document packet.",
+      "If t = 3, then next follow two integers x and i (1 ≤ x ≤ n; 1 ≤ i ≤ [number of packets that have already been given]) — the employee and the number of the document packet for which you need to find out information. The document packets are numbered started from 1 in the chronological order.",
+      "It is guaranteed that the input has at least one query of the third type."
+    ],
+    "output": [
+      "For each query of the third type print \"YES\" if the employee signed the document package and \"NO\" otherwise. Print all the words without the quotes."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 9\n1 4 3\n2 4\n3 3 1\n1 2 3\n2 2\n3 1 2\n1 3 1\n2 2\n3 1 3",
+      "output": "YES\nNO\nYES"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "公司“X”中有 n 名员工（为方便起见，我们将他们编号为 1 到 n）。起初，员工之间没有任何关系。在接下来的 m 天中，每天发生以下事件之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要么员工 y 成为员工 x 的老板（此时，员工 x 之前没有老板）；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要么员工 x 收到一沓文件并在上面签字；然后他将这沓文件交给他的老板。老板签署文件后再将其交给自己的老板，如此继续（最后一个签署文件的人会将其送入档案室）；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要么收到一个请求，要求判断员工 x 是否签署某些文件。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是编写一个程序，根据给出的事件回答上述类型的询问。同时，保证在整个工作期间，公司中不存在循环依赖关系。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 m（1 ≤ n，m ≤ 10^5）——员工数量和事件数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行中，每行包含一个事件的描述（这些事件按时间顺序给出）。每行的第一个数字决定事件的类型 t（1 ≤ t ≤ 3）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 t = 1，接下来给出两个整数 x 和 y（1 ≤ x, y ≤ n），表示公司员工的编号。保证员工 x 当前没有上司。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 t = 2，接下来给出一个整数 x（1 ≤ x ≤ n），表示收到文件包的员工编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 t = 3，接下来给出两个整数 x 和 i（1 ≤ x ≤ n；1 ≤ i ≤ 已经发放的文件包数量），分别表示员工编号，以及需要查询信息的文件包编号。文件包按照时间顺序从 1 开始编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证输入中至少包含一个第三类查询。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个第三类查询，如果该员工签署了文件包，则输出“YES”，否则输出“NO”。输出所有单词时不要输出引号。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 信息图",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

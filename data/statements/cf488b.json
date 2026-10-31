@@ -1,0 +1,123 @@
+{
+  "code": "CF488B",
+  "letter": "B",
+  "title": "B. Candy Boxes",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/488/B",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There is an old tradition of keeping 4 boxes of candies in the house in Cyberland. The numbers of candies are special if their arithmetic mean, their median and their range are all equal. By definition, for a set {x1, x2, x3, x4} (x1 ≤ x2 ≤ x3 ≤ x4) arithmetic mean is ![](https://espresso.codeforces.com/daeb25d0b520beaea095158d4851903f527ffafc.png), median is ![](https://espresso.codeforces.com/7655b731471163052bb5fbb4c5414c495a2ca2e2.png) and range is x4 - x1. The arithmetic mean and median are not necessary integer. It is well-known that if those three numbers are same, boxes will create a \"debugging field\" and codes in the field will have no bugs.",
+      "For example, 1, 1, 3, 3 is the example of 4 numbers meeting the condition because their mean, median and range are all equal to 2.",
+      "Jeff has 4 special boxes of candies. However, something bad has happened! Some of the boxes could have been lost and now there are only n (0 ≤ n ≤ 4) boxes remaining. The i-th remaining box contains ai candies.",
+      "Now Jeff wants to know: is there a possible way to find the number of candies of the 4 - n missing boxes, meeting the condition above (the mean, median and range are equal)?"
+    ],
+    "input": [
+      "The first line of input contains an only integer n (0 ≤ n ≤ 4).",
+      "The next n lines contain integers ai, denoting the number of candies in the i-th box (1 ≤ ai ≤ 500)."
+    ],
+    "output": [
+      "In the first output line, print \"YES\" if a solution exists, or print \"NO\" if there is no solution.",
+      "If a solution exists, you should output 4 - n more lines, each line containing an integer b, denoting the number of candies in a missing box.",
+      "All your numbers b must satisfy inequality 1 ≤ b ≤ 106. It is guaranteed that if there exists a positive integer solution, you can always find such b's meeting the condition. If there are multiple answers, you are allowed to print any of them.",
+      "Given numbers ai may follow in any order in the input, not necessary in non-decreasing.",
+      "ai may have stood at any positions in the original set, not necessary on lowest n first positions."
+    ],
+    "note": [
+      "For the first sample, the numbers of candies in 4 boxes can be 1, 1, 3, 3. The arithmetic mean, the median and the range of them are all 2.",
+      "For the second sample, it's impossible to find the missing number of candies.",
+      "In the third example no box has been lost and numbers satisfy the condition.",
+      "You may output b in any order."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1\n1",
+      "output": "YES\n3\n3"
+    },
+    {
+      "input": "3\n1\n1\n1",
+      "output": "NO"
+    },
+    {
+      "input": "4\n1\n2\n2\n3",
+      "output": "YES"
+    }
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "如果存在解，在输出的第一行打印“YES”；如果不存在解，则打印“NO”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在解，你应该再输出 4 - n 行，每行包含一个整数 b，表示某个缺失盒子中的糖果数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你的所有数字 b 必须满足不等式 1 ≤ b ≤ 10^6。保证如果存在正整数解，你总能找到满足条件的这样的 b。如果有多组答案，你可以输出其中任意一组。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "给定的数 ai 在输入中可能以任意顺序出现，不一定是非递减的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "ai 在原集合中可能位于任意位置，不一定在前 n 个最小的位置上。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于第一个样例，4 个盒子中的糖果数量可以是 1, 1, 3, 3。它们的算术平均数、中位数和极差都为 2。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于第二个样例，不可能找到缺失的糖果数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第三个样例中，没有盒子丢失，并且数字满足条件。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以以任意顺序输出 b。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Cyberland 有一个古老的传统：在家中存放 4 盒糖果。如果糖果数量的算术平均数、中位数和极差都相等，那么这些糖果数量就是特殊的。根据定义，对于集合 {x1, x2, x3, x4}(x1 ≤ x2 ≤ x3 ≤ x4)，算术平均数为 ![](https://espresso.codeforces.com/daeb25d0b520beaea095158d4851903f527ffafc.png)，中位数为 ![](https://espresso.codeforces.com/7655b731471163052bb5fbb4c5414c495a2ca2e2.png)，极差为 x4 - x1。算术平均数和中位数不一定是整数。众所周知，如果这三个数相同，这些盒子就会产生一个“调试场”，场中的代码将不会有任何错误。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，1、1、3、3 是满足条件的 4 个数的一个例子，因为它们的平均数、中位数和极差都等于 2。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Jeff 有 4 个装有糖果的特殊盒子。然而，发生了一件糟糕的事情！其中一些盒子可能丢失了，现在只剩下 n（0 ≤ n ≤ 4）个盒子。第 i 个剩余的盒子中有 ai 颗糖果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在 Jeff 想知道：是否存在一种方案，确定丢失的 4 − n 个盒子中的糖果数量，并满足上述条件（平均数、中位数和极差相等）？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（0 ≤ n ≤ 4）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n 行每行包含一个整数 ai，表示第 i 个盒子中糖果的数量（1 ≤ ai ≤ 500）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 糖果盒",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

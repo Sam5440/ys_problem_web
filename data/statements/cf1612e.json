@@ -1,0 +1,137 @@
+{
+  "code": "CF1612E",
+  "letter": "E",
+  "title": "E. Messages",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1612/E",
+  "difficulty": "2000",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Monocarp is a tutor of a group of n$$$n$$$ students. He communicates with them using a conference in a popular messenger.",
+      "Today was a busy day for Monocarp — he was asked to forward a lot of posts and announcements to his group, that's why he had to write a very large number of messages in the conference. Monocarp knows the students in the group he is tutoring quite well, so he understands which message should each student read: Monocarp wants the student i$$$i$$$ to read the message mi$$$m_i$$$.",
+      "Of course, no one's going to read all the messages in the conference. That's why Monocarp decided to pin some of them. Monocarp can pin any number of messages, and if he wants anyone to read some message, he should pin it — otherwise it will definitely be skipped by everyone.",
+      "Unfortunately, even if a message is pinned, some students may skip it anyway. For each student i$$$i$$$, Monocarp knows that they will read at most ki$$$k_i$$$ messages. Suppose Monocarp pins t$$$t$$$ messages; if t≤ki$$$t \\le k_i$$$, then the i$$$i$$$-th student will read all the pinned messages; but if t>ki$$$t  \\gt  k_i$$$, the i$$$i$$$-th student will choose exactly ki$$$k_i$$$ random pinned messages (all possible subsets of pinned messages of size ki$$$k_i$$$ are equiprobable) and read only the chosen messages.",
+      "Monocarp wants to maximize the expected number of students that read their respective messages (i.e. the number of such indices i$$$i$$$ that student i$$$i$$$ reads the message mi$$$m_i$$$). Help him to choose how many (and which) messages should he pin!"
+    ],
+    "input": [
+      "The first line contains one integer n$$$n$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$) — the number of students in the conference.",
+      "Then n$$$n$$$ lines follow. The i$$$i$$$-th line contains two integers mi$$$m_i$$$ and ki$$$k_i$$$ (1≤mi≤2⋅105$$$1 \\le m_i \\le 2 \\cdot 10^5$$$; 1≤ki≤20$$$1 \\le k_i \\le 20$$$) — the index of the message which Monocarp wants the i$$$i$$$-th student to read and the maximum number of messages the i$$$i$$$-th student will read, respectively."
+    ],
+    "output": [
+      "In the first line, print one integer t$$$t$$$ (1≤t≤2⋅105$$$1 \\le t \\le 2 \\cdot 10^5$$$) — the number of messages Monocarp should pin. In the second line, print t$$$t$$$ distinct integers c1$$$c_1$$$, c2$$$c_2$$$, ..., ct$$$c_t$$$ (1≤ci≤2⋅105$$$1 \\le c_i \\le 2 \\cdot 10^5$$$) — the indices of the messages Monocarp should pin. The messages can be listed in any order.",
+      "If there are multiple answers, print any of them."
+    ],
+    "note": [
+      "Let's consider the examples from the statement.",
+      "In the first example, Monocarp pins the messages 5$$$5$$$ and 10$$$10$$$.  if the first student reads the message 5$$$5$$$, the second student reads the messages 5$$$5$$$ and 10$$$10$$$, and the third student reads the messages 5$$$5$$$ and 10$$$10$$$, the number of students which have read their respective messages will be 2$$$2$$$;",
+      "if the first student reads the message 10$$$10$$$, the second student reads the messages 5$$$5$$$ and 10$$$10$$$, and the third student reads the messages 5$$$5$$$ and 10$$$10$$$, the number of students which have read their respective messages will be 3$$$3$$$.",
+      "So, the expected number of students which will read their respective messages is 52$$$\\frac{5}{2}$$$.",
+      "In the second example, Monocarp pins the message 10$$$10$$$.  if the first student reads the message 10$$$10$$$, the second student reads the message 10$$$10$$$, and the third student reads the message 10$$$10$$$, the number of students which have read their respective messages will be 2$$$2$$$.",
+      "So, the expected number of students which will read their respective messages is 2$$$2$$$. If Monocarp had pinned both messages 5$$$5$$$ and 10$$$10$$$, the expected number of students which read their respective messages would have been 2$$$2$$$ as well.",
+      "In the third example, the expected number of students which will read their respective messages is 83$$$\\frac{8}{3}$$$.",
+      "In the fourth example, the expected number of students which will read their respective messages is 2$$$2$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n10 1\n10 2\n5 2",
+      "output": "2\n5 10"
+    },
+    {
+      "input": "3\n10 1\n5 2\n10 1",
+      "output": "1\n10"
+    },
+    {
+      "input": "4\n1 1\n2 2\n3 3\n4 4",
+      "output": "3\n2 3 4"
+    },
+    {
+      "input": "3\n13 2\n42 2\n37 2",
+      "output": "3\n42 13 37"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Monocarp 是一个有 n$$$n$$$ 名学生的小组的辅导老师。他通过一款流行的即时通信软件中的群聊与他们交流。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "今天对 Monocarp 来说是忙碌的一天——有人要求他将许多帖子和公告转发给他的小组，因此他不得不在群聊中发送大量消息。Monocarp 很了解自己辅导的小组中的学生，所以他知道每个学生应该阅读哪条消息：Monocarp 希望学生 i$$$i$$$ 阅读消息 mi$$$m_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当然，没有人会阅读群聊中的所有消息。因此，Monocarp 决定将其中一些消息置顶。Monocarp 可以置顶任意数量的消息；如果他希望某人阅读某条消息，就应该将其置顶——否则这条消息肯定会被所有人跳过。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "遗憾的是，即使一条消息被置顶，一些学生仍可能跳过它。对于每个学生 i$$$i$$$，Monocarp 知道他们至多会阅读 ki$$$k_i$$$ 条消息。假设 Monocarp 将 t$$$t$$$ 条消息置顶；如果 t≤ki$$$t \\le k_i$$$，那么第 i$$$i$$$ 个学生会阅读所有置顶消息；但如果 t>ki$$$t  \\gt  k_i$$$，第 i$$$i$$$ 个学生会从置顶消息中随机选择恰好 ki$$$k_i$$$ 条(所有大小为 ki$$$k_i$$$ 的置顶消息子集被选中的概率相同)，并且只阅读被选中的消息。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Monocarp 想要最大化阅读了各自消息的学生人数的期望值(也就是满足学生 i$$$i$$$ 阅读消息 mi$$$m_i$$$ 的下标 i$$$i$$$ 的数量)。请帮助他选择应该置顶多少条消息，以及置顶哪些消息！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$)——会议中的学生人数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来有 n$$$n$$$ 行。第 i$$$i$$$ 行包含两个整数 mi$$$m_i$$$ 和 ki$$$k_i$$$(1≤mi≤2⋅105$$$1 \\le m_i \\le 2 \\cdot 10^5$$$；1≤ki≤20$$$1 \\le k_i \\le 20$$$)——分别表示 Monocarp 希望第 i$$$i$$$ 个学生阅读的消息编号，以及第 i$$$i$$$ 个学生将阅读的消息数量上限。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出一个整数 t$$$t$$$(1≤t≤2⋅105$$$1 \\le t \\le 2 \\cdot 10^5$$$)——Monocarp 应该置顶的消息数量。第二行输出 t$$$t$$$ 个互不相同的整数 c1$$$c_1$$$、c2$$$c_2$$$、...、ct$$$c_t$$$(1≤ci≤2⋅105$$$1 \\le c_i \\le 2 \\cdot 10^5$$$)——Monocarp 应该置顶的消息编号。消息可以按任意顺序列出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个答案，输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "让我们来看题面中的样例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个样例中，Monocarp 置顶了消息 5$$$5$$$ 和 10$$$10$$$。如果第一个学生阅读消息 5$$$5$$$，第二个学生阅读消息 5$$$5$$$ 和 10$$$10$$$，第三个学生阅读消息 5$$$5$$$ 和 10$$$10$$$，那么阅读了各自对应消息的学生人数为 2$$$2$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果第一个学生阅读消息 10$$$10$$$，第二个学生阅读消息 5$$$5$$$ 和 10$$$10$$$，第三个学生阅读消息 5$$$5$$$ 和 10$$$10$$$，那么阅读了各自对应消息的学生人数为 3$$$3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，阅读各自对应消息的学生人数的期望值为 52$$$\\frac{5}{2}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，Monocarp 置顶了消息 10$$$10$$$。如果第一个学生阅读消息 10$$$10$$$，第二个学生阅读消息 10$$$10$$$，第三个学生阅读消息 10$$$10$$$，那么阅读了各自对应消息的学生人数为 2$$$2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，阅读各自对应消息的学生人数的期望值为 2$$$2$$$。如果 Monocarp 同时置顶了消息 5$$$5$$$ 和 10$$$10$$$，那么阅读各自对应消息的学生人数的期望值也会是 2$$$2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，阅读各自对应消息的学生人数的期望值为 83$$$\\frac{8}{3}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四个样例中，将阅读各自消息的学生的期望数量为 2$$$2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 消息",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

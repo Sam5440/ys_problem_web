@@ -1,0 +1,117 @@
+{
+  "code": "CF316B2",
+  "letter": "B2",
+  "title": "B2. EKG",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/316/B2",
+  "difficulty": "1600",
+  "timeLimit": "0.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "In the rush of modern life, people often forget how beautiful the world is. The time to enjoy those around them is so little that some even stand in queues to several rooms at the same time in the clinic, running from one queue to another.",
+      "(Cultural note: standing in huge and disorganized queues for hours is a native tradition in Russia, dating back to the Soviet period. Queues can resemble crowds rather than lines. Not to get lost in such a queue, a person should follow a strict survival technique: you approach the queue and ask who the last person is, somebody answers and you join the crowd. Now you're the last person in the queue till somebody else shows up. You keep an eye on the one who was last before you as he is your only chance to get to your destination) I'm sure many people have had the problem when a stranger asks who the last person in the queue is and even dares to hint that he will be the last in the queue and then bolts away to some unknown destination. These are the representatives of the modern world, in which the ratio of lack of time is so great that they do not even watch foreign top-rated TV series. Such people often create problems in queues, because the newcomer does not see the last person in the queue and takes a place after the \"virtual\" link in this chain, wondering where this legendary figure has left.",
+      "The Smart Beaver has been ill and he's made an appointment with a therapist. The doctor told the Beaver the sad news in a nutshell: it is necessary to do an electrocardiogram. The next day the Smart Beaver got up early, put on the famous TV series on download (three hours till the download's complete), clenched his teeth and bravely went to join a queue to the electrocardiogram room, which is notorious for the biggest queues at the clinic.",
+      "Having stood for about three hours in the queue, the Smart Beaver realized that many beavers had not seen who was supposed to stand in the queue before them and there was a huge mess. He came up to each beaver in the ECG room queue and asked who should be in front of him in the queue. If the beaver did not know his correct position in the queue, then it might be his turn to go get an ECG, or maybe he should wait for a long, long time...",
+      "As you've guessed, the Smart Beaver was in a hurry home, so he gave you all the necessary information for you to help him to determine what his number in the queue can be."
+    ],
+    "input": [
+      "The first line contains two integers n (1 ≤ n ≤ 103) and x (1 ≤ x ≤ n) — the number of beavers that stand in the queue and the Smart Beaver's number, correspondingly. All willing to get to the doctor are numbered from 1 to n.",
+      "The second line contains n integers a1, a2, ..., an (0 ≤ ai ≤ n) — the number of the beaver followed by the i-th beaver. If ai = 0, then the i-th beaver doesn't know who is should be in front of him. It is guaranteed that values ai are correct. That is there is no cycles in the dependencies. And any beaver is followed by at most one beaver in the queue.",
+      "The input limits for scoring 30 points are (subproblem B1):",
+      "It is guaranteed that the number of zero elements ai doesn't exceed 20.",
+      "The input limits for scoring 100 points are (subproblems B1+B2):",
+      "The number of zero elements ai is arbitrary."
+    ],
+    "output": [
+      "Print all possible positions of the Smart Beaver in the line in the increasing order."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/b45db92332ea35ed93db6b672b85e9ba4f8c96e0.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 1\n2 0 4 0 6 0",
+      "output": "2\n4\n6"
+    },
+    {
+      "input": "6 2\n2 3 0 5 6 0",
+      "output": "2\n5"
+    },
+    {
+      "input": "4 1\n0 0 0 0",
+      "output": "1\n2\n3\n4"
+    },
+    {
+      "input": "6 2\n0 0 1 0 4 5",
+      "output": "1\n3\n4\n6"
+    }
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "请按递增顺序输出 Smart Beaver 在线中的所有可能位置。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "![](https://espresso.codeforces.com/b45db92332ea35ed93db6b672b85e9ba4f8c96e0.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "在现代生活的忙碌节奏中，人们常常忘记这个世界有多么美好。享受身边人的时间少之又少，以至于有些人在诊所里甚至会同时排着几个诊室的队，在一条队和另一条队之间来回奔波。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "（文化注释：在俄罗斯，排上几个小时杂乱无章的长队是一项本土传统，可以追溯到苏联时期。队伍有时更像人群，而不是一条队列。为了不在这样的队伍中迷路，一个人必须遵循严格的生存技巧：你走到队伍旁，询问谁是最后一个人，有人回答后，你便加入人群。此时，在有人加入之前，你就是队伍中的最后一个人。你要一直留意原本排在你前面的那个人，因为他是你抵达目的地的唯一希望。）我相信很多人都遇到过这样的情况：一个陌生人询问谁是队伍中的最后一个人，甚至还敢暗示自己会是队伍中的最后一个人，然后便飞快地跑向某个未知的目的地。这些人正是现代世界的代表。在这个世界里，人们缺少时间的程度如此严重，以至于他们甚至不看国外高分电视剧。这些人经常给排队造成麻烦，因为后来者看不到队伍中的最后一个人，便在这条队列中“虚拟”连接的后面占了一个位置，同时纳闷那位传说中的人物究竟去了哪里。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "聪明的海狸生病了，于是他预约了一位内科医生。医生用一句话告诉了海狸这个悲伤的消息：他必须做心电图。第二天，聪明的海狸早早起床，把那部著名电视剧加入下载（还要三个小时才能下载完成），咬紧牙关，勇敢地前往心电图室排队，而那里以诊所中队伍最长而臭名昭著。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在队伍中站了大约三个小时后，聪明的海狸意识到，许多海狸都不知道在他们前面应该排着谁，现场已经乱成了一团。他走到心电图室队伍中的每只海狸面前，询问谁应该排在他的前面。如果某只海狸不知道自己在队伍中的正确位置，那么可能已经轮到他去做心电图，也可能还要等很长很长时间……",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "正如你所猜到的，聪明的海狸急着回家，所以他把所有必要的信息都告诉了你，请你帮他确定他在队伍中的号码可能是多少。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n（1 ≤ n ≤ 10^3）和 x（1 ≤ x ≤ n）——分别表示排队的海狸数量和聪明海狸的编号。所有愿意去看医生的海狸编号为 1 到 n。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个整数 a1， a2， ...， an（0 ≤ ai ≤ n）——第 i 只海狸所跟随的海狸的编号。如果 ai = 0，那么第 i 只海狸不知道谁应该站在自己前面。保证所有 ai 的取值都是正确的。也就是说，依赖关系中不存在环，并且队列中的每只海狸后面至多有一只海狸。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "获得 30 分的输入限制如下（子问题 B1）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 ai 中等于 0 的元素个数不超过 20。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "获得 100 分的输入限制如下（子问题 B1+B2）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "ai 中等于 0 的元素个数不受限制。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B2. 心电图",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

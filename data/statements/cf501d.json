@@ -1,0 +1,113 @@
+{
+  "code": "CF501D",
+  "letter": "D",
+  "title": "D. Misha and Permutations Summation",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/501/D",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let's define the sum of two permutations p and q of numbers 0, 1, ..., (n - 1) as permutation ![](https://espresso.codeforces.com/a6967136eb87d05a01f795f6061b884a1a9f4f4b.png), where Perm(x) is the x-th lexicographically permutation of numbers 0, 1, ..., (n - 1) (counting from zero), and Ord(p) is the number of permutation p in the lexicographical order.",
+      "For example, Perm(0) = (0, 1, ..., n - 2, n - 1), Perm(n! - 1) = (n - 1, n - 2, ..., 1, 0)",
+      "Misha has two permutations, p and q. Your task is to find their sum.",
+      "Permutation a = (a0, a1, ..., an - 1) is called to be lexicographically smaller than permutation b = (b0, b1, ..., bn - 1), if for some k following conditions hold: a0 = b0, a1 = b1, ..., ak - 1 = bk - 1, ak < bk."
+    ],
+    "input": [
+      "The first line contains an integer n (1 ≤ n ≤ 200 000).",
+      "The second line contains n distinct integers from 0 to n - 1, separated by a space, forming permutation p.",
+      "The third line contains n distinct integers from 0 to n - 1, separated by spaces, forming permutation q."
+    ],
+    "output": [
+      "Print n distinct integers from 0 to n - 1, forming the sum of the given permutations. Separate the numbers by spaces."
+    ],
+    "note": [
+      "Permutations of numbers from 0 to 1 in the lexicographical order: (0, 1), (1, 0).",
+      "In the first sample Ord(p) = 0 and Ord(q) = 0, so the answer is ![](https://espresso.codeforces.com/8ce4cd76db7c3f712f9101b410c36891976581b8.png).",
+      "In the second sample Ord(p) = 0 and Ord(q) = 1, so the answer is ![](https://espresso.codeforces.com/5684e4e2deb5ed60419a5c9e765f0cd4cb995652.png).",
+      "Permutations of numbers from 0 to 2 in the lexicographical order: (0, 1, 2), (0, 2, 1), (1, 0, 2), (1, 2, 0), (2, 0, 1), (2, 1, 0).",
+      "In the third sample Ord(p) = 3 and Ord(q) = 5, so the answer is ![](https://espresso.codeforces.com/da14f774ebda9f417649f5334d329ec7b7c07778.png)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n0 1\n0 1",
+      "output": "0 1"
+    },
+    {
+      "input": "2\n0 1\n1 0",
+      "output": "1 0"
+    },
+    {
+      "input": "3\n1 2 0\n2 1 0",
+      "output": "1 0 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "我们将两个由数字 0, 1, ..., (n - 1) 构成的排列 p 和 q 的和定义为排列 ![](https://espresso.codeforces.com/a6967136eb87d05a01f795f6061b884a1a9f4f4b.png)，其中 Perm(x) 表示由数字 0, 1, ..., (n - 1) 构成的按字典序排列中的第 x 个排列(从 0 开始计数)，Ord(p) 表示排列 p 在字典序中的序号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，Perm(0) = (0, 1, ..., n - 2, n - 1)，Perm(n! - 1) = (n - 1, n - 2, ..., 1, 0)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Misha 有两个排列 p 和 q。你的任务是求它们的和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在某个 k，使得 a0 = b0，a1 = b1，...，ak - 1 = bk - 1，且 ak < bk，则称排列 a = (a0, a1, ..., an - 1) 的字典序小于排列 b = (b0, b1, ..., bn - 1)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 200 000）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个两两不同的整数，这些整数介于 0 和 n - 1 之间，以空格分隔，构成排列 p。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 n 个互不相同的、范围从 0 到 n - 1 的整数，它们以空格分隔，构成排列 q。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 个互不相同的、范围从 0 到 n - 1 的整数，构成给定排列之和。数字之间用空格分隔。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "范围从 0 到 1 的数的排列按字典序排列为：(0, 1)、(1, 0)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个样例中，Ord(p) = 0 且 Ord(q) = 0，因此答案是 ![](https://espresso.codeforces.com/8ce4cd76db7c3f712f9101b410c36891976581b8.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，Ord(p) = 0 且 Ord(q) = 1，因此答案是 ![](https://espresso.codeforces.com/5684e4e2deb5ed60419a5c9e765f0cd4cb995652.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "范围从 0 到 2 的数的排列按字典序排列为：(0, 1, 2)、(0, 2, 1)、(1, 0, 2)、(1, 2, 0)、(2, 0, 1)、(2, 1, 0)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，Ord(p) = 3 且 Ord(q) = 5，因此答案是 ![](https://espresso.codeforces.com/da14f774ebda9f417649f5334d329ec7b7c07778.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Misha 与排列求和",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

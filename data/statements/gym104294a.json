@@ -1,0 +1,79 @@
+{
+  "code": "GYM104294A",
+  "letter": "A",
+  "title": "A. Square Jutsu!",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104294/problem/A",
+  "difficulty": "*1500",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "After years of experimentation, Kakashi has come up with the \"square\"-jutsu, a powerful technique that strikes lightning onto a large square area of land. Kakashi happens to be testing his jutsu on a mountain, which can be modeled by an N×N$$$N \\times N$$$ grid.",
+      "Each cell at row 1≤i≤N$$$1\\leq i\\leq N$$$ and column 1≤j≤N$$$1\\leq j\\leq N$$$ on the mountain has an elevation ci,j$$$c_{i, j}$$$. For every cell (i,j)$$$(i,j)$$$ it is guaranteed that ci,j≤min(ci+1,j, ci,j+1, ci+1,j+1)$$$c_{i,j} \\leq \\min \\left(c_{i+1, j}, \\space c_{i, j+1}, \\space c_{i+1, j+1}\\right)$$$ (treating cells outside the N×N$$$N\\times N$$$ grid as having infinite elevation). It is also guaranteed that c1,1=0$$$c_{1, 1} = 0$$$.",
+      "Kakashi's jutsu is powerful, but limited: square-jutsu can strike any k×k$$$k\\times k$$$ square block of mountain cells, but only if the entire k×k$$$k\\times k$$$ block lies within the bounds of the mountain grid and only if every cell in the block has elevation within a certain range [a,b]$$$[a, b]$$$ inclusive (a≤ci,j≤b$$$a \\leq c_{i, j} \\leq b$$$ for all cells (i,j)$$$(i,j)$$$ in the target square). Given the elevation of every mountain cell and the elevation range allowed by his jutsu, Kakashi wants to know the number of cells in the largest possible square block his jutsu can hit."
+    ],
+    "input": [
+      "The first line of input contains 2 integers N$$$N$$$ and Q$$$Q$$$ (1≤N≤300, 1≤Q≤104$$$1 \\leq N \\leq 300, \\space 1 \\leq Q \\leq 10^4$$$), the size of the grid and the number of test cases, respectively. Each test case uses the same mountain grid.",
+      "The next N$$$N$$$ lines each contain N$$$N$$$ space-separated integers. The j$$$j$$$-th integer on the i$$$i$$$-th line represents the elevation ci,j$$$c_{i, j}$$$ (0≤ci,j≤N2$$$0 \\leq c_{i, j} \\leq N^2$$$).",
+      "The next Q$$$Q$$$ lines each specify one test case, and contain two space-separated integers a$$$a$$$ and b$$$b$$$ (0≤a≤b<N2$$$0 \\leq a \\leq b  \\lt  N^2$$$), the minimum and maximum elevation that Kakashi's square-jutsu can hit."
+    ],
+    "output": [
+      "For each test case, print a line with one integer: the number of mountain cells in the largest square block of land that Kakashi's square-jutsu can strike. For each test case it is guaranteed that Kakashi can target at least one cell."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 5\n0 1 2 3 4\n0 1 2 4 4\n0 2 3 5 6\n1 3 3 5 6\n1 4 4 6 7\n6 7\n4 4\n0 6\n3 4\n5 7",
+      "output": "1\n1\n16\n4\n4"
+    },
+    {
+      "input": "10 5\n0 0 0 0 0 0 1 2 3 3\n1 1 1 1 1 1 2 2 3 4\n1 2 2 2 2 2 3 3 3 4\n2 2 2 2 2 2 3 3 3 5\n2 2 2 3 3 3 3 3 3 6\n3 3 3 3 3 3 4 5 5 7\n4 4 4 4 5 5 6 6 6 7\n4 4 5 5 5 5 7 7 7 8\n5 5 6 6 6 6 8 8 9 9\n5 5 6 6 6 6 8 8 10 11\n4 6\n2 3\n3 11\n3 6\n2 5",
+      "output": "16\n16\n36\n25\n25"
+    },
+    {
+      "input": "4 1\n0 1 1 1\n1 1 1 1\n1 1 1 1\n1 1 1 1\n0 15",
+      "output": "16"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "经过多年的实验，卡卡西创造出了\"方形\"忍术，这是一种能将闪电击向大片方形区域的强大忍术。卡卡西恰好在一座山上测试他的忍术，这座山可以用一个 N×N$$$N \\times N$$$ 的网格来建模。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "山上第 1≤i≤N$$$1\\leq i\\leq N$$$ 行、第 1≤j≤N$$$1\\leq j\\leq N$$$ 列的每个格子都有一个海拔高度 ci,j$$$c_{i, j}$$$。保证对于每个格子 (i,j)$$$(i,j)$$$，都有 ci,j≤min(ci+1,j, ci,j+1, ci+1,j+1)$$$c_{i,j} \\leq \\min \\left(c_{i+1, j}, \\space c_{i, j+1}, \\space c_{i+1, j+1}\\right)$$$(将 N×N$$$N\\times N$$$ 网格之外的格子视为海拔无穷大)。同时还保证 c1,1=0$$$c_{1, 1} = 0$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "卡卡西的忍术威力强大但有限制：方形忍术可以打击任意 k×k$$$k\\times k$$$ 的方形山体格子区域，但前提是整个 k×k$$$k\\times k$$$ 区域都位于山体网格范围内，且该区域内每个格子的海拔都在某个闭区间 [a,b]$$$[a, b]$$$ 内(即目标方形内所有格子 (i,j)$$$(i,j)$$$ 都满足 a≤ci,j≤b$$$a \\leq c_{i, j} \\leq b$$$)。给定每个山体格子的海拔以及他的忍术所允许的海拔范围，卡卡西想知道他的忍术能够打击的最大方形区域包含多少个格子。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含 2 个整数 N$$$N$$$ 和 Q$$$Q$$$(1≤N≤300，1≤Q≤104$$$1 \\leq N \\leq 300, \\space 1 \\leq Q \\leq 10^4$$$)，分别表示网格的大小和测试用例的数量。每个测试用例都使用相同的山体网格。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行每行包含 N$$$N$$$ 个空格分隔的整数。第 i$$$i$$$ 行上的第 j$$$j$$$ 个整数表示海拔高度 ci,j$$$c_{i, j}$$$(0≤ci,j≤N2$$$0 \\leq c_{i, j} \\leq N^2$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 Q$$$Q$$$ 行每行描述一个测试用例，包含两个空格分隔的整数 a$$$a$$$ 和 b$$$b$$$(0≤a≤b<N2$$$0 \\leq a \\leq b  \\lt  N^2$$$)，分别表示卡卡西的方形忍术能够打击的最低和最高海拔。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一行一个整数：Kakashi 的方术能够攻击的最大正方形土地块中山地单元格的数量。对于每个测试用例，保证 Kakashi 至少可以攻击一个单元格。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. Square Jutsu!",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

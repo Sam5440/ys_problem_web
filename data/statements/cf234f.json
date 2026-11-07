@@ -1,0 +1,94 @@
+{
+  "code": "CF234F",
+  "letter": "F",
+  "title": "F. Fence",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/234/F",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Vasya should paint a fence in front of his own cottage. The fence is a sequence of n wooden boards arranged in a single row. Each board is a 1 centimeter wide rectangle. Let's number the board fence using numbers 1, 2, ..., n from left to right. The height of the i-th board is hi centimeters.",
+      "Vasya has a 1 centimeter wide brush and the paint of two colors, red and green. Of course, the amount of the paint is limited. Vasya counted the area he can paint each of the colors. It turned out that he can not paint over a square centimeters of the fence red, and he can not paint over b square centimeters green. Each board of the fence should be painted exactly one of the two colors. Perhaps Vasya won't need one of the colors.",
+      "In addition, Vasya wants his fence to look smart. To do this, he should paint the fence so as to minimize the value that Vasya called the fence unattractiveness value. Vasya believes that two consecutive fence boards, painted different colors, look unattractive. The unattractiveness value of a fence is the total length of contact between the neighboring boards of various colors. To make the fence look nice, you need to minimize the value as low as possible. Your task is to find what is the minimum unattractiveness Vasya can get, if he paints his fence completely.",
+      "![](https://espresso.codeforces.com/608607fd89101c3a460c088eac5454cb8a9539ba.png)",
+      "The picture shows the fence, where the heights of boards (from left to right) are 2,3,2,4,3,1. The first and the fifth boards are painted red, the others are painted green. The first and the second boards have contact length 2, the fourth and fifth boards have contact length 3, the fifth and the sixth have contact length 1. Therefore, the unattractiveness of the given painted fence is 2+3+1=6."
+    ],
+    "input": [
+      "The first line contains a single integer n (1 ≤ n ≤ 200) — the number of boards in Vasya's fence.",
+      "The second line contains two integers a and b (0 ≤ a, b ≤ 4·104) — the area that can be painted red and the area that can be painted green, correspondingly.",
+      "The third line contains a sequence of n integers h1, h2, ..., hn (1 ≤ hi ≤ 200) — the heights of the fence boards.",
+      "All numbers in the lines are separated by single spaces."
+    ],
+    "output": [
+      "Print a single number — the minimum unattractiveness value Vasya can get if he paints his fence completely. If it is impossible to do, print  - 1."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n5 7\n3 3 4 1",
+      "output": "3"
+    },
+    {
+      "input": "3\n2 3\n1 3 1",
+      "output": "2"
+    },
+    {
+      "input": "3\n3 3\n2 2 2",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Vasya 应该在自己的小屋前刷一面栅栏。栅栏由 n 块木板组成，这些木板排成一行。每块木板都是宽 1 厘米的矩形。我们从左到右将栅栏中的木板编号为 1、2、……、n。第 i 块木板的高度为 h_i 厘米。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vasya 有一把宽 1 厘米的刷子，以及红色和绿色两种油漆。当然，油漆的数量是有限的。Vasya 计算了他分别可以使用两种颜色涂刷的面积。结果发现，他最多可以将栅栏的 a 平方厘米涂成红色，最多可以将 b 平方厘米涂成绿色。栅栏的每块木板都必须恰好涂成两种颜色中的一种。Vasya 可能不需要使用其中一种颜色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，Vasya 希望他的栅栏看起来漂亮。为此，他应该粉刷栅栏，使 Vasya 称之为栅栏不美观值的数值最小。Vasya 认为，两个相邻且涂成不同颜色的栅栏木板看起来不美观。栅栏的不美观值是颜色不同的相邻木板之间接触部分的总长度。为了使栅栏看起来漂亮，需要使该值尽可能小。你的任务是找出，如果 Vasya 将栅栏全部涂完，他能得到的最小不美观值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/608607fd89101c3a460c088eac5454cb8a9539ba.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "图片展示了这样一面栅栏，其木板的高度（从左到右）为 2、3、2、4、3、1。第一块和第五块木板涂成红色，其余木板涂成绿色。第一块和第二块木板的接触长度为 2，第四块和第五块木板的接触长度为 3，第五块和第六块木板的接触长度为 1。因此，所给涂色栅栏的不美观值为 2+3+1=6。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 200）——Vasya 的栅栏中木板的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含两个整数 a 和 b（0 ≤ a, b ≤ 4·10^4）——分别表示可以涂成红色和绿色的面积。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含一个由 n 个整数组成的序列 h1, h2, ..., hn（1 ≤ hi ≤ 200）——栅栏木板的高度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "各行中的所有数字均由单个空格分隔。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个数——如果 Vasya 将他的栅栏全部涂完，他所能获得的最小不美观度。如果无法做到，输出 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 栅栏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

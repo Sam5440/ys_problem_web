@@ -1,0 +1,135 @@
+{
+  "code": "CF1650F",
+  "letter": "F",
+  "title": "F. Vitaly and Advanced Useless Algorithms",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1650/F",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Vitaly enrolled in the course Advanced Useless Algorithms. The course consists of n$$$n$$$ tasks. Vitaly calculated that he has ai$$$a_i$$$ hours to do the task i$$$i$$$ from the day he enrolled in the course. That is, the deadline before the i$$$i$$$-th task is ai$$$a_i$$$ hours. The array a$$$a$$$ is sorted in ascending order, in other words, the job numbers correspond to the order in which the assignments are turned in.",
+      "Vitaly does everything conscientiously, so he wants to complete each task by 100$$$100$$$ percent, or more. Initially, his completion rate for each task is 0$$$0$$$ percent.",
+      "Vitaly has m$$$m$$$ training options, each option can be used not more than once. The i$$$i$$$th option is characterized by three integers: ei,ti$$$e_i, t_i$$$ and pi$$$p_i$$$. If Vitaly uses the i$$$i$$$th option, then after ti$$$t_i$$$ hours (from the current moment) he will increase the progress of the task ei$$$e_i$$$ by pi$$$p_i$$$ percent.",
+      "For example, let Vitaly have 3$$$3$$$ of tasks to complete. Let the array a$$$a$$$ have the form: a=[5,7,8]$$$a = [5, 7, 8]$$$. Suppose Vitaly has 5$$$5$$$ of options: [e1=1,t1=1,p1=30]$$$[e_1=1, t_1=1, p_1=30]$$$, [e2=2,t2=3,p2=50]$$$[e_2=2, t_2=3, p_2=50]$$$, [e3=2,t3=3,p3=100]$$$[e_3=2, t_3=3, p_3=100]$$$, [e4=1,t4=1,p4=80]$$$[e_4=1, t_4=1, p_4=80]$$$, [e5=3,t5=3,p5=100]$$$[e_5=3, t_5=3, p_5=100]$$$.",
+      "Then, if Vitaly prepares in the following way, he will be able to complete everything in time:",
+      "Vitaly chooses the 4$$$4$$$-th option. Then in 1$$$1$$$ hour, he will complete the 1$$$1$$$-st task at 80$$$80$$$ percent. He still has 4$$$4$$$ hours left before the deadline for the 1$$$1$$$-st task.",
+      "Vitaly chooses the 3$$$3$$$-rd option. Then in 3$$$3$$$ hours, he will complete the 2$$$2$$$-nd task in its entirety. He has another 1$$$1$$$ hour left before the deadline for the 1$$$1$$$-st task and 4$$$4$$$ hours left before the deadline for the 3$$$3$$$-rd task.",
+      "Vitaly chooses the 1$$$1$$$-st option. Then after 1$$$1$$$ hour, he will complete the 1$$$1$$$-st task for 110$$$110$$$ percent, which means that he will complete the 1$$$1$$$-st task just in time for the deadline.",
+      "Vitaly chooses the 5$$$5$$$-th option. He will complete the 3$$$3$$$-rd task for 2$$$2$$$ hours, and after another 1$$$1$$$ hour, Vitaly will complete the 3$$$3$$$-rd task in its entirety.",
+      "Thus, Vitaly has managed to complete the course completely and on time, using the 4$$$4$$$ options.",
+      "Help Vitaly — print the options for Vitaly to complete the tasks in the correct order. Please note: each option can be used not more than once. If there are several possible answers, it is allowed to output any of them."
+    ],
+    "input": [
+      "The first line of input data contains an integer T$$$T$$$ (1≤T≤104$$$1 \\le T \\le 10^4$$$) —the number of input test cases in the test.",
+      "The descriptions of the input test case follow.",
+      "The first line of each test case description contains two integers n$$$n$$$ and m$$$m$$$ (1≤n,m≤105$$$1 \\le n,m \\le 10^5$$$) —the number of jobs and the number of training options, respectively.",
+      "The next line contains n$$$n$$$ numbers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (1≤ai≤109$$$1 \\le a_i \\le 10^9$$$) — the time before the deadline of job i$$$i$$$. The array values — are non-decreasing, that is a1≤a2≤⋯≤an$$$a_1 \\le a_2 \\le \\dots \\le a_n$$$.",
+      "The following m$$$m$$$ lines contain triples of numbers ei,ti,pi$$$e_i, t_i, p_i$$$ (1≤ei≤n$$$1 \\le e_i \\le n$$$, 1≤ti≤109$$$1 \\le t_i \\le 10^9$$$, 1≤pi≤100$$$1 \\le p_i \\le 100$$$) — if Vitaly chooses this option, then after ti$$$t_i$$$ hours he will increase the progress of the task ei$$$e_i$$$ by pi$$$p_i$$$ percent. The options are numbered from 1$$$1$$$ to m$$$m$$$ in order in the input data.",
+      "It is guaranteed that the sum of n+m$$$n+m$$$ on all test cases does not exceed 2⋅105$$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print on the first line the number k$$$k$$$, meaning that for k$$$k$$$ of options, Vitaly will be able to complete each task by 100$$$100$$$ percent or more on time. The options should not be repeated. Or print -1 if Vitaly is unable to complete all tasks in time.",
+      "If there is an answer, on the next line print k$$$k$$$ of different integers from 1$$$1$$$ to m$$$m$$$ — the numbers of the options in the order you want. If there is more than one answer, it is allowed to print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3 5\n5 7 8\n1 1 30\n2 3 50\n2 3 100\n1 1 80\n3 3 100\n1 5\n51\n1 36 91\n1 8 40\n1 42 83\n1 3 45\n1 13 40\n2 9\n9 20\n2 8 64\n2 7 64\n1 20 56\n2 8 76\n2 20 48\n1 2 89\n1 3 38\n2 18 66\n1 7 51\n3 2\n7 18 33\n1 5 80\n3 4 37\n2 5\n569452312 703565975\n1 928391659 66\n1 915310 82\n2 87017081 92\n1 415310 54\n2 567745964 82",
+      "output": "4\n1 4 3 5 \n3\n2 4 5 \n4\n6 7 1 2 \n-1\n4\n2 4 3 5"
+    },
+    {
+      "input": "3\n3 9\n20 31 40\n1 9 64\n3 17 100\n3 9 59\n3 18 57\n3 20 49\n2 20 82\n2 14 95\n1 8 75\n2 16 67\n2 6\n20 36\n2 2 66\n2 20 93\n1 3 46\n1 10 64\n2 8 49\n2 18 40\n1 1\n1000000000\n1 1000000000 100",
+      "output": "-1\n4\n3 4 1 5 \n1\n1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Vitaly 选修了高级无用算法课程。该课程包含 n$$$n$$$ 个任务。Vitaly 计算得出，从他选修该课程的那天起，他有 ai$$$a_i$$$ 小时来完成任务 i$$$i$$$。也就是说，第 i$$$i$$$ 个任务的截止时间为 ai$$$a_i$$$ 小时。数组 a$$$a$$$ 按升序排列，换句话说，任务编号对应于作业提交的顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vitaly 做事一丝不苟，因此他希望将每个任务完成到 100$$$100$$$% 或更高。最初，他对每个任务的完成度为 0$$$0$$$%。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vitaly 有 m$$$m$$$ 个训练选项，每个选项最多使用一次。第 i$$$i$$$ 个选项由三个整数描述：ei、ti$$$e_i, t_i$$$ 和 pi$$$p_i$$$。如果 Vitaly 使用第 i$$$i$$$ 个选项，那么在 ti$$$t_i$$$ 小时后(从当前时刻起)，他会将任务 ei$$$e_i$$$ 的进度提高 pi$$$p_i$$$ 个百分点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，假设 Vitaly 有 3$$$3$$$ 个任务要完成。设数组 a$$$a$$$ 为：a=[5,7,8]$$$a = [5, 7, 8]$$$。假设 Vitaly 有 5$$$5$$$ 个选项：[e1=1,t1=1,p1=30]$$$[e_1=1, t_1=1, p_1=30]$$$，[e2=2,t2=3,p2=50]$$$[e_2=2, t_2=3, p_2=50]$$$，[e3=2,t3=3,p3=100]$$$[e_3=2, t_3=3, p_3=100]$$$，[e4=1,t4=1,p4=80]$$$[e_4=1, t_4=1, p_4=80]$$$，[e5=3,t5=3,p5=100]$$$[e_5=3, t_5=3, p_5=100]$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "那么，如果 Vitaly 按以下方式准备，他就能按时完成所有任务。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Vitaly 选择第 4$$$4$$$ 个选项。那么在 1$$$1$$$ 小时内，他将以 80$$$80$$$% 完成第 1$$$1$$$ 个任务。他距离第 1$$$1$$$ 个任务的截止时间还剩 4$$$4$$$ 小时。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Vitaly 选择第 3$$$3$$$ 个选项。那么在 3$$$3$$$ 小时内，他将完整完成第 2$$$2$$$ 个任务。他距离第 1$$$1$$$ 个任务的截止时间还剩 1$$$1$$$ 小时，距离第 3$$$3$$$ 个任务的截止时间还剩 4$$$4$$$ 小时。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Vitaly 选择第 1$$$1$$$ 个选项。那么经过 1$$$1$$$ 小时后，他将以 110$$$110$$$% 完成第 1$$$1$$$ 个任务，这意味着他将正好在第 1$$$1$$$ 个任务的截止时间前完成该任务。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Vitaly 选择第 5$$$5$$$ 个选项。他将花费 2$$$2$$$ 小时完成第 3$$$3$$$ 个任务，再经过 1$$$1$$$ 小时后，Vitaly 将完整完成第 3$$$3$$$ 个任务。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "因此，Vitaly 使用 4$$$4$$$ 个选项，成功完整且按时地完成了课程。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "帮助 Vitaly——输出 Vitaly 按正确顺序完成任务所需的选项。请注意：每个选项至多可以使用一次。如果有多个可行答案，可以输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入数据的第一行包含一个整数 T$$$T$$$(1≤T≤104$$$1 \\le T \\le 10^4$$$)——测试中的输入测试用例数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下面给出输入测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例描述的第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤105$$$1 \\le n,m \\le 10^5$$$)——分别表示任务数量和训练选项数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 n$$$n$$$ 个数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)——任务 i$$$i$$$ 截止时间之前的时间。数组中的数值是非递减的，即 a1≤a2≤⋯≤an$$$a_1 \\le a_2 \\le \\dots \\le a_n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行包含三个数 ei,ti,pi$$$e_i, t_i, p_i$$$ (1≤ei≤n$$$1 \\le e_i \\le n$$$, 1≤ti≤109$$$1 \\le t_i \\le 10^9$$$, 1≤pi≤100$$$1 \\le p_i \\le 100$$$)——如果 Vitaly 选择这个选项，那么经过 ti$$$t_i$$$ 小时后，他会将任务 ei$$$e_i$$$ 的进度提高 pi$$$p_i$$$%。这些选项按照输入数据中的顺序从 1$$$1$$$ 到 m$$$m$$$ 编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n+m$$$n+m$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，第一行输出数字 k$$$k$$$，表示利用其中的 k$$$k$$$ 个选项，Vitaly 能够按时将每项任务完成到 100$$$100$$$% 或更高。选项不能重复。如果 Vitaly 无法按时完成所有任务，则输出 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在答案，在下一行输出 k$$$k$$$ 个 1$$$1$$$ 到 m$$$m$$$ 之间互不相同的整数——这些整数表示选项的编号，顺序任意。如果答案不止一个，可以输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. Vitaly 与高级无用算法",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

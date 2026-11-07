@@ -1,0 +1,85 @@
+{
+  "code": "CF1267K",
+  "letter": "K",
+  "title": "K. Key Storage",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1267/K",
+  "difficulty": "2100",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Karl is developing a key storage service. Each user has a positive integer key.",
+      "Karl knows that storing keys in plain text is bad practice. So, instead of storing a key, he decided to store a fingerprint of a key. However, using some existing fingerprint algorithm looked too boring to him, so he invented his own one.",
+      "Karl's fingerprint is calculated by the following process: divide the given integer by 2, then divide the result by 3, then divide the result by 4, and so on, until we get a result that equals zero (we are speaking about integer division each time). The fingerprint is defined as the multiset of the remainders of these divisions.",
+      "For example, this is how Karl's fingerprint algorithm is applied to the key 11: 11 divided by 2 has remainder 1 and result 5, then 5 divided by 3 has remainder 2 and result 1, and 1 divided by 4 has remainder 1 and result 0. Thus, the key 11 produces the sequence of remainders [1,2,1]$$$[1, 2, 1]$$$ and has the fingerprint multiset {1,1,2}$$$\\{1, 1, 2\\}$$$.",
+      "Ksenia wants to prove that Karl's fingerprint algorithm is not very good. For example, she found that both keys 178800 and 123456 produce the fingerprint of {0,0,0,0,2,3,3,4}$$$\\{0, 0, 0, 0, 2, 3, 3, 4\\}$$$. Thus, users are at risk of fingerprint collision with some commonly used and easy to guess keys like 123456.",
+      "Ksenia wants to make her words more persuasive. She wants to calculate the number of other keys that have the same fingerprint as the keys in the given list of some commonly used keys. Your task is to help her."
+    ],
+    "input": [
+      "The first line contains an integer t$$$t$$$ (1≤t≤50000$$$1 \\le t \\le 50\\,000$$$) — the number of commonly used keys to examine. Each of the next t$$$t$$$ lines contains one integer ki$$$k_i$$$ (1≤ki≤1018$$$1 \\le k_i \\le 10^{18}$$$) — the key itself."
+    ],
+    "output": [
+      "For each of the keys print one integer — the number of other keys that have the same fingerprint."
+    ],
+    "note": [
+      "The other key with the same fingerprint as 11 is 15. 15 produces a sequence of remainders [1,1,2]$$$[1, 1, 2]$$$. So both numbers have the fingerprint multiset {1,1,2}$$$\\{1, 1, 2\\}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1\n11\n123456",
+      "output": "0\n1\n127"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Karl 正在开发一项密钥存储服务。每个用户都有一个正整数密钥。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Karl 知道以明文形式存储密钥并不是好的做法。因此，他不直接存储密钥，而是决定存储密钥的指纹。然而，使用某种现有的指纹算法在他看来太无聊了，于是他发明了自己的算法。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Karl 的指纹通过以下过程计算：将给定整数除以 2，然后将结果除以 3，再将结果除以 4，依此类推，直到得到结果为 0（这里每次都是指整数除法）。指纹定义为这些除法所得余数的多重集。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "例如，Karl 的指纹算法应用于密钥 11 的过程如下：11 除以 2 的余数为 1，结果为 5；然后 5 除以 3 的余数为 2，结果为 1；最后 1 除以 4 的余数为 1，结果为 0。因此，密钥 11 产生余数序列 [1,2,1]$$$[1, 2, 1]$$$，其指纹多重集为 {1,1,2}$$$\\{1, 1, 2\\}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Ksenia 想要证明 Karl 的指纹算法并不怎么好。例如，她发现密钥 178800 和 123456 都产生指纹 {0,0,0,0,2,3,3,4}$$$\\{0, 0, 0, 0, 2, 3, 3, 4\\}$$$。因此，用户面临指纹碰撞的风险，可能与某些常用且容易被猜到的密钥(如 123456)发生碰撞。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Ksenia 想让自己的话更有说服力。她希望计算出与给定的常用键列表中的键具有相同指纹的其他键的数量。请帮助她完成这项任务。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤50000$$$1 \\le t \\le 50\\,000$$$)——需要检查的常用键数量。接下来的 t$$$t$$$ 行中，每行包含一个整数 ki$$$k_i$$$(1≤ki≤1018$$$1 \\le k_i \\le 10^{18}$$$)——键本身。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个键，输出一个整数——具有相同指纹的其他键的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "与 11 具有相同指纹的另一个键是 15。15 产生的余数序列为 [1,1,2]$$$[1, 1, 2]$$$。因此，这两个数的指纹多重集为 {1,1,2}$$$\\{1, 1, 2\\}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "K. 密钥存储",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

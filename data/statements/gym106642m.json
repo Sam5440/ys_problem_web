@@ -1,0 +1,151 @@
+{
+  "code": "GYM106642M",
+  "letter": "M",
+  "title": "M. Synchronized Arrays",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106642/problem/M",
+  "difficulty": "*1500",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "It is 5 AM, and $$$WisdomCasual$$$ is exhausted. He has been setting problems all night, and all he wants to do right now is get into bed and sleep. However, the problemset is still missing a problem.",
+      "In a desperate attempt to finish the problem and finally get some rest, he quickly writes down two arrays, $$$a$$$ and $$$b$$$, both of size $$$n$$$, and writes a random condition on a napkin.",
+      "He defines a pair of indices $$$(i, j)$$$ as synchronized if it satisfies the following conditions:",
+      "$$$1 \\le i  \\lt  j \\le n$$$",
+      "The absolute difference between the elements in array $$$a$$$ is exactly equal to the absolute difference between the corresponding elements in array $$$b$$$. Formally: $$$\\vert{}a_i - a_j\\vert{} = \\vert{}b_i - b_j\\vert{}$$$",
+      "Since $$$WisdomCasual$$$ is already half-asleep, he leaves the task of actually counting the pairs to you. Help him find the total number of synchronized pairs so he can finally close his eyes and go to sleep..."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases $$$t$$$ ($$$1 \\le t \\le 10^4$$$). The description of the test cases follows.",
+      "The first line of each test case contains a single integer $$$n$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$)  — the length of the arrays.",
+      "The second line contains $$$n$$$ integers $$$a_1, a_2, \\dots, a_n$$$ ($$$1 \\le a_i \\le 10^9$$$)  — the elements of array $$$a$$$.",
+      "The third line contains $$$n$$$ integers $$$b_1, b_2, \\dots, b_n$$$ ($$$1 \\le b_i \\le 10^9$$$)  — the elements of array $$$b$$$.",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, output a single integer — the total number of synchronized pairs."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4\n1 3 5 2\n2 4 2 2\n3\n10 10 10\n5 5 5\n5\n1 2 3 4 5\n1 2 3 4 5",
+      "output": "2\n3\n10"
+    }
+  ],
+  "titleZh": {
+    "0": "M. 同步阵列",
+    "caiyun": "M. 同步阵列",
+    "youdao": "M.同步阵列",
+    "deepl": "M.同步阵列",
+    "iflyrec": "M.同步阵列",
+    "ai": "M. 同步数组",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "现在是凌晨 5 点，$$$WisdomCasual$$$ 筋疲力尽。他整晚都在设置问题，现在只想上床睡觉。然而，问题集中还缺少一个问题。",
+        "deepl": "现在是凌晨 5 点，$$$WisdomCasual$$$ 已经筋疲力尽。他整晚都在设置问题，现在只想躺在床上睡觉。然而，问题集还缺少一个问题。",
+        "iflyrec": "现在是凌晨5点，$$$WisdomCasual$$$已耗尽。他整晚都在制造麻烦，而他现在只想上床睡觉。但是，问题集仍然缺少一个问题。",
+        "ai": "现在是凌晨 5 点，$$$WisdomCasual$$$ 已经筋疲力尽。他整晚都在出题，而此刻他唯一想做的就是上床睡觉。然而，题目集仍然缺少一道题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "在绝望地试图完成问题并最终休息一下的过程中，他迅速写下了两个数组 $$$a$$$ 和 $$$b$$$，它们的大小都是 $$$n$$$，然后在餐巾纸上写下了一个随机条件。",
+        "youdao": "在绝望的情况下，他试图完成这个问题并最终得到休息，他迅速写下两个数组，$$$a$$$和$$$b$$$，大小都是$$$n$$$，并在餐巾纸上写下一个随机条件。",
+        "deepl": "他拼命地想完成这个问题，终于可以休息一下了，于是他迅速写下了两个数组 $$$a$$$ 和 $$$b$$$，大小都是 $$$n$$$，并在餐巾纸上写下了一个随机条件。",
+        "iflyrec": "他不顾一切地试图完成这个问题，并最终得到一些休息，他迅速写下了两个数组，$$$a$$$和$$$b$$$，大小都是$$$n$$$，并在餐巾纸上写下了一个随机条件。",
+        "ai": "为了完成这道题并终于能休息一会儿，他迅速写下了两个数组 $$$a$$$ 和 $$$b$$$，它们的大小均为 $$$n$$$，并在餐巾纸上随手写下了一个随机条件。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "他将一对索引 $$$(i, j)$$$ 定义为同步的，如果它满足以下条件：",
+        "youdao": "他定义一对索引$$$(i, j)$$$为synchronized，如果它满足以下条件：",
+        "deepl": "他将满足以下条件的一对索引 $$$(i, j)$$$ 定义为同步索引：",
+        "iflyrec": "如果一对索引$$$(i, j)$$$满足以下条件，则他将其定义为同步的:",
+        "ai": "如果一对下标 $$$(i, j)$$$ 满足以下条件，则称其为同步的：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$1 \\le i  \\lt  j \\le n$$$",
+        "deepl": "$$$1 \\le i  \\lt  j \\le n$$$",
+        "iflyrec": "$$$1 \\le i  \\lt  j \\le n$$$",
+        "ai": "$$$1 \\le i  \\lt  j \\le n$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "数组 $$$a$$$ 中元素之间的绝对差等于数组 $$$b$$$ 中相应元素之间的绝对差。形式上:$$$\\vert{}a_i - a_j\\vert{} = \\vert{}b_i - b_j\\vert{}$$$",
+        "deepl": "数组 $$$a$$$ 中元素的绝对差值与数组 $$$b$$$ 中相应元素的绝对差值完全相等。形式上$$$\\vert{}a_i - a_j\\vert{} = \\vert{}b_i - b_j\\vert{}$$$",
+        "iflyrec": "数组$$$a$$$中的元素之间的绝对差值正好等于数组$$$b$$$中的相应元素之间的绝对差值。正式：$$$\\vert{}a_i - a_j\\vert{} = \\vert{}b_i - b_j\\vert{}$$$",
+        "ai": "数组 $$$a$$$ 中元素之间的绝对差恰好等于数组 $$$b$$$ 中对应元素之间的绝对差。形式化地说：$$$\\vert{}a_i - a_j\\vert{} = \\vert{}b_i - b_j\\vert{}$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "由于 $$$WisdomCasual$$$ 已经半睡半醒，他把实际数对的任务交给了你。帮他找到同步对的总数，这样他就能最终闭上眼睛睡觉了......",
+        "youdao": "由于$$$WisdomCasual$$$已经处于半睡眠状态，他把实际计算配对的任务留给了你。帮他找到同步配对的总数，这样他就可以闭上眼睛睡觉了……",
+        "deepl": "由于$$$WisdomCasual$$$已经半睡半醒，他把实际数对的任务交给了您。帮他找出同步配对的总数，这样他就可以闭上眼睛睡觉了...",
+        "iflyrec": "由于$$$WisdomCasual$$$已经处于半睡眠状态，他将实际数对的任务留给了您。帮他找到同步对的总数，这样他就可以闭上眼睛睡觉了……",
+        "ai": "由于 $$$WisdomCasual$$$ 已经半睡半醒，他把实际统计这些数对的任务留给了你。请帮他求出同步数对的总数，这样他终于可以闭上眼睛睡觉了……",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "每个测试包含多个测试用例。第一行包含测试用例的数量 $$$t$$$($$$1 \\le t \\le 10^4$$$)。测试用例的描述如下。",
+        "youdao": "每个测试包含多个测试用例。第一行包含测试用例的数量$$$t$$$ ($$$1 \\le t \\le 10^4$$$）。下面是测试用例的描述。",
+        "deepl": "每个测试包含多个测试用例。第一行包含测试用例的数量 $$$t$$$ ($$$1 \\le t \\le 10^4$$$）。下面是测试用例的说明。",
+        "iflyrec": "每个测试包含多个测试用例。第一行包含测试用例的数量$$$t$$$($$$1 \\le t \\le 10^4$$$)。测试用例的描述如下。",
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 $$$t$$$($$$1 \\le t \\le 10^4$$$)。随后给出各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "每个测试用例的第一行包含一个整数 $$$n$$$($$$1 \\le n \\le 2 \\cdot 10^5$$$)——数组的长度。",
+        "youdao": "每个测试用例的第一行包含一个整数$$$n$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$）——数组的长度。",
+        "deepl": "每个测试用例的第一行都包含一个整数 $$$n$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$) - 数组的长度。",
+        "iflyrec": "每个测试用例的第一行包含一个整数$$$n$$$($$$1 \\le n \\le 2 \\cdot 10^5$$$）——数组的长度。",
+        "ai": "每个测试用例的第一行包含一个整数 $$$n$$$($$$1 \\le n \\le 2 \\cdot 10^5$$$)——数组的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "第二行包含 $$$n$$$ 整数 $$$a_1, a_2, \\dots, a_n$$$($$$1 \\le a_i \\le 10^9$$$)——数组 $$$a$$$ 的元素。",
+        "youdao": "第二行包含$$$n$$$个整数$$$a_1, a_2, \\dots, a_n$$$ ($$$1 \\le a_i \\le 10^9$$$）——数组$$$a$$$的元素。",
+        "deepl": "第二行包含 $$$n$$$ 整数 $$$a_1, a_2, \\dots, a_n$$$ ($$$1 \\le a_i \\le 10^9$$$）--数组 $$$a$$$ 的元素。",
+        "iflyrec": "第二行包含$$$n$$$整数$$$a_1, a_2, \\dots, a_n$$$($$$1 \\le a_i \\le 10^9$$$）—数组$$$a$$$的元素。",
+        "ai": "第二行包含 $$$n$$$ 个整数 $$$a_1, a_2, \\dots, a_n$$$($$$1 \\le a_i \\le 10^9$$$)——数组 $$$a$$$ 的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "第三行包含 $$$n$$$ 整数 $$$b_1, b_2, \\dots, b_n$$$($$$1 \\le b_i \\le 10^9$$$)——数组 $$$b$$$ 的元素。",
+        "youdao": "第三行包含$$$n$$$个整数$$$b_1, b_2, \\dots, b_n$$$ ($$$1 \\le b_i \\le 10^9$$$）——数组$$$b$$$的元素。",
+        "deepl": "第三行包含 $$$n$$$ 整数 $$$b_1, b_2, \\dots, b_n$$$ ($$$1 \\le b_i \\le 10^9$$$）--数组 $$$b$$$ 的元素。",
+        "iflyrec": "第三行包含$$$n$$$整数$$$b_1, b_2, \\dots, b_n$$$($$$1 \\le b_i \\le 10^9$$$）—数组$$$b$$$的元素。",
+        "ai": "第三行包含 $$$n$$$ 个整数 $$$b_1, b_2, \\dots, b_n$$$($$$1 \\le b_i \\le 10^9$$$)——数组 $$$b$$$ 的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "保证所有测试用例的 $$$n$$$ 之和不超过 $$$2 \\cdot 10^5$$$。",
+        "youdao": "保证所有测试用例的$$$n$$$之和不超过$$$2 \\cdot 10^5$$$。",
+        "deepl": "保证所有测试用例的 $$$n$$$ 之和不超过 $$$2 \\cdot 10^5$$$。",
+        "iflyrec": "保证所有测试用例的$$$n$$$总和不超过$$$2 \\cdot 10^5$$$。",
+        "ai": "保证所有测试用例中 $$$n$$$ 的总和不超过 $$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "对于每个测试用例，输出一个整数——同步对的总数。",
+        "youdao": "对于每个测试用例，输出一个整数——同步对的总数。",
+        "deepl": "对于每个测试用例，输出一个整数 - 同步对的总数。",
+        "iflyrec": "对于每个测试用例，输出一个整数—同步对的总数。",
+        "ai": "对于每个测试用例，输出一个整数——同步对的总数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.118Z",
+  "translatedBy": [
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

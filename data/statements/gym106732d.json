@@ -1,0 +1,106 @@
+{
+  "code": "GYM106732D",
+  "letter": "D",
+  "title": "Collectible Cards",
+  "contest": "MEPhI Autumn Cup 2026",
+  "url": "https://codeforces.com/gym/106732/problem/D",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are $$$n$$$ collectible cards arranged in a fixed order on a strip. The $$$i$$$-th card has type number $$$a_i$$$.",
+      "The strip can be cut between some adjacent cards, obtaining several non-empty sets. The order of the cards cannot be changed, so each set consists of some contiguous fragment of the strip.",
+      "For a set of cards, define its $$$\\operatorname{MEX}$$$ as the minimum non-negative type number that does not appear among the cards in that set. For example, $$$\\operatorname{MEX}([0, 3, 2, 2, 0]) = 1$$$, and $$$\\operatorname{MEX}([1, 2, 6]) = 0$$$.",
+      "A set is called $$$\\texttt{valid}$$$ if its $$$\\operatorname{MEX}$$$ lies in the range from $$$L$$$ to $$$R$$$ inclusive.",
+      "Find the number of ways to cut the strip so that all resulting sets are $$$\\texttt{valid}$$$. Since the answer may be large, output it modulo $$$998244353$$$."
+    ],
+    "input": [
+      "The first line of the input contains three integers $$$n$$$, $$$L$$$, and $$$R$$$ $$$(1 \\le n \\le 5 \\cdot 10^5,\\ 0 \\le L \\le R \\le n)$$$ — the number of cards and the bounds of the valid values of $$$\\operatorname{MEX}$$$.",
+      "The second line contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ $$$(0 \\le a_i \\le n)$$$ — the type numbers of the cards on the strip."
+    ],
+    "output": [
+      "Print one number in a single line — the number of ways to cut the strip modulo $$$998244353$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 1 3\n0 3 1 2 0",
+      "output": "2"
+    },
+    {
+      "input": "6 0 2\n0 1 0 2 3 0",
+      "output": "24"
+    }
+  ],
+  "titleZh": {
+    "caiyun": "可收藏卡片",
+    "youdao": "收藏卡片",
+    "deepl": "收藏卡",
+    "iflyrec": "可收集的卡片",
+    "ai": "集换式卡牌"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "可收集的 $$$n$$$ 卡片以固定顺序排列在一条带子上。$$$i$$$ 卡片的类型编号为 $$$a_i$$$。",
+        "youdao": "有$$$n$$$张可收集的卡片按固定的顺序排列在条带上。这张$$$i$$$卡的型号是$$$a_i$$$。",
+        "deepl": "有 $$$n$$$ 张收藏卡按固定顺序排列在条形卡片上。第 $$$i$$$ 张卡片的类型编号为 $$$a_i$$$。",
+        "iflyrec": "有$$$n$$$张可收集的卡片以固定的顺序排列在条带上。第$$$i$$$张卡的类型编号为$$$a_i$$$。",
+        "ai": "有 $$$n$$$ 张收藏卡按固定顺序排列在一条纸带上。第 $$$i$$$ 张卡的类型编号为 $$$a_i$$$。"
+      },
+      {
+        "caiyun": "条带可以在一些相邻的卡片之间切割，从而得到几个非空集合。卡片的顺序不能改变，因此每个集合都由条带的一些相邻片段组成。",
+        "youdao": "该条可以在一些相邻的牌之间切割，得到几个非空的集合。牌的顺序是不能改变的，所以每一组都是由一些连续的片段组成的。",
+        "deepl": "可以在相邻的几张牌之间剪开条带，得到几个非空的集合。卡片的顺序不能改变，因此每个集合都由条带的某个连续片段组成。",
+        "iflyrec": "可以在一些相邻的卡片之间切割条带，从而获得几个非空组。卡片的顺序不能改变，因此每一套都由条带的一些连续片段组成。",
+        "ai": "可以将纸条在一些相邻卡片之间剪开，从而得到若干个非空集合。卡片的顺序不能改变，因此每个集合都由纸条的某个连续片段组成。"
+      },
+      {
+        "caiyun": "对于一组卡片，将其 $$$\\operatorname{MEX}$$$ 定义为该组卡片中未出现的最小非负类型数。例如，$$$\\operatorname{MEX}([0, 3, 2, 2, 0]) = 1$$$ 和 $$$\\operatorname{MEX}([1, 2, 6]) = 0$$$。",
+        "youdao": "对于一组卡片，定义它的$$$\\operatorname{MEX}$$$为不出现在该组卡片中的最小非负类型数。例如$$$\\operatorname{MEX}([0, 3, 2, 2, 0]) = 1$$$和$$$\\operatorname{MEX}([1, 2, 6]) = 0$$$。",
+        "deepl": "对于一组牌，将其$$$\\operatorname{MEX}$$$定义为该组牌中没有出现的最小非负类型数。例如，$$$\\operatorname{MEX}([0, 3, 2, 2, 0]) = 1$$$ 和 $$$\\operatorname{MEX}([1, 2, 6]) = 0$$$。",
+        "iflyrec": "对于一组卡片，将其$$$\\operatorname{MEX}$$$定义为不出现在该组卡片中的最小非负类型编号。例如，$$$\\operatorname{MEX}([0, 3, 2, 2, 0]) = 1$$$和$$$\\operatorname{MEX}([1, 2, 6]) = 0$$$。",
+        "ai": "对于一组牌，定义其 $$$\\operatorname{MEX}$$$ 为未在该组牌中出现的、最小的非负类型编号。例如，$$$\\operatorname{MEX}([0, 3, 2, 2, 0]) = 1$$$ 和 $$$\\operatorname{MEX}([1, 2, 6]) = 0$$$。"
+      },
+      {
+        "caiyun": "如果一个集合的 $$$\\operatorname{MEX}$$$ 在 $$$L$$$ 到 $$$R$$$ 的包含范围内，则称之为 $$$\\texttt{valid}$$$。",
+        "youdao": "如果一个集合的$$$\\operatorname{MEX}$$$位于$$$L$$$到$$$R$$$的范围内，则称为$$$\\texttt{valid}$$$。",
+        "iflyrec": "如果集合的$$$\\operatorname{MEX}$$$在$$$L$$$到$$$R$$$的范围内，则称为$$$\\texttt{valid}$$$。",
+        "ai": "如果一个集合的 $$$\\operatorname{MEX}$$$ 位于从 $$$L$$$ 到 $$$R$$$ 的闭区间内，则该集合被称为 $$$\\texttt{valid}$$$。"
+      },
+      {
+        "caiyun": "找出切割长条的所有方法，使得所有得到的集合都是 $$$\\texttt{valid}$$$。由于答案可能很大，因此将其输出为模 $$$998244353$$$。",
+        "youdao": "找出切割条的方法的数量，使所有的结果集都是$$$\\texttt{valid}$$$。由于答案可能很大，所以输出它的模$$$998244353$$$。",
+        "iflyrec": "找出切割条带的方式的数量，以便所有结果集为$$$\\texttt{valid}$$$。由于答案可能很大，因此以$$$998244353$$$为模输出。",
+        "ai": "求切割条带的方式数，使得所有得到的集合都是 $$$\\texttt{valid}$$$。由于答案可能很大，请将其对 $$$998244353$$$ 取模后输出。"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "输入的第一行包含三个整数 $$$n$$$、$$$L$$$ 和 $$$R$$$$$$(1 \\le n \\le 5 \\cdot 10^5,\\ 0 \\le L \\le R \\le n)$$$——牌的数量和 $$$\\operatorname{MEX}$$$ 的有效值的边界。",
+        "youdao": "输入的第一行包含三个整数$$$n$$$， $$$L$$$和$$$R$$$ $$$(1 \\le n \\le 5 \\cdot 10^5,\\ 0 \\le L \\le R \\le n)$$$ -纸牌的数量和$$$\\operatorname{MEX}$$$有效值的界限。",
+        "iflyrec": "输入的第一行包含三个整数$$$n$$$、$$$L$$$和$$$R$$$$$$(1 \\le n \\le 5 \\cdot 10^5,\\ 0 \\le L \\le R \\le n)$$$——卡片的数量和$$$\\operatorname{MEX}$$$的有效值的范围。",
+        "ai": "输入的第一行包含三个整数 $$$n$$$、$$$L$$$ 和 $$$R$$$ $$$(1 \\le n \\le 5 \\cdot 10^5,\\ 0 \\le L \\le R \\le n)$$$——卡片数量以及 $$$\\operatorname{MEX}$$$ 的合法值的范围。"
+      },
+      {
+        "caiyun": "第二行包含 $$$n$$$ 整数 $$$a_1, a_2, \\ldots, a_n$$$$$$(0 \\le a_i \\le n)$$$——纸带上卡片的类型编号。",
+        "youdao": "第二行包含$$$n$$$个整数$$$a_1, a_2, \\ldots, a_n$$$ $$$(0 \\le a_i \\le n)$$$——卡片上的类型号码。",
+        "iflyrec": "第二行包含$$$n$$$整数$$$a_1, a_2, \\ldots, a_n$$$$$$(0 \\le a_i \\le n)$$$—条带上卡片的类型编号。",
+        "ai": "第二行包含 $$$n$$$ 个整数 $$$a_1, a_2, \\ldots, a_n$$$ $$$(0 \\le a_i \\le n)$$$——纸条上卡牌的类型编号。"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "在一行中打印一个数字——模数为 $$$998244353$$$ 的切割长条的方法数。",
+        "youdao": "在单行中打印一个数字-切割条带模的方法数$$$998244353$$$。",
+        "iflyrec": "在单行中打印一个数字—以$$$998244353$$$为模切割条带的方式的数量。",
+        "ai": "输出一行一个数——切割条带的方案数模 $$$998244353$$$。"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.125Z",
+  "translatedBy": [
+    "iflyrec"
+  ]
+}

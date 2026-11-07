@@ -1,0 +1,123 @@
+{
+  "code": "CF819B",
+  "letter": "B",
+  "title": "B. Mister B and PR Shifts",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/819/B",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Some time ago Mister B detected a strange signal from the space, which he started to study.",
+      "After some transformation the signal turned out to be a permutation p of length n or its cyclic shift. For the further investigation Mister B need some basis, that's why he decided to choose cyclic shift of this permutation which has the minimum possible deviation.",
+      "Let's define the deviation of a permutation p as ![](https://espresso.codeforces.com/ce3e50250ca9866e45ca8785d856c8dfc1ba1445.png).",
+      "Find a cyclic shift of permutation p with minimum possible deviation. If there are multiple solutions, print any of them.",
+      "Let's denote id k (0 ≤ k < n) of a cyclic shift of permutation p as the number of right shifts needed to reach this shift, for example:",
+      "k = 0: shift p1, p2, ... pn,",
+      "k = 1: shift pn, p1, ... pn - 1,",
+      "...,",
+      "k = n - 1: shift p2, p3, ... pn, p1."
+    ],
+    "input": [
+      "First line contains single integer n (2 ≤ n ≤ 106) — the length of the permutation.",
+      "The second line contains n space-separated integers p1, p2, ..., pn (1 ≤ pi ≤ n) — the elements of the permutation. It is guaranteed that all elements are distinct."
+    ],
+    "output": [
+      "Print two integers: the minimum deviation of cyclic shifts of permutation p and the id of such shift. If there are multiple solutions, print any of them."
+    ],
+    "note": [
+      "In the first sample test the given permutation p is the identity permutation, that's why its deviation equals to 0, the shift id equals to 0 as well.",
+      "In the second sample test the deviation of p equals to 4, the deviation of the 1-st cyclic shift (1, 2, 3) equals to 0, the deviation of the 2-nd cyclic shift (3, 1, 2) equals to 4, the optimal is the 1-st cyclic shift.",
+      "In the third sample test the deviation of p equals to 4, the deviation of the 1-st cyclic shift (1, 3, 2) equals to 2, the deviation of the 2-nd cyclic shift (2, 1, 3) also equals to 2, so the optimal are both 1-st and 2-nd cyclic shifts."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 2 3",
+      "output": "0 0"
+    },
+    {
+      "input": "3\n2 3 1",
+      "output": "0 1"
+    },
+    {
+      "input": "3\n3 2 1",
+      "output": "2 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "不久前，B 先生探测到了一个来自太空的奇怪信号，并开始对其进行研究。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "经过一些变换后，这个信号被证明是一个长度为 n 的排列 p，或是它的循环移位。为了进一步研究，B 先生需要一些依据，因此他决定选择这个排列的一个循环移位，使其偏差尽可能小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们将排列 p 的偏差定义为 ![](https://espresso.codeforces.com/ce3e50250ca9866e45ca8785d856c8dfc1ba1445.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请找出排列 p 的一个偏差尽可能小的循环移位。如果有多个解，输出任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们将排列 p 的一个循环移位的编号 k（0 ≤ k < n）定义为达到该循环移位所需的右移次数，例如：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "k = 0：移位后的排列为 p1，p2，... pn。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "k = 1：将 p_n, p_1, ... p_{n - 1} 循环移位，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "……，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "k = n - 1：将 p_2, p_3, ... p_n, p_1 循环移位。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（2 ≤ n ≤ 10^6），表示排列的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个以空格分隔的整数 p_1, p_2, ..., p_n（1 ≤ p_i ≤ n），表示排列中的元素。保证所有元素互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出两个整数：排列 p 的所有循环移位中的最小偏差，以及对应移位的编号。如果有多个解，输出任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例测试中，给定的排列 p 是单位排列，因此它的偏差等于 0，移位编号也等于 0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例测试中，p 的偏差等于 4，第 1 次循环移位 (1, 2, 3) 的偏差等于 0，第 2 次循环移位 (3, 1, 2) 的偏差等于 4，最优选择是第 1 次循环移位。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例测试中，p 的偏差等于 4，第 1 次循环移位 (1, 3, 2) 的偏差等于 2，第 2 次循环移位 (2, 1, 3) 的偏差也等于 2，因此第 1 次和第 2 次循环移位都是最优的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Mister B 与 PR 移位",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

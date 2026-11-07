@@ -1,0 +1,125 @@
+{
+  "code": "CF641E",
+  "letter": "E",
+  "title": "E. Little Artem and Time Machine",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/641/E",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Little Artem has invented a time machine! He could go anywhere in time, but all his thoughts of course are with computer science. He wants to apply this time machine to a well-known data structure: multiset.",
+      "Artem wants to create a basic multiset of integers. He wants these structure to support operations of three types:",
+      "Add integer to the multiset. Note that the difference between set and multiset is that multiset may store several instances of one integer.",
+      "Remove integer from the multiset. Only one instance of this integer is removed. Artem doesn't want to handle any exceptions, so he assumes that every time remove operation is called, that integer is presented in the multiset.",
+      "Count the number of instances of the given integer that are stored in the multiset.",
+      "But what about time machine? Artem doesn't simply apply operations to the multiset one by one, he now travels to different moments of time and apply his operation there. Consider the following example.",
+      "First Artem adds integer 5 to the multiset at the 1-st moment of time.",
+      "Then Artem adds integer 3 to the multiset at the moment 5.",
+      "Then Artem asks how many 5 are there in the multiset at moment 6. The answer is 1.",
+      "Then Artem returns back in time and asks how many integers 3 are there in the set at moment 4. Since 3 was added only at moment 5, the number of integers 3 at moment 4 equals to 0.",
+      "Then Artem goes back in time again and removes 5 from the multiset at moment 3.",
+      "Finally Artyom asks at moment 7 how many integers 5 are there in the set. The result is 0, since we have removed 5 at the moment 3.",
+      "Note that Artem dislikes exceptions so much that he assures that after each change he makes all delete operations are applied only to element that is present in the multiset. The answer to the query of the third type is computed at the moment Artem makes the corresponding query and are not affected in any way by future changes he makes.",
+      "Help Artem implement time travellers multiset."
+    ],
+    "input": [
+      "The first line of the input contains a single integer n (1 ≤ n ≤ 100 000) — the number of Artem's queries.",
+      "Then follow n lines with queries descriptions. Each of them contains three integers ai, ti and xi (1 ≤ ai ≤ 3, 1 ≤ ti, xi ≤ 109) — type of the query, moment of time Artem travels to in order to execute this query and the value of the query itself, respectively. It's guaranteed that all moments of time are distinct and that after each operation is applied all operations of the first and second types are consistent."
+    ],
+    "output": [
+      "For each ask operation output the number of instances of integer being queried at the given moment of time."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n1 1 5\n3 5 5\n1 2 5\n3 6 5\n2 3 5\n3 7 5",
+      "output": "1\n2\n1"
+    },
+    {
+      "input": "3\n1 1 1\n2 2 1\n3 3 1",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "小 Artem 发明了一台时间机器！他可以前往任何时间，但他所有的想法当然都与计算机科学有关。他想将这台时间机器应用于一种众所周知的数据结构：多重集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Artem 想要创建一个由整数构成的基本多重集合。他希望该数据结构支持以下三种类型的操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "向多重集合中加入一个整数。注意，集合与多重集合的区别在于，多重集合可以存储同一个整数的多个实例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从多重集合中移除一个整数。只会移除该整数的一个实例。Artem 不想处理任何异常，因此他假设每次调用移除操作时，该整数都存在于多重集合中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "统计多重集合中存储的给定整数的实例数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "但是时间机器该怎么办呢？Artem 不会简单地逐个对多重集合应用操作，而是会前往不同的时间点，并在那里执行他的操作。请考虑下面的例子。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，Artem 在第 1 个时刻将整数 5 加入多重集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后，Artem 在第 5 个时刻将整数 3 加入多重集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后 Artem 询问在时刻 6 多重集中有多少个 5。答案是 1。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "然后 Artem 回到过去，询问在时刻 4 集合中有多少个整数 3。由于 3 只在时刻 5 被加入，时刻 4 时整数 3 的数量等于 0。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "然后 Artem 再次回到过去，在时刻 3 从多重集合中移除 5。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "最后 Artyom 在时刻 7 询问集合中有多少个整数 5。结果是 0，因为我们在时刻 3 移除了 5。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "注意，Artem 非常讨厌特殊情况，因此他保证在他每次做出修改之后，所有删除操作只会作用于多重集合中当前存在的元素。第三类查询的答案是在 Artem 发出对应查询的时刻计算的，不会受到他未来任何修改的影响。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "帮助 Artem 实现一个时间旅行者的多重集合。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（1 ≤ n ≤ 100 000），表示 Artem 的查询数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来是 n 行查询描述。每行包含三个整数 ai、ti 和 xi（1 ≤ ai ≤ 3，1 ≤ ti, xi ≤ 10^9），分别表示查询类型、Artem 为执行该查询而前往的时间点以及查询本身的值。保证所有时间点互不相同，并且在应用每次操作后，所有第一类和第二类操作都是一致的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个询问操作，输出给定时间点被查询整数出现的次数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 小 Artem 与时间机器",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

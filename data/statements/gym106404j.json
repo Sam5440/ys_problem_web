@@ -1,0 +1,145 @@
+{
+  "code": "GYM106404J",
+  "letter": "J",
+  "title": "J. Balancing",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106404/problem/J",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "On the Ovine Island, you are in charge of a herd of big fat sheeps.",
+      "To protect them from big bad wolves, you have arranged them into an n×m$$$n \\times m$$$ rectangular pen (n,m≤2000$$$n,m \\le 2000$$$). Each cell in the pen is either empty (weight 0$$$0$$$) or contains a sheep with weight gi,j,$$$g_{i,j},$$$ an integer between [1,106]$$$[1,10^6]$$$.",
+      "Your boss is wondering if there are special properties of the weights of your sheep.",
+      "You are given q$$$q$$$ queries, each describing a rectangle. For each rectangle, consider all non-empty weights inside it. Determine whether you can choose three different cells in the rectangle such that if their weights are a,b,c$$$a,b,c$$$, then the largest of them is strictly less than half of their sum: max(a,b,c)<a+b+c2.$$\\max(a,b,c)  \\lt  \\frac{a+b+c}{2}.$$"
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (1≤n,m≤2000$$$1 \\le n,m \\le 2000$$$).",
+      "The next n$$$n$$$ lines each contain m$$$m$$$ integers gi,j$$$g_{i,j}$$$ (0≤gi,j≤106$$$0 \\le g_{i,j} \\le 10^6$$$), where gi,j=0$$$g_{i,j}=0$$$ means the cell is empty.",
+      "The next line contains an integer q$$$q$$$ (1≤q≤105$$$1 \\le q \\le 10^5$$$).",
+      "Each of the next q$$$q$$$ lines contains four integers x1,y1,x2,y2$$$x_1,y_1,x_2,y_2$$$ (1≤x1≤x2≤n$$$1 \\le x_1 \\le x_2 \\le n$$$, 1≤y1≤y2≤m$$$1 \\le y_1 \\le y_2 \\le m$$$), describing a rectangle with corners (x1,y1)$$$(x_1,y_1)$$$ and (x2,y2)$$$(x_2,y_2)$$$ (inclusive)."
+    ],
+    "output": [
+      "For each query, print YES (case-insensitive) if there exist three different non-empty cells inside the rectangle whose weights satisfy max(a,b,c)<a+b+c2,$$\\max(a,b,c)  \\lt  \\frac{a+b+c}{2},$$ and print NO (case-insensitive) otherwise."
+    ],
+    "note": [
+      "Query 1:  1 1 3 3",
+      "This rectangle covers the entire grid. The non-empty weights inside are: {1,2,3,10,4}$$$\\{1,2,3,10,4\\}$$$.",
+      "We need three different cells with weights a,b,c$$$a,b,c$$$ such that max(a,b,c)<a+b+c2.$$$\\max(a,b,c)  \\lt  \\frac{a+b+c}{2}.$$$",
+      "Choose the triple (2,3,4)$$$(2,3,4)$$$. We have max(2,3,4)=4$$$\\max(2,3,4) = 4$$$ and 2+3+42=92=4.5$$$\\frac{2+3+4}{2} = \\frac{9}{2} = 4.5$$$.",
+      "Since 4<4.5,$$$4  \\lt  4.5,$$$ the condition holds.",
+      "Therefore, the answer for Query 1 is YES$$$\\texttt{YES}$$$.",
+      "$$$ $$$",
+      "Query 2:  2 1 2 3",
+      "This rectangle covers row 2$$$2$$$ and columns 1$$$1$$$ through 3$$$3$$$. The non-empty weights inside are: {2,3,10}$$$\\{2,3,10\\}$$$.",
+      "The only possible triple is (2,3,10)$$$(2,3,10)$$$. We have max(2,3,10)=10$$$\\max(2,3,10) = 10$$$ and 2+3+102=152=7.5$$$\\frac{2+3+10}{2} = \\frac{15}{2} = 7.5$$$.",
+      "Since 10≮7.5$$$10 \\not \\lt  7.5$$$, the condition does not hold.",
+      "Therefore, the answer for Query 2 is NO$$$\\texttt{NO}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n1 0 0\n2 3 10\n0 4 0\n5\n1 1 3 3\n2 1 2 3\n1 1 2 2\n2 1 3 2\n1 1 1 1",
+      "output": "YES\nNO\nNO\nYES\nNO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在 Ovine Island 上，你负责管理一群又大又肥的绵羊。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了保护它们免受凶恶的大灰狼侵害，你把它们安排在一个 n×m$$$n \\times m$$$ 的矩形围栏中(n,m≤2000$$$n,m \\le 2000$$$)。围栏中的每个单元格要么为空(重量为 0$$$0$$$)，要么包含一只重量为 gi,j,$$$g_{i,j},$$$ 的绵羊，其中该重量是介于 [1,106]$$$[1,10^6]$$$ 之间的整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的老板想知道你的绵羊的重量是否具有某些特殊性质。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定 q$$$q$$$ 个查询，每个查询描述一个矩形。对于每个矩形，考虑其中所有非空的重量。判断是否可以在矩形中选择三个不同的单元格，使得如果它们的重量为 a,b,c$$$a,b,c$$$，那么其中最大值严格小于它们总和的一半：max(a,b,c)<a+b+c2.$$\\max(a,b,c)  \\lt  \\frac{a+b+c}{2}.$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤2000$$$1 \\le n,m \\le 2000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行中，每行包含 m$$$m$$$ 个整数 gi,j$$$g_{i,j}$$$(0≤gi,j≤106$$$0 \\le g_{i,j} \\le 10^6$$$)，其中 gi,j=0$$$g_{i,j}=0$$$ 表示该单元格为空。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含一个整数 q$$$q$$$(1≤q≤105$$$1 \\le q \\le 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行中，每行包含四个整数 x1,y1,x2,y2$$$x_1,y_1,x_2,y_2$$$(1≤x1≤x2≤n$$$1 \\le x_1 \\le x_2 \\le n$$$，1≤y1≤y2≤m$$$1 \\le y_1 \\le y_2 \\le m$$$)，表示一个矩形，其两个角分别为 (x1,y1)$$$(x_1,y_1)$$$ 和 (x2,y2)$$$(x_2,y_2)$$$(均包含在内)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每次查询，如果矩形内存在三个不同的非空单元格，且它们的权值满足 max(a,b,c)<a+b+c2$$\\max(a,b,c)  \\lt  \\frac{a+b+c}{2},$$，则输出 YES(不区分大小写)，否则输出 NO(不区分大小写)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "查询 1：1 1 3 3",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这个矩形覆盖整个网格。其中非空的权值为：{1,2,3,10,4}$$$\\{1,2,3,10,4\\}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们需要找到三个不同的单元格，其权值分别为 a、b、c$$$a,b,c$$$，满足 max(a,b,c)<a+b+c2。$$$\\max(a,b,c)  \\lt  \\frac{a+b+c}{2}.$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择三元组 (2,3,4)$$$(2,3,4)$$$。有 max(2,3,4)=4$$$\\max(2,3,4) = 4$$$，且 2+3+42=92=4.5$$$\\frac{2+3+4}{2} = \\frac{9}{2} = 4.5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于 4<4.5，$$$4  \\lt  4.5,$$$条件成立。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，查询 1 的答案是 YES$$$\\texttt{YES}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$ $$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "查询 2： 2 1 2 3",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "该矩形覆盖第 2$$$2$$$ 行以及第 1$$$1$$$ 列到第 3$$$3$$$ 列。内部的非空权重为：{2,3,10}$$$\\{2,3,10\\}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "唯一可能的三元组是 (2,3,10)$$$(2,3,10)$$$。我们有 max(2,3,10)=10$$$\\max(2,3,10) = 10$$$ 和 2+3+102=152=7.5$$$\\frac{2+3+10}{2} = \\frac{15}{2} = 7.5$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "由于 10≮7.5$$$10 \\not \\lt  7.5$$$，条件不成立。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "因此，查询 2 的答案是 NO$$$\\texttt{NO}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "J. 平衡",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

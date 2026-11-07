@@ -1,0 +1,89 @@
+{
+  "code": "GYM104064D",
+  "letter": "D",
+  "title": "D. Dyson Circle",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104064/problem/D",
+  "difficulty": "*1700",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "A Dyson Sphere is a theoretical construction around the sun or another star, that captures the entire energy output of the star. Science fiction writers have speculated that advanced civilizations will eventually build such a sphere, as the energy demands of such a society continue to grow without bounds. In our three-dimensional space, Dyson spheres are still in the realm of fiction. {Dy & Son}, the main energy company of your dimensional neighbours, has tasked you with carrying out a feasibility study in the two-dimensional world of Flatland.",
+      "{Dy & Son} has developed a modular Dyson Circle. It consists of independent square Dyson Units that can chain together to form a closed loop that gathers energy. Your task is to figure out how many of these Dyson units they actually need to enclose the star or stars they are interested in. Note that they want a single Dyson Circle, not a separate one for each star.",
+      "For convenience, both the stars {Dy & Son} wants to enclose and the Dyson Units used for this are modeled as squares of exactly 1$$$1$$$ by 1$$$1$$$ Intergalactic Unit, aligned to the Intergalactic Coordinate System. Your Dyson units connect if they have at least a corner in common. See Figure below for an example.",
+      "![](https://espresso.codeforces.com/4636991984855402273c73f61e930ed54fde49f0.png)",
+      "Formally, select some squares in the plane to turn into Dyson Units, such that the remaining squares can be split into inside and outside squares. All the stars must be inside squares. The inside squares must form a contiguous region (connected via edges) and not connect to the outside squares (via edges). The outside squares form a contiguous region stretching off to infinity."
+    ],
+    "input": [
+      "The input consists of:",
+      "One line with an integer n$$$n$$$ (1≤n≤2⋅105$$$1 \\le n \\leq 2 \\cdot 10^5$$$), the number of stars.",
+      "n$$$n$$$ lines, each containing two integers x$$$x$$$ and y$$$y$$$ (−106≤x,y≤106$$$-10^6 \\leq x, y \\leq 10^6$$$), the location of the center of a star."
+    ],
+    "output": [
+      "Output the least number of Dyson units required to capture the energy of all stars in the input."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n2 5\n-5 2\n-2 -5\n5 -2",
+      "output": "32"
+    },
+    {
+      "input": "2\n1 1\n3 2",
+      "output": "8"
+    },
+    {
+      "input": "2\n2 3\n4 5",
+      "output": "9"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "戴森球是一种围绕太阳或其他恒星的理论结构，能够收集恒星释放的全部能量。科幻作家推测，随着这类社会的能源需求不断增长且没有上限，先进文明最终将建造这样的球体。在我们的三维空间中，戴森球仍然属于虚构范畴。{Dy & Son} 是你的维度邻居所属的主要能源公司，他们委托你在二维世界 Flatland 中开展可行性研究。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "{Dy & Son} 开发了一种模块化戴森圆。它由相互独立的方形戴森单元组成，这些单元可以首尾相连，形成收集能量的闭环。你的任务是计算，为了包围他们感兴趣的恒星，需要多少个这样的戴森单元。注意，他们希望建造一个单独的戴森圆，而不是为每颗恒星分别建造一个。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为方便起见，{Dy & Son} 想要包围的恒星以及用于此目的的戴森单元，都被建模为尺寸恰好为 1$$$1$$$ × 1$$$1$$$ 个星际单位的正方形，并且与星际坐标系对齐。如果两个戴森单元至少有一个角相交，则它们就可以连接。下面的图展示了一个例子。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/4636991984855402273c73f61e930ed54fde49f0.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地说，在平面上选择一些方格，将它们变为 Dyson Units，使得剩余方格可以划分为内部方格和外部方格。所有星星都必须位于内部方格中。内部方格必须构成一个连通区域（通过边相连），且不能通过边与外部方格相连。外部方格构成一个延伸至无穷远的连通区域。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入包括：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一行包含一个整数 n$$$n$$$(1≤n≤2⋅105$$$1 \\le n \\leq 2 \\cdot 10^5$$$)，表示星星的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来有 n$$$n$$$ 行，每行包含两个整数 x$$$x$$$ 和 y$$$y$$$(−106≤x,y≤106$$$-10^6 \\leq x, y \\leq 10^6$$$)，表示一颗星星中心的位置。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出捕获输入中所有星星能量所需的最少 Dyson Units 数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 戴森圆",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

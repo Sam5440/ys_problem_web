@@ -1,0 +1,194 @@
+{
+  "code": "GYM105223G",
+  "letter": "G",
+  "title": "G. Subsubsequence",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105223/problem/G",
+  "difficulty": "*1800",
+  "timeLimit": "2.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "For an array $$$a$$$, let's define the function $$$f(a)$$$ as the sum of the bitwise XOR sum of each non-empty subsequence$$$^\\dagger$$$ of it.",
+      "For example, if $$$a$$$ = $$$[5 , 2 , 4]$$$, then $$$f(a) = (5 \\oplus 2 \\oplus 4) + (5 \\oplus 2) + (5 \\oplus 4) + (2 \\oplus 4) + 5 + 2 + 4$$$.",
+      "Let's define an array of arrays $$$A$$$, which contains all non-empty subsequences$$$^\\dagger$$$ of the array $$$a$$$.",
+      "You are given an array of $$$a$$$ of length $$$n$$$. You have to process the following $$$q$$$ updates:",
+      "given and index $$$i$$$ and a value $$$x$$$, set $$$a_i := x$$$;",
+      "print the value of $$$\\displaystyle\\sum_{s \\in A} f(s)$$$.",
+      "Since this value could be too large, find it modulo $$$10^9 + 7$$$.",
+      "Here $$$\\oplus$$$ denotes the bitwise XOR operation.",
+      "$$$\\dagger$$$ A sequence $$$a$$$ is a subsequence of a sequence $$$b$$$ if $$$a$$$ can be obtained from $$$b$$$ by deletion of several (possibly, zero) elements. For example, $$$[3,1]$$$ is a subsequence of $$$[3,2,1]$$$ and $$$[4,3,1]$$$, but not a subsequence of $$$[1,3,3,7]$$$ and $$$[3,10,4]$$$."
+    ],
+    "input": [
+      "The first line contains one integer $$$n$$$ $$$(1 \\le n \\le 10^6)$$$ — the length of the array $$$a$$$.",
+      "The second line contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ $$$(1 \\le a_i \\le 10^9)$$$ — the elements of the array $$$a$$$.",
+      "The third line contains one integer $$$q$$$ $$$(1 \\le q \\le 10^6)$$$ — the number of update operations.",
+      "Each of the next $$$q$$$ lines contains two integers $$$i$$$ and $$$x$$$ $$$(1 \\le i \\le n, 1 \\le x \\le 10^9)$$$ — denoting the updated index and value."
+    ],
+    "output": [
+      "After each update, output a single integer — the sum $$$\\displaystyle\\sum_{s \\in A} f(s)$$$, modulo $$$10^9 + 7$$$."
+    ],
+    "note": [
+      "For the first update, $$$A = [[2],[2],[3],[2,2],[2,3],[2,3],[2,2,3]]$$$, then:",
+      "$$$f([2]) + f([2]) + f([3]) + f([2,2]) + f([2,3]) + f([2,3]) + f([2,2,3]) = 2 + 2 + 3 + 4 + 6 + 6 + 12 = 35$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 2 3\n3\n1 2\n2 5\n2 7",
+      "output": "35\n72\n74"
+    }
+  ],
+  "titleZh": {
+    "0": "G. 子子序列",
+    "caiyun": "G. 子子序列",
+    "youdao": "g . Subsubsequence",
+    "iflyrec": "G.子子序列",
+    "deepl": "G. 次序列",
+    "ai": "G. 子子序列",
+    "aiModel": "DeepSeek V4 Flash"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "对于数组 $$$a$$$，我们将函数 $$$f(a)$$$ 定义为其中每个非空子序列 $$$^\\dagger$$$ 的按位异或和。",
+        "youdao": "对于数组$$$a$$$，我们将函数$$$f(a)$$$定义为该数组的每个非空子序列$$$^\\dagger$$$的按位异或和之和。",
+        "iflyrec": "对于数组$$$a$$$，将函数$$$f(a)$$$定义为其每个非空子序列$$$^\\dagger$$$的按位异或和的和。",
+        "deepl": "对于数组 $$$a$$$，我们把函数 $$$f(a)$$$ 定义为它的每个非空子序列$$$^\\dagger$$$的比特 XOR 和。",
+        "ai": "对于数组 $$$a$$$，定义函数 $$$f(a)$$$ 为其每个非空子序列$$$^\\dagger$$$ 的按位异或和之和。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "例如，如果 $$$a$$$ = $$$[5 , 2 , 4]$$$，那么 $$$f(a) = (5 \\oplus 2 \\oplus 4) + (5 \\oplus 2) + (5 \\oplus 4) + (2 \\oplus 4) + 5 + 2 + 4$$$。",
+        "youdao": "例如，如果$$$a$$$ = $$$[5 , 2 , 4]$$$，则$$$f(a) = (5 \\oplus 2 \\oplus 4) + (5 \\oplus 2) + (5 \\oplus 4) + (2 \\oplus 4) + 5 + 2 + 4$$$。",
+        "iflyrec": "例如，如果$$$a$$$=$$$[5 , 2 , 4]$$$，则$$$f(a) = (5 \\oplus 2 \\oplus 4) + (5 \\oplus 2) + (5 \\oplus 4) + (2 \\oplus 4) + 5 + 2 + 4$$$。",
+        "deepl": "例如，如果 $$$a$$$ = $$$[5 , 2 , 4]$$$，那么 $$$f(a) = (5 \\oplus 2 \\oplus 4) + (5 \\oplus 2) + (5 \\oplus 4) + (2 \\oplus 4) + 5 + 2 + 4$$$。",
+        "ai": "例如，若 $$$a$$$ = $$$[5 , 2 , 4]$$$，则 $$$f(a) = (5 \\oplus 2 \\oplus 4) + (5 \\oplus 2) + (5 \\oplus 4) + (2 \\oplus 4) + 5 + 2 + 4$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "让我们定义一个数组 $$$A$$$ 的数组，它包含数组 $$$a$$$ 的所有非空子序列 $$$^\\dagger$$$。",
+        "youdao": "我们定义一个由数组$$$A$$$组成的数组，它包含数组$$$a$$$的所有非空子序列$$$^\\dagger$$$。",
+        "iflyrec": "让我们定义一个数组$$$A$$$的数组，它包含数组$$$a$$$的所有非空子序列$$$^\\dagger$$$。",
+        "deepl": "让我们定义一个数组$$$A$$$，它包含数组$$$a$$$的所有非空子序列$$$^\\dagger$$$。",
+        "ai": "定义数组的数组 $$$A$$$，它包含数组 $$$a$$$ 的所有非空子序列$$$^\\dagger$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "你获得了一个长度为 $$$n$$$ 的 $$$a$$$ 数组。你必须处理以下 $$$q$$$ 更新：",
+        "youdao": "给定一个长度为$$$n$$$的数组$$$a$$$。你必须处理以下$$$q$$$更新：",
+        "iflyrec": "您将得到一个长度为$$$n$$$的$$$a$$$数组。您必须处理以下$$$q$$$更新:",
+        "deepl": "给你一个长度为 $$$n$$$ 的 $$$a$$$ 数组。您必须处理以下 $$$q$$$ 更新：",
+        "ai": "给定一个长度为 $$$n$$$ 的 $$$a$$$ 数组。你需要处理以下 $$$q$$$ 次更新：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "给定和索引 $$$i$$$ 和值 $$$x$$$，设置 $$$a_i := x$$$;",
+        "youdao": "给定索引$$$i$$$和值$$$x$$$，设置$$$a_i := x$$$；",
+        "iflyrec": "给定索引$$$i$$$和值$$$x$$$，设置$$$a_i := x$$$",
+        "deepl": "给定索引 $$$i$$$ 和值 $$$x$$$，设置 $$$a_i := x$$$；",
+        "ai": "给定一个索引 $$$i$$$ 和一个值 $$$x$$$，令 $$$a_i := x$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "打印 $$$\\displaystyle\\sum_{s \\in A} f(s)$$$ 的值。",
+        "youdao": "打印$$$\\displaystyle\\sum_{s \\in A} f(s)$$$的值。",
+        "iflyrec": "打印$$$\\displaystyle\\sum_{s \\in A} f(s)$$$的值。",
+        "deepl": "打印 $$$\\displaystyle\\sum_{s \\in A} f(s)$$$ 的值。",
+        "ai": "输出 $$$\\displaystyle\\sum_{s \\in A} f(s)$$$ 的值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "由于这个值可能太大，请将其取模 $$$10^9 + 7$$$。",
+        "youdao": "由于该值可能太大，因此将其取模$$$10^9 + 7$$$。",
+        "iflyrec": "由于该值可能太大，因此求其模$$$10^9 + 7$$$。",
+        "deepl": "由于该值可能过大，因此应将其取模为 $$$10^9 + 7$$$。",
+        "ai": "由于该值可能非常大，请求出它对 $$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "这里 $$$\\oplus$$$ 表示按位异或操作。",
+        "youdao": "这里$$$\\oplus$$$表示按位异或操作。",
+        "iflyrec": "这里，$$$\\oplus$$$表示逐位XOR运算。",
+        "deepl": "此处 $$$\\oplus$$$ 表示位操作 XOR。",
+        "ai": "这里 $$$\\oplus$$$ 表示按位异或运算。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$\\dagger$$$ 序列 $$$a$$$ 是序列 $$$b$$$ 的子序列，如果 $$$a$$$ 可以通过删除几个 (可能是零个) 元素从 $$$b$$$ 中获得。例如，$$$[3,1]$$$ 是 $$$[3,2,1]$$$ 和 $$$[4,3,1]$$$ 的子序列，但不是 $$$[1,3,3,7]$$$ 和 $$$[3,10,4]$$$ 的子序列。",
+        "youdao": "$$$\\dagger$$$如果序列$$$a$$$是序列$$$b$$$的子序列，则通过删除$$$b$$$中的几个元素(可能为零）得到$$$a$$$。例如，$$$[3,1]$$$是$$$[3,2,1]$$$和$$$[4,3,1]$$$的子序列，但不是$$$[1,3,3,7]$$$和$$$[3,10,4]$$$的子序列。",
+        "iflyrec": "$$$\\dagger$$$序列$$$a$$$是序列$$$b$$$的子序列，如果$$$a$$$可以通过删除几个(可能是零个）元素从$$$b$$$获得。例如，$$$[3,1]$$$是$$$[3,2,1]$$$和$$$[4,3,1]$$$的子序列，但不是$$$[1,3,3,7]$$$和$$$[3,10,4]$$$的子序列。",
+        "deepl": "$$$\\dagger$$$ 序列$$$a$$$是序列$$$b$$$的子序列，如果$$$a$$$可以通过删除几个(可能是零)元素从$$$b$$$得到。例如，$$$[3,1]$$$是$$$[3,2,1]$$$和$$$[4,3,1]$$$的子序列，但不是$$$[1,3,3,7]$$$和$$$[3,10,4]$$$的子序列。",
+        "ai": "$$$\\dagger$$$ 序列 $$$a$$$ 是序列 $$$b$$$ 的子序列，当且仅当可以通过删除 $$$b$$$ 中的若干个(也可以是零个)元素得到 $$$a$$$。例如，$$$[3,1]$$$ 是 $$$[3,2,1]$$$ 和 $$$[4,3,1]$$$ 的子序列，但不是 $$$[1,3,3,7]$$$ 和 $$$[3,10,4]$$$ 的子序列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数 $$$n$$$$$$(1 \\le n \\le 10^6)$$$——数组 $$$a$$$ 的长度。",
+        "youdao": "第一行包含一个整数$$$n$$$ $$$(1 \\le n \\le 10^6)$$$ -数组$$$a$$$的长度。",
+        "iflyrec": "第一行包含一个整数$$$n$$$$$$(1 \\le n \\le 10^6)$$$—数组的长度$$$a$$$。",
+        "deepl": "第一行包含一个整数 $$$n$$$ $$$(1 \\le n \\le 10^6)$$$ - 数组的长度 $$$a$$$。",
+        "ai": "第一行包含一个整数 $$$n$$$ $$$(1 \\le n \\le 10^6)$$$ —— 数组 $$$a$$$ 的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "第二行包含 $$$n$$$ 整数 $$$a_1, a_2, \\ldots, a_n$$$$$$(1 \\le a_i \\le 10^9)$$$——数组 $$$a$$$ 的元素。",
+        "youdao": "第二行包含$$$n$$$个整数$$$a_1, a_2, \\ldots, a_n$$$ $$$(1 \\le a_i \\le 10^9)$$$——数组$$$a$$$的元素。",
+        "iflyrec": "第二行包含$$$n$$$整数$$$a_1, a_2, \\ldots, a_n$$$$$$(1 \\le a_i \\le 10^9)$$$—数组$$$a$$$的元素。",
+        "deepl": "第二行包含 $$$n$$$ 整数 $$$a_1, a_2, \\ldots, a_n$$$ $$$(1 \\le a_i \\le 10^9)$$$ - 数组 $$$a$$$ 的元素。",
+        "ai": "第二行包含 $$$n$$$ 个整数 $$$a_1, a_2, \\ldots, a_n$$$ $$$(1 \\le a_i \\le 10^9)$$$ —— 数组 $$$a$$$ 的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "第三行包含一个整数 $$$q$$$$$$(1 \\le q \\le 10^6)$$$——更新操作的数量。",
+        "youdao": "第三行包含一个整数$$$q$$$ $$$(1 \\le q \\le 10^6)$$$ -更新操作的数量。",
+        "iflyrec": "第三行包含一个整数$$$q$$$$$$(1 \\le q \\le 10^6)$$$—更新操作的次数。",
+        "deepl": "第三行包含一个整数 $$$q$$$ $$$(1 \\le q \\le 10^6)$$$ - 更新操作的次数。",
+        "ai": "第三行包含一个整数 $$$q$$$ $$$(1 \\le q \\le 10^6)$$$ —— 更新操作的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "接下来的每一行 $$$q$$$ 都包含两个整数 $$$i$$$ 和 $$$x$$$$$$(1 \\le i \\le n, 1 \\le x \\le 10^9)$$$——表示更新后的索引和值。",
+        "youdao": "后面的每一行$$$q$$$包含两个整数$$$i$$$和$$$x$$$ $$$(1 \\le i \\le n, 1 \\le x \\le 10^9)$$$，表示更新后的索引和值。",
+        "iflyrec": "接下来的$$$q$$$行中的每一行都包含两个整数$$$i$$$和$$$x$$$$$$(1 \\le i \\le n, 1 \\le x \\le 10^9)$$$—表示更新的索引和值。",
+        "deepl": "接下来的每一行 $$$q$$$ 都包含两个整数 $$$i$$$ 和 $$$x$$$ $$$(1 \\le i \\le n, 1 \\le x \\le 10^9)$$$ - 表示更新的索引和值。",
+        "ai": "接下来的 $$$q$$$ 行中的每一行包含两个整数 $$$i$$$ 和 $$$x$$$ $$$(1 \\le i \\le n, 1 \\le x \\le 10^9)$$$ —— 分别表示更新后的下标和值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "每次更新后，输出一个整数——求和 $$$\\displaystyle\\sum_{s \\in A} f(s)$$$，模 $$$10^9 + 7$$$。",
+        "youdao": "每次更新后，输出单个整数-和$$$\\displaystyle\\sum_{s \\in A} f(s)$$$，模$$$10^9 + 7$$$。",
+        "iflyrec": "每次更新后，输出单个整数—总和$$$\\displaystyle\\sum_{s \\in A} f(s)$$$，模$$$10^9 + 7$$$。",
+        "deepl": "每次更新后，输出一个整数 - 和 $$$\\displaystyle\\sum_{s \\in A} f(s)$$$，模数 $$$10^9 + 7$$$。",
+        "ai": "每次更新后，输出一个整数——总和 $$$\\displaystyle\\sum_{s \\in A} f(s)$$$ 对 $$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "对于第一个更新 $$$A = [[2],[2],[3],[2,2],[2,3],[2,3],[2,2,3]]$$$，然后：",
+        "youdao": "对于第一次更新，$$$A = [[2],[2],[3],[2,2],[2,3],[2,3],[2,2,3]]$$$，则：",
+        "iflyrec": "对于第一次更新，$$$A = [[2],[2],[3],[2,2],[2,3],[2,3],[2,2,3]]$$$，然后:",
+        "deepl": "第一次更新，$$$A = [[2],[2],[3],[2,2],[2,3],[2,3],[2,2,3]]$$$，然后：",
+        "ai": "对于第一次更新，$$$A = [[2],[2],[3],[2,2],[2,3],[2,3],[2,2,3]]$$$，然后：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$f([2]) + f([2]) + f([3]) + f([2,2]) + f([2,3]) + f([2,3]) + f([2,2,3]) = 2 + 2 + 3 + 4 + 6 + 6 + 12 = 35$$$",
+        "youdao": "$$$f([2]) + f([2]) + f([3]) + f([2,2]) + f([2,3]) + f([2,3]) + f([2,2,3]) = 2 + 2 + 3 + 4 + 6 + 6 + 12 = 35$$$。",
+        "iflyrec": "$$$f([2]) + f([2]) + f([3]) + f([2,2]) + f([2,3]) + f([2,3]) + f([2,2,3]) = 2 + 2 + 3 + 4 + 6 + 6 + 12 = 35$$$。",
+        "deepl": "$$$f([2]) + f([2]) + f([3]) + f([2,2]) + f([2,3]) + f([2,3]) + f([2,2,3]) = 2 + 2 + 3 + 4 + 6 + 6 + 12 = 35$$$.",
+        "ai": "$$$f([2]) + f([2]) + f([3]) + f([2,2]) + f([2,3]) + f([2,3]) + f([2,2,3]) = 2 + 2 + 3 + 4 + 6 + 6 + 12 = 35$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.106Z",
+  "translatedBy": [
+    "deepl",
+    "iflyrec"
+  ]
+}

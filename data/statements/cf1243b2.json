@@ -1,0 +1,81 @@
+{
+  "code": "CF1243B2",
+  "letter": "B2",
+  "title": "B2. Character Swap (Hard Version)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1243/B2",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This problem is different from the easy version. In this version Ujan makes at most 2n$$$2n$$$ swaps. In addition, k≤1000,n≤50$$$k \\le 1000, n \\le 50$$$ and it is necessary to print swaps themselves. You can hack this problem if you solve it. But you can hack the previous problem only if you solve both problems.",
+      "After struggling and failing many times, Ujan decided to try to clean up his house again. He decided to get his strings in order first.",
+      "Ujan has two distinct strings s$$$s$$$ and t$$$t$$$ of length n$$$n$$$ consisting of only of lowercase English characters. He wants to make them equal. Since Ujan is lazy, he will perform the following operation at most 2n$$$2n$$$ times: he takes two positions i$$$i$$$ and j$$$j$$$ (1≤i,j≤n$$$1 \\le i,j \\le n$$$, the values i$$$i$$$ and j$$$j$$$ can be equal or different), and swaps the characters si$$$s_i$$$ and tj$$$t_j$$$.",
+      "Ujan's goal is to make the strings s$$$s$$$ and t$$$t$$$ equal. He does not need to minimize the number of performed operations: any sequence of operations of length 2n$$$2n$$$ or shorter is suitable."
+    ],
+    "input": [
+      "The first line contains a single integer k$$$k$$$ (1≤k≤1000$$$1 \\leq k \\leq 1000$$$), the number of test cases.",
+      "For each of the test cases, the first line contains a single integer n$$$n$$$ (2≤n≤50$$$2 \\leq n \\leq 50$$$), the length of the strings s$$$s$$$ and t$$$t$$$.",
+      "Each of the next two lines contains the strings s$$$s$$$ and t$$$t$$$, each having length exactly n$$$n$$$. The strings consist only of lowercase English letters. It is guaranteed that strings are different."
+    ],
+    "output": [
+      "For each test case, output \"Yes\" if Ujan can make the two strings equal with at most 2n$$$2n$$$ operations and \"No\" otherwise. You can print each letter in any case (upper or lower).",
+      "In the case of \"Yes\" print m$$$m$$$ (1≤m≤2n$$$1 \\le m \\le 2n$$$) on the next line, where m$$$m$$$ is the number of swap operations to make the strings equal. Then print m$$$m$$$ lines, each line should contain two integers i,j$$$i, j$$$ (1≤i,j≤n$$$1 \\le i, j \\le n$$$) meaning that Ujan swaps si$$$s_i$$$ and tj$$$t_j$$$ during the corresponding operation. You do not need to minimize the number of operations. Any sequence of length not more than 2n$$$2n$$$ is suitable."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n5\nsouse\nhouhe\n3\ncat\ndog\n2\naa\naz\n3\nabc\nbca",
+      "output": "Yes\n1\n1 4\nNo\nNo\nYes\n3\n1 2\n3 1\n2 3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "本题与简单版本不同。在这个版本中，Ujan 最多进行 2n$$$2n$$$ 次交换。此外，k≤1000，n≤50$$$k \\le 1000, n \\le 50$$$，并且必须输出具体的交换操作。如果你解决了本题，就可以对本题进行 hack。但只有在同时解决了两道题的情况下，才能对上一题进行 hack。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在经历了多次挣扎与失败后，Ujan 决定再次尝试打扫他的房子。他决定先把自己的字符串整理好。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Ujan 有两个不同的长度为 n$$$n$$$ 的字符串 s$$$s$$$ 和 t$$$t$$$，它们只由小写英文字母组成。他想让这两个字符串相等。由于 Ujan 很懒，他至多进行 2n$$$2n$$$ 次以下操作：他选择两个位置 i$$$i$$$ 和 j$$$j$$$(1≤i,j≤n$$$1 \\le i,j \\le n$$$，位置 i$$$i$$$ 和 j$$$j$$$ 可以相同，也可以不同)，然后交换字符 si$$$s_i$$$ 和 tj$$$t_j$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Ujan 的目标是使字符串 s$$$s$$$ 和 t$$$t$$$ 相等。他不需要最小化所执行操作的次数：长度为 2n$$$2n$$$ 或更短的任意操作序列都可以。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 k$$$k$$$ (1≤k≤1000$$$1 \\leq k \\leq 1000$$$)，表示测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个测试用例，第一行包含一个整数 n$$$n$$$ (2≤n≤50$$$2 \\leq n \\leq 50$$$)，表示字符串 s$$$s$$$ 和 t$$$t$$$ 的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的两行分别包含字符串 s$$$s$$$ 和 t$$$t$$$，它们的长度均恰好为 n$$$n$$$。字符串仅由小写英文字母组成。保证两个字符串不同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果 Ujan 能在不超过 2n$$$2n$$$ 次操作内使两个字符串相等，则输出 \"Yes\"，否则输出 \"No\"。每个字母都可以使用任意大小写(大写或小写)输出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果答案为 \"Yes\"，则在下一行输出 m$$$m$$$ (1≤m≤2n$$$1 \\le m \\le 2n$$$)，其中 m$$$m$$$ 是使两个字符串相等所需的交换操作次数。然后输出 m$$$m$$$ 行，每行应包含两个整数 i,j$$$i, j$$$ (1≤i,j≤n$$$1 \\le i, j \\le n$$$)，表示在对应操作中 Ujan 交换 si$$$s_i$$$ 和 tj$$$t_j$$$。不需要最小化操作次数。长度不超过 2n$$$2n$$$ 的任意序列都可以。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B2. 字符交换（困难版本）",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

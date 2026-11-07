@@ -1,0 +1,170 @@
+{
+  "code": "CF1878F",
+  "letter": "F",
+  "title": "F. Vasilije Loves Number Theory",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1878/F",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Vasilije is a smart student and his discrete mathematics teacher Sonja taught him number theory very well.",
+      "He gave Ognjen a positive integer n$$$n$$$.",
+      "Denote d(n)$$$d(n)$$$ as the number of positive integer divisors of n$$$n$$$, and denote gcd(a,b)$$$gcd(a, b)$$$ as the largest integer g$$$g$$$ such that a$$$a$$$ is divisible by g$$$g$$$ and b$$$b$$$ is divisible by g$$$g$$$.",
+      "After that, he gave Ognjen q$$$q$$$ queries, and there are 2$$$2$$$ types of queries.",
+      "1$$$1$$$, x$$$x$$$ — set n$$$n$$$ to n⋅x$$$n \\cdot x$$$, and then answer the following question: does there exist a positive integer a$$$a$$$ such that gcd(a,n)=1$$$gcd(a, n) = 1$$$, and d(n⋅a)=n$$$d(n \\cdot a) = n$$$?",
+      "2$$$2$$$ — reset n$$$n$$$ to its initial value (before any queries).",
+      "Note that n$$$n$$$ does not get back to its initial value after the type 1 query.",
+      "Since Ognjen is afraid of number theory, Vasilije promised him that after each query, d(n)≤109$$$d(n) \\le 10^9$$$, however, even with that constraint, he still needs your help with this problem."
+    ],
+    "input": [
+      "The first line contains a positive integer t$$$t$$$, (1≤t≤100$$$1 \\le t \\le 100$$$) — the number of test cases.",
+      "The first line of each test case contains 2$$$2$$$ integers, n$$$n$$$ and q$$$q$$$ (1≤n≤106$$$1 \\le n \\le 10^{6}$$$, 1≤q≤1000$$$1\\le q \\le 1000$$$) — the number n$$$n$$$ and the number of queries.",
+      "The following q$$$q$$$ lines contain an integer k$$$k$$$ (1≤k≤2$$$1 \\le k \\le 2$$$), if k=1$$$k=1$$$ then there is another integer in this line x$$$x$$$ (1≤x≤106$$$1 \\le x \\le 10^6$$$) — the description of the queries.",
+      "It is guaranteed that, for the given input, d(n)$$$d(n)$$$ does not exceed 109$$$10^9$$$ at any point.",
+      "It is guaranteed that the sum of q$$$q$$$ over all test cases doesn't exceed 103$$$10^3$$$."
+    ],
+    "output": [
+      "For each type 1 query, you should output \"YES\" if there exist such positive integer a$$$a$$$ that gcd(a,n)=1$$$gcd(a, n) = 1$$$ and d(n⋅a)=n$$$d(n \\cdot a)=n$$$, and \"NO\" if he can't.",
+      "You can output the answer in any case (for example, the strings \"yEs\", \"yes\", \"Yes\", and \"YES\" will be recognized as a positive answer)."
+    ],
+    "note": [
+      "In the first test case, we initially have n=1$$$n=1$$$.",
+      "After the first query: n=1$$$n=1$$$, d(n)=1$$$d(n)=1$$$, so by taking a=1$$$a = 1$$$, d(n⋅a)=n$$$d(n \\cdot a) = n$$$, and the answer to this query is \"YES\".",
+      "After the second query: n=2$$$n=2$$$, d(n)=2$$$d(n)=2$$$, we can, again, take a=1$$$a = 1$$$, d(n⋅a)=n$$$d(n \\cdot a) = n$$$, and the answer to this query is \"YES\".",
+      "After the third query n=1$$$n=1$$$, and this is a type 2$$$2$$$ query so we don't answer it.",
+      "After the fourth query: n=8$$$n=8$$$, and by taking a=3$$$a=3$$$, d(n⋅a)=d(24)=8=n$$$d(n \\cdot a) = d(24) = 8 = n$$$, so the answer is \"YES\".",
+      "After the fifth query: n=72$$$n=72$$$, now we can take a=637$$$a=637$$$ to get n⋅a=45864$$$n \\cdot a = 45864$$$, and d(n⋅a)=72=n$$$d(n \\cdot a) = 72 = n$$$, so the answer is \"YES\".",
+      "In the second test case, we initially have n=20$$$n=20$$$.",
+      "After the first query: n=60$$$n=60$$$, and the answer is \"YES\".",
+      "After the second query: n=20$$$n=20$$$, this is a type 2$$$2$$$ query, so we don't answer it.",
+      "After the third query: n=140$$$n=140$$$, and it can be proven that no matter which positive integer a$$$a$$$ we take, d(n⋅a)$$$d(n \\cdot a)$$$ will never be equal to n$$$n$$$, so the answer to this query is \"NO\".",
+      "After the fourth query: n=1680$$$n=1680$$$. It can be proven that there exists a positive integer a$$$a$$$, such that d(n⋅a)=n$$$d(n \\cdot a) = n$$$, so the answer is \"YES\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n1 5\n1 1\n1 2\n2\n1 8\n1 9\n20 4\n1 3\n2\n1 7\n1 12\n16 10\n1 6\n1 6\n1 10\n1 9\n1 1\n1 9\n1 7\n1 3\n1 2\n1 10\n9 1\n1 3\n8 1\n1 2\n8 3\n1 5\n1 8\n1 10\n11 5\n1 8\n1 2\n1 1\n1 3\n1 1",
+      "output": "YES\nYES\nYES\nYES\n\nYES\nNO\nYES\n\nYES\nNO\nYES\nYES\nYES\nNO\nYES\nNO\nYES\nYES\n\nNO\n\nNO\n\nYES\nNO\nNO\n\nYES\nNO\nNO\nNO\nNO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Vasilije 是一名聪明的学生，他的离散数学老师 Sonja 将数论教得非常好。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他给了 Ognjen 一个正整数 n$$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将 d(n)$$$d(n)$$$ 记为 n$$$n$$$ 的正约数个数，并将 gcd(a,b)$$$gcd(a, b)$$$ 记为最大的整数 g$$$g$$$，使得 a$$$a$$$ 能被 g$$$g$$$ 整除且 b$$$b$$$ 能被 g$$$g$$$ 整除。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "随后，他向 Ognjen 提出了 q$$$q$$$ 个询问，这些询问分为 2$$$2$$$ 种类型。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1$$$1$$$，x$$$x$$$ —— 将 n$$$n$$$ 设为 n⋅x$$$n \\cdot x$$$，然后回答以下问题：是否存在一个正整数 a$$$a$$$，使得 gcd(a,n)=1$$$gcd(a, n) = 1$$$ 且 d(n⋅a)=n$$$d(n \\cdot a) = n$$$？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2$$$2$$$ — 将 n$$$n$$$ 重置为初始值(进行任何查询之前的值)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，在类型 1 查询后，n$$$n$$$ 不会恢复到其初始值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于 Ognjen 害怕数论，Vasilije 向他保证，在每次查询后都有 d(n)≤109$$$d(n) \\le 10^9$$$，然而，即使有这一约束，他仍然需要你的帮助来解决这个问题。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个正整数 t$$$t$$$(1≤t≤100$$$1 \\le t \\le 100$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含 2$$$2$$$ 个整数 n$$$n$$$ 和 q$$$q$$$(1≤n≤106$$$1 \\le n \\le 10^{6}$$$，1≤q≤1000$$$1\\le q \\le 1000$$$)——数 n$$$n$$$ 以及查询的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行包含一个整数 k$$$k$$$(1≤k≤2$$$1 \\le k \\le 2$$$)，如果 k=1$$$k=1$$$，则该行中还会有另一个整数 x$$$x$$$(1≤x≤106$$$1 \\le x \\le 10^6$$$)——查询的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证对于给定的输入，在任何时刻 d(n)$$$d(n)$$$ 都不超过 109$$$10^9$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中的 q$$$q$$$ 之和不超过 103$$$10^3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个类型 1 的查询，如果存在满足 gcd(a,n)=1$$$gcd(a, n) = 1$$$ 且 d(n⋅a)=n$$$d(n \\cdot a)=n$$$ 的正整数 a$$$a$$$，则输出 \"YES\"；如果不存在，则输出 \"NO\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以使用任意大小写形式输出答案（例如，字符串 \"yEs\"、\"yes\"、\"Yes\" 和 \"YES\" 都会被识别为肯定回答）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，初始时 n=1$$$n=1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一次查询后：n=1$$$n=1$$$，d(n)=1$$$d(n)=1$$$，因此取 a=1$$$a = 1$$$ 时，d(n⋅a)=n$$$d(n \\cdot a) = n$$$，该查询的答案为 \"YES\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二次查询后：n=2$$$n=2$$$，d(n)=2$$$d(n)=2$$$，我们仍然可以取 a=1$$$a = 1$$$，d(n⋅a)=n$$$d(n \\cdot a) = n$$$，该次查询的答案是“YES”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三次查询后 n=1$$$n=1$$$，这是一个 2 类$$$2$$$查询，因此我们不回答它。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第四次查询后：n=8$$$n=8$$$，通过取 a=3$$$a=3$$$，d(n⋅a)=d(24)=8=n$$$d(n \\cdot a) = d(24) = 8 = n$$$，因此答案是“YES”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第五次查询后：n=72$$$n=72$$$，现在我们可以取 a=637$$$a=637$$$，得到 n⋅a=45864$$$n \\cdot a = 45864$$$，并且 d(n⋅a)=72=n$$$d(n \\cdot a) = 72 = n$$$，因此答案是“YES”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，初始时 n=20$$$n=20$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一次查询后：n=60$$$n=60$$$，答案是“YES”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二次查询后：n=20$$$n=20$$$，这是一个类型 2$$$2$$$ 查询，因此我们不回答它。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三次查询后：n=140$$$n=140$$$，可以证明，无论我们取哪个正整数 a$$$a$$$，d(n⋅a)$$$d(n \\cdot a)$$$ 都永远不会等于 n$$$n$$$，因此该查询的答案是“NO”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第四次查询后：n=1680$$$n=1680$$$。可以证明，存在一个正整数 a$$$a$$$，使得 d(n⋅a)=n$$$d(n \\cdot a) = n$$$，因此答案是“YES”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. Vasilije 热爱数论",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

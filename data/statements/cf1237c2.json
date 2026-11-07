@@ -1,0 +1,104 @@
+{
+  "code": "CF1237C2",
+  "letter": "C2",
+  "title": "C2. Balanced Removals (Harder)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1237/C2",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "This is a harder version of the problem. In this version, n≤50000$$$n \\le 50\\,000$$$.",
+      "There are n$$$n$$$ distinct points in three-dimensional space numbered from 1$$$1$$$ to n$$$n$$$. The i$$$i$$$-th point has coordinates (xi,yi,zi)$$$(x_i, y_i, z_i)$$$. The number of points n$$$n$$$ is even.",
+      "You'd like to remove all n$$$n$$$ points using a sequence of n2$$$\\frac{n}{2}$$$ snaps. In one snap, you can remove any two points a$$$a$$$ and b$$$b$$$ that have not been removed yet and form a perfectly balanced pair. A pair of points a$$$a$$$ and b$$$b$$$ is perfectly balanced if no other point c$$$c$$$ (that has not been removed yet) lies within the axis-aligned minimum bounding box of points a$$$a$$$ and b$$$b$$$.",
+      "Formally, point c$$$c$$$ lies within the axis-aligned minimum bounding box of points a$$$a$$$ and b$$$b$$$ if and only if min(xa,xb)≤xc≤max(xa,xb)$$$\\min(x_a, x_b) \\le x_c \\le \\max(x_a, x_b)$$$, min(ya,yb)≤yc≤max(ya,yb)$$$\\min(y_a, y_b) \\le y_c \\le \\max(y_a, y_b)$$$, and min(za,zb)≤zc≤max(za,zb)$$$\\min(z_a, z_b) \\le z_c \\le \\max(z_a, z_b)$$$. Note that the bounding box might be degenerate.",
+      "Find a way to remove all points in n2$$$\\frac{n}{2}$$$ snaps."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (2≤n≤50000$$$2 \\le n \\le 50\\,000$$$; n$$$n$$$ is even), denoting the number of points.",
+      "Each of the next n$$$n$$$ lines contains three integers xi$$$x_i$$$, yi$$$y_i$$$, zi$$$z_i$$$ (−108≤xi,yi,zi≤108$$$-10^8 \\le x_i, y_i, z_i \\le 10^8$$$), denoting the coordinates of the i$$$i$$$-th point.",
+      "No two points coincide."
+    ],
+    "output": [
+      "Output n2$$$\\frac{n}{2}$$$ pairs of integers ai,bi$$$a_i, b_i$$$ (1≤ai,bi≤n$$$1 \\le a_i, b_i \\le n$$$), denoting the indices of points removed on snap i$$$i$$$. Every integer between 1$$$1$$$ and n$$$n$$$, inclusive, must appear in your output exactly once.",
+      "We can show that it is always possible to remove all points. If there are many solutions, output any of them."
+    ],
+    "note": [
+      "In the first example, here is what points and their corresponding bounding boxes look like (drawn in two dimensions for simplicity, as all points lie on z=0$$$z = 0$$$ plane). Note that order of removing matters: for example, points 5$$$5$$$ and 1$$$1$$$ don't form a perfectly balanced pair initially, but they do after point 3$$$3$$$ is removed.",
+      "![](https://espresso.codeforces.com/167454c917d62a801abf3bf4c75746f11b6da23e.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n3 1 0\n0 3 0\n2 2 0\n1 0 0\n1 3 0\n0 1 0",
+      "output": "3 6\n5 1\n2 4"
+    },
+    {
+      "input": "8\n0 1 1\n1 0 1\n1 1 0\n1 1 1\n2 2 2\n3 2 2\n2 3 2\n2 2 3",
+      "output": "4 5\n1 6\n2 7\n3 8"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是该问题的困难版本。在此版本中，n≤50000$$$n \\le 50\\,000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "三维空间中有 n$$$n$$$ 个互不相同的点，编号从 1$$$1$$$ 到 n$$$n$$$。第 i$$$i$$$ 个点的坐标为 (xi,yi,zi)$$$(x_i, y_i, z_i)$$$。点的数量 n$$$n$$$ 为偶数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要通过 n2$$$\\frac{n}{2}$$$ 次操作移除全部 n$$$n$$$ 个点。在一次操作中，你可以移除两个尚未被移除且构成完美平衡对的点 a$$$a$$$ 和 b$$$b$$$。如果不存在其他尚未被移除的点 c$$$c$$$ 位于点 a$$$a$$$ 和 b$$$b$$$ 的与坐标轴平行的最小包围盒内，则称点对 a$$$a$$$ 和 b$$$b$$$ 是完美平衡的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地说，当且仅当 min(xa,xb)≤xc≤max(xa,xb)$$$\\min(x_a, x_b) \\le x_c \\le \\max(x_a, x_b)$$$、min(ya,yb)≤yc≤max(ya,yb)$$$\\min(y_a, y_b) \\le y_c \\le \\max(y_a, y_b)$$$ 且 min(za,zb)≤zc≤max(za,zb)$$$\\min(z_a, z_b) \\le z_c \\le \\max(z_a, z_b)$$$ 时，点 c$$$c$$$ 位于点 a$$$a$$$ 和点 b$$$b$$$ 的轴对齐最小包围盒内。注意，包围盒可能是退化的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请找出一种在 n2$$$\\frac{n}{2}$$$ 次瞬间移除所有点的方法。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(2≤n≤50000$$$2 \\le n \\le 50\\,000$$$；n$$$n$$$ 为偶数)，表示点的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行中，每行包含三个整数 xi$$$x_i$$$、yi$$$y_i$$$、zi$$$z_i$$$(−108≤xi,yi,zi≤108$$$-10^8 \\le x_i, y_i, z_i \\le 10^8$$$)，表示第 i$$$i$$$ 个点的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "任意两个点都不重合。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n2$$$\\frac{n}{2}$$$ 对整数 ai,bi$$$a_i, b_i$$$(1≤ai,bi≤n$$$1 \\le a_i, b_i \\le n$$$)，表示第 i$$$i$$$ 次瞬间移除的点的编号。1$$$1$$$ 到 n$$$n$$$ 之间(含端点)的每个整数都必须恰好在输出中出现一次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们可以证明，总是能够移除所有点。如果有多种方案，输出任意一种即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，点及其对应的包围盒如下所示(为简单起见，在二维空间中绘制，因为所有点都位于 z=0$$$z = 0$$$ 平面上)。注意，移除点的顺序很重要：例如，点 5$$$5$$$ 和点 1$$$1$$$ 起初并不构成一个完全平衡的点对，但在移除点 3$$$3$$$ 后，它们就构成了。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/167454c917d62a801abf3bf4c75746f11b6da23e.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C2. 平衡移除（困难版）",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

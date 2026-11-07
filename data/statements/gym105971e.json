@@ -1,0 +1,115 @@
+{
+  "code": "GYM105971E",
+  "letter": "E",
+  "title": "E. Baggage Claim",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105971/problem/E",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Every airport has a baggage claim area, and Balbesovo Airport is no exception. At some point, one of the administrators at Sheremetyevo came up with an unusual idea: to change the traditional shape of the baggage claim conveyor from a carousel to a more complex form.",
+      "Suppose that the baggage claim area is represented as a rectangular grid of size n×m$$$n \\times m$$$. The administration proposed that the path of the conveyor should pass through the cells p1,p2,…,p2k+1$$$p_1, p_2, \\ldots, p_{2k+1}$$$, where pi=(xi,yi)$$$p_i = (x_i, y_i)$$$.",
+      "For each cell pi$$$p_i$$$ and the next cell pi+1$$$p_{i+1}$$$ (where 1≤i≤2k$$$1 \\leq i \\leq 2k$$$), these cells must share a common side. Additionally, the path must be simple, meaning that for no pair of indices i≠j$$$i \\neq j$$$ should the cells pi$$$p_i$$$ and pj$$$p_j$$$ coincide.",
+      "Unfortunately, the route plan was accidentally spoiled by spilled coffee, and only the cells with odd indices of the path were preserved: p1,p3,p5,…,p2k+1$$$p_1, p_3, p_5, \\ldots, p_{2k+1}$$$. Your task is to determine the number of ways to restore the original complete path p1,p2,…,p2k+1$$$p_1, p_2, \\ldots, p_{2k+1}$$$ given these k+1$$$k+1$$$ cells.",
+      "Since the answer can be very large, output it modulo 109+7$$$10^9+7$$$."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤3⋅104$$$1 \\le t \\le 3 \\cdot 10^4$$$). The description of the test cases follows.",
+      "The first line of each test case contains three integers n$$$n$$$, m$$$m$$$, and k$$$k$$$ (1≤n,m≤1000$$$1 \\le n, m \\le 1000$$$, n⋅m≥3$$$n \\cdot m \\ge 3$$$, 1≤k≤⌊12(nm−1)⌋$$$1 \\le k \\le \\left\\lfloor \\frac12 (n m - 1) \\right\\rfloor$$$) — the dimensions of the grid and a parameter defining the length of the path.",
+      "Next, there are k+1$$$k+1$$$ lines, the i$$$i$$$-th of which contains two integers x2i−1$$$x_{2i-1}$$$ and y2i−1$$$y_{2i-1}$$$ (1≤x2i−1≤n$$$1 \\le x_{2i-1} \\le n$$$, 1≤y2i−1≤m$$$1 \\le y_{2i-1} \\le m$$$) — the coordinates of the cell p2i−1$$$p_{2i-1}$$$ that lies on the path.",
+      "It is guaranteed that all pairs (x2i−1,y2i−1)$$$(x_{2i-1}, y_{2i-1})$$$ are distinct.",
+      "It is guaranteed that the sum n⋅m$$$n \\cdot m$$$ over all test cases does not exceed 106$$$10^6$$$."
+    ],
+    "output": [
+      "For each test case, output a single integer — the number of ways to restore the original complete path modulo 109+7$$$10^9+7$$$."
+    ],
+    "note": [
+      "In the first test case, there are two possible paths:",
+      "(1,1)→(2,1)→(2,2)→(2,3)→(2,4)$$$(1,1) \\to (2,1) \\to (2, 2) \\to (2, 3) \\to (2, 4)$$$",
+      "(1,1)→(1,2)→(2,2)→(2,3)→(2,4)$$$(1,1) \\to (1,2) \\to (2, 2) \\to (2, 3) \\to (2, 4)$$$",
+      "In the second test case, there is no suitable path, as the cells (1,1)$$$(1,1)$$$ and (1,4)$$$(1,4)$$$ do not have a common neighboring cell."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 4 2\n1 1\n2 2\n2 4\n1 4 1\n1 1\n1 4\n5 5 11\n2 5\n3 4\n4 5\n5 4\n4 3\n5 2\n4 1\n3 2\n2 1\n1 2\n2 3\n1 4\n3 4 4\n1 2\n2 1\n3 2\n2 3\n3 4\n3 3 2\n2 2\n1 1\n1 3",
+      "output": "2\n0\n2\n5\n1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "每个机场都有行李提取区，Balbesovo 机场也不例外。某天，Sheremetyevo 机场的一位管理员想到一个不寻常的主意：将传统行李提取传送带的形状从旋转式输送带改成一种更复杂的形式。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "假设行李提取区被表示为一个大小为 n×m$$$n \\times m$$$ 的矩形网格。管理部门提议，传送带的路径应经过单元格 p1,p2,…,p2k+1$$$p_1, p_2, \\ldots, p_{2k+1}$$$，其中 pi=(xi,yi)$$$p_i = (x_i, y_i)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个单元格 pi$$$p_i$$$ 及其下一个单元格 pi+1$$$p_{i+1}$$$(其中 1≤i≤2k$$$1 \\leq i \\leq 2k$$$)，这两个单元格必须有一条公共边。此外，路径必须是简单的，也就是说，对于任意一对下标 i≠j$$$i \\neq j$$$，单元格 pi$$$p_i$$$ 和 pj$$$p_j$$$ 都不能重合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "不幸的是，路线规划被洒出的咖啡意外损坏了，只保留了路径中下标为奇数的单元格：p1,p3,p5,…,p2k+1$$$p_1, p_3, p_5, \\ldots, p_{2k+1}$$$。你的任务是确定给定这 k+1$$$k+1$$$ 个单元格后，还原原始完整路径 p1,p2,…,p2k+1$$$p_1, p_2, \\ldots, p_{2k+1}$$$ 的方案数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于答案可能非常大，请输出答案对 109+7$$$10^9+7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤3⋅104$$$1 \\le t \\le 3 \\cdot 10^4$$$)。接下来给出各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含三个整数 n$$$n$$$、m$$$m$$$ 和 k$$$k$$$(1≤n,m≤1000$$$1 \\le n, m \\le 1000$$$，n⋅m≥3$$$n \\cdot m \\ge 3$$$，1≤k≤⌊12(nm−1)⌋$$$1 \\le k \\le \\left\\lfloor \\frac12 (n m - 1) \\right\\rfloor$$$)，分别表示网格的尺寸和定义路径长度的参数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来有 k+1$$$k+1$$$ 行，其中第 i$$$i$$$ 行包含两个整数 x2i−1$$$x_{2i-1}$$$ 和 y2i−1$$$y_{2i-1}$$$(1≤x2i−1≤n$$$1 \\le x_{2i-1} \\le n$$$，1≤y2i−1≤m$$$1 \\le y_{2i-1} \\le m$$$)，表示路径上单元格 p2i−1$$$p_{2i-1}$$$ 的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有数对 (x2i−1,y2i−1)$$$(x_{2i-1}, y_{2i-1})$$$ 互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中的 n⋅m$$$n \\cdot m$$$ 之和不超过 106$$$10^6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数，即还原原始完整路径的方案数对 109+7$$$10^9+7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，有两条可能的路径：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(1,1)→(2,1)→(2,2)→(2,3)→(2,4)$$$(1,1) \\to (2,1) \\to (2, 2) \\to (2, 3) \\to (2, 4)$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(1,1)→(1,2)→(2,2)→(2,3)→(2,4)$$$(1,1) \\to (1,2) \\to (2, 2) \\to (2, 3) \\to (2, 4)$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，不存在合适的路径，因为单元格 (1,1)$$$(1,1)$$$ 和 (1,4)$$$(1,4)$$$ 没有公共相邻单元格。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 行李提取",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

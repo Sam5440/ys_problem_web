@@ -1,0 +1,151 @@
+{
+  "code": "GYM105364F",
+  "letter": "F",
+  "title": "F. Gold Cubes",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105364/problem/F",
+  "difficulty": "*2000",
+  "timeLimit": "7 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A company sells gold cubes, or at least that's what they call cubes filled with dirt that contain gold nuggets. To be precise, in the fine print, it specifies that each cube contains at least 100 milligrams of gold. Furthermore, they also claim that there is a possibility for the buyer to make money, as there are cubes that contain gold worth more than the price at which they are sold. The milligram of gold is valued at 5 cents, and the company sells its cubes at a price of V$$$V$$$ euros.",
+      "The nuggets are categorized into 3 categories, each of which we assume has the same average weight:",
+      "Category 1: Nuggets of A$$$A$$$ milligrams.",
+      "Category 2: Nuggets of B$$$B$$$ milligrams.",
+      "Category 3: Nuggets of C$$$C$$$ milligrams.",
+      "Calculate the maximum possible profit, in cents, that the company can achieve, respecting the following conditions:",
+      "Each cube contains at least 100 milligrams of gold.",
+      "There is at least one cube such that the value of the gold it contains exceeds the selling price of the cube.",
+      "You use at most P1$$$P_1$$$ nuggets from the first category, P2$$$P_2$$$ from the second, and P3$$$P_3$$$ from the third.",
+      "It is guaranteed that in the cases, a solution can always be found with a profit ≥$$$\\ge$$$ 0."
+    ],
+    "input": [
+      "The first line contains an integer T$$$T$$$, indicating the number of cases.",
+      "For each case, the first line contains the integer V$$$V$$$.",
+      "The second line contains the integers A,B,C$$$A, B, C$$$.",
+      "The third line contains the integers P1,P2,P3$$$P_1, P_2, P_3$$$."
+    ],
+    "output": [
+      "Print for each case a line with the maximum possible profit in cents.",
+      "1≤T≤20$$$1 \\le T \\le 20$$$",
+      "1≤V≤1000$$$1 \\le V \\le 1000$$$",
+      "1≤A<B<C≤100$$$1 \\le A  \\lt  B  \\lt  C \\le 100$$$",
+      "1≤P1+P2+P3≤180$$$1 \\le P_1 + P_2 + P_3 \\le 180$$$",
+      "17 points: A=1; B=2; C=50; P1,P3>0; P2=0$$$A = 1; \\ B = 2; \\ C = 50; \\ P_1, P_3  \\gt  0; \\ P_2 = 0$$$",
+      "20 points: A=10; B=20; C=50$$$A = 10; \\ B = 20; \\ C = 50$$$",
+      "21 points: 1≤P1+P2+P3≤15$$$1 \\le P_1 + P_2 + P_3 \\le 15$$$",
+      "42 points: No additional restrictions."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n9\n10 20 30\n30 0 0\n10\n1 2 25\n1 0 12",
+      "output": "350\n495"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一家公司出售金块，至少他们是这样称呼那些填满泥土且含有金块的立方体的。准确地说，细则中规定，每个立方体至少含有 100 毫克黄金。此外，他们还声称买家有可能赚钱，因为有些立方体中所含黄金的价值高于其售价。黄金每毫克价值 5 欧分，而该公司以 V$$$V$$$ 欧元的价格出售这些立方体。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这些金块分为 3 类，我们假设每一类金块的平均重量相同：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 1 类：重量为 A$$$A$$$ 毫克的金块。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 2 类：重量为 B$$$B$$$ 毫克的金块。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "类别 3：含有 C$$$C$$$ 毫克黄金的金块。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在满足以下条件的情况下，计算公司能够获得的最大利润（以美分为单位）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个方块至少含有 100 毫克黄金。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "至少存在一个方块，其所含黄金的价值高于该方块的售价。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你至多使用第一类中的 P1$$$P_1$$$ 块金块、第二类中的 P2$$$P_2$$$ 块金块，以及第三类中的 P3$$$P_3$$$ 块金块。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证在这些情况下，总能找到利润 ≥$$$\\ge$$$ 0 的解。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$，表示测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个测试用例，第一行包含整数 V$$$V$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含整数 A、B、C$$$A, B, C$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含整数 P1、P2、P3$$$P_1, P_2, P_3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一行，包含以美分为单位的最大可能利润。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤T≤20$$$1 \\le T \\le 20$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤V≤1000$$$1 \\le V \\le 1000$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤A<B<C≤100$$$1 \\le A  \\lt  B  \\lt  C \\le 100$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤P1+P2+P3≤180$$$1 \\le P_1 + P_2 + P_3 \\le 180$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "17 分：A=1；B=2；C=50；P1,P3>0；P2=0$$$A = 1; \\ B = 2; \\ C = 50; \\ P_1, P_3  \\gt  0; \\ P_2 = 0$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "20 分：A=10；B=20；C=50$$$A = 10; \\ B = 20; \\ C = 50$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "21 分：1≤P1+P2+P3≤15$$$1 \\le P_1 + P_2 + P_3 \\le 15$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "42 分：没有额外限制。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. Gold Cubes",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

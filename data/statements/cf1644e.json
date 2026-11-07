@@ -1,0 +1,150 @@
+{
+  "code": "CF1644E",
+  "letter": "E",
+  "title": "E. Expand the Path",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1644/E",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Consider a grid of size n×n$$$n \\times n$$$. The rows are numbered top to bottom from 1$$$1$$$ to n$$$n$$$, the columns are numbered left to right from 1$$$1$$$ to n$$$n$$$.",
+      "The robot is positioned in a cell (1,1)$$$(1, 1)$$$. It can perform two types of moves:",
+      "D — move one cell down;",
+      "R — move one cell right.",
+      "The robot is not allowed to move outside the grid.",
+      "You are given a sequence of moves s$$$s$$$ — the initial path of the robot. This path doesn't lead the robot outside the grid.",
+      "You are allowed to perform an arbitrary number of modifications to it (possibly, zero). With one modification, you can duplicate one move in the sequence. That is, replace a single occurrence of D with DD or a single occurrence of R with RR.",
+      "Count the number of cells such that there exists at least one sequence of modifications that the robot visits this cell on the modified path and doesn't move outside the grid."
+    ],
+    "input": [
+      "The first line contains a single integer t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$) — the number of testcases.",
+      "The first line of each testcase contains the single integer n$$$n$$$ (2≤n≤108$$$2 \\le n \\le 10^8$$$) — the number of rows and columns in the grid.",
+      "The second line of each testcase contains a non-empty string s$$$s$$$, consisting only of characters D and R, — the initial path of the robot. This path doesn't lead the robot outside the grid.",
+      "The total length of strings s$$$s$$$ over all testcases doesn't exceed 2⋅105$$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each testcase, print a single integer — the number of cells such that there exists at least one sequence of modifications that the robot visits this cell on the modified path and doesn't move outside the grid."
+    ],
+    "note": [
+      "In the first testcase, it's enough to consider the following modified paths:",
+      "RD →$$$\\rightarrow$$$ RRD →$$$\\rightarrow$$$ RRRD →$$$\\rightarrow$$$ RRRDD →$$$\\rightarrow$$$ RRRDDD — this path visits cells (1,1)$$$(1, 1)$$$, (1,2)$$$(1, 2)$$$, (1,3)$$$(1, 3)$$$, (1,4)$$$(1, 4)$$$, (2,4)$$$(2, 4)$$$, (3,4)$$$(3, 4)$$$ and (4,4)$$$(4, 4)$$$;",
+      "RD →$$$\\rightarrow$$$ RRD →$$$\\rightarrow$$$ RRDD →$$$\\rightarrow$$$ RRDDD — this path visits cells (1,1)$$$(1, 1)$$$, (1,2)$$$(1, 2)$$$, (1,3)$$$(1, 3)$$$, (2,3)$$$(2, 3)$$$, (3,3)$$$(3, 3)$$$ and (4,3)$$$(4, 3)$$$;",
+      "RD →$$$\\rightarrow$$$ RDD →$$$\\rightarrow$$$ RDDD — this path visits cells (1,1)$$$(1, 1)$$$, (1,2)$$$(1, 2)$$$, (2,2)$$$(2, 2)$$$, (3,2)$$$(3, 2)$$$ and (4,2)$$$(4, 2)$$$.",
+      "Thus, the cells that are visited on at least one modified path are: (1,1)$$$(1, 1)$$$, (1,2)$$$(1, 2)$$$, (1,3)$$$(1, 3)$$$, (1,4)$$$(1, 4)$$$, (2,2)$$$(2, 2)$$$, (2,3)$$$(2, 3)$$$, (2,4)$$$(2, 4)$$$, (3,2)$$$(3, 2)$$$, (3,3)$$$(3, 3)$$$, (3,4)$$$(3, 4)$$$, (4,2)$$$(4, 2)$$$, (4,3)$$$(4, 3)$$$ and (4,4)$$$(4, 4)$$$.",
+      "In the second testcase, there is no way to modify the sequence without moving the robot outside the grid. So the only visited cells are the ones that are visited on the path DRDRDRDR.",
+      "In the third testcase, the cells that are visited on at least one modified path are: (1,1)$$$(1, 1)$$$, (2,1)$$$(2, 1)$$$ and (3,1)$$$(3, 1)$$$.",
+      "Here are the cells for all testcases:",
+      "![](https://espresso.codeforces.com/c8171b800ca1afc25bdb969142d73dc8239f2f0e.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4\nRD\n5\nDRDRDRDR\n3\nD",
+      "output": "13\n9\n3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "考虑一个大小为 n×n$$$n \\times n$$$ 的网格。行从上到下编号为 1$$$1$$$ 到 n$$$n$$$，列从左到右编号为 1$$$1$$$ 到 n$$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "机器人位于单元格 (1,1)$$$(1, 1)$$$ 中。它可以执行以下两种移动：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "D —— 向下移动一个单元格；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "R —— 向右移动一个单元格。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "机器人不允许移动到网格外。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个移动序列 s$$$s$$$ —— 机器人的初始路径。该路径不会使机器人移动到网格外。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以对其进行任意次修改（也可以一次都不修改）。每次修改可以将序列中的某个移动复制一份。也就是说，将一次出现的 D 替换为 DD，或将一次出现的 R 替换为 RR。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请计算满足以下条件的单元格数量：存在至少一种修改方案，使得机器人在修改后的路径上经过该单元格，并且不会移动到网格外。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)—— 测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(2≤n≤108$$$2 \\le n \\le 10^8$$$)，表示网格的行数和列数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含一个非空字符串 s$$$s$$$，仅由字符 D 和 R 组成，表示机器人的初始路径。该路径不会使机器人走出网格。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有测试用例中字符串 s$$$s$$$ 的总长度不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数，表示满足以下条件的单元格数量：存在至少一种修改序列，使机器人在修改后的路径中经过该单元格，且不会走出网格。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于第一个测试用例，只需考虑以下修改后的路径：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "RD →$$$\\rightarrow$$$ RRD →$$$\\rightarrow$$$ RRRD →$$$\\rightarrow$$$ RRRDD →$$$\\rightarrow$$$ RRRDDD ——该路径经过了单元格 (1,1)$$$(1, 1)$$$、(1,2)$$$(1, 2)$$$、(1,3)$$$(1, 3)$$$、(1,4)$$$(1, 4)$$$、(2,4)$$$(2, 4)$$$、(3,4)$$$(3, 4)$$$ 和 (4,4)$$$(4, 4)$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "RD →$$$\\rightarrow$$$ RRD →$$$\\rightarrow$$$ RRDD →$$$\\rightarrow$$$ RRDDD——该路径经过了单元格 (1,1)$$$(1, 1)$$$、(1,2)$$$(1, 2)$$$、(1,3)$$$(1, 3)$$$、(2,3)$$$(2, 3)$$$、(3,3)$$$(3, 3)$$$ 和 (4,3)$$$(4, 3)$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "RD →$$$\\rightarrow$$$ RDD →$$$\\rightarrow$$$ RDDD——该路径经过了单元格 (1,1)$$$(1, 1)$$$、(1,2)$$$(1, 2)$$$、(2,2)$$$(2, 2)$$$、(3,2)$$$(3, 2)$$$ 和 (4,2)$$$(4, 2)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，至少在一条修改后的路径上经过的单元格为：(1,1)$$$(1, 1)$$$、(1,2)$$$(1, 2)$$$、(1,3)$$$(1, 3)$$$、(1,4)$$$(1, 4)$$$、(2,2)$$$(2, 2)$$$、(2,3)$$$(2, 3)$$$、(2,4)$$$(2, 4)$$$、(3,2)$$$(3, 2)$$$、(3,3)$$$(3, 3)$$$、(3,4)$$$(3, 4)$$$、(4,2)$$$(4, 2)$$$、(4,3)$$$(4, 3)$$$ 和 (4,4)$$$(4, 4)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，无法修改序列而不让机器人移出网格。因此，唯一经过的单元格就是路径 DRDRDRDR 上经过的单元格。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试用例中，至少在一条修改后的路径上经过的单元格为：(1,1)$$$(1, 1)$$$、(2,1)$$$(2, 1)$$$ 和 (3,1)$$$(3, 1)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "以下是所有测试用例中的单元格：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/c8171b800ca1afc25bdb969142d73dc8239f2f0e.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 扩展路径",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

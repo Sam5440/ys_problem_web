@@ -1,0 +1,119 @@
+{
+  "code": "GYM106251H",
+  "letter": "H",
+  "title": "H. Exam Room",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106251/problem/H",
+  "difficulty": "*2400",
+  "timeLimit": "1.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Busy Beaver is hosting an upcoming exam for his students in the MITIT exam room. Due to last-minute preparation and bad testing, the students will need to come up to him to complain about things like bad difficulty distributions, server issues, misleading statements, and awful flavortexts without disturbing other students, so he needs to ensure that the seats are well separated.",
+      "The room has N$$$N$$$ seats at points Pi=(xi,yi)$$$P_i = (x_i,y_i)$$$, with Busy Beaver's desk located at O=(0,0)$$$O = (0,0)$$$. He wants to choose a nonempty subset of the seats satisfying the following condition:",
+      "Each seat in the subset is strictly closer to Busy Beaver's desk than any other seat in the subset. Formally, for all pairs Pi,Pj$$$P_i,P_j$$$ (i≠j$$$i \\neq j$$$) in the subset, dist(Pi,Pj)>dist(O,Pi)$$$\\text{dist}(P_i,P_j)  \\gt  \\text{dist}(O,P_i)$$$, where dist$$$\\text{dist}$$$ denotes Euclidean distance.",
+      "How many nonempty subsets satisfy this criterion? Since the answer may be enormous, output it modulo 998244353$$$998\\,244\\,353$$$."
+    ],
+    "input": [
+      "The first line contains a single integer N$$$N$$$ (1≤N≤500$$$1 \\le N \\le 500$$$).",
+      "The i$$$i$$$-th of the next N$$$N$$$ lines contains two integers xi$$$x_i$$$ and yi$$$y_i$$$ (−109≤xi,yi≤109$$$-10^9 \\le x_i,y_i \\le 10^9$$$).",
+      "All N$$$N$$$ points in the input are distinct and not equal to (0,0)$$$(0,0)$$$."
+    ],
+    "output": [
+      "Output a single integer — the number of valid nonempty subsets modulo 998244353$$$998\\,244\\,353$$$.",
+      "There are four subtasks for this problem.",
+      "(10$$$10$$$ points): N$$$N$$$ does not exceed 15$$$15$$$.",
+      "(10$$$10$$$ points): N$$$N$$$ does not exceed 24$$$24$$$.",
+      "(10$$$10$$$ points): N$$$N$$$ does not exceed 80$$$80$$$.",
+      "(70$$$70$$$ points): No additional constraints."
+    ],
+    "note": [
+      "In the first sample, the two desks are √2$$$\\sqrt{2}$$$ apart and √5$$$\\sqrt{5}$$$ away from the origin, so either one or the other can be used.",
+      "In the second sample, the third desk is √10$$$\\sqrt{10}$$$ away from the origin and √17$$$\\sqrt{17}$$$ away from the closest other desk, so the third desk can always be used. The valid subsets are: {desk 1},{desk 2},{desk 3},{desk 1,desk 3},{desk 2,desk 3}.$$ \\{\\text{desk }1\\}, \\{\\text{desk }2\\}, \\{\\text{desk }3\\}, \\{\\text{desk }1, \\text{desk }3\\}, \\{\\text{desk }2, \\text{desk }3\\}. $$"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 2\n2 1",
+      "output": "2"
+    },
+    {
+      "input": "3\n1 2\n2 1\n1 -3",
+      "output": "5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Busy Beaver 正在 MITIT 考场为他的学生筹办一场即将到来的考试。由于准备时间仓促且测试不佳，学生们需要在不打扰其他学生的情况下找到他，抱怨诸如难度分布不合理、服务器问题、具有误导性的题面以及糟糕的背景故事等问题，因此他需要确保座位之间充分分隔。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "房间中有 N$$$N$$$ 个座位，分别位于点 Pi=(xi,yi)$$$P_i = (x_i,y_i)$$$，Busy Beaver 的桌子位于 O=(0,0)$$$O = (0,0)$$$。他希望选择一个非空座位子集，使其满足以下条件：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子集中的每个座位到 Busy Beaver 桌子的距离都严格小于它到子集中任意其他座位的距离。形式化地，对于子集中的任意点对 Pi,Pj$$$P_i,P_j$$$(i≠j$$$i \\neq j$$$)，都有 dist(Pi,Pj)>dist(O,Pi)$$$\\text{dist}(P_i,P_j)  \\gt  \\text{dist}(O,P_i)$$$，其中 dist$$$\\text{dist}$$$ 表示欧几里得距离。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "满足该条件的非空子集有多少个？由于答案可能非常大，请输出答案对 998244353$$$998\\,244\\,353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 N$$$N$$$(1≤N≤500$$$1 \\le N \\le 500$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行中，第 i$$$i$$$ 行包含两个整数 xi$$$x_i$$$ 和 yi$$$y_i$$$(−109≤xi,yi≤109$$$-10^9 \\le x_i,y_i \\le 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入中的所有 N$$$N$$$ 个点互不相同，且不等于 (0,0)$$$(0,0)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——合法非空子集的数量对 998244353$$$998\\,244\\,353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这道题有四个子任务。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(10$$$10$$$ 分)：N$$$N$$$ 不超过 15$$$15$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(10$$$10$$$ 分)：N$$$N$$$ 不超过 24$$$24$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(10$$$10$$$ 分)：N$$$N$$$ 不超过 80$$$80$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(70$$$70$$$ 分)：没有其他约束条件。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，两张桌子相距 √2$$$\\sqrt{2}$$$，且距离原点 √5$$$\\sqrt{5}$$$，因此两者中的任意一张都可以使用。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，第三张桌子距离原点 √10$$$\\sqrt{10}$$$，且距离最近的其他桌子 √17$$$\\sqrt{17}$$$，因此第三张桌子总是可以使用。合法的子集为：{桌子 1}、{桌子 2}、{桌子 3}、{桌子 1,桌子 3}、{桌子 2,桌子 3}。$$ \\{\\text{desk }1\\}, \\{\\text{desk }2\\}, \\{\\text{desk }3\\}, \\{\\text{desk }1, \\text{desk }3\\}, \\{\\text{desk }2, \\text{desk }3\\}. $$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "H. 考场",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

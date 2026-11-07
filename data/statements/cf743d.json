@@ -1,0 +1,99 @@
+{
+  "code": "CF743D",
+  "letter": "D",
+  "title": "D. Chloe and pleasant prizes",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/743/D",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Generous sponsors of the olympiad in which Chloe and Vladik took part allowed all the participants to choose a prize for them on their own. Christmas is coming, so sponsors decided to decorate the Christmas tree with their prizes.",
+      "They took n prizes for the contestants and wrote on each of them a unique id (integer from 1 to n). A gift i is characterized by integer ai — pleasantness of the gift. The pleasantness of the gift can be positive, negative or zero. Sponsors placed the gift 1 on the top of the tree. All the other gifts hung on a rope tied to some other gift so that each gift hung on the first gift, possibly with a sequence of ropes and another gifts. Formally, the gifts formed a rooted tree with n vertices.",
+      "The prize-giving procedure goes in the following way: the participants come to the tree one after another, choose any of the remaining gifts and cut the rope this prize hang on. Note that all the ropes which were used to hang other prizes on the chosen one are not cut. So the contestant gets the chosen gift as well as the all the gifts that hang on it, possibly with a sequence of ropes and another gifts.",
+      "Our friends, Chloe and Vladik, shared the first place on the olympiad and they will choose prizes at the same time! To keep themselves from fighting, they decided to choose two different gifts so that the sets of the gifts that hang on them with a sequence of ropes and another gifts don't intersect. In other words, there shouldn't be any gift that hang both on the gift chosen by Chloe and on the gift chosen by Vladik. From all of the possible variants they will choose such pair of prizes that the sum of pleasantness of all the gifts that they will take after cutting the ropes is as large as possible.",
+      "Print the maximum sum of pleasantness that Vladik and Chloe can get. If it is impossible for them to choose the gifts without fighting, print Impossible."
+    ],
+    "input": [
+      "The first line contains a single integer n (1 ≤ n ≤ 2·105) — the number of gifts.",
+      "The next line contains n integers a1, a2, ..., an ( - 109 ≤ ai ≤ 109) — the pleasantness of the gifts.",
+      "The next (n - 1) lines contain two numbers each. The i-th of these lines contains integers ui and vi (1 ≤ ui, vi ≤ n, ui ≠ vi) — the description of the tree's edges. It means that gifts with numbers ui and vi are connected to each other with a rope. The gifts' ids in the description of the ropes can be given in arbirtary order: vi hangs on ui or ui hangs on vi.",
+      "It is guaranteed that all the gifts hang on the first gift, possibly with a sequence of ropes and another gifts."
+    ],
+    "output": [
+      "If it is possible for Chloe and Vladik to choose prizes without fighting, print single integer — the maximum possible sum of pleasantness they can get together.",
+      "Otherwise print Impossible."
+    ]
+  },
+  "examples": [
+    {
+      "input": "8\n0 5 -1 4 3 2 6 5\n1 2\n2 4\n2 5\n1 3\n3 6\n6 7\n6 8",
+      "output": "25"
+    },
+    {
+      "input": "4\n1 -5 1 1\n1 2\n1 4\n2 3",
+      "output": "2"
+    },
+    {
+      "input": "1\n-1",
+      "output": "Impossible"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Chloe 和 Vladik 参加的奥林匹克竞赛的慷慨赞助商允许所有参赛者自行选择奖品。圣诞节即将到来，因此赞助商决定用他们的奖品装饰圣诞树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他们为参赛者准备了 n 件奖品，并在每件奖品上写下一个唯一的编号（从 1 到 n 的整数）。第 i 件礼物由整数 ai 表示其愉悦度。礼物的愉悦度可以是正数、负数或零。赞助商将礼物 1 放在树顶。其他所有礼物都悬挂在系到某件其他礼物上的绳子上，因此每件礼物都悬挂在第一件礼物下方，中间可能经过一串绳子和其他礼物。形式化地说，这些礼物构成了一棵有 n 个顶点的树，且以 1 为根。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "颁奖过程如下：参赛者依次来到这棵树前，选择任意一个尚未被选走的礼物，并剪断悬挂该奖品的绳子。注意，所有用于将其他奖品悬挂在所选奖品上的绳子都不会被剪断。因此，参赛者将获得所选礼物，以及通过一系列绳子和其他礼物悬挂在它上的所有礼物。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们的朋友 Chloe 和 Vladik 在奥林匹克竞赛中并列第一名，因此他们将同时选择奖品！为了避免争抢，他们决定选择两个不同的礼物，使得通过一系列绳子和其他礼物悬挂在这两个礼物上的礼物集合不相交。换句话说，不应该存在同时悬挂在 Chloe 和 Vladik 所选礼物上的礼物。在所有可能的方案中，他们将选择这样一对奖品，使得剪断绳子后两人获得的所有礼物的愉悦度之和尽可能大。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出 Vladik 和 Chloe 能获得的愉悦度之和的最大值。如果他们无法选择不会发生争抢的礼物，则输出 Impossible。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 2·105），表示礼物的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 n 个整数 a1, a2, ..., an（ - 109 ≤ ai ≤ 109），表示各个礼物的愉悦度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的（n - 1）行每行包含两个数。第 i 行包含整数 ui 和 vi（1 ≤ ui, vi ≤ n，ui ≠ vi），表示树中的一条边。也就是说，编号为 ui 和 vi 的礼物通过一根绳子相连。绳子描述中的礼物编号可以按任意顺序给出：vi 悬挂在 ui 上，或 ui 悬挂在 vi 上。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有礼物都挂在第一个礼物上，中间可能隔着一串绳子和其他礼物。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 Chloe 和 Vladik 可以在不发生争执的情况下选择奖品，请输出一个整数，即他们两人能够获得的愉悦度总和的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则输出 Impossible。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Chloe 与愉快的奖品",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

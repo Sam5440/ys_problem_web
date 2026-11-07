@@ -1,0 +1,94 @@
+{
+  "code": "CF1039C",
+  "letter": "C",
+  "title": "C. Network Safety",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1039/C",
+  "difficulty": "2200",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "The Metropolis computer network consists of n$$$n$$$ servers, each has an encryption key in the range from 0$$$0$$$ to 2k−1$$$2^k - 1$$$ assigned to it. Let ci$$$c_i$$$ be the encryption key assigned to the i$$$i$$$-th server. Additionally, m$$$m$$$ pairs of servers are directly connected via a data communication channel. Because of the encryption algorithms specifics, a data communication channel can only be considered safe if the two servers it connects have distinct encryption keys. The initial assignment of encryption keys is guaranteed to keep all data communication channels safe.",
+      "You have been informed that a new virus is actively spreading across the internet, and it is capable to change the encryption key of any server it infects. More specifically, the virus body contains some unknown number x$$$x$$$ in the same aforementioned range, and when server i$$$i$$$ is infected, its encryption key changes from ci$$$c_i$$$ to ci⊕x$$$c_i \\oplus x$$$, where ⊕$$$\\oplus$$$ denotes the bitwise XOR operation.",
+      "Sadly, you know neither the number x$$$x$$$ nor which servers of Metropolis are going to be infected by the dangerous virus, so you have decided to count the number of such situations in which all data communication channels remain safe. Formally speaking, you need to find the number of pairs (A,x)$$$(A, x)$$$, where A$$$A$$$ is some (possibly empty) subset of the set of servers and x$$$x$$$ is some number in the range from 0$$$0$$$ to 2k−1$$$2^k - 1$$$, such that when all servers from the chosen subset A$$$A$$$ and none of the others are infected by a virus containing the number x$$$x$$$, all data communication channels remain safe. Since this number can be quite big, you are asked to find its remainder modulo 109+7$$$10^9 + 7$$$."
+    ],
+    "input": [
+      "The first line of input contains three integers n$$$n$$$, m$$$m$$$ and k$$$k$$$ (1≤n≤500000$$$1 \\leq n \\leq 500\\,000$$$, 0≤m≤min(n(n−1)2,500000)$$$0 \\leq m \\leq \\min(\\frac{n(n - 1)}{2}, 500\\,000)$$$, 0≤k≤60$$$0 \\leq k \\leq 60$$$) — the number of servers, the number of pairs of servers directly connected by a data communication channel, and the parameter k$$$k$$$, which defines the range of possible values for encryption keys.",
+      "The next line contains n$$$n$$$ integers ci$$$c_i$$$ (0≤ci≤2k−1$$$0 \\leq c_i \\leq 2^k - 1$$$), the i$$$i$$$-th of which is the encryption key used by the i$$$i$$$-th server.",
+      "The next m$$$m$$$ lines contain two integers ui$$$u_i$$$ and vi$$$v_i$$$ each (1≤ui,vi≤n$$$1 \\leq u_i, v_i \\leq n$$$, ui≠vi$$$u_i \\ne v_i$$$) denoting that those servers are connected by a data communication channel. It is guaranteed that each pair of servers appears in this list at most once."
+    ],
+    "output": [
+      "The only output line should contain a single integer — the number of safe infections of some subset of servers by a virus with some parameter, modulo 109+7$$$10^9 + 7$$$."
+    ],
+    "note": [
+      "Consider the first example.",
+      "Possible values for the number x$$$x$$$ contained by the virus are 0$$$0$$$, 1$$$1$$$, 2$$$2$$$ and 3$$$3$$$.",
+      "For values 0$$$0$$$, 2$$$2$$$ and 3$$$3$$$ the virus can infect any subset of the set of servers, which gives us 16$$$16$$$ pairs for each values. A virus containing the number 1$$$1$$$ can infect either all of the servers, or none. This gives us 16+2+16+16=50$$$16 + 2 + 16 + 16 = 50$$$ pairs in total."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4 2\n0 1 0 1\n1 2\n2 3\n3 4\n4 1",
+      "output": "50"
+    },
+    {
+      "input": "4 5 3\n7 1 7 2\n1 2\n2 3\n3 4\n4 1\n2 4",
+      "output": "96"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Metropolis 的计算机网络由 n$$$n$$$ 台服务器组成，每台服务器都被分配了一个范围从 0$$$0$$$ 到 2k−1$$$2^k - 1$$$ 的加密密钥。令 ci$$$c_i$$$ 表示分配给第 i$$$i$$$ 台服务器的加密密钥。此外，还有 m$$$m$$$ 对服务器通过数据通信信道直接相连。由于加密算法的特殊性，只有当一条数据通信信道连接的两台服务器拥有不同的加密密钥时，该信道才会被认为是安全的。初始的加密密钥分配保证了所有数据通信信道都是安全的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你得知一种新病毒正在互联网中积极传播，并且它能够更改感染到的任意服务器的加密密钥。更具体地说，病毒体内包含同样在上述范围内的某个未知数 x$$$x$$$，当第 i$$$i$$$ 台服务器被感染时，其加密密钥会从 ci$$$c_i$$$ 变为 ci⊕x$$$c_i \\oplus x$$$，其中 ⊕$$$\\oplus$$$ 表示按位异或运算。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "遗憾的是，你既不知道数值 x$$$x$$$，也不知道 Metropolis 中哪些服务器会感染这种危险的病毒，因此你决定统计所有数据通信信道仍然保持安全的情况数。形式化地说，你需要求出满足以下条件的二元组 (A,x)$$$(A, x)$$$ 的数量：A$$$A$$$ 是服务器集合的某个子集(可以为空)，x$$$x$$$ 是范围从 0$$$0$$$ 到 2k−1$$$2^k - 1$$$ 内的某个数；当所选子集 A$$$A$$$ 中的所有服务器、而其他服务器均未被携带数值 x$$$x$$$ 的病毒感染时，所有数据通信信道都保持安全。由于这个数量可能很大，请求出其对 109+7$$$10^9 + 7$$$ 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含三个整数 n$$$n$$$、m$$$m$$$ 和 k$$$k$$$(1≤n≤500000$$$1 \\leq n \\leq 500\\,000$$$，0≤m≤min(n(n−1)2,500000)$$$0 \\leq m \\leq \\min(\\frac{n(n - 1)}{2}, 500\\,000)$$$，0≤k≤60$$$0 \\leq k \\leq 60$$$)——服务器的数量、通过数据通信信道直接连接的服务器对数，以及参数 k$$$k$$$，它定义了加密密钥可能取值的范围。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 n$$$n$$$ 个整数 ci$$$c_i$$$(0≤ci≤2k−1$$$0 \\leq c_i \\leq 2^k - 1$$$)，其中第 i$$$i$$$ 个整数是第 i$$$i$$$ 台服务器使用的加密密钥。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行每行包含两个整数 ui$$$u_i$$$ 和 vi$$$v_i$$$(1≤ui,vi≤n$$$1 \\leq u_i, v_i \\leq n$$$，ui≠vi$$$u_i \\ne v_i$$$)，表示这两台服务器通过数据通信信道相连。保证每对服务器在该列表中最多出现一次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出的唯一一行应包含一个整数，即使用具有某个参数的病毒感染服务器的某个子集时的安全感染数量，对 109+7$$$10^9 + 7$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "考虑第一个样例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "病毒中包含的数值 x$$$x$$$ 可能为 0$$$0$$$、1$$$1$$$、2$$$2$$$ 和 3$$$3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于值为 0$$$0$$$、2$$$2$$$ 和 3$$$3$$$ 的情况，病毒可以感染服务器集合的任意子集，因此每个值都有 16$$$16$$$ 对。包含数字 1$$$1$$$ 的病毒可以感染全部服务器，也可以一个服务器都不感染。因此总共有 16+2+16+16=50$$$16 + 2 + 16 + 16 = 50$$$ 对。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 网络安全",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

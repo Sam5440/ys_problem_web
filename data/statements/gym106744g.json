@@ -1,0 +1,154 @@
+{
+  "code": "GYM106744G",
+  "letter": "G",
+  "title": "G. Uniform Change",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106744/problem/G",
+  "difficulty": "*1000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A cashier has an infinite number of banknotes with denominations $$$1, 2, \\ldots, K$$$.",
+      "The cashier prefers the stacks of banknotes to end uniformly:",
+      "Suppose the cashier gives change as $$$C_1$$$ banknotes of denomination $$$1$$$, $$$C_2$$$ banknotes of denomination $$$2$$$, ..., $$$C_K$$$ banknotes of denomination $$$K$$$.",
+      "The cashier wants the maximum value among $$$C_1, C_2, \\ldots, C_K$$$ to be as small as possible.",
+      "Help the cashier — find any way to give $$$N$$$ units of change uniformly."
+    ],
+    "input": [
+      "The only line contains two integers $$$N$$$ and $$$K$$$ separated by a space ($$$1 \\le N \\le 10^{18}$$$; $$$1 \\le K \\le 2 \\cdot 10^5$$$) — the amount of change and the number of different available denominations."
+    ],
+    "output": [
+      "Print $$$K$$$ integers $$$C_1, C_2, \\ldots, C_K$$$ ($$$0 \\le C_i \\le N$$$) separated by spaces — the number of banknotes of denomination $$$i$$$ in a uniform change of $$$N$$$.",
+      "The answer must satisfy the following conditions:",
+      "$$$\\sum_{i=1}^{K} C_i \\cdot i = N$$$ — exactly $$$N$$$ units of change are given;",
+      "$$$\\max(C_1, C_2, \\ldots, C_K)$$$ is minimal among all ways to give change of size $$$N$$$ using denominations from $$$1$$$ to $$$K$$$.",
+      "If there are multiple answers satisfying the conditions, print any of them."
+    ],
+    "note": [
+      "In the first example, the cashier gave:",
+      "$$$C_1 = 2$$$ banknotes of denomination $$$1$$$;",
+      "$$$C_2 = 1$$$ banknote of denomination $$$2$$$;",
+      "$$$C_3 = 2$$$ banknotes of denomination $$$3$$$.",
+      "In total, the cashier gave $$$C_1 \\cdot 1 + C_2 \\cdot 2 + C_3 \\cdot 3 = 10$$$ units.",
+      "In the second example, the cashier gave:",
+      "$$$1$$$ banknote of denomination $$$1$$$;",
+      "$$$3$$$ banknotes each of denominations $$$2, 3, 4, 5, 6$$$;",
+      "$$$0$$$ banknotes of denomination $$$7$$$.",
+      "In total, the cashier gave $$$1 \\cdot 1 + 3 \\cdot (2 + 3 + 4 + 5 + 6) + 0 \\cdot 7 = 61$$$ units.",
+      "Note that this is only one possible answer with $$$\\max(C_1, \\ldots, C_7) = 3$$$. It can be shown that there is no answer where $$$\\max(C_1, \\ldots, C_7)$$$ is less than $$$3$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "10 3",
+      "output": "2 1 2"
+    },
+    {
+      "input": "61 7",
+      "output": "1 3 3 3 3 3 0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一位收银员有无限多张面额为 $$$1, 2, \\ldots, K$$$ 的纸币。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "收银员希望成叠的钞票末端整齐一致：",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "假设收银员找零时给出 $$$C_1$$$ 张面额为 $$$1$$$ 的纸币、$$$C_2$$$ 张面额为 $$$2$$$ 的纸币、……、$$$C_K$$$ 张面额为 $$$K$$$ 的纸币。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "收银员希望 $$$C_1, C_2, \\ldots, C_K$$$ 中的最大值尽可能小。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "帮助收银员——找出任意一种均匀给出 $$$N$$$ 单位找零的方法。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "唯一一行包含两个用空格分隔的整数 $$$N$$$ 和 $$$K$$$($$$1 \\le N \\le 10^{18}$$$；$$$1 \\le K \\le 2 \\cdot 10^5$$$)——零钱金额和不同可用面额的数量。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出用空格分隔的 $$$K$$$ 个整数 $$$C_1, C_2, \\ldots, C_K$$$($$$0 \\le C_i \\le N$$$)——在 $$$N$$$ 的一种均匀兑换中，面额为 $$$i$$$ 的纸币数量。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "答案必须满足以下条件：",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "$$$\\sum_{i=1}^{K} C_i \\cdot i = N$$$ —— 恰好给出了 $$$N$$$ 个单位的零钱；",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "在所有使用从 $$$1$$$ 到 $$$K$$$ 的面额为金额 $$$N$$$ 找零的方式中，$$$\\max(C_1, C_2, \\ldots, C_K)$$$ 是最小的。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "如果有多个满足条件的答案，输出其中任意一个。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，收银员给了：",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "$$$C_1 = 2$$$ 张面额为 $$$1$$$ 的纸币；",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "$$$C_2 = 1$$$ 面额为 $$$2$$$ 的纸币；",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "$$$C_3 = 2$$$ 张面额为 $$$3$$$ 的纸币。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "评分器总共给出了 $$$C_1 \\cdot 1 + C_2 \\cdot 2 + C_3 \\cdot 3 = 10$$$ 个单位。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "在第二个样例中，收银员给了：",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "$$$1$$$ 面额为 $$$1$$$ 的纸币；",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "$$$3$$$ 张纸币，面额分别为 $$$2, 3, 4, 5, 6$$$；",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "$$$0$$$ 张面值为 $$$7$$$ 的纸币。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "收银员总共给了 $$$1 \\cdot 1 + 3 \\cdot (2 + 3 + 4 + 5 + 6) + 0 \\cdot 7 = 61$$$ 个单位。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "注意，这只是 $$$\\max(C_1, \\ldots, C_7) = 3$$$ 的一种可能答案。可以证明，不存在 $$$\\max(C_1, \\ldots, C_7)$$$ 小于 $$$3$$$ 的答案。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. 均匀变化",
+    "aiModel": "GLM 5.3 Flash"
+  }
+}

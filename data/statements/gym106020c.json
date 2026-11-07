@@ -1,0 +1,100 @@
+{
+  "code": "GYM106020C",
+  "letter": "C",
+  "title": "C. GCD on Tree",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106020/problem/C",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Given a tree[6]$$$^{[6]}$$$ with n$$$n$$$ vertices, where the i$$$i$$$-th vertex is labeled with a positive integer ai$$$a_i$$$. A tree is eggy when the greatest common divisor of all its vertex-values is equal to 1$$$1$$$.",
+      "You have to process q$$$q$$$ queries as follows:",
+      "ix$$$i\\; x$$$: update the value of ith$$$i_{th}$$$ vertex by assigning ai=x$$$a_i = x$$$.",
+      "After each update, check if there's any edge in the tree that, when removed, splits the tree into two trees, where at least one of those trees is eggy."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (2≤n≤105$$$2 \\leq n \\leq 10^5$$$) — denoting the number of vertices in the tree.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai≤1018$$$1 \\le a_i \\le 10^{18}$$$) — representing the values of the vertices.",
+      "Each of the following n−1$$$n - 1$$$ lines contains two integers u$$$u$$$ and v$$$v$$$ (1≤u,v≤n$$$1 \\le u, v \\le n$$$, u≠v$$$u \\neq v$$$) — denoting the indices of the vertices connected by an edge.",
+      "The next line contains a single integer q$$$q$$$ (1≤q≤105$$$1 \\le q \\le 10^5$$$) — representing the number of queries.",
+      "Each of the next q$$$q$$$ lines contains two integers i$$$i$$$ and x$$$x$$$ (1≤i≤n,1≤x≤1018$$$1 \\le i \\le n, 1 \\le x \\le 10^{18}$$$).",
+      "It is guaranteed that the given edges form a tree."
+    ],
+    "output": [
+      "After each query, print \"YES\" (without quotes) if there's any valid edge in the tree, and \"NO\" (without quotes) otherwise.",
+      "You can output the answer in any case (upper or lower). For example, the strings \"yEs\", \"yes\", \"Yes\", and \"YES\" will be recognized as positive responses."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n2 2\n1 2\n4\n1 3\n2 1\n1 2\n2 2",
+      "output": "No\nYes\nYes\nNo"
+    },
+    {
+      "input": "3\n6 2 3\n1 2\n1 3\n5\n2 6\n1 2\n1 3\n3 5\n3 6",
+      "output": "No\nYes\nNo\nYes\nNo"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一棵具有 n$$$n$$$ 个顶点的树[6]$$$^{[6]}$$$，其中第 i$$$i$$$ 个顶点被标记为一个正整数 ai$$$a_i$$$。当一棵树的所有顶点值的最大公约数等于 1$$$1$$$ 时，称其为 eggy。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要按如下方式处理 q$$$q$$$ 次查询：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "ix$$$i\\; x$$$：将第 ith$$$i_{th}$$$ 个顶点的值赋为 ai=x$$$a_i = x$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每次更新后，检查树中是否存在一条边，删除该边后能将树分成两棵树，并且其中至少有一棵树是 eggy 的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(2≤n≤105$$$2 \\leq n \\leq 10^5$$$)——表示树中顶点的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$(1≤ai≤1018$$$1 \\le a_i \\le 10^{18}$$$)——表示各顶点的值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n−1$$$n - 1$$$ 行中，每行包含两个整数 u$$$u$$$ 和 v$$$v$$$(1≤u,v≤n$$$1 \\le u, v \\le n$$$，u≠v$$$u \\neq v$$$)——表示一条边所连接的顶点编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含一个整数 q$$$q$$$(1≤q≤105$$$1 \\le q \\le 10^5$$$)，表示查询的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行中，每行包含两个整数 i$$$i$$$ 和 x$$$x$$$(1≤i≤n，1≤x≤1018$$$1 \\le i \\le n, 1 \\le x \\le 10^{18}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证给出的边构成一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "每次查询后，如果树中存在任何一条有效边，则输出 \"YES\"（不含引号），否则输出 \"NO\"（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以使用任意大小写形式输出答案（大写或小写均可）。例如，字符串 \"yEs\"、\"yes\"、\"Yes\" 和 \"YES\" 都会被识别为肯定回答。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 树上的最大公约数",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

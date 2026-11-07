@@ -1,0 +1,146 @@
+{
+  "code": "GYM104017J",
+  "letter": "J",
+  "title": "J. Boundary",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104017/problem/J",
+  "difficulty": "*1500",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Bethany would like to tile her bathroom. The bathroom has width $$$w$$$ centimeters and length $$$l$$$ centimeters. If Bethany simply used the basic tiles of size $$$1 \\times 1$$$ centimeters, she would use $$$w \\cdot l$$$ of them.",
+      "However, she has something different in mind.",
+      "On the interior of the floor she wants to use the $$$1 \\times 1$$$ tiles. She needs exactly $$$(w-2) \\cdot (l-2)$$$ of these.",
+      "On the floor boundary she wants to use tiles of size $$$1 \\times a$$$ for some positive integer $$$a$$$. The tiles can also be rotated by $$$90$$$ degrees.",
+      "For which values of $$$a$$$ can Bethany tile the bathroom floor as described? Note that $$$a$$$ can also be $$$1$$$."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains an integer $$$t$$$ ($$$1\\le t\\le 100$$$) — the number of test cases. The descriptions of the $$$t$$$ test cases follow.",
+      "Each test case consist of a single line, which contains two integers $$$w$$$, $$$l$$$ ($$$3 \\leq w, l \\leq 10^{9}$$$) — the dimensions of the bathroom."
+    ],
+    "output": [
+      "For each test case, print an integer $$$k$$$ ($$$0\\le k$$$) — the number of valid values of $$$a$$$ for the given test case — followed by $$$k$$$ integers $$$a_1, a_2,\\dots, a_k$$$ ($$$1\\le a_i$$$) — the valid values of $$$a$$$. The values $$$a_1, a_2, \\dots, a_k$$$ have to be sorted from smallest to largest.",
+      "It is guaranteed that under the problem constraints, the output contains at most $$$200\\,000$$$ integers."
+    ],
+    "note": [
+      "In the first test case, the bathroom is $$$3$$$ centimeters wide and $$$5$$$ centimeters long. There are three values of $$$a$$$ such that Bethany can tile the floor as described in the statement, namely $$$a=1$$$, $$$a=2$$$ and $$$a=3$$$. The three tilings are represented in the following pictures.",
+      "![](https://espresso.codeforces.com/752df8f3030b032712b9ac93b08960db84e3b98a.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n3 5\n12 12\n314159265 358979323",
+      "output": "3 1 2 3\n3 1 2 11\n2 1 2"
+    }
+  ],
+  "titleZh": {
+    "0": "J.边界",
+    "caiyun": "J. Boundary",
+    "youdao": "j .边界",
+    "deepl": "J.边界",
+    "iflyrec": "J.边界",
+    "ai": "J. 边界",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "贝萨妮想给浴室铺瓷砖。浴室的宽度是 $$$w$$$ 厘米，长度是 $$$l$$$ 厘米。如果贝萨妮只用 $$$1 \\times 1$$$ 厘米大小的基本瓷砖，她会用 $$$w \\cdot l$$$。",
+        "deepl": "贝瑟妮想给浴室贴瓷砖。浴室宽 $$$w$$$ 厘米，长 $$$l$$$ 厘米。如果贝瑟妮只使用尺寸为 $$$1 \\times 1$$$ 厘米的基本瓷砖，她将使用 $$$w \\cdot l$$$ 块瓷砖。",
+        "iflyrec": "贝瑟尼想给她的浴室贴瓷砖。浴室的宽度为$$$w$$$厘米，长度为$$$l$$$厘米。如果贝瑟尼简单地使用尺寸为$$$1 \\times 1$$$厘米的基本瓷砖，她将使用其中的$$$w \\cdot l$$$。",
+        "ai": "Bethany 想要铺设她的浴室。浴室的宽度为 $$$w$$$ 厘米，长度为 $$$l$$$ 厘米。如果 Bethany 直接使用尺寸为 $$$1 \\times 1$$$ 厘米的基础瓷砖，她将需要 $$$w \\cdot l$$$ 块。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "然而，她有不同的想法。",
+        "youdao": "然而，她有不同的想法。",
+        "deepl": "不过，她有不同的想法。",
+        "iflyrec": "然而，她有不同的想法。",
+        "ai": "然而，她有着不同的想法。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "在地板内部，她想使用 $$$1 \\times 1$$$ 瓷砖。她正好需要 $$$(w-2) \\cdot (l-2)$$$ 这些瓷砖。",
+        "deepl": "她想在地板内部使用 $$$1 \\times 1$$$ 瓷砖。她正好需要 $$$(w-2) \\cdot (l-2)$$$ 块这样的瓷砖。",
+        "iflyrec": "在地板的内部，她想使用$$$1 \\times 1$$$瓷砖。她需要的正是这些$$$(w-2) \\cdot (l-2)$$$。",
+        "ai": "她想在地板内部使用 $$$1 \\times 1$$$ 瓷砖。她恰好需要 $$$(w-2) \\cdot (l-2)$$$ 块这样的瓷砖。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "在地板边界上，她希望使用尺寸为 $$$1 \\times a$$$ 的瓷砖，其大小为某个正整数 $$$a$$$。瓷砖还可以旋转 $$$90$$$ 度。",
+        "youdao": "在地板边界上，她想用大小为$$$1 \\times a$$$的瓷砖来表示某个正整数$$$a$$$。瓷砖也可以旋转$$$90$$$度。",
+        "deepl": "在地板边界上，她希望使用尺寸为 $$$1 \\times a$$$ 的瓷砖，其大小为某个正整数 $$$a$$$。瓷砖还可以旋转 $$$90$$$ 度。",
+        "iflyrec": "在地板边界上，她想使用大小为$$$1 \\times a$$$的瓷砖来表示某个正整数$$$a$$$。瓷砖也可以旋转$$$90$$$度。",
+        "ai": "她想在地板边界上使用边长为 $$$1 \\times a$$$ 的瓷砖，其中 $$$a$$$ 为某个正整数。这些瓷砖还可以旋转 $$$90$$$ 度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "对于 $$$a$$$ 的哪些值，贝瑟尼可以按照描述的方式铺设浴室地板？注意 $$$a$$$ 也可以是 $$$1$$$。",
+        "youdao": "在$$$a$$$的哪个值下，Bethany可以按描述的那样铺浴室地板？注意$$$a$$$也可以是$$$1$$$。",
+        "deepl": "对于 $$$a$$$ 的哪些值，贝瑟尼可以按照描述的方式铺设浴室地板？注意 $$$a$$$ 也可以是 $$$1$$$。",
+        "iflyrec": "对于$$$a$$$的哪些值，Bethany可以按所述方式在浴室地板上铺瓷砖？请注意，$$$a$$$也可以是$$$1$$$。",
+        "ai": "对于 $$$a$$$ 的哪些取值，Bethany 能够按照描述铺满浴室地板？注意，$$$a$$$ 也可以是 $$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "每个测试包含多个测试用例。第一行包含一个整数$$$t$$$ ($$$1\\le t\\le 100$$$）—测试用例的数量。下面是对$$$t$$$测试用例的描述。",
+        "youdao": "每个测试包含多个测试用例。第一行包含一个整数$$$t$$$ ($$$1\\le t\\le 100$$$）—测试用例的数量。下面是对$$$t$$$测试用例的描述。",
+        "deepl": "每个测试包含多个测试用例。第一行包含一个整数 $$$t$$$ ($$$1\\le t\\le 100$$$)--测试用例的数量。下面是 $$$t$$$ 测试用例的说明。",
+        "iflyrec": "每个测试包含多个测试用例。第一行包含整数$$$t$$$($$$1\\le t\\le 100$$$)—测试用例的数量。$$$t$$$测试用例说明如下。",
+        "ai": "每个测试包含多个测试用例。第一行包含一个整数 $$$t$$$($$$1\\le t\\le 100$$$)，表示测试用例的数量。接下来是 $$$t$$$ 个测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "每个测试用例由单行组成，其中包含两个整数$$$w$$$， $$$l$$$ ($$$3 \\leq w, l \\leq 10^{9}$$$) -浴室的尺寸。",
+        "youdao": "每个测试用例由单行组成，其中包含两个整数$$$w$$$， $$$l$$$ ($$$3 \\leq w, l \\leq 10^{9}$$$) -浴室的尺寸。",
+        "deepl": "每个测试用例由一行组成，其中包含两个整数 $$$w$$$、$$$l$$$ ($$$3 \\leq w, l \\leq 10^{9}$$$) - 浴室的尺寸。",
+        "iflyrec": "每个测试用例由单行组成，其中包含两个整数$$$w$$$，$$$l$$$($$$3 \\leq w, l \\leq 10^{9}$$$)——浴室的尺寸。",
+        "ai": "每个测试用例包含一行，其中有两个整数 $$$w$$$、$$$l$$$($$$3 \\leq w, l \\leq 10^{9}$$$)，表示浴室的尺寸。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "对于每个测试用例，打印一个整数 $$$k$$$($$$0\\le k$$$)——给定测试用例中 $$$a$$$ 的有效值数——后面跟着 $$$k$$$ 整数 $$$a_1, a_2,\\dots, a_k$$$($$$1\\le a_i$$$)——$$$a$$$ 的有效值。$$$a_1, a_2, \\dots, a_k$$$ 值必须从最小到最大进行排序。",
+        "youdao": "对于每个测试用例，打印一个整数$$$k$$$ ($$$0\\le k$$$）——给定测试用例中$$$a$$$的有效值的个数——然后是$$$k$$$个整数$$$a_1, a_2,\\dots, a_k$$$ ($$$1\\le a_i$$$）——$$$a$$$的有效值。值$$$a_1, a_2, \\dots, a_k$$$必须从最小到最大排序。",
+        "iflyrec": "对于每个测试用例，打印整数$$$k$$$($$$0\\le k$$$)—给定测试用例的$$$a$$$的有效值的数量—后跟$$$k$$$整数$$$a_1, a_2,\\dots, a_k$$$($$$1\\le a_i$$$)—$$$a$$$的有效值。数值$$$a_1, a_2, \\dots, a_k$$$必须从小到大排序。",
+        "ai": "对于每个测试用例，输出一个整数 $$$k$$$($$$0\\le k$$$)——对于给定测试用例，$$$a$$$ 的有效取值数量——随后输出 $$$k$$$ 个整数 $$$a_1, a_2,\\dots, a_k$$$($$$1\\le a_i$$$)——$$$a$$$ 的有效取值。数值 $$$a_1, a_2, \\dots, a_k$$$ 必须按从小到大的顺序排序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "保证在问题约束条件下，输出最多包含 $$$200\\,000$$$ 个整数。",
+        "youdao": "保证在问题约束下，输出最多包含$$$200\\,000$$$个整数。",
+        "deepl": "保证在问题约束条件下，输出最多包含 $$$200\\,000$$$ 个整数。",
+        "iflyrec": "保证在问题约束下，输出最多包含$$$200\\,000$$$个整数。",
+        "ai": "保证在题目的约束条件下，输出中至多包含 $$$200\\,000$$$ 个整数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "在第一个测试案例中，浴室宽$$$3$$$厘米，长$$$5$$$厘米。$$$a$$$有三个值，即$$$a=1$$$、$$$a=2$$$和$$$a=3$$$，使得Bethany可以如声明中所述铺设地板。三个平铺在下面的图片中表示。",
+        "youdao": "在第一个测试案例中，浴室的宽度为$$$3$$$厘米，长度为$$$5$$$厘米。$$$a$$$有三个值，使Bethany能够按照语句中的描述铺地板，即$$$a=1$$$， $$$a=2$$$和$$$a=3$$$。下面的图片展示了这三个贴图。",
+        "deepl": "在第一个测试案例中，浴室宽 $$$3$$$ 厘米，长 $$$5$$$ 厘米。有三个 $$$a$$$ 值可以让贝瑟尼按照声明中的描述铺地板，即 $$$a=1$$$、$$$a=2$$$ 和 $$$a=3$$$。这三种铺法如下图所示。",
+        "iflyrec": "在第一个测试案例中，浴室宽$$$3$$$厘米，长$$$5$$$厘米。$$$a$$$有三个值，即$$$a=1$$$、$$$a=2$$$和$$$a=3$$$，使得Bethany可以如声明中所述铺设地板。三个平铺在下面的图片中表示。",
+        "ai": "在第一个测试用例中，浴室宽 $$$3$$$ 厘米、长 $$$5$$$ 厘米。存在 $$$a$$$ 的三个取值，使得 Bethany 能够按照题面所述铺满地面，分别为 $$$a=1$$$、$$$a=2$$$ 和 $$$a=3$$$。这三种铺法如下图所示。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "![](https://espresso.codeforces.com/752df8f3030b032712b9ac93b08960db84e3b98a.png)",
+        "deepl": "![](https://espresso.codeforces.com/752df8f3030b032712b9ac93b08960db84e3b98a.png)",
+        "youdao": "![](https://espresso.codeforces.com/752df8f3030b032712b9ac93b08960db84e3b98a.png)",
+        "iflyrec": "![](https://espresso.codeforces.com/752df8f3030b032712b9ac93b08960db84e3b98a.png)",
+        "ai": "![](https://espresso.codeforces.com/752df8f3030b032712b9ac93b08960db84e3b98a.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T17:20:31.562Z",
+  "translatedBy": [
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

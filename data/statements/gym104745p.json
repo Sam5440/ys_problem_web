@@ -1,0 +1,203 @@
+{
+  "code": "GYM104745P",
+  "letter": "P",
+  "title": "P. Ski resort",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104745/problem/P",
+  "difficulty": "*2200",
+  "timeLimit": "7 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Esomer loves skiing. However, he hates ski lifts because they are very long and always very cold. Determined not to suffer any longer, he has tried to come up with a route that minimizes the time spent on ski lifts. Unfortunately, he is not very good at interpreting the map of the pistes, so he has asked for your help.",
+      "The ski resort that Esomer visits can be represented as a directed acyclic graph with $$$n$$$ nodes and $$$m$$$ edges (the pistes). Additionally, there are $$$k$$$ ski lifts that connect node $$$a$$$ to node $$$b$$$. Interestingly, all ski lifts satisfy the condition that it is always possible to reach $$$a$$$ from $$$b$$$ without using any ski lift. It takes Esomer $$$1$$$ minute to traverse a piste or use a ski lift.",
+      "Esomer is interested in how much time he needs to spend on ski lifts in order to spend a total of $$$x$$$ minutes at the ski resort, without stopping at any node even for a second, while starting at node $$$y$$$. Esomer can finish his route at any node and leave for home as soon as he has spent the required $$$x$$$ minutes.",
+      "Please help Esomer."
+    ],
+    "input": [
+      "The first line contains an integer $$$t$$$, the number of test cases. ($$$1 \\le t \\le 100$$$).",
+      "For each test case, the first line contains four integers $$$n$$$, $$$m$$$ and $$$k$$$. ($$$2 \\le n \\le 10^5$$$; $$$1 \\le m \\le \\min(10^5, \\frac{n \\cdot (n-1)}{2})$$$; $$$1 \\le k \\le 10^2$$$).",
+      "Then, there are $$$m$$$ lines, each containing two integers, $$$u$$$ and $$$v$$$, indicating that there is an edge from $$$u$$$ to $$$v$$$. ($$$1 \\le u, v \\le n$$$).",
+      "It is guaranteed that the graph formed by the $$$m$$$ edges is acyclic.",
+      "Next, there are $$$k$$$ lines, each containing two integers, $$$a$$$ and $$$b$$$, indicating that there is a ski lift from $$$a$$$ to $$$b$$$. ($$$1 \\le a, b \\le n$$$; $$$a \\neq b$$$).",
+      "It is guaranteed that it is possible to reach $$$a$$$ from $$$b$$$ without using any ski lift.",
+      "Finally, there is a line containing two integers $$$x$$$ and $$$y$$$, the number of minutes Esomer wants to spend at the ski resort, and the node at which he starts, respectively. ($$$1 \\le x \\le 10^9$$$; $$$1 \\le y \\le n$$$). It is guaranteed that Esomer can reach a ski lift from node $$$y$$$.",
+      "It is guaranteed that the sum of $$$n$$$ and $$$m$$$ over all test cases is at most $$$10^5$$$, while the sum of $$$k$$$ over all test cases is at most $$$10^2$$$."
+    ],
+    "output": [
+      "For each test case, you should print an integer $$$s$$$, the minimum number of minutes Esomer needs to spend on ski lifts in order to spend a total of $$$x$$$ minutes at the ski resort."
+    ],
+    "note": [
+      "—",
+      "Problem idea: Esomer",
+      "Problem preparation: Esomer",
+      "Ocurrences: Advanced 10"
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n6 5 2\n2 4\n5 4\n6 2\n6 4\n3 4\n2 6\n4 6\n4 2",
+      "output": "1"
+    },
+    {
+      "input": "1\n10 13 5\n3 4\n9 4\n5 8\n9 2\n4 2\n1 10\n10 9\n9 8\n7 5\n5 2\n9 3\n10 2\n3 2\n8 10\n2 9\n4 3\n4 1\n5 7\n12 7",
+      "output": "2"
+    }
+  ],
+  "titleZh": {
+    "0": "P.滑雪场",
+    "caiyun": "P. 滑雪度假村",
+    "youdao": "P.滑雪场",
+    "deepl": "P.滑雪场",
+    "iflyrec": "P.滑雪胜地",
+    "ai": "P. 滑雪场",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "埃索梅尔喜欢滑雪。然而，他讨厌滑雪缆车，因为它们非常长，而且总是非常冷。为了不再受苦，他试图找到一条能最大限度减少滑雪缆车时间的路线。不幸的是，他不太擅长解读滑雪道地图，所以他向你寻求帮助。",
+        "youdao": "Esomer喜欢滑雪。然而，他讨厌滑雪缆车，因为它们很长，而且总是很冷。他决心不再受这种折磨，于是他试着想出一条路线，尽量减少在滑雪缆车上花费的时间。不幸的是，他不太擅长解释滑雪道的地图，所以他向你寻求帮助。",
+        "deepl": "埃斯莫喜欢滑雪。但是，他讨厌滑雪缆车，因为缆车很长，而且总是很冷。为了不再受苦，他想出了一条能尽量减少在滑雪缆车上花费时间的路线。不幸的是，他并不擅长解读滑雪道地图，因此他请求您的帮助。",
+        "iflyrec": "埃索默喜欢滑雪。然而，他讨厌滑雪缆车，因为它们很长，而且总是很冷。他决心不再受苦，试图想出一条路线，尽量减少在滑雪缆车上花费的时间。不幸的是，他不太擅长解释滑雪道的地图，所以他请求你的帮助。",
+        "ai": "Esomer 热爱滑雪。然而，他讨厌滑雪缆车，因为缆车行程很长，而且总是非常冷。为了不再受这种苦，他试着规划一条能尽量减少乘坐滑雪缆车时间的路线。不幸的是，他不太擅长看懂滑雪道地图，因此向你求助。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "伊索访问的滑雪胜地可以表示为一个有向无环图，其中包含 $$$n$$$ 节点和 $$$m$$$ 边 (滑雪道)。此外，还有 $$$k$$$ 滑雪缆车，连接节点 $$$a$$$ 和节点 $$$b$$$。有趣的是，所有滑雪缆车都满足这样一个条件：始终可以从 $$$b$$$ 到达 $$$a$$$，而无需使用任何滑雪缆车。穿越一条滑雪道或使用滑雪缆车需要伊索 $$$1$$$ 分钟。",
+        "youdao": "Esomer访问的滑雪场可以表示为具有$$$n$$$个节点和$$$m$$$条边(滑雪道）的有向无环图。此外，还有连接节点$$$a$$$和节点$$$b$$$的$$$k$$$滑雪缆车。有趣的是，所有的滑雪缆车都满足一个条件，即在不使用任何滑雪缆车的情况下，总是可以从$$$b$$$到达$$$a$$$。穿越雪道或使用滑雪缆车需要Esomer $$$1$$$分钟。",
+        "deepl": "埃索姆所去的滑雪场可以表示为一个有向无环图，图中有$$$n$$$个节点和$$$m$$$条边(滑雪道）。此外，还有连接节点 $$$a$$$ 和节点 $$$b$$$ 的 $$$k$$$ 滑雪缆车。有趣的是，所有滑雪缆车都满足一个条件，即总是可以不使用任何滑雪缆车从$$$b$$$到达$$$a$$$。埃索姆$$$1$$$穿越滑雪道或使用滑雪缆车需要一分钟。",
+        "iflyrec": "eSomer访问的滑雪胜地可以表示为具有$$$n$$$节点和$$$m$$$边的有向无环图(滑道)。此外，还有将节点$$$a$$$连接到节点$$$b$$$的$$$k$$$滑雪缆车。有趣的是，所有的滑雪缆车都满足这样的条件，即总是可以在不使用任何滑雪缆车的情况下从$$$b$$$到达$$$a$$$。穿越滑雪道或使用滑雪缆车需要ESOMER$$$1$$$分钟。",
+        "ai": "Esomer 游览的滑雪场可以表示为一个包含 $$$n$$$ 个节点和 $$$m$$$ 条边(滑雪道)的有向无环图。此外，还有 $$$k$$$ 部滑雪缆车连接节点 $$$a$$$ 和节点 $$$b$$$。有趣的是，所有滑雪缆车都满足以下条件：始终可以在不使用任何滑雪缆车的情况下从 $$$b$$$ 到达 $$$a$$$。Esomer 通过一条滑雪道或使用一部滑雪缆车都需要 $$$1$$$ 分钟。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "埃索梅尔感兴趣的是，他需要在滑雪缆车上花费多少时间，才能在滑雪度假村总共花费 $$$x$$$ 分钟，而且不在任何节点停留哪怕一秒钟，同时从节点 $$$y$$$ 开始。埃索梅尔可以在任何节点完成他的路线，一旦他花费了所需的 $$$x$$$ 分钟，就可以立即回家。",
+        "youdao": "Esomer感兴趣的是，他需要花多少时间在滑雪缆车上，才能在滑雪胜地度过总共$$$x$$$分钟，在节点$$$y$$$出发时，在任何节点都不停留一秒钟。Esomer可以在任何节点完成他的路线，只要他花了要求的$$$x$$$分钟就可以回家。",
+        "deepl": "Esomer 想知道，从节点 $$$y$$$ 开始，他需要在滑雪缆车上花费多少时间，才能在滑雪胜地总共花费 $$$x$$$ 分钟，而不在任何节点停留哪怕一秒钟。埃斯莫可以在任何一个节点完成他的路线，一旦他花费了所需的 $$$x$$$ 分钟，他就可以离开回家。",
+        "iflyrec": "埃索默感兴趣的是，从节点$$$y$$$开始，他需要在滑雪缆车上花费多少时间，才能在滑雪场总共花费$$$x$$$分钟，而不会在任何节点停留哪怕一秒钟。Esomer可以在任何节点完成他的路线，并在完成所需的$$$x$$$分钟后立即回家。",
+        "ai": "Esomer 想知道，从节点 $$$y$$$ 出发，在滑雪场总共停留 $$$x$$$ 分钟且期间不在任何节点停留哪怕一秒的情况下，他需要在滑雪缆车上花费多少时间。Esomer 可以在任意节点结束路线，并在花费了所需的 $$$x$$$ 分钟后立即回家。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "请帮帮埃索莫。",
+        "youdao": "请帮助Esomer。",
+        "deepl": "请帮助埃苏默。",
+        "iflyrec": "请帮助埃索默。",
+        "ai": "请帮助 Esomer。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数 $$$t$$$，即测试用例的数量。($$$1 \\le t \\le 100$$$)。",
+        "youdao": "第一行包含一个整数$$$t$$$，测试用例的数量。($$$1 \\le t \\le 100$$$)。",
+        "deepl": "第一行包含一个整数$$$t$$$，即测试用例数。($$$1 \\le t \\le 100$$$).",
+        "iflyrec": "第一行包含整数$$$t$$$，即测试用例的数量。($$$1 \\le t \\le 100$$$）。",
+        "ai": "第一行包含一个整数 $$$t$$$，表示测试用例的数量。($$$1 \\le t \\le 100$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "对于每个测试用例，第一行包含四个整数 $$$n$$$、$$$m$$$ 和 $$$k$$$。($$$2 \\le n \\le 10^5$$$、$$$1 \\le m \\le \\min(10^5, \\frac{n \\cdot (n-1)}{2})$$$、$$$1 \\le k \\le 10^2$$$)。",
+        "youdao": "对于每个测试用例，第一行包含四个整数$$$n$$$， $$$m$$$和$$$k$$$。$$$2 \\le n \\le 10^5$$$; $$$1 \\le m \\le \\min(10^5, \\frac{n \\cdot (n-1)}{2})$$$; $$$1 \\le k \\le 10^2$$$)",
+        "iflyrec": "对于每个测试用例，第一行包含四个整数$$$n$$$、$$$m$$$和$$$k$$$。($$$2 \\le n \\le 10^5$$$$$$1 \\le m \\le \\min(10^5, \\frac{n \\cdot (n-1)}{2})$$$$$$1 \\le k \\le 10^2$$$）。",
+        "ai": "对于每个测试用例，第一行包含四个整数 $$$n$$$、$$$m$$$ 和 $$$k$$$。($$$2 \\le n \\le 10^5$$$；$$$1 \\le m \\le \\min(10^5, \\frac{n \\cdot (n-1)}{2})$$$；$$$1 \\le k \\le 10^2$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "然后，存在 $$$m$$$ 行，每行包含两个整数 $$$u$$$ 和 $$$v$$$，表明存在从 $$$u$$$ 到 $$$v$$$ 的边界。($$$1 \\le u, v \\le n$$$)。",
+        "youdao": "然后有$$$m$$$行，每一行包含两个整数$$$u$$$和$$$v$$$，表示从$$$u$$$到$$$v$$$之间存在一条边。($$$1 \\le u, v \\le n$$$)。",
+        "deepl": "然后有$$$m$$$行，每行包含两个整数$$$u$$$和$$$v$$$，表示从$$$u$$$到$$$v$$$有一条边。($$$1 \\le u, v \\le n$$$).",
+        "iflyrec": "然后，存在$$$m$$$行，每行包含两个整数$$$u$$$和$$$v$$$，表示存在从$$$u$$$到$$$v$$$的边。($$$1 \\le u, v \\le n$$$）。",
+        "ai": "接下来有 $$$m$$$ 行，每行包含两个整数 $$$u$$$ 和 $$$v$$$，表示存在一条从 $$$u$$$ 到 $$$v$$$ 的边。($$$1 \\le u, v \\le n$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "保证 $$$m$$$ 边形成的图是无环的。",
+        "youdao": "保证由$$$m$$$条边构成的图是无环的。",
+        "deepl": "保证 $$$m$$$ 边所构成的图是非周期性的。",
+        "iflyrec": "保证由$$$m$$$边形成的图是无圈的。",
+        "ai": "保证由 $$$m$$$ 条边构成的图是无环的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "接下来是 $$$k$$$ 行，每行包含两个整数 $$$a$$$ 和 $$$b$$$，表明从 $$$a$$$ 到 $$$b$$$ 之间存在滑雪坡度。($$$1 \\le a, b \\le n$$$ 和 $$$a \\neq b$$$)。",
+        "youdao": "接下来是$$$k$$$行，每一行包含两个整数$$$a$$$和$$$b$$$，表示从$$$a$$$到$$$b$$$有一个滑雪缆车。($$$1 \\le a, b \\le n$$$; $$$a \\neq b$$$)。",
+        "iflyrec": "接下来，有$$$k$$$行，每行包含两个整数$$$a$$$和$$$b$$$，表示从$$$a$$$到$$$b$$$有一个滑雪缆车。($$$1 \\le a, b \\le n$$$$$$a \\neq b$$$）。",
+        "ai": "接下来有 $$$k$$$ 行，每行包含两个整数 $$$a$$$ 和 $$$b$$$，表示存在一条从 $$$a$$$ 到 $$$b$$$ 的滑雪缆车。($$$1 \\le a, b \\le n$$$；$$$a \\neq b$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "保证可以从 $$$b$$$ 到达 $$$a$$$，而无需使用任何滑雪缆车。",
+        "youdao": "可以保证从$$$b$$$到达$$$a$$$无需使用任何滑雪缆车。",
+        "deepl": "可以保证的是，从$$$b$$$到达$$$a$$$无需乘坐任何滑雪缆车。",
+        "iflyrec": "保证可以从$$$b$$$到达$$$a$$$，而无需使用任何滑雪缆车。",
+        "ai": "保证无需使用任何滑雪缆车即可从 $$$b$$$ 到达 $$$a$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "最后，有一行包含两个整数 $$$x$$$ 和 $$$y$$$，分别是 Esomer 想在滑雪度假村花费的分钟数，以及他开始滑雪的节点。($$$1 \\le x \\le 10^9$$$;$$$1 \\le y \\le n$$$)。这保证了 Esomer 能够从节点 $$$y$$$ 到达滑雪升降机。",
+        "youdao": "最后，有一行包含两个整数$$$x$$$和$$$y$$$，分别是Esomer想要在滑雪场花费的分钟数和他开始的节点。($$$1 \\le x \\le 10^9$$$; $$$1 \\le y \\le n$$$)。保证Esomer可以从节点$$$y$$$到达滑雪缆车。",
+        "deepl": "最后，有一行包含两个整数$$$x$$$和$$$y$$$，分别是埃索姆想在滑雪胜地逗留的分钟数和他开始逗留的节点。($$$1 \\le x \\le 10^9$$$; $$$1 \\le y \\le n$$$)。保证 Esomer 可以从节点 $$$y$$$ 到达滑雪缆车。",
+        "iflyrec": "最后，有一行包含两个整数$$$x$$$和$$$y$$$，分别是eSomer想要在滑雪胜地花费的分钟数和他开始的节点。($$$1 \\le x \\le 10^9$$$$$$1 \\le y \\le n$$$）。保证eSomer可以从节点$$$y$$$到达滑雪缆车。",
+        "ai": "最后有一行包含两个整数 $$$x$$$ 和 $$$y$$$，分别表示 Esomer 想在滑雪场度过的分钟数，以及他开始时所在的节点。($$$1 \\le x \\le 10^9$$$；$$$1 \\le y \\le n$$$)。保证 Esomer 可以从节点 $$$y$$$ 到达一部滑雪缆车。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "保证所有测试用例中 $$$n$$$ 和 $$$m$$$ 的和最大为 $$$10^5$$$，而所有测试用例中 $$$k$$$ 的和最大为 $$$10^2$$$。",
+        "youdao": "保证所有测试用例的$$$n$$$和$$$m$$$之和不超过$$$10^5$$$，而所有测试用例的$$$k$$$之和不超过$$$10^2$$$。",
+        "deepl": "保证所有测试用例的 $$$n$$$ 和 $$$m$$$ 之和至多为 $$$10^5$$$，而所有测试用例的 $$$k$$$ 之和至多为 $$$10^2$$$。",
+        "iflyrec": "保证所有测试用例上的$$$n$$$和$$$m$$$之和最多为$$$10^5$$$，而所有测试用例上的$$$k$$$之和最多为$$$10^2$$$。",
+        "ai": "保证所有测试用例中 $$$n$$$ 和 $$$m$$$ 的总和不超过 $$$10^5$$$，而 $$$k$$$ 的总和不超过 $$$10^2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "对于每个测试用例，你应该打印一个整数 $$$s$$$，这是 Esomer 需要在滑雪缆车上花费的最小分钟数，以便在滑雪场总共花费 $$$x$$$ 分钟。",
+        "youdao": "对于每个测试用例，您应该打印一个整数$$$s$$$，这是Esomer在滑雪缆车上花费的最小分钟数，以便在滑雪胜地花费的总时间为$$$x$$$分钟。",
+        "deepl": "对于每个测试案例，您都应该打印一个整数 $$$s$$$，即 Esomer 在滑雪场总共花费 $$$x$$$ 分钟时，需要在滑雪缆车上花费的最少分钟数。",
+        "iflyrec": "对于每个测试用例，您应该打印一个整数$$$s$$$，即eSomer需要在滑雪缆车上花费的最小分钟数，以便在滑雪胜地总共花费$$$x$$$分钟。",
+        "ai": "对于每个测试用例，输出一个整数 $$$s$$$，表示为了在滑雪场总共度过 $$$x$$$ 分钟，Esomer 需要乘坐滑雪缆车的最少分钟数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "——",
+        "deepl": "-",
+        "iflyrec": "—",
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "问题想法：索莫",
+        "youdao": "问题思路：Esomer",
+        "deepl": "问题创意：埃索姆",
+        "iflyrec": "问题创意：eSomer",
+        "ai": "题目思路：Esomer",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "准备问题：索莫",
+        "youdao": "问题准备：Esomer",
+        "deepl": "问题准备：埃索姆",
+        "iflyrec": "问题准备：eSomer",
+        "ai": "题目准备：Esomer",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "事件:Advanced 10",
+        "youdao": "事件：高级10",
+        "deepl": "Ocurrences：高级 10",
+        "iflyrec": "发生：高级10",
+        "ai": "出现次数：高级 10",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.102Z",
+  "translatedBy": [
+    "iflyrec"
+  ]
+}

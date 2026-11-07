@@ -1,0 +1,89 @@
+{
+  "code": "CF595B",
+  "letter": "B",
+  "title": "B. Pasha and Phone",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/595/B",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Pasha has recently bought a new phone jPager and started adding his friends' phone numbers there. Each phone number consists of exactly n digits.",
+      "Also Pasha has a number k and two sequences of length n / k (n is divisible by k) a1, a2, ..., an / k and b1, b2, ..., bn / k. Let's split the phone number into blocks of length k. The first block will be formed by digits from the phone number that are on positions 1, 2,..., k, the second block will be formed by digits from the phone number that are on positions k + 1, k + 2, ..., 2·k and so on. Pasha considers a phone number good, if the i-th block doesn't start from the digit bi and is divisible by ai if represented as an integer.",
+      "To represent the block of length k as an integer, let's write it out as a sequence c1, c2,...,ck. Then the integer is calculated as the result of the expression c1·10k - 1 + c2·10k - 2 + ... + ck.",
+      "Pasha asks you to calculate the number of good phone numbers of length n, for the given k, ai and bi. As this number can be too big, print it modulo 109 + 7."
+    ],
+    "input": [
+      "The first line of the input contains two integers n and k (1 ≤ n ≤ 100 000, 1 ≤ k ≤ min(n, 9)) — the length of all phone numbers and the length of each block, respectively. It is guaranteed that n is divisible by k.",
+      "The second line of the input contains n / k space-separated positive integers — sequence a1, a2, ..., an / k (1 ≤ ai < 10k).",
+      "The third line of the input contains n / k space-separated positive integers — sequence b1, b2, ..., bn / k (0 ≤ bi ≤ 9)."
+    ],
+    "output": [
+      "Print a single integer — the number of good phone numbers of length n modulo 109 + 7."
+    ],
+    "note": [
+      "In the first test sample good phone numbers are: 000000, 000098, 005600, 005698, 380000, 380098, 385600, 385698."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 2\n38 56 49\n7 3 4",
+      "output": "8"
+    },
+    {
+      "input": "8 2\n1 22 3 44\n5 4 3 2",
+      "output": "32400"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 k（1 ≤ n ≤ 100000，1 ≤ k ≤ min(n, 9)）——分别表示所有电话号码的长度和每个块的长度。保证 n 能被 k 整除。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第二行包含 n / k 个由空格分隔的正整数——序列 a1、a2、...、a_{n/k}（1 ≤ ai < 10^k）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第三行包含 n / k 个由空格分隔的正整数——序列 b1、b2、...、b_{n/k}（0 ≤ bi ≤ 9）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——长度为 n 的符合条件的电话号码数量对 10^9 + 7 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，符合条件的电话号码为：000000、000098、005600、005698、380000、380098、385600、385698。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Pasha 最近买了一部新手机 jPager，并开始在其中添加朋友们的电话号码。每个电话号码恰好由 n 位数字组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，Pasha 还有一个数 k，以及两个长度为 n / k 的序列 a1，a2，...，an / k 和 b1，b2，...，bn / k（n 能被 k 整除）。让我们将电话号码划分为长度为 k 的若干块。第一块由电话号码第 1、2、...、k 位上的数字组成，第二块由第 k + 1、k + 2、...、2·k 位上的数字组成，以此类推。如果第 i 个块的首位不是数字 bi，且将其视为整数后能被 ai 整除，那么 Pasha 就认为这个电话号码是好的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了将长度为 k 的块表示为整数，我们将其写成数字序列 c1，c2，...，ck。然后，该整数等于表达式 c1·10^{k − 1} + c2·10^{k − 2} + ... + ck 的值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Pasha 请你计算对于给定的 k、ai 和 bi，长度为 n 的好的电话号码数量。由于这个数可能很大，请输出其对 10^9 + 7 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Pasha 与手机",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "code": "CF1942C2",
+  "letter": "C2",
+  "title": "C2. Bessie's Birthday Cake (Hard Version)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1942/C2",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is the hard version of the problem. The only difference between the two versions is the constraint on y$$$y$$$. In this version 0≤y≤n−x$$$0 \\leq y \\leq n - x$$$. You can make hacks only if both versions are solved.",
+      "Bessie has received a birthday cake from her best friend Elsie, and it came in the form of a regular polygon with n$$$n$$$ sides. The vertices of the cake are numbered from 1$$$1$$$ to n$$$n$$$ clockwise. You and Bessie are going to choose some of those vertices to cut non-intersecting diagonals into the cake. In other words, the endpoints of the diagonals must be part of the chosen vertices.",
+      "Bessie would only like to give out pieces of cake which result in a triangle to keep consistency. The size of the pieces doesn't matter, and the whole cake does not have to be separated into all triangles (other shapes are allowed in the cake, but those will not be counted).",
+      "Bessie has already chosen x$$$x$$$ of those vertices that can be used to form diagonals. She wants you to choose no more than y$$$y$$$ other vertices such that the number of triangular pieces of cake she can give out is maximized.",
+      "What is the maximum number of triangular pieces of cake Bessie can give out?"
+    ],
+    "input": [
+      "The first line contains a single integer t$$$t$$$ (1≤t≤104$$$1 \\leq t \\leq 10^4$$$) — the number of test cases.",
+      "The first line of each test case consists of three integers, n$$$n$$$, x$$$x$$$, and y$$$y$$$ (4≤n≤109$$$4 \\leq n \\leq 10^9$$$, 2≤x≤min(n,2⋅105)$$$2 \\leq x \\leq \\min(n, 2 \\cdot 10^5)$$$, 0≤y≤n−x$$$0 \\leq y \\leq n - x$$$) — the number of sides of the polygon, number of vertices Bessie has chosen, and the maximum number of other vertices you can choose.",
+      "The second line consists of x$$$x$$$ distinct integers from 1$$$1$$$ to n$$$n$$$, representing the vertices Bessie has chosen.",
+      "It is guaranteed the sum of x$$$x$$$ over all test cases does not exceed 2⋅105$$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, output a single integer: the maximum number of non-intersecting triangular pieces of cake she can give out."
+    ],
+    "note": [
+      "In test cases 1$$$1$$$, 2$$$2$$$ and 3$$$3$$$, you can get 6$$$6$$$, 5$$$5$$$ and 2$$$2$$$ non-intersecting triangular pieces of cake, respectively. A possible construction is shown in the following pictures:",
+      "The green dots represent vertices that Bessie chose, the yellow dots represent vertices that you chose, the blue lines represent diagonals that are drawn, and the red numbers represent triangles that are counted.",
+      "![](https://espresso.codeforces.com/eb068b17dec75e17318bdcc858935ef84a178fd5.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n8 4 2\n1 6 2 5\n7 3 1\n6 4 3\n4 2 2\n1 3",
+      "output": "6\n5\n2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是该题的困难版本。两个版本之间的唯一区别在于对 y$$$y$$$ 的约束。在此版本中，0≤y≤n−x$$$0 \\leq y \\leq n - x$$$。只有在两个版本都解决后才能进行 hack。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bessie 从她最好的朋友 Elsie 那里收到了一块生日蛋糕，它是一个有 n$$$n$$$ 条边的正多边形。蛋糕的顶点按顺时针方向从 1$$$1$$$ 编号到 n$$$n$$$。你和 Bessie 将选择其中一些顶点，在蛋糕上切出互不相交的对角线。换言之，对角线的端点必须属于所选的顶点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bessie 只想分发切出来后呈三角形的蛋糕块，以保持一致性。蛋糕块的大小并不重要，整个蛋糕也不必被完全分割成三角形（蛋糕中允许存在其他形状，但这些形状不会被计数）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bessie 已经选择了 x$$$x$$$ 个可以用来构成对角线的顶点。她希望你再选择不超过 y$$$y$$$ 个其他顶点，使她能够分发的三角形蛋糕块数量最大化。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bessie 最多可以分发多少块三角形蛋糕？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\leq t \\leq 10^4$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含三个整数 n$$$n$$$、x$$$x$$$ 和 y$$$y$$$(4≤n≤109$$$4 \\leq n \\leq 10^9$$$、2≤x≤min(n,2⋅105)$$$2 \\leq x \\leq \\min(n, 2 \\cdot 10^5)$$$、0≤y≤n−x$$$0 \\leq y \\leq n - x$$$)——分别表示多边形的边数、Bessie 已选择的顶点数，以及你最多可以选择的其他顶点数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 x$$$x$$$ 个从 1$$$1$$$ 到 n$$$n$$$ 的互不相同的整数，表示 Bessie 选择的顶点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 x$$$x$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数：她能够分发的互不相交的三角形蛋糕块的最大数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在测试用例 1$$$1$$$、2$$$2$$$ 和 3$$$3$$$ 中，你分别可以得到 6$$$6$$$、5$$$5$$$ 和 2$$$2$$$ 个互不相交的三角形蛋糕块。以下图片展示了一种可行的构造：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "绿色的点表示 Bessie 选择的顶点，黄色的点表示你选择的顶点，蓝色的线表示所绘制的对角线，红色的数字表示被计数的三角形。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/eb068b17dec75e17318bdcc858935ef84a178fd5.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C2. Bessie 的生日蛋糕（困难版本）",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

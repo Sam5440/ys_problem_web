@@ -1,0 +1,127 @@
+{
+  "code": "CF925B",
+  "letter": "B",
+  "title": "B. Resource Distribution",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/925/B",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "One department of some software company has n$$$n$$$ servers of different specifications. Servers are indexed with consecutive integers from 1$$$1$$$ to n$$$n$$$. Suppose that the specifications of the j$$$j$$$-th server may be expressed with a single integer number cj$$$c_j$$$ of artificial resource units.",
+      "In order for production to work, it is needed to deploy two services S1$$$S_1$$$ and S2$$$S_2$$$ to process incoming requests using the servers of the department. Processing of incoming requests of service Si$$$S_i$$$ takes xi$$$x_i$$$ resource units.",
+      "The described situation happens in an advanced company, that is why each service may be deployed using not only one server, but several servers simultaneously. If service Si$$$S_i$$$ is deployed using ki$$$k_i$$$ servers, then the load is divided equally between these servers and each server requires only xi/ki$$$x_i / k_i$$$ (that may be a fractional number) resource units.",
+      "Each server may be left unused at all, or be used for deploying exactly one of the services (but not for two of them simultaneously). The service should not use more resources than the server provides.",
+      "Determine if it is possible to deploy both services using the given servers, and if yes, determine which servers should be used for deploying each of the services."
+    ],
+    "input": [
+      "The first line contains three integers n$$$n$$$, x1$$$x_1$$$, x2$$$x_2$$$ (2≤n≤300000$$$2 \\leq n \\leq 300\\,000$$$, 1≤x1,x2≤109$$$1 \\leq x_1, x_2 \\leq 10^9$$$) — the number of servers that the department may use, and resource units requirements for each of the services.",
+      "The second line contains n$$$n$$$ space-separated integers c1,c2,…,cn$$$c_1, c_2, \\ldots, c_n$$$ (1≤ci≤109$$$1 \\leq c_i \\leq 10^9$$$) — the number of resource units provided by each of the servers."
+    ],
+    "output": [
+      "If it is impossible to deploy both services using the given servers, print the only word \"No\" (without the quotes).",
+      "Otherwise print the word \"Yes\" (without the quotes).",
+      "In the second line print two integers k1$$$k_1$$$ and k2$$$k_2$$$ (1≤k1,k2≤n$$$1 \\leq k_1, k_2 \\leq n$$$) — the number of servers used for each of the services.",
+      "In the third line print k1$$$k_1$$$ integers, the indices of the servers that will be used for the first service.",
+      "In the fourth line print k2$$$k_2$$$ integers, the indices of the servers that will be used for the second service.",
+      "No index may appear twice among the indices you print in the last two lines. If there are several possible answers, it is allowed to print any of them."
+    ],
+    "note": [
+      "In the first sample test each of the servers 1, 2 and 6 will will provide 8/3=2.(6)$$$8 / 3 = 2.(6)$$$ resource units and each of the servers 5, 4 will provide 16/2=8$$$16 / 2 = 8$$$ resource units.",
+      "In the second sample test the first server will provide 20$$$20$$$ resource units and each of the remaining servers will provide 32/3=10.(6)$$$32 / 3 = 10.(6)$$$ resource units."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 8 16\n3 5 2 9 8 7",
+      "output": "Yes\n3 2\n1 2 6\n5 4"
+    },
+    {
+      "input": "4 20 32\n21 11 11 12",
+      "output": "Yes\n1 3\n1\n2 3 4"
+    },
+    {
+      "input": "4 11 32\n5 5 16 16",
+      "output": "No"
+    },
+    {
+      "input": "5 12 20\n7 8 4 11 9",
+      "output": "No"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "某软件公司有一个部门，该部门拥有 n$$$n$$$ 台规格各不相同的服务器。服务器的编号是从 1$$$1$$$ 到 n$$$n$$$ 的连续整数。假设第 j$$$j$$$ 台服务器的规格可以用一个整数 cj$$$c_j$$$ 表示，该整数表示人造资源单位的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了使生产正常运行，需要使用该部门的服务器部署两个服务 S1$$$S_1$$$ 和 S2$$$S_2$$$，以处理传入的请求。处理服务 Si$$$S_i$$$ 的传入请求需要 xi$$$x_i$$$ 个资源单位。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "上述情况发生在一家先进的公司中，因此每项服务不仅可以使用一台服务器部署，也可以同时使用多台服务器部署。如果服务 Si$$$S_i$$$ 使用 ki$$$k_i$$$ 台服务器部署，那么负载将在这些服务器之间平均分配，每台服务器只需 xi/ki$$$x_i / k_i$$$ 个资源单位(该数可以是分数)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每台服务器可以完全闲置，也可以用于部署恰好一个服务（但不能同时用于两个服务）。服务使用的资源不应超过服务器所能提供的资源。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "判断是否可以使用给定的服务器部署这两项服务；如果可以，确定应分别使用哪些服务器部署每项服务。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、x1$$$x_1$$$、x2$$$x_2$$$(2≤n≤300000$$$2 \\leq n \\leq 300\\,000$$$，1≤x1,x2≤109$$$1 \\leq x_1, x_2 \\leq 10^9$$$)——该部门可以使用的服务器数量，以及两项服务各自所需的资源单位数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个以空格分隔的整数 c1,c2,…,cn$$$c_1, c_2, \\ldots, c_n$$$(1≤ci≤109$$$1 \\leq c_i \\leq 10^9$$$)——每台服务器提供的资源单位数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果无法使用给定的服务器部署这两项服务，输出唯一的单词“No”（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，输出单词“Yes”（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二行输出两个整数 k1$$$k_1$$$ 和 k2$$$k_2$$$(1≤k1,k2≤n$$$1 \\leq k_1, k_2 \\leq n$$$)——分别用于部署两项服务的服务器数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三行输出 k1$$$k_1$$$ 个整数，即将用于第一项服务的服务器编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四行输出 k2$$$k_2$$$ 个整数，即将用于第二项服务的服务器编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你在最后两行输出的编号中不能有任何重复。如果有多个可行答案，可以输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例测试中，服务器 1、2 和 6 中的每一台将提供 8/3=2.(6)$$$8 / 3 = 2.(6)$$$ 个资源单位，而服务器 5、4 中的每一台将提供 16/2=8$$$16 / 2 = 8$$$ 个资源单位。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例测试中，第一台服务器将提供 20$$$20$$$ 个资源单位，其余每台服务器将提供 32/3=10.(6)$$$32 / 3 = 10.(6)$$$ 个资源单位。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 资源分配",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

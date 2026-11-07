@@ -1,0 +1,94 @@
+{
+  "code": "CF739B",
+  "letter": "B",
+  "title": "B. Alyona and a tree",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/739/B",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alyona has a tree with n vertices. The root of the tree is the vertex 1. In each vertex Alyona wrote an positive integer, in the vertex i she wrote ai. Moreover, the girl wrote a positive integer to every edge of the tree (possibly, different integers on different edges).",
+      "Let's define dist(v, u) as the sum of the integers written on the edges of the simple path from v to u.",
+      "The vertex v controls the vertex u (v ≠ u) if and only if u is in the subtree of v and dist(v, u) ≤ au.",
+      "Alyona wants to settle in some vertex. In order to do this, she wants to know for each vertex v what is the number of vertices u such that v controls u."
+    ],
+    "input": [
+      "The first line contains single integer n (1 ≤ n ≤ 2·105).",
+      "The second line contains n integers a1, a2, ..., an (1 ≤ ai ≤ 109) — the integers written in the vertices.",
+      "The next (n - 1) lines contain two integers each. The i-th of these lines contains integers pi and wi (1 ≤ pi ≤ n, 1 ≤ wi ≤ 109) — the parent of the (i + 1)-th vertex in the tree and the number written on the edge between pi and (i + 1).",
+      "It is guaranteed that the given graph is a tree."
+    ],
+    "output": [
+      "Print n integers — the i-th of these numbers should be equal to the number of vertices that the i-th vertex controls."
+    ],
+    "note": [
+      "In the example test case the vertex 1 controls the vertex 3, the vertex 3 controls the vertex 5 (note that is doesn't mean the vertex 1 controls the vertex 5)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 5 1 4 6\n1 7\n1 1\n3 5\n3 6",
+      "output": "1 0 1 0 0"
+    },
+    {
+      "input": "5\n9 7 8 6 5\n1 1\n2 1\n3 1\n4 1",
+      "output": "4 3 2 1 0"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 2·105）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个整数 a1, a2, ..., an (1 ≤ ai ≤ 109)，表示写在各个顶点上的整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 (n - 1) 行每行包含两个整数。第 i 行包含整数 pi 和 wi (1 ≤ pi ≤ n, 1 ≤ wi ≤ 109)，表示树中第 (i + 1) 个顶点的父节点为 pi，以及连接 pi 和 (i + 1) 的边上写的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证给定的图是一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 个整数，第 i 个整数应等于第 i 个顶点所控制的顶点数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在样例测试中，顶点 1 控制顶点 3，顶点 3 控制顶点 5（注意，这并不意味着顶点 1 控制顶点 5）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Alyona 有一棵包含 n 个顶点的树。树的根是顶点 1。在每个顶点中，Alyona 都写下了一个正整数，在顶点 i 中写下的是 ai。此外，女孩还在树的每条边上写下了一个正整数（不同边上的整数可能不同）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们将 dist(v, u) 定义为从 v 到 u 的简单路径上各条边所写整数之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当且仅当 u 位于 v 的子树中且 dist(v, u) ≤ au 时，顶点 v 控制顶点 u（v ≠ u）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Alyona 想要定居在某个顶点。为此，她想知道对于每个顶点 v，有多少个顶点 u 满足 v 控制 u。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Alyona 和一棵树",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

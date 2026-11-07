@@ -1,0 +1,290 @@
+{
+  "code": "CF1044B",
+  "letter": "B",
+  "title": "B. Intersecting Subtrees",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1044/B",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are playing a strange game with Li Chen. You have a tree with n$$$n$$$ nodes drawn on a piece of paper. All nodes are unlabeled and distinguishable. Each of you independently labeled the vertices from 1$$$1$$$ to n$$$n$$$. Neither of you know the other's labelling of the tree.",
+      "You and Li Chen each chose a subtree (i.e., a connected subgraph) in that tree. Your subtree consists of the vertices labeled x1,x2,…,xk1$$$x_1, x_2, \\ldots, x_{k_1}$$$ in your labeling, Li Chen's subtree consists of the vertices labeled y1,y2,…,yk2$$$y_1, y_2, \\ldots, y_{k_2}$$$ in his labeling. The values of x1,x2,…,xk1$$$x_1, x_2, \\ldots, x_{k_1}$$$ and y1,y2,…,yk2$$$y_1, y_2, \\ldots, y_{k_2}$$$ are known to both of you.",
+      "![](https://espresso.codeforces.com/0defd3cbb822fdde342d5b0b173f9a1de22eaafc.png)",
+      "You want to determine whether your subtrees have at least one common vertex. Luckily, your friend Andrew knows both labelings of the tree. You can ask Andrew at most 5$$$5$$$ questions, each of which is in one of the following two forms:",
+      "A x: Andrew will look at vertex x$$$x$$$ in your labeling and tell you the number of this vertex in Li Chen's labeling.",
+      "B y: Andrew will look at vertex y$$$y$$$ in Li Chen's labeling and tell you the number of this vertex in your labeling.",
+      "Determine whether the two subtrees have at least one common vertex after asking some questions. If there is at least one common vertex, determine one of your labels for any of the common vertices.",
+      "Interaction",
+      "Each test consists of several test cases.",
+      "The first line of input contains a single integer t$$$t$$$ (1≤t≤100$$$1 \\leq t \\leq 100$$$) — the number of test cases.",
+      "For each testcase, your program should interact in the following format.",
+      "The first line contains a single integer n$$$n$$$ (1≤n≤1000$$$1 \\leq n \\leq 1\\,000$$$) — the number of nodes in the tree.",
+      "Each of the next n−1$$$n-1$$$ lines contains two integers ai$$$a_i$$$ and bi$$$b_i$$$ (1≤ai,bi≤n$$$1\\leq a_i, b_i\\leq n$$$) — the edges of the tree, indicating an edge between node ai$$$a_i$$$ and bi$$$b_i$$$ according to your labeling of the nodes.",
+      "The next line contains a single integer k1$$$k_1$$$ (1≤k1≤n$$$1 \\leq k_1 \\leq n$$$) — the number of nodes in your subtree.",
+      "The next line contains k1$$$k_1$$$ distinct integers x1,x2,…,xk1$$$x_1,x_2,\\ldots,x_{k_1}$$$ (1≤xi≤n$$$1 \\leq x_i \\leq n$$$) — the indices of the nodes in your subtree, according to your labeling. It is guaranteed that these vertices form a subtree.",
+      "The next line contains a single integer k2$$$k_2$$$ (1≤k2≤n$$$1 \\leq k_2 \\leq n$$$) — the number of nodes in Li Chen's subtree.",
+      "The next line contains k2$$$k_2$$$ distinct integers y1,y2,…,yk2$$$y_1, y_2, \\ldots, y_{k_2}$$$ (1≤yi≤n$$$1 \\leq y_i \\leq n$$$) — the indices (according to Li Chen's labeling) of the nodes in Li Chen's subtree. It is guaranteed that these vertices form a subtree according to Li Chen's labelling of the tree's nodes.",
+      "Test cases will be provided one by one, so you must complete interacting with the previous test (i.e. by printing out a common node or −1$$$-1$$$ if there is not such node) to start receiving the next one.",
+      "You can ask the Andrew two different types of questions.",
+      "You can print \"A x\" (1≤x≤n$$$1 \\leq x \\leq n$$$). Andrew will look at vertex x$$$x$$$ in your labeling and respond to you with the number of this vertex in Li Chen's labeling.",
+      "You can print \"B y\" (1≤y≤n$$$1 \\leq y \\leq n$$$). Andrew will look at vertex y$$$y$$$ in Li Chen's labeling and respond to you with the number of this vertex in your labeling.",
+      "You may only ask at most 5$$$5$$$ questions per tree.",
+      "When you are ready to answer, print \"C s\", where s$$$s$$$ is your label of a vertex that is common to both subtrees, or −1$$$-1$$$, if no such vertex exists. Printing the answer does not count as a question. Remember to flush your answer to start receiving the next test case.",
+      "After printing a question do not forget to print end of line and flush the output. Otherwise, you will get Idleness limit exceeded. To do this, use:",
+      "fflush(stdout) or cout.flush() in C++;",
+      "System.out.flush() in Java;",
+      "flush(output) in Pascal;",
+      "stdout.flush() in Python;",
+      "see documentation for other languages.",
+      "If the judge responds with −1$$$-1$$$, it means that you asked more queries than allowed, or asked an invalid query. Your program should immediately terminate (for example, by calling exit(0)). You will receive Wrong Answer; it means that you asked more queries than allowed, or asked an invalid query. If you ignore this, you can get other verdicts since your program will continue to read from a closed stream.",
+      "Hack Format",
+      "To hack, use the following format. Note that you can only hack with one test case.",
+      "The first line should contain a single integer t$$$t$$$ (t=1$$$t=1$$$).",
+      "The second line should contain a single integer n$$$n$$$ (1≤n≤1000$$$1 \\leq n \\leq 1\\,000$$$).",
+      "The third line should contain n$$$n$$$ integers p1,p2,…,pn$$$p_1, p_2, \\ldots, p_n$$$ (1≤pi≤n$$$1\\leq p_i\\leq n$$$) — a permutation of 1$$$1$$$ to n$$$n$$$. This encodes the labels that Li Chen chose for his tree. In particular, Li Chen chose label pi$$$p_i$$$ for the node you labeled i$$$i$$$.",
+      "Each of the next n−1$$$n-1$$$ lines should contain two integers ai$$$a_i$$$ and bi$$$b_i$$$ (1≤ai,bi≤n$$$1\\leq a_i, b_i\\leq n$$$). These edges should form a tree.",
+      "The next line should contain a single integer k1$$$k_1$$$ (1≤k1≤n$$$1 \\leq k_1 \\leq n$$$).",
+      "The next line should contain k1$$$k_1$$$ distinct integers x1,x2,…,xk1$$$x_1,x_2,\\ldots,x_{k_1}$$$ (1≤xi≤n$$$1 \\leq x_i \\leq n$$$). These vertices should form a subtree.",
+      "The next line should contain a single integer k2$$$k_2$$$ (1≤k2≤n$$$1 \\leq k_2 \\leq n$$$).",
+      "The next line should contain k2$$$k_2$$$ distinct integers y1,y2,…,yk2$$$y_1, y_2, \\ldots, y_{k_2}$$$ (1≤yi≤n$$$1 \\leq y_i \\leq n$$$). These vertices should form a subtree in Li Chen's tree according to the permutation above."
+    ],
+    "input": [],
+    "output": [],
+    "note": [
+      "For the first sample, Li Chen's hidden permutation is [2,3,1]$$$[2, 3, 1]$$$, and for the second, his hidden permutation is [5,3,2,4,1,6]$$$[5, 3, 2, 4, 1, 6]$$$ for both cases.",
+      "In the first sample, there is a tree with three nodes in a line. On the top, is how you labeled the tree and the subtree you chose, and the bottom is how Li Chen labeled the tree and the subtree he chose:",
+      "![](https://espresso.codeforces.com/fd10a54c6cc10884aa7fb708a2cbf6d3cb4daa29.png)",
+      "In the first question, you ask Andrew to look at node 1$$$1$$$ in your labelling and tell you the label of it in Li Chen's labelling. Andrew responds with 2$$$2$$$. At this point, you know that both of your subtrees contain the same node (i.e. node 1$$$1$$$ according to your labeling), so you can output \"C 1\" and finish. However, you can also ask Andrew to look at node 2$$$2$$$ in Li Chen's labelling and tell you the label of it in your labelling. Andrew responds with 1$$$1$$$ (this step was given with the only reason — to show you how to ask questions).",
+      "For the second sample, there are two test cases. The first looks is the one from the statement:",
+      "![](https://espresso.codeforces.com/6e657baf0e89b8da496fe553b22e3f133bb24d85.png)",
+      "We first ask \"B 2\", and Andrew will tell us 3$$$3$$$. In this case, we know 3$$$3$$$ is a common vertex, and moreover, any subtree with size 3$$$3$$$ that contains node 3$$$3$$$ must contain node 1$$$1$$$ as well, so we can output either \"C 1\" or \"C 3\" as our answer.",
+      "In the second case in the second sample, the situation looks as follows:",
+      "![](https://espresso.codeforces.com/4caafc9d13cebf999fafcd0415c5a1acc5f3c908.png)",
+      "In this case, you know that the only subtree of size 3$$$3$$$ that doesn't contain node 1$$$1$$$ is subtree 4,5,6$$$4,5,6$$$. You ask Andrew for the label of node 1$$$1$$$ in Li Chen's labelling and Andrew says 5$$$5$$$. In this case, you know that Li Chen's subtree doesn't contain node 1$$$1$$$, so his subtree must be consist of the nodes 4,5,6$$$4,5,6$$$ (in your labelling), thus the two subtrees have no common nodes."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n3\n1 2\n2 3\n1\n1\n1\n2\n2\n1",
+      "output": "A 1\nB 2\nC 1"
+    },
+    {
+      "input": "2\n6\n1 2\n1 3\n1 4\n4 5\n4 6\n4\n1 3 4 5\n3\n3 5 2\n3\n6\n1 2\n1 3\n1 4\n4 5\n4 6\n3\n1 2 3\n3\n4 1 6\n5",
+      "output": "B 2\nC 1\nA 1\nC -1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你正在和 Li Chen 玩一个奇怪的游戏。纸上画着一棵有 n$$$n$$$ 个节点的树。所有节点都没有标号，但彼此可区分。你们分别独立地将顶点标号为 1$$$1$$$ 到 n$$$n$$$。你们都不知道对方对这棵树的标号方式。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你和 Li Chen 分别在这棵树中选了一棵子树(即一个连通子图)。你的子树由在你的标号中编号为 x1,x2,…,xk1$$$x_1, x_2, \\ldots, x_{k_1}$$$ 的顶点组成，Li Chen 的子树由在他的标号中编号为 y1,y2,…,yk2$$$y_1, y_2, \\ldots, y_{k_2}$$$ 的顶点组成。x1,x2,…,xk1$$$x_1, x_2, \\ldots, x_{k_1}$$$ 和 y1,y2,…,yk2$$$y_1, y_2, \\ldots, y_{k_2}$$$ 的值对你们双方都是已知的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/0defd3cbb822fdde342d5b0b173f9a1de22eaafc.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你想确定你的两棵子树是否至少有一个公共顶点。幸运的是，你的朋友 Andrew 知道这棵树的两种编号方式。你最多可以向 Andrew 提出 5$$$5$$$ 个问题，每个问题具有以下两种形式之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "A x：Andrew 会查看你所使用编号中的顶点 x$$$x$$$，并告诉你该顶点在 Li Chen 的编号中的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "B y：Andrew 会查看 Li Chen 的编号中的顶点 y$$$y$$$，并告诉你该顶点在你所使用编号中的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "提出一些问题后，确定这两棵子树是否至少有一个公共顶点。如果至少有一个公共顶点，确定任意一个公共顶点在你的编号中的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试包含多个测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤100$$$1 \\leq t \\leq 100$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个测试用例，你的程序应按照以下格式进行交互。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤1000$$$1 \\leq n \\leq 1\\,000$$$)——树中节点的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n−1$$$n-1$$$ 行中，每行包含两个整数 ai$$$a_i$$$ 和 bi$$$b_i$$$(1≤ai,bi≤n$$$1\\leq a_i, b_i\\leq n$$$)——树中的边，表示按照你对节点的编号，在节点 ai$$$a_i$$$ 和 bi$$$b_i$$$ 之间存在一条边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含一个整数 k1$$$k_1$$$(1≤k1≤n$$$1 \\leq k_1 \\leq n$$$)——你的子树中的节点数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 k1$$$k_1$$$ 个互不相同的整数 x1,x2,…,xk1$$$x_1,x_2,\\ldots,x_{k_1}$$$(1≤xi≤n$$$1 \\leq x_i \\leq n$$$)——根据你的编号，你的子树中节点的编号。保证这些顶点构成一棵子树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含一个整数 k2$$$k_2$$$(1≤k2≤n$$$1 \\leq k_2 \\leq n$$$)——Li Chen 的子树中的节点数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 k2$$$k_2$$$ 个互不相同的整数 y1,y2,…,yk2$$$y_1, y_2, \\ldots, y_{k_2}$$$(1≤yi≤n$$$1 \\leq y_i \\leq n$$$)——Li Chen 编号中 Li Chen 的子树内各节点的编号。保证按照 Li Chen 对树中节点的编号，这些顶点构成一棵子树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试用例将逐个提供，因此你必须完成与前一个测试用例的交互(即输出一个公共节点；如果不存在这样的节点，则输出 −1$$$-1$$$)，才能开始接收下一个测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以向 Andrew 询问两种不同类型的问题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以输出 \"A x\"(1≤x≤n$$$1 \\leq x \\leq n$$$)。Andrew 会查看你编号中顶点 x$$$x$$$ 所对应的顶点，并回复你该顶点在 Li Chen 编号中的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以输出 \"B y\"(1≤y≤n$$$1 \\leq y \\leq n$$$)。Andrew 会查看 Li Chen 编号中编号为 y$$$y$$$ 的顶点，并回复你该顶点在你所使用的编号中的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每棵树至多只能询问 5$$$5$$$ 个问题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当你准备好回答时，输出 \"C s\"，其中 s$$$s$$$ 是同时属于两个子树的某个顶点的编号；如果不存在这样的顶点，则输出 −1$$$-1$$$。输出答案不计作一次提问。记得刷新输出，以开始接收下一个测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出问题后，不要忘记输出行尾并刷新输出。否则，你将得到“空闲限制超出”的结果。为此，请使用：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 C++ 中使用 fflush(stdout) 或 cout.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 Java 中使用 System.out.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 Pascal 中使用 flush(output)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 Python 中使用 stdout.flush()；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "其他语言请参阅文档。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果评测机返回 -1$$$-1$$$，说明你提出的查询次数超出了允许范围，或者提出了无效查询。你的程序应立即终止(例如调用 exit(0))。你将收到 Wrong Answer；这表示你提出的查询次数超出了允许范围，或者提出了无效查询。如果你忽略这一点，可能会得到其他评测结果，因为你的程序会继续从一个已关闭的流中读取数据。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Hack 格式",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "要进行 hack，请使用以下格式。注意，你只能使用一个测试用例进行 hack。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第一行应包含一个整数 t$$$t$$$(t=1$$$t=1$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行应包含一个整数 n$$$n$$$(1≤n≤1000$$$1 \\leq n \\leq 1\\,000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行应包含 n$$$n$$$ 个整数 p1,p2,…,pn$$$p_1, p_2, \\ldots, p_n$$$(1≤pi≤n$$$1\\leq p_i\\leq n$$$)，即 1$$$1$$$ 到 n$$$n$$$ 的一个排列。这表示 Li Chen 为他的树选择的标签。具体来说，Li Chen 为你标记为 i$$$i$$$ 的节点选择了标签 pi$$$p_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n−1$$$n-1$$$ 行中，每行应包含两个整数 ai$$$a_i$$$ 和 bi$$$b_i$$$(1≤ai,bi≤n$$$1\\leq a_i, b_i\\leq n$$$)。这些边应构成一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行应包含一个整数 k1$$$k_1$$$(1≤k1≤n$$$1 \\leq k_1 \\leq n$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行应包含 k1$$$k_1$$$ 个互不相同的整数 x1,x2,…,xk1$$$x_1,x_2,\\ldots,x_{k_1}$$$(1≤xi≤n$$$1 \\leq x_i \\leq n$$$)。这些顶点应构成一棵子树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行应包含一个整数 k2$$$k_2$$$(1≤k2≤n$$$1 \\leq k_2 \\leq n$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行应包含 k2$$$k_2$$$ 个互不相同的整数 y1,y2,…,yk2$$$y_1, y_2, \\ldots, y_{k_2}$$$(1≤yi≤n$$$1 \\leq y_i \\leq n$$$)。这些顶点应当根据上述排列构成 Li Chen 的树中的一棵子树。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [],
+    "output": [],
+    "note": [
+      {
+        "ai": "对于第一个样例，Li Chen 的隐藏排列是 [2,3,1]$$$[2, 3, 1]$$$；对于第二个样例，两种情况下的隐藏排列都是 [5,3,2,4,1,6]$$$[5, 3, 2, 4, 1, 6]$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一个样例中，有一棵包含三个节点、排成一条线的树。上方是你如何给树以及你选择的子树编号，下方是 Li Chen 如何给他选择的树和子树编号：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/fd10a54c6cc10884aa7fb708a2cbf6d3cb4daa29.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一个询问中，你让 Andrew 查看你的编号方式下的节点 1$$$1$$$，并告诉你在 Li Chen 的编号方式下它的编号。Andrew 回答 2$$$2$$$。此时，你知道你的子树和 Li Chen 的子树都包含同一个节点(即按照你的编号方式编号为 1$$$1$$$ 的节点)，因此你可以输出 \"C 1\" 并结束。不过，你也可以让 Andrew 查看在 Li Chen 的编号方式下编号为 2$$$2$$$ 的节点，并告诉你在你的编号方式下它的编号。Andrew 回答 1$$$1$$$(给出这一步的唯一目的是向你展示如何提问)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于第二个样例，共有两个测试用例。第一个就是题面中的那个：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/6e657baf0e89b8da496fe553b22e3f133bb24d85.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们首先询问“B 2”，Andrew 会告诉我们 3$$$3$$$。在这种情况下，我们知道 3$$$3$$$ 是一个公共顶点，而且任何大小为 3$$$3$$$ 且包含节点 3$$$3$$$ 的子树也必须包含节点 1$$$1$$$，因此我们可以输出“C 1”或“C 3”中的任意一个作为答案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例的第二种情况下，情况如下所示：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/4caafc9d13cebf999fafcd0415c5a1acc5f3c908.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在这种情况下，你知道不包含节点 1$$$1$$$ 的、大小为 3$$$3$$$ 的唯一子树是子树 4,5,6$$$4,5,6$$$。你向 Andrew 询问 Li Chen 的标号方案中节点 1$$$1$$$ 的编号，Andrew 回答 5$$$5$$$。此时，你知道 Li Chen 的子树不包含节点 1$$$1$$$，所以他的子树必定由节点 4,5,6$$$4,5,6$$$(在你的标号方案中)组成，因此这两棵子树没有公共节点。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 相交子树",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

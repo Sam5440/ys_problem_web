@@ -1,0 +1,140 @@
+{
+  "code": "GYM106007E",
+  "letter": "E",
+  "title": "E. Clean White Paths",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106007/problem/E",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Given a tree of n$$$n$$$ vertices, each node is initially either black or white.",
+      "A path from node u$$$u$$$ to node v$$$v$$$ is:",
+      "white if both nodes u$$$u$$$ and v$$$v$$$ are white.",
+      "black if both nodes u$$$u$$$ and v$$$v$$$ are black.",
+      "otherwise it is a normal path neither white nor black.",
+      "A white path is clean if and only if there is no black path that contains this white path as a subpath of it.",
+      "A path is a subpath from another path if the set of vertices of this path forms a subset of the vertices of the other path.",
+      "The score of the tree is the number of Clean White Paths.",
+      "Note that path (u,v)$$$(u,v)$$$ is the same as path (v,u)$$$(v,u)$$$ and has to be counted once, and you have to count paths of the form (u,u)$$$(u,u)$$$.",
+      "Given q$$$q$$$ update queries, in each query you are given an integer u$$$u$$$, make the node u$$$u$$$ black.",
+      "After each query, print the score of the tree."
+    ],
+    "input": [
+      "The first line contains a single integer t$$$t$$$ (1≤t≤105)$$$(1 \\le t \\le 10^5)$$$, the number of test cases.",
+      "The first line of each test case contains two integers n$$$n$$$ and q$$$q$$$ (1≤n≤3×105)$$$(1 \\le n \\le 3 \\times 10^5)$$$ (1≤q≤3×105)$$$(1 \\le q \\le 3 \\times 10^5)$$$ , the size of the tree and the number of queries respectively.",
+      "The second line of each test case contains a binary string s$$$s$$$ of size n$$$n$$$ (si∈(0,1))$$$(s_i \\in (0,1))$$$ , if si$$$s_i$$$ is 1$$$1$$$ then the ith$$$i_{th}$$$ node is white, otherwise the node is black.",
+      "The next n−1$$$n-1$$$ lines describe the edges of the tree, each line contains two integers u$$$u$$$,v$$$v$$$ (1≤u,v≤n)$$$(1 \\le u,v \\le n)$$$, which means there is an edge between node u$$$u$$$ and node v$$$v$$$.",
+      "Each of the next q$$$q$$$ lines contains a single integer u$$$u$$$ (1≤u≤n)$$$(1 \\le u \\le n)$$$, the node to make black.",
+      "It is guaranteed that the sum of n$$$n$$$ and the sum of q$$$q$$$ over all test cases doesn't exceed 3×105$$$3 \\times 10^5$$$."
+    ],
+    "output": [
+      "In each test case, after each query print the score of the tree."
+    ],
+    "note": [
+      "After the first update, node 4$$$4$$$ is black; all white paths are clean, so the answer is 10$$$10$$$.",
+      "After the third update, there are two clean white paths: (1,5)$$$(1,5)$$$ and (1,1)$$$(1,1)$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n5 5\n11111\n5 2\n1 3\n5 4\n3 4\n4\n3\n2\n4\n1",
+      "output": "10\n6\n2\n2\n0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一棵有 n$$$n$$$ 个顶点的树，每个节点初始时为黑色或白色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从节点 u$$$u$$$ 到节点 v$$$v$$$ 的路径是：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当节点 u$$$u$$$ 和 v$$$v$$$ 都是白色时，为白色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当节点 u$$$u$$$ 和 v$$$v$$$ 都是黑色时，为黑色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则它是一条既非白色也非黑色的普通路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当且仅当不存在一条黑色路径包含这条白色路径作为其子路径时，这条白色路径才是干净的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果一条路径的顶点集合是另一条路径的顶点集合的子集，那么前者是后者的子路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "树的得分是干净白色路径的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，路径 (u,v)$$$(u,v)$$$ 与路径 (v,u)$$$(v,u)$$$ 相同，只能计数一次；并且还需要统计形如 (u,u)$$$(u,u)$$$ 的路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定 q$$$q$$$ 次更新查询。每次查询给定一个整数 u$$$u$$$，将节点 u$$$u$$$ 染成黑色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每次查询后，输出这棵树的分数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$ (1≤t≤105)$$$(1 \\le t \\le 10^5)$$$，表示测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$ 和 q$$$q$$$ (1≤n≤3×105)$$$(1 \\le n \\le 3 \\times 10^5)$$$ (1≤q≤3×105)$$$(1 \\le q \\le 3 \\times 10^5)$$$，分别表示树的大小和查询的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含一个长度为 n$$$n$$$ 的 01 串 s$$$s$$$ (si∈(0,1))$$$(s_i \\in (0,1))$$$。如果 si$$$s_i$$$ 为 1$$$1$$$，则第 ith$$$i_{th}$$$ 个节点是白色的；否则，该节点是黑色的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n−1$$$n-1$$$ 行描述树的边，每行包含两个整数 u$$$u$$$、v$$$v$$$ (1≤u,v≤n)$$$(1 \\le u,v \\le n)$$$，表示节点 u$$$u$$$ 和节点 v$$$v$$$ 之间有一条边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行中，每行包含一个整数 u$$$u$$$ (1≤u≤n)$$$(1 \\le u \\le n)$$$，表示要将其染黑的节点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和与 q$$$q$$$ 的总和不超过 3×105$$$3 \\times 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，在每次查询后输出这棵树的得分。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一次更新后，节点 4$$$4$$$ 为黑色；所有白色路径都是干净的，因此答案为 10$$$10$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三次更新后，有两条干净的白色路径：(1,5)$$$(1,5)$$$ 和 (1,1)$$$(1,1)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 纯白路径",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

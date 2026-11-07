@@ -1,0 +1,134 @@
+{
+  "code": "GYM106797D",
+  "letter": "D",
+  "title": "D. Delphi Danger",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106797/problem/D",
+  "difficulty": "*2100",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/c94b0dab3b601483057efec36b4dc2b83a93cc9f.png)",
+      "The temple of Apollon in Delphi. CC BY-SA 3.0 by Inkey on Wikimedia Commons",
+      "Have you ever been walking towards someone, dodged left only to see them do the same, and then entered an awkward shuffle to pass each other? Recently, a paper published at the Greek Commerce and Procurement Conference suggested that this may have already been a common problem in ancient Greece.",
+      "Back then, there were $$$n$$$ merchant caravans that occasionally passed through the Thermopylae. When two caravans met while travelling in opposite directions, both would simultaneously choose to steer either cliffside or seaside. If they made different choices, they could safely pass each other. However, if both chose the same side, they had another opportunity to choose, repeating this process until they could safely pass. Caravans were unable to recognize each other from a distance and would each follow a deterministic strategy to decide which way to steer. Since steering seaside is much more dangerous, we say that the risk of a given strategy is defined as the total number of times it dictates to steer seaside. For example, a caravan may follow a strategy described by the sequence \"cliffside, seaside, seaside, cliffside, seaside\" and then only \"cliffside\" from then on. This strategy has a risk of $$$3$$$.",
+      "The caravans convened at the oracle in Delphi to ask for advice on which strategies they should each adopt, but this went about as well as could be expected. Rather than helping, the oracle rattled off $$$m$$$ prophecies of the following form: When caravans $$$u$$$ and $$$v$$$ meet, they will awkwardly steer in the same direction exactly $$$t$$$ times before safely passing each other by steering in opposite directions on their $$$(t + 1)$$$th attempt.",
+      "The real strategies were lost to history, but you wonder how risky they must have been. You think it is unwise to go against the oracle (this has ended poorly in the past) and want to minimize the overall risk, defined as the sum of the risks of all individual strategies."
+    ],
+    "input": [
+      "The input consists of:",
+      "One line with two integers $$$n$$$ and $$$m$$$ ($$$2\\leq n\\leq 2 \\cdot 10^5$$$, $$$1\\leq m\\leq 4 \\cdot 10^5$$$), the number of caravans and the number of prophecies.",
+      "$$$m$$$ lines, each with three integers $$$u$$$, $$$v$$$, and $$$t$$$ ($$$1\\leq u, v\\leq n$$$, $$$u\\neq v$$$, $$$0\\leq t\\leq 10^9$$$), describing a prophecy:  the strategies of caravans $$$u$$$ and $$$v$$$ will cause them to steer in the same direction exactly $$$t$$$ times, and then steer in opposite directions.",
+      "It is guaranteed that each pair of caravans appears at most once."
+    ],
+    "output": [
+      "If there is no set of strategies that can fulfil all the prophecies, output \"impossible\". Otherwise, output \"possible\" followed by the minimum overall risk among all sets of strategies that fulfil the prophecies."
+    ],
+    "note": [
+      "In the first sample, the strategies can be chosen as follows:",
+      "caravan 1 always steers cliffside (risk 0)",
+      "caravan 2 steers cliffside, cliffside, seaside, and then cliffside from then on (risk 1)",
+      "caravan 3 steers seaside and then cliffside from then on (risk 1)",
+      "caravan 4 always steers cliffside (risk 0)",
+      "caravan 5 steers cliffside, cliffside, seaside, and then cliffside from then on (risk 1)",
+      "This satisfies all prophecies, yielding a minimum overall risk of 3."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 3\n1 2 2\n1 3 0\n4 5 2",
+      "output": "possible\n3"
+    },
+    {
+      "input": "4 3\n1 2 3\n2 4 4\n1 4 2",
+      "output": "impossible"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/c94b0dab3b601483057efec36b4dc2b83a93cc9f.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "德尔斐的阿波罗神庙。图片由 Inkey 上传至 Wikimedia Commons，采用 CC BY-SA 3.0 许可。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你是否曾朝某人走去时向左躲闪，却发现对方也做了同样的动作，接着两人尴尬地来回挪步，试图从彼此身边通过？最近，一篇在希腊商业与采购会议上发表的论文指出，这种情况或许早在古希腊就已是常见问题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当时，有 $$$n$$$ 支商队偶尔会经过温泉关。当两支商队沿相反方向行进时相遇，双方都会同时选择驶向山崖一侧或海边一侧。如果它们做出了不同的选择，就可以安全地彼此通过。然而，如果双方选择了同一侧，它们便会再次有机会进行选择，并重复这一过程，直到能够安全通过为止。\n\n商队无法从远处辨认彼此，因此每支商队都会遵循一种确定性的策略来决定驶向哪一侧。由于驶向海边一侧危险得多，我们定义一种给定策略的风险为：该策略指示驶向海边一侧的总次数。\n\n例如，一支商队可以遵循如下策略序列：“山崖一侧，海边一侧，海边一侧，山崖一侧，海边一侧”，此后始终选择“山崖一侧”。该策略的风险为 $$$3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "商队们聚集在德尔斐的神谕处，想要询问它们各自应采取何种策略的建议，但结果正如预期般糟糕。神谕不但没有帮忙，反而一口气念出了 $$$m$$$ 条如下形式的预言：当商队 $$$u$$$ 和 $$$v$$$ 相遇时，它们会尴尬地恰好 $$$t$$$ 次朝同一方向转向，随后在第 $$$(t + 1)$$$ 次尝试时通过朝相反方向转向而安全地彼此错开。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "真正的策略早已失传，但你想知道它们可能有多大风险。你认为违背神谕并不明智（过去这样做的结果很糟），因此希望将总体风险降至最低。总体风险定义为所有单个策略的风险之和。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入由以下部分组成：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一行包含两个整数 $$$n$$$ 和 $$$m$$$($$$2\\leq n\\leq 2 \\cdot 10^5$$$, $$$1\\leq m\\leq 4 \\cdot 10^5$$$)，分别表示商队数量和预言数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$m$$$ 行，每行包含三个整数 $$$u$$$、$$$v$$$ 和 $$$t$$$($$$1\\leq u, v\\leq n$$$、$$$u\\neq v$$$、$$$0\\leq t\\leq 10^9$$$)，描述一则预言：商队 $$$u$$$ 和 $$$v$$$ 的策略将使它们恰好有 $$$t$$$ 次朝相同方向转向，随后朝相反方向转向。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证每一对商队最多出现一次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果不存在能够实现所有预言的策略集合，输出“impossible”。否则，输出“possible”，并输出所有能够实现这些预言的策略集合中的最小总风险。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，可以按如下方式选择策略：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1号商队始终沿悬崖边行驶（风险为0）",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2号商队驶向悬崖边、悬崖边、海边，然后从此一直驶向悬崖边（风险 1）",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3号商队先沿海岸行驶，之后一直沿悬崖行驶（风险 1）",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "4号商队总是朝悬崖边行驶（风险为 0）",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "5号商队沿悬崖边行驶，接着经过悬崖边、海边，此后一直沿悬崖边行驶（风险为 1）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这满足了所有预言，使总体风险最小值为 3。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 德尔斐危机",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

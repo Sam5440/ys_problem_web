@@ -1,0 +1,170 @@
+{
+  "code": "GYM106507H",
+  "letter": "H",
+  "title": "H. Yet Another Maximize GCD Problem",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106507/problem/H",
+  "difficulty": "*1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array a$$$a$$$ with size n$$$n$$$ and an integer k$$$k$$$; you can do the following operation:",
+      "1. Choose two indices i,j$$$i, j$$$.",
+      "2. Choose a positive prime factor of ai$$$a_i$$$, denote it x$$$x$$$.",
+      "3. Multiply aj$$$a_j$$$ by x$$$x$$$, divide ai$$$a_i$$$ by x$$$x$$$.",
+      "For each i$$$i$$$ from 1$$$1$$$ to k$$$k$$$, answer the following query:",
+      "What is the maximum GCD of the array after i$$$i$$$ operations?"
+    ],
+    "input": [
+      "The first line contains two integers n,k$$$n, k$$$ (1≤n,k≤105)$$$(1 \\leq n,k \\leq 10^5)$$$.",
+      "The second line contains n$$$n$$$ integers ai$$$a_i$$$ (1≤ai≤106)$$$(1 \\leq a_i \\leq 10^6)$$$.",
+      "—",
+      "Tests in subtasks are numbered from 1−25$$$1-25$$$ with samples skipped. Each test is worth 10025=4$$$\\frac{100}{25}=4$$$ points.",
+      "Tests 1−5$$$1-5$$$ satisfy n,k≤200$$$n,k \\leq 200$$$.",
+      "Tests 6−10$$$6-10$$$ satisfy that each ai$$$a_i$$$ has at most 2$$$2$$$ distinct prime factors.",
+      "Tests 11−25$$$11-25$$$ satisfy no additional constraints."
+    ],
+    "output": [
+      "One line with k$$$k$$$ integers; the i$$$i$$$-th integer denotes the answer after i$$$i$$$ operations."
+    ],
+    "note": [
+      "Initially, the array is:",
+      "[900,150,6,1]$$$[900, 150, 6, 1]$$$",
+      "We describe one possible way to achieve the optimal answers.",
+      "After 1 operation: [300,150,6,3]$$$[300, 150, 6, 3]$$$",
+      "After 2 operations: [150,150,6,6]$$$[150, 150, 6, 6]$$$",
+      "After 3 operations: [60,30,30,15]$$$[60, 30, 30, 15]$$$",
+      "After 4 operations: [30,30,30,30]$$$[30, 30, 30, 30]$$$",
+      "After 5 operations: [30,30,30,30]$$$[30, 30, 30, 30]$$$",
+      "—",
+      "Problem Idea: naturalselection",
+      "Problem Preparation: naturalselection",
+      "Occurrences: Novice H, Advanced D"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 5\n900 150 6 1",
+      "output": "3 6 15 30 30"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个大小为 n$$$n$$$ 的数组 a$$$a$$$ 和一个整数 k$$$k$$$，你可以进行以下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1. 选择两个下标 i,j$$$i, j$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2. 选择 ai$$$a_i$$$ 的一个正质因子，并将其记为 x$$$x$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3. 将 aj$$$a_j$$$ 乘以 x$$$x$$$，将 ai$$$a_i$$$ 除以 x$$$x$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于从 1$$$1$$$ 到 k$$$k$$$ 的每个 i$$$i$$$，回答以下查询：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "进行 i$$$i$$$ 次操作后，数组的最大公约数是多少？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n,k$$$n, k$$$(1≤n,k≤105)$$$(1 \\leq n,k \\leq 10^5)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 ai$$$a_i$$$(1≤ai≤106)$$$(1 \\leq a_i \\leq 10^6)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务中的测试用例编号为 1−25$$$1-25$$$，跳过样例。每个测试用例计 10025=4$$$\\frac{100}{25}=4$$$ 分。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试用例 1−5$$$1-5$$$ 满足 n,k≤200$$$n,k \\leq 200$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试用例 6−10$$$6-10$$$ 满足每个 ai$$$a_i$$$ 至多有 2$$$2$$$ 个不同的素因子。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试 11−25$$$11-25$$$ 不满足其他额外限制。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "一行包含 k$$$k$$$ 个整数；第 i$$$i$$$ 个整数表示进行 i$$$i$$$ 次操作后的答案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "初始时，数组为：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "[900,150,6,1]$$$[900, 150, 6, 1]$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下面介绍一种达到最优答案的方法。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "进行 1 次操作后：[300,150,6,3]$$$[300, 150, 6, 3]$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "经过 2 次操作后：[150,150,6,6]$$$[150, 150, 6, 6]$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "经过 3 次操作后：[60,30,30,15]$$$[60, 30, 30, 15]$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "经过 4 次操作后：[30,30,30,30]$$$[30, 30, 30, 30]$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "经过 5 次操作后：[30,30,30,30]$$$[30, 30, 30, 30]$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "题目思路：naturalselection",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "题目准备：naturalselection",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "出现位置：Novice H、Advanced D",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "H. 又一道最大化最大公约数问题",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

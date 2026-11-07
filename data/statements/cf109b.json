@@ -1,0 +1,79 @@
+{
+  "code": "CF109B",
+  "letter": "B",
+  "title": "B. Lucky Probability",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/109/B",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Petya loves lucky numbers. We all know that lucky numbers are the positive integers whose decimal representations contain only the lucky digits 4 and 7. For example, numbers 47, 744, 4 are lucky and 5, 17, 467 are not.",
+      "Petya and his friend Vasya play an interesting game. Petya randomly chooses an integer p from the interval [pl, pr] and Vasya chooses an integer v from the interval [vl, vr] (also randomly). Both players choose their integers equiprobably. Find the probability that the interval [min(v, p), max(v, p)] contains exactly k lucky numbers."
+    ],
+    "input": [
+      "The single line contains five integers pl, pr, vl, vr and k (1 ≤ pl ≤ pr ≤ 109, 1 ≤ vl ≤ vr ≤ 109, 1 ≤ k ≤ 1000)."
+    ],
+    "output": [
+      "On the single line print the result with an absolute error of no more than 10 - 9."
+    ],
+    "note": [
+      "Consider that [a, b] denotes an interval of integers; this interval includes the boundaries. That is, ![](https://espresso.codeforces.com/18b4a6012d95ad18891561410f0314497a578d63.png)",
+      "In first case there are 32 suitable pairs: (1, 7), (1, 8), (1, 9), (1, 10), (2, 7), (2, 8), (2, 9), (2, 10), (3, 7), (3, 8), (3, 9), (3, 10), (4, 7), (4, 8), (4, 9), (4, 10), (7, 1), (7, 2), (7, 3), (7, 4), (8, 1), (8, 2), (8, 3), (8, 4), (9, 1), (9, 2), (9, 3), (9, 4), (10, 1), (10, 2), (10, 3), (10, 4). Total number of possible pairs is 10·10 = 100, so answer is 32 / 100.",
+      "In second case Petya always get number less than Vasya and the only lucky 7 is between this numbers, so there will be always 1 lucky number."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 10 1 10 2",
+      "output": "0.320000000000"
+    },
+    {
+      "input": "5 6 8 10 1",
+      "output": "1.000000000000"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Petya 喜欢幸运数字。我们都知道，幸运数字是十进制表示中只包含幸运数字 4 和 7 的正整数。例如，47、744、4 是幸运数字，而 5、17、467 不是。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Petya 和他的朋友 Vasya 玩一个有趣的游戏。Petya 从区间 [pl, pr] 中随机选择一个整数 p，Vasya 也从区间 [vl, vr] 中随机选择一个整数 v。两位玩家等概率地选择各个整数。求区间 [min(v, p), max(v, p)] 恰好包含 k 个幸运数字的概率。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "一行包含五个整数 pl、pr、vl、vr 和 k（1 ≤ pl ≤ pr ≤ 10^9，1 ≤ vl ≤ vr ≤ 10^9，1 ≤ k ≤ 1000）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在一行中输出结果，绝对误差不超过 10 - 9。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "规定 [a, b] 表示一个整数区间；该区间包含边界。也就是说，![](https://espresso.codeforces.com/18b4a6012d95ad18891561410f0314497a578d63.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一种情况下，有 32 个符合条件的数对：(1，7)、(1，8)、(1，9)、(1，10)、(2，7)、(2，8)、(2，9)、(2，10)、(3，7)、(3，8)、(3，9)、(3，10)、(4，7)、(4，8)、(4，9)、(4，10)、(7，1)、(7，2)、(7，3)、(7，4)、(8，1)、(8，2)、(8，3)、(8，4)、(9，1)、(9，2)、(9，3)、(9，4)、(10，1)、(10，2)、(10，3)、(10，4)。可能的数对总数为 10·10 = 100，因此答案为 32 / 100。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二种情况下，Petya 总是得到一个小于 Vasya 所得数字的数，而唯一的幸运数字 7 位于这两个数之间，因此总会有 1 个幸运数字。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 幸运概率",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

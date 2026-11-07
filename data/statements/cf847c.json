@@ -1,0 +1,93 @@
+{
+  "code": "CF847C",
+  "letter": "C",
+  "title": "C. Sum of Nestings",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/847/C",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Recall that the bracket sequence is considered regular if it is possible to insert symbols '+' and '1' into it so that the result is a correct arithmetic expression. For example, a sequence \"(()())\" is regular, because we can get correct arithmetic expression insering symbols '+' and '1': \"((1+1)+(1+1))\". Also the following sequences are regular: \"()()()\", \"(())\" and \"()\". The following sequences are not regular bracket sequences: \")(\", \"(()\" and \"())(()\".",
+      "In this problem you are given two integers n and k. Your task is to construct a regular bracket sequence consisting of round brackets with length 2·n with total sum of nesting of all opening brackets equals to exactly k. The nesting of a single opening bracket equals to the number of pairs of brackets in which current opening bracket is embedded.",
+      "For example, in the sequence \"()(())\" the nesting of first opening bracket equals to 0, the nesting of the second opening bracket equals to 0 and the nesting of the third opening bracket equal to 1. So the total sum of nestings equals to 1."
+    ],
+    "input": [
+      "The first line contains two integers n and k (1 ≤ n ≤ 3·105, 0 ≤ k ≤ 1018) — the number of opening brackets and needed total nesting."
+    ],
+    "output": [
+      "Print the required regular bracket sequence consisting of round brackets.",
+      "If there is no solution print \"Impossible\" (without quotes)."
+    ],
+    "note": [
+      "The first example is examined in the statement.",
+      "In the second example the answer is \"(((())))\". The nesting of the first opening bracket is 0, the nesting of the second is 1, the nesting of the third is 2, the nesting of fourth is 3. So the total sum of nestings equals to 0 + 1 + 2 + 3 = 6.",
+      "In the third it is impossible to construct a regular bracket sequence, because the maximum possible total sum of nestings for two opening brackets equals to 1. This total sum of nestings is obtained for the sequence \"(())\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1",
+      "output": "()(())"
+    },
+    {
+      "input": "4 6",
+      "output": "(((())))"
+    },
+    {
+      "input": "2 5",
+      "output": "Impossible"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "第一个样例已在题面中进行说明。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，答案是“(((())))”。第一个左括号的嵌套深度为 0，第二个左括号的嵌套深度为 1，第三个左括号的嵌套深度为 2，第四个左括号的嵌套深度为 3。因此，嵌套深度之和等于 0 + 1 + 2 + 3 = 6。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，不可能构造出合法括号序列，因为两个左括号的嵌套深度之和的最大可能值为 1。对于序列“(())”，可以得到这个嵌套深度之和。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "回忆一下，如果可以在括号序列中插入符号 '+' 和 '1'，使得到的结果成为一个正确的算术表达式，则称该括号序列是合法的。例如，序列 \"(()())\" 是合法的，因为我们可以通过插入符号 '+' 和 '1' 得到正确的算术表达式：\"((1+1)+(1+1))\"。以下序列同样是合法的：\"()()()\"、\"(())\" 和 \"()\"。以下序列不是合法括号序列：\")(\"、\"(()\" 和 \"())(()\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在本题中，给定两个整数 n 和 k。你的任务是构造一个长度为 2·n 的、由圆括号组成的合法括号序列，使所有左括号的嵌套数之和恰好等于 k。单个左括号的嵌套数等于包含当前左括号的括号对数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，在序列 \"()(())\" 中，第一个左括号的嵌套数为 0，第二个左括号的嵌套数为 0，第三个左括号的嵌套数为 1。因此，嵌套数总和为 1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 k（1 ≤ n ≤ 3·10^5，0 ≤ k ≤ 10^18）——左括号的数量以及所需的嵌套数总和。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出所需的由圆括号组成的合法括号序列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果不存在解，则输出 \"Impossible\"（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 嵌套之和",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "code": "CF549D",
+  "letter": "D",
+  "title": "D. Haar Features",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/549/D",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The first algorithm for detecting a face on the image working in realtime was developed by Paul Viola and Michael Jones in 2001. A part of the algorithm is a procedure that computes Haar features. As part of this task, we consider a simplified model of this concept.",
+      "Let's consider a rectangular image that is represented with a table of size n × m. The table elements are integers that specify the brightness of each pixel in the image.",
+      "A feature also is a rectangular table of size n × m. Each cell of a feature is painted black or white.",
+      "To calculate the value of the given feature at the given image, you must perform the following steps. First the table of the feature is put over the table of the image (without rotations or reflections), thus each pixel is entirely covered with either black or white cell. The value of a feature in the image is the value of W - B, where W is the total brightness of the pixels in the image, covered with white feature cells, and B is the total brightness of the pixels covered with black feature cells.",
+      "Some examples of the most popular Haar features are given below.",
+      "![](https://espresso.codeforces.com/7b607f43d52a051b4a30ee0a9cc80a09135d83e4.png)",
+      "Your task is to determine the number of operations that are required to calculate the feature by using the so-called prefix rectangles.",
+      "A prefix rectangle is any rectangle on the image, the upper left corner of which coincides with the upper left corner of the image.",
+      "You have a variable value, whose value is initially zero. In one operation you can count the sum of pixel values ​​at any prefix rectangle, multiply it by any integer and add to variable value.",
+      "You are given a feature. It is necessary to calculate the minimum number of operations required to calculate the values of this attribute at an arbitrary image. For a better understanding of the statement, read the explanation of the first sample."
+    ],
+    "input": [
+      "The first line contains two space-separated integers n and m (1 ≤ n, m ≤ 100) — the number of rows and columns in the feature.",
+      "Next n lines contain the description of the feature. Each line consists of m characters, the j-th character of the i-th line equals to \"W\", if this element of the feature is white and \"B\" if it is black."
+    ],
+    "output": [
+      "Print a single number — the minimum number of operations that you need to make to calculate the value of the feature."
+    ],
+    "note": [
+      "The first sample corresponds to feature B, the one shown in the picture. The value of this feature in an image of size 6 × 8 equals to the difference of the total brightness of the pixels in the lower and upper half of the image. To calculate its value, perform the following two operations:",
+      "add the sum of pixels in the prefix rectangle with the lower right corner in the 6-th row and 8-th column with coefficient 1 to the variable value (the rectangle is indicated by a red frame); ![](https://espresso.codeforces.com/b58310c85de9a0f17f6a1997100232c0c7481f84.png)",
+      "add the number of pixels in the prefix rectangle with the lower right corner in the 3-rd row and 8-th column with coefficient  - 2 and variable value. ![](https://espresso.codeforces.com/b38cf76c02a599fdaf334479e2b06a7d0f798d12.png)",
+      "Thus, all the pixels in the lower three rows of the image will be included with factor 1, and all pixels in the upper three rows of the image will be included with factor 1 - 2 =  - 1, as required."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 8\nBBBBBBBB\nBBBBBBBB\nBBBBBBBB\nWWWWWWWW\nWWWWWWWW\nWWWWWWWW",
+      "output": "2"
+    },
+    {
+      "input": "3 3\nWBW\nBWW\nWWW",
+      "output": "4"
+    },
+    {
+      "input": "3 6\nWWBBWW\nWWBBWW\nWWBBWW",
+      "output": "3"
+    },
+    {
+      "input": "4 4\nBBBB\nBBBB\nBBBB\nBBBW",
+      "output": "4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "2001 年，Paul Viola 和 Michael Jones 开发了第一种能够实时在图像中检测人脸的算法。该算法的一部分是计算 Haar 特征的过程。作为本题的一部分，我们将考虑这一概念的简化模型。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑一个用大小为 n × m 的表格表示的矩形图像。表格元素为整数，表示图像中每个像素的亮度。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "特征也是一个大小为 n × m 的矩形表格。特征的每个格子被涂成黑色或白色。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "要计算给定特征在给定图像上的取值，需要执行以下步骤。首先将特征表格覆盖在图像表格上（不允许旋转或翻转），这样每个像素都完全被黑色或白色格子覆盖。特征在图像中的取值等于 W - B，其中 W 是被白色特征格子覆盖的像素的总亮度，B 是被黑色特征格子覆盖的像素的总亮度。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "下面给出一些最常用的 Haar 特征的示例。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/7b607f43d52a051b4a30ee0a9cc80a09135d83e4.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你的任务是确定使用所谓的前缀矩形来计算该特征所需的操作次数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "前缀矩形是图像上的任意一个矩形，其左上角与图像的左上角重合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你有一个变量，其值初始为零。在一次操作中，你可以计算任意前缀矩形内像素值之和，将其乘以任意整数，并加到变量的值上。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个特征。你需要计算在任意图像上计算该特征值所需的最少操作次数。为了更好地理解题意，请阅读第一个样例的解释。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个用空格分隔的整数 n 和 m（1 ≤ n，m ≤ 100）——特征的行数和列数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来 n 行包含特征的描述。每行由 m 个字符组成。如果该特征的第 i 行第 j 个元素为白色，则第 i 行的第 j 个字符为“W”；如果为黑色，则为“B”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——计算该特征的值所需进行的最少操作次数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例对应于图中所示的特征 B。对于大小为 6 × 8 的图像，该特征的值等于图像下半部分与上半部分像素总亮度之差。要计算其值，执行以下两个操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将右下角位于第 6 行第 8 列的前缀矩形中像素的总和乘以系数 1，加到变量 value 上(该矩形用红框标出)；![](https://espresso.codeforces.com/b58310c85de9a0f17f6a1997100232c0c7481f84.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将右下角位于第 3 行第 8 列的前缀矩形中像素的数量乘以系数  - 2，加到变量 value 上。![](https://espresso.codeforces.com/b38cf76c02a599fdaf334479e2b06a7d0f798d12.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，图像下方三行中的所有像素都将以系数 1 计入，而图像上方三行中的所有像素都将以系数 1 - 2 =  - 1 计入，正如要求的那样。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Haar 特征",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

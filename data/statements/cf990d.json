@@ -1,0 +1,85 @@
+{
+  "code": "CF990D",
+  "letter": "D",
+  "title": "D. Graph And Its Complement",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/990/D",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Given three numbers n,a,b$$$n, a, b$$$. You need to find an adjacency matrix of such an undirected graph that the number of components in it is equal to a$$$a$$$, and the number of components in its complement is b$$$b$$$. The matrix must be symmetric, and all digits on the main diagonal must be zeroes.",
+      "In an undirected graph loops (edges from a vertex to itself) are not allowed. It can be at most one edge between a pair of vertices.",
+      "The adjacency matrix of an undirected graph is a square matrix of size n$$$n$$$ consisting only of \"0\" and \"1\", where n$$$n$$$ is the number of vertices of the graph and the i$$$i$$$-th row and the i$$$i$$$-th column correspond to the i$$$i$$$-th vertex of the graph. The cell (i,j)$$$(i,j)$$$ of the adjacency matrix contains 1$$$1$$$ if and only if the i$$$i$$$-th and j$$$j$$$-th vertices in the graph are connected by an edge.",
+      "A connected component is a set of vertices X$$$X$$$ such that for every two vertices from this set there exists at least one path in the graph connecting this pair of vertices, but adding any other vertex to X$$$X$$$ violates this rule.",
+      "The complement or inverse of a graph G$$$G$$$ is a graph H$$$H$$$ on the same vertices such that two distinct vertices of H$$$H$$$ are adjacent if and only if they are not adjacent in G$$$G$$$."
+    ],
+    "input": [
+      "In a single line, three numbers are given n,a,b(1≤n≤1000,1≤a,b≤n)$$$n, a, b \\,(1 \\le n \\le 1000, 1 \\le a, b \\le n)$$$: is the number of vertexes of the graph, the required number of connectivity components in it, and the required amount of the connectivity component in it's complement."
+    ],
+    "output": [
+      "If there is no graph that satisfies these constraints on a single line, print \"NO\" (without quotes).",
+      "Otherwise, on the first line, print \"YES\"(without quotes). In each of the next n$$$n$$$ lines, output n$$$n$$$ digits such that j$$$j$$$-th digit of i$$$i$$$-th line must be 1$$$1$$$ if and only if there is an edge between vertices i$$$i$$$ and j$$$j$$$ in G$$$G$$$ (and 0$$$0$$$ otherwise). Note that the matrix must be symmetric, and all digits on the main diagonal must be zeroes.",
+      "If there are several matrices that satisfy the conditions — output any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1 2",
+      "output": "YES\n001\n001\n110"
+    },
+    {
+      "input": "3 3 3",
+      "output": "NO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定三个数 n、a、b$$$n, a, b$$$。你需要找出这样一个无向图的邻接矩阵，使其连通分量的数量等于 a$$$a$$$，其补图中的连通分量数量等于 b$$$b$$$。该矩阵必须是对称矩阵，且主对角线上的所有数字都必须为 0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在无向图中，不允许存在环（从一个顶点连向自身的边）。一对顶点之间至多可以有一条边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "无向图的邻接矩阵是一个大小为 n$$$n$$$ 的方阵，其中只包含“0”和“1”。其中，n$$$n$$$ 是图中顶点的数量，邻接矩阵的第 i$$$i$$$ 行和第 i$$$i$$$ 列分别对应图中的第 i$$$i$$$ 个顶点。当且仅当图中的第 i$$$i$$$ 个顶点和第 j$$$j$$$ 个顶点之间有一条边相连时，邻接矩阵的单元格 (i,j)$$$(i,j)$$$ 中包含 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "连通分量是顶点集合 X$$$X$$$，满足该集合中的任意两个顶点之间都存在至少一条路径在图中连接这两个顶点，但向 X$$$X$$$ 中加入任何其他顶点都会违反这一规则。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "图 G$$$G$$$ 的补图或逆图是一个具有相同顶点的图 H$$$H$$$，其中 H$$$H$$$ 中的两个不同顶点相邻，当且仅当它们在 G$$$G$$$ 中不相邻。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "一行中给出三个数 n、a、b(1≤n≤1000,1≤a,b≤n)$$$n, a, b \\,(1 \\le n \\le 1000, 1 \\le a, b \\le n)$$$：分别表示图中顶点的数量、图中所需的连通分量数量，以及其补图中所需的连通分量数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果不存在满足这些约束的图，请输出 \"NO\"（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，在第一行输出 \"YES\"(不含引号)。接下来的 n$$$n$$$ 行中，每行输出 n$$$n$$$ 个数字，使得第 i$$$i$$$ 行的第 j$$$j$$$ 个数字当且仅当图 G$$$G$$$ 中的顶点 i$$$i$$$ 和 j$$$j$$$ 之间存在一条边时为 1$$$1$$$，否则为 0$$$0$$$。注意，矩阵必须是对称矩阵，且主对角线上的所有数字都必须为 0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个矩阵满足条件，输出其中任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 图及其补图",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

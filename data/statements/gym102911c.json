@@ -1,0 +1,189 @@
+{
+  "code": "GYM102911C",
+  "letter": "C",
+  "title": "C. Chocolate Game: Love is War",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102911/problem/C",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alice is madly in love with Bob and she hopes to impress him by beating him in yet another chocolate game.",
+      "The game begins with two piles of chocolate cookies, one on the left and one on the right. Alice and Bob will take turns.",
+      "On each player's turn, they must choose exactly one of the piles, and eat some positive number of cookies from it such that the number of cookies remaining is a positive divisor of the previous pile size. More formally, if there are n$$$n$$$ cookies in the chosen pile, then they can only eat k$$$k$$$ cookies from that pile if k$$$k$$$ is a positive integer and n−k$$$n-k$$$ is a positive divisor of n$$$n$$$.",
+      "The player with no valid move (the person whose turn it is when both piles are size 1$$$1$$$) is declared the loser.",
+      "Alice always goes first.",
+      "Alice and Bob are supergenius, perfectly rational grandmaster prodigies who always make the optimal move in any game they play. Alice considers a game to be WINNABLE if there is some strategy she can follow so that she is guaranteed to win no matter what Bob does (so long as Alice plays correctly). Alice considers a game UNWINNABLE if Bob has a strategy he can follow so that she is guaranteed to lose no matter what she does (so long as Bob is playing correctly).",
+      "Bob is madly in love with Cindy, so he places M$$$M$$$ cookies in the left pile and N$$$N$$$ cookies in the right pile, since M$$$M$$$ and N$$$N$$$ are Cindy's favorite numbers.",
+      "Cindy is madly in love with Alice, so she will rig the game such that it will be WINNABLE for Alice, by taking some number of cookies from each pile. So that Bob does not notice the changes, she can only take at most X$$$X$$$ cookies from the left pile, and at most Y$$$Y$$$ cookies from the right pile. Cindy can also choose not to take any cookies from either pile. You are also assured that X<M$$$X  \\lt  M$$$ and Y<N$$$Y  \\lt  N$$$.",
+      "How many different ways can Cindy rig the game in Alice's favor? Formally, count the number of ordered pairs of integers (x,y)$$$(x,y)$$$ such that 0≤x≤X$$$0 \\leq x \\leq X$$$ and 0≤y≤Y$$$0 \\leq y \\leq Y$$$, and a game that initially begins with piles of size M−x$$$M-x$$$ and N−y$$$N-y$$$ is WINNABLE for Alice."
+    ],
+    "input": [
+      "Input consists of a single line with four space-separated integers M$$$M$$$, N$$$N$$$, X$$$X$$$, and Y$$$Y$$$."
+    ],
+    "output": [
+      "Output a single integer, the number of different ways that Cindy can rig the game in Alice's favor.",
+      "It is recommended that Python users submit to PyPy for this problem.",
+      "0≤X<M$$$0 \\leq X  \\lt  M$$$",
+      "0≤Y<N$$$0 \\leq Y  \\lt  N$$$",
+      "Subtask 1 (30 points):",
+      "1≤M,N≤10$$$1 \\leq M,N \\leq 10$$$",
+      "Subtask 2 (20 points):",
+      "1≤M,N≤100$$$1 \\leq M,N \\leq 100$$$",
+      "Subtask 3 (20 points):",
+      "1≤M,N≤1000$$$1 \\leq M,N \\leq 1000$$$",
+      "Subtask 4 (15 points):",
+      "1≤M,N≤5⋅104$$$1 \\leq M,N \\leq 5\\cdot 10^4$$$",
+      "Subtask 5 (15 points):",
+      "1≤M,N≤5⋅106$$$1 \\leq M,N \\leq 5\\cdot 10^6$$$"
+    ],
+    "note": [
+      "In the first sample test case, suppose Cindy took x=0$$$x=0$$$ cookies from the left pile and y=1$$$y=1$$$ cookies from the right pile. Then, the game will have pile sizes 5$$$5$$$ and 9$$$9$$$, which we can show is WINNABLE for Alice.",
+      "First, she eats 6$$$6$$$ cookies from the right pile, which she can do because 9−6=3$$$9-6 = 3$$$ and 3$$$3$$$ is a positive divisor of 9$$$9$$$.",
+      "Now, the pile sizes are 5$$$5$$$ and 3$$$3$$$. If Bob eats from the left pile, his only choice is to eat 4$$$4$$$ cookies from it; then, Alice eats 2$$$2$$$ cookies from the right pile. If Bob eats from the right pile, his only choice is to eat 2$$$2$$$ cookies it; then, Alice eats 4$$$4$$$ cookies from the left pile.",
+      "In either case, there is only 1$$$1$$$ cookie left in each pile on Bob's turn, so he loses.",
+      "We can show that the full list of solutions are (0,0)$$$(0,0)$$$, (0,1)$$$(0,1)$$$, (0,2)$$$(0,2)$$$, and (1,2)$$$(1,2)$$$ for the first sample test case."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 10 1 2",
+      "output": "4"
+    },
+    {
+      "input": "10 10 9 9",
+      "output": "66"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Alice 疯狂地爱着 Bob，她希望通过在又一场巧克力游戏中击败 Bob 来给他留下深刻印象。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "游戏开始时有两堆巧克力饼干，一堆在左边，另一堆在右边。Alice 和 Bob 将轮流行动。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在每位玩家的回合中，他们必须恰好选择其中一堆，并从中吃掉正数个饼干，使剩余的饼干数成为之前该堆大小的正约数。更形式化地说，如果选中的一堆中有 n$$$n$$$ 块饼干，那么只有当 k$$$k$$$ 是正整数且 n−k$$$n-k$$$ 是 n$$$n$$$ 的正约数时，玩家才能从该堆中吃掉 k$$$k$$$ 块饼干。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "没有合法操作的玩家(也就是当两堆大小均为 1$$$1$$$ 时轮到的玩家)被判负。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Alice 总是先手。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Alice 和 Bob 是超级天才、完全理性的天才棋手，无论进行什么游戏，他们总是会采取最优操作。Alice 认为一个游戏是“可赢的”，当且仅当她存在某种策略，使得无论 Bob 做什么，她都必定能够获胜（只要 Alice 正确地进行游戏）。Alice 认为一个游戏是“不可赢的”，当且仅当 Bob 存在某种策略，使得无论她做什么，她都必定会输（只要 Bob 正确地进行游戏）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bob 疯狂地爱着 Cindy，因此他在左边的堆中放入 M$$$M$$$ 块饼干，在右边的堆中放入 N$$$N$$$ 块饼干，因为 M$$$M$$$ 和 N$$$N$$$ 是 Cindy 最喜欢的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Cindy 疯狂地爱着 Alice，因此她会从两堆中取走一些饼干，将游戏安排成对 Alice“可赢”。为了不让 Bob 注意到变化，她从左边一堆中最多只能取走 X$$$X$$$ 块饼干，从右边一堆中最多只能取走 Y$$$Y$$$ 块饼干。Cindy 也可以选择不从任何一堆中取走饼干。另有保证，X<M$$$X  \\lt  M$$$ 且 Y<N$$$Y  \\lt  N$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Cindy 有多少种不同的方式可以让游戏有利于 Alice？形式化地说，请计算满足 0≤x≤X$$$0 \\leq x \\leq X$$$ 且 0≤y≤Y$$$0 \\leq y \\leq Y$$$ 的整数有序对 (x,y)$$$(x,y)$$$ 的数量，其中初始时两堆的大小分别为 M−x$$$M-x$$$ 和 N−y$$$N-y$$$，并且此时的游戏对 Alice 是“可赢的”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入包含一行，四个以空格分隔的整数 M$$$M$$$、N$$$N$$$、X$$$X$$$ 和 Y$$$Y$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示 Cindy 使游戏有利于 Alice 的不同方法数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "建议使用 Python 的用户为本题提交 PyPy。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "0≤X<M$$$0 \\leq X  \\lt  M$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "0≤Y<N$$$0 \\leq Y  \\lt  N$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 1（30 分）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤M,N≤10$$$1 \\leq M,N \\leq 10$$$",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "子任务 2（20 分）：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "1≤M,N≤100$$$1 \\leq M,N \\leq 100$$$",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "子任务 3（20 分）：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "1≤M,N≤1000$$$1 \\leq M,N \\leq 1000$$$",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "子任务 4（15 分）：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "1≤M,N≤5⋅104$$$1 \\leq M,N \\leq 5\\cdot 10^4$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 5（15 分）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤M,N≤5⋅106$$$1 \\leq M,N \\leq 5\\cdot 10^6$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例测试用例中，假设 Cindy 从左边的堆中取走了 x=0$$$x=0$$$ 个饼干，从右边的堆中取走了 y=1$$$y=1$$$ 个饼干。那么，两堆的大小将变为 5$$$5$$$ 和 9$$$9$$$，我们可以证明 Alice 能赢得这场游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，她从右边的堆中吃掉 6$$$6$$$ 个饼干，这是可行的，因为 9−6=3$$$9-6 = 3$$$，且 3$$$3$$$ 是 9$$$9$$$ 的正约数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在，两堆的大小为 5$$$5$$$ 和 3$$$3$$$。如果 Bob 从左边的堆中吃饼干，他唯一的选择是从中吃掉 4$$$4$$$ 个饼干；然后，Alice 从右边的堆中吃掉 2$$$2$$$ 个饼干。如果 Bob 从右边的堆中吃饼干，他唯一的选择是吃掉其中 2$$$2$$$ 个饼干；然后，Alice 从左边的堆中吃掉 4$$$4$$$ 个饼干。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "无论哪种情况，在 Bob 的回合中每堆只剩下 1$$$1$$$ 块饼干，因此他输掉了比赛。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们可以证明，对于第一个样例测试用例，所有解的完整列表为 (0,0)$$$(0,0)$$$、(0,1)$$$(0,1)$$$、(0,2)$$$(0,2)$$$ 和 (1,2)$$$(1,2)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 巧克力游戏：爱就是战争",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "code": "GYM106806A",
+  "letter": "A",
+  "title": "A. Alternating Branch Cutting",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106806/problem/A",
+  "difficulty": "*2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "As you might know, gardening trends are constantly subject to change. Not too long ago, everyone wanted to decorate their garden with an immense, lush ternary tree. Nowadays, it is however more common for homeowners to want only a simple, slender unary tree. Alice and Emmy saw a clear business opportunity here, so they founded the Botanical Alternative Pruning Cooperative. For a fair price, they will turn any ternary tree into a unary tree in no time!",
+      "Currently, they are travelling to a customer who has a complete ternary tree of height $$$n$$$: there is a root at the bottom layer, and each vertex has $$$3$$$ neighbouring children in the next layer, continuing until layer $$$n$$$, which consists of $$$3^n$$$ leaves. The leaves come in two varieties: some of the leaves are green, while others are teal. From experience, Alice and Emmy know that every leaf is green with probability $$$0.5 + p$$$ and teal with probability $$$0.5 - p$$$. The colours of different leaves are independent from each other.",
+      "To prune the tree, they will start at the root vertex. Alice will cut off one of the three branches extending from this vertex, then Emmy will cut one of the two other branches. Then they both climb up along the remaining branch to the next branching vertex and repeat this process $$$n$$$ times, until they reach a leaf. Each time, Alice gets to cut the first branch, and Emmy cuts the second branch.",
+      "However, there is some disagreement on which branches to cut: Alice believes that they should do the cutting in such a way that the remaining leaf is green, while Emmy thinks that the remaining leaf should be teal. Thus, they will both cut branches in such a way to try to get the final remaining leaf to be of their preferred colour.",
+      "Assuming Alice and Emmy make optimal cuts, what is the probability that the final leaf will be green? Note that both Alice and Emmy will be able to see all the colours of the leaves before they start cutting the tree.",
+      "![](https://espresso.codeforces.com/ef9461fe9c5dcc5bf59cd9b89143413ee90e3826.png)",
+      "An example of a tree of height $$$2$$$, like in Sample Input 4. In this instance of a tree, the final leaf is teal."
+    ],
+    "input": [
+      "The input consists of:",
+      "One line with an integer $$$n$$$ ($$$1\\leq n\\leq 10^6$$$), the height of the tree.",
+      "One line with a floating point number $$$p$$$ ($$$-0.5  \\lt  p  \\lt  0.5$$$, $$$p \\neq 0$$$), where the probability of any leaf being green is $$$0.5+p$$$. $$$p$$$ is given in scientific notation, consisting of the following three parts (which are not separated by any whitespace):   a floating point number $$$m$$$ ($$$1 \\leq m  \\lt  10$$$ or $$$-10  \\lt  m \\leq -1$$$) given with at most $$$10$$$ digits after the decimal point, the mantissa,",
+      "the character 'e', which is shorthand for \"$$$\\cdot 10^\\wedge$$$\" (times ten to the power of),",
+      "an integer $$$e$$$ ($$$-10^7 \\leq e \\leq -1$$$), the exponent."
+    ],
+    "output": [
+      "Output the probability that the final remaining leaf is green.",
+      "Your answer should have an absolute error of at most $$$10^{-6}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n-4e-1",
+      "output": "0.028"
+    },
+    {
+      "input": "10\n-2.10e-2",
+      "output": "1.5245881e-3"
+    },
+    {
+      "input": "256\n1.2345e-46",
+      "output": "0.6448034868"
+    },
+    {
+      "input": "2\n7.7777777777e-10000000",
+      "output": "0.5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "正如你可能知道的那样，园艺潮流一直在不断变化。不久前，所有人都想用一棵庞大而茂盛的三叉树装饰自己的花园。然而如今，房主们更常希望拥有一棵简单纤细的单叉树。Alice 和 Emmy 看到了其中明显的商机，于是创立了 Botanical Alternative Pruning Cooperative。只需支付合理的价格，她们就能迅速将任意一棵三叉树改造成单叉树！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "目前，她们正在前往一位客户家中。这位客户拥有一棵高度为 $$$n$$$ 的完全三叉树：最底层有一个根节点，每个顶点在下一层都有 $$$3$$$ 个相邻的子节点，一直延伸到第 $$$n$$$ 层，该层由 $$$3^n$$$ 个叶节点组成。叶节点分为两种：其中一些是绿色的，另一些是青绿色的。根据经验，Alice 和 Emmy 知道，每个叶节点以 $$$0.5 + p$$$ 的概率为绿色，以 $$$0.5 - p$$$ 的概率为青绿色。不同叶节点的颜色相互独立。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了修剪这棵树，她们将从根节点开始。Alice 会从该节点延伸出的三条分支中砍掉一条，随后 Emmy 会从剩下的两条分支中砍掉一条。然后，她们一起沿着剩下的分支爬到下一个分叉节点，并将这一过程重复 $$$n$$$ 次，直到到达叶节点。每次都由 Alice 先砍掉一条分支，然后由 Emmy 砍掉第二条分支。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，关于应该砍掉哪些树枝，两人的意见并不一致：Alice 认为应该以剩下的叶子为绿色的方式砍枝，而 Emmy 认为剩下的叶子应该是青绿色的。因此，她们都会按照自己的偏好颜色，尝试通过砍枝使最终剩下的叶子成为自己偏好的颜色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "假设 Alice 和 Emmy 都进行最优切割，最终的叶子为绿色的概率是多少？注意，在开始切割树之前，Alice 和 Emmy 都能看到所有叶子的颜色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/ef9461fe9c5dcc5bf59cd9b89143413ee90e3826.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一棵高度为 $$$2$$$ 的树的示例，如样例输入 4 所示。在这棵树中，最后一个叶子节点为蓝绿色。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入包括：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一行包含一个整数 $$$n$$$($$$1\\leq n\\leq 10^6$$$)，表示树的高度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一行输出一个浮点数 $$$p$$$($$$-0.5  \\lt  p  \\lt  0.5$$$、$$$p \\neq 0$$$)，其中任意叶子为绿色的概率为 $$$0.5+p$$$。$$$p$$$ 以科学计数法给出，由以下三个部分组成(各部分之间没有任何空白字符)：一个浮点数 $$$m$$$($$$1 \\leq m  \\lt  10$$$ 或 $$$-10  \\lt  m \\leq -1$$$)，小数点后最多有 $$$10$$$ 位数字，即尾数，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "字符“e”，它是“$$$\\cdot 10^\\wedge$$$”(乘以 10 的幂)的简写，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一个整数 $$$e$$$($$$-10^7 \\leq e \\leq -1$$$)，即指数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出最后剩下的叶子为绿色的概率。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的答案的绝对误差不得超过 $$$10^{-6}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 交替剪枝",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

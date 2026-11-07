@@ -1,0 +1,124 @@
+{
+  "code": "GYM106644D",
+  "letter": "D",
+  "title": "D. Distinct Numbers",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106644/problem/D",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array $$$a$$$ of length $$$n$$$. For each $$$k$$$ from $$$2$$$ to $$$n$$$, find the maximum distance between two distinct elements within any subarray of length $$$k$$$.",
+      "Formally, for each $$$k$$$, we want to find:",
+      "$$$$$$\\max \\{ j - i \\mid 1 \\le i  \\lt  j \\le n, \\, j - i  \\lt  k, \\, a_i \\neq a_j \\}$$$$$$",
+      "If no such pair of distinct elements exists for a given $$$k$$$, the answer is $$$-1$$$."
+    ],
+    "input": [
+      "The first line contains a single integer $$$n$$$, representing the length of the array.",
+      "The second line contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$, representing the elements of the array.",
+      "$$$2 \\le n \\le 3 \\times 10^5$$$",
+      "$$$1 \\le a_i \\le 10^9$$$"
+    ],
+    "output": [
+      "Output $$$n-1$$$ space-separated integers on a single line. The $$$i$$$-th integer should be the answer for $$$k = i + 1$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1 2 1 2",
+      "output": "1 1 3"
+    },
+    {
+      "input": "5\n3 3 3 3 3",
+      "output": "-1 -1 -1 -1"
+    },
+    {
+      "input": "5\n1 2 3 4 5",
+      "output": "1 2 3 4"
+    }
+  ],
+  "titleZh": {
+    "0": "D. 不同数字",
+    "caiyun": "D. 不同数字",
+    "youdao": "D.不同的数字",
+    "deepl": "D.不同的数字",
+    "iflyrec": "D.不同的数字",
+    "ai": "D. 不同的数字",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "给定一个长度为$$$n$$$的数组$$$a$$$。对于$$$2$$$到$$$n$$$中的每个$$$k$$$，求长度为$$$k$$$的任意子数组中两个不同元素之间的最大距离。",
+        "youdao": "给定一个长度为$$$n$$$的数组$$$a$$$。对于$$$2$$$到$$$n$$$中的每个$$$k$$$，求长度为$$$k$$$的任意子数组中两个不同元素之间的最大距离。",
+        "deepl": "给你一个长度为 $$$n$$$ 的数组 $$$a$$$。对于从 $$$2$$$ 到 $$$n$$$ 的每个 $$$k$$$，找出长度为 $$$k$$$ 的子数组中两个不同元素之间的最大距离。",
+        "iflyrec": "给定一个长度为$$$n$$$的数组$$$a$$$。对于从$$$2$$$到$$$n$$$的每个$$$k$$$，找出长度为$$$k$$$的任何子数组内两个不同元素之间的最大距离。",
+        "ai": "给定一个长度为 $$$n$$$ 的数组 $$$a$$$。对于每个从 $$$2$$$ 到 $$$n$$$ 的 $$$k$$$，求任意长度为 $$$k$$$ 的子数组中两个互不相同元素之间的最大距离。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "正式来说，对于每个 $$$k$$$，我们想要找到：",
+        "youdao": "形式上，对于每个$$$k$$$，我们要找到：",
+        "iflyrec": "形式上，对于每个$$$k$$$，我们希望找到:",
+        "ai": "形式化地，对于每个 $$$k$$$，我们希望求出：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$$$$\\max \\{ j - i \\mid 1 \\le i  \\lt  j \\le n, \\, j - i  \\lt  k, \\, a_i \\neq a_j \\}$$$$$$",
+        "iflyrec": "$$$$$$\\max \\{ j - i \\mid 1 \\le i  \\lt  j \\le n, \\, j - i  \\lt  k, \\, a_i \\neq a_j \\}$$$$$$",
+        "ai": "$$$$$$\\max \\{ j - i \\mid 1 \\le i  \\lt  j \\le n, \\, j - i  \\lt  k, \\, a_i \\neq a_j \\}$$$$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "如果对于给定的$$$k$$$不存在这样的相异元素对，则答案是$$$-1$$$。",
+        "youdao": "如果给定的$$$k$$$不存在这样一对不同的元素，则答案是$$$-1$$$。",
+        "iflyrec": "如果对于给定的$$$k$$$不存在这样的相异元素对，则答案是$$$-1$$$。",
+        "ai": "如果对于给定的 $$$k$$$ 不存在这样一对互不相同的元素，则答案为 $$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数$$$n$$$，表示数组的长度。",
+        "youdao": "第一行包含一个整数$$$n$$$，表示数组的长度。",
+        "iflyrec": "第一行包含单个整数$$$n$$$，表示数组的长度。",
+        "ai": "第一行包含一个整数 $$$n$$$，表示数组的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "第二行包含 $$$n$$$ 整数 $$$a_1, a_2, \\ldots, a_n$$$，表示数组的元素。",
+        "youdao": "第二行包含$$$n$$$个整数$$$a_1, a_2, \\ldots, a_n$$$，表示数组的元素。",
+        "iflyrec": "第二行包含$$$n$$$个整数$$$a_1, a_2, \\ldots, a_n$$$，表示数组的元素。",
+        "ai": "第二行包含 $$$n$$$ 个整数 $$$a_1, a_2, \\ldots, a_n$$$，表示数组中的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$2 \\le n \\le 3 \\times 10^5$$$",
+        "iflyrec": "$$$2 \\le n \\le 3 \\times 10^5$$$",
+        "ai": "$$$2 \\le n \\le 3 \\times 10^5$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$1 \\le a_i \\le 10^9$$$",
+        "iflyrec": "$$$1 \\le a_i \\le 10^9$$$",
+        "ai": "$$$1 \\le a_i \\le 10^9$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "在单行上输出$$$n-1$$$空格分隔的整数。第$$$i$$$个整数应该是$$$k = i + 1$$$的答案。",
+        "youdao": "在单行上输出$$$n-1$$$个空格分隔的整数。$$$i$$$的第一个整数应该是$$$k = i + 1$$$的答案。",
+        "iflyrec": "在单行上输出$$$n-1$$$空格分隔的整数。第$$$i$$$个整数应该是$$$k = i + 1$$$的答案。",
+        "ai": "在一行中输出 $$$n-1$$$ 个以空格分隔的整数。第 $$$i$$$ 个整数应为 $$$k = i + 1$$$ 的答案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.118Z",
+  "translatedBy": [
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

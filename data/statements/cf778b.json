@@ -1,0 +1,99 @@
+{
+  "code": "CF778B",
+  "letter": "B",
+  "title": "B. Bitwise Formula",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/778/B",
+  "difficulty": "1800",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Bob recently read about bitwise operations used in computers: AND, OR and XOR. He have studied their properties and invented a new game.",
+      "Initially, Bob chooses integer m, bit depth of the game, which means that all numbers in the game will consist of m bits. Then he asks Peter to choose some m-bit number. After that, Bob computes the values of n variables. Each variable is assigned either a constant m-bit number or result of bitwise operation. Operands of the operation may be either variables defined before, or the number, chosen by Peter. After that, Peter's score equals to the sum of all variable values.",
+      "Bob wants to know, what number Peter needs to choose to get the minimum possible score, and what number he needs to choose to get the maximum possible score. In both cases, if there are several ways to get the same score, find the minimum number, which he can choose."
+    ],
+    "input": [
+      "The first line contains two integers n and m, the number of variables and bit depth, respectively (1 ≤ n ≤ 5000; 1 ≤ m ≤ 1000).",
+      "The following n lines contain descriptions of the variables. Each line describes exactly one variable. Description has the following format: name of a new variable, space, sign \":=\", space, followed by one of:",
+      "Binary number of exactly m bits.",
+      "The first operand, space, bitwise operation (\"AND\", \"OR\" or \"XOR\"), space, the second operand. Each operand is either the name of variable defined before or symbol '?', indicating the number chosen by Peter.",
+      "Variable names are strings consisting of lowercase Latin letters with length at most 10. All variable names are different."
+    ],
+    "output": [
+      "In the first line output the minimum number that should be chosen by Peter, to make the sum of all variable values minimum possible, in the second line output the minimum number that should be chosen by Peter, to make the sum of all variable values maximum possible. Both numbers should be printed as m-bit binary numbers."
+    ],
+    "note": [
+      "In the first sample if Peter chooses a number 0112, then a = 1012, b = 0112, c = 0002, the sum of their values is 8. If he chooses the number 1002, then a = 1012, b = 0112, c = 1112, the sum of their values is 15.",
+      "For the second test, the minimum and maximum sum of variables a, bb, cx, d and e is 2, and this sum doesn't depend on the number chosen by Peter, so the minimum Peter can choose is 0."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\na := 101\nb := 011\nc := ? XOR b",
+      "output": "011\n100"
+    },
+    {
+      "input": "5 1\na := 1\nbb := 0\ncx := ? OR a\nd := ? XOR ?\ne := d AND bb",
+      "output": "0\n0"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 m，分别表示变量的数量和位数（1 ≤ n ≤ 5000；1 ≤ m ≤ 1000）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n 行包含变量的描述。每行恰好描述一个变量。描述格式如下：新变量的名称、空格、符号 :=、空格，后接以下内容之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一个恰好包含 m 位的二进制数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一个操作数、空格、按位运算（“AND”、“OR”或“XOR”）、空格、第二个操作数。每个操作数要么是之前定义的变量名，要么是符号 '?'，表示 Peter 选择的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "变量名是由小写拉丁字母组成的字符串，长度不超过 10。所有变量名互不相同。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出 Peter 为使得所有变量值之和尽可能小而应选择的最小的数；第二行输出 Peter 为使得所有变量值之和尽可能大而应选择的最小的数。两个数都应输出为 m 位二进制数。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，如果 Peter 选择数 0112，则 a = 1012, b = 0112, c = 0002，它们的值之和为 8。如果他选择数 1002，则 a = 1012, b = 0112, c = 1112，它们的值之和为 15。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于第二个测试用例，变量 a、bb、cx、d 和 e 的和的最小值与最大值均为 2，并且这个和与 Peter 选择的数无关，所以 Peter 可以选择的最小数是 0。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Bob 最近读到了计算机中使用的按位运算：AND、OR 和 XOR。他研究了这些运算的性质，并发明了一种新游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最初，Bob 选择整数 m 作为游戏的位数，这意味着游戏中的所有数字都由 m 位组成。然后他要求 Peter 选择一个 m 位数。之后，Bob 计算 n 个变量的值。每个变量要么被赋予一个常量 m 位数，要么被赋予一次按位运算的结果。运算的操作数可以是之前定义的变量，也可以是 Peter 选择的数字。之后，Peter 的得分等于所有变量值之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bob 想知道 Peter 需要选择什么数字才能获得可能的最小得分，以及需要选择什么数字才能获得可能的最大得分。在这两种情况下，如果有多种选择可以得到相同的得分，则找出 Peter 可以选择的最小数字。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 按位运算公式",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

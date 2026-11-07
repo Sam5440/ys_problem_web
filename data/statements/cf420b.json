@@ -1,0 +1,97 @@
+{
+  "code": "CF420B",
+  "letter": "B",
+  "title": "B. Online Meeting",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/420/B",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Nearly each project of the F company has a whole team of developers working on it. They often are in different rooms of the office in different cities and even countries. To keep in touch and track the results of the project, the F company conducts shared online meetings in a Spyke chat.",
+      "One day the director of the F company got hold of the records of a part of an online meeting of one successful team. The director watched the record and wanted to talk to the team leader. But how can he tell who the leader is? The director logically supposed that the leader is the person who is present at any conversation during a chat meeting. In other words, if at some moment of time at least one person is present on the meeting, then the leader is present on the meeting.",
+      "You are the assistant director. Given the 'user logged on'/'user logged off' messages of the meeting in the chronological order, help the director determine who can be the leader. Note that the director has the record of only a continuous part of the meeting (probably, it's not the whole meeting)."
+    ],
+    "input": [
+      "The first line contains integers n and m (1 ≤ n, m ≤ 105) — the number of team participants and the number of messages. Each of the next m lines contains a message in the format:",
+      "'+ id': the record means that the person with number id (1 ≤ id ≤ n) has logged on to the meeting.",
+      "'- id': the record means that the person with number id (1 ≤ id ≤ n) has logged off from the meeting.",
+      "Assume that all the people of the team are numbered from 1 to n and the messages are given in the chronological order. It is guaranteed that the given sequence is the correct record of a continuous part of the meeting. It is guaranteed that no two log on/log off events occurred simultaneously."
+    ],
+    "output": [
+      "In the first line print integer k (0 ≤ k ≤ n) — how many people can be leaders. In the next line, print k integers in the increasing order — the numbers of the people who can be leaders.",
+      "If the data is such that no member of the team can be a leader, print a single number 0."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 4\n+ 1\n+ 2\n- 2\n- 1",
+      "output": "4\n1 3 4 5"
+    },
+    {
+      "input": "3 2\n+ 1\n- 2",
+      "output": "1\n3"
+    },
+    {
+      "input": "2 4\n+ 1\n- 1\n+ 2\n- 2",
+      "output": "0"
+    },
+    {
+      "input": "5 6\n+ 1\n- 1\n- 3\n+ 3\n+ 4\n- 4",
+      "output": "3\n2 3 5"
+    },
+    {
+      "input": "2 4\n+ 1\n- 2\n+ 2\n- 1",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "第一行输出整数 k（0 ≤ k ≤ n）——可能成为领导者的人员数量。第二行按递增顺序输出 k 个整数——可能成为领导者的人员编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果数据满足团队中没有任何成员可以成为领导者，则输出一个数字 0。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "F 公司的几乎每个项目都有一整个开发团队负责。开发人员经常身处不同城市甚至不同国家的办公室中的不同房间。为了保持联系并跟踪项目进展，F 公司会在 Spyke 聊天工具中举行在线会议。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一天，F 公司的主管拿到了某个成功团队的一次在线会议部分记录。主管观看了这段记录，并想与团队领导交谈。但他怎么才能判断谁是领导呢？主管合理地认为，领导就是在聊天会议期间的任何一次对话中都在场的人。换句话说，如果在某个时刻会议中至少有一个人在场，那么领导就在会议中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你是助理负责人。给定按时间顺序排列的会议中“用户登录”和“用户登出”消息，请帮助负责人确定哪些人可能成为领导者。注意，负责人手头只有会议一段连续时间内的记录（可能不是整个会议的记录）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含整数 n 和 m（1 ≤ n，m ≤ 10^5）——队伍参与者的数量和消息的数量。接下来的 m 行中，每行包含一条如下格式的消息：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "“+ id”：表示编号为 id 的人员（1 ≤ id ≤ n）已登录会议。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "“- id”：表示编号为 id 的人员（1 ≤ id ≤ n）已登出会议。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "假设队伍中的所有人员编号为 1 到 n，且消息按时间顺序给出。保证给出的序列是会议某一段连续时间内的正确记录。保证不存在两个登录或登出事件同时发生的情况。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 在线会议",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

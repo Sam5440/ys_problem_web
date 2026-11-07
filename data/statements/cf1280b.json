@@ -1,0 +1,170 @@
+{
+  "code": "CF1280B",
+  "letter": "B",
+  "title": "B. Beingawesomeism",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1280/B",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are an all-powerful being and you have created a rectangular world. In fact, your world is so bland that it could be represented by a r×c$$$r \\times c$$$ grid. Each cell on the grid represents a country. Each country has a dominant religion. There are only two religions in your world. One of the religions is called Beingawesomeism, who do good for the sake of being good. The other religion is called Pushingittoofarism, who do murders for the sake of being bad.",
+      "Oh, and you are actually not really all-powerful. You just have one power, which you can use infinitely many times! Your power involves missionary groups. When a missionary group of a certain country, say a$$$a$$$, passes by another country b$$$b$$$, they change the dominant religion of country b$$$b$$$ to the dominant religion of country a$$$a$$$.",
+      "In particular, a single use of your power is this:",
+      "You choose a horizontal 1×x$$$1 \\times x$$$ subgrid or a vertical x×1$$$x \\times 1$$$ subgrid. That value of x$$$x$$$ is up to you;",
+      "You choose a direction d$$$d$$$. If you chose a horizontal subgrid, your choices will either be NORTH or SOUTH. If you choose a vertical subgrid, your choices will either be EAST or WEST;",
+      "You choose the number s$$$s$$$ of steps;",
+      "You command each country in the subgrid to send a missionary group that will travel s$$$s$$$ steps towards direction d$$$d$$$. In each step, they will visit (and in effect convert the dominant religion of) all s$$$s$$$ countries they pass through, as detailed above.",
+      "The parameters x$$$x$$$, d$$$d$$$, s$$$s$$$ must be chosen in such a way that any of the missionary groups won't leave the grid.",
+      "The following image illustrates one possible single usage of your power. Here, A represents a country with dominant religion Beingawesomeism and P represents a country with dominant religion Pushingittoofarism. Here, we've chosen a 1×4$$$1 \\times 4$$$ subgrid, the direction NORTH, and s=2$$$s = 2$$$ steps.",
+      "![](https://espresso.codeforces.com/3baf1f32ca655636504d471bbe121a91c9f3727a.png)",
+      "You are a being which believes in free will, for the most part. However, you just really want to stop receiving murders that are attributed to your name. Hence, you decide to use your powers and try to make Beingawesomeism the dominant religion in every country.",
+      "What is the minimum number of usages of your power needed to convert everyone to Beingawesomeism?",
+      "With god, nothing is impossible. But maybe you're not god? If it is impossible to make Beingawesomeism the dominant religion in all countries, you must also admit your mortality and say so."
+    ],
+    "input": [
+      "The first line of input contains a single integer t$$$t$$$ (1≤t≤2⋅104$$$1 \\le t \\le 2\\cdot 10^4$$$) denoting the number of test cases.",
+      "The first line of each test case contains two space-separated integers r$$$r$$$ and c$$$c$$$ denoting the dimensions of the grid (1≤r,c≤60$$$1 \\le r, c \\le 60$$$). The next r$$$r$$$ lines each contains c$$$c$$$ characters describing the dominant religions in the countries. In particular, the j$$$j$$$-th character in the i$$$i$$$-th line describes the dominant religion in the country at the cell with row i$$$i$$$ and column j$$$j$$$, where:",
+      "\"A\" means that the dominant religion is Beingawesomeism;",
+      "\"P\" means that the dominant religion is Pushingittoofarism.",
+      "It is guaranteed that the grid will only contain \"A\" or \"P\" characters. It is guaranteed that the sum of the r⋅c$$$r \\cdot c$$$ in a single file is at most 3⋅106$$$3 \\cdot 10^6$$$."
+    ],
+    "output": [
+      "For each test case, output a single line containing the minimum number of usages of your power needed to convert everyone to Beingawesomeism, or the string \"MORTAL\" (without quotes) if it is impossible to do so."
+    ],
+    "note": [
+      "In the first test case, it can be done in two usages, as follows:",
+      "Usage 1:",
+      "![](https://espresso.codeforces.com/3e3d3cb4dd1dca136545262332b054cf5968c044.png)",
+      "Usage 2:",
+      "![](https://espresso.codeforces.com/d49886150e545d4c05e5130dc2bb58c56d289555.png)",
+      "In the second test case, it can be done with just one usage of the power.",
+      "In the third test case, it is impossible to convert everyone to Beingawesomeism, so the answer is \"MORTAL\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n7 8\nAAPAAAAA\nPPPPAAAA\nPPPPAAAA\nAPAAPPPP\nAPAPPAPP\nAAAAPPAP\nAAAAPPAA\n6 5\nAAAAA\nAAAAA\nAAPAA\nAAPAP\nAAAPP\nAAAPP\n4 4\nPPPP\nPPPP\nPPPP\nPPPP\n3 4\nPPPP\nPAAP\nPPPP",
+      "output": "2\n1\nMORTAL\n4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你是一位全能的存在，并创造了一个矩形世界。事实上，你的世界非常单调，可以用一个 r×c$$$r \\times c$$$ 的网格表示。网格中的每个格子代表一个国家。每个国家都有一种主导宗教。你的世界里只有两种宗教。其中一种叫作 Beingawesomeism，信徒行善只是因为行善本身就是好事。另一种叫作 Pushingittoofarism，信徒为了作恶而杀人。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "哦，其实你并非真的全能。你只有一种能力，但可以无限次使用！你的能力与传教团有关。当某个国家的传教团，比如来自国家 a$$$a$$$ 的传教团，经过另一个国家 b$$$b$$$ 时，他们会将国家 b$$$b$$$ 的主导宗教改为国家 a$$$a$$$ 的主导宗教。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "特别是，你的能力可以这样使用一次：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你选择一个水平的 1×x$$$1 \\times x$$$ 子网格，或一个垂直的 x×1$$$x \\times 1$$$ 子网格。x$$$x$$$ 的值由你决定；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你选择一个方向 d$$$d$$$。如果你选择的是水平子网格，则可以选择北或南；如果你选择的是垂直子网格，则可以选择东或西；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你选择步数 s$$$s$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你命令子网格中的每个国家都派出一支传教队，沿方向 d$$$d$$$ 行进 s$$$s$$$ 步。每一步中，他们都会经过所有途经的 s$$$s$$$ 个国家，并使这些国家的主流宗教实际改宗，具体如上所述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "参数 x$$$x$$$、d$$$d$$$、s$$$s$$$ 的选择必须保证任何一支传教队都不会离开网格。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下图展示了使用你的能力的一种可能方式。这里，A 表示一个主流宗教为 Beingawesomeism 的国家，P 表示一个主流宗教为 Pushingittoofarism 的国家。这里，我们选择了一个 1×4$$$1 \\times 4$$$ 子网格，方向为北，步数为 s=2$$$s = 2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/3baf1f32ca655636504d471bbe121a91c9f3727a.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你是一个大体上相信自由意志的存在。不过，你真的很想不再收到那些被归咎于你的谋杀事件。因此，你决定使用自己的能力，试图让 Beingawesomeism 成为每个国家的主流宗教。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要让所有人都改信 Beingawesomeism，最少需要使用多少次你的能力？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有神在，就没有什么是不可能的。但你可能不是神？如果不可能让 Beingawesomeism 成为所有国家的主流宗教，你也必须承认自己终有一死，并明确说明这一点。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 t$$$t$$$(1≤t≤2⋅104$$$1 \\le t \\le 2\\cdot 10^4$$$)，表示测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个以空格分隔的整数 r$$$r$$$ 和 c$$$c$$$，表示网格的尺寸(1≤r,c≤60$$$1 \\le r, c \\le 60$$$)。接下来的 r$$$r$$$ 行中，每行包含 c$$$c$$$ 个字符，用于描述各个国家的主流宗教。具体来说，第 i$$$i$$$ 行的第 j$$$j$$$ 个字符描述了位于第 i$$$i$$$ 行、第 j$$$j$$$ 列单元格中的国家的主流宗教，其中：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "“A”表示主流宗教为 Beingawesomeism；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "“P”表示主流宗教为 Pushingittoofarism。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证网格中只包含 “A” 或 “P” 字符。保证单个文件中所有测试用例的 r⋅c$$$r \\cdot c$$$ 之和不超过 3⋅106$$$3 \\cdot 10^6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一行，包含将所有人转化为 Beingawesomeism 所需使用能力的最少次数；如果无法完成，则输出字符串 “MORTAL”（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，可以按如下方式使用两次能力完成：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "用法 1：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/3e3d3cb4dd1dca136545262332b054cf5968c044.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "用法 2：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/d49886150e545d4c05e5130dc2bb58c56d289555.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，只需使用一次这种力量即可完成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试用例中，不可能将所有人都转变为 Beingawesomeism，因此答案是“MORTAL”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Beingawesomeism",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

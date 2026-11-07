@@ -1,0 +1,105 @@
+{
+  "code": "CF1575H",
+  "letter": "H",
+  "title": "H. Holiday Wall Ornaments",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1575/H",
+  "difficulty": "2200",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "The Winter holiday will be here soon. Mr. Chanek wants to decorate his house's wall with ornaments. The wall can be represented as a binary string $$$a$$$ of length $$$n$$$. His favorite nephew has another binary string $$$b$$$ of length $$$m$$$ ($$$m \\leq n$$$).",
+      "Mr. Chanek's nephew loves the non-negative integer $$$k$$$. His nephew wants exactly $$$k$$$ occurrences of $$$b$$$ as substrings in $$$a$$$.",
+      "However, Mr. Chanek does not know the value of $$$k$$$. So, for each $$$k$$$ ($$$0 \\leq k \\leq n - m + 1$$$), find the minimum number of elements in $$$a$$$ that have to be changed such that there are exactly $$$k$$$ occurrences of $$$b$$$ in $$$a$$$.",
+      "A string $$$s$$$ occurs exactly $$$k$$$ times in $$$t$$$ if there are exactly $$$k$$$ different pairs $$$(p,q)$$$ such that we can obtain $$$s$$$ by deleting $$$p$$$ characters from the beginning and $$$q$$$ characters from the end of $$$t$$$."
+    ],
+    "input": [
+      "The first line contains two integers $$$n$$$ and $$$m$$$ ($$$1 \\leq m \\leq n \\leq 500$$$) — size of the binary string $$$a$$$ and $$$b$$$ respectively.",
+      "The second line contains a binary string $$$a$$$ of length $$$n$$$.",
+      "The third line contains a binary string $$$b$$$ of length $$$m$$$."
+    ],
+    "output": [
+      "Output $$$n - m + 2$$$ integers — the $$$(k+1)$$$-th integer denotes the minimal number of elements in $$$a$$$ that have to be changed so there are exactly $$$k$$$ occurrences of $$$b$$$ as a substring in $$$a$$$."
+    ],
+    "note": [
+      "For $$$k = 0$$$, to make the string $$$a$$$ have no occurrence of 101, you can do one character change as follows.",
+      "100101011 $$$\\rightarrow$$$ 100100011",
+      "For $$$k = 1$$$, you can also change a single character.",
+      "100101011 $$$\\rightarrow$$$ 100001011",
+      "For $$$k = 2$$$, no changes are needed."
+    ]
+  },
+  "examples": [
+    {
+      "input": "9 3\n100101011\n101",
+      "output": "1 1 0 1 6 -1 -1 -1"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "对于 $$$k = 0$$$，要使字符串 $$$a$$$ 中不出现 101，可以进行如下的一次字符修改。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "100101011 $$$\\rightarrow$$$ 100100011",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 $$$k = 1$$$，你也可以修改一个字符。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "100101011 $$$\\rightarrow$$$ 100001011",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 $$$k = 2$$$，无需进行任何修改。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 $$$n$$$ 和 $$$m$$$($$$1 \\leq m \\leq n \\leq 500$$$)——分别表示二进制字符串 $$$a$$$ 和 $$$b$$$ 的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个长度为 $$$n$$$ 的二进制字符串 $$$a$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含一个长度为 $$$m$$$ 的 01 串 $$$b$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 $$$n - m + 2$$$ 个整数——第 $$$(k+1)$$$ 个整数表示 $$$a$$$ 中需要修改的元素的最少数量，使 $$$b$$$ 作为子串在 $$$a$$$ 中恰好出现 $$$k$$$ 次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "寒假很快就要到了。Chanek 先生想用装饰品装饰自家房屋的墙壁。墙壁可以表示为一个长度为 $$$n$$$ 的二进制字符串 $$$a$$$。他最喜欢的侄子还有另一个长度为 $$$m$$$ 的二进制字符串 $$$b$$$($$$m \\leq n$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Chanek 先生的侄子喜欢非负整数 $$$k$$$。他的侄子希望 $$$b$$$ 作为子串在 $$$a$$$ 中恰好出现 $$$k$$$ 次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，Chanek 先生不知道 $$$k$$$ 的值。因此，对于每个 $$$k$$$($$$0 \\leq k \\leq n - m + 1$$$)，求必须修改 $$$a$$$ 中元素的最小数量，使得 $$$b$$$ 在 $$$a$$$ 中恰好出现 $$$k$$$ 次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在恰好 $$$k$$$ 个不同的对 $$$(p,q)$$$，使得从 $$$t$$$ 的开头删除 $$$p$$$ 个字符、从末尾删除 $$$q$$$ 个字符后可以得到 $$$s$$$，则称字符串 $$$s$$$ 在 $$$t$$$ 中恰好出现 $$$k$$$ 次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "H. 节日墙饰",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "code": "CF848A",
+  "letter": "A",
+  "title": "A. From Y to Y",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/848/A",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "From beginning till end, this message has been waiting to be conveyed.",
+      "For a given unordered multiset of n lowercase English letters (\"multi\" means that a letter may appear more than once), we treat all letters as strings of length 1, and repeat the following operation n - 1 times:",
+      "Remove any two elements s and t from the set, and add their concatenation s + t to the set.",
+      "The cost of such operation is defined to be ![](https://espresso.codeforces.com/d6245ecc5766ad90cc96811959cd01bbfd6e18df.png), where f(s, c) denotes the number of times character c appears in string s.",
+      "Given a non-negative integer k, construct any valid non-empty set of no more than 100 000 letters, such that the minimum accumulative cost of the whole process is exactly k. It can be shown that a solution always exists."
+    ],
+    "input": [
+      "The first and only line of input contains a non-negative integer k (0 ≤ k ≤ 100 000) — the required minimum cost."
+    ],
+    "output": [
+      "Output a non-empty string of no more than 100 000 lowercase English letters — any multiset satisfying the requirements, concatenated to be a string.",
+      "Note that the printed string doesn't need to be the final concatenated string. It only needs to represent an unordered multiset of letters."
+    ],
+    "note": [
+      "For the multiset {'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b'}, one of the ways to complete the process is as follows:",
+      "{\"ab\", \"a\", \"b\", \"a\", \"b\", \"a\", \"b\"}, with a cost of 0;",
+      "{\"aba\", \"b\", \"a\", \"b\", \"a\", \"b\"}, with a cost of 1;",
+      "{\"abab\", \"a\", \"b\", \"a\", \"b\"}, with a cost of 1;",
+      "{\"abab\", \"ab\", \"a\", \"b\"}, with a cost of 0;",
+      "{\"abab\", \"aba\", \"b\"}, with a cost of 1;",
+      "{\"abab\", \"abab\"}, with a cost of 1;",
+      "{\"abababab\"}, with a cost of 8.",
+      "The total cost is 12, and it can be proved to be the minimum cost of the process."
+    ]
+  },
+  "examples": [
+    {
+      "input": "12",
+      "output": "abababab"
+    },
+    {
+      "input": "3",
+      "output": "codeforces"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "对于多重集 {'a', 'b', 'a', 'b', 'a', 'b', 'a', 'b'}，完成该过程的一种方式如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "{\"ab\", \"a\", \"b\", \"a\", \"b\", \"a\", \"b\"}，代价为 0；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "{\"aba\", \"b\", \"a\", \"b\", \"a\", \"b\"}，代价为 1；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "{\"abab\", \"a\", \"b\", \"a\", \"b\"}，代价为 1；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "{\"abab\", \"ab\", \"a\", \"b\"}，代价为 0；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "{\"abab\", \"aba\", \"b\"}，代价为 1；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "{\"abab\", \"abab\"}，代价为 1；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "{\"abababab\"}，代价为 8。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "总代价为 12，并且可以证明这是该过程的最小代价。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "从开始到结束，这条消息一直等待着被传达。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于给定的由 n 个小写英文字母组成的无序多重集合（“多重”意味着某个字母可能出现多次），我们将所有字母视为长度为 1 的字符串，并重复以下操作 n - 1 次：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从集合中移除任意两个元素 s 和 t，并将它们的拼接 s + t 加入集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "该操作的代价定义为 ![](https://espresso.codeforces.com/d6245ecc5766ad90cc96811959cd01bbfd6e18df.png)，其中 f(s, c) 表示字符 c 在字符串 s 中出现的次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个非负整数 k，构造任意一个合法的非空集合，其中包含不超过 100 000 个字母，使得整个过程的最小累积代价恰好为 k。可以证明解总是存在。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行也是唯一一行包含一个非负整数 k（0 ≤ k ≤ 100 000）——所需的最小代价。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个长度不超过 100 000 的小写英文字母组成的非空字符串——将任意满足要求的多重集合拼接成一个字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，输出的字符串不需要是最终拼接后的字符串。它只需要表示一个无序的字母多重集。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 从 Y 到 Y",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

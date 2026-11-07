@@ -1,0 +1,125 @@
+{
+  "code": "CF2195D",
+  "letter": "D",
+  "title": "D. Absolute Cinema",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/2195/D",
+  "difficulty": "*1200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There is a hidden sequence a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ of n$$$n$$$ integers (n≥2$$$n \\ge 2$$$). It is guaranteed that |ai|≤1000$$$|a_i| \\le 1000$$$ for all 1≤i≤n$$$1 \\le i \\le n$$$.",
+      "Let's define a function f(x)$$$f(x)$$$ as follows:",
+      "f(x)=n∑i=1ai⋅|i−x|\n$$f(x)=\\sum_{i=1}^n a_i \\cdot |i-x|$$",
+      "Given n$$$n$$$ values f(1),f(2),…,f(n)$$$f(1),f(2),\\ldots,f(n)$$$, please determine the values of a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$.",
+      "It is guaranteed that the values a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ can be determined uniquely."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$). The description of the test cases follows.",
+      "The first line of each test case contains a single integer n$$$n$$$ (2≤n≤300000$$$\\color{red}{2} \\le n \\le 300\\,000$$$).",
+      "The second line of each test case contains n$$$n$$$ integers f(1),f(2),…,f(n)$$$f(1),f(2),\\ldots,f(n)$$$ (−1014≤f(i)≤1014$$$-10^{14} \\le f(i) \\le 10^{14}$$$).",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 300000$$$300\\,000$$$."
+    ],
+    "output": [
+      "For each test case, output n$$$n$$$ integers a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ on a separate line (|ai|≤1000$$$|a_i| \\le 1000$$$).",
+      "It is guaranteed that the values a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ can be determined uniquely."
+    ],
+    "note": [
+      "In the first test case, the hidden sequence is a=[1,4,2,3]$$$a=[1,4,2,3]$$$.",
+      "The values f(1),f(2),…,f(n)$$$f(1),f(2),\\ldots,f(n)$$$ are as follows:",
+      "f(1)=1⋅|1−1|+4⋅|2−1|+2⋅|3−1|+3⋅|4−1|=0+4+4+9=17$$$f(1) = 1 \\cdot |1-1| + 4 \\cdot |2-1| + 2 \\cdot |3-1| + 3 \\cdot |4-1| = 0+4+4+9 = 17$$$;",
+      "f(2)=1⋅|1−2|+4⋅|2−2|+2⋅|3−2|+3⋅|4−2|=1+0+2+6=9$$$f(2) = 1 \\cdot |1-2| + 4 \\cdot |2-2| + 2 \\cdot |3-2| + 3 \\cdot |4-2| = 1+0+2+6 = 9$$$;",
+      "f(3)=1⋅|1−3|+4⋅|2−3|+2⋅|3−3|+3⋅|4−3|=2+4+0+3=9$$$f(3) = 1 \\cdot |1-3| + 4 \\cdot |2-3| + 2 \\cdot |3-3| + 3 \\cdot |4-3| = 2+4+0+3 = 9$$$;",
+      "f(4)=1⋅|1−4|+4⋅|2−4|+2⋅|3−4|+3⋅|4−4|=3+8+2+0=13$$$f(4) = 1 \\cdot |1-4| + 4 \\cdot |2-4| + 2 \\cdot |3-4| + 3 \\cdot |4-4| = 3+8+2+0 = 13$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n4\n17 9 9 13\n6\n-37 -32 -15 4 27 42\n5\n-26 -32 -24 -4 2\n2\n420 -69",
+      "output": "1 4 2 3\n3 6 1 2 -4 -7\n-6 7 6 -7 -6\n-69 420"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "存在一个由 n$$$n$$$ 个整数构成的隐藏序列 a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$，其中 n≥2$$$n \\ge 2$$$。保证对于所有 1≤i≤n$$$1 \\le i \\le n$$$，均有 |ai|≤1000$$$|a_i| \\le 1000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "定义函数 f(x)$$$f(x)$$$ 如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "f(x)=n∑i=1ai⋅|i−x|\n$$f(x)=\\sum_{i=1}^n a_i \\cdot |i-x|$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定 n$$$n$$$ 个值 f(1),f(2),…,f(n)$$$f(1),f(2),\\ldots,f(n)$$$，请确定 a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ 的值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ 的值可以被唯一确定。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)。接下来是各个测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(2≤n≤300000$$$\\color{red}{2} \\le n \\le 300\\,000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 f(1),f(2),…,f(n)$$$f(1),f(2),\\ldots,f(n)$$$(−1014≤f(i)≤1014$$$-10^{14} \\le f(i) \\le 10^{14}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 300000$$$300\\,000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，单独一行输出 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$(|ai|≤1000$$$|a_i| \\le 1000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 a1,a2,…,an$$$a_1,a_2,\\ldots,a_n$$$ 的值可以被唯一确定。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，隐藏序列为 a=[1,4,2,3]$$$a=[1,4,2,3]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "各个值 f(1),f(2),…,f(n)$$$f(1),f(2),\\ldots,f(n)$$$ 如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "f(1)=1⋅|1−1|+4⋅|2−1|+2⋅|3−1|+3⋅|4−1|=0+4+4+9=17$$$f(1) = 1 \\cdot |1-1| + 4 \\cdot |2-1| + 2 \\cdot |3-1| + 3 \\cdot |4-1| = 0+4+4+9 = 17$$$;",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "f(2)=1⋅|1−2|+4⋅|2−2|+2⋅|3−2|+3⋅|4−2|=1+0+2+6=9$$$f(2) = 1 \\cdot |1-2| + 4 \\cdot |2-2| + 2 \\cdot |3-2| + 3 \\cdot |4-2| = 1+0+2+6 = 9$$$;",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "f(3)=1⋅|1−3|+4⋅|2−3|+2⋅|3−3|+3⋅|4−3|=2+4+0+3=9$$$f(3) = 1 \\cdot |1-3| + 4 \\cdot |2-3| + 2 \\cdot |3-3| + 3 \\cdot |4-3| = 2+4+0+3 = 9$$$;",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "f(4)=1⋅|1−4|+4⋅|2−4|+2⋅|3−4|+3⋅|4−4|=3+8+2+0=13$$$f(4) = 1 \\cdot |1-4| + 4 \\cdot |2-4| + 2 \\cdot |3-4| + 3 \\cdot |4-4| = 3+8+2+0 = 13$$$.",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 绝对电影",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "code": "GYM106523F",
+  "letter": "F",
+  "title": "F. Forms of Forming Teams",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106523/problem/F",
+  "difficulty": "*2100",
+  "timeLimit": "2 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The secret organization UnBalloon has $$$N$$$ agents, numbered from $$$1$$$ to $$$N$$$. Using a secret algorithm, the organization calculated, for each of them, their value as a human being, so they could order the agents by this value (no two agents have the same value). From this, the list $$$L$$$ was created, where $$$L_i$$$ is the number of the $$$i$$$-th most valuable agent.",
+      "The organization must form a team of agents for the next mission, which is to infiltrate the Super Ultra Secret Pizza. But for the mission to be successful, the chosen agents must follow a special property. Let $$$S$$$ be the set of numbers of the chosen agents and $$$P$$$ be the set of positions of these agents in the list $$$L$$$. From these sets, we define the polynomials$$$^1$$$ $$$A(x) = \\sum_{i \\in S} x^i$$$ and $$$B(x) = \\sum_{i \\in P} x^i$$$. For this team of agents to be successful, it is necessary that $$$S$$$ is not an empty set and that there exists some polynomial $$$C(x)$$$ with all its coefficients being non-negative integers such that $$$A(x) \\cdot C(x) = B(x)$$$.",
+      "As part of the organization's analysts, you must calculate how many ways there are to form a team of agents that would be successful in the mission. Since this quantity can be very large, calculate the remainder of this quantity when divided by $$$998244353$$$.",
+      "$$$^1$$$ A polynomial is a function of the form $$$P(x) = \\sum\\limits_{i=0}^\\infty a_i \\cdot x^i$$$ such that the number of non-zero values $$$a_i$$$ is finite. The $$$a_i$$$'s are called coefficients."
+    ],
+    "input": [
+      "The first line of input contains the integer $$$N$$$: the number of agents $$$(1 \\leq N \\leq 5 \\cdot 10 ^3)$$$.",
+      "The second line of input contains $$$N$$$ distinct integers: the list $$$L$$$ $$$(1 \\leq L_i \\leq N)$$$."
+    ],
+    "output": [
+      "Print, on a single line, the remainder when dividing by $$$998244353$$$ of the number of ways to form a team of agents for a successful mission."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n1",
+      "output": "1"
+    },
+    {
+      "input": "4\n2 1 4 3",
+      "output": "6"
+    },
+    {
+      "input": "4\n1 3 2 4",
+      "output": "8"
+    },
+    {
+      "input": "10\n1 4 5 3 2 10 9 8 7 6",
+      "output": "49"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "秘密组织 UnBalloon 有 $$$N$$$ 名特工，编号从 $$$1$$$ 到 $$$N$$$。组织使用一种秘密算法计算出每名特工作为人的价值，以便根据这一价值对特工进行排序(没有两名特工的价值相同)。由此创建了列表 $$$L$$$，其中 $$$L_i$$$ 是价值排名第 $$$i$$$ 的特工的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "组织必须为下一次任务组建一支特工队伍，任务是渗透 Super Ultra Secret Pizza。但要使任务成功，选中的特工必须满足一个特殊性质。令 $$$S$$$ 为所选特工的编号集合，令 $$$P$$$ 为这些特工在列表 $$$L$$$ 中的位置集合。根据这些集合，我们定义多项式 $$$^1$$$、$$$A(x) = \\sum_{i \\in S} x^i$$$ 和 $$$B(x) = \\sum_{i \\in P} x^i$$$。要使这支特工队伍成功，必须满足 $$$S$$$ 不是空集，并且存在某个多项式 $$$C(x)$$$，其所有系数均为非负整数，且满足 $$$A(x) \\cdot C(x) = B(x)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "作为该组织的分析师，你必须计算有多少种组建能够在任务中成功的特工队伍的方法。由于这个数量可能非常大，请计算该数量除以 $$$998244353$$$ 所得的余数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$^1$$$ 多项式是形如 $$$P(x) = \\sum\\limits_{i=0}^\\infty a_i \\cdot x^i$$$ 的函数，并且非零值 $$$a_i$$$ 的数量是有限的。$$$a_i$$$ 被称为系数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含整数 $$$N$$$：智能体 $$$(1 \\leq N \\leq 5 \\cdot 10 ^3)$$$ 的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第二行包含 $$$N$$$ 个互不相同的整数：列表 $$$L$$$ $$$(1 \\leq L_i \\leq N)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "请在一行中输出组成能够成功完成任务的智能体团队的方法数除以 $$$998244353$$$ 所得的余数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 组建团队的方式",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

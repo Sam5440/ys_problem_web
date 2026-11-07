@@ -1,0 +1,91 @@
+{
+  "code": "CF1915G",
+  "letter": "G",
+  "title": "G. Bicycles",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1915/G",
+  "difficulty": "1800",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "All of Slavic's friends are planning to travel from the place where they live to a party using their bikes. And they all have a bike except Slavic. There are n$$$n$$$ cities through which they can travel. They all live in the city 1$$$1$$$ and want to go to the party located in the city n$$$n$$$. The map of cities can be seen as an undirected graph with n$$$n$$$ nodes and m$$$m$$$ edges. Edge i$$$i$$$ connects cities ui$$$u_i$$$ and vi$$$v_i$$$ and has a length of wi$$$w_i$$$.",
+      "Slavic doesn't have a bike, but what he has is money. Every city has exactly one bike for sale. The bike in the i$$$i$$$-th city has a slowness factor of si$$$s_{i}$$$. Once Slavic buys a bike, he can use it whenever to travel from the city he is currently in to any neighboring city, by taking wi⋅sj$$$w_i \\cdot s_j$$$ time, considering he is traversing edge i$$$i$$$ using a bike j$$$j$$$ he owns.",
+      "Slavic can buy as many bikes as he wants as money isn't a problem for him. Since Slavic hates traveling by bike, he wants to get from his place to the party in the shortest amount of time possible. And, since his informatics skills are quite rusty, he asks you for help.",
+      "What's the shortest amount of time required for Slavic to travel from city 1$$$1$$$ to city n$$$n$$$? Slavic can't travel without a bike. It is guaranteed that it is possible for Slavic to travel from city 1$$$1$$$ to any other city."
+    ],
+    "input": [
+      "The first line contains a single integer t$$$t$$$ (1≤t≤100$$$1 \\leq t \\leq 100$$$) — the number of test cases. The description of the test cases follows.",
+      "The first line of each test case contains two space-separated integers n$$$n$$$ and m$$$m$$$ (2≤n≤1000$$$2 \\leq n \\leq 1000$$$; n−1≤m≤1000$$$n - 1 \\leq m \\leq 1000$$$) — the number of cities and the number of roads, respectively.",
+      "The i$$$i$$$-th of the following m$$$m$$$ lines each contain three integers ui$$$u_i$$$, vi$$$v_i$$$, wi$$$w_i$$$ (1≤ui,vi≤n$$$1 \\le u_i, v_i \\le n$$$, ui≠vi$$$u_i \\neq v_i$$$; 1≤wi≤105$$$1 \\leq w_i \\leq 10^5$$$), denoting that there is a road between cities ui$$$u_i$$$ and vi$$$v_i$$$ of length wi$$$w_i$$$. The same pair of cities can be connected by more than one road.",
+      "The next line contains n$$$n$$$ integers s1,…,sn$$$s_1, \\ldots, s_n$$$ (1≤si≤1000$$$1 \\leq s_i \\leq 1000$$$) — the slowness factor of each bike.",
+      "The sum of n$$$n$$$ over all test cases does not exceed 1000$$$1000$$$, and the sum of m$$$m$$$ over all test cases does not exceed 1000$$$1000$$$.",
+      "Additional constraint on the input: it is possible to travel from city 1$$$1$$$ to any other city."
+    ],
+    "output": [
+      "For each test case, output a single integer denoting the shortest amount of time Slavic can reach city n$$$n$$$ starting from city 1$$$1$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n5 5\n1 2 2\n3 2 1\n2 4 5\n2 5 7\n4 5 1\n5 2 1 3 3\n5 10\n1 2 5\n1 3 5\n1 4 4\n1 5 8\n2 3 6\n2 4 3\n2 5 2\n3 4 1\n3 5 8\n4 5 2\n7 2 8 4 1\n7 10\n3 2 8\n2 1 4\n2 5 7\n2 6 4\n7 1 2\n4 3 5\n6 4 2\n6 7 1\n6 7 4\n4 5 9\n7 6 5 4 3 2 1",
+      "output": "19\n36\n14"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "斯拉维克的所有朋友都计划骑自行车从他们居住的地方前往聚会地点。他们每个人都有一辆自行车，只有斯拉维克没有。共有 n$$$n$$$ 个城市，他们可以在这些城市之间通行。他们都住在城市 1$$$1$$$，并想前往位于城市 n$$$n$$$ 的聚会地点。城市地图可以看作一个含有 n$$$n$$$ 个节点和 m$$$m$$$ 条边的无向图。第 i$$$i$$$ 条边连接城市 ui$$$u_i$$$ 和 vi$$$v_i$$$，长度为 wi$$$w_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "斯拉维克没有自行车，但他有的是钱。每个城市恰好有一辆自行车出售。第 i$$$i$$$ 个城市中的自行车具有 si$$$s_{i}$$$ 的迟缓系数。一旦斯拉维克买下一辆自行车，他就可以随时使用它，从当前所在城市前往任意相邻城市；如果他使用自己拥有的自行车 j$$$j$$$ 通过第 i$$$i$$$ 条边，则需要花费 wi⋅sj$$$w_i \\cdot s_j$$$ 的时间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "斯拉维克可以想买多少辆自行车就买多少辆，因为钱对他来说不是问题。由于斯拉维克讨厌骑自行车旅行，他希望用尽可能短的时间从住所到达聚会地点。而且，由于他的算法竞赛技能已经相当生疏了，他向你寻求帮助。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "斯拉维克从城市 1$$$1$$$ 到城市 n$$$n$$$ 所需的最短时间是多少？斯拉维克无法在没有自行车的情况下旅行。保证斯拉维克可以从城市 1$$$1$$$ 到达任意其他城市。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤100$$$1 \\leq t \\leq 100$$$)——测试用例的数量。接下来是各个测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个以空格分隔的整数 n$$$n$$$ 和 m$$$m$$$(2≤n≤1000$$$2 \\leq n \\leq 1000$$$；n−1≤m≤1000$$$n - 1 \\leq m \\leq 1000$$$)——分别表示城市数和道路数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中的第 i$$$i$$$ 行各包含三个整数 ui$$$u_i$$$、vi$$$v_i$$$、wi$$$w_i$$$(1≤ui,vi≤n$$$1 \\le u_i, v_i \\le n$$$，ui≠vi$$$u_i \\neq v_i$$$；1≤wi≤105$$$1 \\leq w_i \\leq 10^5$$$)，表示城市 ui$$$u_i$$$ 和 vi$$$v_i$$$ 之间有一条长度为 wi$$$w_i$$$ 的道路。同一对城市之间可能有多条道路相连。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 n$$$n$$$ 个整数 s1,…,sn$$$s_1, \\ldots, s_n$$$(1≤si≤1000$$$1 \\leq s_i \\leq 1000$$$)——每辆自行车的缓慢系数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有测试用例中 n$$$n$$$ 的总和不超过 1000$$$1000$$$，且 m$$$m$$$ 的总和不超过 1000$$$1000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的额外约束：可以从城市 1$$$1$$$ 到达其他任意城市。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数，表示 Slavic 从城市 1$$$1$$$ 出发到达城市 n$$$n$$$ 所需的最短时间。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. 自行车",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

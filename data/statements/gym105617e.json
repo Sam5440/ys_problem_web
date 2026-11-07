@@ -1,0 +1,79 @@
+{
+  "code": "GYM105617E",
+  "letter": "E",
+  "title": "E. Classics",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105617/problem/E",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "You are probably familiar with the classic problem of finding the longest increasing subsequence in an array. Let a$$$a$$$ be an array consisting of n$$$n$$$ integers. A subsequence i1<i2<…<ik$$$i_1  \\lt  i_2  \\lt  \\ldots  \\lt  i_k$$$ is called increasing if ai1<ai2<…<aik$$$a_{i_1}  \\lt  a_{i_2}  \\lt  \\ldots  \\lt  a_{i_k}$$$. The longest increasing subsequence is the increasing subsequence of maximum length. Of course, we will not ask you to solve the classic problem; you will have to solve its more complicated version...",
+      "Initially, there is an empty array a$$$a$$$. Then, the numbers 1,2,…,n$$$1, 2, \\ldots, n$$$ are added to the array in this order. The number i$$$i$$$ is added to the array at position pi$$$p_i$$$. Positions in the array are numbered with integers from 1$$$1$$$ to k$$$k$$$, where k$$$k$$$ is the current size of the array. When adding an element at position p$$$p$$$ in an array of size k$$$k$$$, all elements that previously had positions from p$$$p$$$ to k$$$k$$$ are shifted one position to the right, and the current element is added to the freed space.",
+      "Your task is to determine the length of the longest increasing subsequence in the array after each addition of a new element."
+    ],
+    "input": [
+      "The first line contains one integer n$$$n$$$ (1≤n≤200000$$$1 \\le n \\le 200\\,000$$$) — the number of added elements.",
+      "The second line contains n$$$n$$$ integers p1,p2,…,pn$$$p_1, p_2, \\ldots, p_n$$$ (1≤pi≤i$$$1 \\le p_i \\le i$$$) — pi$$$p_i$$$ denotes the position where element i$$$i$$$ is added."
+    ],
+    "output": [
+      "Output n$$$n$$$ integers — the length of the longest increasing subsequence of the array after each addition of a new element."
+    ],
+    "note": [
+      "The array in the first example changed as follows: []→[1]→[1,2]→[3,1,2]→[3,1,4,2]→[3,1,4,5,2]$$$[] \\to [1] \\to [1, 2] \\to [3, 1, 2] \\to [3, 1, 4, 2] \\to [3, 1, 4, 5, 2]$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 2 1 3 4",
+      "output": "1\n2\n2\n2\n3"
+    },
+    {
+      "input": "1\n1",
+      "output": "1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你可能已经熟悉经典的在数组中寻找最长上升子序列的问题。设 a$$$a$$$ 是一个由 n$$$n$$$ 个整数组成的数组。若子序列 i1<i2<…<ik$$$i_1  \\lt  i_2  \\lt  \\ldots  \\lt  i_k$$$ 满足 ai1<ai2<…<aik$$$a_{i_1}  \\lt  a_{i_2}  \\lt  \\ldots  \\lt  a_{i_k}$$$，则称其为上升子序列。最长上升子序列是长度最大的上升子序列。当然，我们不会要求你解决这个经典问题；你需要解决它的更复杂版本……",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "起初，有一个空数组 a$$$a$$$。随后，数字 1,2,…,n$$$1, 2, \\ldots, n$$$ 按照这个顺序加入数组。数字 i$$$i$$$ 被加入数组的位置为 pi$$$p_i$$$。数组中的位置用从 1$$$1$$$ 到 k$$$k$$$ 的整数编号，其中 k$$$k$$$ 是数组当前的大小。当在大小为 k$$$k$$$ 的数组中的位置 p$$$p$$$ 处添加元素时，原先位置从 p$$$p$$$ 到 k$$$k$$$ 的所有元素都会向右移动一个位置，并将当前元素加入空出的位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是确定每次添加新元素后数组中最长上升子序列的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤200000$$$1 \\le n \\le 200\\,000$$$)——添加的元素个数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 p1,p2,…,pn$$$p_1, p_2, \\ldots, p_n$$$(1≤pi≤i$$$1 \\le p_i \\le i$$$)——pi$$$p_i$$$ 表示元素 i$$$i$$$ 被添加的位置。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n$$$n$$$ 个整数——每次添加新元素后数组中最长上升子序列的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个示例中的数组变化如下：[]→[1]→[1,2]→[3,1,2]→[3,1,4,2]→[3,1,4,5,2]$$$[] \\to [1] \\to [1, 2] \\to [3, 1, 2] \\to [3, 1, 4, 2] \\to [3, 1, 4, 5, 2]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 经典作品",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

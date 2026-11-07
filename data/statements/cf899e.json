@@ -1,0 +1,102 @@
+{
+  "code": "CF899E",
+  "letter": "E",
+  "title": "E. Segments Removal",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/899/E",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Vasya has an array of integers of length n.",
+      "Vasya performs the following operations on the array: on each step he finds the longest segment of consecutive equal integers (the leftmost, if there are several such segments) and removes it. For example, if Vasya's array is [13, 13, 7, 7, 7, 2, 2, 2], then after one operation it becomes [13, 13, 2, 2, 2].",
+      "Compute the number of operations Vasya should make until the array becomes empty, i.e. Vasya removes all elements from it."
+    ],
+    "input": [
+      "The first line contains a single integer n (1 ≤ n ≤ 200 000) — the length of the array.",
+      "The second line contains a sequence a1, a2, ..., an (1 ≤ ai ≤ 109) — Vasya's array."
+    ],
+    "output": [
+      "Print the number of operations Vasya should make to remove all elements from the array."
+    ],
+    "note": [
+      "In the first example, at first Vasya removes two fives at the second and third positions. The array becomes [2, 2]. In the second operation Vasya removes two twos at the first and second positions. After that the array becomes empty.",
+      "In the second example Vasya has to perform five operations to make the array empty. In each of them he removes the first element from the array.",
+      "In the third example Vasya needs three operations. In the first operation he removes all integers 4, in the second — all integers 100, in the third — all integers 2.",
+      "In the fourth example in the first operation Vasya removes the first two integers 10. After that the array becomes [50, 10, 50, 50]. Then in the second operation Vasya removes the two rightmost integers 50, so that the array becomes [50, 10]. In the third operation he removes the remaining 50, and the array becomes [10] after that. In the last, fourth operation he removes the only remaining 10. The array is empty after that."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n2 5 5 2",
+      "output": "2"
+    },
+    {
+      "input": "5\n6 3 4 1 5",
+      "output": "5"
+    },
+    {
+      "input": "8\n4 4 4 2 2 100 100 100",
+      "output": "3"
+    },
+    {
+      "input": "6\n10 10 50 10 50 50",
+      "output": "4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Vasya 有一个长度为 n 的整数数组。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Vasya 对数组执行如下操作：每一步他会找到最长的一段连续相等整数（如果有多个这样的段，则选择最左边的一个）并将其移除。例如，如果 Vasya 的数组是 [13, 13, 7, 7, 7, 2, 2, 2]，那么一次操作后数组变为 [13, 13, 2, 2, 2]。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "计算 Vasya 直到数组为空所需执行的操作次数，即 Vasya 从数组中移除所有元素所需的操作次数。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 200 000）——数组的长度。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行包含一个序列 a1, a2, ..., an（1 ≤ ai ≤ 10^9）——Vasya 的数组。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Vasya 为了移除数组中所有元素所需执行的操作次数。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Vasya 首先删除了位于第二个和第三个位置的两个 5。数组变为 [2, 2]。在第二次操作中，Vasya 删除了位于第一个和第二个位置的两个 2。之后数组变为空。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个样例中，Vasya 需要执行五次操作才能使数组为空。每次操作中他都删除数组的第一个元素。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第三个样例中，Vasya 需要三次操作。第一次操作删除所有整数 4，第二次删除所有整数 100，第三次删除所有整数 2。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第四个样例中，第一次操作时 Vasya 删除前两个整数 10。之后数组变为 [50, 10, 50, 50]。然后第二次操作中 Vasya 删除最右边的两个整数 50，数组变为 [50, 10]。第三次操作中他删除剩下的 50，之后数组变为 [10]。在最后，即第四次操作中他删除仅剩的 10。之后数组变为空。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 区间删除",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

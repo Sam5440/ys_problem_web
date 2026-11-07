@@ -1,0 +1,99 @@
+{
+  "code": "GYM106764H",
+  "letter": "H",
+  "title": "H. Lemon Tang (Japanese Ver.)",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106764/problem/H",
+  "difficulty": "*1400",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Lemon Tang was an absolute success! H2H has since released a Japanese version, and they are now preparing to perform in Japan to promote it (as well as their upcoming single!).",
+      "H2H is running choreo drills with their backup dancers, forming a line of $$$n$$$ people in total. Not everyone coaches the same way, though: the H2H members can keep an eye on a big chunk of the formation, while some backup dancers can only focus on the people right next to them. Dancer $$$i$$$ has a coaching radius of $$$r_i$$$.",
+      "They can run at most $$$k$$$ training sessions. A training session consists of picking a single dancer to lead, who then works with themselves and everyone within their coaching radius. Formally, if dancer $$$i$$$ leads a session, every dancer $$$j$$$ such that $$$|i-j| \\le r_i$$$ has their dance score $$$d_j$$$ increase by $$$+1$$$. The same dancer may lead any number of sessions.",
+      "The performance will only be as strong as its weakest performer, i.e. the person with the smallest $$$d_j$$$. Can you help maximize this value?"
+    ],
+    "input": [
+      "The first line contains two integers $$$n$$$ and $$$k$$$ ($$$1 \\le n, k \\le 2 \\cdot 10^5$$$): the number of dancers and the number of training sessions.",
+      "The second line contains $$$n$$$ space-separated integers $$$d_1, d_2, \\ldots, d_n$$$ ($$$1 \\le d_i \\le 10^9$$$), where $$$d_i$$$ is the dance score of the $$$i$$$th dancer.",
+      "The third line contains $$$n$$$ space-separated integers $$$r_1, r_2, \\ldots, r_n$$$ ($$$0 \\le r_i \\le n$$$), where $$$r_i$$$ is the coaching radius of the $$$i$$$th dancer."
+    ],
+    "output": [
+      "Output a single integer, denoting the maximum value of $$$\\min_i d_i$$$ after assigning training sessions optimally."
+    ],
+    "note": [
+      "In the first sample, two sessions led by dancer $$$4$$$ achieve a minimum score of $$$3$$$: $$[3,1,4,1,5] \\to [3,2,5,2,6] \\to [3,3,6,3,7]$$",
+      "In the second sample, one session each led by dancers $$$1$$$ and $$$6$$$ achieves $$$3$$$. Reaching $$$4$$$ needs two sessions per endpoint, and no session covers both.",
+      "It may help to listen to the following song: https://open.spotify.com/track/7Duc0A2ye1eKwfCICOXYGT?si=f1e9ad0fd6e846cf"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 3\n3 1 4 1 5\n0 1 0 2 0",
+      "output": "3"
+    },
+    {
+      "input": "6 2\n2 5 2 5 2 2\n3 0 0 1 0 2",
+      "output": "3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Lemon Tang 大获成功！此后，H2H 发布了日语版本，现在她们正准备在日本进行演出，以推广该版本（以及她们即将发行的单曲！）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "H2H 正在和他们的伴舞进行编舞训练，共有 $$$n$$$ 个人排成一列。不过，并不是所有人都以相同的方式进行指导：H2H 成员可以关注队伍中很大一部分人，而一些伴舞只能关注紧挨着自己的人。舞者 $$$i$$$ 的指导半径为 $$$r_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他们最多可以举办 $$$k$$$ 次训练课。一次训练课包括选出一名舞者担任领队，之后他会与自己以及其指导范围内的所有人一起训练。形式化地说，如果舞者 $$$i$$$ 领队一场训练课，那么每名满足 $$$|i-j| \\le r_i$$$ 的舞者 $$$j$$$ 的舞蹈分数 $$$d_j$$$ 都会增加 $$$+1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "整体表现不会强于表现最差的那个人，也就是 $$$d_j$$$ 最小的人。你能帮忙最大化这个值吗？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 $$$n$$$ 和 $$$k$$$ ($$$1 \\le n, k \\le 2 \\cdot 10^5$$$)：舞者人数和训练课次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 $$$n$$$ 个空格分隔的整数 $$$d_1, d_2, \\ldots, d_n$$$($$$1 \\le d_i \\le 10^9$$$)，其中 $$$d_i$$$ 表示第 $$$i$$$ 位舞者的舞蹈分数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 $$$n$$$ 个空格分隔的整数 $$$r_1, r_2, \\ldots, r_n$$$($$$0 \\le r_i \\le n$$$)，其中 $$$r_i$$$ 是第 $$$i$$$ 个舞者的指导半径。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示对训练场次进行最优分配后 $$$\\min_i d_i$$$ 的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，由舞者 $$$4$$$ 主持的两场课程取得的最低分数为 $$$3$$$：$$[3,1,4,1,5] \\to [3,2,5,2,6] \\to [3,3,6,3,7]$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，由舞者 $$$1$$$ 和 $$$6$$$ 分别主持一场 session，即可达到 $$$3$$$。要达到 $$$4$$$，每个端点都需要两场 session，并且不存在一场 session 能同时覆盖两者。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "听下面这首歌可能会有所帮助：https://open.spotify.com/track/7Duc0A2ye1eKwfCICOXYGT?si=f1e9ad0fd6e846cf",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "H. Lemon Tang（日语版）",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

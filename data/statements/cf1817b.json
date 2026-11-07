@@ -1,0 +1,125 @@
+{
+  "code": "CF1817B",
+  "letter": "B",
+  "title": "B. Fish Graph",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1817/B",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a simple undirected graph with n$$$n$$$ nodes and m$$$m$$$ edges. Note that the graph is not necessarily connected. The nodes are labeled from 1$$$1$$$ to n$$$n$$$.",
+      "We define a graph to be a Fish Graph if it contains a simple cycle with a special node u$$$u$$$ belonging to the cycle. Apart from the edges in the cycle, the graph should have exactly 2$$$2$$$ extra edges. Both edges should connect to node u$$$u$$$, but they should not be connected to any other node of the cycle.",
+      "Determine if the graph contains a subgraph that is a Fish Graph, and if so, find any such subgraph.",
+      "In this problem, we define a subgraph as a graph obtained by taking any subset of the edges of the original graph.",
+      "![](https://espresso.codeforces.com/d4948becce5d44359306c804c5e536e116fca5cd.png)"
+    ],
+    "input": [
+      "The first line of input contains the integer t$$$t$$$ (1≤t≤1000$$$1 \\leq t \\leq 1000$$$), the number of test cases. The description of test cases follows.",
+      "The first line of each test case contains two integers, n$$$n$$$ and m$$$m$$$ (1≤n,m≤2000$$$1 \\le n, m \\le 2\\,000$$$) — the number of nodes and the number of edges.",
+      "Each of the next m$$$m$$$ lines contains the description of an edge. Each line contains two integers ui$$$u_i$$$ and vi$$$v_i$$$ (1≤ui,vi≤n$$$1 \\leq u_i, v_i \\leq n$$$, ui≠vi$$$u_i\\neq v_i$$$) — an edge connects node ui$$$u_i$$$ to node vi$$$v_i$$$.",
+      "It is guaranteed that no two edges connect the same unordered pair of nodes.",
+      "Furthermore, it is guaranteed that the sum of n$$$n$$$ and the sum of m$$$m$$$ over all test cases both do not exceed 2000$$$2\\,000$$$."
+    ],
+    "output": [
+      "For each testcase, output \"YES\" if the graph contains a subgraph that is a Fish Graph, otherwise print \"NO\". If the answer is \"YES\", on the following lines output a description of the subgraph.",
+      "The first line of the description contains one integer k$$$k$$$ — the number of edges of the subgraph.",
+      "On the next k$$$k$$$ lines, output the edges of the chosen subgraph. Each of the k$$$k$$$ lines should contains two integers u$$$u$$$ and v$$$v$$$ (1≤u,v≤n$$$1\\le u, v\\le n$$$, u≠v$$$u\\neq v$$$) — the edge between u$$$u$$$ and v$$$v$$$ belongs to the subgraph. The order in which u$$$u$$$ and v$$$v$$$ are printed does not matter, as long as the two nodes are connected by an edge in the original graph. The order in which you print the edges does not matter, as long as the resulting subgraph is a fish graph.",
+      "If there are multiple solutions, print any."
+    ],
+    "note": [
+      "In the first example, a possible valid subgraph contains the cycle 1→2→3→4→1$$$1 \\rightarrow 2 \\rightarrow 3 \\rightarrow 4 \\rightarrow 1$$$. The special node of this cycle is node 4$$$4$$$. The two extra edges 4−5$$$4 - 5$$$ and 4−6$$$4 - 6$$$ are both connected to 4$$$4$$$, completing the Fish Graph.",
+      "In the second example, a possible valid subgraph contains the cycle 1→3→4→1$$$1 \\rightarrow 3 \\rightarrow 4 \\rightarrow 1$$$. The special node of this cycle is node 3$$$3$$$. The two extra edges 3−2$$$3 - 2$$$ and 3−5$$$3 - 5$$$ are both connected to 3$$$3$$$, completing the Fish Graph.",
+      "In the last example, it can be proven that there is no valid subgraph."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n7 8\n1 2\n2 3\n3 4\n4 1\n4 5\n4 6\n4 2\n6 7\n7 7\n6 7\n1 2\n2 3\n3 4\n4 1\n1 3\n3 5\n4 4\n1 3\n3 4\n4 1\n1 2",
+      "output": "YES\n6\n5 4\n6 4\n4 3\n1 4\n2 1\n3 2\nYES\n5\n5 3\n2 3\n3 1\n4 3\n1 4\nNO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个有 n$$$n$$$ 个节点、m$$$m$$$ 条边的简单无向图。注意，该图不一定连通。节点编号从 1$$$1$$$ 到 n$$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果一个图包含一个简单环，并且有一个特殊节点 u$$$u$$$ 属于该环，则称该图为 Fish 图。除环上的边外，该图还应恰好包含 2$$$2$$$ 条额外边。这两条边都应连接到节点 u$$$u$$$，但不能连接到环上的其他任何节点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "判断该图是否包含一个 Fish 图子图；如果包含，则找出任意一个这样的子图。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在本题中，子图定义为从原图中选取任意边的子集所得到的图。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/d4948becce5d44359306c804c5e536e116fca5cd.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含整数 t$$$t$$$(1≤t≤1000$$$1 \\leq t \\leq 1000$$$)，表示测试用例的数量。接下来是各个测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤2000$$$1 \\le n, m \\le 2\\,000$$$)，分别表示节点数和边数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中的每一行描述一条边。每行包含两个整数 ui$$$u_i$$$ 和 vi$$$v_i$$$(1≤ui,vi≤n$$$1 \\leq u_i, v_i \\leq n$$$，ui≠vi$$$u_i\\neq v_i$$$)，表示一条连接节点 ui$$$u_i$$$ 和节点 vi$$$v_i$$$ 的边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证不存在两条边连接同一对无序节点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，保证所有测试用例中 n$$$n$$$ 的总和以及 m$$$m$$$ 的总和均不超过 2000$$$2\\,000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果图中包含一个 Fish Graph 子图，则输出 \"YES\"，否则输出 \"NO\"。如果答案为 \"YES\"，则在接下来的若干行中输出该子图的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "描述的第一行包含一个整数 k$$$k$$$，表示该子图的边数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 k$$$k$$$ 行中，输出所选子图的边。每行 k$$$k$$$ 应包含两个整数 u$$$u$$$ 和 v$$$v$$$(1≤u,v≤n$$$1\\le u, v\\le n$$$，u≠v$$$u\\neq v$$$)，表示连接 u$$$u$$$ 和 v$$$v$$$ 的边属于该子图。u$$$u$$$ 和 v$$$v$$$ 的输出顺序无关紧要，只要这两个节点在原图中通过一条边相连即可。边的输出顺序也无关紧要，只要最终得到的子图是一个鱼图。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个解，输出任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，一个可能的合法子图包含环 1→2→3→4→1$$$1 \\rightarrow 2 \\rightarrow 3 \\rightarrow 4 \\rightarrow 1$$$。该环的特殊节点是节点 4$$$4$$$。两条额外的边 4−5$$$4 - 5$$$ 和 4−6$$$4 - 6$$$ 都与 4$$$4$$$ 相连，从而构成鱼图。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，一个可能的合法子图包含环 1→3→4→1$$$1 \\rightarrow 3 \\rightarrow 4 \\rightarrow 1$$$。该环的特殊节点是节点 3$$$3$$$。两条额外的边 3−2$$$3 - 2$$$ 和 3−5$$$3 - 5$$$ 都与 3$$$3$$$ 相连，从而构成鱼图。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在最后一个样例中，可以证明不存在合法的子图。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 鱼图",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

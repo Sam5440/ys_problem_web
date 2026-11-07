@@ -1,0 +1,70 @@
+{
+  "code": "CF413E",
+  "letter": "E",
+  "title": "E. Maze 2D",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/413/E",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The last product of the R2 company in the 2D games' field is a new revolutionary algorithm of searching for the shortest path in a 2 × n maze.",
+      "Imagine a maze that looks like a 2 × n rectangle, divided into unit squares. Each unit square is either an empty cell or an obstacle. In one unit of time, a person can move from an empty cell of the maze to any side-adjacent empty cell. The shortest path problem is formulated as follows. Given two free maze cells, you need to determine the minimum time required to go from one cell to the other.",
+      "Unfortunately, the developed algorithm works well for only one request for finding the shortest path, in practice such requests occur quite often. You, as the chief R2 programmer, are commissioned to optimize the algorithm to find the shortest path. Write a program that will effectively respond to multiple requests to find the shortest path in a 2 × n maze."
+    ],
+    "input": [
+      "The first line contains two integers, n and m (1 ≤ n ≤ 2·105; 1 ≤ m ≤ 2·105) — the width of the maze and the number of queries, correspondingly. Next two lines contain the maze. Each line contains n characters, each character equals either '.' (empty cell), or 'X' (obstacle).",
+      "Each of the next m lines contains two integers vi and ui (1 ≤ vi, ui ≤ 2n) — the description of the i-th request. Numbers vi, ui mean that you need to print the value of the shortest path from the cell of the maze number vi to the cell number ui. We assume that the cells of the first line of the maze are numbered from 1 to n, from left to right, and the cells of the second line are numbered from n + 1 to 2n from left to right. It is guaranteed that both given cells are empty."
+    ],
+    "output": [
+      "Print m lines. In the i-th line print the answer to the i-th request — either the size of the shortest path or -1, if we can't reach the second cell from the first one."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 7\n.X..\n...X\n5 1\n1 3\n7 7\n1 4\n6 1\n4 7\n5 7",
+      "output": "1\n4\n0\n5\n2\n2\n2"
+    },
+    {
+      "input": "10 3\nX...X..X..\n..X...X..X\n11 7\n7 18\n18 10",
+      "output": "9\n-1\n3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "R2 公司在 2D 游戏领域的最新产品，是一种用于在 2 × n 迷宫中寻找最短路径的全新革命性算法。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "设有一个形状为 2 × n 矩形的迷宫，该矩形被划分为单位方格。每个单位方格要么是空单元格，要么是障碍物。在一个单位时间内，一个人可以从迷宫中的某个空单元格移动到与其边相邻的任意空单元格。最短路径问题的定义如下：给定迷宫中的两个空单元格，需要确定从一个单元格到另一个单元格所需的最短时间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "遗憾的是，已开发出的算法只能很好地处理一次最短路径查询，而在实际中，这类查询经常发生。作为 R2 的首席程序员，你受命优化该算法，以便寻找最短路径。请编写一个程序，高效地处理 2 × n 迷宫中的多次最短路径查询。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 m（1 ≤ n ≤ 2·105；1 ≤ m ≤ 2·105），分别表示迷宫的宽度和查询次数。接下来的两行描述迷宫。每行包含 n 个字符，每个字符要么是“.”（空单元格），要么是“X”（障碍物）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行中，每行包含两个整数 vi 和 ui（1 ≤ vi，ui ≤ 2n），表示第 i 次查询。整数 vi 和 ui 表示需要输出从编号为 vi 的迷宫单元格到编号为 ui 的单元格的最短路径长度。规定迷宫第一行的单元格编号为 1 到 n，从左到右依次编号；第二行的单元格编号为 n+1 到 2n，从左到右依次编号。保证给出的两个单元格均为空。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 m 行。第 i 行输出第 i 个请求的答案——最短路径的大小，如果无法从第一个格子到达第二个格子，则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 迷宫 2D",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

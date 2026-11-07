@@ -1,0 +1,155 @@
+{
+  "code": "CF1227C",
+  "letter": "C",
+  "title": "C. Messy",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1227/C",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are fed up with your messy room, so you decided to clean it up.",
+      "Your room is a bracket sequence s=s1s2…sn$$$s=s_{1}s_{2}\\dots s_{n}$$$ of length n$$$n$$$. Each character of this string is either an opening bracket '(' or a closing bracket ')'.",
+      "In one operation you can choose any consecutive substring of s$$$s$$$ and reverse it. In other words, you can choose any substring s[l…r]=sl,sl+1,…,sr$$$s[l \\dots r]=s_l, s_{l+1}, \\dots, s_r$$$ and change the order of elements in it into sr,sr−1,…,sl$$$s_r, s_{r-1}, \\dots, s_{l}$$$.",
+      "For example, if you will decide to reverse substring s[2…4]$$$s[2 \\dots 4]$$$ of string s=$$$s=$$$\"((()))\" it will be equal to s=$$$s=$$$\"()(())\".",
+      "A regular (aka balanced) bracket sequence is a bracket sequence that can be transformed into a correct arithmetic expression by inserting characters '1' and '+' between the original characters of the sequence. For example, bracket sequences \"()()\", \"(())\" are regular (the resulting expressions are: \"(1)+(1)\", \"((1+1)+1)\"), and \")(\" and \"(\" are not.",
+      "A prefix of a string s$$$s$$$ is a substring that starts at position 1$$$1$$$. For example, for s=$$$s=$$$\"(())()\" there are 6$$$6$$$ prefixes: \"(\", \"((\", \"(()\", \"(())\", \"(())(\" and \"(())()\".",
+      "In your opinion, a neat and clean room s$$$s$$$ is a bracket sequence that:",
+      "the whole string s$$$s$$$ is a regular bracket sequence;",
+      "and there are exactly k$$$k$$$ prefixes of this sequence which are regular (including whole s$$$s$$$ itself).",
+      "For example, if k=2$$$k = 2$$$, then \"(())()\" is a neat and clean room.",
+      "You want to use at most n$$$n$$$ operations to make your room neat and clean. Operations are applied one after another sequentially.",
+      "It is guaranteed that the answer exists. Note that you do not need to minimize the number of operations: find any way to achieve the desired configuration in n$$$n$$$ or less operations."
+    ],
+    "input": [
+      "The first line contains integer number t$$$t$$$ (1≤t≤100$$$1 \\le t \\le 100$$$) — the number of test cases in the input. Then t$$$t$$$ test cases follow.",
+      "The first line of a test case contains two integers n$$$n$$$ and k$$$k$$$ (1≤k≤n2,2≤n≤2000$$$1 \\le k \\le \\frac{n}{2}, 2 \\le n \\le 2000$$$, n$$$n$$$ is even) — length of s$$$s$$$ and required number of regular prefixes.",
+      "The second line of a test case contains s$$$s$$$ of length n$$$n$$$ — the given bracket sequence. It contains only '(' and ')'.",
+      "It is guaranteed that there are exactly n2$$$\\frac{n}{2}$$$ characters '(' and exactly n2$$$\\frac{n}{2}$$$ characters ')' in the given string.",
+      "The sum of all values n$$$n$$$ over all the test cases in the input doesn't exceed 2000$$$2000$$$."
+    ],
+    "output": [
+      "For each test case print an answer.",
+      "In the first line print integer m$$$m$$$ (0≤m≤n$$$0 \\le m \\le n$$$) — the number of operations. You do not need to minimize m$$$m$$$, any value is suitable.",
+      "In the following m$$$m$$$ lines print description of the operations, each line should contain two integers l,r$$$l,r$$$ (1≤l≤r≤n$$$1 \\le l \\le r \\le n$$$), representing single reverse operation of s[l…r]=slsl+1…sr$$$s[l \\dots r]=s_{l}s_{l+1}\\dots s_{r}$$$. Operations are applied one after another sequentially.",
+      "The final s$$$s$$$ after all operations should be a regular, also it should be exactly k$$$k$$$ prefixes (including s$$$s$$$) which are regular.",
+      "It is guaranteed that the answer exists. If there are several possible answers you can print any."
+    ],
+    "note": [
+      "In the first example, the final sequence is \"()(()())\", where two prefixes are regular, \"()\" and \"()(()())\". Note, that all the operations except \"5 8\" in the example output are useless (they do not change s$$$s$$$)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n8 2\n()(())()\n10 3\n))()()()((\n2 1\n()\n2 1\n)(",
+      "output": "4\n3 4\n1 1\n5 8\n2 2\n3\n4 10\n1 4\n6 7\n0\n1\n1 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你受够了凌乱的房间，于是决定把它收拾干净。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的房间是一个长度为 n$$$n$$$ 的括号序列 s=s1s2…sn$$$s=s_{1}s_{2}\\dots s_{n}$$$。该字符串中的每个字符要么是左括号 '('，要么是右括号 ')'。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一次操作中，你可以选择 s$$$s$$$ 的任意连续子串并将其翻转。换句话说，你可以选择任意子串 s[l…r]=sl,sl+1,…,sr$$$s[l \\dots r]=s_l, s_{l+1}, \\dots, s_r$$$，并将其中元素的顺序改为 sr,sr−1,…,sl$$$s_r, s_{r-1}, \\dots, s_{l}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，如果你决定将字符串 s=$$$s=$$$\"((()))\" 中的子串 s[2…4]$$$s[2 \\dots 4]$$$ 翻转，那么它将变为 s=$$$s=$$$\"()(())\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "正规（也称为平衡）括号序列是指这样一种括号序列：通过在该序列原有字符之间插入字符 '1' 和 '+'，可以将其转换为正确的算术表达式。例如，括号序列 \"()()\" 和 \"(())\" 是正规的（得到的表达式分别为 \"(1)+(1)\" 和 \"((1+1)+1)\"），而 \")(\" 和 \"(\" 不是。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "字符串 s$$$s$$$ 的前缀是一个从位置 1$$$1$$$ 开始的子串。例如，对于 s=$$$s=$$$\"(())()\"，共有 6$$$6$$$ 个前缀：\"(\"、\"((\"、\"(()\"、\"(())\"、\"(())(\" 和 \"(())()\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在你看来，一个整洁干净的房间 s$$$s$$$ 是满足以下条件的括号序列：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "整个字符串 s$$$s$$$ 是一个合法括号序列；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "并且该序列恰好有 k$$$k$$$ 个前缀是合法的(包括整个 s$$$s$$$ 本身)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，如果 k=2$$$k = 2$$$，那么 \"(())()\" 是一个整洁干净的房间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你希望最多使用 n$$$n$$$ 次操作使你的房间变得整洁干净。操作按顺序一个接一个地执行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证答案存在。注意，你不需要最小化操作次数：请找出一种在 n$$$n$$$ 次或更少操作内达到所需配置的方法。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤100$$$1 \\le t \\le 100$$$)——输入中的测试用例数量。接下来是 t$$$t$$$ 个测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试用例的第一行包含两个整数 n$$$n$$$ 和 k$$$k$$$(1≤k≤n/2，2≤n≤2000$$$1 \\le k \\le \\frac{n}{2}, 2 \\le n \\le 2000$$$，n$$$n$$$ 为偶数)——s$$$s$$$ 的长度以及所需的合法前缀数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试用例的第二行包含长度为 n$$$n$$$ 的 s$$$s$$$——给定的括号序列。它只包含 '(' 和 ')'。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证给定字符串中恰好有 n/2$$$\\frac{n}{2}$$$ 个字符 '('，以及恰好有 n/2$$$\\frac{n}{2}$$$ 个字符 ')'。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入中所有测试用例的 n$$$n$$$ 之和不超过 2000$$$2000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个答案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行输出整数 m$$$m$$$(0≤m≤n$$$0 \\le m \\le n$$$)——操作次数。无需最小化 m$$$m$$$，任意值均可。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在接下来的 m$$$m$$$ 行中输出操作说明，每行应包含两个整数 l,r$$$l,r$$$(1≤l≤r≤n$$$1 \\le l \\le r \\le n$$$)，表示对 s[l…r]=slsl+1…sr$$$s[l \\dots r]=s_{l}s_{l+1}\\dots s_{r}$$$ 进行一次翻转操作。操作将按顺序依次执行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有操作执行后的最终 s$$$s$$$ 应为合法括号序列，并且恰好有 k$$$k$$$ 个前缀(包括 s$$$s$$$)是合法括号序列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证答案存在。如果有多个可能的答案，你可以输出任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，最终序列为 \"()(()())\"，其中有两个前缀是合法括号序列，即 \"()\" 和 \"()(()())\"。注意，样例输出中除 \"5 8\" 外的所有操作都是无用的(它们不会改变 s$$$s$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 杂乱",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

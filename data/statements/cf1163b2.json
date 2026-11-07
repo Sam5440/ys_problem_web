@@ -1,0 +1,106 @@
+{
+  "code": "CF1163B2",
+  "letter": "B2",
+  "title": "B2. Cat Party (Hard Edition)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1163/B2",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This problem is same as the previous one, but has larger constraints.",
+      "Shiro's just moved to the new house. She wants to invite all friends of her to the house so they can play monopoly. However, her house is too small, so she can only invite one friend at a time.",
+      "For each of the n$$$n$$$ days since the day Shiro moved to the new house, there will be exactly one cat coming to the Shiro's house. The cat coming in the i$$$i$$$-th day has a ribbon with color ui$$$u_i$$$. Shiro wants to know the largest number x$$$x$$$, such that if we consider the streak of the first x$$$x$$$ days, it is possible to remove exactly one day from this streak so that every ribbon color that has appeared among the remaining x−1$$$x - 1$$$ will have the same number of occurrences.",
+      "For example, consider the following sequence of ui$$$u_i$$$: [2,2,1,1,5,4,4,5]$$$[2, 2, 1, 1, 5, 4, 4, 5]$$$. Then x=7$$$x = 7$$$ makes a streak, since if we remove the leftmost ui=5$$$u_i = 5$$$, each ribbon color will appear exactly twice in the prefix of x−1$$$x - 1$$$ days. Note that x=8$$$x = 8$$$ doesn't form a streak, since you must remove exactly one day.",
+      "Since Shiro is just a cat, she is not very good at counting and needs your help finding the longest streak."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (1≤n≤105$$$1 \\leq n \\leq 10^5$$$) — the total number of days.",
+      "The second line contains n$$$n$$$ integers u1,u2,…,un$$$u_1, u_2, \\ldots, u_n$$$ (1≤ui≤105$$$1 \\leq u_i \\leq 10^5$$$) — the colors of the ribbons the cats wear."
+    ],
+    "output": [
+      "Print a single integer x$$$x$$$ — the largest possible streak of days."
+    ],
+    "note": [
+      "In the first example, we can choose the longest streak of 13$$$13$$$ days, since upon removing the last day out of the streak, all of the remaining colors 1$$$1$$$, 2$$$2$$$, 3$$$3$$$, and 4$$$4$$$ will have the same number of occurrences of 3$$$3$$$. Note that the streak can also be 10$$$10$$$ days (by removing the 10$$$10$$$-th day from this streak) but we are interested in the longest streak.",
+      "In the fourth example, if we take the streak of the first 6$$$6$$$ days, we can remove the third day from this streak then all of the remaining colors 1$$$1$$$, 2$$$2$$$, 3$$$3$$$, 4$$$4$$$ and 5$$$5$$$ will occur exactly once."
+    ]
+  },
+  "examples": [
+    {
+      "input": "13\n1 1 1 2 2 2 3 3 3 4 4 4 5",
+      "output": "13"
+    },
+    {
+      "input": "5\n10 100 20 200 1",
+      "output": "5"
+    },
+    {
+      "input": "1\n100000",
+      "output": "1"
+    },
+    {
+      "input": "7\n3 2 1 1 4 5 1",
+      "output": "6"
+    },
+    {
+      "input": "6\n1 1 1 2 2 2",
+      "output": "5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "本题与上一题相同，但约束条件更大。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Shiro 刚搬进新家。她想邀请所有朋友来家里玩大富翁。然而，她的房子太小了，所以她一次只能邀请一位朋友。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 Shiro 搬进新家的那天之后的 n$$$n$$$ 天中，每天都会有一只猫来到 Shiro 的家。第 i$$$i$$$ 天来的猫带有一条颜色为 ui$$$u_i$$$ 的丝带。Shiro 想知道最大的数 x$$$x$$$，使得在前 x$$$x$$$ 天组成的连续段中，可以恰好移除一天，从而使剩余的 x−1$$$x - 1$$$ 天中出现的每种丝带颜色的出现次数都相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，考虑以下 ui$$$u_i$$$ 序列：[2,2,1,1,5,4,4,5]$$$[2, 2, 1, 1, 5, 4, 4, 5]$$$。此时 x=7$$$x = 7$$$ 可以构成一个连续段，因为如果移除最左边的 ui=5$$$u_i = 5$$$，那么在前 x−1$$$x - 1$$$ 天中每种丝带颜色都恰好出现两次。注意，x=8$$$x = 8$$$ 不能构成一个连续段，因为你必须恰好移除一天。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Shiro 毕竟只是一只猫，她不太擅长计数，需要你的帮助来找出最长的连续段。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤105$$$1 \\leq n \\leq 10^5$$$)——天数总数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 u1,u2,…,un$$$u_1, u_2, \\ldots, u_n$$$ (1≤ui≤105$$$1 \\leq u_i \\leq 10^5$$$)，表示猫咪所佩戴的彩带的颜色。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数 x$$$x$$$，表示可能的最长连续天数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，我们可以选择最长为 13$$$13$$$ 天的连续天数，因为移除这段连续天数中的最后一天后，剩余的颜色 1$$$1$$$、2$$$2$$$、3$$$3$$$ 和 4$$$4$$$ 的出现次数都相同，均为 3$$$3$$$。注意，这段连续天数也可以是 10$$$10$$$ 天(通过移除其中第 10$$$10$$$ 天)，但我们要求的是最长的连续天数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四个样例中，如果我们选择最初的 6$$$6$$$ 天作为连续天数，那么可以移除其中的第三天，此时剩余的颜色 1$$$1$$$、2$$$2$$$、3$$$3$$$、4$$$4$$$ 和 5$$$5$$$ 都恰好出现一次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B2. 猫咪聚会（困难版）",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

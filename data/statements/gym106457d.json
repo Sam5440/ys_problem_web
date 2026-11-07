@@ -1,0 +1,146 @@
+{
+  "code": "GYM106457D",
+  "letter": "D",
+  "title": "D. Herryng",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106457/problem/D",
+  "difficulty": "*2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem.",
+      "As the Lead Exogeologist for the planet Herryng, you are tasked with surveying the \"Convex Craters\"—mysterious convex geological formations whose vertices align perfectly with the planet's magnetic n×n$$$n \\times n$$$ coordinate grid. The survey area spans from (1,1)$$$(1, 1)$$$ at the bottom-left to (n,n)$$$(n, n)$$$ at the top-right.",
+      "To map the crater, you are equipped with an Ion-Scanning Camera. For any lattice point (x,y)$$$(x, y)$$$, the camera returns:",
+      "I if the point is strictly inside the crater.",
+      "P if the point lies on the perimeter of the crater.",
+      "X if the point is outside the crater.",
+      "Preliminary long-range scans have already confirmed that the coordinates (1,t)$$$(1, t)$$$ and (n,b)$$$(n, b)$$$ are perimeter points (P).",
+      "The camera is energy-intensive. You are allowed a maximum of 7n$$$7n$$$ scans before the satellite loses its orbital lock.",
+      "Once the survey is complete, you must determine how much sealant is required to cover the crater. One \"sealent bucket\" covers exactly half of a unit square (0.5$$$0.5$$$ units of area). Print the minimum number of paint buckets needed to cover the entire crater."
+    ],
+    "input": [
+      "The first line contains three integers n$$$n$$$, t$$$t$$$, and b$$$b$$$ (2≤n≤103$$$2 \\le n \\le 10^3$$$, 1≤t,b≤n$$$1 \\le t, b \\le n$$$)."
+    ],
+    "output": [
+      "When your program is ready to provide the final result, print a single line in the format ! p, where p$$$p$$$ represents the minimum number of paint buckets required to cover the crater.",
+      "After printing the answer, your program must immediately perform a flush operation and terminate. Do not print an additional newline character between the answer and the flush.",
+      "To query for a point (x,y)$$$(x,y)$$$, print \"? x y\", where 1≤x,y≤n$$$1\\le x,y\\le n$$$. After that, print a line break and do a flush operation.",
+      "After making a query, you should read a single character c$$$c$$$. If c$$$c$$$ is 'I', (x,y)$$$(x,y)$$$ is inside the polygon. If c$$$c$$$ is 'P', (x,y)$$$(x,y)$$$ is on the perimeter of the polygon. If c$$$c$$$ is 'X', (x,y)$$$(x,y)$$$ is strictly outside the polygon.",
+      "If at some moment your program reads 0 from the interactor, it should immediately exit (for example, by calling exit(0)). You will get a \"Wrong Answer\" in this case, and it means that you asked more than 7n$$$7n$$$ queries, or asked an invalid query. If you ignore this, you can get other verdicts since your program will continue to read from a closed stream. Note that printing an answer does not count as a query.",
+      "Your solution will get \"Idleness Limit Exceeded\" if you don't print anything or forget to flush the output, including for the final answer.",
+      "To flush, you can use (just after printing the line break):",
+      "fflush(stdout) in C++",
+      "System.out.flush() in Java",
+      "stdout.flush() in Python",
+      "flush(output) in Pascal",
+      "For other languages, see the documentation."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1 2\nP\nP\nP\nP\nI\nP\nX\nP\nP",
+      "output": "? 1 1\n? 1 2\n? 1 3\n? 2 1\n? 2 2\n? 2 3\n? 3 1\n? 3 2\n? 3 3\n! 7"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是一道交互题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "作为 Herryng 星球的首席行星地质学家，你的任务是勘测“凸形陨坑”——这些神秘的凸形地质构造，其顶点与星球的磁性 n×n$$$n \\times n$$$ 坐标网格完美对齐。勘测区域从左下角的 (1,1)$$$(1, 1)$$$ 延伸至右上角的 (n,n)$$$(n, n)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了绘制陨坑地图，你配备了一台离子扫描相机。对于任意格点 (x,y)$$$(x, y)$$$，相机会返回：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果该点严格位于陨坑内部，则返回 I。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果该点位于陨坑边界上，则返回 P。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果该点位于陨坑外部，则返回 X。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "初步的远程扫描已经确认，坐标 (1,t)$$$(1, t)$$$ 和 (n,b)$$$(n, b)$$$ 是边界点(P)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "相机非常耗能。在卫星失去轨道锁定之前，最多允许你进行 7n$$$7n$$$ 次扫描。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "勘察完成后，你必须确定覆盖火山口需要多少密封剂。一桶密封剂恰好覆盖半个单位正方形(面积 0.5$$$0.5$$$ 个单位)。输出覆盖整个火山口所需的最少涂料桶数。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、t$$$t$$$ 和 b$$$b$$$(2≤n≤103$$$2 \\le n \\le 10^3$$$，1≤t,b≤n$$$1 \\le t, b \\le n$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "当你的程序准备好提供最终结果时，输出一行格式为 ! p 的内容，其中 p$$$p$$$ 表示覆盖火山口所需的最少涂料桶数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "输出答案后，你的程序必须立即执行刷新操作并终止。不要在答案和刷新之间输出额外的换行符。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "要查询点 (x,y)$$$(x,y)$$$，请输出 \"? x y\"，其中 1≤x,y≤n$$$1\\le x,y\\le n$$$。之后输出换行并执行刷新操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "进行查询后，你应读取一个字符 c$$$c$$$。如果 c$$$c$$$ 是 'I'，则 (x,y)$$$(x,y)$$$ 在多边形内部。如果 c$$$c$$$ 是 'P'，则 (x,y)$$$(x,y)$$$ 在多边形边界上。如果 c$$$c$$$ 是 'X'，则 (x,y)$$$(x,y)$$$ 严格位于多边形外部。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果程序在某个时刻从交互器读到 0，应立即退出(例如调用 exit(0))。此时你会得到“Wrong Answer”判定，这意味着你查询了超过 7n$$$7n$$$ 次，或进行了无效查询。如果忽略这一点，由于程序会继续从已关闭的流中读取内容，你可能会得到其他判定。注意，输出答案不计为一次查询。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你不输出任何内容，或忘记刷新输出（包括最终答案），你的程序将得到“Idleness Limit Exceeded”判定。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要执行刷新，可以使用以下语句（就在输出换行之后）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "C++ 中的 fflush(stdout)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Java 中的 System.out.flush()",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Python 中的 stdout.flush()",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Pascal 中的 flush(output)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于其他语言，请参阅文档。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Herryng",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

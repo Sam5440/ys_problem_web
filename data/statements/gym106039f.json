@@ -1,0 +1,85 @@
+{
+  "code": "GYM106039F",
+  "letter": "F",
+  "title": "F. Chinese Innovation",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106039/problem/F",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "China has been unified, ending the Warring States Period and ushering in an era of innovations, such as teleportation. To connect the empire, the emperor has installed teleporters in various cities.",
+      "The empire consists of n$$$n$$$ cities connected by m$$$m$$$ roads, such that it is always possible to travel between any two cities using only these roads. Each road allows for bidirectional traffic and has a fixed travel cost.",
+      "Additionally, there are k$$$k$$$ different types of teleporters. Two cities can connect instantly via teleportation only if both have a teleporter of the same type. However, the cost of using a teleporter depends on the city of origin, as each mayor sets the fee to be paid for leaving the city using the magical device. That is, even for the same type of teleporter, the usage cost can vary between cities.",
+      "The Japanese traveler Mori, upon arriving in China, does not understand its complex structure and is unable to determine the best routes for travel. He wishes to travel from city 1$$$1$$$ to city n$$$n$$$. What is the minimum possible cost to make this journey, considering both the available roads and teleporters?"
+    ],
+    "input": [
+      "The first line of input contains three integers: n$$$n$$$, m$$$m$$$, and k$$$k$$$, representing the number of cities, the number of roads, and the number of distinct teleporter types, respectively. The values adhere to the constraints 2≤n≤2⋅105$$$2 \\leq n \\leq 2 \\cdot 10^5$$$, n−1≤m≤min(n(n−1)2,2⋅105)$$$n - 1 \\leq m \\leq \\min\\left(\\frac{n(n - 1)}{2}, 2 \\cdot 10^5\\right)$$$, and 0≤k≤2⋅105$$$0 \\leq k \\leq 2 \\cdot 10^5$$$.",
+      "Each of the next m$$$m$$$ lines describes an existing road between two cities. Each line contains three integers u$$$u$$$, v$$$v$$$, and c$$$c$$$, indicating that there is a bidirectional road connecting cities u$$$u$$$ and v$$$v$$$ with a cost of c$$$c$$$, where 1≤u,v≤n$$$1 \\leq u, v \\leq n$$$ and 1≤c≤109$$$1 \\leq c \\leq 10^9$$$. It is guaranteed that there is at least one path between any two cities using only roads, that there are no two distinct roads connecting the same pair of cities, and that no road connects a city to itself.",
+      "Next, for each of the n$$$n$$$ cities, there is a line containing an integer t$$$t$$$, indicating the number of teleporters available in that city, with 0≤t≤2⋅105$$$0 \\leq t \\leq 2 \\cdot 10^5$$$. This line is followed by t$$$t$$$ pairs of integers (ui,ci)$$$(u_i, c_i)$$$, representing that a teleporter of type ui$$$u_i$$$ is available in the city, and the cost to use it from this city is ci$$$c_i$$$, where 1≤ui≤k$$$1 \\leq u_i \\leq k$$$ and 1≤ci≤109$$$1 \\leq c_i \\leq 10^9$$$. A single teleporter type may not exist in any city, exist in only one, or exist in multiple cities.",
+      "It is guaranteed that the same teleporter type does not appear twice in the same city and that the total sum of available teleporters across all cities does not exceed min(nk,2⋅105)$$$\\min(nk, 2 \\cdot 10^5)$$$."
+    ],
+    "output": [
+      "Print a single integer representing the minimum cost to travel between cities 1$$$1$$$ and n$$$n$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 2 1\n1 2 5\n2 3 3\n1\n1 4\n0\n1\n1 3",
+      "output": "4"
+    },
+    {
+      "input": "6 7 2\n1 2 1\n2 3 3\n1 3 5\n2 4 2\n3 5 2\n5 6 7\n4 6 5\n1\n1 7\n2\n1 5\n2 1\n0\n0\n0\n1\n1 100",
+      "output": "6"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "中国已经统一，结束了战国时期，迎来了创新的时代，例如传送。为了连接帝国，皇帝在各个城市安装了传送器。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这个帝国由 n$$$n$$$ 座城市组成，城市之间由 m$$$m$$$ 条道路连接，且始终可以仅通过这些道路在任意两座城市之间通行。每条道路都允许双向通行，并具有固定的通行费用。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，还有 k$$$k$$$ 种不同类型的传送器。只有当两座城市都拥有同一类型的传送器时，才能通过传送瞬间连通。然而，使用传送器的费用取决于出发城市，因为每位市长都会设定使用这种魔法装置离开城市时需要支付的费用。也就是说，即使传送器类型相同，不同城市的使用费用也可能不同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "日本旅行者 Mori 抵达中国后，无法理解这里复杂的结构，因此不能确定最佳的出行路线。他希望从城市 1$$$1$$$ 前往城市 n$$$n$$$。考虑所有可用的道路和传送器，完成这段旅程的最小费用是多少？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含三个整数：n$$$n$$$、m$$$m$$$ 和 k$$$k$$$，分别表示城市数量、道路数量和不同传送器类型的数量。数据满足以下约束：2≤n≤2⋅105$$$2 \\leq n \\leq 2 \\cdot 10^5$$$，n−1≤m≤min(n(n−1)2,2⋅105)$$$n - 1 \\leq m \\leq \\min\\left(\\frac{n(n - 1)}{2}, 2 \\cdot 10^5\\right)$$$，且 0≤k≤2⋅105$$$0 \\leq k \\leq 2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中，每行描述两座城市之间的一条现有道路。每行包含三个整数 u$$$u$$$、v$$$v$$$ 和 c$$$c$$$，表示城市 u$$$u$$$ 和城市 v$$$v$$$ 之间有一条费用为 c$$$c$$$ 的双向道路，其中 1≤u,v≤n$$$1 \\leq u, v \\leq n$$$ 且 1≤c≤109$$$1 \\leq c \\leq 10^9$$$。保证仅通过道路就可以在任意两座城市之间通行，不存在连接同一对城市的两条不同道路，也不存在连接城市自身的道路。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来，对于 n$$$n$$$ 座城市中的每一座，都有一行包含一个整数 t$$$t$$$，表示该城市拥有的传送器数量，且 0≤t≤2⋅105$$$0 \\leq t \\leq 2 \\cdot 10^5$$$。这一行之后还有 t$$$t$$$ 对整数 (ui,ci)$$$(u_i, c_i)$$$，表示该城市拥有一个类型为 ui$$$u_i$$$ 的传送器，且从该城市使用它的费用为 ci$$$c_i$$$，其中 1≤ui≤k$$$1 \\leq u_i \\leq k$$$ 且 1≤ci≤109$$$1 \\leq c_i \\leq 10^9$$$。某种传送器类型可能不存在于任何城市、只存在于一座城市，或存在于多座城市。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证同一种传送器类型不会在同一个城市中出现两次，并且所有城市中可用传送器数量之和不超过 min(nk,2⋅105)$$$\\min(nk, 2 \\cdot 10^5)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示从城市 1$$$1$$$ 到城市 n$$$n$$$ 的最小费用。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 中国创新",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "code": "CF268E",
+  "letter": "E",
+  "title": "E. Playlist",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/268/E",
+  "difficulty": "2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Manao's friends often send him new songs. He never listens to them right away. Instead, he compiles them into a playlist. When he feels that his mind is open to new music, he opens the playlist and starts to listen to the songs.",
+      "Of course, there are some songs that Manao doesn't particuarly enjoy. To get more pleasure from the received songs, he invented the following procedure of listening to the playlist:",
+      "If after listening to some song Manao realizes that he liked it, then he remembers it and starts to listen to the next unlistened song.",
+      "If after listening to some song Manao realizes that he did not like it, he listens to all the songs he liked up to this point and then begins to listen to the next unlistened song.",
+      "For example, if Manao has four songs in the playlist, A, B, C, D (in the corresponding order) and he is going to like songs A and C in the end, then the order of listening is the following:",
+      "Manao listens to A, he likes it, he remembers it.",
+      "Manao listens to B, he does not like it, so he listens to A, again.",
+      "Manao listens to C, he likes the song and he remembers it, too.",
+      "Manao listens to D, but does not enjoy it and re-listens to songs A and C.",
+      "That is, in the end Manao listens to song A three times, to song C twice and songs B and D once. Note that if Manao once liked a song, he will never dislike it on a subsequent listening.",
+      "Manao has received n songs: the i-th of them is li seconds long and Manao may like it with a probability of pi percents. The songs could get on Manao's playlist in any order, so Manao wants to know the maximum expected value of the number of seconds after which the listening process will be over, for all possible permutations of the songs in the playlist."
+    ],
+    "input": [
+      "The first line contains a single integer n (1 ≤ n ≤ 50000). The i-th of the following n lines contains two integers, separated by a single space — li and pi (15 ≤ li ≤ 1000, 0 ≤ pi ≤ 100) — the length of the i-th song in seconds and the probability that Manao will like the song, in percents."
+    ],
+    "output": [
+      "In a single line print a single real number — the maximum expected listening time over all permutations of songs. The answer will be considered valid if the absolute or relative error does not exceed 10 - 9."
+    ],
+    "note": [
+      "Consider the first test case. If Manao listens to the songs in the order in which they were originally compiled, the mathematical expectation will be equal to 467.5 seconds. The maximum expected value is obtained by putting the first song at the end of the playlist.",
+      "Consider the second test case. The song which is 360 seconds long should be listened to first. The song 300 seconds long which Manao will dislike for sure should be put in the end."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n150 20\n150 50\n100 50",
+      "output": "537.500000000"
+    },
+    {
+      "input": "4\n300 0\n300 50\n240 50\n360 80",
+      "output": "2121.000000000"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Manao 的朋友们经常给他发送新歌曲。他从不立即收听这些歌曲，而是将它们整理到一个播放列表中。当他觉得自己已经准备好接受新音乐时，就会打开播放列表并开始收听歌曲。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当然，有些歌曲并不是 Manao 特别喜欢的。为了从收到的歌曲中获得更多乐趣，他发明了以下播放列表收听流程：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 Manao 听完某首歌曲后意识到自己喜欢它，那么他会记住这首歌，并开始收听下一首尚未听过的歌曲。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 Manao 听完某首歌曲后意识到自己不喜欢它，那么他会把截至目前为止自己喜欢的所有歌曲都听一遍，然后开始收听下一首尚未听过的歌曲。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，假设 Manao 的播放列表中有四首歌曲，依次为 A、B、C、D，并且最终他会喜欢歌曲 A 和 C，那么收听顺序如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Manao 收听歌曲 A，他喜欢这首歌，于是记住了它。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Manao 收听歌曲 B，他不喜欢这首歌，因此再次收听歌曲 A。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Manao 听了歌曲 C，他喜欢这首歌，也记住了它。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Manao 听了歌曲 D，但不喜欢这首歌，于是又听了一遍歌曲 A 和 C。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "也就是说，最终 Manao 听了歌曲 A 三遍、歌曲 C 两遍，以及歌曲 B 和 D 各一遍。注意，如果 Manao 曾经喜欢过一首歌，那么在之后再次听到这首歌时，他永远不会不喜欢它。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Manao 收到了 n 首歌曲：其中第 i 首歌曲的时长为 li 秒，Manao 可能以 pi% 的概率喜欢它。这些歌曲可以按任意顺序加入 Manao 的播放列表，因此对于播放列表中歌曲的所有排列，Manao 想知道听歌过程结束时所经过秒数的最大期望值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 50000）。接下来的 n 行中，第 i 行包含两个整数 li 和 pi，它们之间用一个空格分隔（15 ≤ li ≤ 1000，0 ≤ pi ≤ 100）：分别表示第 i 首歌曲的时长（单位为秒）以及 Manao 喜欢这首歌曲的概率（单位为百分比）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在一行中输出一个实数，即所有歌曲排列中听歌时间的最大期望值。如果答案的绝对误差或相对误差不超过 10 - 9，则视为正确。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "考虑第一个测试用例。如果 Manao 按照歌曲最初编排的顺序听歌，数学期望将等于 467.5 秒。将第一首歌放到播放列表末尾可以得到最大的期望值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑第二个测试用例。应该先听时长为 360 秒的歌曲。Manao 一定会不喜欢的那首时长为 300 秒的歌曲应该放在最后。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 播放列表",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

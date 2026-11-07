@@ -1,0 +1,104 @@
+{
+  "code": "GYM106797B",
+  "letter": "B",
+  "title": "B. Bye Bye Bilbo",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106797/problem/B",
+  "difficulty": "*1500",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Bilbo Baggins is finally leaving the Shire! To celebrate his departure, Gandalf plans to set up a spectacular display of fireworks across the land.",
+      "The Shire has $$$n$$$ hobbit holes numbered $$$1$$$ to $$$n$$$, each of which is occupied by exactly one hobbit. Every hole $$$i  \\gt  1$$$ is connected by a lane directly to a unique hole $$$p_i$$$, with $$$p_i  \\lt  i$$$, so that following the lanes always leads towards hole $$$1$$$, the town.",
+      "![](https://espresso.codeforces.com/415bf475600885a83677994f1bca61d0fd55a966.png)",
+      "Illustration of the first sample.",
+      "Gandalf must place fireworks at a minimum number of hobbit holes so that every hobbit can see at least one firework. The fireworks have a visibility range $$$k$$$. A hobbit at hole $$$i$$$ can see a firework placed at hole $$$j$$$ if it is placed at their own hole, or if $$$j$$$ lies on the path from hole $$$i$$$ to the town and the number of lanes between $$$i$$$ and $$$j$$$ is strictly less than $$$k$$$."
+    ],
+    "input": [
+      "The input consists of:",
+      "One line with two integers $$$n$$$ and $$$k$$$ ($$$2 \\leq n \\leq 10^5$$$, $$$1 \\le k \\le n$$$), the number of hobbit holes and the firework range.",
+      "One line with $$$n-1$$$ integers $$$p_2, p_3, \\ldots, p_n$$$ ($$$1 \\le p_i \\leq i-1$$$), where $$$p_i$$$ is the next hole reached when going from hole $$$i$$$ toward the town."
+    ],
+    "output": [
+      "Output one integer $$$m$$$, the minimum number of hobbit holes where a firework must be placed, followed by $$$m$$$ distinct integers, the indices of those holes.",
+      "If there are multiple ways to place the fireworks using the minimum number of holes, you may output any one of them."
+    ],
+    "note": [
+      "In the first sample, a firework at hole $$$1$$$, i.e. the town, can only be seen by the hobbits at holes $$$1$$$, $$$2$$$, $$$3$$$, and $$$4$$$. A second firework at hole $$$5$$$ can only be seen by the hobbit at hole $$$5$$$.",
+      "In the second sample, a firework at hole $$$1$$$ can only be seen by the hobbits at holes $$$1$$$, $$$2$$$, and $$$3$$$. A second firework at hole $$$3$$$ can only be seen by the hobbits at holes $$$3$$$, $$$4$$$, $$$5$$$, and $$$6$$$. So every hobbit can see at least one firework."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 3\n1 2 2 3",
+      "output": "2\n1 5"
+    },
+    {
+      "input": "6 3\n1 2 3 4 3",
+      "output": "2\n1 3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "比尔博·巴金斯终于要离开夏尔了！为了庆祝他的出发，甘道夫计划在整个土地上布置一场壮观的烟花表演。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "夏尔有 $$$n$$$ 个霍比特洞穴，编号从 $$$1$$$ 到 $$$n$$$，每个洞穴中恰好住着一名霍比特人。每个洞穴 $$$i  \\gt  1$$$ 都通过一条小路直接连接到唯一的洞穴 $$$p_i$$$，满足 $$$p_i  \\lt  i$$$，因此沿着小路前进总会通向洞穴 $$$1$$$，也就是城镇。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/415bf475600885a83677994f1bca61d0fd55a966.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一个样例的示意图。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "甘道夫必须在最少数量的霍比特洞穴中放置烟花，使得每个霍比特都能看到至少一场烟花。烟花的可见范围为 $$$k$$$。位于洞穴 $$$i$$$ 的霍比特可以看到放置在洞穴 $$$j$$$ 的烟花，当且仅当烟花放置在他们自己的洞穴，或者 $$$j$$$ 位于从洞穴 $$$i$$$ 到城镇的路径上，并且 $$$i$$$ 与 $$$j$$$ 之间的车道数量严格小于 $$$k$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入包括：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一行包含两个整数 $$$n$$$ 和 $$$k$$$($$$2 \\leq n \\leq 10^5$$$、$$$1 \\le k \\le n$$$)，分别表示霍比特洞穴的数量和烟花的射程。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一行包含 $$$n-1$$$ 个整数 $$$p_2, p_3, \\ldots, p_n$$$($$$1 \\le p_i \\leq i-1$$$)，其中 $$$p_i$$$ 表示从洞 $$$i$$$ 朝城镇方向前进时到达的下一个洞。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数 $$$m$$$，表示必须放置烟花的霍比特洞数量的最小值，随后输出 $$$m$$$ 个互不相同的整数，表示这些洞的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多种使用最少孔数放置烟花的方法，你可以输出其中任意一种。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，位于洞穴 $$$1$$$(即城镇)的烟花只能被位于洞穴 $$$1$$$、$$$2$$$、$$$3$$$ 和 $$$4$$$ 的霍比特人看到。位于洞穴 $$$5$$$ 的第二枚烟花只能被位于洞穴 $$$5$$$ 的霍比特人看到。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，位于洞穴 $$$1$$$ 的烟花只有位于洞穴 $$$1$$$、$$$2$$$ 和 $$$3$$$ 的霍比特人能够看到。位于洞穴 $$$3$$$ 的第二个烟花只有位于洞穴 $$$3$$$、$$$4$$$、$$$5$$$ 和 $$$6$$$ 的霍比特人能够看到。因此，每个霍比特人都至少能看到一枚烟花。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 再见，比尔博",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

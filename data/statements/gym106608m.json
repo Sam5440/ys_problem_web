@@ -1,0 +1,127 @@
+{
+  "code": "GYM106608M",
+  "letter": "M",
+  "title": "M. MEX Queries",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106608/problem/M",
+  "difficulty": "*1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem.",
+      "There is a hidden array $$$a$$$ of size $$$n$$$.",
+      "You can make queries of the following form:",
+      "Provide a subset $$$P \\subseteq \\{1, 2, ..., n\\}$$$ and a subset $$$Q \\subseteq \\{0, 1, 2, ..., n\\}$$$.",
+      "The interactor will construct a set $$$S = \\{a_{p_i} \\mid p_i \\in P\\} \\cup Q$$$. It will calculate and give you the MEX$$$^†$$$ of the set $$$S$$$.",
+      "Using at most $$$15 n$$$ queries, find the hidden array $$$a$$$ and output it.",
+      "$$$^†$$$The MEX of a set is the smallest non-negative integer that is not present in the set. For example, MEX($$$\\{0, 1, 4, 5\\}$$$) is $$$2$$$ and MEX($$$\\{45\\}$$$) is $$$0$$$."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases $$$t$$$ ($$$1 \\le t \\le 100$$$). The description of the test cases follows.",
+      "The only line of each test case contains a single integer $$$n$$$ ($$$1 \\le n \\le 400$$$) — the size of the hidden array $$$a$$$ (although they will not be provided in the input, the elements of $$$a$$$ satisfy $$$0 \\le a_i \\le n$$$).",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases is at most $$$400$$$.",
+      "You can make queries in the following format — to query subsets $$$P$$$ and $$$Q$$$, output one line of the form \"? $$$x$$$ $$$y$$$\" (where $$$x = |P|$$$ and $$$y = |Q|$$$). On the next line, output $$$x$$$ unique space-separated integers — the elements of $$$P$$$. On the next line, output $$$y$$$ unique space-separated integers — the elements of $$$Q$$$. After that, read a single integer — the value of MEX of $$$S$$$ (which is constructed as described above).",
+      "To report the hidden array as $$$b$$$, output \"! $$$b_1$$$ $$$b_2$$$ ... $$$b_n$$$\". Then, the interaction continues with the next test case.",
+      "Reporting the answer does not count towards the number of queries made.",
+      "Note that you have to use the flush operation right after printing each line — otherwise you may get Idleness Limit Exceeded verdict. For example, in C++ you should use the function fflush(stdout) or cout.flush(), in Java or Kotlin — System.out.flush(), and in Python — sys.stdout.flush()."
+    ],
+    "output": [],
+    "note": [
+      "You do not have to handle comments (lines starting with #) in the input; they are only for presentation purposes and will not be present in the test cases.",
+      "The queries given in the sample input and output are for demonstrating the interaction, and may not logically lead to a correct output.",
+      "Test case 1: The hidden array is $$$[0]$$$.The participant's code makes one query, with $$$P = \\{1\\}$$$ and $$$Q = \\{\\}$$$. The interactor calculates $$$S = \\{0\\}$$$ and returns its MEX, $$$1$$$.\nThe participant's code correctly concludes that the hidden array is $$$[0]$$$ and outputs it.",
+      "Test case 2: The hidden array is $$$[3, 1, 4, 2, 5, 0]$$$.The participant's code makes the first query query, with $$$P = \\{2, 6, 4\\}$$$ and $$$Q = \\{0\\}$$$. The interactor calculates $$$S = \\{1, 0, 2\\}$$$ and returns its MEX, $$$3$$$.\nThe participant's code makes the second query, with $$$P = \\{5, 3, 1\\}$$$ and $$$Q = \\{4, 5, 6\\}$$$. The interactor calculates $$$S = \\{5, 4, 3, 6\\}$$$ and returns its MEX, $$$0$$$.\nThe participant's code correctly concludes that the hidden array is $$$[3, 1, 4, 2, 5, 0]$$$ and outputs it."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n# Test case 1\n1\n1\n\n# Test case 2\n6\n3\n0\n\n# Test case 3\n8\n0",
+      "output": "# Test case 1\n? 1 0\n1\n\n! 0\n\n# Test case 2\n? 3 1\n2 6 4\n0\n? 3 3\n5 3 1\n4 5 6\n! 3 1 4 2 5 0\n\n# Test case 3\n? 8 1\n1 2 3 4 5 6 7 8\n8\n! 8 8 8 8 8 8 8 8"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是一道交互题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有一个大小为 $$$n$$$ 的隐藏数组 $$$a$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以进行如下形式的询问：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给出一个子集 $$$P \\subseteq \\{1, 2, ..., n\\}$$$ 和一个子集 $$$Q \\subseteq \\{0, 1, 2, ..., n\\}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互器将构造一个集合 $$$S = \\{a_{p_i} \\mid p_i \\in P\\} \\cup Q$$$。它将计算并给出集合 $$$S$$$ 的 MEX$$$^†$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "使用不超过 $$$15 n$$$ 次查询，找出隐藏数组 $$$a$$$ 并输出它。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$^†$$$一个集合的 MEX 是该集合中不存在的最小非负整数。例如，MEX($$$\\{0, 1, 4, 5\\}$$$) 是 $$$2$$$，而 MEX($$$\\{45\\}$$$) 是 $$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每组测试包含多个测试用例。第一行包含测试用例的数量 $$$t$$$($$$1 \\le t \\le 100$$$)。下面给出各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例仅包含一行，其中有一个整数 $$$n$$$($$$1 \\le n \\le 400$$$)——隐藏数组 $$$a$$$ 的大小(尽管它们不会在输入中给出，但 $$$a$$$ 的元素满足 $$$0 \\le a_i \\le n$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 $$$n$$$ 的总和不超过 $$$400$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以按照以下格式进行询问——若要询问子集 $$$P$$$ 和 $$$Q$$$，输出一行，格式为“? $$$x$$$ $$$y$$$”(其中 $$$x = |P|$$$ 且 $$$y = |Q|$$$)。下一行输出 $$$x$$$ 个互不相同、以空格分隔的整数，即 $$$P$$$ 的元素。再下一行输出 $$$y$$$ 个互不相同、以空格分隔的整数，即 $$$Q$$$ 的元素。之后，读取一个整数——$$$S$$$ 的 MEX 值(该集合按照上述方式构造)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要将隐藏数组报告为 $$$b$$$，请输出“! $$$b_1$$$ $$$b_2$$$ ... $$$b_n$$$”。随后，交互将继续进行下一个测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "报告答案不计入查询次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，在输出每一行后，你必须立即执行刷新操作，否则可能会得到超时（Idleness Limit Exceeded）判定。例如，在 C++ 中应使用函数 fflush(stdout) 或 cout.flush()；在 Java 或 Kotlin 中使用 System.out.flush()；在 Python 中使用 sys.stdout.flush()。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "无需处理输入中的注释（以 # 开头的行）；它们仅用于展示，不会出现在测试数据中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "样例输入和输出中的查询仅用于演示交互过程，逻辑上可能无法得到正确的输出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试用例 1：隐藏数组为 $$$[0]$$$。参赛者的代码进行了一次询问，参数为 $$$P = \\{1\\}$$$ 和 $$$Q = \\{\\}$$$。交互器计算 $$$S = \\{0\\}$$$，并返回其 MEX 值 $$$1$$$。\n参赛者的代码正确地推断出隐藏数组为 $$$[0]$$$，并将其输出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试用例 2：隐藏数组为 $$$[3, 1, 4, 2, 5, 0]$$$。参赛者的代码发起第一次询问，使用 $$$P = \\{2, 6, 4\\}$$$ 和 $$$Q = \\{0\\}$$$。交互器计算 $$$S = \\{1, 0, 2\\}$$$ 并返回其 MEX，即 $$$3$$$。\n参赛者的代码发起第二次询问，使用 $$$P = \\{5, 3, 1\\}$$$ 和 $$$Q = \\{4, 5, 6\\}$$$。交互器计算 $$$S = \\{5, 4, 3, 6\\}$$$ 并返回其 MEX，即 $$$0$$$。\n参赛者的代码正确推断出隐藏数组为 $$$[3, 1, 4, 2, 5, 0]$$$，并将其输出。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "M. MEX 询问",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

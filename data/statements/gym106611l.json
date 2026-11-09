@@ -1,0 +1,103 @@
+{
+  "code": "GYM106611L",
+  "letter": "L",
+  "title": "L. Linesweeper",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106611/problem/L",
+  "difficulty": "*1700",
+  "timeLimit": "0.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alice is an amateur Linesweeper player who is learning how to play the game!",
+      "In Linesweeper, mines are randomly placed on a board that consists of a single row with $$$N$$$ cells, numbered from $$$1$$$ to $$$N$$$ from left to right. Some cells contain mines while some cells do not contain mines.",
+      "Initially, all cells are unopened, and no information will be displayed. In each move, a player selects an unopened cell to open it. If the chosen cell contains a mine, the player loses immediately. Otherwise, a number is displayed in the opened cell, indicating how many adjacent cells contain mines. Two cells are considered adjacent if they share a side. As each cell has at most two adjacent cells, the number displayed in an opened cell will be 0, 1, or 2.",
+      "Alice has not lost yet. Thus, all opened cells do not contain mines. However, she is struggling to solve her Linesweeper; therefore, she shares the current board and seeks your help. Can you determine how many unopened cells she can open in her next move that are guaranteed not to contain mines?"
+    ],
+    "input": [
+      "The first line consists of a single integer, $$$N$$$ ($$$1\\leq N \\leq10^5$$$), the number of cells.",
+      "The second line contains a string of length $$$N$$$, consisting only of the characters 0, 1, 2, and ?. If the $$$i$$$-th character is ?, the $$$i$$$-th cell is unopened. If the $$$i$$$-th character is 0, 1, or 2, it represents the number of mines adjacent to the $$$i$$$-th cell.",
+      "The information provided is guaranteed to be consistent and all opened cells do not contain mines."
+    ],
+    "output": [
+      "Output a single integer: the number of unopened cells that are guaranteed not to contain mines."
+    ],
+    "note": [
+      "In Sample $$$1$$$, we can only determine that either the $$$1$$$-st or $$$3$$$-rd cell contains a mine. However, we cannot deduce exactly which one contains a mine. Therefore, there are no unopened cells that are guaranteed not to contain mines.",
+      "In Sample $$$2$$$, since there is no mine next to the $$$1$$$-st cell, we can deduce that the $$$2$$$-nd cell does not contain a mine. In the $$$4$$$-th cell, there should be $$$2$$$ mines adjacent to it; therefore, we can deduce that the $$$3$$$-rd and $$$5$$$-th cells contain mines. Since the $$$5$$$-th cell contains a mine and there is only $$$1$$$ mine next to the $$$6$$$-th cell, we can deduce that the $$$7$$$-th cell does not contain a mine. Therefore, the $$$2$$$-nd and $$$7$$$-th cells are guaranteed not to contain mines.",
+      "In Sample $$$3$$$, we can deduce that the $$$1$$$-st and $$$4$$$-th cells contain mines. Therefore, there are no unopened cells that are guaranteed not to contain mines."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n?1?",
+      "output": "0"
+    },
+    {
+      "input": "7\n0??2?1?",
+      "output": "2"
+    },
+    {
+      "input": "4\n?11?",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Alice 是一名业余扫雷玩家，正在学习如何玩这个游戏！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在扫雷游戏 Linesweeper 中，地雷被随机放置在一个由单行组成的棋盘上，该行有 $$$N$$$ 个格子，从左到右编号为 $$$1$$$ 到 $$$N$$$。部分格子中有地雷，部分格子中没有地雷。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "初始时，所有格子都未打开，且不会显示任何信息。每一步中，玩家选择一个未打开的格子并将其打开。如果所选格子中有地雷，玩家立即失败。否则，该格子中会显示一个数字，表示与它相邻且含有地雷的格子数量。两个格子共用一条边时，视为相邻。由于每个格子至多有两个相邻格子，打开的格子中显示的数字为 0、1 或 2。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Alice 还没有输。因此，所有已打开的格子都不含地雷。然而，她正苦于解决自己的扫线雷游戏，所以她分享了当前棋盘并向你寻求帮助。你能确定在下一步中，有多少个未打开的格子可以保证不含地雷、因而能够被打开吗？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 $$$N$$$ ($$$1\\leq N \\leq10^5$$$)，表示单元格的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个长度为 $$$N$$$ 的字符串，仅由字符 0、1、2 和 ? 组成。如果第 $$$i$$$ 个字符是 ?，则第 $$$i$$$ 个格子未被打开。如果第 $$$i$$$ 个字符是 0、1 或 2，则它表示与第 $$$i$$$ 个格子相邻的地雷数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所提供的信息一致，且所有已打开的格子均不含地雷。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数：保证不含地雷的未打开格子数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在样例 $$$1$$$ 中，我们只能确定 $$$1$$$ 或 $$$3$$$ 个格子中有一个包含地雷。然而，我们无法准确推断出究竟是哪一个格子包含地雷。因此，没有任何未打开的格子能够保证不含地雷。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在样例 $$$2$$$ 中，由于 $$$1$$$ 个格子旁边没有地雷，我们可以推断 $$$2$$$ 个格子不含地雷。$$$4$$$ 个格子旁边应当有 $$$2$$$ 个地雷，因此我们可以推断 $$$3$$$ 个和 $$$5$$$ 个格子含有地雷。由于 $$$5$$$ 个格子含有地雷，且 $$$6$$$ 个格子旁边只有 $$$1$$$ 个地雷，我们可以推断 $$$7$$$ 个格子不含地雷。因此，可以确定 $$$2$$$ 个和 $$$7$$$ 个格子都不含地雷。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在样例 $$$3$$$ 中，我们可以推断第 $$$1$$$ 个和第 $$$4$$$ 个格子中有地雷。因此，没有任何未打开的格子可以确定不含地雷。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "L. 扫雷线",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

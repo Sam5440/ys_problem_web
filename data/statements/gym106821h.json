@@ -1,0 +1,51 @@
+{
+  "code": "GYM106821H",
+  "letter": "H",
+  "title": "H. Popsicle Stick Game",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106821/problem/H",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Dinny and Walrus are working on an arts and crafts project! They have $$$n$$$ popsicle sticks, where the $$$i$$$-th stick has a non-negative integer $$$a_i$$$ written on it.",
+      "To decide who gets to keep their masterpiece, they play a game. Dinny goes first, and the two players alternate turns until all popsicle sticks have been removed.",
+      "On each turn, the current player performs the following actions in order:",
+      "Add the $$$\\mathrm{MEX}^\\dagger$$$ of the numbers written on the remaining popsicle sticks to their score.",
+      "Choose any remaining popsicle stick and remove it.",
+      "Both players start with a score of $$$0$$$. After all popsicle sticks have been removed, the player with the higher score wins. If both players have the same score, the game ends in a tie.",
+      "Assuming both players play optimally, determine whether Dinny wins, Walrus wins, or the game ends in a tie.",
+      "$$$^\\dagger$$$The $$$\\mathrm{MEX}$$$ (minimum excluded value) of an array is the smallest non-negative integer that is not in the array. For example:",
+      "The $$$\\mathrm{MEX}$$$ of $$$[2, 2, 1]$$$ is $$$0$$$ because $$$0$$$ is not in the array.",
+      "The $$$\\mathrm{MEX}$$$ of $$$[3, 1, 0, 1]$$$ is $$$2$$$ because $$$0$$$ and $$$1$$$ are in the array but $$$2$$$ is not.",
+      "The $$$\\mathrm{MEX}$$$ of $$$[0, 3, 1, 2]$$$ is $$$4$$$ because $$$0$$$, $$$1$$$, $$$2$$$ and $$$3$$$ are in the array but $$$4$$$ is not."
+    ],
+    "input": [
+      "The first line contains an integer $$$n$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$) — the number of popsicle sticks.",
+      "The second line contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ ($$$0 \\le a_i \\le 10^9$$$) — the numbers written on the popsicle sticks."
+    ],
+    "output": [
+      "Output \"Dinny\", \"Walrus\", or \"Tie\", according to the winner. The capitalization of these names does not matter."
+    ],
+    "note": [
+      "In the first test case, one possible sequence of moves is:",
+      "Dinny earns $$$3$$$ points and removes the stick labeled $$$1$$$, leaving $$$[0,0,2]$$$.",
+      "Walrus earns $$$1$$$ point and removes a stick labeled $$$0$$$, leaving $$$[0,2]$$$.",
+      "Dinny earns $$$1$$$ point and removes the remaining stick labeled $$$0$$$, leaving $$$[2]$$$.",
+      "Walrus earns $$$0$$$ points and removes the final stick.",
+      "Dinny finishes with $$$4$$$ points, while Walrus finishes with $$$1$$$ point. Therefore, Dinny wins.",
+      "In the second test case, since there is no stick labeled $$$0$$$, the MEX remains $$$0$$$ throughout the game. Neither player earns any points, so the game ends in a tie."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n0 0 1 2",
+      "output": "Dinny"
+    },
+    {
+      "input": "3\n1 2 3",
+      "output": "Tie"
+    }
+  ]
+}

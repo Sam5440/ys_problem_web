@@ -1,0 +1,145 @@
+{
+  "code": "GYM106507D",
+  "letter": "D",
+  "title": "D. Convex",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106507/problem/D",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given N$$$N$$$ pairs of integers mi,bi$$$m_i,b_i$$$ representing lines in the form of y=mix+bi$$$y = m_ix + b_i$$$.",
+      "You are also given a set of integers S$$$S$$$ of size M.$$$M.$$$",
+      "f(x)={the minimum of all N linesx∈Sthe maximum of all N linesx∉S$$ f(x) = \\begin{cases} \\text{the minimum of all } N \\text{ lines} & x \\in S \\\\ \\text{the maximum of all } N \\text{ lines} & x \\notin S \\end{cases} $$",
+      "Determine if f(x)$$$f(x)$$$ is convex∗$$$^{*}$$$.",
+      "∗$$$^{*}$$$ A function is convex if slopes are non-decreasing over all real x$$$x$$$. In other words, a function is convex if, for any real x1<x2<x3$$$x_1  \\lt  x_2  \\lt  x_3$$$, the slope from x1$$$x_1$$$ to x2$$$x_2$$$ is ≤$$$\\le$$$ the slope from x2$$$x_2$$$ to x3$$$x_3$$$."
+    ],
+    "input": [
+      "The first line consists of an integer t$$$t$$$ (1≤t≤100$$$1 \\le t \\le 100$$$), the number of test cases.",
+      "The first line of each test case consists of two integers N$$$N$$$ (1≤N≤105$$$1 \\le N \\le 10^5$$$) and M$$$M$$$ (0≤M≤105$$$0 \\le M \\le 10^5$$$), the number of lines given, and the size of set S$$$S$$$, respectively.",
+      "The next N$$$N$$$ lines each consist of a pair of integers mi,bi$$$m_i,b_i$$$ (−109≤mi,bi≤109$$$-10^9 \\le m_i,b_i \\le 10^9$$$), describing a line.",
+      "The next line consists of S1,S2,...,SM$$$S_1,S_2,...,S_M$$$ (−109≤Si≤109$$$-10^9 \\le S_i \\le 10^9$$$), describing the set S$$$S$$$.",
+      "The sum of N$$$N$$$ and the sum of M$$$M$$$ over all t$$$t$$$ test cases does not exceed 105$$$10^5$$$.",
+      "—",
+      "Tests in subtasks are numbered 1−20$$$1 - 20$$$ with samples skipped. Each test is worth 10020=5$$$\\frac{100}{20} = 5$$$ points.",
+      "Tests 1−20$$$1-20$$$ satisfy no additional constraints."
+    ],
+    "output": [
+      "For each test case, output \"YES\" if f(x)$$$f(x)$$$ is convex; otherwise, output \"NO.\""
+    ],
+    "note": [
+      "Visualization for sample test:",
+      "![](https://espresso.codeforces.com/d0c5d77d1594bcf824c022f76619a69b1a255513.png)",
+      "![](https://espresso.codeforces.com/3e2d42c94f1248f803e0ea2463fa15e9cd75c82f.png)",
+      "—",
+      "Problem Idea: Buzzy2",
+      "Problem Preparation: Buzzy2",
+      "Occurrences: Novice D"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n3 0\n1 2\n-1 4\n4 -1\n3 1\n1 2\n-1 4\n4 -1\n1\n3 2\n1 2\n-1 4\n4 -1\n1 -2\n2 2\n1 2\n1 2\n1 -2",
+      "output": "YES\nYES\nNO\nYES"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定 N$$$N$$$ 对整数 mi,bi$$$m_i,b_i$$$，表示形如 y=mix+bi$$$y = m_ix + b_i$$$ 的直线。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "还给定一个大小为 M 的整数集合 S$$$S$$$。$$$M.$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "f(x)={x∈S 时所有 N 条直线的最小值；x∉S 时所有 N 条直线的最大值$$ f(x) = \\begin{cases} \\text{the minimum of all } N \\text{ lines} & x \\in S \\\\ \\text{the maximum of all } N \\text{ lines} & x \\notin S \\end{cases} $$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "判断 f(x)$$$f(x)$$$ 是否为凸函数∗$$$^{*}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "∗$$$^{*}$$$ 如果一个函数在所有实数 x$$$x$$$ 上的斜率都非递减，则称其为凸函数。换句话说，对于任意实数 x1<x2<x3$$$x_1  \\lt  x_2  \\lt  x_3$$$，从 x1$$$x_1$$$ 到 x2$$$x_2$$$ 的斜率 ≤$$$\\le$$$ 从 x2$$$x_2$$$ 到 x3$$$x_3$$$ 的斜率时，该函数是凸函数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$ (1≤t≤100$$$1 \\le t \\le 100$$$)，表示测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 N$$$N$$$ (1≤N≤105$$$1 \\le N \\le 10^5$$$) 和 M$$$M$$$ (0≤M≤105$$$0 \\le M \\le 10^5$$$)，分别表示给出的直线数量和集合 S$$$S$$$ 的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行每行包含一对整数 mi,bi$$$m_i,b_i$$$ (−109≤mi,bi≤109$$$-10^9 \\le m_i,b_i \\le 10^9$$$)，表示一条直线。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来一行包含 S1,S2,...,SM$$$S_1,S_2,...,S_M$$$ (−109≤Si≤109$$$-10^9 \\le S_i \\le 10^9$$$)，表示集合 S$$$S$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有 t$$$t$$$ 个测试用例中，N$$$N$$$ 的总和与 M$$$M$$$ 的总和均不超过 105$$$10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "除去样例，子任务中的测试编号为 1−20$$$1 - 20$$$。每个测试点的分值为 10020=5$$$\\frac{100}{20} = 5$$$ 分。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试 1−20$$$1-20$$$ 不满足额外约束。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果 f(x)$$$f(x)$$$ 是凸函数，则输出 \"YES\"；否则输出 \"NO\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例测试的可视化：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/d0c5d77d1594bcf824c022f76619a69b1a255513.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/3e2d42c94f1248f803e0ea2463fa15e9cd75c82f.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "题目构思：Buzzy2",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "题目准备：Buzzy2",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "出现于：Novice D",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 凸",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

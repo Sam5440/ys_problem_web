@@ -1,0 +1,108 @@
+{
+  "code": "CF1413D",
+  "letter": "D",
+  "title": "D. Shurikens",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1413/D",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Tenten runs a weapon shop for ninjas. Today she is willing to sell n$$$n$$$ shurikens which cost 1$$$1$$$, 2$$$2$$$, ..., n$$$n$$$ ryo (local currency). During a day, Tenten will place the shurikens onto the showcase, which is empty at the beginning of the day. Her job is fairly simple: sometimes Tenten places another shuriken (from the available shurikens) on the showcase, and sometimes a ninja comes in and buys a shuriken from the showcase. Since ninjas are thrifty, they always buy the cheapest shuriken from the showcase.",
+      "Tenten keeps a record for all events, and she ends up with a list of the following types of records:",
+      "+ means that she placed another shuriken on the showcase;",
+      "- x means that the shuriken of price x$$$x$$$ was bought.",
+      "Today was a lucky day, and all shurikens were bought. Now Tenten wonders if her list is consistent, and what could be a possible order of placing the shurikens on the showcase. Help her to find this out!"
+    ],
+    "input": [
+      "The first line contains the only integer n$$$n$$$ (1≤n≤105$$$1\\leq n\\leq 10^5$$$) standing for the number of shurikens.",
+      "The following 2n$$$2n$$$ lines describe the events in the format described above. It's guaranteed that there are exactly n$$$n$$$ events of the first type, and each price from 1$$$1$$$ to n$$$n$$$ occurs exactly once in the events of the second type."
+    ],
+    "output": [
+      "If the list is consistent, print \"YES\". Otherwise (that is, if the list is contradictory and there is no valid order of shurikens placement), print \"NO\".",
+      "In the first case the second line must contain n$$$n$$$ space-separated integers denoting the prices of shurikens in order they were placed. If there are multiple answers, print any."
+    ],
+    "note": [
+      "In the first example Tenten first placed shurikens with prices 4$$$4$$$ and 2$$$2$$$. After this a customer came in and bought the cheapest shuriken which costed 2$$$2$$$. Next, Tenten added a shuriken with price 3$$$3$$$ on the showcase to the already placed 4$$$4$$$-ryo. Then a new customer bought this 3$$$3$$$-ryo shuriken. After this she added a 1$$$1$$$-ryo shuriken. Finally, the last two customers bought shurikens 1$$$1$$$ and 4$$$4$$$, respectively. Note that the order [2,4,3,1]$$$[2, 4, 3, 1]$$$ is also valid.",
+      "In the second example the first customer bought a shuriken before anything was placed, which is clearly impossible.",
+      "In the third example Tenten put all her shurikens onto the showcase, after which a customer came in and bought a shuriken with price 2$$$2$$$. This is impossible since the shuriken was not the cheapest, we know that the 1$$$1$$$-ryo shuriken was also there."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n+\n+\n- 2\n+\n- 3\n+\n- 1\n- 4",
+      "output": "YES\n4 2 3 1"
+    },
+    {
+      "input": "1\n- 1\n+",
+      "output": "NO"
+    },
+    {
+      "input": "3\n+\n+\n+\n- 2\n- 1\n- 3",
+      "output": "NO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Tenten 经营一家忍者武器店。今天她打算出售 n$$$n$$$ 枚手里剑，价格分别为 1$$$1$$$ 两、2$$$2$$$ 两、……、n$$$n$$$ 两(当地货币)。一天中，Tenten 会把手里剑放到展示柜上，展示柜在一天开始时是空的。她的工作很简单：有时 Tenten 会(从可用的手里剑中)再放一枚手里剑到展示柜上，有时会有忍者进来从展示柜买走一枚手里剑。由于忍者很节俭，他们总是买展示柜中最便宜的手里剑。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Tenten 记录了所有事件，最终得到一份由以下类型记录组成的列表：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "+ 表示她将另一枚手里剑放上了展示柜；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "- x 表示价格为 x$$$x$$$ 的手里剑被买走了。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "今天是幸运的一天，所有手里剑都被买走了。现在 Tenten 想知道她的记录是否一致，以及可能存在怎样的放置手里剑到展示柜的顺序。请帮她弄清楚！",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含唯一的整数 n$$$n$$$(1≤n≤105$$$1\\leq n\\leq 10^5$$$)，表示手里剑的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 2n$$$2n$$$ 行按照上述格式描述事件。保证恰好有 n$$$n$$$ 个第一类事件，并且第二类事件中，价格从 1$$$1$$$ 到 n$$$n$$$ 的每个价格都恰好出现一次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果列表一致，输出“YES”。否则（也就是说，列表存在矛盾，且不存在一种有效的手里剑摆放顺序），输出“NO”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一种情况下，第二行必须包含 n$$$n$$$ 个以空格分隔的整数，表示手里剑的摆放顺序。如果有多个答案，输出任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Tenten 首先放上了价格为 4$$$4$$$ 和 2$$$2$$$ 的手里剑。之后一位顾客进来，买走了最便宜的手里剑，其价格为 2$$$2$$$。接着，Tenten 在已经放好的 4$$$4$$$ 两手里剑旁放上了一把价格为 3$$$3$$$ 的手里剑。随后，一位新顾客买走了这把 3$$$3$$$ 两的手里剑。之后她又放上了一把 1$$$1$$$ 两的手里剑。最后两位顾客分别买走了价格为 1$$$1$$$ 和 4$$$4$$$ 的手里剑。注意，顺序 [2,4,3,1]$$$[2, 4, 3, 1]$$$ 也是有效的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，第一位顾客在任何手里剑摆上去之前就买走了一把，这显然是不可能的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，Tenten 把所有手里剑都放到了展示柜上，之后一位顾客进来，买走了一把价格为 2$$$2$$$ 的手里剑。这是不可能的，因为这把手里剑并不是最便宜的；我们知道价格为 1$$$1$$$ 两的手里剑当时也在展示柜上。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 手里剑",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "code": "CF895D",
+  "letter": "D",
+  "title": "D. String Mark",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/895/D",
+  "difficulty": "2100",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "At the Byteland State University marks are strings of the same length. Mark x is considered better than y if string y is lexicographically smaller than x.",
+      "Recently at the BSU was an important test work on which Vasya recived the mark a. It is very hard for the teacher to remember the exact mark of every student, but he knows the mark b, such that every student recieved mark strictly smaller than b.",
+      "Vasya isn't satisfied with his mark so he decided to improve it. He can swap characters in the string corresponding to his mark as many times as he like. Now he want to know only the number of different ways to improve his mark so that his teacher didn't notice something suspicious.",
+      "More formally: you are given two strings a, b of the same length and you need to figure out the number of different strings c such that:",
+      "1) c can be obtained from a by swapping some characters, in other words c is a permutation of a.",
+      "2) String a is lexicographically smaller than c.",
+      "3) String c is lexicographically smaller than b.",
+      "For two strings x and y of the same length it is true that x is lexicographically smaller than y if there exists such i, that x1 = y1, x2 = y2, ..., xi - 1 = yi - 1, xi < yi.",
+      "Since the answer can be very large, you need to find answer modulo 109 + 7."
+    ],
+    "input": [
+      "First line contains string a, second line contains string b. Strings a, b consist of lowercase English letters. Their lengths are equal and don't exceed 106.",
+      "It is guaranteed that a is lexicographically smaller than b."
+    ],
+    "output": [
+      "Print one integer  — the number of different strings satisfying the condition of the problem modulo 109 + 7."
+    ],
+    "note": [
+      "In first sample from string abc can be obtained strings acb, bac, bca, cab, cba, all of them are larger than abc, but smaller than ddd. So the answer is 5.",
+      "In second sample any string obtained from abcdef is larger than abcdeg. So the answer is 0."
+    ]
+  },
+  "examples": [
+    {
+      "input": "abc\nddd",
+      "output": "5"
+    },
+    {
+      "input": "abcdef\nabcdeg",
+      "output": "0"
+    },
+    {
+      "input": "abacaba\nubuduba",
+      "output": "64"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在 Byteland State University，成绩是长度相同的字符串。如果字符串 y 的字典序小于字符串 x，那么成绩 x 被认为比 y 好。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最近，BSU 举行了一场重要考试，Vasya 在这次考试中得到了成绩 a。老师很难记住每个学生的确切成绩，但他知道一个成绩 b，使得每个学生得到的成绩都严格小于 b。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vasya 对自己的成绩不满意，因此决定提高成绩。他可以任意次交换成绩对应字符串中的字符。现在，他只想知道有多少种不同的方式可以提高成绩，同时不让老师察觉到可疑之处。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更正式地说：给定两个长度相同的字符串 a 和 b，你需要计算满足以下条件的不同字符串 c 的数量：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1) c 可以通过交换 a 中的某些字符得到，换句话说，c 是 a 的一个排列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2) 字符串 a 的字典序小于 c。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3) 字符串 c 的字典序小于 b。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于两个长度相同的字符串 x 和 y，如果存在一个 i，使得 x1 = y1，x2 = y2，...，xi - 1 = yi - 1，且 xi < yi，则称 x 的字典序小于 y。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于答案可能非常大，你需要求出答案对 10^9+7 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含字符串 a，第二行包含字符串 b。字符串 a、b 由小写英文字母组成。它们的长度相等，且不超过 10^6。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 a 的字典序小于 b。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——满足题目条件的不同字符串的数量，对 10^9+7 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，由字符串 abc 可以得到字符串 acb、bac、bca、cab、cba。它们都大于 abc，但小于 ddd。因此答案为 5。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，由 abcdef 得到的任何字符串都大于 abcdeg。因此答案为 0。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 字符串标记",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

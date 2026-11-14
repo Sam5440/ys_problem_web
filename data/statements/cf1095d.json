@@ -1,0 +1,75 @@
+{
+  "code": "CF1095D",
+  "letter": "D",
+  "title": "D. Circular Dance",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1095/D",
+  "difficulty": "1600",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are n$$$n$$$ kids, numbered from 1$$$1$$$ to n$$$n$$$, dancing in a circle around the Christmas tree. Let's enumerate them in a clockwise direction as p1$$$p_1$$$, p2$$$p_2$$$, ..., pn$$$p_n$$$ (all these numbers are from 1$$$1$$$ to n$$$n$$$ and are distinct, so p$$$p$$$ is a permutation). Let the next kid for a kid pi$$$p_i$$$ be kid pi+1$$$p_{i + 1}$$$ if i<n$$$i  \\lt  n$$$ and p1$$$p_1$$$ otherwise. After the dance, each kid remembered two kids: the next kid (let's call him x$$$x$$$) and the next kid for x$$$x$$$. Each kid told you which kids he/she remembered: the kid i$$$i$$$ remembered kids ai,1$$$a_{i, 1}$$$ and ai,2$$$a_{i, 2}$$$. However, the order of ai,1$$$a_{i, 1}$$$ and ai,2$$$a_{i, 2}$$$ can differ from their order in the circle.",
+      "![](https://espresso.codeforces.com/4b7194b47baa591e9db3cb6908976996d197073d.png)",
+      "You have to restore the order of the kids in the circle using this information. If there are several answers, you may print any. It is guaranteed that at least one solution exists.",
+      "If you are Python programmer, consider using PyPy instead of Python when you submit your code."
+    ],
+    "input": [
+      "The first line of the input contains one integer n$$$n$$$ (3≤n≤2⋅105$$$3 \\le n \\le 2 \\cdot 10^5$$$) — the number of the kids.",
+      "The next n$$$n$$$ lines contain 2$$$2$$$ integers each. The i$$$i$$$-th line contains two integers ai,1$$$a_{i, 1}$$$ and ai,2$$$a_{i, 2}$$$ (1≤ai,1,ai,2≤n,ai,1≠ai,2$$$1 \\le a_{i, 1}, a_{i, 2} \\le n, a_{i, 1} \\ne a_{i, 2}$$$) — the kids the i$$$i$$$-th kid remembered, given in arbitrary order."
+    ],
+    "output": [
+      "Print n$$$n$$$ integers p1$$$p_1$$$, p2$$$p_2$$$, ..., pn$$$p_n$$$ — permutation of integers from 1$$$1$$$ to n$$$n$$$, which corresponds to the order of kids in the circle. If there are several answers, you may print any (for example, it doesn't matter which kid is the first in the circle). It is guaranteed that at least one solution exists."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n3 5\n1 4\n2 4\n1 5\n2 3",
+      "output": "3 2 4 1 5"
+    },
+    {
+      "input": "3\n2 3\n3 1\n1 2",
+      "output": "3 1 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "有 n$$$n$$$ 个孩子围绕圣诞树跳舞，编号从 1$$$1$$$ 到 n$$$n$$$。我们沿顺时针方向将他们依次记为 p1$$$p_1$$$、p2$$$p_2$$$、...、pn$$$p_n$$$(所有这些数字都在 1$$$1$$$ 到 n$$$n$$$ 之间且互不相同，因此 p$$$p$$$ 是一个排列)。对于孩子 pi$$$p_i$$$，如果 i<n$$$i  \\lt  n$$$，则他的下一个孩子是 pi+1$$$p_{i + 1}$$$；否则是 p1$$$p_1$$$。舞蹈结束后，每个孩子记住了两个孩子：下一个孩子(称其为 x$$$x$$$)以及 x$$$x$$$ 的下一个孩子。每个孩子都告诉了你他/她记住的是哪些孩子：孩子 i$$$i$$$ 记住了孩子 ai,1$$$a_{i, 1}$$$ 和 ai,2$$$a_{i, 2}$$$。然而，ai,1$$$a_{i, 1}$$$ 和 ai,2$$$a_{i, 2}$$$ 的顺序可能与他们在圆圈中的顺序不同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/4b7194b47baa591e9db3cb6908976996d197073d.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要利用这些信息还原孩子们在圆圈中的顺序。如果有多个答案，你可以输出任意一个。保证至少存在一个解。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你是 Python 程序员，提交代码时可以考虑使用 PyPy，而不是 Python。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$(3≤n≤2⋅105$$$3 \\le n \\le 2 \\cdot 10^5$$$)，表示孩子的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行每行包含 2$$$2$$$ 个整数。第 i$$$i$$$ 行包含两个整数 ai,1$$$a_{i, 1}$$$ 和 ai,2$$$a_{i, 2}$$$(1≤ai,1,ai,2≤n，ai,1≠ai,2$$$1 \\le a_{i, 1}, a_{i, 2} \\le n, a_{i, 1} \\ne a_{i, 2}$$$)，表示第 i$$$i$$$ 个孩子记住的孩子，顺序任意。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n$$$n$$$ 个整数 p1$$$p_1$$$、p2$$$p_2$$$、……、pn$$$p_n$$$——它们是从 1$$$1$$$ 到 n$$$n$$$ 的整数排列，对应着圆圈中孩子的顺序。如果有多个答案，你可以输出任意一个(例如，圆圈中的第一个孩子是谁并不重要)。保证至少存在一个解。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 环形舞蹈",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

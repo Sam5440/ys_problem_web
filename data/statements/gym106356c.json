@@ -1,0 +1,150 @@
+{
+  "code": "GYM106356C",
+  "letter": "C",
+  "title": "C. Path of Crows",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106356/problem/C",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are $$$n$$$ nests in a forest. These nests are connected by $$$n-1$$$ branches, forming a tree structure. From any nest, a crow can reach any other nest by flying along the branches, and there are no cycles.",
+      "A wise old crow wants to travel through all nests exactly once. It can fly in a straight path from one nest to the next if there exists a branch between those nests. The crow already decided the exact order in which it wants to visit the nests.",
+      "However, the current branch structure may not form a single straight path. To help the crow, you are allowed to carefully rearrange branches.",
+      "Your task is to transform the initial tree structure of nests into the desired chain structure using at most $$$n^2$$$ rearrangement operations.",
+      "In one rearrangement operation, you can choose three distinct nests $$$a,b,c$$$ such that the branches $$$(a,b)$$$ and $$$(b,c)$$$ exist in the current tree. Then perform the following change:",
+      "remove the branch $$$(a,b)$$$;",
+      "add the branch $$$(a,c)$$$.",
+      "It can be shown that after each operation the structure remains a tree."
+    ],
+    "input": [
+      "The first line contains an integer $$$t$$$ — the number of test cases.",
+      "For each test case:",
+      "The first line contains an integer $$$n$$$ $$$(2 \\le n \\le 300)$$$ — the number of nests.",
+      "The second line contains $$$n$$$ integers $$$p_1,p_2,\\dots,p_n$$$ — a permutation of $$$1$$$ to $$$n$$$. It denotes the order in which the wise old crow wants to visit the nests.",
+      "The next $$$n-1$$$ lines contain two integers $$$u,v$$$ — there is a branch between $$$u$$$ and $$$v$$$.",
+      "It is guaranteed that the given branches form a tree structure.",
+      "The sum of $$$n^2$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case:",
+      "Print an integer $$$m$$$ $$$(0 \\le m \\le n^2)$$$ — the number of moves.",
+      "Then print $$$m$$$ lines, each containing three integers $$$a\\ b\\ c$$$ describing one move.",
+      "Each printed move must be valid at the moment it is applied. After all moves, the remaining branches must create the desired chain structure $$$p_1,p_2,\\dots,p_n$$$."
+    ],
+    "note": [
+      "Initial branches are $$$(2,1)$$$, $$$(2,3)$$$, $$$(2,4)$$$.",
+      "The move $$$[4\\; 2\\; 3]$$$ removes branch $$$(4,2)$$$ and adds branch $$$(4,3)$$$.",
+      "After the move, the branches become $$$(1,2)$$$, $$$(2,3)$$$, $$$(3,4)$$$, which forms the required chain $$$1-2-3-4$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n4\n1 2 3 4\n2 1\n2 3\n2 4",
+      "output": "1\n4 2 3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "森林中有 $$$n$$$ 个巢穴。这些巢穴由 $$$n-1$$$ 根树枝连接，形成一棵树结构。从任意一个巢穴出发，乌鸦都可以沿着树枝飞到任意另一个巢穴，并且不存在环。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一只聪明的老乌鸦想要恰好访问每个巢穴一次。如果两个巢穴之间存在树枝，它就可以沿直线从一个巢穴飞到另一个巢穴。乌鸦已经决定了访问这些巢穴的确切顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，当前的树枝结构可能并非一条单独的直线路径。为了帮助乌鸦，你可以谨慎地重新排列树枝。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是通过不超过 $$$n^2$$$ 次重排操作，将巢穴的初始树形结构转换为所需的链式结构。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在一次重排操作中，你可以选择三个互不相同的巢穴 $$$a,b,c$$$，使得边 $$$(a,b)$$$ 和 $$$(b,c)$$$ 在当前树中存在。然后进行如下修改：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "删除分支 $$$(a,b)$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "添加分支 $$$(a,c)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，每次操作后该结构仍然是一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 $$$t$$$ —— 测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个测试用例：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行包含一个整数 $$$n$$$ $$$(2 \\le n \\le 300)$$$，表示巢穴的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 $$$n$$$ 个整数 $$$p_1,p_2,\\dots,p_n$$$——$$$1$$$ 到 $$$n$$$ 的一个排列。它表示聪明的老乌鸦想要拜访鸟巢的顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 $$$n-1$$$ 行每行包含两个整数 $$$u,v$$$，表示 $$$u$$$ 和 $$$v$$$ 之间有一条边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证给出的分支构成一棵树结构。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有测试用例中 $$$n^2$$$ 的总和不超过 $$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出一个整数 $$$m$$$ $$$(0 \\le m \\le n^2)$$$，即移动次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后输出 $$$m$$$ 行，每行包含三个整数 $$$a\\ b\\ c$$$，描述一次移动。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出的每一步操作在执行时都必须合法。完成所有操作后，剩余的树枝必须形成所需的链式结构 $$$p_1,p_2,\\dots,p_n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "初始分支为 $$$(2,1)$$$、$$$(2,3)$$$、$$$(2,4)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "操作 $$$[4\\; 2\\; 3]$$$ 会删除分支 $$$(4,2)$$$ 并添加分支 $$$(4,3)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "移动后，这些分支变为 $$$(1,2)$$$、$$$(2,3)$$$、$$$(3,4)$$$，从而形成所需的链 $$$1-2-3-4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 乌鸦之路",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

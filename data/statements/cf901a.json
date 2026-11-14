@@ -1,0 +1,99 @@
+{
+  "code": "CF901A",
+  "letter": "A",
+  "title": "A. Hashing Trees",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/901/A",
+  "difficulty": "1500",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Sasha is taking part in a programming competition. In one of the problems she should check if some rooted trees are isomorphic or not. She has never seen this problem before, but, being an experienced participant, she guessed that she should match trees to some sequences and then compare these sequences instead of trees. Sasha wants to match each tree with a sequence a0, a1, ..., ah, where h is the height of the tree, and ai equals to the number of vertices that are at distance of i edges from root.",
+      "Unfortunately, this time Sasha's intuition was wrong, and there could be several trees matching the same sequence. To show it, you need to write a program that, given the sequence ai, builds two non-isomorphic rooted trees that match that sequence, or determines that there is only one such tree.",
+      "Two rooted trees are isomorphic, if you can reenumerate the vertices of the first one in such a way, that the index of the root becomes equal the index of the root of the second tree, and these two trees become equal.",
+      "The height of a rooted tree is the maximum number of edges on a path from the root to any other vertex."
+    ],
+    "input": [
+      "The first line contains a single integer h (2 ≤ h ≤ 105) — the height of the tree.",
+      "The second line contains h + 1 integers — the sequence a0, a1, ..., ah (1 ≤ ai ≤ 2·105). The sum of all ai does not exceed 2·105. It is guaranteed that there is at least one tree matching this sequence."
+    ],
+    "output": [
+      "If there is only one tree matching this sequence, print \"perfect\".",
+      "Otherwise print \"ambiguous\" in the first line. In the second and in the third line print descriptions of two trees in the following format: in one line print ![](https://espresso.codeforces.com/84c4dd28c25918521bfe375641bc52bcedd18589.png) integers, the k-th of them should be the parent of vertex k or be equal to zero, if the k-th vertex is the root.",
+      "These treese should be non-isomorphic and should match the given sequence."
+    ],
+    "note": [
+      "The only tree in the first example and the two printed trees from the second example are shown on the picture:",
+      "![](https://espresso.codeforces.com/391ac13640fa692361683e9c23619eb4e8bce1c5.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 1 1",
+      "output": "perfect"
+    },
+    {
+      "input": "2\n1 2 2",
+      "output": "ambiguous\n0 1 1 3 3\n0 1 1 3 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Sasha 正在参加一场编程竞赛。在其中一道题中，她需要判断一些有根树是否同构。她以前从未见过这道题，但作为一名经验丰富的参赛者，她猜测应该将树与某些序列进行匹配，然后比较这些序列，而不是直接比较树。Sasha 希望将每棵树与一个序列 a0、a1、...、ah 匹配，其中 h 是树的高度，ai 等于距离根恰好 i 条边的顶点数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "遗憾的是，这一次 Sasha 的直觉错了，可能存在多棵与同一序列相匹配的树。为了说明这一点，你需要编写一个程序，给定序列 ai，构造两棵不同构的有根树，使它们都与该序列相匹配；或者判断这样的树是否只有一棵。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果可以对第一棵树的顶点重新编号，使得其根的编号与第二棵树的根的编号相同，并且重新编号后的两棵树完全相同，那么称这两棵有根树同构。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有根树的高度是从根到任意其他顶点的路径上边数的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 h（2 ≤ h ≤ 10^5）——树的高度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 h + 1 个整数——序列 a0, a1, ..., ah（1 ≤ ai ≤ 2·10^5）。所有 ai 的总和不超过 2·10^5。保证至少存在一棵与该序列相匹配的树。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果与该序列相匹配的树只有一棵，则输出 \"perfect\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，第一行输出 \"ambiguous\"。第二行和第三行按照以下格式输出两棵树的描述：在一行中输出 ![](https://espresso.codeforces.com/84c4dd28c25918521bfe375641bc52bcedd18589.png) 个整数，其中第 k 个数应为顶点 k 的父节点；如果第 k 个顶点是根，则该数应为 0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这两棵树应当不同构，并且应与给定的序列相匹配。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一组样例中的唯一一棵树和第二组样例中输出的两棵树如图所示：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/391ac13640fa692361683e9c23619eb4e8bce1c5.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 树哈希",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

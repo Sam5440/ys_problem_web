@@ -1,0 +1,105 @@
+{
+  "code": "GYM103821J",
+  "letter": "J",
+  "title": "J. Nour's Balls",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103821/problem/J",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Nour has just arrived at MIT. He is now standing in front of their gates fully ready to get inside. Unfortunately, there is one more task that the guards asked him to solve to let him get inside.",
+      "The guards gave Nour the magical box, which contains N$$$N$$$ balls such that the ith$$$i_{th}$$$ ball has color Ci$$$C_i$$$. Then, they put K$$$K$$$ empty boxes in front of Nour and asked him the following question: How many ways there are to partition all N$$$N$$$ balls into all K$$$K$$$ boxes, such that:",
+      "None of the K$$$K$$$ empty boxes is left empty.",
+      "Balls inside each box are considered as multi-set of their colors. i.e a box of colors {1,2,2,3}$$$\\{1, 2, 2, 3\\}$$$ and a box of colors {1,2,3,2}$$$\\{1, 2, 3, 2\\}$$$ are considered the same box, while {1,2,2,3}$$$\\{1, 2, 2, 3\\}$$$ and {1,2,3,3}$$$\\{1, 2, 3, 3\\}$$$ are two different boxes.",
+      "Boxes within each other are ordered. For example, if the set of colors in the magical box is 1,2,2,3$$${1, 2, 2, 3}$$$ and K=2$$$K = 2$$$, then [{1,2}$$$\\{1, 2\\}$$$, {2,3}$$$\\{2, 3\\}$$$] and [{2,3}$$$\\{2, 3\\}$$$, {1,2}$$$\\{1, 2\\}$$$] are two different ways of partitioning.",
+      "In conclusion, two ways are considered different if they differ by at least one i-th box. For example, if colors of balls in the magical box are 1,2,2$$${1, 2, 2}$$$ and K=2$$$K = 2$$$, then there are 4$$$4$$$ ways: [{1}$$$\\{1\\}$$$, {2,2}$$$\\{2, 2\\}$$$], [{2,2}$$$\\{2, 2\\}$$$, {1}$$$\\{1\\}$$$], [{1,2}$$$\\{1, 2\\}$$$, {2}$$$\\{2\\}$$$], [{2}$$$\\{2\\}$$$, {1,2}$$$\\{1, 2\\}$$$].",
+      "This problem is very hard for Nour, can you help him so that he does not get rejected from MIT? If you can, find the answer and print it modulo 1000000007$$$1\\,000\\,000\\,007$$$."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases T$$$T$$$. Description of the test cases follows.",
+      "The first line of each test case contains two integers N$$$N$$$ and K$$$K$$$, (1≤N≤103)$$$(1 \\le N \\le 10^3)$$$, (1≤K≤N)$$$(1 \\le K \\le N)$$$ - the number of balls in the magical box and the number of empty boxes.",
+      "The second line of each test case contains N$$$N$$$ elements of the array C$$$C$$$ describing the color of each ball in the magical box (1≤Ci≤N)$$$(1 \\le C_i \\le N)$$$.",
+      "It's guaranteed that the sum of N×K$$$N\\times K$$$ over all test cases does not exceed 106$$$10^6$$$"
+    ],
+    "output": [
+      "For each test case, print a single line containing the described answer modulo 1000000007$$$1\\,000\\,000\\,007$$$."
+    ],
+    "note": [
+      "In the second test case, we have 4$$$4$$$ balls and 4$$$4$$$ boxes, so it is equal to the number of permutations with repetition of array [1,2,2,3]$$$[1, 2, 2, 3]$$$, which is 4!2!=12$$$\\frac{4!}{2!} = 12$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n6 3\n1 2 2 1 4 3\n4 4\n1 2 3 2",
+      "output": "219\n12"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Nour 刚刚来到 MIT。他现在正站在 MIT 的大门前，已经完全准备好要进去。不幸的是，守卫要求他再解决一个任务，才允许他进入。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "守卫把这个魔法盒子交给 Nour，其中装有 N$$$N$$$ 个球，并且第 ith$$$i_{th}$$$ 个球的颜色为 Ci$$$C_i$$$。然后，他们在 Nour 面前放了 K$$$K$$$ 个空盒子，并问他以下问题：如何将全部 N$$$N$$$ 个球分配到全部 K$$$K$$$ 个盒子中，使得：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "K$$$K$$$ 个空盒子中没有一个被留空。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个盒子内的球被视为其颜色的多重集合。即，颜色为 {1,2,2,3}$$$\\{1, 2, 2, 3\\}$$$ 的盒子和颜色为 {1,2,3,2}$$$\\{1, 2, 3, 2\\}$$$ 的盒子被视为同一个盒子，而 {1,2,2,3}$$$\\{1, 2, 2, 3\\}$$$ 和 {1,2,3,3}$$$\\{1, 2, 3, 3\\}$$$ 是两个不同的盒子。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "盒子之间是有顺序的。例如，如果魔法盒中的颜色集合为 1,2,2,3$$${1, 2, 2, 3}$$$ 且 K=2$$$K = 2$$$，那么 [{1,2}$$$\\{1, 2\\}$$$, {2,3}$$$\\{2, 3\\}$$$] 和 [{2,3}$$$\\{2, 3\\}$$$, {1,2}$$$\\{1, 2\\}$$$] 是两种不同的划分方式。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "总之，如果两种方式至少在第 i 个盒子处不同，则它们被视为不同。例如，如果魔法盒中球的颜色为 1,2,2$$${1, 2, 2}$$$ 且 K=2$$$K = 2$$$，那么共有 4$$$4$$$ 种方式：[{1}$$$\\{1\\}$$$, {2,2}$$$\\{2, 2\\}$$$]、[{2,2}$$$\\{2, 2\\}$$$, {1}$$$\\{1\\}$$$]、[{1,2}$$$\\{1, 2\\}$$$, {2}$$$\\{2\\}$$$]、[{2}$$$\\{2\\}$$$, {1,2}$$$\\{1, 2\\}$$$]。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "这个问题对 Nour 来说非常难，你能帮帮他，让他不被 MIT 拒绝吗？如果可以，请找出答案并输出它对 1000000007$$$1\\,000\\,000\\,007$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 T$$$T$$$。接下来是测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 N$$$N$$$ 和 K$$$K$$$，(1≤N≤103)$$$(1 \\le N \\le 10^3)$$$，(1≤K≤N)$$$(1 \\le K \\le N)$$$——分别表示魔法盒中球的数量和空盒子的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含数组 C$$$C$$$ 的 N$$$N$$$ 个元素，用于描述魔法盒中每个球的颜色(1≤Ci≤N)$$$(1 \\le C_i \\le N)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 N×K$$$N\\times K$$$ 的总和不超过 106$$$10^6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一行，包含所描述答案对 1000000007$$$1\\,000\\,000\\,007$$$ 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第二个测试用例中，我们有 4$$$4$$$ 个球和 4$$$4$$$ 个盒子，因此答案等于数组 [1,2,2,3]$$$[1, 2, 2, 3]$$$ 的重复排列数，即 4!2!=12$$$\\frac{4!}{2!} = 12$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "J. Nour 的球",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

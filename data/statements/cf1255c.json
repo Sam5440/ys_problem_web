@@ -1,0 +1,91 @@
+{
+  "code": "CF1255C",
+  "letter": "C",
+  "title": "C. League of Leesins",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1255/C",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Bob is an avid fan of the video game \"League of Leesins\", and today he celebrates as the League of Leesins World Championship comes to an end!",
+      "The tournament consisted of n$$$n$$$ (n≥5$$$n \\ge 5$$$) teams around the world. Before the tournament starts, Bob has made a prediction of the rankings of each team, from 1$$$1$$$-st to n$$$n$$$-th. After the final, he compared the prediction with the actual result and found out that the i$$$i$$$-th team according to his prediction ended up at the pi$$$p_i$$$-th position (1≤pi≤n$$$1 \\le p_i \\le n$$$, all pi$$$p_i$$$ are unique). In other words, p$$$p$$$ is a permutation of 1,2,…,n$$$1, 2, \\dots, n$$$.",
+      "As Bob's favorite League player is the famous \"3ga\", he decided to write down every 3$$$3$$$ consecutive elements of the permutation p$$$p$$$. Formally, Bob created an array q$$$q$$$ of n−2$$$n-2$$$ triples, where qi=(pi,pi+1,pi+2)$$$q_i = (p_i, p_{i+1}, p_{i+2})$$$ for each 1≤i≤n−2$$$1 \\le i \\le n-2$$$. Bob was very proud of his array, so he showed it to his friend Alice.",
+      "After learning of Bob's array, Alice declared that she could retrieve the permutation p$$$p$$$ even if Bob rearranges the elements of q$$$q$$$ and the elements within each triple. Of course, Bob did not believe in such magic, so he did just the same as above to see Alice's respond.",
+      "For example, if n=5$$$n = 5$$$ and p=[1,4,2,3,5]$$$p = [1, 4, 2, 3, 5]$$$, then the original array q$$$q$$$ will be [(1,4,2),(4,2,3),(2,3,5)]$$$[(1, 4, 2), (4, 2, 3), (2, 3, 5)]$$$. Bob can then rearrange the numbers within each triple and the positions of the triples to get [(4,3,2),(2,3,5),(4,1,2)]$$$[(4, 3, 2), (2, 3, 5), (4, 1, 2)]$$$. Note that [(1,4,2),(4,2,2),(3,3,5)]$$$[(1, 4, 2), (4, 2, 2), (3, 3, 5)]$$$ is not a valid rearrangement of q$$$q$$$, as Bob is not allowed to swap numbers belong to different triples.",
+      "As Alice's friend, you know for sure that Alice was just trying to show off, so you decided to save her some face by giving her any permutation p$$$p$$$ that is consistent with the array q$$$q$$$ she was given."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (5≤n≤105$$$5 \\le n \\le 10^5$$$) — the size of permutation p$$$p$$$.",
+      "The i$$$i$$$-th of the next n−2$$$n-2$$$ lines contains 3$$$3$$$ integers qi,1$$$q_{i, 1}$$$, qi,2$$$q_{i, 2}$$$, qi,3$$$q_{i, 3}$$$ (1≤qi,j≤n$$$1 \\le q_{i, j} \\le n$$$) — the elements of the i$$$i$$$-th triple of the rearranged (shuffled) array qi$$$q_i$$$, in random order. Remember, that the numbers within each triple can be rearranged and also the positions of the triples can be rearranged.",
+      "It is guaranteed that there is at least one permutation p$$$p$$$ that is consistent with the input."
+    ],
+    "output": [
+      "Print n$$$n$$$ distinct integers p1,p2,…,pn$$$p_1, p_2, \\ldots, p_n$$$ (1≤pi≤n$$$1 \\le p_i \\le n$$$) such that p$$$p$$$ is consistent with array q$$$q$$$.",
+      "If there are multiple answers, print any."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n4 3 2\n2 3 5\n4 1 2",
+      "output": "1 4 2 3 5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Bob 是电子游戏《League of Leesins》的狂热粉丝，而今天正值 League of Leesins 世界锦标赛落下帷幕，他正在庆祝！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "比赛共有来自世界各地的 n$$$n$$$ 支队伍(n≥5$$$n \\ge 5$$$)。比赛开始前，Bob 预测了各队的排名，从第 1$$$1$$$ 名到第 n$$$n$$$ 名。决赛结束后，他将预测结果与实际结果进行比较，发现按照他的预测排名第 i$$$i$$$ 的队伍最终排在第 pi$$$p_i$$$ 位(1≤pi≤n$$$1 \\le p_i \\le n$$$，所有 pi$$$p_i$$$ 互不相同)。换句话说，p$$$p$$$ 是 1,2,…,n$$$1, 2, \\dots, n$$$ 的一个排列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于 Bob 最喜欢的 League 选手是著名的“3ga”，他决定记下排列 p$$$p$$$ 中每 3$$$3$$$ 个连续的元素。形式化地说，Bob 创建了一个包含 n−2$$$n-2$$$ 个三元组的数组 q$$$q$$$，其中对于每个 1≤i≤n−2$$$1 \\le i \\le n-2$$$，都有 qi=(pi,pi+1,pi+2)$$$q_i = (p_i, p_{i+1}, p_{i+2})$$$。Bob 对自己的数组非常自豪，于是把它展示给朋友 Alice。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "得知 Bob 的数组后，Alice 声称，即使 Bob 重新排列 q$$$q$$$ 中的元素以及每个三元组内部的元素，她也能还原排列 p$$$p$$$。当然，Bob 不相信这种魔法，于是照做了一遍，想看看 Alice 会如何回应。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，当 n=5$$$n = 5$$$ 且 p=[1,4,2,3,5]$$$p = [1, 4, 2, 3, 5]$$$ 时，原数组 q$$$q$$$ 为 [(1,4,2),(4,2,3),(2,3,5)]$$$[(1, 4, 2), (4, 2, 3), (2, 3, 5)]$$$。随后，Bob 可以重新排列每个三元组中的数字以及三元组的位置，得到 [(4,3,2),(2,3,5),(4,1,2)]$$$[(4, 3, 2), (2, 3, 5), (4, 1, 2)]$$$。注意，[(1,4,2),(4,2,2),(3,3,5)]$$$[(1, 4, 2), (4, 2, 2), (3, 3, 5)]$$$ 并不是 q$$$q$$$ 的有效重排，因为 Bob 不允许交换属于不同三元组的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "作为 Alice 的朋友，你非常清楚 Alice 只是想炫耀一下，因此你决定通过给出任意一个与她拿到的数组 q$$$q$$$ 一致的排列 p$$$p$$$，来帮她挽回一些面子。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(5≤n≤105$$$5 \\le n \\le 10^5$$$)——排列 p$$$p$$$ 的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来 n−2$$$n-2$$$ 行中的第 i$$$i$$$ 行包含 3$$$3$$$ 个整数 qi,1$$$q_{i, 1}$$$、qi,2$$$q_{i, 2}$$$、qi,3$$$q_{i, 3}$$$(1≤qi,j≤n$$$1 \\le q_{i, j} \\le n$$$)——重排(打乱)后的数组 qi$$$q_i$$$ 中第 i$$$i$$$ 个三元组的元素，顺序随机。请注意，每个三元组内的数字可以被重新排列，三元组的位置也可以被重新排列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证至少存在一个与输入一致的排列 p$$$p$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n$$$n$$$ 个互不相同的整数 p1,p2,…,pn$$$p_1, p_2, \\ldots, p_n$$$(1≤pi≤n$$$1 \\le p_i \\le n$$$)，使得排列 p$$$p$$$ 与数组 q$$$q$$$ 一致。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个答案，输出任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Leesins 联赛",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

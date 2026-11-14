@@ -1,0 +1,106 @@
+{
+  "code": "GYM105325D",
+  "letter": "D",
+  "title": "D. Jordan's Castles",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105325/problem/D",
+  "difficulty": "*1500",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Jordan has recently received a game that contains many cubic-shaped blocks. By stacking them, he can build towers of great height, and by placing the towers next to each other, he can create what he calls castles. However, he only likes castles that satisfy the condition that the number of blocks in a tower is always less than or equal to that of the tower immediately to its left. Additionally, he likes to describe these castles with a sequence of integers (ai)$$$(a_i)$$$ such that each ai$$$a_i$$$ corresponds to the number of blocks in the i$$$i$$$-th tower. After playing with this type of castle, he has realized that he can also describe them with a sequence (bi)$$$(b_i)$$$ such that each bi$$$b_i$$$ corresponds to the number of blocks on the i$$$i$$$-th floor of the castles. Thus, for the castle:",
+      "XX",
+      "XX",
+      "the sequence (ai)$$$(a_i)$$$ would be a1=3,a2=2$$$a_1 = 3, a_2 = 2$$$ and the sequence (bi)$$$(b_i)$$$ would be b1=2,b2=2,b3=1$$$b_1 = 2, b_2 = 2, b_3 = 1$$$.",
+      "Jordan says that a castle is pretty if the two sequences match, as happens with the castle:",
+      "XXX",
+      "Given a castle described by the sequence (ai)$$$(a_i)$$$, determine the minimum number of blocks that need to be removed to convert it into a pretty castle."
+    ],
+    "input": [
+      "Each case starts with an integer t$$$t$$$, the number of cases. Each of the t$$$t$$$ cases starts with an integer n$$$n$$$, the number of towers in the castle. Following this, there are n$$$n$$$ integers (ai)$$$(a_i)$$$ on one line, representing the number of blocks in each of the n$$$n$$$ towers."
+    ],
+    "output": [
+      "For each case, print a single integer, the minimum number of blocks that need to be removed for the castle to be pretty.",
+      "t≤40$$$t \\leq 40$$$, n≤100000$$$n \\leq 100000$$$, ai≥ai+1$$$a_i \\geq a_{i+1}$$$ and ai≤109$$$a_i \\leq 10^9$$$.",
+      "12 points: n≤8$$$n \\leq 8$$$, ai≤8$$$a_i \\leq 8$$$.",
+      "19 points: n≤1000$$$n \\leq 1000$$$, ai≤1000$$$a_i \\leq 1000$$$.",
+      "31 points: ai≤100000$$$a_i \\leq 100000$$$.",
+      "38 points: No additional restrictions."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n3\n5 2 1\n2\n3 2\n4\n8 4 2 1",
+      "output": "2\n1\n5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Jordan 最近收到了一款包含许多立方体形状积木的游戏。通过堆叠这些积木，他可以搭出极高的塔；将这些塔并排放置，他就能建造出他所谓的城堡。不过，他只喜欢满足以下条件的城堡：每座塔中的积木数量始终小于或等于其左侧相邻塔中的积木数量。此外，他喜欢用整数序列 (ai)$$$(a_i)$$$ 来描述这些城堡，其中每个 ai$$$a_i$$$ 对应第 i$$$i$$$ 座塔中的积木数量。在玩过这类城堡后，他意识到也可以用序列 (bi)$$$(b_i)$$$ 来描述它们，其中每个 bi$$$b_i$$$ 对应城堡第 i$$$i$$$ 层的积木数量。因此，对于下面的城堡：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "XX",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "XX",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "序列 (ai)$$$(a_i)$$$ 将是 a1=3,a2=2$$$a_1 = 3, a_2 = 2$$$，而序列 (bi)$$$(b_i)$$$ 将是 b1=2,b2=2,b3=1$$$b_1 = 2, b_2 = 2, b_3 = 1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Jordan 说，如果这两个序列相同，那么这座城堡就是漂亮的，就像下面的城堡这样：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "XXX",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定由序列 (ai)$$$(a_i)$$$ 描述的一座城堡，求将其变成漂亮城堡所需移除的最少方块数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试用例首先包含一个整数 t$$$t$$$，表示测试用例的数量。每个 t$$$t$$$ 个测试用例首先包含一个整数 n$$$n$$$，表示城堡中的塔楼数量。接下来一行包含 n$$$n$$$ 个整数 (ai)$$$(a_i)$$$，表示 n$$$n$$$ 座塔楼中每座塔楼的方块数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每组数据，输出一个整数，表示使城堡变漂亮所需移除的最少方块数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "t≤40$$$t \\leq 40$$$，n≤100000$$$n \\leq 100000$$$，ai≥ai+1$$$a_i \\geq a_{i+1}$$$ 且 ai≤109$$$a_i \\leq 10^9$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "12 分：n≤8$$$n \\leq 8$$$，ai≤8$$$a_i \\leq 8$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "19 分：n≤1000$$$n \\leq 1000$$$，ai≤1000$$$a_i \\leq 1000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "31 分：ai≤100000$$$a_i \\leq 100000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "38 分：没有额外限制。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Jordan 的城堡",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

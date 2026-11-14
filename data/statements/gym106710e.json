@@ -1,0 +1,134 @@
+{
+  "code": "GYM106710E",
+  "letter": "E",
+  "title": "E. Expected Snaps",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106710/problem/E",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Thanos has an array whose length is a power of two. Before he sees it, every element is chosen independently and uniformly from the integers $$$1,2,\\ldots,K$$$.",
+      "An array is sorted if it is nondecreasing. While the current array is not sorted, Thanos performs a snap:",
+      "with probability $$$1/2$$$, he keeps the left half and discards the right half;",
+      "with probability $$$1/2$$$, he keeps the right half and discards the left half.",
+      "All snap choices are independent of each other and of the initial array. After each snap, he checks the remaining array again. An array of length one is always sorted.",
+      "The initial length is $$$N=2^n$$$. Find the expected number of snaps, where the expectation is taken over both the random initial array and all snap choices."
+    ],
+    "input": [
+      "The only line contains two integers $$$n$$$ and $$$K$$$ – the exponent of the initial length and the number of possible values. The value of $$$n$$$ is between 0 and 200000, inclusive, and $$$K$$$ is between 1 and 200000, inclusive.",
+      "It is guaranteed that $$$nK$$$ is at most 20000000."
+    ],
+    "output": [
+      "Let the expected number of snaps be the rational number $$$p/q$$$, where $$$p$$$ and $$$q$$$ are coprime. Print the residue modulo 998244353 of the product of $$$p$$$ and $$$q^{-1}$$$, where $$$q^{-1}$$$ is the multiplicative inverse of $$$q$$$ modulo 998244353. It is guaranteed that this inverse exists."
+    ],
+    "note": [
+      "For $$$n=1$$$ and $$$K=2$$$, the only unsorted initial array is $$$[2,1]$$$. It requires one snap, so the expectation is $$$1/4$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 2",
+      "output": "748683265"
+    },
+    {
+      "input": "0 1",
+      "output": "0"
+    },
+    {
+      "input": "4 5",
+      "output": "280149939"
+    }
+  ],
+  "titleZh": {
+    "caiyun": "E. 预期的快照",
+    "youdao": "E.预期snap",
+    "deepl": "E.预期卡扣",
+    "iflyrec": "E.预期快照",
+    "ai": "E. 期望拍击"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "Thanos 有一个长度为 2 的幂的数组。在他看到之前，每个元素都是从整数 $$$1,2,\\ldots,K$$$ 中独立且均匀地选择的。",
+        "youdao": "灭霸有一个数组，其长度是2的幂。在他看到它之前，每个元素都是独立且均匀地从整数$$$1,2,\\ldots,K$$$中选择出来的。",
+        "deepl": "萨诺斯有一个长度为 2 的幂的数组。在他看到它之前，每个元素都是从整数中独立均匀地选择出来的$$$1,2,\\ldots,K$$$。",
+        "iflyrec": "萨诺斯有一个长度为2的幂的数组。在他看到它之前，每个元素都是从整数$$$1,2,\\ldots,K$$$中独立且均匀地选择的。",
+        "ai": "灭霸有一个数组，其长度是 2 的幂。在他看到它之前，每个元素都从整数 $$$1,2,\\ldots,K$$$ 中独立且均匀地选取。"
+      },
+      {
+        "caiyun": "如果数组不递减，则对其进行排序。当当前数组未排序时，Thanos 会执行一个快照：",
+        "youdao": "如果数组是非递减的，则对其进行排序。当当前数组没有排序时，灭霸执行一个snap：",
+        "deepl": "如果一个数组是非递减的，那么它就是排序的。当当前数组未排序时，Thanos 会执行快取操作：",
+        "iflyrec": "如果数组是非递减的，则对其进行排序。当前数组未排序时，Thanos执行快照:",
+        "ai": "若一个数组是非递减的，则称其是有序的。只要当前数组尚未有序，Thanos 就会打一个响指："
+      },
+      {
+        "caiyun": "在概率为 $$$1/2$$$ 的情况下，他保留左半部分，丢弃右半部分;",
+        "youdao": "概率为$$$1/2$$$，他留下左半部分，丢弃右半部分；",
+        "deepl": "概率为 $$$1/2$$$，他保留左半边，丢弃右半边；",
+        "iflyrec": "在概率为$$$1/2$$$的情况下，他保留左半部分，丢弃右半部分",
+        "ai": "以概率 $$$1/2$$$，他保留左半部分并丢弃右半部分；"
+      },
+      {
+        "caiyun": "在概率为 $$$1/2$$$ 的情况下，他保留右半部分，丢弃左半部分。",
+        "youdao": "概率为$$$1/2$$$，他保留右半部分，丢弃左半部分。",
+        "deepl": "概率为 $$$1/2$$$，他保留右半部分，丢弃左半部分。",
+        "iflyrec": "在概率为$$$1/2$$$的情况下，他保留右半部分，丢弃左半部分。",
+        "ai": "以概率 $$$1/2$$$，他保留右半部分并丢弃左半部分。"
+      },
+      {
+        "caiyun": "所有切换选择彼此独立，且与初始数组无关。每次切换后，他都会再次检查剩余的数组。长度为 1 的数组始终是有序的。",
+        "youdao": "所有的snap选项都是相互独立的，也与初始数组无关。每次捕捉之后，他都会再次检查剩余的数组。长度为1的数组总是排序的。",
+        "deepl": "所有捕捉选择都是相互独立的，也与初始数组无关。每次抓取后，他会再次检查剩余的数组。长度为一的数组总是排序的。",
+        "iflyrec": "所有快照选项都相互独立，并且与初始阵列无关。每次快照后，他都会再次检查剩余的阵列。长度为1的数组总是排序的。",
+        "ai": "所有 snap 选择彼此独立，并且与初始数组无关。每次 snap 之后，他都会再次检查剩余数组。长度为 1 的数组总是有序的。"
+      },
+      {
+        "caiyun": "初始长度为 $$$N=2^n$$$。找到预期的快照次数，其中随机初始数组和所有快照选择的期望值都被计算。",
+        "youdao": "初始长度为$$$N=2^n$$$。找到预期的快照数量，其中期望是随机初始数组和所有快照选择。",
+        "deepl": "初始长度为 $$$N=2^n$$$。求期望扣合次数，这里的期望值是对随机初始数组和所有扣合选择的期望值。",
+        "iflyrec": "初始长度为$$$N=2^n$$$。找出预期的快照数量，其中预期是随机初始阵列和所有快照选择。",
+        "ai": "初始长度为 $$$N=2^n$$$。求 snap 次数的期望，其中期望同时对随机初始数组和所有 snap 选择取。"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "唯一的一行包含两个整数 $$$n$$$ 和 $$$K$$$——初始长度的指数和可能值的个数。$$$n$$$ 的值在 0 到 200000 之间，包含在内;$$$K$$$ 的值在 1 到 200000 之间，包括在内。",
+        "youdao": "唯一的一行包含两个整数$$$n$$$和$$$K$$$——初始长度的指数和可能值的数量。$$$n$$$取值范围为0 ~ 200000(含），$$$K$$$取值范围为1 ~ 200000(含）。",
+        "iflyrec": "唯一的行包含两个整数$$$n$$$和$$$K$$$–初始长度的指数和可能值的数量。$$$n$$$的值介于0和200000(含）之间，$$$K$$$的值介于1和200000(含）之间。",
+        "ai": "唯一一行包含两个整数 $$$n$$$ 和 $$$K$$$ —— 初始长度的指数与可能值的数量。$$$n$$$ 的值在 0 到 200000 之间(含两端)，$$$K$$$ 在 1 到 200000 之间(含两端)。"
+      },
+      {
+        "caiyun": "保证 $$$nK$$$ 最多不超过 20000000。",
+        "youdao": "保证$$$nK$$$不超过20000000。",
+        "deepl": "保证 $$$nK$$$ 最多为 20000000。",
+        "iflyrec": "保证$$$nK$$$最大为20000000。",
+        "ai": "保证 $$$nK$$$ 不超过 20000000。"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "设预期的弹簧夹数为有理数 $$$p/q$$$，其中 $$$p$$$ 和 $$$q$$$ 是替代项。打印 $$$p$$$ 和 $$$q^{-1}$$$ 乘积的模为 998244353 的剩余，其中 $$$q^{-1}$$$ 是 $$$q$$$ 模为 998244353 时的倒数。保证这个倒数存在。",
+        "youdao": "设期望快照数为有理数$$$p/q$$$，其中$$$p$$$和$$$q$$$为素数。打印出$$$p$$$与$$$q^{-1}$$$乘积的余模998244353，其中$$$q^{-1}$$$是$$$q$$$模998244353的乘法倒数。可以保证这个逆存在。",
+        "deepl": "设预期的抢答次数为有理数 $$$p/q$$$，其中 $$$p$$$ 和 $$$q$$$ 是共素数。打印$$$p$$$与$$$q^{-1}$$$乘积的模 998244353 的余数，其中$$$q^{-1}$$$是$$$q$$$模 998244353 的乘法逆。我们可以保证这个倒数是存在的。",
+        "iflyrec": "假设期望的快照数为有理数$$$p/q$$$，其中$$$p$$$和$$$q$$$互质。打印$$$p$$$和$$$q^{-1}$$$的乘积模998244353的余数，其中$$$q^{-1}$$$是$$$q$$$模998244353的乘法逆元。保证此逆元存在。",
+        "ai": "设 snaps 的期望次数为有理数 $$$p/q$$$，其中 $$$p$$$ 与 $$$q$$$ 互质。输出 $$$p$$$ 与 $$$q^{-1}$$$ 的乘积模 998244353 的余数，其中 $$$q^{-1}$$$ 是 $$$q$$$ 模 998244353 的乘法逆元。保证该逆元存在。"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "对于 $$$n=1$$$ 和 $$$K=2$$$，唯一未排序的初始数组是 $$$[2,1]$$$。它需要一次快照，因此期望值是 $$$1/4$$$。",
+        "youdao": "对于$$$n=1$$$和$$$K=2$$$，唯一未排序的初始数组是$$$[2,1]$$$。它需要一个快照，所以期望是$$$1/4$$$。",
+        "deepl": "对于$$$n=1$$$和$$$K=2$$$，唯一没有排序的初始数组是$$$[2,1]$$$。它需要一个快照，所以期望值是 $$$1/4$$$。",
+        "iflyrec": "对于$$$n=1$$$和$$$K=2$$$，唯一未排序的初始数组是$$$[2,1]$$$。它需要一个快照，因此期望值为$$$1/4$$$。",
+        "ai": "对于 $$$n=1$$$ 和 $$$K=2$$$，唯一未排序的初始数组是 $$$[2,1]$$$。它需要一次 snap，因此期望是 $$$1/4$$$。"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.122Z",
+  "translatedBy": [
+    "iflyrec"
+  ]
+}

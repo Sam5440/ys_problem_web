@@ -1,0 +1,115 @@
+{
+  "code": "GYM104974M",
+  "letter": "M",
+  "title": "M. Friend Management",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104974/problem/M",
+  "difficulty": "*2000",
+  "timeLimit": "1.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Valentine's day is coming soon!! It is a special day not only for humans, but also for the dinosaurs living in Dinoland!",
+      "Danny, being a popular dinosaur, got asked out by many other Dinosaurs. Indeed, he received K$$$K$$$ date invitations numbered from 1$$$1$$$ to K$$$K$$$. The ith$$$i^{\\text{th}}$$$ date invitation was sent to him by Dinosaur i$$$i$$$.",
+      "However, there is a little problem. Danny has a group of N$$$N$$$ friends, that can be modelled as a tree where each node represents one of Danny's friends. Two dinosaurs are called direct friends if there is an edge between them. Two dinosaurs are friends if there is a path between them, and we say that they belong to the same friend group. Each of Danny's friends is numbered from 1$$$1$$$ to N$$$N$$$, and the ith$$$i^{\\text{th}}$$$ of them has a value ai$$$a_i$$$ that represents their dating history.",
+      "If Danny accepts the ith$$$i^{\\text{th}}$$$ date invitation for Saint Valentine, all of his friends who have dated the dinosaur who sent that invitation will get mad and leave the friend group. A friend j$$$j$$$ will get mad when Danny accepts the ith$$$i^{\\text{th}}$$$ date invitation if and only if i$$$i$$$ divides aj$$$a_j$$$. When a dinosaur leaves the friend group, he will not be part of the group anymore and his ties with his direct friends will disappear. As a result, the group will be fragmented, and turn into multiple smaller friend groups.",
+      "Danny is weighing the pros and cons of accepting the invitations he got. He asked for your help. He wants you to tell him, for each invitation i$$$i$$$ that he got, how many friend groups he will end up with."
+    ],
+    "input": [
+      "On the first line of input you are given two integers N$$$N$$$ and K$$$K$$$ (1≤N,K≤106)$$$(1 \\leq N, K \\leq 10^6)$$$",
+      "On the second line of input, you are given N$$$N$$$ integers a1a2...aN$$$a_1a_2 ...a_N$$$ (1≤ai≤106)$$$( 1 \\leq a_i \\leq 10^6)$$$",
+      "On each of the next N−1$$$N-1$$$ lines of input, you will be given two integers u$$$u$$$ and v$$$v$$$ (1≤u,v≤N$$$1 \\leq u, v\\leq N$$$) denoting that friends u$$$u$$$ and v$$$v$$$ are direct friends and that there is an edge between them. It is guaranteed that the friends form a tree."
+    ],
+    "output": [
+      "Print K$$$K$$$ integers, the number of remaining friend groups if Danny excepts each invitation."
+    ],
+    "note": [
+      "The friends' tree looks initially like this:",
+      "![](https://espresso.codeforces.com/e24e89be6f332dab50462bf38c1969b036edebef.png)",
+      "Accepting invitation 1$$$1$$$ will lead to Danny losing all his friends, and as a result, the number of friend groups remaining will be 0$$$0$$$",
+      "Accepting invitation 2$$$2$$$ will lead to Danny losing friends 3$$$3$$$ and 4$$$4$$$ which leads to two separate remaining friend groups. ![](https://espresso.codeforces.com/0c91c71485513cdd7a0a72751cdc34765c12fec0.png)",
+      "Accepting invitation 3$$$3$$$ will lead to Danny losing friends 2$$$2$$$ and 4$$$4$$$ which leads to one remaining friend group.",
+      "![](https://espresso.codeforces.com/b6d908f140e7557f8c5b21f823847d99a009fe4b.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 3\n1 3 4 6 7\n1 2\n1 3\n3 4\n4 5",
+      "output": "0 2 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "情人节就要到了！！这不仅是人类的特殊节日，也是生活在 Dinoland 的恐龙们的特殊节日！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Danny 是一只很受欢迎的恐龙，许多其他恐龙都邀请他约会。事实上，他收到了 K$$$K$$$ 个编号从 1$$$1$$$ 到 K$$$K$$$ 的约会邀请。第 i$$$i^{\\text{th}}$$$ 个约会邀请是由恐龙 i$$$i$$$ 发给他的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "不过，这里有一个小问题。Danny 有 N$$$N$$$ 个朋友，可以用一棵树来表示，其中每个节点代表 Danny 的一位朋友。如果两只恐龙之间存在一条边，则称它们是直接朋友。如果两只恐龙之间存在一条路径，则称它们是朋友，并称它们属于同一个朋友圈。Danny 的每位朋友编号从 1$$$1$$$ 到 N$$$N$$$，其中第 i$$$i^{\\text{th}}$$$ 位朋友的值为 ai$$$a_i$$$，表示其约会经历。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 Danny 接受了第 i$$$i^{\\text{th}}$$$ 个圣瓦伦丁约会邀请，所有曾与发出该邀请的恐龙约会过的朋友都会生气并离开朋友圈。当且仅当 i$$$i$$$ 能整除 aj$$$a_j$$$ 时，朋友 j$$$j$$$ 会在 Danny 接受第 i$$$i^{\\text{th}}$$$ 个约会邀请时生气。当一只恐龙离开朋友圈后，它将不再属于该朋友圈，并且它与直接朋友之间的联系也会消失。因此，朋友圈会被分割成多个更小的朋友圈。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Danny 正在权衡接受这些邀请的利弊。他请求你的帮助。对于他收到的每个邀请 i$$$i$$$，他想让你告诉他，最终会有多少个朋友圈。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行给出两个整数 N$$$N$$$ 和 K$$$K$$$(1≤N,K≤106)$$$(1 \\leq N, K \\leq 10^6)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第二行给出 N$$$N$$$ 个整数 a1a2...aN$$$a_1a_2 ...a_N$$$(1≤ai≤106)$$$( 1 \\leq a_i \\leq 10^6)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在接下来的 N−1$$$N-1$$$ 行输入中，每行给出两个整数 u$$$u$$$ 和 v$$$v$$$(1≤u,v≤N$$$1 \\leq u, v\\leq N$$$)，表示好友 u$$$u$$$ 和 v$$$v$$$ 是直接好友，且它们之间存在一条边。保证这些好友构成一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 K$$$K$$$ 个整数，分别表示 Danny 接受每个邀请后剩余的好友组数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "好友构成的树最初如下所示：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/e24e89be6f332dab50462bf38c1969b036edebef.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接受邀请 1$$$1$$$ 将导致 Danny 失去所有朋友，因此剩余的朋友圈数量将为 0$$$0$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接受邀请 2$$$2$$$ 将导致 Danny 失去朋友 3$$$3$$$ 和 4$$$4$$$，从而形成两个彼此分离的剩余朋友圈。![](https://espresso.codeforces.com/0c91c71485513cdd7a0a72751cdc34765c12fec0.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接受邀请 3$$$3$$$ 将导致 Danny 失去朋友 2$$$2$$$ 和 4$$$4$$$，从而剩下一个朋友圈。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/b6d908f140e7557f8c5b21f823847d99a009fe4b.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "M. 朋友管理",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

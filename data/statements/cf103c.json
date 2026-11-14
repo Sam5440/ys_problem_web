@@ -1,0 +1,98 @@
+{
+  "code": "CF103C",
+  "letter": "C",
+  "title": "C. Russian Roulette",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/103/C",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "After all the events in Orlando we all know, Sasha and Roma decided to find out who is still the team's biggest loser. Thankfully, Masha found somewhere a revolver with a rotating cylinder of n bullet slots able to contain exactly k bullets, now the boys have a chance to resolve the problem once and for all.",
+      "Sasha selects any k out of n slots he wishes and puts bullets there. Roma spins the cylinder so that every of n possible cylinder's shifts is equiprobable. Then the game starts, the players take turns, Sasha starts: he puts the gun to his head and shoots. If there was no bullet in front of the trigger, the cylinder shifts by one position and the weapon is given to Roma for make the same move. The game continues until someone is shot, the survivor is the winner.",
+      "Sasha does not want to lose, so he must choose slots for bullets in such a way as to minimize the probability of its own loss. Of all the possible variant he wants to select the lexicographically minimal one, where an empty slot is lexicographically less than a charged one.",
+      "More formally, the cylinder of n bullet slots able to contain k bullets can be represented as a string of n characters. Exactly k of them are \"X\" (charged slots) and the others are \".\" (uncharged slots).",
+      "Let us describe the process of a shot. Suppose that the trigger is in front of the first character of the string (the first slot). If a shot doesn't kill anyone and the cylinder shifts, then the string shifts left. So the first character becomes the last one, the second character becomes the first one, and so on. But the trigger doesn't move. It will be in front of the first character of the resulting string.",
+      "Among all the strings that give the minimal probability of loss, Sasha choose the lexicographically minimal one. According to this very string, he charges the gun. You have to help Sasha to charge the gun. For that, each xi query must be answered: is there a bullet in the positions xi?"
+    ],
+    "input": [
+      "The first line contains three integers n, k and p (1 ≤ n ≤ 1018, 0 ≤ k ≤ n, 1 ≤ p ≤ 1000) — the number of slots in the cylinder, the number of bullets and the number of queries. Then follow p lines; they are the queries. Each line contains one integer xi (1 ≤ xi ≤ n) the number of slot to describe.",
+      "Please do not use the %lld specificator to read or write 64-bit numbers in С++. It is preferred to use cin, cout streams or the %I64d specificator."
+    ],
+    "output": [
+      "For each query print \".\" if the slot should be empty and \"X\" if the slot should be charged."
+    ],
+    "note": [
+      "The lexicographical comparison of is performed by the < operator in modern programming languages. The a string is lexicographically less that the b string, if there exists such i (1 ≤ i ≤ n), that ai < bi, and for any j (1 ≤ j < i) aj = bj."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1 3\n1\n2\n3",
+      "output": "..X"
+    },
+    {
+      "input": "6 3 6\n1\n2\n3\n4\n5\n6",
+      "output": ".X.X.X"
+    },
+    {
+      "input": "5 2 5\n1\n2\n3\n4\n5",
+      "output": "...XX"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在我们都知道的奥兰多发生的所有事件之后，Sasha 和 Roma 决定找出谁仍然是队里最倒霉的人。幸运的是，Masha 不知从哪里找到了一把左轮手枪，其旋转弹巢有 n 个装弹槽，恰好可以装下 k 发子弹；现在男孩们有机会一劳永逸地解决这个问题了。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Sasha 任意选择 n 个槽位中的 k 个，并在其中放入子弹。Roma 旋转弹筒，使弹筒的 n 种可能移位等概率。随后游戏开始，玩家轮流行动，Sasha 先手：他将枪对准自己的头部并扣动扳机。如果扳机前没有子弹，弹筒旋转一个位置，并将武器交给 Roma 进行相同的操作。游戏持续到有人中枪为止，幸存者获胜。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Sasha 不想输，因此他必须选择一种放置子弹的方式，使自己输掉的概率最小。在所有可能的方案中，他希望选择字典序最小的方案，其中空槽位在字典序上小于装有子弹的槽位。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更形式化地说，包含 k 发子弹的 n 个槽位的弹筒可以表示为一个长度为 n 的字符串。其中恰有 k 个字符是“X”（装有子弹的槽位），其余字符是“.”（未装子弹的槽位）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下面描述射击过程。假设扳机位于字符串第一个字符（第一个槽位）的前方。如果射击没有杀死任何人且弹筒发生移位，那么字符串向左移动。因此，第一个字符变为最后一个字符，第二个字符变为第一个字符，依此类推。但扳机不会移动，它仍然位于移动后字符串的第一个字符前方。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在所有使输掉的概率最小的字符串中，Sasha 选择字典序最小的一个。随后，他按照这个字符串给枪装入子弹。你需要帮助 Sasha 完成装弹。具体来说，对于每个查询 x_i，需要回答位置 x_i 上是否有子弹。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n、k 和 p（1 ≤ n ≤ 10^18，0 ≤ k ≤ n，1 ≤ p ≤ 1000），分别表示弹筒中的槽位数、子弹数和查询数。接下来有 p 行，每行表示一个查询。每行包含一个整数 x_i（1 ≤ x_i ≤ n），表示要查询的槽位编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请不要在 C++ 中使用 %lld 格式说明符来读写 64 位整数。建议使用 cin、cout 流或 %I64d 格式说明符。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每次查询，如果该位置应为空，则输出“.”；如果该位置应充电，则输出“X”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "字典序比较由现代编程语言中的 < 运算符执行。如果存在某个 i（1 ≤ i ≤ n）使得 aᵢ < bᵢ，并且对于任意 j（1 ≤ j < i）都有 aⱼ = bⱼ，则字符串 a 的字典序小于字符串 b。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 俄罗斯轮盘赌",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

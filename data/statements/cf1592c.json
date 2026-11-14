@@ -1,0 +1,135 @@
+{
+  "code": "CF1592C",
+  "letter": "C",
+  "title": "C. Bakry and Partitioning",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1592/C",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Bakry faced a problem, but since he's lazy to solve it, he asks for your help.",
+      "You are given a tree of n$$$n$$$ nodes, the i$$$i$$$-th node has value ai$$$a_i$$$ assigned to it for each i$$$i$$$ from 1$$$1$$$ to n$$$n$$$. As a reminder, a tree on n$$$n$$$ nodes is a connected graph with n−1$$$n-1$$$ edges.",
+      "You want to delete at least 1$$$1$$$, but at most k−1$$$k-1$$$ edges from the tree, so that the following condition would hold:",
+      "For every connected component calculate the bitwise XOR of the values of the nodes in it. Then, these values have to be the same for all connected components.",
+      "Is it possible to achieve this condition?"
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤5⋅104)$$$(1 \\leq t \\leq 5 \\cdot 10^4)$$$. Description of the test cases follows.",
+      "The first line of each test case contains two integers n$$$n$$$ and k$$$k$$$ (2≤k≤n≤105)$$$(2 \\leq k \\leq n \\leq 10^5)$$$.",
+      "The second line of each test case contains n$$$n$$$ integers a1,a2,...,an$$$a_1, a_2, ..., a_n$$$ (1≤ai≤109)$$$(1 \\leq a_i \\leq 10^9)$$$.",
+      "The i$$$i$$$-th of the next n−1$$$n-1$$$ lines contains two integers ui$$$u_i$$$ and vi$$$v_i$$$ (1≤ui,vi≤n$$$1 \\leq u_i, v_i \\leq n$$$, ui≠vi$$$u_i\\neq v_i$$$), which means that there's an edge between nodes ui$$$u_i$$$ and vi$$$v_i$$$.",
+      "It is guaranteed that the given graph is a tree.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases doesn't exceed 2⋅105$$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, you should output a single string. If you can delete the edges according to the conditions written above, output \"YES\" (without quotes). Otherwise, output \"NO\" (without quotes).",
+      "You can print each letter of \"YES\" and \"NO\" in any case (upper or lower)."
+    ],
+    "note": [
+      "It can be shown that the objection is not achievable for first, third, and fifth test cases.",
+      "In the second test case, you can just remove all the edges. There will be 5$$$5$$$ connected components, each containing only one node with value 3$$$3$$$, so the bitwise XORs will be 3$$$3$$$ for all of them.",
+      "In the fourth test case, this is the tree: ![](https://espresso.codeforces.com/deeb14a3ca4684db806685d5cfe4fd47751127e4.png).",
+      "You can remove an edge (4,5)$$$(4,5)$$$",
+      "The bitwise XOR of the first component will be, a1⊕a2⊕a3⊕a4=1⊕6⊕4⊕1=2$$$a_1 \\oplus a_2 \\oplus a_3 \\oplus a_4 = 1 \\oplus 6 \\oplus 4 \\oplus 1 = 2$$$ (where ⊕$$$\\oplus$$$ denotes the bitwise XOR).",
+      "The bitwise XOR of the second component will be, a5=2$$$a_5 = 2$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 2\n1 3\n1 2\n5 5\n3 3 3 3 3\n1 2\n2 3\n1 4\n4 5\n5 2\n1 7 2 3 5\n1 2\n2 3\n1 4\n4 5\n5 3\n1 6 4 1 2\n1 2\n2 3\n1 4\n4 5\n3 3\n1 7 4\n1 2\n2 3",
+      "output": "NO\nYES\nNO\nYES\nNO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Bakry 遇到了一个问题，但他懒得解决，于是向你求助。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一棵包含 n$$$n$$$ 个节点的树，对于每个 i$$$i$$$(从 1$$$1$$$ 到 n$$$n$$$)，第 i$$$i$$$ 个节点被赋予值 ai$$$a_i$$$。提醒一下，包含 n$$$n$$$ 个节点的树是一个有 n−1$$$n-1$$$ 条边的连通图。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要从这棵树中删除至少 1$$$1$$$ 条、但至多 k−1$$$k-1$$$ 条边，使得满足以下条件：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个连通分量，计算其中所有节点的值的按位异或。然后，所有连通分量的这些值必须相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "是否可能达到这一条件？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每组测试包含多个测试用例。第一行包含测试用例的数量 t$$$t$$$ (1≤t≤5⋅104)$$$(1 \\leq t \\leq 5 \\cdot 10^4)$$$。下面给出各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$ 和 k$$$k$$$ (2≤k≤n≤105)$$$(2 \\leq k \\leq n \\leq 10^5)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 a1,a2,...,an$$$a_1, a_2, ..., a_n$$$ (1≤ai≤109)$$$(1 \\leq a_i \\leq 10^9)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n−1$$$n-1$$$ 行中的第 i$$$i$$$ 行包含两个整数 ui$$$u_i$$$ 和 vi$$$v_i$$$ (1≤ui,vi≤n$$$1 \\leq u_i, v_i \\leq n$$$, ui≠vi$$$u_i\\neq v_i$$$)，表示节点 ui$$$u_i$$$ 和 vi$$$v_i$$$ 之间存在一条边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证给出的图是一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，你需要输出一个字符串。如果可以按照上述条件删除边，则输出 \"YES\"（不含引号）；否则，输出 \"NO\"（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以以任意大小写形式输出 \"YES\" 和 \"NO\" 中的每个字母。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "可以证明，在第 1、3、5 个测试用例中无法满足该要求。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，你可以直接删除所有边。这样会有 5$$$5$$$ 个连通分量，每个分量只包含一个值为 3$$$3$$$ 的节点，因此它们的按位异或结果均为 3$$$3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四个测试用例中，树如下：![](https://espresso.codeforces.com/deeb14a3ca4684db806685d5cfe4fd47751127e4.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以删除边 (4,5)$$$(4,5)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一个连通分量的按位异或结果为 a1⊕a2⊕a3⊕a4=1⊕6⊕4⊕1=2$$$a_1 \\oplus a_2 \\oplus a_3 \\oplus a_4 = 1 \\oplus 6 \\oplus 4 \\oplus 1 = 2$$$(其中 ⊕$$$\\oplus$$$ 表示按位异或)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二个连通分量的按位异或结果为 a5=2$$$a_5 = 2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Bakry 与划分",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

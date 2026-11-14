@@ -1,0 +1,91 @@
+{
+  "code": "CF792D",
+  "letter": "D",
+  "title": "D. Paths in a Complete Binary Tree",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/792/D",
+  "difficulty": "1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "T is a complete binary tree consisting of n vertices. It means that exactly one vertex is a root, and each vertex is either a leaf (and doesn't have children) or an inner node (and has exactly two children). All leaves of a complete binary tree have the same depth (distance from the root). So n is a number such that n + 1 is a power of 2.",
+      "In the picture you can see a complete binary tree with n = 15.",
+      "![](https://espresso.codeforces.com/7cf45e9d9e44d8d0a3972224b62a35dd86b5f1b3.png)",
+      "Vertices are numbered from 1 to n in a special recursive way: we recursively assign numbers to all vertices from the left subtree (if current vertex is not a leaf), then assign a number to the current vertex, and then recursively assign numbers to all vertices from the right subtree (if it exists). In the picture vertices are numbered exactly using this algorithm. It is clear that for each size of a complete binary tree exists exactly one way to give numbers to all vertices. This way of numbering is called symmetric.",
+      "You have to write a program that for given n answers q queries to the tree.",
+      "Each query consists of an integer number ui (1 ≤ ui ≤ n) and a string si, where ui is the number of vertex, and si represents the path starting from this vertex. String si doesn't contain any characters other than 'L', 'R' and 'U', which mean traverse to the left child, to the right child and to the parent, respectively. Characters from si have to be processed from left to right, considering that ui is the vertex where the path starts. If it's impossible to process a character (for example, to go to the left child of a leaf), then you have to skip it. The answer is the number of vertex where the path represented by si ends.",
+      "For example, if ui = 4 and si = «UURL», then the answer is 10."
+    ],
+    "input": [
+      "The first line contains two integer numbers n and q (1 ≤ n ≤ 1018, q ≥ 1). n is such that n + 1 is a power of 2.",
+      "The next 2q lines represent queries; each query consists of two consecutive lines. The first of these two lines contains ui (1 ≤ ui ≤ n), the second contains non-empty string si. si doesn't contain any characters other than 'L', 'R' and 'U'.",
+      "It is guaranteed that the sum of lengths of si (for each i such that 1 ≤ i ≤ q) doesn't exceed 105."
+    ],
+    "output": [
+      "Print q numbers, i-th number must be the answer to the i-th query."
+    ]
+  },
+  "examples": [
+    {
+      "input": "15 2\n4\nUURL\n8\nLRLLLLLLLL",
+      "output": "10\n5"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 q（1 ≤ n ≤ 10^18，q ≥ 1）。保证 n + 1 是 2 的幂。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 2q 行表示若干查询；每个查询由连续的两行组成。其中第一行包含 ui（1 ≤ ui ≤ n），第二行包含非空字符串 si。si 中只包含字符 'L'、'R' 和 'U'。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有 si 的长度之和（对每个满足 1 ≤ i ≤ q 的 i）不超过 10^5。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 q 个数，第 i 个数必须是第 i 个查询的答案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "T 是一棵由 n 个顶点组成的完全二叉树。这意味着其中恰好有一个顶点是根，并且每个顶点要么是叶子（没有子节点），要么是内部节点（恰好有两个子节点）。完全二叉树的所有叶子深度都相同（即到根的距离相同）。因此，n 是一个满足 n + 1 为 2 的幂的数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "图中展示了一棵 n = 15 的完全二叉树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/7cf45e9d9e44d8d0a3972224b62a35dd86b5f1b3.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "顶点以一种特殊的递归方式从 1 编号到 n：我们先递归地为左子树中的所有顶点编号（如果当前顶点不是叶子），然后为当前顶点编号，最后递归地为右子树中的所有顶点编号（如果右子树存在）。图中的顶点正是使用该算法编号的。显然，对于每一种大小的完全二叉树，为所有顶点编号的方法都恰好只有一种。这种编号方式称为对称编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要编写一个程序，对于给定的 n，回答树上的 q 个查询。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个查询由一个整数 ui（1 ≤ ui ≤ n）和一个字符串 si 组成，其中 ui 是顶点的编号，si 表示从该顶点开始的路径。字符串 si 只包含字符 'L'、'R' 和 'U'，分别表示移动到左儿子、右儿子和父节点。需要从左到右处理 si 中的字符，并将 ui 视为路径的起点。如果无法处理某个字符（例如，从叶子移动到左儿子），则跳过该字符。答案是由 si 表示的路径结束时所在顶点的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，如果 ui = 4 且 si = «UURL»，那么答案是 10。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 完全二叉树中的路径",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

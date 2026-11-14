@@ -1,0 +1,214 @@
+{
+  "code": "GYM102911L",
+  "letter": "L",
+  "title": "L. L Textiles",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102911/problem/L",
+  "difficulty": "*2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The Philippines is home to more than 175 ethnolinguistic groups, with many indigenous peoples still carrying on their heritage through traditions which are hundreds of years old. Among these traditions is the weaving of fabric and textiles adorned with intricate geometric patterns which reflect the rich history and philosophies of the various indigenous peoples throughout the country.",
+      "Bob, inspired by these patterns, decided to create geometric patterns of his own, which he decided to call \"L-Textiles\". Of course, he is not skilled in weaving or even embroidery, so he will plan out his design on the computer first.",
+      "The fabric where the pattern is to be placed can be represented as a 2N×2N$$$2^N \\times 2^N$$$ square unit grid. Bob envisions that the pattern with primarily consist of many L-shaped pieces which consist of three adjacent unit squares, all of the same color, in the shape of an \"L\" (see picture). The pieces can be rotated. Bob's L-shaped pieces come in 26 different colors, and he has an infinite amount of each color of piece.",
+      "![](https://espresso.codeforces.com/e956dcaa76e639da0db1a3c1544cb2e1e1823308.png)",
+      "Unfortunately, Bob realized that it is always impossible to completely cover the 2N×2N$$$2^N \\times 2^N$$$ grid using only L-shaped tiles because its area (in square units) will never be divisible by 3. To fix this, he blacked out the 1×1$$$1 \\times 1$$$ square located at (x,y)$$$(x,y)$$$ (the square in the x$$$x$$$th row from the top and the y$$$y$$$th column from the left). Now, Bob desires to create a pattern that satisfies the following.",
+      "The entire mural is completely covered by the L-shaped pieces, except the square at (x,y)$$$(x,y)$$$.",
+      "Only the L-shaped pieces are used",
+      "The L-shaped pieces do not overlap and the L-shaped pieces cannot be broken into smaller pieces.",
+      "No two touching L-shaped pieces in the finished pattern may be of the same color. Two pieces are considered \"touching\" if they share an edge in common (it's okay for them to touch at corners).",
+      "Bob has already made some patterns of his own, but now he challenges you to make some too! Of course, if the task is impossible, you must tell Bob that he made a mistake.",
+      "To aid in creating your pattern, you may download the following app.",
+      "L-Painter.jar"
+    ],
+    "input": [
+      "The first line of input contains a single integer N$$$N$$$.",
+      "The second line of input contains two space-separated integers x$$$x$$$ and y$$$y$$$."
+    ],
+    "output": [
+      "If the task is impossible, output NO on a single line. Otherwise, output YES.",
+      "If YES, output 2N$$$2^N$$$ more lines, each containing a string with 2N$$$2^N$$$ characters. The y$$$y$$$th character of the x$$$x$$$th line should be the hash character #. Each other character must be an upper case English letter, representing the color of some L-shaped piece. An L-shaped piece is represented by three touching characters on the grid that are the same letter, in an L-shape. Two L-shaped pieces are considered the same color if (and only if) they are represented by the same letter.",
+      "1≤N≤8$$$1 \\leq N \\leq 8$$$",
+      "1≤x,y≤2N$$$1 \\leq x,y \\leq 2^N$$$",
+      "Subtask 1 (20 points):",
+      "N≤1$$$N \\leq 1$$$",
+      "Subtask 2 (15 points):",
+      "N≤2$$$N \\leq 2$$$",
+      "Subtask 3 (15 points):",
+      "N≤3$$$N \\leq 3$$$",
+      "Subtask 4 (15 points):",
+      "N≤4$$$N \\leq 4$$$",
+      "Subtask 5 (20 points):",
+      "x=y=1$$$x = y = 1$$$",
+      "Subtask 6 (15 points):",
+      "No further constraints."
+    ],
+    "note": [
+      "Here is Bob's pattern for the first sample test case.",
+      "![](https://espresso.codeforces.com/a28643633bcca3171036f019c852b9276f60f1f5.png)",
+      "Here is Bob's pattern for the second sample test case.",
+      "![](https://espresso.codeforces.com/6cb12c9882824393139105c2c6e4e0b15a52b95c.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 3",
+      "output": "YES\nCC#A\nCBAA\nABBC\nAACC"
+    },
+    {
+      "input": "3\n5 7",
+      "output": "YES\nAABBCCBB\nADBAACAB\nDDCADDAA\nAACCADBB\nCADAAB#B\nCCDDBBAA\nBAABAABA\nBBABBABB"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "菲律宾有超过 175 个民族语言群体，许多原住民至今仍通过数百年历史的传统延续着自己的文化传承。这些传统之一便是织造布料和纺织品，并饰以精巧的几何图案，展现了菲律宾各地不同原住民群体丰富的历史与哲学理念。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bob 从这些图案中获得灵感，决定创作属于自己的几何图案，并将其称为 “L-Textiles”。当然，他并不擅长织布，甚至连刺绣也不会，所以他打算先在电脑上规划设计。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "图案所在的布料可以表示为一个 2N×2N$$$2^N \\times 2^N$$$ 的正方形单位网格。Bob 设想，这种图案主要由许多 L 形块组成，每块由三个相邻的单位正方格构成，且颜色相同，形状呈“L”形(见图)。这些块可以旋转。Bob 的 L 形块有 26 种不同的颜色，并且每种颜色的块都有无限多个。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/e956dcaa76e639da0db1a3c1544cb2e1e1823308.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "不幸的是，Bob 意识到，只用 L 形瓷砖永远无法完全覆盖 2N×2N$$$2^N \\times 2^N$$$ 网格，因为它的面积(以单位正方格计)永远无法被 3 整除。为了解决这个问题，他将位于 (x,y)$$$(x,y)$$$ 的 1×1$$$1 \\times 1$$$ 正方格涂黑(即从上往下第 x$$$x$$$ 行、从左往右第 y$$$y$$$ 列的正方格)。现在，Bob 希望创作出满足以下条件的图案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "整幅壁画都由 L 形块完全覆盖，只有位于 (x,y)$$$(x,y)$$$ 的正方格除外。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "仅使用 L 形拼块",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "L 形拼块之间不能重叠，且不能拆分成更小的拼块。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "完成的图案中，任何两个相接的 L 形拼块都不能是同一种颜色。如果两个拼块有一条公共边，则认为它们“相接”（它们在角上接触是可以的）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bob 已经制作了一些自己的图案，但现在他向你发起挑战，让你也制作一些图案！当然，如果任务无法完成，你必须告诉 Bob 他犯了一个错误。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了帮助你制作图案，你可以下载下面的应用程序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "L-Painter.jar",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 N$$$N$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第二行包含两个以空格分隔的整数 x$$$x$$$ 和 y$$$y$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果任务无解，请在单独一行中输出 NO。否则，输出 YES。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果输出 YES，接下来输出 2N$$$2^N$$$ 行，每行包含一个由 2N$$$2^N$$$ 个字符组成的字符串。第 x$$$x$$$ 行的第 y$$$y$$$ 个字符应为井号 #。每个其他字符都必须是大写英文字母，表示某个 L 形棋子的颜色。一个 L 形棋子由网格上三个相互接触、字母相同且排列成 L 形的字符表示。当且仅当两个 L 形棋子由相同的字母表示时，它们才被视为同一种颜色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤N≤8$$$1 \\leq N \\leq 8$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤x,y≤2N$$$1 \\leq x,y \\leq 2^N$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 1（20 分）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "N≤1$$$N \\leq 1$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 2（15 分）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "N≤2$$$N \\leq 2$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 3（15 分）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "N≤3$$$N \\leq 3$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 4（15 分）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "N≤4$$$N \\leq 4$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 5（20 分）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "x=y=1$$$x = y = 1$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务 6（15 分）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "没有其他约束条件。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "这是 Bob 第一个样例测试用例的图案。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/a28643633bcca3171036f019c852b9276f60f1f5.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "这是 Bob 第二个样例测试用例的图案。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/6cb12c9882824393139105c2c6e4e0b15a52b95c.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "L. L Textiles",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

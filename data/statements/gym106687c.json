@@ -1,0 +1,146 @@
+{
+  "code": "GYM106687C",
+  "letter": "C",
+  "title": "C. Constructing Box Projections",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106687/problem/C",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "For a positive integer $$$d$$$, let $$$[d]=\\{1,2,\\dots,d\\}$$$. You are given three positive integers $$$a,b,c$$$.",
+      "Construct a set $$$S\\subseteq[a]\\times[b]\\times[c]$$$ of integer triples satisfying all of the following conditions:",
+      "for every $$$(x,y)\\in[a]\\times[b]$$$, at least one triple $$$(x,y,z)$$$ belongs to $$$S$$$;",
+      "for every $$$(x,z)\\in[a]\\times[c]$$$, at least one triple $$$(x,y,z)$$$ belongs to $$$S$$$;",
+      "for every $$$(y,z)\\in[b]\\times[c]$$$, at least one triple $$$(x,y,z)$$$ belongs to $$$S$$$.",
+      "In other words, deleting any one coordinate from the triples in $$$S$$$ must produce every possible pair of the other two coordinates. The size $$$|S|$$$ must be as small as possible."
+    ],
+    "input": [
+      "The first line contains an integer $$$T$$$ ($$$1\\le T\\le 100$$$), the number of test cases.",
+      "For each test case, one line contains three integers $$$a,b,c$$$ ($$$1\\le a\\le 100$$$, $$$1\\le b\\le 100$$$, $$$1\\le c\\le 100$$$)."
+    ],
+    "output": [
+      "For each test case, print several lines:",
+      "The first line contains one integer $$$m$$$, the minimum possible value of $$$|S|$$$.",
+      "Each of the next $$$m$$$ lines contains three integers $$$x,y,z$$$, describing one triple in $$$S$$$.",
+      "The $$$m$$$ triples must be pairwise distinct. Their order does not matter. If several minimum-size sets are valid, output any one of them."
+    ],
+    "note": [
+      "The sample output is one possible answer. Other valid minimum-size sets are also accepted."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 1 1\n2 2 2",
+      "output": "1\n1 1 1\n4\n1 1 1\n1 2 2\n2 1 2\n2 2 1"
+    }
+  ],
+  "titleZh": {
+    "0": "C. 构建箱体投影",
+    "caiyun": "C. 构建箱体投影",
+    "youdao": "C.构造方框投影",
+    "iflyrec": "C.构造盒投影",
+    "ai": "C. 构造长方体投影"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "对于正整数 $$$d$$$，设为 $$$[d]=\\{1,2,\\dots,d\\}$$$。给定三个正整数 $$$a,b,c$$$。",
+        "youdao": "对于正整数$$$d$$$，设$$$[d]=\\{1,2,\\dots,d\\}$$$。给你三个正整数$$$a,b,c$$$。",
+        "ai": "对于一个正整数 $$$$$$d$$$$$$，令 $$$$$$[d]=\\{1,2,\\dots,d\\}$$$$$$。给定三个正整数 $$$$$$a,b,c$$$$$$。"
+      },
+      {
+        "caiyun": "构造一个满足以下所有条件的整数三元组集合$$$S\\subseteq[a]\\times[b]\\times[c]$$$：",
+        "youdao": "构造一个满足以下所有条件的整数三元组集合$$$S\\subseteq[a]\\times[b]\\times[c]$$$：",
+        "iflyrec": "构造满足以下所有条件的整数三元组的集合$$$S\\subseteq[a]\\times[b]\\times[c]$$$:",
+        "ai": "构造一个满足以下所有条件的整数三元组集合 $$$S\\subseteq[a]\\times[b]\\times[c]$$$："
+      },
+      {
+        "caiyun": "对于每个 $$$(x,y)\\in[a]\\times[b]$$$，至少有一个三重 $$$(x,y,z)$$$ 属于 $$$S$$$;",
+        "youdao": "对于每个$$$(x,y)\\in[a]\\times[b]$$$，至少有一个三元组$$$(x,y,z)$$$属于$$$S$$$；",
+        "iflyrec": "对于每个$$$(x,y)\\in[a]\\times[b]$$$，至少有一个三元组$$$(x,y,z)$$$属于$$$S$$$",
+        "ai": "对于每个 $$$(x,y)\\in[a]\\times[b]$$$，至少有一个三元组 $$$(x,y,z)$$$ 属于 $$$S$$$；"
+      },
+      {
+        "caiyun": "对于每个 $$$(x,z)\\in[a]\\times[c]$$$，至少有一个三重 $$$(x,y,z)$$$ 属于 $$$S$$$;",
+        "youdao": "对于每个$$$(x,z)\\in[a]\\times[c]$$$，至少有一个三元组$$$(x,y,z)$$$属于$$$S$$$；",
+        "iflyrec": "对于每个$$$(x,z)\\in[a]\\times[c]$$$，至少有一个三元组$$$(x,y,z)$$$属于$$$S$$$",
+        "ai": "对于每个 $$$(x,z)\\in[a]\\times[c]$$$，至少有一个三元组 $$$(x,y,z)$$$ 属于 $$$S$$$；"
+      },
+      {
+        "caiyun": "对于每个$$$(y,z)\\in[b]\\times[c]$$$，至少有一个三元组$$$(x,y,z)$$$属于$$$S$$$。",
+        "youdao": "对于每个$$$(y,z)\\in[b]\\times[c]$$$，至少有一个三元组$$$(x,y,z)$$$属于$$$S$$$。",
+        "iflyrec": "对于每个$$$(y,z)\\in[b]\\times[c]$$$，至少有一个三元组$$$(x,y,z)$$$属于$$$S$$$。",
+        "ai": "对于每个 $$$(y,z)\\in[b]\\times[c]$$$，至少有一个三元组 $$$(x,y,z)$$$ 属于 $$$S$$$。"
+      },
+      {
+        "caiyun": "换句话说，从 $$$S$$$ 中的三元组中删除任何一个坐标必须产生其他两个坐标的所有可能对。$$$|S|$$$ 的大小必须尽可能小。",
+        "youdao": "换句话说，从$$$S$$$中的三元组中删除任何一个坐标必须生成其他两个坐标的所有可能对。尺寸$$$|S|$$$必须尽可能小。",
+        "iflyrec": "换句话说，从$$$S$$$中的三元组中删除任何一个坐标必须产生其他两个坐标的每个可能的对。尺寸$$$|S|$$$必须尽可能小。",
+        "ai": "换句话说，从 $$$S$$$ 中的三元组里删除任意一个坐标后，必须能得到另外两个坐标的所有可能的二元组。大小 $$$|S|$$$ 必须尽可能小。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数$$$T$$$ ($$$1\\le T\\le 100$$$)，测试用例的数量。",
+        "youdao": "第一行包含一个整数$$$T$$$ ($$$1\\le T\\le 100$$$)，测试用例的数量。",
+        "iflyrec": "第一行包含整数$$$T$$$($$$1\\le T\\le 100$$$），即测试用例的数量。",
+        "ai": "第一行包含一个整数 $$$T$$$($$$1\\le T\\le 100$$$)，表示测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "对于每个测试用例，一行包含三个整数 $$$a,b,c$$$($$$1\\le a\\le 100$$$、$$$1\\le b\\le 100$$$、$$$1\\le c\\le 100$$$)。",
+        "youdao": "对于每个测试用例，一行包含三个整数$$$a,b,c$$$ ($$$1\\le a\\le 100$$$, $$$1\\le b\\le 100$$$, $$$1\\le c\\le 100$$$）。",
+        "iflyrec": "对于每个测试用例，一行包含三个整数$$$a,b,c$$$($$$1\\le a\\le 100$$$，$$$1\\le b\\le 100$$$，$$$1\\le c\\le 100$$$）。",
+        "ai": "对于每个测试用例，一行包含三个整数 $$$a,b,c$$$($$$1\\le a\\le 100$$$, $$$1\\le b\\le 100$$$, $$$1\\le c\\le 100$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "对于每个测试用例，打印几行：",
+        "youdao": "对于每个测试用例，打印几行：",
+        "iflyrec": "对于每个测试用例，打印几行:",
+        "ai": "对于每个测试用例，输出若干行：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "第一行包含一个整数 $$$m$$$，即 $$$|S|$$$ 的最小可能值。",
+        "youdao": "第一行包含一个整数$$$m$$$，即可能的最小值$$$|S|$$$。",
+        "iflyrec": "第一行包含一个整数$$$m$$$，即$$$|S|$$$的最小可能值。",
+        "ai": "第一行包含一个整数 $$$m$$$，即 $$$|S|$$$ 的可能的最小值。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "接下来的每一行$$$m$$$包含三个整数$$$x,y,z$$$，描述了$$$S$$$中的一个三元组。",
+        "youdao": "接下来的每一行$$$m$$$包含三个整数$$$x,y,z$$$，描述了$$$S$$$中的一个三元组。",
+        "iflyrec": "接下来的$$$m$$$行中的每一行包含三个整数$$$x,y,z$$$，描述$$$S$$$中的一个三元组。",
+        "ai": "接下来的 $$$m$$$ 行中，每行包含三个整数 $$$x,y,z$$$，描述 $$$S$$$ 中的一个三元组。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "$$$m$$$ 三元组必须成对不同。它们的顺序无关紧要。如果多个最小尺寸集合有效，则输出其中任何一个。",
+        "youdao": "$$$m$$$三元组必须是两两不同的。它们的顺序无关紧要。如果有几个最小大小集有效，则输出其中任何一个。",
+        "iflyrec": "$$$m$$$三元组必须是两两不同的。他们的顺序无关紧要。如果多个最小大小集有效，则输出其中的任何一个。",
+        "ai": "这 $$$m$$$ 个三元组必须互不相同。它们的顺序无关紧要。如果有多个合法的最小大小集合，输出其中任意一个即可。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "样本输出是一种可能的答案。其他有效的最小尺寸集也被接受。",
+        "youdao": "示例输出是一个可能的答案。其他有效的最小尺寸集合也被接受。",
+        "iflyrec": "示例输出是一种可能的答案。也接受其他有效的最小大小集合。",
+        "ai": "输出样例只是其中一种可能的答案。其他合法的最小大小集合也同样接受。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.121Z",
+  "translatedBy": [
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

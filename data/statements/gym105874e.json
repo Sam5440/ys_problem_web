@@ -1,0 +1,70 @@
+{
+  "code": "GYM105874E",
+  "letter": "E",
+  "title": "E. RADiant queries",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105874/problem/E",
+  "difficulty": "*1900",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let rad(n)$$$(n)$$$ denote the product of all distinct prime divisors of the number n$$$n$$$. For example, rad(504)$$$(504)$$$ = rad(23⋅32⋅7)$$$(2^3 \\cdot 3^2 \\cdot 7)$$$ =2⋅3⋅7$$$= 2 \\cdot 3 \\cdot 7$$$ =42$$$=42$$$. We define rad(1)=1$$$(1) = 1$$$.",
+      "The statement of this problem is simple: you have an array a$$$a$$$ of size n$$$n$$$. You are given q$$$q$$$ queries [ℓ;r]$$$[\\ell;r]$$$, and you need to compute rad of the product of the numbers aℓ,aℓ+1,…,ar$$$a_\\ell, a_{\\ell + 1}, \\dots, a_r$$$, that is: rad(r∏i=ℓai)=rad(aℓ×aℓ+1×⋯×ar)$$\\displaystyle\\texttt{rad}\\left(\\prod_{i=\\ell}^{r} a_i\\right) = \\texttt{rad}\\left(a_\\ell \\times a_{\\ell + 1} \\times \\dots \\times a_r \\right)$$ Since this number can be quite large, output it modulo 109+7$$$10^9 + 7$$$."
+    ],
+    "input": [
+      "The first line of input contains two numbers n,q$$$n,q$$$ (1≤n,q≤5⋅105$$$1 \\le n,q \\le 5 \\cdot 10^5$$$), the number of elements in the array and the number of queries.",
+      "The second line of input contains n$$$n$$$ numbers ai$$$a_i$$$ (1≤ai≤2⋅105$$$1 \\le a_i \\le 2 \\cdot 10^5$$$), the array a$$$a$$$.",
+      "In the following q$$$q$$$ lines, two numbers ℓ,r$$$\\ell, r$$$ (1≤ℓ≤r≤n$$$1 \\le \\ell \\le r \\le n$$$) are given, which are the boundaries of the next query."
+    ],
+    "output": [
+      "In q$$$q$$$ lines of output, print one number per line, the answer to the problem modulo 109+7$$$10^9 + 7$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 6\n42 35 11 26 13\n1 3\n2 4\n3 5\n1 5\n2 2\n4 5",
+      "output": "2310\n10010\n286\n30030\n35\n26"
+    },
+    {
+      "input": "2 1\n2 2\n1 2",
+      "output": "2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "令 rad(n)$$$(n)$$$ 表示数 n$$$n$$$ 的所有互不相同的素因子的乘积。例如，rad(504)$$$(504)$$$ = rad(23⋅32⋅7)$$$(2^3 \\cdot 3^2 \\cdot 7)$$$ =2⋅3⋅7$$$= 2 \\cdot 3 \\cdot 7$$$ =42$$$=42$$$。我们定义 rad(1)=1$$$(1) = 1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这道题的题意很简单：给定一个大小为 n$$$n$$$ 的数组 a$$$a$$$。给你 q$$$q$$$ 个查询 [ℓ;r]$$$[\\ell;r]$$$，你需要计算数字 aℓ,aℓ+1,…,ar$$$a_\\ell, a_{\\ell + 1}, \\dots, a_r$$$ 的乘积的 rad 值，也就是：rad(r∏i=ℓai)=rad(aℓ×aℓ+1×⋯×ar)$$\\displaystyle\\texttt{rad}\\left(\\prod_{i=\\ell}^{r} a_i\\right) = \\texttt{rad}\\left(a_\\ell \\times a_{\\ell + 1} \\times \\dots \\times a_r \\right)$$。由于这个数可能非常大，请输出它对 109+7$$$10^9 + 7$$$ 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入第一行包含两个数 n,q$$$n,q$$$(1≤n,q≤5⋅105$$$1 \\le n,q \\le 5 \\cdot 10^5$$$)，分别表示数组中的元素个数和查询次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入第二行包含 n$$$n$$$ 个数 ai$$$a_i$$$(1≤ai≤2⋅105$$$1 \\le a_i \\le 2 \\cdot 10^5$$$)，即数组 a$$$a$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行中，每行给出两个数 ℓ,r$$$\\ell, r$$$(1≤ℓ≤r≤n$$$1 \\le \\ell \\le r \\le n$$$)，表示下一次查询的边界。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 q$$$q$$$ 行，每行输出一个数，表示该问题的答案对 109+7$$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. RADiant 查询",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

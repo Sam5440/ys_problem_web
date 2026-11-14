@@ -1,0 +1,212 @@
+{
+  "code": "GYM106682F",
+  "letter": "F",
+  "title": "F. Flow of Messages",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106682/problem/F",
+  "difficulty": "*2200",
+  "timeLimit": "1.75 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "In a very close country, Lautaro is in charge of the TUP (Unique Presidential Transmitter), which is responsible for transmitting confidential messages between the government of his country and its neighboring country.",
+      "To do this, he has a network of $$$N$$$ stations, numbered from $$$1$$$ to $$$N$$$, where station $$$1$$$ corresponds to his country's government and station $$$N$$$ corresponds to the neighboring country's government. The remaining stations serve the purpose of facilitating message transmission between station $$$1$$$ and station $$$N$$$.",
+      "To enable transmissions, there are $$$M$$$ bidirectional links connecting these stations. The $$$i$$$-th of these links allows sending a message between stations $$$A_i$$$ and $$$B_i$$$, with a certain delay of $$$w_i$$$ seconds that has not yet been determined.",
+      "Lautaro is calibrating the delays $$$w_i$$$ of this network, which must be integers and sorted in non-decreasing order. That is: $$$1\\le w_1\\le w_2\\le \\ldots \\le w_M$$$ with $$$w_i \\in \\mathbb{Z}$$$ for $$$1 \\leq i \\leq M$$$.",
+      "Lautaro wants to minimize the network's efficiency coefficient, which depends on a parameter $$$k$$$ ranging from $$$1$$$ to $$$M$$$. It is computed using the following formula:",
+      "$$$$$$\\frac{f(w_1, w_2, \\ldots, w_M)}{w_1+w_2+\\ldots+w_k}$$$$$$",
+      "where $$$f(w_1, w_2, \\ldots, w_M)$$$ is the minimum time required to send a message from station $$$1$$$ to station $$$N$$$ (possibly using intermediate stations), given that the link delays are $$$w_1, w_2, \\ldots, w_M$$$.",
+      "Since Lautaro does not yet know which value of $$$k$$$ will be used to compute this coefficient, he will calculate it for all $$$M$$$ integer values of $$$k$$$ between $$$1$$$ and $$$M$$$.",
+      "Your task is to help Lautaro and find, for each integer value of $$$k$$$ with $$$1\\le k \\le M$$$, the infimum of the network's efficiency coefficient across all possible integer delays satisfying $$$1\\le w_1 \\le w_2 \\le \\ldots \\le w_M$$$.",
+      "The infimum of a set $$$S$$$ is the greatest value $$$c$$$ such that $$$x\\ge c$$$ for all $$$x\\in S$$$. For example, the infimum of the set $$$\\{1,\\frac{1}{2},\\frac{1}{3},\\frac{1}{4},\\ldots\\}$$$ is $$$0$$$, the infimum of the set $$$\\{x \\mid 1  \\lt  x  \\lt  3\\}$$$ is $$$1$$$, and the infimum of the set $$$\\{7,13,22\\}$$$ is $$$7$$$. Only in the third set the infimum is also a minimum, since in the other two the infimum does not belong to the set."
+    ],
+    "input": [
+      "The first line contains two integers $$$N$$$ and $$$M$$$ ($$$2 \\leq N \\leq 5000$$$, $$$1 \\leq M \\leq 5000$$$), the number of stations and the number of links.",
+      "The $$$i$$$-th of the following $$$M$$$ lines contains two integers $$$A_i$$$ and $$$B_i$$$ ($$$1\\le A_i, B_i\\le N$$$, $$$A_i\\ne B_i$$$), the stations connected by the $$$i$$$-th link. There may be multiple links connecting the same pair of stations.",
+      "It is guaranteed that it is possible to send a message from station $$$1$$$ to station $$$N$$$, possibly using intermediate stations."
+    ],
+    "output": [
+      "$$$M$$$ lines, where the $$$i$$$-th line contains the infimum of the network's efficiency coefficient for $$$k=i$$$.",
+      "For each value, your output will be accepted if its absolute or relative error is at most $$$10^{-6}$$$.",
+      "Formally, let your output be $$$a$$$ and the jury's answer be $$$b$$$, your answer will be accepted if $$$\\frac{\\vert{}a-b\\vert{}}{\\max(1,\\vert{}b\\vert{})}\\le 10^{-6}$$$."
+    ],
+    "note": [
+      "The following image corresponds to the TUP network for the first example:",
+      "![](https://espresso.codeforces.com/50595643ae6a7f03fc7f61421978127deecfed31.png)",
+      "For $$$k=1$$$ and $$$k=2$$$, the minimum of the network's efficiency coefficient is achieved with $$$w_1=w_2=w_3=w_4=2$$$ (which is also the infimum). Here $$$f(2,2,2,2)=4$$$, since it is the minimum time required to send a message from station $$$1$$$ to station $$$4$$$ along the path $$$1\\to 2\\to 4$$$ with a total delay of $$$w_1+w_4=2+2=4$$$. In the first case, we divide by $$$w_1=2$$$, and in the second case by $$$w_1+w_2=2+2=4$$$.",
+      "For $$$k=3$$$, it can be shown that the infimum is $$$\\frac{1}{2}$$$, but it is not a minimum because that value cannot be achieved."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n1 2\n2 3\n3 1\n2 4",
+      "output": "2\n1\n0.5\n0.3333333"
+    },
+    {
+      "input": "2 1\n1 2",
+      "output": "1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "在一个非常接近的国家，劳塔罗负责 TUP(唯一总统发射机)，该机构负责在该国政府和邻国之间传输机密信息。",
+        "youdao": "在一个非常亲密的国家，劳塔罗负责TUP（唯一总统发射机），负责在他的国家和邻国政府之间传递机密信息。",
+        "iflyrec": "在一个非常接近的国家，劳塔罗负责TUP（独特的总统发报机），负责在本国政府和邻国之间传递机密信息。",
+        "ai": "在一个关系非常密切的国家中，Lautaro 负责管理 TUP（总统专用发射器）。该设备负责在本国政府与邻国政府之间传输机密消息。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "为此，他有一个 $$$N$$$ 站点网络，编号从 $$$1$$$ 到 $$$N$$$，其中 $$$1$$$ 站点对应该国政府，$$$N$$$ 站点对应邻国政府。剩余的站点用于促进 $$$1$$$ 站点和 $$$N$$$ 站点之间的信息传递。",
+        "youdao": "为了做到这一点，他有一个由$$$N$$$个站点组成的网络，编号从$$$1$$$到$$$N$$$，其中$$$1$$$个站点对应本国政府，$$$N$$$个站点对应邻国政府。其余站的作用是方便站$$$1$$$与站$$$N$$$之间的信息传输。",
+        "iflyrec": "为了做到这一点，他有一个$$$N$$$站的网络，编号从$$$1$$$到$$$N$$$，其中站$$$1$$$对应于他的国家的政府，站$$$N$$$对应于邻国的政府。其余的站用于促进站$$$1$$$和站$$$N$$$之间的消息传输。",
+        "ai": "为此，他拥有一个由 $$$N$$$ 个站点组成的网络，编号从 $$$1$$$ 到 $$$N$$$，其中站点 $$$1$$$ 对应他所在国家的政府，站点 $$$N$$$ 对应邻国的政府。其余站点用于促进站点 $$$1$$$ 与站点 $$$N$$$ 之间的消息传输。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "为了实现传输，有 $$$M$$$ 双向链路连接这些站点。这些链路中的 $$$i$$$ 允许在 $$$A_i$$$ 和 $$$B_i$$$ 站点之间发送消息，具有一定的 $$$w_i$$$ 秒延迟，这一点尚未确定。",
+        "youdao": "为了实现传输，这些站点之间有$$$M$$$条双向链路。这些链路中的$$$i$$$-th允许在$$$A_i$$$站和$$$B_i$$$站之间发送消息，具有$$$w_i$$$秒的一定延迟，目前尚未确定。",
+        "iflyrec": "为了实现传输，存在连接这些站的$$$M$$$双向链路。这些链路的第$$$i$$$条允许在站$$$A_i$$$和$$$B_i$$$之间发送消息，具有尚未确定的$$$w_i$$$秒的特定延迟。",
+        "ai": "为了实现消息传输，有 $$$M$$$ 条双向链路连接这些站点。其中第 $$$i$$$ 条链路允许在站点 $$$A_i$$$ 和站点 $$$B_i$$$ 之间发送消息，延迟为尚未确定的 $$$w_i$$$ 秒。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "Lautaro 正在校准这个网络的延迟 $$$w_i$$$，这些延迟必须是整数，并且按非递减顺序排列。也就是说:$$$1\\le w_1\\le w_2\\le \\ldots \\le w_M$$$ 与 $$$w_i \\in \\mathbb{Z}$$$ 对应 $$$1 \\leq i \\leq M$$$。",
+        "youdao": "Lautaro正在校准该网络的延迟$$$w_i$$$，延迟必须为整数，且按非递减顺序排序。即：$$$1\\le w_1\\le w_2\\le \\ldots \\le w_M$$$和$$$w_i \\in \\mathbb{Z}$$$对应$$$1 \\leq i \\leq M$$$。",
+        "iflyrec": "Lautaro正在校准该网络的延迟$$$w_i$$$，该延迟必须为整数并按非递减顺序排序。即：$$$1\\le w_1\\le w_2\\le \\ldots \\le w_M$$$用$$$w_i \\in \\mathbb{Z}$$$换$$$1 \\leq i \\leq M$$$。",
+        "ai": "Lautaro 正在校准该网络的延迟 $$$w_i$$$，这些延迟必须为整数，并按非递减顺序排列。也就是说：$$$1\\le w_1\\le w_2\\le \\ldots \\le w_M$$$ 与 $$$w_i \\in \\mathbb{Z}$$$ 对于 $$$1 \\leq i \\leq M$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "Lautaro 希望最小化网络的效率系数，该系数取决于一个从 $$$1$$$ 到 $$$M$$$ 的参数 $$$k$$$。它使用以下公式计算：",
+        "youdao": "Lautaro希望最小化网络的效率系数，该系数取决于参数$$$k$$$，范围从$$$1$$$到$$$M$$$。其计算公式如下：",
+        "iflyrec": "劳塔罗想要最小化网络的效率系数，该系数取决于范围从$$$1$$$到$$$M$$$的参数$$$k$$$。使用以下公式计算:",
+        "ai": "Lautaro 希望最小化网络的效率系数，该系数取决于参数 $$$k$$$，其范围从 $$$1$$$ 到 $$$M$$$。它按照以下公式计算：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$$$$\\frac{f(w_1, w_2, \\ldots, w_M)}{w_1+w_2+\\ldots+w_k}$$$$$$",
+        "iflyrec": "$$$$$$\\frac{f(w_1, w_2, \\ldots, w_M)}{w_1+w_2+\\ldots+w_k}$$$$$$",
+        "ai": "$$$$$$\\frac{f(w_1, w_2, \\ldots, w_M)}{w_1+w_2+\\ldots+w_k}$$$$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "其中 $$$f(w_1, w_2, \\ldots, w_M)$$$ 是从站 $$$1$$$ 向站 $$$N$$$ 发送消息所需的最小时间 (可能使用中间站)，因为链路延迟为 $$$w_1, w_2, \\ldots, w_M$$$。",
+        "youdao": "其中，$$$f(w_1, w_2, \\ldots, w_M)$$$是将消息从$$$1$$$站发送到$$$N$$$站(可能使用中间站）所需的最小时间，假设链路延迟为$$$w_1, w_2, \\ldots, w_M$$$。",
+        "iflyrec": "其中，$$$f(w_1, w_2, \\ldots, w_M)$$$是从站$$$1$$$发送消息到站$$$N$$$(可能使用中间站）所需的最小时间，假设链路延迟为$$$w_1, w_2, \\ldots, w_M$$$。",
+        "ai": "其中，$$$f(w_1, w_2, \\ldots, w_M)$$$ 表示在链路延迟为 $$$w_1, w_2, \\ldots, w_M$$$ 的情况下，从站点 $$$1$$$ 向站点 $$$N$$$ 发送消息所需的最短时间(可以经过中间站点)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "由于Lautaro还不知道将使用$$$k$$$的哪个值来计算该系数，他将计算$$$k$$$在$$$1$$$和$$$M$$$之间的所有$$$M$$$整数值。",
+        "iflyrec": "由于劳塔罗还不知道$$$k$$$的哪个值将用于计算该系数，因此他将对$$$1$$$和$$$M$$$之间的$$$k$$$的所有$$$M$$$整数值进行计算。",
+        "ai": "由于 Lautaro 还不知道将使用 $$$k$$$ 的哪个值来计算该系数，因此他将对 $$$1$$$ 与 $$$M$$$ 之间的所有 $$$M$$$ 个 $$$k$$$ 整数值分别进行计算。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "你的任务是帮助 Lautaro，找出对于 $$$k$$$ 和 $$$1\\le k \\le M$$$ 中的每个整数值，在满足 $$$1\\le w_1 \\le w_2 \\le \\ldots \\le w_M$$$ 的所有可能整数延迟下，网络效率系数的最小值。",
+        "youdao": "你的任务是帮助Lautaro找到，对于$$$k$$$和$$$1\\le k \\le M$$$的每一个整数值，网络的效率系数在满足$$$1\\le w_1 \\le w_2 \\le \\ldots \\le w_M$$$的所有可能的整数延迟上的最小值。",
+        "iflyrec": "您的任务是帮助Lautaro，对于$$$k$$$和$$$1\\le k \\le M$$$的每个整数值，找出满足$$$1\\le w_1 \\le w_2 \\le \\ldots \\le w_M$$$的所有可能整数延迟的网络效率系数的下确界。",
+        "ai": "你的任务是帮助 Lautaro，并对于每个满足 $$$1\\le k \\le M$$$ 的 $$$k$$$ 整数值，求所有满足 $$$1\\le w_1 \\le w_2 \\le \\ldots \\le w_M$$$ 的可能整数延迟下网络效率系数的下确界。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "集合 $$$S$$$ 的最小值是最大值 $$$c$$$，使得 $$$x\\ge c$$$ 对于所有 $$$x\\in S$$$。例如，集合 $$$\\{1,\\frac{1}{2},\\frac{1}{3},\\frac{1}{4},\\ldots\\}$$$ 的最小值是 $$$0$$$，集合 $$$\\{x \\mid 1  \\lt  x  \\lt  3\\}$$$ 的最小值是 $$$1$$$，集合 $$$\\{7,13,22\\}$$$ 的最小值是 $$$7$$$。只有在第三个集合中，最小值也是最小值，因为在其他两个集合中，最小值不属于该集合。",
+        "youdao": "集合$$$S$$$的极小值是使$$$x\\ge c$$$对所有$$$x\\in S$$$都存在的最大值$$$c$$$。例如，集合$$$\\{1,\\frac{1}{2},\\frac{1}{3},\\frac{1}{4},\\ldots\\}$$$的最小值为$$$0$$$，集合$$$\\{x \\mid 1  \\lt  x  \\lt  3\\}$$$的最小值为$$$1$$$，集合$$$\\{7,13,22\\}$$$的最小值为$$$7$$$。只有在第三个集合中，最小值也是最小值，因为在其他两个集合中，最小值不属于该集合。",
+        "iflyrec": "集合$$$S$$$的下确界是最大值$$$c$$$，使得对于所有$$$x\\in S$$$都有$$$x\\ge c$$$。例如，集合$$$\\{1,\\frac{1}{2},\\frac{1}{3},\\frac{1}{4},\\ldots\\}$$$的下确界是$$$0$$$，集合$$$\\{x \\mid 1  \\lt  x  \\lt  3\\}$$$的下确界是$$$1$$$，集合$$$\\{7,13,22\\}$$$的下确界是$$$7$$$。只有在第三个集合中，下确界也是最小值，因为在其他两个集合中，下确界不属于该集合。",
+        "ai": "集合 $$$S$$$ 的下确界是满足对于所有 $$$x\\in S$$$ 都有 $$$x\\ge c$$$ 的最大值 $$$c$$$。例如，集合 $$$\\{1,\\frac{1}{2},\\frac{1}{3},\\frac{1}{4},\\ldots\\}$$$ 的下确界是 $$$0$$$，集合 $$$\\{x \\mid 1  \\lt  x  \\lt  3\\}$$$ 的下确界是 $$$1$$$，集合 $$$\\{7,13,22\\}$$$ 的下确界是 $$$7$$$。只有第三个集合的下确界同时也是最小值，因为前两个集合的下确界都不属于对应集合。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含两个整数 $$$N$$$ 和 $$$M$$$($$$2 \\leq N \\leq 5000$$$,$$$1 \\leq M \\leq 5000$$$)，即站点数和链接数。",
+        "youdao": "第一行包含两个整数$$$N$$$和$$$M$$$ ($$$2 \\leq N \\leq 5000$$$, $$$1 \\leq M \\leq 5000$$$)，以及站点数和链路数。",
+        "iflyrec": "第一行包含两个整数$$$N$$$和$$$M$$$($$$2 \\leq N \\leq 5000$$$，$$$1 \\leq M \\leq 5000$$$），站点数量和链接数量。",
+        "ai": "第一行包含两个整数 $$$N$$$ 和 $$$M$$$($$$2 \\leq N \\leq 5000$$$、$$$1 \\leq M \\leq 5000$$$)，分别表示站点数量和链路数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "以下 $$$M$$$ 行的第 $$$i$$$ 行包含两个整数 $$$A_i$$$ 和 $$$B_i$$$($$$1\\le A_i, B_i\\le N$$$,$$$A_i\\ne B_i$$$)，即通过 $$$i$$$ 第链接连接的站点。可能有多个链接连接同一对站点。",
+        "youdao": "$$$M$$$线中的$$$i$$$-th线包含两个整数$$$A_i$$$和$$$B_i$$$ ($$$1\\le A_i, B_i\\le N$$$, $$$A_i\\ne B_i$$$)，由$$$i$$$-th线连接的站点。可能有多个链路连接同一对站点。",
+        "iflyrec": "以下$$$M$$$行中的第$$$i$$$行包含两个整数$$$A_i$$$和$$$B_i$$$($$$1\\le A_i, B_i\\le N$$$，$$$A_i\\ne B_i$$$），即由第$$$i$$$链路连接的站点。可能有多条链路连接同一对站点。",
+        "ai": "接下来 $$$M$$$ 行中的第 $$$i$$$ 行包含两个整数 $$$A_i$$$ 和 $$$B_i$$$($$$1\\le A_i, B_i\\le N$$$、$$$A_i\\ne B_i$$$)，表示由第 $$$i$$$ 条链路连接的站点。可能存在连接同一对站点的多条链路。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "保证可以从 $$$1$$$ 站向 $$$N$$$ 站发送消息，可能使用中间站。",
+        "youdao": "可以保证消息可以从$$$1$$$站发送到$$$N$$$站，可能使用中间站。",
+        "iflyrec": "保证可以从站$$$1$$$向站$$$N$$$发送消息，可能使用中间站。",
+        "ai": "保证可以从站点 $$$1$$$ 向站点 $$$N$$$ 发送消息，也可以使用中间站点。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "$$$M$$$ 行，其中 $$$i$$$ 行包含 $$$k=i$$$ 的网络效率系数的最小值。",
+        "youdao": "$$$M$$$行，其中$$$i$$$-th行为网络效率系数在$$$k=i$$$时的最小值。",
+        "iflyrec": "$$$M$$$行，其中第$$$i$$$行包含$$$k=i$$$的网络效率系数的下确界。",
+        "ai": "$$$M$$$ 行，其中第 $$$i$$$ 行包含 $$$k=i$$$ 的网络效率系数的下确界。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "对于每个值，如果其绝对或相对误差最大为 $$$10^{-6}$$$，则你的输出将被接受。",
+        "youdao": "对于每个值，如果输出的绝对或相对误差不超过$$$10^{-6}$$$，则输出将被接受。",
+        "iflyrec": "对于每个值，如果其绝对或相对误差最大为$$$10^{-6}$$$，则您的输出将被接受。",
+        "ai": "对于每个数值，只要其绝对误差或相对误差不超过 $$$10^{-6}$$$，你的输出就会被接受。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "形式上，假设你的输出为 $$$a$$$，陪审团的答案为 $$$b$$$，如果答案为 $$$\\frac{\\vert{}a-b\\vert{}}{\\max(1,\\vert{}b\\vert{})}\\le 10^{-6}$$$，则你的答案将被接受。",
+        "youdao": "正式地，让你的输出为$$$a$$$，陪审团的答案为$$$b$$$，如果$$$\\frac{\\vert{}a-b\\vert{}}{\\max(1,\\vert{}b\\vert{})}\\le 10^{-6}$$$，你的答案将被接受。",
+        "iflyrec": "形式上，假设你的输出是$$$a$$$，陪审团的答案是$$$b$$$，如果$$$\\frac{\\vert{}a-b\\vert{}}{\\max(1,\\vert{}b\\vert{})}\\le 10^{-6}$$$，你的答案将被接受。",
+        "ai": "形式化地，设你的输出为 $$$a$$$，评测答案为 $$$b$$$，当 $$$\\frac{\\vert{}a-b\\vert{}}{\\max(1,\\vert{}b\\vert{})}\\le 10^{-6}$$$ 时，你的答案将被接受。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "下图对应于第一个示例中的 TUP 网络：",
+        "youdao": "下图对应的是第一个示例的TUP网络：",
+        "iflyrec": "下图对应于第一个示例的TUP网络:",
+        "ai": "下图对应于第一个样例中的 TUP 网络：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "![](https://espresso.codeforces.com/50595643ae6a7f03fc7f61421978127deecfed31.png)",
+        "iflyrec": "![](https://espresso.codeforces.com/50595643ae6a7f03fc7f61421978127deecfed31.png)",
+        "deepl": "![](https://espresso.codeforces.com/50595643ae6a7f03fc7f61421978127deecfed31.png)",
+        "youdao": "![](https://espresso.codeforces.com/50595643ae6a7f03fc7f61421978127deecfed31.png)",
+        "ai": "![](https://espresso.codeforces.com/50595643ae6a7f03fc7f61421978127deecfed31.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "对于 $$$k=1$$$ 和 $$$k=2$$$，网络效率系数的最小值是 $$$w_1=w_2=w_3=w_4=2$$$(也是最小值)。这里是 $$$f(2,2,2,2)=4$$$，因为这是从站点 $$$1$$$ 沿路径 $$$1\\to 2\\to 4$$$ 向站点 $$$4$$$ 发送消息所需的最小时间，总延迟为 $$$w_1+w_4=2+2=4$$$。在第一种情况下，我们除以 $$$w_1=2$$$，在第二种情况下除以 $$$w_1+w_2=2+2=4$$$。",
+        "youdao": "对于$$$k=1$$$和$$$k=2$$$，网络效率系数在$$$w_1=w_2=w_3=w_4=2$$$时达到最小值(也是最小值）。这里是$$$f(2,2,2,2)=4$$$，因为它是沿路径$$$1\\to 2\\to 4$$$从站$$$1$$$向站$$$4$$$发送消息所需的最小时间，总延迟为$$$w_1+w_4=2+2=4$$$。在第一种情况下，我们除以$$$w_1=2$$$，在第二种情况下除以$$$w_1+w_2=2+2=4$$$。",
+        "iflyrec": "对于$$$k=1$$$和$$$k=2$$$，网络效率系数的最小值由$$$w_1=w_2=w_3=w_4=2$$$(也是下确界）获得。这里是$$$f(2,2,2,2)=4$$$，因为它是从站$$$1$$$沿路径$$$1\\to 2\\to 4$$$向站$$$4$$$发送消息所需的最小时间，总延迟为$$$w_1+w_4=2+2=4$$$。在第一种情况下，我们除以$$$w_1=2$$$，在第二种情况下除以$$$w_1+w_2=2+2=4$$$。",
+        "ai": "对于 $$$k=1$$$ 和 $$$k=2$$$，网络效率系数的最小值在 $$$w_1=w_2=w_3=w_4=2$$$ 时取得(这同时也是下确界)。这里 $$$f(2,2,2,2)=4$$$，因为它是沿着路径 $$$1\\to 2\\to 4$$$ 从站点 $$$1$$$ 向站点 $$$4$$$ 发送消息所需的最短时间，该路径的总延迟为 $$$w_1+w_4=2+2=4$$$。在第一种情况下，我们除以 $$$w_1=2$$$；在第二种情况下，我们除以 $$$w_1+w_2=2+2=4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "对于 $$$k=3$$$，可以证明最小值是 $$$\\frac{1}{2}$$$，但它不是最小值，因为这个值是无法达到的。",
+        "youdao": "对于$$$k=3$$$，可以证明最小值为$$$\\frac{1}{2}$$$，但它不是最小值，因为它不能达到该值。",
+        "iflyrec": "对于$$$k=3$$$，可以证明下确界是$$$\\frac{1}{2}$$$，但它不是最小值，因为无法达到该值。",
+        "ai": "对于 $$$k=3$$$，可以证明下确界为 $$$\\frac{1}{2}$$$，但它不是最小值，因为无法取到该值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.121Z",
+  "translatedBy": [
+    "iflyrec"
+  ],
+  "_backfillNulls": true,
+  "titleZh": {
+    "0": "F. 消息流",
+    "caiyun": "F. 消息流",
+    "youdao": "F.消息流程",
+    "iflyrec": "F.消息流",
+    "ai": "F. 消息流",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

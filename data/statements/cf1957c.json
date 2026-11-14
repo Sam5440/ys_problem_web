@@ -1,0 +1,120 @@
+{
+  "code": "CF1957C",
+  "letter": "C",
+  "title": "C. How Does the Rook Move?",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1957/C",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an n×n$$$n \\times n$$$ chessboard where you and the computer take turns alternatingly to place white rooks & black rooks on the board respectively. While placing rooks, you have to ensure that no two rooks attack each other. Two rooks attack each other if they share the same row or column regardless of color.",
+      "A valid move is placing a rook on a position (r$$$r$$$, c$$$c$$$) such that it doesn't attack any other rook.",
+      "You start first, and when you make a valid move in your turn, placing a white rook at position (r$$$r$$$, c$$$c$$$), the computer will mirror you and place a black rook at position (c$$$c$$$, r$$$r$$$) in its turn. If r=c$$$r = c$$$, then the computer can't mirror your move, and skips its turn.",
+      "You have already played k$$$k$$$ moves with the computer (the computer tries to mirror these moves too), and you must continue playing the game until there are no valid moves remaining. How many different final configurations are possible when you continue the game after the k$$$k$$$ moves? It is guaranteed that the k$$$k$$$ moves and the implied computer moves are valid. Since the answer may be large, print it modulo 109+7$$$10^9+7$$$.",
+      "Two configurations are considered different if there exists a coordinate (r$$$r$$$, c$$$c$$$) which has a rook in one configuration, but not in the other or the color of the rook on the coordinate is different."
+    ],
+    "input": [
+      "The first line contains a single integer t$$$t$$$ (1≤t≤104$$$1 \\leq t \\leq 10^4$$$) — the number of test cases.",
+      "The first line of each test case contains two integers n$$$n$$$ and k$$$k$$$ (1≤n≤3⋅105$$$1 \\leq n \\leq 3 \\cdot 10^5$$$, 0≤k≤n$$$0 \\leq k \\leq n$$$) — the size of the chessboard and the number of moves you have already played respectively.",
+      "Each of the next k$$$k$$$ lines of the test case contains two integers ri$$$r_i$$$ and ci$$$c_i$$$, denoting the i$$$i$$$-th move you made.",
+      "It is guaranteed that the k$$$k$$$ moves and the implied computer moves are valid.",
+      "It is guaranteed that the sum of n$$$n$$$ over all test cases does not exceed 3⋅105$$$3 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, output a single integer on a new line — the total number of possible final configurations modulo 109+7$$$10^9+7$$$."
+    ],
+    "note": [
+      "In the first test case, we have a 4×4$$$4 \\times 4$$$ grid and you've already played 1$$$1$$$ move. After you and the computer play a turn, we have a white rook at (1$$$1$$$, 2$$$2$$$), and a black rook at (2$$$2$$$, 1$$$1$$$). There are three possible configurations from this state —",
+      "You place a white rook at (3$$$3$$$, 4$$$4$$$) and the computer places a black rook at (4$$$4$$$, 3$$$3$$$) as a response.",
+      "You place a white rook at (4$$$4$$$, 3$$$3$$$) and the computer places a black rook at (3$$$3$$$, 4$$$4$$$) as a response.",
+      "You place a white rook at (3$$$3$$$, 3$$$3$$$) and then at (4$$$4$$$, 4$$$4$$$), or the other way around. They both result in the same configuration.",
+      "![](https://espresso.codeforces.com/393ca3da2a463c5f4157d901fb4ff2f4cbc9a101.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4 1\n1 2\n8 1\n7 6\n1000 4\n4 4\n952 343\n222 333\n90 91",
+      "output": "3\n331\n671968183"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个 n×n$$$n \\times n$$$ 的棋盘，你和计算机轮流在棋盘上分别放置白色车和黑色车。在放置车的过程中，你必须保证任意两只车都不会互相攻击。无论颜色如何，只要两只车位于同一行或同一列，它们就会互相攻击。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "合法操作是将一只车放置在位置 (r$$$r$$$, c$$$c$$$)，使其不会攻击其他任何车。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你先手，当你在自己的回合进行一次合法操作，在位置 (r$$$r$$$, c$$$c$$$) 放置一只白色车后，计算机会进行镜像操作，并在它的回合将一只黑色车放置在位置 (c$$$c$$$, r$$$r$$$)。如果 r=c$$$r = c$$$，那么计算机无法镜像你的操作，并跳过自己的回合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你已经和计算机进行了 k$$$k$$$ 次操作(计算机也会尝试镜像这些操作)，并且必须继续进行游戏，直到不再存在合法操作。继续进行 k$$$k$$$ 次操作后，最终可能得到多少种不同的配置？保证这 k$$$k$$$ 次操作以及计算机执行的相应操作都是合法的。由于答案可能很大，请输出答案对 109+7$$$10^9+7$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在某个坐标 (r$$$r$$$, c$$$c$$$)，在一种配置中有车而在另一种配置中没有，或者该坐标上的车颜色不同，则认为两种配置不同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\leq t \\leq 10^4$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$ 和 k$$$k$$$(1≤n≤3⋅105$$$1 \\leq n \\leq 3 \\cdot 10^5$$$，0≤k≤n$$$0 \\leq k \\leq n$$$)，分别表示棋盘的大小以及你已经走过的步数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 k$$$k$$$ 行中，每行包含两个整数 ri$$$r_i$$$ 和 ci$$$c_i$$$，表示你所进行的第 i$$$i$$$ 步。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证这 k$$$k$$$ 步以及由此确定的电脑走法都是合法的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 3⋅105$$$3 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数，表示可能的最终配置总数对 109+7$$$10^9+7$$$ 取模的结果，单独占一行。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，我们有一个 4×4$$$4 \\times 4$$$ 的网格，并且你已经走了 1$$$1$$$ 步。在你和电脑各走一步后，白车位于 (1$$$1$$$, 2$$$2$$$)，黑车位于 (2$$$2$$$, 1$$$1$$$)。从这个状态出发有三种可能的配置——",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你将一个白色车放置在 (3$$$3$$$, 4$$$4$$$)，作为回应，计算机将一个黑色车放置在 (4$$$4$$$, 3$$$3$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你将一个白色车放置在 (4$$$4$$$, 3$$$3$$$)，作为回应，计算机将一个黑色车放置在 (3$$$3$$$, 4$$$4$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你将一个白色车放置在 (3$$$3$$$, 3$$$3$$$)，然后再放置在 (4$$$4$$$, 4$$$4$$$)，或者反过来。两种方式都会得到相同的配置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/393ca3da2a463c5f4157d901fb4ff2f4cbc9a101.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 车是如何移动的？",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

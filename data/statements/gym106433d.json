@@ -1,0 +1,100 @@
+{
+  "code": "GYM106433D",
+  "letter": "D",
+  "title": "D. Magic Books",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106433/problem/D",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Marisa has n$$$n$$$ magic books placed on a shelf, all of them volumes from the same collection. Each book has an associated number within the collection. Initially, the book in position i$$$i$$$ on the shelf is volume number ai$$$a_i$$$ of the collection, for 1≤i≤n$$$1\\le i \\le n$$$.",
+      "Since the magic books are very delicate, they can only be moved using the following operation. Two indices 1≤i<j≤n$$$1\\le i  \\lt  j \\le n$$$ are chosen such that the volume numbers of the books in positions i,i+1,…,j$$$i,i+1,\\dots,j$$$ on the shelf are pairwise coprime∗$$$^{\\text{∗}}$$$; and the order of the books in positions i,i+1,…,j$$$i,i+1,\\dots,j$$$ is reversed. That is, the book in position i+r$$$i+r$$$ would move to position j−r$$$j-r$$$ for each 0≤r≤j−i$$$0\\le r \\le j-i$$$.",
+      "Help Marisa decide if she can sort the books on the shelf using this operation as many times as she wants. We say that the books on the shelf are sorted if the volume numbers form a non-decreasing sequence from the book in position 1$$$1$$$ to the book in position n$$$n$$$.",
+      "∗$$$^{\\text{∗}}$$$We recall that two integers are coprime if their greatest common divisor is 1. We say that several numbers are pairwise coprime if any pair of them is coprime."
+    ],
+    "input": [
+      "The first line contains a positive integer T$$$T$$$, the number of test cases that will follow.",
+      "Each test case starts with an integer n$$$n$$$, the number of books on the shelf.",
+      "The next line contains n$$$n$$$ integers a1,a2,…,an$$$a_1,a_2,\\dots,a_n$$$, where ai$$$a_i$$$ is the volume number of the book initially in position i$$$i$$$. Note that a1,a2,…,an$$$a_1,a_2,\\dots,a_n$$$ do not have to be pairwise distinct."
+    ],
+    "output": [
+      "For each test case, print on one line the word \"YES\" when it is possible to sort the books, and the word \"NO\" when it is not possible."
+    ],
+    "note": [
+      "1≤T≤1000$$$1 \\le T \\le 1000$$$",
+      "1≤n≤105$$$1 \\le n \\le 10^5$$$",
+      "1≤a1,a2,…,an≤106$$$1\\le a_1, a_2, \\dots, a_n \\le 10^6$$$",
+      "The sum of n$$$n$$$ over all cases will not exceed 2⋅105$$$2\\cdot 10^5$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n4\n6 1 1 1\n5\n5 4 3 2 1\n5\n5 2 3 4 1\n4\n2 2 6 3",
+      "output": "SI\nNO\nSI\nNO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Marisa 有 n$$$n$$$ 本魔法书放在书架上，它们都是同一套书中的卷册。每本书在套书中都有一个对应的编号。最初，书架上位置 i$$$i$$$ 的书是套书中的第 ai$$$a_i$$$ 卷，其中 1≤i≤n$$$1\\le i \\le n$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "由于魔法书非常脆弱，只能通过以下操作移动它们。选择两个下标 1≤i<j≤n$$$1\\le i  \\lt  j \\le n$$$，使得书架上位置 i,i+1,…,j$$$i,i+1,\\dots,j$$$ 的书的卷号两两互素∗$$$^{\\text{∗}}$$$；然后将位置 i,i+1,…,j$$$i,i+1,\\dots,j$$$ 上的书的顺序翻转。也就是说，对于每个 0≤r≤j−i$$$0\\le r \\le j-i$$$，原来在位置 i+r$$$i+r$$$ 的书会移动到位置 j−r$$$j-r$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "帮助 Marisa 判断她是否可以使用该操作任意多次对书架上的书进行排序。如果书架上的书的卷号从位于位置 1$$$1$$$ 的书到位于位置 n$$$n$$$ 的书构成一个非递减序列，我们就称书架上的书已经排好序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "∗$$$^{\\text{∗}}$$$我们回顾一下，如果两个整数的最大公约数为 1，则称它们互质。若若干个数中的任意一对都互质，则称这些数两两互质。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个正整数 T$$$T$$$，表示接下来将给出的测试用例数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例以一个整数 n$$$n$$$ 开始，表示书架上的书的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1,a_2,\\dots,a_n$$$，其中 ai$$$a_i$$$ 是最初位于位置 i$$$i$$$ 的书的卷号。注意，a1,a2,…,an$$$a_1,a_2,\\dots,a_n$$$ 不一定两两不同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果可以将书排好序，则在一行中输出单词 \"YES\"；否则输出单词 \"NO\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "1≤T≤1000$$$1 \\le T \\le 1000$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤n≤105$$$1 \\le n \\le 10^5$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤a1,a2,…,an≤106$$$1\\le a_1, a_2, \\dots, a_n \\le 10^6$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有测试用例中 n$$$n$$$ 的总和不会超过 2⋅105$$$2\\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 魔法书",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "code": "GYM102331B",
+  "letter": "B",
+  "title": "B. Bitwise Xor",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102331/problem/B",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 mebibytes",
+  "sections": {
+    "legend": [
+      "Zhong Ziqian got an integer array a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ and an integer x$$$x$$$ as birthday presents.",
+      "Every day after that, he tried to find a non-empty subsequence of this array 1≤b1<b2<…<bk≤n$$$1 \\leq b_1  \\lt  b_2  \\lt  \\ldots  \\lt  b_k \\leq n$$$, such that for all pairs (i,j)$$$(i, j)$$$ where 1≤i<j≤k$$$1 \\leq i  \\lt  j \\leq k$$$, the inequality abi⊕abj≥x$$$a_{b_i} \\oplus a_{b_j} \\geq x$$$ held. Here, ⊕$$$\\oplus$$$ is the bitwise exclusive-or operation.",
+      "Of course, every day he must find a different subsequence.",
+      "How many days can he do this without repeating himself? As this number may be very large, output it modulo 998244353$$$998\\,244\\,353$$$."
+    ],
+    "input": [
+      "The first line of the input contains two integers n$$$n$$$ and x$$$x$$$ (1≤n≤300000$$$1 \\leq n \\leq 300\\,000$$$, 0≤x≤260−1$$$0 \\leq x \\leq 2^{60}-1$$$). Here, n$$$n$$$ is the size of the array.",
+      "The next line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$: the array itself (0≤ai≤260−1$$$0 \\leq a_i \\leq 2^{60}-1$$$)."
+    ],
+    "output": [
+      "Output one integer: the number of subsequences of Ziqian's array such that bitwise xor of every pair of elements is at least x$$$x$$$, modulo 998244353$$$998\\,244\\,353$$$."
+    ],
+    "note": [
+      "In the first example, all 23−1$$$2^3-1$$$ non-empty subsequences are suitable.",
+      "in the second example, two non-empty subsequences are not suitable, it is b=[1,2]$$$b = [1, 2]$$$ and b=[1,2,3]$$$b = [1, 2, 3]$$$, that is because a1⊕a2=0⊕1=1$$$a_1 \\oplus a_2 = 0 \\oplus 1 = 1$$$ which is smaller than 2$$$2$$$.",
+      "In the third example, b=[1],b=[2],b=[3],b=[2,3]$$$b = [1], b = [2], b = [3], b = [2, 3]$$$ are suitable."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 0\n0 1 2",
+      "output": "7"
+    },
+    {
+      "input": "3 2\n0 1 2",
+      "output": "5"
+    },
+    {
+      "input": "3 3\n0 1 2",
+      "output": "4"
+    },
+    {
+      "input": "7 4\n11 5 5 8 3 1 3",
+      "output": "35"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Zhong Ziqian 收到了一个整数数组 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ 和一个整数 x$$$x$$$ 作为生日礼物。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "在那之后的每一天，他都试图找到这个数组的一个非空子序列 1≤b1<b2<…<bk≤n$$$1 \\leq b_1  \\lt  b_2  \\lt  \\ldots  \\lt  b_k \\leq n$$$，使得对于所有满足 1≤i<j≤k$$$1 \\leq i  \\lt  j \\leq k$$$ 的数对 (i,j)$$$(i, j)$$$，不等式 abi⊕abj≥x$$$a_{b_i} \\oplus a_{b_j} \\geq x$$$ 都成立。这里，⊕$$$\\oplus$$$ 是按位异或运算。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "当然，他每天必须找到一个不同的子序列。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "他能在不重复自己的情况下这样做多少天？由于这个数可能非常大，请输出它模 998244353$$$998\\,244\\,353$$$ 的结果。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n$$$n$$$ 和 x$$$x$$$(1≤n≤300000$$$1 \\leq n \\leq 300\\,000$$$，0≤x≤260−1$$$0 \\leq x \\leq 2^{60}-1$$$)。其中，n$$$n$$$ 是数组的大小。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "下一行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$：即数组本身(0≤ai≤260−1$$$0 \\leq a_i \\leq 2^{60}-1$$$)。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数：Ziqian 的数组的子序列个数，使得每一对元素的按位异或都至少为 x$$$x$$$，对 998244353$$$998\\,244\\,353$$$ 取模。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，所有 23−1$$$2^3-1$$$ 个非空子序列都是合适的。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "在第二个样例中，有两个非空子序列不合适，分别是 b=[1,2]$$$b = [1, 2]$$$ 和 b=[1,2,3]$$$b = [1, 2, 3]$$$，这是因为 a1⊕a2=0⊕1=1$$$a_1 \\oplus a_2 = 0 \\oplus 1 = 1$$$ 小于 2$$$2$$$。",
+        "aiModel": "GLM 5.3 Flash"
+      },
+      {
+        "ai": "在第三个样例中，b=[1]、b=[2]、b=[3]、b=[2,3]$$$b = [1], b = [2], b = [3], b = [2, 3]$$$ 是合适的。",
+        "aiModel": "GLM 5.3 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 按位异或",
+    "aiModel": "GLM 5.3 Flash"
+  }
+}

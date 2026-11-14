@@ -1,0 +1,123 @@
+{
+  "code": "GYM106611H",
+  "letter": "H",
+  "title": "H. Hurricane Signal",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106611/problem/H",
+  "difficulty": "*1500",
+  "timeLimit": "0.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The Heung Shing Observatory has recently discovered a new hurricane approaching Heung Shing!",
+      "The world can be viewed as an infinite 2D Cartesian plane, and Heung Shing is located at coordinates $$$(H_x, H_y)$$$. The hurricane is currently located at coordinates $$$(C_x, C_y)$$$. It is predicted to move along a straight line that forms an angle of $$$D$$$ degrees counterclockwise with the positive x-axis, however, the angle formed by the actual trajectory may be different due to a multitude of factors – it can be any real value between $$$D - U$$$ and $$$D + U$$$ degrees with uniform probability. When the hurricane comes within a 1 unit radius (inclusive) of Heung Shing, measured in Euclidean distance, a Hurricane Signal is issued.",
+      "Consider the two sample scenarios shown in Figures 1 and 2. In both figures, Heung Shing is at point $$$H$$$ and the hurricane is currently at point $$$C$$$. The predicted trajectory of the hurricane is indicated by the green arrow. The actual trajectory of the hurricane must be within the sector formed by the red lines.",
+      "![](https://espresso.codeforces.com/7d83b0507a7ceab85b130633e5876441a412d12e.png)",
+      "![](https://espresso.codeforces.com/67b795aadd115afc9c40e66c1b72d0ecfefc2cb2.png)",
+      "Figure 1:Figure 2:$$$H = (3, 2), C = (2, 1), D = 45^\\circ, U = 75^\\circ$$$$$$H = (-1, 3), C = (1, 1), D = 210^\\circ, U = 15^\\circ$$$",
+      "A Hurricane Signal is issued when the hurricane enters the blue circle. In Figure 1, the Hurricane Signal may or may not be issued in the future depending on its actual trajectory. In Figure 2, the Hurricane Signal is never issued.",
+      "Charlie is now interested in finding the probability that the hurricane will trigger a Hurricane Signal, either at its current position or somewhere along its future trajectory. Help Charlie find the answer!"
+    ],
+    "input": [
+      "The first line consists of two integers $$$H_x$$$ and $$$H_y$$$ $$$(-1000 \\leq H_x, H_y \\leq 1000)$$$, the coordinates of Heung Shing.",
+      "The second line consists of two integers $$$C_x$$$ and $$$C_y$$$ $$$(-1000 \\leq C_x, C_y \\leq 1000)$$$, the coordinates of the current position of the hurricane.",
+      "The third line consists of an integer $$$D$$$ $$$(0 \\leq D  \\lt  360)$$$ and an integer $$$U$$$ $$$(0  \\lt  U  \\lt  90)$$$, the angle (in degrees, counterclockwise) formed by the predicted trajectory and the positive x-axis, and the maximum deviation (in degrees) of the prediction."
+    ],
+    "output": [
+      "Output a decimal number, the probability of a Hurricane Signal being issued. Your answer is considered correct if the absolute or relative error does not exceed $$$10^{-6}$$$.",
+      "Formally, let your answer be $$$x$$$ and the correct answer be $$$y$$$. Your answer is accepted if and only if $$$\\frac{|x-y|}{\\max(1,|y|)} \\leq 10^{-6}$$$."
+    ],
+    "note": [
+      "See Figure 1 for an illustration of the first sample. The angle of the hurricane's path relative to the positive x-axis can be any value between $$$-30^\\circ$$$ and $$$120^\\circ$$$ with uniform probability. Heung Shing will issue the Hurricane Signal if this angle is between $$$0^\\circ$$$ and $$$90^\\circ$$$. Therefore the required probability is $$$\\frac{90}{150} = 0.6$$$.",
+      "See Figure 2 for an illustration of the second sample. The angle of the hurricane's path relative to the positive x-axis can be any value between $$$195^\\circ$$$ and $$$225^\\circ$$$ with equal probability. The hurricane will always be more than 1 unit away from Heung Shing."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 2\n2 1\n45 75",
+      "output": "0.6"
+    },
+    {
+      "input": "-1 3\n2 1\n210 15",
+      "output": "0"
+    },
+    {
+      "input": "-1 3\n4 -2\n120 12",
+      "output": "0.213754265"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "兴盛气象台最近发现，一场新的飓风正逼近兴盛！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "世界可以看作一个无限的二维笛卡尔平面，Heung Shing 位于坐标 $$$(H_x, H_y)$$$。飓风当前位于坐标 $$$(C_x, C_y)$$$。预计它将沿一条与 x 轴正方向逆时针形成 $$$D$$$ 度角的直线移动；然而，由于诸多因素的影响，实际轨迹形成的角度可能有所不同——它可以是 $$$D - U$$$ 到 $$$D + U$$$ 度之间的任意实数，且服从均匀分布。当飓风与 Heung Shing 之间的欧几里得距离小于等于 1 个单位时，将发布飓风信号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑图 1 和图 2 所示的两个示例场景。在两幅图中，Heung Shing 位于点 $$$H$$$，飓风当前位于点 $$$C$$$。飓风的预测轨迹由绿色箭头表示。飓风的实际轨迹必须位于由红线形成的扇形区域内。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/7d83b0507a7ceab85b130633e5876441a412d12e.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/67b795aadd115afc9c40e66c1b72d0ecfefc2cb2.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "图 1：图 2：$$$H = (3, 2), C = (2, 1), D = 45^\\circ, U = 75^\\circ$$$$$$H = (-1, 3), C = (1, 1), D = 210^\\circ, U = 15^\\circ$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当飓风进入蓝色圆圈时，将发布飓风信号。在图 1 中，未来是否发布飓风信号取决于飓风的实际轨迹，可能发布，也可能不发布。在图 2 中，永远不会发布飓风信号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Charlie 现在想知道飓风将在当前位置或未来轨迹上的某处触发飓风警报的概率。请帮助 Charlie 找到答案！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 $$$H_x$$$ 和 $$$H_y$$$ $$$(-1000 \\leq H_x, H_y \\leq 1000)$$$，表示 Heung Shing 的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含两个整数 $$$C_x$$$ 和 $$$C_y$$$ $$$(-1000 \\leq C_x, C_y \\leq 1000)$$$，表示飓风当前位置的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含一个整数 $$$D$$$ $$$(0 \\leq D  \\lt  360)$$$ 和一个整数 $$$U$$$ $$$(0  \\lt  U  \\lt  90)$$$，分别表示预测轨迹与 x 轴正方向形成的角度(以度为单位，逆时针方向)以及预测结果的最大偏差(以度为单位)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个十进制数，表示发布飓风警报的概率。当绝对误差或相对误差不超过 $$$10^{-6}$$$ 时，答案将被视为正确。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地，设你的答案为 $$$x$$$，正确答案为 $$$y$$$。当且仅当 $$$\\frac{|x-y|}{\\max(1,|y|)} \\leq 10^{-6}$$$ 时，你的答案才会被接受。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一组样例的示意图见图 1。飓风路径相对于 x 轴正方向的角度可以在 $$$-30^\\circ$$$ 和 $$$120^\\circ$$$ 之间以均匀概率取任意值。当该角度位于 $$$0^\\circ$$$ 和 $$$90^\\circ$$$ 之间时，Heung Shing 将发布飓风信号。因此所求概率为 $$$\\frac{90}{150} = 0.6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二个样例的示意图见图 2。飓风路径相对于 x 轴正方向的角度可以在 $$$195^\\circ$$$ 到 $$$225^\\circ$$$ 之间取任意值，且取到每个值的概率相同。飓风与 Heung Shing 之间的距离始终大于 1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "H. 飓风信号",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

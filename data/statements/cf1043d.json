@@ -1,0 +1,88 @@
+{
+  "code": "CF1043D",
+  "letter": "D",
+  "title": "D. Mysterious Crime",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1043/D",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Acingel is a small town. There was only one doctor here — Miss Ada. She was very friendly and nobody has ever said something bad about her, so who could've expected that Ada will be found dead in her house? Mr Gawry, world-famous detective, is appointed to find the criminal. He asked m$$$m$$$ neighbours of Ada about clients who have visited her in that unlucky day. Let's number the clients from 1$$$1$$$ to n$$$n$$$. Each neighbour's testimony is a permutation of these numbers, which describes the order in which clients have been seen by the asked neighbour.",
+      "However, some facts are very suspicious – how it is that, according to some of given permutations, some client has been seen in the morning, while in others he has been seen in the evening? \"In the morning some of neighbours must have been sleeping!\" — thinks Gawry — \"and in the evening there's been too dark to see somebody's face...\". Now he wants to delete some prefix and some suffix (both prefix and suffix can be empty) in each permutation, so that they'll be non-empty and equal to each other after that — some of the potential criminals may disappear, but the testimony won't stand in contradiction to each other.",
+      "In how many ways he can do it? Two ways are called different if the remaining common part is different."
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (1≤n≤100000$$$1 \\le n \\le 100\\,000$$$, 1≤m≤10$$$1 \\le m \\le 10$$$) — the number of suspects and the number of asked neighbors.",
+      "Each of the next m$$$m$$$ lines contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai≤n$$$1 \\le a_i \\le n$$$). It is guaranteed that these integers form a correct permutation (that is, each number from 1$$$1$$$ to n$$$n$$$ appears exactly once)."
+    ],
+    "output": [
+      "Output a single integer denoting the number of ways to delete some prefix and some suffix of each permutation (possibly empty), such that the remaining parts will be equal and non-empty."
+    ],
+    "note": [
+      "In the first example, all possible common parts are [1]$$$[1]$$$, [2]$$$[2]$$$, [3]$$$[3]$$$ and [2,3]$$$[2, 3]$$$.",
+      "In the second and third examples, you can only leave common parts of length 1$$$1$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 2\n1 2 3\n2 3 1",
+      "output": "4"
+    },
+    {
+      "input": "5 6\n1 2 3 4 5\n2 3 1 4 5\n3 4 5 1 2\n3 5 4 2 1\n2 3 5 4 1\n1 2 3 4 5",
+      "output": "5"
+    },
+    {
+      "input": "2 2\n1 2\n2 1",
+      "output": "2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Acingel 是一个小镇。这里曾经只有一名医生——Ada 小姐。她非常友善，从来没有人说过她的坏话，因此谁能想到 Ada 会被发现死在自己的家中呢？世界闻名的侦探 Gawry 先生受命找出罪犯。他询问了 Ada 的 m$$$m$$$ 位邻居，了解在那个不幸的日子里拜访过她的患者。将这些患者编号为 1$$$1$$$ 到 n$$$n$$$。每位邻居的证词都是这些编号的一个排列，描述了该邻居见到这些患者的顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，有些事实非常可疑——为什么在给定的一些排列中，某个嫌疑人在早上被看到，而在另一些排列中他却在晚上被看到？“早上有些邻居一定还在睡觉！”Gawry 想，“而晚上又太黑，看不清人脸……”。现在他想在每个排列中删除一个前缀和一个后缀（前缀和后缀都可以为空），使得删除后剩下的部分非空且彼此相等——这样一些潜在罪犯可能会消失，但证词之间就不会相互矛盾了。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "他有多少种做法？如果剩余的公共部分不同，则两种做法视为不同。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n≤100000$$$1 \\le n \\le 100\\,000$$$，1≤m≤10$$$1 \\le m \\le 10$$$)——分别表示嫌疑人的数量和被询问的邻居的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中，每行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$(1≤ai≤n$$$1 \\le a_i \\le n$$$)。保证这些整数构成一个正确的排列(即 1$$$1$$$ 到 n$$$n$$$ 中的每个数恰好出现一次)。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示对每个排列删除某个前缀和某个后缀（可以为空）的方法数，使得剩余部分相等且非空。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，所有可能的公共部分是 [1]$$$[1]$$$、[2]$$$[2]$$$、[3]$$$[3]$$$ 和 [2,3]$$$[2, 3]$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个和第三个样例中，你只能保留长度为 1 的公共部分$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 神秘犯罪",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

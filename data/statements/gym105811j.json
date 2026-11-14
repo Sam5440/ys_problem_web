@@ -1,0 +1,99 @@
+{
+  "code": "GYM105811J",
+  "letter": "J",
+  "title": "J. Security Breach",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105811/problem/J",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The group is welcomed to the nation's capital, Washington D.C.!",
+      "The city is home to the greatest collection of museums in the world. One museum, the Smithsonian Museum of Natural History, houses the Hope Diamond, one of the largest diamonds in the world, worth >200 million USD.",
+      "To keep the diamond safer, the Smithsonian is considering new floorplans for the museum. A floorplan can be described as a collection of n$$$n$$$ rooms connected by m$$$m$$$ one-way doors. Each one-way door requires a certain access-level to go through in one direction, and is impossible to go through in the other direction. Each person visiting the museum (visitors and employees) have keycards giving them some constant access-level. If their keycard grants them access level k$$$k$$$, they can go through all one way doors requiring ≤k$$$ \\leq k $$$ access-level. The only entrance/exit to the museum is at room 1$$$1$$$.",
+      "We call a museum floorplan foolproof if it is not possible to get stuck in the museum. Specifically, it is possible to get stuck in the museum if there exists an access-level k$$$k$$$ such that a person with access-level k$$$k$$$ could reach a room in the museum from room 1 for which it is impossible to return to room 1 with access-level k$$$k$$$.",
+      "Please determine if the given floorplan is foolproof!"
+    ],
+    "input": [
+      "The first line contains integers n,m$$$n, m$$$ (1≤n,m≤105$$$1 \\leq n, m \\leq 10^5$$$) — the number of rooms and the number of hallways.",
+      "The i$$$i$$$-th of the next m$$$m$$$ lines contains three integers, ai,bi,ci$$$a_i, b_i, c_i$$$ (1≤ci≤109,1≤ai,bi≤n,ai≠bi$$$1 \\leq c_i \\leq 10^9, 1 \\leq a_i, b_i \\leq n, a_i \\neq b_i$$$) specifying that there is a one-way door leading from room ai$$$a_i$$$ to room bi$$$b_i$$$ requiring access-level ci$$$c_i$$$.",
+      "For each pair of rooms x$$$x$$$ and y$$$y$$$ it is guaranteed that there is at most one one-way door from room x$$$x$$$ to room y$$$y$$$. Note that there can exist both a door from x$$$x$$$ to y$$$y$$$ and from y$$$y$$$ to x$$$x$$$."
+    ],
+    "output": [
+      "Output one word, \"YES\" or \"NO\", answering whether the given floorplan is foolproof."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/c86bf0c9c7d3d4919249efe46e8e02603080cb3e.png)",
+      "![](https://espresso.codeforces.com/330bdf30ac68ef680514f021437641e2a851fe2a.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 5\n1 2 1\n2 4 2\n4 3 2\n2 3 1\n3 1 1",
+      "output": "YES"
+    },
+    {
+      "input": "4 5\n1 2 2\n2 3 3\n3 4 4\n4 1 5\n4 2 1",
+      "output": "NO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "欢迎大家来到美国首都华盛顿特区！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这座城市拥有世界上最丰富的博物馆群。其中，史密森尼国家自然历史博物馆收藏着希望钻石，这是世界上最大的钻石之一，价值超过 2 亿美元。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了让钻石更加安全，史密森尼博物馆正在考虑为博物馆制定新的平面图。一个平面图可以描述为由 n$$$n$$$ 个房间组成的集合，这些房间通过 m$$$m$$$ 扇单向门相连。每扇单向门都要求以某个特定的访问等级从一个方向通过，而无法从另一个方向通过。每位参观博物馆的人(游客和员工)都有一张赋予其某个固定访问等级的门禁卡。如果其门禁卡赋予的访问等级为 k$$$k$$$，那么他可以通过所有要求访问等级 ≤k$$$ \\leq k $$$ 的单向门。博物馆唯一的入口/出口位于房间 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果不可能在博物馆中陷入困境，我们就称该博物馆的平面图是万无一失的。具体来说，如果存在某个权限等级 k$$$k$$$，使得拥有权限等级 k$$$k$$$ 的人可以从房间 1 到达博物馆中的某个房间，但拥有权限等级 k$$$k$$$ 时无法返回房间 1，则这个人在博物馆中就可能陷入困境。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请判断给定的平面图是否万无一失！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含整数 n,m$$$n, m$$$(1≤n,m≤105$$$1 \\leq n, m \\leq 10^5$$$)，分别表示房间数量和走廊数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中的第 i$$$i$$$ 行包含三个整数 ai,bi,ci$$$a_i, b_i, c_i$$$(1≤ci≤109,1≤ai,bi≤n,ai≠bi$$$1 \\leq c_i \\leq 10^9, 1 \\leq a_i, b_i \\leq n, a_i \\neq b_i$$$)，表示存在一扇从房间 ai$$$a_i$$$ 通往房间 bi$$$b_i$$$ 的单向门，且需要权限等级 ci$$$c_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每一对房间 x$$$x$$$ 和 y$$$y$$$，保证最多存在一扇从房间 x$$$x$$$ 通往房间 y$$$y$$$ 的单向门。注意，可能同时存在从 x$$$x$$$ 通往 y$$$y$$$ 的门以及从 y$$$y$$$ 通往 x$$$x$$$ 的门。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个单词“YES”或“NO”，回答给定的平面图是否万无一失。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "![](https://espresso.codeforces.com/c86bf0c9c7d3d4919249efe46e8e02603080cb3e.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/330bdf30ac68ef680514f021437641e2a851fe2a.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "J. 安全漏洞",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

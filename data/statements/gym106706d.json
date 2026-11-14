@@ -1,0 +1,403 @@
+{
+  "code": "GYM106706D",
+  "letter": "D",
+  "title": "D. Where were you 14 years ago?",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106706/problem/D",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem.",
+      "After the war in T-Land ended, the people were divided into three groups:",
+      "The fighters who liberated the country, called Thowwar, denoted by the letter T.",
+      "The supporters of the previous regime despite all of its crimes, called Floul, denoted by the letter F.",
+      "People with no opinion or clear identity, called Mkaw3, denoted by the letter M.",
+      "There are $$$n$$$ people in the waiting room. Your task is to determine the type of every person.",
+      "Fortunately, you can ask Abu Dujana for help. He is able to identify people's apparent identities by simply looking at them.",
+      "You may perform the following operation any number of times:",
+      "Choose exactly $$$k$$$ ($$$2 \\le k \\le n$$$) people and send them into Abu Dujana's inspection room.",
+      "Their behavior is as follows:   Every Thowwar remains a Thowwar.",
+      "Every Floul remains a Floul.",
+      "If a Mkaw3 does not find any Thowwar inside the room, they feel safe and return to their original nature as a Floul.",
+      "Otherwise, if there is at least one Thowwar in the room, every Mkaw3 immediately starts singing \"Labat Labat\" and successfully fools Abu Dujana into thinking they are a Thowwar.",
+      "Formally, let the chosen group contain $$$T$$$ Thowwar, $$$F$$$ Floul, and $$$M$$$ Mkaw3. Abu Dujana returns a single integer:",
+      "If $$$T = 0$$$, Abu Dujana returns $$$0$$$.",
+      "Otherwise, Abu Dujana returns $$$T + M$$$.",
+      "Determine the type of every person while using at most 812 operations (in honor of 8/12, T-Land Liberation Day).",
+      "It is guaranteed that among the $$$n$$$ people there is at least one Thowwar, at least one Floul and at least one Mkaw3."
+    ],
+    "input": [
+      "The first line contains a single integer $$$n$$$ ($$$3 \\le n \\le 400$$$) — the number of people.",
+      "The first line of the input contains a single integer $$$n$$$ ($$$3 \\le n \\le 400$$$) — the number of people.",
+      "To ask a query, print a line in the following format:",
+      {
+        "pre": "\n? k i1 i2 ... ik"
+      },
+      "where $$$2 \\le k \\le n$$$, all indices are distinct, and $$$1 \\le i_j \\le n$$$.",
+      "After printing a query, flush the output and read a single integer $$$x$$$.",
+      "Suppose the chosen group contains:",
+      "$$$T$$$ Thowwar,",
+      "$$$F$$$ Floul,",
+      "$$$M$$$ Mkaw3een.",
+      "The interactor responds as follows:",
+      "If $$$T = 0$$$, it returns $$$0$$$.",
+      "Otherwise, it returns $$$T + M$$$.",
+      "You may ask at most 812 queries.",
+      "When you have determined the type of every person, print",
+      {
+        "pre": "\n! s"
+      },
+      "where $$$s$$$ is a string of length $$$n$$$, and the $$$i$$$-th character is:",
+      "T if the $$$i$$$-th person is a Thowwar;",
+      "F if the $$$i$$$-th person is a Floul;",
+      "M if the $$$i$$$-th person is a Mkaw3.",
+      "After printing the answer, terminate your program immediately.",
+      "Your program will receive the verdict Wrong Answer if it asks more than $$$812$$$ queries or prints an invalid query.",
+      "Remember to flush the output after every query. For example, use:",
+      "fflush(stdout) in C/C++;",
+      "System.out.flush() in Java;",
+      "stdout.flush() in Python;",
+      "flush(output) in Pascal."
+    ],
+    "output": [],
+    "note": [
+      "In the sample, there are $$$n = 5$$$ people. The hidden identities are FMTMF (Persons $$$1$$$ and $$$5$$$ are Floul, Persons $$$2$$$ and $$$4$$$ are Mkaw3, and Person $$$3$$$ is Thowwar).",
+      "The interaction proceeds as follows:",
+      "Query 1 (? 5 1 2 3 4 5): You send everyone to the room. The group contains $$$1$$$ Thowwar (Person $$$3$$$), $$$2$$$ Floul (Persons $$$1$$$ and $$$5$$$), and $$$2$$$ Mkaw3 (Persons $$$2$$$ and $$$4$$$). Because there is at least one Thowwar present ($$$T = 1$$$), the Mkaw3 people act like Thowwar. Abu Dujana returns $$$T + M = 1 + 2 = 3$$$.",
+      "Query 2 (? 3 1 2 5): You send persons $$$1$$$, $$$2$$$, and $$$5$$$ to the room. The group contains $$$2$$$ Floul and $$$1$$$ Mkaw3. Since there are absolutely no Thowwar present ($$$T = 0$$$), the Mkaw3 person feels safe and acts like a Floul. Abu Dujana returns $$$0$$$.",
+      "Query 3 (? 2 1 5): You send persons $$$1$$$ and $$$5$$$. Both are Floul ($$$T = 0$$$). Abu Dujana returns $$$0$$$.",
+      "Query 4 (? 2 3 5): You send persons $$$3$$$ and $$$5$$$. The group contains $$$1$$$ Thowwar and $$$1$$$ Floul. There are no Mkaw3 ($$$M = 0$$$). Abu Dujana returns $$$T + M = 1 + 0 = 1$$$.",
+      "Final Answer (! FMTMF): Having deduced the correct types, you print the final string."
+    ]
+  },
+  "examples": [
+    {
+      "input": "\n? k i1 i2 ... ik",
+      "output": "\n! s"
+    },
+    {
+      "input": "5\nFMTMF\n\n3\t\n\n0\n\n0\n\n1",
+      "output": "? 5 1 2 3 4 5\n\n? 3 1 2 5\n\t\n? 2 1 5\n\t\n? 2 3 5\n\t\n! FMTMF"
+    }
+  ],
+  "titleZh": {
+    "0": "问:14 年前你在哪里？",
+    "caiyun": "问:14 年前你在哪里？",
+    "youdao": "D. 14年前你在哪里？",
+    "iflyrec": "D.14年前你在哪里？",
+    "ai": "D. 14 年前你在哪里？"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "这是一个互动问题。",
+        "youdao": "这是一个互动的问题。",
+        "iflyrec": "这是一个互动的问题。",
+        "ai": "这是一道交互题。"
+      },
+      {
+        "caiyun": "T 地战争结束后，人们被分为三组：",
+        "youdao": "T-Land的战争结束后，人们被分为三个群体：",
+        "iflyrec": "在T-Land的战争结束后，人们分成了三组:",
+        "ai": "T-Land 的战争结束后，人们被分成了三组："
+      },
+      {
+        "caiyun": "解放这个国家的战士们被称为 Thowwar，以字母 T 表示。",
+        "youdao": "解放这个国家的战士被称为“thowar”，用字母T表示。",
+        "iflyrec": "解放这个国家的战士，被称为Thowwar，用字母T表示。",
+        "ai": "解放了国家的战士们被称为 Thowwar，用字母 T 表示。"
+      },
+      {
+        "caiyun": "前政权的支持者，尽管其罪行累累，仍被称为 Flul，以字母 F 表示。",
+        "youdao": "尽管前政权犯下了所有罪行，但他们的支持者被称为Floul，用字母F表示。",
+        "iflyrec": "尽管前政权犯下了种种罪行，但其支持者被称为Floul，用字母F表示。",
+        "ai": "尽管前政权犯下了种种罪行，其支持者仍被称为 Floul，用字母 F 表示。"
+      },
+      {
+        "caiyun": "没有明确意见或身份的人，称为 Mkaw3，用字母 M 表示。",
+        "youdao": "没有意见或明确身份的人，称为Mkaw3，用字母M表示。",
+        "iflyrec": "没有意见或明确身份的人，称为MKAW3，用字母M表示。",
+        "ai": "没有意见或明确身份的人，称为 Mkaw3，用字母 M 表示。"
+      },
+      {
+        "caiyun": "候诊室里有 $$$n$$$ 类型的人。你的任务是确定每个人的类型。",
+        "iflyrec": "候车室里有$$$n$$$人。你的任务是确定每个人的类型。",
+        "ai": "等候室里有 $$$n$$$ 个人。你的任务是判断每个人的类型。"
+      },
+      {
+        "caiyun": "幸运的是，你可以向阿布·杜贾纳寻求帮助。他只需看一眼就能识别出人们的明显身份。",
+        "youdao": "幸运的是，你可以向阿布·杜贾纳求助。他能够通过简单的观察来识别人们的表面身份。",
+        "iflyrec": "幸运的是，您可以向Abu Dujana寻求帮助。他能够通过简单的观察来识别人们的明显身份。",
+        "ai": "幸运的是，你可以向阿布·杜贾纳求助。他只需看人一眼，就能辨认出他们的表面身份。"
+      },
+      {
+        "caiyun": "您可以执行以下操作任意次数：",
+        "youdao": "您可以执行以下操作任意次数：",
+        "iflyrec": "您可以多次执行以下操作:",
+        "ai": "你可以任意次执行以下操作："
+      },
+      {
+        "caiyun": "精确选择 $$$k$$$($$$2 \\le k \\le n$$$) 人员，将他们送入阿布·杜贾纳的检查室。",
+        "youdao": "选择$$$k$$$ ($$$2 \\le k \\le n$$$）人，把他们送到阿布·杜贾纳的检查室。",
+        "iflyrec": "准确选择$$$k$$$($$$2 \\le k \\le n$$$）人，并将其送入Abu Dujana的检查室。",
+        "ai": "恰好选择 $$$k$$$ ($$$2 \\le k \\le n$$$) 个人，并将他们送入 Abu Dujana 的检查室。"
+      },
+      {
+        "caiyun": "他们的行为如下：每个 Thowwar 都是一个 Thowwar。",
+        "youdao": "他们的行为是这样的：每个陶华都是陶华。",
+        "iflyrec": "他们的行为是这样的：每一场战争都是一场战争。",
+        "ai": "它们的行为如下：  每个 Thowwar 仍然是 Thowwar。"
+      },
+      {
+        "caiyun": "每一个 Floul 仍然是 Floul。",
+        "youdao": "每个弗洛尔都是弗洛尔。",
+        "iflyrec": "每一团都是一团。",
+        "ai": "每个 Floul 始终是 Floul。"
+      },
+      {
+        "caiyun": "如果 Mkaw3 在房间里没有发现任何 Thowwar，它们就会感到安全，并恢复原本作为 Flul 的本性。",
+        "youdao": "如果一个Mkaw3在房间里没有找到任何thowar，他们就会感到安全，并回到他们作为Floul的原始本性。",
+        "iflyrec": "如果MKAW3在房间里没有发现任何东西，它们会感到安全，并恢复到它们原来的本性。",
+        "ai": "如果一个 Mkaw3 在房间内没有发现任何 Thowwar，它们会感到安全，并回归其作为 Floul 的原本天性。"
+      },
+      {
+        "caiyun": "否则，如果房间里至少有一个 Thowwar，每个 Mkaw3 都会立即开始唱 “Labat Labat”，并成功地欺骗阿布·杜贾纳，让他以为他们是 Thowwar。",
+        "youdao": "否则，如果房间里至少有一个陶瓦，每个Mkaw3都会立即开始唱“拉巴特拉巴特”，并成功地欺骗阿布杜贾纳，让他认为他们是陶瓦。",
+        "iflyrec": "否则，如果房间里至少有一个Thowwar，每个Mkaw3都会立即开始唱“ Labat Labat ”，并成功地愚弄Abu Dujana，使其认为他们是Thowwar。",
+        "ai": "否则，如果房间里至少有一个 Thowwar，那么每个 Mkaw3 都会立即开始唱 \"Labat Labat\"，并成功骗过 Abu Dujana，使其以为他们是 Thowwar。"
+      },
+      {
+        "caiyun": "形式上，假设所选组包含 $$$T$$$ Thowwar、$$$F$$$ Floul 和 $$$M$$$ Mkaw3。Abu Dujana 返回一个整数：",
+        "youdao": "形式上，让所选组包含$$$T$$$ thowar， $$$F$$$ Floul和$$$M$$$ Mkaw3。Abu Dujana返回单个整数：",
+        "iflyrec": "形式上，让所选的组包含$$$T$$$THOWWAR、$$$F$$$FLOUL和$$$M$$$MKAW3。Abu Dujana返回一个整数:",
+        "ai": "形式上，设所选小组包含 $$$T$$$ Thowwar、$$$F$$$ Floul 和 $$$M$$$ Mkaw3。Abu Dujana 返回一个整数："
+      },
+      {
+        "caiyun": "如果 $$$T = 0$$$,Abu Dujana 返回 $$$0$$$。",
+        "youdao": "如果$$$T = 0$$$， Abu Dujana返回$$$0$$$。",
+        "iflyrec": "如果$$$T = 0$$$，Abu Dujana返回$$$0$$$。",
+        "ai": "如果 $$$T = 0$$$，Abu Dujana 返回 $$$0$$$。"
+      },
+      {
+        "caiyun": "否则，阿布·杜贾纳将返回 $$$T + M$$$。",
+        "iflyrec": "否则，Abu Dujana返回$$$T + M$$$。",
+        "ai": "否则，Abu Dujana 返回 $$$T + M$$$。"
+      },
+      {
+        "caiyun": "确定每个人的类型，同时最多使用 812 次操作 (为了纪念 8/12,T-Land 解放日)。",
+        "youdao": "确定每个人的类型，同时使用最多812个操作（为了纪念8/12，T-Land解放日）。",
+        "iflyrec": "确定每个人的类型，同时使用最多812个操作（为了纪念8/12，T-Land解放日）。",
+        "ai": "确定每个人的类型，同时最多使用 812 次操作（为了纪念 8/12，T-Land 解放日）。"
+      },
+      {
+        "caiyun": "保证在 $$$n$$$ 人中至少有一个 Thowwar，至少有一个 Fluul，至少有一个 Mkaw3。",
+        "iflyrec": "保证在$$$n$$$人中至少有一个THOWWAR、至少一个FLOUL和至少一个MKAW3。",
+        "ai": "保证在 $$$n$$$ 个人中至少有一个 Thowwar、至少有一个 Floul 和至少有一个 Mkaw3。"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数 $$$n$$$($$$3 \\le n \\le 400$$$)——人数。",
+        "youdao": "第一行包含一个整数$$$n$$$ ($$$3 \\le n \\le 400$$$）—人数。",
+        "iflyrec": "第一行包含单个整数$$$n$$$($$$3 \\le n \\le 400$$$）—人数。",
+        "ai": "第一行包含一个整数 $$$n$$$($$$3 \\le n \\le 400$$$)——人数。"
+      },
+      {
+        "caiyun": "输入的第一行包含一个整数 $$$n$$$($$$3 \\le n \\le 400$$$)——人数。",
+        "youdao": "输入的第一行包含一个整数$$$n$$$ ($$$3 \\le n \\le 400$$$）—人数。",
+        "iflyrec": "输入的第一行包含单个整数$$$n$$$($$$3 \\le n \\le 400$$$）—人数。",
+        "ai": "输入的第一行包含一个整数 $$$n$$$($$$3 \\le n \\le 400$$$)——人数。"
+      },
+      {
+        "caiyun": "要查询，请以以下格式打印一行：",
+        "youdao": "要查询，请以以下格式打印一行：",
+        "iflyrec": "要进行查询，请按以下格式打印一行:",
+        "ai": "要询问，请按以下格式输出一行："
+      },
+      {
+        "pre": "\n? k i1 i2 ... ik"
+      },
+      {
+        "caiyun": "其中 $$$2 \\le k \\le n$$$，所有索引都是不同的，以及 $$$1 \\le i_j \\le n$$$。",
+        "youdao": "其中$$$2 \\le k \\le n$$$表示所有索引不重复，$$$1 \\le i_j \\le n$$$表示所有索引不重复。",
+        "iflyrec": "其中$$$2 \\le k \\le n$$$，所有指数都是不同的，并且$$$1 \\le i_j \\le n$$$。",
+        "ai": "其中 $$$2 \\le k \\le n$$$，所有下标互不相同，且 $$$1 \\le i_j \\le n$$$。"
+      },
+      {
+        "caiyun": "打印查询后，刷新输出并读取一个整数 $$$x$$$。",
+        "youdao": "打印查询后，刷新输出并读取单个整数$$$x$$$。",
+        "iflyrec": "打印查询后，刷新输出并读取单个整数$$$x$$$。",
+        "ai": "在打印一次询问后，flush 输出并读入一个整数 $$$x$$$。"
+      },
+      {
+        "caiyun": "假设所选群组包含：",
+        "youdao": "假设所选组包含：",
+        "iflyrec": "假设所选的组包含:",
+        "ai": "假设所选的组包含："
+      },
+      {
+        "caiyun": "$$$T$$$ Thowwar,",
+        "iflyrec": "$$$T$$$警告，",
+        "ai": "$$$T$$$ 革命者，"
+      },
+      {
+        "caiyun": "$$$F$$$ Flul,",
+        "iflyrec": "$$$F$$$面粉，",
+        "ai": "$$$F$$$ Floul,"
+      },
+      {
+        "caiyun": "$$$M$$$ Mkaw3een。",
+        "iflyrec": "$$$M$$$MKAW3EEN。",
+        "ai": "$$$M$$$ Mkaw3een."
+      },
+      {
+        "caiyun": "交互器的响应如下：",
+        "youdao": "互动者的回应如下：",
+        "ai": "交互器按如下方式响应："
+      },
+      {
+        "caiyun": "如果 $$$T = 0$$$，则返回 $$$0$$$。",
+        "youdao": "如果$$$T = 0$$$，则返回$$$0$$$。",
+        "iflyrec": "如果$$$T = 0$$$，则返回$$$0$$$。",
+        "ai": "若 $$$T = 0$$$，则返回 $$$0$$$。"
+      },
+      {
+        "caiyun": "否则，它将返回 $$$T + M$$$。",
+        "youdao": "否则，返回$$$T + M$$$。",
+        "iflyrec": "否则，返回$$$T + M$$$。",
+        "ai": "否则，它返回 $$$T + M$$$。"
+      },
+      {
+        "caiyun": "您最多可以提出 812 个查询。",
+        "youdao": "你最多可以问812个问题。",
+        "iflyrec": "你最多可以问812个问题。",
+        "ai": "你最多可以提出 812 次询问。"
+      },
+      {
+        "caiyun": "当你确定了每个人的类型后，打印",
+        "youdao": "当你确定了每个人的类型后，打印出来",
+        "iflyrec": "确定每个人的类型后，打印",
+        "ai": "当你确定了每个人的类型后，输出"
+      },
+      {
+        "pre": "\n! s"
+      },
+      {
+        "caiyun": "其中 $$$s$$$ 是一个长度为 $$$n$$$ 的字符串，而 $$$i$$$ 的第二个字符是：",
+        "youdao": "式中$$$s$$$为长度为$$$n$$$的字符串，第$$$i$$$字符为：",
+        "iflyrec": "其中$$$s$$$是长度为$$$n$$$的字符串，第$$$i$$$个字符为:",
+        "ai": "其中 $$$s$$$ 是一个长度为 $$$n$$$ 的字符串，且第 $$$i$$$ 个字符为："
+      },
+      {
+        "caiyun": "T，如果 $$$i$$$ 第三个人是 Thowwar;",
+        "iflyrec": "如果第$$$i$$$个人是ThowWar，则设置",
+        "ai": "如果第 $$$i$$$ 个人是 Thowwar，则输出 T；"
+      },
+      {
+        "caiyun": "F，如果 $$$i$$$ 第三个人是 Flul;",
+        "youdao": "如果$$$i$$$-该人是Floul；",
+        "iflyrec": "f如果第$$$i$$$个人是Floul",
+        "ai": "如果第 $$$i$$$ 个人是 Floul，则输出 F；"
+      },
+      {
+        "caiyun": "M，如果 $$$i$$$ 第三个人是 Mkaw3。",
+        "iflyrec": "如果第$$$i$$$个人是MKAW3，则为M。",
+        "ai": "如果第 $$$i$$$ 个人是 Mkaw3，则输出 M。"
+      },
+      {
+        "caiyun": "打印出答案后，立即终止你的程序。",
+        "youdao": "打印出答案后，立即终止程序。",
+        "iflyrec": "打印答案后，立即终止程序。",
+        "ai": "输出答案后，立即终止你的程序。"
+      },
+      {
+        "caiyun": "如果程序询问超过 $$$812$$$ 的查询或打印无效的查询，则将收到判决结果 “错误答案”。",
+        "youdao": "如果您的程序询问了超过$$$812$$$个查询，或者打印了一个无效的查询，那么它将收到一个错误的答案。",
+        "iflyrec": "如果程序询问超过$$$812$$$个查询或打印无效查询，则程序将收到错误答案。",
+        "ai": "如果你的程序进行超过 $$$812$$$ 次查询，或输出无效查询，就会得到 Wrong Answer 的判定。"
+      },
+      {
+        "caiyun": "记住在每次查询后刷新输出。例如，使用：",
+        "youdao": "记得在每次查询之后刷新输出。例如，使用：",
+        "iflyrec": "请记住在每次查询后刷新输出。例如，使用:",
+        "ai": "记住在每次查询后刷新输出。例如，使用："
+      },
+      {
+        "caiyun": "在 C/C++ 中使用 flush(stdout);",
+        "youdao": "C/ c++中的fflush(stdout)；",
+        "iflyrec": "C/C++中的fflush（stdout）",
+        "ai": "C/C++ 中的 fflush(stdout)。"
+      },
+      {
+        "caiyun": "Java 中的 System.out.flush();",
+        "youdao": "System.out.flush（）在Java；",
+        "iflyrec": "Java中的System.out.flush（）",
+        "ai": "Java 中的 System.out.flush()；"
+      },
+      {
+        "caiyun": "Python 中的 stdout.flush();",
+        "youdao": "Python中的stdout.flush()；",
+        "iflyrec": "Python中的stdout.flush（）",
+        "ai": "Python 中的 stdout.flush();"
+      },
+      {
+        "caiyun": "帕斯卡语中的 flush(输出)。",
+        "youdao": "Pascal中的flush（输出）。",
+        "iflyrec": "刷新（输出），单位为Pascal。",
+        "ai": "在 Python 中 flush(output)。"
+      }
+    ],
+    "output": [],
+    "note": [
+      {
+        "caiyun": "在样本中有 $$$n = 5$$$ 个人。隐藏身份是 FMTMF(人 $$$1$$$ 和 $$$5$$$ 是 Flul，人 $$$2$$$ 和 $$$4$$$ 是 Mkaw3，人 $$$3$$$ 是 Thowwar)。",
+        "youdao": "在样本中，有$$$n = 5$$$人。隐藏身份为FMTMF (Persons $$$1$$$和$$$5$$$为Floul， Persons $$$2$$$和$$$4$$$为Mkaw3， Person $$$3$$$为thowar）。",
+        "iflyrec": "样本中有$$$n = 5$$$人。隐藏身份为FMTMF(人员$$$1$$$和$$$5$$$为FLOUL，人员$$$2$$$和$$$4$$$为MKAW3，人员$$$3$$$为THOWWAR）。",
+        "ai": "在样例中，有 $$$n = 5$$$ 个人。隐藏身份为 FMTMF(第 $$$1$$$ 个人和第 $$$5$$$ 个人是 Floul，第 $$$2$$$ 个人和第 $$$4$$$ 个人是 Mkaw3，第 $$$3$$$ 个人是 Thowwar)。"
+      },
+      {
+        "caiyun": "交互过程如下：",
+        "youdao": "交互过程如下：",
+        "iflyrec": "交互过程如下:",
+        "ai": "交互过程如下："
+      },
+      {
+        "caiyun": "问题 1(? 5 1 2 3 4 5):你把所有人都派到房间里。这个群组包括 $$$1$$$ Thowwar(Person $$$3$$$)、$$$2$$$ Floul(Person $$$1$$$ 和 $$$5$$$) 以及 $$$2$$$ Mkaw3(Person $$$2$$$ 和 $$$4$$$)。由于至少有一个 Thowwar 在场 ($$$T = 1$$$),Mkaw3 的人表现得像 Thowwar。Abu Dujana 返回 $$$T + M = 1 + 2 = 3$$$。",
+        "iflyrec": "查询1(？你把所有人都叫到房间里去。该组包含$$$1$$$THOWWAR(人$$$3$$$）、$$$2$$$FLOUL(人$$$1$$$和$$$5$$$）和$$$2$$$MKAW3(人$$$2$$$和$$$4$$$）。因为至少有一个ThowWar存在($$$T = 1$$$），所以Mkaw3人的行为就像ThowWar一样。阿布杜贾纳返回$$$T + M = 1 + 2 = 3$$$。",
+        "ai": "查询 1(? 5 1 2 3 4 5)：你把所有人都送进房间。该群体包含 $$$1$$$ Thowwar(人员 $$$3$$$)、$$$2$$$ Floul(人员 $$$1$$$ 和 $$$5$$$)以及 $$$2$$$ Mkaw3(人员 $$$2$$$ 和 $$$4$$$)。由于至少有一个 Thowwar 在场($$$T = 1$$$)，Mkaw3 人会表现得像 Thowwar。Abu Dujana 返回 $$$T + M = 1 + 2 = 3$$$。"
+      },
+      {
+        "caiyun": "问题 2(?3 1 2 5):你派人 $$$1$$$、$$$2$$$ 和 $$$5$$$ 进入房间。这个群体包括 $$$2$$$ Flul 和 $$$1$$$ Mkaw3。由于绝对没有 Thowwar 在场 ($$$T = 0$$$),Mkaw3 人感到安全，表现得像个 Flul。Abu Dujana 返回 $$$0$$$。",
+        "iflyrec": "查询2(？3125）：您将人员$$$1$$$、$$$2$$$和$$$5$$$发送到房间。该组包含$$$2$$$Floul和$$$1$$$MkAW3。由于绝对没有THOWWAR存在($$$T = 0$$$），MKAW3人感到安全，并表现得像FLOUL。阿布杜贾纳返回$$$0$$$。",
+        "ai": "询问 2(? 3 1 2 5)：你将人员 $$$1$$$、$$$2$$$ 和 $$$5$$$ 派往房间。该群体包含 $$$2$$$ 个 Floul 和 $$$1$$$ 个 Mkaw3。由于绝对没有 Thowwar 在场($$$T = 0$$$)，这名 Mkaw3 人感到安全，并表现得像 Floul 一样。Abu Dujana 返回 $$$0$$$。"
+      },
+      {
+        "caiyun": "查询 3(?2 1 5):你发送了人员 $$$1$$$ 和 $$$5$$$。两者都是 Flul($$$T = 0$$$)。Abu Dujana 返回 $$$0$$$。",
+        "deepl": "查询 3 (? 2 1 5)：您发送了人$$$1$$$和$$$5$$$。两人都是弗卢尔($$$T = 0$$$）。Abu Dujana 返回$$$0$$$。",
+        "iflyrec": "查询3(？215）：您发送人员$$$1$$$和$$$5$$$。两者都是Floul($$$T = 0$$$）。Abu Dujana返回$$$0$$$。",
+        "ai": "查询 3 (? 2 1 5)：你派出人员 $$$1$$$ 和 $$$5$$$。两人都是 Floul($$$T = 0$$$)。Abu Dujana 返回 $$$0$$$。"
+      },
+      {
+        "caiyun": "查询 4(?2 3 5):你发送了人 $$$3$$$ 和 $$$5$$$。该组包含 $$$1$$$ Thowwar 和 $$$1$$$ Floul。没有 Mkaw3($$$M = 0$$$)。Abu Dujana 返回 $$$T + M = 1 + 0 = 1$$$。",
+        "youdao": "查询4 (?）2、3、5)：你派人$$$3$$$和$$$5$$$。这群人包括$$$1$$$陶华和$$$1$$$弗洛尔。没有Mkaw3 ($$$M = 0$$$）。Abu Dujana回来了$$$T + M = 1 + 0 = 1$$$。",
+        "deepl": "查询 4 (? 2 3 5)：您发送了人$$$3$$$和$$$5$$$。组中有$$$1$$$ Thowwar 和$$$1$$$ Floul。没有 Mkaw3($$$M = 0$$$）。Abu Dujana 返回$$$T + M = 1 + 0 = 1$$$。",
+        "iflyrec": "查询4(？2(3，5）：您发送人员$$$3$$$和$$$5$$$。该组包含$$$1$$$THOWWAR和$$$1$$$FLOUL。没有MKAW3($$$M = 0$$$）。阿布杜贾纳返回$$$T + M = 1 + 0 = 1$$$。",
+        "ai": "查询 4 (? 2 3 5)：你派出人员 $$$3$$$ 和 $$$5$$$。队伍中包含 $$$1$$$ 名 Thowwar 和 $$$1$$$ 名 Floul。没有 Mkaw3($$$M = 0$$$)。Abu Dujana 返回 $$$T + M = 1 + 0 = 1$$$。"
+      },
+      {
+        "caiyun": "最终答案 (! FMTMF):推导出正确的类型后，你打印出最终的字符串。",
+        "youdao": "最终答案(！FMTMF)：推导出正确的类型后，打印最终字符串。",
+        "deepl": "最终答案 (! FMTMF)：在推导出正确的类型后，打印出最终字符串。",
+        "iflyrec": "最终答案（！FMTMF（）：推导出正确的类型后，打印最终的字符串。",
+        "ai": "最终答案（! FMTMF）：在推断出正确的类型后，你打印最终字符串。"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.121Z",
+  "translatedBy": [
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

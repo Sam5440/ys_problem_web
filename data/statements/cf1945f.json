@@ -1,0 +1,105 @@
+{
+  "code": "CF1945F",
+  "letter": "F",
+  "title": "F. Kirill and Mushrooms",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1945/F",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "As soon as everyone in the camp fell asleep, Kirill sneaked out of the tent and went to the Wise Oak to gather mushrooms.",
+      "It is known that there are n$$$n$$$ mushrooms growing under the Oak, each of which has magic power vi$$$v_i$$$. Kirill really wants to make a magical elixir of maximum strength from the mushrooms.",
+      "The strength of the elixir is equal to the product of the number of mushrooms in it and the minimum magic power among these mushrooms. To prepare the elixir, Kirill will sequentially pick one mushroom growing under the Oak. Kirill can gather mushrooms in any order.",
+      "However, it's not that simple. The Wise Oak informed Kirill of a permutation of numbers p$$$p$$$ from 1$$$1$$$ to n$$$n$$$. If Kirill picks only k$$$k$$$ mushrooms, then the magic power of all mushrooms with indices p1,p2,…,pk−1$$$p_1, p_2, \\dots, p_{k - 1}$$$ will become 0$$$0$$$. Kirill will not use mushrooms with zero magic power to prepare the elixir.",
+      "Your task is to help Kirill gather mushrooms in such a way that he can brew the elixir of maximum possible strength. However, Kirill is a little scared to stay near the oak for too long, so out of all the suitable options for gathering mushrooms, he asks you to find the one with the minimum number of mushrooms.",
+      "A permutation of length n$$$n$$$ is an array consisting of n$$$n$$$ different integers from 1$$$1$$$ to n$$$n$$$ in any order. For example, [2,3,1,5,4]$$$[2,3,1,5,4]$$$ is a permutation, but [1,2,2]$$$[1,2,2]$$$ is not a permutation (2$$$2$$$ appears in the array twice) and [1,3,4]$$$[1,3,4]$$$ is also not a permutation (n=3$$$n=3$$$, but 4$$$4$$$ appears in the array)."
+    ],
+    "input": [
+      "Each test consists of multiple test cases. The first line contains a single integer t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$) — the number of test cases. The description of the test cases follows.",
+      "The first line of each test case contains a single integer n$$$n$$$ (1≤n≤200000$$$1 \\le n \\le 200\\,000$$$) — the number of mushrooms.",
+      "The second line contains an array v$$$v$$$ of size n$$$n$$$ (1≤vi≤109$$$1\\le v_i \\le 10^9$$$) — the magic powers of the mushrooms.",
+      "The third line contains a permutation p$$$p$$$ of numbers from 1$$$1$$$ to n$$$n$$$.",
+      "It is guaranteed that the sum of the values of n$$$n$$$ over all test cases does not exceed 2⋅105$$$2\\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, output two integers separated by a space — the maximum strength of the elixir that can be brewed and the minimum number of mushrooms that Kirill needs to use for this."
+    ],
+    "note": [
+      "In the first example, you need to take the mushrooms with indices 1$$$1$$$ and 2$$$2$$$, so the strength of the elixir is equal to 2⋅min(a1,a2)=2⋅min(9,8)=2⋅8=16$$$2 \\cdot \\min(a_1, a_2) = 2 \\cdot \\min(9, 8) = 2 \\cdot 8 = 16$$$. Note that the magic power of the mushroom with index 3$$$3$$$ after picking two mushrooms will become 0$$$0$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n3\n9 8 14\n3 2 1\n5\n1 2 3 4 5\n1 2 3 4 5\n6\n1 2 3 4 5 6\n6 5 4 3 2 1\n5\n1 4 6 10 10\n2 1 4 5 3\n4\n2 2 5 5\n4 2 3 1\n5\n1 2 9 10 10\n1 4 2 3 5",
+      "output": "16 2\n9 3\n8 2\n20 2\n5 1\n20 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "营地里的所有人一睡着，Kirill 就偷偷溜出帐篷，前往智慧橡树采集蘑菇。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "已知橡树下生长着 n$$$n$$$ 个蘑菇，每个蘑菇的魔力为 vi$$$v_i$$$。Kirill 非常想用这些蘑菇制作出强度最大的魔法药剂。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "药剂的强度等于其中蘑菇的数量与这些蘑菇中的最小魔力的乘积。为了制作药剂，Kirill 将依次采摘一个生长在橡树下的蘑菇。Kirill 可以按任意顺序采集蘑菇。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，事情并没有那么简单。智慧橡树告诉了 Kirill 一个从 1$$$1$$$ 到 n$$$n$$$ 的数字排列 p$$$p$$$。如果 Kirill 只采摘 k$$$k$$$ 个蘑菇，那么所有下标为 p1,p2,…,pk−1$$$p_1, p_2, \\dots, p_{k - 1}$$$ 的蘑菇，其魔力值都会变为 0$$$0$$$。Kirill 不会使用魔力值为 0 的蘑菇来酿造药剂。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是帮助 Kirill 采摘蘑菇，使他能够酿造出强度可能最大的药剂。然而，Kirill 有些害怕在橡树附近停留太久，因此在所有合适的采摘方案中，他希望你找出采摘蘑菇数量最少的方案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "长度为 n$$$n$$$ 的排列是一个数组，由 n$$$n$$$ 个取值范围为 1$$$1$$$ 到 n$$$n$$$ 且互不相同的整数按任意顺序组成。例如，[2,3,1,5,4]$$$[2,3,1,5,4]$$$ 是一个排列，但 [1,2,2]$$$[1,2,2]$$$ 不是排列(2$$$2$$$ 在数组中出现了两次)，[1,3,4]$$$[1,3,4]$$$ 也不是排列(n=3$$$n=3$$$，但数组中出现了 4$$$4$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)——测试用例的数量。接下来是各个测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤200000$$$1 \\le n \\le 200\\,000$$$)——蘑菇的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个大小为 n$$$n$$$ 的数组 v$$$v$$$(1≤vi≤109$$$1\\le v_i \\le 10^9$$$)——蘑菇的魔力值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含一个由 1$$$1$$$ 到 n$$$n$$$ 的排列 p$$$p$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的值之和不超过 2⋅105$$$2\\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出两个以空格分隔的整数——可以酿制出的药剂的最大强度，以及 Kirill 为此需要使用的蘑菇的最少数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，你需要选择下标为 1$$$1$$$ 和 2$$$2$$$ 的蘑菇，因此药剂的强度等于 2⋅min(a1,a2)=2⋅min(9,8)=2⋅8=16$$$2 \\cdot \\min(a_1, a_2) = 2 \\cdot \\min(9, 8) = 2 \\cdot 8 = 16$$$。注意，采摘两个蘑菇后，下标为 3$$$3$$$ 的蘑菇的魔力将变为 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. Kirill 与蘑菇",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

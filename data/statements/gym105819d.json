@@ -1,0 +1,130 @@
+{
+  "code": "GYM105819D",
+  "letter": "D",
+  "title": "D. Please solve this in O(N^3)",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105819/problem/D",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an undirected graph with N$$$N$$$ nodes and M$$$M$$$ edges. Each node is assigned a bitmask A$$$A$$$ (where 1≤A≤230−1$$$1 \\leq A \\leq 2^{30} - 1$$$). A node is said to 'contain' color c$$$c$$$ (with 0≤c≤29$$$0 \\leq c \\leq 29$$$) if the bit in the 2c$$$2^c$$$ place in the binary representation of A$$$A$$$ is 1$$$1$$$. This expression using bitwise operators would evaluate to true if and only if A$$$A$$$ contains the color c$$$c$$$.",
+      "(A & (1≪c))==(1≪c)$$ (A \\ \\& \\ (1 \\ll c)) == (1 \\ll c) $$",
+      "A path between two nodes i$$$i$$$ and j$$$j$$$ is considered valid if there exists at least one color c$$$c$$$ such that every node along the path (including i$$$i$$$ and j$$$j$$$) contains color c$$$c$$$.",
+      "Your task is to determine, for every node i$$$i$$$, which nodes j$$$j$$$ are reachable from i$$$i$$$ via some valid path. Output an N×N$$$N \\times N$$$ matrix of characters, where the j$$$j$$$th character in the i$$$i$$$th row is '1' if there exists at least one valid path from node i$$$i$$$ to node j$$$j$$$, and '0' otherwise."
+    ],
+    "input": [
+      "The first line contains two integers N(1≤N≤500)$$$N (1 \\leq N \\leq 500)$$$ and M(0≤M≤N×(N−1)2)$$$M(0 \\leq M \\leq \\frac{N \\times (N - 1)}{2})$$$, the number of nodes and the number of edges.",
+      "The second line contains N$$$N$$$ integers, where the i$$$i$$$th integer is the bitmask Ai(1≤Ai≤230−1)$$$A_i (1 \\leq A_i \\leq 2^{30} - 1)$$$ for node i$$$i$$$.",
+      "The following M$$$M$$$ lines each contain two integers u$$$u$$$ and v$$$v$$$ representing an undirected edge between nodes u$$$u$$$ and v$$$v$$$. Nodes are numbered from 1$$$1$$$ to N$$$N$$$. It is guaranteed there are no duplicate edges or self loops.",
+      "—",
+      "Tests in subtasks are numbered from 1−20$$$1−20$$$ with samples skipped. Each test is worth 10020=5$$$\\frac{100}{20}=5$$$ points.",
+      "Test 1$$$1$$$ satisfies M=0$$$M = 0$$$.",
+      "Test 2$$$2$$$ satisfies M=N×(N−1)2$$$M = \\frac{N \\times (N - 1)}{2}$$$.",
+      "Tests 3−6$$$3-6$$$ satisfy Ai=1$$$A_i = 1$$$.",
+      "Tests 7−20$$$7-20$$$ satisfy no additional constraints."
+    ],
+    "output": [
+      "Output N$$$N$$$ lines. The i$$$i$$$th line should be a string of N$$$N$$$ characters. The j$$$j$$$th character in this string should be '1' if there exists a valid path from node i$$$i$$$ to node j$$$j$$$, and '0' otherwise.",
+      "—",
+      "Problem Idea: Alex_C",
+      "Problem Preparation: nyctivoe",
+      "Occurrences: Novice D"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 5\n1 2 3 4 5\n1 3\n2 3\n3 5\n5 4\n2 4",
+      "output": "10101\n01100\n11101\n00011\n10111"
+    },
+    {
+      "input": "10 13\n3 5 2 7 1 8 6 9 10 4\n1 2\n1 3\n2 4\n3 4\n4 5\n1 4\n2 3\n6 8\n8 9\n9 7\n7 10\n8 10\n4 7",
+      "output": "1111101010\n1101101001\n1011001010\n1111101011\n1101100000\n0000010110\n1111001011\n0000010110\n1011011110\n0101001001"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个含有 N$$$N$$$ 个节点和 M$$$M$$$ 条边的无向图。每个节点都被赋予一个位掩码 A$$$A$$$(其中 1≤A≤230−1$$$1 \\leq A \\leq 2^{30} - 1$$$)。如果 A$$$A$$$ 的二进制表示中第 2c$$$2^c$$$ 位为 1$$$1$$$，则称节点“包含”颜色 c$$$c$$$(其中 0≤c≤29$$$0 \\leq c \\leq 29$$$)。下面这个使用按位运算符的表达式当且仅当 A$$$A$$$ 包含颜色 c$$$c$$$ 时，其值为真。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(A & (1≪c))==(1≪c)$$ (A \\ \\& \\ (1 \\ll c)) == (1 \\ll c) $$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在至少一种颜色 c$$$c$$$，使得路径上的每个节点(包括 i$$$i$$$ 和 j$$$j$$$)都包含颜色 c$$$c$$$，则节点 i$$$i$$$ 和 j$$$j$$$ 之间的路径被认为是有效的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是确定对于每个节点 i$$$i$$$，哪些节点 j$$$j$$$ 可以通过某条有效路径从 i$$$i$$$ 到达。输出一个 N×N$$$N \\times N$$$ 的字符矩阵，其中第 i$$$i$$$ 行的第 j$$$j$$$ 个字符为 '1'，当且仅当存在一条从节点 i$$$i$$$ 到节点 j$$$j$$$ 的有效路径；否则为 '0'。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 N(1≤N≤500)$$$N (1 \\leq N \\leq 500)$$$ 和 M(0≤M≤N×(N−1)2)$$$M(0 \\leq M \\leq \\frac{N \\times (N - 1)}{2})$$$，分别表示节点数和边数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 N$$$N$$$ 个整数，其中第 i$$$i$$$ 个整数是位掩码 Ai(1≤Ai≤230−1)$$$A_i (1 \\leq A_i \\leq 2^{30} - 1)$$$，对应节点 i$$$i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 M$$$M$$$ 行每行包含两个整数 u$$$u$$$ 和 v$$$v$$$，表示节点 u$$$u$$$ 与节点 v$$$v$$$ 之间的一条无向边。节点编号从 1$$$1$$$ 到 N$$$N$$$。保证不存在重边或自环。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务中的测试编号为 1−20$$$1−20$$$，跳过样例。每个测试点的分值为 10020=5$$$\\frac{100}{20}=5$$$ 分。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试 1$$$1$$$ 满足 M=0$$$M = 0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试 2$$$2$$$ 满足 M=N×(N−1)2$$$M = \\frac{N \\times (N - 1)}{2}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试 3−6$$$3-6$$$ 满足 Ai=1$$$A_i = 1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试 7−20$$$7-20$$$ 没有额外约束。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 N$$$N$$$ 行。第 i$$$i$$$ 行应为一个长度为 N$$$N$$$ 的字符串。若存在一条从节点 i$$$i$$$ 到节点 j$$$j$$$ 的合法路径，则该字符串的第 j$$$j$$$ 个字符应为 '1'，否则为 '0'。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "题目思路：Alex_C",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "题目准备：nyctivoe",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "出现次数：新手 D",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 请在 O(N^3) 的时间复杂度内解决此题",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

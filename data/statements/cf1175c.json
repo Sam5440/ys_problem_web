@@ -1,0 +1,96 @@
+{
+  "code": "CF1175C",
+  "letter": "C",
+  "title": "C. Electrification",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1175/C",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "At first, there was a legend related to the name of the problem, but now it's just a formal statement.",
+      "You are given n$$$n$$$ points a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ on the OX$$$OX$$$ axis. Now you are asked to find such an integer point x$$$x$$$ on OX$$$OX$$$ axis that fk(x)$$$f_k(x)$$$ is minimal possible.",
+      "The function fk(x)$$$f_k(x)$$$ can be described in the following way:",
+      "form a list of distances d1,d2,…,dn$$$d_1, d_2, \\dots, d_n$$$ where di=|ai−x|$$$d_i = |a_i - x|$$$ (distance between ai$$$a_i$$$ and x$$$x$$$);",
+      "sort list d$$$d$$$ in non-descending order;",
+      "take dk+1$$$d_{k + 1}$$$ as a result.",
+      "If there are multiple optimal answers you can print any of them."
+    ],
+    "input": [
+      "The first line contains single integer T$$$T$$$ (1≤T≤2⋅105$$$ 1 \\le T \\le 2 \\cdot 10^5$$$) — number of queries. Next 2⋅T$$$2 \\cdot T$$$ lines contain descriptions of queries. All queries are independent.",
+      "The first line of each query contains two integers n$$$n$$$, k$$$k$$$ (1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$, 0≤k<n$$$0 \\le k  \\lt  n$$$) — the number of points and constant k$$$k$$$.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (1≤a1<a2<⋯<an≤109$$$1 \\le a_1  \\lt  a_2  \\lt  \\dots  \\lt  a_n \\le 10^9$$$) — points in ascending order.",
+      "It's guaranteed that ∑n$$$\\sum{n}$$$ doesn't exceed 2⋅105$$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "Print T$$$T$$$ integers — corresponding points x$$$x$$$ which have minimal possible value of fk(x)$$$f_k(x)$$$. If there are multiple answers you can print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n3 2\n1 2 5\n2 1\n1 1000000000\n1 0\n4",
+      "output": "3\n500000000\n4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "起初，这道题的名称背后有一个相关的传说，但现在它只是一份形式化的题面。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定 OX$$$OX$$$ 轴上的 n$$$n$$$ 个点 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$。现在要求你在 OX$$$OX$$$ 轴上找到一个整数点 x$$$x$$$，使得 fk(x)$$$f_k(x)$$$ 尽可能小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "函数 fk(x)$$$f_k(x)$$$ 的定义如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "构造距离列表 d1,d2,…,dn$$$d_1, d_2, \\dots, d_n$$$，其中 di=|ai−x|$$$d_i = |a_i - x|$$$(ai$$$a_i$$$ 与 x$$$x$$$ 之间的距离)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将列表 d$$$d$$$ 按非递减顺序排序；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将 dk+1$$$d_{k + 1}$$$ 作为结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在多个最优答案，你可以输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤2⋅105$$$ 1 \\le T \\le 2 \\cdot 10^5$$$)，表示查询的数量。接下来的 2⋅T$$$2 \\cdot T$$$ 行包含查询的描述。所有查询彼此独立。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个查询的第一行包含两个整数 n$$$n$$$、k$$$k$$$(1≤n≤2⋅105$$$1 \\le n \\le 2 \\cdot 10^5$$$，0≤k<n$$$0 \\le k  \\lt  n$$$)，分别表示点的数量和常数 k$$$k$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤a1<a2<⋯<an≤109$$$1 \\le a_1  \\lt  a_2  \\lt  \\dots  \\lt  a_n \\le 10^9$$$)，表示按升序排列的点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 ∑n$$$\\sum{n}$$$ 不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 T$$$T$$$ 个整数，即使 fk(x)$$$f_k(x)$$$ 取得可能的最小值的点 x$$$x$$$。如果有多个答案，输出其中任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 电气化",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

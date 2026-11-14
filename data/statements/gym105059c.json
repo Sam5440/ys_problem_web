@@ -1,0 +1,85 @@
+{
+  "code": "GYM105059C",
+  "letter": "C",
+  "title": "C. SeaTac",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105059/problem/C",
+  "difficulty": "*1700",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Seba and Cam are roommates in Seattle. Seba is a frequent flyer, and Cam often has to drive Seba to and from SeaTac airport. Cam's car gets decent gas mileage, but not enough to be driving Seba around Seattle for free all the time, so Cam asks Seba to reimburse him for the gas. Seba needed a ride to SeaTac today, so Seba agreed to fill up Cam's tank when they arrived at SeaTac. The catch is Seba will be giving Cam directions and can direct him anywhere in Seattle, leaving him none the wiser.",
+      "Seattle can be modeled as an undirected, connected graph with n$$$n$$$ nodes and m$$$m$$$ roads. Seba and Cam's house is at node 1$$$1$$$, and SeaTac is at node n$$$n$$$. A path P$$$P$$$ of length k$$$k$$$ is a sequence of k$$$k$$$ nodes such that for all 1≤i≤k−1$$$1 \\leq i \\leq k-1$$$, there is an edge between Pi$$$P_i$$$ and Pi+1$$$P_{i+1}$$$. Seba can choose any path P$$$P$$$ such that P1=1$$$P_1 = 1$$$ and Pk=n$$$P_k = n$$$.",
+      "Cam's gas tank can hold g$$$g$$$ gallons of gasoline, and it starts off full. It takes one gallon of gasoline to traverse a single road. Whenever Cam runs out of gas, he has to stop and fill up, paying out of his own pocket. Suppose the gas tank has x$$$x$$$ gallons when Seba and Cam reach SeaTac. Then, Seba will pay for the remaining g−x$$$g-x$$$ gallons of gasoline.",
+      "Seba wants to direct Cam on a route such that the amount of gas Seba is required to pay for is minimized! Seba is far too busy last minute packing for their trip, so they have tasked you with finding an optimal route through Seattle from their house to SeaTac.",
+      "Cam's car is European, so the capacity of his gas tank is always prime."
+    ],
+    "input": [
+      "The first line contains three integers n$$$n$$$, m$$$m$$$, and g$$$g$$$ (2≤n≤2⋅105$$$2 \\leq n \\leq 2\\cdot10^5$$$, 1≤m≤2⋅105$$$1 \\leq m \\leq 2\\cdot10^5$$$, 2≤g≤2⋅105$$$2 \\leq g \\leq 2\\cdot10^5$$$, g$$$g$$$ is prime) — the number of nodes, the number of roads, and the size of Cam's gas tank, respectively.",
+      "Each of the following m$$$m$$$ lines contains two integers ui$$$u_i$$$ and vi$$$v_i$$$ (1≤ui,vi≤n$$$1 \\leq u_i,v_i \\leq n$$$, ui≠vi$$$u_i \\ne v_i$$$) — i$$$i$$$th undirected edge connecting nodes ui$$$u_i$$$ and vi$$$v_i$$$.",
+      "It is guaranteed that the graph is connected and that there is at most one edge between any pair of nodes."
+    ],
+    "output": [
+      "Output the number of gallons of gasoline that Seba has to pay for."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 5 2\n1 2\n1 3\n2 4\n3 4\n4 5",
+      "output": "1"
+    },
+    {
+      "input": "4 3 3\n1 2\n2 3\n3 4",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Seba 和 Cam 是住在西雅图的室友。Seba 经常乘飞机出行，而 Cam 常常不得不开车送 Seba 往返 SeaTac 机场。Cam 的车油耗还算不错，但还没好到可以一直免费在西雅图载着 Seba 到处跑的程度，所以 Cam 要求 Seba 补偿汽油费。今天 Seba 需要搭车前往 SeaTac，于是 Seba 同意在抵达 SeaTac 后把 Cam 的油箱加满。问题在于，Seba 会给 Cam 指路，并且可以把他指引到西雅图的任何地方，让 Cam 对此毫不知情。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "西雅图可以建模为一个含有 n$$$n$$$ 个节点和 m$$$m$$$ 条道路的无向连通图。Seba 和 Cam 的家位于节点 1$$$1$$$，SeaTac 位于节点 n$$$n$$$。长度为 k$$$k$$$ 的路径 P$$$P$$$ 是一个由 k$$$k$$$ 个节点组成的序列，并且对于所有满足 1≤i≤k−1$$$1 \\leq i \\leq k-1$$$ 的 i，Pi$$$P_i$$$ 与 Pi+1$$$P_{i+1}$$$ 之间都有一条边。Seba 可以选择任意满足 P1=1$$$P_1 = 1$$$ 且 Pk=n$$$P_k = n$$$ 的路径 P$$$P$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Cam 的油箱最多可装 g$$$g$$$ 加仑汽油，且一开始是满的。每行驶一条道路需要消耗一加仑汽油。每当汽油耗尽时，Cam 都必须停车加油，并自掏腰包付钱。假设 Seba 和 Cam 抵达 SeaTac 时，油箱里还剩 x$$$x$$$ 加仑汽油。那么，剩余的 g−x$$$g-x$$$ 加仑汽油将由 Seba 付钱。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Seba 想要为 Cam 规划一条路线，使 Seba 需要支付的汽油量最少！Seba 正忙于为旅行进行最后的打包准备，因此他们委托你寻找一条从他们家到 SeaTac、途经西雅图的最优路线。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Cam 的汽车来自欧洲，因此他的油箱容量始终是素数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、m$$$m$$$ 和 g$$$g$$$(2≤n≤2⋅105$$$2 \\leq n \\leq 2\\cdot10^5$$$，1≤m≤2⋅105$$$1 \\leq m \\leq 2\\cdot10^5$$$，2≤g≤2⋅105$$$2 \\leq g \\leq 2\\cdot10^5$$$，g$$$g$$$ 为素数)，分别表示节点数、道路数以及 Cam 的油箱容量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中，每行包含两个整数 ui$$$u_i$$$ 和 vi$$$v_i$$$(1≤ui,vi≤n$$$1 \\leq u_i,v_i \\leq n$$$，ui≠vi$$$u_i \\ne v_i$$$)，表示第 i$$$i$$$ 条连接节点 ui$$$u_i$$$ 和 vi$$$v_i$$$ 的无向边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证该图是连通的，并且任意一对节点之间至多有一条边。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Seba 需要支付的汽油量（加仑）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. SeaTac",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

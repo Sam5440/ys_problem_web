@@ -1,0 +1,127 @@
+{
+  "code": "GYM106642J",
+  "letter": "J",
+  "title": "J. Odd Minimum Subarrays",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106642/problem/J",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array $$$a$$$ consisting of $$$n$$$ positive integers.",
+      "A non-empty subarray is a contiguous segment $$$a_l,a_{l+1},\\ldots,a_r$$$ for some $$$1 \\le l \\le r \\le n$$$. It is called good if its minimum element occurs an odd number of times within it.",
+      "Find the number of good subarrays of $$$a$$$."
+    ],
+    "input": [
+      "The first line contains one integer $$$t$$$ ($$$1 \\le t \\le 2 \\cdot 10^5$$$) — the number of test cases.",
+      "Each test case consists of two lines.",
+      "The first line contains one integer $$$n$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$) — the length of the array.",
+      "The second line contains $$$n$$$ integers $$$a_1,a_2,\\ldots,a_n$$$ ($$$1 \\le a_i \\le n$$$).",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print one integer — the number of good subarrays."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n4\n1 3 1 2\n2\n1 1\n5\n3 4 2 5 2\n10\n9 2 5 3 5 7 5 4 3 2",
+      "output": "8\n2\n12\n50"
+    }
+  ],
+  "titleZh": {
+    "0": "J.奇最小子阵",
+    "caiyun": "J. 奇异最小子阵列",
+    "youdao": "奇数最小子数组",
+    "deepl": "J.奇数最小子阵列",
+    "iflyrec": "J.奇最小子阵",
+    "ai": "J. 奇数次最小值子数组",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "youdao": "给你一个由$$$n$$$个正整数组成的数组$$$a$$$。",
+        "caiyun": "给定一个由 $$$n$$$ 正整数组成的 $$$a$$$ 数组。",
+        "deepl": "给你一个由 $$$n$$$ 个正整数组成的数组 $$$a$$$。",
+        "iflyrec": "给你一个由$$$n$$$个正整数组成的数组$$$a$$$。",
+        "ai": "给定一个由 $$$n$$$ 个正整数组成的数组 $$$a$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "非空子数组是一些$$$1 \\le l \\le r \\le n$$$的连续段$$$a_l,a_{l+1},\\ldots,a_r$$$。如果它的最小元素在其中出现奇数次，则称为良好。",
+        "caiyun": "非空子数组是 $$$1 \\le l \\le r \\le n$$$ 的连续片段 $$$a_l,a_{l+1},\\ldots,a_r$$$。如果其最小元素在其中出现奇数次，则称为良性子数组。",
+        "deepl": "对于某些 $$$1 \\le l \\le r \\le n$$$ 来说，非空子数组是一个连续的数段 $$$a_l,a_{l+1},\\ldots,a_r$$$。如果最小元素在子数组中出现的次数为奇数，则称为好数组。",
+        "iflyrec": "非空子阵列是某些$$$1 \\le l \\le r \\le n$$$的连续段$$$a_l,a_{l+1},\\ldots,a_r$$$。如果它的最小元素在其中出现奇数次，则称为好元素。",
+        "ai": "非空子数组是对于某个 $$$1 \\le l \\le r \\le n$$$ 的连续片段 $$$a_l,a_{l+1},\\ldots,a_r$$$。如果其中的最小元素出现奇数次，则称其为好的子数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "查找 $$$a$$$ 的良好子数组数量。",
+        "caiyun": "查找 $$$a$$$ 的良好子数组数量。",
+        "deepl": "求 $$$a$$$ 的好子阵列数。",
+        "iflyrec": "求$$$a$$$的好的子阵列的数目。",
+        "ai": "求 $$$a$$$ 的好子数组数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "youdao": "第一行包含一个整数$$$t$$$($$$1 \\le t \\le 2 \\cdot 10^5$$$）—测试用例的数量。",
+        "caiyun": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 2 \\cdot 10^5$$$)——测试用例的数量。",
+        "deepl": "第一行包含一个整数 $$$t$$$ ($$$1 \\le t \\le 2 \\cdot 10^5$$$）--测试用例数。",
+        "iflyrec": "第一行包含一个整数$$$t$$$($$$1 \\le t \\le 2 \\cdot 10^5$$$）—测试用例的数量。",
+        "ai": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 2 \\cdot 10^5$$$)，表示测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "每个测试用例由两行组成。",
+        "caiyun": "每个测试用例由两行组成。",
+        "deepl": "每个测试用例由两行组成。",
+        "iflyrec": "每个测试用例由两行组成。",
+        "ai": "每个测试用例包含两行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "第一行包含一个整数$$$n$$$($$$1 \\le n \\le 2 \\cdot 10^5$$$）—数组的长度。",
+        "caiyun": "第一行包含一个整数 $$$n$$$($$$1 \\le n \\le 2 \\cdot 10^5$$$)——数组的长度。",
+        "deepl": "第一行包含一个整数 $$$n$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$）--数组的长度。",
+        "iflyrec": "第一行包含一个整数$$$n$$$($$$1 \\le n \\le 2 \\cdot 10^5$$$)—数组的长度。",
+        "ai": "第一行包含一个整数 $$$n$$$($$$1 \\le n \\le 2 \\cdot 10^5$$$)——数组的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "第二行包含 $$$n$$$ 整数 $$$a_1,a_2,\\ldots,a_n$$$($$$1 \\le a_i \\le n$$$)。",
+        "caiyun": "第二行包含 $$$n$$$ 整数 $$$a_1,a_2,\\ldots,a_n$$$($$$1 \\le a_i \\le n$$$)。",
+        "deepl": "第二行包含 $$$n$$$ 整数 $$$a_1,a_2,\\ldots,a_n$$$ ($$$1 \\le a_i \\le n$$$）。",
+        "iflyrec": "第二行包含$$$n$$$个整数$$$a_1,a_2,\\ldots,a_n$$$($$$1 \\le a_i \\le n$$$）。",
+        "ai": "第二行包含 $$$n$$$ 个整数 $$$a_1,a_2,\\ldots,a_n$$$($$$1 \\le a_i \\le n$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "保证所有测试用例的$$$n$$$之和不超过$$$2 \\cdot 10^5$$$。",
+        "caiyun": "保证所有测试用例的 $$$n$$$ 之和不超过 $$$2 \\cdot 10^5$$$。",
+        "deepl": "保证所有测试用例的 $$$n$$$ 之和不超过 $$$2 \\cdot 10^5$$$。",
+        "iflyrec": "保证所有测试用例的$$$n$$$总和不超过$$$2 \\cdot 10^5$$$。",
+        "ai": "保证所有测试用例中 $$$n$$$ 的总和不超过 $$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "youdao": "对于每个测试用例，打印一个整数——好的子数组的数量。",
+        "caiyun": "对于每个测试用例，打印一个整数——良好子数组的数量。",
+        "deepl": "对于每个测试用例，打印一个整数 - 好子数组的数量。",
+        "iflyrec": "对于每个测试用例，打印一个整数—好的子数组的数量。",
+        "ai": "对于每个测试用例，输出一个整数——好子数组的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.117Z",
+  "translatedBy": [
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

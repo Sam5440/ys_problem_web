@@ -1,0 +1,111 @@
+{
+  "code": "CF1468K",
+  "letter": "K",
+  "title": "K. The Robot",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1468/K",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "There is a robot on a checkered field that is endless in all directions. Initially, the robot is located in the cell with coordinates (0,0)$$$(0, 0)$$$. He will execute commands which are described by a string of capital Latin letters 'L', 'R', 'D', 'U'. When a command is executed, the robot simply moves in the corresponding direction:",
+      "'L': one cell to the left (the x$$$x$$$-coordinate of the current cell decreases by 1$$$1$$$);",
+      "'R': one cell to the right (the x$$$x$$$-coordinate of the current cell is increased by 1$$$1$$$);",
+      "'D': one cell down (the y$$$y$$$-coordinate of the current cell decreases by 1$$$1$$$);",
+      "'U': one cell up (the y$$$y$$$-coordinate of the current cell is increased by 1$$$1$$$).",
+      "Your task is to put an obstacle in one cell of the field so that after executing the commands, the robot will return to the original cell of its path (0,0)$$$(0, 0)$$$. Of course, an obstacle cannot be placed in the starting cell (0,0)$$$(0, 0)$$$. It is guaranteed that if the obstacle is not placed, then the robot will not return to the starting cell.",
+      "An obstacle affects the movement of the robot in the following way: if it tries to go in a certain direction, and there is an obstacle, then it simply remains in place (the obstacle also remains, that is, it does not disappear).",
+      "Find any such cell of the field (other than (0,0)$$$(0, 0)$$$) that if you put an obstacle there, the robot will return to the cell (0,0)$$$(0, 0)$$$ after the execution of all commands. If there is no solution, then report it."
+    ],
+    "input": [
+      "The first line contains one integer t$$$t$$$ (1≤t≤500$$$1 \\le t \\le 500$$$) — the number of test cases.",
+      "Each test case consists of a single line containing s$$$s$$$ — the sequence of commands, which are uppercase Latin letters 'L', 'R', 'D', 'U' only. The length of s$$$s$$$ is between 1$$$1$$$ and 5000$$$5000$$$, inclusive. Additional constraint on s$$$s$$$: executing this sequence of commands leads the robot to some cell other than (0,0)$$$(0, 0)$$$, if there are no obstacles.",
+      "The sum of lengths of all s$$$s$$$ in a test doesn't exceed 5000$$$5000$$$."
+    ],
+    "output": [
+      "For each test case print a single line:",
+      "if there is a solution, print two integers x$$$x$$$ and y$$$y$$$ (−109≤x,y≤109$$$-10^9 \\le x,y \\le 10^9$$$) such that an obstacle in (x,y)$$$(x, y)$$$ will force the robot to return back to the cell (0,0)$$$(0, 0)$$$;",
+      "otherwise, print two zeroes (i. e. 0 0).",
+      "If there are multiple answers, you can print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\nL\nRUUDL\nLLUU\nDDDUUUUU",
+      "output": "-1 0\n1 2\n0 0\n0 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "有一个机器人位于一块向所有方向无限延伸的方格场地上。起初，机器人位于坐标为 (0,0)$$$(0, 0)$$$ 的格子中。它将执行由大写拉丁字母 'L'、'R'、'D'、'U' 组成的字符串所描述的指令。执行一条指令时，机器人只会向相应的方向移动：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "'L'：向左移动一个格子(当前格子的 x$$$x$$$ 坐标减小 1$$$1$$$)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "'R'：向右移动一个格子(当前格子的 x$$$x$$$ 坐标增加 1$$$1$$$)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "'D'：向下移动一格(当前单元格的 y$$$y$$$ 坐标减少 1$$$1$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "'U'：向上移动一格(当前单元格的 y$$$y$$$ 坐标增加 1$$$1$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你的任务是在场地的一个单元格中放置障碍物，使得执行完这些命令后，机器人会回到其路径的起始单元格 (0,0)$$$(0, 0)$$$。当然，障碍物不能放在起始单元格 (0,0)$$$(0, 0)$$$。保证如果不放置障碍物，机器人不会回到起始单元格。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "障碍物按如下方式影响机器人的移动：如果它试图朝某个方向移动，而该处有障碍物，那么它就会停留在原地（障碍物也仍然存在，即不会消失）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "请找出场地上任意一个这样的单元格(除 (0,0)$$$(0, 0)$$$ 外)：如果将障碍物放在那里，机器人在执行完所有命令后会回到单元格 (0,0)$$$(0, 0)$$$。如果无解，请报告无解。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$ (1≤t≤500$$$1 \\le t \\le 500$$$)——测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个测试用例包含一行，其中包含 s$$$s$$$ —— 仅由大写拉丁字母 'L'、'R'、'D'、'U' 组成的指令序列。s$$$s$$$ 的长度在 1$$$1$$$ 到 5000$$$5000$$$ 之间(包括端点)。对 s$$$s$$$ 的额外约束是：如果没有障碍物，执行这列指令会使机器人到达某个不同于 (0,0)$$$(0, 0)$$$ 的格子。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在一个测试中，所有 s$$$s$$$ 的长度之和不超过 5000$$$5000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一行：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在解，输出两个整数 x$$$x$$$ 和 y$$$y$$$(−109≤x,y≤109$$$-10^9 \\le x,y \\le 10^9$$$)，使得在 (x,y)$$$(x, y)$$$ 处放置一个障碍物后，机器人将被迫返回格子 (0,0)$$$(0, 0)$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，输出两个零（即 0 0）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个答案，可以输出任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "K. 机器人",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

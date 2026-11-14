@@ -1,0 +1,100 @@
+{
+  "code": "GYM102569J",
+  "letter": "J",
+  "title": "J. The Battle of Mages",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102569/problem/J",
+  "difficulty": "*1400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Two mages play the game. Both of them has their own set of creatures. Each creature is characterized by the integer — its strength. At the beginning of the game each mage summons k$$$k$$$ distinct random creatures from their set of creatures, and each subset of k$$$k$$$ creatures can be summoned equally likely. The mage who has the greater sum of strengths of their creatures wins. If the sums of strength are equal, the process repeats. If every subset of creatures of both mages always has the same strength, the draw is declared.",
+      "It has turned out, that if k=1$$$k=1$$$ or k=3$$$k=3$$$, the first mage has strictly greater chances to win, and if k=2$$$k=2$$$, the second mage has. You have to give an example of sets of creatures of the first and the second mages."
+    ],
+    "input": [
+      "This problem has only one test, and it is empty."
+    ],
+    "output": [
+      "In the first line output one integer n1$$$n_1$$$ (3≤n1≤10$$$3 \\le n_1 \\le 10$$$) — the number of creatures in the first mage's set.",
+      "In the second line output n1$$$n_1$$$ integers s1i$$$s_{1i}$$$ (1≤s1i≤10$$$1 \\le s_{1i} \\le 10$$$) — the strengths of creatures of the first mage.",
+      "In the third line output one integer n2$$$n_2$$$ (3≤n2≤10$$$3 \\le n_2 \\le 10$$$) — the number of creatures in the second mage's set.",
+      "In the fourth line output n2$$$n_2$$$ integers s2i$$$s_{2i}$$$ (1≤s2i≤10$$$1 \\le s_{2i} \\le 10$$$) — the strengths of creatures of the second mage.",
+      "If there are several possible answers, output any of them. It is guaranteed that the solution in the given constraints exists."
+    ],
+    "note": [
+      "The output example is not an answer for the problem and is given only for better understanding of output format and to clarify the problem statement.",
+      "The first mage has three creatures, their strengths are 1, 2 and 3. The second mage has three creatures, all their strengths are equal to 2.",
+      "If k=1$$$k = 1$$$, the second mage always has fixed strength 2. If the first mage summons the creature with the strength 2, the process repeats. If he summons the creature with the strength 3, he wins, and with the strength 1 — loses. The probability of the first mage to win is 0.5, but the problem requires the first mage to have strictly better chances.",
+      "If k=2$$$k = 2$$$, the second mage always has strength 4. The first mage can summon the following subsets of creatures: (1, 2), (1, 3), (2, 3). If it is (1, 2), the first mage loses (as 3 < 4), if it is (1, 3) — the game starts again (as 4 = 4), and if it's (2, 3) — he wins. The resulting probability is again 0.5, but the second mage should have better chances in this case.",
+      "If k=3$$$k = 3$$$, the subsets of the first and second mages are always (1, 2, 3) and (2, 2, 2). They have equal strengths, and we got infinite game restarts. According to the rules, the draw is declared in this case, so the probability of the first mage winning is not greater again."
+    ]
+  },
+  "examples": [],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "两位法师进行一场游戏。他们各自拥有一组生物。每个生物都由一个整数表示，即它的力量。游戏开始时，每位法师都会从自己的生物集合中随机召唤 k$$$k$$$ 个互不相同的生物，并且每个包含 k$$$k$$$ 个生物的子集被召唤的概率都相同。生物力量总和较大的法师获胜。如果力量总和相等，则重复这一过程。如果两位法师的生物的任意子集的力量总是相同，则判定为平局。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "事实证明，当 k=1$$$k=1$$$ 或 k=3$$$k=3$$$ 时，第一位法师获胜的概率严格更高；而当 k=2$$$k=2$$$ 时，第二位法师获胜的概率严格更高。你需要给出第一位和第二位法师的生物集合的一个示例。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "本题只有一个测试，且该测试为空。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出一个整数 n1$$$n_1$$$(3≤n1≤10$$$3 \\le n_1 \\le 10$$$)——第一位法师集合中生物的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行输出 n1$$$n_1$$$ 个整数 s1i$$$s_{1i}$$$(1≤s1i≤10$$$1 \\le s_{1i} \\le 10$$$)——第一位法师所拥有的生物的实力。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行输出一个整数 n2$$$n_2$$$(3≤n2≤10$$$3 \\le n_2 \\le 10$$$)——第二位法师集合中生物的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第四行输出 n2$$$n_2$$$ 个整数 s2i$$$s_{2i}$$$(1≤s2i≤10$$$1 \\le s_{2i} \\le 10$$$)——第二位法师所拥有的生物的实力。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在多组可行答案，输出其中任意一组即可。保证在给定约束条件下解一定存在。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "输出样例并不是本题的答案，仅用于帮助理解输出格式并明确题意。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一位法师有三个生物，它们的强度分别为 1、2 和 3。第二位法师有三个生物，它们的强度均为 2。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当 k=1$$$k = 1$$$ 时，第二位法师的强度始终为 2。如果第一位法师召唤强度为 2 的生物，过程会重复。如果他召唤强度为 3 的生物，他会获胜；如果召唤强度为 1 的生物，他会失败。第一位法师获胜的概率为 0.5，但题目要求第一位法师拥有严格更高的获胜概率。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当 k=2$$$k = 2$$$ 时，第二位法师的强度始终为 4。第一位法师可以召唤以下生物子集：(1, 2)、(1, 3)、(2, 3)。如果选择的是 (1, 2)，第一位法师会失败(因为 3 < 4)；如果选择的是 (1, 3)，游戏会重新开始(因为 4 = 4)；如果选择的是 (2, 3)，他会获胜。最终概率仍然是 0.5，但在这种情况下第二位法师应该拥有更高的获胜概率。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当 k=3$$$k = 3$$$ 时，第一位法师和第二位法师的子集始终分别为 (1, 2, 3) 和 (2, 2, 2)。他们的强度相等，因此游戏会无限次重新开始。根据规则，此时判定为平局，所以第一位法师获胜的概率再次不会更高。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "J. 法师之战",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

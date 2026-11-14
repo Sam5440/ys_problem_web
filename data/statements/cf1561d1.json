@@ -1,0 +1,113 @@
+{
+  "code": "CF1561D1",
+  "letter": "D1",
+  "title": "D1. Up the Strip (simplified version)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1561/D1",
+  "difficulty": "1700",
+  "timeLimit": "6 seconds",
+  "memoryLimit": "128 megabytes",
+  "sections": {
+    "legend": [
+      "This version of the problem differs from the next one only in the constraint on n$$$n$$$.",
+      "Note that the memory limit in this problem is lower than in others.",
+      "You have a vertical strip with n$$$n$$$ cells, numbered consecutively from 1$$$1$$$ to n$$$n$$$ from top to bottom.",
+      "You also have a token that is initially placed in cell n$$$n$$$. You will move the token up until it arrives at cell 1$$$1$$$.",
+      "Let the token be in cell x>1$$$x  \\gt  1$$$ at some moment. One shift of the token can have either of the following kinds:",
+      "Subtraction: you choose an integer y$$$y$$$ between 1$$$1$$$ and x−1$$$x-1$$$, inclusive, and move the token from cell x$$$x$$$ to cell x−y$$$x - y$$$.",
+      "Floored division: you choose an integer z$$$z$$$ between 2$$$2$$$ and x$$$x$$$, inclusive, and move the token from cell x$$$x$$$ to cell ⌊xz⌋$$$\\lfloor \\frac{x}{z} \\rfloor$$$ (x$$$x$$$ divided by z$$$z$$$ rounded down).",
+      "Find the number of ways to move the token from cell n$$$n$$$ to cell 1$$$1$$$ using one or more shifts, and print it modulo m$$$m$$$. Note that if there are several ways to move the token from one cell to another in one shift, all these ways are considered distinct (check example explanation for a better understanding)."
+    ],
+    "input": [
+      "The only line contains two integers n$$$n$$$ and m$$$m$$$ (2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$; 108<m<109$$$10^8  \\lt  m  \\lt  10^9$$$; m$$$m$$$ is a prime number) — the length of the strip and the modulo."
+    ],
+    "output": [
+      "Print the number of ways to move the token from cell n$$$n$$$ to cell 1$$$1$$$, modulo m$$$m$$$."
+    ],
+    "note": [
+      "In the first test, there are three ways to move the token from cell 3$$$3$$$ to cell 1$$$1$$$ in one shift: using subtraction of y=2$$$y = 2$$$, or using division by z=2$$$z = 2$$$ or z=3$$$z = 3$$$.",
+      "There are also two ways to move the token from cell 3$$$3$$$ to cell 1$$$1$$$ via cell 2$$$2$$$: first subtract y=1$$$y = 1$$$, and then either subtract y=1$$$y = 1$$$ again or divide by z=2$$$z = 2$$$.",
+      "Therefore, there are five ways in total."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 998244353",
+      "output": "5"
+    },
+    {
+      "input": "5 998244353",
+      "output": "25"
+    },
+    {
+      "input": "42 998244353",
+      "output": "793019428"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "本题与下一题的唯一区别在于对 n$$$n$$$ 的约束条件不同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，本题的内存限制低于其他题目。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你有一个包含 n$$$n$$$ 个单元格的竖直条带，这些单元格从上到下依次编号为 1$$$1$$$ 到 n$$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你还有一个令牌，初始时位于单元格 n$$$n$$$ 中。你需要向上移动令牌，直到它到达单元格 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在某个时刻，棋子位于编号为 x>1$$$x  \\gt  1$$$ 的格子中。棋子的一次移动可以属于以下两种类型之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "减法：选择一个介于 1$$$1$$$ 和 x−1$$$x-1$$$ 之间(包括两端)的整数 y$$$y$$$，将棋子从格子 x$$$x$$$ 移动到格子 x−y$$$x - y$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "向下取整除法：选择一个介于 2$$$2$$$ 和 x$$$x$$$ 之间(包括两端)的整数 z$$$z$$$，将棋子从格子 x$$$x$$$ 移动到格子 ⌊xz⌋$$$\\lfloor \\frac{x}{z} \\rfloor$$$(x$$$x$$$ 除以 z$$$z$$$ 后向下取整)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "求使用一次或多次移动，将棋子从格子 n$$$n$$$ 移动到格子 1$$$1$$$ 的方案数，并输出对 m$$$m$$$ 取模的结果。注意，如果存在多种方式通过一次移动将棋子从一个格子移动到另一个格子，则这些方式均视为不同的方案(请查看样例解释以便更好地理解)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "唯一一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$；108<m<109$$$10^8  \\lt  m  \\lt  10^9$$$；m$$$m$$$ 是素数)，分别表示带状区域的长度和模数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出将棋子从格子 n$$$n$$$ 移动到格子 1$$$1$$$ 的方案数，对 m$$$m$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，将标记从单元格 3$$$3$$$ 移动到单元格 1$$$1$$$ 有三种方法：使用减法 y=2$$$y = 2$$$，或使用除法 z=2$$$z = 2$$$ 或 z=3$$$z = 3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "还有两种方法可以将标记从单元格 3$$$3$$$ 经过单元格 2$$$2$$$ 移动到单元格 1$$$1$$$：先减去 y=1$$$y = 1$$$，然后再次减去 y=1$$$y = 1$$$ 或除以 z=2$$$z = 2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，总共有五种方法。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D1. 向上移动（简化版）",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

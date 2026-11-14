@@ -1,0 +1,113 @@
+{
+  "code": "CF772A",
+  "letter": "A",
+  "title": "A. Voltage Keepsake",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/772/A",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You have n devices that you want to use simultaneously.",
+      "The i-th device uses ai units of power per second. This usage is continuous. That is, in λ seconds, the device will use λ·ai units of power. The i-th device currently has bi units of power stored. All devices can store an arbitrary amount of power.",
+      "You have a single charger that can plug to any single device. The charger will add p units of power per second to a device. This charging is continuous. That is, if you plug in a device for λ seconds, it will gain λ·p units of power. You can switch which device is charging at any arbitrary unit of time (including real numbers), and the time it takes to switch is negligible.",
+      "You are wondering, what is the maximum amount of time you can use the devices until one of them hits 0 units of power.",
+      "If you can use the devices indefinitely, print -1. Otherwise, print the maximum amount of time before any one device hits 0 power."
+    ],
+    "input": [
+      "The first line contains two integers, n and p (1 ≤ n ≤ 100 000, 1 ≤ p ≤ 109) — the number of devices and the power of the charger.",
+      "This is followed by n lines which contain two integers each. Line i contains the integers ai and bi (1 ≤ ai, bi ≤ 100 000) — the power of the device and the amount of power stored in the device in the beginning."
+    ],
+    "output": [
+      "If you can use the devices indefinitely, print -1. Otherwise, print the maximum amount of time before any one device hits 0 power.",
+      "Your answer will be considered correct if its absolute or relative error does not exceed 10 - 4.",
+      "Namely, let's assume that your answer is a and the answer of the jury is b. The checker program will consider your answer correct if ![](https://espresso.codeforces.com/49eb236611e23b2e7c8e81e9516771daca716eec.png)."
+    ],
+    "note": [
+      "In sample test 1, you can charge the first device for the entire time until it hits zero power. The second device has enough power to last this time without being charged.",
+      "In sample test 2, you can use the device indefinitely.",
+      "In sample test 3, we can charge the third device for 2 / 5 of a second, then switch to charge the second device for a 1 / 10 of a second."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 1\n2 2\n2 1000",
+      "output": "2.0000000000"
+    },
+    {
+      "input": "1 100\n1 1",
+      "output": "-1"
+    },
+    {
+      "input": "3 5\n4 3\n5 2\n6 1",
+      "output": "0.5000000000"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你有 n 个想要同时使用的设备。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 i 个设备每秒消耗 ai 单位的电量，且这种消耗是连续的。也就是说，在 λ 秒内，该设备将消耗 λ·ai 单位的电量。第 i 个设备当前存储着 bi 单位的电量。所有设备都可以存储任意多的电量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你有一个充电器，可以连接到任意一个设备上。充电器每秒会为设备增加 p 单位的电量，且充电过程是连续的。也就是说，如果将充电器连接到某个设备上 λ 秒，该设备将获得 λ·p 单位的电量。你可以在任意时刻（包括实数时刻）切换正在充电的设备，切换所需的时间可以忽略不计。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你想知道，在其中一个设备的电量降至 0 之前，最多可以使用这些设备多长时间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你可以无限期地使用这些设备，请输出 -1。否则，请输出在任意一个设备的电量降至 0 之前的最长时间。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 p（1 ≤ n ≤ 100 000，1 ≤ p ≤ 109）——设备的数量和充电器的功率。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来 n 行，每行包含两个整数。第 i 行包含整数 ai 和 bi（1 ≤ ai, bi ≤ 100 000）——第 i 个设备的功耗，以及该设备初始存储的电量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果可以无限期地使用这些设备，请输出 -1。否则，请输出在任意一个设备的电量降至 0 之前的最长时间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你的答案的绝对误差或相对误差不超过 10 - 4，则会被判定为正确。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "具体来说，假设你的答案为 a，评测答案为 b。如果 ![](https://espresso.codeforces.com/49eb236611e23b2e7c8e81e9516771daca716eec.png)，校验程序会认为你的答案正确。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在样例测试 1 中，你可以在第一台设备上充电，直到其电量降为 0。第二台设备的电量足以在这段时间内无需充电而持续运行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在样例测试 2 中，你可以无限期地使用该设备。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在样例测试 3 中，我们可以先给第三台设备充电 2 / 5 秒，然后切换到第二台设备，给它充电 1 / 10 秒。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 电压纪念品",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

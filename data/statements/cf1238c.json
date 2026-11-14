@@ -1,0 +1,91 @@
+{
+  "code": "CF1238C",
+  "letter": "C",
+  "title": "C. Standard Free2play",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1238/C",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are playing a game where your character should overcome different obstacles. The current problem is to come down from a cliff. The cliff has height h$$$h$$$, and there is a moving platform on each height x$$$x$$$ from 1$$$1$$$ to h$$$h$$$.",
+      "Each platform is either hidden inside the cliff or moved out. At first, there are n$$$n$$$ moved out platforms on heights p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$. The platform on height h$$$h$$$ is moved out (and the character is initially standing there).",
+      "If you character is standing on some moved out platform on height x$$$x$$$, then he can pull a special lever, which switches the state of two platforms: on height x$$$x$$$ and x−1$$$x - 1$$$. In other words, the platform you are currently standing on will hide in the cliff and the platform one unit below will change it state: it will hide if it was moved out or move out if it was hidden. In the second case, you will safely land on it. Note that this is the only way to move from one platform to another.",
+      "Your character is quite fragile, so it can safely fall from the height no more than 2$$$2$$$. In other words falling from the platform x$$$x$$$ to platform x−2$$$x - 2$$$ is okay, but falling from x$$$x$$$ to x−3$$$x - 3$$$ (or lower) is certain death.",
+      "Sometimes it's not possible to come down from the cliff, but you can always buy (for donate currency) several magic crystals. Each magic crystal can be used to change the state of any single platform (except platform on height h$$$h$$$, which is unaffected by the crystals). After being used, the crystal disappears.",
+      "What is the minimum number of magic crystal you need to buy to safely land on the 0$$$0$$$ ground level?"
+    ],
+    "input": [
+      "The first line contains one integer q$$$q$$$ (1≤q≤100$$$1 \\le q \\le 100$$$) — the number of queries. Each query contains two lines and is independent of all other queries.",
+      "The first line of each query contains two integers h$$$h$$$ and n$$$n$$$ (1≤h≤109$$$1 \\le h \\le 10^9$$$, 1≤n≤min(h,2⋅105)$$$1 \\le n \\le \\min(h, 2 \\cdot 10^5)$$$) — the height of the cliff and the number of moved out platforms.",
+      "The second line contains n$$$n$$$ integers p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$ (h=p1>p2>⋯>pn≥1$$$h = p_1  \\gt  p_2  \\gt  \\dots  \\gt  p_n \\ge 1$$$) — the corresponding moved out platforms in the descending order of their heights.",
+      "The sum of n$$$n$$$ over all queries does not exceed 2⋅105$$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each query print one integer — the minimum number of magic crystals you have to spend to safely come down on the ground level (with height 0$$$0$$$)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n3 2\n3 1\n8 6\n8 7 6 5 3 2\n9 6\n9 8 5 4 3 1\n1 1\n1",
+      "output": "0\n1\n2\n0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你在玩一个游戏，你的角色需要克服各种障碍。当前的问题是让他从悬崖上下来。悬崖高度为 h$$$h$$$，并且每个高度 x$$$x$$$(从 1$$$1$$$ 到 h$$$h$$$)都有一个移动平台。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个平台要么藏在悬崖内部，要么伸出来。开始时，有 n$$$n$$$ 个伸出的平台，位于高度 p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$。高度 h$$$h$$$ 的平台是伸出的(角色初始就站在上面)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果你的角色正站在某个高度为 x$$$x$$$ 的伸出平台上，他可以拉动一个特殊拉杆，这会切换两个平台的状态：即位于高度 x$$$x$$$ 和 x−1$$$x - 1$$$ 的两个平台。换句话说，你当前站立的平台会藏进悬崖，而下方一层的平台会改变状态：如果它原本是伸出的，则会隐藏；如果它原本是隐藏的，则会伸出。在后一种情况下，你会安全地落在上面。注意，这是从一个平台移动到另一个平台的唯一方式。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你的角色非常脆弱，因此从高度不超过 2$$$2$$$ 的地方落下是安全的。换句话说，从平台 x$$$x$$$ 落到平台 x−2$$$x - 2$$$ 没有问题，但从 x$$$x$$$ 落到 x−3$$$x - 3$$$(或更低)则必死无疑。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "有时无法从悬崖上下来，但你总是可以用捐赠货币购买若干魔法水晶。每颗魔法水晶都可以用来改变任意单个平台的状态(高度为 h$$$h$$$ 的平台除外，它不受水晶影响)。水晶使用后就会消失。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你需要购买多少颗魔法水晶，才能安全落到高度为 0$$$0$$$ 的地面？",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 q$$$q$$$(1≤q≤100$$$1 \\le q \\le 100$$$)——查询的数量。每个查询包含两行，且与其他所有查询相互独立。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个查询的第一行包含两个整数 h$$$h$$$ 和 n$$$n$$$(1≤h≤109$$$1 \\le h \\le 10^9$$$，1≤n≤min(h,2⋅105)$$$1 \\le n \\le \\min(h, 2 \\cdot 10^5)$$$)——悬崖高度和突出的平台数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 p1,p2,…,pn$$$p_1, p_2, \\dots, p_n$$$(h=p1>p2>⋯>pn≥1$$$h = p_1  \\gt  p_2  \\gt  \\dots  \\gt  p_n \\ge 1$$$)——对应突出的平台，按高度降序排列。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "所有查询中 n$$$n$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个查询，输出一个整数——为了安全降落到地面(高度为 0$$$0$$$)，你必须消耗的魔法水晶的最少数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Standard Free2play",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

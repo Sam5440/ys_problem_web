@@ -1,0 +1,120 @@
+{
+  "code": "GYM105822D",
+  "letter": "D",
+  "title": "D. Beaverland",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105822/problem/D",
+  "difficulty": "*1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Busy Beaver wants to have a tour in Beaverland! Beaverland consists of N$$$N$$$ cities and M$$$M$$$ bidirectional roads between them. It is guaranteed that it is possible to travel between any pair of cities along the M$$$M$$$ roads, and that all roads have length 1$$$1$$$.",
+      "So far, Busy Beaver has planned out his tour, and wishes to visit the cities x1,x2,…,xK$$$x_1, x_2, \\dots, x_K$$$. He views his tour to be interesting if dist(1,x1)<dist(1,x2)<⋯<dist(1,xK)\n$$\\mathrm{dist}(1,x_1)  \\lt  \\mathrm{dist}(1,x_2)  \\lt  \\dots  \\lt  \\mathrm{dist}(1,x_K)$$ where dist(x,y)$$$\\mathrm{dist}(x, y)$$$ for two cities x,y$$$x, y$$$ is equal to the length of the shortest path connecting the two cities.",
+      "However, it might not be the case that Busy Beaver's tour is currently interesting! To fix this, he can add up to 5⋅105$$$5 \\cdot 10^5$$$ more roads between any pairs of cities. Each of the added roads is also bidirectional and has length 1$$$1$$$.",
+      "Determine whether it is possible to make Busy Beaver's tour interesting by adding some roads (possibly none). Additionally, if it is possible, provide any valid construction."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line of input contains a single integer T$$$T$$$ (1≤T≤104)$$$(1 \\leq T \\leq 10^4)$$$, the number of test cases. The description of each test case follows.",
+      "The first line of each test case contains three integers N,M,K$$$N,M,K$$$ (1≤K≤N,N−1≤M≤2⋅105$$$1 \\le K \\le N, N-1 \\le M \\le 2 \\cdot 10^5$$$) — the total number of cities, roads, and the number of cities in Busy Beaver's tour, respectively.",
+      "The next line contains K$$$K$$$ integers x1,x2,…,xK$$$x_1,x_2, \\dots, x_K$$$ (1≤xi≤N$$$1 \\le x_i \\le N$$$, xi$$$x_i$$$ distinct) — the cities that Busy Beaver plans to visit.",
+      "The i$$$i$$$-th of the next M$$$M$$$ lines contains two integers ui$$$u_i$$$ and vi$$$v_i$$$ (1≤ui,vi≤N$$$1 \\le u_i, v_i \\le N$$$, ui≠vi$$$u_i \\neq v_i$$$) — indicating that there is a road between cities ui$$$u_i$$$ and vi$$$v_i$$$. It is guaranteed that there is at most 1$$$1$$$ edge between any two distinct cities.",
+      "The sum of N$$$N$$$, the sum of M$$$M$$$, and the sum of K$$$K$$$ over all test cases all do not exceed 2⋅105$$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, if it is possible to make the tour interesting, the first line of output should contain an integer L$$$L$$$ (0≤L≤5⋅105$$$0 \\leq L \\leq 5 \\cdot 10^5$$$) — the number of added roads. Each of the next L$$$L$$$ lines of output should then contain two integers ui,vi$$$u_i,v_i$$$ (1≤ui,vi≤N$$$1 \\leq u_i , v_i \\leq N$$$, ui≠vi$$$u_i \\neq v_i$$$) representing a road to be added.",
+      "If there are multiple solutions, print any of them. Otherwise, if there is no solution, print a single integer −1$$$-1$$$ instead.",
+      "Due to judging constraints, you may use at most 5⋅105$$$5 \\cdot 10^5$$$ roads in total, over all test cases. It can be shown that this is enough to solve the problem."
+    ],
+    "note": [
+      "In the first test case, adding a road between cities 1,2$$$1, 2$$$ causes dist(1,1)=0,dist(1,2)=1$$$dist(1,1) = 0, dist(1,2) = 1$$$, making the tour interesting.",
+      "In the second test case, it can be shown that the task is impossible.",
+      "In the third test case, by adding a road between cities 1,3$$$1, 3$$$ we have dist(1,3)=1,dist(1,5)=2$$$dist(1,3) = 1, dist(1,5) = 2$$$, making the tour interesting.",
+      "In the fourth test case, the tour is already interesting, and no roads need to be added."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n3 3 2\n1 2\n1 2\n1 3\n2 3\n3 3 3\n1 2 3\n1 2\n1 3\n2 3\n5 5 2\n3 5\n1 2\n2 3\n1 4\n4 5\n2 4\n6 6 5\n1 2 3 4 5\n1 2\n2 3\n3 4\n4 5\n5 6\n4 6",
+      "output": "1\n1 2\n-1\n1\n1 3\n0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Busy Beaver 想要在 Beaverland 进行一次旅行！Beaverland 由 N$$$N$$$ 座城市和连接它们的 M$$$M$$$ 条双向道路组成。保证沿着这 M$$$M$$$ 条道路可以在任意一对城市之间通行，并且所有道路的长度均为 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "到目前为止，Busy Beaver 已经规划好了他的行程，并希望访问城市 x1,x2,…,xK$$$x_1, x_2, \\dots, x_K$$$。如果 dist(1,x1)<dist(1,x2)<⋯<dist(1,xK)$$\\mathrm{dist}(1,x_1)  \\lt  \\mathrm{dist}(1,x_2)  \\lt  \\dots  \\lt  \\mathrm{dist}(1,x_K)$$，他就认为自己的行程很有趣，其中对于两个城市 x,y$$$x, y$$$，dist(x,y)$$$\\mathrm{dist}(x, y)$$$ 等于连接这两个城市的最短路径长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，Busy Beaver 的旅行目前可能并不有趣！为了解决这个问题，他可以在任意两座城市之间增加最多 5⋅105$$$5 \\cdot 10^5$$$ 条道路。每条新增的道路同样也是双向的，长度为 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "判断是否可以通过增加一些道路（也可能不增加）使得 Busy Beaver 的旅行变得有趣。此外，如果可能，请给出任意一组合法构造。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。输入的第一行包含一个整数 T$$$T$$$(1≤T≤104)$$$(1 \\leq T \\leq 10^4)$$$，表示测试用例的数量。每个测试用例的描述如下。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个测试用例的第一行包含三个整数 N,M,K$$$N,M,K$$$(1≤K≤N，N−1≤M≤2⋅105$$$1 \\le K \\le N, N-1 \\le M \\le 2 \\cdot 10^5$$$)——分别表示城市总数、道路总数以及 Busy Beaver 旅行中的城市数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "下一行包含 K$$$K$$$ 个整数 x1,x2,…,xK$$$x_1,x_2, \\dots, x_K$$$(1≤xi≤N$$$1 \\le x_i \\le N$$$，xi$$$x_i$$$ 互不相同)——即 Busy Beaver 计划访问的城市。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来 M$$$M$$$ 行中的第 i$$$i$$$ 行包含两个整数 ui$$$u_i$$$ 和 vi$$$v_i$$$(1≤ui,vi≤N$$$1 \\le u_i, v_i \\le N$$$，ui≠vi$$$u_i \\neq v_i$$$)，表示城市 ui$$$u_i$$$ 和 vi$$$v_i$$$ 之间有一条道路。保证任意两个不同城市之间至多有 1$$$1$$$ 条边。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "所有测试用例中 N$$$N$$$ 之和、M$$$M$$$ 之和以及 K$$$K$$$ 之和均不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果可以使旅程变得有趣，输出的第一行应包含一个整数 L$$$L$$$(0≤L≤5⋅105$$$0 \\leq L \\leq 5 \\cdot 10^5$$$)——添加的道路数量。接下来的 L$$$L$$$ 行输出中，每行应包含两个整数 ui,vi$$$u_i,v_i$$$(1≤ui,vi≤N$$$1 \\leq u_i , v_i \\leq N$$$，ui≠vi$$$u_i \\neq v_i$$$)，表示一条要添加的道路。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多种方案，输出任意一种。否则，如果不存在方案，则输出一个整数 −1$$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于评测限制，所有测试用例总共至多可以使用 5⋅105$$$5 \\cdot 10^5$$$ 条道路。可以证明，这足以解决本题。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，在城市 1,2$$$1, 2$$$ 之间添加一条道路会使 dist(1,1)=0,dist(1,2)=1$$$dist(1,1) = 0, dist(1,2) = 1$$$，从而使旅程变得有趣。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，可以证明该任务是不可能的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试用例中，通过在城市 1 和 3$$$1, 3$$$ 之间修建一条道路，我们有 dist(1,3)=1，dist(1,5)=2$$$dist(1,3) = 1, dist(1,5) = 2$$$，从而使这次游览变得有趣。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四个测试用例中，这次游览已经很有趣，无需添加任何道路。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 河狸国",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

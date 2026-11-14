@@ -1,0 +1,105 @@
+{
+  "code": "GYM106592C",
+  "letter": "C",
+  "title": "C. Self Citation",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106592/problem/C",
+  "difficulty": "*1300",
+  "timeLimit": "3 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Professor Aubergine cares a lot about his citation count. He wants to increase his total number of citations as much as possible.",
+      "He plans to publish exactly n$$$n$$$ papers over the next k$$$k$$$ months. In the i$$$i$$$-th month, he can publish at most ai$$$a_i$$$ papers due to submission limits.",
+      "Every paper he publishes in a month self cites all of his papers published in all previous months. However, papers published in the same month cannot cite each other.",
+      "Let bi$$$b_i$$$ be the number of papers he publishes in month i$$$i$$$. Your task is to find a sequence b1,b2,…,bk$$$b_1, b_2, \\dots, b_k$$$ that gives the maximum possible number of total citations. The sequence must satisfy 0≤bi≤ai$$$0 \\le b_i \\le a_i$$$ for all i$$$i$$$, and the total sum of all bi$$$b_i$$$ must be exactly n$$$n$$$."
+    ],
+    "input": [
+      "The first line contains a single integer t$$$t$$$ (1≤t≤103$$$1 \\le t \\le 10^3$$$) — the number of test cases. Then the description of the test cases follows.",
+      "The first line of each test case contains two space-separated integers n$$$n$$$ and k$$$k$$$ (1≤n≤2⋅1015$$$1 \\le n \\le 2 \\cdot 10^{15}$$$, 1≤k≤2⋅106$$$1 \\le k \\le 2 \\cdot 10^6$$$) — the total number of papers and the number of months.",
+      "The second line of each test case contains k$$$k$$$ space-separated integers a1,a2,…,ak$$$a_1, a_2, \\dots, a_k$$$ (0≤ai≤109$$$0 \\le a_i \\le 10^9$$$, n≤a1+a2+⋯+ak$$$n \\le a_1 + a_2 + \\dots + a_k$$$) — the maximum number of papers he can publish in each month.",
+      "It is guaranteed that the sum of k$$$k$$$ over all test cases does not exceed 2⋅106$$$2 \\cdot 10^6$$$."
+    ],
+    "output": [
+      "For each test case, print k$$$k$$$ space-separated integers b1,b2,…,bk$$$b_1, b_2, \\dots, b_k$$$ — the optimal number of papers to publish each month.",
+      "If there are multiple sequences that give the same maximum number of citations, you may print any of them."
+    ],
+    "note": [
+      "In the first test case, the submission limits for the 3 months are a=[3,4,5]$$$a = [3, 4, 5]$$$ and we need to choose a sequence that sums up to n=10$$$n = 10$$$.",
+      "If we choose b=[3,4,3]$$$b = [3, 4, 3]$$$, the citations are calculated as follows:  Number of self citations in the second month = 4×3=12$$$4 \\times 3 = 12$$$  Number of self citations in the third month = 3×(3+4)=21$$$3 \\times (3 + 4) = 21$$$  Total citations = 12+21=33$$$12 + 21 = 33$$$.",
+      "Alternatively, b=[3,3,4]$$$b = [3, 3, 4]$$$ is also a valid answer."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n10 3\n3 4 5\n12 3\n2 4 10",
+      "output": "3 3 4 \n2 4 6"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Aubergine 教授非常在意自己的引用次数。他希望尽可能增加自己的引用总数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他计划在接下来的 k$$$k$$$ 个月内恰好发表 n$$$n$$$ 篇论文。在第 i$$$i$$$ 个月，由于投稿限制，他最多可以发表 ai$$$a_i$$$ 篇论文。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他在某个月发表的每篇论文，都会自引他在之前所有月份发表的全部论文。然而，同一个月发表的论文不能相互引用。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "令 bi$$$b_i$$$ 表示他在第 i$$$i$$$ 个月发表的论文数量。你的任务是找出一个序列 b1,b2,…,bk$$$b_1, b_2, \\dots, b_k$$$，使总引用次数尽可能多。对于所有 i$$$i$$$，序列必须满足 0≤bi≤ai$$$0 \\le b_i \\le a_i$$$，并且所有 bi$$$b_i$$$ 的总和必须恰好为 n$$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤103$$$1 \\le t \\le 10^3$$$)，表示测试用例的数量。接下来是各个测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个用空格分隔的整数 n$$$n$$$ 和 k$$$k$$$(1≤n≤2⋅1015$$$1 \\le n \\le 2 \\cdot 10^{15}$$$，1≤k≤2⋅106$$$1 \\le k \\le 2 \\cdot 10^6$$$)，分别表示论文总数和月份数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 k$$$k$$$ 个用空格分隔的整数 a1,a2,…,ak$$$a_1, a_2, \\dots, a_k$$$(0≤ai≤109$$$0 \\le a_i \\le 10^9$$$，n≤a1+a2+⋯+ak$$$n \\le a_1 + a_2 + \\dots + a_k$$$)，表示他每个月最多可以发表的论文数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 k$$$k$$$ 的总和不超过 2⋅106$$$2 \\cdot 10^6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出 k$$$k$$$ 个用空格分隔的整数 b1,b2,…,bk$$$b_1, b_2, \\dots, b_k$$$，表示每个月发表论文数量的最优方案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个序列能够得到相同的最大引用次数，你可以输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，3 个月的提交次数限制为 a=[3,4,5]$$$a = [3, 4, 5]$$$，我们需要选择一个总和为 n=10$$$n = 10$$$ 的序列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果我们选择 b=[3,4,3]$$$b = [3, 4, 3]$$$，引用次数计算如下：第二个月的自引用次数 = 4×3=12$$$4 \\times 3 = 12$$$；第三个月的自引用次数 = 3×(3+4)=21$$$3 \\times (3 + 4) = 21$$$；引用总数 = 12+21=33$$$12 + 21 = 33$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "另外，b=[3,3,4]$$$b = [3, 3, 4]$$$ 也是一个有效答案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 自引",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

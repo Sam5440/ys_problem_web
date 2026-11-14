@@ -1,0 +1,152 @@
+{
+  "code": "CF1056C",
+  "letter": "C",
+  "title": "C. Pick Heroes",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1056/C",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "If you say that Arkady is a bit old-fashioned playing checkers, you won't be right. There is also a modern computer game Arkady and his friends are keen on. We won't discuss its rules, the only feature important to this problem is that each player has to pick a distinct hero in the beginning of the game.",
+      "There are 2$$$2$$$ teams each having n$$$n$$$ players and 2n$$$2n$$$ heroes to distribute between the teams. The teams take turns picking heroes: at first, the first team chooses a hero in its team, after that the second team chooses a hero and so on. Note that after a hero is chosen it becomes unavailable to both teams.",
+      "The friends estimate the power of the i$$$i$$$-th of the heroes as pi$$$p_i$$$. Each team wants to maximize the total power of its heroes. However, there is one exception: there are m$$$m$$$ pairs of heroes that are especially strong against each other, so when any team chooses a hero from such a pair, the other team must choose the other one on its turn. Each hero is in at most one such pair.",
+      "This is an interactive problem. You are to write a program that will optimally choose the heroes for one team, while the jury's program will play for the other team. Note that the jury's program may behave inefficiently, in this case you have to take the opportunity and still maximize the total power of your team. Formally, if you ever have chance to reach the total power of q$$$q$$$ or greater regardless of jury's program choices, you must get q$$$q$$$ or greater to pass a test."
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (1≤n≤103$$$1 \\le n \\le 10^3$$$, 0≤m≤n$$$0 \\le m \\le n$$$) — the number of players in one team and the number of special pairs of heroes.",
+      "The second line contains 2n$$$2n$$$ integers p1,p2,…,p2n$$$p_1, p_2, \\ldots, p_{2n}$$$ (1≤pi≤103$$$1 \\le p_i \\le 10^3$$$) — the powers of the heroes.",
+      "Each of the next m$$$m$$$ lines contains two integer a$$$a$$$ and b$$$b$$$ (1≤a,b≤2n$$$1 \\le a, b \\le 2n$$$, a≠b$$$a \\ne b$$$) — a pair of heroes that are especially strong against each other. It is guaranteed that each hero appears at most once in this list.",
+      "The next line contains a single integer t$$$t$$$ (1≤t≤2$$$1 \\le t \\le 2$$$) — the team you are to play for. If t=1$$$t = 1$$$, the first turn is yours, otherwise you have the second turn.",
+      "Hacks",
+      "In order to hack, use the format described above with one additional line. In this line output 2n$$$2n$$$ distinct integers from 1$$$1$$$ to 2n$$$2n$$$ — the priority order for the jury's team. The jury's team will on each turn select the first possible hero from this list. Here possible means that it is not yet taken and does not contradict the rules about special pair of heroes.",
+      "When it is your turn, print a single integer x$$$x$$$ (1≤x≤2n$$$1 \\le x \\le 2n$$$) — the index of the hero chosen by you. Note that you can't choose a hero previously chosen by either you of the other player, and you must follow the rules about special pairs of heroes.",
+      "When it is the other team's turn, read a line containing a single integer x$$$x$$$ (1≤x≤2n$$$1 \\le x \\le 2n$$$) — the index of the hero chosen by the other team. It is guaranteed that this index is not chosen before and that the other team also follows the rules about special pairs of heroes.",
+      "After the last turn you should terminate without printing anything.",
+      "After printing your choice do not forget to output end of line and flush the output. Otherwise you will get Idleness limit exceeded. To do this, use:",
+      "fflush(stdout) or cout.flush() in C++;",
+      "System.out.flush() in Java;",
+      "flush(output) in Pascal;",
+      "stdout.flush() in Python;",
+      "see documentation for other languages.",
+      "Jury's answer −1$$$-1$$$ instead of a valid choice means that you made an invalid turn. Exit immediately after receiving −1$$$-1$$$ and you will see Wrong answer verdict. Otherwise you can get an arbitrary verdict because your solution will continue to read from a closed stream."
+    ],
+    "output": [],
+    "note": [
+      "In the first example the first turn is yours. In example, you choose 6$$$6$$$, the other team is forced to reply with 2$$$2$$$. You choose 5$$$5$$$, the other team chooses 4$$$4$$$. Finally, you choose 3$$$3$$$ and the other team choose 1$$$1$$$.",
+      "In the second example you have the second turn. The other team chooses 6$$$6$$$, you choose 5$$$5$$$, forcing the other team to choose 1$$$1$$$. Now you choose 4$$$4$$$, the other team chooses 3$$$3$$$ and you choose 2$$$2$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1\n1 2 3 4 5 6\n2 6\n1\n\n2\n\n4\n\n1",
+      "output": "\n\n\n\n6\n\n5\n\n3"
+    },
+    {
+      "input": "3 1\n1 2 3 4 5 6\n1 5\n2\n6\n\n1\n\n3",
+      "output": "\n\n\n\n\n5\n\n4\n\n2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "如果你说 Arkady 下跳棋有点老派，那可就错了。还有一款现代电子游戏，Arkady 和他的朋友们都很喜欢。我们不讨论它的规则；对本题来说，唯一重要的一点是，每位玩家都必须在游戏开始时选择一位不同的英雄。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有 2$$$2$$$ 支队伍，每支队伍有 n$$$n$$$ 名玩家，还有 2n$$$2n$$$ 位英雄分配给两支队伍。两支队伍轮流选择英雄：首先，第一支队伍为自己选择一位英雄，然后第二支队伍选择一位英雄，依此类推。注意，一位英雄被选中后，两支队伍都不能再选择他。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "朋友们认为第 i$$$i$$$ 位英雄的战力为 pi$$$p_i$$$。每支队伍都想最大化本队英雄的总战力。不过有一个例外：有 m$$$m$$$ 对英雄彼此特别克制，因此当任意一支队伍选择了这类配对中的一位英雄时，另一支队伍必须在自己的回合选择另一位英雄。每位英雄至多属于一对。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这是一道交互题。你需要编写一个程序，为其中一支队伍选择最优的英雄，而评测程序会为另一支队伍进行选择。注意，评测程序的行为可能并不高效；在这种情况下，你必须抓住机会，仍然最大化本队的总战力。形式化地说，如果无论评测程序如何选择，你都有机会使总战力达到 q$$$q$$$ 或更高，那么你必须使总战力达到 q$$$q$$$ 或更高，才能通过测试。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n≤103$$$1 \\le n \\le 10^3$$$，0≤m≤n$$$0 \\le m \\le n$$$)——一支队伍的玩家人数和特殊英雄对数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 2n$$$2n$$$ 个整数 p1,p2,…,p2n$$$p_1, p_2, \\ldots, p_{2n}$$$(1≤pi≤103$$$1 \\le p_i \\le 10^3$$$)——各位英雄的战力。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行每行包含两个整数 a$$$a$$$ 和 b$$$b$$$(1≤a,b≤2n$$$1 \\le a, b \\le 2n$$$，a≠b$$$a \\ne b$$$)——一对彼此特别强大的英雄。保证每个英雄在此列表中至多出现一次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含一个整数 t$$$t$$$(1≤t≤2$$$1 \\le t \\le 2$$$)——你所代表的队伍。如果 t=1$$$t = 1$$$，则第一回合由你进行，否则你进行第二回合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Hack",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了进行 Hack，请使用上文所述格式，并额外增加一行。在该行中输出从 1$$$1$$$ 到 2n$$$2n$$$ 的 2n$$$2n$$$ 个互不相同的整数——评测队伍的优先级顺序。评测队伍将在每个回合从该列表中选择第一个可选的英雄。这里的“可选”是指该英雄尚未被选取，且不违反有关特殊英雄对的规则。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "轮到你时，输出一个整数 x$$$x$$$(1≤x≤2n$$$1 \\le x \\le 2n$$$)——你选择的英雄的编号。注意，你不能选择你或另一名玩家之前选择的英雄，并且必须遵守有关特殊英雄对的规则。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "轮到另一支队伍时，读取一行，其中包含一个整数 x$$$x$$$(1≤x≤2n$$$1 \\le x \\le 2n$$$)——另一支队伍选择的英雄的编号。保证此前未选择该编号，且另一支队伍也遵守有关特殊英雄对的规则。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最后一轮结束后，你应直接结束程序，不要输出任何内容。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "输出你的选择后，别忘了输出换行并刷新输出缓冲区，否则你会得到“Idleness limit exceeded”错误。为此，请使用：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在 C++ 中使用 fflush(stdout) 或 cout.flush()；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在 Java 中使用 System.out.flush()；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在 Pascal 中使用 flush(output)；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在 Python 中使用 stdout.flush()；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "其他语言请参阅文档。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "评测器的答案为 −1$$$-1$$$ 而不是有效选择，意味着你进行了一次无效回合。收到 −1$$$-1$$$ 后立即退出，否则你将看到 Wrong answer 判定。否则，由于你的程序会继续从已关闭的流中读取，你可能会得到任意判定。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [],
+    "note": [
+      {
+        "ai": "在第一个样例中，第一回合由你进行。在该样例中，你选择 6$$$6$$$，另一支队伍被迫选择 2$$$2$$$ 作为回应。你选择 5$$$5$$$，另一支队伍选择 4$$$4$$$。最后，你选择 3$$$3$$$，另一支队伍选择 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，第二回合由你进行。另一支队伍选择 6$$$6$$$，你选择 5$$$5$$$，迫使另一支队伍选择 1$$$1$$$。现在你选择 4$$$4$$$，另一支队伍选择 3$$$3$$$，你选择 2$$$2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 挑选英雄",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "code": "CF254C",
+  "letter": "C",
+  "title": "C. Anagram",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/254/C",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "String x is an anagram of string y, if we can rearrange the letters in string x and get exact string y. For example, strings \"DOG\" and \"GOD\" are anagrams, so are strings \"BABA\" and \"AABB\", but strings \"ABBAC\" and \"CAABA\" are not.",
+      "You are given two strings s and t of the same length, consisting of uppercase English letters. You need to get the anagram of string t from string s. You are permitted to perform the replacing operation: every operation is replacing some character from the string s by any other character. Get the anagram of string t in the least number of replacing operations. If you can get multiple anagrams of string t in the least number of operations, get the lexicographically minimal one.",
+      "The lexicographic order of strings is the familiar to us \"dictionary\" order. Formally, the string p of length n is lexicographically smaller than string q of the same length, if p1 = q1, p2 = q2, ..., pk - 1 = qk - 1, pk < qk for some k (1 ≤ k ≤ n). Here characters in the strings are numbered from 1. The characters of the strings are compared in the alphabetic order."
+    ],
+    "input": [
+      "The input consists of two lines. The first line contains string s, the second line contains string t. The strings have the same length (from 1 to 105 characters) and consist of uppercase English letters."
+    ],
+    "output": [
+      "In the first line print z — the minimum number of replacement operations, needed to get an anagram of string t from string s. In the second line print the lexicographically minimum anagram that could be obtained in z operations."
+    ],
+    "note": [
+      "The second sample has eight anagrams of string t, that can be obtained from string s by replacing exactly two letters: \"ADBADC\", \"ADDABC\", \"CDAABD\", \"CDBAAD\", \"CDBADA\", \"CDDABA\", \"DDAABC\", \"DDBAAC\". These anagrams are listed in the lexicographical order. The lexicographically minimum anagram is \"ADBADC\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "ABA\nCBA",
+      "output": "1\nABC"
+    },
+    {
+      "input": "CDBABC\nADCABD",
+      "output": "2\nADBADC"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入由两行组成。第一行包含字符串 s，第二行包含字符串 t。这两个字符串长度相同（从 1 到 10^5 个字符），且仅由大写英文字母组成。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出 z——将字符串 s 变为字符串 t 的某个变位词所需的最少替换操作次数。第二行输出经过 z 次操作可以得到的字典序最小的变位词。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第二个样例中，将字符串 s 中恰好两个字母替换后，可以得到字符串 t 的 8 个变位词：\"ADBADC\"、\"ADDABC\"、\"CDAABD\"、\"CDBAAD\"、\"CDBADA\"、\"CDDABA\"、\"DDAABC\"、\"DDBAAC\"。这些变位词按照字典序排列。字典序最小的变位词是 \"ADBADC\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "如果可以重新排列字符串 x 中的字母，使其得到完全相同的字符串 y，那么字符串 x 是字符串 y 的字母异位词。例如，字符串“DOG”和“GOD”是字母异位词，字符串“BABA”和“AABB”也是，但字符串“ABBAC”和“CAABA”不是。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定两个长度相同、仅由大写英文字母组成的字符串 s 和 t。你需要通过字符串 s 得到字符串 t 的一个字母异位词。你可以进行替换操作：每次操作将字符串 s 中的某个字符替换为任意其他字符。请使用最少的替换操作次数得到字符串 t 的一个字母异位词。如果有多个字母异位词都能通过最少的操作得到，请得到字典序最小的那个。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "字符串的字典序就是我们熟悉的“字典”顺序。形式化地说，对于长度均为 n 的字符串 p 和 q，如果存在某个 k（1 ≤ k ≤ n），使得 p1 = q1，p2 = q2，…，p{k−1} = q{k−1}，且 pk < qk，则称字符串 p 的字典序小于字符串 q。这里字符串中的字符从 1 开始编号。字符串中的字符按照字母表顺序进行比较。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 字母异位词",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

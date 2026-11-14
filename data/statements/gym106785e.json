@@ -1,0 +1,130 @@
+{
+  "code": "GYM106785E",
+  "letter": "E",
+  "title": "E. Non-Similar Paths",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106785/problem/E",
+  "difficulty": "*1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "After years of research, you (Nick Belov) finally find your favorite biking place. You want to explore as many different bike paths as possible. However, you don't see a difference in exploring two bike paths that are very similar. You want to know how many bike paths you can explore such that each path is non-similar to any of your previously explored paths.",
+      "You are given an $$$n \\times m$$$ grid. Each cell is either passable or impassable.",
+      "A valid path starts at the top-left cell $$$(1,1)$$$ and ends at the bottom-right cell $$$(n,m)$$$. At each step, you may move either right or down, and every cell visited by the path must be passable.",
+      "Represent each valid path by a string containing $$$m-1$$$ characters 'R' and $$$n-1$$$ characters 'D', denoting moves right and down, respectively.",
+      "Two valid paths $$$a$$$ and $$$b$$$ are called similar if there exists a sequence of valid paths $$$a=q_1,q_2,\\ldots,q_{|q|}=b$$$ such that, for every $$$1 \\le j  \\lt  |q|$$$, the paths $$$q_j$$$ and $$$q_{j+1}$$$ differ in exactly 2 adjacent positions.",
+      "![](https://espresso.codeforces.com/dc05613cc00e4fb5d611943af640e0407c59d8e5.png)",
+      "Let $$$S$$$ be a set of valid paths such that no two distinct paths in $$$S$$$ are similar.",
+      "Find the maximum possible size of $$$S$$$. Since the answer may be large, output it modulo $$$998\\,244\\,353$$$."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases $$$t$$$ ($$$1 \\le t \\le 10^5$$$). The description of the test cases follows.",
+      "The first line of each test case contains two integers $$$n$$$ and $$$m$$$ $$$(1 \\le n,m \\le 10^6, 2 \\le n \\cdot m \\le 10^6)$$$ — the number of rows and columns of the grid.",
+      "Each of the next $$$n$$$ lines contains a string of length $$$m$$$ describing one row of the grid.",
+      "A '.' denotes a passable cell, and a '#' denotes an impassable cell.",
+      "It is guaranteed that the sum of $$$n \\cdot m$$$ over all test cases does not exceed $$$10^6$$$."
+    ],
+    "output": [
+      "For each test case, output one integer — the maximum possible size of $$$S$$$, modulo $$$998\\,244\\,353$$$."
+    ],
+    "note": [
+      "In the first test case (same as second picture), here is a possible set $$$S$$$:",
+      "$$$\\{\\texttt{RRRRDDDD},\\texttt{DDDDRRRR}\\}$$$",
+      "In the second test case, the starting cell is impassable so there are no valid paths.",
+      "In the third and fourth test cases there is only $$$1$$$ valid path."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n5 5\n.....\n.....\n..#..\n.....\n.....\n2 2\n#.\n..\n3 2\n.#\n..\n#.\n1 10\n..........",
+      "output": "2\n0\n1\n1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "经过多年的研究，你（Nick Belov）终于找到了自己最喜欢的骑行地点。你想尽可能多地探索不同的自行车道。然而，对于两条非常相似的自行车道，你认为探索它们并没有区别。你想知道，在保证每条自行车道都与之前探索过的任意一条不相似的情况下，你最多可以探索多少条自行车道。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个 $$$n \\times m$$$ 网格。每个单元格要么可通行，要么不可通行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一条合法路径从左上角单元格 $$$(1,1)$$$ 出发，最终到达右下角单元格 $$$(n,m)$$$。每一步可以向右或向下移动，且路径经过的每个单元格都必须是可通行的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "用一个包含 $$$m-1$$$ 个字符 ‘R’ 和 $$$n-1$$$ 个字符 ‘D’ 的字符串表示每条合法路径，分别表示向右和向下移动。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在一系列合法路径 $$$a=q_1,q_2,\\ldots,q_{|q|}=b$$$，使得对于每个 $$$1 \\le j  \\lt  |q|$$$，路径 $$$q_j$$$ 和 $$$q_{j+1}$$$ 恰好在 2 个相邻位置上不同，则称两个合法路径 $$$a$$$ 和 $$$b$$$ 相似。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/dc05613cc00e4fb5d611943af640e0407c59d8e5.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "设 $$$S$$$ 是一个有效路径集合，且 $$$S$$$ 中任意两条不同的路径都不相似。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "求 $$$S$$$ 的最大可能大小。由于答案可能很大，请输出对 $$$998\\,244\\,353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 $$$t$$$($$$1 \\le t \\le 10^5$$$)。接下来是各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 $$$n$$$ 和 $$$m$$$ $$$(1 \\le n,m \\le 10^6, 2 \\le n \\cdot m \\le 10^6)$$$，表示网格的行数和列数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 $$$n$$$ 行中，每行包含一个长度为 $$$m$$$ 的字符串，用于描述网格中的一行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "“.”表示可通行的单元格，“#”表示不可通行的单元格。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 $$$n \\cdot m$$$ 的总和不超过 $$$10^6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数——$$$S$$$ 的最大可能大小，对 $$$998\\,244\\,353$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中(与第二张图片相同)，下面是一组可能的 $$$S$$$：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$\\{\\texttt{RRRRDDDD},\\texttt{DDDDRRRR}\\}$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，起始单元格无法通行，因此不存在有效路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三和第四个测试用例中只有 $$$1$$$ 条有效路径。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 不相似的路径",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

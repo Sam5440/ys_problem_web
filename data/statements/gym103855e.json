@@ -1,0 +1,95 @@
+{
+  "code": "GYM103855E",
+  "letter": "E",
+  "title": "E. RPS Bubble Sort",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103855/problem/E",
+  "difficulty": "*2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Yihwan is a 5-year-old genius who enjoys rock-paper-scissors. He wanted to play rock-paper-scissors alone at his house, so he showed his creativity and made a game using some cards.",
+      "Yihwan places $$$N$$$ cards, each with one of scissors, rock, or paper, on positions $$$1, 2, \\ldots, N$$$. Then, for each of $$$i = 1, 2, \\ldots, N - 1$$$ in increasing order, Yihwan swaps the card at positions $$$i$$$ and $$$i + 1$$$ if the card in the $$$i$$$-th position beats the card in the $$$i+1$$$-th position. As the process of the game is similar to bubble sort, Yihwan named this game 'Rock-paper-scissors Bubble Sort'. The win-lose relationship of the cards is as follows:",
+      "A card with scissors beats a card with paper.",
+      "A card with paper beats a card with rock.",
+      "A card with rock beats a card with scissors.",
+      "![](https://espresso.codeforces.com/85b1e2c85821cb1fdd1f9420faf6a1cd05296af0.png)",
+      "Yihwan is very good at calculating, so he played this game $$$T$$$ times and went to sleep. However, while Yihwan was sleeping, the cards were accidentally shuffled. Fortunately, since Yihwan is a genius with excellent memory, he remembered the arrangement of the initial cards before the game. However, he couldn't remember the final arrangement of cards after $$$T$$$ games and now needs your help.",
+      "Please help Yihwan by restoring the final arrangement of cards after playing the game $$$T$$$ times."
+    ],
+    "input": [
+      "The first line contains two integers denoting the number of cards $$$N$$$ ($$$ 2 \\leq N \\leq 500\\,000 $$$) and the number of times $$$T$$$ ($$$1 \\leq T \\leq 1\\,000\\,000\\,000$$$) Yihwan played the game.",
+      "The second line contains a string of length $$$N$$$. The $$$i$$$-th character indicates the type of card placed at the $$$i$$$-th position. A card with rock is R, a card with scissors is S, and a card with paper is P."
+    ],
+    "output": [
+      "Output the string of length $$$N$$$ after playing the game $$$T$$$ times."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 1\nRSPSP",
+      "output": "SRPPS"
+    },
+    {
+      "input": "10 3\nRSRRRRRRSR",
+      "output": "SRRRRSRRRR"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Yihwan 是一位喜欢玩石头剪刀布的 5 岁天才。他想在家里独自玩石头剪刀布，于是发挥创意，用一些卡片制作了一个游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Yihwan 将 $$$N$$$ 张卡片放置在位置 $$$1, 2, \\ldots, N$$$ 上，每张卡片上写有剪刀、石头或布中的一种。然后，对于按递增顺序排列的每个 $$$i = 1, 2, \\ldots, N - 1$$$，如果位于 $$$i$$$ 号位置的卡片能赢过位于 $$$i+1$$$ 号位置的卡片，Yihwan 就交换位置 $$$i$$$ 和 $$$i + 1$$$ 上的卡片。由于这个游戏的过程类似于冒泡排序，Yihwan 将这个游戏命名为“石头剪刀布冒泡排序”。卡片之间的胜负关系如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "写有剪刀的卡片能赢过写有布的卡片。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "写有布的卡片能赢过写有石头的卡片。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "写有石头的卡片能赢过写有剪刀的卡片。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/85b1e2c85821cb1fdd1f9420faf6a1cd05296af0.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Yihwan 很擅长计算，因此他玩了这个游戏 $$$T$$$ 次后便睡着了。然而，在 Yihwan 睡觉期间，卡牌不小心被打乱了。幸运的是，Yihwan 记忆力超群，他记得游戏开始前卡牌的初始排列。不过，他想不起进行 $$$T$$$ 次游戏后的卡牌最终排列，现在需要你的帮助。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Yihwan 还原进行 $$$T$$$ 次游戏后的卡牌最终排列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数，分别表示卡牌数量 $$$N$$$($$$ 2 \\leq N \\leq 500\\,000 $$$)以及 Yihwan 玩这个游戏的次数 $$$T$$$($$$1 \\leq T \\leq 1\\,000\\,000\\,000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个长度为 $$$N$$$ 的字符串。第 $$$i$$$ 个字符表示放置在第 $$$i$$$ 个位置的卡牌类型。石头牌用 R 表示，剪刀牌用 S 表示，布牌用 P 表示。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出进行 $$$T$$$ 次游戏后长度为 $$$N$$$ 的字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. RPS 冒泡排序",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

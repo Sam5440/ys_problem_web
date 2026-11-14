@@ -1,0 +1,95 @@
+{
+  "code": "GYM104974N",
+  "letter": "N",
+  "title": "N. Memory Problems",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104974/problem/N",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Danny always suffers because of his terrible memory. Last time, he forgot the anniversary of his couple, and Dannita got extremely mad at him. Needless to say, he spent a terrible week after that.",
+      "This time, Dannita gave him an array A$$$A$$$ as a present for Saint Valentine. Unfortunately, Danny lost it, and he can't remember its elements. He is in big trouble if he doesn't get it back!!",
+      "Luckily, Danny remembers a few facts about the array.",
+      "First of all, he remembers that it is a permutation of the numbers from 0$$$0$$$ to N−1$$$N-1$$$. That means that it contains every number from 0$$$0$$$ to N−1$$$N-1$$$ exactly once.",
+      "Secondly, he remembers that the array has the following property. Let B$$$B$$$ be the array constructed as follows: bi=ai xor 1$$$b_i = a_i \\text{ xor } 1$$$ for each 1≤i≤N$$$1 \\leq i \\leq N$$$, where xor refers to the bitwise xor operation. Let inv(A)$$$inv(A)$$$ be the number of inversions of the array A$$$A$$$ and inv(B)$$$inv(B)$$$ be the number of inversions of the array B$$$B$$$ (the number of inversions is the number of pairs (i,j)$$$(i,j)$$$ such that i<j$$$i \\lt j$$$ and ai>aj$$$a_i  \\gt  a_j$$$ ). Danny remembers the difference between inv(B)$$$inv(B)$$$ and inv(A)$$$inv(A)$$$. In other words, Danny remembers an integer D$$$D$$$ where D=inv(B)−inv(A)$$$D = inv(B) - inv(A)$$$.",
+      "Thirdly, Danny remembers that for all 0≤x≤N−1$$$0 \\leq x \\leq N-1$$$, x$$$x$$$ and x xor 1$$$x \\text{ xor } 1$$$ are NOT adjacent in the array A.",
+      "Can you help Danny find the number of possible arrays A that satisfy all these conditions"
+    ],
+    "input": [
+      "The first and only line of input contains two integers N$$$N$$$ and D$$$D$$$ (1≤N≤105,0≤|D|≤1018$$$1 \\leq N \\leq 10^5, 0 \\leq |D| \\leq 10^{18}$$$)"
+    ],
+    "output": [
+      "A single integer: the number of arrays that satisfy the conditions.",
+      "Since it can be very large, print the answer modulo 998244353$$$998244353$$$."
+    ],
+    "note": [
+      "The four possible arrays are [0,3,1,2],[1,2,0,3],[2,1,3,0], and [3,0,2,1]$$$[0, 3, 1, 2], [1, 2, 0, 3], [2, 1, 3, 0], \\text{ and } [3, 0, 2, 1]$$$"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 0",
+      "output": "4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Danny 总是因为糟糕的记忆力而受苦。上次，他忘记了自己和伴侣的纪念日，Dannita 对他非常生气。不用说，那之后的一周他过得十分糟糕。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这一次，Dannita 在圣瓦伦丁节送给他一个数组 A$$$A$$$ 作为礼物。不幸的是，Danny 把它弄丢了，而且记不起其中的元素。如果他不能找回它，那可就麻烦大了！！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "幸运的是，Danny 还记得关于这个数组的一些事实。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，他记得这是一个由 0$$$0$$$ 到 N−1$$$N-1$$$ 的数字组成的排列。这意味着它恰好包含从 0$$$0$$$ 到 N−1$$$N-1$$$ 的每个数字一次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其次，他记得该数组具有如下性质。令 B$$$B$$$ 表示按如下方式构造的数组：对于每个 1≤i≤N$$$1 \\leq i \\leq N$$$，令 bi=ai xor 1$$$b_i = a_i \\text{ xor } 1$$$，其中 xor 表示按位异或运算。令 inv(A)$$$inv(A)$$$ 表示数组 A$$$A$$$ 的逆序对数量，令 inv(B)$$$inv(B)$$$ 表示数组 B$$$B$$$ 的逆序对数量(逆序对的数量是满足 i<j$$$i \\lt j$$$ 且 ai>aj$$$a_i  \\gt  a_j$$$ 的数对 (i,j)$$$(i,j)$$$ 的数量)。Danny 记得 inv(B)$$$inv(B)$$$ 与 inv(A)$$$inv(A)$$$ 之差。换句话说，Danny 记得一个整数 D$$$D$$$，其中 D=inv(B)−inv(A)$$$D = inv(B) - inv(A)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三，他还记得，对于所有 0≤x≤N−1$$$0 \\leq x \\leq N-1$$$，x$$$x$$$ 与 x xor 1$$$x \\text{ xor } 1$$$ 在数组 A 中都不相邻。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你能帮助 Danny 找出满足所有这些条件的数组 A 的可能数量吗？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行也是唯一一行包含两个整数 N$$$N$$$ 和 D$$$D$$$(1≤N≤105，0≤|D|≤1018$$$1 \\leq N \\leq 10^5, 0 \\leq |D| \\leq 10^{18}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "一个整数：满足条件的数组数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于答案可能非常大，请输出答案对 998244353$$$998244353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "这四个可能的数组为 [0,3,1,2]、[1,2,0,3]、[2,1,3,0] 和 [3,0,2,1]$$$[0, 3, 1, 2], [1, 2, 0, 3], [2, 1, 3, 0], \\text{ and } [3, 0, 2, 1]$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "N. 记忆问题",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

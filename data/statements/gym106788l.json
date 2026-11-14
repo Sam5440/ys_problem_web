@@ -1,0 +1,100 @@
+{
+  "code": "GYM106788L",
+  "letter": "L",
+  "title": "L. Laundry Lines",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106788/problem/L",
+  "difficulty": "*1900",
+  "timeLimit": "12 s",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/9a6decbd7b8e3176b8fe34b61db95f5a06225057.png)",
+      "Image by Mac, from commons.wikimedia.org",
+      "As you often need to do, you are about to hang up your laundry. Having recently moved into a tiny hole of an apartment, you have only two laundry lines, both attached to the same flimsy drying rack, which tips over if one line carries much more weight than the other.",
+      "If you start by hanging three shirts on the same line, it might just tip over and you have to start all over again. So you must be careful about the order and manner in which you hang the laundry.",
+      "This means you pick up the laundry, one piece at a time, in an order of your choosing, and hang that piece on one of the two lines. Once a piece is hung, it stays where it is.",
+      "At any moment, the imbalance is the absolute difference between the total weights on the two lines. You want to hang all the laundry so that the largest imbalance occurring during the process is as small as possible.",
+      "Trial and error would be a very wasteful use of time, so now it is time to waste time on making an involved algorithm to take care of it instead.",
+      "For example, suppose you have four pieces of laundry, of weights $$$100$$$, $$$120$$$, $$$200$$$, and $$$300$$$ grams. Hanging the $$$300$$$ first gives an imbalance of $$$300$$$ straight away, but you can do better: hang the $$$120$$$ on the first line (imbalance $$$120$$$), then the $$$300$$$ on the second line (imbalance $$$180$$$), then the $$$200$$$ on the first line (imbalance $$$20$$$), and finally the $$$100$$$ on the second line (imbalance $$$80$$$). The largest imbalance during this process is $$$180$$$, which is optimal."
+    ],
+    "input": [
+      "The input consists of:",
+      "One line with an integer $$$n$$$ ($$$1 \\leq n \\leq 16$$$), the number of pieces of laundry.",
+      "One line with $$$n$$$ integers $$$w_1, \\dots, w_n$$$ ($$$1 \\leq w_i \\leq 1\\,000$$$), the weights of the pieces of laundry in grams."
+    ],
+    "output": [
+      "Output the smallest possible value of the largest imbalance that occurs while hanging up all the laundry."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n200 400 200 100",
+      "output": "200"
+    },
+    {
+      "input": "7\n100 100 900 500 500 1000 400",
+      "output": "500"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/9a6decbd7b8e3176b8fe34b61db95f5a06225057.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "图片由 Mac 制作，来源于 commons.wikimedia.org。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "正如你经常需要做的那样，你准备晾晒衣物。最近搬进了一间狭小的公寓后，你只有两根晾衣绳，而且它们都系在同一个不太牢固的晾衣架上；如果其中一根绳子承受的重量比另一根大得多，晾衣架就会翻倒。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果一开始就把三件衬衫挂在同一条线上，晾衣架可能会倾倒，你就不得不重新开始。因此，你必须谨慎安排晾衣服的顺序和方式。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这意味着你需要按照自己选择的顺序，一次拿起一件衣物，并将其挂到两条晾衣绳中的一条上。一旦某件衣物被挂上去，就会一直保持在原处。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在任意时刻，不平衡度是两条线上的总重量之差的绝对值。你需要将所有衣物挂上去，使整个过程中出现的不平衡度最大值尽可能小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "反复试错会非常浪费时间，所以现在该花时间编写一个复杂的算法来处理它了。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，假设你有四件衣物，重量分别为 $$$100$$$、$$$120$$$、$$$200$$$ 和 $$$300$$$ 克。先挂上 $$$300$$$ 会立刻产生 $$$300$$$ 的不平衡，但你可以做得更好：先将 $$$120$$$ 挂在第一根线上(不平衡为 $$$120$$$)，然后将 $$$300$$$ 挂在第二根线上(不平衡为 $$$180$$$)，接着将 $$$200$$$ 挂在第一根线上(不平衡为 $$$20$$$)，最后将 $$$100$$$ 挂在第二根线上(不平衡为 $$$80$$$)。这一过程中最大的不平衡为 $$$180$$$，这是最优的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入包括：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一行包含一个整数 $$$n$$$($$$1 \\leq n \\leq 16$$$)，表示待洗衣物的件数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一行包含 $$$n$$$ 个整数 $$$w_1, \\dots, w_n$$$($$$1 \\leq w_i \\leq 1\\,000$$$)，表示各件衣物的重量(单位：克)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出晾完所有衣物过程中出现的最大不平衡度的最小可能值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "L. 晾衣绳",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

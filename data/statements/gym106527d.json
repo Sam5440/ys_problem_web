@@ -1,0 +1,94 @@
+{
+  "code": "GYM106527D",
+  "letter": "D",
+  "title": "D. Directed 67",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106527/problem/D",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "As a waterpark director, you have to plan the rides. You already know that your rides will look like a directed graph with n$$$n$$$ vertices and m$$$m$$$ edges. However, you don't know yet how long each of the edges will be, which is determined by the edge's weight. Based on the materials you have, each weight should be one of the digits d1,d2,…,dk$$$d_1, d_2, \\ldots, d_k$$$.",
+      "The weight of a directed path is the sum of the digits assigned to the edges of the path (edges in a path are allowed to repeat).",
+      "You know that if there is a directed path of weight w$$$w$$$ divisible by 67$$$67$$$, it will become the only ride used, and you want to avoid that. Provide the assignment, where there is no path with weight divisible by 67, or determine there is no such assignment."
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (1≤n,m≤200000$$$1 \\le n, m \\le 200000$$$).",
+      "The second line contains a non-empty string s$$$s$$$ consisting of distinct characters from 1 to 9. These are the allowed digits di$$$d_i$$$ (1≤di≤9$$$1 \\le d_i \\le 9$$$).",
+      "Each of the next m$$$m$$$ lines contains two integers ui$$$u_i$$$ and vi$$$v_i$$$ (1≤ui,vi≤n$$$1 \\le u_i, v_i \\le n$$$). This means that there is a directed edge from ui$$$u_i$$$ to vi$$$v_i$$$. Multiple edges and self-loops are allowed."
+    ],
+    "output": [
+      "If there is no valid assignment, print NO.",
+      "Otherwise, print YES on the first line.",
+      "On the second line print m$$$m$$$ integers a1,a2,…,am$$$a_1, a_2, \\ldots, a_m$$$, where ai$$$a_i$$$ is the digit assigned to the i$$$i$$$-th edge. Each ai$$$a_i$$$ must be one of the allowed digits.",
+      "If there are several valid assignments, print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 1\n3\n1 2",
+      "output": "YES\n3"
+    },
+    {
+      "input": "4 3\n679\n1 2\n1 3\n3 4",
+      "output": "YES\n6\n7\n7"
+    },
+    {
+      "input": "3 3\n123\n1 2\n2 3\n3 1",
+      "output": "NO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "作为水上乐园的负责人，你需要规划游乐设施。你已经知道游乐设施将呈现为一个包含 n$$$n$$$ 个顶点和 m$$$m$$$ 条边的有向图。然而，你还不知道每条边的长度，而边的长度由其权值决定。根据你拥有的材料，每个权值都应当是数字 d1、d2、…、dk$$$d_1, d_2, \\ldots, d_k$$$ 中的一个。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一条有向路径的权值等于分配给该路径上各条边的数字之和（路径中的边允许重复）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你知道，如果存在一条权值为 w$$$w$$$ 且能被 67$$$67$$$ 整除的有向路径，那么它将成为唯一使用的乘车路线，而你想要避免这种情况。请给出一种不存在权值能被 67 整除的路径的赋值方案，或者判断不存在这样的赋值方案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤200000$$$1 \\le n, m \\le 200000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个非空字符串 s$$$s$$$，由 1 到 9 中互不相同的字符组成。这些字符是允许使用的数字 di$$$d_i$$$(1≤di≤9$$$1 \\le d_i \\le 9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中的每一行包含两个整数 ui$$$u_i$$$ 和 vi$$$v_i$$$(1≤ui,vi≤n$$$1 \\le u_i, v_i \\le n$$$)。这表示存在一条从 ui$$$u_i$$$ 指向 vi$$$v_i$$$ 的有向边。允许存在重边和自环。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果不存在有效的赋值方案，输出 NO。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，在第一行输出 YES。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行输出 m$$$m$$$ 个整数 a1,a2,…,am$$$a_1, a_2, \\ldots, a_m$$$，其中 ai$$$a_i$$$ 是分配给第 i$$$i$$$ 条边的数字。每个 ai$$$a_i$$$ 必须是允许的数字之一。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果存在多个合法赋值，输出其中任意一种。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 有向 67",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "code": "CF141D",
+  "letter": "D",
+  "title": "D. Take-off Ramps",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/141/D",
+  "difficulty": "2300",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Vasya participates in a ski race along the X axis. The start is at point 0, and the finish is at L, that is, at a distance L meters from the start in the positive direction of the axis. Vasya has been training so hard that he can run one meter in exactly one second.",
+      "Besides, there are n take-off ramps on the track, each ramp is characterized by four numbers:",
+      "xi represents the ramp's coordinate",
+      "di represents from how many meters Vasya will land if he goes down this ramp",
+      "ti represents the flight time in seconds",
+      "pi is the number, indicating for how many meters Vasya should gather speed to get ready and fly off the ramp. As Vasya gathers speed, he should ski on the snow (that is, he should not be flying), but his speed still equals one meter per second.",
+      "Vasya is allowed to move in any direction on the X axis, but he is prohibited to cross the start line, that is go to the negative semiaxis. Vasya himself chooses which take-off ramps he will use and in what order, that is, he is not obliged to take off from all the ramps he encounters. Specifically, Vasya can skip the ramp. It is guaranteed that xi + di ≤ L, that is, Vasya cannot cross the finish line in flight.",
+      "Vasya can jump from the ramp only in the positive direction of X axis. More formally, when using the i-th ramp, Vasya starts gathering speed at point xi - pi, jumps at point xi, and lands at point xi + di. He cannot use the ramp in opposite direction.",
+      "Your task is to find the minimum time that Vasya will spend to cover the distance."
+    ],
+    "input": [
+      "The first line contains two integers n and L (0 ≤ n ≤ 105, 1 ≤ L ≤ 109). Then n lines contain the descriptions of the ramps, each description is on a single line. Each description is a group of four non-negative integers xi, di, ti, pi (0 ≤ xi ≤ L, 1 ≤ di, ti, pi ≤ 109, xi + di ≤ L)."
+    ],
+    "output": [
+      "Print in the first line the minimum time in seconds Vasya needs to complete the track. Print in the second line k — the number of take-off ramps that Vasya needs to use, and print on the third line of output k numbers the number the take-off ramps Vasya used in the order in which he used them. Print each number exactly once, separate the numbers with a space. The ramps are numbered starting from 1 in the order in which they are given in the input."
+    ],
+    "note": [
+      "In the first sample, Vasya cannot use ramp 2, because then he will need to gather speed starting from point -3, which is not permitted by the statement. The optimal option is using ramp 1, the resulting time is: moving to the point of gathering speed + gathering speed until reaching the takeoff ramp + flight time + moving to the finish line = 0 + 5 + 5 + 5 = 15.",
+      "In the second sample using ramp 1 is not optimal for Vasya as t1 > d1. The optimal option is using ramp 2, the resulting time is: moving to the point of gathering speed + gathering speed until reaching the takeoff ramp + flight time + moving to the finish line = 14 + 1 + 1 + 0 = 16."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 20\n5 10 5 5\n4 16 1 7",
+      "output": "15\n1\n1"
+    },
+    {
+      "input": "2 20\n9 8 12 6\n15 5 1 1",
+      "output": "16\n1\n2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Vasya 参加了一场沿 X 轴进行的滑雪比赛。起点位于 0 点，终点位于 L 点，也就是说，终点在坐标轴正方向上距离起点 L 米处。Vasya 训练得非常刻苦，因此他恰好可以在一秒内跑一米。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，赛道上还有 n 个起跳坡道，每个坡道由四个数表示：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "xi 表示该坡道的坐标",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "d_i 表示如果 Vasya 沿着这条跳台下滑，他将在距离起点多少米处落地",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "t_i 表示飞行时间，单位为秒",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "p_i 表示 Vasya 应助跑多少米来加速，以做好准备并飞离跳台。Vasya 加速时应在雪地上滑行（也就是说，他不应处于飞行状态），但他的速度仍然等于每秒 1 米。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vasya 可以沿 X 轴向任意方向移动，但禁止越过起始线，即不能进入负半轴。Vasya 可以自行选择使用哪些起跳台以及使用顺序，也就是说，他不必从遇到的所有跳台起跳。具体来说，Vasya 可以跳过某个跳台。保证 x_i + d_i ≤ L，即 Vasya 在飞行过程中无法越过终点线。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vasya 只能沿 X 轴的正方向从跳台起跳。更形式化地说，使用第 i 个跳台时，Vasya 从点 x_i - p_i 开始加速，在点 x_i 起跳，并在点 x_i + d_i 落地。他不能反方向使用跳台。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是求出 Vasya 走完这段距离所需的最短时间。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 L（0 ≤ n ≤ 10^5，1 ≤ L ≤ 10^9）。接下来 n 行包含坡道的描述，每个描述占一行。每个描述由四个非负整数 xi、di、ti、pi 组成（0 ≤ xi ≤ L，1 ≤ di、ti、pi ≤ 10^9，xi + di ≤ L）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出 Vasya 完成赛道所需的最短时间（单位：秒）。第二行输出 k——Vasya 需要使用的起飞坡道数量；第三行输出 k 个数字，表示 Vasya 按使用顺序使用的起飞坡道编号。每个编号必须恰好输出一次，数字之间用空格分隔。坡道按照输入中的顺序从 1 开始编号。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Vasya 不能使用 2 号坡道，因为这样他就需要从 -3 点开始加速，而题面不允许这样做。最优方案是使用 1 号坡道，所得时间为：移动到加速点 + 加速直到到达起飞坡道 + 飞行时间 + 移动到终点 = 0 + 5 + 5 + 5 = 15。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，使用 1 号坡道对 Vasya 来说不是最优的，因为 t1 > d1。最优方案是使用 2 号坡道，所得时间为：移动到加速点 + 加速直到到达起飞坡道 + 飞行时间 + 移动到终点 = 14 + 1 + 1 + 0 = 16。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 起跳坡道",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

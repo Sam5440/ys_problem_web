@@ -1,0 +1,180 @@
+{
+  "code": "GYM105401J",
+  "letter": "J",
+  "title": "J. Running in the Plane",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105401/problem/J",
+  "difficulty": "*2200",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 mebibytes",
+  "sections": {
+    "legend": [
+      "You are given a set S={(a1,b1),(a2,b2),…,(an,bn)}$$$S = \\{(a_1, b_1), (a_2, b_2), \\dots, (a_n, b_n)\\}$$$ of n$$$n$$$ points in the plane. All coordinates of S$$$S$$$ are integers.",
+      "A set T={(c1,d1),(c2,d2),…,(cm,dm)}$$$T = \\{(c_1, d_1), (c_2, d_2), \\dots, (c_m, d_m)\\}$$$ of m$$$m$$$ 2-dimensional vectors is called a good set of S$$$S$$$ if it satisfies the following:",
+      "There exists a nonempty finite sequence ((x0,y0),(x1,y1),…,(xl,yl))$$$((x_0, y_0), (x_1, y_1), \\dots, (x_l, y_l))$$$ of points in the plane such that   (x0,y0)=(0,0)$$$(x_0, y_0) = (0, 0)$$$.",
+      "For all points p$$$p$$$ in S$$$S$$$, there exists an integer i$$$i$$$ (0≤i≤l$$$0 \\le i \\le l$$$) such that (xi,yi)=p$$$(x_i, y_i) = p$$$.",
+      "For all integers i$$$i$$$ (0≤i<l$$$0 \\le i  \\lt  l$$$), the vector (xi+1−xi,yi+1−yi)$$$(x_{i+1} - x_i, y_{i+1} - y_i)$$$ is in T$$$T$$$.",
+      "For all integers i$$$i$$$ (1≤i≤m$$$1 \\le i \\le m$$$), two numbers ci$$$c_i$$$ and di$$$d_i$$$ are integers between −1018$$$-10^{18}$$$ and 1018$$$10^{18}$$$ inclusive.",
+      "Find any good set of minimum size."
+    ],
+    "input": [
+      "The input consists of multiple test cases. The first line contains an integer Q$$$Q$$$ — the number of test cases. The description of the test cases follows. For each test case:",
+      "The first line of the test case contains an integer n$$$n$$$ — the number of points in S$$$S$$$.",
+      "The i$$$i$$$-th of the next n$$$n$$$ lines contains two integers ai$$$a_i$$$ and bi$$$b_i$$$ — the coordinates of each point in S$$$S$$$."
+    ],
+    "output": [
+      "For each test case:",
+      "Let T={(c1,d1),(c2,d2),…,(cm,dm)}$$$T = \\{(c_1, d_1), (c_2, d_2), \\dots, (c_m, d_m)\\}$$$ be a minimum-size good set of S$$$S$$$.",
+      "In the first line of the test case, print an integer m$$$m$$$ — the number of vectors in T$$$T$$$.",
+      "In the i$$$i$$$-th of the next m$$$m$$$ lines, print two integers ci$$$c_i$$$ and di$$$d_i$$$ — the coordinates of each vector.",
+      "If there are multiple solutions, print any of them.",
+      "It can be proved that, under the constraints of this problem, a good set of S$$$S$$$ with size at most 10×n$$$10 \\times n$$$ always exists.",
+      "1≤Q≤50000$$$1 \\le Q \\le 50\\,000$$$",
+      "The sum of n$$$n$$$ over all test cases does not exceed 105$$$10^5$$$.",
+      "2≤n≤105$$$2 \\le n \\le 10^5$$$",
+      "−108≤ai,bi≤108$$$-10^8 \\le a_i, b_i \\le 10^8$$$ (1≤i≤n$$$1 \\le i \\le n$$$)",
+      "(ai,bi)≠(aj,bj)$$$(a_i, b_i) \\ne (a_j, b_j)$$$ (1≤i<j≤n$$$1 \\le i  \\lt  j \\le n$$$)",
+      "m≥0$$$m \\ge 0$$$",
+      "−1018≤ci,di≤1018$$$-10^{18} \\le c_i, d_i \\le 10^{18}$$$ (1≤i≤m$$$1 \\le i \\le m$$$)",
+      "(ci,di)≠(cj,dj)$$$(c_i, d_i) \\ne (c_j, d_j)$$$ (1≤i<j≤m$$$1 \\le i  \\lt  j \\le m$$$)"
+    ],
+    "note": [
+      "In the first test case, T={(−10,10)}$$$T = \\{(-10,10)\\}$$$ is a minimum-size good set of S={(−30,30),(−50,50)}$$$S = \\{(-30,30), (-50,50)\\}$$$.",
+      "We can take a sequence ((0,0),(−10,10),(−20,20),(−30,30)_,(−40,40),(−50,50)_)$$$((0,0), (-10,10), (-20,20), \\underline{(-30,30)}, (-40,40), \\underline{(-50,50)})$$$. Here, the underlined points are in S$$$S$$$.",
+      "In the second test case, T={(1,0),(1,1)}$$$T = \\{(1,0), (1,1)\\}$$$ is a minimum-size good set of S={(2,1),(1,0),(4,1)}$$$S = \\{(2,1), (1,0), (4,1)\\}$$$.",
+      "We can take a sequence ((0,0),(1,0)_,(2,1)_,(3,1),(4,1)_)$$$((0,0), \\underline{(1,0)}, \\underline{(2,1)}, (3,1), \\underline{(4,1)})$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n2\n-30 30\n-50 50\n3\n2 1\n1 0\n4 1",
+      "output": "1\n-10 10\n2\n1 0\n1 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定平面上的一个点集 S={(a1,b1),(a2,b2),…,(an,bn)}$$$S = \\{(a_1, b_1), (a_2, b_2), \\dots, (a_n, b_n)\\}$$$，其中有 n$$$n$$$ 个点。S$$$S$$$ 中的所有坐标都是整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "若一个由 m$$$m$$$ 个二维向量组成的集合 T={(c1,d1),(c2,d2),…,(cm,dm)}$$$T = \\{(c_1, d_1), (c_2, d_2), \\dots, (c_m, d_m)\\}$$$ 是 S$$$S$$$ 的一个优良集合，则它满足以下条件：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "存在一个由平面上的点组成的非空有限序列 ((x0,y0),(x1,y1),…,(xl,yl))$$$((x_0, y_0), (x_1, y_1), \\dots, (x_l, y_l))$$$，满足 (x0,y0)=(0,0)$$$(x_0, y_0) = (0, 0)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 S$$$S$$$ 中的所有点 p$$$p$$$，存在一个整数 i$$$i$$$(0≤i≤l$$$0 \\le i \\le l$$$)，使得 (xi,yi)=p$$$(x_i, y_i) = p$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于所有整数 i$$$i$$$(0≤i<l$$$0 \\le i  \\lt  l$$$)，向量 (xi+1−xi,yi+1−yi)$$$(x_{i+1} - x_i, y_{i+1} - y_i)$$$ 属于 T$$$T$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于所有整数 i$$$i$$$(1≤i≤m$$$1 \\le i \\le m$$$)，两个数 ci$$$c_i$$$ 和 di$$$d_i$$$ 都是介于 −1018$$$-10^{18}$$$ 和 1018$$$10^{18}$$$ 之间(包括端点)的整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "求出任意一个大小最小的优良集合。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入包含多组测试用例。第一行包含一个整数 Q$$$Q$$$——测试用例的数量。接下来是各测试用例的描述。对于每个测试用例：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试用例的第一行包含一个整数 n$$$n$$$——S$$$S$$$ 中点的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行中的第 i$$$i$$$ 行包含两个整数 ai$$$a_i$$$ 和 bi$$$b_i$$$——S$$$S$$$ 中每个点的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "设 T={(c1,d1),(c2,d2),…,(cm,dm)}$$$T = \\{(c_1, d_1), (c_2, d_2), \\dots, (c_m, d_m)\\}$$$ 是 S$$$S$$$ 的一个大小最小的好集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在测试用例的第一行，输出一个整数 m$$$m$$$——T$$$T$$$ 中向量的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在接下来的 m$$$m$$$ 行中的第 i$$$i$$$ 行，输出两个整数 ci$$$c_i$$$ 和 di$$$d_i$$$——每个向量的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个解，输出任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，在本题的约束条件下，总是存在一个大小不超过 10×n$$$10 \\times n$$$ 的 good set S$$$S$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤Q≤50000$$$1 \\le Q \\le 50\\,000$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有测试用例中 n$$$n$$$ 的总和不超过 105$$$10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2≤n≤105$$$2 \\le n \\le 10^5$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "−108≤ai,bi≤108$$$-10^8 \\le a_i, b_i \\le 10^8$$$ (1≤i≤n$$$1 \\le i \\le n$$$)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(ai,bi)≠(aj,bj)$$$(a_i, b_i) \\ne (a_j, b_j)$$$ (1≤i<j≤n$$$1 \\le i  \\lt  j \\le n$$$)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "m≥0$$$m \\ge 0$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "−1018≤ci,di≤1018$$$-10^{18} \\le c_i, d_i \\le 10^{18}$$$ (1≤i≤m$$$1 \\le i \\le m$$$)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(ci,di)≠(cj,dj)$$$(c_i, d_i) \\ne (c_j, d_j)$$$ (1≤i<j≤m$$$1 \\le i  \\lt  j \\le m$$$)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，T={(−10,10)}$$$T = \\{(-10,10)\\}$$$ 是 S={(−30,30),(−50,50)}$$$S = \\{(-30,30), (-50,50)\\}$$$ 的一个大小最小的良好集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们可以取序列 ((0,0),(−10,10),(−20,20),(−30,30)_,(−40,40),(−50,50)_)$$$((0,0), (-10,10), (-20,20), \\underline{(-30,30)}, (-40,40), \\underline{(-50,50)})$$$。其中，带下划线的点属于 S$$$S$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，T={(1,0),(1,1)}$$$T = \\{(1,0), (1,1)\\}$$$ 是 S={(2,1),(1,0),(4,1)}$$$S = \\{(2,1), (1,0), (4,1)\\}$$$ 的一个大小最小的好集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们可以取一个序列 ((0,0),(1,0)_,(2,1)_,(3,1),(4,1)_)$$$((0,0), \\underline{(1,0)}, \\underline{(2,1)}, (3,1), \\underline{(4,1)})$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "J. 在平面上奔跑",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

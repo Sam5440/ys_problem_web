@@ -1,0 +1,129 @@
+{
+  "code": "GYM102365C",
+  "letter": "C",
+  "title": "C. Unjob Search",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102365/problem/C",
+  "difficulty": "*1400",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/cf18d3cd4ad34624266b773e5efcbe2717ae2718.png)",
+      "Aram got bored of having a job, so he quit and went off to the distant country of Lalaland.",
+      "Lalaland has $$$N$$$ cities with unexciting names of $$$1, 2,\\ldots, N$$$. There are $$$N-1$$$ rail lines connecting pairs of cities, making it possible to get from any city to any other. In other words, Lalaland is a tree.",
+      "Lalaland has something called an unjob. Unjobs are similar to jobs, except that people who have an unjob can't be fired, have no obligations, and don't get paid. This is exactly what Aram is looking for so he can prove theorems all day long.",
+      "The Lalaland government knows that the general public views these unjobs as somewhat unsavory, and they may also be attracting large numbers of foreigners into the country. Hence they passed a law requiring people with unjobs to live in faraway terminal cities: cities that are only connected to one rail line. The government hoped that this would keep people with unjobs far away from the center of their country.",
+      "Aram wants to go to a terminal city. Having never been to Lalaland, he asked his cosmopolitan friend David if he knows of a terminal city. David said no, but claimed to have travelled between every pair of cities of Lalaland and can remember if any given city was on the unique shortest sequence of rail lines between them. He lets Aram ask up to $$$N$$$ questions of the following form:",
+      "\"For cities $$$a$$$, $$$b$$$, and $$$c$$$, do you pass by city $$$b$$$ as you travel along the shortest path from $$$a$$$ to $$$c$$$?\"",
+      "If Aram asks more than $$$N$$$ questions, David will get tired and take a nap for who knows how long. Help Aram quickly find a terminal city!",
+      "Interaction",
+      "The first line of input from the judge contains a single integer $$$N$$$ ($$$3\\le N \\le 2\\,000$$$), the number of cities in Lalaland.",
+      "Following this, you may submit up to $$$N$$$ queries of the following forms:",
+      "? a b c — ($$$1\\le a, b, c \\le N$$$) which asks if city $$$b$$$ will be visited while taking the shortest set of rail lines from city $$$a$$$ to city $$$c$$$.",
+      "The judge will respond with either $$$1$$$ indicating that city $$$b$$$ is indeed between cities $$$a$$$ and $$$c$$$, or $$$0$$$ indicating that it is not.",
+      "At any time, you may submit an answer in the following form:",
+      "! x ($$$1\\le x \\le N$$$) — which means your program claims that $$$x$$$ is a terminal city.",
+      "After answering, your program must terminate immediately to get a verdict. Failing to follow this interaction protocol may result in unexpected errors.",
+      "If your input is malformed, the judge will output -1. Upon reading -1 your program should exit immediately to get a wrong answer verdict, otherwise you may get another error.",
+      "Please be sure to use the stream flushing operation after each query in order not to leave part of your output in the buffer. For example, in C++ you can use fflush(stdout) or end with cout <{}< endl or cout <{}< flush. In Java you can use System.out.flush(). In Python, you can use stdout.flush()."
+    ],
+    "input": [],
+    "output": [],
+    "note": [
+      "The sample has two terminal cities, $$$1$$$ and $$$3$$$. Either answer would be accepted."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n\n0\n\n1",
+      "output": " \n? 1 3 2\n\n? 3 2 1\n\n! 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/cf18d3cd4ad34624266b773e5efcbe2717ae2718.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Aram 厌倦了工作，于是辞职前往遥远的 Lalaland。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Lalaland 有 $$$N$$$ 座城市，它们的名字都是 $$$1, 2,\\ldots, N$$$。有 $$$N-1$$$ 条铁路连接着成对的城市，使得任意一座城市都可以到达任意另一座城市。换句话说，Lalaland 是一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Lalaland 有一种叫作 unjob 的东西。unjob 与工作类似，但拥有 unjob 的人不会被解雇，没有任何义务，也不会获得报酬。这正是 Aram 想要的，这样他就能整天证明定理了。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Lalaland 政府知道，公众认为这些非正式工作有些不体面，而且它们可能还吸引了大量外国人入境。因此，政府通过了一项法律，要求从事非正式工作的人居住在偏远的终点城市中：这类城市只与一条铁路相连。政府希望借此让从事非正式工作的人远离国家中心。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "阿拉姆想去一座终点城市。由于从未去过 Lalaland，他便询问见多识广的朋友大卫是否知道一座终点城市。大卫说不知道，但声称自己曾往返于 Lalaland 的每一对城市之间，并且记得给定的某座城市是否位于它们之间唯一的最短铁路线路上。他允许阿拉姆提出最多 $$$N$$$ 个如下形式的问题：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于城市 $$$a$$$、$$$b$$$ 和 $$$c$$$，当你沿着从 $$$a$$$ 到 $$$c$$$ 的最短路径行进时，会经过城市 $$$b$$$ 吗？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 Aram 提出超过 $$$N$$$ 个问题，David 会感到疲惫并打个不知要睡多久的盹。请帮助 Aram 快速找到一个终端城市！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "评测机输入的第一行包含一个整数 $$$N$$$($$$3\\le N \\le 2\\,000$$$)，表示 Lalaland 的城市数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在此之后，你最多可以提交 $$$N$$$ 次以下形式的查询：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "? a b c — ($$$1\\le a, b, c \\le N$$$)，它询问从城市 $$$a$$$ 到城市 $$$c$$$ 的最短铁路线路中是否会经过城市 $$$b$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "评测程序会回复 $$$1$$$，表示城市 $$$b$$$ 确实位于城市 $$$a$$$ 和城市 $$$c$$$ 之间；或者回复 $$$0$$$，表示并非如此。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在任意时刻，你都可以按照以下格式提交答案：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "! x ($$$1\\le x \\le N$$$) ——这意味着你的程序声称 $$$x$$$ 是一座终点城市。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "回答后，程序必须立即终止以获得判定结果。不遵守此交互协议可能导致意外错误。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你的输入格式错误，评测器将输出 -1。读到 -1 后，你的程序应立即退出以获得答案错误的判定，否则可能会出现其他错误。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请务必在每次查询后刷新输出流，以免部分输出仍留在缓冲区中。例如，在 C++ 中可以使用 fflush(stdout)，或者以 cout <{}< endl 或 cout <{}< flush 结束。在 Java 中可以使用 System.out.flush()。在 Python 中可以使用 stdout.flush()。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例中有两个终点城市：$$$1$$$ 和 $$$3$$$。输出其中任意一个答案都可以通过。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 非工作搜索",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

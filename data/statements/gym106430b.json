@@ -1,0 +1,114 @@
+{
+  "code": "GYM106430B",
+  "letter": "B",
+  "title": "B. Bessie And Rounding",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106430/problem/B",
+  "difficulty": "*1300",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Bessie is trying to convert a number X$$$X$$$ to Y$$$Y$$$.",
+      "In one operation, Bessie can choose an integer M$$$M$$$ (M≥1$$$M \\ge 1$$$) and round X$$$X$$$ to the nearest multiple of M$$$M$$$. If X$$$X$$$ is exactly in the middle of two multiples of M$$$M$$$, it is rounded up. Note that 0$$$0$$$ is a multiple of every number.",
+      "What is the least number of operations Bessie needs to perform to convert X$$$X$$$ to Y$$$Y$$$? Output this number, or −1$$$-1$$$ if it is impossible."
+    ],
+    "input": [
+      "The first line contains a single integer T$$$T$$$ (1≤T≤104$$$1 \\le T \\le 10^4$$$) — the number of test cases.",
+      "Each of the next T$$$T$$$ lines contains two integers X$$$X$$$ and Y$$$Y$$$ (1≤X,Y≤109$$$1 \\le X, Y \\le 10^9$$$) — the initial number and the target number."
+    ],
+    "output": [
+      "For each test case, output a single integer — the minimum number of operations required, or −1$$$-1$$$ if it is impossible."
+    ],
+    "note": [
+      "In the first testcase of the first sample, X=2$$$X=2$$$ and Y=5$$$Y=5$$$. Bessie can perform the following 2$$$2$$$ operations:",
+      "Choose M=4$$$M=4$$$. The multiples of 4$$$4$$$ are 0,4,8,…$$$0, 4, 8, \\dots$$$. X=2$$$X=2$$$ is exactly in the middle of 0$$$0$$$ and 4$$$4$$$, so it rounds up to 4$$$4$$$. Now X=4$$$X=4$$$.",
+      "Choose M=5$$$M=5$$$. The multiples of 5$$$5$$$ are 0,5,10,…$$$0, 5, 10, \\dots$$$. The nearest multiple to 4$$$4$$$ is 5$$$5$$$. Now X=5$$$X=5$$$.",
+      "It can be proven that it is impossible to do this in fewer than 2$$$2$$$ operations.",
+      "In the second testcase of the first sample, X=6$$$X=6$$$ and Y=4$$$Y=4$$$.",
+      "Choose M=5$$$M=5$$$. X=6$$$X=6$$$ is nearest to 5$$$5$$$. Now X=5$$$X=5$$$.",
+      "Choose M=4$$$M=4$$$. X=5$$$X=5$$$ is nearest to 4$$$4$$$. Now X=4$$$X=4$$$.",
+      "It can be proven that it is impossible to do this in fewer than 2$$$2$$$ operations."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 5\n6 4\n4 1\n3 3\n1 10",
+      "output": "2\n2\n-1\n0\n4"
+    },
+    {
+      "input": "7\n1 1000000000\n999999999 1\n999999999 10\n999999999 11\n999999999 12\n999999999 13\n1000000000 100",
+      "output": "30\n-1\n46\n46\n46\n46\n40"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Bessie 正试图将数字 X$$$X$$$ 转换为 Y$$$Y$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一次操作中，Bessie 可以选择一个整数 M$$$M$$$(M≥1$$$M \\ge 1$$$)，并将 X$$$X$$$ 舍入到最接近的 M$$$M$$$ 的倍数。如果 X$$$X$$$ 恰好位于 M$$$M$$$ 的两个倍数中间，则将其向上舍入。注意，0$$$0$$$ 是每个数的倍数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bessie 将 X$$$X$$$ 转换为 Y$$$Y$$$ 至少需要进行多少次操作？输出这个次数；如果不可能，则输出 −1$$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤104$$$1 \\le T \\le 10^4$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 T$$$T$$$ 行中，每行包含两个整数 X$$$X$$$ 和 Y$$$Y$$$(1≤X,Y≤109$$$1 \\le X, Y \\le 10^9$$$)——初始数和目标数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数——所需的最少操作次数；如果无法实现，则输出 −1$$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例的第一个测试用例中，X=2$$$X=2$$$，Y=5$$$Y=5$$$。Bessie 可以执行以下 2$$$2$$$ 次操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择 M=4$$$M=4$$$。4$$$4$$$ 的倍数为 0,4,8,…$$$0, 4, 8, \\dots$$$。X=2$$$X=2$$$ 恰好位于 0$$$0$$$ 和 4$$$4$$$ 的正中间，因此将其向上取整为 4$$$4$$$。此时 X=4$$$X=4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择 M=5$$$M=5$$$。5$$$5$$$ 的倍数为 0,5,10,…$$$0, 5, 10, \\dots$$$。距离 4$$$4$$$ 最近的倍数是 5$$$5$$$。此时 X=5$$$X=5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，用少于 2$$$2$$$ 次操作是不可能完成此操作的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第一个样例的第二组测试用例中，X=6$$$X=6$$$，Y=4$$$Y=4$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "选择 M=5$$$M=5$$$。X=6$$$X=6$$$ 最接近 5$$$5$$$。现在 X=5$$$X=5$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "选择 M=4$$$M=4$$$。X=5$$$X=5$$$ 最接近 4$$$4$$$。现在 X=4$$$X=4$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "可以证明，用少于 2$$$2$$$ 次操作是不可能完成此操作的。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Bessie 与舍入",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

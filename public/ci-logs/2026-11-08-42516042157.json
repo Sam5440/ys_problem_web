@@ -1,0 +1,572 @@
+{
+  "runId": 42516042157,
+  "event": "schedule",
+  "startedAt": "2026-11-08T19:38:31Z",
+  "savedAt": "2026-11-08T20:01:42.422Z",
+  "url": "https://github.com/Sam5440/ys_problem_web/actions/runs/42516042157",
+  "jobName": "update",
+  "failure": false,
+  "summary": {
+    "fetched": [
+      {
+        "code": "GYM106611H",
+        "title": "H. Hurricane Signal"
+      },
+      {
+        "code": "GYM106608M",
+        "title": "M. MEX Queries"
+      }
+    ],
+    "fetchFailed": [],
+    "aiByProblem": [
+      "GYM106611H",
+      "GYM106608M"
+    ],
+    "aiLines": [
+      "[3/4] ✗ GYM104012E — fetch/parse failed",
+      "[4/4] ✗ GYM106259I — fetch/parse failed",
+      "✓ title[0]: H. 飓风信号… [tokens in=229 out=36 cached=0]",
+      "✓ legend[0]: 兴盛气象台最近发现，一场新的飓风正逼近兴盛！… [tokens in=243 out=23 cached=0]",
+      "✓ legend[1]: 世界可以看作一个无限的二维笛卡尔平面，Heung Shing 位于坐标 $$$(H_x, H_y… [tokens in=362 out=156 cached=0]",
+      "✓ legend[2]: 考虑图 1 和图 2 所示的两个示例场景。在两幅图中，Heung Shing 位于点 $$$H$… [tokens in=295 out=84 cached=0]",
+      "✓ legend[3]: ![](https://espresso.codeforces.com/7d83b0507a7c… [tokens in=228 out=7 cached=0]",
+      "✓ legend[4]: ![](https://espresso.codeforces.com/67b795aadd11… [tokens in=228 out=7 cached=0]",
+      "✓ legend[5]: 图 1：图 2：$$$H = (3, 2), C = (2, 1), D = 45^\\circ,… [tokens in=239 out=51 cached=0]",
+      "✓ legend[6]: 当飓风进入蓝色圆圈时，将发布飓风信号。在图 1 中，未来是否发布飓风信号取决于飓风的实际轨迹，可… [tokens in=273 out=68 cached=0]",
+      "✓ legend[7]: Charlie 现在想知道飓风将在当前位置或未来轨迹上的某处触发飓风警报的概率。请帮助 Char… [tokens in=260 out=38 cached=0]",
+      "✓ input[0]: 第一行包含两个整数 $$$H_x$$$ 和 $$$H_y$$$ $$$(-1000 \\leq H… [tokens in=253 out=32 cached=0]",
+      "✓ input[1]: 第二行包含两个整数 $$$C_x$$$ 和 $$$C_y$$$ $$$(-1000 \\leq C… [tokens in=255 out=114 cached=0]",
+      "✓ input[2]: 第三行包含一个整数 $$$D$$$ $$$(0 \\leq D  \\lt  360)$$$ 和一个… [tokens in=284 out=68 cached=0]",
+      "✓ output[0]: 输出一个十进制数，表示发布飓风警报的概率。当绝对误差或相对误差不超过 $$$10^{-6}$$$… [tokens in=257 out=45 cached=0]",
+      "✓ output[1]: 形式化地，设你的答案为 $$$x$$$，正确答案为 $$$y$$$。当且仅当 $$$\\frac{… [tokens in=257 out=42 cached=0]",
+      "✓ note[0]: 第一组样例的示意图见图 1。飓风路径相对于 x 轴正方向的角度可以在 $$$-30^\\circ$… [tokens in=300 out=93 cached=0]",
+      "✓ note[1]: 第二个样例的示意图见图 2。飓风路径相对于 x 轴正方向的角度可以在 $$$195^\\circ$… [tokens in=285 out=79 cached=0]",
+      "✓ title[0]: M. MEX 询问… [tokens in=230 out=47 cached=0]",
+      "✓ legend[0]: 这是一道交互题。… [tokens in=231 out=11 cached=0]",
+      "✓ legend[1]: 有一个大小为 $$$n$$$ 的隐藏数组 $$$a$$$。… [tokens in=240 out=20 cached=0]",
+      "✓ legend[2]: 你可以进行如下形式的询问：… [tokens in=234 out=50 cached=0]",
+      "✓ legend[3]: 给出一个子集 $$$P \\subseteq \\{1, 2, ..., n\\}$$$ 和一个子集 … [tokens in=239 out=22 cached=0]",
+      "✓ legend[4]: 交互器将构造一个集合 $$$S = \\{a_{p_i} \\mid p_i \\in P\\} \\cu… [tokens in=255 out=143 cached=0]",
+      "✓ legend[5]: 使用不超过 $$$15 n$$$ 次查询，找出隐藏数组 $$$a$$$ 并输出它。… [tokens in=246 out=27 cached=0]",
+      "✓ legend[6]: $$$^†$$$一个集合的 MEX 是该集合中不存在的最小非负整数。例如，MEX($$$\\{0,… [tokens in=274 out=50 cached=0]",
+      "✓ input[0]: 每组测试包含多个测试用例。第一行包含测试用例的数量 $$$t$$$($$$1 \\le t \\le… [tokens in=257 out=41 cached=0]",
+      "✓ input[1]: 每个测试用例仅包含一行，其中有一个整数 $$$n$$$($$$1 \\le n \\le 400$$… [tokens in=278 out=60 cached=0]",
+      "✓ input[2]: 保证所有测试用例中 $$$n$$$ 的总和不超过 $$$400$$$。… [tokens in=247 out=24 cached=0]",
+      "✓ input[3]: 你可以按照以下格式进行询问——若要询问子集 $$$P$$$ 和 $$$Q$$$，输出一行，格式为… [tokens in=342 out=211 cached=0]"
+    ],
+    "aiDone": 35,
+    "addedFiles": [],
+    "pushed": false,
+    "tokenUsage": {
+      "model": "gpt-5.6-terra",
+      "modelLabel": "GPT 5.6 Terra",
+      "ok": 35,
+      "fail": 0,
+      "in": 9240,
+      "out": 2152,
+      "cached": 0,
+      "segments": [
+        {
+          "code": "GYM106611H",
+          "seg": "title[0]",
+          "in": 229,
+          "out": 36,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "legend[0]",
+          "in": 243,
+          "out": 23,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "legend[1]",
+          "in": 362,
+          "out": 156,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "legend[2]",
+          "in": 295,
+          "out": 84,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "legend[3]",
+          "in": 228,
+          "out": 7,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "legend[4]",
+          "in": 228,
+          "out": 7,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "legend[5]",
+          "in": 239,
+          "out": 51,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "legend[6]",
+          "in": 273,
+          "out": 68,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "legend[7]",
+          "in": 260,
+          "out": 38,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "input[0]",
+          "in": 253,
+          "out": 32,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "input[1]",
+          "in": 255,
+          "out": 114,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "input[2]",
+          "in": 284,
+          "out": 68,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "output[0]",
+          "in": 257,
+          "out": 45,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "output[1]",
+          "in": 257,
+          "out": 42,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "note[0]",
+          "in": 300,
+          "out": 93,
+          "cached": 0
+        },
+        {
+          "code": "GYM106611H",
+          "seg": "note[1]",
+          "in": 285,
+          "out": 79,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "title[0]",
+          "in": 230,
+          "out": 47,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "legend[0]",
+          "in": 231,
+          "out": 11,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "legend[1]",
+          "in": 240,
+          "out": 20,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "legend[2]",
+          "in": 234,
+          "out": 50,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "legend[3]",
+          "in": 239,
+          "out": 22,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "legend[4]",
+          "in": 255,
+          "out": 143,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "legend[5]",
+          "in": 246,
+          "out": 27,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "legend[6]",
+          "in": 274,
+          "out": 50,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "input[0]",
+          "in": 257,
+          "out": 41,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "input[1]",
+          "in": 278,
+          "out": 60,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "input[2]",
+          "in": 247,
+          "out": 24,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "input[3]",
+          "in": 342,
+          "out": 211,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "input[4]",
+          "in": 262,
+          "out": 153,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "input[5]",
+          "in": 238,
+          "out": 12,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "input[6]",
+          "in": 286,
+          "out": 68,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "note[0]",
+          "in": 258,
+          "out": 31,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "note[1]",
+          "in": 250,
+          "out": 29,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "note[2]",
+          "in": 293,
+          "out": 85,
+          "cached": 0
+        },
+        {
+          "code": "GYM106608M",
+          "seg": "note[3]",
+          "in": 332,
+          "out": 125,
+          "cached": 0
+        }
+      ],
+      "totalTokens": 11392,
+      "warmup": {
+        "ok": true,
+        "mode": "system-only",
+        "in": 221,
+        "out": 33,
+        "cached": 0
+      }
+    },
+    "tokenSegments": [
+      {
+        "code": "GYM106611H",
+        "seg": "title[0]",
+        "in": 229,
+        "out": 36,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "legend[0]",
+        "in": 243,
+        "out": 23,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "legend[1]",
+        "in": 362,
+        "out": 156,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "legend[2]",
+        "in": 295,
+        "out": 84,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "legend[3]",
+        "in": 228,
+        "out": 7,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "legend[4]",
+        "in": 228,
+        "out": 7,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "legend[5]",
+        "in": 239,
+        "out": 51,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "legend[6]",
+        "in": 273,
+        "out": 68,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "legend[7]",
+        "in": 260,
+        "out": 38,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "input[0]",
+        "in": 253,
+        "out": 32,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "input[1]",
+        "in": 255,
+        "out": 114,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "input[2]",
+        "in": 284,
+        "out": 68,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "output[0]",
+        "in": 257,
+        "out": 45,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "output[1]",
+        "in": 257,
+        "out": 42,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "note[0]",
+        "in": 300,
+        "out": 93,
+        "cached": 0
+      },
+      {
+        "code": "GYM106611H",
+        "seg": "note[1]",
+        "in": 285,
+        "out": 79,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "title[0]",
+        "in": 230,
+        "out": 47,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "legend[0]",
+        "in": 231,
+        "out": 11,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "legend[1]",
+        "in": 240,
+        "out": 20,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "legend[2]",
+        "in": 234,
+        "out": 50,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "legend[3]",
+        "in": 239,
+        "out": 22,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "legend[4]",
+        "in": 255,
+        "out": 143,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "legend[5]",
+        "in": 246,
+        "out": 27,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "legend[6]",
+        "in": 274,
+        "out": 50,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "input[0]",
+        "in": 257,
+        "out": 41,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "input[1]",
+        "in": 278,
+        "out": 60,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "input[2]",
+        "in": 247,
+        "out": 24,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "input[3]",
+        "in": 342,
+        "out": 211,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "input[4]",
+        "in": 262,
+        "out": 153,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "input[5]",
+        "in": 238,
+        "out": 12,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "input[6]",
+        "in": 286,
+        "out": 68,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "note[0]",
+        "in": 258,
+        "out": 31,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "note[1]",
+        "in": 250,
+        "out": 29,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "note[2]",
+        "in": 293,
+        "out": 85,
+        "cached": 0
+      },
+      {
+        "code": "GYM106608M",
+        "seg": "note[3]",
+        "in": 332,
+        "out": 125,
+        "cached": 0
+      }
+    ]
+  }
+}

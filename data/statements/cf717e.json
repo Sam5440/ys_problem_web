@@ -1,0 +1,135 @@
+{
+  "code": "CF717E",
+  "letter": "E",
+  "title": "E. Paint it really, really dark gray",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/717/E",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "I see a pink boar and I want it painted black. Black boars look much more awesome and mighty than the pink ones. Since Jaggy became the ruler of the forest, he has been trying his best to improve the diplomatic relations between the forest region and the nearby ones.",
+      "Some other rulers, however, have requested too much in return for peace between their two regions, so he realized he has to resort to intimidation. Once a delegate for diplomatic relations of a neighboring region visits Jaggy’s forest, if they see a whole bunch of black boars, they might suddenly change their mind about attacking Jaggy. Black boars are really scary, after all.",
+      "Jaggy’s forest can be represented as a tree (connected graph without cycles) with n vertices. Each vertex represents a boar and is colored either black or pink. Jaggy has sent a squirrel to travel through the forest and paint all the boars black. The squirrel, however, is quite unusually trained and while it traverses the graph, it changes the color of every vertex it visits, regardless of its initial color: pink vertices become black and black vertices become pink.",
+      "Since Jaggy is too busy to plan the squirrel’s route, he needs your help. He wants you to construct a walk through the tree starting from vertex 1 such that in the end all vertices are black. A walk is a sequence of vertices, such that every consecutive pair has an edge between them in a tree."
+    ],
+    "input": [
+      "The first line of input contains integer n (2 ≤ n ≤ 200 000), denoting the number of vertices in the tree. The following n lines contains n integers, which represent the color of the nodes.",
+      "If the i-th integer is 1, if the i-th vertex is black and  - 1 if the i-th vertex is pink.",
+      "Each of the next n - 1 lines contains two integers, which represent the indexes of the vertices which are connected by the edge. Vertices are numbered starting with 1."
+    ],
+    "output": [
+      "Output path of a squirrel: output a sequence of visited nodes' indexes in order of visiting. In case of all the nodes are initially black, you should print 1. Solution is guaranteed to exist. If there are multiple solutions to the problem you can output any of them provided length of sequence is not longer than 107."
+    ],
+    "note": [
+      "At the beginning squirrel is at node 1 and its color is black. Next steps are as follows:",
+      "From node 1 we walk to node 4 and change its color to pink.",
+      "From node 4 we walk to node 2 and change its color to pink.",
+      "From node 2 we walk to node 5 and change its color to black.",
+      "From node 5 we return to node 2 and change its color to black.",
+      "From node 2 we walk to node 4 and change its color to black.",
+      "We visit node 3 and change its color to black.",
+      "We visit node 4 and change its color to pink.",
+      "We visit node 1 and change its color to pink.",
+      "We visit node 4 and change its color to black.",
+      "We visit node 1 and change its color to black."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1\n1\n-1\n1\n-1\n2 5\n4 3\n2 4\n4 1",
+      "output": "1 4 2 5 2 4 3 4 1 4 1"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "一开始，松鼠位于节点 1，且其颜色为黑色。接下来的步骤如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从节点 1 走到节点 4，并将其颜色改为粉色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从节点 4 走到节点 2，并将其颜色改为粉色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从节点 2 走到节点 5，并将其颜色改为黑色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从节点 5 返回节点 2，并将其颜色改为黑色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从节点 2 走到节点 4，并将其颜色改为黑色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们访问节点 3，并将其颜色改为黑色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们访问节点 4，并将其颜色改为粉色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们访问节点 1，并将其颜色改为粉色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们访问节点 4，并将其颜色改为黑色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们访问节点 1，并将其颜色改为黑色。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（2 ≤ n ≤ 200 000），表示树中顶点的数量。接下来的 n 行包含 n 个整数，表示各个节点的颜色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果第 i 个整数为 1，则第 i 个顶点为黑色；如果为 - 1，则第 i 个顶点为粉色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n - 1 行中的每一行包含两个整数，表示由该边连接的顶点编号。顶点编号从 1 开始。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出松鼠的路径：按访问顺序输出所访问节点的编号序列。如果所有节点初始时都是黑色，则应输出 1。保证一定存在解。如果有多个解，可以输出任意一个，但序列长度不得超过 10^7。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "我看到了一头粉色的野猪，想把它染成黑色。黑色的野猪看起来比粉色的野猪威猛帅气得多。自从 Jaggy 成为森林的统治者以来，他一直在尽最大努力改善森林地区与附近地区之间的外交关系。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，其他一些统治者要求以过高的代价换取两地之间的和平，因此他意识到自己必须诉诸恐吓。一旦邻近地区的外交代表访问 Jaggy 的森林，如果他们看到一大群黑色的野猪，或许会突然改变攻击 Jaggy 的想法。毕竟，黑色的野猪真的很可怕。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Jaggy 的森林可以表示为一棵树（无环连通图），其中有 n 个顶点。每个顶点代表一头野猪，并被染成黑色或粉色。Jaggy 派出一只松鼠穿过森林，将所有野猪染成黑色。然而，这只松鼠接受过相当特殊的训练：当它遍历这张图时，会改变它访问到的每个顶点的颜色，而不论该顶点的初始颜色是什么：粉色顶点会变成黑色，黑色顶点会变成粉色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于 Jaggy 太忙，无法规划松鼠的路线，因此他需要你的帮助。他希望你构造一条从顶点 1 开始的树上游走，使得最终所有顶点都变成黑色。游走是一个顶点序列，其中每一对相邻顶点之间在树中都有一条边相连。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 把它涂成非常、非常深的灰色",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

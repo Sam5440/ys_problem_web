@@ -1,0 +1,100 @@
+{
+  "code": "GYM106785I",
+  "letter": "I",
+  "title": "I. Increasing Tree Jumps",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106785/problem/I",
+  "difficulty": "*1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/d0d0aaa597df1147dcffdd030e8aac5b7914271f.png)",
+      "Alice and Bob play a game by taking turns moving a token in a tree. Alice goes first. On their turn, the player moves the token from its current vertex $$$a$$$ to a vertex $$$b$$$. The length of the move is the number of edges on the unique simple path from $$$a$$$ to $$$b$$$. Each move must be strictly longer than the previous move, and Alice's first move must have positive length.",
+      "A player who has no legal move on their turn loses, and the other player wins. Given the tree and initial position of the token, determine who will win the game if both players play optimally."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases $$$t$$$ ($$$1 \\le t \\le 2 \\cdot 10^5$$$). The description of the test cases follows.",
+      "The first line of each test case contains two integers $$$n$$$ and $$$k$$$ ($$$1\\leq k\\leq n \\leq 2\\cdot10^5$$$) — the number of vertices in the tree and the initial position of the token.",
+      "The next $$$n - 1$$$ lines each contain two integers $$$u_i$$$ and $$$v_i$$$ ($$$1\\leq u_i,\\,v_i\\leq n$$$) — the $$$i$$$-th edge in the tree.",
+      "It is guaranteed that the given edges form a tree.",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, output Alice if Alice wins with optimal play, or Bob if Bob wins."
+    ],
+    "note": [
+      "In the first test case, Alice has no move since there are no nodes with a nonzero distance away from the token.",
+      "In the second test case, which is shown in the statement, Alice can move the token a distance of $$$1$$$ to node $$$4$$$. This leaves nodes $$$2$$$ and $$$3$$$ as Bob's only moves. In either case, she can respond with a move to node $$$5$$$ and win.",
+      "In the third test case, it can be shown that Bob has a winning strategy."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 1\n6 1\n1 2\n1 3\n1 4\n4 5\n4 6\n15 8\n1 2\n2 3\n2 4\n1 5\n5 6\n5 7\n1 8\n8 9\n9 10\n9 11\n11 12\n8 13\n13 14\n14 15",
+      "output": "Bob\nAlice\nBob"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/d0d0aaa597df1147dcffdd030e8aac5b7914271f.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Alice 和 Bob 在一棵树上轮流移动一个棋子。Alice 先手。轮到某位玩家时，他需要将棋子从当前顶点 $$$a$$$ 移动到顶点 $$$b$$$。移动的长度是从 $$$a$$$ 到 $$$b$$$ 的唯一简单路径上的边数。每次移动的长度都必须严格大于上一次移动的长度，且 Alice 的第一次移动长度必须为正。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "轮到某位玩家时，如果没有合法移动，则该玩家输掉游戏，另一位玩家获胜。给定这棵树以及棋子的初始位置，判断在双方均采用最优策略的情况下，谁将赢得游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 $$$t$$$($$$1 \\le t \\le 2 \\cdot 10^5$$$)。接下来是各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 $$$n$$$ 和 $$$k$$$($$$1\\leq k\\leq n \\leq 2\\cdot10^5$$$)——分别表示树中的顶点数和令牌的初始位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 $$$n - 1$$$ 行中，每行包含两个整数 $$$u_i$$$ 和 $$$v_i$$$($$$1\\leq u_i,\\,v_i\\leq n$$$)，表示树中的第 $$$i$$$ 条边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证给出的边构成一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 $$$n$$$ 的总和不超过 $$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每组测试数据，如果 Alice 采用最优策略获胜，则输出 Alice；否则输出 Bob。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，由于没有节点与令牌之间的距离非零，Alice 无法进行任何操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中(题面中给出了该样例)，Alice 可以将标记移动距离 $$$1$$$ 到节点 $$$4$$$。这样一来，节点 $$$2$$$ 和 $$$3$$$ 就是 Bob 唯一可执行的移动。无论哪种情况，她都可以通过移动到节点 $$$5$$$ 来获胜。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试用例中，可以证明 Bob 有必胜策略。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "I. 递增的树上跳跃",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "code": "GYM103577L",
+  "letter": "L",
+  "title": "L. Convert to heap",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103577/problem/L",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You have a tree with $$$n$$$ vertices ($$$1 \\leq n \\leq 10^5$$$), numbered from $$$1$$$ to $$$n$$$ and rooted at node $$$1$$$. Every node $$$i$$$ has an integer value $$$a_i$$$ ($$$0 \\leq a_i \\leq 10^9$$$).",
+      "You can update the values of the nodes $$$q$$$ times ($$$1 \\leq q \\leq 1000$$$). In the $$$i$$$-th update, you can choose a subset of nodes and increase the value of all of them by $$$x_i$$$ ($$$1 \\leq x_i \\leq 1000$$$).",
+      "You task is to use these updates to convert the tree into a heap. The tree is considered a heap if and only if every non-root node has a value less than or equal to the value of its parent. Since there can be multiple ways to do this, you must choose the one that minimizes $$$\\sum_{i=1}^n a_i$$$."
+    ],
+    "input": [
+      "The first line of input contains two space separated integers: $$$n$$$ and $$$q$$$.",
+      "The second line contains $$$n$$$ space separated integers: $$$a_i$$$.",
+      "Each of the next $$$n-1$$$ lines describe the edges of the tree, each contains two space separated integers: $$$u$$$ and $$$v$$$ (Meaning there is an edge between $$$u$$$ and $$$v$$$).",
+      "The next and final line of input contains $$$q$$$ space separated integers: $$$x_i$$$."
+    ],
+    "output": [
+      "If there is a way to convert the tree into a heap, output the minimum $$$\\sum_{i=1}^n a_i$$$ after converting it to a heap. Otherwise output -1."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 2\n40 20 20 20 50\n1 2\n2 3\n2 4\n3 5\n10 20",
+      "output": "220"
+    },
+    {
+      "input": "5 2\n40 20 20 20 51\n1 2\n2 3\n2 4\n3 5\n10 20",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你有一棵包含 $$$n$$$ 个顶点的树($$$1 \\leq n \\leq 10^5$$$)，其顶点编号从 $$$1$$$ 到 $$$n$$$，根节点为 $$$1$$$。每个节点 $$$i$$$ 都有一个整数值 $$$a_i$$$($$$0 \\leq a_i \\leq 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以更新节点的值 $$$q$$$ 次($$$1 \\leq q \\leq 1000$$$)。在第 $$$i$$$ 次更新中，你可以选择一个节点子集，并将其中所有节点的值增加 $$$x_i$$$($$$1 \\leq x_i \\leq 1000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是通过这些更新将这棵树转换为堆。当且仅当每个非根节点的值都小于或等于其父节点的值时，这棵树才被视为堆。由于可能有多种转换方式，你必须选择使 $$$\\sum_{i=1}^n a_i$$$ 最小的方案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个由空格分隔的整数：$$$n$$$ 和 $$$q$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 $$$n$$$ 个空格分隔的整数：$$$a_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 $$$n-1$$$ 行中的每一行描述树的一条边，每行包含两个以空格分隔的整数：$$$u$$$ 和 $$$v$$$(表示 $$$u$$$ 和 $$$v$$$ 之间存在一条边)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的下一行也是最后一行，包含 $$$q$$$ 个以空格分隔的整数：$$$x_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果可以将这棵树转换为堆，则输出转换为堆后最小的 $$$\\sum_{i=1}^n a_i$$$。否则输出 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "L. 转换为堆",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

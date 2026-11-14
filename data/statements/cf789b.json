@@ -1,0 +1,98 @@
+{
+  "code": "CF789B",
+  "letter": "B",
+  "title": "B. Masha and geometric depression",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/789/B",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Masha really loves algebra. On the last lesson, her strict teacher Dvastan gave she new exercise.",
+      "You are given geometric progression b defined by two integers b1 and q. Remind that a geometric progression is a sequence of integers b1, b2, b3, ..., where for each i > 1 the respective term satisfies the condition bi = bi - 1·q, where q is called the common ratio of the progression. Progressions in Uzhlyandia are unusual: both b1 and q can equal 0. Also, Dvastan gave Masha m \"bad\" integers a1, a2, ..., am, and an integer l.",
+      "Masha writes all progression terms one by one onto the board (including repetitive) while condition |bi| ≤ l is satisfied (|x| means absolute value of x). There is an exception: if a term equals one of the \"bad\" integers, Masha skips it (doesn't write onto the board) and moves forward to the next term.",
+      "But the lesson is going to end soon, so Masha has to calculate how many integers will be written on the board. In order not to get into depression, Masha asked you for help: help her calculate how many numbers she will write, or print \"inf\" in case she needs to write infinitely many integers."
+    ],
+    "input": [
+      "The first line of input contains four integers b1, q, l, m (-109 ≤ b1, q ≤ 109, 1 ≤ l ≤ 109, 1 ≤ m ≤ 105) — the initial term and the common ratio of progression, absolute value of maximal number that can be written on the board and the number of \"bad\" integers, respectively.",
+      "The second line contains m distinct integers a1, a2, ..., am (-109 ≤ ai ≤ 109) — numbers that will never be written on the board."
+    ],
+    "output": [
+      "Print the only integer, meaning the number of progression terms that will be written on the board if it is finite, or \"inf\" (without quotes) otherwise."
+    ],
+    "note": [
+      "In the first sample case, Masha will write integers 3, 12, 24. Progression term 6 will be skipped because it is a \"bad\" integer. Terms bigger than 24 won't be written because they exceed l by absolute value.",
+      "In the second case, Masha won't write any number because all terms are equal 123 and this is a \"bad\" integer.",
+      "In the third case, Masha will write infinitely integers 123."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 2 30 4\n6 14 25 48",
+      "output": "3"
+    },
+    {
+      "input": "123 1 2143435 4\n123 11 -5453 141245",
+      "output": "0"
+    },
+    {
+      "input": "123 1 2143435 4\n54343 -13 6 124",
+      "output": "inf"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含四个整数 b1、q、l、m（-109 ≤ b1, q ≤ 109，1 ≤ l ≤ 109，1 ≤ m ≤ 105）——等比数列的首项和公比、可以写在黑板上的数的绝对值上限，以及“坏”整数的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 m 个互不相同的整数 a1、a2、...、am（-109 ≤ ai ≤ 109）——这些数永远不会被写在黑板上。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数：如果会被写在黑板上的数列项数量有限，则输出该数量；否则输出“inf”（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Masha 会写下整数 3、12、24。数列项 6 会被跳过，因为它是一个“坏”整数。大于 24 的项不会被写下，因为它们的绝对值超过了 l。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二种情况下，Masha 不会写下任何数，因为所有项都等于 123，而 123 是一个“坏”整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三种情况下，Masha 会写下无穷多个 123。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Masha 非常喜欢代数。上一节课上，她严厉的老师 Dvastan 给她布置了一道新练习题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个由两个整数 b1 和 q 定义的等比数列 b。回忆一下，等比数列是一个整数序列 b1、b2、b3、……，其中对于每个 i > 1，相应的项满足 bi = bi - 1·q，其中 q 被称为该数列的公比。Uzhlyandia 的等比数列很不寻常：b1 和 q 都可以等于 0。此外，Dvastan 还给了 Masha m 个“坏”整数 a1、a2、……、am，以及一个整数 l。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "只要满足条件 |bi| ≤ l，Masha 就会将数列中的所有项（包括重复项）依次写在黑板上（|x| 表示 x 的绝对值）。但有一个例外：如果某一项等于某个“坏”整数，Masha 就跳过它（不将其写在黑板上），并继续处理下一项。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "但是课程马上就要结束了，所以 Masha 必须计算会有多少个整数被写在黑板上。为了避免陷入抑郁，Masha 向你求助：请帮助她计算她将写下多少个数；如果她需要写下无限多个整数，则输出“inf”。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Masha 与几何抑郁",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

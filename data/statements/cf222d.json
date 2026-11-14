@@ -1,0 +1,99 @@
+{
+  "code": "CF222D",
+  "letter": "D",
+  "title": "D. Olympiad",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/222/D",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A boy named Vasya has taken part in an Olympiad. His teacher knows that in total Vasya got at least x points for both tours of the Olympiad. The teacher has the results of the first and the second tour of the Olympiad but the problem is, the results have only points, no names. The teacher has to know Vasya's chances.",
+      "Help Vasya's teacher, find two numbers — the best and the worst place Vasya could have won. Note that the total results' table sorts the participants by the sum of points for both tours (the first place has the participant who has got the most points). If two or more participants have got the same number of points, it's up to the jury to assign places to them according to their choice. It is guaranteed that each participant of the Olympiad participated in both tours of the Olympiad."
+    ],
+    "input": [
+      "The first line contains two space-separated integers n, x (1 ≤ n ≤ 105; 0 ≤ x ≤ 2·105) — the number of Olympiad participants and the minimum number of points Vasya earned.",
+      "The second line contains n space-separated integers: a1, a2, ..., an (0 ≤ ai ≤ 105) — the participants' points in the first tour.",
+      "The third line contains n space-separated integers: b1, b2, ..., bn (0 ≤ bi ≤ 105) — the participants' points in the second tour.",
+      "The participants' points are given in the arbitrary order. It is guaranteed that Vasya was present in the Olympiad — there are two integers i, j (1 ≤ i, j ≤ n) such, that ai + bj ≥ x."
+    ],
+    "output": [
+      "Print two space-separated integers — the best and the worst place Vasya could have got on the Olympiad."
+    ],
+    "note": [
+      "In the first text sample all 5 participants earn 2 points each in any case. Depending on the jury's decision, Vasya can get the first (the best) as well as the last (the worst) fifth place.",
+      "In the second test sample in the best case scenario Vasya wins again: he can win 12 points and become the absolute winner if the total results' table looks like that — {4:8, 6:4, 3:6, 4:4, 4:3, 5:0}.",
+      "In this table all participants are sorted by decreasing points and we can see how much a participant earned in the first and in the second tour.",
+      "In the worst case scenario Vasya can get the fifth place if the table looks like that — {4:8, 4:6, 6:4, 5:4, 4:3, 3:0}, and he earned 4 and 3 points in the first and second tours, correspondingly."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 2\n1 1 1 1 1\n1 1 1 1 1",
+      "output": "1 5"
+    },
+    {
+      "input": "6 7\n4 3 5 6 4 4\n8 6 0 4 3 4",
+      "output": "1 5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一个名叫 Vasya 的男孩参加了奥林匹克竞赛。老师知道 Vasya 在竞赛的两轮中总共获得了至少 x 分。老师拥有第一轮和第二轮的成绩，但问题在于，成绩中只有分数，没有姓名。老师需要知道 Vasya 可能获得的名次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Vasya 的老师找出两个数——Vasya 可能获得的最好名次和最差名次。注意，总成绩表会按照两轮分数之和对参赛者进行排序（第一名是总分最高的参赛者）。如果有两名或更多参赛者获得相同的分数，则由评委自行决定他们的名次。保证奥林匹克竞赛的每位参赛者都参加了两轮竞赛。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个用空格分隔的整数 n、x（1 ≤ n ≤ 10⁵；0 ≤ x ≤ 2·10⁵），分别表示奥林匹克竞赛的参赛人数以及 Vasya 至少获得的分数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个用空格分隔的整数：a₁、a₂、…、aₙ（0 ≤ aᵢ ≤ 10⁵），表示参赛者在第一轮中的分数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 n 个用空格分隔的整数：b₁、b₂、…、bₙ（0 ≤ bᵢ ≤ 10⁵），表示参赛者在第二轮中的分数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "参赛者的得分以任意顺序给出。保证 Vasya 参加了奥林匹克竞赛——存在两个整数 i、j（1 ≤ i, j ≤ n），使得 ai + bj ≥ x。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出两个用空格分隔的整数——Vasya 在奥林匹克竞赛中可能取得的最好名次和最差名次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，无论如何，5 名参赛者每人都获得 2 分。根据评委的决定，Vasya 既可能获得第一名（最好名次），也可能获得最后的第五名（最差名次）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，在最好的情况下 Vasya 再次获胜：如果总成绩表如下——{4:8, 6:4, 3:6, 4:4, 4:3, 5:0}，他可以获得 12 分并成为绝对冠军。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在这张表中，所有参赛者按分数降序排列，我们可以看到每位参赛者在第一轮和第二轮中分别获得了多少分。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在最坏的情况下，如果成绩表如下——{4:8, 4:6, 6:4, 5:4, 4:3, 3:0}，Vasya 可能获得第五名；他在第一轮和第二轮中分别获得了 4 分和 3 分。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 奥林匹克竞赛",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "code": "GYM102365D",
+  "letter": "D",
+  "title": "D. Astrodirections",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102365/problem/D",
+  "difficulty": "*2300",
+  "timeLimit": "3 s",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/73293382c761872c60d3606b5122e613a7645e9f.png)",
+      "It is a very rare event that all $$$N$$$ colonized planets in the galaxy, numbered $$$1,2,\\ldots,N$$$, align in order on a straight line. To celebrate the occasion, a grand Astrofestival is held on one of the planets, where unhealthy amounts of Astrohol will be consumed.",
+      "Astrodavid doesn't know what Astrohol is, but he's very excited about the Astrogeometry meetup that will take place at the Astrofestival. Unfortunately, he doesn't know on which planet it's held. He may Astrojump between planets on his Astroship, but he has to buy fuel first. Luckily, he reached the fuel station on his home planet just before it closes for the Astrofestival. How much fuel must Astrodavid buy to guarantee that he'll make it to the Astrofestival?",
+      "Astrodavid lives on planet $$$1$$$. His Astroship has jump power $$$J$$$. To take off from planet $$$p$$$, he chooses an Astrojump displacement $$$i$$$ such $$$1\\le |i|\\le J$$$, $$$1\\le p+i\\le N$$$, and his fuel supply is at least $$$f_i$$$ units. He will then land on planet $$$p+i$$$, his fuel supply having decreased by $$$f_i$$$ units. Upon asking for directions there, he'll know if the Astrofestival is held at that planet, a different planet with a higher number, or one with a lower number. As long as he has enough fuel, he may choose to Astrojump again."
+    ],
+    "input": [
+      "The first line contains two space-separated integers $$$N$$$ ($$$2\\le N\\le 4\\,000$$$) and $$$J$$$ ($$$1\\le J\\le \\frac N2$$$), the number of colonized planets and the jump power, respectively.",
+      "The second line contains $$$J$$$ integers, the $$$i$$$'th of which is $$$f_i$$$, the fuel cost of jumping upward by $$$i$$$ planets.",
+      "The third line contains $$$J$$$ integers, the $$$i$$$'th of which is $$$f_{-i}$$$, the fuel cost of jumping downward by $$$i$$$ planets.",
+      "For all $$$i$$$, $$$0 \\le f_i \\le 10\\,000$$$."
+    ],
+    "output": [
+      "Output the minimum number of units of fuel that Astrodavid must buy to guarantee that he'll reach the festival, no matter where it's actually held."
+    ]
+  },
+  "examples": [
+    {
+      "input": "16 8\n5 5 5 5 5 5 5 5\n5 5 5 5 5 5 5 5",
+      "output": "20"
+    },
+    {
+      "input": "16 2\n2 0\n33 33",
+      "output": "30"
+    },
+    {
+      "input": "10 5\n50 60 70 80 90\n5 4 3 2 1",
+      "output": "185"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/73293382c761872c60d3606b5122e613a7645e9f.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在银河系中，所有编号为 $$$1,2,\\ldots,N$$$ 的 $$$N$$$ 个殖民行星依次排列在一条直线上，这是一件极其罕见的事情。为庆祝这一时刻，一场盛大的 Astrofestival 将在其中一颗行星上举行，届时人们将饮用数量惊人的 Astrohol。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Astrodavid 不知道 Astrohol 是什么，但他对将在 Astrofestival 举办的 Astrogeometry 聚会感到非常兴奋。遗憾的是，他不知道聚会会在哪颗行星上举行。他可以乘坐自己的 Astroship 在行星之间进行 Astrojump，但必须先购买燃料。幸运的是，在 Astrofestival 开始前，家乡行星上的加油站即将关闭时，他及时赶到了。为了确保自己能赶到 Astrofestival，Astrodavid 必须购买多少燃料？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Astrodavid 生活在行星 $$$1$$$ 上。他的星舰具有 $$$J$$$ 的跳跃能力。为了从行星 $$$p$$$ 起飞，他选择一次位移为 $$$i$$$ 的星跃，使其满足 $$$1\\le |i|\\le J$$$、$$$1\\le p+i\\le N$$$，并且燃料储备至少为 $$$f_i$$$ 个单位。随后，他将降落在行星 $$$p+i$$$ 上，燃料储备减少 $$$f_i$$$ 个单位。在那里询问方向后，他会得知星际节是在该行星、编号更大的另一颗行星，还是编号更小的行星上举办。只要燃料充足，他就可以再次进行星跃。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个用空格分隔的整数 $$$N$$$($$$2\\le N\\le 4\\,000$$$)和 $$$J$$$($$$1\\le J\\le \\frac N2$$$)，分别表示已殖民的星球数量和跳跃能力。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 $$$J$$$ 个整数，其中第 $$$i$$$ 个为 $$$f_i$$$，表示向上跳跃 $$$i$$$ 个星球所需的燃料消耗。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 $$$J$$$ 个整数，其中第 $$$i$$$ 个为 $$$f_{-i}$$$，表示向下跳跃 $$$i$$$ 个行星所需的燃料消耗。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于所有 $$$i$$$、$$$0 \\le f_i \\le 10\\,000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Astrodavid 为保证无论节日实际在哪里举行都能到达而必须购买的最少燃料单位数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 天体方向",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

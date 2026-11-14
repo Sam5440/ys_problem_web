@@ -1,0 +1,132 @@
+{
+  "code": "CF1023D",
+  "letter": "D",
+  "title": "D. Array Restoration",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1023/D",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Initially there was an array a$$$a$$$ consisting of n$$$n$$$ integers. Positions in it are numbered from 1$$$1$$$ to n$$$n$$$.",
+      "Exactly q$$$q$$$ queries were performed on the array. During the i$$$i$$$-th query some segment (li,ri)$$$(l_i, r_i)$$$ (1≤li≤ri≤n)$$$(1 \\le l_i \\le r_i \\le n)$$$ was selected and values of elements on positions from li$$$l_i$$$ to ri$$$r_i$$$ inclusive got changed to i$$$i$$$. The order of the queries couldn't be changed and all q$$$q$$$ queries were applied. It is also known that every position from 1$$$1$$$ to n$$$n$$$ got covered by at least one segment.",
+      "We could have offered you the problem about checking if some given array (consisting of n$$$n$$$ integers with values from 1$$$1$$$ to q$$$q$$$) can be obtained by the aforementioned queries. However, we decided that it will come too easy for you.",
+      "So the enhancement we introduced to it is the following. Some set of positions (possibly empty) in this array is selected and values of elements on these positions are set to 0$$$0$$$.",
+      "Your task is to check if this array can be obtained by the aforementioned queries. Also if it can be obtained then restore this array.",
+      "If there are multiple possible arrays then print any of them."
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and q$$$q$$$ (1≤n,q≤2⋅105$$$1 \\le n, q \\le 2 \\cdot 10^5$$$) — the number of elements of the array and the number of queries perfomed on it.",
+      "The second line contains n$$$n$$$ integer numbers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (0≤ai≤q$$$0 \\le a_i \\le q$$$) — the resulting array. If element at some position j$$$j$$$ is equal to 0$$$0$$$ then the value of element at this position can be any integer from 1$$$1$$$ to q$$$q$$$."
+    ],
+    "output": [
+      "Print \"YES\" if the array a$$$a$$$ can be obtained by performing q$$$q$$$ queries. Segments (li,ri)$$$(l_i, r_i)$$$ (1≤li≤ri≤n)$$$(1 \\le l_i \\le r_i \\le n)$$$ are chosen separately for each query. Every position from 1$$$1$$$ to n$$$n$$$ should be covered by at least one segment.",
+      "Otherwise print \"NO\".",
+      "If some array can be obtained then print n$$$n$$$ integers on the second line — the i$$$i$$$-th number should be equal to the i$$$i$$$-th element of the resulting array and should have value from 1$$$1$$$ to q$$$q$$$. This array should be obtainable by performing exactly q$$$q$$$ queries.",
+      "If there are multiple possible arrays then print any of them."
+    ],
+    "note": [
+      "In the first example you can also replace 0$$$0$$$ with 1$$$1$$$ but not with 3$$$3$$$.",
+      "In the second example it doesn't really matter what segments to choose until query 10$$$10$$$ when the segment is (1,3)$$$(1, 3)$$$.",
+      "The third example showcases the fact that the order of queries can't be changed, you can't firstly set (1,3)$$$(1, 3)$$$ to 6$$$6$$$ and after that change (2,2)$$$(2, 2)$$$ to 5$$$5$$$. The segment of 5$$$5$$$ should be applied before segment of 6$$$6$$$.",
+      "There is a lot of correct resulting arrays for the fourth example."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 3\n1 0 2 3",
+      "output": "YES\n1 2 2 3"
+    },
+    {
+      "input": "3 10\n10 10 10",
+      "output": "YES\n10 10 10"
+    },
+    {
+      "input": "5 6\n6 5 6 2 2",
+      "output": "NO"
+    },
+    {
+      "input": "3 5\n0 0 0",
+      "output": "YES\n5 4 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "最初有一个数组 a$$$a$$$，其中包含 n$$$n$$$ 个整数。数组中的位置编号从 1$$$1$$$ 到 n$$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在该数组上进行了恰好 q$$$q$$$ 次查询。在第 i$$$i$$$ 次查询中，选择了某个区间 (li,ri)$$$(l_i, r_i)$$$(1≤li≤ri≤n)$$$(1 \\le l_i \\le r_i \\le n)$$$，并将位置从 li$$$l_i$$$ 到 ri$$$r_i$$$(包含两端)上的元素值修改为 i$$$i$$$。查询的顺序无法改变，并且全部 q$$$q$$$ 次查询都会执行。另知从 1$$$1$$$ 到 n$$$n$$$ 的每个位置都至少被某个区间覆盖了一次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们本可以给你这样一道题：判断给定数组(由 n$$$n$$$ 个整数构成，元素值在 1$$$1$$$ 到 q$$$q$$$ 之间)是否能够通过上述查询得到。然而，我们认为这对你来说过于简单了。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，我们对其进行了如下增强。在这个数组中选择一个位置集合(可能为空)，并将这些位置上的元素值设为 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是判断这个数组是否能够通过上述查询得到。如果可以，还需要还原这个数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个可能的数组，输出其中任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 q$$$q$$$(1≤n,q≤2⋅105$$$1 \\le n, q \\le 2 \\cdot 10^5$$$)，分别表示数组中元素的数量以及对其执行的查询次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(0≤ai≤q$$$0 \\le a_i \\le q$$$)，表示最终得到的数组。如果某个位置 j$$$j$$$ 上的元素等于 0$$$0$$$，那么该位置上的元素可以是从 1$$$1$$$ 到 q$$$q$$$ 的任意整数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果数组 a$$$a$$$ 可以通过执行 q$$$q$$$ 次查询得到，则输出“YES”。对于每次查询，需要分别选择一个区间 (li,ri)$$$(l_i, r_i)$$$(1≤li≤ri≤n$$$(1 \\le l_i \\le r_i \\le n)$$$)。从 1$$$1$$$ 到 n$$$n$$$ 的每个位置都至少应被一个区间覆盖。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，输出“NO”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在某个数组可以被得到，则在第二行输出 n$$$n$$$ 个整数，第 i$$$i$$$ 个数应等于最终数组中的第 i$$$i$$$ 个元素，且其值应在 1$$$1$$$ 到 q$$$q$$$ 之间。该数组应当可以通过恰好执行 q$$$q$$$ 次查询得到。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个可能的数组，输出其中任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，你也可以将 0$$$0$$$ 替换为 1$$$1$$$，但不能替换为 3$$$3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，在查询 10$$$10$$$ 之前选择哪些区间其实并不重要，此时区间为 (1,3)$$$(1, 3)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三个样例体现了查询顺序无法改变这一事实：你不能先将 (1,3)$$$(1, 3)$$$ 设置为 6$$$6$$$，然后再将 (2,2)$$$(2, 2)$$$ 修改为 5$$$5$$$。应当先应用 5$$$5$$$ 所对应的区间，再应用 6$$$6$$$ 所对应的区间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第四个样例，正确的结果数组有很多种。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 数组还原",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

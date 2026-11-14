@@ -1,0 +1,155 @@
+{
+  "code": "GYM106523H",
+  "letter": "H",
+  "title": "H. Hours in Class",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106523/problem/H",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "AnaLu spent the whole day at LINF studying Number Theory, so she decided to put her new knowledge into practice! Because of that, when she got home, she went straight to her room to solve problems. Then, after many ACs, she ended up falling asleep. And she had a dream...",
+      "In this dream, AnaLu was once again a 6th-grade student, and the class of the day was about multiplication, exponentiation, and divisibility. The teacher wrote the following definitions on the board:",
+      "Consider positive integers A$$$A$$$ and X$$$X$$$.",
+      "A⋅X$$$A \\cdot X$$$: A$$$A$$$ multiplied by X$$$X$$$.",
+      "AX$$$A ^ X$$$: A$$$A$$$ raised to the power X$$$X$$$ (which is the same as doing A⋅A⋅A⋅…⋅A$$$A \\cdot A \\cdot A \\cdot \\ldots \\cdot A$$$, with X$$$X$$$ factors equal to A$$$A$$$).",
+      "A|X$$$A | X$$$: means that A$$$A$$$ divides X$$$X$$$, that is, there exists some positive integer B$$$B$$$ such that A⋅B=X$$$A \\cdot B = X$$$.",
+      "But, not satisfied, the teacher decided to challenge her students. She asked each one to keep in their notebook the value of the number A$$$A$$$, which initially is equal to 1$$$1$$$. The teacher will make Q$$$Q$$$ queries about this number A$$$A$$$, in which a number X$$$X$$$ will be written on the board and all students must either update the value of A$$$A$$$ accordingly or answer a question, depending on the type of the query. There are three types:",
+      "All students must update the value of A$$$A$$$ to A=A⋅X$$$A = A \\cdot X$$$ in their notebook.",
+      "All students must update the value of A$$$A$$$ to A=AX$$$A = A^X$$$ in their notebook.",
+      "All students must answer (in English, with \"Yes\" or \"No\"): X|A$$$X|A$$$?",
+      "AnaLu then realized that she was in a dream, since, depending on the teacher's queries, the number A$$$A$$$ could become so large that it would be impossible to write it down even if all the notebooks in the universe were put together. Even so, she realized that it would still be possible to answer the teacher's divisibility queries (type 3$$$3$$$) correctly with the help of a computer.",
+      "But AnaLu did not bring any computer into the dream, so you must help her answer the queries!"
+    ],
+    "input": [
+      "The first line contains an integer Q$$$Q$$$ (1≤Q≤105)$$$(1 \\le Q \\le 10^5)$$$, the number of queries.",
+      "The next Q$$$Q$$$ lines contain two integers t$$$t$$$ (1≤t≤3)$$$(1 \\le t \\le 3)$$$ and X$$$X$$$ (2≤X≤105)$$$(2 \\le X \\le 10^5)$$$, the type of the query and its parameter. It is guaranteed that there is at least one query of type 3."
+    ],
+    "output": [
+      "For each query of type 3$$$3$$$, print a line with the answer to that query: \"Yes\" if X$$$X$$$ is a divisor of A$$$A$$$, or \"No\" otherwise."
+    ],
+    "note": [
+      "Explanation of the example:",
+      "Initially, A=1$$$A = 1$$$.",
+      "After the first query, A=1100000=1$$$A = 1^{100000} = 1$$$.",
+      "After the second query, A=1⋅3=3$$$A = 1 \\cdot 3 = 3$$$.",
+      "After the third query, A=33=27$$$A = 3^3 = 27$$$.",
+      "After the fourth query, A=27⋅2=54$$$A = 27 \\cdot 2 = 54$$$.",
+      "For the fifth query, 12$$$12$$$ does not divide A$$$A$$$, so the answer to the query is \"No\".",
+      "For the sixth query, 18$$$18$$$ divides A$$$A$$$, so the answer to the query is \"Yes\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n2 100000\n1 3\n2 3\n1 2\n3 12\n3 18",
+      "output": "No\nYes"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "AnaLu 在 LINF 学习了一整天的数论，因此她决定将新学到的知识付诸实践！于是，回到家后，她径直回到房间里解决问题。接着，在多次 AC 之后，她最终睡着了。然后，她做了一个梦……",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在这个梦里，AnaLu 再次成为一名六年级学生，而当天的课程是关于乘法、幂运算和整除性的。老师在黑板上写下了如下定义：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑正整数 A$$$A$$$ 和 X$$$X$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "A⋅X$$$A \\cdot X$$$：A$$$A$$$ 乘以 X$$$X$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "AX$$$A ^ X$$$：表示 A$$$A$$$ 的 X$$$X$$$ 次幂(即 X$$$X$$$ 个等于 A$$$A$$$ 的因子相乘：A⋅A⋅A⋅…⋅A$$$A \\cdot A \\cdot A \\cdot \\ldots \\cdot A$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "A|X$$$A | X$$$：表示 A$$$A$$$ 整除 X$$$X$$$，即存在某个正整数 B$$$B$$$，使得 A⋅B=X$$$A \\cdot B = X$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "但是，老师并不满足，决定挑战一下她的学生们。她要每个学生在自己的笔记本上记下数 A$$$A$$$ 的值，这个值初始为 1$$$1$$$。老师将进行 Q$$$Q$$$ 次关于这个数 A$$$A$$$ 的操作：每次会在黑板上写下一个数 X$$$X$$$，所有学生必须根据操作类型，要么相应更新 A$$$A$$$ 的值，要么回答一个问题。共有三种类型：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "所有学生必须将笔记本中 A$$$A$$$ 的值更新为 A=A⋅X$$$A = A \\cdot X$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "所有学生必须将笔记本中 A$$$A$$$ 的值更新为 A=AX$$$A = A^X$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "所有学生必须回答(用英语，回答 \"Yes\" 或 \"No\")：X|A$$$X|A$$$？",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "AnaLu 随后意识到自己身处梦境，因为根据老师的查询，数字 A$$$A$$$ 可能变得如此之大，以至于即使把宇宙中的所有笔记本合在一起也无法将其写下。不过，她意识到，借助计算机，仍然可以正确回答老师的整除查询(类型 3$$$3$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "但是 AnaLu 没有把任何电脑带入梦中，所以你必须帮助她回答这些查询！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 Q$$$Q$$$ (1≤Q≤105)$$$(1 \\le Q \\le 10^5)$$$，表示查询的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 Q$$$Q$$$ 行包含两个整数 t$$$t$$$ (1≤t≤3)$$$(1 \\le t \\le 3)$$$ 和 X$$$X$$$ (2≤X≤105)$$$(2 \\le X \\le 10^5)$$$，分别表示查询的类型及其参数。保证至少有一个类型为 3 的查询。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个类型为 3$$$3$$$ 的查询，输出一行该查询的答案：如果 X$$$X$$$ 是 A$$$A$$$ 的约数，输出 \"Yes\"，否则输出 \"No\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "示例解释：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最初，A=1$$$A = 1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第一次查询后，A=1100000=1$$$A = 1^{100000} = 1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二次查询后，A=1⋅3=3$$$A = 1 \\cdot 3 = 3$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第三次查询后，A=33=27$$$A = 3^3 = 27$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第四次查询后，A=27⋅2=54$$$A = 27 \\cdot 2 = 54$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于第五个查询，12$$$12$$$ 不能整除 A$$$A$$$，所以该查询的答案是“No”。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "对于第六次查询，18$$$18$$$ 整除 A$$$A$$$，因此该查询的答案是 \"Yes\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "H. 课堂上的时间",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

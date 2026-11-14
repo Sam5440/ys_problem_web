@@ -1,0 +1,127 @@
+{
+  "code": "CF507C",
+  "letter": "C",
+  "title": "C. Guess Your Way Out!",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/507/C",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Amr bought a new video game \"Guess Your Way Out!\". The goal of the game is to find an exit from the maze that looks like a perfect binary tree of height h. The player is initially standing at the root of the tree and the exit from the tree is located at some leaf node.",
+      "Let's index all the leaf nodes from the left to the right from 1 to 2h. The exit is located at some node n where 1 ≤ n ≤ 2h, the player doesn't know where the exit is so he has to guess his way out!",
+      "Amr follows simple algorithm to choose the path. Let's consider infinite command string \"LRLRLRLRL...\" (consisting of alternating characters 'L' and 'R'). Amr sequentially executes the characters of the string using following rules:",
+      "Character 'L' means \"go to the left child of the current node\";",
+      "Character 'R' means \"go to the right child of the current node\";",
+      "If the destination node is already visited, Amr skips current command, otherwise he moves to the destination node;",
+      "If Amr skipped two consecutive commands, he goes back to the parent of the current node before executing next command;",
+      "If he reached a leaf node that is not the exit, he returns to the parent of the current node;",
+      "If he reaches an exit, the game is finished.",
+      "Now Amr wonders, if he follows this algorithm, how many nodes he is going to visit before reaching the exit?"
+    ],
+    "input": [
+      "Input consists of two integers h, n (1 ≤ h ≤ 50, 1 ≤ n ≤ 2h)."
+    ],
+    "output": [
+      "Output a single integer representing the number of nodes (excluding the exit node) Amr is going to visit before reaching the exit by following this algorithm."
+    ],
+    "note": [
+      "A perfect binary tree of height h is a binary tree consisting of h + 1 levels. Level 0 consists of a single node called root, level h consists of 2h nodes called leaves. Each node that is not a leaf has exactly two children, left and right one.",
+      "Following picture illustrates the sample test number 3. Nodes are labeled according to the order of visit.",
+      "![](https://espresso.codeforces.com/98ce18ee21285de525052fcfb3749bc60465e96d.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 2",
+      "output": "2"
+    },
+    {
+      "input": "2 3",
+      "output": "5"
+    },
+    {
+      "input": "3 6",
+      "output": "10"
+    },
+    {
+      "input": "10 1024",
+      "output": "2046"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "高度为 h 的完美二叉树由 h+1 层组成。第 0 层包含一个称为根的节点，第 h 层包含 2h 个称为叶子的节点。每个不是叶子的节点都恰好有两个子节点：左子节点和右子节点。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "下图展示了样例测试 3。节点按照访问顺序标记。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/98ce18ee21285de525052fcfb3749bc60465e96d.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Amr 买了一款新电子游戏《Guess Your Way Out!》。游戏目标是在一个形如高度为 h 的满二叉树的迷宫中找到出口。玩家初始站在树的根节点，树的出口位于某个叶节点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们将所有叶节点从左到右编号为 1 到 2^h。出口位于编号为 n 的某个节点，其中 1 ≤ n ≤ 2^h。玩家不知道出口的位置，因此他必须猜出一条逃生路线！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Amr 遵循一个简单的算法来选择路径。考虑无限的指令字符串“LRLRLRLRL...”（由交替出现的字符“L”和“R”组成）。Amr 按顺序执行字符串中的字符，规则如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "字符“L”表示“前往当前节点的左子节点”；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "字符“R”表示“前往当前节点的右子节点”；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果目标节点已经访问过，Amr 就跳过当前指令；否则，他移动到目标节点；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 Amr 连续跳过了两条命令，那么他会在执行下一条命令前返回当前节点的父节点；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果他到达了一个不是出口的叶节点，那么他会返回当前节点的父节点；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果他到达了出口，游戏就结束。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在 Amr 想知道，如果他遵循这一算法，那么在到达出口之前将访问多少个节点？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入包含两个整数 h、n（1 ≤ h ≤ 50，1 ≤ n ≤ 2h）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示 Amr 遵循这一算法到达出口之前将访问的节点数（不包括出口节点）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 猜出你的出路！",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

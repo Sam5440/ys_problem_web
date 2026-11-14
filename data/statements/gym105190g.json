@@ -1,0 +1,144 @@
+{
+  "code": "GYM105190G",
+  "letter": "G",
+  "title": "G. Da7doo7",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105190/problem/G",
+  "difficulty": "*1900",
+  "timeLimit": "5 s",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "$$$Da7doo7$$$ believed he had mastered competitive programming contests, so he decided to turn his attention to playing basketball.",
+      "$$$Da7doo7$$$ intends to shoot $$$n$$$ balls into the basket. The probability of him scoring the first shot is $$$\\frac{p_0}{q_0}$$$.",
+      "For subsequent shots, his probability of scoring depends on whether he made the previous shot or not:",
+      "If he scored shot $$$i-1$$$, the probability of scoring shot $$$i$$$ is $$$\\frac{p_1}{q_1}$$$.",
+      "If he missed shot $$$i-1$$$, the probability of scoring shot $$$i$$$ is $$$\\frac{p_2}{q_2}$$$.",
+      "$$$Da7doo7$$$ is asking for your help to find the expected value of the number of balls that will score.",
+      "We can show that the answer can be written in the form $$$\\frac{P}{Q}$$$ where $$$P, Q$$$ are coprime integers and $$$Q \\neq 0 \\bmod 998244353$$$. Output the value of $$$(P \\cdot Q^{-1})$$$ modulo $$$998244353$$$."
+    ],
+    "input": [
+      "The first line contains a single integer $$$T$$$ ($$$1 \\le T \\le 5 \\times 10^4$$$) — the number of testcases.",
+      "The first line of each testcase contains an integer $$$n$$$ ($$$1 \\le n \\le 10^{12}$$$) — the number of balls he will shoot.",
+      "The second line of each testcase contains six integers $$$p_0,q_0,p_1,q_1,p_2,q_2$$$ ($$$0 \\le p_0,p_1,p_2 \\le 10^{3}$$$ , $$$1 \\le q_0,q_1,q_2 \\le 10^{3}$$$)."
+    ],
+    "output": [
+      "An integer representing the expected value of the number of balls that will score, modulo $$$998244353$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2\n5 10 2 10 3 10\n10\n7 10 5 10 2 10\n5\n1 5 7 10 9 10\n100\n1 1 1 10 1 1\n100000000\n75 100 55 100 23 100",
+      "output": "249561089\n965715715\n403450441\n210477862\n330198862"
+    }
+  ],
+  "titleZh": {
+    "0": "G . Da7doo7",
+    "caiyun": "G. Da7doo7",
+    "youdao": "G . Da7doo7",
+    "iflyrec": "G.DA7DOO7",
+    "deepl": "G.Da7doo7",
+    "ai": "G. Da7doo7",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "$$$Da7doo7$$$认为自己已经掌握了编程竞赛的技巧，因此决定把注意力转移到打篮球上。",
+        "iflyrec": "$$$Da7doo7$$$他认为自己已经掌握了竞争性编程竞赛，因此他决定将注意力转向打篮球。",
+        "deepl": "$$$Da7doo7$$$认为自己已经掌握了编程竞赛的技巧，因此决定把注意力转移到打篮球上。",
+        "ai": "$$$Da7doo7$$$ 认为自己已经完全掌握了竞赛编程比赛，于是决定把注意力转向打篮球。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$Da7doo7$$$ 打算将 $$$n$$$ 球投入篮筐。他首投得分的概率为 $$$\\frac{p_0}{q_0}$$$。",
+        "iflyrec": "$$$Da7doo7$$$打算将$$$n$$$球投进篮筐。他第一枪得分的概率是$$$\\frac{p_0}{q_0}$$$。",
+        "deepl": "$$$Da7doo7$$$打算把$$$n$$$个球投进篮筐。他第一次投篮得分的概率是 $$$\\frac{p_0}{q_0}$$$。",
+        "ai": "$$$Da7doo7$$$ 打算将 $$$n$$$ 个球投进篮筐。他第一次投篮命中的概率为 $$$\\frac{p_0}{q_0}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "对于后续的击球，他得分的概率取决于他之前的投篮是否命中：",
+        "youdao": "对于后续的击球，他得分的概率取决于他之前的投篮是否命中：",
+        "iflyrec": "对于随后的投篮，他得分的概率取决于他是否投进了前一球:",
+        "deepl": "对于随后的投篮，他的得分概率取决于他是否投中了前一球：",
+        "ai": "对于后续投篮，他投中的概率取决于前一次投篮是否命中：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "如果他投进了$$$i-1$$$，那么投进$$$i$$$的概率是$$$\\frac{p_1}{q_1}$$$。",
+        "youdao": "如果他射门得分$$$i-1$$$，则射门得分$$$i$$$的概率为$$$\\frac{p_1}{q_1}$$$。",
+        "iflyrec": "如果他射门得分$$$i-1$$$，则射门得分$$$i$$$的概率为$$$\\frac{p_1}{q_1}$$$。",
+        "deepl": "如果他投进了$$$i-1$$$，那么投进$$$i$$$的概率是$$$\\frac{p_1}{q_1}$$$。",
+        "ai": "如果他投中了第 $$$i-1$$$ 球，那么投中第 $$$i$$$ 球的概率为 $$$\\frac{p_1}{q_1}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "如果他没有命中 $$$i-1$$$，那么命中 $$$i$$$ 的概率是 $$$\\frac{p_2}{q_2}$$$。",
+        "youdao": "如果他投中$$$i-1$$$，则投中$$$i$$$的概率为$$$\\frac{p_2}{q_2}$$$。",
+        "iflyrec": "如果他投篮不中$$$i-1$$$，则投篮得分的概率$$$i$$$为$$$\\frac{p_2}{q_2}$$$。",
+        "deepl": "如果他投篮不中$$$i-1$$$，那么投篮得分$$$i$$$的概率是$$$\\frac{p_2}{q_2}$$$。",
+        "ai": "如果他投丢了第 $$$i-1$$$ 球，那么投中第 $$$i$$$ 球的概率为 $$$\\frac{p_2}{q_2}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "$$$Da7doo7$$$是请求你帮助找到得分球数的期望值。",
+        "youdao": "$$$Da7doo7$$$是请求你帮助找到得分球数的期望值。",
+        "iflyrec": "$$$Da7doo7$$$请求您帮助找出将得分的球数的期望值。",
+        "deepl": "$$$Da7doo7$$$请求您帮助找出能得分的球数的期望值。",
+        "ai": "$$$Da7doo7$$$ 想请你帮忙求出命中球数的期望值。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "我们可以证明答案可以写成 $$$\\frac{P}{Q}$$$ 的形式，其中 $$$P, Q$$$ 是同余整数，$$$Q \\neq 0 \\bmod 998244353$$$ 是同余整数。输出 $$$(P \\cdot Q^{-1})$$$ modulo $$$998244353$$$ 的值。",
+        "youdao": "我们可以证明答案可以写成$$$\\frac{P}{Q}$$$的形式，其中$$$P, Q$$$是素数整数，$$$Q \\neq 0 \\bmod 998244353$$$是素数整数。输出$$$(P \\cdot Q^{-1})$$$模取$$$998244353$$$的值。",
+        "iflyrec": "我们可以证明，答案可以写成$$$\\frac{P}{Q}$$$的形式，其中$$$P, Q$$$是互素整数，$$$Q \\neq 0 \\bmod 998244353$$$。输出$$$(P \\cdot Q^{-1})$$$模$$$998244353$$$的值。",
+        "deepl": "我们可以证明答案可以写成 $$$\\frac{P}{Q}$$$ 的形式，其中 $$$P, Q$$$ 是同余整数，$$$Q \\neq 0 \\bmod 998244353$$$ 是同余整数。输出 $$$(P \\cdot Q^{-1})$$$ modulo $$$998244353$$$ 的值。",
+        "ai": "可以证明，答案可以写成 $$$\\frac{P}{Q}$$$ 的形式，其中 $$$P, Q$$$ 是互质的整数，且 $$$Q \\neq 0 \\bmod 998244353$$$。输出 $$$(P \\cdot Q^{-1})$$$ 对 $$$998244353$$$ 取模的结果。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数 $$$T$$$($$$1 \\le T \\le 5 \\times 10^4$$$)——测试用例的数量。",
+        "youdao": "第一行包含一个整数$$$T$$$ ($$$1 \\le T \\le 5 \\times 10^4$$$）——测试用例的数量。",
+        "iflyrec": "第一行包含一个整数$$$T$$$($$$1 \\le T \\le 5 \\times 10^4$$$）—测试用例的数量。",
+        "deepl": "第一行包含一个整数 $$$T$$$ ($$$1 \\le T \\le 5 \\times 10^4$$$)--测试用例数。",
+        "ai": "第一行包含一个整数 $$$T$$$($$$1 \\le T \\le 5 \\times 10^4$$$)——测试用例的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "每个测试用例的第一行包含一个整数$$$n$$$ ($$$1 \\le n \\le 10^{12}$$$) -他将射击的球的数量。",
+        "youdao": "每个测试用例的第一行包含一个整数$$$n$$$ ($$$1 \\le n \\le 10^{12}$$$) -他将射击的球的数量。",
+        "deepl": "每个测试用例的第一行都包含一个整数$$$n$$$($$$1 \\le n \\le 10^{12}$$$)--他将射出的球数。",
+        "iflyrec": "每个测试用例的第一行包含一个整数$$$n$$$($$$1 \\le n \\le 10^{12}$$$)——他将射出的球的数量。",
+        "ai": "每个测试用例的第一行包含一个整数 $$$n$$$($$$1 \\le n \\le 10^{12}$$$)——他将投篮的球数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "每个测试用例的第二行包含六个整数 $$$p_0,q_0,p_1,q_1,p_2,q_2$$$ ($$$0 \\le p_0,p_1,p_2 \\le 10^{3}$$$ , $$$1 \\le q_0,q_1,q_2 \\le 10^{3}$$$)。",
+        "youdao": "每个测试用例的第二行包含6个整数$$$p_0,q_0,p_1,q_1,p_2,q_2$$$ ($$$0 \\le p_0,p_1,p_2 \\le 10^{3}$$$, $$$1 \\le q_0,q_1,q_2 \\le 10^{3}$$$）。",
+        "iflyrec": "每个测试用例的第二行包含六个整数$$$p_0,q_0,p_1,q_1,p_2,q_2$$$($$$0 \\le p_0,p_1,p_2 \\le 10^{3}$$$，$$$1 \\le q_0,q_1,q_2 \\le 10^{3}$$$）。",
+        "deepl": "每个测试用例的第二行包含六个整数 $$$p_0,q_0,p_1,q_1,p_2,q_2$$$ ($$$0 \\le p_0,p_1,p_2 \\le 10^{3}$$$ , $$$1 \\le q_0,q_1,q_2 \\le 10^{3}$$$)。",
+        "ai": "每个测试用例的第二行包含六个整数 $$$p_0,q_0,p_1,q_1,p_2,q_2$$$($$$0 \\le p_0,p_1,p_2 \\le 10^{3}$$$，$$$1 \\le q_0,q_1,q_2 \\le 10^{3}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "一个整数，表示计分球数的预期值，模为 $$$998244353$$$。",
+        "youdao": "一个整数，表示将得分的球数的期望值，对$$$998244353$$$取模。",
+        "iflyrec": "一个整数，表示将得分的球的数量的期望值，模$$$998244353$$$。",
+        "deepl": "一个整数，代表进球数的预期值，取模 $$$998244353$$$。",
+        "ai": "一个整数，表示将得分的球数的期望值对 $$$998244353$$$ 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.104Z",
+  "translatedBy": [
+    "deepl",
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

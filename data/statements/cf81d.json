@@ -1,0 +1,69 @@
+{
+  "code": "CF81D",
+  "letter": "D",
+  "title": "D. Polycarp's Picture Gallery",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/81/D",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Polycarp loves not only to take pictures, but also to show his photos to friends. On his personal website he has recently installed a widget that can display n photos with the scroll option. At each moment of time the widget displays exactly one photograph with the option showing the previous/next one. From the first photo, you can switch to the second one or to the n-th one, from the second photo you can switch to the third one or to the first one, etc. Thus, navigation is performed in a cycle.",
+      "Polycarp's collection consists of m photo albums, the i-th album contains ai photos. Polycarp wants to choose n photos and put them on a new widget. To make watching the photos interesting to the visitors, he is going to post pictures so that no two photos from one album were neighboring (each photo will have exactly two neighbors, the first photo's neighbors are the second and the n-th one).",
+      "Help Polycarp compile a photo gallery. Select n photos from his collection and put them in such order that no two photos from one album went one after the other."
+    ],
+    "input": [
+      "The first line contains two integers n and m (3 ≤ n ≤ 1000, 1 ≤ m ≤ 40), where n is the number of photos on the widget, and m is the number of albums. The second line contains m integers a1, a2, ..., am (1 ≤ ai ≤ 1000), where ai is the number of photos in the i-th album."
+    ],
+    "output": [
+      "Print the single number -1 if there is no solution. Otherwise, print n numbers t1, t2, ..., tn, where ti represents the number of the album of the i-th picture in the widget. The albums are numbered from 1 in the order of their appearance in the input. If there are several solutions, print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 3\n1 3 5",
+      "output": "3 1 3 2"
+    },
+    {
+      "input": "10 2\n5 5",
+      "output": "2 1 2 1 2 1 2 1 2 1"
+    },
+    {
+      "input": "10 3\n1 10 3",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Polycarp 不仅喜欢拍照，还喜欢把自己的照片展示给朋友。最近，他在个人网站上安装了一个可以通过滚动浏览 n 张照片的组件。在任意时刻，该组件恰好显示一张照片，并提供查看上一张/下一张照片的选项。对于第一张照片，可以切换到第二张或第 n 张；对于第二张照片，可以切换到第三张或第一张，依此类推。因此，导航是在一个环中进行的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Polycarp 的照片集合由 m 个相册组成，第 i 个相册包含 ai 张照片。Polycarp 想要选择 n 张照片并将它们放入一个新的组件中。为了让访客观看照片时更有趣，他打算按照如下方式发布照片：同一个相册中的任意两张照片都不能相邻（每张照片恰好有两个相邻的照片，第一张照片相邻的是第二张和第 n 张）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Polycarp 编排照片画廊。从他的照片集合中选择 n 张照片，并按照这样的顺序排列，使得同一个相册中的任意两张照片都不会相邻。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 m（3 ≤ n ≤ 1000，1 ≤ m ≤ 40），其中 n 表示组件中的照片数量，m 表示相册数量。第二行包含 m 个整数 a1，a2，...，am（1 ≤ ai ≤ 1000），其中 ai 表示第 i 个相册中的照片数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果无解，输出一个数 -1。否则，输出 n 个数 t1，t2，...，tn，其中 ti 表示组件中第 i 张照片所属的相册编号。相册按照它们在输入中的出现顺序从 1 开始编号。如果有多个解，输出任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Polycarp 的图片画廊",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

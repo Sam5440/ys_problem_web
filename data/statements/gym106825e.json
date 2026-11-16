@@ -1,0 +1,81 @@
+{
+  "code": "GYM106825E",
+  "letter": "E",
+  "title": "E. Tournament",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106825/problem/E",
+  "difficulty": "*2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "In a distant galaxy, a space football tournament is being held. All $$$2^n$$$ national teams of star systems take part in the competition. The draw has already been made, and the tournament bracket is known: team $$$1$$$ will play against team $$$2$$$, team $$$3$$$ — against team $$$4$$$, and so on. Then the losing teams are eliminated and the winning teams play against each other until all teams but one are eliminated. Each time, pairs are formed from the sequence of winners of the previous round, sorted by their indices in increasing order. In particular, the winner of the game between team $$$1$$$ and team $$$2$$$ faces the winner of the game between team $$$3$$$ and team $$$4$$$, the winner of the game between team $$$5$$$ and team $$$6$$$ faces the winner of the game between team $$$7$$$ and team $$$8$$$, and so on.",
+      "Each team is characterized by two values: a game experience value $$$g_i$$$ and a media rating value $$$m_i$$$. The values of $$$g_i$$$ of all teams are pairwise distinct. In every match, the team with the higher experience defeats the team with the lower experience — that is, of course, unless the referee interferes.",
+      "The tournament organizers want to sell the rights to broadcast it on TV. However, the TV companies want the tournament to be as media-friendly as possible. The total media rating is calculated as the sum of the ratings of the participants of each game. In other words, if a team plays several games, its media rating is counted the same number of times in the total media rating.",
+      "The organizers cannot change the structure of the tournament. However, they know that if the referee is given a \"bonus\" of $$$d$$$ space dollars, then the referee will \"increase\" the game experience of the weaker team in the pair by exactly $$$d$$$ units. If the game experience of the weaker team becomes strictly greater than the game experience of the stronger team, then the weaker team wins. Otherwise, the stronger team wins. Note that the game experience of the winning team resets after the match.",
+      "The organizers decided to give the referee of each match the same bonus (of course, this bonus should be a non-negative integer amount of space dollars). Your task is to determine the minimum possible bonus that maximizes the total media rating of the tournament."
+    ],
+    "input": [
+      "The first line contains one integer $$$n$$$ ($$$2 \\le n \\le 8$$$).",
+      "The second line contains $$$2^n$$$ integers $$$g_1, g_2, \\dots, g_{2^n}$$$ ($$$1 \\le g_i \\le 10^9$$$) — the game experience values of the teams. All values of $$$g_i$$$ are pairwise distinct.",
+      "The third line contains $$$2^n$$$ integers $$$m_1, m_2, \\dots, m_{2^n}$$$ ($$$1 \\le m_i \\le 10^9$$$) — the media rating values of the teams."
+    ],
+    "output": [
+      "Print two integers — the maximum possible total media rating of the tournament and the minimum possible bonus that allows obtaining this rating."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n10 14 37 22 25 18 20 31\n32 19 25 20 21 27 35 30",
+      "output": "382\n16"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在遥远的星系中，一场太空足球锦标赛正在举行。所有 $$$2^n$$$ 支国家队都参加了比赛。抽签已经完成，比赛赛程也已确定：队伍 $$$1$$$ 将与队伍 $$$2$$$ 对阵，队伍 $$$3$$$ 将与队伍 $$$4$$$ 对阵，依此类推。随后，落败的队伍被淘汰，获胜的队伍继续相互对阵，直到除一支队伍外的所有队伍都被淘汰。每一轮比赛中，参赛队伍都由上一轮的获胜队伍按编号递增排序后，依次两两配对组成。特别地，队伍 $$$1$$$ 与队伍 $$$2$$$ 比赛的获胜者将对阵队伍 $$$3$$$ 与队伍 $$$4$$$ 比赛的获胜者，队伍 $$$5$$$ 与队伍 $$$6$$$ 比赛的获胜者将对阵队伍 $$$7$$$ 与队伍 $$$8$$$ 比赛的获胜者，依此类推。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每支队伍由两个值描述：比赛经验值 $$$g_i$$$ 和媒体评分值 $$$m_i$$$。所有队伍的 $$$g_i$$$ 值两两不同。在每场比赛中，经验值更高的队伍会击败经验值更低的队伍——当然，除非裁判进行干预。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "锦标赛组织者希望出售其电视转播权。然而，电视公司希望锦标赛尽可能具有媒体吸引力。总媒体评分定义为每场比赛中参赛队伍评分之和。换言之，如果一支队伍参加了多场比赛，那么它的媒体评分会在总媒体评分中被重复计算相应次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "组织者无法改变锦标赛的结构。然而，他们知道，如果给裁判 $$$d$$$ 太空美元的“奖金”，裁判就会恰好将该对阵中较弱队伍的比赛经验“增加” $$$d$$$ 单位。如果较弱队伍的比赛经验变得严格大于较强队伍的比赛经验，则较弱队伍获胜。否则，较强队伍获胜。注意，获胜队伍的比赛经验会在比赛后重置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "组织者决定为每场比赛的裁判发放相同的奖金（当然，这笔奖金应为非负整数个太空币）。你的任务是确定能够使比赛总媒体评分最大化的最小奖金。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 $$$n$$$($$$2 \\le n \\le 8$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 $$$2^n$$$ 个整数 $$$g_1, g_2, \\dots, g_{2^n}$$$ ($$$1 \\le g_i \\le 10^9$$$) —— 各队伍的游戏经验值。 $$$g_i$$$ 中的所有值两两不同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 $$$2^n$$$ 个整数 $$$m_1, m_2, \\dots, m_{2^n}$$$($$$1 \\le m_i \\le 10^9$$$)——各队的媒体评分值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出两个整数：比赛可能达到的最大媒体评分总和，以及能够获得该评分的最小奖金。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 锦标赛",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

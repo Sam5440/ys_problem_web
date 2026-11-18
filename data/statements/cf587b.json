@@ -1,0 +1,104 @@
+{
+  "code": "CF587B",
+  "letter": "B",
+  "title": "B. Duff in Beach",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/587/B",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "While Duff was resting in the beach, she accidentally found a strange array b0, b1, ..., bl - 1 consisting of l positive integers. This array was strange because it was extremely long, but there was another (maybe shorter) array, a0, ..., an - 1 that b can be build from a with formula: bi = ai mod n where a mod b denoted the remainder of dividing a by b.",
+      "![](https://espresso.codeforces.com/a139e8348cb51506750b02a60b0b82324e08b748.png)",
+      "Duff is so curious, she wants to know the number of subsequences of b like bi1, bi2, ..., bix (0 ≤ i1 < i2 < ... < ix < l), such that:",
+      "1 ≤ x ≤ k",
+      "For each 1 ≤ j ≤ x - 1, ![](https://espresso.codeforces.com/8049e70898b1d8579ee1e94f4c68483c301ddfc5.png)",
+      "For each 1 ≤ j ≤ x - 1, bij ≤ bij + 1. i.e this subsequence is non-decreasing.",
+      "Since this number can be very large, she want to know it modulo 109 + 7.",
+      "Duff is not a programmer, and Malek is unavailable at the moment. So she asked for your help. Please tell her this number."
+    ],
+    "input": [
+      "The first line of input contains three integers, n, l and k (1 ≤ n, k, n × k ≤ 106 and 1 ≤ l ≤ 1018).",
+      "The second line contains n space separated integers, a0, a1, ..., an - 1 (1 ≤ ai ≤ 109 for each 0 ≤ i ≤ n - 1)."
+    ],
+    "output": [
+      "Print the answer modulo 1 000 000 007 in one line."
+    ],
+    "note": [
+      "In the first sample case, ![](https://espresso.codeforces.com/d9d8fe92937aeef2bcddb9d213e5587f0f950087.png). So all such sequences are: ![](https://espresso.codeforces.com/54d7dd513b50dae3415992b37dcf6f8ff2f24a73.png), ![](https://espresso.codeforces.com/fcd7414fd5b0b1459adc9dafca95e6d5a23b0d7d.png), ![](https://espresso.codeforces.com/f6d2e0d0317c10a3c5213068fb1d1e1f53ff26eb.png), ![](https://espresso.codeforces.com/8f6627cad3dd113f47d84a1226f30fe423939757.png), ![](https://espresso.codeforces.com/c6db71d99107f752b5caa1ba7e44af1d2302e5db.png), ![](https://espresso.codeforces.com/a06ffb7bf9126fd634a790703c0bbfda00c60aa1.png), ![](https://espresso.codeforces.com/b086d545b6c80640ea8558920709e3c51ba3bf43.png), ![](https://espresso.codeforces.com/661b7811fccac48a9e96733bc99c3dfec93ad6d7.png), ![](https://espresso.codeforces.com/8756896f0d00888771e69f1a9ccddeee19d4a9ab.png) and ![](https://espresso.codeforces.com/e771f8119b1b8218c875759aa03e38312514c9a2.png)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 5 3\n5 9 1",
+      "output": "10"
+    },
+    {
+      "input": "5 10 3\n1 2 3 4 5",
+      "output": "25"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含三个整数 n、l 和 k（1 ≤ n，k，n × k ≤ 106 且 1 ≤ l ≤ 1018）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个以空格分隔的整数 a0, a1, ..., an - 1（对于每个 0 ≤ i ≤ n - 1，均有 1 ≤ ai ≤ 109）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "请在一行中输出答案对 1 000 000 007 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，![](https://espresso.codeforces.com/d9d8fe92937aeef2bcddb9d213e5587f0f950087.png)。因此，所有满足条件的序列为：![](https://espresso.codeforces.com/54d7dd513b50dae3415992b37dcf6f8ff2f24a73.png)、![](https://espresso.codeforces.com/fcd7414fd5b0b1459adc9dafca95e6d5a23b0d7d.png)、![](https://espresso.codeforces.com/f6d2e0d0317c10a3c5213068fb1d1e1f53ff26eb.png)、![](https://espresso.codeforces.com/8f6627cad3dd113f47d84a1226f30fe423939757.png)、![](https://espresso.codeforces.com/c6db71d99107f752b5caa1ba7e44af1d2302e5db.png)、![](https://espresso.codeforces.com/a06ffb7bf9126fd634a790703c0bbfda00c60aa1.png)、![](https://espresso.codeforces.com/b086d545b6c80640ea8558920709e3c51ba3bf43.png)、![](https://espresso.codeforces.com/661b7811fccac48a9e96733bc99c3dfec93ad6d7.png)、![](https://espresso.codeforces.com/8756896f0d00888771e69f1a9ccddeee19d4a9ab.png) 和 ![](https://espresso.codeforces.com/e771f8119b1b8218c875759aa03e38312514c9a2.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Duff 在海滩上休息时，偶然发现了一个由 l 个正整数组成的奇怪数组 b0, b1, ..., bl - 1。这个数组之所以奇怪，是因为它非常长，但可以通过下面的公式由另一个（可能更短的）数组 a0, ..., an - 1 构造得到：bi = ai mod n，其中 a mod b 表示 a 除以 b 所得的余数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/a139e8348cb51506750b02a60b0b82324e08b748.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Duff 非常好奇，她想知道满足以下条件的 b 的子序列 bi1, bi2, ..., bix（0 ≤ i1 < i2 < ... < ix < l）的数量：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1 ≤ x ≤ k",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个 1 ≤ j ≤ x - 1，![](https://espresso.codeforces.com/8049e70898b1d8579ee1e94f4c68483c301ddfc5.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个 1 ≤ j ≤ x - 1，bij ≤ bij + 1。也就是说，这个子序列是非递减的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于这个数可能非常大，她想知道它对 109 + 7 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Duff 不是程序员，而 Malek 此刻也无法提供帮助。因此，她向你求助。请告诉她这个数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 海滩上的 Duff",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "code": "CF43D",
+  "letter": "D",
+  "title": "D. Journey",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/43/D",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The territory of Berland is represented by a rectangular field n × m in size. The king of Berland lives in the capital, located on the upper left square (1, 1). The lower right square has coordinates (n, m). One day the king decided to travel through the whole country and return back to the capital, having visited every square (except the capital) exactly one time. The king must visit the capital exactly two times, at the very beginning and at the very end of his journey. The king can only move to the side-neighboring squares. However, the royal advise said that the King possibly will not be able to do it. But there is a way out — one can build the system of one way teleporters between some squares so that the king could fulfill his plan. No more than one teleporter can be installed on one square, every teleporter can be used any number of times, however every time it is used, it transports to the same given for any single teleporter square. When the king reaches a square with an installed teleporter he chooses himself whether he is or is not going to use the teleport. What minimum number of teleporters should be installed for the king to complete the journey? You should also compose the journey path route for the king."
+    ],
+    "input": [
+      "The first line contains two space-separated integers n and m (1 ≤ n, m ≤ 100, 2 ≤  n · m) — the field size. The upper left square has coordinates (1, 1), and the lower right square has coordinates of (n, m)."
+    ],
+    "output": [
+      "On the first line output integer k — the minimum number of teleporters. Then output k lines each containing 4 integers x1 y1 x2 y2 (1 ≤ x1, x2 ≤ n, 1 ≤ y1, y2 ≤ m) — the coordinates of the square where the teleporter is installed (x1, y1), and the coordinates of the square where the teleporter leads (x2, y2).",
+      "Then print nm + 1 lines containing 2 numbers each — the coordinates of the squares in the order in which they are visited by the king. The travel path must start and end at (1, 1). The king can move to side-neighboring squares and to the squares where a teleporter leads. Besides, he also should visit the capital exactly two times and he should visit other squares exactly one time."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 2",
+      "output": "0\n1 1\n1 2\n2 2\n2 1\n1 1"
+    },
+    {
+      "input": "3 3",
+      "output": "1\n3 3 1 1\n1 1\n1 2\n1 3\n2 3\n2 2\n2 1\n3 1\n3 2\n3 3\n1 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "伯兰国的领土由一个大小为 n×m 的矩形网格表示。伯兰国的国王居住在首都，首都位于左上角的方格 (1, 1)。右下角方格的坐标为 (n, m)。一天，国王决定游历整个国家，并在访问每个方格（首都除外）恰好一次后返回首都。国王必须恰好访问首都两次，分别位于旅程的开始和结束。国王只能移动到与当前方格共享边的相邻方格。然而，王室顾问说国王可能无法做到这一点。但还有一个办法——可以在一些方格之间建造单向传送器系统，使国王能够完成计划。每个方格上至多安装一个传送器，每个传送器可以使用任意多次，但每次使用时，都会将国王传送到该传送器唯一指定的方格。当国王到达安装了传送器的方格时，他可以自行选择是否使用传送器。为了让国王完成旅程，至少需要安装多少个传送器？你还需要构造出国王的旅程路线。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个以空格分隔的整数 n 和 m（1 ≤ n,m ≤ 100，2 ≤ n·m），表示网格的大小。左上角方格的坐标为 (1, 1)，右下角方格的坐标为 (n, m)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出整数 k，表示传送器的最小数量。接下来输出 k 行，每行包含 4 个整数 x1 y1 x2 y2（1 ≤ x1,x2 ≤ n，1 ≤ y1,y2 ≤ m），表示传送器的安装位置 (x1,y1) 以及该传送器的目的地 (x2,y2)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来输出 nm+1 行，每行包含两个数，表示国王访问各方格的顺序。旅程必须从 (1, 1) 开始并在 (1, 1) 结束。国王可以移动到与当前方格共享边的相邻方格，也可以移动到传送器所指向的方格。此外，他还必须恰好访问首都两次，并且其他方格恰好访问一次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 旅程",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

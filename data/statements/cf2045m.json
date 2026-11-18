@@ -1,0 +1,148 @@
+{
+  "code": "CF2045M",
+  "letter": "M",
+  "title": "M. Mirror Maze",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/2045/M",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a grid of R$$$R$$$ rows (numbered from 1$$$1$$$ to R$$$R$$$ from north to south) and C$$$C$$$ columns (numbered from 1$$$1$$$ to C$$$C$$$ from west to east). Every cell in this grid is a square of the same size. The cell located at row r$$$r$$$ and column c$$$c$$$ is denoted as (r,c)$$$(r, c)$$$. Each cell can either be empty or have a mirror in one of the cell's diagonals. Each mirror is represented by a line segment. The mirror is type 1$$$1$$$ if it is positioned diagonally from the southwest corner to the northeast corner of the cell, or type 2$$$2$$$ for the other diagonal.",
+      "These mirrors follow the law of reflection, that is, the angle of reflection equals the angle of incidence. Formally, for type 1$$$1$$$ mirror, if a beam of light comes from the north, south, west, or east of the cell, then it will be reflected to the west, east, north, and south of the cell, respectively. Similarly, for type 2$$$2$$$ mirror, if a beam of light comes from the north, south, west, or east of the cell, then it will be reflected to the east, west, south, and north of the cell, respectively.",
+      "![](https://espresso.codeforces.com/51ae63e20d94f6a5c323e9885ba0c734bb1b025e.png)",
+      "You want to put a laser from outside the grid such that all mirrors are hit by the laser beam. There are 2⋅(R+C)$$$2 \\cdot (R+C)$$$ possible locations to put the laser:",
+      "from the north side of the grid at column c$$$c$$$, for 1≤c≤C$$$1 \\leq c \\leq C$$$, shooting a laser beam to the south;",
+      "from the south side of the grid at column c$$$c$$$, for 1≤c≤C$$$1 \\leq c \\leq C$$$, shooting a laser beam to the north;",
+      "from the east side of the grid at row r$$$r$$$, for 1≤r≤R$$$1 \\leq r \\leq R$$$, shooting a laser beam to the west; and",
+      "from the west side of the grid at row r$$$r$$$, for 1≤r≤R$$$1 \\leq r \\leq R$$$, shooting a laser beam to the east.",
+      "![](https://espresso.codeforces.com/d8b8bddfdf81f8b1cf8a0fbdd4d5fd5c329330b3.png)",
+      "Determine all possible locations for the laser such that all mirrors are hit by the laser beam."
+    ],
+    "input": [
+      "The first line consists of two integers R$$$R$$$ C$$$C$$$ (1≤R,C≤200$$$1 \\leq R, C \\leq 200$$$).",
+      "Each of the next R$$$R$$$ lines consists of a string Sr$$$S_r$$$ of length C$$$C$$$. The c$$$c$$$-th character of string Sr$$$S_r$$$ represents cell (r,c)$$$(r, c)$$$. Each character can either be . if the cell is empty, / if the cell has type 1$$$1$$$ mirror, or \\ if the cell has type 2$$$2$$$ mirror. There is at least one mirror in the grid."
+    ],
+    "output": [
+      "Output a single integer representing the number of possible locations for the laser such that all mirrors are hit by the laser beam. Denote this number as k$$$k$$$.",
+      "If k>0$$$k  \\gt  0$$$, then output k$$$k$$$ space-separated strings representing the location of the laser. Each string consists of a character followed without any space by an integer. The character represents the side of the grid, which could be N, S, E, or W if you put the laser on the north, south, east, or west side of the grid, respectively. The integer represents the row/column number. You can output the strings in any order."
+    ],
+    "note": [
+      "Explanation for the sample input/output #1",
+      "The following illustration shows one of the solutions of this sample.",
+      "![](https://espresso.codeforces.com/d06ff905ed6f16d8a7027d495cff05aa497a50f4.png)",
+      "Explanation for the sample input/output #2",
+      "The following illustration shows one of the solutions of this sample.",
+      "![](https://espresso.codeforces.com/33e00f54fd8c8a069b2c630a5a728122cfc5f527.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n.//.\n.\\\\.\n.\\/.\n....",
+      "output": "2\nN3 W2"
+    },
+    {
+      "input": "4 6\n./..\\.\n.\\...\\\n./../\\\n......",
+      "output": "2\nE3 S2"
+    },
+    {
+      "input": "4 4\n....\n./\\.\n.\\/.\n....",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个包含 R$$$R$$$ 行的网格(行从北到南编号为 1$$$1$$$ 至 R$$$R$$$)和包含 C$$$C$$$ 列的网格(列从西到东编号为 1$$$1$$$ 至 C$$$C$$$)。网格中的每个单元格都是大小相同的正方形。位于第 r$$$r$$$ 行、第 c$$$c$$$ 列的单元格记作 (r,c)$$$(r, c)$$$。每个单元格可以为空，也可以在其某条对角线上放置一面镜子。每面镜子由一条线段表示。如果镜子位于从单元格西南角到东北角的对角线上，则称其为 1$$$1$$$ 型镜子；位于另一条对角线上的则称其为 2$$$2$$$ 型镜子。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这些镜子遵循反射定律，即反射角等于入射角。形式化地，对于类型 1$$$1$$$ 镜子，如果一束光从该单元格的北、南、西或东方向射来，那么它将分别被反射到该单元格的西、东、北或南方向。类似地，对于类型 2$$$2$$$ 镜子，如果一束光从该单元格的北、南、西或东方向射来，那么它将分别被反射到该单元格的东、西、南或北方向。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/51ae63e20d94f6a5c323e9885ba0c734bb1b025e.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你想从网格外放置一台激光器，使所有镜子都被激光束照射到。放置激光器有 2⋅(R+C)$$$2 \\cdot (R+C)$$$ 个可能的位置：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在网格北侧第 c$$$c$$$ 列的位置，向南发射激光束，其中 1≤c≤C$$$1 \\leq c \\leq C$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在网格南侧第 c$$$c$$$ 列的位置，向北发射激光束，其中 1≤c≤C$$$1 \\leq c \\leq C$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从网格东侧的第 r$$$r$$$ 行(1≤r≤R$$$1 \\leq r \\leq R$$$)向西发射一束激光；以及",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从网格西侧第 r$$$r$$$ 行向东发射一束激光，其中 1≤r≤R$$$1 \\leq r \\leq R$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/d8b8bddfdf81f8b1cf8a0fbdd4d5fd5c329330b3.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "确定激光的所有可能位置，使得所有镜子都被激光束击中。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 R$$$R$$$ 和 C$$$C$$$(1≤R,C≤200$$$1 \\leq R, C \\leq 200$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 R$$$R$$$ 行中的每一行都包含一个长度为 C$$$C$$$ 的字符串 Sr$$$S_r$$$。字符串 Sr$$$S_r$$$ 的第 c$$$c$$$ 个字符表示单元格 (r,c)$$$(r, c)$$$。每个字符可以是以下之一：如果单元格为空，则为 .；如果单元格中有类型为 1$$$1$$$ 的镜子，则为 /；如果单元格中有类型为 2$$$2$$$ 的镜子，则为 \\。网格中至少有一面镜子。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示使所有镜子都被激光束击中的激光可能位置数量。将这个数量记为 k$$$k$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 k>0$$$k  \\gt  0$$$，则输出 k$$$k$$$ 个以空格分隔的字符串，表示激光的位置。每个字符串由一个字符和一个紧随其后的整数构成，中间不含空格。该字符表示网格的一侧：如果将激光放在网格的北、南、东或西侧，则分别可以是 N、S、E 或 W。整数表示行号/列号。你可以按任意顺序输出这些字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例输入/输出 #1 的解释",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下面的图示展示了该样例的一种解法。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/d06ff905ed6f16d8a7027d495cff05aa497a50f4.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "样例输入/输出 #2 的解释",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下面的图示展示了该样例的一种解法。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/33e00f54fd8c8a069b2c630a5a728122cfc5f527.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "M. 镜子迷宫",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

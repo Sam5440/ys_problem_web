@@ -1,0 +1,185 @@
+{
+  "code": "GYM106628L",
+  "letter": "L",
+  "title": "L. Secret Polynomial",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106628/problem/L",
+  "difficulty": "*2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Elgoker locked the ship's treasure inside a secure safe. He encoded the master key as the constant term, $$$P(0)$$$, of a secret polynomial $$$P(x)$$$ of degree at most $$$k-1$$$. All calculations are heavily secured and evaluated modulo $$$10^{9}+7$$$.",
+      "To ensure the safe could be opened later, Elgoker distributed $$$k+2$$$ access codes to Chopper. Each access code is a coordinate pair $$$(x_{i}, y_{i})$$$, where $$$y_{i} = P(x_{i}) \\pmod{10^{9}+7}$$$.",
+      "However, a mischievous monkey managed to infiltrate the ship and tampered with exactly one of the $$$k+2$$$ access codes, altering its $$$y_{i}$$$ value to a fake integer to lock everyone out. The remaining $$$k+1$$$ codes are completely untouched and lie perfectly on the original polynomial curve.",
+      "Given the $$$k+2$$$ access codes, your task is to help Chopper identify the corrupted code, discard it, and recover the master key $$$P(0) \\pmod{10^{9}+7}$$$ so they can access the treasure!"
+    ],
+    "input": [
+      "The first line of the input contains a single integer $$$k$$$ ($$$2 \\le k \\le 2000$$$) indicating that Elgoker's secret polynomial $$$P(x)$$$ has a maximum degree of $$$k-1$$$.",
+      "The next $$$k+2$$$ lines each contain two integers $$$x_{i}$$$ and $$$y_{i}$$$ ($$$1 \\le x_{i}  \\lt  10^{9}+7$$$, $$$0 \\le y_{i}  \\lt  10^{9}+7$$$) — the $$$x$$$ and $$$y$$$ values of the $$$i$$$-th access code.",
+      "It is guaranteed that:",
+      "All $$$x_{i}$$$ are pairwise distinct.",
+      "Exactly one $$$y_{i}$$$ has been altered from its true value $$$P(x_{i}) \\pmod{10^{9}+7}$$$.",
+      "The original polynomial $$$P(x)$$$ has degree $$$ \\le k-1$$$."
+    ],
+    "output": [
+      "Print a single integer: the original master key $$$P(0) \\pmod{10^{9}+7}$$$."
+    ],
+    "note": [
+      "In the example, the threshold is $$$k=2$$$, meaning Elgoker's polynomial has a degree of at most 1 (it is a linear equation).",
+      "The true polynomial is $$$P(x)=5x+10 \\pmod{10^{9}+7}$$$.",
+      "The actual valid access codes should be: $$$P(1)=15$$$, $$$P(2)=20$$$, $$$P(3)=25$$$, $$$P(4)=30$$$.",
+      "The third access code (3, 99) was tampered with by the monkey. After discarding it, the remaining valid codes (1, 15), (2, 20), and (4, 30) perfectly form the line $$$P(x)=5x+10$$$. The master key $$$P(0)$$$ is 10."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 15\n2 20\n3 99\n4 30",
+      "output": "10"
+    }
+  ],
+  "titleZh": {
+    "0": "L. 秘密多项式",
+    "caiyun": "L. 秘密多项式",
+    "youdao": "L.秘密多项式",
+    "deepl": "L.秘密多项式",
+    "iflyrec": "L.秘密多项式",
+    "ai": "L. 秘密多项式",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "埃尔戈克将船上的宝藏锁在一个安全的保险箱中。他将主钥匙编码为常数项 $$$P(0)$$$，其次数最多为 $$$k-1$$$ 次的秘密多项式 $$$P(x)$$$。所有计算都经过严格保密，并以 $$$10^{9}+7$$$ 模进行评估。",
+        "youdao": "埃尔戈克把船上的财宝锁在一个安全的保险箱里。他将主密钥编码为次数最多为$$$k-1$$$的秘密多项式$$$P(x)$$$的常数项$$$P(0)$$$。所有的计算都是高度安全的，并以模$$$10^{9}+7$$$计算。",
+        "deepl": "埃尔格克把船上的宝藏锁在一个安全的保险箱里。他将万能钥匙编码为最多$$$k-1$$$度的秘密多项式$$$P(x)$$$的常数项$$$P(0)$$$。所有计算都经过严格保密，并以$$$10^{9}+7$$$为模进行评估。",
+        "iflyrec": "埃尔戈克把船上的财宝锁在一个安全的保险箱里。他将主密钥编码为次数最多为$$$k-1$$$的秘密多项式$$$P(x)$$$的常数项$$$P(0)$$$。所有计算都是高度安全的，并以$$$10^{9}+7$$$为模进行评估。",
+        "ai": "Elgoker 将船上的宝藏锁在一个安全的保险箱中。他将主密钥编码为秘密多项式 $$$P(x)$$$ 的常数项 $$$P(0)$$$，该多项式的次数至多为 $$$k-1$$$。所有计算都经过严格保护，并在模 $$$10^{9}+7$$$ 下进行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "为了确保保险箱稍后可以打开，Elgoker 向 Chopper 发送了 $$$k+2$$$ 访问代码。每个访问代码都是一个坐标对 $$$(x_{i}, y_{i})$$$，其中 $$$y_{i} = P(x_{i}) \\pmod{10^{9}+7}$$$。",
+        "youdao": "为了确保保险箱可以稍后打开，Elgoker向Chopper分发了$$$k+2$$$访问代码。每个接入码是一个坐标对$$$(x_{i}, y_{i})$$$，其中$$$y_{i} = P(x_{i}) \\pmod{10^{9}+7}$$$。",
+        "deepl": "为了确保保险箱能在稍后被打开，埃尔格克向乔巴分发了$$$k+2$$$进入密码。每个密码都是一对坐标$$$(x_{i}, y_{i})$$$，其中$$$y_{i} = P(x_{i}) \\pmod{10^{9}+7}$$$.",
+        "iflyrec": "为了确保稍后可以打开保险箱，Elgoker向Chopper分配了$$$k+2$$$访问代码。每个访问代码是一个坐标对$$$(x_{i}, y_{i})$$$，其中$$$y_{i} = P(x_{i}) \\pmod{10^{9}+7}$$$。",
+        "ai": "为了确保之后能够打开保险箱，Elgoker 将 $$$k+2$$$ 个访问码分发给 Chopper。每个访问码都是一个坐标对 $$$(x_{i}, y_{i})$$$，其中 $$$y_{i} = P(x_{i}) \\pmod{10^{9}+7}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "然而，一只调皮的猴子成功潜入飞船，篡改了其中一个 $$$k+2$$$ 访问码，将其 $$$y_{i}$$$ 值更改为一个假整数，将所有人都锁在外面。剩余的 $$$k+1$$$ 码完全未受影响，完美地位于原始多项式曲线上。",
+        "youdao": "然而，一只顽皮的猴子设法潜入飞船，篡改了其中一个$$$k+2$$$的访问密码，将其$$$y_{i}$$$的值更改为一个假整数，将所有人都锁在了外面。其余的$$$k+1$$$代码完全未受影响，并完美地位于原始多项式曲线上。",
+        "deepl": "然而，一只调皮的猴子设法潜入了飞船，篡改了其中一个$$$k+2$$$访问密码，将其$$$y_{i}$$$值改为一个假整数，从而将所有人都锁在了外面。其余的$$$k+1$$$密码完全没有被篡改，完全位于原来的多项式曲线上。",
+        "iflyrec": "然而，一只淘气的猴子设法潜入飞船，并篡改了其中一个$$$k+2$$$访问代码，将其$$$y_{i}$$$值更改为一个假整数，以锁定所有人。剩余的$$$k+1$$$码完全未受影响，并且完全位于原始多项式曲线上。",
+        "ai": "然而，一只顽皮的猴子设法潜入了船内，并篡改了 $$$k+2$$$ 个访问码中的恰好一个，将其 $$$y_{i}$$$ 值改成了一个伪造的整数，使所有人都无法打开保险箱。其余 $$$k+1$$$ 个访问码完全未被改动，并且都完美地位于原多项式曲线上。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "给定 $$$k+2$$$ 访问代码，你的任务是帮助 Chopper 识别被损坏的代码，丢弃它，并恢复主密钥 $$$P(0) \\pmod{10^{9}+7}$$$，这样他们就可以访问宝藏了！",
+        "youdao": "给定$$$k+2$$$访问代码，您的任务是帮助Chopper识别损坏的代码，丢弃它，并恢复主密钥$$$P(0) \\pmod{10^{9}+7}$$$，以便他们可以访问宝藏！",
+        "deepl": "给你 $$$k+2$$$ 进入密码，你的任务是帮助乔巴识别损坏的密码，丢弃它，并找回万能钥匙 $$$P(0) \\pmod{10^{9}+7}$$$，这样他们就可以进入宝藏了！",
+        "iflyrec": "给定$$$k+2$$$访问代码，你的任务是帮助Chopper识别损坏的代码，丢弃它，并恢复主密钥$$$P(0) \\pmod{10^{9}+7}$$$，这样他们就可以访问宝藏！",
+        "ai": "给定这 $$$k+2$$$ 个访问码，你的任务是帮助 Chopper 找出被篡改的访问码，丢弃它，并恢复主密钥 $$$P(0) \\pmod{10^{9}+7}$$$，这样他们就能获取宝藏！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "输入的第一行包含一个整数 $$$k$$$($$$2 \\le k \\le 2000$$$)，表明 Elgoker 的秘密多项式 $$$P(x)$$$ 的最大次数为 $$$k-1$$$。",
+        "youdao": "输入的第一行包含单个整数$$$k$$$ ($$$2 \\le k \\le 2000$$$)，表示Elgoker的秘密多项式$$$P(x)$$$的最大度为$$$k-1$$$。",
+        "deepl": "输入的第一行包含一个整数 $$$k$$$ ($$$2 \\le k \\le 2000$$$），表示 Elgoker 的秘密多项式 $$$P(x)$$$ 的最大度数为 $$$k-1$$$。",
+        "iflyrec": "输入的第一行包含单个整数$$$k$$$($$$2 \\le k \\le 2000$$$），指示Elgoker的秘密多项式$$$P(x)$$$具有最大次数$$$k-1$$$。",
+        "ai": "输入的第一行包含一个整数 $$$k$$$($$$2 \\le k \\le 2000$$$)，表示 Elgoker 的秘密多项式 $$$P(x)$$$ 的最大次数为 $$$k-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "接下来的 $$$k+2$$$ 行各包含两个整数 $$$x_{i}$$$ 和 $$$y_{i}$$$($$$1 \\le x_{i}  \\lt  10^{9}+7$$$、$$$0 \\le y_{i}  \\lt  10^{9}+7$$$)——即 $$$i$$$ 访问代码的 $$$x$$$ 和 $$$y$$$ 值。",
+        "youdao": "接下来的$$$k+2$$$行每行包含两个整数$$$x_{i}$$$和$$$y_{i}$$$ ($$$1 \\le x_{i}  \\lt  10^{9}+7$$$, $$$0 \\le y_{i}  \\lt  10^{9}+7$$$) - $$$i$$$的第一个访问码的$$$x$$$和$$$y$$$值。",
+        "deepl": "接下来的 $$$k+2$$$ 行分别包含两个整数 $$$x_{i}$$$ 和 $$$y_{i}$$$ ($$$1 \\le x_{i}  \\lt  10^{9}+7$$$、$$$0 \\le y_{i}  \\lt  10^{9}+7$$$）--$$$i$$$-th 访问代码的 $$$x$$$ 和 $$$y$$$ 值。",
+        "iflyrec": "接下来的$$$k+2$$$行各包含两个整数$$$x_{i}$$$和$$$y_{i}$$$($$$1 \\le x_{i}  \\lt  10^{9}+7$$$，$$$0 \\le y_{i}  \\lt  10^{9}+7$$$）—第$$$i$$$个访问代码的$$$x$$$和$$$y$$$值。",
+        "ai": "接下来的 $$$k+2$$$ 行中，每行包含两个整数 $$$x_{i}$$$ 和 $$$y_{i}$$$($$$1 \\le x_{i}  \\lt  10^{9}+7$$$、$$$0 \\le y_{i}  \\lt  10^{9}+7$$$)，分别表示第 $$$i$$$ 个访问码的 $$$x$$$ 值和 $$$y$$$ 值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "保证：",
+        "youdao": "保证：",
+        "deepl": "保证：",
+        "iflyrec": "保证:",
+        "ai": "保证：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "所有 $$$x_{i}$$$ 都是成对不同的。",
+        "youdao": "所有$$$x_{i}$$$都是两两不同的。",
+        "deepl": "所有$$$x_{i}$$$都是成对截然不同的。",
+        "iflyrec": "所有$$$x_{i}$$$都是两两不同的。",
+        "ai": "所有 $$$x_{i}$$$ 两两不同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "正好有一个 $$$y_{i}$$$ 被改变了其真实值 $$$P(x_{i}) \\pmod{10^{9}+7}$$$。",
+        "youdao": "只有一个$$$y_{i}$$$与它的真实值$$$P(x_{i}) \\pmod{10^{9}+7}$$$发生了变化。",
+        "deepl": "正好有一个$$$y_{i}$$$的真实值$$$P(x_{i}) \\pmod{10^{9}+7}$$$被更改。",
+        "iflyrec": "仅有一个$$$y_{i}$$$已从其真实值$$$P(x_{i}) \\pmod{10^{9}+7}$$$更改。",
+        "ai": "恰有一个 $$$y_{i}$$$ 被修改过，其真实值为 $$$P(x_{i}) \\pmod{10^{9}+7}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "原多项式 $$$P(x)$$$ 的度为 $$$ \\le k-1$$$。",
+        "youdao": "原多项式$$$P(x)$$$的次为$$$ \\le k-1$$$。",
+        "deepl": "原始多项式 $$$P(x)$$$ 的度数为 $$$ \\le k-1$$$。",
+        "iflyrec": "原始多项式$$$P(x)$$$的次数为$$$ \\le k-1$$$。",
+        "ai": "原多项式 $$$P(x)$$$ 的次数为 $$$ \\le k-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "打印一个整数：原始主键 $$$P(0) \\pmod{10^{9}+7}$$$。",
+        "youdao": "打印单个整数：原始主密钥$$$P(0) \\pmod{10^{9}+7}$$$。",
+        "deepl": "打印一个整数：原始主密钥 $$$P(0) \\pmod{10^{9}+7}$$$。",
+        "iflyrec": "打印单个整数：原始主密钥$$$P(0) \\pmod{10^{9}+7}$$$。",
+        "ai": "输出一个整数：原始主密钥 $$$P(0) \\pmod{10^{9}+7}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "在这个例子中，阈值为 $$$k=2$$$，这意味着 Elgoker 多项式的次数最多为 1(它是一个线性方程)。",
+        "youdao": "在本例中，阈值为$$$k=2$$$，这意味着Elgoker多项式的度数最多为1(它是一个线性方程）。",
+        "deepl": "在这个例子中，阈值是 $$$k=2$$$，这意味着 Elgoker 多项式的阶数最多是 1(这是一个线性方程）。",
+        "iflyrec": "在该示例中，阈值为$$$k=2$$$，这意味着Elgoker多项式的次数最多为1(它是一个线性方程)。",
+        "ai": "在样例中，阈值为 $$$k=2$$$，这意味着 Elgoker 的多项式次数至多为 1(它是一个一次方程)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "真多项式是 $$$P(x)=5x+10 \\pmod{10^{9}+7}$$$。",
+        "youdao": "真正的多项式是$$$P(x)=5x+10 \\pmod{10^{9}+7}$$$。",
+        "deepl": "真正的多项式是 $$$P(x)=5x+10 \\pmod{10^{9}+7}$$$。",
+        "iflyrec": "真正的多项式是$$$P(x)=5x+10 \\pmod{10^{9}+7}$$$。",
+        "ai": "真正的多项式是 $$$P(x)=5x+10 \\pmod{10^{9}+7}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "实际有效的访问代码应该是:$$$P(1)=15$$$、$$$P(2)=20$$$、$$$P(3)=25$$$、$$$P(4)=30$$$。",
+        "youdao": "实际有效的访问码应为：$$$P(1)=15$$$， $$$P(2)=20$$$, $$$P(3)=25$$$, $$$P(4)=30$$$。",
+        "deepl": "实际有效的访问代码应为$$$P(1)=15$$$、$$$P(2)=20$$$、$$$P(3)=25$$$、$$$P(4)=30$$$。",
+        "iflyrec": "实际有效访问代码应为：$$$P(1)=15$$$，$$$P(2)=20$$$，$$$P(3)=25$$$，$$$P(4)=30$$$。",
+        "ai": "实际有效的访问码应为：$$$P(1)=15$$$、$$$P(2)=20$$$、$$$P(3)=25$$$、$$$P(4)=30$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "第三个访问代码 (3,99) 被猴子篡改了。在丢弃它之后，剩余的有效代码 (1,15)、(2,20) 和 (4,30) 完美地组成了行 $$$P(x)=5x+10$$$。主密钥 $$$P(0)$$$ 是 10。",
+        "youdao": "第三个访问码(3,99）被猴子篡改了。将其丢弃后，剩余的有效代码(1,15）、(2,20）和(4,30）完美地形成了一行$$$P(x)=5x+10$$$。主密钥$$$P(0)$$$是10。",
+        "deepl": "第三个访问代码(3，99）被猴子篡改了。将其丢弃后，剩下的有效密码(1，15）、(2，20）和(4，30）完美地组成了一行$$$P(x)=5x+10$$$。主密钥 $$$P(0)$$$ 是 10。",
+        "iflyrec": "第三个访问代码(3，99）被猴子篡改了。在丢弃它之后，剩余的有效代码(1，15）、(2，20）和(4，30）完美地形成行$$$P(x)=5x+10$$$。主密钥$$$P(0)$$$为10。",
+        "ai": "第三个访问码 (3, 99) 被猴子篡改了。丢弃它后，剩余的有效访问码 (1, 15)、(2, 20) 和 (4, 30) 恰好构成直线 $$$P(x)=5x+10$$$。主密钥 $$$P(0)$$$ 是 10。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.112Z",
+  "translatedBy": [
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

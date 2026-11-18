@@ -1,0 +1,123 @@
+{
+  "code": "GYM105791E",
+  "letter": "E",
+  "title": "E. Elevator",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105791/problem/E",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Pep is late for his competitive programming lecture. His building has n+1$$$n + 1$$$ floors, and he lives on the floor n+1$$$n + 1$$$. To go to college, he calls the elevator to his floor. Since he's superstitious, if the elevator stops on more than one floor besides the one it was on when he called and his floor, n+1$$$n + 1$$$, he believes the day will be bad and goes back to bed.",
+      "![](https://espresso.codeforces.com/c98d704275b40e930a589995c39703d2640db9c6.png)",
+      "While the elevator is moving, each floor i$$$i$$$ has a probability pi$$$p_i$$$ that the neighbor on floor i$$$i$$$ will call the elevator at that moment, causing it to stop. Fortunately for Pep, his neighbors are not obsessed with constantly calling the elevator, that is, pi<100%$$$p_i  \\lt  100\\%$$$ for 1≤i≤n$$$1 \\le i \\le n$$$.",
+      "During the college semester, his neighbors may move out, and new neighbors may arrive, changing the probability pi$$$p_i$$$ of floor i$$$i$$$. Pep would also like to make queries to determine the probability of going to class, given that the elevator would be on floor x$$$x$$$ when he calls it."
+    ],
+    "input": [
+      "The first line consists of two integers n$$$n$$$ (3≤n≤2⋅105)$$$(3\\le n \\le 2\\cdot 10^5)$$$ and q$$$q$$$ (1≤q≤2⋅105)$$$(1\\le q \\le 2\\cdot 10^5)$$$.",
+      "The second line consists of n$$$n$$$ integers pi$$$p_i$$$ (0≤pi<100)$$$(0 \\le p_i  \\lt  100)$$$, representing the probability (in percentage) that the elevator will stop on floor i$$$i$$$ while in motion.",
+      "The next q$$$q$$$ lines correspond to queries of two types:",
+      "∙$$$\\bullet$$$ 1$$$1$$$ x$$$x$$$ p$$$p$$$: Change the probability of floor x$$$x$$$, updating px$$$p_x$$$ to p$$$p$$$.",
+      "∙$$$\\bullet$$$ 2$$$2$$$ x$$$x$$$: Answer with the probability that Pep will go to class, given that the elevator is on floor x$$$x$$$ when he calls it."
+    ],
+    "output": [
+      "For each query of type 2$$$2$$$, output a line with the queried probability. We can prove that this probability can be expressed as an irreducible fraction pq$$$\\frac{p}{q}$$$. Print p⋅q−1$$$p \\cdot q^{-1}$$$ modulo (109+7)$$$(10^9 + 7)$$$."
+    ],
+    "note": [
+      "In Sample 1:",
+      "The probability of not stopping on floors 2$$$2$$$ and 3$$$3$$$ is 14$$$\\frac{1}{4}$$$.",
+      "The probability of stopping only on floor 2$$$2$$$ is 14$$$\\frac{1}{4}$$$.",
+      "The probability of stopping only on floor 3$$$3$$$ is 14$$$\\frac{1}{4}$$$.",
+      "Thus, the final answer is 34$$$\\frac{3}{4}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1\n10 50 50\n2 1",
+      "output": "750000006"
+    },
+    {
+      "input": "5 1\n25 25 0 0 0\n2 2",
+      "output": "1"
+    },
+    {
+      "input": "4 3\n40 50 99 99\n2 2\n1 3 0\n2 2",
+      "output": "854300006\n1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Pep 上竞赛编程课要迟到了。他所在的楼有 n+1$$$n + 1$$$ 层，他住在第 n+1$$$n + 1$$$ 层。为了去学校，他把电梯叫到自己所在的楼层。由于他很迷信，如果电梯除他呼叫时所在的楼层和他的楼层 n+1$$$n + 1$$$ 外，还在不止一层的其他楼层停下，他就认为这一天会很糟糕，然后回去睡觉。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/c98d704275b40e930a589995c39703d2640db9c6.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "电梯运行时，对于每一层 i$$$i$$$，住在第 i$$$i$$$ 层的邻居会在此刻呼叫电梯并使其停下的概率为 pi$$$p_i$$$。幸运的是，Pep 的邻居并没有痴迷于不断呼叫电梯，也就是说，对于 1≤i≤n$$$1 \\le i \\le n$$$，pi<100%$$$p_i  \\lt  100\\%$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在大学学期期间，他的邻居可能会搬走，也可能会有新邻居搬来，从而改变楼层 i$$$i$$$ 的概率 pi$$$p_i$$$。Pep 还希望进行查询，以确定在他呼叫电梯时电梯位于楼层 x$$$x$$$ 的情况下，他去上课的概率。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ (3≤n≤2⋅105)$$$(3\\le n \\le 2\\cdot 10^5)$$$ 和 q$$$q$$$ (1≤q≤2⋅105)$$$(1\\le q \\le 2\\cdot 10^5)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 pi$$$p_i$$$ (0≤pi<100)$$$(0 \\le p_i  \\lt  100)$$$，表示电梯运行过程中停在楼层 i$$$i$$$ 的概率(以百分比表示)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行对应两种类型的查询：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "∙$$$\\bullet$$$ 1$$$1$$$ x$$$x$$$ p$$$p$$$：改变楼层 x$$$x$$$ 的概率，将 px$$$p_x$$$ 更新为 p$$$p$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "∙$$$\\bullet$$$ 2$$$2$$$ x$$$x$$$：给出 Pep 去上课的概率，条件是他呼叫电梯时电梯位于楼层 x$$$x$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个类型为 2$$$2$$$ 的查询，输出一行所查询的概率。我们可以证明，该概率可以表示为不可约分数 pq$$$\\frac{p}{q}$$$。请输出 p⋅q−1$$$p \\cdot q^{-1}$$$ 对 (109+7)$$$(10^9 + 7)$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在样例 1 中：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第 2$$$2$$$ 层和第 3$$$3$$$ 层均不停下的概率为 14$$$\\frac{1}{4}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "只在第 2$$$2$$$ 层停下的概率为 14$$$\\frac{1}{4}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "只在第 3$$$3$$$ 层停下的概率为 14$$$\\frac{1}{4}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "因此，最终答案为 34$$$\\frac{3}{4}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 电梯",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

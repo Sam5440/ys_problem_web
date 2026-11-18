@@ -1,0 +1,112 @@
+{
+  "code": "GYM102896C",
+  "letter": "C",
+  "title": "C. Color the Tree",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102896/problem/C",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Christina has a rooted tree with n$$$n$$$ vertices. Initially, all vertices are colored green, except for the root, which is colored red. Christina thinks that the tree is beautiful if two rules are satisfied:",
+      "The root is colored red.",
+      "If the vertex is colored red, all vertices on the shortest path between it and the root are also red.",
+      "Christina repeatedly performs the following operation on the tree — chooses a vertex and changes its color (if it was red, colors it green; if it was green, colors it red). The following rules must be satisfied while performing the operations:",
+      "The tree should stay beautiful.",
+      "The coloring of vertices should be unique. That means there is no moment in the past when each vertex had the same color as it has right now.",
+      "Your task is to help Christina build the longest possible sequence of operations following the rules."
+    ],
+    "input": [
+      "The first line contains an integer n$$$n$$$ (1≤n≤20$$$1 \\le n \\le 20$$$) — the number of vertices in the tree.",
+      "The second line contains n−1$$$n - 1$$$ integers pi$$$p_i$$$ (1≤pi≤i$$$1 \\le p_i \\le i$$$ for 1≤i≤n−1$$$1 \\le i \\le n - 1$$$), denoting parent vertices in the tree. The vertices in the tree are numbered from 1$$$1$$$ to n$$$n$$$, the root has number 1$$$1$$$, the i$$$i$$$-th vertex has parent pi−1$$$p_{i-1}$$$ for 2≤i≤n$$$2 \\le i \\le n$$$."
+    ],
+    "output": [
+      "On the first line output an integer m$$$m$$$ — the maximum number of operations.",
+      "On the second line output m$$$m$$$ integers oi$$$o_i$$$ (2≤oi≤n)$$$2 \\le o_i \\le n)$$$. oi$$$o_i$$$ is the number of the vertex that changes color during the corresponding operation.",
+      "If there are several possible longest sequences, output any one of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1 1 1",
+      "output": "7\n4 3 4 2 4 3 4"
+    },
+    {
+      "input": "4\n1 2 3",
+      "output": "3\n2 3 4"
+    },
+    {
+      "input": "6\n1 1 2 2 2",
+      "output": "17\n3 2 3 6 3 5 3 6 3 4 3 6 3 5 3 6 3"
+    },
+    {
+      "input": "5\n1 2 1 1",
+      "output": "11\n5 4 5 2 5 4 5 3 5 4 5"
+    },
+    {
+      "input": "5\n1 1 2 3",
+      "output": "8\n3 5 2 5 3 4 3 5"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Christina 有一棵包含 n$$$n$$$ 个顶点的有根树。初始时，除根节点被染成红色外，所有顶点都被染成绿色。Christina 认为，当满足以下两条规则时，这棵树是美丽的：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "根被染成红色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果某个顶点被染成红色，那么它与根之间最短路径上的所有顶点也都被染成红色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Christina 反复在树上执行以下操作——选择一个顶点并改变其颜色（如果它是红色，就将其染成绿色；如果它是绿色，就将其染成红色）。在执行这些操作的过程中，必须满足以下规则：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这棵树应始终保持美丽。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "顶点的染色方案应当是唯一的。这意味着在过去不存在某个时刻，使得每个顶点的颜色都与此刻相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是帮助 Christina 在遵循这些规则的前提下，构造尽可能长的操作序列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤20$$$1 \\le n \\le 20$$$)——树中顶点的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行包含 n−1$$$n - 1$$$ 个整数 pi$$$p_i$$$(对于 1≤i≤n−1$$$1 \\le p_i \\le i$$$，有 1≤pi≤i$$$1 \\le i \\le n - 1$$$)，表示树中的父顶点。树中顶点编号为 1$$$1$$$ 到 n$$$n$$$，根节点编号为 1$$$1$$$，第 i$$$i$$$ 个顶点的父节点为 pi−1$$$p_{i-1}$$$，其中 2≤i≤n$$$2 \\le i \\le n$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在第一行输出一个整数 m$$$m$$$——操作的最大数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二行输出 m$$$m$$$ 个整数 oi$$$o_i$$$(2≤oi≤n$$$2 \\le o_i \\le n)$$$)。oi$$$o_i$$$ 是相应操作中改变颜色的顶点的编号。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果存在多个可能的最长序列，输出其中任意一个。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 给树染色",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

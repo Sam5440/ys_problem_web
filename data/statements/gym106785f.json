@@ -1,0 +1,110 @@
+{
+  "code": "GYM106785F",
+  "letter": "F",
+  "title": "F. Permutation Edit Distance",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106785/problem/F",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are given two permutations$$$^{\\text{∗}}$$$ and must compute the edit distance between them using only the following edits:",
+      "Given a length $$$n$$$ permutation, insert $$$n+1$$$ anywhere into the array, resulting in a permutation of length $$$n+1$$$.",
+      "Given a length $$$n$$$ permutation, delete $$$n$$$ from the array, resulting in a permutation of length $$$n-1$$$.",
+      "The edit distance between two permutations $$$p$$$ and $$$q$$$ is the minimum possible number of edits it takes to turn $$$p$$$ into $$$q$$$ or vice versa. It can be shown that, given the edits above, it does not matter which permutation you start with.",
+      "$$$^{\\text{∗}}$$$A permutation of length $$$n$$$ is an array consisting of $$$n$$$ distinct integers from $$$1$$$ to $$$n$$$ in arbitrary order. For example, $$$[2,3,1,5,4]$$$ is a permutation, but $$$[1,2,2]$$$ is not a permutation ($$$2$$$ appears twice in the array), and $$$[1,3,4]$$$ is also not a permutation ($$$n=3$$$ but there is $$$4$$$ in the array)."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases $$$t$$$ ($$$1 \\le t \\le 2 \\cdot 10^5$$$). The description of the test cases follows.",
+      "The first line of each test case contains two integers $$$n$$$ and $$$m$$$ ($$$1\\leq n,\\,m\\leq 2\\cdot10^5$$$) — the lengths of the permutations.",
+      "The second line of each test case contains $$$n$$$ integers $$$p_1,\\,p_2,\\,\\ldots,\\,p_n$$$ ($$$1\\leq p_i\\leq n$$$) — the permutation $$$p$$$.",
+      "The last line of each test case contains $$$m$$$ integers $$$q_1,\\,q_2,\\,\\ldots,\\,q_m$$$ ($$$1\\leq q_i\\leq m$$$) — the permutation $$$q$$$.",
+      "It is guaranteed that the sum of $$$\\max(n,\\,m)$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, output a single integer — the minimum number of valid edits to transform $$$p$$$ into $$$q$$$."
+    ],
+    "note": [
+      "In the first test case, inserting 5 into $$$p$$$ in the second position will result in $$$q$$$.",
+      "In the second test case, first delete $$$3$$$ and $$$2$$$ from the end of $$$p$$$. Then insert $$$2$$$ into the beginning, and after that insert $$$3$$$ into the beginning as well. This will result in $$$q$$$, and it can be shown that this is a minimal solution.",
+      "In the third test case, the permutations are already equal."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4 5\n1 2 3 4\n1 5 2 3 4\n3 3\n1 2 3\n3 2 1\n1 1\n1\n1",
+      "output": "1\n4\n0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定两个排列$$$^{\\text{∗}}$$$，你需要仅使用以下编辑操作计算它们之间的编辑距离：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个长度为 $$$n$$$ 的排列，将 $$$n+1$$$ 插入数组中的任意位置，得到一个长度为 $$$n+1$$$ 的排列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个长度为 $$$n$$$ 的排列，从数组中删除 $$$n$$$，得到一个长度为 $$$n-1$$$ 的排列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "两个排列 $$$p$$$ 和 $$$q$$$ 之间的编辑距离，是将 $$$p$$$ 变为 $$$q$$$ 或反之所需的最少编辑次数。可以证明，在给定上述编辑操作的情况下，从哪个排列开始并不影响结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$^{\\text{∗}}$$$长度为 $$$n$$$ 的排列是一个数组，由 $$$1$$$ 到 $$$n$$$ 中的 $$$n$$$ 个互不相同的整数以任意顺序组成。例如，$$$[2,3,1,5,4]$$$ 是一个排列，但 $$$[1,2,2]$$$ 不是排列($$$2$$$ 在数组中出现了两次)，$$$[1,3,4]$$$ 也不是排列($$$n=3$$$，但数组中存在 $$$4$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多组测试用例。第一行包含测试用例的数量 $$$t$$$($$$1 \\le t \\le 2 \\cdot 10^5$$$)。接下来是各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 $$$n$$$ 和 $$$m$$$($$$1\\leq n,\\,m\\leq 2\\cdot10^5$$$)——两个排列的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 $$$n$$$ 个整数 $$$p_1,\\,p_2,\\,\\ldots,\\,p_n$$$ ($$$1\\leq p_i\\leq n$$$)，即排列 $$$p$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的最后一行包含 $$$m$$$ 个整数 $$$q_1,\\,q_2,\\,\\ldots,\\,q_m$$$($$$1\\leq q_i\\leq m$$$)——排列 $$$q$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例的 $$$\\max(n,\\,m)$$$ 之和不超过 $$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每组测试用例，输出一个整数——将 $$$p$$$ 变为 $$$q$$$ 所需的最少有效编辑次数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，将 5 插入到 $$$p$$$ 的第二个位置后，结果为 $$$q$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，首先从 $$$p$$$ 的末尾删除 $$$3$$$ 和 $$$2$$$。然后在开头插入 $$$2$$$，之后再在开头插入 $$$3$$$。最终得到 $$$q$$$，可以证明这是一个最优解。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试用例中，两个排列已经相等。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 排列编辑距离",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

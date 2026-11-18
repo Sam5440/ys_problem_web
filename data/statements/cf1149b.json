@@ -1,0 +1,109 @@
+{
+  "code": "CF1149B",
+  "letter": "B",
+  "title": "B. Three Religions",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1149/B",
+  "difficulty": "2200",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "During the archaeological research in the Middle East you found the traces of three ancient religions: First religion, Second religion and Third religion. You compiled the information on the evolution of each of these beliefs, and you now wonder if the followers of each religion could coexist in peace.",
+      "The Word of Universe is a long word containing the lowercase English characters only. At each moment of time, each of the religion beliefs could be described by a word consisting of lowercase English characters.",
+      "The three religions can coexist in peace if their descriptions form disjoint subsequences of the Word of Universe. More formally, one can paint some of the characters of the Word of Universe in three colors: 1$$$1$$$, 2$$$2$$$, 3$$$3$$$, so that each character is painted in at most one color, and the description of the i$$$i$$$-th religion can be constructed from the Word of Universe by removing all characters that aren't painted in color i$$$i$$$.",
+      "The religions however evolve. In the beginning, each religion description is empty. Every once in a while, either a character is appended to the end of the description of a single religion, or the last character is dropped from the description. After each change, determine if the religions could coexist in peace."
+    ],
+    "input": [
+      "The first line of the input contains two integers n,q$$$n, q$$$ (1≤n≤100000$$$1 \\leq n \\leq 100\\,000$$$, 1≤q≤1000$$$1 \\leq q \\leq 1000$$$) — the length of the Word of Universe and the number of religion evolutions, respectively. The following line contains the Word of Universe — a string of length n$$$n$$$ consisting of lowercase English characters.",
+      "Each of the following line describes a single evolution and is in one of the following formats:",
+      "+ i$$$i$$$ c$$$c$$$ (i∈{1,2,3}$$$i \\in \\{1, 2, 3\\}$$$, c∈{a,b,…,z}$$$c \\in \\{\\mathtt{a}, \\mathtt{b}, \\dots, \\mathtt{z}\\}$$$: append the character c$$$c$$$ to the end of i$$$i$$$-th religion description.",
+      "- i$$$i$$$ (i∈{1,2,3}$$$i \\in \\{1, 2, 3\\}$$$) – remove the last character from the i$$$i$$$-th religion description. You can assume that the pattern is non-empty.",
+      "You can assume that no religion will have description longer than 250$$$250$$$ characters."
+    ],
+    "output": [
+      "Write q$$$q$$$ lines. The i$$$i$$$-th of them should be YES if the religions could coexist in peace after the i$$$i$$$-th evolution, or NO otherwise.",
+      "You can print each character in any case (either upper or lower)."
+    ],
+    "note": [
+      "In the first example, after the 6th evolution the religion descriptions are: ad, bc, and ab. The following figure shows how these descriptions form three disjoint subsequences of the Word of Universe:",
+      "![](https://espresso.codeforces.com/be3bfb120b5129c50d5b053474ee91862c37a641.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 8\nabdabc\n+ 1 a\n+ 1 d\n+ 2 b\n+ 2 c\n+ 3 a\n+ 3 b\n+ 1 c\n- 2",
+      "output": "YES\nYES\nYES\nYES\nYES\nYES\nNO\nYES"
+    },
+    {
+      "input": "6 8\nabbaab\n+ 1 a\n+ 2 a\n+ 3 a\n+ 1 b\n+ 2 b\n+ 3 b\n- 1\n+ 2 z",
+      "output": "YES\nYES\nYES\nYES\nYES\nNO\nYES\nNO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在中东进行考古研究期间，你发现了三种古老宗教的遗迹：第一种宗教、第二种宗教和第三种宗教。你整理了这些信仰各自演变过程的信息，现在想知道每种宗教的信徒能否和平共处。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "“宇宙之词”是一个很长的单词，只包含小写英文字母。在任意时刻，每种宗教信仰都可以用一个仅由小写英文字母组成的单词来描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果这三种宗教的描述是“宇宙之词”的互不相交子序列，那么它们就能和平共处。更正式地说，可以将“宇宙之词”中的一些字符涂成三种颜色：1$$$1$$$、2$$$2$$$、3$$$3$$$，使得每个字符至多被涂成一种颜色，并且第 i$$$i$$$ 种宗教的描述可以通过从“宇宙之词”中删除所有未涂成颜色 i$$$i$$$ 的字符得到。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，这些宗教会不断演变。起初，每种宗教的描述都是空的。时不时地，要么在某一种宗教描述的末尾追加一个字符，要么删除其最后一个字符。每次变化后，判断这些宗教能否和平共处。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n,q$$$n, q$$$(1≤n≤100000$$$1 \\leq n \\leq 100\\,000$$$，1≤q≤1000$$$1 \\leq q \\leq 1000$$$)——分别表示宇宙词的长度和宗教演化的次数。接下来一行包含宇宙词——一个由小写英文字母组成、长度为 n$$$n$$$ 的字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "后续每一行描述一次演化，格式为以下之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "+ i$$$i$$$ c$$$c$$$(i∈{1,2,3}$$$i \\in \\{1, 2, 3\\}$$$，c∈{a,b,…,z}$$$c \\in \\{\\mathtt{a}, \\mathtt{b}, \\dots, \\mathtt{z}\\}$$$)：将字符 c$$$c$$$ 追加到第 i$$$i$$$ 个宗教描述的末尾。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "- i$$$i$$$(i∈{1,2,3}$$$i \\in \\{1, 2, 3\\}$$$)——删除第 i$$$i$$$ 个宗教描述的最后一个字符。可以假设该模式非空。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以假设任何宗教的描述长度都不会超过 250$$$250$$$ 个字符。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 q$$$q$$$ 行。如果在第 i$$$i$$$ 次演化后各宗教可以和平共处，则第 i$$$i$$$ 行应为 YES，否则为 NO。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以用任意大小写（大写或小写）输出每个字符。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，经过第 6 次演化后，宗教描述为：ad、bc 和 ab。下图展示了这些描述如何构成 Word of Universe 的三个互不相交的子序列：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/be3bfb120b5129c50d5b053474ee91862c37a641.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 三种宗教",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

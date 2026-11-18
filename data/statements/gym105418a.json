@@ -1,0 +1,118 @@
+{
+  "code": "GYM105418A",
+  "letter": "A",
+  "title": "A. Phoenix Against the Monsters",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105418/problem/A",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Phoenix, a skilled warrior, has been assigned an important mission: to deliver critical information from the city of Nagpur to the stronghold of Mumbai. The journey is filled with danger, as monsters guard the roads connecting different cities. Each road has a certain number of monsters that Phoenix will need to fight.",
+      "Phoenix has a special ability that he can use once during his journey. This ability allows him to halve the number of monsters (rounded down to the nearest whole number) on either one road or two consecutive roads. By using this ability wisely, Phoenix can reduce the total number of monsters he has to fight and increase his chances of completing the mission.",
+      "Your task is to help Phoenix find the minimum total number of monsters he must face to deliver the information to Mumbai."
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (2≤n≤105$$$2 \\leq n \\leq 10^5$$$ and 1≤m≤2⋅105$$$1 \\leq m \\leq 2 \\cdot 10^5$$$): the number of cities and the number of roads connecting them. The cities are numbered 1,$$$1,$$$ 2,$$$2,$$$ …$$$\\ldots$$$ n$$$n$$$. City 1$$$1$$$ is Nagpur, and city n$$$n$$$ is Mumbai.",
+      "After this, there are m$$$m$$$ lines describing the roads. Each line contains three integers u$$$u$$$, v$$$v$$$, and w$$$w$$$ (1≤u,v≤n$$$1 \\leq u, v \\leq n$$$ and 1≤w≤109$$$1 \\leq w \\leq 10^9$$$): a road starts at city u$$$u$$$, ends at city v$$$v$$$, and has w$$$w$$$ monsters on that road. Each road is unidirectional.",
+      "You can assume that it is always possible to get from Nagpur to Mumbai."
+    ],
+    "output": [
+      "Output a single integer — the minimum total number of monsters Phoenix must face to deliver the information from Nagpur to Mumbai."
+    ],
+    "note": [
+      "In the first sample, Phoenix starts in City 1$$$1$$$ (Nagpur).",
+      "He takes the road to City 2$$$2$$$, which has 5$$$5$$$ monsters.",
+      "He then proceeds from City 2$$$2$$$ to City 3$$$3$$$, where the road has 2$$$2$$$ monsters.",
+      "From City 3$$$3$$$, he travels to City 5$$$5$$$ on a road with only 1$$$1$$$ monster.",
+      "Phoenix uses his special ability to halve the number of monsters on the roads between City 1$$$1$$$ and City 2$$$2$$$, and City 2$$$2$$$ and City 3$$$3$$$, reducing the monsters to 2$$$2$$$ and 1$$$1$$$ respectively.",
+      "This results in a total of 4$$$4$$$ monsters he must fight to deliver the information to City 5$$$5$$$ (Mumbai).",
+      "In the second sample, Phoenix must travel directly from City 1$$$1$$$ (Nagpur) to City 2$$$2$$$ (Mumbai) on a road with 5$$$5$$$ monsters. He uses his ability to halve the monsters on this road, reducing the count to 2$$$2$$$. Thus, Phoenix only faces 2$$$2$$$ monsters in total."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 6\n1 2 5\n2 3 2\n3 5 1\n1 4 10\n4 5 5\n2 4 3",
+      "output": "4"
+    },
+    {
+      "input": "2 1\n1 2 5",
+      "output": "2"
+    },
+    {
+      "input": "6 8\n1 2 7\n1 3 4\n2 4 3\n2 5 2\n3 4 6\n4 6 2\n5 6 4\n3 5 8",
+      "output": "6"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Phoenix 是一名技艺高超的战士，他接到了一项重要任务：将关键信息从那格浦尔城传递到孟买要塞。这段旅程充满危险，因为连接不同城市的道路都有怪物把守。每条道路上都有一定数量的怪物需要 Phoenix 进行战斗。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Phoenix 拥有一种特殊能力，可以在旅途中使用一次。这种能力可以将一条道路或两条连续道路上的怪物数量减半，并向下取整。合理使用这种能力，Phoenix 可以减少需要战斗的怪物总数，从而提高完成任务的可能性。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是帮助 Phoenix 找出他将信息送达孟买时必须面对的怪物总数的最小值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(2≤n≤105$$$2 \\leq n \\leq 10^5$$$ 且 1≤m≤2⋅105$$$1 \\leq m \\leq 2 \\cdot 10^5$$$)：城市数量和连接它们的道路数量。城市编号为 1,$$$1,$$$ 2,$$$2,$$$ …$$$\\ldots$$$ n$$$n$$$。城市 1$$$1$$$ 是 Nagpur，城市 n$$$n$$$ 是 Mumbai。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来有 m$$$m$$$ 行描述道路。每行包含三个整数 u$$$u$$$、v$$$v$$$ 和 w$$$w$$$(1≤u,v≤n$$$1 \\leq u, v \\leq n$$$ 且 1≤w≤109$$$1 \\leq w \\leq 10^9$$$)：一条道路从城市 u$$$u$$$ 出发，到达城市 v$$$v$$$，并且这条道路上有 w$$$w$$$ 只怪物。每条道路都是单向的。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你可以假设从 Nagpur 到 Mumbai 总是可行的。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——Phoenix 为了将信息从 Nagpur 送到 Mumbai 所必须面对的怪物的最小总数。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Phoenix 从城市 1$$$1$$$(Nagpur)出发。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "他走上了通往城市 2$$$2$$$ 的道路，这条路上有 5$$$5$$$ 只怪物。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "随后，他从城市 2$$$2$$$ 前往城市 3$$$3$$$，这条道路上有 2$$$2$$$ 只怪物。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从城市 3$$$3$$$ 出发，他沿着一条只有 1$$$1$$$ 只怪物的道路前往城市 5$$$5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Phoenix 使用他的特殊能力，将城市 1$$$1$$$ 和城市 2$$$2$$$ 之间以及城市 2$$$2$$$ 和城市 3$$$3$$$ 之间道路上的怪物数量减半，分别减至 2$$$2$$$ 和 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这样一来，他必须战斗的怪物总数为 4$$$4$$$，才能将信息送到城市 5$$$5$$$(Mumbai)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，Phoenix 必须沿着一条有 5$$$5$$$ 只怪物的道路，直接从城市 1$$$1$$$(Nagpur)前往城市 2$$$2$$$(Mumbai)。他使用能力将这条道路上的怪物数量减半，将数量降至 2$$$2$$$。因此，Phoenix 总共只需面对 2$$$2$$$ 只怪物。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. Phoenix 对抗怪物",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

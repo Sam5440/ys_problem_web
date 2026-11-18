@@ -1,0 +1,128 @@
+{
+  "code": "CF629C",
+  "letter": "C",
+  "title": "C. Famil Door and Brackets",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/629/C",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "As Famil Door’s birthday is coming, some of his friends (like Gabi) decided to buy a present for him. His friends are going to buy a string consisted of round brackets since Famil Door loves string of brackets of length n more than any other strings!",
+      "The sequence of round brackets is called valid if and only if:",
+      "the total number of opening brackets is equal to the total number of closing brackets;",
+      "for any prefix of the sequence, the number of opening brackets is greater or equal than the number of closing brackets.",
+      "Gabi bought a string s of length m (m ≤ n) and want to complete it to obtain a valid sequence of brackets of length n. He is going to pick some strings p and q consisting of round brackets and merge them in a string p + s + q, that is add the string p at the beginning of the string s and string q at the end of the string s.",
+      "Now he wonders, how many pairs of strings p and q exists, such that the string p + s + q is a valid sequence of round brackets. As this number may be pretty large, he wants to calculate it modulo 109 + 7."
+    ],
+    "input": [
+      "First line contains n and m (1 ≤ m ≤ n ≤ 100 000, n - m ≤ 2000) — the desired length of the string and the length of the string bought by Gabi, respectively.",
+      "The second line contains string s of length m consisting of characters '(' and ')' only."
+    ],
+    "output": [
+      "Print the number of pairs of string p and q such that p + s + q is a valid sequence of round brackets modulo 109 + 7."
+    ],
+    "note": [
+      "In the first sample there are four different valid pairs:",
+      "p = \"(\", q = \"))\"",
+      "p = \"()\", q = \")\"",
+      "p = \"\", q = \"())\"",
+      "p = \"\", q = \")()\"",
+      "In the second sample the only way to obtain a desired string is choose empty p and q.",
+      "In the third sample there is no way to get a valid sequence of brackets."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 1\n(",
+      "output": "4"
+    },
+    {
+      "input": "4 4\n(())",
+      "output": "1"
+    },
+    {
+      "input": "4 3\n(((",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "在第一个样例中，有四组不同的合法字符串对：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "p = \"(\", q = \"))\"",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "p = \"()\", q = \")\"",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "p = \"\", q = \"())\"",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "p = \"\", q = \")()\"",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，得到目标字符串的唯一方法是选择空字符串 p 和 q。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，没有办法得到一个合法的括号序列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "由于 Famil Door 的生日即将到来，他的一些朋友（例如 Gabi）决定给他买一份礼物。他的朋友们打算购买一个由圆括号组成的字符串，因为 Famil Door 比起其他任何字符串都更喜欢长度为 n 的括号字符串！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当且仅当满足以下条件时，圆括号序列被称为合法：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "左括号的总数等于右括号的总数；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于该序列的任意前缀，左括号的数量都大于或等于右括号的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Gabi 买了一个长度为 m 的字符串 s（m ≤ n），并想将其补全为长度为 n 的合法括号序列。他将选取一些仅由圆括号组成的字符串 p 和 q，并将它们合并成字符串 p + s + q，也就是将字符串 p 添加到字符串 s 的开头，并将字符串 q 添加到字符串 s 的末尾。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在他想知道，存在多少对字符串 p 和 q，使得字符串 p + s + q 是一个合法的圆括号序列。由于这个数可能很大，他希望计算其对 10^9 + 7 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含 n 和 m（1 ≤ m ≤ n ≤ 100 000，n - m ≤ 2000），分别表示字符串的目标长度以及 Gabi 所购买字符串的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个长度为 m 的字符串 s，该字符串仅由字符 '(' 和 ')' 组成。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出满足字符串 p + s + q 是合法圆括号序列的字符串 p 和 q 的对数，对 10^9 + 7 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Famil Door 与括号",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

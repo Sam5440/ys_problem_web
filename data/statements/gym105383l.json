@@ -1,0 +1,128 @@
+{
+  "code": "GYM105383L",
+  "letter": "L",
+  "title": "L. Lexicopolis",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105383/problem/L",
+  "difficulty": "*2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Welcome to Lexicopolis, the ancient city of legends and treasures. The city is famous for its intricate network of one-way roads. There are n$$$n$$$ intersections and m$$$m$$$ one-way roads connecting the intersections. People can only travel from intersection ui$$$u_i$$$ to intersection vi$$$v_i$$$ along road i$$$i$$$, and road i$$$i$$$ is associated with a magical number wi$$$w_i$$$. A path of length k$$$k$$$ from intersection s$$$s$$$ to t$$$t$$$ is a sequence of roads e1,e2,…,ek$$$e_1, e_2, \\ldots, e_k$$$ that allows travel from intersection s$$$s$$$ to intersection t$$$t$$$. A path is lexicographically smaller than another path if at the first road where they have different magic numbers (not index), the number on the first path is smaller than the number on the second path.",
+      "It is rumored that the tourist who figures out the lexicographically smallest path of length k$$$k$$$ from intersection s$$$s$$$ to intersection t$$$t$$$ can receive a gift from the Lexicopolis government. Please write a program to find the lexicographicall smallest path of length k$$$k$$$ from intersection s$$$s$$$ to t$$$t$$$. If it is impossible to travel from intersection s$$$s$$$ to t$$$t$$$ with exactly k$$$k$$$ roads, output -1."
+    ],
+    "input": [
+      "The first line contains six integers n,m,s,t,x,k$$$n,m,s,t,x,k$$$. n$$$n$$$ is the number of intersections. m$$$m$$$ is the number of roads. s$$$s$$$ is the starting intersection and t$$$t$$$ is the ending intersection. x$$$x$$$ is a number that will be used for outputting the answer. k$$$k$$$ is the length of path. The i$$$i$$$-th of the m$$$m$$$ following lines contains three integers ui$$$u_i$$$, vi$$$v_i$$$ and wi$$$w_i$$$. That means road i$$$i$$$ is from intersection ui$$$u_i$$$ to intersection vi$$$v_i$$$ and associated with magic number wi$$$w_i$$$.",
+      "Technical Specification",
+      "2≤n≤50$$$2\\le n\\le 50$$$",
+      "1≤m≤n2−n$$$1\\le m\\le n^2-n$$$",
+      "1≤ui≤n$$$1\\le u_i \\le n$$$ for i∈{1,2,…,m}$$$i\\in\\{1,2,\\dots,m\\}$$$",
+      "1≤vi≤n$$$1\\le v_i \\le n$$$ for i∈{1,2,…,m}$$$i\\in\\{1,2,\\dots,m\\}$$$",
+      "1≤wi≤109$$$1\\le w_i \\le 10^9$$$ for i∈{1,2,…,m}$$$i\\in\\{1,2,\\dots,m\\}$$$",
+      "ui≠vi$$$u_i \\neq v_i$$$ for i∈{1,2,…,m}$$$i\\in\\{1,2,\\dots,m\\}$$$",
+      "(ui,vi)≠(uj,vj)$$$(u_i,v_i)\\neq (u_j,v_j)$$$ for i≠j$$$i\\neq j$$$",
+      "1≤s≤n$$$1\\le s \\le n$$$",
+      "1≤t≤n$$$1\\le t \\le n$$$",
+      "1≤k≤109$$$1\\le k\\le 10^9$$$",
+      "1≤x≤109$$$1\\le x\\le 10^9$$$"
+    ],
+    "output": [
+      "If there is no path of length k$$$k$$$ from intersection s$$$s$$$ to t$$$t$$$, output -1. Otherwise, assume such a path exists. Consider the lexicographically smallest path e1,e2,…,ek$$$e_1, e_2, \\dots, e_k$$$, and output ∑ki=1weixk−i$$$\\sum_{i=1}^k w_{e_i} x^{k-i}$$$ modulo 109+7$$$10^9 + 7$$$, where x$$$x$$$ is the number provided as the fifth value in the first line of the input."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 6 1 3 10 4\n1 2 2\n2 1 1\n1 3 1\n3 1 2\n2 3 1\n3 2 2",
+      "output": "1211"
+    },
+    {
+      "input": "3 6 1 3 10 5\n1 2 2\n2 1 1\n1 3 1\n3 1 2\n2 3 1\n3 2 2",
+      "output": "12121"
+    },
+    {
+      "input": "6 7 5 6 10 10\n1 2 1\n2 4 2\n3 4 1\n4 5 3\n5 3 5\n4 6 2\n6 5 1",
+      "output": "121513477"
+    },
+    {
+      "input": "6 7 1 6 123 2\n1 2 1000000000\n2 4 2\n3 4 3\n4 5 4\n5 3 1\n4 6 2\n6 5 1",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "欢迎来到 Lexicopolis，这座充满传说与宝藏的古老城市。该城市以其错综复杂的单向道路网络而闻名。城市中有 n$$$n$$$ 个路口，以及连接这些路口的 m$$$m$$$ 条单向道路。人们只能沿着道路 i$$$i$$$ 从路口 ui$$$u_i$$$ 前往路口 vi$$$v_i$$$，且道路 i$$$i$$$ 关联着一个魔法数字 wi$$$w_i$$$。从路口 s$$$s$$$ 到 t$$$t$$$ 的一条长度为 k$$$k$$$ 的路径，是由道路 e1,e2,…,ek$$$e_1, e_2, \\ldots, e_k$$$ 组成的序列，使得可以从路口 s$$$s$$$ 到达路口 t$$$t$$$。如果两条路径在魔法数字首次不同的道路处(而非道路编号)，第一条路径上的数字小于第二条路径上的数字，则称第一条路径的字典序小于另一条路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "据说，能够找出从路口 s$$$s$$$ 到路口 t$$$t$$$ 的长度为 k$$$k$$$ 的字典序最小路径的游客，可以获得 Lexicopolis 政府赠送的礼物。请编写程序，找出从路口 s$$$s$$$ 到 t$$$t$$$ 的长度为 k$$$k$$$ 的字典序最小路径。如果无法通过恰好 k$$$k$$$ 条道路从路口 s$$$s$$$ 到达 t$$$t$$$，输出 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含六个整数 n,m,s,t,x,k$$$n,m,s,t,x,k$$$。n$$$n$$$ 是交叉路口的数量。m$$$m$$$ 是道路的数量。s$$$s$$$ 是起始交叉路口，t$$$t$$$ 是终点交叉路口。x$$$x$$$ 是一个用于输出答案的数。k$$$k$$$ 是路径的长度。接下来的 m$$$m$$$ 行中的第 i$$$i$$$ 行包含三个整数 ui$$$u_i$$$、vi$$$v_i$$$ 和 wi$$$w_i$$$。这表示道路 i$$$i$$$ 从交叉路口 ui$$$u_i$$$ 通往交叉路口 vi$$$v_i$$$，并与魔法数 wi$$$w_i$$$ 相关联。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "技术规范",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2≤n≤50$$$2\\le n\\le 50$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤m≤n2−n$$$1\\le m\\le n^2-n$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 i∈{1,2,…,m}$$$i\\in\\{1,2,\\dots,m\\}$$$，1≤ui≤n$$$1\\le u_i \\le n$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 i∈{1,2,…,m}$$$i\\in\\{1,2,\\dots,m\\}$$$，1≤vi≤n$$$1\\le v_i \\le n$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤wi≤109$$$1\\le w_i \\le 10^9$$$，其中 i∈{1,2,…,m}$$$i\\in\\{1,2,\\dots,m\\}$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "ui≠vi$$$u_i \\neq v_i$$$，其中 i∈{1,2,…,m}$$$i\\in\\{1,2,\\dots,m\\}$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(ui,vi)≠(uj,vj)$$$(u_i,v_i)\\neq (u_j,v_j)$$$，其中 i≠j$$$i\\neq j$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤s≤n$$$1\\le s \\le n$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤t≤n$$$1\\le t \\le n$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤k≤109$$$1\\le k\\le 10^9$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤x≤109$$$1\\le x\\le 10^9$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果不存在从交叉口 s$$$s$$$ 到 t$$$t$$$ 的长度为 k$$$k$$$ 的路径，则输出 -1。否则，假设这样的路径存在。考虑字典序最小的路径 e1,e2,…,ek$$$e_1, e_2, \\dots, e_k$$$，并输出 ∑ki=1weixk−i$$$\\sum_{i=1}^k w_{e_i} x^{k-i}$$$ 对 109+7$$$10^9 + 7$$$ 取模的结果，其中 x$$$x$$$ 是输入第一行中的第五个数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "L. Lexicopolis",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "code": "CF1523C",
+  "letter": "C",
+  "title": "C. Compression and Expansion",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1523/C",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/2c56086100091ff67c72ab93d5aa0cb5f249ed69.png)",
+      "William is a huge fan of planning ahead. That is why he starts his morning routine by creating a nested list of upcoming errands.",
+      "A valid nested list is any list which can be created from a list with one item \"1\" by applying some operations. Each operation inserts a new item into the list, on a new line, just after one of existing items a1.a2.a3.⋯.ak$$$a_1 \\,.\\, a_2 \\,.\\, a_3 \\,.\\, \\,\\cdots\\, \\,.\\,a_k$$$ and can be one of two types:",
+      "Add an item a1.a2.a3.⋯.ak.1$$$a_1 \\,.\\, a_2 \\,.\\, a_3 \\,.\\, \\cdots \\,.\\, a_k \\,.\\, 1$$$ (starting a list of a deeper level), or",
+      "Add an item a1.a2.a3.⋯.(ak+1)$$$a_1 \\,.\\, a_2 \\,.\\, a_3 \\,.\\, \\cdots \\,.\\, (a_k + 1)$$$ (continuing the current level).",
+      "When William decided to save a Word document with the list of his errands he accidentally hit a completely different keyboard shortcut from the \"Ctrl-S\" he wanted to hit. It's not known exactly what shortcut he pressed but after triggering it all items in the list were replaced by a single number: the last number originally written in the item number.",
+      "William wants you to help him restore a fitting original nested list."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤10$$$1 \\le t \\le 10$$$). Description of the test cases follows.",
+      "The first line of each test case contains a single integer n$$$n$$$ (1≤n≤103$$$1 \\le n \\le 10^3$$$), which is the number of lines in the list.",
+      "Each of the next n$$$n$$$ lines contains a single integer ai$$$a_i$$$ (1≤ai≤n$$$1 \\le a_i \\le n$$$), which is what remains of William's nested list.",
+      "It is guaranteed that in each test case at least one fitting list exists.",
+      "It is guaranteed that the sum of values n$$$n$$$ across all test cases does not exceed 103$$$10^3$$$."
+    ],
+    "output": [
+      "For each test case output n$$$n$$$ lines which represent a valid nested list, which could become the data provided to you by William.",
+      "If there are multiple answers, print any."
+    ],
+    "note": [
+      "In the second example test case one example of a fitting list is:",
+      "1",
+      "1.1",
+      "1.1.1",
+      "1.1.2",
+      "1.2",
+      "1.2.1",
+      "2",
+      "2.1",
+      "2.2",
+      "This list can be produced by using the sequence of operations shown below: ![](https://espresso.codeforces.com/bfe6c01ab9b7ca2d055a21546c5a48d44e13783d.png)",
+      "Original list with a single item 1$$$1$$$.",
+      "Insert item 2$$$2$$$ by using the insertion operation of the second type after item 1$$$1$$$.",
+      "Insert item 1.1$$$1.1$$$ by using the insertion operation of the first type after item 1$$$1$$$.",
+      "Insert item 1.2$$$1.2$$$ by using the insertion operation of the second type after item 1.1$$$1.1$$$.",
+      "Insert item 1.1.1$$$1.1.1$$$ by using the insertion operation of the first type after item 1.1$$$1.1$$$.",
+      "Insert item 1.1.2$$$1.1.2$$$ by using the insertion operation of the second type after item 1.1.1$$$1.1.1$$$.",
+      "Insert item 1.2.1$$$1.2.1$$$ by using the insertion operation of the first type after item 1.2$$$1.2$$$.",
+      "Insert item 2.1$$$2.1$$$ by using the insertion operation of the first type after item 2$$$2$$$.",
+      "Insert item 2.2$$$2.2$$$ by using the insertion operation of the second type after item 2.1$$$2.1$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n4\n1\n1\n2\n3\n9\n1\n1\n1\n2\n2\n1\n2\n1\n2",
+      "output": "1\n1.1\n1.2\n1.3\n1\n1.1\n1.1.1\n1.1.2\n1.2\n1.2.1\n2\n2.1\n2.2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/2c56086100091ff67c72ab93d5aa0cb5f249ed69.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "William 非常喜欢提前规划。因此，他每天早晨的日常安排都是从创建一个待办事项的嵌套列表开始的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有效的嵌套列表是指任何可以通过执行若干次操作，从只包含一个项目“1”的列表构造出的列表。每次操作都会在列表中插入一个新项目，另起一行，紧接在某个已有项目 a1.a2.a3.⋯.ak$$$a_1 \\,.\\, a_2 \\,.\\, a_3 \\,.\\, \\,\\cdots\\, \\,.\\,a_k$$$ 之后，并且可以是以下两种类型之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "添加一个项目 a1.a2.a3.⋯.ak.1$$$a_1 \\,.\\, a_2 \\,.\\, a_3 \\,.\\, \\cdots \\,.\\, a_k \\,.\\, 1$$$(开始一个更深层级的列表)，或者",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "添加一个项目 a1.a2.a3.⋯.(ak+1)$$$a_1 \\,.\\, a_2 \\,.\\, a_3 \\,.\\, \\cdots \\,.\\, (a_k + 1)$$$(继续当前层级)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当 William 决定保存包含其待办事项列表的 Word 文档时，他不小心按下了一个与想要按下的“Ctrl-S”完全不同的键盘快捷键。没人确切知道他按下了什么快捷键，但触发该快捷键后，列表中的所有项目都被替换成了一个数字：项目编号中原本写下的最后一个数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "William 希望你帮助他还原出一个合适的原始嵌套列表。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每组测试包含多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤10$$$1 \\le t \\le 10$$$)。下面给出测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤103$$$1 \\le n \\le 10^3$$$)，表示列表中的行数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行每行包含一个整数 ai$$$a_i$$$(1≤ai≤n$$$1 \\le a_i \\le n$$$)，表示 William 的嵌套列表中剩下的内容。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证在每个测试用例中至少存在一个符合条件的列表。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 103$$$10^3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出 n$$$n$$$ 行，它们表示一个有效的嵌套列表，该列表可能会成为 William 提供给你的数据。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个答案，输出任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第二个样例测试用例中，一个符合条件的列表如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1.1",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1.1.1",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1.1.2",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1.2",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1.2.1",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2.1",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "2.2",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "该列表可以通过下面所示的操作序列生成：![](https://espresso.codeforces.com/bfe6c01ab9b7ca2d055a21546c5a48d44e13783d.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "初始列表仅包含一个元素 1$$$1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "使用第二种插入操作，在元素 1$$$1$$$ 之后插入元素 2$$$2$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "使用第一种插入操作，在元素 1$$$1$$$ 之后插入元素 1.1$$$1.1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "使用第二类插入操作，在条目 1.1$$$1.1$$$ 后插入条目 1.2$$$1.2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "使用第一类插入操作，在条目 1.1$$$1.1$$$ 后插入条目 1.1.1$$$1.1.1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "使用第二类插入操作，在条目 1.1.1$$$1.1.1$$$ 后插入条目 1.1.2$$$1.1.2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "使用第一类插入操作，在条目 1.2$$$1.2$$$ 后插入条目 1.2.1$$$1.2.1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "使用第一类插入操作，在条目 2$$$2$$$ 后插入条目 2.1$$$2.1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "使用第二类插入操作，在条目 2.1$$$2.1$$$ 后插入条目 2.2$$$2.2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 压缩与展开",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

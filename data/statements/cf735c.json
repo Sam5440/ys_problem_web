@@ -1,0 +1,97 @@
+{
+  "code": "CF735C",
+  "letter": "C",
+  "title": "C. Tennis Championship",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/735/C",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Famous Brazil city Rio de Janeiro holds a tennis tournament and Ostap Bender doesn't want to miss this event. There will be n players participating, and the tournament will follow knockout rules from the very first game. That means, that if someone loses a game he leaves the tournament immediately.",
+      "Organizers are still arranging tournament grid (i.e. the order games will happen and who is going to play with whom) but they have already fixed one rule: two players can play against each other only if the number of games one of them has already played differs by no more than one from the number of games the other one has already played. Of course, both players had to win all their games in order to continue participating in the tournament.",
+      "Tournament hasn't started yet so the audience is a bit bored. Ostap decided to find out what is the maximum number of games the winner of the tournament can take part in (assuming the rule above is used). However, it is unlikely he can deal with this problem without your help."
+    ],
+    "input": [
+      "The only line of the input contains a single integer n (2 ≤ n ≤ 1018) — the number of players to participate in the tournament."
+    ],
+    "output": [
+      "Print the maximum number of games in which the winner of the tournament can take part."
+    ],
+    "note": [
+      "In all samples we consider that player number 1 is the winner.",
+      "In the first sample, there would be only one game so the answer is 1.",
+      "In the second sample, player 1 can consequently beat players 2 and 3.",
+      "In the third sample, player 1 can't play with each other player as after he plays with players 2 and 3 he can't play against player 4, as he has 0 games played, while player 1 already played 2. Thus, the answer is 2 and to achieve we make pairs (1, 2) and (3, 4) and then clash the winners."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2",
+      "output": "1"
+    },
+    {
+      "input": "3",
+      "output": "2"
+    },
+    {
+      "input": "4",
+      "output": "2"
+    },
+    {
+      "input": "10",
+      "output": "4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "著名的巴西城市里约热内卢将举办一场网球锦标赛，奥斯塔普·本德尔不想错过这场赛事。共有 n 名选手参赛，且锦标赛从第一场比赛开始就遵循淘汰赛规则。这意味着，如果有人输掉一场比赛，他将立即被淘汰出锦标赛。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "组织者仍在安排锦标赛的赛程表（即比赛进行的顺序以及谁将与谁比赛），但他们已经确定了一条规则：只有当两名选手此前参加过的比赛场数之差不超过 1 时，他们才能相互比赛。当然，两名选手都必须赢下此前参加的所有比赛，才能继续参加锦标赛。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "锦标赛尚未开始，因此观众们有些无聊。奥斯塔普决定求出锦标赛冠军最多可以参加多少场比赛（假设使用上述规则）。然而，如果没有你的帮助，他很可能无法解决这个问题。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入仅包含一行，其中有一个整数 n（2 ≤ n ≤ 1018），表示参加锦标赛的选手人数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出锦标赛冠军可以参加的比赛场数的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在所有样例中，我们都认为 1 号选手是冠军。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个样例中，由于只有一场比赛，因此答案是 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，选手 1 最终可以击败选手 2 和选手 3。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，选手 1 无法与其他每一位选手比赛，因为在他与选手 2 和选手 3 比赛后，他无法与选手 4 对战：此时选手 4 参加了 0 场比赛，而选手 1 已经参加了 2 场比赛。因此，答案是 2。为了达到这一结果，我们组成配对 (1, 2) 和 (3, 4)，然后让获胜者进行对决。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 网球锦标赛",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

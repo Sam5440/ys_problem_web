@@ -1,0 +1,80 @@
+{
+  "code": "GYM106124D",
+  "letter": "D",
+  "title": "D. Dune Dash",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106124/problem/D",
+  "difficulty": "*2100",
+  "timeLimit": "2.5 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You signed up for the Dune Dash, a running race across the desert. Everything went well — except that in the excitement, you forgot to start StrideTrack, the app that records how far you've run. All you have now are the official checkpoint locations, but not the order in which you passed through them.",
+      "Formally, the race consisted of N$$$N$$$ checkpoints, each given by its coordinates in the Euclidean plane. The sequence in which they were visited is unknown to you, but the organizers designed the course to prevent anyone from straying off route. In particular, if q1,q2,…,qN$$$q_1, q_2, \\dots, q_N$$$ is the correctly ordered list of the checkpoints along the race, then for every triple i<j<k$$$i  \\lt  j  \\lt  k$$$ it holds that dist(qi,qk)>max(dist(qi,qj),dist(qj,qk))$$\\text{dist}(q_i, q_k)  \\gt  \\max(\\text{dist}(q_i, q_j), \\text{dist}(q_j, q_k) )$$",
+      "where dist(p,q)$$$\\text{dist}(p,q)$$$ denotes the Euclidean distance between points p$$$p$$$ and q$$$q$$$. Your task is to determine the total length of the race.",
+      "![](https://espresso.codeforces.com/c00a33674c762322ddd609c5f6e033dcf12829be.png)"
+    ],
+    "input": [
+      "The first line consists of the integer N$$$N$$$ (2≤N≤2⋅105$$$2 \\leq N \\leq 2 \\cdot 10^5$$$). The following N$$$N$$$ lines each contain two integers xi$$$x_i$$$ and yi$$$y_i$$$ (−109≤xi,yi≤109$$$-10^9 \\leq x_i, y_i \\leq 10^9$$$). These are the coordinates of each checkpoint.",
+      "The checkpoints are not necessarily in the order in which they were visited during the race. It is guaranteed that there is some ordering of the checkpoints such that they satisfy the distance requirements above.",
+      "The N$$$N$$$ points given in the input are all distinct."
+    ],
+    "output": [
+      "Print one floating point number, the length of the race. Your answer will be correct if it has an absolute or relative error of at most 10−6$$$10^{-6}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 0\n0 0\n1 1",
+      "output": "2"
+    },
+    {
+      "input": "10\n-1 -7\n-1 -11\n0 -9\n2 2\n1 -2\n2 -1\n3 1\n-1 -5\n0 -3\n-3 -11",
+      "output": "17.1869125971184"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你报名参加了沙丘冲刺赛，这是一场横穿沙漠的跑步比赛。一切都很顺利——除了在兴奋之中，你忘了启动 StrideTrack，也就是记录你跑了多远的应用。你现在掌握的只有官方检查点的位置，却不知道经过它们的顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地说，这场比赛由 N$$$N$$$ 个检查点组成，每个检查点由其在欧几里得平面上的坐标给出。你不知道这些检查点的访问顺序，但组织者设计了赛道，以防任何人偏离路线。特别地，如果 q1,q2,…,qN$$$q_1, q_2, \\dots, q_N$$$ 是沿比赛路线按正确顺序排列的检查点列表，那么对于每个三元组 i<j<k$$$i  \\lt  j  \\lt  k$$$，都有 dist(qi,qk)>max(dist(qi,qj),dist(qj,qk))$$\\text{dist}(q_i, q_k)  \\gt  \\max(\\text{dist}(q_i, q_j), \\text{dist}(q_j, q_k) )$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其中，dist(p,q)$$$\\text{dist}(p,q)$$$ 表示点 p$$$p$$$ 和 q$$$q$$$ 之间的欧几里得距离。你的任务是确定比赛路线的总长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/c00a33674c762322ddd609c5f6e033dcf12829be.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含整数 N$$$N$$$ (2≤N≤2⋅105$$$2 \\leq N \\leq 2 \\cdot 10^5$$$)。接下来的 N$$$N$$$ 行每行包含两个整数 xi$$$x_i$$$ 和 yi$$$y_i$$$ (−109≤xi,yi≤109$$$-10^9 \\leq x_i, y_i \\leq 10^9$$$)。它们分别是每个检查点的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这些检查点不一定按照比赛中经过它们的顺序排列。保证存在一种检查点的排列，使其满足上述距离要求。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入中给出的 N$$$N$$$ 个点两两不同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个浮点数，表示比赛的长度。当答案的绝对误差或相对误差不超过 10−6$$$10^{-6}$$$ 时，将被判定为正确。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Dune Dash",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

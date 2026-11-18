@@ -1,0 +1,164 @@
+{
+  "code": "CF681D",
+  "letter": "D",
+  "title": "D. Gifts by the List",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/681/D",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Sasha lives in a big happy family. At the Man's Day all the men of the family gather to celebrate it following their own traditions. There are n men in Sasha's family, so let's number them with integers from 1 to n.",
+      "Each man has at most one father but may have arbitrary number of sons.",
+      "Man number A is considered to be the ancestor of the man number B if at least one of the following conditions is satisfied:",
+      "A = B;",
+      "the man number A is the father of the man number B;",
+      "there is a man number C, such that the man number A is his ancestor and the man number C is the father of the man number B.",
+      "Of course, if the man number A is an ancestor of the man number B and A ≠ B, then the man number B is not an ancestor of the man number A.",
+      "The tradition of the Sasha's family is to give gifts at the Man's Day. Because giving gifts in a normal way is boring, each year the following happens.",
+      "A list of candidates is prepared, containing some (possibly all) of the n men in some order.",
+      "Each of the n men decides to give a gift.",
+      "In order to choose a person to give a gift to, man A looks through the list and picks the first man B in the list, such that B is an ancestor of A and gives him a gift. Note that according to definition it may happen that a person gives a gift to himself.",
+      "If there is no ancestor of a person in the list, he becomes sad and leaves the celebration without giving a gift to anyone.",
+      "This year you have decided to help in organizing celebration and asked each of the n men, who do they want to give presents to (this person is chosen only among ancestors). Are you able to make a list of candidates, such that all the wishes will be satisfied if they give gifts according to the process described above?"
+    ],
+    "input": [
+      "In the first line of the input two integers n and m (0 ≤ m < n ≤ 100 000) are given — the number of the men in the Sasha's family and the number of family relations in it respectively.",
+      "The next m lines describe family relations: the (i + 1)th line consists of pair of integers pi and qi (1 ≤ pi, qi ≤ n, pi ≠ qi) meaning that the man numbered pi is the father of the man numbered qi. It is guaranteed that every pair of numbers appears at most once, that among every pair of two different men at least one of them is not an ancestor of another and that every man has at most one father.",
+      "The next line contains n integers a1, a2, ..., an (1 ≤ ai ≤ n), ith of which means that the man numbered i wants to give a gift to the man numbered ai. It is guaranteed that for every 1 ≤ i ≤ n the man numbered ai is an ancestor of the man numbered i."
+    ],
+    "output": [
+      "Print an integer k (1 ≤ k ≤ n) — the number of the men in the list of candidates, in the first line.",
+      "Print then k pairwise different positive integers not exceeding n — the numbers of the men in the list in an order satisfying every of the men's wishes, one per line.",
+      "If there are more than one appropriate lists, print any of them. If there is no appropriate list print  - 1 in the only line."
+    ],
+    "note": [
+      "The first sample explanation:",
+      "if there would be no 1 in the list then the first and the third man's wishes would not be satisfied (a1 = a3 = 1);",
+      "if there would be no 2 in the list then the second man wish would not be satisfied (a2 = 2);",
+      "if 1 would stay before 2 in the answer then the second man would have to give his gift to the first man, but he wants to give it to himself (a2 = 2).",
+      "if, at the other hand, the man numbered 2 would stay before the man numbered 1, then the third man would have to give his gift to the second man, but not to the first (a3 = 1)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 2\n1 2\n2 3\n1 2 1",
+      "output": "-1"
+    },
+    {
+      "input": "4 2\n1 2\n3 4\n1 2 3 3",
+      "output": "3\n2\n1\n3"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "第一个样例的解释：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果列表中没有 1，那么第一名和第三名男子的愿望将无法满足（a1 = a3 = 1）；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果列表中没有 2，那么第二名男子的愿望将无法满足（a2 = 2）；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果答案中 1 排在 2 前面，那么第二名男子就必须把礼物送给第一名男子，但他想把礼物送给自己（a2 = 2）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "另一方面，如果编号为 2 的男子排在编号为 1 的男子前面，那么第三名男子就必须把礼物送给第二名男子，而不是第一名男子（a3 = 1）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Sasha 生活在一个幸福的大家庭中。在男士节这天，家里的所有男性都会按照自己的传统聚在一起庆祝。Sasha 的家里有 n 名男性，因此我们用从 1 到 n 的整数为他们编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个人至多有一位父亲，但可以有任意数量的儿子。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果以下至少一个条件成立，则称编号为 A 的人是编号为 B 的人的祖先：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "A = B；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "编号为 A 的人是编号为 B 的人的父亲；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "存在一个编号为 C 的人，使得编号为 A 的人是他的祖先，且编号为 C 的人是编号为 B 的人的父亲。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当然，如果编号为 A 的人是编号为 B 的人的祖先且 A ≠ B，那么编号为 B 的人不是编号为 A 的人的祖先。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Sasha 家族的传统是在男人节赠送礼物。由于按正常方式赠送礼物很无聊，因此每年都会发生以下事情。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "准备一份候选人名单，其中按某种顺序包含 n 名男子中的一部分（也可能是全部）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "n 名男子中的每个人都决定赠送一份礼物。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了选择赠送礼物的对象，男子 A 查看名单，并选取名单中第一个满足以下条件的男子 B：B 是 A 的祖先，并且 B 会向他赠送礼物。注意，根据定义，一个人可能会向自己赠送礼物。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果名单中没有某人的祖先，那么他会感到悲伤，并且不向任何人赠送礼物就离开庆祝活动。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "今年，你决定帮助组织庆祝活动，并询问 n 名男子中的每个人想把礼物送给谁（这个人只能从其祖先中选择）。如果他们按照上述流程赠送礼物，你能否制定一份候选人名单，使所有人的愿望都得到满足？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 m（0 ≤ m < n ≤ 100 000），分别表示 Sasha 家族中的男性人数和家族关系数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行描述家族关系：第（i + 1）行包含一对整数 pi 和 qi（1 ≤ pi，qi ≤ n，pi ≠ qi），表示编号为 pi 的男性是编号为 qi 的男性的父亲。保证每对数字最多出现一次；对于任意两个不同的男性，至少有一个不是另一个的祖先；并且每个男性至多有一个父亲。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来一行包含 n 个整数 a1，a2，...，an（1 ≤ ai ≤ n），其中第 i 个整数表示编号为 i 的男性想要向编号为 ai 的男性赠送礼物。保证对于每个 1 ≤ i ≤ n，编号为 ai 的男性都是编号为 i 的男性的祖先。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出一个整数 k（1 ≤ k ≤ n），表示候选人列表中的男性人数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来输出 k 个两两不同且不超过 n 的正整数，表示列表中男性的编号，并按照满足每位男性愿望的顺序输出，每行一个。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在多个合适的列表，输出其中任意一个。如果不存在合适的列表，则在唯一一行输出  - 1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 按列表赠送礼物",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

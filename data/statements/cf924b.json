@@ -1,0 +1,133 @@
+{
+  "code": "CF924B",
+  "letter": "B",
+  "title": "B. Three-level Laser",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/924/B",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "An atom of element X can exist in n distinct states with energies E1 < E2 < ... < En. Arkady wants to build a laser on this element, using a three-level scheme. Here is a simplified description of the scheme.",
+      "Three distinct states i, j and k are selected, where i < j < k. After that the following process happens:",
+      "initially the atom is in the state i,",
+      "we spend Ek - Ei energy to put the atom in the state k,",
+      "the atom emits a photon with useful energy Ek - Ej and changes its state to the state j,",
+      "the atom spontaneously changes its state to the state i, losing energy Ej - Ei,",
+      "the process repeats from step 1.",
+      "Let's define the energy conversion efficiency as ![](https://espresso.codeforces.com/b1353c834ae20a0534a47916c2f0fbe98d7f4b7c.png), i. e. the ration between the useful energy of the photon and spent energy.",
+      "Due to some limitations, Arkady can only choose such three states that Ek - Ei ≤ U.",
+      "Help Arkady to find such the maximum possible energy conversion efficiency within the above constraints."
+    ],
+    "input": [
+      "The first line contains two integers n and U (3 ≤ n ≤ 105, 1 ≤ U ≤ 109) — the number of states and the maximum possible difference between Ek and Ei.",
+      "The second line contains a sequence of integers E1, E2, ..., En (1 ≤ E1 < E2... < En ≤ 109). It is guaranteed that all Ei are given in increasing order."
+    ],
+    "output": [
+      "If it is not possible to choose three states that satisfy all constraints, print -1.",
+      "Otherwise, print one real number η — the maximum possible energy conversion efficiency. Your answer is considered correct its absolute or relative error does not exceed 10 - 9.",
+      "Formally, let your answer be a, and the jury's answer be b. Your answer is considered correct if ![](https://espresso.codeforces.com/9507f804b12e83894b76ffa48fe1dcd911259459.png)."
+    ],
+    "note": [
+      "In the first example choose states 1, 2 and 3, so that the energy conversion efficiency becomes equal to ![](https://espresso.codeforces.com/147ae7a830722917b0aa37d064df8eb74cfefb97.png).",
+      "In the second example choose states 4, 5 and 9, so that the energy conversion efficiency becomes equal to ![](https://espresso.codeforces.com/f68f268de4eb2242167e6ec64e6b8aa60a5703ae.png)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n1 3 5 7",
+      "output": "0.5"
+    },
+    {
+      "input": "10 8\n10 13 15 16 17 19 20 22 24 25",
+      "output": "0.875"
+    },
+    {
+      "input": "3 1\n2 5 10",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "元素 X 的一个原子可以处于 n 种不同的状态，其能量满足 E1 < E2 < ... < En。Arkady 想要在该元素上使用三级方案制造一台激光器。下面是对该方案的简化描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选取三个互不相同的状态 i、j 和 k，其中 i < j < k。随后进行以下过程：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最初原子处于状态 i，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们消耗 Ek - Ei 的能量，使原子进入状态 k，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "原子发射出一束能量为 Ek - Ej 的有效光子，并改变状态进入状态 j，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "原子自发地将状态改变为状态 i，同时损失 Ej - Ei 的能量，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从第 1 步开始重复该过程。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将能量转换效率定义为 ![](https://espresso.codeforces.com/b1353c834ae20a0534a47916c2f0fbe98d7f4b7c.png)，即光子的有效能量与消耗能量的比值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于一些限制，Arkady 只能选择满足 Ek - Ei ≤ U 的三个状态。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助 Arkady 在上述约束条件下找出可能的最大能量转换效率。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 U（3 ≤ n ≤ 105，1 ≤ U ≤ 109），分别表示状态的数量以及 Ek 与 Ei 之间可能的最大差值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个整数序列 E1, E2, ..., En（1 ≤ E1 < E2... < En ≤ 109）。保证所有 Ei 均按递增顺序给出。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果无法选择满足所有约束条件的三个状态，则输出 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，输出一个实数 η，即可能达到的最大能量转换效率。如果答案的绝对误差或相对误差不超过 10 - 9，则认为答案正确。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地，设你的答案为 a，评测器的答案为 b。如果 ![](https://espresso.codeforces.com/9507f804b12e83894b76ffa48fe1dcd911259459.png)，则认为你的答案正确。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，选择状态 1、2 和 3，此时能量转换效率等于 ![](https://espresso.codeforces.com/147ae7a830722917b0aa37d064df8eb74cfefb97.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，选择状态 4、5 和 9，此时能量转换效率等于 ![](https://espresso.codeforces.com/f68f268de4eb2242167e6ec64e6b8aa60a5703ae.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 三级激光器",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

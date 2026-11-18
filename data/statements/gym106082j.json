@@ -1,0 +1,71 @@
+{
+  "code": "GYM106082J",
+  "letter": "J",
+  "title": "J. Desert Travel",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106082/problem/J",
+  "difficulty": "*2000",
+  "timeLimit": "8 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are stuck in a desert. The desert can be thought of as a Cartesian grid. There are many oases in the desert of which you know the xy$$$xy$$$-coordinates. You are going to be making a series of trips between pairs of oases, i.e., each trip has a starting oasis and an ending oasis. For any trip, you can stop in other oases along the way (as many as you'd like).",
+      "You obviously need water to travel in the desert. It turns out that every 1$$$1$$$ unit traveled in the desert requires 1$$$1$$$ unit of water. You need to determine what canteen size to use for each trip. You'd like to use the smallest canteen size for each trip (no one wants to carry more than what is needed).",
+      "You can fill up the canteen used in a trip at each oasis along the way to hold you until the next oasis. Thus, the maximum Euclidean distance between pairs of consecutive oases along your path for the trip determines the canteen size you need. For example, if you traveled from (0,0)$$$(0, 0)$$$ to (2,4)$$$(2, 4)$$$ to (4,5)$$$(4, 5)$$$, then your maximum distance would be approximately 4.472$$$4.472$$$, the distance between (0,0)$$$(0,0)$$$ and (2,4)$$$(2,4)$$$, because this is longer than the distance between (2,4)$$$(2,4)$$$ and (4,5)$$$(4,5)$$$. This distance determines the canteen size needed for the trip.",
+      "Given the number of oases in the desert and several trips (each trip with a starting oasis and an ending oasis), determine the maximum Euclidean distance between pairs of consecutive oases along the path for each trip."
+    ],
+    "input": [
+      "The first input line contains an integer, O$$$O$$$ (1≤O≤5000)$$$(1 \\le O \\le 5000)$$$, representing the number of oases. Each of the following O$$$O$$$ input lines contains two integers, the i$$$i$$$-th of which contains xi$$$x_i$$$ and yi$$$y_i$$$ (−106≤xi,yi≤106$$$(-10^6 ≤ x_i, y_i \\le 10^6$$$, representing the x$$$x$$$ and y$$$y$$$ coordinate of the i$$$i$$$-th oasis. (Assume the oases are numbered 1,2,3,...,O$$$1, 2, 3, ..., O$$$.)",
+      "The next input line contains an integer, Q$$$Q$$$ (1≤Q≤5⋅105)$$$(1 \\le Q \\le 5 \\cdot 10^5)$$$, representing the number of trips. Each of the following Q$$$Q$$$ input lines contains two integers, the i$$$i$$$-th of which contains si$$$s_i$$$ and ei$$$e_i$$$ (1≤si,ei≤O)$$$(1 \\le s_i, e_i \\le O)$$$, representing the starting and ending oasis numbers for the i$$$i$$$-th trip."
+    ],
+    "output": [
+      "For each trip, print on a single line by itself a single number: the maximum Euclidean distance between pairs of consecutive oases along the path for that trip. Answers within 10−6$$$10^{-6}$$$ absolute or relative of the expected answers will be considered correct."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n0 0\n3 7\n1 2\n2 0\n4 5\n2 5\n3\n1 2\n6 5\n3 1",
+      "output": "3.1622776601683795\n2.0\n2.23606797749979"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你被困在沙漠中。可以将沙漠看作一个笛卡尔网格。沙漠中有许多绿洲，你知道它们的 xy$$$xy$$$ 坐标。你将要在成对的绿洲之间进行一系列旅行，即每次旅行都有一个起点绿洲和一个终点绿洲。对于任意一次旅行，你可以在途中停留于其他绿洲(数量不限)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "显然，在沙漠中旅行需要水。事实证明，在沙漠中每行进 1$$$1$$$ 个单位就需要 1$$$1$$$ 个单位的水。你需要确定每次旅行应使用多大容量的水壶。你希望每次旅行都使用容量最小的水壶(没人愿意携带超出所需的水)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以在沿途的每个绿洲为旅行中使用的水壶装满水，以支撑到下一个绿洲。因此，此次旅行路径上相邻绿洲对之间的最大欧几里得距离决定了所需的水壶容量。比如，如果你从 (0,0)$$$(0, 0)$$$ 前往 (2,4)$$$(2, 4)$$$，再前往 (4,5)$$$(4, 5)$$$，那么最大距离约为 4.472$$$4.472$$$，即 (0,0)$$$(0,0)$$$ 与 (2,4)$$$(2,4)$$$ 之间的距离，因为这比 (2,4)$$$(2,4)$$$ 与 (4,5)$$$(4,5)$$$ 之间的距离更长。这个距离决定了此次旅行所需的水壶容量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定沙漠中绿洲的数量以及若干次旅行（每次旅行都有一个起点绿洲和一个终点绿洲），确定每次旅行路径上相邻绿洲对之间的最大欧几里得距离。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行输入包含一个整数 O$$$O$$$(1≤O≤5000)$$$(1 \\le O \\le 5000)$$$，表示绿洲的数量。接下来的 O$$$O$$$ 行输入中，每行包含两个整数，其中第 i$$$i$$$ 行包含 xi$$$x_i$$$ 和 yi$$$y_i$$$(−106≤xi,yi≤106$$$(-10^6 ≤ x_i, y_i \\le 10^6$$$)，表示第 i$$$i$$$ 个绿洲的 x$$$x$$$ 和 y$$$y$$$ 坐标。(假设绿洲的编号为 1,2,3,...,O$$$1, 2, 3, ..., O$$$。)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行输入包含一个整数 Q$$$Q$$$(1≤Q≤5⋅105)$$$(1 \\le Q \\le 5 \\cdot 10^5)$$$，表示旅行次数。接下来的 Q$$$Q$$$ 行输入中，每行包含两个整数，其中第 i$$$i$$$ 行包含 si$$$s_i$$$ 和 ei$$$e_i$$$(1≤si,ei≤O)$$$(1 \\le s_i, e_i \\le O)$$$，表示第 i$$$i$$$ 次旅行的起点和终点绿洲编号。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每次行程，单独占一行输出一个数字：该次行程路径上相邻绿洲对之间的最大欧几里得距离。与标准答案的绝对误差或相对误差在 10−6$$$10^{-6}$$$ 以内的答案将被视为正确。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "J. 沙漠旅行",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "code": "CF1153E",
+  "letter": "E",
+  "title": "E. Serval and Snake",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1153/E",
+  "difficulty": "2200",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem.",
+      "Now Serval is a senior high school student in Japari Middle School. However, on the way to the school, he must go across a pond, in which there is a dangerous snake. The pond can be represented as a n×n$$$n \\times n$$$ grid. The snake has a head and a tail in different cells, and its body is a series of adjacent cells connecting the head and the tail without self-intersecting. If Serval hits its head or tail, the snake will bite him and he will die.",
+      "Luckily, he has a special device which can answer the following question: you can pick a rectangle, it will tell you the number of times one needs to cross the border of the rectangle walking cell by cell along the snake from the head to the tail. The pictures below show a possible snake and a possible query to it, which will get an answer of 4$$$4$$$.",
+      "![](https://espresso.codeforces.com/95652ffad46f36bf8dda20ad0e718e2278b1096b.png)",
+      "![](https://espresso.codeforces.com/fc4f7627830cbe45738e7543a046cae6f1f858da.png)",
+      "Today Serval got up too late and only have time to make 2019$$$2019$$$ queries. As his best friend, can you help him find the positions of the head and the tail?",
+      "Note that two cells are adjacent if and only if they have a common edge in the grid, and a snake can have a body of length 0$$$0$$$, that means it only has adjacent head and tail.",
+      "Also note that the snake is sleeping, so it won't move while Serval using his device. And what's obvious is that the snake position does not depend on your queries."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (2≤n≤1000$$$2\\leq n \\leq 1000$$$) — the size of the grid."
+    ],
+    "output": [
+      "When you are ready to answer, you should print ! x1 y1 x2 y2, where (x1,y1)$$$(x_1, y_1)$$$ represents the position of the head and (x2,y2)$$$(x_2,y_2)$$$ represents the position of the tail. You can print head and tail in any order.",
+      "To make a query, you should print ? x1 y1 x2 y2 (1≤x1≤x2≤n$$$1 \\leq x_1 \\leq x_2 \\leq n$$$, 1≤y1≤y2≤n$$$1\\leq y_1 \\leq y_2 \\leq n$$$), representing a rectangle consisting of all cells (x,y)$$$(x,y)$$$ such that x1≤x≤x2$$$x_1 \\leq x \\leq x_2$$$ and y1≤y≤y2$$$y_1 \\leq y \\leq y_2$$$. You will get a single integer as the answer.",
+      "After printing a query, do not forget to output the end of line and flush the output, otherwise you will get Idleness limit exceeded. To do this, use:",
+      "fflush(stdout) or cout.flush() in C++;",
+      "System.out.flush() in Java;",
+      "flush(output) in Pascal;",
+      "stdout.flush() in Python;",
+      "see documentation for other languages.",
+      "Answer −1$$$-1$$$ instead of a valid answer means that you made an invalid query or exceeded the maximum number of queries. Exit immediately after receiving −1$$$-1$$$ and you will see Wrong answer verdict. Otherwise you can get an arbitrary verdict because your solution will continue to read from a closed stream.",
+      "If your program cannot find out the head and tail of the snake correctly, you will also get a Wrong Answer verdict.",
+      "Hacks",
+      "To make a hack, print a single integer n$$$n$$$ (2≤n≤1000$$$2 \\leq n \\leq 1000$$$) in the first line, indicating the size of the grid.",
+      "Then print an integer k$$$k$$$ (2≤k≤n2$$$2 \\leq k \\leq n^2$$$) in the second line, indicating the length of the snake.",
+      "In the next k$$$k$$$ lines, print k$$$k$$$ pairs of integers xi,yi$$$x_i, y_i$$$ (1≤xi,yi≤n$$$1 \\leq x_i, y_i \\leq n$$$), each pair in a single line, indicating the i$$$i$$$-th cell of snake, such that the adjacent pairs are adjacent, and all k$$$k$$$ pairs are distinct."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/e99f68d2bd9d49b9944f0e1f2441a371b15c9231.png)",
+      "![](https://espresso.codeforces.com/c2d364b093a2d4e05b4e085cd1690a6d69954840.png)",
+      "![](https://espresso.codeforces.com/4ddccf6f38769989691d1f0ea9ad6066929a41fe.png)",
+      "![](https://espresso.codeforces.com/3d1ed786478ab08f799467e9cc458aa2de75696b.png)",
+      "The pictures above show our queries and the answers in the first example. We first made a query for (1,1)$$$(1,1)$$$ and got an answer 1$$$1$$$, then found that it must be connected to exactly one other cell. Then we made a query for (1,2)$$$(1,2)$$$ and got an answer of 0$$$0$$$, then knew that the snake never entered it. So the cell connected to (1,1)$$$(1,1)$$$ must be (2,1)$$$(2,1)$$$. Then we made a query for (2,2)$$$(2,2)$$$ and got an answer 0$$$0$$$, then knew that it never entered (2,2)$$$(2,2)$$$ as well. So the snake cannot leave (2,1)$$$(2,1)$$$, which implies that the answer is (1,1)$$$(1,1)$$$ and (2,1)$$$(2,1)$$$.",
+      "![](https://espresso.codeforces.com/0576a29dc4d6548b5fd63f165ecfad387b220334.png)",
+      "![](https://espresso.codeforces.com/8fb34e3007b66c3443c47b37b5c8e14f0ed1b33b.png)",
+      "![](https://espresso.codeforces.com/e73a4b234db4f1566ef5d032a8f83bab23fb2273.png)",
+      "The pictures above show our queries and the answers in the second example. By making query to (2,2)$$$(2,2)$$$ and receiving 2$$$2$$$, we found that the snake occupies (2,2)$$$(2,2)$$$. And by making query to rectangle from (2,1)$$$(2,1)$$$ to (2,3)$$$(2,3)$$$ and receiving answer 0$$$0$$$, we knew that it never goes out of the rectangle from (2,1)$$$(2,1)$$$ to (2,3)$$$(2,3)$$$. Since the first answer is 2$$$2$$$, both (2,1)$$$(2,1)$$$ and (2,3)$$$(2,3)$$$ must be occupied but none of others, so the answer is (2,1)$$$(2,1)$$$ and (2,3)$$$(2,3)$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n\n1\n\n0\n\n0",
+      "output": "\n? 1 1 1 1\n\n? 1 2 1 2\n\n? 2 2 2 2\n\n! 1 1 2 1"
+    },
+    {
+      "input": "3\n\n2\n\n0",
+      "output": "\n? 2 2 2 2\n\n? 2 1 2 3\n\n! 2 1 2 3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是一个交互题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在，Serval 是 Japari 中学的一名高中生。不过，在去学校的路上，他必须穿过一个池塘，里面有一条危险的蛇。这个池塘可以表示为一个 n×n$$$n \\times n$$$ 的网格。蛇的头部和尾部位于不同的格子中，它的身体是一系列相邻的格子，连接头部和尾部且不自相交。如果 Serval 踩到蛇头或蛇尾，蛇就会咬他，他也会因此丧命。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "幸运的是，他有一种特殊装置，可以回答以下问题：你可以选择一个矩形，装置会告诉你沿着蛇从头到尾逐格移动时，需要穿过该矩形边界的次数。下面的图片展示了一条可能的蛇以及对它的一次可能查询，查询结果为 4$$$4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/95652ffad46f36bf8dda20ad0e718e2278b1096b.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/fc4f7627830cbe45738e7543a046cae6f1f858da.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "今天 Serval 起床太晚了，只来得及进行 2019$$$2019$$$ 次查询。作为他最好的朋友，你能帮他找出头部和尾部的位置吗？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，当且仅当两个格子在网格中有公共边时，它们才相邻；此外，蛇的身体长度可以为 0$$$0$$$，这意味着它只有相邻的头部和尾部。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "还要注意，蛇正在睡觉，所以 Serval 使用设备时它不会移动。显然，蛇的位置与你的查询无关。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(2≤n≤1000$$$2\\leq n \\leq 1000$$$)，表示网格的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "准备好回答时，你应输出 ! x1 y1 x2 y2，其中 (x1,y1)$$$(x_1, y_1)$$$ 表示头部的位置，(x2,y2)$$$(x_2,y_2)$$$ 表示尾部的位置。你可以按任意顺序输出头部和尾部。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要进行一次查询，你应输出 ? x1 y1 x2 y2 (1≤x1≤x2≤n$$$1 \\leq x_1 \\leq x_2 \\leq n$$$, 1≤y1≤y2≤n$$$1\\leq y_1 \\leq y_2 \\leq n$$$)，表示由所有满足 x1≤x≤x2$$$x_1 \\leq x \\leq x_2$$$ 且 y1≤y≤y2$$$y_1 \\leq y \\leq y_2$$$ 的单元格 (x,y)$$$(x,y)$$$ 组成的矩形。你会得到一个整数作为答案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出查询后，别忘了输出换行并刷新输出缓冲区，否则会因超过空闲限制而失败。你可以使用：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 C++ 中使用 fflush(stdout) 或 cout.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 Java 中使用 System.out.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 Pascal 中使用 flush(output)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 Python 中使用 stdout.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其他语言请参阅文档。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果返回 −1$$$-1$$$ 而不是有效答案，表示你进行了无效查询或超过了最大查询次数。收到 −1$$$-1$$$ 后请立即退出，否则你将看到 Wrong answer 判定。否则，由于你的程序会继续从已关闭的流中读取内容，你可能会得到任意判定。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你的程序无法正确找出蛇的头部和尾部，你同样会得到 Wrong Answer 判定。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Hack",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要进行 Hack，请在第一行输出一个整数 n$$$n$$$(2≤n≤1000$$$2 \\leq n \\leq 1000$$$)，表示网格的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后在第二行输出一个整数 k$$$k$$$(2≤k≤n2$$$2 \\leq k \\leq n^2$$$)，表示蛇的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在接下来的 k$$$k$$$ 行中，输出 k$$$k$$$ 对整数 xi,yi$$$x_i, y_i$$$(1≤xi,yi≤n$$$1 \\leq x_i, y_i \\leq n$$$)，每对整数占一行，表示蛇的第 i$$$i$$$ 个单元格，使得相邻的点对彼此相邻，并且这 k$$$k$$$ 对点对互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "![](https://espresso.codeforces.com/e99f68d2bd9d49b9944f0e1f2441a371b15c9231.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/c2d364b093a2d4e05b4e085cd1690a6d69954840.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/4ddccf6f38769989691d1f0ea9ad6066929a41fe.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/3d1ed786478ab08f799467e9cc458aa2de75696b.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "上面的图片展示了第一个样例中的查询及其答案。我们首先查询了 (1,1)$$$(1,1)$$$，得到答案 1$$$1$$$，于是发现它必定与恰好另一个单元格相连。然后我们查询了 (1,2)$$$(1,2)$$$，得到答案 0$$$0$$$，于是知道蛇从未进入过该单元格。因此，与 (1,1)$$$(1,1)$$$ 相连的单元格必定是 (2,1)$$$(2,1)$$$。接着我们查询了 (2,2)$$$(2,2)$$$，得到答案 0$$$0$$$，于是知道蛇同样从未进入过 (2,2)$$$(2,2)$$$。因此，蛇无法离开 (2,1)$$$(2,1)$$$，这意味着答案是 (1,1)$$$(1,1)$$$ 和 (2,1)$$$(2,1)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/0576a29dc4d6548b5fd63f165ecfad387b220334.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/8fb34e3007b66c3443c47b37b5c8e14f0ed1b33b.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/e73a4b234db4f1566ef5d032a8f83bab23fb2273.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "上面的图片展示了第二个样例中的查询及其答案。通过查询 (2,2)$$$(2,2)$$$ 并得到 2$$$2$$$，我们发现蛇占据了 (2,2)$$$(2,2)$$$。此外，通过查询从 (2,1)$$$(2,1)$$$ 到 (2,3)$$$(2,3)$$$ 的矩形并得到答案 0$$$0$$$，我们得知它从不会离开从 (2,1)$$$(2,1)$$$ 到 (2,3)$$$(2,3)$$$ 的矩形。由于第一次答案是 2$$$2$$$，因此 (2,1)$$$(2,1)$$$ 和 (2,3)$$$(2,3)$$$ 都必定被占据，而其他位置均未被占据，所以答案是 (2,1)$$$(2,1)$$$ 和 (2,3)$$$(2,3)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. Serval 与蛇",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "code": "GYM106782D",
+  "letter": "D",
+  "title": "D. Distinct Orders",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106782/problem/D",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You regularly visit a taverna in Heraklion for meze, a selection of small dishes. To keep the dinners varied, the cook alternates between two recipes for each dish.",
+      "The menu offers $$$n$$$ dishes, numbered from $$$1$$$ to $$$n$$$. Each dish has two versions: the first and the second.",
+      "Each day, you choose an integer $$$k$$$ from $$$1$$$ to $$$n$$$ and order one portion of each of the first $$$k$$$ dishes: dishes $$$1,2,\\ldots,k$$$. You cannot choose their versions. The first time you order a dish, you receive its first version. On every subsequent occasion, you receive the opposite version from the last time you ordered that dish. Days when you do not order a dish do not affect its version.",
+      "Two daily orders are identical if they contain the same number of dishes and the version of each corresponding dish is the same.",
+      "Construct a sequence $$$k_1,k_2,\\ldots,k_m$$$ of maximum possible length such that no two daily orders are identical."
+    ],
+    "input": [
+      "The only line contains an integer $$$n$$$ ($$$1 \\le n \\le 20$$$), the number of dishes."
+    ],
+    "output": [
+      "In the first line, print an integer $$$m$$$, the maximum possible number of days.",
+      "In the second line, print $$$m$$$ integers $$$k_1,k_2,\\ldots,k_m$$$ ($$$1 \\le k_i \\le n$$$), the number of dishes to order on each day.",
+      "If there are several optimal sequences, print any of them."
+    ],
+    "note": [
+      "In the first example, order the only dish twice. You receive its first version and then its second version.",
+      "In the second example, the sequence $$$2,2,1,2,2,1$$$ produces the following orders. The numbers in parentheses are the versions of dishes $$$1,2,\\ldots,k$$$: $$ (1,1),\\quad (2,2),\\quad (1),\\quad (2,1),\\quad (1,2),\\quad (2). $$ All six orders are distinct."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1",
+      "output": "2\n1 1"
+    },
+    {
+      "input": "2",
+      "output": "6\n2 2 1 2 2 1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你经常去伊拉克利翁的一家小酒馆吃梅泽，这是一种由多道小菜组成的餐食。为了让晚餐保持多样，厨师会为每道菜交替采用两种食谱。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "菜单上有 $$$n$$$ 道菜，编号从 $$$1$$$ 到 $$$n$$$。每道菜都有两个版本：第一版和第二版。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每天，你选择一个整数 $$$k$$$，范围为 $$$1$$$ 到 $$$n$$$，并为前 $$$k$$$ 道菜各点一份：菜品为 $$$1,2,\\ldots,k$$$。你无法选择菜品的版本。第一次点某道菜时，你会得到它的第一个版本。之后每次点这道菜时，你得到的版本都与上次点它时相反。没有点某道菜的日子不会影响它的版本。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果两个每日订单包含相同数量的菜品，且每道对应菜品的版本都相同，那么它们就是相同的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "构造一个长度尽可能大的序列 $$$k_1,k_2,\\ldots,k_m$$$，使得任意两天的订单都不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "唯一一行包含一个整数 $$$n$$$ ($$$1 \\le n \\le 20$$$)，表示菜肴的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在第一行输出一个整数 $$$m$$$，表示可能的最大天数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二行输出 $$$m$$$ 个整数 $$$k_1,k_2,\\ldots,k_m$$$($$$1 \\le k_i \\le n$$$)，表示每天要点的菜品数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在多个最优序列，输出其中任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个示例中，将唯一的菜品点两次。你会先收到它的第一份，然后收到它的第二份。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个示例中，序列 $$$2,2,1,2,2,1$$$ 会产生以下几种订单。括号中的数字表示菜品 $$$1,2,\\ldots,k$$$ 的版本：$$ (1,1),\\quad (2,2),\\quad (1),\\quad (2,1),\\quad (1,2),\\quad (2). $$ 这六种订单互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 不同的顺序",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

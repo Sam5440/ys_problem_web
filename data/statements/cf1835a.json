@@ -1,0 +1,115 @@
+{
+  "code": "CF1835A",
+  "letter": "A",
+  "title": "A. k-th equality",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1835/A",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Consider all equalities of form a+b=c$$$a + b = c$$$, where a$$$a$$$ has A$$$A$$$ digits, b$$$b$$$ has B$$$B$$$ digits, and c$$$c$$$ has C$$$C$$$ digits. All the numbers are positive integers and are written without leading zeroes. Find the k$$$k$$$-th lexicographically smallest equality when written as a string like above or determine that it does not exist.",
+      "For example, the first three equalities satisfying A=1$$$A = 1$$$, B=1$$$B = 1$$$, C=2$$$C = 2$$$ are",
+      "1+9=10$$$1 + 9 = 10$$$,",
+      "2+8=10$$$2 + 8 = 10$$$,",
+      "2+9=11$$$2 + 9 = 11$$$.",
+      "An equality s$$$s$$$ is lexicographically smaller than an equality t$$$t$$$ with the same lengths of the numbers if and only if the following holds:",
+      "in the first position where s$$$s$$$ and t$$$t$$$ differ, the equality s$$$s$$$ has a smaller digit than the corresponding digit in t$$$t$$$."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line of input contains a single integer t$$$t$$$ (1≤t≤103$$$1 \\leq t \\leq 10^3$$$) — the number of test cases. The description of test cases follows.",
+      "The first line of each test case contains integers A$$$A$$$, B$$$B$$$, C$$$C$$$, k$$$k$$$ (1≤A,B,C≤6$$$1 \\leq A, B, C \\leq 6$$$, 1≤k≤1012$$$1 \\leq k \\leq 10^{12}$$$).",
+      "Each input file has at most 5$$$5$$$ test cases which do not satisfy A,B,C≤3$$$A, B, C \\leq 3$$$."
+    ],
+    "output": [
+      "For each test case, if there are strictly less than k$$$k$$$ valid equalities, output −1$$$-1$$$.",
+      "Otherwise, output the k$$$k$$$-th equality as a string of form a+b=c$$$a + b = c$$$."
+    ],
+    "note": [
+      "In the first test case, the first 9$$$9$$$ solutions are: ⟨1,1,2⟩,⟨1,2,3⟩,⟨1,3,4⟩,⟨1,4,5⟩,⟨1,5,6⟩,⟨1,6,7⟩,⟨1,7,8⟩,⟨1,8,9⟩,⟨2,1,3⟩$$$\\langle 1, 1, 2 \\rangle, \\langle 1, 2, 3 \\rangle, \\langle 1, 3, 4 \\rangle, \\langle 1, 4, 5 \\rangle, \\langle 1, 5, 6 \\rangle, \\langle 1, 6, 7 \\rangle, \\langle 1, 7, 8 \\rangle, \\langle 1, 8, 9 \\rangle, \\langle 2, 1, 3 \\rangle$$$.",
+      "Int the third test case, there are no solutions as the smallest possible values for a$$$a$$$ and b$$$b$$$ are larger than the maximal possible value of c$$$c$$$ — 10+10=20>9$$$10 + 10 = 20  \\gt  9$$$.",
+      "Please note that whitespaces in the output matter."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n1 1 1 9\n2 2 3 1\n2 2 1 1\n1 5 6 42\n1 6 6 10000000\n5 5 6 3031568815\n6 6 6 1000000000000",
+      "output": "2 + 1 = 3\n10 + 90 = 100\n-1\n9 + 99996 = 100005\n-1\n78506 + 28543 = 107049\n-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "考虑所有形如 a+b=c$$$a + b = c$$$ 的等式，其中 a$$$a$$$ 有 A$$$A$$$ 位，b$$$b$$$ 有 B$$$B$$$ 位，c$$$c$$$ 有 C$$$C$$$ 位。所有数字均为正整数，且书写时不含前导零。求将等式按上述形式写成字符串后，字典序最小的第 k$$$k$$$ 个等式，或判断其不存在。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，满足 A=1$$$A = 1$$$、B=1$$$B = 1$$$、C=2$$$C = 2$$$ 的前三个等式为：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1+9=10$$$1 + 9 = 10$$$，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2+8=10$$$2 + 8 = 10$$$，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2+9=11$$$2 + 9 = 11$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当数字长度相同时，等式 s$$$s$$$ 的字典序小于等式 t$$$t$$$，当且仅当满足以下条件：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 s$$$s$$$ 与 t$$$t$$$ 第一个不同的位置，等式 s$$$s$$$ 中的数字小于等式 t$$$t$$$ 中对应位置的数字。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试点包含多个测试用例。输入的第一行包含一个整数 t$$$t$$$(1≤t≤103$$$1 \\leq t \\leq 10^3$$$)，表示测试用例的数量。接下来是各个测试用例的描述。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个测试用例的第一行包含整数 A$$$A$$$、B$$$B$$$、C$$$C$$$、k$$$k$$$(1≤A,B,C≤6$$$1 \\leq A, B, C \\leq 6$$$，1≤k≤1012$$$1 \\leq k \\leq 10^{12}$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "每个输入文件中，不满足 A,B,C≤3$$$A, B, C \\leq 3$$$ 的测试用例最多有 5$$$5$$$ 个。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果合法等式的数量严格少于 k$$$k$$$，则输出 −1$$$-1$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "否则，以 a+b=c$$$a + b = c$$$ 的形式输出第 k$$$k$$$ 个等式。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，前 9$$$9$$$ 个解为：⟨1,1,2⟩、⟨1,2,3⟩、⟨1,3,4⟩、⟨1,4,5⟩、⟨1,5,6⟩、⟨1,6,7⟩、⟨1,7,8⟩、⟨1,8,9⟩、⟨2,1,3⟩$$$\\langle 1, 1, 2 \\rangle, \\langle 1, 2, 3 \\rangle, \\langle 1, 3, 4 \\rangle, \\langle 1, 4, 5 \\rangle, \\langle 1, 5, 6 \\rangle, \\langle 1, 6, 7 \\rangle, \\langle 1, 7, 8 \\rangle, \\langle 1, 8, 9 \\rangle, \\langle 2, 1, 3 \\rangle$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试用例中，由于 a$$$a$$$ 和 b$$$b$$$ 的可能的最小值大于 c$$$c$$$ 的可能的最大值，因此不存在解——10+10=20>9$$$10 + 10 = 20  \\gt  9$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请注意，输出中的空格很重要。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 第 k 个等式",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

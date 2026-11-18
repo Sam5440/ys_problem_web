@@ -1,0 +1,89 @@
+{
+  "code": "CF946D",
+  "letter": "D",
+  "title": "D. Timetable",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/946/D",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Ivan is a student at Berland State University (BSU). There are n days in Berland week, and each of these days Ivan might have some classes at the university.",
+      "There are m working hours during each Berland day, and each lesson at the university lasts exactly one hour. If at some day Ivan's first lesson is during i-th hour, and last lesson is during j-th hour, then he spends j - i + 1 hours in the university during this day. If there are no lessons during some day, then Ivan stays at home and therefore spends 0 hours in the university.",
+      "Ivan doesn't like to spend a lot of time in the university, so he has decided to skip some lessons. He cannot skip more than k lessons during the week. After deciding which lessons he should skip and which he should attend, every day Ivan will enter the university right before the start of the first lesson he does not skip, and leave it after the end of the last lesson he decides to attend. If Ivan skips all lessons during some day, he doesn't go to the university that day at all.",
+      "Given n, m, k and Ivan's timetable, can you determine the minimum number of hours he has to spend in the university during one week, if he cannot skip more than k lessons?"
+    ],
+    "input": [
+      "The first line contains three integers n, m and k (1 ≤ n, m ≤ 500, 0 ≤ k ≤ 500) — the number of days in the Berland week, the number of working hours during each day, and the number of lessons Ivan can skip, respectively.",
+      "Then n lines follow, i-th line containing a binary string of m characters. If j-th character in i-th line is 1, then Ivan has a lesson on i-th day during j-th hour (if it is 0, there is no such lesson)."
+    ],
+    "output": [
+      "Print the minimum number of hours Ivan has to spend in the university during the week if he skips not more than k lessons."
+    ],
+    "note": [
+      "In the first example Ivan can skip any of two lessons during the first day, so he spends 1 hour during the first day and 4 hours during the second day.",
+      "In the second example Ivan can't skip any lessons, so he spends 4 hours every day."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 5 1\n01001\n10110",
+      "output": "5"
+    },
+    {
+      "input": "2 5 0\n01001\n10110",
+      "output": "8"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Ivan 是 Berland 国立大学（BSU）的一名学生。Berland 的一周有 n 天，在这些天中，Ivan 可能会在大学上课。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个 Berland 日有 m 个工作小时，且大学的每节课恰好持续一小时。如果某天 Ivan 的第一节课在第 i 个小时，最后一节课在第 j 个小时，那么这一天他在大学中度过的时间为 j - i + 1 小时。如果某天没有课，那么 Ivan 会待在家里，因此在大学中度过 0 小时。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Ivan 不喜欢在大学里待太长时间，因此他决定逃掉一些课。他一周内逃掉的课不能超过 k 节。在决定逃掉哪些课、参加哪些课之后，每天 Ivan 会在他没有逃掉的第一节课开始前进入大学，并在他决定参加的最后一节课结束后离开大学。如果 Ivan 某天逃掉了所有课程，那么这一天他完全不会去大学。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定 n、m、k 和 Ivan 的课表，请确定在一周内，如果他不能逃掉超过 k 节课，他至少需要在大学里待多少小时？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n、m 和 k（1 ≤ n，m ≤ 500，0 ≤ k ≤ 500），分别表示 Berland 一周的天数、每天的工作时长以及 Ivan 可以逃掉的课程数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来有 n 行，第 i 行包含一个长度为 m 的 01 串。如果第 i 行的第 j 个字符为 1，那么 Ivan 在第 i 天的第 j 个小时有一节课；如果为 0，则该时间没有课程。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 Ivan 逃掉的课程数不超过 k，输出他一周内至少需要在大学里待的小时数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Ivan 可以在第一天的两节课中任选一节逃掉，因此他第一天需要待 1 个小时，第二天需要待 4 个小时。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，Ivan 不能逃掉任何课程，因此他每天都需要待 4 个小时。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 课表",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

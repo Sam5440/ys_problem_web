@@ -1,0 +1,129 @@
+{
+  "code": "GYM105492I",
+  "letter": "I",
+  "title": "I. Interrail Pass",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105492/problem/I",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Interrail passes are the fun and cheap way to see more of Europe, especially if you combine your train trip with Businesslike And Penny-saving Computation! In particular, you would like to find the cheapest way to pay for your planned travels. You plan to take the train on $$$n$$$ travel days, that are not necessarily consecutive. The individual fare is different for every day, and perhaps you can save money by buying some interrail passes.",
+      "There are $$$k$$$ different types of interrail passes with varying costs. Each type of interrail pass can be obtained multiple times. An interrail pass is active for a period of $$$p$$$ consecutive days, that starts on a day of your choice. The interrail pass covers the first $$$d$$$ travel days during this period, which do not have to be consecutive. Note that an active interrail pass cannot be \"paused\": a day of travel counts towards the day count of each active pass, even when you pay the individual fare that day.",
+      "As an example, consider the fourth sample input, visualized in the picture below. It is definitely cheaper to buy interrail passes than to pay $$$4$$$ individual fares. The cheapest solution is to buy two interrail passes of the first type, rather than one interrail pass of the second type.",
+      "![](https://espresso.codeforces.com/13d89bb7b2378fe5c7869d05818dc6c0dbed8f8b.png)"
+    ],
+    "input": [
+      "The input consists of:",
+      "One line with two integers $$$n$$$ and $$$k$$$ ($$$1\\leq n\\leq 10\\,000$$$, $$$0\\leq k\\leq 100$$$), the number of planned travel days, and the number of types of interrail passes available.",
+      "$$$n$$$ lines, each with two integers $$$t$$$ and $$$f$$$ ($$$0\\leq t \\leq 10^6$$$, $$$1\\leq f\\leq 10^5$$$), the travel day and the individual fare for that day. The $$$n$$$ travel days are distinct and given in increasing order.",
+      "$$$k$$$ lines, each with three integers $$$p$$$, $$$d$$$, and $$$c$$$ ($$$1\\leq p\\leq 10^6$$$, $$$1\\leq d\\leq p$$$, $$$1\\leq c\\leq 10^5$$$), indicating a type of interrail pass that is valid for a period of $$$p$$$ days, covers the first $$$d$$$ travel days in that period, and costs $$$c$$$."
+    ],
+    "output": [
+      "Output the minimum amount you need to spend to cover all your planned travels."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 1\n0 10\n1 10\n2 2 15",
+      "output": "15"
+    },
+    {
+      "input": "2 1\n0 10\n2 10\n2 2 15",
+      "output": "20"
+    },
+    {
+      "input": "3 1\n0 10\n1 10\n2 10\n5 2 15",
+      "output": "25"
+    },
+    {
+      "input": "4 2\n3 80\n5 90\n24 70\n26 60\n5 3 100\n30 5 212",
+      "output": "200"
+    },
+    {
+      "input": "4 1\n42 9\n43 2\n44 9\n45 9\n4 3 20",
+      "output": "29"
+    }
+  ],
+  "titleZh": {
+    "0": "I. Interrail Pass",
+    "caiyun": "I. Interrail Pass",
+    "youdao": "I.铁路通票",
+    "iflyrec": "I.铁路间通道",
+    "deepl": "I.铁路间通行证",
+    "ai": "I. Interrail 通票"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "国际铁路通票是一种有趣且便宜的方式，可以让你更多地了解欧洲，尤其是当你将火车旅行与商务旅行和省钱的计算相结合时！特别是，你希望找到最便宜的方式来支付你计划的旅行。你计划在 $$$n$$$ 旅行日乘坐火车，这些日子并不一定是连续的。每天的个人票价都不一样，也许你可以通过购买一些国际铁路通票来省钱。",
+        "iflyrec": "InterRail通票是游览欧洲的一种既有趣又便宜的方式，特别是如果您将火车旅行与商务和省钱计算结合起来。特别是，你想找到最便宜的方式来支付你计划的旅行。您计划在不一定连续的$$$n$$$旅行日乘坐火车。每天的个人票价是不同的，也许你可以通过购买一些铁路通票来省钱。",
+        "deepl": "Interrail通票是游览更多欧洲风光的既有趣又便宜的方式，尤其是当您将火车旅行与商务和省钱计算相结合时！特别是，您希望为计划中的旅行找到最便宜的支付方式。您计划在 $$$n$$$ 个旅行日乘坐火车，这些旅行日不一定是连续的。每一天的票价都不同，也许您可以通过购买一些跨铁路通票来节省费用。",
+        "ai": "Interrail 通票是游览更多欧洲的有趣且便宜的方式，尤其是当你把火车旅行与务实且省钱的算计结合起来时！特别是，你想找到为计划旅行支付费用最便宜的方式。你计划在 $$$n$$$ 个旅行日乘坐火车，这些日子不一定连续。每日票价不同，也许你可以通过购买一些 Interrail 通票来省钱。"
+      },
+      {
+        "caiyun": "有不同类型的 $$$k$$$ 列车通行证，费用各不相同。每种类型的列车通行证可以多次获得。列车通行证在 $$$p$$$ 连续天数内有效，从您选择的某一天开始。列车通行证涵盖该期间的前几个 $$$d$$$ 旅行天数，这些天数不必是连续的。请注意，有效的列车通行证不能 “暂停”:即使您当天支付了个人费用，一个旅行天数也会按照每个有效通行证的天数计算。",
+        "iflyrec": "有$$$k$$$不同类型的铁路间通票，费用各不相同。每种类型的铁路间通票都可以多次获得。InterRail通票的有效期为连续$$$p$$$天，从您选择的日期开始。InterRail通票涵盖此期间的第一个$$$d$$$旅行日，不一定是连续的。注意，活动的InterRail通票不能被“暂停”：旅行的天数计入每个活动通票的天数，即使你支付了当天的个人费用。",
+        "deepl": "有$$$k$$$ 种不同类型的铁路间通行证，费用各不相同。每种通票可多次使用。跨铁路通票的有效期为 $$$p$$$ 天，从您选择的日期开始连续使用。在此期间，$$$d$$$个旅行日均可使用跨铁路通票，这些旅行日不必是连续的。请注意，有效的跨铁路通票不能 \"暂停\"：即使当天支付了个人票价，旅行天数也计入每张有效通票的天数。",
+        "ai": "有 $$$k$$$ 种不同类型的 Interrail 通票，费用各不相同。每种 Interrail 通票都可以获取多次。一张 Interrail 通票的有效期为连续的 $$$p$$$ 天，该期间从你选择的某一天开始。该 Interrail 通票涵盖此期间内的前 $$$d$$$ 个旅行日，这些旅行日不必连续。注意，有效的 Interrail 通票不能“暂停”：一个旅行日会计入每张有效通票的天数，即使当天你支付了单独票价。"
+      },
+      {
+        "caiyun": "作为一个例子，考虑第四个样本输入，如下图所示。购买国际铁路通票绝对比支付 $$$4$$$ 个人票价更便宜。最便宜的解决方案是购买两张第一种类型的国际铁路通票，而不是一张第二种类型的国际铁路通票。",
+        "iflyrec": "例如，考虑第四个示例输入，如下图所示。购买InterRail通票肯定比支付$$$4$$$个人票价便宜。最便宜的解决方案是购买两张第一种类型的铁路间通票，而不是一张第二种类型的铁路间通票。",
+        "deepl": "例如，请看下图中的第四个输入示例。购买国际铁路通票肯定比支付 $$$4$$$ 个人票价便宜。最便宜的方案是购买两张第一种类型的跨铁路通票，而不是一张第二种类型的跨铁路通票。",
+        "ai": "举个例子，考虑第四个样例输入，如下图所示。购买 Interrail 通票肯定比支付 $$$4$$$ 笔单程票价更便宜。最便宜的方案是购买两张第一种类型的 Interrail 通票，而不是一张第二种类型的 Interrail 通票。"
+      },
+      {
+        "caiyun": "![](https://espresso.codeforces.com/13d89bb7b2378fe5c7869d05818dc6c0dbed8f8b.png)",
+        "iflyrec": "![](https://espresso.codeforces.com/13d89bb7b2378fe5c7869d05818dc6c0dbed8f8b.png)",
+        "deepl": "![](https://espresso.codeforces.com/13d89bb7b2378fe5c7869d05818dc6c0dbed8f8b.png)",
+        "youdao": "![](https://espresso.codeforces.com/13d89bb7b2378fe5c7869d05818dc6c0dbed8f8b.png)",
+        "ai": "![](https://espresso.codeforces.com/13d89bb7b2378fe5c7869d05818dc6c0dbed8f8b.png)"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "输入包括：",
+        "youdao": "输入包括：",
+        "iflyrec": "输入包括:",
+        "deepl": "输入包括",
+        "ai": "输入包含："
+      },
+      {
+        "caiyun": "一条包含两个整数 $$$n$$$ 和 $$$k$$$($$$1\\leq n\\leq 10\\,000$$$、$$$0\\leq k\\leq 100$$$) 的线路，计划的旅行天数，以及可用的国际列车通行证类型的数量。",
+        "youdao": "一行有两个整数$$$n$$$和$$$k$$$ ($$$1\\leq n\\leq 10\\,000$$$, $$$0\\leq k\\leq 100$$$)，计划旅行天数，以及可用的铁路通票类型的数量。",
+        "iflyrec": "具有两个整数$$$n$$$和$$$k$$$($$$1\\leq n\\leq 10\\,000$$$，$$$0\\leq k\\leq 100$$$)的一条线路，计划的旅行天数，以及可用的InterRail通票类型的数量。",
+        "deepl": "一行包含两个整数 $$$n$$$ 和 $$$k$$$ ($$$1\\leq n\\leq 10\\,000$$$、$$$0\\leq k\\leq 100$$$)、计划旅行天数以及可使用的铁路间通票类型数。",
+        "ai": "一行包含两个整数 $$$n$$$ 和 $$$k$$$($$$1\\leq n\\leq 10\\,000$$$，$$$0\\leq k\\leq 100$$$)，分别表示计划旅行的天数和可用的铁路通票种类数。"
+      },
+      {
+        "caiyun": "$$$n$$$ 行，每行包含两个整数 $$$t$$$ 和 $$$f$$$($$$0\\leq t \\leq 10^6$$$,$$$1\\leq f\\leq 10^5$$$)，旅行日期和当天的个人费用。$$$n$$$ 旅行日期是不同的，并以递增顺序给出。",
+        "youdao": "$$$n$$$条线，每条线有两个整数$$$t$$$和$$$f$$$ ($$$0\\leq t \\leq 10^6$$$, $$$1\\leq f\\leq 10^5$$$)，表示出行日和当天的个人票价。$$$n$$$旅行天数是不同的，并按递增顺序给出。",
+        "iflyrec": "$$$n$$$行，每行有两个整数$$$t$$$和$$$f$$$($$$0\\leq t \\leq 10^6$$$，$$$1\\leq f\\leq 10^5$$$），旅行日期和当天的个人票价。$$$n$$$旅行天数是不同的，并以递增顺序给出。",
+        "ai": "$$$n$$$ 行，每行两个整数 $$$t$$$ 和 $$$f$$$($$$0\\leq t \\leq 10^6$$$, $$$1\\leq f\\leq 10^5$$$)，表示出行日和该日的单次票价。$$$n$$$ 个出行日互不相同，并按递增顺序给出。"
+      },
+      {
+        "caiyun": "$$$k$$$ 线路，每条线路包含三个整数 $$$p$$$、$$$d$$$ 和 $$$c$$$($$$1\\leq p\\leq 10^6$$$、$$$1\\leq d\\leq p$$$、$$$1\\leq c\\leq 10^5$$$)，表示一种在 $$$p$$$ 天内有效的内线通行证类型，覆盖该期间的前几个 $$$d$$$ 旅行天，费用为 $$$c$$$。",
+        "youdao": "$$$k$$$条线，每条线有三个整数$$$p$$$， $$$d$$$和$$$c$$$ ($$$1\\leq p\\leq 10^6$$$, $$$1\\leq d\\leq p$$$, $$$1\\leq c\\leq 10^5$$$)，表示一种铁路通票的有效期为$$$p$$$天，覆盖该期间的第一个$$$d$$$旅行天数，费用为$$$c$$$。",
+        "iflyrec": "$$$k$$$行，每行有三个整数$$$p$$$、$$$d$$$和$$$c$$$($$$1\\leq p\\leq 10^6$$$，$$$1\\leq d\\leq p$$$，$$$1\\leq c\\leq 10^5$$$），表示铁路间通票的类型，有效期为$$$p$$$天，涵盖该期间的第一个$$$d$$$旅行天数，费用为$$$c$$$。",
+        "deepl": "$$$k$$$行，每行有三个整数$$$p$$$、$$$d$$$和$$$c$$$($$$1\\leq p\\leq 10^6$$$、$$$1\\leq d\\leq p$$$、$$$1\\leq c\\leq 10^5$$$)，表示一种有效期为$$$p$$$天的铁路间通票，涵盖该期间的前$$$d$$$个旅行日，费用为$$$c$$$。",
+        "ai": "$$$k$$$ 行，每行包含三个整数 $$$p$$$、$$$d$$$ 和 $$$c$$$($$$1\\leq p\\leq 10^6$$$、$$$1\\leq d\\leq p$$$、$$$1\\leq c\\leq 10^5$$$)，表示一种 Interrail 通票：其有效期为 $$$p$$$ 天，覆盖该有效期内的前 $$$d$$$ 个旅行日，费用为 $$$c$$$。"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "输出所有计划旅行所需的最低支出金额。",
+        "youdao": "输出你需要花费的最低金额来支付你所有计划的旅行。",
+        "iflyrec": "输出您需要花费的最小金额，以支付所有计划的旅行。",
+        "deepl": "输出您需要花费的最低金额，以涵盖所有计划中的旅行。",
+        "ai": "输出覆盖所有计划旅行所需的最小花费。"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.106Z",
+  "translatedBy": [
+    "deepl",
+    "iflyrec"
+  ]
+}

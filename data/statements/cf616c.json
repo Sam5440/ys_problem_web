@@ -1,0 +1,94 @@
+{
+  "code": "CF616C",
+  "letter": "C",
+  "title": "C. The Labyrinth",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/616/C",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a rectangular field of n × m cells. Each cell is either empty or impassable (contains an obstacle). Empty cells are marked with '.', impassable cells are marked with '*'. Let's call two empty cells adjacent if they share a side.",
+      "Let's call a connected component any non-extendible set of cells such that any two of them are connected by the path of adjacent cells. It is a typical well-known definition of a connected component.",
+      "For each impassable cell (x, y) imagine that it is an empty cell (all other cells remain unchanged) and find the size (the number of cells) of the connected component which contains (x, y). You should do it for each impassable cell independently.",
+      "The answer should be printed as a matrix with n rows and m columns. The j-th symbol of the i-th row should be \".\" if the cell is empty at the start. Otherwise the j-th symbol of the i-th row should contain the only digit —- the answer modulo 10. The matrix should be printed without any spaces.",
+      "To make your output faster it is recommended to build the output as an array of n strings having length m and print it as a sequence of lines. It will be much faster than writing character-by-character.",
+      "As input/output can reach huge size it is recommended to use fast input/output methods: for example, prefer to use scanf/printf instead of cin/cout in C++, prefer to use BufferedReader/PrintWriter instead of Scanner/System.out in Java."
+    ],
+    "input": [
+      "The first line contains two integers n, m (1 ≤ n, m ≤ 1000) — the number of rows and columns in the field.",
+      "Each of the next n lines contains m symbols: \".\" for empty cells, \"*\" for impassable cells."
+    ],
+    "output": [
+      "Print the answer as a matrix as described above. See the examples to precise the format of the output."
+    ],
+    "note": [
+      "In first example, if we imagine that the central cell is empty then it will be included to component of size 5 (cross). If any of the corner cell will be empty then it will be included to component of size 3 (corner)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n*.*\n.*.\n*.*",
+      "output": "3.3\n.5.\n3.3"
+    },
+    {
+      "input": "4 5\n**..*\n..***\n.*.*.\n*.*.*",
+      "output": "46..3\n..732\n.6.4.\n5.4.3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个由 n × m 个单元格组成的矩形区域。每个单元格要么为空，要么不可通行（包含障碍物）。空单元格用“.”表示，不可通行的单元格用“*”表示。如果两个空单元格有公共边，则称它们相邻。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果一个单元格集合无法再扩展，并且其中任意两个单元格都可以通过相邻单元格组成的路径相互连通，则称其为一个连通分量。这是连通分量的一个典型且广为人知的定义。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个不可通行的单元格 (x, y)，假设它是一个空单元格（其他所有单元格保持不变），并求出包含 (x, y) 的连通分量的大小（单元格数量）。对于每个不可通行的单元格，都需要独立地进行上述操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "答案应输出为一个 n 行 m 列的矩阵。如果某个单元格在开始时为空，则第 i 行第 j 个符号应为“.”。否则，第 i 行第 j 个符号应为唯一的一位数字，即答案对 10 取模的结果。矩阵中不应包含任何空格。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了提高输出速度，建议将输出构建为一个由 n 个长度为 m 的字符串组成的数组，并将其按行输出。这样会比逐字符写入快得多。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于输入输出的规模可能非常大，建议使用快速输入输出方法：例如，在 C++ 中优先使用 scanf/printf，而不是 cin/cout；在 Java 中优先使用 BufferedReader/PrintWriter，而不是 Scanner/System.out。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n、m（1 ≤ n，m ≤ 1000），表示网格的行数和列数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n 行中的每一行包含 m 个符号：“.” 表示空单元格，“*”表示不可通行的单元格。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "按照上述描述将答案输出为一个矩阵。请参见样例以准确了解输出格式。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个例子中，如果我们假设中心单元格为空，那么它将属于大小为 5 的连通块（十字形）。如果任意一个角落单元格为空，那么它将属于大小为 3 的连通块（角形）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 迷宫",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

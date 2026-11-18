@@ -1,0 +1,105 @@
+{
+  "code": "GYM106225F",
+  "letter": "F",
+  "title": "F. Factory Table",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106225/problem/F",
+  "difficulty": "*1400",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/70f36411e37b254e20b5ae90459481bfc785fbff.png)",
+      "You are playing the sandbox game Mathcraft. Each crafting table of level k$$$k$$$ can produce all possible products obtained by multiplying two numbers between 1$$$1$$$ and k$$$k$$$.",
+      "If you unroll the k$$$k$$$-th crafting table, you get the array [1⋅1,1⋅2,…,1⋅k,2⋅1,2⋅2,…,2⋅k,…,k⋅1,k⋅2,…,k⋅k]$$$[1 \\cdot 1, 1 \\cdot 2, \\ldots, 1 \\cdot k, 2 \\cdot 1, 2 \\cdot 2, \\ldots, 2 \\cdot k, \\ldots, k \\cdot 1, k \\cdot 2, \\ldots, k \\cdot k]$$$. For example, for k=4$$$k = 4$$$, the unrolled table is [1,2,3,4,2,4,6,8,3,6,9,12,4,8,12,16]$$$[1, 2, 3, 4, 2, 4, 6, 8, 3, 6, 9, 12, 4, 8, 12, 16]$$$.",
+      "Your friend Bob crafted a (contiguous) subarray of one unrolled crafting table. This subarray is a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$.",
+      "You want to know how skilled Bob is, so you want to find the minimum possible level of his crafting table. Specifically, you want to determine the smallest k$$$k$$$ such that a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ appears as a subarray of the k$$$k$$$-th unrolled table.",
+      "An array b$$$b$$$ is a subarray of an array c$$$c$$$ if b$$$b$$$ can be obtained from c$$$c$$$ by deleting several (possibly zero or all) elements from the beginning and several (possibly zero or all) elements from the end."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤500$$$1 \\leq t \\leq 500$$$). The description of the test cases follows.",
+      "The first line of each test case contains a single integer n$$$n$$$ (2≤n≤100$$$2 \\leq n \\leq 100$$$) — the length of the array a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$.",
+      "The second line of each test case contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai≤109$$$1 \\leq a_i \\leq 10^9$$$).",
+      "Note that there are no constraints on the sum of n$$$n$$$ over all test cases."
+    ],
+    "output": [
+      "For each test case, output a single line containing an integer: the smallest crafting table level k$$$k$$$ such that the array a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ appears as a contiguous subarray of the k$$$k$$$-th unrolled table. For the given input, such a k$$$k$$$ always exists."
+    ],
+    "note": [
+      "Explanation of sample 1. In the first test case, the array [4,6,8,10]$$$[4, 6, 8, 10]$$$ is a subarray of the 5$$$5$$$-th unrolled table, which is [1,2,3,4,5,2,4,6,8,10,…,5,10,15,20,25]$$$[1, 2, 3, 4, 5, 2, 4, 6, 8, 10, \\ldots, 5, 10, 15, 20, 25]$$$. There is no smaller valid k$$$k$$$, so the answer is 5$$$5$$$.",
+      "In the second test case, the array [8,3,6,9,12,4]$$$[8, 3, 6, 9, 12, 4]$$$ is a subarray of the 4$$$4$$$-th unrolled table, which is [1,2,3,4,2,4,6,8,3,6,9,12,4,8,12,16]$$$[1, 2, 3, 4, 2, 4, 6, 8, 3, 6, 9, 12, 4, 8, 12, 16]$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n4\n4 6 8 10\n6\n8 3 6 9 12 4\n5\n30 40 50 60 70\n4\n1 2 2 4",
+      "output": "5\n4\n10\n2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/70f36411e37b254e20b5ae90459481bfc785fbff.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你正在游玩沙盒游戏 Mathcraft。每个等级为 k$$$k$$$ 的制作台都可以通过将 1$$$1$$$ 到 k$$$k$$$ 之间的两个数字相乘，制作出所有可能的产物。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将第 k$$$k$$$ 个制作台展开后，你会得到数组 [1⋅1,1⋅2,…,1⋅k,2⋅1,2⋅2,…,2⋅k,…,k⋅1,k⋅2,…,k⋅k]$$$[1 \\cdot 1, 1 \\cdot 2, \\ldots, 1 \\cdot k, 2 \\cdot 1, 2 \\cdot 2, \\ldots, 2 \\cdot k, \\ldots, k \\cdot 1, k \\cdot 2, \\ldots, k \\cdot k]$$$。例如，当 k=4$$$k = 4$$$ 时，展开后的表格为 [1,2,3,4,2,4,6,8,3,6,9,12,4,8,12,16]$$$[1, 2, 3, 4, 2, 4, 6, 8, 3, 6, 9, 12, 4, 8, 12, 16]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的朋友 Bob 在一张展开的制作台中制作了一个(连续)子数组。这个子数组是 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你想知道 Bob 的技术有多高超，因此想找出他的制作台可能的最小等级。具体来说，你需要确定最小的 k$$$k$$$，使得 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ 作为子数组出现在第 k$$$k$$$ 张展开的制作台中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果可以通过从数组 c$$$c$$$ 的开头删除若干个(可能为零个或全部)元素，并从末尾删除若干个(可能为零个或全部)元素得到 b$$$b$$$，则称数组 b$$$b$$$ 是数组 c$$$c$$$ 的子数组。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每组测试包含多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤500$$$1 \\leq t \\leq 500$$$)。接下来是各个测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(2≤n≤100$$$2 \\leq n \\leq 100$$$)——数组 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ 的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$(1≤ai≤109$$$1 \\leq a_i \\leq 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，所有测试用例中的 n$$$n$$$ 之和没有任何约束。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一行，其中包含一个整数：使数组 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ 作为连续子数组出现在第 k$$$k$$$ 个展开表中的最小制作台等级 k$$$k$$$。对于给定的输入，这样的 k$$$k$$$ 始终存在。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例 1 解释：在第一个测试用例中，数组 [4,6,8,10]$$$[4, 6, 8, 10]$$$ 是第 5$$$5$$$ 个展开表的子数组，该展开表为 [1,2,3,4,5,2,4,6,8,10,…,5,10,15,20,25]$$$[1, 2, 3, 4, 5, 2, 4, 6, 8, 10, \\ldots, 5, 10, 15, 20, 25]$$$。不存在更小的有效 k$$$k$$$，因此答案是 5$$$5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，数组 [8,3,6,9,12,4]$$$[8, 3, 6, 9, 12, 4]$$$ 是第 4$$$4$$$ 个展开表的子数组，该展开表为 [1,2,3,4,2,4,6,8,3,6,9,12,4,8,12,16]$$$[1, 2, 3, 4, 2, 4, 6, 8, 3, 6, 9, 12, 4, 8, 12, 16]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 工厂表",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

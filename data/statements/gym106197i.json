@@ -1,0 +1,143 @@
+{
+  "code": "GYM106197I",
+  "letter": "I",
+  "title": "I. Grid Coloring",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106197/problem/I",
+  "difficulty": "*1000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There is an $$$n$$$ by $$$n$$$ grid of white squares, each containing a bidirectional horizontal or vertical arrow. In one operation, you can choose any square, and based on the arrow in that square, color all squares in the corresponding row or column black. For example, here is one possible sequence of two operations on a grid with $$$n=4$$$:",
+      "![](https://espresso.codeforces.com/aeab87caa7ce60dda422a2da0ea4774f1de52b19.png)",
+      "What is the minimum number of operations needed to color all squares black, and which squares should you choose in the operations?"
+    ],
+    "input": [
+      "The first line of the input contains a single integer $$$t$$$ ($$$1\\le t\\le 250$$$) — the number of test cases.",
+      "The first line of each test case contains a single integer $$$n$$$ ($$$1\\le n \\le 1000$$$) — the number of rows and columns in the grid.",
+      "The $$$i$$$-th of the next $$$n$$$ lines contains $$$n$$$ characters each. The $$$j$$$-th of these is $$$\\texttt{H}$$$ if the square in position $$$(i, j)$$$ contains a horizontal arrow, and $$$\\texttt{V}$$$ if it contains a vertical arrow.",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$1000$$$."
+    ],
+    "output": [
+      "The first line of output for each test case should contain a single integer $$$k$$$ ($$$0 \\le k \\le n^2$$$) — the number of operations you will perform.",
+      "Each of the next $$$k$$$ lines should contain two integers $$$i$$$ and $$$j$$$ ($$$1 \\le i, j \\le n$$$) — the row and column of the square you will choose for that operation, respectively.",
+      "If there are multiple solutions with minimal $$$k$$$, you can print any."
+    ],
+    "note": [
+      "The first test case corresponds to the picture above. It can be shown that it is impossible to color everything black in less than $$$4$$$ operations.",
+      "In the second test case, since there is only one square, doing a single operation and choosing that square is sufficient to color everything black."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4\nVHHV\nVVHV\nHHVH\nVVHV\n1\nH\n2\nVH\nVV",
+      "output": "4\n2 3\n4 3\n1 2\n3 2\n1\n1 1\n2\n1 1\n2 2"
+    }
+  ],
+  "titleZh": {
+    "0": "I.网格着色",
+    "caiyun": "I. 网格着色",
+    "youdao": "一、网格着色",
+    "deepl": "I.网格着色",
+    "iflyrec": "I.网格着色",
+    "ai": "I. 网格染色"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "有一个由 $$$n$$$ 组成的 $$$n$$$ 白色方格网格，每个方格都包含一个双向水平或垂直箭头。在一个操作中，你可以选择任意方格，并根据该方格中的箭头，将相应行或列中的所有方格染成黑色。例如，以下是 $$$n=4$$$ 网格上两个操作的可能顺序：",
+        "deepl": "有一个 $$$n$$$ 乘 $$$n$$$ 的白色方格，每个方格都包含一个双向的水平或垂直箭头。在一次操作中，你可以选择任意一个方格，并根据该方格中的箭头，将相应行或列中的所有方格涂成黑色。例如，下面是在$$$n=4$$$网格上进行两次操作的一个可能序列：",
+        "iflyrec": "有一个$$$n$$$乘以$$$n$$$的白色方格网格，每个方格包含一个双向水平或垂直箭头。在一个操作中，您可以选择任何方块，并根据该方块中的箭头，将相应行或列中的所有方块涂成黑色。例如，下面是使用$$$n=4$$$的网格上的两个操作的一个可能序列:",
+        "ai": "有一个 $$$n$$$ × $$$n$$$ 的白色方格网格，每个方格中都有一个双向的水平或竖直箭头。在一次操作中，你可以任选一个方格，并根据该方格中的箭头，将对应行或列中的所有方格涂黑。例如，下面是对一个带有 $$$n=4$$$ 的网格进行两次操作的一种可能序列："
+      },
+      {
+        "caiyun": "![](https://espresso.codeforces.com/aeab87caa7ce60dda422a2da0ea4774f1de52b19.png)",
+        "deepl": "![](https://espresso.codeforces.com/aeab87caa7ce60dda422a2da0ea4774f1de52b19.png)",
+        "youdao": "![](https://espresso.codeforces.com/aeab87caa7ce60dda422a2da0ea4774f1de52b19.png)",
+        "iflyrec": "![](https://espresso.codeforces.com/aeab87caa7ce60dda422a2da0ea4774f1de52b19.png)",
+        "ai": "![](https://espresso.codeforces.com/aeab87caa7ce60dda422a2da0ea4774f1de52b19.png)"
+      },
+      {
+        "caiyun": "将所有正方形染成黑色所需的最少操作次数是多少？在这些操作中应该选择哪些正方形？",
+        "youdao": "将所有方块涂成黑色所需的最少操作次数是多少？在这些操作中应该选择哪些方块？",
+        "deepl": "要把所有方格涂成黑色，至少需要多少次操作？",
+        "iflyrec": "将所有方块涂成黑色所需的最少操作次数是多少？您应该在操作中选择哪些方块？",
+        "ai": "将所有方格染成黑色所需的最少操作次数是多少，并且在操作中应选择哪些方格？"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "输入的第一行包含一个整数 $$$t$$$($$$1\\le t\\le 250$$$)——测试用例的数量。",
+        "youdao": "输入的第一行包含一个整数$$$t$$$ ($$$1\\le t\\le 250$$$）——测试用例的数量。",
+        "deepl": "输入的第一行包含一个整数 $$$t$$$ ($$$1\\le t\\le 250$$$）--测试用例数。",
+        "iflyrec": "输入的第一行包含单个整数$$$t$$$($$$1\\le t\\le 250$$$）—测试用例的数量。",
+        "ai": "输入的第一行包含一个整数 $$$t$$$($$$1\\le t\\le 250$$$)——测试用例的数量。"
+      },
+      {
+        "caiyun": "每个测试用例的第一行包含一个整数 $$$n$$$($$$1\\le n \\le 1000$$$)——网格中的行数和列数。",
+        "youdao": "每个测试用例的第一行包含一个整数$$$n$$$ ($$$1\\le n \\le 1000$$$）——网格中的行数和列数。",
+        "deepl": "每个测试用例的第一行都包含一个整数 $$$n$$$ ($$$1\\le n \\le 1000$$$）--网格的行数和列数。",
+        "iflyrec": "每个测试用例的第一行包含一个整数$$$n$$$($$$1\\le n \\le 1000$$$）—网格中的行数和列数。",
+        "ai": "每个测试用例的第一行包含单个整数 $$$n$$$($$$1\\le n \\le 1000$$$)——网格的行数和列数。"
+      },
+      {
+        "youdao": "接下来的$$$n$$$行中的$$$i$$$-th每行包含$$$n$$$个字符。如果位置$$$(i, j)$$$的正方形包含一个水平箭头，则其中的$$$j$$$是$$$\\texttt{H}$$$，如果它包含一个垂直箭头，则为$$$\\texttt{V}$$$。",
+        "ai": "接下来的 $$$n$$$ 行中的第 $$$i$$$ 行包含 $$$n$$$ 个字符。这些字符中的第 $$$j$$$ 个是 $$$\\texttt{H}$$$：如果位置 $$$(i, j)$$$ 处的方格包含水平箭头；如果它包含垂直箭头，则为 $$$\\texttt{V}$$$。"
+      },
+      {
+        "caiyun": "保证所有测试用例的 $$$n$$$ 之和不超过 $$$1000$$$。",
+        "youdao": "保证所有测试用例的$$$n$$$之和不超过$$$1000$$$。",
+        "deepl": "保证所有测试用例的 $$$n$$$ 之和不超过 $$$1000$$$。",
+        "iflyrec": "保证所有测试用例的$$$n$$$总和不超过$$$1000$$$。",
+        "ai": "保证所有测试用例中 $$$n$$$ 的总和不超过 $$$1000$$$。"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "每个测试用例的第一行输出应包含一个整数 $$$k$$$($$$0 \\le k \\le n^2$$$)——即您将执行的操作数。",
+        "youdao": "每个测试用例的第一行输出应该包含一个整数$$$k$$$ ($$$0 \\le k \\le n^2$$$）——您将执行的操作的数量。",
+        "deepl": "每个测试用例的第一行输出应包含一个整数 $$$k$$$ ($$$0 \\le k \\le n^2$$$) - 您将执行的操作数。",
+        "iflyrec": "每个测试用例的第一行输出应该包含一个整数$$$k$$$($$$0 \\le k \\le n^2$$$）——您将执行的操作的数量。",
+        "ai": "对于每个测试用例，输出的第一行应包含一个整数 $$$k$$$($$$0 \\le k \\le n^2$$$)——你将执行的操作次数。"
+      },
+      {
+        "caiyun": "接下来的每一行 $$$k$$$ 都应该包含两个整数 $$$i$$$ 和 $$$j$$$($$$1 \\le i, j \\le n$$$)——分别是你为该操作选择的正方形的行和列。",
+        "youdao": "接下来的每一行$$$k$$$应该包含两个整数$$$i$$$和$$$j$$$ ($$$1 \\le i, j \\le n$$$) -分别是您将为该操作选择的正方形的行和列。",
+        "deepl": "接下来的每一行 $$$k$$$ 都应包含两个整数 $$$i$$$ 和 $$$j$$$ ($$$1 \\le i, j \\le n$$$）--分别是该操作要选择的方格的行和列。",
+        "iflyrec": "接下来的$$$k$$$行中的每一行都应包含两个整数$$$i$$$和$$$j$$$($$$1 \\le i, j \\le n$$$）—您将分别为该操作选择的正方形的行和列。",
+        "ai": "接下来 $$$k$$$ 行中的每一行应包含两个整数 $$$i$$$ 和 $$$j$$$($$$1 \\le i, j \\le n$$$)——分别表示你在该操作中选择的方格的行和列。"
+      },
+      {
+        "caiyun": "如果有多个最小 $$$k$$$ 的解决方案，你可以打印任何一个。",
+        "youdao": "如果有多个最小$$$k$$$的解决方案，您可以打印任何一个。",
+        "deepl": "如果有多个解的最小值为 $$$k$$$，则可以打印任意一个。",
+        "iflyrec": "如果有多个具有最小$$$k$$$的解决方案，则可以打印任何解决方案。",
+        "ai": "如果存在多个具有最小 $$$k$$$ 的解，你可以输出任意一个。"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "第一个测试用例对应于上图。可以证明，在小于 $$$4$$$ 的操作中，不可能将所有东西都涂成黑色。",
+        "youdao": "第一个测试用例对应于上面的图片。可以证明，在少于$$$4$$$次的操作中不可能把所有东西都涂成黑色。",
+        "deepl": "第一个测试案例与上图相对应。可以看出，不可能在少于 $$$4$$$ 次的操作中把所有颜色都染成黑色。",
+        "iflyrec": "第一个测试用例对应于上面的图片。可以表明，不可能在少于$$$4$$$的操作中将所有东西都涂成黑色。",
+        "ai": "第一个测试用例对应上图。可以证明，在少于 $$$4$$$ 次操作内不可能将所有都染成黑色。"
+      },
+      {
+        "caiyun": "在第二个测试案例中，由于只有一个正方形，只需进行一次操作并选择该正方形，就足以将所有东西都涂成黑色。",
+        "youdao": "在第二个测试用例中，由于只有一个正方形，执行一个操作并选择该正方形足以将所有东西涂成黑色。",
+        "deepl": "在第二个测试案例中，由于只有一个正方形，因此只需进行一次操作并选择该正方形，就足以将所有颜色涂成黑色。",
+        "iflyrec": "在第二个测试用例中，由于只有一个方块，执行单个操作并选择该方块就足以将所有内容着色为黑色。",
+        "ai": "在第二个测试用例中，由于只有一个方格，因此执行一次操作并选择该方格就足以将所有内容染成黑色。"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.109Z",
+  "translatedBy": [
+    "deepl",
+    "youdao",
+    "caiyun",
+    "iflyrec"
+  ]
+}

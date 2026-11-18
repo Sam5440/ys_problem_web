@@ -1,0 +1,101 @@
+{
+  "code": "CF1923D",
+  "letter": "D",
+  "title": "D. Slimes",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1923/D",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "There are n$$$n$$$ slimes placed in a line. The slimes are numbered from 1$$$1$$$ to n$$$n$$$ in order from left to right. The size of the i$$$i$$$-th slime is ai$$$a_i$$$.",
+      "Every second, the following happens: exactly one slime eats one of its neighbors and increases its size by the eaten neighbor's size. A slime can eat its neighbor only if it is strictly bigger than this neighbor. If there is no slime which is strictly bigger than one of its neighbors, the process ends.",
+      "For example, suppose n=5$$$n = 5$$$, a=[2,2,3,1,4]$$$a = [2, 2, 3, 1, 4]$$$. The process can go as follows:",
+      "first, the 3$$$3$$$-rd slime eats the 2$$$2$$$-nd slime. The size of the 3$$$3$$$-rd slime becomes 5$$$5$$$, the 2$$$2$$$-nd slime is eaten.",
+      "then, the 3$$$3$$$-rd slime eats the 1$$$1$$$-st slime (they are neighbors since the 2$$$2$$$-nd slime is already eaten). The size of the 3$$$3$$$-rd slime becomes 7$$$7$$$, the 1$$$1$$$-st slime is eaten.",
+      "then, the 5$$$5$$$-th slime eats the 4$$$4$$$-th slime. The size of the 5$$$5$$$-th slime becomes 5$$$5$$$, the 4$$$4$$$-th slime is eaten.",
+      "then, the 3$$$3$$$-rd slime eats the 5$$$5$$$-th slime (they are neighbors since the 4$$$4$$$-th slime is already eaten). The size of the 3$$$3$$$-rd slime becomes 12$$$12$$$, the 5$$$5$$$-th slime is eaten.",
+      "For each slime, calculate the minimum number of seconds it takes for this slime to be eaten by another slime (among all possible ways the process can go), or report that it is impossible."
+    ],
+    "input": [
+      "The first line contains a single integer t$$$t$$$ (1≤t≤104$$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "The first line of each test case contains a single integer n$$$n$$$ (1≤n≤3⋅105$$$1 \\le n \\le 3 \\cdot 10^5$$$) — the number of slimes.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (1≤ai≤109$$$1 \\le a_i \\le 10^9$$$).",
+      "The sum of n$$$n$$$ over all test cases doesn't exceed 3⋅105$$$3 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print n$$$n$$$ integers. The i$$$i$$$-th integer should be equal to the minimum number of seconds it takes for the i$$$i$$$-th slime to be eaten by another slime or -1 if it is impossible."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n4\n3 2 4 2\n3\n1 2 3\n5\n2 2 3 1 1\n7\n4 2 3 6 1 1 8",
+      "output": "2 1 2 1 \n1 1 -1 \n2 1 -1 1 2 \n2 1 1 3 1 1 4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "有 n$$$n$$$ 个史莱姆排成一行。史莱姆从左到右依次编号为 1$$$1$$$ 到 n$$$n$$$。第 i$$$i$$$ 个史莱姆的大小为 ai$$$a_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每秒都会发生以下事情：恰好有一个史莱姆吃掉它的一个邻居，并将自身大小增加被吃掉邻居的大小。只有当一个史莱姆严格大于这个邻居时，它才能吃掉邻居。如果不存在严格大于其某个邻居的史莱姆，过程就会结束。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，假设 n=5$$$n = 5$$$，a=[2,2,3,1,4]$$$a = [2, 2, 3, 1, 4]$$$。这个过程可以如下进行：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，第 3$$$3$$$ 只史莱姆吃掉第 2$$$2$$$ 只史莱姆。第 3$$$3$$$ 只史莱姆的大小变为 5$$$5$$$，第 2$$$2$$$ 只史莱姆被吃掉。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后，第 3$$$3$$$ 只史莱姆吃掉第 1$$$1$$$ 只史莱姆(由于第 2$$$2$$$ 只史莱姆已经被吃掉，它们成为相邻的史莱姆)。第 3$$$3$$$ 只史莱姆的大小变为 7$$$7$$$，第 1$$$1$$$ 只史莱姆被吃掉。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后，第 5$$$5$$$ 只史莱姆吃掉第 4$$$4$$$ 只史莱姆。第 5$$$5$$$ 只史莱姆的大小变为 5$$$5$$$，第 4$$$4$$$ 只史莱姆被吃掉。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后，第 3$$$3$$$ 只史莱姆吃掉第 5$$$5$$$ 只史莱姆(由于第 4$$$4$$$ 只史莱姆已经被吃掉，它们成为相邻的史莱姆)。第 3$$$3$$$ 只史莱姆的大小变为 12$$$12$$$，第 5$$$5$$$ 只史莱姆被吃掉。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每只史莱姆，计算在所有可能的过程中，该史莱姆被另一只史莱姆吃掉所需的最少秒数，或者报告这是不可能的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤104$$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(1≤n≤3⋅105$$$1 \\le n \\le 3 \\cdot 10^5$$$)——史莱姆的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有测试用例中 n$$$n$$$ 的总和不超过 3⋅105$$$3 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出 n$$$n$$$ 个整数。第 i$$$i$$$ 个整数应等于第 i$$$i$$$ 个史莱姆被另一个史莱姆吃掉所需的最少秒数；如果无法做到，则输出 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 史莱姆",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

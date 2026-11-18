@@ -1,0 +1,104 @@
+{
+  "code": "CF917B",
+  "letter": "B",
+  "title": "B. MADMAX",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/917/B",
+  "difficulty": "1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "As we all know, Max is the best video game player among her friends. Her friends were so jealous of hers, that they created an actual game just to prove that she's not the best at games. The game is played on a directed acyclic graph (a DAG) with n vertices and m edges. There's a character written on each edge, a lowercase English letter.",
+      "![](https://espresso.codeforces.com/8b2dc9851ecba8e71163103ca0adb4574b2c7682.png)",
+      "Max and Lucas are playing the game. Max goes first, then Lucas, then Max again and so on. Each player has a marble, initially located at some vertex. Each player in his/her turn should move his/her marble along some edge (a player can move the marble from vertex v to vertex u if there's an outgoing edge from v to u). If the player moves his/her marble from vertex v to vertex u, the \"character\" of that round is the character written on the edge from v to u. There's one additional rule; the ASCII code of character of round i should be greater than or equal to the ASCII code of character of round i - 1 (for i > 1). The rounds are numbered for both players together, i. e. Max goes in odd numbers, Lucas goes in even numbers. The player that can't make a move loses the game. The marbles may be at the same vertex at the same time.",
+      "Since the game could take a while and Lucas and Max have to focus on finding Dart, they don't have time to play. So they asked you, if they both play optimally, who wins the game?",
+      "You have to determine the winner of the game for all initial positions of the marbles."
+    ],
+    "input": [
+      "The first line of input contains two integers n and m (2 ≤ n ≤ 100, ![](https://espresso.codeforces.com/37372be2fa973707a2359c140f9c1f1a0de5fb71.png)).",
+      "The next m lines contain the edges. Each line contains two integers v, u and a lowercase English letter c, meaning there's an edge from v to u written c on it (1 ≤ v, u ≤ n, v ≠ u). There's at most one edge between any pair of vertices. It is guaranteed that the graph is acyclic."
+    ],
+    "output": [
+      "Print n lines, a string of length n in each one. The j-th character in i-th line should be 'A' if Max will win the game in case her marble is initially at vertex i and Lucas's marble is initially at vertex j, and 'B' otherwise."
+    ],
+    "note": [
+      "Here's the graph in the first sample test case:",
+      "![](https://espresso.codeforces.com/92d945d66a123e7f89374b24e1686438c9152373.png)",
+      "Here's the graph in the second sample test case:",
+      "![](https://espresso.codeforces.com/b8ecce7d0fd2a43e40fd4a8e851c2cc8a7872bb2.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n1 2 b\n1 3 a\n2 4 c\n3 4 b",
+      "output": "BAAA\nABAA\nBBBA\nBBBB"
+    },
+    {
+      "input": "5 8\n5 3 h\n1 2 c\n3 1 c\n3 2 r\n5 1 r\n4 3 z\n5 4 r\n5 2 h",
+      "output": "BABBB\nBBBBB\nAABBB\nAAABA\nAAAAB"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "众所周知，Max 是她的朋友中最优秀的电子游戏玩家。她的朋友们非常嫉妒她，于是专门创建了一个真实的游戏，只是为了证明她并不是最优秀的游戏玩家。这个游戏在一个包含 n 个顶点和 m 条边的有向无环图（DAG）上进行。每条边上都写着一个字符，该字符是小写英文字母。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/8b2dc9851ecba8e71163103ca0adb4574b2c7682.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Max 和 Lucas 正在玩一个游戏。Max 先手，然后是 Lucas，接着又轮到 Max，如此交替进行。每位玩家都有一颗弹珠，初始时位于某个顶点。在自己的回合中，每位玩家都必须沿某条边移动自己的弹珠（如果存在一条从顶点 v 到顶点 u 的出边，则玩家可以将弹珠从顶点 v 移动到顶点 u）。如果玩家将弹珠从顶点 v 移动到顶点 u，则该回合的“字符”就是从 v 到 u 的边上标记的字符。还有一条规则：对于 i > 1，第 i 回合字符的 ASCII 码必须大于或等于第 i - 1 回合字符的 ASCII 码。两个玩家的回合统一编号，即 Max 在奇数回合行动，Lucas 在偶数回合行动。无法进行移动的玩家输掉游戏。两颗弹珠可以同时位于同一个顶点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于游戏可能持续一段时间，而 Lucas 和 Max 还要集中精力寻找 Dart，他们没有时间进行游戏。因此他们想问你：如果双方都采取最优策略，谁会赢得游戏？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要确定弹珠所有初始位置下的游戏胜者。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "这是第一个样例测试用例中的图：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/92d945d66a123e7f89374b24e1686438c9152373.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这是第二个样例测试用例中的图：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/b8ecce7d0fd2a43e40fd4a8e851c2cc8a7872bb2.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 m(2 ≤ n ≤ 100，![](https://espresso.codeforces.com/37372be2fa973707a2359c140f9c1f1a0de5fb71.png))。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行描述各条边。每行包含两个整数 v、u 和一个小写英文字母 c，表示存在一条从 v 到 u 的边，边上标记着字符 c（1 ≤ v, u ≤ n，v ≠ u）。任意一对顶点之间至多有一条边。保证该图是无环图。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 行，每行包含一个长度为 n 的字符串。如果 Max 的弹珠初始位于顶点 i 且 Lucas 的弹珠初始位于顶点 j 时 Max 会获胜，则第 i 行的第 j 个字符应为 'A'，否则应为 'B'。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. MADMAX",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

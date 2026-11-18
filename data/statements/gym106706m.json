@@ -1,0 +1,138 @@
+{
+  "code": "GYM106706M",
+  "letter": "M",
+  "title": "M. Power of 3afweya",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106706/problem/M",
+  "difficulty": "*1400",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a permutation $$$P = (P_1, P_2, \\dots, P_N)$$$ of the integers from $$$1$$$ to $$$N$$$.",
+      "For a subarray $$$P[l \\dots r] = (P_l, P_{l+1}, \\dots, P_r)$$$ (where $$$1 \\le l \\le r \\le N$$$), let us define its Value as follows: $$$$$$\\text{Value}(l, r) = \\text{Sum}(l, r) - \\text{MEX}(l, r)$$$$$$",
+      "Where:",
+      "$$$\\text{Sum}(l, r) = \\sum_{k=l}^{r} P_k$$$",
+      "$$$\\text{MEX}(l, r)$$$ is the smallest positive integer ($$$1, 2, 3, \\dots$$$) that does not appear in the subarray $$$P[l \\dots r]$$$.",
+      "We call a range 3afwey if its value is as large as possible. El 3afweya is calling ..., and you have to respond. Determine the value of the 3afwey range."
+    ],
+    "input": [
+      "The first line contains a single integer $$$T$$$ ($$$1 \\le T \\le 10^4$$$) — the number of test cases.",
+      "Each testcase is structured as follows:",
+      "The first line contains an integers $$$N$$$ ($$$2 \\le N \\le 5 \\cdot 10^5$$$) — the size of the permutation.",
+      "The second line contains $$$N$$$ space-separated integers $$$P_1, P_2, \\dots, P_N$$$ ($$$1 \\le P_i \\le N$$$) — the initial permutation.",
+      "It is guaranteed that the sum of $$$N$$$ over all test cases does not exceed $$$5 \\cdot 10^5$$$"
+    ],
+    "output": [
+      "Print T integers, The $$$i$$$-th line should contain a single integer representing the maximum Value of a subarray of the $$$i$$$-th test case."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n5\n1 3 2 4 5\n5\n3 1 4 2 5",
+      "output": "13\n10"
+    }
+  ],
+  "titleZh": {
+    "caiyun": "M. 3afweya 的力量",
+    "youdao": "M. 3次方",
+    "deepl": "M.3afweya 的力量",
+    "iflyrec": "3AFWEYA M.功率",
+    "ai": "M. 3 的幂afweya"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "给定从 $$$1$$$ 到 $$$N$$$ 的整数排列 $$$P = (P_1, P_2, \\dots, P_N)$$$。",
+        "youdao": "给定从$$$1$$$到$$$N$$$的整数的排列$$$P = (P_1, P_2, \\dots, P_N)$$$。",
+        "deepl": "给你一个从 $$$1$$$ 到 $$$N$$$ 的整数排列 $$$P = (P_1, P_2, \\dots, P_N)$$$。",
+        "iflyrec": "给定从$$$1$$$到$$$N$$$的整数的排列$$$P = (P_1, P_2, \\dots, P_N)$$$。",
+        "ai": "给定一个从 $$$1$$$ 到 $$$N$$$ 的整数的排列 $$$P = (P_1, P_2, \\dots, P_N)$$$。"
+      },
+      {
+        "caiyun": "对于子数组 $$$P[l \\dots r] = (P_l, P_{l+1}, \\dots, P_r)$$$(其中 $$$1 \\le l \\le r \\le N$$$)，我们将其值定义如下:$$$$$$\\text{Value}(l, r) = \\text{Sum}(l, r) - \\text{MEX}(l, r)$$$$$$",
+        "youdao": "对于子数组$$$P[l \\dots r] = (P_l, P_{l+1}, \\dots, P_r)$$$(其中$$$1 \\le l \\le r \\le N$$$），我们将其值定义为：$$$$$$\\text{Value}(l, r) = \\text{Sum}(l, r) - \\text{MEX}(l, r)$$$$$$",
+        "deepl": "对于一个子数组 $$$P[l \\dots r] = (P_l, P_{l+1}, \\dots, P_r)$$$(其中 $$$1 \\le l \\le r \\le N$$$），让我们定义其值如下：$$$$$$\\text{Value}(l, r) = \\text{Sum}(l, r) - \\text{MEX}(l, r)$$$$$$",
+        "iflyrec": "对于子数组$$$P[l \\dots r] = (P_l, P_{l+1}, \\dots, P_r)$$$(其中$$$1 \\le l \\le r \\le N$$$），我们将其值定义如下：$$$$$$\\text{Value}(l, r) = \\text{Sum}(l, r) - \\text{MEX}(l, r)$$$$$$",
+        "ai": "对于子数组 $$$P[l \\dots r] = (P_l, P_{l+1}, \\dots, P_r)$$$(其中 $$$1 \\le l \\le r \\le N$$$)，我们如下定义它的值：$$$$$$\\text{Value}(l, r) = \\text{Sum}(l, r) - \\text{MEX}(l, r)$$$$$$"
+      },
+      {
+        "caiyun": "位置：",
+        "youdao": "地点:",
+        "deepl": "在哪里？",
+        "iflyrec": "其中:",
+        "ai": "其中："
+      },
+      {
+        "caiyun": "$$$\\text{Sum}(l, r) = \\sum_{k=l}^{r} P_k$$$",
+        "deepl": "$$$\\text{Sum}(l, r) = \\sum_{k=l}^{r} P_k$$$",
+        "iflyrec": "$$$\\text{Sum}(l, r) = \\sum_{k=l}^{r} P_k$$$",
+        "ai": "$$$\\text{Sum}(l, r) = \\sum_{k=l}^{r} P_k$$$"
+      },
+      {
+        "caiyun": "$$$\\text{MEX}(l, r)$$$ 是不出现在子数组 $$$P[l \\dots r]$$$ 中的最小正整数 ($$$1, 2, 3, \\dots$$$)。",
+        "youdao": "$$$\\text{MEX}(l, r)$$$是子数组$$$P[l \\dots r]$$$中没有出现的最小正整数$$$1, 2, 3, \\dots$$$。",
+        "deepl": "$$$\\text{MEX}(l, r)$$$ 是没有出现在子数组 $$$P[l \\dots r]$$$ 中的最小正整数($$$1, 2, 3, \\dots$$$）。",
+        "iflyrec": "$$$\\text{MEX}(l, r)$$$是未出现在子数组$$$P[l \\dots r]$$$中的最小正整数($$$1, 2, 3, \\dots$$$）。",
+        "ai": "$$$\\text{MEX}(l, r)$$$ 是不出现在子数组 $$$P[l \\dots r]$$$ 中的最小正整数($$$1, 2, 3, \\dots$$$)。"
+      },
+      {
+        "caiyun": "如果一个范围的值尽可能大，我们就调用 3afwey。El 3afweya 正在调用...，你必须响应。确定 3afwey 范围的值。",
+        "youdao": "如果一个范围的值尽可能大，我们就称它为3afwey。El 3afweya打来电话…，你必须做出回应。确定3afwey范围的值。",
+        "deepl": "如果一个范围的值尽可能大，我们就称它为 3afwey。El 3afweya 正在呼叫......，你必须做出回应。确定 3afwey 范围的值。",
+        "iflyrec": "如果范围的值尽可能大，我们称其为3AFWEY。El 3afweya正在呼叫..，您必须响应。确定3AFWEY范围的值。",
+        "ai": "如果一个区间的值尽可能大，我们就称它为 3afwey。El 3afweya 正在呼唤……，而你必须回应。求该 3afwey 区间的值。"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数 $$$T$$$($$$1 \\le T \\le 10^4$$$)——测试用例的数量。",
+        "youdao": "第一行包含一个整数$$$T$$$ ($$$1 \\le T \\le 10^4$$$）——测试用例的数量。",
+        "deepl": "第一行包含一个整数 $$$T$$$ ($$$1 \\le T \\le 10^4$$$）--测试用例数。",
+        "iflyrec": "第一行包含单个整数$$$T$$$($$$1 \\le T \\le 10^4$$$）—测试用例的数量。",
+        "ai": "第一行包含一个整数 $$$T$$$ ($$$1 \\le T \\le 10^4$$$) —— 测试用例的数量。"
+      },
+      {
+        "caiyun": "每个测试用例的结构如下：",
+        "youdao": "每个测试用例的结构如下：",
+        "deepl": "每个测试用例的结构如下",
+        "iflyrec": "每个测试用例的结构如下:",
+        "ai": "每个测试用例的结构如下："
+      },
+      {
+        "caiyun": "第一行包含一个整数 $$$N$$$($$$2 \\le N \\le 5 \\cdot 10^5$$$)——排列的大小。",
+        "youdao": "第一行包含一个整数$$$N$$$ ($$$2 \\le N \\le 5 \\cdot 10^5$$$) -排列的大小。",
+        "deepl": "第一行包含一个整数 $$$N$$$ ($$$2 \\le N \\le 5 \\cdot 10^5$$$）--排列的大小。",
+        "iflyrec": "第一行包含整数$$$N$$$($$$2 \\le N \\le 5 \\cdot 10^5$$$)—排列的大小。",
+        "ai": "第一行包含一个整数 $$$N$$$($$$2 \\le N \\le 5 \\cdot 10^5$$$)——排列的大小。"
+      },
+      {
+        "caiyun": "第二行包含 $$$N$$$ 空格分隔整数 $$$P_1, P_2, \\dots, P_N$$$($$$1 \\le P_i \\le N$$$)——初始排列。",
+        "youdao": "第二行包含$$$N$$$个空格分隔的整数$$$P_1, P_2, \\dots, P_N$$$ ($$$1 \\le P_i \\le N$$$）——初始排列。",
+        "deepl": "第二行包含$$$N$$$空格分隔的整数$$$P_1, P_2, \\dots, P_N$$$($$$1 \\le P_i \\le N$$$）--初始排列。",
+        "iflyrec": "第二行包含$$$N$$$空格分隔的整数$$$P_1, P_2, \\dots, P_N$$$($$$1 \\le P_i \\le N$$$）—初始排列。",
+        "ai": "第二行包含 $$$$$$N$$$$$$ 个以空格分隔的整数 $$$$$$P_1, P_2, \\dots, P_N$$$$$$($$$$$$1 \\le P_i \\le N$$$$$$)——初始排列。"
+      },
+      {
+        "caiyun": "保证所有测试用例的 $$$N$$$ 之和不超过 $$$5 \\cdot 10^5$$$。",
+        "youdao": "保证所有测试用例的$$$N$$$之和不超过$$$5 \\cdot 10^5$$$",
+        "deepl": "保证所有测试用例的$$$N$$$之和不超过$$$5 \\cdot 10^5$$$",
+        "iflyrec": "保证所有测试用例的$$$N$$$总和不超过$$$5 \\cdot 10^5$$$",
+        "ai": "保证所有测试用例的 $$$N$$$ 之和不超过 $$$5 \\cdot 10^5$$$"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "打印 T 整数，$$$i$$$ 第 行应包含一个整数，该整数表示 $$$i$$$ 第 个测试用例的子数组的最大值。",
+        "youdao": "打印T个整数，第$$$i$$$行应该包含一个整数，表示第$$$i$$$个测试用例的子数组的最大值。",
+        "deepl": "打印 T 个整数，第 $$$i$$$- 行应包含一个整数，代表第 $$$i$$$- 个测试用例子数组的最大值。",
+        "iflyrec": "打印t个整数，第$$$i$$$行应包含表示第$$$i$$$个测试用例的子数组的最大值的单个整数。",
+        "ai": "输出 T 个整数，第 $$$i$$$ 个应包含一个整数，表示第 $$$i$$$ 个测试用例的子数组的最大值。"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.121Z",
+  "translatedBy": [
+    "iflyrec"
+  ]
+}

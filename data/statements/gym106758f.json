@@ -1,0 +1,153 @@
+{
+  "code": "GYM106758F",
+  "letter": "F",
+  "title": "F. Lights for the SanSiCup",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106758/problem/F",
+  "difficulty": "*2300",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Every Christmas, while decorating the hall, the kids of ICPC UMSS organize the SanSiCup. On a wall there is a panel with $$$b$$$ lights, numbered from $$$0$$$ to $$$b-1$$$, and $$$N$$$ remote controls. At the beginning all lights are off.",
+      "Each control $$$i$$$ has an associated fixed mask $$$a_i$$$: when pressed, it toggles exactly the lights $$$j$$$ such that bit $$$j$$$ of $$$a_i$$$ is one (lights that are off turn on and lights that are on turn off). The controls can be pressed in any order and as many times as desired; pressing the same control twice cancels its effect. Consequently, a configuration of lights (the subset of lights that are on) is reachable if and only if it is equal to the bitwise XOR of the masks of some subset of the original controls (the empty subset produces the configuration with all lights off).",
+      "Since the controls often get lost among the decorations, the kids want to build some additional backup controls. The effect of each new control is chosen before any loss happens, is fixed at that moment and cannot be changed afterwards; that effect must be equal to the XOR of the masks of some subset of the original controls (not of other new controls). A new control with mask $$$0$$$ is valid, although useless.",
+      "Then, up to two arbitrary controls —original or new, in any combination— may be lost. Two different controls are always considered physical and separate even if they have exactly the same mask: losing one of them does not affect the other. Once the new controls are built and the identity of the lost controls is known, the kids can freely choose, for each configuration they want to reproduce, which remaining controls to press (different subsets for different configurations are allowed).",
+      "The kids want that, no matter which up to two controls are lost, every configuration that was reachable with the $$$N$$$ original controls (without losses and without new controls) remains reachable using only the controls that survived. What is the minimum number of additional controls they need to build to guarantee this?"
+    ],
+    "input": [
+      "The first line contains two integers $$$N$$$ and $$$b$$$ ($$$1 \\leq N \\leq 100000$$$, $$$1 \\leq b \\leq 60$$$): the number of original controls and the number of lights on the panel.",
+      "The second line contains $$$N$$$ integers $$$a_1, a_2, \\ldots, a_N$$$ ($$$0 \\leq a_i  \\lt  2^b$$$), the masks of the original controls, in decimal. The lights are numbered from $$$0$$$ to $$$b-1$$$: control $$$i$$$ toggles light $$$j$$$ if and only if bit $$$j$$$ of $$$a_i$$$ is one.",
+      "Several original controls may have exactly the same mask (including mask $$$0$$$, a control that does not change any light); each one counts as an independent physical unit that can be lost separately."
+    ],
+    "output": [
+      "Print a single integer: the minimum number of additional controls the kids must build."
+    ],
+    "note": [
+      "Remember that:",
+      "The effect of each new control is fixed before it is known which controls will be lost, and it must be expressible as the XOR of masks of original controls (never of other new controls).",
+      "\"Losing up to two controls\" includes losing zero, one or two controls, in any combination of original and new ones.",
+      "Two controls with the same mask are still distinct units: losing one does not imply losing the other.",
+      "Explanation for example 1",
+      "It is enough to build one additional control with mask $$$3$$$ (equivalent to pressing the controls with masks $$$2$$$ and $$$1$$$). With the six available controls, every configuration reachable with the five original ones remains reachable even if any two of them are lost.",
+      "For example, if the controls with masks $$$4$$$ and $$$2$$$ are lost, the effect of the first one can be reconstructed by pressing those with masks $$$5$$$ and $$$1$$$, and the effect of the second one by pressing those with masks $$$3$$$ and $$$1$$$.",
+      "Without building any additional control, losing the controls with masks $$$2$$$ and $$$6$$$ already makes it impossible to obtain configuration $$$2$$$.",
+      "Explanation for example 2",
+      "The three original controls are linearly independent (they form a basis) and none of them has a backup: losing any one of them already makes it impossible to reproduce its effect. An optimal choice is to build the controls with masks $$$6$$$, $$$5$$$ and $$$3$$$.",
+      "Explanation for example 3",
+      "Even if two of the three controls are lost, there is always one left that can turn the only light on or off. There is no need to build any additional control."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 3\n4 2 1 6 5",
+      "output": "1"
+    },
+    {
+      "input": "3 3\n4 2 1",
+      "output": "3"
+    },
+    {
+      "input": "3 1\n1 1 1",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "每年圣诞节，ICPC UMSS 的孩子们在装饰大厅时都会举办 SanSiCup。墙上有一块面板，上面有 $$$b$$$ 盏灯，编号从 $$$0$$$ 到 $$$b-1$$$，还有 $$$N$$$ 个遥控器。起初，所有灯都是关闭的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个控制器 $$$i$$$ 都对应一个固定掩码 $$$a_i$$$：按下它时，恰好切换 $$$j$$$ 中满足 $$$a_i$$$ 的第 $$$j$$$ 位为 1 的灯(关着的灯会打开，亮着的灯会关闭)。控制器可以按任意顺序按下任意次数；同一个控制器按两次会抵消其效果。因此，一个灯光配置(亮着的灯构成的子集)可达，当且仅当它等于原始控制器中某个子集对应掩码的按位异或(空集对应所有灯都熄灭的配置)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于控制装置经常会淹没在装饰物中，孩子们想再制作一些备用控制装置。每个新控制装置的效果都必须在任何控制装置丢失之前选定，当时确定后便不能再更改；其效果必须等于某个原有控制装置子集的掩码异或值(不能使用其他新控制装置)。掩码为 $$$0$$$ 的新控制装置也是有效的，不过没有用处。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后，最多可以丢失两个任意的控制器，原有的或新建的均可，且可以混合选择。即使两个控制器的掩码完全相同，它们也始终被视为两个独立的实体：丢失其中一个不会影响另一个。新控制器建成且确定丢失了哪些控制器后，对于想要复现的每种配置，孩子们都可以自由选择要按下哪些剩余控制器（不同配置可以选择不同的子集）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "孩子们希望，无论最多有两个控制器失效，原先使用 $$$N$$$ 个控制器(没有控制器失效，也没有新增控制器)能够到达的每种配置，都仍然可以仅用幸存的控制器到达。为了保证这一点，他们至少需要额外建造多少个控制器？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 $$$N$$$ 和 $$$b$$$($$$1 \\leq N \\leq 100000$$$、$$$1 \\leq b \\leq 60$$$)：原始控制器的数量和面板上指示灯的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 $$$N$$$ 个整数 $$$a_1, a_2, \\ldots, a_N$$$ ($$$0 \\leq a_i  \\lt  2^b$$$)，以十进制表示原始控制器的掩码。灯的编号从 $$$0$$$ 到 $$$b-1$$$：当且仅当 $$$a_i$$$ 的第 $$$j$$$ 位为 1 时，控制器 $$$i$$$ 才会切换灯 $$$j$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "多个原始控制器可能具有完全相同的掩码(包括掩码 $$$0$$$，这种控制器不会改变任何灯的状态)；每个控制器都算作一个独立的物理单元，可以分别丢失。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数：孩子们必须建造的额外控制装置的最小数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "请记住：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个新控制的效果必须在确定哪些控制会丢失之前固定，并且必须表示为若干原始控制掩码的异或（不能使用其他新控制）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "“最多失去两个控制键”包括失去零个、一个或两个控制键，原有控制键和新增控制键可以任意组合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "两个具有相同掩码的控制器仍是不同的单位：失去其中一个并不意味着失去另一个。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "示例 1 说明",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "只需再构造一个掩码为 $$$3$$$ 的控制(等价于按下掩码为 $$$2$$$ 和 $$$1$$$ 的控制)。有了这六个控制，即使丢失任意两个控制，原先五个控制所能到达的每种配置仍然都能到达。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，如果掩码为 $$$4$$$ 和 $$$2$$$ 的控制按钮丢失了，那么可以通过按下掩码为 $$$5$$$ 和 $$$1$$$ 的按钮来重现第一个按钮的效果，并通过按下掩码为 $$$3$$$ 和 $$$1$$$ 的按钮来重现第二个按钮的效果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "即使不构造任何额外的控制，失去带有掩码 $$$2$$$ 和 $$$6$$$ 的控制也已经使得无法获得配置 $$$2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "示例 2 说明",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这三个原始控制量线性无关(构成一组基)，且都没有备用方案：失去其中任何一个，都将无法复现其效果。一个最优选择是构造掩码为 $$$6$$$、$$$5$$$ 和 $$$3$$$ 的控制量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "样例 3 说明",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "即使三个控制器中有两个失效，也始终会剩下一个可以打开或关闭唯一的灯。无需再建造其他控制器。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. SanSiCup 的灯",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

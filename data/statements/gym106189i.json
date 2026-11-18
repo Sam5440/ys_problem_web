@@ -1,0 +1,78 @@
+{
+  "code": "GYM106189I",
+  "letter": "I",
+  "title": "I. Agronomist",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106189/problem/I",
+  "difficulty": "*1900",
+  "timeLimit": "1.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "More than anything, Professor R. loves working in the garden and even wants to retrain as an agronomist. Since gardening is a true passion of his life, and he just loves mathematics, he tries different ways to plant tomatoes.",
+      "The Professor's garden is a rectangle with its bottom-left corner at the point (x,y)$$$(x, y)$$$, width w$$$w$$$ (along the Ox$$$Ox$$$ axis) and height h$$$h$$$ (along the Oy$$$Oy$$$ axis) and sides of the rectangle are parallel to the coordinate axes. The Professor can plant tomatoes only at points with integer coordinates in his garden (including the garden's boundary). Initially, he starts at the point with coordinates (0,0)$$$(0, 0)$$$ and from there he can move to any point with integer coordinates located at a distance of √n$$$\\sqrt{n}$$$, where n$$$n$$$ is a number whose prime factorization contains 2$$$2$$$ to an odd power. From there, he can again move to another point with integer coordinates located at a distance of √n$$$\\sqrt{n}$$$, and so on, so the Professor moves along the plane and plants tomatoes.",
+      "The Professor needs to prepare the seedlings for planting in advance; he wants to plant as many tomatoes as possible in his garden, and at the same time so that, after planting in the way described above, no seedlings remain unused — in other words, the number of seedlings must be equal to the number of points with integer coordinates in the garden that he can reach by stepping a distance of √n$$$\\sqrt{n}$$$.",
+      "The Professor is on vacation and has not been doing calculations for a long time. Help him write a program that determines how many seedlings need to be prepared in order to plant as many tomato seedlings as possible at points with integer coordinates that can be reached from (0,0)$$$(0, 0)$$$ by stepping on √n$$$\\sqrt{n}$$$."
+    ],
+    "input": [
+      "The input data contains 5$$$5$$$ integers: n$$$n$$$, x$$$x$$$, y$$$y$$$, w$$$w$$$, h$$$h$$$, where n$$$n$$$ (2≤n≤1012$$$2 \\le n \\le 10^{12}$$$) — the square of the Professor's step length, where n$$$n$$$ is such that its factorization contains 2$$$2$$$ to an odd power, x$$$x$$$, y$$$y$$$ (−109≤x,y≤109$$$-10^9 \\le x, y \\le 10^9$$$) — coordinates of the lower-left corner of the garden, w$$$w$$$, h$$$h$$$ (1≤w,h≤5⋅105$$$1 \\le w, h \\le 5 \\cdot 10^5$$$) — the width and height of the vegetable garden (horizontal and vertical), respectively."
+    ],
+    "output": [
+      "Print a single number — the total number of tomato seedlings that need to be prepared by Kadyrbechu (that's Professor R.'s name) for planting."
+    ]
+  },
+  "examples": [
+    {
+      "input": "8 0 0 4 4",
+      "output": "5"
+    },
+    {
+      "input": "8 -1 -1 5 5",
+      "output": "5"
+    },
+    {
+      "input": "10 0 0 30 30",
+      "output": "481"
+    },
+    {
+      "input": "10 -10 -10 100 100",
+      "output": "5101"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "最重要的是，R. 教授喜欢在花园里劳作，甚至想改行成为一名农艺师。由于园艺是他一生真正的热爱，同时他又非常喜欢数学，因此他尝试用不同的方法种植西红柿。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "教授的花园是一个矩形，其左下角位于点 (x,y)$$$(x, y)$$$，宽度为 w$$$w$$$(沿 Ox$$$Ox$$$ 轴方向)，高度为 h$$$h$$$(沿 Oy$$$Oy$$$ 轴方向)，且矩形的边与坐标轴平行。教授只能在花园内坐标为整数的点上种植西红柿(包括花园边界)。最初，他位于坐标为 (0,0)$$$(0, 0)$$$ 的点，从那里开始，他可以移动到任意一个坐标为整数且与当前位置距离为 √n$$$\\sqrt{n}$$$ 的点，其中 n$$$n$$$ 的质因数分解中 2$$$2$$$ 的幂次为奇数。之后，他可以再次移动到另一个与当前位置距离为 √n$$$\\sqrt{n}$$$ 的坐标为整数的点，如此反复；教授就这样在平面上移动并种植西红柿。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "教授需要提前准备好用于种植的幼苗；他希望在花园中种植尽可能多的西红柿，同时保证按照上述方式种植后不会剩下未使用的幼苗——换句话说，幼苗的数量必须等于花园中他通过每次移动距离 √n$$$\\sqrt{n}$$$ 所能到达的整数坐标点的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "教授正在休假，已经很久没有进行计算了。请帮助他编写一个程序，确定需要准备多少株幼苗，以便在所有能够从 (0,0)$$$(0, 0)$$$ 通过每次移动 √n$$$\\sqrt{n}$$$ 到达的整数坐标点中，种植尽可能多的西红柿幼苗。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入数据包含 5$$$5$$$ 个整数：n$$$n$$$、x$$$x$$$、y$$$y$$$、w$$$w$$$、h$$$h$$$，其中 n$$$n$$$(2≤n≤1012$$$2 \\le n \\le 10^{12}$$$)——教授步长的平方，且 n$$$n$$$ 的质因数分解中 2$$$2$$$ 的幂次为奇数；x$$$x$$$、y$$$y$$$(−109≤x,y≤109$$$-10^9 \\le x, y \\le 10^9$$$)——花园左下角的坐标；w$$$w$$$、h$$$h$$$(1≤w,h≤5⋅105$$$1 \\le w, h \\le 5 \\cdot 10^5$$$)——菜园的宽度和高度(分别为水平方向和竖直方向)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，即 Kadyrbechu（R. 教授的名字）需要准备种植的番茄幼苗总数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "I. 农艺师",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

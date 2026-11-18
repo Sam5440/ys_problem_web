@@ -1,0 +1,248 @@
+{
+  "code": "GYM106097F",
+  "letter": "F",
+  "title": "F. Rocket Cycle",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106097/problem/F",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/32e9ab85f8bd398d9127bc5057e0713d48a26383.webp)",
+      "This is an interactive problem. You have to use a flush operation right after printing each line. For example, in C++ you should use the function fflush(stdout), in Java — System.out.flush(), in Pascal — flush(output) and in Python — sys.stdout.flush().",
+      "Bobob has developed a new and improved rocket cycle deck that exploits the overwhelming force of rockets to annihilate his opponents' towers. There's only one problem: he knows the enemy's two princess towers are horizontally aligned with each other, but he needs your help to find their exact x-coordinates.",
+      "In order to find the x-coordinates of the princess towers $$$x_1$$$ and $$$x_2$$$ ($$$1 \\le x_1  \\lt  x_2 \\le n$$$), you can place down hog riders. Each hog rider can be placed at an x-coordinate by printing a single integer from $$$1$$$ to $$$n$$$. Flush output stream after printing each x-coordinate. Hog riders will target the nearest tower (or the right tower if halfway in between), earning one of three possible responses:",
+      "the string \"<\" (without quotes), if the closest princess tower is to the left of the hog rider ($$$x_{tower}  \\lt  x_{hog}$$$);",
+      "the string \">\" (without quotes), if the closest princess tower is to the right of the hog rider ($$$x_{tower}  \\gt  x_{hog}$$$);",
+      "the string \"=\" (without quotes), if the hog rider is on top of a princess tower ($$$x_{tower} = x_{hog}$$$).",
+      "The closest princess tower $$$x_{tower}$$$ is determined to be $$$x_1$$$ if $$$|x_{hog} - x_1|  \\lt  |x_{hog} - x_2|$$$, and $$$x_2$$$ otherwise.",
+      "When you figure out the x-coordinates of the two princess towers, print string \"! x1 x2\", where $$$x1$$$ and $$$x2$$$ are the x-coordinates of the princess towers from left to right ($$$x1  \\lt  x2$$$), and terminate your program normally immediately after flushing the output stream.",
+      "You only have 500 elixir, and each hog rider costs 4 elixir, so you are allowed to place no more than 125 hog riders (not including printing the princess towers' coordinates at the end)."
+    ],
+    "input": [
+      "Use standard input to read the responses to the hog riders.",
+      "The first line contains an integer $$$n$$$ ($$$2 \\le n \\le 10^9$$$) — the maximum possible x-coordinate.",
+      "The following lines will contain responses to your hog riders — strings \"<\", \">\" or \"=\". The $$$i$$$-th line is a response to your $$$i$$$-th hog rider. When you are ready to guess the princess towers' coordinates, print \"! x1 x2\" and terminate your program.",
+      "The game will allow you to read the response to the hog rider only after your program prints the hog rider's x-coordinate and performs the flush operation."
+    ],
+    "output": [
+      "To print the hog riders' coordinates, your program must use standard output.",
+      "Your program must print the hog riders' x-coordinates — integer numbers $$$x$$$ ($$$1 \\le x \\le n$$$), one query per line (do not forget \"end of line\" after each $$$x$$$). After printing each line your program must perform the flush operation. When you are ready to guess the princess towers' coordinates, print \"! x1 x2\", flush, and terminate your program."
+    ],
+    "note": [
+      "In this example, the princess towers are located at x-coordinates $$$1$$$ and $$$9$$$.",
+      "Placing a hog rider at an x-coordinate of $$$4$$$ will result in it targeting the princess tower at $$$1$$$ because $$$|4-1|  \\lt  |4-9|$$$, so the response is \"<\".",
+      "Placing a hog rider at an x-coordinate of $$$1$$$ will be on top of a princess tower, so the response is \"=\".",
+      "Placing a hog rider at an x-coordinate of $$$5$$$ will result in it targeting the princess tower at $$$9$$$ because $$$|5-9| \\ge |5-1|$$$, so the response is \">\".",
+      "Placing a hog rider at an x-coordinate of $$$9$$$ will be on top of a princess tower, so the response is \"=\".",
+      "The player correctly guesses that the princess towers are at x-coordinates $$$1$$$ and $$$9$$$, and the program terminates."
+    ]
+  },
+  "examples": [
+    {
+      "input": "10\n\n<\n\n=\n\n>\n\n=",
+      "output": "\n4\n\n1\n\n5\n\n9\n\n! 1 9"
+    }
+  ],
+  "titleZh": {
+    "0": "F.火箭循环",
+    "caiyun": "F. 火箭循环",
+    "youdao": "F.火箭循环",
+    "iflyrec": "F.火箭循环",
+    "ai": "F. Rocket Cycle",
+    "aiModel": "DeepSeek V4 Flash"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "iflyrec": "![](https://espresso.codeforces.com/32e9ab85f8bd398d9127bc5057e0713d48a26383.webp)",
+        "caiyun": "![](https://espresso.codeforces.com/32e9ab85f8bd398d9127bc5057e0713d48a26383.webp)",
+        "deepl": "![](https://espresso.codeforces.com/32e9ab85f8bd398d9127bc5057e0713d48a26383.webp)",
+        "youdao": "![](https://espresso.codeforces.com/32e9ab85f8bd398d9127bc5057e0713d48a26383.webp)",
+        "ai": "![](https://espresso.codeforces.com/32e9ab85f8bd398d9127bc5057e0713d48a26383.webp)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "这是一个互动的问题。您必须在打印每一行后立即使用刷新操作。例如，在C++中，应使用函数fflush（stdout）；在Java中，应使用函数System.out.flush（）；在Pascal中，应使用函数flush（output）；在Python中，应使用函数sys.stdout.flush（）。",
+        "caiyun": "这是一个交互式问题。你必须在打印每一行后立即使用 flush 操作。例如，在 C++ 中，你应该使用函数 flush(stdout)，在 Java 中使用 System.out.flush()，在 Pascal 中使用 flush(output)，在 Python 中使用 sys.stdout.flush()。",
+        "youdao": "这是一个互动的问题。您必须在打印每行后立即使用flush操作。例如，在c++中，您应该使用函数fflush(stdout)，在Java - System.out中。flush()， Pascal中- flush（输出），Python中- sys.stdout.flush（）。",
+        "deepl": "这是一个交互式问题。您必须在打印完每一行后立即使用 flush 操作。例如，在 C++ 中应使用函数 fflush(stdout)，在 Java 中应使用 System.out.flush()，在 Pascal 中应使用 flush(output)，在 Python 中应使用 sys.stdout.flush()。",
+        "ai": "这是一个交互问题。每打印一行后，你都必须进行一次 flush 操作。例如，在 C++ 中应使用 fflush(stdout)，在 Java 中应使用 System.out.flush()，在 Pascal 中应使用 flush(output)，在 Python 中应使用 sys.stdout.flush()。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "Bob 开发了一种新的改进型火箭循环甲板，利用火箭的压倒性力量摧毁对手的塔。只有一个问题：他知道敌人的两座公主塔是水平对齐的，但他需要你的帮助来确定它们的确切 x 坐标。",
+        "caiyun": "Bob 开发了一种新的改进型火箭循环甲板，利用火箭的压倒性力量摧毁对手的塔。只有一个问题：他知道敌人的两座公主塔是水平对齐的，但他需要你的帮助来确定它们的确切 x 坐标。",
+        "youdao": "Bobob开发了一个新的改进的火箭循环套牌，利用火箭的压倒性力量来消灭对手的塔。这里只有一个问题：他知道敌人的两个公主塔是水平对齐的，但他需要你的帮助来找到它们的确切x坐标。",
+        "deepl": "Bobob 开发了一套全新改良的火箭循环卡组，利用火箭的压倒性威力摧毁对手的防御塔。只有一个问题：他知道敌人的两座公主塔是水平对齐的，但他需要你的帮助才能找到它们的确切 X 坐标。",
+        "ai": "Bobob 开发了一套全新改进的火箭循环卡组，利用火箭的压倒性力量来摧毁对手的塔。只有一个问题：他知道敌方两座公主塔在水平方向对齐，但他需要你的帮助来找出它们精确的 x 坐标。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "为了找到公主塔 $$$x_1$$$ 和 $$$x_2$$$ ($$$1 \\le x_1  \\lt  x_2 \\le n$$$）的 x 坐标，可以放置骑猪者。通过打印 $$$1$$$ 到 $$$n$$$ 之间的一个整数，可以将每个骑猪者放置在一个 x 坐标上。打印完每个 x 坐标后，清空输出流。骑猪者的目标是最近的塔(如果在两者之间，则是右边的塔），并获得三种可能的回应之一：",
+        "caiyun": "为了找到公主塔 $$$x_1$$$ 和 $$$x_2$$$($$$1 \\le x_1  \\lt  x_2 \\le n$$$) 的 x 坐标，您可以放置骑猪者。每个骑猪者都可以通过打印一个从 $$$1$$$ 到 $$$n$$$ 的整数来放置在 x 坐标上。打印每个 x 坐标后，Flush 输出流会出现。骑猪者将瞄准最近的塔 (或者如果是中间的右塔，则为右塔)，获得三种可能的响应之一：",
+        "youdao": "为了找到公主塔$$$x_1$$$和$$$x_2$$$ ($$$1 \\le x_1  \\lt  x_2 \\le n$$$）的x坐标，你可以放下猪骑手。每个骑猪人可以通过打印一个从$$$1$$$到$$$n$$$的整数来放置在x坐标上。在打印每个x坐标后刷新输出流。Hog骑手将瞄准最近的塔(如果在中间位置，则瞄准右边的塔），并获得以下三种可能的反应之一：",
+        "deepl": "为了找到公主塔 $$$x_1$$$ 和 $$$x_2$$$ ($$$1 \\le x_1  \\lt  x_2 \\le n$$$）的 x 坐标，可以放置骑猪者。通过打印 $$$1$$$ 到 $$$n$$$ 之间的一个整数，可以将每个骑猪者放置在一个 x 坐标上。打印完每个 x 坐标后，清空输出流。骑猪者的目标是最近的塔(如果在两者之间，则是右边的塔），并获得三种可能的回应之一：",
+        "ai": "为了找到公主塔 $$$x_1$$$ 和 $$$x_2$$$($$$1 \\le x_1  \\lt  x_2 \\le n$$$)的 x 坐标，你可以放置野猪骑士。通过打印一个从 $$$1$$$ 到 $$$n$$$ 的整数，可以把每个野猪骑士放置在某个 x 坐标上。打印每个 x 坐标后刷新输出流。野猪骑士会瞄准最近的塔(如果恰好位于两者正中间则瞄准右边的塔)，并获得以下三种可能的响应之一：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "字符串“<”(不带引号），如果最近的公主塔在Hog Rider的左边($$$x_{tower}  \\lt  x_{hog}$$$）",
+        "caiyun": "如果最近的公主塔位于骑猪者 ($$$x_{tower}  \\lt  x_{hog}$$$) 的左侧，则字符串 “<”(不加引号);",
+        "youdao": "如果最近的公主塔在hog rider ($$$x_{tower}  \\lt  x_{hog}$$$）的左边，则字符串“<”(不带引号）；",
+        "deepl": "如果最近的公主塔在骑猪者($$$x_{tower}  \\lt  x_{hog}$$$）的左边，则会出现字符串\"<\"(不带引号）；",
+        "ai": "若最近的公主塔位于野猪骑士左侧($$$x_{tower}  \\lt  x_{hog}$$$)，则输出字符串 \"<\"(不含引号)；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "如果最近的公主塔位于骑猪者 ($$$x_{tower}  \\gt  x_{hog}$$$) 的右侧，则字符串 “>”(不加引号);",
+        "caiyun": "如果最近的公主塔位于骑猪者 ($$$x_{tower}  \\gt  x_{hog}$$$) 的右侧，则字符串 “>”(不加引号);",
+        "youdao": "如果最近的公主塔在hog rider ($$$x_{tower}  \\gt  x_{hog}$$$）的右侧，则字符串“>”(不带引号）；",
+        "deepl": "如果最近的公主塔位于骑猪人的右侧($$$x_{tower}  \\gt  x_{hog}$$$），则会出现字符串\">\"(不带引号）；",
+        "ai": "若最近的公主塔位于野猪骑士右侧($$$x_{tower}  \\gt  x_{hog}$$$)，则输出字符串 \">\"(不含引号)；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "字符串“=”(不带引号），如果猪骑士在公主塔的顶部($$$x_{tower} = x_{hog}$$$）。",
+        "caiyun": "字符串 “=”(不加引号)，如果骑猪者位于公主塔顶 ($$$x_{tower} = x_{hog}$$$)。",
+        "youdao": "字符串“=”(不带引号），如果猪骑士在公主塔的顶部($$$x_{tower} = x_{hog}$$$）。",
+        "deepl": "字符串\"=\"(不带引号），如果骑猪人位于公主塔的顶部($$$x_{tower} = x_{hog}$$$）。",
+        "ai": "若野猪骑士正位于某座公主塔上($$$x_{tower} = x_{hog}$$$)，则输出字符串 \"=\"(不含引号)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "如果是$$$|x_{hog} - x_1|  \\lt  |x_{hog} - x_2|$$$，则最近的公主塔$$$x_{tower}$$$被确定为$$$x_1$$$，否则为$$$x_2$$$。",
+        "youdao": "最近的公主塔$$$x_{tower}$$$被确定为$$$x_1$$$，如果是$$$|x_{hog} - x_1|  \\lt  |x_{hog} - x_2|$$$，否则是$$$x_2$$$。",
+        "deepl": "如果是$$$|x_{hog} - x_1|  \\lt  |x_{hog} - x_2|$$$，则最近的公主塔$$$x_{tower}$$$被确定为$$$x_1$$$，否则为$$$x_2$$$。",
+        "ai": "最近的公主塔 $$$x_{tower}$$$ 按如下方式确定：若满足 $$$|x_{hog} - x_1|  \\lt  |x_{hog} - x_2|$$$，则为 $$$x_1$$$；否则为 $$$x_2$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "当你计算出两个公主塔的 x 坐标时，打印字符串 “! x1 x2”，其中 $$$x1$$$ 和 $$$x2$$$ 是公主塔从左到右的 x 坐标 ($$$x1  \\lt  x2$$$)，并在刷新输出流后立即正常终止程序。",
+        "caiyun": "当你计算出两个公主塔的 x 坐标时，打印字符串 “! x1 x2”，其中 $$$x1$$$ 和 $$$x2$$$ 是公主塔从左到右的 x 坐标 ($$$x1  \\lt  x2$$$)，并在刷新输出流后立即正常终止程序。",
+        "youdao": "当你计算出两个公主塔的x坐标时，打印字符串“！”x1 x2”，其中$$$x1$$$和$$$x2$$$是从左到右的公主塔的x坐标($$$x1  \\lt  x2$$$），并在刷新输出流后立即终止程序。",
+        "deepl": "计算出两座公主塔的 x 坐标后，打印字符串\"！x1 x2\"，其中 $$$x1$$$ 和 $$$x2$$$ 是公主塔从左到右的 x 坐标($$$x1  \\lt  x2$$$），并在刷新输出流后立即正常结束程序。",
+        "ai": "当你确定两座公主塔的 x 坐标后，输出字符串 \"! x1 x2\"，其中 $$$x1$$$ 和 $$$x2$$$ 是从左到右的两座公主塔的 x 坐标($$$x1  \\lt  x2$$$)，并在刷新输出流后立即正常终止程序。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "你只有500个药剂，每个猪骑士需要4个药剂，所以你只能放置125个猪骑士（游戏邦注：不包括最后打印公主塔的坐标）。",
+        "caiyun": "你只有 500 颗灵丹妙药，而每颗灵丹妙药需要 4 颗灵丹妙药，所以你最多只能放置 125 颗灵丹妙药 (不包括最后打印的公主塔坐标)。",
+        "youdao": "你只有500个药剂，每个猪骑士需要4个药剂，所以你只能放置125个猪骑士（游戏邦注：不包括最后打印公主塔的坐标）。",
+        "deepl": "您只有 500 精灵币，而每个猪骑兵需要 4 精灵币，因此您只能放置不超过 125 个猪骑兵（不包括最后打印公主塔坐标）。",
+        "ai": "你只有 500 滴圣水，每个野猪骑士需要 4 滴圣水，因此你最多只能放置 125 个野猪骑士（不包括最后输出公主塔坐标的操作）。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "iflyrec": "使用标准输入来读取对hog骑手的响应。",
+        "caiyun": "使用标准输入来读取对猪骑手的回应。",
+        "youdao": "使用标准输入来读取对hog骑手的响应。",
+        "deepl": "使用标准输入法读取对骑猪者的回复。",
+        "ai": "使用标准输入读取对野猪骑士的响应。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "第一行包含一个整数 $$$n$$$ ($$$2 \\le n \\le 10^9$$$）--可能的最大 x 坐标。",
+        "caiyun": "第一行包含一个整数 $$$n$$$($$$2 \\le n \\le 10^9$$$)——可能的最大 x 坐标。",
+        "youdao": "第一行包含一个整数$$$n$$$ ($$$2 \\le n \\le 10^9$$$）——最大可能的x坐标。",
+        "deepl": "第一行包含一个整数 $$$n$$$ ($$$2 \\le n \\le 10^9$$$）--可能的最大 x 坐标。",
+        "ai": "第一行包含一个整数 $$$n$$$($$$2 \\le n \\le 10^9$$$)——可能的最大 x 坐标。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "下面的行将包含对您的hog骑手的响应-字符串“<”，“>”或“=”。$$$i$$$-第一行是对你的$$$i$$$- hog骑手的回应。当你准备好猜测公主塔的坐标时，打印“！”X1 x2\"并终止程序。",
+        "youdao": "下面的行将包含对您的hog骑手的响应-字符串“<”，“>”或“=”。$$$i$$$-第一行是对你的$$$i$$$- hog骑手的回应。当你准备好猜测公主塔的坐标时，打印“！”X1 x2\"并终止程序。",
+        "deepl": "以下各行将包含对您的骑猪者的回复--字符串\"<\"、\">\"或\"=\"。第 $$$i$$$- 行是对第 $$$i$$$- 个骑猪者的回应。当您准备好猜测公主塔的坐标时，打印\"！ x1 x2 \"并结束程序。",
+        "ai": "接下来的行将包含对你放置的野猪骑士的响应——字符串 \"<\"、\">\" 或 \"=\"。第 $$$i$$$ 行是对你的第 $$$i$$$ 个野猪骑士的响应。当你准备好猜测公主塔的坐标时，输出 \"! x1 x2\" 并终止程序。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "游戏将允许你只有在程序打印出骑猪者的 x 坐标并执行刷新操作后，才能读取对骑猪者的响应。",
+        "caiyun": "游戏将允许你只有在程序打印出骑猪者的 x 坐标并执行刷新操作后，才能读取对骑猪者的响应。",
+        "youdao": "只有在程序打印出hog rider的x坐标并执行flush操作之后，游戏才允许您读取对hog rider的响应。",
+        "deepl": "只有在您的程序打印了骑猪者的 x 坐标并执行了刷新操作后，游戏才会允许您读取骑猪者的响应。",
+        "ai": "只有当你的程序输出了该野猪骑士的 x 坐标并执行刷新操作后，游戏才会允许你读取对该野猪骑士的响应。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "iflyrec": "要打印骑猪者的坐标，程序必须使用标准输出。",
+        "caiyun": "要打印猪骑手的坐标，你的程序必须使用标准输出。",
+        "youdao": "要打印车手的坐标，程序必须使用标准输出。",
+        "deepl": "要打印骑猪者的坐标，程序必须使用标准输出。",
+        "ai": "要输出野猪骑士的坐标，你的程序必须使用标准输出。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "您的程序必须打印hog骑手的x坐标——整数$$$x$$$ ($$$1 \\le x \\le n$$$)，每行查询一次(不要忘记在每个$$$x$$$后面加上“end of line”）。在打印每行之后，程序必须执行刷新操作。当你准备好猜测公主塔的坐标时，打印“！”X1 x2\"，刷新，并终止程序。",
+        "caiyun": "你的程序必须打印出骑猪人的 x 坐标——整数 $$$x$$$($$$1 \\le x \\le n$$$)，每行一个查询 (不要忘记每行 $$$x$$$ 后面的 “行尾”)。打印完每一行后，你的程序必须执行刷新操作。当你准备好猜测公主塔的坐标时，打印 “! x1 x2”，刷新，然后终止你的程序。",
+        "youdao": "您的程序必须打印hog骑手的x坐标——整数$$$x$$$ ($$$1 \\le x \\le n$$$)，每行查询一次(不要忘记在每个$$$x$$$后面加上“end of line”）。在打印每行之后，程序必须执行刷新操作。当你准备好猜测公主塔的坐标时，打印“！”X1 x2\"，刷新，并终止程序。",
+        "deepl": "您的程序必须打印骑猪者的 x 坐标--整数 $$$x$$$ ($$$1 \\le x \\le n$$$) ，每行一个查询(不要忘了在每个 $$$x$$$ 后面的 \"行结束\"）。打印完每一行后，您的程序必须执行刷新操作。当您准备好猜测公主塔的坐标时，打印\"！x1 x2\"，刷新并结束程序。",
+        "ai": "你的程序必须输出野猪骑士的 x 坐标——整数 $$$x$$$($$$1 \\le x \\le n$$$)，每个询问输出一行(别忘了在每个 $$$x$$$ 后加行末)。每输出一行后，你的程序必须执行刷新操作。当你准备好猜测公主塔的坐标时，输出“! x1 x2”，刷新并终止程序。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "iflyrec": "在这个例子中，公主塔位于x坐标$$$1$$$和$$$9$$$。",
+        "caiyun": "在这个例子中，公主塔位于 x 坐标 $$$1$$$ 和 $$$9$$$。",
+        "youdao": "在这个例子中，公主塔位于x坐标$$$1$$$和$$$9$$$。",
+        "deepl": "在本例中，公主塔位于 x 坐标 $$$1$$$ 和 $$$9$$$。",
+        "ai": "在这个例子中，公主塔位于 x 坐标 $$$1$$$ 和 $$$9$$$ 处。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "将骑猪者放置在 $$$4$$$ 的 x 坐标上会导致它瞄准 $$$1$$$ 处的公主塔，因为 $$$|4-1|  \\lt  |4-9|$$$，所以响应为 “<”。",
+        "caiyun": "将骑猪者放置在 $$$4$$$ 的 x 坐标上会导致它瞄准 $$$1$$$ 处的公主塔，因为 $$$|4-1|  \\lt  |4-9|$$$，所以响应为 “<”。",
+        "youdao": "将骑猪者放置在x坐标$$$4$$$将导致它瞄准$$$1$$$的公主塔，因为$$$|4-1|  \\lt  |4-9|$$$，所以响应是“<”。",
+        "deepl": "在 x 坐标$$$4$$$处放置猪骑兵，会导致猪骑兵瞄准$$$1$$$处的公主塔，因为$$$|4-1|  \\lt  |4-9|$$$，所以反应是\"<\"。",
+        "ai": "将一个野猪骑士放在 x 坐标 $$$4$$$ 处，会导致它以 $$$1$$$ 处的公主塔为目标，因为 $$$|4-1|  \\lt  |4-9|$$$，所以返回结果是“<”。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "在 x 坐标为 $$$1$$$ 的位置放置骑猪人，将位于公主塔的顶部，因此响应为\"=\"。",
+        "caiyun": "将一个骑猪者放在 $$$1$$$ 的 x 坐标上，将是在公主塔的顶部，因此响应为 “=”。",
+        "youdao": "将骑猪者放置在x坐标$$$1$$$处将位于公主塔的顶部，因此响应为“=”。",
+        "deepl": "在 x 坐标为 $$$1$$$ 的位置放置骑猪人，将位于公主塔的顶部，因此响应为\"=\"。",
+        "ai": "将一个野猪骑士放在 x 坐标 $$$1$$$ 处，它会正好位于一座公主塔上方，所以返回结果是“=”。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "将一个骑猪者放置在x坐标$$$5$$$将导致它瞄准$$$9$$$的公主塔，因为$$$|5-9| \\ge |5-1|$$$，所以反应是“>”。",
+        "caiyun": "将骑猪者放置在 $$$5$$$ 的 x 坐标上会导致它瞄准 $$$9$$$ 处的公主塔，因为 $$$|5-9| \\ge |5-1|$$$，所以响应为 “>”。",
+        "youdao": "将一个骑猪者放置在x坐标$$$5$$$将导致它瞄准$$$9$$$的公主塔，因为$$$|5-9| \\ge |5-1|$$$，所以反应是“>”。",
+        "deepl": "在 x 坐标$$$5$$$处放置猪骑兵，会导致猪骑兵以$$$9$$$处的公主塔为目标，因为$$$|5-9| \\ge |5-1|$$$，所以响应是\">\"。",
+        "ai": "将一个野猪骑士放在 x 坐标 $$$5$$$ 处，会导致它以 $$$9$$$ 处的公主塔为目标，因为 $$$|5-9| \\ge |5-1|$$$，所以返回结果是“>”。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "将骑猪者放置在x坐标$$$9$$$处将位于公主塔的顶部，因此响应为“=”。",
+        "caiyun": "将一个骑猪者放在 $$$9$$$ 的 x 坐标上，将是在公主塔的顶部，因此响应为 “=”。",
+        "youdao": "将骑猪者放置在x坐标$$$9$$$处将位于公主塔的顶部，因此响应为“=”。",
+        "deepl": "在 x 坐标为 $$$9$$$ 的位置放置骑猪人，将位于公主塔的顶部，因此响应为\"=\"。",
+        "ai": "将野猪骑士放置在 x 坐标 $$$9$$$ 处会位于公主塔上方，因此回答是 \"=\"。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "iflyrec": "玩家正确猜测公主塔位于 x 坐标 $$$1$$$ 和 $$$9$$$，程序结束。",
+        "caiyun": "玩家正确猜出公主塔位于 x 坐标 $$$1$$$ 和 $$$9$$$，程序随即终止。",
+        "youdao": "玩家正确猜测公主塔在x坐标$$$1$$$和$$$9$$$，程序终止。",
+        "deepl": "玩家正确猜到公主塔位于 x 坐标 $$$1$$$ 和 $$$9$$$，程序结束。",
+        "ai": "玩家正确猜出公主塔位于 x 坐标 $$$1$$$ 和 $$$9$$$，程序终止。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.107Z",
+  "translatedBy": [
+    "deepl",
+    "youdao",
+    "caiyun",
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

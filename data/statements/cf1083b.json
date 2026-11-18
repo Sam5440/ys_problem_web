@@ -1,0 +1,113 @@
+{
+  "code": "CF1083B",
+  "letter": "B",
+  "title": "B. The Fair Nut and Strings",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1083/B",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Recently, the Fair Nut has written k$$$k$$$ strings of length n$$$n$$$, consisting of letters \"a\" and \"b\". He calculated c$$$c$$$ — the number of strings that are prefixes of at least one of the written strings. Every string was counted only one time.",
+      "Then, he lost his sheet with strings. He remembers that all written strings were lexicographically not smaller than string s$$$s$$$ and not bigger than string t$$$t$$$. He is interested: what is the maximum value of c$$$c$$$ that he could get.",
+      "A string a$$$a$$$ is lexicographically smaller than a string b$$$b$$$ if and only if one of the following holds:",
+      "a$$$a$$$ is a prefix of b$$$b$$$, but a≠b$$$a \\ne b$$$;",
+      "in the first position where a$$$a$$$ and b$$$b$$$ differ, the string a$$$a$$$ has a letter that appears earlier in the alphabet than the corresponding letter in b$$$b$$$."
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and k$$$k$$$ (1≤n≤5⋅105$$$1 \\leq n \\leq 5 \\cdot 10^5$$$, 1≤k≤109$$$1 \\leq k \\leq 10^9$$$).",
+      "The second line contains a string s$$$s$$$ (|s|=n$$$|s| = n$$$) — the string consisting of letters \"a\" and \"b.",
+      "The third line contains a string t$$$t$$$ (|t|=n$$$|t| = n$$$) — the string consisting of letters \"a\" and \"b.",
+      "It is guaranteed that string s$$$s$$$ is lexicographically not bigger than t$$$t$$$."
+    ],
+    "output": [
+      "Print one number — maximal value of c$$$c$$$."
+    ],
+    "note": [
+      "In the first example, Nut could write strings \"aa\", \"ab\", \"ba\", \"bb\". These 4$$$4$$$ strings are prefixes of at least one of the written strings, as well as \"a\" and \"b\". Totally, 6$$$6$$$ strings.",
+      "In the second example, Nut could write strings \"aba\", \"baa\", \"bba\".",
+      "In the third example, there are only two different strings that Nut could write. If both of them are written, c=8$$$c=8$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 4\naa\nbb",
+      "output": "6"
+    },
+    {
+      "input": "3 3\naba\nbba",
+      "output": "8"
+    },
+    {
+      "input": "4 5\nabbb\nbaaa",
+      "output": "8"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "最近，The Fair Nut 写下了 k$$$k$$$ 个长度为 n$$$n$$$ 的字符串，这些字符串仅由字母 \"a\" 和 \"b\" 组成。他计算了 c$$$c$$$——这些字符串中，至少是一个已写字符串前缀的字符串数量。每个字符串只计数一次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "后来，他弄丢了写有这些字符串的纸。他记得所有写下的字符串在字典序上都不小于字符串 s$$$s$$$，且不大于字符串 t$$$t$$$。他想知道：他最多能得到多大的 c$$$c$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "字符串 a$$$a$$$ 字典序小于字符串 b$$$b$$$，当且仅当满足以下条件之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "a$$$a$$$ 是 b$$$b$$$ 的前缀，但 a≠b$$$a \\ne b$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 a$$$a$$$ 和 b$$$b$$$ 首个不同的位置，字符串 a$$$a$$$ 中的字母在字母表中早于 b$$$b$$$ 中对应的字母。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 k$$$k$$$(1≤n≤5⋅105$$$1 \\leq n \\leq 5 \\cdot 10^5$$$，1≤k≤109$$$1 \\leq k \\leq 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个字符串 s$$$s$$$(|s|=n$$$|s| = n$$$)——该字符串由字母 \"a\" 和 \"b 组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含一个字符串 t$$$t$$$(|t|=n$$$|t| = n$$$)——该字符串由字母 \"a\" 和 \"b 组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证字符串 s$$$s$$$ 的字典序不大于 t$$$t$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 c$$$c$$$ 的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Nut 可以写出字符串 \"aa\"、\"ab\"、\"ba\"、\"bb\"。这 4$$$4$$$ 个字符串，以及 \"a\" 和 \"b\"，都是至少一个已写出字符串的前缀。总共有 6$$$6$$$ 个字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，Nut 可以写出字符串 \"aba\"、\"baa\"、\"bba\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，Nut 只能写出两个不同的字符串。如果两个字符串都被写出，则 c=8$$$c=8$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. The Fair Nut 与字符串",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

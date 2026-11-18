@@ -1,0 +1,148 @@
+{
+  "code": "CF815A",
+  "letter": "A",
+  "title": "A. Karen and Game",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/815/A",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "On the way to school, Karen became fixated on the puzzle game on her phone!",
+      "![](https://espresso.codeforces.com/ddb523e5319d3e419119c3679bdc76340ed480e8.png)",
+      "The game is played as follows. In each level, you have a grid with n rows and m columns. Each cell originally contains the number 0.",
+      "One move consists of choosing one row or column, and adding 1 to all of the cells in that row or column.",
+      "To win the level, after all the moves, the number in the cell at the i-th row and j-th column should be equal to gi, j.",
+      "Karen is stuck on one level, and wants to know a way to beat this level using the minimum number of moves. Please, help her with this task!"
+    ],
+    "input": [
+      "The first line of input contains two integers, n and m (1 ≤ n, m ≤ 100), the number of rows and the number of columns in the grid, respectively.",
+      "The next n lines each contain m integers. In particular, the j-th integer in the i-th of these rows contains gi, j (0 ≤ gi, j ≤ 500)."
+    ],
+    "output": [
+      "If there is an error and it is actually not possible to beat the level, output a single integer -1.",
+      "Otherwise, on the first line, output a single integer k, the minimum number of moves necessary to beat the level.",
+      "The next k lines should each contain one of the following, describing the moves in the order they must be done:",
+      "row x, (1 ≤ x ≤ n) describing a move of the form \"choose the x-th row\".",
+      "col x, (1 ≤ x ≤ m) describing a move of the form \"choose the x-th column\".",
+      "If there are multiple optimal solutions, output any one of them."
+    ],
+    "note": [
+      "In the first test case, Karen has a grid with 3 rows and 5 columns. She can perform the following 4 moves to beat the level:",
+      "![](https://espresso.codeforces.com/9725553e228c387c0f12702a054f3a965a7b0805.png)",
+      "In the second test case, Karen has a grid with 3 rows and 3 columns. It is clear that it is impossible to beat the level; performing any move will create three 1s on the grid, but it is required to only have one 1 in the center.",
+      "In the third test case, Karen has a grid with 3 rows and 3 columns. She can perform the following 3 moves to beat the level:",
+      "![](https://espresso.codeforces.com/fd3281c5d83a863405f380c56f861f780a802d8c.png)",
+      "Note that this is not the only solution; another solution, among others, is col 1, col 2, col 3."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 5\n2 2 2 3 2\n0 0 0 1 0\n1 1 1 2 1",
+      "output": "4\nrow 1\nrow 1\ncol 4\nrow 3"
+    },
+    {
+      "input": "3 3\n0 0 0\n0 1 0\n0 0 0",
+      "output": "-1"
+    },
+    {
+      "input": "3 3\n1 1 1\n1 1 1\n1 1 1",
+      "output": "3\nrow 1\nrow 2\nrow 3"
+    }
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "如果实际上无法通过该关卡，则输出一个整数 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，在第一行输出一个整数 k，表示通过该关卡所需的最少操作次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 k 行中，每行都应包含以下内容之一，按必须执行的顺序描述这些操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "row x，（1 ≤ x ≤ n），表示形如“选择第 x 行”的操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "col x，（1 ≤ x ≤ m），表示形如“选择第 x 列”的操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个最优解，输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，Karen 有一个 3 行 5 列的网格。她可以执行以下 4 步操作来通过这一关：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/9725553e228c387c0f12702a054f3a965a7b0805.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试样例中，Karen 有一个 3 行 3 列的网格。显然不可能通关；进行任意操作都会在网格中产生三个 1，但要求中心只能有一个 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试样例中，Karen 有一个 3 行 3 列的网格。她可以进行以下 3 次操作来通关：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/fd3281c5d83a863405f380c56f861f780a802d8c.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，这并不是唯一的解；另一个解（以及其他解）是第 1 列、第 2 列、第 3 列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "在去学校的路上，Karen 对手机上的益智游戏着了迷！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/ddb523e5319d3e419119c3679bdc76340ed480e8.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "游戏规则如下。在每个关卡中，你有一个 n 行 m 列的网格。每个单元格初始都包含数字 0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一次操作包括选择一行或一列，并将该行或列中的所有单元格加 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了通关，在所有操作完成后，第 i 行第 j 列单元格中的数字应等于 g_{i,j}。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Karen 被困在一个关卡中，想知道一种使用最少操作次数通过该关卡的方法。请帮助她完成这项任务！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入第一行包含两个整数 n 和 m（1 ≤ n，m ≤ 100），分别表示网格的行数和列数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n 行每行包含 m 个整数。具体地，这些行中第 i 行的第 j 个整数表示 g_{i,j}（0 ≤ g_{i,j} ≤ 500）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. Karen 与游戏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

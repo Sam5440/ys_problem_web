@@ -1,0 +1,105 @@
+{
+  "code": "GYM106390B",
+  "letter": "B",
+  "title": "B. Save the world? Save the cat!",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106390/problem/B",
+  "difficulty": "*1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Oh no! Amy the pink cat is stuck in a time loop! To save her, Rover the black cat has to make a journey to The Origin to defeat Aleph-1 the evil cat!",
+      "Define a multiverse as a network of n$$$n$$$ universes numbered from 1$$$1$$$ to n$$$n$$$, with The Origin located at node 1$$$1$$$. These universes are connected by a set of n−1$$$n-1$$$ undirected tunnels, each taking wi$$$w_{i}$$$ time to traverse. It is guarantee that all universes belongs to the same component (in other words, a multiverse is a tree).",
+      "At the start of his journey, Rover can choose to teleport to any universe s$$$s$$$. Define di$$$d_{i}$$$ as the number of tunnel Rover has to traverse from universe i$$$i$$$ to get to The Origin. At any point during his journey, if Rover is in universe v≠1$$$v\\neq1$$$, he can perform a Super Jump and teleport to any universe u$$$u$$$ such that du=dv$$$d_{u} = d_{v}$$$. Super Jump cost no time and can only be performed once during the entire journey.",
+      "Unfortunately, Rover the black cat is not good at math. Therefore, he asked you to find the minimum time needed to traverse from universe s$$$s$$$ to The Origin satisfying the given constraint for every starting universe s$$$s$$$ from 1$$$1$$$ to n$$$n$$$."
+    ],
+    "input": [
+      "Each test consists of multiple test cases. The first line contains an integer t (1≤t≤103$$$1\\leq t\\leq 10^{3}$$$) — the number of test cases. Then follows the description of the test cases.",
+      "The first line of each test case contains a single integer n$$$n$$$ (2≤n≤5⋅105$$$2\\leq n\\leq5 \\cdot 10^{5}$$$), denoting the number of universes.",
+      "Each of the following n−1$$$n-1$$$ lines contains three integers vi$$$v_{i}$$$, ui$$$u_{i}$$$, wi$$$w_{i}$$$ (1≤ui,vi≤n,1≤wi≤109$$$1 \\leq u_{i}, v_{i} \\leq n, 1 \\leq w_{i} \\leq 10^{9}$$$), denoting the endpoints and the time needed to traverse the tunnel. It's guaranteed that all universes are connected via tunnels."
+    ],
+    "output": [
+      "For each testcases, print n$$$n$$$ integer t1,t2,…,tn$$$t_{1},t_{2},\\ldots,t_{n}$$$, denoting the minimum time taken to get from universe i$$$i$$$ to The Origin if Rover starts his journey at universe i$$$i$$$."
+    ],
+    "note": [
+      "In the first testcase:",
+      "If Rover starts in universe 2$$$2$$$, it is optimal to perform a Super Jump from universe 2$$$2$$$ to universe 3$$$3$$$.",
+      "In the second testcase:",
+      "if Rover starts in universe 3$$$3$$$, it is optimal to perform a Super Jump from universe 2$$$2$$$ to universe 4$$$4$$$.",
+      "If Rover starts in universe 5$$$5$$$, it is optimal to perform a Super Jump from universe 5$$$5$$$ to universe 3$$$3$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n3\n1 2 67\n1 3 36\n5\n1 2 3\n2 3 6\n1 4 2\n4 5 10\n5\n1 2 3\n2 3 3\n1 4 2\n4 5 10",
+      "output": "0 36 36 \n0 2 8 2 9 \n0 2 5 2 6"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "哦不！粉色猫咪 Amy 陷入了时间循环！为了拯救她，黑猫 Rover 必须前往起源之地，击败邪恶猫咪 Aleph-1！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "定义一个多元宇宙为由 n$$$n$$$ 个编号从 1$$$1$$$ 到 n$$$n$$$ 的宇宙组成的网络，其中起源之地位于节点 1$$$1$$$。这些宇宙由 n−1$$$n-1$$$ 条无向隧道连接，每条隧道需要 wi$$$w_{i}$$$ 时间通过。保证所有宇宙都属于同一个连通分量(换句话说，多元宇宙是一棵树)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "旅程开始时，Rover 可以选择传送到任意宇宙 s$$$s$$$。定义 di$$$d_{i}$$$ 为 Rover 从宇宙 i$$$i$$$ 前往起源之地需要经过的隧道数量。在旅程中的任何时刻，如果 Rover 位于宇宙 v≠1$$$v\\neq1$$$，他可以使用超级跳跃，传送到任意一个满足 du=dv$$$d_{u} = d_{v}$$$ 的宇宙 u$$$u$$$。超级跳跃不耗费时间，且整个旅程中只能使用一次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "不幸的是，黑猫 Rover 不擅长数学。因此，他请你求出：对于每个起始宇宙 s$$$s$$$(从 1$$$1$$$ 到 n$$$n$$$)，满足给定约束的情况下，从宇宙 s$$$s$$$ 前往起源之地所需的最短时间。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个输入包含多个测试用例。第一行包含一个整数 t(1≤t≤103$$$1\\leq t\\leq 10^{3}$$$)——测试用例的数量。接下来是各个测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 n$$$n$$$(2≤n≤5⋅105$$$2\\leq n\\leq5 \\cdot 10^{5}$$$)，表示宇宙的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n−1$$$n-1$$$ 行中，每行包含三个整数 vi$$$v_{i}$$$、ui$$$u_{i}$$$、wi$$$w_{i}$$$(1≤ui,vi≤n，1≤wi≤109$$$1 \\leq u_{i}, v_{i} \\leq n, 1 \\leq w_{i} \\leq 10^{9}$$$)，表示隧道的两个端点以及穿越该隧道所需的时间。保证所有宇宙都通过隧道彼此连通。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出 n$$$n$$$ 个整数 t1,t2,…,tn$$$t_{1},t_{2},\\ldots,t_{n}$$$，其中第 i 个整数表示如果 Rover 从宇宙 i$$$i$$$ 出发，从宇宙 i$$$i$$$ 到达 The Origin 所需的最短时间。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 Rover 从宇宙 2$$$2$$$ 出发，那么从宇宙 2$$$2$$$ 进行一次超级跳跃到宇宙 3$$$3$$$ 是最优的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 Rover 从宇宙 3$$$3$$$ 开始，那么从宇宙 2$$$2$$$ 跳至宇宙 4$$$4$$$ 执行一次超级跳跃是最优的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 Rover 从宇宙 5$$$5$$$ 开始，那么从宇宙 5$$$5$$$ 跳至宇宙 3$$$3$$$ 执行一次超级跳跃是最优的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 拯救世界？拯救猫咪！",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "code": "GYM106368C",
+  "letter": "C",
+  "title": "C. Olympiad Schedule",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106368/problem/C",
+  "difficulty": "*1700",
+  "timeLimit": "1.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Persik — a shark in the world of programming — decided to create a schedule for all tracks of the Innopolis Open olympiad.",
+      "There are $$$D$$$ days in the academic year, numbered from $$$1$$$ to $$$D$$$. In total, $$$n$$$ olympiads are held.",
+      "The olympiads are numbered from $$$1$$$ to $$$n$$$ in non-decreasing order of their initially scheduled dates. Each olympiad takes place on exactly one day. For each olympiad, its initially scheduled date and its benefit for the younger generation are known.",
+      "You may change the date of any olympiad, but only to a later day within the same academic year (that is, the new date cannot be earlier than the original one and cannot exceed $$$D$$$).",
+      "After all changes, the olympiads must remain in non-decreasing order of their scheduled dates.",
+      "The total benefit of the olympiad season is defined as follows. For each day, consider all olympiads scheduled on that day. If at least one olympiad is scheduled on a given day, the benefit of that day is the maximum benefit among those olympiads. If no olympiads are scheduled on that day, the benefit of that day is $$$0$$$.",
+      "The benefit of the season is the sum of the benefits over all $$$D$$$ days.",
+      "For the benefit of the students, determine the maximum possible total benefit of the season."
+    ],
+    "input": [
+      "The first line contains three integers $$$n$$$, $$$D$$$, and $$$t$$$ — the number of olympiads and the number of days in the academic year, as well as the type of answer ($$$1 \\le n \\le 3 \\cdot 10^5$$$; $$$1 \\le D \\le 2 \\cdot 10^9$$$; $$$1 \\le t \\le 2$$$).",
+      "In the $$$i$$$-th of the following $$$n$$$ lines, two integers $$$d_i$$$ and $$$b_i$$$ are given — the scheduled date (day number) of the $$$i$$$-th olympiad and its benefit ($$$1 \\le d_i \\le D$$$; $$$1 \\le b_i \\le 2 \\cdot 10^9$$$).",
+      "It is guaranteed that $$$d_i \\le d_j$$$ for all $$$i$$$ and $$$j$$$ such that $$$i  \\lt  j$$$."
+    ],
+    "output": [
+      "If $$$t = 1$$$, output a single integer — the maximum possible benefit of the olympiad season.",
+      "If $$$t = 2$$$, then in the first line output a single integer — the maximum possible benefit of the olympiad season; and in the second line output the schedule of the olympiads — $$$n$$$ integers, where the $$$i$$$-th is the final date of the $$$i$$$-th olympiad. The specified final dates must achieve the maximum possible benefit of the olympiad season.",
+      "The tests for this problem consist of thirteen groups. Points for each group are awarded only if all tests of the group and all tests necessary for it are passed.",
+      "GroupPointsAdditional constraints Necessary   groups110$$$n, D \\le 20$$$; $$$b_i \\le 20$$$ for all $$$i$$$; $$$t = 1$$$–27$$$n, D \\le 20$$$; $$$b_i \\le 20$$$ for all $$$i$$$1311$$$n, D \\le 100$$$; $$$b_i \\le 100$$$ for all $$$i$$$1, 249$$$n, D \\le 800$$$; $$$b_i \\le 800$$$ for all $$$i$$$1, 2, 355$$$n, D \\le 2500$$$; $$$b_i \\le 2500$$$ for all $$$i$$$; $$$t = 1$$$164$$$n, D \\le 2500$$$; $$$b_i \\le 2500$$$ for all $$$i$$$1–575$$$b_i = b_j$$$ for all $$$i$$$, $$$j$$$–85$$$d_i \\neq d_j$$$ for all $$$i$$$ and $$$j$$$, such that $$$i \\neq j$$$–95$$$d_i = 1$$$ for all $$$i$$$; $$$t = 1$$$–105$$$d_i = d_j$$$ for all $$$i$$$, $$$j$$$9118$$$D \\le 2 \\cdot 10^6$$$1–61210$$$t = 1$$$1, 5, 91316–1–12"
+    ],
+    "note": [
+      "Note that the answer for the second test will not be suitable as an answer for the first, as for $$$t = 1$$$ only one number needs to be output.",
+      "In the second example, the benefit of the first day is $$$3$$$, the benefit of the second is $$$5$$$, the third is $$$2$$$, and the benefits of days from the $$$4$$$th to the $$$10$$$th are $$$0$$$. Thus, the benefit of the olympiad season is $$$3+5+2+0+\\ldots+0=10$$$. Note that the schedule of olympiads $$$[2, 1, 3]$$$ is not possible, as the olympiads must remain in non-decreasing order of their scheduled dates.",
+      "In the third example, a schedule of olympiads $$$[1, 2, 5, 6, 6]$$$ is also suitable, but $$$[1, 2, 3, 5, 6]$$$ is not suitable, as the third olympiad cannot take place before the $$$5$$$th day"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 10 1\n1 3\n1 5\n1 2",
+      "output": "10"
+    },
+    {
+      "input": "3 10 2\n1 3\n1 5\n1 2",
+      "output": "10\n1 2 3"
+    },
+    {
+      "input": "5 6 2\n1 7\n2 6\n5 8\n5 9\n6 4",
+      "output": "30\n1 3 5 6 6"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Persik——编程世界中的一条鲨鱼——决定为 Innopolis Open 奥林匹克竞赛的所有赛道制定赛程。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学年共有 $$$D$$$ 天，编号从 $$$1$$$ 到 $$$D$$$。总共举办了 $$$n$$$ 场奥林匹克竞赛。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "各届奥林匹克竞赛按照其最初预定日期的非递减顺序编号为 $$$1$$$ 到 $$$n$$$。每届竞赛恰好在一天内举行。对于每届竞赛，已知其最初预定日期以及其对年轻一代带来的收益。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以修改任意一场奥林匹克竞赛的日期，但只能改到同一学年内更晚的一天(即新日期不能早于原日期，且不能超过 $$$D$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "完成所有更改后，各场竞赛的安排日期必须保持非递减顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "奥林匹克竞赛季的总收益定义如下。对于每一天，考虑当天安排的所有竞赛。若某一天至少安排了一场竞赛，则该天的收益为这些竞赛中的最大收益。若当天没有安排任何竞赛，则该天的收益为 $$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "整个赛季的收益是所有 $$$D$$$ 天的收益之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了学生的利益，求赛季总收益的最大可能值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 $$$n$$$、$$$D$$$ 和 $$$t$$$——奥林匹克竞赛的数量、学年中的天数，以及答案类型($$$1 \\le n \\le 3 \\cdot 10^5$$$；$$$1 \\le D \\le 2 \\cdot 10^9$$$；$$$1 \\le t \\le 2$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在接下来的 $$$n$$$ 行中的第 $$$i$$$ 行，给出两个整数 $$$d_i$$$ 和 $$$b_i$$$——第 $$$i$$$ 届奥林匹克竞赛的预定日期(天数)及其收益($$$1 \\le d_i \\le D$$$；$$$1 \\le b_i \\le 2 \\cdot 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证对于所有满足 $$$i  \\lt  j$$$ 的 $$$i$$$ 和 $$$j$$$，均有 $$$d_i \\le d_j$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 $$$t = 1$$$，输出一个整数——奥赛赛季可能获得的最大收益。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 $$$t = 2$$$，则第一行输出一个整数——奥赛赛季可能获得的最大收益；第二行输出奥赛的赛程安排——$$$n$$$ 个整数，其中第 $$$i$$$ 个整数表示第 $$$i$$$ 场奥赛的决赛日期。所指定的决赛日期必须使奥赛赛季的收益达到最大可能值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "本题测试数据共分为十三组。只有通过某组中的所有测试以及该组所依赖的所有测试，才能获得该组的分数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "组别 分数 附加限制 所需组数110$$$n, D \\le 20$$$；$$$b_i \\le 20$$$ 对所有 $$$i$$$；$$$t = 1$$$–27$$$n, D \\le 20$$$；$$$b_i \\le 20$$$ 对所有 $$$i$$$1311$$$n, D \\le 100$$$；$$$b_i \\le 100$$$ 对所有 $$$i$$$1, 249$$$n, D \\le 800$$$；$$$b_i \\le 800$$$ 对所有 $$$i$$$1, 2, 355$$$n, D \\le 2500$$$；$$$b_i \\le 2500$$$ 对所有 $$$i$$$；$$$t = 1$$$164$$$n, D \\le 2500$$$；$$$b_i \\le 2500$$$ 对所有 $$$i$$$1–575$$$b_i = b_j$$$ 对所有 $$$i$$$，$$$j$$$–85$$$d_i \\neq d_j$$$ 对所有 $$$i$$$ 和 $$$j$$$，使得 $$$i \\neq j$$$–95$$$d_i = 1$$$ 对所有 $$$i$$$；$$$t = 1$$$–105$$$d_i = d_j$$$ 对所有 $$$i$$$，$$$j$$$9118$$$D \\le 2 \\cdot 10^6$$$1–61210$$$t = 1$$$1, 5, 91316–1–12",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "注意，第二个测试用例的答案不适合作为第一个测试用例的答案，因为对于 $$$t = 1$$$，只需要输出一个数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，第一天的收益为 $$$3$$$，第二天的收益为 $$$5$$$，第三天的收益为 $$$2$$$，而从第 $$$4$$$ 天到第 $$$10$$$ 天的收益为 $$$0$$$。因此，奥赛季的收益为 $$$3+5+2+0+\\ldots+0=10$$$。注意，奥赛安排 $$$[2, 1, 3]$$$ 是不可能的，因为各场奥赛的安排日期必须保持非递减顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，奥林匹克竞赛的安排 $$$[1, 2, 5, 6, 6]$$$ 也是合适的，但 $$$[1, 2, 3, 5, 6]$$$ 不合适，因为第三场奥林匹克竞赛不能在第 $$$5$$$ 天之前举行。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 奥林匹克竞赛日程安排",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "code": "CF878A",
+  "letter": "A",
+  "title": "A. Short Program",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/878/A",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Petya learned a new programming language CALPAS. A program in this language always takes one non-negative integer and returns one non-negative integer as well.",
+      "In the language, there are only three commands: apply a bitwise operation AND, OR or XOR with a given constant to the current integer. A program can contain an arbitrary sequence of these operations with arbitrary constants from 0 to 1023. When the program is run, all operations are applied (in the given order) to the argument and in the end the result integer is returned.",
+      "Petya wrote a program in this language, but it turned out to be too long. Write a program in CALPAS that does the same thing as the Petya's program, and consists of no more than 5 lines. Your program should return the same integer as Petya's program for all arguments from 0 to 1023."
+    ],
+    "input": [
+      "The first line contains an integer n (1 ≤ n ≤ 5·105) — the number of lines.",
+      "Next n lines contain commands. A command consists of a character that represents the operation (\"&\", \"|\" or \"^\" for AND, OR or XOR respectively), and the constant xi 0 ≤ xi ≤ 1023."
+    ],
+    "output": [
+      "Output an integer k (0 ≤ k ≤ 5) — the length of your program.",
+      "Next k lines must contain commands in the same format as in the input."
+    ],
+    "note": [
+      "You can read about bitwise operations in https://en.wikipedia.org/wiki/Bitwise_operation.",
+      "Second sample:",
+      "Let x be an input of the Petya's program. It's output is ((x&1)&3)&5 = x&(1&3&5) = x&1. So these two programs always give the same outputs."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n| 3\n^ 2\n| 1",
+      "output": "2\n| 3\n^ 2"
+    },
+    {
+      "input": "3\n& 1\n& 3\n& 5",
+      "output": "1\n& 1"
+    },
+    {
+      "input": "3\n^ 1\n^ 2\n^ 3",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Petya 学会了一门新的编程语言 CALPAS。这门语言中的程序总是接受一个非负整数，并同样返回一个非负整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这门语言中只有三种命令：将当前整数与给定常数进行按位与、按位或或按位异或运算。一个程序可以包含任意序列的这些操作，常数可以是从 0 到 1023 的任意值。运行程序时，会按照给定顺序对参数依次执行所有操作，最后返回所得的整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Petya 用这种语言编写了一个程序，但结果程序太长了。请用 CALPAS 编写一个与 Petya 的程序完成相同功能的程序，且程序不超过 5 行。对于从 0 到 1023 的所有参数，你的程序都应返回与 Petya 的程序相同的整数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 5·105），表示行数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来 n 行包含若干命令。每条命令由一个表示操作的字符（\"&\"、\"|\" 或 \"^\" 分别表示按位与、按位或或按位异或）以及常数 xi（0 ≤ xi ≤ 1023）组成。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数 k（0 ≤ k ≤ 5），表示你的程序长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来 k 行必须包含与输入中格式相同的命令。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "你可以在 https://en.wikipedia.org/wiki/Bitwise_operation. 中阅读有关按位运算的内容。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二个样例：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "设 x 是 Petya 的程序的一个输入。它的输出为 ((x&1)&3)&5 = x&(1&3&5) = x&1。因此，这两个程序总是得到相同的输出。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 简短程序",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

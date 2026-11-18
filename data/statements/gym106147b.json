@@ -1,0 +1,142 @@
+{
+  "code": "GYM106147B",
+  "letter": "B",
+  "title": "B. Digging Bot",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106147/problem/B",
+  "difficulty": "*2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem.",
+      "During the excavation at the ruins of the ancient city-kingdom of Salamis archaeologist found a hidden royal tomb, buried at an unknown depth of n$$$n$$$ meters below the surface. Your task is to find the number n$$$n$$$ by making experiments with your digging bot.",
+      "In each experiment, you give the bot a set of integer numbers a1,a2,...,ak$$$a_1, a_2, ..., a_k$$$, and ask it to dig from the surface (depth 0) to depth n$$$n$$$, using only steps of length ai$$$a_i$$$. That means, if the bot's current depth is x$$$x$$$, it can move to depths x+a1$$$x + a_1$$$, x+a2$$$x + a_2$$$, ..., or x+ak$$$x + a_k$$$. When the bot reaches the depth n$$$n$$$, it tells you the number of steps it made. The bot is very intelligent and always makes the minimal possible number of steps to reach the depth n$$$n$$$.",
+      "For example, let the hidden number be n=23$$$n = 23$$$. If you give the bot a set a=[1,3,8]$$$a = [1, 3, 8]$$$, it can reach depth n$$$n$$$ in 5 steps (for example 0→3→4→7→15→23$$$0 \\rightarrow 3 \\rightarrow 4 \\rightarrow 7 \\rightarrow 15 \\rightarrow 23$$$), and if you give the bot a set a=[9,5]$$$a = [9, 5]$$$, it can reach depth n$$$n$$$ in 3 steps (0→9→18→23$$$0 \\rightarrow 9 \\rightarrow 18 \\rightarrow 23$$$).",
+      "Your task is to guess the number n$$$n$$$ after making several experiments with the following constraints:",
+      "The hidden number n$$$n$$$ is in range from 1 to 30000 (inclusive).",
+      "The total number of experiments should be at most 20.",
+      "The total size of sets a$$$a$$$ in all experiments should be at most 250.",
+      "In each experiment, it should be possible for the bot to reach the depth n$$$n$$$.",
+      "Your solution will be tested on 100 tests. If your solution fails to guess the number n$$$n$$$, or exceeds the given limits in at least one test, it will get 0 points.",
+      "If your solution successfully guesses the number n$$$n$$$, and does not exceed the limits in all tests, the score will be calculated based on the total number of steps the bot made in all experiments.",
+      "Let si$$$s_i$$$ be the total number of steps the bot made in all experiments in test i$$$i$$$, and let S$$$S$$$ be maximum of si$$$s_i$$$ for all 100 tests. Then your score will be calculated based on the following table:",
+      "Interaction",
+      "To make an experiment, your program should print one line of the form: \"? k a1$$$a_1$$$ a2$$$a_2$$$ ...$$$...$$$ ak$$$a_k$$$\", where k$$$k$$$ (1≤k≤250$$$1\\le k\\le 250$$$) is the size of the set and ai$$$a_i$$$ (1≤ai≤30000)$$$(1 \\le a_i \\le 30000)$$$ are the elements of the set. After that, your program should read a single integer m$$$m$$$, the minimum number of steps the bot needed to do to reach the depth n$$$n$$$.",
+      "When your program is ready to guess the number n$$$n$$$, it should output the following line: \"! n$$$n$$$\". After that, your program should exit.",
+      "After printing each query do not forget to output the end of line and flush the output.",
+      "If, at any interaction step, you read −1$$$-1$$$ instead of valid data, your solution must exit immediately. This means that your solution will receive Wrong answer because of an invalid query or any other mistake. Failing to exit can result in an arbitrary verdict because your solution will continue to read from a closed stream.",
+      "To flush, use:",
+      "fflush(stdout) or cout.flush() in C++;",
+      "sys.stdout.flush() in Python;",
+      "System.out.flush() in Java;",
+      "see the documentation for other languages."
+    ],
+    "input": [],
+    "output": []
+  },
+  "examples": [
+    {
+      "input": "\n5\n\n3",
+      "output": "? 3 1 3 8\n\n? 2 9 5\n\n! 23"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是一道交互题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在挖掘古城邦萨拉米斯遗迹期间，考古学家发现了一座隐藏的皇家陵墓，它埋在地表以下未知的 n$$$n$$$ 米深处。你的任务是通过让挖掘机器人进行实验，找出 n$$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在每次实验中，你向机器人提供一组整数 a1,a2,...,ak$$$a_1, a_2, ..., a_k$$$，并要求它从地表(深度 0)挖到深度 n$$$n$$$，且只能使用长度为 ai$$$a_i$$$ 的步长。这意味着，如果机器人当前的深度为 x$$$x$$$，它可以移动到深度 x+a1$$$x + a_1$$$、x+a2$$$x + a_2$$$、……或 x+ak$$$x + a_k$$$。当机器人到达深度 n$$$n$$$ 时，它会告诉你自己走了多少步。机器人非常聪明，总是以尽可能少的步数到达深度 n$$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，设隐藏的数字为 n=23$$$n = 23$$$。如果你给机器人一组 a=[1,3,8]$$$a = [1, 3, 8]$$$，它可以用 5 步到达深度 n$$$n$$$(例如 0→3→4→7→15→23$$$0 \\rightarrow 3 \\rightarrow 4 \\rightarrow 7 \\rightarrow 15 \\rightarrow 23$$$)；如果给它一组 a=[9,5]$$$a = [9, 5]$$$，它可以用 3 步到达深度 n$$$n$$$(0→9→18→23$$$0 \\rightarrow 9 \\rightarrow 18 \\rightarrow 23$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是在满足以下约束条件的前提下，通过若干次实验来猜出数字 n$$$n$$$：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "隐藏的数字 n$$$n$$$ 的取值范围是 1 到 30000(含端点)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "实验的总次数最多为 20。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "所有实验中集合 a$$$a$$$ 的总大小最多为 250。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在每次实验中，机器人都必须能够到达深度 n$$$n$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你的解决方案将在 100 组测试数据上进行测试。如果你的解决方案未能猜出数字 n$$$n$$$，或在至少一组测试中超出了给定的限制，则得 0 分。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果你的解成功猜出了数字 n$$$n$$$，并且在所有测试中都未超出限制，则分数将根据机器人在所有实验中执行的步数总数计算。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "令 si$$$s_i$$$ 表示机器人在测试 i$$$i$$$ 的所有实验中执行的步数总数，令 S$$$S$$$ 表示所有 100 个测试中的 si$$$s_i$$$ 的最大值。然后，你的分数将根据下表计算：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了进行实验，你的程序应输出一行如下格式的内容：“? k a1$$$a_1$$$ a2$$$a_2$$$ ...$$$...$$$ ak$$$a_k$$$”，其中 k$$$k$$$(1≤k≤250$$$1\\le k\\le 250$$$)为集合的大小，ai$$$a_i$$$(1≤ai≤30000)$$$(1 \\le a_i \\le 30000)$$$ 为集合中的元素。之后，你的程序应读入一个整数 m$$$m$$$，表示机器人到达深度 n$$$n$$$ 所需的最少步数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当你的程序准备好猜测数字 n$$$n$$$ 时，应输出以下一行：“! n$$$n$$$”。之后，你的程序应退出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出每次查询后，不要忘记输出换行并刷新输出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果在任意交互步骤中，你读到的不是有效数据而是 −1$$$-1$$$，你的程序必须立即退出。这意味着你的程序会因非法查询或任何其他错误而得到答案错误(Wrong Answer)。如果未能退出，由于你的程序会继续从已关闭的流中读取数据，可能会得到任意的评测结果。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "要刷新缓冲区，请使用：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在 C++ 中：fflush(stdout) 或 cout.flush()；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在 Python 中：sys.stdout.flush()；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在 Java 中：System.out.flush()；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "其他语言请参阅相应文档。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [],
+    "output": []
+  },
+  "titleZh": {
+    "ai": "B. 挖掘机器人",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

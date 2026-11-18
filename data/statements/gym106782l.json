@@ -1,0 +1,105 @@
+{
+  "code": "GYM106782L",
+  "letter": "L",
+  "title": "L. Lost Cargo",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106782/problem/L",
+  "difficulty": "*2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem.",
+      "A team of divers is surveying the cargo of the Zenobia, a shipwreck off the coast of Larnaca. In one section of its cargo deck, rectangular containers completely cover an $$$n \\times m$$$ grid. Each container occupies exactly two cells sharing a side, and each cell belongs to exactly one container.",
+      "The boundaries between the containers are hidden by sediment. The divers can inspect individual cells to identify the containers. Each inspection takes time, so the number of inspections is limited.",
+      "Rows are numbered from $$$1$$$ to $$$n$$$ from top to bottom, and columns from $$$1$$$ to $$$m$$$ from left to right. You can inspect a cell $$$(x,y)$$$. The reply describes which half of its container occupies the cell:",
+      "U: the upper half of a vertical container; its other half is at $$$(x+1,y)$$$;",
+      "D: the lower half of a vertical container; its other half is at $$$(x-1,y)$$$;",
+      "L: the left half of a horizontal container; its other half is at $$$(x,y+1)$$$;",
+      "R: the right half of a horizontal container; its other half is at $$$(x,y-1)$$$.",
+      "Reconstruct the arrangement of all containers using at most $$$\\lfloor nm/4\\rfloor$$$ queries. The arrangement is fixed before the interaction starts and does not change in response to your queries.",
+      "Interaction",
+      "First you need to read two integers $$$n$$$ and $$$m$$$ ($$$1 \\le n,m \\le 100$$$), the number of rows and columns. It is guaranteed that $$$nm$$$ is even.",
+      "To inspect a cell, print a line of the form ? x y, where $$$1 \\le x \\le n$$$ and $$$1 \\le y \\le m$$$. The interactor replies with one of U, D, L, or R on a separate line. Repeated queries are allowed, but each counts toward the limit.",
+      "When you have reconstructed the tiling, print a line containing !, followed by $$$n$$$ lines of $$$m$$$ characters each. Character $$$y$$$ of line $$$x$$$ must be the half occupying cell $$$(x,y)$$$, using the same U, D, L, and R notation. Your answer must match the hidden tiling exactly. Printing the final answer does not count as a query. Then terminate your program.",
+      "After printing each query and after printing the final answer, flush the output buffer. For example, use cout.flush() in C++ or sys.stdout.flush() in Python.",
+      "If you make an invalid query or exceed the query limit, your solution will be judged incorrect. If you read -1 or reach the end of input while expecting a reply, terminate immediately."
+    ],
+    "input": [],
+    "output": []
+  },
+  "examples": [
+    {
+      "input": "3 2\n\nD",
+      "output": "\n? 2 2\n\n!\nUU\nDD\nLR"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是一道交互题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一支潜水队正在调查沉船 Zenobia 的货物。该船沉没在拉纳卡海岸附近。在货舱甲板的一个区域，矩形集装箱完全覆盖了一个 $$$n \\times m$$$ 网格。每个集装箱恰好占据两个共边的单元格，且每个单元格恰好属于一个集装箱。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "容器之间的边界被沉积物掩盖了。潜水员可以检查单个单元格，以确定容器的位置。每次检查都需要时间，因此检查次数是有限的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "行号从上到下依次为 $$$1$$$ 至 $$$n$$$，列号从左到右依次为 $$$1$$$ 至 $$$m$$$。你可以查询一个单元格 $$$(x,y)$$$。回复会描述其所在容器的哪一半占据了该单元格：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "U：垂直容器的上半部分；其另一半位于 $$$(x+1,y)$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "D：垂直容器的下半部分；另一半位于 $$$(x-1,y)$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "L：水平容器的左半部分；另一半位于 $$$(x,y+1)$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "R：一个水平容器的右半部分；另一半位于 $$$(x,y-1)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "使用至多 $$$\\lfloor nm/4\\rfloor$$$ 次询问还原所有容器的排列。该排列在交互开始前已固定，并且不会因你的询问而改变。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，你需要读入两个整数 $$$n$$$ 和 $$$m$$$($$$1 \\le n,m \\le 100$$$)，分别表示行数和列数。保证 $$$nm$$$ 为偶数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要检查一个单元格，请输出一行 ? x y，其中 $$$1 \\le x \\le n$$$ 且 $$$1 \\le y \\le m$$$。交互器会在单独一行回复 U、D、L 或 R 之一。允许重复查询，但每次查询都会计入限制。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当你重建出铺砖方案后，输出一行包含 !，随后输出 $$$n$$$ 行，每行包含 $$$m$$$ 个字符。第 $$$x$$$ 行的第 $$$y$$$ 个字符必须表示占据单元格 $$$(x,y)$$$ 的半格，并使用相同的 U、D、L 和 R 表示法。你的答案必须与隐藏的铺砖方案完全一致。输出最终答案不计为一次询问。然后终止程序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在输出每次询问以及最终答案后，请刷新输出缓冲区。例如，在 C++ 中使用 cout.flush()，在 Python 中使用 sys.stdout.flush()。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你进行无效查询或超出查询次数限制，你的解法将被判定为错误。如果读取到 -1，或在等待回复时到达输入末尾，请立即终止。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "L. 遗失的货物",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

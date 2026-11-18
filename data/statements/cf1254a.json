@@ -1,0 +1,140 @@
+{
+  "code": "CF1254A",
+  "letter": "A",
+  "title": "A. Feeding Chicken",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1254/A",
+  "difficulty": "1700",
+  "timeLimit": "1.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Long is a huge fan of CFC (Codeforces Fried Chicken). But the price of CFC is increasing, so he decides to breed the chicken on his own farm.",
+      "His farm is presented by a rectangle grid with r$$$r$$$ rows and c$$$c$$$ columns. Some of these cells contain rice, others are empty. k$$$k$$$ chickens are living on his farm. The number of chickens is not greater than the number of cells with rice on the farm.",
+      "Long wants to give his chicken playgrounds by assigning these farm cells to his chickens. He would like to satisfy the following requirements:",
+      "Each cell of the farm is assigned to exactly one chicken.",
+      "Each chicken is assigned at least one cell.",
+      "The set of cells assigned to every chicken forms a connected area. More precisely, if two cells (x,y)$$$(x, y)$$$ and (u,v)$$$(u, v)$$$ are assigned to the same chicken, this chicken is able to walk from (x,y)$$$(x, y)$$$ to (u,v)$$$(u, v)$$$ by passing only its cells and moving from each cell to another cell sharing a side.",
+      "Long also wants to prevent his chickens from fighting for food. Hence he wants the difference between the maximum and the minimum number of cells with rice assigned to a chicken to be as small as possible. Please help him."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases T$$$T$$$ (1≤T≤2⋅104$$$1 \\le T \\le 2 \\cdot 10^4$$$). Description of the test cases follows.",
+      "The first line of each test case contains three integers r$$$r$$$, c$$$c$$$ and k$$$k$$$ (1≤r,c≤100,1≤k≤62$$$1 \\leq r, c \\leq 100, 1 \\leq k \\leq 62$$$), representing the size of Long's farm and the number of chickens Long has.",
+      "Each of the next r$$$r$$$ lines contains c$$$c$$$ characters, each is either \".\" or \"R\", representing an empty cell or a cell with rice. It is guaranteed that the number of chickens is not greater than the number of cells with rice on the farm.",
+      "It is guaranteed that the sum of r⋅c$$$r \\cdot c$$$ over all test cases does not exceed 2⋅104$$$2 \\cdot 10^4$$$."
+    ],
+    "output": [
+      "For each test case, print r$$$r$$$ lines with c$$$c$$$ characters on each line. Each character should be either a lowercase English character, an uppercase English character, or a digit. Two characters should be equal if and only if the two corresponding cells are assigned to the same chicken. Uppercase and lowercase characters are considered different, so \"A\" and \"a\" belong to two different chickens.",
+      "If there are multiple optimal answers, print any."
+    ],
+    "note": [
+      "These pictures explain the sample output. Each color represents one chicken. Cells filled with patterns (not solid colors) contain rice.",
+      "In the first test case, each chicken has one cell with rice. Hence, the difference between the maximum and the minimum number of cells with rice assigned to a chicken is 0$$$0$$$.",
+      "![](https://espresso.codeforces.com/64e8b44a656880dc95ef395c388549fa1bc44035.png)",
+      "In the second test case, there are 4$$$4$$$ chickens with 3$$$3$$$ cells of rice, and 2$$$2$$$ chickens with 2$$$2$$$ cells of rice. Hence, the difference between the maximum and the minimum number of cells with rice assigned to a chicken is 3−2=1$$$3 - 2 = 1$$$.",
+      "![](https://espresso.codeforces.com/4989deded59f1332fc4d8005f88322487d5da46e.png)",
+      "In the third test case, each chicken has 3$$$3$$$ cells with rice. ![](https://espresso.codeforces.com/9fdf975d5363f9e2afcf3c1a39ba810934f35e2a.png)",
+      "In the last test case, since there are 62$$$62$$$ chicken with exactly 62$$$62$$$ cells of rice, each chicken must be assigned to exactly one cell. The sample output is one of the possible way."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n3 5 3\n..R..\n...R.\n....R\n6 4 6\nR..R\nR..R\nRRRR\nRRRR\nR..R\nR..R\n5 5 4\nRRR..\nR.R..\nRRR..\nR..R.\nR...R\n2 31 62\nRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR\nRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR",
+      "output": "11122\n22223\n33333\naacc\naBBc\naBBc\nCbbA\nCbbA\nCCAA\n11114\n22244\n32444\n33344\n33334\nabcdefghijklmnopqrstuvwxyzABCDE\nFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Long 是 CFC（Codeforces Fried Chicken）的忠实粉丝。但 CFC 的价格不断上涨，因此他决定在自己的农场里养鸡。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他的农场是一个有 r$$$r$$$ 行、c$$$c$$$ 列的矩形网格。其中一些单元格里有米，其他单元格为空。他的农场里生活着 k$$$k$$$ 只鸡。鸡的数量不超过农场中有米的单元格数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Long 想通过将这些农场格子分配给他的鸡，为它们建造活动场地。他希望满足以下要求：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "农场中的每个格子都恰好分配给一只鸡。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每只鸡至少分配到一个格子。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "分配给每只鸡的格子集合构成一个连通区域。更准确地说，如果两个格子 (x,y)$$$(x, y)$$$ 和 (u,v)$$$(u, v)$$$ 被分配给同一只鸡，那么这只鸡可以仅经过属于它的格子，并从一个格子移动到与其共享一条边的另一个格子，从 (x,y)$$$(x, y)$$$ 走到 (u,v)$$$(u, v)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Long 还希望避免他的鸡为了食物而争斗。因此，他希望将分配给一只鸡的含米格子数量的最大值与最小值之差尽可能小。请帮助他。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 T$$$T$$$(1≤T≤2⋅104$$$1 \\le T \\le 2 \\cdot 10^4$$$)。下面给出各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含三个整数 r$$$r$$$、c$$$c$$$ 和 k$$$k$$$(1≤r,c≤100，1≤k≤62$$$1 \\leq r, c \\leq 100, 1 \\leq k \\leq 62$$$)，分别表示 Long 的农场大小以及 Long 拥有的鸡的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 r$$$r$$$ 行中，每行包含 c$$$c$$$ 个字符，每个字符要么是“.”，要么是“R”，分别表示空单元格和有稻米的单元格。保证鸡的数量不超过农场中有稻米的单元格数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例的 r⋅c$$$r \\cdot c$$$ 之和不超过 2⋅104$$$2 \\cdot 10^4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出 r$$$r$$$ 行，每行包含 c$$$c$$$ 个字符。每个字符应当是小写英文字母、大写英文字母或数字。仅当两个对应的单元格被分配给同一只鸡时，这两个字符才应相同。大写字母和小写字母被视为不同的字符，因此“A”和“a”属于两只不同的鸡。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在多个最优答案，输出任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "这些图片解释了输出样例。每种颜色代表一只鸡。带有图案而非纯色填充的单元格中含有稻米。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个测试用例中，每只鸡都有一个装有米饭的格子。因此，分配给一只鸡的装有米饭的格子数的最大值与最小值之差为 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/64e8b44a656880dc95ef395c388549fa1bc44035.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，有 4$$$4$$$ 只鸡拥有 3$$$3$$$ 个装有米饭的格子，还有 2$$$2$$$ 只鸡拥有 2$$$2$$$ 个装有米饭的格子。因此，分配给一只鸡的装有米饭的格子数的最大值与最小值之差为 3−2=1$$$3 - 2 = 1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/4989deded59f1332fc4d8005f88322487d5da46e.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试用例中，每只鸡都有 3$$$3$$$ 个装有米饭的格子。![](https://espresso.codeforces.com/9fdf975d5363f9e2afcf3c1a39ba810934f35e2a.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在最后一个测试用例中，由于有 62$$$62$$$ 只鸡和恰好 62$$$62$$$ 个装有米饭的格子，因此每只鸡都必须恰好被分配一个格子。样例输出是其中一种可能的方案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 喂鸡",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

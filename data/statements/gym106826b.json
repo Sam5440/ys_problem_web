@@ -1,0 +1,105 @@
+{
+  "code": "GYM106826B",
+  "letter": "B",
+  "title": "B. Binary Search Trees",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106826/problem/B",
+  "difficulty": "*1800",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Beatrice has a tree $$$T$$$ with $$$n$$$ vertices numbered from $$$1$$$ to $$$n$$$, each of degree at most three. She considers all possible ways to assign the keys $$$1, 2, \\ldots, n$$$ to the vertices, with one key per vertex and each key used exactly once. Let $$$k_i$$$ be the key assigned to vertex $$$i$$$.",
+      "After assigning the keys, Beatrice can choose a vertex as the root of $$$T$$$ and designate the children of each vertex as left or right. The resulting tree is a binary search tree if the following conditions hold:",
+      "Each vertex has at most one left child and at most one right child.",
+      "For every vertex $$$i$$$, if it has a left child, all keys in its left subtree are smaller than $$$k_i$$$. Similarly, if it has a right child, all keys in its right subtree are greater than $$$k_i$$$.",
+      "For a fixed assignment of keys, a vertex $$$r$$$ is a valid root if $$$T$$$ can be made into a binary search tree rooted at $$$r$$$ by designating each child as left or right. The search quality of the assignment is the number of valid roots.",
+      "For the given tree $$$T$$$, find the sum of the search qualities of all possible assignments, modulo $$$998\\,244\\,353$$$."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains the number of test cases $$$t$$$ ($$$1 \\le t \\le 10^4$$$). The description of the test cases follows.",
+      "The first line of each test case contains an integer $$$n$$$, denoting the number of vertices ($$$2 \\le n \\le 2 \\cdot 10^5$$$).",
+      "Each of the following $$$n - 1$$$ lines contains two integers $$$u$$$ and $$$v$$$, denoting the endpoints of an edge ($$$1 \\le u, v \\le n$$$; $$$u \\ne v$$$). The edges form a tree in which every vertex has degree at most three.",
+      "It is guaranteed that the sum of $$$n$$$ over all test cases does not exceed $$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print the sum of the search qualities of all assignments, modulo $$$998\\,244\\,353$$$."
+    ],
+    "note": [
+      "For the first test case, the valid roots for each assignment are:",
+      "Keys $$$(k_1,k_2,k_3)$$$$$$(1,2,3)$$$$$$(1,3,2)$$$$$$(2,1,3)$$$$$$(2,3,1)$$$$$$(3,1,2)$$$$$$(3,2,1)$$$Valid roots (vertex numbers)$$$\\{1,2,3\\}$$$$$$\\{1\\}$$$$$$\\{3\\}$$$$$$\\{3\\}$$$$$$\\{1\\}$$$$$$\\{1,2,3\\}$$$  The sum of the search qualities is $$$3+1+1+1+1+3=10$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n3\n1 2\n2 3\n4\n3 2\n2 4\n1 2\n5\n1 3\n3 5\n5 4\n5 2",
+      "output": "10\n12\n28"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Beatrice 有一棵树 $$$T$$$，其中有 $$$n$$$ 个顶点，编号从 $$$1$$$ 到 $$$n$$$，每个顶点的度数至多为三。她考虑将键 $$$1, 2, \\ldots, n$$$ 分配给各个顶点的所有可能方式，其中每个顶点恰好分配一个键，且每个键恰好使用一次。设 $$$k_i$$$ 为分配给顶点 $$$i$$$ 的键。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在分配完键值后，Beatrice 可以选择 $$$T$$$ 的一个顶点作为根，并将每个顶点的子节点指定为左孩子或右孩子。当且仅当满足以下条件时，得到的树是一棵二叉搜索树：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个顶点至多有一个左儿子和至多一个右儿子。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个顶点 $$$i$$$，如果它有左儿子，则其左子树中的所有键都小于 $$$k_i$$$。类似地，如果它有右儿子，则其右子树中的所有键都大于 $$$k_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于一种固定的键值分配，若可以通过将每个孩子指定为左儿子或右儿子，使得 $$$T$$$ 成为一棵以 $$$r$$$ 为根的二分搜索树，则顶点 $$$r$$$ 是一个合法根。该分配的搜索质量定义为合法根的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定树 $$$T$$$，求所有可能赋值的搜索质量之和，答案对 $$$998\\,244\\,353$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含测试用例的数量 $$$t$$$($$$1 \\le t \\le 10^4$$$)。接下来是各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 $$$n$$$，表示顶点数量($$$2 \\le n \\le 2 \\cdot 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 $$$n - 1$$$ 行中，每行包含两个整数 $$$u$$$ 和 $$$v$$$，表示一条边的两个端点($$$1 \\le u, v \\le n$$$；$$$u \\ne v$$$)。这些边构成一棵树，其中每个顶点的度数至多为三。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中的 $$$n$$$ 之和不超过 $$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出所有分配方案的搜索质量之和对 $$$998\\,244\\,353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于第一个测试用例，每种赋值方案对应的合法根节点为：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "键：$$$(k_1,k_2,k_3)$$$$$$(1,2,3)$$$$$$(1,3,2)$$$$$$(2,1,3)$$$$$$(2,3,1)$$$$$$(3,1,2)$$$$$$(3,2,1)$$$  \n合法的根(顶点编号)：$$$\\{1,2,3\\}$$$$$$\\{1\\}$$$$$$\\{3\\}$$$$$$\\{3\\}$$$$$$\\{1\\}$$$$$$\\{1,2,3\\}$$$  \n搜索质量之和为 $$$3+1+1+1+1+3=10$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 二叉搜索树",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

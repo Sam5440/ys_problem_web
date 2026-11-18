@@ -1,0 +1,85 @@
+{
+  "code": "GYM106073F",
+  "letter": "F",
+  "title": "F. Frangolino ali na mesa",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106073/problem/F",
+  "difficulty": "*1700",
+  "timeLimit": "0.5 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Washington, a chef enthusiastic about artificial intelligence and passionate about cooking, decided to build a waiter-robot for his new restaurant, Frangolino, which specializes in breaded chicken. Washington will open the restaurant for a special night with friends and decided to test the waiter-robot on that occasion.",
+      "The restaurant will serve N$$$N$$$ tables, numbered from 1 to N$$$N$$$, and will offer only one dish: chicken milanesa. Washington loves playing with words and decided to define two commands for the waiter-robot: the command \"ali na mesa X$$$X$$$\" (go to table X$$$X$$$) and the command \"a milanesa X$$$X$$$\" (milanesa X$$$X$$$).",
+      "The command \"ali na mesa X$$$X$$$\" means that the waiter-robot should move to table X$$$X$$$ and wait for the next instruction. The command \"a milanesa X$$$X$$$\" means that the waiter-robot should register in the system an order for X$$$X$$$ chicken milanesas for the table where it is currently located. At the beginning of the night, the waiter-robot is at table 1.",
+      "Unfortunately, the waiter-robot has a flaw and cannot handle anagrams properly. For each command received, the robot has a 50% chance of executing it correctly and a 50% chance of executing the other command. Your task is, given the history of commands received by the robot, to determine, for each table in the restaurant, the expected number of chicken milanesas that will be served."
+    ],
+    "input": [
+      "The first line of input contains two integers N$$$N$$$ and Q$$$Q$$$ (1≤N,Q≤105$$$1 \\leq N, Q \\leq 10^5$$$), the number of tables and the number of waiter-robot commands, respectively.",
+      "The second line contains Q$$$Q$$$ integers X1,…,XQ$$$X_1, \\ldots, X_Q$$$ (1≤Xi≤N$$$1 \\leq X_i \\leq N$$$) separated by spaces. Each Xi$$$X_i$$$ describes the argument of one of the commands that the waiter-robot received, in the order they occurred.",
+      "Note that the command itself is not provided, since the waiter-robot will execute either one with 50% probability."
+    ],
+    "output": [
+      "The output should contain N$$$N$$$ lines. The i$$$i$$$-th line should contain the expected number of chicken milanesas that will be served at table i$$$i$$$, as described below.",
+      "The expected value may not be an integer, but it will always be a rational number and, therefore, can be represented by an irreducible fraction pq$$$\\frac{p}{q}$$$. Since p$$$p$$$ and q$$$q$$$ can be very large, you should print p×q−1mod(109+7)$$$p \\times q^{-1} \\mod (10^9 + 7)$$$, where q−1$$$q^{-1}$$$ is the multiplicative inverse of q$$$q$$$ modulo 109+7$$$10^9 + 7$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 3\n1 2 1",
+      "output": "750000007\n250000002"
+    },
+    {
+      "input": "4 4\n1 2 3 4",
+      "output": "750000008\n250000003\n1\n0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Washington 是一位热衷于人工智能且热爱烹饪的厨师，他决定为自己的新餐厅 Frangolino 制造一个服务员机器人。该餐厅专门供应裹面包屑的鸡肉。Washington 将在一个特别的夜晚与朋友们一起开门营业，并决定在那次活动中测试服务员机器人。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "餐厅将设置 N$$$N$$$ 张桌子，编号从 1 到 N$$$N$$$，并且只提供一种菜品：鸡肉米兰内萨。Washington 喜欢玩文字游戏，于是决定为服务员机器人定义两条命令：命令“ali na mesa X$$$X$$$”(前往 X$$$X$$$ 号桌)和命令“a milanesa X$$$X$$$”(X$$$X$$$ 份鸡肉米兰内萨)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "命令“ali na mesa X$$$X$$$”表示服务员机器人应移动到 X$$$X$$$ 号桌并等待下一条指令。命令“a milanesa X$$$X$$$”表示服务员机器人应在系统中为它当前所在的桌子登记 X$$$X$$$ 份鸡肉米兰内萨的订单。夜晚开始时，服务员机器人位于 1 号桌。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "不幸的是，服务员机器人存在缺陷，无法正确处理字母异位词。对于收到的每条命令，机器人都有 50% 的概率正确执行该命令，也有 50% 的概率执行另一条命令。给定机器人收到的命令历史，请确定餐厅中的每张桌子最终将供应的鸡肉米兰内萨数量的期望值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 N$$$N$$$ 和 Q$$$Q$$$(1≤N,Q≤105$$$1 \\leq N, Q \\leq 10^5$$$)，分别表示桌子数量和服务员机器人命令的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 Q$$$Q$$$ 个整数 X1,…,XQ$$$X_1, \\ldots, X_Q$$$(1≤Xi≤N$$$1 \\leq X_i \\leq N$$$)，由空格分隔。每个 Xi$$$X_i$$$ 描述服务员机器人收到的一条命令的参数，按照这些命令发生的顺序给出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，命令本身不会提供，因为服务员机器人将以 50% 的概率执行其中任意一条命令。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出应包含 N$$$N$$$ 行。第 i$$$i$$$ 行应包含如下所述将在第 i$$$i$$$ 张桌子上供应的鸡肉米兰炸排数量的期望值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "期望值可能不是整数，但始终是有理数，因此可以表示为不可约分数 pq$$$\\frac{p}{q}$$$。由于 p$$$p$$$ 和 q$$$q$$$ 可能非常大，你应输出 p×q−1mod(109+7)$$$p \\times q^{-1} \\mod (10^9 + 7)$$$，其中 q−1$$$q^{-1}$$$ 是 q$$$q$$$ 关于模 109+7$$$10^9 + 7$$$ 的乘法逆元。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. Frangolino 在桌上",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

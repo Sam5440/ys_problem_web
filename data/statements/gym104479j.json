@@ -1,0 +1,89 @@
+{
+  "code": "GYM104479J",
+  "letter": "J",
+  "title": "J. Joining Arrays",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104479/problem/J",
+  "difficulty": "*2000",
+  "timeLimit": "30 s",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Define the permutation scaling of an array [B1,B2,…,Bm]$$$[B_1, B_2, \\dots, B_m]$$$ as the unique permutation P$$$P$$$ of [1,2,3,…,m]$$$[1, 2, 3, \\dots, m]$$$ such that for each pair of indices 1≤i<j≤m$$$1 \\le i  \\lt  j \\le m$$$, Pi<Pj$$$P_i  \\lt  P_j$$$ if and only if Bi≤Bj$$$B_i \\le B_j$$$. For example, the permutation scaling of the array [2,1,1,5,8,3]$$$[2,1,1,5,8,3]$$$ is [3,1,2,5,6,4]$$$[3,1,2,5,6,4]$$$.",
+      "There are n$$$n$$$ sets of integers S1,S2,…,Sn$$$S_1, S_2, \\dots, S_n$$$. An array [A1,A2,…,An]$$$[A_1, A_2, \\dots, A_n]$$$ is formed by choosing one element from each set, that is, Ai∈Si$$$A_i \\in S_i$$$ for i=1,2,…,n$$$i = 1, 2, \\dots, n$$$.",
+      "How many ways are there to choose the elements such that the permutation scaling of A$$$A$$$ is lexicographically maximal?"
+    ],
+    "input": [
+      "The first line of input contains an integer n$$$n$$$ (1≤n≤5×105$$$1 \\le n \\le 5 \\times 10^5$$$).",
+      "Then the descriptions of S1,S2,…,Sn$$$S_1, S_2, \\dots, S_n$$$ follow. The description of each set Si$$$S_i$$$ contains two lines. The first line contains an integer ki$$$k_i$$$, the size of Si$$$S_i$$$ (1≤ki≤5×105$$$1 \\le k_i \\le 5 \\times 10^5$$$). The second line contains ki$$$k_i$$$ distinct integers s1,s2,…,ski$$$s_1, s_2, \\dots, s_{k_i}$$$, the elements of Si$$$S_i$$$ (1≤sj≤109$$$1 \\le s_j \\le 10^9$$$).",
+      "It is guaranteed that ∑ni=1ki≤5×105$$$\\sum_{i=1}^n k_i \\le 5 \\times 10^5$$$."
+    ],
+    "output": [
+      "Print one integer — the number of ways. Since it can be very large, output it modulo 998244353$$$998244353$$$."
+    ],
+    "note": [
+      "In the first example, the lexicographically maximal permutation scaling is [3,2,4,1]$$$[3, 2, 4, 1]$$$ and there are 13 different ways to choose the array A$$$A$$$: [7,4,15,1]$$$[7,4,15,1]$$$, [7,6,15,1]$$$[7,6,15,1]$$$, [7,6,15,5]$$$[7,6,15,5]$$$, [10,4,15,1]$$$[10,4,15,1]$$$, [10,6,15,1]$$$[10,6,15,1]$$$, [10,6,15,5]$$$[10,6,15,5]$$$, [10,8,15,1]$$$[10,8,15,1]$$$, [10,8,15,5]$$$[10,8,15,5]$$$, [11,6,15,1]$$$[11,6,15,1]$$$, [11,6,15,5]$$$[11,6,15,5]$$$, [11,8,15,1]$$$[11,8,15,1]$$$ and [11,8,15,5]$$$[11,8,15,5]$$$.",
+      "In the second example, the lexicographically maximal permutation scaling is [2,1,3,4]$$$[2, 1, 3, 4]$$$ and there are 3 different ways to choose the array A$$$A$$$: [2,1,3,5]$$$[2,1,3,5]$$$, [2,1,3,6]$$$[2,1,3,6]$$$ and [2,1,3,7]$$$[2,1,3,7]$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n5\n7 11 3 10 1\n3\n8 6 4\n1\n15\n3\n1 5 99",
+      "output": "13"
+    },
+    {
+      "input": "4\n2\n2 1\n3\n5 1 6\n1\n3\n3\n6 5 7",
+      "output": "3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "定义数组 [B1,B2,…,Bm]$$$[B_1, B_2, \\dots, B_m]$$$ 的排列缩放为 [1,2,3,…,m]$$$[1, 2, 3, \\dots, m]$$$ 的唯一排列 P$$$P$$$，满足对于每一对下标 1≤i<j≤m$$$1 \\le i  \\lt  j \\le m$$$，Pi<Pj$$$P_i  \\lt  P_j$$$ 当且仅当 Bi≤Bj$$$B_i \\le B_j$$$。例如，数组 [2,1,1,5,8,3]$$$[2,1,1,5,8,3]$$$ 的排列缩放为 [3,1,2,5,6,4]$$$[3,1,2,5,6,4]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有 n$$$n$$$ 个整数集合 S1,S2,…,Sn$$$S_1, S_2, \\dots, S_n$$$。通过从每个集合中选取一个元素，可以构造数组 [A1,A2,…,An]$$$[A_1, A_2, \\dots, A_n]$$$，即对于 i=1,2,…,n$$$i = 1, 2, \\dots, n$$$，有 Ai∈Si$$$A_i \\in S_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有多少种选取元素的方式，使得 A$$$A$$$ 的置换缩放按字典序达到最大？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$(1≤n≤5×105$$$1 \\le n \\le 5 \\times 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来是 S1,S2,…,Sn$$$S_1, S_2, \\dots, S_n$$$ 的描述。每个集合 Si$$$S_i$$$ 的描述包含两行。第一行包含一个整数 ki$$$k_i$$$，表示 Si$$$S_i$$$ 的大小(1≤ki≤5×105$$$1 \\le k_i \\le 5 \\times 10^5$$$)。第二行包含 ki$$$k_i$$$ 个互不相同的整数 s1,s2,…,ski$$$s_1, s_2, \\dots, s_{k_i}$$$，表示 Si$$$S_i$$$ 中的元素(1≤sj≤109$$$1 \\le s_j \\le 10^9$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 ∑ni=1ki≤5×105$$$\\sum_{i=1}^n k_i \\le 5 \\times 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，即选取元素的方式数。由于结果可能很大，请对 998244353$$$998244353$$$ 取模后输出。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，字典序最大的排列缩放为 [3,2,4,1]$$$[3, 2, 4, 1]$$$，选择数组 A$$$A$$$ 有 13 种不同的方式：[7,4,15,1]$$$[7,4,15,1]$$$、[7,6,15,1]$$$[7,6,15,1]$$$、[7,6,15,5]$$$[7,6,15,5]$$$、[10,4,15,1]$$$[10,4,15,1]$$$、[10,6,15,1]$$$[10,6,15,1]$$$、[10,6,15,5]$$$[10,6,15,5]$$$、[10,8,15,1]$$$[10,8,15,1]$$$、[10,8,15,5]$$$[10,8,15,5]$$$、[11,6,15,1]$$$[11,6,15,1]$$$、[11,6,15,5]$$$[11,6,15,5]$$$、[11,8,15,1]$$$[11,8,15,1]$$$ 以及 [11,8,15,5]$$$[11,8,15,5]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，字典序最大的排列缩放为 [2,1,3,4]$$$[2, 1, 3, 4]$$$，选择数组 A$$$A$$$ 有 3 种不同的方式：[2,1,3,5]$$$[2,1,3,5]$$$、[2,1,3,6]$$$[2,1,3,6]$$$ 和 [2,1,3,7]$$$[2,1,3,7]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "J. 合并数组",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

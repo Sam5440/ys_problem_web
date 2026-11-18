@@ -1,0 +1,75 @@
+{
+  "code": "GYM106603F",
+  "letter": "F",
+  "title": "F. Knapsack One Million",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106603/problem/F",
+  "difficulty": "*1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "The Orlando City Plaza Casino has released a new game for their patrons to enjoy: Knapsack One Million! In this game, a million types of random chips will be dispensed. Each type of chip will have a random size and a random value, and a million of each type of chip will be dispensed. You are then given a Knapsack One Million, which is a bag that can hold a set of chips whose sum of sizes is at most one million; that is, the capacity of the knapsack is one million.",
+      "Before testing your luck in this game, you want to analyze the best-case performance you could have in a game; however, you worry the casino might attempt to cheat by giving you a bag with a more limited capacity than advertised. Thus, for a given set of chips, you want to compute the maximum value you can achieve for all knapsack capacities between $$$1$$$ and $$$10^6$$$, inclusive."
+    ],
+    "input": [
+      "The first line of input will consist of a single integer $$$n$$$ ($$$n = 10$$$ or $$$n = 10^6$$$) — the number of chips. In all cases other than the sample, $$$n$$$ will equal $$$10^6$$$.",
+      "The following $$$n$$$ lines will consist of two integers $$$s_i$$$ and $$$v_i$$$ — the size and value of the $$$i$$$th type of chip.",
+      "Each case (except for the sample) will be selected from a set of $$$10^6$$$ generated cases. Each case was generated such that $$$s_i$$$ and $$$v_i$$$ are uniformly randomly generated from the range $$$1$$$ to $$$n$$$, inclusive. It is guaranteed that each value is generated independently. Please read the note for more details."
+    ],
+    "output": [
+      "Output a single line consisting of $$$n$$$ integers where for each $$$i$$$ from $$$1$$$ to $$$n$$$, inclusive, the $$$i$$$th integer corresponds to the maximum value of chips you can choose such that the sum of weights of the chips is at most $$$i$$$."
+    ],
+    "note": [
+      "Each testcase, except for the sample, was generated using C++'s built-in \"std::mt19937\" (Mersenne Twister) in combination with \"std::uniform_int_distribution\". The random number generator was seeded with an integer between $$$1$$$ and $$$10^6$$$ (inclusive), though the seed was not necessarily chosen at random. Items were generated independently at random: the first $$$2 \\cdot 10^6$$$ values produced were used as the sizes and values of each chip type. Specifically, for the $$$i$$$-th chip, the size is the $$$(2i - 1)$$$-th value and the value is the $$$(2i)$$$-th value generated."
+    ]
+  },
+  "examples": [
+    {
+      "input": "10\n7 2\n1 3\n8 5\n4 6\n9 10\n5 4\n7 9\n6 1\n2 10\n8 3",
+      "output": "3 10 13 20 23 30 33 40 43 50"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "奥兰多城广场赌场推出了一款供顾客娱乐的新游戏：背包一百万！\n\n在这个游戏中，赌场会发放一百万种随机筹码。每种筹码都有一个随机的大小和随机的价值，并且每种筹码会发放一百万枚。随后，你会得到一个“背包一百万”，这是一个可以装下一组筹码的袋子，要求这些筹码的大小总和不超过一百万；也就是说，背包的容量为一百万。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在测试自己在这个游戏中的运气之前，你想分析自己在游戏中可能取得的最佳表现；然而，你担心赌场可能会通过给你一个容量小于宣传值的袋子来作弊。因此，对于给定的一组筹码，你需要计算背包容量在 $$$1$$$ 到 $$$10^6$$$(含)之间时能够取得的最大价值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 $$$n$$$($$$n = 10$$$ 或 $$$n = 10^6$$$)——芯片的数量。除样例外，所有情况下 $$$n$$$ 都等于 $$$10^6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 $$$n$$$ 行每行包含两个整数 $$$s_i$$$ 和 $$$v_i$$$，分别表示第 $$$i$$$ 种芯片的大小和值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "除样例外，每个测试用例都将从一组 $$$10^6$$$ 个生成的测试用例中选取。每个测试用例的生成方式为：从闭区间 $$$1$$$ 到 $$$n$$$ 中均匀随机地生成 $$$s_i$$$ 和 $$$v_i$$$。保证每个值都是独立生成的。更多详情请阅读注释。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一行，包含 $$$n$$$ 个整数，其中对于从 $$$1$$$ 到 $$$n$$$(包含边界)的每个 $$$i$$$，第 $$$i$$$ 个整数表示你可以选择的筹码的最大数量，使得这些筹码的重量总和不超过 $$$i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "除样例外，每个测试用例均使用 C++ 内置的“std::mt19937”(梅森旋转算法)与“std::uniform_int_distribution”生成。随机数生成器使用介于 $$$1$$$ 和 $$$10^6$$$(含)之间的整数作为种子，但该种子不一定是随机选择的。各项数据均独立随机生成：生成的前 $$$2 \\cdot 10^6$$$ 个值被用作每种芯片的大小和值。具体来说，对于第 $$$i$$$ 种芯片，其大小为生成的第 $$$(2i - 1)$$$ 个值，值为生成的第 $$$(2i)$$$ 个值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 一百万背包",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

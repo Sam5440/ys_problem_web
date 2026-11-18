@@ -1,0 +1,80 @@
+{
+  "code": "CF852B",
+  "letter": "B",
+  "title": "B. Neural Network country",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/852/B",
+  "difficulty": "2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Due to the recent popularity of the Deep learning new countries are starting to look like Neural Networks. That is, the countries are being built deep with many layers, each layer possibly having many cities. They also have one entry, and one exit point.",
+      "There are exactly L layers, each having N cities. Let us look at the two adjacent layers L1 and L2. Each city from the layer L1 is connected to each city from the layer L2 with the traveling cost cij for ![](https://espresso.codeforces.com/6feada5da84083f5558df10bc20b690db6351806.png), and each pair of adjacent layers has the same cost in between their cities as any other pair (they just stacked the same layers, as usual). Also, the traveling costs to each city from the layer L2 are same for all cities in the L1, that is cij is the same for ![](https://espresso.codeforces.com/bd93786c4620662044c83c65e0d3e9779838640a.png), and fixed j.",
+      "Doctor G. needs to speed up his computations for this country so he asks you to find the number of paths he can take from entry to exit point such that his traveling cost is divisible by given number M."
+    ],
+    "input": [
+      "The first line of input contains N (1 ≤ N ≤ 106), L (2 ≤ L ≤ 105) and M (2 ≤ M ≤ 100), the number of cities in each layer, the number of layers and the number that travelling cost should be divisible by, respectively.",
+      "Second, third and fourth line contain N integers each denoting costs 0 ≤ cost ≤ M from entry point to the first layer, costs between adjacent layers as described above, and costs from the last layer to the exit point."
+    ],
+    "output": [
+      "Output a single integer, the number of paths Doctor G. can take which have total cost divisible by M, modulo 109 + 7."
+    ],
+    "note": [
+      "![](https://espresso.codeforces.com/97fcadc046ad4b8d64ec1f13b88c35fc29dfdbdc.png)",
+      "This is a country with 3 layers, each layer having 2 cities. Paths ![](https://espresso.codeforces.com/ea33f7ca0560180dc03b2657e6a1f9fd874e5adc.png), and ![](https://espresso.codeforces.com/4b3fe7f211ecca3ab05c72cd3b995d28d037ab45.png) are the only paths having total cost divisible by 13. Notice that input edges for layer cities have the same cost, and that they are same for all layers."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 3 13\n4 6\n2 1\n3 4",
+      "output": "2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "由于深度学习最近的流行，新国家开始看起来像神经网络。也就是说，这些国家由许多层构成，每层可能有许多城市。它们还有一个入口点和一个出口点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "共有恰好 L 层，每层有 N 座城市。考虑相邻的两层 L1 和 L2。L1 层中的每座城市都与 L2 层中的每座城市相连，通行代价为 cij，对于 ![](https://espresso.codeforces.com/6feada5da84083f5558df10bc20b690db6351806.png)；每一对相邻层之间城市的代价都与其他相邻层对相同(它们只是像往常一样堆叠了相同的层)。此外，从 L1 层的所有城市前往 L2 层中的每座城市的通行代价都相同，也就是说，对于 ![](https://espresso.codeforces.com/bd93786c4620662044c83c65e0d3e9779838640a.png) 且 j 固定时，cij 都相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Doctor G. 需要加快他在这个国家中的计算，因此他请你求出从入口到出口的路径数量，使得行进总花费能被给定的数 M 整除。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含 N（1 ≤ N ≤ 10^6）、L（2 ≤ L ≤ 10^5）和 M（2 ≤ M ≤ 100），分别表示每层中的城市数量、层数以及行进总花费需要被整除的数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二、第三和第四行各包含 N 个整数，分别表示从入口到第一层的花费、如上所述的相邻层之间的花费，以及从最后一层到出口的花费，其中 0 ≤ cost ≤ M。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示 Doctor G. 可以选择的总花费能被 M 整除的路径数量，结果对 109 + 7 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "![](https://espresso.codeforces.com/97fcadc046ad4b8d64ec1f13b88c35fc29dfdbdc.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这是一个有 3 层的国家，每层有 2 个城市。路径 ![](https://espresso.codeforces.com/ea33f7ca0560180dc03b2657e6a1f9fd874e5adc.png) 和 ![](https://espresso.codeforces.com/4b3fe7f211ecca3ab05c72cd3b995d28d037ab45.png) 是仅有的总花费能被 13 整除的路径。注意，连接各层城市的输入边具有相同的花费，并且所有层的花费都相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 神经网络国家",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

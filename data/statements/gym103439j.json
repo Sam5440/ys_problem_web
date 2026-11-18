@@ -1,0 +1,118 @@
+{
+  "code": "GYM103439J",
+  "letter": "J",
+  "title": "J. Jason ABC",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103439/problem/J",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a string S$$$S$$$ of length 3n$$$3n$$$, consisting of the characters A, B and C. You are allowed to perform the following operation:",
+      "Select some subsegment of this string and a character c$$$c$$$ (one of A, B and C). Then, replace all the characters on the subsegment with c$$$c$$$.",
+      "Find the smallest number of times that you would have to apply the operation above to get a string which contains each of characters A, B and C exactly n$$$n$$$ times. It can be shown that it is always possible to get such a string.",
+      "In addition, find a sequence of operations of the smallest possible length. If there are many such sequences, you can output any of them."
+    ],
+    "input": [
+      "The first line of input contains a single integer n$$$n$$$ (1≤n≤3⋅105$$$1 \\le n \\le 3 \\cdot 10^5$$$).",
+      "The second line of the input contains a string S$$$S$$$ of length 3n$$$3n$$$, consisting of the characters A, B and C."
+    ],
+    "output": [
+      "In the first line print the minimum number of operations k$$$k$$$.",
+      "In the i$$$i$$$-th of the next k$$$k$$$ lines print 2$$$2$$$ integers li,ri$$$l_i, r_i$$$ and a character ci$$$c_i$$$ (1≤li≤ri≤3n$$$1 \\le l_i \\le r_i \\le 3n$$$, ci∈{A,B,C}$$$c_i \\in \\{\\texttt{A}, \\texttt{B}, \\texttt{C}\\}$$$), denoting that in the i$$$i$$$-th operation you will replace each of the characters Sli,Sli+1,…,Sri$$$S_{l_i}, S_{l_i+1}, \\ldots, S_{r_i}$$$ with ci$$$c_i$$$.",
+      "If there is more than one solution with a minimum number of operations, you can print any one of them."
+    ],
+    "note": [
+      "In the first sample, the string will undergo the following transformations:",
+      "AAA →$$$\\to$$$ ABB →$$$\\to$$$ ABC.",
+      "In the second sample, the string already contains exactly one A, one B and one C.",
+      "In the third sample, the string will undergo the following transformation:",
+      "ABABCABAB →$$$\\to$$$ CCABCABAB. Now, it contains each letter 3$$$3$$$ times."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\nAAA",
+      "output": "2\n2 3 B\n3 3 C"
+    },
+    {
+      "input": "1\nCAB",
+      "output": "0"
+    },
+    {
+      "input": "3\nABABCABAB",
+      "output": "1\n1 2 C"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个字符串 S$$$S$$$，其长度为 3n$$$3n$$$，由字符 A、B 和 C 组成。你可以执行以下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择该字符串的某个子段以及一个字符 c$$$c$$$(A、B 和 C 中的一个)。然后，将该子段上的所有字符替换为 c$$$c$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "求为了得到一个包含 A、B 和 C 中每个字符恰好 n$$$n$$$ 次的字符串，至少需要执行上述操作多少次。可以证明，总能得到这样的字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，请求出一个长度最短的操作序列。如果存在多个这样的序列，你可以输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n$$$n$$$(1≤n≤3⋅105$$$1 \\le n \\le 3 \\cdot 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第二行包含一个字符串 S$$$S$$$，其长度为 3n$$$3n$$$，由字符 A、B 和 C 组成。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在第一行输出操作次数的最小值 k$$$k$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在接下来的 k$$$k$$$ 行中的第 i$$$i$$$ 行，输出 2$$$2$$$ 个整数 li,ri$$$l_i, r_i$$$ 和一个字符 ci$$$c_i$$$(1≤li≤ri≤3n$$$1 \\le l_i \\le r_i \\le 3n$$$，ci∈{A,B,C}$$$c_i \\in \\{\\texttt{A}, \\texttt{B}, \\texttt{C}\\}$$$)，表示在第 i$$$i$$$ 次操作中，你将把字符 Sli,Sli+1,…,Sri$$$S_{l_i}, S_{l_i+1}, \\ldots, S_{r_i}$$$ 中的每个字符替换为 ci$$$c_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在多个操作次数最少的解，可以输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，字符串将进行如下变换：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "AAA →$$$\\to$$$ ABB →$$$\\to$$$ ABC。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，字符串已经恰好包含一个 A、一个 B 和一个 C。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，字符串将进行如下变换：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "ABABCABAB →$$$\\to$$$ CCABCABAB。现在，其中每个字母都出现了 3$$$3$$$ 次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "J. Jason ABC",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

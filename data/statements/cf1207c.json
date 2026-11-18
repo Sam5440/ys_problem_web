@@ -1,0 +1,130 @@
+{
+  "code": "CF1207C",
+  "letter": "C",
+  "title": "C. Gas Pipeline",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1207/C",
+  "difficulty": "1500",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are responsible for installing a gas pipeline along a road. Let's consider the road (for simplicity) as a segment [0,n]$$$[0, n]$$$ on OX$$$OX$$$ axis. The road can have several crossroads, but for simplicity, we'll denote each crossroad as an interval (x,x+1)$$$(x, x + 1)$$$ with integer x$$$x$$$. So we can represent the road as a binary string consisting of n$$$n$$$ characters, where character 0 means that current interval doesn't contain a crossroad, and 1 means that there is a crossroad.",
+      "Usually, we can install the pipeline along the road on height of 1$$$1$$$ unit with supporting pillars in each integer point (so, if we are responsible for [0,n]$$$[0, n]$$$ road, we must install n+1$$$n + 1$$$ pillars). But on crossroads we should lift the pipeline up to the height 2$$$2$$$, so the pipeline won't obstruct the way for cars.",
+      "We can do so inserting several zig-zag-like lines. Each zig-zag can be represented as a segment [x,x+1]$$$[x, x + 1]$$$ with integer x$$$x$$$ consisting of three parts: 0.5$$$0.5$$$ units of horizontal pipe + 1$$$1$$$ unit of vertical pipe + 0.5$$$0.5$$$ of horizontal. Note that if pipeline is currently on height 2$$$2$$$, the pillars that support it should also have length equal to 2$$$2$$$ units.",
+      "![](https://espresso.codeforces.com/d9d49d8d0560a060a2f1fc785ef616c3b1af3c0b.png)",
+      "Each unit of gas pipeline costs us a$$$a$$$ bourles, and each unit of pillar — b$$$b$$$ bourles. So, it's not always optimal to make the whole pipeline on the height 2$$$2$$$. Find the shape of the pipeline with minimum possible cost and calculate that cost.",
+      "Note that you must start and finish the pipeline on height 1$$$1$$$ and, also, it's guaranteed that the first and last characters of the input string are equal to 0."
+    ],
+    "input": [
+      "The fist line contains one integer T$$$T$$$ (1≤T≤100$$$1 \\le T \\le 100$$$) — the number of queries. Next 2⋅T$$$2 \\cdot T$$$ lines contain independent queries — one query per two lines.",
+      "The first line contains three integers n$$$n$$$, a$$$a$$$, b$$$b$$$ (2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$, 1≤a≤108$$$1 \\le a \\le 10^8$$$, 1≤b≤108$$$1 \\le b \\le 10^8$$$) — the length of the road, the cost of one unit of the pipeline and the cost of one unit of the pillar, respectively.",
+      "The second line contains binary string s$$$s$$$ (|s|=n$$$|s| = n$$$, si∈{0,1}$$$s_i \\in \\{0, 1\\}$$$, s1=sn=0$$$s_1 = s_n = 0$$$) — the description of the road.",
+      "It's guaranteed that the total length of all strings s$$$s$$$ doesn't exceed 2⋅105$$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "Print T$$$T$$$ integers — one per query. For each query print the minimum possible cost of the constructed pipeline."
+    ],
+    "note": [
+      "The optimal pipeline for the first query is shown at the picture above.",
+      "The optimal pipeline for the second query is pictured below:",
+      "![](https://espresso.codeforces.com/a41006fd19dd10b3d679b41d596923b03797cc43.png)",
+      "The optimal (and the only possible) pipeline for the third query is shown below:",
+      "![](https://espresso.codeforces.com/c500012aeed6af93d1135531ce2657d2a8f9cc76.png)",
+      "The optimal pipeline for the fourth query is shown below:",
+      "![](https://espresso.codeforces.com/f5236edc8e3bd8bf1e756268fa678efcb31f7901.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n8 2 5\n00110010\n8 1 1\n00110010\n9 100000000 100000000\n010101010\n2 5 1\n00",
+      "output": "94\n25\n2900000000\n13"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你负责沿着一条道路铺设燃气管道。我们将道路(为简单起见)看作 OX$$$OX$$$ 轴上的线段 [0,n]$$$[0, n]$$$。道路上可能有多个十字路口，但为简单起见，我们将每个十字路口表示为区间 (x,x+1)$$$(x, x + 1)$$$，其中 x$$$x$$$ 为整数。因此，我们可以将道路表示为一个由 n$$$n$$$ 个字符组成的二进制字符串，其中字符 0 表示当前区间不包含十字路口，字符 1 表示包含十字路口。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "通常，我们可以将管道沿道路铺设在高度为 1$$$1$$$ 个单位的位置，并在每个整数点设置支柱(因此，如果我们负责铺设 [0,n]$$$[0, n]$$$ 道路的管道，就必须安装 n+1$$$n + 1$$$ 根支柱)。但在十字路口处，我们应将管道抬高至高度 2$$$2$$$，这样管道就不会妨碍汽车通行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们可以通过插入若干条类似之字形的线段来实现这一点。每条之字形线段都可以表示为区间 [x,x+1]$$$[x, x + 1]$$$，其中 x$$$x$$$ 为整数，并由三部分组成：长度为 0.5$$$0.5$$$ 个单位的水平管道 + 长度为 1$$$1$$$ 个单位的竖直管道 + 长度为 0.5$$$0.5$$$ 个单位的水平管道。注意，如果管道当前处于高度 2$$$2$$$，支撑它的支柱长度也应等于 2$$$2$$$ 个单位。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/d9d49d8d0560a060a2f1fc785ef616c3b1af3c0b.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "燃气管道的每个单位需要花费 a$$$a$$$ 布尔，每个单位支柱需要花费 b$$$b$$$ 布尔。因此，将整条管道建在高度 2$$$2$$$ 并不总是最优。请找出成本可能最小的管道形状，并计算该成本。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，你必须在高度 1$$$1$$$ 开始和结束管道，并且保证输入字符串的第一个和最后一个字符都等于 0。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤100$$$1 \\le T \\le 100$$$)——查询的数量。接下来的 2⋅T$$$2 \\cdot T$$$ 行包含相互独立的查询——每个查询占两行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、a$$$a$$$、b$$$b$$$(2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$，1≤a≤108$$$1 \\le a \\le 10^8$$$，1≤b≤108$$$1 \\le b \\le 10^8$$$)——道路的长度、单位管道的费用以及单位支柱的费用。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含二进制字符串 s$$$s$$$(|s|=n$$$|s| = n$$$，si∈{0,1}$$$s_i \\in \\{0, 1\\}$$$，s1=sn=0$$$s_1 = s_n = 0$$$)——道路的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有字符串 s$$$s$$$ 的总长度不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 T$$$T$$$ 个整数——每个查询输出一个。对于每个查询，输出所构造流水线的可能的最小代价。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个查询的最优流水线如上图所示。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二个查询的最优流水线如下图所示：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/a41006fd19dd10b3d679b41d596923b03797cc43.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三个查询的最优（也是唯一可能的）流水线如下图所示：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/c500012aeed6af93d1135531ce2657d2a8f9cc76.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第四个查询的最优流程如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/f5236edc8e3bd8bf1e756268fa678efcb31f7901.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 燃气管道",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

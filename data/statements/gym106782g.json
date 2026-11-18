@@ -1,0 +1,94 @@
+{
+  "code": "GYM106782G",
+  "letter": "G",
+  "title": "G. Gas Stations",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106782/problem/G",
+  "difficulty": "*2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "A group of friends is planning a road trip from Patras to Thessaloniki. They have chosen their main route, but visiting a gas station may require a detour.",
+      "Their car travels along a main route from position $$$0$$$ to position $$$d$$$. On a full tank, it can travel $$$l$$$ kilometers. Initially, its tank is full.",
+      "There are $$$n$$$ refueling stations. Station $$$i$$$ is connected to the main route at position $$$p_i$$$. To visit it, the car leaves the route, travels $$$a_i/2$$$ kilometers to the station, fills its tank completely, and travels $$$a_i/2$$$ kilometers back to the same position on the main route. Thus, visiting this station adds $$$a_i$$$ kilometers to the journey. Fuel is consumed on both parts of the detour, at the same constant rate as on the main route.",
+      "The car moves only forward along the main route. The positions of the stations it visits must strictly increase. The car may arrive at a station or at the destination with an empty tank. The distance traveled between consecutive refuelings, as well as before the first and after the last refueling, must not exceed $$$l$$$.",
+      "Find the minimum total distance the car must travel to reach position $$$d$$$, including all detours. If reaching the destination is impossible, report this."
+    ],
+    "input": [
+      "The first line contains an integer $$$d$$$ ($$$1 \\le d \\le 10^9$$$), the length of the main route in kilometers.",
+      "The second line contains an integer $$$l$$$ ($$$1 \\le l \\le 10^6$$$), the distance in kilometers that the car can travel on a full tank.",
+      "The third line contains an integer $$$n$$$ ($$$0 \\le n \\le 10^5$$$), the number of stations.",
+      "Each of the next $$$n$$$ lines contains two integers $$$p_i$$$ and $$$a_i$$$ ($$$1 \\le p_i \\le d-1$$$, $$$0 \\le a_i \\le 10^6$$$), the position of station $$$i$$$ on the main route and the total length of its detour. The stations are given in strictly increasing order of position: $$$p_1  \\lt  p_2  \\lt  \\dots  \\lt  p_n$$$. If $$$d=1$$$, then $$$n=0$$$."
+    ],
+    "output": [
+      "Print one integer: the minimum total distance traveled, or $$$-1$$$ if the destination cannot be reached."
+    ]
+  },
+  "examples": [
+    {
+      "input": "300\n150\n4\n100 2\n130 5\n230 30\n270 5",
+      "output": "310"
+    },
+    {
+      "input": "20\n10\n1\n12 0",
+      "output": "-1"
+    },
+    {
+      "input": "10\n10\n0",
+      "output": "10"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一群朋友计划从帕特雷斯驾车前往塞萨洛尼基。他们已经选定了主要路线，但前往加油站可能需要绕行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他们的汽车沿着一条主路线从位置 $$$0$$$ 行驶到位置 $$$d$$$。油箱加满时，汽车可以行驶 $$$l$$$ 千米。初始时，油箱是满的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "共有 $$$n$$$ 个加油站。加油站 $$$i$$$ 位于主路线的位置 $$$p_i$$$ 处。若要前往该加油站，汽车需要驶离主路线，行驶 $$$a_i/2$$$ 千米到达加油站，将油箱加满，然后再行驶 $$$a_i/2$$$ 千米返回主路线上的同一位置。因此，访问该加油站会使旅程增加 $$$a_i$$$ 千米。绕行的两段路程均会消耗燃油，且消耗速率与在主路线上行驶时相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "汽车只能沿主路线向前行驶。它访问的各个加油站的位置必须严格递增。汽车到达某个加油站或目的地时可以为空油箱。在连续两次加油之间，以及第一次加油之前和最后一次加油之后行驶的距离都不得超过 $$$l$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "求汽车到达位置 $$$d$$$ 所需行驶的最小总距离，包括所有绕行路程。如果无法到达目的地，请报告这一情况。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 $$$d$$$($$$1 \\le d \\le 10^9$$$)，表示主路线的长度(单位：千米)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个整数 $$$l$$$($$$1 \\le l \\le 10^6$$$)，表示汽车加满一箱油后可以行驶的距离(单位：千米)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含一个整数 $$$n$$$($$$0 \\le n \\le 10^5$$$)，表示车站的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 $$$n$$$ 行中，每行包含两个整数 $$$p_i$$$ 和 $$$a_i$$$($$$1 \\le p_i \\le d-1$$$、$$$0 \\le a_i \\le 10^6$$$)，分别表示车站 $$$i$$$ 在主线路上的位置以及其绕行路线的总长度。车站按照位置严格递增的顺序给出：$$$p_1  \\lt  p_2  \\lt  \\dots  \\lt  p_n$$$。如果 $$$d=1$$$，则 $$$n=0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数：行驶的最小总距离；如果无法到达目的地，则输出 $$$-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. 加油站",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

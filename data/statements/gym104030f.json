@@ -1,0 +1,88 @@
+{
+  "code": "GYM104030F",
+  "letter": "F",
+  "title": "F. Foreign Football",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104030/problem/F",
+  "difficulty": "*2000",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "You are on vacation in a foreign country. This country has a local football league, and you don't know any of the team names. However, you have found a table of all the results from this season, and next to every match is the concatenated names of the two teams that played.",
+      "There are n$$$n$$$ teams in total, named s1,s2,⋯,sn$$$s_1, s_2, \\cdots, s_n$$$. You are given the concatenation si+sj$$$s_i+s_j$$$ for every ordered pair i≠j$$$i \\neq j$$$. Find the teams names s1,s2,⋯,sn$$$s_1, s_2, \\cdots, s_n$$$. Team names must be nonempty, but they do not need to be distinct."
+    ],
+    "input": [
+      "The first line of input contains the integer n$$$n$$$ (2≤n≤500$$$2 \\leq n \\leq 500$$$).",
+      "The following n$$$n$$$ lines each contain n$$$n$$$ strings, the table of concatenated team names. The j$$$j$$$:th string on the i$$$i$$$:th of these lines will contain the string si+sj$$$s_i + s_j$$$ if i≠j$$$i \\neq j$$$, and \"*\" if i=j$$$i = j$$$. The concatenated team names will consist of lower case characters a-z.",
+      "The total number of characters in concatenated team names is at most 106$$$10^6$$$."
+    ],
+    "output": [
+      "If there is no solution, print \"NONE\".",
+      "If there is more than one solution, print \"MANY\".",
+      "If there is one unique solution, print \"UNIQUE\", followed by n$$$n$$$ lines containing s1,s2,⋯,sn$$$s_1, s_2, \\cdots, s_n$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n* difaik difhammarby\naikdif * aikhammarby\nhammarbydif hammarbyaik *",
+      "output": "UNIQUE\ndif\naik\nhammarby"
+    },
+    {
+      "input": "2\n* aaaa\naaaa *",
+      "output": "MANY"
+    },
+    {
+      "input": "3\n* a ab\na * b\nba b *",
+      "output": "NONE"
+    },
+    {
+      "input": "2\n* zz\nzz *",
+      "output": "UNIQUE\nz\nz"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你正在一个外国度假。这个国家有一个当地的足球联赛，而你不知道任何球队的名称。不过，你找到了本赛季所有比赛结果的表格，并且每场比赛旁边都写着参赛两支球队名称的拼接结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "总共有 n$$$n$$$ 支球队，名称为 s1,s2,⋯,sn$$$s_1, s_2, \\cdots, s_n$$$。对于每个有序对 i≠j$$$i \\neq j$$$，给定拼接字符串 si+sj$$$s_i+s_j$$$。请找出球队名称 s1,s2,⋯,sn$$$s_1, s_2, \\cdots, s_n$$$。球队名称必须非空，但不必互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入第一行包含整数 n$$$n$$$(2≤n≤500$$$2 \\leq n \\leq 500$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来 n$$$n$$$ 行，每行包含 n$$$n$$$ 个字符串，表示球队名称拼接结果表。第 i$$$i$$$ 行中的第 j$$$j$$$ 个字符串在 i≠j$$$i \\neq j$$$ 时为 si+sj$$$s_i + s_j$$$，在 i=j$$$i = j$$$ 时为 \"*\"。拼接后的球队名称仅由小写字母 a-z 组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "拼接后的球队名称中字符总数最多为 106$$$10^6$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果无解，输出 \"NONE\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个解，输出 \"MANY\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在唯一解，输出 \"UNIQUE\"，随后输出 n$$$n$$$ 行，其中包含 s1,s2,⋯,sn$$$s_1, s_2, \\cdots, s_n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 外国足球",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

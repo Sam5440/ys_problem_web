@@ -1,0 +1,185 @@
+{
+  "code": "GYM106368A",
+  "letter": "A",
+  "title": "A. Forgetful Shustrik and the Remote Control",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106368/problem/A",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The hamster Shustrik received an unusual calculator as a gift from the hedgehog Shurshik. Initially, the number $$$A$$$ is displayed on the calculator screen.",
+      "The instructions for the calculator specify a fixed number $$$M$$$. All arithmetic operations are performed with this number. Additionally, Shurshik has thought of numbers $$$N$$$ and $$$B$$$ and informed Shustrik about them.",
+      "The calculator can perform only four operations, and in one step, one of the following operations can be applied:",
+      "Operation \"+\": replace the current value $$$A$$$ with $$$A + M$$$.",
+      "Operation \"-\": replace the current value $$$A$$$ with $$$A - M$$$.",
+      "Operation \"*\": replace the current value $$$A$$$ with $$$A \\cdot M$$$.",
+      "Operation \"%\": replace the current value $$$A$$$ with the remainder of the division $$$A$$$ by $$$M$$$. After this operation, the condition $$$0 \\le A  \\lt  M$$$ holds.",
+      "After performing some (possibly empty) sequence of operations, the number $$$A'$$$ will be obtained.",
+      "The hedgehog Shurshik became curious whether Shustrik can obtain such a number $$$A'$$$ that",
+      "$$ A' \\equiv B \\pmod N. $$",
+      "In other words, the numbers $$$A'$$$ and $$$B$$$ must have the same remainders when divided by $$$N$$$.",
+      "Your task is to help the hamster find any sequence of operations of the smallest length, after which the specified condition will be satisfied, or determine that it is impossible to obtain such a number."
+    ],
+    "input": [
+      "In a single line, four integers are given separated by spaces: $$$A$$$, $$$M$$$, $$$B$$$, and $$$N$$$ ($$$|A| \\leq 10^9$$$, $$$1 \\leq M \\leq 10^9$$$, $$$0 \\leq B  \\lt  N \\leq 2 \\cdot 10^6$$$)."
+    ],
+    "output": [
+      "If the desired sequence of operations does not exist, output \"-1\" in a single line.",
+      "Otherwise, in the first line, output the length $$$x$$$ of the minimal suitable sequence. In the second line, output a string of length $$$x$$$ consisting of the characters \"+\", \"-\", \"*\", and \"%\" — the sequence of operations that transforms the initial $$$A$$$ into such $$$A'$$$ that $$$A' \\equiv B \\pmod N$$$.",
+      "If there are multiple such sequences, output any of them.",
+      "It can be proven that the length of the answer does not exceed $$$N$$$.",
+      "Points for each subtask are awarded only if all tests for that subtask and necessary subtasks are successfully passed.",
+      "GroupPointsAdditional constraints  Required   groups 17$$$|A|, M, N \\le 8$$$–26$$$M = 1$$$–38$$$M = N$$$–412$$$M \\equiv 0 \\pmod N$$$3515$$$N \\equiv 0 \\pmod M$$$2–3616$$$N \\cdot M \\le 2 \\cdot 10^{6}$$$1–2718$$$A = 0$$$–818–1–7"
+    ],
+    "note": [
+      "Consider the answer to the first example of the input data:",
+      "Initially, $$$A = 1$$$.",
+      "Operation \"+\": replace $$$A$$$ with $$$A + 3 = 1 + 3 = 4$$$.",
+      "Operation \"*\": replace $$$A$$$ with $$$A \\cdot 3 = 4 \\cdot 3 = 12$$$.",
+      "We get $$$A' = 12$$$. At the same time, $$$A' \\equiv B \\pmod N$$$ holds true, since $$$12 \\equiv 2 \\pmod 5$$$.",
+      "It can be proven that in this example there is no sequence of zero or one operation that results in a suitable $$$A'$$$. A sequence of two operations \"++\" is also suitable: $$$1+3+3 = 7 \\equiv 2 \\pmod 5$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 3 2 5",
+      "output": "2\n+*"
+    },
+    {
+      "input": "6 7 2 4",
+      "output": "0"
+    },
+    {
+      "input": "-1 3 2 4",
+      "output": "1\n+"
+    },
+    {
+      "input": "5 6 1 6",
+      "output": "-1"
+    },
+    {
+      "input": "0 6 3 7",
+      "output": "3\n---"
+    },
+    {
+      "input": "5 9 1 8",
+      "output": "3\n*%+"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "仓鼠 Shustrik 收到了刺猬 Shurshik 送给他的一台 необычный 计算器。计算器屏幕上最初显示数字 $$$A$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "计算器的说明中规定了一个固定数值 $$$M$$$。所有算术运算都将使用这个数值。此外，Shurshik 想出了数值 $$$N$$$ 和 $$$B$$$，并将它们告知了 Shustrik。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "计算器只能执行四种运算，每一步可以执行以下运算之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "操作“+”：将当前值 $$$A$$$ 替换为 $$$A + M$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "操作 “-”：将当前值 $$$A$$$ 替换为 $$$A - M$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "操作“*”：将当前值 $$$A$$$ 替换为 $$$A \\cdot M$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "操作“%”：将当前值 $$$A$$$ 替换为 $$$A$$$ 除以 $$$M$$$ 的余数。执行该操作后，条件 $$$0 \\le A  \\lt  M$$$ 成立。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "经过若干次(可能为零次)操作后，将得到数字 $$$A'$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "刺猬 Shurshik 好奇 Shustrik 是否能得到这样一个数 $$$A'$$$，使得",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$ A' \\equiv B \\pmod N. $$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "换句话说，数字 $$$A'$$$ 和 $$$B$$$ 除以 $$$N$$$ 时必须具有相同的余数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是帮助这只仓鼠找到一个长度最小的操作序列，使得执行后满足指定条件；如果无法得到这样的数，则判断其不可能。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "在一行中给出四个用空格分隔的整数：$$$A$$$、$$$M$$$、$$$B$$$ 和 $$$N$$$($$$|A| \\leq 10^9$$$、$$$1 \\leq M \\leq 10^9$$$、$$$0 \\leq B  \\lt  N \\leq 2 \\cdot 10^6$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果不存在满足要求的操作序列，请单独输出一行 \"-1\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，第一行输出最短合适操作序列的长度 $$$x$$$。第二行输出一个长度为 $$$x$$$ 的字符串，由字符 \"+\", \"-\", \"*\", \"%\" 组成，表示将初始的 $$$A$$$ 变换为满足 $$$A' \\equiv B \\pmod N$$$ 的 $$$A'$$$ 的操作序列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在多个符合条件的序列，输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，答案的长度不超过 $$$N$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "只有在该子任务及其所需子任务的所有测试均通过时，才能获得该子任务的分数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "GroupPoints 额外限制　所需组数 17$$$|A|, M, N \\le 8$$$–26$$$M = 1$$$–38$$$M = N$$$–412$$$M \\equiv 0 \\pmod N$$$3515$$$N \\equiv 0 \\pmod M$$$2–3616$$$N \\cdot M \\le 2 \\cdot 10^{6}$$$1–2718$$$A = 0$$$–818–1–7",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "考虑输入数据第一个样例的答案：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "初始时，$$$A = 1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "操作“+”：将 $$$A$$$ 替换为 $$$A + 3 = 1 + 3 = 4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "操作 “*”：将 $$$A$$$ 替换为 $$$A \\cdot 3 = 4 \\cdot 3 = 12$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们得到 $$$A' = 12$$$。同时，$$$A' \\equiv B \\pmod N$$$ 成立，因为 $$$12 \\equiv 2 \\pmod 5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，在这个例子中，不存在由零次或一次操作组成的序列，能够得到符合要求的 $$$A'$$$。由两次操作组成的序列“++”也符合要求：$$$1+3+3 = 7 \\equiv 2 \\pmod 5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 健忘的 Shustrik 与遥控器",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -7,6 +7,7 @@ import HighlightRuntime from '@/components/HighlightRuntime';
 import DataFreshness from '@/components/DataFreshness';
 import GithubMark from '@/components/github-mark';
 import BaiduAnalytics from '@/components/BaiduAnalytics';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata = {
   title: 'Yawn-Sean 的每日两题',
@@ -59,6 +60,7 @@ export default function RootLayout({ children }) {
           </div>
         </SettingsProvider>
         <BaiduAnalytics />
+        <Analytics />
       </body>
     </html>
   );

@@ -1,0 +1,606 @@
+{
+  "runId": 44808163461,
+  "event": "schedule",
+  "startedAt": "2026-11-20T20:05:30Z",
+  "savedAt": "2026-11-20T20:34:26.991Z",
+  "url": "https://github.com/Sam5440/ys_problem_web/actions/runs/44808163461",
+  "jobName": "update",
+  "failure": false,
+  "summary": {
+    "fetched": [
+      {
+        "code": "GYM106069E",
+        "title": "E. Extradimensional Cosmic Phenomenon"
+      },
+      {
+        "code": "GYM106249C",
+        "title": "C. Quantum Beaver"
+      }
+    ],
+    "fetchFailed": [],
+    "aiByProblem": [
+      "GYM106069E",
+      "GYM106249C",
+      "GYM106825M"
+    ],
+    "aiLines": [
+      "[3/4] ✗ GYM106826H — fetch/parse failed",
+      "[4/4] ✗ GYM104012E — fetch/parse failed",
+      "✓ title[0]: E. 超维宇宙现象… [tokens in=4616 out=13 cached=4224]",
+      "✓ legend[0]: 星际宇宙现象遏制组织（ICPC）报告称，突破级不稳定事件（BLUE）数量激增。这些罕见的异次元扰… [tokens in=4676 out=100 cached=4480]",
+      "✓ legend[1]: 为应对这场危机，ICPC 已部署 $$$N$$$ 个异常调控中心(ARCs)。每个 ARC 都必… [tokens in=269 out=242 cached=0]",
+      "✓ legend[2]: 有 $$$X$$$ 个 Alpha 型 BLUE，每个恰好需要 1 单位能量才能稳定。… [tokens in=4630 out=28 cached=4224]",
+      "✓ legend[3]: 有 $$$Y$$$ 个 Type-Omega BLUE，每个都恰好需要 2 单位能量才能稳定。… [tokens in=252 out=200 cached=0]",
+      "✓ legend[4]: 每个 BLUE 必须完整地分配给且仅分配给一个 ARC（不得拆分或共享）。一个 ARC 可以稳定… [tokens in=4648 out=130 cached=4224]",
+      "✓ legend[5]: 为了维持各项收容协议之间的同步，ICPC 要求将能量负载尽可能均匀地分配到各个 ARC 中。… [tokens in=4633 out=39 cached=4480]",
+      "✓ legend[6]: 你的任务是确定最小可能的能量不平衡，即分配给任意 ARC 的最大能量与分配给任意 ARC 的最小… [tokens in=4639 out=101 cached=4480]",
+      "✓ input[0]: 第一行包含一个整数 $$$T$$$，表示测试用例的数量。($$$1 \\le T \\le 1000… [tokens in=4629 out=26 cached=4480]",
+      "✓ input[1]: 接下来的 $$$T$$$ 行中，每行包含三个整数 $$$X, Y, N$$$。($$$0 \\le… [tokens in=4661 out=88 cached=4480]",
+      "✓ output[0]: 对于每组测试用例，输出一个整数——分配给任意 ARC 的最大能量与分配给任意 ARC 的最小能量… [tokens in=4638 out=45 cached=4224]",
+      "✓ note[0]: 在第一种情况下，分配可以如下：… [tokens in=4619 out=14 cached=4224]",
+      "✓ note[1]: 第一条 ARC 需要 $$$2$$$ 个 Type-Alpha BLUE。… [tokens in=4621 out=19 cached=4480]",
+      "✓ note[2]: 第二个和第三个 ARC 各需要 $$$1$$$ 个 Type-Omega BLUE。… [tokens in=4624 out=84 cached=4224]",
+      "✓ note[3]: 他们都消耗了两个能量单位，因此差值是 $$$0$$$。… [tokens in=244 out=63 cached=0]",
+      "✓ note[4]: 在第二种情况下，分配方案可以如下：… [tokens in=4619 out=15 cached=4480]",
+      "✓ note[5]: 第一个 ARC 获取 $$$1$$$ Type-Alpha BLUE 和 $$$1$$$ Typ… [tokens in=4629 out=54 cached=4480]",
+      "✓ note[6]: 第二个需要 $$$2$$$ 个 Type-Omega BLUE。… [tokens in=242 out=138 cached=0]",
+      "✓ note[7]: 第三个需要 $$$1$$$ 个欧米伽型蓝色。… [tokens in=4619 out=20 cached=4480]",
+      "✓ note[8]: 差值为 $$$3$$$(第一个 ARC)$$$- 1$$$(第三个 ARC)$$$= 2$$$。… [tokens in=4643 out=97 cached=4480]",
+      "✓ title[0]: C. 量子海狸… [tokens in=4611 out=11 cached=4480]",
+      "✓ legend[0]: 忙碌的海狸生活在人行道上，这条人行道由 $$$N$$$ 块未涂漆的瓷砖组成，瓷砖从左到右编号为 … [tokens in=18744 out=110 cached=0]",
+      "✓ legend[1]: 具体来说，Busy Beaver 写下了 $$$Q$$$ 个计划，其中第 $$$i$$$ 个计划… [tokens in=4701 out=158 cached=4480]",
+      "✓ legend[2]: Busy Beaver 并不知道，他其实是第一只生活在量子计算机中的海狸！不幸的是，这意味着宇宙… [tokens in=4543 out=119 cached=0]",
+      "✓ legend[3]: 对于给定的 $$$z$$$，随后按照计划对应的(偏移后的)日期递增顺序执行这些计划，每次重新着色… [tokens in=4676 out=85 cached=4480]",
+      "✓ legend[4]: 计算 $$${\\large \\sum_{z=0}^{2^K - 1}} F(z)$$$。由于答案… [tokens in=4456 out=29 cached=0]",
+      "✓ input[0]: 每个测试包含多组测试用例。第一行包含测试用例的数量 $$$T$$$($$$1\\leq T\\leq… [tokens in=4639 out=42 cached=4480]",
+      "✓ input[1]: 每个测试用例的第一行包含三个整数 $$$N$$$、$$$K$$$ 和 $$$Q$$$($$$1\\… [tokens in=264 out=117 cached=0]"
+    ],
+    "aiDone": 37,
+    "addedFiles": [],
+    "pushed": false,
+    "tokenUsage": {
+      "model": "gpt-5.6-terra",
+      "modelLabel": "GPT 5.6 Terra",
+      "ok": 37,
+      "fail": 1,
+      "in": 173214,
+      "out": 2698,
+      "cached": 119424,
+      "segments": [
+        {
+          "code": "GYM106069E",
+          "seg": "title[0]",
+          "in": 4616,
+          "out": 13,
+          "cached": 4224
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "legend[0]",
+          "in": 4676,
+          "out": 100,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "legend[1]",
+          "in": 269,
+          "out": 242,
+          "cached": 0
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "legend[2]",
+          "in": 4630,
+          "out": 28,
+          "cached": 4224
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "legend[3]",
+          "in": 252,
+          "out": 200,
+          "cached": 0
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "legend[4]",
+          "in": 4648,
+          "out": 130,
+          "cached": 4224
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "legend[5]",
+          "in": 4633,
+          "out": 39,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "legend[6]",
+          "in": 4639,
+          "out": 101,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "input[0]",
+          "in": 4629,
+          "out": 26,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "input[1]",
+          "in": 4661,
+          "out": 88,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "output[0]",
+          "in": 4638,
+          "out": 45,
+          "cached": 4224
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "note[0]",
+          "in": 4619,
+          "out": 14,
+          "cached": 4224
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "note[1]",
+          "in": 4621,
+          "out": 19,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "note[2]",
+          "in": 4624,
+          "out": 84,
+          "cached": 4224
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "note[3]",
+          "in": 244,
+          "out": 63,
+          "cached": 0
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "note[4]",
+          "in": 4619,
+          "out": 15,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "note[5]",
+          "in": 4629,
+          "out": 54,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "note[6]",
+          "in": 242,
+          "out": 138,
+          "cached": 0
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "note[7]",
+          "in": 4619,
+          "out": 20,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106069E",
+          "seg": "note[8]",
+          "in": 4643,
+          "out": 97,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "title[0]",
+          "in": 4611,
+          "out": 11,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "legend[0]",
+          "in": 18744,
+          "out": 110,
+          "cached": 0
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "legend[1]",
+          "in": 4701,
+          "out": 158,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "legend[2]",
+          "in": 4543,
+          "out": 119,
+          "cached": 0
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "legend[3]",
+          "in": 4676,
+          "out": 85,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "legend[4]",
+          "in": 4456,
+          "out": 29,
+          "cached": 0
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "input[0]",
+          "in": 4639,
+          "out": 42,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "input[1]",
+          "in": 264,
+          "out": 117,
+          "cached": 0
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "input[2]",
+          "in": 4653,
+          "out": 58,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "input[3]",
+          "in": 18734,
+          "out": 64,
+          "cached": 0
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "output[0]",
+          "in": 4645,
+          "out": 153,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "output[1]",
+          "in": 238,
+          "out": 45,
+          "cached": 0
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "output[2]",
+          "in": 4676,
+          "out": 78,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "output[3]",
+          "in": 4622,
+          "out": 21,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "output[4]",
+          "in": 4622,
+          "out": 56,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "output[5]",
+          "in": 4622,
+          "out": 21,
+          "cached": 4480
+        },
+        {
+          "code": "GYM106249C",
+          "seg": "output[6]",
+          "in": 4617,
+          "out": 15,
+          "cached": 4480
+        }
+      ],
+      "totalTokens": 175912,
+      "warmup": {
+        "ok": true,
+        "mode": "system-only",
+        "in": 225,
+        "out": 528,
+        "cached": 0
+      }
+    },
+    "tokenSegments": [
+      {
+        "code": "GYM106069E",
+        "seg": "title[0]",
+        "in": 4616,
+        "out": 13,
+        "cached": 4224
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "legend[0]",
+        "in": 4676,
+        "out": 100,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "legend[1]",
+        "in": 269,
+        "out": 242,
+        "cached": 0
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "legend[2]",
+        "in": 4630,
+        "out": 28,
+        "cached": 4224
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "legend[3]",
+        "in": 252,
+        "out": 200,
+        "cached": 0
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "legend[4]",
+        "in": 4648,
+        "out": 130,
+        "cached": 4224
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "legend[5]",
+        "in": 4633,
+        "out": 39,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "legend[6]",
+        "in": 4639,
+        "out": 101,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "input[0]",
+        "in": 4629,
+        "out": 26,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "input[1]",
+        "in": 4661,
+        "out": 88,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "output[0]",
+        "in": 4638,
+        "out": 45,
+        "cached": 4224
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "note[0]",
+        "in": 4619,
+        "out": 14,
+        "cached": 4224
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "note[1]",
+        "in": 4621,
+        "out": 19,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "note[2]",
+        "in": 4624,
+        "out": 84,
+        "cached": 4224
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "note[3]",
+        "in": 244,
+        "out": 63,
+        "cached": 0
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "note[4]",
+        "in": 4619,
+        "out": 15,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "note[5]",
+        "in": 4629,
+        "out": 54,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "note[6]",
+        "in": 242,
+        "out": 138,
+        "cached": 0
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "note[7]",
+        "in": 4619,
+        "out": 20,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106069E",
+        "seg": "note[8]",
+        "in": 4643,
+        "out": 97,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "title[0]",
+        "in": 4611,
+        "out": 11,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "legend[0]",
+        "in": 18744,
+        "out": 110,
+        "cached": 0
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "legend[1]",
+        "in": 4701,
+        "out": 158,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "legend[2]",
+        "in": 4543,
+        "out": 119,
+        "cached": 0
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "legend[3]",
+        "in": 4676,
+        "out": 85,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "legend[4]",
+        "in": 4456,
+        "out": 29,
+        "cached": 0
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "input[0]",
+        "in": 4639,
+        "out": 42,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "input[1]",
+        "in": 264,
+        "out": 117,
+        "cached": 0
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "input[2]",
+        "in": 4653,
+        "out": 58,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "input[3]",
+        "in": 18734,
+        "out": 64,
+        "cached": 0
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "output[0]",
+        "in": 4645,
+        "out": 153,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "output[1]",
+        "in": 238,
+        "out": 45,
+        "cached": 0
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "output[2]",
+        "in": 4676,
+        "out": 78,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "output[3]",
+        "in": 4622,
+        "out": 21,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "output[4]",
+        "in": 4622,
+        "out": 56,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "output[5]",
+        "in": 4622,
+        "out": 21,
+        "cached": 4480
+      },
+      {
+        "code": "GYM106249C",
+        "seg": "output[6]",
+        "in": 4617,
+        "out": 15,
+        "cached": 4480
+      }
+    ],
+    "leaderboard": {
+      "changed": false,
+      "players": 368,
+      "currentDate": "2026-11-19"
+    }
+  }
+}

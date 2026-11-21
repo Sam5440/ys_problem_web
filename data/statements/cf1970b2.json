@@ -1,0 +1,149 @@
+{
+  "code": "CF1970B2",
+  "letter": "B2",
+  "title": "B2. Exact Neighbours (Medium)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1970/B2",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The only difference between this and the hard version is that a1=0$$$a_{1} = 0$$$.",
+      "After some recent attacks on Hogwarts Castle by the Death Eaters, the Order of the Phoenix has decided to station n$$$n$$$ members in Hogsmead Village. The houses will be situated on a picturesque n×n$$$n\\times n$$$ square field. Each wizard will have their own house, and every house will belong to some wizard. Each house will take up the space of one square.",
+      "However, as you might know wizards are very superstitious. During the weekends, each wizard i$$$i$$$ will want to visit the house that is exactly ai$$$a_{i}$$$ (0≤ai≤n)$$$(0 \\leq a_{i} \\leq n)$$$ away from their own house. The roads in the village are built horizontally and vertically, so the distance between points (xi,yi)$$$(x_{i}, y_{i})$$$ and (xj,yj)$$$(x_{j}, y_{j})$$$ on the n×n$$$n\\times n$$$ field is |xi−xj|+|yi−yj|$$$ |x_{i} - x_{j}| + |y_{i} - y_{j}|$$$. The wizards know and trust each other, so one wizard can visit another wizard's house when the second wizard is away. The houses to be built will be big enough for all n$$$n$$$ wizards to simultaneously visit any house.",
+      "Apart from that, each wizard is mandated to have a view of the Hogwarts Castle in the north and the Forbidden Forest in the south, so the house of no other wizard should block the view. In terms of the village, it means that in each column of the n×n$$$n\\times n$$$ field, there can be at most one house, i.e. if the i$$$i$$$-th house has coordinates (xi,yi)$$$(x_{i}, y_{i})$$$, then xi≠xj$$$x_{i} \\neq x_{j}$$$ for all i≠j$$$i \\neq j$$$.",
+      "The Order of the Phoenix doesn't yet know if it is possible to place n$$$n$$$ houses in such a way that will satisfy the visit and view requirements of all n$$$n$$$ wizards, so they are asking for your help in designing such a plan.",
+      "If it is possible to have a correct placement, where for the i$$$i$$$-th wizard there is a house that is ai$$$a_{i}$$$ away from it and the house of the i$$$i$$$-th wizard is the only house in their column, output YES, the position of houses for each wizard, and to the house of which wizard should each wizard go during the weekends.",
+      "If it is impossible to have a correct placement, output NO."
+    ],
+    "input": [
+      "The first line contains n$$$n$$$ (2≤n≤2⋅105$$$2 \\leq n \\leq 2\\cdot 10^{5}$$$), the number of houses to be built.",
+      "The second line contains n$$$n$$$ integers a1,…,an$$$a_{1}, \\ldots, a_{n}$$$ (0≤ai≤n)$$$(0 \\leq a_{i} \\leq n)$$$, a1=0$$$a_{1} = 0$$$."
+    ],
+    "output": [
+      "If there exists such a placement, output YES on the first line; otherwise, output NO.",
+      "If the answer is YES, output n+1$$$n + 1$$$ more lines describing the placement.",
+      "The next n$$$n$$$ lines should contain the positions of the houses 1≤xi,yi≤n$$$1 \\leq x_{i}, y_{i} \\leq n$$$ for each wizard.",
+      "The i$$$i$$$-th element of the last line should contain the index of the wizard, the house of which is exactly ai$$$a_{i}$$$ away from the house of the i$$$i$$$-th wizard. If there are multiple such wizards, you can output any.",
+      "If there are multiple house placement configurations, you can output any."
+    ],
+    "note": [
+      "For the sample, the house of the 1st wizard is located at (4,4)$$$(4, 4)$$$, of the 2nd at (1,3)$$$(1, 3)$$$, of the 3rd at (2,4)$$$(2, 4)$$$, of the 4th at (3,1)$$$(3, 1)$$$.",
+      "The distance from the house of the 1st wizard to the house of the 1st wizard is |4−4|+|4−4|=0$$$|4 - 4| + |4 - 4| = 0$$$.",
+      "The distance from the house of the 2nd wizard to the house of the 1st wizard is |1−4|+|3−4|=4$$$|1 - 4| + |3 - 4| = 4$$$.",
+      "The distance from the house of the 3rd wizard to the house of the 1st wizard is |2−4|+|4−4|=2$$$|2 - 4| + |4 - 4| = 2$$$.",
+      "The distance from the house of the 4th wizard to the house of the 3rd wizard is |3−2|+|1−4|=4$$$|3 - 2| + |1 - 4| = 4$$$.",
+      "The view and the distance conditions are satisfied for all houses, so the placement is correct.",
+      "![](https://espresso.codeforces.com/46fb6d77c3efe790c6b2474d41827ea5fbb74911.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n0 4 2 4",
+      "output": "YES\n4 4\n1 3\n2 4\n3 1\n1 1 1 3"
+    },
+    {
+      "input": "4\n0 1 3 1",
+      "output": "YES\n1 1\n2 1\n4 1\n3 1\n1 1 1 3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "本题与困难版本的唯一差别在于 a1=0$$$a_{1} = 0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在食死徒最近对霍格沃茨城堡发动了几次袭击后，凤凰社决定在霍格莫德村驻扎 n$$$n$$$ 名成员。房屋将建在一片风景优美的 n×n$$$n\\times n$$$ 方形场地上。每位巫师都有自己的房屋，并且每座房屋都属于某位巫师。每座房屋占据一个方格。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，正如你可能知道的那样，巫师们都非常迷信。在周末期间，每位巫师 i$$$i$$$ 都想去距离自己的房屋恰好为 ai$$$a_{i}$$$(0≤ai≤n)$$$(0 \\leq a_{i} \\leq n)$$$ 的那座房屋。村中的道路均沿水平和竖直方向修建，因此在 n×n$$$n\\times n$$$ 场地上，点 (xi,yi)$$$(x_{i}, y_{i})$$$ 与 (xj,yj)$$$(x_{j}, y_{j})$$$ 之间的距离为 |xi−xj|+|yi−yj|$$$ |x_{i} - x_{j}| + |y_{i} - y_{j}|$$$。巫师们彼此了解并信任，因此当另一位巫师外出时，一位巫师可以前往另一位巫师的房屋。即将建造的房屋将足够大，可以容纳全部 n$$$n$$$ 位巫师同时前往任意一座房屋。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "除此之外，每位巫师都被要求能看到北方的霍格沃茨城堡和南方的禁林，因此不能有其他巫师的房屋挡住视线。对于村庄来说，这意味着在 n×n$$$n\\times n$$$ 网格的每一列中至多有一座房屋，即如果第 i$$$i$$$ 座房屋的坐标为 (xi,yi)$$$(x_{i}, y_{i})$$$，那么对于所有 i≠j$$$i \\neq j$$$，都有 xi≠xj$$$x_{i} \\neq x_{j}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "凤凰社尚不知道是否可以以一种满足所有 n$$$n$$$ 位巫师的拜访和视野要求的方式放置 n$$$n$$$ 座房屋，因此他们请求你帮助设计这样一个方案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果可以进行正确的放置，使得对于第 i$$$i$$$ 位巫师，有一座房屋距离他 ai$$$a_{i}$$$，且第 i$$$i$$$ 位巫师的房屋是其所在列中的唯一房屋，请输出 YES、每位巫师对应房屋的位置，以及每位巫师在周末应该前往哪位巫师的房屋。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果无法进行正确的放置，请输出 NO。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含 n$$$n$$$(2≤n≤2⋅105$$$2 \\leq n \\leq 2\\cdot 10^{5}$$$)，表示要建造的房屋数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,…,an$$$a_{1}, \\ldots, a_{n}$$$(0≤ai≤n$$$(0 \\leq a_{i} \\leq n)$$$)，其中 a1=0$$$a_{1} = 0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果存在这样的放置方案，第一行输出 YES；否则，输出 NO。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果答案为 YES，再输出 n+1$$$n + 1$$$ 行描述该放置方案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行应包含每位巫师的房屋位置 1≤xi,yi≤n$$$1 \\leq x_{i}, y_{i} \\leq n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最后一行的第 i$$$i$$$ 个元素应包含这样一位巫师的编号：其房屋与第 i$$$i$$$ 位巫师的房屋恰好相距 ai$$$a_{i}$$$。如果有多位这样的巫师，你可以输出其中任意一位。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果存在多种房屋放置方案，你可以输出任意一种。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于样例，第 1 位巫师的房屋位于 (4,4)$$$(4, 4)$$$，第 2 位巫师的房屋位于 (1,3)$$$(1, 3)$$$，第 3 位巫师的房屋位于 (2,4)$$$(2, 4)$$$，第 4 位巫师的房屋位于 (3,1)$$$(3, 1)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从第1位巫师的房子到第1位巫师的距离为 |4−4|+|4−4|=0$$$|4 - 4| + |4 - 4| = 0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从第2位巫师的房子到第1位巫师的距离为 |1−4|+|3−4|=4$$$|1 - 4| + |3 - 4| = 4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从第3位巫师的房子到第1位巫师的距离为 |2−4|+|4−4|=2$$$|2 - 4| + |4 - 4| = 2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "从第4位巫师的房子到第3位巫师的距离为 |3−2|+|1−4|=4$$$|3 - 2| + |1 - 4| = 4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有房屋都满足视野和距离条件，因此该布置是正确的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/46fb6d77c3efe790c6b2474d41827ea5fbb74911.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B2. 精确邻居（中等）",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

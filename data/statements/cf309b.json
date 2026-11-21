@@ -1,0 +1,78 @@
+{
+  "code": "CF309B",
+  "letter": "B",
+  "title": "B. Context Advertising",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/309/B",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Advertising has become part of our routine. And now, in the era of progressive technologies, we need your ideas to make advertising better!",
+      "In this problem we'll look at a simplified version of context advertising. You've got a text, consisting of exactly n words. A standard advertising banner has exactly r lines, each line can contain at most c characters. The potential customer always likes it when they can see lots of advertising, so you should determine which maximum number of consecutive words from the text can be written on the banner. Single words in one line of the banner should be separated by spaces. You are allowed to insert more than one space at once. Note that you are not allowed to break the words, that is, each word in the text must occupy exactly one line in the banner. Besides, you cannot change the word order, that is, if you read the banner text consecutively, from top to bottom and from left to right, you should get some consecutive part of the advertisement text.",
+      "More formally, the statement can be written like that. Let's say that all words are indexed from 1 to n in the order in which they occur in the advertisement text. Then you have to choose all words, starting from some i-th one and ending with some j-th one (1 ≤ i ≤ j ≤ n), so that all of them could be written on the banner. There must be as many words as possible. See the samples for clarifications."
+    ],
+    "input": [
+      "The first input line contains three integers n, r, c (1 ≤ n, r, c ≤ 106; r × c ≤ 106). The next line contains a text, consisting of n words. The words consist only of lowercase English letters and are not empty. The words in the lines are separated by single spaces. The total number of characters in all words doesn't exceed 5·106."
+    ],
+    "output": [
+      "Print at most r lines, in each line print at most c characters — the optimal advertisement banner. If there are multiple advertisement banners, print any of them.",
+      "Note that some lines of the banner can be empty. You are allowed not to print such lines."
+    ]
+  },
+  "examples": [
+    {
+      "input": "9 4 12\nthis is a sample text for croc final round",
+      "output": "this is a\nsample text\nfor croc\nfinal round"
+    },
+    {
+      "input": "9 1 9\nthis is a sample text for croc final round",
+      "output": "this is a"
+    },
+    {
+      "input": "6 2 3\ncroc a a a croc a",
+      "output": "a a\na"
+    },
+    {
+      "input": "2 2 5\nfirst second",
+      "output": "first"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "广告已经成为我们日常生活的一部分。如今，在技术不断发展的时代，我们需要你的想法来让广告变得更好！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在本题中，我们将研究一种简化的上下文广告版本。给定一段恰好由 n 个单词组成的文本。一个标准广告横幅恰好有 r 行，每行最多包含 c 个字符。潜在客户总是喜欢看到尽可能多的广告，因此你需要确定文本中最多有多少个连续单词可以写在横幅上。横幅的每一行中，单词之间应以空格分隔。允许一次插入多个空格。注意，不允许拆分单词，即文本中的每个单词都必须完整地位于同一行中。此外，你不能改变单词的顺序，也就是说，如果从上到下、从左到右连续阅读横幅上的文本，那么读出的内容应当是广告文本中的某个连续片段。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更正式地说，题意可以表述如下。假设广告文本中的所有单词按照出现顺序从 1 到 n 编号。那么你需要选择从第 i 个单词开始、到第 j 个单词结束的所有单词（1 ≤ i ≤ j ≤ n），使得这些单词都能够写在横幅上。所选单词的数量应尽可能多。具体情况请参考样例。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行输入包含三个整数 n、r、c（1 ≤ n、r、c ≤ 10^6；r × c ≤ 10^6）。下一行包含一段由 n 个单词组成的文本。单词仅由小写英文字母组成，且不为空。该行中的单词之间由单个空格分隔。所有单词的字符总数不超过 5·10^6。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出至多 r 行，每行输出至多 c 个字符，即最优的广告横幅。如果存在多个广告横幅，输出其中任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，横幅的某些行可能为空。你可以不输出这些行。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 上下文广告",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

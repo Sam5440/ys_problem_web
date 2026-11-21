@@ -1,0 +1,84 @@
+{
+  "code": "CF641C",
+  "letter": "C",
+  "title": "C. Little Artem and Dance",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/641/C",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Little Artem is fond of dancing. Most of all dances Artem likes rueda — Cuban dance that is danced by pairs of boys and girls forming a circle and dancing together.",
+      "More detailed, there are n pairs of boys and girls standing in a circle. Initially, boy number 1 dances with a girl number 1, boy number 2 dances with a girl number 2 and so on. Girls are numbered in the clockwise order. During the dance different moves are announced and all pairs perform this moves. While performing moves boys move along the circle, while girls always stay at their initial position. For the purpose of this problem we consider two different types of moves:",
+      "Value x and some direction are announced, and all boys move x positions in the corresponding direction.",
+      "Boys dancing with even-indexed girls swap positions with boys who are dancing with odd-indexed girls. That is the one who was dancing with the girl 1 swaps with the one who was dancing with the girl number 2, while the one who was dancing with girl number 3 swaps with the one who was dancing with the girl number 4 and so one. It's guaranteed that n is even.",
+      "Your task is to determine the final position of each boy."
+    ],
+    "input": [
+      "The first line of the input contains two integers n and q (2 ≤ n ≤ 1 000 000, 1 ≤ q ≤ 2 000 000) — the number of couples in the rueda and the number of commands to perform, respectively. It's guaranteed that n is even.",
+      "Next q lines contain the descriptions of the commands. Each command has type as the integer 1 or 2 first. Command of the first type is given as x ( - n ≤ x ≤ n), where 0 ≤ x ≤ n means all boys moves x girls in clockwise direction, while  - x means all boys move x positions in counter-clockwise direction. There is no other input for commands of the second type."
+    ],
+    "output": [
+      "Output n integers, the i-th of them should be equal to the index of boy the i-th girl is dancing with after performing all q moves."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6 3\n1 2\n2\n1 2",
+      "output": "4 3 6 5 2 1"
+    },
+    {
+      "input": "2 3\n1 1\n2\n1 -2",
+      "output": "1 2"
+    },
+    {
+      "input": "4 2\n2\n1 3",
+      "output": "1 4 3 2"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 q（2 ≤ n ≤ 1 000 000，1 ≤ q ≤ 2 000 000），分别表示 rueda 中的情侣数量和要执行的命令数量。保证 n 为偶数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q 行包含命令的描述。每条命令首先给出类型，为整数 1 或 2。第一类命令给出一个整数 x（ - n ≤ x ≤ n），其中 0 ≤ x ≤ n 表示所有男孩沿顺时针方向移动 x 个女孩的位置，而 - x 表示所有男孩沿逆时针方向移动 x 个位置。第二类命令没有其他输入。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 个整数，其中第 i 个整数应等于执行完全部 q 次移动后，第 i 个女孩正在与之跳舞的男孩的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "小阿尔乔姆喜欢跳舞。在所有舞蹈中，他最喜欢 rueda，一种古巴舞蹈：男孩和女孩两两组成一对，围成一个圆圈一起跳舞。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更具体地说，有 n 对男孩和女孩围成一个圆圈。最初，1 号男孩与 1 号女孩跳舞，2 号男孩与 2 号女孩跳舞，以此类推。女孩按照顺时针方向编号。舞蹈过程中会宣布不同的动作，所有男孩和女孩都会完成这些动作。在完成动作时，男孩沿圆圈移动，而女孩始终留在她们最初的位置。对于本题，我们考虑以下两种不同类型的动作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "宣布一个数值 x 和一个方向，所有男孩沿相应方向移动 x 个位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "与编号为偶数的女孩跳舞的男孩，与和编号为奇数的女孩跳舞的男孩交换位置。也就是说，与 1 号女孩跳舞的男孩会与和 2 号女孩跳舞的男孩交换位置，而与 3 号女孩跳舞的男孩会与和 4 号女孩跳舞的男孩交换位置，依此类推。保证 n 为偶数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是确定每个男孩的最终位置。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 小阿尔乔姆与舞蹈",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

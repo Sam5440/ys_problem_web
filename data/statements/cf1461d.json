@@ -1,0 +1,175 @@
+{
+  "code": "CF1461D",
+  "letter": "D",
+  "title": "D. Divide and Summarize",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1461/D",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Mike received an array a$$$a$$$ of length n$$$n$$$ as a birthday present and decided to test how pretty it is.",
+      "An array would pass the i$$$i$$$-th prettiness test if there is a way to get an array with a sum of elements totaling si$$$s_i$$$, using some number (possibly zero) of slicing operations.",
+      "![](https://espresso.codeforces.com/99f4c210795e0c4204b631fa29ffe14c107dfbb0.png)",
+      "An array slicing operation is conducted in the following way:",
+      "assume mid=⌊max(array)+min(array)2⌋$$$mid = \\lfloor\\frac{max(array) + min(array)}{2}\\rfloor$$$, where max$$$max$$$ and min$$$min$$$ — are functions that find the maximum and the minimum array elements. In other words, mid$$$mid$$$ is the sum of the maximum and the minimum element of array$$$array$$$ divided by 2$$$2$$$ rounded down.",
+      "Then the array is split into two parts left$$$\\mathit{left}$$$ and right$$$right$$$. The left$$$\\mathit{left}$$$ array contains all elements which are less than or equal mid$$$mid$$$, and the right$$$right$$$ array contains all elements which are greater than mid$$$mid$$$. Elements in left$$$\\mathit{left}$$$ and right$$$right$$$ keep their relative order from array$$$array$$$.",
+      "During the third step we choose which of the left$$$\\mathit{left}$$$ and right$$$right$$$ arrays we want to keep. The chosen array replaces the current one and the other is permanently discarded.",
+      "You need to help Mike find out the results of q$$$q$$$ prettiness tests.",
+      "Note that you test the prettiness of the array a$$$a$$$, so you start each prettiness test with the primordial (initial) array a$$$a$$$. Thus, the first slice (if required) is always performed on the array a$$$a$$$."
+    ],
+    "input": [
+      "Each test contains one or more test cases. The first line contains the number of test cases t$$$t$$$ (1≤t≤100$$$1 \\le t \\le 100$$$).",
+      "The first line of each test case contains two integers n$$$n$$$ and q$$$q$$$ (1≤n,q≤105)$$$(1 \\le n, q \\le 10^5)$$$ — the length of the array a$$$a$$$ and the total number of prettiness tests.",
+      "The second line of each test case contains n$$$n$$$ integers a1,a2,...,an$$$a_1, a_2, ..., a_n$$$ (1≤ai≤106)$$$(1 \\le a_i \\le 10^6)$$$ — the contents of the array a$$$a$$$.",
+      "Next q$$$q$$$ lines of each test case contain a single integer si$$$s_i$$$ (1≤si≤109)$$$(1 \\le s_i \\le 10^9)$$$ — the sum of elements which Mike wants to get in the i$$$i$$$-th test.",
+      "It is guaranteed that the sum of n$$$n$$$ and the sum of q$$$q$$$ does not exceed 105$$$10^5$$$ (∑n,∑q≤105$$$\\sum n, \\sum q \\le 10^5$$$)."
+    ],
+    "output": [
+      "Print q$$$q$$$ lines, each containing either a \"Yes\" if the corresponding prettiness test is passed and \"No\" in the opposite case."
+    ],
+    "note": [
+      "Explanation of the first test case:",
+      "We can get an array with the sum s1=1$$$s_1 = 1$$$ in the following way: 1.1 a=[1,2,3,4,5]$$$a = [1, 2, 3, 4, 5]$$$, mid=1+52=3$$$mid = \\frac{1+5}{2} = 3$$$, left=[1,2,3]$$$\\mathit{left} = [1, 2, 3]$$$, right=[4,5]$$$right = [4, 5]$$$. We choose to keep the left$$$\\mathit{left}$$$ array.\n 1.2 a=[1,2,3]$$$a = [1, 2, 3]$$$, mid=1+32=2$$$mid = \\frac{1+3}{2} = 2$$$, left=[1,2]$$$\\mathit{left} = [1, 2]$$$, right=[3]$$$right = [3]$$$. We choose to keep the left$$$\\mathit{left}$$$ array.\n 1.3 a=[1,2]$$$a = [1, 2]$$$, mid=1+22=1$$$mid = \\frac{1+2}{2} = 1$$$, left=[1]$$$\\mathit{left} = [1]$$$, right=[2]$$$right = [2]$$$. We choose to keep the left$$$\\mathit{left}$$$ array with the sum equalling 1$$$1$$$.",
+      "It can be demonstrated that an array with the sum s2=8$$$s_2 = 8$$$ is impossible to generate.",
+      "An array with the sum s3=9$$$s_3 = 9$$$ can be generated in the following way: 3.1 a=[1,2,3,4,5]$$$a = [1, 2, 3, 4, 5]$$$, mid=1+52=3$$$mid = \\frac{1+5}{2} = 3$$$, left=[1,2,3]$$$\\mathit{left} = [1, 2, 3]$$$, right=[4,5]$$$right = [4, 5]$$$. We choose to keep the right$$$right$$$ array with the sum equalling 9$$$9$$$.",
+      "It can be demonstrated that an array with the sum s4=12$$$s_4 = 12$$$ is impossible to generate.",
+      "We can get an array with the sum s5=6$$$s_5 = 6$$$ in the following way: 5.1 a=[1,2,3,4,5]$$$a = [1, 2, 3, 4, 5]$$$, mid=1+52=3$$$mid = \\frac{1+5}{2} = 3$$$, left=[1,2,3]$$$\\mathit{left} = [1, 2, 3]$$$, right=[4,5]$$$right = [4, 5]$$$. We choose to keep the left$$$\\mathit{left}$$$ with the sum equalling 6$$$6$$$.",
+      "Explanation of the second test case:",
+      "It can be demonstrated that an array with the sum s1=1$$$s_1 = 1$$$ is imposssible to generate.",
+      "We can get an array with the sum s2=2$$$s_2 = 2$$$ in the following way: 2.1 a=[3,1,3,1,3]$$$a = [3, 1, 3, 1, 3]$$$, mid=1+32=2$$$mid = \\frac{1+3}{2} = 2$$$, left=[1,1]$$$\\mathit{left} = [1, 1]$$$, right=[3,3,3]$$$right = [3, 3, 3]$$$. We choose to keep the left$$$\\mathit{left}$$$ array with the sum equalling 2$$$2$$$.",
+      "It can be demonstrated that an array with the sum s3=3$$$s_3 = 3$$$ is imposssible to generate.",
+      "We can get an array with the sum s4=9$$$s_4 = 9$$$ in the following way: 4.1 a=[3,1,3,1,3]$$$a = [3, 1, 3, 1, 3]$$$, mid=1+32=2$$$mid = \\frac{1+3}{2} = 2$$$, left=[1,1]$$$\\mathit{left} = [1, 1]$$$, right=[3,3,3]$$$right = [3, 3, 3]$$$. We choose to keep the right$$$right$$$ array with the sum equalling 9$$$9$$$.",
+      "We can get an array with the sum s5=11$$$s_5 = 11$$$ with zero slicing operations, because array sum is equal to 11$$$11$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n5 5\n1 2 3 4 5\n1\n8\n9\n12\n6\n5 5\n3 1 3 1 3\n1\n2\n3\n9\n11",
+      "output": "Yes\nNo\nYes\nNo\nYes\nNo\nYes\nNo\nYes\nYes"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Mike 收到一个长度为 n$$$n$$$ 的数组 a$$$a$$$ 作为生日礼物，并决定测试它有多美观。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果可以通过进行若干次切片操作(次数可以为零)，得到一个元素总和为 si$$$s_i$$$ 的数组，那么该数组就能通过第 i$$$i$$$ 次美观测试。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/99f4c210795e0c4204b631fa29ffe14c107dfbb0.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "数组切片操作按以下方式进行：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "假设 mid=⌊max(array)+min(array)2⌋$$$mid = \\lfloor\\frac{max(array) + min(array)}{2}\\rfloor$$$，其中 max$$$max$$$ 和 min$$$min$$$ 是用于找出数组中最大元素和最小元素的函数。换句话说，mid$$$mid$$$ 是数组 array$$$array$$$ 的最大元素与最小元素之和除以 2$$$2$$$ 后向下取整的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后将数组分成两部分 left$$$\\mathit{left}$$$ 和 right$$$right$$$。左侧的$$$\\mathit{left}$$$数组包含所有小于或等于 mid$$$mid$$$ 的元素，右侧的$$$right$$$数组包含所有大于 mid$$$mid$$$ 的元素。left$$$\\mathit{left}$$$ 和 right$$$right$$$ 中的元素保持其在 array$$$array$$$ 中的相对顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三步中，我们选择保留 left$$$\\mathit{left}$$$ 和 right$$$right$$$ 数组中的哪一个。被选中的数组将替代当前数组，另一个数组则被永久丢弃。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要帮助 Mike 求出 q$$$q$$$ 次美观度测试的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，你测试的是数组 a$$$a$$$ 的美观度，因此每次美观度测试都要从原始(初始)数组 a$$$a$$$ 开始。因此，第一次切片(如果需要)总是在数组 a$$$a$$$ 上进行。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每组测试包含一个或多个测试用例。第一行包含测试用例的数量 t$$$t$$$(1≤t≤100$$$1 \\le t \\le 100$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n$$$n$$$ 和 q$$$q$$$(1≤n,q≤105)$$$(1 \\le n, q \\le 10^5)$$$，分别表示数组 a$$$a$$$ 的长度和美观度测试的总次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 a1,a2,...,an$$$a_1, a_2, ..., a_n$$$(1≤ai≤106)$$$(1 \\le a_i \\le 10^6)$$$——数组 a$$$a$$$ 的内容。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例接下来的 q$$$q$$$ 行中，每行包含一个整数 si$$$s_i$$$(1≤si≤109)$$$(1 \\le s_i \\le 10^9)$$$——Mike 希望在第 i$$$i$$$ 次测试中得到的元素之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 n$$$n$$$ 的总和与 q$$$q$$$ 的总和均不超过 105$$$10^5$$$(∑n,∑q≤105$$$\\sum n, \\sum q \\le 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 q$$$q$$$ 行，如果对应的美观性测试通过，则每行输出 \"Yes\"；否则输出 \"No\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个测试用例的解释：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们可以通过以下方式得到元素和为 s1=1$$$s_1 = 1$$$ 的数组：1.1 a=[1,2,3,4,5]$$$a = [1, 2, 3, 4, 5]$$$，mid=1+52=3$$$mid = \\frac{1+5}{2} = 3$$$，left=[1,2,3]$$$\\mathit{left} = [1, 2, 3]$$$，right=[4,5]$$$right = [4, 5]$$$。我们选择保留左侧$$$\\mathit{left}$$$数组。1.2 a=[1,2,3]$$$a = [1, 2, 3]$$$，mid=1+32=2$$$mid = \\frac{1+3}{2} = 2$$$，left=[1,2]$$$\\mathit{left} = [1, 2]$$$，right=[3]$$$right = [3]$$$。我们选择保留左侧$$$\\mathit{left}$$$数组。1.3 a=[1,2]$$$a = [1, 2]$$$，mid=1+22=1$$$mid = \\frac{1+2}{2} = 1$$$，left=[1]$$$\\mathit{left} = [1]$$$，right=[2]$$$right = [2]$$$。我们选择保留左侧$$$\\mathit{left}$$$数组，其元素和为 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，无法生成元素和为 s2=8$$$s_2 = 8$$$ 的数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "元素和为 s3=9$$$s_3 = 9$$$ 的数组可以按如下方式生成：3.1 a=[1,2,3,4,5]$$$a = [1, 2, 3, 4, 5]$$$，mid=1+52=3$$$mid = \\frac{1+5}{2} = 3$$$，left=[1,2,3]$$$\\mathit{left} = [1, 2, 3]$$$，right=[4,5]$$$right = [4, 5]$$$。我们选择保留元素和为 9$$$9$$$ 的 right$$$right$$$ 数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，无法生成元素和为 s4=12$$$s_4 = 12$$$ 的数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们可以按如下方式得到元素和为 s5=6$$$s_5 = 6$$$ 的数组：5.1 a=[1,2,3,4,5]$$$a = [1, 2, 3, 4, 5]$$$，mid=1+52=3$$$mid = \\frac{1+5}{2} = 3$$$，left=[1,2,3]$$$\\mathit{left} = [1, 2, 3]$$$，right=[4,5]$$$right = [4, 5]$$$。我们选择保留元素和为 6$$$6$$$ 的 left$$$\\mathit{left}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二个测试用例的解释：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，无法生成元素和为 s1=1$$$s_1 = 1$$$ 的数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们可以通过以下方式得到一个元素和为 s2=2$$$s_2 = 2$$$ 的数组：2.1 a=[3,1,3,1,3]$$$a = [3, 1, 3, 1, 3]$$$，mid=1+32=2$$$mid = \\frac{1+3}{2} = 2$$$，left=[1,1]$$$\\mathit{left} = [1, 1]$$$，right=[3,3,3]$$$right = [3, 3, 3]$$$。我们选择保留元素和等于 2$$$2$$$ 的左侧$$$\\mathit{left}$$$数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，不可能构造出一个元素和为 s3=3$$$s_3 = 3$$$ 的数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们可以通过以下方式得到一个元素和为 s4=9$$$s_4 = 9$$$ 的数组：4.1 a=[3,1,3,1,3]$$$a = [3, 1, 3, 1, 3]$$$，mid=1+32=2$$$mid = \\frac{1+3}{2} = 2$$$，left=[1,1]$$$\\mathit{left} = [1, 1]$$$，right=[3,3,3]$$$right = [3, 3, 3]$$$。我们选择保留元素和等于 9$$$9$$$ 的右侧$$$right$$$数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们可以在不进行任何切分操作的情况下得到一个元素和为 s5=11$$$s_5 = 11$$$ 的数组，因为数组元素和等于 11$$$11$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 划分与总结",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

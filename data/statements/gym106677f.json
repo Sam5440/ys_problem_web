@@ -1,0 +1,142 @@
+{
+  "code": "GYM106677F",
+  "letter": "F",
+  "title": "F. Optimizing a Map Application",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106677/problem/F",
+  "difficulty": "*2200",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are optimizing a map application, which is targeted at Icpca City.",
+      "The area of Icpca City has a square shape, which is divided into square sections of the same size lined up in $$$n$$$ rows and $$$n$$$ columns. The section located at the $$$i$$$-th row and the $$$j$$$-th column ($$$1 \\leq i \\leq n$$$, $$$1 \\leq j \\leq n$$$) is denoted by $$$(i, j)$$$. For example, the section at the northwest corner is denoted by $$$(1, 1)$$$. Icpca City has its central station occupying a single section, and some number of buildings occupying rectangular areas of one or more sections.",
+      "Your map application can calculate the shortest walking time between two specified sections. In the calculation, we assume that people can walk to one of the sections adjacent to north, south, east, and west in $$$1$$$ minute, and they cannot move diagonally. In addition, we assume that people cannot enter sections occupied by buildings nor step outside of Icpca City. However, they can enter the section of the central station.",
+      "During the test phase, you noticed that users frequently ask the walking time from the central station. Write an efficient program that processes many user queries asking for the shortest walking time from the central station to specified sections.",
+      "Figure F.1 is a sketch of Icpca City of the first test case of Sample Input 1, showing the shortest path from the central station to the section $$$(1, 7)$$$. The central station, the section $$$(1, 7)$$$, and buildings are shown in green, cyan stripe, and dark gray, respectively. The shortest walking time is $$$17$$$ minutes.",
+      "![](https://espresso.codeforces.com/2b9df8525c8c5b6a32654ecb2532d0af3509e560.png)"
+    ],
+    "input": [
+      "The input contains one or more test cases, each in the following format.",
+      "The first line consists of three integers, $$$n, u,$$$ and $$$v$$$ $$$(2 \\leq n \\leq 10^9, 1 \\leq u \\leq n, 1 \\leq v \\leq n)$$$, which mean that the number of sections on each side is $$$n$$$, and that the central station is located at the section $$$(u, v)$$$.",
+      "The second line contains an integer $$$m$$$ $$$(1 \\leq m \\leq 200)$$$, representing the number of buildings in Icpca City. The next $$$m$$$ lines contain information regarding the areas of the buildings. The $$$i$$$-th line of these $$$m$$$ lines consists of four integers, $$$a_i, b_i, c_i,$$$ and $$$d_i$$$ $$$(1 \\leq a_i \\leq b_i \\leq n, 1 \\leq c_i \\leq d_i \\leq n)$$$, which mean the $$$i$$$-th building occupies all sections $$$(x, y)$$$ that meets $$$a_i \\leq x \\leq b_i$$$ and $$$c_i \\leq y \\leq d_i$$$. It is guaranteed that no sections are occupied by two or more buildings, and the section of the central station is not occupied by any buildings.",
+      "The next line contains an integer $$$q$$$ $$$(1 \\leq q \\leq 2 \\times 10^5)$$$, which is the number of queries. The next $$$q$$$ lines contain information regarding the user queries. The $$$j$$$-th line of these $$$q$$$ lines consists of two integers, $$$s_j$$$ and $$$t_j$$$ $$$(1 \\leq s_j \\leq n, 1 \\leq t_j \\leq n)$$$, which describe the query to calculate the shortest walking time from the central station to the section $$$(s_j, t_j)$$$. It is guaranteed that the section $$$(s_j, t_j)$$$ is not occupied by any buildings.",
+      "The end of the input is indicated by a line containing three zeros. The number of test cases does not exceed $$$200$$$. The sum of $$$m$$$ over all the test cases does not exceed $$$200$$$, and the sum of $$$q$$$ over all the test cases does not exceed $$$2 \\times 10^5$$$."
+    ],
+    "output": [
+      "For each test case, output $$$q$$$ lines. In the $$$j$$$-th line $$$(1 \\leq j \\leq q)$$$, output the answer to the $$$j$$$-th query in minutes. If the specified section is unreachable, output no as the answer."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7 6 1\n2\n3 7 3 3\n1 4 5 6\n4\n1 7\n5 5\n6 2\n6 1\n10 1 1\n4\n5 6 4 4\n5 6 7 7\n4 4 5 6\n7 7 5 6\n3\n10 10\n3 3\n5 6\n2 1 1\n2\n1 1 2 2\n2 2 1 1\n1\n2 2\n9 1 1\n4\n2 2 1 8\n4 4 2 9\n6 6 1 8\n8 8 2 9\n3\n1 5\n5 5\n9 9\n10000000 7777777 123456\n1\n1000001 9000000 1000001 9000000\n3\n2525252 9876543\n10000000 5252525\n123456 123456\n0 0 0",
+      "output": "17\n11\n1\n0\n18\n4\nno\nno\n4\n24\n48\n17450060\n7351292\n7654321"
+    }
+  ],
+  "titleZh": {
+    "0": "F. 优化地图应用程序",
+    "caiyun": "F. 优化地图应用程序",
+    "youdao": "F.优化地图应用",
+    "iflyrec": "F.优化地图应用程序",
+    "ai": "F. 优化地图应用",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "youdao": "您正在优化一个以Icpca City为目标的地图应用程序。",
+        "caiyun": "你正在优化一个地图应用程序，目标是 Icpca City。",
+        "iflyrec": "您正在优化以ICPCA城市为目标的地图应用程序。",
+        "ai": "你正在优化一款面向 Icpca City 的地图应用。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "Icpca City 的面积呈正方形，被划分为大小相同的正方形区域，以 $$$n$$$ 行和 $$$n$$$ 列排列。位于 $$$i$$$ 行和 $$$j$$$ 列 ($$$1 \\leq i \\leq n$$$、$$$1 \\leq j \\leq n$$$) 的区域用 $$$(i, j)$$$ 表示。例如，西北角的区域用 $$$(1, 1)$$$ 表示。Icpca City 的中央车站占据一个区域，一些建筑物占据一个或多个区域的矩形面积。",
+        "caiyun": "Icpca City 的面积呈正方形，被划分为大小相同的正方形区域，以 $$$n$$$ 行和 $$$n$$$ 列排列。位于 $$$i$$$ 行和 $$$j$$$ 列 ($$$1 \\leq i \\leq n$$$、$$$1 \\leq j \\leq n$$$) 的区域用 $$$(i, j)$$$ 表示。例如，西北角的区域用 $$$(1, 1)$$$ 表示。Icpca City 的中央车站占据一个区域，一些建筑物占据一个或多个区域的矩形面积。",
+        "iflyrec": "ICPCA City的区域呈正方形，分为大小相同的正方形部分，排成$$$n$$$行和$$$n$$$列。位于第$$$i$$$行和第$$$j$$$列($$$1 \\leq i \\leq n$$$，$$$1 \\leq j \\leq n$$$）的部分由$$$(i, j)$$$表示。例如，西北角的截面用$$$(1, 1)$$$表示。ICPCA市的中央车站占据了一个单独的部分，一些建筑物占据了一个或多个部分的矩形区域。",
+        "ai": "Icpca City 的区域呈正方形，被划分为大小相同、排列成 $$$n$$$ 行 $$$n$$$ 列的方形区域。位于第 $$$i$$$ 行、第 $$$j$$$ 列的区域($$$1 \\leq i \\leq n$$$，$$$1 \\leq j \\leq n$$$)记作 $$$(i, j)$$$。例如，位于西北角的区域记作 $$$(1, 1)$$$。Icpca City 的中央车站占据一个区域，此外还有若干建筑物，占据由一个或多个区域组成的矩形区域。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "您的地图应用程序可以计算两个指定路段之间的最短步行时间。在计算中，我们假设人们可以在$$$1$$$分钟内步行到北、南、东、西相邻的路段之一，并且不能沿对角线移动。此外，我们假设人们不能进入被建筑物占据的区域，也不能走出Icpca城。然而，他们可以进入中央车站的部分。",
+        "caiyun": "您的地图应用程序可以计算两个指定区域之间的最短步行时间。在计算中，我们假设人们可以在 $$$1$$$ 分钟内走到与北、南、东、西相邻的区域之一，且他们不能沿对角线移动。此外，我们假设人们不能进入被建筑物占据的区域，也不能离开 Icpca 市。然而，他们可以进入中央车站的区域。",
+        "iflyrec": "您的地图应用程序可以计算两个指定路段之间的最短步行时间。在计算中，我们假设人们可以在$$$1$$$分钟内走到北、南、东、西相邻的路段之一，并且不能沿对角线移动。此外，我们假设人们不能进入被建筑物占据的区域，也不能走出ICPCA城市。不过，他们可以进入中央车站的路段。",
+        "ai": "你的地图应用可以计算两个指定区域之间的最短步行时间。在计算中，我们假设人们可以在 $$$1$$$ 分钟内走到北、南、东、西方向相邻的一个区域，但不能沿对角线移动。此外，我们假设人们不能进入被建筑物占据的区域，也不能走出 Icpca City 的范围。但是，他们可以进入中央车站所在的区域。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "在测试阶段，你注意到用户经常询问从中央车站到指定区域的步行时间。编写一个高效的程序，处理许多用户请求从中央车站到指定区域的最短步行时间的查询。",
+        "caiyun": "在测试阶段，你注意到用户经常询问从中央车站到指定区域的步行时间。编写一个高效的程序，处理许多用户请求从中央车站到指定区域的最短步行时间的查询。",
+        "iflyrec": "在测试阶段，您注意到用户频繁询问从中心站出发的步行时间。编写一个高效的程序，处理许多用户询问从中心站到指定路段的最短步行时间的查询。",
+        "ai": "在测试阶段，你注意到用户经常询问从中央车站出发的步行时间。请编写一个高效的程序，处理大量用户查询，求出从中央车站到指定区域的最短步行时间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "图F.1是样本输入1的第一个测试用例的Icpca City示意图，显示了从中心站到路段$$$(1, 7)$$$的最短路径。中央车站、路段$$$(1, 7)$$$和建筑物分别以绿色、青色条纹和深灰色表示。最短步行时间为$$$17$$$分钟。",
+        "caiyun": "图 F.1 是样本输入 1 第一个测试案例 Icpca City 的草图，显示了从中央车站到 $$$(1, 7)$$$ 区域的最短路径。中央车站、$$$(1, 7)$$$ 区域和建筑物分别用绿色、青色条纹和深灰色显示。最短步行时间为 $$$17$$$ 分钟。",
+        "iflyrec": "图F.1是样本输入1的第一个测试案例的ICPCA城市示意图，显示了从中心站到路段$$$(1, 7)$$$的最短路径。中心站、路段$$$(1, 7)$$$和建筑物分别以绿色、青色条纹和深灰色显示。最短步行时间为$$$17$$$分钟。",
+        "ai": "图 F.1 是样例输入 1 的第一个测试用例中 Icpca City 的示意图，展示了从中央车站到区域 $$$(1, 7)$$$ 的最短路径。中央车站、区域 $$$(1, 7)$$$ 和建筑物分别以绿色、青色条纹和深灰色表示。最短步行时间为 $$$17$$$ 分钟。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "![](https://espresso.codeforces.com/2b9df8525c8c5b6a32654ecb2532d0af3509e560.png)",
+        "caiyun": "![](https://espresso.codeforces.com/2b9df8525c8c5b6a32654ecb2532d0af3509e560.png)",
+        "iflyrec": "![](https://espresso.codeforces.com/2b9df8525c8c5b6a32654ecb2532d0af3509e560.png)",
+        "deepl": "![](https://espresso.codeforces.com/2b9df8525c8c5b6a32654ecb2532d0af3509e560.png)",
+        "ai": "![](https://espresso.codeforces.com/2b9df8525c8c5b6a32654ecb2532d0af3509e560.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "youdao": "输入包含一个或多个测试用例，每个用例都采用以下格式。",
+        "caiyun": "输入包含一个或多个测试用例，每个用例采用以下格式。",
+        "iflyrec": "输入包含一个或多个测试用例，每个测试用例采用以下格式。",
+        "ai": "输入包含一个或多个测试用例，每个测试用例的格式如下。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "第一行由三个整数 $$$n, u,$$$ 和 $$$v$$$$$$(2 \\leq n \\leq 10^9, 1 \\leq u \\leq n, 1 \\leq v \\leq n)$$$ 组成，这意味着两侧的截面数为 $$$n$$$，而中心站位于截面 $$$(u, v)$$$。",
+        "caiyun": "第一行由三个整数 $$$n, u,$$$ 和 $$$v$$$$$$(2 \\leq n \\leq 10^9, 1 \\leq u \\leq n, 1 \\leq v \\leq n)$$$ 组成，这意味着两侧的截面数为 $$$n$$$，而中心站位于截面 $$$(u, v)$$$。",
+        "iflyrec": "第一行由三个整数组成，$$$n, u,$$$和$$$v$$$$$$(2 \\leq n \\leq 10^9, 1 \\leq u \\leq n, 1 \\leq v \\leq n)$$$，表示每侧的区段数为$$$n$$$，中心站位于区间$$$(u, v)$$$。",
+        "ai": "第一行包含三个整数 $$$n, u,$$$ 和 $$$v$$$ $$$(2 \\leq n \\leq 10^9, 1 \\leq u \\leq n, 1 \\leq v \\leq n)$$$，它们表示每一侧有 $$$n$$$ 个区段，且中央车站位于区段 $$$(u, v)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "第二行包含一个整数$$$m$$$ $$$(1 \\leq m \\leq 200)$$$，表示Icpca City中建筑物的数量。接下来的$$$m$$$行包含有关建筑物区域的信息。这些$$$m$$$线中的$$$i$$$第一行由$$$a_i, b_i, c_i,$$$和$$$d_i$$$ $$$(1 \\leq a_i \\leq b_i \\leq n, 1 \\leq c_i \\leq d_i \\leq n)$$$四个整数组成，这意味着$$$i$$$大楼占据了与$$$a_i \\leq x \\leq b_i$$$和$$$c_i \\leq y \\leq d_i$$$相遇的所有路段$$$(x, y)$$$。保证该段不被两个或两个以上的建筑物占用，中心站的该段不被任何建筑物占用。",
+        "caiyun": "第二行包含一个整数 $$$m$$$$$$(1 \\leq m \\leq 200)$$$，表示 Icpca 市的建筑物数量。接下来的 $$$m$$$ 行包含有关建筑物面积的信息。这些 $$$m$$$ 行中的 $$$i$$$-行由四个整数 $$$a_i, b_i, c_i,$$$ 和 $$$d_i$$$$$$(1 \\leq a_i \\leq b_i \\leq n, 1 \\leq c_i \\leq d_i \\leq n)$$$ 组成，这意味着 $$$i$$$-行建筑物占据了所有与 $$$a_i \\leq x \\leq b_i$$$ 和 $$$c_i \\leq y \\leq d_i$$$ 相符的 $$$(x, y)$$$ 区域。确保没有任何区域被两个或更多的建筑物占据，并且中央车站的区域没有被任何建筑物占据。",
+        "iflyrec": "第二行包含整数$$$m$$$$$$(1 \\leq m \\leq 200)$$$，表示ICPCA市的建筑物数量。接下来的$$$m$$$行包含有关建筑物面积的信息。这些$$$m$$$行的第$$$i$$$行由四个整数$$$a_i, b_i, c_i,$$$和$$$d_i$$$$$$(1 \\leq a_i \\leq b_i \\leq n, 1 \\leq c_i \\leq d_i \\leq n)$$$组成，这意味着第$$$i$$$号建筑占据了满足$$$a_i \\leq x \\leq b_i$$$和$$$c_i \\leq y \\leq d_i$$$的所有部分$$$(x, y)$$$。保证无任何区间被两个或两个以上建筑物占用，中心站区间不被任何建筑物占用。",
+        "ai": "第二行包含一个整数 $$$m$$$ $$$(1 \\leq m \\leq 200)$$$，表示 Icpca City 中的建筑物数量。接下来的 $$$m$$$ 行包含有关这些建筑物所占区域的信息。这 $$$m$$$ 行中的第 $$$i$$$ 行包含四个整数 $$$a_i, b_i, c_i,$$$ 和 $$$d_i$$$ $$$(1 \\leq a_i \\leq b_i \\leq n, 1 \\leq c_i \\leq d_i \\leq n)$$$，其含义是第 $$$i$$$ 栋建筑物占据满足 $$$a_i \\leq x \\leq b_i$$$ 和 $$$c_i \\leq y \\leq d_i$$$ 的所有区段 $$$(x, y)$$$。保证没有任何区段被两栋或更多建筑物占据，且中央车站所在的区段没有被任何建筑物占据。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "下一行包含一个整数 $$$q$$$$$$(1 \\leq q \\leq 2 \\times 10^5)$$$，它是查询的数量。下一行 $$$q$$$ 包含有关用户查询的信息。这些 $$$q$$$ 行的第 $$$j$$$ 行由两个整数 $$$s_j$$$ 和 $$$t_j$$$$$$(1 \\leq s_j \\leq n, 1 \\leq t_j \\leq n)$$$ 组成，它描述了计算从中心站到 $$$(s_j, t_j)$$$ 区域的最短步行时间的查询。确保 $$$(s_j, t_j)$$$ 区域不被任何建筑物占用。",
+        "caiyun": "下一行包含一个整数 $$$q$$$$$$(1 \\leq q \\leq 2 \\times 10^5)$$$，即查询的次数。下一行 $$$q$$$ 包含有关用户查询的信息。这些 $$$q$$$ 行的第 $$$j$$$ 行由两个整数 $$$s_j$$$ 和 $$$t_j$$$$$$(1 \\leq s_j \\leq n, 1 \\leq t_j \\leq n)$$$ 组成，它描述了计算从中心站到 $$$(s_j, t_j)$$$ 区域的最短步行时间的查询。确保 $$$(s_j, t_j)$$$ 区域不被任何建筑物占用。",
+        "iflyrec": "下一行包含整数$$$q$$$$$$(1 \\leq q \\leq 2 \\times 10^5)$$$，即查询数。接下来的$$$q$$$行包含有关用户查询的信息。这些$$$q$$$行中的第$$$j$$$行由两个整数$$$s_j$$$和$$$t_j$$$$$$(1 \\leq s_j \\leq n, 1 \\leq t_j \\leq n)$$$组成，这两个整数描述了计算从中心站到路段$$$(s_j, t_j)$$$的最短步行时间的查询。保证$$$(s_j, t_j)$$$段不被任何建筑物占用。",
+        "ai": "下一行包含一个整数 $$$q$$$ $$$(1 \\leq q \\leq 2 \\times 10^5)$$$，表示查询的数量。接下来的 $$$q$$$ 行包含有关用户查询的信息。其中这些 $$$q$$$ 行中的第 $$$j$$$ 行包含两个整数 $$$s_j$$$ 和 $$$t_j$$$ $$$(1 \\leq s_j \\leq n, 1 \\leq t_j \\leq n)$$$，用于描述计算从中央车站到区域 $$$(s_j, t_j)$$$ 的最短步行时间的查询。保证区域 $$$(s_j, t_j)$$$ 未被任何建筑物占据。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "youdao": "输入的末尾用一条包含三个零的线表示。测试用例的数量不超过 $$$200$$$。所有测试用例的 $$$m$$$ 和不超过 $$$200$$$，所有测试用例的 $$$q$$$ 和不超过 $$$2 \\times 10^5$$$。",
+        "caiyun": "输入的末尾用一条包含三个零的线表示。测试用例的数量不超过 $$$200$$$。所有测试用例的 $$$m$$$ 和不超过 $$$200$$$，所有测试用例的 $$$q$$$ 和不超过 $$$2 \\times 10^5$$$。",
+        "iflyrec": "输入的结束由包含三个零的行表示。测试用例数量不超过$$$200$$$。所有测试用例的$$$m$$$之和不超过$$$200$$$，所有测试用例的$$$q$$$之和不超过$$$2 \\times 10^5$$$。",
+        "ai": "输入以包含三个零的一行作为结束标志。测试用例的数量不超过 $$$200$$$。$$$m$$$ 在所有测试用例中的总和不超过 $$$200$$$，且 $$$q$$$ 在所有测试用例中的总和不超过 $$$2 \\times 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "youdao": "对于每个测试用例，输出$$$q$$$行。在$$$j$$$-第$$$(1 \\leq j \\leq q)$$$行中，以分钟为单位输出第$$$j$$$行查询的结果。如果指定的部分不可达，则输出no作为答案。",
+        "caiyun": "对于每个测试用例，输出 $$$q$$$ 行。在 $$$j$$$-行 $$$(1 \\leq j \\leq q)$$$ 中，在几分钟内输出 $$$j$$$-行查询的答案。如果指定的部分无法访问，则输出 no 作为答案。",
+        "iflyrec": "对于每个测试用例，输出$$$q$$$行。在第$$$j$$$行$$$(1 \\leq j \\leq q)$$$中，以分钟为单位输出第$$$j$$$个查询的答案。如果无法访问指定的部分，则输出“否”作为答案。",
+        "ai": "对于每个测试用例，输出 $$$q$$$ 行。在第 $$$j$$$ 行 $$$(1 \\leq j \\leq q)$$$ 中，以分钟为单位输出第 $$$j$$$ 个查询的答案。如果指定路段不可达，则输出 no 作为答案。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.120Z",
+  "translatedBy": [
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

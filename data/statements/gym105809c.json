@@ -1,0 +1,96 @@
+{
+  "code": "GYM105809C",
+  "letter": "C",
+  "title": "C. Chess in 3D",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105809/problem/C",
+  "difficulty": "*2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "In the mystical kingdom of TriDChess, the ancient game of chess has evolved into a thrilling three—dimensional contest of strategy and intellect. The game is played on a board with dimensions A×B×C$$$A \\times B \\times C$$$, where each of the three axes represents a spatial dimension. This board forms a cuboid, filled with possibilities for cunning moves and strategic placements.",
+      "The piece of focus in this game is the 3D Knight, a nimble entity that combines the powers of traditional chess knights with the freedom of movement afforded by the third dimension. These 3D Knights have the ability to move in an L—shape across the board, jumping over other pieces. Their movement is defined as follows:",
+      "1. L—Shaped Movement: A 3D Knight can move in an L—shape from its current position (x,y,z)$$$(x, y, z)$$$:",
+      "Move two squares along one axis and one square along another axis:",
+      "(x±2,y±1,z)$$$(x \\pm 2, y \\pm 1, z)$$$, (x±2,y,z±1)$$$(x \\pm 2, y, z \\pm 1)$$$, (x±1,y±2,z)$$$(x \\pm 1, y \\pm 2, z)$$$, (x,y±2,z±1)$$$(x, y \\pm 2, z \\pm 1)$$$, (x±1,y,z±2)$$$(x \\pm 1, y, z \\pm 2)$$$, (x,y±1,z±2)$$$(x, y \\pm 1, z \\pm 2)$$$.",
+      "2. The Knight's jump allows it to move over other pieces, but it must land within the bounds of the board, where 1≤x≤A$$$1 \\leq x \\leq A$$$, 1≤y≤B$$$1 \\leq y \\leq B$$$, 1≤z≤C$$$1 \\leq z \\leq C$$$.",
+      "Additionally, there are between 1 and 500 blocked cells on the board where Knights cannot be placed. These cells are specified by their coordinates and must be avoided when placing Knights.",
+      "The challenge you face is to determine the maximum number of these agile 3D Knights that can be placed on the cuboid board such that no two Knights are capable of attacking each other. This means no two Knights should be in a position where one could reach the other in a single move."
+    ],
+    "input": [
+      "The first line contains three integers A$$$A$$$, B$$$B$$$, and C$$$C$$$ (1≤A,B,C≤10$$$1 \\leq A, B, C \\leq 10$$$), representing the dimensions of the 3D board.",
+      "The second line contains an integer K$$$K$$$ (1≤K≤500$$$1 \\leq K \\leq 500$$$), representing the number of blocked cells.",
+      "The next K$$$K$$$ lines each contain three integers x,y,z$$$x, y, z$$$ (1≤x≤A$$$1 \\leq x \\leq A$$$, 1≤y≤B$$$1 \\leq y \\leq B$$$, 1≤z≤C$$$1 \\leq z \\leq C$$$), representing the coordinates of a blocked cell."
+    ],
+    "output": [
+      "Output a single integer that represents the maximum number of 3D Knights that can be positioned on the A×B×C$$$A \\times B \\times C$$$ board without any two Knights threatening one another."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3 3\n1\n2 2 2",
+      "output": "14"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在神秘的 TriDChess 王国中，古老的国际象棋已经演变成一场惊险刺激的三维策略与智力较量。游戏在一个尺寸为 A×B×C$$$A \\times B \\times C$$$ 的棋盘上进行，其中三条轴分别代表一个空间维度。这个棋盘构成一个长方体，充满了巧妙走法和战略布局的可能性。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "本游戏中重点介绍的棋子是三维骑士。这是一种敏捷的棋子，结合了传统国际象棋骑士的能力，以及第三维度所带来的自由移动能力。三维骑士可以在棋盘上以 L 形移动，并跳过其他棋子。其移动方式定义如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1. L 形移动：三维骑士可以从当前位置 (x,y,z)$$$(x, y, z)$$$ 以 L 形移动：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "沿一条轴移动两个格，沿另一条轴移动一个格：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(x±2,y±1,z)$$$(x \\pm 2, y \\pm 1, z)$$$, (x±2,y,z±1)$$$(x \\pm 2, y, z \\pm 1)$$$, (x±1,y±2,z)$$$(x \\pm 1, y \\pm 2, z)$$$, (x,y±2,z±1)$$$(x, y \\pm 2, z \\pm 1)$$$, (x±1,y,z±2)$$$(x \\pm 1, y, z \\pm 2)$$$, (x,y±1,z±2)$$$(x, y \\pm 1, z \\pm 2)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2. 骑士的跳跃允许它越过其他棋子，但必须落在棋盘范围内，即 1≤x≤A$$$1 \\leq x \\leq A$$$，1≤y≤B$$$1 \\leq y \\leq B$$$，1≤z≤C$$$1 \\leq z \\leq C$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，棋盘上有 1 到 500 个无法放置骑士的被封锁格子。这些格子由其坐标指定，放置骑士时必须避开它们。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你面临的挑战是确定在长方体棋盘上最多可以放置多少个这种灵活的三维骑士，使得任意两个骑士都无法相互攻击。这意味着任意两个骑士都不应处于其中一个可以通过一次移动到达另一个的位置。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 A$$$A$$$、B$$$B$$$ 和 C$$$C$$$(1≤A,B,C≤10$$$1 \\leq A, B, C \\leq 10$$$)，表示三维棋盘的尺寸。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个整数 K$$$K$$$(1≤K≤500$$$1 \\leq K \\leq 500$$$)，表示被封锁格子的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 K$$$K$$$ 行中，每行包含三个整数 x,y,z$$$x, y, z$$$(1≤x≤A$$$1 \\leq x \\leq A$$$，1≤y≤B$$$1 \\leq y \\leq B$$$，1≤z≤C$$$1 \\leq z \\leq C$$$)，表示一个被封锁格子的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示在 A×B×C$$$A \\times B \\times C$$$ 棋盘上放置的、且任意两个三维骑士都不会相互攻击的骑士的最大数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 三维国际象棋",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

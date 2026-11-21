@@ -1,0 +1,93 @@
+{
+  "code": "CF101D",
+  "letter": "D",
+  "title": "D. Castle",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/101/D",
+  "difficulty": "2300",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Gerald is positioned in an old castle which consists of n halls connected with n - 1 corridors. It is exactly one way to go from any hall to any other one. Thus, the graph is a tree. Initially, at the moment of time 0, Gerald is positioned in hall 1. Besides, some other hall of the castle contains the treasure Gerald is looking for. The treasure's position is not known; it can equiprobably be in any of other n - 1 halls. Gerald can only find out where the treasure is when he enters the hall with the treasure. That very moment Gerald sees the treasure and the moment is regarded is the moment of achieving his goal.",
+      "The corridors have different lengths. At that, the corridors are considered long and the halls are considered small and well lit. Thus, it is possible not to take the time Gerald spends in the halls into consideration. The castle is very old, that's why a corridor collapses at the moment when somebody visits it two times, no matter in which direction.",
+      "Gerald can move around the castle using the corridors; he will go until he finds the treasure. Naturally, Gerald wants to find it as quickly as possible. In other words, he wants to act in a manner that would make the average time of finding the treasure as small as possible. Each corridor can be used no more than two times. That's why Gerald chooses the strategy in such a way, so he can visit every hall for sure.",
+      "More formally, if the treasure is located in the second hall, then Gerald will find it the moment he enters the second hall for the first time — let it be moment t2. If the treasure is in the third hall, then Gerald will find it the moment he enters the third hall for the first time. Let it be the moment of time t3. And so on. Thus, the average time of finding the treasure will be equal to ![](https://espresso.codeforces.com/f1ecbc2e03c53bfe7e69af6066c9787f30e54638.png)."
+    ],
+    "input": [
+      "The first line contains the only integer n (2 ≤ n ≤ 105) — the number of halls in the castle. Next n - 1 lines each contain three integers. The i-th line contains numbers ai, bi and ti (1 ≤ ai, bi ≤ n, ai ≠ bi, 1 ≤ ti ≤ 1000) — the numbers of halls connected with the i-th corridor and the time needed to go along the corridor. Initially Gerald is in the hall number 1. It is guaranteed that one can get from any hall to any other one using corridors."
+    ],
+    "output": [
+      "Print the only real number: the sought expectation of time needed to find the treasure. The answer should differ from the right one in no less than 10 - 6."
+    ],
+    "note": [
+      "In the first test the castle only has two halls which means that the treasure is located in the second hall. Gerald will only need one minute to go to the second hall from the first one.",
+      "In the second test Gerald can only go from the first hall to the third one. He can get from the third room to the first one or to the second one, but he has already visited the first hall and can get nowhere from there. Thus, he needs to go to the second hall. He should go to hall 4 from there, because all other halls have already been visited. If the treasure is located in the third hall, Gerald will find it in a minute, if the treasure is located in the second hall, Gerald finds it in two minutes, if the treasure is in the fourth hall, Gerald will find it in three minutes. The average time makes 2 minutes.",
+      "In the third test Gerald needs to visit 4 halls: the second, third, fourth and fifth ones. All of them are only reachable from the first hall. Thus, he needs to go to those 4 halls one by one and return. Gerald will enter the first of those halls in a minute, in the second one — in three minutes, in the third one - in 5 minutes, in the fourth one - in 7 minutes. The average time is 4 minutes."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 2 1",
+      "output": "1.0"
+    },
+    {
+      "input": "4\n1 3 2\n4 2 1\n3 2 3",
+      "output": "4.333333333333334"
+    },
+    {
+      "input": "5\n1 2 1\n1 3 1\n1 4 1\n1 5 1",
+      "output": "4.0"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "在第一个测试中，城堡只有两个大厅，这意味着宝藏位于第二个大厅。Gerald 从第一个大厅前往第二个大厅只需一分钟。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试中，Gerald 只能从第一个大厅前往第三个大厅。他可以从第三个大厅前往第一个或第二个大厅，但第一个大厅他已经访问过了，而且从那里无处可去。因此，他需要前往第二个大厅。接着他应该从那里前往4号大厅，因为其他所有大厅都已经访问过了。如果宝藏位于第三个大厅，Gerald 将在一分钟内找到它；如果宝藏位于第二个大厅，Gerald 将在两分钟内找到它；如果宝藏位于第四个大厅，Gerald 将在三分钟内找到它。平均时间为2分钟。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试中，Gerald 需要访问4个大厅：第二、第三、第四和第五个大厅。它们都只能从第一个大厅到达。因此，他需要依次前往这4个大厅并返回。Gerald 将在一分钟后进入第一个大厅，三分钟后进入第二个大厅，5分钟后进入第三个大厅，7分钟后进入第四个大厅。平均时间为4分钟。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Gerald 身处一座古老的城堡中，城堡由 n 个大厅和连接它们的 n−1 条走廊组成。从任意一个大厅到任意另一个大厅都恰好只有一条路径。因此，这个图是一棵树。初始时刻为 0，Gerald 位于 1 号大厅。此外，城堡中的某个其他大厅里藏有 Gerald 正在寻找的宝藏。宝藏的位置未知，它等概率地位于其余 n−1 个大厅中的任意一个。只有当 Gerald 进入藏有宝藏的大厅时，他才能得知宝藏的位置。在那一刻，Gerald 会看到宝藏，这一时刻被视为他达成目标的时刻。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "不同走廊的长度也不同。走廊被认为很长，而大厅很小且光线充足。因此，可以忽略 Gerald 在大厅中所花费的时间。城堡非常古老，所以一条走廊在有人经过它两次的瞬间就会坍塌，无论经过时的方向如何。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Gerald 可以通过走廊在城堡中移动，直到找到宝藏为止。显然，Gerald 希望尽可能快地找到宝藏。换句话说，他希望采取一种策略，使找到宝藏的平均时间尽可能小。每条走廊最多只能被使用两次。因此，Gerald 选择策略时必须保证能够访问每个大厅。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更形式化地说，如果宝藏位于 2 号大厅，那么 Gerald 第一次进入 2 号大厅时就会找到宝藏，记这一时刻为 t2。如果宝藏位于 3 号大厅，那么 Gerald 第一次进入 3 号大厅时就会找到宝藏，记这一时刻为 t3。以此类推。因此，找到宝藏的平均时间等于 ![](https://espresso.codeforces.com/f1ecbc2e03c53bfe7e69af6066c9787f30e54638.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（2 ≤ n ≤ 105）——城堡中大厅的数量。接下来 n−1 行，每行包含三个整数。第 i 行包含 ai、bi 和 ti（1 ≤ ai，bi ≤ n，ai ≠ bi，1 ≤ ti ≤ 1000）——第 i 条走廊所连接的两个大厅的编号，以及沿该走廊通行所需的时间。初始时 Gerald 位于 1 号大厅。保证可以通过走廊从任意一个大厅到达任意另一个大厅。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个实数，即找到宝藏所需时间的期望值。答案与正确答案的误差不应超过 10 - 6。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 城堡",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "code": "CF832D",
+  "letter": "D",
+  "title": "D. Misha, Grisha and Underground",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/832/D",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Misha and Grisha are funny boys, so they like to use new underground. The underground has n stations connected with n - 1 routes so that each route connects two stations, and it is possible to reach every station from any other.",
+      "The boys decided to have fun and came up with a plan. Namely, in some day in the morning Misha will ride the underground from station s to station f by the shortest path, and will draw with aerosol an ugly text \"Misha was here\" on every station he will pass through (including s and f). After that on the same day at evening Grisha will ride from station t to station f by the shortest path and will count stations with Misha's text. After that at night the underground workers will wash the texts out, because the underground should be clean.",
+      "The boys have already chosen three stations a, b and c for each of several following days, one of them should be station s on that day, another should be station f, and the remaining should be station t. They became interested how they should choose these stations s, f, t so that the number Grisha will count is as large as possible. They asked you for help."
+    ],
+    "input": [
+      "The first line contains two integers n and q (2 ≤ n ≤ 105, 1 ≤ q ≤ 105) — the number of stations and the number of days.",
+      "The second line contains n - 1 integers p2, p3, ..., pn (1 ≤ pi ≤ n). The integer pi means that there is a route between stations pi and i. It is guaranteed that it's possible to reach every station from any other.",
+      "The next q lines contains three integers a, b and c each (1 ≤ a, b, c ≤ n) — the ids of stations chosen by boys for some day. Note that some of these ids could be same."
+    ],
+    "output": [
+      "Print q lines. In the i-th of these lines print the maximum possible number Grisha can get counting when the stations s, t and f are chosen optimally from the three stations on the i-th day."
+    ],
+    "note": [
+      "In the first example on the first day if s = 1, f = 2, t = 3, Misha would go on the route 1 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 2, and Grisha would go on the route 3 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 1 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 2. He would see the text at the stations 1 and 2. On the second day, if s = 3, f = 2, t = 3, both boys would go on the route 3 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 1 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 2. Grisha would see the text at 3 stations.",
+      "In the second examle if s = 1, f = 3, t = 2, Misha would go on the route 1 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 2 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 3, and Grisha would go on the route 2 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 3 and would see the text at both stations."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 2\n1 1\n1 2 3\n2 3 3",
+      "output": "2\n3"
+    },
+    {
+      "input": "4 1\n1 2 3\n1 2 3",
+      "output": "2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Misha 和 Grisha 是两个有趣的男孩，所以他们喜欢乘坐新地铁。地铁有 n 个车站，由 n - 1 条线路连接，使得每条线路连接两个车站，并且可以从任意一个车站到达其他任意车站。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "男孩们决定找点乐子，并制定了一个计划。具体来说，在某天早上，Misha 将沿最短路径乘坐地铁从车站 s 前往车站 f，并在他经过的每个车站（包括 s 和 f）上用喷漆喷涂难看的文字“Misha was here”。当天晚上，Grisha 将沿最短路径从车站 t 前往车站 f，并数出带有 Misha 所写文字的车站数量。之后到了晚上，地铁工作人员会将这些文字清洗掉，因为地铁应该保持干净。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于接下来的若干天，男孩们已经为每一天选择了三个车站 a、b 和 c，其中一个应作为当天的车站 s，另一个应作为车站 f，剩下的一个应作为车站 t。他们想知道应如何选择这些车站 s、f、t，使得 Grisha 数出的车站数量尽可能多。他们向你寻求帮助。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 q（2 ≤ n ≤ 105，1 ≤ q ≤ 105），分别表示车站数量和天数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n - 1 个整数 p2、p3、...、pn（1 ≤ pi ≤ n）。整数 pi 表示车站 pi 和 i 之间有一条线路。保证可以从任意一个车站到达其他任意车站。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q 行中每行包含三个整数 a、b 和 c（1 ≤ a，b，c ≤ n），表示男孩们在某一天选择的车站编号。注意，其中一些编号可能相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 q 行。在第 i 行中，输出从第 i 天的三个车站中最优选择车站 s、t 和 f 时，Grisha 能获得的最大可能数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例的第一天，如果 s = 1、f = 2、t = 3，Misha 会走 1 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 2 这条路线，而 Grisha 会走 3 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 1 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 2 这条路线。他会看到车站 1 和 2 处的文字。第二天，如果 s = 3、f = 2、t = 3，两个男孩都会走 3 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 1 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 2 这条路线。Grisha 会看到 3 个车站处的文字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，如果 s = 1、f = 3、t = 2，Misha 会走 1 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 2 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 3 这条路线，而 Grisha 会走 2 ![](https://espresso.codeforces.com/70a0795f45d32287dba0eb83fc4a3f470c6e5537.png) 3 这条路线，并且会看到两个车站处的文字。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Misha、Grisha 和地铁",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "code": "CF367C",
+  "letter": "C",
+  "title": "C. Sereja and the Arrangement of Numbers",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/367/C",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let's call an array consisting of n integer numbers a1, a2, ..., an, beautiful if it has the following property:",
+      "consider all pairs of numbers x, y (x ≠ y), such that number x occurs in the array a and number y occurs in the array a;",
+      "for each pair x, y must exist some position j (1 ≤ j < n), such that at least one of the two conditions are met, either aj = x, aj + 1 = y, or aj = y, aj + 1 = x.",
+      "Sereja wants to build a beautiful array a, consisting of n integers. But not everything is so easy, Sereja's friend Dima has m coupons, each contains two integers qi, wi. Coupon i costs wi and allows you to use as many numbers qi as you want when constructing the array a. Values qi are distinct. Sereja has no coupons, so Dima and Sereja have made the following deal. Dima builds some beautiful array a of n elements. After that he takes wi rubles from Sereja for each qi, which occurs in the array a. Sereja believed his friend and agreed to the contract, and now he is wondering, what is the maximum amount of money he can pay.",
+      "Help Sereja, find the maximum amount of money he can pay to Dima."
+    ],
+    "input": [
+      "The first line contains two integers n and m (1 ≤ n ≤ 2·106, 1 ≤ m ≤ 105). Next m lines contain pairs of integers. The i-th line contains numbers qi, wi (1 ≤ qi, wi ≤ 105).",
+      "It is guaranteed that all qi are distinct."
+    ],
+    "output": [
+      "In a single line print maximum amount of money (in rubles) Sereja can pay.",
+      "Please, do not use the %lld specifier to read or write 64-bit integers in С++. It is preferred to use the cin, cout streams or the %I64d specifier."
+    ],
+    "note": [
+      "In the first sample Sereja can pay 5 rubles, for example, if Dima constructs the following array: [1, 2, 1, 2, 2]. There are another optimal arrays for this test.",
+      "In the third sample Sereja can pay 100 rubles, if Dima constructs the following array: [2]."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 2\n1 2\n2 3",
+      "output": "5"
+    },
+    {
+      "input": "100 3\n1 2\n2 1\n3 1",
+      "output": "4"
+    },
+    {
+      "input": "1 2\n1 1\n2 100",
+      "output": "100"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "如果一个由 n 个整数 a1、a2、...、an 组成的数组具有以下性质，我们就称它是美丽的：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑所有满足 x ≠ y 的数对 x、y，其中数字 x 在数组 a 中出现，数字 y 也在数组 a 中出现；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每一对 x、y，都必须存在某个位置 j（1 ≤ j < n），使得以下两个条件中至少有一个成立：aj = x 且 aj + 1 = y，或者 aj = y 且 aj + 1 = x。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Sereja 想要构造一个由 n 个整数组成的美丽数组 a。但事情并没有那么简单，Sereja 的朋友 Dima 有 m 张优惠券，每张优惠券上写有两个整数 qi、wi。第 i 张优惠券的费用为 wi，并允许你在构造数组 a 时使用任意多个数字 qi。qi 的值互不相同。Sereja 没有优惠券，因此 Dima 和 Sereja 达成了如下协议：Dima 构造一个包含 n 个元素的美丽数组 a。之后，对于数组 a 中出现的每个 qi，他都向 Sereja 收取 wi 卢布。Sereja 相信了他的朋友并同意了这份合同，现在他想知道自己最多需要支付多少钱。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "帮助 Sereja，求出他能够支付给 Dima 的最大金额。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 m（1 ≤ n ≤ 2·106，1 ≤ m ≤ 105）。接下来的 m 行包含整数对。第 i 行包含数字 qi、wi（1 ≤ qi、wi ≤ 105）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有 qi 互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在一行中输出 Sereja 能够支付的最大金额（以卢布为单位）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请不要在 C++ 中使用 %lld 格式说明符来读写 64 位整数。建议使用 cin、cout 流或 %I64d 格式说明符。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，例如当 Dima 构造出如下数组时，Sereja 可以支付 5 卢布：[1, 2, 1, 2, 2]。对于该测试用例，还存在其他最优数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，如果 Dima 构造出如下数组：[2]，那么 Sereja 可以支付 100 卢布。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. Sereja 与数字排列",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

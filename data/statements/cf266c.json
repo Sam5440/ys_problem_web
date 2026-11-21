@@ -1,0 +1,89 @@
+{
+  "code": "CF266C",
+  "letter": "C",
+  "title": "C. Below the Diagonal",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/266/C",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a square matrix consisting of n rows and n columns. We assume that the rows are numbered from 1 to n from top to bottom and the columns are numbered from 1 to n from left to right. Some cells (n - 1 cells in total) of the the matrix are filled with ones, the remaining cells are filled with zeros. We can apply the following operations to the matrix:",
+      "Swap i-th and j-th rows of the matrix;",
+      "Swap i-th and j-th columns of the matrix.",
+      "You are asked to transform the matrix into a special form using these operations. In that special form all the ones must be in the cells that lie below the main diagonal. Cell of the matrix, which is located on the intersection of the i-th row and of the j-th column, lies below the main diagonal if i > j."
+    ],
+    "input": [
+      "The first line contains an integer n (2 ≤ n ≤ 1000) — the number of rows and columns. Then follow n - 1 lines that contain one's positions, one per line. Each position is described by two integers xk, yk (1 ≤ xk, yk ≤ n), separated by a space. A pair (xk, yk) means that the cell, which is located on the intersection of the xk-th row and of the yk-th column, contains one.",
+      "It is guaranteed that all positions are distinct."
+    ],
+    "output": [
+      "Print the description of your actions. These actions should transform the matrix to the described special form.",
+      "In the first line you should print a non-negative integer m (m ≤ 105) — the number of actions. In each of the next m lines print three space-separated integers t, i, j (1 ≤ t ≤ 2, 1 ≤ i, j ≤ n, i ≠ j), where t = 1 if you want to swap rows, t = 2 if you want to swap columns, and i and j denote the numbers of rows or columns respectively.",
+      "Please note, that you do not need to minimize the number of operations, but their number should not exceed 105. If there are several solutions, you may print any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 2",
+      "output": "2\n2 1 2\n1 1 2"
+    },
+    {
+      "input": "3\n3 1\n1 3",
+      "output": "3\n2 2 3\n1 1 3\n1 1 2"
+    },
+    {
+      "input": "3\n2 1\n3 2",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个由 n 行 n 列组成的方阵。假设行从上到下编号为 1 到 n，列从左到右编号为 1 到 n。矩阵中的一些单元格（总共 n - 1 个）被填入 1，其余单元格被填入 0。我们可以对矩阵执行以下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交换矩阵的第 i 行和第 j 行；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交换矩阵的第 i 列和第 j 列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要求使用这些操作将矩阵变换为一种特殊形式。在该特殊形式中，所有 1 都必须位于主对角线下方的单元格中。如果矩阵中位于第 i 行与第 j 列交点的单元格满足 i > j，则称其位于主对角线下方。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（2 ≤ n ≤ 1000）——行数和列数。接下来是 n - 1 行，每行包含一个 1 的位置。每个位置由两个整数 xk、yk（1 ≤ xk、yk ≤ n）描述，二者之间以空格分隔。一对（xk、yk）表示位于第 xk 行与第 yk 列交点的单元格中包含 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有位置互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出你的操作描述。这些操作应将矩阵变换为所描述的特殊形式。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行应输出一个非负整数 m（m ≤ 10^5），表示操作的数量。在接下来的 m 行中，每行输出三个由空格分隔的整数 t、i、j（1 ≤ t ≤ 2，1 ≤ i、j ≤ n，i ≠ j），其中 t = 1 表示你希望交换行，t = 2 表示你希望交换列，而 i 和 j 分别表示相应行或列的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请注意，你不需要最小化操作次数，但操作次数不能超过 10^5。如果有多个解，可以输出任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 对角线下方",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

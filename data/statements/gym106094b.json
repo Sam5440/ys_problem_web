@@ -1,0 +1,116 @@
+{
+  "code": "GYM106094B",
+  "letter": "B",
+  "title": "B. Elkataeb Eltabseemeah",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106094/problem/B",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "After learning the basics of matrices, Derar wants to learn the newest matrix algorithm \"Matrix Bel Lotus.\"",
+      "Ahmad, its author, gave Derar n$$$n$$$ videos. Video i$$$i$$$ is di$$$d_i$$$ minutes long.",
+      "Derar has T$$$T$$$ minutes before the contest, and he has to watch all the videos. He can't skip a video, but he can watch video i$$$i$$$ with any of the following speeds:",
+      "X1$$$1$$$ speed: he will need di$$$d_i$$$ minutes and will get 100$$$100$$$ skill points.",
+      "X1.5$$$1.5$$$ speed: he will need di1.5$$$\\frac{d_i}{1.5}$$$ minutes and will get 75$$$75$$$ skill points.",
+      "X2$$$2$$$ speed: he will need di2$$$\\frac{d_i}{2}$$$ minutes and will get 50$$$50$$$ skill points.",
+      "It is guaranteed that di$$$d_i$$$ is a multiple of 6$$$6$$$. So it can be proven that all the values in the problem are integers. And it is guaranteed that Derar can watch all the videos if he plays them at speed X2$$$2$$$.",
+      "You have to help Derar choose the speed of each video so he can watch all the videos in at most T$$$T$$$ minutes and maximize the total sum of skill points."
+    ],
+    "input": [
+      "The first line contains a single integer tc(1≤tc≤100)$$$tc \\: (1 \\leq tc \\leq 100)$$$ — the number of testcases.",
+      "The first line of each testcase consists of two integers n,T(1≤n≤2⋅105)(1≤T≤1010)$$$n , T \\: (1 \\leq n \\leq 2 \\cdot 10^5) (1 \\leq T \\leq 10^{10})$$$ — the number of videos and the number of minutes Derar has before the contest.",
+      "The second line of each testcase consists of n$$$n$$$ integers di(1≤di≤1010)$$$d_i \\: (1 \\leq d_i \\leq 10^{10}) $$$ — the duration of each video. It is guaranteed that di$$$d_i$$$ is a multiple of 6$$$6$$$.",
+      "It is guaranteed that the sum of n$$$n$$$ over all testcases doesn't exceed 2⋅105$$$2 \\cdot 10^5$$$ , and Derar can watch all the videos if he plays them at speed X2$$$2$$$."
+    ],
+    "output": [
+      "The output of each testcase consists of two lines:",
+      "On the first line, print the maximum sum of skill points Derar can achieve.",
+      "On the second line, print n$$$n$$$ values, the speed he will watch each video with. The values should be 1,1.5$$$1 , 1.5$$$ or 2$$$2$$$.",
+      "If there are multiple solutions, print any."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3 18\n6 6 6\n3 84\n36 24 60",
+      "output": "300\n1 1 1 \n225\n1.5 1 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在学习矩阵的基础知识后，Derar 想学习最新的矩阵算法 \"Matrix Bel Lotus\"。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "其作者 Ahmad 给了 Derar n$$$n$$$ 个视频。视频 i$$$i$$$ 的时长为 di$$$d_i$$$ 分钟。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Derar 在比赛前有 T$$$T$$$ 分钟，他必须看完所有视频。他不能跳过某个视频，但可以以以下任意速度观看视频 i$$$i$$$：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "X1$$$1$$$ 速度：他需要 di$$$d_i$$$ 分钟，并将获得 100$$$100$$$ 点技能点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "X1.5$$$1.5$$$ 速度：他需要 di1.5$$$\\frac{d_i}{1.5}$$$ 分钟，并将获得 75$$$75$$$ 点技能点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "X2$$$2$$$ 速度：他需要 di2$$$\\frac{d_i}{2}$$$ 分钟，并将获得 50$$$50$$$ 点技能点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证 di$$$d_i$$$ 是 6$$$6$$$ 的倍数。因此可以证明，题目中的所有数值都是整数。并且保证如果 Derar 以 X2$$$2$$$ 的速度播放视频，他可以观看完所有视频。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要帮助 Derar 选择每个视频的播放速度，使他能在不超过 T$$$T$$$ 分钟内观看完所有视频，并最大化技能点总和。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 tc(1≤tc≤100)$$$tc \\: (1 \\leq tc \\leq 100)$$$ —— 测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个整数 n,T(1≤n≤2⋅105)(1≤T≤1010)$$$n , T \\: (1 \\leq n \\leq 2 \\cdot 10^5) (1 \\leq T \\leq 10^{10})$$$，分别表示视频的数量以及 Derar 在比赛前拥有的分钟数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含 n$$$n$$$ 个整数 di(1≤di≤1010)$$$d_i \\: (1 \\leq d_i \\leq 10^{10}) $$$，分别表示每个视频的时长。保证 di$$$d_i$$$ 是 6$$$6$$$ 的倍数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$，并且 Derar 以 X2$$$2$$$ 的速度播放时可以看完所有视频。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "每个测试用例的输出包含两行：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行输出 Derar 能获得的技能点数总和的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行输出 n$$$n$$$ 个值，表示他观看每个视频时所采用的速度。这些值应为 1、1.5$$$1 , 1.5$$$ 或 2$$$2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果有多个解，输出任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Elkataeb Eltabseemeah",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "code": "GYM106495K",
+  "letter": "K",
+  "title": "K. Kernel of the Disks",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106495/problem/K",
+  "difficulty": "*2200",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a point P$$$P$$$ and n$$$n$$$ closed disks on the plane.",
+      "Disk i$$$i$$$ is centered at (xi,yi)$$$(x_i, y_i)$$$ and has radius ri$$$r_i$$$. It contains all points (x,y)$$$(x, y)$$$ such that (x−xi)2+(y−yi)2≤r2i.\n$$ (x - x_i)^2 + (y - y_i)^2 \\le r_i^2. $$",
+      "It is guaranteed that the intersection of all n$$$n$$$ disks is non-empty.",
+      "Find the minimum possible Euclidean distance from P$$$P$$$ to a point that belongs to all disks."
+    ],
+    "input": [
+      "The first line contains one integer n$$$n$$$ (1≤n≤500$$$1 \\le n \\le 500$$$).",
+      "The second line contains two integers px$$$p_x$$$ and py$$$p_y$$$ (−1′000′000≤px,py≤1′000′000$$$-1'000'000 \\le p_x, p_y \\le 1'000'000$$$), the coordinates of P$$$P$$$.",
+      "Each of the next n$$$n$$$ lines contains three integers xi$$$x_i$$$, yi$$$y_i$$$, ri$$$r_i$$$ (−1′000′000≤xi,yi≤1′000′000$$$-1'000'000 \\le x_i, y_i \\le 1'000'000$$$, 1≤ri≤1′000′000$$$1 \\le r_i \\le 1'000'000$$$)."
+    ],
+    "output": [
+      "Print one real number: the minimum distance from P$$$P$$$ to the intersection of all disks.",
+      "Your answer will be considered correct if its absolute or relative error does not exceed 10−6$$$10^{-6}$$$."
+    ],
+    "note": [
+      "The first two disks intersect in a lens whose boundary passes through (0,0)$$$(0, 0)$$$ and (1,1)$$$(1, 1)$$$. The third disk contains that whole lens.",
+      "The closest point in the common intersection to P=(−3,−4)$$$P = (-3, -4)$$$ is (0,0)$$$(0, 0)$$$, so the answer is 5$$$5$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n-3 -4\n1 0 1\n0 1 1\n0 0 10",
+      "output": "5.000000000000000"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定平面上的一个点 P$$$P$$$ 和 n$$$n$$$ 个闭圆盘。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "圆盘 i$$$i$$$ 的圆心为 (xi,yi)$$$(x_i, y_i)$$$，半径为 ri$$$r_i$$$。它包含所有满足 (x−xi)2+(y−yi)2≤r2i 的点 (x,y)$$$(x, y)$$$。$$ (x - x_i)^2 + (y - y_i)^2 \\le r_i^2. $$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有 n$$$n$$$ 个圆盘的交集非空。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "求点 P$$$P$$$ 到属于所有圆盘的某个点的可能的最小欧几里得距离。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤500$$$1 \\le n \\le 500$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含两个整数 px$$$p_x$$$ 和 py$$$p_y$$$(−1′000′000≤px,py≤1′000′000$$$-1'000'000 \\le p_x, p_y \\le 1'000'000$$$)，表示点 P$$$P$$$ 的坐标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行中，每行包含三个整数 xi$$$x_i$$$、yi$$$y_i$$$、ri$$$r_i$$$(−1′000′000≤xi,yi≤1′000′000$$$-1'000'000 \\le x_i, y_i \\le 1'000'000$$$，1≤ri≤1′000′000$$$1 \\le r_i \\le 1'000'000$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个实数：点 P$$$P$$$ 到所有圆盘交集的最小距离。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你的答案的绝对误差或相对误差不超过 10−6$$$10^{-6}$$$，则会被认为是正确的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "前两个圆盘相交形成一个透镜形区域，其边界经过 (0,0)$$$(0, 0)$$$ 和 (1,1)$$$(1, 1)$$$。第三个圆盘包含整个透镜形区域。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "公共交集中距离 P=(−3,−4)$$$P = (-3, -4)$$$ 最近的点是 (0,0)$$$(0, 0)$$$，因此答案为 5$$$5$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "K. 圆盘的核",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

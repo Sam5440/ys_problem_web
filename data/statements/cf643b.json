@@ -1,0 +1,109 @@
+{
+  "code": "CF643B",
+  "letter": "B",
+  "title": "B. Bear and Two Paths",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/643/B",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Bearland has n cities, numbered 1 through n. Cities are connected via bidirectional roads. Each road connects two distinct cities. No two roads connect the same pair of cities.",
+      "Bear Limak was once in a city a and he wanted to go to a city b. There was no direct connection so he decided to take a long walk, visiting each city exactly once. Formally:",
+      "There is no road between a and b.",
+      "There exists a sequence (path) of n distinct cities v1, v2, ..., vn that v1 = a, vn = b and there is a road between vi and vi + 1 for ![](https://espresso.codeforces.com/23e5d4ea4f6228395f4a124f9060fbe08e8efbfc.png).",
+      "On the other day, the similar thing happened. Limak wanted to travel between a city c and a city d. There is no road between them but there exists a sequence of n distinct cities u1, u2, ..., un that u1 = c, un = d and there is a road between ui and ui + 1 for ![](https://espresso.codeforces.com/23e5d4ea4f6228395f4a124f9060fbe08e8efbfc.png).",
+      "Also, Limak thinks that there are at most k roads in Bearland. He wonders whether he remembers everything correctly.",
+      "Given n, k and four distinct cities a, b, c, d, can you find possible paths (v1, ..., vn) and (u1, ..., un) to satisfy all the given conditions? Find any solution or print -1 if it's impossible."
+    ],
+    "input": [
+      "The first line of the input contains two integers n and k (4 ≤ n ≤ 1000, n - 1 ≤ k ≤ 2n - 2) — the number of cities and the maximum allowed number of roads, respectively.",
+      "The second line contains four distinct integers a, b, c and d (1 ≤ a, b, c, d ≤ n)."
+    ],
+    "output": [
+      "Print -1 if it's impossible to satisfy all the given conditions. Otherwise, print two lines with paths descriptions. The first of these two lines should contain n distinct integers v1, v2, ..., vn where v1 = a and vn = b. The second line should contain n distinct integers u1, u2, ..., un where u1 = c and un = d.",
+      "Two paths generate at most 2n - 2 roads: (v1, v2), (v2, v3), ..., (vn - 1, vn), (u1, u2), (u2, u3), ..., (un - 1, un). Your answer will be considered wrong if contains more than k distinct roads or any other condition breaks. Note that (x, y) and (y, x) are the same road."
+    ],
+    "note": [
+      "In the first sample test, there should be 7 cities and at most 11 roads. The provided sample solution generates 10 roads, as in the drawing. You can also see a simple path of length n between 2 and 4, and a path between 7 and 3.",
+      "![](https://espresso.codeforces.com/58dec3e8514751ba57473ff99eae98f6a4c57658.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "7 11\n2 4 7 3",
+      "output": "2 7 1 3 6 5 4\n7 1 5 4 6 2 3"
+    },
+    {
+      "input": "1000 999\n10 20 30 40",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Bearland 有 n 座城市，编号从 1 到 n。城市之间通过双向道路相连。每条道路连接两个不同的城市。任意一对城市之间至多有一条道路。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bear Limak 曾经在城市 a 中，他想前往城市 b。由于两者之间没有直接连接，他决定进行一次长途步行，恰好访问每座城市一次。形式化地说：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "a 与 b 之间没有道路。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "存在一个由 n 个互不相同的城市组成的序列(路径)v1, v2, ..., vn，满足 v1 = a，vn = b，并且对于 ![](https://espresso.codeforces.com/23e5d4ea4f6228395f4a124f9060fbe08e8efbfc.png)，vi 与 vi+1 之间有一条道路。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "几天前，也发生过类似的事。Limak 想在 c 城和 d 城之间旅行。这两座城市之间没有道路，但存在一个由 n 个互不相同的城市组成的序列 u1, u2, ..., un，满足 u1 = c，un = d，并且对于 ![](https://espresso.codeforces.com/23e5d4ea4f6228395f4a124f9060fbe08e8efbfc.png)，ui 与 ui+1 之间有一条道路。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "此外，Limak 认为 Bearland 中最多有 k 条道路。他想知道自己是否把一切都记对了。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "给定 n、k 以及四个互不相同的城市 a、b、c、d，你能找到满足上述所有条件的路径 (v1, ..., vn) 和 (u1, ..., un) 吗？请输出任意一组解；如果无解则输出 -1。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 k（4 ≤ n ≤ 1000，n - 1 ≤ k ≤ 2n - 2），分别表示城市的数量和允许的最大道路数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第二行包含四个互不相同的整数 a、b、c 和 d（1 ≤ a, b, c, d ≤ n）。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果无法满足所有给定条件，则输出 -1。否则，输出两行路径描述。这两行中的第一行应包含 n 个互不相同的整数 v1, v2, ..., vn，其中 v1 = a，vn = b。第二行应包含 n 个互不相同的整数 u1, u2, ..., un，其中 u1 = c，un = d。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "两条路径最多产生 2n - 2 条道路：(v1, v2), (v2, v3), ..., (vn - 1, vn), (u1, u2), (u2, u3), ..., (un - 1, un)。如果包含超过 k 条不同的道路或任何其他条件被违反，你的答案将被视为错误。注意 (x, y) 和 (y, x) 是同一条道路。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例测试中，应有 7 座城市和至多 11 条道路。给出的样例解法生成了 10 条道路，如图所示。你还可以看到 2 和 4 之间一条长度为 n 的简单路径，以及 7 和 3 之间的一条路径。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/58dec3e8514751ba57473ff99eae98f6a4c57658.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 熊与两条路径",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

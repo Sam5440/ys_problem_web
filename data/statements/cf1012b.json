@@ -1,0 +1,153 @@
+{
+  "code": "CF1012B",
+  "letter": "B",
+  "title": "B. Chemical table",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1012/B",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Innopolis University scientists continue to investigate the periodic table. There are n·m known elements and they form a periodic table: a rectangle with n rows and m columns. Each element can be described by its coordinates (r, c) (1 ≤ r ≤ n, 1 ≤ c ≤ m) in the table.",
+      "Recently scientists discovered that for every four different elements in this table that form a rectangle with sides parallel to the sides of the table, if they have samples of three of the four elements, they can produce a sample of the fourth element using nuclear fusion. So if we have elements in positions (r1, c1), (r1, c2), (r2, c1), where r1 ≠ r2 and c1 ≠ c2, then we can produce element (r2, c2).",
+      "![](https://espresso.codeforces.com/2aad7759be953a55c88f692b50d56d7eeaf2b106.png)",
+      "Samples used in fusion are not wasted and can be used again in future fusions. Newly crafted elements also can be used in future fusions.",
+      "Innopolis University scientists already have samples of q elements. They want to obtain samples of all n·m elements. To achieve that, they will purchase some samples from other laboratories and then produce all remaining elements using an arbitrary number of nuclear fusions in some order. Help them to find the minimal number of elements they need to purchase."
+    ],
+    "input": [
+      "The first line contains three integers n, m, q (1 ≤ n, m ≤ 200 000; 0 ≤ q ≤ min(n·m, 200 000)), the chemical table dimensions and the number of elements scientists already have.",
+      "The following q lines contain two integers ri, ci (1 ≤ ri ≤ n, 1 ≤ ci ≤ m), each describes an element that scientists already have. All elements in the input are different."
+    ],
+    "output": [
+      "Print the minimal number of elements to be purchased."
+    ],
+    "note": [
+      "For each example you have a picture which illustrates it.",
+      "The first picture for each example describes the initial set of element samples available. Black crosses represent elements available in the lab initially.",
+      "The second picture describes how remaining samples can be obtained. Red dashed circles denote elements that should be purchased from other labs (the optimal solution should minimize the number of red circles). Blue dashed circles are elements that can be produced with nuclear fusion. They are numbered in order in which they can be produced.",
+      "Test 1",
+      "We can use nuclear fusion and get the element from three other samples, so we don't need to purchase anything.",
+      "![](https://espresso.codeforces.com/c8701a0ca816e4bb28875e067ada59e6076373c7.png)",
+      "Test 2",
+      "We cannot use any nuclear fusion at all as there is only one row, so we have to purchase all missing elements.",
+      "![](https://espresso.codeforces.com/73d199cd86524d99bd88645930f0a1950eeafcd7.png)",
+      "Test 3",
+      "There are several possible solutions. One of them is illustrated below.",
+      "Note that after purchasing one element marked as red it's still not possible to immidiately produce the middle element in the bottom row (marked as 4). So we produce the element in the left-top corner first (marked as 1), and then use it in future fusions.",
+      "![](https://espresso.codeforces.com/8ac8b349fe9055dacd4232180d8e40af55547770.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 2 3\n1 2\n2 2\n2 1",
+      "output": "0"
+    },
+    {
+      "input": "1 5 3\n1 3\n1 1\n1 5",
+      "output": "2"
+    },
+    {
+      "input": "4 3 6\n1 2\n1 3\n2 2\n2 3\n3 1\n3 3",
+      "output": "1"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "每个样例都有一幅图对其进行说明。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个样例的第一幅图描述了最初可用的元素样本集合。黑色叉号表示实验室最初拥有的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二幅图描述了如何获得剩余的样本。红色虚线圆表示需要从其他实验室购买的元素（最优方案应使红色圆的数量最少）。蓝色虚线圆表示可以通过核聚变产生的元素，其编号表示它们产生的顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试 1",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们可以使用核聚变，并从另外三个样本中获取该元素，因此不需要购买任何东西。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/c8701a0ca816e4bb28875e067ada59e6076373c7.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试 2",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于只有一行，我们完全不能使用任何核聚变，因此必须购买所有缺失的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/73d199cd86524d99bd88645930f0a1950eeafcd7.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试 3",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有几种可能的解法，下面展示其中一种。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，购买一个标记为红色的元素后，仍然无法立即生成底行中间的元素（标记为 4）。因此，我们先生成左上角的元素（标记为 1），然后在后续的合成中使用它。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/8ac8b349fe9055dacd4232180d8e40af55547770.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n、m、q（1 ≤ n，m ≤ 200 000；0 ≤ q ≤ min(n·m，200 000)），分别表示化学表格的尺寸以及科学家已经拥有的元素数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q 行每行包含两个整数 r_i、c_i（1 ≤ r_i ≤ n，1 ≤ c_i ≤ m），每行描述一个科学家已经拥有的元素。输入中的所有元素互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出需要购买的元素数量的最小值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Innopolis 大学的科学家们继续研究元素周期表。已知有 n·m 种元素，它们组成一个元素周期表：一个具有 n 行 m 列的矩形。每种元素都可以用它在表中的坐标 (r, c)（1 ≤ r ≤ n，1 ≤ c ≤ m）表示。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最近，科学家们发现，对于表中任意四种不同的元素，如果它们组成一个边与表的边平行的矩形，那么只要拥有其中三种元素的样品，就可以通过核聚变制造出第四种元素的样品。因此，如果我们拥有位置 (r1, c1)、(r1, c2)、(r2, c1) 处的元素，其中 r1 ≠ r2 且 c1 ≠ c2，那么我们就可以制造出元素 (r2, c2)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/2aad7759be953a55c88f692b50d56d7eeaf2b106.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "核聚变中使用的样品不会被消耗，之后仍可在其他核聚变中使用。新制造出的元素也可以用于之后的核聚变。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Innopolis 大学的科学家们已经拥有 q 种元素的样品。他们希望获得全部 n·m 种元素的样品。为此，他们将从其他实验室购买一些样品，然后按照某种顺序进行任意次数的核聚变，以制造出所有剩余的元素。请帮助他们求出需要购买的元素样品的最少数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 化学表",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

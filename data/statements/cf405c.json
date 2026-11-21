@@ -1,0 +1,126 @@
+{
+  "code": "CF405C",
+  "letter": "C",
+  "title": "C. Unusual Product",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/405/C",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Little Chris is a huge fan of linear algebra. This time he has been given a homework about the unusual square of a square matrix.",
+      "The dot product of two integer number vectors x and y of size n is the sum of the products of the corresponding components of the vectors. The unusual square of an n × n square matrix A is defined as the sum of n dot products. The i-th of them is the dot product of the i-th row vector and the i-th column vector in the matrix A.",
+      "Fortunately for Chris, he has to work only in GF(2)! This means that all operations (addition, multiplication) are calculated modulo 2. In fact, the matrix A is binary: each element of A is either 0 or 1. For example, consider the following matrix A:",
+      "![](https://espresso.codeforces.com/2c3ad2b03d2ce423c3d5acf492c838080055234f.png)",
+      "The unusual square of A is equal to (1·1 + 1·0 + 1·1) + (0·1 + 1·1 + 1·0) + (1·1 + 0·1 + 0·0) = 0 + 1 + 1 = 0.",
+      "However, there is much more to the homework. Chris has to process q queries; each query can be one of the following:",
+      "given a row index i, flip all the values in the i-th row in A;",
+      "given a column index i, flip all the values in the i-th column in A;",
+      "find the unusual square of A.",
+      "To flip a bit value w means to change it to 1 - w, i.e., 1 changes to 0 and 0 changes to 1.",
+      "Given the initial matrix A, output the answers for each query of the third type! Can you solve Chris's homework?"
+    ],
+    "input": [
+      "The first line of input contains an integer n (1 ≤ n ≤ 1000), the number of rows and the number of columns in the matrix A. The next n lines describe the matrix: the i-th line contains n space-separated bits and describes the i-th row of A. The j-th number of the i-th line aij (0 ≤ aij ≤ 1) is the element on the intersection of the i-th row and the j-th column of A.",
+      "The next line of input contains an integer q (1 ≤ q ≤ 106), the number of queries. Each of the next q lines describes a single query, which can be one of the following:",
+      "1 i — flip the values of the i-th row;",
+      "2 i — flip the values of the i-th column;",
+      "3 — output the unusual square of A.",
+      "Note: since the size of the input and output could be very large, don't use slow output techniques in your language. For example, do not use input and output streams (cin, cout) in C++."
+    ],
+    "output": [
+      "Let the number of the 3rd type queries in the input be m. Output a single string s of length m, where the i-th symbol of s is the value of the unusual square of A for the i-th query of the 3rd type as it appears in the input."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 1 1\n0 1 1\n1 0 0\n12\n3\n2 3\n3\n2 2\n2 2\n1 3\n3\n3\n1 2\n2 1\n1 1\n3",
+      "output": "01001"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Little Chris 是线性代数的超级粉丝。这一次，他的作业是研究方阵的非寻常平方。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "两个大小为 n 的整数向量 x 和 y 的点积，是两个向量对应分量乘积之和。n × n 方阵 A 的非寻常平方定义为 n 个点积之和。其中第 i 个点积是矩阵 A 的第 i 行向量与第 i 列向量的点积。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "幸运的是，Chris 只需要在 GF(2) 中进行运算！这意味着所有运算（加法、乘法）都对 2 取模。事实上，矩阵 A 是二进制矩阵：A 的每个元素都只能是 0 或 1。例如，考虑下面的矩阵 A：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/2c3ad2b03d2ce423c3d5acf492c838080055234f.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "A 的特殊平方等于 (1·1 + 1·0 + 1·1) + (0·1 + 1·1 + 1·0) + (1·1 + 0·1 + 0·0) = 0 + 1 + 1 = 0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，这份作业的内容远不止这些。Chris 需要处理 q 次查询；每次查询可能是以下操作之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定行下标 i，将 A 的第 i 行中的所有值翻转；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定列下标 i，将 A 的第 i 列中的所有值翻转；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "求 A 的特殊平方。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "翻转位值 w，意味着将其变为 1 - w，即将 1 变为 0，将 0 变为 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定初始矩阵 A，输出每次第三类查询的答案！你能解决 Chris 的家庭作业吗？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（1 ≤ n ≤ 1000），表示矩阵 A 的行数和列数。接下来的 n 行描述该矩阵：第 i 行包含 n 个以空格分隔的位，并描述 A 的第 i 行。第 i 行中的第 j 个数 aij（0 ≤ aij ≤ 1）是 A 中第 i 行与第 j 列交点处的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的下一行包含一个整数 q（1 ≤ q ≤ 106），表示查询的数量。接下来的 q 行中的每一行描述一个查询，查询可以是以下几种之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1 i —— 翻转第 i 行的所有值；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "2 i —— 翻转第 i 列的所有值；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "3 —— 输出 A 的非寻常平方。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意：由于输入和输出的规模可能非常大，请不要在你所使用的语言中采用缓慢的输出方式。例如，在 C++ 中不要使用输入输出流（cin、cout）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "设输入中第 3 类查询的数量为 m。输出一个长度为 m 的字符串 s，其中 s 的第 i 个字符是输入中第 i 个第 3 类查询对应的 A 的非寻常平方的值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 非寻常乘积",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

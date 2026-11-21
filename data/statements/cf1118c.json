@@ -1,0 +1,122 @@
+{
+  "code": "CF1118C",
+  "letter": "C",
+  "title": "C. Palindromic Matrix",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1118/C",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let's call some square matrix with integer values in its cells palindromic if it doesn't change after the order of rows is reversed and it doesn't change after the order of columns is reversed.",
+      "For example, the following matrices are palindromic:",
+      "![](https://espresso.codeforces.com/8dc701bcc36ea857b76d61eb835a271e56da8b43.png)",
+      "The following matrices are not palindromic because they change after the order of rows is reversed:",
+      "![](https://espresso.codeforces.com/d8d1c0c64b4eca902989a98403e632f801f868d5.png)",
+      "The following matrices are not palindromic because they change after the order of columns is reversed:",
+      "![](https://espresso.codeforces.com/f92dafcc9e61696a6d7b39b890f15edfa0a3cc43.png)",
+      "You are given n2$$$n^2$$$ integers. Put them into a matrix of n$$$n$$$ rows and n$$$n$$$ columns so that each number is used exactly once, each cell contains exactly one number and the resulting matrix is palindromic. If there are multiple answers, print any. If there is no solution, print \"NO\"."
+    ],
+    "input": [
+      "The first line contains one integer n$$$n$$$ (1≤n≤20$$$1 \\le n \\le 20$$$).",
+      "The second line contains n2$$$n^2$$$ integers a1,a2,…,an2$$$a_1, a_2, \\dots, a_{n^2}$$$ (1≤ai≤1000$$$1 \\le a_i \\le 1000$$$) — the numbers to put into a matrix of n$$$n$$$ rows and n$$$n$$$ columns."
+    ],
+    "output": [
+      "If it is possible to put all of the n2$$$n^2$$$ numbers into a matrix of n$$$n$$$ rows and n$$$n$$$ columns so that each number is used exactly once, each cell contains exactly one number and the resulting matrix is palindromic, then print \"YES\". Then print n$$$n$$$ lines with n$$$n$$$ space-separated numbers — the resulting matrix.",
+      "If it's impossible to construct any matrix, then print \"NO\".",
+      "You can print each letter in any case (upper or lower). For example, \"YeS\", \"no\" and \"yES\" are all acceptable."
+    ],
+    "note": [
+      "Note that there exist multiple answers for the first two examples."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1 8 8 1 2 2 2 2 2 2 2 2 1 8 8 1",
+      "output": "YES\n1 2 2 1\n8 2 2 8\n8 2 2 8\n1 2 2 1"
+    },
+    {
+      "input": "3\n1 1 1 1 1 3 3 3 3",
+      "output": "YES\n1 3 1\n3 1 3\n1 3 1"
+    },
+    {
+      "input": "4\n1 2 1 9 8 4 3 8 8 3 4 8 9 2 1 1",
+      "output": "NO"
+    },
+    {
+      "input": "1\n10",
+      "output": "YES\n10"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "如果一个方阵的所有单元格中的值均为整数，并且在行顺序翻转后保持不变、列顺序翻转后也保持不变，那么我们称这个方阵是回文的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，下面的矩阵是回文矩阵：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/8dc701bcc36ea857b76d61eb835a271e56da8b43.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下面的矩阵不是回文矩阵，因为它们在行顺序翻转后会发生变化：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/d8d1c0c64b4eca902989a98403e632f801f868d5.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "以下矩阵不是回文矩阵，因为将列的顺序反转后它们会发生变化：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/f92dafcc9e61696a6d7b39b890f15edfa0a3cc43.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定 n2$$$n^2$$$ 个整数。请将它们放入一个有 n$$$n$$$ 行、n$$$n$$$ 列的矩阵中，使得每个数字恰好使用一次，每个单元格恰好包含一个数字，并且所得矩阵是回文矩阵。如果有多个答案，输出任意一个即可。如果无解，输出 \"NO\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$ (1≤n≤20$$$1 \\le n \\le 20$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n2$$$n^2$$$ 个整数 a1,a2,…,an2$$$a_1, a_2, \\dots, a_{n^2}$$$ (1≤ai≤1000$$$1 \\le a_i \\le 1000$$$)——需要放入一个有 n$$$n$$$ 行、n$$$n$$$ 列的矩阵中的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果可以将全部 n2$$$n^2$$$ 个数字放入一个有 n$$$n$$$ 行、n$$$n$$$ 列的矩阵中，使得每个数字恰好使用一次，每个单元格恰好包含一个数字，并且所得矩阵是回文矩阵，则输出 \"YES\"。然后输出 n$$$n$$$ 行，每行包含 n$$$n$$$ 个以空格分隔的数字——即所得矩阵。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果无法构造出任何矩阵，则输出 \"NO\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个字母都可以任意使用大写或小写。例如，\"YeS\"、\"no\" 和 \"yES\" 都是可接受的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "注意，前两个样例存在多种答案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 回文矩阵",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "code": "GYM105446D",
+  "letter": "D",
+  "title": "D. Drone Control",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105446/problem/D",
+  "difficulty": "*1300",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are designing a controller for an interesting aircraft called the Single Copter. It only has one propeller, but the outgoing air flow is further shaped by four flaps that control three Euler angles (pitch, roll and yaw) that help maintain the requested orientation of the craft. Each of these flaps can assume any angle requested by the flight controller, and the effects of the flaps being at certain angles should translate to exerting the requested forces on pitch, roll and yaw.",
+      "![](https://espresso.codeforces.com/9a4656f8fb1c66efd19ae27d6124578106728aaf.png)",
+      "![](https://espresso.codeforces.com/978204b3b999f4963169a37f8bc3edd46294b40a.png)",
+      "![](https://espresso.codeforces.com/650bacdc351ae7a7b3a94cc1d35c8844ead37aeb.png)",
+      "Define the angles of the flaps to be n$$$n$$$, e$$$e$$$, s$$$s$$$, and w$$$w$$$ (for \"north\", \"east\", \"south\" and \"west\" respectively). The forces in the directions of pitch, roll and yaw are defined by the following equations:",
+      "As there are four variables and three constraints, you decided that, from the perspective of aerodynamics, it makes sense to make the maximum of the flap angles as small as possible, that is, you additionally want to minimise max{|n|,|e|,|s|,|w|}$$$\\max\\{ |n|, |e|, |s|, |w| \\}$$$.",
+      "Find the best parameters to send to the Single Copter to achieve the desired pitch, yaw, and roll."
+    ],
+    "input": [
+      "One line containing the number q$$$q$$$, 1≤q≤104$$$1 \\le q \\le 10^4$$$, the number of requests to follow.",
+      "i$$$i$$$ further lines, each containing three real numbers pi$$$p_i$$$, ri$$$r_i$$$, yi$$$y_i$$$ (−1≤pi,ri,yi≤+1$$$-1 \\le p_i, r_i, y_i \\le +1$$$)."
+    ],
+    "output": [
+      "Output q$$$q$$$ lines. In the i$$$i$$$-th line, output the solution for the i$$$i$$$-th request, four numbers ni$$$n_i$$$, ei$$$e_i$$$, si$$$s_i$$$, wi$$$w_i$$$, separated by whitespace.",
+      "Your answer will be considered correct if the resulting pitch, roll and yaw differ by at most 10−6$$$10^{-6}$$$ from the requested ones, and the maximum of the absolute values of flap outputs does not exceed the true value by more than 10−6$$$10^{-6}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "8\n0 0 0\n1 0 0\n0 1 0\n0 0 1\n1 1 0\n1 0 1\n0 1 1\n1 1 1",
+      "output": "0.0 0.0 0.0 0.0\n0.0 0.5 0.0 -0.5\n0.5 0.0 -0.5 0.0\n0.25 0.25 0.25 0.25\n0.5 0.5 -0.5 -0.5\n0.5 0.5 0.5 -0.5\n0.5 0.5 -0.5 0.5\n0.75 0.75 -0.25 -0.25"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你正在为一种名为 Single Copter 的有趣飞行器设计控制器。它只有一个螺旋桨，但向外流出的气流会进一步受到四个襟翼的调节，这些襟翼控制三个欧拉角（俯仰、横滚和偏航），从而帮助保持飞行器所要求的姿态。每个襟翼都可以处于飞控所要求的任意角度，而襟翼处于特定角度时产生的影响，应当转化为在俯仰、横滚和偏航方向上施加所要求的力。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/9a4656f8fb1c66efd19ae27d6124578106728aaf.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/978204b3b999f4963169a37f8bc3edd46294b40a.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/650bacdc351ae7a7b3a94cc1d35c8844ead37aeb.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将襟翼的角度分别定义为 n$$$n$$$、e$$$e$$$、s$$$s$$$ 和 w$$$w$$$(分别表示“北”“东”“南”和“西”)。俯仰、横滚和偏航方向上的力由以下方程定义：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于有四个变量和三个约束条件，你决定从空气动力学的角度来看，尽可能减小襟翼角度的最大值是合理的，也就是说，你还希望最小化 max{|n|,|e|,|s|,|w|}$$$\\max\\{ |n|, |e|, |s|, |w| \\}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "找出发送给 Single Copter 的最佳参数，以实现所需的俯仰、偏航和横滚。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "一行包含请求数量 q$$$q$$$，满足 1≤q≤104$$$1 \\le q \\le 10^4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 i$$$i$$$ 行，每行包含三个实数 pi$$$p_i$$$、ri$$$r_i$$$、yi$$$y_i$$$(−1≤pi,ri,yi≤+1$$$-1 \\le p_i, r_i, y_i \\le +1$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 q$$$q$$$ 行。在第 i$$$i$$$ 行中，输出第 i$$$i$$$ 个请求的解，即四个数 ni$$$n_i$$$、ei$$$e_i$$$、si$$$s_i$$$、wi$$$w_i$$$，以空白字符分隔。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果得到的俯仰角、横滚角和偏航角与要求值的差异均不超过 10−6$$$10^{-6}$$$，并且襟翼输出绝对值的最大值比真实值大不超过 10−6$$$10^{-6}$$$，则答案将被判定为正确。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 无人机控制",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,275 @@
+name: Update daily problems data
+
+on:
+  schedule:
+    # Poll hourly at :12 (off the top of the hour to dodge schedule delays and
+    # drops). Runs are cheap when upstream is unchanged: the upstream check
+    # below skips everything until Yawn-Sean/Daily_CF_Problems has a new commit.
+    - cron: "12 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.upstream.outputs.changed }}
+      lb_changed: ${{ steps.upstream.outputs.lb_changed }}
+      retry_changed: ${{ steps.retry.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # main is code-only: pull the sync markers (+ logs/leaderboard for the
+      # later publish steps) from the latest data/misc-* branch so the cheap
+      # poll below can gate on them.
+      - name: Restore misc data from data branches
+        run: node scripts/restore-data.mjs --misc --runtime
+
+      # Cheap poll: compare upstream HEAD with the SHA recorded at the last
+      # full sync (data/.upstream-sha) AND the upstream gh-pages SHA with its
+      # own marker (data/.leaderboard-sha) — records.js (the community
+      # leaderboard) is published on gh-pages by a separate upstream workflow
+      # and changes WITHOUT any main-branch commit, so it needs its own gate.
+      # Unchanged runs skip every step below and finish in under a minute, so
+      # the schedule can poll often without paying for Playwright, statement
+      # fetches or translations. Manual workflow_dispatch always runs fully
+      # (also refreshes the markers). If the main check itself fails, fall
+      # through to a full run.
+      - name: Check upstream for updates
+        id: upstream
+        run: |
+          CHANGED=false
+          LB_CHANGED=false
+          if UPSTREAM_SHA=$(git ls-remote https://github.com/Yawn-Sean/Daily_CF_Problems.git HEAD | cut -f1) && [ -n "$UPSTREAM_SHA" ]; then
+            LAST_SHA=$(cat data/.upstream-sha 2>/dev/null || true)
+            [ "$UPSTREAM_SHA" != "$LAST_SHA" ] && CHANGED=true
+          else
+            # check itself failed — fall through to a full run (safe fallback)
+            CHANGED=true
+          fi
+          # empty output = gh-pages missing → nothing to sync; a failure here
+          # is covered by the main-branch fallback above (same network)
+          LB_SHA=$(git ls-remote https://github.com/Yawn-Sean/Daily_CF_Problems.git gh-pages | cut -f1 || true)
+          if [ -n "$LB_SHA" ]; then
+            LAST_LB_SHA=$(cat data/.leaderboard-sha 2>/dev/null || true)
+            [ "$LB_SHA" != "$LAST_LB_SHA" ] && LB_CHANGED=true
+          fi
+          echo "changed=$CHANGED" >> "$GITHUB_OUTPUT"
+          echo "lb_changed=$LB_CHANGED" >> "$GITHUB_OUTPUT"
+          echo "sha=$UPSTREAM_SHA" >> "$GITHUB_OUTPUT"
+          echo "lb_sha=$LB_SHA" >> "$GITHUB_OUTPUT"
+
+      # Leaderboard-only path: upstream records changed while main did not.
+      # Sync just the leaderboard (no heavy deps needed — node builtins only),
+      # never the full pipeline. Skipped on workflow_dispatch, where the full
+      # run below refreshes the leaderboard anyway.
+      - name: Sync leaderboard (upstream records changed)
+        if: ${{ steps.upstream.outputs.lb_changed == 'true' && steps.upstream.outputs.changed != 'true' && github.event_name != 'workflow_dispatch' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/sync-leaderboard.mjs
+
+      - name: Persist leaderboard-only update to data branches
+        if: ${{ steps.upstream.outputs.lb_changed == 'true' && steps.upstream.outputs.changed != 'true' && github.event_name != 'workflow_dispatch' }}
+        run: |
+          if [ -n "${{ steps.upstream.outputs.lb_sha }}" ]; then
+            echo "${{ steps.upstream.outputs.lb_sha }}" > data/.leaderboard-sha
+          fi
+          node scripts/push-data-branches.mjs --misc --prune
+          node scripts/restore-data.mjs --statements --daily --runtime
+          node scripts/publish-deploy.mjs
+
+      # Every-run retry: segments from the newest 14 days that still lack an AI
+      # translation (failed in an earlier run — transient endpoint/quota errors)
+      # get another attempt on EVERY run, not just when upstream moves. Without
+      # this a failed segment would wait up to a day for the next upstream
+      # update. Zero-dependency path (restore + translate + reattach are all
+      # node-builtins-only), so it runs without npm ci; skipped on the full
+      # pipeline, whose newest-first translate step already covers recent days.
+      - name: Retry AI translation for the newest 14 days
+        id: retry
+        if: ${{ steps.upstream.outputs.changed != 'true' && github.event_name != 'workflow_dispatch' }}
+        env:
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_MODEL: gpt-5.6-terra
+          AI_MODEL_LABEL: GPT 5.6 Terra
+          AI_RECENT_DAYS: "14"
+          AI_TRANSLATE_LIMIT: "60"
+        run: |
+          node scripts/restore-data.mjs --statements --daily --runtime
+          OUT=$(node scripts/translate-ai.mjs)
+          echo "$OUT"
+          DONE=$(echo "$OUT" | grep -oE 'Done: [0-9]+' | grep -oE '[0-9]+' || echo 0)
+          echo "done=$DONE" >> "$GITHUB_OUTPUT"
+          if [ "${DONE:-0}" -gt 0 ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+          node scripts/reattach-statements.mjs
+        continue-on-error: true
+
+      # Retry pass translated something on a run the full pipeline skipped —
+      # push the refreshed statements and republish so the site picks them up.
+      - name: Publish recent-retry translations
+        if: ${{ steps.retry.outputs.changed == 'true' && steps.upstream.outputs.changed != 'true' && github.event_name != 'workflow_dispatch' }}
+        run: |
+          node scripts/push-data-branches.mjs --problems
+          node scripts/publish-deploy.mjs
+
+      # Full pipeline below: bring statements + the previous daily.json (from
+      # the deploy snapshot) into the worktree first.
+      - name: Restore statements and daily snapshot
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: node scripts/restore-data.mjs --statements --daily --runtime
+
+      - name: Install dependencies
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: npm ci
+
+      - name: Install Playwright Chromium (for Cloudflare pass-through)
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: npx playwright install --with-deps chromium
+
+      - name: Sync data from Yawn-Sean/Daily_CF_Problems
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >
+          CF_STATEMENTS=0 TRANSLATE=0 node scripts/update-data.mjs
+
+      # Daily incremental statements: cover the newest uncovered problems.
+      # Runs headful Chrome under Xvfb (passes Cloudflare far better than
+      # headless); failures are non-fatal — affected problems degrade to
+      # hint + link until a later run succeeds. Problems already on disk
+      # are skipped, so only never-fetched statements consume the budget.
+      - name: Fetch statements for newest problems
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: xvfb-run -a node scripts/fetch-statements.mjs --limit 4 --delay 6000
+        env:
+          CF_START_MODE: chrome-headful
+
+      # Backlog repair: statements parsed before the MathJax v3 parser fix
+      # contain leaked %%ZSMJ<n>%% tokens. Re-fetch with the fixed parser and
+      # merge (translations for changed segments are dropped and refilled by
+      # the AI backfill below / client-side MT). Resumable — files without
+      # tokens are skipped, so the backlog shrinks every run until no-op.
+      - name: Repair ZSMJ-polluted statements
+        id: repair
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: |
+          OUT=$(xvfb-run -a node scripts/repair-zsmj.mjs --limit 200 --delay 6000)
+          echo "$OUT"
+          REPAIRED=$(echo "$OUT" | grep -oE 'Done: [0-9]+ repaired' | grep -oE '[0-9]+' || echo 0)
+          REMAINING=$(grep -l '%%ZSMJ' data/statements/*.json 2>/dev/null | wc -l | tr -d ' ')
+          echo "repaired=$REPAIRED" >> "$GITHUB_OUTPUT"
+          echo "remaining=$REMAINING" >> "$GITHUB_OUTPUT"
+        env:
+          CF_START_MODE: chrome-headful
+        continue-on-error: true
+
+      # Mount the freshly repaired statements into daily.json so the AI
+      # backfill below sees the segments it just cleared.
+      - name: Re-attach repaired statements
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: >
+          CF_STATEMENTS=0 TRANSLATE=0 node scripts/update-data.mjs
+
+      # AI backfill for the newest statements (OpenAI-compatible endpoint via
+      # repo secrets). Fills the `ai` channel of sectionsZh newest-first with
+      # a per-run segment budget; the client-side MT pipeline on the site
+      # covers the rest. Failures are non-fatal — affected segments just stay
+      # untranslated until a later run.
+      - name: AI-translate newest statements
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: node scripts/translate-ai.mjs
+        env:
+          AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_MODEL: gpt-5.6-terra
+          # Recorded per segment (sectionsZh[..][i].aiModel) and shown on the
+          # site's source chips — the name of the model actually serving the
+          # endpoint. Update together with AI_MODEL when switching models.
+          AI_MODEL_LABEL: GPT 5.6 Terra
+          AI_TRANSLATE_LIMIT: 60
+        continue-on-error: true
+
+      - name: Re-attach statements to daily data
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >
+          CF_STATEMENTS=0 TRANSLATE=0 node scripts/update-data.mjs
+
+      # Persist the upstream SHAs we just synced so later polls can no-op.
+      # Also runs on the leaderboard-only path (and dispatch) to record the
+      # gh-pages marker; if the leaderboard sync failed, its step already
+      # aborted the job, so the marker is only written after a good sync.
+      - name: Record synced upstream SHA
+        if: ${{ steps.upstream.outputs.changed == 'true' || steps.upstream.outputs.lb_changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: |
+          if [ -n "${{ steps.upstream.outputs.sha }}" ]; then
+            echo "${{ steps.upstream.outputs.sha }}" > data/.upstream-sha
+          fi
+          if [ -n "${{ steps.upstream.outputs.lb_sha }}" ]; then
+            echo "${{ steps.upstream.outputs.lb_sha }}" > data/.leaderboard-sha
+          fi
+
+      # Data lives on dedicated branches — main is never touched:
+      #   statements  -> data/problems (permanent history)
+      #   misc + logs -> data/misc-<today> (rolling 60d, pruned)
+      #   everything  -> deploy (orphan snapshot, force-pushed; Vercel builds it)
+      - name: Push data branches and publish deploy
+        if: ${{ steps.upstream.outputs.changed == 'true' || github.event_name == 'workflow_dispatch' }}
+        run: |
+          node scripts/push-data-branches.mjs --problems --misc --prune
+          node scripts/publish-deploy.mjs
+
+      # Self-chain the repair backlog: GitHub keeps only the newest pending
+      # run per concurrency group, so queueing several dispatches up front
+      # does not work — instead each run triggers the next one while the
+      # previous batch made progress and polluted files remain. Stops by
+      # itself when the backlog is gone or a batch fully failed.
+      - name: Chain next repair batch
+        if: ${{ steps.repair.outputs.repaired > 0 && steps.repair.outputs.remaining > 0 }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api "repos/${{ github.repository }}/actions/workflows/update-data.yml/dispatches" -f ref=main
+          echo "Queued next repair batch; ${{ steps.repair.outputs.remaining }} statement files still polluted."
+
+  # Second job: the job-log download API only serves COMPLETED jobs, so the
+  # sync job cannot save its own log — this one waits for it, downloads the
+  # full log, stores it in public/ci-logs/ (rolling 60-day retention) and
+  # appends it to today's data/misc branch + republishes deploy so /logs sees
+  # the fresh run. Runs even when the sync job failed, so failures are logged.
+  save-log:
+    runs-on: ubuntu-latest
+    needs: update
+    # lb_changed / recent-retry runs make a real data update too — archive
+    # them so /logs doesn't misread them as no-ops
+    if: ${{ !cancelled() && (needs.update.outputs.changed == 'true' || needs.update.outputs.lb_changed == 'true' || needs.update.outputs.retry_changed == 'true' || github.event_name == 'workflow_dispatch') }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore data from data branches
+        run: node scripts/restore-data.mjs --misc --statements --daily --runtime
+
+      - name: Save CI log into the data branches
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SOURCE_JOB_NAME: update
+        run: node scripts/save-ci-log.mjs
+
+      - name: Append log to misc branch and republish deploy
+        run: |
+          node scripts/push-data-branches.mjs --misc
+          node scripts/publish-deploy.mjs

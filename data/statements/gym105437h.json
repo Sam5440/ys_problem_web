@@ -1,0 +1,99 @@
+{
+  "code": "GYM105437H",
+  "letter": "H",
+  "title": "H. Maximum Beauty",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105437/problem/H",
+  "difficulty": "*1400",
+  "timeLimit": "1 second",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Let's denote the beauty of a string as follows: consider the lengths of all maximal contiguous blocks consisting of the same letters. Then, the beauty of a string is the sum of the squares of the lengths of all such blocks.",
+      "For example, let the string be \"aabbbcaaadddd\". In this string, the following blocks of identical letters exist: a block of two letters \"a\", a block of three letters \"b\", a block of one letter \"c\", a block of three letters \"a\", and a block of four letters \"d\". Thus, the beauty of this string is 22+32+12+32+42=4+9+1+9+16=39$$$2^2 + 3^2 + 1^2 + 3^2 + 4^2 = 4 + 9 + 1 + 9 + 16 = 39$$$.",
+      "Monocarp has a string s$$$s$$$, consisting of n$$$n$$$ lowercase Latin letters. He will perform the following action exactly once: choose a pair of adjacent different letters in the string s$$$s$$$ and swap them.",
+      "Your task is to determine the maximum beauty of the new string that Monocarp can obtain after exactly one swap of adjacent different letters in his string s$$$s$$$."
+    ],
+    "input": [
+      "The first line contains an integer n$$$n$$$ (2≤n≤200000$$$2 \\le n \\le 200\\,000$$$) — the length of the string s$$$s$$$.",
+      "The second line contains the string s$$$s$$$ of length n$$$n$$$, consisting of lowercase Latin letters.",
+      "Additional constraint on the input:",
+      "there are at least two different letters in the given string."
+    ],
+    "output": [
+      "Output the maximum beauty of the new string that Monocarp can obtain after exactly one swap of adjacent different letters in his string s$$$s$$$."
+    ],
+    "note": [
+      "In the first example, for example, it is possible to swap the third and fourth letters. Then Monocarp will get the string \"aaabacaabaa\". The beauty of this string is 32+12+12+12+22+12+22=9+1+1+1+4+1+4=21$$$3^2 + 1^2 + 1^2 + 1^2 + 2^2 + 1^2 + 2^2 = 9 + 1 + 1 + 1 + 4 + 1 + 4 = 21$$$.",
+      "In the second example, it is possible to swap the fourth and fifth letters. Then Monocarp will get the string \"wwwzw\". The beauty of this string is 32+12+12=9+1+1=11$$$3^2 + 1^2 + 1^2 = 9 + 1 + 1 = 11$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "11\naabaacaabaa",
+      "output": "21"
+    },
+    {
+      "input": "5\nwwwwz",
+      "output": "11"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "我们定义字符串的美丽度如下：考虑所有由相同字母组成的极长连续块的长度。那么，字符串的美丽度就是所有这些连续块长度的平方和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，设字符串为 \"aabbbcaaadddd\"。在这个字符串中，存在以下由相同字母组成的连续块：两个字母 \"a\" 组成的块、三个字母 \"b\" 组成的块、一个字母 \"c\" 组成的块、三个字母 \"a\" 组成的块，以及四个字母 \"d\" 组成的块。因此，这个字符串的美丽度为 22+32+12+32+42=4+9+1+9+16=39$$$2^2 + 3^2 + 1^2 + 3^2 + 4^2 = 4 + 9 + 1 + 9 + 16 = 39$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Monocarp 有一个字符串 s$$$s$$$，由 n$$$n$$$ 个小写拉丁字母组成。他将恰好执行一次以下操作：选择字符串 s$$$s$$$ 中一对相邻且不同的字母，并交换它们。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是确定 Monocarp 在他的字符串 s$$$s$$$ 中恰好交换一次相邻且不同的字母后，能够得到的新字符串的最大美丽度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(2≤n≤200000$$$2 \\le n \\le 200\\,000$$$)——字符串 s$$$s$$$ 的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含长度为 n$$$n$$$ 的字符串 s$$$s$$$，该字符串由小写拉丁字母组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的附加约束：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定字符串中至少有两个不同的字母。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Monocarp 在其字符串 s$$$s$$$ 中恰好交换一次相邻的不同字母后能够得到的新字符串的最大美丽度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，例如，可以交换第三个和第四个字母。这样 Monocarp 将得到字符串 \"aaabacaabaa\"。该字符串的美丽度为 32+12+12+12+22+12+22=9+1+1+1+4+1+4=21$$$3^2 + 1^2 + 1^2 + 1^2 + 2^2 + 1^2 + 2^2 = 9 + 1 + 1 + 1 + 4 + 1 + 4 = 21$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，可以交换第四个和第五个字母。这样，Monocarp 将得到字符串 \"wwwzw\"。该字符串的美丽度为 32+12+12=9+1+1=11$$$3^2 + 1^2 + 1^2 = 9 + 1 + 1 = 11$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "H. 最大美丽度",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

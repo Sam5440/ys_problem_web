@@ -1,0 +1,93 @@
+{
+  "code": "CF962D",
+  "letter": "D",
+  "title": "D. Merge Equals",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/962/D",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given an array of positive integers. While there are at least two equal elements, we will perform the following operation. We choose the smallest value x$$$x$$$ that occurs in the array 2$$$2$$$ or more times. Take the first two occurrences of x$$$x$$$ in this array (the two leftmost occurrences). Remove the left of these two occurrences, and the right one is replaced by the sum of this two values (that is, 2⋅x$$$2 \\cdot x$$$).",
+      "Determine how the array will look after described operations are performed.",
+      "For example, consider the given array looks like [3,4,1,2,2,1,1]$$$[3, 4, 1, 2, 2, 1, 1]$$$. It will be changed in the following way: [3,4,1,2,2,1,1] → [3,4,2,2,2,1] → [3,4,4,2,1] → [3,8,2,1]$$$[3, 4, 1, 2, 2, 1, 1]~\\rightarrow~[3, 4, 2, 2, 2, 1]~\\rightarrow~[3, 4, 4, 2, 1]~\\rightarrow~[3, 8, 2, 1]$$$.",
+      "If the given array is look like [1,1,3,1,1]$$$[1, 1, 3, 1, 1]$$$ it will be changed in the following way: [1,1,3,1,1] → [2,3,1,1] → [2,3,2] → [3,4]$$$[1, 1, 3, 1, 1]~\\rightarrow~[2, 3, 1, 1]~\\rightarrow~[2, 3, 2]~\\rightarrow~[3, 4]$$$."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (2≤n≤150000$$$2 \\le n \\le 150\\,000$$$) — the number of elements in the array.",
+      "The second line contains a sequence from n$$$n$$$ elements a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (1≤ai≤109$$$1 \\le a_i \\le 10^{9}$$$) — the elements of the array."
+    ],
+    "output": [
+      "In the first line print an integer k$$$k$$$ — the number of elements in the array after all the performed operations. In the second line print k$$$k$$$ integers — the elements of the array after all the performed operations."
+    ],
+    "note": [
+      "The first two examples were considered in the statement.",
+      "In the third example all integers in the given array are distinct, so it will not change."
+    ]
+  },
+  "examples": [
+    {
+      "input": "7\n3 4 1 2 2 1 1",
+      "output": "4\n3 8 2 1"
+    },
+    {
+      "input": "5\n1 1 3 1 1",
+      "output": "2\n3 4"
+    },
+    {
+      "input": "5\n10 40 20 50 30",
+      "output": "5\n10 40 20 50 30"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个正整数数组。当数组中至少存在两个相等元素时，我们执行以下操作：选择数组中出现次数不少于 2$$$2$$$ 次的最小值 x$$$x$$$。取出该数组中 x$$$x$$$ 的前两个出现位置(最左边的两个出现位置)。删除这两个位置中左边的那个，并将右边的那个替换为这两个值之和(即 2⋅x$$$2 \\cdot x$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "确定执行上述操作后数组的样子。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，给定数组为 [3,4,1,2,2,1,1]$$$[3, 4, 1, 2, 2, 1, 1]$$$。它将按以下方式变化：[3,4,1,2,2,1,1] → [3,4,2,2,2,1] → [3,4,4,2,1] → [3,8,2,1]$$$[3, 4, 1, 2, 2, 1, 1]~\\rightarrow~[3, 4, 2, 2, 2, 1]~\\rightarrow~[3, 4, 4, 2, 1]~\\rightarrow~[3, 8, 2, 1]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果给定数组形如 [1,1,3,1,1]$$$[1, 1, 3, 1, 1]$$$，它将按如下方式变化：[1,1,3,1,1] → [2,3,1,1] → [2,3,2] → [3,4]$$$[1, 1, 3, 1, 1]~\\rightarrow~[2, 3, 1, 1]~\\rightarrow~[2, 3, 2]~\\rightarrow~[3, 4]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(2≤n≤150000$$$2 \\le n \\le 150\\,000$$$)，表示数组中元素的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个由 n$$$n$$$ 个元素组成的序列 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤109$$$1 \\le a_i \\le 10^{9}$$$)，表示数组中的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出一个整数 k$$$k$$$，表示执行完所有操作后数组中元素的数量。第二行输出 k$$$k$$$ 个整数，表示执行完所有操作后的数组元素。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "前两个样例已在题面中给出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，给定数组中的所有整数都互不相同，因此数组不会发生变化。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 合并相等元素",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

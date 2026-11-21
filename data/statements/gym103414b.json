@@ -1,0 +1,100 @@
+{
+  "code": "GYM103414B",
+  "letter": "B",
+  "title": "B. Guess the Array",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103414/problem/B",
+  "difficulty": "*1500",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem. Your program will interact with the jury program using standard input and output.",
+      "Alice and Bob have decided to play a game called \"Guess the Array\". The rules of the game are very simple: Alice has an array of $$$n$$$ integers, and Bob has to guess this array by making no more than $$$n$$$ queries about the sums on the segments.",
+      "In one move Bob can make one of two types of queries to Alice:",
+      "\"? l r\" to find out the sum of numbers on the segment of the array from the $$$l$$$-th to the $$$r$$$-th element inclusive;",
+      "\"!\" to tell Alice that he is ready to give the answer. After this query Alice expects $$$n$$$ integers from Bob: the initial array.",
+      "For each first type query, Alice tells Bob the sum of the numbers in the requested segment. But to make it harder to guess, after each query Alice makes one segment blocked. In further queries, Bob cannot ask for the sum of the numbers on the blocked segments.",
+      "Help Bob guess Alice's array by making no more than $$$n$$$ first type queries.",
+      "Interaction",
+      "The first line of input contains an integer $$$n$$$ — the size of Alice's array ($$$1 \\leqslant n \\leqslant 10^4$$$). It is guaranteed that all numbers in the array do not exceed $$$10^{9}$$$ by their absolute values.",
+      "Next, a protocol for communicating with the jury program (interactor) is executed.",
+      "The interactor expects two types of requests from your program: \"? l r\" and \"!\", where $$$l$$$, $$$r$$$ are integer boundaries of the segment that you want to know the sum at ($$$1 \\leqslant l \\leqslant r \\leqslant n$$$). Each query must be followed by a line break. If your program does not follow the query format, your solution may get any verdict (other than OK).",
+      "After the first type of query, you must read three integers $$$s$$$, $$$l_b$$$ and $$$r_b$$$ from the standard input — the sum on the requested segment $$$s$$$ and the boundaries of the new blocked segment $$$[l_b, r_b]$$$, that can no longer request a sum for ($$$|s| \\leqslant 10^{18}$$$; $$$1 \\leqslant l_b \\leqslant r_b \\leqslant n$$$).",
+      "The query of the second type means that your program is ready to give the answer. After the second type query, you should print $$$n$$$ integer guessing the initial array.",
+      "Note that your program can make no more than $$$n$$$ queries of the first type. If this limit is exceeded, or if you try to query the sum of the previously blocked segment, the interactor will print \"-1 -1 -1\" and will exit with the verdict WA. To avoid getting a TL or IL verdict, your program must terminate with zero exit code after reading \"-1 -1 -1\" from the input."
+    ],
+    "input": [],
+    "output": []
+  },
+  "examples": [
+    {
+      "input": "3\n\n1 2 2\n\n3 2 3\n\n6 1 2",
+      "output": "\n? 1 1\n\n? 3 3\n\n? 1 3\n\n!\n1 2 3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是一道交互题。你的程序将通过标准输入输出与评测程序进行交互。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Alice 和 Bob 决定进行一个名为“猜数组”的游戏。游戏规则非常简单：Alice 有一个由 $$$n$$$ 个整数构成的数组，Bob 需要通过不超过 $$$n$$$ 次关于区间和的询问来猜出这个数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在一次操作中，Bob 可以向 Alice 发起以下两种查询之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "“? l r”用于查询数组中从第 $$$l$$$ 个到第 $$$r$$$ 个元素(含两端)的区间和；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "用“!”告诉 Alice 他已准备好给出答案。进行此查询后，Alice 会期望 Bob 提供 $$$n$$$ 个整数：初始数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个第一类询问，Alice 会告诉 Bob 所请求区间内所有数字之和。但为了增加猜测的难度，每次询问后，Alice 都会将一个区间封锁。在后续询问中，Bob 不能询问被封锁区间内所有数字之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "通过不超过 $$$n$$$ 次第一类询问，帮助 Bob 猜出 Alice 的数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第一行包含一个整数 $$$n$$$，表示 Alice 数组的大小($$$1 \\leqslant n \\leqslant 10^4$$$)。保证数组中的所有数的绝对值均不超过 $$$10^{9}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来，将执行与评测程序（交互器）进行通信的协议。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互器期望你的程序发出以下两种请求：“? l r”和“!”，其中 $$$l$$$、$$$r$$$ 是你想查询其和的区间的整数边界($$$1 \\leqslant l \\leqslant r \\leqslant n$$$)。每次询问后都必须换行。如果你的程序不遵循询问格式，你的解答可能会得到除 OK 之外的任意判定结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一类查询之后，你必须从标准输入中读取三个整数 $$$s$$$、$$$l_b$$$ 和 $$$r_b$$$——所请求区间 $$$s$$$ 上的和，以及新阻塞区间 $$$[l_b, r_b]$$$ 的边界，之后将无法再请求区间 ($$$|s| \\leqslant 10^{18}$$$; $$$1 \\leqslant l_b \\leqslant r_b \\leqslant n$$$) 上的和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二类询问表示你的程序已经准备好给出答案。在第二类询问之后，你应输出一个 $$$n$$$，猜测初始数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，你的程序最多只能进行 $$$n$$$ 次第一类询问。如果超过此限制，或尝试询问此前被封锁区间的和，交互器将输出 \"-1 -1 -1\"，并以 WA 判定结束。为避免获得 TL 或 IL 判定，你的程序在从输入中读到 \"-1 -1 -1\" 后必须以零退出码终止。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 猜数组",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

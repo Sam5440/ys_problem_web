@@ -1,0 +1,108 @@
+{
+  "code": "CF2045G",
+  "letter": "G",
+  "title": "G. X Aura",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/2045/G",
+  "difficulty": "2200",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Mount ICPC can be represented as a grid of R$$$R$$$ rows (numbered from 1$$$1$$$ to R$$$R$$$) and C$$$C$$$ columns (numbered from 1$$$1$$$ to C$$$C$$$). The cell located at row r$$$r$$$ and column c$$$c$$$ is denoted as (r,c)$$$(r, c)$$$ and has a height of Hr,c$$$H_{r, c}$$$. Two cells are adjacent to each other if they share a side. Formally, (r,c)$$$(r, c)$$$ is adjacent to (r−1,c)$$$(r-1, c)$$$, (r+1,c)$$$(r+1, c)$$$, (r,c−1)$$$(r, c-1)$$$, and (r,c+1)$$$(r, c+1)$$$, if any exists.",
+      "You can move only between adjacent cells, and each move comes with a penalty. With an aura of an odd positive integer X$$$X$$$, moving from a cell with height h1$$$h_1$$$ to a cell with height h2$$$h_2$$$ gives you a penalty of (h1−h2)X$$$(h_1 - h_2)^X$$$. Note that the penalty can be negative.",
+      "You want to answer Q$$$Q$$$ independent scenarios. In each scenario, you start at the starting cell (Rs,Cs)$$$(R_s, C_s)$$$ and you want to go to the destination cell (Rf,Cf)$$$(R_f, C_f)$$$ with minimum total penalty. In some scenarios, the total penalty might become arbitrarily small; such a scenario is called invalid. Find the minimum total penalty to move from the starting cell to the destination cell, or determine if the scenario is invalid."
+    ],
+    "input": [
+      "The first line consists of three integers R$$$R$$$ C$$$C$$$ X$$$X$$$ (1≤R,C≤1000;1≤X≤9;X$$$1 \\leq R, C \\leq 1000; 1 \\leq X \\leq 9; X$$$ is an odd integer).",
+      "Each of the next R$$$R$$$ lines consists of a string Hr$$$H_r$$$ of length C$$$C$$$. Each character in Hr$$$H_r$$$ is a number from 0 to 9. The c$$$c$$$-th character of Hr$$$H_r$$$ represents the height of cell (r,c)$$$(r, c)$$$, or Hr,c$$$H_{r, c}$$$.",
+      "The next line consists of an integer Q$$$Q$$$ (1≤Q≤100000)$$$1 \\leq Q \\leq 100\\,000)$$$.",
+      "Each of the next Q$$$Q$$$ lines consists of four integers Rs$$$R_s$$$ Cs$$$C_s$$$ Rf$$$R_f$$$ Cf$$$C_f$$$ (1≤Rs,Rf≤R;1≤Cs,Cf≤C$$$1 \\leq R_s, R_f \\leq R; 1 \\leq C_s, C_f \\leq C$$$)."
+    ],
+    "output": [
+      "For each scenario, output the following in a single line. If the scenario is invalid, output INVALID. Otherwise, output a single integer representing the minimum total penalty to move from the starting cell to the destination cell."
+    ],
+    "note": [
+      "Explanation for the sample input/output #1",
+      "For the first scenario, one of the solutions is to move as follows: (1,1)→(2,1)→(3,1)→(3,2)→(3,3)→(3,4)$$$(1, 1) \\rightarrow (2, 1) \\rightarrow (3, 1) \\rightarrow (3, 2) \\rightarrow (3, 3) \\rightarrow (3, 4)$$$. The total penalty of this solution is (3−4)1+(4−3)1+(3−6)1+(6−8)1+(8−1)1=2$$$(3 - 4)^1 + (4 - 3)^1 + (3 - 6)^1 + (6 - 8)^1 + (8 - 1)^1 = 2$$$.",
+      "Explanation for the sample input/output #2",
+      "For the first scenario, the cycle (1,1)→(2,1)→(2,2)→(1,2)→(1,1)$$$(1, 1) \\rightarrow (2, 1) \\rightarrow (2, 2) \\rightarrow (1, 2) \\rightarrow (1, 1)$$$ has a penalty of (1−2)5+(2−0)5+(0−9)5+(9−1)5=−26250$$$(1 - 2)^5 + (2 - 0)^5 + (0 - 9)^5 + (9 - 1)^5 = -26250$$$. You can keep repeating this cycle to make your total penalty arbitrarily small. Similarly, for the second scenario, you can move to (1,1)$$$(1, 1)$$$ first, then repeat the same cycle."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 4 1\n3359\n4294\n3681\n5\n1 1 3 4\n3 3 2 1\n2 2 1 4\n1 3 3 2\n1 1 1 1",
+      "output": "2\n4\n-7\n-1\n0"
+    },
+    {
+      "input": "2 4 5\n1908\n2023\n2\n1 1 2 4\n1 1 1 1",
+      "output": "INVALID\nINVALID"
+    },
+    {
+      "input": "3 3 9\n135\n357\n579\n2\n3 3 1 1\n2 2 2 2",
+      "output": "2048\n0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "ICPC 山可以表示为一个由 R$$$R$$$ 行(编号从 1$$$1$$$ 到 R$$$R$$$)和 C$$$C$$$ 列(编号从 1$$$1$$$ 到 C$$$C$$$)组成的网格。位于第 r$$$r$$$ 行、第 c$$$c$$$ 列的单元格记为 (r,c)$$$(r, c)$$$，其高度为 Hr,c$$$H_{r, c}$$$。如果两个单元格有公共边，则称它们相邻。形式化地说，若相应单元格存在，则 (r,c)$$$(r, c)$$$ 与 (r−1,c)$$$(r-1, c)$$$、(r+1,c)$$$(r+1, c)$$$、(r,c−1)$$$(r, c-1)$$$ 和 (r,c+1)$$$(r, c+1)$$$ 相邻。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你只能在相邻单元格之间移动，并且每次移动都会产生代价。在给定奇正整数 X$$$X$$$ 的情况下，从高度为 h1$$$h_1$$$ 的单元格移动到高度为 h2$$$h_2$$$ 的单元格会产生 (h1−h2)X$$$(h_1 - h_2)^X$$$ 的代价。注意，代价可能为负数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要回答 Q$$$Q$$$ 个相互独立的场景。对于每个场景，你从起始单元格 (Rs,Cs)$$$(R_s, C_s)$$$ 出发，希望以最小总代价到达目标单元格 (Rf,Cf)$$$(R_f, C_f)$$$。在某些场景中，总代价可能变得任意小；这样的场景称为无效场景。请找出从起始单元格移动到目标单元格的最小总代价，或判断该场景是否无效。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 R$$$R$$$、C$$$C$$$ 和 X$$$X$$$(1≤R,C≤1000；1≤X≤9；X$$$1 \\leq R, C \\leq 1000; 1 \\leq X \\leq 9; X$$$ 是奇数)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 R$$$R$$$ 行中，每行包含一个长度为 C$$$C$$$ 的字符串 Hr$$$H_r$$$。Hr$$$H_r$$$ 中的每个字符都是 0 到 9 之间的数字。Hr$$$H_r$$$ 的第 c$$$c$$$ 个字符表示单元格 (r,c)$$$(r, c)$$$ 的高度，即 Hr,c$$$H_{r, c}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含一个整数 Q$$$Q$$$(1≤Q≤100000)$$$1 \\leq Q \\leq 100\\,000)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 Q$$$Q$$$ 行中，每行包含四个整数 Rs$$$R_s$$$、Cs$$$C_s$$$、Rf$$$R_f$$$ 和 Cf$$$C_f$$$(1≤Rs,Rf≤R；1≤Cs,Cf≤C$$$1 \\leq R_s, R_f \\leq R; 1 \\leq C_s, C_f \\leq C$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个场景，请在一行中输出以下内容。如果场景无效，输出 INVALID。否则，输出一个整数，表示从起始单元格移动到目标单元格所需的最小总罚值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例输入/输出 #1 的解释",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第一个场景，一种解法是按如下方式移动：(1,1)→(2,1)→(3,1)→(3,2)→(3,3)→(3,4)$$$(1, 1) \\rightarrow (2, 1) \\rightarrow (3, 1) \\rightarrow (3, 2) \\rightarrow (3, 3) \\rightarrow (3, 4)$$$。该方案的总罚值为 (3−4)1+(4−3)1+(3−6)1+(6−8)1+(8−1)1=2$$$(3 - 4)^1 + (4 - 3)^1 + (3 - 6)^1 + (6 - 8)^1 + (8 - 1)^1 = 2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "样例输入/输出 #2 的解释",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第一个场景，环 (1,1)→(2,1)→(2,2)→(1,2)→(1,1)$$$(1, 1) \\rightarrow (2, 1) \\rightarrow (2, 2) \\rightarrow (1, 2) \\rightarrow (1, 1)$$$ 的罚值为 (1−2)5+(2−0)5+(0−9)5+(9−1)5=−26250$$$(1 - 2)^5 + (2 - 0)^5 + (0 - 9)^5 + (9 - 1)^5 = -26250$$$。你可以不断重复这个环，使总罚值变得任意小。类似地，对于第二个场景，你可以先移动到 (1,1)$$$(1, 1)$$$，然后重复同一个环。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. X Aura",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

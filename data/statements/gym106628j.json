@@ -1,0 +1,193 @@
+{
+  "code": "GYM106628J",
+  "letter": "J",
+  "title": "J. String Split",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106628/problem/J",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Brook is trying to write a beautiful, soulful new song using a long string of lyrics $$$s$$$.",
+      "Robin reads over his sheet music and suggests cutting the lyric string into three specific non-empty parts A, B, and C such that $$$A + B + C = s$$$ to create an echoing effect so that:",
+      "A is a prefix of C;",
+      "B is a suffix of C.",
+      "A and B can overlap inside C. Different cuts are counted as completely different musical arrangements. Help Robin find the number of ways to cut the string so Brook can sing his song."
+    ],
+    "input": [
+      "The first line contains an integer $$$t$$$ ($$$1 \\le t \\le 10^{4}$$$) — the number of test cases.",
+      "Each test case has one line with a string $$$s$$$ ($$$3 \\le |s| \\le 2 \\times 10^{5}$$$). It has lowercase letters.",
+      "It is guaranteed that the sum of the lengths of $$$s$$$ over all test cases does not exceed $$$2 \\times 10^{5}$$$."
+    ],
+    "output": [
+      "For each test case, output one integer — the number of ways to cut the string."
+    ],
+    "note": [
+      "For $$$s = \\texttt{aaaaaa}$$$, the valid splits are:",
+      "$$$A = \\texttt{a}$$$, $$$B = \\texttt{a}$$$, $$$C = \\texttt{aaaa}$$$;",
+      "$$$A = \\texttt{a}$$$, $$$B = \\texttt{aa}$$$, $$$C = \\texttt{aaa}$$$;",
+      "$$$A = \\texttt{aa}$$$, $$$B = \\texttt{a}$$$, $$$C = \\texttt{aaa}$$$;",
+      "$$$A = \\texttt{aa}$$$, $$$B = \\texttt{aa}$$$, $$$C = \\texttt{aa}$$$.",
+      "For $$$s = \\texttt{aaaa}$$$, the valid split is $$$A = \\texttt{a}$$$, $$$B = \\texttt{a}$$$, and $$$C = \\texttt{aa}$$$.",
+      "For $$$s = \\texttt{abc}$$$, no split satisfies both conditions."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\naaaaaa\naaaa\nabc",
+      "output": "4\n1\n0"
+    }
+  ],
+  "titleZh": {
+    "0": "J. String Split",
+    "caiyun": "J. String Split",
+    "youdao": "J.字符串分割",
+    "deepl": "J.字符串分割",
+    "iflyrec": "J.字符串拆分",
+    "ai": "J. 字符串拆分",
+    "aiModel": "DeepSeek V4 Flash"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "布鲁克正在尝试用一长串歌词 $$$s$$$ 创作一首美丽动人的新歌。",
+        "youdao": "Brook正在尝试用一长串歌词写一首优美、深情的新歌$$$s$$$。",
+        "deepl": "布鲁克试图用一长串歌词写出一首优美、深情的新歌$$$s$$$。",
+        "iflyrec": "布鲁克试图用一长串歌词$$$s$$$写一首优美、深情的新歌。",
+        "ai": "Brook 正尝试用一段很长的歌词字符串 $$$s$$$ 创作一首优美而深情的歌曲。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "罗宾仔细阅读了他的乐谱，建议将歌词线切割成三个特定的非空白部分 A、B 和 C，这样 $$$A + B + C = s$$$ 就能创造出回声效果，从而：",
+        "youdao": "Robin读了他的乐谱，并建议将歌词分成三个特定的非空部分A， B和C，这样$$$A + B + C = s$$$可以产生呼应效果，这样：",
+        "deepl": "罗宾看了看乐谱，建议将抒情弦乐切成 A、B、C 三个特定的非空部分，这样 $$$A + B + C = s$$$ 就能产生回声效果，从而：",
+        "iflyrec": "Robin阅读了他的乐谱，并建议将歌词字符串切割为三个特定的非空部分A、B和C，以便$$$A + B + C = s$$$创建回声效果，以便:",
+        "ai": "Robin 看了看他的乐谱，建议将歌词字符串切成三个特定的非空部分 A、B 和 C，使得 $$$A + B + C = s$$$，以产生回声效果，并且满足：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "A 是 C 的前缀;",
+        "youdao": "A是C的前缀；",
+        "deepl": "A 是 C 的前缀；",
+        "iflyrec": "A是C的前缀",
+        "ai": "A 是 C 的前缀；",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "B 是 C 的后缀。",
+        "youdao": "B是C的后缀。",
+        "deepl": "B 是 C 的后缀。",
+        "iflyrec": "B是C的后缀。",
+        "ai": "B 是 C 的后缀。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "A 和 B 可以在 C 中重叠。不同的切割被视为完全不同的音乐编排。帮助 Robin 找到切割琴弦的方法，这样 Brook 就可以唱他的歌了。",
+        "youdao": "A和B可以在c里面重叠。不同的剪辑被认为是完全不同的音乐编曲。帮罗宾找出剪断绳子的几种方法这样布鲁克就可以唱歌了。",
+        "deepl": "A 和 B 可以重叠在 C 内，不同的剪切方式算作完全不同的音乐编排。帮助罗宾找出剪断琴弦的方法，这样布鲁克就能唱出他的歌了。",
+        "iflyrec": "A和B可以在C内重叠。不同的剪辑被视为完全不同的音乐安排。帮助罗宾找到切断绳子的方法，这样布鲁克就可以唱他的歌了。",
+        "ai": "A 和 B 在 C 内部可以重叠。不同的切法被视为完全不同的音乐编排。请帮助 Robin 求出切分字符串的方案数，以便 Brook 能演唱他的歌曲。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^{4}$$$)——测试用例的数量。",
+        "youdao": "第一行包含一个整数$$$t$$$ ($$$1 \\le t \\le 10^{4}$$$）—测试用例的数量。",
+        "deepl": "第一行包含一个整数 $$$t$$$ ($$$1 \\le t \\le 10^{4}$$$）--测试用例数。",
+        "iflyrec": "第一行包含整数$$$t$$$($$$1 \\le t \\le 10^{4}$$$）—测试用例的数量。",
+        "ai": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^{4}$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "每个测试用例都有一行，其中包含字符串 $$$s$$$($$$3 \\le |s| \\le 2 \\times 10^{5}$$$)。它包含小写字母。",
+        "youdao": "每个测试用例都有一行字符串$$$s$$$ ($$$3 \\le |s| \\le 2 \\times 10^{5}$$$）。它有小写字母。",
+        "deepl": "每个测试用例都有一行字符串 $$$s$$$ ($$$3 \\le |s| \\le 2 \\times 10^{5}$$$）。字符为小写字母。",
+        "iflyrec": "每个测试用例都有一行字符串$$$s$$$($$$3 \\le |s| \\le 2 \\times 10^{5}$$$）。它有小写字母。",
+        "ai": "每个测试用例占一行，包含一个字符串 $$$s$$$($$$3 \\le |s| \\le 2 \\times 10^{5}$$$)。该字符串由小写字母组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "保证所有测试用例中 $$$s$$$ 的长度之和不超过 $$$2 \\times 10^{5}$$$。",
+        "youdao": "可以保证所有测试用例的$$$s$$$长度之和不超过$$$2 \\times 10^{5}$$$。",
+        "deepl": "保证所有测试用例的 $$$s$$$ 长度总和不超过 $$$2 \\times 10^{5}$$$。",
+        "iflyrec": "保证所有测试用例的$$$s$$$长度之和不超过$$$2 \\times 10^{5}$$$。",
+        "ai": "保证所有测试用例中 $$$s$$$ 的长度之和不超过 $$$2 \\times 10^{5}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "对于每个测试用例，输出一个整数——切割字符串的方法数。",
+        "youdao": "对于每个测试用例，输出一个整数——截断字符串的方法的数量。",
+        "deepl": "对于每个测试用例，输出一个整数--剪切字符串的方法数。",
+        "iflyrec": "对于每个测试用例，输出一个整数—切割字符串的方法的数量。",
+        "ai": "对于每个测试用例，输出一个整数——将该字符串切分的方法数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "对于 $$$s = \\texttt{aaaaaa}$$$，有效的拆分为：",
+        "youdao": "对于$$$s = \\texttt{aaaaaa}$$$，有效的分割是：",
+        "deepl": "对于 $$$s = \\texttt{aaaaaa}$$$，有效的分割是",
+        "iflyrec": "对于$$$s = \\texttt{aaaaaa}$$$，有效拆分为:",
+        "ai": "对于 $$$s = \\texttt{aaaaaa}$$$，合法的切分如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$A = \\texttt{a}$$$、$$$B = \\texttt{a}$$$、$$$C = \\texttt{aaaa}$$$;",
+        "youdao": "$$$A = \\texttt{a}$$$, $$$B = \\texttt{a}$$$, $$$C = \\texttt{aaaa}$$$；",
+        "deepl": "$$$A = \\texttt{a}$$$、$$$B = \\texttt{a}$$$、$$$C = \\texttt{aaaa}$$$；",
+        "iflyrec": "$$$A = \\texttt{a}$$$，$$$B = \\texttt{a}$$$，$$$C = \\texttt{aaaa}$$$",
+        "ai": "$$$A = \\texttt{a}$$$、$$$B = \\texttt{a}$$$、$$$C = \\texttt{aaaa}$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$A = \\texttt{a}$$$、$$$B = \\texttt{aa}$$$、$$$C = \\texttt{aaa}$$$",
+        "youdao": "$$$A = \\texttt{a}$$$, $$$B = \\texttt{aa}$$$, $$$C = \\texttt{aaa}$$$；",
+        "deepl": "$$$A = \\texttt{a}$$$、$$$B = \\texttt{aa}$$$、$$$C = \\texttt{aaa}$$$；",
+        "iflyrec": "$$$A = \\texttt{a}$$$，$$$B = \\texttt{aa}$$$，$$$C = \\texttt{aaa}$$$",
+        "ai": "$$$A = \\texttt{a}$$$, $$$B = \\texttt{aa}$$$, $$$C = \\texttt{aaa}$$$;",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$A = \\texttt{aa}$$$、$$$B = \\texttt{a}$$$、$$$C = \\texttt{aaa}$$$",
+        "youdao": "$$$A = \\texttt{aa}$$$, $$$B = \\texttt{a}$$$, $$$C = \\texttt{aaa}$$$；",
+        "deepl": "$$$A = \\texttt{aa}$$$、$$$B = \\texttt{a}$$$、$$$C = \\texttt{aaa}$$$；",
+        "iflyrec": "$$$A = \\texttt{aa}$$$，$$$B = \\texttt{a}$$$，$$$C = \\texttt{aaa}$$$",
+        "ai": "$$$A = \\texttt{aa}$$$, $$$B = \\texttt{a}$$$, $$$C = \\texttt{aaa}$$$;",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "$$$A = \\texttt{aa}$$$,$$$B = \\texttt{aa}$$$,$$$C = \\texttt{aa}$$$。",
+        "youdao": "$$$A = \\texttt{aa}$$$, $$$B = \\texttt{aa}$$$, $$$C = \\texttt{aa}$$$。",
+        "deepl": "$$$A = \\texttt{aa}$$$、$$$B = \\texttt{aa}$$$、$$$C = \\texttt{aa}$$$。",
+        "iflyrec": "$$$A = \\texttt{aa}$$$，$$$B = \\texttt{aa}$$$，$$$C = \\texttt{aa}$$$。",
+        "ai": "$$$A = \\texttt{aa}$$$, $$$B = \\texttt{aa}$$$, $$$C = \\texttt{aa}$$$.",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "对于 $$$s = \\texttt{aaaa}$$$，有效的拆分是 $$$A = \\texttt{a}$$$、$$$B = \\texttt{a}$$$ 和 $$$C = \\texttt{aa}$$$。",
+        "youdao": "对于$$$s = \\texttt{aaaa}$$$，有效的分割是$$$A = \\texttt{a}$$$， $$$B = \\texttt{a}$$$和$$$C = \\texttt{aa}$$$。",
+        "deepl": "对于$$$s = \\texttt{aaaa}$$$，有效的拆分是$$$A = \\texttt{a}$$$、$$$B = \\texttt{a}$$$和$$$C = \\texttt{aa}$$$。",
+        "iflyrec": "对于$$$s = \\texttt{aaaa}$$$，有效拆分为$$$A = \\texttt{a}$$$、$$$B = \\texttt{a}$$$和$$$C = \\texttt{aa}$$$。",
+        "ai": "对于 $$$s = \\texttt{aaaa}$$$，有效的拆分为 $$$A = \\texttt{a}$$$、$$$B = \\texttt{a}$$$ 和 $$$C = \\texttt{aa}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "对于 $$$s = \\texttt{abc}$$$，没有拆分能同时满足这两个条件。",
+        "youdao": "对于$$$s = \\texttt{abc}$$$，没有分裂同时满足两个条件。",
+        "deepl": "对于 $$$s = \\texttt{abc}$$$，没有任何分裂同时满足这两个条件。",
+        "iflyrec": "对于$$$s = \\texttt{abc}$$$，无分裂满足两个条件。",
+        "ai": "对于 $$$s = \\texttt{abc}$$$，不存在同时满足两个条件的拆分。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.112Z",
+  "translatedBy": [
+    "iflyrec"
+  ]
+}

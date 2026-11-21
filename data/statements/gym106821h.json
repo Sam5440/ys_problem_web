@@ -1,0 +1,149 @@
+{
+  "code": "GYM106821H",
+  "letter": "H",
+  "title": "H. Popsicle Stick Game",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106821/problem/H",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Dinny and Walrus are working on an arts and crafts project! They have $$$n$$$ popsicle sticks, where the $$$i$$$-th stick has a non-negative integer $$$a_i$$$ written on it.",
+      "To decide who gets to keep their masterpiece, they play a game. Dinny goes first, and the two players alternate turns until all popsicle sticks have been removed.",
+      "On each turn, the current player performs the following actions in order:",
+      "Add the $$$\\mathrm{MEX}^\\dagger$$$ of the numbers written on the remaining popsicle sticks to their score.",
+      "Choose any remaining popsicle stick and remove it.",
+      "Both players start with a score of $$$0$$$. After all popsicle sticks have been removed, the player with the higher score wins. If both players have the same score, the game ends in a tie.",
+      "Assuming both players play optimally, determine whether Dinny wins, Walrus wins, or the game ends in a tie.",
+      "$$$^\\dagger$$$The $$$\\mathrm{MEX}$$$ (minimum excluded value) of an array is the smallest non-negative integer that is not in the array. For example:",
+      "The $$$\\mathrm{MEX}$$$ of $$$[2, 2, 1]$$$ is $$$0$$$ because $$$0$$$ is not in the array.",
+      "The $$$\\mathrm{MEX}$$$ of $$$[3, 1, 0, 1]$$$ is $$$2$$$ because $$$0$$$ and $$$1$$$ are in the array but $$$2$$$ is not.",
+      "The $$$\\mathrm{MEX}$$$ of $$$[0, 3, 1, 2]$$$ is $$$4$$$ because $$$0$$$, $$$1$$$, $$$2$$$ and $$$3$$$ are in the array but $$$4$$$ is not."
+    ],
+    "input": [
+      "The first line contains an integer $$$n$$$ ($$$1 \\le n \\le 2 \\cdot 10^5$$$) — the number of popsicle sticks.",
+      "The second line contains $$$n$$$ integers $$$a_1, a_2, \\ldots, a_n$$$ ($$$0 \\le a_i \\le 10^9$$$) — the numbers written on the popsicle sticks."
+    ],
+    "output": [
+      "Output \"Dinny\", \"Walrus\", or \"Tie\", according to the winner. The capitalization of these names does not matter."
+    ],
+    "note": [
+      "In the first test case, one possible sequence of moves is:",
+      "Dinny earns $$$3$$$ points and removes the stick labeled $$$1$$$, leaving $$$[0,0,2]$$$.",
+      "Walrus earns $$$1$$$ point and removes a stick labeled $$$0$$$, leaving $$$[0,2]$$$.",
+      "Dinny earns $$$1$$$ point and removes the remaining stick labeled $$$0$$$, leaving $$$[2]$$$.",
+      "Walrus earns $$$0$$$ points and removes the final stick.",
+      "Dinny finishes with $$$4$$$ points, while Walrus finishes with $$$1$$$ point. Therefore, Dinny wins.",
+      "In the second test case, since there is no stick labeled $$$0$$$, the MEX remains $$$0$$$ throughout the game. Neither player earns any points, so the game ends in a tie."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n0 0 1 2",
+      "output": "Dinny"
+    },
+    {
+      "input": "3\n1 2 3",
+      "output": "Tie"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Dinny 和 Walrus 正在制作手工艺品！他们有 $$$n$$$ 根冰棒棍，其中第 $$$i$$$ 根上写着一个非负整数 $$$a_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了决定谁能留下自己的杰作，他们开始了一场游戏。Dinny 先手，两名玩家轮流行动，直到所有冰棒棍都被移除。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个回合中，当前玩家依次执行以下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将剩余冰棒棍上写的数字之 $$$\\mathrm{MEX}^\\dagger$$$ 加到他们的得分中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择任意一根剩余的冰棒棍并将其移除。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "两名玩家的初始得分均为 $$$0$$$。移除所有冰棒棍后，得分较高的玩家获胜。如果两名玩家的得分相同，则游戏以平局结束。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "假设双方都采取最优策略，判断 Dinny 获胜、Walrus 获胜，还是游戏以平局结束。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$^\\dagger$$$ 数组的 $$$\\mathrm{MEX}$$$(最小未出现值)是数组中未出现的最小非负整数。例如：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$[2, 2, 1]$$$ 的 $$$\\mathrm{MEX}$$$ 是 $$$0$$$，因为 $$$0$$$ 不在数组中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$\\mathrm{MEX}$$$ 的 $$$[3, 1, 0, 1]$$$ 是 $$$2$$$，因为 $$$0$$$ 和 $$$1$$$ 在数组中，而 $$$2$$$ 不在。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$[0, 3, 1, 2]$$$ 的 $$$\\mathrm{MEX}$$$ 是 $$$4$$$，因为数组中有 $$$0$$$、$$$1$$$、$$$2$$$ 和 $$$3$$$，但没有 $$$4$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 $$$n$$$($$$1 \\le n \\le 2 \\cdot 10^5$$$)——冰棒棍的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 $$$n$$$ 个整数 $$$a_1, a_2, \\ldots, a_n$$$ ($$$0 \\le a_i \\le 10^9$$$)，表示写在冰棒棍上的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "根据获胜者输出“Dinny”、“Walrus”或“Tie”。这些名称的大小写不影响判定。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，一种可能的操作序列是：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Dinny 获得 $$$3$$$ 分，并移除标号为 $$$1$$$ 的木棍，剩下 $$$[0,0,2]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Walrus 获得 $$$1$$$ 分，并移除一根标记为 $$$0$$$ 的木棍，剩下 $$$[0,2]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Dinny 获得 $$$1$$$ 分，并移除剩下的标号为 $$$0$$$ 的木棍，留下 $$$[2]$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Walrus 得到 $$$0$$$ 分，并移除最后一根棍子。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Dinny 最终得到 $$$4$$$ 分，而 Walrus 最终得到 $$$1$$$ 分。因此，Dinny 获胜。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，由于没有标号为 $$$0$$$ 的木棍，MEX 在整个游戏过程中始终为 $$$0$$$。两位玩家都不会获得任何分数，因此游戏以平局结束。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "H. 冰棒棍游戏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

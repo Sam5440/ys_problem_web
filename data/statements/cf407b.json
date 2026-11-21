@@ -1,0 +1,84 @@
+{
+  "code": "CF407B",
+  "letter": "B",
+  "title": "B. Long Path",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/407/B",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "One day, little Vasya found himself in a maze consisting of (n + 1) rooms, numbered from 1 to (n + 1). Initially, Vasya is at the first room and to get out of the maze, he needs to get to the (n + 1)-th one.",
+      "The maze is organized as follows. Each room of the maze has two one-way portals. Let's consider room number i (1 ≤ i ≤ n), someone can use the first portal to move from it to room number (i + 1), also someone can use the second portal to move from it to room number pi, where 1 ≤ pi ≤ i.",
+      "In order not to get lost, Vasya decided to act as follows.",
+      "Each time Vasya enters some room, he paints a cross on its ceiling. Initially, Vasya paints a cross at the ceiling of room 1.",
+      "Let's assume that Vasya is in room i and has already painted a cross on its ceiling. Then, if the ceiling now contains an odd number of crosses, Vasya uses the second portal (it leads to room pi), otherwise Vasya uses the first portal.",
+      "Help Vasya determine the number of times he needs to use portals to get to room (n + 1) in the end."
+    ],
+    "input": [
+      "The first line contains integer n (1 ≤ n ≤ 103) — the number of rooms. The second line contains n integers pi (1 ≤ pi ≤ i). Each pi denotes the number of the room, that someone can reach, if he will use the second portal in the i-th room."
+    ],
+    "output": [
+      "Print a single number — the number of portal moves the boy needs to go out of the maze. As the number can be rather large, print it modulo 1000000007 (109 + 7)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n1 2",
+      "output": "4"
+    },
+    {
+      "input": "4\n1 1 2 3",
+      "output": "20"
+    },
+    {
+      "input": "5\n1 1 1 1 1",
+      "output": "62"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含整数 n（1 ≤ n ≤ 103）——房间的数量。第二行包含 n 个整数 pi（1 ≤ pi ≤ i）。pi 表示如果某人在第 i 个房间使用第二个传送门，他能够到达的房间编号。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个数——男孩走出迷宫所需的传送门移动次数。由于这个数可能很大，请输出其对 1000000007（109 + 7）取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "一天，小瓦夏发现自己身处一个由 (n + 1) 个房间组成的迷宫中，房间编号从 1 到 (n + 1)。最初，瓦夏位于第一个房间，为了走出迷宫，他需要到达第 (n + 1) 个房间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "迷宫的结构如下。迷宫中的每个房间都有两个单向传送门。考虑编号为 i 的房间（1 ≤ i ≤ n），可以使用第一个传送门从该房间移动到编号为 (i + 1) 的房间，也可以使用第二个传送门移动到编号为 p_i 的房间，其中 1 ≤ p_i ≤ i。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了避免迷路，瓦夏决定采取以下行动。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每当瓦夏进入某个房间时，他都会在该房间的天花板上画一个十字。最初，瓦夏会在房间 1 的天花板上画一个十字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "假设瓦夏位于房间 i，并且已经在该房间的天花板上画了一个十字。如果此时天花板上的十字数量为奇数，瓦夏就使用第二个传送门（它通向房间 p_i），否则瓦夏使用第一个传送门。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助瓦夏确定，为了最终到达房间 (n + 1)，他需要使用传送门多少次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 长路径",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

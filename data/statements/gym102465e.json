@@ -1,0 +1,109 @@
+{
+  "code": "GYM102465E",
+  "letter": "E",
+  "title": "E. Rounding",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102465/problem/E",
+  "difficulty": "*1100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/e3b69009d6f6d179cb0ef1f1bf97954246fe3a1c.png)",
+      "You decided to stay an extra day in Paris visiting favorite places of Parisians around T'el'ecom ParisTech. You want to collect information about these favorite places, but asking people to fill in surveys is less fun than coding. For this reason, you asked the Parisian Agency for Really Imprecise Surveys to do it for you. You sent them a list of the P places you were interested in.",
+      "After surveying exactly 10 000 persons and asking them their favorite place (among these P places), the agency has just sent you the results. All persons surveyed answered the question. Unfortunately, the agency rounded the percentage results to the nearest integer, using the following formula: result=⌊original_value+12⌋$$$result = \\lfloor original\\_value + \\frac 12\\rfloor$$$. In particular, decimal values of .50$$$.50$$$ are rounded up.",
+      "But since 10000$$$10000$$$ persons were surveyed, you should have been able to get percentage values precise to the second decimal. What a loss of precision! You want to know the range in which each original result could be."
+    ],
+    "input": [
+      "The input comprises several lines:",
+      "The first line consists of an integer P$$$P$$$.",
+      "Each of the following P$$$P$$$ lines consists of the name of a place followed by an integer i$$$i$$$, separated with a single space.",
+      "Limits",
+      "1≤P≤10000$$$1 \\le P \\le 10 000$$$;",
+      "the name of a place is a string of between 1 and 20 characters among Latin alphabet letters ('A' to 'Z' and 'a' to 'z') and the underscore character ('_');",
+      "no two names are the same;",
+      "0≤i≤100$$$0 \\le i \\le 100$$$."
+    ],
+    "output": [
+      "If the results given by the agency are not consistent, print a single line with the word IMPOSSIBLE. Otherwise the output should consist of P lines, each of them should consist of the name of a place followed by a single space and two numbers, the smallest and the largest percentage values that place could have had in the original results, as floating-point numbers with two decimals separated with a single space (each number must have at least one digit before the decimal point, even if it is 0, and exactly 2 decimals, even if the trailing ones are 0). The places must be in the same order as in the input."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\nCatacombes 32\nCite_Universitaire 22\nArenes_de_Lutece 26\nObservatoire 19",
+      "output": "Catacombes 31.53 32.49\nCite_Universitaire 21.53 22.49\nArenes_de_Lutece 25.53 26.49\nObservatoire 18.53 19.49"
+    },
+    {
+      "input": "7\nAqueduc_Medicis 11\nParc_Montsouris 40\nPlace_Denfert 10\nHopital_Sainte_Anne 4\nButte_aux_cailles 20\nCite_florale 12\nPrison_de_la_Sante 0",
+      "output": "Aqueduc_Medicis 11.06 11.49\nParc_Montsouris 40.06 40.49\nPlace_Denfert 10.06 10.49\nHopital_Sainte_Anne 4.06 4.49\nButte_aux_cailles 20.06 20.49\nCite_florale 12.06 12.49\nPrison_de_la_Sante 0.06 0.49"
+    },
+    {
+      "input": "2\nCatacombes 50\nArenes_de_Lutece 49",
+      "output": "IMPOSSIBLE"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/e3b69009d6f6d179cb0ef1f1bf97954246fe3a1c.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你决定在巴黎多待一天，去参观 T'el'ecom ParisTech 周边巴黎人最喜欢的地点。你想收集有关这些地点的信息，但让人们填写调查问卷可没有编程有趣。为此，你请巴黎极不精确调查机构替你完成这项工作。你向他们发送了一份包含你感兴趣的 P 个地点的列表。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在恰好调查了 10 000 人并询问他们最喜欢的地点(在这 P 个地点中)后，该机构刚刚将结果发给了你。所有受调查者都回答了这个问题。不幸的是，该机构使用以下公式将百分比结果四舍五入到最接近的整数：result=⌊original_value+12⌋$$$result = \\lfloor original\\_value + \\frac 12\\rfloor$$$。特别地，小数部分为 .50$$$.50$$$ 的数会向上舍入。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "但是，由于调查了 10000$$$10000$$$ 人，你本来应该能够得到精确到小数点后两位的百分比数值。真是损失了不少精度！你想知道每个原始结果可能处于什么范围内。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入包含若干行：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行包含一个整数 P$$$P$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 P$$$P$$$ 行中的每一行由一个地点名称和一个整数 i$$$i$$$ 组成，两者之间由一个空格分隔。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "限制条件",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1≤P≤10000$$$1 \\le P \\le 10 000$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "地点名称是一个长度为 1 至 20 个字符的字符串，字符只能是拉丁字母（'A' 至 'Z' 和 'a' 至 'z'）以及下划线字符（'_'）；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "任意两个名称都不相同；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "0≤i≤100$$$0 \\le i \\le 100$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果机构给出的结果不一致，则输出一行，内容为单词 IMPOSSIBLE。否则输出应当包含 P 行，每行包含一个地点名称，后跟一个空格和两个数，即该地点在原始结果中可能的最小百分比值和最大百分比值，以浮点数形式输出，保留两位小数，用单个空格分隔（每个数在小数点前至少有一位数字，即使是 0；且恰好有两位小数，即使末尾是 0）。地点的顺序必须与输入中出现的顺序一致。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 四舍五入",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

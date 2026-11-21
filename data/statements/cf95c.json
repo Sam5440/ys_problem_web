@@ -1,0 +1,75 @@
+{
+  "code": "CF95C",
+  "letter": "C",
+  "title": "C. Volleyball",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/95/C",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Petya loves volleyball very much. One day he was running late for a volleyball match. Petya hasn't bought his own car yet, that's why he had to take a taxi. The city has n junctions, some of which are connected by two-way roads. The length of each road is defined by some positive integer number of meters; the roads can have different lengths.",
+      "Initially each junction has exactly one taxi standing there. The taxi driver from the i-th junction agrees to drive Petya (perhaps through several intermediate junctions) to some other junction if the travel distance is not more than ti meters. Also, the cost of the ride doesn't depend on the distance and is equal to ci bourles. Taxis can't stop in the middle of a road. Each taxi can be used no more than once. Petya can catch taxi only in the junction, where it stands initially.",
+      "At the moment Petya is located on the junction x and the volleyball stadium is on the junction y. Determine the minimum amount of money Petya will need to drive to the stadium."
+    ],
+    "input": [
+      "The first line contains two integers n and m (1 ≤ n ≤ 1000, 0 ≤ m ≤ 1000). They are the number of junctions and roads in the city correspondingly. The junctions are numbered from 1 to n, inclusive. The next line contains two integers x and y (1 ≤ x, y ≤ n). They are the numbers of the initial and final junctions correspondingly. Next m lines contain the roads' description. Each road is described by a group of three integers ui, vi, wi (1 ≤ ui, vi ≤ n, 1 ≤ wi ≤ 109) — they are the numbers of the junctions connected by the road and the length of the road, correspondingly. The next n lines contain n pairs of integers ti and ci (1 ≤ ti, ci ≤ 109), which describe the taxi driver that waits at the i-th junction — the maximum distance he can drive and the drive's cost. The road can't connect the junction with itself, but between a pair of junctions there can be more than one road. All consecutive numbers in each line are separated by exactly one space character."
+    ],
+    "output": [
+      "If taxis can't drive Petya to the destination point, print \"-1\" (without the quotes). Otherwise, print the drive's minimum cost.",
+      "Please do not use the %lld specificator to read or write 64-bit integers in С++. It is preferred to use cin, cout streams or the %I64d specificator."
+    ],
+    "note": [
+      "An optimal way — ride from the junction 1 to 2 (via junction 4), then from 2 to 3. It costs 7+2=9 bourles."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n1 3\n1 2 3\n1 4 1\n2 4 1\n2 3 5\n2 7\n7 2\n1 2\n7 7",
+      "output": "9"
+    }
+  ],
+  "sectionsZh": {
+    "note": [
+      {
+        "ai": "一种最优方案——从路口 1 行驶到路口 2（经过路口 4），然后从路口 2 行驶到路口 3。花费为 7+2=9 布尔。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "Petya非常喜欢排球。一天，他赶去参加排球比赛时迟到了。Petya还没有买自己的汽车，因此只能乘坐出租车。城市中有 n 个路口，其中一些路口由双向道路连接。每条道路的长度由一个正整数米数表示；道路的长度可能各不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最初每个路口恰好停着一辆出租车。第 i 个路口的出租车司机同意载 Petya（可能经过若干个中间路口）前往某个其他路口，前提是行驶距离不超过 ti 米。此外，乘车费用与距离无关，均为 ci 卢布。出租车不能在道路中间停下。每辆出租车最多只能使用一次。Petya只能在出租车最初停放的路口搭乘该车。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此时 Petya 位于路口 x，排球场馆位于路口 y。请确定 Petya 到达体育场所需支付的最少金额。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 m（1 ≤ n ≤ 1000，0 ≤ m ≤ 1000），分别表示城市中的路口数和道路数。路口编号从 1 到 n。下一行包含两个整数 x 和 y（1 ≤ x，y ≤ n），分别表示起点和终点路口的编号。接下来的 m 行包含道路的描述。每条道路由三个整数 ui、vi、wi（1 ≤ ui，vi ≤ n，1 ≤ wi ≤ 10^9）描述，分别表示由该道路连接的两个路口的编号以及道路长度。接下来的 n 行包含 n 对整数 ti 和 ci（1 ≤ ti，ci ≤ 10^9），描述在第 i 个路口等待的出租车司机——他能够行驶的最大距离以及乘车费用。道路不能连接路口自身，但两个路口之间可以有多条道路。每行中相邻的数字之间恰好由一个空格分隔。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果出租车无法将 Petya 送到目的地，请输出“-1”（不含引号）。否则，请输出乘车的最小费用。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请不要在 C++ 中使用 %lld 格式说明符来读写 64 位整数。建议使用 cin、cout 流或 %I64d 格式说明符。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 排球",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

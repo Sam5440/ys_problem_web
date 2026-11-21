@@ -1,0 +1,71 @@
+{
+  "code": "GYM104673A",
+  "letter": "A",
+  "title": "A. Array",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104673/problem/A",
+  "difficulty": "*1600",
+  "timeLimit": "5 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "In his backyard, Cimrman had created a breakthrough bionic solar array installment.",
+      "The array is made of separate cells arranged in a triangular layout. The layout consists of parallel rows, the first row contains one cell, and then the number of cells in each row is always one more than the number of cells in the immediately preceding row. The distances between adjacent cells in each row are the same and they are the same in all rows, and the distances between the consecutive rows are the same. The layout is also symmetrical along the axis perpendicular to the rows and going through the middle of the cell in the first row.",
+      "The cells at both ends of all rows and also the cell in the first row are the so-called elementary cells and they are all labelled by 1$$$1$$$.",
+      "The labelling scheme for the remaining cells is more intricate. Each of the remaining cells in a particular row is connected to exactly two cells in the previous row. These two cells are the closest ones in the previous row to the given cell. The label of the given cell is equal to the sum of the labels of the cells in the previous row to which it is connected.",
+      "The cells are maintained by an automated pentacopter. When a cell needs a maintenance it sends out a request containing its label. The pentacopter has to locate the row of the cell when it is given only the label of the cell."
+    ],
+    "input": [
+      "The first input line contains one integer Q$$$Q$$$ (1≤Q≤105$$$1 \\leq Q \\leq 10^5$$$), the number of maintenance requests. Each of the next Q$$$Q$$$ lines contains an integer N$$$N$$$ (1≤N≤109$$$1 \\leq N \\leq 10^9$$$), the label of a cell producing the request."
+    ],
+    "output": [
+      "Output Q$$$Q$$$ lines, for each request print the smallest possible number of a row in the array on which the cell requesting a maintenance is located."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1\n3\n66\n330\n10",
+      "output": "1\n4\n13\n12\n6"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在自家后院里，Cimrman 建造了一套突破性的仿生太阳能电池阵列装置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "该阵列由按照三角形布局排列的独立单元格组成。该布局包含若干条平行的行，第一行包含一个单元格，之后每行的单元格数量总是比紧邻的前一行多一个。每行中相邻单元格之间的距离相同，且所有行中的这一距离都相同；相邻行之间的距离也相同。该布局还关于一条垂直于各行且经过第一行单元格中点的轴对称。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有行两端的单元格以及第一行中的单元格都称为基本单元格，并且它们都标有 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "剩余单元格的标号方案更加复杂。特定行中的每个剩余单元格都恰好与上一行中的两个单元格相连。这两个单元格是在上一行中距离给定单元格最近的两个单元格。给定单元格的标号等于它所连接的上一行中两个单元格的标号之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这些单元格由一台自动五旋翼飞行器维护。当某个单元格需要维护时，它会发送一个包含自身标号的请求。五旋翼飞行器只获得单元格的标号，因此必须定位该单元格所在的行。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 Q$$$Q$$$(1≤Q≤105$$$1 \\leq Q \\leq 10^5$$$)，表示维护请求的数量。接下来的 Q$$$Q$$$ 行中，每行包含一个整数 N$$$N$$$(1≤N≤109$$$1 \\leq N \\leq 10^9$$$)，表示发出请求的单元格的标号。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Q$$$Q$$$ 行，对于每个请求，输出请求维护的单元格所在数组行号的可能最小值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 数组",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

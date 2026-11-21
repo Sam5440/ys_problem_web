@@ -1,0 +1,163 @@
+{
+  "code": "CF1065E",
+  "letter": "E",
+  "title": "E. Side Transmutations",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1065/E",
+  "difficulty": "2300",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Consider some set of distinct characters A$$$A$$$ and some string S$$$S$$$, consisting of exactly n$$$n$$$ characters, where each character is present in A$$$A$$$.",
+      "You are given an array of m$$$m$$$ integers b$$$b$$$ (b1<b2<⋯<bm$$$b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_m$$$).",
+      "You are allowed to perform the following move on the string S$$$S$$$:",
+      "Choose some valid i$$$i$$$ and set k=bi$$$k = b_i$$$;",
+      "Take the first k$$$k$$$ characters of S=Prk$$$S = Pr_k$$$;",
+      "Take the last k$$$k$$$ characters of S=Suk$$$S = Su_k$$$;",
+      "Substitute the first k$$$k$$$ characters of S$$$S$$$ with the reversed Suk$$$Su_k$$$;",
+      "Substitute the last k$$$k$$$ characters of S$$$S$$$ with the reversed Prk$$$Pr_k$$$.",
+      "For example, let's take a look at S=$$$S =$$$ \"abcdefghi\" and k=2$$$k = 2$$$. Pr2=$$$Pr_2 =$$$ \"ab\", Su2=$$$Su_2 =$$$ \"hi\". Reversed Pr2=$$$Pr_2 =$$$ \"ba\", Su2=$$$Su_2 =$$$ \"ih\". Thus, the resulting S$$$S$$$ is \"ihcdefgba\".",
+      "The move can be performed arbitrary number of times (possibly zero). Any i$$$i$$$ can be selected multiple times over these moves.",
+      "Let's call some strings S$$$S$$$ and T$$$T$$$ equal if and only if there exists such a sequence of moves to transmute string S$$$S$$$ to string T$$$T$$$. For the above example strings \"abcdefghi\" and \"ihcdefgba\" are equal. Also note that this implies S=S$$$S = S$$$.",
+      "The task is simple. Count the number of distinct strings.",
+      "The answer can be huge enough, so calculate it modulo 998244353$$$998244353$$$."
+    ],
+    "input": [
+      "The first line contains three integers n$$$n$$$, m$$$m$$$ and |A|$$$|A|$$$ (2≤n≤109$$$2 \\le n \\le 10^9$$$, 1≤m≤min(n2,2⋅105)$$$1 \\le m \\le min(\\frac n 2, 2 \\cdot 10^5)$$$, 1≤|A|≤109$$$1 \\le |A| \\le 10^9$$$) — the length of the strings, the size of the array b$$$b$$$ and the size of the set A$$$A$$$, respectively.",
+      "The second line contains m$$$m$$$ integers b1,b2,…,bm$$$b_1, b_2, \\dots, b_m$$$ (1≤bi≤n2$$$1 \\le b_i \\le \\frac n 2$$$, b1<b2<⋯<bm$$$b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_m$$$)."
+    ],
+    "output": [
+      "Print a single integer — the number of distinct strings of length n$$$n$$$ with characters from set A$$$A$$$ modulo 998244353$$$998244353$$$."
+    ],
+    "note": [
+      "Here are all the distinct strings for the first example. The chosen letters 'a' and 'b' are there just to show that the characters in A$$$A$$$ are different.",
+      "\"aaa\"",
+      "\"aab\" = \"baa\"",
+      "\"aba\"",
+      "\"abb\" = \"bba\"",
+      "\"bab\"",
+      "\"bbb\""
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1 2\n1",
+      "output": "6"
+    },
+    {
+      "input": "9 2 26\n2 3",
+      "output": "150352234"
+    },
+    {
+      "input": "12 3 1\n2 5 6",
+      "output": "1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "考虑一个由互不相同的字符组成的集合 A$$$A$$$，以及一个恰好由 n$$$n$$$ 个字符组成的字符串 S$$$S$$$，其中每个字符都存在于 A$$$A$$$ 中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个包含 m$$$m$$$ 个整数 b$$$b$$$ 的数组(b1<b2<⋯<bm$$$b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_m$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以对字符串 S$$$S$$$ 执行以下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "选择某个合法的 i$$$i$$$，并令 k=bi$$$k = b_i$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "取 S=Prk$$$S = Pr_k$$$ 的前 k$$$k$$$ 个字符；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "取 S=Suk$$$S = Su_k$$$ 的后 k$$$k$$$ 个字符。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将 S$$$S$$$ 的前 k$$$k$$$ 个字符替换为反转后的 Suk$$$Su_k$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将 S$$$S$$$ 的后 k$$$k$$$ 个字符替换为反转后的 Prk$$$Pr_k$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，考虑 S=$$$S =$$$ \"abcdefghi\" 且 k=2$$$k = 2$$$。Pr2=$$$Pr_2 =$$$ \"ab\"，Su2=$$$Su_2 =$$$ \"hi\"。反转后的 Pr2=$$$Pr_2 =$$$ \"ba\"，Su2=$$$Su_2 =$$$ \"ih\"。因此，得到的 S$$$S$$$ 为 \"ihcdefgba\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "该操作可以执行任意次数(也可以执行零次)。在这些操作中，任意 i$$$i$$$ 都可以被多次选中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当且仅当存在这样一个操作序列，可以将字符串 S$$$S$$$ 变换为字符串 T$$$T$$$ 时，我们称字符串 S$$$S$$$ 和 T$$$T$$$ 相等。对于上面的示例字符串，\"abcdefghi\" 和 \"ihcdefgba\" 是相等的。还要注意，这意味着 S=S$$$S = S$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "任务很简单。计算不同字符串的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "答案可能非常大，因此请计算其对 998244353$$$998244353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 n$$$n$$$、m$$$m$$$ 和 |A|$$$|A|$$$(2≤n≤109$$$2 \\le n \\le 10^9$$$，1≤m≤min(n2,2⋅105)$$$1 \\le m \\le min(\\frac n 2, 2 \\cdot 10^5)$$$，1≤|A|≤109$$$1 \\le |A| \\le 10^9$$$)，分别表示字符串的长度、数组 b$$$b$$$ 的大小以及集合 A$$$A$$$ 的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 m$$$m$$$ 个整数 b1,b2,…,bm$$$b_1, b_2, \\dots, b_m$$$(1≤bi≤n2$$$1 \\le b_i \\le \\frac n 2$$$，b1<b2<⋯<bm$$$b_1  \\lt  b_2  \\lt  \\dots  \\lt  b_m$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，即字符来自集合 A$$$A$$$ 的长度为 n$$$n$$$ 的不同字符串数量，对 998244353$$$998244353$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "以下是第一个样例中的所有不同字符串。选取字母 'a' 和 'b' 只是为了说明 A$$$A$$$ 中的字符互不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "\"aaa\"",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "\"aab\" = \"baa\"",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "\"aba\"",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "\"abb\" = \"bba\"",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "\"bab\"",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "\"bbb\"",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. Side Transmutations",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

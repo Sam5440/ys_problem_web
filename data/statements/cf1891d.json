@@ -1,0 +1,75 @@
+{
+  "code": "CF1891D",
+  "letter": "D",
+  "title": "D. Suspicious logarithms",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1891/D",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Let f$$$f$$$(x$$$x$$$) be the floor of the binary logarithm of x$$$x$$$. In other words, f$$$f$$$(x$$$x$$$) is largest non-negative integer y$$$y$$$, such that 2y$$$2^y$$$ does not exceed x$$$x$$$.",
+      "Let g$$$g$$$(x$$$x$$$) be the floor of the logarithm of x$$$x$$$ with base f$$$f$$$(x$$$x$$$). In other words, g$$$g$$$(x$$$x$$$) is the largest non-negative integer z$$$z$$$, such that f(x)z$$${f(x)}^{z}$$$ does not exceed x$$$x$$$.",
+      "You are given q$$$q$$$ queries. The i$$$i$$$-th query consists of two integers li$$$l_i$$$ and ri$$$r_i$$$. The answer to the query is the sum of g$$$g$$$(k$$$k$$$) across all integers k$$$k$$$, such that li≤k≤ri$$$l_i \\leq k \\leq r_i$$$. Since the answers might be large, print them modulo 109+7$$${10^9 + 7}$$$."
+    ],
+    "input": [
+      "The first line contains a single integer q$$$q$$$ — the number of queries (1≤q≤105$$$1 \\leq q \\leq 10^5$$$).",
+      "The next q$$$q$$$ lines each contain two integers li$$$l_i$$$ and ri$$$r_i$$$ — the bounds of the i$$$i$$$-th query (4≤li≤ri≤1018$$$4 \\leq l_i \\leq r_i \\leq 10^{18}$$$)."
+    ],
+    "output": [
+      "For each query, output the answer to the query modulo 109+7$$$10^9 + 7$$$."
+    ],
+    "note": [
+      "The table below contains the values of the functions f$$$f$$$(x$$$x$$$) and g$$$g$$$(x$$$x$$$) for all x$$$x$$$ such that 1≤x≤8$$$1 \\leq x \\leq 8$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "12\n4 6\n4 7\n4 8\n4 100000\n179 1000000000000000000\n57 179\n4 201018959\n7 201018960\n729 50624\n728 50624\n728 50625\n729 50625",
+      "output": "6\n8\n9\n348641\n41949982\n246\n1\n0\n149688\n149690\n149694\n149692"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "令 f$$$f$$$(x$$$x$$$) 表示 x$$$x$$$ 的二进制对数的下取整。换句话说，f$$$f$$$(x$$$x$$$) 是满足 2y$$$2^y$$$ 不超过 x$$$x$$$ 的最大非负整数 y$$$y$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "令 g$$$g$$$(x$$$x$$$) 表示以 f$$$f$$$(x$$$x$$$) 为底的 x$$$x$$$ 的对数的下取整。换句话说，g$$$g$$$(x$$$x$$$) 是满足 f(x)z$$${f(x)}^{z}$$$ 不超过 x$$$x$$$ 的最大非负整数 z$$$z$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定 q$$$q$$$ 个查询。第 i$$$i$$$ 个查询由两个整数 li$$$l_i$$$ 和 ri$$$r_i$$$ 组成。该查询的答案是所有满足 li≤k≤ri$$$l_i \\leq k \\leq r_i$$$ 的整数 k$$$k$$$ 对应的 g$$$g$$$(k$$$k$$$) 之和。由于答案可能很大，请输出答案对 109+7$$${10^9 + 7}$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 q$$$q$$$ —— 查询的数量(1≤q≤105$$$1 \\leq q \\leq 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 q$$$q$$$ 行中，每行包含两个整数 li$$$l_i$$$ 和 ri$$$r_i$$$ —— 第 i$$$i$$$ 个查询的边界(4≤li≤ri≤1018$$$4 \\leq l_i \\leq r_i \\leq 10^{18}$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个查询，输出答案对 109+7$$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "下表给出了函数 f$$$f$$$(x$$$x$$$) 和 g$$$g$$$(x$$$x$$$) 对所有满足 1≤x≤8$$$1 \\leq x \\leq 8$$$ 的 x$$$x$$$ 的取值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 可疑的对数",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

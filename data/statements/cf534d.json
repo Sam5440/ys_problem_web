@@ -1,0 +1,203 @@
+{
+  "code": "CF534D",
+  "letter": "D",
+  "title": "D. Handshakes",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/534/D",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "On February, 30th n students came in the Center for Training Olympiad Programmers (CTOP) of the Berland State University. They came one by one, one after another. Each of them went in, and before sitting down at his desk, greeted with those who were present in the room by shaking hands. Each of the students who came in stayed in CTOP until the end of the day and never left.",
+      "At any time any three students could join together and start participating in a team contest, which lasted until the end of the day. The team did not distract from the contest for a minute, so when another student came in and greeted those who were present, he did not shake hands with the members of the contest writing team. Each team consisted of exactly three students, and each student could not become a member of more than one team. Different teams could start writing contest at different times.",
+      "Given how many present people shook the hands of each student, get a possible order in which the students could have come to CTOP. If such an order does not exist, then print that this is impossible.",
+      "Please note that some students could work independently until the end of the day, without participating in a team contest."
+    ],
+    "input": [
+      "The first line contains integer n (1 ≤ n ≤ 2·105) — the number of students who came to CTOP. The next line contains n integers a1, a2, ..., an (0 ≤ ai < n), where ai is the number of students with who the i-th student shook hands."
+    ],
+    "output": [
+      "If the sought order of students exists, print in the first line \"Possible\" and in the second line print the permutation of the students' numbers defining the order in which the students entered the center. Number i that stands to the left of number j in this permutation means that the i-th student came earlier than the j-th student. If there are multiple answers, print any of them.",
+      "If the sought order of students doesn't exist, in a single line print \"Impossible\"."
+    ],
+    "note": [
+      "In the first sample from the statement the order of events could be as follows:",
+      "student 4 comes in (a4 = 0), he has no one to greet;",
+      "student 5 comes in (a5 = 1), he shakes hands with student 4;",
+      "student 1 comes in (a1 = 2), he shakes hands with two students (students 4, 5);",
+      "student 3 comes in (a3 = 3), he shakes hands with three students (students 4, 5, 1);",
+      "students 4, 5, 3 form a team and start writing a contest;",
+      "student 2 comes in (a2 = 1), he shakes hands with one student (number 1).",
+      "In the second sample from the statement the order of events could be as follows:",
+      "student 7 comes in (a7 = 0), he has nobody to greet;",
+      "student 5 comes in (a5 = 1), he shakes hands with student 7;",
+      "student 2 comes in (a2 = 2), he shakes hands with two students (students 7, 5);",
+      "students 7, 5, 2 form a team and start writing a contest;",
+      "student 1 comes in(a1 = 0), he has no one to greet (everyone is busy with the contest);",
+      "student 6 comes in (a6 = 1), he shakes hands with student 1;",
+      "student 8 comes in (a8 = 2), he shakes hands with two students (students 1, 6);",
+      "student 3 comes in (a3 = 3), he shakes hands with three students (students 1, 6, 8);",
+      "student 4 comes in (a4 = 4), he shakes hands with four students (students 1, 6, 8, 3);",
+      "students 8, 3, 4 form a team and start writing a contest;",
+      "student 9 comes in (a9 = 2), he shakes hands with two students (students 1, 6).",
+      "In the third sample from the statement the order of events is restored unambiguously:",
+      "student 1 comes in (a1 = 0), he has no one to greet;",
+      "student 3 comes in (or student 4) (a3 = a4 = 1), he shakes hands with student 1;",
+      "student 2 comes in (a2 = 2), he shakes hands with two students (students 1, 3 (or 4));",
+      "the remaining student 4 (or student 3), must shake one student's hand (a3 = a4 = 1) but it is impossible as there are only two scenarios: either a team formed and he doesn't greet anyone, or he greets all the three present people who work individually."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n2 1 3 0 1",
+      "output": "Possible\n4 5 1 3 2"
+    },
+    {
+      "input": "9\n0 2 3 4 1 1 0 2 2",
+      "output": "Possible\n7 5 2 1 6 8 3 4 9"
+    },
+    {
+      "input": "4\n0 2 1 1",
+      "output": "Impossible"
+    }
+  ],
+  "sectionsZh": {
+    "output": [
+      {
+        "ai": "如果存在所求的学生顺序，则第一行输出 \"Possible\"，第二行输出一个由学生编号组成的排列，表示他们进入中心的顺序。若在该排列中编号 i 位于编号 j 的左侧，则表示第 i 名学生比第 j 名学生更早到来。如果有多个答案，输出任意一个即可。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果不存在所求的学生顺序，请在一行中输出 \"Impossible\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在题面中的第一个样例里，事件顺序可能如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 4 进入（a4 = 0），他没有需要打招呼的人；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 5 进入（a5 = 1），他与学生 4 握手；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 1 进入（a1 = 2），他与两名学生握手（学生 4、5）；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 3 进入（a3 = 3），他与三名学生握手（学生 4、5、1）；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 4、5、3 组成一个团队，并开始编写一场比赛；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 2 进来（a2 = 1），他与一名学生（1 号）握手。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在题面中的第二个样例里，事件顺序可能如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 7 进来（a7 = 0），他没有可以打招呼的人；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 5 进来（a5 = 1），他与学生 7 握手；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 2 进来（a2 = 2），他与两名学生（学生 7、5）握手；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 7、5、2 组成一个团队并开始编写比赛；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 1 进来（a1 = 0），他没有可以打招呼的人（大家都在忙于比赛）；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 6 进来（a6 = 1），他与学生 1 握手；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 8 进来（a8 = 2），他与两名学生握手（学生 1、6）；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 3 进来（a3 = 3），他与三名学生握手（学生 1、6、8）；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 4 进来（a4 = 4），他与四名学生握手（学生 1、6、8、3）；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 8、3、4 组成一个队伍并开始做比赛题；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 9 进入（a9 = 2），他与两名学生（学生 1、6）握手。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在题面给出的第三个样例中，事件的顺序可以明确地还原：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 1 进入（a1 = 0），他没有可以打招呼的人；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 3（或学生 4）进入（a3 = a4 = 1），他与学生 1 握手；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "学生 2 进入（a2 = 2），他与两名学生（学生 1、3（或 4））握手；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "剩下的学生 4（或学生 3）必须与一名学生握手（a3 = a4 = 1），但这是不可能的，因为只有两种情况：要么组成了一个团队，而他没有向任何人打招呼；要么他向在场的三个各自独立工作的人都打了招呼。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "2月30日，n名学生来到了别尔兰国立大学的奥林匹克程序设计培训中心（CTOP）。他们一个接一个地到来。每个人进入后，在自己的桌旁坐下之前，都会与当时已经在房间里的所有人握手致意。每位进入的学生都会一直待在 CTOP 直到当天结束，并且从未离开。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在任意时刻，任意三名学生都可以组成一个团队并开始参加团队比赛，比赛持续到当天结束。团队成员一刻也不会因其他事情而分心，因此当另一名学生进入并与在场人员打招呼时，他不会与正在参加比赛的团队成员握手。每个团队恰好由三名学生组成，每名学生至多只能成为一个团队的成员。不同团队可以在不同时间开始参加比赛。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "已知每名学生与多少名在场人员握过手，请求出学生可能进入 CTOP 的顺序。如果不存在这样的顺序，则输出不可能。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请注意，一些学生可能会一直独立学习到当天结束，而不参加团队比赛。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 2·105）——来到 CTOP 的学生人数。下一行包含 n 个整数 a1, a2, ..., an（0 ≤ ai < n），其中 ai 表示与第 i 名学生握过手的学生数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 握手",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,138 @@
+#!/usr/bin/env node
+/**
+ * Commit worktree data onto the data branches and push. Composable flags:
+ *
+ *   --problems   snapshot data/statements -> data/problems (permanent history)
+ *   --misc       snapshot misc paths -> data/misc-<UTC today>. A brand-new day
+ *                chains onto the latest surviving misc branch, so history
+ *                stays contiguous across the day rollover.
+ *   --prune      delete data/misc-* branches older than RETENTION_DAYS
+ *
+ * Snapshot semantics differ by branch:
+ *   - problems is an ADD-ONLY domain, so its snapshot is built as a UNION:
+ *     remote files the worktree is MISSING are overlaid first, guaranteeing
+ *     a concurrent push is never silently dropped. Files present locally win —
+ *     the everyday pipeline edits existing statements in place (translation
+ *     backfill), and a whole-directory restore would silently revert those
+ *     edits and drop them from the permanent archive.
+ *   - misc is a pure SNAPSHOT: files pruned from the worktree (60-day log
+ *     retention) must drop out of the branch tip, so nothing is overlaid.
+ *     Push races fall through to the reject → overlay → retry path.
+ *
+ * Every data-only tree carries a vercel.json disabling Vercel deployments for
+ * data/* (minimatch) — without it each data push would deploy ~10-30MB of raw
+ * JSON as a junk preview site.
+ */
+import { access } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { git, buildTree, commitTree, branchTip, pushCommit, isNonFastForward } from './lib/git-plumbing.mjs';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+import {
+  PROBLEMS_BRANCH,
+  PROBLEMS_PATHS,
+  MISC_PATHS,
+  RETENTION_DAYS,
+  miscBranchName,
+  utcToday,
+  listRemoteBranches,
+  latestMiscBranch,
+  selectExpiredMiscBranches,
+  NO_PREVIEW_FILES,
+} from './lib/data-branches.mjs';
+
+const argv = new Set(process.argv.slice(2));
+const runId = process.env.GITHUB_RUN_ID ? ` (run ${process.env.GITHUB_RUN_ID})` : '';
+
+/** Fetch a branch (depth 1) and overlay the tracked paths (within `paths`)
+    that it actually carries onto the worktree — but only files the worktree
+    is missing (ours-win on shared files, see the header comment). Returns the
+    fetched tip sha. */
+async function overlayBranchFiles(branch, paths) {
+  await git(['fetch', '--quiet', '--depth=1', 'origin', branch]);
+  const tip = (await git(['rev-parse', 'FETCH_HEAD'])).stdout;
+  const remoteFiles = (await git(['ls-tree', '-r', '--name-only', 'FETCH_HEAD', '--', ...paths], { check: false })).stdout
+    .split('\n')
+    .filter(Boolean);
+  const missing = [];
+  for (const f of remoteFiles) {
+    try {
+      await access(path.join(ROOT, f));
+    } catch {
+      missing.push(f);
+    }
+  }
+  if (missing.length) {
+    await git(['restore', '--source', 'FETCH_HEAD', '--worktree', '--', ...missing]);
+    console.log(`${branch}: overlaid ${missing.length} file(s) missing locally from remote tip`);
+  }
+  return tip;
+}
+
+/**
+ * Snapshot `paths` onto `branch`.
+ * union=true  → overlay remote tip first (add-only domains, e.g. statements)
+ * parentBranch → tip to chain onto when `branch` itself does not exist yet
+ */
+async function pushSnapshot(branch, paths, message, { union = false, parentBranch = null } = {}) {
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    const own = await branchTip(branch);
+    let parentSha = null;
+    if (own.sha) {
+      parentSha = union ? await overlayBranchFiles(branch, paths) : own.sha;
+    } else if (parentBranch && parentBranch !== branch) {
+      const prev = await branchTip(parentBranch);
+      parentSha = prev.sha;
+    }
+    const tree = await buildTree({ paths, extraFiles: NO_PREVIEW_FILES });
+    if (own.sha && tree === own.tree) {
+      console.log(`${branch}: unchanged (tree ${tree.slice(0, 12)}) — nothing to push`);
+      return { pushed: false };
+    }
+    const commit = await commitTree(tree, parentSha ? [parentSha] : [], message);
+    try {
+      await pushCommit(commit, branch);
+      console.log(`${branch}: pushed ${commit.slice(0, 12)}${own.sha ? '' : ' (new branch)'}`);
+      return { pushed: true };
+    } catch (e) {
+      if (!isNonFastForward(e) || attempt === 3) throw e;
+      // The branch moved between our fetch and the push: overlay their files
+      // onto our worktree and retry.
+      console.log(`${branch}: remote moved, overlaying remote files and retrying (${attempt}/3)`);
+      parentSha = await overlayBranchFiles(branch, paths);
+    }
+  }
+}
+
+async function pruneMiscBranches() {
+  const branches = await listRemoteBranches();
+  const expired = selectExpiredMiscBranches([...branches.keys()], utcToday(), RETENTION_DAYS);
+  if (!expired.length) {
+    console.log(`prune: no data/misc-* branch older than ${RETENTION_DAYS} days`);
+    return;
+  }
+  const refs = expired.map((e) => e.ref);
+  await git(['push', 'origin', '--delete', ...refs]);
+  console.log(`prune: deleted ${refs.length} expired misc branch(es): ${refs.join(', ')}`);
+}
+
+async function main() {
+  if (argv.has('--problems')) {
+    await pushSnapshot(PROBLEMS_BRANCH, PROBLEMS_PATHS, `data: statements snapshot${runId}`, { union: true });
+  }
+  if (argv.has('--misc')) {
+    const today = miscBranchName(utcToday());
+    await pushSnapshot(today, MISC_PATHS, `data: misc snapshot${runId}`, {
+      parentBranch: latestMiscBranch([...(await listRemoteBranches()).keys()]),
+    });
+  }
+  if (argv.has('--prune')) {
+    await pruneMiscBranches();
+  }
+}
+
+main().catch((e) => {
+  console.error('push-data-branches failed:', e.message);
+  process.exit(1);
+});

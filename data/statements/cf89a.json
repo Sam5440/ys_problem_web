@@ -1,0 +1,119 @@
+{
+  "code": "CF89A",
+  "letter": "A",
+  "title": "A. Robbery",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/89/A",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "It is nighttime and Joe the Elusive got into the country's main bank's safe. The safe has n cells positioned in a row, each of them contains some amount of diamonds. Let's make the problem more comfortable to work with and mark the cells with positive numbers from 1 to n from the left to the right.",
+      "Unfortunately, Joe didn't switch the last security system off. On the plus side, he knows the way it works.",
+      "Every minute the security system calculates the total amount of diamonds for each two adjacent cells (for the cells between whose numbers difference equals 1). As a result of this check we get an n - 1 sums. If at least one of the sums differs from the corresponding sum received during the previous check, then the security system is triggered.",
+      "Joe can move the diamonds from one cell to another between the security system's checks. He manages to move them no more than m times between two checks. One of the three following operations is regarded as moving a diamond: moving a diamond from any cell to any other one, moving a diamond from any cell to Joe's pocket, moving a diamond from Joe's pocket to any cell. Initially Joe's pocket is empty, and it can carry an unlimited amount of diamonds. It is considered that before all Joe's actions the system performs at least one check.",
+      "In the morning the bank employees will come, which is why Joe has to leave the bank before that moment. Joe has only k minutes left before morning, and on each of these k minutes he can perform no more than m operations. All that remains in Joe's pocket, is considered his loot.",
+      "Calculate the largest amount of diamonds Joe can carry with him. Don't forget that the security system shouldn't be triggered (even after Joe leaves the bank) and Joe should leave before morning."
+    ],
+    "input": [
+      "The first line contains integers n, m and k (1 ≤ n ≤ 104, 1 ≤ m, k ≤ 109). The next line contains n numbers. The i-th number is equal to the amount of diamonds in the i-th cell — it is an integer from 0 to 105."
+    ],
+    "output": [
+      "Print a single number — the maximum number of diamonds Joe can steal."
+    ],
+    "note": [
+      "In the second sample Joe can act like this:",
+      "The diamonds' initial positions are 4 1 3.",
+      "During the first period of time Joe moves a diamond from the 1-th cell to the 2-th one and a diamond from the 3-th cell to his pocket.",
+      "By the end of the first period the diamonds' positions are 3 2 2. The check finds no difference and the security system doesn't go off.",
+      "During the second period Joe moves a diamond from the 3-rd cell to the 2-nd one and puts a diamond from the 1-st cell to his pocket.",
+      "By the end of the second period the diamonds' positions are 2 3 1. The check finds no difference again and the security system doesn't go off.",
+      "Now Joe leaves with 2 diamonds in his pocket."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 3 1\n2 3",
+      "output": "0"
+    },
+    {
+      "input": "3 2 2\n4 1 3",
+      "output": "2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "现在是夜晚，Joe the Elusive 潜入了这个国家的中央银行的金库。金库中有 n 个沿一行排列的格子，每个格子里都有一定数量的钻石。为了便于描述，我们从左到右用 1 到 n 的正整数给这些格子编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "不幸的是，Joe 没有关闭最后一道安保系统。好在，他知道该系统的工作方式。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "安保系统每分钟都会计算每一对相邻格子中的钻石总数（即两个格子的编号之差为 1）。每次检查会得到 n - 1 个和。如果这些和中至少有一个与上一次检查得到的对应总和不同，安保系统就会被触发。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Joe 可以在两次安保系统检查之间移动钻石。在两次检查之间，他至多能移动 m 次。以下三种操作中的任意一种都算作移动一颗钻石：将一颗钻石从任意格子移动到另一个任意格子，将一颗钻石从任意格子移动到 Joe 的口袋中，或将一颗钻石从 Joe 的口袋移动到任意格子中。最初 Joe 的口袋是空的，并且可以容纳无限数量的钻石。规定在 Joe 进行所有操作之前，系统至少会进行一次检查。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "早上银行员工会来，因此 Joe 必须在那之前离开银行。距离早晨只剩下 k 分钟，在这 k 分钟中的每一分钟，他最多可以进行 m 次操作。Joe 口袋里剩下的所有东西都算作他的战利品。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "计算 Joe 能带走的钻石数量的最大值。别忘了，安全系统不应被触发（即使在 Joe 离开银行之后也是如此），并且 Joe 必须在早晨到来之前离开。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含整数 n、m 和 k（1 ≤ n ≤ 10^4，1 ≤ m，k ≤ 10^9）。下一行包含 n 个数。第 i 个数表示第 i 个单元格中的钻石数量，是一个范围在 0 到 10^5 之间的整数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个数——Joe 能偷走的钻石数量的最大值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第二个样例中，Joe 可以进行如下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "钻石的初始位置为 4 1 3。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第一个时间段内，Joe 将一颗钻石从第 1 个格子移到第 2 个格子，并将第 3 个格子中的一颗钻石放进口袋。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一个时间段结束时，钻石的位置为 3 2 2。检查没有发现任何差异，安保系统没有触发。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个时间段内，Joe 将一颗钻石从第 3 个格子移到第 2 个格子，并将第 1 个格子中的一颗钻石放进口袋。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二个时间段结束时，钻石的位置为 2 3 1。检查再次没有发现任何差异，安保系统没有触发。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在 Joe 带着口袋里的 2 颗钻石离开了。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 抢劫",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

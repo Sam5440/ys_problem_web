@@ -1,0 +1,104 @@
+{
+  "code": "CF1949I",
+  "letter": "I",
+  "title": "I. Disks",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1949/I",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given n$$$n$$$ disks in the plane. The center of each disk has integer coordinates, and the radius of each disk is a positive integer. No two disks overlap in a region of positive area, but it is possible for disks to be tangent to each other.",
+      "Your task is to determine whether it is possible to change the radii of the disks in such a way that:",
+      "Disks that were tangent to each other remain tangent to each other.",
+      "No two disks overlap in a region of positive area.",
+      "The sum of all radii strictly decreases."
+    ],
+    "input": [
+      "The first line contains an integer n$$$n$$$ (1≤n≤1000$$$1\\le n \\le 1000$$$) — the number of disks.",
+      "The next n$$$n$$$ lines contain three integers each. The i$$$i$$$-th of such lines contains xi$$$x_i$$$, yi$$$y_i$$$ (−109≤xi,yi≤109$$$-10^9 \\leq x_i, y_i \\leq 10^9$$$), and ri$$$r_i$$$ (1≤ri≤109$$$1 \\leq r_i \\leq 10^9$$$) — the coordinates of the center, and the radius, of the i$$$i$$$-th disk."
+    ],
+    "output": [
+      "Print YES$$$\\texttt{YES}$$$ if it is possible to change the radii in the desired manner. Otherwise, print NO$$$\\texttt{NO}$$$."
+    ],
+    "note": [
+      "In the first sample, one can decrease the radii of the first and third disk by 0.5$$$0.5$$$, and increase the radius of the second disk by 0.5$$$0.5$$$. This way, the sum of all radii decreases by 0.5$$$0.5$$$. The situation before and after changing the radii is depicted below.",
+      "![](https://espresso.codeforces.com/00131f63f8fbc9ba4eaa9a5b4dc8f36fbda31b10.png)",
+      "In the second sample, depicted below, there is no way to change the radii of the disks in the desired manner.",
+      "![](https://espresso.codeforces.com/ac1efd56a7ce4d1ef7a0ac4ea680bd969d17e691.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n0 2 1\n0 0 1\n4 -3 4\n11 0 3\n11 5 2",
+      "output": "YES"
+    },
+    {
+      "input": "4\n2 2 2\n7 2 3\n7 7 2\n2 7 3",
+      "output": "NO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "平面上给定 n$$$n$$$ 个圆盘。每个圆盘的圆心坐标均为整数，且每个圆盘的半径均为正整数。任意两个圆盘都不会在具有正面积的区域内重叠，但圆盘之间可能彼此相切。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是判断是否可以按照某种方式改变这些圆盘的半径，使得：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "原本彼此相切的圆盘仍然彼此相切。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "任意两个圆盘都不会在具有正面积的区域内重叠。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有半径之和严格减小。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤1000$$$1\\le n \\le 1000$$$)，表示圆盘的数量。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行每行包含三个整数。其中第 i$$$i$$$ 行包含 xi$$$x_i$$$、yi$$$y_i$$$(−109≤xi,yi≤109$$$-10^9 \\leq x_i, y_i \\leq 10^9$$$)以及 ri$$$r_i$$$(1≤ri≤109$$$1 \\leq r_i \\leq 10^9$$$)，分别是第 i$$$i$$$ 个圆盘的圆心坐标和半径。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果能够按所需方式改变半径，则输出 YES$$$\\texttt{YES}$$$；否则输出 NO$$$\\texttt{NO}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，可以将第一个和第三个圆盘的半径减小 0.5$$$0.5$$$，并将第二个圆盘的半径增大 0.5$$$0.5$$$。这样，所有半径之和就减少了 0.5$$$0.5$$$。改变半径前后的情况如下图所示。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/00131f63f8fbc9ba4eaa9a5b4dc8f36fbda31b10.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在下面所示的第二个样例中，不存在以期望的方式改变圆盘半径的方法。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/ac1efd56a7ce4d1ef7a0ac4ea680bd969d17e691.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "I. 圆盘",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

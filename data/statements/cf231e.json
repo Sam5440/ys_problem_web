@@ -1,0 +1,81 @@
+{
+  "code": "CF231E",
+  "letter": "E",
+  "title": "E. Cactus",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/231/E",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "A connected undirected graph is called a vertex cactus, if each vertex of this graph belongs to at most one simple cycle.",
+      "A simple cycle in a undirected graph is a sequence of distinct vertices v1, v2, ..., vt (t > 2), such that for any i (1 ≤ i < t) exists an edge between vertices vi and vi + 1, and also exists an edge between vertices v1 and vt.",
+      "A simple path in a undirected graph is a sequence of not necessarily distinct vertices v1, v2, ..., vt (t > 0), such that for any i (1 ≤ i < t) exists an edge between vertices vi and vi + 1 and furthermore each edge occurs no more than once. We'll say that a simple path v1, v2, ..., vt starts at vertex v1 and ends at vertex vt.",
+      "You've got a graph consisting of n vertices and m edges, that is a vertex cactus. Also, you've got a list of k pairs of interesting vertices xi, yi, for which you want to know the following information — the number of distinct simple paths that start at vertex xi and end at vertex yi. We will consider two simple paths distinct if the sets of edges of the paths are distinct.",
+      "For each pair of interesting vertices count the number of distinct simple paths between them. As this number can be rather large, you should calculate it modulo 1000000007 (109 + 7)."
+    ],
+    "input": [
+      "The first line contains two space-separated integers n, m (2 ≤ n ≤ 105; 1 ≤ m ≤ 105) — the number of vertices and edges in the graph, correspondingly. Next m lines contain the description of the edges: the i-th line contains two space-separated integers ai, bi (1 ≤ ai, bi ≤ n) — the indexes of the vertices connected by the i-th edge.",
+      "The next line contains a single integer k (1 ≤ k ≤ 105) — the number of pairs of interesting vertices. Next k lines contain the list of pairs of interesting vertices: the i-th line contains two space-separated numbers xi, yi (1 ≤ xi, yi ≤ n; xi ≠ yi) — the indexes of interesting vertices in the i-th pair.",
+      "It is guaranteed that the given graph is a vertex cactus. It is guaranteed that the graph contains no loops or multiple edges. Consider the graph vertices are numbered from 1 to n."
+    ],
+    "output": [
+      "Print k lines: in the i-th line print a single integer — the number of distinct simple ways, starting at xi and ending at yi, modulo 1000000007 (109 + 7)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "10 11\n1 2\n2 3\n3 4\n1 4\n3 5\n5 6\n8 6\n8 7\n7 6\n7 9\n9 10\n6\n1 2\n3 5\n6 9\n9 2\n9 3\n9 10",
+      "output": "2\n2\n2\n4\n4\n1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "一个连通无向图被称为点仙人掌图，当且仅当该图中的每个顶点至多属于一个简单环。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "无向图中的一个简单环是由互不相同的顶点 v1、v2、...、vt（t > 2）组成的序列，满足对于任意 i（1 ≤ i < t），顶点 vi 与 vi + 1 之间存在一条边，并且顶点 v1 与 vt 之间也存在一条边。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "无向图中的一条简单路径是由不一定互不相同的顶点 v1、v2、...、vt（t > 0）组成的序列，满足对于任意 i（1 ≤ i < t），顶点 vi 与 vi + 1 之间存在一条边，并且每条边出现次数不超过一次。我们称一条简单路径 v1、v2、...、vt 从顶点 v1 开始，到顶点 vt 结束。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个由 n 个顶点和 m 条边组成的图，且该图是一个点仙人掌图。此外，还给定了 k 对感兴趣的顶点 xi、yi，对于每一对顶点，你需要求出以下信息：从顶点 xi 开始并在顶点 yi 结束的不同简单路径的数量。如果两条路径所包含的边的集合不同，我们就认为它们是不同的简单路径。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每一对特殊顶点，计算它们之间不同简单路径的数量。由于这个数量可能很大，你需要将其对 1000000007（109 + 7）取模后计算。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个以空格分隔的整数 n、m（2 ≤ n ≤ 105；1 ≤ m ≤ 105），分别表示图中顶点和边的数量。接下来 m 行描述各条边：第 i 行包含两个以空格分隔的整数 ai、bi（1 ≤ ai、bi ≤ n），表示第 i 条边所连接的顶点编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含一个整数 k（1 ≤ k ≤ 105），表示特殊顶点对的数量。接下来 k 行包含特殊顶点对的列表：第 i 行包含两个以空格分隔的数 xi、yi（1 ≤ xi、yi ≤ n；xi ≠ yi），表示第 i 对中的特殊顶点编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证给定的图是点仙人掌图。保证图中不包含环或重边。设图中的顶点编号为 1 至 n。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 k 行：第 i 行输出一个整数，表示从 xi 出发并到达 yi 的不同简单路径数量，对 1000000007（109 + 7）取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 仙人掌图",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

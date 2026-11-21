@@ -1,0 +1,157 @@
+{
+  "code": "CF1498E",
+  "letter": "E",
+  "title": "E. Two Houses",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1498/E",
+  "difficulty": "2200",
+  "timeLimit": "3.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem. Remember to flush your output while communicating with the testing program. You may use fflush(stdout) in C++, system.out.flush() in Java, stdout.flush() in Python or flush(output) in Pascal to flush the output. If you use some other programming language, consult its documentation. You may also refer to the guide on interactive problems: https://codeforces.com/blog/entry/45307.",
+      "There is a city in which Dixit lives. In the city, there are n$$$n$$$ houses. There is  exactly one directed road between every pair of houses. For example, consider two houses A and B, then there is a directed road either from A to B or from B to A but not both. The number of roads leading to the i$$$i$$$-th house is ki$$$k_i$$$.",
+      "Two houses A and B are bi-reachable if A is reachable from B and B is reachable from A. We say that house B is reachable from house A when there is a path from house A to house B.",
+      "Dixit wants to buy two houses in the city, that is, one for living and one for studying. Of course, he would like to travel from one house to another. So, he wants to find a pair of bi-reachable houses A and B. Among all such pairs, he wants to choose one with the maximum value of |kA−kB|$$$|k_A - k_B|$$$, where ki$$$k_i$$$ is the number of roads leading to the house i$$$i$$$. If more than one optimal pair exists, any of them is suitable.",
+      "Since Dixit is busy preparing CodeCraft, can you help him find the desired pair of houses, or tell him that no such houses exist?",
+      "In the problem input, you are not given the direction of each road. You are given — for each house — only the number of incoming roads to that house (ki$$$k_i$$$).",
+      "You are allowed to ask only one type of query from the judge: give two houses A and B, and the judge answers whether B is reachable from A. There is no upper limit on the number of queries. But, you cannot ask more queries after the judge answers \"Yes\" to any of your queries. Also, you cannot ask the same query twice.",
+      "Once you have exhausted all your queries (or the judge responds \"Yes\" to any of your queries), your program must output its guess for the two houses and quit.",
+      "See the Interaction section below for more details."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (3≤n≤500$$$3 \\le n \\le 500$$$) denoting the number of houses in the city. The next line contains n$$$n$$$ space-separated integers k1,k2,…,kn$$$k_1, k_2, \\dots, k_n$$$ (0≤ki≤n−1$$$0 \\le k_i \\le n - 1$$$), the i$$$i$$$-th of them represents the number of incoming roads to the i$$$i$$$-th house.",
+      "To ask a query, print \"? A B\" (1≤A,B≤N,A≠B)$$$(1 \\leq A,B \\leq N, A\\neq B)$$$. The judge will respond \"Yes\" if house B is reachable from house A, or \"No\" otherwise.",
+      "To output the final answer, print \"! A B\", where A and B are bi-reachable with the maximum possible value of |kA−kB|$$$|k_A - k_B|$$$. If there does not exist such pair of houses A and B, output \"! 0 0\".",
+      "After outputting the final answer, your program must terminate immediately, otherwise you will receive Wrong Answer verdict.",
+      "You cannot ask the same query twice. There is no upper limit to the number of queries you ask, but, you cannot ask more queries after the judge answers \"Yes\" to any of your queries. Your program must now output the final answer (\"! A B\" or \"! 0 0\") and terminate.",
+      "If you ask a query in incorrect format or repeat a previous query, you will get Wrong Answer verdict.",
+      "After printing a query do not forget to output the end of the line and flush the output. Otherwise, you will get the Idleness limit exceeded error. To do this, use:",
+      "fflush(stdout) or cout.flush() in C++;",
+      "System.out.flush() in Java;",
+      "flush(output) in Pascal;",
+      "stdout.flush() in Python;",
+      "see documentation for other languages."
+    ],
+    "output": [],
+    "note": [
+      "In the first sample input, we are given a city of three houses with one incoming road each. The user program asks one query: \"? 1 2\": asking whether we can reach from house 1$$$1$$$ to house 2$$$2$$$. The judge responds with \"Yes\". The user program now concludes that this is sufficient information to determine the correct answer. So, it outputs \"! 1 2\" and quits.",
+      "In the second sample input, the user program queries for six different pairs of houses, and finally answers \"! 0 0\" as it is convinced that no two houses as desired in the question exist in this city."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 1 1\nYes",
+      "output": "? 1 2\n! 1 2"
+    },
+    {
+      "input": "4\n1 2 0 3\nNo\nNo\nNo\nNo\nNo\nNo",
+      "output": "? 2 1\n? 1 3\n? 4 1\n? 2 3\n? 4 2\n? 4 3\n! 0 0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是一道交互题。请记住，在与测试程序通信时及时刷新输出。你可以在 C++ 中使用 fflush(stdout)，在 Java 中使用 system.out.flush()，在 Python 中使用 stdout.flush()，或在 Pascal 中使用 flush(output) 来刷新输出。如果你使用其他编程语言，请查阅其相关文档。你也可以参考交互题指南：https://codeforces.com/blog/entry/45307.",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有一座城市，Dixit 居住在那里。这座城市中有 n$$$n$$$ 座房子。任意两座房子之间恰好有一条有向道路。例如，考虑两座房子 A 和 B，它们之间要么有一条从 A 通往 B 的有向道路，要么有一条从 B 通往 A 的有向道路，但不会同时存在两条。通往第 i$$$i$$$ 座房子的道路数量为 ki$$$k_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 A 可以从 B 到达，并且 B 也可以从 A 到达，则称两座房子 A 和 B 是双向可达的。当存在一条从房子 A 到房子 B 的路径时，我们称房子 B 可以从房子 A 到达。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Dixit 想在这座城市中购买两栋房子，也就是说，一栋用于居住，另一栋用于学习。当然，他希望能够从一栋房子前往另一栋房子。因此，他想找到一对双向可达的房子 A 和 B。在所有这样的房屋对中，他希望选择 |kA−kB|$$$|k_A - k_B|$$$ 最大的一对，其中 ki$$$k_i$$$ 表示通向房子 i$$$i$$$ 的道路数量。如果存在多组最优房屋对，选择其中任意一组即可。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于 Dixit 正忙于准备 CodeCraft，你能帮他找到所需的房屋对，或者告诉他不存在这样的房屋吗？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在题目的输入中，不会给出每条道路的方向。对于每栋房子，你只会得到通向该房子的道路数量(ki$$$k_i$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你只能向评测器发起一种类型的查询：给出两栋房子 A 和 B，评测器会回答 B 是否可以从 A 到达。查询次数没有上限。但是，一旦评测器对你的某次查询回答“是”，你就不能再发起更多查询。此外，不能重复发起相同的查询。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当你已经用尽所有查询（或者评测器对你的某次查询回答“是”）后，你的程序必须输出它猜测的两栋房子并退出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更多细节请参见下面的交互部分。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(3≤n≤500$$$3 \\le n \\le 500$$$)，表示城市中的房屋数量。下一行包含 n$$$n$$$ 个以空格分隔的整数 k1,k2,…,kn$$$k_1, k_2, \\dots, k_n$$$(0≤ki≤n−1$$$0 \\le k_i \\le n - 1$$$)，其中第 i$$$i$$$ 个数表示通往第 i$$$i$$$ 个房屋的道路数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要进行一次查询，请输出 \"? A B\"(1≤A,B≤N,A≠B)$$$(1 \\leq A,B \\leq N, A\\neq B)$$$。如果房屋 B 可以从房屋 A 到达，交互器将回复 \"Yes\"，否则回复 \"No\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要输出最终答案，请输出 \"! A B\"，其中 A 和 B 双向可达，且 |kA−kB|$$$|k_A - k_B|$$$ 的值尽可能大。如果不存在这样的房屋对 A 和 B，请输出 \"! 0 0\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出最终答案后，你的程序必须立即终止，否则将收到 Wrong Answer 判定。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你不能重复进行同一个查询。你所进行的查询次数没有上限，但是，在交互器对你的任意一次查询回复 \"Yes\" 后，你不能再进行更多查询。此时，你的程序必须输出最终答案（\"! A B\" 或 \"! 0 0\"）并终止。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你以错误的格式进行查询，或重复之前的查询，你将收到 Wrong Answer 判定。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出查询后，不要忘记输出行末符并刷新输出。否则，你将收到“超出空闲限制”的错误。请使用以下方式：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 C++ 中使用 `fflush(stdout)` 或 `cout.flush()`；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 Java 中使用 `System.out.flush()`；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 Pascal 中使用 `flush(output)`；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在 Python 中使用 `stdout.flush()`；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其他语言请参阅相关文档。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [],
+    "note": [
+      {
+        "ai": "在第一个输入样例中，给定了一座有 3 所房子的城市，每所房子各有一条入边。用户程序发起一次查询：“? 1 2”：询问是否可以从房子 1$$$1$$$ 到达房子 2$$$2$$$。评测器回答“Yes”。用户程序现在得出结论：这些信息已经足以确定正确答案。因此，它输出“! 1 2”并退出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个输入样例中，用户程序查询了 6 对不同的房子，最后回答“! 0 0”，因为它确信这座城市中不存在题目所要求的两个房子。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 两座房子",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

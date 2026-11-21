@@ -1,0 +1,105 @@
+{
+  "code": "GYM106039L",
+  "letter": "L",
+  "title": "L. Game of Life",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106039/problem/L",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Given a board of size N×N$$$N \\times N$$$, where each cell can be alive, dead, or uninhabitable, simulate the evolution of the board for K$$$K$$$ iterations based on the following rules:",
+      "∙$$$\\bullet$$$ A live cell ('1'$$$\\texttt{'1'}$$$) dies if it has an odd number of live neighbors.",
+      "∙$$$\\bullet$$$ A dead cell ('0'$$$\\texttt{'0'}$$$) becomes alive if it has an odd number of live neighbors.",
+      "∙$$$\\bullet$$$ An uninhabitable cell ('#'$$$\\texttt{'#'}$$$) never changes state and is never considered alive.",
+      "Each cell has up to 8 neighbors (horizontal, vertical, and diagonal).",
+      "Your goal is to determine the final state of the board after K$$$K$$$ iterations."
+    ],
+    "input": [
+      "The first line contains two integers N$$$N$$$ and K$$$K$$$ (2≤N≤8$$$2 \\leq N \\leq 8$$$, 1≤K≤109$$$1 \\leq K \\leq 10^9$$$) — the size of the board and the number of iterations.",
+      "The next N$$$N$$$ lines contain N$$$N$$$ characters each, describing the initial state of the board.",
+      "Let Si,j$$$S_{i,j}$$$ be the character in the i$$$i$$$-th row and j$$$j$$$-th column:",
+      "∙$$$\\bullet$$$ Si,j='1'$$$S_{i,j} = \\texttt{'1'}$$$ if the cell is alive,",
+      "∙$$$\\bullet$$$ Si,j='0'$$$S_{i,j} = \\texttt{'0'}$$$ if the cell is dead,",
+      "∙$$$\\bullet$$$ Si,j='#'$$$S_{i,j} = \\texttt{'#'}$$$ if the cell is uninhabitable."
+    ],
+    "output": [
+      "Print N$$$N$$$ lines, each containing N$$$N$$$ characters, representing the final state of the board after K$$$K$$$ iterations."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 1\n#101\n0000\n1100\n1100",
+      "output": "#101\n1111\n0000\n0000"
+    },
+    {
+      "input": "2 1000000000\n01\n##",
+      "output": "00\n##"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个大小为 N×N$$$N \\times N$$$ 的棋盘，其中每个单元格可以是活的、死的或不可居住的，请根据以下规则模拟棋盘经过 K$$$K$$$ 次迭代后的演化：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "∙$$$\\bullet$$$ 一个活细胞('1'$$$\\texttt{'1'}$$$)在其存活邻居数量为奇数时会死亡。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "∙$$$\\bullet$$$ 一个死细胞('0'$$$\\texttt{'0'}$$$)在其存活邻居数量为奇数时会复活。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "∙$$$\\bullet$$$ 不可居住的单元格('#'$$$\\texttt{'#'}$$$)永远不会改变状态，也永远不会被视为存活。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个单元格最多有 8 个邻居（水平、垂直以及对角线方向的邻居）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的目标是在经过 K$$$K$$$ 次迭代后确定棋盘的最终状态。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 N$$$N$$$ 和 K$$$K$$$(2≤N≤8$$$2 \\leq N \\leq 8$$$，1≤K≤109$$$1 \\leq K \\leq 10^9$$$)——棋盘的大小和迭代次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行每行包含 N$$$N$$$ 个字符，用于描述棋盘的初始状态。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "令 Si,j$$$S_{i,j}$$$ 表示第 i$$$i$$$ 行、第 j$$$j$$$ 列中的字符：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "∙$$$\\bullet$$$ 如果该格中的细胞存活，则 Si,j='1'$$$S_{i,j} = \\texttt{'1'}$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "∙$$$\\bullet$$$ 如果该格中的细胞死亡，则 Si,j='0'$$$S_{i,j} = \\texttt{'0'}$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "∙$$$\\bullet$$$ 如果该格不可居住，则 Si,j='#'$$$S_{i,j} = \\texttt{'#'}$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 N$$$N$$$ 行，每行包含 N$$$N$$$ 个字符，表示经过 K$$$K$$$ 次迭代后棋盘的最终状态。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "L. 生命游戏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

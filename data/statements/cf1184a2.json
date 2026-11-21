@@ -1,0 +1,95 @@
+{
+  "code": "CF1184A2",
+  "letter": "A2",
+  "title": "A2. Heidi Learns Hashing (Medium)",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1184/A2",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "After learning about polynomial hashing, Heidi decided to learn about shift-xor hashing. In particular, she came across this interesting problem.",
+      "Given a bitstring y∈{0,1}n$$$y \\in \\{0,1\\}^n$$$ find out the number of different k$$$k$$$ (0≤k<n$$$0 \\leq k  \\lt  n$$$) such that there exists x∈{0,1}n$$$x \\in \\{0,1\\}^n$$$ for which y=x⊕shiftk(x).$$$y = x \\oplus \\mbox{shift}^k(x).$$$",
+      "In the above, ⊕$$$\\oplus$$$ is the xor operation and shiftk$$$\\mbox{shift}^k$$$ is the operation of shifting a bitstring cyclically to the right k$$$k$$$ times. For example, 001⊕111=110$$$001 \\oplus 111 = 110$$$ and shift3(00010010111000)=00000010010111$$$\\mbox{shift}^3(00010010111000) = 00000010010111$$$."
+    ],
+    "input": [
+      "The first line contains an integer n$$$n$$$ (1≤n≤2⋅105$$$1 \\leq n \\leq 2 \\cdot 10^5$$$), the length of the bitstring y$$$y$$$.",
+      "The second line contains the bitstring y$$$y$$$."
+    ],
+    "output": [
+      "Output a single integer: the number of suitable values of k$$$k$$$."
+    ],
+    "note": [
+      "In the first example:",
+      "1100⊕shift1(1100)=1010$$$1100\\oplus \\mbox{shift}^1(1100) = 1010$$$",
+      "1000⊕shift2(1000)=1010$$$1000\\oplus \\mbox{shift}^2(1000) = 1010$$$",
+      "0110⊕shift3(0110)=1010$$$0110\\oplus \\mbox{shift}^3(0110) = 1010$$$",
+      "There is no x$$$x$$$ such that x⊕x=1010$$$x \\oplus x = 1010$$$, hence the answer is 3$$$3$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n1010",
+      "output": "3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在了解多项式哈希后，Heidi 决定学习移位异或哈希。具体来说，她遇到了下面这个有趣的问题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个位串 y∈{0,1}n$$$y \\in \\{0,1\\}^n$$$，求满足下列条件的不同 k$$$k$$$(0≤k<n$$$0 \\leq k  \\lt  n$$$)的数量：存在 x∈{0,1}n$$$x \\in \\{0,1\\}^n$$$，使得 y=x⊕shiftk(x)。$$$y = x \\oplus \\mbox{shift}^k(x).$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在上文中，⊕$$$\\oplus$$$ 表示异或运算，shiftk$$$\\mbox{shift}^k$$$ 表示将位串循环向右移动 k$$$k$$$ 次的操作。例如，001⊕111=110$$$001 \\oplus 111 = 110$$$，并且 shift3(00010010111000)=00000010010111$$$\\mbox{shift}^3(00010010111000) = 00000010010111$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤2⋅105$$$1 \\leq n \\leq 2 \\cdot 10^5$$$)，表示 01 串 y$$$y$$$ 的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 01 串 y$$$y$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数：满足条件的 k$$$k$$$ 的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1100⊕shift1(1100)=1010$$$1100\\oplus \\mbox{shift}^1(1100) = 1010$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "1000⊕shift2(1000)=1010$$$1000\\oplus \\mbox{shift}^2(1000) = 1010$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "0110⊕shift3(0110)=1010$$$0110\\oplus \\mbox{shift}^3(0110) = 1010$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "不存在满足 x$$$x$$$ 且使得 x⊕x=1010$$$x \\oplus x = 1010$$$ 的 x，因此答案是 3$$$3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A2. Heidi 学习哈希（中等）",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

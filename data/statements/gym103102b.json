@@ -1,0 +1,102 @@
+{
+  "code": "GYM103102B",
+  "letter": "B",
+  "title": "B. Reverse Game",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103102/problem/B",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alice and Bob are playing a turn-based game. The rules of the game are as follows:",
+      "At the beginning of the game some binary string s$$$s$$$ is chosen.",
+      "On his turn player has to choose some substring t$$$t$$$ of s$$$s$$$, equal to one of 10, 110, 100, 1010. Then the player has to reverse t$$$t$$$. For example, if s=$$$s = $$$ 010101, the player can select substring t=$$$t = $$$ 1010 and reverse it, obtaining s=$$$s = $$$ 001011",
+      "The player who can't make a move (who can't choose an appropriate substring t$$$t$$$) loses.",
+      "The players cannot skip a turn.",
+      "A string a$$$a$$$ is a substring of a string b$$$b$$$ if a$$$a$$$ can be obtained from b$$$b$$$ by deletion of several (possibly, zero or all) characters from the beginning and several (possibly, zero or all) characters from the end."
+    ],
+    "input": [
+      "The only line of the input contains a binary string s$$$s$$$ (1≤|s|≤106$$$1 \\le |s| \\le 10^6$$$) — the string with which Alice and Bob play."
+    ],
+    "output": [
+      "If Alice wins, output Alice. Otherwise, output Bob."
+    ],
+    "note": [
+      "In the first sample, Alice can choose substring 10 of 010 and reverse it, obtaining string 001. Bob can't make any move with this string, and loses.",
+      "In the second sample, Alice can't make a single move and loses."
+    ]
+  },
+  "examples": [
+    {
+      "input": "010",
+      "output": "Alice"
+    },
+    {
+      "input": "1111",
+      "output": "Bob"
+    },
+    {
+      "input": "1010",
+      "output": "Bob"
+    },
+    {
+      "input": "1010001011001",
+      "output": "Alice"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Alice 和 Bob 正在进行一场回合制游戏。游戏规则如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在游戏开始时，会选定一个二进制字符串 s$$$s$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在自己的回合中，玩家必须从 s$$$s$$$ 中选择一个子串 t$$$t$$$，其内容为 10、110、100、1010 中的一个。然后，玩家必须将 t$$$t$$$ 翻转。例如，若 s=$$$s = $$$ 010101，玩家可以选择子串 t=$$$t = $$$ 1010 并将其翻转，得到 s=$$$s = $$$ 001011",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "无法进行操作的玩家(无法选择合适的子串 t$$$t$$$)输掉游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "玩家不能跳过回合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果可以通过从 b$$$b$$$ 的开头删除若干个(可能为零个或全部)字符，并从末尾删除若干个(可能为零个或全部)字符得到 a$$$a$$$，则字符串 a$$$a$$$ 是字符串 b$$$b$$$ 的子串。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入仅一行，包含一个 01 串 s$$$s$$$(1≤|s|≤106$$$1 \\le |s| \\le 10^6$$$)——Alice 和 Bob 用来进行游戏的字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 Alice 获胜，输出 Alice；否则，输出 Bob。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Alice 可以选择 010 的子串 10 并将其翻转，得到字符串 001。Bob 无法在这个字符串上进行任何操作，因此输掉比赛。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，Alice 一步也无法进行，因此输掉比赛。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 反转游戏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "code": "GYM105822C",
+  "letter": "C",
+  "title": "C. Feeding Beavers",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105822/problem/C",
+  "difficulty": "*1700",
+  "timeLimit": "2.5 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "It's dinner time, and Busy Beaver has to feed his baby beavers.",
+      "Busy Beaver has N$$$N$$$ baby beavers, numbered from 1$$$1$$$ to N$$$N$$$. The older baby beavers have bigger indices than the younger ones; for example, beaver 1$$$1$$$ is the youngest while beaver N$$$N$$$ is the oldest.",
+      "Busy Beaver also has 2N$$$2N$$$ dishes, which are numbered from 1$$$1$$$ to 2N$$$2N$$$. If a beaver eats dish i$$$i$$$, its satisfaction will increase by i$$$i$$$. Each beaver starts with 0$$$0$$$ satisfaction.",
+      "Now, Busy Beaver wants to distribute the dishes amongst his baby beavers subject to the following constraints:",
+      "Each beaver should get exactly two dishes.",
+      "After all dishes are consumed, older beavers should have at least as much satisfaction as younger beavers. Formally, for any i,j$$$i, j$$$ with 1≤i<j≤N$$$1 \\leq i  \\lt  j \\leq N$$$, beaver i$$$i$$$'s satisfaction should not exceed beaver j$$$j$$$'s satisfaction.",
+      "The parity of beaver i$$$i$$$'s satisfaction should be ci$$$c_i$$$ (odd or even).",
+      "Determine if there exists a way to feed all N$$$N$$$ beavers that respects these constraints. Additionally, if the task is possible, print any valid assignment of dishes to beavers."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line contains a single integer T$$$T$$$ (1≤T≤104$$$1 \\leq T \\leq 10^4$$$) — the number of test cases. The description of each test case follows.",
+      "The first line of each test case contains an integer N$$$N$$$ (1≤N≤105$$$1 \\le N \\le 10^5$$$) — the number of baby beavers.",
+      "The second line of each test case contains a string c$$$c$$$ of length N$$$N$$$, where each of the characters ci$$$c_i$$$ is either 'O' or 'E'. If ci$$$c_i$$$ is 'O', the beaver i$$$i$$$ wants its satisfaction to be an odd number. If ci$$$c_i$$$ is 'E', the beaver i$$$i$$$ wants its satisfaction to be an even number.",
+      "It is guaranteed that the sum of N$$$N$$$ across all test cases is no more than 105$$$10^5$$$."
+    ],
+    "output": [
+      "For each test case, if it is possible to feed the beavers, output \"YES\" (without quotes) on the first line. Next, print N$$$N$$$ lines describing how to feed each beaver. The i$$$i$$$-th of these lines should contain two integers, which denote the indices of the two dishes that will be given to beaver i$$$i$$$.",
+      "If it is impossible to feed the beavers, output \"NO\" (without quotes).",
+      "You can output \"YES\" and \"NO\" in any case (for example, strings \"yES\", \"yes\" and \"Yes\" will be recognized as a positive response).",
+      "There are two subtasks for this problem.",
+      "(25$$$25$$$ points): For each test case, the string c$$$c$$$ either only consists of 'O's or only consists of 'E's.",
+      "(75$$$75$$$ points): No additional constraints."
+    ],
+    "note": [
+      "In the first test case, one possible way to feed the beavers is as follows:",
+      "Feed dishes 2$$$2$$$ and 3$$$3$$$ to beaver 1$$$1$$$. Beaver 1$$$1$$$ gains satisfaction of 5$$$5$$$, which is odd.",
+      "Feed dishes 5$$$5$$$ and 1$$$1$$$ to beaver 2$$$2$$$. Beaver 2$$$2$$$ gains satisfaction of 6$$$6$$$, which is even.",
+      "Feed dishes 4$$$4$$$ and 8$$$8$$$ to beaver 3$$$3$$$. Beaver 3$$$3$$$ gains satisfaction of 12$$$12$$$, which is even.",
+      "Feed dishes 7$$$7$$$ and 6$$$6$$$ to beaver 4$$$4$$$. Beaver 4$$$4$$$ gains satisfaction of 13$$$13$$$, which is odd.",
+      "The satisfaction of the four beavers in increasing order of age are [5,6,12,13]$$$[5, 6, 12, 13]$$$. It can be checked that this assignment satisfies the conditions.",
+      "In the second test case, it can be shown that the task is impossible."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n4\nOEEO\n7\nOEOEOEO\n6\nOOOOOO",
+      "output": "YES\n2 3\n5 1\n4 8\n7 6\nNO\nYES\n1 12\n2 11\n3 10\n4 9\n5 8\n6 7"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "现在是晚餐时间，Busy Beaver 必须给他的幼年海狸们喂食。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Busy Beaver 有 N$$$N$$$ 只幼年海狸，编号从 1$$$1$$$ 到 N$$$N$$$。年龄较大的幼年海狸编号比年龄较小的更大；例如，海狸 1$$$1$$$ 最年轻，而海狸 N$$$N$$$ 最年长。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Busy Beaver 还有 2N$$$2N$$$ 个盘子，编号从 1$$$1$$$ 到 2N$$$2N$$$。如果一只海狸吃了盘子 i$$$i$$$，它的满意度将增加 i$$$i$$$。每只海狸的初始满意度为 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在，Busy Beaver 想要在满足以下限制条件的情况下，将这些盘子分配给他的幼年海狸：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每只河狸应恰好得到两道菜。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "吃完所有菜肴后，年长河狸的满意度应至少与年幼河狸一样高。形式化地，对于任意满足 1≤i<j≤N$$$1 \\leq i  \\lt  j \\leq N$$$ 的 i,j$$$i, j$$$，河狸 i$$$i$$$ 的满意度不应超过河狸 j$$$j$$$ 的满意度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "河狸 i$$$i$$$ 的满意度的奇偶性应为 ci$$$c_i$$$(奇数或偶数)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "确定是否存在一种为全部 N$$$N$$$ 只河狸喂食且满足这些约束的方案。此外，如果任务可行，请输出一种将菜肴分配给河狸的合法方案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含一个整数 T$$$T$$$(1≤T≤104$$$1 \\leq T \\leq 10^4$$$)——测试用例的数量。接下来是每个测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含一个整数 N$$$N$$$(1≤N≤105$$$1 \\le N \\le 10^5$$$)——幼年河狸的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第二行包含一个长度为 N$$$N$$$ 的字符串 c$$$c$$$，其中每个字符 ci$$$c_i$$$ 要么是 'O'，要么是 'E'。如果 ci$$$c_i$$$ 是 'O'，则海狸 i$$$i$$$ 希望其满意度为奇数。如果 ci$$$c_i$$$ 是 'E'，则海狸 i$$$i$$$ 希望其满意度为偶数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "保证所有测试用例的 N$$$N$$$ 之和不超过 105$$$10^5$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果可能喂饱这些海狸，在第一行输出 \"YES\"(不带引号)。接下来，打印 N$$$N$$$ 行，描述如何喂每只海狸。这些行中的第 i$$$i$$$ 行应包含两个整数，表示将给予海狸 i$$$i$$$ 的两道菜的索引。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果无法喂饱这些海狸，则输出 \"NO\"（不带引号）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你可以以任意大小写输出 \"YES\" 和 \"NO\"（例如，字符串 \"yES\"、\"yes\" 和 \"Yes\" 都会被识别为肯定的回答）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "本题有两个子任务。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "(25$$$25$$$ 分)：对于每个测试用例，字符串 c$$$c$$$ 要么只由 'O' 组成，要么只由 'E' 组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(75$$$75$$$ 分)：没有额外约束。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，一种给海狸喂食的可能方式如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将菜肴 2$$$2$$$ 和 3$$$3$$$ 喂给海狸 1$$$1$$$。海狸 1$$$1$$$ 获得的满意度为 5$$$5$$$，这是奇数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将菜肴 5$$$5$$$ 和 1$$$1$$$ 喂给海狸 2$$$2$$$。海狸 2$$$2$$$ 获得的满意度为 6$$$6$$$，这是偶数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将菜肴 4$$$4$$$ 和 8$$$8$$$ 喂给海狸 3$$$3$$$。海狸 3$$$3$$$ 获得的满意度为 12$$$12$$$，这是偶数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将 7$$$7$$$ 和 6$$$6$$$ 两道菜喂给河狸 4$$$4$$$。河狸 4$$$4$$$ 获得了 13$$$13$$$ 的满足度，这是奇数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "四只河狸按年龄递增顺序的满足度分别为 [5,6,12,13]$$$[5, 6, 12, 13]$$$。可以验证，这种分配满足条件。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，可以证明任务是不可能完成的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 喂养海狸",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

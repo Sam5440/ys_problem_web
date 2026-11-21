@@ -1,0 +1,210 @@
+{
+  "code": "CF744B",
+  "letter": "B",
+  "title": "B. Hongcow's Game",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/744/B",
+  "difficulty": "1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem. In the interaction section below you will see the information about flushing the output.",
+      "In this problem, you will be playing a game with Hongcow. How lucky of you!",
+      "Hongcow has a hidden n by n matrix M. Let Mi, j denote the entry i-th row and j-th column of the matrix. The rows and columns are labeled from 1 to n.",
+      "The matrix entries are between 0 and 109. In addition, Mi, i = 0 for all valid i. Your task is to find the minimum value along each row, excluding diagonal elements. Formally, for each i, you must find ![](https://espresso.codeforces.com/3943866668dac6c7c35903f90df68a3d53ff6de1.png).",
+      "To do this, you can ask Hongcow some questions.",
+      "A question consists of giving Hongcow a subset of distinct indices {w1, w2, ..., wk}, with 1 ≤ k ≤ n. Hongcow will respond with n integers. The i-th integer will contain the minimum value of min1 ≤ j ≤ kMi, wj.",
+      "You may only ask Hongcow at most 20 questions — he thinks you only need that many questions answered.",
+      "When you are ready to answer, print out a single integer  - 1 on its own line, then n integers on the next line. The i-th integer should be the minimum value in the i-th row of the matrix, excluding the i-th element. Do not forget to flush the final answer as well. Printing the answer does not count as asking a question.",
+      "You will get Wrong Answer verdict if",
+      "Your question or answers are not in the format described in this statement.",
+      "You ask strictly more than 20 questions.",
+      "Your question contains duplicate indices.",
+      "The value of k in your question does not lie in the range from 1 to n, inclusive.",
+      "Your final answer is not correct."
+    ],
+    "input": [
+      "The first line of input will contain a single integer n (2 ≤ n ≤ 1, 000)."
+    ],
+    "output": [
+      "To print the final answer, print out the string -1 on its own line. Then, the next line should contain n integers. The i-th integer should be the minimum value of the i-th row of the matrix, excluding elements on the diagonal. Do not forget to flush your answer!",
+      "To ask a question, print out a single integer k on its own line, denoting the size of your subset. Then, the next line should contain k integers w1, w2, ... wk. Note, you must flush your output to get a response.",
+      "Hongcow will respond by printing out a line with n integers. The i-th integer in this line represents the minimum value of Mi, wj where j is between 1 and k.",
+      "You may only ask a question at most 20 times, otherwise, you will get Wrong Answer.",
+      "To flush you can use (just after printing an integer and end-of-line):",
+      "fflush(stdout) in C++;",
+      "System.out.flush() in Java;",
+      "stdout.flush() in Python;",
+      "flush(output) in Pascal;",
+      "See the documentation for other languages.",
+      "Hacking To hack someone, use the following format",
+      {
+        "pre": "\nn\nM_{1,1} M_{1,2} ... M_{1,n}\nM_{2,1} M_{2,2} ... M_{2,n}\n...\nM_{n,1} M_{n,2} ... M_{n,n}"
+      },
+      "Of course, contestant programs will not be able to see this input."
+    ],
+    "note": [
+      "In the first sample, Hongcow has the hidden matrix",
+      {
+        "pre": "\n[\n [0, 3, 2],\n [5, 0, 7],\n [4, 8 ,0],\n]"
+      },
+      "Here is a more readable version demonstrating the interaction. The column on the left represents Hongcow, while the column on the right represents the contestant.",
+      {
+        "pre": "\n3\n              3\n              1 2 3\n0 0 0\n              1\n              3\n2 7 0\n              2\n              1 2\n0 0 4\n              1\n              2\n3 0 8\n              1\n              1\n0 5 4\n              -1\n              2 5 4"
+      },
+      "For the second sample, it is possible for off-diagonal elements of the matrix to be zero."
+    ]
+  },
+  "examples": [
+    {
+      "input": "\nn\nM_{1,1} M_{1,2} ... M_{1,n}\nM_{2,1} M_{2,2} ... M_{2,n}\n...\nM_{n,1} M_{n,2} ... M_{n,n}",
+      "output": "3\n0 0 0\n2 7 0\n0 0 4\n3 0 8\n0 5 4"
+    },
+    {
+      "input": "3\n1 2 3\n1\n3\n2\n1 2\n1\n2\n1\n1\n-1\n2 5 4",
+      "output": "2\n0 0\n0 0"
+    },
+    {
+      "input": "1\n2\n1\n1\n-1\n0 0",
+      "output": "\n[\n [0, 3, 2],\n [5, 0, 7],\n [4, 8 ,0],\n]"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是一道交互题。在下面的交互部分中，你将看到有关刷新输出的信息。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在这道题中，你将与 Hongcow 进行一场游戏。你真幸运！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Hongcow 有一个隐藏的 n×n 矩阵 M。令 Mi, j 表示矩阵第 i 行第 j 列的元素。行和列均从 1 标号到 n。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "矩阵中的元素均在 0 到 109 之间。此外，对于所有合法的 i，都有 Mi, i = 0。你的任务是找出每一行中排除对角线元素后的最小值。形式化地，对于每个 i，你必须求出 ![](https://espresso.codeforces.com/3943866668dac6c7c35903f90df68a3d53ff6de1.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为此，你可以向 Hongcow 提出一些问题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一个问题由给出一个由互不相同的下标组成的子集 {w1, w2, ..., wk} 构成，其中 1 ≤ k ≤ n。Hongcow 将回复 n 个整数。第 i 个整数将包含 min1 ≤ j ≤ kMi, wj 的最小值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你最多只能向 Hongcow 提出 20 个问题，因为他认为你只需要得到这么多问题的答案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当你准备好回答时，请在单独一行输出整数 - 1，然后在下一行输出 n 个整数。第 i 个整数应为矩阵第 i 行中除第 i 个元素外的最小值。不要忘记刷新最终答案。输出答案不计入提问次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果出现以下情况，你将得到错误答案（Wrong Answer）判定：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的问题或答案不符合本题面所描述的格式。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你提出了严格多于 20 个问题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的问题中包含重复的下标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "问题中的 k 不在 1 到 n（包含 1 和 n）的范围内。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的最终答案不正确。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "要输出最终答案，请单独输出一行字符串 -1。接下来一行应包含 n 个整数。第 i 个整数应为矩阵第 i 行中除对角线元素外的最小值。不要忘记刷新输出！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要提问，请单独输出一行整数 k，表示你的子集大小。接下来一行应包含 k 个整数 w1, w2, ... wk。注意，你必须刷新输出才能获得响应。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Hongcow 将输出一行，其中包含 n 个整数。这一行中的第 i 个整数表示 Mi, wj 的最小值，其中 j 介于 1 和 k 之间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你最多只能提问 20 次，否则将得到错误答案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要进行刷新，可以使用以下命令（在输出一个整数并换行后立即调用）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "C++ 中的 fflush(stdout)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Java 中的 System.out.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Python 中的 stdout.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Pascal 中的 flush(output)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其他语言的相关文档请参见此处。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Hacking 若要 hack 某人，请使用以下格式",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "当然，参赛者的程序将无法看到此输入。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（2 ≤ n ≤ 1, 000）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Hongcow 拥有如下隐藏矩阵",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "下面给出了一个更易读的版本，用于演示交互过程。左侧的列代表 Hongcow，右侧的列代表参赛者。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      null,
+      {
+        "ai": "对于第二个样例，矩阵的非对角线元素可能为零。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Hongcow 的游戏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

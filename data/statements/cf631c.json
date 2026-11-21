@@ -1,0 +1,84 @@
+{
+  "code": "CF631C",
+  "letter": "C",
+  "title": "C. Report",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/631/C",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Each month Blake gets the report containing main economic indicators of the company \"Blake Technologies\". There are n commodities produced by the company. For each of them there is exactly one integer in the final report, that denotes corresponding revenue. Before the report gets to Blake, it passes through the hands of m managers. Each of them may reorder the elements in some order. Namely, the i-th manager either sorts first ri numbers in non-descending or non-ascending order and then passes the report to the manager i + 1, or directly to Blake (if this manager has number i = m).",
+      "Employees of the \"Blake Technologies\" are preparing the report right now. You know the initial sequence ai of length n and the description of each manager, that is value ri and his favourite order. You are asked to speed up the process and determine how the final report will look like."
+    ],
+    "input": [
+      "The first line of the input contains two integers n and m (1 ≤ n, m ≤ 200 000) — the number of commodities in the report and the number of managers, respectively.",
+      "The second line contains n integers ai (|ai| ≤ 109) — the initial report before it gets to the first manager.",
+      "Then follow m lines with the descriptions of the operations managers are going to perform. The i-th of these lines contains two integers ti and ri (![](https://espresso.codeforces.com/4c7c768da8395489b31f8f3db90a6fe799bdeb0f.png), 1 ≤ ri ≤ n), meaning that the i-th manager sorts the first ri numbers either in the non-descending (if ti = 1) or non-ascending (if ti = 2) order."
+    ],
+    "output": [
+      "Print n integers — the final report, which will be passed to Blake by manager number m."
+    ],
+    "note": [
+      "In the first sample, the initial report looked like: 1 2 3. After the first manager the first two numbers were transposed: 2 1 3. The report got to Blake in this form.",
+      "In the second sample the original report was like this: 1 2 4 3. After the first manager the report changed to: 4 2 1 3. After the second manager the report changed to: 2 4 1 3. This report was handed over to Blake."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 1\n1 2 3\n2 2",
+      "output": "2 1 3"
+    },
+    {
+      "input": "4 2\n1 2 4 3\n2 3\n1 2",
+      "output": "2 4 1 3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "每个月 Blake 都会收到一份包含 \"Blake Technologies\" 公司主要经济指标的报告。公司生产 n 种商品。最终报告中每种商品恰好对应一个整数，表示相应的收入。在报告送到 Blake 之前，它会经过 m 位经理之手。每位经理都可能按某种顺序重排其中的元素。具体地，第 i 位经理要么将前 ri 个数按非递减或非递增顺序排序，然后将报告交给第 i+1 位经理；要么直接交给 Blake（如果该经理的编号 i=m）。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "\"Blake Technologies\" 的员工们正在准备这份报告。你知道长度为 n 的初始序列 ai，以及每位经理的描述，即值 ri 和他喜欢的顺序。你需要加快这一过程，并确定最终报告会是什么样子。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数 n 和 m（1 ≤ n, m ≤ 200 000），分别表示报告中的商品数量和经理数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个整数 ai（|ai| ≤ 109），表示报告在交给第一位经理之前的初始状态。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来有 m 行，描述各位经理将要执行的操作。其中第 i 行包含两个整数 ti 和 ri(![](https://espresso.codeforces.com/4c7c768da8395489b31f8f3db90a6fe799bdeb0f.png)，1 ≤ ri ≤ n)，表示第 i 位经理将前 ri 个数按非递减顺序(如果 ti = 1)或非递增顺序(如果 ti = 2)排序。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n 个整数，表示最终的报告，该报告将由第 m 位经理交给 Blake。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，初始报告为：1 2 3。经过第一位经理后，前两个数交换了位置：2 1 3。报告就以这一形式交到了 Blake 手中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，初始报告为：1 2 4 3。经过第一位经理后，报告变为：4 2 1 3。经过第二位经理后，报告变为：2 4 1 3。这份报告随后被交给了 Blake。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 报告",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

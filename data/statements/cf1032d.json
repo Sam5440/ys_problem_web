@@ -1,0 +1,89 @@
+{
+  "code": "CF1032D",
+  "letter": "D",
+  "title": "D. Barcelonian Distance",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1032/D",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "In this problem we consider a very simplified model of Barcelona city.",
+      "Barcelona can be represented as a plane with streets of kind x=c$$$x = c$$$ and y=c$$$y = c$$$ for every integer c$$$c$$$ (that is, the rectangular grid). However, there is a detail which makes Barcelona different from Manhattan. There is an avenue called Avinguda Diagonal which can be represented as a the set of points (x,y)$$$(x, y)$$$ for which ax+by+c=0$$$ax + by + c = 0$$$.",
+      "One can walk along streets, including the avenue. You are given two integer points A$$$A$$$ and B$$$B$$$ somewhere in Barcelona. Find the minimal possible distance one needs to travel to get to B$$$B$$$ from A$$$A$$$."
+    ],
+    "input": [
+      "The first line contains three integers a$$$a$$$, b$$$b$$$ and c$$$c$$$ (−109≤a,b,c≤109$$$-10^9\\leq a, b, c\\leq 10^9$$$, at least one of a$$$a$$$ and b$$$b$$$ is not zero) representing the Diagonal Avenue.",
+      "The next line contains four integers x1$$$x_1$$$, y1$$$y_1$$$, x2$$$x_2$$$ and y2$$$y_2$$$ (−109≤x1,y1,x2,y2≤109$$$-10^9\\leq x_1, y_1, x_2, y_2\\leq 10^9$$$) denoting the points A=(x1,y1)$$$A = (x_1, y_1)$$$ and B=(x2,y2)$$$B = (x_2, y_2)$$$."
+    ],
+    "output": [
+      "Find the minimum possible travel distance between A$$$A$$$ and B$$$B$$$. Your answer is considered correct if its absolute or relative error does not exceed 10−6$$$10^{-6}$$$.",
+      "Formally, let your answer be a$$$a$$$, and the jury's answer be b$$$b$$$. Your answer is accepted if and only if |a−b|max(1,|b|)≤10−6$$$\\frac{|a - b|}{\\max{(1, |b|)}} \\le 10^{-6}$$$."
+    ],
+    "note": [
+      "The first example is shown on the left picture while the second example us shown on the right picture below. The avenue is shown with blue, the origin is shown with the black dot.",
+      "![](https://espresso.codeforces.com/5b7fe249c4e89f8fd29782f67fbf7a3c93b13e83.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "1 1 -3\n0 3 3 0",
+      "output": "4.2426406871"
+    },
+    {
+      "input": "3 1 -9\n0 3 3 -1",
+      "output": "6.1622776602"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在本题中，我们考虑一个极度简化的巴塞罗那城市模型。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "巴塞罗那可以表示为一个平面，其中对于每个整数 c$$$c$$$，都有形如 x=c$$$x = c$$$ 和 y=c$$$y = c$$$ 的街道(即矩形网格)。不过，有一个细节使巴塞罗那不同于曼哈顿。这里有一条名为 Avinguda Diagonal 的大道，它可以表示为满足 ax+by+c=0$$$ax + by + c = 0$$$ 的点 (x,y)$$$(x, y)$$$ 的集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "人们可以沿着街道行走，包括大街。给定巴塞罗那某处的两个整点 A$$$A$$$ 和 B$$$B$$$。求从 A$$$A$$$ 到达 B$$$B$$$ 所需行驶的最短距离。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 a$$$a$$$、b$$$b$$$ 和 c$$$c$$$(−109≤a,b,c≤109$$$-10^9\\leq a, b, c\\leq 10^9$$$，a$$$a$$$ 和 b$$$b$$$ 中至少有一个不为零)，表示对角大街。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含四个整数 x1$$$x_1$$$、y1$$$y_1$$$、x2$$$x_2$$$ 和 y2$$$y_2$$$(−109≤x1,y1,x2,y2≤109$$$-10^9\\leq x_1, y_1, x_2, y_2\\leq 10^9$$$)，表示点 A=(x1,y1)$$$A = (x_1, y_1)$$$ 和 B=(x2,y2)$$$B = (x_2, y_2)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "求 A$$$A$$$ 与 B$$$B$$$ 之间可能的最短行驶距离。如果答案的绝对误差或相对误差不超过 10−6$$$10^{-6}$$$，则认为答案正确。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地，设你的答案为 a$$$a$$$，评测器的答案为 b$$$b$$$。当且仅当 |a−b|max(1,|b|)≤10−6$$$\\frac{|a - b|}{\\max{(1, |b|)}} \\le 10^{-6}$$$ 时，你的答案会被接受。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例显示在左图中，第二个样例显示在下方右图中。大街用蓝色表示，原点用黑点表示。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/5b7fe249c4e89f8fd29782f67fbf7a3c93b13e83.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 巴塞罗那距离",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

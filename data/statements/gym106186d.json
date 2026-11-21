@@ -1,0 +1,95 @@
+{
+  "code": "GYM106186D",
+  "letter": "D",
+  "title": "D. GCD of Pairs",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106186/problem/D",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "It was the last hour before the regional contest scoreboard froze. The team from Aurora University had one problem left to test: their coach tossed two arrays onto the screen and challenged them with a playful quiz.",
+      "\"You know your usual gcd tricks,\" she said while stirring her coffee, \"but here's a twist — count how often a greatest common divisor is prime. If you can do that quickly, I'll let you grab the first slice of victory pizza.\"",
+      "The team smiled and started typing. Now it's your turn.",
+      "You are given two arrays a$$$a$$$ and b$$$b$$$ of length n$$$n$$$. Compute the number of ordered pairs (i,j)$$$(i, j)$$$ such that 1≤i≤n$$$1 \\le i \\le n$$$, 1≤j≤n$$$1 \\le j \\le n$$$, and gcd(ai,bj)$$$\\gcd(a_i, b_j)$$$ is a prime number."
+    ],
+    "input": [
+      "The first line contains a single integer T$$$T$$$ (1≤T≤105)$$$(1 \\le T \\le 10^5)$$$ — the number of test cases.",
+      "Each test case consists of the following:",
+      "The first line contains a single integer n$$$n$$$ (1≤n≤105)$$$(1 \\le n \\le 10^5)$$$ — the length of both arrays.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$ (1≤ai≤n)$$$(1 \\le a_i \\le n)$$$.",
+      "The third line contains n$$$n$$$ integers b1,b2,…,bn$$$b_1, b_2, \\dots, b_n$$$ (1≤bi≤n)$$$(1 \\le b_i \\le n)$$$.",
+      "It is guaranteed that the sum of all n$$$n$$$ over all test cases does not exceed 2∗105$$$2*10^5$$$."
+    ],
+    "output": [
+      "For each test case, print a single integer — the number of ordered pairs (i,j)$$$(i,j)$$$ such that gcd(ai,bj)$$$\\gcd(a_i, b_j)$$$ is a prime."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n5\n1 3 5 4 4\n2 3 2 1 2\n2\n1 1\n2 2\n2\n1 1\n2 2\n3\n1 2 1\n2 2 3\n5\n4 2 2 5 4\n2 1 2 5 3",
+      "output": "7\n0\n0\n2\n9"
+    },
+    {
+      "input": "5\n10\n8 6 4 6 9 7 2 3 6 2\n6 7 4 6 10 1 6 6 3 3\n5\n2 3 3 2 2\n2 2 3 4 4\n4\n3 4 1 3\n1 2 4 1\n3\n3 1 1\n2 3 2\n2\n2 1\n1 2",
+      "output": "47\n14\n1\n1\n1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "区域赛排行榜即将冻结前的最后一个小时。Aurora University 队伍还剩一个问题需要测试：他们的教练把两个数组投到屏幕上，并用一道轻松的问答题挑战他们。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "“你们知道平时那些 gcd 技巧，”她一边搅拌咖啡一边说道，“但这次有个变化——统计最大公约数为素数的次数。如果你们能快速完成，我就让你们先拿胜利披萨的第一块。”",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "队伍笑了起来，开始敲代码。现在轮到你了。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定两个长度为 n$$$n$$$ 的数组 a$$$a$$$ 和 b$$$b$$$。请计算满足以下条件的有序对 (i,j)$$$(i, j)$$$ 的数量：1≤i≤n$$$1 \\le i \\le n$$$，1≤j≤n$$$1 \\le j \\le n$$$，且 gcd(ai,bj)$$$\\gcd(a_i, b_j)$$$ 为素数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤105$$$(1 \\le T \\le 10^5)$$$)，表示测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例包含以下内容：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤105)$$$(1 \\le n \\le 10^5)$$$ —— 两个数组的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\dots, a_n$$$(1≤ai≤n)$$$(1 \\le a_i \\le n)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第三行包含 n$$$n$$$ 个整数 b1,b2,…,bn$$$b_1, b_2, \\dots, b_n$$$(1≤bi≤n)$$$(1 \\le b_i \\le n)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 n$$$n$$$ 的总和不超过 2∗105$$$2*10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数——满足 gcd(ai,bj)$$$\\gcd(a_i, b_j)$$$ 为素数的有序对 (i,j)$$$(i,j)$$$ 的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 数对的最大公约数",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

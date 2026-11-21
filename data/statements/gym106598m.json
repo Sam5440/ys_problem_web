@@ -1,0 +1,158 @@
+{
+  "code": "GYM106598M",
+  "letter": "M",
+  "title": "M. Multi-word",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106598/problem/M",
+  "difficulty": "*1500",
+  "timeLimit": "0.3 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "During a long bus trip through São Paulo, Miguel likes to observe street signs through the window. The route seems endless: the bus crosses long avenues such as Avenida Sapopemba, Avenida Aricanduva, and Avenida Raimundo Pereira de Magalhães, while Miguel tries to distract himself with the names that appear along the way.",
+      "![](https://espresso.codeforces.com/dccdadc4fea4a37b25a08567d020766e9b197f1f.png)",
+      "At one point during the trip, as he passes through a region of the city, he sees the same sequence of letters $$$s$$$ repeated $$$p$$$ times. Later, after many stops, he sees the sequence $$$t$$$ repeated $$$q$$$ times.",
+      "On the way back home, however, the route is different: first appear the signs with $$$t$$$ repeated $$$q$$$ times, and only afterwards the signs with $$$s$$$ repeated $$$p$$$ times. Miguel decides to mentally compare the two huge letter sequences using lexicographic order, but they are too large to be written out completely.",
+      "Given a string $$$u$$$ and a non-negative integer $$$k$$$, let $$$u^k$$$ be the string formed by concatenating $$$k$$$ copies of $$$u$$$. In particular, $$$u^0$$$ is the empty string.",
+      "Recall that, in lexicographic order, a string $$$a$$$ is smaller than a string $$$b$$$ if, at the first position where they differ, the character of $$$a$$$ is smaller than the character of $$$b$$$. If one of the strings ends before any difference is found, then the shorter string is considered smaller.",
+      "Your task is to compare lexicographically the strings $$$s^p t^q$$$ and $$$t^q s^p$$$."
+    ],
+    "input": [
+      "The first line of the input contains the strings $$$s$$$ and $$$t$$$.",
+      "The second line contains the integers $$$p$$$ and $$$q$$$.",
+      "The strings $$$s$$$ and $$$t$$$ are non-empty and consist only of lowercase English letters, satisfying $$$1 \\leq |s|, |t| \\leq 200\\,000$$$.",
+      "The integers satisfy $$$0 \\leq p, q \\leq 10^9$$$."
+    ],
+    "output": [
+      "The output must contain a single line with one character: \"=\", if $$$s^p t^q$$$ and $$$t^q s^p$$$ are equal; \"<\", if $$$s^p t^q$$$ is lexicographically smaller than $$$t^q s^p$$$; or \">\", otherwise."
+    ]
+  },
+  "examples": [
+    {
+      "input": "ab aba\n1 1",
+      "output": ">"
+    },
+    {
+      "input": "a b\n2 3",
+      "output": "<"
+    },
+    {
+      "input": "abc abcabc\n3 2",
+      "output": "="
+    }
+  ],
+  "titleZh": {
+    "0": "M. 多词",
+    "caiyun": "M. 多词",
+    "youdao": "m .多文字",
+    "deepl": "M.多词",
+    "iflyrec": "M.多字",
+    "ai": "M. 多词",
+    "aiModel": "DeepSeek V4 Flash"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "在穿越圣保罗的长途巴士旅行中，米格尔喜欢透过车窗观察街道标志。这段路程似乎永无止境：巴士穿过长长的大道，如萨佩姆巴大道、阿里坎杜瓦大道和雷蒙多·佩雷拉·德·马加良斯大道，而米格尔则试图通过沿途出现的名字来分散注意力。",
+        "youdao": "在一次经过<s:1>圣保罗的长途巴士旅行中，米格尔喜欢透过窗户观察路牌。这条路线似乎没有尽头：巴士穿过Sapopemba大街、Aricanduva大街和Raimundo Pereira de magalh<e:1>大街等长长的街道，而米格尔试图用沿途出现的名字分散自己的注意力。",
+        "deepl": "在穿越圣保罗的长途巴士上，米格尔喜欢透过车窗观察路标。这条路线似乎没有尽头：巴士穿过长长的大道，如萨波彭巴大道、阿里坎杜瓦大道和雷蒙多-佩雷拉-德-马加良斯大道，米格尔则试图用沿途出现的地名来转移自己的注意力。",
+        "iflyrec": "在圣保罗的长途巴士旅行中，米格尔喜欢透过车窗观察街道标志。这条路线似乎没有尽头：巴士穿过萨波彭巴大道（Avenida Sapopemba）、阿里坎杜瓦大道（Avenida Aricanduva）和雷蒙多·佩雷拉·德马加良斯大道（Avenida Raimundo Pereira de Magalhães）等长长的大道，而米格尔则试图用沿途出现的名字来分散自己的注意力。",
+        "ai": "在穿越圣保罗的一次漫长公交旅途中，米格尔喜欢透过车窗观察路牌。路线似乎没有尽头：公交车驶过 Sapopemba 大道、Aricanduva 大道和 Raimundo Pereira de Magalhães 大道等漫长的大道，米格尔则试图用沿途出现的名字来分散自己的注意力。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "![](https://espresso.codeforces.com/dccdadc4fea4a37b25a08567d020766e9b197f1f.png)",
+        "deepl": "![](https://espresso.codeforces.com/dccdadc4fea4a37b25a08567d020766e9b197f1f.png)",
+        "iflyrec": "![](https://espresso.codeforces.com/dccdadc4fea4a37b25a08567d020766e9b197f1f.png)",
+        "youdao": "![](https://espresso.codeforces.com/dccdadc4fea4a37b25a08567d020766e9b197f1f.png)",
+        "ai": "![](https://espresso.codeforces.com/dccdadc4fea4a37b25a08567d020766e9b197f1f.png)",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "在旅途中的某个时刻，当他经过城市的一个区域时，他看到相同的字母序列 $$$s$$$ 重复 $$$p$$$ 多次。后来，经过多次停留后，他又看到序列 $$$t$$$ 重复 $$$q$$$ 多次。",
+        "youdao": "在旅途中的某个时刻，当他经过城市的一个区域时，他看到了重复了多次的相同字母序列$$$s$$$ $$$p$$$。后来，在多次停车后，他看到$$$t$$$重复了$$$q$$$多次。",
+        "deepl": "在旅途中，当他经过城市的一个区域时，他看到同样的字母序列 $$$s$$$ 重复了 $$$p$$$ 次。后来，在多次停车后，他又看到 $$$t$$$ 顺序重复了 $$$q$$$ 次。",
+        "iflyrec": "在旅途中的某一时刻，当他经过城市的一个区域时，他看到相同的字母序列$$$s$$$重复$$$p$$$次。后来，在多次停止后，他看到序列$$$t$$$重复$$$q$$$次。",
+        "ai": "在旅程中的某个时刻，当经过城市的一个区域时，他看到了相同的字母序列 $$$s$$$ 重复了 $$$p$$$ 次。后来，经过许多站之后，他又看到序列 $$$t$$$ 重复了 $$$q$$$ 次。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "然而，在回家的路上，路线却不同：首先出现的是带有 $$$t$$$ 重复 $$$q$$$ 次数的符号，然后才是带有 $$$s$$$ 重复 $$$p$$$ 次数的符号。米格尔决定在脑海中用词典顺序比较这两个巨大的字母序列，但它们太大了，无法完全写出来。",
+        "youdao": "而在回家的路上，路线就不一样了，首先出现的是$$$t$$$重复出现$$$q$$$次的标志，之后才出现$$$s$$$重复出现$$$p$$$次的标志。Miguel决定用字典顺序在心里比较这两个巨大的字母序列，但它们太大了，无法完全写出来。",
+        "deepl": "然而，在回家的路上，路线却不同了：首先出现的是$$$t$$$重复$$$q$$$次的标志，然后才是$$$s$$$重复$$$p$$$次的标志。米格尔决定用词典顺序在头脑中比较这两个巨大的字母序列，但它们太大了，无法完全写出来。",
+        "iflyrec": "然而，在回家的路上，路线是不同的：首先出现$$$t$$$重复$$$q$$$次的标志，然后才出现$$$s$$$重复$$$p$$$次的标志。米格尔决定用字典顺序在心里比较这两个巨大的字母序列，但它们太大了，无法完全写出来。",
+        "ai": "然而，回家路上的路线不同：首先出现的是将 $$$t$$$ 重复 $$$q$$$ 次的标牌，之后才是将 $$$s$$$ 重复 $$$p$$$ 次的标牌。Miguel 决定在脑中按字典序比较这两个巨大的字母序列，但它们太大，无法完整写出。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "给定一个字符串 $$$u$$$ 和一个非负整数 $$$k$$$，假设 $$$u^k$$$ 是通过连接 $$$u$$$ 的 $$$k$$$ 副本形成的字符串。具体来说，$$$u^0$$$ 是空字符串。",
+        "youdao": "给定一个字符串$$$u$$$和一个非负整数$$$k$$$，设$$$u^k$$$是由$$$u$$$的$$$k$$$个副本连接而成的字符串。特别地，$$$u^0$$$是空字符串。",
+        "deepl": "给定一个字符串$$$u$$$和一个非负整数$$$k$$$，设$$$u^k$$$是由$$$k$$$份$$$u$$$连接而成的字符串。特别地，$$$u^0$$$ 是空字符串。",
+        "iflyrec": "给定串$$$u$$$和非负整数$$$k$$$，令$$$u^k$$$是通过连接$$$u$$$的$$$k$$$个副本而形成的串。特别地，$$$u^0$$$是空字符串。",
+        "ai": "给定一个字符串 $$$u$$$ 和一个非负整数 $$$k$$$，令 $$$u^k$$$ 为将 $$$k$$$ 个 $$$u$$$ 拼接后得到的字符串。特别地，$$$u^0$$$ 是空串。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "回想一下，按照词典顺序，如果在它们不同的第一个位置，$$$a$$$ 的字符小于 $$$b$$$ 的字符，那么字符串 $$$a$$$ 就小于字符串 $$$b$$$。如果其中一个字符串在发现任何差异之前就结束了，那么较短的字符串就被认为较小。",
+        "ai": "回顾一下，按字典序，字符串 $$$a$$$ 小于字符串 $$$b$$$ 意味着：在它们第一个不同的位置上，$$$a$$$ 的字符小于 $$$b$$$ 的字符。如果在找到任何不同之前其中一个字符串已经结束，那么较短的字符串视为更小。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "你的任务是在词典上比较字符串 $$$s^p t^q$$$ 和 $$$t^q s^p$$$。",
+        "youdao": "您的任务是按字典顺序比较字符串$$$s^p t^q$$$和$$$t^q s^p$$$。",
+        "deepl": "您的任务是按词典顺序比较字符串 $$$s^p t^q$$$ 和 $$$t^q s^p$$$。",
+        "iflyrec": "您的任务是按字典顺序比较字符串$$$s^p t^q$$$和$$$t^q s^p$$$。",
+        "ai": "你的任务是按字典序比较字符串 $$$s^p t^q$$$ 和 $$$t^q s^p$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "输入的第一行包含字符串 $$$s$$$ 和 $$$t$$$。",
+        "youdao": "输入的第一行包含字符串$$$s$$$和$$$t$$$。",
+        "deepl": "输入的第一行包含字符串 $$$s$$$ 和 $$$t$$$。",
+        "iflyrec": "输入的第一行包含字符串$$$s$$$和$$$t$$$。",
+        "ai": "输入的第一行包含字符串 $$$s$$$ 和 $$$t$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "第二行包含整数 $$$p$$$ 和 $$$q$$$。",
+        "youdao": "第二行包含整数$$$p$$$和$$$q$$$。",
+        "deepl": "第二行包含整数 $$$p$$$ 和 $$$q$$$。",
+        "iflyrec": "第二行包含整数$$$p$$$和$$$q$$$。",
+        "ai": "第二行包含整数 $$$p$$$ 和 $$$q$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "字符串 $$$s$$$ 和 $$$t$$$ 是非空的，仅由小写英语字母组成，满足 $$$1 \\leq |s|, |t| \\leq 200\\,000$$$ 要求。",
+        "youdao": "字符串$$$s$$$和$$$t$$$是非空的，仅由小写英文字母组成，满足$$$1 \\leq |s|, |t| \\leq 200\\,000$$$。",
+        "deepl": "字符串 $$$s$$$ 和 $$$t$$$ 是非空字符串，且只由小写英文字母组成，符合 $$$1 \\leq |s|, |t| \\leq 200\\,000$$$ 的要求。",
+        "iflyrec": "字符串$$$s$$$和$$$t$$$非空且仅由小写英文字母组成，满足$$$1 \\leq |s|, |t| \\leq 200\\,000$$$。",
+        "ai": "字符串 $$$s$$$ 和 $$$t$$$ 非空，且仅由小写英文字母组成，满足 $$$1 \\leq |s|, |t| \\leq 200\\,000$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "caiyun": "整数满足 $$$0 \\leq p, q \\leq 10^9$$$。",
+        "youdao": "整数满足$$$0 \\leq p, q \\leq 10^9$$$。",
+        "deepl": "整数满足 $$$0 \\leq p, q \\leq 10^9$$$。",
+        "iflyrec": "整数满足$$$0 \\leq p, q \\leq 10^9$$$。",
+        "ai": "整数满足 $$$0 \\leq p, q \\leq 10^9$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "输出必须包含一个字符的单行:“=”，如果 $$$s^p t^q$$$ 和 $$$t^q s^p$$$ 相等;“<”，如果 $$$s^p t^q$$$ 在词典编制上小于 $$$t^q s^p$$$，或者 “>”，否则。",
+        "youdao": "如果$$$s^p t^q$$$和$$$t^q s^p$$$相等，则输出必须包含单行一个字符：“=”；“<”，如果$$$s^p t^q$$$在字典顺序上小于$$$t^q s^p$$$；或“>”，否则。",
+        "deepl": "输出结果必须包含一行一个字符：如果 $$$s^p t^q$$$ 和 $$$t^q s^p$$$ 相等，则为\"=\"；如果 $$$s^p t^q$$$ 在词法上小于 $$$t^q s^p$$$，则为\"<\"；否则为\">\"。",
+        "iflyrec": "如果$$$s^p t^q$$$和$$$t^q s^p$$$相等“<”，如果$$$s^p t^q$$$在字典序上小于$$$t^q s^p$$$或“>”，则输出必须包含具有一个字符的单行：“=”，否则为“>”。",
+        "ai": "输出必须包含单独一行，含一个字符：如果 $$$s^p t^q$$$ 和 $$$t^q s^p$$$ 相等，则输出 \"=\"；如果 $$$s^p t^q$$$ 在字典序上小于 $$$t^q s^p$$$，则输出 \"<\"；否则输出 \">\"。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T07:02:32.217Z",
+  "translatedBy": [
+    "iflyrec"
+  ]
+}

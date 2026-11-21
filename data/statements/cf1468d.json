@@ -1,0 +1,145 @@
+{
+  "code": "CF1468D",
+  "letter": "D",
+  "title": "D. Firecrackers",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1468/D",
+  "difficulty": "1700",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Consider a long corridor which can be divided into n$$$n$$$ square cells of size 1×1$$$1 \\times 1$$$. These cells are numbered from 1$$$1$$$ to n$$$n$$$ from left to right.",
+      "There are two people in this corridor, a hooligan and a security guard. Initially, the hooligan is in the a$$$a$$$-th cell, the guard is in the b$$$b$$$-th cell (a≠b$$$a \\ne b$$$).",
+      "![](https://espresso.codeforces.com/4073caadae3a5477671e10e43f8bcbb12944e8ca.png)",
+      "There are m$$$m$$$ firecrackers in the hooligan's pocket, the i$$$i$$$-th firecracker explodes in si$$$s_i$$$ seconds after being lit.",
+      "The following events happen each second (sequentially, exactly in the following order):",
+      "firstly, the hooligan either moves into an adjacent cell (from the cell i$$$i$$$, he can move to the cell (i+1)$$$(i + 1)$$$ or to the cell (i−1)$$$(i - 1)$$$, and he cannot leave the corridor) or stays in the cell he is currently. If the hooligan doesn't move, he can light one of his firecrackers and drop it. The hooligan can't move into the cell where the guard is;",
+      "secondly, some firecrackers that were already dropped may explode. Formally, if the firecracker j$$$j$$$ is dropped on the T$$$T$$$-th second, then it will explode on the (T+sj)$$$(T + s_j)$$$-th second (for example, if a firecracker with sj=2$$$s_j = 2$$$ is dropped on the 4$$$4$$$-th second, it explodes on the 6$$$6$$$-th second);",
+      "finally, the guard moves one cell closer to the hooligan. If the guard moves to the cell where the hooligan is, the hooligan is caught.",
+      "Obviously, the hooligan will be caught sooner or later, since the corridor is finite. His goal is to see the maximum number of firecrackers explode before he is caught; that is, he will act in order to maximize the number of firecrackers that explodes before he is caught.",
+      "Your task is to calculate the number of such firecrackers, if the hooligan acts optimally."
+    ],
+    "input": [
+      "The first line contains one integer t$$$t$$$ (1≤t≤1000$$$1 \\le t \\le 1000$$$) — the number of test cases.",
+      "Each test case consists of two lines. The first line contains four integers n$$$n$$$, m$$$m$$$, a$$$a$$$ and b$$$b$$$ (2≤n≤109$$$2 \\le n \\le 10^9$$$; 1≤m≤2⋅105$$$1 \\le m \\le 2 \\cdot 10^5$$$; 1≤a,b≤n$$$1 \\le a, b \\le n$$$; a≠b$$$a \\ne b$$$) — the size of the corridor, the number of firecrackers, the initial location of the hooligan and the initial location of the guard, respectively.",
+      "The second line contains m$$$m$$$ integers s1$$$s_1$$$, s2$$$s_2$$$, ..., sm$$$s_m$$$ (1≤si≤109$$$1 \\le s_i \\le 10^9$$$), where si$$$s_i$$$ is the time it takes the i$$$i$$$-th firecracker to explode after it is lit.",
+      "It is guaranteed that the sum of m$$$m$$$ over all test cases does not exceed 2⋅105$$$2 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, print one integer — the maximum number of firecrackers that the hooligan can explode before he is caught."
+    ],
+    "note": [
+      "In the first test case, the hooligan should act, for example, as follows:",
+      "second 1: drop the second firecracker, so it will explode on the 5$$$5$$$-th second. The guard moves to the cell 5$$$5$$$;",
+      "second 2: move to the cell 2$$$2$$$. The guard moves to the cell 4$$$4$$$;",
+      "second 3: drop the first firecracker, so it will explode on the 4$$$4$$$-th second. The guard moves to the cell 3$$$3$$$;",
+      "second 4: move to the cell 1$$$1$$$. The first firecracker explodes. The guard moves to the cell 2$$$2$$$;",
+      "second 5: stay in the cell 1$$$1$$$. The second firecracker explodes. The guard moves to the cell 1$$$1$$$ and catches the hooligan."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n7 2 3 6\n1 4\n7 2 3 6\n5 1\n7 2 3 6\n4 4",
+      "output": "2\n1\n1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "考虑一条长走廊，它可以被划分为 n$$$n$$$ 个大小为 1×1$$$1 \\times 1$$$ 的方格。这些方格从左到右编号为 1$$$1$$$ 到 n$$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "走廊中有两个人，一个流氓和一名保安。最初，流氓位于第 a$$$a$$$ 个方格中，保安位于第 b$$$b$$$ 个方格中(a≠b$$$a \\ne b$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/4073caadae3a5477671e10e43f8bcbb12944e8ca.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "流氓的口袋里有 m$$$m$$$ 个鞭炮，第 i$$$i$$$ 个鞭炮会在点燃后 si$$$s_i$$$ 秒爆炸。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "以下事件每秒发生一次（依次进行，严格按照以下顺序）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，流氓要么移动到相邻的格子(从格子 i$$$i$$$ 出发，他可以移动到格子 (i+1)$$$(i + 1)$$$ 或格子 (i−1)$$$(i - 1)$$$，且不能离开走廊)，要么留在当前所在的格子。如果流氓不移动，他可以点燃一枚鞭炮并将其放下。流氓不能移动到守卫所在的格子；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其次，一些已经被放下的鞭炮可能会爆炸。形式化地说，如果第 j$$$j$$$ 个鞭炮在第 T$$$T$$$ 秒被放下，那么它将在第 (T+sj)$$$(T + s_j)$$$ 秒爆炸(例如，如果一枚 sj=2$$$s_j = 2$$$ 的鞭炮在第 4$$$4$$$ 秒被放下，它将在第 6$$$6$$$ 秒爆炸)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最后，守卫向流氓所在的方向移动一格。如果守卫移动到流氓所在的格子，流氓就会被抓住。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "显然，由于走廊是有限的，流氓迟早会被抓住。他的目标是在被抓住之前让尽可能多的鞭炮爆炸；也就是说，他会采取行动，使在被抓住之前爆炸的鞭炮数量最大化。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是计算，如果流氓采取最优策略，他能引爆多少个这样的爆竹。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t$$$t$$$(1≤t≤1000$$$1 \\le t \\le 1000$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例由两行组成。第一行包含四个整数 n$$$n$$$、m$$$m$$$、a$$$a$$$ 和 b$$$b$$$(2≤n≤109$$$2 \\le n \\le 10^9$$$；1≤m≤2⋅105$$$1 \\le m \\le 2 \\cdot 10^5$$$；1≤a,b≤n$$$1 \\le a, b \\le n$$$；a≠b$$$a \\ne b$$$)——分别表示走廊的长度、爆竹的数量、流氓的初始位置和警卫的初始位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 m$$$m$$$ 个整数 s1$$$s_1$$$、s2$$$s_2$$$、...、sm$$$s_m$$$(1≤si≤109$$$1 \\le s_i \\le 10^9$$$)，其中 si$$$s_i$$$ 表示第 i$$$i$$$ 个爆竹点燃后爆炸所需的时间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试用例中 m$$$m$$$ 的总和不超过 2⋅105$$$2 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一个整数——流氓在被抓住之前能够引爆的爆竹的最大数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，流氓可以例如按照如下方式行动：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 1 秒：放下第二个鞭炮，因此它将在第 5$$$5$$$ 秒爆炸。警卫移动到 5$$$5$$$ 号格子；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 2 秒：移动到 2$$$2$$$ 号格子。警卫移动到 4$$$4$$$ 号格子；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 3 秒：放下第一个鞭炮，因此它将在第 4$$$4$$$ 秒爆炸。警卫移动到 3$$$3$$$ 号格子；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 4 秒：移动到 1$$$1$$$ 号格子。第一个鞭炮爆炸。警卫移动到 2$$$2$$$ 号格子；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第 5 秒：停留在 1$$$1$$$ 号格子。第二个鞭炮爆炸。警卫移动到 1$$$1$$$ 号格子并抓住了流氓。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 鞭炮",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "code": "CF794C",
+  "letter": "C",
+  "title": "C. Naming Company",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/794/C",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Oleg the client and Igor the analyst are good friends. However, sometimes they argue over little things. Recently, they started a new company, but they are having trouble finding a name for the company.",
+      "To settle this problem, they've decided to play a game. The company name will consist of n letters. Oleg and Igor each have a set of n letters (which might contain multiple copies of the same letter, the sets can be different). Initially, the company name is denoted by n question marks. Oleg and Igor takes turns to play the game, Oleg moves first. In each turn, a player can choose one of the letters c in his set and replace any of the question marks with c. Then, a copy of the letter c is removed from his set. The game ends when all the question marks has been replaced by some letter.",
+      "For example, suppose Oleg has the set of letters {i, o, i} and Igor has the set of letters {i, m, o}. One possible game is as follows :",
+      "Initially, the company name is ???.",
+      "Oleg replaces the second question mark with 'i'. The company name becomes ?i?. The set of letters Oleg have now is {i, o}.",
+      "Igor replaces the third question mark with 'o'. The company name becomes ?io. The set of letters Igor have now is {i, m}.",
+      "Finally, Oleg replaces the first question mark with 'o'. The company name becomes oio. The set of letters Oleg have now is {i}.",
+      "In the end, the company name is oio.",
+      "Oleg wants the company name to be as lexicographically small as possible while Igor wants the company name to be as lexicographically large as possible. What will be the company name if Oleg and Igor always play optimally?",
+      "A string s = s1s2...sm is called lexicographically smaller than a string t = t1t2...tm (where s ≠ t) if si < ti where i is the smallest index such that si ≠ ti. (so sj = tj for all j < i)"
+    ],
+    "input": [
+      "The first line of input contains a string s of length n (1 ≤ n ≤ 3·105). All characters of the string are lowercase English letters. This string denotes the set of letters Oleg has initially.",
+      "The second line of input contains a string t of length n. All characters of the string are lowercase English letters. This string denotes the set of letters Igor has initially."
+    ],
+    "output": [
+      "The output should contain a string of n lowercase English letters, denoting the company name if Oleg and Igor plays optimally."
+    ],
+    "note": [
+      "One way to play optimally in the first sample is as follows :",
+      "Initially, the company name is ???????.",
+      "Oleg replaces the first question mark with 'f'. The company name becomes f??????.",
+      "Igor replaces the second question mark with 'z'. The company name becomes fz?????.",
+      "Oleg replaces the third question mark with 'f'. The company name becomes fzf????.",
+      "Igor replaces the fourth question mark with 's'. The company name becomes fzfs???.",
+      "Oleg replaces the fifth question mark with 'i'. The company name becomes fzfsi??.",
+      "Igor replaces the sixth question mark with 'r'. The company name becomes fzfsir?.",
+      "Oleg replaces the seventh question mark with 'k'. The company name becomes fzfsirk.",
+      "For the second sample, no matter how they play, the company name will always be xxxxxx."
+    ]
+  },
+  "examples": [
+    {
+      "input": "tinkoff\nzscoder",
+      "output": "fzfsirk"
+    },
+    {
+      "input": "xxxxxx\nxxxxxx",
+      "output": "xxxxxx"
+    },
+    {
+      "input": "ioi\nimo",
+      "output": "ioi"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的第一行包含一个长度为 n 的字符串 s（1 ≤ n ≤ 3·105）。字符串中的所有字符都是小写英文字母。该字符串表示 Oleg 初始拥有的字母集合。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第二行包含一个长度为 n 的字符串 t。字符串中的所有字符均为小写英文字母。该字符串表示 Igor 初始拥有的字母集合。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出应包含一个由 n 个小写英文字母组成的字符串，表示在 Oleg 和 Igor 均采取最优策略时的公司名称。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一组样例中，一种最优的玩法如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最初，公司名称为 ???????。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Oleg 将第一个问号替换为 'f'。公司名称变为 f??????。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Igor 将第二个问号替换为 'z'。公司名称变为 fz?????。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Oleg 将第三个问号替换为“f”。公司名称变为 fzf????。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Igor 将第四个问号替换为“s”。公司名称变为 fzfs???。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Oleg 将第五个问号替换为“i”。公司名称变为 fzfsi??。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Igor 将第六个问号替换为“r”。公司名称变为 fzfsir?。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Oleg 将第七个问号替换为“k”。公司名称变为 fzfsirk。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第二个样例，无论他们如何操作，公司名称始终为 xxxxxx。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "客户 Oleg 和分析师 Igor 是好朋友。然而，他们有时会为一些小事争论。最近，他们创办了一家新公司，但他们在为公司取名时遇到了困难。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了解决这个问题，他们决定玩一个游戏。公司名称由 n 个字母组成。Oleg 和 Igor 各自有一个包含 n 个字母的集合（其中可能包含同一个字母的多个副本，两个集合也可能不同）。最初，公司名称表示为 n 个问号。Oleg 和 Igor 轮流进行游戏，由 Oleg 先手。在每一回合中，一名玩家可以从自己的集合中选择一个字母 c，并用 c 替换任意一个问号。然后，从他的集合中移除一个字母 c 的副本。当所有问号都被某个字母替换后，游戏结束。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，假设 Oleg 的字母集合为 {i, o, i}，Igor 的字母集合为 {i, m, o}。一种可能的游戏过程如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最初，公司名称为 ???。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Oleg 将第二个问号替换为 'i'。公司名称变为 ?i?。此时 Oleg 的字母集合为 {i, o}。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Igor 将第三个问号替换为“o”。公司名变为 ?io。Igor 现在拥有的字母集合为 {i, m}。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最后，Oleg 将第一个问号替换为“o”。公司名变为 oio。Oleg 现在拥有的字母集合为 {i}。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最终，公司名为 oio。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Oleg 希望公司名的字典序尽可能小，而 Igor 希望公司名的字典序尽可能大。如果 Oleg 和 Igor 始终采取最优策略，公司名会是什么？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 s ≠ t，且 i 是满足 si ≠ ti 的最小下标，并且 si < ti，则称字符串 s = s1s2...sm 的字典序小于字符串 t = t1t2...tm。（即对于所有 j < i，都有 sj = tj。）",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 命名公司",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

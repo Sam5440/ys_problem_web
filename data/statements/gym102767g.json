@@ -1,0 +1,175 @@
+{
+  "code": "GYM102767G",
+  "letter": "G",
+  "title": "G. Singhal and Multiplication",
+  "contest": null,
+  "url": "https://codeforces.com/gym/102767/problem/G",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Singhal has a sequence of integers a1,a2,…,an$$$a_1 , a_2 , \\ldots , a_n$$$.",
+      "Recall,",
+      "A subarray is the sequence of consecutive elements of the array.",
+      "a(modn)$$$ a\\pmod n$$$ is the remainder of the Euclidean division of a by n, where a is the dividend and n is the divisor.",
+      "A subarray ai,ai+1,…,aj$$$a_i , a_{i+1} , \\ldots , a_j $$$ is good if",
+      "(ai∗ai+1∗⋯∗aj)(modn)=1$$ (a_i*a_{i+1}*\\cdots*a_j)\\pmod n = 1 $$",
+      "Formally,",
+      "(j∏k=iak)(modn)=1$$ \\Bigl( \\prod_{k=i}^j a_k \\Bigr)\\pmod n = 1$$",
+      "Help him to find if a good subarray is present in his sequence or not. If there are many good subarray tell the smallest possible in length."
+    ],
+    "input": [
+      "The first line contains a single integer t(1≤t≤105)$$$t (1 \\le t \\le 10^5)$$$ — the number of test cases in the input. Then t$$$t$$$ test cases follow.",
+      "Each query contains two lines. The first line contains one integer n(1≤n≤105)$$$n (1 \\le n \\le 10^5)$$$: the number of integers in the sequence, and the second line contains n$$$n$$$ integers a1,…,an(1≤ai≤109)$$$a_1, \\ldots ,a_n (1\\le a_i \\le 10^9)$$$.",
+      "It is guaranteed that the total sum of n$$$n$$$ is at most 105$$$10^5$$$."
+    ],
+    "output": [
+      "Print t$$$t$$$ answers to the test cases. Each answer must be consisting of single integer — the smallest possible length of good subarray if present in the sequence , if not output 0$$$0$$$."
+    ],
+    "note": [
+      "In the first query, possible subarray are —",
+      "(2)−2(mod3)=2$$$ (2) - 2\\pmod 3 = 2 $$$",
+      "(2)−2(mod3)=2$$$ (2) - 2\\pmod 3 = 2 $$$",
+      "(6)−6(mod3)=0$$$ (6) - 6\\pmod 3 = 0 $$$",
+      "(2,2)−(2∗2)(mod3)=1$$$ (2,2) - (2*2)\\pmod 3 = 1 $$$",
+      "(2,6)−(2∗6)(mod3)=0$$$ (2,6) - (2*6)\\pmod 3 = 0 $$$",
+      "(2,2,6)−(2∗2∗6)(mod3)=0$$$ (2,2,6) - (2*2*6)\\pmod 3 = 0 $$$",
+      "Only one good subarray (2,2)$$$(2,2)$$$ , length - 2$$$2$$$.",
+      "In the second query , only one good subarray (3,3)−(3∗3)(mod4)=1$$$(3,3) - (3*3)\\pmod 4 = 1$$$ , length - 2$$$2$$$.",
+      "In third query , no good subarray possible.",
+      "In fourth query , two good subarray possible —",
+      "(1)−1(mod3)=1$$$(1) - 1\\pmod 3 = 1 $$$",
+      "(2,1,2)−(2∗1∗2)(mod3)=1$$$(2,1,2) - (2*1*2)\\pmod 3 = 1 $$$",
+      "We have to choose one with smallest length , i.e. 1$$$1$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n3\n2 2 6\n4\n2 2 3 3\n2\n2 2\n3\n2 1 2",
+      "output": "2\n2\n0\n1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Singhal 有一个整数序列 a1,a2,…,an$$$a_1 , a_2 , \\ldots , a_n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "回顾，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子数组是数组中连续元素组成的序列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "a(modn)$$$ a\\pmod n$$$ 是 a 除以 n 的欧几里得除法的余数，其中 a 是被除数，n 是除数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "若子数组 ai,ai+1,…,aj$$$a_i , a_{i+1} , \\ldots , a_j $$$ 满足以下条件，则称其为好的子数组：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(ai∗ai+1∗⋯∗aj)(modn)=1$$ (a_i*a_{i+1}*\\cdots*a_j)\\pmod n = 1 $$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(j∏k=iak)(modn)=1$$ \\Bigl( \\prod_{k=i}^j a_k \\Bigr)\\pmod n = 1$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请帮助他判断其序列中是否存在好的子数组。如果存在多个好的子数组，请告知他长度可能的最小值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 t(1≤t≤105)$$$t (1 \\le t \\le 10^5)$$$ —— 输入中的测试用例数量。随后给出 t$$$t$$$ 个测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个询问包含两行。第一行包含一个整数 n(1≤n≤105)$$$n (1 \\le n \\le 10^5)$$$，表示序列中整数的个数；第二行包含 n$$$n$$$ 个整数 a1,…,an(1≤ai≤109)$$$a_1, \\ldots ,a_n (1\\le a_i \\le 10^9)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有 n$$$n$$$ 的总和不超过 105$$$10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 t$$$t$$$ 个测试用例的答案。每个答案必须由一个整数构成——如果序列中存在好的子数组，则输出其可能的最小长度；否则输出 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个询问中，可能的子数组有：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(2)−2(mod3)=2$$$ (2) - 2\\pmod 3 = 2 $$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(2)−2(mod3)=2$$$ (2) - 2\\pmod 3 = 2 $$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(6)−6(mod3)=0$$$ (6) - 6\\pmod 3 = 0 $$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(2,2)−(2∗2)(mod3)=1$$$ (2,2) - (2*2)\\pmod 3 = 1 $$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(2,6)−(2∗6)(mod3)=0$$$ (2,6) - (2*6)\\pmod 3 = 0 $$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(2,2,6)−(2∗2∗6)(mod3)=0$$$ (2,2,6) - (2*2*6)\\pmod 3 = 0 $$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "只有一个好子数组 (2,2)$$$(2,2)$$$，长度 - 2$$$2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个查询中，只有一个好子数组 (3,3)−(3∗3)(mod4)=1$$$(3,3) - (3*3)\\pmod 4 = 1$$$，长度 - 2$$$2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三次查询中，不存在好的子数组。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四次查询中，可能有两个好的子数组——",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(1)−1(mod3)=1$$$(1) - 1\\pmod 3 = 1 $$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(2,1,2)−(2∗1∗2)(mod3)=1$$$(2,1,2) - (2*1*2)\\pmod 3 = 1 $$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "我们必须选择长度最小的一个，即 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. Singhal 与乘法",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

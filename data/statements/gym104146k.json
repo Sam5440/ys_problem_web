@@ -1,0 +1,120 @@
+{
+  "code": "GYM104146K",
+  "letter": "K",
+  "title": "K. Kyuu Sort",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104146/problem/K",
+  "difficulty": "*1400",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Osu!",
+      "Cindy is helping manage a mixed martial arts tournament that is being hosted at her school. Now that the tournament is over, it's time to get all the competitors lined up for a ceremonial photo...",
+      "The tournament included $$$n$$$ martial artists from a variety of disciplines and backgrounds. Cindy's analytics team used an assortment of machine learning techniques in order to assign each competitor a distinct power ranking, an integer from $$$1$$$ to $$$n$$$ that describes their martial arts skill relative to the other martial artists. In this system, $$$1$$$ is the lowest ranking and $$$n$$$ is the highest ranking.",
+      "After all, if there's anything that Cindy learned from YouTube, it's that people love power rankings.",
+      "These $$$n$$$ martial artists then arranged themselves in a queue, in preparation for the final photo. We can describe their initial ordering by using a permutation $$$p_1, p_2, p_3, \\dots, p_n$$$, where $$$p_1$$$ is the ranking of the person currently at the front of the queue, and $$$p_n$$$ is the ranking of the person currently at the back.",
+      "However, Cindy believes that she'll get the perfect thumbnail if this queue is sorted in ascending order. That is to say, each competitor must have a higher ranking than everyone in front of them in the queue.",
+      "To make sure things don't get too rowdy, Cindy only has the following two possible operations at her disposal.",
+      "S to swap the positions of the two front-most people in the queue.",
+      "P to tell the person at the front of the queue to move to the very back; then, everyone adjusts. In other words, we \"pop\" off the person currently at the front of the queue, then \"push\" them to the back of the queue.",
+      "Cindy has a lot of things on her plate today, though, so do you think you could help her out with this task?"
+    ],
+    "input": [
+      "The first line of input contains a single integer $$$n$$$.",
+      "The second line of input contains the $$$n$$$ integers $$$p_1, p_2, p_3, \\dots, p_n$$$.",
+      "$$\\begin{align*}  &\\begin{array}{|c|c|l|} \\hline \\text{Subtask} & \\text{Points} & \\text{Constraints} \\\\ \\hline 1 & \\mathbf{33} & 3 \\leq n \\leq 5 \\\\ \\hline 2 & \\mathbf{33} & 3 \\leq n \\leq 8 \\\\ \\hline 3 & \\mathbf{17} & 3 \\leq n \\leq 50 \\\\ \\hline 4 & \\mathbf{17} & 3 \\leq n \\leq 250 \\\\ \\hline \\end{array}\\\\  \\end{align*}$$"
+    ],
+    "output": [
+      "Output a single string consisting only of the letters S and P, encoding the commands that you would like to give, in order.",
+      "If you would like to output the empty string (meaning no operations will be done), output empty instead.",
+      "Your solution will be accepted if this string has no more than $$$10^5$$$ characters. We can show that a solution always exists within these bounds. Note that you do not have to minimize the number of operations."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n4 3 1 5 2",
+      "output": "SPPSP"
+    },
+    {
+      "input": "5\n1 2 3 4 5",
+      "output": "empty"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Osu!",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Cindy 正在协助管理一场由她所在学校举办的综合格斗锦标赛。如今锦标赛已经结束，是时候让所有参赛者排好队，拍摄一张仪式照了……",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这场锦标赛汇集了 $$$n$$$ 位来自不同流派和背景的武术家。Cindy 的分析团队运用多种机器学习技术，为每位参赛者评定了一个独一无二的实力排名，该排名是一个介于 $$$1$$$ 和 $$$n$$$ 之间的整数，用于描述他们相对于其他武术家的武术水平。在这个体系中，$$$1$$$ 是最低排名，$$$n$$$ 是最高排名。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "毕竟，如果说辛迪从 YouTube 上学到了一件事，那就是人们喜欢实力排名。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "随后，这些 $$$n$$$ 名武术家排成一队，准备拍摄最终的合照。我们可以使用一个排列 $$$p_1, p_2, p_3, \\dots, p_n$$$ 来描述他们最初的顺序，其中 $$$p_1$$$ 表示当前位于队首的人的排名，$$$p_n$$$ 表示当前位于队尾的人的排名。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然而，Cindy 认为，如果将这个队列按升序排列，她就能得到完美的缩略图。也就是说，队列中的每位参赛者的排名都必须高于排在自己前面的所有人。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了避免场面过于混乱，Cindy 只能进行以下两种操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "S：交换队列中最靠前的两个人的位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "P 告诉队伍最前面的人移到队伍最后面；随后，所有人调整位置。换句话说，我们将当前队首的人“弹出”，再将其“推入”队尾。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "不过，Cindy 今天有很多事情要忙，你能帮她完成这项任务吗？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 $$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的第二行包含 $$$n$$$ 个整数 $$$p_1, p_2, p_3, \\dots, p_n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$\\begin{align*}  &\\begin{array}{|c|c|l|} \\hline \\text{Subtask} & \\text{Points} & \\text{Constraints} \\\\ \\hline 1 & \\mathbf{33} & 3 \\leq n \\leq 5 \\\\ \\hline 2 & \\mathbf{33} & 3 \\leq n \\leq 8 \\\\ \\hline 3 & \\mathbf{17} & 3 \\leq n \\leq 50 \\\\ \\hline 4 & \\mathbf{17} & 3 \\leq n \\leq 250 \\\\ \\hline \\end{array}\\\\  \\end{align*}$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个仅由字母 S 和 P 组成的字符串，按顺序编码你想执行的命令。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果想输出空字符串（表示不进行任何操作），请输出 empty。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果该字符串的字符数不超过 $$$10^5$$$，你的解法就会被接受。可以证明，总能在这些限制内构造出一个解。注意，你不必最小化操作次数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "K. Kyuu 排序",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

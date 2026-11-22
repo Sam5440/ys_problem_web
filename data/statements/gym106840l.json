@@ -1,0 +1,100 @@
+{
+  "code": "GYM106840L",
+  "letter": "L",
+  "title": "L. Leisure Geometry",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106840/problem/L",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Have you ever been to a boring lesson with absolutely nothing to do? Everyone deals with it differently: some students prefer to train their art skills, some try to compensate for the lack of sleep, and Lucas is the only one in this class who does robotics instead.",
+      "Lucas has just programmed a robot. It draws a polyline on the 2D plane using a simple algorithm. Initially, the pencil controlled by the robot is located at the point $$$(0, 0)$$$ and faces right along the vector $$$(1, 0)$$$. Then, the following pair of actions is repeatedly performed:",
+      "the robot draws a segment of length $$$1$$$ and turns the direction clockwise by $$$\\alpha$$$ degrees;",
+      "the robot draws a segment of length $$$1$$$ and turns the direction counterclockwise by $$$\\beta$$$ degrees.",
+      "If the pencil returns to $$$(0, 0)$$$ for the first time, and the resulting polyline does not intersect itself, the robot stops, and Lucas calls it a successful operation. In that case, Lucas wonders what the area of the figure bounded by the drawn polyline is.",
+      "We say that the polyline intersects itself if two of its segments have a common point other than a shared vertex of adjacent segments. Segments are adjacent if they are consecutive while drawing, and the first and the last segments are also adjacent if the polyline has returned to $$$(0, 0)$$$ for the first time."
+    ],
+    "input": [
+      "The first line contains a single integer $$$t$$$ ($$$1 \\leq t \\leq 10^4$$$): the number of test cases. Then, $$$t$$$ test cases follow.",
+      "The only line of a test case contains two integers $$$\\alpha$$$ and $$$\\beta$$$ ($$$1 \\leq \\alpha, \\beta \\leq 179$$$)."
+    ],
+    "output": [
+      "For each test case, print the area of the figure on a separate line if the robot succeeds, or $$$-1$$$ otherwise. If the printed value is not $$$-1$$$, the absolute or relative error must not exceed $$$10^{-6}$$$."
+    ],
+    "note": [
+      "The figures below correspond to the example test cases (with possibly different scales of figures).",
+      "![](https://espresso.codeforces.com/7c2ae4fc271a61463de2425a43d83a3284f42e54.png)",
+      "In the third test case of the example, the polyline intersects itself, and the figure is drawn only up to the first intersection."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n90 45\n150 60\n90 36",
+      "output": "13.6568542495\n1.2679491924\n-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你是否曾经上过无聊透顶、完全无事可做的课？每个人应对的方式都不一样：有些学生喜欢练习艺术技能，有些则试图补觉，而 Lucas 是班上唯一选择做机器人项目的人。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Lucas 刚刚编写了一个机器人程序。机器人会使用一个简单的算法在二维平面上绘制一条折线。初始时，机器人控制的铅笔位于点 $$$(0, 0)$$$，并沿着向量 $$$(1, 0)$$$ 朝右。随后，机器人会不断重复执行以下一对操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "机器人画出一条长度为 $$$1$$$ 的线段，并将方向顺时针旋转 $$$\\alpha$$$ 度；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "机器人画出一条长度为 $$$1$$$ 的线段，并将方向逆时针旋转 $$$\\beta$$$ 度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果铅笔第一次回到 $$$(0, 0)$$$，且最终得到的折线不与自身相交，机器人就会停止，卢卡斯称之为一次成功的操作。此时，卢卡斯想知道由所画折线围成的图形面积是多少。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果一条折线的两个线段有公共点，且该公共点不是相邻线段的公共端点，则称这条折线与自身相交。若两个线段在绘制过程中相邻，则称它们相邻；如果折线首次返回 $$$(0, 0)$$$，那么第一个线段和最后一个线段也相邻。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 $$$t$$$ ($$$1 \\leq t \\leq 10^4$$$)，表示测试用例的数量。接下来有 $$$t$$$ 个测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试用例仅一行，包含两个整数 $$$\\alpha$$$ 和 $$$\\beta$$$($$$1 \\leq \\alpha, \\beta \\leq 179$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果机器人成功，则单独输出该图形的面积；否则输出 $$$-1$$$。如果输出的值不是 $$$-1$$$，则绝对误差或相对误差不得超过 $$$10^{-6}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "下图对应于示例测试用例（图形的比例可能不同）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/7c2ae4fc271a61463de2425a43d83a3284f42e54.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在示例的第三组测试数据中，折线与自身相交，图形只画到第一次相交的位置。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "L. 休闲几何",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

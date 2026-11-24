@@ -1,0 +1,129 @@
+{
+  "code": "GYM106841H",
+  "letter": "H",
+  "title": "H. The Sabrosso Cleaner",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106841/problem/H",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Pache is in a bad mood and ordered Dilon, el Sabrosso, to clean the training area. The area is a straight hallway, which we see as a number line. Dilon starts sweeping at position $$$0$$$ and moves to the right at a constant speed of one unit per second.",
+      "![](https://espresso.codeforces.com/b154649749d83382498481258632dff4e576cc7b.png)",
+      "Pache watches $$$N$$$ points of the hallway. Point $$$i$$$ is at position $$$x_i$$$. At each point, Pache is angry or calm: at the beginning he is angry if $$$s_i = 1$$$ and calm if $$$s_i = 0$$$.",
+      "Dilon starts at position $$$0$$$ and walks to the right. Every time he reaches a point, Pache's mood at that point decides what happens, and then that mood changes:",
+      "If Pache is angry, with his powers he instantly teleports Dilon to position $$$0$$$, and Dilon walks to the right again from there. Then Pache becomes calm at that point.",
+      "If Pache is calm, Dilon keeps walking and Pache becomes angry at that point.",
+      "Dilon finishes cleaning when he reaches position $$$x_N + 1$$$. How many seconds does it take him to get there? Since the answer can be huge, print it modulo $$$998\\,244\\,353$$$.",
+      "It can be shown that Dilon always finishes."
+    ],
+    "input": [
+      "The first line contains an integer $$$N$$$, the number of points.",
+      "Each of the following $$$N$$$ lines contains two integers $$$x_i$$$ and $$$s_i$$$: the position of point $$$i$$$ and Pache's initial mood at that point.",
+      "Constraints",
+      "$$$1 \\le N \\le 2 \\cdot 10^5$$$",
+      "$$$1 \\le x_1  \\lt  x_2  \\lt  \\dots  \\lt  x_N \\le 10^9$$$",
+      "$$$s_i \\in \\{0, 1\\}$$$"
+    ],
+    "output": [
+      "Print one integer: the time, in seconds, it takes Dilon to reach position $$$x_N + 1$$$, modulo $$$998\\,244\\,353$$$."
+    ],
+    "note": [
+      "Example 1. In the first example, Dilon passes $$$3$$$ at second $$$3$$$ (Pache becomes angry there) and reaches $$$6$$$ at second $$$6$$$, where Pache is angry and sends him back to $$$0$$$. At second $$$9$$$ he reaches $$$3$$$ again, where Pache is now angry, and goes back to $$$0$$$. Then he passes $$$3$$$ (second $$$12$$$), $$$6$$$ (second $$$15$$$) and $$$7$$$ (second $$$16$$$), leaving Pache angry at all three, and at second $$$17$$$ point $$$8$$$ sends him back to $$$0$$$. From there he still has seven more rounds before finally reaching position $$$9$$$ at second $$$57$$$.",
+      "Example 2. In the second example Pache starts calm at every point, so Dilon never starts over and reaches position $$$10$$$ at second $$$10$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n3 0\n6 1\n7 0\n8 1",
+      "output": "57"
+    },
+    {
+      "input": "3\n2 0\n5 0\n9 0",
+      "output": "10"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Pache心情不好，命令Dilon(el Sabrosso)打扫训练场地。该场地是一条直走廊，我们将其视为数轴。Dilon从位置 $$$0$$$ 开始清扫，并以每秒一个单位的恒定速度向右移动。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/b154649749d83382498481258632dff4e576cc7b.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Pache 观察走廊上的 $$$N$$$ 个点。点 $$$i$$$ 位于位置 $$$x_i$$$。在每个点，Pache 要么愤怒，要么平静：初始时，若 $$$s_i = 1$$$，他就愤怒；若 $$$s_i = 0$$$，他就平静。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Dilon 从位置 $$$0$$$ 出发并向右行走。每当他到达一个点时，Pache 在该点的情绪会决定接下来发生什么，随后该情绪会发生变化：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 Pache 生气了，他就会立刻用自己的能力将 Dilon 传送到位置 $$$0$$$，然后 Dilon 从那里再次向右行走。此时 Pache 会恢复平静。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 Pache 处于平静状态，Dilon 会继续行走，而 Pache 会在此时变得愤怒。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Dilon 到达位置 $$$x_N + 1$$$ 时完成清扫。他需要多少秒才能到达那里？由于答案可能很大，请输出答案对 $$$998\\,244\\,353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，Dilon 总会完成。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 $$$N$$$，表示点的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "以下 $$$N$$$ 行中，每行包含两个整数 $$$x_i$$$ 和 $$$s_i$$$：分别表示点 $$$i$$$ 的位置以及 Pache 在该点的初始心情。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "约束条件",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$1 \\le N \\le 2 \\cdot 10^5$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$1 \\le x_1  \\lt  x_2  \\lt  \\dots  \\lt  x_N \\le 10^9$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$s_i \\in \\{0, 1\\}$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数：Dilon 到达位置 $$$x_N + 1$$$ 所需的时间(单位为秒)，对 $$$998\\,244\\,353$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "例 1。在第一个示例中，Dilon 在第 $$$3$$$ 秒经过 $$$3$$$(Pache 在那里变得愤怒)，并在第 $$$6$$$ 秒到达 $$$6$$$，此时 Pache 正在生气，于是把他送回 $$$0$$$。在第 $$$9$$$ 秒，他再次到达 $$$3$$$，此时 Pache 也在生气，于是他返回 $$$0$$$。接着，他经过 $$$3$$$(第 $$$12$$$ 秒)、$$$6$$$(第 $$$15$$$ 秒)和 $$$7$$$(第 $$$16$$$ 秒)，这三处都让 Pache 保持愤怒。到了第 $$$17$$$ 秒，$$$8$$$ 又把他送回 $$$0$$$。从那里开始，他还要再经过七轮，最终在第 $$$57$$$ 秒到达位置 $$$9$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "示例 2。在第二个示例中，Pache 在每个点都以平静状态开始，因此 Dilon 从未重新开始，并在第 $$$10$$$ 秒到达位置 $$$10$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "H. Sabrosso 清洁工",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

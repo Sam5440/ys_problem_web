@@ -1,0 +1,80 @@
+{
+  "code": "GYM103940A",
+  "letter": "A",
+  "title": "A. Advanced Player Setup",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103940/problem/A",
+  "difficulty": "*1700",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "Ivanovich is obsessed with a new game, Algorithmic Creed, here you work with your creed trying to give free will to the coders of the world, meanwhile in the other side the managers, also known as \"templars\" want to take away coders free will and deprive them of their human nature.",
+      "An important part of this game is to obtain and update items to be a stronger coder, like a gaming mouse, a new keyboard, a better monitor... because you know that the most important part of coding is the setup.",
+      "The game has N$$$N$$$ items numbered from 1$$$1$$$ to N$$$N$$$ and the only way to obtain new items is performing a trade. The only item you can buy directly is a pen (for writing pseudocode in paper) which is always represented with the number 1$$$1$$$, you can always buy it for 1 coin and you can buy it several times. In this game you have the ability to trade items for another one which is always better, the game has a list of item trading rules, each rule describe the item u$$$u$$$ as a requirement to obtain item v$$$v$$$ and the number of c$$$c$$$ coins you have to give to perform the trade. In order to obtain item v$$$v$$$ you need to trade all items u$$$u$$$ that are a requirement for v$$$v$$$ and pay the number of coins associated to trade u$$$u$$$ for v$$$v$$$, after the trade you will lose the u$$$u$$$ items, and the coins, but obtain item v$$$v$$$.",
+      "Ivanovich has never been good at games, since he always loses focus and begins to think about programming problems. He is wondering how many different setups he can build in the game if he has C$$$C$$$ coins to trade. Can you help Ivanovich to solve this weird problem so he can go back to the game?",
+      "A setup is different from another one if there is at least one different item. A setup must have at least one item."
+    ],
+    "input": [
+      "The first line of input contains three integers separated by a space N$$$N$$$ (1≤N≤105)$$$(1 \\leq N \\leq 10^5)$$$, M$$$M$$$ (1≤M≤105)$$$(1 \\leq M \\leq 10^5)$$$, C$$$C$$$ (1≤C≤102)$$$(1 \\leq C \\leq 10^2)$$$, representing the number of items in the game, the number of trading rules available and the number of coins available respectively.",
+      "Each of the next M$$$M$$$ lines contains three integers separated by a space, ui$$$u_i$$$ (1≤ui≤N)$$$(1 \\leq u_i \\leq N)$$$, vi$$$v_i$$$ (1≤vi≤N)$$$(1 \\leq v_i \\leq N)$$$, ci$$$c_i$$$ (1≤ci≤C)$$$(1 \\leq c_i \\leq C)$$$, indicating that in the i$$$i$$$-th trading rule the item ui$$$u_i$$$ is a requirement for vi$$$v_i$$$ paying ci$$$c_i$$$ coins."
+    ],
+    "output": [
+      "In the first and only line, print the number of different setups Ivanovich can build. As the answer might be very large, please output the answer modulo 109+7$$$10^9 + 7$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 2 4\n1 2 1\n2 3 1",
+      "output": "10"
+    },
+    {
+      "input": "3 3 4\n1 2 1\n1 3 1\n2 3 1",
+      "output": "8"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Ivanovich 沉迷于一款名为 Algorithmic Creed 的新游戏。在这款游戏中，你将与自己的信条并肩作战，试图赋予全世界程序员自由意志；与此同时，在另一方，管理者，也被称为“圣殿骑士”，想要夺走程序员的自由意志，剥夺他们的人性。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "游戏中的重要一环是获取并升级物品，从而成为更强的程序员，例如游戏鼠标、新键盘、更好的显示器……因为你知道，编程中最重要的部分就是配置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "游戏中有 N$$$N$$$ 件物品，编号从 1$$$1$$$ 到 N$$$N$$$，获取新物品的唯一方式是进行交易。唯一可以直接购买的物品是钢笔(用于在纸上书写伪代码)，它始终用编号 1$$$1$$$ 表示；你始终可以花费 1 枚硬币购买它，并且可以购买多次。在这款游戏中，你可以用物品交易另一件总是更好的物品。游戏有一份物品交易规则列表，每条规则描述物品 u$$$u$$$ 是获取物品 v$$$v$$$ 的必要条件，以及进行该交易需要支付 c$$$c$$$ 枚硬币。为了获得物品 v$$$v$$$，你需要交易掉所有作为获得 v$$$v$$$ 的必要条件的物品 u$$$u$$$，并支付将 u$$$u$$$ 交易为 v$$$v$$$ 所需的硬币数；交易后，你将失去 u$$$u$$$ 物品和相应的硬币，但会获得物品 v$$$v$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Ivanovich 从来不擅长玩游戏，因为他总是无法集中注意力，开始思考编程题。他想知道，如果有 C$$$C$$$ 枚用于交易的硬币，在游戏中可以构建多少种不同的配置。你能帮助 Ivanovich 解决这个奇怪的问题，让他回到游戏中吗？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果至少有一件物品不同，那么两个配置就不同。一个配置必须至少包含一件物品。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含三个用空格分隔的整数 N$$$N$$$ (1≤N≤105)$$$(1 \\leq N \\leq 10^5)$$$、M$$$M$$$ (1≤M≤105)$$$(1 \\leq M \\leq 10^5)$$$ 和 C$$$C$$$ (1≤C≤102)$$$(1 \\leq C \\leq 10^2)$$$，分别表示游戏中的物品数量、可用的交易规则数量和可用的硬币数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 M$$$M$$$ 行中，每行包含三个用空格分隔的整数 ui$$$u_i$$$ (1≤ui≤N)$$$(1 \\leq u_i \\leq N)$$$、vi$$$v_i$$$ (1≤vi≤N)$$$(1 \\leq v_i \\leq N)$$$ 和 ci$$$c_i$$$ (1≤ci≤C)$$$(1 \\leq c_i \\leq C)$$$，表示在第 i$$$i$$$ 条交易规则中，物品 ui$$$u_i$$$ 是物品 vi$$$v_i$$$ 的必要条件，需要支付 ci$$$c_i$$$ 枚硬币。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在第一行也是唯一一行中，输出 Ivanovich 可以构建的不同配置数量。由于答案可能非常大，请输出答案对 109+7$$$10^9 + 7$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "A. 高级玩家配置",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "code": "GYM106841G",
+  "letter": "G",
+  "title": "G. Armando and the Mines",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106841/problem/G",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Armando had been through a lot. He had known defeat, survived questionable decisions and learned, almost always the hard way, that not all roads lead to happiness.",
+      "After so many experiences, he decided to leave chaos behind. He meditated, found inner peace and reached a deep state of zen. Then, with the serenity of someone who finally understands the universe, he thought: \"A true man cannot step on any mine.\"",
+      "But fate still had one last test for him: crossing the dreaded battlefield known as Parque Lincoln. Reaching enlightenment does not include knowing the exact location of the explosives: all Armando has is a map with the regions where they might be. And, true to his new philosophy, Armando never steps back: he only moves right or up.",
+      "![](https://espresso.codeforces.com/5e8096f2c4b5dc71d7eeb4f272828328a16a8b94.png)",
+      "Fictional illustration; it does not depict a real situation in the park.",
+      "Parque Lincoln is a grid of $$$H$$$ rows and $$$W$$$ columns. Cell $$$(x, y)$$$ is in column $$$x$$$, counted from left to right, and in row $$$y$$$, counted from bottom to top. The bottom-left corner is $$$(1, 1)$$$.",
+      "The map marks $$$K$$$ rectangles that do not share cells. Each rectangle has exactly one mine, in one of its $$$S$$$ cells, chosen at random: each cell has probability $$$1/S$$$, independently of the other rectangles. Outside the rectangles there are no mines.",
+      "Armando goes from $$$A = (x_A, y_A)$$$ to $$$B = (x_B, y_B)$$$, and in each step he moves from $$$(x, y)$$$ to $$$(x + 1, y)$$$ or to $$$(x, y + 1)$$$. Before leaving, without knowing where the mines are, he chooses his whole path. The number of mines of a path is the number of mines in its cells, counting $$$A$$$ and $$$B$$$.",
+      "Help Armando: what is the minimum expected value of the number of mines on his path?"
+    ],
+    "input": [
+      "The first line contains three integers $$$H$$$, $$$W$$$ and $$$K$$$.",
+      "The second line contains four integers $$$x_A$$$, $$$y_A$$$, $$$x_B$$$ and $$$y_B$$$.",
+      "Each of the following $$$K$$$ lines contains four integers $$$x_1$$$, $$$y_1$$$, $$$x_2$$$ and $$$y_2$$$: the rectangle formed by the cells $$$(x, y)$$$ with $$$x_1 \\le x \\le x_2$$$ and $$$y_1 \\le y \\le y_2$$$. Its number of cells is $$$S = (x_2 - x_1 + 1)(y_2 - y_1 + 1)$$$.",
+      "Constraints",
+      "$$$1 \\le H, W \\le 1000$$$",
+      "$$$0 \\le K \\le \\min(10^5, H \\cdot W)$$$",
+      "$$$1 \\le x_A \\le x_B \\le W$$$ and $$$1 \\le y_A \\le y_B \\le H$$$",
+      "$$$1 \\le x_1 \\le x_2 \\le W$$$ and $$$1 \\le y_1 \\le y_2 \\le H$$$",
+      "$$$1 \\le S \\le 20$$$",
+      "No cell belongs to more than one rectangle."
+    ],
+    "output": [
+      "The minimum expected value is an irreducible fraction $$$a/b$$$. Print $$$a \\cdot b^{-1} \\bmod (10^9 + 7)$$$, where $$$b^{-1}$$$ is the integer such that $$$b \\cdot b^{-1} \\equiv 1 \\pmod{10^9 + 7}$$$. It can be shown that it always exists.",
+      "The minimum is taken over the real values, not over their remainders modulo $$$10^9 + 7$$$."
+    ],
+    "note": [
+      "Example 1. The rectangles have $$$3$$$, $$$2$$$ and $$$1$$$ cells. The path $$$(1, 1) \\to (2, 1) \\to (3, 1) \\to (4, 1) \\to (4, 2) \\to (4, 3)$$$ goes through one cell of the first and one of the second, and its expected value is $$$\\frac{1}{3} + \\frac{1}{2} = \\frac{5}{6}$$$. No path has a smaller expected value. Since $$$5 \\cdot 6^{-1} \\bmod (10^9 + 7) = 833\\,333\\,340$$$, that is the answer.",
+      "Example 2. There is only one path and it goes through all the cells of both rectangles, so it has exactly $$$2$$$ mines."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 4 3\n1 1 4 3\n2 1 2 3\n3 1 3 2\n3 3 3 3",
+      "output": "833333340"
+    },
+    {
+      "input": "1 3 2\n1 1 3 1\n1 1 2 1\n3 1 3 1",
+      "output": "2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "阿曼多经历了许多。他曾遭遇失败，挺过了种种令人质疑的决定，也几乎总是以惨痛的方式学会了，并非所有道路都通向幸福。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "经历了这么多事情后，他决定告别混乱。他静心冥想，找到了内心的平静，进入了深度禅定。随后，他带着终于参透宇宙真理般的平和心境想道：“真正的男人绝不会踩到任何地雷。”",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "但命运还为他准备了最后一道考验：穿越令人闻风丧胆的战场——Parque Lincoln。悟道并不意味着能知道炸药的确切位置：Armando 手里只有一张地图，上面标出了炸药可能所在的区域。而且，秉持着他的新哲学，Armando 从不后退：他只向右或向上移动。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/5e8096f2c4b5dc71d7eeb4f272828328a16a8b94.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "虚构示意图；并未描绘公园中的真实情景。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Parque Lincoln 是一个有 $$$H$$$ 行、$$$W$$$ 列的网格。单元格 $$$(x, y)$$$ 位于从左向右数第 $$$x$$$ 列、从下向上数第 $$$y$$$ 行。左下角是 $$$(1, 1)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "地图上标出了 $$$K$$$ 个互不共享格子的矩形。每个矩形中恰好有一枚地雷，它随机位于其 $$$S$$$ 个格子中的一个：每个格子被选中的概率均为 $$$1/S$$$，且各个矩形之间相互独立。矩形外没有地雷。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Armando 从 $$$A = (x_A, y_A)$$$ 前往 $$$B = (x_B, y_B)$$$，每一步都会从 $$$(x, y)$$$ 移动到 $$$(x + 1, y)$$$ 或 $$$(x, y + 1)$$$。出发前，他不知道地雷的位置，但会先选定整条路径。一条路径上的地雷数是指路径经过的格子中的地雷数量，包括 $$$A$$$ 和 $$$B$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "帮助 Armando：他的路径上地雷数量的最小期望值是多少？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含三个整数 $$$H$$$、$$$W$$$ 和 $$$K$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含四个整数 $$$x_A$$$、$$$y_A$$$、$$$x_B$$$ 和 $$$y_B$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "以下 $$$K$$$ 行中的每一行都包含四个整数 $$$x_1$$$、$$$y_1$$$、$$$x_2$$$ 和 $$$y_2$$$：由满足 $$$x_1 \\le x \\le x_2$$$ 和 $$$y_1 \\le y \\le y_2$$$ 的单元格 $$$(x, y)$$$ 构成的矩形。其单元格数量为 $$$S = (x_2 - x_1 + 1)(y_2 - y_1 + 1)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "约束条件",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$1 \\le H, W \\le 1000$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$0 \\le K \\le \\min(10^5, H \\cdot W)$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$1 \\le x_A \\le x_B \\le W$$$ 和 $$$1 \\le y_A \\le y_B \\le H$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$1 \\le x_1 \\le x_2 \\le W$$$ 和 $$$1 \\le y_1 \\le y_2 \\le H$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$1 \\le S \\le 20$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "没有任何一个单元格属于多个矩形。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "最小期望值是一个最简分数 $$$a/b$$$。请输出 $$$a \\cdot b^{-1} \\bmod (10^9 + 7)$$$，其中 $$$b^{-1}$$$ 是满足 $$$b \\cdot b^{-1} \\equiv 1 \\pmod{10^9 + 7}$$$ 的整数。可以证明，这样的整数总是存在。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最小值是在实数范围内取的，而不是对它们取模 $$$10^9 + 7$$$ 后得到的余数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "示例 1。矩形分别有 $$$3$$$、$$$2$$$ 和 $$$1$$$ 个单元格。路径 $$$(1, 1) \\to (2, 1) \\to (3, 1) \\to (4, 1) \\to (4, 2) \\to (4, 3)$$$ 经过第一个矩形中的一个单元格和第二个矩形中的一个单元格，其期望值为 $$$\\frac{1}{3} + \\frac{1}{2} = \\frac{5}{6}$$$。没有路径的期望值更小。由于 $$$5 \\cdot 6^{-1} \\bmod (10^9 + 7) = 833\\,333\\,340$$$，这就是答案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "示例 2。只有一条路径，且它经过两个矩形中的所有格子，因此恰好有 $$$2$$$ 个地雷。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. Armando 与地雷",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

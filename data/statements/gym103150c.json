@@ -1,0 +1,90 @@
+{
+  "code": "GYM103150C",
+  "letter": "C",
+  "title": "C. EZPC Sort",
+  "contest": null,
+  "url": "https://codeforces.com/gym/103150/problem/C",
+  "difficulty": "*1300",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a rearrangement of the string abcdefghijklmnopqrstuvwxyz. Call it s$$$s$$$. You can perform the following operation on s$$$s$$$ as many times as you want:",
+      "Sort any substring of s$$$s$$$ in increasing order. (Recall that a$$$a$$$ is a substring of b$$$b$$$ if a$$$a$$$ can be obtained by deleting some (possibly zero) characters from the beginning and end of b$$$b$$$.)",
+      "The string is called easy if you can delete some of the characters in s$$$s$$$ to make s$$$s$$$ equal to the string ezpc. Is it possible to make s$$$s$$$ easy after some (possibly zero) operations?"
+    ],
+    "input": [
+      "The input consists of multiple test cases. The first line contains an integer t$$$t$$$ (1≤t≤5000$$$1 \\leq t \\leq 5000$$$) — the number of test cases.",
+      "The only line of each test case consists of a single string s$$$s$$$ — the initial string. s$$$s$$$ is a rearrangement of the string abcdefghijklmnopqrstuvwxyz."
+    ],
+    "output": [
+      "For each test case, output YES if it is possible to make s$$$s$$$ easy after some (possibly zero) operations. Otherwise, output NO."
+    ],
+    "note": [
+      "In the first test case, s$$$s$$$ is already easy (so you don't need to perform any operations). You can delete the last 22$$$22$$$ characters of s$$$s$$$, and you will be left with the string ezpc.",
+      "In the second test case, you can make s$$$s$$$ easy with one operation: zaepcbdefgh... →$$$\\rightarrow$$$ aezpbcdefgh....",
+      "Now, you can delete the first character, the fourth character, and the last 20$$$20$$$ characters in s$$$s$$$ to make the string ezpc: _ezp_c___.... Here the deleted letters are represented with _.",
+      "It can be shown that it is impossible to make the string in the third test case easy."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\nezpcabdfghijklmnoqrstuvwxy\nzaepbcdfghijklmnoqrstuvwxy\norzgvlkbenwyqjmdfsctxhiaup",
+      "output": "YES\nYES\nNO"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定字符串 abcdefghijklmnopqrstuvwxyz 的一个排列。将其记为 s$$$s$$$。你可以对 s$$$s$$$ 执行以下操作任意多次：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对 s$$$s$$$ 的任意子串进行升序排序。(回想一下，如果可以通过删除 b$$$b$$$ 开头和结尾的若干个(可能为零个)字符得到 a$$$a$$$，那么 a$$$a$$$ 就是 b$$$b$$$ 的子串。)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果可以删除 s$$$s$$$ 中的一些字符，使 s$$$s$$$ 等于字符串 ezpc，则称该字符串是简单的。经过若干次(可能为零次)操作后，能否使 s$$$s$$$ 变得简单？",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入包含多个测试用例。第一行包含一个整数 t$$$t$$$(1≤t≤5000$$$1 \\leq t \\leq 5000$$$)——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例仅有一行，包含一个字符串 s$$$s$$$——初始字符串。s$$$s$$$ 是字符串 abcdefghijklmnopqrstuvwxyz 的一个重排。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果经过若干次(可能为零次)操作后可以使 s$$$s$$$ 变得简单，则输出 YES。否则，输出 NO。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，s$$$s$$$ 已经是简单的(因此无需执行任何操作)。你可以删除 s$$$s$$$ 最后的 22$$$22$$$ 个字符，剩下的字符串就是 ezpc。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，你可以通过一次操作使 s$$$s$$$ 变得简单：zaepcbdefgh... →$$$\\rightarrow$$$ aezpbcdefgh....",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在，你可以删除 s$$$s$$$ 中的第一个字符、第四个字符和最后 20$$$20$$$ 个字符，从而得到字符串 ezpc：_ezp_c___.... 这里用 _ 表示被删除的字母。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，无法使第三个测试用例中的字符串变得简单。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. EZPC 排序",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

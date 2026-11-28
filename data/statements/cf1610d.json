@@ -1,0 +1,114 @@
+{
+  "code": "CF1610D",
+  "letter": "D",
+  "title": "D. Not Quite Lee",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1610/D",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Lee couldn't sleep lately, because he had nightmares. In one of his nightmares (which was about an unbalanced global round), he decided to fight back and propose a problem below (which you should solve) to balance the round, hopefully setting him free from the nightmares.",
+      "A non-empty array b1,b2,…,bm$$$b_1, b_2, \\ldots, b_m$$$ is called good, if there exist m$$$m$$$ integer sequences which satisfy the following properties:",
+      "The i$$$i$$$-th sequence consists of bi$$$b_i$$$ consecutive integers (for example if bi=3$$$b_i = 3$$$ then the i$$$i$$$-th sequence can be (−1,0,1)$$$(-1, 0, 1)$$$ or (−5,−4,−3)$$$(-5, -4, -3)$$$ but not (0,−1,1)$$$(0, -1, 1)$$$ or (1,2,3,4)$$$(1, 2, 3, 4)$$$).",
+      "Assuming the sum of integers in the i$$$i$$$-th sequence is sumi$$$sum_i$$$, we want sum1+sum2+…+summ$$$sum_1 + sum_2 + \\ldots + sum_m$$$ to be equal to 0$$$0$$$.",
+      "You are given an array a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$. It has 2n−1$$$2^n - 1$$$ nonempty subsequences. Find how many of them are good.",
+      "As this number can be very large, output it modulo 109+7$$$10^9 + 7$$$.",
+      "An array c$$$c$$$ is a subsequence of an array d$$$d$$$ if c$$$c$$$ can be obtained from d$$$d$$$ by deletion of several (possibly, zero or all) elements."
+    ],
+    "input": [
+      "The first line contains a single integer n$$$n$$$ (2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$) — the size of array a$$$a$$$.",
+      "The second line contains n$$$n$$$ integers a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$ (1≤ai≤109$$$1 \\le a_i \\le 10^9$$$) — elements of the array."
+    ],
+    "output": [
+      "Print a single integer — the number of nonempty good subsequences of a$$$a$$$, modulo 109+7$$$10^9 + 7$$$."
+    ],
+    "note": [
+      "For the first test, two examples of good subsequences are [2,7]$$$[2, 7]$$$ and [2,2,4,7]$$$[2, 2, 4, 7]$$$:",
+      "For b=[2,7]$$$b = [2, 7]$$$ we can use (−3,−4)$$$(-3, -4)$$$ as the first sequence and (−2,−1,…,4)$$$(-2, -1, \\ldots, 4)$$$ as the second. Note that subsequence [2,7]$$$[2, 7]$$$ appears twice in [2,2,4,7]$$$[2, 2, 4, 7]$$$, so we have to count it twice.",
+      "![](https://espresso.codeforces.com/b6ad5af9afce7e25684d3b2326e02cc11a922c7b.png)",
+      "For b=[2,2,4,7]$$$b = [2, 2, 4, 7]$$$ the following sequences would satisfy the properties: (−1,0)$$$(-1, 0)$$$, (−3,−2)$$$(-3, -2)$$$, (0,1,2,3)$$$(0, 1, 2, 3)$$$ and (−3,−2,…,3)$$$(-3, -2, \\ldots, 3)$$$"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n2 2 4 7",
+      "output": "10"
+    },
+    {
+      "input": "10\n12391240 103904 1000000000 4142834 12039 142035823 1032840 49932183 230194823 984293123",
+      "output": "996"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Lee 近来睡不着觉，因为他做了噩梦。在其中一个噩梦中（内容是一场不平衡的全球赛），他决定反击，并提出了下面这个问题（也就是需要你解决的问题）来平衡这场比赛，希望能让自己从噩梦中解脱出来。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "称一个非空数组 b1,b2,…,bm$$$b_1, b_2, \\ldots, b_m$$$ 是好的，如果存在 m$$$m$$$ 个整数序列满足以下性质：",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第 i$$$i$$$ 个序列由 bi$$$b_i$$$ 个连续整数组成(例如，如果 bi=3$$$b_i = 3$$$，那么第 i$$$i$$$ 个序列可以是 (−1,0,1)$$$(-1, 0, 1)$$$ 或 (−5,−4,−3)$$$(-5, -4, -3)$$$，但不能是 (0,−1,1)$$$(0, -1, 1)$$$ 或 (1,2,3,4)$$$(1, 2, 3, 4)$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "假设第 i$$$i$$$ 个序列中的整数之和为 sumi$$$sum_i$$$，我们希望 sum1+sum2+…+summ$$$sum_1 + sum_2 + \\ldots + sum_m$$$ 等于 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个数组 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$。它有 2n−1$$$2^n - 1$$$ 个非空子序列。求其中有多少个是满足条件的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于这个数可能非常大，请输出它对 109+7$$$10^9 + 7$$$ 取模后的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果可以通过删除 d$$$d$$$ 中的若干个(可能为零个或全部)元素得到 c$$$c$$$，则称数组 c$$$c$$$ 是数组 d$$$d$$$ 的子序列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(2≤n≤2⋅105$$$2 \\le n \\le 2 \\cdot 10^5$$$)——数组 a$$$a$$$ 的大小。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个整数 a1,a2,…,an$$$a_1, a_2, \\ldots, a_n$$$(1≤ai≤109$$$1 \\le a_i \\le 10^9$$$)——数组中的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——a$$$a$$$ 的非空好子序列数量，对 109+7$$$10^9 + 7$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于第一个测试用例，两个好子序列的例子是 [2,7]$$$[2, 7]$$$ 和 [2,2,4,7]$$$[2, 2, 4, 7]$$$：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 b=[2,7]$$$b = [2, 7]$$$，我们可以将 (−3,−4)$$$(-3, -4)$$$ 作为第一个序列，将 (−2,−1,…,4)$$$(-2, -1, \\ldots, 4)$$$ 作为第二个序列。注意，子序列 [2,7]$$$[2, 7]$$$ 在 [2,2,4,7]$$$[2, 2, 4, 7]$$$ 中出现了两次，因此我们需要将其计数两次。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/b6ad5af9afce7e25684d3b2326e02cc11a922c7b.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于 b=[2,2,4,7]$$$b = [2, 2, 4, 7]$$$，以下序列满足这些性质：(−1,0)$$$(-1, 0)$$$、(−3,−2)$$$(-3, -2)$$$、(0,1,2,3)$$$(0, 1, 2, 3)$$$ 和 (−3,−2,…,3)$$$(-3, -2, \\ldots, 3)$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. Not Quite Lee",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

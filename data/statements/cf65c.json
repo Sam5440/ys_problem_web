@@ -1,0 +1,59 @@
+{
+  "code": "CF65C",
+  "letter": "C",
+  "title": "C. Harry Potter and the Golden Snitch",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/65/C",
+  "difficulty": "2100",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Brothers Fred and George Weasley once got into the sporting goods store and opened a box of Quidditch balls. After long and painful experiments they found out that the Golden Snitch is not enchanted at all. It is simply a programmed device. It always moves along the same trajectory, which is a polyline with vertices at the points (x0, y0, z0), (x1, y1, z1), ..., (xn, yn, zn). At the beginning of the game the snitch is positioned at the point (x0, y0, z0), and then moves along the polyline at the constant speed vs. The twins have not yet found out how the snitch behaves then. Nevertheless, they hope that the retrieved information will help Harry Potter and his team in the upcoming match against Slytherin. Harry Potter learned that at the beginning the game he will be at the point (Px, Py, Pz) and his super fast Nimbus 2011 broom allows him to move at the constant speed vp in any direction or remain idle. vp is not less than the speed of the snitch vs. Harry Potter, of course, wants to catch the snitch as soon as possible. Or, if catching the snitch while it is moving along the polyline is impossible, he wants to hurry the Weasley brothers with their experiments. Harry Potter catches the snitch at the time when they are at the same point. Help Harry."
+    ],
+    "input": [
+      "The first line contains a single integer n (1 ≤ n ≤ 10000). The following n + 1 lines contain the coordinates xi, yi, zi, separated by single spaces. The coordinates of any two consecutive points do not coincide. The next line contains the velocities vp and vs, the last line contains Px, Py, Pz, separated by single spaces. All the numbers in the input are integers, their absolute value does not exceed 104. The speeds are strictly positive. It is guaranteed that vs ≤ vp."
+    ],
+    "output": [
+      "If Harry Potter can catch the snitch while it is moving along the polyline (including the end (xn, yn, zn)), print \"YES\" in the first line (without the quotes). Print in the second line t, which is the earliest moment of time, when Harry will be able to catch the snitch. On the third line print three numbers X, Y, Z, the coordinates of the point at which this happens. The absolute or relative error in the answer should not exceed 10 - 6. If Harry is not able to catch the snitch during its moving along the described polyline, print \"NO\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4\n0 0 0\n0 10 0\n10 10 0\n10 0 0\n0 0 0\n1 1\n5 5 25",
+      "output": "YES\n25.5000000000\n10.0000000000 4.5000000000 0.0000000000"
+    },
+    {
+      "input": "4\n0 0 0\n0 10 0\n10 10 0\n10 0 0\n0 0 0\n1 1\n5 5 50",
+      "output": "NO"
+    },
+    {
+      "input": "1\n1 2 3\n4 5 6\n20 10\n1 2 3",
+      "output": "YES\n0.0000000000\n1.0000000000 2.0000000000 3.0000000000"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n（1 ≤ n ≤ 10000）。接下来的 n + 1 行包含点的坐标 xi、yi、zi，坐标之间用单个空格分隔。任意两个相邻点的坐标均不重合。下一行包含速度 vp 和 vs，最后一行包含 Px、Py、Pz，它们之间用单个空格分隔。输入中的所有数字均为整数，其绝对值不超过 104。速度均为严格正数。保证 vs ≤ vp。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果 Harry Potter 能够在金色飞贼沿折线运动的过程中（包括终点 (xn，yn，zn)）抓住它，则第一行输出 \"YES\"（不含引号）。第二行输出 t，即 Harry 能够抓住金色飞贼的最早时刻。第三行输出三个数 X、Y、Z，表示抓住金色飞贼的点的坐标。答案的绝对误差或相对误差不应超过 10 - 6。如果 Harry 无法在金色飞贼沿所述折线运动的过程中抓住它，则输出 \"NO\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "弗雷德和乔治·韦斯莱兄弟曾经溜进一家体育用品商店，打开了一盒魁地奇球。经过漫长而痛苦的实验，他们发现\n金色飞贼根本没有被施加魔法。它实际上只是一个经过编程的装置。它总是沿着同一条轨迹运动，这条轨迹是一条折线，其顶点依次为 (x0, y0, z0)、(x1, y1, z1)、…、(xn, yn, zn)。游戏开始时，飞贼位于点 (x0, y0, z0)，随后以恒定速度 vs 沿折线运动。双胞胎兄弟还没有弄清楚飞贼接下来会如何运动。不过，他们希望获得的信息能帮助哈利·波特和他的队伍应对即将到来的、对阵斯莱特林的比赛。哈利·波特得知，游戏开始时他将位于点 (Px, Py, Pz)，而他的超快飞天扫帚 Nimbus 2011 允许他以恒定速度 vp 向任意方向移动，或者停留不动。vp 不小于飞贼的速度 vs。当然，哈利·波特希望尽快抓住飞贼。或者，如果不可能在飞贼沿折线运动时抓住它，他希望催促韦斯莱兄弟尽快完成他们的实验。哈利·波特在两者处于同一点时抓住飞贼。请帮助哈利。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 哈利·波特与金色飞贼",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

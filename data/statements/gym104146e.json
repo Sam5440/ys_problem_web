@@ -1,0 +1,254 @@
+{
+  "code": "GYM104146E",
+  "letter": "E",
+  "title": "E. Experiment - Anubis Edition!",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104146/problem/E",
+  "difficulty": "*1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/f27c016a85423e6c060f67ca82b08912ca627b4c.png)",
+      "This is an interactive problem.",
+      "This year, Alice decided to take an internship at the Gates to the Underworld, under the supervision of the Egyptian God of Death, Anubis.",
+      "She assists Anubis in weighing the hearts of the deceased in order to determine whose souls are worthy of entering the realm of the dead. Each heart is weighed against a feather of Ma'at, the goddess of truth, using a pair of balance scales. Those with hearts lighter than the feather get to enter the underworld; those with hearts heavier than the feather have their souls devoured by the goddess Ammit.",
+      "But Alice has an ambitious goal — what if they can precisely numerically measure the weight of each heart? Intrigued, Anubis challenges her to devise a feasible plan.",
+      "In order to comply with company policy, Alice is still required to use Anubis' balance scales. Balance scales have two pans, a left and a right. Alice can place any number of items in each pan, and once released, the scales will tip in the direction of the pan whose items have a greater total weight.",
+      "Alice can custom-order a special set of feathers from Ma'at. Each feather will have a known positive integer weight (in units), where Alice is free to specify the exact weight that she wants for each feather in her set.",
+      "Then, Anubis will test her. He will present to her a series of hearts, and she must precisely measure the weight of each heart using only the balance scales and her special set of feathers. The weight of each heart is guaranteed to be a positive integer when measured using the same units as Alice's feathers.",
+      "Ma'at will grant Alice at most $$$15$$$ feathers. Alice wants to maximize the number of units that these $$$15$$$ feathers can measure. Let's help her out!",
+      "Interaction",
+      "First things first, we want to make sure you have a high-level idea of what this problem is all about, without getting buried in technical details. Observe the \"dialogue\" interaction between Alice and Anubis shown here (at url https://imgur.com/a/HAJSRxk). This interaction is also what is encoded in the Sample Interaction section.",
+      "As we saw, the interaction comes in two phases: the \"requesting\", then the \"testing\".",
+      "First, output a positive integer $$$n$$$, meaning that you request a set of $$$n$$$ feathers, indexed from $$$1$$$ to $$$n$$$. Then, output a line of $$$n$$$ space-separated positive integers $$$w_1, w_2, w_3, \\dots, w_n$$$, corresponding to the desired weight that you want each feather to have.",
+      "This $$$n$$$ can be at most $$$15$$$.",
+      "Each $$$w_i$$$ should be at most $$$10^8$$$",
+      "You may have multiple feathers with the same weight.",
+      "Next, output a positive integer $$$M$$$, corresponding to the claim, \"Using only these feathers, I can accurately determine the weight of any heart, so long as its weight is a positive integer not greater than $$$M$$$.\" Ultimately, the higher this $$$M$$$, the higher your score will be. You may output $$$M$$$ up to $$$10^8$$$.",
+      "Based on your chosen feathers, Anubis will now challenge your claim. The judge first outputs a positive integer $$$T$$$, meaning that $$$T$$$ test cases will follow. This $$$T$$$ will be at most $$$100$$$.",
+      "For each test case, the judge selects a heart with some positive integer weight. We will give this heart an index of $$$0$$$, and lets its weight be denoted by $$$w_0$$$.",
+      "To use the balance scales, output a line containing only the word WEIGH. Then, output these four pieces of information, describing which items you want to put in each pan.",
+      "First, a positive integer $$$k_l$$$, the number of items going in the left pan.",
+      "Then, $$$k_l$$$ non-negative integers $$$l_1, l_2, \\dots, l_{k_l}$$$, the indices of the items going in the left pan.",
+      "Next, a positive integer $$$k_r$$$, the number of items going in the right pan.",
+      "Finally, $$$k_r$$$ non-negative integers $$$r_1, r_2, \\dots, r_{k_r}$$$, the indices of the items going in the right pan.",
+      "Each mentioned index should be between $$$0$$$ and $$$n$$$, inclusive. Recall that index $$$0$$$ corresponds to the heart whose weight you are currently trying to determine. Each item can only be placed in at most one pan (so no index should be included in both $$$l$$$ and $$$r$$$). You do not have to use all your feathers in every query.",
+      "Let $$$L$$$ and $$$R$$$ be the total weights of the items placed in the left and right pans, respectively. Formally, $$\\begin{align*} L &= w_{l_1} + w_{l_2} + \\dots + w_{l_{k_l}}, \\\\ R &= w_{r_1} + w_{r_2} + \\dots + w_{r_{k_r}}. \\end{align*} $$",
+      "The judge will give one of the following responses.",
+      "> if $$$L  \\gt  R$$$",
+      "< if $$$L  \\lt  R$$$",
+      "= if $$$L = R$$$",
+      ">:( if your query was invalid. Perhaps, for example,   You attempted to place an item in more than one pan.",
+      "You used an index not in the range $$$0$$$ to $$$n$$$",
+      "You did not provide exactly $$$k_l$$$ or $$$k_r$$$ items to put in each pan.",
+      "You may perform as many queries as you want, so long as all test cases are answered within the time limit.",
+      "When you are ready to report the weight of the heart, output a line containing only the word VERDICT, and then output one of the following:",
+      "If you believe that $$$w_0  \\gt  M$$$, output a line containing the words HEAVY",
+      "Otherwise, you believe that $$$1 \\leq w_0 \\leq M$$$, and you should output a line containing the word EXACT. Then, output another line containing a single positive integer, the value of $$$w_0$$$.",
+      "The judge will give one of the following responses.",
+      ":) if your answer is correct. If so, the judge immediately proceeds to the next test case.",
+      ">:( if your answer is incorrect, or if your reporting was otherwise invalid.",
+      "If the judge ever sends a >:( verdict, it will immediately terminate, and will send no further responses. In such a case, your program should terminate too.",
+      "Scoring",
+      "$$\\begin{align*}  &\\begin{array}{|l|} \\hline \\text{Constraints For All Subtasks} \\\\ \\hline \\text{If you receive a }\\mathtt{:)}\\text{ verdict on all test cases, then you will be awarded points based on how high your declared $M$ was.} \\\\ \\hline \\end{array}\\\\  &\\begin{array}{|c|c|l|} \\hline \\text{Subtask} & \\text{Points} & \\text{Constraints} \\\\ \\hline 1 & \\mathbf{30} & M \\geq 15 \\\\ \\hline 2 & \\mathbf{5} & M \\geq 25 \\\\ \\hline 3 & \\mathbf{10} & M \\geq 70 \\\\ \\hline 4 & \\mathbf{5} & M \\geq 1000 \\\\ \\hline 5 & \\mathbf{20} & M \\geq 32123 \\\\ \\hline 6 & \\mathbf{5} & M \\geq 65456 \\\\ \\hline 7 & \\mathbf{15} & M \\geq 7142857 \\\\ \\hline 8 & \\mathbf{10} & M \\geq 14142135 \\\\ \\hline \\end{array}\\\\  \\end{align*}$$"
+    ],
+    "input": [],
+    "output": [],
+    "note": [
+      "The blank lines are only used here to illustrate the interaction between the contestant and the judge. Do not actually print these extra lines in your program."
+    ]
+  },
+  "examples": [
+    {
+      "input": "                    \n                    \n                \n2\n                    \n                    \n                    \n                    \n                    \n<\n                    \n                    \n                    \n                    \n                    \n=\n                    \n                    \n                    \n:)\n                    \n                    \n                    \n                    \n                    \n>\n                    \n                    \n:)",
+      "output": "6\n1 1 2 3 5 8\n15\n\nWEIGH\n3\n1 3 6\n2\n0 5\n\nWEIGH\n2\n4 5\n2\n0 2\n\nVERDICT\nEXACT\n7\n\nWEIGH\n1\n0\n6\n1 2 3 4 5 6\n\nVERDICT\nHEAVY"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/f27c016a85423e6c060f67ca82b08912ca627b4c.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这是一道交互题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "今年，Alice 决定在冥界之门实习，由埃及死神阿努比斯监督。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "她协助阿努比斯称量死者的心脏，以判断哪些灵魂有资格进入冥界。每颗心脏都会与真理女神玛阿特的一根羽毛放在天平上称量。心脏比羽毛轻的人可以进入冥界；心脏比羽毛重的人，其灵魂则会被女神阿米特吞噬。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "但 Alice 有一个雄心勃勃的目标——如果她能精确测量每颗心脏的重量呢？Anubis 对此很感兴趣，于是挑战她设计一个可行的方案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了遵守公司政策，Alice 仍然必须使用 Anubis 的天平。天平有两个托盘，分别位于左侧和右侧。Alice 可以在每个托盘中放置任意数量的物品，松开天平后，物品总重量较大的托盘一侧会下沉。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Alice 可以向 Ma'at 定制一组特殊的羽毛。每根羽毛的重量（以单位计）都是一个已知的正整数，而 Alice 可以为这组中的每根羽毛指定自己想要的确切重量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接着，阿努比斯会考验她。他会给她一系列心脏，而她必须仅使用天平和她那套特殊的羽毛，精确测量每颗心脏的重量。以爱丽丝的羽毛所用的单位计量时，每颗心脏的重量都保证是正整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Ma'at 最多会给 Alice $$$15$$$ 根羽毛。Alice 想要最大化这些 $$$15$$$ 根羽毛能够测量的单位数量。让我们来帮帮她吧！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，我们希望你能对这道题有一个大致的了解，而不必陷入技术细节。请观察这里展示的 Alice 与 Anubis 之间的“对话”交互(网址为 https://imgur.com/a/HAJSRxk).。示例交互部分也展示了这一交互。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "正如我们所见，交互分为两个阶段：“请求”，然后是“测试”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，输出一个正整数 $$$n$$$，表示你请求一组 $$$n$$$ 根羽毛，其编号从 $$$1$$$ 到 $$$n$$$。然后，输出一行包含 $$$n$$$ 个用空格分隔的正整数 $$$w_1, w_2, w_3, \\dots, w_n$$$，分别表示你希望每根羽毛具有的目标重量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "该 $$$n$$$ 至多为 $$$15$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个 $$$w_i$$$ 至多为 $$$10^8$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以有多片重量相同的羽毛。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来，请输出一个正整数 $$$M$$$，对应于以下说法：“只用这些羽毛，我就能准确测出任意心脏的重量，只要其重量是一个不大于 $$$M$$$ 的正整数。”最终，$$$M$$$ 越大，你的得分就越高。你最多可以输出 $$$10^8$$$ 个 $$$M$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "根据你选择的羽毛，阿努比斯现在将挑战你的说法。裁判首先会输出一个正整数 $$$T$$$，表示接下来将有 $$$T$$$ 组测试用例。这个 $$$T$$$ 至多为 $$$100$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个测试用例，评测方会选择一颗权重为正整数的心脏。我们将这颗心脏的编号记为 $$$0$$$，其权重记为 $$$w_0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要使用天平，请输出一行仅包含单词 WEIGH。然后，输出以下四项信息，说明你想在天平的每个秤盘中放入哪些物品。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先，一个正整数 $$$k_l$$$，表示放入左侧秤盘的物品数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后，$$$k_l$$$ 个非负整数 $$$l_1, l_2, \\dots, l_{k_l}$$$，表示放入左侧秤盘的物品的下标。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来是一个正整数 $$$k_r$$$，表示放入右侧托盘的物品数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最后，$$$k_r$$$ 个非负整数 $$$r_1, r_2, \\dots, r_{k_r}$$$，表示放入右侧托盘的物品编号。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个提到的编号都应在 $$$0$$$ 到 $$$n$$$(含)之间。请注意，编号 $$$0$$$ 对应于你当前试图确定重量的心脏。每件物品最多只能放入一个托盘中(因此，不应有编号同时出现在 $$$l$$$ 和 $$$r$$$ 中)。每次询问时，你不必使用所有羽毛。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "设 $$$L$$$ 和 $$$R$$$ 分别为放在左盘和右盘中的物品总重量。形式化地，$$\\begin{align*} L &= w_{l_1} + w_{l_2} + \\dots + w_{l_{k_l}}, \\\\ R &= w_{r_1} + w_{r_2} + \\dots + w_{r_{k_r}}. \\end{align*} $$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "评测程序将给出以下响应之一。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 $$$L  \\gt  R$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "< 如果 $$$L  \\lt  R$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "= 如果 $$$L = R$$$",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你的查询无效，就会显示 >:(。例如，你尝试将某个物品放入多个平底锅中。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你使用的索引不在 $$$0$$$ 到 $$$n$$$ 的范围内。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你没有提供放入每个盘子中的物品数量恰好为 $$$k_l$$$ 或 $$$k_r$$$ㄱ㄰。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以进行任意多次查询，只要能在时限内回答所有测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当你准备好报告心脏的重量时，输出一行仅包含单词 VERDICT，然后输出以下内容之一：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你认为 $$$w_0  \\gt  M$$$，输出一行包含单词 HEAVY 的内容。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，你认为 $$$1 \\leq w_0 \\leq M$$$，并应输出一行，其中包含单词 EXACT。然后输出另一行，其中只包含一个正整数，即 $$$w_0$$$ 的值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "评测器将给出以下响应之一。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": ":) 如果你的答案正确，评测器会立即进入下一个测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": ">:( 如果你的答案错误，或者你的报告存在其他无效之处。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果评测器发送了 >:( 判定，它会立即终止，且不再发送任何响应。遇到这种情况，你的程序也应终止。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "评分",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$\\begin{align*}  &\\begin{array}{|l|} \\hline \\text{Constraints For All Subtasks} \\\\ \\hline \\text{If you receive a }\\mathtt{:)}\\text{ verdict on all test cases, then you will be awarded points based on how high your declared $M$ was.} \\\\ \\hline \\end{array}\\\\  &\\begin{array}{|c|c|l|} \\hline \\text{Subtask} & \\text{Points} & \\text{Constraints} \\\\ \\hline 1 & \\mathbf{30} & M \\geq 15 \\\\ \\hline 2 & \\mathbf{5} & M \\geq 25 \\\\ \\hline 3 & \\mathbf{10} & M \\geq 70 \\\\ \\hline 4 & \\mathbf{5} & M \\geq 1000 \\\\ \\hline 5 & \\mathbf{20} & M \\geq 32123 \\\\ \\hline 6 & \\mathbf{5} & M \\geq 65456 \\\\ \\hline 7 & \\mathbf{15} & M \\geq 7142857 \\\\ \\hline 8 & \\mathbf{10} & M \\geq 14142135 \\\\ \\hline \\end{array}\\\\  \\end{align*}$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "此处的空行仅用于说明参赛者与评测机之间的交互。请勿在程序中实际输出这些额外的空行。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 实验——阿努比斯版！",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

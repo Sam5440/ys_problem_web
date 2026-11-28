@@ -1,0 +1,107 @@
+{
+  "code": "CF1109B",
+  "letter": "B",
+  "title": "B. Sasha and One More Name",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1109/B",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Reading books is one of Sasha's passions. Once while he was reading one book, he became acquainted with an unusual character. The character told about himself like that: \"Many are my names in many countries. Mithrandir among the Elves, Tharkûn to the Dwarves, Olórin I was in my youth in the West that is forgotten, in the South Incánus, in the North Gandalf; to the East I go not.\"",
+      "And at that moment Sasha thought, how would that character be called in the East? In the East all names are palindromes. A string is a palindrome if it reads the same backward as forward. For example, such strings as \"kazak\", \"oo\" and \"r\" are palindromes, but strings \"abb\" and \"ij\" are not.",
+      "Sasha believed that the hero would be named after one of the gods of the East. As long as there couldn't be two equal names, so in the East people did the following: they wrote the original name as a string on a piece of paper, then cut the paper minimum number of times k$$$k$$$, so they got k+1$$$k+1$$$ pieces of paper with substrings of the initial string, and then unite those pieces together to get a new string. Pieces couldn't be turned over, they could be shuffled.",
+      "In this way, it's possible to achive a string abcdefg from the string f|de|abc|g using 3$$$3$$$ cuts (by swapping papers with substrings f and abc). The string cbadefg can't be received using the same cuts.",
+      "More formally, Sasha wants for the given palindrome s$$$s$$$ find such minimum k$$$k$$$, that you can cut this string into k+1$$$k + 1$$$ parts, and then unite them in such a way that the final string will be a palindrome and it won't be equal to the initial string s$$$s$$$. It there is no answer, then print \"Impossible\" (without quotes)."
+    ],
+    "input": [
+      "The first line contains one string s$$$s$$$ (1≤|s|≤5000$$$1 \\le |s| \\le 5\\,000$$$) — the initial name, which consists only of lowercase Latin letters. It is guaranteed that s$$$s$$$ is a palindrome."
+    ],
+    "output": [
+      "Print one integer k$$$k$$$ — the minimum number of cuts needed to get a new name, or \"Impossible\" (without quotes)."
+    ],
+    "note": [
+      "In the first example, you can cut the string in those positions: no|l|on, and then unite them as follows on|l|no. It can be shown that there is no solution with one cut.",
+      "In the second example, you can cut the string right in the middle, and swap peaces, so you get toot.",
+      "In the third example, you can't make a string, that won't be equal to the initial one.",
+      "In the fourth example, you can cut the suffix nik and add it to the beginning, so you get nikkinnikkin."
+    ]
+  },
+  "examples": [
+    {
+      "input": "nolon",
+      "output": "2"
+    },
+    {
+      "input": "otto",
+      "output": "1"
+    },
+    {
+      "input": "qqqq",
+      "output": "Impossible"
+    },
+    {
+      "input": "kinnikkinnik",
+      "output": "1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "阅读书籍是 Sasha 的爱好之一。有一次，他在阅读一本书时，结识了一个不寻常的角色。这个角色这样介绍自己：“在许多国家，我有许多名字。在精灵中，我叫 Mithrandir；在矮人中，我叫 Tharkûn；在那被遗忘的西方，我年轻时叫 Olórin；在南方，我叫 Incánus；在北方，我叫 Gandalf；至于东方，我不会去。”",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "就在那一刻，Sasha 想道：那个角色在东方会被怎样称呼呢？在东方，所有名字都是回文。如果一个字符串从前往后读和从后往前读都相同，那么它就是回文。例如，“kazak”、“oo”和“r”都是回文，而“abb”和“ij”不是。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Sasha 认为英雄将以东方诸神中的一位命名。由于不允许出现两个相同的名字，东方人采取了如下做法：他们将原始名字作为字符串写在一张纸上，然后将纸张剪切最少的 k$$$k$$$ 次，从而得到 k+1$$$k+1$$$ 张包含初始字符串子串的纸片，之后将这些纸片拼接起来得到一个新字符串。纸片不能翻面，但可以重新排列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "通过这种方式，可以用 3$$$3$$$ 次剪切将字符串 f|de|abc|g 变为字符串 abcdefg(交换包含子串 f 和 abc 的纸片即可)。使用相同的剪切次数无法得到字符串 cbadefg。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更正式地说，对于给定的回文串 s$$$s$$$，Sasha 想要找到这样的最小 k$$$k$$$：将该字符串剪切成 k+1$$$k + 1$$$ 个部分，然后以某种方式将它们拼接，使最终字符串为回文串且不等于初始字符串 s$$$s$$$。如果不存在答案，则输出 \"Impossible\"(不含引号)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个字符串 s$$$s$$$(1≤|s|≤5000$$$1 \\le |s| \\le 5\\,000$$$)——初始名字，该名字仅由小写拉丁字母组成。保证 s$$$s$$$ 是回文串。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数 k$$$k$$$——得到新名字所需的最少剪切次数；如果无法做到，则输出 \"Impossible\"(不含引号)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，可以在如下位置剪切字符串：no|l|on，然后按如下方式将它们拼接：on|l|no。可以证明只剪切一次不存在可行解。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，你可以恰好从字符串中间切开并交换两段，于是得到 toot。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个样例中，你无法构造出一个不等于初始字符串的字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第四个样例中，你可以切下后缀 nik 并将其添加到开头，于是得到 nikkinnikkin。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Sasha 和另一个名字",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

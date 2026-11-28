@@ -1,0 +1,89 @@
+{
+  "code": "CF652C",
+  "letter": "C",
+  "title": "C. Foe Pairs",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/652/C",
+  "difficulty": "1800",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a permutation p of length n. Also you are given m foe pairs (ai, bi) (1 ≤ ai, bi ≤ n, ai ≠ bi).",
+      "Your task is to count the number of different intervals (x, y) (1 ≤ x ≤ y ≤ n) that do not contain any foe pairs. So you shouldn't count intervals (x, y) that contain at least one foe pair in it (the positions and order of the values from the foe pair are not important).",
+      "Consider some example: p = [1, 3, 2, 4] and foe pairs are {(3, 2), (4, 2)}. The interval (1, 3) is incorrect because it contains a foe pair (3, 2). The interval (1, 4) is also incorrect because it contains two foe pairs (3, 2) and (4, 2). But the interval (1, 2) is correct because it doesn't contain any foe pair."
+    ],
+    "input": [
+      "The first line contains two integers n and m (1 ≤ n, m ≤ 3·105) — the length of the permutation p and the number of foe pairs.",
+      "The second line contains n distinct integers pi (1 ≤ pi ≤ n) — the elements of the permutation p.",
+      "Each of the next m lines contains two integers (ai, bi) (1 ≤ ai, bi ≤ n, ai ≠ bi) — the i-th foe pair. Note a foe pair can appear multiple times in the given list."
+    ],
+    "output": [
+      "Print the only integer c — the number of different intervals (x, y) that does not contain any foe pairs.",
+      "Note that the answer can be too large, so you should use 64-bit integer type to store it. In C++ you can use the long long integer type and in Java you can use long integer type."
+    ],
+    "note": [
+      "In the first example the intervals from the answer are (1, 1), (1, 2), (2, 2), (3, 3) and (4, 4)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 2\n1 3 2 4\n3 2\n2 4",
+      "output": "5"
+    },
+    {
+      "input": "9 5\n9 7 2 3 1 4 6 5 8\n1 6\n4 5\n2 7\n7 2\n2 7",
+      "output": "20"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n 和 m（1 ≤ n, m ≤ 3·10^5），分别表示排列 p 的长度和敌对数对的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个互不相同的整数 p_i（1 ≤ p_i ≤ n），表示排列 p 的元素。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行中的每一行包含两个整数 (aᵢ, bᵢ) (1 ≤ aᵢ, bᵢ ≤ n, aᵢ ≠ bᵢ)——第 i 对敌人。注意，给出的列表中同一对敌人可能出现多次。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出唯一的整数 c——不包含任何敌人对的不同区间 (x, y) 的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，答案可能非常大，因此你应使用 64 位整数类型来存储它。在 C++ 中可以使用 long long 整数类型，在 Java 中可以使用 long 整数类型。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，答案中的区间为 (1, 1)、(1, 2)、(2, 2)、(3, 3) 和 (4, 4)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "给定一个长度为 n 的排列 p。此外，还给定 m 个敌对数对 (a_i, b_i)（1 ≤ a_i, b_i ≤ n，a_i ≠ b_i）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你的任务是统计不包含任何敌对数对的不同区间 (x, y) 的数量（1 ≤ x ≤ y ≤ n）。也就是说，不应统计其中至少包含一个敌对数对的区间 (x, y)（敌对数对中的值的位置和顺序并不重要）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑如下例子：p = [1, 3, 2, 4]，敌对数对为 {(3, 2), (4, 2)}。区间 (1, 3) 是不合法的，因为它包含敌对数对 (3, 2)。区间 (1, 4) 也是不合法的，因为它包含两个敌对数对 (3, 2) 和 (4, 2)。但是区间 (1, 2) 是合法的，因为它不包含任何敌对数对。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 敌对数对",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

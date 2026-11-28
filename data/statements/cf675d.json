@@ -1,0 +1,85 @@
+{
+  "code": "CF675D",
+  "letter": "D",
+  "title": "D. Tree Construction",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/675/D",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "During the programming classes Vasya was assigned a difficult problem. However, he doesn't know how to code and was unable to find the solution in the Internet, so he asks you to help.",
+      "You are given a sequence a$$$a$$$, consisting of n$$$n$$$ distinct integers, that is used to construct the binary search tree. Below is the formal description of the construction process.",
+      "First element a1$$$a_1$$$ becomes the root of the tree.",
+      "Elements a2,a3,…,an$$$a_2, a_3, \\ldots, a_n$$$ are added one by one. To add element ai$$$a_i$$$ one needs to traverse the tree starting from the root and using the following rules:   The pointer to the current node is set to the root.",
+      "If ai$$$a_i$$$ is greater than the value in the current node, then its right child becomes the current node. Otherwise, the left child of the current node becomes the new current node.",
+      "If at some point there is no required child, the new node is created, it is assigned value ai$$$a_i$$$ and becomes the corresponding child of the current node."
+    ],
+    "input": [
+      "The first line of the input contains a single integer n$$$n$$$ (2≤n≤100000$$$2 \\leq n \\leq 100\\,000$$$) — the length of the sequence a$$$a$$$.",
+      "The second line contains n$$$n$$$ distinct integers ai$$$a_i$$$ (1≤ai≤109$$$1 \\leq a_i \\leq 10^9$$$) — the sequence a$$$a$$$ itself."
+    ],
+    "output": [
+      "Output n−1$$$n - 1$$$ integers. For all i>1$$$i  \\gt  1$$$ print the value written in the node that is the parent of the node with value ai$$$a_i$$$ in it."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1 2 3",
+      "output": "1 2"
+    },
+    {
+      "input": "5\n4 2 3 1 6",
+      "output": "4 2 2 4"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在编程课上，Vasya 被布置了一道难题。然而，他不会编程，也没能在互联网上找到解法，所以他请求你帮助。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个序列 a$$$a$$$，它由 n$$$n$$$ 个互不相同的整数构成，用于构造二叉搜索树。下面给出构造过程的形式化描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一个元素 a1$$$a_1$$$ 成为树的根。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "元素 a2,a3,…,an$$$a_2, a_3, \\ldots, a_n$$$ 依次加入。为了添加元素 ai$$$a_i$$$，需要从根开始按照以下规则遍历这棵树：   将指向当前节点的指针设置为根节点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 ai$$$a_i$$$ 大于当前节点中的值，那么其右儿子就成为当前节点。否则，当前节点的左儿子成为新的当前节点。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果在某一步不存在所需的儿子，则创建新节点，将其值赋为 ai$$$a_i$$$，并使其成为当前节点的相应儿子。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入第一行包含一个整数 n$$$n$$$(2≤n≤100000$$$2 \\leq n \\leq 100\\,000$$$)——序列 a$$$a$$$ 的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n$$$n$$$ 个互不相同的整数 ai$$$a_i$$$(1≤ai≤109$$$1 \\leq a_i \\leq 10^9$$$)——序列 a$$$a$$$ 本身。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n−1$$$n - 1$$$ 个整数。对于所有 i>1$$$i  \\gt  1$$$，输出值为 ai$$$a_i$$$ 的节点的父节点中记录的值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 树的构造",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

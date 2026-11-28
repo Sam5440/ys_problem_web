@@ -1,0 +1,105 @@
+{
+  "code": "CF1368C",
+  "letter": "C",
+  "title": "C. Even Picture",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1368/C",
+  "difficulty": "1500",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "512 megabytes",
+  "sections": {
+    "legend": [
+      "Leo Jr. draws pictures in his notebook with checkered sheets (that is, each sheet has a regular square grid printed on it). We can assume that the sheets are infinitely large in any direction.",
+      "To draw a picture, Leo Jr. colors some of the cells on a sheet gray. He considers the resulting picture beautiful if the following conditions are satisfied:",
+      "The picture is connected, that is, it is possible to get from any gray cell to any other by following a chain of gray cells, with each pair of adjacent cells in the path being neighbours (that is, sharing a side).",
+      "Each gray cell has an even number of gray neighbours.",
+      "There are exactly n$$$n$$$ gray cells with all gray neighbours. The number of other gray cells can be arbitrary (but reasonable, so that they can all be listed).",
+      "Leo Jr. is now struggling to draw a beautiful picture with a particular choice of n$$$n$$$. Help him, and provide any example of a beautiful picture.",
+      "To output cell coordinates in your answer, assume that the sheet is provided with a Cartesian coordinate system such that one of the cells is chosen to be the origin (0,0)$$$(0, 0)$$$, axes 0x$$$0x$$$ and 0y$$$0y$$$ are orthogonal and parallel to grid lines, and a unit step along any axis in any direction takes you to a neighbouring cell."
+    ],
+    "input": [
+      "The only line contains a single integer n$$$n$$$ (1≤n≤500$$$1 \\leq n \\leq 500$$$) — the number of gray cells with all gray neighbours in a beautiful picture."
+    ],
+    "output": [
+      "In the first line, print a single integer k$$$k$$$ — the number of gray cells in your picture. For technical reasons, k$$$k$$$ should not exceed 5⋅105$$$5 \\cdot 10^5$$$.",
+      "Each of the following k$$$k$$$ lines should contain two integers — coordinates of a gray cell in your picture. All listed cells should be distinct, and the picture should satisdfy all the properties listed above. All coordinates should not exceed 109$$$10^9$$$ by absolute value.",
+      "One can show that there exists an answer satisfying all requirements with a small enough k$$$k$$$."
+    ],
+    "note": [
+      "The answer for the sample is pictured below:",
+      "![](https://espresso.codeforces.com/32d3333414209636f4bf5f77aeae92fca88b7155.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4",
+      "output": "12\n1 0\n2 0\n0 1\n1 1\n2 1\n3 1\n0 2\n1 2\n2 2\n3 2\n1 3\n2 3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Leo Jr. 在方格纸上画图（也就是说，每张纸上都印有规则的正方形网格）。可以认为这些纸张在任意方向上都是无限大的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了画图，Leo Jr. 会将纸上的一些格子涂成灰色。如果满足以下条件，他就认为所得图案是美丽的：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "图案是连通的，也就是说，可以沿着一串灰色格子从任意一个灰色格子到达任意另一个灰色格子，并且路径中每一对相邻的格子都是邻居（即共享一条边）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个灰色格子都有偶数个灰色邻居。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "恰好有 n$$$n$$$ 个灰色格子的所有邻居都是灰色的。其他灰色格子的数量可以任意(但应当合理，以便能够将它们全部列出)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Leo Jr. 现在正苦于为给定的 n$$$n$$$ 绘制一幅美丽图案。请帮助他，并给出任意一个美丽图案的示例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "为了在答案中输出单元格坐标，假设该表格配备了一个直角坐标系，其中一个单元格被选为原点 (0,0)$$$(0, 0)$$$，坐标轴 0x$$$0x$$$ 和 0y$$$0y$$$ 互相垂直且分别与网格线平行，并且沿任一坐标轴任意方向移动一个单位即可到达相邻单元格。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "唯一一行包含一个整数 n$$$n$$$(1≤n≤500$$$1 \\leq n \\leq 500$$$)——美丽图案中所有邻居均为灰色的灰色单元格数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "第一行输出一个整数 k$$$k$$$——图案中灰色单元格的数量。由于技术原因，k$$$k$$$ 不应超过 5⋅105$$$5 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 k$$$k$$$ 行中的每一行应包含两个整数——图案中一个灰色单元格的坐标。所有列出的单元格都应互不相同，且图案应满足上述所有性质。所有坐标的绝对值均不应超过 109$$$10^9$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，存在一个满足所有要求且 k$$$k$$$ 足够小的答案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例的答案如下图所示：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/32d3333414209636f4bf5f77aeae92fca88b7155.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 偶数图案",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

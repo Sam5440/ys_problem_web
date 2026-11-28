@@ -1,0 +1,147 @@
+{
+  "code": "CF896B",
+  "letter": "B",
+  "title": "B. Ithea Plays With Chtholly",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/896/B",
+  "difficulty": "2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem. Refer to the Interaction section below for better understanding.",
+      "Ithea and Chtholly want to play a game in order to determine who can use the kitchen tonight.",
+      "![](https://espresso.codeforces.com/2dba15fc5c436b23cd2988708f9cd30993b18178.png)",
+      "Initially, Ithea puts n clear sheets of paper in a line. They are numbered from 1 to n from left to right.",
+      "This game will go on for m rounds. In each round, Ithea will give Chtholly an integer between 1 and c, and Chtholly needs to choose one of the sheets to write down this number (if there is already a number before, she will erase the original one and replace it with the new one).",
+      "Chtholly wins if, at any time, all the sheets are filled with a number and the n numbers are in non-decreasing order looking from left to right from sheet 1 to sheet n, and if after m rounds she still doesn't win, she loses the game.",
+      "Chtholly really wants to win the game as she wants to cook something for Willem. But she doesn't know how to win the game. So Chtholly finds you, and your task is to write a program to receive numbers that Ithea gives Chtholly and help her make the decision on which sheet of paper write this number."
+    ],
+    "input": [
+      "The first line contains 3 integers n, m and c (![](https://espresso.codeforces.com/257604f27c6d773d788295abb7197dacaf673770.png), ![](https://espresso.codeforces.com/69d952fbb38d40c3c6e095688911e180261b4c6c.png) means ![](https://espresso.codeforces.com/8f85bbe2572c28c30e72b9446b520cbdeb7eabe7.png) rounded up) — the number of sheets, the number of rounds and the largest possible number Ithea can give to Chtholly respectively. The remaining parts of input are given throughout the interaction process.",
+      "In each round, your program needs to read one line containing a single integer pi (1 ≤ pi ≤ c), indicating the number given to Chtholly.",
+      "Your program should then output a line containing an integer between 1 and n, indicating the number of sheet to write down this number in.",
+      "After outputting each line, don't forget to flush the output. For example:",
+      "fflush(stdout) in C/C++;",
+      "System.out.flush() in Java;",
+      "sys.stdout.flush() in Python;",
+      "flush(output) in Pascal;",
+      "See the documentation for other languages.",
+      "If Chtholly wins at the end of a round, no more input will become available and your program should terminate normally. It can be shown that under the constraints, it's always possible for Chtholly to win the game."
+    ],
+    "output": [],
+    "note": [
+      "In the example, Chtholly initially knew there were 2 sheets, 4 rounds and each number was between 1 and 4. She then received a 2 and decided to write it in the 1st sheet. Then she received a 1 and wrote it in the 2nd sheet. At last, she received a 3 and replaced 1 with 3 in the 2nd sheet. At this time all the sheets were filled with a number and they were non-decreasing, so she won the game.",
+      "Note that it is required that your program terminate immediately after Chtholly wins and do not read numbers from the input for the remaining rounds. If not, undefined behaviour may arise and it won't be sure whether your program will be accepted or rejected. Also because of this, please be careful when hacking others' codes. In the sample, Chtholly won the game after the 3rd round, so it is required that your program doesn't read the number of the remaining 4th round.",
+      "The input format for hacking:",
+      "The first line contains 3 integers n, m and c;",
+      "The following m lines each contains an integer between 1 and c, indicating the number given to Chtholly in each round."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 4 4\n2\n1\n3",
+      "output": "1\n2\n2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "这是一道交互题。请参考下面的交互部分以便更好地理解。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Ithea 和 Chtholly 想玩一个游戏，以决定今晚谁可以使用厨房。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/2dba15fc5c436b23cd2988708f9cd30993b18178.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "起初，Ithea 将 n 张空白纸片排成一行。它们从左到右编号为 1 到 n。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这个游戏将进行 m 轮。在每一轮中，Ithea 会给 Chtholly 一个 1 到 c 之间的整数，而 Chtholly 需要选择一张纸写下这个数（如果这张纸上之前已经有数字，她会擦掉原来的数字并用新数字替换）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果在任何时刻，所有纸张都填上了一个数字，并且从第 1 张到第 n 张从左向右看，这 n 个数字是非递减的，那么 Chtholly 就获胜。如果经过 m 轮后她仍未获胜，则输掉游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Chtholly 非常想赢得这场游戏，因为她想为 Willem 做些吃的。但她不知道如何才能赢得游戏。于是 Chtholly 找到了你，你的任务是编写一个程序，接收 Ithea 给 Chtholly 的数字，并帮助她决定把这个数字写在哪张纸上。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含 3 个整数 n、m 和 c(![](https://espresso.codeforces.com/257604f27c6d773d788295abb7197dacaf673770.png)，![](https://espresso.codeforces.com/69d952fbb38d40c3c6e095688911e180261b4c6c.png) 表示 ![](https://espresso.codeforces.com/8f85bbe2572c28c30e72b9446b520cbdeb7eabe7.png) 向上取整)——分别表示纸张数量、轮数，以及 Ithea 可能给 Chtholly 的最大数字。输入的其余部分将在交互过程中给出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每一轮中，你的程序需要读取一行，其中包含一个整数 p_i（1 ≤ p_i ≤ c），表示给 Chtholly 的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后，你的程序应输出一行，其中包含一个介于 1 和 n 之间的整数，表示应将这个数字写在哪张纸上。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出每一行后，别忘了刷新输出缓冲区。例如：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "C/C++ 中的 fflush(stdout)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Java 中的 System.out.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Python 中的 sys.stdout.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Pascal 中的 flush(output)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其他语言请参阅相关文档。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果 Chtholly 在一回合结束时获胜，则不会再有输入可用，你的程序应正常终止。可以证明，在给定约束下，Chtholly 始终有可能赢得这场游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在样例中，Chtholly 一开始知道有 2 张纸、4 轮，并且每个数字都在 1 到 4 之间。随后她收到了 2，并决定将其写在第 1 张纸上。接着她收到了 1，并将其写在第 2 张纸上。最后，她收到了 3，于是将第 2 张纸上的 1 替换成了 3。此时所有纸上都填有一个数字，并且这些数字是非递减的，因此她赢得了游戏。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，Chtholly 获胜后，要求你的程序立即终止，并且不要从输入中读取剩余轮次的数字。否则可能会产生未定义行为，也无法确定你的程序会被接受还是被拒绝。此外，正因如此，在 hack 他人的代码时请务必小心。在样例中，Chtholly 在第 3 轮后赢得了游戏，因此你的程序不能读取剩余第 4 轮的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "用于 hack 的输入格式：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行包含 3 个整数 n、m 和 c；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行每行包含一个介于 1 和 c 之间的整数，表示每一轮给予 Chtholly 的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. Ithea 与 Chtholly 玩游戏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

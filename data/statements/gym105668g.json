@@ -1,0 +1,120 @@
+{
+  "code": "GYM105668G",
+  "letter": "G",
+  "title": "G. Grid and Numbers Game",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105668/problem/G",
+  "difficulty": "*1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Busy Beaver and Calico Bear are playing a game with an N$$$N$$$ by M$$$M$$$ grid of nonnegative integers ai,j$$$a_{i,j}$$$, where initially no two edge-adjacent numbers are equal.",
+      "![](https://espresso.codeforces.com/e844ed8051fb77eec1f8fe2996c13424a87aeb3b.png)",
+      "In a move, a player chooses a positive integer in the grid and decreases it by 1$$$1$$$, subject to the constraint that after the move, it still holds that no two edge-adjacent numbers are equal and that all numbers are non-negative. If a player has no legal moves on their turn, they lose, and the other player wins.",
+      "Busy Beaver moves first, and then the players alternate. Assuming both players play optimally, determine whether or not Busy Beaver has a winning strategy."
+    ],
+    "input": [
+      "Each test contains multiple test cases. The first line of input contains a single integer T$$$T$$$ (1≤T≤104$$$1 \\leq T \\leq 10^4$$$) — the number of test cases. The description of each test case follows.",
+      "The first line of each test case contains two positive integers N$$$N$$$ and M$$$M$$$ (1≤N,M,N⋅M≤2.5⋅105$$$1 \\leq N, M, N \\cdot M \\leq 2.5 \\cdot 10^5$$$) — the dimensions of the grid.",
+      "The i$$$i$$$-th of the next N$$$N$$$ lines contains M$$$M$$$ space-separated nonnegative integers ai,1,…,ai,M$$$a_{i,1}, \\dots, a_{i,M}$$$ (0≤ai,j≤109$$$0 \\leq a_{i,j} \\leq 10^9$$$), where ai,j$$$a_{i,j}$$$ represents the integer in the grid in row i$$$i$$$ and column j$$$j$$$.",
+      "The sum of N⋅M$$$N \\cdot M$$$ over all test cases does not exceed 2.5⋅105$$$2.5 \\cdot 10^5$$$."
+    ],
+    "output": [
+      "For each test case, output \"YES\" (without quotes) if Busy Beaver wins, and \"NO\" (without quotes) if Calico Bear wins.",
+      "You can output \"YES\" and \"NO\" in any case (for example, strings \"yES\", \"yes\" and \"Yes\" will be recognized as a positive response).",
+      "There are two subtasks for this problem.",
+      "(20$$$20$$$ points) 0≤ai,j≤100$$$0 \\leq a_{i,j} \\leq 100$$$.",
+      "(80$$$80$$$ points) No additional constraints."
+    ],
+    "note": [
+      "In the first test case, Busy Beaver can decrease the 1$$$1$$$ to a 0$$$0$$$. Then, Calico Bear has no moves, so Busy Beaver has a winning strategy.",
+      "In the second test case, Busy Beaver has no legal moves. Therefore, Calico Bear has a winning strategy.",
+      "In the third test case, Busy Beaver first decreases the central 3$$$3$$$ to a 2$$$2$$$. Then, regardless of which 10$$$10$$$ Calico Bear decreases, Busy Beaver can decrease the other one. Therefore, Calico Bear runs out of moves before Busy Beaver does, giving Busy Beaver a winning strategy."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 1\n1\n1 5\n0 1 2 3 4\n3 3\n0 1 0\n10 3 10\n0 1 0\n2 4\n0 2 4 6\n1 3 5 7\n4 5\n6 7 6 7 6\n7 6 7 6 7\n6 7 6 7 6\n7 6 7 6 7",
+      "output": "Yes\nNo\nYes\nNo\nNo"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Busy Beaver 和 Calico Bear 正在一个 N$$$N$$$ 行、M$$$M$$$ 列的非负整数网格上进行游戏，网格中的数为 ai,j$$$a_{i,j}$$$。初始时，任意两个边相邻的数都不相等。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/e844ed8051fb77eec1f8fe2996c13424a87aeb3b.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每回合，玩家选择网格中的一个正整数并将其减小 1$$$1$$$，但操作后仍需满足任意两个边相邻的数都不相等，且所有数均为非负数。如果轮到某位玩家时没有合法操作，该玩家输，另一位玩家获胜。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Busy Beaver 先手，之后双方交替行动。假设双方都采取最优策略，判断 Busy Beaver 是否有必胜策略。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个输入包含多个测试用例。输入的第一行包含一个整数 T$$$T$$$(1≤T≤104$$$1 \\leq T \\leq 10^4$$$)，表示测试用例的数量。接下来是各测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例的第一行包含两个正整数 N$$$N$$$ 和 M$$$M$$$(1≤N,M,N⋅M≤2.5⋅105$$$1 \\leq N, M, N \\cdot M \\leq 2.5 \\cdot 10^5$$$)，表示网格的行数和列数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行中的第 i$$$i$$$ 行包含 M$$$M$$$ 个以空格分隔的非负整数 ai,1,…,ai,M$$$a_{i,1}, \\dots, a_{i,M}$$$(0≤ai,j≤109$$$0 \\leq a_{i,j} \\leq 10^9$$$)，其中 ai,j$$$a_{i,j}$$$ 表示网格中第 i$$$i$$$ 行第 j$$$j$$$ 列的整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有测试用例中 N⋅M$$$N \\cdot M$$$ 的总和不超过 2.5⋅105$$$2.5 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果 Busy Beaver 获胜，则输出 \"YES\"（不含引号）；如果 Calico Bear 获胜，则输出 \"NO\"（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以以任意大小写形式输出 \"YES\" 和 \"NO\"（例如，字符串 \"yES\"、\"yes\" 和 \"Yes\" 都会被识别为肯定回答）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "本题有两个子任务。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(20$$$20$$$ 分)0≤ai,j≤100$$$0 \\leq a_{i,j} \\leq 100$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "(80$$$80$$$ 分)没有额外约束。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，Busy Beaver 可以将 1$$$1$$$ 减小为 0$$$0$$$。之后 Calico Bear 无法进行任何操作，因此 Busy Beaver 有必胜策略。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，Busy Beaver 没有合法操作。因此 Calico Bear 有必胜策略。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第三个测试用例中，Busy Beaver 首先将中间的 3$$$3$$$ 减小为 2$$$2$$$。之后，无论 Calico Bear 选择将哪个 10$$$10$$$ 减小，Busy Beaver 都可以将另一个减小。因此，Calico Bear 会比 Busy Beaver 更早无步可走，Busy Beaver 有必胜策略。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. 网格与数字游戏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

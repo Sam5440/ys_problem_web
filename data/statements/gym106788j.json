@@ -1,0 +1,93 @@
+{
+  "code": "GYM106788J",
+  "letter": "J",
+  "title": "J. Judicious Journey",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106788/problem/J",
+  "difficulty": "*2300",
+  "timeLimit": "5 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/0ef40e7dcb2b707ef9ebaa153ef7549f96455d82.png)",
+      "Map data from OpenStreetMap, available under the Open Database License (ODbL).",
+      "As you board the train, a song is stuck in your head, about a small-town girl and a city boy, taking the midnight train goin' anywhere. You, alas, are going somewhere. Your stingy employer is sending you to a conference, and will reimburse your travel expenses—or rather, some of them. Under the company's reimbursement policy, only the $$$k$$$ cheapest legs of your journey are paid for; the rest comes out of your own pocket.",
+      "The railroad network consists of stations connected by legs, each of which goes from one station to another for some particular price. There may or may not be a leg going the opposite way, and if there is, it might be priced differently. Plan a journey from your home station to the conference station that minimizes what you pay yourself: the total price of all its legs except the $$$k$$$ cheapest (or nothing at all, if the journey has at most $$$k$$$ legs)."
+    ],
+    "input": [
+      "The input consists of:",
+      "One line with three integers $$$n$$$, $$$m$$$, and $$$k$$$ ($$$2 \\leq n \\leq 2000$$$, $$$1 \\leq m \\leq 3000$$$, $$$0 \\leq k \\leq 3000$$$), the number of stations, the number of legs, and the number of legs that are reimbursed.",
+      "$$$m$$$ lines, each containing three integers $$$u$$$, $$$v$$$, and $$$w$$$ ($$$0 \\leq u, v  \\lt  n$$$, $$$1 \\leq w \\leq 10^5$$$, $$$u \\neq v$$$), a leg from station $$$u$$$ to station $$$v$$$ at cost $$$w$$$.",
+      "The stations are numbered from $$$0$$$ to $$$n-1$$$; the journey starts at station $$$0$$$ and ends at station $$$n-1$$$. For any two stations $$$u$$$ and $$$v$$$, there is at most one leg from $$$u$$$ to $$$v$$$, and it is guaranteed that station $$$n-1$$$ can be reached from station $$$0$$$."
+    ],
+    "output": [
+      "Output the minimum amount you have to pay yourself for a journey from station $$$0$$$ to station $$$n-1$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 3 1\n0 1 12\n1 2 11\n2 3 30",
+      "output": "42"
+    },
+    {
+      "input": "6 6 1\n0 1 1\n1 2 4\n2 5 4\n0 3 3\n3 4 3\n4 5 4",
+      "output": "7"
+    },
+    {
+      "input": "7 9 2\n0 1 7\n0 2 3\n1 2 5\n1 3 1\n3 4 3\n1 4 4\n2 5 2\n5 4 9\n4 6 8",
+      "output": "8"
+    },
+    {
+      "input": "7 9 1\n0 1 7\n0 2 3\n1 2 5\n1 3 1\n3 4 3\n1 4 4\n2 5 2\n5 4 9\n4 6 8",
+      "output": "15"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/0ef40e7dcb2b707ef9ebaa153ef7549f96455d82.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "OpenStreetMap 地图数据依据开放数据库许可（ODbL）提供。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "登上火车时，你脑海里挥之不去地回响着一首歌，唱的是一个小镇女孩和一个城市男孩，搭乘午夜列车前往任何地方。可惜，你确实要去某个地方。吝啬的雇主派你去参加会议，并会报销你的差旅费——或者说，只报销其中一部分。根据公司的报销政策，只有行程中最便宜的 $$$k$$$ 段路程可以报销；其余费用都得由你自掏腰包。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "铁路网络由车站和连接车站的区段组成，每个区段都以特定价格从一个车站通往另一个车站。反向可能有也可能没有对应的区段；如果有，其价格也可能不同。请规划一段从你的出发车站到会议车站的旅程，使你自己支付的费用最少：支付该旅程所有区段的总价，但不包括其中最便宜的 $$$k$$$ 个区段(如果旅程至多包含 $$$k$$$ 个区段，则无需支付任何费用)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入由以下内容组成：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一行包含三个整数 $$$n$$$、$$$m$$$ 和 $$$k$$$($$$2 \\leq n \\leq 2000$$$、$$$1 \\leq m \\leq 3000$$$、$$$0 \\leq k \\leq 3000$$$)，分别表示站点数量、路段数量以及可报销的路段数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$m$$$ 条线路，每条包含三个整数 $$$u$$$、$$$v$$$ 和 $$$w$$$($$$0 \\leq u, v  \\lt  n$$$、$$$1 \\leq w \\leq 10^5$$$、$$$u \\neq v$$$)，表示一段从车站 $$$u$$$ 到车站 $$$v$$$、费用为 $$$w$$$ 的行程。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "车站编号从 $$$0$$$ 到 $$$n-1$$$；旅程从车站 $$$0$$$ 出发，并在车站 $$$n-1$$$ 结束。对于任意两个车站 $$$u$$$ 和 $$$v$$$，从 $$$u$$$ 到 $$$v$$$ 至多有一段行程，并保证从车站 $$$0$$$ 可以到达车站 $$$n-1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出从车站 $$$0$$$ 到车站 $$$n-1$$$ 的旅程中你需要自行支付的最低金额。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "J. 审慎的旅程",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

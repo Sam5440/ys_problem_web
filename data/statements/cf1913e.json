@@ -1,0 +1,99 @@
+{
+  "code": "CF1913E",
+  "letter": "E",
+  "title": "E. Matrix Problem",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1913/E",
+  "difficulty": "2400",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a matrix a$$$a$$$, consisting of n$$$n$$$ rows by m$$$m$$$ columns. Each element of the matrix is equal to 0$$$0$$$ or 1$$$1$$$.",
+      "You can perform the following operation any number of times (possibly zero): choose an element of the matrix and replace it with either 0$$$0$$$ or 1$$$1$$$.",
+      "You are also given two arrays A$$$A$$$ and B$$$B$$$ (of length n$$$n$$$ and m$$$m$$$ respectively). After you perform the operations, the matrix should satisfy the following conditions:",
+      "the number of ones in the i$$$i$$$-th row of the matrix should be exactly Ai$$$A_i$$$ for every i∈[1,n]$$$i \\in [1, n]$$$.",
+      "the number of ones in the j$$$j$$$-th column of the matrix should be exactly Bj$$$B_j$$$ for every j∈[1,m]$$$j \\in [1, m]$$$.",
+      "Calculate the minimum number of operations you have to perform."
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (2≤n,m≤50$$$2 \\le n, m \\le 50$$$).",
+      "Then n$$$n$$$ lines follow. The i$$$i$$$-th of them contains m$$$m$$$ integers ai,1,ai,2,…,ai,m$$$a_{i,1}, a_{i,2}, \\dots, a_{i,m}$$$ (0≤ai,j≤1$$$0 \\le a_{i,j} \\le 1$$$).",
+      "The next line contains n$$$n$$$ integers A1,A2,…,An$$$A_1, A_2, \\dots, A_n$$$ (0≤Ai≤m$$$0\\le A_i\\le m$$$).",
+      "The next line contains m$$$m$$$ integers B1,B2,…,Bm$$$B_1, B_2, \\dots, B_m$$$ (0≤Bi≤n$$$0\\le B_i\\le n$$$)."
+    ],
+    "output": [
+      "Print one integer — the minimum number of operations you have to perform, or -1 if it is impossible."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 3\n0 0 0\n0 0 0\n0 0 0\n1 1 1\n1 1 1",
+      "output": "3"
+    },
+    {
+      "input": "3 3\n1 1 1\n1 1 1\n1 1 1\n3 2 1\n1 2 3",
+      "output": "3"
+    },
+    {
+      "input": "2 2\n0 0\n0 0\n1 2\n0 1",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个矩阵 a$$$a$$$，由 n$$$n$$$ 行、m$$$m$$$ 列组成。矩阵中的每个元素都等于 0$$$0$$$ 或 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以执行以下操作任意次(也可以一次都不执行)：选择矩阵中的一个元素，并将其替换为 0$$$0$$$ 或 1$$$1$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "此外，给定两个数组 A$$$A$$$ 和 B$$$B$$$(长度分别为 n$$$n$$$ 和 m$$$m$$$)。完成操作后，矩阵应满足以下条件：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个 i∈[1,n]$$$i \\in [1, n]$$$，矩阵第 i$$$i$$$ 行中 1 的个数应恰好为 Ai$$$A_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个 j∈[1,m]$$$j \\in [1, m]$$$，矩阵第 j$$$j$$$ 列中 1 的个数应恰好为 Bj$$$B_j$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "计算你需要执行的最少操作次数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(2≤n,m≤50$$$2 \\le n, m \\le 50$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来有 n$$$n$$$ 行。其中第 i$$$i$$$ 行包含 m$$$m$$$ 个整数 ai,1,ai,2,…,ai,m$$$a_{i,1}, a_{i,2}, \\dots, a_{i,m}$$$(0≤ai,j≤1$$$0 \\le a_{i,j} \\le 1$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 n$$$n$$$ 个整数 A1,A2,…,An$$$A_1, A_2, \\dots, A_n$$$(0≤Ai≤m$$$0\\le A_i\\le m$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含 m$$$m$$$ 个整数 B1,B2,…,Bm$$$B_1, B_2, \\dots, B_m$$$(0≤Bi≤n$$$0\\le B_i\\le n$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——需要执行的最少操作次数；如果无法做到，输出 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 矩阵问题",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "code": "CF353C",
+  "letter": "C",
+  "title": "C. Find Maximum",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/353/C",
+  "difficulty": "1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Valera has array a, consisting of n integers a0, a1, ..., an - 1, and function f(x), taking an integer from 0 to 2n - 1 as its single argument. Value f(x) is calculated by formula ![](https://espresso.codeforces.com/eba4794e67d3b5ce144adcffa5217705a92db70f.png), where value bit(i) equals one if the binary representation of number x contains a 1 on the i-th position, and zero otherwise.",
+      "For example, if n = 4 and x = 11 (11 = 20 + 21 + 23), then f(x) = a0 + a1 + a3.",
+      "Help Valera find the maximum of function f(x) among all x, for which an inequality holds: 0 ≤ x ≤ m."
+    ],
+    "input": [
+      "The first line contains integer n (1 ≤ n ≤ 105) — the number of array elements. The next line contains n space-separated integers a0, a1, ..., an - 1 (0 ≤ ai ≤ 104) — elements of array a.",
+      "The third line contains a sequence of digits zero and one without spaces s0s1... sn - 1 — the binary representation of number m. Number m equals ![](https://espresso.codeforces.com/77407fd65d8594ac862f8de69093d5a75e54d3c5.png)."
+    ],
+    "output": [
+      "Print a single integer — the maximum value of function f(x) for all ![](https://espresso.codeforces.com/82bfd78b9ec5ce07767875a86696eb7b2eb3031c.png)."
+    ],
+    "note": [
+      "In the first test case m = 20 = 1, f(0) = 0, f(1) = a0 = 3.",
+      "In the second sample m = 20 + 21 + 23 = 11, the maximum value of function equals f(5) = a0 + a2 = 17 + 10 = 27."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3 8\n10",
+      "output": "3"
+    },
+    {
+      "input": "5\n17 0 10 2 1\n11010",
+      "output": "27"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Valera 有一个包含 n 个整数 a0, a1, ..., an-1 的数组 a，以及一个函数 f(x)，它接受从 0 到 2^n - 1 的整数作为唯一参数。f(x) 的值由公式 ![](https://espresso.codeforces.com/eba4794e67d3b5ce144adcffa5217705a92db70f.png) 计算，其中当数字 x 的二进制表示在第 i 位为 1 时，bit(i) 等于 1，否则等于 0。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "例如，若 n = 4 且 x = 11（11 = 2^0 + 2^1 + 2^3），那么 f(x) = a0 + a1 + a3。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "帮助 Valera 在满足不等式 0 ≤ x ≤ m 的所有 x 中找出函数 f(x) 的最大值。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含整数 n（1 ≤ n ≤ 10^5）——数组元素的个数。接下来一行包含 n 个空格分隔的整数 a0, a1, ..., an-1（0 ≤ ai ≤ 10^4）——数组 a 的元素。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "第三行包含一个由数字 0 和 1 组成的、无空格的序列 s0s1...sn-1——数字 m 的二进制表示。数字 m 等于 ![](https://espresso.codeforces.com/77407fd65d8594ac862f8de69093d5a75e54d3c5.png)。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——对于满足 ![](https://espresso.codeforces.com/82bfd78b9ec5ce07767875a86696eb7b2eb3031c.png) 的 x，函数 f(x) 的最大值。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，m = 20 = 1，f(0) = 0，f(1) = a0 = 3。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个样例中，m = 20 + 21 + 23 = 11，函数的最大值等于 f(5) = a0 + a2 = 17 + 10 = 27。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 求最大值",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

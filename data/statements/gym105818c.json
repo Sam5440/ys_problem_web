@@ -1,0 +1,120 @@
+{
+  "code": "GYM105818C",
+  "letter": "C",
+  "title": "C. Walk",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105818/problem/C",
+  "difficulty": "*1500",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "In the following undirected graph, count the number of walks from $$$A$$$ to $$$A$$$ that visit nodes $$$A$$$, $$$B$$$, $$$C$$$, $$$D$$$ exactly $$$a$$$, $$$b$$$, $$$c$$$, $$$d$$$ times, respectively, modulo $$$998244353$$$.",
+      "![](https://espresso.codeforces.com/4802c2ed949cecb0a7e013ed3a2e9750307ca5e5.png)",
+      "Note: A walk from $$$A$$$ to $$$A$$$ is a sequence of vertices $$$v_0 = A,v_1,…,v_k = A$$$ such that for each $$$i$$$ $$$(0 \\leq i  \\lt  k)$$$, there is an edge between $$$v_i$$$ and $$$v_{i+1}$$$. Two walks are considered distinct if they are distinct as sequences."
+    ],
+    "input": [
+      "The first line contains $$$t$$$ $$$(1 \\leq t \\leq 100)$$$, the number of independent test cases. The description of the test cases follows.",
+      "The only line of each test case contains four integers $$$a$$$, $$$b$$$, $$$c$$$, $$$d$$$ ($$$1 \\leq a$$$, $$$b$$$, $$$c$$$, $$$d \\leq 5 \\cdot 10^5$$$).",
+      "The sum of $$$a$$$, the sum of $$$b$$$, the sum of $$$c$$$, and the sum of $$$d$$$ across all test cases does not exceed $$$5 \\cdot 10^5$$$.",
+      "—",
+      "Tests in subtasks are numbered from $$$1−20$$$ with samples skipped. Each test is worth $$$\\frac{100}{20}=5$$$ points.",
+      "Tests $$$1-20$$$ satisfy no additional constraints."
+    ],
+    "output": [
+      "For each test case, print the number of valid walks modulo $$$998244353$$$."
+    ],
+    "note": [
+      "In the first test case, the $$$6$$$ walks are $$$ABDCACA$$$, $$$ACDBACA$$$, $$$ACDCABA$$$, $$$ABACDCA$$$, $$$ACABDCA$$$, and $$$ACACDBA$$$.",
+      "In the second test case, it can be shown that there are no valid walks.",
+      "—",
+      "Problem Idea: HaccerKat",
+      "Problem Preparation: HaccerKat",
+      "Occurrences: Novice J, Advanced C"
+    ]
+  },
+  "examples": [
+    {
+      "input": "2\n3 1 2 1\n1 2 1 2",
+      "output": "6\n0"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "第一行包含 $$$t$$$ $$$(1 \\leq t \\leq 100)$$$，表示独立测试用例的数量。接下来是各个测试用例的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个测试用例仅一行，包含四个整数 $$$a$$$、$$$b$$$、$$$c$$$、$$$d$$$($$$1 \\leq a$$$、$$$b$$$、$$$c$$$、$$$d \\leq 5 \\cdot 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在所有测试用例中，$$$a$$$ 的总和、$$$b$$$ 的总和、$$$c$$$ 的总和以及 $$$d$$$ 的总和不超过 $$$5 \\cdot 10^5$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "子任务中的测试在跳过样例后从 $$$1−20$$$ 开始编号。每个测试值 $$$\\frac{100}{20}=5$$$ 分。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试 $$$1-20$$$ 不满足其他限制。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出合法游走的数量对 $$$998244353$$$ 取模的结果。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，这些 $$$6$$$ 路径是 $$$ABDCACA$$$、$$$ACDBACA$$$、$$$ACDCABA$$$、$$$ABACDCA$$$、$$$ACABDCA$$$ 和 $$$ACACDBA$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个测试用例中，可以证明不存在合法的游走。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "—",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "题目思路：HaccerKat",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "题目准备：HaccerKat",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "出现次数：新手 J，高级 C",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "在下列无向图中，求从 $$$A$$$ 到 $$$A$$$ 的游走数量，使得节点 $$$A$$$、$$$B$$$、$$$C$$$、$$$D$$$ 分别恰好经过 $$$a$$$、$$$b$$$、$$$c$$$、$$$d$$$ 次，结果对 $$$998244353$$$ 取模。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/4802c2ed949cecb0a7e013ed3a2e9750307ca5e5.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意：从 $$$A$$$ 到 $$$A$$$ 的一条游走是一个顶点序列 $$$v_0 = A,v_1,…,v_k = A$$$，使得对于每个 $$$i$$$ $$$(0 \\leq i  \\lt  k)$$$，$$$v_i$$$ 和 $$$v_{i+1}$$$ 之间都有一条边。如果两条游走作为序列不同，则认为它们是不同的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 行走",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "code": "CF731E",
+  "letter": "E",
+  "title": "E. Funny Game",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/731/E",
+  "difficulty": "2200",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Once upon a time Petya and Gena gathered after another programming competition and decided to play some game. As they consider most modern games to be boring, they always try to invent their own games. They have only stickers and markers, but that won't stop them.",
+      "The game they came up with has the following rules. Initially, there are n stickers on the wall arranged in a row. Each sticker has some number written on it. Now they alternate turn, Petya moves first.",
+      "One move happens as follows. Lets say there are m ≥ 2 stickers on the wall. The player, who makes the current move, picks some integer k from 2 to m and takes k leftmost stickers (removes them from the wall). After that he makes the new sticker, puts it to the left end of the row, and writes on it the new integer, equal to the sum of all stickers he took on this move.",
+      "Game ends when there is only one sticker left on the wall. The score of the player is equal to the sum of integers written on all stickers he took during all his moves. The goal of each player is to maximize the difference between his score and the score of his opponent.",
+      "Given the integer n and the initial sequence of stickers on the wall, define the result of the game, i.e. the difference between the Petya's and Gena's score if both players play optimally."
+    ],
+    "input": [
+      "The first line of input contains a single integer n (2 ≤ n ≤ 200 000) — the number of stickers, initially located on the wall.",
+      "The second line contains n integers a1, a2, ..., an ( - 10 000 ≤ ai ≤ 10 000) — the numbers on stickers in order from left to right."
+    ],
+    "output": [
+      "Print one integer — the difference between the Petya's score and Gena's score at the end of the game if both players play optimally."
+    ],
+    "note": [
+      "In the first sample, the optimal move for Petya is to take all the stickers. As a result, his score will be equal to 14 and Gena's score will be equal to 0.",
+      "In the second sample, the optimal sequence of moves is the following. On the first move Petya will take first three sticker and will put the new sticker with value  - 8. On the second move Gena will take the remaining two stickers. The Petya's score is 1 + ( - 7) + ( - 2) =  - 8, Gena's score is ( - 8) + 3 =  - 5, i.e. the score difference will be  - 3."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n2 4 8",
+      "output": "14"
+    },
+    {
+      "input": "4\n1 -7 -2 3",
+      "output": "-3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "从前，Petya 和 Gena 在又一次编程竞赛结束后聚在一起，决定玩一个游戏。由于他们认为现代的大多数游戏都很无聊，所以他们总是尝试发明自己的游戏。他们手头只有贴纸和记号笔，但这并不能阻止他们。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "他们想出的游戏规则如下。最初，墙上有 n 张贴纸，它们排成一行。每张贴纸上都写着一个数字。现在他们轮流行动，由 Petya 先手。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "一次行动如下进行。假设墙上有 m ≥ 2 张贴纸。当前行动的玩家从 2 到 m 中选择一个整数 k，并取下最左边的 k 张贴纸。随后，他制作一张新的贴纸，将其放在这一行的最左端，并在上面写下一个新的整数，其值等于本次行动中取下的所有贴纸上的数字之和。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当墙上只剩下一张贴纸时，游戏结束。玩家的得分等于他在所有回合中拿走的贴纸上所写整数之和。每位玩家的目标都是最大化自己的得分与对手得分之差。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定整数 n 和墙上贴纸的初始序列，定义游戏的结果，即在双方都采取最优策略时，Petya 的得分与 Gena 的得分之差。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（2 ≤ n ≤ 200 000），表示墙上最初的贴纸数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 n 个整数 a1, a2, ..., an（ - 10 000 ≤ ai ≤ 10 000），表示按照从左到右的顺序排列的贴纸上的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数，表示在双方都采取最优策略时，游戏结束时 Petya 的得分与 Gena 的得分之差。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，Petya 的最优操作是拿走所有贴纸。因此，他的得分将为 14，而 Gena 的得分将为 0。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，最优的移动序列如下。第一次移动时，Petya 会拿走前三张贴纸，并放入一张数值为 - 8 的新贴纸。第二次移动时，Gena 会拿走剩下的两张贴纸。Petya 的得分为 1 + ( - 7) + ( - 2) =  - 8，Gena 的得分为 ( - 8) + 3 =  - 5，也就是说，得分差为 - 3。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 有趣的游戏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

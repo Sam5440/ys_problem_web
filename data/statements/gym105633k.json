@@ -1,0 +1,82 @@
+{
+  "code": "GYM105633K",
+  "letter": "K",
+  "title": "K. Scheduling Two Meetings",
+  "contest": null,
+  "url": "https://codeforces.com/gym/105633/problem/K",
+  "difficulty": "*2000",
+  "timeLimit": "1 second",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "You are the chief judge of the International Collegiate Quiz Contest (ICQC) this year. You want to hold judge meetings twice for preparing the problem set of the contest. You proposed candidate schedules for the meetings, and all the judges answered for each of the time slots whether they would attend the meeting on-site or remotely via a video conference tool.",
+      "You have to choose a pair of two distinct time slots, so that every judge attends at least one of the two meetings on-site. When there are multiple such pairs, you'd like to choose one with the largest number of judges attending both meetings on-site. If multiple pairs are still equally desirable with these criteria, one with the earlier first meeting is preferred. If there still remain multiple pairs with the same time slot for the first meeting, the one with the earliest second meeting should be chosen."
+    ],
+    "input": [
+      "The input consists of a single test case of the following format.",
+      "Two integers n$$$n$$$ and m$$$m$$$ are given in the first line. The first integer n$$$n$$$ (2≤n≤2×105$$$2 \\leq n \\leq 2 \\times 10^5$$$) is the number of candidate time slots. Here, the candidate time slots are numbered 1$$$1$$$ through n$$$n$$$, and smaller numbers mean earlier time slots. The second integer m$$$m$$$ (2≤m≤20$$$2 \\leq m \\leq 20$$$) is the number of judges.",
+      "In the following n$$$n$$$ lines, ai,j$$$a_{i,j}$$$ is either a character Y indicating that the j$$$j$$$-th judge attends a meeting at the i$$$i$$$-th candidate time slot on-site, or a character N indicating remote attendance."
+    ],
+    "output": [
+      "Output a line containing the two time slot numbers of the most preferable choice, separated by a space, with the earlier time slot first. If there are no pairs of time slots satisfying the condition, output No."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 3\nNNY\nYYN\nYNY\nNYY",
+      "output": "2 3"
+    },
+    {
+      "input": "3 6\nNNNYYY\nYYNYYN\nYYYNNN",
+      "output": "1 3"
+    },
+    {
+      "input": "6 5\nNNNNN\nYNNNY\nYYNNN\nYYNNN\nNYYNY\nNNYYY",
+      "output": "3 6"
+    },
+    {
+      "input": "3 3\nYNN\nNYN\nNNY",
+      "output": "No"
+    },
+    {
+      "input": "4 4\nNYNN\nYNYY\nYNYN\nNNYY",
+      "output": "1 2"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "今年，你是国际大学生智力竞赛（ICQC）的首席裁判。为了准备竞赛的题目集，你希望召开两次裁判会议。你提出了会议的候选时间安排，所有裁判都针对每个时间段回答了他们是否会通过现场或视频会议工具远程参加会议。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要选择两个不同的时间段，使得每位裁判至少能现场参加其中一场会议。当存在多个满足条件的时间段对时，你希望选择两场会议均现场参加的裁判人数最多的一对。如果根据这些条件仍有多对同样理想，则优先选择第一场会议时间更早的一对。如果第一场会议的时间段仍然相同，则应选择第二场会议时间最早的一对。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入由一个如下格式的测试用例组成。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行给出两个整数 n$$$n$$$ 和 m$$$m$$$。第一个整数 n$$$n$$$(2≤n≤2×105$$$2 \\leq n \\leq 2 \\times 10^5$$$)表示候选时间段的数量。候选时间段编号为 1$$$1$$$ 至 n$$$n$$$，编号越小表示时间越早。第二个整数 m$$$m$$$(2≤m≤20$$$2 \\leq m \\leq 20$$$)表示评委的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n$$$n$$$ 行中，ai,j$$$a_{i,j}$$$ 要么是字符 Y，表示第 j$$$j$$$ 位评委在第 i$$$i$$$ 个候选时间段现场参加会议；要么是字符 N，表示远程参加会议。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一行，包含最优选择的两个时间段编号，并以空格分隔，较早的时间段编号在前。如果不存在满足条件的时间段对，则输出 No。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "K. 安排两场会议",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

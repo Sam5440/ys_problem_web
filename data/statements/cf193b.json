@@ -1,0 +1,104 @@
+{
+  "code": "CF193B",
+  "letter": "B",
+  "title": "B. Xor",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/193/B",
+  "difficulty": "2000",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "John Doe has four arrays: a, b, k, and p. Each array consists of n integers. Elements of all arrays are indexed starting from 1. Array p is a permutation of integers 1 to n.",
+      "John invented a game for his friends and himself. Initially a player is given array a. The player must consecutively execute exactly u operations on a. You are permitted to execute the following operations:",
+      "Operation 1: For each ![](https://espresso.codeforces.com/71d27c8a997496ba958994239acaa8e1e4573b36.png) change ai into ![](https://espresso.codeforces.com/1c9c42af2174608e65df454e248fb1a2d68be4f1.png). Expression ![](https://espresso.codeforces.com/b364f2e04c665b78b924ec10666327a4ef4635bc.png) means applying the operation of a bitwise xor to numbers x and y. The given operation exists in all modern programming languages, for example, in language C++ and Java it is marked as \"^\", in Pascal — as \"xor\".",
+      "Operation 2: For each ![](https://espresso.codeforces.com/71d27c8a997496ba958994239acaa8e1e4573b36.png) change ai into api + r. When this operation is executed, all changes are made at the same time.",
+      "After all u operations are applied, the number of points the player gets is determined by the formula ![](https://espresso.codeforces.com/12fe8e063991fbe8d88a736a98a7c37de4febecf.png).",
+      "John wants to find out what maximum number of points a player can win in his game. Help him."
+    ],
+    "input": [
+      "The first line contains space-separated integers n, u and r (1 ≤ n, u ≤ 30, 0 ≤ r ≤ 100) — the number of elements in each array, the number of operations and the number that describes one of the operations.",
+      "Each of the next four lines contains n space-separated integers — arrays a, b, k, p. The first line has array a, the second line has array b, the third line has array k and the fourth one has array p.",
+      "It is guaranteed that elements of arrays a and b are positive and do not exceed 104 (1 ≤ ai, bi ≤ 104), elements of array k do not exceed 104 in the absolute value (|k| ≤ 104) and p is a permutation of numbers from 1 to n."
+    ],
+    "output": [
+      "On a single line print number s — the maximum number of points that a player can win in John's game.",
+      "Please, do not use the %lld specifier to read or write 64-bit integers in С++. It is preferred to use the cin, cout streams or the %I64d specifier."
+    ],
+    "note": [
+      "In the first sample you should first apply the operation of the first type, then the operation of the second type."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 2 1\n7 7 7\n8 8 8\n1 2 3\n1 3 2",
+      "output": "96"
+    },
+    {
+      "input": "2 1 0\n1 1\n1 1\n1 -1\n1 2",
+      "output": "0"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "John Doe 有四个数组：a、b、k 和 p。每个数组都由 n 个整数构成。所有数组的元素均从 1 开始编号。数组 p 是 1 到 n 的一个排列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "John 为他自己和朋友们设计了一个游戏。最初，玩家会得到数组 a。玩家必须连续对 a 恰好执行 u 次操作。你可以执行以下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "操作 1：对于每个 ![](https://espresso.codeforces.com/71d27c8a997496ba958994239acaa8e1e4573b36.png)，将 ai 改为 ![](https://espresso.codeforces.com/1c9c42af2174608e65df454e248fb1a2d68be4f1.png)。表达式 ![](https://espresso.codeforces.com/b364f2e04c665b78b924ec10666327a4ef4635bc.png) 表示对数字 x 和 y 进行按位异或运算。所有现代编程语言都支持给定的操作，例如，在 C++ 和 Java 中记作“^”，在 Pascal 中记作“xor”。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "操作 2：对于每个 ![](https://espresso.codeforces.com/71d27c8a997496ba958994239acaa8e1e4573b36.png)，将 ai 改为 api + r。执行此操作时，所有更改会同时进行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "执行完全部 u 次操作后，玩家获得的分数由公式 ![](https://espresso.codeforces.com/12fe8e063991fbe8d88a736a98a7c37de4febecf.png) 确定。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "约翰想知道玩家在他的游戏中最多可以赢得多少分。请帮助他。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含以空格分隔的整数 n、u 和 r（1 ≤ n, u ≤ 30，0 ≤ r ≤ 100）——每个数组中的元素数量、操作次数以及描述某个操作的数字。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的四行中，每行包含 n 个以空格分隔的整数，分别表示数组 a、b、k、p。第一行是数组 a，第二行是数组 b，第三行是数组 k，第四行是数组 p。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证数组 a 和 b 中的元素均为正数且不超过 10^4（1 ≤ ai, bi ≤ 10^4），数组 k 中元素的绝对值不超过 10^4（|k| ≤ 10^4），并且 p 是 1 到 n 的一个排列。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在一行中输出整数 s——玩家在约翰的游戏中最多可以赢得的分数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请不要在 C++ 中使用 %lld 格式说明符来读写 64 位整数。建议使用 cin、cout 流，或使用 %I64d 格式说明符。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，你应该先执行第一类操作，然后执行第二类操作。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 异或",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

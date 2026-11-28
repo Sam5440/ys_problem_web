@@ -1,0 +1,129 @@
+{
+  "code": "CF1045I",
+  "letter": "I",
+  "title": "I. Palindrome Pairs",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1045/I",
+  "difficulty": "1600",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "After learning a lot about space exploration, a little girl named Ana wants to change the subject.",
+      "Ana is a girl who loves palindromes (string that can be read the same backwards as forward). She has learned how to check for a given string whether it's a palindrome or not, but soon she grew tired of this problem, so she came up with a more interesting one and she needs your help to solve it:",
+      "You are given an array of strings which consist of only small letters of the alphabet. Your task is to find how many palindrome pairs are there in the array. A palindrome pair is a pair of strings such that the following condition holds: at least one permutation of the concatenation of the two strings is a palindrome. In other words, if you have two strings, let's say \"aab\" and \"abcac\", and you concatenate them into \"aababcac\", we have to check if there exists a permutation of this new string such that it is a palindrome (in this case there exists the permutation \"aabccbaa\").",
+      "Two pairs are considered different if the strings are located on different indices. The pair of strings with indices (i,j)$$$(i,j)$$$ is considered the same as the pair (j,i)$$$(j,i)$$$."
+    ],
+    "input": [
+      "The first line contains a positive integer N$$$N$$$ (1≤N≤100000$$$1 \\le N \\le 100\\,000$$$), representing the length of the input array.",
+      "Eacg of the next N$$$N$$$ lines contains a string (consisting of lowercase English letters from 'a' to 'z') — an element of the input array.",
+      "The total number of characters in the input array will be less than 1000000$$$1\\,000\\,000$$$."
+    ],
+    "output": [
+      "Output one number, representing how many palindrome pairs there are in the array."
+    ],
+    "note": [
+      "The first example:",
+      "aa +$$$+$$$ bb →$$$\\to$$$ abba.",
+      "The second example:",
+      "aab +$$$+$$$ abcac =$$$=$$$ aababcac →$$$\\to$$$ aabccbaa",
+      "aab +$$$+$$$ aa =$$$=$$$ aabaa",
+      "abcac +$$$+$$$ aa =$$$=$$$ abcacaa →$$$\\to$$$ aacbcaa",
+      "dffe +$$$+$$$ ed =$$$=$$$ dffeed →$$$\\to$$$ fdeedf",
+      "dffe +$$$+$$$ aade =$$$=$$$ dffeaade →$$$\\to$$$ adfaafde",
+      "ed +$$$+$$$ aade =$$$=$$$ edaade →$$$\\to$$$ aeddea"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\naa\nbb\ncd",
+      "output": "1"
+    },
+    {
+      "input": "6\naab\nabcac\ndffe\ned\naa\naade",
+      "output": "6"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "在学到了许多关于太空探索的知识后，一个名叫 Ana 的小女孩想要换个话题。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Ana 是一个喜欢回文的女孩（回文是指正着读和倒着读都相同的字符串）。她已经学会了如何判断给定字符串是否为回文，但她很快就厌倦了这个问题，于是她想出了一个更有趣的问题，需要你的帮助来解决：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个仅由小写字母组成的字符串数组。你的任务是求数组中有多少对回文对。一对回文对是指满足以下条件的一对字符串：两个字符串拼接后，至少存在一种排列方式使其成为回文。换句话说，假设有两个字符串 \"aab\" 和 \"abcac\"，将它们拼接成 \"aababcac\" 后，我们需要判断这个新字符串是否存在一种排列方式使其成为回文（在这个例子中，排列 \"aabccbaa\" 满足条件）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果字符串位于不同的下标，则认为两对字符串不同。下标为 (i,j)$$$(i,j)$$$ 的字符串对与下标为 (j,i)$$$(j,i)$$$ 的字符串对被视为同一对。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个正整数 N$$$N$$$(1≤N≤100000$$$1 \\le N \\le 100\\,000$$$)，表示输入数组的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 N$$$N$$$ 行中的每一行包含一个字符串(由从 'a' 到 'z' 的小写英文字母组成)——输入数组中的一个元素。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入数组中所有字符串的字符总数小于 1000000$$$1\\,000\\,000$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个数字，表示数组中有多少个回文对。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "第一个样例：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "aa +$$$+$$$ bb →$$$\\to$$$ abba。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二个例子：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "aab +$$$+$$$ abcac =$$$=$$$ aababcac →$$$\\to$$$ aabccbaa",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "aab +$$$+$$$ aa =$$$=$$$ aabaa",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "abcac +$$$+$$$ aa =$$$=$$$ abcacaa →$$$\\to$$$ aacbcaa",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "dffe +$$$+$$$ ed =$$$=$$$ dffeed →$$$\\to$$$ fdeedf",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "dffe +$$$+$$$ aade =$$$=$$$ dffeaade →$$$\\to$$$ adfaafde",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "ed +$$$+$$$ aade =$$$=$$$ edaade →$$$\\to$$$ aeddea",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "I. 回文对",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

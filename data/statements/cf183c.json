@@ -1,0 +1,152 @@
+{
+  "code": "CF183C",
+  "letter": "C",
+  "title": "C. Cyclic Coloring",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/183/C",
+  "difficulty": "2200",
+  "timeLimit": "4 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a directed graph G with n vertices and m arcs (multiple arcs and self-loops are allowed). You have to paint each vertex of the graph into one of the k (k ≤ n) colors in such way that for all arcs of the graph leading from a vertex u to vertex v, vertex v is painted with the next color of the color used to paint vertex u.",
+      "The colors are numbered cyclically 1 through k. This means that for each color i (i < k) its next color is color i + 1. In addition, the next color of color k is color 1. Note, that if k = 1, then the next color for color 1 is again color 1.",
+      "Your task is to find and print the largest possible value of k (k ≤ n) such that it's possible to color G as described above with k colors. Note that you don't necessarily use all the k colors (that is, for each color i there does not necessarily exist a vertex that is colored with color i)."
+    ],
+    "input": [
+      "The first line contains two space-separated integers n and m (1 ≤ n, m ≤ 105), denoting the number of vertices and the number of arcs of the given digraph, respectively.",
+      "Then m lines follow, each line will contain two space-separated integers ai and bi (1 ≤ ai, bi ≤ n), which means that the i-th arc goes from vertex ai to vertex bi.",
+      "Multiple arcs and self-loops are allowed."
+    ],
+    "output": [
+      "Print a single integer — the maximum possible number of the colors that can be used to paint the digraph (i.e. k, as described in the problem statement). Note that the desired value of k must satisfy the inequality 1 ≤ k ≤ n."
+    ],
+    "note": [
+      "For the first example, with k = 2, this picture depicts the two colors (arrows denote the next color of that color).",
+      "![](https://espresso.codeforces.com/2204e45c7cdec8b9e033b64d3b071f1ea46540ed.png)",
+      "With k = 2 a possible way to paint the graph is as follows.",
+      "![](https://espresso.codeforces.com/f74a23cd10bab711fc8eb9a300afa06eb043c011.png)",
+      "It can be proven that no larger value for k exists for this test case.",
+      "For the second example, here's the picture of the k = 5 colors.",
+      "![](https://espresso.codeforces.com/37e73da0648a2e8e00fa84aadd0d190bc5624255.png)",
+      "A possible coloring of the graph is:",
+      "![](https://espresso.codeforces.com/5fa6c53d384b7deb5b0ce1a7cafdcca7a831c73f.png)",
+      "For the third example, here's the picture of the k = 3 colors.",
+      "![](https://espresso.codeforces.com/ac17cdf134f23d1072185b46149650087a26d4c7.png)",
+      "A possible coloring of the graph is:",
+      "![](https://espresso.codeforces.com/493930fd8877c4ded4011b055b0051a7283cc817.png)"
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 4\n1 2\n2 1\n3 4\n4 3",
+      "output": "2"
+    },
+    {
+      "input": "5 2\n1 4\n2 5",
+      "output": "5"
+    },
+    {
+      "input": "4 5\n1 2\n2 3\n3 1\n2 4\n4 1",
+      "output": "3"
+    },
+    {
+      "input": "4 4\n1 1\n1 2\n2 1\n1 2",
+      "output": "1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个含有 n 个顶点和 m 条有向边的有向图 G（允许重边和自环）。你需要将图中每个顶点染成 k（k ≤ n）种颜色之一，使得对于图中所有从顶点 u 指向顶点 v 的有向边，顶点 v 都被染成顶点 u 所用颜色的下一种颜色。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "颜色按循环方式编号为 1 到 k。也就是说，对每个颜色 i（i < k），它的下一种颜色是颜色 i + 1。此外，颜色 k 的下一种颜色是颜色 1。注意，如果 k = 1，那么颜色 1 的下一种颜色仍然是颜色 1。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "你的任务是找出并输出最大的可能值 k（k ≤ n），使得可以用 k 种颜色按上述方式给 G 染色。注意你并不一定用到全部 k 种颜色（也就是说，对于每种颜色 i，并不一定存在一个顶点被染成颜色 i）。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个空格分隔的整数 n 和 m（1 ≤ n, m ≤ 105），分别表示给定有向图的顶点数和有向边数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来有 m 行，每行包含两个以空格分隔的整数 ai 和 bi（1 ≤ ai, bi ≤ n），表示第 i 条弧从顶点 ai 指向顶点 bi。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "允许存在重边和自环。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "对于第一个样例，当 k = 2 时，这张图展示了这两种颜色（箭头表示该颜色的下一种颜色）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/2204e45c7cdec8b9e033b64d3b071f1ea46540ed.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "当 k = 2 时，一种给图着色的方案如下。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/f74a23cd10bab711fc8eb9a300afa06eb043c011.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "可以证明，对于这个测试用例，不存在更大的 k 值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第二个样例，这是 k = 5 种颜色的示意图。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/37e73da0648a2e8e00fa84aadd0d190bc5624255.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "图的一种可行染色如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/5fa6c53d384b7deb5b0ce1a7cafdcca7a831c73f.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于第三个样例，这里是 k = 3 种颜色的图片。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/ac17cdf134f23d1072185b46149650087a26d4c7.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "图的一种可能染色如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/493930fd8877c4ded4011b055b0051a7283cc817.png)",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——给有向图着色时可能使用的颜色数的最大值（即题面中所描述的 k）。注意，所求的 k 必须满足不等式 1 ≤ k ≤ n。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 循环染色",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

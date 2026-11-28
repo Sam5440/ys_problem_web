@@ -1,0 +1,103 @@
+{
+  "code": "CF724D",
+  "letter": "D",
+  "title": "D. Dense Subsequence",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/724/D",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are given a string s, consisting of lowercase English letters, and the integer m.",
+      "One should choose some symbols from the given string so that any contiguous subsegment of length m has at least one selected symbol. Note that here we choose positions of symbols, not the symbols themselves.",
+      "Then one uses the chosen symbols to form a new string. All symbols from the chosen position should be used, but we are allowed to rearrange them in any order.",
+      "Formally, we choose a subsequence of indices 1 ≤ i1 < i2 < ... < it ≤ |s|. The selected sequence must meet the following condition: for every j such that 1 ≤ j ≤ |s| - m + 1, there must be at least one selected index that belongs to the segment [j,  j + m - 1], i.e. there should exist a k from 1 to t, such that j ≤ ik ≤ j + m - 1.",
+      "Then we take any permutation p of the selected indices and form a new string sip1sip2... sipt.",
+      "Find the lexicographically smallest string, that can be obtained using this procedure."
+    ],
+    "input": [
+      "The first line of the input contains a single integer m (1 ≤ m ≤ 100 000).",
+      "The second line contains the string s consisting of lowercase English letters. It is guaranteed that this string is non-empty and its length doesn't exceed 100 000. It is also guaranteed that the number m doesn't exceed the length of the string s."
+    ],
+    "output": [
+      "Print the single line containing the lexicographically smallest string, that can be obtained using the procedure described above."
+    ],
+    "note": [
+      "In the first sample, one can choose the subsequence {3} and form a string \"a\".",
+      "In the second sample, one can choose the subsequence {1, 2, 4} (symbols on this positions are 'a', 'b' and 'a') and rearrange the chosen symbols to form a string \"aab\"."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\ncbabc",
+      "output": "a"
+    },
+    {
+      "input": "2\nabcab",
+      "output": "aab"
+    },
+    {
+      "input": "3\nbcabcbaccba",
+      "output": "aaabb"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "给定一个由小写英文字母组成的字符串 s，以及整数 m。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "需要从给定字符串中选择一些字符，使得任意一个长度为 m 的连续子段中都至少包含一个被选中的字符。注意，这里选择的是字符的位置，而不是字符本身。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后使用选中的字符组成一个新字符串。选中位置上的所有字符都必须使用，但可以按照任意顺序重新排列。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地说，我们选择一个下标子序列 1 ≤ i1 < i2 < ... < it ≤ |s|。所选序列必须满足以下条件：对于每个满足 1 ≤ j ≤ |s| - m + 1 的 j，在线段 [j,  j + m - 1] 中至少有一个被选中的下标。也就是说，应当存在一个从 1 到 t 的 k，使得 j ≤ ik ≤ j + m - 1。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "然后，我们对选中的下标进行任意排列 p，并构造一个新字符串 sip1sip2... sipt。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "求通过上述过程能够得到的字典序最小的字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 m（1 ≤ m ≤ 100 000）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含一个由小写英文字母组成的字符串 s。保证该字符串非空，且长度不超过 100 000。同时保证 m 不超过字符串 s 的长度。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一行，包含通过上述过程能够得到的字典序最小的字符串。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，可以选择子序列 {3}，并构造出字符串 \"a\"。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，可以选择子序列 {1, 2, 4}（这些位置上的字符分别为 'a'、'b' 和 'a'），并将选出的字符重新排列，构造出字符串 \"aab\"。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 稠密子序列",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

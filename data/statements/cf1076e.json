@@ -1,0 +1,104 @@
+{
+  "code": "CF1076E",
+  "letter": "E",
+  "title": "E. Vasya and a Tree",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1076/E",
+  "difficulty": "1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Vasya has a tree consisting of n$$$n$$$ vertices with root in vertex 1$$$1$$$. At first all vertices has 0$$$0$$$ written on it.",
+      "Let d(i,j)$$$d(i, j)$$$ be the distance between vertices i$$$i$$$ and j$$$j$$$, i.e. number of edges in the shortest path from i$$$i$$$ to j$$$j$$$. Also, let's denote k$$$k$$$-subtree of vertex x$$$x$$$ — set of vertices y$$$y$$$ such that next two conditions are met:",
+      "x$$$x$$$ is the ancestor of y$$$y$$$ (each vertex is the ancestor of itself);",
+      "d(x,y)≤k$$$d(x, y) \\le k$$$.",
+      "Vasya needs you to process m$$$m$$$ queries. The i$$$i$$$-th query is a triple vi$$$v_i$$$, di$$$d_i$$$ and xi$$$x_i$$$. For each query Vasya adds value xi$$$x_i$$$ to each vertex from di$$$d_i$$$-subtree of vi$$$v_i$$$.",
+      "Report to Vasya all values, written on vertices of the tree after processing all queries."
+    ],
+    "input": [
+      "The first line contains single integer n$$$n$$$ (1≤n≤3⋅105$$$1 \\le n \\le 3 \\cdot 10^5$$$) — number of vertices in the tree.",
+      "Each of next n−1$$$n - 1$$$ lines contains two integers x$$$x$$$ and y$$$y$$$ (1≤x,y≤n$$$1 \\le x, y \\le n$$$) — edge between vertices x$$$x$$$ and y$$$y$$$. It is guarantied that given graph is a tree.",
+      "Next line contains single integer m$$$m$$$ (1≤m≤3⋅105$$$1 \\le m \\le 3 \\cdot 10^5$$$) — number of queries.",
+      "Each of next m$$$m$$$ lines contains three integers vi$$$v_i$$$, di$$$d_i$$$, xi$$$x_i$$$ (1≤vi≤n$$$1 \\le v_i \\le n$$$, 0≤di≤109$$$0 \\le d_i \\le 10^9$$$, 1≤xi≤109$$$1 \\le x_i \\le 10^9$$$) — description of the i$$$i$$$-th query."
+    ],
+    "output": [
+      "Print n$$$n$$$ integers. The i$$$i$$$-th integers is the value, written in the i$$$i$$$-th vertex after processing all queries."
+    ],
+    "note": [
+      "In the first exapmle initial values in vertices are 0,0,0,0,0$$$0, 0, 0, 0, 0$$$. After the first query values will be equal to 1,1,1,0,0$$$1, 1, 1, 0, 0$$$. After the second query values will be equal to 1,11,1,0,0$$$1, 11, 1, 0, 0$$$. After the third query values will be equal to 1,11,1,100,0$$$1, 11, 1, 100, 0$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5\n1 2\n1 3\n2 4\n2 5\n3\n1 1 1\n2 0 10\n4 10 100",
+      "output": "1 11 1 100 0"
+    },
+    {
+      "input": "5\n2 3\n2 1\n5 4\n3 4\n5\n2 0 4\n3 10 1\n1 2 3\n2 3 10\n1 1 7",
+      "output": "10 24 14 11 11"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Vasya 有一棵由 n$$$n$$$ 个顶点组成的树，根节点为顶点 1$$$1$$$。起初，所有顶点上都写着 0$$$0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "令 d(i,j)$$$d(i, j)$$$ 表示顶点 i$$$i$$$ 与 j$$$j$$$ 之间的距离，即从 i$$$i$$$ 到 j$$$j$$$ 的最短路径上的边数。同时，将顶点 x$$$x$$$ 的 k$$$k$$$-子树定义为满足以下两个条件的顶点 y$$$y$$$ 的集合：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "x$$$x$$$ 是 y$$$y$$$ 的祖先(每个顶点都是它自身的祖先)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "d(x,y)≤k$$$d(x, y) \\le k$$$.",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Vasya 需要你处理 m$$$m$$$ 次查询。第 i$$$i$$$ 个查询包含三个数 vi$$$v_i$$$、di$$$d_i$$$ 和 xi$$$x_i$$$。对于每次查询，Vasya 都会将值 xi$$$x_i$$$ 加到 vi$$$v_i$$$ 的 di$$$d_i$$$ 子树中的每个顶点上。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "处理完所有查询后，向 Vasya 报告树上各个顶点所写的所有值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 n$$$n$$$(1≤n≤3⋅105$$$1 \\le n \\le 3 \\cdot 10^5$$$)——树中顶点的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 n−1$$$n - 1$$$ 行中的每一行包含两个整数 x$$$x$$$ 和 y$$$y$$$(1≤x,y≤n$$$1 \\le x, y \\le n$$$)——顶点 x$$$x$$$ 和 y$$$y$$$ 之间的一条边。保证给出的图是一棵树。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行包含一个整数 m$$$m$$$(1≤m≤3⋅105$$$1 \\le m \\le 3 \\cdot 10^5$$$)——查询次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m$$$m$$$ 行中，每行包含三个整数 vi$$$v_i$$$、di$$$d_i$$$、xi$$$x_i$$$(1≤vi≤n$$$1 \\le v_i \\le n$$$，0≤di≤109$$$0 \\le d_i \\le 10^9$$$，1≤xi≤109$$$1 \\le x_i \\le 10^9$$$)——第 i$$$i$$$ 次查询的描述。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 n$$$n$$$ 个整数。第 i$$$i$$$ 个整数表示处理完所有查询后，写在第 i$$$i$$$ 个顶点上的值。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，顶点的初始值为 0,0,0,0,0$$$0, 0, 0, 0, 0$$$。执行第一次查询后，各顶点的值将变为 1,1,1,0,0$$$1, 1, 1, 0, 0$$$。执行第二次查询后，各顶点的值将变为 1,11,1,0,0$$$1, 11, 1, 0, 0$$$。执行第三次查询后，各顶点的值将变为 1,11,1,100,0$$$1, 11, 1, 100, 0$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. Vasya 和一棵树",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

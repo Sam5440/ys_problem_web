@@ -1,0 +1,189 @@
+{
+  "code": "GYM104146M",
+  "letter": "M",
+  "title": "M. Mondriamorsolo",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104146/problem/M",
+  "difficulty": "*2100",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/8d6e8a99fc5b559cfc850a448891602ed856c36e.png)",
+      "Bob's Mondrianansala artworks from last year were so popular that his art teacher has tasked him with creating another collection of paintings for this year's STEM Exhibit. Bob, foolishly, accepts.",
+      "Bob's paintings will once again be composed entirely of rectangles, in what he calls the Mondriamorsolo style. This year, Bob wants his paintings to be even more gorgeously geometric, so he recalls the following definitions from math class.",
+      "Recall that two objects are congruent if one can be transformed into the other by some combination of rotations or reflections. Two objects are similar if one can be made congruent to the other by scaling it up or down by the same amount in all directions.",
+      "For example, consider the following image.",
+      "![](https://espresso.codeforces.com/4ae42338ab2ba6526310f49bc94258ba4def40b7.png)",
+      "The $$$4 \\times 6$$$ rectangle would be congruent to any other $$$4 \\times 6$$$ rectangle.",
+      "The $$$4 \\times 6$$$ and $$$6 \\times 4$$$ rectangles are congruent because one is just a rotation of the other.",
+      "The $$$2 \\times 3$$$ rectangle is similar to the $$$4 \\times 6$$$ and $$$6 \\times 4$$$ rectangles, because it can be made congruent to both of them by scaling by a factor of $$$2$$$ in all directions.",
+      "Bob wants all rectangles in his painting to be irreducible, which he defines as follows:",
+      "A rectangle is reducible if it has integer side lengths, and if it can be cut up into some number of non-overlapping rectangles that satisfy the following conditions,   They all also have integer side lengths",
+      "They are all congruent to each other",
+      "They are all similar to the original rectangle",
+      "If not, then the rectangle is irreducible.",
+      "For example, the $$$4 \\times 6$$$ rectangle is reducible, because we can cut it up into four $$$2 \\times 3$$$ rectangles. On the other hand, we can show that the $$$2 \\times 3$$$ rectangle is irreducible.",
+      "Now, the problem. A painting is in the Mondriamorsolo style if it satisfies all of the following criteria.",
+      "It is painted on an $$$n \\times n$$$ canvas.",
+      "The painting is entirely composed of exactly $$$n$$$ rectangles with positive integer dimensions, and all of these rectangles are irreducible",
+      "No two rectangles in the painting are congruent to each other.",
+      "Each rectangle is painted one of $$$26$$$ different colors, and the entire rectangle is painted that color.",
+      "No two rectangles that touch at their edges may have the same color (though rectangles of the same color may touch at corners).",
+      "Here is an example of a $$$7 \\times 7$$$ Mondriamorsolo painting.",
+      "![](https://espresso.codeforces.com/311ebbb2a28816e575d2360bb6f6e2440ce6ecb3.png)",
+      "Given a positive integer $$$n$$$, help Bob by producing any painting of that size in the Mondriamorsolo style, or say that no such painting exists."
+    ],
+    "input": [
+      "Input consists of a single line that contains a single integer $$$n$$$.",
+      "$$\\begin{align*}  &\\begin{array}{|l|} \\hline \\text{Constraints For All Subtasks} \\\\ \\hline 1 \\leq n \\leq 1200 \\\\ \\hline \\end{array}\\\\  &\\begin{array}{|c|c|l|} \\hline \\text{Subtask} & \\text{Points} & \\text{Constraints} \\\\ \\hline 1 & \\mathbf{30} & 1 \\leq n \\leq 8 \\\\ \\hline 2 & \\mathbf{16} & \\text{$n=1$ or $n = 1000$} \\\\ \\hline 3 & \\mathbf{16} & \\text{$n=1$ or $n = 1011$} \\\\ \\hline 4 & \\mathbf{16} & \\text{$n=1$ or $n = 1200$} \\\\ \\hline 5 & \\mathbf{11} & 1 \\leq n \\leq 100 \\\\ \\hline 6 & \\mathbf{11} & \\text{No further constraints.} \\\\ \\hline \\end{array}\\\\  \\end{align*}$$"
+    ],
+    "output": [
+      "If the task is possible, output YES. Otherwise, output NO.",
+      "If YES, also output the painting. We will treat the painting as a pixelmap and represent it as an ASCII grid.",
+      "Output $$$n$$$ lines, each containing a string with $$$n$$$ uppercase English letters, representing the painting. Two pixels are considered the same color if they are represented by the same letter. Contiguous regions of pixels of the same color correspond to the rectangles."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1",
+      "output": "YES\nA"
+    },
+    {
+      "input": "2",
+      "output": "NO"
+    },
+    {
+      "input": "7",
+      "output": "YES\nCAABBBC\nBAABBBC\nBAABBBC\nBAABBBC\nBAABBBC\nBAACCCB\nBAACCCB"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/8d6e8a99fc5b559cfc850a448891602ed856c36e.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bob 去年创作的蒙德里安风格作品大受欢迎，因此他的美术老师委托他为今年的 STEM 展览再创作一系列画作。Bob 不假思索地答应了。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bob 的画作将再次完全由矩形构成，他称这种风格为 Mondriamorsolo 风格。今年，Bob 希望自己的画作更加华丽且富有几何感，因此他回想起数学课上的如下定义。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "请回忆，如果两个物体可以通过旋转或翻折的组合变换相互得到，那么它们是全等的。如果一个物体可以通过在所有方向上按相同倍数放大或缩小，从而与另一个物体全等，那么这两个物体是相似的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，请看下面这张图片。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/4ae42338ab2ba6526310f49bc94258ba4def40b7.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$4 \\times 6$$$ 矩形与任何其他 $$$4 \\times 6$$$ 矩形都全等。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$4 \\times 6$$$ 和 $$$6 \\times 4$$$ 矩形全等，因为其中一个只是另一个旋转得到的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$2 \\times 3$$$ 矩形与 $$$4 \\times 6$$$ 和 $$$6 \\times 4$$$ 矩形相似，因为沿所有方向按 $$$2$$$ 的比例缩放后，它可以分别与这两个矩形全等。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bob 希望他画中的所有矩形都是不可约的，他对不可约的定义如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果一个矩形的边长均为整数，并且可以将其切割成若干个互不重叠的矩形，且这些矩形满足以下条件，则称该矩形是可约的：它们的边长也均为整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "它们彼此都同余。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "它们都与原矩形相似。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果不是，那么这个矩形就是不可约的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，$$$4 \\times 6$$$ 矩形是可约的，因为我们可以将它切分成四个 $$$2 \\times 3$$$ 矩形。另一方面，我们可以证明 $$$2 \\times 3$$$ 矩形是不可约的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "现在，来看这道题。如果一幅画满足以下所有条件，那么它就属于 Mondriamorsolo 风格。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "它被绘制在一块 $$$n \\times n$$$ 画布上。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这幅画完全由恰好 $$$n$$$ 个正整数边长的矩形组成，并且所有这些矩形都不可再分。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "画中的任意两个矩形都不全等。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个矩形都被涂成 $$$26$$$ 种颜色中的一种，且整个矩形都被涂成该颜色。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "任意两个有公共边界线段的矩形都不能具有相同的颜色（但颜色相同的矩形可以仅在顶点处接触）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这是一幅 $$$7 \\times 7$$$ Mondriamorsolo 画作的示例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/311ebbb2a28816e575d2360bb6f6e2440ce6ecb3.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个正整数 $$$n$$$，请帮助 Bob 创作一幅符合 Mondriamorsolo 风格且大小为该数的画作，或者判断这样的画作不存在。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入仅一行，包含一个整数 $$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$\\begin{align*}  &\\begin{array}{|l|} \\hline \\text{Constraints For All Subtasks} \\\\ \\hline 1 \\leq n \\leq 1200 \\\\ \\hline \\end{array}\\\\  &\\begin{array}{|c|c|l|} \\hline \\text{Subtask} & \\text{Points} & \\text{Constraints} \\\\ \\hline 1 & \\mathbf{30} & 1 \\leq n \\leq 8 \\\\ \\hline 2 & \\mathbf{16} & \\text{$n=1$ or $n = 1000$} \\\\ \\hline 3 & \\mathbf{16} & \\text{$n=1$ or $n = 1011$} \\\\ \\hline 4 & \\mathbf{16} & \\text{$n=1$ or $n = 1200$} \\\\ \\hline 5 & \\mathbf{11} & 1 \\leq n \\leq 100 \\\\ \\hline 6 & \\mathbf{11} & \\text{No further constraints.} \\\\ \\hline \\end{array}\\\\  \\end{align*}$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果任务可以完成，输出 YES。否则，输出 NO。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果答案是 YES，还要输出这幅画。我们会将这幅画视为像素图，并用 ASCII 网格表示。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出 $$$n$$$ 行，每行包含一个由 $$$n$$$ 个大写英文字母组成的字符串，表示这幅画。若两个像素由相同的字母表示，则认为它们的颜色相同。同色像素构成的连通区域对应于矩形。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "M. Mondriamorsolo",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

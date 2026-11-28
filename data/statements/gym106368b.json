@@ -1,0 +1,145 @@
+{
+  "code": "GYM106368B",
+  "letter": "B",
+  "title": "B. Grand Renaming",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106368/problem/B",
+  "difficulty": "*1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "On the monorail line, there are $$$n$$$ stations, numbered in order from $$$1$$$ to $$$n$$$.",
+      "Each station $$$i$$$ has a name $$$s_i$$$ — a string of no more than 20 Latin letters. Each letter is written on a separate nameplate.",
+      "As part of the urban infrastructure upgrade project, it was decided to rename all the stations to some new names. The order for renaming has already been signed and will take effect tomorrow. However, there is a problem: no one has had time to replace the names on the nameplates at the stations. Now it is your task.",
+      "Unfortunately, there is no time to make new nameplates. Therefore, the only possible option is to move the nameplates from one station to another.",
+      "Formally, in one operation, you can choose two indices $$$1 \\le i, j \\le n$$$, as well as any letter from the string $$$s_i$$$, and move that letter to any position in the string $$$s_j$$$. This operation takes $$$1 + |i - j|$$$ precious units of time.",
+      "For example, if $$$s_i = \\texttt{ab}$$$ and $$$s_j = \\texttt{cd}$$$, then in one operation of moving a letter from $$$i$$$ to $$$j$$$, you can do:",
+      "$$$s_i = \\texttt{a}$$$; $$$s_j = \\texttt{bcd}$$$ or $$$s_j = \\texttt{cbd}$$$ or $$$s_j = \\texttt{cdb}$$$.",
+      "$$$s_i = \\texttt{b}$$$; $$$s_j = \\texttt{acd}$$$ or $$$s_j = \\texttt{cad}$$$ or $$$s_j = \\texttt{cda}$$$.",
+      "Note that it is also allowed to choose $$$i = j$$$ in the operation.",
+      "You need to replace the nameplates with names at each station as quickly as possible so that they correspond to the new names. Determine whether this is possible, and if so, the minimum necessary amount of time."
+    ],
+    "input": [
+      "The first line of the test contains a single integer $$$n$$$ ($$$1 \\le n \\le 10^5$$$) — the number of stations on the line.",
+      "The second line of the test contains $$$n$$$ strings: $$$s_1, s_2, \\ldots, s_n$$$ ($$$1 \\le |s_i| \\le 20$$$) — the original names of the stations.",
+      "The third line of the test contains $$$n$$$ strings: $$$t_1, t_2, \\ldots, t_n$$$ ($$$1 \\le |t_i| \\le 20$$$) — the desired new names of the stations.",
+      "It is guaranteed that all strings in the test consist of lowercase Latin letters, characters from 'a' to 'z'."
+    ],
+    "output": [
+      "If there is no way to rename all the stations, output $$$-1$$$ in a single line. Otherwise, output a single number: the minimum possible total time required for the renaming operations.",
+      "GroupPointsAdditional constraints Required   groups114$$$n = 1$$$–217$$$\\operatorname{sorted}(s_i) = \\operatorname{sorted}(t_i) $$$–325$$$s_i$$$ and $$$t_i$$$ have no common letters–413$$$n \\leq 1000; |s_i|, |t_i| \\leq 10$$$–511$$$|s_i| = 1$$$, $$$|t_i| = 1$$$–611All strings consist of the letter a–79–1–6",
+      "Here, $$$\\operatorname{sorted}(s_i)$$$ denotes the string $$$s_i$$$ sorted in alphabetical order. For example, $$$\\operatorname{sorted}(\\texttt{abacaba}) = \\texttt{aaaabbc}$$$"
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\nno iislop nepon\ninno polis open",
+      "output": "10"
+    },
+    {
+      "input": "3\neleven plus two\ntwelve plus one",
+      "output": "12"
+    },
+    {
+      "input": "1\nevil\nlive",
+      "output": "3"
+    },
+    {
+      "input": "2\na b\nba ab",
+      "output": "-1"
+    },
+    {
+      "input": "2\nindian cat\ninit canada",
+      "output": "-1"
+    },
+    {
+      "input": "4\naaaa aaa aa a\na aa aaa aaaa",
+      "output": "14"
+    },
+    {
+      "input": "7\ns e a s i d e\nd i s e a s e",
+      "output": "22"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "单轨铁路线路上有 $$$n$$$ 个车站，按照顺序编号为 $$$1$$$ 至 $$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每个车站 $$$i$$$ 都有一个名称 $$$s_i$$$，它是一个长度不超过 20 的拉丁字母字符串。每个字母分别写在一个独立的名牌上。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "作为城市基础设施升级项目的一部分，决定将所有车站更名为一些新名称。更名命令已经签署，并将于明天生效。然而有一个问题：还没有人有时间更换车站站牌上的名称。现在这项任务交给你了。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "遗憾的是，已经没有时间制作新的站名牌了。因此，唯一可行的办法是将站名牌从一个车站移到另一个车站。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "形式化地说，在一次操作中，你可以选择两个下标 $$$1 \\le i, j \\le n$$$，以及字符串 $$$s_i$$$ 中的任意一个字符，并将该字符移动到字符串 $$$s_j$$$ 中的任意位置。该操作需要耗费 $$$1 + |i - j|$$$ 个宝贵的时间单位。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，如果有 $$$s_i = \\texttt{ab}$$$ 和 $$$s_j = \\texttt{cd}$$$，那么在一次将一个字母从 $$$i$$$ 移动到 $$$j$$$ 的操作中，你可以进行如下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$s_i = \\texttt{a}$$$；$$$s_j = \\texttt{bcd}$$$ 或 $$$s_j = \\texttt{cbd}$$$ 或 $$$s_j = \\texttt{cdb}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "$$$s_i = \\texttt{b}$$$；$$$s_j = \\texttt{acd}$$$ 或 $$$s_j = \\texttt{cad}$$$ 或 $$$s_j = \\texttt{cda}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，在操作中也允许选择 $$$i = j$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要尽快将每个车站的站牌替换为对应的新名称。请判断这是否可能；若可能，求所需的最短时间。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "测试的第一行包含一个整数 $$$n$$$($$$1 \\le n \\le 10^5$$$)，表示线路上的站点数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试数据的第二行包含 $$$n$$$ 个字符串：$$$s_1, s_2, \\ldots, s_n$$$($$$1 \\le |s_i| \\le 20$$$)——车站的原始名称。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "测试的第三行包含 $$$n$$$ 个字符串：$$$t_1, t_2, \\ldots, t_n$$$($$$1 \\le |t_i| \\le 20$$$)——车站期望的新名称。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证所有测试中的字符串均只由小写拉丁字母，即字符 'a' 到 'z' 组成。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果无法重命名所有车站，请在单独一行输出 $$$-1$$$。否则，输出一个整数：完成所有重命名操作所需的最小总时间。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "组别  \n分数  \n额外限制  \n必需组别  \n114$$$n = 1$$$–217$$$\\operatorname{sorted}(s_i) = \\operatorname{sorted}(t_i) $$$–325$$$s_i$$$，且 $$$t_i$$$ 没有公共字母–413$$$n \\leq 1000; |s_i|, |t_i| \\leq 10$$$–511$$$|s_i| = 1$$$，$$$|t_i| = 1$$$–611  \n所有字符串均由字母 a 构成–79–1–6",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这里，$$$\\operatorname{sorted}(s_i)$$$ 表示将字符串 $$$s_i$$$ 按字典序排序后得到的字符串。例如，$$$\\operatorname{sorted}(\\texttt{abacaba}) = \\texttt{aaaabbc}$$$",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 盛大重命名",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

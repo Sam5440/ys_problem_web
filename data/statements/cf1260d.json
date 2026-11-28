@@ -1,0 +1,145 @@
+{
+  "code": "CF1260D",
+  "letter": "D",
+  "title": "D. A Game with Traps",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1260/D",
+  "difficulty": "1900",
+  "timeLimit": "3 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "You are playing a computer game, where you lead a party of m$$$m$$$ soldiers. Each soldier is characterised by his agility ai$$$a_i$$$.",
+      "The level you are trying to get through can be represented as a straight line segment from point 0$$$0$$$ (where you and your squad is initially located) to point n+1$$$n + 1$$$ (where the boss is located).",
+      "The level is filled with k$$$k$$$ traps. Each trap is represented by three numbers li$$$l_i$$$, ri$$$r_i$$$ and di$$$d_i$$$. li$$$l_i$$$ is the location of the trap, and di$$$d_i$$$ is the danger level of the trap: whenever a soldier with agility lower than di$$$d_i$$$ steps on a trap (that is, moves to the point li$$$l_i$$$), he gets instantly killed. Fortunately, you can disarm traps: if you move to the point ri$$$r_i$$$, you disarm this trap, and it no longer poses any danger to your soldiers. Traps don't affect you, only your soldiers.",
+      "You have t$$$t$$$ seconds to complete the level — that is, to bring some soldiers from your squad to the boss. Before the level starts, you choose which soldiers will be coming with you, and which soldiers won't be. After that, you have to bring all of the chosen soldiers to the boss. To do so, you may perform the following actions:",
+      "if your location is x$$$x$$$, you may move to x+1$$$x + 1$$$ or x−1$$$x - 1$$$. This action consumes one second;",
+      "if your location is x$$$x$$$ and the location of your squad is x$$$x$$$, you may move to x+1$$$x + 1$$$ or to x−1$$$x - 1$$$ with your squad in one second. You may not perform this action if it puts some soldier in danger (i. e. the point your squad is moving into contains a non-disarmed trap with di$$$d_i$$$ greater than agility of some soldier from the squad). This action consumes one second;",
+      "if your location is x$$$x$$$ and there is a trap i$$$i$$$ with ri=x$$$r_i = x$$$, you may disarm this trap. This action is done instantly (it consumes no time).",
+      "Note that after each action both your coordinate and the coordinate of your squad should be integers.",
+      "You have to choose the maximum number of soldiers such that they all can be brought from the point 0$$$0$$$ to the point n+1$$$n + 1$$$ (where the boss waits) in no more than t$$$t$$$ seconds."
+    ],
+    "input": [
+      "The first line contains four integers m$$$m$$$, n$$$n$$$, k$$$k$$$ and t$$$t$$$ (1≤m,n,k,t≤2⋅105$$$1 \\le m, n, k, t \\le 2 \\cdot 10^5$$$, n<t$$$n  \\lt  t$$$) — the number of soldiers, the number of integer points between the squad and the boss, the number of traps and the maximum number of seconds you may spend to bring the squad to the boss, respectively.",
+      "The second line contains m$$$m$$$ integers a1$$$a_1$$$, a2$$$a_2$$$, ..., am$$$a_m$$$ (1≤ai≤2⋅105$$$1 \\le a_i \\le 2 \\cdot 10^5$$$), where ai$$$a_i$$$ is the agility of the i$$$i$$$-th soldier.",
+      "Then k$$$k$$$ lines follow, containing the descriptions of traps. Each line contains three numbers li$$$l_i$$$, ri$$$r_i$$$ and di$$$d_i$$$ (1≤li≤ri≤n$$$1 \\le l_i \\le r_i \\le n$$$, 1≤di≤2⋅105$$$1 \\le d_i \\le 2 \\cdot 10^5$$$) — the location of the trap, the location where the trap can be disarmed, and its danger level, respectively."
+    ],
+    "output": [
+      "Print one integer — the maximum number of soldiers you may choose so that you may bring them all to the boss in no more than t$$$t$$$ seconds."
+    ],
+    "note": [
+      "In the first example you may take soldiers with agility 3$$$3$$$, 4$$$4$$$ and 5$$$5$$$ with you. The course of action is as follows:",
+      "go to 2$$$2$$$ without your squad;",
+      "disarm the trap 2$$$2$$$;",
+      "go to 3$$$3$$$ without your squad;",
+      "disartm the trap 3$$$3$$$;",
+      "go to 0$$$0$$$ without your squad;",
+      "go to 7$$$7$$$ with your squad.",
+      "The whole plan can be executed in 13$$$13$$$ seconds."
+    ]
+  },
+  "examples": [
+    {
+      "input": "5 6 4 14\n1 2 3 4 5\n1 5 2\n1 2 5\n2 3 5\n3 5 3",
+      "output": "3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "你正在玩一个电脑游戏，在游戏中你带领着一支由 m$$$m$$$ 名士兵组成的队伍。每名士兵都有一个敏捷度 ai$$$a_i$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你试图通过的关卡可以表示为从点 0$$$0$$$(你和你的小队最初所在的位置)到点 n+1$$$n + 1$$$(首领所在的位置)的一条线段。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "关卡中布置了 k$$$k$$$ 个陷阱。每个陷阱由三个数 li$$$l_i$$$、ri$$$r_i$$$ 和 di$$$d_i$$$ 表示。li$$$l_i$$$ 是陷阱的位置，而 di$$$d_i$$$ 是陷阱的危险等级：每当一名敏捷度低于 di$$$d_i$$$ 的士兵踩到陷阱(即移动到点 li$$$l_i$$$)时，他会立即死亡。幸运的是，你可以拆除陷阱：当你移动到点 ri$$$r_i$$$ 时，就会拆除这个陷阱，它不再对你的士兵构成任何危险。陷阱不会影响你，只会影响你的士兵。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你有 t$$$t$$$ 秒完成关卡——也就是说，将一些士兵从队伍带到首领处。关卡开始前，你要选择哪些士兵与你同行，哪些士兵不同行。之后，你必须把所有选中的士兵带到首领处。为此，你可以执行以下操作：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你所在的位置是 x$$$x$$$，你可以移动到 x+1$$$x + 1$$$ 或 x−1$$$x - 1$$$。该操作消耗一秒；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你的位置是 x$$$x$$$，你的小队的位置是 x$$$x$$$，那么你可以在一秒内与小队一起移动到 x+1$$$x + 1$$$ 或 x−1$$$x - 1$$$。如果此操作会使某名士兵陷入危险，则不能执行此操作(也就是说，你的小队将要移动到的点上存在一个尚未解除的陷阱，且其 di$$$d_i$$$ 大于小队中某名士兵的敏捷度)。此操作耗时一秒；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你的位置是 x$$$x$$$，且位置 x$$$r_i = x$$$ 上有一个陷阱 i$$$i$$$，那么你可以解除这个陷阱。此操作会立即完成(不耗费时间)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，每次操作后，你的坐标和小队的坐标都必须是整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你需要选择尽可能多的士兵，使他们都能在不超过 t$$$t$$$ 秒的时间内从位置 0$$$0$$$ 被带到位置 n+1$$$n + 1$$$(首领所在的位置)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含四个整数 m$$$m$$$、n$$$n$$$、k$$$k$$$ 和 t$$$t$$$(1≤m,n,k,t≤2⋅105$$$1 \\le m, n, k, t \\le 2 \\cdot 10^5$$$，n<t$$$n  \\lt  t$$$)，分别表示士兵数量、小队与首领之间的整数点数量、陷阱数量，以及将小队带到首领处最多可花费的秒数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第二行包含 m$$$m$$$ 个整数 a1$$$a_1$$$、a2$$$a_2$$$、...、am$$$a_m$$$(1≤ai≤2⋅105$$$1 \\le a_i \\le 2 \\cdot 10^5$$$)，其中 ai$$$a_i$$$ 表示第 i$$$i$$$ 名士兵的敏捷度。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来是 k$$$k$$$ 行陷阱描述。每行包含三个数 li$$$l_i$$$、ri$$$r_i$$$ 和 di$$$d_i$$$(1≤li≤ri≤n$$$1 \\le l_i \\le r_i \\le n$$$，1≤di≤2⋅105$$$1 \\le d_i \\le 2 \\cdot 10^5$$$)——分别表示陷阱的位置、可以解除该陷阱的位置以及其危险等级。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——你最多可以选择多少名士兵，使得可以在不超过 t$$$t$$$ 秒内将他们全部带到首领处。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，你可以带上敏捷度为 3$$$3$$$、4$$$4$$$ 和 5$$$5$$$ 的士兵。行动过程如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "不带小队前往 2$$$2$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "解除陷阱 2$$$2$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "不带小队前往 3$$$3$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "拆除陷阱 3$$$3$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "不带你的小队前往 0$$$0$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "与你的小队一起前往 7$$$7$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "整个计划可以在 13$$$13$$$ 秒内执行完毕。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 带陷阱的游戏",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

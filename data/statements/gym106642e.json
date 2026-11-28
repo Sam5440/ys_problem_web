@@ -1,0 +1,118 @@
+{
+  "code": "GYM106642E",
+  "letter": "E",
+  "title": "E. Neighbor Reports",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106642/problem/E",
+  "difficulty": "*1300",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Trida placed $$$n$$$ cards in a circle. The cards contain every integer from $$$1$$$ to $$$n$$$ exactly once, but their order is hidden.",
+      "For each position $$$i$$$, the judging team reports how many of the two neighboring cards contain a value smaller than the card at position $$$i$$$. Positions $$$1$$$ and $$$n$$$ are neighbors.",
+      "Given all reports, determine whether at least one circular ordering of the cards could produce them."
+    ],
+    "input": [
+      "The first line contains one integer $$$n$$$ ($$$3 \\le n \\le 2 \\times 10^5$$$).",
+      "The second line contains $$$n$$$ integers $$$r_1, r_2, \\ldots, r_n$$$ ($$$0 \\le r_i \\le 2$$$), where $$$r_i$$$ is the report for position $$$i$$$."
+    ],
+    "output": [
+      "Print YES if the reports can be produced by a permutation of $$$1,2,\\ldots,n$$$ around the circle. Otherwise, print NO."
+    ],
+    "note": [
+      "In the first example, the circular values $$$1,2,3$$$ produce reports $$$0,1,2$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n0 1 2",
+      "output": "YES"
+    },
+    {
+      "input": "3\n1 1 1",
+      "output": "NO"
+    }
+  ],
+  "titleZh": {
+    "0": "E.邻居报告",
+    "caiyun": "E. 邻居报告",
+    "youdao": "E.邻居报告",
+    "deepl": "E.邻居报告",
+    "iflyrec": "E.邻居报告",
+    "ai": "E. 邻居报告",
+    "aiModel": "GPT 5.6 Terra"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "Trida 将 $$$n$$$ 卡片排成一个圆圈。这些卡片恰好包含从 $$$1$$$ 到 $$$n$$$ 的每个整数一次，但它们的顺序是隐藏的。",
+        "deepl": "特里达把$$$n$$$张牌放在一个圆圈里。这些牌包含了从 $$$1$$$ 到 $$$n$$$ 的每一个整数，但它们的顺序是隐藏的。",
+        "iflyrec": "特里达将$$$n$$$张牌放在一个圆圈里。卡片包含从$$$1$$$到$$$n$$$的每个整数，且只有一次，但它们的顺序是隐藏的。",
+        "ai": "Trida 将 $$$n$$$ 张卡片围成一圈。卡片上包含从 $$$1$$$ 到 $$$n$$$ 的每个整数，且每个整数恰好出现一次，但它们的顺序是未知的。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "对于每个位置 $$$i$$$，评判团队报告两张相邻卡片中有多少张包含的值小于位置 $$$i$$$ 中的卡片。位置 $$$1$$$ 和 $$$n$$$ 是相邻的。",
+        "youdao": "对于每个位置$$$i$$$，裁判小组报告相邻的两张牌中有多少张的值小于位置$$$i$$$。位置$$$1$$$和$$$n$$$相邻。",
+        "deepl": "对于每个位置$$$i$$$，评审组报告相邻两张牌中有多少张的数值小于位置$$$i$$$的牌。位置$$$1$$$和$$$n$$$是相邻的。",
+        "iflyrec": "对于每个位置$$$i$$$，评判组报告相邻两张牌中有多少张牌的值小于位置$$$i$$$处的牌。位置$$$1$$$和$$$n$$$是相邻的。",
+        "ai": "对于每个位置 $$$i$$$，判题组报告两个相邻卡片中有多少张卡片的数值小于位置 $$$i$$$ 处卡片的数值。位置 $$$1$$$ 和 $$$n$$$ 互为相邻位置。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "给定所有报告，确定卡片的至少一次循环排序是否能产生这些报告。",
+        "youdao": "给定所有报告，确定卡片的至少一个循环顺序是否可以产生它们。",
+        "deepl": "给定所有报告，确定是否至少有一种循环排序的卡片可以生成这些报告。",
+        "ai": "给定所有报告，判断是否至少存在一种卡片的环形排列能够产生这些报告。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数 $$$n$$$($$$3 \\le n \\le 2 \\times 10^5$$$)。",
+        "youdao": "第一行包含一个整数$$$n$$$ ($$$3 \\le n \\le 2 \\times 10^5$$$）。",
+        "deepl": "第一行包含一个整数 $$$n$$$ ($$$3 \\le n \\le 2 \\times 10^5$$$）。",
+        "iflyrec": "第一行包含一个整数$$$n$$$($$$3 \\le n \\le 2 \\times 10^5$$$）。",
+        "ai": "第一行包含一个整数 $$$n$$$($$$3 \\le n \\le 2 \\times 10^5$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "caiyun": "第二行包含 $$$n$$$ 整数 $$$r_1, r_2, \\ldots, r_n$$$($$$0 \\le r_i \\le 2$$$)，其中 $$$r_i$$$ 是位置 $$$i$$$ 的报告。",
+        "youdao": "第二行包含$$$n$$$个整数$$$r_1, r_2, \\ldots, r_n$$$ ($$$0 \\le r_i \\le 2$$$)，其中$$$r_i$$$是位置$$$i$$$的报告。",
+        "deepl": "第二行包含 $$$n$$$ 整数 $$$r_1, r_2, \\ldots, r_n$$$ ($$$0 \\le r_i \\le 2$$$），其中 $$$r_i$$$ 是位置 $$$i$$$ 的报告。",
+        "iflyrec": "第二行包含$$$n$$$整数$$$r_1, r_2, \\ldots, r_n$$$($$$0 \\le r_i \\le 2$$$），其中$$$r_i$$$是位置$$$i$$$的报告。",
+        "ai": "第二行包含 $$$n$$$ 个整数 $$$r_1, r_2, \\ldots, r_n$$$($$$0 \\le r_i \\le 2$$$)，其中 $$$r_i$$$ 是位置 $$$i$$$ 的报告。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "如果报告可以通过在圆周上排列 $$$1,2,\\ldots,n$$$ 来产生，请输入 YES。否则，请输入 NO。",
+        "youdao": "如果报告可以通过圆圈周围的$$$1,2,\\ldots,n$$$排列产生，则打印YES。否则，打印NO。",
+        "deepl": "如果报告可以通过 $$$1,2,\\ldots,n$$$ 在圆周上的排列产生，则打印 \"是\"。否则打印 \"否\"。",
+        "iflyrec": "如果报告可以通过圆周围的$$$1,2,\\ldots,n$$$排列生成，则打印“是”。否则，打印编号。",
+        "ai": "如果这些报告可以由 $$$1,2,\\ldots,n$$$ 在圆环上的某个排列产生，则输出 YES；否则输出 NO。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "caiyun": "在第一个例子中，循环值 $$$1,2,3$$$ 产生报告 $$$0,1,2$$$。",
+        "youdao": "在第一个示例中，循环值$$$1,2,3$$$生成报告$$$0,1,2$$$。",
+        "deepl": "在第一个例子中，循环值$$$1,2,3$$$产生报告$$$0,1,2$$$。",
+        "iflyrec": "在第一个示例中，循环值$$$1,2,3$$$生成报告$$$0,1,2$$$。",
+        "ai": "在第一个样例中，环上的数值 $$$1,2,3$$$ 产生了报告 $$$0,1,2$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T05:27:59.767Z",
+  "translatedBy": [
+    "deepl",
+    "youdao",
+    "caiyun",
+    "iflyrec"
+  ],
+  "_backfillNulls": true
+}

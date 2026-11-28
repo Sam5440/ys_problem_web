@@ -1,0 +1,79 @@
+{
+  "code": "CF457B",
+  "letter": "B",
+  "title": "B. Distributed Join",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/457/B",
+  "difficulty": "1900",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Piegirl was asked to implement two table join operation for distributed database system, minimizing the network traffic.",
+      "Suppose she wants to join two tables, A and B. Each of them has certain number of rows which are distributed on different number of partitions. Table A is distributed on the first cluster consisting of m partitions. Partition with index i has ai rows from A. Similarly, second cluster containing table B has n partitions, i-th one having bi rows from B.",
+      "In one network operation she can copy one row from any partition to any other partition. At the end, for each row from A and each row from B there should be a partition that has both rows. Determine the minimal number of network operations to achieve this."
+    ],
+    "input": [
+      "First line contains two integer numbers, m and n (1 ≤ m, n ≤ 105). Second line contains description of the first cluster with m space separated integers, ai (1 ≤ ai ≤ 109). Similarly, third line describes second cluster with n space separated integers, bi (1 ≤ bi ≤ 109)."
+    ],
+    "output": [
+      "Print one integer — minimal number of copy operations."
+    ],
+    "note": [
+      "In the first example it makes sense to move all the rows to the second partition of the second cluster which is achieved in 2 + 6 + 3 = 11 operations",
+      "In the second example Piegirl can copy each row from B to the both partitions of the first cluster which needs 2·3 = 6 copy operations."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 2\n2 6\n3 100",
+      "output": "11"
+    },
+    {
+      "input": "2 3\n10 10\n1 1 1",
+      "output": "6"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Piegirl 被要求为分布式数据库系统实现两个表的连接操作，同时尽量减少网络流量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "假设她想连接两个表 A 和 B。每个表都有一定数量的行，这些行分布在数量不同的分区上。表 A 分布在由 m 个分区组成的第一个集群上。编号为 i 的分区中有 A 的 ai 行。类似地，包含表 B 的第二个集群有 n 个分区，其中第 i 个分区有 bi 行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在一次网络操作中，她可以将任意一个分区中的一行复制到任意其他分区中。最后，对于 A 中的每一行和 B 中的每一行，都应存在一个同时包含这两行的分区。求达到这一目标所需的最少网络操作次数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 m 和 n（1 ≤ m，n ≤ 10^5）。第二行包含第一个集群的描述，其中有 m 个以空格分隔的整数 a_i（1 ≤ a_i ≤ 10^9）。类似地，第三行描述第二个集群，其中有 n 个以空格分隔的整数 b_i（1 ≤ b_i ≤ 10^9）。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出一个整数——最少复制操作次数。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，将所有行移动到第二个集群的第二个分区是合理的，这需要 2 + 6 + 3 = 11 次操作。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，Piegirl 可以将 B 中的每一行复制到第一个集群的两个分区中，这需要 2·3 = 6 次复制操作。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 分布式连接",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

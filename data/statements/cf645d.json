@@ -1,0 +1,84 @@
+{
+  "code": "CF645D",
+  "letter": "D",
+  "title": "D. Robot Rapping Results Report",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/645/D",
+  "difficulty": "1800",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "While Farmer John rebuilds his farm in an unfamiliar portion of Bovinia, Bessie is out trying some alternative jobs. In her new gig as a reporter, Bessie needs to know about programming competition results as quickly as possible. When she covers the 2016 Robot Rap Battle Tournament, she notices that all of the robots operate under deterministic algorithms. In particular, robot i will beat robot j if and only if robot i has a higher skill level than robot j. And if robot i beats robot j and robot j beats robot k, then robot i will beat robot k. Since rapping is such a subtle art, two robots can never have the same skill level.",
+      "Given the results of the rap battles in the order in which they were played, determine the minimum number of first rap battles that needed to take place before Bessie could order all of the robots by skill level."
+    ],
+    "input": [
+      "The first line of the input consists of two integers, the number of robots n (2 ≤ n ≤ 100 000) and the number of rap battles m (![](https://espresso.codeforces.com/920ad298b2209acc704ee0aaee0c15082f0e63da.png)).",
+      "The next m lines describe the results of the rap battles in the order they took place. Each consists of two integers ui and vi (1 ≤ ui, vi ≤ n, ui ≠ vi), indicating that robot ui beat robot vi in the i-th rap battle. No two rap battles involve the same pair of robots.",
+      "It is guaranteed that at least one ordering of the robots satisfies all m relations."
+    ],
+    "output": [
+      "Print the minimum k such that the ordering of the robots by skill level is uniquely defined by the first k rap battles. If there exists more than one ordering that satisfies all m relations, output -1."
+    ],
+    "note": [
+      "In the first sample, the robots from strongest to weakest must be (4, 2, 1, 3), which Bessie can deduce after knowing the results of the first four rap battles.",
+      "In the second sample, both (1, 3, 2) and (3, 1, 2) are possible orderings of the robots from strongest to weakest after both rap battles."
+    ]
+  },
+  "examples": [
+    {
+      "input": "4 5\n2 1\n1 3\n2 3\n4 2\n4 3",
+      "output": "4"
+    },
+    {
+      "input": "3 2\n1 2\n3 2",
+      "output": "-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "当 Farmer John 在 Bovinia 陌生的区域重建他的农场时，Bessie 正在尝试一些其他工作。作为一名新晋记者，Bessie 需要尽快了解编程竞赛的结果。当她报道 2016 年机器人说唱对战锦标赛时，她注意到所有机器人都运行着确定性算法。具体来说，当且仅当机器人 i 的技能等级高于机器人 j 时，机器人 i 才会战胜机器人 j。如果机器人 i 战胜了机器人 j，且机器人 j 战胜了机器人 k，那么机器人 i 也会战胜机器人 k。由于说唱是一门十分微妙的艺术，任意两个机器人都不可能拥有相同的技能等级。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定按照进行顺序排列的说唱对战结果，确定在 Bessie 能够按照技能等级为所有机器人排序之前，至少需要进行前多少场说唱对战。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含两个整数：机器人的数量 n(2 ≤ n ≤ 100 000)以及说唱对战的数量 m(![](https://espresso.codeforces.com/920ad298b2209acc704ee0aaee0c15082f0e63da.png))。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 m 行按照说唱对战进行的顺序描述对战结果。每行包含两个整数 ui 和 vi（1 ≤ ui, vi ≤ n，ui ≠ vi），表示在第 i 场说唱对战中，机器人 ui 战胜了机器人 vi。任意两场说唱对战涉及的机器人对都不相同。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "保证至少存在一种机器人排列方式，能够满足全部 m 条关系。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出最小的 k，使得根据前 k 场饶舌对决的结果，可以唯一确定机器人按技能水平排序的顺序。如果存在多个满足全部 m 条关系的排序，则输出 -1。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个样例中，从最强到最弱的机器人顺序必须为 (4, 2, 1, 3)，Bessie 在得知前四场饶舌对决的结果后就能推断出这一顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在第二个样例中，在得知两场饶舌对决的结果后，机器人从最强到最弱的顺序既可能是 (1, 3, 2)，也可能是 (3, 1, 2)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 机器人说唱比赛结果报告",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

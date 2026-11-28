@@ -1,0 +1,90 @@
+{
+  "code": "CF1009C",
+  "letter": "C",
+  "title": "C. Annoying Present",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/1009/C",
+  "difficulty": "1700",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Alice got an array of length n$$$n$$$ as a birthday present once again! This is the third year in a row!",
+      "And what is more disappointing, it is overwhelmengly boring, filled entirely with zeros. Bob decided to apply some changes to the array to cheer up Alice.",
+      "Bob has chosen m$$$m$$$ changes of the following form. For some integer numbers x$$$x$$$ and d$$$d$$$, he chooses an arbitrary position i$$$i$$$ (1≤i≤n$$$1 \\le i \\le n$$$) and for every j∈[1,n]$$$j \\in [1, n]$$$ adds x+d⋅dist(i,j)$$$x + d \\cdot dist(i, j)$$$ to the value of the j$$$j$$$-th cell. dist(i,j)$$$dist(i, j)$$$ is the distance between positions i$$$i$$$ and j$$$j$$$ (i.e. dist(i,j)=|i−j|$$$dist(i, j) = |i - j|$$$, where |x|$$$|x|$$$ is an absolute value of x$$$x$$$).",
+      "For example, if Alice currently has an array [2,1,2,2]$$$[2, 1, 2, 2]$$$ and Bob chooses position 3$$$3$$$ for x=−1$$$x = -1$$$ and d=2$$$d = 2$$$ then the array will become [2−1+2⋅2, 1−1+2⋅1, 2−1+2⋅0, 2−1+2⋅1]$$$[2 - 1 + 2 \\cdot 2,~1 - 1 + 2 \\cdot 1,~2 - 1 + 2 \\cdot 0,~2 - 1 + 2 \\cdot 1]$$$ = [5,2,1,3]$$$[5, 2, 1, 3]$$$. Note that Bob can't choose position i$$$i$$$ outside of the array (that is, smaller than 1$$$1$$$ or greater than n$$$n$$$).",
+      "Alice will be the happiest when the elements of the array are as big as possible. Bob claimed that the arithmetic mean value of the elements will work fine as a metric.",
+      "What is the maximum arithmetic mean value Bob can achieve?"
+    ],
+    "input": [
+      "The first line contains two integers n$$$n$$$ and m$$$m$$$ (1≤n,m≤105$$$1 \\le n, m \\le 10^5$$$) — the number of elements of the array and the number of changes.",
+      "Each of the next m$$$m$$$ lines contains two integers xi$$$x_i$$$ and di$$$d_i$$$ (−103≤xi,di≤103$$$-10^3 \\le x_i, d_i \\le 10^3$$$) — the parameters for the i$$$i$$$-th change."
+    ],
+    "output": [
+      "Print the maximal average arithmetic mean of the elements Bob can achieve.",
+      "Your answer is considered correct if its absolute or relative error doesn't exceed 10−6$$$10^{-6}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "2 3\n-1 3\n0 0\n-1 -4",
+      "output": "-2.500000000000000"
+    },
+    {
+      "input": "3 2\n0 2\n5 0",
+      "output": "7.000000000000000"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Alice 又一次收到了一份长度为 n$$$n$$$ 的数组作为生日礼物！这已经是连续第三年了！",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "更令人失望的是，这个数组无聊至极，其中完全都是零。Bob 决定对数组进行一些修改，让 Alice 开心起来。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Bob 选择了 m$$$m$$$ 次如下形式的修改。对于某些整数 x$$$x$$$ 和 d$$$d$$$，他选择一个任意位置 i$$$i$$$(1≤i≤n$$$1 \\le i \\le n$$$)，并对每个 j∈[1,n]$$$j \\in [1, n]$$$，将 x+d⋅dist(i,j)$$$x + d \\cdot dist(i, j)$$$ 加到第 j$$$j$$$ 个单元格的值上。dist(i,j)$$$dist(i, j)$$$ 表示位置 i$$$i$$$ 和 j$$$j$$$ 之间的距离(即 dist(i,j)=|i−j|$$$dist(i, j) = |i - j|$$$，其中 |x|$$$|x|$$$ 表示 x$$$x$$$ 的绝对值)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "例如，如果 Alice 当前有一个数组 [2,1,2,2]$$$[2, 1, 2, 2]$$$，Bob 选择位置 3$$$3$$$，其中 x=−1$$$x = -1$$$，d=2$$$d = 2$$$，那么数组将变为 [2−1+2⋅2, 1−1+2⋅1, 2−1+2⋅0, 2−1+2⋅1]$$$[2 - 1 + 2 \\cdot 2,~1 - 1 + 2 \\cdot 1,~2 - 1 + 2 \\cdot 0,~2 - 1 + 2 \\cdot 1]$$$ = [5,2,1,3]$$$[5, 2, 1, 3]$$$。注意，Bob 不能选择数组之外的位置 i$$$i$$$(即小于 1$$$1$$$ 或大于 n$$$n$$$)。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "当数组中的元素尽可能大时，Alice 会最开心。Bob 认为元素的算术平均值可以作为一个合适的衡量指标。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "Bob 能得到的最大算术平均值是多少？",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含两个整数 n$$$n$$$ 和 m$$$m$$$(1≤n,m≤105$$$1 \\le n, m \\le 10^5$$$)——分别表示数组的元素个数和修改次数。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "接下来 m$$$m$$$ 行，每行包含两个整数 xi$$$x_i$$$ 和 di$$$d_i$$$(−103≤xi,di≤103$$$-10^3 \\le x_i, d_i \\le 10^3$$$)——第 i$$$i$$$ 次修改的参数。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "output": [
+      {
+        "ai": "输出 Bob 能得到的元素的最大平均算术平均值。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "如果你的答案的绝对误差或相对误差不超过 10−6$$$10^{-6}$$$，则会被视为正确。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "C. 恼人的礼物",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

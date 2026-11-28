@@ -1,0 +1,105 @@
+{
+  "code": "GYM106511G",
+  "letter": "G",
+  "title": "G. Median Solve Order",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106511/problem/G",
+  "difficulty": "*1200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The students at Rubgers University are organizing a programming contest. Since a lot of strong teams will participate, they expect some of them to solve all problems. To distinguish between them, a special prize will be awarded to the team with a special solve order.",
+      "The contest consists of N≤26$$$N \\leq 26$$$ problems labelled A$$$\\mathrm{A}$$$, B$$$\\mathrm{B}$$$, etc: the first N$$$N$$$ letters of the English alphabet.",
+      "A solve order for a team is a sequence of letters denoting the order in which it solved all the problems: e.g., for N=3$$$N=3$$$, a possible solve order is BAC$$$\\mathrm{BAC}$$$ — B$$$\\mathrm{B}$$$ solved first, then A$$$\\mathrm{A}$$$, then C$$$\\mathrm{C}$$$. We only consider teams which solve every problem exactly once, so, e.g., AC$$$\\mathrm{AC}$$$ or ABAC$$$\\mathrm{ABAC}$$$ are not valid solve orders.",
+      "Solve order a$$$a$$$ is lexicographically smaller than solve order b$$$b$$$ if, at the first position where they differ, the character in a$$$a$$$ comes in the alphabet before the character in b$$$b$$$. E.g., ACB$$$\\mathrm{ACB}$$$ is lexicographically smaller than BAC$$$\\mathrm{BAC}$$$, which is lexicographically smaller than BCA$$$\\mathrm{BCA}$$$.",
+      "Consider all possible solve orders of the N$$$N$$$ problems. Let their number be M$$$M$$$. Sort the M$$$M$$$ solve orders from lexicographically smallest to largest. In this list, the median solve order is located at position ⌈M2⌉$$$\\lceil \\frac{M}{2} \\rceil$$$ (M2$$$\\frac{M}{2}$$$ rounded up).",
+      "Any team with the median solve order will get a special prize. Help Rubgers students decide what the order is!"
+    ],
+    "input": [
+      "The problem consists of T$$$T$$$ independent test cases.",
+      "The first line contains a single integer T$$$T$$$ (1≤T≤26$$$1 \\leq T \\leq 26$$$) — the number of independent test cases to process.",
+      "Each of the next T$$$T$$$ lines contains a single integer N$$$N$$$ (1≤N≤26$$$1 \\leq N \\leq 26$$$) — the number of problems in the contest."
+    ],
+    "output": [
+      "For each test case, output a single line containing the median solve order for the contest with N$$$N$$$ problems."
+    ],
+    "note": [
+      "In the first test case, N=1$$$N=1$$$, so the only solve order is A$$$\\mathrm{A}$$$.",
+      "In the second test case, the solve orders in lexicographical order are AB,BA$$$\\mathrm{AB}, \\mathrm{BA}$$$. The median is AB$$$\\mathrm{AB}$$$.",
+      "In the third test case, the solve orders in lexicographical order are ABC,ACB,BAC,BCA,CAB,CBA$$$\\mathrm{ABC}, \\mathrm{ACB}, \\mathrm{BAC}, \\mathrm{BCA}, \\mathrm{CAB}, \\mathrm{CBA}$$$. The median is BAC$$$\\mathrm{BAC}$$$."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n1\n2\n3",
+      "output": "A\nAB\nBAC"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "Rubgers 大学的学生们正在组织一场编程竞赛。由于会有许多实力强劲的队伍参赛，他们预计其中一些队伍能够解决所有问题。为了区分这些队伍，将向具有特殊解题顺序的队伍颁发特别奖。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "竞赛由 N≤26$$$N \\leq 26$$$ 道题目组成，题目标记为 A$$$\\mathrm{A}$$$、B$$$\\mathrm{B}$$$ 等：即英文字母表中的前 N$$$N$$$ 个字母。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "队伍的解题顺序是一个由字母组成的序列，表示该队伍解决所有问题的顺序。例如，当 N=3$$$N=3$$$ 时，一种可能的解题顺序是 BAC$$$\\mathrm{BAC}$$$——先解决 B$$$\\mathrm{B}$$$，然后是 A$$$\\mathrm{A}$$$，最后是 C$$$\\mathrm{C}$$$。我们只考虑恰好解决每道题一次的队伍，因此，例如 AC$$$\\mathrm{AC}$$$ 或 ABAC$$$\\mathrm{ABAC}$$$ 都不是有效的解题顺序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果在它们首次出现差异的位置上，a$$$a$$$ 中的字符在字母表中的顺序早于 b$$$b$$$ 中的字符，则称解答顺序 a$$$a$$$ 的字典序小于解答顺序 b$$$b$$$。例如，ACB$$$\\mathrm{ACB}$$$ 的字典序小于 BAC$$$\\mathrm{BAC}$$$，而 BAC$$$\\mathrm{BCA}$$$ 的字典序小于 BCA。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "考虑 N$$$N$$$ 道题目的所有可能解题顺序。设它们的数量为 M$$$M$$$。将这 M$$$M$$$ 个解题顺序按字典序从小到大排序。在这个列表中，中位解题顺序位于第 ⌈M2⌉$$$\\lceil \\frac{M}{2} \\rceil$$$ 个位置(将 M2$$$\\frac{M}{2}$$$ 向上取整)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "拥有中位解题顺序的队伍将获得特别奖。请帮助 Rubgers 的学生确定这个顺序！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "本题包含 T$$$T$$$ 个相互独立的测试用例。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行包含一个整数 T$$$T$$$(1≤T≤26$$$1 \\leq T \\leq 26$$$)——需要处理的独立测试用例数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "接下来的 T$$$T$$$ 行中的每一行包含一个整数 N$$$N$$$(1≤N≤26$$$1 \\leq N \\leq 26$$$)——比赛中的题目数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，输出一行，其中包含有 N$$$N$$$ 道题目的比赛的中位解题顺序。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ],
+    "note": [
+      {
+        "ai": "在第一个测试用例中，N=1$$$N=1$$$，因此唯一的解题顺序是 A$$$\\mathrm{A}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第二个测试用例中，按字典序排列的解题顺序为 AB,BA$$$\\mathrm{AB}, \\mathrm{BA}$$$。中位解题顺序是 AB$$$\\mathrm{AB}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在第三个测试用例中，按字典序排列的解题顺序为 ABC,ACB,BAC,BCA,CAB,CBA$$$\\mathrm{ABC}, \\mathrm{ACB}, \\mathrm{BAC}, \\mathrm{BCA}, \\mathrm{CAB}, \\mathrm{CBA}$$$。中位解题顺序是 BAC$$$\\mathrm{BAC}$$$。",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "G. 中位解题顺序",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

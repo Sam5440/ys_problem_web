@@ -1,0 +1,86 @@
+{
+  "code": "CF406D",
+  "letter": "D",
+  "title": "D. Hill Climbing",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/406/D",
+  "difficulty": "2200",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This problem has nothing to do with Little Chris. It is about hill climbers instead (and Chris definitely isn't one).",
+      "There are n hills arranged on a line, each in the form of a vertical line segment with one endpoint on the ground. The hills are numbered with numbers from 1 to n from left to right. The i-th hill stands at position xi with its top at height yi. For every two hills a and b, if the top of hill a can be seen from the top of hill b, their tops are connected by a rope. Formally, the tops of two hills are connected if the segment connecting their top points does not intersect or touch any of the other hill segments. Using these ropes, the hill climbers can move from hill to hill.",
+      "There are m teams of climbers, each composed of exactly two members. The first and the second climbers of the i-th team are located at the top of the ai-th and bi-th hills, respectively. They want to meet together at the top of some hill. Now, each of two climbers move according to the following process:",
+      "if a climber is at the top of the hill where the other climber is already located or will come eventually, the former climber stays at this hill;",
+      "otherwise, the climber picks a hill to the right of his current hill that is reachable by a rope and is the rightmost possible, climbs this hill and continues the process (the climber can also climb a hill whose top is lower than the top of his current hill).",
+      "![](https://espresso.codeforces.com/a714a317c87c4e6ede1181ac937b8f3c3f4d1c79.png)",
+      "For each team of climbers, determine the number of the meeting hill for this pair!"
+    ],
+    "input": [
+      "The first line of input contains a single integer n (1 ≤ n ≤ 105), the number of hills. The next n lines describe the hills. The i-th of them contains two space-separated integers xi, yi (1 ≤ xi ≤ 107; 1 ≤ yi ≤ 1011), the position and the height of the i-th hill. The hills are given in the ascending order of xi, i.e., xi < xj for i < j.",
+      "The next line of input contains a single integer m (1 ≤ m ≤ 105), the number of teams. The next m lines describe the teams. The i-th of them contains two space-separated integers ai, bi (1 ≤ ai, bi ≤ n), the numbers of the hills where the climbers of the i-th team are located. It is possible that ai = bi."
+    ],
+    "output": [
+      "In a single line output m space-separated integers, where the i-th integer is the number of the meeting hill for the members of the i-th team."
+    ]
+  },
+  "examples": [
+    {
+      "input": "6\n1 4\n2 1\n3 2\n4 3\n6 4\n7 4\n3\n3 1\n5 6\n2 3",
+      "output": "5 6 3"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "本题与 Little Chris 毫无关系。相反，它讨论的是爬山者（而 Chris 绝对不是爬山者）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有 n 座山丘排列在一条直线上，每座山丘都是一条竖直线段，且有一个端点在地面上。山丘从左到右编号为 1 到 n。第 i 座山丘位于位置 xi 处，其顶部高度为 yi。对于任意两座山丘 a 和 b，如果从山丘 b 的顶部可以看到山丘 a 的顶部，则用一根绳索连接它们的顶部。形式化地说，如果连接两座山丘顶部的线段不与其他任何山丘线段相交或接触，则称这两座山丘的顶部相连。爬山者可以利用这些绳索在山丘之间移动。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "有 m 队登山者，每队恰好由两名成员组成。第 i 队的第一名和第二名登山者分别位于第 ai 座和第 bi 座山丘的顶部。他们想在某座山丘的顶部相遇。现在，每名登山者都按照以下过程移动：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果一名登山者位于另一名登山者已经位于或最终将要到达的山丘顶部，那么前者就停留在这座山丘上；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，该登山者会选择当前山丘右侧通过绳索可到达且位置最靠右的山丘，爬上这座山丘并继续进行此过程（该登山者也可以爬上一座顶部低于当前山丘顶部的山丘）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/a714a317c87c4e6ede1181ac937b8f3c3f4d1c79.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每一队登山者，确定这对登山者的会合山丘编号！",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "输入的第一行包含一个整数 n（1 ≤ n ≤ 10^5），表示山丘的数量。接下来的 n 行描述这些山丘。其中第 i 行包含两个用空格分隔的整数 x_i、y_i（1 ≤ x_i ≤ 10^7；1 ≤ y_i ≤ 10^11），分别表示第 i 座山丘的位置和高度。山丘按照 x_i 递增的顺序给出，即对于 i＜j，有 x_i＜x_j。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输入的下一行包含一个整数 m（1 ≤ m ≤ 10^5），表示队伍的数量。接下来的 m 行描述这些队伍。其中第 i 行包含两个用空格分隔的整数 a_i、b_i（1 ≤ a_i,b_i ≤ n），表示第 i 队登山者所在山丘的编号。a_i 可能等于 b_i。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "在一行中输出 m 个用空格分隔的整数，其中第 i 个整数是第 i 队成员的会合山丘编号。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "D. 爬山",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "code": "GYM106802F",
+  "letter": "F",
+  "title": "F. Circular Minesweeper",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106802/problem/F",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Interactive problem",
+      "You are given a circle of $$$L = 10^9$$$ cells, numbered around the circle from $$$1$$$ to $$$L$$$ (cells $$$1$$$ and $$$L$$$ are adjacent). There are mines in $$$n$$$ distinct cells; in each test, the mine placement is chosen randomly and uniformly among all sets of $$$n$$$ cells.",
+      "You may probe cells. If the probed cell contains a mine, it explodes. In response to a probe of cell $$$i$$$, you learn whether there was a mine there, and the distance $$$d$$$ from $$$i$$$ to some remaining unexploded mine. Which mine is chosen is determined by an unknown rule — it is not necessarily the nearest mine. The distance between cells $$$a$$$ and $$$b$$$ is $$$\\min(|a - b|,\\, L - |a - b|)$$$.",
+      "After making at most $$$30$$$ probes, specify a cell that definitely contains an unexploded mine."
+    ],
+    "input": [
+      "The first line contains an integer $$$n$$$ $$$(2 \\le n \\le 2 \\cdot 10^5)$$$ — the number of mines."
+    ],
+    "output": [
+      "See the section \"Interaction protocol\".",
+      "First read the number $$$n$$$.",
+      "To make a probe, output \"? i\" $$$(1 \\le i \\le L)$$$ and read the response:",
+      "\"YES d\", if cell $$$i$$$ contained a mine (and it exploded),",
+      "\"NO d\", if there was no mine.",
+      "Here $$$d$$$ is the distance from $$$i$$$ to some unexploded mine; the mine exploded by this probe is not taken into account.",
+      "You can make at most $$$30$$$ probes. To give the final answer, output \"! i\" and terminate the program: at that moment, cell $$$i$$$ must contain an unexploded mine. The final answer does not count toward the probe limit.",
+      "Your program will receive the verdict \"Wrong answer\" in the following cases:",
+      "the output format is invalid;",
+      "the number of available probes is exceeded;",
+      "all mines have exploded;",
+      "the output answer is incorrect (the cell does not contain an unexploded mine).",
+      "After each query, you must flush the output buffer, otherwise your program will receive the verdict \"Idleness Limit Exceeded\":",
+      "C++: std::endl when using iostream (cout « ... « endl), fflush(stdout) after output using stdio (printf);",
+      "Java: System.out.println(...), and when using another stream (PrintWriter, BufferedWriter) — call its flush() after each line;",
+      "Python: print(..., flush=True), and read the interactor's responses using input()."
+    ],
+    "note": [
+      "Example. There are mines in cells $$$1$$$, $$$5$$$, $$$12$$$, and $$$100$$$ on the circle (the program does not know these positions; it only sees $$$n = 4$$$).",
+      "For the query \"? 1\", the interactor responds \"YES 4\": cell $$$1$$$ contained a mine and it exploded (the distances to mines $$$5$$$, $$$12$$$, and $$$100$$$ are $$$4$$$, $$$11$$$, and $$$99$$$ respectively; the interactor chose mine $$$5$$$ and returned the distance to it);",
+      "For the repeated query \"? 1\", the interactor responds \"NO 11\": there is no mine in cell $$$1$$$ anymore, and the distance to mine $$$12$$$, which the interactor chose, is $$$11$$$;",
+      "For the query \"? 13\", the interactor responds \"NO 1\": there is no mine in cell $$$13$$$, the interactor chose mine $$$12$$$ and returned the distance to it;",
+      "the program outputs \"! 12\" and terminates — the answer is correct, since this cell contains an unexploded mine. In total, $$$3$$$ probes were made out of the allowed $$$30$$$ (the query \"! 12\" does not count toward this limit).",
+      "This example shows that the distance $$$d$$$ in the interactor's response is the distance to some (not necessarily the nearest) unexploded mine, and that you cannot output an already exploded mine as the answer.",
+      "The strategy for finding an unexploded mine used in the example is not necessarily optimal."
+    ]
+  },
+  "examples": [],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "交互题",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "给定一个由 $$$L = 10^9$$$ 个格子组成的圆环，格子沿圆环依次编号为 $$$1$$$ 到 $$$L$$$(格子 $$$1$$$ 和 $$$L$$$ 相邻)。其中 $$$n$$$ 个不同的格子里埋有地雷；每次测试中，地雷的位置都从所有由 $$$n$$$ 个格子组成的集合中等概率随机选取。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以探测格子。如果探测的格子中有地雷，它就会爆炸。探测格子 $$$i$$$ 后，你会得知其中是否有地雷，以及从 $$$i$$$ 到某个尚未爆炸的地雷的距离 $$$d$$$。具体选中哪个地雷由一条未知规则决定，不一定是最近的地雷。格子 $$$a$$$ 和 $$$b$$$ 之间的距离为 $$$\\min(|a - b|,\\, L - |a - b|)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最多进行 $$$30$$$ 次探测后，指出一个确定含有未爆炸地雷的格子。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "第一行包含一个整数 $$$n$$$ $$$(2 \\le n \\le 2 \\cdot 10^5)$$$，表示地雷的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "参见“交互协议”一节。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "首先读入数字 $$$n$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "要进行一次探测，输出 \"? i\" $$$(1 \\le i \\le L)$$$ 并读取响应：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果单元格 $$$i$$$ 中有一枚地雷(并且它爆炸了)，则输出“YES d”，",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "“NO d”，如果没有地雷。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这里 $$$d$$$ 表示从 $$$i$$$ 到某个未爆地雷的距离；不计入被此探测器引爆的地雷。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你最多可以进行 $$$30$$$ 次探测。要给出最终答案，请输出“! i”并终止程序：此时，格子 $$$i$$$ 中必须有一颗尚未引爆的地雷。最终答案不计入探测次数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在以下情况下，你的程序将收到“答案错误”（Wrong answer）判定：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出格式无效；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "超出可用探针数量；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "所有地雷都已爆炸；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "输出的答案不正确（该单元格中没有未爆炸的地雷）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每次查询后都必须刷新输出缓冲区，否则程序会收到“Idleness Limit Exceeded”判定：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "C++：使用 iostream 时输出 std::endl（cout « ... « endl），使用 stdio 输出后调用 fflush(stdout)（printf）；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Java：使用 `System.out.println(...)`；如果使用其他输出流（`PrintWriter`、`BufferedWriter`），则在每行输出后调用其 `flush()`；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Python：使用 print(..., flush=True) 输出，并使用 input() 读取交互器的响应。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "示例。圆上的 $$$1$$$、$$$5$$$、$$$12$$$ 和 $$$100$$$ 这些格子中有地雷(程序不知道这些位置；它只能看到 $$$n = 4$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于查询 \"? 1\"，交互器回答 \"YES 4\"：单元格 $$$1$$$ 中有一枚地雷，它爆炸了(到地雷 $$$5$$$、$$$12$$$ 和 $$$100$$$ 的距离分别为 $$$4$$$、$$$11$$$ 和 $$$99$$$；交互器选择了地雷 $$$5$$$ 并返回了到它的距离)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于重复的询问“? 1”，交互器回复“NO 11”：单元格 $$$1$$$ 中已没有地雷，且到交互器选择的地雷 $$$12$$$ 的距离为 $$$11$$$；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于查询 \"? 13\"，交互器回应 \"NO 1\"：单元格 $$$13$$$ 中没有地雷，交互器选择了地雷 $$$12$$$ 并返回了到它的距离；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "程序输出“! 12”并终止——答案正确，因为该格子里有一枚未爆炸的地雷。总共进行了 $$$3$$$ 次探测，未超过允许的 $$$30$$$ 次(查询“! 12”不计入此限制)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "这个例子表明，交互器响应中的距离 $$$d$$$ 是到某个尚未爆炸的地雷的距离(不一定是最近的)，并且你不能将已经爆炸的地雷作为答案输出。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "示例中用于寻找未爆炸地雷的策略不一定是最优的。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 环形扫雷",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

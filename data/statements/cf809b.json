@@ -1,0 +1,170 @@
+{
+  "code": "CF809B",
+  "letter": "B",
+  "title": "B. Glad to see you!",
+  "contest": null,
+  "url": "https://codeforces.com/problemset/problem/809/B",
+  "difficulty": "2200",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "This is an interactive problem. In the output section below you will see the information about flushing the output.",
+      "On Sunday Leha the hacker took Nura from the house where she lives and went with her to one of the most luxurious restaurants in Vičkopolis. Upon arrival, they left the car in a huge parking lot near the restaurant and hurried inside the building.",
+      "In the restaurant a polite waiter immediately brought the menu to Leha and Noora, consisting of n dishes. It is interesting that all dishes in the menu are numbered with integers from 1 to n. After a little thought, the girl ordered exactly k different dishes from available in the menu. To pass the waiting time while the chefs prepare ordered dishes, the girl invited the hacker to play a game that will help them get to know each other better.",
+      "The game itself is very simple: Noora wants Leha to guess any two dishes among all ordered. At the same time, she is ready to answer only one type of questions. Leha can say two numbers x and y (1 ≤ x, y ≤ n). After that Noora chooses some dish a for the number x such that, at first, a is among the dishes Noora ordered (x can be equal to a), and, secondly, the value ![](https://espresso.codeforces.com/e5a4a1705bc256e413564795cc8b70857f0ae44c.png) is the minimum possible. By the same rules the girl chooses dish b for y. After that Noora says «TAK» to Leha, if ![](https://espresso.codeforces.com/a65cb6a9b614699e12e529560e2d39ffa39127db.png), and «NIE» otherwise. However, the restaurant is preparing quickly, so Leha has enough time to ask no more than 60 questions. After that he should name numbers of any two dishes Noora ordered.",
+      "Help Leha to solve this problem!"
+    ],
+    "input": [
+      "There are two numbers n and k (2 ≤ k ≤ n ≤ 105) in the single line of input denoting the number of dishes in the menu and the number of dishes Noora ordered."
+    ],
+    "output": [
+      "If you want to provide an answer, output a string of the form 2 x y (1 ≤ x, y ≤ n, x ≠ y), if you think the dishes x and y was among dishes ordered by Noora. After that, flush the output and terminate your program.",
+      "While helping Leha, you can ask queries to Noora no more than 60 times. Each query should be printed in it's own line and have the form 1 x y (1 ≤ x, y ≤ n). You have to both print the end-of-line character and flush the output. After flushing you should read the answer for this query from input.",
+      "After each query jury's program will print one line «TAK» or «NIE» (without quotes) in input stream depending on the girl's answer.",
+      "To flush you can use (just after printing an integer and end-of-line):",
+      "fflush(stdout) in C++;",
+      "System.out.flush() in Java;",
+      "stdout.flush() in Python;",
+      "flush(output) in Pascal;",
+      "see the documentation for other languages.",
+      "Hacking",
+      "For hacking you should write numbers n and k (2 ≤ k ≤ n ≤ 105) in the first line and, for describing dishes Noora ordered, k different integers a1, a2, ..., ak (1 ≤ ai ≤ n), written in ascending order in the second line. Of course, solution you want to hack won't be able to read the numbers of ordered dishes."
+    ],
+    "note": [
+      "There are three dishes in sample. Noora ordered dished numberes 2 and 3, which Leha should guess. If Noora receive requests for the first dish (x = 1), then she'll choose the second dish (a = 2) as the dish with the minimum value ![](https://espresso.codeforces.com/e5a4a1705bc256e413564795cc8b70857f0ae44c.png). For the second (x = 2) and the third (x = 3) dishes themselves will be optimal, because in that case ![](https://espresso.codeforces.com/79add195d023131e992b60a354fec89501759e75.png).",
+      "Let Leha asks Noora about the next couple of dishes:",
+      "x = 1, y = 2, then he'll recieve «NIE» answer, because |1 - 2| > |2 - 2|",
+      "x = 2, y = 1, then he'll recieve «TAK» answer, because |2 - 2| ≤ |1 - 2|",
+      "x = 1, y = 3, then he'll recieve «NIE» answer, because |1 - 2| > |3 - 3|",
+      "x = 3, y = 1, then he'll recieve «TAK» answer, because |3 - 3| ≤ |1 - 2|",
+      "x = 2, y = 3, then he'll recieve «TAK» answer, because |2 - 2| ≤ |3 - 3|",
+      "x = 3, y = 2, then he'll recieve «TAK» answer, because |3 - 3| ≤ |2 - 2|",
+      "According to the available information, it is possible to say that Nura ordered dishes with numbers 2 and 3."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3 2\nNIE\nTAK\nNIE\nTAK\nTAK\nTAK",
+      "output": "1 1 2\n1 2 1\n1 1 3\n1 3 1\n1 2 3\n1 3 2\n2 2 3"
+    }
+  ],
+  "sectionsZh": {
+    "input": [
+      {
+        "ai": "输入的唯一一行包含两个数 n 和 k（2 ≤ k ≤ n ≤ 10^5），分别表示菜单中的菜品数量以及 Noora 点的菜品数量。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "如果你想给出答案，请输出形如 2 x y 的字符串（1 ≤ x, y ≤ n，x ≠ y）。这表示你认为菜品 x 和 y 在 Noora 点的菜品之中。之后刷新输出并终止程序。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "在帮助 Leha 的过程中，你至多可以向 Noora 询问 60 次。每次查询都应单独输出一行，格式为 1 x y（1 ≤ x, y ≤ n）。你必须同时输出换行符并刷新输出。刷新后，应从输入中读取该查询的答案。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "每次查询后，评测程序会根据女孩的回答，在输入流中输出一行 «TAK» 或 «NIE»（不含引号）。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你可以使用以下方式刷新输出（在输出一个整数和换行符之后）：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "C++ 中的 fflush(stdout)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Java 中的 System.out.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Python 中的 stdout.flush()；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Pascal 中的 flush(output)；",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "其他语言请参阅相关文档。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Hack",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "进行 Hack 时，你应在第一行输入两个整数 n 和 k（2 ≤ k ≤ n ≤ 105），并在第二行输入 k 个互不相同的整数 a1, a2, ..., ak（1 ≤ ai ≤ n）来描述 Noora 点的菜，这些整数应按升序排列。当然，你想要 Hack 的解法将无法读取已点菜品的编号。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "样例中有三道菜。Noora 点了编号为 2 和 3 的菜，这是 Leha 需要猜出的。如果 Noora 收到第一道菜(x = 1)的请求，那么她会选择第二道菜(a = 2)作为具有最小值 ![](https://espresso.codeforces.com/e5a4a1705bc256e413564795cc8b70857f0ae44c.png) 的菜。对于第二道菜(x = 2)和第三道菜(x = 3)，选择它们本身就是最优的，因为此时 ![](https://espresso.codeforces.com/79add195d023131e992b60a354fec89501759e75.png)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "Leha 询问 Noora 接下来的两道菜：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "x = 1，y = 2，此时他会得到 «NIE» 的回答，因为 |1 - 2| > |2 - 2|",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "x = 2，y = 1，此时他会得到 «TAK» 的回答，因为 |2 - 2| ≤ |1 - 2|",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "x = 1，y = 3，此时他会得到 «NIE» 的回答，因为 |1 - 2| > |3 - 3|",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "x = 3，y = 1，此时他会得到 «TAK» 的回答，因为 |3 - 3| ≤ |1 - 2|",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "x = 2，y = 3，那么他将得到 «TAK» 答案，因为 |2 - 2| ≤ |3 - 3|",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "x = 3，y = 2，那么他将得到 «TAK» 答案，因为 |3 - 3| ≤ |2 - 2|",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "根据现有信息，可以得出 Nura 点了编号为 2 和 3 的菜。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "legend": [
+      {
+        "ai": "这是一个交互题。在下面的输出部分，你会看到关于刷新输出的信息。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "周日，黑客 Leha 把 Nura 从她住的房子里带出来，和她一起去了 Vičkopolis 最豪华的餐厅之一。到达后，他们把车停在餐厅附近的一个巨大停车场，然后匆匆走进大楼。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "在餐厅里，一位礼貌的服务员立刻把菜单递给 Leha 和 Noora，菜单上有 n 道菜。有趣的是，菜单中的所有菜肴都用 1 到 n 的整数编号。稍作思考后，女孩从菜单中点了恰好 k 道不同的菜。为了在厨师准备所点菜肴时打发等待时间，女孩邀请黑客玩一个游戏，这个游戏能帮助他们更好地了解彼此。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "游戏本身非常简单：Noora 想让 Leha 在所有已点的菜中猜出任意两道。同时，她只准备回答一种类型的问题。Leha 可以说出两个数 x 和 y(1 ≤ x, y ≤ n)。之后 Noora 会为数字 x 选择一道菜 a，要求：首先，a 是 Noora 所点菜肴中的一道(x 可以等于 a)；其次，![](https://espresso.codeforces.com/e5a4a1705bc256e413564795cc8b70857f0ae44c.png) 的值尽可能小。女孩按照同样的规则为 y 选择菜 b。之后，如果 ![](https://espresso.codeforces.com/a65cb6a9b614699e12e529560e2d39ffa39127db.png)，Noora 就对 Leha 说“TAK”，否则说“NIE”。然而，餐厅上菜很快，所以 Leha 最多只能问 60 个问题。之后，他需要说出 Noora 所点的任意两道菜的编号。",
+        "aiModel": "DeepSeek V4 Flash"
+      },
+      {
+        "ai": "帮助 Leha 解决这个问题！",
+        "aiModel": "DeepSeek V4 Flash"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "B. 很高兴见到你！",
+    "aiModel": "DeepSeek V4 Flash"
+  }
+}

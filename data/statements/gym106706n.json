@@ -1,0 +1,137 @@
+{
+  "code": "GYM106706N",
+  "letter": "N",
+  "title": "N. Stable Factory Assignment",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106706/problem/N",
+  "difficulty": "*1000",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "Khaled is the CEO of a rapidly growing industrial empire. His company recently acquired $$$N$$$ new factories, and he has hired $$$N$$$ workers to operate them. Both the workers' homes and the factories are located along a long, straight highway, which can be represented as the $$$X$$$-axis.",
+      "The $$$i$$$-th worker lives at coordinate $$$x_i$$$, and the $$$j$$$-th factory is located at coordinate $$$y_j$$$. Khaled needs to assign exactly one worker to each factory so that no two workers are assigned to the same factory.",
+      "Khaled requires a \"stable\" assignment. An assignment is invalid if swapping two workers' factories strictly increases the sum of their squared travel distances. Formally, for any worker $$$i$$$ assigned to factory $$$a$$$ and worker $$$j$$$ assigned to factory $$$b$$$, the following condition must NOT hold:",
+      "$$$$$$(x_i - y_a)^2 + (x_j - y_b)^2  \\lt  (x_i - y_b)^2 + (x_j - y_a)^2$$$$$$",
+      "Given the locations, help Khaled find any valid assignment satisfying his strict stability condition."
+    ],
+    "input": [
+      "The first line contains a single integer $$$t$$$ ($$$1 \\le t \\le 10^4$$$) — the number of test cases.",
+      "The first line of each test case contains a single integer $$$N$$$ ($$$1 \\le N \\le 3000$$$) — the number of workers and the number of factories.",
+      "The second line of each test case contains $$$N$$$ distinct integers $$$x_1, x_2, \\dots, x_N$$$ ($$$-10^9 \\le x_i \\le 10^9$$$) — the coordinates of the workers.",
+      "The third line of each test case contains $$$N$$$ distinct integers $$$y_1, y_2, \\dots, y_N$$$ ($$$-10^9 \\le y_i \\le 10^9$$$) — the coordinates of the factories.",
+      "It is guaranteed that the sum of $$$N$$$ over all test cases does not exceed $$$3000$$$."
+    ],
+    "output": [
+      "For each test case, output a single line containing $$$N$$$ space-separated integers $$$p_1, p_2, \\dots, p_N$$$, where $$$p_i$$$ is the 1-based index of the factory assigned to the $$$i$$$-th worker.",
+      "If there are multiple valid assignments that satisfy Khaled's condition, you may output any of them."
+    ]
+  },
+  "examples": [
+    {
+      "input": "1\n4\n7 -5 -9 5\n2 -8 7 -11",
+      "output": "4 1 3 2"
+    }
+  ],
+  "titleZh": {
+    "caiyun": "N. 稳定工厂分配",
+    "youdao": "N.稳定的工厂分配",
+    "deepl": "N.稳定的工厂分配",
+    "iflyrec": "N.稳定工厂分配",
+    "ai": "N. 稳定的工厂分配"
+  },
+  "sectionsZh": {
+    "legend": [
+      {
+        "caiyun": "哈立德是一个快速发展的工业帝国的首席执行官。他的公司最近收购了 $$$N$$$ 新工厂，并雇佣了 $$$N$$$ 工人来运营这些工厂。工人的住所和工厂都位于一条长而笔直的公路旁，这条公路可以用 $$$X$$$ 轴来表示。",
+        "deepl": "哈立德是一个快速发展的工业帝国的首席执行官。他的公司最近收购了 $$$N$$$ 家新工厂，并雇佣了 $$$N$$$ 名工人来经营这些工厂。工人的家和工厂都位于一条又长又直的公路上，这条公路可以表示为 $$$X$$$ 轴。",
+        "iflyrec": "哈立德是一个快速发展的工业帝国的首席执行官。他的公司最近收购了$$$N$$$家新工厂，他雇佣了$$$N$$$名工人来运营这些工厂。工人的家和工厂都位于一条长而直的公路上，这条公路可以表示为$$$X$$$轴。",
+        "ai": "Khaled 是一家快速发展的工业帝国的 CEO。他的公司最近收购了 $$$N$$$ 家新工厂，并雇佣了 $$$N$$$ 名工人来运营它们。工人们的住所和工厂都位于一条漫长的笔直公路沿线，这条公路可以表示为 $$$X$$$ 轴。"
+      },
+      {
+        "caiyun": "$$$i$$$ 第一个工人住在 $$$x_i$$$ 坐标，$$$j$$$ 第一个工厂位于 $$$y_j$$$ 坐标。哈立德需要在每个工厂精确地分配一个工人，以确保不会有两个工人被分配到同一个工厂。",
+        "youdao": "$$$i$$$工人住在坐标$$$x_i$$$， $$$j$$$工厂位于坐标$$$y_j$$$。Khaled需要为每个工厂精确分配一名工人，这样就不会有两名工人被分配到同一个工厂。",
+        "deepl": "第 $$$i$$$ 个工人住在坐标 $$$x_i$$$，第 $$$j$$$ 个工厂位于坐标 $$$y_j$$$。卡劳需要为每个工厂分配一名工人，这样就不会有两个工人被分配到同一个工厂。",
+        "iflyrec": "第$$$i$$$号工人位于坐标$$$x_i$$$，第$$$j$$$号工厂位于坐标$$$y_j$$$。哈立德需要为每个工厂分配一名工人，这样就不会有两名工人被分配到同一家工厂。",
+        "ai": "第 $$$i$$$ 个工人住在坐标 $$$x_i$$$，第 $$$j$$$ 个工厂位于坐标 $$$y_j$$$。Khaled 需要为每个工厂恰好分配一名工人，使得没有两个工人被分配到同一个工厂。"
+      },
+      {
+        "caiyun": "Khalid 需要一个 “稳定” 的分配。如果两个工人的工厂互换严格地增加了他们的行程距离平方和，则分配无效。从形式上讲，对于任何被分配到工厂 $$$a$$$ 的工人 $$$i$$$，以及被分配到工厂 $$$b$$$ 的工人 $$$j$$$，以下条件不得成立：",
+        "youdao": "哈立德需要一份“稳定”的工作。如果交换两个工人的工厂严格地增加了他们旅行距离的平方之和，那么分配是无效的。形式上，对于分配给工厂$$$a$$$的工人$$$i$$$和分配给工厂$$$b$$$的工人$$$j$$$，不得满足以下条件：",
+        "deepl": "卡劳德要求分配 \"稳定\"。如果交换两个工人的工厂会严格增加他们的旅行距离平方和，那么分配就是无效的。形式上，对于任何被分配到工厂 $$$a$$$ 的工人 $$$i$$$ 和被分配到工厂 $$$b$$$ 的工人 $$$j$$$，以下条件必须不成立：",
+        "iflyrec": "哈立德需要一个“稳定”的任务。如果交换两个工人的工厂严格地增加了他们旅行距离的平方和，则分配是无效的。形式上，对于分配给工厂$$$a$$$的任何工人$$$i$$$和分配给工厂$$$b$$$的工人$$$j$$$，以下条件不得成立:",
+        "ai": "哈立德需要一个“稳定”的分配。如果交换两个工人的工厂会严格增加他们出行距离的平方和，则该分配无效。形式化地，对于任意被分配到工厂 $$$a$$$ 的工人 $$$i$$$ 和被分配到工厂 $$$b$$$ 的工人 $$$j$$$，以下条件必须不成立："
+      },
+      {
+        "caiyun": "$$$$$$(x_i - y_a)^2 + (x_j - y_b)^2  \\lt  (x_i - y_b)^2 + (x_j - y_a)^2$$$$$$",
+        "deepl": "$$$$$$(x_i - y_a)^2 + (x_j - y_b)^2  \\lt  (x_i - y_b)^2 + (x_j - y_a)^2$$$$$$",
+        "iflyrec": "$$$$$$(x_i - y_a)^2 + (x_j - y_b)^2  \\lt  (x_i - y_b)^2 + (x_j - y_a)^2$$$$$$",
+        "ai": "$$$$$$(x_i - y_a)^2 + (x_j - y_b)^2  \\lt  (x_i - y_b)^2 + (x_j - y_a)^2$$$$$$"
+      },
+      {
+        "caiyun": "根据地点，帮助哈立德找到任何符合他严格稳定条件的有效任务。",
+        "youdao": "给定位置，帮助哈立德找到任何满足严格稳定性条件的有效任务。",
+        "deepl": "给定位置，帮助卡劳德找到满足其严格稳定性条件的任何有效任务。",
+        "iflyrec": "给定位置，帮助Khaled找到满足其严格稳定性条件的任何有效任务。",
+        "ai": "给定这些位置，帮助 Khaled 找到任意满足其严格稳定性条件的合法分配。"
+      }
+    ],
+    "input": [
+      {
+        "caiyun": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——测试用例的数量。",
+        "youdao": "第一行包含一个整数$$$t$$$ ($$$1 \\le t \\le 10^4$$$）——测试用例的数量。",
+        "deepl": "第一行包含一个整数 $$$t$$$ ($$$1 \\le t \\le 10^4$$$）--测试用例数。",
+        "iflyrec": "第一行包含单个整数$$$t$$$($$$1 \\le t \\le 10^4$$$）—测试用例的数量。",
+        "ai": "第一行包含一个整数 $$$t$$$($$$1 \\le t \\le 10^4$$$)——测试用例的数量。"
+      },
+      {
+        "caiyun": "每个测试用例的第一行包含一个整数 $$$N$$$($$$1 \\le N \\le 3000$$$)——工人数量和工厂数量。",
+        "youdao": "每个测试用例的第一行包含一个整数$$$N$$$ ($$$1 \\le N \\le 3000$$$）——工人的数量和工厂的数量。",
+        "deepl": "每个测试用例的第一行都包含一个整数 $$$N$$$ ($$$1 \\le N \\le 3000$$$）--工人数和工厂数。",
+        "iflyrec": "每个测试用例的第一行包含一个整数$$$N$$$($$$1 \\le N \\le 3000$$$)—工人的数量和工厂的数量。",
+        "ai": "每个测试用例的第一行包含一个整数 $$$N$$$($$$1 \\le N \\le 3000$$$)——工人数和工厂数。"
+      },
+      {
+        "caiyun": "每个测试用例的第二行包含 $$$N$$$ 不同的整数 $$$x_1, x_2, \\dots, x_N$$$($$$-10^9 \\le x_i \\le 10^9$$$)——工作量的坐标。",
+        "youdao": "每个测试用例的第二行包含$$$N$$$个不同的整数$$$x_1, x_2, \\dots, x_N$$$ ($$$-10^9 \\le x_i \\le 10^9$$$）——工人的坐标。",
+        "deepl": "每个测试用例的第二行包含 $$$N$$$ 个不同的整数 $$$x_1, x_2, \\dots, x_N$$$ ($$$-10^9 \\le x_i \\le 10^9$$$) - 工人的坐标。",
+        "iflyrec": "每个测试用例的第二行包含$$$N$$$个不同的整数$$$x_1, x_2, \\dots, x_N$$$($$$-10^9 \\le x_i \\le 10^9$$$）—工人的坐标。",
+        "ai": "每个测试用例的第二行包含 $$$N$$$ 个互不相同的整数 $$$x_1, x_2, \\dots, x_N$$$($$$-10^9 \\le x_i \\le 10^9$$$)——工人的坐标。"
+      },
+      {
+        "caiyun": "每个测试用例的第三行包含 $$$N$$$ 不同的整数 $$$y_1, y_2, \\dots, y_N$$$($$$-10^9 \\le y_i \\le 10^9$$$)——工厂的坐标。",
+        "youdao": "每个测试用例的第三行包含$$$N$$$个不同的整数$$$y_1, y_2, \\dots, y_N$$$ ($$$-10^9 \\le y_i \\le 10^9$$$）——工厂的坐标。",
+        "deepl": "每个测试用例的第三行包含 $$$N$$$ 个不同的整数 $$$y_1, y_2, \\dots, y_N$$$ ($$$-10^9 \\le y_i \\le 10^9$$$）--工厂的坐标。",
+        "iflyrec": "每个测试用例的第三行包含$$$N$$$个不同的整数$$$y_1, y_2, \\dots, y_N$$$($$$-10^9 \\le y_i \\le 10^9$$$）—工厂的坐标。",
+        "ai": "每个测试用例的第三行包含 $$$N$$$ 个互不相同的整数 $$$y_1, y_2, \\dots, y_N$$$($$$-10^9 \\le y_i \\le 10^9$$$)——工厂的坐标。"
+      },
+      {
+        "caiyun": "保证所有测试用例的 $$$N$$$ 之和不超过 $$$3000$$$。",
+        "youdao": "保证所有测试用例的$$$N$$$之和不超过$$$3000$$$。",
+        "deepl": "保证所有测试用例的 $$$N$$$ 之和不超过 $$$3000$$$。",
+        "iflyrec": "保证所有测试用例的$$$N$$$总和不超过$$$3000$$$。",
+        "ai": "保证所有测试用例中 $$$N$$$ 的总和不超过 $$$3000$$$。"
+      }
+    ],
+    "output": [
+      {
+        "caiyun": "对于每个测试用例，输出一行，其中包含 $$$N$$$ 空格分隔整数 $$$p_1, p_2, \\dots, p_N$$$，其中 $$$p_i$$$ 是分配给 $$$i$$$ 第一个工人的工厂的基于 1 的索引。",
+        "youdao": "对于每个测试用例，输出单行包含$$$N$$$个空格分隔的整数$$$p_1, p_2, \\dots, p_N$$$，其中$$$p_i$$$是分配给$$$i$$$个工人的以1为基数的工厂索引。",
+        "deepl": "对于每个测试用例，输出一行包含 $$$N$$$ 个空格分隔的整数 $$$p_1, p_2, \\dots, p_N$$$，其中 $$$p_i$$$ 是分配给 $$$i$$$-th 工人的以 1 为基础的工厂索引。",
+        "iflyrec": "对于每个测试用例，输出包含$$$N$$$空格分隔整数$$$p_1, p_2, \\dots, p_N$$$的单行，其中$$$p_i$$$是分配给第$$$i$$$个工人的工厂的基于1的索引。",
+        "ai": "对于每个测试用例，输出一行，包含 $$$N$$$ 个以空格分隔的整数 $$$p_1, p_2, \\dots, p_N$$$，其中 $$$p_i$$$ 是分配给第 $$$i$$$ 个工人的工厂的从 1 开始编号的下标。"
+      },
+      {
+        "caiyun": "如果有多个满足哈立德条件的有效分配，你可以输出其中任何一个。",
+        "youdao": "如果有多个有效赋值满足Khaled的条件，您可以输出其中的任何一个。",
+        "deepl": "如果有多个满足 Khaled 条件的有效作业，您可以输出其中任何一个。",
+        "iflyrec": "如果有多个满足Khaled条件的有效赋值，则可以输出其中的任何一个。",
+        "ai": "如果存在多个满足 Khaled 条件的合法分配，你可以输出其中任意一个。"
+      }
+    ]
+  },
+  "translatedAt": "2026-10-03T08:02:34.122Z",
+  "translatedBy": [
+    "iflyrec"
+  ]
+}

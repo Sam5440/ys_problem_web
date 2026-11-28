@@ -1,0 +1,105 @@
+{
+  "code": "GYM104679F",
+  "letter": "F",
+  "title": "F. Lucky Seats",
+  "contest": null,
+  "url": "https://codeforces.com/gym/104679/problem/F",
+  "difficulty": "*1600",
+  "timeLimit": "1 second",
+  "memoryLimit": "256 megabytes",
+  "sections": {
+    "legend": [
+      "The FIFA World Cup 2022 will take place in Qatar. The organizers plan to provide a prize to random attendees at the opening game. So they chose two integers a$$$a$$$ and b$$$b$$$. The integer a$$$a$$$ represents bitwise OR$$$\\textbf{OR}$$$ of a set of seat numbers and b$$$b$$$ represents bitwise XOR$$$\\textbf{XOR}$$$ of the same set of seat numbers. The attendees assigned to those seats will receive the prizes. The organizers want to award prizes to as many people as possible. They therefore recruited you to identify the maximum possible number of attendees who are qualified for the award as well as their seat numbers. Each seat has a unique seat number, which is a non-negative integer.",
+      "See the notes if you forgot what bitwise OR$$$\\textbf{OR}$$$ and XOR$$$\\textbf{XOR}$$$ means."
+    ],
+    "input": [
+      "Each test consists of multiple test cases. The first line contains a single integer T (1≤T≤100)$$$T\\space(1 \\leq T \\leq 100) $$$ — the number of test cases.",
+      "For each testcase, there will be two numbers representing a$$$a$$$ and b$$$b$$$ (0≤a,b≤104)$$$(0 \\leq a, b \\leq 10^4)$$$."
+    ],
+    "output": [
+      "For each testcase, if there is no solution, print -1$$$\\textbf{-1}$$$.",
+      "Otherwise, print two lines.",
+      "First line will contain the maximum possible number of attendees who will get prize.",
+      "The next line will contain the seat numbers in increasing order separated by a single space. If there are multiple solutions for the given input, print any of them."
+    ],
+    "note": [
+      "Consider the first sample test. One can verify that the bitwise OR of the numbers [0,4,5]$$$[0,4,5]$$$ is 5$$$5$$$, and the bitwise XOR of the numbers [0,4,5]$$$[0,4,5]$$$ is 1$$$1$$$. One can verify that there's no set of (distinct) numbers with a bigger size that satisfies these conditions.",
+      "Bitwise XOR: The bitwise XOR of non-negative integers A$$$A$$$ and B$$$B$$$, denoted A⊕B$$$A\\oplus B$$$, is defined as follows:",
+      "When A⊕B$$$A\\oplus B$$$ is written in base two, the k$$$k$$$-th digit from the right (k≥0)$$$(k\\geq 0)$$$ is 1$$$1$$$ if and only if exactly one of the digits in that place of A$$$A$$$ and B$$$B$$$ is 1$$$1$$$, and 0$$$0$$$ otherwise. For example, we have 3⊕5=6$$$3\\oplus 5=6$$$ (in base two: 011⊕101=110$$$011\\oplus 101=110$$$).",
+      "Bitwise OR: The bitwise OR of non-negative integers A$$$A$$$ and B$$$B$$$, denoted A∣B$$$A\\mid B$$$, is defined as follows:",
+      "When A∣B$$$A\\mid B$$$ is written in base two, the k$$$k$$$-th digit from the right (k≥0)$$$(k\\geq 0)$$$ is 1$$$1$$$ if and only if at least one of the digits in that place of A$$$A$$$ and B$$$B$$$ is 1$$$1$$$, and 0$$$0$$$ otherwise. For example, we have 3∣5=7$$$3\\mid 5=7$$$ (in base two: 011∣101=111$$$011\\mid 101 = 111$$$)."
+    ]
+  },
+  "examples": [
+    {
+      "input": "3\n5 1\n11 2\n11 4",
+      "output": "3\n0 4 5\n7\n0 1 3 8 9 10 11\n-1"
+    }
+  ],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "2022 年国际足联世界杯将在卡塔尔举行。组织者计划在开幕赛中向随机观众发放奖品。因此，他们选择了两个整数 a$$$a$$$ 和 b$$$b$$$。整数 a$$$a$$$ 表示一组座位号的按位或$$$\\textbf{OR}$$$，而 b$$$b$$$ 表示同一组座位号的按位异或$$$\\textbf{XOR}$$$。被分配到这些座位的观众将获得奖品。组织者希望尽可能多地向观众颁发奖品。因此，他们请你找出有资格获奖的观众人数的最大可能值，以及这些观众的座位号。每个座位都有唯一的座位号，且该座位号是非负整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "如果你忘记了按位或$$$\\textbf{OR}$$$和按位异或$$$\\textbf{XOR}$$$的含义，请参见注释。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "input": [
+      {
+        "ai": "每个测试包含多个测试用例。第一行包含一个整数 T(1≤T≤100)$$$T\\space(1 \\leq T \\leq 100) $$$——测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个测试用例，将给出两个数，分别表示 a$$$a$$$ 和 b$$$b$$$ (0≤a,b≤104)$$$(0 \\leq a, b \\leq 10^4)$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "output": [
+      {
+        "ai": "对于每个测试用例，如果不存在解，则输出 -1$$$\\textbf{-1}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "否则，输出两行。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "第一行将包含能够获得奖品的参与者数量的最大可能值。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "下一行将包含按递增顺序排列的座位编号，编号之间用单个空格分隔。如果给定输入存在多个解，输出其中任意一个。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ],
+    "note": [
+      {
+        "ai": "考虑第一个样例。可以验证，数字 [0,4,5]$$$[0,4,5]$$$ 的按位或为 5$$$5$$$，数字 [0,4,5]$$$[0,4,5]$$$ 的按位异或为 1$$$1$$$。可以验证，不存在一个包含更多(互不相同)数字的集合能够满足这些条件。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "按位异或：非负整数 A$$$A$$$ 和 B$$$B$$$ 的按位异或记为 A⊕B$$$A\\oplus B$$$，定义如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将 A⊕B$$$A\\oplus B$$$ 写成二进制时，从右往左第 k$$$k$$$ 位(k≥0$$$(k\\geq 0)$$$)当且仅当 A$$$A$$$ 和 B$$$B$$$ 在该位置上的数字中恰有一个为 1$$$1$$$ 时为 1$$$1$$$，否则为 0$$$0$$$。例如，3⊕5=6$$$3\\oplus 5=6$$$(在二进制下：011⊕101=110$$$011\\oplus 101=110$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "按位或：非负整数 A$$$A$$$ 和 B$$$B$$$ 的按位或记为 A∣B$$$A\\mid B$$$，定义如下：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "将 A∣B$$$A\\mid B$$$ 写成二进制时，从右往左第 k$$$k$$$ 位(k≥0$$$(k\\geq 0)$$$)当且仅当 A$$$A$$$ 和 B$$$B$$$ 在该位置上的数字中至少有一个为 1$$$1$$$ 时为 1$$$1$$$，否则为 0$$$0$$$。例如，3∣5=7$$$3\\mid 5=7$$$(在二进制下：011∣101=111$$$011\\mid 101 = 111$$$)。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "F. 幸运座位",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}

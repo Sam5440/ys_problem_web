@@ -1,0 +1,120 @@
+{
+  "code": "GYM106797E",
+  "letter": "E",
+  "title": "E. Egocentric Expedition",
+  "contest": null,
+  "url": "https://codeforces.com/gym/106797/problem/E",
+  "difficulty": "*1900",
+  "timeLimit": "2 seconds",
+  "memoryLimit": "1024 megabytes",
+  "sections": {
+    "legend": [
+      "![](https://espresso.codeforces.com/50e177e72a3fd03c05ade5dee08adbe73ed271ac.png)",
+      "Map of the square and stationary earth. Public Domain by Prof. Orlando Ferguson on Wikimedia Commons",
+      "You are the famous explorer Christopherus Columb and unlike most of your contemporaries you know that the earth and the world is flat and a perfect square. While others dreamfully deluded themselves with the fanatic heliocentric gospel that the earth orbits the sun, you in your superior wisdom discerned the higher truth of egocentrism: you alone remain, naturally, at the center of the world.",
+      "The only lifetime achievement remaining, worthy of your name, is to determine the exact area of the world. You cannot sail to the edge of the world yourself, as the world moves along with you such that you continue to be the center of the world. Therefore, you have to send your subordinates. They sail in a straight line direction chosen by you, starting at the center of the world. After their return, they will report the distance from you to the edge of the world in that direction.",
+      "As most crew members have been lured away by the heretic masses, there are only enough crew members left to operate a single ship. Knowing that there is barely enough time to send this ship out twice, are you wise enough to determine the area of the world?",
+      "![](https://espresso.codeforces.com/81c1916fa32031ec995acd7a968e012bf23f2e3c.png)",
+      "![](https://espresso.codeforces.com/d0a05a27acf6fb4d33abf3b49aba837c5db5e826.png)",
+      "Visualization of the two test cases used for the sample interaction. In the second sample (right), the ship is first sent in direction $$$(1, 2)$$$, where it finds the edge of the world at $$$\\approx (1.33, 2.67)$$$, reporting distance $$$\\approx 2.98$$$. Then the ship is sent again in direction $$$(1, 1)$$$, finding the edge at $$$(2, 2)$$$, reporting distance $$$\\approx 2.83$$$.",
+      "Note that the rotation of the world square can be arbitrary, and the corner coordinates of the world do not have to be integer.",
+      "Interaction",
+      "This is an interactive problem. Your submission will be run against an interactor, which reads from the standard output of your submission and writes to the standard input of your submission. This interaction needs to follow a specific protocol:",
+      "The interactor first sends one line with an integer $$$t$$$ ($$$1 \\leq t \\leq 10^4$$$), the number of test cases.",
+      "For each test case, you can ask at most two queries.",
+      "For every query, output \"? $$$x$$$ $$$y$$$\" ($$$0 \\leq \\left| x \\right|$$$, $$$\\left| y \\right| \\leq 50, (x, y) \\neq (0, 0)$$$), where $$$x$$$ and $$$y$$$ are integers, and $$$(x, y)$$$ is the direction you send a ship to.",
+      "The interactor will respond to each query with one line containing a real value $$$d$$$ ($$$0  \\lt  d \\leq 50$$$), the distance the ship reported. This distance $$$d$$$ is given with exactly $$$10$$$ decimal places, and has an absolute and relative error of at most $$$10^{-7}$$$.",
+      "After up to two queries, you should output \"! A\", where $$$A$$$ is an integer, the area of the square. It is guaranteed that the square always has a positive integer area.",
+      "The interactor is not adaptive: the borders of the world are fixed before the first query.",
+      "Make sure you flush the standard output after every output. For example, you can use fflush(stdout) in C++, System.out.flush() in Java, sys.stdout.flush() in Python, std::io::stdout().flush() in Rust, and hFlush stdout in Haskell.",
+      "A testing tool is provided to help you develop your solution."
+    ],
+    "input": [],
+    "output": []
+  },
+  "examples": [],
+  "sectionsZh": {
+    "legend": [
+      {
+        "ai": "![](https://espresso.codeforces.com/50e177e72a3fd03c05ade5dee08adbe73ed271ac.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "正方形与静止地球地图。Wikimedia Commons 上由 Orlando Ferguson 教授创作的公有领域作品",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "你是著名探险家 Christopherus Columb。与大多数同时代人不同，你知道地球和世界是平坦的，且是一个完美的正方形。其他人沉浸在幻想中，被“地球绕太阳公转”这种狂热的日心说福音所迷惑；而凭借你卓越的智慧，你洞察到了自我中心主义这一更高真理：理所当然地，只有你自己始终处于世界的中心。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "唯一还值得以你的名字命名的终身成就，就是确定世界的精确面积。你无法亲自航行到世界的边缘，因为世界会随着你一起移动，使你始终处于世界的中心。因此，你必须派遣下属。他们从世界中心出发，沿着你选定的直线方向航行。返回后，他们会报告你到该方向上世界边缘的距离。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "由于大部分船员都被异端群众蛊惑离去，只剩下足够操作一艘船的船员。已知勉强还有足够的时间让这艘船出航两次，你是否足够聪明，能够确定这个世界的面积？",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/81c1916fa32031ec995acd7a968e012bf23f2e3c.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "![](https://espresso.codeforces.com/d0a05a27acf6fb4d33abf3b49aba837c5db5e826.png)",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "示例交互中使用的两个测试用例的可视化。在第二个样例(右侧)中，船首先被派往方向 $$$(1, 2)$$$，在那里找到世界边界 $$$\\approx (1.33, 2.67)$$$，并报告距离 $$$\\approx 2.98$$$。然后，船再次被派往方向 $$$(1, 1)$$$，在 $$$(2, 2)$$$ 处找到边界，并报告距离 $$$\\approx 2.83$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "注意，世界正方形的旋转角度可以任意，世界的角点坐标也不一定是整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "本题为交互题。你的程序将与交互器一起运行，交互器从你程序的标准输出读取内容，并向你程序的标准输入写入内容。交互过程必须遵循特定协议：",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互器首先发送一行，其中包含一个整数 $$$t$$$ ($$$1 \\leq t \\leq 10^4$$$)，表示测试用例的数量。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每个测试用例，你最多可以进行两次查询。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "对于每次询问，输出 “? $$$x$$$ $$$y$$$”($$$0 \\leq \\left| x \\right|$$$、$$$\\left| y \\right| \\leq 50, (x, y) \\neq (0, 0)$$$)，其中 $$$x$$$ 和 $$$y$$$ 是整数，$$$(x, y)$$$ 是你派遣船只的方向。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互器将对每次查询回复一行，其中包含一个实数 $$$d$$$($$$0  \\lt  d \\leq 50$$$)，即船只报告的距离。该距离 $$$d$$$ 小数点后恰有 $$$10$$$ 位，绝对误差和相对误差均不超过 $$$10^{-7}$$$。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "最多进行两次询问后，你应输出“! A”，其中 $$$A$$$ 是一个整数，表示正方形的面积。保证正方形的面积始终为正整数。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "交互器不是自适应的：世界的边界在第一次询问之前就已固定。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "确保每次输出后都刷新标准输出。例如，在 C++ 中可以使用 fflush(stdout)，在 Java 中可以使用 System.out.flush()，在 Python 中可以使用 sys.stdout.flush()，在 Rust 中可以使用 std::io::stdout().flush()，在 Haskell 中可以使用 hFlush stdout。",
+        "aiModel": "GPT 5.6 Terra"
+      },
+      {
+        "ai": "提供了一个测试工具来帮助你开发解决方案。",
+        "aiModel": "GPT 5.6 Terra"
+      }
+    ]
+  },
+  "titleZh": {
+    "ai": "E. 自我中心的远征",
+    "aiModel": "GPT 5.6 Terra"
+  }
+}
